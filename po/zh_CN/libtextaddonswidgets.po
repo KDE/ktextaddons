@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-30 00:41+0000\n"
+"POT-Creation-Date: 2025-12-02 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,54 +17,43 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextaddonswidgets.pot\n"
 "X-Crowdin-File-ID: 49514\n"
 
-#: misc/openfilejob.cpp:33
+#: misc/openfilejob.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr ""
 
-#: misc/openfilejob.cpp:34
+#: misc/openfilejob.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr ""
 
-#: misc/openfilejob.cpp:38
+#: misc/openfilejob.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr ""
 
-#: misc/openfilejob.cpp:41
+#: misc/openfilejob.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr ""
 
-#: misc/openfilejob.cpp:44
+#: misc/openfilejob.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr ""
 
-#: misc/openfilejob.cpp:46
+#: misc/openfilejob.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr ""
 
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgid "Impossible to open %1"
-msgstr ""
-
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgctxt "@title:window"
-msgid "Error Opening File"
-msgstr ""
-
-#: misc/openfilejob.cpp:107
+#: misc/openfilejob.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -206,7 +195,7 @@ msgstr "发现新版本。请点击<a href=\"%1\">此处</a>下载。"
 msgid "No new version found."
 msgstr "没有发现新版本。"
 
-#: verifynewversion/verifynewversionwidget.cpp:33
+#: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
 msgstr "检查新版本"

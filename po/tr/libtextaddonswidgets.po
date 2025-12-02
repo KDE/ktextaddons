@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-30 00:41+0000\n"
+"POT-Creation-Date: 2025-12-02 00:41+0000\n"
 "PO-Revision-Date: 2025-11-30 11:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,54 +17,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.08.2\n"
 
-#: misc/openfilejob.cpp:33
+#: misc/openfilejob.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Eki Aç?"
 
-#: misc/openfilejob.cpp:34
+#: misc/openfilejob.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "<filename>%1</filename> eki açılsın mı?<nl/>"
 
-#: misc/openfilejob.cpp:38
+#: misc/openfilejob.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Aç"
 
-#: misc/openfilejob.cpp:41
+#: misc/openfilejob.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "&Birlikte Aç: “%1”"
 
-#: misc/openfilejob.cpp:44
+#: misc/openfilejob.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "Birlikte &Aç…"
 
-#: misc/openfilejob.cpp:46
+#: misc/openfilejob.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "&Farklı Kaydet…"
 
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgid "Impossible to open %1"
-msgstr "%1 açılamıyor"
-
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgctxt "@title:window"
-msgid "Error Opening File"
-msgstr "Dosya Açılırken Hata"
-
-#: misc/openfilejob.cpp:107
+#: misc/openfilejob.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -209,7 +198,7 @@ msgstr ""
 msgid "No new version found."
 msgstr "Bulunan yeni sürüm yok."
 
-#: verifynewversion/verifynewversionwidget.cpp:33
+#: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
 msgstr "Yeni Sürümü Denetle"
@@ -260,3 +249,10 @@ msgstr "Bu sürümdeki yeni özelliklerden bazıları:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Hata düzeltmeleri:"
+
+#~ msgid "Impossible to open %1"
+#~ msgstr "%1 açılamıyor"
+
+#~ msgctxt "@title:window"
+#~ msgid "Error Opening File"
+#~ msgstr "Dosya Açılırken Hata"

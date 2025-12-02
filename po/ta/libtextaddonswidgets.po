@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-30 00:41+0000\n"
+"POT-Creation-Date: 2025-12-02 00:41+0000\n"
 "PO-Revision-Date: 2025-11-30 11:01+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -17,54 +17,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.3\n"
 
-#: misc/openfilejob.cpp:33
+#: misc/openfilejob.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "உடனிணைப்பைத் திறக்கலாமா?"
 
-#: misc/openfilejob.cpp:34
+#: misc/openfilejob.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "<filename>%1</filename> எனும் உடனிணைப்பைத் திறக்கலாமா?<nl/>"
 
-#: misc/openfilejob.cpp:38
+#: misc/openfilejob.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "திற"
 
-#: misc/openfilejob.cpp:41
+#: misc/openfilejob.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "'%1' என்பதால் திற"
 
-#: misc/openfilejob.cpp:44
+#: misc/openfilejob.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "வேறு செயலியில் திற…"
 
-#: misc/openfilejob.cpp:46
+#: misc/openfilejob.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "வேறு பெயரில் சேமி…"
 
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgid "Impossible to open %1"
-msgstr "%1 தனைத் திறக்க முடியவில்லை"
-
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgctxt "@title:window"
-msgid "Error Opening File"
-msgstr "கோப்பைத் திறப்பதில் சிக்கல்"
-
-#: misc/openfilejob.cpp:107
+#: misc/openfilejob.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -211,7 +200,7 @@ msgstr ""
 msgid "No new version found."
 msgstr "எந்த புதிய பதிப்பும் இல்லை."
 
-#: verifynewversion/verifynewversionwidget.cpp:33
+#: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
 msgstr "புதிய பதிப்பு உள்ளதா என பார்ப்பது"
@@ -262,3 +251,10 @@ msgstr "இப்பதிப்பின் சில புதிய அம்
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "திருத்தப்பட்ட சில பிழைகள்:"
+
+#~ msgid "Impossible to open %1"
+#~ msgstr "%1 தனைத் திறக்க முடியவில்லை"
+
+#~ msgctxt "@title:window"
+#~ msgid "Error Opening File"
+#~ msgstr "கோப்பைத் திறப்பதில் சிக்கல்"

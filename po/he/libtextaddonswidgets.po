@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-30 00:41+0000\n"
+"POT-Creation-Date: 2025-12-02 00:41+0000\n"
 "PO-Revision-Date: 2025-11-30 09:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,54 +18,43 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.08.3\n"
 
-#: misc/openfilejob.cpp:33
+#: misc/openfilejob.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "לפתוח את הקובץ המצורף?"
 
-#: misc/openfilejob.cpp:34
+#: misc/openfilejob.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "לפתוח את הקובץ המצורף <filename>%1</filename>?<nl/>"
 
-#: misc/openfilejob.cpp:38
+#: misc/openfilejob.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "פתיחה"
 
-#: misc/openfilejob.cpp:41
+#: misc/openfilejob.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "פתיחה &עם ‚%1’"
 
-#: misc/openfilejob.cpp:44
+#: misc/openfilejob.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "פתיחה &עם…"
 
-#: misc/openfilejob.cpp:46
+#: misc/openfilejob.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "שמירה &בשם…"
 
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgid "Impossible to open %1"
-msgstr "אי אפשר לפתוח את %1"
-
-#: misc/openfilejob.cpp:91
-#, kde-format
-msgctxt "@title:window"
-msgid "Error Opening File"
-msgstr "שגיאה בפתיחת קובץ"
-
-#: misc/openfilejob.cpp:107
+#: misc/openfilejob.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -207,7 +196,7 @@ msgstr "נמצאה גרסה חדשה. לחיצה <a href=\"%1\">כאן</a> תו�
 msgid "No new version found."
 msgstr "לא נמצאו גרסאות חדשות."
 
-#: verifynewversion/verifynewversionwidget.cpp:33
+#: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
 msgstr "בדיקה לאיתור גרסה חדשה"
@@ -258,3 +247,10 @@ msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "תיקוני תקלות:"
+
+#~ msgid "Impossible to open %1"
+#~ msgstr "אי אפשר לפתוח את %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "Error Opening File"
+#~ msgstr "שגיאה בפתיחת קובץ"
