@@ -8,16 +8,20 @@
 #include <TextAddonsWidgets/OpenFileJob>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateTextOpenFileJob : public TextAddonsWidgets::OpenFileJob
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextOpenFileJob(QObject *parent = nullptr);
+    explicit TextAutoGenerateTextOpenFileJob(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateTextOpenFileJob() override;
 
     void downloadFile(const QUrl &fileUrl) override;
     void runApplication(const KService::Ptr &offer) override;
     void openUrl() override;
+
+private:
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 
 }

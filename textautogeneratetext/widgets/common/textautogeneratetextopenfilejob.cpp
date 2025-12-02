@@ -5,10 +5,16 @@
 */
 
 #include "textautogeneratetextopenfilejob.h"
-
+#include "textautogeneratetextwidget_debug.h"
+#include <QDir>
+#include <QTemporaryDir>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
+#include <memory>
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextOpenFileJob::TextAutoGenerateTextOpenFileJob(QObject *parent)
+using namespace Qt::Literals::StringLiterals;
+TextAutoGenerateTextOpenFileJob::TextAutoGenerateTextOpenFileJob(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
     : TextAddonsWidgets::OpenFileJob{parent}
+    , mManager(manager)
 {
 }
 
@@ -16,20 +22,46 @@ TextAutoGenerateTextOpenFileJob::~TextAutoGenerateTextOpenFileJob() = default;
 
 void TextAutoGenerateTextOpenFileJob::downloadFile(const QUrl &fileUrl)
 {
+    // TODO generate file from fileUrl
     // TODO
     deleteLater();
 }
 
 void TextAutoGenerateTextOpenFileJob::runApplication(const KService::Ptr &offer)
 {
+    std::unique_ptr<QTemporaryDir> tempDir(new QTemporaryDir(QDir::tempPath() + "/textautogeneratetext_attachment_XXXXXX"_L1));
+    if (!tempDir->isValid()) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create attachment temporary file";
+        deleteLater();
+        return;
+    }
     // TODO
     deleteLater();
 }
 
 void TextAutoGenerateTextOpenFileJob::openUrl()
 {
-    // TODO
-    deleteLater();
+#if defined(Q_OS_MACOS) || defined(Q_OS_WIN)
+    std::unique_ptr<QTemporaryDir> tempDir(new QTemporaryDir(QDir::tempPath() + "/textautogeneratetext_attachment_XXXXXX"_L1));
+    if (!tempDir->isValid()) {
+        qCWarning(RUQOLAWIDGETS_LOG) << "Impossible to create attachment temporary file";
+        return;
+    }
+    tempDir->setAutoRemove(false); // can't delete them, same problem as in messagelib ViewerPrivate::attachmentOpenWith
+    const QString tempFile = tempDir->filePath(QUrl(mLink).fileName());
+    const QUrl fileUrl = QUrl::fromLocalFile(tempFile);
+
+#if 0
+    const QUrl downloadUrl = mRocketChatAccount->urlForLink(mLink);
+    auto *job = mRocketChatAccount->restApi()->downloadFile(downloadUrl, fileUrl, "text/plain"_ba);
+    connect(job, &RocketChatRestApi::DownloadFileJob::downloadFileDone, this, [this](const QUrl &, const QUrl &localFileUrl) {
+        if (!QDesktopServices::openUrl(localFileUrl)) {
+            KMessageBox::error(mParentWidget, i18n("Impossible to open %1", localFileUrl.toDisplayString()), i18nc("@title:window", "Error Opening File"));
+        }
+        deleteLater();
+    });
+#endif
+#endif
 }
 
 #include "moc_textautogeneratetextopenfilejob.cpp"
