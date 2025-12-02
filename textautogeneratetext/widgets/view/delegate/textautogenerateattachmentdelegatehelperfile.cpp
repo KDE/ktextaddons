@@ -66,6 +66,9 @@ bool TextAutoGenerateAttachmentDelegateHelperFile::handleMouseEvent(const TextAu
     case QEvent::MouseButtonRelease: {
         const QPoint pos = mouseEvent->pos();
         const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
+        if (attachmentsRect.contains(pos)) {
+            qDebug() << " Click on file " << msgAttach;
+        }
         break;
     }
     default:
