@@ -44,7 +44,7 @@ void TextAutoGenerateTextOpenFileJob::openUrl()
 #if defined(Q_OS_MACOS) || defined(Q_OS_WIN)
     std::unique_ptr<QTemporaryDir> tempDir(new QTemporaryDir(QDir::tempPath() + "/textautogeneratetext_attachment_XXXXXX"_L1));
     if (!tempDir->isValid()) {
-        qCWarning(RUQOLAWIDGETS_LOG) << "Impossible to create attachment temporary file";
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create attachment temporary file";
         return;
     }
     tempDir->setAutoRemove(false); // can't delete them, same problem as in messagelib ViewerPrivate::attachmentOpenWith
