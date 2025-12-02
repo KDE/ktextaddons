@@ -86,4 +86,23 @@ TextAutoGenerateAttachmentDelegateHelperImage::layoutImage(const TextAutoGenerat
     return layout;
 }
 
+bool TextAutoGenerateAttachmentDelegateHelperImage::handleMouseEvent(const TextAutoGenerateAttachment &msgAttach,
+                                                                     QMouseEvent *mouseEvent,
+                                                                     QRect attachmentsRect,
+                                                                     const QStyleOptionViewItem &option,
+                                                                     const QModelIndex &index)
+{
+    const QEvent::Type eventType = mouseEvent->type();
+    switch (eventType) {
+    case QEvent::MouseButtonRelease: {
+        const QPoint pos = mouseEvent->pos();
+        const ImageLayout layout = layoutImage(msgAttach, option, attachmentsRect.width(), attachmentsRect.height());
+        break;
+    }
+    default:
+        break;
+    }
+    return TextAutoGenerateAttachmentDelegateHelperBase::handleMouseEvent(msgAttach, mouseEvent, attachmentsRect, option, index);
+}
+
 #include "moc_textautogenerateattachmentdelegatehelperimage.cpp"

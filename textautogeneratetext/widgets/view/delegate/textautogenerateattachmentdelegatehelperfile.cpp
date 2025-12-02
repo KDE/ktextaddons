@@ -61,8 +61,17 @@ bool TextAutoGenerateAttachmentDelegateHelperFile::handleMouseEvent(const TextAu
                                                                     const QStyleOptionViewItem &option,
                                                                     const QModelIndex &index)
 {
-    // TODO
-    return false;
+    const QEvent::Type eventType = mouseEvent->type();
+    switch (eventType) {
+    case QEvent::MouseButtonRelease: {
+        const QPoint pos = mouseEvent->pos();
+        const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
+        break;
+    }
+    default:
+        break;
+    }
+    return TextAutoGenerateAttachmentDelegateHelperBase::handleMouseEvent(msgAttach, mouseEvent, attachmentsRect, option, index);
 }
 
 QPoint TextAutoGenerateAttachmentDelegateHelperFile::adaptMousePosition(const QPoint &pos,
