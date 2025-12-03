@@ -53,6 +53,7 @@ public:
         quint64 total = 0;
         quint64 completed = 0;
         QString status;
+        QString error;
     };
 
     /**

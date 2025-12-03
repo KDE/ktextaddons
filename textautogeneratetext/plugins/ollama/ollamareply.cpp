@@ -139,11 +139,13 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
 
 TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaReply::parseDownLoadInfo(const QJsonDocument &doc) const
 {
-    TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo info;
     const QJsonObject obj = doc.object();
+    TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo info;
     info.completed = obj["completed"_L1].toInteger(0);
     info.total = obj["total"_L1].toInteger(0);
     info.status = obj["status"_L1].toString();
+    info.status = obj["error"_L1].toString();
+    qDebug() << " info " << info;
     return info;
 }
 

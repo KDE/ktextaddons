@@ -111,6 +111,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::D
     d.space() << "total:" << t.total;
     d.space() << "completed:" << t.completed;
     d.space() << "status:" << t.status;
+    d.space() << "error:" << t.error;
     return d;
 }
 
