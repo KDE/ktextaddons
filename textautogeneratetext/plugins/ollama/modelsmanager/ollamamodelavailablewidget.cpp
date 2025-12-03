@@ -13,6 +13,7 @@
 #include "ollamamodelavailablelistview.h"
 #include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodeldownloadprogresswidget.h"
+#include <KMessageBox>
 #include <QScrollArea>
 #include <QSplitter>
 #include <QStackedWidget>
@@ -86,6 +87,7 @@ void OllamaModelAvailableWidget::slotAddModel()
             slotDownloadModel(modelName);
         } else {
             qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Invalid modelname " << modelName;
+            KMessageBox::error(this, i18n("Model name must be as \"name:tag\""), i18n("Invalid Model Name"));
         }
     }
 }
