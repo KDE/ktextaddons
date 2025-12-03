@@ -28,6 +28,9 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             mInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
         }
         qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama response finished";
+        if (mDownloadError) {
+            return;
+        }
         if (mReply->error() == QNetworkReply::NoError) {
             Q_EMIT finished();
         } else {
@@ -57,6 +60,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
                     if (downloadInfo.error.isEmpty()) {
                         Q_EMIT downloadInProgress(downloadInfo);
                     } else {
+                        mDownloadError = true;
                         Q_EMIT downloadError(downloadInfo.error);
                     }
                 }
