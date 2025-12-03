@@ -82,8 +82,7 @@ void OllamaModelAvailableWidget::slotAddModel()
     if (d.exec()) {
         const QString modelName = d.modelName().trimmed();
         if (!modelName.isEmpty()) {
-            qWarning() << "OllamaModelAvailableWidget::slotAddModel not implemented yet ";
-            // TODO implement download
+            slotDownloadModel(modelName);
         }
     }
 }
