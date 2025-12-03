@@ -39,6 +39,9 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
         const QByteArray data = mReply->read(received - mReceivedSize);
+        if (data.isEmpty()) {
+            return;
+        }
         mIncompleteTokens += data;
         mReceivedSize = received;
 
