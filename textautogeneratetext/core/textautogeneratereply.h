@@ -118,6 +118,7 @@ Q_SIGNALS:
     void canceled();
 
     void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
+    void downloadError(const QString &errorStr);
 
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 

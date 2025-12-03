@@ -4,15 +4,16 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadprogresswidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
 #include "ollamareply.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QLabel>
 #include <QProgressBar>
 #include <QToolButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mProgressBar(new QProgressBar(this))
@@ -64,6 +65,13 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
             if (modelName == mModelName) {
                 mCancelDownloadButton->hide();
                 mDownloadReply.remove(modelName);
+            }
+        });
+        connect(mManager, &OllamaManager::downloadError, this, [this](const QString &modelName, const QString &errorStr) {
+            if (modelName == mModelName) {
+                mCancelDownloadButton->hide();
+                mDownloadReply.remove(modelName);
+                KMessageBox::error(this, i18n("Download model reported an error: %1", errorStr), i18n("Download Model Error"));
             }
         });
     }

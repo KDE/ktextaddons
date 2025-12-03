@@ -123,6 +123,9 @@ OllamaReply *OllamaManager::downloadModel(const QString &modelName)
     connect(reply, &OllamaReply::downloadInProgress, this, [this, modelName](const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info) {
         Q_EMIT downloadInProgress(modelName, info);
     });
+    connect(reply, &OllamaReply::downloadError, this, [this, modelName](const QString &errorStr) {
+        Q_EMIT downloadError(modelName, errorStr);
+    });
     return reply;
 }
 

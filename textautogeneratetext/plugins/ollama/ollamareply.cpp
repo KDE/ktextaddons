@@ -50,7 +50,12 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             }
             for (const QByteArray &ba : completeTokens) {
                 if (!ba.isEmpty()) {
-                    Q_EMIT downloadInProgress(parseDownLoadInfo(QJsonDocument::fromJson(ba)));
+                    const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo downloadInfo = parseDownLoadInfo(QJsonDocument::fromJson(ba));
+                    if (downloadInfo.error.isEmpty()) {
+                        Q_EMIT downloadInProgress(downloadInfo);
+                    } else {
+                        Q_EMIT downloadError(downloadInfo.error);
+                    }
                 }
             }
             break;
