@@ -56,9 +56,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             break;
         }
         case RequestTypes::DeleteModel:
-            break;
         case RequestTypes::CreateModel:
-            break;
         case RequestTypes::Unknown:
             break;
         case RequestTypes::Show:
