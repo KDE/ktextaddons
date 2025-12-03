@@ -14,7 +14,6 @@
 #include <QPushButton>
 #include <QTemporaryDir>
 #include <QUrl>
-#include <memory>
 
 using namespace TextAddonsWidgets;
 OpenFileJob::OpenFileJob(QObject *parent)
