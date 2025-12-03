@@ -142,8 +142,8 @@ TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaReply::pars
     info.completed = obj["completed"_L1].toInteger(0);
     info.total = obj["total"_L1].toInteger(0);
     info.status = obj["status"_L1].toString();
-    info.status = obj["error"_L1].toString();
-    qDebug() << " info " << info;
+    info.error = obj["error"_L1].toString();
+    // qDebug() << " info " << info;
     return info;
 }
 
