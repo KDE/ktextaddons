@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:41+0000\n"
+"POT-Creation-Date: 2025-12-03 00:42+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1817,6 +1817,17 @@ msgstr "Enviar"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
+msgstr ""
+
+#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#, kde-format
+msgid "Impossible to open %1"
+msgstr ""
+
+#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#, kde-format
+msgctxt "@title:window"
+msgid "Error Opening File"
 msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
