@@ -185,7 +185,7 @@ msgstr "Models disponibles"
 #: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
-msgstr "No s'ha pogut connectar amb la interfície a %1: %2"
+msgstr "Ha fallat mentre es connectava amb la interfície a %1: %2"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
