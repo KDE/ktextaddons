@@ -48,7 +48,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateImportChatBaseJob::ImportChatI
 
 bool TextAutoGenerateImportChatBaseJob::ImportChatInfo::isValid() const
 {
-    // TODO add more
     return !filename.isEmpty();
 }
 
