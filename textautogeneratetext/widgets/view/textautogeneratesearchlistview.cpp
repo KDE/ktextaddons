@@ -20,7 +20,7 @@ TextAutoGenerateSearchListView::TextAutoGenerateSearchListView(TextAutoGenerateT
     : TextAutoGenerateBaseListView(manager, parent)
     , mModel(new TextAutoGenerateSearchMessagesModel(this))
 {
-    auto delegate = new TextAutoGenerateSearchListViewDelegate(this);
+    auto delegate = new TextAutoGenerateSearchListViewDelegate(manager, this);
     connect(delegate, &TextAutoGenerateSearchListViewDelegate::goToMessage, this, &TextAutoGenerateSearchListView::slotGoToMessage);
     mDelegate = delegate;
     setItemDelegate(mDelegate);

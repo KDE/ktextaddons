@@ -20,7 +20,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : TextAutoGenerateBaseListView(manager, parent)
 {
-    auto delegate = new TextAutoGenerateListViewDelegate(this);
+    auto delegate = new TextAutoGenerateListViewDelegate(manager, this);
     mDelegate = delegate;
     setItemDelegate(mDelegate);
     if (mManager) {

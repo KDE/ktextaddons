@@ -10,11 +10,12 @@ class QPainter;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateAttachment;
+class TextAutoGenerateManager;
 class TextAutoGenerateAttachmentDelegateHelperBase : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateAttachmentDelegateHelperBase(QObject *parent = nullptr);
+    explicit TextAutoGenerateAttachmentDelegateHelperBase(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateAttachmentDelegateHelperBase() override;
 
     virtual void draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
@@ -38,5 +39,6 @@ protected:
                                                     const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                     QRect attachmentsRect,
                                                     const QStyleOptionViewItem &option) = 0;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

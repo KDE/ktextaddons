@@ -15,8 +15,8 @@
 #include <QPainter>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateSearchListViewDelegate::TextAutoGenerateSearchListViewDelegate(QListView *view)
-    : TextAutoGenerateListViewBaseDelegate{view}
+TextAutoGenerateSearchListViewDelegate::TextAutoGenerateSearchListViewDelegate(TextAutoGenerateText::TextAutoGenerateManager *manager, QListView *view)
+    : TextAutoGenerateListViewBaseDelegate{manager, view}
 {
 }
 

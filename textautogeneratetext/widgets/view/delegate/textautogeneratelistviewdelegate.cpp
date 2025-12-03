@@ -27,8 +27,8 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateListViewDelegate::TextAutoGenerateListViewDelegate(QListView *view)
-    : TextAutoGenerateListViewBaseDelegate{view}
+TextAutoGenerateListViewDelegate::TextAutoGenerateListViewDelegate(TextAutoGenerateText::TextAutoGenerateManager *manager, QListView *view)
+    : TextAutoGenerateListViewBaseDelegate{manager, view}
     , mEditedIcon(QIcon::fromTheme(u"document-edit"_s))
     , mCopyIcon(QIcon::fromTheme(u"edit-copy"_s))
     , mCancelIcon(QIcon::fromTheme(u"dialog-cancel"_s))

@@ -22,7 +22,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewBaseDelegate : public 
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateListViewBaseDelegate(QListView *view);
+    explicit TextAutoGenerateListViewBaseDelegate(TextAutoGenerateManager *manager, QListView *view);
     ~TextAutoGenerateListViewBaseDelegate() override;
 
     void clearSizeHintCache();

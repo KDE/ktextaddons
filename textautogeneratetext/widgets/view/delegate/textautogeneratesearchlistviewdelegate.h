@@ -14,7 +14,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListViewDelegate :
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateSearchListViewDelegate(QListView *view);
+    explicit TextAutoGenerateSearchListViewDelegate(TextAutoGenerateManager *manager, QListView *view);
     ~TextAutoGenerateSearchListViewDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;

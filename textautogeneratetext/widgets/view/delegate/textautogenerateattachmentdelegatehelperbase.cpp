@@ -6,8 +6,10 @@
 #include "textautogenerateattachmentdelegatehelperbase.h"
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateAttachmentDelegateHelperBase::TextAutoGenerateAttachmentDelegateHelperBase(QObject *parent)
+TextAutoGenerateAttachmentDelegateHelperBase::TextAutoGenerateAttachmentDelegateHelperBase(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                           QObject *parent)
     : QObject{parent}
+    , mManager(manager)
 {
 }
 

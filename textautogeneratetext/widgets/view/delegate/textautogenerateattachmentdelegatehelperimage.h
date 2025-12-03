@@ -16,7 +16,7 @@ class TextAutoGenerateAttachmentDelegateHelperImage : public TextAutoGenerateAtt
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateAttachmentDelegateHelperImage(QObject *parent = nullptr);
+    explicit TextAutoGenerateAttachmentDelegateHelperImage(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateAttachmentDelegateHelperImage() override;
 
     void draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,

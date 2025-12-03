@@ -13,12 +13,12 @@
 #include <QTextFrameFormat>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateListViewBaseDelegate::TextAutoGenerateListViewBaseDelegate(QListView *view)
+TextAutoGenerateListViewBaseDelegate::TextAutoGenerateListViewBaseDelegate(TextAutoGenerateText::TextAutoGenerateManager *manager, QListView *view)
     : QItemDelegate{view}
     , mListView(view)
     , mTextSelection(new TextAutoGenerateListViewTextSelection(this, this))
-    , mHelperImage(new TextAutoGenerateAttachmentDelegateHelperImage(this))
-    , mHelperFile(new TextAutoGenerateAttachmentDelegateHelperFile(this))
+    , mHelperImage(new TextAutoGenerateAttachmentDelegateHelperImage(manager, this))
+    , mHelperFile(new TextAutoGenerateAttachmentDelegateHelperFile(manager, this))
 {
     connect(mTextSelection, &TextAutoGenerateListViewTextSelection::repaintNeeded, this, &TextAutoGenerateListViewBaseDelegate::updateView);
     mSizeHintCache.setMaxEntries(32);

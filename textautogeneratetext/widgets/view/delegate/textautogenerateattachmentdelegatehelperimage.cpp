@@ -12,8 +12,9 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateAttachmentDelegateHelperImage::TextAutoGenerateAttachmentDelegateHelperImage(QObject *parent)
-    : TextAutoGenerateAttachmentDelegateHelperBase{parent}
+TextAutoGenerateAttachmentDelegateHelperImage::TextAutoGenerateAttachmentDelegateHelperImage(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                             QObject *parent)
+    : TextAutoGenerateAttachmentDelegateHelperBase{manager, parent}
 {
 }
 

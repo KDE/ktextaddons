@@ -15,8 +15,9 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateAttachmentDelegateHelperFile::TextAutoGenerateAttachmentDelegateHelperFile(QObject *parent)
-    : TextAutoGenerateAttachmentDelegateHelperBase{parent}
+TextAutoGenerateAttachmentDelegateHelperFile::TextAutoGenerateAttachmentDelegateHelperFile(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                           QObject *parent)
+    : TextAutoGenerateAttachmentDelegateHelperBase{manager, parent}
 {
 }
 

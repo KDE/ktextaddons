@@ -17,7 +17,7 @@ class TextAutoGenerateListViewDelegate : public TextAutoGenerateListViewBaseDele
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateListViewDelegate(QListView *view);
+    explicit TextAutoGenerateListViewDelegate(TextAutoGenerateManager *manager, QListView *view);
     ~TextAutoGenerateListViewDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;

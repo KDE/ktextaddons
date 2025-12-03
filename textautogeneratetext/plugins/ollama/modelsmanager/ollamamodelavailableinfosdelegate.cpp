@@ -16,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPainter>
 
 OllamaModelAvailableInfosDelegate::OllamaModelAvailableInfosDelegate(QListView *view)
-    : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(view)
+    : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(nullptr, view)
 {
 }
 
