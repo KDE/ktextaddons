@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailablewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
+#include "autogeneratetext_ollama_debug.h"
 #include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodelavailableinfossortproxymodel.h"
@@ -18,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mSearchWidget(new OllamaModelAvailableSearchWidget(this))
@@ -81,8 +82,10 @@ void OllamaModelAvailableWidget::slotAddModel()
     OllamaModelDownloadFromNameDialog d(this);
     if (d.exec()) {
         const QString modelName = d.modelName().trimmed();
-        if (!modelName.isEmpty()) {
+        if (!modelName.isEmpty() && modelName.contains(u':')) {
             slotDownloadModel(modelName);
+        } else {
+            qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Invalid modelname " << modelName;
         }
     }
 }
