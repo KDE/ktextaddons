@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:42+0000\n"
+"POT-Creation-Date: 2025-12-04 00:42+0000\n"
 "PO-Revision-Date: 2025-09-21 11:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -212,7 +212,7 @@ msgid "Available Models"
 msgstr "Eredu erabilgarriak"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:174
+#: plugins/ollama/ollamamanager.cpp:177
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1(e)ko interfazera konektatzea huts egiten du: %2"
@@ -315,6 +315,19 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "Gehitu eredua"
 
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Please enter model name as \"name:tag\""
+msgid "Model name must be as \"name:tag\""
+msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Installed Models"
+msgid "Invalid Model Name"
+msgstr "Instalatutako ereduak"
+
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
@@ -377,12 +390,24 @@ msgstr "Eredua zama-jaistea"
 msgid "Please enter model name as \"name:tag\""
 msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:482
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Utzi"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, kde-format
+msgid "Download model reported an error: %1"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgid "Download Model Error"
+msgstr "Eredua zama-jaistea"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, fuzzy, kde-format

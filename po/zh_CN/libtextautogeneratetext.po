@@ -1,9 +1,8 @@
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:42+0000\n"
+"POT-Creation-Date: 2025-12-04 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -12,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextautogeneratetext.pot\n"
-"X-Crowdin-File-ID: 57198\n"
-"X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextautogeneratetext.pot\n"
+"X-Crowdin-File-ID: 57198\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -54,26 +53,14 @@ msgid "Unknown"
 msgstr "未知"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
 msgstr ""
-"引擎：%1\n"
-"模型：%2\n"
-"实例名称：%3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
 msgstr ""
-"\n"
-"工具：%1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -209,7 +196,7 @@ msgid "Available Models"
 msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:174
+#: plugins/ollama/ollamamanager.cpp:177
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "无法连接到位于 %1 的接口：%2"
@@ -312,6 +299,19 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "添加模型"
 
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Please enter model name as \"name:tag\""
+msgid "Model name must be as \"name:tag\""
+msgstr "请输入模型名称，格式为“name:tag”"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Installed Models"
+msgid "Invalid Model Name"
+msgstr "已安装的模型"
+
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
@@ -374,12 +374,24 @@ msgstr "下载模型"
 msgid "Please enter model name as \"name:tag\""
 msgstr "请输入模型名称，格式为“name:tag”"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:482
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "取消"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, kde-format
+msgid "Download model reported an error: %1"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgid "Download Model Error"
+msgstr "下载模型"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format

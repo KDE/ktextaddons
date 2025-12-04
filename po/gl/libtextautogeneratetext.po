@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:42+0000\n"
+"POT-Creation-Date: 2025-12-04 00:42+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -196,7 +196,7 @@ msgid "Available Models"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:174
+#: plugins/ollama/ollamamanager.cpp:177
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr ""
@@ -299,6 +299,16 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr ""
 
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, kde-format
+msgid "Model name must be as \"name:tag\""
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, kde-format
+msgid "Invalid Model Name"
+msgstr ""
+
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
@@ -361,11 +371,21 @@ msgstr ""
 msgid "Please enter model name as \"name:tag\""
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:482
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, kde-format
+msgid "Download model reported an error: %1"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, kde-format
+msgid "Download Model Error"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46

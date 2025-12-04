@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:41+0000\n"
+"POT-Creation-Date: 2025-12-04 00:42+0000\n"
 "PO-Revision-Date: 2025-11-30 11:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,43 +19,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.3\n"
 
-#: misc/openfilejob.cpp:62
+#: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "¿Abrir adjunto?"
 
-#: misc/openfilejob.cpp:63
+#: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "¿Abrir adjunto <filename>%1</filename>?<nl/>"
 
-#: misc/openfilejob.cpp:67
+#: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Abrir"
 
-#: misc/openfilejob.cpp:70
+#: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "&Abrir con «%1»"
 
-#: misc/openfilejob.cpp:73
+#: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "Abrir &con…"
 
-#: misc/openfilejob.cpp:75
+#: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "Gu&ardar como…"
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"

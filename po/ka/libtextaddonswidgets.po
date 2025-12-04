@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-02 00:41+0000\n"
+"POT-Creation-Date: 2025-12-04 00:42+0000\n"
 "PO-Revision-Date: 2025-11-30 03:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,43 +18,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: misc/openfilejob.cpp:62
+#: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "გავხსნა მიმაგრებული ფაილი?"
 
-#: misc/openfilejob.cpp:63
+#: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "გავხსნა მიმარებული ფაილი <filename>%1</filename>?<nl/>"
 
-#: misc/openfilejob.cpp:67
+#: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "გახსნა"
 
-#: misc/openfilejob.cpp:70
+#: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "'%1'-ით &გახსნა"
 
-#: misc/openfilejob.cpp:73
+#: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "&გამხსნელი პროგრამა…"
 
-#: misc/openfilejob.cpp:75
+#: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "შენახვა &როგორც…"
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"

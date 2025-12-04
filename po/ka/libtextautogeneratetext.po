@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:42+0000\n"
-"PO-Revision-Date: 2025-12-02 05:03+0100\n"
+"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"PO-Revision-Date: 2025-12-03 03:38+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -198,7 +198,7 @@ msgid "Available Models"
 msgstr "ხელმისაწვდომი მოდელები"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:174
+#: plugins/ollama/ollamamanager.cpp:177
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
@@ -301,6 +301,19 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "მოდელის დამატება"
 
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Please enter model name as \"name:tag\""
+msgid "Model name must be as \"name:tag\""
+msgstr "შეიყვანეთ მოდელის სახელი ფორმით \"სახელი:ჭდე\""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Installed Models"
+msgid "Invalid Model Name"
+msgstr "დაყენებული მოდელები"
+
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
@@ -363,12 +376,24 @@ msgstr "მოდელის გადმოწერა"
 msgid "Please enter model name as \"name:tag\""
 msgstr "შეიყვანეთ მოდელის სახელი ფორმით \"სახელი:ჭდე\""
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:482
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "გაუქმება"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, kde-format
+msgid "Download model reported an error: %1"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgid "Download Model Error"
+msgstr "მოდელის გადმოწერა"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format
@@ -2175,13 +2200,13 @@ msgstr "ხელსაწყოების არჩევნის დაშ�
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "%1-ის გახსნა შეუძლებელია"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "ფაილის გახსნის შეცდომა"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
