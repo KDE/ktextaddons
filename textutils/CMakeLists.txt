@@ -131,12 +131,16 @@ ecm_generate_headers(TextUtils_CMark_CamelCase_HEADERS
     RELATIVE cmark
 )
 
+set(TEXTUTILS_FILES
+    ${TextUtils_HEADERS}
+    ${TextUtils_Syntaxhighlighting_HEADERS}
+    ${TextUtils_CMark_HEADERS}
+    ${TextUtils_Colors_HEADERS}
+)
+
 install(
     FILES
-        ${TextUtils_HEADERS}
-        ${TextUtils_Syntaxhighlighting_HEADERS}
-        ${TextUtils_CMark_HEADERS}
-        ${TextUtils_Colors_HEADERS}
+        ${TEXTUTILS_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/textutils_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/textutils
     COMPONENT Devel
@@ -196,7 +200,7 @@ if(BUILD_QCH)
 	VERSION ${TEXTUTILS_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextUtils_HEADERS}
+        ${TEXTUTILS_FILES}
         LINK_QCHS
         Qt6Core_QCH
         INCLUDE_DIRS

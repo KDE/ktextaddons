@@ -150,11 +150,15 @@ install(
     COMPONENT Devel
 )
 
+set(TEXTSPEECHTOTEXT_FILES
+    ${TextSpeechToText_speechtotext_HEADERS}
+    ${TextSpeechToTextWidget_speechtotext_HEADERS}
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_export.h
-        ${TextSpeechToText_speechtotext_HEADERS}
-        ${TextSpeechToTextWidget_speechtotext_HEADERS}
+        ${TEXTSPEECHTOTEXT_FILES}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/textspeechtotext
     COMPONENT Devel
 )
@@ -167,8 +171,7 @@ if(BUILD_QCH)
         VERSION ${TEXTSPEECHTOTEXT_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextSpeechToText_speechtotext_HEADERS}
-        ${TextSpeechToTextWidget_speechtotext_HEADERS}
+        ${TEXTSPEECHTOTEXT_FILES}
         LINK_QCHS
             Qt6Core_QCH
             Qt6Gui_QCH
