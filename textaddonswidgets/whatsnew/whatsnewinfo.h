@@ -7,6 +7,9 @@
 #include "textaddonswidgets_export.h"
 #include <QDebug>
 #include <QStringList>
+#include <QtCore/qmetatype.h>
+#include <QtCore/qnamespace.h>
+
 namespace TextAddonsWidgets
 {
 class TEXTADDONSWIDGETS_EXPORT WhatsNewInfo
@@ -34,6 +37,6 @@ private:
     QStringList mBugFixings;
 };
 }
-Q_DECLARE_METATYPE(TextAddonsWidgets::WhatsNewInfo)
+QT_DECL_METATYPE_EXTERN_TAGGED(TextAddonsWidgets::WhatsNewInfo, TextAddonsWidgets__WhatsNewInfo, TEXTADDONSWIDGETS_EXPORT)
 Q_DECLARE_TYPEINFO(TextAddonsWidgets::WhatsNewInfo, Q_RELOCATABLE_TYPE);
 TEXTADDONSWIDGETS_EXPORT QDebug operator<<(QDebug d, const TextAddonsWidgets::WhatsNewInfo &t);
