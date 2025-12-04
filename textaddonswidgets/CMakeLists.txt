@@ -193,15 +193,19 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     RELATIVE misc
 )
 
+set(TEXTAUTOGENERATE_INCLUDES_FILES
+    ${TextAddonsWidgets_HEADERS}
+    ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
+    ${TextAddonsWidgets_verifynewversion_HEADERS}
+    ${TextAddonsWidgets_whatsnew_HEADERS}
+    ${TextAddonsWidgets_quicksearchbar_HEADERS}
+    ${TextAddonsWidgets_plugins_HEADERS}
+    ${TextAddonsWidgets_misc_HEADERS}
+)
+
 install(
     FILES
-        ${TextAddonsWidgets_HEADERS}
-        ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
-        ${TextAddonsWidgets_verifynewversion_HEADERS}
-        ${TextAddonsWidgets_whatsnew_HEADERS}
-        ${TextAddonsWidgets_quicksearchbar_HEADERS}
-        ${TextAddonsWidgets_plugins_HEADERS}
-        ${TextAddonsWidgets_misc_HEADERS}
+        ${TEXTAUTOGENERATE_INCLUDES_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -249,7 +253,7 @@ if(BUILD_QCH)
         VERSION ${TEXTADDONSWIDGETS_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextAddonsWidgets_HEADERS}
+        ${TEXTAUTOGENERATE_INCLUDES_FILES}
         LINK_QCHS
         Qt6Core_QCH
         Qt6Gui_QCH
