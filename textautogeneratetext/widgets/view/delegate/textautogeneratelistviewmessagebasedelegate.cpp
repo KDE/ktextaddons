@@ -34,3 +34,5 @@ TextAutoGenerateListViewMessageBaseDelegate::attachmentsHelper(const TextAutoGen
     }
     return nullptr;
 }
+
+#include "moc_textautogeneratelistviewmessagebasedelegate.cpp"
