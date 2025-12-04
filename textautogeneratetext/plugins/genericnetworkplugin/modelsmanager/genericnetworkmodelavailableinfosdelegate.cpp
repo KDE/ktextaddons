@@ -16,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPainter>
 
 GenericNetworkModelAvailableInfosDelegate::GenericNetworkModelAvailableInfosDelegate(QListView *view)
-    : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(nullptr, view)
+    : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(view)
 {
 }
 

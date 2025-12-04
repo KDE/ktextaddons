@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include "textautogeneratelistviewbasedelegate.h"
+#include "textautogeneratelistviewmessagebasedelegate.h"
 #include "textautogeneratetext_private_export.h"
 class QListView;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListViewDelegate : public TextAutoGenerateListViewBaseDelegate
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListViewDelegate : public TextAutoGenerateListViewMessageBaseDelegate
 {
     Q_OBJECT
 public:

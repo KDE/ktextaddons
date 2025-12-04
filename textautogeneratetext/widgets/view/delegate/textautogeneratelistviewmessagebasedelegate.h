@@ -18,6 +18,9 @@ public:
     explicit TextAutoGenerateListViewMessageBaseDelegate(TextAutoGenerateText::TextAutoGenerateManager *manager, QListView *view);
     ~TextAutoGenerateListViewMessageBaseDelegate() override;
 
+    /// @note Ownership is not transferred
+    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateAttachment &att) const;
+
 protected:
     QScopedPointer<TextAutoGenerateAttachmentDelegateHelperImage> mHelperImage;
     QScopedPointer<TextAutoGenerateAttachmentDelegateHelperFile> mHelperFile;

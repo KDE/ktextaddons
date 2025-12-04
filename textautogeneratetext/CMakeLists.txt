@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    widgets/view/delegate/textautogeneratelistviewmessagebasedelegate.h
-    widgets/view/delegate/textautogeneratelistviewmessagebasedelegate.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
@@ -300,6 +296,8 @@ target_sources(
         widgets/view/delegate/textautogenerateattachmentdelegatehelperbase.cpp
         widgets/view/delegate/textautogenerateattachmentdelegatehelperfile.cpp
         widgets/view/delegate/textautogenerateattachmentdelegatehelperfile.h
+        widgets/view/delegate/textautogeneratelistviewmessagebasedelegate.h
+        widgets/view/delegate/textautogeneratelistviewmessagebasedelegate.cpp
         widgets/view/lrucache.h
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h

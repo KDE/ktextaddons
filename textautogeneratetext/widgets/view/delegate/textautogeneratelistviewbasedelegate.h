@@ -4,8 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogenerateattachmentdelegatehelperfile.h"
-#include "textautogenerateattachmentdelegatehelperimage.h"
 #include "textautogeneratetext_export.h"
 #include "widgets/view/lrucache.h"
 #include <QItemDelegate>
@@ -22,7 +20,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewBaseDelegate : public 
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateListViewBaseDelegate(TextAutoGenerateManager *manager, QListView *view);
+    explicit TextAutoGenerateListViewBaseDelegate(QListView *view);
     ~TextAutoGenerateListViewBaseDelegate() override;
 
     void clearSizeHintCache();
@@ -42,9 +40,6 @@ public:
 
     void clearSelection();
 
-    /// @note Ownership is not transferred
-    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateAttachment &att) const;
-
     void clearDocumentCache();
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
@@ -61,7 +56,5 @@ protected:
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
     QAbstractItemView *const mListView;
     TextAutoGenerateListViewTextSelection *const mTextSelection;
-    QScopedPointer<TextAutoGenerateAttachmentDelegateHelperImage> mHelperImage;
-    QScopedPointer<TextAutoGenerateAttachmentDelegateHelperFile> mHelperFile;
 };
 }

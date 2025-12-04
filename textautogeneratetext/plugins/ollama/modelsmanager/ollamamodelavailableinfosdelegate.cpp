@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailableinfosdelegate.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelavailableinfosmodel.h"
@@ -15,8 +14,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDesktopServices>
 #include <QPainter>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableInfosDelegate::OllamaModelAvailableInfosDelegate(QListView *view)
-    : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(nullptr, view)
+    : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(view)
 {
 }
 

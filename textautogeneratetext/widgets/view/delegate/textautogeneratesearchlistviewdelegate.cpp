@@ -16,7 +16,7 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchListViewDelegate::TextAutoGenerateSearchListViewDelegate(TextAutoGenerateText::TextAutoGenerateManager *manager, QListView *view)
-    : TextAutoGenerateListViewBaseDelegate{manager, view}
+    : TextAutoGenerateListViewMessageBaseDelegate{manager, view}
 {
 }
 
