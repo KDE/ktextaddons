@@ -9,7 +9,7 @@
 #include <QObject>
 
 #include "textautogeneratetext_export.h"
-#include <QDebug>
+class QDebug;
 
 #include <QJsonDocument>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>

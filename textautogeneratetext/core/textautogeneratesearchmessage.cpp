@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratesearchmessage.h"
-
+#include <QDebug>
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchMessage::TextAutoGenerateSearchMessage() = default;
 

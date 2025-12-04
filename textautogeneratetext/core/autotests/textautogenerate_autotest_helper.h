@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <QDebug>
+class QDebug;
 
 #include <QJsonArray>
 #include <QJsonDocument>

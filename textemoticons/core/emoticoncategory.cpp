@@ -5,6 +5,7 @@
 */
 
 #include "emoticoncategory.h"
+#include <QDebug>
 using namespace TextEmoticonsCore;
 EmoticonCategory::EmoticonCategory() = default;
 

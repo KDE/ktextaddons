@@ -6,8 +6,10 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QDebug>
+#include <QList>
 #include <QSharedData>
+class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedData

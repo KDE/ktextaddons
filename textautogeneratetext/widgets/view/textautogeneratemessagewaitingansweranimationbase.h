@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 
-#include <QDebug>
+class QDebug;
 #include <QObject>
 #include <QPersistentModelIndex>
 class QSequentialAnimationGroup;

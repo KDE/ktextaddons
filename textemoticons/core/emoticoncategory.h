@@ -7,8 +7,9 @@
 #pragma once
 
 #include "textemoticonscore_export.h"
-#include <QDebug>
+#include <QObject>
 #include <QString>
+class QDebug;
 namespace TextEmoticonsCore
 {
 /**

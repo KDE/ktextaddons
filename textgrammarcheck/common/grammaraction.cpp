@@ -5,6 +5,7 @@
 */
 
 #include "grammaraction.h"
+#include <QDebug>
 
 using namespace TextGrammarCheck;
 

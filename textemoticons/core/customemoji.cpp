@@ -6,6 +6,7 @@
 
 #include "customemoji.h"
 #include "emoticonunicodeutils.h"
+#include <QDebug>
 
 using namespace TextEmoticonsCore;
 CustomEmoji::CustomEmoji() = default;

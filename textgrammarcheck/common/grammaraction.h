@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textgrammarcheck_export.h"
-#include <QDebug>
+#include <QObject>
 #include <QString>
 #include <QStringList>
-
+class QDebug;
 namespace TextGrammarCheck
 {
 class TEXTGRAMMARCHECK_EXPORT GrammarAction

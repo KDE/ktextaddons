@@ -5,7 +5,7 @@
 */
 #pragma once
 #include <QByteArray>
-#include <QDebug>
+class QDebug;
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
 namespace TextAutoGenerateText
 {

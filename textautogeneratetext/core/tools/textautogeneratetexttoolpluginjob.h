@@ -7,7 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QByteArray>
-#include <QDebug>
+class QDebug;
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>

@@ -7,7 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KConfigGroup>
-#include <QDebug>
+class QDebug;
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QObject>

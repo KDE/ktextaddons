@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "textaddonswidgets_export.h"
-#include <QDebug>
+class QDebug;
 #include <QStringList>
 #include <QtCore/qmetatype.h>
 #include <QtCore/qnamespace.h>

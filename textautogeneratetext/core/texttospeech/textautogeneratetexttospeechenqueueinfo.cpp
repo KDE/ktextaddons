@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratetexttospeechenqueueinfo.h"
-
+#include <QDebug>
 using namespace TextAutoGenerateText;
 
 TextAutoGenerateTextToSpeechEnqueueInfo::TextAutoGenerateTextToSpeechEnqueueInfo() = default;

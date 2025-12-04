@@ -6,7 +6,7 @@
 
 #pragma once
 #include "textedittexttospeech_private_export.h"
-#include <QDebug>
+class QDebug;
 #include <QVoice>
 namespace TextEditTextToSpeech
 {

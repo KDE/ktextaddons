@@ -5,7 +5,7 @@
 */
 
 #include "whatsnewinfo.h"
-
+#include <QDebug>
 QT_IMPL_METATYPE_EXTERN_TAGGED(TextAddonsWidgets::WhatsNewInfo, TextAddonsWidgets__WhatsNewInfo)
 using namespace TextAddonsWidgets;
 WhatsNewInfo::WhatsNewInfo() = default;

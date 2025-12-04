@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "textautogenerateollama_private_export.h"
-#include <QDebug>
+class QDebug;
 #include <QJsonObject>
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateManager>

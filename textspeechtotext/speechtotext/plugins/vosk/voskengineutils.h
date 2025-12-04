@@ -6,7 +6,7 @@
 #pragma once
 
 #include "libvoskspeechtotext_export.h"
-#include <QDebug>
+class QDebug;
 #include <QString>
 
 namespace VoskEngineUtils

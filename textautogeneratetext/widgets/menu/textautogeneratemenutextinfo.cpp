@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratemenutextinfo.h"
+#include <QDebug>
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuTextInfo::TextAutoGenerateMenuTextInfo() = default;
 

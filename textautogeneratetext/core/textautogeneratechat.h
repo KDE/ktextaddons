@@ -6,8 +6,9 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
-#include <QDebug>
+#include <QSharedPointer>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+class QDebug;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;

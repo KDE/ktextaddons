@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextreplyinfo.h"
-
+#include <QDebug>
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &t)
 {
     d.space() << "totalDuration:" << t.totalDuration;

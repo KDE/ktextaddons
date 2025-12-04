@@ -7,7 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KLazyLocalizedString>
-#include <QDebug>
+class QDebug;
 #include <QStringList>
 namespace TextAutoGenerateText
 {

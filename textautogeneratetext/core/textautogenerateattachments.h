@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QDebug>
+class QDebug;
 #include <QList>
 #include <QSharedData>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>

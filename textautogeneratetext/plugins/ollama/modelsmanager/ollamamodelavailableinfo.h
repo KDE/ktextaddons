@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "textautogenerateollama_private_export.h"
-#include <QDebug>
+class QDebug;
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfo

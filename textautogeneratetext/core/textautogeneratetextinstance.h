@@ -7,7 +7,7 @@
 #include "textautogeneratetext_export.h"
 
 #include <KConfigGroup>
-#include <QDebug>
+class QDebug;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;

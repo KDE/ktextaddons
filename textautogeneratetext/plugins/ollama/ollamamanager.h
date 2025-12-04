@@ -8,7 +8,7 @@
 #include "modelsmanager/ollamamodelavailableinfo.h"
 #include "modelsmanager/ollamamodelinstalledinfo.h"
 #include "textautogenerateollama_export.h"
-#include <QDebug>
+class QDebug;
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
