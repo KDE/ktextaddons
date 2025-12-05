@@ -97,6 +97,7 @@ target_sources(
         modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
         modelsmanager/ollamanetworkurlbutton.h
         modelsmanager/ollamanetworkurlbutton.cpp
+        icons/ollamamodelicons.qrc
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

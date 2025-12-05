@@ -46,21 +46,26 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaConfigureWidget, generalPageName);
+    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
     mOllamaConfigureWidget->setObjectName(u"mOllamaConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
 
     const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
     auto configureModelWidgetPage = new KPageWidgetItem(mOllamaModelWidget, modelAvailablePageName);
+    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
     mOllamaModelWidget->setObjectName(u"mOllamaModelWidget"_s);
     addPage(configureModelWidgetPage);
 
     const QString modelInstalledPageName = i18nc("@title Preferences page name", "Installed Models");
     auto configureModelInstalledWidgetPage = new KPageWidgetItem(mOllamaModelInstalledWidget, modelInstalledPageName);
+    configureModelInstalledWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-installed-models"_s));
     mOllamaModelInstalledWidget->setObjectName(u"mOllamaModelInstalledWidget"_s);
     addPage(configureModelInstalledWidgetPage);
 
     const QString modelCreatePageName = i18nc("@title Preferences page name", "Create Models");
     auto configureModelCreateWidgetPage = new KPageWidgetItem(mOllamaModelCreateWidget, modelCreatePageName);
+    configureModelCreateWidgetPage->setIcon(QIcon::fromTheme(u"://a>ollama-created-model"_s));
+
     mOllamaModelCreateWidget->setObjectName(u"mOllamaModelCreateWidget"_s);
     addPage(configureModelCreateWidgetPage);
 

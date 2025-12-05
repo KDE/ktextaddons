@@ -1,0 +1,12 @@
+<!--
+    SPDX-FileCopyrightText: Laurent Montel <montel@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
+<RCC>
+    <qresource prefix="/">
+        <file alias="ollama-available-models">ollama-available-models.svg</file>
+        <file alias="a>ollama-created-model">ollama-created-model.svg</file>
+        <file alias="ollama-general-model">ollama-general-model.svg</file>
+        <file alias="ollama-installed-models">ollama-installed-models.svg</file>
+    </qresource>
+</RCC>
