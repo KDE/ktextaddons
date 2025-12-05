@@ -8,9 +8,10 @@
 
 #include "textgrammarcheck_export.h"
 #include <QColor>
-class QDebug;
-#include <QJsonObject>
+#include <QMetaType>
 #include <QString>
+class QDebug;
+class QJsonObject;
 namespace TextGrammarCheck
 {
 class TEXTGRAMMARCHECK_EXPORT GrammarError

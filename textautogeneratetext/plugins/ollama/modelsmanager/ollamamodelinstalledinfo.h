@@ -5,11 +5,10 @@
 */
 #pragma once
 #include "textautogenerateollama_private_export.h"
-class QDebug;
-#include <QJsonObject>
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
-
+class QDebug;
+class QJsonObject;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledInfo
 {
 public:

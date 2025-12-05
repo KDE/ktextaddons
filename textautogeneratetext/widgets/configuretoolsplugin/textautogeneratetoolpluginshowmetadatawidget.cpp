@@ -9,8 +9,10 @@
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QTextEdit>
 #include <QVBoxLayout>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateToolPluginShowMetaDataWidget::TextAutoGenerateToolPluginShowMetaDataWidget(QWidget *parent)

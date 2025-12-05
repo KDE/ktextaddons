@@ -5,7 +5,6 @@
 */
 
 #include "languagetoolresultwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "common/grammarresulttextedit.h"
 #include "languagetoolcombobox.h"
@@ -19,7 +18,10 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QHBoxLayout>
 #include <QJsonDocument>
+#include <QJsonObject>
+
 #include <QToolButton>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolResultWidget::LanguageToolResultWidget(QWidget *parent)
     : GrammarResultWidget(parent)

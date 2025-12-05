@@ -7,14 +7,14 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KConfigGroup>
-class QDebug;
 #include <QJsonArray>
-#include <QJsonObject>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 #include <memory>
+class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPluginPrivate;

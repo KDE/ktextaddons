@@ -6,9 +6,9 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <KSyntaxHighlighting/Repository>
-#include <QJsonObject>
 #include <QWidget>
 class QTextEdit;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolPluginShowMetaDataWidget : public QWidget

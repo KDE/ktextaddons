@@ -17,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QPushButton>
 #include <QStandardPaths>

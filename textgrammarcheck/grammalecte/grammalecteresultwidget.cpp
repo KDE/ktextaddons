@@ -12,6 +12,8 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QJsonDocument>
+#include <QJsonObject>
+
 using namespace TextGrammarCheck;
 GrammalecteResultWidget::GrammalecteResultWidget(QWidget *parent)
     : GrammarResultWidget(parent)

@@ -5,7 +5,6 @@
 */
 
 #include "grammalectewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalecte/grammalecteconfigdialog.h"
 #include "grammalecte/grammalecteresultjob.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "grammalecte/grammalecteresultwidget.h"
 #include <QDebug>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QPointer>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -22,6 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextEdit>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 GrammalecteWidget::GrammalecteWidget(QWidget *parent)
     : QWidget(parent)
     , mResultWidget(new TextGrammarCheck::GrammalecteResultWidget(this))

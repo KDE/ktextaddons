@@ -7,6 +7,7 @@
 #include "languagetoolgrammarerrortest.h"
 #include "languagetool/languagetoolgrammarerror.h"
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(LanguageToolGrammarErrorTest)
 using namespace Qt::Literals::StringLiterals;

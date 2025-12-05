@@ -4,7 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfo.h"
+#include <QJsonObject>
 #include <QLocale>
+
 using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledInfo::OllamaModelInstalledInfo() = default;
 

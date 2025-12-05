@@ -9,6 +9,7 @@
 #include "grammalectegrammarerror.h"
 #include "textgrammarcheck_debug.h"
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QJsonValue>
 
 using namespace TextGrammarCheck;

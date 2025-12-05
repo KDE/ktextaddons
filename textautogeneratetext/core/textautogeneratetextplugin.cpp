@@ -14,6 +14,7 @@
 #include <KLocalizedString>
 
 #include <QDateTime>
+#include <QJsonObject>
 #include <QUuid>
 
 using namespace TextAutoGenerateText;

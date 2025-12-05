@@ -7,9 +7,9 @@
 #pragma once
 
 #include "textgrammarcheckprivate_export.h"
-#include <QJsonObject>
 #include <QVector>
 #include <TextGrammarCheck/GrammarError>
+class QJsonObject;
 namespace TextGrammarCheck
 {
 class TEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteParser

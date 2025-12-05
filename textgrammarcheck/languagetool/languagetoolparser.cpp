@@ -9,6 +9,7 @@
 #include "languagetoolgrammarerror.h"
 
 #include <QJsonArray>
+#include <QJsonObject>
 
 using namespace TextGrammarCheck;
 using namespace Qt::Literals::StringLiterals;

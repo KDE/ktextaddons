@@ -5,10 +5,11 @@
 */
 #pragma once
 #include "textautogenerategenericnetwork_export.h"
-class QDebug;
-#include <QJsonObject>
+#include <QObject>
 #include <QString>
 
+class QDebug;
+class QJsonObject;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkModelAvailableInfo
 {
     Q_GADGET

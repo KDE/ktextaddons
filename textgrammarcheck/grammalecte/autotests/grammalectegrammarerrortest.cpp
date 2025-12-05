@@ -7,6 +7,7 @@
 #include "grammalectegrammarerrortest.h"
 #include "grammalecte/grammalectegrammarerror.h"
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(GrammalecteGrammarErrorTest)

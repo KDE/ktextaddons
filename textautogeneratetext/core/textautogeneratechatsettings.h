@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-class QDebug;
-#include <QJsonObject>
 #include <QMap>
 #include <QString>
+class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;

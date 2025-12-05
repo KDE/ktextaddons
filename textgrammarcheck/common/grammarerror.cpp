@@ -5,6 +5,7 @@
 */
 
 #include "grammarerror.h"
+#include <QJsonObject>
 
 using namespace TextGrammarCheck;
 GrammarError::GrammarError() = default;

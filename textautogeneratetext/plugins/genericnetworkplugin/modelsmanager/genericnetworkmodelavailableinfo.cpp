@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmodelavailableinfo.h"
+#include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkModelAvailableInfo::GenericNetworkModelAvailableInfo() = default;
 

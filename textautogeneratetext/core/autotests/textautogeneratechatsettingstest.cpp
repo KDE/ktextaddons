@@ -5,7 +5,9 @@
 */
 #include "textautogeneratechatsettingstest.h"
 #include "core/textautogeneratechatsettings.h"
+#include <QJsonObject>
 #include <QTest>
+
 using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateChatSettingsTest)
 TextAutoGenerateChatSettingsTest::TextAutoGenerateChatSettingsTest(QObject *parent)

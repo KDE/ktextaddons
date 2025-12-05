@@ -7,6 +7,7 @@
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/textautogeneratemanager.h"
 #include <QJsonArray>
+#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

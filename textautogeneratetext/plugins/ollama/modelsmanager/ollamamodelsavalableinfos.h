@@ -6,8 +6,7 @@
 #pragma once
 #include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
-#include <QJsonObject>
-
+class QJsonObject;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelsAvalableInfos
 {
 public:
