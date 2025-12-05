@@ -145,6 +145,8 @@ add_feature_info(
     "Build plugin for Qt Designer"
 )
 
+option(ENABLE_PCH "Enable Precompiled Headers support" ON)
+
 find_package(Qt6Keychain ${QT6KEYCHAIN_LIB_VERSION} CONFIG)
 set_package_properties(
     Qt6Keychain

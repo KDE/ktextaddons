@@ -100,6 +100,18 @@ target_sources(
         icons/ollamamodelicons.qrc
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        textautogenerateollama
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QJsonObject>
+            <QString>
+    )
+endif()
+
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
         textautogenerateollama

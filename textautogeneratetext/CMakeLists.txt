@@ -44,6 +44,20 @@ configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/conf
 add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
+
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextAutoGenerateText
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QJsonObject>
+            <QStringList>
+            <QString>
+    )
+endif()
+
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
     IDENTIFIER TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG
     CATEGORY_NAME org.kde.kf.textautogeneratetext.database
