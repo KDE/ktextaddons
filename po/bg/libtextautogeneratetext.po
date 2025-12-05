@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-04 00:42+0000\n"
-"PO-Revision-Date: 2025-11-28 20:05+0100\n"
+"PO-Revision-Date: 2025-12-04 18:30+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -53,26 +53,14 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr ""
-"Енджин: %1\n"
-"Модел: %2\n"
-"Име на екземпляр: %3"
+msgstr "<b>Енджин:</b> %1<br><b>Модел:</b> %2<br><b>Име на екземпляр:</b> %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"Инструменти: %1"
+msgstr "<br><b>Инструменти:</b> %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -312,17 +300,14 @@ msgid "Add Model"
 msgstr "Добавяне на модел"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
+#, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "Моля, въведете името на модела като \"име:етикет\""
+msgstr "Името на модела трябва да бъде във формат „име:етикет“"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgid "Invalid Model Name"
-msgstr "Инсталирани модели"
+msgstr "Неправилно име на модел"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -396,14 +381,12 @@ msgstr "Отказ"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr ""
+msgstr "Изтеглянето на модела докладва грешка: %1"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgid "Download Model Error"
-msgstr "Изтегляне на модел"
+msgstr "Грешка при изтегляне на модел"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format
@@ -2205,13 +2188,13 @@ msgstr "Разрешаване на избиране на инструменти
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Невъзможно е да се отвори %1"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Грешка при отваряне на файла"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format

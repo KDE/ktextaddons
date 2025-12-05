@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-04 00:42+0000\n"
-"PO-Revision-Date: 2025-11-29 10:31+0100\n"
+"PO-Revision-Date: 2025-12-03 10:06+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.11.80\n"
+"X-Generator: Lokalize 25.11.90\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -50,26 +50,16 @@ msgid "Unknown"
 msgstr "Inconnu "
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
 msgstr ""
-"Moteur : %1\n"
-"Modèle : %2\n"
-"Nom de l'instance : %3"
+"<b>Moteur : </b> %1<br><b>Modèle : </b> %2<br><b>Nom de l'instance : </b> "
+"%3<br>"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"Outils : %1"
+msgstr "<br><b>Outils : </b> %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
