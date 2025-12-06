@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-06 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -119,27 +119,27 @@ msgstr ""
 "Grammalecte 可以<a href=\"https://grammalecte.net/#download\">在此下载</a>。"
 "请在下载后解压缩。"
 
-#: grammalecte/grammalecteresultwidget.cpp:54
+#: grammalecte/grammalecteresultwidget.cpp:56
 #, kde-format
 msgid "Python path is missing."
 msgstr "缺少 Python 路径。"
 
-#: grammalecte/grammalecteresultwidget.cpp:58
+#: grammalecte/grammalecteresultwidget.cpp:60
 #, kde-format
 msgid "Grammalecte path not found."
 msgstr "找不到 Grammalecte 路径。"
 
-#: grammalecte/grammalecteresultwidget.cpp:65
+#: grammalecte/grammalecteresultwidget.cpp:67
 #, kde-format
 msgid "Grammalecte program file not found."
 msgstr "找不到 Grammalecte 程序文件。"
 
-#: grammalecte/grammalecteresultwidget.cpp:69
+#: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
 msgstr "找不到 Grammalecte 的命令行程序文件。"
 
-#: grammalecte/grammalecteresultwidget.cpp:73
+#: grammalecte/grammalecteresultwidget.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
@@ -330,18 +330,18 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "刷新"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgid "An error was reported: %1"
 msgstr "程序报告了一个错误：%1"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "检查语法失败。"
 
-#: languagetool/languagetoolresultwidget.cpp:78
+#: languagetool/languagetoolresultwidget.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"

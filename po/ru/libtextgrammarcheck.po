@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-06 00:41+0000\n"
 "PO-Revision-Date: 2023-11-10 15:51+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -127,27 +127,27 @@ msgid ""
 "a>. Download it and extract it."
 msgstr ""
 
-#: grammalecte/grammalecteresultwidget.cpp:54
+#: grammalecte/grammalecteresultwidget.cpp:56
 #, kde-format
 msgid "Python path is missing."
 msgstr "Отсутствует путь к Python."
 
-#: grammalecte/grammalecteresultwidget.cpp:58
+#: grammalecte/grammalecteresultwidget.cpp:60
 #, kde-format
 msgid "Grammalecte path not found."
 msgstr "Не найден путь к Grammalecte."
 
-#: grammalecte/grammalecteresultwidget.cpp:65
+#: grammalecte/grammalecteresultwidget.cpp:67
 #, kde-format
 msgid "Grammalecte program file not found."
 msgstr "Не найден файл программы Grammalecte."
 
-#: grammalecte/grammalecteresultwidget.cpp:69
+#: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
 msgstr "Не найдена комндная строка для Grammalecte."
 
-#: grammalecte/grammalecteresultwidget.cpp:73
+#: grammalecte/grammalecteresultwidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Grammalecte error"
 msgctxt "@title:window"
@@ -343,19 +343,19 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Обновить"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgid "An error was reported: %1"
 msgstr "Сообщение об ошибке: %1"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "Failed to check grammar."
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Не удалось проверить грамматику."
 
-#: languagetool/languagetoolresultwidget.cpp:78
+#: languagetool/languagetoolresultwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Check"
 msgctxt "@info:tooltip"

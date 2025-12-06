@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-06 00:41+0000\n"
 "PO-Revision-Date: 2024-08-03 11:50+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -119,27 +119,27 @@ msgstr ""
 "Grammalecte można znaleźć <a href=\"https://grammalecte.net/#download"
 "\">tutaj</a>. Pobierz i wypakuj go."
 
-#: grammalecte/grammalecteresultwidget.cpp:54
+#: grammalecte/grammalecteresultwidget.cpp:56
 #, kde-format
 msgid "Python path is missing."
 msgstr "Brakuje ścieżki do Pythona."
 
-#: grammalecte/grammalecteresultwidget.cpp:58
+#: grammalecte/grammalecteresultwidget.cpp:60
 #, kde-format
 msgid "Grammalecte path not found."
 msgstr "Nie znaleziono ścieżki do Grammalecte."
 
-#: grammalecte/grammalecteresultwidget.cpp:65
+#: grammalecte/grammalecteresultwidget.cpp:67
 #, kde-format
 msgid "Grammalecte program file not found."
 msgstr "Nie znaleziono pliku programu Grammalecte."
 
-#: grammalecte/grammalecteresultwidget.cpp:69
+#: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
 msgstr "Nie znaleziono pliku cli Grammalecte."
 
-#: grammalecte/grammalecteresultwidget.cpp:73
+#: grammalecte/grammalecteresultwidget.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
@@ -330,18 +330,18 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Odśwież"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgid "An error was reported: %1"
 msgstr "Zgłoszono błąd: %1"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Nie udało się sprawdzić gramatyki."
 
-#: languagetool/languagetoolresultwidget.cpp:78
+#: languagetool/languagetoolresultwidget.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"

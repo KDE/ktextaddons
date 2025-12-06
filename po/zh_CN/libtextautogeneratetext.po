@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-06 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -55,12 +55,12 @@ msgstr "未知"
 #: core/models/textautogeneratemessagesmodel.cpp:83
 #, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr ""
+msgstr "<b>引擎：</b> %1<br><b>模型：</b> %2<br><b>实例名称：</b> %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
 #, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
+msgstr "<br><b>工具：</b> %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -131,12 +131,12 @@ msgstr ""
 "您是一位人工智能助手。您正在与一位名叫 %1 的人交谈。请提供帮助，保持专业和礼"
 "貌。不要提供不准确的信息。"
 
-#: core/textautogeneratetextplugin.cpp:276
+#: core/textautogeneratetextplugin.cpp:277
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: core/textautogeneratetextplugin.cpp:278
+#: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Network"
 msgstr "网络"
@@ -189,7 +189,7 @@ msgid "General"
 msgstr "常规"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:52
+#: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -300,17 +300,14 @@ msgid "Add Model"
 msgstr "添加模型"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
+#, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "请输入模型名称，格式为“name:tag”"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgid "Invalid Model Name"
-msgstr "已安装的模型"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -387,11 +384,9 @@ msgid "Download model reported an error: %1"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgid "Download Model Error"
-msgstr "下载模型"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format
@@ -1913,13 +1908,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "配置 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:57
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "已安装的模型"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:62
+#: plugins/ollama/ollamaconfiguredialog.cpp:65
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -2071,13 +2066,13 @@ msgstr "允许选择工具"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "无法打开 %1"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "打开文件时出错"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format

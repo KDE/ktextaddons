@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
-"PO-Revision-Date: 2025-12-03 10:06+0100\n"
+"POT-Creation-Date: 2025-12-06 00:41+0000\n"
+"PO-Revision-Date: 2025-12-04 16:11+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -130,12 +130,12 @@ msgstr ""
 "Vous êtes un assistant IA. Vous parlez à une personne nommée %1. Soyez "
 "serviable, professionnel et courtois. Ne donnez aucune information inexacte."
 
-#: core/textautogeneratetextplugin.cpp:276
+#: core/textautogeneratetextplugin.cpp:277
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:278
+#: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Network"
 msgstr "Réseau"
@@ -188,7 +188,7 @@ msgid "General"
 msgstr "Général"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:52
+#: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -2070,13 +2070,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurer Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:57
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Modèles installés"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:62
+#: plugins/ollama/ollamaconfiguredialog.cpp:65
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -2233,13 +2233,13 @@ msgstr "Autoriser la sélection d'outils"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Impossible d'ouvrir %1"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Erreur lors de l'ouverture du fichier"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextgrammarcheck\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-06 00:41+0000\n"
 "PO-Revision-Date: 2023-03-12 16:25+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -125,27 +125,27 @@ msgid ""
 "a>. Download it and extract it."
 msgstr ""
 
-#: grammalecte/grammalecteresultwidget.cpp:54
+#: grammalecte/grammalecteresultwidget.cpp:56
 #, kde-format
 msgid "Python path is missing."
 msgstr "Der Python-Pfad fehlt."
 
-#: grammalecte/grammalecteresultwidget.cpp:58
+#: grammalecte/grammalecteresultwidget.cpp:60
 #, kde-format
 msgid "Grammalecte path not found."
 msgstr "Der Grammalecte-Pfad wurde nicht gefunden."
 
-#: grammalecte/grammalecteresultwidget.cpp:65
+#: grammalecte/grammalecteresultwidget.cpp:67
 #, kde-format
 msgid "Grammalecte program file not found."
 msgstr "Die Grammalecte-Programmdatei wurde nicht gefunden."
 
-#: grammalecte/grammalecteresultwidget.cpp:69
+#: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
 msgstr "Die Datei Grammalecte cli wurde nicht gefunden."
 
-#: grammalecte/grammalecteresultwidget.cpp:73
+#: grammalecte/grammalecteresultwidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Grammalecte error"
 msgctxt "@title:window"
@@ -341,19 +341,19 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Aktualisieren"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgid "An error was reported: %1"
 msgstr "Es ist ein Fehler aufgetreten: %1"
 
-#: languagetool/languagetoolresultwidget.cpp:62
+#: languagetool/languagetoolresultwidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "Failed to check grammar."
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Die Grammatikprüfung ist fehlgeschlagen."
 
-#: languagetool/languagetoolresultwidget.cpp:78
+#: languagetool/languagetoolresultwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Check"
 msgctxt "@info:tooltip"
