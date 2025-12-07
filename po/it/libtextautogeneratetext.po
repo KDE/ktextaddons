@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:41+0000\n"
-"PO-Revision-Date: 2025-11-28 14:22+0100\n"
+"PO-Revision-Date: 2025-12-04 18:10+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -53,26 +53,14 @@ msgid "Unknown"
 msgstr "Sconosciuto"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr ""
-"Motore: %1\n"
-"Modello: %2\n"
-"Nome istanza: %3"
+msgstr "<b>Motore:</b> %1<br><b>Modello:</b> %2<br><b>Nome istanza:</b> %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"Strumenti: %1"
+msgstr "<br><b>Strumenti:</b> %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -312,17 +300,14 @@ msgid "Add Model"
 msgstr "Aggiungi modello"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
+#, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "Inserisci il nome del modello come «nome:tag»"
+msgstr "Il nome del modello deve essere «nome:tag»"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgid "Invalid Model Name"
-msgstr "Modelli installati"
+msgstr "Nome modello non valido"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -396,14 +381,12 @@ msgstr "Annulla"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr ""
+msgstr "Lo scaricamento del modello ha segnalato un errore: %1"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgid "Download Model Error"
-msgstr "Scarica modello"
+msgstr "Errore di scaricamento del modello"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format
@@ -2232,13 +2215,13 @@ msgstr "Consenti di selezionare gli strumenti"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Impossibile aprire %1"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Errore durante l'apertura del file"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
