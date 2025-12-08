@@ -24,7 +24,6 @@ TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManag
     , mTextAutoGenerateManager(manager)
 {
     setItemDelegate(new TextAutoGenerateTextInstancesManagerListViewDelegate(this));
-    mSortFilterProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     setDragEnabled(false);
     if (mTextAutoGenerateManager) {
         mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());

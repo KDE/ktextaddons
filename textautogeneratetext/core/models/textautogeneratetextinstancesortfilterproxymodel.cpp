@@ -10,6 +10,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstanceSortFilterProxyModel::TextAutoGenerateTextInstanceSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
+    setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setFilterRole(TextAutoGenerateTextInstanceModel::Name);
     sort(0);
