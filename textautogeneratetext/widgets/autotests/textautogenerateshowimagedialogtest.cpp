@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogenerateshowimagedialogtest.h"
+#include "widgets/view/images/textautogenerateshowimagedialog.h"
+#include "widgets/view/images/textautogenerateshowimagewidget.h"
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateShowImageDialogTest)
@@ -17,6 +19,7 @@ TextAutoGenerateShowImageDialogTest::TextAutoGenerateShowImageDialogTest(QObject
 void TextAutoGenerateShowImageDialogTest::shouldHaveDefaultValues()
 {
     // TODO
+    const TextAutoGenerateText::TextAutoGenerateShowImageDialog d;
 }
 
 #include "moc_textautogenerateshowimagedialogtest.cpp"

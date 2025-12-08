@@ -110,4 +110,12 @@ void TextAutoGenerateGraphicsView::setZoom(qreal zoom, QPointF centerPos)
     Q_EMIT zoomChanged(zoom);
 }
 
+void TextAutoGenerateGraphicsView::fitToView()
+{
+#if 0
+    setZoom(fitToViewZoomScale(originalImageSize(), size()));
+    centerOn(mGraphicsPixmapItem);
+#endif
+}
+
 #include "moc_textautogenerategraphicsview.cpp"

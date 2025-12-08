@@ -24,6 +24,7 @@ public:
     [[nodiscard]] qreal minimumZoom() const;
     [[nodiscard]] qreal maximumZoom() const;
 
+    void fitToView();
 Q_SIGNALS:
     void zoomChanged(qreal zoom);
     void minimumZoomChanged(qreal zoom);

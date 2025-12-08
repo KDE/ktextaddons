@@ -13,4 +13,7 @@ class TextAutoGenerateShowImageWidgetTest : public QObject
 public:
     explicit TextAutoGenerateShowImageWidgetTest(QObject *parent = nullptr);
     ~TextAutoGenerateShowImageWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
