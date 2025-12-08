@@ -79,7 +79,7 @@ public:
 
     [[nodiscard]] QByteArray chatIdFromChatName(const QString &chatName) const;
 
-    TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
+    [[nodiscard]] TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
     void setTextAutoGenerateChatSettings(TextAutoGenerateChatSettings *newTextAutoGenerateChatSettings);
 
 private:
