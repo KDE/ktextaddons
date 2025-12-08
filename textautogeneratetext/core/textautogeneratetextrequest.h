@@ -6,8 +6,8 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-class QDebug;
 #include <QJsonArray>
+class QDebug;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextRequest

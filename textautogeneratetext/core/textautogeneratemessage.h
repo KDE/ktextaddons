@@ -7,10 +7,10 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
-class QDebug;
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
 #include <TextAutoGenerateText/TextAutoGenerateAttachments>
 
+class QDebug;
 namespace TextAutoGenerateText
 {
 /**

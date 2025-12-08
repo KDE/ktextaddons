@@ -7,7 +7,7 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
-#include <QObject>
+#include <QMetaType>
 #include <QSharedData>
 
 namespace TextAutoGenerateText
