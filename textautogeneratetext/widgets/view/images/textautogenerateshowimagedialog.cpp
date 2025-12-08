@@ -13,3 +13,5 @@ TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(QWidget *parent
 }
 
 TextAutoGenerateShowImageDialog::~TextAutoGenerateShowImageDialog() = default;
+
+#include "moc_textautogenerateshowimagedialog.cpp"

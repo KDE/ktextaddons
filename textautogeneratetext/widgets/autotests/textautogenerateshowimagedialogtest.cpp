@@ -11,3 +11,5 @@ TextAutoGenerateShowImageDialogTest::TextAutoGenerateShowImageDialogTest(QObject
     : QObject{parent}
 {
 }
+
+#include "moc_textautogenerateshowimagedialogtest.cpp"
