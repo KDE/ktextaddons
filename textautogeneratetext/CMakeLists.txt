@@ -41,7 +41,11 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(KF6TextAutoGenerateText)
+add_library(
+    KF6TextAutoGenerateText
+    widgets/view/images/textautogenerategraphicsview.h
+    widgets/view/images/textautogenerategraphicsview.cpp
+)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -315,6 +319,8 @@ target_sources(
         widgets/view/lrucache.h
         widgets/view/images/textautogenerateshowimagedialog.h
         widgets/view/images/textautogenerateshowimagedialog.cpp
+        widgets/view/images/textautogenerateshowimagewidget.h
+        widgets/view/images/textautogenerateshowimagewidget.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
         widgets/menu/textautogeneratemenuconfigurewidget.cpp
