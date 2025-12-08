@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstancesmanagerlistview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/models/textautogeneratetextinstancesortfilterproxymodel.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManagerListView(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                                                                            QWidget *parent)
     : QListView(parent)

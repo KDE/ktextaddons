@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratetextinstancecombobox.h"
 #include <KLineEditEventHandler>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateAddInstanceWidget::TextAutoGenerateAddInstanceWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mInstanceComboBox(new TextAutoGenerateTextInstanceComboBox(manager, this))
