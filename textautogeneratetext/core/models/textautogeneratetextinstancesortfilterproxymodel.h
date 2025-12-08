@@ -16,7 +16,7 @@ public:
     explicit TextAutoGenerateTextInstanceSortFilterProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstanceSortFilterProxyModel() override;
 
-    QString searchText() const;
+    [[nodiscard]] QString searchText() const;
     void setSearchText(const QString &newSearchText);
 
 protected:
