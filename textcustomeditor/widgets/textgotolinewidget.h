@@ -35,7 +35,7 @@ protected:
     void showEvent(QShowEvent *e) override;
     bool eventFilter(QObject *obj, QEvent *event) override;
 
-public Q_SLOTS:
+public:
     void slotBlockCountChanged(int numberBlockCount);
 
 private:

@@ -45,7 +45,6 @@ public:
     void readConfig();
     void setStandalone(bool b);
 
-public Q_SLOTS:
     void slotTranslate();
     void slotCloseWidget();
 

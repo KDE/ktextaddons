@@ -44,7 +44,7 @@ public:
      */
     [[nodiscard]] bool customEmojiSupport() const;
 
-public Q_SLOTS:
+public:
     /**
      * Do all the magic of creating an TextEmoticonsCore::UnicodeEmoticonManager and loading the categories and emojis to the widget.
      */
