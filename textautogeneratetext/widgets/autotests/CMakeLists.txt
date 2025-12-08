@@ -1,11 +1,38 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
+set(LIB_AUTOTEST_PCH_WIDGETS)
+
+if(ENABLE_PCH)
+    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty_pch.cpp "/*empty file*/")
+    file(
+        WRITE
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratewidgets_pch.h
+        "#pragma once
+        #include <QObject>
+        #include <QTest>
+        "
+    )
+    add_library(textautogeneratewidgetspch_tests STATIC ${CMAKE_CURRENT_BINARY_DIR}/empty_pch.cpp)
+    target_precompile_headers(
+        textautogeneratewidgetspch_tests
+        PRIVATE
+            ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratewidgets_pch.h
+    )
+    target_link_libraries(
+        textautogeneratewidgetspch_tests
+        PRIVATE
+            Qt::Core
+            Qt::Test
+    )
+    set(LIB_AUTOTEST_PCH_WIDGETS textautogeneratewidgetspch_tests)
+endif()
+
 macro(add_textautogenerate_widgets_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-widget-"
-        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText KF6::TextWidgets KF6::WidgetsAddons KF6::SyntaxHighlighting KF6::TextAddonsWidgets
+        LINK_LIBRARIES ${LIB_AUTOTEST_PCH_WIDGETS} Qt::Test KF6::TextAutoGenerateText KF6::TextWidgets KF6::WidgetsAddons KF6::SyntaxHighlighting KF6::TextAddonsWidgets
     )
 endmacro()
 add_textautogenerate_widgets_unittest(textautogeneratetextlineeditwidgettest.cpp)
