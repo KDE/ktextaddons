@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateshowimagedialog.h"
+#include "textautogenerateshowimagewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -20,14 +21,15 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(QWidget *parent)
     : QDialog(parent)
+    , mShowImageWidget(new TextAutoGenerateShowImageWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Display Image"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
-#if 0
+
     mShowImageWidget->setObjectName(u"mShowImageWidget"_s);
     mainLayout->addWidget(mShowImageWidget);
-#endif
+
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Save, this);
     buttonBox->setObjectName(u"button"_s);
     readConfig();

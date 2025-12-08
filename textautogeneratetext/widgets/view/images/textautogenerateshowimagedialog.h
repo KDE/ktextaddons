@@ -8,6 +8,7 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateShowImageWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowImageDialog : public QDialog
 {
     Q_OBJECT
@@ -18,5 +19,6 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
+    TextAutoGenerateShowImageWidget *const mShowImageWidget;
 };
 }

@@ -14,4 +14,7 @@ class TextAutoGenerateShowImageDialogTest : public QObject
 public:
     explicit TextAutoGenerateShowImageDialogTest(QObject *parent = nullptr);
     ~TextAutoGenerateShowImageDialogTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
