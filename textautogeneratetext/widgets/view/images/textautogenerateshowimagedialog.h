@@ -14,5 +14,9 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowImageDialog : public
 public:
     explicit TextAutoGenerateShowImageDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateShowImageDialog() override;
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
 };
 }
