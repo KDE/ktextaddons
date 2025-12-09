@@ -321,6 +321,8 @@ target_sources(
         widgets/view/images/textautogenerateshowimagedialog.cpp
         widgets/view/images/textautogenerateshowimagewidget.h
         widgets/view/images/textautogenerateshowimagewidget.cpp
+        widgets/view/images/textautogenerategraphicspixmapitem.h
+        widgets/view/images/textautogenerategraphicspixmapitem.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
         widgets/menu/textautogeneratemenuconfigurewidget.cpp
