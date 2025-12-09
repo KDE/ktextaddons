@@ -631,6 +631,12 @@ TextAutoGenerateLocalDatabaseManager *TextAutoGenerateManager::databaseManager()
     return mDatabaseManager.get();
 }
 
+QString TextAutoGenerateManager::generateAttachmentTemporaryFile() const
+{
+    // TODO
+    return {};
+}
+
 void TextAutoGenerateManager::setDebug(bool newDebug)
 {
     mDebug = newDebug;
