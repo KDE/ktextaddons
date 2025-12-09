@@ -103,12 +103,10 @@ void TextAutoGenerateShowImageWidget::saveAs()
 
 void TextAutoGenerateShowImageWidget::copyImage()
 {
-#if 0
     auto data = new QMimeData();
     data->setImageData(mImageGraphicsView->pixmap().toImage());
     data->setData(u"x-kde-force-image-copy"_s, QByteArray());
     QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
-#endif
 }
 
 #include "moc_textautogenerateshowimagewidget.cpp"
