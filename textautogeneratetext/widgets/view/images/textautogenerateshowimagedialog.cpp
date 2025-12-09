@@ -89,6 +89,11 @@ TextAutoGenerateShowImageDialog::~TextAutoGenerateShowImageDialog()
     writeConfig();
 }
 
+void TextAutoGenerateShowImageDialog::setImage(const QString &path)
+{
+    // TODO
+}
+
 void TextAutoGenerateShowImageDialog::readConfig()
 {
     create(); // ensure a window is created
@@ -106,8 +111,8 @@ void TextAutoGenerateShowImageDialog::writeConfig()
 
 void TextAutoGenerateShowImageDialog::updateServiceList()
 {
-#if 0
     mOpenWithMenu->clear();
+#if 0
     const QString path = mRocketChatAccount->attachmentUrlFromLocalCache(mShowImageWidget->imageInfo().bigImagePath).toLocalFile();
     if (path.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "path is empty for " << mShowImageWidget->imageInfo().bigImagePath;
@@ -121,6 +126,7 @@ void TextAutoGenerateShowImageDialog::updateServiceList()
     const bool valid = mimeType.isValid() && !mimeType.isDefault();
     mServiceList = valid ? KApplicationTrader::queryByMimeType(mimeType.name()) : KService::List{};
 
+#endif
     int idx = 0;
     for (const KService::Ptr &service : std::as_const(mServiceList)) {
         const QString text = service->name().replace(u'&', u"&&"_s);
@@ -132,7 +138,6 @@ void TextAutoGenerateShowImageDialog::updateServiceList()
         }
         ++idx;
     }
-#endif
     mOpenWithMenu->addSeparator();
     QAction *action = mOpenWithMenu->addAction(QIcon::fromTheme(u"system-run"_s), i18n("Other Application..."));
     action->setData(-1);

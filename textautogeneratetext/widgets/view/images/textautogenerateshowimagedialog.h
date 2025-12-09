@@ -21,6 +21,8 @@ public:
     explicit TextAutoGenerateShowImageDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateShowImageDialog() override;
 
+    void setImage(const QString &path);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
