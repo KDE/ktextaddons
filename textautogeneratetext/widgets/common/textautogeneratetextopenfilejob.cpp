@@ -10,6 +10,11 @@
 #include <QTemporaryDir>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <memory>
+#if 0
+#include <kio/applicationlauncherjob.h>
+#include <kio/jobuidelegatefactory.h>
+#include <kjobuidelegate.h>
+#endif
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextOpenFileJob::TextAutoGenerateTextOpenFileJob(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
@@ -22,6 +27,9 @@ TextAutoGenerateTextOpenFileJob::~TextAutoGenerateTextOpenFileJob() = default;
 
 void TextAutoGenerateTextOpenFileJob::downloadFile(const QUrl &fileUrl)
 {
+    if (mManager) {
+        const QString fileName = mManager->generateAttachmentTemporaryFile();
+    }
     // TODO generate file from fileUrl
     // TODO
     deleteLater();
@@ -35,7 +43,15 @@ void TextAutoGenerateTextOpenFileJob::runApplication(const KService::Ptr &offer)
         deleteLater();
         return;
     }
-    // TODO
+    tempDir->setAutoRemove(false); // can't delete them, same problem as in messagelib ViewerPrivate::attachmentOpenWith
+
+#if 0
+    auto job = new KIO::ApplicationLauncherJob(offer); // asks the user if offer is nullptr
+    job->setUrls({localFileUrl});
+    job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mParentWidget));
+    job->start();
+#endif
     deleteLater();
 }
 
