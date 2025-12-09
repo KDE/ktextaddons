@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:41+0000\n"
+"POT-Creation-Date: 2025-12-09 00:41+0000\n"
 "PO-Revision-Date: 2025-12-04 11:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2293,36 +2293,36 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Configureu instàncies"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:56
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:55
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Afig una instància…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Marca com a predeterminada"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Edita…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Elimina la instància"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Voleu eliminar esta instància (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2540,6 +2540,35 @@ msgstr "S'ha copia el bloc de codi."
 msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "Copia de bloc de codi"
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Display Image"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:46
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Zoom:"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "100%"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Fit to View"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:100
+#, kde-format
+msgid "Save Image"
+msgstr ""
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
