@@ -9,6 +9,7 @@
 #include <QGraphicsView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateGraphicsPixmapItem;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateGraphicsView : public QGraphicsView
 {
     Q_OBJECT
@@ -25,6 +26,8 @@ public:
     [[nodiscard]] qreal maximumZoom() const;
 
     void fitToView();
+    [[nodiscard]] QPixmap pixmap() const;
+    void clearContents();
 Q_SIGNALS:
     void zoomChanged(qreal zoom);
     void minimumZoomChanged(qreal zoom);
@@ -34,9 +37,12 @@ protected:
     void wheelEvent(QWheelEvent *e) override;
 
 private:
+    [[nodiscard]] QSize originalImageSize() const;
+    TextAutoGenerateGraphicsPixmapItem *const mGraphicsPixmapItem;
     QGraphicsProxyWidget *mGraphicsProxyWidget = nullptr;
     qreal mMinimumZoom;
     qreal mMaximumZoom;
+    QSize mOriginalMovieSize;
     bool mIsUpdatingZoom = false;
 };
 }

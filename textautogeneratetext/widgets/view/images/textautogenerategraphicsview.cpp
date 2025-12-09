@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogenerategraphicsview.h"
+#include "widgets/view/images/textautogenerategraphicspixmapitem.h"
+#include <QPixmap>
 #include <QScopedValueRollback>
 #include <QWheelEvent>
 
@@ -27,6 +29,7 @@ qreal fitToViewZoomScale(QSize imageSize, QSize widgetSize)
 }
 TextAutoGenerateGraphicsView::TextAutoGenerateGraphicsView(QWidget *parent)
     : QGraphicsView(parent)
+    , mGraphicsPixmapItem(new TextAutoGenerateGraphicsPixmapItem)
     , mMinimumZoom(defaultMinimumZoomScale)
     , mMaximumZoom(defaultMaximumZoomScale)
 {
@@ -112,10 +115,27 @@ void TextAutoGenerateGraphicsView::setZoom(qreal zoom, QPointF centerPos)
 
 void TextAutoGenerateGraphicsView::fitToView()
 {
-#if 0
     setZoom(fitToViewZoomScale(originalImageSize(), size()));
     centerOn(mGraphicsPixmapItem);
-#endif
+}
+
+QPixmap TextAutoGenerateGraphicsView::pixmap() const
+{
+    return mGraphicsPixmapItem->pixmap();
+}
+
+QSize TextAutoGenerateGraphicsView::originalImageSize() const
+{
+    if (mOriginalMovieSize.isValid()) {
+        return mOriginalMovieSize;
+    }
+    return mGraphicsPixmapItem->pixmap().size();
+}
+
+void TextAutoGenerateGraphicsView::clearContents()
+{
+    mOriginalMovieSize = {};
+    mGraphicsPixmapItem->setPixmap({});
 }
 
 #include "moc_textautogenerategraphicsview.cpp"
