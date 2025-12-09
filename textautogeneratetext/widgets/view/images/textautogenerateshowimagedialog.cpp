@@ -32,7 +32,6 @@ TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(QWidget *parent
     , mClipboardMenu(new QMenu(this))
     , mOpenWithButton(new QToolButton(this))
     , mOpenWithMenu(new QMenu(this))
-
 {
     setWindowTitle(i18nc("@title:window", "Display Image"));
     auto mainLayout = new QVBoxLayout(this);
