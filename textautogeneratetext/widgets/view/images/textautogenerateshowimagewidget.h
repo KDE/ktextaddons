@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_private_export.h"
+#include <KService>
 #include <QWidget>
 class QDoubleSpinBox;
 class QSlider;
@@ -20,6 +21,9 @@ public:
 
     void copyImage();
     void saveAs();
+
+    void openWith(const KService::Ptr &service);
+    void copyLocation();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateRanges();

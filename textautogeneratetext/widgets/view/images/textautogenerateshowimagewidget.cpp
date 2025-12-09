@@ -109,4 +109,24 @@ void TextAutoGenerateShowImageWidget::copyImage()
     QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
 }
 
+void TextAutoGenerateShowImageWidget::openWith(const KService::Ptr &service)
+{
+#if 0
+    const QString imagePath = mRocketChatAccount->attachmentUrlFromLocalCache(mImageGraphicsView->imageInfo().bigImagePath).toLocalFile();
+    // If service is null, ApplicationLauncherJob will invoke the open-with dialog
+    auto job = new KIO::ApplicationLauncherJob(service);
+    job->setUrls({QUrl::fromLocalFile(imagePath)});
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->start();
+#endif
+}
+
+void TextAutoGenerateShowImageWidget::copyLocation()
+{
+#if 0
+    const QString imagePath = mRocketChatAccount->attachmentUrlFromLocalCache(mImageGraphicsView->imageInfo().bigImagePath).toLocalFile();
+    QApplication::clipboard()->setText(imagePath);
+#endif
+}
+
 #include "moc_textautogenerateshowimagewidget.cpp"

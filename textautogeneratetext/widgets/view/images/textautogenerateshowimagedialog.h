@@ -5,7 +5,11 @@
 */
 #pragma once
 #include "textautogeneratetext_private_export.h"
+#include <KService>
 #include <QDialog>
+class QMenu;
+class QToolButton;
+class QAction;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateShowImageWidget;
@@ -19,6 +23,13 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateServiceList();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotOpenWith(QAction *action);
     TextAutoGenerateShowImageWidget *const mShowImageWidget;
+    KService::List mServiceList;
+    QMenu *const mClipboardMenu;
+    QToolButton *const mOpenWithButton;
+    QMenu *const mOpenWithMenu;
+    QAction *mClipboardImageAction = nullptr;
 };
 }
