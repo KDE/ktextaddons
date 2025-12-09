@@ -22,7 +22,7 @@ TextAutoGenerateShowImageWidgetTest::TextAutoGenerateShowImageWidgetTest(QObject
 
 void TextAutoGenerateShowImageWidgetTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateText::TextAutoGenerateShowImageWidget w;
+    const TextAutoGenerateText::TextAutoGenerateShowImageWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);

@@ -17,12 +17,13 @@
 #include <TextAddonsWidgets/SaveFileUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateShowImageWidget::TextAutoGenerateShowImageWidget(QWidget *parent)
+TextAutoGenerateShowImageWidget::TextAutoGenerateShowImageWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mImageGraphicsView(new TextAutoGenerateGraphicsView(this))
     , mZoomControls(new QWidget(this))
     , mZoomSpin(new QDoubleSpinBox(this))
     , mSlider(new QSlider(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);

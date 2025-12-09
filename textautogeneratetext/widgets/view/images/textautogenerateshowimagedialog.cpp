@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateshowimagedialog.h"
+#include "core/textautogeneratemanager.h"
 #include "textautogenerateshowimagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KApplicationTrader>
@@ -20,18 +21,20 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace
 {
 const char myTextAutoGenerateShowImageDialogGroupName[] = "TextAutoGenerateShowImageDialog";
 }
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(QWidget *parent)
+TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
-    , mShowImageWidget(new TextAutoGenerateShowImageWidget(this))
+    , mShowImageWidget(new TextAutoGenerateShowImageWidget(manager, this))
     , mClipboardMenu(new QMenu(this))
     , mOpenWithButton(new QToolButton(this))
     , mOpenWithMenu(new QMenu(this))
+    , mManager(manager)
 {
     setWindowTitle(i18nc("@title:window", "Display Image"));
     auto mainLayout = new QVBoxLayout(this);
@@ -129,10 +132,10 @@ void TextAutoGenerateShowImageDialog::updateServiceList()
         }
         ++idx;
     }
+#endif
     mOpenWithMenu->addSeparator();
     QAction *action = mOpenWithMenu->addAction(QIcon::fromTheme(u"system-run"_s), i18n("Other Application..."));
     action->setData(-1);
-#endif
 }
 
 void TextAutoGenerateShowImageDialog::slotOpenWith(QAction *action)

@@ -19,7 +19,7 @@ TextAutoGenerateShowImageDialogTest::TextAutoGenerateShowImageDialogTest(QObject
 void TextAutoGenerateShowImageDialogTest::shouldHaveDefaultValues()
 {
     // TODO
-    const TextAutoGenerateText::TextAutoGenerateShowImageDialog d;
+    const TextAutoGenerateText::TextAutoGenerateShowImageDialog d(nullptr);
 }
 
 #include "moc_textautogenerateshowimagedialogtest.cpp"

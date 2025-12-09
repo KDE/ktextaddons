@@ -13,11 +13,12 @@ class QAction;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateShowImageWidget;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowImageDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateShowImageDialog(QWidget *parent = nullptr);
+    explicit TextAutoGenerateShowImageDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateShowImageDialog() override;
 
 private:
@@ -31,5 +32,6 @@ private:
     QToolButton *const mOpenWithButton;
     QMenu *const mOpenWithMenu;
     QAction *mClipboardImageAction = nullptr;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

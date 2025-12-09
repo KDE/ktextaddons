@@ -12,11 +12,12 @@ class QSlider;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateGraphicsView;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowImageWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateShowImageWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateShowImageWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateShowImageWidget() override;
 
     void copyImage();
@@ -31,5 +32,6 @@ private:
     QWidget *const mZoomControls;
     QDoubleSpinBox *const mZoomSpin;
     QSlider *const mSlider;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
