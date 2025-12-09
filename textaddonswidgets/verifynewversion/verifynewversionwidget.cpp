@@ -40,7 +40,17 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
                                              [[maybe_unused]] bool stable)
 {
 #if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
+    const VerifyNewVersionWidget::VerifyNewVersionInfo info = generateVerifyNewVersionInfo(stableBranchVersion, url, stable);
+    addOsUrlInfo(info.osVersion, info.generatedUrl);
+#endif
+}
 
+VerifyNewVersionWidget::VerifyNewVersionInfo VerifyNewVersionWidget::generateVerifyNewVersionInfo([[maybe_unused]] const QString &stableBranchVersion,
+                                                                                                  [[maybe_unused]] const QString &url,
+                                                                                                  [[maybe_unused]] bool stable) const
+{
+    VerifyNewVersionWidget::VerifyNewVersionInfo info;
+#if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
     const QString defaultUrlPath = url;
     const QString stableBranch = stableBranchVersion;
     QString osName;
@@ -68,8 +78,10 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
     } else {
         generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
     }
-    addOsUrlInfo(osVersion, generatedUrl);
+    info.generatedUrl = generatedUrl;
+    info.osVersion = OsVersion;
 #endif
+    return info;
 }
 
 void VerifyNewVersionWidget::addOsUrlInfo(OsVersion os, const QString &url)

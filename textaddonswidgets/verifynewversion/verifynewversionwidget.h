@@ -21,6 +21,10 @@ public:
         MacOsArm64,
         MacOs,
     };
+    struct TEXTADDONSWIDGETS_EXPORT VerifyNewVersionInfo {
+        TextAddonsWidgets::VerifyNewVersionWidget::OsVersion osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::Unknown;
+        QString generatedUrl;
+    };
 
     explicit VerifyNewVersionWidget(QObject *parent = nullptr);
     ~VerifyNewVersionWidget() override;
@@ -30,6 +34,8 @@ public:
     [[nodiscard]] QAction *verifyNewVersionAction();
 
     void generateUrlInfo(const QString &stableBranchVersion, const QString &url, bool stable);
+
+    [[nodiscard]] VerifyNewVersionInfo generateVerifyNewVersionInfo(const QString &stableBranchVersion, const QString &url, bool stable) const;
 
     [[deprecated("use generateUrlInfo")]] void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
 
