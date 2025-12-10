@@ -56,6 +56,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
     d.space() << "content:" << t.content;
     d.space() << "attachmentType:" << t.attachmentType;
     d.space() << "name:" << t.name;
+    d.space() << "attachmentId:" << t.attachmentId;
     return d;
 }
 
@@ -72,6 +73,7 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
     info.mimeType = mimeType.name().toLatin1();
     info.attachmentType = generateAttachmentType(info.mimeType);
     info.name = fileInfo.fileName();
+    info.attachmentId = QUuid::createUuid().toByteArray(QUuid::Id128);
     const QByteArray ba = extractContentFromFile(fileName);
     if (info.attachmentType == TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image) {
         // Convert to png ?
@@ -111,6 +113,7 @@ TextAutoGenerateAttachment TextAutoGenerateAttachmentUtils::generateAttachmentFr
     att.setMimeType(info.mimeType);
     att.setName(info.name);
     att.setContent(info.content);
+    att.setAttachmentId(info.attachmentId);
     return att;
 }
 

@@ -54,10 +54,14 @@ public:
     [[nodiscard]] bool showAttachment() const;
     void setShowAttachment(bool newShowAttachment);
 
+    [[nodiscard]] QByteArray attachmentId() const;
+    void setAttachmentId(const QByteArray &newAttachmentId);
+
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
     QByteArray mContent;
     QByteArray mMimeType;
+    QByteArray mAttachmentId;
     QString mName;
     bool mShowAttachment = true;
 };

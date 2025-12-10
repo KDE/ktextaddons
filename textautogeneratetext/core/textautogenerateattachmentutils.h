@@ -13,6 +13,7 @@ class TextAutoGenerateAttachments;
 namespace TextAutoGenerateAttachmentUtils
 {
 struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
+    QByteArray attachmentId;
     QByteArray mimeType;
     QByteArray content;
     QString name;
