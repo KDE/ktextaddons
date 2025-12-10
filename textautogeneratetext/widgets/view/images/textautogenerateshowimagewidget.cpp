@@ -124,10 +124,9 @@ void TextAutoGenerateShowImageWidget::openWith(const KService::Ptr &service)
 
 void TextAutoGenerateShowImageWidget::copyLocation()
 {
-#if 0
-    const QString imagePath = mRocketChatAccount->attachmentUrlFromLocalCache(mImageGraphicsView->imageInfo().bigImagePath).toLocalFile();
+    // TODO
+    const QString imagePath = mManager->generateAttachmentTemporaryFile();
     QApplication::clipboard()->setText(imagePath);
-#endif
 }
 
 #include "moc_textautogenerateshowimagewidget.cpp"
