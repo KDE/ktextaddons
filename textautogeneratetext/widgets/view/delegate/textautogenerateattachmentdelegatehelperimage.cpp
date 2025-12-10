@@ -98,6 +98,7 @@ bool TextAutoGenerateAttachmentDelegateHelperImage::handleMouseEvent(const TextA
     case QEvent::MouseButtonRelease: {
         const QPoint pos = mouseEvent->pos();
         const ImageLayout layout = layoutImage(msgAttach, option, attachmentsRect.width(), attachmentsRect.height());
+        // TODO implement it
         break;
     }
     default:
