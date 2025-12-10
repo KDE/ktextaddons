@@ -4,7 +4,11 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogenerateshowimagewidget.h"
+#include "core/textautogeneratemanager.h"
 #include "widgets/view/images/textautogenerategraphicsview.h"
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegate>
+#include <KIO/JobUiDelegateFactory>
 #include <KLocalizedString>
 #include <QApplication>
 #include <QClipboard>
@@ -95,11 +99,8 @@ void TextAutoGenerateShowImageWidget::updateRanges()
 
 void TextAutoGenerateShowImageWidget::saveAs()
 {
-#if 0
-    TextAddonsWidgets::SaveFileUtils::saveFile(this,
-                                               mRocketChatAccount->attachmentUrlFromLocalCache(mImageGraphicsView->imageInfo().bigImagePath).toLocalFile(),
-                                               i18n("Save Image"));
-#endif
+    // TODO verify it
+    TextAddonsWidgets::SaveFileUtils::saveFile(this, mManager->generateAttachmentTemporaryFile(), i18n("Save Image"));
 }
 
 void TextAutoGenerateShowImageWidget::copyImage()
@@ -112,14 +113,13 @@ void TextAutoGenerateShowImageWidget::copyImage()
 
 void TextAutoGenerateShowImageWidget::openWith(const KService::Ptr &service)
 {
-#if 0
-    const QString imagePath = mRocketChatAccount->attachmentUrlFromLocalCache(mImageGraphicsView->imageInfo().bigImagePath).toLocalFile();
+    // TODO
+    const QString imagePath = mManager->generateAttachmentTemporaryFile();
     // If service is null, ApplicationLauncherJob will invoke the open-with dialog
     auto job = new KIO::ApplicationLauncherJob(service);
     job->setUrls({QUrl::fromLocalFile(imagePath)});
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
     job->start();
-#endif
 }
 
 void TextAutoGenerateShowImageWidget::copyLocation()

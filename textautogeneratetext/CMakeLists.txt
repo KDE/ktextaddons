@@ -425,6 +425,7 @@ target_link_libraries(
         KF6::TextUtils
         KF6::TextAddonsWidgets
         KF6::TextCustomEditor
+        KF6::KIOWidgets
 )
 
 if(TARGET Qt6::TextToSpeech)
