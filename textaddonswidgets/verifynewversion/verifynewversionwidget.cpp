@@ -79,7 +79,7 @@ VerifyNewVersionWidget::VerifyNewVersionInfo VerifyNewVersionWidget::generateVer
         generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
     }
     info.generatedUrl = generatedUrl;
-    info.osVersion = OsVersion;
+    info.osVersion = osVersion;
 #endif
     return info;
 }
