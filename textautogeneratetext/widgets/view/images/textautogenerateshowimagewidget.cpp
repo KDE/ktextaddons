@@ -89,6 +89,11 @@ TextAutoGenerateShowImageWidget::TextAutoGenerateShowImageWidget(TextAutoGenerat
 
 TextAutoGenerateShowImageWidget::~TextAutoGenerateShowImageWidget() = default;
 
+void TextAutoGenerateShowImageWidget::setImage(const QString &path)
+{
+    // TODO
+}
+
 void TextAutoGenerateShowImageWidget::updateRanges()
 {
     const auto min = mImageGraphicsView->minimumZoom();
@@ -127,6 +132,11 @@ void TextAutoGenerateShowImageWidget::copyLocation()
     // TODO
     const QString imagePath = mManager->generateAttachmentTemporaryFile();
     QApplication::clipboard()->setText(imagePath);
+}
+
+void TextAutoGenerateShowImageWidget::setImageInfo(const ImageInfo &info)
+{
+    // TODO
 }
 
 #include "moc_textautogenerateshowimagewidget.cpp"

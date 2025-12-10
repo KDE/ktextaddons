@@ -17,6 +17,10 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowImageWidget : public
 {
     Q_OBJECT
 public:
+    struct ImageInfo {
+        QPixmap pixmap;
+    };
+
     explicit TextAutoGenerateShowImageWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateShowImageWidget() override;
 
@@ -25,6 +29,10 @@ public:
 
     void openWith(const KService::Ptr &service);
     void copyLocation();
+
+    void setImageInfo(const TextAutoGenerateShowImageWidget::ImageInfo &info);
+
+    void setImage(const QString &path);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateRanges();

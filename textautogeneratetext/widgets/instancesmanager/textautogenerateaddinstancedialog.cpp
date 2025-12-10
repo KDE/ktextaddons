@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogenerateaddinstancewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateAddInstanceDialog::TextAutoGenerateAddInstanceDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)

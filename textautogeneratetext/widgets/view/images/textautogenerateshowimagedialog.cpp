@@ -91,6 +91,7 @@ TextAutoGenerateShowImageDialog::~TextAutoGenerateShowImageDialog()
 
 void TextAutoGenerateShowImageDialog::setImage(const QString &path)
 {
+    mShowImageWidget->setImage(path);
     // TODO
 }
 
