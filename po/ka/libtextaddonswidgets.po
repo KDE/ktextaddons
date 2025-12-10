@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-11-30 03:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -192,10 +192,13 @@ msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "აღმოჩენილია ახალი ვერსია. მის გადმოსაწერად დააწკაპუნეთ <a href=\"%1\">აქ</a>."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "ახალი ვერსია აღმოჩენილი არაა."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr ""
+"აღმოჩენილია ახალი ვერსია. მის გადმოსაწერად დააწკაპუნეთ <a href=\"%1\">აქ</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -248,6 +251,9 @@ msgstr "ამ რელიზის ზოგიერთი ახალი �
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "გამოსწორდა ზოგიერთი შეცდომა:"
+
+#~ msgid "No new version found."
+#~ msgstr "ახალი ვერსია აღმოჩენილი არაა."
 
 #~ msgid "Impossible to open %1"
 #~ msgstr "%1-ის გახსნა შეუძლებელია"

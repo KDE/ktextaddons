@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-10-27 10:40+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -196,10 +196,12 @@ msgstr "Проверка наличия новой версии"
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "Найдена новая версия. Нажмите <a href=\"%1\">сюда</a> для её загрузки."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "Новая версия не найдена."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr "Найдена новая версия. Нажмите <a href=\"%1\">сюда</a> для её загрузки."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -252,3 +254,6 @@ msgstr "Некоторые из новых возможностей в этой 
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Исправление некоторых ошибок:"
+
+#~ msgid "No new version found."
+#~ msgstr "Новая версия не найдена."

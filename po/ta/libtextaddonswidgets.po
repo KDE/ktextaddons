@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-11-30 11:01+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -195,10 +195,13 @@ msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "புதிய பதிப்பு உள்ளது. அதைப் பதிவிறக்க <a href=\"%1\">இங்கு</a> கிளிக் செய்யவும்."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "எந்த புதிய பதிப்பும் இல்லை."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr ""
+"புதிய பதிப்பு உள்ளது. அதைப் பதிவிறக்க <a href=\"%1\">இங்கு</a> கிளிக் செய்யவும்."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -251,6 +254,9 @@ msgstr "இப்பதிப்பின் சில புதிய அம்
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "திருத்தப்பட்ட சில பிழைகள்:"
+
+#~ msgid "No new version found."
+#~ msgstr "எந்த புதிய பதிப்பும் இல்லை."
 
 #~ msgid "Impossible to open %1"
 #~ msgstr "%1 தனைத் திறக்க முடியவில்லை"

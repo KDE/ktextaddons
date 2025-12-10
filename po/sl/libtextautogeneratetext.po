@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:41+0000\n"
-"PO-Revision-Date: 2025-12-04 06:52+0100\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"PO-Revision-Date: 2025-12-09 06:49+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2183,12 +2183,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "Dovoli izbiro orodij"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "Ni mogoče odpreti %1"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
@@ -2516,34 +2516,49 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "Kopiraj blok kode"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:26
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
+msgstr "Prikaži sliko"
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:59
+#, kde-format
+msgid "Copy Image to Clipboard"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:46
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:61
+#, kde-format
+msgid "Copy Location to Clipboard"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:142
+#, kde-format
+msgid "Other Application..."
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr ""
+msgstr "Povečava:"
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:63
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:70
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr ""
+msgstr "Prilagodi pogledu"
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:100
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:101
 #, kde-format
 msgid "Save Image"
-msgstr ""
+msgstr "Shrani sliko"
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format

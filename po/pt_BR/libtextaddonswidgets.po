@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-11-30 06:09-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -193,10 +193,13 @@ msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "Uma nova versão encontrada. Clique <a href=\"%1\">aqui</a> para baixá-la."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "Nenhum nova versão encontrada."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr ""
+"Uma nova versão encontrada. Clique <a href=\"%1\">aqui</a> para baixá-la."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -249,6 +252,9 @@ msgstr "Algumas novas funcionalidades desta versão incluem:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Algumas correções de erro:"
+
+#~ msgid "No new version found."
+#~ msgstr "Nenhum nova versão encontrada."
 
 #~ msgid "Impossible to open %1"
 #~ msgstr "Impossível abrir %1"

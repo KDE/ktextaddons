@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2023-06-05 11:18+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -21,43 +21,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "Otevřít přílohu?"
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "Otevřít přílohu <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "&Otevřít pomocí '%1'"
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "Ote&vřít pomocí…"
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "Uložit j&ako…"
 
 #: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Uložit soubor"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
@@ -85,18 +85,18 @@ msgstr ""
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "Pro provedení změn je potřeba restartovat."
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr ""
+msgstr "Nastavit"
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
@@ -190,9 +190,9 @@ msgstr ""
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 
-#: verifynewversion/checknewversionwidget.cpp:58
+#: verifynewversion/checknewversionwidget.cpp:53
 #, kde-format
-msgid "No new version found."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
 
 #: verifynewversion/verifynewversionwidget.cpp:32

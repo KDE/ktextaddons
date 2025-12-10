@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:41+0000\n"
-"PO-Revision-Date: 2025-12-04 11:26+0100\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"PO-Revision-Date: 2025-12-09 11:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2213,12 +2213,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "Permitir la selección de herramientas"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "No se ha podido abrir %1"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
@@ -2546,34 +2546,49 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "Copiar código de bloque"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:26
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
+msgstr "Mostrar imagen"
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:59
+#, kde-format
+msgid "Copy Image to Clipboard"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:46
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:61
+#, kde-format
+msgid "Copy Location to Clipboard"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:142
+#, kde-format
+msgid "Other Application..."
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr ""
+msgstr "Ampliación:"
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:63
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:70
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr ""
+msgstr "Ajustar a la vista"
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:100
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:101
 #, kde-format
 msgid "Save Image"
-msgstr ""
+msgstr "Guardar imagen"
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format

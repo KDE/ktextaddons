@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:41+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2063,12 +2063,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "允许选择工具"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "无法打开 %1"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:59
+#: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
@@ -2396,31 +2396,46 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "复制代码块"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:26
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:46
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:59
+#, kde-format
+msgid "Copy Image to Clipboard"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:61
+#, kde-format
+msgid "Copy Location to Clipboard"
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:142
+#, kde-format
+msgid "Other Application..."
+msgstr ""
+
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:63
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:70
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:100
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:101
 #, kde-format
 msgid "Save Image"
 msgstr ""

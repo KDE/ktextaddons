@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-11-30 11:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -193,10 +193,13 @@ msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "Yeni bir sürüm bulundu. İndirmek için <a href=\"%1\">buraya</a> tıklayın."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "Bulunan yeni sürüm yok."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr ""
+"Yeni bir sürüm bulundu. İndirmek için <a href=\"%1\">buraya</a> tıklayın."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -249,6 +252,9 @@ msgstr "Bu sürümdeki yeni özelliklerden bazıları:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Hata düzeltmeleri:"
+
+#~ msgid "No new version found."
+#~ msgstr "Bulunan yeni sürüm yok."
 
 #~ msgid "Impossible to open %1"
 #~ msgstr "%1 açılamıyor"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-10-22 10:04+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -190,10 +190,12 @@ msgstr "Etsi uutta versiota"
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "Löytyi uusi versio. Lataa se napsauttamalla <a href=\"%1\">tästä</a>."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "Uutta versiota ei löytynyt."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr "Löytyi uusi versio. Lataa se napsauttamalla <a href=\"%1\">tästä</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -246,3 +248,6 @@ msgstr "Joitakin tämän julkaisun uusia ominaisuuksia ovat:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Joitakin vikoja on korjattu:"
+
+#~ msgid "No new version found."
+#~ msgstr "Uutta versiota ei löytynyt."

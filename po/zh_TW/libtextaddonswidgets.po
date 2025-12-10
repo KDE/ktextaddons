@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-11-20 20:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -190,10 +190,12 @@ msgstr "檢查新版本"
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "已找到新版本。點擊<a href=\"%1\">此處</a>來下載它。"
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "沒有找到新版本。"
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr "已找到新版本。點擊<a href=\"%1\">此處</a>來下載它。"
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -246,3 +248,6 @@ msgstr "這一個版本包含一些新功能："
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "一些錯誤修正："
+
+#~ msgid "No new version found."
+#~ msgstr "沒有找到新版本。"

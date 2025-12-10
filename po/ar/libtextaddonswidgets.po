@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-04 00:42+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-12-03 16:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -191,10 +191,12 @@ msgstr "اِفحص النُسخة الجديدة"
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "نُسخة جديدة مَوجودة. اِنقُر <a href=\"%1\">هنا</a> لِتنزيلها."
 
-#: verifynewversion/checknewversionwidget.cpp:58
-#, kde-format
-msgid "No new version found."
-msgstr "لا يوجد إصدار جديد."
+#: verifynewversion/checknewversionwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid ""
+#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr "نُسخة جديدة مَوجودة. اِنقُر <a href=\"%1\">هنا</a> لِتنزيلها."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -247,3 +249,6 @@ msgstr "بعض مزايا الإصدارة الجديدة تتضمّن:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "إصلاح بعض الأخطاء:"
+
+#~ msgid "No new version found."
+#~ msgstr "لا يوجد إصدار جديد."
