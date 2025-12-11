@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"POT-Creation-Date: 2025-12-11 00:42+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2196,30 +2196,30 @@ msgstr ""
 msgid "Copy Location to Clipboard"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:142
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:47
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:64
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:71
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
 msgstr ""
 
-#: widgets/view/images/textautogenerateshowimagewidget.cpp:101
+#: widgets/view/images/textautogenerateshowimagewidget.cpp:108
 #, kde-format
 msgid "Save Image"
 msgstr ""

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-10 00:42+0000\n"
-"PO-Revision-Date: 2025-11-30 07:50+0100\n"
+"PO-Revision-Date: 2025-12-10 07:00+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -197,12 +197,9 @@ msgstr ""
 "Najdena je bila nova različica. Kliknite <a href=\"%1\">tukaj</a> za prenos."
 
 #: verifynewversion/checknewversionwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid ""
-#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+#, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr ""
-"Najdena je bila nova različica. Kliknite <a href=\"%1\">tukaj</a> za prenos."
+msgstr "Ni najdene nove različice. Gradnjo najdete <a href=\"%1\">tukaj</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
