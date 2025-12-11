@@ -46,6 +46,17 @@ ecm_qt_declare_logging_category(KF6TextAutoCorrectionCore HEADER textautocorrect
 	EXPORT KTEXTADDONS
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextAutoCorrectionCore
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+    )
+endif()
+
 target_sources(
     KF6TextAutoCorrectionCore
     PRIVATE

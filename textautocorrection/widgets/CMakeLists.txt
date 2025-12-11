@@ -56,6 +56,16 @@ target_sources(
         autocorrectionlanguagemodel.cpp
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextAutoCorrectionWidgets
+        PRIVATE
+            <QObject>
+            <QWidget>
+    )
+endif()
+
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
         KF6TextAutoCorrectionWidgets

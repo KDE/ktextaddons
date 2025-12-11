@@ -14,6 +14,18 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTADDONSWIDGETS
 add_library(KF6TextAddonsWidgets)
 add_library(KF6::TextAddonsWidgets ALIAS KF6TextAddonsWidgets)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextAddonsWidgets
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QStringList>
+            <QString>
+    )
+endif()
+
 if(ENABLE_WARN_OUTDATED)
     target_compile_definitions(KF6TextAddonsWidgets PRIVATE ENABLE_WARN_OUTDATED=1)
 else()
