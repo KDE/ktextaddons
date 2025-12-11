@@ -44,6 +44,7 @@ if(ENABLE_PCH)
             <QObject>
             <QStringList>
             <QString>
+            <QWidget>
     )
 endif()
 

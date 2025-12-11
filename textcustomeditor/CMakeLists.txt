@@ -76,6 +76,18 @@ target_link_libraries(
         KF6::TextAddonsWidgets
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextCustomEditor
+        PRIVATE
+            <QObject>
+            <QStringList>
+            <QString>
+            <QWidget>
+    )
+endif()
+
 if(TARGET KF6::KIOWidgets)
     target_link_libraries(KF6TextCustomEditor PRIVATE KF6::KIOWidgets)
 endif()
