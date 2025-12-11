@@ -5,11 +5,11 @@
 */
 #pragma once
 #include "textaddonswidgets_export.h"
-class QDebug;
+#include <QMetaType>
 #include <QStringList>
-#include <QtCore/qmetatype.h>
-#include <QtCore/qnamespace.h>
+#include <qnamespace.h>
 
+class QDebug;
 namespace TextAddonsWidgets
 {
 class TEXTADDONSWIDGETS_EXPORT WhatsNewInfo
