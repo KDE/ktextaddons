@@ -148,6 +148,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
             att.setContent("sdfsdf"_ba);
             att.setMimeType("mp4");
             att.setName(u"foo"_s);
+            att.setAttachmentId("idttt"_ba);
             att.setAttachmentType(TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio);
             list.append(att);
         }
@@ -156,6 +157,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
             att.setContent("foo11"_ba);
             att.setMimeType("doc");
             att.setName(u"foo2"_s);
+            att.setAttachmentId("idttt2"_ba);
             att.setAttachmentType(TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File);
             list.append(att);
         }
