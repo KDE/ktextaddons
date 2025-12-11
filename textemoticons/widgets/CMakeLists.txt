@@ -36,6 +36,17 @@ target_sources(
         emoticonwidgetactionwidget.cpp
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextEmoticonsWidgets
+        PRIVATE
+            <QObject>
+            <QStringList>
+            <QString>
+    )
+endif()
+
 target_link_libraries(
     KF6TextEmoticonsWidgets
     PUBLIC

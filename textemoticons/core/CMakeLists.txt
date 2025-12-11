@@ -40,6 +40,19 @@ target_sources(
         runninganimatedimage.cpp
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextEmoticonsCore
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QStringList>
+            <QString>
+            <QJsonObject>
+    )
+endif()
+
 target_link_libraries(KF6TextEmoticonsCore PUBLIC Qt::Gui PRIVATE KF6::ConfigCore)
 
 ecm_qt_declare_logging_category(KF6TextEmoticonsCore HEADER textemoticonscore_debug.h

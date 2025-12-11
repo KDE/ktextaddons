@@ -45,6 +45,18 @@ target_sources(
         texttospeechvoicecombobox.cpp
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextEditTextToSpeech
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QStringList>
+            <QString>
+    )
+endif()
+
 target_link_libraries(
     KF6TextEditTextToSpeech
     PUBLIC
