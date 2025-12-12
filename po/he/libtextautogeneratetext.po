@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-11 00:42+0000\n"
-"PO-Revision-Date: 2025-12-09 09:58+0200\n"
+"PO-Revision-Date: 2025-12-10 12:53+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2430,17 +2430,17 @@ msgstr "הצגת תמונה"
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:59
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr ""
+msgstr "העתקת תמונה ללוח הגזירים"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:61
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr ""
+msgstr "העתקת מקום ללוח הגזירים"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
-msgstr ""
+msgstr "יישום אחר…"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
