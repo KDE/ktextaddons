@@ -5,10 +5,10 @@
 */
 
 #include "textautogeneratelocaldatabaseutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 QString TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
 {

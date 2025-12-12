@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratelocaldatabaseabstract.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratetextcore_database_debug.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSqlError>
 #include <QSqlQuery>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateLocalDatabaseAbstract::TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type)
     : mBasePath(basePath)
