@@ -191,11 +191,9 @@ msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "发现新版本。请点击<a href=\"%1\">此处</a>下载。"
 
 #: verifynewversion/checknewversionwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid ""
-#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+#, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr "发现新版本。请点击<a href=\"%1\">此处</a>下载。"
+msgstr ""
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
@@ -248,6 +246,3 @@ msgstr "此版本新增的部分特性："
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "修复的部分程序缺陷："
-
-#~ msgid "No new version found."
-#~ msgstr "没有发现新版本。"
