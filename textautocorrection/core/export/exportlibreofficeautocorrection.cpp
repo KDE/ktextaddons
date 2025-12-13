@@ -39,20 +39,30 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language,
         qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
         return false;
     }
-    exportDocumentList();
-    exportSentenceExceptList();
-    exportWordExceptList();
-    exportManifest();
+    if (!exportDocumentList()) {
+        return false;
+    }
+    if (!exportSentenceExceptList()) {
+        return false;
+    }
+    if (!exportWordExceptList()) {
+        return false;
+    }
+    if (!exportManifest()) {
+        return false;
+    }
     mZip->close();
     delete mZip;
     mZip = nullptr;
     return true;
 }
 
-void ExportLibreOfficeAutocorrection::exportDocumentList()
+bool ExportLibreOfficeAutocorrection::exportDocumentList()
 {
     QTemporaryFile temporaryShareFile;
-    temporaryShareFile.open();
+    if (!temporaryShareFile.open()) {
+        return false;
+    }
     QXmlStreamWriter streamWriter(&temporaryShareFile);
 
     streamWriter.setAutoFormatting(true);
@@ -73,12 +83,15 @@ void ExportLibreOfficeAutocorrection::exportDocumentList()
     streamWriter.writeEndDocument();
     temporaryShareFile.close();
     mZip->addLocalFile(temporaryShareFile.fileName(), u"DocumentList.xml"_s);
+    return true;
 }
 
-void ExportLibreOfficeAutocorrection::exportSentenceExceptList()
+bool ExportLibreOfficeAutocorrection::exportSentenceExceptList()
 {
     QTemporaryFile temporaryShareFile;
-    temporaryShareFile.open();
+    if (!temporaryShareFile.open()) {
+        return false;
+    }
 
     QXmlStreamWriter streamWriter(&temporaryShareFile);
 
@@ -101,12 +114,15 @@ void ExportLibreOfficeAutocorrection::exportSentenceExceptList()
     temporaryShareFile.close();
 
     mZip->addLocalFile(temporaryShareFile.fileName(), u"SentenceExceptList.xml"_s);
+    return true;
 }
 
-void ExportLibreOfficeAutocorrection::exportWordExceptList()
+bool ExportLibreOfficeAutocorrection::exportWordExceptList()
 {
     QTemporaryFile temporaryShareFile;
-    temporaryShareFile.open();
+    if (!temporaryShareFile.open()) {
+        return false;
+    }
 
     QXmlStreamWriter streamWriter(&temporaryShareFile);
 
@@ -129,12 +145,15 @@ void ExportLibreOfficeAutocorrection::exportWordExceptList()
     temporaryShareFile.close();
 
     mZip->addLocalFile(temporaryShareFile.fileName(), u"WordExceptList.xml"_s);
+    return true;
 }
 
-void ExportLibreOfficeAutocorrection::exportManifest()
+bool ExportLibreOfficeAutocorrection::exportManifest()
 {
     QTemporaryFile temporaryShareFile;
-    temporaryShareFile.open();
+    if (!temporaryShareFile.open()) {
+        return false;
+    }
 
     QXmlStreamWriter streamWriter(&temporaryShareFile);
     streamWriter.setAutoFormatting(true);
@@ -172,4 +191,5 @@ void ExportLibreOfficeAutocorrection::exportManifest()
     mZip->writeFile(u"mimetype"_s, "");
     mZip->setCompression(KZip::DeflateCompression);
     mZip->addLocalFile(temporaryShareFile.fileName(), u"META-INF/manifest.xml"_s);
+    return true;
 }
