@@ -85,6 +85,8 @@ target_sources(
         misc/openfilejob.cpp
         misc/savefileutils.h
         misc/savefileutils.cpp
+        misc/executableutils.h
+        misc/executableutils.cpp
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -200,6 +202,7 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     HEADER_NAMES
     OpenFileJob
     SaveFileUtils
+    ExecutableUtils
     REQUIRED_HEADERS TextAddonsWidgets_misc_HEADERS
     PREFIX TextAddonsWidgets
     RELATIVE misc
