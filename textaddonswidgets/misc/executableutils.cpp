@@ -21,3 +21,8 @@ QString TextAddonsWidgets::ExecutableUtils::findExecutable(const QString &exec)
 #endif
     return path;
 }
+
+bool TextAddonsWidgets::ExecutableUtils::executableFound(const QString &exec)
+{
+    return !TextAddonsWidgets::ExecutableUtils::findExecutable(exec).isEmpty();
+}

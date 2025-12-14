@@ -10,4 +10,5 @@
 namespace TextAddonsWidgets::ExecutableUtils
 {
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString findExecutable(const QString &exec);
+[[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool executableFound(const QString &exec);
 };
