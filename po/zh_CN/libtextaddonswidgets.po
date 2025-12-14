@@ -193,7 +193,7 @@ msgstr "发现新版本。请点击<a href=\"%1\">此处</a>下载。"
 #: verifynewversion/checknewversionwidget.cpp:53
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr ""
+msgstr "没有发现新版本。可在<a href=\"%1\">此处</a>找到构建版本。"
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format

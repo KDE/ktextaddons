@@ -2405,17 +2405,17 @@ msgstr "显示图像"
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:59
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr ""
+msgstr "复制图像到剪贴板"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:61
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr ""
+msgstr "复制位置到剪贴板"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
-msgstr ""
+msgstr "其他应用程序..."
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
