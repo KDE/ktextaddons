@@ -5,7 +5,9 @@
 */
 
 #include "executableutils.h"
+#ifdef Q_OS_WIN
 #include <QCoreApplication>
+#endif
 #include <QStandardPaths>
 
 QString TextAddonsWidgets::ExecutableUtils::findExecutable(const QString &exec)
