@@ -31,6 +31,8 @@ target_sources(
         ollamamanager.cpp
         ollamacomboboxwidget.h
         ollamacomboboxwidget.cpp
+        ollamaconfigurecustomizewidget.h
+        ollamaconfigurecustomizewidget.cpp
         ollamareply.h
         ollamareply.cpp
         ollamasettings.h

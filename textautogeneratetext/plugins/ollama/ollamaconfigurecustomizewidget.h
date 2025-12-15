@@ -1,0 +1,19 @@
+/*
+  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+#include "textautogenerateollama_private_export.h"
+#include <QWidget>
+class QCheckBox;
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaConfigureCustomizeWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit OllamaConfigureCustomizeWidget(QWidget *parent = nullptr);
+    ~OllamaConfigureCustomizeWidget() override;
+
+private:
+    QCheckBox *const mVulkanSupport;
+};
