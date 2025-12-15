@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailbleinfowidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/ollamamodelavailableinfowidget.h"
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(OllamaModelAvailbleInfoWidgetTest)
 OllamaModelAvailbleInfoWidgetTest::OllamaModelAvailbleInfoWidgetTest(QObject *parent)
     : QObject{parent}

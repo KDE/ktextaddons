@@ -6,14 +6,27 @@
 #pragma once
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
-class QCheckBox;
+class QLineEdit;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaConfigureCustomizeWidget : public QWidget
 {
     Q_OBJECT
 public:
+    struct CustomizeInfo {
+        QString vulkanSupport;
+        QString cudaVisibleDevice;
+        QString rocrVisibleDevice;
+        QString overrideGfxVersion;
+    };
+
     explicit OllamaConfigureCustomizeWidget(QWidget *parent = nullptr);
     ~OllamaConfigureCustomizeWidget() override;
 
+    void setCustomizeInfo(const CustomizeInfo &info);
+    [[nodiscard]] CustomizeInfo customizeInfo() const;
+
 private:
-    QCheckBox *const mVulkanSupport;
+    QLineEdit *const mVulkanSupportLineEdit;
+    QLineEdit *const mCudaVisibleDeviceLineEdit;
+    QLineEdit *const mRocrVisibleDeviceLineEdit;
+    QLineEdit *const mOverrideGfxVersionLineEdit;
 };

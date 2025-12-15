@@ -13,4 +13,7 @@ class OllamaConfigureCustomizeWidgetTest : public QObject
 public:
     explicit OllamaConfigureCustomizeWidgetTest(QObject *parent = nullptr);
     ~OllamaConfigureCustomizeWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
