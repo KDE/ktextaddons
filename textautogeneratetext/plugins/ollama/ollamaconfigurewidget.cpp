@@ -18,6 +18,7 @@
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QGroupBox>
+#include <QLabel>
 #include <QLineEdit>
 #include <QProcess>
 #include <QSpinBox>
@@ -81,6 +82,13 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     auto groupCustomizeGroupboxLayout = new QVBoxLayout(groupCustomizeGroupbox);
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
+    auto label = new QLabel(i18n("These entries are optional, they are used to troubleshoot GPU related problems with Ollama."), this);
+    label->setObjectName(u"label"_s);
+    auto font = label->font();
+    font.setBold(true);
+    font.setItalic(true);
+    label->setFont(font);
+    groupCustomizeGroupboxLayout->addWidget(label);
     groupCustomizeGroupboxLayout->addWidget(mOllamaConfigureCustomizeWidget);
 
     mainLayout->addStretch(1);
