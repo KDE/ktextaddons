@@ -47,6 +47,7 @@ void CheckNewVersionWidget::setUrl(const QUrl &url)
 
 void CheckNewVersionWidget::slotFoundNewVersion(bool found)
 {
+    Q_ASSERT(!mUrl.isEmpty());
     if (found) {
         mCheckVersionResultLabel->setText(i18n("A new version found. Click <a href=\"%1\">here</a> for downloading it.", mUrl.toString()));
     } else {

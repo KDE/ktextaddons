@@ -105,6 +105,7 @@ void VerifyNewVersionWidget::slotVerifyNewVersion()
 #endif
     if (!url.isEmpty()) {
         CheckNewVersionDialog dlg(nullptr);
+        dlg.setUrl(url);
         dlg.checkNewVersion();
         dlg.exec();
     } else {
