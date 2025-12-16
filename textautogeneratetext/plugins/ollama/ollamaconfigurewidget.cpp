@@ -97,7 +97,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     auto urlButton = new OllamaNetworkUrlButton(this);
     urlButton->setObjectName(u"urlButton"_s);
-    urlButton->setModelUrl(u"https://docs.ollama.com/gpu#overrides-on-linux"_s);
+    urlButton->setUrl(u"https://docs.ollama.com/gpu#overrides-on-linux"_s);
     hboxLayout->addWidget(urlButton);
 
     groupCustomizeGroupboxLayout->addLayout(hboxLayout);

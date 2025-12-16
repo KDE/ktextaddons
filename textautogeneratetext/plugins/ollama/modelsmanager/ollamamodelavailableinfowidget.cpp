@@ -51,7 +51,7 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     mModelName->setText(modelName);
 
     const QString url = index.data(OllamaModelAvailableInfosModel::Url).toString();
-    mNetworkUrlButton->setModelUrl(url);
+    mNetworkUrlButton->setUrl(url);
 
     mInfoWidget = new QWidget(this);
     auto infoLayout = new QVBoxLayout(mInfoWidget);

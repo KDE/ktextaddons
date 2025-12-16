@@ -15,9 +15,9 @@ public:
     explicit OllamaNetworkUrlButton(QWidget *parent = nullptr);
     ~OllamaNetworkUrlButton() override;
 
-    [[nodiscard]] QString modelUrl() const;
-    void setModelUrl(const QString &newModelUrl);
+    [[nodiscard]] QString url() const;
+    void setUrl(const QString &newModelUrl);
 
 private:
-    QString mModelUrl;
+    QString mUrl;
 };
