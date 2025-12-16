@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-11 00:42+0000\n"
+"POT-Creation-Date: 2025-12-16 06:50+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -320,7 +320,7 @@ msgid "Base:"
 msgstr "基础："
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -1902,6 +1902,28 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "重新加载模型"
 
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#, kde-format
+msgid "Vulkan GPU Support:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#, kde-format
+msgid "NVIDIA GPU Selection:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy Selection"
+msgid "AMD GPU Selection:"
+msgstr "复制选中内容"
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#, kde-format
+msgid "Override GFX version:"
+msgstr ""
+
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
@@ -1920,23 +1942,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "创建模型"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:50
+#: plugins/ollama/ollamaconfigurewidget.cpp:58
 #, kde-format
 msgid "Server Url:"
 msgstr "服务器 URL："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:57
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "温度："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1944,13 +1966,13 @@ msgid ""
 "answer more creatively."
 msgstr "模型的温度。提高温度会使模型的回答更具创造性。"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:63
+#: plugins/ollama/ollamaconfigurewidget.cpp:71
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "种子："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1960,6 +1982,13 @@ msgid ""
 msgstr ""
 "设置用于生成的随机数种子。将其设置为特定数字会使模型对相同的提示生成相同的文"
 "本。(默认值：0)"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgid "Customize Ollama"
+msgstr "配置 Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"

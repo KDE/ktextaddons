@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-11 00:42+0000\n"
+"POT-Creation-Date: 2025-12-16 06:50+0000\n"
 "PO-Revision-Date: 2025-12-10 09:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -325,7 +325,7 @@ msgid "Base:"
 msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2043,6 +2043,28 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Torna a carregar el model"
 
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#, kde-format
+msgid "Vulkan GPU Support:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#, kde-format
+msgid "NVIDIA GPU Selection:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy Selection"
+msgid "AMD GPU Selection:"
+msgstr "Copia la selecció"
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#, kde-format
+msgid "Override GFX version:"
+msgstr ""
+
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
@@ -2061,23 +2083,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Crea models"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:50
+#: plugins/ollama/ollamaconfigurewidget.cpp:58
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:57
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2087,13 +2109,13 @@ msgstr ""
 "La temperatura del model. L'augment de la temperatura farà que la resposta "
 "del model sigui més creativa."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:63
+#: plugins/ollama/ollamaconfigurewidget.cpp:71
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Llavor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2104,6 +2126,13 @@ msgstr ""
 "Estableix el nombre aleatori de llavors a usar per a la generació. Establir "
 "això a un nombre específic farà que el model generi el mateix text per a la "
 "mateixa petició. (Predeterminat: 0)"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgid "Customize Ollama"
+msgstr "Configura l'Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
