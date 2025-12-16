@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamautilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamautils.h"
 #include <QTest>
 QTEST_MAIN(OllamaUtilsTest)
 
+using namespace Qt::Literals::StringLiterals;
 OllamaUtilsTest::OllamaUtilsTest(QObject *parent)
     : QObject{parent}
 {

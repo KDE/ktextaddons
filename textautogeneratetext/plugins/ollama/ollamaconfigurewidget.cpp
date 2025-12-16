@@ -150,6 +150,7 @@ void OllamaConfigureWidget::loadSettings()
     mModelComboBoxWidget->setCurrentModel(mManager->ollamaSettings()->currentModel());
     mTemperature->setValue(mManager->ollamaSettings()->temperature());
     mSeed->setValue(mManager->ollamaSettings()->seed());
+    // TODO load from mOllamaConfigureCustomizeWidget;
 }
 
 void OllamaConfigureWidget::saveSettings()
@@ -159,6 +160,7 @@ void OllamaConfigureWidget::saveSettings()
     mManager->ollamaSettings()->setCurrentModel(mModelComboBoxWidget->currentModel());
     mManager->ollamaSettings()->setTemperature(mTemperature->value());
     mManager->ollamaSettings()->setSeed(mSeed->value());
+    // TODO save from mOllamaConfigureCustomizeWidget;
 }
 
 void OllamaConfigureWidget::fillModels()

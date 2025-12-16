@@ -30,7 +30,15 @@ public:
     [[nodiscard]] QString displayName() const;
     void setDisplayName(const QString &newName);
 
+    [[nodiscard]] QString overrideGfxVersion() const;
+    void setOverrideGfxVersion(const QString &newOverrideGfxVersion);
+
+    [[nodiscard]] QString vulkanSupport() const;
+    void setVulkanSupport(const QString &newVulkanSupport);
+
 private:
+    QString mVulkanSupport;
+    QString mOverrideGfxVersion;
     QString mDisplayName;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
     QString mCurrentModel;

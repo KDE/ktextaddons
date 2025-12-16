@@ -45,7 +45,10 @@ OllamaConfigureCustomizeWidget::~OllamaConfigureCustomizeWidget() = default;
 
 void OllamaConfigureCustomizeWidget::setCustomizeInfo(const CustomizeInfo &info)
 {
-    // TODO
+    mVulkanSupportLineEdit->setText(info.vulkanSupport);
+    mCudaVisibleDeviceLineEdit->setText(info.cudaVisibleDevice);
+    mRocrVisibleDeviceLineEdit->setText(info.rocrVisibleDevice);
+    mOverrideGfxVersionLineEdit->setText(info.overrideGfxVersion);
 }
 
 OllamaConfigureCustomizeWidget::CustomizeInfo OllamaConfigureCustomizeWidget::customizeInfo() const

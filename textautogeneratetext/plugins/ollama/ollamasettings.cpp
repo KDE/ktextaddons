@@ -65,3 +65,23 @@ void OllamaSettings::setDisplayName(const QString &newName)
 {
     mDisplayName = newName;
 }
+
+QString OllamaSettings::overrideGfxVersion() const
+{
+    return mOverrideGfxVersion;
+}
+
+void OllamaSettings::setOverrideGfxVersion(const QString &newOverrideGfxVersion)
+{
+    mOverrideGfxVersion = newOverrideGfxVersion;
+}
+
+QString OllamaSettings::vulkanSupport() const
+{
+    return mVulkanSupport;
+}
+
+void OllamaSettings::setVulkanSupport(const QString &newVulkanSupport)
+{
+    mVulkanSupport = newVulkanSupport;
+}
