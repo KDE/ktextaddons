@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:50+0000\n"
-"PO-Revision-Date: 2025-12-10 06:27+0100\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"PO-Revision-Date: 2025-12-16 10:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -322,7 +322,7 @@ msgid "Base:"
 msgstr "ბაზა:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2010,11 +2010,11 @@ msgstr ""
 "გამოძახების შესაძლებლობები, რაც მათ გაცილებით ეფექტურს ხდის საწარმოო "
 "აპლიკაციებში."
 
-#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "მოდელის ინფორმაციის URL-ის გახსნა"
+msgid "Open Url \"%1\""
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -2030,24 +2030,22 @@ msgstr "მოდელის თავიდან ჩატვირთვა"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Vulkan GPU-ის მხარდაჭერა:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "NVIDIA GPU-ის არჩევანი:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "მონიშნულის კოპირება"
+msgstr "AMD GPU-ის არჩევანი:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "GFX-ის ვერსიის გადაფარვა:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2067,23 +2065,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "მოდელების შექმნა"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgid "Server Url:"
 msgstr "სერვერის URL:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgid "Model:"
 msgstr "მოდელი:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "ტემპერატურა:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2093,13 +2091,13 @@ msgstr ""
 "მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
 "შემოქმედებით გიპასუხოთ."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "საწყ. მნიშვნელობა:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2111,12 +2109,17 @@ msgstr ""
 "დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე მოთხოვნისთვის. "
 "(ნაგულისხმევი: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#: plugins/ollama/ollamaconfigurewidget.cpp:80
+#, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama-ის მორგება"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#, kde-format
+msgid ""
+"These entries are optional, they are used to troubleshoot GPU related "
+"problems with Ollama."
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2672,6 +2675,10 @@ msgstr "არქივი ვერ მოიძებნა."
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Open Model Information Url"
+#~ msgstr "მოდელის ინფორმაციის URL-ის გახსნა"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "ცვლილებების გადასატარებლად გადატვირთვა აუცილებელია."

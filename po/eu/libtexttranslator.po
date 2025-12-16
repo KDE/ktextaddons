@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-05-15 22:40+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -612,17 +612,17 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Konfiguratu itzultzailea"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:26
+#: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
 msgstr "Jatorria:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:27
+#: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
 msgid "To:"
 msgstr "Helburua:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:53
+#: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:41
 #, kde-format
 msgctxt "@label:textbox"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:50+0000\n"
-"PO-Revision-Date: 2025-11-20 20:59+0900\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"PO-Revision-Date: 2025-12-16 22:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -53,26 +53,14 @@ msgid "Unknown"
 msgstr "未知"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr ""
-"引擎：%1\n"
-"模型：%2\n"
-"實體名稱：%3"
+msgstr "<b>引擎</b>：%1<br><b>模型</b>：%2<br><b>實體名稱</b>：%3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"工具：%1"
+msgstr "<br><b>工具</b>：%1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -159,31 +147,31 @@ msgstr "網路"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
 msgid "Plugins Text:"
-msgstr ""
+msgstr "外掛程式文字："
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr ""
+msgstr "工具識別子：%1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr ""
+msgstr "開啟"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "關閉"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr ""
+msgstr "啟用：%1"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -338,7 +326,7 @@ msgid "Base:"
 msgstr "基礎："
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -1852,11 +1840,11 @@ msgid ""
 msgstr ""
 "Granite 4 提供改良的指令遵從 (IF) 與工具呼叫能力，讓它們在企業用途更加有效。"
 
-#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "開啟模型資訊網址"
+msgid "Open Url \"%1\""
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -1874,19 +1862,19 @@ msgstr "重新載入模型"
 msgid "Vulkan GPU Support:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
 msgstr "複製選取範圍"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
 msgstr ""
@@ -1909,23 +1897,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "建立模型"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgid "Server Url:"
 msgstr "伺服器網址："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "溫度："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1933,13 +1921,13 @@ msgid ""
 "answer more creatively."
 msgstr "模型的「溫度」。提高溫度會讓模型回答更有創意。"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "種子："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1950,12 +1938,19 @@ msgstr ""
 "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固定"
 "的文字。（預設：0）"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#: plugins/ollama/ollamaconfigurewidget.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure Ollama"
 msgid "Customize Ollama"
 msgstr "設定 Ollama"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#, kde-format
+msgid ""
+"These entries are optional, they are used to troubleshoot GPU related "
+"problems with Ollama."
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2510,6 +2505,10 @@ msgstr "找不到封存檔。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "找不到訊息"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Open Model Information Url"
+#~ msgstr "開啟模型資訊網址"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "需要重新啟動變更才會生效。"

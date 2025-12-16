@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:50+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-12-10 16:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -322,7 +322,7 @@ msgid "Base:"
 msgstr "Основа:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2014,11 +2014,11 @@ msgstr ""
 "можливості виклику, що робить моделі ефективнішими у промислових "
 "застосуваннях."
 
-#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "Адреса відомостей щодо відкритої моделі"
+msgid "Open Url \"%1\""
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -2036,19 +2036,19 @@ msgstr "Перезавантажити модель"
 msgid "Vulkan GPU Support:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
 msgstr "Копіювати позначене"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
 msgstr ""
@@ -2071,23 +2071,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Створення моделей"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgid "Server Url:"
 msgstr "Адреса сервера:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgid "Model:"
 msgstr "Модель:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Температура:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2097,13 +2097,13 @@ msgstr ""
 "Температура моделі. Збільшення температури зробить відповіді моделі більш "
 "творчими."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "База:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2115,12 +2115,19 @@ msgstr ""
 "Встановлення певного числа примусить модель до створення одного і того "
 "самого тексту у відповідь на конкретний запит. (Типове значення: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#: plugins/ollama/ollamaconfigurewidget.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure Ollama"
 msgid "Customize Ollama"
 msgstr "Налаштувати Ollama"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#, kde-format
+msgid ""
+"These entries are optional, they are used to troubleshoot GPU related "
+"problems with Ollama."
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2677,6 +2684,10 @@ msgstr "Архів не знайдено"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Повідомлень не знайдено."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Open Model Information Url"
+#~ msgstr "Адреса відомостей щодо відкритої моделі"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "Для застосування змін слід перезапустити програму."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-12-11 10:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -186,12 +186,12 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "اِفحص النُسخة الجديدة"
 
-#: verifynewversion/checknewversionwidget.cpp:51
+#: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "نُسخة جديدة مَوجودة. اِنقُر <a href=\"%1\">هنا</a> لِتنزيلها."
 
-#: verifynewversion/checknewversionwidget.cpp:53
+#: verifynewversion/checknewversionwidget.cpp:54
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "توجد نسخة جديدة. يمكن أن تجدها <a href=\"%1\">هنا</a>."

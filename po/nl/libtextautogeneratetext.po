@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:50+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-12-10 16:55+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -320,7 +320,7 @@ msgid "Base:"
 msgstr "Basis:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2005,11 +2005,11 @@ msgstr ""
 "aanroepen van hulpmiddelen, maken ze effectiever in toepassen voor "
 "ondernemingen."
 
-#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "Open URL van modelinformatie"
+msgid "Open Url \"%1\""
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -2027,19 +2027,19 @@ msgstr "Model herladen"
 msgid "Vulkan GPU Support:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
 msgstr "Selectie kopiëren"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
 msgstr ""
@@ -2062,23 +2062,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modellen aanmaken"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgid "Server Url:"
 msgstr "URL van server:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatuur:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2088,13 +2088,13 @@ msgstr ""
 "De temperatuur van het model. De temperatuur verhogen maakt dat het model "
 "creatiever zal antwoorden."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Startgetal:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2106,12 +2106,19 @@ msgstr ""
 "instellen op een specifiek getal zal het model dezelfde tekst laten "
 "genereren voor dezelfde prompt. (Standaard: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#: plugins/ollama/ollamaconfigurewidget.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure Ollama"
 msgid "Customize Ollama"
 msgstr "Ollama configureren"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#, kde-format
+msgid ""
+"These entries are optional, they are used to troubleshoot GPU related "
+"problems with Ollama."
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2668,6 +2675,10 @@ msgstr "Geen archief gevonden."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Geen berichten gevonden."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Open Model Information Url"
+#~ msgstr "Open URL van modelinformatie"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "Opnieuw opstarten is nodig om de wijzigingen toe te passen."

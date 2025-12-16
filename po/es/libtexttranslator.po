@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2025-02-23 00:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -615,17 +615,17 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configurar el traductor"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:26
+#: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
 msgstr "Del:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:27
+#: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
 msgid "To:"
 msgstr "Al:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:53
+#: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:41
 #, kde-format
 msgctxt "@label:textbox"

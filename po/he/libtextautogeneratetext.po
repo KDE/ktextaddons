@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:50+0000\n"
-"PO-Revision-Date: 2025-12-10 12:53+0200\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"PO-Revision-Date: 2025-12-16 09:52+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -321,7 +321,7 @@ msgid "Base:"
 msgstr "בסיס:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -1909,11 +1909,11 @@ msgstr ""
 "Granite 4 מציג מעקב משופר אחרי הנחיות (IF) ויכולות קריאה לכלים, מה שהופך "
 "אותם ליעילים יותר ליישומים תאגידיים."
 
-#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "פתיחת כתובת פרטי מודל"
+msgid "Open Url \"%1\""
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -1929,24 +1929,22 @@ msgstr "ריענון מודל"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "תמיכה במעבד גרפי Vulkan:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:31
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "בחירת מעבד גרפי מבית NVIDIA:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "העתקת הבחירה"
+msgstr "בחירת מעבד גרפי מבית AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "דריסת גרסת GFX:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -1966,23 +1964,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "יצירת מודלים"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgid "Server Url:"
 msgstr "כתובת שרת:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgid "Model:"
 msgstr "מודל:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "טמפרטורה:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1991,13 +1989,13 @@ msgid ""
 msgstr ""
 "הטמפרטורה של המודל. הגברת הטמפרטורה יגרום למודל לענות בצורה יותר יצירתית."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "גרעין:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2008,12 +2006,17 @@ msgstr ""
 "הגדרת גרעין המספר האקראי שישמש ליצירה. הגדרת הערך הזה למספר מסוים יגרום "
 "למודל לייצר את אותו הטקסט לאותו הפרומפט. (ברירת מחדל: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#: plugins/ollama/ollamaconfigurewidget.cpp:80
+#, kde-format
 msgid "Customize Ollama"
-msgstr "הגדרת Ollama"
+msgstr "התאמה אישית של Ollama"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#, kde-format
+msgid ""
+"These entries are optional, they are used to troubleshoot GPU related "
+"problems with Ollama."
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2568,6 +2571,10 @@ msgstr "לא נמצא ארכיון."
 #, kde-format
 msgid "No Messages Found."
 msgstr "לא נמצאו הודעות."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Open Model Information Url"
+#~ msgstr "פתיחת כתובת פרטי מודל"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "יש להפעיל מחדש כדי להחיל את השינויים."

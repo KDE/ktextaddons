@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-16 13:23+0000\n"
 "PO-Revision-Date: 2023-01-09 18:52+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -618,17 +618,17 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configurar o Tradutor"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:26
+#: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:27
+#: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
 msgid "To:"
 msgstr "Para:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:53
+#: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:41
 #, fuzzy, kde-format
 #| msgid "Engine:"
