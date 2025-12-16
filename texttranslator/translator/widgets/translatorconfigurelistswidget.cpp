@@ -4,8 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-using namespace Qt::Literals::StringLiterals;
-
 #include "translatorconfigurelistswidget.h"
 #include "translator/misc/translatorutil.h"
 #include "translator/translatorengineloader.h"
@@ -16,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <QLabel>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 class Q_DECL_HIDDEN TextTranslator::TranslatorConfigureListsWidget::TranslatorConfigureListsWidgetPrivate
 {
