@@ -7,6 +7,7 @@
 #include "ollamaconfigurewidget.h"
 #include "autogeneratetext_ollama_debug.h"
 #include "core/textautogeneratetextutils.h"
+#include "ollamaconfigurecustomizewidget.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 
 #include "ollamacomboboxwidget.h"
@@ -16,6 +17,7 @@
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
+#include <QGroupBox>
 #include <QLineEdit>
 #include <QProcess>
 #include <QSpinBox>
@@ -30,42 +32,56 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mTemperature(new QDoubleSpinBox(this))
     , mSeed(new QSpinBox(this))
     , mManager(manager)
+    , mOllamaConfigureCustomizeWidget(new OllamaConfigureCustomizeWidget(this))
 {
-    auto mainLayout = new QFormLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    auto formLayout = new QFormLayout;
+    formLayout->setObjectName(u"mainLayout"_s);
+    formLayout->setContentsMargins({});
+    mainLayout->addLayout(formLayout);
+
     mMessageWidget->setObjectName(u"mMessageWidget"_s);
-    mainLayout->addWidget(mMessageWidget);
+    formLayout->addWidget(mMessageWidget);
     mMessageWidget->setVisible(false);
     mMessageWidget->setCloseButtonVisible(false);
     mMessageWidget->setMessageType(KMessageWidget::MessageType::Error);
 
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
-    mainLayout->addRow(i18n("Name:"), mName);
+    formLayout->addRow(i18n("Name:"), mName);
 
     mServerUrl->setObjectName(u"mServerUrl"_s);
     KLineEditEventHandler::catchReturnKey(mServerUrl);
-    mainLayout->addRow(i18n("Server Url:"), mServerUrl);
+    formLayout->addRow(i18n("Server Url:"), mServerUrl);
     mServerUrl->setPlaceholderText(u"http://127.0.0.1:11434"_s);
 
     mModelComboBoxWidget->setObjectName(u"mModelComboBoxWidget"_s);
-    mainLayout->addRow(i18n("Model:"), mModelComboBoxWidget);
+    formLayout->addRow(i18n("Model:"), mModelComboBoxWidget);
 
     mTemperature->setObjectName(u"mTemperature"_s);
-    mainLayout->addRow(i18n("Temperature:"), mTemperature);
+    formLayout->addRow(i18n("Temperature:"), mTemperature);
     mTemperature->setRange(0.0, 10.0);
     mTemperature->setSingleStep(0.01);
     mTemperature->setToolTip(i18nc("@info:tooltip", "The temperature of the model. Increasing the temperature will make the model answer more creatively."));
 
     mSeed->setObjectName(u"mSeed"_s);
-    mainLayout->addRow(i18n("Seed:"), mSeed);
+    formLayout->addRow(i18n("Seed:"), mSeed);
     mSeed->setToolTip(i18nc("@info:tooltip",
                             "Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text "
                             "for the same prompt. (Default: 0)"));
     mSeed->setRange(0, 10);
     mSeed->setSingleStep(1);
+
+    auto groupCustomizeGroupbox = new QGroupBox(i18n("Customize Ollama"), this);
+    groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);
+    mainLayout->addWidget(groupCustomizeGroupbox);
+
+    auto groupCustomizeGroupboxLayout = new QVBoxLayout(groupCustomizeGroupbox);
+    groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
+    groupCustomizeGroupboxLayout->addWidget(mOllamaConfigureCustomizeWidget);
 
     connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {

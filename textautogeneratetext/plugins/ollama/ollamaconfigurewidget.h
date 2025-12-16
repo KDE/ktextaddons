@@ -11,6 +11,7 @@ class OllamaComboBoxWidget;
 class OllamaManager;
 class QDoubleSpinBox;
 class QSpinBox;
+class OllamaConfigureCustomizeWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateNotWorkingMessageWidget;
@@ -39,4 +40,5 @@ private:
     QDoubleSpinBox *const mTemperature;
     QSpinBox *const mSeed;
     OllamaManager *const mManager;
+    OllamaConfigureCustomizeWidget *const mOllamaConfigureCustomizeWidget;
 };
