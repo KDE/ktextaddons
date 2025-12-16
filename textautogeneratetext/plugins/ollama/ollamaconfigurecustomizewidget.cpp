@@ -26,15 +26,19 @@ OllamaConfigureCustomizeWidget::OllamaConfigureCustomizeWidget(QWidget *parent)
 
     mVulkanSupportLineEdit->setObjectName(u"mVulkanSupportLineEdit"_s);
     mainLayout->addRow(i18n("Vulkan GPU Support:"), mVulkanSupportLineEdit);
+    KLineEditEventHandler::catchReturnKey(mVulkanSupportLineEdit);
 
     mCudaVisibleDeviceLineEdit->setObjectName(u"mCudaVisibleDeviceLineEdit"_s);
     mainLayout->addRow(i18n("NVIDIA GPU Selection:"), mCudaVisibleDeviceLineEdit);
+    KLineEditEventHandler::catchReturnKey(mCudaVisibleDeviceLineEdit);
 
     mRocrVisibleDeviceLineEdit->setObjectName(u"mRocrVisibleDeviceLineEdit"_s);
     mainLayout->addRow(i18n("AMD GPU Selection:"), mRocrVisibleDeviceLineEdit);
+    KLineEditEventHandler::catchReturnKey(mRocrVisibleDeviceLineEdit);
 
     mOverrideGfxVersionLineEdit->setObjectName(u"mOverrideGfxVersionLineEdit"_s);
     mainLayout->addRow(i18n("Override GFX version:"), mOverrideGfxVersionLineEdit);
+    KLineEditEventHandler::catchReturnKey(mOverrideGfxVersionLineEdit);
 }
 
 OllamaConfigureCustomizeWidget::~OllamaConfigureCustomizeWidget() = default;
