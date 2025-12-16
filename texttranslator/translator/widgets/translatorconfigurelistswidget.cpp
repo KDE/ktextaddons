@@ -4,14 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "translatorconfigurelistswidget.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "translatorconfigurelistswidget.h"
 #include "translator/misc/translatorutil.h"
 #include "translator/translatorengineloader.h"
 #include "translatorconfigurecombowidget.h"
 #include "translatorconfigurelanguagelistwidget.h"
-#include "translatorconfigurelistswidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
