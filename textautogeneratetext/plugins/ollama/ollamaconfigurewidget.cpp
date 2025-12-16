@@ -7,6 +7,7 @@
 #include "ollamaconfigurewidget.h"
 #include "autogeneratetext_ollama_debug.h"
 #include "core/textautogeneratetextutils.h"
+#include "modelsmanager/ollamanetworkurlbutton.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 
@@ -82,13 +83,24 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     auto groupCustomizeGroupboxLayout = new QVBoxLayout(groupCustomizeGroupbox);
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
+    auto hboxLayout = new QHBoxLayout;
+    hboxLayout->setObjectName(u"hboxLayout"_s);
+    hboxLayout->setContentsMargins({});
+
     auto label = new QLabel(i18n("These entries are optional, they are used to troubleshoot GPU related problems with Ollama."), this);
     label->setObjectName(u"label"_s);
     auto font = label->font();
     font.setBold(true);
     font.setItalic(true);
     label->setFont(font);
-    groupCustomizeGroupboxLayout->addWidget(label);
+    hboxLayout->addWidget(label);
+
+    auto urlButton = new OllamaNetworkUrlButton(this);
+    urlButton->setObjectName(u"urlButton"_s);
+    urlButton->setModelUrl(u"https://docs.ollama.com/gpu#overrides-on-linux"_s);
+    hboxLayout->addWidget(urlButton);
+
+    groupCustomizeGroupboxLayout->addLayout(hboxLayout);
     groupCustomizeGroupboxLayout->addWidget(mOllamaConfigureCustomizeWidget);
 
     mainLayout->addStretch(1);
