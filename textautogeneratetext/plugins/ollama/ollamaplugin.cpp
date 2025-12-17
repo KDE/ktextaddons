@@ -62,6 +62,11 @@ void OllamaPlugin::load(const KConfigGroup &config)
         mOllamaSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
     }
     mOllamaSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
+
+    mOllamaSettings->setOverrideGfxVersion(config.readEntry(u"OverrideGfxVersion"_s));
+    mOllamaSettings->setVulkanSupport(config.readEntry(u"VulkanSupport"_s));
+    mOllamaSettings->setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
+    mOllamaSettings->setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
 }
 
 void OllamaPlugin::save(KConfigGroup &config)
@@ -71,6 +76,11 @@ void OllamaPlugin::save(KConfigGroup &config)
     config.writeEntry(u"ServerUrl"_s, mOllamaSettings->serverUrl());
     config.writeEntry(u"Temperature"_s, mOllamaSettings->temperature());
     config.writeEntry(u"CurrentModel"_s, mOllamaSettings->currentModel());
+
+    config.writeEntry(u"OverrideGfxVersion"_s, mOllamaSettings->overrideGfxVersion());
+    config.writeEntry(u"VulkanSupport"_s, mOllamaSettings->vulkanSupport());
+    config.writeEntry(u"RocrVisibleDevice"_s, mOllamaSettings->rocrVisibleDevice());
+    config.writeEntry(u"CudaVisibleDevice"_s, mOllamaSettings->cudaVisibleDevice());
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType OllamaPlugin::engineType() const
