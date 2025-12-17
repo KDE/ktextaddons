@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-16 09:46+0100\n"
+"PO-Revision-Date: 2025-12-16 17:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2030,7 +2030,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "Obre l'URL «%1»"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -2136,6 +2136,8 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Aquestes entrades són opcionals, s'utilitzen per resoldre problemes "
+"relacionats amb la GPU amb l'Ollama."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"

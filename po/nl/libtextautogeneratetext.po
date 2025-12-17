@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 16:55+0100\n"
+"PO-Revision-Date: 2025-12-16 18:37+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2009,7 +2009,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "Open URL \"%1\""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -2025,24 +2025,22 @@ msgstr "Model herladen"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Vulkan GPU-ondersteuning:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "NVIDIA GPU-selectie:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Selectie kopiëren"
+msgstr "AMD GPU-selectie:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "GFX-versie overschrijven:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2107,11 +2105,9 @@ msgstr ""
 "genereren voor dezelfde prompt. (Standaard: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Ollama configureren"
+msgstr "Ollama aanpassen"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2119,6 +2115,8 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Deze items zijn optioneel, ze worden gebruikt om GPU gerelateerde problemen "
+"met Ollama te analyseren."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"

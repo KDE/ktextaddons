@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 09:49+0100\n"
+"PO-Revision-Date: 2025-12-16 09:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2045,24 +2045,22 @@ msgstr "Torna a carregar el model"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Compatibilitat de GPU Vulkan:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr " de GPU NVIDIA:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Copia la selecció"
+msgstr "Selecció de GPU AMD:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "Sobreescriu la versió de GFX:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2127,11 +2125,9 @@ msgstr ""
 "per a la mateixa petició. (Predeterminat: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Configura Ollama"
+msgstr "Personalitza Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2695,7 +2691,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Open Model Information Url"
-#~ msgstr "Obri l'URL d'informació del model"

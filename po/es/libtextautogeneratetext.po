@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 11:00+0100\n"
+"PO-Revision-Date: 2025-12-17 00:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2034,7 +2034,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "Abrir URL «%1»"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -2050,24 +2050,22 @@ msgstr "Volver a cargar el modelo"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Compatibilidad con GPU Vulkan:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "Selección de GPU NVIDIA:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Copiar selección"
+msgstr "Selección de GPU AMD:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "Anular versión GFX:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2132,11 +2130,9 @@ msgstr ""
 "indicaciones (el valor predeterminado es 0)."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Configurar Ollama"
+msgstr "Personalizar Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2144,6 +2140,8 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Estas entradas son opcionales. Se usan para identificar problemas de GPU "
+"relacionados con Ollama."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2700,7 +2698,3 @@ msgstr "No se ha encontrado ningún archivo."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Open Model Information Url"
-#~ msgstr "Abrir URL de información del modelo"
