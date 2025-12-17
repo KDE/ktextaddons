@@ -17,3 +17,5 @@ void OllamaStartProcessJob::start()
 {
     // TODO
 }
+
+#include "moc_ollamastartprocessjob.cpp"
