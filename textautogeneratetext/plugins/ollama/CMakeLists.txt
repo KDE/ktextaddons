@@ -37,6 +37,8 @@ target_sources(
         ollamareply.cpp
         ollamasettings.h
         ollamasettings.cpp
+        ollamastartprocessjob.h
+        ollamastartprocessjob.cpp
         textautogenerateollama_private_export.h
         modelsmanager/ollamamodelavailableinfo.cpp
         modelsmanager/ollamamodelavailableinfo.h
