@@ -5,13 +5,14 @@
 */
 
 #include "textautogeneratenotworkingwidget.h"
-#include "core/textautogeneratetextutils.h"
+
 #include "textautogeneratenotworkingmessagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <QProcess>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/ExecutableUtils>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -51,7 +52,7 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()
 {
-    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
+    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
         return;

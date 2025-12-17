@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratenotworkingmessagewidget.h"
-#include "core/textautogeneratetextutils.h"
+#include <TextAddonsWidgets/ExecutableUtils>
 
 #include <KLocalizedString>
 #include <QDesktopServices>
@@ -37,7 +37,7 @@ void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(const QString &erro
         removeAction(mCurrentAction);
         mCurrentAction = nullptr;
     }
-    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
+    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
         setText(i18n("Ollama not found on system. Ask to your administrator system to install it."));

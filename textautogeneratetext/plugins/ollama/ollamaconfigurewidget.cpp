@@ -6,7 +6,6 @@
 
 #include "ollamaconfigurewidget.h"
 #include "autogeneratetext_ollama_debug.h"
-#include "core/textautogeneratetextutils.h"
 #include "modelsmanager/ollamanetworkurlbutton.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
@@ -23,6 +22,7 @@
 #include <QLineEdit>
 #include <QProcess>
 #include <QSpinBox>
+#include <TextAddonsWidgets/ExecutableUtils>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *parent)
@@ -129,7 +129,7 @@ OllamaConfigureWidget::~OllamaConfigureWidget() = default;
 
 void OllamaConfigureWidget::slotStartOllama()
 {
-    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
+    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama doesn't exist";
         return;

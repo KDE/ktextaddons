@@ -6,8 +6,8 @@
 
 #include "ollamastartprocessjob.h"
 #include "autogeneratetext_ollama_debug.h"
-#include "core/textautogeneratetextutils.h"
 #include <KLocalizedString>
+#include <TextAddonsWidgets/ExecutableUtils>
 using namespace Qt::Literals::StringLiterals;
 OllamaStartProcessJob::OllamaStartProcessJob(QObject *parent)
     : QObject{parent}
@@ -18,7 +18,7 @@ OllamaStartProcessJob::~OllamaStartProcessJob() = default;
 
 void OllamaStartProcessJob::start()
 {
-    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
+    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama doesn't exist";
         Q_EMIT ollamaFailed(i18n("Ollama not found on system."));
