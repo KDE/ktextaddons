@@ -150,7 +150,13 @@ void OllamaConfigureWidget::loadSettings()
     mModelComboBoxWidget->setCurrentModel(mManager->ollamaSettings()->currentModel());
     mTemperature->setValue(mManager->ollamaSettings()->temperature());
     mSeed->setValue(mManager->ollamaSettings()->seed());
-    // TODO load from mOllamaConfigureCustomizeWidget;
+    const OllamaConfigureCustomizeWidget::CustomizeInfo info{
+        .vulkanSupport = mManager->ollamaSettings()->vulkanSupport(),
+        .cudaVisibleDevice = mManager->ollamaSettings()->cudaVisibleDevice(),
+        .rocrVisibleDevice = mManager->ollamaSettings()->rocrVisibleDevice(),
+        .overrideGfxVersion = mManager->ollamaSettings()->overrideGfxVersion(),
+    };
+    mOllamaConfigureCustomizeWidget->setCustomizeInfo(info);
 }
 
 void OllamaConfigureWidget::saveSettings()
@@ -160,7 +166,11 @@ void OllamaConfigureWidget::saveSettings()
     mManager->ollamaSettings()->setCurrentModel(mModelComboBoxWidget->currentModel());
     mManager->ollamaSettings()->setTemperature(mTemperature->value());
     mManager->ollamaSettings()->setSeed(mSeed->value());
-    // TODO save from mOllamaConfigureCustomizeWidget;
+    const OllamaConfigureCustomizeWidget::CustomizeInfo info = mOllamaConfigureCustomizeWidget->customizeInfo();
+    mManager->ollamaSettings()->setCudaVisibleDevice(info.cudaVisibleDevice);
+    mManager->ollamaSettings()->setRocrVisibleDevice(info.rocrVisibleDevice);
+    mManager->ollamaSettings()->setOverrideGfxVersion(info.overrideGfxVersion);
+    mManager->ollamaSettings()->setVulkanSupport(info.vulkanSupport);
 }
 
 void OllamaConfigureWidget::fillModels()
