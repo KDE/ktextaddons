@@ -5,12 +5,10 @@
 */
 
 #include "ollamasettings.h"
-using namespace Qt::Literals::StringLiterals;
-
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaSettings::OllamaSettings()
-    : mServerUrl(QUrl(u"http://127.0.0.1:11434"_s))
 {
 }
 
