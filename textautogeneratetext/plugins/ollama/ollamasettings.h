@@ -36,9 +36,17 @@ public:
     [[nodiscard]] QString vulkanSupport() const;
     void setVulkanSupport(const QString &newVulkanSupport);
 
+    [[nodiscard]] QString rocrVisibleDevice() const;
+    void setRocrVisibleDevice(const QString &newRocrVisibleDevice);
+
+    [[nodiscard]] QString cudaVisibleDevice() const;
+    void setCudaVisibleDevice(const QString &newCudaVisibleDevice);
+
 private:
     QString mVulkanSupport;
     QString mOverrideGfxVersion;
+    QString mRocrVisibleDevice;
+    QString mCudaVisibleDevice;
     QString mDisplayName;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
     QString mCurrentModel;

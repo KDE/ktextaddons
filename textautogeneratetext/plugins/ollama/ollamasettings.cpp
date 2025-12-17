@@ -83,3 +83,23 @@ void OllamaSettings::setVulkanSupport(const QString &newVulkanSupport)
 {
     mVulkanSupport = newVulkanSupport;
 }
+
+QString OllamaSettings::rocrVisibleDevice() const
+{
+    return mRocrVisibleDevice;
+}
+
+void OllamaSettings::setRocrVisibleDevice(const QString &newRocrVisibleDevice)
+{
+    mRocrVisibleDevice = newRocrVisibleDevice;
+}
+
+QString OllamaSettings::cudaVisibleDevice() const
+{
+    return mCudaVisibleDevice;
+}
+
+void OllamaSettings::setCudaVisibleDevice(const QString &newCudaVisibleDevice)
+{
+    mCudaVisibleDevice = newCudaVisibleDevice;
+}
