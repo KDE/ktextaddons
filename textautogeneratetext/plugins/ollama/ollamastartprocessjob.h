@@ -7,12 +7,12 @@
 #pragma once
 
 #include <QObject>
-
+class OllamaManager;
 class OllamaStartProcessJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit OllamaStartProcessJob(QObject *parent = nullptr);
+    explicit OllamaStartProcessJob(OllamaManager *manager, QObject *parent = nullptr);
     ~OllamaStartProcessJob() override;
 
     void start();
@@ -20,4 +20,7 @@ public:
 Q_SIGNALS:
     void ollamaStarted();
     void ollamaFailed(const QString &errorStr);
+
+private:
+    OllamaManager *const mOllamaManager;
 };

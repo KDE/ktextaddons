@@ -7,10 +7,13 @@
 #include "ollamastartprocessjob.h"
 #include "autogeneratetext_ollama_debug.h"
 #include <KLocalizedString>
+#include <QProcess>
 #include <TextAddonsWidgets/ExecutableUtils>
+
 using namespace Qt::Literals::StringLiterals;
-OllamaStartProcessJob::OllamaStartProcessJob(QObject *parent)
+OllamaStartProcessJob::OllamaStartProcessJob(OllamaManager *manager, QObject *parent)
     : QObject{parent}
+    , mOllamaManager(manager)
 {
 }
 
@@ -25,7 +28,14 @@ void OllamaStartProcessJob::start()
         deleteLater();
         return;
     }
-    // TODO
+
+    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
+    if (!status) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to start ollama";
+        Q_EMIT ollamaFailed(i18n("Impossible to start Ollama."));
+    } else {
+        Q_EMIT ollamaStarted();
+    }
     deleteLater();
 }
 

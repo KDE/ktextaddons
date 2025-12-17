@@ -5,9 +5,9 @@
 */
 
 #include "ollamaconfigurewidget.h"
-#include "autogeneratetext_ollama_debug.h"
 #include "modelsmanager/ollamanetworkurlbutton.h"
 #include "ollamaconfigurecustomizewidget.h"
+#include "ollamastartprocessjob.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 
 #include "ollamacomboboxwidget.h"
@@ -16,11 +16,11 @@
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
-#include <QProcess>
 #include <QSpinBox>
 #include <TextAddonsWidgets/ExecutableUtils>
 
@@ -129,18 +129,15 @@ OllamaConfigureWidget::~OllamaConfigureWidget() = default;
 
 void OllamaConfigureWidget::slotStartOllama()
 {
-    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
-    if (ollamaPath.isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama doesn't exist";
-        return;
-    }
-    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
-    if (!status) {
-        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to start ollama";
-    } else {
+    auto job = new OllamaStartProcessJob(mManager, this);
+    connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
         mMessageWidget->animatedHide();
         Q_EMIT ollamaProcessOk(true);
-    }
+    });
+    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this](const QString &errorStr) {
+        KMessageBox::error(this, errorStr, i18n("Failed to start Ollama"));
+    });
+    job->start();
 }
 
 void OllamaConfigureWidget::loadSettings()
