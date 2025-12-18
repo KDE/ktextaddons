@@ -17,7 +17,7 @@ GenericNetworkServerInfoTest::GenericNetworkServerInfoTest(QObject *parent)
 
 void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
 {
-    GenericNetworkServerInfo info;
+    const GenericNetworkServerInfo info;
     QCOMPARE(info.pluginNetworkTypeFromString(u"mistralai"_s), GenericNetworkManager::PluginNetworkType::MistralAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"openai"_s), GenericNetworkManager::PluginNetworkType::OpenAI);
     QCOMPARE(info.pluginNetworkTypeFromString(QString()), GenericNetworkManager::PluginNetworkType::Unknown);
@@ -33,7 +33,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
 {
-    GenericNetworkServerInfo info;
+    const GenericNetworkServerInfo info;
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::MistralAI), u"https://api.mistral.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OpenAI), u"https://api.openai.com/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::KlusterAI), u"https://api.kluster.ai/v1/"_s);
@@ -48,7 +48,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
 {
-    GenericNetworkServerInfo info;
+    const GenericNetworkServerInfo info;
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::MistralAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::OpenAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::KlusterAI), u"chat/completions"_s);
@@ -63,7 +63,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
 {
-    GenericNetworkServerInfo info;
+    const GenericNetworkServerInfo info;
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::MistralAI), u"mistralai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::OpenAI), u"openai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::KlusterAI), u"klusterai"_s);
@@ -78,7 +78,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
 {
-    GenericNetworkServerInfo info;
+    const GenericNetworkServerInfo info;
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::MistralAI), GenericNetworkServerInfo::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenAI), GenericNetworkServerInfo::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KlusterAI), GenericNetworkServerInfo::Limitation::None);
