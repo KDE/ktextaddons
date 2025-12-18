@@ -84,10 +84,12 @@ VerifyNewVersionWidget::VerifyNewVersionInfo VerifyNewVersionWidget::generateVer
     return info;
 }
 
+#if TEXTADDONSWIDGETS_ENABLE_DEPRECATED_SINCE(1, 9)
 void VerifyNewVersionWidget::addOsUrlInfo(OsVersion os, const QString &url)
 {
     mUrls.insert(os, url);
 }
+#endif
 
 void VerifyNewVersionWidget::slotVerifyNewVersion()
 {
