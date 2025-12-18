@@ -6,6 +6,8 @@
 
 #include "ollamastartprocessjob.h"
 #include "autogeneratetext_ollama_debug.h"
+#include "ollamamanager.h"
+#include "ollamasettings.h"
 #include <KLocalizedString>
 #include <QProcess>
 #include <TextAddonsWidgets/ExecutableUtils>
@@ -38,7 +40,8 @@ void OllamaStartProcessJob::start()
     auto process = new QProcess(this);
     process->setProgram(ollamaPath);
     process->setArguments({u"start"_s});
-    // TODO add environment variables
+    process->setProcessEnvironment(mOllamaManager->ollamaSettings()->processEnvironment());
+
     if (process->startDetached()) {
         Q_EMIT ollamaStarted();
     } else {

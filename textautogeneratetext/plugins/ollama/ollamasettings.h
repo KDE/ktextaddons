@@ -9,6 +9,7 @@
 
 #include <QString>
 #include <QUrl>
+class QProcessEnvironment;
 using namespace Qt::Literals::StringLiterals;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaSettings
 {
@@ -41,6 +42,8 @@ public:
 
     [[nodiscard]] QString cudaVisibleDevice() const;
     void setCudaVisibleDevice(const QString &newCudaVisibleDevice);
+
+    [[nodiscard]] QProcessEnvironment processEnvironment() const;
 
 private:
     QString mVulkanSupport;

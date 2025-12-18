@@ -6,6 +6,7 @@
 
 #include "ollamasettings.h"
 #include <KLocalizedString>
+#include <qprocess.h>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaSettings::OllamaSettings()
@@ -102,4 +103,9 @@ QString OllamaSettings::cudaVisibleDevice() const
 void OllamaSettings::setCudaVisibleDevice(const QString &newCudaVisibleDevice)
 {
     mCudaVisibleDevice = newCudaVisibleDevice;
+}
+
+QProcessEnvironment OllamaSettings::processEnvironment() const
+{
+    return {};
 }
