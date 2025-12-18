@@ -28,6 +28,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"llamaapi"_s), GenericNetworkManager::PluginNetworkType::LlamaApi);
     QCOMPARE(info.pluginNetworkTypeFromString(u"anthropic"_s), GenericNetworkManager::PluginNetworkType::Anthropic);
     QCOMPARE(info.pluginNetworkTypeFromString(u"kimiai"_s), GenericNetworkManager::PluginNetworkType::KimiAI);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"gorkai"_s), GenericNetworkManager::PluginNetworkType::GorkAI);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -42,6 +43,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::LlamaApi), u"https://api.llama.com/compat/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::Anthropic), u"https://api.anthropic.com/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::KimiAI), u"https://api.moonshot.ai/v1/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::GorkAI), u"https://api.x.ai/v1/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -56,6 +58,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::LlamaApi), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::Anthropic), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::KimiAI), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::GorkAI), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -70,6 +73,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::LlamaApi), u"llamaapi"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::Anthropic), u"anthropic"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::KimiAI), u"kimiai"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::GorkAI), u"gorkai"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -84,6 +88,7 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Anthropic), GenericNetworkServerInfo::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::VeniceAI), GenericNetworkServerInfo::Limitation::NoSystemMessage);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KimiAI), GenericNetworkServerInfo::Limitation::NoSystemMessage);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GorkAI), GenericNetworkServerInfo::Limitation::None);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"

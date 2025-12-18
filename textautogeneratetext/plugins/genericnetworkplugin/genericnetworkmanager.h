@@ -25,6 +25,7 @@ public:
         VeniceAI,
         LlamaApi,
         Anthropic,
+        GorkAI,
         KimiAI,
         LastElement = KimiAI,
     };
