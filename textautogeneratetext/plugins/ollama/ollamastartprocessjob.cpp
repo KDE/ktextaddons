@@ -6,6 +6,8 @@
 
 #include "ollamastartprocessjob.h"
 #include "autogeneratetext_ollama_debug.h"
+#include "ollamamanager.h"
+#include "ollamasettings.h"
 #include <KLocalizedString>
 #include <QProcess>
 #include <TextAddonsWidgets/ExecutableUtils>
@@ -28,13 +30,23 @@ void OllamaStartProcessJob::start()
         deleteLater();
         return;
     }
+    if (!mOllamaManager) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "OllamaManager is not defined";
+        Q_EMIT ollamaFailed(i18n("Impossible to start Ollama."));
+        deleteLater();
+        return;
+    }
 
-    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
-    if (!status) {
+    auto process = new QProcess(this);
+    process->setProgram(ollamaPath);
+    process->setArguments({u"start"_s});
+    process->setProcessEnvironment(mOllamaManager->ollamaSettings()->processEnvironment());
+
+    if (process->startDetached()) {
+        Q_EMIT ollamaStarted();
+    } else {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to start ollama";
         Q_EMIT ollamaFailed(i18n("Impossible to start Ollama."));
-    } else {
-        Q_EMIT ollamaStarted();
     }
     deleteLater();
 }

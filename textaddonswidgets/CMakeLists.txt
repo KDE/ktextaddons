@@ -116,7 +116,15 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextAddonsWidgets BASE_NAME TextAddonsWidgets)
+ecm_generate_export_header(KF6TextAddonsWidgets
+    BASE_NAME TextAddonsWidgets
+    VERSION ${TEXTADDONSWIDGETS_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+    DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 1.9
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+)
 
 target_include_directories(
     KF6TextAddonsWidgets
