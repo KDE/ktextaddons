@@ -105,5 +105,18 @@ void OllamaSettings::setCudaVisibleDevice(const QString &newCudaVisibleDevice)
 
 QProcessEnvironment OllamaSettings::processEnvironment() const
 {
-    return {};
+    QProcessEnvironment environment;
+    if (!mCudaVisibleDevice.isEmpty()) {
+        environment.insert(u"CUDA_VISIBLE_DEVICES"_s, mCudaVisibleDevice);
+    }
+    if (!mVulkanSupport.isEmpty()) {
+        environment.insert(u"OLLAMA_VULKAN"_s, mVulkanSupport);
+    }
+    if (!mRocrVisibleDevice.isEmpty()) {
+        environment.insert(u"ROCR_VISIBLE_DEVICES"_s, mRocrVisibleDevice);
+    }
+    if (!mOverrideGfxVersion.isEmpty()) {
+        environment.insert(u"HSA_OVERRIDE_GFX_VERSION"_s, mOverrideGfxVersion);
+    }
+    return environment;
 }
