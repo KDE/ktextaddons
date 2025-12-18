@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-11 08:48+0100\n"
+"POT-Creation-Date: 2025-12-18 00:42+0000\n"
+"PO-Revision-Date: 2025-12-17 09:56+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.11.90\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -2046,9 +2046,9 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "Ouvrir l'URL « %1 »"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -2062,24 +2062,22 @@ msgstr "Recharger un modèle"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Prise en charge de Vulkan d'un processeur graphique (GPU) :"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "Sélection de processeur graphique NVIDIA :"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Copier la sélection"
+msgstr "Sélection d'un processeur graphique AMD :"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "Remplacer la version GFX :"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2144,11 +2142,9 @@ msgstr ""
 "générera le même texte pour la même invite. (Par défaut : 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Configurer Ollama"
+msgstr "Personnaliser Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2156,6 +2152,27 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Ces entrées sont optionnelles. Elles sont utilisées pour investiguer les "
+"problèmes relatifs au processus graphique avec Ollama."
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Start Ollama"
+msgid "Failed to start Ollama"
+msgstr "Démarrer Ollama"
+
+#: plugins/ollama/ollamastartprocessjob.cpp:27
+#, fuzzy, kde-format
+#| msgid "Ollama not found on system. Please install it."
+msgid "Ollama not found on system."
+msgstr "Impossible de trouver Ollama sur le système. Veuillez l'installer."
+
+#: plugins/ollama/ollamastartprocessjob.cpp:35
+#, fuzzy, kde-format
+#| msgid "Impossible to open %1"
+msgid "Impossible to start Ollama."
+msgstr "Impossible d'ouvrir %1"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2203,7 +2220,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Démarrer Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:31
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"

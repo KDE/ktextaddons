@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-18 00:42+0000\n"
 "PO-Revision-Date: 2025-12-16 21:59+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2020,7 +2020,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Відкрити адресу «%1»"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -2127,6 +2127,25 @@ msgstr ""
 "Ці записи не є обов'язковими. Ними можна скористатися для визначення причин "
 "проблем із графічними процесорами з Ollama."
 
+#: plugins/ollama/ollamaconfigurewidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Start Ollama"
+msgid "Failed to start Ollama"
+msgstr "Запустити Ollama"
+
+#: plugins/ollama/ollamastartprocessjob.cpp:27
+#, fuzzy, kde-format
+#| msgid "Ollama not found on system. Please install it."
+msgid "Ollama not found on system."
+msgstr "У системі не виявлено Ollama. Будь ласка, встановіть його."
+
+#: plugins/ollama/ollamastartprocessjob.cpp:35
+#, fuzzy, kde-format
+#| msgid "Impossible to open %1"
+msgid "Impossible to start Ollama."
+msgstr "Не вдалося відкрити %1"
+
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr "Назва міста"
@@ -2173,7 +2192,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Запустити Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:31
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"

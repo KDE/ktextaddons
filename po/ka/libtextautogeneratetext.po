@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-16 10:35+0100\n"
+"POT-Creation-Date: 2025-12-18 00:42+0000\n"
+"PO-Revision-Date: 2025-12-17 02:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2014,9 +2014,9 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "ბმულის \"%1\" გახსნა"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -2120,6 +2120,27 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"ეს ჩანაწერები არასავალდებულოა. ისინი გამოიყენება GPU-თან დაკავშირებული "
+"პრობლემების გადასაჭრელად Ollama-ის გამოყენებისას."
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Start Ollama"
+msgid "Failed to start Ollama"
+msgstr "Ollama-ის გაშვება"
+
+#: plugins/ollama/ollamastartprocessjob.cpp:27
+#, fuzzy, kde-format
+#| msgid "Ollama not found on system. Please install it."
+msgid "Ollama not found on system."
+msgstr "სისტემაში Ollama აღმოჩენილი არაა. დააყენეთ ის."
+
+#: plugins/ollama/ollamastartprocessjob.cpp:35
+#, fuzzy, kde-format
+#| msgid "Impossible to open %1"
+msgid "Impossible to start Ollama."
+msgstr "%1-ის გახსნა შეუძლებელია"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2166,7 +2187,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Ollama-ის გაშვება"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:31
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"

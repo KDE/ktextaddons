@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-18 00:42+0000\n"
 "PO-Revision-Date: 2025-12-17 00:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2036,7 +2036,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Abrir URL «%1»"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -2143,6 +2143,25 @@ msgstr ""
 "Estas entradas son opcionales. Se usan para identificar problemas de GPU "
 "relacionados con Ollama."
 
+#: plugins/ollama/ollamaconfigurewidget.cpp:138
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Start Ollama"
+msgid "Failed to start Ollama"
+msgstr "Iniciar Ollama"
+
+#: plugins/ollama/ollamastartprocessjob.cpp:27
+#, fuzzy, kde-format
+#| msgid "Ollama not found on system. Please install it."
+msgid "Ollama not found on system."
+msgstr "No se ha encontrado Ollama en el sistema. Debería instalarlo."
+
+#: plugins/ollama/ollamastartprocessjob.cpp:35
+#, fuzzy, kde-format
+#| msgid "Impossible to open %1"
+msgid "Impossible to start Ollama."
+msgstr "No se ha podido abrir %1"
+
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr "Nombre de la ciudad"
@@ -2189,7 +2208,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Iniciar Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:31
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
