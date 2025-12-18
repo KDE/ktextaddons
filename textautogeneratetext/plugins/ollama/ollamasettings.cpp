@@ -9,9 +9,7 @@
 #include <qprocess.h>
 
 using namespace Qt::Literals::StringLiterals;
-OllamaSettings::OllamaSettings()
-{
-}
+OllamaSettings::OllamaSettings() = default;
 
 OllamaSettings::~OllamaSettings() = default;
 
