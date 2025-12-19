@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-12-16 21:59+0200\n"
+"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"PO-Revision-Date: 2025-12-18 07:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -248,32 +248,37 @@ msgstr "Anthropic"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (ШІ Moonshot)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
+#, kde-format
+msgid "Gork (X.ai)"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Великі мовні моделі ШІ Mistral"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Groq AI"
 msgstr "ШІ Groq"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:144
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного ШІ Kluster"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного ШІ Celebras"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Програмний інтерфейс ШІ Meta Llama"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Великі мовні моделі Kimi від Mistral AI"
@@ -2128,23 +2133,20 @@ msgstr ""
 "проблем із графічними процесорами з Ollama."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "Запустити Ollama"
+msgstr "Не вдалося запустити Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#: plugins/ollama/ollamastartprocessjob.cpp:29
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "У системі не виявлено Ollama. Будь ласка, встановіть його."
+msgstr "У системі не знайдено Ollama."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#: plugins/ollama/ollamastartprocessjob.cpp:49
+#, kde-format
 msgid "Impossible to start Ollama."
-msgstr "Не вдалося відкрити %1"
+msgstr "Неможливо запустити Ollama."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"

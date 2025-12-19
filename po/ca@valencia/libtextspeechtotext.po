@@ -58,7 +58,7 @@ msgstr "La suma de verificació no és correcta."
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr "Error durant l'escriptura en el disc: %1"
+msgstr "S'ha produït un error durant l'escriptura en el disc: %1"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:28
 #, kde-format

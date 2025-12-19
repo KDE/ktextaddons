@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-11-28 12:39+0300\n"
+"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"PO-Revision-Date: 2025-12-18 15:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -53,26 +53,14 @@ msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr ""
-"İşletke: %1\n"
-"Model: %2\n"
-"Örnek adı: %3"
+msgstr "<b>İşletke</b> %1<br><b>Model:</b> %2<br><b>Örnek adı:</b> %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"Araçlar: %1"
+msgstr "<br><b>Araçlar:</b> %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -258,32 +246,37 @@ msgstr "Anthropic"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
+#, kde-format
+msgid "Gork (X.ai)"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:144
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi, Moonshot AI tarafından geliştirilmiş bir büyük dil modelidir."
@@ -312,17 +305,14 @@ msgid "Add Model"
 msgstr "Model ekle"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
+#, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "Model adını “ad:künye” biçiminde girin"
+msgstr "Model adı “ad:künye” biçiminde olmalıdır"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgid "Invalid Model Name"
-msgstr "Kurulu Modeller"
+msgstr "Geçersiz Model Adı"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -396,14 +386,12 @@ msgstr "İptal"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr ""
+msgstr "Model indirme bir hata bildirdi: %1"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgid "Download Model Error"
-msgstr "Model İndir"
+msgstr "Model İndirme Hatası"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format
@@ -2025,7 +2013,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "URL’yi aç: “%1”"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
@@ -2041,24 +2029,22 @@ msgstr "Modeli yeniden yükle"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Vulkan GPU desteği:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "NVIDIA GPU seçimi:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Seçimi Kopyala"
+msgstr "AMD GPU seçimi:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "GFX sürümünü geçersiz kıl:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2123,11 +2109,9 @@ msgstr ""
 "(Öntanımlı: 0)."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Ollama’yı Yapılandır"
+msgstr "Ollama’yı Özelleştir"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2135,24 +2119,24 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Bu girdiler isteğe bağlıdır, Ollama’nın GPU ile ilişkin sorunlarını "
+"tanılamak için kullanılırlar."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "Ollama’yı Başlat"
+msgstr "Ollama başlatılamadı"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#: plugins/ollama/ollamastartprocessjob.cpp:29
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "Ollama sistemde bulunamadı. Lütfen onu kurun."
+msgstr "Ollama sistemde bulunamadı."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
+#: plugins/ollama/ollamastartprocessjob.cpp:49
 #, kde-format
 msgid "Impossible to start Ollama."
-msgstr ""
+msgstr "Ollama’yı başlatmak olanaksız"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2260,13 +2244,13 @@ msgstr "Araçları seçmeye olanak tanı"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "%1 ögesini açmak olanaksız"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Dosya Açılırken Hata"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
@@ -2594,45 +2578,45 @@ msgstr "Kod Blokunu Kopyala"
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
-msgstr ""
+msgstr "Görsel Görüntüle"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:59
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr ""
+msgstr "Görseli Panoya Kopyala"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:61
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr ""
+msgstr "Konumu Panoya Kopyala"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
-msgstr ""
+msgstr "Başka Uygulama…"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr ""
+msgstr "Yakınlaştır:"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr ""
+msgstr "%​100"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr ""
+msgstr "Görünüme Sığdır"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:108
 #, kde-format
 msgid "Save Image"
-msgstr ""
+msgstr "Görseli Kaydet"
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format

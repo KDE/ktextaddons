@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-12-16 18:37+0100\n"
+"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"PO-Revision-Date: 2025-12-18 11:12+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -246,32 +246,37 @@ msgstr "Antropisch"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
+#, kde-format
+msgid "Gork (X.ai)"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI grote taalmodellen"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq-AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:144
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster-AI-cloud inference API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras-AI-cloud inference API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "API van Meta-AI-Llama"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi grote taalmodellen door Moonshot AI"
@@ -2119,23 +2124,20 @@ msgstr ""
 "met Ollama te analyseren."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "Ollama starten"
+msgstr "Ollama starten is mislukt"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#: plugins/ollama/ollamastartprocessjob.cpp:29
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "Ollama niet gevonden op systeem. Installeer het."
+msgstr "Ollama niet gevonden op systeem."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#: plugins/ollama/ollamastartprocessjob.cpp:49
+#, kde-format
 msgid "Impossible to start Ollama."
-msgstr "%1 openen is onmogelijk"
+msgstr "Ollama starten is onmogelijk."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"

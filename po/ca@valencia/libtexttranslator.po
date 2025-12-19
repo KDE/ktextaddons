@@ -438,7 +438,7 @@ msgstr "La suma de verificació no és correcta."
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr "Error durant l'escriptura en el disc: %1"
+msgstr "S'ha produït un error durant l'escriptura en el disc: %1"
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:32
 #, kde-format
@@ -663,7 +663,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
-msgstr "S'ha produït un error en guardar el fitxer"
+msgstr "S'ha produït un error mentre es guardava el fitxer"
 
 #: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format

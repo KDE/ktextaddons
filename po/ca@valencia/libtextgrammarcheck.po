@@ -84,7 +84,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr "Error durant les opcions d'extracció"
+msgstr "S'ha produït un error durant les opcions d'extracció"
 
 #: grammalecte/grammalecteconfigwidget.cpp:113
 #, kde-format
@@ -344,7 +344,7 @@ msgstr "S'ha notificat un error: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr "No s'ha pogut comprovar la gramàtica."
+msgstr "Ha fallat mentre es comprovava la gramàtica."
 
 #: languagetool/languagetoolresultwidget.cpp:80
 #, kde-format
@@ -358,7 +358,7 @@ msgid ""
 "An error occurred attempting to load the list of available languages:\n"
 "%1"
 msgstr ""
-"S'ha produït un error en intentar carregar la llista dels idiomes "
+"S'ha produït un error mentre s'intentava carregar la llista dels idiomes "
 "disponibles:\n"
 "%1"
 
