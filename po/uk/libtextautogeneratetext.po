@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-12-16 21:59+0200\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-10-31 13:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -54,14 +54,26 @@ msgid "Unknown"
 msgstr "Невідомо"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2\n"
+#| "Instance Name: %3"
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr "<b>Рушій:</b> %1<br><b>Модель:</b> %2<br><b>Назва екземпляра:</b> %3"
+msgstr ""
+"Рушій: %1\n"
+"Модель: %2\n"
+"Назва екземпляра: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
 msgid "<br><b>Tools:</b> %1"
-msgstr "<br><b>Інструменти:</b> %1"
+msgstr ""
+"\n"
+"Інструменти: %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -146,31 +158,31 @@ msgstr "Мережевий"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
 msgid "Plugins Text:"
-msgstr "Текст додатків:"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr "Ідентифікатор інструменту: %1"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr "Увімкнено"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr "Вимкнено"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr "Активація: %1"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -302,14 +314,17 @@ msgid "Add Model"
 msgstr "Додати модель"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please enter model name as \"name:tag\""
 msgid "Model name must be as \"name:tag\""
-msgstr "Назву моделі має бути подано у форматі «назва:мітка»"
+msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Installed Models"
 msgid "Invalid Model Name"
-msgstr "Некоректна назва моделі"
+msgstr "Встановлені моделі"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -383,18 +398,22 @@ msgstr "Скасувати"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr "При спробі отримання моделі повідомлено про помилку: %1"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgid "Download Model Error"
-msgstr "Помилка при отриманні моделі"
+msgstr "Отримання моделі"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "Отримати"
+msgstr "Отримання моделі"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
@@ -2018,7 +2037,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr "Відкрити адресу «%1»"
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
@@ -2034,22 +2053,24 @@ msgstr "Перезавантажити модель"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr "Підтримка процесорів Vulkan:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr "Вибір процесора NVIDIA:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
-msgstr "Вибір процесора AMD:"
+msgstr "Копіювати позначене"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
 #, kde-format
 msgid "Override GFX version:"
-msgstr "Перевизначення версії GFX:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2114,7 +2135,9 @@ msgstr ""
 "самого тексту у відповідь на конкретний запит. (Типове значення: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgid "Customize Ollama"
 msgstr "Налаштувати Ollama"
 
@@ -2124,8 +2147,6 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
-"Ці записи не є обов'язковими. Ними можна скористатися для визначення причин "
-"проблем із графічними процесорами з Ollama."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
 #, fuzzy, kde-format
@@ -2134,17 +2155,17 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Запустити Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
+#: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "Ollama not found on system."
 msgstr "У системі не виявлено Ollama. Будь ласка, встановіть його."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#: plugins/ollama/ollamastartprocessjob.cpp:51
+#, kde-format
 msgid "Impossible to start Ollama."
-msgstr "Не вдалося відкрити %1"
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2220,23 +2241,25 @@ msgstr "Долучити файл"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr "зображення (*.png *.xpm *.jpg *.gif)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr "звукові дані (*.mp4 *.avi)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr "текстові дані (*.txt *.md)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select GGUF File"
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Виберіть файл"
+msgstr "Виберіть файл GGUF"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
@@ -2253,13 +2276,13 @@ msgstr "Дозволити вибір інструментів"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
-msgstr "Не вдалося відкрити %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr "Помилка під час відкриття файла"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
@@ -2309,7 +2332,7 @@ msgstr "Відомості щодо метаданих"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr "Діагностика"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2449,7 +2472,7 @@ msgstr "Макс. жетонів:"
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr "Інструмент додатків:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -2551,13 +2574,13 @@ msgstr "Змінити…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr "Зупинити"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
-msgstr "Вимовити"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:478
 #: widgets/view/textautogeneratedelegateutils.cpp:70
@@ -2575,57 +2598,57 @@ msgstr "Оновити"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgid "Block Code copied."
-msgstr "Скопійовано блок коду."
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr "Копіювання блоку коду"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
-msgstr "Показ зображення"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:59
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr "Копіювати зображення до буфера"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:61
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr "Копіювати адресу до буфера"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
-msgstr "Інша програма…"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr "Масштаб:"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr "Підібрати за розмірами"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:108
 #, kde-format
 msgid "Save Image"
-msgstr "Зберегти зображення"
+msgstr ""
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
@@ -2716,20 +2739,12 @@ msgstr "Повідомлень не знайдено."
 #~ msgid "Configure"
 #~ msgstr "Налаштувати"
 
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Далі"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Назад"
-
 #~ msgid "No system prompt"
 #~ msgstr "Немає запиту системи"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Змінити…"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Налаштування ШІ Mistral"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Адреса екземпляра Ollama"
@@ -2740,36 +2755,19 @@ msgstr "Повідомлень не знайдено."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Модель, яку буде використано для створення відповідей"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "Температура моделі. Збільшення температури зробить відповіді моделі більш "
-#~ "творчими."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Встановлює базу випадковості, яку буде використано для породження даних. "
-#~ "Встановлення певного числа примусить модель до створення одного і того "
-#~ "самого тексту у відповідь на конкретний запит. (Типове значення: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "Рушій:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Налаштування ШІ Mistral"
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Налаштування ШІ Openai"
 
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Скасувати"
+#~ msgid "Engine:"
+#~ msgstr "Рушій:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Змінити…"
 
 #~ msgctxt "@action"
 #~ msgid "New Chat…"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 07:00+0100\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-10-05 15:45+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,113 +16,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.7\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "Naj odprem prilogo?"
+msgstr ""
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr "Naj odprem prilogo <filename>%1</filename>?<nl/>"
+msgstr ""
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "Odpri"
+msgstr ""
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr "&Odpri z '%1'"
+msgstr ""
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr "Odpri z…"
+msgstr ""
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr "Shrani kot…"
+msgstr ""
 
 #: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "Shrani datoteko"
+msgstr ""
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr "Napaka pri shranjevanju datoteke"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr "Onemogoči preverjanje različice"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
 msgstr ""
-"Vaša različica je starejša od 6 mesecev, zato vam priporočamo, da jo "
-"nadgradite."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
-"Vaša različica je starejša od enega leta, zato vam toplo priporočamo "
-"nadgradnjo."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "Za uveljavitev sprememb je potreben ponovni zagon."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Konfiguriraj"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Išči… (%1)"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Naslednji"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Prejšnji"
+msgstr ""
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -134,7 +130,7 @@ msgstr "Krepko"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr "Ležeče"
+msgstr "Poševno"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
@@ -188,77 +184,66 @@ msgstr "Izberi"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr "Preveri novo različico"
+msgstr ""
 
 #: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
-"Najdena je bila nova različica. Kliknite <a href=\"%1\">tukaj</a> za prenos."
 
 #: verifynewversion/checknewversionwidget.cpp:54
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr "Ni najdene nove različice. Gradnjo najdete <a href=\"%1\">tukaj</a>."
+msgstr ""
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr "Preveri za novo različico"
+msgstr ""
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr "Različica:"
+msgstr ""
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr "Kaj je novega v %1"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr "(Prikaži novice)"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr "Kaj je novega v %2. %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr "Vse različice"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr "Različica %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr "Pomembne spremembe od prejšnje različice:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr "Nekatere nove zmožnosti v tej izdaji vključujejo:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr "Nekaj ​​popravkov napak:"
-
-#~ msgid "No new version found."
-#~ msgstr "Ni najdene nove različice."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "Ni mogoče odpreti %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Napaka pri odpiranju datoteke"
+msgstr ""

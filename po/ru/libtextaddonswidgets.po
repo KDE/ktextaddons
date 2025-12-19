@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
 "PO-Revision-Date: 2025-10-27 10:40+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -71,22 +71,18 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr "Отключить проверку версий"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
 msgstr ""
-"Эта версия программы не обновлялась более шести месяцев, настоятельно "
-"рекомендуется выполнить обновление."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
-"Эта версия программы не обновлялась более года, настоятельно рекомендуется "
-"выполнить обновление."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
@@ -109,21 +105,21 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Поиск… (%1)"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Следующее"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Предыдущее"
+msgstr ""
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -189,71 +185,66 @@ msgstr "Выбрать"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr "Проверка наличия новой версии"
+msgstr ""
 
 #: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
-msgstr "Найдена новая версия. Нажмите <a href=\"%1\">сюда</a> для её загрузки."
+msgstr ""
 
 #: verifynewversion/checknewversionwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+#, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr "Найдена новая версия. Нажмите <a href=\"%1\">сюда</a> для её загрузки."
+msgstr ""
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr "Проверить наличие новой версии"
+msgstr ""
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr "Версия:"
+msgstr ""
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr "Новое в %1"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr "(Показать новое)"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr "Новое в %2. %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr "Все версии"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr "Версия %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr "Важные изменения по сравнению с предыдущей версией:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr "Некоторые из новых возможностей в этой версии:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr "Исправление некоторых ошибок:"
-
-#~ msgid "No new version found."
-#~ msgstr "Новая версия не найдена."
+msgstr ""

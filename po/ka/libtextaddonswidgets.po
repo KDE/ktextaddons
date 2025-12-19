@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 06:27+0100\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-10-09 00:06+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,109 +16,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.7\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "გავხსნა მიმაგრებული ფაილი?"
+msgstr ""
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr "გავხსნა მიმარებული ფაილი <filename>%1</filename>?<nl/>"
+msgstr ""
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "გახსნა"
+msgstr ""
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr "'%1'-ით &გახსნა"
+msgstr ""
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr "&გამხსნელი პროგრამა…"
+msgstr ""
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr "შენახვა &როგორც…"
+msgstr ""
 
 #: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "ფაილის შენახვა"
+msgstr ""
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr "ფაილის შენახვის შეცდომა"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr "ვერსიის შემოწმების გათიშვა"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
-msgstr "თქვენი ვერსია 6 თვეზე ძველია. გირჩევთ, განახლდეთ."
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
-msgstr "თქვენი ვერსია 1 წელზე ძველია. დაჟინებით გირჩევთ, ასწიოთ ვერსია."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "ცვლილებების გადასატარებლად გადატვირთვა აუცილებელია."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "მორგება"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "ძებნა… (%1)"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "შემდეგი"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "წინა"
+msgstr ""
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "ხაზის გადასმა"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr "ხაზგასმა"
+msgstr "ხაზგასმული"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
@@ -184,78 +184,66 @@ msgstr "არჩევა"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr "ახალი ვერსიის შემოწმება"
+msgstr ""
 
 #: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
-"აღმოჩენილია ახალი ვერსია. მის გადმოსაწერად დააწკაპუნეთ <a href=\"%1\">აქ</a>."
 
 #: verifynewversion/checknewversionwidget.cpp:54
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
-"ახალი ვერსია აღმოჩენილი არაა. აგება შეგიძლიათ, იპოვოთ <a href=\"%1\">აქ</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr "ახალი ვერსიის შემოწმება"
+msgstr ""
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr "ვერსია:"
+msgstr ""
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr "რა არის ახალი %1-ში"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr "(სიახლეების ჩვენება)"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr "რა არის ახალი %2-ში. %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr "ყველა ვერსია"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr "ვერსია %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr "მნიშვნელოვანი ცვლილებები ბოლო ვერსიის შემდეგ:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr "ამ რელიზის ზოგიერთი ახალი ფუნქცია:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr "გამოსწორდა ზოგიერთი შეცდომა:"
-
-#~ msgid "No new version found."
-#~ msgstr "ახალი ვერსია აღმოჩენილი არაა."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "%1-ის გახსნა შეუძლებელია"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "ფაილის გახსნის შეცდომა"
+msgstr ""

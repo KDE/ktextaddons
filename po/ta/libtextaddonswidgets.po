@@ -1,169 +1,167 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-11-30 11:01+0530\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2024-09-08 12:52+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
-"Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "உடனிணைப்பைத் திறக்கலாமா?"
+msgstr ""
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr "<filename>%1</filename> எனும் உடனிணைப்பைத் திறக்கலாமா?<nl/>"
+msgstr ""
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "திற"
+msgstr ""
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr "'%1' என்பதால் திற"
+msgstr ""
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr "வேறு செயலியில் திற…"
+msgstr ""
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr "வேறு பெயரில் சேமி…"
+msgstr ""
 
 #: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "கோப்பை சேமிப்பது"
+msgstr ""
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr "கோப்பை சேமிப்பதில் சிக்கல்"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr "பதிப்பு சரிபார்ப்பை முடக்கு"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
 msgstr ""
-"இப்பதிப்பு வெளியிடப்பட்டு ஆறு மாதங்களுக்கு மேல் ஆகிவிட்டது. புதுப்பிக்குமாறு "
-"பரிந்துரைக்கிறோம்."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
-"இப்பதிப்பு வெளியிடப்பட்டு ஒரு ஆண்டுக்கு மேல் ஆகிவிட்டது. புதுப்பிக்குமாறு "
-"பரிந்துரைக்கிறோம்."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "மாற்றங்களை சேயல்படுத்த மீள்துவக்க வேண்டும்."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "அமை"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "தேடு… (%1)"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "அடுத்தது"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "முந்தையது"
+msgstr ""
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr "தடித்த எழுத்து"
+msgstr ""
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr "சாய்வெழுத்து"
+msgstr ""
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
-msgstr "குறுக்குக்கோடு"
+msgstr ""
 
 #: richtextquicktextformat.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr "அடிக்கோடு"
+msgstr ""
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
-msgstr "நிரல்தொடர் பகுதி"
+msgstr ""
 
 #: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
-msgstr "மேற்கோள்"
+msgstr ""
 
 #: richtextquicktextformat.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Insert"
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr "இணைப்பை உள்ளிடு"
+msgstr "நுழை"
 
 #: selectspecialchardialog.cpp:34
 #, kde-format
@@ -187,80 +185,66 @@ msgstr "தேர்ந்தெடு"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr "புதிய பதிப்பு உள்ளதா என பார்ப்பது"
+msgstr ""
 
 #: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
-"புதிய பதிப்பு உள்ளது. அதைப் பதிவிறக்க <a href=\"%1\">இங்கு</a> கிளிக் செய்யவும்."
 
 #: verifynewversion/checknewversionwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+#, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
-"புதிய பதிப்பு உள்ளது. அதைப் பதிவிறக்க <a href=\"%1\">இங்கு</a> கிளிக் செய்யவும்."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr "புதிய பதிப்பு உள்ளதா என பார்ப்பது"
+msgstr ""
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr "பதிப்பு:"
+msgstr ""
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr "%1 தனில் புதியவை"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr "(செய்திகளை காட்டு)"
+msgstr ""
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr "%2 தனில் புதியவை. %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr "அனைத்து பதிப்புகளும்"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr "பதிப்பு %1"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr "சென்ற பதிப்புக்கு பிந்தைய முக்கிய மாற்றங்கள்:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr "இப்பதிப்பின் சில புதிய அம்சங்கள் பின்வருவன:"
+msgstr ""
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr "திருத்தப்பட்ட சில பிழைகள்:"
-
-#~ msgid "No new version found."
-#~ msgstr "எந்த புதிய பதிப்பும் இல்லை."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "%1 தனைத் திறக்க முடியவில்லை"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "கோப்பைத் திறப்பதில் சிக்கல்"
+msgstr ""

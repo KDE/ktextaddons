@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-09-02 17:33+0200\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-09-02 12:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1789,12 +1789,13 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Starta Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
+#: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
 msgstr ""
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
@@ -1846,11 +1847,10 @@ msgid "Start Ollama"
 msgstr "Starta Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configura"
+msgstr "Configura…"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -1860,9 +1860,7 @@ msgstr "Inserta un message"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:469
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Remove"
@@ -1871,7 +1869,7 @@ msgstr "Remove"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr "Attacha File"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
@@ -1934,7 +1932,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Prompt:"
 msgid "Prompt"
-msgstr "Prompt (Demanda)"
+msgstr "Symbolo de demanda:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
@@ -1990,9 +1988,7 @@ msgid "Select a Type of Instance:"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Configura "
@@ -2010,10 +2006,10 @@ msgid "Mark As Default"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Modifica"
+msgstr "Modifica…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
 #, kde-format
@@ -2168,13 +2164,13 @@ msgstr "Favorito"
 #| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Cerca"
+msgstr "Cerca..."
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Search Channels"
-msgstr "Cerca canales"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
@@ -2209,10 +2205,10 @@ msgid "Tools:"
 msgstr "Instrumentos"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:465
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr "Edita ..."
+msgstr "Modifica…"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:474
 #, kde-format
@@ -2369,35 +2365,19 @@ msgstr "Necun Archivo trovate."
 msgid "No Messages Found."
 msgstr "Necun messages trovate."
 
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "Reinitiar si necessari per applicar le modificationes."
-
 #, fuzzy
 #~| msgctxt "@info:tooltip"
 #~| msgid "Configure…"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure"
-#~ msgstr "Configura"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "New Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Nove Conversation de gruppo (Chat)"
-
-#, fuzzy
-#~| msgid "7 days previous"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "7 dies precedente"
+#~ msgstr "Configura..."
 
 #~ msgid "No system prompt"
 #~ msgstr "Necun prompt de systema"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Edita ..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Configura Mistral AI"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Le URLal instantia de Ollama"
@@ -2408,22 +2388,19 @@ msgstr "Necun messages trovate."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Le modello usate per generar responsas"
 
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Configura Mistral AI"
+#~ msgid "Cancel"
+#~ msgstr "Cancella"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Configura "
 
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancella"
+#~ msgid "Engine:"
+#~ msgstr "Motor:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Edita ..."
 
 #~ msgctxt "@action"
 #~ msgid "New Chat…"

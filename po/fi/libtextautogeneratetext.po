@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
 "PO-Revision-Date: 2025-10-22 10:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1900,13 +1900,14 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Käynnistä Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
+#: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "Ollama not found on system."
 msgstr "Ollamaa ei löytynyt järjestelmästä. Asenna se."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
@@ -2342,13 +2343,13 @@ msgstr "Virkistä"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgid "Block Code copied."
-msgstr "Koodilohko kopioitu."
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr "Kopioi koodilohko"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
@@ -2479,25 +2480,12 @@ msgstr "Viestejä ei löytynyt."
 #~ msgid "Configure"
 #~ msgstr "Asetukset"
 
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "New Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Uusi keskustelu"
-
-#, fuzzy
-#~| msgid "7 days previous"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Edelliset 7 päivää"
-
 #~ msgid "No system prompt"
 #~ msgstr "Ei järjestelmäkehotetta"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Muokkaa…"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Mistral-tekoälyn asetukset"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama-ilmentymän verkko-osoite"
@@ -2508,22 +2496,16 @@ msgstr "Viestejä ei löytynyt."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Vastausten tuottamiseen käytetty malli"
 
+#~ msgid "Cancel"
+#~ msgstr "Peru"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "Openai IA:n asetukset"
+
 #~ msgid "Engine:"
 #~ msgstr "Moottori:"
 
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Mistral-tekoälyn asetukset"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Configure Mistral IA"
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Mistral-tekoälyn asetukset"
-
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Peru"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Muokkaa…"

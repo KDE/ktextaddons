@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-11-28 12:39+0300\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-10-10 23:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -156,31 +156,31 @@ msgstr "Ağ"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
 msgid "Plugins Text:"
-msgstr "Eklenti metni:"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr "Araç tanımlayıcısı: %1"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr "Açık"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr "Kapalı"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr "Etkinleştir: %1"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -406,10 +406,12 @@ msgid "Download Model Error"
 msgstr "Model İndir"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "İndir"
+msgstr "Model İndir"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
@@ -2009,8 +2011,6 @@ msgid ""
 "EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
 "provides a comprehensive range of text embeddings models in various sizes."
 msgstr ""
-"Qwen3 serisinin temel modelleri üzerine yapılan Qwen3 Embedding, çeşitli "
-"boyutlarda kapsamlı bir metin gömme modelleri yelpazesi sunar."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:286
 #, kde-format
@@ -2018,8 +2018,6 @@ msgid ""
 "Granite 4 features improved instruction following (IF) and tool-calling "
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
-"Granite 4, gelişmiş yönerge izleme (IF) ve araç çağırma yeteneklerine sahip "
-"olup bunları kurumsal uygulamalarda daha etkili hale getirir."
 
 #: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
@@ -2143,13 +2141,14 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Ollama’yı Başlat"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
+#: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "Ollama not found on system."
 msgstr "Ollama sistemde bulunamadı. Lütfen onu kurun."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
@@ -2227,23 +2226,25 @@ msgstr "Dosya İliştir"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr "Görseller (*.png *.xpm *.jpg *.gif)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr "Ses (*.mp4 *.avi)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr "Metin (*.txt *.md)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select GGUF File"
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Dosya Seç"
+msgstr "GGUF Dosyası Seç"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
@@ -2316,7 +2317,7 @@ msgstr "Üst veri bilgisi"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr "Hata Ayıkla"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2456,7 +2457,7 @@ msgstr "En çok jeton sayısı:"
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr "Eklenti aracı:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -2558,13 +2559,13 @@ msgstr "Düzenle…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr "Durdur"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
-msgstr "Konuş"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:478
 #: widgets/view/textautogeneratedelegateutils.cpp:70

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:42+0000\n"
-"PO-Revision-Date: 2025-12-04 18:10+0100\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-10-24 15:19+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -53,14 +53,26 @@ msgid "Unknown"
 msgstr "Sconosciuto"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2\n"
+#| "Instance Name: %3"
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
-msgstr "<b>Motore:</b> %1<br><b>Modello:</b> %2<br><b>Nome istanza:</b> %3"
+msgstr ""
+"Motore: %1\n"
+"Modello: %2\n"
+"Nome istanza: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
 msgid "<br><b>Tools:</b> %1"
-msgstr "<br><b>Strumenti:</b> %1"
+msgstr ""
+"\n"
+"Strumenti: %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -144,31 +156,31 @@ msgstr "Rete"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
 msgid "Plugins Text:"
-msgstr "Testo estensioni:"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr "Identificatore strumento: %1"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr "Acceso"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr "Spento"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr "Attiva: %1"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -300,14 +312,17 @@ msgid "Add Model"
 msgstr "Aggiungi modello"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please enter model name as \"name:tag\""
 msgid "Model name must be as \"name:tag\""
-msgstr "Il nome del modello deve essere «nome:tag»"
+msgstr "Inserisci il nome del modello come «nome:tag»"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Installed Models"
 msgid "Invalid Model Name"
-msgstr "Nome modello non valido"
+msgstr "Modelli installati"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -381,18 +396,22 @@ msgstr "Annulla"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr "Lo scaricamento del modello ha segnalato un errore: %1"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgid "Download Model Error"
-msgstr "Errore di scaricamento del modello"
+msgstr "Scarica modello"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "Scarica"
+msgstr "Scarica modello"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
@@ -2151,17 +2170,17 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Avvia Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:27
+#: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "Ollama not found on system."
 msgstr "Ollama non trovato nel sistema. Installalo."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#: plugins/ollama/ollamastartprocessjob.cpp:51
+#, kde-format
 msgid "Impossible to start Ollama."
-msgstr "Impossibile aprire %1"
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2237,23 +2256,25 @@ msgstr "Allega file"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr "Immagini (*.png *.xpm *.jpg *.gif)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr "Audio (*.mp4 *.avi)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr "Testo (*.txt *.md)"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select GGUF File"
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Seleziona file"
+msgstr "Seleziona file GGUF"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
@@ -2270,13 +2291,13 @@ msgstr "Consenti di selezionare gli strumenti"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
-msgstr "Impossibile aprire %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr "Errore durante l'apertura del file"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
@@ -2326,7 +2347,7 @@ msgstr "Informazioni sui metadati"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr "Debug"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2466,7 +2487,7 @@ msgstr "Numero massimo di token:"
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr "Strumento estensioni:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -2568,13 +2589,13 @@ msgstr "Modifica…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr "Ferma"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
-msgstr "Parla"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:478
 #: widgets/view/textautogeneratedelegateutils.cpp:70
@@ -2592,13 +2613,13 @@ msgstr "Aggiorna"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgid "Block Code copied."
-msgstr "Blocco di codice copiato."
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr "Copia blocco di codice"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
@@ -2733,20 +2754,12 @@ msgstr "Nessun messaggio trovato."
 #~ msgid "Configure"
 #~ msgstr "Configura"
 
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Successiva"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Precedente"
-
 #~ msgid "No system prompt"
 #~ msgstr "Nessun prompt di sistema"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Modifica..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Configura Mistral AI"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "L'URL all'istanza di Ollama"
@@ -2757,35 +2770,16 @@ msgstr "Nessun messaggio trovato."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Il modello utilizzato per generare risposte"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "La temperatura del modello. Aumentando la temperatura, il modello "
-#~ "risponderà in modo più creativo."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Imposta il seme del numero casuale da utilizzare per la generazione. "
-#~ "Impostando questo valore su un numero specifico, il modello genererà lo "
-#~ "stesso testo per lo stesso prompt. (Predefinito: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "Motore:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Configura Mistral AI"
+#~ msgid "Cancel"
+#~ msgstr "Annulla"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Configura Openai IA"
 
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Annulla"
+#~ msgid "Engine:"
+#~ msgstr "Motore:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Modifica..."
