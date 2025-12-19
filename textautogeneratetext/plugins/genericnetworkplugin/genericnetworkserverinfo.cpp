@@ -38,8 +38,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Anthropic");
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return i18n("Kimi (Moonshot AI)");
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
-        return i18n("Gork (X.ai)");
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+        return i18n("Grok (X.ai)");
     }
     return {};
 }
@@ -59,7 +59,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::KimiAI:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return u"chat/completions"_s;
     }
     return {};
@@ -89,7 +89,7 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.anthropic.com/"_s;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"https://www.moonshot.ai/"_s;
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return u"https://api.x.ai/"_s;
     }
     return {};
@@ -119,7 +119,7 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.anthropic.com/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"https://api.moonshot.ai/v1/"_s;
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return u"https://api.x.ai/v1/"_s;
     }
     return {};
@@ -136,7 +136,7 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return {};
     case GenericNetworkManager::PluginNetworkType::GroqAI:
         return i18n("Groq AI");
@@ -176,8 +176,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"anthropic"_s;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"kimiai"_s;
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
-        return u"gorkai"_s;
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+        return u"grokai"_s;
     }
     return {};
 }
@@ -202,8 +202,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::Anthropic;
     } else if (str == QLatin1StringView("kimiai")) {
         return GenericNetworkManager::PluginNetworkType::KimiAI;
-    } else if (str == QLatin1StringView("gorkai")) {
-        return GenericNetworkManager::PluginNetworkType::GorkAI;
+    } else if (str == QLatin1StringView("grokai")) {
+        return GenericNetworkManager::PluginNetworkType::GrokAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -252,7 +252,7 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return limits;
     }
     return limits;
@@ -278,7 +278,7 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return false;
     }
     return false;
@@ -312,7 +312,7 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return false;
     }
     return false;
@@ -333,7 +333,7 @@ bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, Generi
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return false;
     }
     return false;
@@ -354,7 +354,7 @@ bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::GorkAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
         return false;
     }
     return false;
