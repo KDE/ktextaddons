@@ -40,7 +40,9 @@ void OllamaStartProcessJob::start()
     auto process = new QProcess(this);
     process->setProgram(ollamaPath);
     process->setArguments({u"start"_s});
-    process->setProcessEnvironment(mOllamaManager->ollamaSettings()->processEnvironment());
+    QProcessEnvironment envs = QProcessEnvironment::systemEnvironment();
+    envs.insert(mOllamaManager->ollamaSettings()->processEnvironment());
+    process->setProcessEnvironment(envs);
 
     if (process->startDetached()) {
         Q_EMIT ollamaStarted();
