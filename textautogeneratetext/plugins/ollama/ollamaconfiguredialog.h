@@ -19,9 +19,9 @@ public:
     ~OllamaConfigureDialog() override;
 
 private:
-    void slotAccepted();
-    void readConfig();
-    void writeConfig();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotAccepted();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void writeConfig();
     OllamaConfigureWidget *const mOllamaConfigureWidget;
     OllamaModelAvailableWidget *const mOllamaModelWidget;
     OllamaModelInstalledWidget *const mOllamaModelInstalledWidget;

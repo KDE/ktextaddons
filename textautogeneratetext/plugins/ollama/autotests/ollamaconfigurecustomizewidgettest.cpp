@@ -29,18 +29,22 @@ void OllamaConfigureCustomizeWidgetTest::shouldHaveDefaultValues()
     auto mVulkanSupportLineEdit = w.findChild<QLineEdit *>(u"mVulkanSupportLineEdit"_s);
     QVERIFY(mVulkanSupportLineEdit);
     QVERIFY(mVulkanSupportLineEdit->text().isEmpty());
+    QVERIFY(mVulkanSupportLineEdit->isClearButtonEnabled());
 
     auto mCudaVisibleDeviceLineEdit = w.findChild<QLineEdit *>(u"mCudaVisibleDeviceLineEdit"_s);
     QVERIFY(mCudaVisibleDeviceLineEdit);
     QVERIFY(mCudaVisibleDeviceLineEdit->text().isEmpty());
+    QVERIFY(mCudaVisibleDeviceLineEdit->isClearButtonEnabled());
 
     auto mRocrVisibleDeviceLineEdit = w.findChild<QLineEdit *>(u"mRocrVisibleDeviceLineEdit"_s);
     QVERIFY(mRocrVisibleDeviceLineEdit);
     QVERIFY(mRocrVisibleDeviceLineEdit->text().isEmpty());
+    QVERIFY(mRocrVisibleDeviceLineEdit->isClearButtonEnabled());
 
     auto mOverrideGfxVersionLineEdit = w.findChild<QLineEdit *>(u"mOverrideGfxVersionLineEdit"_s);
     QVERIFY(mOverrideGfxVersionLineEdit);
     QVERIFY(mOverrideGfxVersionLineEdit->text().isEmpty());
+    QVERIFY(mOverrideGfxVersionLineEdit->isClearButtonEnabled());
 }
 
 #include "moc_ollamaconfigurecustomizewidgettest.cpp"

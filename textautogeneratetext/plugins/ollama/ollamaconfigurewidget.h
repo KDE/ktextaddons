@@ -31,8 +31,8 @@ Q_SIGNALS:
     void enableOkButton(bool status);
 
 private:
-    void fillModels();
-    void slotStartOllama();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillModels();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotStartOllama();
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     OllamaComboBoxWidget *const mModelComboBoxWidget;
