@@ -12,6 +12,7 @@
 #include "ollamamanager.h"
 #include "ollamareply.h"
 #include "ollamasettings.h"
+#include "ollamastartprocessjob.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -44,11 +45,26 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             Q_EMIT callTools(replyResponse.info);
         }
     });
+    connect(this->manager(), &TextAutoGenerateText::TextAutoGenerateManager::startOllamaRequested, this, [this]() {
+        slotOllamaRequested();
+    });
 }
 
 OllamaPlugin::~OllamaPlugin()
 {
     delete mOllamaSettings;
+}
+
+void OllamaPlugin::slotOllamaRequested()
+{
+    auto job = new OllamaStartProcessJob(mOllamaManager, this);
+    connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
+        Q_EMIT this->manager()->ollamaProcessOk(true);
+    });
+    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this](const QString &errorStr) {
+        Q_EMIT this->manager()->ollamaFailed();
+    });
+    job->start();
 }
 
 void OllamaPlugin::load(const KConfigGroup &config)

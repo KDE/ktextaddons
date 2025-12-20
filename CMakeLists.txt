@@ -208,13 +208,6 @@ add_feature_info(
     "Vosk speak to text plugin (local text to speak) (Experimental)"
 )
 
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(
-    QCH
-    ${BUILD_QCH}
-    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-)
-
 option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)" OFF)
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)

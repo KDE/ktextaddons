@@ -5,10 +5,10 @@
 */
 
 #pragma once
-
+#include "textautogenerateollama_export.h"
 #include <QObject>
 class OllamaManager;
-class OllamaStartProcessJob : public QObject
+class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaStartProcessJob : public QObject
 {
     Q_OBJECT
 public:

@@ -186,40 +186,6 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextTranslator_QCH
-        NAME KF6TextTranslator
-        BASE_NAME KF6TextTranslator
-        VERSION ${TEXTTRANSLATE_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TextTranslator_translator_HEADERS}
-        ${TextTranslator_translatorwidgets_HEADERS}
-        ${TextTranslator_translatormisc_HEADERS}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            TEXTTRANSLATE_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextTranslator_QCH
-        FILE KF6TextTranslatorQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextTranslatorQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextTranslatorConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextTranslatorConfig.cmake"

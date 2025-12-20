@@ -45,6 +45,7 @@ protected:
     void askToAssistant(const QString &msg) override;
 
 private:
+    void slotOllamaRequested();
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mOllamaManager;
 };

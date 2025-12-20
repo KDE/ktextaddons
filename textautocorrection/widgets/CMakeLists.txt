@@ -140,41 +140,6 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextAutoCorrectionWidgets_QCH
-        NAME KF6TextAutoCorrectionWidgets
-        BASE_NAME KF6TextAutoCorrectionWidgets
-        VERSION ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            TEXTAUTOCORRECTIONCORE_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextAutoCorrectionWidgets_QCH
-        FILE KF6TextAutoCorrectionWidgetsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoCorrectionWidgetsQchTargets.cmake\")"
-    )
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoCorrectionWidgetsConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoCorrectionWidgetsConfig.cmake"

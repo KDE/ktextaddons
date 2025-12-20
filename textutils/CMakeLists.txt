@@ -154,16 +154,6 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextUtils_QCH
-        FILE KF6TextUtilsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextUtilsQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextUtilsConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextUtilsConfig.cmake"
@@ -191,27 +181,6 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils
     COMPONENT Devel
 )
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextUtils_QCH
-        NAME KF6TextUtils
-        BASE_NAME KF6TextUtils
-	VERSION ${TEXTUTILS_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TEXTUTILS_FILES}
-        LINK_QCHS
-        Qt6Core_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        TEXTUTILS_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

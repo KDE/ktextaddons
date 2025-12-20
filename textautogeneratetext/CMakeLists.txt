@@ -641,38 +641,6 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextAutoGenerateText_QCH
-        NAME KF6TextAutoGenerateText
-        BASE_NAME KF6TextAutoGenerateText
-        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TextAutoGenerateTextIncludeFiles}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            TEXTAUTOGENERATETEXT_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextAutoGenerateText_QCH
-        FILE KF6TextAutoGenerateTextQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoGenerateTextQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoGenerateTextConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfig.cmake"

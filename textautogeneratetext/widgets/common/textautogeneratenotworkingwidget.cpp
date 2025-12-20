@@ -13,6 +13,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/ExecutableUtils>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -34,6 +35,16 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::configureInstances);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
     mainLayout->addStretch(1);
+    // TODO configure from activate instance
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaProcessOk, this, [this](bool state) {
+        if (state) {
+            clearMessage();
+            Q_EMIT ollamaStarted();
+        }
+    });
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaFailed, this, [this]() {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
+    });
 }
 
 TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
@@ -52,18 +63,7 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()
 {
-    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
-    if (ollamaPath.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
-        return;
-    }
-    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
-    if (!status) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to start ollama";
-    } else {
-        clearMessage();
-        Q_EMIT ollamaStarted();
-    }
+    Q_EMIT startOllamaRequested();
 }
 
 #include "moc_textautogeneratenotworkingwidget.cpp"
