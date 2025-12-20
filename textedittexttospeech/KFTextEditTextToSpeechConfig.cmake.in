@@ -6,4 +6,3 @@ include(CMakeFindDependencyMacro)
 find_dependency(Qt6TextToSpeech "@QT_REQUIRED_VERSION@")
 
 include("${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechTargets.cmake")
-@PACKAGE_INCLUDE_QCHTARGETS@
