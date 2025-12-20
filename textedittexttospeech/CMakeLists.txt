@@ -138,15 +138,6 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
     COMPONENT Devel
 )
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextEditTextToSpeech_QCH
-        FILE KF6TextEditTextToSpeechQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechQchTargets.cmake\")")
-endif()
 
 install(
     FILES
@@ -154,29 +145,6 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech
     COMPONENT Devel
 )
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextEditTextToSpeech_QCH
-        NAME TextEditTextToSpeech
-        BASE_NAME KF6TextEditTextToSpeech
-        VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-            ${TextEdit_texttospeechs_HEADERS}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            TEXTEDITTEXTTOSPEECH_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEditTextToSpeechConfig.cmake.in"

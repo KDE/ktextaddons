@@ -150,37 +150,6 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextEmoticonsCore_QCH
-        NAME KF6TextEmoticonsCore
-        BASE_NAME KF6TextEmoticonsCore
-        VERSION ${TEXTEMOTICONSCORE_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TextEmoticonsCore_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        TEXTEMOTICONSCORE_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextEmoticonsCore_QCH
-        FILE KF6TextEmoticonsCoreQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEmoticonsCoreQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEmoticonsCoreConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfig.cmake"

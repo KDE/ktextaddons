@@ -163,38 +163,6 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextSpeechToText_QCH
-        NAME KF6TextSpeechToText
-        BASE_NAME KF6TextSpeechToText
-        VERSION ${TEXTSPEECHTOTEXT_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TEXTSPEECHTOTEXT_FILES}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            TEXTSPEECHTOTEXT_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextSpeechToText_QCH
-        FILE KF6TextSpeechToTextQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextSpeechToTextQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextSpeechToTextConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextSpeechToTextConfig.cmake"

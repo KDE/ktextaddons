@@ -4,15 +4,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextgrammarcheck\")
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextGrammarCheck")
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6TextGrammarCheck_QCH
-        FILE KF6TextGrammarCheckQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextGrammarCheckQchTargets.cmake\")")
-endif()
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextGrammarCheckConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextGrammarCheckConfig.cmake"
@@ -229,28 +220,3 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/textgrammarcheck
     COMPONENT Devel
 )
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6TextGrammarCheck_QCH
-        NAME KF6TextGrammarCheck
-        BASE_NAME KF6TextGrammarCheck
-        VERSION ${TEXTGRAMMARCHECK_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TextGrammarCheck_common_HEADERS}
-        ${TextGrammarCheck_grammalecte_HEADERS}
-        ${TextGrammarCheck_languagetool_HEADERS}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            TEXTGRAMMARCHECK_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
