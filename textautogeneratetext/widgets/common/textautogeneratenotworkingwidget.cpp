@@ -7,7 +7,6 @@
 #include "textautogeneratenotworkingwidget.h"
 
 #include "textautogeneratenotworkingmessagewidget.h"
-#include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <QProcess>
 #include <QPushButton>
@@ -53,18 +52,6 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()
 {
     Q_EMIT startOllamaRequested();
-    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
-    if (ollamaPath.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
-        return;
-    }
-    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
-    if (!status) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to start ollama";
-    } else {
-        clearMessage();
-        Q_EMIT ollamaStarted();
-    }
 }
 
 #include "moc_textautogeneratenotworkingwidget.cpp"
