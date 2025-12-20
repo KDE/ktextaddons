@@ -159,6 +159,9 @@ Q_SIGNALS:
     void toolInProgress(const QString &info);
     void numberOfSearchStringChanged(int number);
     void currentModelChanged();
+    void startOllamaRequested();
+    void ollamaProcessOk(bool state);
+    void ollamaFailed();
 
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);

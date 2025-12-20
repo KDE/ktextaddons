@@ -55,7 +55,7 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
         setBrokenEngine(false, {});
     });
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::startOllamaRequested, this, [this]() {
-        // TODO
+        Q_EMIT mManager->startOllamaRequested();
     });
     connect(mTextAutoGenerateNotWorkingWidget,
             &TextAutoGenerateNotWorkingWidget::configureInstances,

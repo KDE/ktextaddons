@@ -52,7 +52,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
         mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
     });
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::startOllamaRequested, this, [this]() {
-        // TODO
+        Q_EMIT mManager->startOllamaRequested();
     });
 
     connect(mTextAutoGenerateNotWorkingWidget,
