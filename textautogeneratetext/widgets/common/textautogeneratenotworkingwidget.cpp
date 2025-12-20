@@ -35,6 +35,7 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::configureInstances);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
     mainLayout->addStretch(1);
+    // TODO configure from activate instance
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaProcessOk, this, [this](bool state) {
         if (state) {
             clearMessage();
