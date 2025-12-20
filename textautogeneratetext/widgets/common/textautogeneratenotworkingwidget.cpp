@@ -52,6 +52,7 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()
 {
+    Q_EMIT startOllamaRequested();
     const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";

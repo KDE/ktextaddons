@@ -27,6 +27,7 @@ public:
 Q_SIGNALS:
     void ollamaStarted();
     void configureInstances();
+    void startOllamaRequested();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotStartOllama();

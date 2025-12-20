@@ -51,6 +51,10 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
         mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
     });
+    connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::startOllamaRequested, this, [this]() {
+        // TODO
+    });
+
     connect(mTextAutoGenerateNotWorkingWidget,
             &TextAutoGenerateNotWorkingWidget::configureInstances,
             this,
