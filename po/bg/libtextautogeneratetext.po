@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-20 00:40+0000\n"
 "PO-Revision-Date: 2025-12-16 22:23+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -248,7 +248,7 @@ msgstr "Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
-msgid "Gork (X.ai)"
+msgid "Grok (X.ai)"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
@@ -2024,22 +2024,22 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Презареждане на модела"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Поддръжка на графични карти Vulkan:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Избиране на графична карта NVIDIA:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Избиране на графична карта AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Замяна на версията на GFX:"
@@ -2134,7 +2134,7 @@ msgid "Ollama not found on system."
 msgstr "Ollama не е открит в системата.Моля, инсталирайте го."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:49
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, fuzzy, kde-format
 #| msgid "Impossible to open %1"
 msgid "Impossible to start Ollama."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-20 00:40+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -260,7 +260,7 @@ msgstr "Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
-msgid "Gork (X.ai)"
+msgid "Grok (X.ai)"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
@@ -2048,24 +2048,24 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Uppdatera modell"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
 msgstr "Kopiera markering"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "Override GFX version:"
 msgstr ""
@@ -2160,7 +2160,7 @@ msgid "Ollama not found on system."
 msgstr "Ollama hittades inte på systemet. Installera det."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:49
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""

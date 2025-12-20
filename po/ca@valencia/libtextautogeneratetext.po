@@ -9,16 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
-"PO-Revision-Date: 2025-12-18 17:28+0100\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2025-12-20 00:40+0000\n"
+"PO-Revision-Date: 2025-12-19 11:37+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -252,9 +252,10 @@ msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
-#, kde-format
-msgid "Gork (X.ai)"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Gork (X.ai)"
+msgid "Grok (X.ai)"
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -2047,22 +2048,22 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Torna a carregar el model"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Compatibilitat de GPU Vulkan:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr " de GPU NVIDIA:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Selecció de GPU AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Sobreescriu la versió de GFX:"
@@ -2154,7 +2155,7 @@ msgid "Ollama not found on system."
 msgstr "No s'ha trobat Ollama en el sistema."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:49
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Impossible iniciar Ollama."

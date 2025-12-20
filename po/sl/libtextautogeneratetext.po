@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
-"PO-Revision-Date: 2025-12-18 07:38+0100\n"
+"POT-Creation-Date: 2025-12-20 00:40+0000\n"
+"PO-Revision-Date: 2025-12-19 06:36+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -248,9 +248,10 @@ msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
-#, kde-format
-msgid "Gork (X.ai)"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Gork (X.ai)"
+msgid "Grok (X.ai)"
+msgstr "Gork (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -2022,22 +2023,22 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Ponovno naloži model"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Podpora Vulkan GPE:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Izbira NVIDIA GPE:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Izbira AMD GPE:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Preglasi različico GFX:"
@@ -2129,7 +2130,7 @@ msgid "Ollama not found on system."
 msgstr "Ollame ni mogoče najti v sistemu."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:49
+#: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Ni mogoče zagnati Ollama."
