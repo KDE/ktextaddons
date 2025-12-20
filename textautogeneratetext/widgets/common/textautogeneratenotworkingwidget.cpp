@@ -7,11 +7,13 @@
 #include "textautogeneratenotworkingwidget.h"
 
 #include "textautogeneratenotworkingmessagewidget.h"
+#include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <QProcess>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/ExecutableUtils>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -33,6 +35,15 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::configureInstances);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
     mainLayout->addStretch(1);
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaProcessOk, this, [this](bool state) {
+        if (state) {
+            clearMessage();
+            Q_EMIT ollamaStarted();
+        }
+    });
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaFailed, this, [this]() {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
+    });
 }
 
 TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
