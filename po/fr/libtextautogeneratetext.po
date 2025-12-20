@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 02:42+0000\n"
-"PO-Revision-Date: 2025-11-03 09:40+0100\n"
+"POT-Creation-Date: 2025-12-20 02:35+0000\n"
+"PO-Revision-Date: 2025-12-19 09:15+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -50,26 +50,16 @@ msgid "Unknown"
 msgstr "Inconnu "
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
 msgstr ""
-"Moteur : %1\n"
-"Modèle : %2\n"
-"Nom de l'instance : %3"
+"<b>Moteur : </b> %1<br><b>Modèle : </b> %2<br><b>Nom de l'instance : </b> "
+"%3<br>"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"Outils : %1"
+msgstr "<br><b>Outils : </b> %1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -153,31 +143,31 @@ msgstr "Réseau"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
 msgid "Plugins Text:"
-msgstr ""
+msgstr "Texte des modules externes :"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr ""
+msgstr "Identifiant de l'outil : %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr ""
+msgstr "Activé"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "Désactivé"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr ""
+msgstr "Activer : %1"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -309,17 +299,14 @@ msgid "Add Model"
 msgstr "Ajouter un modèle"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
+#, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "Veuillez saisir le nom du modèle comme « nom : libellé »"
+msgstr "Le nom du modèle doit être au format « nom : étiquette »"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgid "Invalid Model Name"
-msgstr "Modèles installés"
+msgstr "Nom du modèle non valable"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -393,22 +380,18 @@ msgstr "Annuler"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr ""
+msgstr "Le modèle de téléchargement a signalé une erreur : %1"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgid "Download Model Error"
-msgstr "Télécharger un modèle"
+msgstr "Télécharger l'erreur du modèle"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "Télécharger un modèle"
+msgstr "Télécharger"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
@@ -2063,7 +2046,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "Ouvrir l'URL « %1 »"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
 #, kde-format
@@ -2076,27 +2059,25 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Recharger un modèle"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:28
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
 #, kde-format
 msgid "Vulkan GPU Support:"
-msgstr ""
+msgstr "Prise en charge de Vulkan d'un processeur graphique (GPU) :"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "Sélection de processeur graphique NVIDIA :"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Copier la sélection"
+msgstr "Sélection d'un processeur graphique AMD :"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:40
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "Remplacer la version GFX :"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2161,11 +2142,9 @@ msgstr ""
 "générera le même texte pour la même invite. (Par défaut : 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Configurer Ollama"
+msgstr "Personnaliser Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2173,25 +2152,24 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Ces entrées sont optionnelles. Elles sont utilisées pour investiguer les "
+"problèmes relatifs au processus graphique avec Ollama."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "Démarrer Ollama"
+msgstr "Impossible de démarrer Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "Impossible de trouver Ollama sur le système. Veuillez l'installer."
+msgstr "Impossible de trouver Ollama sur le système."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
-msgstr ""
+msgstr "Impossible de démarrer Ollama."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2267,25 +2245,23 @@ msgstr "Joindre un fichier"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr ""
+msgstr "Images (*.png *.xpm *.jpg *.gif)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr ""
+msgstr "Audio (*.mp4 *.avi)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr ""
+msgstr "Text (*.txt *.md)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select GGUF File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Sélectionner un fichier « GGUF »"
+msgstr "Sélectionner un fichier"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
@@ -2302,13 +2278,13 @@ msgstr "Autoriser la sélection d'outils"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Impossible d'ouvrir %1"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Erreur lors de l'ouverture du fichier"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
@@ -2358,7 +2334,7 @@ msgstr "Informations de métadonnées"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "Déboguer"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2498,7 +2474,7 @@ msgstr "Nombre maximal de jetons :"
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr ""
+msgstr "Outil de modules externes :"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -2600,13 +2576,13 @@ msgstr "Modifier…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr ""
+msgstr "Arrêter"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
-msgstr ""
+msgstr "Prononcer"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:478
 #: widgets/view/textautogeneratedelegateutils.cpp:70
@@ -2624,57 +2600,57 @@ msgstr "Actualiser"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "Bloc de code copié."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Copier le bloc de code"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
-msgstr ""
+msgstr "Afficher l'image"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:59
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr ""
+msgstr "Copier l'image dans le presse-papier"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:61
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr ""
+msgstr "Copier l'emplacement dans le presse-papier"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
-msgstr ""
+msgstr "Autre application..."
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoom :"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr ""
+msgstr "Ajuster à la vue"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:108
 #, kde-format
 msgid "Save Image"
-msgstr ""
+msgstr "Enregistrer l'image"
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
