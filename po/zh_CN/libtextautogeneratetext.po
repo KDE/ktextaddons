@@ -1,9 +1,8 @@
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-20 02:35+0000\n"
+"POT-Creation-Date: 2025-12-21 02:38+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -12,12 +11,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf6-stable/messages/ktextaddons/libtextautogeneratetext."
 "pot\n"
 "X-Crowdin-File-ID: 57624\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -56,10 +55,6 @@ msgstr "未知"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
 #, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
 msgstr ""
 "引擎：%1\n"
@@ -68,13 +63,8 @@ msgstr ""
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
 #, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"工具：%1"
+msgstr "工具：%1"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
@@ -315,14 +305,11 @@ msgstr "添加模型"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
 #, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
 msgid "Model name must be as \"name:tag\""
 msgstr "请输入模型名称，格式为“name:tag”"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
 #, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
 msgid "Invalid Model Name"
 msgstr "已安装的模型"
 
@@ -402,15 +389,11 @@ msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
 msgid "Download Model Error"
 msgstr "下载模型"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
 msgctxt "@info:tooltip"
 msgid "Download"
 msgstr "下载模型"
@@ -1912,7 +1895,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr ""
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1935,8 +1918,6 @@ msgstr ""
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
 msgstr "复制选中内容"
 
@@ -2006,8 +1987,6 @@ msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:80
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
 msgid "Customize Ollama"
 msgstr "配置 Ollama"
 
@@ -2020,14 +1999,11 @@ msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
 msgid "Failed to start Ollama"
 msgstr "启动 Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
 msgid "Ollama not found on system."
 msgstr "系统系统没有未找到 Ollama。请安装它。"
 
@@ -2081,7 +2057,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "启动 Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:32
+#: widgets/common/textautogeneratenotworkingwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
@@ -2123,8 +2099,6 @@ msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select GGUF File"
 msgctxt "@title:window"
 msgid "Select File"
 msgstr "选择 GGUF 文件"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:42+0000\n"
-"PO-Revision-Date: 2025-02-20 15:30+0900\n"
+"PO-Revision-Date: 2025-12-21 05:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -100,4 +100,4 @@ msgstr "搜尋表情符號…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "選擇別的表情符號"
