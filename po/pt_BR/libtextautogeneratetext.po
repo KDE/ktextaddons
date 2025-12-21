@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-20 00:40+0000\n"
-"PO-Revision-Date: 2025-12-19 09:47-0300\n"
+"POT-Creation-Date: 2025-12-21 00:41+0000\n"
+"PO-Revision-Date: 2025-12-20 06:06-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -249,10 +249,9 @@ msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (IA da Moonshot)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
-#, fuzzy, kde-format
-#| msgid "Gork (X.ai)"
+#, kde-format
 msgid "Grok (X.ai)"
-msgstr "Gork (X.ai)"
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -2035,7 +2034,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Abrir Url \"%1\""
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -2204,7 +2203,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Iniciar Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:32
+#: widgets/common/textautogeneratenotworkingwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"

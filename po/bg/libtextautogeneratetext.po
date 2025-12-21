@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-20 00:40+0000\n"
-"PO-Revision-Date: 2025-12-16 22:23+0100\n"
+"POT-Creation-Date: 2025-12-21 00:41+0000\n"
+"PO-Revision-Date: 2025-12-20 18:52+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2013,7 +2013,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Отваряне на адрес (URL) „%1“"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -2121,24 +2121,20 @@ msgstr ""
 "Олама, свързани с графични карти."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "Стартиране на Ollama"
+msgstr "Неуспешно стартиране на 2Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "Ollama не е открит в системата.Моля, инсталирайте го."
+msgstr "Ollama не е открита в системата."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #: plugins/ollama/ollamastartprocessjob.cpp:51
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#, kde-format
 msgid "Impossible to start Ollama."
-msgstr "Невъзможно е да се отвори %1"
+msgstr "Невъзможно е да се стартира Ollama."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2186,7 +2182,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Стартиране на Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:32
+#: widgets/common/textautogeneratenotworkingwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"

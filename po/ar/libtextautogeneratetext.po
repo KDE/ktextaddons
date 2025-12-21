@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-20 00:40+0000\n"
-"PO-Revision-Date: 2025-12-18 10:18+0400\n"
+"POT-Creation-Date: 2025-12-21 00:41+0000\n"
+"PO-Revision-Date: 2025-12-20 11:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -286,7 +286,7 @@ msgstr "نماذج كيمي للغة الضخمة من موشوت للذكاء �
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr "إدارة نماذج Ollama"
+msgstr "إدارة نماذج أولاما"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:59
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
@@ -1941,7 +1941,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "افتح الرابط \"%1\""
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:93
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
 msgid "Ollama"
 msgstr "أولاما"
@@ -2048,24 +2048,20 @@ msgstr ""
 "(GPU) في أولاما."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "ابدأ أولاما"
+msgstr "فشل بدأ أولاما"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "لم يعثر على Ollama في النظام. يُرجى تثبيته."
+msgstr "لم يعثر على أولاما في النظام."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #: plugins/ollama/ollamastartprocessjob.cpp:51
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#, kde-format
 msgid "Impossible to start Ollama."
-msgstr "من المستحيل فتح %1"
+msgstr "من المستحيل بدء أولاما."
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2092,12 +2088,12 @@ msgstr "أضف نسخة…"
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
-msgstr "لم يعثر على Ollama في النظام. اطلب من مسؤول النظام تثبيته."
+msgstr "لم يعثر على أولاما في النظام. اطلب من مسؤول النظام تثبيته."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr "لم يعثر على Ollama في النظام. يُرجى تثبيته."
+msgstr "لم يعثر على أولاما في النظام. يُرجى تثبيته."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
 #, kde-format
@@ -2111,7 +2107,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "ابدأ أولاما"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:32
+#: widgets/common/textautogeneratenotworkingwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
