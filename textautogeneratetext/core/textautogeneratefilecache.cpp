@@ -7,8 +7,6 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateFileCache::TextAutoGenerateFileCache()
-{
-}
+TextAutoGenerateFileCache::TextAutoGenerateFileCache() = default;
 
 TextAutoGenerateFileCache::~TextAutoGenerateFileCache() = default;
