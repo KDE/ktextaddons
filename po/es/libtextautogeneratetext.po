@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-21 00:41+0000\n"
-"PO-Revision-Date: 2025-12-19 10:46+0100\n"
+"PO-Revision-Date: 2025-12-20 11:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -250,10 +250,9 @@ msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
-#, fuzzy, kde-format
-#| msgid "Gork (X.ai)"
+#, kde-format
 msgid "Grok (X.ai)"
-msgstr "Gork (X.ai)"
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
