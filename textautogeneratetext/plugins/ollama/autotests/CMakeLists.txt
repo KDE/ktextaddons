@@ -16,6 +16,7 @@ macro(add_ollama_plugin_unittest _source)
         ${_name}
         Qt::Test
         KF6::TextAutoGenerateText
+        KF6::KIOWidgets
         textautogenerateollama
     )
     set_target_properties(

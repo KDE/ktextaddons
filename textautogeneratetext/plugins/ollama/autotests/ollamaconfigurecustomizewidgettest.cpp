@@ -5,7 +5,7 @@
 */
 #include "ollamaconfigurecustomizewidgettest.h"
 #include "ollamaconfigurecustomizewidget.h"
-
+#include <KUrlRequester>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QTest>
@@ -45,6 +45,11 @@ void OllamaConfigureCustomizeWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mOverrideGfxVersionLineEdit);
     QVERIFY(mOverrideGfxVersionLineEdit->text().isEmpty());
     QVERIFY(mOverrideGfxVersionLineEdit->isClearButtonEnabled());
+
+    auto mDefaultModelPath = w.findChild<KUrlRequester *>(u"mDefaultModelPath"_s);
+    QVERIFY(mDefaultModelPath);
+    QVERIFY(mDefaultModelPath->text().isEmpty());
+    QCOMPARE(mDefaultModelPath->mode(), {KFile::Directory | KFile::LocalOnly});
 }
 
 #include "moc_ollamaconfigurecustomizewidgettest.cpp"
