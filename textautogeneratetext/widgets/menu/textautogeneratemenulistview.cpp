@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratemenulistview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratemenulistviewdelegate.h"
 #include "textautogeneratemenumodel.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuListView::TextAutoGenerateMenuListView(QWidget *parent)
     : QListView(parent)

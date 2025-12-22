@@ -4,10 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratemenutextmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <QRegularExpression>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuTextManager::TextAutoGenerateMenuTextManager(QObject *parent)
     : QObject{parent}

@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratequickaskwidget.h"
 #include <KConfigGroup>
@@ -20,6 +19,7 @@ namespace
 const char myQuickAskDialogGroupName[] = "QuickAskDialog";
 }
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)

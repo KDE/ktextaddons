@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratemenuwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratemenuconfiguredialog.h"
 #include "textautogeneratemenutextmanager.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QMenu>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuWidget::TextAutoGenerateMenuWidget(QObject *parent)
     : TextAutoGenerateMenuWidget(new TextAutoGenerateMenuTextManager(parent), parent)

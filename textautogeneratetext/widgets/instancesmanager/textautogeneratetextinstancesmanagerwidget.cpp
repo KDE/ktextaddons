@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManagerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mInstancesManagerListView(new TextAutoGenerateTextInstancesManagerListView(manager, this))
