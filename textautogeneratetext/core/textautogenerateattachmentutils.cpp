@@ -132,7 +132,7 @@ QList<TextAutoGenerateAttachment> TextAutoGenerateAttachmentUtils::generateAttac
 
 TextAutoGenerateAttachments *TextAutoGenerateAttachmentUtils::createTextAutoGenerateAttachments(const QList<TextAutoGenerateAttachment> &atts)
 {
-    TextAutoGenerateAttachments *t = new TextAutoGenerateAttachments();
+    auto t = new TextAutoGenerateAttachments();
     t->setMessageAttachments(atts);
     return t;
 }
