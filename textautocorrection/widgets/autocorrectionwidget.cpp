@@ -5,7 +5,6 @@
 */
 
 #include "autocorrectionwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocorrectionutils.h"
 
@@ -25,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QTreeWidgetItem>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoCorrectionWidgets;
 using namespace TextAutoCorrectionCore;
 

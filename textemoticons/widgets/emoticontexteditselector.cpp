@@ -6,7 +6,6 @@
 */
 
 #include "emoticontexteditselector.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojicategorybuttons.h"
 #include "emojilistview.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
 using namespace TextEmoticonsWidgets;
+using namespace Qt::Literals::StringLiterals;
 
 class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
 {

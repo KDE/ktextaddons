@@ -5,11 +5,11 @@
 */
 
 #include "emojitonecombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsWidgets;
 EmojiToneComboBox::EmojiToneComboBox(QWidget *parent)
     : QComboBox(parent)

@@ -5,13 +5,13 @@
 */
 
 #include "emojimodelmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "unicodeemoticonmanager.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <TextEmoticonsCore/EmojiModel>
 using namespace TextEmoticonsCore;
+using namespace Qt::Literals::StringLiterals;
 
 class EmojiModelManager::EmojiModelManagerPrivate
 {
