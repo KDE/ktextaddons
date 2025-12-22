@@ -19,6 +19,6 @@ QString TextAutoGenerateTextUtils::instanceConfigFileName()
 
 QStringList TextAutoGenerateTextUtils::instancesList(KConfig *config)
 {
-    static const QRegularExpression regExpr(u"^Instance #\\d+$"_s);
-    return config->groupList().filter(regExpr);
+    static const QRegularExpression regularExpression(u"^Instance #\\d+$"_s);
+    return config->groupList().filter(regularExpression);
 }
