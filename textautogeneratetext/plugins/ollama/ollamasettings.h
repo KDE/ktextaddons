@@ -45,6 +45,9 @@ public:
 
     [[nodiscard]] QProcessEnvironment processEnvironment() const;
 
+    [[nodiscard]] QString defaultModelPath() const;
+    void setDefaultModelPath(const QString &newDefaultModelPath);
+
 private:
     QString mVulkanSupport;
     QString mOverrideGfxVersion;
@@ -52,6 +55,7 @@ private:
     QString mCudaVisibleDevice;
     QString mDisplayName;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
+    QString mDefaultModelPath;
     QString mCurrentModel;
     int mSeed = 0;
     double mTemperature = 0.8;

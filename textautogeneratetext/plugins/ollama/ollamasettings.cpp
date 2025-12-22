@@ -118,5 +118,18 @@ QProcessEnvironment OllamaSettings::processEnvironment() const
     if (!mOverrideGfxVersion.isEmpty()) {
         environment.insert(u"HSA_OVERRIDE_GFX_VERSION"_s, mOverrideGfxVersion);
     }
+    if (!mDefaultModelPath.isEmpty()) {
+        environment.insert(u"OLLAMA_MODELS"_s, mDefaultModelPath);
+    }
     return environment;
+}
+
+QString OllamaSettings::defaultModelPath() const
+{
+    return mDefaultModelPath;
+}
+
+void OllamaSettings::setDefaultModelPath(const QString &newDefaultModelPath)
+{
+    mDefaultModelPath = newDefaultModelPath;
 }
