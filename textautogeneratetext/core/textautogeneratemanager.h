@@ -23,6 +23,7 @@ class TextAutoGenerateChatSettings;
 class TextAutoGenerateSettings;
 class TextAutoGenerateTextInstancesManager;
 class TextAutoGenerateTextToSpeechEnqueueManager;
+class TextAutoGenerateFileCache;
 /**
  * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
@@ -174,6 +175,7 @@ private:
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
+    std::unique_ptr<TextAutoGenerateFileCache> const mTextAutoGenerateFileCache;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     TextAutoGenerateSettings *const mTextAutoGenerateSettings;
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT

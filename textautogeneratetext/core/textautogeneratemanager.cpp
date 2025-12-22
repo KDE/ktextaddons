@@ -7,6 +7,7 @@
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
+#include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
 #include "core/textautogeneratetoolcalljob.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
@@ -47,6 +48,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
     , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings(this))
+    , mTextAutoGenerateFileCache(new TextAutoGenerateFileCache)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
