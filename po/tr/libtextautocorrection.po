@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2025-01-10 16:11+0300\n"
+"PO-Revision-Date: 2025-12-21 16:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.11.80\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "LibreOffice Kendiliğinden Düzeltmesi İçe Aktar"
 #: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
-msgstr "LibreOffice Kendiliğinden Düzeltme Dosyası (*.dat)"
+msgstr "LibreOffice otomatik düzeltme dosyası (*.dat)"
 
 #: widgets/autocorrectionwidget.cpp:626
 #, kde-format
@@ -86,7 +86,7 @@ msgstr "K Posta Kendiliğinden Düzeltmesi İçe Aktar"
 #: widgets/autocorrectionwidget.cpp:627
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
-msgstr "K Posta Kendiliğinden Düzeltme Dosyası (*.xml)"
+msgstr "K Posta otomatik düzeltme dosyası (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:659
 #, kde-format
@@ -290,7 +290,7 @@ msgstr "Çoğu standart kesir belirtimleri olabildiğince dönüştürülecektir
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "1/2…’yi ½… ile değ&iştir…"
+msgstr "1/2’yi ½ ile değ&iştir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -336,7 +336,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "1st…’ü 1^st… ile değiştir (HTML kipi)"
+msgstr "1st’ü 1^st ile değiştir (HTML kipi)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -387,7 +387,7 @@ msgstr "\""
 #: widgets/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr "Bitiş tırnağı:"
+msgstr "Kapanış tırnağı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -423,7 +423,7 @@ msgstr "'"
 #: widgets/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr "Bitiş tırnakları:"
+msgstr "Kapanış tırnakları:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: widgets/ui/autocorrectionwidget.ui:707
