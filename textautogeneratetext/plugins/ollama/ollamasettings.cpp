@@ -6,7 +6,8 @@
 
 #include "ollamasettings.h"
 #include <KLocalizedString>
-#include <qprocess.h>
+#include <QDebug>
+#include <QProcessEnvironment>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaSettings::OllamaSettings() = default;
@@ -132,4 +133,19 @@ QString OllamaSettings::defaultModelPath() const
 void OllamaSettings::setDefaultModelPath(const QString &newDefaultModelPath)
 {
     mDefaultModelPath = newDefaultModelPath;
+}
+
+QDebug operator<<(QDebug d, const OllamaSettings &t)
+{
+    d.space() << "vulkanSupport:" << t.vulkanSupport();
+    d.space() << "overrideGfxVersion:" << t.overrideGfxVersion();
+    d.space() << "rocrVisibleDevice:" << t.rocrVisibleDevice();
+    d.space() << "cudaVisibleDevice:" << t.cudaVisibleDevice();
+    d.space() << "displayName:" << t.displayName();
+    d.space() << "serverUrl:" << t.serverUrl();
+    d.space() << "defaultModelPath:" << t.defaultModelPath();
+    d.space() << "currentModel:" << t.currentModel();
+    d.space() << "seed:" << t.seed();
+    d.space() << "temperature:" << t.temperature();
+    return d;
 }

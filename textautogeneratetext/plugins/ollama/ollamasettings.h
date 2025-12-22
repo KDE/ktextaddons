@@ -9,6 +9,7 @@
 
 #include <QString>
 #include <QUrl>
+class QDebug;
 class QProcessEnvironment;
 using namespace Qt::Literals::StringLiterals;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaSettings
@@ -60,3 +61,4 @@ private:
     int mSeed = 0;
     double mTemperature = 0.8;
 };
+TEXTAUTOGENERATEOLLAMA_EXPORT QDebug operator<<(QDebug d, const OllamaSettings &t);
