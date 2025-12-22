@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratemenuconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratemenuconfigurewidget.h"
 #include <KLocalizedString>
@@ -19,6 +18,7 @@ namespace
 const char myTextAutoGenerateMenuConfigureDialogGroupName[] = "TextAutoGenerateMenuConfigureDialog";
 }
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateMenuConfigureDialog::TextAutoGenerateMenuConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mTextMenuConfigureWidget(new TextAutoGenerateMenuConfigureWidget(this))

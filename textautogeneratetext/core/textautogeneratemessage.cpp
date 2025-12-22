@@ -305,14 +305,14 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setContent(o["text"_L1].toString());
     msg.generateHtml();
 
-    TextAutoGenerateAnswerInfo *messageInfoDeserialized = TextAutoGenerateAnswerInfo::deserialize(o);
+    const TextAutoGenerateAnswerInfo *const messageInfoDeserialized = TextAutoGenerateAnswerInfo::deserialize(o);
     if (messageInfoDeserialized->isValid()) {
         msg.setMessageInfo(*messageInfoDeserialized);
     }
     delete messageInfoDeserialized;
 
     // TODO fix argument
-    TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o["attachments"_L1].toArray(), {});
+    const TextAutoGenerateAttachments *const attDeserialized = TextAutoGenerateAttachments::deserialize(o["attachments"_L1].toArray(), {});
     if (!attDeserialized->isEmpty()) {
         msg.setMessageAttachments(*attDeserialized);
     }

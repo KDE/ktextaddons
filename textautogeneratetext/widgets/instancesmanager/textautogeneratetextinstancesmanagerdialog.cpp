@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratetextinstancesmanagerdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
 #include <KConfigGroup>
@@ -20,6 +19,7 @@ namespace
 const char myTextAutoGenerateTextInstancesManagerDialogGroupName[] = "TextAutoGenerateTextInstancesManagerDialog";
 }
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextInstancesManagerDialog::TextAutoGenerateTextInstancesManagerDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
     , mTextAutoGenerateTextInstancesManagerWidget(new TextAutoGenerateTextInstancesManagerWidget(manager, this))

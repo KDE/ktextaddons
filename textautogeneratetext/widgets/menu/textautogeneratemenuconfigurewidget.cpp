@@ -4,10 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratemenuconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratemenulistview.h"
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuConfigureWidget::TextAutoGenerateMenuConfigureWidget(QWidget *parent)
     : QWidget{parent}

@@ -20,7 +20,6 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 
 namespace
 {
-
 QString generateRichTextCMark(const QString &str, const QString &searchedText, int &numberOfTextSearched, int hightLightStringIndex)
 {
     QString newStr = TextUtils::TextUtilsBlockCMarkSupport::markdownToRichTextCMark(str);
