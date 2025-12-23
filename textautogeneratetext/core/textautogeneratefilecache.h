@@ -5,13 +5,14 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateFileCache
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateFileCache
 {
 public:
     TextAutoGenerateFileCache();
     ~TextAutoGenerateFileCache();
+    [[nodiscard]] QString cacheFilePath();
 };
 }

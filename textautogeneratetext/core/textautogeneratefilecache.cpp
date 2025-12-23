@@ -10,3 +10,9 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateFileCache::TextAutoGenerateFileCache() = default;
 
 TextAutoGenerateFileCache::~TextAutoGenerateFileCache() = default;
+
+QString TextAutoGenerateFileCache::cacheFilePath()
+{
+    // TODO
+    return {};
+}
