@@ -9,12 +9,10 @@
 #include <QDir>
 #include <QTemporaryDir>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
-#include <memory>
-#if 0
 #include <kio/applicationlauncherjob.h>
 #include <kio/jobuidelegatefactory.h>
 #include <kjobuidelegate.h>
-#endif
+#include <memory>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextOpenFileJob::TextAutoGenerateTextOpenFileJob(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
