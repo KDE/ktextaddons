@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-11-30 16:15+0100\n"
+"PO-Revision-Date: 2025-12-10 17:15+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -197,13 +197,11 @@ msgstr ""
 "scaricarla."
 
 #: verifynewversion/checknewversionwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+#, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
-"È stata trovata una nuova versione. Fai clic <a href=\"%1\">qui</a> per "
-"scaricarla."
+"Non è stata trovata alcuna nuova versione. La build è disponibile <a href="
+"\"%1\">qui</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
