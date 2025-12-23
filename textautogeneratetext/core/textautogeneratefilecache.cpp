@@ -11,7 +11,7 @@ TextAutoGenerateFileCache::TextAutoGenerateFileCache() = default;
 
 TextAutoGenerateFileCache::~TextAutoGenerateFileCache() = default;
 
-QString TextAutoGenerateFileCache::cacheFilePath()
+QString TextAutoGenerateFileCache::cacheFilePath(const QByteArray &attachmentId)
 {
     // TODO
     return {};

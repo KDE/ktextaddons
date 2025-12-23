@@ -67,11 +67,11 @@ bool TextAutoGenerateAttachmentDelegateHelperFile::handleMouseEvent(const TextAu
     switch (eventType) {
     case QEvent::MouseButtonRelease: {
         const QPoint pos = mouseEvent->pos();
-        const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
+        // const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
         if (attachmentsRect.contains(pos)) {
             const auto attachmentId = msgAttach.attachmentId();
             if (!attachmentId.isEmpty()) {
-                handleDownloadClicked(const_cast<QWidget *>(option.widget));
+                handleDownloadClicked(const_cast<QWidget *>(option.widget), attachmentId);
                 return true;
             }
             qDebug() << " Click on file " << msgAttach;
@@ -118,11 +118,10 @@ TextAutoGenerateAttachmentDelegateHelperFile::doLayout(const TextAutoGenerateTex
     return layout;
 }
 
-void TextAutoGenerateAttachmentDelegateHelperFile::handleDownloadClicked(QWidget *widget)
+void TextAutoGenerateAttachmentDelegateHelperFile::handleDownloadClicked(QWidget *widget, const QByteArray &attachmentId)
 {
-    // TODO
     auto job = new TextAutoGenerateText::TextAutoGenerateTextOpenFileJob(mManager, this);
-    // job->setLink(link);
+    job->setAttachmentId(attachmentId);
     job->setParentWidget(widget);
     job->start();
 }

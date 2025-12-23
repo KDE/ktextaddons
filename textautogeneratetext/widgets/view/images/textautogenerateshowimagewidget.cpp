@@ -104,8 +104,9 @@ void TextAutoGenerateShowImageWidget::updateRanges()
 
 void TextAutoGenerateShowImageWidget::saveAs()
 {
+    QByteArray attachmentId;
     // TODO verify it
-    TextAddonsWidgets::SaveFileUtils::saveFile(this, mManager->generateAttachmentTemporaryFile(), i18n("Save Image"));
+    TextAddonsWidgets::SaveFileUtils::saveFile(this, mManager->generateAttachmentTemporaryFile(attachmentId), i18n("Save Image"));
 }
 
 void TextAutoGenerateShowImageWidget::copyImage()
@@ -118,8 +119,9 @@ void TextAutoGenerateShowImageWidget::copyImage()
 
 void TextAutoGenerateShowImageWidget::openWith(const KService::Ptr &service)
 {
+    QByteArray attachmentId;
     // TODO
-    const QString imagePath = mManager->generateAttachmentTemporaryFile();
+    const QString imagePath = mManager->generateAttachmentTemporaryFile(attachmentId);
     // If service is null, ApplicationLauncherJob will invoke the open-with dialog
     auto job = new KIO::ApplicationLauncherJob(service);
     job->setUrls({QUrl::fromLocalFile(imagePath)});
@@ -129,8 +131,9 @@ void TextAutoGenerateShowImageWidget::openWith(const KService::Ptr &service)
 
 void TextAutoGenerateShowImageWidget::copyLocation()
 {
+    QByteArray attachmentId;
     // TODO
-    const QString imagePath = mManager->generateAttachmentTemporaryFile();
+    const QString imagePath = mManager->generateAttachmentTemporaryFile(attachmentId);
     QApplication::clipboard()->setText(imagePath);
 }
 
