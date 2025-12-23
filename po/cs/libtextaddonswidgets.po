@@ -21,43 +21,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "Otevřít přílohu?"
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "Otevřít přílohu <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "&Otevřít pomocí '%1'"
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "Ote&vřít pomocí…"
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "Uložit j&ako…"
 
 #: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Uložit soubor"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
@@ -69,7 +69,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "Vypnout kontrolu verze"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
@@ -85,18 +85,18 @@ msgstr ""
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "Pro provedení změn je potřeba restartovat."
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr ""
+msgstr "Nastavit"
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
@@ -110,14 +110,14 @@ msgstr ""
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "Následující"
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "Předchozí"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -206,7 +206,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "Verze:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
@@ -217,7 +217,7 @@ msgstr ""
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(Zobrazit novinky)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
@@ -232,12 +232,12 @@ msgstr ""
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "Verze %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "Důležité změny od poslední verze:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 02:38+0000\n"
+"POT-Creation-Date: 2025-12-23 02:38+0000\n"
 "PO-Revision-Date: 2025-12-19 10:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -65,57 +65,57 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Herramientas:</b> %1"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Tools"
 msgstr "Herramientas"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:145
 #, kde-format
 msgid "Small"
 msgstr "Pequeño"
 
-#: core/textautogeneratemanager.cpp:145
+#: core/textautogeneratemanager.cpp:147
 #, kde-format
 msgid "Medium"
 msgstr "Medio"
 
-#: core/textautogeneratemanager.cpp:147
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Big"
 msgstr "Grande"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Code"
 msgstr "Código"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Math"
 msgstr "Matemáticas"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Vision"
 msgstr "Visión"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Embedding"
 msgstr "Para integrar"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Reasoning"
 msgstr "Razonamiento"
@@ -2047,25 +2047,30 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Volver a cargar el modelo"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Compatibilidad con GPU Vulkan:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Selección de GPU NVIDIA:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Selección de GPU AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Anular versión GFX:"
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#, kde-format
+msgid "Default Model Path:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format

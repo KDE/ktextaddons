@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 02:38+0000\n"
+"POT-Creation-Date: 2025-12-23 02:38+0000\n"
 "PO-Revision-Date: 2025-12-19 09:24+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -75,57 +75,57 @@ msgstr ""
 "\n"
 "כלים: %1"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Tools"
 msgstr "כלים"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:145
 #, kde-format
 msgid "Small"
 msgstr "קטן"
 
-#: core/textautogeneratemanager.cpp:145
+#: core/textautogeneratemanager.cpp:147
 #, kde-format
 msgid "Medium"
 msgstr "בינוני"
 
-#: core/textautogeneratemanager.cpp:147
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Big"
 msgstr "גדול"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Huge"
 msgstr "ענק"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Multilingual"
 msgstr "רב־לשוני"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Code"
 msgstr "קוד"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Math"
 msgstr "מתמטיקה"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Vision"
 msgstr "ראייה"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Embedding"
 msgstr "הטמעה"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Reasoning"
 msgstr "הנמקה"
@@ -1945,26 +1945,31 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "ריענון מודל"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy Selection"
 msgid "AMD GPU Selection:"
 msgstr "העתקת הבחירה"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
 #, kde-format
 msgid "Override GFX version:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#, kde-format
+msgid "Default Model Path:"
 msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
