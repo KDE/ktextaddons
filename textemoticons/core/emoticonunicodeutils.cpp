@@ -5,9 +5,9 @@
 */
 
 #include "emoticonunicodeutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QList>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsCore;
 QString EmoticonUnicodeUtils::emojiFontName()
 {

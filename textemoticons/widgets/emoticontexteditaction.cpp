@@ -5,7 +5,6 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emoticontexteditaction.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emoticontexteditselector.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWidgetAction>
 
 using namespace TextEmoticonsWidgets;
+using namespace Qt::Literals::StringLiterals;
 
 class EmoticonTextEditAction::EmoticonTextEditActionPrivate
 {

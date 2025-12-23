@@ -152,6 +152,7 @@ void OllamaConfigureWidget::loadSettings()
         .cudaVisibleDevice = mManager->ollamaSettings()->cudaVisibleDevice(),
         .rocrVisibleDevice = mManager->ollamaSettings()->rocrVisibleDevice(),
         .overrideGfxVersion = mManager->ollamaSettings()->overrideGfxVersion(),
+        .defaultModelPath = mManager->ollamaSettings()->defaultModelPath(),
     };
     mOllamaConfigureCustomizeWidget->setCustomizeInfo(info);
 }
@@ -168,6 +169,7 @@ void OllamaConfigureWidget::saveSettings()
     mManager->ollamaSettings()->setRocrVisibleDevice(info.rocrVisibleDevice);
     mManager->ollamaSettings()->setOverrideGfxVersion(info.overrideGfxVersion);
     mManager->ollamaSettings()->setVulkanSupport(info.vulkanSupport);
+    mManager->ollamaSettings()->setDefaultModelPath(info.defaultModelPath);
 }
 
 void OllamaConfigureWidget::fillModels()

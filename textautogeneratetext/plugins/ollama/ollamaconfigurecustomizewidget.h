@@ -7,6 +7,7 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class QLineEdit;
+class KUrlRequester;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaConfigureCustomizeWidget : public QWidget
 {
     Q_OBJECT
@@ -16,6 +17,7 @@ public:
         QString cudaVisibleDevice;
         QString rocrVisibleDevice;
         QString overrideGfxVersion;
+        QString defaultModelPath;
     };
 
     explicit OllamaConfigureCustomizeWidget(QWidget *parent = nullptr);
@@ -29,4 +31,5 @@ private:
     QLineEdit *const mCudaVisibleDeviceLineEdit;
     QLineEdit *const mRocrVisibleDeviceLineEdit;
     QLineEdit *const mOverrideGfxVersionLineEdit;
+    KUrlRequester *const mDefaultModelPath;
 };

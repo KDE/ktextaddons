@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    widgets/view/images/textautogenerategraphicsview.h
-    widgets/view/images/textautogenerategraphicsview.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -219,6 +215,8 @@ target_sources(
         core/tools/textautogeneratetexttoolpluginjob.cpp
         core/textautogeneratesearchmessagesettings.h
         core/textautogeneratesearchmessagesettings.cpp
+        core/textautogeneratefilecache.h
+        core/textautogeneratefilecache.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
@@ -323,6 +321,8 @@ target_sources(
         widgets/view/images/textautogenerateshowimagewidget.cpp
         widgets/view/images/textautogenerategraphicspixmapitem.h
         widgets/view/images/textautogenerategraphicspixmapitem.cpp
+        widgets/view/images/textautogenerategraphicsview.h
+        widgets/view/images/textautogenerategraphicsview.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
         widgets/menu/textautogeneratemenuconfigurewidget.cpp

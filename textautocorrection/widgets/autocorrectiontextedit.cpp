@@ -5,13 +5,13 @@
 */
 
 #include "autocorrectiontextedit.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <TextAutoCorrectionCore/AutoCorrection>
 
 #include <QKeyEvent>
 
 using namespace TextAutoCorrectionWidgets;
+using namespace Qt::Literals::StringLiterals;
 
 class TextAutoCorrectionWidgets::AutoCorrectionTextEditPrivate
 {

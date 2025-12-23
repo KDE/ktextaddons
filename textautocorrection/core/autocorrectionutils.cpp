@@ -5,13 +5,13 @@
 */
 
 #include "autocorrectionutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 #include <QStandardPaths>
 using namespace TextAutoCorrectionCore;
+using namespace Qt::Literals::StringLiterals;
 AutoCorrectionUtils::TypographicQuotes AutoCorrectionUtils::typographicDefaultSingleQuotes()
 {
     TypographicQuotes quote;

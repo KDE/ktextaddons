@@ -5,11 +5,11 @@
 */
 
 #include "autocorrectionlanguagemodel.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QLocale>
 
 using namespace TextAutoCorrectionWidgets;
+using namespace Qt::Literals::StringLiterals;
 AutoCorrectionLanguageModel::AutoCorrectionLanguageModel(QObject *parent)
     : QAbstractListModel{parent}
 {
