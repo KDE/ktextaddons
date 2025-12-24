@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-23 02:38+0000\n"
+"POT-Creation-Date: 2025-12-24 02:50+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2002,18 +2002,18 @@ msgstr "这此条目是可选的，它们用于排除与 Ollama 有关的GPU 问
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
 #, kde-format
 msgid "Failed to start Ollama"
-msgstr ""
+msgstr "启动 Ollama 失败"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
-msgstr ""
+msgstr "系统中没有找到 Ollama。"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
-msgstr ""
+msgstr "无法启动 Ollama。"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2117,12 +2117,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "允许选择工具"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "无法打开 %1"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
