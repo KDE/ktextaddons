@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-21 00:41+0000\n"
+"POT-Creation-Date: 2025-12-24 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -62,57 +62,57 @@ msgstr "<b>引擎：</b> %1<br><b>模型：</b> %2<br><b>实例名称：</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>工具：</b> %1"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:145
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:145
+#: core/textautogeneratemanager.cpp:147
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:147
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Huge"
 msgstr "超大"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Multilingual"
 msgstr "多语言"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Code"
 msgstr "代码"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Math"
 msgstr "数学"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Vision"
 msgstr "视觉"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
@@ -249,7 +249,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr ""
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -1907,25 +1907,30 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "重新加载模型"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:29
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Vulkan GPU 支持："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "NVIDIA GPU 选择："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "AMD GPU 选择："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
 #, kde-format
 msgid "Override GFX version:"
 msgstr "覆盖 GFX 版本："
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#, kde-format
+msgid "Default Model Path:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2001,18 +2006,18 @@ msgstr "这此条目是可选的，它们用于排除与 Ollama 有关的GPU 问
 #: plugins/ollama/ollamaconfigurewidget.cpp:138
 #, kde-format
 msgid "Failed to start Ollama"
-msgstr ""
+msgstr "启动 Ollama 失败"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
-msgstr ""
+msgstr "系统中没有找到 Ollama。"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
-msgstr ""
+msgstr "无法启动 Ollama。"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
