@@ -32,8 +32,15 @@ void TextAutoGenerateTextOpenFileJob::downloadFile(const QUrl &fileUrl)
     }
     if (mManager) {
         const QString fileName = mManager->generateAttachmentTemporaryFile(mAttachmentId);
-        // TODO generate file from fileUrl
-        // TODO
+
+        QFile f(fileName);
+        if (f.exists()) {
+            if (!f.copy(fileUrl.toLocalFile())) {
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to copy" << f.fileName() << "to" << fileUrl;
+            }
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Cache file doesn't exist! It's a bug" << fileName;
+        }
     }
     deleteLater();
 }
