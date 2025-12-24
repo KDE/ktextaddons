@@ -635,8 +635,7 @@ TextAutoGenerateLocalDatabaseManager *TextAutoGenerateManager::databaseManager()
 
 QString TextAutoGenerateManager::generateAttachmentTemporaryFile() const
 {
-    // TODO
-    return {};
+    return mTextAutoGenerateFileCache->cacheFilePath();
 }
 
 void TextAutoGenerateManager::setDebug(bool newDebug)
