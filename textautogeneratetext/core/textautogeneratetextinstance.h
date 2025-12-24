@@ -11,6 +11,10 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;
+/**
+ * @brief The TextAutoGenerateTextInstance class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstance
 {
 public:

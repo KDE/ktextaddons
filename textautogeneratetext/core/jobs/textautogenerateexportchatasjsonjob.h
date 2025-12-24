@@ -9,6 +9,10 @@
 #include <TextAutoGenerateText/TextAutoGenerateExportChatBaseJob>
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateExportChatAsJsonJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatAsJsonJob : public TextAutoGenerateText::TextAutoGenerateExportChatBaseJob
 {
     Q_OBJECT

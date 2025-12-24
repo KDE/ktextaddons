@@ -7,10 +7,14 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KLazyLocalizedString>
-class QDebug;
 #include <QStringList>
+class QDebug;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateTextToolPluginProperty class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginProperty
 {
 public:

@@ -15,6 +15,10 @@ class QDoubleSpinBox;
 class QLabel;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateNetworkPluginConfigureWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget : public QWidget
 {
     Q_OBJECT

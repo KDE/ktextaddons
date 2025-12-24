@@ -11,6 +11,10 @@
 class QPlainTextEdit;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateTextConfigurePromptWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePromptWidget : public QWidget
 {
     Q_OBJECT

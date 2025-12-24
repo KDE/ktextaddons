@@ -12,6 +12,10 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateAnswerInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedData
 {
 public:

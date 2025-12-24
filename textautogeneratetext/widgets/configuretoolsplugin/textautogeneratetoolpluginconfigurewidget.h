@@ -12,6 +12,10 @@ class QToolButton;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPlugin;
+/**
+ * @brief The TextAutoGenerateToolPluginConfigureWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : public QWidget
 {
     Q_OBJECT

@@ -5,11 +5,15 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-class QDebug;
 
 #include <QByteArray>
+class QDebug;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateTextToSpeechEnqueueInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueInfo
 {
 public:
