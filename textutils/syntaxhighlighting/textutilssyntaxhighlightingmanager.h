@@ -11,6 +11,10 @@
 #include <KSyntaxHighlighting/Repository>
 namespace TextUtils
 {
+/**
+ * @brief The TextUtilsSyntaxHighlightingManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTUTILS_EXPORT TextUtilsSyntaxHighlightingManager
 {
 public:
@@ -27,7 +31,7 @@ public:
 
 private:
     TextUtilsSyntaxHighlightingManager();
-    void initialize();
+    TEXTUTILS_NO_EXPORT void initialize();
     mutable KSyntaxHighlighting::Repository mRepo;
     KSyntaxHighlighting::Definition mDefaultDef;
     QList<QString> mDefinitions;

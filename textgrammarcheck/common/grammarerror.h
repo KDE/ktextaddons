@@ -14,6 +14,10 @@ class QDebug;
 class QJsonObject;
 namespace TextGrammarCheck
 {
+/**
+ * @brief The GrammarError class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTGRAMMARCHECK_EXPORT GrammarError
 {
 public:

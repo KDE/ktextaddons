@@ -10,6 +10,10 @@
 #include <QObject>
 namespace TextGrammarCheck
 {
+/**
+ * @brief The GrammalecteManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteManager : public QObject
 {
     Q_OBJECT

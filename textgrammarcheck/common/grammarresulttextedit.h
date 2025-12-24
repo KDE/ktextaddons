@@ -12,6 +12,10 @@
 namespace TextGrammarCheck
 {
 class GrammarAction;
+/**
+ * @brief The GrammarResultTextEdit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit
 {
     Q_OBJECT
