@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-24 00:42+0000\n"
-"PO-Revision-Date: 2025-12-20 10:24+0200\n"
+"POT-Creation-Date: 2025-12-25 00:42+0000\n"
+"PO-Revision-Date: 2025-12-24 16:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2059,7 +2059,7 @@ msgstr "Перевизначення версії GFX:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
 #, kde-format
 msgid "Default Model Path:"
-msgstr ""
+msgstr "Шлях до типової моделі:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2257,12 +2257,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "Дозволити вибір інструментів"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "Не вдалося відкрити %1"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"

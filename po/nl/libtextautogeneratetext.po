@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-24 00:42+0000\n"
-"PO-Revision-Date: 2025-12-20 11:50+0100\n"
+"POT-Creation-Date: 2025-12-25 00:42+0000\n"
+"PO-Revision-Date: 2025-12-24 16:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2050,7 +2050,7 @@ msgstr "GFX-versie overschrijven:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
 #, kde-format
 msgid "Default Model Path:"
-msgstr ""
+msgstr "Standaard modelpad:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2248,12 +2248,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "Selecteren van hulpmiddelen toestaan"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "%1 openen is onmogelijk"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"

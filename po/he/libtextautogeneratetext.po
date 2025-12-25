@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-24 00:42+0000\n"
-"PO-Revision-Date: 2025-12-19 09:24+0200\n"
+"POT-Creation-Date: 2025-12-25 00:42+0000\n"
+"PO-Revision-Date: 2025-12-24 16:51+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -248,10 +248,9 @@ msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
-#, fuzzy, kde-format
-#| msgid "Gork (X.ai)"
+#, kde-format
 msgid "Grok (X.ai)"
-msgstr "Gork (X.ai)"
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -1955,7 +1954,7 @@ msgstr "דריסת גרסת GFX:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
 #, kde-format
 msgid "Default Model Path:"
-msgstr ""
+msgstr "נתיב למודל ברירת מחדל:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2149,12 +2148,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "לאפשר לבחור כלים"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "אי אפשר לפתוח את %1"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-24 00:42+0000\n"
-"PO-Revision-Date: 2025-12-23 11:50+0300\n"
+"POT-Creation-Date: 2025-12-25 00:42+0000\n"
+"PO-Revision-Date: 2025-12-24 11:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2049,7 +2049,7 @@ msgstr "GFX sürümünü geçersiz kıl:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
 #, kde-format
 msgid "Default Model Path:"
-msgstr ""
+msgstr "Öntanımlı model yolu:"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
@@ -2246,12 +2246,12 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "Araçları seçmeye olanak tanı"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgid "Impossible to open %1"
 msgstr "%1 ögesini açmak olanaksız"
 
-#: widgets/common/textautogeneratetextopenfilejob.cpp:75
+#: widgets/common/textautogeneratetextopenfilejob.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
