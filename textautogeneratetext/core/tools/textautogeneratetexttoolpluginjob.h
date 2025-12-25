@@ -7,13 +7,17 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QByteArray>
-class QDebug;
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
+class QDebug;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateTextToolPluginJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginJob : public QObject
 {
     Q_OBJECT

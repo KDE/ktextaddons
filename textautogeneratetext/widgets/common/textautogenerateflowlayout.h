@@ -9,6 +9,10 @@
 #include <QList>
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateFlowLayout class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateFlowLayout : public QLayout
 {
     Q_OBJECT

@@ -13,6 +13,10 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPluginJob;
+/**
+ * @brief The TextAutoGenerateToolCallJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolCallJob : public QObject
 {
     Q_OBJECT

@@ -5,12 +5,16 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-class QDebug;
 #include <QList>
 #include <QSharedData>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
+class QDebug;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateAttachments class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachments : public QSharedData
 {
 public:

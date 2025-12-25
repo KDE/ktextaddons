@@ -25,18 +25,30 @@ TextAutoGenerateTextOpenFileJob::~TextAutoGenerateTextOpenFileJob() = default;
 
 void TextAutoGenerateTextOpenFileJob::downloadFile(const QUrl &fileUrl)
 {
-    if (mManager) {
-        const QString fileName = mManager->generateAttachmentTemporaryFile();
+    if (mAttachmentId.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "mAttachmentId is empty. It's a bug";
+        deleteLater();
+        return;
     }
-    // TODO generate file from fileUrl
-    // TODO
+    if (mManager) {
+        const QString fileName = mManager->generateAttachmentTemporaryFile(mAttachmentId);
+
+        QFile f(fileName);
+        if (f.exists()) {
+            if (!f.copy(fileUrl.toLocalFile())) {
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to copy" << f.fileName() << "to" << fileUrl;
+            }
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Cache file doesn't exist! It's a bug" << fileName;
+        }
+    }
     deleteLater();
 }
 
 void TextAutoGenerateTextOpenFileJob::runApplication(const KService::Ptr &offer)
 {
     if (mManager) {
-        const QString fileName = mManager->generateAttachmentTemporaryFile();
+        const QString fileName = mManager->generateAttachmentTemporaryFile(mAttachmentId);
         auto job = new KIO::ApplicationLauncherJob(offer); // asks the user if offer is nullptr
         job->setUrls({QUrl::fromLocalFile(fileName)});
         job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
@@ -69,6 +81,16 @@ void TextAutoGenerateTextOpenFileJob::openUrl()
     });
 #endif
 #endif
+}
+
+QByteArray TextAutoGenerateTextOpenFileJob::attachmentId() const
+{
+    return mAttachmentId;
+}
+
+void TextAutoGenerateTextOpenFileJob::setAttachmentId(const QByteArray &newAttachmentId)
+{
+    mAttachmentId = newAttachmentId;
 }
 
 #include "moc_textautogeneratetextopenfilejob.cpp"

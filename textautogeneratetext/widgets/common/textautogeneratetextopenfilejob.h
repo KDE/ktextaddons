@@ -20,7 +20,11 @@ public:
     void runApplication(const KService::Ptr &offer) override;
     void openUrl() override;
 
+    [[nodiscard]] QByteArray attachmentId() const;
+    void setAttachmentId(const QByteArray &newAttachmentId);
+
 private:
+    QByteArray mAttachmentId;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 

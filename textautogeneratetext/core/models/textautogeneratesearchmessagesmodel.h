@@ -10,6 +10,10 @@
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateSearchMessagesModel class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessagesModel : public QAbstractListModel
 {
     Q_OBJECT

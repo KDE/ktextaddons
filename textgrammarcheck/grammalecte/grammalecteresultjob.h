@@ -11,6 +11,10 @@
 #include <QProcess>
 namespace TextGrammarCheck
 {
+/**
+ * @brief The GrammalecteResultJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteResultJob : public QObject
 {
     Q_OBJECT

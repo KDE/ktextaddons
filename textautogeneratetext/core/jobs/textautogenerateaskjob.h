@@ -10,6 +10,10 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+/**
+ * @brief The TextAutoGenerateAskJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
 {
     Q_OBJECT

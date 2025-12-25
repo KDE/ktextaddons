@@ -5,11 +5,15 @@
  */
 #pragma once
 #include "textautogeneratetext_export.h"
-class QDebug;
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+class QDebug;
 namespace TextAutoGenerateText
 {
+/**
+ * @brief The TextAutoGenerateExportChatBaseJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatBaseJob : public QObject
 {
     Q_OBJECT

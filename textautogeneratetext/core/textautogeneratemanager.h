@@ -138,7 +138,7 @@ public:
 
     [[nodiscard]] TextAutoGenerateLocalDatabaseManager *databaseManager() const;
 
-    [[nodiscard]] QString generateAttachmentTemporaryFile() const;
+    [[nodiscard]] QString generateAttachmentTemporaryFile(const QByteArray &attachmentId) const;
 
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);

@@ -10,6 +10,10 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateChatSettings;
+/**
+ * @brief The TextAutoGenerateChatsModel class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatsModel : public QAbstractListModel
 {
     Q_OBJECT

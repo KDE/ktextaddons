@@ -51,6 +51,6 @@ private:
 
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
     doLayout(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach, const QStyleOptionViewItem &option, int attachmentsWidth) const;
-    void handleDownloadClicked(QWidget *widget);
+    void handleDownloadClicked(QWidget *widget, const QByteArray &attachmentId);
 };
 }

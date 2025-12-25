@@ -27,6 +27,10 @@ public:
     bool isEnabled = true;
 };
 
+/**
+ * @brief The TextAutoGeneratePluginTextManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextManager final : public QObject
 {
     Q_OBJECT

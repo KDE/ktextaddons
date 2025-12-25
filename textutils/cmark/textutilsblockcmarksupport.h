@@ -8,6 +8,10 @@
 #include <QString>
 namespace TextUtils
 {
+/**
+ * @brief The TextUtilsBlockCMarkSupport class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTUTILS_EXPORT TextUtilsBlockCMarkSupport
 {
 public:
