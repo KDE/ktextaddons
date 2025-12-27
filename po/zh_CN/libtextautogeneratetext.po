@@ -1926,7 +1926,7 @@ msgstr "覆盖 GFX 版本："
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
 #, kde-format
 msgid "Default Model Path:"
-msgstr ""
+msgstr "默认模型路径："
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
