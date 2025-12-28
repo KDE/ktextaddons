@@ -29,6 +29,7 @@ set(CMAKE_MODULE_PATH
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
+include(ECMGenerateQDoc)
 
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
