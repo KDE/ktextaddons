@@ -349,7 +349,15 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
         return obj;
     }
     obj["role"_L1] = role;
-    obj["content"_L1] = mContent;
+    QString contentStr = mContent;
+    if (mMessageAttachments && !mMessageAttachments->isEmpty()) {
+        for (const auto &att : mMessageAttachments->messageAttachments()) {
+            if (att.attachmentType() == TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File) {
+                contentStr += QString::fromUtf8(att.content());
+            }
+        }
+    }
+    obj["content"_L1] = contentStr;
     // obj["images"_L1] = //TODO add list;
     return obj;
 }
