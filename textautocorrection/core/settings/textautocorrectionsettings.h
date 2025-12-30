@@ -21,6 +21,8 @@ class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAuto
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static TextAutoCorrectionSettings *self();
 
     /** Call this slot instead of directly @ref KConfig::sync() to

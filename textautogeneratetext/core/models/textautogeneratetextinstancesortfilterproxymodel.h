@@ -17,13 +17,23 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceSortFilterProxyMod
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextInstanceSortFilterProxyModel(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextInstanceSortFilterProxyModel() override;
 
+    /*!
+     */
     [[nodiscard]] QString searchText() const;
+    /*!
+     */
     void setSearchText(const QString &newSearchText);
 
 protected:
+    /*!
+     */
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:

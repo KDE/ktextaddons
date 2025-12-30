@@ -22,32 +22,64 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public 
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextInstancesManager(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextInstancesManager() override;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateTextInstance *> instances() const;
+    /*!
+     */
     void setInstances(const QList<TextAutoGenerateTextInstance *> &newInstances);
 
+    /*!
+     */
     void deleteInstance(const QByteArray &uuid);
+    /*!
+     */
     void addInstance(TextAutoGenerateTextInstance *instance);
 
+    /*!
+     */
     void loadInstances();
 
+    /*!
+     */
     void saveInstances();
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextInstanceModel *textAutoGenerateTextInstanceModel() const;
 
+    /*!
+     */
     [[nodiscard]] bool isCurrentInstance(const QByteArray &instanceUuid) const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray currentInstance() const;
+    /*!
+     */
     void setCurrentinstance(const QByteArray &newCurrentinstance);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
+    /*!
+     */
     [[nodiscard]] QStringList instanceDisplayNames() const;
 
 private:

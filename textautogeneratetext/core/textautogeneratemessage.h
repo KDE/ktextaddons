@@ -40,67 +40,145 @@ public:
     Q_DECLARE_FLAGS(MessageStates, MessageState)
     Q_FLAG(MessageStates)
 
+    /*!
+     */
     TextAutoGenerateMessage();
+    /*!
+     */
     ~TextAutoGenerateMessage();
 
+    /*!
+     */
     [[nodiscard]] QString content() const;
+    /*!
+     */
     void setContent(const QString &newContent);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateMessage::Sender sender() const;
+    /*!
+     */
     void setSender(TextAutoGenerateMessage::Sender newSender);
 
+    /*!
+     */
     [[nodiscard]] qint64 dateTime() const;
+    /*!
+     */
     void setDateTime(qint64 newDateTime);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] bool inProgress() const;
+    /*!
+     */
     void setInProgress(bool newInProgress);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateMessage &other) const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray uuid() const;
+    /*!
+     */
     void setUuid(const QByteArray &newUuid);
 
+    /*!
+     */
     [[nodiscard]] QString htmlGenerated() const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray answerUuid() const;
+    /*!
+     */
     void setAnswerUuid(const QByteArray &newAnswerUuid);
 
+    /*!
+     */
     [[nodiscard]] QString dateTimeStr() const;
 
+    /*!
+     */
     [[nodiscard]] bool mouseHover() const;
+    /*!
+     */
     void setMouseHover(bool newMouseHover);
 
+    /*!
+     */
     [[nodiscard]] bool editingMode() const;
+    /*!
+     */
     void setEditingMode(bool newEditingMode);
 
+    /*!
+     */
     [[nodiscard]] QString modelName() const;
+    /*!
+     */
     [[nodiscard]] QString engineName() const;
+    /*!
+     */
     [[nodiscard]] QString instanceName() const;
+    /*!
+     */
     [[nodiscard]] QList<QByteArray> tools() const;
 
+    /*!
+     */
     [[nodiscard]] static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
+    /*!
+     */
     [[nodiscard]] static TextAutoGenerateMessage deserialize(const QJsonObject &o);
 
+    /*!
+     */
     [[nodiscard]] QString senderToString() const;
 
+    /*!
+     */
     [[nodiscard]] static TextAutoGenerateMessage::Sender senderFromString(const QString &str);
 
+    /*!
+     */
     [[nodiscard]] QJsonObject convertToOllamaChatJson() const;
 
+    /*!
+     */
     [[nodiscard]] const TextAutoGenerateAnswerInfo *messageInfo() const;
 
+    /*!
+     */
     void setMessageInfo(const TextAutoGenerateAnswerInfo &messageInfo);
 
+    /*!
+     */
     [[nodiscard]] const TextAutoGenerateAttachments *messageAttachments() const;
+    /*!
+     */
     void setMessageAttachments(const TextAutoGenerateAttachments &newMessageAttachment);
 
+    /*!
+     */
     void generateHtml(const QString &searchText = {}, int hightLightStringIndex = -1);
 
+    /*!
+     */
     [[nodiscard]] int numberOfTextSearched() const;
 
+    /*!
+     */
     [[nodiscard]] bool textToSpeechInProgress() const;
+    /*!
+     */
     void setTextToSpeechInProgress(bool newTextToSpeechInProgress);
 
 private:

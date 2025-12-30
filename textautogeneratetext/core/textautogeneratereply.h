@@ -70,7 +70,11 @@ public:
         DeleteModel,
         CreateModel,
     };
+    /*!
+     */
     explicit TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateReply() override;
 
     /**
@@ -93,7 +97,11 @@ public:
     const TextAutoGenerateText::TextAutoGenerateReply::RequestTypes &requestType() const;
 
     void cancel();
+    /*!
+     */
 
+    /*!
+     */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const = 0;
 
 Q_SIGNALS:
@@ -115,11 +123,19 @@ Q_SIGNALS:
      */
     void finished();
 
+    /*!
+     */
     void canceled();
 
+    /*!
+     */
     void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
+    /*!
+     */
     void downloadError(const QString &errorStr);
 
+    /*!
+     */
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 
 protected:

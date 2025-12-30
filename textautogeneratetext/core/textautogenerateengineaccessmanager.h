@@ -18,11 +18,19 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineAccessManager : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateEngineAccessManager(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateEngineAccessManager();
 
+    /*!
+     */
     static TextAutoGenerateEngineAccessManager *self();
 
+    /*!
+     */
     [[nodiscard]] QNetworkAccessManager *networkManager() const;
 
 private:

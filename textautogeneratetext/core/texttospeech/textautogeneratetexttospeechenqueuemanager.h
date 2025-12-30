@@ -18,17 +18,31 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueManager : p
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextToSpeechEnqueueManager(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextToSpeechEnqueueManager() override;
 
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     void insert(const TextAutoGenerateTextToSpeechEnqueueInfo &info);
 
+    /*!
+     */
     [[nodiscard]] bool contains(const TextAutoGenerateTextToSpeechEnqueueInfo &info) const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueInfo value(qsizetype index);
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateTextToSpeechEnqueueInfo> enqueueList() const;
 
 private:

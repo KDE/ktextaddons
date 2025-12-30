@@ -20,19 +20,37 @@ class AutoCorrectionPrivate;
 class TEXTAUTOCORRECTIONCORE_EXPORT AutoCorrection
 {
 public:
+    /*!
+     */
     AutoCorrection();
+    /*!
+     */
     ~AutoCorrection();
 
+    /*!
+     */
     void writeConfig();
+    /*!
+     */
     void readConfig();
 
+    /*!
+     */
     bool autocorrect(bool htmlMode, QTextDocument &document, int &position);
 
+    /*!
+     */
     void loadGlobalFileName(const QString &fname);
 
+    /*!
+     */
     [[nodiscard]] AutoCorrectionSettings *autoCorrectionSettings() const;
+    /*!
+     */
     void setAutoCorrectionSettings(AutoCorrectionSettings *newAutoCorrectionSettings);
 
+    /*!
+     */
     void writeAutoCorrectionXmlFile(const QString &filename);
 
 private:

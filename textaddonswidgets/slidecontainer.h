@@ -27,6 +27,8 @@ class TEXTADDONSWIDGETS_EXPORT SlideContainer : public QFrame
     Q_OBJECT
     Q_PROPERTY(int slideHeight READ slideHeight WRITE setSlideHeight)
 public:
+    /*!
+     */
     explicit SlideContainer(QWidget *parent = nullptr);
 
     /**
@@ -39,11 +41,19 @@ public:
      */
     void setContent(QWidget *content);
 
+    /*!
+     */
     QSize sizeHint() const override;
+    /*!
+     */
     QSize minimumSizeHint() const override;
 
+    /*!
+     */
     [[nodiscard]] int slideHeight() const;
 
+    /*!
+     */
     Q_INVOKABLE void setSlideHeight(int height);
 
 public Q_SLOTS:

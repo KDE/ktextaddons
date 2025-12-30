@@ -11,7 +11,11 @@ namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateTextUtils
 {
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString instanceConfigFileName();
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList instancesList(KConfig *config);
 };
 }

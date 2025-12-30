@@ -28,30 +28,62 @@ public:
         IsDefault,
         TranslatedPluginName,
     };
+    /*!
+     */
     explicit TextAutoGenerateTextInstanceModel(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextInstanceModel() override;
 
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    /*!
+     */
     [[nodiscard]] bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+    /*!
+     */
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateTextInstance *> textInstances() const;
+    /*!
+     */
     void setTextInstances(const QList<TextAutoGenerateTextInstance *> &newTextInstances);
 
+    /*!
+     */
     void addInstance(TextAutoGenerateTextInstance *instance);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextPlugin *removeInstance(const QByteArray &uuid);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextPlugin *editInstance(const QByteArray &uuid);
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray currentInstance() const;
+    /*!
+     */
     void setCurrentInstance(const QByteArray &newCurrentinstance);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextPlugin *currentPlugin() const;
 
+    /*!
+     */
     [[nodiscard]] QStringList instanceDisplayNames() const;
 
 private:

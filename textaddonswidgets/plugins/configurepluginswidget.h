@@ -21,18 +21,38 @@ public:
     enum PluginItemData {
         Description = Qt::UserRole + 1,
     };
+    /*!
+     */
     explicit ConfigurePluginsWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~ConfigurePluginsWidget() override;
 
+    /*!
+     */
     virtual void save();
+    /*!
+     */
     virtual void load();
+    /*!
+     */
     virtual void defaults();
+    /*!
+     */
     virtual void doLoadFromGlobalSettings();
+    /*!
+     */
     virtual void doResetToDefaultsOther();
+    /*!
+     */
     virtual void initialize();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
+    /*!
+     */
     void configureClicked(const QString &configureGroupName, const QString &identifier);
 
 protected:

@@ -29,32 +29,68 @@ public:
     };
     Q_ENUM(AttachmentType)
 
+    /*!
+     */
     TextAutoGenerateAttachment();
+    /*!
+     */
     ~TextAutoGenerateAttachment();
 
+    /*!
+     */
     [[nodiscard]] QByteArray content() const;
+    /*!
+     */
     void setContent(const QByteArray &b);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateAttachment &other) const;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] AttachmentType attachmentType() const;
+    /*!
+     */
     void setAttachmentType(AttachmentType newAttachmentType);
 
+    /*!
+     */
     [[nodiscard]] static QJsonObject serialize(const TextAutoGenerateAttachment &attachment);
+    /*!
+     */
     [[nodiscard]] static TextAutoGenerateAttachment deserialize(const QJsonObject &o);
 
+    /*!
+     */
     [[nodiscard]] QByteArray mimeType() const;
+    /*!
+     */
     void setMimeType(const QByteArray &newMimeType);
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] bool showAttachment() const;
+    /*!
+     */
     void setShowAttachment(bool newShowAttachment);
 
+    /*!
+     */
     [[nodiscard]] QByteArray attachmentId() const;
+    /*!
+     */
     void setAttachmentId(const QByteArray &newAttachmentId);
 
 private:

@@ -17,20 +17,42 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessage
 {
 public:
+    /*!
+     */
     TextAutoGenerateSearchMessage();
+    /*!
+     */
     ~TextAutoGenerateSearchMessage();
+    /*!
+     */
     [[nodiscard]] QByteArray chatId() const;
+    /*!
+     */
     void setChatId(const QByteArray &newChatId);
 
+    /*!
+     */
     [[nodiscard]] QByteArray messageId() const;
+    /*!
+     */
     void setMessageId(const QByteArray &newMessageId);
 
+    /*!
+     */
     [[nodiscard]] QString previewText() const;
+    /*!
+     */
     void setPreviewText(const QString &newPreviewText);
 
+    /*!
+     */
     [[nodiscard]] qint64 dateTime() const;
+    /*!
+     */
     void setDateTime(qint64 newDateTime);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateSearchMessage &other) const;
 
 private:

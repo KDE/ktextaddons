@@ -13,9 +13,17 @@ namespace TextAddonsWidgets
 class TEXTADDONSWIDGETS_EXPORT WhatsNewTranslationsBase
 {
 public:
+    /*!
+     */
     WhatsNewTranslationsBase();
+    /*!
+     */
     virtual ~WhatsNewTranslationsBase();
+    /*!
+     */
     [[nodiscard]] virtual QList<WhatsNewInfo> createWhatsNewInfo() const = 0;
+    /*!
+     */
     [[nodiscard]] QString newFeaturesMD5() const;
 
 private:

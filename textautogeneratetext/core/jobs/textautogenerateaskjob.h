@@ -18,21 +18,43 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateAskJob(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateAskJob() override;
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateManager *manager() const;
+    /*!
+     */
     void setManager(TextAutoGenerateManager *newManager);
 
+    /*!
+     */
     [[nodiscard]] QString text() const;
+    /*!
+     */
     void setText(const QString &newText);
 
 Q_SIGNALS:
+    /*!
+     */
     void generateTextInProgress(const TextAutoGenerateText::TextAutoGenerateReply::Response &response);
+    /*!
+     */
     void generateTextDone();
+    /*!
+     */
     void errorOccured(const QString &str);
 
 private:

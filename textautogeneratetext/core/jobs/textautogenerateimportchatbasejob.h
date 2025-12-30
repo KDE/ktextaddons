@@ -24,19 +24,35 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
+    /*!
+     */
     explicit TextAutoGenerateImportChatBaseJob(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateImportChatBaseJob() override;
 
+    /*!
+     */
     [[nodiscard]] ImportChatInfo info() const;
+    /*!
+     */
     void setInfo(const ImportChatInfo &newInfo);
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
+    /*!
+     */
     void start();
 
 Q_SIGNALS:
+    /*!
+     */
     void importDone();
 
 protected:
+    /*!
+     */
     virtual void exportChat() = 0;
     ImportChatInfo mInfo;
 };

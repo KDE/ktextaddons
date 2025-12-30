@@ -18,11 +18,17 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit WhatsNewDialog(const QList<TextAddonsWidgets::WhatsNewInfo> &infos,
                             QWidget *parent = nullptr,
                             const QString &applicationName = QCoreApplication::applicationName());
+    /*!
+     */
     ~WhatsNewDialog() override;
 
+    /*!
+     */
     void updateInformations();
 
 private:

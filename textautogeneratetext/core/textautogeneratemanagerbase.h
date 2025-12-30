@@ -22,18 +22,37 @@ public:
         bool hasError = false;
         bool isReady = false;
     };
+    /*!
+     */
     explicit TextAutoGenerateManagerBase(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateManagerBase() override;
-
+    /*!
+     */
     virtual void loadModels() = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
+    /*!
+     */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
 Q_SIGNALS:
+    /*!
+     */
     void modelsLoadDone(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &models);
+    /*!
+     */
     void refreshInstalledModels();
+    /*!
+     */
     void finished(const TextAutoGenerateText::TextAutoGenerateReply::Response &replyText);
+    /*!
+     */
     void downloadDone(const QString &modelName);
+    /*!
+     */
     void canceled(const QString &modelName);
 
 protected:

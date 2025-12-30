@@ -16,20 +16,40 @@ class TEXTADDONSWIDGETS_EXPORT QuickSearchBarWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit QuickSearchBarWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~QuickSearchBarWidget() override;
 
+    /*!
+     */
     void slideIn();
+    /*!
+     */
     void slideOut();
+    /*!
+     */
     void updateButtons(bool next, bool previous);
 
 Q_SIGNALS:
+    /*!
+     */
     void searchTextRequested(const QString &txt);
+    /*!
+     */
     void closeSearchBarRequested();
+    /*!
+     */
     void findNext();
+    /*!
+     */
     void findPrev();
 
 protected:
+    /*!
+     */
     [[nodiscard]] bool event(QEvent *e) override;
 
 private:

@@ -17,13 +17,25 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSettings
 {
 public:
+    /*!
+     */
     TextAutoGenerateSettings();
+    /*!
+     */
     ~TextAutoGenerateSettings();
 
+    /*!
+     */
     [[nodiscard]] QString systemPrompt() const;
+    /*!
+     */
     void setSystemPrompt(const QString &newSystemPrompt);
+    /*!
+     */
     void load();
 
+    /*!
+     */
     [[nodiscard]] static QString defaultPrompt();
 
 private:

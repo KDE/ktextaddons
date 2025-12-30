@@ -29,20 +29,38 @@ public:
         [[nodiscard]] static PendingTypedInfo deserialize(const QJsonObject &o);
         [[nodiscard]] bool operator==(const PendingTypedInfo &other) const;
     };
+    /*!
+     */
     explicit TextAutoGenerateChatSettings(TextAutoGenerateManager *manager);
+    /*!
+     */
     ~TextAutoGenerateChatSettings();
 
+    /*!
+     */
     void remove(const QByteArray &chatId);
 
+    /*!
+     */
     void add(const QByteArray &chatId, const PendingTypedInfo &info);
 
+    /*!
+     */
     [[nodiscard]] PendingTypedInfo value(const QByteArray &chatId);
 
+    /*!
+     */
     [[nodiscard]] bool hasPendingMessageTyped(const QByteArray &chatId) const;
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
+    /*!
+     */
     [[nodiscard]] int count() const;
 
+    /*!
+     */
     void loadRoomPendingTypedInfo();
 
 private:

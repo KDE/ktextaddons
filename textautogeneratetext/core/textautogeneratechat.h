@@ -31,40 +31,86 @@ public:
     };
     Q_ENUM(SectionHistory)
 
+    /*!
+     */
     TextAutoGenerateChat();
+    /*!
+     */
     TextAutoGenerateChat(const TextAutoGenerateChat &other);
+    /*!
+     */
     TextAutoGenerateChat &operator=(const TextAutoGenerateChat &other);
 
+    /*!
+     */
     ~TextAutoGenerateChat();
 
+    /*!
+     */
     [[nodiscard]] bool favorite() const;
+    /*!
+     */
     void setFavorite(bool newFavorite);
 
+    /*!
+     */
     [[nodiscard]] bool archived() const;
+    /*!
+     */
     void setArchived(bool newArchived);
 
+    /*!
+     */
     [[nodiscard]] QByteArray identifier() const;
+    /*!
+     */
     void setIdentifier(const QByteArray &newIdentifier);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateChat &other) const;
 
+    /*!
+     */
     [[nodiscard]] QString title() const;
+    /*!
+     */
     void setTitle(const QString &newTitle);
 
+    /*!
+     */
     [[nodiscard]] qint64 dateTime() const;
+    /*!
+     */
     void setDateTime(qint64 dt);
 
+    /*!
+     */
     static QByteArray serialize(const TextAutoGenerateChat &msg, bool toBinary = true);
+    /*!
+     */
     [[nodiscard]] static TextAutoGenerateChat deserialize(const QJsonObject &source);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateMessagesModel *messageModel() const;
 
+    /*!
+     */
     [[nodiscard]] bool initialized() const;
+    /*!
+     */
     void setInitialized(bool newInitialized);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateChat::SectionHistory section() const;
 
+    /*!
+     */
     [[nodiscard]] bool inProgress() const;
+    /*!
+     */
     void setInProgress(bool newInProgress);
 
 private:

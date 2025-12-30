@@ -25,14 +25,28 @@ public:
         DateTime,
     };
 
+    /*!
+     */
     explicit TextAutoGenerateSearchMessagesModel(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateSearchMessagesModel() override;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchMessages() const;
+    /*!
+     */
     void setSearchMessages(const QList<TextAutoGenerateSearchMessage> &newSearchMessages);
 
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 
 private:
