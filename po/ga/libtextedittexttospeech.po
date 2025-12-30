@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-19 00:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: texttospeechactions.cpp:30
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr ""
+
+#: texttospeechactions.cpp:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Stop"
+msgstr ""
+
+#: texttospeechactions.cpp:73
+#, kde-format
+msgid "Pause"
+msgstr ""
+
+#: texttospeechactions.cpp:73
+#, kde-format
+msgid "Play"
+msgstr ""
+
+#: texttospeechconfigdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr ""
+
+#: texttospeechconfiginterface.cpp:86
+#, kde-format
+msgid "Morning, this is the test for testing settings."
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:36
+#, kde-format
+msgid "Test"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Volume:"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:48
+#, kde-format
+msgid "Rate:"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:54
+#, kde-format
+msgid "Pitch:"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:57
+#, kde-format
+msgid "Engine:"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:61
+#, kde-format
+msgid "Language:"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:65
+#, kde-format
+msgid "Voice:"
+msgstr ""
+
+#: texttospeechwidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr ""
+
+#: texttospeechwidget.cpp:61
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr ""
+
+#: texttospeechwidget.cpp:83
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure…"
+msgstr ""
+
+#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#, kde-format
+msgid "Engine has a problem."
+msgstr ""
+
+#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#, kde-format
+msgctxt "@title:window"
+msgid "Text To Speech"
+msgstr ""
