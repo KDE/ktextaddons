@@ -303,7 +303,11 @@ static cmark_node *finalize(cmark_parser *parser, cmark_node *b)
         break;
     }
 
-    case CMARK_NODE_CODE_BLOCK:
+    case CMARK_NODE_CODE_BLOCK: {
+        const bool is_triple_backtick = b->as.code.fenced && b->as.code.fence_char == '`' && b->as.code.fence_length == 3;
+        unsigned char *info_literal_copy = NULL;
+        bufsize_t info_literal_copy_len = 0;
+
         if (!b->as.code.fenced) { // indented code
             remove_trailing_blank_lines(node_content);
             cmark_strbuf_putc(node_content, '\n');
@@ -314,6 +318,9 @@ static cmark_node *finalize(cmark_parser *parser, cmark_node *b)
                     break;
             }
             assert(pos < node_content->size);
+
+            const unsigned char *info_line = node_content->ptr;
+            bufsize_t info_len = pos;
 
             if (pos == 0) {
                 b->as.code.info = NULL;
@@ -329,11 +336,57 @@ static cmark_node *finalize(cmark_parser *parser, cmark_node *b)
                 pos += 1;
             if (node_content->ptr[pos] == '\n')
                 pos += 1;
+
+            if (node_content->size == pos && info_len > 0) {
+                info_literal_copy_len = info_len;
+                info_literal_copy = parser->mem->calloc(info_literal_copy_len + 1, 1);
+                memcpy(info_literal_copy, info_line, info_literal_copy_len);
+                info_literal_copy[info_literal_copy_len] = '\0';
+            }
             cmark_strbuf_drop(node_content, pos);
         }
+
+        if (is_triple_backtick && node_content->size == 0) {
+            // RC compat: don't parse empty code blocks
+            cmark_strbuf literal = CMARK_BUF_INIT(parser->mem);
+            int indent = b->start_column > 0 ? b->start_column - 1 : 0;
+
+            for (int i = 0; i < indent; ++i) {
+                cmark_strbuf_putc(&literal, ' ');
+            }
+            for (int i = 0; i < b->as.code.fence_length; ++i) {
+                cmark_strbuf_putc(&literal, '`');
+            }
+            if (info_literal_copy && info_literal_copy_len > 0) {
+                cmark_strbuf_put(&literal, info_literal_copy, info_literal_copy_len);
+            }
+            cmark_strbuf_putc(&literal, '\n');
+
+            for (int i = 0; i < indent; ++i) {
+                cmark_strbuf_putc(&literal, ' ');
+            }
+            for (int i = 0; i < b->as.code.fence_length; ++i) {
+                cmark_strbuf_putc(&literal, '`');
+            }
+            cmark_strbuf_putc(&literal, '\n');
+
+            unsigned char *literal_data = cmark_strbuf_detach(&literal);
+            parser->mem->free(b->as.code.info);
+            parser->mem->free(info_literal_copy);
+            memset(&b->as, 0, sizeof(b->as));
+            b->type = (uint16_t)CMARK_NODE_CUSTOM_BLOCK;
+            b->as.custom.on_enter = literal_data;
+            b->as.custom.on_exit = NULL;
+            b->len = 0;
+            b->data = NULL;
+            break;
+        }
+
         b->len = node_content->size;
         b->data = cmark_strbuf_detach(node_content);
+        parser->mem->free(info_literal_copy);
         break;
+    }
 
     case CMARK_NODE_HEADING:
     case CMARK_NODE_HTML_BLOCK:
