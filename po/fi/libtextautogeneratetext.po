@@ -2348,13 +2348,13 @@ msgstr "Virkistä"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "Koodilohko kopioitu."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:620
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Kopioi koodilohko"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:39
 #, kde-format
