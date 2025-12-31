@@ -18,20 +18,42 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GrammalecteManager(QObject *parent = nullptr);
+    /*!
+     */
     ~GrammalecteManager() override;
 
+    /*!
+     */
     static GrammalecteManager *self();
 
+    /*!
+     */
     [[nodiscard]] QString pythonPath() const;
+    /*!
+     */
     [[nodiscard]] QString grammalectePath() const;
 
+    /*!
+     */
     void setPythonPath(const QString &pythonPath);
+    /*!
+     */
     void setGrammalectePath(const QString &grammalectePath);
+    /*!
+     */
     [[nodiscard]] QStringList options() const;
+    /*!
+     */
     void setOptions(const QStringList &saveOptions);
 
+    /*!
+     */
     void loadSettings();
+    /*!
+     */
     void saveSettings();
 
 private:

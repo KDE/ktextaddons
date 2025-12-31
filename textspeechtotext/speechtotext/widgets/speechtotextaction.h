@@ -17,7 +17,11 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextAction : public QAction
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SpeechToTextAction(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextAction() override;
 
 private:

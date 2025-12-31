@@ -22,18 +22,38 @@ class TEXTGRAMMARCHECK_EXPORT GrammarResultWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GrammarResultWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~GrammarResultWidget() override;
+    /*!
+     */
     void setText(const QString &str);
+    /*!
+     */
     virtual void checkGrammar() = 0;
+    /*!
+     */
     void applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos);
 Q_SIGNALS:
+    /*!
+     */
     void replaceText(const TextGrammarCheck::GrammarAction &act);
+    /*!
+     */
     void checkAgain();
+    /*!
+     */
     void closeChecker();
+    /*!
+     */
     void configure();
 
 protected:
+    /*!
+     */
     virtual void addExtraWidget();
     GrammarResultTextEdit *const mResult;
     QHBoxLayout *mExtraWidgetLayout = nullptr;

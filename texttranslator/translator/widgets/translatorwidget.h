@@ -19,9 +19,13 @@ class TEXTTRANSLATOR_EXPORT TranslatorTextEdit : public QPlainTextEdit
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TranslatorTextEdit(QWidget *parent = nullptr);
 
 Q_SIGNALS:
+    /*!
+     */
     void translateText();
 
 protected:
@@ -36,16 +40,34 @@ class TEXTTRANSLATOR_EXPORT TranslatorWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TranslatorWidget(QWidget *parent = nullptr);
+    /*!
+     */
     explicit TranslatorWidget(const QString &text, QWidget *parent = nullptr);
+    /*!
+     */
     ~TranslatorWidget() override;
 
+    /*!
+     */
     void setTextToTranslate(const QString &);
+    /*!
+     */
     void writeConfig();
+    /*!
+     */
     void readConfig();
+    /*!
+     */
     void setStandalone(bool b);
 
+    /*!
+     */
     void slotTranslate();
+    /*!
+     */
     void slotCloseWidget();
 
 private:
@@ -62,6 +84,8 @@ protected:
     bool event(QEvent *e) override;
 
 Q_SIGNALS:
+    /*!
+     */
     void toolsWasClosed();
 
 private:

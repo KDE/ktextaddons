@@ -25,20 +25,40 @@ class TEXTEMOTICONSCORE_EXPORT EmoticonCategory
     Q_PROPERTY(QString i18nName MEMBER mI18nName CONSTANT)
 
 public:
+    /*!
+     */
     EmoticonCategory();
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &name);
 
+    /*!
+     */
     [[nodiscard]] QString category() const;
+    /*!
+     */
     void setCategory(const QString &category);
 
+    /*!
+     */
     [[nodiscard]] const QString &i18nName() const;
 
+    /*!
+     */
     void setI18nName(const QString &newI18nName);
 
+    /*!
+     */
     [[nodiscard]] bool operator<(const EmoticonCategory &other) const;
 
+    /*!
+     */
     [[nodiscard]] int order() const;
+    /*!
+     */
     void setOrder(int newOrder);
 
 private:

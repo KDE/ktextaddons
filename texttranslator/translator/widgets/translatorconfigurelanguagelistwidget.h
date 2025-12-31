@@ -22,14 +22,26 @@ class TEXTTRANSLATOR_EXPORT TranslatorConfigureLanguageListWidget : public QWidg
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TranslatorConfigureLanguageListWidget(const QString &labelText, QWidget *parent = nullptr);
+    /*!
+     */
     ~TranslatorConfigureLanguageListWidget() override;
 
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     void addItem(const QString &translatedStr, const QString &languageCode);
 
+    /*!
+     */
     [[nodiscard]] QStringList selectedLanguages() const;
+    /*!
+     */
     void setSelectedLanguages(const QStringList &list);
 
 private:

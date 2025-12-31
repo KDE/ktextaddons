@@ -21,10 +21,16 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeech : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static TextToSpeech *self();
 
+    /*!
+     */
     ~TextToSpeech() override;
 
+    /*!
+     */
     [[nodiscard]] bool isReady() const;
 
     enum State {
@@ -36,29 +42,63 @@ public:
         Unknown,
     };
 
+    /*!
+     */
     [[nodiscard]] double volume() const;
+    /*!
+     */
     [[nodiscard]] QVector<QLocale> availableLocales() const;
+    /*!
+     */
     [[nodiscard]] QStringList availableEngines() const;
+    /*!
+     */
     [[nodiscard]] QStringList availableVoices() const;
 
+    /*!
+     */
     [[nodiscard]] QLocale locale() const;
 
+    /*!
+     */
     void reloadSettings();
+    /*!
+     */
     qsizetype enqueue(const QString &text);
 
 public Q_SLOTS:
+    /*!
+     */
     void say(const QString &text);
+    /*!
+     */
     void stop();
+    /*!
+     */
     void pause();
+    /*!
+     */
     void resume();
 
+    /*!
+     */
     void setRate(double rate);
+    /*!
+     */
     void setPitch(double pitch);
+    /*!
+     */
     void setVolume(double volume);
+    /*!
+     */
     void setLocale(const QLocale &locale);
 
 Q_SIGNALS:
+    /*!
+     */
     void stateChanged(TextEditTextToSpeech::TextToSpeech::State);
+    /*!
+     */
     void aboutToSynthesize(qsizetype previousId, qsizetype currentId);
 
 private:

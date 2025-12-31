@@ -26,27 +26,55 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateResultWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateResultWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateResultWidget() override;
 
+    /*!
+     */
     void handleKeyPressEvent(QKeyEvent *ev);
+    /*!
+     */
     void editingFinished(const QByteArray &uuid);
 
+    /*!
+     */
     [[nodiscard]] int scrollbarPosition() const;
+    /*!
+     */
     void setScrollbarPosition(int position);
+    /*!
+     */
     void scrollToBottom();
 
+    /*!
+     */
     [[nodiscard]] int scrollbarPositionMaximum() const;
 
+    /*!
+     */
     void quickSearchText(bool enabled);
 Q_SIGNALS:
+    /*!
+     */
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
+    /*!
+     */
     void cancelRequested(const QByteArray &uuid);
+    /*!
+     */
     void refreshAnswerRequested(const QByteArray &charId,
                                 const QModelIndex &indexAnswer,
                                 const QList<QByteArray> &tools,
                                 const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList);
+    /*!
+     */
     void switchToChat(const QByteArray &uuid);
+    /*!
+     */
     void closeSearchBarRequested();
 
 private:

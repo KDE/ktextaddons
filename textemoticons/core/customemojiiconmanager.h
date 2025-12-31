@@ -18,9 +18,17 @@ class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit CustomEmojiIconManager(QObject *parent = nullptr);
+    /*!
+     */
     ~CustomEmojiIconManager() override;
+    /*!
+     */
     virtual QIcon generateIcon(const QString &customIdentifier);
+    /*!
+     */
     virtual QString fileName(const QString &customIdentifier);
 };
 }

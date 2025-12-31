@@ -18,7 +18,11 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit LanguageToolConfigDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~LanguageToolConfigDialog() override;
 
 private:

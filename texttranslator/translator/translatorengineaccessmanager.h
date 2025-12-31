@@ -14,11 +14,19 @@ class TEXTTRANSLATOR_EXPORT TranslatorEngineAccessManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TranslatorEngineAccessManager(QObject *parent = nullptr);
+    /*!
+     */
     ~TranslatorEngineAccessManager();
 
+    /*!
+     */
     static TranslatorEngineAccessManager *self();
 
+    /*!
+     */
     QNetworkAccessManager *networkManager() const;
 
 private:

@@ -19,23 +19,39 @@ class TEXTUTILS_EXPORT TextUtilsColorsAndMessageViewStyle : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static TextUtilsColorsAndMessageViewStyle &self();
+    /*!
+     */
     TextUtilsColorsAndMessageViewStyle();
 
+    /*!
+     */
     [[nodiscard]] KColorScheme schemeView() const;
 
+    /*!
+     */
     [[nodiscard]] KColorScheme schemeWindow() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void needToUpdateColors();
+    /*!
+     */
     void needUpdateMessageStyle();
+    /*!
+     */
     void needUpdateFontSize();
 
 protected:
+    /*!
+     */
     [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
 
 private:
-    void regenerateColorScheme();
+    TEXTUTILS_NO_EXPORT void regenerateColorScheme();
     KColorScheme mSchemeView;
     KColorScheme mSchemeWindow;
 };

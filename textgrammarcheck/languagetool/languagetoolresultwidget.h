@@ -20,11 +20,19 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolResultWidget : public GrammarResultWid
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit LanguageToolResultWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~LanguageToolResultWidget() override;
+    /*!
+     */
     void checkGrammar() override;
 
 protected:
+    /*!
+     */
     void addExtraWidget() override;
 
 private:

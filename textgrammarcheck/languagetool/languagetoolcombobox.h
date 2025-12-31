@@ -19,12 +19,22 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolComboBox : public QComboBox
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit LanguageToolComboBox(QWidget *parent = nullptr);
+    /*!
+     */
     ~LanguageToolComboBox() override;
 
+    /*!
+     */
     void setLanguage(const QString &str);
+    /*!
+     */
     [[nodiscard]] QString language() const;
 
+    /*!
+     */
     void fillComboBox(const QVector<LanguageInfo> &info);
 
 private:

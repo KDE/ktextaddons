@@ -19,10 +19,18 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePromptWidget : pu
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextConfigurePromptWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextConfigurePromptWidget() override;
 
+    /*!
+     */
     void setSystemPrompt(const QString &str);
+    /*!
+     */
     [[nodiscard]] QString systemPrompt() const;
 
 private:

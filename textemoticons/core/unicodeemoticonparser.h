@@ -18,10 +18,18 @@ namespace TextEmoticonsCore
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonParser
 {
 public:
+    /*!
+     */
     UnicodeEmoticonParser();
+    /*!
+     */
     ~UnicodeEmoticonParser();
 
+    /*!
+     */
     [[nodiscard]] QList<UnicodeEmoticon> parse(const QJsonObject &o) const;
+    /*!
+     */
     [[nodiscard]] static int changeOrder(const QString &name);
 };
 }

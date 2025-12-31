@@ -22,17 +22,33 @@ class TEXTCUSTOMEDITOR_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent = nullptr);
+    /*!
+     */
     ~PlainTextEditFindBar() override;
 
 protected:
+    /*!
+     */
     [[nodiscard]] bool viewIsReadOnly() const override;
+    /*!
+     */
     [[nodiscard]] bool documentIsEmpty() const override;
+    /*!
+     */
     [[nodiscard]] bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) override;
+    /*!
+     */
     [[nodiscard]] bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) override;
+    /*!
+     */
     void autoSearchMoveCursor() override;
 
 public Q_SLOTS:
+    /*!
+     */
     void slotSearchText(bool backward = false, bool isAutoSearch = true) override;
 
 private Q_SLOTS:

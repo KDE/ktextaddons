@@ -23,25 +23,53 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget :
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateNetworkPluginConfigureWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateNetworkPluginConfigureWidget() override;
 
+    /*!
+     */
     void setApiKey(const QString &key);
+    /*!
+     */
     [[nodiscard]] QString apiKey() const;
 
+    /*!
+     */
     void setInstanceName(const QString &name);
+    /*!
+     */
     [[nodiscard]] QString instanceName() const;
 
+    /*!
+     */
     void setTemperature(double temp);
+    /*!
+     */
     [[nodiscard]] double temperature() const;
 
+    /*!
+     */
     void setMaxTokens(int tokens);
+    /*!
+     */
     [[nodiscard]] int maxTokens() const;
 
+    /*!
+     */
     void setSeed(int tokens);
+    /*!
+     */
     [[nodiscard]] int seed() const;
 
+    /*!
+     */
     void setWebSiteUrl(const QString &url);
+    /*!
+     */
     void setDescription(const QString &description);
 
 private:

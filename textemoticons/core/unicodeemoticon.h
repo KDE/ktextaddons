@@ -21,34 +21,72 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticon
 {
     Q_GADGET
 public:
+    /*!
+     */
     UnicodeEmoticon();
 
+    /*!
+     */
     [[nodiscard]] QString identifier() const;
+    /*!
+     */
     void setIdentifier(const QString &identifier);
 
+    /*!
+     */
     [[nodiscard]] QString unicode() const;
+    /*!
+     */
     [[nodiscard]] QString unicodeDisplay() const;
+    /*!
+     */
     void setUnicode(const QString &unicode);
 
+    /*!
+     */
     [[nodiscard]] QString category() const;
+    /*!
+     */
     void setCategory(const QString &category);
 
+    /*!
+     */
     [[nodiscard]] QStringList aliases() const;
+    /*!
+     */
     void setAliases(const QStringList &aliases);
 
+    /*!
+     */
     [[nodiscard]] bool hasEmoji(const QString &identifier) const;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] int order() const;
+    /*!
+     */
     void setOrder(int order);
 
+    /*!
+     */
     [[nodiscard]] QString key() const;
+    /*!
+     */
     void setKey(const QString &key);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const UnicodeEmoticon &other) const;
 
+    /*!
+     */
     void setDiversityChildren(bool b);
+    /*!
+     */
     [[nodiscard]] bool diversityChildren() const;
 
 private:

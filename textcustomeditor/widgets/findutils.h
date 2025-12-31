@@ -26,8 +26,12 @@ namespace FindUtils
  */
 [[nodiscard]] TEXTCUSTOMEDITOR_TESTS_EXPORT int
 replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
+/*!
+ */
 [[nodiscard]] TEXTCUSTOMEDITOR_TESTS_EXPORT int
 replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
+/*!
+ */
 [[nodiscard]] TEXTCUSTOMEDITOR_TESTS_EXPORT int
 replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
 [[nodiscard]] bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);

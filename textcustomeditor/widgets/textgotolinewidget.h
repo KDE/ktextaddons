@@ -20,22 +20,42 @@ class TEXTCUSTOMEDITOR_EXPORT TextGoToLineWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextGoToLineWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextGoToLineWidget() override;
 
+    /*!
+     */
     void goToLine();
 
+    /*!
+     */
     void setMaximumLineCount(int max);
 Q_SIGNALS:
+    /*!
+     */
     void moveToLine(int);
+    /*!
+     */
     void hideGotoLine();
 
 protected:
+    /*!
+     */
     bool event(QEvent *e) override;
+    /*!
+     */
     void showEvent(QShowEvent *e) override;
+    /*!
+     */
     bool eventFilter(QObject *obj, QEvent *event) override;
 
 public:
+    /*!
+     */
     void slotBlockCountChanged(int numberBlockCount);
 
 private:

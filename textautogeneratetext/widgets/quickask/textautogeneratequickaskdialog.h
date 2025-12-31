@@ -19,9 +19,15 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskDialog : public QDialo
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateQuickAskDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateQuickAskDialog() override;
 
+    /*!
+     */
     void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
 private:

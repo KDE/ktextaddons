@@ -17,18 +17,32 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SpeechToTextManager(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextManager() override;
 
+    /*!
+     */
     void switchEngine(const QString &engineName);
 
+    /*!
+     */
     static SpeechToTextManager *self();
 
+    /*!
+     */
     void speechToText();
 
+    /*!
+     */
     [[nodiscard]] bool hasEngine() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void textToSpeechDone(const QString &result);
 
 private:

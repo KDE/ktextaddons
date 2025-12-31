@@ -26,20 +26,40 @@ public:
         bool defaultValue = false;
     };
 
+    /*!
+     */
     explicit GrammalecteGenerateConfigOptionJob(QObject *parent = nullptr);
+    /*!
+     */
     ~GrammalecteGenerateConfigOptionJob() override;
 
+    /*!
+     */
     void start();
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     [[nodiscard]] QString pythonPath() const;
+    /*!
+     */
     void setPythonPath(const QString &pythonPath);
 
+    /*!
+     */
     [[nodiscard]] QString grammarlecteCliPath() const;
+    /*!
+     */
     void setGrammarlecteCliPath(const QString &grammarlecteCliPath);
 
 Q_SIGNALS:
+    /*!
+     */
     void error();
+    /*!
+     */
     void finished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
 
 private:

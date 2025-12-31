@@ -21,25 +21,47 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextEngineLoader : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static SpeechToTextEngineLoader *self();
 
+    /*!
+     */
     explicit SpeechToTextEngineLoader(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextEngineLoader() override;
 
+    /*!
+     */
     [[nodiscard]] TextSpeechToText::SpeechToTextClient *createSpeechToTextClient(const QString &clientName);
 
+    /*!
+     */
     [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 
+    /*!
+     */
     [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
+    /*!
+     */
     [[nodiscard]] QMap<QString, QString> speechToTextEngineInfos() const;
 
+    /*!
+     */
     [[nodiscard]] QString fallbackFirstEngine() const;
 
+    /*!
+     */
     [[nodiscard]] bool hasEngine() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void loadingSpeechToTextFailed();
+    /*!
+     */
     void noPluginsFound();
 
 private:

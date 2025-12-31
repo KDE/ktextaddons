@@ -16,7 +16,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateModelSearchLineEdit : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateModelSearchLineEdit(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateModelSearchLineEdit() override;
 };
 }

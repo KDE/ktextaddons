@@ -25,19 +25,39 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateWidget() override;
 
+    /*!
+     */
     [[nodiscard]] QString textLineEdit() const;
+    /*!
+     */
     void slotSearchText();
 
+    /*!
+     */
     void loadEngine();
 
 Q_SIGNALS:
+    /*!
+     */
     void noPluginsFound(const QString &msg);
+    /*!
+     */
     void pluginBroken(const QString &msg);
+    /*!
+     */
     void stopEditingMode(const QByteArray &uuid);
+    /*!
+     */
     void needToAddInstances();
+    /*!
+     */
     void pluginInitialized();
 
 private:

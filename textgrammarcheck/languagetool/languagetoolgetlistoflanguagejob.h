@@ -21,23 +21,47 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolGetListOfLanguageJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit LanguageToolGetListOfLanguageJob(QObject *parent = nullptr);
+    /*!
+     */
     ~LanguageToolGetListOfLanguageJob() override;
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] QString listOfLanguagePath() const;
+    /*!
+     */
     void setListOfLanguagePath(const QString &listOfLanguagePath);
 
+    /*!
+     */
     QNetworkAccessManager *networkAccessManager() const;
+    /*!
+     */
     void setNetworkAccessManager(QNetworkAccessManager *networkAccessManager);
 
+    /*!
+     */
     [[nodiscard]] QString url() const;
+    /*!
+     */
     void setUrl(const QString &url);
 
 Q_SIGNALS:
+    /*!
+     */
     void finished(const QString &result);
+    /*!
+     */
     void error(const QString &errorStr);
 
 private:

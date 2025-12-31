@@ -14,10 +14,18 @@ class TEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TranslatorConfigureWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TranslatorConfigureWidget() override;
 
+    /*!
+     */
     void saveSettings();
+    /*!
+     */
     void loadSettings();
 
 private:

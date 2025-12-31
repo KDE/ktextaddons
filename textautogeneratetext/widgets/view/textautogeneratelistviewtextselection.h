@@ -23,26 +23,52 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewTextSelection : public
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewBaseDelegate *delegate, QObject *parent = nullptr);
+    /*!
+     */
     [[nodiscard]] bool hasSelection() const;
     enum class Format : uint8_t {
         Text,
         Html,
     };
+    /*!
+     */
     [[nodiscard]] QString selectedText(Format format) const;
+    /*!
+     */
     [[nodiscard]] bool contains(const QModelIndex &index, int charPos) const;
+    /*!
+     */
     [[nodiscard]] QTextCursor selectionForIndex(const QModelIndex &index, QTextDocument *doc) const;
 
+    /*!
+     */
     void clear();
+    /*!
+     */
     void setTextSelectionStart(const QModelIndex &index, int charPos);
+    /*!
+     */
     void setTextSelectionEnd(const QModelIndex &index, int charPos);
+    /*!
+     */
     void selectWordUnderCursor(const QModelIndex &index, int charPos);
+    /*!
+     */
     void selectMessage(const QModelIndex &index);
 
+    /*!
+     */
     [[nodiscard]] bool mightStartDrag() const;
+    /*!
+     */
     void setMightStartDrag(bool newMightStartDrag);
 
 Q_SIGNALS:
+    /*!
+     */
     void repaintNeeded(const QModelIndex &index);
 
 private:

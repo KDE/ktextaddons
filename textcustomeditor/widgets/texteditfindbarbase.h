@@ -30,41 +30,91 @@ public:
     };
     Q_DECLARE_FLAGS(FindFlags, FindFlag)
 
+    /*!
+     */
     explicit TextEditFindBarBase(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextEditFindBarBase() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const;
+    /*!
+     */
     void setText(const QString &text);
 
+    /*!
+     */
     void focusAndSetCursor();
 
+    /*!
+     */
     void showReplace();
+    /*!
+     */
     void showFind();
+    /*!
+     */
     void setHideWhenClose(bool hide);
 
 Q_SIGNALS:
+    /*!
+     */
     void displayMessageIndicator(const QString &message);
+    /*!
+     */
     void hideFindBar();
 
 protected:
+    /*!
+     */
     [[nodiscard]] virtual bool viewIsReadOnly() const = 0;
+    /*!
+     */
     [[nodiscard]] virtual bool documentIsEmpty() const = 0;
+    /*!
+     */
     virtual bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) = 0;
+    /*!
+     */
     virtual bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) = 0;
+    /*!
+     */
     virtual void autoSearchMoveCursor() = 0;
 
+    /*!
+     */
     [[nodiscard]] bool event(QEvent *e) override;
+    /*!
+     */
     void clearSelections();
+    /*!
+     */
     bool searchText(bool backward, bool isAutoSearch);
 
+    /*!
+     */
     void setFoundMatch(bool match);
+    /*!
+     */
     void messageInfo(bool backward, bool isAutoSearch, bool found);
 
 public Q_SLOTS:
+    /*!
+     */
     void findNext();
+    /*!
+     */
     void findPrev();
+    /*!
+     */
     void autoSearch(const QString &str);
+    /*!
+     */
     virtual void slotSearchText(bool backward = false, bool isAutoSearch = true) = 0;
+    /*!
+     */
     void closeBar();
 
 private Q_SLOTS:

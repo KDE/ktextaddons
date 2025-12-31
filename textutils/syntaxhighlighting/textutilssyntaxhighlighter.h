@@ -17,14 +17,24 @@ namespace TextUtils
 class TEXTUTILS_EXPORT TextUtilsSyntaxHighlighter : public KSyntaxHighlighting::AbstractHighlighter
 {
 public:
+    /*!
+     */
     explicit TextUtilsSyntaxHighlighter(QTextStream *stream);
+    /*!
+     */
     ~TextUtilsSyntaxHighlighter() override = default;
 
+    /*!
+     */
     void highlight(const QString &str, const QByteArray &uuid, int &blockCodeIndex);
 
+    /*!
+     */
     [[nodiscard]] static QString copyHref();
 
 protected:
+    /*!
+     */
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 
 private:

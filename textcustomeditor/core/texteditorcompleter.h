@@ -23,16 +23,30 @@ class TEXTCUSTOMEDITOR_EXPORT TextEditorCompleter : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextEditorCompleter(QTextEdit *editor, QObject *parent);
+    /*!
+     */
     explicit TextEditorCompleter(QPlainTextEdit *editor, QObject *parent);
+    /*!
+     */
     ~TextEditorCompleter() override;
 
+    /*!
+     */
     void setCompleterStringList(const QStringList &list);
 
+    /*!
+     */
     [[nodiscard]] QCompleter *completer() const;
 
+    /*!
+     */
     void completeText();
 
+    /*!
+     */
     void setExcludeOfCharacters(const QString &excludes);
 
 private:

@@ -24,7 +24,11 @@ class TEXTCUSTOMEDITOR_EXPORT RichTextBrowser : public QTextBrowser
     Q_PROPERTY(bool textToSpeechSupport READ textToSpeechSupport WRITE setTextToSpeechSupport)
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
 public:
+    /*!
+     */
     explicit RichTextBrowser(QWidget *parent = nullptr);
+    /*!
+     */
     ~RichTextBrowser() override;
     enum SupportFeature {
         None = 0,
@@ -34,34 +38,72 @@ public:
     };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
+    /*!
+     */
     void setSearchSupport(bool b);
+    /*!
+     */
     [[nodiscard]] bool searchSupport() const;
 
+    /*!
+     */
     [[nodiscard]] bool textToSpeechSupport() const;
+    /*!
+     */
     void setTextToSpeechSupport(bool b);
 
+    /*!
+     */
     void setWebShortcutSupport(bool b);
+    /*!
+     */
     [[nodiscard]] bool webShortcutSupport() const;
 
+    /*!
+     */
     void setDefaultFontSize(int val);
+    /*!
+     */
     [[nodiscard]] int zoomFactor() const;
 
 public Q_SLOTS:
+    /*!
+     */
     void slotDisplayMessageIndicator(const QString &message);
+    /*!
+     */
     void slotSpeakText();
+    /*!
+     */
     void slotZoomReset();
 
 protected:
+    /*!
+     */
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
+    /*!
+     */
     void contextMenuEvent(QContextMenuEvent *event) override;
+    /*!
+     */
     bool event(QEvent *ev) override;
+    /*!
+     */
     void keyPressEvent(QKeyEvent *event) override;
+    /*!
+     */
     void wheelEvent(QWheelEvent *e) override;
 
+    /*!
+     */
     QMenu *mousePopupMenu(QPoint pos);
 
 Q_SIGNALS:
+    /*!
+     */
     void say(const QString &text);
+    /*!
+     */
     void findText();
 
 private:

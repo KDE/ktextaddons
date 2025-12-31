@@ -18,15 +18,27 @@ namespace TextUtils
 class TEXTUTILS_EXPORT TextUtilsSyntaxHighlightingManager
 {
 public:
+    /*!
+     */
     ~TextUtilsSyntaxHighlightingManager() = default;
 
+    /*!
+     */
     static TextUtilsSyntaxHighlightingManager *self();
 
+    /*!
+     */
     [[nodiscard]] bool syntaxHighlightingInitialized() const;
 
+    /*!
+     */
     [[nodiscard]] KSyntaxHighlighting::Definition def(const QString &name) const;
+    /*!
+     */
     [[nodiscard]] KSyntaxHighlighting::Definition defaultDef() const;
 
+    /*!
+     */
     KSyntaxHighlighting::Repository &repo() const;
 
 private:

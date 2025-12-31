@@ -13,11 +13,23 @@ class QMovie;
 namespace TextEmoticonsCore
 {
 struct TEXTEMOTICONSCORE_EXPORT RunningAnimatedImage {
+    /*!
+     */
     explicit RunningAnimatedImage(const QModelIndex &idx);
+    /*!
+     */
     ~RunningAnimatedImage();
+    /*!
+     */
     RunningAnimatedImage(const RunningAnimatedImage &) = delete;
+    /*!
+     */
     RunningAnimatedImage(RunningAnimatedImage &&other) noexcept;
+    /*!
+     */
     RunningAnimatedImage &operator=(const RunningAnimatedImage &) = delete;
+    /*!
+     */
     RunningAnimatedImage &operator=(RunningAnimatedImage &&other);
 
     QPersistentModelIndex index;

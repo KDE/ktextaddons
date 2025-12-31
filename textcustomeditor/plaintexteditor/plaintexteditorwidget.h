@@ -22,21 +22,43 @@ class TEXTCUSTOMEDITOR_EXPORT PlainTextEditorWidget : public QWidget
     Q_OBJECT
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 public:
+    /*!
+     */
     explicit PlainTextEditorWidget(QWidget *parent = nullptr);
+    /*!
+     */
     explicit PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent = nullptr);
+    /*!
+     */
     ~PlainTextEditorWidget() override;
 
+    /*!
+     */
     [[nodiscard]] PlainTextEditor *editor() const;
 
+    /*!
+     */
     void setReadOnly(bool readOnly);
+    /*!
+     */
     [[nodiscard]] bool isReadOnly() const;
 
+    /*!
+     */
     void setPlainText(const QString &text);
+    /*!
+     */
     [[nodiscard]] QString toPlainText() const;
 
+    /*!
+     */
     void clear();
+    /*!
+     */
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 
 private:

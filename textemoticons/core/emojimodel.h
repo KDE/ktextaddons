@@ -34,23 +34,47 @@ public:
     };
     Q_ENUM(EmoticonsRoles)
 
+    /*!
+     */
     explicit EmojiModel(QObject *parent = nullptr);
+    /*!
+     */
     ~EmojiModel() override;
 
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
+    /*!
+     */
     [[nodiscard]] const QList<TextEmoticonsCore::UnicodeEmoticon> &emoticonList() const;
+    /*!
+     */
     void setUnicodeEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList);
 
+    /*!
+     */
     [[nodiscard]] QList<TextEmoticonsCore::CustomEmoji> customEmojiList() const;
+    /*!
+     */
     void setCustomEmojiList(const QList<TextEmoticonsCore::CustomEmoji> &newCustomEmojiList);
 
+    /*!
+     */
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
+    /*!
+     */
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
+    /*!
+     */
     void setExcludeEmoticons(const QStringList &emoticons);
 
+    /*!
+     */
     QHash<int, QByteArray> roleNames() const override;
 
 private:

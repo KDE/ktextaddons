@@ -15,7 +15,11 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextToSpeechConfigDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextToSpeechConfigDialog() override;
 
 private:

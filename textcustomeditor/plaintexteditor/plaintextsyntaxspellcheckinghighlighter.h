@@ -27,11 +27,19 @@ class PlainTextSyntaxSpellCheckingHighlighterPrivate;
 class TEXTCUSTOMEDITOR_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
 {
 public:
+    /*!
+     */
     explicit PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor = Qt::red);
+    /*!
+     */
     ~PlainTextSyntaxSpellCheckingHighlighter() override;
 
+    /*!
+     */
     void toggleSpellHighlighting(bool on);
 
+    /*!
+     */
     void setDefinition(const KSyntaxHighlighting::Definition &def) override;
 
     /**
@@ -55,6 +63,8 @@ protected:
      */
     void setMisspelled(int start, int count) override;
 
+    /*!
+     */
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 
 private:

@@ -23,32 +23,68 @@ class TEXTCUSTOMEDITOR_EXPORT RichTextEditorWidget : public QWidget
     Q_OBJECT
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 public:
+    /*!
+     */
     explicit RichTextEditorWidget(QWidget *parent = nullptr);
+    /*!
+     */
     explicit RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent = nullptr);
+    /*!
+     */
     ~RichTextEditorWidget() override;
 
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     [[nodiscard]] RichTextEditor *editor() const;
 
+    /*!
+     */
     void setReadOnly(bool readOnly);
-    bool isReadOnly() const;
+    /*!
+     */
+    [[nodiscard]] bool isReadOnly() const;
 
+    /*!
+     */
     void setHtml(const QString &html);
+    /*!
+     */
     [[nodiscard]] QString toHtml() const;
 
+    /*!
+     */
     void setPlainText(const QString &text);
+    /*!
+     */
     [[nodiscard]] QString toPlainText() const;
 
+    /*!
+     */
     void setAcceptRichText(bool b);
+    /*!
+     */
     [[nodiscard]] bool acceptRichText() const;
 
+    /*!
+     */
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 public Q_SLOTS:
+    /*!
+     */
     void slotFindNext();
+    /*!
+     */
     void slotFind();
+    /*!
+     */
     void slotReplace();
 
 private:

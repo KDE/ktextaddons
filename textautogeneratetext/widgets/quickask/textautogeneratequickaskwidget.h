@@ -23,7 +23,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskWidget : public QWidge
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateQuickAskWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateQuickAskWidget() override;
 
 private:

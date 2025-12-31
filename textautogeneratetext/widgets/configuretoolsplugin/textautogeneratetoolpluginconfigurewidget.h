@@ -20,7 +20,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : pu
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateToolPluginConfigureWidget(TextAutoGenerateTextToolPlugin *plugin, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateToolPluginConfigureWidget() override;
 
 private:

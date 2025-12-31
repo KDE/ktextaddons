@@ -88,19 +88,39 @@ public:
         yi,
         lastLanguage = yi
     };
+    /*!
+     */
     void addItemToFromComboBox(QComboBox *combo, const QString &languageCode, const QString &translatedStr);
 
     // Only for test
     [[nodiscard]] static QMap<TranslatorUtil::Language, QString> translatedLanguages();
 
+    /*!
+     */
     [[nodiscard]] static QString loadEngine();
+    /*!
+     */
     static void saveEngineSettings(const QString &engineName);
+    /*!
+     */
     [[nodiscard]] static QString groupTranslateName();
+    /*!
+     */
     [[nodiscard]] static QString engineTranslateName();
+    /*!
+     */
     [[nodiscard]] static QString defaultEngineName();
+    /*!
+     */
     [[nodiscard]] static QString translatedLanguage(TranslatorUtil::Language lang);
+    /*!
+     */
     [[nodiscard]] static QString languageCode(TranslatorUtil::Language lang);
+    /*!
+     */
     [[nodiscard]] static QString searchI18nFromLanguage(const QString &langCode);
+    /*!
+     */
     [[nodiscard]] static TranslatorUtil::Language stringToLanguage(const QString &str);
 };
 }

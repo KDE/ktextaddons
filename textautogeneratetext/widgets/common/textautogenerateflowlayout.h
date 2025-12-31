@@ -18,29 +18,63 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateFlowLayout : public QLayout
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit TextAutoGenerateFlowLayout(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateFlowLayout() override;
 
+    /*!
+     */
     [[nodiscard]] int horizontalSpacing() const;
+    /*!
+     */
     void setHorizontalSpacing(int horizontalSpacing);
 
+    /*!
+     */
     [[nodiscard]] int verticalSpacing() const;
+    /*!
+     */
     void setVerticalSpacing(int verticalSpacing);
 
+    /*!
+     */
     [[nodiscard]] QSize sizeHint() const override;
+    /*!
+     */
     [[nodiscard]] QSize minimumSize() const override;
 
+    /*!
+     */
     void addItem(QLayoutItem *item) override;
+    /*!
+     */
     QLayoutItem *itemAt(int index) const override;
+    /*!
+     */
     QLayoutItem *takeAt(int index) override;
+    /*!
+     */
     [[nodiscard]] int count() const override;
 
+    /*!
+     */
     [[nodiscard]] Qt::Orientations expandingDirections() const override;
+    /*!
+     */
     [[nodiscard]] bool hasHeightForWidth() const override;
+    /*!
+     */
     [[nodiscard]] int heightForWidth(int width) const override;
 
+    /*!
+     */
     void setGeometry(const QRect &rect) override;
 
+    /*!
+     */
     void clearAndDeleteWidgets();
 
 private:

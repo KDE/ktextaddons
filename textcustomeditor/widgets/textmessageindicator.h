@@ -22,6 +22,8 @@ class TextMessageIndicator : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextMessageIndicator(QWidget *parent = nullptr);
 
     enum Icon {
@@ -31,11 +33,19 @@ public:
         Error,
     };
 
+    /*!
+     */
     void display(const QString &message, const QString &details = QString(), Icon icon = None, int durationMs = 4000);
 
 protected:
+    /*!
+     */
     bool eventFilter(QObject *obj, QEvent *event) override;
+    /*!
+     */
     void paintEvent(QPaintEvent *e) override;
+    /*!
+     */
     void mousePressEvent(QMouseEvent *e) override;
 
 private:

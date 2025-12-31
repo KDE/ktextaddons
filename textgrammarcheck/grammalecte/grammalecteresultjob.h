@@ -19,7 +19,11 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteResultJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GrammalecteResultJob(QObject *parent = nullptr);
+    /*!
+     */
     ~GrammalecteResultJob() override;
 
     enum class ErrorType : uint8_t {
@@ -32,24 +36,48 @@ public:
         Unknown = 6,
     };
 
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] bool canStart();
 
+    /*!
+     */
     [[nodiscard]] QString text() const;
+    /*!
+     */
     void setText(const QString &text);
 
+    /*!
+     */
     [[nodiscard]] QString pythonPath() const;
+    /*!
+     */
     void setPythonPath(const QString &pythonPath);
 
+    /*!
+     */
     [[nodiscard]] QString grammarlecteCliPath() const;
+    /*!
+     */
     void setGrammarlecteCliPath(const QString &grammarlecteCliPath);
 
+    /*!
+     */
     [[nodiscard]] QStringList arguments() const;
+    /*!
+     */
     void setArguments(const QStringList &arguments);
 
 Q_SIGNALS:
+    /*!
+     */
     void finished(const QString &result);
+    /*!
+     */
     void error(TextGrammarCheck::GrammalecteResultJob::ErrorType type);
 
 private:

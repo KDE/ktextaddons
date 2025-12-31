@@ -20,8 +20,14 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidg
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GrammalecteResultWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~GrammalecteResultWidget() override;
+    /*!
+     */
     void checkGrammar() override;
 
 private:

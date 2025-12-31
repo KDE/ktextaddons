@@ -21,32 +21,66 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit LanguageToolManager(QObject *parent = nullptr);
+    /*!
+     */
     ~LanguageToolManager() override;
+    /*!
+     */
     static LanguageToolManager *self();
 
+    /*!
+     */
     QNetworkAccessManager *networkAccessManager() const;
 
+    /*!
+     */
     [[nodiscard]] QString languageToolPath() const;
+    /*!
+     */
     void setLanguageToolPath(const QString &path);
 
+    /*!
+     */
     void loadSettings();
+    /*!
+     */
     void saveSettings();
 
+    /*!
+     */
     [[nodiscard]] QString language() const;
+    /*!
+     */
     void setLanguage(const QString &language);
 
+    /*!
+     */
     [[nodiscard]] bool useLocalInstance() const;
+    /*!
+     */
     void setUseLocalInstance(bool useLocalInstance);
 
+    /*!
+     */
     [[nodiscard]] QString languageToolCheckPath() const;
 
+    /*!
+     */
     [[nodiscard]] QString languageToolLanguagesPath() const;
 
+    /*!
+     */
     [[nodiscard]] static QString convertToLanguagePath(const QString &path);
 
+    /*!
+     */
     [[nodiscard]] QColor grammarColorForError(const QString &error);
 
+    /*!
+     */
     [[nodiscard]] bool allowToGetListOfLanguages() const;
 
 private:

@@ -19,7 +19,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerDialog : p
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextInstancesManagerDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextInstancesManagerDialog() override;
 
 private:

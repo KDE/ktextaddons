@@ -17,11 +17,19 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextInterface : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGeneratePluginTextInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGeneratePluginTextInterface() override;
 
+    /*!
+     */
     virtual void addAction(QMenu *menu) = 0;
 
+    /*!
+     */
     virtual void setSelectedText(const QString &str) = 0;
 };
 }

@@ -19,16 +19,30 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuTextManager : public QObje
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateMenuTextManager(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateMenuTextManager() override;
 
+    /*!
+     */
     void load();
+    /*!
+     */
     void save();
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
+    /*!
+     */
     void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newTextInfos);
 
 Q_SIGNALS:
+    /*!
+     */
     void textInfoChanged();
 
 private:

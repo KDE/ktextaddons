@@ -20,9 +20,15 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePluginsWidget : p
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextConfigurePluginsWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextConfigurePluginsWidget() override;
 
+    /*!
+     */
     void save() override;
 
 private:
