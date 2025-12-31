@@ -12,6 +12,14 @@
 
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewMessageWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewMessageWidget
+ *
+ * \brief The WhatsNewMessageWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewMessageWidget : public KMessageWidget
 {
     Q_OBJECT

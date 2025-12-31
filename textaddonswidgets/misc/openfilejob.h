@@ -9,6 +9,11 @@
 #include <QObject>
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::OpenFileJob
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/OpenFileJob
+ */
 class TEXTADDONSWIDGETS_EXPORT OpenFileJob : public QObject
 {
     Q_OBJECT

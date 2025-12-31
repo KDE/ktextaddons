@@ -14,6 +14,11 @@ class Job;
 }
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::NeedUpdateParseHtmlJob
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateParseHtmlJob
+ */
 class TEXTADDONSWIDGETS_EXPORT NeedUpdateParseHtmlJob : public QObject
 {
     Q_OBJECT

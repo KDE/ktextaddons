@@ -11,6 +11,14 @@
 class QAction;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::VerifyNewVersionWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/VerifyNewVersionWidget
+ *
+ * \brief The VerifyNewVersionWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT VerifyNewVersionWidget : public QObject
 {
     Q_OBJECT

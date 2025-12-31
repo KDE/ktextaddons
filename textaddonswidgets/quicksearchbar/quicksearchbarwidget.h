@@ -12,6 +12,14 @@ namespace TextAddonsWidgets
 {
 class SlideContainer;
 class QuickSearchBar;
+/*!
+ * \class TextAddonsWidgets::QuickSearchBarWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/QuickSearchBarWidget
+ *
+ * \brief The QuickSearchBarWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT QuickSearchBarWidget : public QWidget
 {
     Q_OBJECT

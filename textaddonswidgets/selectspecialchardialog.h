@@ -13,9 +13,13 @@
 namespace TextAddonsWidgets
 {
 class SelectSpecialCharDialogPrivate;
-/**
- * @brief The SelectSpecialCharDialog class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TextAddonsWidgets::SelectSpecialCharDialog
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/SelectSpecialCharDialog
+ *
+ * \brief The SelectSpecialCharDialog class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTADDONSWIDGETS_EXPORT SelectSpecialCharDialog : public QDialog
 {

@@ -10,9 +10,13 @@
 #include <TextAddonsWidgets/NeedUpdateVersionUtils>
 namespace TextAddonsWidgets
 {
-/**
- * @brief The NeedUpdateVersionWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TextAddonsWidgets::NeedUpdateVersionWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateVersionWidget
+ *
+ * \brief The NeedUpdateVersionWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTADDONSWIDGETS_EXPORT NeedUpdateVersionWidget : public KMessageWidget
 {

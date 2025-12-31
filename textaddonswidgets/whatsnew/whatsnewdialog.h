@@ -14,6 +14,14 @@
 namespace TextAddonsWidgets
 {
 class WhatsNewWidget;
+/*!
+ * \class TextAddonsWidgets::WhatsNewDialog
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewDialog
+ *
+ * \brief The WhatsNewDialog class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewDialog : public QDialog
 {
     Q_OBJECT

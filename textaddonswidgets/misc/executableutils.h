@@ -9,6 +9,16 @@
 #include <QString>
 namespace TextAddonsWidgets::ExecutableUtils
 {
+/*!
+ * \brief findExecutable
+ * \param exec
+ * \return
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString findExecutable(const QString &exec);
+/*!
+ * \brief findExecutable
+ * \param exec
+ * \return
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool executableFound(const QString &exec);
 };

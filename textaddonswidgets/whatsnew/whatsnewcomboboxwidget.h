@@ -11,6 +11,14 @@
 class QComboBox;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewComboBoxWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewComboBoxWidget
+ *
+ * \brief The WhatsNewComboBoxWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewComboBoxWidget : public QWidget
 {
     Q_OBJECT

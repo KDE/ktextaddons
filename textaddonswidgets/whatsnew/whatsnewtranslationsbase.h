@@ -10,6 +10,14 @@
 #include <TextAddonsWidgets/WhatsNewInfo>
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewTranslationsBase
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewTranslationsBase
+ *
+ * \brief The WhatsNewTranslationsBase class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewTranslationsBase
 {
 public:

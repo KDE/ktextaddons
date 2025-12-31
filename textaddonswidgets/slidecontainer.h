@@ -17,7 +17,11 @@ class QPropertyAnimation;
 
 namespace TextAddonsWidgets
 {
-/**
+/*!
+ * \class TextAddonsWidgets::SlideContainer
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/SlideContainer
+ *
  * This widget is design to contain one child widget, the "content" widget.
  * It will start hidden by default. Calling slideIn() will slide in the content
  * widget from the top border. Calling slideOut() will slide it out.
@@ -31,12 +35,12 @@ public:
      */
     explicit SlideContainer(QWidget *parent = nullptr);
 
-    /**
+    /*!
      * Returns the content widget
      */
     QWidget *content() const;
 
-    /**
+    /*!
      * Defines the content widget
      */
     void setContent(QWidget *content);
@@ -57,13 +61,13 @@ public:
     Q_INVOKABLE void setSlideHeight(int height);
 
 public Q_SLOTS:
-    /**
+    /*!
      * Slides the content widget in.
      * Calling it multiple times won't cause the animation to be replayed.
      */
     void slideIn();
 
-    /**
+    /*!
      * Slides the content widget out.
      * Calling it multiple times won't cause the animation to be replayed.
      */

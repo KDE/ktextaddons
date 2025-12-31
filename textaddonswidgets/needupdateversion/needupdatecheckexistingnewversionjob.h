@@ -12,6 +12,11 @@
 #include <QUrl>
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::NeedUpdateCheckExistingNewVersionJob
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateCheckExistingNewVersionJob
+ */
 class TEXTADDONSWIDGETS_EXPORT NeedUpdateCheckExistingNewVersionJob : public QObject
 {
     Q_OBJECT

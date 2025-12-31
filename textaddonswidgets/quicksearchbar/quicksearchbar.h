@@ -11,6 +11,14 @@ class QLineEdit;
 class QToolButton;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::QuickSearchBar
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/QuickSearchBar
+ *
+ * \brief The QuickSearchBar class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT QuickSearchBar : public QWidget
 {
     Q_OBJECT

@@ -14,6 +14,14 @@ class QTreeWidget;
 class KMessageWidget;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::ConfigurePluginsWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/ConfigurePluginsWidget
+ *
+ * \brief The ConfigurePluginsWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT ConfigurePluginsWidget : public QWidget
 {
     Q_OBJECT
