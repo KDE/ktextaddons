@@ -16,6 +16,14 @@ class TextToSpeechLanguageComboBox;
 class TextToSpeechConfigInterface;
 class TextToSpeechSliderWidget;
 class TextToSpeechVoiceComboBox;
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechConfigWidget
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechConfigWidget
+ *
+ * \brief The TextToSpeechConfigWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigWidget : public QWidget
 {
     Q_OBJECT

@@ -11,8 +11,8 @@
 #include <memory>
 namespace TextEmoticonsCore
 {
-/**
- * @brief The EmojiProxyModel class
+/*!
+ * \brief The EmojiProxyModel class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmojiSortFilterProxyModel : public QSortFilterProxyModel

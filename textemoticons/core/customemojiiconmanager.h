@@ -10,8 +10,8 @@
 #include <QObject>
 namespace TextEmoticonsCore
 {
-/**
- * @brief The CustomEmojiIconManager class
+/*!
+ * \brief The CustomEmojiIconManager class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager : public QObject

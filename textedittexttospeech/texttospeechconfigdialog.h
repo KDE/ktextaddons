@@ -11,6 +11,14 @@
 namespace TextEditTextToSpeech
 {
 class TextToSpeechConfigWidget;
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechConfigDialog
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechConfigDialog
+ *
+ * \brief The TextToSpeechConfigDialog class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigDialog : public QDialog
 {
     Q_OBJECT

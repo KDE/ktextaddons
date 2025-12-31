@@ -12,8 +12,8 @@ namespace TextEmoticonsCore
 {
 class EmojiModel;
 class CustomEmojiIconManager;
-/**
- * @brief The EmojiModelManager class
+/*!
+ * \brief The EmojiModelManager class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
@@ -43,9 +43,10 @@ public:
      */
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
-    /**
-     * @brief Set the settings group name used to store the recent identifiers.
-     * @note If not set, the group name is "EmoticonRecentUsed".
+    /*!
+     * \brief Set the settings group name used to store the recent identifiers.
+     * \
+ote If not set, the group name is "EmoticonRecentUsed".
      */
     void setRecentSettingsGroupName(const QString &key);
 

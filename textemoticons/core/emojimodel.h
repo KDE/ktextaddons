@@ -13,8 +13,8 @@
 namespace TextEmoticonsCore
 {
 class CustomEmojiIconManager;
-/**
- * @brief The EmojiModel class
+/*!
+ * \brief The EmojiModel class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmojiModel : public QAbstractListModel

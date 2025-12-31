@@ -13,8 +13,12 @@ class QAction;
 namespace TextEditTextToSpeech
 {
 class TextToSpeechActionsPrivate;
-/**
- * @brief The TextToSpeechActions class
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechActions
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechActions
+ *
+ * \brief The TextToSpeechActions class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechActions : public QObject

@@ -11,8 +11,8 @@ class QHBoxLayout;
 namespace TextEmoticonsWidgets
 {
 class EmoticonWidgetActionWidget;
-/**
- * @brief The TextEmoticonsWidgets::EmoticonWidgetAction class
+/*!
+ * \brief The TextEmoticonsWidgets::EmoticonWidgetAction class
  *
  * \author Laurent Montel <montel@kde.org>
  */

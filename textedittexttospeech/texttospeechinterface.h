@@ -12,8 +12,12 @@
 namespace TextEditTextToSpeech
 {
 class TextToSpeechInterfacePrivate;
-/**
- * @brief The TextToSpeechInterface class
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechInterface
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechInterface
+ *
+ * \brief The TextToSpeechInterface class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechInterface : public QObject

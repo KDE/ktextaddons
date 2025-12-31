@@ -12,8 +12,8 @@
 class QDebug;
 namespace TextEmoticonsCore
 {
-/**
- * @brief The CustomEmoji class
+/*!
+ * \brief The CustomEmoji class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT CustomEmoji

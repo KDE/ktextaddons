@@ -12,8 +12,8 @@
 class QDebug;
 namespace TextEmoticonsCore
 {
-/**
- * @brief The EmoticonCategory class
+/*!
+ * \brief The EmoticonCategory class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmoticonCategory

@@ -13,8 +13,12 @@ namespace TextEditTextToSpeech
 {
 class TextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
-/**
- * @brief The TextToSpeechWidget class
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechWidget
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechWidget
+ *
+ * \brief The TextToSpeechWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechWidget : public QWidget
