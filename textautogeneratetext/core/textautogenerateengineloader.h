@@ -21,19 +21,35 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateEngineLoader(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateEngineLoader() override;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *searchTextAutoGenerateTextClient(const QString &clientName);
 
+    /*!
+     */
     [[nodiscard]] bool hasEngine() const;
 
+    /*!
+     */
     void loadPlugins();
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void loadingPluginFailed();
+    /*!
+     */
     void noPluginsFound();
 
 private:

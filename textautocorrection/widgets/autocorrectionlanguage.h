@@ -19,9 +19,15 @@ class AutoCorrectionLanguageModel;
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLanguage : public QComboBox
 {
 public:
+    /*!
+     */
     explicit AutoCorrectionLanguage(QWidget *parent);
+    /*!
+     */
     ~AutoCorrectionLanguage() override;
 
+    /*!
+     */
     [[nodiscard]] QString language(int index) const;
 
     /**

@@ -20,9 +20,15 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerWidget : p
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextInstancesManagerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextInstancesManagerWidget() override;
 
+    /*!
+     */
     void save();
 
 private:

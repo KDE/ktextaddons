@@ -18,15 +18,29 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWid
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateNotWorkingWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateNotWorkingWidget() override;
 
+    /*!
+     */
     void setMessageError(const QString &str);
+    /*!
+     */
     void clearMessage();
 
 Q_SIGNALS:
+    /*!
+     */
     void ollamaStarted();
+    /*!
+     */
     void configureInstances();
+    /*!
+     */
     void startOllamaRequested();
 
 private:

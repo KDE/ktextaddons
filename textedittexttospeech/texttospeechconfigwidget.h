@@ -20,18 +20,34 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextToSpeechConfigWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextToSpeechConfigWidget() override;
 
+    /*!
+     */
     void initializeSettings();
 
+    /*!
+     */
     void writeConfig();
+    /*!
+     */
     void readConfig();
 
+    /*!
+     */
     void setTextToSpeechConfigInterface(TextToSpeechConfigInterface *interface);
+    /*!
+     */
     void restoreDefaults();
 
 Q_SIGNALS:
+    /*!
+     */
     void configChanged(bool state);
 
 private:

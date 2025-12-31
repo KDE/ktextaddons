@@ -21,7 +21,11 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextToSpeechWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextToSpeechWidget() override;
 
     enum State {
@@ -31,24 +35,46 @@ public:
     };
     Q_ENUM(State)
 
+    /*!
+     */
     [[nodiscard]] State state() const;
+    /*!
+     */
     void setState(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
+    /*!
+     */
     void setTextToSpeechInterface(TextToSpeechInterface *interface);
 
+    /*!
+     */
     [[nodiscard]] bool isReady() const;
 
+    /*!
+     */
     void showWidget();
 
+    /*!
+     */
     [[nodiscard]] qsizetype enqueue(const QString &text);
 public Q_SLOTS:
+    /*!
+     */
     void say(const QString &text);
 
+    /*!
+     */
     void slotStateChanged(TextEditTextToSpeech::TextToSpeech::State state);
 
 Q_SIGNALS:
+    /*!
+     */
     void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
+    /*!
+     */
     void changeVisibility(bool state);
+    /*!
+     */
     void aboutToSynthesize(qsizetype id);
 
 private:

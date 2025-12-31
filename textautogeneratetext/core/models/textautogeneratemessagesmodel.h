@@ -39,57 +39,119 @@ public:
         TextToSpeechInProgressRole,
     };
 
+    /*!
+     */
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateMessagesModel() override;
 
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    /*!
+     */
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateMessage> messages() const;
+    /*!
+     */
     void setMessages(const QList<TextAutoGenerateMessage> &newMessages);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateMessage message(const QByteArray &uuid) const;
 
+    /*!
+     */
     [[nodiscard]] QModelIndex refreshAnswer(const QByteArray &uuid) const;
 
+    /*!
+     */
     void resetConversation();
 
+    /*!
+     */
     void addMessage(const TextAutoGenerateMessage &msg);
 
+    /*!
+     */
     [[nodiscard]] QList<QByteArray> removeDiscussion(const QByteArray &uuid);
 
+    /*!
+     */
     void changeTextToSpeechInProgress(const QByteArray &uuid, bool inProgress);
+    /*!
+     */
     void
     replaceContent(const QByteArray &uuid, const QString &content, const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList);
+    /*!
+     */
     void changeInProgress(const QByteArray &uuid, bool inProgress);
+    /*!
+     */
     [[nodiscard]] QByteArray editMessage(const QByteArray &uuid, const QString &str);
+    /*!
+     */
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
+    /*!
+     */
     [[nodiscard]] bool cancelRequest(const QModelIndex &index);
 
+    /*!
+     */
     [[nodiscard]] QByteArray chatId() const;
+    /*!
+     */
     void setChatId(const QByteArray &newChatId);
 
+    /*!
+     */
     [[nodiscard]] QList<QJsonObject> convertToOllamaChat() const;
 
+    /*!
+     */
     [[nodiscard]] QString searchText() const;
+    /*!
+     */
     [[nodiscard]] int setSearchText(const QString &newSearchText);
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateMessage findLastMessageBefore(const QByteArray &messageId,
                                                                 const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateMessage findNextMessageAfter(const QByteArray &messageId,
                                                                const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateSearchMessageSettings *searchMessageSettings() const;
 
+    /*!
+     */
     void regenerateHtmlMessage(const QByteArray &identifier, int index);
 
+    /*!
+     */
     [[nodiscard]] QByteArray lastMessageUuid() const;
 
+    /*!
+     */
     void refreshMessageColors();
 
 Q_SIGNALS:
+    /*!
+     */
     void conversationCleared();
 
 private:

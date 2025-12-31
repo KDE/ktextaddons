@@ -12,6 +12,8 @@ namespace TextAddonsWidgets
 {
 namespace VerifyNewVersionUtils
 {
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool canVerifyNewVersion();
 };
 }

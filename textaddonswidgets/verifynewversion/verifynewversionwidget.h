@@ -26,15 +26,27 @@ public:
         QString generatedUrl;
     };
 
+    /*!
+     */
     explicit VerifyNewVersionWidget(QObject *parent = nullptr);
+    /*!
+     */
     ~VerifyNewVersionWidget() override;
 
+    /*!
+     */
     [[nodiscard]] bool canVerifyNewVersion() const;
 
+    /*!
+     */
     [[nodiscard]] QAction *verifyNewVersionAction();
 
+    /*!
+     */
     void generateUrlInfo(const QString &stableBranchVersion, const QString &url, bool stable);
 
+    /*!
+     */
     [[nodiscard]] VerifyNewVersionInfo generateVerifyNewVersionInfo(const QString &stableBranchVersion, const QString &url, bool stable) const;
 #if TEXTADDONSWIDGETS_ENABLE_DEPRECATED_SINCE(1, 9)
     [[deprecated("use generateUrlInfo")]] void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);

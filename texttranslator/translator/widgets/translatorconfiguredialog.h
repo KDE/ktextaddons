@@ -16,7 +16,11 @@ class TranslatorConfigureWidget;
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog
 {
 public:
+    /*!
+     */
     explicit TranslatorConfigureDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~TranslatorConfigureDialog() override;
 
 private:

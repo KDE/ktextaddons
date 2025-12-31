@@ -18,21 +18,43 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextRequest
 {
     Q_GADGET
 public:
+    /*!
+     */
     TextAutoGenerateTextRequest();
+    /*!
+     */
     ~TextAutoGenerateTextRequest();
 
+    /*!
+     */
     [[nodiscard]] QString message() const;
+    /*!
+     */
     void setMessage(const QString &newMessage);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateTextRequest &other) const;
 
+    /*!
+     */
     [[nodiscard]] QString model() const;
+    /*!
+     */
     void setModel(const QString &newModel);
 
+    /*!
+     */
     [[nodiscard]] QJsonArray messages() const;
+    /*!
+     */
     void setMessages(const QJsonArray &newMessages);
 
+    /*!
+     */
     [[nodiscard]] QList<QByteArray> tools() const;
+    /*!
+     */
     void setTools(const QList<QByteArray> &newTools);
 
 private:

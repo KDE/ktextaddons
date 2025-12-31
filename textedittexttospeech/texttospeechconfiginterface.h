@@ -27,23 +27,45 @@ public:
         QVoice voice;
         QString localeName;
     };
+    /*!
+     */
     explicit TextToSpeechConfigInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~TextToSpeechConfigInterface() override;
 
+    /*!
+     */
     [[nodiscard]] QVector<QLocale> availableLocales() const;
+    /*!
+     */
     [[nodiscard]] QLocale locale() const;
 
+    /*!
+     */
     [[nodiscard]] QStringList availableEngines() const;
+    /*!
+     */
     [[nodiscard]] QVector<QVoice> availableVoices() const;
+    /*!
+     */
     void setEngine(const QString &engineName);
+    /*!
+     */
     void testEngine(const EngineSettings &engineSettings);
+    /*!
+     */
     void stop();
 
 Q_SIGNALS:
+    /*!
+     */
     void stateChanged(QTextToSpeech::State state);
 
 private:
     QTextToSpeech *mTextToSpeech = nullptr;
 };
 }
+/*!
+ */
 TEXTEDITTEXTTOSPEECH_EXPORT QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechConfigInterface::EngineSettings &t);

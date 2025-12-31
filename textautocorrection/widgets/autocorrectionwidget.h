@@ -34,15 +34,31 @@ public:
         KMail,
     };
 
+    /*!
+     */
     explicit AutoCorrectionWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~AutoCorrectionWidget() override;
+    /*!
+     */
     void setAutoCorrection(TextAutoCorrectionCore::AutoCorrection *autoCorrect);
+    /*!
+     */
     void setHasHtmlSupport(bool b);
+    /*!
+     */
     void loadConfig();
+    /*!
+     */
     void writeConfig();
+    /*!
+     */
     void resetToDefault();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
 
 private:

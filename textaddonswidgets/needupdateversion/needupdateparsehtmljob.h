@@ -18,17 +18,31 @@ class TEXTADDONSWIDGETS_EXPORT NeedUpdateParseHtmlJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit NeedUpdateParseHtmlJob(QObject *parent = nullptr);
+    /*!
+     */
     ~NeedUpdateParseHtmlJob() override;
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     [[nodiscard]] QUrl url() const;
+    /*!
+     */
     void setUrl(const QUrl &newUrl);
 
+    /*!
+     */
     void start();
 
 Q_SIGNALS:
+    /*!
+     */
     void downLoadDone(const QString &data);
 
 private:

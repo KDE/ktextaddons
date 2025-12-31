@@ -38,17 +38,25 @@ struct TEXTADDONSWIDGETS_EXPORT PluginsStateList {
     QStringList disabledPluginList;
 };
 
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool
 isPluginActivated(const QStringList &enabledPluginsList, const QStringList &disabledPluginsList, bool isEnabledByDefault, const QString &pluginId);
 
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT PluginsStateList loadPluginSetting(const QString &configFileName,
                                                                           const QString &groupName,
                                                                           const QString &prefixSettingKey);
+/*!
+ */
 TEXTADDONSWIDGETS_EXPORT void savePluginSettings(const QString &groupName,
                                                  const QString &prefixSettingKey,
                                                  const QStringList &enabledPluginsList,
                                                  const QStringList &disabledPluginsList,
                                                  const QString &configFileName = {});
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT TextAddonsWidgets::PluginUtilData createPluginMetaData(const KPluginMetaData &metaData);
 }
 }

@@ -17,7 +17,11 @@ namespace GrammarResultUtil
 enum TextInfo {
     ReplaceFormatInfo = QTextFormat::UserProperty + 1,
 };
+/*!
+ */
 TEXTGRAMMARCHECK_EXPORT void applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
+/*!
+ */
 TEXTGRAMMARCHECK_EXPORT void replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document);
 }
 }

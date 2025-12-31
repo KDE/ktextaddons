@@ -24,12 +24,22 @@ class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLineEdit : public QPlainTex
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit AutoCorrectionLineEdit(QWidget *parent = nullptr);
+    /*!
+     */
     ~AutoCorrectionLineEdit() override;
 
+    /*!
+     */
     [[nodiscard]] TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
 
+    /*!
+     */
     void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
+    /*!
+     */
     void setAutocorrectionLanguage(const QString &language);
 
 protected:

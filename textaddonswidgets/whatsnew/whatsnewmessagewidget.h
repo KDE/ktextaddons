@@ -16,9 +16,15 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewMessageWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit WhatsNewMessageWidget(QWidget *parent = nullptr, const QString &applicationName = QCoreApplication::applicationName());
+    /*!
+     */
     ~WhatsNewMessageWidget() override;
 
+    /*!
+     */
     void setWhatsNewInfos(const QList<TextAddonsWidgets::WhatsNewInfo> &infos);
 
 private:

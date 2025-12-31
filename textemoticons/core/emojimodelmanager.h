@@ -36,7 +36,11 @@ public:
     };
     Q_ENUM(EmojiTone)
 
+    /*!
+     */
     static EmojiModelManager *self();
+    /*!
+     */
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
     /**
@@ -45,26 +49,54 @@ public:
      */
     void setRecentSettingsGroupName(const QString &key);
 
+    /*!
+     */
     [[nodiscard]] const QStringList &recentIdentifier() const;
+    /*!
+     */
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
+    /*!
+     */
     Q_INVOKABLE void addIdentifier(const QString &identifier);
 
+    /*!
+     */
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
+    /*!
+     */
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
+    /*!
+     */
     [[nodiscard]] QStringList excludeEmoticons() const;
+    /*!
+     */
     void setExcludeEmoticons(const QStringList &emoticons);
 
+    /*!
+     */
     [[nodiscard]] EmojiModelManager::EmojiTone emojiTone() const;
+    /*!
+     */
     void setEmojiTone(EmojiModelManager::EmojiTone tone);
 
 Q_SIGNALS:
+    /*!
+     */
     void usedIdentifierChanged(const QStringList &lst);
+    /*!
+     */
     void excludeEmoticonsChanged();
+    /*!
+     */
     void emojiToneChanged();
 
 protected:
+    /*!
+     */
     explicit EmojiModelManager(QObject *parent = nullptr);
+    /*!
+     */
     ~EmojiModelManager() override;
 
 private:

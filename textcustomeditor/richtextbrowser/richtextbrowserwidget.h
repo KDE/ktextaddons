@@ -22,26 +22,54 @@ class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RichTextBrowserWidget(QWidget *parent = nullptr);
+    /*!
+     */
     explicit RichTextBrowserWidget(RichTextBrowser *customEditor, QWidget *parent = nullptr);
+    /*!
+     */
     ~RichTextBrowserWidget() override;
 
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     [[nodiscard]] RichTextBrowser *editor() const;
 
+    /*!
+     */
     void setHtml(const QString &html);
+    /*!
+     */
     [[nodiscard]] QString toHtml() const;
 
+    /*!
+     */
     void setPlainText(const QString &text);
+    /*!
+     */
     [[nodiscard]] QString toPlainText() const;
 
+    /*!
+     */
     void setAcceptRichText(bool b);
-    bool acceptRichText() const;
+    /*!
+     */
+    [[nodiscard]] bool acceptRichText() const;
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 public Q_SLOTS:
+    /*!
+     */
     void slotFindNext();
+    /*!
+     */
     void slotFind();
 
 private:

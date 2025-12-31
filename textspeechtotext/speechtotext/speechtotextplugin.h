@@ -29,25 +29,47 @@ public:
     };
     Q_ENUM(PluginStatus)
 
+    /*!
+     */
     explicit SpeechToTextPlugin(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextPlugin() override;
 
+    /*!
+     */
     [[nodiscard]] QString result() const;
 
+    /*!
+     */
     virtual void speechToText() = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual int sampleRate() const = 0;
 
+    /*!
+     */
     [[nodiscard]] QString defaultLanguage() const;
+    /*!
+     */
     [[nodiscard]] virtual QIODevice *audioDevice() const = 0;
 
+    /*!
+     */
     void setDefaultLanguage(const QString &language);
 
+    /*!
+     */
     [[nodiscard]] virtual bool loadSettings() = 0;
 
+    /*!
+     */
     virtual void clear() = 0;
 
 Q_SIGNALS:
+    /*!
+     */
     void speechToTextDone(const QString &result);
 
 private:

@@ -80,7 +80,7 @@ static UserChoice askUser(const QUrl &url, const KService::Ptr &offer, QWidget *
 void OpenFileJob::start()
 {
     if (!canStart()) {
-        qCWarning(TEXTADDONSWIDGETS_LOG) << "Link is empty";
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "OpenFileJob::start: Link is empty";
         deleteLater();
         return;
     }

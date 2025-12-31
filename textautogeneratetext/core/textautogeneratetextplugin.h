@@ -54,65 +54,145 @@ public:
         QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentInfoList;
     };
 
+    /*!
+     */
     explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                         TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                         QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextPlugin() override;
 
+    /*!
+     */
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
+    /*!
+     */
     virtual void clear();
+    /*!
+     */
     [[nodiscard]] virtual QString translatedPluginName() const = 0;
 
+    /*!
+     */
     void setHasError(bool error);
 
+    /*!
+     */
     [[nodiscard]] bool ready() const;
+    /*!
+     */
     void setReady(bool newReady);
 
+    /*!
+     */
     virtual void cancelRequest(const QByteArray &uuid);
+    /*!
+     */
     void sendMessage(const EditSendInfo &info);
+    /*!
+     */
     void editMessage(const EditSendInfo &info);
 
+    /*!
+     */
     [[nodiscard]] virtual QString engineName() const = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual QString currentModel() const = 0;
+    /*!
+     */
     virtual void setCurrentModel(const QString &) = 0;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
+    /*!
+     */
     virtual void askToAssistant(const QString &msg) = 0;
 
+    /*!
+     */
     virtual void load(const KConfigGroup &config);
+    /*!
+     */
     virtual void save(KConfigGroup &config);
+    /*!
+     */
     virtual void remove();
 
+    /*!
+     */
     [[nodiscard]] virtual QString displayName() const = 0;
+    /*!
+     */
     virtual void setDisplayName(const QString &newName) = 0;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models() const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray instanceUuid() const;
 
+    /*!
+     */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType engineType() const = 0;
 
+    /*!
+     */
     [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType type);
 
+    /*!
+     */
     [[nodiscard]] virtual bool hasVisionSupport() const = 0;
+    /*!
+     */
     [[nodiscard]] virtual bool hasToolsSupport() const = 0;
+    /*!
+     */
     [[nodiscard]] virtual bool hasOcrSupport() const = 0;
+    /*!
+     */
     [[nodiscard]] virtual bool hasAudioSupport() const = 0;
 Q_SIGNALS:
+    /*!
+     */
     void errorOccurred(const QString &message);
+    /*!
+     */
     void initializedDone();
+    /*!
+     */
     void askToAssistantAnswer(const TextAutoGenerateText::TextAutoGenerateReply::Response &message);
+    /*!
+     */
     void askToAssistantDone();
+    /*!
+     */
     void configChanged();
+    /*!
+     */
     void downloadModelFinished(const QString &modelName);
+    /*!
+     */
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info);
+    /*!
+     */
     void currentModelChanged();
 
 protected:
+    /*!
+     */
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
+    /*!
+     */
     [[nodiscard]] QString fallBackModel() const;
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextRequest convertSendToAssistantInfoToTextRequest(const SendToAssistantInfo &info) const;
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     QList<ModelInfoNameAndIdentifier> mModels;

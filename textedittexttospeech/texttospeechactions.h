@@ -21,20 +21,36 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechActions : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextToSpeechActions(QObject *parent = nullptr);
+    /*!
+     */
     ~TextToSpeechActions() override;
 
+    /*!
+     */
     [[nodiscard]] QAction *stopAction() const;
 
+    /*!
+     */
     [[nodiscard]] QAction *playPauseAction() const;
 
+    /*!
+     */
     [[nodiscard]] TextToSpeechWidget::State state() const;
 
 public Q_SLOTS:
+    /*!
+     */
     void setState(TextEditTextToSpeech::TextToSpeechWidget::State);
+    /*!
+     */
     void slotStop();
 
 Q_SIGNALS:
+    /*!
+     */
     void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
 private:

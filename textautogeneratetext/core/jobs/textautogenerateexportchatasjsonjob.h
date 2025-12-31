@@ -17,10 +17,16 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatAsJsonJob : public T
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateExportChatAsJsonJob(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateExportChatAsJsonJob() override;
 
 protected:
+    /*!
+     */
     void exportChat() override;
 };
 }

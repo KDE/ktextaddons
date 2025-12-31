@@ -21,39 +21,85 @@ namespace TextGrammarCheck
 class TEXTGRAMMARCHECK_EXPORT GrammarError
 {
 public:
+    /*!
+     */
     GrammarError();
+    /*!
+     */
     virtual ~GrammarError();
+    /*!
+     */
     [[nodiscard]] QColor color() const;
+    /*!
+     */
     void setColor(const QColor &color);
 
+    /*!
+     */
     [[nodiscard]] QString error() const;
+    /*!
+     */
     void setError(const QString &error);
 
+    /*!
+     */
     [[nodiscard]] int blockId() const;
+    /*!
+     */
     void setBlockId(int blockId);
 
+    /*!
+     */
     [[nodiscard]] int start() const;
+    /*!
+     */
     void setStart(int start);
 
+    /*!
+     */
     [[nodiscard]] int length() const;
+    /*!
+     */
     void setLength(int length);
 
+    /*!
+     */
     [[nodiscard]] QStringList suggestions() const;
+    /*!
+     */
     void setSuggestions(const QStringList &suggestions);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     virtual void parse(const QJsonObject &obj, int blockindex);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const GrammarError &other) const;
 
+    /*!
+     */
     [[nodiscard]] QString option() const;
+    /*!
+     */
     void setOption(const QString &option);
 
+    /*!
+     */
     [[nodiscard]] QString rule() const;
+    /*!
+     */
     void setRule(const QString &rule);
 
+    /*!
+     */
     [[nodiscard]] QString url() const;
+    /*!
+     */
     void setUrl(const QString &url);
 
 protected:

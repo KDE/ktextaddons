@@ -17,16 +17,32 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueInfo
 {
 public:
+    /*!
+     */
     TextAutoGenerateTextToSpeechEnqueueInfo();
+    /*!
+     */
     ~TextAutoGenerateTextToSpeechEnqueueInfo();
 
+    /*!
+     */
     [[nodiscard]] QByteArray chatId() const;
+    /*!
+     */
     void setChatId(const QByteArray &newChatId);
 
+    /*!
+     */
     [[nodiscard]] QByteArray messageId() const;
+    /*!
+     */
     void setMessageId(const QByteArray &newMessageId);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateTextToSpeechEnqueueInfo &other) const;
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
 private:

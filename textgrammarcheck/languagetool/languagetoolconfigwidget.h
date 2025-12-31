@@ -23,12 +23,22 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit LanguageToolConfigWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~LanguageToolConfigWidget() override;
+    /*!
+     */
     void loadSettings();
+    /*!
+     */
     void saveSettings();
 
 Q_SIGNALS:
+    /*!
+     */
     void resetValue();
 
 private:

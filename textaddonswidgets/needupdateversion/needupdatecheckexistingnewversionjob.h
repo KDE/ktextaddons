@@ -16,20 +16,38 @@ class TEXTADDONSWIDGETS_EXPORT NeedUpdateCheckExistingNewVersionJob : public QOb
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit NeedUpdateCheckExistingNewVersionJob(QObject *parent = nullptr);
+    /*!
+     */
     ~NeedUpdateCheckExistingNewVersionJob() override;
 
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] QUrl url() const;
+    /*!
+     */
     void setUrl(const QUrl &newUrl);
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     [[nodiscard]] QDate compileDate() const;
+    /*!
+     */
     void setCompileDate(const QDate &newCompileDate);
 
 Q_SIGNALS:
+    /*!
+     */
     void foundNewVersion(bool state);
 
 private:

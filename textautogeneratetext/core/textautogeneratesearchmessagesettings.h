@@ -19,25 +19,51 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessageSettings : public
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateSearchMessageSettings(TextAutoGenerateMessagesModel *model, QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateSearchMessageSettings() override;
 
+    /*!
+     */
     void next();
+    /*!
+     */
     void previous();
 
+    /*!
+     */
     [[nodiscard]] QByteArray currentMessageIdentifier() const;
+    /*!
+     */
     void setCurrentMessageIdentifier(const QByteArray &newCurrentMessageIdentifier);
 
+    /*!
+     */
     [[nodiscard]] int currentSearchIndex() const;
+    /*!
+     */
     void setCurrentSearchIndex(int newCurrentSearchIndex);
 
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     [[nodiscard]] int foundSearchCount() const;
+    /*!
+     */
     void setFoundSearchCount(int newFoundSearchCount);
 
 Q_SIGNALS:
+    /*!
+     */
     void refreshMessage(const QByteArray &identifier, const QByteArray &previousIdentifier, int index);
+    /*!
+     */
     void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
 
 private:

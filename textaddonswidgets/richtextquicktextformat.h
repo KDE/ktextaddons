@@ -35,16 +35,30 @@ public:
     Q_DECLARE_FLAGS(QuickTextFormatTypes, QuickTextFormatType)
     Q_FLAG(QuickTextFormatTypes)
 
+    /*!
+     */
     explicit RichTextQuickTextFormat(QTextEdit *editor, QWidget *parent = nullptr);
+    /*!
+     */
     ~RichTextQuickTextFormat() override;
 
+    /*!
+     */
     [[nodiscard]] QuickTextFormatTypes formatTypes() const;
+    /*!
+     */
     void setFormatTypes(QuickTextFormatTypes newFormatTypes);
 
+    /*!
+     */
     [[nodiscard]] bool enabled() const;
+    /*!
+     */
     void setEnabled(bool newEnabled);
 
 Q_SIGNALS:
+    /*!
+     */
     void quickTextFormatRequested(TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type);
 
 protected:

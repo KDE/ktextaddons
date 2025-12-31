@@ -56,112 +56,262 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
+    /*!
+     */
     explicit TextAutoGenerateManager(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateManager() override;
 
+    /*!
+     */
     void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
+    /*!
+     */
     void loadHistory();
 
+    /*!
+     */
     [[nodiscard]] bool showArchived() const;
+    /*!
+     */
     void setShowArchived(bool newShowArchived);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateChatsModel *textAutoGenerateChatsModel() const;
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
+    /*!
+     */
     void loadEngine();
 
+    /*!
+     */
     [[nodiscard]] QString generateEngineDisplayName() const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
+    /*!
+     */
     void addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg);
+    /*!
+     */
     [[nodiscard]] QModelIndex refreshAnswer(const QByteArray &chatId, const QByteArray &uuid) const;
 
+    /*!
+     */
     [[nodiscard]] QByteArray currentChatId() const;
+    /*!
+     */
     void setCurrentChatId(const QByteArray &newCurrentChatId);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId) const;
+    /*!
+     */
     void createNewChat(const QString &title = {});
+    /*!
+     */
     void replaceContent(const QByteArray &chatId,
                         const QByteArray &uuid,
                         const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
                         const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList);
+    /*!
+     */
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
+    /*!
+     */
     void removeDiscussion(const QByteArray &chatId);
+    /*!
+     */
     [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);
 
+    /*!
+     */
     void changeFavoriteHistory(const QByteArray &chatId, bool favorite);
+    /*!
+     */
     void archiveDiscussion(const QByteArray &chatId, bool archive);
+    /*!
+     */
     [[nodiscard]] bool chatIsFavorite(const QByteArray &chatId) const;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
+    /*!
+     */
     void checkCurrentChat();
+    /*!
+     */
     void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
+    /*!
+     */
     void askToAssistant(const QString &msg);
+    /*!
+     */
     [[nodiscard]] bool chatInProgress(const QByteArray &chatId) const;
+    /*!
+     */
     [[nodiscard]] bool saveInDatabase() const;
+    /*!
+     */
     void setSaveInDatabase(bool newSaveInDatabase);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextInstancesManager *textAutoGenerateTextInstancesManager() const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
 
+    /*!
+     */
     void removeMessage(const QByteArray &chatId, const QByteArray &uuid);
 
+    /*!
+     */
     [[nodiscard]] QString systemPrompt() const;
+    /*!
+     */
     void setSystemPrompt(const QString &newSystemPrompt);
 
+    /*!
+     */
     [[nodiscard]] bool pluginWasInitialized() const;
+    /*!
+     */
     void setPluginWasInitialized(bool newPluginWasInitialized);
 
+    /*!
+     */
     void switchToChat(const QString &chatName);
 
+    /*!
+     */
     [[nodiscard]] static QString convertCategoryToI18n(TextAutoGenerateManager::Category cat);
+    /*!
+     */
     [[nodiscard]] static TextAutoGenerateManager::Category convertStringToCategory(const QString &str);
 
+    /*!
+     */
     void resetCurrentChatId();
 
+    /*!
+     */
     void saveCurrentChatInDataBase(const QByteArray &chatId);
+    /*!
+     */
     void switchToChatId(const QByteArray &chatId);
+    /*!
+     */
     [[nodiscard]] QStringList chatsList() const;
+    /*!
+     */
     void callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
 
+    /*!
+     */
     [[nodiscard]] bool enableTextToSpeech() const;
+    /*!
+     */
     void setEnableTextToSpeech(bool newEnableTextToSpeech);
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueManager *textAutoGenerateTextToSpeechEnqueueManager() const;
 #endif
 
+    /*!
+     */
     [[nodiscard]] bool debug() const;
+    /*!
+     */
     void setDebug(bool newDebug);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateLocalDatabaseManager *databaseManager() const;
 
+    /*!
+     */
     [[nodiscard]] QString generateAttachmentTemporaryFile(const QByteArray &attachmentId) const;
 
 Q_SIGNALS:
+    /*!
+     */
     void sendMessageRequested(const QString &str);
+    /*!
+     */
     void askMessageRequested(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+    /*!
+     */
     void pluginsInitializedDone();
+    /*!
+     */
     void errorOccured(const QString &msg);
+    /*!
+     */
     void currentChatIdChanged();
+    /*!
+     */
     void showArchiveChanged();
+    /*!
+     */
     void showMessageId(const QByteArray &msgId);
+    /*!
+     */
     void chatInProgressChanged(bool inProgress);
+    /*!
+     */
     void needToAddInstances();
+    /*!
+     */
     void configChanged();
+    /*!
+     */
     void loadEngineDone();
+    /*!
+     */
     void fontSizeChanged();
+    /*!
+     */
     void downloadModelFinished(const QString &modelName);
+    /*!
+     */
     void answerGeneratedDone(const QString &question);
+    /*!
+     */
     void chatListChanged(const QString &id);
+    /*!
+     */
     void modelListChanged(const QString &id);
+    /*!
+     */
     void toolInProgress(const QString &info);
+    /*!
+     */
     void numberOfSearchStringChanged(int number);
+    /*!
+     */
     void currentModelChanged();
+    /*!
+     */
     void startOllamaRequested();
+    /*!
+     */
     void ollamaProcessOk(bool state);
+    /*!
+     */
     void ollamaFailed();
 
 private Q_SLOTS:

@@ -18,9 +18,15 @@ class TEXTADDONSWIDGETS_EXPORT NeedUpdateVersionWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit NeedUpdateVersionWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~NeedUpdateVersionWidget() override;
 
+    /*!
+     */
     void setObsoleteVersion(NeedUpdateVersionUtils::ObsoleteVersion obsolete);
 
 private:

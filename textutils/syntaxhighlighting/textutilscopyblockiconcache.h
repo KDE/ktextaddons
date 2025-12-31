@@ -18,9 +18,15 @@ namespace TextUtils
 class TEXTUTILS_EXPORT TextUtilsCopyBlockIconCache
 {
 public:
+    /*!
+     */
     static TextUtilsCopyBlockIconCache *self();
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     [[nodiscard]] QString copyBlockUrl();
 
 private:

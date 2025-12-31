@@ -18,7 +18,11 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextToolButtonWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SpeechToTextToolButtonWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextToolButtonWidget() override;
 
 private:

@@ -22,10 +22,18 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateStackWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateStackWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateStackWidget() override;
 
+    /*!
+     */
     void setBrokenEngine(bool state, const QString &errorMessage);
+    /*!
+     */
     void slotSearchText();
 
 private:

@@ -24,28 +24,60 @@ class TEXTEMOTICONSCORE_EXPORT EmojiSortFilterProxyModel : public QSortFilterPro
     Q_PROPERTY(EmojiModelManager::EmojiTone emojiTone READ emojiTone WRITE setEmojiTone NOTIFY emojiToneChanged)
 
 public:
+    /*!
+     */
     explicit EmojiSortFilterProxyModel(QObject *parent = nullptr);
+    /*!
+     */
     ~EmojiSortFilterProxyModel() override;
+    /*!
+     */
     [[nodiscard]] QString category() const;
+    /*!
+     */
     void setCategory(const QString &newCategories);
 
+    /*!
+     */
     [[nodiscard]] QStringList recentEmoticons() const;
+    /*!
+     */
     void setRecentEmoticons(const QStringList &newRecentEmoticons);
 
+    /*!
+     */
     [[nodiscard]] QString searchIdentifier() const;
+    /*!
+     */
     void setSearchIdentifier(const QString &newSearchIdentifier);
 
+    /*!
+     */
     [[nodiscard]] EmojiModelManager::EmojiTone emojiTone() const;
+    /*!
+     */
     void setEmojiTone(EmojiModelManager::EmojiTone tone);
 
+    /*!
+     */
     [[nodiscard]] QString emojiToneSuffix() const;
 Q_SIGNALS:
+    /*!
+     */
     void categoryChanged();
+    /*!
+     */
     void recentEmoticonsChanged();
+    /*!
+     */
     void emojiToneChanged();
 
 protected:
+    /*!
+     */
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+    /*!
+     */
     [[nodiscard]] bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:

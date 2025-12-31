@@ -19,9 +19,15 @@ namespace TextAutoCorrectionCore
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
 {
 public:
+    /*!
+     */
     ImportLibreOfficeAutocorrection();
+    /*!
+     */
     ~ImportLibreOfficeAutocorrection() override;
 
+    /*!
+     */
     [[nodiscard]] bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
 
 private:

@@ -19,27 +19,57 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedData
 {
 public:
+    /*!
+     */
     TextAutoGenerateAnswerInfo();
+    /*!
+     */
     ~TextAutoGenerateAnswerInfo();
+    /*!
+     */
     explicit TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other);
 
+    /*!
+     */
     [[nodiscard]] QString modelName() const;
+    /*!
+     */
     void setModelName(const QString &newModelName);
 
+    /*!
+     */
     [[nodiscard]] QString engineName() const;
+    /*!
+     */
     void setEngineName(const QString &newEngineName);
 
+    /*!
+     */
     [[nodiscard]] QString instanceName() const;
+    /*!
+     */
     void setInstanceName(const QString &newInstanceName);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateAnswerInfo &other) const;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     static void serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o);
+    /*!
+     */
     [[nodiscard]] static TextAutoGenerateAnswerInfo *deserialize(const QJsonObject &o);
 
+    /*!
+     */
     [[nodiscard]] QList<QByteArray> tools() const;
+    /*!
+     */
     void setTools(const QList<QByteArray> &newTools);
 
 private:

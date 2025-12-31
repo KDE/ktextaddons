@@ -18,10 +18,18 @@ enum class TEXTADDONSWIDGETS_EXPORT ObsoleteVersion : uint8_t {
     OlderThan6Months,
     OlderThan12Months,
 };
-
+/*!
+ */
 TEXTADDONSWIDGETS_EXPORT void disableCheckVersion();
+
+/*!
+ */
 TEXTADDONSWIDGETS_EXPORT bool checkVersion();
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QDate compileDate();
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT NeedUpdateVersionUtils::ObsoleteVersion obsoleteVersionStatus(const QString &str, QDate currentDate);
 };
 }

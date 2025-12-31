@@ -33,7 +33,11 @@ class TEXTCUSTOMEDITOR_EXPORT RichTextEditor : public QTextEdit
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
     Q_PROPERTY(bool emojiSupport READ emojiSupport WRITE setEmojiSupport)
 public:
+    /*!
+     */
     explicit RichTextEditor(QWidget *parent = nullptr);
+    /*!
+     */
     ~RichTextEditor() override;
     enum SupportFeature {
         None = 0,
@@ -47,84 +51,194 @@ public:
     };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
+    /*!
+     */
     void setSearchSupport(bool b);
+    /*!
+     */
     [[nodiscard]] bool searchSupport() const;
 
+    /*!
+     */
     [[nodiscard]] bool spellCheckingSupport() const;
+    /*!
+     */
     void setSpellCheckingSupport(bool check);
 
+    /*!
+     */
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
+    /*!
+     */
     [[nodiscard]] bool checkSpellingEnabled() const;
+    /*!
+     */
     void setCheckSpellingEnabled(bool check);
 
+    /*!
+     */
     void setSpellCheckingLanguage(const QString &_language);
+    /*!
+     */
     [[nodiscard]] const QString &spellCheckingLanguage() const;
 
+    /*!
+     */
     virtual void setReadOnly(bool readOnly);
+    /*!
+     */
     virtual void createHighlighter();
 
+    /*!
+     */
     [[nodiscard]] bool textToSpeechSupport() const;
+    /*!
+     */
     void setTextToSpeechSupport(bool b);
+    /*!
+     */
     [[nodiscard]] Sonnet::Highlighter *highlighter() const;
 
+    /*!
+     */
     [[nodiscard]] bool activateLanguageMenu() const;
+    /*!
+     */
     void setActivateLanguageMenu(bool activate);
 
+    /*!
+     */
     void setAllowTabSupport(bool b);
+    /*!
+     */
     [[nodiscard]] bool allowTabSupport() const;
 
+    /*!
+     */
     void setShowAutoCorrectButton(bool b);
+    /*!
+     */
     [[nodiscard]] bool showAutoCorrectButton() const;
 
+    /*!
+     */
     void forceSpellChecking();
+    /*!
+     */
     [[nodiscard]] QString spellCheckingConfigFileName() const;
 
+    /*!
+     */
     void setWebShortcutSupport(bool b);
+    /*!
+     */
     [[nodiscard]] bool webShortcutSupport() const;
 
+    /*!
+     */
     void addIgnoreWords(const QStringList &lst);
 
     // Reimplement it in subclass
     virtual void forceAutoCorrection(bool selectedText = false);
 
+    /*!
+     */
     void setDefaultFontSize(int val);
+    /*!
+     */
     [[nodiscard]] int zoomFactor() const;
+    /*!
+     */
     void setEmojiSupport(bool b);
+    /*!
+     */
     [[nodiscard]] bool emojiSupport() const;
 
+    /*!
+     */
     [[nodiscard]] bool quickTextFormat() const;
+    /*!
+     */
     void setQuickTextFormat(bool b);
 public Q_SLOTS:
+    /*!
+     */
     void slotDisplayMessageIndicator(const QString &message);
+    /*!
+     */
     void slotSpeakText();
+    /*!
+     */
     void slotCheckSpelling();
+    /*!
+     */
     void slotZoomReset();
 
 protected:
+    /*!
+     */
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
+    /*!
+     */
     void contextMenuEvent(QContextMenuEvent *event) override;
+    /*!
+     */
     void focusInEvent(QFocusEvent *event) override;
+    /*!
+     */
     [[nodiscard]] bool event(QEvent *ev) override;
+    /*!
+     */
     void keyPressEvent(QKeyEvent *event) override;
+    /*!
+     */
     void wheelEvent(QWheelEvent *e) override;
 
+    /*!
+     */
     QMenu *mousePopupMenu(QPoint pos);
+    /*!
+     */
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();
+    /*!
+     */
     void setHighlighter(Sonnet::Highlighter *_highLighter);
 
+    /*!
+     */
     virtual void updateHighLighter();
+    /*!
+     */
     virtual void clearDecorator();
 
 Q_SIGNALS:
+    /*!
+     */
     void say(const QString &text);
+    /*!
+     */
     void findText();
+    /*!
+     */
     void replaceText();
+    /*!
+     */
     void spellCheckerAutoCorrect(const QString &currentWord, const QString &autoCorrectWord);
+    /*!
+     */
     void checkSpellingChanged(bool);
+    /*!
+     */
     void languageChanged(const QString &);
+    /*!
+     */
     void spellCheckStatus(const QString &);
+    /*!
+     */
     void spellCheckingFinished();
+    /*!
+     */
     void spellCheckingCanceled();
 
 private:

@@ -21,14 +21,26 @@ class TEXTADDONSWIDGETS_EXPORT SelectSpecialCharDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SelectSpecialCharDialog(QWidget *parent);
+    /*!
+     */
     ~SelectSpecialCharDialog() override;
 
+    /*!
+     */
     void setCurrentChar(QChar c);
+    /*!
+     */
     [[nodiscard]] QChar currentChar() const;
 
+    /*!
+     */
     void setOkButtonText(const QString &text);
 
+    /*!
+     */
     void showSelectButton(bool show);
 
     /*
@@ -37,6 +49,8 @@ public:
     void autoInsertChar();
 
 Q_SIGNALS:
+    /*!
+     */
     void charSelected(QChar);
 
 private:

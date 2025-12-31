@@ -19,10 +19,18 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuConfigureWidget : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateMenuConfigureWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateMenuConfigureWidget() override;
 
+    /*!
+     */
     void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos);
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
 
 private:

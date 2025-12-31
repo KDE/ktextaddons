@@ -17,15 +17,29 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuTextInfo
 {
 public:
+    /*!
+     */
     TextAutoGenerateMenuTextInfo();
+    /*!
+     */
     ~TextAutoGenerateMenuTextInfo();
 
+    /*!
+     */
     [[nodiscard]] bool enabled() const;
+    /*!
+     */
     void setEnabled(bool newEnabled);
 
+    /*!
+     */
     [[nodiscard]] QString requestText() const;
+    /*!
+     */
     void setRequestText(const QString &newRequestText);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateMenuTextInfo &other) const;
 
 private:

@@ -16,10 +16,18 @@ namespace TextUtils
 class TEXTUTILS_EXPORT TextUtilsBlockCodeManager
 {
 public:
+    /*!
+     */
     static TextUtilsBlockCodeManager *self();
+    /*!
+     */
     void insert(const QString &identifier, const QString &blockCode);
+    /*!
+     */
     [[nodiscard]] QString blockCode(const QString &identifier) const;
 
+    /*!
+     */
     void clear();
 
 private:

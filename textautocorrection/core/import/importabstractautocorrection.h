@@ -26,21 +26,43 @@ public:
     };
     Q_ENUM(LoadAttribute)
 
+    /*!
+     */
     ImportAbstractAutocorrection();
+    /*!
+     */
     virtual ~ImportAbstractAutocorrection();
 
+    /*!
+     */
     virtual bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) = 0;
 
+    /*!
+     */
     [[nodiscard]] QSet<QString> upperCaseExceptions() const;
+    /*!
+     */
     [[nodiscard]] QSet<QString> twoUpperLetterExceptions() const;
+    /*!
+     */
     [[nodiscard]] QHash<QString, QString> autocorrectEntries() const;
+    /*!
+     */
     [[nodiscard]] QHash<QString, QString> superScriptEntries() const;
 
+    /*!
+     */
     [[nodiscard]] AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
+    /*!
+     */
     [[nodiscard]] AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
 
+    /*!
+     */
     [[nodiscard]] int maxFindStringLenght() const;
 
+    /*!
+     */
     [[nodiscard]] int minFindStringLenght() const;
 
 protected:

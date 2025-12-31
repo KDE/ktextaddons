@@ -21,17 +21,29 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolCallJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateToolCallJob(const QByteArray &chatId,
                                          const QByteArray &uuid,
                                          const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info,
                                          QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateToolCallJob() override;
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void toolInProgress(const QString &str);
+    /*!
+     */
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
 
 private:

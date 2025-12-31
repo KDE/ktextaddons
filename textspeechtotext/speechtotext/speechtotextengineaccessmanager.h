@@ -14,11 +14,19 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextEngineAccessManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SpeechToTextEngineAccessManager(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextEngineAccessManager();
 
+    /*!
+     */
     static SpeechToTextEngineAccessManager *self();
 
+    /*!
+     */
     QNetworkAccessManager *networkManager() const;
 
 private:

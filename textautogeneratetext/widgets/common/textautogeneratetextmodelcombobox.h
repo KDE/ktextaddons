@@ -17,10 +17,20 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextModelComboBox : public QCo
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextModelComboBox(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextModelComboBox() override;
+    /*!
+     */
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
+    /*!
+     */
     [[nodiscard]] QString currentModel() const;
+    /*!
+     */
     void setCurrentModel(const QString &identifier);
 };
 }

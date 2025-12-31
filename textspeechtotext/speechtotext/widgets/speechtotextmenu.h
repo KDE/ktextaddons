@@ -15,10 +15,18 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextMenu : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SpeechToTextMenu(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextMenu() override;
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
+    /*!
+     */
     [[nodiscard]] QMenu *menu() const;
 
 private:

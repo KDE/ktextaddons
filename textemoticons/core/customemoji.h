@@ -20,17 +20,33 @@ class TEXTEMOTICONSCORE_EXPORT CustomEmoji
 {
     Q_GADGET
 public:
+    /*!
+     */
     CustomEmoji();
 
+    /*!
+     */
     [[nodiscard]] QString identifier() const;
+    /*!
+     */
     void setIdentifier(const QString &newIdentifier);
 
+    /*!
+     */
     [[nodiscard]] QString category() const;
 
+    /*!
+     */
     [[nodiscard]] bool isAnimatedEmoji() const;
+    /*!
+     */
     void setIsAnimatedEmoji(bool newIsAnimatedEmoji);
 
+    /*!
+     */
     [[nodiscard]] QString fileName() const;
+    /*!
+     */
     void setFileName(const QString &newFileName);
 
 private:

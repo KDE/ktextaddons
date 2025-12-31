@@ -20,15 +20,31 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent = nullptr);
+    /*!
+     */
     ~TextToSpeechInterface() override;
 
+    /*!
+     */
     [[nodiscard]] bool isReady() const;
+    /*!
+     */
     void say(const QString &text);
+    /*!
+     */
     [[nodiscard]] double volume() const;
+    /*!
+     */
     void setVolume(double value);
+    /*!
+     */
     void reloadSettings();
 
+    /*!
+     */
     [[nodiscard]] qsizetype enqueue(const QString &text);
 
 private:

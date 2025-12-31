@@ -13,8 +13,14 @@ namespace TextAutoCorrectionCore
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
 {
 public:
+    /*!
+     */
     ImportKMailAutocorrection();
+    /*!
+     */
     ~ImportKMailAutocorrection() override;
+    /*!
+     */
     [[nodiscard]] bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
 };
 }

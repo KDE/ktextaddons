@@ -22,7 +22,11 @@ public:
         Locale,
         Network,
     };
+    /*!
+     */
     explicit SpeechToTextClient(QObject *parent = nullptr);
+    /*!
+     */
     ~SpeechToTextClient() override;
 
     /**
@@ -30,17 +34,29 @@ public:
      */
     virtual QString name() const = 0;
 
+    /*!
+     */
     virtual QString translatedName() const = 0;
 
+    /*!
+     */
     virtual SpeechToTextPlugin *createTextToSpeech() = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual bool hasConfigurationDialog() const;
 
+    /*!
+     */
     virtual bool showConfigureDialog(QWidget *parentWidget);
 
+    /*!
+     */
     [[nodiscard]] virtual TextSpeechToText::SpeechToTextClient::EngineType engineType() const = 0;
 
 Q_SIGNALS:
+    /*!
+     */
     void configureChanged();
 };
 }

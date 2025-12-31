@@ -20,22 +20,44 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuWidget : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateMenuWidget(QObject *parent = nullptr);
+    /*!
+     */
     explicit TextAutoGenerateMenuWidget(TextAutoGenerateMenuTextManager *manager, QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateMenuWidget() override;
 
+    /*!
+     */
     [[nodiscard]] QMenu *menu() const;
 
+    /*!
+     */
     [[nodiscard]] QString selectedText() const;
+    /*!
+     */
     void setSelectedText(const QString &newSelectedText);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
+    /*!
+     */
     void setManager(TextAutoGenerateText::TextAutoGenerateManager *newManager);
 
+    /*!
+     */
     [[nodiscard]] QWidget *parentWidget() const;
+    /*!
+     */
     void setParentWidget(QWidget *newParentWidget);
 
 Q_SIGNALS:
+    /*!
+     */
     void refreshMenu();
 
 private:

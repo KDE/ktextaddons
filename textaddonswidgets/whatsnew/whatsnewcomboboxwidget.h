@@ -15,14 +15,24 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewComboBoxWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit WhatsNewComboBoxWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~WhatsNewComboBoxWidget() override;
 
+    /*!
+     */
     void addVersion(const QString &name, int identifier);
 
+    /*!
+     */
     void initializeVersion(int type);
 
 Q_SIGNALS:
+    /*!
+     */
     void versionChanged(int type);
 
 private:

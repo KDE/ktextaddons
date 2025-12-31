@@ -33,7 +33,11 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
+    /*!
+     */
     explicit TextAutoGenerateTextClient(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextClient() override;
 
     /**
@@ -41,18 +45,28 @@ public:
      */
     [[nodiscard]] virtual QString name() const = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual QString translatedName() const = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                                                                    TextAutoGenerateText::TextAutoGenerateTextInstance *instance) = 0;
 
+    /*!
+     */
     [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 
 Q_SIGNALS:
+    /*!
+     */
     void configureChanged();
 };
 }
 Q_DECLARE_INTERFACE(TextAutoGenerateText::TextAutoGenerateTextClient, "org.kde.textautogeneratetext.client")
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer, Q_RELOCATABLE_TYPE);
 Q_DECLARE_METATYPE(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer)
+/*!
+ */
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer &t);

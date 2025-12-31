@@ -23,9 +23,17 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GrammalecteConfigWidget(QWidget *parent = nullptr, bool disableMessageBox = false);
+    /*!
+     */
     ~GrammalecteConfigWidget() override;
+    /*!
+     */
     void loadSettings();
+    /*!
+     */
     void saveSettings();
 
 private:

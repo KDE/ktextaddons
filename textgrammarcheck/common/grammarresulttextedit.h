@@ -20,21 +20,41 @@ class TEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GrammarResultTextEdit(QWidget *parent = nullptr);
+    /*!
+     */
     ~GrammarResultTextEdit() override;
 
+    /*!
+     */
     void applyGrammarResult(const QVector<GrammarError> &infos);
 
 protected:
+    /*!
+     */
     void contextMenuEvent(QContextMenuEvent *event) override;
 
+    /*!
+     */
     void paintEvent(QPaintEvent *event) override;
 
+    /*!
+     */
     bool event(QEvent *ev) override;
 Q_SIGNALS:
+    /*!
+     */
     void replaceText(const TextGrammarCheck::GrammarAction &act);
+    /*!
+     */
     void checkAgain();
+    /*!
+     */
     void closeChecker();
+    /*!
+     */
     void configure();
 
 private:
