@@ -16,7 +16,7 @@ class GrammarAction;
 class GrammarResultTextEdit;
 /**
  * @brief The GrammarResultWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarResultWidget : public QWidget
 {

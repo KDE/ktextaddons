@@ -13,7 +13,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateQuickAskWidget;
 /**
  * @brief The TextAutoGenerateQuickAskDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskDialog : public QDialog
 {

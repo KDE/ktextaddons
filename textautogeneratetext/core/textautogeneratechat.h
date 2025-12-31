@@ -14,7 +14,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateMessagesModel;
 /**
  * @brief The TextAutoGenerateChat class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
 {

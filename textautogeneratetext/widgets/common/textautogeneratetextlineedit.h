@@ -11,7 +11,7 @@ namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateTextLineEdit class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEdit : public KTextEdit
 {

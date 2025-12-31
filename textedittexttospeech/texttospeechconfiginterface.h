@@ -14,7 +14,7 @@ namespace TextEditTextToSpeech
 {
 /**
  * @brief The TextToSpeechConfigInterface class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public QObject
 {

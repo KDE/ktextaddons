@@ -13,7 +13,7 @@ namespace TextEmoticonsCore
 {
 /**
  * @brief The UnicodeEmoticonParser class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonParser
 {

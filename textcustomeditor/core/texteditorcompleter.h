@@ -17,7 +17,7 @@ namespace TextCustomEditor
 {
 /**
  * @brief The TextEditorCompleter class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT TextEditorCompleter : public QObject
 {

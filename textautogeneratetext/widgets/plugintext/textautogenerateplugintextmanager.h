@@ -29,7 +29,7 @@ public:
 
 /**
  * @brief The TextAutoGeneratePluginTextManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextManager final : public QObject
 {

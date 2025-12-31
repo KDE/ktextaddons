@@ -14,7 +14,7 @@ namespace TextEditTextToSpeech
 class TextToSpeechInterfacePrivate;
 /**
  * @brief The TextToSpeechInterface class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechInterface : public QObject
 {

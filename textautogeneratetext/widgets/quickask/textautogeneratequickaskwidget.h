@@ -17,7 +17,7 @@ class TextAutoGenerateNotWorkingWidget;
 class TextAutoGenerateNotInstanceFoundWidget;
 /**
  * @brief The TextAutoGenerateQuickAskWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskWidget : public QWidget
 {

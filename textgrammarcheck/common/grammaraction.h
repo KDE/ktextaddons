@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 {
 /**
  * @brief The GrammarAction class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarAction
 {

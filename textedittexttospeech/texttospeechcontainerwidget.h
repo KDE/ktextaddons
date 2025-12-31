@@ -12,7 +12,7 @@ namespace TextEditTextToSpeech
 class TextToSpeechContainerWidgetPrivate;
 /**
  * @brief The TextToSpeechContainerWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechContainerWidget : public QWidget
 {

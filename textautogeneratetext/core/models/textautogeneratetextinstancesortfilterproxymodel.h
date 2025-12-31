@@ -11,7 +11,7 @@ namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateTextInstanceSortFilterProxyModel class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public QSortFilterProxyModel
 {

@@ -16,7 +16,7 @@ class TextAutoGenerateManager;
 class TextAutoGenerateWidget;
 /**
  * @brief The TextAutoGenerateStackWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateStackWidget : public QWidget
 {

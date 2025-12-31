@@ -15,7 +15,7 @@ class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
 /**
  * @brief The TextAutoGenerateTextClient class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
 {

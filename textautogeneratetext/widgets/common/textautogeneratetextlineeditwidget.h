@@ -17,7 +17,7 @@ class TextAutoGenerateToolsWidget;
 class TextAutoGenerateTextLineEditAttachmentWidget;
 /**
  * @brief The TextAutoGenerateTextLineEditWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditWidget : public QWidget
 {

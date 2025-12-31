@@ -15,7 +15,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateSearchMessageSettings;
 /**
  * @brief The TextAutoGenerateChatModel class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessagesModel : public QAbstractListModel
 {

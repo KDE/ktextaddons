@@ -14,7 +14,7 @@ namespace TextEmoticonsWidgets
 /**
  * @brief The TextEmoticonsWidgets::EmoticonWidgetActionWidget class
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonWidgetActionWidget : public QWidget
 {

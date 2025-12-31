@@ -15,7 +15,7 @@ namespace TextGrammarCheck
 {
 /**
  * @brief The LanguageToolGetListOfLanguageJob class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolGetListOfLanguageJob : public QObject
 {

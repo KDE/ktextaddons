@@ -15,7 +15,7 @@ namespace TextAutoCorrectionCore
 class AutoCorrectionPrivate;
 /**
  * @brief The AutoCorrection class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT AutoCorrection
 {

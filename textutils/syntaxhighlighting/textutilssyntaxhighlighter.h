@@ -12,7 +12,7 @@ namespace TextUtils
 {
 /**
  * @brief The TextUtilsSyntaxHighlighter class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTUTILS_EXPORT TextUtilsSyntaxHighlighter : public KSyntaxHighlighting::AbstractHighlighter
 {

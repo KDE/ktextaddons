@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 class LanguageInfo;
 /**
  * @brief The LanguageToolComboBox class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolComboBox : public QComboBox
 {

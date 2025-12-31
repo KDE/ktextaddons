@@ -11,7 +11,7 @@ namespace TextSpeechToText
 class SpeechToTextPlugin;
 /**
  * @brief The SpeechToTextManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextManager : public QObject
 {

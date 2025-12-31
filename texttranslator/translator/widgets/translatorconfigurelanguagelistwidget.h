@@ -16,7 +16,7 @@ namespace TextTranslator
 {
 /**
  * @brief The TranslatorConfigureLanguageListWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureLanguageListWidget : public QWidget
 {

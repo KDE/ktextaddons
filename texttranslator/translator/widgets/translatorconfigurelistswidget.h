@@ -13,7 +13,7 @@ namespace TextTranslator
 {
 /**
  * @brief The TranslatorConfigureListsWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureListsWidget : public QWidget
 {

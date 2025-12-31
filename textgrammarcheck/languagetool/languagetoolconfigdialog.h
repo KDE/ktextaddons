@@ -12,7 +12,7 @@ namespace TextGrammarCheck
 class LanguageToolConfigWidget;
 /**
  * @brief The LanguageToolConfigDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigDialog : public QDialog
 {

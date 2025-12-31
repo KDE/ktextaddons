@@ -20,7 +20,7 @@ namespace TextCustomEditor
 {
 /**
  * @brief The RichTextEditor class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextEditor : public QTextEdit
 {

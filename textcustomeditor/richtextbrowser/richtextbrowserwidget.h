@@ -16,7 +16,7 @@ class RichTextBrowser;
 class RichTextBrowserWidgetPrivate;
 /**
  * @brief The RichTextBrowserWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserWidget : public QWidget
 {

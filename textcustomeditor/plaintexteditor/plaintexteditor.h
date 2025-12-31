@@ -19,7 +19,7 @@ namespace TextCustomEditor
 {
 /**
  * @brief The PlainTextEditor class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditor : public QPlainTextEdit
 {

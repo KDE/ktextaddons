@@ -19,7 +19,7 @@ namespace TextEmoticonsWidgets
  *
  * @image html emoticontexteditselector.png "EmoticonTextEditSelector"
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditSelector : public QWidget
 {

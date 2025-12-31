@@ -15,7 +15,7 @@ class PlainTextEditor;
 class PlainTextEditorWidgetPrivate;
 /**
  * @brief The PlainTextEditorWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditorWidget : public QWidget
 {

@@ -14,7 +14,7 @@ class EmoticonWidgetActionWidget;
 /**
  * @brief The TextEmoticonsWidgets::EmoticonWidgetAction class
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonWidgetAction : public QWidgetAction
 {

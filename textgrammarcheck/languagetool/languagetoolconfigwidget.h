@@ -17,7 +17,7 @@ class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /**
  * @brief The LanguageToolConfigWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigWidget : public QWidget
 {

@@ -22,7 +22,7 @@ class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
 /**
  * @brief The TextAutoGenerateTextPlugin class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {

@@ -16,7 +16,7 @@ class RichTextEditor;
 class RichTextEditorWidgetPrivate;
 /**
  * @brief The RichTextEditorWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextEditorWidget : public QWidget
 {

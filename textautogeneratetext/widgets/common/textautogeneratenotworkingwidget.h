@@ -12,7 +12,7 @@ class TextAutoGenerateManager;
 class TextAutoGenerateNotWorkingMessageWidget;
 /**
  * @brief The TextAutoGenerateNotWorkingWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWidget
 {

@@ -18,7 +18,7 @@ namespace TextEmoticonsWidgets
  *
  * Opens an EmoticonTextEditSelector to select an emoji.
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditAction : public KActionMenu
 {

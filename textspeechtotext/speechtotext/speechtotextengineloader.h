@@ -15,7 +15,7 @@ class SpeechToTextEngineLoaderPrivate;
 class SpeechToTextClient;
 /**
  * @brief The SpeechToTextEngineLoader class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextEngineLoader : public QObject
 {

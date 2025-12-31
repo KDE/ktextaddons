@@ -12,7 +12,7 @@ namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateExportChatBaseJob class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatBaseJob : public QObject
 {

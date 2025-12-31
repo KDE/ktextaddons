@@ -22,7 +22,7 @@ namespace TextAutoCorrectionWidgets
 class AutoCorrectionWidgetPrivate;
 /**
  * @brief The AutoCorrectionWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionWidget : public QWidget
 {

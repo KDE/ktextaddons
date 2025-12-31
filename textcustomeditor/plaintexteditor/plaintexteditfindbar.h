@@ -15,7 +15,7 @@ namespace TextCustomEditor
 class PlainTextEditFindBarPrivate;
 /**
  * @brief The PlainTextEditFindBar class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
 {

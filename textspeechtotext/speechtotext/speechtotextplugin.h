@@ -12,7 +12,7 @@ namespace TextSpeechToText
 {
 /**
  * @brief The SpeechToTextPlugin class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class SpeechToTextPluginPrivate;
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextPlugin : public QObject

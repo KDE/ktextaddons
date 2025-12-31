@@ -14,7 +14,7 @@ namespace TextEmoticonsCore
 {
 /**
  * @brief The EmoticonCategory class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmoticonCategory
 {

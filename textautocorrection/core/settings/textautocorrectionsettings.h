@@ -15,7 +15,7 @@ namespace TextAutoCorrectionCore
 {
 /**
  * @brief The TextAutoCorrectionSettings class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAutoCorrectionCore::TextAutoCorrectionSettingsBase
 {

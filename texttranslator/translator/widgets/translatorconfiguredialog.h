@@ -11,7 +11,7 @@ namespace TextTranslator
 class TranslatorConfigureWidget;
 /**
  * @brief The TranslatorConfigureDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog
 {

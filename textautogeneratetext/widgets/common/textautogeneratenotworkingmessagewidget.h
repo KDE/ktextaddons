@@ -10,7 +10,7 @@ namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateNotWorkingMessageWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingMessageWidget : public KMessageWidget
 {

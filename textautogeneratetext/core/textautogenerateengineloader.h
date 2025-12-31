@@ -15,7 +15,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateEngineLoaderPrivate;
 /**
  * @brief The TextAutoGenerateEngineLoader class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
 {

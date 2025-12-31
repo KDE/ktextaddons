@@ -14,7 +14,7 @@ namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateMessage class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment
 {

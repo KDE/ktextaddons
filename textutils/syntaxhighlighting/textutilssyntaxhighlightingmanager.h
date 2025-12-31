@@ -13,7 +13,7 @@ namespace TextUtils
 {
 /**
  * @brief The TextUtilsSyntaxHighlightingManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTUTILS_EXPORT TextUtilsSyntaxHighlightingManager
 {

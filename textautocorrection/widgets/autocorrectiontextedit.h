@@ -17,7 +17,7 @@ namespace TextAutoCorrectionWidgets
 class AutoCorrectionTextEditPrivate;
 /**
  * @brief The AutoCorrectionTextEdit class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionTextEdit : public QTextEdit
 {

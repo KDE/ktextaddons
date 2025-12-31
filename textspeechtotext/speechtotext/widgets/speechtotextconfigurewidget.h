@@ -13,7 +13,7 @@ class SpeechToTextComboBoxWidget;
 class SpeechToTextSelectDeviceWidget;
 /**
  * @brief The SpeechToTextConfigureWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextConfigureWidget : public QWidget
 {

@@ -15,7 +15,7 @@ namespace TextEmoticonsCore
 class CustomEmojiIconManager;
 /**
  * @brief The EmojiModel class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmojiModel : public QAbstractListModel
 {

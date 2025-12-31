@@ -13,7 +13,7 @@ class TextAutoGenerateManager;
 class TextAutoGenerateHistoryListView;
 /**
  * @brief The TextAutoGenerateHistoryWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryWidget : public QWidget
 {

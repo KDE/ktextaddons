@@ -12,7 +12,7 @@ namespace TextGrammarCheck
 class GrammalecteConfigWidget;
 /**
  * @brief The GrammalecteConfigDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigDialog : public QDialog
 {

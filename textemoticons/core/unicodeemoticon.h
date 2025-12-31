@@ -15,7 +15,7 @@ namespace TextEmoticonsCore
 {
 /**
  * @brief The UnicodeEmoticon class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticon
 {

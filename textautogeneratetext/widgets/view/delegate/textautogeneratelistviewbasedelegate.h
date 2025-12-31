@@ -18,7 +18,7 @@ class TextAutoGenerateAttachmentDelegateHelperBase;
 class TextAutoGenerateListViewTextSelection;
 /**
  * @brief The TextAutoGenerateListViewBaseDelegate class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewBaseDelegate : public QItemDelegate
 {

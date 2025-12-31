@@ -17,7 +17,7 @@ namespace TextGrammarCheck
 class GrammalecteUrlRequesterWidget;
 /**
  * @brief The GrammalecteConfigWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget
 {

@@ -16,7 +16,7 @@ class TextAutoGenerateEngineLoader;
 class TextAutoGenerateManager;
 /**
  * @brief The TextAutoGenerateTextInstancesManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public QObject
 {

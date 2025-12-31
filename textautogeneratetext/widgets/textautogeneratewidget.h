@@ -19,7 +19,7 @@ class TextAutoGenerateHeaderWidget;
 class TextAutoGenerateSearchDialog;
 /**
  * @brief The TextAutoGenerateWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget
 {
