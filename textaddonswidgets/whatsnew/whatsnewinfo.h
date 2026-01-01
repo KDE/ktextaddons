@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2024-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -12,6 +12,14 @@
 class QDebug;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewInfo
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewInfo
+ *
+ * \brief The WhatsNewInfo class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewInfo
 {
 public:

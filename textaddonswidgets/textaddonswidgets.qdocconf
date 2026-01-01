@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAddonsWidgets
+description = TextAddonsWidgets provides some addons widgets.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextAddonsWidgets"
+
+qhp.projects            = textaddonswidgets
+
+qhp.textaddonswidgets.file                = textaddonswidgets.qhp
+qhp.textaddonswidgets.namespace           = org.kde.textaddonswidgets.$QT_VERSION_TAG
+qhp.textaddonswidgets.virtualFolder       = textaddonswidgets
+qhp.textaddonswidgets.indexTitle          = textaddonswidgets
+qhp.textaddonswidgets.indexRoot           =
+
+qhp.textaddonswidgets.subprojects         = classes
+qhp.textaddonswidgets.subprojects.classes.title = C++ Classes
+qhp.textaddonswidgets.subprojects.classes.indexTitle = TextAddonsWidgets C++ Classes
+qhp.textaddonswidgets.subprojects.classes.selectors = class fake:headerfile
+qhp.textaddonswidgets.subprojects.classes.sortPages = true
+
+tagfile = textaddonswidgets.tags

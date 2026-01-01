@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -11,6 +11,14 @@
 class QComboBox;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewComboBoxWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewComboBoxWidget
+ *
+ * \brief The WhatsNewComboBoxWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewComboBoxWidget : public QWidget
 {
     Q_OBJECT

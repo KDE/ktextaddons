@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -16,7 +16,7 @@ class RichTextBrowser;
 class RichTextBrowserWidgetPrivate;
 /**
  * @brief The RichTextBrowserWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserWidget : public QWidget
 {

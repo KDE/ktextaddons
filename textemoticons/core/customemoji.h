@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -12,9 +12,9 @@
 class QDebug;
 namespace TextEmoticonsCore
 {
-/**
- * @brief The CustomEmoji class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The CustomEmoji class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT CustomEmoji
 {

@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2012-2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2012-2026 Laurent Montel <montel@kde.org>
   based on code from kopete
 
   SPDX-License-Identifier: LGPL-2.0-or-later
@@ -12,14 +12,14 @@
 
 namespace TextEmoticonsWidgets
 {
-/**
- * @brief The EmoticonTextEditSelector class
+/*!
+ * \brief The EmoticonTextEditSelector class
  *
- * @short A widget to select emojis.
+ * \brief A widget to select emojis.
  *
- * @image html emoticontexteditselector.png "EmoticonTextEditSelector"
+ * \image emoticontexteditselector.png "EmoticonTextEditSelector"
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditSelector : public QWidget
 {
@@ -28,42 +28,42 @@ public:
     explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
     ~EmoticonTextEditSelector() override;
 
-    /**
+    /*!
      * Focus the line edit for search.
      */
     void forceLineEditFocus();
 
-    /**
+    /*!
      * Set whether the custom emoji category should be shown.
-     * @see customEmojiSupport()
+     * \sa customEmojiSupport()
      */
     void setCustomEmojiSupport(bool b);
-    /**
+    /*!
      * Return whether the custom emoji category is enabled.
-     * @see setCustomEmojiSupport()
+     * \sa setCustomEmojiSupport()
      */
     [[nodiscard]] bool customEmojiSupport() const;
 
 public:
-    /**
+    /*!
      * Do all the magic of creating an TextEmoticonsCore::UnicodeEmoticonManager and loading the categories and emojis to the widget.
      */
     void loadEmoticons();
 
 Q_SIGNALS:
-    /**
+    /*!
      * This signal is emitted each time the user selects an emoji.
      *
-     * @param character The actual emoji character
-     * @see insertEmojiIdentifier
+     * \a character The actual emoji character
+     * \sa insertEmojiIdentifier
      */
     void insertEmoji(const QString &character);
-    /**
+    /*!
      * This signal is emitted each time the user selects an emoji.
      *
-     * @brief insertEmojiIdentifier
-     * @param identifier The identifier of the emoji like eg. ":face_with_raised_eyebrow:"
-     * @see insertEmoji
+     * \brief insertEmojiIdentifier
+     * \a identifier The identifier of the emoji like eg. ":face_with_raised_eyebrow:"
+     * \sa insertEmoji
      */
     void insertEmojiIdentifier(const QString &identifier);
 

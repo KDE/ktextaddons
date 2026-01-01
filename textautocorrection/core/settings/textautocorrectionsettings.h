@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2013-2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2013-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -15,7 +15,7 @@ namespace TextAutoCorrectionCore
 {
 /**
  * @brief The TextAutoCorrectionSettings class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAutoCorrectionCore::TextAutoCorrectionSettingsBase
 {

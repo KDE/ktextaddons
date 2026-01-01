@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2014-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2014-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -13,9 +13,13 @@ class QAction;
 namespace TextEditTextToSpeech
 {
 class TextToSpeechActionsPrivate;
-/**
- * @brief The TextToSpeechActions class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechActions
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechActions
+ *
+ * \brief The TextToSpeechActions class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechActions : public QObject
 {

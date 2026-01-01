@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2022-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 {
 /**
  * @brief The GrammarAction class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarAction
 {

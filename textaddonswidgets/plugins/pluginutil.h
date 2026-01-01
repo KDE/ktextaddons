@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2016-2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2016-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -14,9 +14,13 @@
 
 namespace TextAddonsWidgets
 {
-/**
- * @brief The PluginUtilData class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TextAddonsWidgets::PluginUtil
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/PluginUtil
+ *
+ * \brief The PluginUtilData class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTADDONSWIDGETS_EXPORT PluginUtilData
 {

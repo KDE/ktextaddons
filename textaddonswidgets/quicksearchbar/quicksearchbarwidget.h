@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -12,6 +12,14 @@ namespace TextAddonsWidgets
 {
 class SlideContainer;
 class QuickSearchBar;
+/*!
+ * \class TextAddonsWidgets::QuickSearchBarWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/QuickSearchBarWidget
+ *
+ * \brief The QuickSearchBarWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT QuickSearchBarWidget : public QWidget
 {
     Q_OBJECT

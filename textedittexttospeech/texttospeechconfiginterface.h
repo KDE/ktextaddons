@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2014-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2014-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -12,9 +12,13 @@
 
 namespace TextEditTextToSpeech
 {
-/**
- * @brief The TextToSpeechConfigInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechConfigInterface
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechConfigInterface
+ *
+ * \brief The TextToSpeechConfigInterface class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public QObject
 {

@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -12,6 +12,14 @@
 
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewMessageWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewMessageWidget
+ *
+ * \brief The WhatsNewMessageWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewMessageWidget : public KMessageWidget
 {
     Q_OBJECT

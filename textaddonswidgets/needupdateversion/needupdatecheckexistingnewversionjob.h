@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -12,6 +12,11 @@
 #include <QUrl>
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::NeedUpdateCheckExistingNewVersionJob
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateCheckExistingNewVersionJob
+ */
 class TEXTADDONSWIDGETS_EXPORT NeedUpdateCheckExistingNewVersionJob : public QObject
 {
     Q_OBJECT

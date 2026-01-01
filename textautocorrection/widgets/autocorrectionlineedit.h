@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2022-2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -18,7 +18,7 @@ namespace TextAutoCorrectionWidgets
 class AutoCorrectionLineEditPrivate;
 /**
  * @brief The AutoCorrectionLineEdit class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLineEdit : public QPlainTextEdit
 {

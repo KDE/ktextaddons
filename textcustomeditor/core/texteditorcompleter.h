@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2015-2025 Laurent Montel <montel@kde.org>
+ * SPDX-FileCopyrightText: 2015-2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
@@ -17,7 +17,7 @@ namespace TextCustomEditor
 {
 /**
  * @brief The TextEditorCompleter class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT TextEditorCompleter : public QObject
 {

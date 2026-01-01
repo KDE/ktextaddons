@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -13,9 +13,13 @@ class QHBoxLayout;
 class QTextEdit;
 namespace TextAddonsWidgets
 {
-/**
- * @brief The RichTextQuickTextFormat class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TextAddonsWidgets::RichTextQuickTextFormat
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/RichTextQuickTextFormat
+ *
+ * \brief The RichTextQuickTextFormat class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTADDONSWIDGETS_EXPORT RichTextQuickTextFormat : public QFrame
 {

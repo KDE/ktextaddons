@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2021-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2021-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -12,9 +12,9 @@ namespace TextEmoticonsCore
 {
 class EmojiModel;
 class CustomEmojiIconManager;
-/**
- * @brief The EmojiModelManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The EmojiModelManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
 {
@@ -43,9 +43,10 @@ public:
      */
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
-    /**
-     * @brief Set the settings group name used to store the recent identifiers.
-     * @note If not set, the group name is "EmoticonRecentUsed".
+    /*!
+     * \brief Set the settings group name used to store the recent identifiers.
+     * \
+ote If not set, the group name is "EmoticonRecentUsed".
      */
     void setRecentSettingsGroupName(const QString &key);
 

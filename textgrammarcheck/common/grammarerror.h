@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2019-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2019-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -16,7 +16,7 @@ namespace TextGrammarCheck
 {
 /**
  * @brief The GrammarError class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarError
 {

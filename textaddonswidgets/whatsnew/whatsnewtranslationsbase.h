@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2024-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -10,6 +10,14 @@
 #include <TextAddonsWidgets/WhatsNewInfo>
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::WhatsNewTranslationsBase
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/WhatsNewTranslationsBase
+ *
+ * \brief The WhatsNewTranslationsBase class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT WhatsNewTranslationsBase
 {
 public:

@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -12,7 +12,7 @@ namespace TextSpeechToText
 class SpeechToTextConfigureWidget;
 /**
  * @brief The SpeechToTextConfigureDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextConfigureDialog : public QDialog
 {

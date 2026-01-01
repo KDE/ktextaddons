@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -14,6 +14,11 @@ class Job;
 }
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::NeedUpdateParseHtmlJob
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateParseHtmlJob
+ */
 class TEXTADDONSWIDGETS_EXPORT NeedUpdateParseHtmlJob : public QObject
 {
     Q_OBJECT

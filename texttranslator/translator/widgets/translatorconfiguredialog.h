@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2022-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -11,7 +11,7 @@ namespace TextTranslator
 class TranslatorConfigureWidget;
 /**
  * @brief The TranslatorConfigureDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog
 {

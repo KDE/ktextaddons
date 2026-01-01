@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 add_definitions(-DTEXTAUTOGENERATE_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 add_definitions(-DTEXTAUTOGENERATE_BINARY_DATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data")
 

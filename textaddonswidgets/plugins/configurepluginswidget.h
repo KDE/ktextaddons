@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -14,6 +14,14 @@ class QTreeWidget;
 class KMessageWidget;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::ConfigurePluginsWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/ConfigurePluginsWidget
+ *
+ * \brief The ConfigurePluginsWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT ConfigurePluginsWidget : public QWidget
 {
     Q_OBJECT

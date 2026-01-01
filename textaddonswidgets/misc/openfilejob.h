@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -9,6 +9,11 @@
 #include <QObject>
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::OpenFileJob
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/OpenFileJob
+ */
 class TEXTADDONSWIDGETS_EXPORT OpenFileJob : public QObject
 {
     Q_OBJECT

@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2014-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2014-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -16,6 +16,14 @@ class TextToSpeechLanguageComboBox;
 class TextToSpeechConfigInterface;
 class TextToSpeechSliderWidget;
 class TextToSpeechVoiceComboBox;
+/*!
+ * \class TextEditTextToSpeech::TextToSpeechConfigWidget
+ * \inmodule TextEditTextToSpeech
+ * \inheaderfile TextEditTextToSpeech/TextToSpeechConfigWidget
+ *
+ * \brief The TextToSpeechConfigWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigWidget : public QWidget
 {
     Q_OBJECT

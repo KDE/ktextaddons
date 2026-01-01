@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2013-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2013-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -15,7 +15,7 @@ class TextFindWidget;
 class TextReplaceWidget;
 /**
  * @brief The TextEditFindBarBase class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT TextEditFindBarBase : public QWidget
 {

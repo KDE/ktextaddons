@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2013-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2013-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -19,7 +19,7 @@ namespace TextCustomEditor
 {
 /**
  * @brief The PlainTextEditor class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditor : public QPlainTextEdit
 {

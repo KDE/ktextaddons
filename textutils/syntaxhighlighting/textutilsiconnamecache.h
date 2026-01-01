@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
    code based on messageviewer/src/utils/iconnamecache.h
@@ -13,7 +13,7 @@ namespace TextUtils
 {
 /**
  * @brief The TextUtilsIconNameCache class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTUTILS_EXPORT TextUtilsIconNameCache
 {

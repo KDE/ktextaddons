@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2019-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2019-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -11,9 +11,9 @@
 #include <QList>
 namespace TextEmoticonsCore
 {
-/**
- * @brief The UnicodeEmoticonParser class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The UnicodeEmoticonParser class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonParser
 {

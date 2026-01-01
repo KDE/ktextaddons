@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -11,10 +11,10 @@
 class QHBoxLayout;
 namespace TextEmoticonsWidgets
 {
-/**
- * @brief The TextEmoticonsWidgets::EmoticonWidgetActionWidget class
+/*!
+ * \brief The TextEmoticonsWidgets::EmoticonWidgetActionWidget class
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonWidgetActionWidget : public QWidget
 {

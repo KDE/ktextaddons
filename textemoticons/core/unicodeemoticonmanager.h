@@ -1,5 +1,5 @@
 /*
-SPDX-FileCopyrightText: 2020-2025 Laurent Montel <montel@kde.org>
+SPDX-FileCopyrightText: 2020-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -16,9 +16,9 @@ class UnicodeEmoticonManagerTest;
 namespace TextEmoticonsCore
 {
 class UnicodeEmoticonManagerPrivate;
-/**
- * @brief The UnicodeEmoticonManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The UnicodeEmoticonManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
 {

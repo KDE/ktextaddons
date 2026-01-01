@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -29,7 +29,7 @@ public:
 
 /**
  * @brief The TextAutoGeneratePluginTextManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextManager final : public QObject
 {

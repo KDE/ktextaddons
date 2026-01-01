@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2024-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -11,6 +11,14 @@
 class QAction;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::VerifyNewVersionWidget
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/VerifyNewVersionWidget
+ *
+ * \brief The VerifyNewVersionWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT VerifyNewVersionWidget : public QObject
 {
     Q_OBJECT

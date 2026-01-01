@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -11,6 +11,14 @@ class QLineEdit;
 class QToolButton;
 namespace TextAddonsWidgets
 {
+/*!
+ * \class TextAddonsWidgets::QuickSearchBar
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/QuickSearchBar
+ *
+ * \brief The QuickSearchBar class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT QuickSearchBar : public QWidget
 {
     Q_OBJECT

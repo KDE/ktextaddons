@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2012-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2012-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -15,7 +15,7 @@ namespace TextCustomEditor
 class PlainTextEditFindBarPrivate;
 /**
  * @brief The PlainTextEditFindBar class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
 {

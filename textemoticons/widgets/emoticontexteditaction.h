@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2012-2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2012-2026 Laurent Montel <montel@kde.org>
   based on code from kopete
 
   SPDX-License-Identifier: LGPL-2.0-or-later
@@ -11,14 +11,14 @@
 #include <KActionMenu>
 namespace TextEmoticonsWidgets
 {
-/**
- * @brief The TextEmoticonsWidgets::EmoticonTextEditAction class
+/*!
+ * \brief The TextEmoticonsWidgets::EmoticonTextEditAction class
  *
- * @short Action to select emojis.
+ * \brief Action to select emojis.
  *
  * Opens an EmoticonTextEditSelector to select an emoji.
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditAction : public KActionMenu
 {
@@ -27,23 +27,23 @@ public:
     explicit EmoticonTextEditAction(QObject *parent);
     ~EmoticonTextEditAction() override;
 
-    /**
+    /*!
      * Set whether the custom emoji category should be shown.
-     * @see customEmojiSupport()
+     * \sa customEmojiSupport()
      */
     void setCustomEmojiSupport(bool b);
-    /**
+    /*!
      * Return whether the custom emoji category is enabled.
-     * @see setCustomEmojiSupport()
+     * \sa setCustomEmojiSupport()
      */
     [[nodiscard]] bool customEmojiSupport() const;
 
 Q_SIGNALS:
-    /**
+    /*!
      * This signal is emitted each time the user selects an emoji.
      *
-     * @param character The actual emoji character
-     * @see EmoticonTextEditSelector::insertEmoticon
+     * \a character The actual emoji character
+     * \sa EmoticonTextEditSelector::insertEmoticon
      */
     void insertEmoticon(const QString &);
 
