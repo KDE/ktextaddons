@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
 add_library(textautogenerateollama)
 ecm_qt_declare_logging_category(textautogenerateollama
