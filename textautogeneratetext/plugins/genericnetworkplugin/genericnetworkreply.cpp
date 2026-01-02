@@ -32,12 +32,10 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
             break;
         }
         case RequestTypes::DeleteModel:
-            break;
         case RequestTypes::CreateModel:
-            break;
         case RequestTypes::Unknown:
             break;
-        case RequestTypes::Show:
+        case RequestTypes::ShowModelInfo:
             mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
             break;
         case RequestTypes::StreamingChat: {
@@ -76,7 +74,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
     case RequestTypes::DeleteModel:
     case RequestTypes::CreateModel:
     case RequestTypes::Unknown:
-    case RequestTypes::Show:
+    case RequestTypes::ShowModelInfo:
     case RequestTypes::StreamingGenerate:
         break;
     case RequestTypes::StreamingChat:

@@ -65,7 +65,7 @@ public:
         Unknown,
         StreamingGenerate,
         StreamingChat,
-        Show,
+        ShowModelInfo,
         DownloadModel,
         DeleteModel,
         CreateModel,
