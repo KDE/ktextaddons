@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextEditTextToSpeech
+description = TextEditTextToSpeech provides text to speech api.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextEditTextToSpeech"
+
+qhp.projects            = textedittexttospeech
+
+qhp.textedittexttospeech.file                = textedittexttospeech.qhp
+qhp.textedittexttospeech.namespace           = org.kde.textedittexttospeech.$QT_VERSION_TAG
+qhp.textedittexttospeech.virtualFolder       = textedittexttospeech
+qhp.textedittexttospeech.indexTitle          = textedittexttospeech
+qhp.textedittexttospeech.indexRoot           =
+
+qhp.textedittexttospeech.subprojects         = classes
+qhp.textedittexttospeech.subprojects.classes.title = C++ Classes
+qhp.textedittexttospeech.subprojects.classes.indexTitle = TextEditTextToSpeech C++ Classes
+qhp.textedittexttospeech.subprojects.classes.selectors = class fake:headerfile
+qhp.textedittexttospeech.subprojects.classes.sortPages = true
+
+tagfile = textedittexttospeech.tags

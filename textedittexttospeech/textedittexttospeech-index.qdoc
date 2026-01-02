@@ -1,0 +1,20 @@
+/*!
+    \page textedittexttospeech-index.html
+    \title TextAddonsWidgets
+
+    TextEditTextToSpeech provides text to speech api.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KF6} {TextEditTextToSpeech} {KF6::TextEditTextToSpeech}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextEditTextToSpeech C++ Classes}
+    \endlist
+*/
