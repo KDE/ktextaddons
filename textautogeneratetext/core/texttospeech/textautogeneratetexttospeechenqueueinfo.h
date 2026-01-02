@@ -10,8 +10,8 @@
 class QDebug;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateTextToSpeechEnqueueInfo class
+/*!
+ * \brief The TextAutoGenerateTextToSpeechEnqueueInfo class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueInfo

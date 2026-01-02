@@ -17,8 +17,8 @@ class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
 class TextAutoGenerateSearchDialog;
-/**
- * @brief The TextAutoGenerateWidget class
+/*!
+ * \brief The TextAutoGenerateWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget

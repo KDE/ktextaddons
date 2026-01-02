@@ -9,8 +9,8 @@
 class QDebug;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateTextReplyInfo class represents information about a reply from an LLM.
+/*!
+ * \brief The TextAutoGenerateTextReplyInfo class represents information about a reply from an LLM.
  *
  * When an LLM generates a completion, the server generally will return some information about the completion, including the
  * duration of the completion, the number of tokens received, and the duration of the prompt evaluation. This struct encapsulates such information.

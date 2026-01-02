@@ -10,8 +10,8 @@
 class QDebug;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateMenuTextInfo class
+/*!
+ * \brief The TextAutoGenerateMenuTextInfo class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuTextInfo

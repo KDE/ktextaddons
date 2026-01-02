@@ -10,8 +10,8 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateSettings class
+/*!
+ * \brief The TextAutoGenerateSettings class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSettings

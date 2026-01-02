@@ -10,8 +10,8 @@
 class QDebug;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateSearchMessage class
+/*!
+ * \brief The TextAutoGenerateSearchMessage class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessage

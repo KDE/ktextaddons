@@ -10,8 +10,8 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextInstance>
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateTextInstanceModel class
+/*!
+ * \brief The TextAutoGenerateTextInstanceModel class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceModel : public QAbstractListModel

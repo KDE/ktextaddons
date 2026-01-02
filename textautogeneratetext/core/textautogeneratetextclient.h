@@ -13,8 +13,8 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
-/**
- * @brief The TextAutoGenerateTextClient class
+/*!
+ * \brief The TextAutoGenerateTextClient class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
@@ -40,8 +40,8 @@ public:
      */
     ~TextAutoGenerateTextClient() override;
 
-    /**
-     * @returns the name of the implementing class.
+    /*!
+     * Returns the name of the implementing class.
      */
     [[nodiscard]] virtual QString name() const = 0;
 

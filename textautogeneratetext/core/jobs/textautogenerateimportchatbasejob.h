@@ -10,8 +10,8 @@
 class QDebug;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateImportChatBaseJob class
+/*!
+ * \brief The TextAutoGenerateImportChatBaseJob class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateImportChatBaseJob : public QObject

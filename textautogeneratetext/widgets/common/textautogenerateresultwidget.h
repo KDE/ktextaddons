@@ -18,8 +18,8 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
 class TextAutoGenerateListView;
-/**
- * @brief The TextAutoGenerateResultWidget class
+/*!
+ * \brief The TextAutoGenerateResultWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateResultWidget : public QWidget

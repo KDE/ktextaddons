@@ -11,8 +11,8 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMenuListView;
-/**
- * @brief The TextAutoGenerateMenuConfigureWidget class
+/*!
+ * \brief The TextAutoGenerateMenuConfigureWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuConfigureWidget : public QWidget

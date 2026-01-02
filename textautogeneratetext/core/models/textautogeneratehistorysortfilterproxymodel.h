@@ -8,8 +8,8 @@
 #include <QSortFilterProxyModel>
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateHistorySortFilterProxyModel class
+/*!
+ * \brief The TextAutoGenerateHistorySortFilterProxyModel class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateHistorySortFilterProxyModel : public QSortFilterProxyModel
