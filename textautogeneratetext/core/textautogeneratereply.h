@@ -9,11 +9,11 @@
 #include <QObject>
 
 #include "textautogeneratetext_export.h"
-class QDebug;
 
 #include <QJsonDocument>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
+class QDebug;
 class QNetworkReply;
 
 /*!
