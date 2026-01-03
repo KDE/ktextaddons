@@ -4,10 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailabledialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
-#include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailablewidget.h"
 
 #include <KConfigGroup>
