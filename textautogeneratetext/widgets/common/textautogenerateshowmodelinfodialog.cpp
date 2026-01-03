@@ -23,6 +23,7 @@ TextAutoGenerateShowModelInfoDialog::TextAutoGenerateShowModelInfoDialog(QWidget
     : QDialog(parent)
     , mTextAutoGenerateShowModelInfoWidget(new TextAutoGenerateShowModelInfoWidget(this))
 {
+    setWindowTitle(i18nc("@title:window", "Show Model Information"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
