@@ -8,6 +8,7 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateShowModelInfoWidget;
 /*!
  * \brief The TextAutoGenerateShowModelInfoDialog class
  * \author Laurent Montel <montel@kde.org>
@@ -24,5 +25,10 @@ public:
     /*!
      */
     ~TextAutoGenerateShowModelInfoDialog() override;
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
+    TextAutoGenerateShowModelInfoWidget *const mTextAutoGenerateShowModelInfoWidget;
 };
 }
