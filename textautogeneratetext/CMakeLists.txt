@@ -258,6 +258,10 @@ target_sources(
         widgets/common/textautogeneratetextmodelcombobox.cpp
         widgets/common/textautogeneratetextlineeditwidget.h
         widgets/common/textautogeneratetextlineeditwidget.cpp
+        widgets/common/textautogenerateshowmodelinfowidget.h
+        widgets/common/textautogenerateshowmodelinfowidget.cpp
+        widgets/common/textautogenerateshowmodelinfodialog.h
+        widgets/common/textautogenerateshowmodelinfodialog.cpp
         widgets/common/textautogenerateresultwidget.h
         widgets/common/textautogenerateresultwidget.cpp
         widgets/common/textautogeneratetextlineedit.h
