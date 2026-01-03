@@ -19,6 +19,7 @@ namespace
 {
 const char myOllamaModelDialogGroupName[] = "OllamaModelAvailableDialog";
 }
+using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, QWidget *parent)
     : QDialog(parent)
     , mOllamaModelWidget(new OllamaModelAvailableWidget(manager, this))
