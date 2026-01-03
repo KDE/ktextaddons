@@ -10,8 +10,8 @@
 #include <QObject>
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateTextToSpeechEnqueueManager class
+/*!
+ * \brief The TextAutoGenerateTextToSpeechEnqueueManager class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueManager : public QObject

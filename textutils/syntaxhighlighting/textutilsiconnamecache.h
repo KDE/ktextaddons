@@ -11,8 +11,8 @@
 
 namespace TextUtils
 {
-/**
- * @brief The TextUtilsIconNameCache class
+/*!
+ * \brief The TextUtilsIconNameCache class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTUTILS_EXPORT TextUtilsIconNameCache

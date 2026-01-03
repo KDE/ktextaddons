@@ -9,8 +9,8 @@
 class QMenu;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGeneratePluginTextInterface class
+/*!
+ * \brief The TextAutoGeneratePluginTextInterface class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextInterface : public QObject

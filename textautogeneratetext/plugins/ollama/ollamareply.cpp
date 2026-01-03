@@ -71,7 +71,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
         case RequestTypes::CreateModel:
         case RequestTypes::Unknown:
             break;
-        case RequestTypes::Show:
+        case RequestTypes::ShowModelInfo:
             mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
             break;
         case RequestTypes::StreamingChat: {
@@ -137,7 +137,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
             ret.response += tok["message"_L1]["content"_L1].toString();
         }
         break;
-    case RequestTypes::Show:
+    case RequestTypes::ShowModelInfo:
         break;
     case RequestTypes::StreamingGenerate:
         for (const auto &tok : mTokens) {

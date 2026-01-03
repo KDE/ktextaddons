@@ -12,8 +12,8 @@
 namespace TextCustomEditor
 {
 class TextGoToLineWidgetPrivate;
-/**
- * @brief The TextGoToLineWidget class
+/*!
+ * \brief The TextGoToLineWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT TextGoToLineWidget : public QWidget

@@ -12,8 +12,8 @@ class QTreeWidget;
 class KMessageWidget;
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateTextConfigurePluginsWidget class
+/*!
+ * \brief The TextAutoGenerateTextConfigurePluginsWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePluginsWidget : public TextAddonsWidgets::ConfigurePluginsWidget

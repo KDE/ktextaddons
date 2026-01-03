@@ -20,8 +20,8 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextPluginPrivate;
 class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
-/**
- * @brief The TextAutoGenerateTextPlugin class
+/*!
+ * \brief The TextAutoGenerateTextPlugin class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject

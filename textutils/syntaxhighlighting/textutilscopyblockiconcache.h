@@ -11,8 +11,8 @@
 
 namespace TextUtils
 {
-/**
- * @brief The TextUtilsCopyBlockIconCache class
+/*!
+ * \brief The TextUtilsCopyBlockIconCache class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTUTILS_EXPORT TextUtilsCopyBlockIconCache

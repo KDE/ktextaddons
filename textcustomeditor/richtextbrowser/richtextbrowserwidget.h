@@ -14,8 +14,8 @@ namespace TextCustomEditor
 {
 class RichTextBrowser;
 class RichTextBrowserWidgetPrivate;
-/**
- * @brief The RichTextBrowserWidget class
+/*!
+ * \brief The RichTextBrowserWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserWidget : public QWidget

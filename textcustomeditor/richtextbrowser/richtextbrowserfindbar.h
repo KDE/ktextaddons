@@ -13,8 +13,8 @@ class QTextBrowser;
 namespace TextCustomEditor
 {
 class RichTextBrowserFindBarPrivate;
-/**
- * @brief The RichTextBrowserFindBar class
+/*!
+ * \brief The RichTextBrowserFindBar class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserFindBar : public TextEditFindBarBase

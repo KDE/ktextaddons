@@ -166,3 +166,4 @@ install(
     FILE KF6TextEditTextToSpeechTargets.cmake
     NAMESPACE KF6::
 )
+ecm_generate_qdoc(KF6TextEditTextToSpeech textedittexttospeech.qdocconf)

@@ -9,15 +9,15 @@
 #include <QObject>
 
 #include "textautogeneratetext_export.h"
-class QDebug;
 
 #include <QJsonDocument>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
+class QDebug;
 class QNetworkReply;
 
-/**
- * @brief The OllamaReply class represents a reply from an LLM.
+/*!
+ * \brief The OllamaReply class represents a reply from an LLM.
  *
  * If you want to stream a reply as it is written in real time, connect to contentAdded() and use readResponse() to retrieve
  * the new content. If you prefer to wait for the entire reply before displaying anything, connect to finished(), which will
@@ -56,8 +56,8 @@ public:
         QString error;
     };
 
-    /**
-     * @brief Specifies the request type.
+    /*!
+     * \brief Specifies the request type.
      *
      * When the class in instantiated the type of request should be specified
      */
@@ -65,7 +65,7 @@ public:
         Unknown,
         StreamingGenerate,
         StreamingChat,
-        Show,
+        ShowModelInfo,
         DownloadModel,
         DeleteModel,
         CreateModel,
@@ -77,22 +77,22 @@ public:
      */
     ~TextAutoGenerateReply() override;
 
-    /**
-     * @brief Get extra information about the reply.
+    /*!
+     * \brief Get extra information about the reply.
      *
      * This function returns a TextAutoGenerateTextReplyInfo object containing information about this reply. If the reply has not finished, the KLLMReplyInfo
      * object will have all members set to their default values.
      *
-     * @return Extra information about the reply.
+     * Returns Extra information about the reply.
      */
     const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info() const;
 
-    /**
-     * @brief Get request type.
+    /*!
+     * \brief Get request type.
      *
      * The request type is set when this object is created.
      *
-     * @return Corresponding request type.
+     * Returns Corresponding request type.
      */
     const TextAutoGenerateText::TextAutoGenerateReply::RequestTypes &requestType() const;
 
@@ -105,8 +105,8 @@ public:
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const = 0;
 
 Q_SIGNALS:
-    /**
-     * @brief Emits when new content has been added to the response.
+    /*!
+     * \brief Emits when new content has been added to the response.
      *
      * If you are not streaming the response live, this signal is not of importance to you. However, if you are streaming
      * content, when this signal is emitted, you should call readResponse() to update the response that your application
@@ -114,8 +114,8 @@ Q_SIGNALS:
      */
     void contentAdded();
 
-    /**
-     * @brief Emits when the LLM has finished returning its response.
+    /*!
+     * \brief Emits when the LLM has finished returning its response.
      *
      * After this signal has emitted, the content is guaranteed to not change. At this point, you should call readResponse()
      * to get the content and then either take ownership of the KLLMReply or delete it, as automatic reply deletion is not

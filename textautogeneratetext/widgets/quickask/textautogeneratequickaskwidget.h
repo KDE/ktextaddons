@@ -15,8 +15,8 @@ namespace TextAutoGenerateText
 class TextAutoGenerateQuickAskViewWidget;
 class TextAutoGenerateNotWorkingWidget;
 class TextAutoGenerateNotInstanceFoundWidget;
-/**
- * @brief The TextAutoGenerateQuickAskWidget class
+/*!
+ * \brief The TextAutoGenerateQuickAskWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskWidget : public QWidget

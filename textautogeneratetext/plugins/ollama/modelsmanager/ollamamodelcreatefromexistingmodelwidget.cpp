@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatefromexistingmodelwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
 #include "ollamamodelcreatecombobox.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPlainTextEdit>
 #include <QPushButton>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mModelName(new QLineEdit(this))

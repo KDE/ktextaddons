@@ -57,7 +57,19 @@ void OllamaManager::deleteModel(const QString &modelName)
 
 void OllamaManager::showModelInfo(const QString &modelName)
 {
-    // TODO
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaUtils::modelInfoPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+
+    QJsonObject data;
+    data["model"_L1] = modelName;
+
+    auto reply = new OllamaReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        OllamaReply::RequestTypes::ShowModelInfo,
+        this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
+        Q_EMIT finished(reply->readResponse());
+    });
 }
 
 void OllamaManager::createModel(const CreateModelInfo &info)

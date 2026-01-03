@@ -4,10 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailabledialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
-#include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailablewidget.h"
 
 #include <KConfigGroup>
@@ -21,6 +19,7 @@ namespace
 {
 const char myOllamaModelDialogGroupName[] = "OllamaModelAvailableDialog";
 }
+using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, QWidget *parent)
     : QDialog(parent)
     , mOllamaModelWidget(new OllamaModelAvailableWidget(manager, this))

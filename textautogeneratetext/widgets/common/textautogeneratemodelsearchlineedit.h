@@ -8,8 +8,8 @@
 #include <QLineEdit>
 namespace TextAutoGenerateText
 {
-/**
- * @brief The TextAutoGenerateModelSearchLineEdit class
+/*!
+ * \brief The TextAutoGenerateModelSearchLineEdit class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateModelSearchLineEdit : public QLineEdit

@@ -12,8 +12,8 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
-/**
- * @brief The TextAutoGenerateChat class
+/*!
+ * \brief The TextAutoGenerateChat class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat

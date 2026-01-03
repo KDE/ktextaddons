@@ -36,8 +36,8 @@ TextAutoGenerateReplyTest::TextAutoGenerateReplyTest(QObject *parent)
 
 void TextAutoGenerateReplyTest::shouldHaveDefaultValues()
 {
-    const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
-    QCOMPARE(w.requestType(), TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
+    const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::ShowModelInfo);
+    QCOMPARE(w.requestType(), TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::ShowModelInfo);
 }
 
 void TextAutoGenerateReplyTest::shouldParseToolCalls()
@@ -48,7 +48,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls()
     const QJsonDocument doc = QJsonDocument::fromJson(toolCallsArray);
     const QJsonArray array = doc.array();
 
-    const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
+    const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::ShowModelInfo);
     QCOMPARE(w.testParseToolCalls(array), result);
 }
 

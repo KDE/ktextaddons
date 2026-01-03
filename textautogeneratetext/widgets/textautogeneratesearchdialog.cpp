@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratesearchdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratesearchwidget.h"
 #include <KConfigGroup>
@@ -20,6 +19,7 @@ namespace
 {
 const char myTextAutoGenerateSearchDialogGroupName[] = "TextAutoGenerateSearchDialog";
 }
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchDialog::TextAutoGenerateSearchDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog{parent}

@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailableinfosmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelsavalableinfos.h"
 #include <QFile>
 #include <QJsonDocument>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableInfosManager::OllamaModelAvailableInfosManager(QObject *parent)
     : QObject{parent}
 {

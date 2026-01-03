@@ -1,0 +1,34 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+#include "textautogeneratetext_export.h"
+#include <QDialog>
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateShowModelInfoWidget;
+/*!
+ * \brief The TextAutoGenerateShowModelInfoDialog class
+ * \author Laurent Montel <montel@kde.org>
+ */
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateShowModelInfoDialog : public QDialog
+{
+    Q_OBJECT
+public:
+    /*!
+     * \brief TextAutoGenerateShowModelInfoDialog
+     * \param parent
+     */
+    explicit TextAutoGenerateShowModelInfoDialog(QWidget *parent = nullptr);
+    /*!
+     */
+    ~TextAutoGenerateShowModelInfoDialog() override;
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
+    TextAutoGenerateShowModelInfoWidget *const mTextAutoGenerateShowModelInfoWidget;
+};
+}

@@ -5,9 +5,9 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-class QDebug;
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
+class QDebug;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextRequest;
