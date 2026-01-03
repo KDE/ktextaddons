@@ -20,8 +20,8 @@ namespace TextCustomEditor
 {
 class PlainTextEditor;
 class PlainTextSyntaxSpellCheckingHighlighterPrivate;
-/**
- * @brief The PlainTextSyntaxSpellCheckingHighlighter class
+/*!
+ * \brief The PlainTextSyntaxSpellCheckingHighlighter class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
@@ -42,22 +42,22 @@ public:
      */
     void setDefinition(const KSyntaxHighlighting::Definition &def) override;
 
-    /**
+    /*!
      * Reimplemented to highlight quote blocks.
      */
     void highlightBlock(const QString &text) override;
 
 protected:
-    /**
+    /*!
      * Reimplemented, the base version sets the text color to black, which
      * is not what we want. We do nothing, the format is already reset by
      * Qt.
-     * @param start the beginning of text
-     * @param count the amount of characters to set
+     * \a start the beginning of text
+     * \a count the amount of characters to set
      */
     void unsetMisspelled(int start, int count) override;
 
-    /**
+    /*!
      * Reimplemented to set the color of the misspelled word to a color
      * defined by setQuoteColor().
      */

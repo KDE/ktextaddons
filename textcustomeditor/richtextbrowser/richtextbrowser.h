@@ -13,8 +13,8 @@ class QContextMenuEvent;
 class QMenu;
 namespace TextCustomEditor
 {
-/**
- * @brief The RichTextBrowser class
+/*!
+ * \brief The RichTextBrowser class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT RichTextBrowser : public QTextBrowser

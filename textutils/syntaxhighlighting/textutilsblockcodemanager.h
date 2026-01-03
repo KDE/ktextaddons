@@ -9,8 +9,8 @@
 #include <QString>
 namespace TextUtils
 {
-/**
- * @brief The TextUtilsBlockCodeManager class
+/*!
+ * \brief The TextUtilsBlockCodeManager class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTUTILS_EXPORT TextUtilsBlockCodeManager

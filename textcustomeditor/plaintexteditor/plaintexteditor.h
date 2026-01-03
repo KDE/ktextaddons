@@ -17,8 +17,8 @@ class SpellCheckDecorator;
 }
 namespace TextCustomEditor
 {
-/**
- * @brief The PlainTextEditor class
+/*!
+ * \brief The PlainTextEditor class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditor : public QPlainTextEdit
