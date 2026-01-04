@@ -6,6 +6,8 @@
 #include "textautogenerateshowmodelinfowidgettest.h"
 #include "widgets/common/textautogenerateshowmodelinfowidget.h"
 #include <QTest>
+#include <QTextEdit>
+#include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateShowModelInfoWidgetTest)
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateShowModelInfoWidgetTest::TextAutoGenerateShowModelInfoWidgetTest(QObject *parent)
@@ -16,7 +18,13 @@ TextAutoGenerateShowModelInfoWidgetTest::TextAutoGenerateShowModelInfoWidgetTest
 void TextAutoGenerateShowModelInfoWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateShowModelInfoWidget w;
-    // TODO
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto mTextEdit = w.findChild<QTextEdit *>(u"mTextEdit"_s);
+    QVERIFY(mTextEdit);
+    QVERIFY(mTextEdit->isReadOnly());
 }
 
 #include "moc_textautogenerateshowmodelinfowidgettest.cpp"

@@ -20,7 +20,7 @@ TextAutoGenerateShowModelInfoDialogTest::TextAutoGenerateShowModelInfoDialogTest
 
 void TextAutoGenerateShowModelInfoDialogTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog d(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog d(nullptr);
     // TODO in master QVERIFY(!d.windowTitle().isEmpty());
     auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
