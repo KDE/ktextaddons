@@ -26,6 +26,12 @@ public:
      */
     ~TextAutoGenerateShowModelInfoDialog() override;
 
+    /*!
+     * \brief setText
+     * \param text
+     */
+    void setText(const QString &text);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();

@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QTextEdit;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowModelInfoWidget : public QWidget
@@ -14,5 +15,10 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateShowModelInfoWidget : pu
 public:
     explicit TextAutoGenerateShowModelInfoWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateShowModelInfoWidget() override;
+
+    void setText(const QString &text);
+
+private:
+    QTextEdit *const mTextEdit;
 };
 }

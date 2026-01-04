@@ -43,6 +43,11 @@ TextAutoGenerateShowModelInfoDialog::~TextAutoGenerateShowModelInfoDialog()
     writeConfig();
 }
 
+void TextAutoGenerateShowModelInfoDialog::setText(const QString &text)
+{
+    mTextAutoGenerateShowModelInfoWidget->setText(text);
+}
+
 void TextAutoGenerateShowModelInfoDialog::readConfig()
 {
     create(); // ensure a window is created
