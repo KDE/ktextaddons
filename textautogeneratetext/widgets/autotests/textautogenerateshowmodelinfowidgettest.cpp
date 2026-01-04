@@ -16,3 +16,5 @@ void TextAutoGenerateShowModelInfoWidgetTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_textautogenerateshowmodelinfowidgettest.cpp"

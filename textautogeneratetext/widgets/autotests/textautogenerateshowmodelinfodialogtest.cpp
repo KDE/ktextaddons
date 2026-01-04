@@ -32,3 +32,5 @@ void TextAutoGenerateShowModelInfoDialogTest::shouldHaveDefaultValues()
     auto button = d.findChild<QDialogButtonBox *>(u"button"_s);
     QVERIFY(button);
 }
+
+#include "moc_textautogenerateshowmodelinfodialogtest.cpp"
