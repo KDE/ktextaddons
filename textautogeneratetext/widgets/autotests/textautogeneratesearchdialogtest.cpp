@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratesearchdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/textautogeneratesearchdialog.h"
 #include "widgets/textautogeneratesearchwidget.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateSearchDialogTest)
 
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateSearchDialogTest::TextAutoGenerateSearchDialogTest(QObject *parent)
     : QObject{parent}
 {
