@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:42+0000\n"
+"POT-Creation-Date: 2026-01-04 00:43+0000\n"
 "PO-Revision-Date: 2025-12-24 16:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -198,7 +198,7 @@ msgid "Available Models"
 msgstr "Доступні моделі"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:177
+#: plugins/ollama/ollamamanager.cpp:189
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Не вдалося встановити з'єднання з інтерфейсом на %1: %2"
@@ -283,7 +283,7 @@ msgstr "Програмний інтерфейс ШІ Meta Llama"
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Великі мовні моделі Kimi від Mistral AI"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -2205,6 +2205,14 @@ msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Налаштувати…"
 
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
+msgctxt "@title:window"
+msgid "Show Model Information"
+msgstr "Адреса відомостей щодо відкритої моделі"
+
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2708,10 +2716,6 @@ msgstr "Архів не знайдено"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Повідомлень не знайдено."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Open Model Information Url"
-#~ msgstr "Адреса відомостей щодо відкритої моделі"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "Для застосування змін слід перезапустити програму."

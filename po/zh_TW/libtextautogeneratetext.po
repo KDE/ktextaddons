@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:42+0000\n"
+"POT-Creation-Date: 2026-01-04 00:43+0000\n"
 "PO-Revision-Date: 2026-01-02 07:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -199,7 +199,7 @@ msgid "Available Models"
 msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:177
+#: plugins/ollama/ollamamanager.cpp:189
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "無法連線到在 %1 的介面：%2"
@@ -284,7 +284,7 @@ msgstr "Meta AI Llama API"
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Moonshot AI 的 Kimi 大型語言模型"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -2017,6 +2017,14 @@ msgctxt "@action:button"
 msgid "Configure…"
 msgstr "設定…"
 
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
+msgctxt "@title:window"
+msgid "Show Model Information"
+msgstr "開啟模型資訊網址"
+
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2520,10 +2528,6 @@ msgstr "找不到封存檔。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "找不到訊息"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Open Model Information Url"
-#~ msgstr "開啟模型資訊網址"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "需要重新啟動變更才會生效。"

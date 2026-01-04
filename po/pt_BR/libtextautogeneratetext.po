@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:42+0000\n"
+"POT-Creation-Date: 2026-01-04 00:43+0000\n"
 "PO-Revision-Date: 2025-12-24 08:27-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -198,7 +198,7 @@ msgid "Available Models"
 msgstr "Modelos disponíveis"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:177
+#: plugins/ollama/ollamamanager.cpp:189
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Falha ao conectar-se ao servidor em %1: %2"
@@ -283,7 +283,7 @@ msgstr "API do Llama para a IA do Meta"
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Modelos de linguagem grandes da Kimi pela IA Moonshot"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -2214,6 +2214,14 @@ msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Configurar…"
 
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
+msgctxt "@title:window"
+msgid "Show Model Information"
+msgstr "URL de informações do modelo aberto"
+
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2717,10 +2725,6 @@ msgstr "Nenhum arquivo encontrado."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Nenhuma mensagem encontrada."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Open Model Information Url"
-#~ msgstr "URL de informações do modelo aberto"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "É necessário reiniciar para aplicar as alterações."
