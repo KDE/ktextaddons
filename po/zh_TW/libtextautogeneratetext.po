@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:43+0000\n"
-"PO-Revision-Date: 2026-01-02 07:36+0900\n"
+"PO-Revision-Date: 2026-01-05 01:13+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -2018,12 +2018,10 @@ msgid "Configure…"
 msgstr "設定…"
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "開啟模型資訊網址"
+msgstr "顯示模型資訊"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
