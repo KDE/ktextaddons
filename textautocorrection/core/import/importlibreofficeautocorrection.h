@@ -31,11 +31,12 @@ public:
     [[nodiscard]] bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
 
 private:
-    enum Type {
+    enum class Type : int8_t {
         DOCUMENT,
         SENTENCE,
         WORD,
     };
+    Q_ENUM(Type)
 
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void importAutoCorrectionFile();
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void closeArchive();

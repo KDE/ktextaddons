@@ -61,19 +61,19 @@ void ImportLibreOfficeAutocorrection::importAutoCorrectionFile()
     mTempDir = new QTemporaryDir();
     const KArchiveDirectory *archiveDirectory = mArchive->directory();
     // Replace word
-    if (!importFile(DOCUMENT, archiveDirectory)) {
+    if (!importFile(Type::DOCUMENT, archiveDirectory)) {
         qCWarning(TEXTAUTOCORRECTION_LOG) << " Impossible to import DOCUMENT";
         return;
     }
 
     // No treat as end of line
-    if (!importFile(SENTENCE, archiveDirectory)) {
+    if (!importFile(Type::SENTENCE, archiveDirectory)) {
         qCWarning(TEXTAUTOCORRECTION_LOG) << " Impossible to import SENTENCE";
         return;
     }
 
     // Two upper letter
-    if (!importFile(WORD, archiveDirectory)) {
+    if (!importFile(Type::WORD, archiveDirectory)) {
         qCWarning(TEXTAUTOCORRECTION_LOG) << " Impossible to import WORD";
         return;
     }
@@ -85,13 +85,13 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
 
     QString archiveFileName;
     switch (type) {
-    case DOCUMENT:
+    case Type::DOCUMENT:
         archiveFileName = u"DocumentList.xml"_s;
         break;
-    case SENTENCE:
+    case Type::SENTENCE:
         archiveFileName = u"SentenceExceptList.xml"_s;
         break;
-    case WORD:
+    case Type::WORD:
         archiveFileName = u"WordExceptList.xml"_s;
         break;
     default:
@@ -119,7 +119,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
                     const QString tag = e.tagName();
                     if (tag == "block-list:block"_L1) {
                         switch (type) {
-                        case DOCUMENT:
+                        case Type::DOCUMENT:
                             if (e.hasAttribute(u"block-list:abbreviated-name"_s) && e.hasAttribute(u"block-list:name"_s)) {
                                 const QString find = e.attribute(u"block-list:abbreviated-name"_s);
                                 const QString replace = e.attribute(u"block-list:name"_s);
@@ -129,13 +129,13 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
                                 mMinFindStringLength = qMin(findLenght, mMinFindStringLength);
                             }
                             break;
-                        case SENTENCE:
+                        case Type::SENTENCE:
                             if (e.hasAttribute(u"block-list:abbreviated-name"_s)) {
                                 mUpperCaseExceptions.insert(e.attribute(u"block-list:abbreviated-name"_s));
                             }
 
                             break;
-                        case WORD:
+                        case Type::WORD:
                             if (e.hasAttribute(u"block-list:abbreviated-name"_s)) {
                                 mTwoUpperLetterExceptions.insert(e.attribute(u"block-list:abbreviated-name"_s));
                             }
