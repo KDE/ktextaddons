@@ -105,6 +105,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     mainLayout->addStretch(1);
     connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
+    connect(mModelComboBoxWidget, &OllamaComboBoxWidget::showModelInfoRequested, this, &OllamaConfigureWidget::showModelInfo);
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
@@ -126,6 +127,12 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;
+
+void OllamaConfigureWidget::showModelInfo(const QString &modelName)
+{
+    // TODO
+    qDebug() << " showModelInfo " << modelName;
+}
 
 void OllamaConfigureWidget::slotStartOllama()
 {

@@ -33,6 +33,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillModels();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotStartOllama();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void showModelInfo(const QString &modelName);
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     OllamaComboBoxWidget *const mModelComboBoxWidget;

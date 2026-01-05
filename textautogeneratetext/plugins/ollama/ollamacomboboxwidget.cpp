@@ -5,6 +5,7 @@
 */
 
 #include "ollamacomboboxwidget.h"
+#include "modelsmanager/ollamashowmodelinfobutton.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
@@ -30,6 +31,13 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
     buttonReloadSettings->setToolTip(i18nc("@info:tooltip", "Reload Model"));
     mainLayout->addWidget(buttonReloadSettings);
     connect(buttonReloadSettings, &QToolButton::clicked, this, &OllamaComboBoxWidget::reloadModel);
+
+    auto showModelInfoButton = new OllamaShowModelInfoButton(this);
+    showModelInfoButton->setObjectName(u"showModelInfoButton"_s);
+    mainLayout->addWidget(showModelInfoButton);
+    connect(showModelInfoButton, &OllamaShowModelInfoButton::showModelInfoRequested, this, [this]() {
+        Q_EMIT showModelInfoRequested(currentModel());
+    });
 }
 
 OllamaComboBoxWidget::~OllamaComboBoxWidget() = default;

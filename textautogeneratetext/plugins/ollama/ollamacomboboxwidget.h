@@ -20,6 +20,7 @@ public:
     [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
     void reloadModel();
+    void showModelInfoRequested(const QString &modelName);
 
 private:
     QComboBox *const mModelComboBox;
