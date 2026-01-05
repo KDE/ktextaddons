@@ -25,7 +25,7 @@ TextAutoGenerateShowModelInfoWidget::~TextAutoGenerateShowModelInfoWidget() = de
 
 void TextAutoGenerateShowModelInfoWidget::setText(const QString &text)
 {
-    mTextEdit->setText(text);
+    mTextEdit->setMarkdown(text);
 }
 
 #include "moc_textautogenerateshowmodelinfowidget.cpp"
