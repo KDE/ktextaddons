@@ -102,4 +102,6 @@ private:
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::UnicodeEmoticon)
 Q_DECLARE_TYPEINFO(TextEmoticonsCore::UnicodeEmoticon, Q_MOVABLE_TYPE);
+/*!
+ */
 TEXTEMOTICONSCORE_EXPORT QDebug operator<<(QDebug d, const TextEmoticonsCore::UnicodeEmoticon &t);

@@ -70,4 +70,6 @@ private:
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::EmoticonCategory)
 Q_DECLARE_TYPEINFO(TextEmoticonsCore::EmoticonCategory, Q_MOVABLE_TYPE);
+/*!
+ */
 TEXTEMOTICONSCORE_EXPORT QDebug operator<<(QDebug d, const TextEmoticonsCore::EmoticonCategory &t);
