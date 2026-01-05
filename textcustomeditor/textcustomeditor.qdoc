@@ -1,0 +1,9 @@
+/*!
+    \module TextAddonsWidgets
+    \title TextAddonsWidgets C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextAddonsWidgets
+
+    \brief TextCustomEditor provides custom editor.
+*/

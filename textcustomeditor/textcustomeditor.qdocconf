@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextCustomEditor
+description = TextCustomEditor provides custom editor.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextCustomEditor"
+
+qhp.projects            = textaddonswidgets
+
+qhp.textcustomeditor.file                = textcustomeditor.qhp
+qhp.textcustomeditor.namespace           = org.kde.textcustomeditor.$QT_VERSION_TAG
+qhp.textcustomeditor.virtualFolder       = textcustomeditor
+qhp.textcustomeditor.indexTitle          = textcustomeditor
+qhp.textcustomeditor.indexRoot           =
+
+qhp.textcustomeditor.subprojects         = classes
+qhp.textcustomeditor.subprojects.classes.title = TextCustomEditor C++ Classes
+qhp.textcustomeditor.subprojects.classes.indexTitle = TextCustomEditor C++ Classes
+qhp.textcustomeditor.subprojects.classes.selectors = class fake:headerfile
+qhp.textcustomeditor.subprojects.classes.sortPages = true
+
+tagfile = textcustomeditor.tags

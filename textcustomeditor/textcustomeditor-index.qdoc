@@ -1,0 +1,20 @@
+/*!
+    \page textcustomeditor-index.html
+    \title TextAddonsWidgets
+
+    TextCustomEditor provides custom editor.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KF6} {TextCustomEditor} {KF6::TextCustomEditor}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextCustomEditor C++ Classes}
+    \endlist
+*/
