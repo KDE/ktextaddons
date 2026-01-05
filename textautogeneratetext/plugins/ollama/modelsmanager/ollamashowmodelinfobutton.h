@@ -14,4 +14,7 @@ class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaShowModelInfoButton : public QTo
 public:
     explicit OllamaShowModelInfoButton(QWidget *parent = nullptr);
     ~OllamaShowModelInfoButton() override;
+
+Q_SIGNALS:
+    void showModelInfoRequested();
 };
