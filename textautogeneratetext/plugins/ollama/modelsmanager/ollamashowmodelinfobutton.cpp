@@ -11,9 +11,8 @@ using namespace Qt::Literals::StringLiterals;
 OllamaShowModelInfoButton::OllamaShowModelInfoButton(QWidget *parent)
     : QToolButton(parent)
 {
-    // TODO setIcon(QIcon::fromTheme(u"applications-network-symbolic"_s));
+    setIcon(QIcon::fromTheme(u"documentinfo"_s));
     setToolTip(i18nc("@info:tooltip", "Show Model Info"));
-    setAutoRaise(true);
     connect(this, &QToolButton::clicked, this, &OllamaShowModelInfoButton::showModelInfoRequested);
 }
 
