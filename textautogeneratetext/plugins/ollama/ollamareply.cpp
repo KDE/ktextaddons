@@ -138,6 +138,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
         }
         break;
     case RequestTypes::ShowModelInfo:
+        ret.response = generateModelInfo();
         break;
     case RequestTypes::StreamingGenerate:
         for (const auto &tok : mTokens) {
@@ -145,6 +146,22 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
         }
     }
     return ret;
+}
+
+QString OllamaReply::generateModelInfo() const
+{
+    QString mardown;
+    mardown += QString::fromLatin1("## Template: \n```\n") + mTokens.constFirst()["template"_L1].toString() + QString::fromLatin1("\n```\n");
+    mardown += QString::fromLatin1("## Modelfile: \n```\n") + mTokens.constFirst()["modelfile"_L1].toString() + QString::fromLatin1("\n```\n");
+    mardown += QString::fromLatin1("## Parameters: \n```\n") + mTokens.constFirst()["parameters"_L1].toString() + QString::fromLatin1("\n```\n");
+    mardown += QString::fromLatin1("## Details: \n```\n")
+        + QString::fromLatin1(QJsonDocument::fromVariant(mTokens.constFirst()["details"_L1].toVariant()).toJson()) + QString::fromLatin1("\n```\n");
+    mardown += QString::fromLatin1("## Model Info: \n```\n")
+        + QString::fromLatin1(QJsonDocument::fromVariant(mTokens.constFirst()["model_info"_L1].toVariant()).toJson()) + QString::fromLatin1("\n```\n");
+
+    // TODO
+    qDebug() << " mTokens " << mTokens;
+    return mardown;
 }
 
 TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaReply::parseDownLoadInfo(const QJsonDocument &doc) const

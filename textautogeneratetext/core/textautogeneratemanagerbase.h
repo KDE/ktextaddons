@@ -54,6 +54,9 @@ Q_SIGNALS:
     /*!
      */
     void canceled(const QString &modelName);
+    /*!
+     */
+    void showModelInfoDone(const QString &replyText);
 
 protected:
     QMetaObject::Connection mCheckConnect;

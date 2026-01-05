@@ -68,7 +68,10 @@ void OllamaManager::showModelInfo(const QString &modelName)
         OllamaReply::RequestTypes::ShowModelInfo,
         this};
     connect(reply, &OllamaReply::finished, this, [this, reply] {
-        Q_EMIT finished(reply->readResponse());
+        const auto readResponse = reply->readResponse();
+        qDebug() << " readResponse : " << readResponse;
+        Q_EMIT finished(readResponse);
+        Q_EMIT showModelInfoDone(readResponse.response);
     });
 }
 
@@ -188,7 +191,7 @@ void OllamaManager::loadModels()
             ModelsInfo info;
             info.errorOccured = i18n("Failed to connect to interface at %1: %2", mOllamaSettings->serverUrl().toString(), rep->errorString());
             info.hasError = true;
-            Q_EMIT modelsLoadDone(std::move(info));
+            Q_EMIT modelsLoadDone(info);
             return;
         }
         ModelsInfo info;
@@ -231,7 +234,7 @@ void OllamaManager::loadModels()
 
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
-        Q_EMIT modelsLoadDone(std::move(info));
+        Q_EMIT modelsLoadDone(info);
     });
 }
 

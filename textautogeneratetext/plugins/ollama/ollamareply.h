@@ -41,5 +41,6 @@ public:
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo
     parseDownLoadInfo(const QJsonDocument &doc) const;
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT QString generateModelInfo() const;
     bool mDownloadError = false;
 };

@@ -9,6 +9,7 @@
 #include "ollamaconfigurecustomizewidget.h"
 #include "ollamastartprocessjob.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
+#include "widgets/common/textautogenerateshowmodelinfodialog.h"
 
 #include "ollamacomboboxwidget.h"
 #include "ollamamanager.h"
@@ -21,6 +22,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPointer>
 #include <QSpinBox>
 #include <TextAddonsWidgets/ExecutableUtils>
 
@@ -122,16 +124,26 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     });
     loadSettings();
     connect(mManager, &OllamaManager::refreshInstalledModels, this, &OllamaConfigureWidget::fillModels);
+    connect(mManager, &OllamaManager::showModelInfoDone, this, &OllamaConfigureWidget::displayModelInfo);
     fillModels();
     connect(mMessageWidget, &TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &OllamaConfigureWidget::slotStartOllama);
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;
 
+void OllamaConfigureWidget::displayModelInfo(const QString &modelStr)
+{
+    QPointer<TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog> dlg = new TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog(this);
+    dlg->setText(modelStr);
+    dlg->exec();
+    delete dlg;
+}
+
 void OllamaConfigureWidget::showModelInfo(const QString &modelName)
 {
     // TODO
     qDebug() << " showModelInfo " << modelName;
+    mManager->showModelInfo(modelName);
 }
 
 void OllamaConfigureWidget::slotStartOllama()
