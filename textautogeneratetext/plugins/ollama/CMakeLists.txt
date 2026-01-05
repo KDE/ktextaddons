@@ -101,6 +101,8 @@ target_sources(
         modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
         modelsmanager/ollamanetworkurlbutton.h
         modelsmanager/ollamanetworkurlbutton.cpp
+        modelsmanager/ollamashowmodelinfobutton.h
+        modelsmanager/ollamashowmodelinfobutton.cpp
         icons/ollamamodelicons.qrc
 )
 
