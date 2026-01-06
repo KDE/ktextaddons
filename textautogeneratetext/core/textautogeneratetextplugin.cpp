@@ -149,7 +149,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
         msg.setContent(editSendInfo.message);
-        TextAutoGenerateAttachments *atts = TextAutoGenerateAttachmentUtils::createTextAutoGenerateAttachments(
+        TextAutoGenerateAttachments *const atts = TextAutoGenerateAttachmentUtils::createTextAutoGenerateAttachments(
             TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(editSendInfo.attachmentInfoList));
         msg.setMessageAttachments(*atts);
         delete atts;
