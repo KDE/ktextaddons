@@ -6,6 +6,7 @@
 
 #include "ollamareply.h"
 #include "autogeneratetext_ollama_debug.h"
+#include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QNetworkReply>
@@ -151,13 +152,13 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
 QString OllamaReply::generateModelInfo() const
 {
     QString mardown;
-    mardown += QString::fromLatin1("## Template: \n```\n") + mTokens.constFirst()["template"_L1].toString() + QString::fromLatin1("\n```\n");
-    mardown += QString::fromLatin1("## Modelfile: \n```\n") + mTokens.constFirst()["modelfile"_L1].toString() + QString::fromLatin1("\n```\n");
-    mardown += QString::fromLatin1("## Parameters: \n```\n") + mTokens.constFirst()["parameters"_L1].toString() + QString::fromLatin1("\n```\n");
-    mardown += QString::fromLatin1("## Details: \n```\n")
-        + QString::fromLatin1(QJsonDocument::fromVariant(mTokens.constFirst()["details"_L1].toVariant()).toJson()) + QString::fromLatin1("\n```\n");
-    mardown += QString::fromLatin1("## Model Info: \n```\n")
-        + QString::fromLatin1(QJsonDocument::fromVariant(mTokens.constFirst()["model_info"_L1].toVariant()).toJson()) + QString::fromLatin1("\n```\n");
+    mardown += u"## %1: \n```\n"_s.arg(i18n("Template")) + mTokens.constFirst()["template"_L1].toString() + u"\n```\n"_s;
+    mardown += u"## %1: \n```\n"_s.arg(i18n("Modelfile")) + mTokens.constFirst()["modelfile"_L1].toString() + u"\n```\n"_s;
+    mardown += u"## %1: \n```\n"_s.arg(i18n("Parameters")) + mTokens.constFirst()["parameters"_L1].toString() + u"\n```\n"_s;
+    mardown += u"## %1: \n```\n"_s.arg(i18n("Details"))
+        + QString::fromLatin1(QJsonDocument::fromVariant(mTokens.constFirst()["details"_L1].toVariant()).toJson()) + u"\n```\n"_s;
+    mardown += u"## %1: \n```\n"_s.arg(i18n("Model Info"))
+        + QString::fromLatin1(QJsonDocument::fromVariant(mTokens.constFirst()["model_info"_L1].toVariant()).toJson()) + u"\n```\n"_s;
 
     // TODO
     qDebug() << " mTokens " << mTokens;
