@@ -29,11 +29,13 @@ GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManag
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mConfigureWidget, generalPageName);
+    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
     mConfigureWidget->setObjectName(u"mConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
 
     const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
     auto configureModelWidgetPage = new KPageWidgetItem(mAvailableModelWidget, modelAvailablePageName);
+    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
     mAvailableModelWidget->setObjectName(u"mAvailableModelWidget"_s);
     addPage(configureModelWidgetPage);
 
