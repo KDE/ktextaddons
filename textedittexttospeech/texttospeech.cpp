@@ -118,6 +118,9 @@ void TextToSpeech::slotStateChanged()
 
 bool TextToSpeech::isReady() const
 {
+    if (!d->mTextToSpeech) {
+        return false;
+    }
     return d->mTextToSpeech->state() != QTextToSpeech::Error;
 }
 
