@@ -47,7 +47,7 @@ void GenericNetworkManager::loadModels()
             ModelsInfo info;
             info.errorOccured = i18n("Failed to connect to interface at %1: %2", apiUrl(), rep->errorString());
             info.hasError = true;
-            Q_EMIT modelsLoadDone(std::move(info));
+            Q_EMIT modelsLoadDone(info);
             return;
         }
 
@@ -77,7 +77,7 @@ void GenericNetworkManager::loadModels()
 
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
-        Q_EMIT modelsLoadDone(std::move(info));
+        Q_EMIT modelsLoadDone(info);
     });
 }
 
