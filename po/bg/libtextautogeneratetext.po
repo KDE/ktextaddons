@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:43+0000\n"
+"POT-Creation-Date: 2026-01-06 00:42+0000\n"
 "PO-Revision-Date: 2025-12-24 08:10+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -196,7 +196,7 @@ msgid "Available Models"
 msgstr "Налични модели"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:189
+#: plugins/ollama/ollamamanager.cpp:192
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Неуспешно свързване с интерфейс в %1: %2"
@@ -325,7 +325,7 @@ msgid "Base:"
 msgstr "База:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:58
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2013,12 +2013,20 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Отваряне на адрес (URL) „%1“"
 
+#: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
+msgctxt "@info:tooltip"
+msgid "Show Model Info"
+msgstr "Информационен адрес на Open Model"
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:30
+#: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
@@ -2067,23 +2075,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Създаване на модели"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Server Url:"
 msgstr "Адрес на сървър:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:66
 #, kde-format
 msgid "Model:"
 msgstr "Модел:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Температура:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2093,13 +2101,13 @@ msgstr ""
 "Температурата на модела. Повишаването на температурата ще направи модела да "
 "реагира по-креативно."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Сийд:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:75
+#: plugins/ollama/ollamaconfigurewidget.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2111,12 +2119,12 @@ msgstr ""
 "генериране. Задаването на конкретно число ще накара модела да генерира един "
 "и същ текст за едно и също запитване. (По подразбиране: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:80
+#: plugins/ollama/ollamaconfigurewidget.cpp:82
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Конфигуриране на Олама"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -2125,7 +2133,7 @@ msgstr ""
 "Тези записи са незадължителни и се използват за отстраняване на проблеми с "
 "Олама, свързани с графични карти."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:138
+#: plugins/ollama/ollamaconfigurewidget.cpp:157
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Неуспешно стартиране на 2Ollama"
