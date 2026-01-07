@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:42+0000\n"
-"PO-Revision-Date: 2026-01-04 06:11-0300\n"
+"POT-Creation-Date: 2026-01-07 00:43+0000\n"
+"PO-Revision-Date: 2026-01-06 07:00-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2035,9 +2035,7 @@ msgid "Open Url \"%1\""
 msgstr "Abrir Url \"%1\""
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Show Model Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
 msgstr "Mostrar informações do modelo"
@@ -2158,6 +2156,41 @@ msgstr ""
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Falha ao iniciar o Ollama"
+
+#: plugins/ollama/ollamareply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "Temperatura:"
+
+#: plugins/ollama/ollamareply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "Modelos"
+
+#: plugins/ollama/ollamareply.cpp:171
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
+msgid "Parameters"
+msgstr "Tamanho do parâmetro:"
+
+#: plugins/ollama/ollamareply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:175
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show Model Info"
+msgid "Model Info"
+msgstr "Mostrar informações do modelo"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format

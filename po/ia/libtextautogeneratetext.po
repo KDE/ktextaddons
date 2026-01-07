@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:42+0000\n"
+"POT-Creation-Date: 2026-01-07 00:43+0000\n"
 "PO-Revision-Date: 2025-09-02 17:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1804,6 +1804,39 @@ msgstr ""
 #| msgid "Start Ollama"
 msgid "Failed to start Ollama"
 msgstr "Starta Ollama"
+
+#: plugins/ollama/ollamareply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "Temperatura:"
+
+#: plugins/ollama/ollamareply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "Modellos "
+
+#: plugins/ollama/ollamareply.cpp:171
+#, kde-format
+msgid "Parameters"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:175
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Model Info"
+msgstr "Modellos "
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format

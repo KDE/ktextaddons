@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:42+0000\n"
+"POT-Creation-Date: 2026-01-07 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2015,6 +2015,41 @@ msgstr "这此条目是可选的，它们用于排除与 Ollama 有关的GPU 问
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "启动 Ollama 失败"
+
+#: plugins/ollama/ollamareply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "温度："
+
+#: plugins/ollama/ollamareply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "模型"
+
+#: plugins/ollama/ollamareply.cpp:171
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
+msgid "Parameters"
+msgstr "参数大小："
+
+#: plugins/ollama/ollamareply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:175
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show metadata info"
+msgid "Model Info"
+msgstr "显示元数据信息"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format

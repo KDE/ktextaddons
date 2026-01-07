@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:43+0000\n"
+"POT-Creation-Date: 2026-01-07 00:43+0000\n"
 "PO-Revision-Date: 2026-01-05 00:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -199,7 +199,7 @@ msgid "Available Models"
 msgstr "Modelos disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:189
+#: plugins/ollama/ollamamanager.cpp:192
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "No se ha podido conectar a la interfaz %1: %2"
@@ -328,7 +328,7 @@ msgid "Base:"
 msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:58
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2041,12 +2041,20 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Abrir URL «%1»"
 
+#: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Show Model Information"
+msgctxt "@info:tooltip"
+msgid "Show Model Info"
+msgstr "Mostrar información del modelo"
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:30
+#: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
@@ -2095,23 +2103,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Crear modelos"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:66
 #, kde-format
 msgid "Model:"
 msgstr "Modelo:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2121,13 +2129,13 @@ msgstr ""
 "La temperatura del modelo. Un aumento de la temperatura hará que el modelo "
 "responda con más creatividad."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Semilla:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:75
+#: plugins/ollama/ollamaconfigurewidget.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2139,12 +2147,12 @@ msgstr ""
 "un número específico, el modelo generará el mismo texto para las mismas "
 "indicaciones (el valor predeterminado es 0)."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:80
+#: plugins/ollama/ollamaconfigurewidget.cpp:82
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Personalizar Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -2153,10 +2161,44 @@ msgstr ""
 "Estas entradas son opcionales. Se usan para identificar problemas de GPU "
 "relacionados con Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:138
+#: plugins/ollama/ollamaconfigurewidget.cpp:157
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "El inicio de Ollama ha fallado"
+
+#: plugins/ollama/ollamareply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "Temperatura:"
+
+#: plugins/ollama/ollamareply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "Modelos"
+
+#: plugins/ollama/ollamareply.cpp:171
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
+msgid "Parameters"
+msgstr "Tamaño de parámetros:"
+
+#: plugins/ollama/ollamareply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:175
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Model Info"
+msgstr "Modelos"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format

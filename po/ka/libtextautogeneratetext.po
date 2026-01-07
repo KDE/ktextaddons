@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:42+0000\n"
-"PO-Revision-Date: 2026-01-04 05:19+0100\n"
+"POT-Creation-Date: 2026-01-07 00:43+0000\n"
+"PO-Revision-Date: 2026-01-06 09:08+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2022,9 +2022,7 @@ msgid "Open Url \"%1\""
 msgstr "ბმულის \"%1\" გახსნა"
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Show Model Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
 msgstr "მოდელის ინფორმაციის ჩვენება"
@@ -2145,6 +2143,41 @@ msgstr ""
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama-ის გაშვება ჩავარდა"
+
+#: plugins/ollama/ollamareply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "ტემპერატურა:"
+
+#: plugins/ollama/ollamareply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "მოდელები"
+
+#: plugins/ollama/ollamareply.cpp:171
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
+msgid "Parameters"
+msgstr "პარამეტრის ზომა:"
+
+#: plugins/ollama/ollamareply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollama/ollamareply.cpp:175
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show Model Info"
+msgid "Model Info"
+msgstr "მოდელის ინფორმაციის ჩვენება"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
