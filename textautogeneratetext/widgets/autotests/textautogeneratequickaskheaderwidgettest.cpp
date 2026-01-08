@@ -47,6 +47,7 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(saveQuickAskButton);
     QVERIFY(!saveQuickAskButton->toolTip().isEmpty());
     QVERIFY(saveQuickAskButton->autoRaise());
+    QVERIFY(!saveQuickAskButton->isEnabled());
 
     auto searchButton = w.findChild<QToolButton *>(u"searchButton"_s);
     QVERIFY(searchButton);

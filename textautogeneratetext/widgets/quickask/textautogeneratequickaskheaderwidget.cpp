@@ -58,6 +58,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     saveQuickAskButton->setAutoRaise(true);
     saveQuickAskButton->setObjectName(u"saveQuickAskButton"_s);
     saveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
+    saveQuickAskButton->setEnabled(false);
     saveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Discussion in Database"));
     mainLayout->addWidget(saveQuickAskButton);
 
@@ -76,6 +77,10 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
             }
         });
 
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, [this, saveQuickAskButton]() {
+            saveQuickAskButton->setEnabled(!mManager->currentChatId().isEmpty());
+            updateEngineModelName(mManager->generateEngineDisplayName());
+        });
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
             updateEngineModelName(mManager->generateEngineDisplayName());
         });
