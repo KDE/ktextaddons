@@ -17,7 +17,7 @@ TextAutoGenerateToolsWidgetTest::TextAutoGenerateToolsWidgetTest(QObject *parent
 
 void TextAutoGenerateToolsWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateToolsWidget w;
+    const TextAutoGenerateText::TextAutoGenerateToolsWidget w;
     QVERIFY(w.generateListOfActiveTools().isEmpty());
 
     auto mainLayout = w.findChild<TextAutoGenerateText::TextAutoGenerateFlowLayout *>(u"mainLayout"_s);

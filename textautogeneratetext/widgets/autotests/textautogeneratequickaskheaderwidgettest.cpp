@@ -23,7 +23,7 @@ TextAutoGenerateQuickAskHeaderWidgetTest::TextAutoGenerateQuickAskHeaderWidgetTe
 
 void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget w(nullptr);
 
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
@@ -60,9 +60,9 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
 
 void TextAutoGenerateQuickAskHeaderWidgetTest::shouldEmitConfigureRequested()
 {
-    TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget w(nullptr);
 
-    QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget::configureRequested);
+    const QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget::configureRequested);
 
     auto toolButton = w.findChild<QToolButton *>(u"configureButton"_s);
     QTest::mouseClick(toolButton, Qt::LeftButton);

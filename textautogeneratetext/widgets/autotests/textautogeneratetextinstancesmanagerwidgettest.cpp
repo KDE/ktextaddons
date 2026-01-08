@@ -21,7 +21,7 @@ TextAutoGenerateTextInstancesManagerWidgetTest::TextAutoGenerateTextInstancesMan
 
 void TextAutoGenerateTextInstancesManagerWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextInstancesManagerWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateTextInstancesManagerWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);

@@ -17,7 +17,7 @@ TextAutoGenerateTextLineEditAttachmentWidgetTest::TextAutoGenerateTextLineEditAt
 
 void TextAutoGenerateTextLineEditAttachmentWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentWidget w;
+    const TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentWidget w;
 
     auto mainLayout = w.findChild<TextAutoGenerateText::TextAutoGenerateFlowLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);

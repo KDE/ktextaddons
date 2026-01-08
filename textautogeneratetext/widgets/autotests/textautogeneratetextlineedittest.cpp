@@ -16,7 +16,7 @@ TextAutoGenerateTextLineEditTest::TextAutoGenerateTextLineEditTest(QObject *pare
 
 void TextAutoGenerateTextLineEditTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEdit d;
+    const TextAutoGenerateText::TextAutoGenerateTextLineEdit d;
     QVERIFY(d.text().isEmpty());
     QVERIFY(!d.placeholderText().isEmpty());
     QVERIFY(!d.acceptRichText());

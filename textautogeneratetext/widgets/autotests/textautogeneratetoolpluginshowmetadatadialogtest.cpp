@@ -19,7 +19,7 @@ TextAutoGenerateToolPluginShowMetaDataDialogTest::TextAutoGenerateToolPluginShow
 
 void TextAutoGenerateToolPluginShowMetaDataDialogTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataDialog w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataDialog w(nullptr);
     QVERIFY(!w.windowTitle().isEmpty());
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);

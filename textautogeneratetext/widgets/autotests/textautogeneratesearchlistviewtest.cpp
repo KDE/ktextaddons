@@ -15,7 +15,7 @@ TextAutoGenerateSearchListViewTest::TextAutoGenerateSearchListViewTest(QObject *
 
 void TextAutoGenerateSearchListViewTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSearchListView w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateSearchListView w(nullptr);
     // TODO
 }
 

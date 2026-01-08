@@ -16,7 +16,7 @@ TextAutoGenerateSearchLineEditTest::TextAutoGenerateSearchLineEditTest(QObject *
 
 void TextAutoGenerateSearchLineEditTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSearchLineEdit w;
+    const TextAutoGenerateText::TextAutoGenerateSearchLineEdit w;
     // TODO
 }
 

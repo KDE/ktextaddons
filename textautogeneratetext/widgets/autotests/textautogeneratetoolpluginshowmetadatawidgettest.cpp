@@ -17,7 +17,7 @@ TextAutoGenerateToolPluginShowMetaDataWidgetTest::TextAutoGenerateToolPluginShow
 
 void TextAutoGenerateToolPluginShowMetaDataWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataWidget w(nullptr);
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

@@ -18,7 +18,7 @@ TextAutoGenerateQuickAskWidgetTest::TextAutoGenerateQuickAskWidgetTest(QObject *
 
 void TextAutoGenerateQuickAskWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateQuickAskWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateQuickAskWidget w(nullptr);
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

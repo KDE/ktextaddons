@@ -16,7 +16,7 @@ TextAutoGenerateSelectedMessageBackgroundAnimationTest::TextAutoGenerateSelected
 
 void TextAutoGenerateSelectedMessageBackgroundAnimationTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSelectedMessageBackgroundAnimation d(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateSelectedMessageBackgroundAnimation d(nullptr);
     QVERIFY(!d.backgroundColor().isValid());
     QVERIFY(!d.modelIndex().isValid());
 }
