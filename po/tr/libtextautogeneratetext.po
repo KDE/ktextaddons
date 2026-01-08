@@ -1,14 +1,14 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2025, 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:43+0000\n"
-"PO-Revision-Date: 2025-12-24 11:26+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"PO-Revision-Date: 2026-01-07 20:34+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -2016,12 +2016,10 @@ msgid "Open Url \"%1\""
 msgstr "URL’yi aç: “%1”"
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Model bilgisi URL’sini aç"
+msgstr "Model bilgisini göster"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
@@ -2143,37 +2141,32 @@ msgstr "Ollama başlatılamadı"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Yetenekler"
 
 #: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Sıcaklık:"
+msgstr "Şablon"
 
 #: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Modeller"
+msgstr "Model dosyası"
 
 #: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Parametre boyutu:"
+msgstr "Parametreler"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Ayrıntılar"
 
 #: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgid "Model Info"
-msgstr "Model bilgisi URL’sini aç"
+msgstr "Model Bilgisi"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
@@ -2238,12 +2231,10 @@ msgid "Configure…"
 msgstr "Yapılandır…"
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Model bilgisi URL’sini aç"
+msgstr "Model Bilgisini Göster"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format

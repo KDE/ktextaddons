@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:43+0000\n"
-"PO-Revision-Date: 2026-01-06 12:46+0100\n"
+"PO-Revision-Date: 2026-01-07 13:13+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2142,37 +2142,32 @@ msgstr "Ollama starten is mislukt"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Mogelijkheden"
 
 #: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Temperatuur:"
+msgstr "Sjabloon"
 
 #: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Modellen"
+msgstr "Modelbestand"
 
 #: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Parametergrootte:"
+msgstr "Parameters"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show Model Info"
+#, kde-format
 msgid "Model Info"
-msgstr "Modelinformatie tonen"
+msgstr "Modelinformatie"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
