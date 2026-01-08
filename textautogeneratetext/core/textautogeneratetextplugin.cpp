@@ -45,7 +45,7 @@ TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
 QByteArray TextAutoGenerateTextPlugin::instanceUuid() const
 {
-    qDebug() << " d->instance " << d->instance;
+    // qDebug() << " d->instance " << d->instance;
     return d->instance->instanceUuid();
 }
 
@@ -149,7 +149,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
         msg.setContent(editSendInfo.message);
-        TextAutoGenerateAttachments *atts = TextAutoGenerateAttachmentUtils::createTextAutoGenerateAttachments(
+        TextAutoGenerateAttachments *const atts = TextAutoGenerateAttachmentUtils::createTextAutoGenerateAttachments(
             TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(editSendInfo.attachmentInfoList));
         msg.setMessageAttachments(*atts);
         delete atts;
@@ -184,7 +184,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         info.tools = editSendInfo.tools;
 
         info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
-        qDebug() << "info.messagesArray  " << info.messagesArray;
+        // qDebug() << "info.messagesArray  " << info.messagesArray;
 
         d->manager->addMessage(info.chatId, msgLlm);
         // qDebug() << " info " << info;

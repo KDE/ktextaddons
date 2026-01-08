@@ -71,6 +71,7 @@ bool TextAutoGenerateAttachmentDelegateHelperFile::handleMouseEvent(const TextAu
         if (attachmentsRect.contains(pos)) {
             const auto attachmentId = msgAttach.attachmentId();
             if (!attachmentId.isEmpty()) {
+                qDebug() << " Click on file " << msgAttach;
                 handleDownloadClicked(const_cast<QWidget *>(option.widget), attachmentId);
                 return true;
             }
