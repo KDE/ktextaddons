@@ -12,6 +12,10 @@
 namespace TextEmoticonsCore
 {
 /*!
+ * \class TextEmoticonsCore::EmojiSortFilterProxyModel
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/EmojiSortFilterProxyModel
+ *
  * \brief The EmojiProxyModel class
  * \author Laurent Montel <montel@kde.org>
  */

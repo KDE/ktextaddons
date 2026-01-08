@@ -21,6 +21,10 @@ namespace TextCustomEditor
 class PlainTextEditor;
 class PlainTextSyntaxSpellCheckingHighlighterPrivate;
 /*!
+ * \class TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter
+ *
  * \brief The PlainTextSyntaxSpellCheckingHighlighter class
  * \author Laurent Montel <montel@kde.org>
  */

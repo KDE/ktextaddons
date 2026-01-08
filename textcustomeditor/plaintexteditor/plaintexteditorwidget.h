@@ -14,6 +14,10 @@ namespace TextCustomEditor
 class PlainTextEditor;
 class PlainTextEditorWidgetPrivate;
 /*!
+ * \class TextCustomEditor::PlainTextEditorWidget
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/PlainTextEditorWidget
+ *
  * \brief The PlainTextEditorWidget class
  * \author Laurent Montel <montel@kde.org>
  */

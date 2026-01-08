@@ -14,6 +14,10 @@ namespace TextCustomEditor
 class TextFindWidget;
 class TextReplaceWidget;
 /*!
+ * \class TextCustomEditor::TextEditFindBarBase
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/TextEditFindBarBase
+ *
  * \brief The TextEditFindBarBase class
  * \author Laurent Montel <montel@kde.org>
  */

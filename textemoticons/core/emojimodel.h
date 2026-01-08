@@ -14,6 +14,10 @@ namespace TextEmoticonsCore
 {
 class CustomEmojiIconManager;
 /*!
+ * \class TextEmoticonsCore::EmojiModel
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/EmojiModel
+ *
  * \brief The EmojiModel class
  * \author Laurent Montel <montel@kde.org>
  */

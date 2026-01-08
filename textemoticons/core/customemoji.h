@@ -13,6 +13,10 @@ class QDebug;
 namespace TextEmoticonsCore
 {
 /*!
+ * \class TextEmoticonsCore::CustomEmoji
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/CustomEmoji
+ *
  * \brief The CustomEmoji class
  * \author Laurent Montel <montel@kde.org>
  */

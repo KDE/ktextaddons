@@ -17,6 +17,10 @@ namespace TextEmoticonsCore
 {
 class UnicodeEmoticonManagerPrivate;
 /*!
+ * \class TextEmoticonsCore::UnicodeEmoticonManager
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/UnicodeEmoticonManager
+ *
  * \brief The UnicodeEmoticonManager class
  * \author Laurent Montel <montel@kde.org>
  */

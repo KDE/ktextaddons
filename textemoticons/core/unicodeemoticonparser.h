@@ -12,6 +12,10 @@
 namespace TextEmoticonsCore
 {
 /*!
+ * \class TextEmoticonsCore::UnicodeEmoticonParser
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/UnicodeEmoticonParser
+ *
  * \brief The UnicodeEmoticonParser class
  * \author Laurent Montel <montel@kde.org>
  */

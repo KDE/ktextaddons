@@ -13,6 +13,10 @@ namespace TextCustomEditor
 {
 class TextGoToLineWidgetPrivate;
 /*!
+ * \class TextCustomEditor::TextGoToLineWidget
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/TextGoToLineWidget
+ *
  * \brief The TextGoToLineWidget class
  * \author Laurent Montel <montel@kde.org>
  */

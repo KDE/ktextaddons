@@ -15,6 +15,10 @@ namespace TextCustomEditor
 class RichTextEditor;
 class RichTextEditorWidgetPrivate;
 /*!
+ * \class TextCustomEditor::RichTextEditorWidget
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/RichTextEditorWidget
+ *
  * \brief The RichTextEditorWidget class
  * \author Laurent Montel <montel@kde.org>
  */
