@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:43+0000\n"
-"PO-Revision-Date: 2025-12-24 16:57+0400\n"
+"POT-Creation-Date: 2026-01-09 00:42+0000\n"
+"PO-Revision-Date: 2026-01-08 12:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -189,7 +189,7 @@ msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "عام"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1942,12 +1942,10 @@ msgid "Open Url \"%1\""
 msgstr "افتح الرابط \"%1\""
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "افتح عنوان URL الخاص بمعلومات النموذج"
+msgstr "اعرض معلومات النموذج"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
@@ -2068,37 +2066,32 @@ msgstr "فشل بدأ أولاما"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "الإمكانيات"
 
 #: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "درجة الحرارة:"
+msgstr "القالب"
 
 #: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "النّماذج"
+msgstr "ملف النمط"
 
 #: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "حجم المعلمة:"
+msgstr "المعاملات"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 #: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgid "Model Info"
-msgstr "افتح عنوان URL الخاص بمعلومات النموذج"
+msgstr "معلومات النموذج"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
@@ -2162,12 +2155,10 @@ msgid "Configure…"
 msgstr "اضبط…"
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "افتح عنوان URL الخاص بمعلومات النموذج"
+msgstr "اعرض معلومات النموذج"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format

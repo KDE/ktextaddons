@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:43+0000\n"
-"PO-Revision-Date: 2026-01-05 01:13+0900\n"
+"POT-Creation-Date: 2026-01-09 00:42+0000\n"
+"PO-Revision-Date: 2026-01-09 00:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -191,7 +191,7 @@ msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "一般"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1845,9 +1845,7 @@ msgid "Open Url \"%1\""
 msgstr "開啟網址「%1」"
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Show Model Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
 msgstr "顯示模型資訊"
@@ -1967,37 +1965,32 @@ msgstr "啟動 Ollama 失敗"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "能力"
 
 #: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "溫度："
+msgstr "樣本"
 
 #: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "模型"
+msgstr "模型檔案"
 
 #: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "參數大小："
+msgstr "參數"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "詳細資料"
 
 #: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Show Model Information"
+#, kde-format
 msgid "Model Info"
-msgstr "顯示模型資訊"
+msgstr "模型資訊"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
