@@ -205,6 +205,8 @@ target_sources(
         core/jobs/textautogenerateaskjob.cpp
         core/jobs/textautogenerateimportchatbasejob.cpp
         core/jobs/textautogenerateimportchatbasejob.h
+        core/jobs/textautogenerateimportchatasjsonjob.h
+        core/jobs/textautogenerateimportchatasjsonjob.cpp
         core/tools/textautogeneratetexttoolplugin.h
         core/tools/textautogeneratetexttoolplugin.cpp
         core/tools/textautogeneratetexttoolpluginmanager.cpp
@@ -513,6 +515,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs
     TextAutoGenerateAskJob
     TextAutoGenerateExportChatBaseJob
     TextAutoGenerateImportChatBaseJob
+    TextAutoGenerateImportChatAsJsonJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/jobs
