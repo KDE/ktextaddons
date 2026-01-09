@@ -16,6 +16,10 @@ class QPlainTextEdit;
 namespace TextCustomEditor
 {
 /*!
+ * \class TextCustomEditor::TextEditorCompleter
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/TextEditorCompleter
+ *
  * \brief The TextEditorCompleter class
  * \author Laurent Montel <montel@kde.org>
  */

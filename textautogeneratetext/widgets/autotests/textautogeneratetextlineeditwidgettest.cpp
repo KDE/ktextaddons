@@ -23,7 +23,7 @@ TextAutoGenerateTextLineEditWidgetTest::TextAutoGenerateTextLineEditWidgetTest(Q
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
 
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
@@ -60,7 +60,7 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
     auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(u"mTextAutoGenerateTextLineEdit"_s);
     QVERIFY(mTextAutoGenerateTextLineEdit);
 

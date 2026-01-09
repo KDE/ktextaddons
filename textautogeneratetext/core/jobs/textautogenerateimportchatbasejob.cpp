@@ -36,7 +36,7 @@ void TextAutoGenerateImportChatBaseJob::start()
         deleteLater();
         return;
     }
-    exportChat();
+    importChat();
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateImportChatBaseJob::ImportChatInfo &t)

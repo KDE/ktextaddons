@@ -19,6 +19,10 @@ class SpellCheckDecorator;
 namespace TextCustomEditor
 {
 /*!
+ * \class TextCustomEditor::RichTextEditor
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/RichTextEditor
+ *
  * \brief The RichTextEditor class
  * \author Laurent Montel <montel@kde.org>
  */

@@ -14,6 +14,10 @@ namespace TextCustomEditor
 {
 class PlainTextEditFindBarPrivate;
 /*!
+ * \class TextCustomEditor::PlainTextEditFindBar
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/PlainTextEditFindBar
+ *
  * \brief The PlainTextEditFindBar class
  * \author Laurent Montel <montel@kde.org>
  */

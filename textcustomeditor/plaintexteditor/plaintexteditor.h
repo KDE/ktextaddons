@@ -18,6 +18,10 @@ class SpellCheckDecorator;
 namespace TextCustomEditor
 {
 /*!
+ * \class TextCustomEditor::PlainTextEditor
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/PlainTextEditor
+ *
  * \brief The PlainTextEditor class
  * \author Laurent Montel <montel@kde.org>
  */

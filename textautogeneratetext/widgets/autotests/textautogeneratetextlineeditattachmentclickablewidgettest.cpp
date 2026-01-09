@@ -18,7 +18,7 @@ TextAutoGenerateTextLineEditAttachmentClickableWidgetTest::TextAutoGenerateTextL
 
 void TextAutoGenerateTextLineEditAttachmentClickableWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentClickableWidget w({});
+    const TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentClickableWidget w({});
 
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);

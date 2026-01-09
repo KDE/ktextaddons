@@ -13,6 +13,10 @@ class QDebug;
 namespace TextEmoticonsCore
 {
 /*!
+ * \class TextEmoticonsCore::EmoticonCategory
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/EmoticonCategory
+ *
  * \brief The EmoticonCategory class
  * \author Laurent Montel <montel@kde.org>
  */

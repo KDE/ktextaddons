@@ -14,6 +14,10 @@ class QDebug;
 namespace TextEmoticonsCore
 {
 /*!
+ * \class TextEmoticonsCore::UnicodeEmoticon
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/UnicodeEmoticon
+ *
  * \brief The UnicodeEmoticon class
  * \author Laurent Montel <montel@kde.org>
  */

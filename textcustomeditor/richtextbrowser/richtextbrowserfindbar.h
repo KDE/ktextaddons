@@ -14,6 +14,10 @@ namespace TextCustomEditor
 {
 class RichTextBrowserFindBarPrivate;
 /*!
+ * \class TextCustomEditor::RichTextBrowserFindBar
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/RichTextBrowserFindBar
+ *
  * \brief The RichTextBrowserFindBar class
  * \author Laurent Montel <montel@kde.org>
  */

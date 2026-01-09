@@ -15,6 +15,10 @@ namespace TextCustomEditor
 class RichTextBrowser;
 class RichTextBrowserWidgetPrivate;
 /*!
+ * \class TextCustomEditor::RichTextBrowserWidget
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/RichTextBrowserWidget
+ *
  * \brief The RichTextBrowserWidget class
  * \author Laurent Montel <montel@kde.org>
  */

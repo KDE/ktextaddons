@@ -14,6 +14,10 @@ class QMenu;
 namespace TextCustomEditor
 {
 /*!
+ * \class TextCustomEditor::RichTextBrowser
+ * \inmodule TextCustomEditor
+ * \inheaderfile TextCustomEditor/RichTextBrowser
+ *
  * \brief The RichTextBrowser class
  * \author Laurent Montel <montel@kde.org>
  */
