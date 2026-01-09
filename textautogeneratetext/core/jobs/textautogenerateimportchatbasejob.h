@@ -53,7 +53,7 @@ Q_SIGNALS:
 protected:
     /*!
      */
-    virtual void exportChat() = 0;
+    virtual void importChat() = 0;
     ImportChatInfo mInfo;
 };
 }
