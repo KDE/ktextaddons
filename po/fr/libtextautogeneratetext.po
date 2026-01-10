@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:42+0000\n"
-"PO-Revision-Date: 2026-01-07 09:54+0100\n"
+"POT-Creation-Date: 2026-01-10 00:41+0000\n"
+"PO-Revision-Date: 2026-01-08 09:42+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -2179,37 +2179,32 @@ msgstr "Impossible de démarrer Ollama"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Capacités"
 
 #: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Température :"
+msgstr "Modèle"
 
 #: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Modèles"
+msgstr "Fichier de modèle"
 
 #: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Taille du paramètre :"
+msgstr "Paramètres"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Détails"
 
 #: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgid "Model Info"
-msgstr "Ouvrir l'URL d'informations du modèle"
+msgstr "Informations de modèle"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
@@ -2558,7 +2553,7 @@ msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "Effacer"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"

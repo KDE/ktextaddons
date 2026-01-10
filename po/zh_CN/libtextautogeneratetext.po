@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:42+0000\n"
+"POT-Creation-Date: 2026-01-10 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1900,7 +1900,7 @@ msgstr "打开 URL“%1”"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr ""
+msgstr "显示模型信息"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
 #, kde-format
@@ -2017,32 +2017,32 @@ msgstr "启动 Ollama 失败"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "能力"
 
 #: plugins/ollama/ollamareply.cpp:167
 #, kde-format
 msgid "Template"
-msgstr ""
+msgstr "模板"
 
 #: plugins/ollama/ollamareply.cpp:168
 #, kde-format
 msgid "Modelfile"
-msgstr ""
+msgstr "模型文件"
 
 #: plugins/ollama/ollamareply.cpp:171
 #, kde-format
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 #: plugins/ollama/ollamareply.cpp:175
 #, kde-format
 msgid "Model Info"
-msgstr ""
+msgstr "模型信息"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
@@ -2389,7 +2389,7 @@ msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
