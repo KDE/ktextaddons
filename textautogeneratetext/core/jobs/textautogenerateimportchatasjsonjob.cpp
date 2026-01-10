@@ -16,5 +16,14 @@ TextAutoGenerateImportChatAsJsonJob::~TextAutoGenerateImportChatAsJsonJob() = de
 
 void TextAutoGenerateImportChatAsJsonJob::importChat()
 {
+    QFile f(mInfo.filename);
+    if (f.open(QFile::ReadOnly)) {
+        const auto content = f.readAll();
+        f.close();
+
+        QJsonParseError error;
+        const auto doc = QJsonDocument::fromJson(content, &error);
+        // TODO verify error
+    }
     // TODO
 }
