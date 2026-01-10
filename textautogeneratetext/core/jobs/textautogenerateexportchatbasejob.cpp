@@ -7,6 +7,7 @@
 #include "textautogenerateexportchatbasejob.h"
 #include "textautogeneratetextcore_debug.h"
 using namespace TextAutoGenerateText;
+
 TextAutoGenerateExportChatBaseJob::TextAutoGenerateExportChatBaseJob(QObject *parent)
     : QObject{parent}
 {

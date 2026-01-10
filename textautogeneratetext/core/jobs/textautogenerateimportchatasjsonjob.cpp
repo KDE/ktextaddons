@@ -6,7 +6,9 @@
 
 #include "textautogenerateimportchatasjsonjob.h"
 #include <QFile>
+#include <QJsonArray>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateImportChatAsJsonJob::TextAutoGenerateImportChatAsJsonJob(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateImportChatBaseJob{parent}
 {
@@ -23,7 +25,19 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
 
         QJsonParseError error;
         const auto doc = QJsonDocument::fromJson(content, &error);
-        // TODO verify error
+        const QJsonObject obj = doc.object();
+        const QString title = obj[u"title"_s].toString();
+
+        QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
+        const QJsonArray array = obj[u"messages"_s].toArray();
+        for (const auto &val : array) {
+            const TextAutoGenerateMessage msg = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(val.toObject());
+            if (msg.isValid()) {
+                msgs.append(msg);
+                // TODO verify error
+            }
+        }
+        Q_EMIT importDone(title, msgs);
     }
-    // TODO
+    deleteLater();
 }

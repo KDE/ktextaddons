@@ -48,7 +48,7 @@ public:
 Q_SIGNALS:
     /*!
      */
-    void importDone();
+    void importDone(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
 
 protected:
     /*!
