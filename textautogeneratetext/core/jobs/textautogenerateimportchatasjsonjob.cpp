@@ -7,6 +7,7 @@
 #include "textautogenerateimportchatasjsonjob.h"
 #include <QFile>
 #include <QJsonArray>
+#include <QJsonObject>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateImportChatAsJsonJob::TextAutoGenerateImportChatAsJsonJob(QObject *parent)
