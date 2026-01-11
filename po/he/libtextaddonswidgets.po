@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 02:42+0000\n"
-"PO-Revision-Date: 2025-11-11 09:17+0200\n"
+"PO-Revision-Date: 2026-01-10 21:29+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,109 +16,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "לפתוח את הקובץ המצורף?"
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "לפתוח את הקובץ המצורף <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "פתיחה"
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "פתיחה &עם ‚%1’"
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "פתיחה &עם…"
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "שמירה &בשם…"
 
 #: misc/openfilejob.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "שמירת קובץ"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "שגיאה בשמירת קובץ"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "השבתת בדיקת גרסאות"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
-msgstr ""
+msgstr "הגרסה שלך בת יותר מחצי שנה, מומלץ בחום לשדרג."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
-msgstr ""
+msgstr "הגרסה שלך בת יותר משנה, מומלץ בחום לשדרג."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "יש להפעיל מחדש כדי להחיל את השינויים."
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr ""
+msgstr "הגדרה"
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr ""
+msgstr "חיפוש… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "הבא"
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "הקודם"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -184,66 +184,66 @@ msgstr "בחירה"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr ""
+msgstr "בדיקה לאיתור גרסה חדשה"
 
 #: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
-msgstr ""
+msgstr "נמצאה גרסה חדשה. לחיצה <a href=\"%1\">כאן</a> תוריד אותה."
 
 #: verifynewversion/checknewversionwidget.cpp:54
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr ""
+msgstr "לא נמצאו גרסאות חדשות. <a href=\"%1\">כאן</a> אפשר למצוא את הבנייה."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr ""
+msgstr "בדיקה לאיתור גרסה חדשה"
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "גרסה:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr ""
+msgstr "מה חדש ב־%1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(הצגת חדשות)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr ""
+msgstr "מה חדש ב־%2. %1"
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr ""
+msgstr "כל הגרסאות"
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "גרסה %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "שינויים חשובים מאז הגרסה האחרונה:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr ""
+msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr ""
+msgstr "תיקוני תקלות:"

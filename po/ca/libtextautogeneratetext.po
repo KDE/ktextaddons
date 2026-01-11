@@ -2713,17 +2713,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Open Model Information Url"
-#~ msgstr "Obre l'URL d'informació del model"
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "Cal reiniciar per a aplicar els canvis."
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Configuració"
