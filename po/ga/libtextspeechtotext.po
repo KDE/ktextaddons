@@ -1,33 +1,31 @@
-# Translation of libtextspeechtotext.po to Catalan (Valencian)
-# Copyright (C) 2023-2024 This_file_is_part_of_KDE
-# This file is distributed under the license LGPL version 2.1 or
-# version 3 or later versions approved by the membership of KDE e.V.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2024-07-11 08:53+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
-"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Language: ca@valencia\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
 msgid "Impossible to store language info."
-msgstr "És impossible emmagatzemar la informació de l'idioma."
+msgstr ""
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
@@ -36,135 +34,133 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"S'ha produït un error: Els sistemes del motor han detectat trànsit sospitós "
-"des de la xarxa d'este ordinador. Torneu-ho a provar més tard."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr "És impossible accedir a l'URL: %1"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr "No s'ha pogut obrir el fitxer per a la baixada."
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr "La suma de verificació no és correcta."
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr "S'ha produït un error durant l'escriptura en el disc: %1"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr "Configureu el connector Vosk"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Busca…"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:85
 #, kde-format
 msgid "Download"
-msgstr "Baixa"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:106
 #, kde-format
 msgid "Delete"
-msgstr "Suprimix"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr "Actualitza la llista"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr "Actualitza la llista d'idiomes des de la xarxa"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
 #, kde-format
 msgid "Error: %1"
-msgstr "S'ha produït un error: %1"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"
-msgstr "Vosk"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
 #, kde-format
 msgid "Impossible to extract language"
-msgstr "És impossible extraure l'idioma"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
 #, kde-format
 msgid "Language"
-msgstr "Idioma"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
 #, kde-format
 msgid "Installed"
-msgstr "Instal·lat"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
 #, kde-format
 msgid "Installed Version"
-msgstr "Versió instal·lada"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
 #, kde-format
 msgid "Available Version"
-msgstr "Versió disponible"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
 #, kde-format
 msgid "Size"
-msgstr "Mida"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
 #, kde-format
 msgid "Whisper"
-msgstr "Whisper"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr "Motor:"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Configureu la veu a text"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
-msgstr "Veu a text…"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
-msgstr "Entrada:"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:73
 #, kde-format
 msgid "Default"
-msgstr "Predeterminat"
+msgstr ""
