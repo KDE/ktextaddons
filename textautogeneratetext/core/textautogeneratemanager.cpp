@@ -576,7 +576,10 @@ void TextAutoGenerateManager::loadEngine()
 
 void TextAutoGenerateManager::importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs)
 {
-    // TODO
+    createNewChat(title);
+    auto messagesModel = messagesModelFromChatId(currentChatId());
+    messagesModel->setMessages(msgs);
+    saveCurrentChatInDataBase(currentChatId());
 }
 
 void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId)

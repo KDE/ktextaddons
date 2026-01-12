@@ -247,9 +247,9 @@ public:
     [[nodiscard]] QString generateAttachmentTemporaryFile(const QByteArray &attachmentId) const;
 
     /*!
-     * \brief importChat
-     * \param title
-     * \param msgs
+     * \brief importChat This method allows to import list of message
+     * \param title the title of chat
+     * \param msgs list of messages
      */
     void importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
 
