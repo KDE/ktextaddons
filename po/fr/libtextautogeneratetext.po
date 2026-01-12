@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-10 00:41+0000\n"
-"PO-Revision-Date: 2026-01-08 09:42+0100\n"
+"PO-Revision-Date: 2026-01-10 21:43+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -610,7 +610,7 @@ msgid ""
 "model on 3 trillion tokens."
 msgstr ""
 "Le projet TinyLlama est une tentative ouverte d'entraîner un modèle compact "
-"Llama 1.1B  sur 3 billions de jetons."
+"Llama 1.1B sur 3 billions de jetons."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:42
 #, kde-format
@@ -674,7 +674,7 @@ msgid ""
 "Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
 "outstanding reasoning and language understanding capabilities."
 msgstr ""
-"Phi-2 : un modèle de langage 2.7B de Microsoft Research  démontrant des "
+"Phi-2 : un modèle de langage 2.7B de Microsoft Research démontrant des "
 "capacités exceptionnelles de raisonnement et de compréhension du langage."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
@@ -1538,7 +1538,7 @@ msgstr ""
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
 msgstr ""
-"Intégration du modèle à partir de BAAI faisant correspondre les  textes aux "
+"Intégration du modèle à partir de BAAI faisant correspondre les textes aux "
 "vecteurs."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:188
@@ -1764,7 +1764,7 @@ msgstr ""
 "allant jusqu'à 5T. En se référant aux évaluations académiques anglaises, ces "
 "modèles sont à égalité ou meilleurs que les modèles entièrement ouverts de "
 "taille équivalente et compétitifs avec les modèles à pondération ouverte "
-"tels que Llama 3.1 ."
+"tels que Llama 3.1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:232
 #, kde-format
@@ -2020,7 +2020,7 @@ msgid ""
 "thinking mode."
 msgstr ""
 "DeepSeek-V3.1 est un modèle hybride prenant en charge à la fois le mode de "
-"raisonnement  et son contraire."
+"raisonnement et son contraire."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
@@ -2137,7 +2137,7 @@ msgid ""
 "answer more creatively."
 msgstr ""
 "La température du modèle. L'augmentation de la température conduira le "
-"modèle  à répondre de façon plus créative."
+"modèle à répondre de façon plus créative."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:75
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
@@ -2434,7 +2434,7 @@ msgstr "Modifier…"
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Supprimer  l'instance"
+msgstr "Supprimer l'instance"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
