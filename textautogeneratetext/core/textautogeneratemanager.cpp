@@ -573,6 +573,11 @@ void TextAutoGenerateManager::loadEngine()
     Q_EMIT loadEngineDone();
 }
 
+void TextAutoGenerateManager::importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs)
+{
+    // TODO
+}
+
 void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId)
 {
     if (mSaveInDatabase) {

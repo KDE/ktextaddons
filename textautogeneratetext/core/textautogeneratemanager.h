@@ -246,6 +246,13 @@ public:
      */
     [[nodiscard]] QString generateAttachmentTemporaryFile(const QByteArray &attachmentId) const;
 
+    /*!
+     * \brief importChat
+     * \param title
+     * \param msgs
+     */
+    void importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
+
 Q_SIGNALS:
     /*!
      */
