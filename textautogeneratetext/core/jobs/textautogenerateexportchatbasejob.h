@@ -46,6 +46,10 @@ public:
      */
     void start();
 
+    /*!
+     */
+    [[nodiscard]] virtual QString filter() const;
+
 Q_SIGNALS:
     /*!
      */
