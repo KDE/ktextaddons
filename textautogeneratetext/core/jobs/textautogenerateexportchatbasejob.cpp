@@ -39,6 +39,11 @@ void TextAutoGenerateExportChatBaseJob::start()
     exportChat();
 }
 
+QString TextAutoGenerateExportChatBaseJob::filter() const
+{
+    return {};
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateExportChatBaseJob::ExportChatInfo &t)
 {
     d.space() << "filename:" << t.filename;
