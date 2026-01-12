@@ -8,6 +8,7 @@
 #include "autogeneratetext_ollama_plugin_debug.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
+#include "core/textautogeneratetextutils.h"
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
 #include "ollamareply.h"
@@ -128,7 +129,7 @@ void OllamaPlugin::askToAssistant(const QString &msg)
     req.setMessage(msg);
     req.setModel(currentModel());
     auto reply = mOllamaManager->getCompletion(req);
-    const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
+    const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, this]() {

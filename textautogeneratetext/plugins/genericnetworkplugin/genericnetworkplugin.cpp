@@ -11,6 +11,7 @@
 #include "core/textautogeneratetextinstance.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextrequest.h"
+#include "core/textautogeneratetextutils.h"
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkmanager.h"
 #include "genericnetworkserverinfo.h"
@@ -174,7 +175,7 @@ void GenericNetworkPlugin::askToAssistant(const QString &msg)
     req.setMessages(array);
     req.setModel(currentModel());
     auto reply = mGenericManager->getCompletion(req);
-    const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
+    const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, this]() {

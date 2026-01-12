@@ -5,6 +5,7 @@
  */
 
 #include "textautogenerateimportchatasjsonjob.h"
+#include "core/textautogeneratetextutils.h"
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonObject>

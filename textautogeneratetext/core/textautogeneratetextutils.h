@@ -17,5 +17,8 @@ namespace TextAutoGenerateTextUtils
 /*!
  */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList instancesList(KConfig *config);
+/*!
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QByteArray generateUUid();
 };
 }

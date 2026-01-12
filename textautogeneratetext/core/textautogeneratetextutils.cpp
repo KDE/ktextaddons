@@ -22,3 +22,8 @@ QStringList TextAutoGenerateTextUtils::instancesList(KConfig *config)
     static const QRegularExpression regularExpression(u"^Instance #\\d+$"_s);
     return config->groupList().filter(regularExpression);
 }
+
+QByteArray TextAutoGenerateTextUtils::generateUUid()
+{
+    return QUuid::createUuid().toByteArray(QUuid::Id128);
+}

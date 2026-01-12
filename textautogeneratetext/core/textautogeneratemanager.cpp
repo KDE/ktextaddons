@@ -9,6 +9,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
+#include "core/textautogeneratetextutils.h"
 #include "core/textautogeneratetoolcalljob.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratechatsettings.h"
@@ -185,7 +186,7 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
     // Switch back to not archived list
     setShowArchived(false);
     TextAutoGenerateChat chat;
-    const QByteArray chatId = QUuid::createUuid().toByteArray(QUuid::Id128);
+    const QByteArray chatId = TextAutoGenerateTextUtils::generateUUid();
     chat.setIdentifier(chatId);
     chat.setTitle(title);
     // we don't need to initialize it. (new chat => no data)

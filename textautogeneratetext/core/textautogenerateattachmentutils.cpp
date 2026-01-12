@@ -5,6 +5,7 @@
 */
 #include "textautogenerateattachmentutils.h"
 #include "core/textautogenerateattachments.h"
+#include "core/textautogeneratetextutils.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QFile>
 #include <QFileInfo>
@@ -75,7 +76,7 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
     info.mimeType = mimeType.name().toLatin1();
     info.attachmentType = generateAttachmentType(info.mimeType);
     info.name = fileInfo.fileName();
-    info.attachmentId = QUuid::createUuid().toByteArray(QUuid::Id128);
+    info.attachmentId = TextAutoGenerateTextUtils::generateUUid();
     const QByteArray ba = extractContentFromFile(fileName);
     if (info.attachmentType == TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image) {
         // Convert to png ?
