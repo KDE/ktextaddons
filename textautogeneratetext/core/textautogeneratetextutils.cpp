@@ -9,6 +9,7 @@
 #include <QCoreApplication>
 #include <QRegularExpression>
 #include <QStandardPaths>
+#include <QUuid>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 
