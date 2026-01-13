@@ -578,8 +578,12 @@ void TextAutoGenerateManager::importChat(const QString &title, const QList<TextA
 {
     createNewChat(title);
     auto messagesModel = messagesModelFromChatId(currentChatId());
-    messagesModel->setMessages(msgs);
-    saveCurrentChatInDataBase(currentChatId());
+    if (messagesModel) {
+        messagesModel->setMessages(msgs);
+        saveCurrentChatInDataBase(currentChatId());
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to import file";
+    }
 }
 
 void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId)
