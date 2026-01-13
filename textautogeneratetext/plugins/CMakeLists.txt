@@ -3,3 +3,4 @@
 
 add_subdirectory(ollama)
 add_subdirectory(genericnetworkplugin)
+add_subdirectory(ollamaonline)
