@@ -24,7 +24,7 @@ QString OllamaClient::name() const
 
 QString OllamaClient::translatedName() const
 {
-    return i18n("Ollama");
+    return i18n("Ollama (Managed)");
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
