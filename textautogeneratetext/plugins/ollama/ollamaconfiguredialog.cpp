@@ -64,7 +64,7 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
 
     const QString modelCreatePageName = i18nc("@title Preferences page name", "Create Models");
     auto configureModelCreateWidgetPage = new KPageWidgetItem(mOllamaModelCreateWidget, modelCreatePageName);
-    configureModelCreateWidgetPage->setIcon(QIcon::fromTheme(u"://a>ollama-created-model"_s));
+    configureModelCreateWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-created-model"_s));
 
     mOllamaModelCreateWidget->setObjectName(u"mOllamaModelCreateWidget"_s);
     addPage(configureModelCreateWidgetPage);
