@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-10 00:41+0000\n"
+"POT-Creation-Date: 2026-01-13 08:40+0000\n"
 "PO-Revision-Date: 2026-01-07 06:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -64,57 +64,57 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>ხელსაწყოები:</b> %1"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/textautogeneratemanager.cpp:145
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Small"
 msgstr "პატარა"
 
-#: core/textautogeneratemanager.cpp:147
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Medium"
 msgstr "საშუალო"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Big"
 msgstr "დიდი"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Huge"
 msgstr "უზარმაზარი"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Multilingual"
 msgstr "მრავალენოვანი"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Code"
 msgstr "კოდი"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Math"
 msgstr "მათემატიკა"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Vision"
 msgstr "ხედვა"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:162
 #, kde-format
 msgid "Embedding"
 msgstr "ჩაშენება"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Reasoning"
 msgstr "მსჯელობა"
@@ -2027,7 +2027,7 @@ msgctxt "@info:tooltip"
 msgid "Show Model Info"
 msgstr "მოდელის ინფორმაციის ჩვენება"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:109
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
