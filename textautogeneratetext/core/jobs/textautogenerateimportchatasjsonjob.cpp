@@ -50,3 +50,5 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
     }
     deleteLater();
 }
+
+#include "moc_textautogenerateimportchatasjsonjob.cpp"
