@@ -34,7 +34,7 @@ QString ExampleTextToolPlugin::displayName() const
 QString ExampleTextToolPlugin::description() const
 {
     // Don't translate it
-    return u"Use this tools, only on meteo. Get the current weather for a city (not implemented just example)"_s;
+    return u"Use this tool to get the current weather for a city (not implemented, just an example)"_s;
 }
 
 void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
