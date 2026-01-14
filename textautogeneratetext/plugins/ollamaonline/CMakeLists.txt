@@ -25,6 +25,8 @@ target_sources(
         ollamaonlineconfiguredialog.cpp
         ollamaonlineconfigurewidget.h
         ollamaonlineconfigurewidget.cpp
+        ollamaonlinesettings.cpp
+        ollamaonlinesettings.h
 )
 
 # precompiled headers support
@@ -110,3 +112,7 @@ target_link_libraries(
         KF6::WidgetsAddons
 )
 install(TARGETS autogeneratetext_ollamaonline DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
