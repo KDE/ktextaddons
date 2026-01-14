@@ -9,6 +9,7 @@
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
 #include "ollamaonlineconfiguredialog.h"
+#include "ollamaonlinesettings.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -16,11 +17,13 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
                                        TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                        QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
+    , mOllamaOnlineSettings(new OllamaOnlineSettings)
 {
 }
 
 OllamaOnlinePlugin::~OllamaOnlinePlugin()
 {
+    delete mOllamaOnlineSettings;
 }
 
 void OllamaOnlinePlugin::load(const KConfigGroup &config)
@@ -119,33 +122,27 @@ void OllamaOnlinePlugin::sendToAssistant(const SendToAssistantInfo &info)
 
 QString OllamaOnlinePlugin::displayName() const
 {
-    return {};
-    // return mOllamaSettings->displayName();
+    return mOllamaOnlineSettings->displayName();
 }
 
 void OllamaOnlinePlugin::setDisplayName(const QString &newName)
 {
-    // mOllamaSettings->setDisplayName(newName);
+    mOllamaOnlineSettings->setDisplayName(newName);
 }
 
 QString OllamaOnlinePlugin::currentModel() const
 {
-    return {};
-    /*
-    if (mOllamaSettings->currentModel().isEmpty()) {
+    if (mOllamaOnlineSettings->currentModel().isEmpty()) {
         return fallBackModel();
     }
-    return mOllamaSettings->currentModel();
-    */
+    return mOllamaOnlineSettings->currentModel();
 }
 
 void OllamaOnlinePlugin::setCurrentModel(const QString &m)
 {
-    /*
-    mOllamaSettings->setCurrentModel(m);
+    mOllamaOnlineSettings->setCurrentModel(m);
     Q_EMIT configChanged();
     Q_EMIT currentModelChanged();
-    */
 }
 
 bool OllamaOnlinePlugin::hasVisionSupport() const

@@ -8,8 +8,7 @@
 
 #include "core/textautogeneratetextplugin.h"
 
-class OllamaManager;
-class OllamaSettings;
+class OllamaOnlineSettings;
 class OllamaOnlinePlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
@@ -43,4 +42,7 @@ public:
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
+
+private:
+    OllamaOnlineSettings *const mOllamaOnlineSettings;
 };
