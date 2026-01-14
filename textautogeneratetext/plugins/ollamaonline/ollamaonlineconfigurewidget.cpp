@@ -27,3 +27,5 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(QWidget *parent)
 }
 
 OllamaOnlineConfigureWidget::~OllamaOnlineConfigureWidget() = default;
+
+#include "moc_ollamaonlineconfigurewidget.cpp"

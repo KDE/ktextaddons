@@ -20,3 +20,5 @@ void OllamaOnlineSettingsTest::shouldHaveDefaultValues()
     QVERIFY(settings.displayName().isEmpty());
     QVERIFY(settings.serverUrl().isEmpty());
 }
+
+#include "moc_ollamaonlinesettingstest.cpp"
