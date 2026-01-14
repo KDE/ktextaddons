@@ -128,14 +128,24 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         menu.addSeparator();
 
         if (index.isValid()) {
-            auto renameHistory = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
-            connect(renameHistory, &QAction::triggered, this, [index, this]() {
+            auto renameHistoryAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
+            connect(renameHistoryAction, &QAction::triggered, this, [index, this]() {
                 const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                 if (!uuid.isEmpty()) {
                     edit(index);
                 }
             });
-            menu.addAction(renameHistory);
+            menu.addAction(renameHistoryAction);
+
+            menu.addSeparator();
+            auto duplicateChatAction = new QAction(QIcon::fromTheme(u"edit-duplicate"_s), i18nc("@action", "Duplicate…"), &menu);
+            connect(duplicateChatAction, &QAction::triggered, this, [index, this]() {
+                const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+                if (!uuid.isEmpty()) {
+                    mManager->duplicateChat(uuid);
+                }
+            });
+            menu.addAction(duplicateChatAction);
 
             menu.addSeparator();
 
