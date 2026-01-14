@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:40+0000\n"
+"POT-Creation-Date: 2026-01-14 00:42+0000\n"
 "PO-Revision-Date: 2026-01-01 11:54+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -2010,10 +2010,10 @@ msgctxt "@info:tooltip"
 msgid "Show Model Info"
 msgstr "Otwórz adres URL informacji o modelu"
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
-msgid "Ollama"
-msgstr "Ollama"
+msgid "Ollama (Managed)"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
@@ -2127,6 +2127,12 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Nie udało się uruchomić Ollama"
 
+#: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollamaonline/ollamapluginonline.cpp:110
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
+
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
@@ -2172,6 +2178,17 @@ msgstr "Nie znaleziono Ollama w systemie."
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Nie można rozpocząć uruchomić Ollama."
+
+#: plugins/ollamaonline/ollamaonlineclient.cpp:26
+#, kde-format
+msgid "Ollama (Online)"
+msgstr ""
+
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:41
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgid "Ollama Online"
+msgstr "Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
