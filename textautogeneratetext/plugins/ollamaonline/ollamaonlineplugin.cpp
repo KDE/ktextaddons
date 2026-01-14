@@ -9,6 +9,7 @@
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
 #include "ollamaonlineconfiguredialog.h"
+#include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
 #include <KLocalizedString>
 
@@ -18,6 +19,7 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
                                        QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
     , mOllamaOnlineSettings(new OllamaOnlineSettings)
+    , mOllamaOnlineManager(new OllamaOnlineManager(mOllamaOnlineSettings, this))
 {
 }
 
@@ -54,7 +56,7 @@ QString OllamaOnlinePlugin::translatedPluginName() const
 
 void OllamaOnlinePlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    OllamaOnlineConfigureDialog d(/*mOllamaManager, */ parentWidget);
+    OllamaOnlineConfigureDialog d(mOllamaOnlineManager, parentWidget);
     if (d.exec()) {
         Q_EMIT configChanged();
     }

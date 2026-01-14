@@ -7,15 +7,18 @@
 #pragma once
 #include "textautogenerateollamaonline_export.h"
 #include <KPageDialog>
-
+class OllamaOnlineConfigureWidget;
+class OllamaOnlineManager;
 class TEXTAUTOGENERATEOLLAMAONLINE_EXPORT OllamaOnlineConfigureDialog : public KPageDialog
 {
     Q_OBJECT
 public:
-    explicit OllamaOnlineConfigureDialog(QWidget *parent);
+    explicit OllamaOnlineConfigureDialog(OllamaOnlineManager *manager, QWidget *parent);
     ~OllamaOnlineConfigureDialog() override;
 
 private:
-    void readConfig();
-    void writeConfig();
+    TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void writeConfig();
+    TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void slotAccepted();
+    OllamaOnlineConfigureWidget *const mOllamaOnlineConfigureWidget;
 };

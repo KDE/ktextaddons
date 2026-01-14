@@ -5,10 +5,13 @@
 */
 
 #include "ollamaonlineconfiguredialog.h"
+#include "ollamaonlineconfigurewidget.h"
+#include "ollamaonlinemanager.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KWindowConfig>
+#include <QPushButton>
 #include <QWindow>
 namespace
 {
@@ -16,17 +19,37 @@ const char myOllamaOnlineConfigureDialogGroupName[] = "OllamaOnlineConfigureDial
 }
 
 using namespace Qt::Literals::StringLiterals;
-OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(QWidget *parent)
+OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *manager, QWidget *parent)
     : KPageDialog(parent)
+    , mOllamaOnlineConfigureWidget(new OllamaOnlineConfigureWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama Online"));
+    setFaceType(KPageDialog::List);
+
+    const QString generalPageName = i18nc("@title Preferences page name", "General");
+    auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaOnlineConfigureWidget, generalPageName);
+    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
+    mOllamaOnlineConfigureWidget->setObjectName(u"mOllamaConfigureWidget"_s);
+    addPage(configureGeneralWidgetPage);
+
+    connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaOnlineConfigureDialog::slotAccepted);
 
     readConfig();
+    auto okButton = button(QDialogButtonBox::StandardButton::Ok);
+    connect(mOllamaOnlineConfigureWidget, &OllamaOnlineConfigureWidget::enableOkButton, this, [okButton](bool state) {
+        okButton->setEnabled(state);
+    });
 }
 
 OllamaOnlineConfigureDialog::~OllamaOnlineConfigureDialog()
 {
     writeConfig();
+}
+
+void OllamaOnlineConfigureDialog::slotAccepted()
+{
+    mOllamaOnlineConfigureWidget->saveSettings();
+    accept();
 }
 
 void OllamaOnlineConfigureDialog::readConfig()

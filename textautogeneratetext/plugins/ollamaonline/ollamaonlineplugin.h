@@ -9,6 +9,7 @@
 #include "core/textautogeneratetextplugin.h"
 
 class OllamaOnlineSettings;
+class OllamaOnlineManager;
 class OllamaOnlinePlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
@@ -45,4 +46,5 @@ protected:
 
 private:
     OllamaOnlineSettings *const mOllamaOnlineSettings;
+    OllamaOnlineManager *const mOllamaOnlineManager;
 };

@@ -31,10 +31,14 @@ public:
 
     [[nodiscard]] OllamaOnlineSettings *ollamaOnlineSettings() const;
 
+    [[nodiscard]] QString apiKey() const;
+    void setApiKey(const QString &newApiKey);
+
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);
 
 private:
     OllamaOnlineSettings *const mOllamaOnlineSettings;
+    QString mApiKey;
 };

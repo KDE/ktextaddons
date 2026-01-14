@@ -7,14 +7,22 @@
 
 #include <QWidget>
 class QLineEdit;
+class OllamaOnlineManager;
 class OllamaOnlineConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaOnlineConfigureWidget(QWidget *parent = nullptr);
+    explicit OllamaOnlineConfigureWidget(OllamaOnlineManager *manager, QWidget *parent = nullptr);
     ~OllamaOnlineConfigureWidget() override;
+
+    void loadSettings();
+    void saveSettings();
+
+Q_SIGNALS:
+    void enableOkButton(bool enabled);
 
 private:
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
+    OllamaOnlineManager *const mManager;
 };
