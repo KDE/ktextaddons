@@ -1,16 +1,16 @@
 # Translation of libtextautogeneratetext.po to Catalan (Valencian)
-# Copyright (C) 2025 This_file_is_part_of_KDE
+# Copyright (C) 2025-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2025 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 02:37+0000\n"
-"PO-Revision-Date: 2025-12-23 08:49+0100\n"
+"PO-Revision-Date: 2026-01-12 13:28+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -254,7 +254,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr "Models de llenguatge extensos d'IA Mistral"
+msgstr "Models de llenguatge grans d'IA Mistral"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
 #, kde-format
@@ -279,7 +279,7 @@ msgstr "API de Llama AI de Meta"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Models de llenguatge extensos de Kimi, fets per Moonshot AI"
+msgstr "Models de llenguatge grans de Kimi, fets per Moonshot AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -517,14 +517,13 @@ msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
 "0.5B to 110B parameters"
 msgstr ""
-"Qwen 1.5 és una sèrie de models de llenguatge extens d'Alibaba Cloud que "
+"Qwen 1.5 és una sèrie de models de llenguatge grans d'Alibaba Cloud que "
 "abasten des de 0,5 B fins als 110 B paràmetres"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
-msgstr ""
-"Qwen2 és una sèrie nova de models de llenguatge extens del grup Alibaba"
+msgstr "Qwen2 és una sèrie nova de models de llenguatge grans del grup Alibaba"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
 #, kde-format
@@ -571,9 +570,9 @@ msgid ""
 "vision encoder and Vicuna for general-purpose visual and language "
 "understanding. Updated to version 1.6."
 msgstr ""
-"LLaVA és un model multimodal nou extens entrenat d'extrem a extrem que "
-"combina un codificador de visió i el Vicuna per a la comprensió visual i "
-"lingüística de propòsit general. Actualitzat a la versió 1.6."
+"LLaVA és un model multimodal gran nou entrenat d'extrem a extrem que combina "
+"un codificador de visió i el Vicuna per a la comprensió visual i lingüística "
+"de propòsit general. Actualitzat a la versió 1.6."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:37
 #, kde-format
@@ -581,7 +580,7 @@ msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
 msgstr ""
-"Un model de llenguatge extens que pot utilitzar peticions de text per a "
+"Un model de llenguatge gran que pot utilitzar peticions de text per a "
 "generar i debatre codi."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
@@ -615,7 +614,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:42
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr "Model d'immersió extens d'última generació de mixedbread.ai"
+msgstr "Model d'immersió gran d'última generació de mixedbread.ai"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
@@ -704,9 +703,8 @@ msgid ""
 "State of the art large language model from Microsoft AI with improved "
 "performance on complex chat, multilingual, reasoning and agent use cases."
 msgstr ""
-"Model de llenguatge extens d'última generació de Microsoft AI amb un "
-"rendiment millor en casos d'ús de xat complex, multilingüe, raonament i "
-"agents."
+"Model de llenguatge gran d'última generació de Microsoft AI amb un rendiment "
+"millor en casos d'ús de xat complex, multilingüe, raonament i agents."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:61
 #, kde-format
@@ -739,7 +737,7 @@ msgid ""
 "Command R is a Large Language Model optimized for conversational interaction "
 "and long context tasks."
 msgstr ""
-"Command R és un model de llenguatge extens optimitzat per a la interacció "
+"Command R és un model de llenguatge gran optimitzat per a la interacció "
 "conversacional i les tasques de context llarg."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:67
@@ -776,7 +774,7 @@ msgid ""
 "overtaking similarly and larger sized models."
 msgstr ""
 "Un model d'IA lleuger amb 3.800 milions de paràmetres amb un rendiment "
-"avançat de manera similar i models de mida més extensa."
+"avançat de manera similar i models de mida més gran."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
@@ -890,8 +888,8 @@ msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
 "data."
 msgstr ""
-"CodeQwen1.5 és un model de llenguatge extens preentrenat en una quantitat "
-"gran de dades de codi."
+"CodeQwen1.5 és un model de llenguatge gran preentrenat en una quantitat gran "
+"de dades de codi."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
 #, kde-format
@@ -908,8 +906,8 @@ msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
 "excel at real-world enterprise use cases."
 msgstr ""
-"Command R+ és un model de llenguatge extens potent i escalable dissenyat per "
-"a excel·lir en casos d'ús d'empreses del món real."
+"Command R+ és un model de llenguatge gran potent i escalable dissenyat per a "
+"excel·lir en casos d'ús d'empreses del món real."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
@@ -1114,7 +1112,7 @@ msgid ""
 "Starling is a large language model trained by reinforcement learning from AI "
 "feedback focused on improving chatbot helpfulness."
 msgstr ""
-"Starling és un model de llenguatge extens entrenat per a l'aprenentatge de "
+"Starling és un model de llenguatge gran entrenat per a l'aprenentatge de "
 "reforç de la retroalimentació de la IA centrat en la millora de "
 "l'assistència de bots de conversa."
 
@@ -1152,7 +1150,7 @@ msgid ""
 "A large language model built by the Technology Innovation Institute (TII) "
 "for use in summarization, text generation, and chat bots."
 msgstr ""
-"Un model de llenguatge extens construït per Technology Innovation Institute "
+"Un model de llenguatge gran construït per Technology Innovation Institute "
 "(TII) per al seu ús en resums, generació de text i bots de conversa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:132
@@ -1170,8 +1168,8 @@ msgid ""
 "A compact, yet powerful 10.7B large language model designed for single-turn "
 "conversation."
 msgstr ""
-"Un model de llenguatge extens compacte, però potent, de 10,7 B dissenyat per "
-"a la conversa d'un sol torn."
+"Un model de llenguatge gran compacte, però potent, de 10,7 B dissenyat per a "
+"la conversa d'un sol torn."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:134
 #, kde-format
@@ -1223,7 +1221,7 @@ msgid ""
 "category below 70B."
 msgstr ""
 "Mistral Small 3 establix un índex de referència nou en la categoria de "
-"models de llenguatge extensos «petits» per davall de 70 B."
+"models de llenguatge grans «petits» per davall de 70 B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
 #, kde-format
@@ -1290,7 +1288,7 @@ msgid ""
 "Open-source medical large language model adapted from Llama 2 to the medical "
 "domain."
 msgstr ""
-"Model de llenguatge extens mèdic de codi obert adaptat de Llama 2 al domini "
+"Model de llenguatge gran mèdic de codi obert adaptat de Llama 2 al domini "
 "mèdic."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
@@ -1308,9 +1306,9 @@ msgid ""
 "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
 "NVIDIA to improve the helpfulness of LLM generated responses to user queries."
 msgstr ""
-"Llama-3.1-Nemotron-70B-Instruct és un model de llenguatge extens "
-"personalitzat per NVIDIA per a millorar l'ajuda de les respostes generades "
-"per LLM a les consultes dels usuaris."
+"Llama-3.1-Nemotron-70B-Instruct és un model de llenguatge gran personalitzat "
+"per NVIDIA per a millorar l'ajuda de les respostes generades per LLM a les "
+"consultes dels usuaris."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:157
 #, kde-format
@@ -1436,7 +1434,7 @@ msgid ""
 "Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
 "parameters designed to fit into a single GPU"
 msgstr ""
-"Solar Pro Preview: un model de llenguatge extens (LLM) avançat amb 22 mil "
+"Solar Pro Preview: un model de llenguatge gran (LLM) avançat amb 22 mil "
 "milions de paràmetres dissenyats per a ajustar-se a una GPU única"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
@@ -1518,7 +1516,7 @@ msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
 "International Digital Commerce Group (AIDC-AI)."
 msgstr ""
-"Un model de raonament extens obert per a solucions del món real per part del "
+"Un model de raonament gran obert per a solucions del món real per part del "
 "Grup Internacional de Comerç Digital d'Alibaba (AIDC-AI)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
@@ -1896,7 +1894,7 @@ msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
-"Qwen3 és l'última generació de models de llenguatge extensos en la sèrie de "
+"Qwen3 és l'última generació de models de llenguatge grans en la sèrie de "
 "Qwen, oferint un conjunt complet de models densos i Mixture of Experts (MoE)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
