@@ -253,6 +253,11 @@ public:
      */
     void importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
 
+    /*!
+     * \brief duplicateChat This method duplicates chats and messages
+     * \param chatId
+     */
+    void duplicateChat(const QByteArray &chatId);
 Q_SIGNALS:
     /*!
      */

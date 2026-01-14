@@ -387,6 +387,11 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
     return false;
 }
 
+void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
+{
+    // TODO
+}
+
 void TextAutoGenerateManager::archiveDiscussion(const QByteArray &chatId, bool archive)
 {
     mTextAutoGenerateChatsModel->archiveDiscussion(chatId, archive);
