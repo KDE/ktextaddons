@@ -28,7 +28,7 @@ public:
 
 private:
     QString mDisplayName;
-    QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
+    QUrl mServerUrl;
     QString mDefaultModelPath;
     QString mCurrentModel;
 };

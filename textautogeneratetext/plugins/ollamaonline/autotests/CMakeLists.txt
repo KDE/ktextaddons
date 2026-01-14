@@ -26,3 +26,4 @@ macro(add_ollamaonline_plugin_unittest _source)
                 ON
     )
 endmacro()
+add_ollamaonline_plugin_unittest(ollamaonlinesettingstest.cpp)
