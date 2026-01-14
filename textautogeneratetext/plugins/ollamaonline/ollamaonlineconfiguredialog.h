@@ -14,4 +14,8 @@ class TEXTAUTOGENERATEOLLAMAONLINE_EXPORT OllamaOnlineConfigureDialog : public K
 public:
     explicit OllamaOnlineConfigureDialog(QWidget *parent);
     ~OllamaOnlineConfigureDialog() override;
+
+private:
+    void readConfig();
+    void writeConfig();
 };
