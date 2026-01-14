@@ -66,7 +66,8 @@ void TextAutoGenerateMenuTextManager::save()
 QStringList TextAutoGenerateMenuTextManager::keyRecorderList(KSharedConfig::Ptr &config) const
 {
     config = KSharedConfig::openConfig();
-    const QStringList keyGroups = config->groupList().filter(QRegularExpression(u"AskIA #\\d+"_s));
+    const static QRegularExpression keyGroupRegularExpression(u"AskIA #\\d+"_s);
+    const QStringList keyGroups = config->groupList().filter(keyGroupRegularExpression);
     return keyGroups;
 }
 
