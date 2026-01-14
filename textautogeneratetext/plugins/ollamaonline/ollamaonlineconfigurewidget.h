@@ -8,6 +8,7 @@
 #include <QWidget>
 class QLineEdit;
 class OllamaOnlineManager;
+class KPasswordLineEdit;
 class OllamaOnlineConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -24,5 +25,6 @@ Q_SIGNALS:
 private:
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
+    KPasswordLineEdit *const mApiKey;
     OllamaOnlineManager *const mManager;
 };

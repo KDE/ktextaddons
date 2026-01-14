@@ -40,11 +40,17 @@ public:
     [[nodiscard]] bool hasOcrSupport() const override;
     [[nodiscard]] bool hasAudioSupport() const override;
 
+    void remove() override;
+Q_SIGNALS:
+    void loadApiKeyDone();
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
 
 private:
+    void removeApiKey();
+    void loadApiKey();
     OllamaOnlineSettings *const mOllamaOnlineSettings;
     OllamaOnlineManager *const mOllamaOnlineManager;
 };

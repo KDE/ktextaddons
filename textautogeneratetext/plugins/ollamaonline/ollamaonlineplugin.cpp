@@ -5,6 +5,7 @@
 */
 
 #include "ollamaonlineplugin.h"
+#include "autogeneratetext_ollamaonline_plugin_debug.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
@@ -12,7 +13,7 @@
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
 #include <KLocalizedString>
-
+#include <qt6keychain/keychain.h>
 using namespace Qt::Literals::StringLiterals;
 OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                        TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
@@ -21,6 +22,11 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
     , mOllamaOnlineSettings(new OllamaOnlineSettings)
     , mOllamaOnlineManager(new OllamaOnlineManager(mOllamaOnlineSettings, this))
 {
+    connect(this, &OllamaOnlinePlugin::loadApiKeyDone, this, [this]() {
+        if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
+            mOllamaOnlineManager->loadModels();
+        }
+    });
 }
 
 OllamaOnlinePlugin::~OllamaOnlinePlugin()
@@ -35,6 +41,7 @@ void OllamaOnlinePlugin::load(const KConfigGroup &config)
         mOllamaOnlineSettings->setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
     }
     mOllamaOnlineSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    loadApiKey();
 }
 
 void OllamaOnlinePlugin::save(KConfigGroup &config)
@@ -42,6 +49,40 @@ void OllamaOnlinePlugin::save(KConfigGroup &config)
     config.writeEntry(u"Name"_s, mOllamaOnlineSettings->displayName());
     config.writeEntry(u"ServerUrl"_s, mOllamaOnlineSettings->serverUrl());
     config.writeEntry(u"CurrentModel"_s, mOllamaOnlineSettings->currentModel());
+}
+
+void OllamaOnlinePlugin::removeApiKey()
+{
+    auto deleteJob = new QKeychain::DeletePasswordJob(QStringLiteral("OllamaOnlinePluginAutoGenerateText"));
+    deleteJob->setKey(QString::fromLatin1(instanceUuid()));
+    connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
+        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+        Q_ASSERT(job);
+        if (job->error()) {
+            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "We have an error during deleting password " << job->errorString();
+        } else {
+            mOllamaOnlineManager->setApiKey(job->textData());
+            Q_EMIT loadApiKeyDone();
+        }
+    });
+    deleteJob->start();
+}
+
+void OllamaOnlinePlugin::loadApiKey()
+{
+    auto readJob = new QKeychain::ReadPasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
+    connect(readJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
+        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+        Q_ASSERT(job);
+        if (job->error()) {
+            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "We have an error during reading password " << job->errorString();
+        } else {
+            mOllamaOnlineManager->setApiKey(job->textData());
+            Q_EMIT loadApiKeyDone();
+        }
+    });
+    readJob->setKey(QString::fromLatin1(instanceUuid()));
+    readJob->start();
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType OllamaOnlinePlugin::engineType() const
@@ -174,4 +215,10 @@ bool OllamaOnlinePlugin::hasAudioSupport() const
 {
     return false;
 }
+
+void OllamaOnlinePlugin::remove()
+{
+    removeApiKey();
+}
+
 #include "moc_ollamaonlineplugin.cpp"
