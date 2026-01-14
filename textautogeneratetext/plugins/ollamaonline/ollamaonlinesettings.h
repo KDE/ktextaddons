@@ -10,7 +10,6 @@
 #include <QString>
 #include <QUrl>
 class QDebug;
-using namespace Qt::Literals::StringLiterals;
 class TEXTAUTOGENERATEOLLAMAONLINE_EXPORT OllamaOnlineSettings
 {
 public:

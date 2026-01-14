@@ -27,6 +27,8 @@ target_sources(
         ollamaonlineconfigurewidget.cpp
         ollamaonlinesettings.cpp
         ollamaonlinesettings.h
+        ollamaonlinemanager.h
+        ollamaonlinemanager.cpp
 )
 
 # precompiled headers support
