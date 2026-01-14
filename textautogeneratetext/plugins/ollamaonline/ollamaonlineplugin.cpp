@@ -28,10 +28,18 @@ OllamaOnlinePlugin::~OllamaOnlinePlugin()
 
 void OllamaOnlinePlugin::load(const KConfigGroup &config)
 {
+    mOllamaOnlineSettings->setDisplayName(config.readEntry(u"Name"_s));
+    if (config.hasKey(u"ServerUrl"_s)) {
+        mOllamaOnlineSettings->setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
+    }
+    mOllamaOnlineSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
 }
 
 void OllamaOnlinePlugin::save(KConfigGroup &config)
 {
+    config.writeEntry(u"Name"_s, mOllamaOnlineSettings->displayName());
+    config.writeEntry(u"ServerUrl"_s, mOllamaOnlineSettings->serverUrl());
+    config.writeEntry(u"CurrentModel"_s, mOllamaOnlineSettings->currentModel());
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType OllamaOnlinePlugin::engineType() const
