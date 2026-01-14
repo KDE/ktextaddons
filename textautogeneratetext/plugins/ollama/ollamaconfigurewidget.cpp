@@ -141,8 +141,7 @@ void OllamaConfigureWidget::displayModelInfo(const QString &modelStr)
 
 void OllamaConfigureWidget::showModelInfo(const QString &modelName)
 {
-    // TODO
-    qDebug() << " showModelInfo " << modelName;
+    // qDebug() << " showModelInfo " << modelName;
     mManager->showModelInfo(modelName);
 }
 
