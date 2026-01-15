@@ -53,12 +53,14 @@ void OllamaOnlineConfigureWidget::loadSettings()
 {
     mName->setText(mManager->ollamaOnlineSettings()->displayName());
     mServerUrl->setText(mManager->ollamaOnlineSettings()->serverUrl().toString());
+    mApiKey->setPassword(mManager->apiKey());
 }
 
 void OllamaOnlineConfigureWidget::saveSettings()
 {
     mManager->ollamaOnlineSettings()->setDisplayName(mName->text());
     mManager->ollamaOnlineSettings()->setServerUrl(QUrl(mServerUrl->text()));
+    mManager->setApiKey(mApiKey->password());
 }
 
 #include "moc_ollamaonlineconfigurewidget.cpp"
