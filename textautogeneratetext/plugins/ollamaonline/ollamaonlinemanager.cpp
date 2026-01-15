@@ -11,6 +11,7 @@
 #include "core/textautogenerateengineaccessmanager.h"
 // #include "ollamareply.h"
 #include "ollamaonlinesettings.h"
+#include "ollamaonlineutils.h"
 
 #include <KLocalizedString>
 
@@ -88,8 +89,7 @@ void OllamaOnlineManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-#if 0
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaUtils::tagsPath())};
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaOnlineUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
@@ -106,6 +106,7 @@ void OllamaOnlineManager::loadModels()
             return;
         }
         ModelsInfo info;
+#if 0
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
@@ -145,9 +146,9 @@ void OllamaOnlineManager::loadModels()
 
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
+#endif
         Q_EMIT modelsLoadDone(info);
     });
-#endif
 }
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)

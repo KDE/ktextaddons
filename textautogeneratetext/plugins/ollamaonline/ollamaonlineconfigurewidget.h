@@ -16,13 +16,13 @@ public:
     explicit OllamaOnlineConfigureWidget(OllamaOnlineManager *manager, QWidget *parent = nullptr);
     ~OllamaOnlineConfigureWidget() override;
 
-    void loadSettings();
     void saveSettings();
 
 Q_SIGNALS:
     void enableOkButton(bool enabled);
 
 private:
+    void loadSettings();
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     KPasswordLineEdit *const mApiKey;

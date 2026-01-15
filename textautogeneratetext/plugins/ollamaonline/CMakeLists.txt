@@ -29,6 +29,9 @@ target_sources(
         ollamaonlinesettings.h
         ollamaonlinemanager.h
         ollamaonlinemanager.cpp
+        ollamaonlineutils.h
+        ollamaonlineutils.cpp
+        textautogenerateollamaonline_private_export.h
 )
 
 # precompiled headers support

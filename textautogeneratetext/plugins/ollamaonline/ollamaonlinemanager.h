@@ -27,8 +27,6 @@ public:
 
     void showModelInfo(const QString &modelName);
 
-    [[nodiscard]] bool isAlreadyInstalled(const QString &modelName) const;
-
     [[nodiscard]] OllamaOnlineSettings *ollamaOnlineSettings() const;
 
     [[nodiscard]] QString apiKey() const;
