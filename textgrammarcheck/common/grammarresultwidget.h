@@ -14,8 +14,8 @@ namespace TextGrammarCheck
 {
 class GrammarAction;
 class GrammarResultTextEdit;
-/**
- * @brief The GrammarResultWidget class
+/*!
+ * \brief The GrammarResultWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarResultWidget : public QWidget

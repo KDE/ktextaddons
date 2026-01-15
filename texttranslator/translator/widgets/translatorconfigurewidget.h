@@ -10,6 +10,9 @@
 #include <QWidget>
 namespace TextTranslator
 {
+/*!
+ * \brief The TranslatorConfigureWidget class
+ */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
 {
     Q_OBJECT

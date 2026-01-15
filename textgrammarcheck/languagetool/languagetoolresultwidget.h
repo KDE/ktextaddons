@@ -12,8 +12,8 @@ namespace TextGrammarCheck
 {
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
-/**
- * @brief The LanguageToolResultWidget class
+/*!
+ * \brief The LanguageToolResultWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolResultWidget : public GrammarResultWidget

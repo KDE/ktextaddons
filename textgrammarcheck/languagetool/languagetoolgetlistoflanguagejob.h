@@ -13,8 +13,8 @@ class QNetworkAccessManager;
 class QNetworkReply;
 namespace TextGrammarCheck
 {
-/**
- * @brief The LanguageToolGetListOfLanguageJob class
+/*!
+ * \brief The LanguageToolGetListOfLanguageJob class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolGetListOfLanguageJob : public QObject

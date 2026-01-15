@@ -14,6 +14,9 @@ namespace TextTranslator
 {
 class TranslatorEngineLoaderPrivate;
 class TranslatorEngineClient;
+/*!
+ * \brief The TranslatorEngineLoader class
+ */
 class TEXTTRANSLATOR_EXPORT TranslatorEngineLoader : public QObject
 {
     Q_OBJECT

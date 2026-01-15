@@ -13,6 +13,9 @@ class QMenu;
 
 namespace TextTranslator
 {
+/*!
+ * \brief The TranslatorMenu class
+ */
 class TEXTTRANSLATOR_EXPORT TranslatorMenu : public QObject
 {
     Q_OBJECT

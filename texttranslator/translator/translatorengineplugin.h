@@ -16,6 +16,9 @@
 namespace TextTranslator
 {
 class TranslatorEnginePluginPrivate;
+/*!
+ * \brief The TranslatorEnginePlugin class
+ */
 class TEXTTRANSLATOR_EXPORT TranslatorEnginePlugin : public QObject
 {
     Q_OBJECT

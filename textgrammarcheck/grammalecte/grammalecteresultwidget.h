@@ -12,8 +12,8 @@
 namespace TextGrammarCheck
 {
 class GrammalecteResultJob;
-/**
- * @brief The GrammalecteResultWidget class
+/*!
+ * \brief The GrammalecteResultWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidget
