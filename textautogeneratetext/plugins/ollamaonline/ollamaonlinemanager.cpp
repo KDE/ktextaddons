@@ -85,27 +85,22 @@ void OllamaOnlineManager::getVersion()
 
 void OllamaOnlineManager::loadModels()
 {
-#if 0
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    mInstalledInfos.clear();
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaUtils::tagsPath())};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-/*
-    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + u"models"_s)};
+#if 0
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Api key is missing";
+        qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
     }
     req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
-  */
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;
-            info.errorOccured = i18n("Failed to connect to interface at %1: %2", mOllamaSettings->serverUrl().toString(), rep->errorString());
+            info.errorOccured = i18n("Failed to connect to interface at %1: %2", mOllamaOnlineSettings->serverUrl().toString(), rep->errorString());
             info.hasError = true;
             Q_EMIT modelsLoadDone(info);
             return;
