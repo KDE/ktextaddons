@@ -41,6 +41,7 @@ public:
     [[nodiscard]] bool hasAudioSupport() const override;
 
     void remove() override;
+    [[nodiscard]] QString passwordServiceName() const;
 Q_SIGNALS:
     void loadApiKeyDone();
 

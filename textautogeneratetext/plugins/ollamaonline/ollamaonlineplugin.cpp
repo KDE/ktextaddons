@@ -44,16 +44,30 @@ void OllamaOnlinePlugin::load(const KConfigGroup &config)
     loadApiKey();
 }
 
+QString OllamaOnlinePlugin::passwordServiceName() const
+{
+    return QStringLiteral("OllamaOnlinePluginAutoGenerateText");
+}
+
 void OllamaOnlinePlugin::save(KConfigGroup &config)
 {
     config.writeEntry(u"Name"_s, mOllamaOnlineSettings->displayName());
     config.writeEntry(u"ServerUrl"_s, mOllamaOnlineSettings->serverUrl());
     config.writeEntry(u"CurrentModel"_s, mOllamaOnlineSettings->currentModel());
+    auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
+    connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
+        if (baseJob->error() != QKeychain::Error::NoError) {
+            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "Error writing password using QKeychain:" << baseJob->errorString();
+        }
+    });
+    writeJob->setKey(QString::fromLatin1(instanceUuid()));
+    writeJob->setTextData(mOllamaOnlineManager->apiKey());
+    writeJob->start();
 }
 
 void OllamaOnlinePlugin::removeApiKey()
 {
-    auto deleteJob = new QKeychain::DeletePasswordJob(QStringLiteral("OllamaOnlinePluginAutoGenerateText"));
+    auto deleteJob = new QKeychain::DeletePasswordJob(passwordServiceName());
     deleteJob->setKey(QString::fromLatin1(instanceUuid()));
     connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
@@ -70,7 +84,7 @@ void OllamaOnlinePlugin::removeApiKey()
 
 void OllamaOnlinePlugin::loadApiKey()
 {
-    auto readJob = new QKeychain::ReadPasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
+    auto readJob = new QKeychain::ReadPasswordJob(passwordServiceName());
     connect(readJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
         Q_ASSERT(job);
@@ -110,11 +124,10 @@ QString OllamaOnlinePlugin::engineName() const
 
 void OllamaOnlinePlugin::askToAssistant(const QString &msg)
 {
-    /*
     TextAutoGenerateText::TextAutoGenerateTextRequest req;
     req.setMessage(msg);
     req.setModel(currentModel());
-    auto reply = mOllamaManager->getCompletion(req);
+    auto reply = mOllamaOnlineManager->getCompletion(req);
     const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,
@@ -134,7 +147,6 @@ void OllamaOnlinePlugin::askToAssistant(const QString &msg)
 #endif
                                                        // Q_EMIT finished(message); // TODO add message as argument ???
                                                    })));
-                                                   */
 }
 
 void OllamaOnlinePlugin::sendToAssistant(const SendToAssistantInfo &info)
