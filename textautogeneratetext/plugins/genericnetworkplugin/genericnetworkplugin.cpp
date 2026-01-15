@@ -75,9 +75,14 @@ void GenericNetworkPlugin::removeApiKey()
     deleteJob->start();
 }
 
+QString GenericNetworkPlugin::passwordServiceName() const
+{
+    return QStringLiteral("GenericPluginAutoGenerateText");
+}
+
 void GenericNetworkPlugin::loadApiKey()
 {
-    auto readJob = new QKeychain::ReadPasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
+    auto readJob = new QKeychain::ReadPasswordJob(passwordServiceName());
     connect(readJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
         Q_ASSERT(job);
@@ -109,7 +114,7 @@ void GenericNetworkPlugin::save(KConfigGroup &config)
     config.writeEntry(u"MaxToken"_s, mSettings->maxTokens());
     config.writeEntry(u"Temperature"_s, mSettings->temperature());
     config.writeEntry(u"Seed"_s, mSettings->seed());
-    auto writeJob = new QKeychain::WritePasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
+    auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
     connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         if (baseJob->error() != QKeychain::Error::NoError) {
             qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << "Error writing password using QKeychain:" << baseJob->errorString();
