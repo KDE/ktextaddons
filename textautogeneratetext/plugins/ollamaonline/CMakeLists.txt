@@ -91,7 +91,7 @@ add_library(autogeneratetext_ollamaonline MODULE)
 ecm_qt_declare_logging_category(autogeneratetext_ollamaonline
     HEADER autogeneratetext_ollamaonline_plugin_debug.h
     IDENTIFIER AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG
-    CATEGORY_NAME org.kde.kf.autogeneratetext.ollama_plugin
+    CATEGORY_NAME org.kde.kf.autogeneratetext.ollamaonline_plugin
     DESCRIPTION "autogenerate text ollama online (plugin)"
     EXPORT KTEXTADDONS
 )
