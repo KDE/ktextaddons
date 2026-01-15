@@ -8,8 +8,8 @@
 
 using namespace TextEditTextToSpeech;
 
-QTextToSpeechEngine *TextToSpeechKokoroPlugin::createTextToSpeechEngine(const QVariantMap &parameters, QObject *parent, QString *errorString) const
+QTextToSpeechEngine *
+TextToSpeechKokoroPlugin::createTextToSpeechEngine(const QVariantMap &parameters, QObject *parent, [[maybe_unused]] QString *errorString) const
 {
-    Q_UNUSED(errorString);
     return new TextToSpeechKokoroEngine(parameters, parent);
 }
