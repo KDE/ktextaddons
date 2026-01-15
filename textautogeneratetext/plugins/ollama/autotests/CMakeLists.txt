@@ -27,7 +27,6 @@ macro(add_ollama_plugin_unittest _source)
     )
 endmacro()
 
-add_ollama_plugin_unittest(ollamautilstest.cpp)
 add_ollama_plugin_unittest(ollamamodelavailableinfotest.cpp)
 add_ollama_plugin_unittest(ollamamodelsavailableinfostest.cpp)
 add_ollama_plugin_unittest(ollamamodellistviewtest.cpp)

@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class OllamaUtilsTest : public QObject
+class OllamaCommonUtilsTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit OllamaUtilsTest(QObject *parent = nullptr);
-    ~OllamaUtilsTest() override;
+    explicit OllamaCommonUtilsTest(QObject *parent = nullptr);
+    ~OllamaCommonUtilsTest() override;
 private Q_SLOTS:
     void shouldHaveUtilsPath();
 };

@@ -11,7 +11,7 @@ class QProgressBar;
 class QLabel;
 class OllamaManager;
 class QToolButton;
-class OllamaReply;
+class OllamaCommonReply;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDownloadProgressWidget : public QWidget
 {
     Q_OBJECT
@@ -32,5 +32,5 @@ private:
     OllamaManager *const mManager;
     QToolButton *const mCancelDownloadButton;
     QString mModelName;
-    QMap<QString, OllamaReply *> mDownloadReply;
+    QMap<QString, OllamaCommonReply *> mDownloadReply;
 };

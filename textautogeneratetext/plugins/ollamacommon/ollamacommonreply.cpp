@@ -4,8 +4,8 @@
 // Based on Alpaka code
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "ollamareply.h"
-#include "autogeneratetext_ollama_debug.h"
+#include "ollamacommonreply.h"
+#include "autogeneratetext_ollamacommon_debug.h"
 #include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -13,7 +13,7 @@
 
 using namespace Qt::StringLiterals;
 using namespace Qt::Literals::StringLiterals;
-OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
+OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}
 {
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
@@ -28,7 +28,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             mInfo.tokenCount = finalResponse["eval_count"_L1].toVariant().toULongLong();
             mInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
         }
-        qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama response finished";
+        qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama response finished";
         if (mDownloadError) {
             return;
         }
@@ -39,7 +39,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
         }
     });
     connect(mReply, &QNetworkReply::errorOccurred, mReply, [](QNetworkReply::NetworkError e) {
-        qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama HTTP error:" << e;
+        qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
         const QByteArray data = mReply->read(received - mReceivedSize);
@@ -110,14 +110,14 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
     });
 }
 
-OllamaReply::~OllamaReply()
+OllamaCommonReply::~OllamaCommonReply()
 {
     disconnect(mReply);
     mReply->abort();
     mReply->deleteLater();
 }
 
-TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse() const
+TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readResponse() const
 {
     TextAutoGenerateText::TextAutoGenerateReply::Response ret;
     switch (mRequestType) {
@@ -149,7 +149,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
     return ret;
 }
 
-QString OllamaReply::generateModelInfo() const
+QString OllamaCommonReply::generateModelInfo() const
 {
     QString mardown;
     const QJsonDocument doc = mTokens.constFirst();
@@ -178,7 +178,7 @@ QString OllamaReply::generateModelInfo() const
     return mardown;
 }
 
-TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaReply::parseDownLoadInfo(const QJsonDocument &doc) const
+TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaCommonReply::parseDownLoadInfo(const QJsonDocument &doc) const
 {
     const QJsonObject obj = doc.object();
     TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo info;
@@ -190,4 +190,4 @@ TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaReply::pars
     return info;
 }
 
-#include "moc_ollamareply.cpp"
+#include "moc_ollamacommonreply.cpp"

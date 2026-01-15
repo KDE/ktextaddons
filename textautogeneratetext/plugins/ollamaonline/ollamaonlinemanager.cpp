@@ -9,9 +9,9 @@
 #include "autogeneratetext_ollamaonline_debug.h"
 #include "autogeneratetext_ollamaonline_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
-// #include "ollamareply.h"
+#include "ollamacommonreply.h"
+#include "ollamacommonutils.h"
 #include "ollamaonlinesettings.h"
-#include "ollamaonlineutils.h"
 
 #include <KLocalizedString>
 
@@ -31,18 +31,18 @@ OllamaOnlineManager::~OllamaOnlineManager() = default;
 
 void OllamaOnlineManager::showModelInfo(const QString &modelName)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaOnlineUtils::modelInfoPath())};
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::modelInfoPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     QJsonObject data;
     data["model"_L1] = modelName;
 
     /*
-    auto reply = new OllamaReply{
+    auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaReply::RequestTypes::ShowModelInfo,
+        OllamaCommonReply::RequestTypes::ShowModelInfo,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
+    connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         const auto readResponse = reply->readResponse();
         qDebug() << " readResponse : " << readResponse;
         Q_EMIT finished(readResponse);
@@ -53,7 +53,7 @@ void OllamaOnlineManager::showModelInfo(const QString &modelName)
 void OllamaOnlineManager::getVersion()
 {
 #if 0
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaOnlineUtils::versionPath())};
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::versionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
@@ -89,7 +89,7 @@ void OllamaOnlineManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaOnlineUtils::tagsPath())};
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
@@ -154,7 +154,7 @@ void OllamaOnlineManager::loadModels()
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaOnlineUtils::completionPath())};
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
@@ -166,11 +166,11 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(
     data["model"_L1] = request.model();
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
 #if 0
-    auto reply = new OllamaReply{
+    auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaReply::RequestTypes::StreamingGenerate,
+        OllamaCommonReply::RequestTypes::StreamingGenerate,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
+    connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
     });
     return reply;
@@ -181,7 +181,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaOnlineUtils::chatPath())};
+    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
@@ -201,11 +201,11 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     }
     qDebug() << " OllamaOnlineManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
-    auto reply = new OllamaReply{
+    auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaReply::RequestTypes::StreamingChat,
+        OllamaCommonReply::RequestTypes::StreamingChat,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply]() {
+    connect(reply, &OllamaCommonReply::finished, this, [this, reply]() {
         Q_EMIT finished(reply->readResponse());
     });
     return reply;

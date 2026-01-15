@@ -9,9 +9,9 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
+#include "ollamacommonreply.h"
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
-#include "ollamareply.h"
 #include "ollamasettings.h"
 #include "ollamastartprocessjob.h"
 #include <KLocalizedString>
@@ -158,12 +158,12 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     const QByteArray chatId = info.chatId;
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
                                                        manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
                                                    })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, chatId, this] {
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, this] {
                                                        const auto response = reply->readResponse();
                                                        if (response.hasToolCallArguments()) {
                                                            manager()->callTools(chatId, messageUuid, response.info);

@@ -29,8 +29,6 @@ target_sources(
         ollamaonlinesettings.h
         ollamaonlinemanager.h
         ollamaonlinemanager.cpp
-        ollamaonlineutils.h
-        ollamaonlineutils.cpp
         textautogenerateollamaonline_private_export.h
 )
 
@@ -65,6 +63,7 @@ target_link_libraries(
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::WidgetsAddons
+        textautogenerateollamacommon
 )
 set_target_properties(
     textautogenerateollamaonline
@@ -116,6 +115,7 @@ target_link_libraries(
         KF6::I18n
         KF6::WidgetsAddons
         qt6keychain
+        textautogenerateollamacommon
 )
 install(TARGETS autogeneratetext_ollamaonline DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 

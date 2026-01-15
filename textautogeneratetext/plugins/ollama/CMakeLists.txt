@@ -25,16 +25,12 @@ target_sources(
         ollamaconfigurewidget.cpp
         ollamaconfiguredialog.h
         ollamaconfiguredialog.cpp
-        ollamautils.h
-        ollamautils.cpp
         ollamamanager.h
         ollamamanager.cpp
         ollamacomboboxwidget.h
         ollamacomboboxwidget.cpp
         ollamaconfigurecustomizewidget.h
         ollamaconfigurecustomizewidget.cpp
-        ollamareply.h
-        ollamareply.cpp
         ollamasettings.h
         ollamasettings.cpp
         ollamastartprocessjob.h
@@ -139,6 +135,7 @@ target_link_libraries(
         KF6::WidgetsAddons
         KF6::TextAddonsWidgets
         KF6::KIOWidgets
+        textautogenerateollamacommon
 )
 set_target_properties(
     textautogenerateollama
@@ -183,6 +180,7 @@ target_sources(
 target_link_libraries(
     autogeneratetext_ollama
     PRIVATE
+        textautogenerateollamacommon
         textautogenerateollama
         KF6::ConfigGui
         KF6::CoreAddons

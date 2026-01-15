@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
+#include "ollamacommonreply.h"
 #include "ollamaonlineconfiguredialog.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
@@ -151,26 +152,25 @@ void OllamaOnlinePlugin::askToAssistant(const QString &msg)
 
 void OllamaOnlinePlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
-    /*
     const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);
-    auto reply = mOllamaManager->getChatCompletion(req);
+    auto reply = mOllamaOnlineManager->getChatCompletion(req);
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
                                                        manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
                                                    })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, chatId, this] {
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, this] {
                                                        const auto response = reply->readResponse();
                                                        if (response.hasToolCallArguments()) {
                                                            manager()->callTools(chatId, messageUuid, response.info);
                                                        } else {
                                                            manager()->changeInProgress(chatId, messageUuid, false);
                                                        }
-                                                       qCDebug(AUTOGENERATETEXT_OLLAMA_PLUGIN_LOG) << " progress finished";
+                                                       qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << " progress finished";
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
 #if 0
@@ -180,7 +180,6 @@ void OllamaOnlinePlugin::sendToAssistant(const SendToAssistantInfo &info)
 #endif
                                                        // Q_EMIT finished(message); // TODO add message as argument ???
                                                    })));
-                                                   */
 }
 
 QString OllamaOnlinePlugin::displayName() const

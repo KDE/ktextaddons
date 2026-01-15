@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include "textautogenerateollama_export.h"
+#include "textautogenerateollamacommon_export.h"
 #include <QJsonDocument>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
@@ -13,19 +13,19 @@
 class QNetworkReply;
 
 /**
- * @brief The OllamaReply class represents a reply from an LLM.
+ * @brief The OllamaCommonReply class represents a reply from an LLM.
  *
  * If you want to stream a reply as it is written in real time, connect to contentAdded() and use readResponse() to retrieve
  * the new content. If you prefer to wait for the entire reply before displaying anything, connect to finished(), which will
  * only be emitted once the reply is complete.
  */
-class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaReply : public TextAutoGenerateText::TextAutoGenerateReply
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonReply : public TextAutoGenerateText::TextAutoGenerateReply
 {
     Q_OBJECT
 
 public:
-    explicit OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
-    ~OllamaReply() override;
+    explicit OllamaCommonReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
+    ~OllamaCommonReply() override;
 
     /**
      * @brief Get the current response content.
@@ -39,8 +39,8 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const override;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo
     parseDownLoadInfo(const QJsonDocument &doc) const;
-    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT QString generateModelInfo() const;
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT QString generateModelInfo() const;
     bool mDownloadError = false;
 };

@@ -13,7 +13,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class QDebug;
-class OllamaReply;
+class OllamaCommonReply;
 class OllamaSettings;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
@@ -33,7 +33,7 @@ public:
     void getVersion();
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
-    [[nodiscard]] OllamaReply *downloadModel(const QString &modelName);
+    [[nodiscard]] OllamaCommonReply *downloadModel(const QString &modelName);
     void deleteModel(const QString &modelName);
 
     void showModelInfo(const QString &modelName);
