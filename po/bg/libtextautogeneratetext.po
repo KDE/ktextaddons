@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:42+0000\n"
+"POT-Creation-Date: 2026-01-15 00:41+0000\n"
 "PO-Revision-Date: 2025-12-24 08:10+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -183,6 +183,7 @@ msgstr "Настройване на %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
@@ -197,6 +198,7 @@ msgstr "Налични модели"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Неуспешно свързване с интерфейс в %1: %2"
@@ -326,6 +328,7 @@ msgstr "База:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:35
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2076,6 +2079,7 @@ msgid "Create Models"
 msgstr "Създаване на модели"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:39
 #, kde-format
 msgid "Server Url:"
 msgstr "Адрес на сървър:"
@@ -2133,7 +2137,7 @@ msgstr ""
 "Тези записи са незадължителни и се използват за отстраняване на проблеми с "
 "Олама, свързани с графични карти."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:157
+#: plugins/ollama/ollamaconfigurewidget.cpp:156
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Неуспешно стартиране на 2Ollama"
@@ -2195,7 +2199,21 @@ msgstr "Невъзможно е да се стартира Ollama."
 msgid "Ollama (Online)"
 msgstr ""
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:41
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgctxt "@title:window"
+msgid "Configure Ollama Online"
+msgstr "Конфигуриране на Олама"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
+#, kde-format
+msgid "Api Key:"
+msgstr "Api ключ:"
+
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"
@@ -2471,7 +2489,7 @@ msgid "Modify…"
 msgstr "Промяна…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2498,11 +2516,6 @@ msgstr "Запитване към ИИ…"
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Конфигуриране…"
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
-#, kde-format
-msgid "Api Key:"
-msgstr "Api ключ:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
@@ -2720,42 +2733,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Нов чат"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:144
+#: widgets/view/textautogeneratehistorylistview.cpp:141
+#, kde-format
+msgctxt "@action"
+msgid "Duplicate…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Премахване от любими"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:144
+#: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Задаване като любим"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Архив"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:180
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Искате ли да премахнете тази дискусия?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:171
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Премахване на дискусията"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:252
+#: widgets/view/textautogeneratehistorylistview.cpp:262
 #, kde-format
 msgid "No Archive Found."
 msgstr "Не е намерен архив."

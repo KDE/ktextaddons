@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:42+0000\n"
-"PO-Revision-Date: 2026-01-04 09:52+0100\n"
+"POT-Creation-Date: 2026-01-15 00:41+0000\n"
+"PO-Revision-Date: 2026-01-14 18:16+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -183,6 +183,7 @@ msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
@@ -197,6 +198,7 @@ msgstr "Modelli disponibili"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Connessione all'interfaccia al %1 non riuscita: %2"
@@ -326,6 +328,7 @@ msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:35
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2041,9 +2044,7 @@ msgid "Open Url \"%1\""
 msgstr "Apri URL «%1»"
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Show Model Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
 msgstr "Mostra le informazioni sul modello"
@@ -2051,7 +2052,7 @@ msgstr "Mostra le informazioni sul modello"
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (gestito)"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
@@ -2103,6 +2104,7 @@ msgid "Create Models"
 msgstr "Crea modelli"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:39
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del server:"
@@ -2160,7 +2162,7 @@ msgstr ""
 "Queste voci sono facoltative e sono utilizzate per risolvere i problemi "
 "relativi alla GPU con Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:157
+#: plugins/ollama/ollamaconfigurewidget.cpp:156
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Avvio di Ollama non riuscito"
@@ -2174,37 +2176,32 @@ msgstr "Ollama"
 #: plugins/ollama/ollamareply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Capacità"
 
 #: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Temperatura:"
+msgstr "Modello"
 
 #: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Modelli"
+msgstr "File del modello"
 
 #: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Dimensione dei parametri:"
+msgstr "Parametri"
 
 #: plugins/ollama/ollamareply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Dettagli"
 
 #: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Show Model Information"
+#, kde-format
 msgid "Model Info"
-msgstr "Mostra le informazioni sul modello"
+msgstr "Informazioni sul modello"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
@@ -2220,13 +2217,26 @@ msgstr "Impossibile avviare Ollama."
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama (in linea)"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:41
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
 #, fuzzy, kde-format
-#| msgid "Ollama"
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgctxt "@title:window"
+msgid "Configure Ollama Online"
+msgstr "Configura Ollama"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
+#, kde-format
+msgid "Api Key:"
+msgstr "Chiave API:"
+
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#, kde-format
 msgid "Ollama Online"
-msgstr "Ollama"
+msgstr "Ollama in linea"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2496,7 +2506,7 @@ msgid "Modify…"
 msgstr "Modifica…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2523,11 +2533,6 @@ msgstr "Chiedi all'IA…"
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Configura…"
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
-#, kde-format
-msgid "Api Key:"
-msgstr "Chiave API:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
@@ -2745,42 +2750,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Nuova chat"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:144
+#: widgets/view/textautogeneratehistorylistview.cpp:141
+#, kde-format
+msgctxt "@action"
+msgid "Duplicate…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Rimuovi da preferito"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:144
+#: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Imposta come preferito"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Ripristina"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Archivia"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:180
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Vuoi rimuovere questa discussione?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:171
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Rimuovi discussione"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:252
+#: widgets/view/textautogeneratehistorylistview.cpp:262
 #, kde-format
 msgid "No Archive Found."
 msgstr "Nessun archivio trovato."

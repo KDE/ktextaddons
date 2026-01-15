@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:42+0000\n"
-"PO-Revision-Date: 2026-01-07 20:34+0300\n"
+"POT-Creation-Date: 2026-01-15 00:41+0000\n"
+"PO-Revision-Date: 2026-01-14 19:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -183,6 +183,7 @@ msgstr "Yapılandır: %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
@@ -197,6 +198,7 @@ msgstr "Kullanılabilir Modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1 konumunda arayüze bağlanılamadı: %2"
@@ -326,6 +328,7 @@ msgstr "Temel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:35
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2024,7 +2027,7 @@ msgstr "Model bilgisini göster"
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (Yönetilen)"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
@@ -2076,6 +2079,7 @@ msgid "Create Models"
 msgstr "Modeller Oluştur"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:39
 #, kde-format
 msgid "Server Url:"
 msgstr "Sunucu URL’si:"
@@ -2133,7 +2137,7 @@ msgstr ""
 "Bu girdiler isteğe bağlıdır, Ollama’nın GPU ile ilişkin sorunlarını "
 "tanılamak için kullanılırlar."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:157
+#: plugins/ollama/ollamaconfigurewidget.cpp:156
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama başlatılamadı"
@@ -2188,13 +2192,26 @@ msgstr "Ollama’yı başlatmak olanaksız"
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama (Çevrimiçi)"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:41
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
 #, fuzzy, kde-format
-#| msgid "Ollama"
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgctxt "@title:window"
+msgid "Configure Ollama Online"
+msgstr "Ollama’yı Yapılandır"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
+#, kde-format
+msgid "Api Key:"
+msgstr "API anahtarı:"
+
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#, kde-format
 msgid "Ollama Online"
-msgstr "Ollama"
+msgstr "Ollama Çevrimiçi"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2463,7 +2480,7 @@ msgid "Modify…"
 msgstr "Değişiklik Yap…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2490,11 +2507,6 @@ msgstr "Yapay Zekâya Sor…"
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Yapılandır…"
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
-#, kde-format
-msgid "Api Key:"
-msgstr "API anahtarı:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
@@ -2712,42 +2724,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Yeni Sohbet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:144
+#: widgets/view/textautogeneratehistorylistview.cpp:141
+#, kde-format
+msgctxt "@action"
+msgid "Duplicate…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Sık Kullanılanlardan Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:144
+#: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Sık Kullanılan Yap"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arşivle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:180
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:171
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Tartışmayı Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:252
+#: widgets/view/textautogeneratehistorylistview.cpp:262
 #, kde-format
 msgid "No Archive Found."
 msgstr "Bulunan arşiv yok."
