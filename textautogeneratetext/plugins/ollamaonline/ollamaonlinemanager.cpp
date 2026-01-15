@@ -106,8 +106,9 @@ void OllamaOnlineManager::loadModels()
             return;
         }
         ModelsInfo info;
-#if 0
         const auto json = QJsonDocument::fromJson(rep->readAll());
+        qDebug() << " json " << json;
+#if 0
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             OllamaModelInstalledInfo installed;
