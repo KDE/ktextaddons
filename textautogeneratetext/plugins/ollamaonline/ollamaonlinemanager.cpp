@@ -14,6 +14,7 @@
 #include "ollamaonlinesettings.h"
 
 #include <KLocalizedString>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -37,7 +38,6 @@ void OllamaOnlineManager::showModelInfo(const QString &modelName)
     QJsonObject data;
     data["model"_L1] = modelName;
 
-    /*
     auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaCommonReply::RequestTypes::ShowModelInfo,
@@ -48,7 +48,6 @@ void OllamaOnlineManager::showModelInfo(const QString &modelName)
         Q_EMIT finished(readResponse);
         Q_EMIT showModelInfoDone(readResponse.response);
     });
-    */
 }
 void OllamaOnlineManager::getVersion()
 {
@@ -108,12 +107,12 @@ void OllamaOnlineManager::loadModels()
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
         qDebug() << " json " << json;
-#if 0
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
+            TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
+#if 0
             OllamaModelInstalledInfo installed;
             installed.parseInfo(model.toObject());
-            TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
             i.modelName = installed.generateModelName();
             i.identifier = installed.name();
 
@@ -129,15 +128,16 @@ void OllamaOnlineManager::loadModels()
                 installed.setLanguages((*it).languages());
                 installed.setModelUrl((*it).url());
             }
-            info.models.push_back(std::move(i));
             mInstalledInfos.append(std::move(installed));
+#endif
+            info.models.push_back(std::move(i));
         }
-
+#if 0
         // sort list of models
         std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const OllamaModelInstalledInfo &left, const OllamaModelInstalledInfo &right) {
             return left.generateModelName().toLower() < right.generateModelName().toLower();
         });
-
+#endif
         std::sort(info.models.begin(),
                   info.models.end(),
                   [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
@@ -147,7 +147,6 @@ void OllamaOnlineManager::loadModels()
 
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
-#endif
         Q_EMIT modelsLoadDone(info);
     });
 }
@@ -165,7 +164,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(
     data["prompt"_L1] = request.message();
     data["model"_L1] = request.model();
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
-#if 0
     auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaCommonReply::RequestTypes::StreamingGenerate,
@@ -174,9 +172,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(
         Q_EMIT finished(reply->readResponse());
     });
     return reply;
-#else
-    return nullptr;
-#endif
 }
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
@@ -191,14 +186,18 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     QJsonObject data;
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
-#if 0
+
+    /*
     data["temperature"_L1] = mOllamaSettings->temperature();
+    */
     if (!request.tools().isEmpty()) {
         data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
     }
+    /*
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }
+    */
     qDebug() << " OllamaOnlineManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
@@ -209,10 +208,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
         Q_EMIT finished(reply->readResponse());
     });
     return reply;
-#else
-
-    return nullptr;
-#endif
 }
 
 OllamaOnlineSettings *OllamaOnlineManager::ollamaOnlineSettings() const
