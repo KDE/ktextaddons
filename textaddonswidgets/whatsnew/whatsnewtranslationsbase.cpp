@@ -13,7 +13,8 @@ WhatsNewTranslationsBase::~WhatsNewTranslationsBase() = default;
 QString WhatsNewTranslationsBase::newFeaturesMD5() const
 {
     QByteArray str;
-    for (const KLazyLocalizedString &l : lastNewFeatures()) {
+    const auto features = lastNewFeatures();
+    for (const KLazyLocalizedString &l : features) {
         str += l.untranslatedText();
     }
     if (str.isEmpty()) {

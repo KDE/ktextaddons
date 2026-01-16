@@ -351,7 +351,8 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
     obj["role"_L1] = role;
     QString contentStr = mContent;
     if (mMessageAttachments && !mMessageAttachments->isEmpty()) {
-        for (const auto &att : mMessageAttachments->messageAttachments()) {
+        const auto attachments = mMessageAttachments->messageAttachments();
+        for (const auto &att : attachments) {
             if (att.attachmentType() == TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File) {
                 contentStr += QString::fromUtf8(att.content());
             }

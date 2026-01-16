@@ -100,7 +100,8 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
     infoLayout->addWidget(languagesGroupBox);
     auto vboxLanguagesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
-    for (const auto &lang : info.languages()) {
+    const auto languages = info.languages();
+    for (const auto &lang : languages) {
         const QLocale locale(lang);
         if (locale.language() == QLocale::Language::C) {
             qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << lang;

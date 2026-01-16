@@ -197,7 +197,7 @@ void OllamaManager::loadModels()
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["models"_L1].toArray();
-        for (const QJsonValue &model : models) {
+        for (const auto &model : models) {
             OllamaModelInstalledInfo installed;
             installed.parseInfo(model.toObject());
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
@@ -207,7 +207,7 @@ void OllamaManager::loadModels()
             QString installedName = installed.model();
             const int position = installedName.indexOf(u':');
             installedName = installedName.first(position);
-            auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
+            auto matchesModelName = [installedName](const OllamaModelAvailableInfo &availableInfo) {
                 return availableInfo.name() == installedName;
             };
             auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);

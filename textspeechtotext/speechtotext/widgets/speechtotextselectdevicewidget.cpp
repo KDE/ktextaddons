@@ -71,7 +71,8 @@ void SpeechToTextSelectDeviceWidget::saveSettings()
 void SpeechToTextSelectDeviceWidget::initializeInput()
 {
     mDeviceComboBox->addItem(i18n("Default"), QVariant(QString()));
-    for (const auto &device : QMediaDevices::audioInputs()) {
+    const auto inputs = QMediaDevices::audioInputs();
+    for (const auto &device : inputs) {
         const auto name = device.description();
         mDeviceComboBox->addItem(name, QVariant::fromValue(device));
     }

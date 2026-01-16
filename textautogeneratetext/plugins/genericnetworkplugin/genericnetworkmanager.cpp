@@ -58,7 +58,8 @@ void GenericNetworkManager::loadModels()
         mInfos = infos.infos();
         ModelsInfo info;
         // qDebug() << " json " << json;
-        for (const auto &parsedInfo : infos.infos()) {
+        const auto availableInfos = infos.infos();
+        for (const auto &parsedInfo : availableInfos) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
             i.identifier = parsedInfo.identifier();
             if (parsedInfo.modelName().isEmpty()) {

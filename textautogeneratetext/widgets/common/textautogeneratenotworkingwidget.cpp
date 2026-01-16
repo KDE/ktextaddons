@@ -42,7 +42,7 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
             Q_EMIT ollamaStarted();
         }
     });
-    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaFailed, this, [this]() {
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaFailed, this, []() {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
     });
 }

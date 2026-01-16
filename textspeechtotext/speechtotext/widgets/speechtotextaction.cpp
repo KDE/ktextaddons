@@ -5,14 +5,14 @@
 */
 
 #include "speechtotextaction.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textspeechtotext/speechtotextmanager.h"
 using namespace TextSpeechToText;
+using namespace Qt::Literals::StringLiterals;
 SpeechToTextAction::SpeechToTextAction(QObject *parent)
     : QAction{parent}
 {
-    connect(this, &QAction::trigger, this, &SpeechToTextAction::slotClicked);
+    connect(this, &QAction::triggered, this, &SpeechToTextAction::slotClicked);
 }
 
 SpeechToTextAction::~SpeechToTextAction() = default;

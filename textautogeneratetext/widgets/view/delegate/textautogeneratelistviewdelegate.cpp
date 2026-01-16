@@ -104,7 +104,8 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
 
     if (auto att = message->messageAttachments(); att) {
         int i = 0;
-        for (const auto &attachment : att->messageAttachments()) {
+        const auto attachments = att->messageAttachments();
+        for (const auto &attachment : attachments) {
             const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(attachment);
             helper->draw(attachment, painter, layout.attachmentsRectList.isEmpty() ? QRect{} : layout.attachmentsRectList.at(i), index, option);
             i++;

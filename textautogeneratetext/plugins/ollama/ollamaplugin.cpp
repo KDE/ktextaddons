@@ -62,7 +62,7 @@ void OllamaPlugin::slotOllamaRequested()
     connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
         Q_EMIT this->manager()->ollamaProcessOk(true);
     });
-    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this](const QString &errorStr) {
+    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this]([[maybe_unused]] const QString &errorStr) {
         Q_EMIT this->manager()->ollamaFailed();
     });
     job->start();
