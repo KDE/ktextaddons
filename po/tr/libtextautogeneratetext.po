@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:41+0000\n"
-"PO-Revision-Date: 2026-01-14 19:15+0300\n"
+"POT-Creation-Date: 2026-01-16 00:42+0000\n"
+"PO-Revision-Date: 2026-01-15 16:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -198,7 +198,7 @@ msgstr "Kullanılabilir Modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1 konumunda arayüze bağlanılamadı: %2"
@@ -2148,36 +2148,6 @@ msgstr "Ollama başlatılamadı"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamareply.cpp:165
-#, kde-format
-msgid "Capabilities"
-msgstr "Yetenekler"
-
-#: plugins/ollama/ollamareply.cpp:167
-#, kde-format
-msgid "Template"
-msgstr "Şablon"
-
-#: plugins/ollama/ollamareply.cpp:168
-#, kde-format
-msgid "Modelfile"
-msgstr "Model dosyası"
-
-#: plugins/ollama/ollamareply.cpp:171
-#, kde-format
-msgid "Parameters"
-msgstr "Parametreler"
-
-#: plugins/ollama/ollamareply.cpp:174
-#, kde-format
-msgid "Details"
-msgstr "Ayrıntılar"
-
-#: plugins/ollama/ollamareply.cpp:175
-#, kde-format
-msgid "Model Info"
-msgstr "Model Bilgisi"
-
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
@@ -2189,18 +2159,46 @@ msgstr "Ollama sistemde bulunamadı."
 msgid "Impossible to start Ollama."
 msgstr "Ollama’yı başlatmak olanaksız"
 
+#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr "Yetenekler"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#, kde-format
+msgid "Template"
+msgstr "Şablon"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#, kde-format
+msgid "Modelfile"
+msgstr "Model dosyası"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#, kde-format
+msgid "Parameters"
+msgstr "Parametreler"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#, kde-format
+msgid "Model Info"
+msgstr "Model Bilgisi"
+
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
 msgstr "Ollama (Çevrimiçi)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Ollama’yı Yapılandır"
+msgstr "Ollama Çevrimiçi’yi Yapılandır"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2208,7 +2206,7 @@ msgstr "Ollama’yı Yapılandır"
 msgid "Api Key:"
 msgstr "API anahtarı:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama Çevrimiçi"
@@ -2728,7 +2726,7 @@ msgstr "Yeni Sohbet"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Çoğalt…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

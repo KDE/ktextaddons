@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the ktextaddons package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:41+0000\n"
+"POT-Creation-Date: 2026-01-16 00:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
+"Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -196,7 +197,7 @@ msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr ""
@@ -1792,36 +1793,6 @@ msgstr ""
 msgid "Ollama"
 msgstr ""
 
-#: plugins/ollama/ollamareply.cpp:165
-#, kde-format
-msgid "Capabilities"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:167
-#, kde-format
-msgid "Template"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:168
-#, kde-format
-msgid "Modelfile"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:171
-#, kde-format
-msgid "Parameters"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:174
-#, kde-format
-msgid "Details"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:175
-#, kde-format
-msgid "Model Info"
-msgstr ""
-
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
@@ -1831,6 +1802,36 @@ msgstr ""
 #: plugins/ollama/ollamastartprocessjob.cpp:51
 #, kde-format
 msgid "Impossible to start Ollama."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#, kde-format
+msgid "Template"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#, kde-format
+msgid "Modelfile"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#, kde-format
+msgid "Parameters"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#, kde-format
+msgid "Model Info"
 msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
@@ -1850,7 +1851,7 @@ msgstr ""
 msgid "Api Key:"
 msgstr ""
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, kde-format
 msgid "Ollama Online"
 msgstr ""

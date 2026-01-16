@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:41+0000\n"
-"PO-Revision-Date: 2026-01-14 05:38+0100\n"
+"POT-Creation-Date: 2026-01-16 00:42+0000\n"
+"PO-Revision-Date: 2026-01-15 05:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -200,7 +200,7 @@ msgstr "ხელმისაწვდომი მოდელები"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
@@ -2154,36 +2154,6 @@ msgstr "Ollama-ის გაშვება ჩავარდა"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamareply.cpp:165
-#, kde-format
-msgid "Capabilities"
-msgstr "შესაძლებლობები"
-
-#: plugins/ollama/ollamareply.cpp:167
-#, kde-format
-msgid "Template"
-msgstr "შაბლონი"
-
-#: plugins/ollama/ollamareply.cpp:168
-#, kde-format
-msgid "Modelfile"
-msgstr "მოდელის ფაილი"
-
-#: plugins/ollama/ollamareply.cpp:171
-#, kde-format
-msgid "Parameters"
-msgstr "პარამეტრები"
-
-#: plugins/ollama/ollamareply.cpp:174
-#, kde-format
-msgid "Details"
-msgstr "დეტალები"
-
-#: plugins/ollama/ollamareply.cpp:175
-#, kde-format
-msgid "Model Info"
-msgstr "მოდელის ინფორმაცია"
-
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
@@ -2195,18 +2165,46 @@ msgstr "სისტემაში Ollama აღმოჩენილი არ
 msgid "Impossible to start Ollama."
 msgstr "Ollama-ის გაშვება შეუძლებელია."
 
+#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr "შესაძლებლობები"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#, kde-format
+msgid "Template"
+msgstr "შაბლონი"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#, kde-format
+msgid "Modelfile"
+msgstr "მოდელის ფაილი"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#, kde-format
+msgid "Parameters"
+msgstr "პარამეტრები"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr "დეტალები"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#, kde-format
+msgid "Model Info"
+msgstr "მოდელის ინფორმაცია"
+
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
 msgstr "Ollama (ინტერნეტში)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Ollama-ის მორგება"
+msgstr "Ollama Online-ის მორგება"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2214,7 +2212,7 @@ msgstr "Ollama-ის მორგება"
 msgid "Api Key:"
 msgstr "API გასაღები:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama ინტერნეტში"
@@ -2734,7 +2732,7 @@ msgstr "ახალი ჩატი"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "დუბლირება…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

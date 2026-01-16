@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:41+0000\n"
+"POT-Creation-Date: 2026-01-16 00:42+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -210,7 +210,7 @@ msgstr "Tillgängliga modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Misslyckades ansluta till gränssnitt på %1: %2"
@@ -2176,41 +2176,6 @@ msgstr "Starta Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamareply.cpp:165
-#, kde-format
-msgid "Capabilities"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
-msgid "Template"
-msgstr "Temperatur:"
-
-#: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
-msgid "Modelfile"
-msgstr "Modeller"
-
-#: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
-msgid "Parameters"
-msgstr "Parameterstorlek:"
-
-#: plugins/ollama/ollamareply.cpp:174
-#, kde-format
-msgid "Details"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
-msgid "Model Info"
-msgstr "Webbadress för öppen modellinformation"
-
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
@@ -2222,6 +2187,41 @@ msgstr "Ollama hittades inte på systemet. Installera det."
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "Temperatur:"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "Modeller"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
+msgid "Parameters"
+msgstr "Parameterstorlek:"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
+msgid "Model Info"
+msgstr "Webbadress för öppen modellinformation"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
@@ -2242,7 +2242,7 @@ msgstr "Anpassa Ollama"
 msgid "Api Key:"
 msgstr "Programmeringsgränssnittsnyckel:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"

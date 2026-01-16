@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:41+0000\n"
-"PO-Revision-Date: 2026-01-14 04:48+0200\n"
+"POT-Creation-Date: 2026-01-16 00:42+0000\n"
+"PO-Revision-Date: 2026-01-15 23:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -200,7 +200,7 @@ msgstr "Доступні моделі"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Не вдалося встановити з'єднання з інтерфейсом на %1: %2"
@@ -2158,36 +2158,6 @@ msgstr "Не вдалося запустити Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamareply.cpp:165
-#, kde-format
-msgid "Capabilities"
-msgstr "Можливості"
-
-#: plugins/ollama/ollamareply.cpp:167
-#, kde-format
-msgid "Template"
-msgstr "Шаблон"
-
-#: plugins/ollama/ollamareply.cpp:168
-#, kde-format
-msgid "Modelfile"
-msgstr "Файл моделі"
-
-#: plugins/ollama/ollamareply.cpp:171
-#, kde-format
-msgid "Parameters"
-msgstr "Параметри"
-
-#: plugins/ollama/ollamareply.cpp:174
-#, kde-format
-msgid "Details"
-msgstr "Подробиці"
-
-#: plugins/ollama/ollamareply.cpp:175
-#, kde-format
-msgid "Model Info"
-msgstr "Відомості щодо моделі"
-
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, kde-format
 msgid "Ollama not found on system."
@@ -2199,18 +2169,46 @@ msgstr "У системі не знайдено Ollama."
 msgid "Impossible to start Ollama."
 msgstr "Неможливо запустити Ollama."
 
+#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr "Можливості"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#, kde-format
+msgid "Template"
+msgstr "Шаблон"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#, kde-format
+msgid "Modelfile"
+msgstr "Файл моделі"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#, kde-format
+msgid "Parameters"
+msgstr "Параметри"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr "Подробиці"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#, kde-format
+msgid "Model Info"
+msgstr "Відомості щодо моделі"
+
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
 msgstr "Ollama (інтерактивна)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Налаштувати Ollama"
+msgstr "Налаштувати Ollama Online"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2218,7 +2216,7 @@ msgstr "Налаштувати Ollama"
 msgid "Api Key:"
 msgstr "Ключ API:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, kde-format
 msgid "Ollama Online"
 msgstr "Інтерактивна Ollama"
@@ -2739,7 +2737,7 @@ msgstr "Нове спілкування"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Здублювати…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

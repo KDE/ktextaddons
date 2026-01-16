@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:41+0000\n"
+"POT-Creation-Date: 2026-01-16 00:42+0000\n"
 "PO-Revision-Date: 2025-10-22 10:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -210,7 +210,7 @@ msgstr "Saatavilla olevat mallit"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Yhteydenotto liitäntään osoitteessa %1 epäonnistui: %2"
@@ -1928,41 +1928,6 @@ msgstr "Käynnistä Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamareply.cpp:165
-#, kde-format
-msgid "Capabilities"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
-msgid "Template"
-msgstr "Lämpötila:"
-
-#: plugins/ollama/ollamareply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
-msgid "Modelfile"
-msgstr "Mallit"
-
-#: plugins/ollama/ollamareply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
-msgid "Parameters"
-msgstr "Parametrikoko:"
-
-#: plugins/ollama/ollamareply.cpp:174
-#, kde-format
-msgid "Details"
-msgstr ""
-
-#: plugins/ollama/ollamareply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
-msgid "Model Info"
-msgstr "Tietoa:"
-
 #: plugins/ollama/ollamastartprocessjob.cpp:29
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
@@ -1974,6 +1939,41 @@ msgstr "Ollamaa ei löytynyt järjestelmästä. Asenna se."
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#, kde-format
+msgid "Capabilities"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#, fuzzy, kde-format
+#| msgid "Temperature:"
+msgid "Template"
+msgstr "Lämpötila:"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#, fuzzy, kde-format
+#| msgid "Models"
+msgid "Modelfile"
+msgstr "Mallit"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
+msgid "Parameters"
+msgstr "Parametrikoko:"
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Information:"
+msgid "Model Info"
+msgstr "Tietoa:"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
@@ -1994,7 +1994,7 @@ msgstr "Ollaman asetukset"
 msgid "Api Key:"
 msgstr "API-avain:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:95
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"
