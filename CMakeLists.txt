@@ -242,6 +242,21 @@ set_package_properties(
         TYPE
             OPTIONAL
 )
+
+option(WARNINGS_AS_ERRORS "Warnings are errors -Werror" OFF)
+if(WARNINGS_AS_ERRORS)
+    if(MSVC)
+        add_compile_options(/WX)
+        add_compile_options(/wd4996)
+    else()
+        add_compile_options(-Werror)
+        add_compile_options(
+            -Wno-error=deprecated-declarations
+            -Wno-error=date-time
+        )
+    endif()
+endif()
+
 if(TARGET Qt6::TextToSpeech)
     add_subdirectory(textedittexttospeech)
 endif()
