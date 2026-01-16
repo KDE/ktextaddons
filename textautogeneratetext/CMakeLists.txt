@@ -420,6 +420,7 @@ target_link_libraries(
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::I18n
+        KF6::TextAddonsWidgets
     PRIVATE
         Qt::Sql
         KF6::WidgetsAddons
@@ -429,7 +430,6 @@ target_link_libraries(
         KF6::ItemViews
         KF6::IconThemes
         KF6::TextUtils
-        KF6::TextAddonsWidgets
         KF6::TextCustomEditor
         KF6::KIOWidgets
 )
