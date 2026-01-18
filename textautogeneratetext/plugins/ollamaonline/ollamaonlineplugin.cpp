@@ -28,6 +28,16 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
             mOllamaOnlineManager->loadModels();
         }
     });
+    connect(mOllamaOnlineManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
+        if (modelinfo.hasError) {
+            setReady(false);
+            Q_EMIT errorOccurred(modelinfo.errorOccured);
+            mModels.clear();
+        } else {
+            mModels = modelinfo.models;
+            setReady(true);
+        }
+    });
 }
 
 OllamaOnlinePlugin::~OllamaOnlinePlugin()
