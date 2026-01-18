@@ -1908,7 +1908,7 @@ msgstr "显示模型信息"
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (受管)"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
@@ -2068,13 +2068,13 @@ msgstr "模型信息"
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama (在线)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr ""
+msgstr "配置 Ollama 在线"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2085,7 +2085,7 @@ msgstr "API 密钥："
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:110
 #, kde-format
 msgid "Ollama Online"
-msgstr ""
+msgstr "Ollama 在线"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2601,7 +2601,7 @@ msgstr "新聊天"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "创建副本…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-17 00:42+0000\n"
-"PO-Revision-Date: 2026-01-15 11:22+0100\n"
+"PO-Revision-Date: 2026-01-16 10:54+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -2233,12 +2233,10 @@ msgid "Ollama (Online)"
 msgstr "Ollama (En ligne)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Configurer Ollama"
+msgstr "Configurer Ollama en mode connecté"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2767,7 +2765,7 @@ msgstr "Nouvelle discussion"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Dupliquer…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
