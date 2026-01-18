@@ -106,41 +106,14 @@ void OllamaOnlineManager::loadModels()
         }
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        qDebug() << " json " << json;
+        // qDebug() << " json " << json;
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
             i.modelName = model["name"_L1].toString();
             i.identifier = model["model"_L1].toString();
-#if 0
-            OllamaModelInstalledInfo installed;
-            installed.parseInfo(model.toObject());
-            i.modelName = installed.generateModelName();
-            i.identifier = installed.name();
-
-            QString installedName = installed.model();
-            const int position = installedName.indexOf(u':');
-            installedName = installedName.first(position);
-            auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
-                return availableInfo.name() == installedName;
-            };
-            auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
-            if (it != mAvailableInfos.constEnd()) {
-                installed.setCategories((*it).categories());
-                installed.setLanguages((*it).languages());
-                installed.setModelUrl((*it).url());
-            }
-            mInstalledInfos.append(std::move(installed));
-#endif
             info.models.push_back(std::move(i));
         }
-        qDebug() << "info " << info;
-#if 0
-        // sort list of models
-        std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const OllamaModelInstalledInfo &left, const OllamaModelInstalledInfo &right) {
-            return left.generateModelName().toLower() < right.generateModelName().toLower();
-        });
-#endif
         std::sort(info.models.begin(),
                   info.models.end(),
                   [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
