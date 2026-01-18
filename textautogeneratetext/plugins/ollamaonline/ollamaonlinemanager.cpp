@@ -110,6 +110,8 @@ void OllamaOnlineManager::loadModels()
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
+            i.modelName = model["name"_L1].toString();
+            i.identifier = model["model"_L1].toString();
 #if 0
             OllamaModelInstalledInfo installed;
             installed.parseInfo(model.toObject());
@@ -132,6 +134,7 @@ void OllamaOnlineManager::loadModels()
 #endif
             info.models.push_back(std::move(i));
         }
+        qDebug() << "info " << info;
 #if 0
         // sort list of models
         std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const OllamaModelInstalledInfo &left, const OllamaModelInstalledInfo &right) {
