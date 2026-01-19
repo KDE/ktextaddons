@@ -389,6 +389,11 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
 
 void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
 {
+    if (chatId.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "chatId is empty. It's a bug";
+        return;
+    }
+    qWarning() << " not implemented yet";
     // TODO
 }
 
