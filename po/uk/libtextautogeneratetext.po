@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:42+0000\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
 "PO-Revision-Date: 2026-01-15 23:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2216,7 +2216,7 @@ msgstr "Налаштувати Ollama Online"
 msgid "Api Key:"
 msgstr "Ключ API:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, kde-format
 msgid "Ollama Online"
 msgstr "Інтерактивна Ollama"

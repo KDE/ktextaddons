@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:42+0000\n"
-"PO-Revision-Date: 2026-01-15 09:06+0400\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
+"PO-Revision-Date: 2026-01-18 18:42+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2120,12 +2120,10 @@ msgid "Ollama (Online)"
 msgstr "أولاما (على النت)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "اضبط أولاما"
+msgstr "اضبط أولاما عبر الإنترنت"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2133,7 +2131,7 @@ msgstr "اضبط أولاما"
 msgid "Api Key:"
 msgstr "مفتاح و‌ب‌ت API:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, kde-format
 msgid "Ollama Online"
 msgstr "أولاما على النت"
@@ -2652,7 +2650,7 @@ msgstr "دردشة جديدة"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "كرّر…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

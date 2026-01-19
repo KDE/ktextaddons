@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:42+0000\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
 "PO-Revision-Date: 2025-10-22 10:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1994,7 +1994,7 @@ msgstr "Ollaman asetukset"
 msgid "Api Key:"
 msgstr "API-avain:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"

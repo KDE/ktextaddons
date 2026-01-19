@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:42+0000\n"
-"PO-Revision-Date: 2026-01-01 11:54+0100\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
+"PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -2006,17 +2006,15 @@ msgid "Open Url \"%1\""
 msgstr "Otwórz adres URL \"%1\""
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Otwórz adres URL informacji o modelu"
+msgstr "Pokaż szczegóły o modelu"
 
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (Zarządzany)"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
@@ -2151,50 +2149,43 @@ msgstr "Nie można rozpocząć uruchomić Ollama."
 #: plugins/ollamacommon/ollamacommonreply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Możliwości"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Temperatura:"
+msgstr "Wzorzec"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Modele"
+msgstr "Plik modelu"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Rozmiar parametru:"
+msgstr "Parametry"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Szczegóły"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgid "Model Info"
-msgstr "Otwórz adres URL informacji o modelu"
+msgstr "Szczegóły modelu"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama (Online)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Ustawienia Ollamy"
+msgstr "Ustawienia Ollamy Online"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2202,11 +2193,10 @@ msgstr "Ustawienia Ollamy"
 msgid "Api Key:"
 msgstr "Klucz API:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
+#, kde-format
 msgid "Ollama Online"
-msgstr "Ollama"
+msgstr "Ollama Online"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2261,12 +2251,10 @@ msgid "Configure…"
 msgstr "Ustawienia…"
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Otwórz adres URL informacji o modelu"
+msgstr "Pokaż szczegóły o modelu"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2726,7 +2714,7 @@ msgstr "Nowa rozmowa"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Powiel…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

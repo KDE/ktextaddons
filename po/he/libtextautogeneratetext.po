@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:42+0000\n"
+"POT-Creation-Date: 2026-01-19 00:41+0000\n"
 "PO-Revision-Date: 2026-01-15 09:11+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2109,7 +2109,7 @@ msgstr "הגדרת Ollama מקוונת"
 msgid "Api Key:"
 msgstr "מפתח API:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:110
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama מקוונת"
