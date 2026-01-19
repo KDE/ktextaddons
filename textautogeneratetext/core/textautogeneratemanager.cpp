@@ -393,6 +393,16 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "chatId is empty. It's a bug";
         return;
     }
+    auto messagesModel = messagesModelFromChatId(chatId);
+    const auto messages = messagesModel->messages();
+    createNewChat(); // TODO fix title
+#if 0
+    for (auto &msg : msgs) {
+        if (convertUuid.contains(msg.answerUuid())) {
+            msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
+        }
+    }
+#endif
     qWarning() << " not implemented yet";
     // TODO
 }
