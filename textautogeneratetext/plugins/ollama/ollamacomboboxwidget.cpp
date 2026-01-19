@@ -36,7 +36,9 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
     showModelInfoButton->setObjectName(u"showModelInfoButton"_s);
     mainLayout->addWidget(showModelInfoButton);
     connect(showModelInfoButton, &OllamaShowModelInfoButton::showModelInfoRequested, this, [this]() {
-        Q_EMIT showModelInfoRequested(currentModel());
+        if (!currentModel().isEmpty()) {
+            Q_EMIT showModelInfoRequested(currentModel());
+        }
     });
 }
 
