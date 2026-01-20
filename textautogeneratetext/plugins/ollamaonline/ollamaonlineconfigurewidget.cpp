@@ -7,14 +7,16 @@
 #include "ollamacommoncomboboxwidget.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
+#include "widgets/common/textautogenerateshowmodelinfodialog.h"
 #include <KAuthorized>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <KPasswordLineEdit>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QPointer>
 #include <QVBoxLayout>
-#include <kpasswordlineedit.h>
-// #include <TextAutoGenerateText/TextAutoGenerateShowModelInfoDialog>
+
 using namespace Qt::Literals::StringLiterals;
 OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *manager, QWidget *parent)
     : QWidget{parent}
@@ -73,12 +75,10 @@ void OllamaOnlineConfigureWidget::fillModels()
 
 void OllamaOnlineConfigureWidget::displayModelInfo(const QString &modelStr)
 {
-#if 0
     QPointer<TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog> dlg = new TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog(this);
     dlg->setText(modelStr);
     dlg->exec();
     delete dlg;
-#endif
 }
 void OllamaOnlineConfigureWidget::showModelInfo(const QString &modelName)
 {
