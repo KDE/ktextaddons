@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2025 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2025, 2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-19 00:41+0000\n"
-"PO-Revision-Date: 2025-12-24 08:10+0100\n"
+"PO-Revision-Date: 2026-01-19 22:54+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2017,17 +2017,15 @@ msgid "Open Url \"%1\""
 msgstr "Отваряне на адрес (URL) „%1“"
 
 #: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Информационен адрес на Open Model"
+msgstr "Информация за модела"
 
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (управлявана)"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:31
 #, kde-format
@@ -2162,50 +2160,43 @@ msgstr "Невъзможно е да се стартира Ollama."
 #: plugins/ollamacommon/ollamacommonreply.cpp:165
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Възможности"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:167
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Температура:"
+msgstr "Шаблон"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:168
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Модели"
+msgstr "Modelfile"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:171
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Размер на параметъра:"
+msgstr "Параметри"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Подробности"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgid "Model Info"
-msgstr "Информационен адрес на Open Model"
+msgstr "Информация за модела"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama (Online)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Конфигуриране на Олама"
+msgstr "Конфигуриране на Ollama Online"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
@@ -2214,10 +2205,9 @@ msgid "Api Key:"
 msgstr "Api ключ:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:120
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Online"
-msgstr "Ollama"
+msgstr "Ollama Online"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2272,12 +2262,10 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Информационен адрес на Open Model"
+msgstr "Информация за модела"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2737,7 +2725,7 @@ msgstr "Нов чат"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Дублиране…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
