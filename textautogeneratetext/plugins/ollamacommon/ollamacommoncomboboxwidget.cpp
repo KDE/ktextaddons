@@ -4,16 +4,16 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "ollamacomboboxwidget.h"
-#include "modelsmanager/ollamashowmodelinfobutton.h"
-using namespace Qt::Literals::StringLiterals;
+#include "ollamacommoncomboboxwidget.h"
+#include "ollamacommonshowmodelinfobutton.h"
 
 #include <KLocalizedString>
 #include <QComboBox>
 #include <QHBoxLayout>
 #include <QToolButton>
 
-OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
+using namespace Qt::Literals::StringLiterals;
+OllamaCommonComboBoxWidget::OllamaCommonComboBoxWidget(QWidget *parent)
     : QWidget{parent}
     , mModelComboBox(new QComboBox(this))
 {
@@ -30,21 +30,21 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
     buttonReloadSettings->setObjectName(u"buttonReloadSettings"_s);
     buttonReloadSettings->setToolTip(i18nc("@info:tooltip", "Reload Model"));
     mainLayout->addWidget(buttonReloadSettings);
-    connect(buttonReloadSettings, &QToolButton::clicked, this, &OllamaComboBoxWidget::reloadModel);
+    connect(buttonReloadSettings, &QToolButton::clicked, this, &OllamaCommonComboBoxWidget::reloadModel);
 
-    auto showModelInfoButton = new OllamaShowModelInfoButton(this);
+    auto showModelInfoButton = new OllamaCommonShowModelInfoButton(this);
     showModelInfoButton->setObjectName(u"showModelInfoButton"_s);
     mainLayout->addWidget(showModelInfoButton);
-    connect(showModelInfoButton, &OllamaShowModelInfoButton::showModelInfoRequested, this, [this]() {
+    connect(showModelInfoButton, &OllamaCommonShowModelInfoButton::showModelInfoRequested, this, [this]() {
         if (!currentModel().isEmpty()) {
             Q_EMIT showModelInfoRequested(currentModel());
         }
     });
 }
 
-OllamaComboBoxWidget::~OllamaComboBoxWidget() = default;
+OllamaCommonComboBoxWidget::~OllamaCommonComboBoxWidget() = default;
 
-void OllamaComboBoxWidget::setModels(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
+void OllamaCommonComboBoxWidget::setModels(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
 {
     mModelComboBox->clear();
     for (const auto &i : lst) {
@@ -53,7 +53,7 @@ void OllamaComboBoxWidget::setModels(const QList<TextAutoGenerateText::TextAutoG
     mModelComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
 
-void OllamaComboBoxWidget::setCurrentModel(const QString &str)
+void OllamaCommonComboBoxWidget::setCurrentModel(const QString &str)
 {
     const int index = mModelComboBox->findData(str);
     if (index >= 0) {
@@ -61,9 +61,9 @@ void OllamaComboBoxWidget::setCurrentModel(const QString &str)
     }
 }
 
-QString OllamaComboBoxWidget::currentModel() const
+QString OllamaCommonComboBoxWidget::currentModel() const
 {
     return mModelComboBox->currentData().toString();
 }
 
-#include "moc_ollamacomboboxwidget.cpp"
+#include "moc_ollamacommoncomboboxwidget.cpp"

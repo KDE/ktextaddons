@@ -27,8 +27,6 @@ target_sources(
         ollamaconfiguredialog.cpp
         ollamamanager.h
         ollamamanager.cpp
-        ollamacomboboxwidget.h
-        ollamacomboboxwidget.cpp
         ollamaconfigurecustomizewidget.h
         ollamaconfigurecustomizewidget.cpp
         ollamasettings.h
@@ -97,8 +95,6 @@ target_sources(
         modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
         modelsmanager/ollamanetworkurlbutton.h
         modelsmanager/ollamanetworkurlbutton.cpp
-        modelsmanager/ollamashowmodelinfobutton.h
-        modelsmanager/ollamashowmodelinfobutton.cpp
         icons/ollamamodelicons.qrc
 )
 

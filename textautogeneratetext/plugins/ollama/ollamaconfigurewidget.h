@@ -7,7 +7,7 @@
 #include "textautogenerateollama_export.h"
 #include <QWidget>
 class QLineEdit;
-class OllamaComboBoxWidget;
+class OllamaCommonComboBoxWidget;
 class OllamaManager;
 class QDoubleSpinBox;
 class QSpinBox;
@@ -37,7 +37,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void displayModelInfo(const QString &modelStr);
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
-    OllamaComboBoxWidget *const mModelComboBoxWidget;
+    OllamaCommonComboBoxWidget *const mModelComboBoxWidget;
     TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     QDoubleSpinBox *const mTemperature;
     QSpinBox *const mSeed;

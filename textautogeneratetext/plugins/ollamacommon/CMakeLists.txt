@@ -16,6 +16,10 @@ target_sources(
         ollamacommonutils.cpp
         ollamacommonreply.h
         ollamacommonreply.cpp
+        ollamacommoncomboboxwidget.cpp
+        ollamacommoncomboboxwidget.h
+        ollamacommonshowmodelinfobutton.cpp
+        ollamacommonshowmodelinfobutton.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

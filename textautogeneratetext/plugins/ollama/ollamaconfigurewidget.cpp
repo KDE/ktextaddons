@@ -11,7 +11,7 @@
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 
-#include "ollamacomboboxwidget.h"
+#include "ollamacommoncomboboxwidget.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 
@@ -31,7 +31,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     : QWidget{parent}
     , mName(new QLineEdit(this))
     , mServerUrl(new QLineEdit(this))
-    , mModelComboBoxWidget(new OllamaComboBoxWidget(this))
+    , mModelComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mMessageWidget(new TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget(this))
     , mTemperature(new QDoubleSpinBox(this))
     , mSeed(new QSpinBox(this))
@@ -106,8 +106,8 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     groupCustomizeGroupboxLayout->addWidget(mOllamaConfigureCustomizeWidget);
 
     mainLayout->addStretch(1);
-    connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
-    connect(mModelComboBoxWidget, &OllamaComboBoxWidget::showModelInfoRequested, this, &OllamaConfigureWidget::showModelInfo);
+    connect(mModelComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
+    connect(mModelComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaConfigureWidget::showModelInfo);
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
