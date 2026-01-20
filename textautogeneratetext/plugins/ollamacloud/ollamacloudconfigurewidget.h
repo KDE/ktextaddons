@@ -28,7 +28,6 @@ private:
     void showModelInfo(const QString &modelName);
     void displayModelInfo(const QString &modelStr);
     QLineEdit *const mName;
-    QLineEdit *const mServerUrl;
     KPasswordLineEdit *const mApiKey;
     OllamaCloudManager *const mManager;
     OllamaCommonComboBoxWidget *const mOllamaComboBoxWidget;

@@ -21,7 +21,6 @@ using namespace Qt::Literals::StringLiterals;
 OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manager, QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
-    , mServerUrl(new QLineEdit(this))
     , mApiKey(new KPasswordLineEdit(this))
     , mManager(manager)
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
@@ -46,11 +45,6 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
     formLayout->addRow(i18n("Name:"), mName);
-
-    mServerUrl->setObjectName(u"mServerUrl"_s);
-    KLineEditEventHandler::catchReturnKey(mServerUrl);
-    formLayout->addRow(i18n("Server Url:"), mServerUrl);
-    mServerUrl->setPlaceholderText(u"https://ollama.com"_s);
 
     mApiKey->setObjectName(u"mApiKey"_s);
     mApiKey->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew : KPassword::RevealMode::Never);
@@ -89,14 +83,12 @@ void OllamaCloudConfigureWidget::showModelInfo(const QString &modelName)
 void OllamaCloudConfigureWidget::loadSettings()
 {
     mName->setText(mManager->ollamaCloudSettings()->displayName());
-    mServerUrl->setText(mManager->ollamaCloudSettings()->serverUrl().toString());
     mApiKey->setPassword(mManager->apiKey());
 }
 
 void OllamaCloudConfigureWidget::saveSettings()
 {
     mManager->ollamaCloudSettings()->setDisplayName(mName->text());
-    mManager->ollamaCloudSettings()->setServerUrl(QUrl(mServerUrl->text()));
     mManager->setApiKey(mApiKey->password());
 }
 

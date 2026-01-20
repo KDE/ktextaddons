@@ -30,9 +30,14 @@ OllamaCloudManager::OllamaCloudManager(OllamaCloudSettings *settings, QObject *p
 
 OllamaCloudManager::~OllamaCloudManager() = default;
 
+QUrl OllamaCloudManager::ollamaCloudUrl() const
+{
+    return QUrl(u"https://ollama.com"_s);
+}
+
 void OllamaCloudManager::showModelInfo(const QString &modelName)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaCloudSettings->serverUrl().toString() + OllamaCommonUtils::modelInfoPath())};
+    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::modelInfoPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     QJsonObject data;
@@ -52,7 +57,7 @@ void OllamaCloudManager::showModelInfo(const QString &modelName)
 void OllamaCloudManager::getVersion()
 {
 #if 0
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaCloudSettings->serverUrl().toString() + OllamaCommonUtils::versionPath())};
+    QNetworkRequest req{QUrl::fromUserInput(OllamaCloudUrl().toString() + OllamaCommonUtils::versionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
@@ -88,7 +93,7 @@ void OllamaCloudManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaCloudSettings->serverUrl().toString() + OllamaCommonUtils::tagsPath())};
+    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
@@ -99,7 +104,7 @@ void OllamaCloudManager::loadModels()
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;
-            info.errorOccured = i18n("Failed to connect to interface at %1: %2", mOllamaCloudSettings->serverUrl().toString(), rep->errorString());
+            info.errorOccured = i18n("Failed to connect to interface at %1: %2", ollamaCloudUrl().toString(), rep->errorString());
             info.hasError = true;
             Q_EMIT modelsLoadDone(info);
             return;
@@ -129,7 +134,7 @@ void OllamaCloudManager::loadModels()
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaCloudSettings->serverUrl().toString() + OllamaCommonUtils::completionPath())};
+    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
@@ -152,7 +157,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(c
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaCloudSettings->serverUrl().toString() + OllamaCommonUtils::chatPath())};
+    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";

@@ -18,7 +18,6 @@ void OllamaCloudSettingsTest::shouldHaveDefaultValues()
     const OllamaCloudSettings settings;
     QVERIFY(settings.currentModel().isEmpty());
     QVERIFY(settings.displayName().isEmpty());
-    QVERIFY(settings.serverUrl().isEmpty());
 }
 
 #include "moc_ollamacloudsettingstest.cpp"

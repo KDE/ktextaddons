@@ -19,15 +19,11 @@ public:
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
-    [[nodiscard]] QUrl serverUrl() const;
-    void setServerUrl(const QUrl &newServerUrl);
-
     [[nodiscard]] QString displayName() const;
     void setDisplayName(const QString &newName);
 
 private:
     QString mDisplayName;
-    QUrl mServerUrl;
     QString mDefaultModelPath;
     QString mCurrentModel;
 };

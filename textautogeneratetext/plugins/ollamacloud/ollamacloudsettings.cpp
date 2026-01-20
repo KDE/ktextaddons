@@ -23,16 +23,6 @@ void OllamaCloudSettings::setCurrentModel(const QString &newCurrentModel)
     mCurrentModel = newCurrentModel;
 }
 
-QUrl OllamaCloudSettings::serverUrl() const
-{
-    return mServerUrl;
-}
-
-void OllamaCloudSettings::setServerUrl(const QUrl &newServerUrl)
-{
-    mServerUrl = newServerUrl;
-}
-
 QString OllamaCloudSettings::displayName() const
 {
     return mDisplayName;
@@ -46,7 +36,6 @@ void OllamaCloudSettings::setDisplayName(const QString &newName)
 QDebug operator<<(QDebug d, const OllamaCloudSettings &t)
 {
     d.space() << "displayName:" << t.displayName();
-    d.space() << "serverUrl:" << t.serverUrl();
     d.space() << "currentModel:" << t.currentModel();
     return d;
 }

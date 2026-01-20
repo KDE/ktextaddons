@@ -37,6 +37,7 @@ Q_SIGNALS:
     void downloadError(const QString &modelName, const QString &errorStr);
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT QUrl ollamaCloudUrl() const;
     OllamaCloudSettings *const mOllamaCloudSettings;
     QString mApiKey;
 };
