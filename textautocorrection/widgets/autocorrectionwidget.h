@@ -96,8 +96,6 @@ private:
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void updateAddRemoveButton();
 
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void slotExportAutoCorrection();
-
-private:
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void slotChangeComboboxState(int index);
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void emitChanged();
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void addAutoCorrectEntries();
