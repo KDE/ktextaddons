@@ -10,6 +10,9 @@
 class QNetworkAccessManager;
 namespace TextSpeechToText
 {
+/*!
+ * \brief The SpeechToTextEngineAccessManager class
+ */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextEngineAccessManager : public QObject
 {
     Q_OBJECT

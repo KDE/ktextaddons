@@ -14,10 +14,31 @@ namespace TextUtils
 {
 namespace ConvertText
 {
+/*!
+ * \brief normalize
+ * \param str
+ * \return
+ */
 [[nodiscard]] TEXTUTILS_EXPORT QString normalize(QStringView str);
+/*!
+ * \brief upperCase
+ * \param cursor
+ */
 TEXTUTILS_EXPORT void upperCase(QTextCursor &cursor);
+/*!
+ * \brief lowerCase
+ * \param cursor
+ */
 TEXTUTILS_EXPORT void lowerCase(QTextCursor &cursor);
+/*!
+ * \brief sentenceCase
+ * \param cursor
+ */
 TEXTUTILS_EXPORT void sentenceCase(QTextCursor &cursor);
+/*!
+ * \brief reverseCase
+ * \param cursor
+ */
 TEXTUTILS_EXPORT void reverseCase(QTextCursor &cursor);
 }
 }

@@ -10,6 +10,9 @@
 #include "textautocorrectioncore_export.h"
 namespace TextAutoCorrectionCore
 {
+/*!
+ * \brief The ImportKMailAutocorrection class
+ */
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
 {
 public:

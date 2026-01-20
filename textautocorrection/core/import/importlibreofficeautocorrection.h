@@ -16,6 +16,9 @@ class KArchiveDirectory;
 
 namespace TextAutoCorrectionCore
 {
+/*!
+ * \brief The ImportLibreOfficeAutocorrection class
+ */
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
 {
 public:

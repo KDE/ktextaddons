@@ -16,6 +16,9 @@
 #include "textautocorrectioncore_export.h"
 namespace TextAutoCorrectionCore
 {
+/*!
+ * \brief The ImportAbstractAutocorrection class
+ */
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportAbstractAutocorrection
 {
     Q_GADGET
