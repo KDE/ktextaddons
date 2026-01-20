@@ -9,6 +9,7 @@
 class QLineEdit;
 class OllamaOnlineManager;
 class KPasswordLineEdit;
+class OllamaCommonComboBoxWidget;
 class OllamaOnlineConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -22,9 +23,12 @@ Q_SIGNALS:
     void enableOkButton(bool enabled);
 
 private:
+    void fillModels();
     void loadSettings();
+    void showModelInfo(const QString &modelName);
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     KPasswordLineEdit *const mApiKey;
     OllamaOnlineManager *const mManager;
+    OllamaCommonComboBoxWidget *const mOllamaComboBoxWidget;
 };

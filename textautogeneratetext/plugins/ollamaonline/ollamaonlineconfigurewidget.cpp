@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamaonlineconfigurewidget.h"
+#include "ollamacommoncomboboxwidget.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
 #include <KAuthorized>
@@ -20,7 +21,16 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     , mServerUrl(new QLineEdit(this))
     , mApiKey(new KPasswordLineEdit(this))
     , mManager(manager)
+    , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
 {
+    connect(mManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
+        // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
+        if (modelinfo.hasError) {
+        } else {
+            mOllamaComboBoxWidget->setModels(modelinfo.models);
+        }
+    });
+
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
@@ -44,10 +54,25 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     formLayout->addRow(i18n("Api Key:"), mApiKey);
 
+    mOllamaComboBoxWidget->setObjectName(u"mOllamaComboBoxWidget"_s);
+    formLayout->addRow(i18n("Model:"), mOllamaComboBoxWidget);
+    connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaOnlineConfigureWidget::showModelInfo);
+    connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaOnlineConfigureWidget::fillModels);
     loadSettings();
 }
 
 OllamaOnlineConfigureWidget::~OllamaOnlineConfigureWidget() = default;
+
+void OllamaOnlineConfigureWidget::fillModels()
+{
+    mManager->loadModels();
+}
+
+void OllamaOnlineConfigureWidget::showModelInfo(const QString &modelName)
+{
+    // qDebug() << " showModelInfo " << modelName;
+    mManager->showModelInfo(modelName);
+}
 
 void OllamaOnlineConfigureWidget::loadSettings()
 {
