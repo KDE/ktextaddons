@@ -92,8 +92,9 @@ void OllamaOnlineManager::loadModels()
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
@@ -106,7 +107,7 @@ void OllamaOnlineManager::loadModels()
         }
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        // qDebug() << " json " << json;
+        qDebug() << " json " << json;
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
@@ -133,8 +134,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     QJsonObject data;
     data["prompt"_L1] = request.message();
@@ -156,8 +158,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     QJsonObject data;
     data["model"_L1] = request.model();

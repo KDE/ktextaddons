@@ -97,8 +97,9 @@ void OllamaCloudManager::loadModels()
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
@@ -138,8 +139,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(c
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     QJsonObject data;
     data["prompt"_L1] = request.message();
@@ -161,8 +163,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     QJsonObject data;
     data["model"_L1] = request.model();
