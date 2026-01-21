@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-19 00:41+0000\n"
+"POT-Creation-Date: 2026-01-21 00:43+0000\n"
 "PO-Revision-Date: 2026-01-15 06:04-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -185,6 +185,7 @@ msgstr "Configurar %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:29
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -200,7 +201,8 @@ msgstr "Modelos disponíveis"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:102
+#: plugins/ollamacloud/ollamacloudmanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Falha ao conectar-se ao servidor em %1: %2"
@@ -330,7 +332,8 @@ msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:58
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:35
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:47
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2037,22 +2040,10 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Abrir Url \"%1\""
 
-#: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Show Model Info"
-msgstr "Mostrar informações do modelo"
-
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
 msgstr "Ollama (Gerenciado)"
-
-#: plugins/ollama/ollamacomboboxwidget.cpp:31
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Reload Model"
-msgstr "Recarregar modelo"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
@@ -2098,12 +2089,14 @@ msgid "Create Models"
 msgstr "Criar modelos"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:39
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:52
 #, kde-format
 msgid "Server Url:"
 msgstr "URL do servidor:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:66
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:55
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:61
 #, kde-format
 msgid "Model:"
 msgstr "Modelo:"
@@ -2162,6 +2155,7 @@ msgid "Failed to start Ollama"
 msgstr "Falha ao iniciar o Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
@@ -2177,6 +2171,39 @@ msgstr "Ollama não encontrado no sistema."
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Impossível iniciar o Ollama."
+
+#: plugins/ollamacloud/ollamacloudclient.cpp:26
+#, fuzzy, kde-format
+#| msgid "Ollama (Online)"
+msgid "Ollama (Cloud)"
+msgstr "Ollama (Online)"
+
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgctxt "@title:window"
+msgid "Configure Ollama Cloud"
+msgstr "Configuração do Ollama"
+
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:52
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
+#, kde-format
+msgid "Api Key:"
+msgstr "Chave da API:"
+
+#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgid "Ollama Cloud"
+msgstr "Ollama"
+
+#: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reload Model"
+msgstr "Recarregar modelo"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:165
 #, kde-format
@@ -2208,6 +2235,12 @@ msgstr "Detalhes"
 msgid "Model Info"
 msgstr "Informações do modelo"
 
+#: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show Model Info"
+msgstr "Mostrar informações do modelo"
+
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
@@ -2218,12 +2251,6 @@ msgstr "Ollama (Online)"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Configurar Ollama Online"
-
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
-#, kde-format
-msgid "Api Key:"
-msgstr "Chave da API:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, kde-format

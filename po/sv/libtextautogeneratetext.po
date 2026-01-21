@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-19 00:41+0000\n"
+"POT-Creation-Date: 2026-01-21 00:43+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -195,6 +195,7 @@ msgstr "Anpassa %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:29
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -210,7 +211,8 @@ msgstr "Tillgängliga modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:102
+#: plugins/ollamacloud/ollamacloudmanager.cpp:108
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Misslyckades ansluta till gränssnitt på %1: %2"
@@ -343,7 +345,8 @@ msgstr "Bas:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:58
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:35
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:47
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -2040,24 +2043,10 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamashowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Open Model Information Url"
-msgctxt "@info:tooltip"
-msgid "Show Model Info"
-msgstr "Webbadress för öppen modellinformation"
-
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
 msgstr ""
-
-#: plugins/ollama/ollamacomboboxwidget.cpp:31
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Reload Model"
-msgstr "Uppdatera modell"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
@@ -2105,12 +2094,14 @@ msgid "Create Models"
 msgstr "Skapa modeller"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:39
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:52
 #, kde-format
 msgid "Server Url:"
 msgstr "Serverwebbadress:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:66
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:55
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:61
 #, kde-format
 msgid "Model:"
 msgstr "Modell:"
@@ -2171,6 +2162,7 @@ msgid "Failed to start Ollama"
 msgstr "Starta Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
@@ -2187,6 +2179,39 @@ msgstr "Ollama hittades inte på systemet. Installera det."
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
+
+#: plugins/ollamacloud/ollamacloudclient.cpp:26
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgid "Ollama (Cloud)"
+msgstr "Ollama"
+
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
+msgctxt "@title:window"
+msgid "Configure Ollama Cloud"
+msgstr "Anpassa Ollama"
+
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:52
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
+#, kde-format
+msgid "Api Key:"
+msgstr "Programmeringsgränssnittsnyckel:"
+
+#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgid "Ollama Cloud"
+msgstr "Ollama"
+
+#: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reload Model"
+msgstr "Uppdatera modell"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:165
 #, kde-format
@@ -2223,6 +2248,14 @@ msgstr ""
 msgid "Model Info"
 msgstr "Webbadress för öppen modellinformation"
 
+#: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
+msgctxt "@info:tooltip"
+msgid "Show Model Info"
+msgstr "Webbadress för öppen modellinformation"
+
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
@@ -2235,12 +2268,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Anpassa Ollama"
-
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:45
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
-#, kde-format
-msgid "Api Key:"
-msgstr "Programmeringsgränssnittsnyckel:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, fuzzy, kde-format
