@@ -3,16 +3,18 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
+
 #pragma once
 
 #include <QObject>
 
-class OllamaModelsAvailableInfosTest : public QObject
+class OllamaCommonModelAvailableInfoTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit OllamaModelsAvailableInfosTest(QObject *parent = nullptr);
-    ~OllamaModelsAvailableInfosTest() override = default;
+    explicit OllamaCommonModelAvailableInfoTest(QObject *parent = nullptr);
+    ~OllamaCommonModelAvailableInfoTest() override = default;
+
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

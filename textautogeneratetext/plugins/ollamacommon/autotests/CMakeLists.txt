@@ -26,3 +26,5 @@ macro(add_ollamacommon_plugin_unittest _source)
 endmacro()
 
 add_ollamacommon_plugin_unittest(ollamacommonutilstest.cpp)
+add_ollamacommon_plugin_unittest(ollamacommonmodelavailableinfotest.cpp)
+add_ollamacommon_plugin_unittest(ollamacommonmodelsavailableinfostest.cpp)

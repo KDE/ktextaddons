@@ -3,17 +3,17 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelavailableinfotest.h"
+#include "ollamacommonmodelavailableinfotest.h"
 #include "ollamacommonmodelavailableinfo.h"
 #include <QTest>
-QTEST_GUILESS_MAIN(OllamaModelAvailableInfoTest)
+QTEST_GUILESS_MAIN(OllamaCommonModelAvailableInfoTest)
 
-OllamaModelAvailableInfoTest::OllamaModelAvailableInfoTest(QObject *parent)
+OllamaCommonModelAvailableInfoTest::OllamaCommonModelAvailableInfoTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void OllamaModelAvailableInfoTest::shouldHaveDefaultValues()
+void OllamaCommonModelAvailableInfoTest::shouldHaveDefaultValues()
 {
     OllamaCommonModelAvailableInfo w;
     QVERIFY(w.author().isEmpty());
@@ -22,4 +22,4 @@ void OllamaModelAvailableInfoTest::shouldHaveDefaultValues()
     QVERIFY(!w.isValid());
 }
 
-#include "moc_ollamamodelavailableinfotest.cpp"
+#include "moc_ollamacommonmodelavailableinfotest.cpp"
