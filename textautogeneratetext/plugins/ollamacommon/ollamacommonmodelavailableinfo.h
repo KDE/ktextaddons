@@ -12,7 +12,7 @@ class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfo
 {
     Q_GADGET
 public:
-    struct ModelTag {
+    struct TEXTAUTOGENERATEOLLAMACOMMON_EXPORT ModelTag {
         QString tag;
         QString size;
         [[nodiscard]] bool operator==(const ModelTag &other) const;
