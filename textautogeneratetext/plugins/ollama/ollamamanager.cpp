@@ -9,7 +9,7 @@
 #include "autogeneratetext_ollama_debug.h"
 #include "autogeneratetext_ollama_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
-#include "modelsmanager/ollamamodelavailableinfosmanager.h"
+#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 #include "ollamasettings.h"
@@ -27,7 +27,7 @@ OllamaManager::OllamaManager(OllamaSettings *settings, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mOllamaSettings(settings)
 {
-    OllamaModelAvailableInfosManager managerModelInfosManager;
+    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {
         mAvailableInfos = managerModelInfosManager.modelInfos();
     }
@@ -207,7 +207,7 @@ void OllamaManager::loadModels()
             QString installedName = installed.model();
             const int position = installedName.indexOf(u':');
             installedName = installedName.first(position);
-            auto matchesModelName = [installedName](const OllamaModelAvailableInfo &availableInfo) {
+            auto matchesModelName = [installedName](const OllamaCommonModelAvailableInfo &availableInfo) {
                 return availableInfo.name() == installedName;
             };
             auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
@@ -309,12 +309,12 @@ OllamaSettings *OllamaManager::ollamaSettings() const
     return mOllamaSettings;
 }
 
-QList<OllamaModelAvailableInfo> OllamaManager::availableInfos() const
+QList<OllamaCommonModelAvailableInfo> OllamaManager::availableInfos() const
 {
     return mAvailableInfos;
 }
 
-void OllamaManager::setAvailableInfos(const QList<OllamaModelAvailableInfo> &newAvailableInfos)
+void OllamaManager::setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos)
 {
     mAvailableInfos = newAvailableInfos;
 }

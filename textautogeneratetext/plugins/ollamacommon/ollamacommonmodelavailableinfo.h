@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogenerateollama_private_export.h"
-class QDebug;
+#include "textautogenerateollamacommon_export.h"
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfo
+class QDebug;
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfo
 {
     Q_GADGET
 public:
@@ -18,8 +18,8 @@ public:
         [[nodiscard]] bool operator==(const ModelTag &other) const;
     };
 
-    OllamaModelAvailableInfo();
-    ~OllamaModelAvailableInfo();
+    OllamaCommonModelAvailableInfo();
+    ~OllamaCommonModelAvailableInfo();
 
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
@@ -45,7 +45,7 @@ public:
 
     [[nodiscard]] QString description() const;
 
-    [[nodiscard]] bool operator==(const OllamaModelAvailableInfo &other) const;
+    [[nodiscard]] bool operator==(const OllamaCommonModelAvailableInfo &other) const;
 
     [[nodiscard]] QStringList categoriesName() const;
     void setCategoriesName(const QStringList &newCategoriesName);
@@ -61,6 +61,6 @@ private:
     QStringList mCategoriesName;
 };
 
-Q_DECLARE_TYPEINFO(OllamaModelAvailableInfo, Q_RELOCATABLE_TYPE);
-QDebug operator<<(QDebug d, const OllamaModelAvailableInfo &t);
-QDebug operator<<(QDebug d, const OllamaModelAvailableInfo::ModelTag &t);
+Q_DECLARE_TYPEINFO(OllamaCommonModelAvailableInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonModelAvailableInfo &t);
+TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonModelAvailableInfo::ModelTag &t);

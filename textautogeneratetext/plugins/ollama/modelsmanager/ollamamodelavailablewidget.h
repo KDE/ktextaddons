@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "ollamamodelavailableinfo.h"
+#include "ollamacommonmodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class OllamaModelAvailableSearchWidget;
@@ -23,7 +23,7 @@ public:
     explicit OllamaModelAvailableWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelAvailableWidget() override;
 
-    void setAvailableInfos(const QList<OllamaModelAvailableInfo> &infos);
+    void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &infos);
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &index);

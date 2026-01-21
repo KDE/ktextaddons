@@ -3,44 +3,44 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelavailableinfo.h"
-#include "autogeneratetext_ollama_debug.h"
-#include "ollamamodelutils.h"
+#include "ollamacommonmodelavailableinfo.h"
+#include "autogeneratetext_ollamacommon_debug.h"
+#include "ollamacommonmodelutils.h"
 #include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-OllamaModelAvailableInfo::OllamaModelAvailableInfo() = default;
+OllamaCommonModelAvailableInfo::OllamaCommonModelAvailableInfo() = default;
 
-OllamaModelAvailableInfo::~OllamaModelAvailableInfo() = default;
+OllamaCommonModelAvailableInfo::~OllamaCommonModelAvailableInfo() = default;
 
-bool OllamaModelAvailableInfo::isValid() const
+bool OllamaCommonModelAvailableInfo::isValid() const
 {
     return !mName.isEmpty();
 }
 
-bool OllamaModelAvailableInfo::operator==(const OllamaModelAvailableInfo &other) const
+bool OllamaCommonModelAvailableInfo::operator==(const OllamaCommonModelAvailableInfo &other) const
 {
     return mName == other.name() && mUrl == other.url() && mAuthor == other.author() && mLanguages == other.languages() && mTags == other.tags()
         && mCategories == other.categories();
 }
 
-TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaModelAvailableInfo::categories() const
+TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaCommonModelAvailableInfo::categories() const
 {
     return mCategories;
 }
 
-void OllamaModelAvailableInfo::setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories)
+void OllamaCommonModelAvailableInfo::setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories)
 {
     mCategories = newCategories;
 }
 
-QString OllamaModelAvailableInfo::description() const
+QString OllamaCommonModelAvailableInfo::description() const
 {
     return mDescription;
 }
 
-void OllamaModelAvailableInfo::parseInfo(const QString &name, const QJsonObject &obj)
+void OllamaCommonModelAvailableInfo::parseInfo(const QString &name, const QJsonObject &obj)
 {
     mName = name;
     mAuthor = obj["author"_L1].toString();
@@ -56,7 +56,7 @@ void OllamaModelAvailableInfo::parseInfo(const QString &name, const QJsonObject 
         const QJsonArray tagsArray = tagsArrayList.at(i).toArray();
         const QVariantList tagInfo = tagsArray.toVariantList();
         if (tagInfo.count() != 2) {
-            qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "tagInfo different from 2 " << tagInfo;
+            qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "tagInfo different from 2 " << tagInfo;
         } else {
             ModelTag tag;
             tag.tag = tagInfo.at(0).toString();
@@ -71,77 +71,77 @@ void OllamaModelAvailableInfo::parseInfo(const QString &name, const QJsonObject 
         lst.append(l.toString());
     }
     mLanguages = lst;
-    mDescription = OllamaModelUtils::description(mName);
+    mDescription = OllamaCommonModelUtils::description(mName);
 }
 
-QStringList OllamaModelAvailableInfo::categoriesName() const
+QStringList OllamaCommonModelAvailableInfo::categoriesName() const
 {
     return mCategoriesName;
 }
 
-void OllamaModelAvailableInfo::setCategoriesName(const QStringList &newCategoriesName)
+void OllamaCommonModelAvailableInfo::setCategoriesName(const QStringList &newCategoriesName)
 {
     mCategoriesName = newCategoriesName;
 }
 
-QString OllamaModelAvailableInfo::name() const
+QString OllamaCommonModelAvailableInfo::name() const
 {
     return mName;
 }
 
-void OllamaModelAvailableInfo::setName(const QString &newName)
+void OllamaCommonModelAvailableInfo::setName(const QString &newName)
 {
     mName = newName;
 }
 
-QString OllamaModelAvailableInfo::url() const
+QString OllamaCommonModelAvailableInfo::url() const
 {
     return mUrl;
 }
 
-void OllamaModelAvailableInfo::setUrl(const QString &newUrl)
+void OllamaCommonModelAvailableInfo::setUrl(const QString &newUrl)
 {
     mUrl = newUrl;
 }
 
-QString OllamaModelAvailableInfo::author() const
+QString OllamaCommonModelAvailableInfo::author() const
 {
     return mAuthor;
 }
 
-void OllamaModelAvailableInfo::setAuthor(const QString &newAuthor)
+void OllamaCommonModelAvailableInfo::setAuthor(const QString &newAuthor)
 {
     mAuthor = newAuthor;
 }
 
-QStringList OllamaModelAvailableInfo::languages() const
+QStringList OllamaCommonModelAvailableInfo::languages() const
 {
     return mLanguages;
 }
 
-void OllamaModelAvailableInfo::setLanguages(const QStringList &newLanguages)
+void OllamaCommonModelAvailableInfo::setLanguages(const QStringList &newLanguages)
 {
     mLanguages = newLanguages;
 }
 
-QList<OllamaModelAvailableInfo::ModelTag> OllamaModelAvailableInfo::tags() const
+QList<OllamaCommonModelAvailableInfo::ModelTag> OllamaCommonModelAvailableInfo::tags() const
 {
     return mTags;
 }
 
-void OllamaModelAvailableInfo::setTags(const QList<ModelTag> &newTags)
+void OllamaCommonModelAvailableInfo::setTags(const QList<ModelTag> &newTags)
 {
     mTags = newTags;
 }
 
-QDebug operator<<(QDebug d, const OllamaModelAvailableInfo::ModelTag &t)
+QDebug operator<<(QDebug d, const OllamaCommonModelAvailableInfo::ModelTag &t)
 {
     d.space() << "tag:" << t.tag;
     d.space() << "size:" << t.size;
     return d;
 }
 
-QDebug operator<<(QDebug d, const OllamaModelAvailableInfo &t)
+QDebug operator<<(QDebug d, const OllamaCommonModelAvailableInfo &t)
 {
     d.space() << "name" << t.name();
     d.space() << "url" << t.url();
@@ -153,9 +153,9 @@ QDebug operator<<(QDebug d, const OllamaModelAvailableInfo &t)
     return d;
 }
 
-bool OllamaModelAvailableInfo::ModelTag::operator==(const ModelTag &other) const
+bool OllamaCommonModelAvailableInfo::ModelTag::operator==(const ModelTag &other) const
 {
     return tag == other.tag && size == other.size;
 }
 
-#include "moc_ollamamodelavailableinfo.cpp"
+#include "moc_ollamacommonmodelavailableinfo.cpp"

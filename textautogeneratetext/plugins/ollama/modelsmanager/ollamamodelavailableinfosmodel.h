@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ollamamodelavailableinfo.h"
+#include "ollamacommonmodelavailableinfo.h"
 
 #include <QAbstractListModel>
 
@@ -29,12 +29,12 @@ public:
     explicit OllamaModelAvailableInfosModel(QObject *parent = nullptr);
     ~OllamaModelAvailableInfosModel() override;
 
-    [[nodiscard]] QList<OllamaModelAvailableInfo> modelInfos() const;
-    void setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos);
+    [[nodiscard]] QList<OllamaCommonModelAvailableInfo> modelInfos() const;
+    void setModelInfos(const QList<OllamaCommonModelAvailableInfo> &newModelInfos);
 
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
 private:
-    QList<OllamaModelAvailableInfo> mModelInfos;
+    QList<OllamaCommonModelAvailableInfo> mModelInfos;
 };

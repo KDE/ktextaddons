@@ -73,7 +73,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
 
 OllamaModelAvailableWidget::~OllamaModelAvailableWidget() = default;
 
-void OllamaModelAvailableWidget::setAvailableInfos(const QList<OllamaModelAvailableInfo> &infos)
+void OllamaModelAvailableWidget::setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &infos)
 {
     mAvailableInfosModel->setModelInfos(infos);
 }

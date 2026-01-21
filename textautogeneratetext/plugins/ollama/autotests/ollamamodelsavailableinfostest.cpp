@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelsavailableinfostest.h"
-#include "modelsmanager/ollamamodelsavalableinfos.h"
+#include "ollamacommonmodelsavalableinfos.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaModelsAvailableInfosTest)
 
@@ -15,7 +15,7 @@ OllamaModelsAvailableInfosTest::OllamaModelsAvailableInfosTest(QObject *parent)
 
 void OllamaModelsAvailableInfosTest::shouldHaveDefaultValues()
 {
-    OllamaModelsAvalableInfos infos;
+    OllamaCommonModelsAvalableInfos infos;
     QVERIFY(infos.infos().isEmpty());
 }
 

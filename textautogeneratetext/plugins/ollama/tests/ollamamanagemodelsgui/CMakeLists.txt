@@ -6,5 +6,6 @@ add_executable(ollamamanagemodelsgui_gui ollamamanagemodels_gui.cpp)
 target_link_libraries(
     ollamamanagemodelsgui_gui
     textautogenerateollama
+    textautogenerateollamacommon
     KF6::CoreAddons
 )

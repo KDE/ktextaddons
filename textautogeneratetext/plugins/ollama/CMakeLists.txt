@@ -34,10 +34,6 @@ target_sources(
         ollamastartprocessjob.h
         ollamastartprocessjob.cpp
         textautogenerateollama_private_export.h
-        modelsmanager/ollamamodelavailableinfo.cpp
-        modelsmanager/ollamamodelavailableinfo.h
-        modelsmanager/ollamamodelsavalableinfos.h
-        modelsmanager/ollamamodelsavalableinfos.cpp
         modelsmanager/ollamamodelavailablewidget.h
         modelsmanager/ollamamodelavailablewidget.cpp
         modelsmanager/ollamamodelavailabledialog.h
@@ -52,13 +48,9 @@ target_sources(
         modelsmanager/ollamamodelavailableinfossortproxymodel.cpp
         modelsmanager/ollamamodelavailableinfosdelegate.h
         modelsmanager/ollamamodelavailableinfosdelegate.cpp
-        modelsmanager/ollamamodelavailableinfosmanager.h
-        modelsmanager/ollamamodelavailableinfosmanager.cpp
         modelsmanager/ollamamodelavailablelistview.h
         modelsmanager/ollamamodelavailablelistview.cpp
         modelsmanager/ollamamodelsmanager.qrc
-        modelsmanager/ollamamodelutils.h
-        modelsmanager/ollamamodelutils.cpp
         modelsmanager/ollamamodelinfosdelegateutils.h
         modelsmanager/ollamamodelinfosdelegateutils.cpp
         modelsmanager/ollamamodelsinfoscategoriescombobox.h
@@ -95,7 +87,6 @@ target_sources(
         modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
         modelsmanager/ollamanetworkurlbutton.h
         modelsmanager/ollamanetworkurlbutton.cpp
-        icons/ollamamodelicons.qrc
 )
 
 # precompiled headers support

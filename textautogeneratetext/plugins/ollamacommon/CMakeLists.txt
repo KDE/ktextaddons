@@ -20,6 +20,15 @@ target_sources(
         ollamacommoncomboboxwidget.h
         ollamacommonshowmodelinfobutton.cpp
         ollamacommonshowmodelinfobutton.h
+        ollamacommonmodelavailableinfosmanager.h
+        ollamacommonmodelavailableinfosmanager.cpp
+        ollamacommonmodelavailableinfo.cpp
+        ollamacommonmodelavailableinfo.h
+        ollamacommonmodelutils.h
+        ollamacommonmodelutils.cpp
+        ollamacommonmodelsavalableinfos.cpp
+        ollamacommonmodelsavalableinfos.h
+        icons/ollamamodelicons.qrc
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

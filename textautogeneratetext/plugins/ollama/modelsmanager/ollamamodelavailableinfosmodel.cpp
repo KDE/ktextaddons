@@ -25,7 +25,7 @@ QVariant OllamaModelAvailableInfosModel::data(const QModelIndex &index, int role
     if (index.row() < 0 || index.row() >= mModelInfos.count()) {
         return {};
     }
-    const OllamaModelAvailableInfo &modelInfo = mModelInfos.at(index.row());
+    const OllamaCommonModelAvailableInfo &modelInfo = mModelInfos.at(index.row());
     switch (role) {
     case CategoriesName:
         return modelInfo.categoriesName();
@@ -50,12 +50,12 @@ QVariant OllamaModelAvailableInfosModel::data(const QModelIndex &index, int role
     return {};
 }
 
-QList<OllamaModelAvailableInfo> OllamaModelAvailableInfosModel::modelInfos() const
+QList<OllamaCommonModelAvailableInfo> OllamaModelAvailableInfosModel::modelInfos() const
 {
     return mModelInfos;
 }
 
-void OllamaModelAvailableInfosModel::setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos)
+void OllamaModelAvailableInfosModel::setModelInfos(const QList<OllamaCommonModelAvailableInfo> &newModelInfos)
 {
     beginResetModel();
     mModelInfos = newModelInfos;

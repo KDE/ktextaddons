@@ -6,7 +6,7 @@
 #pragma once
 #include <QString>
 
-namespace OllamaModelUtils
+namespace OllamaCommonModelUtils
 {
 [[nodiscard]] QString description(const QString &modelName);
 };

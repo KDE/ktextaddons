@@ -18,6 +18,7 @@ macro(add_ollama_plugin_unittest _source)
         KF6::TextAutoGenerateText
         KF6::KIOWidgets
         textautogenerateollama
+        textautogenerateollamacommon
     )
     set_target_properties(
         ${_name}

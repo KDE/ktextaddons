@@ -4,14 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "ollamamodelutils.h"
-using namespace Qt::Literals::StringLiterals;
+#include "ollamacommonmodelutils.h"
 
-#include "autogeneratetext_ollama_debug.h"
+#include "autogeneratetext_ollamacommon_debug.h"
 #include <KLocalizedString>
 #include <QMap>
 
-QString OllamaModelUtils::description(const QString &modelName)
+using namespace Qt::Literals::StringLiterals;
+QString OllamaCommonModelUtils::description(const QString &modelName)
 {
     static QMap<QString, QString> listTranslation = {
         {u"llama3.3"_s, i18n("New state of the art 70B model. Llama 3.3 70B offers similar performance compared to the Llama 3.1 405B model.")},
@@ -287,7 +287,7 @@ QString OllamaModelUtils::description(const QString &modelName)
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Missing translation for " << modelName;
+        qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Missing translation for " << modelName;
     }
     return translatedString;
 }

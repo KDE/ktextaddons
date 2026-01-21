@@ -73,7 +73,8 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
 
     infoLayout->addWidget(downloadModelGroupBox);
     auto downloadGroupBoxLayout = new QVBoxLayout(downloadModelGroupBox);
-    const QList<OllamaModelAvailableInfo::ModelTag> tags = index.data(OllamaModelAvailableInfosModel::Tags).value<QList<OllamaModelAvailableInfo::ModelTag>>();
+    const QList<OllamaCommonModelAvailableInfo::ModelTag> tags =
+        index.data(OllamaModelAvailableInfosModel::Tags).value<QList<OllamaCommonModelAvailableInfo::ModelTag>>();
     for (const auto &t : tags) {
         const bool alreadyInstalled = mOllamaManager->isAlreadyInstalled(u"%1:%2"_s.arg(modelName, t.tag));
         auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, alreadyInstalled, mInfoWidget);
