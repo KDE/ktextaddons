@@ -115,6 +115,7 @@ target_link_libraries(
     textautogenerateollama
     PUBLIC
         KF6::TextAutoGenerateText
+        textautogenerateollamacommon
     PRIVATE
         KF6::I18n
         KF6::ConfigGui
@@ -122,7 +123,6 @@ target_link_libraries(
         KF6::WidgetsAddons
         KF6::TextAddonsWidgets
         KF6::KIOWidgets
-        textautogenerateollamacommon
 )
 set_target_properties(
     textautogenerateollama
@@ -167,7 +167,6 @@ target_sources(
 target_link_libraries(
     autogeneratetext_ollama
     PRIVATE
-        textautogenerateollamacommon
         textautogenerateollama
         KF6::ConfigGui
         KF6::CoreAddons
