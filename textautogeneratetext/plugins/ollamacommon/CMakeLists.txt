@@ -28,7 +28,6 @@ target_sources(
         ollamacommonmodelutils.cpp
         ollamacommonmodelsavalableinfos.cpp
         ollamacommonmodelsavalableinfos.h
-        icons/ollamamodelicons.qrc
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

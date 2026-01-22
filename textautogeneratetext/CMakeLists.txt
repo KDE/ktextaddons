@@ -219,6 +219,7 @@ target_sources(
         core/textautogeneratesearchmessagesettings.cpp
         core/textautogeneratefilecache.h
         core/textautogeneratefilecache.cpp
+        core/icons/ollamamodelicons.qrc
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
