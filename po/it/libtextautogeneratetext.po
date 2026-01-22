@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-21 00:43+0000\n"
+"POT-Creation-Date: 2026-01-22 00:57+0000\n"
 "PO-Revision-Date: 2026-01-14 18:16+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -452,1594 +452,6 @@ msgctxt "@title"
 msgid "Remove Model"
 msgstr "Rimuovi modello"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:17
-#, kde-format
-msgid ""
-"New state of the art 70B model. Llama 3.3 70B offers similar performance "
-"compared to the Llama 3.1 405B model."
-msgstr ""
-"Nuovo modello 70B all'avanguardia. Llama 3.3 70B offre prestazioni simili al "
-"modello Llama 3.1 405B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
-#, kde-format
-msgid "QwQ is the reasoning model of the Qwen series."
-msgstr "QwQ è il modello di ragionamento della serie di Qwen."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
-#, kde-format
-msgid ""
-"Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
-"generative models in 11B and 90B sizes."
-msgstr ""
-"Llama 3.2 Vision è una raccolta di modelli generativi di ragionamento basato "
-"su immagini, calibrati sulle istruzioni, nelle dimensioni 11B e 90B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
-#, kde-format
-msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
-"Llama 3.2 di Meta è disponibile in versione compatta con i modelli 1B e 3B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
-#, kde-format
-msgid ""
-"Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
-"405B parameter sizes."
-msgstr ""
-"Llama 3.1 è un nuovo modello all'avanguardia di Meta disponibile nelle "
-"dimensioni dei parametri 8B, 70B e 405B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
-#, kde-format
-msgid "Meta Llama 3: The most capable openly available LLM to date"
-msgstr ""
-"Llama 3 di Meta: il LLM più potente e disponibile al pubblico fino ad oggi"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
-#, kde-format
-msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr "Il modello 7B rilasciato da Mistral AI, aggiornato alla versione 0.3."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
-#, kde-format
-msgid ""
-"A high-performing open embedding model with a large token context window."
-msgstr ""
-"Un modello di incorporamento aperto ad alte prestazioni con un'ampia "
-"finestra di contesto del token."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
-#, kde-format
-msgid ""
-"Gemma is a family of lightweight, state-of-the-art open models built by "
-"Google DeepMind. Updated to version 1.1"
-msgstr ""
-"Gemma è una famiglia di modelli aperti leggeri e all'avanguardia, sviluppati "
-"da Google DeepMind. Aggiornato alla versione 1.1."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
-#, kde-format
-msgid ""
-"Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
-"0.5B to 110B parameters"
-msgstr ""
-"Qwen 1.5 è una serie di grandi modelli linguistici di Alibaba Cloud che "
-"vanno da 0,5 miliardi a 110 miliardi di parametri"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
-#, kde-format
-msgid "Qwen2 is a new series of large language models from Alibaba group"
-msgstr ""
-"Qwen2 è una nuova serie di grandi modelli linguistici del gruppo Alibaba"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
-#, kde-format
-msgid ""
-"Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
-"open models by Microsoft."
-msgstr ""
-"Phi-3 è una famiglia di modelli aperti leggeri all'avanguardia da 3B (Mini) "
-"e 14B (Medium) di Microsoft."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:29
-#, kde-format
-msgid ""
-"Llama 2 is a collection of foundation language models ranging from 7B to 70B "
-"parameters."
-msgstr ""
-"Llama 2 è una raccolta di modelli linguistici fondamentali che vanno dai 7B "
-"ai 70B parametri."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:31
-#, kde-format
-msgid ""
-"Qwen2.5 models are pretrained on Alibaba's latest large-scale dataset, "
-"encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
-"and has multilingual support."
-msgstr ""
-"I modelli Qwen2.5 sono pre-addestrati sul più recente dataset su larga scala "
-"di Alibaba, che comprende fino a 18 trilioni di token. Il modello supporta "
-"fino a 128.000 token e supporta più lingue."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:33
-#, kde-format
-msgid ""
-"Google Gemma 2 is a high-performing and efficient model available in three "
-"sizes: 2B, 9B, and 27B."
-msgstr ""
-"Google Gemma 2 è un modello efficiente e dalle prestazioni elevate "
-"disponibile in tre dimensioni: 2B, 9B e 27B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:35
-#, kde-format
-msgid ""
-"LLaVA is a novel end-to-end trained large multimodal model that combines a "
-"vision encoder and Vicuna for general-purpose visual and language "
-"understanding. Updated to version 1.6."
-msgstr ""
-"LLaVA è un nuovo modello multimodale di grandi dimensioni, addestrato end-to-"
-"end, che combina un codificatore visivo e Vicuna per la comprensione visiva "
-"e linguistica di uso generale. Aggiornato alla versione 1.6."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:37
-#, kde-format
-msgid ""
-"A large language model that can use text prompts to generate and discuss "
-"code."
-msgstr ""
-"Un modello linguistico di grandi dimensioni che può utilizzare prompt di "
-"testo per generare e discutere il codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
-#, kde-format
-msgid ""
-"The latest series of Code-Specific Qwen models, with significant "
-"improvements in code generation, code reasoning, and code fixing."
-msgstr ""
-"L'ultima serie di modelli Qwen specifici del codice, con miglioramenti "
-"significativi nella generazione, nel ragionamento e nella correzione del "
-"codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
-#, kde-format
-msgid ""
-"A state-of-the-art 12B model with 128k context length, built by Mistral AI "
-"in collaboration with NVIDIA."
-msgstr ""
-"Un modello 12B all'avanguardia con lunghezza di contesto di 128k, realizzato "
-"da Mistral AI in collaborazione con NVIDIA."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
-#, kde-format
-msgid ""
-"The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
-"model on 3 trillion tokens."
-msgstr ""
-"Il progetto TinyLlama è un progetto aperto volto ad addestrare un modello "
-"compatto di Llama da 1,1 miliardi di dollari su 3 trilioni di token."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:42
-#, kde-format
-msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr ""
-"Modello di incorporamento di grandi dimensioni all'avanguardia di mixedbread."
-"ai"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
-#, kde-format
-msgid ""
-"StarCoder2 is the next generation of transparently trained open code LLMs "
-"that comes in three sizes: 3B, 7B and 15B parameters."
-msgstr ""
-"StarCoder2 è la nuova generazione di LLM a codice aperto e addestrati in "
-"modo trasparente, disponibili in tre dimensioni: parametri 3B, 7B e 15B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:45
-#, kde-format
-msgid ""
-"A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
-"8x7b and 8x22b parameter sizes."
-msgstr ""
-"Un insieme di modelli Mixture of Experts (MoE) con pesi aperti di Mistral AI "
-"nelle dimensioni dei parametri 8x7b e 8x22b."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:47
-#, kde-format
-msgid ""
-"Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
-"experts models that excels at coding tasks. Created by Eric Hartford."
-msgstr ""
-"Modelli 8x7b e 8x22b non censurati, ottimizzati e basati sulla combinazione "
-"di modelli esperti Mixtral, che eccelle nelle attività di programmazione. "
-"Creati da Eric Hartford."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:50
-#, kde-format
-msgid ""
-"CodeGemma is a collection of powerful, lightweight models that can perform a "
-"variety of coding tasks like fill-in-the-middle code completion, code "
-"generation, natural language understanding, mathematical reasoning, and "
-"instruction following."
-msgstr ""
-"CodeGemma è una raccolta di modelli potenti e leggeri in grado di eseguire "
-"una varietà di attività di codifica, come il completamento del codice con "
-"riempimento nel mezzo, la generazione di codice, la comprensione del "
-"linguaggio naturale, il ragionamento matematico e il rispetto delle "
-"istruzioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:53
-#, kde-format
-msgid ""
-"An open-source Mixture-of-Experts code language model that achieves "
-"performance comparable to GPT4-Turbo in code-specific tasks."
-msgstr ""
-"Un modello di linguaggio di programmazione Mixture-of-Experts che raggiunge "
-"prestazioni paragonabili a GPT4-Turbo in attività specifiche del codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:54
-#, kde-format
-msgid ""
-"Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
-"outstanding reasoning and language understanding capabilities."
-msgstr ""
-"Phi-2: un modello linguistico 2.7B di Microsoft Research che dimostra "
-"eccezionali capacità di ragionamento e comprensione del linguaggio."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
-#, kde-format
-msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
-msgstr "Modello Llama 2 senza censure di George Sung e Jarrad Hope."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:56
-#, kde-format
-msgid ""
-"DeepSeek Coder is a capable coding model trained on two trillion code and "
-"natural language tokens."
-msgstr ""
-"DeepSeek Coder è un modello di codifica efficiente, addestrato su due "
-"trilioni di token di codice e linguaggio naturale."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:57
-#, kde-format
-msgid ""
-"A suite of text embedding models by Snowflake, optimized for performance."
-msgstr ""
-"Una suite di modelli di incorporamento di testo di Snowflake, ottimizzati "
-"per le prestazioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:59
-#, kde-format
-msgid ""
-"State of the art large language model from Microsoft AI with improved "
-"performance on complex chat, multilingual, reasoning and agent use cases."
-msgstr ""
-"Modello linguistico di grandi dimensioni all'avanguardia di Microsoft AI con "
-"prestazioni migliorate su casi d'uso complessi di chat, multilingua, "
-"ragionamento e agenti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:61
-#, kde-format
-msgid ""
-"The uncensored Dolphin model based on Mistral that excels at coding tasks. "
-"Updated to version 2.8."
-msgstr ""
-"Il modello Dolphin non censurato basato su Mistral, che eccelle nelle "
-"attività di programmazione. Aggiornato alla versione 2.8."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:63
-#, kde-format
-msgid ""
-"Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on "
-"Llama 3 that has a variety of instruction, conversational, and coding skills."
-msgstr ""
-"Dolphin 2.9 è un nuovo modello con dimensioni 8B e 70B di Eric Hartford "
-"basato su Llama 3, che offre una varietà di abilità didattiche, di "
-"conversazione e di codifica."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:65
-#, kde-format
-msgid "Yi 1.5 is a high-performing, bilingual language model."
-msgstr "Yi 1.5 è un modello linguistico bilingue ad alte prestazioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:66
-#, kde-format
-msgid ""
-"Command R is a Large Language Model optimized for conversational interaction "
-"and long context tasks."
-msgstr ""
-"Command R è un modello linguistico di grandi dimensioni ottimizzato per "
-"l'interazione conversazionale e per attività di contesto prolungato."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:67
-#, kde-format
-msgid ""
-"A general-purpose model ranging from 3 billion parameters to 70 billion, "
-"suitable for entry-level hardware."
-msgstr ""
-"Un modello generico che va da 3 miliardi a 70 miliardi di parametri, adatto "
-"per hardware di fascia bassa."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:68
-#, kde-format
-msgid ""
-"A LLaVA model fine-tuned from Llama 3 Instruct with better scores in several "
-"benchmarks."
-msgstr ""
-"Un modello LLaVA perfezionato da Llama 3 Instruct con punteggi migliori in "
-"diversi benchmark."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:69
-#, kde-format
-msgid ""
-"Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
-"that are trained to act as helpful assistants."
-msgstr ""
-"Zephyr è una serie di versioni perfezionate dei modelli Mistral e Mixtral, "
-"studiate per fungere da assistenti utili."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
-#, kde-format
-msgid ""
-"A lightweight AI model with 3.8 billion parameters with performance "
-"overtaking similarly and larger sized models."
-msgstr ""
-"Un modello di intelligenza artificiale leggero con 3,8 miliardi di "
-"parametri, con prestazioni che superano modelli simili e di dimensioni "
-"maggiori."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
-#, kde-format
-msgid "Embedding models on very large sentence level datasets."
-msgstr ""
-"Incorporamento di modelli su insiemi di dati a livello di frase molto grandi."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
-#, kde-format
-msgid ""
-"Codestral is Mistral AI’s first-ever code model designed for code generation "
-"tasks."
-msgstr ""
-"Codestral è il primo modello di codice di Mistral AI progettato per attività "
-"di generazione di codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
-#, kde-format
-msgid ""
-"StarCoder is a code generation model trained on 80+ programming languages."
-msgstr ""
-"StarCoder è un modello di generazione di codice addestrato su oltre 80 "
-"linguaggi di programmazione."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
-#, kde-format
-msgid ""
-"General use chat model based on Llama and Llama 2 with 2K to 16K context "
-"sizes."
-msgstr ""
-"Modello di chat di uso generale basato su Llama e Llama 2 con dimensioni di "
-"contesto da 2K a 16K."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
-#, kde-format
-msgid "A family of open foundation models by IBM for Code Intelligence"
-msgstr ""
-"Una famiglia di modelli di fondazione aperti di IBM per Code Intelligence"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
-#, kde-format
-msgid ""
-"Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
-"Mistral 7B model using the OpenOrca dataset."
-msgstr ""
-"Mistral OpenOrca è un modello da 7 miliardi di parametri, perfezionato sul "
-"modello Mistral 7B utilizzando l'insieme di dati OpenOrca."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:77
-#, kde-format
-msgid ""
-"A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
-"new high-quality dataset."
-msgstr ""
-"Una famiglia di piccoli modelli con 135M, 360M e 1,7B di parametri, "
-"addestrati su un nuovo insieme di dati di alta qualità."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
-#, kde-format
-msgid ""
-"Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
-"Llama 2 uncensored by Eric Hartford."
-msgstr ""
-"Wizard Vicuna Uncensored è un modello con parametri 7B, 13B e 30B basato su "
-"Llama 2 non censurato di Eric Hartford."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
-#, kde-format
-msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
-msgstr ""
-"Il modello basato su Llama 2 è stato perfezionato per migliorare la capacità "
-"di dialogo in cinese."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
-#, kde-format
-msgid ""
-"BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
-"Functionality, Multi-Linguality, and Multi-Granularity."
-msgstr ""
-"BGE-M3 è un nuovo modello di BAAI che si distingue per la sua versatilità in "
-"termini di multifunzionalità, multilinguismo e multigranularità."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
-#, kde-format
-msgid ""
-"A versatile model for AI software development scenarios, including code "
-"completion."
-msgstr ""
-"Un modello versatile per scenari di sviluppo di software di intelligenza "
-"artificiale, incluso il completamento del codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
-#, kde-format
-msgid ""
-"A family of open-source models trained on a wide variety of data, surpassing "
-"ChatGPT on various benchmarks. Updated to version 3.5-0106."
-msgstr ""
-"Una famiglia di modelli open source addestrati su un'ampia varietà di dati, "
-"che superano ChatGPT in diversi benchmark. Aggiornato alla versione 3.5-0106."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:85
-#, kde-format
-msgid ""
-"Aya 23, released by Cohere, is a new family of state-of-the-art, "
-"multilingual models that support 23 languages."
-msgstr ""
-"Aya 23, lanciata da Cohere, è una nuova famiglia di modelli multilingue "
-"all'avanguardia che supportano 23 lingue."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:86
-#, kde-format
-msgid ""
-"CodeQwen1.5 is a large language model pretrained on a large amount of code "
-"data."
-msgstr ""
-"CodeQwen1.5 è un modello linguistico di grandi dimensioni, pre-addestrato su "
-"una grande quantità di dati di codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
-#, kde-format
-msgid ""
-"The powerful family of models by Nous Research that excels at scientific "
-"discussion and coding tasks."
-msgstr ""
-"La potente famiglia di modelli di Nous Research, che eccelle nelle "
-"discussioni scientifiche e nelle attività di codifica."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
-#, kde-format
-msgid ""
-"Command R+ is a powerful, scalable large language model purpose-built to "
-"excel at real-world enterprise use cases."
-msgstr ""
-"Command R+ è un modello linguistico potente e scalabile, progettato "
-"appositamente per eccellere in casi d'uso aziendali reali."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
-#, kde-format
-msgid "State-of-the-art code generation model"
-msgstr "Modello di generazione di codice all'avanguardia"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:91
-#, kde-format
-msgid ""
-"Stable Code 3B is a coding model with instruct and code completion variants "
-"on par with models such as Code Llama 7B that are 2.5x larger."
-msgstr ""
-"Stable Code 3B è un modello di codifica con varianti di istruzione e "
-"completamento del codice simili a modelli come Code Llama 7B, che sono 2,5 "
-"volte più grandi."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
-#, kde-format
-msgid ""
-"An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset "
-"by Eric Hartford and based on TinyLlama."
-msgstr ""
-"Un modello sperimentale con parametri 1.1B addestrato sul nuovo insieme di "
-"dati Dolphin 2.8 da Eric Hartford e basato su TinyLlama."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
-#, kde-format
-msgid ""
-"OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
-"open datasets."
-msgstr ""
-"OpenHermes 2.5 è un modello 7B perfezionato da Teknium su Mistral con "
-"insiemi di dati completamente aperti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
-#, kde-format
-msgid ""
-"Mistral Large 2 is Mistral's new flagship model that is significantly more "
-"capable in code generation, mathematics, and reasoning with 128k context "
-"window and support for dozens of languages."
-msgstr ""
-"Mistral Large 2 è il nuovo modello di punta di Mistral, significativamente "
-"più potente nella generazione di codice, nella matematica e nel "
-"ragionamento, con una finestra di contesto da 128k e supporto per decine di "
-"linguaggi."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
-#, kde-format
-msgid ""
-"Qwen2 Math is a series of specialized math language models built upon the "
-"Qwen2 LLMs, which significantly outperforms the mathematical capabilities of "
-"open-source models and even closed-source models (e.g., GPT4o)."
-msgstr ""
-"Qwen2 Math è una serie di modelli di linguaggio matematico specializzati "
-"basati sui LLM Qwen2, che superano significativamente le capacità "
-"matematiche dei modelli open source e persino di quelli closed source (ad "
-"esempio, GPT4o)."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
-#, kde-format
-msgid ""
-"A strong multi-lingual general language model with competitive performance "
-"to Llama 3."
-msgstr ""
-"Un modello linguistico generale multilingue solido e competitivo per Llama 3."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:102
-#, kde-format
-msgid ""
-"Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model "
-"trained on multilingual data in English, Spanish, German, Italian, French, "
-"Portuguese, and Dutch."
-msgstr ""
-"Stable LM 2 è un modello linguistico all'avanguardia con parametri 1.6B e "
-"12B, addestrato su dati multilingue in inglese, spagnolo, tedesco, italiano, "
-"francese, portoghese e olandese."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:104
-#, kde-format
-msgid ""
-"BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
-"augmented with the LLaVA architecture."
-msgstr ""
-"BakLLaVA è un modello multimodale costituito dal modello base Mistral 7B "
-"potenziato con l'architettura LLaVA."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:106
-#, kde-format
-msgid ""
-"A high-performing model trained with a new technique called Reflection-"
-"tuning that teaches a LLM to detect mistakes in its reasoning and correct "
-"course."
-msgstr ""
-"Un modello ad alte prestazioni addestrato con una nuova tecnica chiamata "
-"Reflection-tuning che insegna a un LLM a individuare gli errori nel suo "
-"ragionamento e a correggerne il percorso."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:108
-#, kde-format
-msgid "An advanced language model crafted with 2 trillion bilingual tokens."
-msgstr ""
-"Un modello linguistico avanzato creato con 2 trilioni di token bilingue."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:109
-#, kde-format
-msgid ""
-"This model extends LLama-3 8B's context length from 8k to over 1m tokens."
-msgstr ""
-"Questo modello estende la lunghezza del contesto LLama-3 8B da 8k a oltre 1M "
-"di token."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:110
-#, kde-format
-msgid "Model focused on math and logic problems"
-msgstr "Modello focalizzato su problemi matematici e logici"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
-#, kde-format
-msgid ""
-"moondream2 is a small vision language model designed to run efficiently on "
-"edge devices."
-msgstr ""
-"moondream2 è un piccolo modello di linguaggio di visione progettato per "
-"funzionare in modo efficiente su dispositivi edge."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:112
-#, kde-format
-msgid ""
-"A fine-tuned model based on Mistral with good coverage of domain and "
-"language."
-msgstr ""
-"Un modello ottimizzato basato su Mistral con una buona copertura di dominio "
-"e linguaggio."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
-#, kde-format
-msgid ""
-"A model from NVIDIA based on Llama 3 that excels at conversational question "
-"answering (QA) and retrieval-augmented generation (RAG)."
-msgstr ""
-"Un modello di NVIDIA basato su Llama 3 che eccelle nelle risposte alle "
-"domande conversazionali (QA) e nella generazione aumentata del recupero "
-"(RAG)."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
-#, kde-format
-msgid ""
-"Conversational model based on Llama 2 that performs competitively on various "
-"benchmarks."
-msgstr ""
-"Modello conversazionale basato su Llama 2 che si comporta in modo "
-"competitivo su vari parametri di riferimento."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
-#, kde-format
-msgid ""
-"SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
-"generation tasks"
-msgstr ""
-"SQLCoder è un modello di completamento del codice ottimizzato su StarCoder "
-"per le attività di generazione di codice SQL."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
-#, kde-format
-msgid "General use models based on Llama and Llama 2 from Nous Research."
-msgstr "Modelli di uso generale basati su Llama e Llama 2 di Nous Research."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:118
-#, kde-format
-msgid "Code generation model based on Code Llama."
-msgstr "Modello di generazione del codice basato su Code Llama."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:119
-#, kde-format
-msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
-msgstr "Un'estensione di Llama 2 che supporta un contesto fino a 128k token."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:120
-#, kde-format
-msgid ""
-"A 7B and 15B uncensored variant of the Dolphin model family that excels at "
-"coding, based on StarCoder2."
-msgstr ""
-"Una variante non censurata 7B e 15B della famiglia di modelli Dolphin che "
-"eccelle nella codifica, basata su StarCoder2."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
-#, kde-format
-msgid "General use model based on Llama 2."
-msgstr "Modello di utilizzo generale basato su Llama 2."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
-#, kde-format
-msgid "A strong, economical, and efficient Mixture-of-Experts language model."
-msgstr ""
-"Un modello linguistico Mixture-of-Experts potente, economico ed efficiente."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
-#, kde-format
-msgid ""
-"Starling is a large language model trained by reinforcement learning from AI "
-"feedback focused on improving chatbot helpfulness."
-msgstr ""
-"Starling è un modello linguistico di grandi dimensioni, addestrato tramite "
-"apprendimento per rinforzo tramite feedback di intelligenza artificiale, "
-"incentrato sul miglioramento dell'utilità del chatbot."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
-#, kde-format
-msgid ""
-"A companion assistant trained in philosophy, psychology, and personal "
-"relationships. Based on Mistral."
-msgstr ""
-"Un assistente di accompagnamento esperto in filosofia, psicologia e "
-"relazioni personali. Basato su Mistral."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
-#, kde-format
-msgid ""
-"Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous "
-"Research"
-msgstr ""
-"Hermes 3 è l'ultima versione della serie di punta Hermes di LLM di "
-"NousResearch"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:128
-#, kde-format
-msgid ""
-"Yi-Coder is a series of open-source code language models that delivers state-"
-"of-the-art coding performance with fewer than 10 billion parameters."
-msgstr ""
-"Yi-Coder è una serie di modelli di linguaggio di codice open source che "
-"offrono prestazioni di codifica all'avanguardia con meno di 10 miliardi di "
-"parametri."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:131
-#, kde-format
-msgid ""
-"A large language model built by the Technology Innovation Institute (TII) "
-"for use in summarization, text generation, and chat bots."
-msgstr ""
-"Un modello linguistico di grandi dimensioni sviluppato dal Technology "
-"Innovation Institute (TII) da utilizzare per la sintesi, la generazione di "
-"testo e i chatbot."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:132
-#, kde-format
-msgid ""
-"InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
-"outstanding reasoning capability."
-msgstr ""
-"InternLM2.5 è un modello a 7B  di parametri, progettato per scenari pratici, "
-"con una capacità di ragionamento eccezionale."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
-#, kde-format
-msgid ""
-"A compact, yet powerful 10.7B large language model designed for single-turn "
-"conversation."
-msgstr ""
-"Un modello linguistico di grandi dimensioni da 10,7B, compatto ma potente, "
-"progettato per conversazioni a turno singolo."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:134
-#, kde-format
-msgid ""
-"Athene-V2 is a 72B parameter model which excels at code completion, "
-"mathematics, and log extraction tasks."
-msgstr ""
-"Athene-V2 è un modello a 72B di parametri che eccelle nelle attività di "
-"completamento del codice, matematica ed estrazione dei logaritmi."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:135
-#, kde-format
-msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
-msgstr "Un nuovo piccolo modello LLaVA perfezionato dal Phi 3 Mini."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
-#, kde-format
-msgid ""
-"Orca 2 is built by Microsoft research, and are a fine-tuned version of "
-"Meta's Llama 2 models. The model is designed to excel particularly in "
-"reasoning."
-msgstr ""
-"Orca 2 è stato sviluppato da Microsoft Research ed è una versione "
-"perfezionata dei modelli Llama 2 di Meta. Il modello è progettato per "
-"eccellere in particolare nel ragionamento."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
-#, kde-format
-msgid ""
-"A series of multimodal LLMs (MLLMs) designed for vision-language "
-"understanding."
-msgstr ""
-"Una serie di LLM multimodali (MLLM) progettati per la comprensione visivo-"
-"linguistica."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
-#, kde-format
-msgid ""
-"Llama 2 based model fine tuned on an Orca-style dataset. Originally called "
-"Free Willy."
-msgstr ""
-"Modello basato su Llama 2, perfezionato su un insieme di dati in stile Orca. "
-"Originariamente chiamato Free Willy."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:141
-#, kde-format
-msgid ""
-"Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
-"category below 70B."
-msgstr ""
-"Mistral Small 3 stabilisce un nuovo punto di riferimento nella categoria dei "
-"«piccoli» LLM, al di sotto di 70B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
-#, kde-format
-msgid ""
-"2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language "
-"model by Microsoft Research."
-msgstr ""
-"Modello Dolphin non censurato da 2,7 miliardi di dollari di Eric Hartford, "
-"basato sul modello del linguaggio Phi di Microsoft Research."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:143
-#, kde-format
-msgid ""
-"SmolLM2 is a family of compact language models available in three size: "
-"135M, 360M, and 1.7B parameters."
-msgstr ""
-"SmolLM2 è una famiglia di modelli linguistici compatti disponibili in tre "
-"dimensioni: 135M, 360M e 1,7B di parametri."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:144
-#, kde-format
-msgid "Uncensored version of Wizard LM model"
-msgstr "Versione non censurata del modello Wizard LM"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:145
-#, kde-format
-msgid ""
-"A commercial-friendly small language model by NVIDIA optimized for roleplay, "
-"RAG QA, and function calling."
-msgstr ""
-"Un modello di linguaggio di piccole dimensioni, per uso commerciale, "
-"sviluppato da NVIDIA e ottimizzato per i giochi di ruolo, il RAG QA e "
-"l'invocazione di funzioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:146
-#, kde-format
-msgid "An extension of Mistral to support context windows of 64K or 128K."
-msgstr ""
-"Un'estensione di Mistral per supportare finestre di contesto da 64K o 128K."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:148
-#, kde-format
-msgid ""
-"An expansion of Llama 2 that specializes in integrating both general "
-"language understanding and domain-specific knowledge, particularly in "
-"programming and mathematics."
-msgstr ""
-"Un'espansione di Llama 2 specializzata nell'integrazione sia della "
-"comprensione linguistica generale che di conoscenze specifiche di un "
-"dominio, in particolare in programmazione e matematica."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
-#, kde-format
-msgid ""
-"Fine-tuned Llama 2 model to answer medical questions based on an open source "
-"medical dataset."
-msgstr ""
-"Modello Llama 2 ottimizzato per rispondere a quesiti medici basati su un "
-"insieme di dati medici open source."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
-#, kde-format
-msgid ""
-"Open-source medical large language model adapted from Llama 2 to the medical "
-"domain."
-msgstr ""
-"Modello di linguaggio medico open source adattato da Llama 2 al dominio "
-"medico."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
-#, kde-format
-msgid ""
-"A series of models from Groq that represent a significant advancement in "
-"open-source AI capabilities for tool use/function calling."
-msgstr ""
-"Una serie di modelli di Groq che rappresentano un significativo progresso "
-"nelle capacità dell'intelligenza artificiale open source per l'utilizzo di "
-"strumenti e l'invocazione di funzioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
-#, kde-format
-msgid ""
-"Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
-"NVIDIA to improve the helpfulness of LLM generated responses to user queries."
-msgstr ""
-"Llama-3.1-Nemotron-70B-Instruct è un modello linguistico di grandi "
-"dimensioni personalizzato da NVIDIA per migliorare l'utilità delle risposte "
-"generate da LLM alle interrogazioni degli utenti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:157
-#, kde-format
-msgid ""
-"Nexus Raven is a 13B instruction tuned model for function calling tasks."
-msgstr ""
-"Nexus Raven è un modello ottimizzato per le istruzioni 13B per le attività "
-"di invocazione di funzioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
-#, kde-format
-msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
-msgstr "Il modello Nous Hermes 2 di Nous Research, ora addestrato su Mixtral."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:159
-#, kde-format
-msgid "Great code generation model based on Llama2."
-msgstr "Ottimo modello di generazione di codice basato su Llama2."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
-#, kde-format
-msgid "Uncensored Llama2 based model with support for a 16K context window."
-msgstr ""
-"Modello basato su Llama2 non censurato con supporto per una finestra di "
-"contesto da 16K."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
-#, kde-format
-msgid ""
-"The IBM Granite 2B and 8B models are designed to support tool-based use "
-"cases and support for retrieval augmented generation (RAG), streamlining "
-"code generation, translation and bug fixing."
-msgstr ""
-"I modelli IBM Granite 2B e 8B sono progettati per supportare casi d'uso "
-"basati su strumenti e per supportare la generazione aumentata del recupero "
-"(RAG), semplificando la generazione del codice, la traduzione e la "
-"correzione dei bug."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
-#, kde-format
-msgid ""
-"Magicoder is a family of 7B parameter models trained on 75K synthetic "
-"instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
-"with open-source code snippets."
-msgstr ""
-"Magicoder è una famiglia di modelli con 7B di parametri addestrati su 75.000 "
-"dati di istruzioni sintetici utilizzando OSS-Instruct, un nuovo approccio "
-"per arricchire gli LLM con frammenti di codice open source."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
-#, kde-format
-msgid ""
-"A lightweight chat model allowing accurate, and responsive output without "
-"requiring high-end hardware."
-msgstr ""
-"Un modello di chat leggero che consente un output accurato e reattivo senza "
-"richiedere hardware di fascia alta."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:168
-#, kde-format
-msgid ""
-"A high-performing code instruct model created by merging two existing code "
-"models."
-msgstr ""
-"Un modello di istruzioni del codice ad alte prestazioni creato unendo due "
-"modelli di codice esistenti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:169
-#, kde-format
-msgid ""
-"Falcon2 is an 11B parameters causal decoder-only model built by TII and "
-"trained over 5T tokens."
-msgstr ""
-"Falcon2 è un modello di decodificatore causale a 11B di parametri, costruito "
-"da TII e addestrato su 5T token."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
-#, kde-format
-msgid ""
-"Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
-"MelodysDreamj."
-msgstr ""
-"Wizard Vicuna è un modello a 13B di parametri basato su Llama 2, addestrato "
-"da MelodysDreamj."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:171
-#, kde-format
-msgid ""
-"MistralLite is a fine-tuned model based on Mistral with enhanced "
-"capabilities of processing long contexts."
-msgstr ""
-"MistralLite è un modello ottimizzato basato su Mistral con capacità avanzate "
-"di elaborazione di contesti lunghi."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
-#, kde-format
-msgid ""
-"MathΣtral: a 7B model designed for math reasoning and scientific discovery "
-"by Mistral AI."
-msgstr ""
-"MathΣtral: un modello 7B progettato per il ragionamento matematico e la "
-"scoperta scientifica da Mistral AI."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
-#, kde-format
-msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
-msgstr ""
-"Modello di conversione da testo a SQL con 7B di parametri realizzato da "
-"MotherDuck e Numbers Station."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
-#, kde-format
-msgid ""
-"MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
-"interleaving the model with itself."
-msgstr ""
-"MegaDolphin-2.2-120b è una trasformazione di Dolphin-2.2-70b creata "
-"intercalando il modello con se stesso."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
-#, kde-format
-msgid ""
-"Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
-"parameters designed to fit into a single GPU"
-msgstr ""
-"Anteprima di Solar Pro: un modello linguistico avanzato di grandi dimensioni "
-"(LLM) con 22 miliardi di parametri progettato per adattarsi a una singola GPU"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
-#, kde-format
-msgid ""
-"A series of models that convert HTML content to Markdown content, which is "
-"useful for content conversion tasks."
-msgstr ""
-"Una serie di modelli che convertono il contenuto HTML in contenuto Markdown, "
-"utile per le attività di conversione dei contenuti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
-#, kde-format
-msgid ""
-"A top-performing mixture of experts model, fine-tuned with high-quality data."
-msgstr ""
-"Un modello Mixture-of-Experts ad alte prestazioni, perfezionato con dati di "
-"alta qualità."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
-#, kde-format
-msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
-msgstr ""
-"Un modello di chat 7B perfezionato con dati di alta qualità e basato su "
-"Zephyr."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
-#, kde-format
-msgid ""
-"Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
-"Designed for chat and code generation."
-msgstr ""
-"Fusione del modello Open Orca OpenChat e del modello Garage-bAInd Platypus "
-"2. Progettato per chat e generazione di codice."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:180
-#, kde-format
-msgid ""
-"A language model created by combining two fine-tuned Llama 2 70B models into "
-"one."
-msgstr ""
-"Un modello linguistico creato combinando due modelli Llama 2 70B ottimizzati "
-"in uno."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
-#, kde-format
-msgid ""
-"The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
-"Granite models from IBM designed for low latency usage."
-msgstr ""
-"I modelli IBM Granite 1B e 3B sono i primi modelli Granite Mixture-of-"
-"Experts (MoE) di IBM progettati per un utilizzo a bassa latenza."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
-#, kde-format
-msgid ""
-"A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
-"information extraction, based on Phi-3."
-msgstr ""
-"Un modello da 3,8B, messo a punto su un insieme di dati sintetici privati ​​di "
-"alta qualità per l'estrazione di informazioni, basato su Phi-3."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
-#, kde-format
-msgid ""
-"Cohere For AI's language models trained to perform well across 23 different "
-"languages."
-msgstr ""
-"I modelli linguistici di Cohere For AI sono stati addestrati per funzionare "
-"bene in 23 lingue diverse."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:185
-#, kde-format
-msgid "DBRX is an open, general-purpose LLM created by Databricks."
-msgstr "DBRX è un LLM aperto e multiuso creato da Databricks."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
-#, kde-format
-msgid ""
-"An open large reasoning model for real-world solutions by the Alibaba "
-"International Digital Commerce Group (AIDC-AI)."
-msgstr ""
-"Un modello aperto di ragionamento di grandi dimensioni per soluzioni "
-"concrete, sviluppato da Alibaba International Digital Commerce Group (AIDC-"
-"AI)."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
-#, kde-format
-msgid "Embedding model from BAAI mapping texts to vectors."
-msgstr "Modello di incorporamento da BAAI che mappa i testi ai vettori."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:188
-#, kde-format
-msgid ""
-"An open weights function calling model based on Llama 3, competitive with "
-"GPT-4o function calling capabilities."
-msgstr ""
-"Un modello di invocazione di funzioni con pesi aperti basato su Llama 3, "
-"competitivo con le capacità di invocazione di funzioni GPT-4o."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
-#, kde-format
-msgid ""
-"A robust conversational model designed to be used for both chat and instruct "
-"use cases."
-msgstr ""
-"Un modello conversazionale robusto, progettato per essere utilizzato sia in "
-"chat che in casi di istruzione."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
-#, kde-format
-msgid ""
-"An upgraded version of DeekSeek-V2 that integrates the general and coding "
-"abilities of both DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct."
-msgstr ""
-"Una versione aggiornata di DeekSeek-V2 che integra le capacità generali e di "
-"codifica di DeepSeek-V2-Chat e DeepSeek-Coder-V2-Instruct."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:193
-#, kde-format
-msgid ""
-"ShieldGemma is set of instruction tuned models for evaluating the safety of "
-"text prompt input and text output responses against a set of defined safety "
-"policies."
-msgstr ""
-"ShieldGemma è un insieme di modelli di istruzioni ottimizzati per valutare "
-"la sicurezza del testo in ingresso al prompt e del testo di risposta "
-"rispetto a una serie di criteri di sicurezza definiti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
-#, kde-format
-msgid "A state-of-the-art fact-checking model developed by Bespoke Labs."
-msgstr ""
-"Un modello di fact-checking all'avanguardia sviluppato da Bespoke Labs."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:196
-#, kde-format
-msgid ""
-"Llama Guard 3 is a series of models fine-tuned for content safety "
-"classification of LLM inputs and responses."
-msgstr ""
-"Llama Guard 3 è una serie di modelli ottimizzati per la classificazione "
-"della sicurezza dei contenuti degli input e delle risposte LLM."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
-#, kde-format
-msgid ""
-"Sentence-transformers model that can be used for tasks like clustering or "
-"semantic search."
-msgstr ""
-"Modello di trasformatori di frasi che può essere utilizzato per attività "
-"come il clustering o la ricerca semantica."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:199
-#, kde-format
-msgid ""
-"OpenCoder is an open and reproducible code LLM family which includes 1.5B "
-"and 8B models, supporting chat in English and Chinese languages."
-msgstr ""
-"OpenCoder è una famiglia di LLM di codice aperto e riproducibile che include "
-"modelli da 1,5B di bit e 8B di bit, che supporta chat in inglese e cinese."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:201
-#, kde-format
-msgid ""
-"Tülu 3 is a leading instruction following model family, offering fully open-"
-"source data, code, and recipes by the The Allen Institute for AI."
-msgstr ""
-"Tülu 3 è una delle principali famiglie di modelli specializzate nel seguire "
-"le istruzioni, che offre dati, codice e procedure completamente open source "
-"forniti dall'Allen Institute for AI."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:203
-#, kde-format
-msgid ""
-"Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
-"support without sacrificing English performance or scalability."
-msgstr ""
-"Modello di incorporamento di frontiera di Snowflake. Arctic Embed 2.0 "
-"aggiunge il supporto multilingue senza sacrificare le prestazioni o la "
-"scalabilità in inglese."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
-#, kde-format
-msgid ""
-"The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
-"in prompts and/or responses."
-msgstr ""
-"I modelli IBM Granite Guardian 3.0 2B e 8B sono progettati per rilevare i "
-"rischi nei prompt e/o nelle risposte."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
-#, kde-format
-msgid ""
-"EXAONE 3.5 is a collection of instruction-tuned bilingual (English and "
-"Korean) generative models ranging from 2.4B to 32B parameters, developed and "
-"released by LG AI Research."
-msgstr ""
-"EXAONE 3.5 è una raccolta di modelli generativi bilingue (inglese e coreano) "
-"ottimizzati per l'istruzione, con un numero di parametri compreso tra 2,4B e "
-"32B, sviluppati e rilasciati da LG AI Research."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
-#, kde-format
-msgid ""
-"Sailor2 are multilingual language models made for South-East Asia. Available "
-"in 1B, 8B, and 20B parameter sizes."
-msgstr ""
-"Sailor2 è un modello linguistico multilingue pensato per il sud-est "
-"asiatico. Disponibile con dimensioni di 1B, 8B e 20B parametri."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
-#, kde-format
-msgid ""
-"A family of efficient AI models under 10B parameters performant in science, "
-"math, and coding through innovative training techniques."
-msgstr ""
-"Una famiglia di modelli di intelligenza artificiale efficienti con parametri "
-"inferiori a 10B, efficiente in ambito scientifico, matematico e di "
-"programmazione grazie a tecniche di addestramento innovative."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
-#, kde-format
-msgid ""
-"The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 "
-"trillion tokens of data, demonstrated significant improvements over their "
-"predecessors in performance and speed in IBM’s initial testing."
-msgstr ""
-"I modelli IBM Granite 2B e 8B sono LLM densi solo testo, addestrati su oltre "
-"12 trilioni di token di dati, e hanno dimostrato miglioramenti significativi "
-"rispetto ai loro predecessori in termini di prestazioni e velocità nei test "
-"iniziali di IBM."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
-#, kde-format
-msgid ""
-"The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
-"Granite models from IBM designed for low latency usage."
-msgstr ""
-"I modelli IBM Granite 1B e 3B sono modelli Granite Mixture-of-Experts (MoE) "
-"a lungo contesto di IBM, progettati per un utilizzo a bassa latenza."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
-#, kde-format
-msgid ""
-"The IBM Granite Embedding 30M and 278M models models are text-only dense "
-"biencoder embedding models, with 30M available in English only and 278M "
-"serving multilingual use cases."
-msgstr ""
-"I modelli IBM Granite Embedding 30M e 278M sono modelli di incorporamento "
-"biencoder densi di solo testo, con 30M disponibile solo in inglese e 278M "
-"per casi d'uso multilingue."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
-#, kde-format
-msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
-msgstr ""
-"Phi-4 è un modello aperto all'avanguardia con 14B di parametri di Microsoft."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:220
-#, kde-format
-msgid ""
-"A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
-msgstr ""
-"Un nuovo modello di ragionamento di piccole dimensioni, perfezionato dal "
-"modello Qwen 2.5 3B Instruct."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:222
-#, kde-format
-msgid ""
-"Dolphin 3.0 Llama 3.1 8B 🐬 is the next generation of the Dolphin series of "
-"instruct-tuned models designed to be the ultimate general purpose local "
-"model, enabling coding, math, agentic, function calling, and general use "
-"cases."
-msgstr ""
-"Dolphin 3.0 Llama 3.1 8B 🐬 è la nuova generazione della serie Dolphin di "
-"modelli basati su istruzioni, progettati per essere il modello locale di uso "
-"generale definitivo, consentendo l'utilizzo in casi di programmazione, "
-"matematica, agenti, invocazione di funzioni e altri usi generali."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:225
-#, kde-format
-msgid ""
-"DeepSeek's first-generation of reasoning models with comparable performance "
-"to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on "
-"Llama and Qwen."
-msgstr ""
-"La prima generazione di modelli di ragionamento di DeepSeek con prestazioni "
-"paragonabili a OpenAI-o1, inclusi sei modelli densi distillati da DeepSeek-"
-"R1 basati su Llama e Qwen."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:227
-#, kde-format
-msgid ""
-"A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
-"with 37B activated for each token."
-msgstr ""
-"Un modello linguistico MoE (Mixture-of-Experts) potente con 671B di "
-"parametri totali, di cui 37B attivati ​​per ciascun token."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
-#, kde-format
-msgid ""
-"OLMo 2 is a new family of 7B and 13B models trained on up to 5T tokens. "
-"These models are on par with or better than equivalently sized fully open "
-"models, and competitive with open-weight models such as Llama 3.1 on English "
-"academic benchmarks."
-msgstr ""
-"OLMo 2 è una nuova famiglia di modelli 7B e 13B addestrati su token fino a "
-"5T. Questi modelli sono pari o migliori di modelli completamente aperti di "
-"dimensioni equivalenti e competitivi con modelli a pesi aperti come Llama "
-"3.1 nei benchmark accademici in lingua inglese."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:232
-#, kde-format
-msgid ""
-"The smallest model in Cohere's R series delivers top-tier speed, efficiency, "
-"and quality to build powerful AI applications on commodity GPUs and edge "
-"devices."
-msgstr ""
-"Il modello più piccolo della serie R di Cohere offre velocità, efficienza e "
-"qualità di alto livello per realizzare potenti applicazioni di intelligenza "
-"artificiale su GPU commerciali e dispositivi edge."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
-#, kde-format
-msgid ""
-"A fully open-source family of reasoning models built using a dataset derived "
-"by distilling DeepSeek-R1."
-msgstr ""
-"Una famiglia di modelli di ragionamento completamente open source, "
-"realizzata utilizzando un insieme di dati derivato dall'elaborazione di "
-"DeepSeek-R1."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
-#, kde-format
-msgid ""
-"A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the "
-"performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
-"evaluations."
-msgstr ""
-"Una versione ottimizzata di Deepseek-R1-Distilled-Qwen-1.5B che supera le "
-"prestazioni di o1-preview di OpenAI con soli 1,5B di parametri nelle "
-"valutazioni matematiche più diffuse."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:239
-#, kde-format
-msgid ""
-"A version of the DeepSeek-R1 model that has been post trained to provide "
-"unbiased, accurate, and factual information by Perplexity."
-msgstr ""
-"Una versione del modello DeepSeek-R1 che è stata addestrata ulteriormente da "
-"Perplexity per fornire informazioni imparziali, accurate e fattuali."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:240
-#, kde-format
-msgid "The current, most capable model that runs on a single GPU."
-msgstr "Il modello attuale più potente che funziona con una singola GPU."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:242
-#, kde-format
-msgid ""
-"Phi-4-mini brings significant enhancements in multilingual support, "
-"reasoning, and mathematics, and now, the long-awaited function calling "
-"feature is finally supported."
-msgstr ""
-"Phi-4-mini apporta miglioramenti significativi nel supporto multilingue, nel "
-"ragionamento e nella matematica, e ora è finalmente supportata anche la "
-"tanto attesa funzionalità di invocazione di funzioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
-#, kde-format
-msgid ""
-"A compact and efficient vision-language model, specifically designed for "
-"visual document understanding, enabling automated content extraction from "
-"tables, charts, infographics, plots, diagrams, and more."
-msgstr ""
-"Un modello di linguaggio visivo compatto ed efficiente, specificamente "
-"progettato per la comprensione visiva dei documenti, che consente "
-"l'estrazione automatizzata di contenuti da tabelle, grafici, infografiche, "
-"diagrammi e altro ancora."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:247
-#, kde-format
-msgid ""
-"Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
-"tuned for thinking capabilities."
-msgstr ""
-"Granite-3.2 è una famiglia di modelli di intelligenza artificiale a lungo "
-"contesto di IBM Granite, ottimizzati per le capacità di pensiero."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
-#, kde-format
-msgid ""
-"A new state-of-the-art version of the lightweight Command R7B model that "
-"excels in advanced Arabic language capabilities for enterprises in the "
-"Middle East and Northern Africa."
-msgstr ""
-"Una nuova versione all'avanguardia del modello leggero Command R7B, che "
-"eccelle nelle funzionalità avanzate della lingua araba per le aziende in "
-"Medio Oriente e Nord Africa."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
-#, kde-format
-msgid ""
-"111 billion parameter model optimized for demanding enterprises that require "
-"fast, secure, and high-quality AI"
-msgstr ""
-"Modello da 111 miliardi di parametri ottimizzato per le aziende esigenti che "
-"necessitano di un'intelligenza artificiale veloce, sicura e di alta qualità"
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:253
-#, kde-format
-msgid ""
-"EXAONE Deep exhibits superior capabilities in various reasoning tasks "
-"including math and coding benchmarks, ranging from 2.4B to 32B parameters "
-"developed and released by LG AI Research."
-msgstr ""
-"EXAONE Deep mostra capacità superiori in vari compiti di ragionamento, "
-"inclusi benchmark matematici e di codifica, con parametri che vanno da 2,4B "
-"a 32B, sviluppati e rilasciati da LG AI Research."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
-#, kde-format
-msgid ""
-"Building upon Mistral Small 3, Mistral Small 3.1 (2503) adds state-of-the-"
-"art vision understanding and enhances long context capabilities up to 128k "
-"tokens without compromising text performance."
-msgstr ""
-"Basandosi su Mistral Small 3, Mistral Small 3.1 (2503) aggiunge una "
-"comprensione della visione all'avanguardia e migliora le capacità di "
-"contesto lungo fino a 128k token senza compromettere le prestazioni del "
-"testo."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:259
-#, kde-format
-msgid ""
-"Cogito v1 Preview is a family of hybrid reasoning models by Deep Cogito that "
-"outperform the best available open models of the same size, including "
-"counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
-msgstr ""
-"Cogito v1 Preview è una famiglia di modelli di ragionamento ibridi di Deep "
-"Cogito che superano le prestazioni dei migliori modelli aperti disponibili "
-"delle stesse dimensioni, inclusi i modelli equivalenti di LLaMA, DeepSeek e "
-"Qwen nella maggior parte dei benchmark standard."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:261
-#, kde-format
-msgid ""
-"DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
-"1.5B version also available."
-msgstr ""
-"DeepCoder è un modello di codificatore da 14B completamente open source a "
-"livello O3-mini, con una versione disponibile anche da 1,5B."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:263
-#, kde-format
-msgid ""
-"Qwen3 is the latest generation of large language models in Qwen series, "
-"offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
-msgstr ""
-"Qwen3 è l'ultima generazione di modelli linguistici di grandi dimensioni "
-"della serie Qwen, che offre una suite completa di modelli densi e misti di "
-"esperti (MoE)."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
-#, kde-format
-msgid "Meta's latest collection of multimodal models."
-msgstr "L'ultima raccolta di modelli multimodali di Meta."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:267
-#, kde-format
-msgid ""
-"IBM Granite 2B and 8B models are 128K context length language models that "
-"have been fine-tuned for improved reasoning and instruction-following "
-"capabilities."
-msgstr ""
-"I modelli IBM Granite 2B e 8B sono modelli linguistici con lunghezza di "
-"contesto di 128K, ottimizzati per migliorare le capacità di ragionamento e "
-"di esecuzione delle istruzioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
-#, kde-format
-msgid ""
-"Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
-"reasoning models that rival much larger models on complex reasoning tasks."
-msgstr ""
-"Phi 4 reasoning e reasoning plus sono modelli di ragionamento a pesi aperti "
-"da 14 miliardi di parametri che rivaleggiano con modelli molto più grandi su "
-"attività di ragionamento complesse."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
-#, kde-format
-msgid ""
-"Phi 4 mini reasoning is a lightweight open model that balances efficiency "
-"with advanced reasoning ability."
-msgstr ""
-"Il ragionamento Phi 4 mini è un modello aperto e leggero che bilancia "
-"l'efficienza con capacità di ragionamento avanzate."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:273
-#, kde-format
-msgid ""
-"Gemma 3n models are designed for efficient execution on everyday devices "
-"such as laptops, tablets or phones."
-msgstr ""
-"I modelli Gemma 3n sono progettati per un'esecuzione efficiente su "
-"dispositivi di uso quotidiano come laptop, tablet o telefoni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
-#, kde-format
-msgid "Magistral is a small, efficient reasoning model with 24B parameters."
-msgstr ""
-"Magistral è un modello di ragionamento piccolo ed efficiente con 24B di "
-"parametri."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:275
-#, kde-format
-msgid ""
-"An update to Mistral Small that improves on function calling, instruction "
-"following, and less repetition errors."
-msgstr ""
-"Un aggiornamento di Mistral Small che migliora le chiamate di funzione, la "
-"capacità di seguire le istruzioni e riduce gli errori di ripetizione."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
-#, kde-format
-msgid ""
-"Flagship vision-language model of Qwen and also a significant leap from the "
-"previous Qwen2-VL."
-msgstr ""
-"Modello di linguaggio visivo di punta di Qwen e anche un salto significativo "
-"rispetto al precedente Qwen2-VL."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
-#, kde-format
-msgid "Devstral: the best open source model for coding agents."
-msgstr ""
-"Devstral: il miglior modello open source per la programmazione di agenti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:278
-#, kde-format
-msgid ""
-"OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
-"and versatile developer use cases."
-msgstr ""
-"I modelli open-weight di OpenAI sono progettati per ragionamenti potenti, "
-"attività agentiche e casi d'uso versatili per sviluppatori."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
-#, kde-format
-msgid "Alibaba's performant long context models for agentic and coding tasks."
-msgstr ""
-"Modelli performanti di Alibaba per contesti lunghi per attività di codifica "
-"e agenti."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
-#, kde-format
-msgid ""
-"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
-"thinking mode."
-msgstr ""
-"DeepSeek-V3.1 è un modello ibrido che supporta sia la modalità di pensiero "
-"che quella di non pensiero."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
-#, kde-format
-msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr ""
-"EmbeddingGemma è un modello di incorporamento di parametri da 300 milioni di "
-"Google."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:283
-#, kde-format
-msgid ""
-"EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
-"provides a comprehensive range of text embeddings models in various sizes."
-msgstr ""
-"Basandosi sui modelli fondamentali della serie Qwen3, Qwen3 Embedding offre "
-"una gamma completa di modelli di incorporamento di testo in varie dimensioni."
-
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:286
-#, kde-format
-msgid ""
-"Granite 4 features improved instruction following (IF) and tool-calling "
-"capabilities, making them more effective in enterprise applications."
-msgstr ""
-"Granite 4 offre funzionalità migliorate di instruction following (IF) e tool-"
-"calling, rendendole più efficaci nelle applicazioni aziendali."
-
 #: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2210,6 +622,1594 @@ msgstr "Ollama"
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Ricarica modello"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:17
+#, kde-format
+msgid ""
+"New state of the art 70B model. Llama 3.3 70B offers similar performance "
+"compared to the Llama 3.1 405B model."
+msgstr ""
+"Nuovo modello 70B all'avanguardia. Llama 3.3 70B offre prestazioni simili al "
+"modello Llama 3.1 405B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:18
+#, kde-format
+msgid "QwQ is the reasoning model of the Qwen series."
+msgstr "QwQ è il modello di ragionamento della serie di Qwen."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:19
+#, kde-format
+msgid ""
+"Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
+"generative models in 11B and 90B sizes."
+msgstr ""
+"Llama 3.2 Vision è una raccolta di modelli generativi di ragionamento basato "
+"su immagini, calibrati sulle istruzioni, nelle dimensioni 11B e 90B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:20
+#, kde-format
+msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
+msgstr ""
+"Llama 3.2 di Meta è disponibile in versione compatta con i modelli 1B e 3B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:21
+#, kde-format
+msgid ""
+"Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
+"405B parameter sizes."
+msgstr ""
+"Llama 3.1 è un nuovo modello all'avanguardia di Meta disponibile nelle "
+"dimensioni dei parametri 8B, 70B e 405B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:22
+#, kde-format
+msgid "Meta Llama 3: The most capable openly available LLM to date"
+msgstr ""
+"Llama 3 di Meta: il LLM più potente e disponibile al pubblico fino ad oggi"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:23
+#, kde-format
+msgid "The 7B model released by Mistral AI, updated to version 0.3."
+msgstr "Il modello 7B rilasciato da Mistral AI, aggiornato alla versione 0.3."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:24
+#, kde-format
+msgid ""
+"A high-performing open embedding model with a large token context window."
+msgstr ""
+"Un modello di incorporamento aperto ad alte prestazioni con un'ampia "
+"finestra di contesto del token."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:25
+#, kde-format
+msgid ""
+"Gemma is a family of lightweight, state-of-the-art open models built by "
+"Google DeepMind. Updated to version 1.1"
+msgstr ""
+"Gemma è una famiglia di modelli aperti leggeri e all'avanguardia, sviluppati "
+"da Google DeepMind. Aggiornato alla versione 1.1."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:26
+#, kde-format
+msgid ""
+"Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
+"0.5B to 110B parameters"
+msgstr ""
+"Qwen 1.5 è una serie di grandi modelli linguistici di Alibaba Cloud che "
+"vanno da 0,5 miliardi a 110 miliardi di parametri"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:27
+#, kde-format
+msgid "Qwen2 is a new series of large language models from Alibaba group"
+msgstr ""
+"Qwen2 è una nuova serie di grandi modelli linguistici del gruppo Alibaba"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:28
+#, kde-format
+msgid ""
+"Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
+"open models by Microsoft."
+msgstr ""
+"Phi-3 è una famiglia di modelli aperti leggeri all'avanguardia da 3B (Mini) "
+"e 14B (Medium) di Microsoft."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:29
+#, kde-format
+msgid ""
+"Llama 2 is a collection of foundation language models ranging from 7B to 70B "
+"parameters."
+msgstr ""
+"Llama 2 è una raccolta di modelli linguistici fondamentali che vanno dai 7B "
+"ai 70B parametri."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:31
+#, kde-format
+msgid ""
+"Qwen2.5 models are pretrained on Alibaba's latest large-scale dataset, "
+"encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
+"and has multilingual support."
+msgstr ""
+"I modelli Qwen2.5 sono pre-addestrati sul più recente dataset su larga scala "
+"di Alibaba, che comprende fino a 18 trilioni di token. Il modello supporta "
+"fino a 128.000 token e supporta più lingue."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:33
+#, kde-format
+msgid ""
+"Google Gemma 2 is a high-performing and efficient model available in three "
+"sizes: 2B, 9B, and 27B."
+msgstr ""
+"Google Gemma 2 è un modello efficiente e dalle prestazioni elevate "
+"disponibile in tre dimensioni: 2B, 9B e 27B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:35
+#, kde-format
+msgid ""
+"LLaVA is a novel end-to-end trained large multimodal model that combines a "
+"vision encoder and Vicuna for general-purpose visual and language "
+"understanding. Updated to version 1.6."
+msgstr ""
+"LLaVA è un nuovo modello multimodale di grandi dimensioni, addestrato end-to-"
+"end, che combina un codificatore visivo e Vicuna per la comprensione visiva "
+"e linguistica di uso generale. Aggiornato alla versione 1.6."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:37
+#, kde-format
+msgid ""
+"A large language model that can use text prompts to generate and discuss "
+"code."
+msgstr ""
+"Un modello linguistico di grandi dimensioni che può utilizzare prompt di "
+"testo per generare e discutere il codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:39
+#, kde-format
+msgid ""
+"The latest series of Code-Specific Qwen models, with significant "
+"improvements in code generation, code reasoning, and code fixing."
+msgstr ""
+"L'ultima serie di modelli Qwen specifici del codice, con miglioramenti "
+"significativi nella generazione, nel ragionamento e nella correzione del "
+"codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:40
+#, kde-format
+msgid ""
+"A state-of-the-art 12B model with 128k context length, built by Mistral AI "
+"in collaboration with NVIDIA."
+msgstr ""
+"Un modello 12B all'avanguardia con lunghezza di contesto di 128k, realizzato "
+"da Mistral AI in collaborazione con NVIDIA."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:41
+#, kde-format
+msgid ""
+"The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
+"model on 3 trillion tokens."
+msgstr ""
+"Il progetto TinyLlama è un progetto aperto volto ad addestrare un modello "
+"compatto di Llama da 1,1 miliardi di dollari su 3 trilioni di token."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:42
+#, kde-format
+msgid "State-of-the-art large embedding model from mixedbread.ai"
+msgstr ""
+"Modello di incorporamento di grandi dimensioni all'avanguardia di mixedbread."
+"ai"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:44
+#, kde-format
+msgid ""
+"StarCoder2 is the next generation of transparently trained open code LLMs "
+"that comes in three sizes: 3B, 7B and 15B parameters."
+msgstr ""
+"StarCoder2 è la nuova generazione di LLM a codice aperto e addestrati in "
+"modo trasparente, disponibili in tre dimensioni: parametri 3B, 7B e 15B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:45
+#, kde-format
+msgid ""
+"A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
+"8x7b and 8x22b parameter sizes."
+msgstr ""
+"Un insieme di modelli Mixture of Experts (MoE) con pesi aperti di Mistral AI "
+"nelle dimensioni dei parametri 8x7b e 8x22b."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:47
+#, kde-format
+msgid ""
+"Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
+"experts models that excels at coding tasks. Created by Eric Hartford."
+msgstr ""
+"Modelli 8x7b e 8x22b non censurati, ottimizzati e basati sulla combinazione "
+"di modelli esperti Mixtral, che eccelle nelle attività di programmazione. "
+"Creati da Eric Hartford."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:50
+#, kde-format
+msgid ""
+"CodeGemma is a collection of powerful, lightweight models that can perform a "
+"variety of coding tasks like fill-in-the-middle code completion, code "
+"generation, natural language understanding, mathematical reasoning, and "
+"instruction following."
+msgstr ""
+"CodeGemma è una raccolta di modelli potenti e leggeri in grado di eseguire "
+"una varietà di attività di codifica, come il completamento del codice con "
+"riempimento nel mezzo, la generazione di codice, la comprensione del "
+"linguaggio naturale, il ragionamento matematico e il rispetto delle "
+"istruzioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:53
+#, kde-format
+msgid ""
+"An open-source Mixture-of-Experts code language model that achieves "
+"performance comparable to GPT4-Turbo in code-specific tasks."
+msgstr ""
+"Un modello di linguaggio di programmazione Mixture-of-Experts che raggiunge "
+"prestazioni paragonabili a GPT4-Turbo in attività specifiche del codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:54
+#, kde-format
+msgid ""
+"Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
+"outstanding reasoning and language understanding capabilities."
+msgstr ""
+"Phi-2: un modello linguistico 2.7B di Microsoft Research che dimostra "
+"eccezionali capacità di ragionamento e comprensione del linguaggio."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:55
+#, kde-format
+msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
+msgstr "Modello Llama 2 senza censure di George Sung e Jarrad Hope."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:56
+#, kde-format
+msgid ""
+"DeepSeek Coder is a capable coding model trained on two trillion code and "
+"natural language tokens."
+msgstr ""
+"DeepSeek Coder è un modello di codifica efficiente, addestrato su due "
+"trilioni di token di codice e linguaggio naturale."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:57
+#, kde-format
+msgid ""
+"A suite of text embedding models by Snowflake, optimized for performance."
+msgstr ""
+"Una suite di modelli di incorporamento di testo di Snowflake, ottimizzati "
+"per le prestazioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:59
+#, kde-format
+msgid ""
+"State of the art large language model from Microsoft AI with improved "
+"performance on complex chat, multilingual, reasoning and agent use cases."
+msgstr ""
+"Modello linguistico di grandi dimensioni all'avanguardia di Microsoft AI con "
+"prestazioni migliorate su casi d'uso complessi di chat, multilingua, "
+"ragionamento e agenti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:61
+#, kde-format
+msgid ""
+"The uncensored Dolphin model based on Mistral that excels at coding tasks. "
+"Updated to version 2.8."
+msgstr ""
+"Il modello Dolphin non censurato basato su Mistral, che eccelle nelle "
+"attività di programmazione. Aggiornato alla versione 2.8."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:63
+#, kde-format
+msgid ""
+"Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on "
+"Llama 3 that has a variety of instruction, conversational, and coding skills."
+msgstr ""
+"Dolphin 2.9 è un nuovo modello con dimensioni 8B e 70B di Eric Hartford "
+"basato su Llama 3, che offre una varietà di abilità didattiche, di "
+"conversazione e di codifica."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:65
+#, kde-format
+msgid "Yi 1.5 is a high-performing, bilingual language model."
+msgstr "Yi 1.5 è un modello linguistico bilingue ad alte prestazioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:66
+#, kde-format
+msgid ""
+"Command R is a Large Language Model optimized for conversational interaction "
+"and long context tasks."
+msgstr ""
+"Command R è un modello linguistico di grandi dimensioni ottimizzato per "
+"l'interazione conversazionale e per attività di contesto prolungato."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:67
+#, kde-format
+msgid ""
+"A general-purpose model ranging from 3 billion parameters to 70 billion, "
+"suitable for entry-level hardware."
+msgstr ""
+"Un modello generico che va da 3 miliardi a 70 miliardi di parametri, adatto "
+"per hardware di fascia bassa."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:68
+#, kde-format
+msgid ""
+"A LLaVA model fine-tuned from Llama 3 Instruct with better scores in several "
+"benchmarks."
+msgstr ""
+"Un modello LLaVA perfezionato da Llama 3 Instruct con punteggi migliori in "
+"diversi benchmark."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:69
+#, kde-format
+msgid ""
+"Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
+"that are trained to act as helpful assistants."
+msgstr ""
+"Zephyr è una serie di versioni perfezionate dei modelli Mistral e Mixtral, "
+"studiate per fungere da assistenti utili."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:70
+#, kde-format
+msgid ""
+"A lightweight AI model with 3.8 billion parameters with performance "
+"overtaking similarly and larger sized models."
+msgstr ""
+"Un modello di intelligenza artificiale leggero con 3,8 miliardi di "
+"parametri, con prestazioni che superano modelli simili e di dimensioni "
+"maggiori."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:71
+#, kde-format
+msgid "Embedding models on very large sentence level datasets."
+msgstr ""
+"Incorporamento di modelli su insiemi di dati a livello di frase molto grandi."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:72
+#, kde-format
+msgid ""
+"Codestral is Mistral AI’s first-ever code model designed for code generation "
+"tasks."
+msgstr ""
+"Codestral è il primo modello di codice di Mistral AI progettato per attività "
+"di generazione di codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:73
+#, kde-format
+msgid ""
+"StarCoder is a code generation model trained on 80+ programming languages."
+msgstr ""
+"StarCoder è un modello di generazione di codice addestrato su oltre 80 "
+"linguaggi di programmazione."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:74
+#, kde-format
+msgid ""
+"General use chat model based on Llama and Llama 2 with 2K to 16K context "
+"sizes."
+msgstr ""
+"Modello di chat di uso generale basato su Llama e Llama 2 con dimensioni di "
+"contesto da 2K a 16K."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:75
+#, kde-format
+msgid "A family of open foundation models by IBM for Code Intelligence"
+msgstr ""
+"Una famiglia di modelli di fondazione aperti di IBM per Code Intelligence"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:76
+#, kde-format
+msgid ""
+"Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
+"Mistral 7B model using the OpenOrca dataset."
+msgstr ""
+"Mistral OpenOrca è un modello da 7 miliardi di parametri, perfezionato sul "
+"modello Mistral 7B utilizzando l'insieme di dati OpenOrca."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:77
+#, kde-format
+msgid ""
+"A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
+"new high-quality dataset."
+msgstr ""
+"Una famiglia di piccoli modelli con 135M, 360M e 1,7B di parametri, "
+"addestrati su un nuovo insieme di dati di alta qualità."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:78
+#, kde-format
+msgid ""
+"Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
+"Llama 2 uncensored by Eric Hartford."
+msgstr ""
+"Wizard Vicuna Uncensored è un modello con parametri 7B, 13B e 30B basato su "
+"Llama 2 non censurato di Eric Hartford."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:79
+#, kde-format
+msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
+msgstr ""
+"Il modello basato su Llama 2 è stato perfezionato per migliorare la capacità "
+"di dialogo in cinese."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:81
+#, kde-format
+msgid ""
+"BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
+"Functionality, Multi-Linguality, and Multi-Granularity."
+msgstr ""
+"BGE-M3 è un nuovo modello di BAAI che si distingue per la sua versatilità in "
+"termini di multifunzionalità, multilinguismo e multigranularità."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:82
+#, kde-format
+msgid ""
+"A versatile model for AI software development scenarios, including code "
+"completion."
+msgstr ""
+"Un modello versatile per scenari di sviluppo di software di intelligenza "
+"artificiale, incluso il completamento del codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:84
+#, kde-format
+msgid ""
+"A family of open-source models trained on a wide variety of data, surpassing "
+"ChatGPT on various benchmarks. Updated to version 3.5-0106."
+msgstr ""
+"Una famiglia di modelli open source addestrati su un'ampia varietà di dati, "
+"che superano ChatGPT in diversi benchmark. Aggiornato alla versione 3.5-0106."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:85
+#, kde-format
+msgid ""
+"Aya 23, released by Cohere, is a new family of state-of-the-art, "
+"multilingual models that support 23 languages."
+msgstr ""
+"Aya 23, lanciata da Cohere, è una nuova famiglia di modelli multilingue "
+"all'avanguardia che supportano 23 lingue."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:86
+#, kde-format
+msgid ""
+"CodeQwen1.5 is a large language model pretrained on a large amount of code "
+"data."
+msgstr ""
+"CodeQwen1.5 è un modello linguistico di grandi dimensioni, pre-addestrato su "
+"una grande quantità di dati di codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:87
+#, kde-format
+msgid ""
+"The powerful family of models by Nous Research that excels at scientific "
+"discussion and coding tasks."
+msgstr ""
+"La potente famiglia di modelli di Nous Research, che eccelle nelle "
+"discussioni scientifiche e nelle attività di codifica."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:88
+#, kde-format
+msgid ""
+"Command R+ is a powerful, scalable large language model purpose-built to "
+"excel at real-world enterprise use cases."
+msgstr ""
+"Command R+ è un modello linguistico potente e scalabile, progettato "
+"appositamente per eccellere in casi d'uso aziendali reali."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:89
+#, kde-format
+msgid "State-of-the-art code generation model"
+msgstr "Modello di generazione di codice all'avanguardia"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:91
+#, kde-format
+msgid ""
+"Stable Code 3B is a coding model with instruct and code completion variants "
+"on par with models such as Code Llama 7B that are 2.5x larger."
+msgstr ""
+"Stable Code 3B è un modello di codifica con varianti di istruzione e "
+"completamento del codice simili a modelli come Code Llama 7B, che sono 2,5 "
+"volte più grandi."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:92
+#, kde-format
+msgid ""
+"An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset "
+"by Eric Hartford and based on TinyLlama."
+msgstr ""
+"Un modello sperimentale con parametri 1.1B addestrato sul nuovo insieme di "
+"dati Dolphin 2.8 da Eric Hartford e basato su TinyLlama."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:93
+#, kde-format
+msgid ""
+"OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
+"open datasets."
+msgstr ""
+"OpenHermes 2.5 è un modello 7B perfezionato da Teknium su Mistral con "
+"insiemi di dati completamente aperti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:95
+#, kde-format
+msgid ""
+"Mistral Large 2 is Mistral's new flagship model that is significantly more "
+"capable in code generation, mathematics, and reasoning with 128k context "
+"window and support for dozens of languages."
+msgstr ""
+"Mistral Large 2 è il nuovo modello di punta di Mistral, significativamente "
+"più potente nella generazione di codice, nella matematica e nel "
+"ragionamento, con una finestra di contesto da 128k e supporto per decine di "
+"linguaggi."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:98
+#, kde-format
+msgid ""
+"Qwen2 Math is a series of specialized math language models built upon the "
+"Qwen2 LLMs, which significantly outperforms the mathematical capabilities of "
+"open-source models and even closed-source models (e.g., GPT4o)."
+msgstr ""
+"Qwen2 Math è una serie di modelli di linguaggio matematico specializzati "
+"basati sui LLM Qwen2, che superano significativamente le capacità "
+"matematiche dei modelli open source e persino di quelli closed source (ad "
+"esempio, GPT4o)."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:100
+#, kde-format
+msgid ""
+"A strong multi-lingual general language model with competitive performance "
+"to Llama 3."
+msgstr ""
+"Un modello linguistico generale multilingue solido e competitivo per Llama 3."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:102
+#, kde-format
+msgid ""
+"Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model "
+"trained on multilingual data in English, Spanish, German, Italian, French, "
+"Portuguese, and Dutch."
+msgstr ""
+"Stable LM 2 è un modello linguistico all'avanguardia con parametri 1.6B e "
+"12B, addestrato su dati multilingue in inglese, spagnolo, tedesco, italiano, "
+"francese, portoghese e olandese."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:104
+#, kde-format
+msgid ""
+"BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
+"augmented with the LLaVA architecture."
+msgstr ""
+"BakLLaVA è un modello multimodale costituito dal modello base Mistral 7B "
+"potenziato con l'architettura LLaVA."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:106
+#, kde-format
+msgid ""
+"A high-performing model trained with a new technique called Reflection-"
+"tuning that teaches a LLM to detect mistakes in its reasoning and correct "
+"course."
+msgstr ""
+"Un modello ad alte prestazioni addestrato con una nuova tecnica chiamata "
+"Reflection-tuning che insegna a un LLM a individuare gli errori nel suo "
+"ragionamento e a correggerne il percorso."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:108
+#, kde-format
+msgid "An advanced language model crafted with 2 trillion bilingual tokens."
+msgstr ""
+"Un modello linguistico avanzato creato con 2 trilioni di token bilingue."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:109
+#, kde-format
+msgid ""
+"This model extends LLama-3 8B's context length from 8k to over 1m tokens."
+msgstr ""
+"Questo modello estende la lunghezza del contesto LLama-3 8B da 8k a oltre 1M "
+"di token."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:110
+#, kde-format
+msgid "Model focused on math and logic problems"
+msgstr "Modello focalizzato su problemi matematici e logici"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:111
+#, kde-format
+msgid ""
+"moondream2 is a small vision language model designed to run efficiently on "
+"edge devices."
+msgstr ""
+"moondream2 è un piccolo modello di linguaggio di visione progettato per "
+"funzionare in modo efficiente su dispositivi edge."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:112
+#, kde-format
+msgid ""
+"A fine-tuned model based on Mistral with good coverage of domain and "
+"language."
+msgstr ""
+"Un modello ottimizzato basato su Mistral con una buona copertura di dominio "
+"e linguaggio."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:114
+#, kde-format
+msgid ""
+"A model from NVIDIA based on Llama 3 that excels at conversational question "
+"answering (QA) and retrieval-augmented generation (RAG)."
+msgstr ""
+"Un modello di NVIDIA basato su Llama 3 che eccelle nelle risposte alle "
+"domande conversazionali (QA) e nella generazione aumentata del recupero "
+"(RAG)."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:115
+#, kde-format
+msgid ""
+"Conversational model based on Llama 2 that performs competitively on various "
+"benchmarks."
+msgstr ""
+"Modello conversazionale basato su Llama 2 che si comporta in modo "
+"competitivo su vari parametri di riferimento."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:116
+#, kde-format
+msgid ""
+"SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
+"generation tasks"
+msgstr ""
+"SQLCoder è un modello di completamento del codice ottimizzato su StarCoder "
+"per le attività di generazione di codice SQL."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:117
+#, kde-format
+msgid "General use models based on Llama and Llama 2 from Nous Research."
+msgstr "Modelli di uso generale basati su Llama e Llama 2 di Nous Research."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:118
+#, kde-format
+msgid "Code generation model based on Code Llama."
+msgstr "Modello di generazione del codice basato su Code Llama."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:119
+#, kde-format
+msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
+msgstr "Un'estensione di Llama 2 che supporta un contesto fino a 128k token."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:120
+#, kde-format
+msgid ""
+"A 7B and 15B uncensored variant of the Dolphin model family that excels at "
+"coding, based on StarCoder2."
+msgstr ""
+"Una variante non censurata 7B e 15B della famiglia di modelli Dolphin che "
+"eccelle nella codifica, basata su StarCoder2."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:121
+#, kde-format
+msgid "General use model based on Llama 2."
+msgstr "Modello di utilizzo generale basato su Llama 2."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:122
+#, kde-format
+msgid "A strong, economical, and efficient Mixture-of-Experts language model."
+msgstr ""
+"Un modello linguistico Mixture-of-Experts potente, economico ed efficiente."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:124
+#, kde-format
+msgid ""
+"Starling is a large language model trained by reinforcement learning from AI "
+"feedback focused on improving chatbot helpfulness."
+msgstr ""
+"Starling è un modello linguistico di grandi dimensioni, addestrato tramite "
+"apprendimento per rinforzo tramite feedback di intelligenza artificiale, "
+"incentrato sul miglioramento dell'utilità del chatbot."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:125
+#, kde-format
+msgid ""
+"A companion assistant trained in philosophy, psychology, and personal "
+"relationships. Based on Mistral."
+msgstr ""
+"Un assistente di accompagnamento esperto in filosofia, psicologia e "
+"relazioni personali. Basato su Mistral."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:126
+#, kde-format
+msgid ""
+"Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous "
+"Research"
+msgstr ""
+"Hermes 3 è l'ultima versione della serie di punta Hermes di LLM di "
+"NousResearch"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:128
+#, kde-format
+msgid ""
+"Yi-Coder is a series of open-source code language models that delivers state-"
+"of-the-art coding performance with fewer than 10 billion parameters."
+msgstr ""
+"Yi-Coder è una serie di modelli di linguaggio di codice open source che "
+"offrono prestazioni di codifica all'avanguardia con meno di 10 miliardi di "
+"parametri."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:131
+#, kde-format
+msgid ""
+"A large language model built by the Technology Innovation Institute (TII) "
+"for use in summarization, text generation, and chat bots."
+msgstr ""
+"Un modello linguistico di grandi dimensioni sviluppato dal Technology "
+"Innovation Institute (TII) da utilizzare per la sintesi, la generazione di "
+"testo e i chatbot."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:132
+#, kde-format
+msgid ""
+"InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
+"outstanding reasoning capability."
+msgstr ""
+"InternLM2.5 è un modello a 7B  di parametri, progettato per scenari pratici, "
+"con una capacità di ragionamento eccezionale."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:133
+#, kde-format
+msgid ""
+"A compact, yet powerful 10.7B large language model designed for single-turn "
+"conversation."
+msgstr ""
+"Un modello linguistico di grandi dimensioni da 10,7B, compatto ma potente, "
+"progettato per conversazioni a turno singolo."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:134
+#, kde-format
+msgid ""
+"Athene-V2 is a 72B parameter model which excels at code completion, "
+"mathematics, and log extraction tasks."
+msgstr ""
+"Athene-V2 è un modello a 72B di parametri che eccelle nelle attività di "
+"completamento del codice, matematica ed estrazione dei logaritmi."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:135
+#, kde-format
+msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
+msgstr "Un nuovo piccolo modello LLaVA perfezionato dal Phi 3 Mini."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:137
+#, kde-format
+msgid ""
+"Orca 2 is built by Microsoft research, and are a fine-tuned version of "
+"Meta's Llama 2 models. The model is designed to excel particularly in "
+"reasoning."
+msgstr ""
+"Orca 2 è stato sviluppato da Microsoft Research ed è una versione "
+"perfezionata dei modelli Llama 2 di Meta. Il modello è progettato per "
+"eccellere in particolare nel ragionamento."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:139
+#, kde-format
+msgid ""
+"A series of multimodal LLMs (MLLMs) designed for vision-language "
+"understanding."
+msgstr ""
+"Una serie di LLM multimodali (MLLM) progettati per la comprensione visivo-"
+"linguistica."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:140
+#, kde-format
+msgid ""
+"Llama 2 based model fine tuned on an Orca-style dataset. Originally called "
+"Free Willy."
+msgstr ""
+"Modello basato su Llama 2, perfezionato su un insieme di dati in stile Orca. "
+"Originariamente chiamato Free Willy."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:141
+#, kde-format
+msgid ""
+"Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
+"category below 70B."
+msgstr ""
+"Mistral Small 3 stabilisce un nuovo punto di riferimento nella categoria dei "
+"«piccoli» LLM, al di sotto di 70B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:142
+#, kde-format
+msgid ""
+"2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language "
+"model by Microsoft Research."
+msgstr ""
+"Modello Dolphin non censurato da 2,7 miliardi di dollari di Eric Hartford, "
+"basato sul modello del linguaggio Phi di Microsoft Research."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:143
+#, kde-format
+msgid ""
+"SmolLM2 is a family of compact language models available in three size: "
+"135M, 360M, and 1.7B parameters."
+msgstr ""
+"SmolLM2 è una famiglia di modelli linguistici compatti disponibili in tre "
+"dimensioni: 135M, 360M e 1,7B di parametri."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:144
+#, kde-format
+msgid "Uncensored version of Wizard LM model"
+msgstr "Versione non censurata del modello Wizard LM"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:145
+#, kde-format
+msgid ""
+"A commercial-friendly small language model by NVIDIA optimized for roleplay, "
+"RAG QA, and function calling."
+msgstr ""
+"Un modello di linguaggio di piccole dimensioni, per uso commerciale, "
+"sviluppato da NVIDIA e ottimizzato per i giochi di ruolo, il RAG QA e "
+"l'invocazione di funzioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:146
+#, kde-format
+msgid "An extension of Mistral to support context windows of 64K or 128K."
+msgstr ""
+"Un'estensione di Mistral per supportare finestre di contesto da 64K o 128K."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:148
+#, kde-format
+msgid ""
+"An expansion of Llama 2 that specializes in integrating both general "
+"language understanding and domain-specific knowledge, particularly in "
+"programming and mathematics."
+msgstr ""
+"Un'espansione di Llama 2 specializzata nell'integrazione sia della "
+"comprensione linguistica generale che di conoscenze specifiche di un "
+"dominio, in particolare in programmazione e matematica."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:150
+#, kde-format
+msgid ""
+"Fine-tuned Llama 2 model to answer medical questions based on an open source "
+"medical dataset."
+msgstr ""
+"Modello Llama 2 ottimizzato per rispondere a quesiti medici basati su un "
+"insieme di dati medici open source."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:151
+#, kde-format
+msgid ""
+"Open-source medical large language model adapted from Llama 2 to the medical "
+"domain."
+msgstr ""
+"Modello di linguaggio medico open source adattato da Llama 2 al dominio "
+"medico."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:153
+#, kde-format
+msgid ""
+"A series of models from Groq that represent a significant advancement in "
+"open-source AI capabilities for tool use/function calling."
+msgstr ""
+"Una serie di modelli di Groq che rappresentano un significativo progresso "
+"nelle capacità dell'intelligenza artificiale open source per l'utilizzo di "
+"strumenti e l'invocazione di funzioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:155
+#, kde-format
+msgid ""
+"Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
+"NVIDIA to improve the helpfulness of LLM generated responses to user queries."
+msgstr ""
+"Llama-3.1-Nemotron-70B-Instruct è un modello linguistico di grandi "
+"dimensioni personalizzato da NVIDIA per migliorare l'utilità delle risposte "
+"generate da LLM alle interrogazioni degli utenti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:157
+#, kde-format
+msgid ""
+"Nexus Raven is a 13B instruction tuned model for function calling tasks."
+msgstr ""
+"Nexus Raven è un modello ottimizzato per le istruzioni 13B per le attività "
+"di invocazione di funzioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:158
+#, kde-format
+msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
+msgstr "Il modello Nous Hermes 2 di Nous Research, ora addestrato su Mixtral."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:159
+#, kde-format
+msgid "Great code generation model based on Llama2."
+msgstr "Ottimo modello di generazione di codice basato su Llama2."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:160
+#, kde-format
+msgid "Uncensored Llama2 based model with support for a 16K context window."
+msgstr ""
+"Modello basato su Llama2 non censurato con supporto per una finestra di "
+"contesto da 16K."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:162
+#, kde-format
+msgid ""
+"The IBM Granite 2B and 8B models are designed to support tool-based use "
+"cases and support for retrieval augmented generation (RAG), streamlining "
+"code generation, translation and bug fixing."
+msgstr ""
+"I modelli IBM Granite 2B e 8B sono progettati per supportare casi d'uso "
+"basati su strumenti e per supportare la generazione aumentata del recupero "
+"(RAG), semplificando la generazione del codice, la traduzione e la "
+"correzione dei bug."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:165
+#, kde-format
+msgid ""
+"Magicoder is a family of 7B parameter models trained on 75K synthetic "
+"instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
+"with open-source code snippets."
+msgstr ""
+"Magicoder è una famiglia di modelli con 7B di parametri addestrati su 75.000 "
+"dati di istruzioni sintetici utilizzando OSS-Instruct, un nuovo approccio "
+"per arricchire gli LLM con frammenti di codice open source."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:167
+#, kde-format
+msgid ""
+"A lightweight chat model allowing accurate, and responsive output without "
+"requiring high-end hardware."
+msgstr ""
+"Un modello di chat leggero che consente un output accurato e reattivo senza "
+"richiedere hardware di fascia alta."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:168
+#, kde-format
+msgid ""
+"A high-performing code instruct model created by merging two existing code "
+"models."
+msgstr ""
+"Un modello di istruzioni del codice ad alte prestazioni creato unendo due "
+"modelli di codice esistenti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:169
+#, kde-format
+msgid ""
+"Falcon2 is an 11B parameters causal decoder-only model built by TII and "
+"trained over 5T tokens."
+msgstr ""
+"Falcon2 è un modello di decodificatore causale a 11B di parametri, costruito "
+"da TII e addestrato su 5T token."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:170
+#, kde-format
+msgid ""
+"Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
+"MelodysDreamj."
+msgstr ""
+"Wizard Vicuna è un modello a 13B di parametri basato su Llama 2, addestrato "
+"da MelodysDreamj."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:171
+#, kde-format
+msgid ""
+"MistralLite is a fine-tuned model based on Mistral with enhanced "
+"capabilities of processing long contexts."
+msgstr ""
+"MistralLite è un modello ottimizzato basato su Mistral con capacità avanzate "
+"di elaborazione di contesti lunghi."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:172
+#, kde-format
+msgid ""
+"MathΣtral: a 7B model designed for math reasoning and scientific discovery "
+"by Mistral AI."
+msgstr ""
+"MathΣtral: un modello 7B progettato per il ragionamento matematico e la "
+"scoperta scientifica da Mistral AI."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:173
+#, kde-format
+msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
+msgstr ""
+"Modello di conversione da testo a SQL con 7B di parametri realizzato da "
+"MotherDuck e Numbers Station."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:174
+#, kde-format
+msgid ""
+"MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
+"interleaving the model with itself."
+msgstr ""
+"MegaDolphin-2.2-120b è una trasformazione di Dolphin-2.2-70b creata "
+"intercalando il modello con se stesso."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:175
+#, kde-format
+msgid ""
+"Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
+"parameters designed to fit into a single GPU"
+msgstr ""
+"Anteprima di Solar Pro: un modello linguistico avanzato di grandi dimensioni "
+"(LLM) con 22 miliardi di parametri progettato per adattarsi a una singola GPU"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:176
+#, kde-format
+msgid ""
+"A series of models that convert HTML content to Markdown content, which is "
+"useful for content conversion tasks."
+msgstr ""
+"Una serie di modelli che convertono il contenuto HTML in contenuto Markdown, "
+"utile per le attività di conversione dei contenuti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:177
+#, kde-format
+msgid ""
+"A top-performing mixture of experts model, fine-tuned with high-quality data."
+msgstr ""
+"Un modello Mixture-of-Experts ad alte prestazioni, perfezionato con dati di "
+"alta qualità."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:178
+#, kde-format
+msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
+msgstr ""
+"Un modello di chat 7B perfezionato con dati di alta qualità e basato su "
+"Zephyr."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:179
+#, kde-format
+msgid ""
+"Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
+"Designed for chat and code generation."
+msgstr ""
+"Fusione del modello Open Orca OpenChat e del modello Garage-bAInd Platypus "
+"2. Progettato per chat e generazione di codice."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:180
+#, kde-format
+msgid ""
+"A language model created by combining two fine-tuned Llama 2 70B models into "
+"one."
+msgstr ""
+"Un modello linguistico creato combinando due modelli Llama 2 70B ottimizzati "
+"in uno."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:182
+#, kde-format
+msgid ""
+"The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
+"Granite models from IBM designed for low latency usage."
+msgstr ""
+"I modelli IBM Granite 1B e 3B sono i primi modelli Granite Mixture-of-"
+"Experts (MoE) di IBM progettati per un utilizzo a bassa latenza."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:183
+#, kde-format
+msgid ""
+"A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
+"information extraction, based on Phi-3."
+msgstr ""
+"Un modello da 3,8B, messo a punto su un insieme di dati sintetici privati ​​di "
+"alta qualità per l'estrazione di informazioni, basato su Phi-3."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:184
+#, kde-format
+msgid ""
+"Cohere For AI's language models trained to perform well across 23 different "
+"languages."
+msgstr ""
+"I modelli linguistici di Cohere For AI sono stati addestrati per funzionare "
+"bene in 23 lingue diverse."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:185
+#, kde-format
+msgid "DBRX is an open, general-purpose LLM created by Databricks."
+msgstr "DBRX è un LLM aperto e multiuso creato da Databricks."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:186
+#, kde-format
+msgid ""
+"An open large reasoning model for real-world solutions by the Alibaba "
+"International Digital Commerce Group (AIDC-AI)."
+msgstr ""
+"Un modello aperto di ragionamento di grandi dimensioni per soluzioni "
+"concrete, sviluppato da Alibaba International Digital Commerce Group (AIDC-"
+"AI)."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:187
+#, kde-format
+msgid "Embedding model from BAAI mapping texts to vectors."
+msgstr "Modello di incorporamento da BAAI che mappa i testi ai vettori."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:188
+#, kde-format
+msgid ""
+"An open weights function calling model based on Llama 3, competitive with "
+"GPT-4o function calling capabilities."
+msgstr ""
+"Un modello di invocazione di funzioni con pesi aperti basato su Llama 3, "
+"competitivo con le capacità di invocazione di funzioni GPT-4o."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:189
+#, kde-format
+msgid ""
+"A robust conversational model designed to be used for both chat and instruct "
+"use cases."
+msgstr ""
+"Un modello conversazionale robusto, progettato per essere utilizzato sia in "
+"chat che in casi di istruzione."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:191
+#, kde-format
+msgid ""
+"An upgraded version of DeekSeek-V2 that integrates the general and coding "
+"abilities of both DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct."
+msgstr ""
+"Una versione aggiornata di DeekSeek-V2 che integra le capacità generali e di "
+"codifica di DeepSeek-V2-Chat e DeepSeek-Coder-V2-Instruct."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:193
+#, kde-format
+msgid ""
+"ShieldGemma is set of instruction tuned models for evaluating the safety of "
+"text prompt input and text output responses against a set of defined safety "
+"policies."
+msgstr ""
+"ShieldGemma è un insieme di modelli di istruzioni ottimizzati per valutare "
+"la sicurezza del testo in ingresso al prompt e del testo di risposta "
+"rispetto a una serie di criteri di sicurezza definiti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:195
+#, kde-format
+msgid "A state-of-the-art fact-checking model developed by Bespoke Labs."
+msgstr ""
+"Un modello di fact-checking all'avanguardia sviluppato da Bespoke Labs."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:196
+#, kde-format
+msgid ""
+"Llama Guard 3 is a series of models fine-tuned for content safety "
+"classification of LLM inputs and responses."
+msgstr ""
+"Llama Guard 3 è una serie di modelli ottimizzati per la classificazione "
+"della sicurezza dei contenuti degli input e delle risposte LLM."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:197
+#, kde-format
+msgid ""
+"Sentence-transformers model that can be used for tasks like clustering or "
+"semantic search."
+msgstr ""
+"Modello di trasformatori di frasi che può essere utilizzato per attività "
+"come il clustering o la ricerca semantica."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:199
+#, kde-format
+msgid ""
+"OpenCoder is an open and reproducible code LLM family which includes 1.5B "
+"and 8B models, supporting chat in English and Chinese languages."
+msgstr ""
+"OpenCoder è una famiglia di LLM di codice aperto e riproducibile che include "
+"modelli da 1,5B di bit e 8B di bit, che supporta chat in inglese e cinese."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:201
+#, kde-format
+msgid ""
+"Tülu 3 is a leading instruction following model family, offering fully open-"
+"source data, code, and recipes by the The Allen Institute for AI."
+msgstr ""
+"Tülu 3 è una delle principali famiglie di modelli specializzate nel seguire "
+"le istruzioni, che offre dati, codice e procedure completamente open source "
+"forniti dall'Allen Institute for AI."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:203
+#, kde-format
+msgid ""
+"Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
+"support without sacrificing English performance or scalability."
+msgstr ""
+"Modello di incorporamento di frontiera di Snowflake. Arctic Embed 2.0 "
+"aggiunge il supporto multilingue senza sacrificare le prestazioni o la "
+"scalabilità in inglese."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:204
+#, kde-format
+msgid ""
+"The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
+"in prompts and/or responses."
+msgstr ""
+"I modelli IBM Granite Guardian 3.0 2B e 8B sono progettati per rilevare i "
+"rischi nei prompt e/o nelle risposte."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:206
+#, kde-format
+msgid ""
+"EXAONE 3.5 is a collection of instruction-tuned bilingual (English and "
+"Korean) generative models ranging from 2.4B to 32B parameters, developed and "
+"released by LG AI Research."
+msgstr ""
+"EXAONE 3.5 è una raccolta di modelli generativi bilingue (inglese e coreano) "
+"ottimizzati per l'istruzione, con un numero di parametri compreso tra 2,4B e "
+"32B, sviluppati e rilasciati da LG AI Research."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:208
+#, kde-format
+msgid ""
+"Sailor2 are multilingual language models made for South-East Asia. Available "
+"in 1B, 8B, and 20B parameter sizes."
+msgstr ""
+"Sailor2 è un modello linguistico multilingue pensato per il sud-est "
+"asiatico. Disponibile con dimensioni di 1B, 8B e 20B parametri."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:210
+#, kde-format
+msgid ""
+"A family of efficient AI models under 10B parameters performant in science, "
+"math, and coding through innovative training techniques."
+msgstr ""
+"Una famiglia di modelli di intelligenza artificiale efficienti con parametri "
+"inferiori a 10B, efficiente in ambito scientifico, matematico e di "
+"programmazione grazie a tecniche di addestramento innovative."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:212
+#, kde-format
+msgid ""
+"The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 "
+"trillion tokens of data, demonstrated significant improvements over their "
+"predecessors in performance and speed in IBM’s initial testing."
+msgstr ""
+"I modelli IBM Granite 2B e 8B sono LLM densi solo testo, addestrati su oltre "
+"12 trilioni di token di dati, e hanno dimostrato miglioramenti significativi "
+"rispetto ai loro predecessori in termini di prestazioni e velocità nei test "
+"iniziali di IBM."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:215
+#, kde-format
+msgid ""
+"The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
+"Granite models from IBM designed for low latency usage."
+msgstr ""
+"I modelli IBM Granite 1B e 3B sono modelli Granite Mixture-of-Experts (MoE) "
+"a lungo contesto di IBM, progettati per un utilizzo a bassa latenza."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:217
+#, kde-format
+msgid ""
+"The IBM Granite Embedding 30M and 278M models models are text-only dense "
+"biencoder embedding models, with 30M available in English only and 278M "
+"serving multilingual use cases."
+msgstr ""
+"I modelli IBM Granite Embedding 30M e 278M sono modelli di incorporamento "
+"biencoder densi di solo testo, con 30M disponibile solo in inglese e 278M "
+"per casi d'uso multilingue."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:219
+#, kde-format
+msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
+msgstr ""
+"Phi-4 è un modello aperto all'avanguardia con 14B di parametri di Microsoft."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:220
+#, kde-format
+msgid ""
+"A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
+msgstr ""
+"Un nuovo modello di ragionamento di piccole dimensioni, perfezionato dal "
+"modello Qwen 2.5 3B Instruct."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:222
+#, kde-format
+msgid ""
+"Dolphin 3.0 Llama 3.1 8B 🐬 is the next generation of the Dolphin series of "
+"instruct-tuned models designed to be the ultimate general purpose local "
+"model, enabling coding, math, agentic, function calling, and general use "
+"cases."
+msgstr ""
+"Dolphin 3.0 Llama 3.1 8B 🐬 è la nuova generazione della serie Dolphin di "
+"modelli basati su istruzioni, progettati per essere il modello locale di uso "
+"generale definitivo, consentendo l'utilizzo in casi di programmazione, "
+"matematica, agenti, invocazione di funzioni e altri usi generali."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:225
+#, kde-format
+msgid ""
+"DeepSeek's first-generation of reasoning models with comparable performance "
+"to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on "
+"Llama and Qwen."
+msgstr ""
+"La prima generazione di modelli di ragionamento di DeepSeek con prestazioni "
+"paragonabili a OpenAI-o1, inclusi sei modelli densi distillati da DeepSeek-"
+"R1 basati su Llama e Qwen."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:227
+#, kde-format
+msgid ""
+"A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
+"with 37B activated for each token."
+msgstr ""
+"Un modello linguistico MoE (Mixture-of-Experts) potente con 671B di "
+"parametri totali, di cui 37B attivati ​​per ciascun token."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:229
+#, kde-format
+msgid ""
+"OLMo 2 is a new family of 7B and 13B models trained on up to 5T tokens. "
+"These models are on par with or better than equivalently sized fully open "
+"models, and competitive with open-weight models such as Llama 3.1 on English "
+"academic benchmarks."
+msgstr ""
+"OLMo 2 è una nuova famiglia di modelli 7B e 13B addestrati su token fino a "
+"5T. Questi modelli sono pari o migliori di modelli completamente aperti di "
+"dimensioni equivalenti e competitivi con modelli a pesi aperti come Llama "
+"3.1 nei benchmark accademici in lingua inglese."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:232
+#, kde-format
+msgid ""
+"The smallest model in Cohere's R series delivers top-tier speed, efficiency, "
+"and quality to build powerful AI applications on commodity GPUs and edge "
+"devices."
+msgstr ""
+"Il modello più piccolo della serie R di Cohere offre velocità, efficienza e "
+"qualità di alto livello per realizzare potenti applicazioni di intelligenza "
+"artificiale su GPU commerciali e dispositivi edge."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:234
+#, kde-format
+msgid ""
+"A fully open-source family of reasoning models built using a dataset derived "
+"by distilling DeepSeek-R1."
+msgstr ""
+"Una famiglia di modelli di ragionamento completamente open source, "
+"realizzata utilizzando un insieme di dati derivato dall'elaborazione di "
+"DeepSeek-R1."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:236
+#, kde-format
+msgid ""
+"A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the "
+"performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
+"evaluations."
+msgstr ""
+"Una versione ottimizzata di Deepseek-R1-Distilled-Qwen-1.5B che supera le "
+"prestazioni di o1-preview di OpenAI con soli 1,5B di parametri nelle "
+"valutazioni matematiche più diffuse."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:239
+#, kde-format
+msgid ""
+"A version of the DeepSeek-R1 model that has been post trained to provide "
+"unbiased, accurate, and factual information by Perplexity."
+msgstr ""
+"Una versione del modello DeepSeek-R1 che è stata addestrata ulteriormente da "
+"Perplexity per fornire informazioni imparziali, accurate e fattuali."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:240
+#, kde-format
+msgid "The current, most capable model that runs on a single GPU."
+msgstr "Il modello attuale più potente che funziona con una singola GPU."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:242
+#, kde-format
+msgid ""
+"Phi-4-mini brings significant enhancements in multilingual support, "
+"reasoning, and mathematics, and now, the long-awaited function calling "
+"feature is finally supported."
+msgstr ""
+"Phi-4-mini apporta miglioramenti significativi nel supporto multilingue, nel "
+"ragionamento e nella matematica, e ora è finalmente supportata anche la "
+"tanto attesa funzionalità di invocazione di funzioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:245
+#, kde-format
+msgid ""
+"A compact and efficient vision-language model, specifically designed for "
+"visual document understanding, enabling automated content extraction from "
+"tables, charts, infographics, plots, diagrams, and more."
+msgstr ""
+"Un modello di linguaggio visivo compatto ed efficiente, specificamente "
+"progettato per la comprensione visiva dei documenti, che consente "
+"l'estrazione automatizzata di contenuti da tabelle, grafici, infografiche, "
+"diagrammi e altro ancora."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:247
+#, kde-format
+msgid ""
+"Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
+"tuned for thinking capabilities."
+msgstr ""
+"Granite-3.2 è una famiglia di modelli di intelligenza artificiale a lungo "
+"contesto di IBM Granite, ottimizzati per le capacità di pensiero."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:249
+#, kde-format
+msgid ""
+"A new state-of-the-art version of the lightweight Command R7B model that "
+"excels in advanced Arabic language capabilities for enterprises in the "
+"Middle East and Northern Africa."
+msgstr ""
+"Una nuova versione all'avanguardia del modello leggero Command R7B, che "
+"eccelle nelle funzionalità avanzate della lingua araba per le aziende in "
+"Medio Oriente e Nord Africa."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:251
+#, kde-format
+msgid ""
+"111 billion parameter model optimized for demanding enterprises that require "
+"fast, secure, and high-quality AI"
+msgstr ""
+"Modello da 111 miliardi di parametri ottimizzato per le aziende esigenti che "
+"necessitano di un'intelligenza artificiale veloce, sicura e di alta qualità"
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:253
+#, kde-format
+msgid ""
+"EXAONE Deep exhibits superior capabilities in various reasoning tasks "
+"including math and coding benchmarks, ranging from 2.4B to 32B parameters "
+"developed and released by LG AI Research."
+msgstr ""
+"EXAONE Deep mostra capacità superiori in vari compiti di ragionamento, "
+"inclusi benchmark matematici e di codifica, con parametri che vanno da 2,4B "
+"a 32B, sviluppati e rilasciati da LG AI Research."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:256
+#, kde-format
+msgid ""
+"Building upon Mistral Small 3, Mistral Small 3.1 (2503) adds state-of-the-"
+"art vision understanding and enhances long context capabilities up to 128k "
+"tokens without compromising text performance."
+msgstr ""
+"Basandosi su Mistral Small 3, Mistral Small 3.1 (2503) aggiunge una "
+"comprensione della visione all'avanguardia e migliora le capacità di "
+"contesto lungo fino a 128k token senza compromettere le prestazioni del "
+"testo."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:259
+#, kde-format
+msgid ""
+"Cogito v1 Preview is a family of hybrid reasoning models by Deep Cogito that "
+"outperform the best available open models of the same size, including "
+"counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
+msgstr ""
+"Cogito v1 Preview è una famiglia di modelli di ragionamento ibridi di Deep "
+"Cogito che superano le prestazioni dei migliori modelli aperti disponibili "
+"delle stesse dimensioni, inclusi i modelli equivalenti di LLaMA, DeepSeek e "
+"Qwen nella maggior parte dei benchmark standard."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:261
+#, kde-format
+msgid ""
+"DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
+"1.5B version also available."
+msgstr ""
+"DeepCoder è un modello di codificatore da 14B completamente open source a "
+"livello O3-mini, con una versione disponibile anche da 1,5B."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:263
+#, kde-format
+msgid ""
+"Qwen3 is the latest generation of large language models in Qwen series, "
+"offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
+msgstr ""
+"Qwen3 è l'ultima generazione di modelli linguistici di grandi dimensioni "
+"della serie Qwen, che offre una suite completa di modelli densi e misti di "
+"esperti (MoE)."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:265
+#, kde-format
+msgid "Meta's latest collection of multimodal models."
+msgstr "L'ultima raccolta di modelli multimodali di Meta."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:267
+#, kde-format
+msgid ""
+"IBM Granite 2B and 8B models are 128K context length language models that "
+"have been fine-tuned for improved reasoning and instruction-following "
+"capabilities."
+msgstr ""
+"I modelli IBM Granite 2B e 8B sono modelli linguistici con lunghezza di "
+"contesto di 128K, ottimizzati per migliorare le capacità di ragionamento e "
+"di esecuzione delle istruzioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:270
+#, kde-format
+msgid ""
+"Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
+"reasoning models that rival much larger models on complex reasoning tasks."
+msgstr ""
+"Phi 4 reasoning e reasoning plus sono modelli di ragionamento a pesi aperti "
+"da 14 miliardi di parametri che rivaleggiano con modelli molto più grandi su "
+"attività di ragionamento complesse."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:272
+#, kde-format
+msgid ""
+"Phi 4 mini reasoning is a lightweight open model that balances efficiency "
+"with advanced reasoning ability."
+msgstr ""
+"Il ragionamento Phi 4 mini è un modello aperto e leggero che bilancia "
+"l'efficienza con capacità di ragionamento avanzate."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:273
+#, kde-format
+msgid ""
+"Gemma 3n models are designed for efficient execution on everyday devices "
+"such as laptops, tablets or phones."
+msgstr ""
+"I modelli Gemma 3n sono progettati per un'esecuzione efficiente su "
+"dispositivi di uso quotidiano come laptop, tablet o telefoni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:274
+#, kde-format
+msgid "Magistral is a small, efficient reasoning model with 24B parameters."
+msgstr ""
+"Magistral è un modello di ragionamento piccolo ed efficiente con 24B di "
+"parametri."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:275
+#, kde-format
+msgid ""
+"An update to Mistral Small that improves on function calling, instruction "
+"following, and less repetition errors."
+msgstr ""
+"Un aggiornamento di Mistral Small che migliora le chiamate di funzione, la "
+"capacità di seguire le istruzioni e riduce gli errori di ripetizione."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:276
+#, kde-format
+msgid ""
+"Flagship vision-language model of Qwen and also a significant leap from the "
+"previous Qwen2-VL."
+msgstr ""
+"Modello di linguaggio visivo di punta di Qwen e anche un salto significativo "
+"rispetto al precedente Qwen2-VL."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:277
+#, kde-format
+msgid "Devstral: the best open source model for coding agents."
+msgstr ""
+"Devstral: il miglior modello open source per la programmazione di agenti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:278
+#, kde-format
+msgid ""
+"OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
+"and versatile developer use cases."
+msgstr ""
+"I modelli open-weight di OpenAI sono progettati per ragionamenti potenti, "
+"attività agentiche e casi d'uso versatili per sviluppatori."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:279
+#, kde-format
+msgid "Alibaba's performant long context models for agentic and coding tasks."
+msgstr ""
+"Modelli performanti di Alibaba per contesti lunghi per attività di codifica "
+"e agenti."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:280
+#, kde-format
+msgid ""
+"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
+"thinking mode."
+msgstr ""
+"DeepSeek-V3.1 è un modello ibrido che supporta sia la modalità di pensiero "
+"che quella di non pensiero."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:281
+#, kde-format
+msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+msgstr ""
+"EmbeddingGemma è un modello di incorporamento di parametri da 300 milioni di "
+"Google."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:283
+#, kde-format
+msgid ""
+"EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
+"provides a comprehensive range of text embeddings models in various sizes."
+msgstr ""
+"Basandosi sui modelli fondamentali della serie Qwen3, Qwen3 Embedding offre "
+"una gamma completa di modelli di incorporamento di testo in varie dimensioni."
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:286
+#, kde-format
+msgid ""
+"Granite 4 features improved instruction following (IF) and tool-calling "
+"capabilities, making them more effective in enterprise applications."
+msgstr ""
+"Granite 4 offre funzionalità migliorate di instruction following (IF) e tool-"
+"calling, rendendole più efficaci nelle applicazioni aziendali."
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:165
 #, kde-format
