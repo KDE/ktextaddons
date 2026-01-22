@@ -390,6 +390,8 @@ target_sources(
         widgets/debug/textautogenerateshowdebugwidget.cpp
         widgets/debug/textautogeneratejsonplaintexteditwidget.h
         widgets/debug/textautogeneratejsonplaintexteditwidget.cpp
+        widgets/availablemodel/textautogeneratemodelavailablelistview.h
+        widgets/availablemodel/textautogeneratemodelavailablelistview.cpp
 )
 
 if(BUILD_TESTING)
@@ -397,6 +399,7 @@ if(BUILD_TESTING)
     add_subdirectory(tests)
     add_subdirectory(widgets/menu/autotests)
     add_subdirectory(widgets/autotests)
+    add_subdirectory(widgets/availablemodel/autotests)
 endif()
 
 add_subdirectory(plugins)

@@ -8,8 +8,9 @@
 #include "genericnetworkavailableinfosmodel.h"
 #include "genericnetworkmanager.h"
 #include "genericnetworkmodelavailableinfossortproxymodel.h"
-#include "genericnetworkmodelavailablelistview.h"
+#include "modelsmanager/genericnetworkmodelavailableinfosdelegate.h"
 #include "modelsmanager/genericnetworkmodelavailableinfowidget.h"
+#include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QSplitter>
 #include <QVBoxLayout>
@@ -17,13 +18,15 @@
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(GenericNetworkManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mAvailableListView(new GenericNetworkModelAvailableListView(this))
+    , mAvailableListView(new TextAutoGenerateText::TextAutoGenerateModelAvailableListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
     , mAvailableInfosModel(new GenericNetworkAvailableInfosModel(this))
     , mProxyModel(new GenericNetworkModelAvailableInfosSortProxyModel(this))
     , mAvailableInfoWidget(new GenericNetworkModelAvailableInfoWidget(this))
     , mManager(manager)
 {
+    // TODO verify if we can move GenericNetworkModelAvailableInfosDelegate to lib
+    mAvailableListView->setItemDelegate(new GenericNetworkModelAvailableInfosDelegate(mAvailableListView));
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
     splitter->setObjectName(u"splitter"_s);

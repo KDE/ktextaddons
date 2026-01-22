@@ -48,8 +48,6 @@ target_sources(
         modelsmanager/ollamamodelavailableinfossortproxymodel.cpp
         modelsmanager/ollamamodelavailableinfosdelegate.h
         modelsmanager/ollamamodelavailableinfosdelegate.cpp
-        modelsmanager/ollamamodelavailablelistview.h
-        modelsmanager/ollamamodelavailablelistview.cpp
         modelsmanager/ollamamodelsmanager.qrc
         modelsmanager/ollamamodelinfosdelegateutils.h
         modelsmanager/ollamamodelinfosdelegateutils.cpp

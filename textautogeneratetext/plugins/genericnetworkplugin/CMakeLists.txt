@@ -35,8 +35,6 @@ target_sources(
         modelsmanager/genericnetworkavailableinfosmodel.h
         modelsmanager/genericnetworkmodelavailableinfos.h
         modelsmanager/genericnetworkmodelavailableinfos.cpp
-        modelsmanager/genericnetworkmodelavailablelistview.cpp
-        modelsmanager/genericnetworkmodelavailablelistview.h
         modelsmanager/genericnetworkmodelavailableinfosdelegate.h
         modelsmanager/genericnetworkmodelavailableinfosdelegate.cpp
         modelsmanager/genericnetworkmodelinfosdelegateutils.h

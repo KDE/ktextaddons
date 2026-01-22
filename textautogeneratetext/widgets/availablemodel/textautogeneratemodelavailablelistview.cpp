@@ -3,10 +3,10 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelavailablelistview.h"
-#include "ollamamodelavailableinfosdelegate.h"
-
-OllamaModelAvailableListView::OllamaModelAvailableListView(QWidget *parent)
+#include "textautogeneratemodelavailablelistview.h"
+// #include "genericnetworkmodelavailableinfosdelegate.h"
+using namespace TextAutoGenerateText;
+TextAutoGenerateModelAvailableListView::TextAutoGenerateModelAvailableListView(QWidget *parent)
     : QListView(parent)
 {
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
@@ -17,9 +17,9 @@ OllamaModelAvailableListView::OllamaModelAvailableListView(QWidget *parent)
     scrollToBottom();
     setMouseTracking(true);
 
-    setItemDelegate(new OllamaModelAvailableInfosDelegate(this));
+    // setItemDelegate(new GenericNetworkModelAvailableInfosDelegate(this));
 }
 
-OllamaModelAvailableListView::~OllamaModelAvailableListView() = default;
+TextAutoGenerateModelAvailableListView::~TextAutoGenerateModelAvailableListView() = default;
 
-#include "moc_ollamamodelavailablelistview.cpp"
+#include "moc_textautogeneratemodelavailablelistview.cpp"

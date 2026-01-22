@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class GenericNetworkModelAvailableListViewTest : public QObject
+class TextAutoGenerateModelAvailableListViewTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkModelAvailableListViewTest(QObject *parent = nullptr);
-    ~GenericNetworkModelAvailableListViewTest() override = default;
+    explicit TextAutoGenerateModelAvailableListViewTest(QObject *parent = nullptr);
+    ~TextAutoGenerateModelAvailableListViewTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

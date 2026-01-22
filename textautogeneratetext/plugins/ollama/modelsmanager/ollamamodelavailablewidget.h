@@ -16,6 +16,10 @@ class QStackedWidget;
 class OllamaManager;
 class QScrollArea;
 class OllamaModelAvailableInfosModel;
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateModelAvailableListView;
+}
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -30,7 +34,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotDownloadModel(const QString &url);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotAddModel();
     OllamaModelAvailableSearchWidget *const mSearchWidget;
-    OllamaModelAvailableListView *const mListView;
+    TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mListView;
     OllamaModelAvailableInfoWidget *const mInfoWidget;
     OllamaModelAvailableInfosSortProxyModel *const mProxyModel;
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;

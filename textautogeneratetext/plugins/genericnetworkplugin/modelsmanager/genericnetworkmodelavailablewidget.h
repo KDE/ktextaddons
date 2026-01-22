@@ -6,10 +6,10 @@
 #pragma once
 #include "textautogenerategeneric_private_export.h"
 #include <QWidget>
-class GenericNetworkModelAvailableListView;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;
+class TextAutoGenerateModelAvailableListView;
 }
 class GenericNetworkManager;
 class GenericNetworkAvailableInfosModel;
@@ -23,7 +23,7 @@ public:
     ~GenericNetworkModelAvailableWidget() override;
 
 private:
-    GenericNetworkModelAvailableListView *const mAvailableListView;
+    TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     GenericNetworkAvailableInfosModel *const mAvailableInfosModel;
     GenericNetworkModelAvailableInfosSortProxyModel *const mProxyModel;
