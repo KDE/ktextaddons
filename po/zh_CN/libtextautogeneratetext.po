@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:57+0000\n"
+"POT-Creation-Date: 2026-01-23 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -308,12 +308,12 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "添加模型"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Model name must be as \"name:tag\""
 msgstr "模型名称必须遵循“名称:标签”的格式"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Invalid Model Name"
 msgstr "无效的模型名称"
@@ -586,18 +586,15 @@ msgid "Impossible to start Ollama."
 msgstr "无法启动 Ollama。"
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama (Online)"
+#, kde-format
 msgid "Ollama (Cloud)"
-msgstr "Ollama (在线)"
+msgstr ""
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "配置 Ollama"
+msgstr ""
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:52
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
@@ -607,10 +604,9 @@ msgid "Api Key:"
 msgstr "API 密钥："
 
 #: plugins/ollamacloud/ollamacloudplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Cloud"
-msgstr "Ollama"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format

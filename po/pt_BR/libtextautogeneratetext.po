@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:57+0000\n"
+"POT-Creation-Date: 2026-01-23 00:42+0000\n"
 "PO-Revision-Date: 2026-01-21 06:44-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -310,12 +310,12 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "Adicionar modelo"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Model name must be as \"name:tag\""
 msgstr "O nome do modelo deve ser como \"nome:etiqueta\""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Invalid Model Name"
 msgstr "Nome de modelo inválido"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 00:57+0000\n"
-"PO-Revision-Date: 2026-01-14 18:16+0100\n"
+"POT-Creation-Date: 2026-01-23 00:42+0000\n"
+"PO-Revision-Date: 2026-01-21 11:43+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -308,12 +308,12 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "Aggiungi modello"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Model name must be as \"name:tag\""
 msgstr "Il nome del modello deve essere «nome:tag»"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Invalid Model Name"
 msgstr "Nome modello non valido"
@@ -591,18 +591,15 @@ msgid "Impossible to start Ollama."
 msgstr "Impossibile avviare Ollama."
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama (Online)"
+#, kde-format
 msgid "Ollama (Cloud)"
-msgstr "Ollama (in linea)"
+msgstr "Ollama (Cloud)"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "Configura Ollama"
+msgstr "Configura Ollama Cloud"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:52
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
@@ -612,10 +609,9 @@ msgid "Api Key:"
 msgstr "Chiave API:"
 
 #: plugins/ollamacloud/ollamacloudplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Cloud"
-msgstr "Ollama"
+msgstr "Ollama Cloud"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -2253,12 +2249,10 @@ msgid "Ollama (Online)"
 msgstr "Ollama (in linea)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Configura Ollama"
+msgstr "Configura Ollama in linea"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:120
 #, kde-format
@@ -2781,7 +2775,7 @@ msgstr "Nuova chat"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Duplica…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
