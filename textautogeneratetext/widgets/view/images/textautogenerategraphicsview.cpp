@@ -39,7 +39,10 @@ TextAutoGenerateGraphicsView::TextAutoGenerateGraphicsView(QWidget *parent)
     setScene(scene);
 }
 
-TextAutoGenerateGraphicsView::~TextAutoGenerateGraphicsView() = default;
+TextAutoGenerateGraphicsView::~TextAutoGenerateGraphicsView()
+{
+    delete mGraphicsPixmapItem;
+}
 
 void TextAutoGenerateGraphicsView::wheelEvent(QWheelEvent *e)
 {
