@@ -14,3 +14,5 @@ leak:QObject::QObject
 leak:QObjectPrivate::addConnection
 leak:QObjectPrivate::connectImpl
 leak:QPropertyAnimation::QPropertyAnimation
+leak:libavutil
+leak:libffmpegmediaplugin

@@ -10,6 +10,12 @@ macro(add_speechtotext_widget_unittest _source)
         Qt::Widgets
         KF6::TextSpeechToText
     )
+    set_tests_properties(
+        speechtotext-${_name}
+        PROPERTIES
+            ENVIRONMENT
+                "LSAN_OPTIONS=suppressions=${CMAKE_SOURCE_DIR}/sanitizers.supp"
+    )
 endmacro()
 add_speechtotext_widget_unittest(speechtotextconfigurewidgettest.cpp)
 add_speechtotext_widget_unittest(speechtotextselectdevicewidgettest.cpp)
