@@ -223,7 +223,7 @@ msgstr "Kluster AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Groq Cloud"
-msgstr "Groq Cloud"
+msgstr "Groq 云"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
@@ -588,13 +588,13 @@ msgstr "无法启动 Ollama。"
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
 #, kde-format
 msgid "Ollama (Cloud)"
-msgstr ""
+msgstr "Ollama (云)"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr ""
+msgstr "Configure Ollama 云"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:52
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
@@ -606,7 +606,7 @@ msgstr "API 密钥："
 #: plugins/ollamacloud/ollamacloudplugin.cpp:116
 #, kde-format
 msgid "Ollama Cloud"
-msgstr ""
+msgstr "Ollama 云"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format

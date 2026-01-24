@@ -225,7 +225,7 @@ msgstr "(Afficher les nouvelles)"
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr "Quoi de neug dans %2. %1"
+msgstr "Quoi de neuf dans %2. %1"
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
