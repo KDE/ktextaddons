@@ -7,6 +7,7 @@
 #include "ollamacloudconfiguredialog.h"
 #include "ollamacloudconfigurewidget.h"
 #include "ollamacloudmanager.h"
+#include "ollamacommonmodelavailablewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -22,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manager, QWidget *parent)
     : KPageDialog(parent)
     , mOllamaCloudConfigureWidget(new OllamaCloudConfigureWidget(manager, this))
+    , mOllamaCloudModelWidget(new OllamaCommonModelAvailableWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama Cloud"));
     setFaceType(KPageDialog::List);
@@ -31,6 +33,12 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
     configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
     mOllamaCloudConfigureWidget->setObjectName(u"mOllamaConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
+
+    const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
+    auto configureModelWidgetPage = new KPageWidgetItem(mOllamaCloudModelWidget, modelAvailablePageName);
+    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
+    mOllamaCloudModelWidget->setObjectName(u"mOllamaCloudModelWidget"_s);
+    addPage(configureModelWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaCloudConfigureDialog::slotAccepted);
 

@@ -9,6 +9,7 @@
 #include <KPageDialog>
 class OllamaCloudConfigureWidget;
 class OllamaCloudManager;
+class OllamaCommonModelAvailableWidget;
 class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudConfigureDialog : public KPageDialog
 {
     Q_OBJECT
@@ -21,4 +22,5 @@ private:
     TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT void slotAccepted();
     OllamaCloudConfigureWidget *const mOllamaCloudConfigureWidget;
+    OllamaCommonModelAvailableWidget *const mOllamaCloudModelWidget;
 };
