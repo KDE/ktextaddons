@@ -28,6 +28,8 @@ target_sources(
         ollamacommonmodelutils.cpp
         ollamacommonmodelsavalableinfos.cpp
         ollamacommonmodelsavalableinfos.h
+        ollamacommonmodelavailablewidget.h
+        ollamacommonmodelavailablewidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

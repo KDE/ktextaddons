@@ -5,6 +5,7 @@
 */
 
 #include "ollamaonlineconfiguredialog.h"
+#include "ollamacommonmodelavailablewidget.h"
 #include "ollamaonlineconfigurewidget.h"
 #include "ollamaonlinemanager.h"
 #include <KConfigGroup>
@@ -22,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *manager, QWidget *parent)
     : KPageDialog(parent)
     , mOllamaOnlineConfigureWidget(new OllamaOnlineConfigureWidget(manager, this))
+    , mOllamaOnlineModelWidget(new OllamaCommonModelAvailableWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama Online"));
     setFaceType(KPageDialog::List);
@@ -31,6 +33,12 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
     configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
     mOllamaOnlineConfigureWidget->setObjectName(u"mOllamaConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
+
+    const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
+    auto configureModelWidgetPage = new KPageWidgetItem(mOllamaOnlineModelWidget, modelAvailablePageName);
+    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
+    mOllamaOnlineModelWidget->setObjectName(u"mOllamaOnlineModelWidget"_s);
+    addPage(configureModelWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaOnlineConfigureDialog::slotAccepted);
 
