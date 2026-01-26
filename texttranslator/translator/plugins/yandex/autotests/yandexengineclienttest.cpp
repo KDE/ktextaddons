@@ -5,12 +5,14 @@
 */
 
 #include "yandexengineclienttest.h"
-using namespace Qt::Literals::StringLiterals;
+#include <TextTranslator/TranslatorEnginePlugin>
 
 #include "../yandexengineclient.h"
 #include <QTest>
+#include <memory>
 QTEST_MAIN(YandexEngineClientTest)
 
+using namespace Qt::Literals::StringLiterals;
 YandexEngineClientTest::YandexEngineClientTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,7 +22,8 @@ void YandexEngineClientTest::shouldHaveDefaultValues()
 {
     YandexEngineClient client;
     QCOMPARE(client.name(), u"yandex"_s);
-    QVERIFY(client.createTranslator());
+    std::unique_ptr<TextTranslator::TranslatorEnginePlugin> plugin{client.createTranslator()};
+    QVERIFY(plugin);
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());
     QVERIFY(!client.supportedToLanguages().isEmpty());

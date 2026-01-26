@@ -5,12 +5,14 @@
 */
 
 #include "bingengineclienttest.h"
-using namespace Qt::Literals::StringLiterals;
+#include <TextTranslator/TranslatorEnginePlugin>
 
 #include "../bingengineclient.h"
 #include <QTest>
+#include <memory>
 QTEST_MAIN(BingEngineClientTest)
 
+using namespace Qt::Literals::StringLiterals;
 BingEngineClientTest::BingEngineClientTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,7 +22,8 @@ void BingEngineClientTest::shouldHaveDefaultValues()
 {
     BingEngineClient client;
     QCOMPARE(client.name(), u"bing"_s);
-    QVERIFY(client.createTranslator());
+    std::unique_ptr<TextTranslator::TranslatorEnginePlugin> plugin{client.createTranslator()};
+    QVERIFY(plugin);
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());
     QVERIFY(!client.supportedToLanguages().isEmpty());

@@ -5,12 +5,13 @@
 */
 
 #include "googleengineclienttest.h"
-using namespace Qt::Literals::StringLiterals;
-
 #include "../googleengineclient.h"
 #include <QTest>
+#include <TextTranslator/TranslatorEnginePlugin>
+#include <memory>
 QTEST_MAIN(GoogleEngineClientTest)
 
+using namespace Qt::Literals::StringLiterals;
 GoogleEngineClientTest::GoogleEngineClientTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,7 +21,8 @@ void GoogleEngineClientTest::shouldHaveDefaultValues()
 {
     GoogleEngineClient client;
     QCOMPARE(client.name(), u"google"_s);
-    QVERIFY(client.createTranslator());
+    std::unique_ptr<TextTranslator::TranslatorEnginePlugin> plugin{client.createTranslator()};
+    QVERIFY(plugin);
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());
     QVERIFY(!client.supportedToLanguages().isEmpty());
