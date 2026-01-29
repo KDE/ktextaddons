@@ -1,22 +1,23 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
+# SPDX-FileCopyrightText: 2026 Alexander Yavorskiy <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2023-11-10 17:08+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2026-01-28 20:26+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -34,15 +35,13 @@ msgid "Select Custom System Path"
 msgstr "Выбор нестандартного системного пути"
 
 #: widgets/autocorrectionwidget.cpp:151
-#, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Автоисправление LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:155
-#, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Автоисправление KMail/Calligra"
@@ -53,11 +52,10 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Строка «Заменить» совпадает со строкой «Найти»."
 
 #: widgets/autocorrectionwidget.cpp:433
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr "Добавление записи автоисправления"
+msgstr "Добавление правила автоисправления"
 
 #: widgets/autocorrectionwidget.cpp:512
 #, kde-format
@@ -93,8 +91,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Файл автоисправления KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:659
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Импорт файла автоисправления"
@@ -105,11 +102,10 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr "Язык изменён. Сохранить конфигурацию для предыдущего языка?"
 
 #: widgets/autocorrectionwidget.cpp:684
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
-msgstr "Сохранить конфигурацию"
+msgstr "Сохранение конфигурации"
 
 #: widgets/autocorrectionwidget.cpp:719
 #, kde-format
@@ -117,8 +113,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Сохраните изменения перед экспортом параметров."
 
 #: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Экспорт файла автоисправления"
@@ -137,17 +132,15 @@ msgstr "Замена и исключения для языка:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
-msgstr "Экспорт..."
+msgstr "Экспорт…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Импорт..."
+msgstr "Импорт…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -176,10 +169,9 @@ msgstr "&Найти"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgid "&Replace"
-msgstr "Заменить"
+msgstr "&Заменить"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -297,10 +289,9 @@ msgstr "Большинство стандартных записей дробе�
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "З&аменять 1/2... на ½..."
+msgstr "З&аменять 1/2… на ½…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -345,10 +336,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "З&аменять 1/2... на ½... (режим HTML)"
+msgstr "З&аменять 1/2… на ½… (режим HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -476,7 +466,7 @@ msgstr "Нестандартный системный путь:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
