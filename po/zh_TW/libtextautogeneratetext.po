@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-27 00:42+0000\n"
-"PO-Revision-Date: 2026-01-09 00:12+0900\n"
+"PO-Revision-Date: 2026-01-28 19:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -466,7 +466,7 @@ msgstr "開啟網址「%1」"
 #: plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama（託管）"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
 #, kde-format
@@ -591,18 +591,15 @@ msgid "Impossible to start Ollama."
 msgstr "無法啟動 Ollama。"
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama (Cloud)"
-msgstr "Ollama"
+msgstr "Ollama（Cloud）"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "設定 Ollama"
+msgstr "設定 Ollama Cloud"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:52
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
@@ -611,11 +608,12 @@ msgstr "設定 Ollama"
 msgid "Api Key:"
 msgstr "API 金鑰："
 
+# Product name
+# --Kisaragi
 #: plugins/ollamacloud/ollamacloudplugin.cpp:116
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Cloud"
-msgstr "Ollama"
+msgstr "Ollama Cloud"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -2051,21 +2049,18 @@ msgstr "顯示模型資訊"
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama（線上）"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "設定 Ollama"
+msgstr "設定 Ollama 線上"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:120
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Online"
-msgstr "Ollama"
+msgstr "Ollama 線上"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2581,7 +2576,7 @@ msgstr "新聊天"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "建立複本…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format

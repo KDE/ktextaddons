@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 # Alexander Yavorsky <kekcuha@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-10-27 10:34+0200\n"
+"PO-Revision-Date: 2026-01-28 20:26+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -27,7 +27,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
 msgid "Impossible to store language info."
-msgstr ""
+msgstr "Невозможно сохранить сведения о языке."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
