@@ -188,7 +188,7 @@ void TextAutoGenerateWidget::readConfig()
         mSplitter->setSizes(group.readEntry("mainSplitter", size));
     }
     {
-        KConfigGroup group(KSharedConfig::openConfig(), u"TextAutoGenerateWidget"_s);
+        const KConfigGroup group(KSharedConfig::openConfig(), u"TextAutoGenerateWidget"_s);
         if (mManager) {
             mManager->switchToChatId(group.readEntry("currentChatId", QByteArray()));
         }
