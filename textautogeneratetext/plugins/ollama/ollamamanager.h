@@ -59,6 +59,7 @@ public:
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);
+    void errorOccurred(QNetworkReply::NetworkError e);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT bool hasCategorySupport(const QString &modelName,

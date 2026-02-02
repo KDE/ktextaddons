@@ -27,7 +27,7 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
     connect(mOllamaManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
-            Q_EMIT errorOccurred(modelinfo.errorOccured);
+            Q_EMIT downloadErrorOccurred(modelinfo.errorOccured);
             mModels.clear();
         } else {
             mModels = modelinfo.models;
@@ -35,6 +35,7 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
         }
     });
     connect(mOllamaManager, &OllamaManager::downloadDone, this, &OllamaPlugin::downloadModelFinished);
+    // connect(mOllamaManager, &OllamaManager::errorOccurred, this, &OllamaPlugin::downloadModelFinished);
 
     connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
         if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {

@@ -161,7 +161,7 @@ public:
 Q_SIGNALS:
     /*!
      */
-    void errorOccurred(const QString &message);
+    void downloadErrorOccurred(const QString &message);
     /*!
      */
     void initializedDone();

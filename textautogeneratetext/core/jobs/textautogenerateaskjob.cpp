@@ -36,7 +36,7 @@ void TextAutoGenerateAskJob::start()
         return;
     }
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateAskJob::slotInitializeDone);
-    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateAskJob::slotAutogenerateFailed);
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::downloadErrorOccured, this, &TextAutoGenerateAskJob::slotAutogenerateFailed);
     qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "loadEngine";
     mManager->loadEngine();
 }

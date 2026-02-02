@@ -31,7 +31,7 @@ OllamaCloudPlugin::OllamaCloudPlugin(TextAutoGenerateText::TextAutoGenerateManag
     connect(mOllamaCloudManager, &OllamaCloudManager::modelsLoadDone, this, [this](const OllamaCloudManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
-            Q_EMIT errorOccurred(modelinfo.errorOccured);
+            Q_EMIT downloadErrorOccurred(modelinfo.errorOccured);
             mModels.clear();
         } else {
             mModels = modelinfo.models;

@@ -31,7 +31,7 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
     connect(mOllamaOnlineManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
-            Q_EMIT errorOccurred(modelinfo.errorOccured);
+            Q_EMIT downloadErrorOccurred(modelinfo.errorOccured);
             mModels.clear();
         } else {
             mModels = modelinfo.models;

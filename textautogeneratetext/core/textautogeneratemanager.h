@@ -270,7 +270,7 @@ Q_SIGNALS:
     void pluginsInitializedDone();
     /*!
      */
-    void errorOccured(const QString &msg);
+    void downloadErrorOccured(const QString &msg);
     /*!
      */
     void currentChatIdChanged();

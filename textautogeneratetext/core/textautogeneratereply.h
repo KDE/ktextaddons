@@ -11,10 +11,10 @@
 #include "textautogeneratetext_export.h"
 
 #include <QJsonDocument>
+#include <QNetworkReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
 class QDebug;
-class QNetworkReply;
 
 /*!
  * \brief The OllamaReply class represents a reply from an LLM.
@@ -137,6 +137,10 @@ Q_SIGNALS:
     /*!
      */
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
+
+    /*!
+     */
+    void errorOccurred(QNetworkReply::NetworkError e);
 
 protected:
     [[nodiscard]] QList<ToolCallArgumentInfo> parseToolCallsOllama(const QJsonArray &array) const;

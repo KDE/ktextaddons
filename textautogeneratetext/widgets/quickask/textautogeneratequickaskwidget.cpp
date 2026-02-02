@@ -156,7 +156,7 @@ void TextAutoGenerateQuickAskWidget::loadEngine()
 {
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateQuickAskWidget::slotInitializeDone);
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::downloadErrorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateQuickAskWidget::slotNeedToAddInstances);
         mManager->loadEngine();
     }

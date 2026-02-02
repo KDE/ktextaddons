@@ -38,7 +38,9 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
             Q_EMIT canceled();
         }
     });
-    connect(mReply, &QNetworkReply::errorOccurred, mReply, [](QNetworkReply::NetworkError e) {
+    connect(mReply, &QNetworkReply::errorOccurred, mReply, [this](QNetworkReply::NetworkError e) {
+        Q_EMIT errorOccurred(e);
+        qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << e;
         qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {

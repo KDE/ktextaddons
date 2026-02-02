@@ -126,7 +126,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             mManager->changeFavoriteHistory(mManager->currentChatId(), checked);
         });
 
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::downloadErrorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateWidget::needToAddInstances);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
             slotInitializeDone();
