@@ -127,6 +127,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         });
 
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::downloadErrorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccurred, this, &TextAutoGenerateWidget::slotErrorOccurred);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateWidget::needToAddInstances);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
             slotInitializeDone();
@@ -230,6 +231,10 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
         mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
+}
+
+void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e)
+{
 }
 
 void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)

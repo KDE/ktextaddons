@@ -77,6 +77,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index, const QList<QByteArray> &tools);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool lineEditWidgetEnabledState() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotQuickSearchText(bool enabled);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotErrorOccurred(QNetworkReply::NetworkError e);
 
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;
