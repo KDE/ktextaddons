@@ -235,6 +235,7 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
 
 void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e)
 {
+    // TODO
 }
 
 void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
