@@ -35,6 +35,7 @@ public:
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);
+    void errorOccurred(QNetworkReply::NetworkError e);
 
 private:
     OllamaOnlineSettings *const mOllamaOnlineSettings;
