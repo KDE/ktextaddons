@@ -326,6 +326,10 @@ Q_SIGNALS:
      */
     void ollamaFailed();
 
+    /*!
+     */
+    void errorOccurred(QNetworkReply::NetworkError e);
+
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);
 

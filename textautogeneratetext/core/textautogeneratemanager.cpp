@@ -582,6 +582,8 @@ void TextAutoGenerateManager::loadEngine()
             &TextAutoGenerateText::TextAutoGenerateTextPlugin::downloadErrorOccurred,
             this,
             &TextAutoGenerateManager::downloadErrorOccured);
+    connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccurred);
+
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, [this]() {
         setPluginWasInitialized(true);
         if (!mSwitchToChatId.isEmpty()) {

@@ -28,6 +28,7 @@ OllamaCloudPlugin::OllamaCloudPlugin(TextAutoGenerateText::TextAutoGenerateManag
             mOllamaCloudManager->loadModels();
         }
     });
+    connect(mOllamaCloudManager, &OllamaCloudManager::errorOccurred, this, &OllamaCloudPlugin::errorOccurred);
     connect(mOllamaCloudManager, &OllamaCloudManager::modelsLoadDone, this, [this](const OllamaCloudManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);

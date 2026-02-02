@@ -184,6 +184,10 @@ Q_SIGNALS:
      */
     void currentModelChanged();
 
+    /*!
+     */
+    void errorOccurred(QNetworkReply::NetworkError e);
+
 protected:
     /*!
      */

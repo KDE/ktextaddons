@@ -28,6 +28,7 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
             mOllamaOnlineManager->loadModels();
         }
     });
+    connect(mOllamaOnlineManager, &OllamaOnlineManager::errorOccurred, this, &OllamaOnlinePlugin::errorOccurred);
     connect(mOllamaOnlineManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
