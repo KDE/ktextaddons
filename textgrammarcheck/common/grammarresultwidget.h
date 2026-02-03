@@ -15,7 +15,10 @@ namespace TextGrammarCheck
 class GrammarAction;
 class GrammarResultTextEdit;
 /*!
- * \brief The GrammarResultWidget class
+ * \class GrammarResultWidget
+ * \inheaders TextGrammarCheck/GrammarResultWidget
+ * \inmodule TextGrammarCheck
+ * \brief Base widget for displaying grammar check results.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarResultWidget : public QWidget

@@ -14,7 +14,10 @@ class QComboBox;
 namespace TextTranslator
 {
 /*!
- * \brief The TranslatorUtil class
+ * \class TranslatorUtil
+ * \inheaders TextTranslator/TranslatorUtil
+ * \inmodule TextTranslator
+ * \brief Utility class for translator operations and language definitions.
  */
 class TEXTTRANSLATOR_EXPORT TranslatorUtil
 {

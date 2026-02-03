@@ -15,7 +15,10 @@ namespace TextTranslator
 {
 class TranslatorEnginePlugin;
 /*!
- * \brief The TranslatorEngineClient class
+ * \class TranslatorEngineClient
+ * \inheaders TextTranslator/TranslatorEngineClient
+ * \inmodule TextTranslator
+ * \brief Interface for translator engine backend implementations.
  */
 class TEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
 {
@@ -32,8 +35,8 @@ public:
      */
     ~TranslatorEngineClient() override;
 
-    /**
-     * @returns the name of the implementing class.
+    /*!
+     * Returns the name of the implementing class.
      */
     virtual QString name() const = 0;
 

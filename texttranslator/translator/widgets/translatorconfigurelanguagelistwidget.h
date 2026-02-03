@@ -14,8 +14,11 @@ class QLabel;
 class QStandardItemModel;
 namespace TextTranslator
 {
-/**
- * @brief The TranslatorConfigureLanguageListWidget class
+/*!
+ * \class TranslatorConfigureLanguageListWidget
+ * \inheaders TextTranslator/TranslatorConfigureLanguageListWidget
+ * \inmodule TextTranslator
+ * \brief Widget for configuring language selection in translator.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureLanguageListWidget : public QWidget

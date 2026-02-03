@@ -15,7 +15,10 @@ namespace TextTranslator
 class TranslatorEngineLoaderPrivate;
 class TranslatorEngineClient;
 /*!
- * \brief The TranslatorEngineLoader class
+ * \class TranslatorEngineLoader
+ * \inheaders TextTranslator/TranslatorEngineLoader
+ * \inmodule TextTranslator
+ * \brief Loads and manages translation engine plugins.
  */
 class TEXTTRANSLATOR_EXPORT TranslatorEngineLoader : public QObject
 {

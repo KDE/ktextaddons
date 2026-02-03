@@ -14,7 +14,10 @@ class QNetworkAccessManager;
 namespace TextGrammarCheck
 {
 /*!
- * \brief The LanguageToolManager class
+ * \class LanguageToolManager
+ * \inheaders TextGrammarCheck/LanguageToolManager
+ * \inmodule TextGrammarCheck
+ * \brief Manager for LanguageTool grammar checking service.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolManager : public QObject

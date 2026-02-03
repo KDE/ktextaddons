@@ -9,8 +9,11 @@
 #include <QAction>
 namespace TextSpeechToText
 {
-/**
- * @brief The SpeechToTextAction class
+/*!
+ * \class SpeechToTextAction
+ * \inheaders TextSpeechToText/SpeechToTextAction
+ * \inmodule TextSpeechToText
+ * \brief QAction subclass for speech-to-text functionality.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextAction : public QAction

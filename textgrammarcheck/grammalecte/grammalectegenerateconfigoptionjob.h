@@ -13,7 +13,10 @@
 namespace TextGrammarCheck
 {
 /*!
- * \brief The GrammalecteGenerateConfigOptionJob class
+ * \class GrammalecteGenerateConfigOptionJob
+ * \inheaders TextGrammarCheck/GrammalecteGenerateConfigOptionJob
+ * \inmodule TextGrammarCheck
+ * \brief Generates configuration options for Grammalecte.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteGenerateConfigOptionJob : public QObject

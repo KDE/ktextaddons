@@ -13,7 +13,10 @@ namespace TextGrammarCheck
 {
 class GrammalecteResultJob;
 /*!
- * \brief The GrammalecteResultWidget class
+ * \class GrammalecteResultWidget
+ * \inheaders TextGrammarCheck/GrammalecteResultWidget
+ * \inmodule TextGrammarCheck
+ * \brief Widget displaying Grammalecte grammar check results.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidget

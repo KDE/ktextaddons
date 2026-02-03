@@ -11,7 +11,10 @@
 namespace TextGrammarCheck
 {
 /*!
- * \brief The GrammalecteManager class
+ * \class GrammalecteManager
+ * \inheaders TextGrammarCheck/GrammalecteManager
+ * \inmodule TextGrammarCheck
+ * \brief Manager for Grammalecte grammar checking service.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteManager : public QObject

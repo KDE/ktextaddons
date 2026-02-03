@@ -16,7 +16,10 @@ namespace TextGrammarCheck
 {
 class GrammalecteUrlRequesterWidget;
 /*!
- * \brief The GrammalecteConfigWidget class
+ * \class GrammalecteConfigWidget
+ * \inheaders TextGrammarCheck/GrammalecteConfigWidget
+ * \inmodule TextGrammarCheck
+ * \brief Configuration widget for Grammalecte grammar checker.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget

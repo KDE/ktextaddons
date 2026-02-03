@@ -11,7 +11,10 @@
 namespace TextTranslator
 {
 /*!
- * \brief The TranslatorConfigureWidget class
+ * \class TranslatorConfigureWidget
+ * \inheaders TextTranslator/TranslatorConfigureWidget
+ * \inmodule TextTranslator
+ * \brief Widget for translator configuration settings.
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
 {

@@ -15,7 +15,10 @@ class QJsonObject;
 namespace TextGrammarCheck
 {
 /*!
- * \brief The GrammarError class
+ * \class GrammarError
+ * \inheaders TextGrammarCheck/GrammarError
+ * \inmodule TextGrammarCheck
+ * \brief Represents a grammar error found during checking.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarError

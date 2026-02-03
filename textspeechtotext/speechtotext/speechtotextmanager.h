@@ -9,8 +9,11 @@
 namespace TextSpeechToText
 {
 class SpeechToTextPlugin;
-/**
- * @brief The SpeechToTextManager class
+/*!
+ * \class SpeechToTextManager
+ * \inheaders TextSpeechToText/SpeechToTextManager
+ * \inmodule TextSpeechToText
+ * \brief Central manager for speech-to-text operations.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextManager : public QObject

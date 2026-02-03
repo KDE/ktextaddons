@@ -10,8 +10,11 @@
 namespace TextSpeechToText
 {
 class SpeechToTextPlugin;
-/**
- * @brief The SpeechToTextClient class
+/*!
+ * \class SpeechToTextClient
+ * \inheaders TextSpeechToText/SpeechToTextClient
+ * \inmodule TextSpeechToText
+ * \brief The SpeechToTextClient class defines the interface for speech-to-text engine backends.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextClient : public QObject
@@ -29,8 +32,8 @@ public:
      */
     ~SpeechToTextClient() override;
 
-    /**
-     * @returns the name of the implementing class.
+    /*!
+     * Returns the name of the implementing class.
      */
     virtual QString name() const = 0;
 

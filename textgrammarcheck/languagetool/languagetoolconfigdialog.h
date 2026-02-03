@@ -11,7 +11,10 @@ namespace TextGrammarCheck
 {
 class LanguageToolConfigWidget;
 /*!
- * \brief The LanguageToolConfigDialog class
+ * \class LanguageToolConfigDialog
+ * \inheaders TextGrammarCheck/LanguageToolConfigDialog
+ * \inmodule TextGrammarCheck
+ * \brief Configuration dialog for LanguageTool grammar checker.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigDialog : public QDialog

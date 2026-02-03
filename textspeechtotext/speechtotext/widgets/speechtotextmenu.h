@@ -11,6 +11,12 @@
 class QMenu;
 namespace TextSpeechToText
 {
+/*!
+ * \class SpeechToTextMenu
+ * \inheaders TextSpeechToText/SpeechToTextMenu
+ * \inmodule TextSpeechToText
+ * \brief Menu widget for speech-to-text engine selection and control.
+ */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextMenu : public QObject
 {
     Q_OBJECT

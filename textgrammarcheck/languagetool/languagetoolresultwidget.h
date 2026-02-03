@@ -13,7 +13,10 @@ namespace TextGrammarCheck
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /*!
- * \brief The LanguageToolResultWidget class
+ * \class LanguageToolResultWidget
+ * \inheaders TextGrammarCheck/LanguageToolResultWidget
+ * \inmodule TextGrammarCheck
+ * \brief Widget displaying LanguageTool grammar check results.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolResultWidget : public GrammarResultWidget

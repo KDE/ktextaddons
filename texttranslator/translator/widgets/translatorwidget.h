@@ -11,8 +11,11 @@
 #include <QPlainTextEdit>
 namespace TextTranslator
 {
-/**
- * @brief The TranslatorTextEdit class
+/*!
+ * \class TranslatorTextEdit
+ * \inheaders TextTranslator/TranslatorTextEdit
+ * \inmodule TextTranslator
+ * \brief Plain text editor with translation support.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorTextEdit : public QPlainTextEdit
@@ -32,8 +35,11 @@ protected:
     void dropEvent(QDropEvent *) override;
 };
 
-/**
- * @brief The TranslatorWidget class
+/*!
+ * \class TranslatorWidget
+ * \inheaders TextTranslator/TranslatorWidget
+ * \inmodule TextTranslator
+ * \brief Complete translator widget with UI controls.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorWidget : public QWidget

@@ -11,7 +11,10 @@ namespace TextGrammarCheck
 {
 class GrammalecteConfigWidget;
 /*!
- * \brief The GrammalecteConfigDialog class
+ * \class GrammalecteConfigDialog
+ * \inheaders TextGrammarCheck/GrammalecteConfigDialog
+ * \inmodule TextGrammarCheck
+ * \brief Configuration dialog for Grammalecte grammar checker.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigDialog : public QDialog

@@ -13,7 +13,10 @@ namespace TextGrammarCheck
 {
 class GrammarAction;
 /*!
- * \brief The GrammarResultTextEdit class
+ * \class GrammarResultTextEdit
+ * \inheaders TextGrammarCheck/GrammarResultTextEdit
+ * \inmodule TextGrammarCheck
+ * \brief Text editor for displaying and handling grammar check results.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit

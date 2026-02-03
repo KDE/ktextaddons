@@ -17,7 +17,10 @@ namespace TextTranslator
 {
 class TranslatorEnginePluginPrivate;
 /*!
- * \brief The TranslatorEnginePlugin class
+ * \class TranslatorEnginePlugin
+ * \inheaders TextTranslator/TranslatorEnginePlugin
+ * \inmodule TextTranslator
+ * \brief Base class for translation engine implementations.
  */
 class TEXTTRANSLATOR_EXPORT TranslatorEnginePlugin : public QObject
 {

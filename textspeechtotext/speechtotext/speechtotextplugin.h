@@ -10,8 +10,11 @@
 #include <memory>
 namespace TextSpeechToText
 {
-/**
- * @brief The SpeechToTextPlugin class
+/*!
+ * \class SpeechToTextPlugin
+ * \inheaders TextSpeechToText/SpeechToTextPlugin
+ * \inmodule TextSpeechToText
+ * \brief Interface for speech-to-text engine implementations.
  * \author Laurent Montel <montel@kde.org>
  */
 class SpeechToTextPluginPrivate;

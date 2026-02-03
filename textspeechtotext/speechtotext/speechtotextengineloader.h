@@ -13,8 +13,11 @@ namespace TextSpeechToText
 {
 class SpeechToTextEngineLoaderPrivate;
 class SpeechToTextClient;
-/**
- * @brief The SpeechToTextEngineLoader class
+/*!
+ * \class SpeechToTextEngineLoader
+ * \inheaders TextSpeechToText/SpeechToTextEngineLoader
+ * \inmodule TextSpeechToText
+ * \brief Loads and manages speech-to-text engine plugins.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextEngineLoader : public QObject

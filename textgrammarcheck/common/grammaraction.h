@@ -12,7 +12,10 @@ class QDebug;
 namespace TextGrammarCheck
 {
 /*!
- * \brief The GrammarAction class
+ * \class GrammarAction
+ * \inheaders TextGrammarCheck/GrammarAction
+ * \inmodule TextGrammarCheck
+ * \brief Represents a grammar correction action.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammarAction

@@ -9,8 +9,11 @@
 namespace TextTranslator
 {
 class TranslatorConfigureWidget;
-/**
- * @brief The TranslatorConfigureDialog class
+/*!
+ * \class TranslatorConfigureDialog
+ * \inheaders TextTranslator/TranslatorConfigureDialog
+ * \inmodule TextTranslator
+ * \brief Dialog for translator configuration.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog

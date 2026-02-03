@@ -16,7 +16,10 @@ namespace TextGrammarCheck
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /*!
- * \brief The LanguageToolConfigWidget class
+ * \class LanguageToolConfigWidget
+ * \inheaders TextGrammarCheck/LanguageToolConfigWidget
+ * \inmodule TextGrammarCheck
+ * \brief Configuration widget for LanguageTool grammar checker.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigWidget : public QWidget

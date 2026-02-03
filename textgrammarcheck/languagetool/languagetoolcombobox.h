@@ -12,7 +12,10 @@ namespace TextGrammarCheck
 {
 class LanguageInfo;
 /*!
- * \brief The LanguageToolComboBox class
+ * \class LanguageToolComboBox
+ * \inheaders TextGrammarCheck/LanguageToolComboBox
+ * \inmodule TextGrammarCheck
+ * \brief ComboBox widget for selecting LanguageTool language.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT LanguageToolComboBox : public QComboBox

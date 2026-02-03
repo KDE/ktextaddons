@@ -11,8 +11,11 @@
 #include <TextTranslator/TranslatorUtil>
 namespace TextTranslator
 {
-/**
- * @brief The TranslatorConfigureListsWidget class
+/*!
+ * \class TranslatorConfigureListsWidget
+ * \inheaders TextTranslator/TranslatorConfigureListsWidget
+ * \inmodule TextTranslator
+ * \brief Widget for configuring translator engine and language lists.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureListsWidget : public QWidget

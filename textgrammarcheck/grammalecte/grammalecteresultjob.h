@@ -12,7 +12,10 @@
 namespace TextGrammarCheck
 {
 /*!
- * \brief The GrammalecteResultJob class
+ * \class GrammalecteResultJob
+ * \inheaders TextGrammarCheck/GrammalecteResultJob
+ * \inmodule TextGrammarCheck
+ * \brief Processes Grammalecte grammar check results.
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTGRAMMARCHECK_EXPORT GrammalecteResultJob : public QObject

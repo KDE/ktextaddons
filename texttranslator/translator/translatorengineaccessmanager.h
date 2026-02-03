@@ -11,7 +11,10 @@ class QNetworkAccessManager;
 namespace TextTranslator
 {
 /*!
- * \brief The TranslatorEngineAccessManager class
+ * \class TranslatorEngineAccessManager
+ * \inheaders TextTranslator/TranslatorEngineAccessManager
+ * \inmodule TextTranslator
+ * \brief Manages network access for translation engines.
  */
 class TEXTTRANSLATOR_EXPORT TranslatorEngineAccessManager : public QObject
 {
