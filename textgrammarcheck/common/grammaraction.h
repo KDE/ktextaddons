@@ -41,7 +41,7 @@ public:
     [[nodiscard]] int length() const;
     /*!
      */
-    void setLength(int length);
+    void setLength(int end);
 
     /*!
      */
