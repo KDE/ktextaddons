@@ -3,5 +3,8 @@
 
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
-find_dependency(KF6TextAddonsWidgets "@KTEXTADDONS_CURRENT_VERSION@")
+find_dependency(
+    KF6TextAddonsWidgets
+    "@KTEXTADDONS_CURRENT_VERSION@"
+)
 include("${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoGenerateTextTargets.cmake")

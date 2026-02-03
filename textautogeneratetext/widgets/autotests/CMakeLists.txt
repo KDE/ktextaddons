@@ -6,8 +6,7 @@ set(LIB_AUTOTEST_PCH_WIDGETS)
 if(ENABLE_PCH)
     file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty_pch.cpp "/*empty file*/")
     file(
-        WRITE
-        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratewidgets_pch.h
+        WRITE ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratewidgets_pch.h
         "#pragma once
         #include <QObject>
         #include <QTest>
