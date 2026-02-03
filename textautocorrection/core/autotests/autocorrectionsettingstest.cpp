@@ -17,7 +17,7 @@ AutoCorrectionSettingsTest::AutoCorrectionSettingsTest(QObject *parent)
 
 void AutoCorrectionSettingsTest::shouldHaveDefaultValues()
 {
-    TextAutoCorrectionCore::AutoCorrectionSettings settings;
+    const TextAutoCorrectionCore::AutoCorrectionSettings settings;
     QVERIFY(!settings.isEnabledAutoCorrection());
     QVERIFY(!settings.isUppercaseFirstCharOfSentence());
     QVERIFY(!settings.isFixTwoUppercaseChars());

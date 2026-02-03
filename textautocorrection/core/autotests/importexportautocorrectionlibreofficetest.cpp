@@ -52,7 +52,7 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
         temporaryShareFile.close();
 
         // Reimport
-        TextAutoCorrectionCore::ImportLibreOfficeAutocorrection importTwoStep;
+        const TextAutoCorrectionCore::ImportLibreOfficeAutocorrection importTwoStep;
         if (import.import(temporaryShareFile.fileName(), messageError, TextAutoCorrectionCore::ImportAbstractAutocorrection::All)) {
             const auto mUpperCaseExceptionsStep2 = import.upperCaseExceptions();
             const auto mTwoUpperLetterExceptionsStep2 = import.twoUpperLetterExceptions();

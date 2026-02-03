@@ -18,7 +18,7 @@ ImportKMailAutocorrectionTest::ImportKMailAutocorrectionTest(QObject *parent)
 
 void ImportKMailAutocorrectionTest::shouldHaveDefaultValues()
 {
-    TextAutoCorrectionCore::ImportKMailAutocorrection import;
+    const TextAutoCorrectionCore::ImportKMailAutocorrection import;
     QVERIFY(import.upperCaseExceptions().isEmpty());
     QVERIFY(import.twoUpperLetterExceptions().isEmpty());
     QVERIFY(import.autocorrectEntries().isEmpty());

@@ -35,7 +35,7 @@ AutoCorrectionTest::~AutoCorrectionTest() = default;
 
 void AutoCorrectionTest::shouldHaveDefaultValue()
 {
-    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    const TextAutoCorrectionCore::AutoCorrection autocorrection;
     QVERIFY(!autocorrection.autoCorrectionSettings()->isEnabledAutoCorrection());
     QVERIFY(!autocorrection.autoCorrectionSettings()->isUppercaseFirstCharOfSentence());
     QVERIFY(!autocorrection.autoCorrectionSettings()->isFixTwoUppercaseChars());
