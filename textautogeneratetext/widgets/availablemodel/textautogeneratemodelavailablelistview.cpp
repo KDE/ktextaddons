@@ -16,8 +16,6 @@ TextAutoGenerateModelAvailableListView::TextAutoGenerateModelAvailableListView(Q
     setFocusPolicy(Qt::NoFocus);
     scrollToBottom();
     setMouseTracking(true);
-
-    // setItemDelegate(new GenericNetworkModelAvailableInfosDelegate(this));
 }
 
 TextAutoGenerateModelAvailableListView::~TextAutoGenerateModelAvailableListView() = default;
