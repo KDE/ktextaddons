@@ -28,5 +28,7 @@ compile_commands.json
 .cache
 .qtcreator/
 
+.sentry-native/
+
 # Git clone from bergamot-translator
 texttranslator/translator/plugins/bergamot/bergamot-translator/
