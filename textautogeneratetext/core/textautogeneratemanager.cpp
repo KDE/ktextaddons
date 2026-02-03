@@ -395,7 +395,8 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
     }
     auto messagesModel = messagesModelFromChatId(chatId);
     const auto messages = messagesModel->messages();
-    createNewChat(); // TODO fix title
+    const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+    createNewChat(chat.title());
 #if 0
     for (auto &msg : msgs) {
         if (convertUuid.contains(msg.answerUuid())) {
@@ -403,8 +404,7 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
         }
     }
 #endif
-    qWarning() << " not implemented yet";
-    // TODO
+    qWarning() << " TextAutoGenerateManager::duplicateChat: not implemented yet";
 }
 
 void TextAutoGenerateManager::archiveDiscussion(const QByteArray &chatId, bool archive)
