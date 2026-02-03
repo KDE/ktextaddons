@@ -37,7 +37,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
         } else {
             blockNumberId = info.blockId() - 1;
         }
-        QTextBlock block = document->findBlockByNumber(blockNumberId);
+        const QTextBlock block = document->findBlockByNumber(blockNumberId);
         if (block.isValid()) {
             QTextCursor cur(block);
             QTextCharFormat format;
@@ -70,7 +70,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
 
 void GrammarResultUtil::replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document)
 {
-    QTextBlock block = document->findBlockByNumber(act.blockId() - 1);
+    const QTextBlock block = document->findBlockByNumber(act.blockId() - 1);
     if (block.isValid()) {
         QTextCursor cur(block);
         const int initialCurrentPosition = cur.position();
@@ -78,7 +78,7 @@ void GrammarResultUtil::replaceWord(const TextGrammarCheck::GrammarAction &act, 
         const int position = cur.position() + act.start();
         cur.setPosition(position);
         cur.setPosition(position + act.length(), QTextCursor::KeepAnchor);
-        QTextCharFormat format;
+        const QTextCharFormat format;
         cur.insertText(replacementWord, format);
         const int diff = replacementWord.length() - act.length();
         qCDebug(TEXTGRAMMARCHECK_LOG) << " diff " << diff;

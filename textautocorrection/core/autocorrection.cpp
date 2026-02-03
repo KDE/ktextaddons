@@ -55,7 +55,7 @@ void AutoCorrection::selectStringOnMaximumSearchString(QTextCursor &cursor, int 
 {
     cursor.setPosition(cursorPosition);
 
-    QTextBlock block = cursor.block();
+    const QTextBlock block = cursor.block();
     int pos = qMax(block.position(), cursorPosition - d->mAutoCorrectionSettings->maxFindStringLength());
 
     // TODO verify that pos == block.position() => it's a full line => not a piece of word
@@ -90,7 +90,7 @@ void AutoCorrection::selectStringOnMaximumSearchString(QTextCursor &cursor, int 
 void AutoCorrection::selectPreviousWord(QTextCursor &cursor, int cursorPosition)
 {
     cursor.setPosition(cursorPosition);
-    QTextBlock block = cursor.block();
+    const QTextBlock block = cursor.block();
     cursor.setPosition(block.position());
     cursorPosition -= block.position();
     QString string = block.text();
@@ -596,8 +596,8 @@ void AutoCorrection::uppercaseFirstCharOfSentence()
         return;
     }
 
-    int startPos = d->mCursor.selectionStart();
-    QTextBlock block = d->mCursor.block();
+    const int startPos = d->mCursor.selectionStart();
+    const QTextBlock block = d->mCursor.block();
 
     d->mCursor.setPosition(block.position());
     d->mCursor.setPosition(startPos, QTextCursor::KeepAnchor);
@@ -708,10 +708,8 @@ int AutoCorrection::advancedAutocorrect()
     bool hasPunctuation = false;
     const QChar lastChar = actualWord.at(actualWord.length() - 1);
     const ushort charUnicode = lastChar.unicode();
-    if (charUnicode == '.' || charUnicode == ',' || charUnicode == '?' || charUnicode == '!' || charUnicode == ';') {
-        hasPunctuation = true;
-        actualWord.chop(1);
-    } else if (charUnicode == ':' && actualWord.at(0).unicode() != ':') {
+    if (charUnicode == '.' || charUnicode == ',' || charUnicode == '?' || charUnicode == '!' || charUnicode == ';'
+        || (charUnicode == ':' && actualWord.at(0).unicode() != ':')) {
         hasPunctuation = true;
         actualWord.chop(1);
     }

@@ -20,7 +20,7 @@ TextToSpeechSliderWidgetTest::TextToSpeechSliderWidgetTest(QObject *parent)
 
 void TextToSpeechSliderWidgetTest::shouldHaveDefaultValues()
 {
-    TextEditTextToSpeech::TextToSpeechSliderWidget w({});
+    const TextEditTextToSpeech::TextToSpeechSliderWidget w({});
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

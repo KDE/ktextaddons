@@ -81,7 +81,7 @@ void LanguageToolUpdateComboBox::slotGetLanguagesFinished(const QString &result)
 {
     const QJsonDocument doc = QJsonDocument::fromJson(result.toUtf8());
     const QJsonArray fields = doc.array();
-    LanguageToolListOfLanguagesParser parser;
+    const LanguageToolListOfLanguagesParser parser;
     mLanguageToolCombobox->fillComboBox(parser.parseResult(fields));
     mLanguageToolCombobox->setLanguage(LanguageToolManager::self()->language());
     mBListWasLoaded = true;

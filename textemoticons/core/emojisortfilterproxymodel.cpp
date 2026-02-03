@@ -61,9 +61,7 @@ public:
             if (diversityChildren) {
                 return false;
             }
-            if (identifier.contains("_tone"_L1) && identifier.contains(suffix)) {
-                return true;
-            } else if (!identifier.contains("_tone"_L1)) {
+            if ((identifier.contains("_tone"_L1) && identifier.contains(suffix)) || !identifier.contains("_tone"_L1)) {
                 return true;
             }
             return false;

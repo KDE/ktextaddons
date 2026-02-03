@@ -22,7 +22,7 @@ void LanguageToolComboBox::fillComboBox(const QVector<LanguageInfo> &info)
 {
     clear();
     for (int i = 0; i < info.count(); ++i) {
-        const LanguageInfo infoLang = info.at(i);
+        const LanguageInfo &infoLang = info.at(i);
         addItem(infoLang.name(), infoLang.code());
     }
 }

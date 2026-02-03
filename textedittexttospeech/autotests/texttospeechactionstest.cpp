@@ -24,7 +24,7 @@ TextToSpeechActionsTest::~TextToSpeechActionsTest() = default;
 
 void TextToSpeechActionsTest::shouldHaveDefaultValue()
 {
-    TextEditTextToSpeech::TextToSpeechActions act;
+    const TextEditTextToSpeech::TextToSpeechActions act;
     QVERIFY(act.stopAction());
     QVERIFY(act.playPauseAction());
     QCOMPARE(act.state(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
@@ -80,7 +80,7 @@ void TextToSpeechActionsTest::shouldEmitStateChanged()
 {
     TextEditTextToSpeech::TextToSpeechActions act;
     act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
-    QSignalSpy spy(&act, &TextEditTextToSpeech::TextToSpeechActions::stateChanged);
+    const QSignalSpy spy(&act, &TextEditTextToSpeech::TextToSpeechActions::stateChanged);
     act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
     QCOMPARE(spy.count(), 0);
 

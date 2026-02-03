@@ -85,7 +85,7 @@ void LanguageToolManager::setLanguageToolPath(const QString &path)
 
 void LanguageToolManager::loadSettings()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
+    const KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
     mLanguageToolPath = grp.readEntry(u"languagetoolpath"_s, QStringLiteral("https://api.languagetoolplus.com/v2"));
     if (mLanguageToolPath == "https://languagetool.org/api/v2"_L1) {
         mLanguageToolPath = u"https://api.languagetoolplus.com/v2"_s;

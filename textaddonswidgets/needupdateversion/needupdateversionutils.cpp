@@ -15,7 +15,7 @@
 TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(const QString &str,
                                                                                                                             QDate currentDate)
 {
-    static QRegularExpression regular{QStringLiteral("\\((.*)\\)")};
+    static const QRegularExpression regular{QStringLiteral("\\((.*)\\)")};
     QRegularExpressionMatch match;
     QString captured;
     if (str.contains(regular, &match)) {
@@ -55,7 +55,7 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
 
 void TextAddonsWidgets::NeedUpdateVersionUtils::disableCheckVersion()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, QStringLiteral("Check Version"));
     group.writeEntry("checkerVersionEnabled", false);
 }
@@ -63,8 +63,8 @@ void TextAddonsWidgets::NeedUpdateVersionUtils::disableCheckVersion()
 bool TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()
 {
 #if ENABLE_WARN_OUTDATED == 1
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, QStringLiteral("Check Version"));
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const KConfigGroup group(config, QStringLiteral("Check Version"));
     return group.readEntry("checkerVersionEnabled", true);
 #else
     return false;

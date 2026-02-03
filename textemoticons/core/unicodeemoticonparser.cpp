@@ -14,8 +14,6 @@ using namespace TextEmoticonsCore;
 using namespace Qt::Literals::StringLiterals;
 UnicodeEmoticonParser::UnicodeEmoticonParser() = default;
 
-UnicodeEmoticonParser::~UnicodeEmoticonParser() = default;
-
 QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
 {
     auto aliases = [](const QJsonArray &alternates, const QJsonArray &ascii) {

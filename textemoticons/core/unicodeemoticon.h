@@ -34,7 +34,7 @@ public:
     [[nodiscard]] QString identifier() const;
     /*!
      */
-    void setIdentifier(const QString &identifier);
+    void setIdentifier(const QString &name);
 
     /*!
      */

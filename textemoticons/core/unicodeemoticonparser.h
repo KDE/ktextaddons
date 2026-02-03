@@ -27,7 +27,7 @@ public:
     UnicodeEmoticonParser();
     /*!
      */
-    ~UnicodeEmoticonParser();
+    ~UnicodeEmoticonParser() = default;
 
     /*!
      */

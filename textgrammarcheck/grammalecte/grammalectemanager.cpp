@@ -49,7 +49,7 @@ void GrammalecteManager::setOptions(const QStringList &saveOptions)
 
 void GrammalecteManager::loadSettings()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myConfigGroupName));
+    const KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myConfigGroupName));
     mPythonPath = grp.readEntry(u"pythonpath"_s);
     if (mPythonPath.isEmpty()) {
         mPythonPath = QStandardPaths::findExecutable(u"python3"_s);

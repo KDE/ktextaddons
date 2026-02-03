@@ -36,7 +36,7 @@ void GrammalecteResultWidget::checkGrammar()
 
 void GrammalecteResultWidget::slotCheckGrammarFinished(const QString &result)
 {
-    GrammalecteParser parser;
+    const GrammalecteParser parser;
     const QJsonDocument doc = QJsonDocument::fromJson(result.toUtf8());
     const QJsonObject fields = doc.object();
     applyGrammarResult(parser.parseResult(fields));
