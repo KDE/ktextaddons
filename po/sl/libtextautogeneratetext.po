@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-03 00:44+0000\n"
 "PO-Revision-Date: 2026-01-21 07:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -575,7 +575,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Neuspel zagon Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollama/ollamaplugin.cpp:111
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -611,7 +611,7 @@ msgstr "Konfiguriraj Ollama Cloud"
 msgid "Api Key:"
 msgstr "Ključ api:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:117
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "Ollama Cloud"
@@ -2180,32 +2180,32 @@ msgstr ""
 "Granite 4 ima izboljšane zmogljivosti sledenja navodilom (IF) in klicanja "
 "orodij, zaradi česar je učinkovitejši v poslovnih aplikacijah."
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
 #, kde-format
 msgid "Capabilities"
 msgstr "Zmogljivosti"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, kde-format
 msgid "Template"
 msgstr "Predloga"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:170
 #, kde-format
 msgid "Modelfile"
 msgstr "Model datoteke"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#: plugins/ollamacommon/ollamacommonreply.cpp:173
 #, kde-format
 msgid "Parameters"
 msgstr "Parametri"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:177
 #, kde-format
 msgid "Model Info"
 msgstr "Informacije o modelu"
@@ -2227,7 +2227,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Konfiguriraj Ollama Online"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:121
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama Online"

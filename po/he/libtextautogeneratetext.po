@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-03 00:44+0000\n"
 "PO-Revision-Date: 2026-01-21 08:53+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -573,7 +573,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "הפעלת Ollama נכשלה"
 
-#: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollama/ollamaplugin.cpp:111
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -609,7 +609,7 @@ msgstr "הגדרת ענן Ollama"
 msgid "Api Key:"
 msgstr "מפתח API:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:117
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "ענן Ollama"
@@ -2087,32 +2087,32 @@ msgstr ""
 "Granite 4 מציג מעקב משופר אחרי הנחיות (IF) ויכולות קריאה לכלים, מה שהופך "
 "אותם ליעילים יותר ליישומים תאגידיים."
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
 #, kde-format
 msgid "Capabilities"
 msgstr "יכולות"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, kde-format
 msgid "Template"
 msgstr "תבנית"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:170
 #, kde-format
 msgid "Modelfile"
 msgstr "קובץ מודל"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#: plugins/ollamacommon/ollamacommonreply.cpp:173
 #, kde-format
 msgid "Parameters"
 msgstr "משתנים"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Details"
 msgstr "פרטים"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:177
 #, kde-format
 msgid "Model Info"
 msgstr "פרטי מודל"
@@ -2134,7 +2134,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "הגדרת Ollama מקוונת"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:121
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama מקוונת"

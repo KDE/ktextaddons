@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-03 00:44+0000\n"
 "PO-Revision-Date: 2025-09-01 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -566,7 +566,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr ""
 
-#: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollama/ollamaplugin.cpp:111
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -602,7 +602,7 @@ msgstr ""
 msgid "Api Key:"
 msgstr ""
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:117
 #, kde-format
 msgid "Ollama Cloud"
 msgstr ""
@@ -1829,32 +1829,32 @@ msgid ""
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
 #, kde-format
 msgid "Capabilities"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, kde-format
 msgid "Template"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:170
 #, kde-format
 msgid "Modelfile"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#: plugins/ollamacommon/ollamacommonreply.cpp:173
 #, kde-format
 msgid "Parameters"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:177
 #, kde-format
 msgid "Model Info"
 msgstr ""
@@ -1876,7 +1876,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr ""
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:121
 #, kde-format
 msgid "Ollama Online"
 msgstr ""

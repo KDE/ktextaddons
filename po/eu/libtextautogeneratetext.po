@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-03 00:44+0000\n"
 "PO-Revision-Date: 2026-01-25 13:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -601,7 +601,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Abiarazi Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollama/ollamaplugin.cpp:111
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -641,7 +641,7 @@ msgstr "Konfiguratu Ollama"
 msgid "Api Key:"
 msgstr "APIaren gakoa:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:117
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Cloud"
@@ -1975,35 +1975,35 @@ msgid ""
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
 #, kde-format
 msgid "Capabilities"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, fuzzy, kde-format
 #| msgid "Temperature:"
 msgid "Template"
 msgstr "Tenperatura:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:170
 #, fuzzy, kde-format
 #| msgid "Models"
 msgid "Modelfile"
 msgstr "Ereduak"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#: plugins/ollamacommon/ollamacommonreply.cpp:173
 #, fuzzy, kde-format
 #| msgid "Parameter Size:"
 msgid "Parameters"
 msgstr "Parametroen neurria:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:177
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Information:"
@@ -2031,7 +2031,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Konfiguratu Ollama"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:121
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"

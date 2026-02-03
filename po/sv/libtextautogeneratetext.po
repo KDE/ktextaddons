@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-03 00:44+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -597,7 +597,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Starta Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:110
+#: plugins/ollama/ollamaplugin.cpp:111
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -637,7 +637,7 @@ msgstr "Anpassa Ollama"
 msgid "Api Key:"
 msgstr "Programmeringsgränssnittsnyckel:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:117
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Cloud"
@@ -2215,35 +2215,35 @@ msgstr ""
 "Granite 4 har förbättrade funktioner för instruktionsföljning (IF) och "
 "verktygsanrop, vilket gör dem mer effektiva i företagsapplikationer."
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:165
+#: plugins/ollamacommon/ollamacommonreply.cpp:167
 #, kde-format
 msgid "Capabilities"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, fuzzy, kde-format
 #| msgid "Temperature:"
 msgid "Template"
 msgstr "Temperatur:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:170
 #, fuzzy, kde-format
 #| msgid "Models"
 msgid "Modelfile"
 msgstr "Modeller"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:171
+#: plugins/ollamacommon/ollamacommonreply.cpp:173
 #, fuzzy, kde-format
 #| msgid "Parameter Size:"
 msgid "Parameters"
 msgstr "Parameterstorlek:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:177
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open Model Information Url"
@@ -2271,7 +2271,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Anpassa Ollama"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:120
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:121
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"
