@@ -397,14 +397,21 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
     const auto messages = messagesModel->messages();
     const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
     createNewChat(chat.title());
-#if 0
-    for (auto &msg : msgs) {
-        if (convertUuid.contains(msg.answerUuid())) {
-            msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
+    QList<TextAutoGenerateMessage> newMessages;
+    QMap<QByteArray, QByteArray> convertUuid;
+    for (const auto &m : messages) {
+        TextAutoGenerateMessage newMsg = m;
+        newMsg.setUuid(TextAutoGenerateTextUtils::generateUUid());
+        convertUuid.insert(m.uuid(), newMsg.uuid());
+        newMessages.append(newMsg);
+    }
+    for (auto &m : newMessages) {
+        if (convertUuid.contains(m.answerUuid())) {
+            m.setAnswerUuid(convertUuid.value(m.answerUuid()));
         }
     }
-#endif
-    qWarning() << " TextAutoGenerateManager::duplicateChat: not implemented yet";
+    auto duplicateMessagesModel = messagesModelFromChatId(currentChatId());
+    duplicateMessagesModel->setMessages(newMessages);
 }
 
 void TextAutoGenerateManager::archiveDiscussion(const QByteArray &chatId, bool archive)
