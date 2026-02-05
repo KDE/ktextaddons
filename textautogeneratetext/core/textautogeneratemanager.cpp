@@ -409,9 +409,8 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
         if (convertUuid.contains(m.answerUuid())) {
             m.setAnswerUuid(convertUuid.value(m.answerUuid()));
         }
+        addMessage(currentChatId(), m);
     }
-    auto duplicateMessagesModel = messagesModelFromChatId(currentChatId());
-    duplicateMessagesModel->setMessages(newMessages);
 }
 
 void TextAutoGenerateManager::archiveDiscussion(const QByteArray &chatId, bool archive)
