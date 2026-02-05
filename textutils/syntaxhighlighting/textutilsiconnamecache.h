@@ -14,6 +14,9 @@ namespace TextUtils
 /*!
  * \brief The TextUtilsIconNameCache class
  * \author Laurent Montel <montel@kde.org>
+ * \class TextUtilsIconNameCache
+ * \inheader TextUtils::TextUtilsIconNameCache
+ * \inmodule TextUtils
  */
 class TEXTUTILS_EXPORT TextUtilsIconNameCache
 {

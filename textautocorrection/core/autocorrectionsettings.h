@@ -12,6 +12,13 @@ class QDebug;
 namespace TextAutoCorrectionCore
 {
 class AutoCorrectionSettingsPrivate;
+/*!
+ * \brief The AutoCorrectionSettings class
+ * \author Laurent Montel <montel@kde.org>
+ * \class AutoCorrectionSettings
+ * \inheader TextAutoCorrectionCore::AutoCorrectionSettings
+ * \inmodule TextAutoCorrectionCore
+ */
 class TEXTAUTOCORRECTIONCORE_EXPORT AutoCorrectionSettings
 {
 public:

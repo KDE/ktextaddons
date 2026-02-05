@@ -18,6 +18,9 @@ namespace TextAutoCorrectionCore
 {
 /*!
  * \brief The ImportAbstractAutocorrection class
+ * \class ImportAbstractAutocorrection
+ * \inheader TextAutoCorrectionCore::ImportAbstractAutocorrection
+ * \inmodule TextAutoCorrectionCore
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportAbstractAutocorrection
 {
