@@ -16,7 +16,7 @@ namespace TextTranslator
 {
 /*!
  * \class TranslatorConfigureLanguageListWidget
- * \inheaders TextTranslator/TranslatorConfigureLanguageListWidget
+ * \inheaderfile TextTranslator/TranslatorConfigureLanguageListWidget
  * \inmodule TextTranslator
  * \brief Widget for configuring language selection in translator.
  * \author Laurent Montel <montel@kde.org>

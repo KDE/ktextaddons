@@ -13,7 +13,7 @@ namespace TextTranslator
 {
 /*!
  * \class TranslatorTextEdit
- * \inheaders TextTranslator/TranslatorTextEdit
+ * \inheaderfile TextTranslator/TranslatorTextEdit
  * \inmodule TextTranslator
  * \brief Plain text editor with translation support.
  * \author Laurent Montel <montel@kde.org>
@@ -37,7 +37,7 @@ protected:
 
 /*!
  * \class TranslatorWidget
- * \inheaders TextTranslator/TranslatorWidget
+ * \inheaderfile TextTranslator/TranslatorWidget
  * \inmodule TextTranslator
  * \brief Complete translator widget with UI controls.
  * \author Laurent Montel <montel@kde.org>

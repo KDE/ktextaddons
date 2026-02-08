@@ -15,7 +15,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class LanguageToolGetListOfLanguageJob
- * \inheaders TextGrammarCheck/LanguageToolGetListOfLanguageJob
+ * \inheaderfile TextGrammarCheck/LanguageToolGetListOfLanguageJob
  * \inmodule TextGrammarCheck
  * \brief Fetches list of available languages from LanguageTool service.
  * \author Laurent Montel <montel@kde.org>

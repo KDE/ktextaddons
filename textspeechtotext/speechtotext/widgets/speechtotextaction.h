@@ -11,7 +11,7 @@ namespace TextSpeechToText
 {
 /*!
  * \class SpeechToTextAction
- * \inheaders TextSpeechToText/SpeechToTextAction
+ * \inheaderfile TextSpeechToText/SpeechToTextAction
  * \inmodule TextSpeechToText
  * \brief QAction subclass for speech-to-text functionality.
  * \author Laurent Montel <montel@kde.org>

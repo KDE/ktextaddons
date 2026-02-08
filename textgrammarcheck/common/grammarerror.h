@@ -16,7 +16,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class GrammarError
- * \inheaders TextGrammarCheck/GrammarError
+ * \inheaderfile TextGrammarCheck/GrammarError
  * \inmodule TextGrammarCheck
  * \brief Represents a grammar error found during checking.
  * \author Laurent Montel <montel@kde.org>

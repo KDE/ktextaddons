@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 class LanguageInfo;
 /*!
  * \class LanguageToolComboBox
- * \inheaders TextGrammarCheck/LanguageToolComboBox
+ * \inheaderfile TextGrammarCheck/LanguageToolComboBox
  * \inmodule TextGrammarCheck
  * \brief ComboBox widget for selecting LanguageTool language.
  * \author Laurent Montel <montel@kde.org>

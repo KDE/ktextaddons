@@ -12,7 +12,7 @@ namespace TextSpeechToText
 {
 /*!
  * \class SpeechToTextEngineAccessManager
- * \inheaders TextSpeechToText/SpeechToTextEngineAccessManager
+ * \inheaderfile TextSpeechToText/SpeechToTextEngineAccessManager
  * \inmodule TextSpeechToText
  * \brief Manages network access for speech-to-text engines.
  */

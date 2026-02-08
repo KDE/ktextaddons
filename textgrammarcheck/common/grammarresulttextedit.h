@@ -14,7 +14,7 @@ namespace TextGrammarCheck
 class GrammarAction;
 /*!
  * \class GrammarResultTextEdit
- * \inheaders TextGrammarCheck/GrammarResultTextEdit
+ * \inheaderfile TextGrammarCheck/GrammarResultTextEdit
  * \inmodule TextGrammarCheck
  * \brief Text editor for displaying and handling grammar check results.
  * \author Laurent Montel <montel@kde.org>

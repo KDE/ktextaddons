@@ -12,7 +12,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class GrammalecteManager
- * \inheaders TextGrammarCheck/GrammalecteManager
+ * \inheaderfile TextGrammarCheck/GrammalecteManager
  * \inmodule TextGrammarCheck
  * \brief Manager for Grammalecte grammar checking service.
  * \author Laurent Montel <montel@kde.org>

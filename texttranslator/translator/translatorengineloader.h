@@ -16,7 +16,7 @@ class TranslatorEngineLoaderPrivate;
 class TranslatorEngineClient;
 /*!
  * \class TranslatorEngineLoader
- * \inheaders TextTranslator/TranslatorEngineLoader
+ * \inheaderfile TextTranslator/TranslatorEngineLoader
  * \inmodule TextTranslator
  * \brief Loads and manages translation engine plugins.
  */

@@ -12,7 +12,7 @@ namespace TextSpeechToText
 {
 /*!
  * \class SpeechToTextPlugin
- * \inheaders TextSpeechToText/SpeechToTextPlugin
+ * \inheaderfile TextSpeechToText/SpeechToTextPlugin
  * \inmodule TextSpeechToText
  * \brief Interface for speech-to-text engine implementations.
  * \author Laurent Montel <montel@kde.org>

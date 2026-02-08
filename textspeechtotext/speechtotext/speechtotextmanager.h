@@ -11,7 +11,7 @@ namespace TextSpeechToText
 class SpeechToTextPlugin;
 /*!
  * \class SpeechToTextManager
- * \inheaders TextSpeechToText/SpeechToTextManager
+ * \inheaderfile TextSpeechToText/SpeechToTextManager
  * \inmodule TextSpeechToText
  * \brief Central manager for speech-to-text operations.
  * \author Laurent Montel <montel@kde.org>

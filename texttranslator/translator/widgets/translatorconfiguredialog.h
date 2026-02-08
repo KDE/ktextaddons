@@ -11,7 +11,7 @@ namespace TextTranslator
 class TranslatorConfigureWidget;
 /*!
  * \class TranslatorConfigureDialog
- * \inheaders TextTranslator/TranslatorConfigureDialog
+ * \inheaderfile TextTranslator/TranslatorConfigureDialog
  * \inmodule TextTranslator
  * \brief Dialog for translator configuration.
  * \author Laurent Montel <montel@kde.org>

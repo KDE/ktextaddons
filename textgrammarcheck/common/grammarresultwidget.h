@@ -16,7 +16,7 @@ class GrammarAction;
 class GrammarResultTextEdit;
 /*!
  * \class GrammarResultWidget
- * \inheaders TextGrammarCheck/GrammarResultWidget
+ * \inheaderfile TextGrammarCheck/GrammarResultWidget
  * \inmodule TextGrammarCheck
  * \brief Base widget for displaying grammar check results.
  * \author Laurent Montel <montel@kde.org>

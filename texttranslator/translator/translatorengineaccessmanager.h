@@ -12,7 +12,7 @@ namespace TextTranslator
 {
 /*!
  * \class TranslatorEngineAccessManager
- * \inheaders TextTranslator/TranslatorEngineAccessManager
+ * \inheaderfile TextTranslator/TranslatorEngineAccessManager
  * \inmodule TextTranslator
  * \brief Manages network access for translation engines.
  */

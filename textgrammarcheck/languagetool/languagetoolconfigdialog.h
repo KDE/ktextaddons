@@ -12,7 +12,7 @@ namespace TextGrammarCheck
 class LanguageToolConfigWidget;
 /*!
  * \class LanguageToolConfigDialog
- * \inheaders TextGrammarCheck/LanguageToolConfigDialog
+ * \inheaderfile TextGrammarCheck/LanguageToolConfigDialog
  * \inmodule TextGrammarCheck
  * \brief Configuration dialog for LanguageTool grammar checker.
  * \author Laurent Montel <montel@kde.org>

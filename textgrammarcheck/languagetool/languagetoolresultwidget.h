@@ -14,7 +14,7 @@ class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /*!
  * \class LanguageToolResultWidget
- * \inheaders TextGrammarCheck/LanguageToolResultWidget
+ * \inheaderfile TextGrammarCheck/LanguageToolResultWidget
  * \inmodule TextGrammarCheck
  * \brief Widget displaying LanguageTool grammar check results.
  * \author Laurent Montel <montel@kde.org>

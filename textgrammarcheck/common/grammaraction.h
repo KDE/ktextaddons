@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class GrammarAction
- * \inheaders TextGrammarCheck/GrammarAction
+ * \inheaderfile TextGrammarCheck/GrammarAction
  * \inmodule TextGrammarCheck
  * \brief Represents a grammar correction action.
  * \author Laurent Montel <montel@kde.org>

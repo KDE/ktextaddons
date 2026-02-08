@@ -15,7 +15,7 @@ namespace TextTranslator
 {
 /*!
  * \class TranslatorMenu
- * \inheaders TextTranslator/TranslatorMenu
+ * \inheaderfile TextTranslator/TranslatorMenu
  * \inmodule TextTranslator
  * \brief Menu widget for translator engine selection and control.
  */

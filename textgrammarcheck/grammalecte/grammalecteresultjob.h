@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class GrammalecteResultJob
- * \inheaders TextGrammarCheck/GrammalecteResultJob
+ * \inheaderfile TextGrammarCheck/GrammalecteResultJob
  * \inmodule TextGrammarCheck
  * \brief Processes Grammalecte grammar check results.
  * \author Laurent Montel <montel@kde.org>

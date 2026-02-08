@@ -15,7 +15,7 @@ class SpeechToTextEngineLoaderPrivate;
 class SpeechToTextClient;
 /*!
  * \class SpeechToTextEngineLoader
- * \inheaders TextSpeechToText/SpeechToTextEngineLoader
+ * \inheaderfile TextSpeechToText/SpeechToTextEngineLoader
  * \inmodule TextSpeechToText
  * \brief Loads and manages speech-to-text engine plugins.
  * \author Laurent Montel <montel@kde.org>

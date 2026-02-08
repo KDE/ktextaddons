@@ -17,7 +17,7 @@ class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /*!
  * \class LanguageToolConfigWidget
- * \inheaders TextGrammarCheck/LanguageToolConfigWidget
+ * \inheaderfile TextGrammarCheck/LanguageToolConfigWidget
  * \inmodule TextGrammarCheck
  * \brief Configuration widget for LanguageTool grammar checker.
  * \author Laurent Montel <montel@kde.org>

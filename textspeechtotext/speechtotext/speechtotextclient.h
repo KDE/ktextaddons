@@ -12,7 +12,7 @@ namespace TextSpeechToText
 class SpeechToTextPlugin;
 /*!
  * \class SpeechToTextClient
- * \inheaders TextSpeechToText/SpeechToTextClient
+ * \inheaderfile TextSpeechToText/SpeechToTextClient
  * \inmodule TextSpeechToText
  * \brief The SpeechToTextClient class defines the interface for speech-to-text engine backends.
  * \author Laurent Montel <montel@kde.org>

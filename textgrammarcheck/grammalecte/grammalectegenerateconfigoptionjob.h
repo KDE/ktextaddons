@@ -14,7 +14,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class GrammalecteGenerateConfigOptionJob
- * \inheaders TextGrammarCheck/GrammalecteGenerateConfigOptionJob
+ * \inheaderfile TextGrammarCheck/GrammalecteGenerateConfigOptionJob
  * \inmodule TextGrammarCheck
  * \brief Generates configuration options for Grammalecte.
  * \author Laurent Montel <montel@kde.org>

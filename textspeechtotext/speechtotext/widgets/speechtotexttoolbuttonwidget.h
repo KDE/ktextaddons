@@ -12,7 +12,7 @@ namespace TextSpeechToText
 {
 /*!
  * \class SpeechToTextToolButtonWidget
- * \inheaders TextSpeechToText/SpeechToTextToolButtonWidget
+ * \inheaderfile TextSpeechToText/SpeechToTextToolButtonWidget
  * \inmodule TextSpeechToText
  * \brief Tool button widget for speech-to-text functionality.
  * \author Laurent Montel <montel@kde.org>

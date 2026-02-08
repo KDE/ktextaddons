@@ -13,7 +13,7 @@ namespace TextSpeechToText
 {
 /*!
  * \class SpeechToTextMenu
- * \inheaders TextSpeechToText/SpeechToTextMenu
+ * \inheaderfile TextSpeechToText/SpeechToTextMenu
  * \inmodule TextSpeechToText
  * \brief Menu widget for speech-to-text engine selection and control.
  */

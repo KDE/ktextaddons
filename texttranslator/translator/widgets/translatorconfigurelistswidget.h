@@ -13,7 +13,7 @@ namespace TextTranslator
 {
 /*!
  * \class TranslatorConfigureListsWidget
- * \inheaders TextTranslator/TranslatorConfigureListsWidget
+ * \inheaderfile TextTranslator/TranslatorConfigureListsWidget
  * \inmodule TextTranslator
  * \brief Widget for configuring translator engine and language lists.
  * \author Laurent Montel <montel@kde.org>

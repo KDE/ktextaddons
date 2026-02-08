@@ -12,7 +12,7 @@ namespace TextGrammarCheck
 class GrammalecteConfigWidget;
 /*!
  * \class GrammalecteConfigDialog
- * \inheaders TextGrammarCheck/GrammalecteConfigDialog
+ * \inheaderfile TextGrammarCheck/GrammalecteConfigDialog
  * \inmodule TextGrammarCheck
  * \brief Configuration dialog for Grammalecte grammar checker.
  * \author Laurent Montel <montel@kde.org>

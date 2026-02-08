@@ -15,7 +15,7 @@ namespace TextGrammarCheck
 {
 /*!
  * \class LanguageToolManager
- * \inheaders TextGrammarCheck/LanguageToolManager
+ * \inheaderfile TextGrammarCheck/LanguageToolManager
  * \inmodule TextGrammarCheck
  * \brief Manager for LanguageTool grammar checking service.
  * \author Laurent Montel <montel@kde.org>
