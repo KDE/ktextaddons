@@ -38,6 +38,10 @@ target_sources(
         ollamacommonmodelavailableinfossortproxymodel.h
         ollamacommonmodelavailableinfosmodel.h
         ollamacommonmodelavailableinfosmodel.cpp
+        ollamacommonmodelavailableinfosdelegate.h
+        ollamacommonmodelavailableinfosdelegate.cpp
+        ollamacommonmodelinfosdelegateutils.cpp
+        ollamacommonmodelinfosdelegateutils.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

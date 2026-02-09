@@ -42,11 +42,7 @@ target_sources(
         modelsmanager/ollamamodelavailablesearchwidget.cpp
         modelsmanager/ollamamodelavailableinfowidget.h
         modelsmanager/ollamamodelavailableinfowidget.cpp
-        modelsmanager/ollamamodelavailableinfosdelegate.h
-        modelsmanager/ollamamodelavailableinfosdelegate.cpp
         modelsmanager/ollamamodelsmanager.qrc
-        modelsmanager/ollamamodelinfosdelegateutils.h
-        modelsmanager/ollamamodelinfosdelegateutils.cpp
         modelsmanager/ollamamodeldownloadwidget.h
         modelsmanager/ollamamodeldownloadwidget.cpp
         modelsmanager/ollamamodeldownloadprogresswidget.h

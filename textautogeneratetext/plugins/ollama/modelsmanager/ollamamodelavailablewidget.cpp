@@ -6,8 +6,8 @@
 #include "ollamamodelavailablewidget.h"
 
 #include "autogeneratetext_ollama_debug.h"
-#include "modelsmanager/ollamamodelavailableinfosdelegate.h"
 #include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
+#include "ollamacommonmodelavailableinfosdelegate.h"
 #include "ollamacommonmodelavailableinfosmodel.h"
 #include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include "ollamamodelavailableinfowidget.h"
@@ -32,7 +32,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
     , mScrollArea(new QScrollArea(this))
 {
-    mListView->setItemDelegate(new OllamaModelAvailableInfosDelegate(mListView));
+    mListView->setItemDelegate(new OllamaCommonModelAvailableInfosDelegate(mListView));
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
     splitter->setObjectName(u"splitter"_s);
