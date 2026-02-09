@@ -6,11 +6,13 @@
 #pragma once
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelAvailableListView;
 class TextAutoGenerateModelSearchLineEdit;
 }
+class OllamaCommonModelsInfosCategoriesComboBox;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -20,8 +22,10 @@ public:
 
 Q_SIGNALS:
     void searchText(const QString &str);
+    void categoriesChanged(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &categories);
 
 private:
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
+    OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
 };

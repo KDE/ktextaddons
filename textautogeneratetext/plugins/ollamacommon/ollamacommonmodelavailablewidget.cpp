@@ -5,6 +5,7 @@
 */
 
 #include "ollamacommonmodelavailablewidget.h"
+#include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QSplitter>
@@ -15,6 +16,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     : QWidget{parent}
     , mAvailableListView(new TextAutoGenerateText::TextAutoGenerateModelAvailableListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
+    , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -28,16 +30,29 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
 
     auto widget = new QWidget(this);
     widget->setObjectName(u"widget"_s);
+
+    auto hboxLayout = new QHBoxLayout;
+    hboxLayout->setObjectName(u"hboxLayout"_s);
+    hboxLayout->setContentsMargins({});
+    hboxLayout->setSpacing(0);
+
     auto vboxLayout = new QVBoxLayout(widget);
     vboxLayout->setContentsMargins({});
     vboxLayout->setSpacing(0);
-    vboxLayout->addWidget(mSearchLineEdit);
+    vboxLayout->addLayout(hboxLayout);
     vboxLayout->addWidget(mAvailableListView);
+
     splitter->addWidget(widget);
     mainLayout->addWidget(splitter);
 
+    mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);
+    connect(mCategoriesComboBox, &OllamaCommonModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
+        Q_EMIT categoriesChanged(mCategoriesComboBox->categories());
+    });
+    hboxLayout->addWidget(mSearchLineEdit);
+    hboxLayout->addWidget(mCategoriesComboBox);
+
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
-    mainLayout->addWidget(mSearchLineEdit);
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &OllamaCommonModelAvailableWidget::searchText);
 }
 
