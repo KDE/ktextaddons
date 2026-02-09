@@ -15,7 +15,7 @@ OllamaModelAvailableInfosSortProxyModelTest::OllamaModelAvailableInfosSortProxyM
 
 void OllamaModelAvailableInfosSortProxyModelTest::shouldHaveDefaultValues()
 {
-    OllamaCommonModelAvailableInfosSortProxyModel w;
+    const OllamaCommonModelAvailableInfosSortProxyModel w;
     QVERIFY(w.categories().isEmpty());
     QCOMPARE(w.filterCaseSensitivity(), Qt::CaseInsensitive);
 }
