@@ -4,24 +4,24 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "ollamamodelavailableinfossortproxymodel.h"
-#include "ollamamodelavailableinfosmodel.h"
+#include "ollamacommonmodelavailableinfossortproxymodel.h"
+#include "ollamacommonmodelavailableinfosmodel.h"
 
-OllamaModelAvailableInfosSortProxyModel::OllamaModelAvailableInfosSortProxyModel(QObject *parent)
+OllamaCommonModelAvailableInfosSortProxyModel::OllamaCommonModelAvailableInfosSortProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortCaseSensitivity(Qt::CaseInsensitive);
 }
 
-OllamaModelAvailableInfosSortProxyModel::~OllamaModelAvailableInfosSortProxyModel() = default;
+OllamaCommonModelAvailableInfosSortProxyModel::~OllamaCommonModelAvailableInfosSortProxyModel() = default;
 
-QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaModelAvailableInfosSortProxyModel::categories() const
+QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaCommonModelAvailableInfosSortProxyModel::categories() const
 {
     return mCategories;
 }
 
-void OllamaModelAvailableInfosSortProxyModel::setCategories(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &newCategories)
+void OllamaCommonModelAvailableInfosSortProxyModel::setCategories(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &newCategories)
 {
     if (mCategories != newCategories) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
@@ -36,12 +36,12 @@ void OllamaModelAvailableInfosSortProxyModel::setCategories(const QList<TextAuto
     }
 }
 
-bool OllamaModelAvailableInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+bool OllamaCommonModelAvailableInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
     if (!mCategories.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateManager::Categories categories =
-            modelIndex.data(OllamaModelAvailableInfosModel::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
+            modelIndex.data(OllamaCommonModelAvailableInfosModel::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
         if (categories == TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown) {
             return true;
         }
@@ -55,4 +55,4 @@ bool OllamaModelAvailableInfosSortProxyModel::filterAcceptsRow(int source_row, c
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
-#include "moc_ollamamodelavailableinfossortproxymodel.cpp"
+#include "moc_ollamacommonmodelavailableinfossortproxymodel.cpp"

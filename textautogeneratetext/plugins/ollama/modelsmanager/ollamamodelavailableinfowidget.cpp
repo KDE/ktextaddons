@@ -6,8 +6,8 @@
 #include "ollamamodelavailableinfowidget.h"
 #include "autogeneratetext_ollama_debug.h"
 
+#include "ollamacommonmodelavailableinfosmodel.h"
 #include "ollamamanager.h"
-#include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodeldownloadwidget.h"
 #include "ollamanetworkurlbutton.h"
 #include "widgets/common/textautogenerateflowlayout.h"
@@ -47,10 +47,10 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
         mMainLayout->removeWidget(mInfoWidget);
         mInfoWidget->deleteLater();
     }
-    const QString modelName = index.data(OllamaModelAvailableInfosModel::ModelName).toString();
+    const QString modelName = index.data(OllamaCommonModelAvailableInfosModel::ModelName).toString();
     mModelName->setText(modelName);
 
-    const QString url = index.data(OllamaModelAvailableInfosModel::Url).toString();
+    const QString url = index.data(OllamaCommonModelAvailableInfosModel::Url).toString();
     mNetworkUrlButton->setUrl(url);
 
     mInfoWidget = new QWidget(this);
@@ -58,7 +58,7 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
 
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
     auto languagesGroupBoxLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
-    const QStringList languages = index.data(OllamaModelAvailableInfosModel::Languages).toStringList();
+    const QStringList languages = index.data(OllamaCommonModelAvailableInfosModel::Languages).toStringList();
     for (const auto &l : languages) {
         const QLocale locale(l);
         if (locale.language() == QLocale::Language::C) {
@@ -74,7 +74,7 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     infoLayout->addWidget(downloadModelGroupBox);
     auto downloadGroupBoxLayout = new QVBoxLayout(downloadModelGroupBox);
     const QList<OllamaCommonModelAvailableInfo::ModelTag> tags =
-        index.data(OllamaModelAvailableInfosModel::Tags).value<QList<OllamaCommonModelAvailableInfo::ModelTag>>();
+        index.data(OllamaCommonModelAvailableInfosModel::Tags).value<QList<OllamaCommonModelAvailableInfo::ModelTag>>();
     for (const auto &t : tags) {
         const bool alreadyInstalled = mOllamaManager->isAlreadyInstalled(u"%1:%2"_s.arg(modelName, t.tag));
         auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, alreadyInstalled, mInfoWidget);

@@ -5,12 +5,12 @@
 */
 
 #pragma once
-
 #include "ollamacommonmodelavailableinfo.h"
+#include "textautogenerateollamacommon_export.h"
 
 #include <QAbstractListModel>
 
-class OllamaModelAvailableInfosModel : public QAbstractListModel
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfosModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -26,8 +26,8 @@ public:
     };
     Q_ENUM(ModelInfoRoles)
 
-    explicit OllamaModelAvailableInfosModel(QObject *parent = nullptr);
-    ~OllamaModelAvailableInfosModel() override;
+    explicit OllamaCommonModelAvailableInfosModel(QObject *parent = nullptr);
+    ~OllamaCommonModelAvailableInfosModel() override;
 
     [[nodiscard]] QList<OllamaCommonModelAvailableInfo> modelInfos() const;
     void setModelInfos(const QList<OllamaCommonModelAvailableInfo> &newModelInfos);

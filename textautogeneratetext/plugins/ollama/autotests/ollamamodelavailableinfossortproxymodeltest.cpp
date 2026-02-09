@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailableinfossortproxymodeltest.h"
-#include "modelsmanager/ollamamodelavailableinfossortproxymodel.h"
+#include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include <QTest>
 QTEST_MAIN(OllamaModelAvailableInfosSortProxyModelTest)
 
@@ -15,7 +15,7 @@ OllamaModelAvailableInfosSortProxyModelTest::OllamaModelAvailableInfosSortProxyM
 
 void OllamaModelAvailableInfosSortProxyModelTest::shouldHaveDefaultValues()
 {
-    OllamaModelAvailableInfosSortProxyModel w;
+    OllamaCommonModelAvailableInfosSortProxyModel w;
     QVERIFY(w.categories().isEmpty());
     QCOMPARE(w.filterCaseSensitivity(), Qt::CaseInsensitive);
 }

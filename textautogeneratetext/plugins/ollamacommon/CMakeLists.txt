@@ -34,6 +34,10 @@ target_sources(
         ollamacommonmodelsinfoscategoriescombobox.h
         ollamacommonmodelcategoriesmodel.cpp
         ollamacommonmodelcategoriesmodel.h
+        ollamacommonmodelavailableinfossortproxymodel.cpp
+        ollamacommonmodelavailableinfossortproxymodel.h
+        ollamacommonmodelavailableinfosmodel.h
+        ollamacommonmodelavailableinfosmodel.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

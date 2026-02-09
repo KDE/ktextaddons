@@ -5,16 +5,16 @@
 */
 
 #pragma once
-#include "textautogenerateollama_private_export.h"
+#include "textautogenerateollamacommon_export.h"
 #include <QSortFilterProxyModel>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfosSortProxyModel : public QSortFilterProxyModel
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfosSortProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
-    explicit OllamaModelAvailableInfosSortProxyModel(QObject *parent = nullptr);
-    ~OllamaModelAvailableInfosSortProxyModel() override;
+    explicit OllamaCommonModelAvailableInfosSortProxyModel(QObject *parent = nullptr);
+    ~OllamaCommonModelAvailableInfosSortProxyModel() override;
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categories() const;
     void setCategories(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &newCategories);

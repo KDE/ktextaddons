@@ -42,10 +42,6 @@ target_sources(
         modelsmanager/ollamamodelavailablesearchwidget.cpp
         modelsmanager/ollamamodelavailableinfowidget.h
         modelsmanager/ollamamodelavailableinfowidget.cpp
-        modelsmanager/ollamamodelavailableinfosmodel.h
-        modelsmanager/ollamamodelavailableinfosmodel.cpp
-        modelsmanager/ollamamodelavailableinfossortproxymodel.h
-        modelsmanager/ollamamodelavailableinfossortproxymodel.cpp
         modelsmanager/ollamamodelavailableinfosdelegate.h
         modelsmanager/ollamamodelavailableinfosdelegate.cpp
         modelsmanager/ollamamodelsmanager.qrc

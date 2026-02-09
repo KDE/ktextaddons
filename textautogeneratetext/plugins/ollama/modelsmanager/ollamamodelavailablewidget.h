@@ -10,12 +10,12 @@
 class OllamaModelAvailableSearchWidget;
 class OllamaModelAvailableListView;
 class OllamaModelAvailableInfoWidget;
-class OllamaModelAvailableInfosSortProxyModel;
+class OllamaCommonModelAvailableInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
 class OllamaManager;
 class QScrollArea;
-class OllamaModelAvailableInfosModel;
+class OllamaCommonModelAvailableInfosModel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelAvailableListView;
@@ -36,9 +36,9 @@ private:
     OllamaModelAvailableSearchWidget *const mSearchWidget;
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mListView;
     OllamaModelAvailableInfoWidget *const mInfoWidget;
-    OllamaModelAvailableInfosSortProxyModel *const mProxyModel;
+    OllamaCommonModelAvailableInfosSortProxyModel *const mProxyModel;
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;
     QStackedWidget *const mStackedWidget;
-    OllamaModelAvailableInfosModel *const mAvailableInfosModel;
+    OllamaCommonModelAvailableInfosModel *const mAvailableInfosModel;
     QScrollArea *const mScrollArea;
 };

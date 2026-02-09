@@ -8,8 +8,8 @@
 #include "autogeneratetext_ollama_debug.h"
 #include "modelsmanager/ollamamodelavailableinfosdelegate.h"
 #include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
-#include "ollamamodelavailableinfosmodel.h"
-#include "ollamamodelavailableinfossortproxymodel.h"
+#include "ollamacommonmodelavailableinfosmodel.h"
+#include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include "ollamamodelavailableinfowidget.h"
 #include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodeldownloadprogresswidget.h"
@@ -26,10 +26,10 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     , mSearchWidget(new OllamaModelAvailableSearchWidget(this))
     , mListView(new TextAutoGenerateText::TextAutoGenerateModelAvailableListView(this))
     , mInfoWidget(new OllamaModelAvailableInfoWidget(manager, this))
-    , mProxyModel(new OllamaModelAvailableInfosSortProxyModel(this))
+    , mProxyModel(new OllamaCommonModelAvailableInfosSortProxyModel(this))
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(manager, this))
     , mStackedWidget(new QStackedWidget(this))
-    , mAvailableInfosModel(new OllamaModelAvailableInfosModel(this))
+    , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
     , mScrollArea(new QScrollArea(this))
 {
     mListView->setItemDelegate(new OllamaModelAvailableInfosDelegate(mListView));
@@ -67,8 +67,8 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
 
     mProxyModel->setSourceModel(mAvailableInfosModel);
     mListView->setModel(mProxyModel);
-    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setFilterFixedString);
-    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setCategories);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaCommonModelAvailableInfosSortProxyModel::setFilterFixedString);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaCommonModelAvailableInfosSortProxyModel::setCategories);
     connect(mListView, &TextAutoGenerateText::TextAutoGenerateModelAvailableListView::pressed, this, &OllamaModelAvailableWidget::slotClicked);
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::addModel, this, &OllamaModelAvailableWidget::slotAddModel);
 }
