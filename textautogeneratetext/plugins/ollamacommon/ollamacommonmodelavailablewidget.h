@@ -13,6 +13,7 @@ class TextAutoGenerateModelAvailableListView;
 class TextAutoGenerateModelSearchLineEdit;
 }
 class OllamaCommonModelsInfosCategoriesComboBox;
+class OllamaCommonModelAvailableInfosSortProxyModel;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -20,12 +21,9 @@ public:
     explicit OllamaCommonModelAvailableWidget(QWidget *parent = nullptr);
     ~OllamaCommonModelAvailableWidget() override;
 
-Q_SIGNALS:
-    void searchText(const QString &str);
-    void categoriesChanged(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &categories);
-
 private:
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
+    OllamaCommonModelAvailableInfosSortProxyModel *const mProxyModel;
 };
