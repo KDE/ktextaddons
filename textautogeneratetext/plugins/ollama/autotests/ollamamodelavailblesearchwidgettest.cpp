@@ -20,7 +20,7 @@ OllamaModelAvailbleSearchWidgetTest::OllamaModelAvailbleSearchWidgetTest(QObject
 
 void OllamaModelAvailbleSearchWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelAvailableSearchWidget w;
+    const OllamaModelAvailableSearchWidget w;
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -36,7 +36,7 @@ void OllamaModelAvailbleSearchWidgetTest::shouldHaveDefaultValues()
 
 void OllamaModelAvailbleSearchWidgetTest::shouldEmitSearchText()
 {
-    OllamaModelAvailableSearchWidget w;
+    const OllamaModelAvailableSearchWidget w;
     QSignalSpy searchTextSpy(&w, &OllamaModelAvailableSearchWidget::searchText);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);
