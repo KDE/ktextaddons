@@ -220,3 +220,4 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/textgrammarcheck
     COMPONENT Devel
 )
+ecm_generate_qdoc(KF6TextGrammarCheck textgrammarcheck.qdocconf)

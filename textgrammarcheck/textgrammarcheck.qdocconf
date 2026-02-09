@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextGrammarCheck
+description = TextGrammarCheck provides grammar check support.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextGrammarCheck"
+
+qhp.projects            = textgrammarcheck
+
+qhp.textgrammarcheck.file                = textgrammarcheck.qhp
+qhp.textgrammarcheck.namespace           = org.kde.textgrammarcheck.$QT_VERSION_TAG
+qhp.textgrammarcheck.virtualFolder       = textgrammarcheck
+qhp.textgrammarcheck.indexTitle          = textgrammarcheck
+qhp.textgrammarcheck.indexRoot           =
+
+qhp.textgrammarcheck.subprojects         = classes
+qhp.textgrammarcheck.subprojects.classes.title = C++ Classes
+qhp.textgrammarcheck.subprojects.classes.indexTitle = TextGrammarCheck C++ Classes
+qhp.textgrammarcheck.subprojects.classes.selectors = class fake:headerfile
+qhp.textgrammarcheck.subprojects.classes.sortPages = true
+
+tagfile = textgrammarcheck.tags

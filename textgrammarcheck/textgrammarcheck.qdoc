@@ -1,0 +1,9 @@
+/*!
+    \module TextGrammarCheck
+    \title TextGrammarCheck C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextGrammarCheck
+
+    \brief TextGrammarCheck provides grammar check support.
+*/
