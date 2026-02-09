@@ -1,0 +1,9 @@
+/*!
+    \module TextEmoticonsCore
+    \title TextEmoticons Core C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextEmoticonsCore
+
+    \brief TextEmoticons Core provides some emoticon core lib.
+*/

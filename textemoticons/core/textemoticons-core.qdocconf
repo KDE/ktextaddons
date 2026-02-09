@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextEmoticonsCore
+description = TextEmoticonsCore provides emoticon core lib.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextEmoticonsCore"
+
+qhp.projects            = textemoticonscore
+
+qhp.textemoticonscore.file                = textemoticonscore.qhp
+qhp.textemoticonscore.namespace           = org.kde.textemoticonscore.$QT_VERSION_TAG
+qhp.textemoticonscore.virtualFolder       = textemoticonscore
+qhp.textemoticonscore.indexTitle          = textemoticonscore
+qhp.textemoticonscore.indexRoot           =
+
+qhp.textemoticonscore.subprojects         = classes
+qhp.textemoticonscore.subprojects.classes.title = C++ Classes
+qhp.textemoticonscore.subprojects.classes.indexTitle = TextEmoticons Core C++ Classes
+qhp.textemoticonscore.subprojects.classes.selectors = class fake:headerfile
+qhp.textemoticonscore.subprojects.classes.sortPages = true
+
+tagfile = textemoticonscore.tags
