@@ -1,0 +1,9 @@
+/*!
+    \module TextUtils
+    \title TextUtils C++ Class
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextUtils
+
+    \brief TextUtils provides some text utils class.
+*/

@@ -1,0 +1,20 @@
+/*!
+    \page textaddonswidgets-index.html
+    \title TextUtils
+
+    TextUtils provides some text utils class.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KF6} {TextUtils} {KF6::TextUtils}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextUtils C++ Classes}
+    \endlist
+*/

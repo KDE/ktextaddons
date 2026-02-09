@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextUtils
+description = TextUtils provides some text utils class.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextUtils"
+
+qhp.projects            = textutils
+
+qhp.textutils.file                = textutils.qhp
+qhp.textutils.namespace           = org.kde.textutils.$QT_VERSION_TAG
+qhp.textutils.virtualFolder       = textutils
+qhp.textutils.indexTitle          = textutils
+qhp.textutils.indexRoot           =
+
+qhp.textutils.subprojects         = classes
+qhp.textutils.subprojects.classes.title = C++ Classes
+qhp.textutils.subprojects.classes.indexTitle = TextUtils C++ Classes
+qhp.textutils.subprojects.classes.selectors = class fake:headerfile
+qhp.textutils.subprojects.classes.sortPages = true
+
+tagfile = textutils.tags
