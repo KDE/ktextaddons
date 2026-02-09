@@ -4,18 +4,18 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "ollamamodelcategoriesmodel.h"
+#include "ollamacommonmodelcategoriesmodel.h"
 #include <KLocalizedString>
 
-OllamaModelCategoriesModel::OllamaModelCategoriesModel(QObject *parent)
+OllamaCommonModelCategoriesModel::OllamaCommonModelCategoriesModel(QObject *parent)
     : QStandardItemModel(parent)
 {
     fillCategories();
 }
 
-OllamaModelCategoriesModel::~OllamaModelCategoriesModel() = default;
+OllamaCommonModelCategoriesModel::~OllamaCommonModelCategoriesModel() = default;
 
-void OllamaModelCategoriesModel::fillCategories()
+void OllamaCommonModelCategoriesModel::fillCategories()
 {
     const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> cat{
         TextAutoGenerateText::TextAutoGenerateManager::Category::Tools,
@@ -46,7 +46,7 @@ void OllamaModelCategoriesModel::fillCategories()
     }
 }
 
-void OllamaModelCategoriesModel::createItem(const QString &displayStr, TextAutoGenerateText::TextAutoGenerateManager::Category identifier)
+void OllamaCommonModelCategoriesModel::createItem(const QString &displayStr, TextAutoGenerateText::TextAutoGenerateManager::Category identifier)
 {
     auto item = new QStandardItem(displayStr);
     item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
@@ -56,12 +56,12 @@ void OllamaModelCategoriesModel::createItem(const QString &displayStr, TextAutoG
     appendRow(item);
 }
 
-QList<OllamaModelCategoriesModel::CategoryInfo> OllamaModelCategoriesModel::categories() const
+QList<OllamaCommonModelCategoriesModel::CategoryInfo> OllamaCommonModelCategoriesModel::categories() const
 {
     return mCategories;
 }
 
-QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaModelCategoriesModel::categoriesSelected() const
+QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaCommonModelCategoriesModel::categoriesSelected() const
 {
     QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categoriesList;
     const int rowCountNb = rowCount();
@@ -77,4 +77,4 @@ QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaModelCatego
     return categoriesList;
 }
 
-#include "moc_ollamamodelcategoriesmodel.cpp"
+#include "moc_ollamacommonmodelcategoriesmodel.cpp"

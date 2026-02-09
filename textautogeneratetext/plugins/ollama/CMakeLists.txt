@@ -51,14 +51,10 @@ target_sources(
         modelsmanager/ollamamodelsmanager.qrc
         modelsmanager/ollamamodelinfosdelegateutils.h
         modelsmanager/ollamamodelinfosdelegateutils.cpp
-        modelsmanager/ollamamodelsinfoscategoriescombobox.h
-        modelsmanager/ollamamodelsinfoscategoriescombobox.cpp
         modelsmanager/ollamamodeldownloadwidget.h
         modelsmanager/ollamamodeldownloadwidget.cpp
         modelsmanager/ollamamodeldownloadprogresswidget.h
         modelsmanager/ollamamodeldownloadprogresswidget.cpp
-        modelsmanager/ollamamodelcategoriesmodel.cpp
-        modelsmanager/ollamamodelcategoriesmodel.h
         modelsmanager/ollamamodelinstalledinfo.h
         modelsmanager/ollamamodelinstalledinfo.cpp
         modelsmanager/ollamamodelinstalledinfosmodel.cpp

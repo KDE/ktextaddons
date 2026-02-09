@@ -4,14 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailblesearchwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/ollamamodelavailablesearchwidget.h"
-#include "modelsmanager/ollamamodelsinfoscategoriescombobox.h"
+#include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QSignalSpy>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(OllamaModelAvailbleSearchWidgetTest)
 OllamaModelAvailbleSearchWidgetTest::OllamaModelAvailbleSearchWidgetTest(QObject *parent)
     : QObject{parent}
@@ -30,7 +30,7 @@ void OllamaModelAvailbleSearchWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit->text().isEmpty());
     QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
 
-    auto mCategoriesComboBox = w.findChild<OllamaModelsInfosCategoriesComboBox *>(u"mCategoriesComboBox"_s);
+    auto mCategoriesComboBox = w.findChild<OllamaCommonModelsInfosCategoriesComboBox *>(u"mCategoriesComboBox"_s);
     QVERIFY(mCategoriesComboBox);
 }
 

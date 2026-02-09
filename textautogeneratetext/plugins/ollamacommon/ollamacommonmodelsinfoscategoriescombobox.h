@@ -4,21 +4,21 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogenerateollama_private_export.h"
+#include "textautogenerateollamacommon_export.h"
 #include <QComboBox>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
-class OllamaModelCategoriesModel;
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelsInfosCategoriesComboBox : public QComboBox
+class OllamaCommonModelCategoriesModel;
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelsInfosCategoriesComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit OllamaModelsInfosCategoriesComboBox(QWidget *parent = nullptr);
-    ~OllamaModelsInfosCategoriesComboBox() override;
+    explicit OllamaCommonModelsInfosCategoriesComboBox(QWidget *parent = nullptr);
+    ~OllamaCommonModelsInfosCategoriesComboBox() override;
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categories() const;
 Q_SIGNALS:
     void categoriesChanged();
 
 private:
-    OllamaModelCategoriesModel *const mModel;
+    OllamaCommonModelCategoriesModel *const mModel;
 };

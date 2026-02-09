@@ -10,7 +10,7 @@ class OllamaModelInstalledListView;
 class OllamaModelInstalledInfoWidget;
 class OllamaManager;
 class QToolButton;
-class OllamaModelsInfosCategoriesComboBox;
+class OllamaCommonModelsInfosCategoriesComboBox;
 class OllamaModelInstalledInfosSortProxyModel;
 namespace TextAutoGenerateText
 {
@@ -28,7 +28,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &);
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
-    OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
+    OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
     QToolButton *const mRemoveModelButton;
     OllamaModelInstalledInfoWidget *const mOllamaModelInstalledInfoWidget;
     OllamaManager *const mManager;

@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "textautogenerateollama_private_export.h"
+#include "textautogenerateollamacommon_export.h"
 #include <QStandardItemModel>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCategoriesModel : public QStandardItemModel
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelCategoriesModel : public QStandardItemModel
 {
     Q_OBJECT
 public:
@@ -25,16 +25,16 @@ public:
     };
     Q_ENUM(CategoriesRoles)
 
-    explicit OllamaModelCategoriesModel(QObject *parent = nullptr);
-    ~OllamaModelCategoriesModel() override;
+    explicit OllamaCommonModelCategoriesModel(QObject *parent = nullptr);
+    ~OllamaCommonModelCategoriesModel() override;
 
     [[nodiscard]] QList<CategoryInfo> categories() const;
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categoriesSelected() const;
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, TextAutoGenerateText::TextAutoGenerateManager::Category identifier);
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillCategories();
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void createItem(const QString &displayStr, TextAutoGenerateText::TextAutoGenerateManager::Category identifier);
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void fillCategories();
     QList<CategoryInfo> mCategories;
 };
-Q_DECLARE_TYPEINFO(OllamaModelCategoriesModel::CategoryInfo, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(OllamaCommonModelCategoriesModel::CategoryInfo, Q_RELOCATABLE_TYPE);

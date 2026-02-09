@@ -30,6 +30,10 @@ target_sources(
         ollamacommonmodelsavalableinfos.h
         ollamacommonmodelavailablewidget.h
         ollamacommonmodelavailablewidget.cpp
+        ollamacommonmodelsinfoscategoriescombobox.cpp
+        ollamacommonmodelsinfoscategoriescombobox.h
+        ollamacommonmodelcategoriesmodel.cpp
+        ollamacommonmodelcategoriesmodel.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

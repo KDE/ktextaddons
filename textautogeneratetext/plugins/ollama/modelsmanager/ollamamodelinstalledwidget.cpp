@@ -5,12 +5,12 @@
 */
 #include "ollamamodelinstalledwidget.h"
 
+#include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "ollamamanager.h"
 #include "ollamamodelinstalledinfosmodel.h"
 #include "ollamamodelinstalledinfossortproxymodel.h"
 #include "ollamamodelinstalledinfowidget.h"
 #include "ollamamodelinstalledlistview.h"
-#include "ollamamodelsinfoscategoriescombobox.h"
 
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
@@ -24,7 +24,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     : QWidget{parent}
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
-    , mCategoriesComboBox(new OllamaModelsInfosCategoriesComboBox(this))
+    , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
     , mRemoveModelButton(new QToolButton(this))
     , mOllamaModelInstalledInfoWidget(new OllamaModelInstalledInfoWidget(this))
     , mManager(manager)
@@ -46,7 +46,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
 
     mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);
     hboxLayout->addWidget(mCategoriesComboBox);
-    connect(mCategoriesComboBox, &OllamaModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
+    connect(mCategoriesComboBox, &OllamaCommonModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
         mProxyModel->setCategories(mCategoriesComboBox->categories());
     });
 

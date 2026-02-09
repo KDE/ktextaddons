@@ -5,7 +5,7 @@
 */
 #include "ollamamodelavailablesearchwidget.h"
 
-#include "ollamamodelsinfoscategoriescombobox.h"
+#include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -16,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
-    , mCategoriesComboBox(new OllamaModelsInfosCategoriesComboBox(this))
+    , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
     , mAddModelButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -30,7 +30,7 @@ OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *pare
 
     mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);
     mainLayout->addWidget(mCategoriesComboBox);
-    connect(mCategoriesComboBox, &OllamaModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
+    connect(mCategoriesComboBox, &OllamaCommonModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
         Q_EMIT categoriesChanged(mCategoriesComboBox->categories());
     });
     mAddModelButton->setObjectName(u"mAddModelButton"_s);

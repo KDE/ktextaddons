@@ -8,7 +8,7 @@
 #include "modelsmanager/ollamamodelinstalledinfowidget.h"
 #include "modelsmanager/ollamamodelinstalledlistview.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
-#include "modelsmanager/ollamamodelsinfoscategoriescombobox.h"
+#include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QScrollArea>
 #include <QTest>
@@ -44,7 +44,7 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
     auto mOllamaModelInstalledInfoWidget = w.findChild<OllamaModelInstalledInfoWidget *>(u"mOllamaModelInstalledInfoWidget"_s);
     QVERIFY(mOllamaModelInstalledInfoWidget);
 
-    auto mCategoriesComboBox = w.findChild<OllamaModelsInfosCategoriesComboBox *>(u"mCategoriesComboBox"_s);
+    auto mCategoriesComboBox = w.findChild<OllamaCommonModelsInfosCategoriesComboBox *>(u"mCategoriesComboBox"_s);
     QVERIFY(mCategoriesComboBox);
 
     auto scrollArea = w.findChild<QScrollArea *>(u"scrollArea"_s);

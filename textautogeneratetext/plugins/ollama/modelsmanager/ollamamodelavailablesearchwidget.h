@@ -11,7 +11,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;
 }
-class OllamaModelsInfosCategoriesComboBox;
+class OllamaCommonModelsInfosCategoriesComboBox;
 class QToolButton;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableSearchWidget : public QWidget
 {
@@ -27,6 +27,6 @@ Q_SIGNALS:
 
 private:
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
-    OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
+    OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
     QToolButton *const mAddModelButton;
 };
