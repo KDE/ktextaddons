@@ -1,0 +1,20 @@
+/*!
+    \page texttranslator-index.html
+    \title TextTranslator
+
+    TextTranslator provides some text utils class.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KF6} {TextTranslator} {KF6::TextTranslator}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextTranslator C++ Classes}
+    \endlist
+*/

@@ -1,0 +1,9 @@
+/*!
+    \module TextTranslator
+    \title TextTranslator C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextTranslator
+
+    \brief TextTranslator provides translator class.
+*/

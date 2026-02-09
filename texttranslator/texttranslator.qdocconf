@@ -1,0 +1,33 @@
+ include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextTranslator
+description = TextTranslator provides translator class.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextTranslator"
+
+qhp.projects            = texttranslator
+
+qhp.texttranslator.file                = texttranslator.qhp
+qhp.texttranslator.namespace           = org.kde.texttranslator.$QT_VERSION_TAG
+qhp.texttranslator.virtualFolder       = texttranslator
+qhp.texttranslator.indexTitle          = texttranslator
+qhp.texttranslator.indexRoot           =
+
+qhp.texttranslator.subprojects         = classes
+qhp.texttranslator.subprojects.classes.title = C++ Classes
+qhp.texttranslator.subprojects.classes.indexTitle = TextTranslator C++ Classes
+qhp.texttranslator.subprojects.classes.selectors = class fake:headerfile
+qhp.texttranslator.subprojects.classes.sortPages = true
+
+tagfile = texttranslator.tags
