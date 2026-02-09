@@ -5,6 +5,7 @@
 */
 
 #include "ollamacommonmodelavailablewidget.h"
+#include "ollamacommonmodelavailableinfosmodel.h"
 #include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
@@ -19,6 +20,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
     , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
     , mProxyModel(new OllamaCommonModelAvailableInfosSortProxyModel(this))
+    , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -54,10 +56,18 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     hboxLayout->addWidget(mSearchLineEdit);
     hboxLayout->addWidget(mCategoriesComboBox);
 
+    mProxyModel->setSourceModel(mAvailableInfosModel);
+    mAvailableListView->setModel(mProxyModel);
+
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     connect(mSearchLineEdit, &QLineEdit::textChanged, mProxyModel, &OllamaCommonModelAvailableInfosSortProxyModel::setFilterFixedString);
 }
 
 OllamaCommonModelAvailableWidget::~OllamaCommonModelAvailableWidget() = default;
+
+void OllamaCommonModelAvailableWidget::setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &infos)
+{
+    mAvailableInfosModel->setModelInfos(infos);
+}
 
 #include "moc_ollamacommonmodelavailablewidget.cpp"
