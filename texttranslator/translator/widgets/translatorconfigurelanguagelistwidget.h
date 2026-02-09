@@ -15,7 +15,7 @@ class QStandardItemModel;
 namespace TextTranslator
 {
 /*!
- * \class TranslatorConfigureLanguageListWidget
+ * \class TextTranslator::TranslatorConfigureLanguageListWidget
  * \inheaderfile TextTranslator/TranslatorConfigureLanguageListWidget
  * \inmodule TextTranslator
  * \brief Widget for configuring language selection in translator.

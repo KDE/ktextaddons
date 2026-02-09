@@ -16,7 +16,7 @@ class AutoCorrectionPrivate;
 /*!
  * \brief The AutoCorrection class
  * \author Laurent Montel <montel@kde.org>
- * \class AutoCorrection
+ * \class TextAutoCorrectionCore::AutoCorrection
  * \inheaderfile TextAutoCorrectionCore/AutoCorrection
  * \inmodule TextAutoCorrectionCore
  */

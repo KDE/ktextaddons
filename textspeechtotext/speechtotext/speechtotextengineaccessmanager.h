@@ -11,7 +11,7 @@ class QNetworkAccessManager;
 namespace TextSpeechToText
 {
 /*!
- * \class SpeechToTextEngineAccessManager
+ * \class TextSpeechToText::SpeechToTextEngineAccessManager
  * \inheaderfile TextSpeechToText/SpeechToTextEngineAccessManager
  * \inmodule TextSpeechToText
  * \brief Manages network access for speech-to-text engines.

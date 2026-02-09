@@ -18,7 +18,7 @@ namespace TextAutoCorrectionCore
 {
 /*!
  * \brief The ImportAbstractAutocorrection class
- * \class ImportAbstractAutocorrection
+ * \class TextAutoCorrectionCore::ImportAbstractAutocorrection
  * \inheaderfile TextAutoCorrectionCore/ImportAbstractAutocorrection
  * \inmodule TextAutoCorrectionCore
  */

@@ -11,7 +11,7 @@ namespace TextGrammarCheck
 {
 class LanguageToolConfigWidget;
 /*!
- * \class LanguageToolConfigDialog
+ * \class TextGrammarCheck::LanguageToolConfigDialog
  * \inheaderfile TextGrammarCheck/LanguageToolConfigDialog
  * \inmodule TextGrammarCheck
  * \brief Configuration dialog for LanguageTool grammar checker.

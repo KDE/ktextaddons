@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 {
 class GrammarAction;
 /*!
- * \class GrammarResultTextEdit
+ * \class TextGrammarCheck::GrammarResultTextEdit
  * \inheaderfile TextGrammarCheck/GrammarResultTextEdit
  * \inmodule TextGrammarCheck
  * \brief Text editor for displaying and handling grammar check results.

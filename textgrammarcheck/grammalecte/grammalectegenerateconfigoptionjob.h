@@ -13,7 +13,7 @@
 namespace TextGrammarCheck
 {
 /*!
- * \class GrammalecteGenerateConfigOptionJob
+ * \class TextGrammarCheck::GrammalecteGenerateConfigOptionJob
  * \inheaderfile TextGrammarCheck/GrammalecteGenerateConfigOptionJob
  * \inmodule TextGrammarCheck
  * \brief Generates configuration options for Grammalecte.

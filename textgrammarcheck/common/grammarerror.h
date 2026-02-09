@@ -15,7 +15,7 @@ class QJsonObject;
 namespace TextGrammarCheck
 {
 /*!
- * \class GrammarError
+ * \class TextGrammarCheck::GrammarError
  * \inheaderfile TextGrammarCheck/GrammarError
  * \inmodule TextGrammarCheck
  * \brief Represents a grammar error found during checking.

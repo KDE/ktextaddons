@@ -14,7 +14,7 @@ class QMenu;
 namespace TextTranslator
 {
 /*!
- * \class TranslatorMenu
+ * \class TextTranslator::TranslatorMenu
  * \inheaderfile TextTranslator/TranslatorMenu
  * \inmodule TextTranslator
  * \brief Menu widget for translator engine selection and control.

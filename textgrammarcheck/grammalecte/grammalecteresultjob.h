@@ -12,7 +12,7 @@
 namespace TextGrammarCheck
 {
 /*!
- * \class GrammalecteResultJob
+ * \class TextGrammarCheck::GrammalecteResultJob
  * \inheaderfile TextGrammarCheck/GrammalecteResultJob
  * \inmodule TextGrammarCheck
  * \brief Processes Grammalecte grammar check results.

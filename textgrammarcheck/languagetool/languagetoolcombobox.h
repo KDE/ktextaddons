@@ -12,7 +12,7 @@ namespace TextGrammarCheck
 {
 class LanguageInfo;
 /*!
- * \class LanguageToolComboBox
+ * \class TextGrammarCheck::LanguageToolComboBox
  * \inheaderfile TextGrammarCheck/LanguageToolComboBox
  * \inmodule TextGrammarCheck
  * \brief ComboBox widget for selecting LanguageTool language.

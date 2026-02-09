@@ -14,7 +14,7 @@ namespace TextUtils
 /*!
  * \brief The TextUtilsSyntaxHighlightingManager class
  * \author Laurent Montel <montel@kde.org>
- * \class TextUtilsSyntaxHighlightingManager
+ * \class TextUtils::TextUtilsSyntaxHighlightingManager
  * \inheaderfile TextUtils/TextUtilsSyntaxHighlightingManager
  * \inmodule TextUtils
  */

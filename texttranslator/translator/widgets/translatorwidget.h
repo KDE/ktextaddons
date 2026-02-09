@@ -12,7 +12,7 @@
 namespace TextTranslator
 {
 /*!
- * \class TranslatorTextEdit
+ * \class TextTranslator::TranslatorTextEdit
  * \inheaderfile TextTranslator/TranslatorTextEdit
  * \inmodule TextTranslator
  * \brief Plain text editor with translation support.

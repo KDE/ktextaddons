@@ -13,7 +13,7 @@ namespace TextGrammarCheck
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /*!
- * \class LanguageToolResultWidget
+ * \class TextGrammarCheck::LanguageToolResultWidget
  * \inheaderfile TextGrammarCheck/LanguageToolResultWidget
  * \inmodule TextGrammarCheck
  * \brief Widget displaying LanguageTool grammar check results.

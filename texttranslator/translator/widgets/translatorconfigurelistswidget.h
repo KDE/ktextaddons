@@ -12,7 +12,7 @@
 namespace TextTranslator
 {
 /*!
- * \class TranslatorConfigureListsWidget
+ * \class TextTranslator::TranslatorConfigureListsWidget
  * \inheaderfile TextTranslator/TranslatorConfigureListsWidget
  * \inmodule TextTranslator
  * \brief Widget for configuring translator engine and language lists.

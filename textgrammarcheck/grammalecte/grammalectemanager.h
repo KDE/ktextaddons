@@ -11,7 +11,7 @@
 namespace TextGrammarCheck
 {
 /*!
- * \class GrammalecteManager
+ * \class TextGrammarCheck::GrammalecteManager
  * \inheaderfile TextGrammarCheck/GrammalecteManager
  * \inmodule TextGrammarCheck
  * \brief Manager for Grammalecte grammar checking service.

@@ -15,7 +15,7 @@ namespace TextTranslator
 class TranslatorEngineLoaderPrivate;
 class TranslatorEngineClient;
 /*!
- * \class TranslatorEngineLoader
+ * \class TextTranslator::TranslatorEngineLoader
  * \inheaderfile TextTranslator/TranslatorEngineLoader
  * \inmodule TextTranslator
  * \brief Loads and manages translation engine plugins.

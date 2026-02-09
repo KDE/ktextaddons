@@ -16,7 +16,7 @@ namespace TextGrammarCheck
 {
 class GrammalecteUrlRequesterWidget;
 /*!
- * \class GrammalecteConfigWidget
+ * \class TextGrammarCheck::GrammalecteConfigWidget
  * \inheaderfile TextGrammarCheck/GrammalecteConfigWidget
  * \inmodule TextGrammarCheck
  * \brief Configuration widget for Grammalecte grammar checker.

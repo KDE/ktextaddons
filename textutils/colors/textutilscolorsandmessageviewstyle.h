@@ -14,7 +14,7 @@ namespace TextUtils
 /*!
  * \brief The TextUtilsColorsAndMessageViewStyle class
  * \author Laurent Montel <montel@kde.org>
- * \class TextUtilsColorsAndMessageViewStyle
+ * \class TextUtils::TextUtilsColorsAndMessageViewStyle
  * \inheaderfile TextUtils/TextUtilsColorsAndMessageViewStyle
  * \inmodule TextUtils
  */

@@ -11,7 +11,7 @@ namespace TextGrammarCheck
 {
 class GrammalecteConfigWidget;
 /*!
- * \class GrammalecteConfigDialog
+ * \class TextGrammarCheck::GrammalecteConfigDialog
  * \inheaderfile TextGrammarCheck/GrammalecteConfigDialog
  * \inmodule TextGrammarCheck
  * \brief Configuration dialog for Grammalecte grammar checker.

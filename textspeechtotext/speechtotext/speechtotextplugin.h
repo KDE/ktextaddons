@@ -11,7 +11,7 @@
 namespace TextSpeechToText
 {
 /*!
- * \class SpeechToTextPlugin
+ * \class TextSpeechToText::SpeechToTextPlugin
  * \inheaderfile TextSpeechToText/SpeechToTextPlugin
  * \inmodule TextSpeechToText
  * \brief Interface for speech-to-text engine implementations.

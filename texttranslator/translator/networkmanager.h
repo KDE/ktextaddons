@@ -10,7 +10,7 @@
 namespace TextTranslator
 {
 /**
- * @brief The NetworkManager class
+ * \brief The NetworkManager class
  * \author Laurent Montel <montel@kde.org>
  */
 class NetworkManager : public QObject

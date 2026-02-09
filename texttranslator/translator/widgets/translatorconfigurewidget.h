@@ -11,7 +11,7 @@
 namespace TextTranslator
 {
 /*!
- * \class TranslatorConfigureWidget
+ * \class TextTranslator::TranslatorConfigureWidget
  * \inheaderfile TextTranslator/TranslatorConfigureWidget
  * \inmodule TextTranslator
  * \brief Widget for translator configuration settings.

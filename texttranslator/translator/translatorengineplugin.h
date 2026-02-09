@@ -17,7 +17,7 @@ namespace TextTranslator
 {
 class TranslatorEnginePluginPrivate;
 /*!
- * \class TranslatorEnginePlugin
+ * \class TextTranslator::TranslatorEnginePlugin
  * \inheaderfile TextTranslator/TranslatorEnginePlugin
  * \inmodule TextTranslator
  * \brief Base class for translation engine implementations.

@@ -13,7 +13,7 @@ namespace TextUtils
 /*!
  * \brief The TextUtilsSyntaxHighlighter class
  * \author Laurent Montel <montel@kde.org>
- * \class TextUtilsSyntaxHighlighter
+ * \class TextUtils::TextUtilsSyntaxHighlighter
  * \inheaderfile TextUtils/TextUtilsSyntaxHighlighter
  * \inmodule TextUtils
  */

@@ -16,7 +16,7 @@ namespace TextGrammarCheck
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
 /*!
- * \class LanguageToolConfigWidget
+ * \class TextGrammarCheck::LanguageToolConfigWidget
  * \inheaderfile TextGrammarCheck/LanguageToolConfigWidget
  * \inmodule TextGrammarCheck
  * \brief Configuration widget for LanguageTool grammar checker.

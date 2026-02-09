@@ -185,3 +185,4 @@ install(
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
+ecm_generate_qdoc(KF6TextUtils textutils.qdocconf)

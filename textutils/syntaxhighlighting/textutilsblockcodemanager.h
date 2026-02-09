@@ -12,7 +12,7 @@ namespace TextUtils
 /*!
  * \brief The TextUtilsBlockCodeManager class
  * \author Laurent Montel <montel@kde.org>
- * \class TextUtilsBlockCodeManager
+ * \class TextUtils::TextUtilsBlockCodeManager
  * \inheaderfile TextUtils/TextUtilsBlockCodeManager
  * \inmodule TextUtils
  */

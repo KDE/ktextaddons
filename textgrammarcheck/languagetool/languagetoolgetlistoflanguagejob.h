@@ -14,7 +14,7 @@ class QNetworkReply;
 namespace TextGrammarCheck
 {
 /*!
- * \class LanguageToolGetListOfLanguageJob
+ * \class TextGrammarCheck::LanguageToolGetListOfLanguageJob
  * \inheaderfile TextGrammarCheck/LanguageToolGetListOfLanguageJob
  * \inmodule TextGrammarCheck
  * \brief Fetches list of available languages from LanguageTool service.

@@ -10,7 +10,7 @@ namespace TextTranslator
 {
 class TranslatorConfigureWidget;
 /*!
- * \class TranslatorConfigureDialog
+ * \class TextTranslator::TranslatorConfigureDialog
  * \inheaderfile TextTranslator/TranslatorConfigureDialog
  * \inmodule TextTranslator
  * \brief Dialog for translator configuration.
