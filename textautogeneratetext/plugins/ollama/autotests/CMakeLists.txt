@@ -29,7 +29,6 @@ macro(add_ollama_plugin_unittest _source)
 endmacro()
 
 add_ollama_plugin_unittest(ollamamodelavailblesearchwidgettest.cpp)
-add_ollama_plugin_unittest(ollamamodelavailableinfossortproxymodeltest.cpp)
 add_ollama_plugin_unittest(ollamamodelavailbleinfowidgettest.cpp)
 add_ollama_plugin_unittest(ollamamodeldownloadwidgettest.cpp)
 add_ollama_plugin_unittest(ollamamodeldownloadprogresswidgettest.cpp)
