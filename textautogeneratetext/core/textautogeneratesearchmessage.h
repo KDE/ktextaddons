@@ -11,8 +11,11 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateSearchMessage
  * \brief The TextAutoGenerateSearchMessage class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateSearchMessage
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessage
 {

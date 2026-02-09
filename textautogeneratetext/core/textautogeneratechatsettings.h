@@ -13,8 +13,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateChatSettings
  * \brief The TextAutoGenerateChatSettings class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateChatSettings
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatSettings
 {

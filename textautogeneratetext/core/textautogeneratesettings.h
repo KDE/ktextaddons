@@ -11,8 +11,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateSettings
  * \brief The TextAutoGenerateSettings class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateSettings
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSettings
 {

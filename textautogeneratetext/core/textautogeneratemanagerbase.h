@@ -12,6 +12,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextRequest;
 class TextAutoGenerateReply;
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateManagerBase
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateManagerBase
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManagerBase : public QObject
 {
     Q_OBJECT

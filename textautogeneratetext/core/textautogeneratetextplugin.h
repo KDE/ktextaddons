@@ -21,8 +21,11 @@ class TextAutoGenerateTextPluginPrivate;
 class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextPlugin
  * \brief The TextAutoGenerateTextPlugin class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPlugin
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {

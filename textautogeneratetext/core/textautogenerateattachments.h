@@ -12,8 +12,11 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateAttachments
  * \brief The TextAutoGenerateAttachments class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateAttachments
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachments : public QSharedData
 {

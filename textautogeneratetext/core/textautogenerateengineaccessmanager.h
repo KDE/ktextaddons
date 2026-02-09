@@ -11,8 +11,11 @@ class QNetworkAccessManager;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateEngineAccessManager
  * \brief The TextAutoGenerateEngineAccessManager class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateEngineAccessManager
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineAccessManager : public QObject
 {

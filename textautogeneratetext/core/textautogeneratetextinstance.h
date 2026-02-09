@@ -12,8 +12,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextInstance
  * \brief The TextAutoGenerateTextInstance class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstance
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstance
 {

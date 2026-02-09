@@ -25,8 +25,11 @@ class TextAutoGenerateTextInstancesManager;
 class TextAutoGenerateTextToSpeechEnqueueManager;
 class TextAutoGenerateFileCache;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateManager
  * \brief The TextAutoGenerateManager class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateManager
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManager : public QObject
 {

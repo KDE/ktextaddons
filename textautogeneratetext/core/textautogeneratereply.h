@@ -25,6 +25,16 @@ class QDebug;
  */
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateReply
+ * \brief The TextAutoGenerateReply class represents a reply from an LLM.
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateReply
+ * \details If you want to stream a reply as it is written in real time, connect to contentAdded() and use readResponse() to retrieve
+ * the new content. If you prefer to wait for the entire reply before displaying anything, connect to finished(), which will
+ * only be emitted once the reply is complete.
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateReply : public QObject
 {
     Q_OBJECT

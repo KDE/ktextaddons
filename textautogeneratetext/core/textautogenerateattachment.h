@@ -13,8 +13,11 @@
 namespace TextAutoGenerateText
 {
 /*!
- * \brief The TextAutoGenerateMessage class
+ * \class TextAutoGenerateText::TextAutoGenerateAttachment
+ * \brief The TextAutoGenerateAttachment class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateAttachment
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment
 {

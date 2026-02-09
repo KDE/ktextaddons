@@ -14,8 +14,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateEngineLoaderPrivate;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateEngineLoader
  * \brief The TextAutoGenerateEngineLoader class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateEngineLoader
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
 {

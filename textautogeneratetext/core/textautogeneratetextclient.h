@@ -14,8 +14,11 @@ class TextAutoGenerateTextPlugin;
 class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextClient
  * \brief The TextAutoGenerateTextClient class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextClient
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
 {

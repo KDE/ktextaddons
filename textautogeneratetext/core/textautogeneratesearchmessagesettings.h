@@ -12,8 +12,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateSearchMessageSettings
  * \brief The TextAutoGenerateSearchMessageSettings class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateSearchMessageSettings
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessageSettings : public QObject
 {

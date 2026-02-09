@@ -14,8 +14,11 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateMessage
  * \brief The TextAutoGenerateMessage class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessage
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessage
 {
