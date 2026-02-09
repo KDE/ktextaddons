@@ -12,7 +12,7 @@ namespace TextUtils
  * \brief The TextUtilsBlockCMarkSupport class
  * \author Laurent Montel <montel@kde.org>
  * \class TextUtilsBlockCMarkSupport
- * \inheader TextUtils::TextUtilsBlockCMarkSupport
+ * \inheaderfile TextUtils/TextUtilsBlockCMarkSupport
  * \inmodule TextUtils
  */
 class TEXTUTILS_EXPORT TextUtilsBlockCMarkSupport

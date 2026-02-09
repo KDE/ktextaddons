@@ -15,7 +15,7 @@ namespace TextUtils
  * \brief The TextUtilsColorsAndMessageViewStyle class
  * \author Laurent Montel <montel@kde.org>
  * \class TextUtilsColorsAndMessageViewStyle
- * \inheader TextUtils::TextUtilsColorsAndMessageViewStyle
+ * \inheaderfile TextUtils/TextUtilsColorsAndMessageViewStyle
  * \inmodule TextUtils
  */
 class TEXTUTILS_EXPORT TextUtilsColorsAndMessageViewStyle : public QObject

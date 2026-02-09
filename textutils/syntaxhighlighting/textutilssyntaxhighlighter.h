@@ -14,7 +14,7 @@ namespace TextUtils
  * \brief The TextUtilsSyntaxHighlighter class
  * \author Laurent Montel <montel@kde.org>
  * \class TextUtilsSyntaxHighlighter
- * \inheader TextUtils::TextUtilsSyntaxHighlighter
+ * \inheaderfile TextUtils/TextUtilsSyntaxHighlighter
  * \inmodule TextUtils
  */
 class TEXTUTILS_EXPORT TextUtilsSyntaxHighlighter : public KSyntaxHighlighting::AbstractHighlighter
