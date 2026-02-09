@@ -35,6 +35,10 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     vboxLayout->addWidget(mAvailableListView);
     splitter->addWidget(widget);
     mainLayout->addWidget(splitter);
+
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
+    mainLayout->addWidget(mSearchLineEdit);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &OllamaCommonModelAvailableWidget::searchText);
 }
 
 OllamaCommonModelAvailableWidget::~OllamaCommonModelAvailableWidget() = default;

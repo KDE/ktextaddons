@@ -18,6 +18,9 @@ public:
     explicit OllamaCommonModelAvailableWidget(QWidget *parent = nullptr);
     ~OllamaCommonModelAvailableWidget() override;
 
+Q_SIGNALS:
+    void searchText(const QString &str);
+
 private:
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
