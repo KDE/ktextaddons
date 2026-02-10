@@ -56,7 +56,6 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
     : KActionMenu(i18n("Add Smiley"), parent)
     , d(new EmoticonTextEditActionPrivate)
 {
-    delete menu();
     setMenu(d->emoticonMenu);
     setIcon(QIcon::fromTheme(u"face-smile"_s));
     setPopupMode(QToolButton::InstantPopup);
