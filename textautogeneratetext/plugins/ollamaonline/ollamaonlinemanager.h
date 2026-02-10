@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "ollamacommonmodelavailableinfo.h"
 #include "textautogenerateollamaonline_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
@@ -32,12 +33,14 @@ public:
     [[nodiscard]] QString apiKey() const;
     void setApiKey(const QString &newApiKey);
 
+    [[nodiscard]] QList<OllamaCommonModelAvailableInfo> availableInfos() const;
+    void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos);
+
 Q_SIGNALS:
-    void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
-    void downloadError(const QString &modelName, const QString &errorStr);
     void errorOccurred(QNetworkReply::NetworkError e);
 
 private:
     OllamaOnlineSettings *const mOllamaOnlineSettings;
     QString mApiKey;
+    QList<OllamaCommonModelAvailableInfo> mAvailableInfos;
 };

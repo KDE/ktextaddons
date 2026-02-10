@@ -5,6 +5,7 @@
 */
 
 #include "ollamacommonmodelavailablewidget.h"
+#include "ollamacommonmodelavailableinfosdelegate.h"
 #include "ollamacommonmodelavailableinfosmodel.h"
 #include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
@@ -22,6 +23,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     , mProxyModel(new OllamaCommonModelAvailableInfosSortProxyModel(this))
     , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
 {
+    mAvailableListView->setItemDelegate(new OllamaCommonModelAvailableInfosDelegate(mAvailableListView));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});

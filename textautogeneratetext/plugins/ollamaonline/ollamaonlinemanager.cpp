@@ -9,6 +9,7 @@
 #include "autogeneratetext_ollamaonline_debug.h"
 #include "autogeneratetext_ollamaonline_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
+#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 #include "ollamaonlinesettings.h"
@@ -26,6 +27,10 @@ OllamaOnlineManager::OllamaOnlineManager(OllamaOnlineSettings *settings, QObject
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mOllamaOnlineSettings(settings)
 {
+    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        mAvailableInfos = managerModelInfosManager.modelInfos();
+    }
 }
 
 OllamaOnlineManager::~OllamaOnlineManager() = default;
@@ -107,7 +112,7 @@ void OllamaOnlineManager::loadModels()
         }
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        qDebug() << " json " << json;
+        // qDebug() << " json " << json;
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
@@ -205,6 +210,16 @@ QString OllamaOnlineManager::apiKey() const
 void OllamaOnlineManager::setApiKey(const QString &newApiKey)
 {
     mApiKey = newApiKey;
+}
+
+QList<OllamaCommonModelAvailableInfo> OllamaOnlineManager::availableInfos() const
+{
+    return mAvailableInfos;
+}
+
+void OllamaOnlineManager::setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos)
+{
+    mAvailableInfos = newAvailableInfos;
 }
 
 #include "moc_ollamaonlinemanager.cpp"

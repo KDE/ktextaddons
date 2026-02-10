@@ -38,6 +38,9 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
     auto configureModelWidgetPage = new KPageWidgetItem(mOllamaOnlineModelWidget, modelAvailablePageName);
     configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
     mOllamaOnlineModelWidget->setObjectName(u"mOllamaOnlineModelWidget"_s);
+    if (manager) {
+        mOllamaOnlineModelWidget->setAvailableInfos(manager->availableInfos());
+    }
     addPage(configureModelWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaOnlineConfigureDialog::slotAccepted);

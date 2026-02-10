@@ -39,7 +39,9 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
     configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
     mOllamaCloudModelWidget->setObjectName(u"mOllamaCloudModelWidget"_s);
     addPage(configureModelWidgetPage);
-
+    if (manager) {
+        mOllamaCloudModelWidget->setAvailableInfos(manager->availableInfos());
+    }
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaCloudConfigureDialog::slotAccepted);
 
     readConfig();

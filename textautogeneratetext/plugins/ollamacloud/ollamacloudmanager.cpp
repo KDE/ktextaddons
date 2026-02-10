@@ -10,6 +10,7 @@
 #include "autogeneratetext_ollamacloud_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
 #include "ollamacloudsettings.h"
+#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 
@@ -26,6 +27,10 @@ OllamaCloudManager::OllamaCloudManager(OllamaCloudSettings *settings, QObject *p
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mOllamaCloudSettings(settings)
 {
+    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        mAvailableInfos = managerModelInfosManager.modelInfos();
+    }
 }
 
 OllamaCloudManager::~OllamaCloudManager() = default;
@@ -210,6 +215,16 @@ QString OllamaCloudManager::apiKey() const
 void OllamaCloudManager::setApiKey(const QString &newApiKey)
 {
     mApiKey = newApiKey;
+}
+
+QList<OllamaCommonModelAvailableInfo> OllamaCloudManager::availableInfos() const
+{
+    return mAvailableInfos;
+}
+
+void OllamaCloudManager::setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos)
+{
+    mAvailableInfos = newAvailableInfos;
 }
 
 #include "moc_ollamacloudmanager.cpp"
