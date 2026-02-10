@@ -284,6 +284,49 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
               "various sizes.")},
         {u"granite4"_s,
          i18n("Granite 4 features improved instruction following (IF) and tool-calling capabilities, making them more effective in enterprise applications.")},
+        {u"qwen3-vl"_s, i18n("The most powerful vision-language model in the Qwen model family to date.")},
+        {u"glm-4.6"_s, i18n("Advanced agentic, reasoning and coding capabilities..")},
+        {u"kimi-k2"_s,
+         i18n("A state-of-the-art mixture-of-experts (MoE) language model. Kimi K2-Instruct-0905 demonstrates significant improvements in performance on "
+              "public benchmarks and real-world coding agent tasks.")},
+        {u"minimax-m2"_s, i18n("MiniMax M2 is a high-efficiency large language model built for coding and agentic workflows.")},
+        {u"deepseek-ocr"_s, i18n("DeepSeek-OCR is a vision-language model that can perform token-efficient OCR.")},
+        {u"gpt-oss-safeguard"_s, i18n("gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models built-upon gpt-oss.")},
+        {u"gemini-3-pro-preview"_s,
+         i18n("Google's most intelligent model with SOTA reasoning and multimodal understanding, and powerful agentic and vibe coding capabilities.")},
+        {u"kimi-k2-thinking"_s, i18n("Kimi K2 Thinking, Moonshot AI's best open-source thinking model.")},
+        {u"cogito-2.1"_s, i18n("The Cogito v2.1 LLMs are instruction tuned generative models. All models are released under MIT license for commercial use.")},
+        {u"ministral-3"_s, i18n("The Ministral 3 family is designed for edge deployment, capable of running on a wide range of hardware.")},
+        {u"rnj-1"_s,
+         i18n("Rnj-1 is a family of 8B parameter open-weight, dense models trained from scratch by Essential AI, optimized for code and STEM with capabilities "
+              "on par with SOTA open-weight models.")},
+        {u"qwen3-next"_s,
+         i18n("The first installment in the Qwen3-Next series with strong performance in terms of both parameter efficiency and inference speed.")},
+        {u"nemotron-3-nano"_s, i18n("Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent Agentic Models.")},
+        {u"devstral-small-2"_s,
+         i18n("24B model that excels at using tools to explore codebases, editing multiple files and power software engineering agents.")},
+        {u"olmo-3"_s,
+         i18n("Olmo is a series of Open language models designed to enable the science of language models. These models are pre-trained on the Dolma 3 dataset "
+              "and post-trained on the Dolci datasets.")},
+        {u"translategemma"_s, i18n("A new collection of open translation models built on Gemma 3, helping people communicate across 55 languages.")},
+        {u"glm-4.7-flash"_s,
+         i18n("As the strongest model in the 30B class, GLM-4.7-Flash offers a new option for lightweight deployment that balances performance and "
+              "efficiency.")},
+        {u"olmo-3.1"_s,
+         i18n("Olmo is a series of Open language models designed to enable the science of language models. These models are pre-trained on the Dolma 3 dataset "
+              "and post-trained on the Dolci datasets.")},
+        {u"devstral-2"_s, i18n("123B model that excels at using tools to explore codebases, editing multiple files and power software engineering agents.")},
+        {u"functiongemma"_s, i18n("FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-tuned explicitly for function calling.")},
+        {u"gemini-3-flash-preview"_s, i18n("Gemini 3 Flash offers frontier intelligence built for speed at a fraction of the cost.")},
+        {u"nomic-embed-text-v2-moe"_s, i18n("nomic-embed-text-v2-moe is a multilingual MoE text embedding model that excels at multilingual retrieval.")},
+        {u"glm-4.7"_s, i18n("Advancing the Coding Capability")},
+        {u"deepseek-v3.2"_s, i18n("DeepSeek-V3.2, a model that harmonizes high computational efficiency with superior reasoning and agent performance.")},
+        {u"mistral-large-3"_s, i18n("A general-purpose multimodal mixture-of-experts model for production-grade tasks and enterprise workloads.")},
+        {u"minimax-m2.1"_s, i18n("Exceptional multilingual capabilities to elevate code engineering")},
+        {u"lfm2.5-thinking"_s, i18n("LFM2.5 is a new family of hybrid models designed for on-device deployment.")},
+        {u"kimi-k2.5"_s,
+         i18n("Kimi K2.5 is an open-source, native multimodal agentic model that seamlessly integrates vision and language understanding with advanced agentic "
+              "capabilities, instant and thinking modes, as well as conversational and agentic paradigms.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
