@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:44+0000\n"
+"POT-Creation-Date: 2026-02-10 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -333,11 +333,6 @@ msgstr ""
 msgid "Invalid Model Name"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
-#, kde-format
-msgid "Categories"
-msgstr "분류"
-
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
@@ -654,6 +649,11 @@ msgstr "Ollama"
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "모델 새로 고침"
+
+#: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr "분류"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:17
 #, kde-format

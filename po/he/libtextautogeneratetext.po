@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:44+0000\n"
+"POT-Creation-Date: 2026-02-10 00:42+0000\n"
 "PO-Revision-Date: 2026-01-21 08:53+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -321,11 +321,6 @@ msgstr "תבנית שם המודל חייבת להיות בצורת „name:tag�
 msgid "Invalid Model Name"
 msgstr "שם מודל שגוי"
 
-#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
-#, kde-format
-msgid "Categories"
-msgstr "קטגוריות"
-
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
@@ -619,6 +614,11 @@ msgstr "ענן Ollama"
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "ריענון מודל"
+
+#: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr "קטגוריות"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:17
 #, kde-format

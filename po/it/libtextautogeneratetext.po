@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:44+0000\n"
+"POT-Creation-Date: 2026-02-10 00:42+0000\n"
 "PO-Revision-Date: 2026-01-21 11:43+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -320,11 +320,6 @@ msgstr "Il nome del modello deve essere «nome:tag»"
 msgid "Invalid Model Name"
 msgstr "Nome modello non valido"
 
-#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
-#, kde-format
-msgid "Categories"
-msgstr "Categorie"
-
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
@@ -620,6 +615,11 @@ msgstr "Ollama Cloud"
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Ricarica modello"
+
+#: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr "Categorie"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:17
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:44+0000\n"
+"POT-Creation-Date: 2026-02-10 00:42+0000\n"
 "PO-Revision-Date: 2026-01-21 11:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -320,11 +320,6 @@ msgstr "Model adı “ad:künye” biçiminde olmalıdır"
 msgid "Invalid Model Name"
 msgstr "Geçersiz Model Adı"
 
-#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
-#, kde-format
-msgid "Categories"
-msgstr "Kategoriler"
-
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
@@ -620,6 +615,11 @@ msgstr "Ollama Bulut"
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Modeli yeniden yükle"
+
+#: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr "Kategoriler"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:17
 #, kde-format
