@@ -118,6 +118,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision, categories);
     appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding, categories);
     appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Cloud, categories);
     if (!categoriesName.isEmpty()) {
         auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
         infoLayout->addWidget(featuresGroupBox);

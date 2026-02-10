@@ -29,6 +29,7 @@ void OllamaCommonModelCategoriesModel::fillCategories()
         TextAutoGenerateText::TextAutoGenerateManager::Category::Vision,
         TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding,
         TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Cloud,
     };
     mCategories.reserve(cat.count());
 

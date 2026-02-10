@@ -130,6 +130,8 @@ TextAutoGenerateManager::Category TextAutoGenerateManager::convertStringToCatego
         return Category::Embedding;
     } else if (str == "reasoning"_L1) {
         return Category::Reasoning;
+    } else if (str == "cloud"_L1) {
+        return Category::Cloud;
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to convert " << str;
     return Category::Unknown;
@@ -162,6 +164,8 @@ QString TextAutoGenerateManager::convertCategoryToI18n(TextAutoGenerateManager::
         return i18n("Embedding");
     case Category::Reasoning:
         return i18n("Reasoning");
+    case Category::Cloud:
+        return i18n("Cloud");
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Missing translating Category " << static_cast<int>(cat);
     return {};
