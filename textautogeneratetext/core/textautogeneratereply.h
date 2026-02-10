@@ -152,6 +152,10 @@ Q_SIGNALS:
      */
     void errorOccurred(QNetworkReply::NetworkError e);
 
+    /*!
+     */
+    void needOllamaLogin();
+
 protected:
     [[nodiscard]] QList<ToolCallArgumentInfo> parseToolCallsOllama(const QJsonArray &array) const;
     [[nodiscard]] QList<TextAutoGenerateReply::ToolCallArgumentInfo> parseToolCallsOpenAI(const QJsonArray &array) const;

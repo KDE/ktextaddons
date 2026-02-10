@@ -39,6 +39,13 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
         }
     });
     connect(mReply, &QNetworkReply::errorOccurred, mReply, [this](QNetworkReply::NetworkError e) {
+        if (e == QNetworkReply::NetworkError::AuthenticationRequiredError) {
+            // TODO need to authentication.
+            qDebug() << " Need to authentication"; // cloud support
+            Q_EMIT needOllamaLogin();
+            Q_EMIT finished();
+            return;
+        }
         Q_EMIT errorOccurred(e);
         qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << e;
         qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama HTTP error:" << e;
