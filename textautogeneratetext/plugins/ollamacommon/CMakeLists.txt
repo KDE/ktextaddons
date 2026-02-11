@@ -42,6 +42,8 @@ target_sources(
         ollamacommonmodelavailableinfosdelegate.cpp
         ollamacommonmodelinfosdelegateutils.cpp
         ollamacommonmodelinfosdelegateutils.h
+        ollamacommonoverrideparameterswidget.h
+        ollamacommonoverrideparameterswidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
