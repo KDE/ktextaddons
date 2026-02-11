@@ -21,7 +21,6 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
-    mainLayout->setSpacing(0);
 
     auto groupCustomizeGroupbox = new QGroupBox(i18n("Override Parameters"), this);
     groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);
