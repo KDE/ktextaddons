@@ -5,8 +5,10 @@
 */
 
 #include "ollamacloudconfiguredialog.h"
+#include "autogeneratetext_ollamacloud_debug.h"
 #include "ollamacloudconfigurewidget.h"
 #include "ollamacloudmanager.h"
+#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonmodelavailablewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -40,7 +42,28 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
     mOllamaCloudModelWidget->setObjectName(u"mOllamaCloudModelWidget"_s);
     addPage(configureModelWidgetPage);
     if (manager) {
-        mOllamaCloudModelWidget->setAvailableInfos(manager->availableInfos());
+        connect(manager, &OllamaCloudManager::modelsLoadDone, this, [this, manager](const OllamaCloudManager::ModelsInfo &modelinfo) {
+            // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
+            if (modelinfo.hasError) {
+                qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "load model failed";
+            } else {
+                OllamaCommonModelAvailableInfosManager managerModelInfosManager;
+                if (managerModelInfosManager.loadAvailableModels()) {
+                    QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
+                    const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
+                    for (const auto &m : modelinfo.models) {
+                        for (const auto &availableModel : listAvailableModels) {
+                            if (availableModel.name() == m.modelName) {
+                                displayAvailablesModels.append(availableModel);
+                                break;
+                            }
+                        }
+                    }
+                    manager->setAvailableInfos(displayAvailablesModels);
+                    mOllamaCloudModelWidget->setAvailableInfos(displayAvailablesModels);
+                }
+            }
+        });
     }
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaCloudConfigureDialog::slotAccepted);
 

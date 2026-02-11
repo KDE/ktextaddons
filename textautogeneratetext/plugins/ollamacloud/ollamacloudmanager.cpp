@@ -27,10 +27,6 @@ OllamaCloudManager::OllamaCloudManager(OllamaCloudSettings *settings, QObject *p
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mOllamaCloudSettings(settings)
 {
-    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        mAvailableInfos = managerModelInfosManager.modelInfos();
-    }
 }
 
 OllamaCloudManager::~OllamaCloudManager() = default;
