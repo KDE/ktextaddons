@@ -18,6 +18,7 @@ macro(add_ollamacloud_plugin_unittest _source)
         KF6::TextAutoGenerateText
         KF6::KIOWidgets
         textautogenerateollamacloud
+        textautogenerateollamacommon
     )
     set_target_properties(
         ${_name}

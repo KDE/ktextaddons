@@ -6,6 +6,7 @@
 #include "ollamaonlineconfigurewidget.h"
 #include "autogeneratetext_ollamaonline_debug.h"
 #include "ollamacommoncomboboxwidget.h"
+#include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
@@ -26,6 +27,7 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     , mApiKey(new KPasswordLineEdit(this))
     , mManager(manager)
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
+    , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
 {
     connect(mManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -61,6 +63,10 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
 
     mOllamaComboBoxWidget->setObjectName(u"mOllamaComboBoxWidget"_s);
     formLayout->addRow(i18n("Model:"), mOllamaComboBoxWidget);
+
+    mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
+    mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
+
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaOnlineConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaOnlineConfigureWidget::fillModels);
     connect(mManager, &OllamaOnlineManager::showModelInfoDone, this, &OllamaOnlineConfigureWidget::displayModelInfo);
@@ -93,6 +99,11 @@ void OllamaOnlineConfigureWidget::loadSettings()
     mName->setText(mManager->ollamaOnlineSettings()->displayName());
     mServerUrl->setText(mManager->ollamaOnlineSettings()->serverUrl().toString());
     mApiKey->setPassword(mManager->apiKey());
+    const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
+        .temperature = mManager->ollamaOnlineSettings()->temperature(),
+        .seed = mManager->ollamaOnlineSettings()->seed(),
+    };
+    mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
 }
 
 void OllamaOnlineConfigureWidget::saveSettings()
@@ -100,6 +111,9 @@ void OllamaOnlineConfigureWidget::saveSettings()
     mManager->ollamaOnlineSettings()->setDisplayName(mName->text());
     mManager->ollamaOnlineSettings()->setServerUrl(QUrl(mServerUrl->text()));
     mManager->setApiKey(mApiKey->password());
+    const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
+    mManager->ollamaOnlineSettings()->setTemperature(parametersInfo.temperature);
+    mManager->ollamaOnlineSettings()->setSeed(parametersInfo.seed);
 }
 
 #include "moc_ollamaonlineconfigurewidget.cpp"

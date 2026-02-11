@@ -44,6 +44,10 @@ target_sources(
         ollamacommonmodelinfosdelegateutils.h
         ollamacommonoverrideparameterswidget.h
         ollamacommonoverrideparameterswidget.cpp
+        ollamacommonsettings.cpp
+        ollamacommonsettings.h
+        ollamacommonkeepaliveparameterswidget.h
+        ollamacommonkeepaliveparameterswidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

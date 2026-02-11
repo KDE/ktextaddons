@@ -8,6 +8,7 @@
 #include "ollamacloudmanager.h"
 #include "ollamacloudsettings.h"
 #include "ollamacommoncomboboxwidget.h"
+#include "ollamacommonoverrideparameterswidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 #include <KAuthorized>
 #include <KLineEditEventHandler>
@@ -25,6 +26,7 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
     , mApiKey(new KPasswordLineEdit(this))
     , mManager(manager)
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
+    , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
 {
     connect(mManager, &OllamaCloudManager::modelsLoadDone, this, [this](const OllamaCloudManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -55,6 +57,10 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
 
     mOllamaComboBoxWidget->setObjectName(u"mOllamaComboBoxWidget"_s);
     formLayout->addRow(i18n("Model:"), mOllamaComboBoxWidget);
+
+    mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
+    mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
+
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaCloudConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaCloudConfigureWidget::fillModels);
     connect(mManager, &OllamaCloudManager::showModelInfoDone, this, &OllamaCloudConfigureWidget::displayModelInfo);
@@ -86,12 +92,20 @@ void OllamaCloudConfigureWidget::loadSettings()
 {
     mName->setText(mManager->ollamaCloudSettings()->displayName());
     mApiKey->setPassword(mManager->apiKey());
+    const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
+        .temperature = mManager->ollamaCloudSettings()->temperature(),
+        .seed = mManager->ollamaCloudSettings()->seed(),
+    };
+    mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
 }
 
 void OllamaCloudConfigureWidget::saveSettings()
 {
     mManager->ollamaCloudSettings()->setDisplayName(mName->text());
     mManager->setApiKey(mApiKey->password());
+    const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
+    mManager->ollamaCloudSettings()->setTemperature(parametersInfo.temperature);
+    mManager->ollamaCloudSettings()->setSeed(parametersInfo.seed);
 }
 
 #include "moc_ollamacloudconfigurewidget.cpp"

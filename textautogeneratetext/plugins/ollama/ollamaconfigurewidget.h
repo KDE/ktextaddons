@@ -6,11 +6,10 @@
 #pragma once
 #include "textautogenerateollama_export.h"
 #include <QWidget>
+class OllamaCommonOverrideParametersWidget;
 class QLineEdit;
 class OllamaCommonComboBoxWidget;
 class OllamaManager;
-class QDoubleSpinBox;
-class QSpinBox;
 class OllamaConfigureCustomizeWidget;
 namespace TextAutoGenerateText
 {
@@ -39,8 +38,7 @@ private:
     QLineEdit *const mServerUrl;
     OllamaCommonComboBoxWidget *const mModelComboBoxWidget;
     TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
-    QDoubleSpinBox *const mTemperature;
-    QSpinBox *const mSeed;
     OllamaManager *const mManager;
     OllamaConfigureCustomizeWidget *const mOllamaConfigureCustomizeWidget;
+    OllamaCommonOverrideParametersWidget *const mOllamaCommonOverrideParametersWidget;
 };

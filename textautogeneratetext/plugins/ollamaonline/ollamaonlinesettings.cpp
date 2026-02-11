@@ -13,16 +13,6 @@ OllamaOnlineSettings::OllamaOnlineSettings() = default;
 
 OllamaOnlineSettings::~OllamaOnlineSettings() = default;
 
-QString OllamaOnlineSettings::currentModel() const
-{
-    return mCurrentModel;
-}
-
-void OllamaOnlineSettings::setCurrentModel(const QString &newCurrentModel)
-{
-    mCurrentModel = newCurrentModel;
-}
-
 QUrl OllamaOnlineSettings::serverUrl() const
 {
     return mServerUrl;
@@ -31,16 +21,6 @@ QUrl OllamaOnlineSettings::serverUrl() const
 void OllamaOnlineSettings::setServerUrl(const QUrl &newServerUrl)
 {
     mServerUrl = newServerUrl;
-}
-
-QString OllamaOnlineSettings::displayName() const
-{
-    return mDisplayName;
-}
-
-void OllamaOnlineSettings::setDisplayName(const QString &newName)
-{
-    mDisplayName = newName;
 }
 
 QDebug operator<<(QDebug d, const OllamaOnlineSettings &t)

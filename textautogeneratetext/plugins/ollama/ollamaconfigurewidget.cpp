@@ -6,6 +6,7 @@
 
 #include "ollamaconfigurewidget.h"
 #include "modelsmanager/ollamanetworkurlbutton.h"
+#include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include "ollamastartprocessjob.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
@@ -33,10 +34,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mServerUrl(new QLineEdit(this))
     , mModelComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mMessageWidget(new TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget(this))
-    , mTemperature(new QDoubleSpinBox(this))
-    , mSeed(new QSpinBox(this))
     , mManager(manager)
     , mOllamaConfigureCustomizeWidget(new OllamaConfigureCustomizeWidget(this))
+    , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -65,19 +65,8 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mModelComboBoxWidget->setObjectName(u"mModelComboBoxWidget"_s);
     formLayout->addRow(i18n("Model:"), mModelComboBoxWidget);
 
-    mTemperature->setObjectName(u"mTemperature"_s);
-    formLayout->addRow(i18n("Temperature:"), mTemperature);
-    mTemperature->setRange(0.0, 10.0);
-    mTemperature->setSingleStep(0.01);
-    mTemperature->setToolTip(i18nc("@info:tooltip", "The temperature of the model. Increasing the temperature will make the model answer more creatively."));
-
-    mSeed->setObjectName(u"mSeed"_s);
-    formLayout->addRow(i18n("Seed:"), mSeed);
-    mSeed->setToolTip(i18nc("@info:tooltip",
-                            "Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text "
-                            "for the same prompt. (Default: 0)"));
-    mSeed->setRange(0, 10);
-    mSeed->setSingleStep(1);
+    mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
+    mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
 
     auto groupCustomizeGroupbox = new QGroupBox(i18n("Customize Ollama"), this);
     groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);
@@ -163,8 +152,11 @@ void OllamaConfigureWidget::loadSettings()
     mName->setText(mManager->ollamaSettings()->displayName());
     mServerUrl->setText(mManager->ollamaSettings()->serverUrl().toString());
     mModelComboBoxWidget->setCurrentModel(mManager->ollamaSettings()->currentModel());
-    mTemperature->setValue(mManager->ollamaSettings()->temperature());
-    mSeed->setValue(mManager->ollamaSettings()->seed());
+    const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
+        .temperature = mManager->ollamaSettings()->temperature(),
+        .seed = mManager->ollamaSettings()->seed(),
+    };
+    mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
     const OllamaConfigureCustomizeWidget::CustomizeInfo info{
         .vulkanSupport = mManager->ollamaSettings()->vulkanSupport(),
         .cudaVisibleDevice = mManager->ollamaSettings()->cudaVisibleDevice(),
@@ -180,8 +172,9 @@ void OllamaConfigureWidget::saveSettings()
     mManager->ollamaSettings()->setDisplayName(mName->text());
     mManager->ollamaSettings()->setServerUrl(QUrl(mServerUrl->text()));
     mManager->ollamaSettings()->setCurrentModel(mModelComboBoxWidget->currentModel());
-    mManager->ollamaSettings()->setTemperature(mTemperature->value());
-    mManager->ollamaSettings()->setSeed(mSeed->value());
+    const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
+    mManager->ollamaSettings()->setTemperature(parametersInfo.temperature);
+    mManager->ollamaSettings()->setSeed(parametersInfo.seed);
     const OllamaConfigureCustomizeWidget::CustomizeInfo info = mOllamaConfigureCustomizeWidget->customizeInfo();
     mManager->ollamaSettings()->setCudaVisibleDevice(info.cudaVisibleDevice);
     mManager->ollamaSettings()->setRocrVisibleDevice(info.rocrVisibleDevice);

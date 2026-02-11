@@ -7,10 +7,10 @@
 #include "ollamacommonoverrideparameterswidget.h"
 #include <KLocalizedString>
 #include <QDoubleSpinBox>
+#include <QFormLayout>
 #include <QGroupBox>
 #include <QLabel>
 #include <QSpinBox>
-#include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidget *parent)
@@ -26,29 +26,25 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
     groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);
     mainLayout->addWidget(groupCustomizeGroupbox);
 
-    auto groupCustomizeGroupboxLayout = new QVBoxLayout(groupCustomizeGroupbox);
+    auto groupCustomizeGroupboxLayout = new QFormLayout(groupCustomizeGroupbox);
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
 
     mainLayout->addWidget(groupCustomizeGroupbox);
 
     mTemperature->setObjectName(u"mTemperature"_s);
-    auto label = new QLabel(i18n("Temperature:"), this);
-    groupCustomizeGroupboxLayout->addWidget(label);
-    groupCustomizeGroupboxLayout->addWidget(mTemperature);
     mTemperature->setRange(0.0, 10.0);
     mTemperature->setSingleStep(0.01);
     mTemperature->setToolTip(i18nc("@info:tooltip", "The temperature of the model. Increasing the temperature will make the model answer more creatively."));
+    groupCustomizeGroupboxLayout->addRow(i18n("Temperature:"), mTemperature);
 
     mSeed->setObjectName(u"mSeed"_s);
-    label = new QLabel(i18n("Seed:"), this);
-    groupCustomizeGroupboxLayout->addWidget(label);
-    groupCustomizeGroupboxLayout->addWidget(mSeed);
 
     mSeed->setToolTip(i18nc("@info:tooltip",
                             "Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text "
                             "for the same prompt. (Default: 0)"));
     mSeed->setRange(0, 10);
     mSeed->setSingleStep(1);
+    groupCustomizeGroupboxLayout->addRow(i18n("Seed:"), mSeed);
 }
 
 OllamaCommonOverrideParametersWidget::~OllamaCommonOverrideParametersWidget() = default;

@@ -5,26 +5,13 @@
 */
 
 #pragma once
+#include "ollamacommonsettings.h"
 #include "textautogenerateollamacloud_export.h"
 
 #include <QString>
-#include <QUrl>
-class QDebug;
-class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudSettings
+class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudSettings : public OllamaCommonSettings
 {
 public:
     OllamaCloudSettings();
     ~OllamaCloudSettings();
-
-    [[nodiscard]] QString currentModel() const;
-    void setCurrentModel(const QString &newCurrentModel);
-
-    [[nodiscard]] QString displayName() const;
-    void setDisplayName(const QString &newName);
-
-private:
-    QString mDisplayName;
-    QString mDefaultModelPath;
-    QString mCurrentModel;
 };
-TEXTAUTOGENERATEOLLAMACLOUD_EXPORT QDebug operator<<(QDebug d, const OllamaCloudSettings &t);

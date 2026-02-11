@@ -166,17 +166,13 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
 
-    /*
-    data["temperature"_L1] = mOllamaSettings->temperature();
-    */
+    data["temperature"_L1] = mOllamaOnlineSettings->temperature();
     if (!request.tools().isEmpty()) {
         data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
     }
-    /*
-    if (mOllamaSettings->seed() != 0) {
-        data["seed"_L1] = mOllamaSettings->seed();
+    if (mOllamaOnlineSettings->seed() != 0) {
+        data["seed"_L1] = mOllamaOnlineSettings->seed();
     }
-    */
     qDebug() << " OllamaOnlineManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
