@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamacloudconfigurewidget.h"
+#include "autogeneratetext_ollamacloud_debug.h"
 #include "ollamacloudmanager.h"
 #include "ollamacloudsettings.h"
 #include "ollamacommoncomboboxwidget.h"
@@ -28,6 +29,7 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
     connect(mManager, &OllamaCloudManager::modelsLoadDone, this, [this](const OllamaCloudManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
+            qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "load model failed";
         } else {
             mOllamaComboBoxWidget->setModels(modelinfo.models);
         }
