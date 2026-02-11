@@ -53,4 +53,19 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
 
 OllamaCommonOverrideParametersWidget::~OllamaCommonOverrideParametersWidget() = default;
 
+void OllamaCommonOverrideParametersWidget::setParametersInfo(const OverrideParametersInfo &info)
+{
+    mTemperature->setValue(info.temperature);
+    mSeed->setValue(info.seed);
+}
+
+OllamaCommonOverrideParametersWidget::OverrideParametersInfo OllamaCommonOverrideParametersWidget::parametersInfo() const
+{
+    const OllamaCommonOverrideParametersWidget::OverrideParametersInfo info{
+        .temperature = mTemperature->value(),
+        .seed = mSeed->value(),
+    };
+    return info;
+}
+
 #include "moc_ollamacommonoverrideparameterswidget.cpp"
