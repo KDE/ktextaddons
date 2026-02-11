@@ -56,7 +56,7 @@ void OllamaCommonModelAvailableInfo::parseInfo(const QString &name, const QJsonO
         const QJsonArray tagsArray = tagsArrayList.at(i).toArray();
         const QVariantList tagInfo = tagsArray.toVariantList();
         if (tagInfo.count() != 2) {
-            qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "tagInfo different from 2 " << tagInfo;
+            qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "tagInfo size different from 2 " << obj;
         } else {
             ModelTag tag;
             tag.tag = tagInfo.at(0).toString();
