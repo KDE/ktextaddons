@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamaonlineconfigurewidget.h"
+#include "autogeneratetext_ollamaonline_debug.h"
 #include "ollamacommoncomboboxwidget.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
@@ -29,6 +30,7 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     connect(mManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
+            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "load model failed";
         } else {
             mOllamaComboBoxWidget->setModels(modelinfo.models);
         }

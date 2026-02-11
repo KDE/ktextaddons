@@ -5,6 +5,8 @@
 */
 
 #include "ollamaonlineconfiguredialog.h"
+#include "autogeneratetext_ollamaonline_debug.h"
+#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonmodelavailablewidget.h"
 #include "ollamaonlineconfigurewidget.h"
 #include "ollamaonlinemanager.h"
@@ -39,7 +41,28 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
     configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
     mOllamaOnlineModelWidget->setObjectName(u"mOllamaOnlineModelWidget"_s);
     if (manager) {
-        mOllamaOnlineModelWidget->setAvailableInfos(manager->availableInfos());
+        connect(manager, &OllamaOnlineManager::modelsLoadDone, this, [this, manager](const OllamaOnlineManager::ModelsInfo &modelinfo) {
+            // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
+            if (modelinfo.hasError) {
+                qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "load model failed";
+            } else {
+                OllamaCommonModelAvailableInfosManager managerModelInfosManager;
+                if (managerModelInfosManager.loadAvailableModels()) {
+                    QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
+                    const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
+                    for (const auto &m : modelinfo.models) {
+                        for (const auto &availableModel : listAvailableModels) {
+                            if (availableModel.name() == m.modelName) {
+                                displayAvailablesModels.append(availableModel);
+                                break;
+                            }
+                        }
+                    }
+                    manager->setAvailableInfos(displayAvailablesModels);
+                    mOllamaOnlineModelWidget->setAvailableInfos(displayAvailablesModels);
+                }
+            }
+        });
     }
     addPage(configureModelWidgetPage);
 

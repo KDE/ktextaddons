@@ -9,7 +9,6 @@
 #include "autogeneratetext_ollamaonline_debug.h"
 #include "autogeneratetext_ollamaonline_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
-#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 #include "ollamaonlinesettings.h"
@@ -27,10 +26,6 @@ OllamaOnlineManager::OllamaOnlineManager(OllamaOnlineSettings *settings, QObject
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mOllamaOnlineSettings(settings)
 {
-    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        mAvailableInfos = managerModelInfosManager.modelInfos();
-    }
 }
 
 OllamaOnlineManager::~OllamaOnlineManager() = default;
