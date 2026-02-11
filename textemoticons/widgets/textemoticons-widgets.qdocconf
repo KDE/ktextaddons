@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextEmoticonsWidgets
+description = TextEmoticonsWidgets provides emoticon widget lib.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextEmoticonsWidgets"
+
+qhp.projects            = textemoticonswidgets
+
+qhp.textemoticonswidgets.file                = textemoticonswidgets.qhp
+qhp.textemoticonswidgets.namespace           = org.kde.textemoticonswidgets.$QT_VERSION_TAG
+qhp.textemoticonswidgets.virtualFolder       = textemoticonswidgets
+qhp.textemoticonswidgets.indexTitle          = textemoticonswidgets
+qhp.textemoticonswidgets.indexRoot           =
+
+qhp.textemoticonswidgets.subprojects         = classes
+qhp.textemoticonswidgets.subprojects.classes.title = C++ Classes
+qhp.textemoticonswidgets.subprojects.classes.indexTitle = TextEmoticons Widgets C++ Classes
+qhp.textemoticonswidgets.subprojects.classes.selectors = class fake:headerfile
+qhp.textemoticonswidgets.subprojects.classes.sortPages = true
+
+tagfile = textemoticonswidgets.tags

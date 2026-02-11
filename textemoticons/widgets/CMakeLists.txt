@@ -151,3 +151,4 @@ configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsWidgetsConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
+ecm_generate_qdoc(KF6TextEmoticonsWidgets textemoticons-widgets.qdocconf)

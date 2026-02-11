@@ -1,0 +1,9 @@
+/*!
+    \module TextEmoticonsWidgets
+    \title TextEmoticons Widgets C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextEmoticonsWidgets
+
+    \brief TextEmoticons Widgets provides some emoticon widgets lib.
+*/
