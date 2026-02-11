@@ -1,0 +1,21 @@
+/*!
+    \page textautocorrection-index.html
+    \title TextAutoCorrectionCore
+
+    TextAutoCorrection Core provides some autocorrection core lib.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KF6} {TextAutoCorrectionCore} {KF6::TextAutoCorrectionCore}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextAutoCorrection Core C++ Classes}
+        \li \l{TextAutoCorrection Widgets C++ Classes}
+    \endlist
+*/

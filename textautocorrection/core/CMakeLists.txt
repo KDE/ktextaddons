@@ -188,3 +188,4 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/
     COMPONENT Devel
 )
+ecm_generate_qdoc(KF6TextAutoCorrectionCore textautocorrection-core.qdocconf)

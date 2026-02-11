@@ -1,0 +1,9 @@
+/*!
+    \module TextAutoCorrectionCore
+    \title TextAutoCorrection Core C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextAutoCorrectionCore
+
+    \brief TextAutoCorrection Core provides some autocorrection core lib.
+*/

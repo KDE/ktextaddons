@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAutoCorrectionWidgets
+description = TextAutoCorrection Widgets provides some autocorrection widgets lib.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextAutoCorrectionWidgets"
+
+qhp.projects            = textautocorrectionwidgets
+
+qhp.textautocorrectionwidgets.file                = textautocorrectionwidgets.qhp
+qhp.textautocorrectionwidgets.namespace           = org.kde.textautocorrectionwidgets.$QT_VERSION_TAG
+qhp.textautocorrectionwidgets.virtualFolder       = textautocorrectionwidgets
+qhp.textautocorrectionwidgets.indexTitle          = textautocorrectionwidgets
+qhp.textautocorrectionwidgets.indexRoot           =
+
+qhp.textautocorrectionwidgets.subprojects         = classes
+qhp.textautocorrectionwidgets.subprojects.classes.title = C++ Classes
+qhp.textautocorrectionwidgets.subprojects.classes.indexTitle = TextAutoCorrection Widgets C++ Classes
+qhp.textautocorrectionwidgets.subprojects.classes.selectors = class fake:headerfile
+qhp.textautocorrectionwidgets.subprojects.classes.sortPages = true
+
+tagfile = textautocorrectionwidgets.tags

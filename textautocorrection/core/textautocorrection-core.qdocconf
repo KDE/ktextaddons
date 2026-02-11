@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAutoCorrectionCore
+description = TextAutoCorrection Core provides some autocorrection core lib.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextAutoCorrectionCore"
+
+qhp.projects            = textautocorrectioncore
+
+qhp.textautocorrectioncore.file                = textautocorrectioncore.qhp
+qhp.textautocorrectioncore.namespace           = org.kde.textautocorrectioncore.$QT_VERSION_TAG
+qhp.textautocorrectioncore.virtualFolder       = textautocorrectioncore
+qhp.textautocorrectioncore.indexTitle          = textautocorrectioncore
+qhp.textautocorrectioncore.indexRoot           =
+
+qhp.textautocorrectioncore.subprojects         = classes
+qhp.textautocorrectioncore.subprojects.classes.title = C++ Classes
+qhp.textautocorrectioncore.subprojects.classes.indexTitle = TextAutoCorrection Core C++ Classes
+qhp.textautocorrectioncore.subprojects.classes.selectors = class fake:headerfile
+qhp.textautocorrectioncore.subprojects.classes.sortPages = true
+
+tagfile = textautocorrectioncore.tags
