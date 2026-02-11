@@ -10,6 +10,7 @@
 #include "ollamacloudmanager.h"
 #include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonmodelavailablewidget.h"
+#include "ollamacommonmodelutils.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -47,21 +48,10 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
             if (modelinfo.hasError) {
                 qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "load model failed";
             } else {
-                OllamaCommonModelAvailableInfosManager managerModelInfosManager;
-                if (managerModelInfosManager.loadAvailableModels()) {
-                    QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
-                    const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
-                    for (const auto &m : modelinfo.models) {
-                        for (const auto &availableModel : listAvailableModels) {
-                            if (availableModel.name() == m.modelName) {
-                                displayAvailablesModels.append(availableModel);
-                                break;
-                            }
-                        }
-                    }
-                    manager->setAvailableInfos(displayAvailablesModels);
-                    mOllamaCloudModelWidget->setAvailableInfos(displayAvailablesModels);
-                }
+                const QList<OllamaCommonModelAvailableInfo> displayAvailablesModels = OllamaCommonModelUtils::extractAvailableModel(modelinfo);
+
+                manager->setAvailableInfos(displayAvailablesModels);
+                mOllamaCloudModelWidget->setAvailableInfos(displayAvailablesModels);
             }
         });
     }

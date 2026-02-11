@@ -7,13 +7,14 @@
 #include "ollamacommonmodelutils.h"
 
 #include "autogeneratetext_ollamacommon_debug.h"
+#include "ollamacommonmodelavailableinfosmanager.h"
 #include <KLocalizedString>
 #include <QMap>
 
 using namespace Qt::Literals::StringLiterals;
 QString OllamaCommonModelUtils::description(const QString &modelName)
 {
-    static QMap<QString, QString> listTranslation = {
+    static QMap<QString, QString> const listTranslation = {
         {u"llama3.3"_s, i18n("New state of the art 70B model. Llama 3.3 70B offers similar performance compared to the Llama 3.1 405B model.")},
         {u"qwq"_s, i18n("QwQ is the reasoning model of the Qwen series.")},
         {u"llama3.2-vision"_s, i18n("Llama 3.2 Vision is a collection of instruction-tuned image reasoning generative models in 11B and 90B sizes.")},
@@ -333,4 +334,24 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
         qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Missing translation for " << modelName;
     }
     return translatedString;
+}
+
+QList<OllamaCommonModelAvailableInfo>
+OllamaCommonModelUtils::extractAvailableModel(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &modelinfo)
+{
+    QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
+    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
+        for (const auto &m : modelinfo.models) {
+            for (const auto &availableModel : listAvailableModels) {
+                qDebug() << " m " << m << " availableModel.name() " << availableModel.name();
+                if (availableModel.name() == m.modelName) {
+                    displayAvailablesModels.append(availableModel);
+                    break;
+                }
+            }
+        }
+    }
+    return displayAvailablesModels;
 }
