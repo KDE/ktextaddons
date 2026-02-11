@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-10 00:42+0000\n"
+"POT-Creation-Date: 2026-02-11 00:43+0000\n"
 "PO-Revision-Date: 2026-01-21 07:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -63,60 +63,66 @@ msgstr "<b>Stroj:</b> %1<br><b>Model:</b> %2<br><b>Ime pojavka:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Orodja:</b> %1"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Tools"
 msgstr "Orodja"
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Small"
 msgstr "Majhen"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Medium"
 msgstr "Srednji"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Big"
 msgstr "Veliki"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Huge"
 msgstr "Ogromni"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Multilingual"
 msgstr "Večjezični"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Code"
 msgstr "Koda"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Math"
 msgstr "Matematika"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:162
 #, kde-format
 msgid "Vision"
 msgstr "Vid"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Embedding"
 msgstr "Vdelava"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Reasoning"
 msgstr "Sklepanje"
+
+#: core/textautogeneratemanager.cpp:168
+#, fuzzy, kde-format
+#| msgid "Groq Cloud"
+msgid "Cloud"
+msgstr "Oblak Groq"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -202,8 +208,8 @@ msgstr "Razpoložljivi modeli"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:192
-#: plugins/ollamacloud/ollamacloudmanager.cpp:108
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
+#: plugins/ollamacloud/ollamacloudmanager.cpp:113
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Povezava z vmesnikom ni uspela na %1: %2"
@@ -428,7 +434,7 @@ msgstr "Spremenjena pri:"
 msgid "Parent Model:"
 msgstr "Nadrejeni model:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:123
 #, kde-format
 msgid "Features Supported"
 msgstr "Podprte zmožnosti"
@@ -617,7 +623,7 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Ponovno naloži model"
 
-#: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:41
+#: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
 msgid "Categories"
 msgstr "Kategorije"
@@ -2180,32 +2186,216 @@ msgstr ""
 "Granite 4 ima izboljšane zmogljivosti sledenja navodilom (IF) in klicanja "
 "orodij, zaradi česar je učinkovitejši v poslovnih aplikacijah."
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:167
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:287
+#, kde-format
+msgid ""
+"The most powerful vision-language model in the Qwen model family to date."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:288
+#, kde-format
+msgid "Advanced agentic, reasoning and coding capabilities.."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
+#, kde-format
+msgid ""
+"A state-of-the-art mixture-of-experts (MoE) language model. Kimi K2-"
+"Instruct-0905 demonstrates significant improvements in performance on public "
+"benchmarks and real-world coding agent tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
+#, kde-format
+msgid ""
+"MiniMax M2 is a high-efficiency large language model built for coding and "
+"agentic workflows."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:293
+#, kde-format
+msgid ""
+"DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:294
+#, kde-format
+msgid ""
+"gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models "
+"built-upon gpt-oss."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
+#, kde-format
+msgid ""
+"Google's most intelligent model with SOTA reasoning and multimodal "
+"understanding, and powerful agentic and vibe coding capabilities."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:297
+#, kde-format
+msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:298
+#, kde-format
+msgid ""
+"The Cogito v2.1 LLMs are instruction tuned generative models. All models are "
+"released under MIT license for commercial use."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
+#, kde-format
+msgid ""
+"The Ministral 3 family is designed for edge deployment, capable of running "
+"on a wide range of hardware."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:301
+#, kde-format
+msgid ""
+"Rnj-1 is a family of 8B parameter open-weight, dense models trained from "
+"scratch by Essential AI, optimized for code and STEM with capabilities on "
+"par with SOTA open-weight models."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:304
+#, kde-format
+msgid ""
+"The first installment in the Qwen3-Next series with strong performance in "
+"terms of both parameter efficiency and inference speed."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:305
+#, kde-format
+msgid ""
+"Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
+"Agentic Models."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
+#, kde-format
+msgid ""
+"24B model that excels at using tools to explore codebases, editing multiple "
+"files and power software engineering agents."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:316
+#, kde-format
+msgid ""
+"Olmo is a series of Open language models designed to enable the science of "
+"language models. These models are pre-trained on the Dolma 3 dataset and "
+"post-trained on the Dolci datasets."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:311
+#, kde-format
+msgid ""
+"A new collection of open translation models built on Gemma 3, helping people "
+"communicate across 55 languages."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
+#, kde-format
+msgid ""
+"As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
+"for lightweight deployment that balances performance and efficiency."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:318
+#, kde-format
+msgid ""
+"123B model that excels at using tools to explore codebases, editing multiple "
+"files and power software engineering agents."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:319
+#, kde-format
+msgid ""
+"FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
+"tuned explicitly for function calling."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
+#, kde-format
+msgid ""
+"Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
+"the cost."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:321
+#, kde-format
+msgid ""
+"nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
+"excels at multilingual retrieval."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
+#, kde-format
+msgid "Advancing the Coding Capability"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
+#, kde-format
+msgid ""
+"DeepSeek-V3.2, a model that harmonizes high computational efficiency with "
+"superior reasoning and agent performance."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
+#, kde-format
+msgid ""
+"A general-purpose multimodal mixture-of-experts model for production-grade "
+"tasks and enterprise workloads."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:325
+#, kde-format
+msgid "Exceptional multilingual capabilities to elevate code engineering"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:326
+#, kde-format
+msgid ""
+"LFM2.5 is a new family of hybrid models designed for on-device deployment."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:328
+#, kde-format
+msgid ""
+"Kimi K2.5 is an open-source, native multimodal agentic model that seamlessly "
+"integrates vision and language understanding with advanced agentic "
+"capabilities, instant and thinking modes, as well as conversational and "
+"agentic paradigms."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Capabilities"
 msgstr "Zmogljivosti"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:169
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Template"
 msgstr "Predloga"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:170
+#: plugins/ollamacommon/ollamacommonreply.cpp:177
 #, kde-format
 msgid "Modelfile"
 msgstr "Model datoteke"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:173
+#: plugins/ollamacommon/ollamacommonreply.cpp:180
 #, kde-format
 msgid "Parameters"
 msgstr "Parametri"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:183
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:177
+#: plugins/ollamacommon/ollamacommonreply.cpp:184
 #, kde-format
 msgid "Model Info"
 msgstr "Informacije o modelu"
