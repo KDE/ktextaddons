@@ -657,3 +657,4 @@ configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
+ecm_generate_qdoc(KF6TextAutoGenerateText textautogeneratetext.qdocconf)
