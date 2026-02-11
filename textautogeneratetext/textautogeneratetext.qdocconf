@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAutoGenerateText
+description = TextAutoGenerateText provides AI support.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextAutoGenerateText"
+
+qhp.projects            = textautogeneratetext
+
+qhp.textautogeneratetext.file                = textautogeneratetext.qhp
+qhp.textautogeneratetext.namespace           = org.kde.textautogeneratetext.$QT_VERSION_TAG
+qhp.textautogeneratetext.virtualFolder       = textautogeneratetext
+qhp.textautogeneratetext.indexTitle          = textautogeneratetext
+qhp.textautogeneratetext.indexRoot           =
+
+qhp.textautogeneratetext.subprojects         = classes
+qhp.textautogeneratetext.subprojects.classes.title = C++ Classes
+qhp.textautogeneratetext.subprojects.classes.indexTitle = TextAutoGenerateText C++ Classes
+qhp.textautogeneratetext.subprojects.classes.selectors = class fake:headerfile
+qhp.textautogeneratetext.subprojects.classes.sortPages = true
+
+tagfile = textautogeneratetext.tags
