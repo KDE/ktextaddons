@@ -5,6 +5,7 @@
 */
 
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include "ollamacommonkeepaliveparameterscombobox.h"
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QGroupBox>
@@ -12,6 +13,7 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWidget *parent)
     : QWidget{parent}
+    , mOllamaCommonKeepAliveParametersComboBox(new OllamaCommonKeepAliveParametersComboBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -24,6 +26,8 @@ OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWi
     auto groupCustomizeGroupboxLayout = new QFormLayout(groupCustomizeGroupbox);
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
     mainLayout->addWidget(groupCustomizeGroupbox);
+
+    mOllamaCommonKeepAliveParametersComboBox->setObjectName(u"mOllamaCommonKeepAliveParametersComboBox"_s);
 }
 
 OllamaCommonKeepAliveParametersWidget::~OllamaCommonKeepAliveParametersWidget() = default;

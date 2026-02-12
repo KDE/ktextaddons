@@ -12,3 +12,5 @@ OllamaCommonKeepAliveParametersComboBox::OllamaCommonKeepAliveParametersComboBox
 }
 
 OllamaCommonKeepAliveParametersComboBox::~OllamaCommonKeepAliveParametersComboBox() = default;
+
+#include "moc_ollamacommonkeepaliveparameterscombobox.cpp"

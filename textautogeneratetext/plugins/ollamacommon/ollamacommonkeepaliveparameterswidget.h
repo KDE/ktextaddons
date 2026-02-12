@@ -7,11 +7,14 @@
 #pragma once
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
-
+class OllamaCommonKeepAliveParametersComboBox;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonKeepAliveParametersWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit OllamaCommonKeepAliveParametersWidget(QWidget *parent = nullptr);
     ~OllamaCommonKeepAliveParametersWidget() override;
+
+private:
+    OllamaCommonKeepAliveParametersComboBox *const mOllamaCommonKeepAliveParametersComboBox;
 };
