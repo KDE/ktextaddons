@@ -21,40 +21,61 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessage
 {
 public:
     /*!
+     * Constructs a new TextAutoGenerateSearchMessage object.
      */
     TextAutoGenerateSearchMessage();
     /*!
+     * Destroys the TextAutoGenerateSearchMessage object.
      */
     ~TextAutoGenerateSearchMessage();
     /*!
+     * Returns the chat identifier.
+     * \return The chat ID
      */
     [[nodiscard]] QByteArray chatId() const;
     /*!
+     * Sets the chat identifier.
+     * \param newChatId The chat ID to set
      */
     void setChatId(const QByteArray &newChatId);
 
     /*!
+     * Returns the message identifier.
+     * \return The message ID
      */
     [[nodiscard]] QByteArray messageId() const;
     /*!
+     * Sets the message identifier.
+     * \param newMessageId The message ID to set
      */
     void setMessageId(const QByteArray &newMessageId);
 
     /*!
+     * Returns the preview text of the message.
+     * \return The preview text
      */
     [[nodiscard]] QString previewText() const;
     /*!
+     * Sets the preview text of the message.
+     * \param newPreviewText The preview text to set
      */
     void setPreviewText(const QString &newPreviewText);
 
     /*!
+     * Returns the creation date and time of the message.
+     * \return The date/time as milliseconds since epoch
      */
     [[nodiscard]] qint64 dateTime() const;
     /*!
+     * Sets the creation date and time of the message.
+     * \param newDateTime The date/time as milliseconds since epoch
      */
     void setDateTime(qint64 newDateTime);
 
     /*!
+     * Compares this search message with another for equality.
+     * \param other The search message to compare with
+     * \return true if equal, false otherwise
      */
     [[nodiscard]] bool operator==(const TextAutoGenerateSearchMessage &other) const;
 

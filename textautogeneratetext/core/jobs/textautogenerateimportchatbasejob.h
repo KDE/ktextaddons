@@ -27,35 +27,27 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
-    /*!
-     */
+    /*! Constructs a new TextAutoGenerateImportChatBaseJob with the given @p parent. */
     explicit TextAutoGenerateImportChatBaseJob(QObject *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the TextAutoGenerateImportChatBaseJob object. */
     ~TextAutoGenerateImportChatBaseJob() override;
 
-    /*!
-     */
+    /*! Returns the import chat information. */
     [[nodiscard]] ImportChatInfo info() const;
-    /*!
-     */
+    /*! Sets the import chat information to @p newInfo. */
     void setInfo(const ImportChatInfo &newInfo);
 
-    /*!
-     */
+    /*! Returns whether the import job can be started. */
     [[nodiscard]] bool canStart() const;
-    /*!
-     */
+    /*! Starts the import job. */
     void start();
 
 Q_SIGNALS:
-    /*!
-     */
+    /*! Emitted when import is complete with the chat @p title and list of imported @p msgs. */
     void importDone(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
 
 protected:
-    /*!
-     */
+    /*! Imports the chat in the format-specific way. This is called by start(). */
     virtual void importChat() = 0;
     ImportChatInfo mInfo;
 };

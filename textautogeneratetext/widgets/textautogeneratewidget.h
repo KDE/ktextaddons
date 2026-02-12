@@ -29,37 +29,53 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget
     Q_OBJECT
 public:
     /*!
+     * Constructs a new TextAutoGenerateWidget.
+     * \param manager The TextAutoGenerateManager instance
+     * \param parent The parent widget
      */
     explicit TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     /*!
+     * Destroys the TextAutoGenerateWidget.
      */
     ~TextAutoGenerateWidget() override;
 
     /*!
+     * Returns the current text in the line edit.
+     * \return The text from the line edit widget
      */
     [[nodiscard]] QString textLineEdit() const;
     /*!
+     * Performs a text search based on current input.
      */
     void slotSearchText();
 
     /*!
+     * Loads the AI engine for text generation.
      */
     void loadEngine();
 
 Q_SIGNALS:
     /*!
+     * Emitted when no plugins are found.
+     * \param msg The error message
      */
     void noPluginsFound(const QString &msg);
     /*!
+     * Emitted when a plugin is broken or failed to load.
+     * \param msg The error message
      */
     void pluginBroken(const QString &msg);
     /*!
+     * Emitted when the editing mode is stopped.
+     * \param uuid The UUID of the message being edited
      */
     void stopEditingMode(const QByteArray &uuid);
     /*!
+     * Emitted when instances need to be added.
      */
     void needToAddInstances();
     /*!
+     * Emitted when the plugin is initialized successfully.
      */
     void pluginInitialized();
 

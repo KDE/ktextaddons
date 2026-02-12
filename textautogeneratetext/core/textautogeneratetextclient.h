@@ -37,9 +37,12 @@ public:
     };
 
     /*!
+     * Constructs a new TextAutoGenerateTextClient object.
+     * \param parent The parent QObject
      */
     explicit TextAutoGenerateTextClient(QObject *parent = nullptr);
     /*!
+     * Destroys the TextAutoGenerateTextClient object.
      */
     ~TextAutoGenerateTextClient() override;
 
@@ -49,20 +52,29 @@ public:
     [[nodiscard]] virtual QString name() const = 0;
 
     /*!
+     * Returns the translated name of the implementing client.
+     * \return The localized client name
      */
     [[nodiscard]] virtual QString translatedName() const = 0;
 
     /*!
+     * Creates a TextAutoGeneratePlugin for the given manager and instance.
+     * \param manager The TextAutoGenerateManager instance
+     * \param instance The TextAutoGenerateTextInstance configuration
+     * \return A pointer to the created TextAutoGenerateTextPlugin
      */
     [[nodiscard]] virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                                                                    TextAutoGenerateText::TextAutoGenerateTextInstance *instance) = 0;
 
     /*!
+     * Returns the list of servers supported by this client.
+     * \return A list of SupportedServer structures
      */
     [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 
 Q_SIGNALS:
     /*!
+     * Emitted when the client configuration changes.
      */
     void configureChanged();
 };
@@ -71,5 +83,10 @@ Q_DECLARE_INTERFACE(TextAutoGenerateText::TextAutoGenerateTextClient, "org.kde.t
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer, Q_RELOCATABLE_TYPE);
 Q_DECLARE_METATYPE(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer)
 /*!
+ * \relates TextAutoGenerateTextClient::SupportedServer
+ * Outputs the supported server information to a debug stream.
+ * \param d The debug stream
+ * \param t The SupportedServer structure
+ * \return The debug stream
  */
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer &t);

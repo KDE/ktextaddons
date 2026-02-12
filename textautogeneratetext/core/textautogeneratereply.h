@@ -81,9 +81,14 @@ public:
         CreateModel,
     };
     /*!
+     * Constructs a new TextAutoGenerateReply object.
+     * \param netReply The QNetworkReply from the network request
+     * \param requestType The type of request being made
+     * \param parent The parent QObject
      */
     explicit TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     /*!
+     * Destroys the TextAutoGenerateReply object.
      */
     ~TextAutoGenerateReply() override;
 
@@ -106,11 +111,14 @@ public:
      */
     const TextAutoGenerateText::TextAutoGenerateReply::RequestTypes &requestType() const;
 
-    void cancel();
     /*!
+     * Cancels the reply and stops processing.
      */
+    void cancel();
 
     /*!
+     * Reads the response from the LLM.
+     * \return The Response containing the LLM output
      */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const = 0;
 
@@ -134,25 +142,31 @@ Q_SIGNALS:
     void finished();
 
     /*!
+     * Emitted when the reply has been canceled.
      */
     void canceled();
 
     /*!
+     * Emitted when a model download is in progress.
      */
     void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     /*!
+     * Emitted when a download error occurs.
      */
     void downloadError(const QString &errorStr);
 
     /*!
+     * Emitted when tools need to be called.
      */
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 
     /*!
+     * Emitted when a network error occurs.
      */
     void errorOccurred(QNetworkReply::NetworkError e);
 
     /*!
+     * Emitted when Ollama login is required.
      */
     void needOllamaLogin();
 

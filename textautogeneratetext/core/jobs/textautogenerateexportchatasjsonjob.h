@@ -20,16 +20,13 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatAsJsonJob : public T
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new TextAutoGenerateExportChatAsJsonJob with the given @p parent. */
     explicit TextAutoGenerateExportChatAsJsonJob(QObject *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the TextAutoGenerateExportChatAsJsonJob object. */
     ~TextAutoGenerateExportChatAsJsonJob() override;
 
 protected:
-    /*!
-     */
+    /*! Exports the chat in JSON format. */
     void exportChat() override;
 };
 }
