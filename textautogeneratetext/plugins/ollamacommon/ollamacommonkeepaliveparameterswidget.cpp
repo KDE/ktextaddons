@@ -5,6 +5,9 @@
 */
 
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include <KLocalizedString>
+#include <QFormLayout>
+#include <QGroupBox>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWidget *parent)
@@ -13,6 +16,14 @@ OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWi
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
+
+    auto groupCustomizeGroupbox = new QGroupBox(i18n("Keep Alive"), this);
+    groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);
+    mainLayout->addWidget(groupCustomizeGroupbox);
+
+    auto groupCustomizeGroupboxLayout = new QFormLayout(groupCustomizeGroupbox);
+    groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
+    mainLayout->addWidget(groupCustomizeGroupbox);
 }
 
 OllamaCommonKeepAliveParametersWidget::~OllamaCommonKeepAliveParametersWidget() = default;
