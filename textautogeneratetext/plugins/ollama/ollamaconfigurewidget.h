@@ -35,6 +35,8 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotStartOllama();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void showModelInfo(const QString &modelName);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void displayModelInfo(const QString &modelStr);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotOllamaStarted();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotOllamaFailed(const QString &errorStr);
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     OllamaCommonComboBoxWidget *const mModelComboBoxWidget;

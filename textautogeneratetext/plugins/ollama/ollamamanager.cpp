@@ -13,6 +13,7 @@
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 #include "ollamasettings.h"
+#include "ollamastartprocessjob.h"
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 
 #include <KLocalizedString>
@@ -373,6 +374,18 @@ bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerat
         return false;
     }
     return it->categories() & cat;
+}
+
+void OllamaManager::startOllama()
+{
+    auto job = new OllamaStartProcessJob(this, this);
+    connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
+        Q_EMIT ollamaStarted();
+    });
+    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this](const QString &errorStr) {
+        Q_EMIT ollamaFailed(errorStr);
+    });
+    job->start();
 }
 
 #include "moc_ollamamanager.cpp"

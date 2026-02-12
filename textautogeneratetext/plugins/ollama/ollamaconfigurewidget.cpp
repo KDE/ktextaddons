@@ -119,6 +119,8 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     loadSettings();
     connect(mManager, &OllamaManager::refreshInstalledModels, this, &OllamaConfigureWidget::fillModels);
     connect(mManager, &OllamaManager::showModelInfoDone, this, &OllamaConfigureWidget::displayModelInfo);
+    connect(mManager, &OllamaManager::ollamaStarted, this, &OllamaConfigureWidget::slotOllamaStarted);
+    connect(mManager, &OllamaManager::ollamaFailed, this, &OllamaConfigureWidget::slotOllamaFailed);
     fillModels();
     connect(mMessageWidget, &TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &OllamaConfigureWidget::slotStartOllama);
 }
@@ -139,17 +141,20 @@ void OllamaConfigureWidget::showModelInfo(const QString &modelName)
     mManager->showModelInfo(modelName);
 }
 
+void OllamaConfigureWidget::slotOllamaStarted()
+{
+    mMessageWidget->animatedHide();
+    Q_EMIT ollamaProcessOk(true);
+}
+
+void OllamaConfigureWidget::slotOllamaFailed(const QString &errorStr)
+{
+    KMessageBox::error(this, errorStr, i18n("Failed to start Ollama"));
+}
+
 void OllamaConfigureWidget::slotStartOllama()
 {
-    auto job = new OllamaStartProcessJob(mManager, this);
-    connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
-        mMessageWidget->animatedHide();
-        Q_EMIT ollamaProcessOk(true);
-    });
-    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this](const QString &errorStr) {
-        KMessageBox::error(this, errorStr, i18n("Failed to start Ollama"));
-    });
-    job->start();
+    mManager->startOllama();
 }
 
 void OllamaConfigureWidget::loadSettings()

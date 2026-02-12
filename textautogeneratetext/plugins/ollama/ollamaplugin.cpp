@@ -50,6 +50,8 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
     connect(this->manager(), &TextAutoGenerateText::TextAutoGenerateManager::startOllamaRequested, this, [this]() {
         slotOllamaRequested();
     });
+    connect(mOllamaManager, &OllamaManager::ollamaStarted, this, &OllamaPlugin::slotOllamaStarted);
+    connect(mOllamaManager, &OllamaManager::ollamaFailed, this, &OllamaPlugin::slotOllamaFailed);
 }
 
 OllamaPlugin::~OllamaPlugin()
