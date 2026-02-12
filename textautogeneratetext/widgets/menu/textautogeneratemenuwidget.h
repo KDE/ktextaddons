@@ -13,8 +13,11 @@ namespace TextAutoGenerateText
 class TextAutoGenerateMenuTextManager;
 class TextAutoGenerateManager;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateMenuWidget
  * \brief The TextAutoGenerateMenuWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMenuWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuWidget : public QObject
 {

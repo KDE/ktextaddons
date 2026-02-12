@@ -11,8 +11,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateChatSettings;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateChatsModel
  * \brief The TextAutoGenerateChatsModel class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateChatsModel
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatsModel : public QAbstractListModel
 {

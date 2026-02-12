@@ -15,8 +15,11 @@ class TextAutoGenerateNotInstanceFoundWidget;
 class TextAutoGenerateManager;
 class TextAutoGenerateWidget;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateStackWidget
  * \brief The TextAutoGenerateStackWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateStackWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateStackWidget : public QWidget
 {

@@ -9,8 +9,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateHistorySortFilterProxyModel
  * \brief The TextAutoGenerateHistorySortFilterProxyModel class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateHistorySortFilterProxyModel
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateHistorySortFilterProxyModel : public QSortFilterProxyModel
 {

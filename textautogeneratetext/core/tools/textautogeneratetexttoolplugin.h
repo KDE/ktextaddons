@@ -15,8 +15,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPluginJob;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextToolPlugin
  * \brief The TextAutoGenerateTextToolPlugin class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPlugin
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPlugin : public QObject
 {

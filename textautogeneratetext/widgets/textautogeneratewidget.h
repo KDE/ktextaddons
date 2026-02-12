@@ -18,8 +18,11 @@ class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
 class TextAutoGenerateSearchDialog;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateWidget
  * \brief The TextAutoGenerateWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget
 {

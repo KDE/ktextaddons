@@ -12,8 +12,11 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty
  * \brief The TextAutoGenerateTextToolPluginProperty class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginProperty
 {

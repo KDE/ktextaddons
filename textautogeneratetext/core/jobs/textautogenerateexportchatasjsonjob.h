@@ -10,8 +10,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob
  * \brief The TextAutoGenerateExportChatAsJsonJob class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateExportChatAsJsonJob
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatAsJsonJob : public TextAutoGenerateText::TextAutoGenerateExportChatBaseJob
 {

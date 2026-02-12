@@ -28,7 +28,13 @@ public:
     TextAutoGenerateTextToolPlugin *plugin = nullptr;
     bool isEnabled = true;
 };
-
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextToolPluginManager
+ * \brief The TextAutoGenerateTextToolPluginManager class
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginManager
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginManager final : public QObject
 {
     Q_OBJECT

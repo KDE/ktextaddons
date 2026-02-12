@@ -11,8 +11,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateSearchMessagesModel
  * \brief The TextAutoGenerateSearchMessagesModel class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateSearchMessagesModel
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessagesModel : public QAbstractListModel
 {

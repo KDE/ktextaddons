@@ -11,8 +11,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateAskJob
  * \brief The TextAutoGenerateAskJob class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateAskJob
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
 {

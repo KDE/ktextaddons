@@ -12,8 +12,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateMenuConfigureWidget;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateMenuConfigureDialog
  * \brief The TextAutoGenerateMenuConfigureDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMenuConfigureDialog
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuConfigureDialog : public QDialog
 {
