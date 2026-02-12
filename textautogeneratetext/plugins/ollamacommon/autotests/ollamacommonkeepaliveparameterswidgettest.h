@@ -13,4 +13,7 @@ class OllamaCommonKeepAliveParametersWidgetTest : public QObject
 public:
     explicit OllamaCommonKeepAliveParametersWidgetTest(QObject *parent = nullptr);
     ~OllamaCommonKeepAliveParametersWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };

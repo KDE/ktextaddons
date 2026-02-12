@@ -5,10 +5,10 @@
 */
 
 #pragma once
-
+#include "textautogenerateollamacommon_export.h"
 #include <QComboBox>
 
-class OllamaCommonKeepAliveParametersComboBox : public QComboBox
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonKeepAliveParametersComboBox : public QComboBox
 {
     Q_OBJECT
 public:
