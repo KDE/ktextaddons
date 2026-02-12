@@ -16,8 +16,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateListViewBaseDelegate;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateListViewTextSelection
  * \brief The TextAutoGenerateListViewTextSelection class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateListViewTextSelection
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewTextSelection : public QObject
 {

@@ -12,8 +12,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGeneratePluginTextInterface;
 /*!
+ * \class TextAutoGenerateText::TextAutoGeneratePluginText
  * \brief The TextAutoGeneratePluginText class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGeneratePluginText
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginText : public QObject
 {

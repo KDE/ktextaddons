@@ -19,8 +19,11 @@ namespace TextAutoGenerateText
 class TextAutoGenerateManager;
 class TextAutoGenerateListView;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateResultWidget
  * \brief The TextAutoGenerateResultWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateResultWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateResultWidget : public QWidget
 {

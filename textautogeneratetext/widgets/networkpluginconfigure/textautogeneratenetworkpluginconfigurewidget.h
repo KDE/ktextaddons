@@ -16,8 +16,11 @@ class QLabel;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget
  * \brief The TextAutoGenerateNetworkPluginConfigureWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateNetworkPluginConfigureWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget : public QWidget
 {

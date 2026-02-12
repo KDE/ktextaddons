@@ -17,8 +17,11 @@ namespace TextAutoGenerateText
 class TextAutoGenerateAttachmentDelegateHelperBase;
 class TextAutoGenerateListViewTextSelection;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
  * \brief The TextAutoGenerateListViewBaseDelegate class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateListViewBaseDelegate
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewBaseDelegate : public QItemDelegate
 {

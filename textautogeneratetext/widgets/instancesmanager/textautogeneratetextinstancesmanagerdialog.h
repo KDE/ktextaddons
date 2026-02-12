@@ -12,8 +12,11 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextInstancesManagerWidget;
 class TextAutoGenerateManager;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextInstancesManagerDialog
  * \brief The TextAutoGenerateTextInstancesManagerDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstancesManagerDialog
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerDialog : public QDialog
 {

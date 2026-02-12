@@ -13,8 +13,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPlugin;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateToolPluginConfigureWidget
  * \brief The TextAutoGenerateToolPluginConfigureWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateToolPluginConfigureWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : public QWidget
 {

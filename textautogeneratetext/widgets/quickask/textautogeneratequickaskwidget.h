@@ -16,8 +16,11 @@ class TextAutoGenerateQuickAskViewWidget;
 class TextAutoGenerateNotWorkingWidget;
 class TextAutoGenerateNotInstanceFoundWidget;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateQuickAskWidget
  * \brief The TextAutoGenerateQuickAskWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateQuickAskWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskWidget : public QWidget
 {

@@ -9,8 +9,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit
  * \brief The TextAutoGenerateModelSearchLineEdit class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateModelSearchLineEdit
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateModelSearchLineEdit : public QLineEdit
 {

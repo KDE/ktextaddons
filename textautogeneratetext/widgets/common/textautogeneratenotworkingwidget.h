@@ -11,8 +11,11 @@ namespace TextAutoGenerateText
 class TextAutoGenerateManager;
 class TextAutoGenerateNotWorkingMessageWidget;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateNotWorkingWidget
  * \brief The TextAutoGenerateNotWorkingWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateNotWorkingWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWidget
 {

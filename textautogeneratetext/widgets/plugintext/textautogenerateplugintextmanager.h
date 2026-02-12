@@ -28,8 +28,11 @@ public:
 };
 
 /*!
+ * \class TextAutoGenerateText::TextAutoGeneratePluginTextManager
  * \brief The TextAutoGeneratePluginTextManager class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGeneratePluginTextManager
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextManager final : public QObject
 {

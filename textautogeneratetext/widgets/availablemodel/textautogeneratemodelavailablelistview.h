@@ -8,6 +8,13 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateModelAvailableListView
+ * \brief The TextAutoGenerateModelAvailableListView class
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateModelAvailableListView
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateModelAvailableListView : public QListView
 {
     Q_OBJECT

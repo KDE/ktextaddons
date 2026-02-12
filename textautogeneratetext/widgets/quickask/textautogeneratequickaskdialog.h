@@ -12,8 +12,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateQuickAskWidget;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateQuickAskDialog
  * \brief The TextAutoGenerateQuickAskDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateQuickAskDialog
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateQuickAskDialog : public QDialog
 {

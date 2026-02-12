@@ -13,8 +13,11 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextInstancesManagerListView;
 class TextAutoGenerateManager;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextInstancesManagerWidget
  * \brief The TextAutoGenerateTextInstancesManagerWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstancesManagerWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerWidget : public QWidget
 {

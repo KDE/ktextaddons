@@ -13,8 +13,11 @@ class KMessageWidget;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextConfigurePluginsWidget
  * \brief The TextAutoGenerateTextConfigurePluginsWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextConfigurePluginsWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePluginsWidget : public TextAddonsWidgets::ConfigurePluginsWidget
 {

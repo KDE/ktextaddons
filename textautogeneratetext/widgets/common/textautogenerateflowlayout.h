@@ -10,8 +10,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateFlowLayout
  * \brief The TextAutoGenerateFlowLayout class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateFlowLayout
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateFlowLayout : public QLayout
 {

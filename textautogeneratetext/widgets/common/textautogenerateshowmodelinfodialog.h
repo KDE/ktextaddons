@@ -10,8 +10,11 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateShowModelInfoWidget;
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog
  * \brief The TextAutoGenerateShowModelInfoDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateShowModelInfoDialog
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateShowModelInfoDialog : public QDialog
 {

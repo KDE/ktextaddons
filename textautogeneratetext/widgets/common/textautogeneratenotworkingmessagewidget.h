@@ -9,8 +9,11 @@
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget
  * \brief The TextAutoGenerateNotWorkingMessageWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateNotWorkingMessageWidget
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingMessageWidget : public KMessageWidget
 {
