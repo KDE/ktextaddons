@@ -41,4 +41,20 @@ OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWi
 
 OllamaCommonKeepAliveParametersWidget::~OllamaCommonKeepAliveParametersWidget() = default;
 
+OllamaCommonKeepAliveParametersWidget::KeepAliveInfo OllamaCommonKeepAliveParametersWidget::keepAliveInfo() const
+{
+    const OllamaCommonKeepAliveParametersWidget::KeepAliveInfo info{
+        .keepAliveType = mOllamaCommonKeepAliveParametersComboBox->keepAliveType(),
+        .minutes = mKeepAliveMinutes->value(),
+    };
+    return info;
+}
+
+void OllamaCommonKeepAliveParametersWidget::setKeepAliveInfo(const KeepAliveInfo &info)
+{
+    mKeepAliveMinutes->setValue(info.minutes);
+    mOllamaCommonKeepAliveParametersComboBox->setKeepAliveType(info.keepAliveType);
+    // TODO
+}
+
 #include "moc_ollamacommonkeepaliveparameterswidget.cpp"
