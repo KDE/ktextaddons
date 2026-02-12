@@ -6,6 +6,7 @@
 
 #include "ollamaconfigurewidget.h"
 #include "modelsmanager/ollamanetworkurlbutton.h"
+#include "ollamacommonkeepaliveparameterswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include "ollamastartprocessjob.h"
@@ -37,6 +38,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mManager(manager)
     , mOllamaConfigureCustomizeWidget(new OllamaConfigureCustomizeWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
+    , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -67,6 +69,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
+
+    mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
+    mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
 
     auto groupCustomizeGroupbox = new QGroupBox(i18n("Customize Ollama"), this);
     groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);

@@ -35,8 +35,8 @@ OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWi
     mKeepAliveMinutes->setMinimum(1);
     mKeepAliveMinutes->setToolTip(i18nc("@info:tooltip", "The amount of time the instance should keep models loaded after they go idle."));
 
-    groupCustomizeGroupboxLayout->addRow(i18n("Presets"), mOllamaCommonKeepAliveParametersComboBox);
-    groupCustomizeGroupboxLayout->addRow(i18n("Minutes"), mKeepAliveMinutes);
+    groupCustomizeGroupboxLayout->addRow(i18n("Presets:"), mOllamaCommonKeepAliveParametersComboBox);
+    groupCustomizeGroupboxLayout->addRow(i18n("Minutes:"), mKeepAliveMinutes);
 }
 
 OllamaCommonKeepAliveParametersWidget::~OllamaCommonKeepAliveParametersWidget() = default;

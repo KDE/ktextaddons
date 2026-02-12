@@ -6,6 +6,7 @@
 #include "ollamaonlineconfigurewidget.h"
 #include "autogeneratetext_ollamaonline_debug.h"
 #include "ollamacommoncomboboxwidget.h"
+#include "ollamacommonkeepaliveparameterswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
@@ -28,6 +29,7 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     , mManager(manager)
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
+    , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
 {
     connect(mManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -66,6 +68,9 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
 
     mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
+
+    mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
+    mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
 
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaOnlineConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaOnlineConfigureWidget::fillModels);

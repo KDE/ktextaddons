@@ -11,6 +11,7 @@ class QLineEdit;
 class OllamaCommonComboBoxWidget;
 class OllamaManager;
 class OllamaConfigureCustomizeWidget;
+class OllamaCommonKeepAliveParametersWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateNotWorkingMessageWidget;
@@ -41,4 +42,5 @@ private:
     OllamaManager *const mManager;
     OllamaConfigureCustomizeWidget *const mOllamaConfigureCustomizeWidget;
     OllamaCommonOverrideParametersWidget *const mOllamaCommonOverrideParametersWidget;
+    OllamaCommonKeepAliveParametersWidget *const mOllamaCommonKeepAliveParametersWidget;
 };

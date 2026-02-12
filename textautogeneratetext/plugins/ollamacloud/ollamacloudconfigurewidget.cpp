@@ -8,6 +8,7 @@
 #include "ollamacloudmanager.h"
 #include "ollamacloudsettings.h"
 #include "ollamacommoncomboboxwidget.h"
+#include "ollamacommonkeepaliveparameterswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 #include <KAuthorized>
@@ -27,6 +28,7 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
     , mManager(manager)
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
+    , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
 {
     connect(mManager, &OllamaCloudManager::modelsLoadDone, this, [this](const OllamaCloudManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -60,6 +62,9 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
 
     mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
+
+    mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
+    mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
 
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaCloudConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaCloudConfigureWidget::fillModels);
