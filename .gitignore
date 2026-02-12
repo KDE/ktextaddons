@@ -32,3 +32,6 @@ compile_commands.json
 
 # Git clone from bergamot-translator
 texttranslator/translator/plugins/bergamot/bergamot-translator/
+
+#for reuse on CI
+ci-utilities/
