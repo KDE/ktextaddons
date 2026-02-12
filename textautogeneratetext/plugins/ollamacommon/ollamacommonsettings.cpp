@@ -51,11 +51,22 @@ void OllamaCommonSettings::setDisplayName(const QString &newName)
     mDisplayName = newName;
 }
 
+int OllamaCommonSettings::keepAliveMinutes() const
+{
+    return mKeepAliveMinutes;
+}
+
+void OllamaCommonSettings::setKeepAliveMinutes(int newKeepAliveMinutes)
+{
+    mKeepAliveMinutes = newKeepAliveMinutes;
+}
+
 QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
 {
     d.space() << "displayName:" << t.displayName();
     d.space() << "currentModel:" << t.currentModel();
     d.space() << "temperature:" << t.temperature();
     d.space() << "seed:" << t.seed();
+    d.space() << "keepAliveMinutes:" << t.keepAliveMinutes();
     return d;
 }

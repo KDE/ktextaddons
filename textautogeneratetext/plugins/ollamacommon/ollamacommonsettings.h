@@ -28,10 +28,14 @@ public:
     [[nodiscard]] QString displayName() const;
     void setDisplayName(const QString &newName);
 
+    [[nodiscard]] int keepAliveMinutes() const;
+    void setKeepAliveMinutes(int newKeepAliveMinutes);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
     int mSeed = 0;
     double mTemperature = 0.8;
+    int mKeepAliveMinutes = 1;
 };
 TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonSettings &t);

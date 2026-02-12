@@ -33,6 +33,7 @@ public:
     void setKeepAliveInfo(const KeepAliveInfo &info);
 
 private:
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void slotKeepAliveChanged();
     OllamaCommonKeepAliveParametersComboBox *const mOllamaCommonKeepAliveParametersComboBox;
     QSpinBox *const mKeepAliveMinutes;
 };

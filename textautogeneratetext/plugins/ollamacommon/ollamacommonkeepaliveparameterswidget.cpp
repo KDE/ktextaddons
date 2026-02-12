@@ -37,9 +37,15 @@ OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWi
 
     groupCustomizeGroupboxLayout->addRow(i18n("Presets:"), mOllamaCommonKeepAliveParametersComboBox);
     groupCustomizeGroupboxLayout->addRow(i18n("Minutes:"), mKeepAliveMinutes);
+    connect(mOllamaCommonKeepAliveParametersComboBox, &QComboBox::activated, this, &OllamaCommonKeepAliveParametersWidget::slotKeepAliveChanged);
 }
 
 OllamaCommonKeepAliveParametersWidget::~OllamaCommonKeepAliveParametersWidget() = default;
+
+void OllamaCommonKeepAliveParametersWidget::slotKeepAliveChanged()
+{
+    mKeepAliveMinutes->setEnabled(mOllamaCommonKeepAliveParametersComboBox->keepAliveType() == OllamaCommonKeepAliveParametersWidget::KeepAliveType::SetTimer);
+}
 
 OllamaCommonKeepAliveParametersWidget::KeepAliveInfo OllamaCommonKeepAliveParametersWidget::keepAliveInfo() const
 {
