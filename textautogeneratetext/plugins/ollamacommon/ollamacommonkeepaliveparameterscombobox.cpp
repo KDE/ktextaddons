@@ -16,16 +16,22 @@ OllamaCommonKeepAliveParametersComboBox::~OllamaCommonKeepAliveParametersComboBo
 
 void OllamaCommonKeepAliveParametersComboBox::fill()
 {
+    addItem(i18n("Keep Alive Presets"), QVariant::fromValue(OllamaCommonKeepAliveParametersWidget::KeepAliveType::SetTimer));
+    addItem(i18n("Keep Alive Forever"), QVariant::fromValue(OllamaCommonKeepAliveParametersWidget::KeepAliveType::KeepAliveForever));
+    addItem(i18n("Unload After Use"), QVariant::fromValue(OllamaCommonKeepAliveParametersWidget::KeepAliveType::UnloadAfterUse));
 }
 
 OllamaCommonKeepAliveParametersWidget::KeepAliveType OllamaCommonKeepAliveParametersComboBox::keepAliveType() const
 {
-    return {};
+    return currentData().value<OllamaCommonKeepAliveParametersWidget::KeepAliveType>();
 }
 
 void OllamaCommonKeepAliveParametersComboBox::setKeepAliveType(OllamaCommonKeepAliveParametersWidget::KeepAliveType type)
 {
-    // TODO
+    const int index = findData(QVariant::fromValue(type));
+    if (index != -1) {
+        setCurrentIndex(index);
+    }
 }
 
 #include "moc_ollamacommonkeepaliveparameterscombobox.cpp"

@@ -54,7 +54,6 @@ void OllamaCommonKeepAliveParametersWidget::setKeepAliveInfo(const KeepAliveInfo
 {
     mKeepAliveMinutes->setValue(info.minutes);
     mOllamaCommonKeepAliveParametersComboBox->setKeepAliveType(info.keepAliveType);
-    // TODO
 }
 
 #include "moc_ollamacommonkeepaliveparameterswidget.cpp"
