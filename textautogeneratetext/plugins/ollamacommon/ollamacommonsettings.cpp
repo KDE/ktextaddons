@@ -5,6 +5,7 @@
 */
 
 #include "ollamacommonsettings.h"
+#include <KConfigGroup>
 #include <QDebug>
 
 using namespace Qt::Literals::StringLiterals;
@@ -59,6 +60,26 @@ int OllamaCommonSettings::keepAliveMinutes() const
 void OllamaCommonSettings::setKeepAliveMinutes(int newKeepAliveMinutes)
 {
     mKeepAliveMinutes = newKeepAliveMinutes;
+}
+
+void OllamaCommonSettings::load(const KConfigGroup &config)
+{
+    setDisplayName(config.readEntry(u"Name"_s));
+    if (config.hasKey(u"Temperature"_s)) {
+        setTemperature(config.readEntry(u"Temperature"_s, 0.8));
+    }
+    setSeed(config.readEntry(u"Seed"_s, 0));
+    setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
+}
+
+void OllamaCommonSettings::save(KConfigGroup &config)
+{
+    config.writeEntry(u"Name"_s, displayName());
+    config.writeEntry(u"CurrentModel"_s, currentModel());
+    config.writeEntry(u"Seed"_s, seed());
+    config.writeEntry(u"Temperature"_s, temperature());
+    config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
 }
 
 QDebug operator<<(QDebug d, const OllamaCommonSettings &t)

@@ -15,10 +15,12 @@ class TEXTAUTOGENERATEOLLAMAONLINE_EXPORT OllamaOnlineSettings : public OllamaCo
 {
 public:
     OllamaOnlineSettings();
-    ~OllamaOnlineSettings();
+    ~OllamaOnlineSettings() override;
 
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
 
 private:
     QUrl mServerUrl;

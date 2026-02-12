@@ -59,48 +59,29 @@ OllamaPlugin::~OllamaPlugin()
     delete mOllamaSettings;
 }
 
+void OllamaPlugin::slotOllamaStarted()
+{
+    Q_EMIT this->manager()->ollamaProcessOk(true);
+}
+
+void OllamaPlugin::slotOllamaFailed([[maybe_unused]] const QString &errorStr)
+{
+    Q_EMIT this->manager()->ollamaFailed();
+}
+
 void OllamaPlugin::slotOllamaRequested()
 {
-    auto job = new OllamaStartProcessJob(mOllamaManager, this);
-    connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
-        Q_EMIT this->manager()->ollamaProcessOk(true);
-    });
-    connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this]([[maybe_unused]] const QString &errorStr) {
-        Q_EMIT this->manager()->ollamaFailed();
-    });
-    job->start();
+    mOllamaManager->startOllama();
 }
 
 void OllamaPlugin::load(const KConfigGroup &config)
 {
-    mOllamaSettings->setDisplayName(config.readEntry(u"Name"_s));
-    mOllamaSettings->setSeed(config.readEntry(u"Seed"_s, 0));
-    if (config.hasKey(u"ServerUrl"_s)) {
-        mOllamaSettings->setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
-    }
-    if (config.hasKey(u"Temperature"_s)) {
-        mOllamaSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
-    }
-    mOllamaSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
-
-    mOllamaSettings->setOverrideGfxVersion(config.readEntry(u"OverrideGfxVersion"_s));
-    mOllamaSettings->setVulkanSupport(config.readEntry(u"VulkanSupport"_s));
-    mOllamaSettings->setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
-    mOllamaSettings->setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
+    mOllamaSettings->load(config);
 }
 
 void OllamaPlugin::save(KConfigGroup &config)
 {
-    config.writeEntry(u"Name"_s, mOllamaSettings->displayName());
-    config.writeEntry(u"Seed"_s, mOllamaSettings->seed());
-    config.writeEntry(u"ServerUrl"_s, mOllamaSettings->serverUrl());
-    config.writeEntry(u"Temperature"_s, mOllamaSettings->temperature());
-    config.writeEntry(u"CurrentModel"_s, mOllamaSettings->currentModel());
-
-    config.writeEntry(u"OverrideGfxVersion"_s, mOllamaSettings->overrideGfxVersion());
-    config.writeEntry(u"VulkanSupport"_s, mOllamaSettings->vulkanSupport());
-    config.writeEntry(u"RocrVisibleDevice"_s, mOllamaSettings->rocrVisibleDevice());
-    config.writeEntry(u"CudaVisibleDevice"_s, mOllamaSettings->cudaVisibleDevice());
+    mOllamaSettings->save(config);
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType OllamaPlugin::engineType() const

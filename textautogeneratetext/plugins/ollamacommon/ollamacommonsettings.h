@@ -10,11 +10,12 @@
 #include <QString>
 #include <QUrl>
 class QDebug;
+class KConfigGroup;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonSettings
 {
 public:
     OllamaCommonSettings();
-    ~OllamaCommonSettings();
+    virtual ~OllamaCommonSettings();
 
     [[nodiscard]] int seed() const;
     void setSeed(int newSeed);
@@ -30,6 +31,9 @@ public:
 
     [[nodiscard]] int keepAliveMinutes() const;
     void setKeepAliveMinutes(int newKeepAliveMinutes);
+
+    virtual void load(const KConfigGroup &config);
+    virtual void save(KConfigGroup &config);
 
 private:
     QString mDisplayName;

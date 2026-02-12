@@ -5,6 +5,7 @@
 */
 
 #include "ollamasettings.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <QDebug>
 #include <QProcessEnvironment>
@@ -108,4 +109,26 @@ QDebug operator<<(QDebug d, const OllamaSettings &t)
     d.space() << "seed:" << t.seed();
     d.space() << "temperature:" << t.temperature();
     return d;
+}
+
+void OllamaSettings::load(const KConfigGroup &config)
+{
+    OllamaCommonSettings::load(config);
+    if (config.hasKey(u"ServerUrl"_s)) {
+        setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
+    }
+    setOverrideGfxVersion(config.readEntry(u"OverrideGfxVersion"_s));
+    setVulkanSupport(config.readEntry(u"VulkanSupport"_s));
+    setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
+    setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
+    setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
+}
+
+void OllamaSettings::save(KConfigGroup &config)
+{
+    config.writeEntry(u"ServerUrl"_s, serverUrl());
+    config.writeEntry(u"OverrideGfxVersion"_s, overrideGfxVersion());
+    config.writeEntry(u"VulkanSupport"_s, vulkanSupport());
+    config.writeEntry(u"RocrVisibleDevice"_s, rocrVisibleDevice());
+    config.writeEntry(u"CudaVisibleDevice"_s, cudaVisibleDevice());
 }

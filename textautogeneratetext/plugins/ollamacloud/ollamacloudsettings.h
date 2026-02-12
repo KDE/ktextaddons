@@ -13,5 +13,8 @@ class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudSettings : public OllamaComm
 {
 public:
     OllamaCloudSettings();
-    ~OllamaCloudSettings();
+    ~OllamaCloudSettings() override;
+
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
 };

@@ -175,6 +175,12 @@ void OllamaConfigureWidget::loadSettings()
         .defaultModelPath = mManager->ollamaSettings()->defaultModelPath(),
     };
     mOllamaConfigureCustomizeWidget->setCustomizeInfo(info);
+
+    const OllamaCommonKeepAliveParametersWidget::KeepAliveInfo keepAliveInfo{
+        .minutes = mManager->ollamaSettings()->keepAliveMinutes(),
+        // TODO .seed = mManager->ollamaCloudSettings()->seed(),
+    };
+    mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
 }
 
 void OllamaConfigureWidget::saveSettings()
@@ -191,6 +197,9 @@ void OllamaConfigureWidget::saveSettings()
     mManager->ollamaSettings()->setOverrideGfxVersion(info.overrideGfxVersion);
     mManager->ollamaSettings()->setVulkanSupport(info.vulkanSupport);
     mManager->ollamaSettings()->setDefaultModelPath(info.defaultModelPath);
+
+    const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
+    mManager->ollamaSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
 }
 
 void OllamaConfigureWidget::fillModels()

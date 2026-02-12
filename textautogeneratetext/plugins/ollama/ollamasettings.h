@@ -16,7 +16,7 @@ class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaSettings : public OllamaCommonSettings
 {
 public:
     OllamaSettings();
-    ~OllamaSettings();
+    ~OllamaSettings() override;
 
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
@@ -37,6 +37,9 @@ public:
 
     [[nodiscard]] QString defaultModelPath() const;
     void setDefaultModelPath(const QString &newDefaultModelPath);
+
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
 
 private:
     QString mVulkanSupport;

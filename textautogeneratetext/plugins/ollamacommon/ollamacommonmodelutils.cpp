@@ -339,15 +339,20 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
 QList<OllamaCommonModelAvailableInfo>
 OllamaCommonModelUtils::extractAvailableModel(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &modelinfo)
 {
+    const static QRegularExpression reg(u":.*"_s);
     QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
     OllamaCommonModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {
         const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
         for (const auto &m : modelinfo.models) {
             for (const auto &availableModel : listAvailableModels) {
-                qDebug() << " m " << m << " availableModel.name() " << availableModel.name();
-                if (availableModel.name() == m.modelName) {
-                    displayAvailablesModels.append(availableModel);
+                // qDebug() << " m " << m << " availableModel.name() " << availableModel.name();
+                QString newName = m.modelName;
+                newName.remove(reg);
+                if (availableModel.name() == newName) {
+                    if (!displayAvailablesModels.contains(availableModel)) {
+                        displayAvailablesModels.append(availableModel);
+                    }
                     break;
                 }
             }

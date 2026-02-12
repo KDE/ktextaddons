@@ -48,11 +48,7 @@ OllamaOnlinePlugin::~OllamaOnlinePlugin()
 
 void OllamaOnlinePlugin::load(const KConfigGroup &config)
 {
-    mOllamaOnlineSettings->setDisplayName(config.readEntry(u"Name"_s));
-    if (config.hasKey(u"ServerUrl"_s)) {
-        mOllamaOnlineSettings->setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
-    }
-    mOllamaOnlineSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    mOllamaOnlineSettings->load(config);
     loadApiKey();
 }
 
@@ -63,9 +59,8 @@ QString OllamaOnlinePlugin::passwordServiceName() const
 
 void OllamaOnlinePlugin::save(KConfigGroup &config)
 {
-    config.writeEntry(u"Name"_s, mOllamaOnlineSettings->displayName());
-    config.writeEntry(u"ServerUrl"_s, mOllamaOnlineSettings->serverUrl());
-    config.writeEntry(u"CurrentModel"_s, mOllamaOnlineSettings->currentModel());
+    mOllamaOnlineSettings->save(config);
+
     auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
     connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         if (baseJob->error() != QKeychain::Error::NoError) {

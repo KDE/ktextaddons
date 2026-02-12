@@ -48,8 +48,7 @@ OllamaCloudPlugin::~OllamaCloudPlugin()
 
 void OllamaCloudPlugin::load(const KConfigGroup &config)
 {
-    mOllamaCloudSettings->setDisplayName(config.readEntry(u"Name"_s));
-    mOllamaCloudSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    mOllamaCloudSettings->load(config);
     loadApiKey();
 }
 
@@ -60,8 +59,7 @@ QString OllamaCloudPlugin::passwordServiceName() const
 
 void OllamaCloudPlugin::save(KConfigGroup &config)
 {
-    config.writeEntry(u"Name"_s, mOllamaCloudSettings->displayName());
-    config.writeEntry(u"CurrentModel"_s, mOllamaCloudSettings->currentModel());
+    mOllamaCloudSettings->save(config);
     auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
     connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         if (baseJob->error() != QKeychain::Error::NoError) {
