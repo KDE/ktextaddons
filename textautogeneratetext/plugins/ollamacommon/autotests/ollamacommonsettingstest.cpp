@@ -11,3 +11,5 @@ OllamaCommonSettingsTest::OllamaCommonSettingsTest(QObject *parent)
     : QObject{parent}
 {
 }
+
+#include "moc_ollamacommonsettingstest.cpp"

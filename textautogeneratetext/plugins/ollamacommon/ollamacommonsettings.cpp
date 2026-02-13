@@ -133,3 +133,5 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::convertKeepAliveTypeFr
     }
     return OllamaCommonSettings::KeepAliveType::Unknown;
 }
+
+#include "moc_ollamacommonsettings.cpp"
