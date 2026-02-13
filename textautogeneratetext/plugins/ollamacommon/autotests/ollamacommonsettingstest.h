@@ -13,4 +13,8 @@ class OllamaCommonSettingsTest : public QObject
 public:
     explicit OllamaCommonSettingsTest(QObject *parent = nullptr);
     ~OllamaCommonSettingsTest() override = default;
+
+private Q_SLOTS:
+    void shouldConvertKeepAliveTypeToString();
+    void shouldConvertKeepAliveTypeFromString();
 };
