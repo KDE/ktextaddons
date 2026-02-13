@@ -1,0 +1,16 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+
+#include <QObject>
+
+class OllamaCommonSettingsTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit OllamaCommonSettingsTest(QObject *parent = nullptr);
+    ~OllamaCommonSettingsTest() override = default;
+};

@@ -42,6 +42,7 @@ void OllamaCommonSettings::setTemperature(double newTemperature)
 {
     mTemperature = newTemperature;
 }
+
 QString OllamaCommonSettings::displayName() const
 {
     return mDisplayName;
@@ -71,6 +72,7 @@ void OllamaCommonSettings::load(const KConfigGroup &config)
     setSeed(config.readEntry(u"Seed"_s, 0));
     setCurrentModel(config.readEntry(u"CurrentModel"_s));
     setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
+    setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(config.readEntry(u"KeepAliveType"_s, {})));
 }
 
 void OllamaCommonSettings::save(KConfigGroup &config)
@@ -80,6 +82,7 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"Seed"_s, seed());
     config.writeEntry(u"Temperature"_s, temperature());
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
+    config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(KeepAliveType()));
 }
 
 OllamaCommonSettings::KeepAliveType OllamaCommonSettings::keepAliveType() const
@@ -101,4 +104,32 @@ QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
     d.space() << "keepAliveMinutes:" << t.keepAliveMinutes();
     d.space() << "keepAliveType:" << t.keepAliveType();
     return d;
+}
+
+QString OllamaCommonSettings::convertKeepAliveTypeToString(OllamaCommonSettings::KeepAliveType type)
+{
+    switch (type) {
+    case KeepAliveType::Unknown:
+        break;
+    case KeepAliveType::KeepAliveForever:
+        return u"KeepAliveForever"_s;
+    case KeepAliveType::UnloadAfterUse:
+        return u"UnloadAfterUse"_s;
+    case KeepAliveType::SetTimer:
+        return u"SetTimer"_s;
+    }
+
+    return {};
+}
+
+OllamaCommonSettings::KeepAliveType OllamaCommonSettings::convertKeepAliveTypeFromString(const QString &str)
+{
+    if (str == "KeepAliveForever"_L1) {
+        return OllamaCommonSettings::KeepAliveType::KeepAliveForever;
+    } else if (str == "UnloadAfterUse"_L1) {
+        return OllamaCommonSettings::KeepAliveType::UnloadAfterUse;
+    } else if (str == "SetTimer"_L1) {
+        return OllamaCommonSettings::KeepAliveType::SetTimer;
+    }
+    return OllamaCommonSettings::KeepAliveType::Unknown;
 }

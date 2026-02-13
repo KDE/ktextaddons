@@ -46,6 +46,9 @@ public:
     [[nodiscard]] OllamaCommonSettings::KeepAliveType keepAliveType() const;
     void setKeepAliveType(OllamaCommonSettings::KeepAliveType newKeepAliveType);
 
+    [[nodiscard]] static QString convertKeepAliveTypeToString(OllamaCommonSettings::KeepAliveType type);
+    [[nodiscard]] static OllamaCommonSettings::KeepAliveType convertKeepAliveTypeFromString(const QString &str);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
