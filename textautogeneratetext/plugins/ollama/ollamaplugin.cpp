@@ -13,7 +13,6 @@
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
-#include "ollamastartprocessjob.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;

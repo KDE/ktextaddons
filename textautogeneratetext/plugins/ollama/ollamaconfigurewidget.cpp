@@ -9,7 +9,6 @@
 #include "ollamacommonkeepaliveparameterswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
-#include "ollamastartprocessjob.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 
