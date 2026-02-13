@@ -9,6 +9,7 @@
 #include "ollamacommonkeepaliveparameterswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
+#include "ollamalogdialog.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 
@@ -24,6 +25,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPointer>
+#include <QPushButton>
 #include <QSpinBox>
 #include <TextAddonsWidgets/ExecutableUtils>
 
@@ -63,8 +65,18 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     formLayout->addRow(i18n("Server Url:"), mServerUrl);
     mServerUrl->setPlaceholderText(u"http://127.0.0.1:11434"_s);
 
+    auto ollamaWidget = new QWidget(this);
+    auto ollamaWidgetHboxLayout = new QHBoxLayout(ollamaWidget);
+
     mModelComboBoxWidget->setObjectName(u"mModelComboBoxWidget"_s);
-    formLayout->addRow(i18n("Model:"), mModelComboBoxWidget);
+
+    auto showLog = new QPushButton(i18n("Show Ollama Log"), this);
+    showLog->setObjectName(u"showLog"_s);
+    connect(showLog, &QPushButton::clicked, this, &OllamaConfigureWidget::slotShowOllamaLog);
+
+    ollamaWidgetHboxLayout->addWidget(mModelComboBoxWidget);
+    ollamaWidgetHboxLayout->addWidget(showLog);
+    formLayout->addRow(i18n("Model:"), ollamaWidget);
 
     mOllamaCommonOverrideParametersWidget->setObjectName(u"mOllamaCommonOverrideParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonOverrideParametersWidget);
@@ -205,6 +217,13 @@ void OllamaConfigureWidget::fillModels()
 {
     mMessageWidget->animatedHide();
     mManager->loadModels();
+}
+
+void OllamaConfigureWidget::slotShowOllamaLog()
+{
+    OllamaLogDialog dlg(this);
+    dlg.setLog(mManager->ollamaOutputData());
+    dlg.exec();
 }
 
 #include "moc_ollamaconfigurewidget.cpp"

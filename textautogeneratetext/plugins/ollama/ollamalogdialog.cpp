@@ -27,7 +27,8 @@ OllamaLogDialog::OllamaLogDialog(QWidget *parent)
     mainLayout->setObjectName(u"mainLayout"_s);
 
     mPlainTextEdit->setObjectName(u"mPlainTextEdit"_s);
-
+    mainLayout->addWidget(mPlainTextEdit);
+    mPlainTextEdit->setReadOnly(true);
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
