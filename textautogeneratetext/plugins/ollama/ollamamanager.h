@@ -56,6 +56,7 @@ public:
 
     [[nodiscard]] bool hasOcrSupport(const QString &modelName) const;
     [[nodiscard]] bool hasAudioSupport(const QString &modelName) const;
+    [[nodiscard]] QByteArray ollamaOutputData() const;
 
     void startOllama();
 Q_SIGNALS:

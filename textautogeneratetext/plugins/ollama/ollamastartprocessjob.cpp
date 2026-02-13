@@ -68,4 +68,9 @@ void OllamaStartProcessJob::slotReadStandardOutput()
     qDebug() << " mProcessOutputData " << mProcessOutputData;
 }
 
+QByteArray OllamaStartProcessJob::processOutputData() const
+{
+    return mProcessOutputData;
+}
+
 #include "moc_ollamastartprocessjob.cpp"

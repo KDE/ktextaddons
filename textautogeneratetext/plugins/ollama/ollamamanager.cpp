@@ -390,4 +390,12 @@ void OllamaManager::startOllama()
     }
 }
 
+QByteArray OllamaManager::ollamaOutputData() const
+{
+    if (mOllamaStartProcessJob) {
+        return mOllamaStartProcessJob->processOutputData();
+    }
+    return {};
+}
+
 #include "moc_ollamamanager.cpp"
