@@ -19,38 +19,53 @@ OllamaStartProcessJob::OllamaStartProcessJob(OllamaManager *manager, QObject *pa
 {
 }
 
-OllamaStartProcessJob::~OllamaStartProcessJob() = default;
+OllamaStartProcessJob::~OllamaStartProcessJob()
+{
+    if (mProcess) {
+        mProcess->kill();
+        mProcess->deleteLater();
+    }
+}
 
-void OllamaStartProcessJob::start()
+bool OllamaStartProcessJob::start()
 {
     const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama doesn't exist";
         Q_EMIT ollamaFailed(i18n("Ollama not found on system."));
         deleteLater();
-        return;
+        return false;
     }
     if (!mOllamaManager) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "OllamaManager is not defined";
         Q_EMIT ollamaFailed(i18n("Impossible to start Ollama."));
         deleteLater();
-        return;
+        return false;
     }
 
-    auto process = new QProcess(this);
-    process->setProgram(ollamaPath);
-    process->setArguments({u"start"_s});
+    mProcess = new QProcess(this);
+    mProcess->setProgram(ollamaPath);
+    mProcess->setArguments({u"start"_s});
     QProcessEnvironment envs = QProcessEnvironment::systemEnvironment();
     envs.insert(mOllamaManager->ollamaSettings()->processEnvironment());
-    process->setProcessEnvironment(envs);
-
-    if (process->startDetached()) {
+    mProcess->setProcessEnvironment(envs);
+    connect(mProcess, &QProcess::readyReadStandardOutput, this, &OllamaStartProcessJob::slotReadStandardOutput);
+    mProcess->start();
+    if (mProcess->waitForStarted()) {
         Q_EMIT ollamaStarted();
     } else {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to start ollama";
         Q_EMIT ollamaFailed(i18n("Impossible to start Ollama."));
+        deleteLater();
+        return false;
     }
-    deleteLater();
+    return true;
+}
+
+void OllamaStartProcessJob::slotReadStandardOutput()
+{
+    mProcessOutputData += mProcess->readAllStandardOutput();
+    qDebug() << " mProcessOutputData " << mProcessOutputData;
 }
 
 #include "moc_ollamastartprocessjob.cpp"

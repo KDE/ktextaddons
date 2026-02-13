@@ -15,6 +15,7 @@
 class QDebug;
 class OllamaCommonReply;
 class OllamaSettings;
+class OllamaStartProcessJob;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
@@ -70,6 +71,7 @@ private:
     QList<OllamaModelInstalledInfo> mInstalledInfos;
     QList<OllamaCommonModelAvailableInfo> mAvailableInfos;
     OllamaSettings *const mOllamaSettings;
+    OllamaStartProcessJob *mOllamaStartProcessJob = nullptr;
 };
 Q_DECLARE_TYPEINFO(OllamaManager::CreateModelInfo, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATEOLLAMA_EXPORT QDebug operator<<(QDebug d, const OllamaManager::CreateModelInfo &t);

@@ -8,6 +8,7 @@
 #include "textautogenerateollama_export.h"
 #include <QObject>
 class OllamaManager;
+class QProcess;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaStartProcessJob : public QObject
 {
     Q_OBJECT
@@ -15,12 +16,15 @@ public:
     explicit OllamaStartProcessJob(OllamaManager *manager, QObject *parent = nullptr);
     ~OllamaStartProcessJob() override;
 
-    void start();
+    [[nodiscard]] bool start();
 
 Q_SIGNALS:
     void ollamaStarted();
     void ollamaFailed(const QString &errorStr);
 
 private:
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotReadStandardOutput();
     OllamaManager *const mOllamaManager;
+    QProcess *mProcess = nullptr;
+    QByteArray mProcessOutputData;
 };

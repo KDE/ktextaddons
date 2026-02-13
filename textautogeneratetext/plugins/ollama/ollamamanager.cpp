@@ -385,7 +385,9 @@ void OllamaManager::startOllama()
     connect(job, &OllamaStartProcessJob::ollamaFailed, this, [this](const QString &errorStr) {
         Q_EMIT ollamaFailed(errorStr);
     });
-    job->start();
+    if (job->start()) {
+        mOllamaStartProcessJob = job;
+    }
 }
 
 #include "moc_ollamamanager.cpp"
