@@ -33,6 +33,8 @@ target_sources(
         ollamasettings.cpp
         ollamastartprocessjob.h
         ollamastartprocessjob.cpp
+        ollamalogdialog.h
+        ollamalogdialog.cpp
         textautogenerateollama_private_export.h
         modelsmanager/ollamamodelavailablewidget.h
         modelsmanager/ollamamodelavailablewidget.cpp
