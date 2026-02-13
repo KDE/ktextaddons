@@ -5,6 +5,7 @@
 */
 #include "ollamalogdialogtest.h"
 #include "ollamalogdialog.h"
+#include "ollamalogtextedit.h"
 #include <QDialogButtonBox>
 #include <QStandardPaths>
 #include <QTest>
@@ -23,6 +24,9 @@ void OllamaLogDialogTest::shouldHaveDefaultValue()
     QVERIFY(!w.windowTitle().isEmpty());
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
+
+    auto mPlainTextEdit = w.findChild<OllamaLogTextEdit *>(u"mPlainTextEdit"_s);
+    QVERIFY(mPlainTextEdit);
 
     auto buttonBox = w.findChild<QDialogButtonBox *>(u"button"_s);
     QVERIFY(buttonBox);
