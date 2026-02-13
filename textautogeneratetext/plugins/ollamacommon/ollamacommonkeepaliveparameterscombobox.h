@@ -6,6 +6,7 @@
 
 #pragma once
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include "ollamacommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
 #include <QComboBox>
 
@@ -16,8 +17,8 @@ public:
     explicit OllamaCommonKeepAliveParametersComboBox(QWidget *parent = nullptr);
     ~OllamaCommonKeepAliveParametersComboBox() override;
 
-    [[nodiscard]] OllamaCommonKeepAliveParametersWidget::KeepAliveType keepAliveType() const;
-    void setKeepAliveType(OllamaCommonKeepAliveParametersWidget::KeepAliveType type);
+    [[nodiscard]] OllamaCommonSettings::KeepAliveType keepAliveType() const;
+    void setKeepAliveType(OllamaCommonSettings::KeepAliveType type);
 
 private:
     TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void fill();

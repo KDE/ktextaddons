@@ -16,17 +16,17 @@ OllamaCommonKeepAliveParametersComboBox::~OllamaCommonKeepAliveParametersComboBo
 
 void OllamaCommonKeepAliveParametersComboBox::fill()
 {
-    addItem(i18n("Keep Alive Presets"), QVariant::fromValue(OllamaCommonKeepAliveParametersWidget::KeepAliveType::SetTimer));
-    addItem(i18n("Keep Alive Forever"), QVariant::fromValue(OllamaCommonKeepAliveParametersWidget::KeepAliveType::KeepAliveForever));
-    addItem(i18n("Unload After Use"), QVariant::fromValue(OllamaCommonKeepAliveParametersWidget::KeepAliveType::UnloadAfterUse));
+    addItem(i18n("Keep Alive Presets"), QVariant::fromValue(OllamaCommonSettings::KeepAliveType::SetTimer));
+    addItem(i18n("Keep Alive Forever"), QVariant::fromValue(OllamaCommonSettings::KeepAliveType::KeepAliveForever));
+    addItem(i18n("Unload After Use"), QVariant::fromValue(OllamaCommonSettings::KeepAliveType::UnloadAfterUse));
 }
 
-OllamaCommonKeepAliveParametersWidget::KeepAliveType OllamaCommonKeepAliveParametersComboBox::keepAliveType() const
+OllamaCommonSettings::KeepAliveType OllamaCommonKeepAliveParametersComboBox::keepAliveType() const
 {
-    return currentData().value<OllamaCommonKeepAliveParametersWidget::KeepAliveType>();
+    return currentData().value<OllamaCommonSettings::KeepAliveType>();
 }
 
-void OllamaCommonKeepAliveParametersComboBox::setKeepAliveType(OllamaCommonKeepAliveParametersWidget::KeepAliveType type)
+void OllamaCommonKeepAliveParametersComboBox::setKeepAliveType(OllamaCommonSettings::KeepAliveType type)
 {
     const int index = findData(QVariant::fromValue(type));
     if (index != -1) {

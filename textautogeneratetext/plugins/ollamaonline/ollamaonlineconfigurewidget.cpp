@@ -110,8 +110,8 @@ void OllamaOnlineConfigureWidget::loadSettings()
     };
     mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
     const OllamaCommonKeepAliveParametersWidget::KeepAliveInfo keepAliveInfo{
+        .keepAliveType = mManager->ollamaOnlineSettings()->keepAliveType(),
         .minutes = mManager->ollamaOnlineSettings()->keepAliveMinutes(),
-        // TODO .seed = mManager->ollamaCloudSettings()->seed(),
     };
     mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
 }
@@ -126,6 +126,7 @@ void OllamaOnlineConfigureWidget::saveSettings()
     mManager->ollamaOnlineSettings()->setSeed(parametersInfo.seed);
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
     mManager->ollamaOnlineSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
+    mManager->ollamaOnlineSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
 }
 
 #include "moc_ollamaonlineconfigurewidget.cpp"

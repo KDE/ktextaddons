@@ -44,7 +44,7 @@ OllamaCommonKeepAliveParametersWidget::~OllamaCommonKeepAliveParametersWidget() 
 
 void OllamaCommonKeepAliveParametersWidget::slotKeepAliveChanged()
 {
-    mKeepAliveMinutes->setEnabled(mOllamaCommonKeepAliveParametersComboBox->keepAliveType() == OllamaCommonKeepAliveParametersWidget::KeepAliveType::SetTimer);
+    mKeepAliveMinutes->setEnabled(mOllamaCommonKeepAliveParametersComboBox->keepAliveType() == OllamaCommonSettings::KeepAliveType::SetTimer);
 }
 
 OllamaCommonKeepAliveParametersWidget::KeepAliveInfo OllamaCommonKeepAliveParametersWidget::keepAliveInfo() const
