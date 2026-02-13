@@ -65,7 +65,7 @@ bool OllamaStartProcessJob::start()
 void OllamaStartProcessJob::slotReadStandardOutput()
 {
     mProcessOutputData += mProcess->readAllStandardOutput();
-    qDebug() << " mProcessOutputData " << mProcessOutputData;
+    // qDebug() << " mProcessOutputData " << mProcessOutputData;
 }
 
 QByteArray OllamaStartProcessJob::processOutputData() const
