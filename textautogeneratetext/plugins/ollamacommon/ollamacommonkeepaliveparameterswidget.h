@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "ollamacommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
 class QSpinBox;
@@ -13,16 +14,8 @@ class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonKeepAliveParametersWidget 
 {
     Q_OBJECT
 public:
-    enum class KeepAliveType : uint8_t {
-        Unknown = 0,
-        KeepAliveForever,
-        UnloadAfterUse,
-        SetTimer,
-    };
-    Q_ENUM(KeepAliveType)
-
     struct KeepAliveInfo {
-        KeepAliveType keepAliveType = KeepAliveType::Unknown;
+        OllamaCommonSettings::KeepAliveType keepAliveType = OllamaCommonSettings::KeepAliveType::Unknown;
         int minutes = 1;
     };
 
@@ -37,4 +30,3 @@ private:
     OllamaCommonKeepAliveParametersComboBox *const mOllamaCommonKeepAliveParametersComboBox;
     QSpinBox *const mKeepAliveMinutes;
 };
-Q_DECLARE_TYPEINFO(OllamaCommonKeepAliveParametersWidget::KeepAliveType, Q_RELOCATABLE_TYPE);
