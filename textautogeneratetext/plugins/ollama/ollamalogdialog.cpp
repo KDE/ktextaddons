@@ -5,6 +5,7 @@
 */
 
 #include "ollamalogdialog.h"
+#include "ollamalogtextedit.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -20,7 +21,7 @@ const char myOllamaLogDialogGroupName[] = "OllamaLogDialog";
 using namespace Qt::Literals::StringLiterals;
 OllamaLogDialog::OllamaLogDialog(QWidget *parent)
     : QDialog(parent)
-    , mPlainTextEdit(new QPlainTextEdit(this))
+    , mPlainTextEdit(new OllamaLogTextEdit(this))
 {
     setWindowTitle(i18nc("@title:window", "Ollama Log"));
     auto mainLayout = new QVBoxLayout(this);
@@ -28,7 +29,7 @@ OllamaLogDialog::OllamaLogDialog(QWidget *parent)
 
     mPlainTextEdit->setObjectName(u"mPlainTextEdit"_s);
     mainLayout->addWidget(mPlainTextEdit);
-    mPlainTextEdit->setReadOnly(true);
+
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);

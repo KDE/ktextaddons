@@ -5,10 +5,10 @@
 */
 
 #pragma once
-
+#include "textautogenerateollama_private_export.h"
 #include <QDialog>
-class QPlainTextEdit;
-class OllamaLogDialog : public QDialog
+class OllamaLogTextEdit;
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaLogDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -20,5 +20,5 @@ public:
 private:
     void readConfig();
     void writeConfig();
-    QPlainTextEdit *const mPlainTextEdit;
+    OllamaLogTextEdit *const mPlainTextEdit;
 };
