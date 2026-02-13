@@ -13,7 +13,15 @@ class QDebug;
 class KConfigGroup;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonSettings
 {
+    Q_GADGET
 public:
+    enum class KeepAliveType : uint8_t {
+        Unknown = 0,
+        KeepAliveForever,
+        UnloadAfterUse,
+        SetTimer,
+    };
+    Q_ENUM(KeepAliveType)
     OllamaCommonSettings();
     virtual ~OllamaCommonSettings();
 
@@ -35,11 +43,15 @@ public:
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
 
+    [[nodiscard]] OllamaCommonSettings::KeepAliveType keepAliveType() const;
+    void setKeepAliveType(OllamaCommonSettings::KeepAliveType newKeepAliveType);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
     int mSeed = 0;
     double mTemperature = 0.8;
     int mKeepAliveMinutes = 1;
+    OllamaCommonSettings::KeepAliveType mKeepAliveType = KeepAliveType::Unknown;
 };
 TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonSettings &t);

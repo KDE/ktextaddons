@@ -82,6 +82,16 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
 }
 
+OllamaCommonSettings::KeepAliveType OllamaCommonSettings::keepAliveType() const
+{
+    return mKeepAliveType;
+}
+
+void OllamaCommonSettings::setKeepAliveType(OllamaCommonSettings::KeepAliveType newKeepAliveType)
+{
+    mKeepAliveType = newKeepAliveType;
+}
+
 QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
 {
     d.space() << "displayName:" << t.displayName();
@@ -89,5 +99,6 @@ QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
     d.space() << "temperature:" << t.temperature();
     d.space() << "seed:" << t.seed();
     d.space() << "keepAliveMinutes:" << t.keepAliveMinutes();
+    d.space() << "keepAliveType:" << t.keepAliveType();
     return d;
 }
