@@ -24,7 +24,7 @@ void OllamaLogDialogTest::shouldHaveDefaultValue()
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(u"box"_s);
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"button"_s);
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Close});
 }
