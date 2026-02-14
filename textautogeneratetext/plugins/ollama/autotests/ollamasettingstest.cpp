@@ -29,6 +29,8 @@ void OllamaSettingsTest::shouldHaveDefaultValues()
     QVERIFY(w.cudaVisibleDevice().isEmpty());
     QVERIFY(w.defaultModelPath().isEmpty());
     QCOMPARE(w.serverUrl(), QUrl(u"http://127.0.0.1:11434"_s));
+    QVERIFY(!w.expose());
+    QCOMPARE(w.ollamaExpose(), u"chrome-extension://*,moz-extension://*,safari-web-extension://*,http://0.0.0.0,http://127.0.0.1"_s);
 }
 
 void OllamaSettingsTest::shouldGenerateQProcessEnvironment()

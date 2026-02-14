@@ -41,6 +41,11 @@ public:
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
 
+    [[nodiscard]] bool expose() const;
+    void setExpose(bool newExpose);
+
+    [[nodiscard]] QString ollamaExpose() const;
+
 private:
     QString mVulkanSupport;
     QString mOverrideGfxVersion;
@@ -49,5 +54,6 @@ private:
     QString mDisplayName;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
     QString mDefaultModelPath;
+    bool mExpose = false;
 };
 TEXTAUTOGENERATEOLLAMA_EXPORT QDebug operator<<(QDebug d, const OllamaSettings &t);

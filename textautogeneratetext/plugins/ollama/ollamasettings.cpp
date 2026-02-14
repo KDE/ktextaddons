@@ -83,6 +83,7 @@ QProcessEnvironment OllamaSettings::processEnvironment() const
     if (!mDefaultModelPath.isEmpty()) {
         environment.insert(u"OLLAMA_MODELS"_s, mDefaultModelPath);
     }
+    if (mExpose) { }
     // TODO add OLLAMA_ORIGINS/OLLAMA_HOST
     return environment;
 }
@@ -109,6 +110,7 @@ QDebug operator<<(QDebug d, const OllamaSettings &t)
     d.space() << "currentModel:" << t.currentModel();
     d.space() << "seed:" << t.seed();
     d.space() << "temperature:" << t.temperature();
+    d.space() << "expose:" << t.expose();
     return d;
 }
 
@@ -122,7 +124,7 @@ void OllamaSettings::load(const KConfigGroup &config)
     setVulkanSupport(config.readEntry(u"VulkanSupport"_s));
     setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
     setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
-    setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
+    setExpose(config.readEntry(u"Expose"_s, false));
 }
 
 void OllamaSettings::save(KConfigGroup &config)
@@ -132,4 +134,20 @@ void OllamaSettings::save(KConfigGroup &config)
     config.writeEntry(u"VulkanSupport"_s, vulkanSupport());
     config.writeEntry(u"RocrVisibleDevice"_s, rocrVisibleDevice());
     config.writeEntry(u"CudaVisibleDevice"_s, cudaVisibleDevice());
+    config.writeEntry(u"Expose"_s, expose());
+}
+
+bool OllamaSettings::expose() const
+{
+    return mExpose;
+}
+
+void OllamaSettings::setExpose(bool newExpose)
+{
+    mExpose = newExpose;
+}
+
+QString OllamaSettings::ollamaExpose() const
+{
+    return u"chrome-extension://*,moz-extension://*,safari-web-extension://*,http://0.0.0.0,http://127.0.0.1"_s;
 }
