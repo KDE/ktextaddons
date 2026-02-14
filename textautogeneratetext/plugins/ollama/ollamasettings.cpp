@@ -83,8 +83,12 @@ QProcessEnvironment OllamaSettings::processEnvironment() const
     if (!mDefaultModelPath.isEmpty()) {
         environment.insert(u"OLLAMA_MODELS"_s, mDefaultModelPath);
     }
-    if (mExpose) { }
-    // TODO add OLLAMA_ORIGINS/OLLAMA_HOST
+    if (mExpose) {
+        environment.insert(u"OLLAMA_ORIGINS"_s, ollamaExpose());
+    } else {
+        environment.insert(u"OLLAMA_ORIGINS"_s, serverUrl().toDisplayString());
+    }
+    environment.insert(u"OLLAMA_HOST"_s, serverUrl().toDisplayString());
     return environment;
 }
 
