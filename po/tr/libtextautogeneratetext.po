@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-13 00:42+0000\n"
+"POT-Creation-Date: 2026-02-14 00:42+0000\n"
 "PO-Revision-Date: 2026-02-12 21:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -331,7 +331,7 @@ msgid "Base:"
 msgstr "Temel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:53
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:54
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
@@ -508,25 +508,30 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modeller Oluştur"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
 #, kde-format
 msgid "Server Url:"
 msgstr "Sunucu URL’si:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#, kde-format
+msgid "Show Ollama Log"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:79
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:87
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama’yı Özelleştir"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:86
+#: plugins/ollama/ollamaconfigurewidget.cpp:97
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -535,25 +540,32 @@ msgstr ""
 "Bu girdiler isteğe bağlıdır, Ollama’nın GPU ile ilişkin sorunlarını "
 "tanılamak için kullanılırlar."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:152
+#: plugins/ollama/ollamaconfigurewidget.cpp:163
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama başlatılamadı"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamalogdialog.cpp:26
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgctxt "@title:window"
+msgid "Ollama Log"
+msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:29
+#: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
 msgid "Ollama not found on system."
 msgstr "Ollama sistemde bulunamadı."
 
-#: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:51
+#: plugins/ollama/ollamastartprocessjob.cpp:41
+#: plugins/ollama/ollamastartprocessjob.cpp:58
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Ollama’yı başlatmak olanaksız."

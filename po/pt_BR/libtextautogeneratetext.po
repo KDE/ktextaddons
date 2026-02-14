@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-13 00:42+0000\n"
-"PO-Revision-Date: 2026-02-12 08:11-0300\n"
+"POT-Creation-Date: 2026-02-14 00:42+0000\n"
+"PO-Revision-Date: 2026-02-13 09:14-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -333,7 +333,7 @@ msgid "Base:"
 msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:53
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:54
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
@@ -510,25 +510,30 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Criar modelos"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
 #, kde-format
 msgid "Server Url:"
 msgstr "URL do servidor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#, kde-format
+msgid "Show Ollama Log"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:79
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "Modelo:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:87
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Personalizar Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:86
+#: plugins/ollama/ollamaconfigurewidget.cpp:97
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -537,25 +542,32 @@ msgstr ""
 "Essas entradas são opcionais e são usadas para solucionar problemas "
 "relacionados à GPU com o Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:152
+#: plugins/ollama/ollamaconfigurewidget.cpp:163
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Falha ao iniciar o Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamalogdialog.cpp:26
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgctxt "@title:window"
+msgid "Ollama Log"
+msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:29
+#: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
 msgid "Ollama not found on system."
 msgstr "Ollama não encontrado no sistema."
 
-#: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:51
+#: plugins/ollama/ollamastartprocessjob.cpp:41
+#: plugins/ollama/ollamastartprocessjob.cpp:58
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Impossível iniciar o Ollama."
@@ -592,28 +604,28 @@ msgstr "Recarregar modelo"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr ""
+msgstr "Predefinições para manter carregado"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr ""
+msgstr "Manter carregado sempre"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr ""
+msgstr "Descarregar após uso"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr ""
+msgstr "Manter carregado"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "Como a instância deve lidar com modelos ociosos"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -621,16 +633,18 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
+"O período de tempo que a instância deve manter os modelos carregados após "
+"ficarem ociosos."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr ""
+msgstr "Predefinições:"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr ""
+msgstr "Minutos:"
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format

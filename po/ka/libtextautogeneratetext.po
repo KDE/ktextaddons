@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-13 00:42+0000\n"
-"PO-Revision-Date: 2026-02-12 05:28+0100\n"
+"POT-Creation-Date: 2026-02-14 00:42+0000\n"
+"PO-Revision-Date: 2026-02-13 05:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -333,7 +333,7 @@ msgid "Base:"
 msgstr "ბაზა:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:60
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:53
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:54
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
@@ -510,25 +510,30 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "მოდელების შექმნა"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
 #, kde-format
 msgid "Server Url:"
 msgstr "სერვერის URL:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#, kde-format
+msgid "Show Ollama Log"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:79
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "მოდელი:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:87
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:86
+#: plugins/ollama/ollamaconfigurewidget.cpp:97
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -537,25 +542,32 @@ msgstr ""
 "ეს ჩანაწერები არასავალდებულოა. ისინი გამოიყენება GPU-თან დაკავშირებული "
 "პრობლემების გადასაჭრელად Ollama-ის გამოყენებისას."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:152
+#: plugins/ollama/ollamaconfigurewidget.cpp:163
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama-ის გაშვება ჩავარდა"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamalogdialog.cpp:26
+#, fuzzy, kde-format
+#| msgid "Ollama"
+msgctxt "@title:window"
+msgid "Ollama Log"
+msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamastartprocessjob.cpp:29
+#: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
 msgid "Ollama not found on system."
 msgstr "სისტემაში Ollama აღმოჩენილი არაა."
 
-#: plugins/ollama/ollamastartprocessjob.cpp:35
-#: plugins/ollama/ollamastartprocessjob.cpp:51
+#: plugins/ollama/ollamastartprocessjob.cpp:41
+#: plugins/ollama/ollamastartprocessjob.cpp:58
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Ollama-ის გაშვება შეუძლებელია."
@@ -592,28 +604,28 @@ msgstr "მოდელის თავიდან ჩატვირთვა"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr ""
+msgstr "პრესეტების ცოცხლად შენარჩუნება"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr ""
+msgstr "სამუდამოდ ცოცხლად შენარჩუნება"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr ""
+msgstr "გამოტვირთვა გამოყენების შემდეგ"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr ""
+msgstr "ცოცხლად შენარჩუნება"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "როგორ მოიქცევა გაშვებული ასლი უქმე მოდელებთან"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -621,16 +633,18 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
+"დროის რაოდენობა რომლის განმავლობაშიც გაშვებული ასლი მოდელებს ჩატვირთულად "
+"შეინარჩუნებს მას შემდეგ, რაც ისინი უქმე გახდებიან."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr ""
+msgstr "პრესეტები:"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr ""
+msgstr "წუთი:"
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
