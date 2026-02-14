@@ -30,4 +30,15 @@ void OllamaCommonSettingsTest::shouldConvertKeepAliveTypeFromString()
     QCOMPARE(OllamaCommonSettings::convertKeepAliveTypeFromString({}), OllamaCommonSettings::KeepAliveType::Unknown);
 }
 
+void OllamaCommonSettingsTest::shouldHaveDefaultValues()
+{
+    const OllamaCommonSettings s;
+    QCOMPARE(s.seed(), 0);
+    QCOMPARE(s.contextWindowSize(), 16384);
+    QCOMPARE(s.keepAliveMinutes(), 1);
+    QVERIFY(s.currentModel().isEmpty());
+    QVERIFY(s.displayName().isEmpty());
+    QCOMPARE(s.keepAliveType(), OllamaCommonSettings::KeepAliveType::Unknown);
+}
+
 #include "moc_ollamacommonsettingstest.cpp"

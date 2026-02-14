@@ -72,6 +72,7 @@ void OllamaCommonSettings::load(const KConfigGroup &config)
     setSeed(config.readEntry(u"Seed"_s, 0));
     setCurrentModel(config.readEntry(u"CurrentModel"_s));
     setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
+    setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, 16384));
     setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(config.readEntry(u"KeepAliveType"_s, {})));
 }
 
@@ -82,6 +83,7 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"Seed"_s, seed());
     config.writeEntry(u"Temperature"_s, temperature());
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
+    config.writeEntry(u"ContextWindowSize"_s, contextWindowSize());
     config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(KeepAliveType()));
 }
 
@@ -103,6 +105,7 @@ QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
     d.space() << "seed:" << t.seed();
     d.space() << "keepAliveMinutes:" << t.keepAliveMinutes();
     d.space() << "keepAliveType:" << t.keepAliveType();
+    d.space() << "contextWindowSize:" << t.contextWindowSize();
     return d;
 }
 
@@ -132,6 +135,16 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::convertKeepAliveTypeFr
         return OllamaCommonSettings::KeepAliveType::SetTimer;
     }
     return OllamaCommonSettings::KeepAliveType::Unknown;
+}
+
+qint64 OllamaCommonSettings::contextWindowSize() const
+{
+    return mContextWindowSize;
+}
+
+void OllamaCommonSettings::setContextWindowSize(qint64 newContextWindowSize)
+{
+    mContextWindowSize = newContextWindowSize;
 }
 
 #include "moc_ollamacommonsettings.cpp"

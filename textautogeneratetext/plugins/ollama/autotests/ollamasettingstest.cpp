@@ -41,15 +41,22 @@ void OllamaSettingsTest::shouldGenerateQProcessEnvironment()
         w.setRocrVisibleDevice(u"bla1"_s);
         w.setVulkanSupport(u"kde1"_s);
         w.setOverrideGfxVersion(u"kf6"_s);
-        const QStringList variables{
-            {u"CUDA_VISIBLE_DEVICES=foo1"_s, u"HSA_OVERRIDE_GFX_VERSION=kf6"_s, u"OLLAMA_VULKAN=kde1"_s, u"ROCR_VISIBLE_DEVICES=bla1"_s}};
+        const QStringList variables{{u"CUDA_VISIBLE_DEVICES=foo1"_s,
+                                     u"HSA_OVERRIDE_GFX_VERSION=kf6"_s,
+                                     u"OLLAMA_HOST=http://127.0.0.1:11434"_s,
+                                     u"OLLAMA_ORIGINS=http://127.0.0.1:11434"_s,
+                                     u"OLLAMA_VULKAN=kde1"_s,
+                                     u"ROCR_VISIBLE_DEVICES=bla1"_s}};
         QCOMPARE(w.processEnvironment().toStringList(), variables);
     }
     {
         OllamaSettings w;
         w.setRocrVisibleDevice(u"bla1"_s);
         w.setOverrideGfxVersion(u"kf6"_s);
-        const QStringList variables{{u"HSA_OVERRIDE_GFX_VERSION=kf6"_s, u"ROCR_VISIBLE_DEVICES=bla1"_s}};
+        const QStringList variables{{u"HSA_OVERRIDE_GFX_VERSION=kf6"_s,
+                                     u"OLLAMA_HOST=http://127.0.0.1:11434"_s,
+                                     u"OLLAMA_ORIGINS=http://127.0.0.1:11434"_s,
+                                     u"ROCR_VISIBLE_DEVICES=bla1"_s}};
         QCOMPARE(w.processEnvironment().toStringList(), variables);
     }
 }

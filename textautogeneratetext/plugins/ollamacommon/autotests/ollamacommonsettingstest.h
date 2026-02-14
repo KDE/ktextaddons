@@ -17,4 +17,5 @@ public:
 private Q_SLOTS:
     void shouldConvertKeepAliveTypeToString();
     void shouldConvertKeepAliveTypeFromString();
+    void shouldHaveDefaultValues();
 };

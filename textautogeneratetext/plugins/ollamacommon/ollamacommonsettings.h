@@ -49,12 +49,16 @@ public:
     [[nodiscard]] static QString convertKeepAliveTypeToString(OllamaCommonSettings::KeepAliveType type);
     [[nodiscard]] static OllamaCommonSettings::KeepAliveType convertKeepAliveTypeFromString(const QString &str);
 
+    [[nodiscard]] qint64 contextWindowSize() const;
+    void setContextWindowSize(qint64 newContextWindowSize);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
     int mSeed = 0;
     double mTemperature = 0.8;
     int mKeepAliveMinutes = 1;
+    qint64 mContextWindowSize = 16384;
     OllamaCommonSettings::KeepAliveType mKeepAliveType = KeepAliveType::Unknown;
 };
 TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonSettings &t);
