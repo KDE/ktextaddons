@@ -50,6 +50,7 @@ bool OllamaStartProcessJob::start()
     envs.insert(mOllamaManager->ollamaSettings()->processEnvironment());
     mProcess->setProcessEnvironment(envs);
     connect(mProcess, &QProcess::readyReadStandardOutput, this, &OllamaStartProcessJob::slotReadStandardOutput);
+    connect(mProcess, &QProcess::readyReadStandardError, this, &OllamaStartProcessJob::slotReadStandardOutput);
     mProcess->start();
     if (mProcess->waitForStarted()) {
         Q_EMIT ollamaStarted();
