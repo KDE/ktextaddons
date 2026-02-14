@@ -17,7 +17,7 @@ OllamaSettingsTest::OllamaSettingsTest(QObject *parent)
 
 void OllamaSettingsTest::shouldHaveDefaultValues()
 {
-    OllamaSettings w;
+    const OllamaSettings w;
     QCOMPARE(w.seed(), 0);
     QCOMPARE(w.temperature(), 0.8);
 
