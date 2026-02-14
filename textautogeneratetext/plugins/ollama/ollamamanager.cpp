@@ -281,6 +281,20 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }
+    switch (mOllamaSettings->keepAliveType()) {
+    case OllamaSettings::KeepAliveType::KeepAliveForever:
+        data["keep_alive"_L1] = -1;
+        break;
+    case OllamaSettings::KeepAliveType::SetTimer:
+        data["keep_alive"_L1] = mOllamaSettings->keepAliveMinutes() * 60;
+        break;
+    case OllamaSettings::KeepAliveType::UnloadAfterUse:
+        data["keep_alive"_L1] = 1;
+        break;
+    case OllamaSettings::KeepAliveType::Unknown:
+        break;
+    }
+
     qDebug() << " OllamaManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{

@@ -182,6 +182,19 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     if (mOllamaCloudSettings->seed() != 0) {
         data["seed"_L1] = mOllamaCloudSettings->seed();
     }
+    switch (mOllamaCloudSettings->keepAliveType()) {
+    case OllamaCommonSettings::KeepAliveType::KeepAliveForever:
+        data["keep_alive"_L1] = -1;
+        break;
+    case OllamaCommonSettings::KeepAliveType::SetTimer:
+        data["keep_alive"_L1] = mOllamaCloudSettings->keepAliveMinutes() * 60;
+        break;
+    case OllamaCommonSettings::KeepAliveType::UnloadAfterUse:
+        data["keep_alive"_L1] = 1;
+        break;
+    case OllamaCommonSettings::KeepAliveType::Unknown:
+        break;
+    }
     qDebug() << " OllamaCloudManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
