@@ -30,8 +30,20 @@ void OllamaCommonOverrideParametersWidgetTest::shouldHaveDefaultValues()
 
     auto mTemperature = w.findChild<QDoubleSpinBox *>(u"mTemperature"_s);
     QVERIFY(mTemperature);
+    QCOMPARE(mTemperature->singleStep(), 0.01);
+    QCOMPARE(mTemperature->minimum(), 0.0);
+    QCOMPARE(mTemperature->maximum(), 10.0);
 
     auto mSeed = w.findChild<QSpinBox *>(u"mSeed"_s);
     QVERIFY(mSeed);
+    QCOMPARE(mSeed->singleStep(), 1);
+    QCOMPARE(mSeed->minimum(), 0);
+    QCOMPARE(mSeed->maximum(), 10);
+
+    auto mContextWindowSize = w.findChild<QSpinBox *>(u"mContextWindowSize"_s);
+    QVERIFY(mContextWindowSize);
+    QCOMPARE(mContextWindowSize->singleStep(), 1);
+    QCOMPARE(mContextWindowSize->minimum(), 1);
+    QCOMPARE(mContextWindowSize->maximum(), 999999);
 }
 #include "moc_ollamacommonoverrideparameterswidgettest.cpp"

@@ -27,5 +27,6 @@ public:
 private:
     QDoubleSpinBox *const mTemperature;
     QSpinBox *const mSeed;
+    QSpinBox *const mContextWindowSize;
 };
 Q_DECLARE_TYPEINFO(OllamaCommonOverrideParametersWidget::OverrideParametersInfo, Q_RELOCATABLE_TYPE);

@@ -17,6 +17,7 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
     : QWidget{parent}
     , mTemperature(new QDoubleSpinBox(this))
     , mSeed(new QSpinBox(this))
+    , mContextWindowSize(new QSpinBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -38,13 +39,17 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
     groupCustomizeGroupboxLayout->addRow(i18n("Temperature:"), mTemperature);
 
     mSeed->setObjectName(u"mSeed"_s);
-
     mSeed->setToolTip(i18nc("@info:tooltip",
                             "Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text "
                             "for the same prompt. (Default: 0)"));
     mSeed->setRange(0, 10);
     mSeed->setSingleStep(1);
-    groupCustomizeGroupboxLayout->addRow(i18n("Seed:"), mSeed);
+
+    mContextWindowSize->setObjectName(u"mContextWindowSize"_s);
+    mContextWindowSize->setToolTip(i18nc("@info:tooltip", "Controls how many token (piece of text) the model can process and remember at once."));
+    mContextWindowSize->setRange(1, 999999);
+    mContextWindowSize->setSingleStep(1);
+    groupCustomizeGroupboxLayout->addRow(i18n("Context Window Size:"), mContextWindowSize);
 }
 
 OllamaCommonOverrideParametersWidget::~OllamaCommonOverrideParametersWidget() = default;
