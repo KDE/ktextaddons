@@ -15,6 +15,7 @@ public:
     struct OverrideParametersInfo {
         double temperature = 0.0;
         int seed = 1.0;
+        qint64 contextWindowSize = 16384;
     };
 
     explicit OllamaCommonOverrideParametersWidget(QWidget *parent = nullptr);

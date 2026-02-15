@@ -100,6 +100,7 @@ void OllamaCloudConfigureWidget::loadSettings()
     const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
         .temperature = mManager->ollamaCloudSettings()->temperature(),
         .seed = mManager->ollamaCloudSettings()->seed(),
+        .contextWindowSize = mManager->ollamaCloudSettings()->contextWindowSize(),
     };
     mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
 
@@ -117,6 +118,7 @@ void OllamaCloudConfigureWidget::saveSettings()
     const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
     mManager->ollamaCloudSettings()->setTemperature(parametersInfo.temperature);
     mManager->ollamaCloudSettings()->setSeed(parametersInfo.seed);
+    mManager->ollamaCloudSettings()->setContextWindowSize(parametersInfo.contextWindowSize);
 
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
     mManager->ollamaCloudSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);

@@ -59,6 +59,7 @@ void OllamaCommonOverrideParametersWidget::setParametersInfo(const OverrideParam
 {
     mTemperature->setValue(info.temperature);
     mSeed->setValue(info.seed);
+    mContextWindowSize->setValue(info.contextWindowSize);
 }
 
 OllamaCommonOverrideParametersWidget::OverrideParametersInfo OllamaCommonOverrideParametersWidget::parametersInfo() const
@@ -66,6 +67,7 @@ OllamaCommonOverrideParametersWidget::OverrideParametersInfo OllamaCommonOverrid
     const OllamaCommonOverrideParametersWidget::OverrideParametersInfo info{
         .temperature = mTemperature->value(),
         .seed = mSeed->value(),
+        .contextWindowSize = mContextWindowSize->value(),
     };
     return info;
 }

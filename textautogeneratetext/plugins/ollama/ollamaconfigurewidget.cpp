@@ -179,6 +179,7 @@ void OllamaConfigureWidget::loadSettings()
     const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
         .temperature = mManager->ollamaSettings()->temperature(),
         .seed = mManager->ollamaSettings()->seed(),
+        .contextWindowSize = mManager->ollamaSettings()->contextWindowSize(),
     };
     mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
     const OllamaConfigureCustomizeWidget::CustomizeInfo info{
@@ -207,6 +208,7 @@ void OllamaConfigureWidget::saveSettings()
     const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
     mManager->ollamaSettings()->setTemperature(parametersInfo.temperature);
     mManager->ollamaSettings()->setSeed(parametersInfo.seed);
+    mManager->ollamaSettings()->setContextWindowSize(parametersInfo.contextWindowSize);
     const OllamaConfigureCustomizeWidget::CustomizeInfo info = mOllamaConfigureCustomizeWidget->customizeInfo();
     mManager->ollamaSettings()->setCudaVisibleDevice(info.cudaVisibleDevice);
     mManager->ollamaSettings()->setRocrVisibleDevice(info.rocrVisibleDevice);

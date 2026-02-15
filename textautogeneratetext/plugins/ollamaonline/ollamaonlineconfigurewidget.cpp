@@ -107,6 +107,7 @@ void OllamaOnlineConfigureWidget::loadSettings()
     const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
         .temperature = mManager->ollamaOnlineSettings()->temperature(),
         .seed = mManager->ollamaOnlineSettings()->seed(),
+        .contextWindowSize = mManager->ollamaOnlineSettings()->contextWindowSize(),
     };
     mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
     const OllamaCommonKeepAliveParametersWidget::KeepAliveInfo keepAliveInfo{
@@ -124,6 +125,7 @@ void OllamaOnlineConfigureWidget::saveSettings()
     const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
     mManager->ollamaOnlineSettings()->setTemperature(parametersInfo.temperature);
     mManager->ollamaOnlineSettings()->setSeed(parametersInfo.seed);
+    mManager->ollamaOnlineSettings()->setContextWindowSize(parametersInfo.contextWindowSize);
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
     mManager->ollamaOnlineSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
     mManager->ollamaOnlineSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
