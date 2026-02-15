@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:42+0000\n"
+"POT-Creation-Date: 2026-02-15 00:42+0000\n"
 "PO-Revision-Date: 2026-02-12 21:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -565,7 +565,7 @@ msgid "Ollama not found on system."
 msgstr "Ollama sistemde bulunamadı."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:41
-#: plugins/ollama/ollamastartprocessjob.cpp:58
+#: plugins/ollama/ollamastartprocessjob.cpp:59
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Ollama’yı başlatmak olanaksız."
@@ -2448,12 +2448,12 @@ msgstr ""
 "sorunsuz bir şekilde tümleştiren, açık kaynaklı, yerel çok kipli bir aracı "
 "modeldir."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:25
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
 msgid "Override Parameters"
 msgstr "Parametreleri Geçersiz Kıl"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2463,7 +2463,7 @@ msgstr ""
 "Modelin sıcaklığı. Sıcaklığı artırmak modelin daha yaratıcı bir biçimde "
 "yanıtlar vermesini sağlar."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
@@ -2481,11 +2481,18 @@ msgstr ""
 "sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
 "(Öntanımlı: 0)."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
 #, kde-format
-msgid "Seed:"
-msgstr "Tohum:"
+msgctxt "@info:tooltip"
+msgid ""
+"Controls how many token (piece of text) the model can process and remember "
+"at once."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#, kde-format
+msgid "Context Window Size:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2838,6 +2845,11 @@ msgstr "Yapılandır…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "En çok jeton sayısı:"
+
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "Tohum:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

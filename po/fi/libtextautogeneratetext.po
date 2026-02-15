@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:42+0000\n"
+"POT-Creation-Date: 2026-02-15 00:42+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -566,7 +566,7 @@ msgid "Ollama not found on system."
 msgstr "Ollamaa ei löytynyt järjestelmästä."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:41
-#: plugins/ollama/ollamastartprocessjob.cpp:58
+#: plugins/ollama/ollamastartprocessjob.cpp:59
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Ollamaa on mahdotonta käynnistää."
@@ -2155,13 +2155,13 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:25
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
 #| msgid "Parameter Size:"
 msgid "Override Parameters"
 msgstr "Parametrikoko:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2170,7 +2170,7 @@ msgid ""
 msgstr ""
 "Mallin lämpötila. Lämpötilan nostaminen saa mallin vastaamaan luovemmin."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
@@ -2188,11 +2188,18 @@ msgstr ""
 "tekstin samaan kehotteeseen, jos tämä on asetettu tietyksi luvuksi. (Oletus: "
 "0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
 #, kde-format
-msgid "Seed:"
-msgstr "Siemen:"
+msgctxt "@info:tooltip"
+msgid ""
+"Controls how many token (piece of text) the model can process and remember "
+"at once."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#, kde-format
+msgid "Context Window Size:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2558,6 +2565,11 @@ msgstr "Asetukset…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "Merkkejä enintään:"
+
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "Siemen:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

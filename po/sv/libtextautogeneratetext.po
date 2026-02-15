@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:42+0000\n"
+"POT-Creation-Date: 2026-02-15 00:42+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -590,7 +590,7 @@ msgid "Ollama not found on system."
 msgstr "Ollama hittades inte på systemet. Installera det."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:41
-#: plugins/ollama/ollamastartprocessjob.cpp:58
+#: plugins/ollama/ollamastartprocessjob.cpp:59
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr ""
@@ -2426,13 +2426,13 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:25
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
 #| msgid "Parameter Size:"
 msgid "Override Parameters"
 msgstr "Parameterstorlek:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2442,7 +2442,7 @@ msgstr ""
 "Modellens temperatur. Att öka temperaturen gör att modellen svarar mer "
 "kreativt."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
@@ -2460,11 +2460,18 @@ msgstr ""
 "till ett specifikt tal genererar modellen samma text för samma fråga. "
 "(Standardvärde: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
 #, kde-format
-msgid "Seed:"
-msgstr "Frö:"
+msgctxt "@info:tooltip"
+msgid ""
+"Controls how many token (piece of text) the model can process and remember "
+"at once."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#, kde-format
+msgid "Context Window Size:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2832,6 +2839,11 @@ msgstr "Anpassa…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "Maximalt antal symboler:"
+
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "Frö:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

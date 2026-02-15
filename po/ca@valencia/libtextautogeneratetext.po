@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:42+0000\n"
+"POT-Creation-Date: 2026-02-15 00:42+0000\n"
 "PO-Revision-Date: 2026-02-13 09:06+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -572,7 +572,7 @@ msgid "Ollama not found on system."
 msgstr "No s'ha trobat Ollama en el sistema."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:41
-#: plugins/ollama/ollamastartprocessjob.cpp:58
+#: plugins/ollama/ollamastartprocessjob.cpp:59
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Impossible iniciar Ollama."
@@ -2469,12 +2469,12 @@ msgstr ""
 "modes instantanis i de pensament, així com paradigmes conversacionals i "
 "d'agents."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:25
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
 msgid "Override Parameters"
 msgstr "Sobreescriptura de paràmetres"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2484,7 +2484,7 @@ msgstr ""
 "La temperatura del model. L'augment de la temperatura farà que la resposta "
 "del model siga més creativa."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
@@ -2502,11 +2502,18 @@ msgstr ""
 "Establir açò a un nombre específic farà que el model genere el mateix text "
 "per a la mateixa petició. (Predeterminat: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
 #, kde-format
-msgid "Seed:"
-msgstr "Llavor:"
+msgctxt "@info:tooltip"
+msgid ""
+"Controls how many token (piece of text) the model can process and remember "
+"at once."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#, kde-format
+msgid "Context Window Size:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2860,6 +2867,11 @@ msgstr "Configura…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "Màxim de segments textuals:"
+
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "Llavor:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

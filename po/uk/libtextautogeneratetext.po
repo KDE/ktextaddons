@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:42+0000\n"
-"PO-Revision-Date: 2026-02-13 09:21+0200\n"
+"POT-Creation-Date: 2026-02-15 00:42+0000\n"
+"PO-Revision-Date: 2026-02-14 08:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -519,7 +519,7 @@ msgstr "Адреса сервера:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Show Ollama Log"
-msgstr ""
+msgstr "Показати журнал Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:79
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
@@ -548,11 +548,10 @@ msgid "Failed to start Ollama"
 msgstr "Не вдалося запустити Ollama"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Ollama"
+msgstr "Журнал Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -567,7 +566,7 @@ msgid "Ollama not found on system."
 msgstr "У системі не знайдено Ollama."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:41
-#: plugins/ollama/ollamastartprocessjob.cpp:58
+#: plugins/ollama/ollamastartprocessjob.cpp:59
 #, kde-format
 msgid "Impossible to start Ollama."
 msgstr "Неможливо запустити Ollama."
@@ -2462,12 +2461,12 @@ msgstr ""
 "розширеними агентськими можливостями, режимами миттєвої роботи та мислення, "
 "а також розмовними та агентськими парадигмами."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:25
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
 msgid "Override Parameters"
 msgstr "Перевизначити параметри"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2477,7 +2476,7 @@ msgstr ""
 "Температура моделі. Збільшення температури зробить відповіді моделі більш "
 "творчими."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
@@ -2495,11 +2494,18 @@ msgstr ""
 "Встановлення певного числа примусить модель до створення одного і того "
 "самого тексту у відповідь на конкретний запит. (Типове значення: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
 #, kde-format
-msgid "Seed:"
-msgstr "База:"
+msgctxt "@info:tooltip"
+msgid ""
+"Controls how many token (piece of text) the model can process and remember "
+"at once."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#, kde-format
+msgid "Context Window Size:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2853,6 +2859,11 @@ msgstr "Налаштувати…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "Макс. жетонів:"
+
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "База:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
