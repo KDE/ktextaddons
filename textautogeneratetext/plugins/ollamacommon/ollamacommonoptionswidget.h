@@ -7,11 +7,14 @@
 #pragma once
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
-
+class QCheckBox;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonOptionsWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit OllamaCommonOptionsWidget(QWidget *parent = nullptr);
     ~OllamaCommonOptionsWidget() override;
+
+private:
+    QCheckBox *const mExpose;
 };
