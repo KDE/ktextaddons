@@ -294,6 +294,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     case OllamaSettings::KeepAliveType::Unknown:
         break;
     }
+    data["num_ctx"_L1] = mOllamaSettings->contextWindowSize();
 
     qDebug() << " OllamaManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " Json: " << data;

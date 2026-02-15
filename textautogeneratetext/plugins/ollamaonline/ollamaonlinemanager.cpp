@@ -186,6 +186,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     case OllamaCommonSettings::KeepAliveType::Unknown:
         break;
     }
+    data["num_ctx"_L1] = mOllamaOnlineSettings->contextWindowSize();
 
     qDebug() << " OllamaOnlineManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;

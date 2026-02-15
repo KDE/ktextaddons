@@ -48,8 +48,8 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
 
     mContextWindowSize->setObjectName(u"mContextWindowSize"_s);
     mContextWindowSize->setToolTip(i18nc("@info:tooltip", "Controls how many token (piece of text) the model can process and remember at once."));
-    mContextWindowSize->setRange(1, 999999);
-    mContextWindowSize->setSingleStep(1);
+    mContextWindowSize->setRange(512, 131072);
+    mContextWindowSize->setSingleStep(512);
     groupCustomizeGroupboxLayout->addRow(i18n("Context Window Size:"), mContextWindowSize);
 }
 
