@@ -133,6 +133,7 @@ void OllamaSettings::load(const KConfigGroup &config)
 
 void OllamaSettings::save(KConfigGroup &config)
 {
+    OllamaCommonSettings::save(config);
     config.writeEntry(u"ServerUrl"_s, serverUrl());
     config.writeEntry(u"OverrideGfxVersion"_s, overrideGfxVersion());
     config.writeEntry(u"VulkanSupport"_s, vulkanSupport());
