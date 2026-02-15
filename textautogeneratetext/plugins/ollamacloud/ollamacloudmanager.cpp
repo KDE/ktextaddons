@@ -10,7 +10,6 @@
 #include "autogeneratetext_ollamacloud_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
 #include "ollamacloudsettings.h"
-#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 
@@ -38,7 +37,10 @@ QUrl OllamaCloudManager::ollamaCloudUrl() const
 
 void OllamaCloudManager::showModelInfo(const QString &modelName)
 {
-    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::modelInfoPath())};
+    QUrl url = ollamaCloudUrl();
+    url.setPath(OllamaCommonUtils::pullPath());
+    QNetworkRequest req{url};
+
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     QJsonObject data;
@@ -50,14 +52,16 @@ void OllamaCloudManager::showModelInfo(const QString &modelName)
         this};
     connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         const auto readResponse = reply->readResponse();
-        qDebug() << " readResponse : " << readResponse;
+        // qDebug() << " readResponse : " << readResponse;
         Q_EMIT finished(readResponse);
         Q_EMIT showModelInfoDone(readResponse.response);
     });
 }
 void OllamaCloudManager::getVersion()
 {
-    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::versionPath())};
+    QUrl url = ollamaCloudUrl();
+    url.setPath(OllamaCommonUtils::versionPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
@@ -92,7 +96,9 @@ void OllamaCloudManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::tagsPath())};
+    QUrl url = ollamaCloudUrl();
+    url.setPath(OllamaCommonUtils::tagsPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
@@ -134,7 +140,9 @@ void OllamaCloudManager::loadModels()
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::completionPath())};
+    QUrl url = ollamaCloudUrl();
+    url.setPath(OllamaCommonUtils::completionPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
@@ -161,7 +169,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(c
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::chatPath())};
+    QUrl url = ollamaCloudUrl();
+    url.setPath(OllamaCommonUtils::chatPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";

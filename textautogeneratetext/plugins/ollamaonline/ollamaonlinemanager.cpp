@@ -32,7 +32,9 @@ OllamaOnlineManager::~OllamaOnlineManager() = default;
 
 void OllamaOnlineManager::showModelInfo(const QString &modelName)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::modelInfoPath())};
+    QUrl url = mOllamaOnlineSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::modelInfoPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     QJsonObject data;
@@ -44,15 +46,16 @@ void OllamaOnlineManager::showModelInfo(const QString &modelName)
         this};
     connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         const auto readResponse = reply->readResponse();
-        qDebug() << " readResponse : " << readResponse;
+        // qDebug() << " readResponse : " << readResponse;
         Q_EMIT finished(readResponse);
         Q_EMIT showModelInfoDone(readResponse.response);
     });
 }
 void OllamaOnlineManager::getVersion()
 {
-#if 0
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::versionPath())};
+    QUrl url = mOllamaOnlineSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::versionPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
@@ -80,7 +83,6 @@ void OllamaOnlineManager::getVersion()
         Q_EMIT modelsLoadDone(std::move(info));
         */
     });
-#endif
 }
 
 void OllamaOnlineManager::loadModels()
@@ -88,7 +90,10 @@ void OllamaOnlineManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::tagsPath())};
+    QUrl url = mOllamaOnlineSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::tagsPath());
+    QNetworkRequest req{url};
+
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
@@ -130,7 +135,9 @@ void OllamaOnlineManager::loadModels()
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::completionPath())};
+    QUrl url = mOllamaOnlineSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::completionPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
@@ -154,7 +161,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getCompletion(
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaOnlineSettings->serverUrl().toString() + OllamaCommonUtils::chatPath())};
+    QUrl url = mOllamaOnlineSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::chatPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "Api key is missing";
