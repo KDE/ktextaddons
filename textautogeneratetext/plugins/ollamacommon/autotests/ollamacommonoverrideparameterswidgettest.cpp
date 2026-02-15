@@ -42,8 +42,8 @@ void OllamaCommonOverrideParametersWidgetTest::shouldHaveDefaultValues()
 
     auto mContextWindowSize = w.findChild<QSpinBox *>(u"mContextWindowSize"_s);
     QVERIFY(mContextWindowSize);
-    QCOMPARE(mContextWindowSize->singleStep(), 1);
-    QCOMPARE(mContextWindowSize->minimum(), 1);
-    QCOMPARE(mContextWindowSize->maximum(), 999999);
+    QCOMPARE(mContextWindowSize->singleStep(), 512);
+    QCOMPARE(mContextWindowSize->minimum(), 512);
+    QCOMPARE(mContextWindowSize->maximum(), 131072);
 }
 #include "moc_ollamacommonoverrideparameterswidgettest.cpp"
