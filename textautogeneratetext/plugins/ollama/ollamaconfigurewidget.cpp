@@ -67,6 +67,8 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     auto ollamaWidget = new QWidget(this);
     auto ollamaWidgetHboxLayout = new QHBoxLayout(ollamaWidget);
+    ollamaWidgetHboxLayout->setContentsMargins({});
+    ollamaWidgetHboxLayout->setAlignment(Qt::AlignHCenter);
 
     mModelComboBoxWidget->setObjectName(u"mModelComboBoxWidget"_s);
 
