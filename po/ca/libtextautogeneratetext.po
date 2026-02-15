@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 02:37+0000\n"
-"PO-Revision-Date: 2026-01-12 13:28+0100\n"
+"PO-Revision-Date: 2026-02-11 09:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -632,7 +632,7 @@ msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
 "8x7b and 8x22b parameter sizes."
 msgstr ""
-"Un conjunt de models de Mixture of Experts (MoE) amb ponderacions obertes de "
+"Un conjunt de models de barreja d'experts (MoE) amb ponderacions obertes de "
 "Mistral AI en mides de 8x7b i 8x22b paràmetres."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:47
@@ -641,8 +641,8 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
-"Models no censurats, 8x7b i 8x22b afinats basats en la barreja Mixtral de "
-"models experts que sobresurten en tasques de codificació. Creat per Eric "
+"Models no censurats, 8x7b i 8x22b afinats basats en models experts barreja "
+"d'experts Mixtral que sobresurten en tasques de codificació. Creat per Eric "
 "Hartford."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:50
@@ -664,8 +664,8 @@ msgid ""
 "An open-source Mixture-of-Experts code language model that achieves "
 "performance comparable to GPT4-Turbo in code-specific tasks."
 msgstr ""
-"Un model de llenguatge de codi obert de Mixture-of-Experts que aconsegueix "
-"un rendiment comparable a GPT4-Turbo en tasques específiques de codi."
+"Un model de llenguatge de codi obert de barreja d'experts que aconsegueix un "
+"rendiment comparable a GPT4-Turbo en tasques específiques de codi."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:54
 #, kde-format
@@ -1107,8 +1107,7 @@ msgstr "Model d'ús general basat en el Llama 2."
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
 #, kde-format
 msgid "A strong, economical, and efficient Mixture-of-Experts language model."
-msgstr ""
-"Un model de llenguatge de Mixture-of-Experts fort, econòmic i eficient."
+msgstr "Un model de llenguatge de barreja d'experts fort, econòmic i eficient."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
@@ -1487,8 +1486,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
-"Els models IBM Granite 1B i 3B són els primers models Granite de Mixture of "
-"Experts (MoE) d'IBM dissenyats per a ús de latència baixa."
+"Els models IBM Granite 1B i 3B són els primers models Granite de barreja "
+"d'experts (MoE) d'IBM dissenyats per a ús de latència baixa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
@@ -1676,7 +1675,7 @@ msgid ""
 "Granite models from IBM designed for low latency usage."
 msgstr ""
 "Els models IBM Granite 1B i 3B són models de context llarg de Granite de "
-"Mixture of Experts (MoE) d'IBM dissenyats per a ús de latència baixa."
+"barreja d'experts (MoE) d'IBM dissenyats per a ús de latència baixa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
 #, kde-format
@@ -1711,7 +1710,7 @@ msgid ""
 msgstr ""
 "El Dolphin 3.0 Llama 3.1 8B 🐬 és la propera generació de la sèrie Dolphin de "
 "models afinats d'instruccions dissenyats per ser un model local de propòsit "
-"general final, habilitant codificació, matemàtiques, agèntica, crida de "
+"general final, habilitat de codificació, matemàtiques, agèntica, crida de "
 "funcions, i casos d'ús general."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:225
@@ -1731,7 +1730,7 @@ msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
 "with 37B activated for each token."
 msgstr ""
-"Un model fort de llenguatge de Mixture-of-Experts (MoE) amb 671B paràmetres "
+"Un model fort de llenguatge de barreja d'experts (MoE) amb 671B paràmetres "
 "totals amb 37B activats per a cada segment textual."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
@@ -1896,7 +1895,7 @@ msgid ""
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
 "El Qwen3 és l'última generació de models de llenguatge grans en la sèrie de "
-"Qwen, oferint un conjunt complet de models densos i Mixture of Experts (MoE)."
+"Qwen, oferint un conjunt complet de models densos i barreja d'experts (MoE)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
 #, kde-format
@@ -1986,7 +1985,7 @@ msgstr ""
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
 "Models grans de context amb bon rendiment d'Alibaba per a tasques d'agents i "
-"codificació."
+"de codificació."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
 #, kde-format
