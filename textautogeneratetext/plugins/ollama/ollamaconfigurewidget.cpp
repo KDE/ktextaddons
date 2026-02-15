@@ -227,8 +227,14 @@ void OllamaConfigureWidget::fillModels()
     mManager->loadModels();
 }
 
+void OllamaConfigureWidget::showOllamaVersion()
+{
+    mManager->getVersion();
+}
+
 void OllamaConfigureWidget::slotShowOllamaLog()
 {
+    showOllamaVersion();
     OllamaLogDialog dlg(this);
     dlg.setLog(mManager->ollamaOutputData());
     dlg.exec();

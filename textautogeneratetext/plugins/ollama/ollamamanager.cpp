@@ -147,7 +147,9 @@ OllamaCommonReply *OllamaManager::downloadModel(const QString &modelName)
 
 void OllamaManager::getVersion()
 {
-    QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaCommonUtils::versionPath())};
+    QUrl url = mOllamaSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::versionPath());
+    QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {

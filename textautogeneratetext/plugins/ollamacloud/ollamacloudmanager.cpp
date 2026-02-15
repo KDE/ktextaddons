@@ -57,8 +57,7 @@ void OllamaCloudManager::showModelInfo(const QString &modelName)
 }
 void OllamaCloudManager::getVersion()
 {
-#if 0
-    QNetworkRequest req{QUrl::fromUserInput(OllamaCloudUrl().toString() + OllamaCommonUtils::versionPath())};
+    QNetworkRequest req{QUrl::fromUserInput(ollamaCloudUrl().toString() + OllamaCommonUtils::versionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
@@ -86,7 +85,6 @@ void OllamaCloudManager::getVersion()
         Q_EMIT modelsLoadDone(std::move(info));
         */
     });
-#endif
 }
 
 void OllamaCloudManager::loadModels()
