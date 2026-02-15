@@ -72,6 +72,7 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
 
+    mainLayout->addStretch(1);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaOnlineConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaOnlineConfigureWidget::fillModels);
     connect(mManager, &OllamaOnlineManager::showModelInfoDone, this, &OllamaOnlineConfigureWidget::displayModelInfo);

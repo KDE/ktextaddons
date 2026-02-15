@@ -65,6 +65,7 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
 
     mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
+    mainLayout->addStretch(1);
 
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaCloudConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaCloudConfigureWidget::fillModels);
