@@ -97,6 +97,7 @@ void OllamaOnlineConfigureWidget::showModelInfo(const QString &modelName)
 {
     // qDebug() << " showModelInfo " << modelName;
     mManager->showModelInfo(modelName);
+    mManager->getVersion();
 }
 
 void OllamaOnlineConfigureWidget::loadSettings()
