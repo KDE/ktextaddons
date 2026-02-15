@@ -33,7 +33,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
-    , mServerUrl(new QLineEdit(this))
+    , mPort(new QSpinBox(this))
     , mModelComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mMessageWidget(new TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget(this))
     , mManager(manager)
@@ -60,10 +60,10 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     KLineEditEventHandler::catchReturnKey(mName);
     formLayout->addRow(i18n("Name:"), mName);
 
-    mServerUrl->setObjectName(u"mServerUrl"_s);
-    KLineEditEventHandler::catchReturnKey(mServerUrl);
-    formLayout->addRow(i18n("Server Url:"), mServerUrl);
-    mServerUrl->setPlaceholderText(u"http://127.0.0.1:11434"_s);
+    mPort->setObjectName(u"mPort"_s);
+    mPort->setMinimum(1);
+    mPort->setMaximum(99999);
+    formLayout->addRow(i18n("Port:"), mPort);
 
     auto ollamaWidget = new QWidget(this);
     auto ollamaWidgetHboxLayout = new QHBoxLayout(ollamaWidget);
@@ -171,7 +171,8 @@ void OllamaConfigureWidget::slotStartOllama()
 void OllamaConfigureWidget::loadSettings()
 {
     mName->setText(mManager->ollamaSettings()->displayName());
-    mServerUrl->setText(mManager->ollamaSettings()->serverUrl().toString());
+    mPort->setValue(mManager->ollamaSettings()->serverUrl().port());
+
     mModelComboBoxWidget->setCurrentModel(mManager->ollamaSettings()->currentModel());
     const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
         .temperature = mManager->ollamaSettings()->temperature(),
@@ -197,7 +198,9 @@ void OllamaConfigureWidget::loadSettings()
 void OllamaConfigureWidget::saveSettings()
 {
     mManager->ollamaSettings()->setDisplayName(mName->text());
-    mManager->ollamaSettings()->setServerUrl(QUrl(mServerUrl->text()));
+    QUrl url = mManager->ollamaSettings()->serverUrl();
+    url.setPort(mPort->value());
+    mManager->ollamaSettings()->setServerUrl(url);
     mManager->ollamaSettings()->setCurrentModel(mModelComboBoxWidget->currentModel());
     const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
     mManager->ollamaSettings()->setTemperature(parametersInfo.temperature);

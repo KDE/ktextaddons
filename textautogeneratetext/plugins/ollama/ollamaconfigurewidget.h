@@ -8,6 +8,7 @@
 #include <QWidget>
 class OllamaCommonOverrideParametersWidget;
 class QLineEdit;
+class QSpinBox;
 class OllamaCommonComboBoxWidget;
 class OllamaManager;
 class OllamaConfigureCustomizeWidget;
@@ -39,7 +40,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotOllamaFailed(const QString &errorStr);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotShowOllamaLog();
     QLineEdit *const mName;
-    QLineEdit *const mServerUrl;
+    QSpinBox *const mPort;
     OllamaCommonComboBoxWidget *const mModelComboBoxWidget;
     TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     OllamaManager *const mManager;
