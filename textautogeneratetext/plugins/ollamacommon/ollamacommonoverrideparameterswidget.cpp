@@ -44,6 +44,7 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
                             "for the same prompt. (Default: 0)"));
     mSeed->setRange(0, 10);
     mSeed->setSingleStep(1);
+    groupCustomizeGroupboxLayout->addRow(i18n("Seed:"), mSeed);
 
     mContextWindowSize->setObjectName(u"mContextWindowSize"_s);
     mContextWindowSize->setToolTip(i18nc("@info:tooltip", "Controls how many token (piece of text) the model can process and remember at once."));
