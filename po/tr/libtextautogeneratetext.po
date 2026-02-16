@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:42+0000\n"
+"POT-Creation-Date: 2026-02-16 00:43+0000\n"
 "PO-Revision-Date: 2026-02-12 21:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -205,9 +205,9 @@ msgid "Available Models"
 msgstr "Kullanılabilir Modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:193
-#: plugins/ollamacloud/ollamacloudmanager.cpp:109
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
+#: plugins/ollama/ollamamanager.cpp:206
+#: plugins/ollamacloud/ollamacloudmanager.cpp:113
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1 konumunda arayüze bağlanılamadı: %2"
@@ -508,30 +508,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modeller Oluştur"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:66
 #, kde-format
-msgid "Server Url:"
-msgstr "Sunucu URL’si:"
+msgid "Port:"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgid "Show Ollama Log"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:79
+#: plugins/ollama/ollamaconfigurewidget.cpp:81
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:87
+#: plugins/ollama/ollamaconfigurewidget.cpp:89
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama’yı Özelleştir"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -540,7 +539,7 @@ msgstr ""
 "Bu girdiler isteğe bağlıdır, Ollama’nın GPU ile ilişkin sorunlarını "
 "tanılamak için kullanılırlar."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:163
+#: plugins/ollama/ollamaconfigurewidget.cpp:165
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama başlatılamadı"
@@ -2448,6 +2447,23 @@ msgstr ""
 "sorunsuz bir şekilde tümleştiren, açık kaynaklı, yerel çok kipli bir aracı "
 "modeldir."
 
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:16
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:31
+#, kde-format
+msgid "Expose Ollama to Network"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:22
+#, kde-format
+msgid "Options"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:30
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Make Ollama available for other devices and software in local network."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
 msgid "Override Parameters"
@@ -2481,7 +2497,13 @@ msgstr ""
 "sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
 "(Öntanımlı: 0)."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "Tohum:"
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2489,7 +2511,7 @@ msgid ""
 "at once."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
 msgstr ""
@@ -2540,6 +2562,11 @@ msgstr "Ollama (Çevrimiçi)"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Ollama Çevrimiçi’yi Yapılandır"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#, kde-format
+msgid "Server Url:"
+msgstr "Sunucu URL’si:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:116
 #, kde-format
@@ -2845,11 +2872,6 @@ msgstr "Yapılandır…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "En çok jeton sayısı:"
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
-#, kde-format
-msgid "Seed:"
-msgstr "Tohum:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

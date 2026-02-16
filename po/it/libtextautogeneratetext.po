@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:42+0000\n"
+"POT-Creation-Date: 2026-02-16 00:43+0000\n"
 "PO-Revision-Date: 2026-01-21 11:43+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -206,9 +206,9 @@ msgid "Available Models"
 msgstr "Modelli disponibili"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:193
-#: plugins/ollamacloud/ollamacloudmanager.cpp:109
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
+#: plugins/ollama/ollamamanager.cpp:206
+#: plugins/ollamacloud/ollamacloudmanager.cpp:113
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Connessione all'interfaccia al %1 non riuscita: %2"
@@ -509,30 +509,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Crea modelli"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:66
 #, kde-format
-msgid "Server Url:"
-msgstr "URL del server:"
+msgid "Port:"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgid "Show Ollama Log"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:79
+#: plugins/ollama/ollamaconfigurewidget.cpp:81
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "Modello:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:87
+#: plugins/ollama/ollamaconfigurewidget.cpp:89
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Personalizza Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -541,7 +540,7 @@ msgstr ""
 "Queste voci sono facoltative e sono utilizzate per risolvere i problemi "
 "relativi alla GPU con Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:163
+#: plugins/ollama/ollamaconfigurewidget.cpp:165
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Avvio di Ollama non riuscito"
@@ -2420,6 +2419,23 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:16
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:31
+#, kde-format
+msgid "Expose Ollama to Network"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:22
+#, kde-format
+msgid "Options"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:30
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Make Ollama available for other devices and software in local network."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
 #| msgid "Parameters"
@@ -2454,7 +2470,13 @@ msgstr ""
 "Impostando questo valore su un numero specifico, il modello genererà lo "
 "stesso testo per lo stesso prompt. (Predefinito: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "Seme:"
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2462,7 +2484,7 @@ msgid ""
 "at once."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
 msgstr ""
@@ -2513,6 +2535,11 @@ msgstr "Ollama (in linea)"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Configura Ollama in linea"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#, kde-format
+msgid "Server Url:"
+msgstr "URL del server:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:116
 #, kde-format
@@ -2819,11 +2846,6 @@ msgstr "Configura…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "Numero massimo di token:"
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
-#, kde-format
-msgid "Seed:"
-msgstr "Seme:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

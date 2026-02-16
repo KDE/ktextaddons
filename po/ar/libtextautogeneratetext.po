@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:42+0000\n"
-"PO-Revision-Date: 2026-02-13 17:13+0400\n"
+"POT-Creation-Date: 2026-02-16 00:43+0000\n"
+"PO-Revision-Date: 2026-02-15 20:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -206,9 +206,9 @@ msgid "Available Models"
 msgstr "النماذج المتاحة"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:193
-#: plugins/ollamacloud/ollamacloudmanager.cpp:109
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
+#: plugins/ollama/ollamamanager.cpp:206
+#: plugins/ollamacloud/ollamacloudmanager.cpp:113
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "فشل الاتصال بالواجهة في %1: %2"
@@ -509,30 +509,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "أنشئ النموذج"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:66
 #, kde-format
-msgid "Server Url:"
-msgstr "عنوان الخادم:"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
-#, kde-format
-msgid "Show Ollama Log"
+msgid "Port:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:79
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
+#, kde-format
+msgid "Show Ollama Log"
+msgstr "أظهر سجل أولاما"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:81
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "النموذج:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:87
+#: plugins/ollama/ollamaconfigurewidget.cpp:89
 #, kde-format
 msgid "Customize Ollama"
 msgstr "خصص أولاما"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -541,17 +540,16 @@ msgstr ""
 "هذه الإدخالات اختيارية، وتستخدم لحل المشكلات المتعلقة بوحدة معالجة الرسومات "
 "(GPU) في أولاما."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:163
+#: plugins/ollama/ollamaconfigurewidget.cpp:165
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "فشل بدأ أولاما"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "أولاما"
+msgstr "سجل أولاما"
 
 #: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -2364,6 +2362,23 @@ msgstr ""
 "الرؤية واللغة مع قدرات وكيلية متقدمة، وأوضاع فورية وتفكيرية، بالإضافة إلى "
 "النماذج الحوارية والوكيلية."
 
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:16
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:31
+#, kde-format
+msgid "Expose Ollama to Network"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:22
+#, kde-format
+msgid "Options"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:30
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Make Ollama available for other devices and software in local network."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
 msgid "Override Parameters"
@@ -2396,18 +2411,26 @@ msgstr ""
 "يُحدد بذرة الأرقام العشوائية المستخدمة في التوليد. يؤدي تعيين هذا إلى رقم "
 "محدد إلى جعل النموذج يُولّد النص نفسه لنفس المطالبة. (الافتراضي: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "البذرة:"
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
+"يتحكم في عدد الرموز (أجزاء النص) التي يمكن للنموذج معالجتها وتذكرها في وقت "
+"واحد."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr ""
+msgstr "حجم نافذة السياق:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2455,6 +2478,11 @@ msgstr "أولاما (على النت)"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "اضبط أولاما عبر الإنترنت"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#, kde-format
+msgid "Server Url:"
+msgstr "عنوان الخادم:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:116
 #, kde-format
@@ -2759,11 +2787,6 @@ msgstr "اضبط…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "الرموز المميزة القصوى:"
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
-#, kde-format
-msgid "Seed:"
-msgstr "البذرة:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format

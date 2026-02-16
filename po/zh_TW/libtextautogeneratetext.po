@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:42+0000\n"
+"POT-Creation-Date: 2026-02-16 00:43+0000\n"
 "PO-Revision-Date: 2026-01-28 19:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -209,9 +209,9 @@ msgid "Available Models"
 msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:193
-#: plugins/ollamacloud/ollamacloudmanager.cpp:109
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:103
+#: plugins/ollama/ollamamanager.cpp:206
+#: plugins/ollamacloud/ollamacloudmanager.cpp:113
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "無法連線到在 %1 的介面：%2"
@@ -512,37 +512,36 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "建立模型"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:66
 #, kde-format
-msgid "Server Url:"
-msgstr "伺服器網址："
+msgid "Port:"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
+#: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
 msgid "Show Ollama Log"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:79
+#: plugins/ollama/ollamaconfigurewidget.cpp:81
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:87
+#: plugins/ollama/ollamaconfigurewidget.cpp:89
 #, kde-format
 msgid "Customize Ollama"
 msgstr "自訂 Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr "這些項目是非必要的，它們用來在 Ollama 有 GPU 相關問題時進行疑難排解。"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:163
+#: plugins/ollama/ollamaconfigurewidget.cpp:165
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "啟動 Ollama 失敗"
@@ -2224,6 +2223,23 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:16
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:31
+#, kde-format
+msgid "Expose Ollama to Network"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:22
+#, kde-format
+msgid "Options"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:30
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Make Ollama available for other devices and software in local network."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
 #| msgid "Parameters"
@@ -2255,7 +2271,13 @@ msgstr ""
 "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固定"
 "的文字。（預設：0）"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:49
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#, kde-format
+msgid "Seed:"
+msgstr "種子："
+
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2263,7 +2285,7 @@ msgid ""
 "at once."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:52
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
 msgstr ""
@@ -2314,6 +2336,11 @@ msgstr "Ollama（線上）"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "設定 Ollama 線上"
+
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#, kde-format
+msgid "Server Url:"
+msgstr "伺服器網址："
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:116
 #, kde-format
@@ -2618,11 +2645,6 @@ msgstr "設定…"
 #, kde-format
 msgid "Max Tokens:"
 msgstr "最大 token 數："
-
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
-#, kde-format
-msgid "Seed:"
-msgstr "種子："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
