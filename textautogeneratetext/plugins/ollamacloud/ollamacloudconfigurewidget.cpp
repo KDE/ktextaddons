@@ -120,7 +120,7 @@ void OllamaCloudConfigureWidget::loadSettings()
 
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
         .exposeToNetwork = false,
-        .thoughtProcessing = false,
+        .thoughtProcessing = mManager->ollamaCloudSettings()->thoughtProcessing(),
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
@@ -139,6 +139,7 @@ void OllamaCloudConfigureWidget::saveSettings()
     mManager->ollamaCloudSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
 
     const auto optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
+    mManager->ollamaCloudSettings()->setThoughtProcessing(optionsInfo.thoughtProcessing);
 }
 
 #include "moc_ollamacloudconfigurewidget.cpp"

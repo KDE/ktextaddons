@@ -205,6 +205,7 @@ void OllamaConfigureWidget::loadSettings()
 
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
         .exposeToNetwork = mManager->ollamaSettings()->expose(),
+        .thoughtProcessing = mManager->ollamaSettings()->thoughtProcessing(),
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
@@ -230,8 +231,10 @@ void OllamaConfigureWidget::saveSettings()
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
     mManager->ollamaSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
     mManager->ollamaSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
+
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
     mManager->ollamaSettings()->setExpose(optionsInfo.exposeToNetwork);
+    mManager->ollamaSettings()->setThoughtProcessing(optionsInfo.thoughtProcessing);
 }
 
 void OllamaConfigureWidget::fillModels()
