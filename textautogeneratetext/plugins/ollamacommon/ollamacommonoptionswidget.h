@@ -12,8 +12,15 @@ class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonOptionsWidget : public QWi
 {
     Q_OBJECT
 public:
+    struct OllamaCommonOptionsInfo {
+        bool exposeToNetwork = false;
+    };
+
     explicit OllamaCommonOptionsWidget(QWidget *parent = nullptr);
     ~OllamaCommonOptionsWidget() override;
+
+    [[nodiscard]] OllamaCommonOptionsInfo optionsInfo() const;
+    void setOptionsInfo(const OllamaCommonOptionsInfo &info);
 
 private:
     QCheckBox *const mExpose;

@@ -33,4 +33,15 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(QWidget *parent)
 
 OllamaCommonOptionsWidget::~OllamaCommonOptionsWidget() = default;
 
+OllamaCommonOptionsWidget::OllamaCommonOptionsInfo OllamaCommonOptionsWidget::optionsInfo() const
+{
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo info{.exposeToNetwork = mExpose->isChecked()};
+    return info;
+}
+
+void OllamaCommonOptionsWidget::setOptionsInfo(const OllamaCommonOptionsInfo &info)
+{
+    mExpose->setChecked(info.exposeToNetwork);
+}
+
 #include "moc_ollamacommonoptionswidget.cpp"

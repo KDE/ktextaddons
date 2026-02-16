@@ -22,7 +22,6 @@ public:
     ~OllamaCommonOverrideParametersWidget() override;
 
     [[nodiscard]] OverrideParametersInfo parametersInfo() const;
-
     void setParametersInfo(const OverrideParametersInfo &info);
 
 private:
