@@ -22,3 +22,5 @@ void OllamaCommonOptionsWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     // TODO
 }
+
+#include "moc_ollamacommonoptionswidgettest.cpp"
