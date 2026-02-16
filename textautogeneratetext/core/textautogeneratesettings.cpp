@@ -8,12 +8,10 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KUser>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateSettings::TextAutoGenerateSettings()
-{
-}
+TextAutoGenerateSettings::TextAutoGenerateSettings() = default;
 
 TextAutoGenerateSettings::~TextAutoGenerateSettings() = default;
 
@@ -45,11 +43,9 @@ void TextAutoGenerateSettings::load()
 
 QString TextAutoGenerateSettings::defaultPrompt()
 {
-    const KUser user;
     const QString prompt = i18n(
-        "You are an AI assistant. You are speaking to a person named %1. "
+        "You are an AI assistant. "
         "Be helpful, professional, and courteous. Do not give inaccurate "
-        "information.",
-        user.property(KUser::UserProperty::FullName).toString());
+        "information.");
     return prompt;
 }
