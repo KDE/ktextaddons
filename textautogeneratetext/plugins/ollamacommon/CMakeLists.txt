@@ -52,6 +52,8 @@ target_sources(
         ollamacommonkeepaliveparameterscombobox.cpp
         ollamacommonoptionswidget.h
         ollamacommonoptionswidget.cpp
+        ollamacommonsharenamecombobox.h
+        ollamacommonsharenamecombobox.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

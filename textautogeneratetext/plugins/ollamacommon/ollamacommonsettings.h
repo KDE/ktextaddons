@@ -15,6 +15,13 @@ class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonSettings
 {
     Q_GADGET
 public:
+    enum class ShareNameType : uint8_t {
+        DoNotShare = 0,
+        UserName,
+        FullName,
+    };
+    Q_ENUM(ShareNameType)
+
     enum class KeepAliveType : uint8_t {
         Unknown = 0,
         KeepAliveForever,
