@@ -88,7 +88,7 @@ void TextAutoGenerateTextPlugin::setReady(bool newReady)
 QJsonArray TextAutoGenerateTextPlugin::createListMessages(const QList<QJsonObject> &objs) const
 {
     QList<QJsonObject> lstObj;
-    auto obj = createPromptMessage();
+    const auto obj = createPromptMessage();
     if (!obj.isEmpty()) {
         lstObj.append(obj);
     }
