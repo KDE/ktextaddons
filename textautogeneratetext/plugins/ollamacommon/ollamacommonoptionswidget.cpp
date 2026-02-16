@@ -11,9 +11,11 @@
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 
-OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(QWidget *parent)
+OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(ExtraOptions options, QWidget *parent)
     : QWidget{parent}
     , mExpose(new QCheckBox(i18n("Expose Ollama to Network"), this))
+    , mThoughtProcessing(new QCheckBox(i18n("Thought Processing"), this))
+    , mExtraOptions(options)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -29,19 +31,25 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(QWidget *parent)
     mExpose->setObjectName(u"mExpose"_s);
     mExpose->setToolTip(i18nc("@info:tooltip", "Make Ollama available for other devices and software in local network."));
     groupCustomizeGroupboxLayout->addWidget(mExpose);
+
+    mThoughtProcessing->setObjectName(u"mThoughtProcessing"_s);
+    mThoughtProcessing->setToolTip(i18nc("@info:tooltip", "Have compatible reasoning models think about their response before generating a message."));
+    groupCustomizeGroupboxLayout->addWidget(mThoughtProcessing);
 }
 
 OllamaCommonOptionsWidget::~OllamaCommonOptionsWidget() = default;
 
 OllamaCommonOptionsWidget::OllamaCommonOptionsInfo OllamaCommonOptionsWidget::optionsInfo() const
 {
-    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo info{.exposeToNetwork = mExpose->isChecked()};
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo info{.exposeToNetwork = mExpose->isChecked(),
+                                                                  .thoughtProcessing = mThoughtProcessing->isChecked()};
     return info;
 }
 
 void OllamaCommonOptionsWidget::setOptionsInfo(const OllamaCommonOptionsInfo &info)
 {
     mExpose->setChecked(info.exposeToNetwork);
+    mThoughtProcessing->setChecked(info.thoughtProcessing);
 }
 
 #include "moc_ollamacommonoptionswidget.cpp"

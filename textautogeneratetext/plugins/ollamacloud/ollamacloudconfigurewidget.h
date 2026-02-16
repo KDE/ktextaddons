@@ -12,6 +12,7 @@ class KPasswordLineEdit;
 class OllamaCommonComboBoxWidget;
 class OllamaCommonOverrideParametersWidget;
 class OllamaCommonKeepAliveParametersWidget;
+class OllamaCommonOptionsWidget;
 class OllamaCloudConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -35,4 +36,5 @@ private:
     OllamaCommonComboBoxWidget *const mOllamaComboBoxWidget;
     OllamaCommonOverrideParametersWidget *const mOllamaCommonOverrideParametersWidget;
     OllamaCommonKeepAliveParametersWidget *const mOllamaCommonKeepAliveParametersWidget;
+    OllamaCommonOptionsWidget *const mOllamaCommonOptionsWidget;
 };

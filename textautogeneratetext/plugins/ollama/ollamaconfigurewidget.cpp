@@ -41,7 +41,8 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mOllamaConfigureCustomizeWidget(new OllamaConfigureCustomizeWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
     , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
-    , mOllamaCommonOptionsWidget(new OllamaCommonOptionsWidget(this))
+    , mOllamaCommonOptionsWidget(
+          new OllamaCommonOptionsWidget(OllamaCommonOptionsWidget::ExtraOptions(OllamaCommonOptionsWidget::ExtraOption::ExposeToNetwork), this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);

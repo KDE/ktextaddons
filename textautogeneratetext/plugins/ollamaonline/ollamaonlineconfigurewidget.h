@@ -10,6 +10,7 @@ class QLineEdit;
 class OllamaOnlineManager;
 class KPasswordLineEdit;
 class OllamaCommonComboBoxWidget;
+class OllamaCommonOptionsWidget;
 class OllamaCommonOverrideParametersWidget;
 class OllamaCommonKeepAliveParametersWidget;
 class OllamaOnlineConfigureWidget : public QWidget
@@ -36,4 +37,5 @@ private:
     OllamaCommonComboBoxWidget *const mOllamaComboBoxWidget;
     OllamaCommonOverrideParametersWidget *const mOllamaCommonOverrideParametersWidget;
     OllamaCommonKeepAliveParametersWidget *const mOllamaCommonKeepAliveParametersWidget;
+    OllamaCommonOptionsWidget *const mOllamaCommonOptionsWidget;
 };

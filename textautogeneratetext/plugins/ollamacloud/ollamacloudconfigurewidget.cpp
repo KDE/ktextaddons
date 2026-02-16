@@ -9,6 +9,7 @@
 #include "ollamacloudsettings.h"
 #include "ollamacommoncomboboxwidget.h"
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include "ollamacommonoptionswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 #include <KAuthorized>
@@ -29,6 +30,8 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
     , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
+    , mOllamaCommonOptionsWidget(new OllamaCommonOptionsWidget(OllamaCommonOptionsWidget::ExtraOptions(OllamaCommonOptionsWidget::ExtraOption::None), this))
+
 {
     connect(mManager, &OllamaCloudManager::modelsLoadDone, this, [this](const OllamaCloudManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -65,6 +68,10 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
 
     mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
+
+    mOllamaCommonOptionsWidget->setObjectName(u"mOllamaCommonOptionsWidget"_s);
+    mainLayout->addWidget(mOllamaCommonOptionsWidget);
+
     mainLayout->addStretch(1);
 
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaCloudConfigureWidget::showModelInfo);
@@ -110,6 +117,12 @@ void OllamaCloudConfigureWidget::loadSettings()
         .minutes = mManager->ollamaCloudSettings()->keepAliveMinutes(),
     };
     mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
+
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
+        .exposeToNetwork = false,
+        .thoughtProcessing = false,
+    };
+    mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
 
 void OllamaCloudConfigureWidget::saveSettings()
@@ -124,6 +137,8 @@ void OllamaCloudConfigureWidget::saveSettings()
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
     mManager->ollamaCloudSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
     mManager->ollamaCloudSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
+
+    const auto optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
 }
 
 #include "moc_ollamacloudconfigurewidget.cpp"

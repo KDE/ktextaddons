@@ -7,6 +7,7 @@
 #include "autogeneratetext_ollamaonline_debug.h"
 #include "ollamacommoncomboboxwidget.h"
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include "ollamacommonoptionswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
@@ -30,6 +31,8 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     , mOllamaComboBoxWidget(new OllamaCommonComboBoxWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
     , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
+    , mOllamaCommonOptionsWidget(new OllamaCommonOptionsWidget(OllamaCommonOptionsWidget::ExtraOptions(OllamaCommonOptionsWidget::ExtraOption::None), this))
+
 {
     connect(mManager, &OllamaOnlineManager::modelsLoadDone, this, [this](const OllamaOnlineManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -71,6 +74,9 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
 
     mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
+
+    mOllamaCommonOptionsWidget->setObjectName(u"mOllamaCommonOptionsWidget"_s);
+    mainLayout->addWidget(mOllamaCommonOptionsWidget);
 
     mainLayout->addStretch(1);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaOnlineConfigureWidget::showModelInfo);
@@ -117,6 +123,11 @@ void OllamaOnlineConfigureWidget::loadSettings()
         .minutes = mManager->ollamaOnlineSettings()->keepAliveMinutes(),
     };
     mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
+        .exposeToNetwork = false,
+        .thoughtProcessing = false,
+    };
+    mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
 
 void OllamaOnlineConfigureWidget::saveSettings()
