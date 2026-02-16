@@ -13,6 +13,7 @@ class OllamaCommonComboBoxWidget;
 class OllamaManager;
 class OllamaConfigureCustomizeWidget;
 class OllamaCommonKeepAliveParametersWidget;
+class OllamaCommonOptionsWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateNotWorkingMessageWidget;
@@ -48,4 +49,5 @@ private:
     OllamaConfigureCustomizeWidget *const mOllamaConfigureCustomizeWidget;
     OllamaCommonOverrideParametersWidget *const mOllamaCommonOverrideParametersWidget;
     OllamaCommonKeepAliveParametersWidget *const mOllamaCommonKeepAliveParametersWidget;
+    OllamaCommonOptionsWidget *const mOllamaCommonOptionsWidget;
 };

@@ -7,6 +7,7 @@
 #include "ollamaconfigurewidget.h"
 #include "modelsmanager/ollamanetworkurlbutton.h"
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include "ollamacommonoptionswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include "ollamalogdialog.h"
@@ -40,6 +41,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mOllamaConfigureCustomizeWidget(new OllamaConfigureCustomizeWidget(this))
     , mOllamaCommonOverrideParametersWidget(new OllamaCommonOverrideParametersWidget(this))
     , mOllamaCommonKeepAliveParametersWidget(new OllamaCommonKeepAliveParametersWidget(this))
+    , mOllamaCommonOptionsWidget(new OllamaCommonOptionsWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -85,6 +87,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     mOllamaCommonKeepAliveParametersWidget->setObjectName(u"mOllamaCommonKeepAliveParametersWidget"_s);
     mainLayout->addWidget(mOllamaCommonKeepAliveParametersWidget);
+
+    mOllamaCommonOptionsWidget->setObjectName(u"mOllamaCommonOptionsWidget"_s);
+    mainLayout->addWidget(mOllamaCommonOptionsWidget);
 
     auto groupCustomizeGroupbox = new QGroupBox(i18n("Customize Ollama"), this);
     groupCustomizeGroupbox->setObjectName(u"groupCustomizeGroupbox"_s);
@@ -196,6 +201,11 @@ void OllamaConfigureWidget::loadSettings()
         .minutes = mManager->ollamaSettings()->keepAliveMinutes(),
     };
     mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
+
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
+        .exposeToNetwork = mManager->ollamaSettings()->expose(),
+    };
+    mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
 
 void OllamaConfigureWidget::saveSettings()
@@ -219,6 +229,8 @@ void OllamaConfigureWidget::saveSettings()
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
     mManager->ollamaSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
     mManager->ollamaSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
+    mManager->ollamaSettings()->setExpose(optionsInfo.exposeToNetwork);
 }
 
 void OllamaConfigureWidget::fillModels()

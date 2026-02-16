@@ -28,7 +28,7 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(QWidget *parent)
 
     mExpose->setObjectName(u"mExpose"_s);
     mExpose->setToolTip(i18nc("@info:tooltip", "Make Ollama available for other devices and software in local network."));
-    groupCustomizeGroupboxLayout->addRow(i18n("Expose Ollama to Network"), mExpose);
+    groupCustomizeGroupboxLayout->addWidget(mExpose);
 }
 
 OllamaCommonOptionsWidget::~OllamaCommonOptionsWidget() = default;
