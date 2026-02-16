@@ -5,6 +5,8 @@
 */
 #pragma once
 
+#include "ollamacommonsettings.h"
+
 #include <QComboBox>
 
 class OllamaCommonShareNameComboBox : public QComboBox
@@ -13,6 +15,9 @@ class OllamaCommonShareNameComboBox : public QComboBox
 public:
     explicit OllamaCommonShareNameComboBox(QWidget *parent = nullptr);
     ~OllamaCommonShareNameComboBox() override;
+
+    [[nodiscard]] OllamaCommonSettings::ShareNameType shareNameType() const;
+    void setShareNameType(OllamaCommonSettings::ShareNameType type);
 
 private:
     void fill();
