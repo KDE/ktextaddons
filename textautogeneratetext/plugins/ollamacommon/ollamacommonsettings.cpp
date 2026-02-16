@@ -73,6 +73,7 @@ void OllamaCommonSettings::load(const KConfigGroup &config)
     setCurrentModel(config.readEntry(u"CurrentModel"_s));
     setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
     setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, 16384));
+    setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, false));
     setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(config.readEntry(u"KeepAliveType"_s, {})));
 }
 
@@ -85,6 +86,7 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
     config.writeEntry(u"ContextWindowSize"_s, contextWindowSize());
     config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(KeepAliveType()));
+    config.writeEntry(u"ThoughtProcessing"_s, thoughtProcessing());
 }
 
 OllamaCommonSettings::KeepAliveType OllamaCommonSettings::keepAliveType() const
@@ -106,6 +108,7 @@ QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
     d.space() << "keepAliveMinutes:" << t.keepAliveMinutes();
     d.space() << "keepAliveType:" << t.keepAliveType();
     d.space() << "contextWindowSize:" << t.contextWindowSize();
+    d.space() << "thoughtProcessing:" << t.thoughtProcessing();
     return d;
 }
 
@@ -145,6 +148,16 @@ qint64 OllamaCommonSettings::contextWindowSize() const
 void OllamaCommonSettings::setContextWindowSize(qint64 newContextWindowSize)
 {
     mContextWindowSize = newContextWindowSize;
+}
+
+bool OllamaCommonSettings::thoughtProcessing() const
+{
+    return mThoughtProcessing;
+}
+
+void OllamaCommonSettings::setThoughtProcessing(bool newThoughtProcessing)
+{
+    mThoughtProcessing = newThoughtProcessing;
 }
 
 #include "moc_ollamacommonsettings.cpp"
