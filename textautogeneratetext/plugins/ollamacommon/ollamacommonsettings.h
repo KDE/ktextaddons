@@ -62,6 +62,9 @@ public:
     [[nodiscard]] bool thoughtProcessing() const;
     void setThoughtProcessing(bool newThoughtProcessing);
 
+    [[nodiscard]] static OllamaCommonSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
+    [[nodiscard]] static QString convertShareNameTypeToString(OllamaCommonSettings::ShareNameType type);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;

@@ -140,6 +140,32 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::convertKeepAliveTypeFr
     return OllamaCommonSettings::KeepAliveType::Unknown;
 }
 
+QString OllamaCommonSettings::convertShareNameTypeToString(OllamaCommonSettings::ShareNameType type)
+{
+    switch (type) {
+    case ShareNameType::DoNotShare:
+        return u"DoNotShare"_s;
+    case ShareNameType::UserName:
+        return u"UserName"_s;
+    case ShareNameType::FullName:
+        return u"FullName"_s;
+    }
+
+    return {};
+}
+
+OllamaCommonSettings::ShareNameType OllamaCommonSettings::convertShareNameTypeFromString(const QString &str)
+{
+    if (str == "DoNotShare"_L1) {
+        return OllamaCommonSettings::ShareNameType::DoNotShare;
+    } else if (str == "UserName"_L1) {
+        return OllamaCommonSettings::ShareNameType::UserName;
+    } else if (str == "FullName"_L1) {
+        return OllamaCommonSettings::ShareNameType::FullName;
+    }
+    return OllamaCommonSettings::ShareNameType::DoNotShare;
+}
+
 qint64 OllamaCommonSettings::contextWindowSize() const
 {
     return mContextWindowSize;

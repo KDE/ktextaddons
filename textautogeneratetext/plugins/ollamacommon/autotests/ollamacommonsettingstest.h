@@ -18,4 +18,7 @@ private Q_SLOTS:
     void shouldConvertKeepAliveTypeToString();
     void shouldConvertKeepAliveTypeFromString();
     void shouldHaveDefaultValues();
+
+    void shouldConvertShareNameTypeToString();
+    void shouldConvertShareNameTypeFromString();
 };

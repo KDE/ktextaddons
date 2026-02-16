@@ -30,6 +30,22 @@ void OllamaCommonSettingsTest::shouldConvertKeepAliveTypeFromString()
     QCOMPARE(OllamaCommonSettings::convertKeepAliveTypeFromString({}), OllamaCommonSettings::KeepAliveType::Unknown);
 }
 
+void OllamaCommonSettingsTest::shouldConvertShareNameTypeToString()
+{
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeToString(OllamaCommonSettings::ShareNameType::DoNotShare), u"DoNotShare"_s);
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeToString(OllamaCommonSettings::ShareNameType::FullName), u"FullName"_s);
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeToString(OllamaCommonSettings::ShareNameType::UserName), u"UserName"_s);
+}
+
+void OllamaCommonSettingsTest::shouldConvertShareNameTypeFromString()
+{
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeFromString(u"DoNotShare"_s), OllamaCommonSettings::ShareNameType::DoNotShare);
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeFromString(u"FullName"_s), OllamaCommonSettings::ShareNameType::FullName);
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeFromString(u"UserName"_s), OllamaCommonSettings::ShareNameType::UserName);
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeFromString(u"foo"_s), OllamaCommonSettings::ShareNameType::DoNotShare);
+    QCOMPARE(OllamaCommonSettings::convertShareNameTypeFromString(QString()), OllamaCommonSettings::ShareNameType::DoNotShare);
+}
+
 void OllamaCommonSettingsTest::shouldHaveDefaultValues()
 {
     const OllamaCommonSettings s;
