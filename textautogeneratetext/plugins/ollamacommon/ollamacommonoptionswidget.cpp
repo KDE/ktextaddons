@@ -29,8 +29,12 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(ExtraOptions options, QWidg
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
 
     mExpose->setObjectName(u"mExpose"_s);
+    mExpose->setVisible(false);
     mExpose->setToolTip(i18nc("@info:tooltip", "Make Ollama available for other devices and software in local network."));
     groupCustomizeGroupboxLayout->addWidget(mExpose);
+    if (options & OllamaCommonOptionsWidget::ExtraOption::ExposeToNetwork) {
+        mExpose->setVisible(true);
+    }
 
     mThoughtProcessing->setObjectName(u"mThoughtProcessing"_s);
     mThoughtProcessing->setToolTip(i18nc("@info:tooltip", "Have compatible reasoning models think about their response before generating a message."));
