@@ -50,8 +50,11 @@ OllamaCommonOptionsWidget::~OllamaCommonOptionsWidget() = default;
 
 OllamaCommonOptionsWidget::OllamaCommonOptionsInfo OllamaCommonOptionsWidget::optionsInfo() const
 {
-    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo info{.exposeToNetwork = mExpose->isChecked(),
-                                                                  .thoughtProcessing = mThoughtProcessing->isChecked()};
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo info{
+        .exposeToNetwork = mExpose->isChecked(),
+        .thoughtProcessing = mThoughtProcessing->isChecked(),
+        .shareNameType = mOllamaCommonShareNameComboBox->shareNameType(),
+    };
     return info;
 }
 
@@ -59,6 +62,7 @@ void OllamaCommonOptionsWidget::setOptionsInfo(const OllamaCommonOptionsInfo &in
 {
     mExpose->setChecked(info.exposeToNetwork);
     mThoughtProcessing->setChecked(info.thoughtProcessing);
+    mOllamaCommonShareNameComboBox->setShareNameType(info.shareNameType);
 }
 
 #include "moc_ollamacommonoptionswidget.cpp"

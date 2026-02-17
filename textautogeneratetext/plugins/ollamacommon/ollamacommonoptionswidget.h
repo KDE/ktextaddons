@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "ollamacommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
 class QCheckBox;
@@ -23,6 +24,7 @@ public:
     struct OllamaCommonOptionsInfo {
         bool exposeToNetwork = false;
         bool thoughtProcessing = false;
+        OllamaCommonSettings::ShareNameType shareNameType = OllamaCommonSettings::ShareNameType::DoNotShare;
     };
 
     explicit OllamaCommonOptionsWidget(ExtraOptions options = ExtraOptions(ExtraOption::None), QWidget *parent = nullptr);
