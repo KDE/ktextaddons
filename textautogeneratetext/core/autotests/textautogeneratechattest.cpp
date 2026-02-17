@@ -24,9 +24,10 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(!w.archived());
     QVERIFY(w.title().isEmpty());
     QVERIFY(w.identifier().isEmpty());
+    QVERIFY(w.prompt().isEmpty());
 
     // 10/05/2025 => size 72
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 80);
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 104);
 }
 
 void TextAutoGenerateChatTest::shouldSerializeDeserialize()

@@ -165,12 +165,24 @@ public:
      */
     void setInProgress(bool newInProgress);
 
+    /*!
+     * Returns current prompt
+     * \return default prompt for current Chat
+     */
+    [[nodiscard]] QString prompt() const;
+    /*!
+     * Sets the prompt for current chat
+     * \param newPrompt the prompt for current chat
+     */
+    void setPrompt(const QString &newPrompt);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
 
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
     QString mTitle;
+    QString mPrompt;
     qint64 mDateTime = -1;
     bool mFavorite = false;
     bool mArchived = false;
