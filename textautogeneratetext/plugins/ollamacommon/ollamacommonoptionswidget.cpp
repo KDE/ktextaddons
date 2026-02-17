@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamacommonoptionswidget.h"
+#include "ollamacommonsharenamecombobox.h"
 #include <KLocalizedString>
 #include <QCheckBox>
 #include <QFormLayout>
@@ -16,6 +17,7 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(ExtraOptions options, QWidg
     , mExpose(new QCheckBox(i18n("Expose Ollama to Network"), this))
     , mThoughtProcessing(new QCheckBox(i18n("Thought Processing"), this))
     , mExtraOptions(options)
+    , mOllamaCommonShareNameComboBox(new OllamaCommonShareNameComboBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -39,6 +41,9 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(ExtraOptions options, QWidg
     mThoughtProcessing->setObjectName(u"mThoughtProcessing"_s);
     mThoughtProcessing->setToolTip(i18nc("@info:tooltip", "Have compatible reasoning models think about their response before generating a message."));
     groupCustomizeGroupboxLayout->addWidget(mThoughtProcessing);
+
+    mOllamaCommonShareNameComboBox->setObjectName(u"mOllamaCommonShareNameComboBox"_s);
+    groupCustomizeGroupboxLayout->addRow(i18n("Share Name:"), mOllamaCommonShareNameComboBox);
 }
 
 OllamaCommonOptionsWidget::~OllamaCommonOptionsWidget() = default;

@@ -6,10 +6,10 @@
 #pragma once
 
 #include "ollamacommonsettings.h"
-
+#include "textautogenerateollamacommon_export.h"
 #include <QComboBox>
 
-class OllamaCommonShareNameComboBox : public QComboBox
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonShareNameComboBox : public QComboBox
 {
     Q_OBJECT
 public:

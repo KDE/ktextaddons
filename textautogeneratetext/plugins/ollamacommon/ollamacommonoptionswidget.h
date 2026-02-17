@@ -8,6 +8,7 @@
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
 class QCheckBox;
+class OllamaCommonShareNameComboBox;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonOptionsWidget : public QWidget
 {
     Q_OBJECT
@@ -34,5 +35,6 @@ private:
     QCheckBox *const mExpose;
     QCheckBox *const mThoughtProcessing;
     const ExtraOptions mExtraOptions = ExtraOptions(ExtraOption::None);
+    OllamaCommonShareNameComboBox *const mOllamaCommonShareNameComboBox;
 };
 Q_DECLARE_TYPEINFO(OllamaCommonOptionsWidget::OllamaCommonOptionsInfo, Q_RELOCATABLE_TYPE);
