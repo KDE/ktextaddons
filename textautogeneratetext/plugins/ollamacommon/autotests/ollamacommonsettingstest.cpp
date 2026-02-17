@@ -55,6 +55,8 @@ void OllamaCommonSettingsTest::shouldHaveDefaultValues()
     QVERIFY(s.currentModel().isEmpty());
     QVERIFY(s.displayName().isEmpty());
     QCOMPARE(s.keepAliveType(), OllamaCommonSettings::KeepAliveType::Unknown);
+    QCOMPARE(s.shareNameType(), OllamaCommonSettings::ShareNameType::DoNotShare);
+    QVERIFY(!s.thoughtProcessing());
 }
 
 #include "moc_ollamacommonsettingstest.cpp"
