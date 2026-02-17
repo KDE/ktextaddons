@@ -39,7 +39,7 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         w.setIdentifier("foo");
 
         const QByteArray ba = w.serialize(w, false);
-        QJsonDocument doc = QJsonDocument::fromJson(ba);
+        const QJsonDocument doc = QJsonDocument::fromJson(ba);
         TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(w, ba1);
     }
@@ -52,7 +52,7 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         w.setIdentifier("foo3");
 
         const QByteArray ba = w.serialize(w, false);
-        QJsonDocument doc = QJsonDocument::fromJson(ba);
+        const QJsonDocument doc = QJsonDocument::fromJson(ba);
         TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(w, ba1);
     }
