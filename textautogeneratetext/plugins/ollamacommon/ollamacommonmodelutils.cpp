@@ -9,6 +9,7 @@
 #include "autogeneratetext_ollamacommon_debug.h"
 #include "ollamacommonmodelavailableinfosmanager.h"
 #include <KLocalizedString>
+#include <KUser>
 #include <QMap>
 
 using namespace Qt::Literals::StringLiterals;
@@ -359,4 +360,21 @@ OllamaCommonModelUtils::extractAvailableModel(const TextAutoGenerateText::TextAu
         }
     }
     return displayAvailablesModels;
+}
+
+QString OllamaCommonModelUtils::generateUserPrompt(OllamaCommonSettings::ShareNameType type)
+{
+    switch (type) {
+    case OllamaCommonSettings::ShareNameType::DoNotShare:
+        return {};
+    case OllamaCommonSettings::ShareNameType::FullName: {
+        const KUser user;
+        return i18n("The user is called %1", user.property(KUser::UserProperty::FullName).toString());
+    }
+    case OllamaCommonSettings::ShareNameType::UserName: {
+        const KUser user;
+        return i18n("The user is called %1", user.loginName());
+    }
+    }
+    return {};
 }
