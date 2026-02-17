@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:43+0000\n"
-"PO-Revision-Date: 2026-02-12 21:35+0300\n"
+"POT-Creation-Date: 2026-02-17 00:42+0000\n"
+"PO-Revision-Date: 2026-02-16 16:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -127,11 +127,14 @@ msgstr "Bulut"
 msgid "Go to message"
 msgstr "İletiye git"
 
-#: core/textautogeneratesettings.cpp:50
-#, kde-format
+#: core/textautogeneratesettings.cpp:47
+#, fuzzy, kde-format
+#| msgid ""
+#| "You are an AI assistant. You are speaking to a person named %1. Be "
+#| "helpful, professional, and courteous. Do not give inaccurate information."
 msgid ""
-"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
-"professional, and courteous. Do not give inaccurate information."
+"You are an AI assistant. Be helpful, professional, and courteous. Do not "
+"give inaccurate information."
 msgstr ""
 "Sen bir yapay zekâ asistanısın. %1 adlı bir kişiyle konuşuyorsun. Nâzik, "
 "profesyonel ve yardımcı ol. Doğru olmayan bilgiler verme."
@@ -331,9 +334,9 @@ msgid "Base:"
 msgstr "Temel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:61
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:53
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:56
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -508,29 +511,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modeller Oluştur"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:66
+#: plugins/ollama/ollamaconfigurewidget.cpp:69
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Kapı:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:75
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
 #, kde-format
 msgid "Show Ollama Log"
-msgstr ""
+msgstr "Ollama Günlüğünü Göster"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:81
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:84
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:64
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:70
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:89
+#: plugins/ollama/ollamaconfigurewidget.cpp:95
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama’yı Özelleştir"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:99
+#: plugins/ollama/ollamaconfigurewidget.cpp:105
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -539,17 +542,16 @@ msgstr ""
 "Bu girdiler isteğe bağlıdır, Ollama’nın GPU ile ilişkin sorunlarını "
 "tanılamak için kullanılırlar."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:165
+#: plugins/ollama/ollamaconfigurewidget.cpp:171
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama başlatılamadı"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Ollama"
+msgstr "Ollama Günlüğü"
 
 #: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -580,8 +582,8 @@ msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
 msgstr "Ollama Bulut’u Yapılandır"
 
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:58
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:64
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
@@ -601,28 +603,28 @@ msgstr "Modeli yeniden yükle"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr ""
+msgstr "Önayarları Canlı Tut"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr ""
+msgstr "Sonsuza Dek Canlı Tut"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr ""
+msgstr "Kullanım Sonrasında Kaldır"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr ""
+msgstr "Canlı Tut"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "Örneğin boştaki modellere nasıl davranması gerektiği"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -630,16 +632,18 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
+"Modeller boşa çıktıktan sonra örneğin modelleri ne kadar süre daha yüklü "
+"tutması gerektiği"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr ""
+msgstr "Önayarlar:"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr ""
+msgstr "Dakika:"
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
@@ -2448,20 +2452,34 @@ msgstr ""
 "modeldir."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:16
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:31
 #, kde-format
 msgid "Expose Ollama to Network"
+msgstr "Ollama’yı Ağa Tanıt"
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
+#, kde-format
+msgid "Thought Processing"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:22
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:24
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Seçenekler"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:30
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
+msgstr ""
+"Ollama’yı yerel ağınızdaki diğer aygıtlar ve yazılımlar için kullanılabilir "
+"kılın."
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Have compatible reasoning models think about their response before "
+"generating a message."
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
@@ -2510,11 +2528,13 @@ msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
+"Modelin bir kerede kaç jeton (metin parçası) anımsayabileceği ve "
+"işleyebileceğini denetler."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr ""
+msgstr "Bağlam penceresi boyutu:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2546,6 +2566,21 @@ msgstr "Ayrıntılar"
 msgid "Model Info"
 msgstr "Model Bilgisi"
 
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
+#, kde-format
+msgid "Do not Share"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
+#, kde-format
+msgid "Username"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
+#, kde-format
+msgid "Full Name"
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2563,7 +2598,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Ollama Çevrimiçi’yi Yapılandır"
 
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:61
 #, kde-format
 msgid "Server Url:"
 msgstr "Sunucu URL’si:"

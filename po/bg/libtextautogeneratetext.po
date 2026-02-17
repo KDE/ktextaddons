@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:43+0000\n"
-"PO-Revision-Date: 2026-02-13 23:53+0100\n"
+"POT-Creation-Date: 2026-02-17 00:42+0000\n"
+"PO-Revision-Date: 2026-02-16 18:11+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -127,11 +127,14 @@ msgstr "Облак"
 msgid "Go to message"
 msgstr "Отиване до съобщението"
 
-#: core/textautogeneratesettings.cpp:50
-#, kde-format
+#: core/textautogeneratesettings.cpp:47
+#, fuzzy, kde-format
+#| msgid ""
+#| "You are an AI assistant. You are speaking to a person named %1. Be "
+#| "helpful, professional, and courteous. Do not give inaccurate information."
 msgid ""
-"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
-"professional, and courteous. Do not give inaccurate information."
+"You are an AI assistant. Be helpful, professional, and courteous. Do not "
+"give inaccurate information."
 msgstr ""
 "Вие сте асистент с изкуствен интелект. Говорите с човек на име %1. Бъдете "
 "полезен, професионален и учтив. Не давайте неточна информация."
@@ -331,9 +334,9 @@ msgid "Base:"
 msgstr "База:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:61
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:53
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:54
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:56
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -508,29 +511,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Създаване на модели"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:66
+#: plugins/ollama/ollamaconfigurewidget.cpp:69
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Порт:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:75
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
 #, kde-format
 msgid "Show Ollama Log"
-msgstr ""
+msgstr "Показване на дневника на Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:81
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:84
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:64
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:70
 #, kde-format
 msgid "Model:"
 msgstr "Модел:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:89
+#: plugins/ollama/ollamaconfigurewidget.cpp:95
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Конфигуриране на Олама"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:99
+#: plugins/ollama/ollamaconfigurewidget.cpp:105
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -539,17 +542,16 @@ msgstr ""
 "Тези записи са незадължителни и се използват за отстраняване на проблеми с "
 "Олама, свързани с графични карти."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:165
+#: plugins/ollama/ollamaconfigurewidget.cpp:171
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Неуспешно стартиране на 2Ollama"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Ollama"
+msgstr "Дневник на Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:93
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -580,8 +582,8 @@ msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
 msgstr "Конфигуриране на Ollama Cloud"
 
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:58
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:64
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
@@ -2448,20 +2450,32 @@ msgstr ""
 "парадигми."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:16
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:31
 #, kde-format
 msgid "Expose Ollama to Network"
+msgstr "Излагане на Ollama към мрежата"
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
+#, kde-format
+msgid "Thought Processing"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:22
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:24
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Настройки"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:30
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
+msgstr "Достъп до Ollama за други устройства и софтуер в локалната мрежа."
+
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Have compatible reasoning models think about their response before "
+"generating a message."
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
@@ -2510,11 +2524,13 @@ msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
+"Контролира колко токена (фрагменти текст) моделът може да обработва и "
+"запомня едновременно."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr ""
+msgstr "Размер на контекстния прозорец:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
@@ -2546,6 +2562,21 @@ msgstr "Подробности"
 msgid "Model Info"
 msgstr "Информация за модела"
 
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
+#, kde-format
+msgid "Do not Share"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
+#, kde-format
+msgid "Username"
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
+#, kde-format
+msgid "Full Name"
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2563,7 +2594,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Конфигуриране на Ollama Online"
 
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:58
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:61
 #, kde-format
 msgid "Server Url:"
 msgstr "Адрес на сървър:"
