@@ -229,7 +229,6 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished(const TextAutoGenerateT
             .attachmentInfoList = TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments)};
         mManager->textAutoGeneratePlugin()->editMessage(sendInfo);
     }
-    // mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
 
 #include "moc_textautogeneratequickaskwidget.cpp"
