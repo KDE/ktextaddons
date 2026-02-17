@@ -65,6 +65,9 @@ public:
     [[nodiscard]] static OllamaCommonSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
     [[nodiscard]] static QString convertShareNameTypeToString(OllamaCommonSettings::ShareNameType type);
 
+    [[nodiscard]] OllamaCommonSettings::ShareNameType shareNameType() const;
+    void setShareNameType(const OllamaCommonSettings::ShareNameType &newShareNameType);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
@@ -73,6 +76,7 @@ private:
     int mKeepAliveMinutes = 1;
     qint64 mContextWindowSize = 16384;
     OllamaCommonSettings::KeepAliveType mKeepAliveType = KeepAliveType::Unknown;
+    OllamaCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
     bool mThoughtProcessing = false;
 };
 TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonSettings &t);

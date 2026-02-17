@@ -109,6 +109,7 @@ QDebug operator<<(QDebug d, const OllamaCommonSettings &t)
     d.space() << "keepAliveType:" << t.keepAliveType();
     d.space() << "contextWindowSize:" << t.contextWindowSize();
     d.space() << "thoughtProcessing:" << t.thoughtProcessing();
+    d.space() << "shareNameType:" << t.shareNameType();
     return d;
 }
 
@@ -152,6 +153,16 @@ QString OllamaCommonSettings::convertShareNameTypeToString(OllamaCommonSettings:
     }
 
     return {};
+}
+
+OllamaCommonSettings::ShareNameType OllamaCommonSettings::shareNameType() const
+{
+    return mShareNameType;
+}
+
+void OllamaCommonSettings::setShareNameType(const OllamaCommonSettings::ShareNameType &newShareNameType)
+{
+    mShareNameType = newShareNameType;
 }
 
 OllamaCommonSettings::ShareNameType OllamaCommonSettings::convertShareNameTypeFromString(const QString &str)
