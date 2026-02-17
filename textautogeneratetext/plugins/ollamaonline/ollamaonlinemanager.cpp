@@ -197,6 +197,9 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     }
     data["num_ctx"_L1] = mOllamaOnlineSettings->contextWindowSize();
 
+    // TODO verify if model has reasonning
+    data["think"_L1] = false; // mOllamaSettings->thoughtProcessing();
+
     qDebug() << " OllamaOnlineManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
