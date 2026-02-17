@@ -121,6 +121,7 @@ void OllamaCloudConfigureWidget::loadSettings()
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
         .exposeToNetwork = false,
         .thoughtProcessing = mManager->ollamaCloudSettings()->thoughtProcessing(),
+        .shareNameType = mManager->ollamaCloudSettings()->shareNameType(),
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
@@ -140,6 +141,7 @@ void OllamaCloudConfigureWidget::saveSettings()
 
     const auto optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
     mManager->ollamaCloudSettings()->setThoughtProcessing(optionsInfo.thoughtProcessing);
+    mManager->ollamaCloudSettings()->setShareNameType(optionsInfo.shareNameType);
 }
 
 #include "moc_ollamacloudconfigurewidget.cpp"

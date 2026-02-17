@@ -206,6 +206,7 @@ void OllamaConfigureWidget::loadSettings()
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
         .exposeToNetwork = mManager->ollamaSettings()->expose(),
         .thoughtProcessing = mManager->ollamaSettings()->thoughtProcessing(),
+        .shareNameType = mManager->ollamaSettings()->shareNameType(),
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
@@ -235,6 +236,7 @@ void OllamaConfigureWidget::saveSettings()
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
     mManager->ollamaSettings()->setExpose(optionsInfo.exposeToNetwork);
     mManager->ollamaSettings()->setThoughtProcessing(optionsInfo.thoughtProcessing);
+    mManager->ollamaSettings()->setShareNameType(optionsInfo.shareNameType);
 }
 
 void OllamaConfigureWidget::fillModels()

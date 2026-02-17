@@ -126,6 +126,7 @@ void OllamaOnlineConfigureWidget::loadSettings()
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
         .exposeToNetwork = false,
         .thoughtProcessing = mManager->ollamaOnlineSettings()->thoughtProcessing(),
+        .shareNameType = mManager->ollamaOnlineSettings()->shareNameType(),
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
@@ -145,6 +146,7 @@ void OllamaOnlineConfigureWidget::saveSettings()
 
     const auto optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
     mManager->ollamaOnlineSettings()->setThoughtProcessing(optionsInfo.thoughtProcessing);
+    mManager->ollamaOnlineSettings()->setShareNameType(optionsInfo.shareNameType);
 }
 
 #include "moc_ollamaonlineconfigurewidget.cpp"
