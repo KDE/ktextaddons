@@ -19,6 +19,7 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPointer>
+#include <QScrollArea>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
@@ -42,7 +43,19 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
         }
     });
 
-    auto mainLayout = new QVBoxLayout(this);
+    auto centralLayout = new QVBoxLayout(this);
+    centralLayout->setObjectName(u"centralLayout"_s);
+    centralLayout->setContentsMargins({});
+
+    auto area = new QScrollArea(this);
+    centralLayout->addWidget(area);
+    area->setWidgetResizable(true);
+
+    auto mainWidget = new QWidget(this);
+    area->setWidget(mainWidget);
+
+    auto mainLayout = new QVBoxLayout(mainWidget);
+
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 

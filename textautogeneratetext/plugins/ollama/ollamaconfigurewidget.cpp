@@ -27,6 +27,7 @@
 #include <QLineEdit>
 #include <QPointer>
 #include <QPushButton>
+#include <QScrollArea>
 #include <QSpinBox>
 #include <TextAddonsWidgets/ExecutableUtils>
 
@@ -44,7 +45,18 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mOllamaCommonOptionsWidget(
           new OllamaCommonOptionsWidget(OllamaCommonOptionsWidget::ExtraOptions(OllamaCommonOptionsWidget::ExtraOption::ExposeToNetwork), this))
 {
-    auto mainLayout = new QVBoxLayout(this);
+    auto centralLayout = new QVBoxLayout(this);
+    centralLayout->setObjectName(u"centralLayout"_s);
+    centralLayout->setContentsMargins({});
+
+    auto area = new QScrollArea(this);
+    centralLayout->addWidget(area);
+    area->setWidgetResizable(true);
+
+    auto mainWidget = new QWidget(this);
+    area->setWidget(mainWidget);
+
+    auto mainLayout = new QVBoxLayout(mainWidget);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
