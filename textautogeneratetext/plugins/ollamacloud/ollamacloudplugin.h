@@ -42,6 +42,7 @@ public:
 
     void remove() override;
     [[nodiscard]] QString passwordServiceName() const;
+    [[nodiscard]] QString shareNamePrompt() const override;
 Q_SIGNALS:
     void loadApiKeyDone();
 

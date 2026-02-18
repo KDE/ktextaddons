@@ -12,7 +12,7 @@
 
 namespace OllamaCommonModelUtils
 {
-[[nodiscard]] QString generateUserPrompt(OllamaCommonSettings::ShareNameType type);
+[[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QString generateUserPrompt(OllamaCommonSettings::ShareNameType type);
 [[nodiscard]] QString description(const QString &modelName);
 [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QList<OllamaCommonModelAvailableInfo>
 extractAvailableModel(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &modelinfo);

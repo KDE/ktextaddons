@@ -161,6 +161,8 @@ public:
     /*!
      */
     [[nodiscard]] virtual bool hasAudioSupport() const = 0;
+
+    virtual QString shareNamePrompt() const;
 Q_SIGNALS:
     /*!
      */

@@ -196,10 +196,11 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
 
 QJsonObject TextAutoGenerateTextPlugin::createPromptMessage() const
 {
-    if (!d->manager->systemPrompt().isEmpty()) {
+    if (!d->manager->systemPrompt().isEmpty() || !shareNamePrompt().isEmpty()) {
         QJsonObject obj;
         obj["role"_L1] = u"system"_s;
-        obj["content"_L1] = d->manager->systemPrompt();
+        const QString prompt = shareNamePrompt() + d->manager->systemPrompt();
+        obj["content"_L1] = prompt;
         return obj;
     }
     return QJsonObject();
@@ -279,6 +280,11 @@ QString TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::Text
         return i18n("Network");
     }
     Q_UNREACHABLE();
+    return {};
+}
+
+QString TextAutoGenerateTextPlugin::shareNamePrompt() const
+{
     return {};
 }
 

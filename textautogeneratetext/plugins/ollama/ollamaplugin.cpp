@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
+#include "ollamacommonmodelutils.h"
 #include "ollamacommonreply.h"
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
@@ -208,6 +209,11 @@ bool OllamaPlugin::hasOcrSupport() const
 bool OllamaPlugin::hasAudioSupport() const
 {
     return mOllamaManager->hasAudioSupport(currentModel());
+}
+
+QString OllamaPlugin::shareNamePrompt() const
+{
+    return OllamaCommonModelUtils::generateUserPrompt(mOllamaSettings->shareNameType());
 }
 
 #include "moc_ollamaplugin.cpp"

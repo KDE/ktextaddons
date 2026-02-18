@@ -12,6 +12,7 @@
 #include "ollamacloudconfiguredialog.h"
 #include "ollamacloudmanager.h"
 #include "ollamacloudsettings.h"
+#include "ollamacommonmodelutils.h"
 #include "ollamacommonreply.h"
 #include <KLocalizedString>
 #include <qt6keychain/keychain.h>
@@ -235,6 +236,11 @@ bool OllamaCloudPlugin::hasAudioSupport() const
 void OllamaCloudPlugin::remove()
 {
     removeApiKey();
+}
+
+QString OllamaCloudPlugin::shareNamePrompt() const
+{
+    return OllamaCommonModelUtils::generateUserPrompt(mOllamaCloudSettings->shareNameType());
 }
 
 #include "moc_ollamacloudplugin.cpp"

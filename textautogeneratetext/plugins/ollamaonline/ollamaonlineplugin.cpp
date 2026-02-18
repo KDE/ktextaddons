@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
+#include "ollamacommonmodelutils.h"
 #include "ollamacommonreply.h"
 #include "ollamaonlineconfiguredialog.h"
 #include "ollamaonlinemanager.h"
@@ -236,6 +237,11 @@ bool OllamaOnlinePlugin::hasAudioSupport() const
 void OllamaOnlinePlugin::remove()
 {
     removeApiKey();
+}
+
+QString OllamaOnlinePlugin::shareNamePrompt() const
+{
+    return OllamaCommonModelUtils::generateUserPrompt(mOllamaOnlineSettings->shareNameType());
 }
 
 #include "moc_ollamaonlineplugin.cpp"
