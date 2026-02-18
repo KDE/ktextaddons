@@ -26,34 +26,46 @@ class TEXTADDONSWIDGETS_EXPORT SelectSpecialCharDialog : public QDialog
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for the SelectSpecialCharDialog
+     * \param parent The parent widget
      */
     explicit SelectSpecialCharDialog(QWidget *parent);
     /*!
+     * \brief Destructor for the SelectSpecialCharDialog
      */
     ~SelectSpecialCharDialog() override;
 
     /*!
+     * Sets the current character to display
+     * \param c The character to set
      */
     void setCurrentChar(QChar c);
     /*!
+     * Returns the currently selected character
      */
     [[nodiscard]] QChar currentChar() const;
 
     /*!
+     * Sets the text for the OK button
+     * \param text The button text
      */
     void setOkButtonText(const QString &text);
 
     /*!
+     * Shows or hides the select button
+     * \param show Whether to show the button
      */
     void showSelectButton(bool show);
 
-    /*
+    /*!
      * When we double click we call accept
      */
     void autoInsertChar();
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when a character is selected
+     * \param c The selected character
      */
     void charSelected(QChar);
 

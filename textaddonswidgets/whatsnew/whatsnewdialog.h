@@ -27,15 +27,21 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewDialog : public QDialog
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for WhatsNewDialog
+     * \param infos A list of WhatsNewInfo objects to display
+     * \param parent The parent widget
+     * \param applicationName The name of the application
      */
     explicit WhatsNewDialog(const QList<TextAddonsWidgets::WhatsNewInfo> &infos,
                             QWidget *parent = nullptr,
                             const QString &applicationName = QCoreApplication::applicationName());
     /*!
+     * \brief Destructor for WhatsNewDialog
      */
     ~WhatsNewDialog() override;
 
     /*!
+     * \brief Updates the WhatsNew information display
      */
     void updateInformations();
 

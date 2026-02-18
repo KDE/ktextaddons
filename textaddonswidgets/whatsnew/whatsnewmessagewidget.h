@@ -25,13 +25,19 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewMessageWidget : public KMessageWidget
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for WhatsNewMessageWidget
+     * \param parent The parent widget
+     * \param applicationName The name of the application
      */
     explicit WhatsNewMessageWidget(QWidget *parent = nullptr, const QString &applicationName = QCoreApplication::applicationName());
     /*!
+     * \brief Destructor for WhatsNewMessageWidget
      */
     ~WhatsNewMessageWidget() override;
 
     /*!
+     * \brief Sets the WhatsNew information to display
+     * \param infos A list of WhatsNewInfo objects to display
      */
     void setWhatsNewInfos(const QList<TextAddonsWidgets::WhatsNewInfo> &infos);
 

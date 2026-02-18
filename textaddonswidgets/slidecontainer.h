@@ -32,6 +32,8 @@ class TEXTADDONSWIDGETS_EXPORT SlideContainer : public QFrame
     Q_PROPERTY(int slideHeight READ slideHeight WRITE setSlideHeight)
 public:
     /*!
+     * \brief Constructs a SlideContainer widget
+     * \param parent The parent widget
      */
     explicit SlideContainer(QWidget *parent = nullptr);
 
@@ -46,17 +48,22 @@ public:
     void setContent(QWidget *content);
 
     /*!
+     * Returns the size hint for this widget
      */
     QSize sizeHint() const override;
     /*!
+     * Returns the minimum size hint for this widget
      */
     QSize minimumSizeHint() const override;
 
     /*!
+     * Returns the slide height of the content widget
      */
     [[nodiscard]] int slideHeight() const;
 
     /*!
+     * Sets the slide height of the content widget
+     * \param height The height to slide to
      */
     Q_INVOKABLE void setSlideHeight(int height);
 
@@ -74,11 +81,25 @@ public Q_SLOTS:
     void slideOut();
 
 Q_SIGNALS:
+    /*!\brief Emitted when the slide animation has finished sliding in */
     void slidedIn();
+    /*!
+     * \brief Emitted when the slide animation has finished sliding out
+     */
     void slidedOut();
 
 protected:
+    /*!
+     * \brief Handles resize events for the slide container
+     * \param arg The resize event
+     */
     void resizeEvent(QResizeEvent *) override;
+    /*!
+     * \brief Handles events for the slide container
+     * \param obj The object that received the event
+     * \param event The event that occurred
+     * \return True if the event was handled, false otherwise
+     */
     bool eventFilter(QObject *, QEvent *event) override;
 
 private:

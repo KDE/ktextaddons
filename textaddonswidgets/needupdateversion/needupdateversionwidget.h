@@ -23,13 +23,18 @@ class TEXTADDONSWIDGETS_EXPORT NeedUpdateVersionWidget : public KMessageWidget
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for NeedUpdateVersionWidget
+     * \param parent The parent widget
      */
     explicit NeedUpdateVersionWidget(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for NeedUpdateVersionWidget
      */
     ~NeedUpdateVersionWidget() override;
 
     /*!
+     * \brief Sets the obsolete version status
+     * \param obsolete The obsolete version type
      */
     void setObsoleteVersion(NeedUpdateVersionUtils::ObsoleteVersion obsolete);
 

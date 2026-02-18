@@ -24,22 +24,32 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewComboBoxWidget : public QWidget
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for WhatsNewComboBoxWidget
+     * \param parent The parent widget
      */
     explicit WhatsNewComboBoxWidget(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for WhatsNewComboBoxWidget
      */
     ~WhatsNewComboBoxWidget() override;
 
     /*!
+     * \brief Adds a version to the combo box
+     * \param name The name of the version
+     * \param identifier The identifier for the version
      */
     void addVersion(const QString &name, int identifier);
 
     /*!
+     * \brief Initializes the version combo box
+     * \param type The type to initialize
      */
     void initializeVersion(int type);
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when the version selection changes
+     * \param type The type of version selected
      */
     void versionChanged(int type);
 

@@ -30,41 +30,60 @@ public:
         Description = Qt::UserRole + 1,
     };
     /*!
+     * \brief Constructor for ConfigurePluginsWidget
+     * \param parent The parent widget
      */
     explicit ConfigurePluginsWidget(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for ConfigurePluginsWidget
      */
     ~ConfigurePluginsWidget() override;
 
     /*!
+     * \brief Saves the current plugin configuration
      */
     virtual void save();
     /*!
+     * \brief Loads the plugin configuration
      */
     virtual void load();
     /*!
+     * \brief Resets to default plugin settings
      */
     virtual void defaults();
     /*!
+     * \brief Loads configuration from global settings
      */
     virtual void doLoadFromGlobalSettings();
     /*!
+     * \brief Resets to default settings other than enabled state
      */
     virtual void doResetToDefaultsOther();
     /*!
+     * \brief Initializes the configure plugins widget
      */
     virtual void initialize();
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when the plugin configuration has changed
      */
     void changed();
     /*!
+     * \brief Emitted when the configure button is clicked for a plugin
+     * \param configureGroupName The configuration group name
+     * \param identifier The plugin identifier
      */
     void configureClicked(const QString &configureGroupName, const QString &identifier);
 
 protected:
+    /*!
+     * \brief The tree widget for displaying plugins
+     */
     QTreeWidget *const mTreePluginWidget;
+    /*!
+     * \brief Called when initialization is complete
+     */
     void initializeDone();
 
     class PluginItem : public QTreeWidgetItem

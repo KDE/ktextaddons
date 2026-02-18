@@ -22,15 +22,21 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewTranslationsBase
 {
 public:
     /*!
+     * \brief Constructor for WhatsNewTranslationsBase
      */
     WhatsNewTranslationsBase();
     /*!
+     * \brief Virtual destructor for WhatsNewTranslationsBase
      */
     virtual ~WhatsNewTranslationsBase();
     /*!
+     * \brief Creates a list of WhatsNewInfo objects with the latest changes
+     * \return A list of WhatsNewInfo objects
      */
     [[nodiscard]] virtual QList<WhatsNewInfo> createWhatsNewInfo() const = 0;
     /*!
+     * \brief Returns the MD5 hash of the new features
+     * \return The MD5 hash string
      */
     [[nodiscard]] QString newFeaturesMD5() const;
 

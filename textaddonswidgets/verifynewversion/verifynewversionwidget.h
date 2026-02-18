@@ -35,25 +35,41 @@ public:
     };
 
     /*!
+     * \brief Constructor for VerifyNewVersionWidget
+     * \param parent The parent object
      */
     explicit VerifyNewVersionWidget(QObject *parent = nullptr);
     /*!
+     * \brief Destructor for VerifyNewVersionWidget
      */
     ~VerifyNewVersionWidget() override;
 
     /*!
+     * \brief Returns whether it's possible to verify a new version
+     * \return True if verification is possible, false otherwise
      */
     [[nodiscard]] bool canVerifyNewVersion() const;
 
     /*!
+     * \brief Returns the action for verifying a new version
+     * \return The QAction for verifying new version
      */
     [[nodiscard]] QAction *verifyNewVersionAction();
 
     /*!
+     * \brief Generates URL information for verifying a new version
+     * \param stableBranchVersion The stable branch version
+     * \param url The URL to check
+     * \param stable Whether to check stable version
      */
     void generateUrlInfo(const QString &stableBranchVersion, const QString &url, bool stable);
 
     /*!
+     * \brief Generates verification info for a new version
+     * \param stableBranchVersion The stable branch version
+     * \param url The URL to check
+     * \param stable Whether to check stable version
+     * \return VerifyNewVersionInfo containing the generated information
      */
     [[nodiscard]] VerifyNewVersionInfo generateVerifyNewVersionInfo(const QString &stableBranchVersion, const QString &url, bool stable) const;
 #if TEXTADDONSWIDGETS_ENABLE_DEPRECATED_SINCE(1, 9)
