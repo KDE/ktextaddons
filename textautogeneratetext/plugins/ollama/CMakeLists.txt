@@ -37,6 +37,8 @@ target_sources(
         ollamalogdialog.cpp
         ollamalogtextedit.h
         ollamalogtextedit.cpp
+        ollamasyntaxhighlighter.h
+        ollamasyntaxhighlighter.cpp
         textautogenerateollama_private_export.h
         modelsmanager/ollamamodelavailablewidget.h
         modelsmanager/ollamamodelavailablewidget.cpp
