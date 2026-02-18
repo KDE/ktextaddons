@@ -22,27 +22,37 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWid
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for TextAutoGenerateNotWorkingWidget
+     * \param manager The TextAutoGenerateManager instance
+     * \param parent The parent widget
      */
     explicit TextAutoGenerateNotWorkingWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for TextAutoGenerateNotWorkingWidget
      */
     ~TextAutoGenerateNotWorkingWidget() override;
 
     /*!
+     * \brief Sets an error message to display
+     * \param str The error message
      */
     void setMessageError(const QString &str);
     /*!
+     * \brief Clears any displayed message
      */
     void clearMessage();
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when Ollama has been started
      */
     void ollamaStarted();
     /*!
+     * \brief Emitted when the configuration of instances is requested
      */
     void configureInstances();
     /*!
+     * \brief Emitted when Ollama startup is requested
      */
     void startOllamaRequested();
 

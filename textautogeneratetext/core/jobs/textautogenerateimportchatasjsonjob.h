@@ -19,10 +19,20 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateImportChatAsJsonJob : public T
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief Constructs a new TextAutoGenerateImportChatAsJsonJob
+     * \param parent The parent object
+     */
     explicit TextAutoGenerateImportChatAsJsonJob(QObject *parent = nullptr);
+    /*!
+     * \brief Destroys the TextAutoGenerateImportChatAsJsonJob object
+     */
     ~TextAutoGenerateImportChatAsJsonJob() override;
 
 protected:
+    /*!
+     * \brief Imports the chat from JSON format
+     */
     void importChat() override;
 };
 }

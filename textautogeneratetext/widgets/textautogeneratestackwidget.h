@@ -26,16 +26,24 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateStackWidget : public QWidget
     Q_OBJECT
 public:
     /*!
+     * \brief Constructs a new TextAutoGenerateStackWidget
+     * \param manager The TextAutoGenerateManager instance
+     * \param parent The parent widget
      */
     explicit TextAutoGenerateStackWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     /*!
+     * \brief Destroys the TextAutoGenerateStackWidget
      */
     ~TextAutoGenerateStackWidget() override;
 
     /*!
+     * \brief Sets the engine state and error message
+     * \param state True if the engine is broken, false otherwise
+     * \param errorMessage The error message to display
      */
     void setBrokenEngine(bool state, const QString &errorMessage);
     /*!
+     * \brief Performs a search text operation
      */
     void slotSearchText();
 

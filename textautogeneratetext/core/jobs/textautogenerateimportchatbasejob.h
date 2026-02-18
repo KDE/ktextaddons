@@ -21,34 +21,64 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateImportChatBaseJob : public QOb
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateImportChatBaseJob::ImportChatInfo
+     * \brief Structure containing information for importing a chat
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT ImportChatInfo {
         QString filename;
         QString chatTitle;
         [[nodiscard]] bool isValid() const;
     };
 
-    /*! Constructs a new TextAutoGenerateImportChatBaseJob with the given @p parent. */
+    /*!
+     * \brief Constructs a new TextAutoGenerateImportChatBaseJob
+     * \param parent The parent object
+     */
     explicit TextAutoGenerateImportChatBaseJob(QObject *parent = nullptr);
-    /*! Destroys the TextAutoGenerateImportChatBaseJob object. */
+    /*!
+     * \brief Destroys the TextAutoGenerateImportChatBaseJob object
+     */
     ~TextAutoGenerateImportChatBaseJob() override;
 
-    /*! Returns the import chat information. */
+    /*!
+     * \brief Returns the import chat information
+     * \return The import chat info
+     */
     [[nodiscard]] ImportChatInfo info() const;
-    /*! Sets the import chat information to @p newInfo. */
+    /*!
+     * \brief Sets the import chat information
+     * \param newInfo The import chat info to set
+     */
     void setInfo(const ImportChatInfo &newInfo);
 
-    /*! Returns whether the import job can be started. */
+    /*!
+     * \brief Returns whether the import job can be started
+     * \return True if the job can start, false otherwise
+     */
     [[nodiscard]] bool canStart() const;
-    /*! Starts the import job. */
+    /*!
+     * \brief Starts the import job
+     */
     void start();
 
 Q_SIGNALS:
-    /*! Emitted when import is complete with the chat @p title and list of imported @p msgs. */
+    /*!
+     * \brief Emitted when import is complete
+     * \param title The title of the imported chat
+     * \param msgs The list of imported messages
+     */
     void importDone(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
 
 protected:
-    /*! Imports the chat in the format-specific way. This is called by start(). */
+    /*!
+     * \brief Imports the chat in the format-specific way
+     * This method is called by start() and should be implemented by subclasses
+     */
     virtual void importChat() = 0;
+    /*!
+     * \brief The import chat information
+     */
     ImportChatInfo mInfo;
 };
 }

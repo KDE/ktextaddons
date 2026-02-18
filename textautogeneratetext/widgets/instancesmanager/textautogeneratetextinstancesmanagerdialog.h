@@ -23,9 +23,13 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerDialog : p
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for TextAutoGenerateTextInstancesManagerDialog
+     * \param manager The TextAutoGenerateManager instance
+     * \param parent The parent widget
      */
     explicit TextAutoGenerateTextInstancesManagerDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for TextAutoGenerateTextInstancesManagerDialog
      */
     ~TextAutoGenerateTextInstancesManagerDialog() override;
 

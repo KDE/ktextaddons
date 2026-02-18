@@ -22,13 +22,18 @@ class TEXTUTILS_EXPORT TextUtilsCopyBlockIconCache
 {
 public:
     /*!
+     * \brief Returns the singleton instance of TextUtilsCopyBlockIconCache
+     * \return Pointer to the singleton instance
      */
     static TextUtilsCopyBlockIconCache *self();
     /*!
+     * \brief Clears the cached icon
      */
     void clear();
 
     /*!
+     * \brief Returns the URL of the copy block icon
+     * \return The URL string for the copy icon
      */
     [[nodiscard]] QString copyBlockUrl();
 

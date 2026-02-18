@@ -20,16 +20,25 @@ class TEXTUTILS_EXPORT TextUtilsBlockCodeManager
 {
 public:
     /*!
+     * \brief Returns the singleton instance of TextUtilsBlockCodeManager
+     * \return Pointer to the singleton instance
      */
     static TextUtilsBlockCodeManager *self();
     /*!
+     * \brief Inserts or updates a block code entry
+     * \param identifier The unique identifier for the block code
+     * \param blockCode The block code content to store
      */
     void insert(const QString &identifier, const QString &blockCode);
     /*!
+     * \brief Retrieves a block code by identifier
+     * \param identifier The identifier of the block code to retrieve
+     * \return The block code content, or empty string if not found
      */
     [[nodiscard]] QString blockCode(const QString &identifier) const;
 
     /*!
+     * \brief Clears all cached block codes
      */
     void clear();
 

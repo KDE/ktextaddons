@@ -25,33 +25,46 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for TextAutoGenerateEngineLoader
+     * \param parent The parent object
      */
     explicit TextAutoGenerateEngineLoader(QObject *parent = nullptr);
     /*!
+     * \brief Destructor for TextAutoGenerateEngineLoader
      */
     ~TextAutoGenerateEngineLoader() override;
 
     /*!
+     * \brief Searches for a text auto-generate client by name
+     * \param clientName The name of the client to search for
+     * \return Pointer to the TextAutoGenerateTextClient, or nullptr if not found
      */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *searchTextAutoGenerateTextClient(const QString &clientName);
 
     /*!
+     * \brief Checks if an engine is available
+     * \return True if an engine is available, false otherwise
      */
     [[nodiscard]] bool hasEngine() const;
 
     /*!
+     * \brief Loads the text auto-generate plugins
      */
     void loadPlugins();
 
     /*!
+     * \brief Returns the list of supported servers
+     * \return List of supported server information
      */
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const;
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when a plugin loading fails
      */
     void loadingPluginFailed();
     /*!
+     * \brief Emitted when no plugins are found
      */
     void noPluginsFound();
 

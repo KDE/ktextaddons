@@ -21,17 +21,18 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateShowModelInfoDialog : public Q
     Q_OBJECT
 public:
     /*!
-     * \brief TextAutoGenerateShowModelInfoDialog
-     * \param parent
+     * \brief Constructor for TextAutoGenerateShowModelInfoDialog
+     * \param parent The parent widget
      */
     explicit TextAutoGenerateShowModelInfoDialog(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for TextAutoGenerateShowModelInfoDialog
      */
     ~TextAutoGenerateShowModelInfoDialog() override;
 
     /*!
-     * \brief setText
-     * \param text
+     * \brief Sets the text to display in the model info dialog
+     * \param text The text to display
      */
     void setText(const QString &text);
 

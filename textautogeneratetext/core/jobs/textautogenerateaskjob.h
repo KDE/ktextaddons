@@ -21,32 +21,62 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
 {
     Q_OBJECT
 public:
-    /*! Constructs a new TextAutoGenerateAskJob object with the given @p parent. */
+    /*!
+     * \brief Constructs a new TextAutoGenerateAskJob object
+     * \param parent The parent object
+     */
     explicit TextAutoGenerateAskJob(QObject *parent = nullptr);
-    /*! Destroys the TextAutoGenerateAskJob object. */
+    /*!
+     * \brief Destroys the TextAutoGenerateAskJob object
+     */
     ~TextAutoGenerateAskJob() override;
-    /*! Returns whether the ask job can be started. */
+    /*!
+     * \brief Returns whether the ask job can be started
+     * \return True if the job can start, false otherwise
+     */
     [[nodiscard]] bool canStart() const;
 
-    /*! Starts the ask job. */
+    /*!
+     * \brief Starts the ask job
+     */
     void start();
 
-    /*! Returns the associated TextAutoGenerateManager. */
+    /*!
+     * \brief Returns the associated TextAutoGenerateManager
+     * \return The manager object
+     */
     [[nodiscard]] TextAutoGenerateManager *manager() const;
-    /*! Sets the associated TextAutoGenerateManager to @p newManager. */
+    /*!
+     * \brief Sets the associated TextAutoGenerateManager
+     * \param newManager The manager to set
+     */
     void setManager(TextAutoGenerateManager *newManager);
 
-    /*! Returns the text to ask. */
+    /*!
+     * \brief Returns the text to ask
+     * \return The question text
+     */
     [[nodiscard]] QString text() const;
-    /*! Sets the text to ask to @p newText. */
+    /*!
+     * \brief Sets the text to ask
+     * \param newText The question text to set
+     */
     void setText(const QString &newText);
 
 Q_SIGNALS:
-    /*! Emitted when text generation is in progress with the current @p response. */
+    /*!
+     * \brief Emitted when text generation is in progress
+     * \param response The current response from text generation
+     */
     void generateTextInProgress(const TextAutoGenerateText::TextAutoGenerateReply::Response &response);
-    /*! Emitted when text generation has finished successfully. */
+    /*!
+     * \brief Emitted when text generation has finished successfully
+     */
     void generateTextDone();
-    /*! Emitted when an error occurs with the error message in @p str. */
+    /*!
+     * \brief Emitted when an error occurs
+     * \param str The error message
+     */
     void errorOccured(const QString &str);
 
 private:

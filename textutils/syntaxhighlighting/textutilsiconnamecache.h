@@ -22,12 +22,19 @@ class TEXTUTILS_EXPORT TextUtilsIconNameCache
 {
 public:
     /*!
+     * \brief Returns the singleton instance of TextUtilsIconNameCache
+     * \return Pointer to the singleton instance
      */
     static TextUtilsIconNameCache *self();
     /*!
+     * \brief Gets the icon path for an icon by name and size
+     * \param name The name of the icon
+     * \param size The desired size of the icon
+     * \return The path to the icon file
      */
     [[nodiscard]] QString iconPath(const QString &name, int size) const;
     /*!
+     * \brief Clears the icon cache
      */
     void clearCache();
 

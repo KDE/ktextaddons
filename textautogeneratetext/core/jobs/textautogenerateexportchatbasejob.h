@@ -21,6 +21,10 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatBaseJob : public QOb
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateExportChatBaseJob::ExportChatInfo
+     * \brief Structure containing information for exporting a chat
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT ExportChatInfo {
         QString filename;
         QString chatTitle;
@@ -28,31 +32,58 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
-    /*! Constructs a new TextAutoGenerateExportChatBaseJob with the given @p parent. */
+    /*!
+     * \brief Constructs a new TextAutoGenerateExportChatBaseJob
+     * \param parent The parent object
+     */
     explicit TextAutoGenerateExportChatBaseJob(QObject *parent = nullptr);
-    /*! Destroys the TextAutoGenerateExportChatBaseJob object. */
+    /*!
+     * \brief Destroys the TextAutoGenerateExportChatBaseJob object
+     */
     ~TextAutoGenerateExportChatBaseJob() override;
 
-    /*! Returns the export chat information. */
+    /*!
+     * \brief Returns the export chat information
+     * \return The export chat info
+     */
     [[nodiscard]] ExportChatInfo info() const;
-    /*! Sets the export chat information to @p newInfo. */
+    /*!
+     * \brief Sets the export chat information
+     * \param newInfo The export chat info to set
+     */
     void setInfo(const ExportChatInfo &newInfo);
 
-    /*! Returns whether the export job can be started. */
+    /*!
+     * \brief Returns whether the export job can be started
+     * \return True if the job can start, false otherwise
+     */
     [[nodiscard]] bool canStart() const;
-    /*! Starts the export job. */
+    /*!
+     * \brief Starts the export job
+     */
     void start();
 
-    /*! Returns the file filter for export dialogs. */
+    /*!
+     * \brief Returns the file filter for export dialogs
+     * \return The file filter string
+     */
     [[nodiscard]] virtual QString filter() const;
 
 Q_SIGNALS:
-    /*! Emitted when export is complete. */
+    /*!
+     * \brief Emitted when export is complete
+     */
     void exportDone();
 
 protected:
-    /*! Exports the chat in the format-specific way. This is called by start(). */
+    /*!
+     * \brief Exports the chat in the format-specific way
+     * This method is called by start() and should be implemented by subclasses
+     */
     virtual void exportChat() = 0;
+    /*!
+     * \brief The export chat information
+     */
     ExportChatInfo mInfo;
 };
 }

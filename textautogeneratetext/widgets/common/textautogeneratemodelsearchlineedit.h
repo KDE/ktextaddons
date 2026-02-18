@@ -20,9 +20,12 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateModelSearchLineEdit : public Q
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor for TextAutoGenerateModelSearchLineEdit
+     * \param parent The parent widget
      */
     explicit TextAutoGenerateModelSearchLineEdit(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor for TextAutoGenerateModelSearchLineEdit
      */
     ~TextAutoGenerateModelSearchLineEdit() override;
 };
