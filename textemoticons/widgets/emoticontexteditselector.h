@@ -13,7 +13,9 @@
 namespace TextEmoticonsWidgets
 {
 /*!
- * \brief The EmoticonTextEditSelector class
+ * \class TextEmoticonsWidgets::EmoticonTextEditSelector
+ * \inmodule TextEmoticonsWidgets
+ * \inheaderfile TextEmoticonsWidgets/EmoticonTextEditSelector
  *
  * \brief A widget to select emojis.
  *
@@ -25,44 +27,50 @@ class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief Constructs an EmoticonTextEditSelector with the given parent
+     * \param parent The parent widget
+     */
     explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
+    /*!
+     * \brief Destroys the EmoticonTextEditSelector
+     */
     ~EmoticonTextEditSelector() override;
 
     /*!
-     * Focus the line edit for search.
+     * \brief Focus the line edit for search.
      */
     void forceLineEditFocus();
 
     /*!
-     * Set whether the custom emoji category should be shown.
+     * \brief Set whether the custom emoji category should be shown.
+     * \param b true to show the custom emoji category, false otherwise
      * \sa customEmojiSupport()
      */
     void setCustomEmojiSupport(bool b);
     /*!
-     * Return whether the custom emoji category is enabled.
+     * \brief Return whether the custom emoji category is enabled.
+     * \return true if custom emoji support is enabled
      * \sa setCustomEmojiSupport()
      */
     [[nodiscard]] bool customEmojiSupport() const;
 
 public:
     /*!
-     * Do all the magic of creating an TextEmoticonsCore::UnicodeEmoticonManager and loading the categories and emojis to the widget.
+     * \brief Do all the magic of creating an TextEmoticonsCore::UnicodeEmoticonManager and loading the categories and emojis to the widget.
      */
     void loadEmoticons();
 
 Q_SIGNALS:
     /*!
-     * This signal is emitted each time the user selects an emoji.
-     *
-     * \a character The actual emoji character
+     * \brief This signal is emitted each time the user selects an emoji.
+     * \param character The actual emoji character
      * \sa insertEmojiIdentifier
      */
     void insertEmoji(const QString &character);
     /*!
-     * This signal is emitted each time the user selects an emoji.
-     *
-     * \brief insertEmojiIdentifier
-     * \a identifier The identifier of the emoji like eg. ":face_with_raised_eyebrow:"
+     * \brief This signal is emitted each time the user selects an emoji.
+     * \param identifier The identifier of the emoji like eg. ":face_with_raised_eyebrow:"
      * \sa insertEmoji
      */
     void insertEmojiIdentifier(const QString &identifier);

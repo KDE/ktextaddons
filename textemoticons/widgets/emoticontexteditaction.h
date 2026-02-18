@@ -12,7 +12,9 @@
 namespace TextEmoticonsWidgets
 {
 /*!
- * \brief The TextEmoticonsWidgets::EmoticonTextEditAction class
+ * \class TextEmoticonsWidgets::EmoticonTextEditAction
+ * \inmodule TextEmoticonsWidgets
+ * \inheaderfile TextEmoticonsWidgets/EmoticonTextEditAction
  *
  * \brief Action to select emojis.
  *
@@ -24,25 +26,33 @@ class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditAction : public KActionMenu
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief Constructs an EmoticonTextEditAction with the given parent
+     * \param parent The parent QObject
+     */
     explicit EmoticonTextEditAction(QObject *parent);
+    /*!
+     * \brief Destroys the EmoticonTextEditAction
+     */
     ~EmoticonTextEditAction() override;
 
     /*!
-     * Set whether the custom emoji category should be shown.
+     * \brief Set whether the custom emoji category should be shown.
+     * \param b true to show the custom emoji category, false otherwise
      * \sa customEmojiSupport()
      */
     void setCustomEmojiSupport(bool b);
     /*!
-     * Return whether the custom emoji category is enabled.
+     * \brief Return whether the custom emoji category is enabled.
+     * \return true if custom emoji support is enabled
      * \sa setCustomEmojiSupport()
      */
     [[nodiscard]] bool customEmojiSupport() const;
 
 Q_SIGNALS:
     /*!
-     * This signal is emitted each time the user selects an emoji.
-     *
-     * \a character The actual emoji character
+     * \brief This signal is emitted each time the user selects an emoji.
+     * \param character The actual emoji character
      * \sa EmoticonTextEditSelector::insertEmoticon
      */
     void insertEmoticon(const QString &);

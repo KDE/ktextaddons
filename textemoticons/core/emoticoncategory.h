@@ -30,38 +30,58 @@ class TEXTEMOTICONSCORE_EXPORT EmoticonCategory
 
 public:
     /*!
+     * \brief Constructs an empty EmoticonCategory
      */
     EmoticonCategory();
     /*!
+     * \brief Returns the category name identifier
+     * \return The category name
      */
     [[nodiscard]] QString name() const;
     /*!
+     * \brief Sets the category name identifier
+     * \param name The new category name
      */
     void setName(const QString &name);
 
     /*!
+     * \brief Returns the category identifier
+     * \return The category identifier string
      */
     [[nodiscard]] QString category() const;
     /*!
+     * \brief Sets the category identifier
+     * \param category The new category identifier
      */
     void setCategory(const QString &category);
 
     /*!
+     * \brief Returns the localized category name
+     * \return The internationalized category name
      */
     [[nodiscard]] const QString &i18nName() const;
 
     /*!
+     * \brief Sets the localized category name
+     * \param newI18nName The new internationalized category name
      */
     void setI18nName(const QString &newI18nName);
 
     /*!
+     * \brief Compares this category with another for ordering
+     * \param other The other EmoticonCategory to compare with
+     * \return true if this category should be sorted before the other
      */
     [[nodiscard]] bool operator<(const EmoticonCategory &other) const;
 
     /*!
+     * \brief Returns the display order of the category
+     * \return The order value
      */
     [[nodiscard]] int order() const;
     /*!
+     * \brief Sets the display order of the category
+     * \param newOrder The new order value
      */
     void setOrder(int newOrder);
 
@@ -75,5 +95,9 @@ private:
 Q_DECLARE_METATYPE(TextEmoticonsCore::EmoticonCategory)
 Q_DECLARE_TYPEINFO(TextEmoticonsCore::EmoticonCategory, Q_MOVABLE_TYPE);
 /*!
+ * \brief Outputs the EmoticonCategory to a debug stream
+ * \param d The debug stream
+ * \param t The EmoticonCategory to output
+ * \return The debug stream
  */
 TEXTEMOTICONSCORE_EXPORT QDebug operator<<(QDebug d, const TextEmoticonsCore::EmoticonCategory &t);

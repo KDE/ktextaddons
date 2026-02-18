@@ -14,7 +14,15 @@ class QTimer;
 namespace TextAutoCorrectionCore
 {
 /*!
- * \brief The TextAutoCorrectionSettings class
+ * \class TextAutoCorrectionCore::TextAutoCorrectionSettings
+ * \inmodule TextAutoCorrectionCore
+ * \inheaderfile TextAutoCorrectionCore/TextAutoCorrectionSettings
+ *
+ * \brief Singleton wrapper for text autocorrection settings configuration.
+ *
+ * Provides convenient access to autocorrection settings with optimized
+ * configuration file synchronization using a timer.
+ *
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAutoCorrectionCore::TextAutoCorrectionSettingsBase
@@ -22,14 +30,20 @@ class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAuto
     Q_OBJECT
 public:
     /*!
+     * \brief Returns the singleton instance of TextAutoCorrectionSettings
+     * \return A pointer to the TextAutoCorrectionSettings singleton
      */
     static TextAutoCorrectionSettings *self();
 
-    /*! Call this slot instead of directly \ KConfig::sync() to
-      minimize the overall config writes. Calling this slot will
-      schedule a sync of the application config file using a timer, so
-      that many consecutive calls can be condensed into a single
-      sync, which is more efficient. */
+    /*!
+     * \brief Requests a synchronization of the configuration settings.
+     *
+     * Call this slot instead of directly calling KConfig::sync() to
+     * minimize the overall config writes. Calling this slot will
+     * schedule a sync of the application config file using a timer, so
+     * that many consecutive calls can be condensed into a single
+     * sync, which is more efficient.
+     */
     void requestSync();
 
 private Q_SLOTS:

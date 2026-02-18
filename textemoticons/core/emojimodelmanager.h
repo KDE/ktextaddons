@@ -41,66 +41,95 @@ public:
     Q_ENUM(EmojiTone)
 
     /*!
+     * \brief Returns the singleton instance of EmojiModelManager
+     * \return A pointer to the EmojiModelManager singleton
      */
     static EmojiModelManager *self();
     /*!
+     * \brief Returns the emoji model
+     * \return A pointer to the EmojiModel instance
      */
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
     /*!
      * \brief Set the settings group name used to store the recent identifiers.
-     * \
-ote If not set, the group name is "EmoticonRecentUsed".
+     * \param key The settings group name
+     * \note If not set, the group name is "EmoticonRecentUsed".
      */
     void setRecentSettingsGroupName(const QString &key);
 
     /*!
+     * \brief Returns the list of recent identifiers
+     * \return A list of recent emoticon identifiers
      */
     [[nodiscard]] const QStringList &recentIdentifier() const;
     /*!
+     * \brief Sets the list of recent identifiers
+     * \param newRecentIdentifier The new list of recent identifiers
      */
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
     /*!
+     * \brief Adds an identifier to the recent identifiers list
+     * \param identifier The identifier to add
      */
     Q_INVOKABLE void addIdentifier(const QString &identifier);
 
     /*!
+     * \brief Returns the custom emoji icon manager
+     * \return A pointer to the CustomEmojiIconManager instance
      */
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     /*!
+     * \brief Sets the custom emoji icon manager
+     * \param newCustomEmojiIconManager The new CustomEmojiIconManager instance
      */
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
     /*!
+     * \brief Returns the list of emoticons to exclude
+     * \return A list of emoticon identifiers to exclude from the model
      */
     [[nodiscard]] QStringList excludeEmoticons() const;
     /*!
+     * \brief Sets the list of emoticons to exclude
+     * \param emoticons The emoticons to exclude
      */
     void setExcludeEmoticons(const QStringList &emoticons);
 
     /*!
+     * \brief Returns the current emoji tone
+     * \return The EmojiTone setting
      */
     [[nodiscard]] EmojiModelManager::EmojiTone emojiTone() const;
     /*!
+     * \brief Sets the emoji tone
+     * \param tone The emoji tone to set
      */
     void setEmojiTone(EmojiModelManager::EmojiTone tone);
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when the used identifier list changes
+     * \param lst The new list of recent identifiers
      */
     void usedIdentifierChanged(const QStringList &lst);
     /*!
+     * \brief Emitted when the list of excluded emoticons changes
      */
     void excludeEmoticonsChanged();
     /*!
+     * \brief Emitted when the emoji tone changes
      */
     void emojiToneChanged();
 
 protected:
     /*!
+     * \brief Constructs an EmojiModelManager with the given parent
+     * \param parent The parent QObject
      */
     explicit EmojiModelManager(QObject *parent = nullptr);
     /*!
+     * \brief Destroys the EmojiModelManager
      */
     ~EmojiModelManager() override;
 

@@ -25,31 +25,46 @@ class TEXTEMOTICONSCORE_EXPORT CustomEmoji
     Q_GADGET
 public:
     /*!
+     * \brief Constructor for CustomEmoji
      */
     CustomEmoji();
 
     /*!
+     * \brief Returns the identifier of the custom emoji
+     * \return The emoji identifier string
      */
     [[nodiscard]] QString identifier() const;
     /*!
+     * \brief Sets the identifier of the custom emoji
+     * \param newIdentifier The emoji identifier to set
      */
     void setIdentifier(const QString &newIdentifier);
 
     /*!
+     * \brief Returns the category of the custom emoji
+     * \return The category string
      */
     [[nodiscard]] QString category() const;
 
     /*!
+     * \brief Checks if the emoji is animated
+     * \return True if the emoji is animated, false otherwise
      */
     [[nodiscard]] bool isAnimatedEmoji() const;
     /*!
+     * \brief Sets whether the emoji is animated
+     * \param newIsAnimatedEmoji True to mark as animated, false otherwise
      */
     void setIsAnimatedEmoji(bool newIsAnimatedEmoji);
 
     /*!
+     * \brief Returns the file name of the emoji
+     * \return The file name string
      */
     [[nodiscard]] QString fileName() const;
     /*!
+     * \brief Sets the file name of the emoji
+     * \param newFileName The file name to set
      */
     void setFileName(const QString &newFileName);
 

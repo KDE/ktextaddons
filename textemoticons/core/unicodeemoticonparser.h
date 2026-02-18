@@ -23,16 +23,24 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonParser
 {
 public:
     /*!
+     * \brief Constructs a UnicodeEmoticonParser
      */
     UnicodeEmoticonParser();
     /*!
+     * \brief Destroys the UnicodeEmoticonParser
      */
     ~UnicodeEmoticonParser() = default;
 
     /*!
+     * \brief Parses emoticon data from a JSON object
+     * \param o The JSON object containing emoticon data
+     * \return A list of parsed UnicodeEmoticon objects
      */
     [[nodiscard]] QList<UnicodeEmoticon> parse(const QJsonObject &o) const;
     /*!
+     * \brief Converts emoticon category name to sort order value
+     * \param name The category name
+     * \return The sort order value for the category
      */
     [[nodiscard]] static int changeOrder(const QString &name);
 };

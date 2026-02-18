@@ -17,19 +17,32 @@ class KArchiveDirectory;
 namespace TextAutoCorrectionCore
 {
 /*!
- * \brief The ImportLibreOfficeAutocorrection class
+ * \class TextAutoCorrectionCore::ImportLibreOfficeAutocorrection
+ * \inmodule TextAutoCorrectionCore
+ * \inheaderfile TextAutoCorrectionCore/ImportLibreOfficeAutocorrection
+ *
+ * \brief Imports autocorrection data from LibreOffice format.
+ *
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
 {
 public:
     /*!
+     * \brief Constructs an ImportLibreOfficeAutocorrection instance
      */
     ImportLibreOfficeAutocorrection();
     /*!
+     * \brief Destroys the ImportLibreOfficeAutocorrection instance
      */
     ~ImportLibreOfficeAutocorrection() override;
 
     /*!
+     * \brief Imports autocorrection data from a LibreOffice file
+     * \param fileName The path to the LibreOffice autocorrection file
+     * \param errorMessage Will be set to an error message if import fails
+     * \param loadAttribute Specifies what data to load
+     * \return true if import was successful, false otherwise
      */
     [[nodiscard]] bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
 

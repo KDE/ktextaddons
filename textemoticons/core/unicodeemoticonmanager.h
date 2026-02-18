@@ -32,31 +32,50 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
 
 public:
     /*!
+     * \brief Returns the singleton instance of UnicodeEmoticonManager
+     * \param filename The path to the emoticon data file (optional)
+     * \return A pointer to the UnicodeEmoticonManager singleton
      */
     static UnicodeEmoticonManager *self(const QString &filename = {});
 
     /*!
+     * \brief Returns the list of all Unicode emoticons
+     * \return A list of UnicodeEmoticon objects
      */
     [[nodiscard]] QList<UnicodeEmoticon> unicodeEmojiList() const;
 
     /*!
+     * \brief Returns emoticons in the specified category
+     * \param category The category identifier
+     * \return A list of UnicodeEmoticon objects in this category
      */
     [[nodiscard]] QList<UnicodeEmoticon> emojisForCategory(const QString &category) const;
     /*!
+     * \brief Returns all available emoticon categories
+     * \return A list of EmoticonCategory objects
      */
     [[nodiscard]] QList<EmoticonCategory> categories() const;
     /*!
+     * \brief Finds the emoticon for the given emoji identifier
+     * \param emojiIdentifier The emoji identifier to look up
+     * \return The UnicodeEmoticon object, or an invalid emoticon if not found
      */
     [[nodiscard]] UnicodeEmoticon unicodeEmoticonForEmoji(const QString &emojiIdentifier) const;
     /*!
+     * \brief Returns the total number of emoticons
+     * \return The count of emoticons
      */
     [[nodiscard]] int count() const;
 
 protected:
     /*!
+     * \brief Constructs a UnicodeEmoticonManager with optional data file
+     * \param filename The path to the emoticon data file (optional)
+     * \param parent The parent QObject
      */
     explicit UnicodeEmoticonManager(const QString &filename = {}, QObject *parent = nullptr);
     /*!
+     * \brief Destroys the UnicodeEmoticonManager
      */
     ~UnicodeEmoticonManager() override;
 

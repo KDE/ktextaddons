@@ -39,45 +39,71 @@ public:
     Q_ENUM(EmoticonsRoles)
 
     /*!
+     * \brief Constructor for EmojiModel
+     * \param parent The parent object
      */
     explicit EmojiModel(QObject *parent = nullptr);
     /*!
+     * \brief Destructor for EmojiModel
      */
     ~EmojiModel() override;
 
     /*!
+     * \brief Returns the number of rows in the model
+     * \param parent The parent model index
+     * \return The row count
      */
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     /*!
+     * \brief Returns the data for a given index and role
+     * \param index The model index
+     * \param role The data role
+     * \return The data as a QVariant
      */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     /*!
+     * \brief Returns the list of unicode emoticons
+     * \return A reference to the emoticon list
      */
     [[nodiscard]] const QList<TextEmoticonsCore::UnicodeEmoticon> &emoticonList() const;
     /*!
+     * \brief Sets the list of unicode emoticons
+     * \param newEmoticonList The emoticon list to set
      */
     void setUnicodeEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList);
 
     /*!
+     * \brief Returns the list of custom emojis
+     * \return The custom emoji list
      */
     [[nodiscard]] QList<TextEmoticonsCore::CustomEmoji> customEmojiList() const;
     /*!
+     * \brief Sets the list of custom emojis
+     * \param newCustomEmojiList The custom emoji list to set
      */
     void setCustomEmojiList(const QList<TextEmoticonsCore::CustomEmoji> &newCustomEmojiList);
 
     /*!
+     * \brief Returns the custom emoji icon manager
+     * \return Pointer to the CustomEmojiIconManager
      */
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     /*!
+     * \brief Sets the custom emoji icon manager
+     * \param newCustomEmojiIconManager The icon manager to set
      */
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
     /*!
+     * \brief Sets emoticons to exclude from the model
+     * \param emoticons The list of emoticons to exclude
      */
     void setExcludeEmoticons(const QStringList &emoticons);
 
     /*!
+     * \brief Returns the role names for the model
+     * \return A hash of role numbers to role names
      */
     QHash<int, QByteArray> roleNames() const override;
 
