@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:43+0000\n"
-"PO-Revision-Date: 2026-02-16 16:41+0300\n"
+"POT-Creation-Date: 2026-02-19 00:43+0000\n"
+"PO-Revision-Date: 2026-02-18 15:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -128,23 +128,20 @@ msgid "Go to message"
 msgstr "İletiye git"
 
 #: core/textautogeneratesettings.cpp:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "You are an AI assistant. You are speaking to a person named %1. Be "
-#| "helpful, professional, and courteous. Do not give inaccurate information."
+#, kde-format
 msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
-"Sen bir yapay zekâ asistanısın. %1 adlı bir kişiyle konuşuyorsun. Nâzik, "
-"profesyonel ve yardımcı ol. Doğru olmayan bilgiler verme."
+"Sen bir yapay zekâ asistanısın. Nâzik, profesyonel ve yardımcı ol. Doğru "
+"olmayan bilgiler verme."
 
-#: core/textautogeneratetextplugin.cpp:277
+#: core/textautogeneratetextplugin.cpp:278
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: core/textautogeneratetextplugin.cpp:279
+#: core/textautogeneratetextplugin.cpp:280
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
@@ -334,9 +331,9 @@ msgid "Base:"
 msgstr "Temel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:56
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:57
+#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -511,29 +508,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modeller Oluştur"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:69
+#: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
 msgstr "Kapı:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
 msgid "Show Ollama Log"
 msgstr "Ollama Günlüğünü Göster"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:84
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:64
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:96
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:95
+#: plugins/ollama/ollamaconfigurewidget.cpp:107
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama’yı Özelleştir"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:105
+#: plugins/ollama/ollamaconfigurewidget.cpp:117
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -542,7 +539,7 @@ msgstr ""
 "Bu girdiler isteğe bağlıdır, Ollama’nın GPU ile ilişkin sorunlarını "
 "tanılamak için kullanılırlar."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:171
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama başlatılamadı"
@@ -553,7 +550,7 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Ollama Günlüğü"
 
-#: plugins/ollama/ollamaplugin.cpp:93
+#: plugins/ollama/ollamaplugin.cpp:94
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -582,14 +579,14 @@ msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
 msgstr "Ollama Bulut’u Yapılandır"
 
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
 msgstr "API anahtarı:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:115
+#: plugins/ollamacloud/ollamacloudplugin.cpp:116
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "Ollama Bulut"
@@ -2455,7 +2452,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #, kde-format
 msgid "The user is called %1"
-msgstr ""
+msgstr "Kullanıcının adı %1"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
@@ -2465,7 +2462,7 @@ msgstr "Ollama’yı Ağa Tanıt"
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr ""
+msgstr "Düşünce İşleme"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
@@ -2487,12 +2484,13 @@ msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
 msgstr ""
+"Uyumlu akıl yürütme modellerinin bir ileti üretmeden önce yanıtları hakkında "
+"düşünmelerini sağlayın."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Share Name:"
-msgstr "Ad:"
+msgstr "Paylaşım adı:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
@@ -2581,17 +2579,17 @@ msgstr "Model Bilgisi"
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr ""
+msgstr "Paylaşma"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr ""
+msgstr "Tam ad"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
@@ -2610,12 +2608,12 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Ollama Çevrimiçi’yi Yapılandır"
 
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:61
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
 msgid "Server Url:"
 msgstr "Sunucu URL’si:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:116
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:117
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama Çevrimiçi"

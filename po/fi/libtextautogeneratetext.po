@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:43+0000\n"
+"POT-Creation-Date: 2026-02-19 00:43+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -140,12 +140,12 @@ msgstr ""
 "Olet tekoälyavustaja. Puhut henkilölle nimeltä %1. Ole auttavainen, "
 "ammattimainen ja kohtelias. Älä tarjoa epätarkkaa tietoa."
 
-#: core/textautogeneratetextplugin.cpp:277
+#: core/textautogeneratetextplugin.cpp:278
 #, kde-format
 msgid "Local"
 msgstr "Paikallinen"
 
-#: core/textautogeneratetextplugin.cpp:279
+#: core/textautogeneratetextplugin.cpp:280
 #, kde-format
 msgid "Network"
 msgstr "Verkko"
@@ -335,9 +335,9 @@ msgid "Base:"
 msgstr "Pohja:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:56
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:57
+#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -512,29 +512,29 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Luo malleja"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:69
+#: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
 msgid "Show Ollama Log"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:84
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:64
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:96
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "Malli:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:95
+#: plugins/ollama/ollamaconfigurewidget.cpp:107
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Mukauta Ollamaa"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:105
+#: plugins/ollama/ollamaconfigurewidget.cpp:117
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -543,7 +543,7 @@ msgstr ""
 "Nämä kohdat ovat valinnaisia: niitä käytetään Ollaman näytönohjaimeen "
 "liittyvien ongelmien selvittämiseen."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:171
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollamaa on mahdotonta käynnistää"
@@ -555,7 +555,7 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:93
+#: plugins/ollama/ollamaplugin.cpp:94
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
@@ -587,14 +587,14 @@ msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
 msgstr "Ollaman asetukset"
 
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:61
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:67
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
 msgstr "API-avain:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:115
+#: plugins/ollamacloud/ollamacloudplugin.cpp:116
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Cloud"
@@ -2321,12 +2321,12 @@ msgctxt "@title:window"
 msgid "Configure Ollama Online"
 msgstr "Ollaman asetukset"
 
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:61
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
 msgid "Server Url:"
 msgstr "Palvelimen verkko-osoite:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:116
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:117
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"
