@@ -27,30 +27,23 @@ class TEXTCUSTOMEDITOR_EXPORT TextEditorCompleter : public QObject
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a completer for a QTextEdit widget. */
     explicit TextEditorCompleter(QTextEdit *editor, QObject *parent);
-    /*!
-     */
+    /*! Constructs a completer for a QPlainTextEdit widget. */
     explicit TextEditorCompleter(QPlainTextEdit *editor, QObject *parent);
-    /*!
-     */
+    /*! Destroys the text editor completer. */
     ~TextEditorCompleter() override;
 
-    /*!
-     */
+    /*! Sets the list of strings to use for completion. */
     void setCompleterStringList(const QStringList &list);
 
-    /*!
-     */
+    /*! Returns the QCompleter instance used for text completion. */
     [[nodiscard]] QCompleter *completer() const;
 
-    /*!
-     */
+    /*! Completes the current word based on the completion list. */
     void completeText();
 
-    /*!
-     */
+    /*! Sets characters that should be excluded from completion. */
     void setExcludeOfCharacters(const QString &excludes);
 
 private:

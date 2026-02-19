@@ -26,17 +26,13 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new GrammalecteConfigWidget. */
     explicit GrammalecteConfigWidget(QWidget *parent = nullptr, bool disableMessageBox = false);
-    /*!
-     */
+    /*! Destroys the widget. */
     ~GrammalecteConfigWidget() override;
-    /*!
-     */
+    /*! Loads the current settings from the configuration. */
     void loadSettings();
-    /*!
-     */
+    /*! Saves the current settings to the configuration. */
     void saveSettings();
 
 private:

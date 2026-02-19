@@ -21,11 +21,9 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new LanguageToolConfigDialog. */
     explicit LanguageToolConfigDialog(QWidget *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the dialog. */
     ~LanguageToolConfigDialog() override;
 
 private:

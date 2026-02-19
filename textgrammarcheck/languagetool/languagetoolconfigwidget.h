@@ -26,22 +26,17 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigWidget : public QWidget
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new LanguageToolConfigWidget. */
     explicit LanguageToolConfigWidget(QWidget *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the widget. */
     ~LanguageToolConfigWidget() override;
-    /*!
-     */
+    /*! Loads the current settings from the configuration. */
     void loadSettings();
-    /*!
-     */
+    /*! Saves the current settings to the configuration. */
     void saveSettings();
 
 Q_SIGNALS:
-    /*!
-     */
+    /*! Emitted when the user requests to reset values to defaults. */
     void resetValue();
 
 private:

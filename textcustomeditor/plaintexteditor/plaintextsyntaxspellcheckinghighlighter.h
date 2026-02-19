@@ -31,44 +31,28 @@ class PlainTextSyntaxSpellCheckingHighlighterPrivate;
 class TEXTCUSTOMEDITOR_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
 {
 public:
-    /*!
-     */
+    /*! Constructs a syntax and spell checking highlighter for plain text. */
     explicit PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor = Qt::red);
-    /*!
-     */
+    /*! Destroys the highlighter. */
     ~PlainTextSyntaxSpellCheckingHighlighter() override;
 
-    /*!
-     */
+    /*! Toggles spell highlighting on or off. */
     void toggleSpellHighlighting(bool on);
 
-    /*!
-     */
+    /*! Sets the syntax definition for highlighting. */
     void setDefinition(const KSyntaxHighlighting::Definition &def) override;
 
-    /*!
-     * Reimplemented to highlight quote blocks.
-     */
+    /*! Highlights a block of text. */
     void highlightBlock(const QString &text) override;
 
 protected:
-    /*!
-     * Reimplemented, the base version sets the text color to black, which
-     * is not what we want. We do nothing, the format is already reset by
-     * Qt.
-     * \a start the beginning of text
-     * \a count the amount of characters to set
-     */
+    /*! Clears misspelled word highlighting. */
     void unsetMisspelled(int start, int count) override;
 
-    /*!
-     * Reimplemented to set the color of the misspelled word to a color
-     * defined by setQuoteColor().
-     */
+    /*! Sets the color of misspelled words. */
     void setMisspelled(int start, int count) override;
 
-    /*!
-     */
+    /*! Applies syntax highlighting format. */
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 
 private:

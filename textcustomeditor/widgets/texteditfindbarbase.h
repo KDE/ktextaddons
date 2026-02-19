@@ -63,62 +63,45 @@ public:
     void setHideWhenClose(bool hide);
 
 Q_SIGNALS:
-    /*!
-     */
+    /*! Emitted to display a message to the user. */
     void displayMessageIndicator(const QString &message);
-    /*!
-     */
+    /*! Emitted when the find bar should be hidden. */
     void hideFindBar();
 
 protected:
-    /*!
-     */
+    /*! Returns whether the view is read-only. Implemented by subclasses. */
     [[nodiscard]] virtual bool viewIsReadOnly() const = 0;
-    /*!
-     */
+    /*! Returns whether the document is empty. Implemented by subclasses. */
     [[nodiscard]] virtual bool documentIsEmpty() const = 0;
-    /*!
-     */
+    /*! Searches for text in the document. Implemented by subclasses. */
     virtual bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) = 0;
-    /*!
-     */
+    /*! Searches for text using regex in the document. Implemented by subclasses. */
     virtual bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) = 0;
-    /*!
-     */
+    /*! Moves the cursor after an automatic search. Implemented by subclasses. */
     virtual void autoSearchMoveCursor() = 0;
 
-    /*!
-     */
+    /*! Handles events. */
     [[nodiscard]] bool event(QEvent *e) override;
-    /*!
-     */
+    /*! Clears the current search selections. */
     void clearSelections();
-    /*!
-     */
+    /*! Searches for text with the given options. */
     bool searchText(bool backward, bool isAutoSearch);
 
-    /*!
-     */
+    /*! Updates the visual indication of whether a match was found. */
     void setFoundMatch(bool match);
-    /*!
-     */
+    /*! Displays a message about the search result. */
     void messageInfo(bool backward, bool isAutoSearch, bool found);
 
 public Q_SLOTS:
-    /*!
-     */
+    /*! Finds the next occurrence of the search text. */
     void findNext();
-    /*!
-     */
+    /*! Finds the previous occurrence of the search text. */
     void findPrev();
-    /*!
-     */
+    /*! Automatically searches for the given text. */
     void autoSearch(const QString &str);
-    /*!
-     */
+    /*! Searches for text with the given options. Implemented by subclasses. */
     virtual void slotSearchText(bool backward = false, bool isAutoSearch = true) = 0;
-    /*!
-     */
+    /*! Closes the find bar. */
     void closeBar();
 
 private Q_SLOTS:

@@ -21,11 +21,9 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new GrammalecteConfigDialog. */
     explicit GrammalecteConfigDialog(QWidget *parent = nullptr, bool disableMessageBox = false);
-    /*!
-     */
+    /*! Destroys the dialog. */
     ~GrammalecteConfigDialog() override;
 
 private:

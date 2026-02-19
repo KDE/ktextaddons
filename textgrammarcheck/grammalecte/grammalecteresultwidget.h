@@ -23,14 +23,11 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidg
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new GrammalecteResultWidget. */
     explicit GrammalecteResultWidget(QWidget *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the widget. */
     ~GrammalecteResultWidget() override;
-    /*!
-     */
+    /*! Checks the grammar of the text. */
     void checkGrammar() override;
 
 private:

@@ -23,41 +23,31 @@ class TEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new GrammarResultTextEdit. */
     explicit GrammarResultTextEdit(QWidget *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the text editor. */
     ~GrammarResultTextEdit() override;
 
-    /*!
-     */
+    /*! Applies the grammar checking results to display the errors. */
     void applyGrammarResult(const QVector<GrammarError> &infos);
 
 protected:
-    /*!
-     */
+    /*! Handles context menu events to display correction suggestions. */
     void contextMenuEvent(QContextMenuEvent *event) override;
 
-    /*!
-     */
+    /*! Paints the widget and highlights grammar errors. */
     void paintEvent(QPaintEvent *event) override;
 
-    /*!
-     */
+    /*! Handles events such as hovering over errors. */
     bool event(QEvent *ev) override;
 Q_SIGNALS:
-    /*!
-     */
+    /*! Emitted when the user wants to replace text with a suggestion. */
     void replaceText(const TextGrammarCheck::GrammarAction &act);
-    /*!
-     */
+    /*! Emitted when the user wants to check the text again. */
     void checkAgain();
-    /*!
-     */
+    /*! Emitted when the user wants to close the checker. */
     void closeChecker();
-    /*!
-     */
+    /*! Emitted when the user wants to configure grammar checking settings. */
     void configure();
 
 private:

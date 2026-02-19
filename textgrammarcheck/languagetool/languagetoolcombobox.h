@@ -22,22 +22,17 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new LanguageToolComboBox. */
     explicit LanguageToolComboBox(QWidget *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the combo box. */
     ~LanguageToolComboBox() override;
 
-    /*!
-     */
+    /*! Sets the currently selected language. */
     void setLanguage(const QString &str);
-    /*!
-     */
+    /*! Returns the currently selected language. */
     [[nodiscard]] QString language() const;
 
-    /*!
-     */
+    /*! Populates the combo box with the available languages. */
     void fillComboBox(const QVector<LanguageInfo> &info);
 
 private:

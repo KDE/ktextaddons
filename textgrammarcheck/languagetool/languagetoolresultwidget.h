@@ -23,19 +23,15 @@ class TEXTGRAMMARCHECK_EXPORT LanguageToolResultWidget : public GrammarResultWid
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! Constructs a new LanguageToolResultWidget. */
     explicit LanguageToolResultWidget(QWidget *parent = nullptr);
-    /*!
-     */
+    /*! Destroys the widget. */
     ~LanguageToolResultWidget() override;
-    /*!
-     */
+    /*! Checks the grammar of the text. */
     void checkGrammar() override;
 
 protected:
-    /*!
-     */
+    /*! Adds extra widgets to the result display. */
     void addExtraWidget() override;
 
 private:
