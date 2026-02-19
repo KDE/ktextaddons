@@ -329,6 +329,10 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
         {u"kimi-k2.5"_s,
          i18n("Kimi K2.5 is an open-source, native multimodal agentic model that seamlessly integrates vision and language understanding with advanced agentic "
               "capabilities, instant and thinking modes, as well as conversational and agentic paradigms.")},
+        {u"glm-5"_s,
+         i18n("A strong reasoning and agentic model from Z.ai with 744B total parameters (40B active), built for complex systems engineering and long-horizon "
+              "tasks.")},
+        {u"minimax-m2.5"_s, i18n("MiniMax-M2.5 is a state-of-the-art large language model designed for real-world productivity and coding tasks.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
