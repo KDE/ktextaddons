@@ -236,7 +236,7 @@ bool OllamaOnlinePlugin::hasAudioSupport() const
 
 bool OllamaOnlinePlugin::hasThinkSupport() const
 {
-    return false;
+    return mOllamaOnlineSettings->thoughtProcessing() && /*mOllamaManager->hasThinkSupport(currentModel())*/ false;
 }
 
 void OllamaOnlinePlugin::remove()

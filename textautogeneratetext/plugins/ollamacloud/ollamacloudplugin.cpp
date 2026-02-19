@@ -235,7 +235,7 @@ bool OllamaCloudPlugin::hasAudioSupport() const
 
 bool OllamaCloudPlugin::hasThinkSupport() const
 {
-    return false;
+    return mOllamaCloudSettings->thoughtProcessing() && /*mOllamaManager->hasThinkSupport(currentModel())*/ false;
 }
 
 void OllamaCloudPlugin::remove()
