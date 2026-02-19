@@ -134,6 +134,7 @@ TextAutoGenerateText::TextAutoGenerateTextRequest TextAutoGenerateTextPlugin::co
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
     req.setTools(info.tools);
+    req.setThinking(hasThinkSupport());
     return req;
 }
 
