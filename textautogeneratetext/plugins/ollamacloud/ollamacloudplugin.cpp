@@ -233,6 +233,11 @@ bool OllamaCloudPlugin::hasAudioSupport() const
     return false;
 }
 
+bool OllamaCloudPlugin::hasThinkSupport() const
+{
+    return false;
+}
+
 void OllamaCloudPlugin::remove()
 {
     removeApiKey();

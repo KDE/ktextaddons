@@ -162,6 +162,10 @@ public:
      */
     [[nodiscard]] virtual bool hasAudioSupport() const = 0;
 
+    /*!
+     */
+    [[nodiscard]] virtual bool hasThinkSupport() const = 0;
+
     virtual QString shareNamePrompt() const;
 Q_SIGNALS:
     /*!

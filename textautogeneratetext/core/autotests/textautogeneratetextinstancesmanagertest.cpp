@@ -31,6 +31,7 @@ public:
     [[nodiscard]] bool hasToolsSupport() const override;
     [[nodiscard]] bool hasOcrSupport() const override;
     [[nodiscard]] bool hasAudioSupport() const override;
+    [[nodiscard]] bool hasThinkSupport() const override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
@@ -98,6 +99,11 @@ bool CustomPlugin::hasOcrSupport() const
     return false;
 }
 bool CustomPlugin::hasAudioSupport() const
+{
+    return false;
+}
+
+bool CustomPlugin::hasThinkSupport() const
 {
     return false;
 }

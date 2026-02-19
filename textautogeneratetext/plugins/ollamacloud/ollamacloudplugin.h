@@ -39,6 +39,7 @@ public:
     [[nodiscard]] bool hasToolsSupport() const override;
     [[nodiscard]] bool hasOcrSupport() const override;
     [[nodiscard]] bool hasAudioSupport() const override;
+    [[nodiscard]] bool hasThinkSupport() const override;
 
     void remove() override;
     [[nodiscard]] QString passwordServiceName() const;

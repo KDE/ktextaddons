@@ -234,6 +234,11 @@ bool OllamaOnlinePlugin::hasAudioSupport() const
     return false;
 }
 
+bool OllamaOnlinePlugin::hasThinkSupport() const
+{
+    return false;
+}
+
 void OllamaOnlinePlugin::remove()
 {
     removeApiKey();
