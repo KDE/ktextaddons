@@ -259,7 +259,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     QJsonObject data;
-    // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
     data["prompt"_L1] = request.message();
     data["model"_L1] = request.model();
     // TODO add prompt here too
@@ -315,7 +314,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
 
     data["think"_L1] = request.thinking();
 
-    qDebug() << " OllamaManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),

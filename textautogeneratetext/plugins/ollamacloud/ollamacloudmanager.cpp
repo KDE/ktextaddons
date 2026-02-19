@@ -204,8 +204,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
         break;
     }
     data["num_ctx"_L1] = mOllamaCloudSettings->contextWindowSize();
-    // TODO verify if model has reasonning
-    data["think"_L1] = false; // mOllamaSettings->thoughtProcessing();
+    data["think"_L1] = request.thinking();
 
     qDebug() << " OllamaCloudManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " Json: " << data;
