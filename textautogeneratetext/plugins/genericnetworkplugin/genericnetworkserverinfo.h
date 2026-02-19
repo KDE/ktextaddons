@@ -40,4 +40,5 @@ public:
     [[nodiscard]] bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasAudioSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] bool hasThinkSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
 };

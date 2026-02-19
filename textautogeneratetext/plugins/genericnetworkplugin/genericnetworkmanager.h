@@ -61,6 +61,7 @@ public:
     [[nodiscard]] bool hasToolsSupport(const QString &currentModel) const;
     [[nodiscard]] bool hasOcrSupport(const QString &currentModel) const;
     [[nodiscard]] bool hasAudioSupport(const QString &currentModel) const;
+    [[nodiscard]] bool hasThinkSupport(const QString &currentModel) const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;

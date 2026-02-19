@@ -394,6 +394,11 @@ bool OllamaManager::hasAudioSupport([[maybe_unused]] const QString &modelName) c
     return false;
 }
 
+bool OllamaManager::hasThinkSupport([[maybe_unused]] const QString &modelName) const
+{
+    return false;
+}
+
 bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
 {
     if (modelName.isEmpty()) {

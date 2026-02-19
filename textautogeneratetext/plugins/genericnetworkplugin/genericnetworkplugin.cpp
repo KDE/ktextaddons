@@ -286,7 +286,7 @@ bool GenericNetworkPlugin::hasAudioSupport() const
 
 bool GenericNetworkPlugin::hasThinkSupport() const
 {
-    return false;
+    return mGenericManager->hasThinkSupport(currentModel());
 }
 
 #include "moc_genericnetworkplugin.cpp"

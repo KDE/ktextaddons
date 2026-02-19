@@ -213,7 +213,7 @@ bool OllamaPlugin::hasAudioSupport() const
 
 bool OllamaPlugin::hasThinkSupport() const
 {
-    return false;
+    return mOllamaManager->hasThinkSupport(currentModel());
 }
 
 QString OllamaPlugin::shareNamePrompt() const

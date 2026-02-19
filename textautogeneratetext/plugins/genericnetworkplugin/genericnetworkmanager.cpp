@@ -211,4 +211,9 @@ bool GenericNetworkManager::hasAudioSupport(const QString &currentModel) const
     return mServerInfo->hasAudioSupport(currentModel, mPluginNetworkType);
 }
 
+bool GenericNetworkManager::hasThinkSupport(const QString &currentModel) const
+{
+    return mServerInfo->hasThinkSupport(currentModel, mPluginNetworkType);
+}
+
 #include "moc_genericnetworkmanager.cpp"
