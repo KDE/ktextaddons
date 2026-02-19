@@ -74,7 +74,7 @@ void OllamaManager::showModelInfo(const QString &modelName)
         this};
     connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         const auto readResponse = reply->readResponse();
-        qDebug() << " readResponse : " << readResponse;
+        // qDebug() << " readResponse : " << readResponse;
         Q_EMIT finished(readResponse);
         Q_EMIT showModelInfoDone(readResponse.response);
     });
