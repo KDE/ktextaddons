@@ -11,7 +11,6 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaClient::OllamaClient(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextClient{parent}
-
 {
 }
 
