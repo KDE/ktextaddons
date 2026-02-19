@@ -137,14 +137,19 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
         break;
     case RequestTypes::StreamingChat:
         for (const auto &tok : mTokens) {
-            if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
+            const QJsonObject messageObj = tok["message"_L1].toObject();
+            if (messageObj.contains("tool_calls"_L1)) {
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
                 // qDebug() << " tool_calls: " << array;
                 const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOllama(array);
                 // qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
                 ret.info.append(infos);
             }
-            ret.response += tok["message"_L1]["content"_L1].toString();
+            if (messageObj.contains("thinking"_L1)) {
+                ret.response += messageObj["thinking"_L1].toString();
+            } else {
+                ret.response += messageObj["content"_L1].toString();
+            }
         }
         break;
     case RequestTypes::ShowModelInfo:
