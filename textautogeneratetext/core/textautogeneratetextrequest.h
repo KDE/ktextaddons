@@ -81,11 +81,23 @@ public:
      */
     void setTools(const QList<QByteArray> &newTools);
 
+    /*!
+     * \brief thinking
+     * \return true if model has thinking support
+     */
+    [[nodiscard]] bool thinking() const;
+    /*!
+     * Sets true if model has thinking support
+     * \param newThinking
+     */
+    void setThinking(bool newThinking);
+
 private:
     QList<QByteArray> mTools;
     QJsonArray mMessages;
     QString mMessage;
     QString mModel;
+    bool mThinking = false;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRequest &t);
