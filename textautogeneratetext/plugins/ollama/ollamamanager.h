@@ -53,11 +53,11 @@ public:
 
     [[nodiscard]] bool hasVisionSupport(const QString &modelName) const;
     [[nodiscard]] bool hasToolsSupport(const QString &modelName) const;
-
     [[nodiscard]] bool hasOcrSupport(const QString &modelName) const;
     [[nodiscard]] bool hasAudioSupport(const QString &modelName) const;
-    [[nodiscard]] QByteArray ollamaOutputData() const;
     [[nodiscard]] bool hasThinkSupport(const QString &modelName) const;
+
+    [[nodiscard]] QByteArray ollamaOutputData() const;
 
     void startOllama();
 Q_SIGNALS:
