@@ -320,31 +320,6 @@ bool OllamaManager::CreateModelInfo::isValid() const
     return !modelName.isEmpty();
 }
 
-bool OllamaManager::hasVisionSupport(const QString &modelName) const
-{
-    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision);
-}
-
-bool OllamaManager::hasToolsSupport(const QString &modelName) const
-{
-    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools);
-}
-
-bool OllamaManager::hasOcrSupport([[maybe_unused]] const QString &modelName) const
-{
-    return false;
-}
-
-bool OllamaManager::hasAudioSupport([[maybe_unused]] const QString &modelName) const
-{
-    return false;
-}
-
-bool OllamaManager::hasThinkSupport(const QString &modelName) const
-{
-    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning);
-}
-
 bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
 {
     if (modelName.isEmpty()) {

@@ -48,12 +48,6 @@ public:
     [[nodiscard]] QList<OllamaCommonModelAvailableInfo> availableInfos() const;
     void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos);
 
-    [[nodiscard]] bool hasVisionSupport(const QString &modelName) const override;
-    [[nodiscard]] bool hasToolsSupport(const QString &modelName) const override;
-    [[nodiscard]] bool hasOcrSupport(const QString &modelName) const override;
-    [[nodiscard]] bool hasAudioSupport(const QString &modelName) const override;
-    [[nodiscard]] bool hasThinkSupport(const QString &modelName) const override;
-
     [[nodiscard]] QByteArray ollamaOutputData() const;
 
     void startOllama();
@@ -69,7 +63,7 @@ Q_SIGNALS:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT bool hasCategorySupport(const QString &modelName,
-                                                                           TextAutoGenerateText::TextAutoGenerateManager::Category cat) const;
+                                                                           TextAutoGenerateText::TextAutoGenerateManager::Category cat) const override;
     QList<OllamaModelInstalledInfo> mInstalledInfos;
     QList<OllamaCommonModelAvailableInfo> mAvailableInfos;
     OllamaSettings *const mOllamaSettings;

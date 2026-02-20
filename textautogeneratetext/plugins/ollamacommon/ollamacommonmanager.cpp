@@ -17,15 +17,14 @@ OllamaCommonManager::OllamaCommonManager(QObject *parent)
 
 OllamaCommonManager::~OllamaCommonManager() = default;
 
-bool OllamaCommonManager::hasVisionSupport([[maybe_unused]] const QString &modelName) const
+bool OllamaCommonManager::hasVisionSupport(const QString &modelName) const
 {
-    return false;
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision);
 }
 
-bool OllamaCommonManager::hasToolsSupport([[maybe_unused]] const QString &modelName) const
-
+bool OllamaCommonManager::hasToolsSupport(const QString &modelName) const
 {
-    return false;
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools);
 }
 
 bool OllamaCommonManager::hasOcrSupport([[maybe_unused]] const QString &modelName) const
@@ -38,9 +37,9 @@ bool OllamaCommonManager::hasAudioSupport([[maybe_unused]] const QString &modelN
     return false;
 }
 
-bool OllamaCommonManager::hasThinkSupport([[maybe_unused]] const QString &modelName) const
+bool OllamaCommonManager::hasThinkSupport(const QString &modelName) const
 {
-    return false;
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning);
 }
 
 void OllamaCommonManager::showModelInfo(const QString &modelName)
@@ -98,6 +97,12 @@ void OllamaCommonManager::getVersion()
         Q_EMIT modelsLoadDone(std::move(info));
         */
     });
+}
+
+bool OllamaCommonManager::hasCategorySupport([[maybe_unused]] const QString &modelName,
+                                             [[maybe_unused]] TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
+{
+    return false;
 }
 
 #include "moc_ollamacommonmanager.cpp"
