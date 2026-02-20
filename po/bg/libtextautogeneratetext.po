@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:43+0000\n"
+"POT-Creation-Date: 2026-02-20 00:43+0000\n"
 "PO-Revision-Date: 2026-02-16 18:11+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -139,12 +139,12 @@ msgstr ""
 "Вие сте асистент с изкуствен интелект. Говорите с човек на име %1. Бъдете "
 "полезен, професионален и учтив. Не давайте неточна информация."
 
-#: core/textautogeneratetextplugin.cpp:278
+#: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Local"
 msgstr "Локално"
 
-#: core/textautogeneratetextplugin.cpp:280
+#: core/textautogeneratetextplugin.cpp:281
 #, kde-format
 msgid "Network"
 msgstr "Мрежа"
@@ -463,7 +463,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "Отваряне на адрес (URL) „%1“"
 
-#: plugins/ollama/ollamaclient.cpp:27
+#: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
 msgstr "Ollama (управлявана)"
@@ -2449,8 +2449,22 @@ msgstr ""
 "възможности, незабавни и мислещи режими, както и разговорни и агентни "
 "парадигми."
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
+#, kde-format
+msgid ""
+"A strong reasoning and agentic model from Z.ai with 744B total parameters "
+"(40B active), built for complex systems engineering and long-horizon tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
+#, kde-format
+msgid ""
+"MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
+"world productivity and coding tasks."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
 msgstr ""
@@ -2544,32 +2558,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "Размер на контекстния прозорец:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
 msgstr "Възможности"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Template"
 msgstr "Шаблон"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:177
+#: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
 msgid "Modelfile"
 msgstr "Modelfile"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Parameters"
 msgstr "Параметри"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:183
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr "Подробности"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
 msgid "Model Info"
 msgstr "Информация за модела"

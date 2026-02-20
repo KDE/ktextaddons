@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:43+0000\n"
+"POT-Creation-Date: 2026-02-20 00:43+0000\n"
 "PO-Revision-Date: 2026-02-18 17:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -136,12 +136,12 @@ msgid ""
 msgstr ""
 "أنت مساعد ذكاء اصطناعي. كن مفيدًا، ومحترفًا، ومهذبًا. لا تُعطِ معلومات غير دقيقة."
 
-#: core/textautogeneratetextplugin.cpp:278
+#: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Local"
 msgstr "محليّ"
 
-#: core/textautogeneratetextplugin.cpp:280
+#: core/textautogeneratetextplugin.cpp:281
 #, kde-format
 msgid "Network"
 msgstr "شبكة"
@@ -460,7 +460,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "افتح الرابط \"%1\""
 
-#: plugins/ollama/ollamaclient.cpp:27
+#: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
 msgstr "أولاما (مُدار)"
@@ -2361,8 +2361,22 @@ msgstr ""
 "الرؤية واللغة مع قدرات وكيلية متقدمة، وأوضاع فورية وتفكيرية، بالإضافة إلى "
 "النماذج الحوارية والوكيلية."
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
+#, kde-format
+msgid ""
+"A strong reasoning and agentic model from Z.ai with 744B total parameters "
+"(40B active), built for complex systems engineering and long-horizon tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
+#, kde-format
+msgid ""
+"MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
+"world productivity and coding tasks."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
 msgstr "المستخدم يسمى %1"
@@ -2454,32 +2468,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "حجم نافذة السياق:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
 msgstr "الإمكانيات"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Template"
 msgstr "القالب"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:177
+#: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
 msgid "Modelfile"
 msgstr "ملف النمط"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Parameters"
 msgstr "المعاملات"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:183
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr "التفاصيل"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
 msgid "Model Info"
 msgstr "معلومات النموذج"

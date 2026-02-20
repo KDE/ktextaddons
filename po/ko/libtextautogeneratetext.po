@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:43+0000\n"
+"POT-Creation-Date: 2026-02-20 00:43+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -146,12 +146,12 @@ msgid ""
 "give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:278
+#: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: core/textautogeneratetextplugin.cpp:280
+#: core/textautogeneratetextplugin.cpp:281
 #, kde-format
 msgid "Network"
 msgstr "네트워크"
@@ -490,7 +490,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr ""
 
-#: plugins/ollama/ollamaclient.cpp:27
+#: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
 msgstr ""
@@ -2085,8 +2085,22 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
+#, kde-format
+msgid ""
+"A strong reasoning and agentic model from Z.ai with 744B total parameters "
+"(40B active), built for complex systems engineering and long-horizon tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
+#, kde-format
+msgid ""
+"MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
+"world productivity and coding tasks."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
 msgstr ""
@@ -2173,34 +2187,34 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, fuzzy, kde-format
 #| msgid "Temperature:"
 msgid "Template"
 msgstr "온도:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:177
+#: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, fuzzy, kde-format
 #| msgid "Model:"
 msgid "Modelfile"
 msgstr "모델:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Parameters"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:183
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Information:"

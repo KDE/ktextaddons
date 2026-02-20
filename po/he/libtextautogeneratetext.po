@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:43+0000\n"
-"PO-Revision-Date: 2026-02-14 18:57+0200\n"
+"POT-Creation-Date: 2026-02-20 00:43+0000\n"
+"PO-Revision-Date: 2026-02-19 09:56+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -129,23 +129,19 @@ msgid "Go to message"
 msgstr "מעבר להודעה"
 
 #: core/textautogeneratesettings.cpp:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "You are an AI assistant. You are speaking to a person named %1. Be "
-#| "helpful, professional, and courteous. Do not give inaccurate information."
+#, kde-format
 msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
-"אתה מסייע בינה מלאכותית. אתה מדבר עם בן או בת אדם בשם %1. נא להיות מועיל, "
-"מקצועי ואדיב. לא לספק מידע לא מדויק."
+"אתה מסייע בינה מלאכותית. נא להיות מועיל, מקצועי ואדיב. לא לספק מידע לא מדויק."
 
-#: core/textautogeneratetextplugin.cpp:278
+#: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Local"
 msgstr "מקומי"
 
-#: core/textautogeneratetextplugin.cpp:280
+#: core/textautogeneratetextplugin.cpp:281
 #, kde-format
 msgid "Network"
 msgstr "רשת"
@@ -464,7 +460,7 @@ msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
 msgstr "פתיחת הכתובת „%1”"
 
-#: plugins/ollama/ollamaclient.cpp:27
+#: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
 msgstr "Ollama (מנוהלת)"
@@ -632,7 +628,7 @@ msgstr ""
 msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
-msgstr ""
+msgstr "משך הזמן שהעותק צריך להשאיר את המודלים טעונים לאחר שהם אינם פעילים."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
@@ -2317,32 +2313,46 @@ msgstr ""
 "Kimi K2.5 הוא מודל סוכנים טבעי ובקוד פתוח שמשלב בצורה חלקה הבנה של שפה וחוזי "
 "עם יכולות סוכנים מתקדמות, מצבים מיידי וחשיבה, לרבות פרדיגמות שיחה וסוכנים."
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
+#, kde-format
+msgid ""
+"A strong reasoning and agentic model from Z.ai with 744B total parameters "
+"(40B active), built for complex systems engineering and long-horizon tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
+#, kde-format
+msgid ""
+"MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
+"world productivity and coding tasks."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
-msgstr ""
+msgstr "השם של המשתמש/ת הוא %1"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr ""
+msgstr "חשיפת Ollama לרשת"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr ""
+msgstr "עיבוד מחשבות"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "אפשרויות"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
-msgstr ""
+msgstr "להנגיש את Ollama לתוכנות ולמכשירים אחרים ברשת המקומית."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2350,13 +2360,12 @@ msgctxt "@info:tooltip"
 msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
-msgstr ""
+msgstr "לגרום למודלי נימוק תואמים לחשוב על התגובה שלהם לפני יצירת הודעה."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Share Name:"
-msgstr "שם:"
+msgstr "שם השיתוף:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
@@ -2406,34 +2415,34 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr ""
+msgstr "גודל חלון הקשר:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
 msgstr "יכולות"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Template"
 msgstr "תבנית"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:177
+#: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
 msgid "Modelfile"
 msgstr "קובץ מודל"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Parameters"
 msgstr "משתנים"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:183
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr "פרטים"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
 msgid "Model Info"
 msgstr "פרטי מודל"
@@ -2441,17 +2450,17 @@ msgstr "פרטי מודל"
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr ""
+msgstr "לא לשתף"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "שם משתמש"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr ""
+msgstr "שם מלא"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
