@@ -7,6 +7,7 @@
 
 #include "ollamamanager.h"
 #include "ollamamodelcreatecombobox.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QFormLayout>
@@ -26,6 +27,9 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
+
+    KLineEditEventHandler::catchReturnKey(mTagName);
+    KLineEditEventHandler::catchReturnKey(mModelName);
 
     mOllamaModelCreateComboBox->setObjectName(u"mOllamaModelCreateComboBox"_s);
     mainLayout->addRow(i18n("Base:"), mOllamaModelCreateComboBox);
