@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadfromnamewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelDownloadFromNameWidget::OllamaModelDownloadFromNameWidget(QWidget *parent)
     : QWidget{parent}
     , mModelNameLineEdit(new QLineEdit(this))

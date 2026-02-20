@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamodelcreatefromexistingmodelwidget.h"
 #include <KLocalizedString>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mManager(manager)
