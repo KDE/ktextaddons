@@ -40,40 +40,6 @@ QUrl OllamaCloudManager::ollamaCloudUrl() const
     return QUrl(u"https://ollama.com"_s);
 }
 
-void OllamaCloudManager::getVersion()
-{
-    QUrl url = ollamaCloudUrl();
-    url.setPath(OllamaCommonUtils::versionPath());
-    QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-    auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
-    mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
-        if (rep->error() != QNetworkReply::NoError) {
-            /*
-            ModelsInfo info;
-            info.errorOccured = i18n("Failed to connect to interface at %1: %2", OllamaSettings::serverUrl().toString(), rep->errorString());
-            info.hasError = true;
-            Q_EMIT modelsLoadDone(std::move(info));
-            */
-            return;
-        }
-
-        const auto json = QJsonDocument::fromJson(rep->readAll());
-        qDebug() << "json " << json;
-        // TODO implement it.
-        /*
-        ModelsInfo info;
-        const auto models = json["models"_L1].toArray();
-        for (const QJsonValue &model : models) {
-            info.models.push_back(model["name"_L1].toString());
-        }
-        info.isReady = !info.models.isEmpty();
-        info.hasError = false;
-        Q_EMIT modelsLoadDone(std::move(info));
-        */
-    });
-}
-
 void OllamaCloudManager::loadModels()
 {
     if (mCheckConnect) {

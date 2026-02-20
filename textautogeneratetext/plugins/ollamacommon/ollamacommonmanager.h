@@ -22,4 +22,5 @@ public:
 
     [[nodiscard]] virtual QUrl instanceUrl() = 0;
     void showModelInfo(const QString &modelName);
+    void getVersion();
 };

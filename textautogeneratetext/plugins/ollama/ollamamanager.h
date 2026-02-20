@@ -31,7 +31,6 @@ public:
     ~OllamaManager() override;
 
     void loadModels() override;
-    void getVersion();
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] OllamaCommonReply *downloadModel(const QString &modelName);
