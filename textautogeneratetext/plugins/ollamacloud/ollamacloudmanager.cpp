@@ -23,40 +23,23 @@
 
 using namespace Qt::Literals::StringLiterals;
 OllamaCloudManager::OllamaCloudManager(OllamaCloudSettings *settings, QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
+    : OllamaCommonManager{parent}
     , mOllamaCloudSettings(settings)
 {
 }
 
 OllamaCloudManager::~OllamaCloudManager() = default;
 
+QUrl OllamaCloudManager::instanceUrl()
+{
+    return ollamaCloudUrl();
+}
+
 QUrl OllamaCloudManager::ollamaCloudUrl() const
 {
     return QUrl(u"https://ollama.com"_s);
 }
 
-void OllamaCloudManager::showModelInfo(const QString &modelName)
-{
-    QUrl url = ollamaCloudUrl();
-    url.setPath(OllamaCommonUtils::pullPath());
-    QNetworkRequest req{url};
-
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-
-    QJsonObject data;
-    data["model"_L1] = modelName;
-
-    auto reply = new OllamaCommonReply{
-        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaCommonReply::RequestTypes::ShowModelInfo,
-        this};
-    connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
-        const auto readResponse = reply->readResponse();
-        // qDebug() << " readResponse : " << readResponse;
-        Q_EMIT finished(readResponse);
-        Q_EMIT showModelInfoDone(readResponse.response);
-    });
-}
 void OllamaCloudManager::getVersion()
 {
     QUrl url = ollamaCloudUrl();

@@ -6,17 +6,17 @@
 
 #pragma once
 #include "modelsmanager/ollamamodelinstalledinfo.h"
+#include "ollamacommonmanager.h"
 #include "ollamacommonmodelavailableinfo.h"
 #include "textautogenerateollama_export.h"
 #include <QObject>
-#include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class QDebug;
 class OllamaCommonReply;
 class OllamaSettings;
 class OllamaStartProcessJob;
-class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
+class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public OllamaCommonManager
 {
     Q_OBJECT
 public:
@@ -37,8 +37,6 @@ public:
     [[nodiscard]] OllamaCommonReply *downloadModel(const QString &modelName);
     void deleteModel(const QString &modelName);
 
-    void showModelInfo(const QString &modelName);
-
     void createModel(const CreateModelInfo &info);
 
     [[nodiscard]] QList<OllamaModelInstalledInfo> installedInfos() const;
@@ -51,15 +49,18 @@ public:
     [[nodiscard]] QList<OllamaCommonModelAvailableInfo> availableInfos() const;
     void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos);
 
-    [[nodiscard]] bool hasVisionSupport(const QString &modelName) const;
-    [[nodiscard]] bool hasToolsSupport(const QString &modelName) const;
-    [[nodiscard]] bool hasOcrSupport(const QString &modelName) const;
-    [[nodiscard]] bool hasAudioSupport(const QString &modelName) const;
-    [[nodiscard]] bool hasThinkSupport(const QString &modelName) const;
+    [[nodiscard]] bool hasVisionSupport(const QString &modelName) const override;
+    [[nodiscard]] bool hasToolsSupport(const QString &modelName) const override;
+    [[nodiscard]] bool hasOcrSupport(const QString &modelName) const override;
+    [[nodiscard]] bool hasAudioSupport(const QString &modelName) const override;
+    [[nodiscard]] bool hasThinkSupport(const QString &modelName) const override;
 
     [[nodiscard]] QByteArray ollamaOutputData() const;
 
     void startOllama();
+
+    [[nodiscard]] QUrl instanceUrl() override;
+
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);

@@ -5,15 +5,15 @@
 */
 
 #pragma once
+#include "ollamacommonmanager.h"
 #include "ollamacommonmodelavailableinfo.h"
 #include "textautogenerateollamacloud_export.h"
 #include <QObject>
-#include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class QDebug;
 class OllamaCloudSettings;
-class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
+class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudManager : public OllamaCommonManager
 {
     Q_OBJECT
 public:
@@ -26,8 +26,6 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
 
-    void showModelInfo(const QString &modelName);
-
     [[nodiscard]] OllamaCloudSettings *ollamaCloudSettings() const;
 
     [[nodiscard]] QString apiKey() const;
@@ -35,6 +33,8 @@ public:
 
     [[nodiscard]] QList<OllamaCommonModelAvailableInfo> availableInfos() const;
     void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos);
+
+    [[nodiscard]] QUrl instanceUrl() override;
 
 Q_SIGNALS:
     void errorOccurred(QNetworkReply::NetworkError e);

@@ -19,4 +19,7 @@ public:
     [[nodiscard]] virtual bool hasOcrSupport(const QString &modelName) const;
     [[nodiscard]] virtual bool hasAudioSupport(const QString &modelName) const;
     [[nodiscard]] virtual bool hasThinkSupport(const QString &modelName) const;
+
+    [[nodiscard]] virtual QUrl instanceUrl() = 0;
+    void showModelInfo(const QString &modelName);
 };

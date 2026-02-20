@@ -25,7 +25,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 OllamaManager::OllamaManager(OllamaSettings *settings, QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
+    : OllamaCommonManager{parent}
     , mOllamaSettings(settings)
 {
     OllamaCommonModelAvailableInfosManager managerModelInfosManager;
@@ -35,6 +35,11 @@ OllamaManager::OllamaManager(OllamaSettings *settings, QObject *parent)
 }
 
 OllamaManager::~OllamaManager() = default;
+
+QUrl OllamaManager::instanceUrl()
+{
+    return mOllamaSettings->serverUrl();
+}
 
 void OllamaManager::deleteModel(const QString &modelName)
 {
@@ -55,28 +60,6 @@ void OllamaManager::deleteModel(const QString &modelName)
         // if (reply->error() == QNetworkReply::NoError) {
         Q_EMIT refreshInstalledModels();
         //}
-    });
-}
-
-void OllamaManager::showModelInfo(const QString &modelName)
-{
-    QUrl url = mOllamaSettings->serverUrl();
-    url.setPath(OllamaCommonUtils::modelInfoPath());
-    QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-
-    QJsonObject data;
-    data["model"_L1] = modelName;
-
-    auto reply = new OllamaCommonReply{
-        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaCommonReply::RequestTypes::ShowModelInfo,
-        this};
-    connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
-        const auto readResponse = reply->readResponse();
-        // qDebug() << " readResponse : " << readResponse;
-        Q_EMIT finished(readResponse);
-        Q_EMIT showModelInfoDone(readResponse.response);
     });
 }
 

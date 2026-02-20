@@ -23,34 +23,18 @@
 
 using namespace Qt::Literals::StringLiterals;
 OllamaOnlineManager::OllamaOnlineManager(OllamaOnlineSettings *settings, QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
+    : OllamaCommonManager{parent}
     , mOllamaOnlineSettings(settings)
 {
 }
 
 OllamaOnlineManager::~OllamaOnlineManager() = default;
 
-void OllamaOnlineManager::showModelInfo(const QString &modelName)
+QUrl OllamaOnlineManager::instanceUrl()
 {
-    QUrl url = mOllamaOnlineSettings->serverUrl();
-    url.setPath(OllamaCommonUtils::modelInfoPath());
-    QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-
-    QJsonObject data;
-    data["model"_L1] = modelName;
-
-    auto reply = new OllamaCommonReply{
-        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaCommonReply::RequestTypes::ShowModelInfo,
-        this};
-    connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
-        const auto readResponse = reply->readResponse();
-        // qDebug() << " readResponse : " << readResponse;
-        Q_EMIT finished(readResponse);
-        Q_EMIT showModelInfoDone(readResponse.response);
-    });
+    return mOllamaOnlineSettings->serverUrl();
 }
+
 void OllamaOnlineManager::getVersion()
 {
     QUrl url = mOllamaOnlineSettings->serverUrl();
