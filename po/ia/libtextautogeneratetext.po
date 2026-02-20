@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 02:37+0000\n"
-"PO-Revision-Date: 2026-01-26 19:11+0100\n"
+"PO-Revision-Date: 2026-02-19 17:34+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1745,7 +1745,7 @@ msgstr ""
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "Semine:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:75
 #, kde-format
@@ -1889,7 +1889,7 @@ msgstr ""
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Impossibile aperir %1"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
