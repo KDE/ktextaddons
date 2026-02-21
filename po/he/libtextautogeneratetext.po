@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:43+0000\n"
+"POT-Creation-Date: 2026-02-21 00:42+0000\n"
 "PO-Revision-Date: 2026-02-19 09:56+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -205,9 +205,9 @@ msgid "Available Models"
 msgstr "מודלים זמינים"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:206
-#: plugins/ollamacloud/ollamacloudmanager.cpp:113
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollama/ollamamanager.cpp:155
+#: plugins/ollamacloud/ollamacloudmanager.cpp:62
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
@@ -325,12 +325,12 @@ msgstr "תבנית שם המודל חייבת להיות בצורת „name:tag�
 msgid "Invalid Model Name"
 msgstr "שם מודל שגוי"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
 #, kde-format
 msgid "Base:"
 msgstr "בסיס:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:76
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
@@ -339,17 +339,17 @@ msgstr "בסיס:"
 msgid "Name:"
 msgstr "שם:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
 #, kde-format
 msgid "Tag:"
 msgstr "תגית:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
 #, kde-format
 msgid "Prompt:"
 msgstr "בקשה:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"

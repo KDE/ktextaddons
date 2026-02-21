@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:43+0000\n"
-"PO-Revision-Date: 2026-02-18 13:04+0100\n"
+"POT-Creation-Date: 2026-02-21 00:42+0000\n"
+"PO-Revision-Date: 2026-02-20 13:09+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -210,9 +210,9 @@ msgid "Available Models"
 msgstr "Models disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:206
-#: plugins/ollamacloud/ollamacloudmanager.cpp:113
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:108
+#: plugins/ollama/ollamamanager.cpp:155
+#: plugins/ollamacloud/ollamacloudmanager.cpp:62
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Ha fallat mentre es connectava amb la interfície a %1: %2"
@@ -330,12 +330,12 @@ msgstr "El nom del model cal que siga com a «nom:etiqueta»"
 msgid "Invalid Model Name"
 msgstr "Nom de model no vàlid"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
 #, kde-format
 msgid "Base:"
 msgstr "Base:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:76
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
@@ -344,19 +344,19 @@ msgstr "Base:"
 msgid "Name:"
 msgstr "Nom:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
 #, kde-format
 msgid "Tag:"
 msgstr "Etiqueta:"
 
 # NdT: https://www.termcat.cat/ca/cercaterm/fitxa/NDgwODQzNQ%3D%3D (prompt ->
 # petició, en el context d'IA)
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
 #, kde-format
 msgid "Prompt:"
 msgstr "Petició:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
@@ -2473,6 +2473,9 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"Un model fort de raonament i agèntic de Z.ai amb un total de 744 B "
+"paràmetres (40 B actius), construït per a l'enginyeria de sistemes complexos "
+"i tasques de llarg recorregut."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2480,6 +2483,9 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 és un model de llenguatge de grans dimensions d'última "
+"generació dissenyat per a tasques de productivitat i codificació en el món "
+"real."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
