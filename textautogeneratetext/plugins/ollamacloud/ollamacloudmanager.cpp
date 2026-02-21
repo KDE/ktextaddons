@@ -32,11 +32,6 @@ OllamaCloudManager::~OllamaCloudManager() = default;
 
 QUrl OllamaCloudManager::instanceUrl()
 {
-    return ollamaCloudUrl();
-}
-
-QUrl OllamaCloudManager::ollamaCloudUrl() const
-{
     return QUrl(u"https://ollama.com"_s);
 }
 
@@ -45,7 +40,7 @@ void OllamaCloudManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    QUrl url = ollamaCloudUrl();
+    QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::tagsPath());
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
@@ -59,7 +54,7 @@ void OllamaCloudManager::loadModels()
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;
-            info.errorOccured = i18n("Failed to connect to interface at %1: %2", ollamaCloudUrl().toString(), rep->errorString());
+            info.errorOccured = i18n("Failed to connect to interface at %1: %2", instanceUrl().toString(), rep->errorString());
             info.hasError = true;
             Q_EMIT modelsLoadDone(info);
             return;
@@ -89,7 +84,7 @@ void OllamaCloudManager::loadModels()
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QUrl url = ollamaCloudUrl();
+    QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::completionPath());
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
@@ -118,7 +113,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(c
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QUrl url = ollamaCloudUrl();
+    QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::chatPath());
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);

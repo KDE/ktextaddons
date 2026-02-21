@@ -39,7 +39,6 @@ Q_SIGNALS:
     void errorOccurred(QNetworkReply::NetworkError e);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT QUrl ollamaCloudUrl() const;
     OllamaCloudSettings *const mOllamaCloudSettings;
     QString mApiKey;
     QList<OllamaCommonModelAvailableInfo> mAvailableInfos;
