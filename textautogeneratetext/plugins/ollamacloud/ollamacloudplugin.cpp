@@ -37,6 +37,8 @@ OllamaCloudPlugin::OllamaCloudPlugin(TextAutoGenerateText::TextAutoGenerateManag
             mModels.clear();
         } else {
             mModels = modelinfo.models;
+            const QList<OllamaCommonModelAvailableInfo> displayAvailablesModels = OllamaCommonModelUtils::extractAvailableModel(modelinfo);
+            mOllamaCloudManager->setAvailableInfos(displayAvailablesModels);
             setReady(true);
         }
     });
