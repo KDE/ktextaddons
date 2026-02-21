@@ -176,9 +176,8 @@ void TranslatorModel::clear()
     updateInstalledLanguage();
 }
 
-int TranslatorModel::columnCount(const QModelIndex &parent) const
+int TranslatorModel::columnCount([[maybe_unused]] const QModelIndex &parent) const
 {
-    Q_UNUSED(parent)
     return static_cast<int>(TranslatorRoles::LastColumn) + 1;
 }
 

@@ -179,9 +179,8 @@ void VoskSpeechToTextModel::setSpeechToTextInfos(const QVector<VoskSpeechToTextI
     updateInstalledLanguage();
 }
 
-int VoskSpeechToTextModel::columnCount(const QModelIndex &parent) const
+int VoskSpeechToTextModel::columnCount([[maybe_unused]] const QModelIndex &parent) const
 {
-    Q_UNUSED(parent)
     return static_cast<int>(VoskRoles::LastColumn) + 1;
 }
 

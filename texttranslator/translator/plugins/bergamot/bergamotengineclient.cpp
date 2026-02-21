@@ -120,9 +120,8 @@ TextTranslator::TranslatorEngineClient::EngineType BergamotEngineClient::engineT
     return TextTranslator::TranslatorEngineClient::Locale;
 }
 
-bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
+bool BergamotEngineClient::isSupported([[maybe_unused]] TextTranslator::TranslatorUtil::Language lang) const
 {
-    Q_UNUSED(lang);
     return true;
 }
 

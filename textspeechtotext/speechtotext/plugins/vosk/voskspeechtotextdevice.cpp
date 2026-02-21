@@ -79,13 +79,12 @@ void VoskSpeechToTextDevice::clear()
 #endif
 }
 
-qint64 VoskSpeechToTextDevice::readData(char *data, qint64 maxlen)
+qint64 VoskSpeechToTextDevice::readData([[maybe_unused]] char *data, qint64 maxlen)
 {
-    Q_UNUSED(data);
     return maxlen;
 }
 
-qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
+qint64 VoskSpeechToTextDevice::writeData([[maybe_unused]] const char *data, qint64 len)
 {
 #if HAVE_VOSK_API_SUPPORT
     if (vosk_recognizer_accept_waveform(mRecognizer, data, (int)len)) {
@@ -93,8 +92,6 @@ qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
     } else {
         parsePartial(vosk_recognizer_partial_result(mRecognizer));
     }
-#else
-    Q_UNUSED(data);
 #endif
     return len;
 }
