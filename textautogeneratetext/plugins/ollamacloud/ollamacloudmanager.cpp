@@ -138,7 +138,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     data["num_ctx"_L1] = mOllamaCloudSettings->contextWindowSize();
     data["think"_L1] = request.thinking();
 
-    qDebug() << " OllamaCloudManager::getChatCompletion json: " << data;
+    // qDebug() << " OllamaCloudManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
