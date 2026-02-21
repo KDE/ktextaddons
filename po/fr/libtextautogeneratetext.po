@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 02:37+0000\n"
-"PO-Revision-Date: 2026-01-10 21:43+0100\n"
+"PO-Revision-Date: 2026-02-13 18:18+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -853,7 +853,7 @@ msgid ""
 "Functionality, Multi-Linguality, and Multi-Granularity."
 msgstr ""
 "BGE-M3 est un nouveau modèle de BAAI se distinguant par sa polyvalence en "
-"multi-fonctionnalité, multi-linguisme et multi-granularité."
+"multi-fonctionnalité, multi-lingue et multi-granularité."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
 #, kde-format
@@ -1258,7 +1258,7 @@ msgid ""
 "A commercial-friendly small language model by NVIDIA optimized for roleplay, "
 "RAG QA, and function calling."
 msgstr ""
-"Un petit modèle de langage facile d'accès commercial conçu par NVIidia "
+"Un petit modèle de langage facile d'accès commercial conçu par Nvidia "
 "optimisé pour le jeu de rôles, l'assurance qualité « RAG QA » et l'appel de "
 "fonctions."
 
@@ -1425,8 +1425,8 @@ msgstr ""
 #, kde-format
 msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
 msgstr ""
-"Modèle « text-to-SQL  » avec paramètre 7B dévelopé par MotherDuck et Numbers "
-"Station."
+"Modèle « text-to-SQL  » avec paramètre 7B développé par MotherDuck et "
+"Numbers Station."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
 #, kde-format
