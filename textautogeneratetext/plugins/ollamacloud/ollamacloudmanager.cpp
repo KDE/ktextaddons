@@ -134,19 +134,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     if (mOllamaCloudSettings->seed() != 0) {
         data["seed"_L1] = mOllamaCloudSettings->seed();
     }
-    switch (mOllamaCloudSettings->keepAliveType()) {
-    case OllamaCommonSettings::KeepAliveType::KeepAliveForever:
-        data["keep_alive"_L1] = -1;
-        break;
-    case OllamaCommonSettings::KeepAliveType::SetTimer:
-        data["keep_alive"_L1] = mOllamaCloudSettings->keepAliveMinutes() * 60;
-        break;
-    case OllamaCommonSettings::KeepAliveType::UnloadAfterUse:
-        data["keep_alive"_L1] = 1;
-        break;
-    case OllamaCommonSettings::KeepAliveType::Unknown:
-        break;
-    }
+    addKeepAliveType(data, mOllamaCloudSettings->keepAliveType(), mOllamaCloudSettings->keepAliveMinutes());
     data["num_ctx"_L1] = mOllamaCloudSettings->contextWindowSize();
     data["think"_L1] = request.thinking();
 

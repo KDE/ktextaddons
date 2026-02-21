@@ -246,19 +246,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }
-    switch (mOllamaSettings->keepAliveType()) {
-    case OllamaSettings::KeepAliveType::KeepAliveForever:
-        data["keep_alive"_L1] = -1;
-        break;
-    case OllamaSettings::KeepAliveType::SetTimer:
-        data["keep_alive"_L1] = mOllamaSettings->keepAliveMinutes() * 60;
-        break;
-    case OllamaSettings::KeepAliveType::UnloadAfterUse:
-        data["keep_alive"_L1] = 1;
-        break;
-    case OllamaSettings::KeepAliveType::Unknown:
-        break;
-    }
+    addKeepAliveType(data, mOllamaSettings->keepAliveType(), mOllamaSettings->keepAliveMinutes());
     data["num_ctx"_L1] = mOllamaSettings->contextWindowSize();
 
     data["think"_L1] = request.thinking();

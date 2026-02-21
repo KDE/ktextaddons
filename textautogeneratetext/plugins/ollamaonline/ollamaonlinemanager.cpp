@@ -132,19 +132,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     if (mOllamaOnlineSettings->seed() != 0) {
         data["seed"_L1] = mOllamaOnlineSettings->seed();
     }
-    switch (mOllamaOnlineSettings->keepAliveType()) {
-    case OllamaCommonSettings::KeepAliveType::KeepAliveForever:
-        data["keep_alive"_L1] = -1;
-        break;
-    case OllamaCommonSettings::KeepAliveType::SetTimer:
-        data["keep_alive"_L1] = mOllamaOnlineSettings->keepAliveMinutes() * 60;
-        break;
-    case OllamaCommonSettings::KeepAliveType::UnloadAfterUse:
-        data["keep_alive"_L1] = 1;
-        break;
-    case OllamaCommonSettings::KeepAliveType::Unknown:
-        break;
-    }
+    addKeepAliveType(data, mOllamaOnlineSettings->keepAliveType(), mOllamaOnlineSettings->keepAliveMinutes());
     data["num_ctx"_L1] = mOllamaOnlineSettings->contextWindowSize();
 
     data["think"_L1] = request.thinking();

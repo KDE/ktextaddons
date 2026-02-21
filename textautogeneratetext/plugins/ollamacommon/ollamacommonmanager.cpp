@@ -105,4 +105,20 @@ bool OllamaCommonManager::hasCategorySupport([[maybe_unused]] const QString &mod
     return false;
 }
 
+void OllamaCommonManager::addKeepAliveType(QJsonObject &data, OllamaCommonSettings::KeepAliveType type, int keepAliveMinutes)
+{
+    switch (type) {
+    case OllamaCommonSettings::KeepAliveType::KeepAliveForever:
+        data["keep_alive"_L1] = -1;
+        break;
+    case OllamaCommonSettings::KeepAliveType::SetTimer:
+        data["keep_alive"_L1] = keepAliveMinutes * 60;
+        break;
+    case OllamaCommonSettings::KeepAliveType::UnloadAfterUse:
+        data["keep_alive"_L1] = 1;
+        break;
+    case OllamaCommonSettings::KeepAliveType::Unknown:
+        break;
+    }
+}
 #include "moc_ollamacommonmanager.cpp"

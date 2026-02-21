@@ -4,10 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "ollamacommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
-
+class QJsonObject;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
@@ -25,4 +26,5 @@ public:
     void showModelInfo(const QString &modelName);
     void getVersion();
     [[nodiscard]] virtual bool hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const;
+    void addKeepAliveType(QJsonObject &data, OllamaCommonSettings::KeepAliveType type, int keepAliveMinutes);
 };
