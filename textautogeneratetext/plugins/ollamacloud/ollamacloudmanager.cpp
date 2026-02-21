@@ -175,4 +175,21 @@ void OllamaCloudManager::setAvailableInfos(const QList<OllamaCommonModelAvailabl
     mAvailableInfos = newAvailableInfos;
 }
 
+bool OllamaCloudManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
+{
+    if (modelName.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " modelName is empty. it's a bug";
+        return false;
+    }
+    auto matchesModelName = [&](const OllamaCommonModelAvailableInfo &info) {
+        return info.name() == modelName;
+    };
+    auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
+    if (it == mAvailableInfos.constEnd()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " modelName is not installed " << modelName;
+        return false;
+    }
+    return it->categories() & cat;
+}
+
 #include "moc_ollamacloudmanager.cpp"

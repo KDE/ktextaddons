@@ -39,6 +39,7 @@ Q_SIGNALS:
     void errorOccurred(QNetworkReply::NetworkError e);
 
 private:
+    [[nodiscard]] bool hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const override;
     OllamaCloudSettings *const mOllamaCloudSettings;
     QString mApiKey;
     QList<OllamaCommonModelAvailableInfo> mAvailableInfos;
