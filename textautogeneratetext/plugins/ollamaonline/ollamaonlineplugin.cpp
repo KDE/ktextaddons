@@ -38,6 +38,8 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
         } else {
             mModels = modelinfo.models;
             setReady(true);
+            const QList<OllamaCommonModelAvailableInfo> displayAvailablesModels = OllamaCommonModelUtils::extractAvailableModel(modelinfo);
+            mOllamaOnlineManager->setAvailableInfos(displayAvailablesModels);
         }
     });
 }
