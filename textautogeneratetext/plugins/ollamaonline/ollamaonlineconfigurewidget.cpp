@@ -107,11 +107,11 @@ void OllamaOnlineConfigureWidget::fillModels()
 
 void OllamaOnlineConfigureWidget::displayModelInfo(const QString &modelStr)
 {
-    QPointer<TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog> dlg = new TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog(this);
-    dlg->setText(modelStr);
-    dlg->exec();
-    delete dlg;
+    TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog dlg(this);
+    dlg.setText(modelStr);
+    dlg.exec();
 }
+
 void OllamaOnlineConfigureWidget::showModelInfo(const QString &modelName)
 {
     // qDebug() << " showModelInfo " << modelName;

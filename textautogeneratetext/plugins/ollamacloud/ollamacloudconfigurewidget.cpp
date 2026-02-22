@@ -103,11 +103,11 @@ void OllamaCloudConfigureWidget::fillModels()
 
 void OllamaCloudConfigureWidget::displayModelInfo(const QString &modelStr)
 {
-    QPointer<TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog> dlg = new TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog(this);
-    dlg->setText(modelStr);
-    dlg->exec();
-    delete dlg;
+    TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog dlg(this);
+    dlg.setText(modelStr);
+    dlg.exec();
 }
+
 void OllamaCloudConfigureWidget::showModelInfo(const QString &modelName)
 {
     // qDebug() << " showModelInfo " << modelName;
