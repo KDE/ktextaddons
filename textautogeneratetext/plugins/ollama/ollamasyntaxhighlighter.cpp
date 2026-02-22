@@ -21,16 +21,11 @@ void OllamaSyntaxHighlighter::highlightBlock(const QString &text)
         const QString searchText = rule.pattern;
         int index = 0;
         while (index >= 0) {
-            // Find the next occurrence of the search text
             index = text.indexOf(searchText, index);
             if (index < 0) {
-                break; // No more matches found
+                break;
             }
-
-            // Apply the format to the matched text
             setFormat(index, searchText.length(), rule.format);
-
-            // Move the index forward to avoid infinite loops
             index += searchText.length();
         }
     }
