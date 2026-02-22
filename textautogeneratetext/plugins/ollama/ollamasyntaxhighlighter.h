@@ -17,7 +17,7 @@ public:
     ~OllamaSyntaxHighlighter() override;
     void highlightBlock(const QString &text) override;
 
-protected:
+private:
     class Rule
     {
     public:
