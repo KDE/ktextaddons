@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <QRegularExpression>
+#include <QString>
 #include <QSyntaxHighlighter>
 
 class OllamaSyntaxHighlighter : public QSyntaxHighlighter
@@ -22,14 +22,14 @@ private:
     {
     public:
         Rule() = default;
-        Rule(const QRegularExpression &r, const QTextCharFormat &f)
+        Rule(const QString &r, const QTextCharFormat &f)
             : pattern(r)
             , format(f)
         {
         }
-        QRegularExpression pattern;
+        QString pattern;
         QTextCharFormat format;
     };
     void init();
-    QList<Rule> m_rules;
+    QList<Rule> mRules;
 };

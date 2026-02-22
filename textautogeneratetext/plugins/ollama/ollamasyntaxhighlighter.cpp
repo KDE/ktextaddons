@@ -17,11 +17,21 @@ OllamaSyntaxHighlighter::~OllamaSyntaxHighlighter() = default;
 
 void OllamaSyntaxHighlighter::highlightBlock(const QString &text)
 {
-    for (const Rule &rule : std::as_const(m_rules)) {
-        QRegularExpressionMatchIterator matchIterator = rule.pattern.globalMatchView(text);
-        while (matchIterator.hasNext()) {
-            const QRegularExpressionMatch match = matchIterator.next();
-            setFormat(match.capturedStart(), match.capturedLength(), rule.format);
+    for (const Rule &rule : std::as_const(mRules)) {
+        const QString searchText = rule.pattern;
+        int index = 0;
+        while (index >= 0) {
+            // Find the next occurrence of the search text
+            index = text.indexOf(searchText, index);
+            if (index < 0) {
+                break; // No more matches found
+            }
+
+            // Apply the format to the matched text
+            setFormat(index, searchText.length(), rule.format);
+
+            // Move the index forward to avoid infinite loops
+            index += searchText.length();
         }
     }
 }
@@ -32,32 +42,27 @@ void OllamaSyntaxHighlighter::init()
         QTextCharFormat testFormat;
         testFormat.setForeground(Qt::red);
         testFormat.setFontWeight(QFont::Bold);
-        const QRegularExpression regex(u"\\[WARNING\\]"_s);
-        m_rules.append(Rule(regex, testFormat));
+        mRules.append(Rule(u"[WARNING]"_s, testFormat));
     }
     {
         QTextCharFormat testFormat;
         testFormat.setForeground(Qt::green);
-        const QRegularExpression regex(u"HEAD"_s);
-        m_rules.append(Rule(regex, testFormat));
+        mRules.append(Rule(u" HEAD "_s, testFormat));
     }
     {
         QTextCharFormat testFormat;
         testFormat.setForeground(Qt::red);
-        const QRegularExpression regex(u"DELETE"_s);
-        m_rules.append(Rule(regex, testFormat));
+        mRules.append(Rule(u" DELETE "_s, testFormat));
     }
     {
         QTextCharFormat testFormat;
         testFormat.setForeground(Qt::blue);
-        const QRegularExpression regex(u"POST"_s);
-        m_rules.append(Rule(regex, testFormat));
+        mRules.append(Rule(u" POST "_s, testFormat));
     }
     {
         QTextCharFormat testFormat;
         testFormat.setForeground(Qt::cyan);
-        const QRegularExpression regex(u"GET"_s);
-        m_rules.append(Rule(regex, testFormat));
+        mRules.append(Rule(u" GET "_s, testFormat));
     }
 }
 #include "moc_ollamasyntaxhighlighter.cpp"
