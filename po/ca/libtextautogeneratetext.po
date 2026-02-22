@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:42+0000\n"
+"POT-Creation-Date: 2026-02-22 00:43+0000\n"
 "PO-Revision-Date: 2026-02-20 13:09+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -211,7 +211,7 @@ msgstr "Models disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:155
-#: plugins/ollamacloud/ollamacloudmanager.cpp:62
+#: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -593,7 +593,7 @@ msgstr "Configura l'Ollama Cloud"
 msgid "Api Key:"
 msgstr "Clau de l'API:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:118
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "Ollama Cloud"
@@ -2655,7 +2655,7 @@ msgstr "Configura l'Ollama en línia"
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:117
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:119
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama en línia"

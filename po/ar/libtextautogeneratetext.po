@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:42+0000\n"
-"PO-Revision-Date: 2026-02-18 17:57+0400\n"
+"POT-Creation-Date: 2026-02-22 00:43+0000\n"
+"PO-Revision-Date: 2026-02-21 17:23+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -206,7 +206,7 @@ msgstr "النماذج المتاحة"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:155
-#: plugins/ollamacloud/ollamacloudmanager.cpp:62
+#: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -586,7 +586,7 @@ msgstr "اضبط سحابة أولاما"
 msgid "Api Key:"
 msgstr "مفتاح و‌ب‌ت API:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:118
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "سحابة أولاما"
@@ -2367,6 +2367,8 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"نموذج قوي للتفكير والوكالة من Z.ai مع إجمالي 744 مليار معلمة (40 مليار معلمة "
+"نشطة)، مصمم لهندسة الأنظمة المعقدة والمهام طويلة المدى."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2374,6 +2376,8 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 هو نموذج لغوي كبير متطور مصمم لمهام الإنتاجية والترميز في "
+"العالم الحقيقي."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
@@ -2535,7 +2539,7 @@ msgstr "اضبط أولاما عبر الإنترنت"
 msgid "Server Url:"
 msgstr "عنوان الخادم:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:117
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:119
 #, kde-format
 msgid "Ollama Online"
 msgstr "أولاما على النت"

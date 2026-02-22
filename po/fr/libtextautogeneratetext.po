@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:42+0000\n"
+"POT-Creation-Date: 2026-02-22 00:43+0000\n"
 "PO-Revision-Date: 2026-02-13 18:18+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -208,7 +208,7 @@ msgstr "Modèles disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:155
-#: plugins/ollamacloud/ollamacloudmanager.cpp:62
+#: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -589,7 +589,7 @@ msgstr "Configurer Ollama en mode « Cloud »"
 msgid "Api Key:"
 msgstr "Clé API :"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:116
+#: plugins/ollamacloud/ollamacloudplugin.cpp:118
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "Ollama en mode « Cloud »"
@@ -2673,7 +2673,7 @@ msgstr "Configurer Ollama en mode connecté"
 msgid "Server Url:"
 msgstr "URL du serveur :"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:117
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:119
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama connecté"
