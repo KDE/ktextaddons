@@ -20,7 +20,13 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePowerSaverMessageWidget : publ
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief TextAutoGeneratePowerSaverMessageWidget
+     * \param parent
+     */
     explicit TextAutoGeneratePowerSaverMessageWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGeneratePowerSaverMessageWidget() override;
 };
 }
