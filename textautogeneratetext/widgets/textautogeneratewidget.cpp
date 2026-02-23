@@ -11,6 +11,7 @@
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
+#include "widgets/common/textautogeneratepowersavermessagewidget.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogenerateheaderwidget.h"
@@ -35,6 +36,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     , mHistoryWidget(new TextAutoGenerateHistoryWidget(manager, this))
     , mHeaderWidget(new TextAutoGenerateHeaderWidget(manager, this))
     , mManager(manager)
+    , mTextAutoGeneratePowerSaverMessageWidget(new TextAutoGeneratePowerSaverMessageWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -42,6 +44,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     mainLayout->setSpacing(0);
     mHeaderWidget->setObjectName(u"mHeaderWidget"_s);
     mainLayout->addWidget(mHeaderWidget);
+    mainLayout->addWidget(mTextAutoGeneratePowerSaverMessageWidget);
 
     mSplitter->setOrientation(Qt::Horizontal);
     mSplitter->setObjectName(u"mSplitter"_s);

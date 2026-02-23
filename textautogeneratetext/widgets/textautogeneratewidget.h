@@ -17,6 +17,7 @@ class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
 class TextAutoGenerateSearchDialog;
+class TextAutoGeneratePowerSaverMessageWidget;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateWidget
  * \brief The TextAutoGenerateWidget class
@@ -107,5 +108,6 @@ private:
     QList<TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo> mAskMessageList;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QPointer<TextAutoGenerateSearchDialog> mSearchDialog;
+    TextAutoGeneratePowerSaverMessageWidget *const mTextAutoGeneratePowerSaverMessageWidget;
 };
 }
