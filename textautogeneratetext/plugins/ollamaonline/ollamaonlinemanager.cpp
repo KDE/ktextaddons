@@ -184,7 +184,10 @@ bool OllamaOnlineManager::hasCategorySupport(const QString &modelName, TextAutoG
         return false;
     }
     auto matchesModelName = [&](const OllamaCommonModelAvailableInfo &info) {
-        return info.name() == modelName;
+        const static QRegularExpression reg(u":.*"_s);
+        QString newModelName = modelName;
+        newModelName.remove(reg);
+        return info.name() == newModelName;
     };
     auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
     if (it == mAvailableInfos.constEnd()) {
