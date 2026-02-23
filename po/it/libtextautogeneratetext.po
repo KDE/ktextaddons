@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 02:37+0000\n"
-"PO-Revision-Date: 2026-01-04 09:52+0100\n"
+"PO-Revision-Date: 2026-02-21 08:36+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -547,9 +547,9 @@ msgid ""
 "encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
 "and has multilingual support."
 msgstr ""
-"I modelli Qwen2.5 sono pre-addestrati sul più recente dataset su larga scala "
-"di Alibaba, che comprende fino a 18 trilioni di token. Il modello supporta "
-"fino a 128.000 token e supporta più lingue."
+"I modelli Qwen2.5 sono pre-addestrati sul più recente insieme di dati su "
+"larga scala di Alibaba, che comprende fino a 18 trilioni di token. Il "
+"modello supporta fino a 128.000 token e supporta più lingue."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:33
 #, kde-format
