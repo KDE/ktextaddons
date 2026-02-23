@@ -268,7 +268,6 @@ void OllamaConfigureWidget::showOllamaVersion()
 
 void OllamaConfigureWidget::slotShowOllamaLog()
 {
-    showOllamaVersion();
     OllamaLogDialog dlg(this);
     dlg.setLog(mManager->ollamaOutputData());
     dlg.exec();
