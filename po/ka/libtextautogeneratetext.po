@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:43+0000\n"
+"POT-Creation-Date: 2026-02-23 00:43+0000\n"
 "PO-Revision-Date: 2026-02-20 06:27+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -541,7 +541,7 @@ msgstr ""
 "ეს ჩანაწერები არასავალდებულოა. ისინი გამოიყენება GPU-თან დაკავშირებული "
 "პრობლემების გადასაჭრელად Ollama-ის გამოყენებისას."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:187
+#: plugins/ollama/ollamaconfigurewidget.cpp:186
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama-ის გაშვება ჩავარდა"
@@ -2682,6 +2682,11 @@ msgstr "Ollama-ის გაშვება"
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "მორგება…"
+
+#: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
+#, kde-format
+msgid "Power saver mode is enabled, this will slow down message generation."
+msgstr ""
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
 #, kde-format

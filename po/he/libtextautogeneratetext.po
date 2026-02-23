@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:43+0000\n"
-"PO-Revision-Date: 2026-02-19 09:56+0200\n"
+"POT-Creation-Date: 2026-02-23 00:43+0000\n"
+"PO-Revision-Date: 2026-02-22 08:48+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -511,7 +511,7 @@ msgstr "יצירת מודלים"
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "פתחה:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -539,7 +539,7 @@ msgstr ""
 "הרשומות האלה הן בגדר רשות, הן משמשות לטיפול בבעיות שקשורות במעבד הגרפי מול "
 "Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:187
+#: plugins/ollama/ollamaconfigurewidget.cpp:186
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "הפעלת Ollama נכשלה"
@@ -621,7 +621,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "איך העותק צריך לטפל במודלים לא פעילים"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -2145,6 +2145,8 @@ msgstr ""
 msgid ""
 "DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
 msgstr ""
+"DeepSeek-OCR הוא מודל שפה חזותי שיכול לבצע זיהוי תווים אופטי חסכוני "
+"באסימונים."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
 #, kde-format
@@ -2152,6 +2154,8 @@ msgid ""
 "gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models "
 "built-upon gpt-oss."
 msgstr ""
+"gpt-oss-safeguard-20b ו־gpt-oss-safeguard-120b הם מודלי נימוק בטוחים שנבנו "
+"על גבי gpt-oss."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:298
 #, kde-format
@@ -2159,11 +2163,14 @@ msgid ""
 "Google's most intelligent model with SOTA reasoning and multimodal "
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
+"המודל הידידותי ביותר של Google עם נימוק מהשורה הראשונה והבנה רב חושית לצד "
+"יכולות סוכנים וקידוד לפי תחושה רבות עוצמה."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
 msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
 msgstr ""
+"Kimi K2 Thinking (חשיבה), מודל החשיבה הטוב ביותר של Moonshot AI בקוד פתוח."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:300
 #, kde-format
@@ -2178,6 +2185,8 @@ msgid ""
 "The Ministral 3 family is designed for edge deployment, capable of running "
 "on a wide range of hardware."
 msgstr ""
+"משפחת Ministral 3 תוכננה להטמעה ביחידות קצה, אפשר להריץ אותה על מגוון רחב של "
+"תצורות חומרה."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:303
 #, kde-format
@@ -2218,6 +2227,9 @@ msgid ""
 "language models. These models are pre-trained on the Dolma 3 dataset and "
 "post-trained on the Dolci datasets."
 msgstr ""
+"‏Olmo היא סדרה של מודלי שפה פתוחים שתוכננו לאפשר את המדע סביב מודלי שפה. "
+"המודלים האלו אומנו מראש על סדרת הנתונים Dolma 3 ואומנו באופן סופי על סדרות "
+"הנתונים Dolci."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
 #, kde-format
@@ -2410,7 +2422,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
-msgstr ""
+msgstr "שליטה בכמה אסימונים (קטעי טקסט) המודל יכול לעבד ולזכור בו זמנית."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
@@ -2538,6 +2550,11 @@ msgstr "הפעלת Ollama"
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "הגדרה…"
+
+#: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
+#, kde-format
+msgid "Power saver mode is enabled, this will slow down message generation."
+msgstr ""
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
 #, kde-format

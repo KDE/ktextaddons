@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:43+0000\n"
+"POT-Creation-Date: 2026-02-23 00:43+0000\n"
 "PO-Revision-Date: 2026-02-21 00:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -542,7 +542,7 @@ msgstr ""
 "Estas entradas son opcionales. Se usan para identificar problemas de GPU "
 "relacionados con Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:187
+#: plugins/ollama/ollamaconfigurewidget.cpp:186
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "El inicio de Ollama ha fallado"
@@ -2720,6 +2720,11 @@ msgstr "Iniciar Ollama"
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Configurar…"
+
+#: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
+#, kde-format
+msgid "Power saver mode is enabled, this will slow down message generation."
+msgstr ""
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
 #, kde-format

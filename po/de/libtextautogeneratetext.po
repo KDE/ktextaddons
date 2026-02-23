@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:43+0000\n"
+"POT-Creation-Date: 2026-02-23 00:43+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -534,7 +534,7 @@ msgid ""
 "problems with Ollama."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:187
+#: plugins/ollama/ollamaconfigurewidget.cpp:186
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr ""
@@ -2261,6 +2261,11 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
+msgstr ""
+
+#: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
+#, kde-format
+msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
