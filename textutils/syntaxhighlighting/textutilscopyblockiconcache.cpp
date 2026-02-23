@@ -49,7 +49,7 @@ void TextUtilsCopyBlockIconCache::saveIconToTempFile(const QString &iconName)
     mTemporaryFile.reset(new QTemporaryFile(QDir::tempPath() + u"/icon_XXXXXX.png"_s));
     if (!mTemporaryFile->open()) {
         qCWarning(TEXTUTILS_LOG) << "Impossible to create temporary file.";
-        mTemporaryFile.reset();
+        mTemporaryFile = nullptr;
         return;
     }
 

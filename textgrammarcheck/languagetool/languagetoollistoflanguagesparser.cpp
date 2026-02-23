@@ -11,8 +11,6 @@
 using namespace TextGrammarCheck;
 LanguageToolListOfLanguagesParser::LanguageToolListOfLanguagesParser() = default;
 
-LanguageToolListOfLanguagesParser::~LanguageToolListOfLanguagesParser() = default;
-
 QVector<LanguageInfo> LanguageToolListOfLanguagesParser::parseResult(const QJsonArray &array) const
 {
     QVector<LanguageInfo> lstLanguageInfo;

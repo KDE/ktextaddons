@@ -15,7 +15,7 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolParser
 {
 public:
     LanguageToolParser();
-    ~LanguageToolParser();
+    ~LanguageToolParser() = default;
     [[nodiscard]] QVector<TextGrammarCheck::GrammarError> parseResult(const QJsonObject &obj) const;
 };
 }

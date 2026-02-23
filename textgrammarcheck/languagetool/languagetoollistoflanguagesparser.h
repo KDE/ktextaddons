@@ -15,7 +15,7 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser
 {
 public:
     LanguageToolListOfLanguagesParser();
-    ~LanguageToolListOfLanguagesParser();
+    ~LanguageToolListOfLanguagesParser() = default;
     [[nodiscard]] QVector<LanguageInfo> parseResult(const QJsonArray &obj) const;
 };
 }

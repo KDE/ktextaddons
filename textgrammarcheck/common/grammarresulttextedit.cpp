@@ -108,13 +108,13 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
             }
         }
         popup->addSeparator();
-        QAction *checkAgainAct = popup->addAction(QIcon::fromTheme(u"view-refresh"_s), i18n("Check Again"));
+        QAction *const checkAgainAct = popup->addAction(QIcon::fromTheme(u"view-refresh"_s), i18n("Check Again"));
         connect(checkAgainAct, &QAction::triggered, this, &GrammarResultTextEdit::checkAgain);
         popup->addSeparator();
-        QAction *configureAct = popup->addAction(QIcon::fromTheme(u"settings-configure"_s), i18n("Configure…"));
+        QAction *const configureAct = popup->addAction(QIcon::fromTheme(u"settings-configure"_s), i18n("Configure…"));
         connect(configureAct, &QAction::triggered, this, &GrammarResultTextEdit::configure);
         popup->addSeparator();
-        QAction *closeAct = KStandardActions::close(this, &GrammarResultTextEdit::closeChecker, this);
+        QAction *const closeAct = KStandardActions::close(this, &GrammarResultTextEdit::closeChecker, this);
         closeAct->setShortcut({});
         popup->addAction(closeAct);
         popup->exec(event->globalPos());

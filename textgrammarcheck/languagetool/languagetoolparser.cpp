@@ -16,8 +16,6 @@ using namespace Qt::Literals::StringLiterals;
 
 LanguageToolParser::LanguageToolParser() = default;
 
-LanguageToolParser::~LanguageToolParser() = default;
-
 QVector<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) const
 {
     QVector<GrammarError> infos;

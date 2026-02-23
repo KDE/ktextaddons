@@ -54,7 +54,7 @@ void AutoCorrectionTest::shouldHaveDefaultValue()
 
 void AutoCorrectionTest::shouldRestoreValue()
 {
-    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    // const TextAutoCorrectionCore::AutoCorrection autocorrection;
     // TODO
 }
 
@@ -233,7 +233,7 @@ void AutoCorrectionTest::shouldNotReplaceUppercaseLetter()
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
-    QString text = u"foo ABc"_s;
+    const QString text = u"foo ABc"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
@@ -367,7 +367,7 @@ void AutoCorrectionTest::shouldNotAddSpaceWhenWeAlreadyHaveASpace()
     // We have a space => don't add it.
     text = u"FOO "_s;
     position = text.length();
-    QString fullText = text + u"FOO"_s;
+    const QString fullText = text + u"FOO"_s;
     doc.setPlainText(fullText);
     result = autocorrection.autocorrect(false, doc, position);
     QCOMPARE(result, false);
@@ -386,7 +386,7 @@ void AutoCorrectionTest::shouldAutocorrectWord()
     QString text = u"FOOAA"_s;
     doc.setPlainText(text);
     int position = text.length();
-    int oldPosition = position;
+    const int oldPosition = position;
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
     QCOMPARE(position, oldPosition);
@@ -404,7 +404,7 @@ void AutoCorrectionTest::shouldAutocorrectWord()
     QCOMPARE(doc.toPlainText(), convertWord);
     QCOMPARE(position, convertWord.length());
 
-    QString suffix = u" TOTO"_s;
+    const QString suffix = u" TOTO"_s;
     text = u"FOOAA"_s;
     position = text.length();
     text += suffix;
@@ -428,7 +428,7 @@ void AutoCorrectionTest::shouldNotUpperCaseFirstCharOfSentence()
 
     // Uppercase here.
     QTextDocument doc;
-    QString text = u"foo. blabla Foo. tt"_s;
+    const QString text = u"foo. blabla Foo. tt"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
@@ -440,7 +440,7 @@ void AutoCorrectionTest::shouldNotUpperCaseFirstCharOfSentence()
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
-    QString result = u"foo. blabla Foo. Tt"_s;
+    const QString result = u"foo. blabla Foo. Tt"_s;
     QCOMPARE(doc.toPlainText(), result);
 }
 
