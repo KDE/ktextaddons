@@ -13,6 +13,7 @@ TextAutoGeneratePowerSaverMessageWidget::TextAutoGeneratePowerSaverMessageWidget
     setMessageType(KMessageWidget::MessageType::Warning);
     setPosition(KMessageWidget::Header);
     setText(i18n("Power saver mode is enabled, this will slow down message generation."));
+    setVisible(false);
 }
 
 TextAutoGeneratePowerSaverMessageWidget::~TextAutoGeneratePowerSaverMessageWidget() = default;
