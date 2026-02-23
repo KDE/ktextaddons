@@ -133,8 +133,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mainLayout->addStretch(1);
     connect(mModelComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
     connect(mModelComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaConfigureWidget::showModelInfo);
-    connect(this, &OllamaConfigureWidget::ollamaProcessOk, this, [showLog](bool state) {
+    connect(this, &OllamaConfigureWidget::ollamaProcessOk, this, [showLog, this](bool state) {
         showLog->setEnabled(state);
+        mModelComboBoxWidget->setEnabled(state);
     });
 
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
