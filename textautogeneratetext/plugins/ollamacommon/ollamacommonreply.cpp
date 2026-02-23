@@ -188,7 +188,7 @@ QString OllamaCommonReply::generateModelInfo() const
         u"## %1: \n```\n"_s.arg(i18n("Details")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["details"_L1].toVariant()).toJson()) + u"\n```\n\n\n"_s;
     mardown += u"## %1: \n```\n"_s.arg(i18n("Model Info")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["model_info"_L1].toVariant()).toJson())
         + u"\n```\n\n\n"_s;
-    qDebug() << " mTokens " << doc;
+    // qDebug() << " mTokens " << doc;
     return mardown;
 }
 
