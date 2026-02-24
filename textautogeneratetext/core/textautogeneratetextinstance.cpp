@@ -5,13 +5,14 @@
 */
 #include "textautogeneratetextinstance.h"
 #include "core/textautogeneratetextplugin.h"
+#include "textautogeneratetextcore_memory_debug.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
 {
-    qDebug() << " TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()" << this;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()" << this;
     // if (mPlugin) {
     // mPlugin->deleteLater();
     // mPlugin = nullptr;

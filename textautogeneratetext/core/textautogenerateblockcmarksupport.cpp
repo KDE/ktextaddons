@@ -13,6 +13,7 @@
 #include <QRegularExpression>
 #include <TextUtils/TextUtilsColorsAndMessageViewStyle>
 #include <TextUtils/TextUtilsSyntaxHighlightingManager>
+
 using namespace TextAutoGenerateText;
 using namespace Qt::StringLiterals;
 TextAutoGenerateBlockCMarkSupport::TextAutoGenerateBlockCMarkSupport() = default;

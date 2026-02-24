@@ -8,6 +8,7 @@
 #include "core/tools/textautogeneratetexttoolplugin.h"
 #include "core/tools/textautogeneratetexttoolpluginjob.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
+#include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateToolCallJob::TextAutoGenerateToolCallJob(const QByteArray &chatId,
@@ -62,7 +63,7 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                 mResult.append(info.content);
                 // Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
                 Q_EMIT toolInProgress({});
-                qDebug() << " TextAutoGenerateTextToolPlugin::finished: " << info.content;
+                qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " TextAutoGenerateTextToolPlugin::finished: " << info.content;
                 mListJob.removeAll(job);
                 if (mListJob.isEmpty()) {
                     const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo newInfo{
