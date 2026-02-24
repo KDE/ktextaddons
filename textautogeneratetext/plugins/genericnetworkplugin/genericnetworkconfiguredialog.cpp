@@ -13,6 +13,7 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QWindow>
 namespace
 {
@@ -38,6 +39,11 @@ GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManag
     configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
     mAvailableModelWidget->setObjectName(u"mAvailableModelWidget"_s);
     addPage(configureModelWidgetPage);
+
+    auto okButton = button(QDialogButtonBox::StandardButton::Ok);
+    connect(mConfigureWidget, &GenericNetworkNetworkPluginConfigureWidget::enableOkButton, this, [okButton](bool state) {
+        okButton->setEnabled(state);
+    });
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &GenericNetworkConfigureDialog::slotAccepted);
     readConfig();

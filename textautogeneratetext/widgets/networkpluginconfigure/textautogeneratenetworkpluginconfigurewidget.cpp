@@ -62,6 +62,10 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mDescription->setTextFormat(Qt::PlainText);
     mDescription->setWordWrap(true);
     mainLayout->addWidget(mDescription);
+
+    connect(mInstanceName, &QLineEdit::textChanged, this, [this](const QString &str) {
+        Q_EMIT enableOkButton(!str.trimmed().isEmpty());
+    });
 }
 
 TextAutoGenerateNetworkPluginConfigureWidget::~TextAutoGenerateNetworkPluginConfigureWidget() = default;

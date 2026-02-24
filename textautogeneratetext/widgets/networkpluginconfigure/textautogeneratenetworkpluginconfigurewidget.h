@@ -102,6 +102,13 @@ public:
      */
     void setDescription(const QString &description);
 
+Q_SIGNALS:
+    /*!
+     * \brief send true if we need to update button
+     * \param state
+     */
+    void enableOkButton(bool state);
+
 private:
     KPasswordLineEdit *const mApiKey;
     QLineEdit *const mInstanceName;
