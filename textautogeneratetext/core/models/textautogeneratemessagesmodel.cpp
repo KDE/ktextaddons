@@ -342,7 +342,7 @@ QList<QByteArray> TextAutoGenerateMessagesModel::removeDiscussion(const QByteArr
     if (uuid.isEmpty()) {
         return {};
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+    const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
     const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
@@ -364,7 +364,7 @@ void TextAutoGenerateMessagesModel::changeTextToSpeechInProgress(const QByteArra
     if (uuid.isEmpty()) {
         return;
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+    const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
     auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
@@ -425,7 +425,7 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
 
 QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) const
 {
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+    const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
     auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);

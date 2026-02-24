@@ -105,15 +105,16 @@ QJsonObject TextAutoGenerateChatSettings::PendingTypedInfo::serialize(const Text
 
 TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::PendingTypedInfo::deserialize(const QJsonObject &o)
 {
-    TextAutoGenerateChatSettings::PendingTypedInfo pendingTypedInfo;
-    pendingTypedInfo.text = o.value("text"_L1).toString();
-    pendingTypedInfo.scrollbarPosition = o.value("scrollbarPosition"_L1).toInt(-1);
     const QJsonArray toolsArray = o.value("tools"_L1).toArray();
     QList<QByteArray> tools;
     for (const auto &val : toolsArray) {
         tools.append(val.toString().toLatin1());
     }
-    pendingTypedInfo.tools = tools;
+    const TextAutoGenerateChatSettings::PendingTypedInfo pendingTypedInfo{
+        .text = o.value("text"_L1).toString(),
+        .scrollbarPosition = o.value("scrollbarPosition"_L1).toInt(-1),
+        .tools = tools,
+    };
     return pendingTypedInfo;
 }
 

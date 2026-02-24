@@ -129,7 +129,7 @@ void TextAutoGenerateSearchMessageSettings::previous()
                 return msg.numberOfTextSearched() > 0;
             };
 
-            auto msg = mMessageModel->findLastMessageBefore(mCurrentMessageIdentifier, hasSearchedString);
+            const auto msg = mMessageModel->findLastMessageBefore(mCurrentMessageIdentifier, hasSearchedString);
             if (msg.isValid()) {
                 mCurrentMessageIdentifier = msg.uuid();
                 mCurrentSearchIndex = msg.numberOfTextSearched() - 1;
