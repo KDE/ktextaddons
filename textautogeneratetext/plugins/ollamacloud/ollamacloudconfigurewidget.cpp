@@ -87,6 +87,10 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
 
     mainLayout->addStretch(1);
 
+    connect(mName, &QLineEdit::textChanged, this, [this](const QString &str) {
+        Q_EMIT enableOkButton(!str.trimmed().isEmpty());
+    });
+
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaCloudConfigureWidget::showModelInfo);
     connect(mOllamaComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaCloudConfigureWidget::fillModels);
     connect(mManager, &OllamaCloudManager::showModelInfoDone, this, &OllamaCloudConfigureWidget::displayModelInfo);
