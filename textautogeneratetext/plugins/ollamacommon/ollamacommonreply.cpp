@@ -47,7 +47,7 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
             return;
         }
         Q_EMIT errorOccurred(e);
-        qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << e;
+        // qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << e;
         qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
