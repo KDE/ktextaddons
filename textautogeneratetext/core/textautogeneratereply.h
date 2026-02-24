@@ -56,6 +56,7 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT Response {
         QList<ToolCallArgumentInfo> info;
         QString response;
+        QString thinking;
         [[nodiscard]] bool hasToolCallArguments() const;
     };
 

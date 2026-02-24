@@ -146,7 +146,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
                 ret.info.append(infos);
             }
             if (messageObj.contains("thinking"_L1)) {
-                ret.response += messageObj["thinking"_L1].toString();
+                ret.thinking += messageObj["thinking"_L1].toString();
             } else {
                 ret.response += messageObj["content"_L1].toString();
             }

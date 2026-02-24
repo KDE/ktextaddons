@@ -223,7 +223,11 @@ void TextAutoGenerateManager::replaceContent(const QByteArray &chatId,
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
-        messagesModel->replaceContent(uuid, content.response, attachementInfoList); // TODO use tools
+        if (!content.response.isEmpty()) {
+            messagesModel->replaceContent(uuid, content.response, attachementInfoList); // TODO use tools
+        } else if (!content.thinking.isEmpty()) {
+            messagesModel->replaceContent(uuid, content.thinking, attachementInfoList); // TODO use tools
+        }
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
     }
