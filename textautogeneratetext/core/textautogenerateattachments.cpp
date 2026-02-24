@@ -57,7 +57,7 @@ QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachme
     return array;
 }
 
-TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJsonArray &attachmentsArray, const QByteArray &messageId)
+TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJsonArray &attachmentsArray, [[maybe_unused]] const QByteArray &messageId)
 {
     QList<TextAutoGenerateAttachment> attachmentList;
     for (int i = 0; i < attachmentsArray.count(); ++i) {
