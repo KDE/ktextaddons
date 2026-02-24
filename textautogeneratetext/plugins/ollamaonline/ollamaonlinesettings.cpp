@@ -36,7 +36,7 @@ void OllamaOnlineSettings::load(const KConfigGroup &config)
 {
     OllamaCommonSettings::load(config);
     if (config.hasKey(u"ServerUrl"_s)) {
-        setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
+        setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl(u"https://ollama.com"_s)));
     }
 }
 
