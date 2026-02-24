@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:43+0000\n"
-"PO-Revision-Date: 2026-02-22 08:48+0200\n"
+"POT-Creation-Date: 2026-02-24 00:42+0000\n"
+"PO-Revision-Date: 2026-02-23 21:41+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -539,7 +539,7 @@ msgstr ""
 "הרשומות האלה הן בגדר רשות, הן משמשות לטיפול בבעיות שקשורות במעבד הגרפי מול "
 "Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:186
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "הפעלת Ollama נכשלה"
@@ -2331,6 +2331,8 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"מודל נימוק וסוכנים חזק מבית Z.ai עם 744B משתנים בסך הכול (40B פעילים), נבנה "
+"להנדסת מערכות מורכבות ומשימות ארוכות טווח."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2338,6 +2340,8 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 הוא מודל מהשורה הראשונה שתוכנן למשימות הפקה אמיתיות לצד כתיבת "
+"קוד."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
@@ -2554,7 +2558,7 @@ msgstr "הגדרה…"
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
 msgid "Power saver mode is enabled, this will slow down message generation."
-msgstr ""
+msgstr "מצב חיסכון בחשמל פעיל, הוא יאט את יצירת ההודעות."
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
 #, kde-format
@@ -2889,7 +2893,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "חיפוש"
 
-#: widgets/textautogeneratewidget.cpp:123
+#: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:43+0000\n"
+"POT-Creation-Date: 2026-02-24 00:42+0000\n"
 "PO-Revision-Date: 2026-02-16 18:11+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -542,7 +542,7 @@ msgstr ""
 "Тези записи са незадължителни и се използват за отстраняване на проблеми с "
 "Олама, свързани с графични карти."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:186
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Неуспешно стартиране на 2Ollama"
@@ -3020,7 +3020,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Търсене"
 
-#: widgets/textautogeneratewidget.cpp:123
+#: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
 msgstr "Не е намерен плъгин."

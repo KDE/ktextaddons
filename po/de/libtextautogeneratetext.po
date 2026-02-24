@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:43+0000\n"
+"POT-Creation-Date: 2026-02-24 00:42+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -534,7 +534,7 @@ msgid ""
 "problems with Ollama."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:186
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr ""
@@ -2601,7 +2601,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:123
+#: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
 msgstr ""

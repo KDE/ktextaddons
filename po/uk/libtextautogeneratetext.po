@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:43+0000\n"
-"PO-Revision-Date: 2026-02-20 08:12+0200\n"
+"POT-Creation-Date: 2026-02-24 00:42+0000\n"
+"PO-Revision-Date: 2026-02-23 08:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -540,7 +540,7 @@ msgstr ""
 "Ці записи не є обов'язковими. Ними можна скористатися для визначення причин "
 "проблем із графічними процесорами з Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:186
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Не вдалося запустити Ollama"
@@ -2704,6 +2704,7 @@ msgstr "Налаштувати…"
 #, kde-format
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
+"Увімкнено режим заощадження енергії — це уповільнить створення повідомлень."
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
 #, kde-format
@@ -3038,7 +3039,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Пошук"
 
-#: widgets/textautogeneratewidget.cpp:123
+#: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
 msgstr "Не знайдено додатка."

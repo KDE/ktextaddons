@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:43+0000\n"
-"PO-Revision-Date: 2026-02-13 18:18+0100\n"
+"POT-Creation-Date: 2026-02-24 00:42+0000\n"
+"PO-Revision-Date: 2026-02-22 13:03+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -127,16 +127,13 @@ msgid "Go to message"
 msgstr "Aller au message"
 
 #: core/textautogeneratesettings.cpp:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "You are an AI assistant. You are speaking to a person named %1. Be "
-#| "helpful, professional, and courteous. Do not give inaccurate information."
+#, kde-format
 msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
-"Vous êtes un assistant IA. Vous parlez à une personne nommée %1. Soyez "
-"serviable, professionnel et courtois. Ne donnez aucune information inexacte."
+"Vous êtes un assistant IA. Soyez serviable, professionnel et courtois. Ne "
+"donnez aucune information inexacte."
 
 #: core/textautogeneratetextplugin.cpp:279
 #, kde-format
@@ -513,12 +510,12 @@ msgstr "Créer des modèles"
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Port :"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
 msgid "Show Ollama Log"
-msgstr ""
+msgstr "Afficher le journal de Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:96
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
@@ -541,17 +538,16 @@ msgstr ""
 "Ces entrées sont optionnelles. Elles sont utilisées pour investiguer les "
 "problèmes relatifs au processus graphique avec Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:186
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Impossible de démarrer Ollama"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Ollama"
+msgstr "Journal de Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:94
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -603,28 +599,28 @@ msgstr "Recharger un modèle"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr ""
+msgstr "Préréglages du maintien en vie"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr ""
+msgstr "Maintenir en vie éternellement"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr ""
+msgstr "Décharger après utilisation"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr ""
+msgstr "Maintenir en vie"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "Comment l'instance doit gérer les modèles inactifs"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -632,16 +628,18 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
+"La durée pendant laquelle l'instance doit conserver les modèles chargés "
+"après leurs basculements en inactif."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr ""
+msgstr "Préréglages :"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr ""
+msgstr "Minutes :"
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
@@ -2505,6 +2503,9 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"Un modèle puissant de raisonnement et d'agent de Z.ai avec 744 milliards de "
+"paramètres au total (40 milliards actifs), conçu pour l'ingénierie des "
+"systèmes complexes et les tâches à long terme."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2512,33 +2513,37 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 est un modèle de langage de pointe conçu pour les tâches de "
+"productivité et de codage dans le monde réel."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
-msgstr ""
+msgstr "L'utilisateur s'appelle %1"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr ""
+msgstr "Ouvrir Ollama sur le réseau"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr ""
+msgstr "Raisonnement intellectuel"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
 msgstr ""
+"Rendre Ollama disponible pour d'autres périphériques et logiciels sur le "
+"réseau local."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2547,12 +2552,13 @@ msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
 msgstr ""
+"Faites en sorte que des modèles de raisonnement compatibles réfléchissent à "
+"leur réponse avant de générer un message."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Share Name:"
-msgstr "Nom :"
+msgstr "Nom du partage :"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
@@ -2600,11 +2606,13 @@ msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
+"Contrôle le nombre de tokens (Morceaux de texte) que le modèle peut traiter "
+"et mémoriser à la fois."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr ""
+msgstr "Taille de la fenêtre de contexte :"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
@@ -2639,17 +2647,17 @@ msgstr "Informations de modèle"
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr ""
+msgstr "Ne pas partager"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr ""
+msgstr "Nom complet"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
@@ -3068,7 +3076,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Rechercher"
 
-#: widgets/textautogeneratewidget.cpp:123
+#: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
 msgstr "Aucun module externe n'a été trouvé."

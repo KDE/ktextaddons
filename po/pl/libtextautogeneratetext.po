@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:43+0000\n"
+"POT-Creation-Date: 2026-02-24 00:42+0000\n"
 "PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -544,7 +544,7 @@ msgstr ""
 "Te wpisy są dobrowolne i są używane do szukania błędów związanych z GPU w "
 "Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:186
+#: plugins/ollama/ollamaconfigurewidget.cpp:187
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Nie udało się uruchomić Ollama"
@@ -2958,7 +2958,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Poszukaj"
 
-#: widgets/textautogeneratewidget.cpp:123
+#: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
 msgstr "Nie znaleziono żadnej wtyczki."
