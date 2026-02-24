@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratereply.h"
+#include "textautogeneratetextcore_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QNetworkReply>
@@ -29,11 +30,11 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         // qDebug() << " obj " << obj;
         // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
         const QJsonObject functionObj = obj["function"_L1].toObject();
-        qDebug() << " functionObj " << functionObj;
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
         const QJsonObject argumentObj = functionObj["arguments"_L1].toObject();
         if (functionObj.contains("index"_L1)) {
-            qDebug() << " INDEX : " << functionObj.value("index"_L1).toInt();
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << functionObj.value("index"_L1).toInt();
         }
 
         const QStringList functionKeys = argumentObj.keys();
@@ -45,24 +46,24 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         }
         infos.append(toolInfo);
     }
-    qDebug() << "TextAutoGenerateReply::parseToolCallsOllam infos " << infos;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateReply::parseToolCallsOllam infos " << infos;
     return infos;
 }
 
 QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCallsOpenAI(const QJsonArray &array) const
 {
-    qDebug() << " TextAutoGenerateReply::parseToolCallsOpenAI: " << array;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " TextAutoGenerateReply::parseToolCallsOpenAI: " << array;
     QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos;
     for (int i = 0; i < array.count(); ++i) {
         const QJsonObject obj = array[i].toObject();
         // qDebug() << " obj " << obj;
         // {\"id\":\"QNfTI1iiJ\",\"function\":{\"name\":\"current_date_time_tool\",\"arguments\":\"{\\\"currentdatetime\\\" :\\\"time\\\"}\"},\"index\":0}]}
         const QJsonObject functionObj = obj["function"_L1].toObject();
-        qDebug() << " functionObj " << functionObj;
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
 
         if (functionObj.contains("index"_L1)) {
-            qDebug() << " INDEX : " << functionObj.value("index"_L1).toInt();
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << functionObj.value("index"_L1).toInt();
         }
         const QString arguments = functionObj["arguments"_L1].toString();
         // qDebug() << " arguments: " << arguments;
@@ -78,7 +79,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         }
         infos.append(toolInfo);
     }
-    qDebug() << "TextAutoGenerateReply::parseToolCallsOpenAI infos: " << infos;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateReply::parseToolCallsOpenAI infos: " << infos;
     return infos;
 }
 
