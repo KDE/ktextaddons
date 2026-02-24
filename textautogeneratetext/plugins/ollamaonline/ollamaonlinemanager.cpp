@@ -183,13 +183,13 @@ bool OllamaOnlineManager::hasCategorySupport(const QString &modelName, TextAutoG
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " modelName is empty. it's a bug";
         return false;
     }
-    auto matchesModelName = [&](const OllamaCommonModelAvailableInfo &info) {
+    const auto matchesModelName = [&](const OllamaCommonModelAvailableInfo &info) {
         const static QRegularExpression reg(u":.*"_s);
         QString newModelName = modelName;
         newModelName.remove(reg);
         return info.name() == newModelName;
     };
-    auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
+    const auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
     if (it == mAvailableInfos.constEnd()) {
         qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " modelName is not installed " << modelName;
         return false;
