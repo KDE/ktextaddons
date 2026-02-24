@@ -56,7 +56,7 @@ void TextAutoGenerateTextLineEdit::slotLanguageChanged(const QString &lang)
     switchAutoCorrectionLanguage(lang);
 }
 
-void TextAutoGenerateTextLineEdit::switchAutoCorrectionLanguage(const QString &lang)
+void TextAutoGenerateTextLineEdit::switchAutoCorrectionLanguage([[maybe_unused]] const QString &lang)
 {
 #if 0
 #if HAVE_TEXT_AUTOCORRECTION_WIDGETS
