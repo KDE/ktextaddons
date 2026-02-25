@@ -89,6 +89,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
 
     auto showLog = new QPushButton(i18n("Show Ollama Log"), this);
     showLog->setObjectName(u"showLog"_s);
+    showLog->setEnabled(false);
     connect(showLog, &QPushButton::clicked, this, &OllamaConfigureWidget::slotShowOllamaLog);
 
     ollamaWidgetHboxLayout->addWidget(mModelComboBoxWidget);
@@ -134,7 +135,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     connect(mModelComboBoxWidget, &OllamaCommonComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
     connect(mModelComboBoxWidget, &OllamaCommonComboBoxWidget::showModelInfoRequested, this, &OllamaConfigureWidget::showModelInfo);
     connect(this, &OllamaConfigureWidget::ollamaProcessOk, this, [showLog, this](bool state) {
-        showLog->setEnabled(state);
+        showLog->setEnabled(state && mManager->isOllamaStarted());
         mModelComboBoxWidget->setEnabled(state);
     });
 

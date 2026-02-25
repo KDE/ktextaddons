@@ -15,11 +15,15 @@ OllamaManagerTest::OllamaManagerTest(QObject *parent)
 
 void OllamaManagerTest::shouldHaveDefaultValues()
 {
-    OllamaManager::CreateModelInfo w;
+    const OllamaManager::CreateModelInfo w;
     QVERIFY(w.fromModelName.isEmpty());
     QVERIFY(w.modelName.isEmpty());
     QVERIFY(w.systemPrompt.isEmpty());
     QVERIFY(!w.isValid());
+
+    const OllamaManager m(nullptr);
+    QVERIFY(!m.isOllamaStarted());
+    QVERIFY(m.ollamaOutputData().isEmpty());
 }
 
 #include "moc_ollamamanagertest.cpp"

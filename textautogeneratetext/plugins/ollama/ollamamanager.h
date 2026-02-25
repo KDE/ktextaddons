@@ -54,6 +54,7 @@ public:
 
     [[nodiscard]] QUrl instanceUrl() override;
 
+    [[nodiscard]] bool isOllamaStarted() const;
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);

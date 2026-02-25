@@ -339,6 +339,11 @@ void OllamaManager::startOllama()
     }
 }
 
+bool OllamaManager::isOllamaStarted() const
+{
+    return mOllamaStartProcessJob != nullptr;
+}
+
 QByteArray OllamaManager::ollamaOutputData() const
 {
     if (mOllamaStartProcessJob) {
