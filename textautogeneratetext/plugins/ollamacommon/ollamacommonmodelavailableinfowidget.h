@@ -6,6 +6,8 @@
 #pragma once
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
+class QLabel;
+class QVBoxLayout;
 
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfoWidget : public QWidget
 {
@@ -13,4 +15,22 @@ class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfoWidget :
 public:
     explicit OllamaCommonModelAvailableInfoWidget(QWidget *parent = nullptr);
     ~OllamaCommonModelAvailableInfoWidget() override;
+
+#if 0
+    void setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info);
+#endif
+private:
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void changeFont(QLabel *label);
+#if 0
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void appendCategories(QStringList &lst,
+                                                           TextAutoGenerateText::TextAutoGenerateManager::Category cat,
+                                                           TextAutoGenerateText::TextAutoGenerateManager::Categories categories);
+#endif
+    QLabel *const mFamilyNameLabel;
+    QLabel *const mParameterSizeLabel;
+    QLabel *const mQuantizationLevelLabel;
+    QLabel *const mModifiedAtLabel;
+    QVBoxLayout *const mMainLayout;
+    QWidget *mInfoWidget = nullptr;
+    // OllamaNetworkUrlButton *const mNetworkUrlButton;
 };
