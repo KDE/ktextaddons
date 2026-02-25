@@ -5,7 +5,7 @@
 */
 #include "ollamamodelinstalledinfowidget.h"
 #include "autogeneratetext_ollama_debug.h"
-#include "ollamanetworkurlbutton.h"
+#include "ollamacommonnetworkurlbutton.h"
 #include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
@@ -20,7 +20,7 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     , mQuantizationLevelLabel(new QLabel(this))
     , mModifiedAtLabel(new QLabel(this))
     , mMainLayout(new QVBoxLayout(this))
-    , mNetworkUrlButton(new OllamaNetworkUrlButton(this))
+    , mNetworkUrlButton(new OllamaCommonNetworkUrlButton(this))
 {
     mMainLayout->setObjectName(u"mMainLayout"_s);
 

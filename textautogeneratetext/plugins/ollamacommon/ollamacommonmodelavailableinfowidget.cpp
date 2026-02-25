@@ -5,6 +5,7 @@
 */
 
 #include "ollamacommonmodelavailableinfowidget.h"
+#include "ollamacommonnetworkurlbutton.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
@@ -18,13 +19,11 @@ OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidg
     , mQuantizationLevelLabel(new QLabel(this))
     , mModifiedAtLabel(new QLabel(this))
     , mMainLayout(new QVBoxLayout(this))
-//, mNetworkUrlButton(new OllamaNetworkUrlButton(this))
+    , mNetworkUrlButton(new OllamaCommonNetworkUrlButton(this))
 {
     mMainLayout->setObjectName(u"mMainLayout"_s);
-#if 0
     mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
     mMainLayout->addWidget(mNetworkUrlButton, 0, Qt::AlignTop);
-#endif
     {
         auto label = new QLabel(i18n("Family:"), this);
         mMainLayout->addWidget(label, 0, Qt::AlignTop);

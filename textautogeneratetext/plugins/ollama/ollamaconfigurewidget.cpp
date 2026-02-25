@@ -5,8 +5,8 @@
 */
 
 #include "ollamaconfigurewidget.h"
-#include "modelsmanager/ollamanetworkurlbutton.h"
 #include "ollamacommonkeepaliveparameterswidget.h"
+#include "ollamacommonnetworkurlbutton.h"
 #include "ollamacommonoptionswidget.h"
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
@@ -122,7 +122,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     label->setFont(font);
     hboxLayout->addWidget(label);
 
-    auto urlButton = new OllamaNetworkUrlButton(this);
+    auto urlButton = new OllamaCommonNetworkUrlButton(this);
     urlButton->setObjectName(u"urlButton"_s);
     urlButton->setUrl(u"https://docs.ollama.com/gpu#overrides-on-linux"_s);
     hboxLayout->addWidget(urlButton);

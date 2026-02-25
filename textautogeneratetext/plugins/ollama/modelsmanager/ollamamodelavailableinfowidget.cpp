@@ -7,9 +7,9 @@
 #include "autogeneratetext_ollama_debug.h"
 
 #include "ollamacommonmodelavailableinfosmodel.h"
+#include "ollamacommonnetworkurlbutton.h"
 #include "ollamamanager.h"
 #include "ollamamodeldownloadwidget.h"
-#include "ollamanetworkurlbutton.h"
 #include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QDesktopServices>
@@ -23,7 +23,7 @@ OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *ma
     , mMainLayout(new QVBoxLayout(this))
     , mModelName(new QLabel(this))
     , mOllamaManager(manager)
-    , mNetworkUrlButton(new OllamaNetworkUrlButton(this))
+    , mNetworkUrlButton(new OllamaCommonNetworkUrlButton(this))
 {
     mMainLayout->setObjectName(u"mainlayout"_s);
     mMainLayout->setContentsMargins({});

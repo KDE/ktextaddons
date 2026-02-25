@@ -58,6 +58,8 @@ target_sources(
         ollamacommonmanager.cpp
         ollamacommonmodelavailableinfowidget.h
         ollamacommonmodelavailableinfowidget.cpp
+        ollamacommonnetworkurlbutton.cpp
+        ollamacommonnetworkurlbutton.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

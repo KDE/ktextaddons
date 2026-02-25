@@ -77,8 +77,6 @@ target_sources(
         modelsmanager/ollamamodelcreatecombobox.cpp
         modelsmanager/ollamamodelinstalledinfossortproxymodel.h
         modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
-        modelsmanager/ollamanetworkurlbutton.h
-        modelsmanager/ollamanetworkurlbutton.cpp
 )
 
 # precompiled headers support

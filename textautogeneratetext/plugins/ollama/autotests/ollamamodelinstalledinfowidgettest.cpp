@@ -5,7 +5,7 @@
 */
 #include "ollamamodelinstalledinfowidgettest.h"
 #include "modelsmanager/ollamamodelinstalledinfowidget.h"
-#include "modelsmanager/ollamanetworkurlbutton.h"
+#include "ollamacommonnetworkurlbutton.h"
 #include <QLabel>
 #include <QTest>
 #include <QVBoxLayout>
@@ -32,7 +32,7 @@ void OllamaModelInstalledInfoWidgetTest::shouldHaveDefaultValues()
     auto mMainLayout = w.findChild<QVBoxLayout *>(u"mMainLayout"_s);
     QVERIFY(mMainLayout);
 
-    auto mNetworkUrlButton = w.findChild<OllamaNetworkUrlButton *>(u"mNetworkUrlButton"_s);
+    auto mNetworkUrlButton = w.findChild<OllamaCommonNetworkUrlButton *>(u"mNetworkUrlButton"_s);
     QVERIFY(mNetworkUrlButton);
 }
 
