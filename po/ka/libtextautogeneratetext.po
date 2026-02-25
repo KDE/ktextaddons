@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:42+0000\n"
+"POT-Creation-Date: 2026-02-25 00:45+0000\n"
 "PO-Revision-Date: 2026-02-23 06:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -182,13 +182,13 @@ msgstr "გააქტიურება: %1"
 msgid "Generic"
 msgstr "ზოგადი"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "%1-ის მორგება"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:34
@@ -197,7 +197,7 @@ msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "ზოგადი"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:40
