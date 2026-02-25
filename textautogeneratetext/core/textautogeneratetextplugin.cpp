@@ -159,7 +159,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         msg.generateHtml();
 
-        qDebug() << " msg*************** " << msg;
+        // qDebug() << " msg*************** " << msg;
 
         // LLM Message
         TextAutoGenerateMessage msgLlm;
