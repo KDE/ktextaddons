@@ -8,6 +8,7 @@
 #include "ollamacommonmodelavailableinfosdelegate.h"
 #include "ollamacommonmodelavailableinfosmodel.h"
 #include "ollamacommonmodelavailableinfossortproxymodel.h"
+#include "ollamacommonmodelavailableinfowidget.h"
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
@@ -22,6 +23,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
     , mProxyModel(new OllamaCommonModelAvailableInfosSortProxyModel(this))
     , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
+    , mOllamaModelAvalaibleInfoWidget(new OllamaCommonModelAvailableInfoWidget(this))
 {
     mAvailableListView->setItemDelegate(new OllamaCommonModelAvailableInfosDelegate(mAvailableListView));
     auto mainLayout = new QVBoxLayout(this);
@@ -49,6 +51,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     vboxLayout->addWidget(mAvailableListView);
 
     splitter->addWidget(widget);
+    splitter->addWidget(mOllamaModelAvalaibleInfoWidget);
     mainLayout->addWidget(splitter);
 
     mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);

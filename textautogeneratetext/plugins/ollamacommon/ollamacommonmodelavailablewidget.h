@@ -16,6 +16,7 @@ class TextAutoGenerateModelSearchLineEdit;
 class OllamaCommonModelsInfosCategoriesComboBox;
 class OllamaCommonModelAvailableInfosSortProxyModel;
 class OllamaCommonModelAvailableInfosModel;
+class OllamaCommonModelAvailableInfoWidget;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -32,4 +33,5 @@ private:
     OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
     OllamaCommonModelAvailableInfosSortProxyModel *const mProxyModel;
     OllamaCommonModelAvailableInfosModel *const mAvailableInfosModel;
+    OllamaCommonModelAvailableInfoWidget *const mOllamaModelAvalaibleInfoWidget;
 };
