@@ -26,10 +26,7 @@ private:
     TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void appendCategories(QStringList &lst,
                                                                  TextAutoGenerateText::TextAutoGenerateManager::Category cat,
                                                                  TextAutoGenerateText::TextAutoGenerateManager::Categories categories);
-    QLabel *const mFamilyNameLabel;
-    QLabel *const mParameterSizeLabel;
-    QLabel *const mQuantizationLevelLabel;
-    QLabel *const mModifiedAtLabel;
+    QLabel *const mNameLabel;
     QVBoxLayout *const mMainLayout;
     QWidget *mInfoWidget = nullptr;
     OllamaCommonNetworkUrlButton *const mNetworkUrlButton;

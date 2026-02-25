@@ -17,10 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 
 OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidget *parent)
     : QWidget{parent}
-    , mFamilyNameLabel(new QLabel(this))
-    , mParameterSizeLabel(new QLabel(this))
-    , mQuantizationLevelLabel(new QLabel(this))
-    , mModifiedAtLabel(new QLabel(this))
+    , mNameLabel(new QLabel(this))
     , mMainLayout(new QVBoxLayout(this))
     , mNetworkUrlButton(new OllamaCommonNetworkUrlButton(this))
 {
@@ -28,39 +25,12 @@ OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidg
     mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
     mMainLayout->addWidget(mNetworkUrlButton, 0, Qt::AlignTop);
     {
-        auto label = new QLabel(i18n("Family:"), this);
+        auto label = new QLabel(i18n("Name:"), this);
         mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
-        mFamilyNameLabel->setObjectName(u"mFamilyNameLabel"_s);
-        mMainLayout->addWidget(mFamilyNameLabel, 0, Qt::AlignTop);
-    }
-
-    {
-        auto label = new QLabel(i18n("Parameter Size:"), this);
-        mMainLayout->addWidget(label, 0, Qt::AlignTop);
-        changeFont(label);
-
-        mParameterSizeLabel->setObjectName(u"mParameterSizeLabel"_s);
-        mMainLayout->addWidget(mParameterSizeLabel, 0, Qt::AlignTop);
-    }
-
-    {
-        auto label = new QLabel(i18n("Quantization Level:"), this);
-        mMainLayout->addWidget(label, 0, Qt::AlignTop);
-        changeFont(label);
-
-        mQuantizationLevelLabel->setObjectName(u"mQuantizationLevelLabel"_s);
-        mMainLayout->addWidget(mQuantizationLevelLabel, 0, Qt::AlignTop);
-    }
-
-    {
-        auto label = new QLabel(i18n("Modified At:"), this);
-        mMainLayout->addWidget(label, 0, Qt::AlignTop);
-        changeFont(label);
-
-        mModifiedAtLabel->setObjectName(u"mModifiedAtLabel"_s);
-        mMainLayout->addWidget(mModifiedAtLabel, 0, Qt::AlignTop);
+        mNameLabel->setObjectName(u"mNameLabel"_s);
+        mMainLayout->addWidget(mNameLabel, 0, Qt::AlignTop);
     }
 }
 
@@ -75,12 +45,7 @@ void OllamaCommonModelAvailableInfoWidget::changeFont(QLabel *label)
 void OllamaCommonModelAvailableInfoWidget::setOllamaModelAvailableInfo(const OllamaCommonModelAvailableInfo &info)
 {
     mNetworkUrlButton->setUrl(info.url());
-#if 0
-    mFamilyNameLabel->setText(info.family());
-    mParameterSizeLabel->setText(info.parameterSize());
-    mQuantizationLevelLabel->setText(info.quantizationLevel());
-    mModifiedAtLabel->setText(info.modifyAtInLocal());
-#endif
+    mNameLabel->setText(info.name());
     if (mInfoWidget) {
         mMainLayout->removeWidget(mInfoWidget);
         mInfoWidget->deleteLater();
@@ -89,17 +54,6 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelAvailableInfo(const Oll
     mMainLayout->addWidget(mInfoWidget, 1);
     auto infoLayout = new QVBoxLayout(mInfoWidget);
     infoLayout->setContentsMargins({});
-
-#if 0
-    if (const QString parentModelName = info.parentModel(); !parentModelName.isEmpty()) {
-        auto label = new QLabel(i18n("Parent Model:"), mInfoWidget);
-        infoLayout->addWidget(label);
-        changeFont(label);
-
-        auto parentModelLabel = new QLabel(parentModelName, mInfoWidget);
-        infoLayout->addWidget(parentModelLabel);
-    }
-#endif
 
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
     infoLayout->addWidget(languagesGroupBox);
