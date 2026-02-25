@@ -102,6 +102,23 @@ OllamaCloudConfigureWidget::~OllamaCloudConfigureWidget() = default;
 
 void OllamaCloudConfigureWidget::restoreToDefaults()
 {
+    const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
+        .temperature = mManager->ollamaCloudSettings()->defaultTemperature(),
+        .seed = mManager->ollamaCloudSettings()->defaultSeed(),
+        .contextWindowSize = mManager->ollamaCloudSettings()->defaultContextWindowSize(),
+    };
+    mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
+    const OllamaCommonKeepAliveParametersWidget::KeepAliveInfo keepAliveInfo{
+        .keepAliveType = mManager->ollamaCloudSettings()->defaultKeepAliveType(),
+        .minutes = mManager->ollamaCloudSettings()->defaultKeepAliveMinutes(),
+    };
+    mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
+        .exposeToNetwork = false,
+        .thoughtProcessing = mManager->ollamaCloudSettings()->defaultThoughtProcessing(),
+        .shareNameType = mManager->ollamaCloudSettings()->defaultShareNameType(),
+    };
+    mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }
 
 void OllamaCloudConfigureWidget::fillModels()

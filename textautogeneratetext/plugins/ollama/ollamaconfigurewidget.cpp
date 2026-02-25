@@ -257,6 +257,24 @@ void OllamaConfigureWidget::saveSettings()
 
 void OllamaConfigureWidget::restoreToDefaults()
 {
+    const OllamaCommonOverrideParametersWidget::OverrideParametersInfo parametersInfo{
+        .temperature = mManager->ollamaSettings()->defaultTemperature(),
+        .seed = mManager->ollamaSettings()->defaultSeed(),
+        .contextWindowSize = mManager->ollamaSettings()->defaultContextWindowSize(),
+    };
+    mOllamaCommonOverrideParametersWidget->setParametersInfo(parametersInfo);
+    const OllamaCommonKeepAliveParametersWidget::KeepAliveInfo keepAliveInfo{
+        .keepAliveType = mManager->ollamaSettings()->defaultKeepAliveType(),
+        .minutes = mManager->ollamaSettings()->defaultKeepAliveMinutes(),
+    };
+    mOllamaCommonKeepAliveParametersWidget->setKeepAliveInfo(keepAliveInfo);
+    const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
+        .exposeToNetwork = false,
+        .thoughtProcessing = mManager->ollamaSettings()->defaultThoughtProcessing(),
+        .shareNameType = mManager->ollamaSettings()->defaultShareNameType(),
+    };
+    mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
+
     // TODO
 }
 
