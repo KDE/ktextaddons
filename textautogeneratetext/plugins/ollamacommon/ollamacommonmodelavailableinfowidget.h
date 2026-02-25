@@ -6,9 +6,11 @@
 #pragma once
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 class QLabel;
 class QVBoxLayout;
 class OllamaCommonNetworkUrlButton;
+class OllamaCommonModelAvailableInfo;
 
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfoWidget : public QWidget
 {
@@ -17,16 +19,13 @@ public:
     explicit OllamaCommonModelAvailableInfoWidget(QWidget *parent = nullptr);
     ~OllamaCommonModelAvailableInfoWidget() override;
 
-#if 0
-    void setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info);
-#endif
+    void setOllamaModelAvailableInfo(const OllamaCommonModelAvailableInfo &info);
+
 private:
     TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void changeFont(QLabel *label);
-#if 0
     TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void appendCategories(QStringList &lst,
-                                                           TextAutoGenerateText::TextAutoGenerateManager::Category cat,
-                                                           TextAutoGenerateText::TextAutoGenerateManager::Categories categories);
-#endif
+                                                                 TextAutoGenerateText::TextAutoGenerateManager::Category cat,
+                                                                 TextAutoGenerateText::TextAutoGenerateManager::Categories categories);
     QLabel *const mFamilyNameLabel;
     QLabel *const mParameterSizeLabel;
     QLabel *const mQuantizationLevelLabel;

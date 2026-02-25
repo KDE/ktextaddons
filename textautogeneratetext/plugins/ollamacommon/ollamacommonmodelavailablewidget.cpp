@@ -87,11 +87,10 @@ OllamaCommonModelAvailableWidget::~OllamaCommonModelAvailableWidget() = default;
 void OllamaCommonModelAvailableWidget::slotClicked(const QModelIndex &index)
 {
     if (index.isValid()) {
-        qDebug() << " index " << index;
-#if 0
-        const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
-        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info);
-#endif
+        // qDebug() << " index " << index;
+        const OllamaCommonModelAvailableInfo info = index.data(OllamaCommonModelAvailableInfosModel::AvailableInfo).value<OllamaCommonModelAvailableInfo>();
+        // qDebug() << " info " << info;
+        mOllamaModelAvalaibleInfoWidget->setOllamaModelAvailableInfo(info);
     }
 }
 

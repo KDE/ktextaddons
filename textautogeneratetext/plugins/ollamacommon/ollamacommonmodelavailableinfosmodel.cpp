@@ -44,6 +44,8 @@ QVariant OllamaCommonModelAvailableInfosModel::data(const QModelIndex &index, in
     case ModelName:
     case Qt::DisplayRole:
         return modelInfo.name();
+    case AvailableInfo:
+        return QVariant::fromValue(modelInfo);
     default:
         break;
     }

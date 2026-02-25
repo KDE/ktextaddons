@@ -5,14 +5,17 @@
 */
 
 #include "ollamacommonmodelavailableinfowidget.h"
+#include "autogeneratetext_ollamacommon_debug.h"
+#include "ollamacommonmodelavailableinfo.h"
 #include "ollamacommonnetworkurlbutton.h"
+#include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 
-OllamaCommonModelAvailableInfoW idget::OllamaCommonModelAvailableInfoWidget(QWidget *parent)
+OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidget *parent)
     : QWidget{parent}
     , mFamilyNameLabel(new QLabel(this))
     , mParameterSizeLabel(new QLabel(this))
@@ -69,14 +72,15 @@ void OllamaCommonModelAvailableInfoWidget::changeFont(QLabel *label)
     f.setBold(true);
     label->setFont(f);
 }
-#if 0
-void OllamaCommonModelAvailableInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info)
+void OllamaCommonModelAvailableInfoWidget::setOllamaModelAvailableInfo(const OllamaCommonModelAvailableInfo &info)
 {
-    mNetworkUrlButton->setUrl(info.modelUrl());
+    mNetworkUrlButton->setUrl(info.url());
+#if 0
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
     mQuantizationLevelLabel->setText(info.quantizationLevel());
     mModifiedAtLabel->setText(info.modifyAtInLocal());
+#endif
     if (mInfoWidget) {
         mMainLayout->removeWidget(mInfoWidget);
         mInfoWidget->deleteLater();
@@ -86,6 +90,7 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelInstalledInfo(const Oll
     auto infoLayout = new QVBoxLayout(mInfoWidget);
     infoLayout->setContentsMargins({});
 
+#if 0
     if (const QString parentModelName = info.parentModel(); !parentModelName.isEmpty()) {
         auto label = new QLabel(i18n("Parent Model:"), mInfoWidget);
         infoLayout->addWidget(label);
@@ -94,6 +99,7 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelInstalledInfo(const Oll
         auto parentModelLabel = new QLabel(parentModelName, mInfoWidget);
         infoLayout->addWidget(parentModelLabel);
     }
+#endif
 
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
     infoLayout->addWidget(languagesGroupBox);
@@ -102,7 +108,7 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelInstalledInfo(const Oll
     for (const auto &lang : languages) {
         const QLocale locale(lang);
         if (locale.language() == QLocale::Language::C) {
-            qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << lang;
+            qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << " impossible to convert to language " << lang;
             continue;
         }
         vboxLanguagesLayout->addWidget(new QLabel(locale.nativeLanguageName(), mInfoWidget));
@@ -130,13 +136,12 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelInstalledInfo(const Oll
 }
 
 void OllamaCommonModelAvailableInfoWidget::appendCategories(QStringList &lst,
-                                                      TextAutoGenerateText::TextAutoGenerateManager::Category cat,
-                                                      TextAutoGenerateText::TextAutoGenerateManager::Categories categories)
+                                                            TextAutoGenerateText::TextAutoGenerateManager::Category cat,
+                                                            TextAutoGenerateText::TextAutoGenerateManager::Categories categories)
 {
     if (categories & cat) {
         lst.append(TextAutoGenerateText::TextAutoGenerateManager::convertCategoryToI18n(cat));
     }
 }
-#endif
 
 #include "moc_ollamacommonmodelavailableinfowidget.cpp"

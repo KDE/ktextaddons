@@ -23,6 +23,7 @@ public:
         Url,
         Tags,
         Languages,
+        AvailableInfo,
     };
     Q_ENUM(ModelInfoRoles)
 
