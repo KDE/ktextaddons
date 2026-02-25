@@ -57,6 +57,12 @@ void OllamaCommonSettingsTest::shouldHaveDefaultValues()
     QCOMPARE(s.keepAliveType(), OllamaCommonSettings::KeepAliveType::Unknown);
     QCOMPARE(s.shareNameType(), OllamaCommonSettings::ShareNameType::DoNotShare);
     QVERIFY(!s.thoughtProcessing());
+
+    QCOMPARE(s.defaultThoughtProcessing(), false);
+    QCOMPARE(s.defaultTemperature(), 0.8);
+    QCOMPARE(s.defaultSeed(), 0);
+    QCOMPARE(s.defaultKeepAliveMinutes(), 1);
+    QCOMPARE(s.defaultContextWindowSize(), 16384);
 }
 
 #include "moc_ollamacommonsettingstest.cpp"

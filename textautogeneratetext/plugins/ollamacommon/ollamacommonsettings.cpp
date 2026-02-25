@@ -63,18 +63,48 @@ void OllamaCommonSettings::setKeepAliveMinutes(int newKeepAliveMinutes)
     mKeepAliveMinutes = newKeepAliveMinutes;
 }
 
+double OllamaCommonSettings::defaultTemperature() const
+{
+    return 0.8;
+}
+
+int OllamaCommonSettings::defaultSeed() const
+{
+    return 0;
+}
+
+int OllamaCommonSettings::defaultKeepAliveMinutes() const
+{
+    return 1;
+}
+
+qint64 OllamaCommonSettings::defaultContextWindowSize() const
+{
+    return 16384;
+}
+
+bool OllamaCommonSettings::defaultThoughtProcessing() const
+{
+    return false;
+}
+
+OllamaCommonSettings::KeepAliveType OllamaCommonSettings::defaultKeepAliveType() const
+{
+    return OllamaCommonSettings::KeepAliveType::UnloadAfterUse;
+}
+
 void OllamaCommonSettings::load(const KConfigGroup &config)
 {
     setDisplayName(config.readEntry(u"Name"_s));
     if (config.hasKey(u"Temperature"_s)) {
-        setTemperature(config.readEntry(u"Temperature"_s, 0.8));
+        setTemperature(config.readEntry(u"Temperature"_s, defaultTemperature()));
     }
-    setSeed(config.readEntry(u"Seed"_s, 0));
+    setSeed(config.readEntry(u"Seed"_s, defaultSeed()));
     setCurrentModel(config.readEntry(u"CurrentModel"_s));
-    setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, 1));
-    setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, 16384));
-    setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, false));
-    setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(config.readEntry(u"KeepAliveType"_s, {})));
+    setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, defaultKeepAliveMinutes()));
+    setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, defaultContextWindowSize()));
+    setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, defaultThoughtProcessing()));
+    setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(config.readEntry(u"KeepAliveType"_s, u"UnloadAfterUse"_s)));
 }
 
 void OllamaCommonSettings::save(KConfigGroup &config)

@@ -68,6 +68,13 @@ public:
     [[nodiscard]] OllamaCommonSettings::ShareNameType shareNameType() const;
     void setShareNameType(const OllamaCommonSettings::ShareNameType &newShareNameType);
 
+    [[nodiscard]] double defaultTemperature() const;
+    [[nodiscard]] int defaultSeed() const;
+    [[nodiscard]] int defaultKeepAliveMinutes() const;
+    [[nodiscard]] qint64 defaultContextWindowSize() const;
+    [[nodiscard]] bool defaultThoughtProcessing() const;
+    [[nodiscard]] OllamaCommonSettings::KeepAliveType defaultKeepAliveType() const;
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
