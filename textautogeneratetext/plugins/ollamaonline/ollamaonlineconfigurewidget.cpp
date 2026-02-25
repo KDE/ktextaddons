@@ -119,7 +119,7 @@ void OllamaOnlineConfigureWidget::restoreToDefaults()
     const OllamaCommonOptionsWidget::OllamaCommonOptionsInfo optionsInfo{
         .exposeToNetwork = false,
         .thoughtProcessing = mManager->ollamaOnlineSettings()->defaultThoughtProcessing(),
-        .shareNameType = mManager->ollamaOnlineSettings()->shareNameType(),
+        .shareNameType = mManager->ollamaOnlineSettings()->defaultShareNameType(),
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 }

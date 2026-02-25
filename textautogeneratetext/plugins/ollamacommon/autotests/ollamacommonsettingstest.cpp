@@ -63,6 +63,8 @@ void OllamaCommonSettingsTest::shouldHaveDefaultValues()
     QCOMPARE(s.defaultSeed(), 0);
     QCOMPARE(s.defaultKeepAliveMinutes(), 1);
     QCOMPARE(s.defaultContextWindowSize(), 16384);
+    QCOMPARE(s.defaultShareNameType(), OllamaCommonSettings::ShareNameType::DoNotShare);
+    QCOMPARE(s.defaultKeepAliveType(), OllamaCommonSettings::KeepAliveType::UnloadAfterUse);
 }
 
 #include "moc_ollamacommonsettingstest.cpp"

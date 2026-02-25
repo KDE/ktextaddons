@@ -74,6 +74,7 @@ public:
     [[nodiscard]] qint64 defaultContextWindowSize() const;
     [[nodiscard]] bool defaultThoughtProcessing() const;
     [[nodiscard]] OllamaCommonSettings::KeepAliveType defaultKeepAliveType() const;
+    [[nodiscard]] OllamaCommonSettings::ShareNameType defaultShareNameType() const;
 
 private:
     QString mDisplayName;

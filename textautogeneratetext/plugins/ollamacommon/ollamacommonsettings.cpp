@@ -93,6 +93,11 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::defaultKeepAliveType()
     return OllamaCommonSettings::KeepAliveType::UnloadAfterUse;
 }
 
+OllamaCommonSettings::ShareNameType OllamaCommonSettings::defaultShareNameType() const
+{
+    return OllamaCommonSettings::ShareNameType::DoNotShare;
+}
+
 void OllamaCommonSettings::load(const KConfigGroup &config)
 {
     setDisplayName(config.readEntry(u"Name"_s));
@@ -104,7 +109,10 @@ void OllamaCommonSettings::load(const KConfigGroup &config)
     setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, defaultKeepAliveMinutes()));
     setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, defaultContextWindowSize()));
     setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, defaultThoughtProcessing()));
-    setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(config.readEntry(u"KeepAliveType"_s, u"UnloadAfterUse"_s)));
+    setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(
+        config.readEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(defaultKeepAliveType()))));
+    setShareNameType(OllamaCommonSettings::convertShareNameTypeFromString(
+        config.readEntry(u"ShareName"_s, OllamaCommonSettings::convertShareNameTypeToString(defaultShareNameType()))));
 }
 
 void OllamaCommonSettings::save(KConfigGroup &config)
@@ -117,6 +125,7 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"ContextWindowSize"_s, contextWindowSize());
     config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(KeepAliveType()));
     config.writeEntry(u"ThoughtProcessing"_s, thoughtProcessing());
+    config.writeEntry(u"ShareName"_s, OllamaCommonSettings::convertShareNameTypeToString(shareNameType()));
 }
 
 OllamaCommonSettings::KeepAliveType OllamaCommonSettings::keepAliveType() const
