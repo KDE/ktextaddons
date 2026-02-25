@@ -63,9 +63,20 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
 
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     connect(mSearchLineEdit, &QLineEdit::textChanged, mProxyModel, &OllamaCommonModelAvailableInfosSortProxyModel::setFilterFixedString);
+    connect(mAvailableListView, &TextAutoGenerateText::TextAutoGenerateModelAvailableListView::pressed, this, &OllamaCommonModelAvailableWidget::slotClicked);
 }
 
 OllamaCommonModelAvailableWidget::~OllamaCommonModelAvailableWidget() = default;
+
+void OllamaCommonModelAvailableWidget::slotClicked(const QModelIndex &index)
+{
+    if (index.isValid()) {
+#if 0
+        const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
+        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info);
+#endif
+    }
+}
 
 void OllamaCommonModelAvailableWidget::setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &infos)
 {

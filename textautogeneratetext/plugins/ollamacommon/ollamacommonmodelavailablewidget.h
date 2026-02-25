@@ -26,6 +26,7 @@ public:
     void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &infos);
 
 private:
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void slotClicked(const QModelIndex &index);
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
