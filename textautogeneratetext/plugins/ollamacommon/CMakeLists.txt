@@ -56,6 +56,8 @@ target_sources(
         ollamacommonsharenamecombobox.cpp
         ollamacommonmanager.h
         ollamacommonmanager.cpp
+        ollamacommonmodelavailableinfowidget.h
+        ollamacommonmodelavailableinfowidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
