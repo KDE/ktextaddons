@@ -87,7 +87,6 @@ OllamaConfigureDialog::~OllamaConfigureDialog()
 void OllamaConfigureDialog::slotRestoreDefaults()
 {
     mOllamaConfigureWidget->restoreToDefaults();
-    // TODO
 }
 
 void OllamaConfigureDialog::slotAccepted()
