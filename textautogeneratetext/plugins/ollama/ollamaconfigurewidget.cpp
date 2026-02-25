@@ -255,6 +255,11 @@ void OllamaConfigureWidget::saveSettings()
     mManager->ollamaSettings()->setShareNameType(optionsInfo.shareNameType);
 }
 
+void OllamaConfigureWidget::restoreToDefaults()
+{
+    // TODO
+}
+
 void OllamaConfigureWidget::fillModels()
 {
     mMessageWidget->animatedHide();

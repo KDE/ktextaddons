@@ -30,6 +30,7 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama Online"));
     setFaceType(KPageDialog::List);
+    setStandardButtons({QDialogButtonBox::StandardButton::Ok, QDialogButtonBox::StandardButton::Cancel, QDialogButtonBox::StandardButton::RestoreDefaults});
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaOnlineConfigureWidget, generalPageName);
@@ -62,11 +63,17 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
     connect(mOllamaOnlineConfigureWidget, &OllamaOnlineConfigureWidget::enableOkButton, this, [okButton](bool state) {
         okButton->setEnabled(state);
     });
+    connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &OllamaOnlineConfigureDialog::slotRestoreDefaults);
 }
 
 OllamaOnlineConfigureDialog::~OllamaOnlineConfigureDialog()
 {
     writeConfig();
+}
+
+void OllamaOnlineConfigureDialog::slotRestoreDefaults()
+{
+    mOllamaOnlineConfigureWidget->restoreToDefaults();
 }
 
 void OllamaOnlineConfigureDialog::slotAccepted()

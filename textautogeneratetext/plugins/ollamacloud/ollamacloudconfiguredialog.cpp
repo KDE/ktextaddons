@@ -30,6 +30,7 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama Cloud"));
     setFaceType(KPageDialog::List);
+    setStandardButtons({QDialogButtonBox::StandardButton::Ok, QDialogButtonBox::StandardButton::Cancel, QDialogButtonBox::StandardButton::RestoreDefaults});
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaCloudConfigureWidget, generalPageName);
@@ -62,11 +63,17 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
     connect(mOllamaCloudConfigureWidget, &OllamaCloudConfigureWidget::enableOkButton, this, [okButton](bool state) {
         okButton->setEnabled(state);
     });
+    connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &OllamaCloudConfigureDialog::slotRestoreDefaults);
 }
 
 OllamaCloudConfigureDialog::~OllamaCloudConfigureDialog()
 {
     writeConfig();
+}
+
+void OllamaCloudConfigureDialog::slotRestoreDefaults()
+{
+    mOllamaCloudConfigureWidget->restoreToDefaults();
 }
 
 void OllamaCloudConfigureDialog::slotAccepted()

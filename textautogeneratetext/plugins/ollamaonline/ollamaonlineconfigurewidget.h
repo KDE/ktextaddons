@@ -21,6 +21,7 @@ public:
     ~OllamaOnlineConfigureWidget() override;
 
     void saveSettings();
+    void restoreToDefaults();
 
 Q_SIGNALS:
     void enableOkButton(bool enabled);

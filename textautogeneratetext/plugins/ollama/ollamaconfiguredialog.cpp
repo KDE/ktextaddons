@@ -33,6 +33,7 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     setFaceType(KPageDialog::List);
+    setStandardButtons({QDialogButtonBox::StandardButton::Ok, QDialogButtonBox::StandardButton::Cancel, QDialogButtonBox::StandardButton::RestoreDefaults});
 
     connect(mOllamaConfigureWidget, &OllamaConfigureWidget::ollamaProcessOk, this, [this](bool status) {
         mOllamaModelCreateWidget->setEnabled(status);
@@ -75,11 +76,18 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     connect(mOllamaConfigureWidget, &OllamaConfigureWidget::enableOkButton, this, [okButton](bool state) {
         okButton->setEnabled(state);
     });
+    connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &OllamaConfigureDialog::slotRestoreDefaults);
 }
 
 OllamaConfigureDialog::~OllamaConfigureDialog()
 {
     writeConfig();
+}
+
+void OllamaConfigureDialog::slotRestoreDefaults()
+{
+    mOllamaConfigureWidget->restoreToDefaults();
+    // TODO
 }
 
 void OllamaConfigureDialog::slotAccepted()

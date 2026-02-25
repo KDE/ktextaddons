@@ -22,6 +22,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotAccepted();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void readConfig();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void writeConfig();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotRestoreDefaults();
     OllamaConfigureWidget *const mOllamaConfigureWidget;
     OllamaModelAvailableWidget *const mOllamaModelWidget;
     OllamaModelInstalledWidget *const mOllamaModelInstalledWidget;

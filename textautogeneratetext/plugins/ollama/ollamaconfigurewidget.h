@@ -27,6 +27,7 @@ public:
 
     void loadSettings();
     void saveSettings();
+    void restoreToDefaults();
 
 Q_SIGNALS:
     void ollamaProcessOk(bool status);

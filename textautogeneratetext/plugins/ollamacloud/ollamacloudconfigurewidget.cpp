@@ -100,6 +100,10 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
 
 OllamaCloudConfigureWidget::~OllamaCloudConfigureWidget() = default;
 
+void OllamaCloudConfigureWidget::restoreToDefaults()
+{
+}
+
 void OllamaCloudConfigureWidget::fillModels()
 {
     mManager->loadModels();

@@ -103,6 +103,10 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
 
 OllamaOnlineConfigureWidget::~OllamaOnlineConfigureWidget() = default;
 
+void OllamaOnlineConfigureWidget::restoreToDefaults()
+{
+}
+
 void OllamaOnlineConfigureWidget::fillModels()
 {
     mManager->loadModels();
