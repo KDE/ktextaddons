@@ -12,7 +12,7 @@
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 
-OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidget *parent)
+OllamaCommonModelAvailableInfoW idget::OllamaCommonModelAvailableInfoWidget(QWidget *parent)
     : QWidget{parent}
     , mFamilyNameLabel(new QLabel(this))
     , mParameterSizeLabel(new QLabel(this))

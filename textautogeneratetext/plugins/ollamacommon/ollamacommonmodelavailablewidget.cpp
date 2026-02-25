@@ -12,6 +12,7 @@
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
+#include <QScrollArea>
 #include <QSplitter>
 #include <QVBoxLayout>
 
@@ -51,7 +52,15 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     vboxLayout->addWidget(mAvailableListView);
 
     splitter->addWidget(widget);
-    splitter->addWidget(mOllamaModelAvalaibleInfoWidget);
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setObjectName(u"scrollArea"_s);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    splitter->addWidget(scrollArea);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setWidget(mOllamaModelAvalaibleInfoWidget);
+    scrollArea->hide();
+    mOllamaModelAvalaibleInfoWidget->setObjectName(u"mOllamaModelAvalaibleInfoWidget"_s);
     mainLayout->addWidget(splitter);
 
     mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);
@@ -67,6 +76,10 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     connect(mSearchLineEdit, &QLineEdit::textChanged, mProxyModel, &OllamaCommonModelAvailableInfosSortProxyModel::setFilterFixedString);
     connect(mAvailableListView, &TextAutoGenerateText::TextAutoGenerateModelAvailableListView::pressed, this, &OllamaCommonModelAvailableWidget::slotClicked);
+    connect(mAvailableListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, scrollArea]() {
+        const bool isEnabled = mAvailableListView->currentIndex().isValid();
+        scrollArea->setVisible(isEnabled);
+    });
 }
 
 OllamaCommonModelAvailableWidget::~OllamaCommonModelAvailableWidget() = default;
