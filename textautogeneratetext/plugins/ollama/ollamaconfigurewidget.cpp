@@ -275,7 +275,11 @@ void OllamaConfigureWidget::restoreToDefaults()
     };
     mOllamaCommonOptionsWidget->setOptionsInfo(optionsInfo);
 
-    // TODO
+    mManager->ollamaSettings()->setCudaVisibleDevice({});
+    mManager->ollamaSettings()->setRocrVisibleDevice({});
+    mManager->ollamaSettings()->setOverrideGfxVersion({});
+    mManager->ollamaSettings()->setVulkanSupport({});
+    mManager->ollamaSettings()->setDefaultModelPath({});
 }
 
 void OllamaConfigureWidget::fillModels()
