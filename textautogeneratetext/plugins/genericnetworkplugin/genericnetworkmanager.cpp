@@ -105,8 +105,11 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     if (mGenericNetworkSettings->maxTokens() > 0) {
         data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
     }
-    if (mGenericNetworkSettings->seed() > 0) {
-        data["seed"_L1] = mGenericNetworkSettings->seed();
+    qDebug() << " limitations(mPluginNetworkType) " << limitations(mPluginNetworkType);
+    if (!(limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::NoSeed)) {
+        if (mGenericNetworkSettings->seed() > 0) {
+            data["seed"_L1] = mGenericNetworkSettings->seed();
+        }
     }
     qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " Json: " << data << " req " << req.url();
     auto reply = new GenericNetworkReply{
@@ -220,6 +223,22 @@ bool GenericNetworkManager::hasThinkSupport(const QString &currentModel) const
 GenericNetworkManager::Limitations GenericNetworkManager::limitations(GenericNetworkManager::PluginNetworkType type) const
 {
     return mServerInfo->limitations(type);
+}
+
+bool GenericNetworkManager::hasSystemMessageSupport() const
+{
+    if (!(limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::NoSystemMessage)) {
+        return true;
+    }
+    return false;
+}
+
+bool GenericNetworkManager::hasTextOnlySupport() const
+{
+    if (limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::TextOnly) {
+        return true;
+    }
+    return false;
 }
 
 #include "moc_genericnetworkmanager.cpp"

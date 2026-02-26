@@ -171,7 +171,7 @@ public:
      * Converts the messages to Ollama chat format.
      * \return List of messages in JSON object format
      */
-    [[nodiscard]] QList<QJsonObject> convertToOllamaChat() const;
+    [[nodiscard]] QList<QJsonObject> convertToOllamaChat(bool hasSystemMessageSupport, bool hasTextOnlySupport) const;
 
     /*!
      * Returns the current search text.

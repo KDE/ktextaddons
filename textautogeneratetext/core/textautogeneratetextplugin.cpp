@@ -111,7 +111,7 @@ void TextAutoGenerateTextPlugin::editMessage(const EditSendInfo &editSendInfo)
             info.message = editSendInfo.message;
             info.messageUuid = llmUuid;
             info.chatId = editSendInfo.chatId;
-            info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
+            info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport()));
             info.tools = editSendInfo.tools;
 
             initializeProgress(info);
@@ -184,7 +184,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         info.chatId = d->manager->currentChatId();
         info.tools = editSendInfo.tools;
 
-        info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
+        info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport()));
         // qDebug() << "info.messagesArray  " << info.messagesArray;
 
         d->manager->addMessage(info.chatId, msgLlm);
@@ -287,6 +287,16 @@ QString TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::Text
 QString TextAutoGenerateTextPlugin::shareNamePrompt() const
 {
     return {};
+}
+
+bool TextAutoGenerateTextPlugin::hasSystemMessageSupport() const
+{
+    return true;
+}
+
+bool TextAutoGenerateTextPlugin::hasTextOnlySupport() const
+{
+    return false;
 }
 
 QString TextAutoGenerateTextPlugin::fallBackModel() const

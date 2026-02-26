@@ -322,7 +322,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     return msg;
 }
 
-QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
+QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessageSupport, bool hasTextOnlySupport) const
 {
     QJsonObject obj;
     if (mContent.isEmpty()) {
@@ -339,7 +339,11 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
         role = u"assistant"_s;
         break;
     case Sender::System:
-        role = u"system"_s;
+        if (hasSystemMessageSupport) {
+            role = u"system"_s;
+        } else {
+            role = u"user"_s;
+        }
         break;
     case Sender::Tool:
         role = u"tool"_s;
@@ -359,7 +363,10 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
         }
     }
     obj["content"_L1] = contentStr;
-    // obj["images"_L1] = //TODO add list;
+    if (hasTextOnlySupport) {
+        // Otherwise don't add images
+        // obj["images"_L1] = //TODO add list;
+    }
     return obj;
 }
 
