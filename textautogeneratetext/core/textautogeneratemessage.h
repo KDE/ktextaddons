@@ -217,7 +217,7 @@ public:
      * Converts the message to Ollama chat JSON format.
      * \return The message as a QJsonObject in Ollama chat format
      */
-    [[nodiscard]] QJsonObject convertToOllamaChatJson() const;
+    [[nodiscard]] QJsonObject convertToOllamaChatJson(bool hasSystemMessageSupport, bool hasTextOnlySupport) const;
 
     /*!
      * Returns the answer information for this message.
