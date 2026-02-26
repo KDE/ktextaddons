@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:45+0000\n"
+"POT-Creation-Date: 2026-02-26 00:42+0000\n"
 "PO-Revision-Date: 2026-02-23 06:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -189,18 +189,18 @@ msgid "Configure %1"
 msgstr "%1-ის მორგება"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:48
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "ზოგადი"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:53
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:40
+#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -302,6 +302,7 @@ msgstr "Ollama-ის მოდელების მართვა"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:59
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:58
 #, kde-format
 msgid "Languages Supported"
 msgstr "მხარდაჭერილი ენები"
@@ -335,6 +336,7 @@ msgstr "ბაზა:"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:76
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
+#: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
@@ -435,6 +437,7 @@ msgid "Parent Model:"
 msgstr "მშობელი მოდელი:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:123
+#: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:81
 #, kde-format
 msgid "Features Supported"
 msgstr "მხარდაჭერილი ფუნქციები"
@@ -455,12 +458,6 @@ msgstr "მართლა გნებავთ, წაშალოთ ეს �
 msgctxt "@title"
 msgid "Remove Model"
 msgstr "მოდელის წაშლა"
-
-#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:35
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Open Url \"%1\""
-msgstr "ბმულის \"%1\" გახსნა"
 
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
@@ -498,13 +495,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:60
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "დაყენებული მოდელები"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:65
+#: plugins/ollama/ollamaconfiguredialog.cpp:66
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -520,19 +517,19 @@ msgstr "პორტი:"
 msgid "Show Ollama Log"
 msgstr "Ollama-ის ჟურნალის ჩვენება"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:96
+#: plugins/ollama/ollamaconfigurewidget.cpp:97
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "მოდელი:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:107
+#: plugins/ollama/ollamaconfigurewidget.cpp:108
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:117
+#: plugins/ollama/ollamaconfigurewidget.cpp:118
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -541,7 +538,7 @@ msgstr ""
 "ეს ჩანაწერები არასავალდებულოა. ისინი გამოიყენება GPU-თან დაკავშირებული "
 "პრობლემების გადასაჭრელად Ollama-ის გამოყენებისას."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:187
+#: plugins/ollama/ollamaconfigurewidget.cpp:188
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ollama-ის გაშვება ჩავარდა"
@@ -2468,6 +2465,13 @@ msgstr ""
 #, kde-format
 msgid "The user is called %1"
 msgstr "მომხმარებელს ჰქვია %1"
+
+#: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
+#: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Url \"%1\""
+msgstr "ბმულის \"%1\" გახსნა"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
