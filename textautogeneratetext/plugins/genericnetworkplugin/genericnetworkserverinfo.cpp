@@ -241,10 +241,10 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
     return listInfo;
 }
 
-GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type) const
+GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type) const
 {
-    GenericNetworkServerInfo::Limitations limits;
-    limits |= GenericNetworkServerInfo::Limitation::None;
+    GenericNetworkManager::Limitations limits;
+    limits |= GenericNetworkManager::Limitation::None;
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
@@ -254,13 +254,13 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
     case GenericNetworkManager::PluginNetworkType::OpenAI:
         return limits;
     case GenericNetworkManager::PluginNetworkType::GroqAI:
-        limits |= GenericNetworkServerInfo::Limitation::TextOnly;
+        limits |= GenericNetworkManager::Limitation::TextOnly;
         return limits;
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
-        limits |= GenericNetworkServerInfo::Limitation::NoSystemMessage;
+        limits |= GenericNetworkManager::Limitation::NoSystemMessage;
         return limits;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
-        limits |= GenericNetworkServerInfo::Limitation::NoSeed;
+        limits |= GenericNetworkManager::Limitation::NoSeed;
         return limits;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:

@@ -83,17 +83,17 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
 {
     const GenericNetworkServerInfo info;
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::MistralAI), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenAI), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KlusterAI), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GroqAI), GenericNetworkServerInfo::Limitation::TextOnly);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::CerebrasAI), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::LlamaApi), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Anthropic), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::VeniceAI), GenericNetworkServerInfo::Limitation::NoSystemMessage);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KimiAI), GenericNetworkServerInfo::Limitation::NoSeed);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GrokAI), GenericNetworkServerInfo::Limitation::None);
-    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Qwen), GenericNetworkServerInfo::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::MistralAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KlusterAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GroqAI), GenericNetworkManager::Limitation::TextOnly);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::CerebrasAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::LlamaApi), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Anthropic), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::VeniceAI), GenericNetworkManager::Limitation::NoSystemMessage);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KimiAI), GenericNetworkManager::Limitation::NoSeed);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GrokAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Qwen), GenericNetworkManager::Limitation::None);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"

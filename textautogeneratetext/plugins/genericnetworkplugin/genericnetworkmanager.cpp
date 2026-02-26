@@ -16,6 +16,7 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
+
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkManager::GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
@@ -214,6 +215,11 @@ bool GenericNetworkManager::hasAudioSupport(const QString &currentModel) const
 bool GenericNetworkManager::hasThinkSupport(const QString &currentModel) const
 {
     return mServerInfo->hasThinkSupport(currentModel, mPluginNetworkType);
+}
+
+GenericNetworkManager::Limitations GenericNetworkManager::limitations(GenericNetworkManager::PluginNetworkType type) const
+{
+    return mServerInfo->limitations(type);
 }
 
 #include "moc_genericnetworkmanager.cpp"
