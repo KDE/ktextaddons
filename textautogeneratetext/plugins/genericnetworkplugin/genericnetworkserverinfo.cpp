@@ -40,6 +40,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Kimi (Moonshot AI)");
     case GenericNetworkManager::PluginNetworkType::GrokAI:
         return i18n("Grok (X.ai)");
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        return i18n("Qwen (DashScope)");
     }
     return {};
 }
@@ -60,6 +62,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::KimiAI:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
         return u"chat/completions"_s;
     }
     return {};
@@ -91,6 +94,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.moonshot.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::GrokAI:
         return u"https://api.x.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        return u"https://qwen.ai/home"_s;
     }
     return {};
 }
@@ -121,6 +126,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.moonshot.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::GrokAI:
         return u"https://api.x.ai/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        return u"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/"_s;
     }
     return {};
 }
@@ -148,6 +155,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Meta AI Llama API");
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return i18n("Kimi large language models by Moonshot AI");
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        return i18n("Alibaba Cloud Qwen large language models via DashScope");
     }
     return {};
 }
@@ -178,6 +187,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"kimiai"_s;
     case GenericNetworkManager::PluginNetworkType::GrokAI:
         return u"grokai"_s;
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        return u"qwen"_s;
     }
     return {};
 }
@@ -204,6 +215,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::KimiAI;
     } else if (str == QLatin1StringView("grokai")) {
         return GenericNetworkManager::PluginNetworkType::GrokAI;
+    } else if (str == QLatin1StringView("qwen")) {
+        return GenericNetworkManager::PluginNetworkType::Qwen;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -253,6 +266,7 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
         return limits;
     }
     return limits;
@@ -279,6 +293,7 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
         return false;
     }
     return false;
@@ -313,6 +328,8 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+
         return false;
     }
     return false;
@@ -334,6 +351,7 @@ bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, Generi
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
         return false;
     }
     return false;
@@ -356,6 +374,7 @@ bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
         return false;
     }
     return false;
@@ -377,6 +396,7 @@ bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
         return false;
     }
     return false;

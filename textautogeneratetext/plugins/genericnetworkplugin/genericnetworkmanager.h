@@ -26,6 +26,7 @@ public:
         LlamaApi,
         Anthropic,
         GrokAI,
+        Qwen,
         KimiAI,
         LastElement = KimiAI,
     };
