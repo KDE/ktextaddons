@@ -30,6 +30,15 @@ public:
         LastElement = KimiAI,
     };
 
+    enum Limitation : uint8_t {
+        None = 0,
+        TextOnly = 1,
+        NoSeed = 2,
+        NoSystemMessage = 4,
+    };
+    Q_DECLARE_FLAGS(Limitations, Limitation)
+    Q_FLAG(Limitations)
+
     explicit GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent = nullptr);
     ~GenericNetworkManager() override;
 
@@ -62,6 +71,7 @@ public:
     [[nodiscard]] bool hasOcrSupport(const QString &currentModel) const;
     [[nodiscard]] bool hasAudioSupport(const QString &currentModel) const;
     [[nodiscard]] bool hasThinkSupport(const QString &currentModel) const;
+    [[nodiscard]] GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;

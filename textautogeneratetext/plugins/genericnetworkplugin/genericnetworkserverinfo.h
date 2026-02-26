@@ -13,15 +13,6 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 {
     Q_GADGET
 public:
-    enum Limitation : uint8_t {
-        None = 0,
-        TextOnly = 1,
-        NoSeed = 2,
-        NoSystemMessage = 4,
-    };
-    Q_DECLARE_FLAGS(Limitations, Limitation)
-    Q_FLAG(Limitations)
-
     GenericNetworkServerInfo();
     ~GenericNetworkServerInfo();
     [[nodiscard]] QString translatedName(GenericNetworkManager::PluginNetworkType type) const;
@@ -34,7 +25,7 @@ public:
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers(const QString &pluginName) const;
     [[nodiscard]] GenericNetworkManager::PluginNetworkType pluginNetworkTypeFromString(const QString &str) const;
 
-    [[nodiscard]] Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
