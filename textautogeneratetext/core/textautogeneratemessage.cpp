@@ -339,7 +339,11 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessa
         role = u"assistant"_s;
         break;
     case Sender::System:
-        role = u"system"_s;
+        if (hasSystemMessageSupport) {
+            role = u"system"_s;
+        } else {
+            role = u"user"_s;
+        }
         break;
     case Sender::Tool:
         role = u"tool"_s;
@@ -359,7 +363,10 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessa
         }
     }
     obj["content"_L1] = contentStr;
-    // obj["images"_L1] = //TODO add list;
+    if (hasTextOnlySupport) {
+        // Otherwise don't add images
+        // obj["images"_L1] = //TODO add list;
+    }
     return obj;
 }
 
