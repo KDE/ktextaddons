@@ -247,7 +247,7 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
         limits |= GenericNetworkServerInfo::Limitation::NoSystemMessage;
         return limits;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
-        limits |= GenericNetworkServerInfo::Limitation::NoSystemMessage;
+        limits |= GenericNetworkServerInfo::Limitation::NoSeed;
         return limits;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
