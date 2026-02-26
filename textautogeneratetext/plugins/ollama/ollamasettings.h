@@ -46,11 +46,15 @@ public:
 
     [[nodiscard]] QString ollamaExpose() const;
 
+    [[nodiscard]] QString hipVisibleDevice() const;
+    void setHipVisibleDevice(const QString &newHipVisibleDevice);
+
 private:
     QString mVulkanSupport;
     QString mOverrideGfxVersion;
     QString mRocrVisibleDevice;
     QString mCudaVisibleDevice;
+    QString mHipVisibleDevice;
     QString mDisplayName;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
     QString mDefaultModelPath;

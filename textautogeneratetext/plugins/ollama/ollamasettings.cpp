@@ -80,6 +80,9 @@ QProcessEnvironment OllamaSettings::processEnvironment() const
     if (!mOverrideGfxVersion.isEmpty()) {
         environment.insert(u"HSA_OVERRIDE_GFX_VERSION"_s, mOverrideGfxVersion);
     }
+    if (!mHipVisibleDevice.isEmpty()) {
+        environment.insert(u"HIP_VISIBLE_DEVICES"_s, mHipVisibleDevice);
+    }
     if (!mDefaultModelPath.isEmpty()) {
         environment.insert(u"OLLAMA_MODELS"_s, mDefaultModelPath);
     }
@@ -108,6 +111,7 @@ QDebug operator<<(QDebug d, const OllamaSettings &t)
     d.space() << "overrideGfxVersion:" << t.overrideGfxVersion();
     d.space() << "rocrVisibleDevice:" << t.rocrVisibleDevice();
     d.space() << "cudaVisibleDevice:" << t.cudaVisibleDevice();
+    d.space() << "hipVisibleDevice:" << t.hipVisibleDevice();
     d.space() << "displayName:" << t.displayName();
     d.space() << "serverUrl:" << t.serverUrl();
     d.space() << "defaultModelPath:" << t.defaultModelPath();
@@ -128,6 +132,7 @@ void OllamaSettings::load(const KConfigGroup &config)
     setVulkanSupport(config.readEntry(u"VulkanSupport"_s));
     setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
     setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
+    setHipVisibleDevice(config.readEntry(u"HipVisibleDevice"_s));
     setExpose(config.readEntry(u"Expose"_s, false));
 }
 
@@ -139,6 +144,7 @@ void OllamaSettings::save(KConfigGroup &config)
     config.writeEntry(u"VulkanSupport"_s, vulkanSupport());
     config.writeEntry(u"RocrVisibleDevice"_s, rocrVisibleDevice());
     config.writeEntry(u"CudaVisibleDevice"_s, cudaVisibleDevice());
+    config.writeEntry(u"HipVisibleDevice"_s, hipVisibleDevice());
     config.writeEntry(u"Expose"_s, expose());
 }
 
@@ -155,4 +161,14 @@ void OllamaSettings::setExpose(bool newExpose)
 QString OllamaSettings::ollamaExpose() const
 {
     return u"chrome-extension://*,moz-extension://*,safari-web-extension://*,http://0.0.0.0,http://127.0.0.1"_s;
+}
+
+QString OllamaSettings::hipVisibleDevice() const
+{
+    return mHipVisibleDevice;
+}
+
+void OllamaSettings::setHipVisibleDevice(const QString &newHipVisibleDevice)
+{
+    mHipVisibleDevice = newHipVisibleDevice;
 }

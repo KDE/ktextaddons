@@ -46,6 +46,11 @@ void OllamaConfigureCustomizeWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mOverrideGfxVersionLineEdit->text().isEmpty());
     QVERIFY(mOverrideGfxVersionLineEdit->isClearButtonEnabled());
 
+    auto mHipVisibleDeviceLineEdit = w.findChild<QLineEdit *>(u"mHipVisibleDeviceLineEdit"_s);
+    QVERIFY(mHipVisibleDeviceLineEdit);
+    QVERIFY(mHipVisibleDeviceLineEdit->text().isEmpty());
+    QVERIFY(mHipVisibleDeviceLineEdit->isClearButtonEnabled());
+
     auto mDefaultModelPath = w.findChild<KUrlRequester *>(u"mDefaultModelPath"_s);
     QVERIFY(mDefaultModelPath);
     QVERIFY(mDefaultModelPath->text().isEmpty());

@@ -17,6 +17,7 @@ public:
         QString cudaVisibleDevice;
         QString rocrVisibleDevice;
         QString overrideGfxVersion;
+        QString hipVisibleDevice;
         QString defaultModelPath;
     };
 
@@ -31,5 +32,6 @@ private:
     QLineEdit *const mCudaVisibleDeviceLineEdit;
     QLineEdit *const mRocrVisibleDeviceLineEdit;
     QLineEdit *const mOverrideGfxVersionLineEdit;
+    QLineEdit *const mHipVisibleDeviceLineEdit;
     KUrlRequester *const mDefaultModelPath;
 };

@@ -21,6 +21,7 @@ OllamaConfigureCustomizeWidget::OllamaConfigureCustomizeWidget(QWidget *parent)
     , mCudaVisibleDeviceLineEdit(new QLineEdit(this))
     , mRocrVisibleDeviceLineEdit(new QLineEdit(this))
     , mOverrideGfxVersionLineEdit(new QLineEdit(this))
+    , mHipVisibleDeviceLineEdit(new QLineEdit(this))
     , mDefaultModelPath(new KUrlRequester(this))
 {
     auto mainLayout = new QFormLayout(this);
@@ -42,6 +43,11 @@ OllamaConfigureCustomizeWidget::OllamaConfigureCustomizeWidget(QWidget *parent)
     mainLayout->addRow(i18n("AMD GPU Selection:"), mRocrVisibleDeviceLineEdit);
     KLineEditEventHandler::catchReturnKey(mRocrVisibleDeviceLineEdit);
 
+    mHipVisibleDeviceLineEdit->setObjectName(u"mHipVisibleDeviceLineEdit"_s);
+    mHipVisibleDeviceLineEdit->setClearButtonEnabled(true);
+    mainLayout->addRow(i18n("Hip Visible Device:"), mHipVisibleDeviceLineEdit);
+    KLineEditEventHandler::catchReturnKey(mHipVisibleDeviceLineEdit);
+
     mOverrideGfxVersionLineEdit->setObjectName(u"mOverrideGfxVersionLineEdit"_s);
     mOverrideGfxVersionLineEdit->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Override GFX version:"), mOverrideGfxVersionLineEdit);
@@ -61,6 +67,7 @@ void OllamaConfigureCustomizeWidget::setCustomizeInfo(const CustomizeInfo &info)
     mCudaVisibleDeviceLineEdit->setText(info.cudaVisibleDevice);
     mRocrVisibleDeviceLineEdit->setText(info.rocrVisibleDevice);
     mOverrideGfxVersionLineEdit->setText(info.overrideGfxVersion);
+    mHipVisibleDeviceLineEdit->setText(info.hipVisibleDevice);
     mDefaultModelPath->setText(info.defaultModelPath);
 }
 
@@ -71,6 +78,7 @@ OllamaConfigureCustomizeWidget::CustomizeInfo OllamaConfigureCustomizeWidget::cu
         .cudaVisibleDevice = mCudaVisibleDeviceLineEdit->text(),
         .rocrVisibleDevice = mRocrVisibleDeviceLineEdit->text(),
         .overrideGfxVersion = mOverrideGfxVersionLineEdit->text(),
+        .hipVisibleDevice = mHipVisibleDeviceLineEdit->text(),
         .defaultModelPath = mDefaultModelPath->lineEdit()->text(),
     };
     return info;
