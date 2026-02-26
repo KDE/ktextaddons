@@ -36,6 +36,7 @@ public:
         TextOnly = 1,
         NoSeed = 2,
         NoSystemMessage = 4,
+        UseMaxCompletionTokens = 8,
     };
     Q_DECLARE_FLAGS(Limitations, Limitation)
     Q_FLAG(Limitations)

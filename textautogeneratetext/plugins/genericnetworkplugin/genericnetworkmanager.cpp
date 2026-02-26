@@ -103,9 +103,13 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
         // data["tool_choice"_L1] = u"none"_s;
     }
     if (mGenericNetworkSettings->maxTokens() > 0) {
-        data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
+        if (limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::UseMaxCompletionTokens) {
+            data["max_completion_tokens"_L1] = mGenericNetworkSettings->maxTokens();
+        } else {
+            data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
+        }
     }
-    qDebug() << " limitations(mPluginNetworkType) " << limitations(mPluginNetworkType);
+    // qDebug() << " limitations(mPluginNetworkType) " << limitations(mPluginNetworkType);
     if (!(limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::NoSeed)) {
         if (mGenericNetworkSettings->seed() > 0) {
             data["seed"_L1] = mGenericNetworkSettings->seed();
