@@ -30,6 +30,8 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"kimiai"_s), GenericNetworkManager::PluginNetworkType::KimiAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"grokai"_s), GenericNetworkManager::PluginNetworkType::GrokAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"qwen"_s), GenericNetworkManager::PluginNetworkType::Qwen);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"novitaai"_s), GenericNetworkManager::PluginNetworkType::NovitaAI);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"deepinfra"_s), GenericNetworkManager::PluginNetworkType::DeepInfra);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -46,6 +48,8 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::KimiAI), u"https://api.moonshot.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::GrokAI), u"https://api.x.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::Qwen), u"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::NovitaAI), u"https://api.novita.ai/v3/openai/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::DeepInfra), u"https://api.deepinfra.com/v1/openai/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -62,6 +66,8 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::KimiAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::GrokAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::Qwen), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::NovitaAI), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::DeepInfra), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -78,6 +84,8 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::KimiAI), u"kimiai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::GrokAI), u"grokai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::Qwen), u"qwen"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::NovitaAI), u"novitaai"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::DeepInfra), u"deepinfra"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -94,6 +102,8 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KimiAI), GenericNetworkManager::Limitation::NoSeed);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GrokAI), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Qwen), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::NovitaAI), GenericNetworkManager::Limitation::NoSeed);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::DeepInfra), GenericNetworkManager::Limitation::None);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"

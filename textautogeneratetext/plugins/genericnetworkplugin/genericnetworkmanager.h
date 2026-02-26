@@ -17,6 +17,8 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkManager : public TextA
 public:
     enum class PluginNetworkType : uint8_t {
         Unknown = 0,
+        NovitaAI,
+        DeepInfra,
         MistralAI,
         OpenAI,
         KlusterAI,
