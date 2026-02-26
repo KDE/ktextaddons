@@ -166,7 +166,23 @@ public:
      */
     [[nodiscard]] virtual bool hasThinkSupport() const = 0;
 
-    virtual QString shareNamePrompt() const;
+    /*!
+     * \brief shareNamePrompt
+     * \return
+     */
+    [[nodiscard]] virtual QString shareNamePrompt() const;
+
+    /*!
+     * \brief hasSystemMessageSupport
+     * \return true if instance has system message support
+     */
+    [[nodiscard]] virtual bool hasSystemMessageSupport() const;
+
+    /*!
+     * \brief hasTextOnlySupport
+     * \return true if we just have text only support
+     */
+    [[nodiscard]] virtual bool hasTextOnlySupport() const;
 Q_SIGNALS:
     /*!
      */

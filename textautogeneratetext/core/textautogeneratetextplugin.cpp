@@ -289,6 +289,16 @@ QString TextAutoGenerateTextPlugin::shareNamePrompt() const
     return {};
 }
 
+bool TextAutoGenerateTextPlugin::hasSystemMessageSupport() const
+{
+    return true;
+}
+
+bool TextAutoGenerateTextPlugin::hasTextOnlySupport() const
+{
+    return false;
+}
+
 QString TextAutoGenerateTextPlugin::fallBackModel() const
 {
     // Fallback to first model

@@ -225,4 +225,20 @@ GenericNetworkManager::Limitations GenericNetworkManager::limitations(GenericNet
     return mServerInfo->limitations(type);
 }
 
+bool GenericNetworkManager::hasSystemMessageSupport() const
+{
+    if (!(limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::NoSystemMessage)) {
+        return true;
+    }
+    return false;
+}
+
+bool GenericNetworkManager::hasTextOnlySupport() const
+{
+    if (limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::TextOnly) {
+        return true;
+    }
+    return false;
+}
+
 #include "moc_genericnetworkmanager.cpp"

@@ -289,4 +289,14 @@ bool GenericNetworkPlugin::hasThinkSupport() const
     return mGenericManager->hasThinkSupport(currentModel());
 }
 
+bool GenericNetworkPlugin::hasSystemMessageSupport() const
+{
+    return mGenericManager->hasSystemMessageSupport();
+}
+
+bool GenericNetworkPlugin::hasTextOnlySupport() const
+{
+    return mGenericManager->hasTextOnlySupport();
+}
+
 #include "moc_genericnetworkplugin.cpp"

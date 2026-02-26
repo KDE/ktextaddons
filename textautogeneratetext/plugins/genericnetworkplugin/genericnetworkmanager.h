@@ -72,6 +72,8 @@ public:
     [[nodiscard]] bool hasAudioSupport(const QString &currentModel) const;
     [[nodiscard]] bool hasThinkSupport(const QString &currentModel) const;
     [[nodiscard]] GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] bool hasSystemMessageSupport() const;
+    [[nodiscard]] bool hasTextOnlySupport() const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;
