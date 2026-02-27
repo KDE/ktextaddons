@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:42+0000\n"
+"POT-Creation-Date: 2026-02-27 00:42+0000\n"
 "PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -209,7 +209,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Dostępne modele"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:155
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -224,78 +224,111 @@ msgstr "Mistral AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
+msgid "Novita AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
+#, kde-format
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Kluster AI"
 msgstr "Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
 msgid "Groq Cloud"
 msgstr "Groq Cloud"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Cerebras AI"
 msgstr "Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Venice"
 msgstr "Venice"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Llama Api"
 msgstr "Llama Api"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
 #, kde-format
 msgid "Anthropic"
 msgstr "Anthropic"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:44
 #, kde-format
 msgid "Grok (X.ai)"
 msgstr "Grok (X.ai)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
+#, kde-format
+msgid "Qwen (DashScope)"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
+#, kde-format
+msgid "DeepInfra"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:156
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Duże modele językowe Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:163
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:144
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:165
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API wnioskowania w chmurze Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:167
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API wnioskowania w chmurze Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:169
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "API Meta AI Llama"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:171
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Duże modele językowe Kimi od Moonshot AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:173
+#, fuzzy, kde-format
+#| msgid "Mistral AI large language models"
+msgid "Alibaba Cloud Qwen large language models via DashScope"
+msgstr "Duże modele językowe Mistral AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:175
+#, fuzzy, kde-format
+#| msgid "Kluster AI cloud inference API"
+msgid "Novita AI cloud inference API"
+msgstr "API wnioskowania w chmurze Kluster AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
+#, fuzzy, kde-format
+#| msgid "Cerebras AI cloud inference API"
+msgid "DeepInfra cloud inference API"
+msgstr "API wnioskowania w chmurze Cerebras AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -467,27 +500,32 @@ msgstr "Usuń model"
 msgid "Ollama (Managed)"
 msgstr "Ollama (Zarządzany)"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Obsługa Vulkan GPU:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Wybór GPU NVIDII:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Wybór GPU AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#, kde-format
+msgid "Hip Visible Device:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Podstaw wersję GFX:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
 #, kde-format
 msgid "Default Model Path:"
 msgstr "Domyślna ścieżka modelu:"
