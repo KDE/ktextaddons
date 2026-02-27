@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2023.
+# SPDX-FileCopyrightText: 2023, 2025 Matjaž Jeran <matjaz.jeran@amis.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 07:00+0100\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-12-19 06:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -134,7 +134,7 @@ msgstr "Krepko"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr "Ležeče"
+msgstr "Poševno"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
@@ -252,13 +252,3 @@ msgstr "Nekatere nove zmožnosti v tej izdaji vključujejo:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Nekaj ​​popravkov napak:"
-
-#~ msgid "No new version found."
-#~ msgstr "Ni najdene nove različice."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "Ni mogoče odpreti %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Napaka pri odpiranju datoteke"

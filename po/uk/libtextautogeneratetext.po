@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2025, 2026.
+# Yuri Chornoivan <yurchor@ukr.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:42+0000\n"
-"PO-Revision-Date: 2026-02-23 08:56+0200\n"
+"POT-Creation-Date: 2026-02-27 02:46+0000\n"
+"PO-Revision-Date: 2025-12-24 17:18+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -119,9 +119,10 @@ msgid "Reasoning"
 msgstr "Аналіз"
 
 #: core/textautogeneratemanager.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Groq Cloud"
 msgid "Cloud"
-msgstr "Хмара"
+msgstr "Хмара Groq"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -129,13 +130,17 @@ msgid "Go to message"
 msgstr "Перейти до повідомлення"
 
 #: core/textautogeneratesettings.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "You are an AI assistant. You are speaking to a person named %1. Be "
+#| "helpful, professional, and courteous. Do not give inaccurate information."
 msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
-"Ви є штучним інтелектом — помічником. Будьте корисним, професійним і "
-"люб'язним. Не надавайте неперевірених відомостей."
+"Ви є штучним інтелектом — помічником. Ви спілкуєтеся з особою з іменем %1. "
+"Будьте корисним, професійним і люб'язним. Не надавайте неперевірених "
+"відомостей."
 
 #: core/textautogeneratetextplugin.cpp:279
 #, kde-format
@@ -205,7 +210,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Доступні моделі"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:155
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -261,7 +266,7 @@ msgstr "Kimi (ШІ Moonshot)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr "Grok (X.ai)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -461,29 +466,34 @@ msgstr "Вилучення моделі"
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr "Ollama (керована)"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Підтримка процесорів Vulkan:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Вибір процесора NVIDIA:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Вибір процесора AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#, kde-format
+msgid "Hip Visible Device:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Перевизначення версії GFX:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
 #, kde-format
 msgid "Default Model Path:"
 msgstr "Шлях до типової моделі:"
@@ -509,12 +519,12 @@ msgstr "Створення моделей"
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr "Порт:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
 msgid "Show Ollama Log"
-msgstr "Показати журнал Ollama"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:97
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
@@ -543,10 +553,11 @@ msgid "Failed to start Ollama"
 msgstr "Не вдалося запустити Ollama"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Журнал Ollama"
+msgstr "Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:94
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -567,15 +578,18 @@ msgid "Impossible to start Ollama."
 msgstr "Неможливо запустити Ollama."
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama (Cloud)"
-msgstr "Ollama (Cloud)"
+msgstr "Ollama"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "Налаштовування Ollama Cloud"
+msgstr "Налаштувати Ollama"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
@@ -585,9 +599,10 @@ msgid "Api Key:"
 msgstr "Ключ API:"
 
 #: plugins/ollamacloud/ollamacloudplugin.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Cloud"
-msgstr "Ollama Cloud"
+msgstr "Ollama"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -598,28 +613,28 @@ msgstr "Перезавантажити модель"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr "Підтримання з'єднання з наборами даних"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr "Не вивантажувати взагалі"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr "Вивантажити після використання"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr "Підтримувати з'єднання"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr "Спосіб обробки екземпляром бездіяльних моделей"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -627,18 +642,16 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
-"Проміжок часу, протягом якого екземпляр має зберігати моделі завантаженими "
-"після переходу їх у стан бездіяльності."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr "Набори:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr "Хвилини:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
@@ -2221,13 +2234,11 @@ msgstr ""
 msgid ""
 "The most powerful vision-language model in the Qwen model family to date."
 msgstr ""
-"Найпотужніша на сьогодні модель візуальної мови в сімействі моделей Qwen."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
 #, kde-format
 msgid "Advanced agentic, reasoning and coding capabilities.."
 msgstr ""
-"Розширені можливості агентської взаємодії, міркування та написання коду."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
 #, kde-format
@@ -2236,9 +2247,6 @@ msgid ""
 "Instruct-0905 demonstrates significant improvements in performance on public "
 "benchmarks and real-world coding agent tasks."
 msgstr ""
-"Найсучасніша мовна модель змішаного експертного рівня (MoE). Kimi K2-"
-"Instruct-0905 демонструє значне покращення продуктивності у відкритих тестах "
-"та реальних завданнях агента написання коду."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:294
 #, kde-format
@@ -2246,16 +2254,12 @@ msgid ""
 "MiniMax M2 is a high-efficiency large language model built for coding and "
 "agentic workflows."
 msgstr ""
-"MiniMax M2 — це високоефективна велика мовна модель, створена для написання "
-"програмного коду та агентських робочих процесів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:295
 #, kde-format
 msgid ""
 "DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
 msgstr ""
-"DeepSeek-OCR — це модель мови візуального розпізнавання, яка може виконувати "
-"ефективне розпізнавання символів з використанням елементів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
 #, kde-format
@@ -2263,8 +2267,6 @@ msgid ""
 "gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models "
 "built-upon gpt-oss."
 msgstr ""
-"gpt-oss-safeguard-20b та gpt-oss-safeguard-120b – це моделі міркувань "
-"безпеки, побудовані на gpt-oss."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:298
 #, kde-format
@@ -2272,15 +2274,11 @@ msgid ""
 "Google's most intelligent model with SOTA reasoning and multimodal "
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
-"Найінтелектуальніша модель Google із SOTA-міркуваннями та мультимодальним "
-"розумінням, а також потужними можливостями агентського та вайб-програмування."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
 msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
 msgstr ""
-"Міркування Kimi K2, найкраща модель мислення з відкритим кодом від Moonshot "
-"AI."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:300
 #, kde-format
@@ -2288,9 +2286,6 @@ msgid ""
 "The Cogito v2.1 LLMs are instruction tuned generative models. All models are "
 "released under MIT license for commercial use."
 msgstr ""
-"Моделі LLM Cogito версії 2.1 — це генеративні моделі, налаштовувані "
-"інструкціями. Усі моделі випущено за умов дотримання ліцензії MIT для "
-"комерційного використання."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:301
 #, kde-format
@@ -2298,8 +2293,6 @@ msgid ""
 "The Ministral 3 family is designed for edge deployment, capable of running "
 "on a wide range of hardware."
 msgstr ""
-"Сімейство Ministral 3 розроблено для розгортання на периферії та здатне "
-"працювати на широкому спектрі обладнання."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:303
 #, kde-format
@@ -2308,9 +2301,6 @@ msgid ""
 "scratch by Essential AI, optimized for code and STEM with capabilities on "
 "par with SOTA open-weight models."
 msgstr ""
-"Rnj-1 — це сімейство 8B-параметричних щільних моделей відкритої ваги, "
-"навчених з нуля за допомогою Essential AI, оптимізованих для програмування "
-"та STEM з можливостями, рівними моделям відкритої ваги SOTA."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:306
 #, kde-format
@@ -2318,8 +2308,6 @@ msgid ""
 "The first installment in the Qwen3-Next series with strong performance in "
 "terms of both parameter efficiency and inference speed."
 msgstr ""
-"Перша частина серії Qwen3-Next з високими показниками як з точки зору "
-"ефективності параметрів, так і швидкості міркувань."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
 #, kde-format
@@ -2327,8 +2315,6 @@ msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
 msgstr ""
-"Nemotron 3 Nano — новий стандарт для ефективних, відкритих та "
-"інтелектуальних агентських моделей."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
 #, kde-format
@@ -2336,9 +2322,6 @@ msgid ""
 "24B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
-"24B-модель, яка чудово використовує інструменти для дослідження програмного "
-"коду, редагування кількох файлів та потужних агентів розробки програмного "
-"забезпечення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:311
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:318
@@ -2348,9 +2331,6 @@ msgid ""
 "language models. These models are pre-trained on the Dolma 3 dataset and "
 "post-trained on the Dolci datasets."
 msgstr ""
-"Olmo — це серія відкритих мовних моделей, розроблених для використання науки "
-"про мовні моделі. Ці моделі попередньо навчені на наборі даних Dolma 3 та "
-"після цього навчені на наборах даних Dolci."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
 #, kde-format
@@ -2358,8 +2338,6 @@ msgid ""
 "A new collection of open translation models built on Gemma 3, helping people "
 "communicate across 55 languages."
 msgstr ""
-"Нова збірка відкритих моделей перекладу, побудована на Gemma 3, допомагає "
-"людям спілкуватися 55 мовами."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:315
 #, kde-format
@@ -2367,8 +2345,6 @@ msgid ""
 "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
 "for lightweight deployment that balances performance and efficiency."
 msgstr ""
-"Як найпотужніша модель у класі 30B, GLM-4.7-Flash пропонує новий варіант для "
-"легкого розгортання, який поєднує продуктивність та ефективність."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
 #, kde-format
@@ -2376,9 +2352,6 @@ msgid ""
 "123B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
-"123B-модель, яка чудово використовує інструменти для дослідження програмного "
-"коду, редагування кількох файлів та потужних агентів розробки програмного "
-"забезпечення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:321
 #, kde-format
@@ -2386,8 +2359,6 @@ msgid ""
 "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
 "tuned explicitly for function calling."
 msgstr ""
-"FunctionGemma — це спеціалізована версія 270V-моделі Google Gemma 3, "
-"спеціально налаштована для виклику функцій."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
 #, kde-format
@@ -2395,8 +2366,6 @@ msgid ""
 "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
 "the cost."
 msgstr ""
-"Gemini 3 Flash пропонує передовий інтелект, створений для швидкості, за "
-"значно меншу ціну."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
 #, kde-format
@@ -2404,13 +2373,11 @@ msgid ""
 "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
 "excels at multilingual retrieval."
 msgstr ""
-"nomic-embed-text-v2-moe — це багатомовна модель вбудовування тексту MoE, яка "
-"чудово справляється з багатомовним пошуком."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
 #, kde-format
 msgid "Advancing the Coding Capability"
-msgstr "Розширення можливості програмування"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:325
 #, kde-format
@@ -2418,8 +2385,6 @@ msgid ""
 "DeepSeek-V3.2, a model that harmonizes high computational efficiency with "
 "superior reasoning and agent performance."
 msgstr ""
-"DeepSeek-V3.2, модель, яка поєднує високу обчислювальну ефективність з "
-"чудовою продуктивністю міркувань та агентів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:326
 #, kde-format
@@ -2427,21 +2392,17 @@ msgid ""
 "A general-purpose multimodal mixture-of-experts model for production-grade "
 "tasks and enterprise workloads."
 msgstr ""
-"Універсальна мультимодальна модель зі змішаною групою експертів для завдань "
-"виробничого рівня та корпоративних робочих навантажень."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:327
 #, kde-format
 msgid "Exceptional multilingual capabilities to elevate code engineering"
-msgstr "Виняткові багатомовні можливості для покращення процесів програмування"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:328
 #, kde-format
 msgid ""
 "LFM2.5 is a new family of hybrid models designed for on-device deployment."
 msgstr ""
-"LFM2.5 — це нове сімейство гібридних моделей, розроблених для розгортання на "
-"пристроях."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:330
 #, kde-format
@@ -2451,10 +2412,6 @@ msgid ""
 "capabilities, instant and thinking modes, as well as conversational and "
 "agentic paradigms."
 msgstr ""
-"Kimi K2.5 — це природна мультимодальна агентська модель з відкритим "
-"початковим кодом, яка бездоганно інтегрує бачення та розуміння мови з "
-"розширеними агентськими можливостями, режимами миттєвої роботи та мислення, "
-"а також розмовними та агентськими парадигмами."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2462,9 +2419,6 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
-"Модель агентська модель потужного обмірковування від Z.ai із загальним "
-"обсягом параметрів 744 млрд (40 млрд активних), створена для складної "
-"системної інженерії та довгострокових завдань."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2472,14 +2426,12 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
-"MiniMax-M2.5 — це сучасна велика мовна модель, розроблена для реальних "
-"офісних завдань та програмування."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
-msgstr "Ім'я користувача — %1"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
 #: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
@@ -2491,25 +2443,23 @@ msgstr "Відкрити адресу «%1»"
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr "Відкрити Ollama для доступу з мережі"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr "Обробка міркувань"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr "Параметри"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
 msgstr ""
-"Зробити Ollama доступним для інших пристроїв та програмного забезпечення у "
-"локальній мережі."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2518,18 +2468,18 @@ msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
 msgstr ""
-"Має сумісні моделі міркувань, які обдумують відповідь до створення "
-"повідомлення."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
 msgid "Share Name:"
-msgstr "Назва ресурсу:"
+msgstr "Назва:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Override GFX version:"
 msgid "Override Parameters"
-msgstr "Перевизначити параметри"
+msgstr "Перевизначення версії GFX:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2572,75 +2522,81 @@ msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
-"Керує тим, скільки елементів (фрагментів тексту) може за раз обробляти і "
-"запам'ятовувати модель."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr "Розмір вікна контексту:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
-msgstr "Можливості"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:181
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Temperature:"
 msgid "Template"
-msgstr "Шаблон"
+msgstr "Температура:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Modelfile"
-msgstr "Файл моделі"
+msgstr "Моделі"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:185
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
 msgid "Parameters"
-msgstr "Параметри"
+msgstr "Параметричний розмір:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
-msgstr "Подробиці"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Model Info"
-msgstr "Відомості щодо моделі"
+msgstr "Моделі"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr "Не відкривати доступ"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr "Користувач"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr "Ім'я повністю"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show metadata info"
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Показати відомості щодо моделі"
+msgstr "Показати відомості щодо метаданих"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr "Ollama (інтерактивна)"
+msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Налаштувати Ollama Online"
+msgstr "Налаштувати Ollama"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
@@ -2648,9 +2604,10 @@ msgid "Server Url:"
 msgstr "Адреса сервера:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Online"
-msgstr "Інтерактивна Ollama"
+msgstr "Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2708,13 +2665,14 @@ msgstr "Налаштувати…"
 #, kde-format
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
-"Увімкнено режим заощадження енергії — це уповільнить створення повідомлень."
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Показати відомості щодо моделі"
+msgstr "Адреса відомостей щодо відкритої моделі"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -3174,7 +3132,7 @@ msgstr "Нове спілкування"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr "Здублювати…"
+msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
@@ -3231,20 +3189,12 @@ msgstr "Повідомлень не знайдено."
 #~ msgid "Configure"
 #~ msgstr "Налаштувати"
 
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Далі"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Назад"
-
 #~ msgid "No system prompt"
 #~ msgstr "Немає запиту системи"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Змінити…"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Налаштування ШІ Mistral"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Адреса екземпляра Ollama"
@@ -3255,36 +3205,19 @@ msgstr "Повідомлень не знайдено."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Модель, яку буде використано для створення відповідей"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "Температура моделі. Збільшення температури зробить відповіді моделі більш "
-#~ "творчими."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Встановлює базу випадковості, яку буде використано для породження даних. "
-#~ "Встановлення певного числа примусить модель до створення одного і того "
-#~ "самого тексту у відповідь на конкретний запит. (Типове значення: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "Рушій:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Налаштування ШІ Mistral"
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Налаштування ШІ Openai"
 
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Скасувати"
+#~ msgid "Engine:"
+#~ msgstr "Рушій:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Змінити…"
 
 #~ msgctxt "@action"
 #~ msgid "New Chat…"

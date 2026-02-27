@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 05:06-0300\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-12-19 09:30-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -46,13 +46,13 @@ msgstr "&Abrir com '%1'"
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr "Abrir &com…"
+msgstr "Abrir &com..."
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr "Salvar &como…"
+msgstr "Salvar &como..."
 
 #: misc/openfilejob.cpp:95
 #, kde-format
@@ -250,14 +250,4 @@ msgstr "Algumas novas funcionalidades desta versão incluem:"
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr "Algumas correções de erro:"
-
-#~ msgid "No new version found."
-#~ msgstr "Nenhum nova versão encontrada."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "Impossível abrir %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Erro ao abrir o arquivo"
+msgstr "Algumas correções de bugs:"

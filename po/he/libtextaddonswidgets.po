@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 12:53+0200\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2026-01-10 21:29+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -247,13 +247,3 @@ msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "תיקוני תקלות:"
-
-#~ msgid "No new version found."
-#~ msgstr "לא נמצאו גרסאות חדשות."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "אי אפשר לפתוח את %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "שגיאה בפתיחת קובץ"

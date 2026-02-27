@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:42+0000\n"
+"POT-Creation-Date: 2026-02-27 02:46+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -208,7 +208,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Saatavilla olevat mallit"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:155
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -264,7 +264,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr "Grok (X.ai)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -466,27 +466,32 @@ msgstr "Poista malli"
 msgid "Ollama (Managed)"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Vulkan-näytönohjaintuki:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "NVIDIA-näytönohjainvalinta:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "AMD-näytönohjainvalinta:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#, kde-format
+msgid "Hip Visible Device:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Ohita GFX-versio:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
 #, kde-format
 msgid "Default Model Path:"
 msgstr "Mallin oletussijainti:"
@@ -2218,9 +2223,9 @@ msgstr "Nimi:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#| msgid "Override GFX version:"
 msgid "Override Parameters"
-msgstr "Parametrikoko:"
+msgstr "Ohita GFX-versio:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2298,10 +2303,9 @@ msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#| msgid "Models"
 msgid "Model Info"
-msgstr "Tietoa:"
+msgstr "Mallit"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
@@ -2320,11 +2324,11 @@ msgstr ""
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#| msgctxt "@info:tooltip"
+#| msgid "Show metadata info"
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Tietoa:"
+msgstr "Näytä metatiedot"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
@@ -2930,25 +2934,12 @@ msgstr "Viestejä ei löytynyt."
 #~ msgid "Configure"
 #~ msgstr "Asetukset"
 
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "New Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Uusi keskustelu"
-
-#, fuzzy
-#~| msgid "7 days previous"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Edelliset 7 päivää"
-
 #~ msgid "No system prompt"
 #~ msgstr "Ei järjestelmäkehotetta"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Muokkaa…"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Mistral-tekoälyn asetukset"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama-ilmentymän verkko-osoite"
@@ -2959,22 +2950,16 @@ msgstr "Viestejä ei löytynyt."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Vastausten tuottamiseen käytetty malli"
 
+#~ msgid "Cancel"
+#~ msgstr "Peru"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "Openai IA:n asetukset"
+
 #~ msgid "Engine:"
 #~ msgstr "Moottori:"
 
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Mistral-tekoälyn asetukset"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Configure Mistral IA"
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Mistral-tekoälyn asetukset"
-
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Peru"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Muokkaa…"

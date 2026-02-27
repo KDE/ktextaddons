@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 16:42+0200\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-12-24 17:18+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -249,13 +249,3 @@ msgstr "Серед нових можливостей у цьому випуск�
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Виправлення деяких вад:"
-
-#~ msgid "No new version found."
-#~ msgstr "Нової версії не знайдено."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "Не вдалося відкрити %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Помилка під час відкриття файла"

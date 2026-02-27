@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-16 22:16+0100\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-12-20 18:53+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -250,6 +250,3 @@ msgstr "Някои от новите функции в тази версия в�
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Поправка на някои грешки:"
-
-#~ msgid "No new version found."
-#~ msgstr "Не е намерена нова версия."

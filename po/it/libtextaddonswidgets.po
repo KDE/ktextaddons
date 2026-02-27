@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
 "PO-Revision-Date: 2025-12-10 17:15+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -254,13 +254,3 @@ msgstr "Alcune delle nuove funzionalità in questo rilascio includono:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Alcune correzioni di bug:"
-
-#~ msgid "No new version found."
-#~ msgstr "Non è stata trovata una nuova versione."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "Impossibile aprire %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Errore apertura file"

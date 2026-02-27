@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:42+0000\n"
-"PO-Revision-Date: 2026-02-23 06:54+0100\n"
+"POT-Creation-Date: 2026-02-27 02:46+0000\n"
+"PO-Revision-Date: 2025-12-24 04:39+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -120,9 +120,10 @@ msgid "Reasoning"
 msgstr "მსჯელობა"
 
 #: core/textautogeneratemanager.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Groq Cloud"
 msgid "Cloud"
-msgstr "ღრუბელი"
+msgstr "Groq Cloud"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -130,13 +131,16 @@ msgid "Go to message"
 msgstr "შეტყობინებაზე გადასვლა"
 
 #: core/textautogeneratesettings.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "You are an AI assistant. You are speaking to a person named %1. Be "
+#| "helpful, professional, and courteous. Do not give inaccurate information."
 msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
-"ბრძანდებით ხი დამხმარე. იყავით სასარგებლო, პროფესიონალი და თავაზიანი. ნუ "
-"მიაწვდით არაზუსტ ინფორმაციას."
+"თქვენ ხართ AI ასისტენტი. თქვენ ესაუბრებით პიროვნებას სახელით %1. იყავით "
+"სასარგებლო, პროფესიონალი და თავაზიანი. არ მიაწოდოთ არაზუსტი ინფორმაცია."
 
 #: core/textautogeneratetextplugin.cpp:279
 #, kde-format
@@ -169,7 +173,7 @@ msgstr "ჩართული"
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr "გამორთული"
+msgstr "გამორთ"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
@@ -206,7 +210,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "ხელმისაწვდომი მოდელები"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:155
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -242,7 +246,7 @@ msgstr "Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr "Venice"
+msgstr "ვენეცია"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
@@ -262,7 +266,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr "Grok (X.ai)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -282,7 +286,7 @@ msgstr "Kluster AI cloud inference API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "Cerebras AI-ის ღრუბლოვანი API"
+msgstr "Cerebras AI cloud inference API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
@@ -292,7 +296,7 @@ msgstr "Meta AI Llama API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Kimi დიდი ენის მოდელები Moonshot AI-ის მიერ"
+msgstr "Kimi დიდი ენის მოდელები Moonshot AI- ის მიერ"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -321,7 +325,7 @@ msgstr "მოდელის დამატება"
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "მოდელის სახელი უნდა იყოს ფორმატით \"სახელი:ჭდე\""
+msgstr "მოდელის სახელი უნდა იყოს ფორმით \"სახელი:ჭდე\""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
@@ -369,7 +373,7 @@ msgstr "მიმდინარეობს GGUF ფაილის ჩატ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "აირჩიეთ GGUF ფაილი"
+msgstr "ყველას მონიშვნა"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
 #, kde-format
@@ -446,7 +450,7 @@ msgstr "მხარდაჭერილი ფუნქციები"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "მონიშნული მოდელის წაშლა"
+msgstr "არჩეული მოდელის წაშლა"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
@@ -462,29 +466,34 @@ msgstr "მოდელის წაშლა"
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr "Ollama (მართული)"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Vulkan GPU-ის მხარდაჭერა:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "NVIDIA GPU-ის არჩევანი:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "AMD GPU-ის არჩევანი:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#, kde-format
+msgid "Hip Visible Device:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
 msgid "Override GFX version:"
 msgstr "GFX-ის ვერსიის გადაფარვა:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
 #, kde-format
 msgid "Default Model Path:"
 msgstr "ნაგულისხმევი მოდელის ბილიკი:"
@@ -505,17 +514,17 @@ msgstr "დაყენებული მოდელები"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "მოდელების შექმნა"
+msgstr "მოდელის წაშლა"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr "პორტი:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
 msgid "Show Ollama Log"
-msgstr "Ollama-ის ჟურნალის ჩვენება"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:97
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
@@ -535,8 +544,8 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
-"ეს ჩანაწერები არასავალდებულოა. ისინი გამოიყენება GPU-თან დაკავშირებული "
-"პრობლემების გადასაჭრელად Ollama-ის გამოყენებისას."
+"ეს ჩანაწერები არასავალდებულოა. ისინი Ollama-ის GPU-ისთან დაკავშირებული "
+"პრობლემების გადასაჭრელად გამოიყენება."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:188
 #, kde-format
@@ -544,10 +553,11 @@ msgid "Failed to start Ollama"
 msgstr "Ollama-ის გაშვება ჩავარდა"
 
 #: plugins/ollama/ollamalogdialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Ollama-ის ჟურნალი"
+msgstr "Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:94
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -568,15 +578,18 @@ msgid "Impossible to start Ollama."
 msgstr "Ollama-ის გაშვება შეუძლებელია."
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama (Cloud)"
-msgstr "Ollama (Cloud)"
+msgstr "Ollama"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "Ollama Cloud-ის მორგება"
+msgstr "Ollama-ის მორგება"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
@@ -586,9 +599,10 @@ msgid "Api Key:"
 msgstr "API გასაღები:"
 
 #: plugins/ollamacloud/ollamacloudplugin.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Cloud"
-msgstr "Ollama Cloud"
+msgstr "Ollama"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -599,28 +613,28 @@ msgstr "მოდელის თავიდან ჩატვირთვა"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr "პრესეტების ცოცხლად შენარჩუნება"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr "სამუდამოდ ცოცხლად შენარჩუნება"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr "გამოტვირთვა გამოყენების შემდეგ"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr "ცოცხლად შენარჩუნება"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr "როგორ მოიქცევა გაშვებული ასლი უქმე მოდელებთან"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -628,18 +642,16 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
-"დროის რაოდენობა რომლის განმავლობაშიც გაშვებული ასლი მოდელებს ჩატვირთულად "
-"შეინარჩუნებს მას შემდეგ, რაც ისინი უქმე გახდებიან."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr "პრესეტები:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr "წუთი:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
@@ -2162,7 +2174,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:279
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr "Devstral: საუკეთესო ღია კოდის მქონე მოდელი კოდის აგენტებისთვის."
+msgstr "Devstral: კოდირების აგენტების საუკეთესო ღია კოდის მოდელი."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:280
 #, kde-format
@@ -2177,7 +2189,7 @@ msgstr ""
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
-"Alibaba-ის გრძელი კონტექსტის მქონე მოდელები აგენტური და კოდის წერის "
+"Alibaba-ის სწრაფი გრძელი კონტექსტის მქონე მოდელები აგენტებისა და კოდის წერის "
 "ამოცანებისთვის."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:282
@@ -2209,21 +2221,20 @@ msgid ""
 "Granite 4 features improved instruction following (IF) and tool-calling "
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
-"Granite 4-ს აქვს გაუმჯობესებული ბრძანების მიყოლის (IF) და პროგრამების "
-"გამოძახების შესაძლებლობები, რაც მათ გაცილებით ეფექტურს ხდის საწარმოო "
-"აპლიკაციებში."
+"Granite 4-ს აქვს გაუმჯობესებული ინსტრუქციის მიყოლის (IF) და პროგრამის "
+"გამოძახების შესაძლებლობები, რაც მათ უფრო ეფექტურს ხდის წარმოებაში "
+"გამოსაყენებლად."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:289
 #, kde-format
 msgid ""
 "The most powerful vision-language model in the Qwen model family to date."
 msgstr ""
-"ჯერჯერობით ყველაზე მძლავრი ხედვის ენის მოდელი Qwen-ის მოდელების ოჯახიდან."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
 #, kde-format
 msgid "Advanced agentic, reasoning and coding capabilities.."
-msgstr "მოწინავე აგენტის, მსჯელობის და კოდის წერის შესაძლებლობები."
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
 #, kde-format
@@ -2232,9 +2243,6 @@ msgid ""
 "Instruct-0905 demonstrates significant improvements in performance on public "
 "benchmarks and real-world coding agent tasks."
 msgstr ""
-"ხელოვნების ნიმუში ექსპერტების ნარევი (MoE) ენის მოდელი. Kmi K2-Instruct-0905 "
-"აჩვენებს მნიშვნელოვან გაუმჯობესებებს წარმადობაში საჯარო წარმადობის ტესტებში "
-"და რეალური სამყაროს კოდის წერის ამოცანებში."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:294
 #, kde-format
@@ -2242,14 +2250,12 @@ msgid ""
 "MiniMax M2 is a high-efficiency large language model built for coding and "
 "agentic workflows."
 msgstr ""
-"MiniMax M2 მაღალი ეფექტურობის მქონე დიდი ენის მოდელია, რომელიც კოდის წერისა "
-"და აგენტად ყოფნის სამუშაოს დინებისთვისაა აგებული."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:295
 #, kde-format
 msgid ""
 "DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
-msgstr "DeepSeek-OCR ხედვაენოვანი მოდელია, რომელსაც ეფექტური OCR შეუძლია."
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
 #, kde-format
@@ -2257,8 +2263,6 @@ msgid ""
 "gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models "
 "built-upon gpt-oss."
 msgstr ""
-"gpt-oss-safeguard-20b და gpt-oss-safeguard-120b უსაფრთხოების მსჯელობის "
-"მოდელებია, რომლებიც gpt-oss-ზეა აგებული."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:298
 #, kde-format
@@ -2266,14 +2270,11 @@ msgid ""
 "Google's most intelligent model with SOTA reasoning and multimodal "
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
-"Google-ის ყველაზე ჭკვიანი მოდელი SOTA მსჯელობით და მრავალმოდალური აღქმით. "
-"ასევე გააჩნია მძლავრი აგენტისა და აღწერით კოდის წერის შესაძლებლობები."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
 msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
 msgstr ""
-"Kimi K2 Thinking - Moonshot AI-ის საუკეთესო ღია კოდის მქონე მოაზროვნე მოდელი."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:300
 #, kde-format
@@ -2281,15 +2282,13 @@ msgid ""
 "The Cogito v2.1 LLMs are instruction tuned generative models. All models are "
 "released under MIT license for commercial use."
 msgstr ""
-"Cogito v2.1 LLM-ები წარმოადგენენ ინსტრუქციაზე ბაზირებულ გენერაციულ მოდელებს. "
-"ყველა მოდელი ვრცელდება MIT ლიცენზიით კომერციული გამოყენებისთვის."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:301
 #, kde-format
 msgid ""
 "The Ministral 3 family is designed for edge deployment, capable of running "
 "on a wide range of hardware."
-msgstr "ოჯახი Ministral 3 განკუთვნილია, რომ გაეშვას აპარატურის დიდ რიცხვზე."
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:303
 #, kde-format
@@ -2298,9 +2297,6 @@ msgid ""
 "scratch by Essential AI, optimized for code and STEM with capabilities on "
 "par with SOTA open-weight models."
 msgstr ""
-"Rnj-1 ოჯახია 8მლრდ პარამეტრიანი ღია წონის, მკვრივი მოდელების, რომლებიც "
-"ნავარჯიშებია 0-დან, ოპტიმიზებულია კოდისა და STEM-ისთვის და გააჩნია თითქმის "
-"იგივე შესაძლებლობები, რაც SOTA-ის ღია წონის მქონე მოდელებს."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:306
 #, kde-format
@@ -2308,8 +2304,6 @@ msgid ""
 "The first installment in the Qwen3-Next series with strong performance in "
 "terms of both parameter efficiency and inference speed."
 msgstr ""
-"Qwen3-Next სერიების პირველი გამოშვება კარგი წარმადობით, რაც ორივეს, "
-"პარამეტრების ეფექტურობას და მსჯელობის სიჩქარეს გულისხმობს."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
 #, kde-format
@@ -2317,7 +2311,6 @@ msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
 msgstr ""
-"Nemotron 3 Nano - ახალი სტანდარტი ეფექტურ, ღია და ჭკვიან აგენტურ მოდელებში."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
 #, kde-format
@@ -2325,8 +2318,6 @@ msgid ""
 "24B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
-"24მლრდ მოდელი, რომელიც საუკეთესოა კოდის განხილვაში, მრავალი ფაილის "
-"ჩასწორებაში და მძლავრია პროგრამული უზრუნველყოფის შემუშავებაში."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:311
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:318
@@ -2336,9 +2327,6 @@ msgid ""
 "language models. These models are pre-trained on the Dolma 3 dataset and "
 "post-trained on the Dolci datasets."
 msgstr ""
-"Olmo ღია ენის მოდელების სერიაა, რომელიც განკუთვნილია ენის მოდელების "
-"მეცნიერებისთვის. ეს მოდელები ნავარჯიშევია dolma 3-ის მონაცემებზე და შემდეგ "
-"Doci-ის მონაცემებზე."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
 #, kde-format
@@ -2346,8 +2334,6 @@ msgid ""
 "A new collection of open translation models built on Gemma 3, helping people "
 "communicate across 55 languages."
 msgstr ""
-"ღია მთარგმნელი მოდელების ახალი კოლექცია, რომლებიც Gemma 3-ზეა აგებული. "
-"ეხმარება ადამიანებს ერთმანეთთან ურთიერთობაში 55 ენით."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:315
 #, kde-format
@@ -2355,8 +2341,6 @@ msgid ""
 "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
 "for lightweight deployment that balances performance and efficiency."
 msgstr ""
-"უძლიერესი მოდელი 30მლრდ კლასში. GLM-4.7-Flash გთავაზობთ ახალ მსუბუქ მოდელს, "
-"რომელიც წარმადობასა და ეფექტურობას შორის საუკეთესო ბალანსია."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
 #, kde-format
@@ -2364,8 +2348,6 @@ msgid ""
 "123B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
-"123მლრდ მოდელი, რომელიც საუკეთესოა კოდის განხილვაში, მრავალი ფაილის "
-"ჩასწორებაში და მძლავრია პროგრამული უზრუნველყოფის შემუშავებაში."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:321
 #, kde-format
@@ -2373,15 +2355,13 @@ msgid ""
 "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
 "tuned explicitly for function calling."
 msgstr ""
-"FunctionGemma წარმოადგენს Google-ის Gema 3 270მლნ სპეციალიზებულ მოდელს, "
-"რომელიც ნავარჯიშებია ფუნქციების გამოძახებებზე."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
 #, kde-format
 msgid ""
 "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
 "the cost."
-msgstr "Gemini 3 Flash აგებულია სიჩქარისთვის, რომელიც ფასის ხარჯზეა."
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
 #, kde-format
@@ -2389,13 +2369,11 @@ msgid ""
 "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
 "excels at multilingual retrieval."
 msgstr ""
-"nomic-embed-text-v2-moe წარმოადგენს MoE მრავალენოვან ტექსტის ჩაშენების "
-"მოდელს, რომელიც გადასარევია მრავალენოვან შემცველობასთან მუშაობისას."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
 #, kde-format
 msgid "Advancing the Coding Capability"
-msgstr "დაწინაურდა კოდის წერის შესაძლებლობაში"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:325
 #, kde-format
@@ -2403,8 +2381,6 @@ msgid ""
 "DeepSeek-V3.2, a model that harmonizes high computational efficiency with "
 "superior reasoning and agent performance."
 msgstr ""
-"DeepSeek-V3.2 - მოდელი, რომელიც მაღალი ეფექტურობის გამოთვლებს გადასარევ "
-"მსჯელობასა და აგენტის წარმადობასთან ერთად გთავაზობთ."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:326
 #, kde-format
@@ -2412,21 +2388,17 @@ msgid ""
 "A general-purpose multimodal mixture-of-experts model for production-grade "
 "tasks and enterprise workloads."
 msgstr ""
-"ზოგადი მულტიმოდალური ექსერტების ნარევი მოდელი საწარმოო ამოცანებისა და "
-"სამუშაო დატვირთვებისთვის."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:327
 #, kde-format
 msgid "Exceptional multilingual capabilities to elevate code engineering"
-msgstr "გადასარევი მრავალენოვანი შესაძლებლობები კოდის ერის დონის ასაწევად"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:328
 #, kde-format
 msgid ""
 "LFM2.5 is a new family of hybrid models designed for on-device deployment."
 msgstr ""
-"LFM2.5 ჰიბრიდული მოდელების ახალი ოჯახია, რომელიც მოწყობილობებზე გასაშვებადა "
-"განკუთვნილი."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:330
 #, kde-format
@@ -2436,10 +2408,6 @@ msgid ""
 "capabilities, instant and thinking modes, as well as conversational and "
 "agentic paradigms."
 msgstr ""
-"Kimi K2.5 is an open-source, native multimodal agentic model that seamlessly "
-"integrates vision and language understanding with advanced agentic "
-"capabilities, instant and thinking modes, as well as conversational and "
-"agentic paradigms."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2447,9 +2415,6 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
-"ძლიერი მსჯელობისა და აგენტური მოდელი Z.ai-ისგან 744მლრდ ჯამური პარამეტრით "
-"(40მლრდ აქტიური). აგებული რთული სისტემების აგებისთვის და გრძელვადიანი "
-"ამოცანებისთვის."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2457,14 +2422,12 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
-"MiniMax-M2.5 ხელოვნების ნიმუში დიდი ენის მოდელია, რომელიც რეალური სამყაროს "
-"წარმადობისა და კოდის წერის ამოცანებისთვისაა განკუთვნილი."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
-msgstr "მომხმარებელს ჰქვია %1"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
 #: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
@@ -2476,24 +2439,23 @@ msgstr "ბმულის \"%1\" გახსნა"
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr "Ollama-ის გამოჩენა ქსელში"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr "აზროვნების დამუშავება"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr "მორგება"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
 msgstr ""
-"Ollama-ის გამოჩენა სხვა მოწყობილობებისა და პროგრამებისთვის ლოკალურ ქსელში."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2502,18 +2464,18 @@ msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
 msgstr ""
-"შეტყობინების გენერაციამდე, თავსებადი, მსჯელობის, მოდელებისთვის ფიქრის დროის "
-"მიცემა მათი პასუხის შესახებ."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
 msgid "Share Name:"
-msgstr "გაზიარებულის სახელი:"
+msgstr "სახელი:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Override GFX version:"
 msgid "Override Parameters"
-msgstr "პარამეტრების გადაფარვა"
+msgstr "GFX-ის ვერსიის გადაფარვა:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2556,75 +2518,81 @@ msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
-"აკონტროლებს, რამდენი ტოკენის (ტექსტის ნაწილის) დამუშავება და დამახსოვრება "
-"შეუძლია ერთდროულად მოდელს."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr "კონტექსტის ფანჯრის ზომა:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
-msgstr "შესაძლებლობები"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:181
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Temperature:"
 msgid "Template"
-msgstr "შაბლონი"
+msgstr "ტემპერატურა:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Modelfile"
-msgstr "მოდელის ფაილი"
+msgstr "მოდელები"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:185
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
 msgid "Parameters"
-msgstr "პარამეტრები"
+msgstr "პარამეტრის ზომა:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
-msgstr "დეტალები"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Model Info"
-msgstr "მოდელის ინფორმაცია"
+msgstr "მოდელები"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr "გაზიარების გარეშე"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr "მომხმარებლის სახელი"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr "სრული სახელი"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show metadata info"
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "მოდელის ინფორმაციის ჩვენება"
+msgstr "მეტამონაცემების ინფორმაციის ჩვენება"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr "Ollama (ინტერნეტში)"
+msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Ollama Online-ის მორგება"
+msgstr "Ollama-ის მორგება"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
@@ -2632,9 +2600,10 @@ msgid "Server Url:"
 msgstr "სერვერის URL:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Online"
-msgstr "Ollama ინტერნეტში"
+msgstr "Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2673,13 +2642,13 @@ msgstr "სისტემაში Ollama აღმოჩენილი არ
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Ollama-ის გადმოწერა"
+msgstr "გადმოწერა Ollama"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama-ის გაშვება"
+msgstr "Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:33
 #, kde-format
@@ -2691,13 +2660,14 @@ msgstr "მორგება…"
 #, kde-format
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
-"ენერგიის დაზოგვის რეჟიმი ჩართულია. ეს შეტყობინების გენერაციას შეანელებს."
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "მოდელის ინფორმაციის ჩვენება"
+msgstr "მოდელის ინფორმაციის ბმულის გახსნა"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2775,7 +2745,7 @@ msgstr "ხელსაწყოს დამატებები"
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
 msgid "Prompt"
-msgstr "მოთხოვნის ზოლი"
+msgstr "ბრძანების შეყვანის შეხსენება"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
@@ -2834,7 +2804,7 @@ msgstr "აირჩიეთ გაშვებული ასლის ტი
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "გაშვებული ასლების მორგება"
+msgstr "ხი-ის მორგება"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:55
 #, kde-format
@@ -2863,7 +2833,7 @@ msgstr "გაშვებული ასლის წაშლა"
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი (%1)?"
+msgstr "მართლა გნებავთ, წაშალოთ ეს მოდელი (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
 #, kde-format
@@ -2940,12 +2910,12 @@ msgstr "მორგება…"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "მაქს. კოდები:"
+msgstr "მაქს. ტოკენები:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr "დამატებების ხელსაწყო:"
+msgstr "დამატების ხელსაწყო:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -3000,7 +2970,7 @@ msgstr "რჩეული"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "ძებნა… (%1)"
+msgstr "ძებნა… <%1>"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
@@ -3157,7 +3127,7 @@ msgstr "ახალი ჩატი"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr "დუბლირება…"
+msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
@@ -3197,7 +3167,7 @@ msgstr "კამათის წაშლა"
 #: widgets/view/textautogeneratehistorylistview.cpp:262
 #, kde-format
 msgid "No Archive Found."
-msgstr "არქივი ვერ მოიძებნა."
+msgstr "დამატებების გარეშე."
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
@@ -3214,20 +3184,12 @@ msgstr "შეტყობინებები აღმოჩენილი �
 #~ msgid "Configure"
 #~ msgstr "მორგება"
 
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "შემდეგი"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "წინა"
-
 #~ msgid "No system prompt"
 #~ msgstr "სისტემური კითხვის გარეშე"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "ჩასწორება..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Mistral AI-ის მორგება"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama-ის გაშვებული ასლის ბმული"
@@ -3238,36 +3200,19 @@ msgstr "შეტყობინებები აღმოჩენილი �
 #~ msgid "The model used to generate responses"
 #~ msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
-#~ "შემოქმედებით გიპასუხოთ."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "აყენებს შემთხვევით რიცხვების თესლს გენერაციისთვის. ამის სპეციფიკურ "
-#~ "რიცხვზე დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე "
-#~ "მოთხოვნისთვის. (ნაგულისხმევი: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "ძრავა:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Mistral AI-ის მორგება"
+#~ msgid "Cancel"
+#~ msgstr "გაუქმება"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Openai IA-ის მორგება"
 
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "გაუქმება"
+#~ msgid "Engine:"
+#~ msgstr "ძრავა:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "ჩასწორება..."
 
 #~ msgctxt "@action"
 #~ msgid "New Chat…"

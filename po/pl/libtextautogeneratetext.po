@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:42+0000\n"
-"PO-Revision-Date: 2026-01-18 16:08+0100\n"
+"POT-Creation-Date: 2026-02-27 02:46+0000\n"
+"PO-Revision-Date: 2026-01-01 11:54+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -209,7 +209,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Dostępne modele"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:155
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -265,7 +265,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr "Grok (X.ai)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -465,29 +465,34 @@ msgstr "Usuń model"
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr "Ollama (Zarządzany)"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Obsługa Vulkan GPU:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Wybór GPU NVIDII:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Wybór GPU AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#, kde-format
+msgid "Hip Visible Device:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Podstaw wersję GFX:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
 #, kde-format
 msgid "Default Model Path:"
 msgstr "Domyślna ścieżka modelu:"
@@ -573,9 +578,9 @@ msgstr "Nie można rozpocząć uruchomić Ollama."
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
 #, fuzzy, kde-format
-#| msgid "Ollama (Online)"
+#| msgid "Ollama"
 msgid "Ollama (Cloud)"
-msgstr "Ollama (Online)"
+msgstr "Ollama"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
 #, fuzzy, kde-format
@@ -2449,9 +2454,9 @@ msgstr "Nazwa:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
-#| msgid "Parameters"
+#| msgid "Override GFX version:"
 msgid "Override Parameters"
-msgstr "Parametry"
+msgstr "Podstaw wersję GFX:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2503,32 +2508,36 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
-msgstr "Możliwości"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:181
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Temperature:"
 msgid "Template"
-msgstr "Wzorzec"
+msgstr "Temperatura:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Modelfile"
-msgstr "Plik modelu"
+msgstr "Modele"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:185
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
 msgid "Parameters"
-msgstr "Parametry"
+msgstr "Rozmiar parametru:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
-msgstr "Szczegóły"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Model Info"
-msgstr "Szczegóły modelu"
+msgstr "Modele"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
@@ -2546,21 +2555,25 @@ msgid "Full Name"
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show metadata info"
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Pokaż szczegóły o modelu"
+msgstr "Pokaż informacje o metadanych"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr "Ollama (Online)"
+msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Ustawienia Ollamy Online"
+msgstr "Ustawienia Ollamy"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
@@ -2568,9 +2581,10 @@ msgid "Server Url:"
 msgstr "Adres URL serwera:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Online"
-msgstr "Ollama Online"
+msgstr "Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2630,10 +2644,12 @@ msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Pokaż szczegóły o modelu"
+msgstr "Otwórz adres URL informacji o modelu"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -3093,7 +3109,7 @@ msgstr "Nowa rozmowa"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr "Powiel…"
+msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
@@ -3140,40 +3156,42 @@ msgstr "Nie znaleziono żadnego archiwum."
 msgid "No Messages Found."
 msgstr "Nie znaleziono żadnej wiadomości."
 
-#, fuzzy
-#~| msgctxt "@info:tooltip"
-#~| msgid "Configure…"
+#~ msgid "Restart is necessary for applying the changes."
+#~ msgstr "Restart jest konieczny do zastosowania zmian."
+
+#~ msgid "..."
+#~ msgstr "…"
+
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure"
-#~ msgstr "Ustawienia…"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "New Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Nowa rozmowa"
-
-#, fuzzy
-#~| msgid "7 days previous"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "7 dni wstecz"
+#~ msgstr "Ustawienia"
 
 #~ msgid "No system prompt"
 #~ msgstr "Brak systemowego wiersza poleceń"
 
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Ustawienia Mistral IA"
+
+#~ msgid "The URL to the Ollama instance"
+#~ msgstr "Adres URL do wystąpienie Ollama"
+
+#~ msgid "The system prompt for the LLM"
+#~ msgstr "Systemowy wiersz zapytań dla LLM"
+
+#~ msgid "The model used to generate responses"
+#~ msgstr "Model używany do dawania odpowiedzi"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuluj"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "Ustawienia OpenAI IA"
+
+#~ msgid "Engine:"
+#~ msgstr "Silnik:"
+
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."
 #~ msgstr "Edytuj…"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Ustawienia Mistral AI"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Configure Mistral IA"
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Ustawienia Mistral AI"

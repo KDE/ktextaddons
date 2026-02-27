@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2026-01-29 20:43+0200\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2026-01-28 20:17+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -116,14 +116,14 @@ msgstr "Поиск… (%1)"
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Следующее"
+msgstr "Следующий"
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Предыдущее"
+msgstr "Предыдущий"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -252,6 +252,3 @@ msgstr "Некоторые из новых возможностей в этой 
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Исправление некоторых ошибок:"
-
-#~ msgid "No new version found."
-#~ msgstr "Новая версия не найдена."

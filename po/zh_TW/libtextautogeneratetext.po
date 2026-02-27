@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:42+0000\n"
-"PO-Revision-Date: 2026-01-28 19:47+0900\n"
+"POT-Creation-Date: 2026-02-27 02:46+0000\n"
+"PO-Revision-Date: 2026-01-02 07:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -128,8 +128,6 @@ msgstr "Groq Cloud"
 msgid "Go to message"
 msgstr "跳到訊息"
 
-# 與其翻譯 system prompt，叫 AI 用繁體中文就可以了吧…
-# --Kisaragi
 #: core/textautogeneratesettings.cpp:47
 #, fuzzy, kde-format
 #| msgid ""
@@ -211,7 +209,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "可用模型"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:155
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -267,7 +265,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr "Grok (X.ai)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -467,29 +465,34 @@ msgstr "移除模型"
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr "Ollama（託管）"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:32
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
 msgid "Vulkan GPU Support:"
 msgstr "Vulkan GPU 支援："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "NVIDIA GPU 選擇："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "AMD GPU 選擇："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#, kde-format
+msgid "Hip Visible Device:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
 msgid "Override GFX version:"
 msgstr "覆寫 GFX 版本："
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:51
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
 #, kde-format
 msgid "Default Model Path:"
 msgstr "預設模型路徑："
@@ -572,15 +575,18 @@ msgid "Impossible to start Ollama."
 msgstr "無法啟動 Ollama。"
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama (Cloud)"
-msgstr "Ollama（Cloud）"
+msgstr "Ollama"
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "設定 Ollama Cloud"
+msgstr "設定 Ollama"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
@@ -589,12 +595,11 @@ msgstr "設定 Ollama Cloud"
 msgid "Api Key:"
 msgstr "API 金鑰："
 
-# Product name
-# --Kisaragi
 #: plugins/ollamacloud/ollamacloudplugin.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Cloud"
-msgstr "Ollama Cloud"
+msgstr "Ollama"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -2287,9 +2292,9 @@ msgstr "名稱："
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, fuzzy, kde-format
-#| msgid "Parameters"
+#| msgid "Override GFX version:"
 msgid "Override Parameters"
-msgstr "參數"
+msgstr "覆寫 GFX 版本："
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2338,32 +2343,36 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
-msgstr "能力"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:181
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Temperature:"
 msgid "Template"
-msgstr "樣本"
+msgstr "溫度："
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Modelfile"
-msgstr "模型檔案"
+msgstr "模型"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:185
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameter Size:"
 msgid "Parameters"
-msgstr "參數"
+msgstr "參數大小："
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
-msgstr "詳細資料"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Models"
 msgid "Model Info"
-msgstr "模型資訊"
+msgstr "模型"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
@@ -2381,21 +2390,25 @@ msgid "Full Name"
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show metadata info"
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "顯示模型資訊"
+msgstr "顯示中繼資料資訊"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr "Ollama（線上）"
+msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Ollama"
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "設定 Ollama 線上"
+msgstr "設定 Ollama"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
@@ -2403,9 +2416,10 @@ msgid "Server Url:"
 msgstr "伺服器網址："
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgid "Ollama Online"
-msgstr "Ollama 線上"
+msgstr "Ollama"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2463,10 +2477,12 @@ msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open Model Information Url"
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "顯示模型資訊"
+msgstr "開啟模型資訊網址"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2926,7 +2942,7 @@ msgstr "新聊天"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr "建立複本…"
+msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
@@ -2973,36 +2989,19 @@ msgstr "找不到封存檔。"
 msgid "No Messages Found."
 msgstr "找不到訊息"
 
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "需要重新啟動變更才會生效。"
-
-#~ msgid "..."
-#~ msgstr "..."
-
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Configure…"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure"
-#~ msgstr "設定"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Next Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "下一個聊天"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Previous Chat"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "上一個聊天"
+#~ msgstr "設定…"
 
 #~ msgid "No system prompt"
 #~ msgstr "沒有系統 prompt"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "編輯..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "設定 Mistral IA"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama 實體的網址"
@@ -3013,33 +3012,19 @@ msgstr "找不到訊息"
 #~ msgid "The model used to generate responses"
 #~ msgstr "用來生成回應的模型"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr "模型的「溫度」。提高溫度會讓模型回答更有創意。"
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固"
-#~ "定的文字。（預設：0）"
-
-#~ msgid "Engine:"
-#~ msgstr "引擎："
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "設定 Mistral IA"
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Cancel"
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "設定 OpenAI IA"
 
-#, fuzzy
-#~| msgctxt "@info:tooltip"
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "取消"
+#~ msgid "Engine:"
+#~ msgstr "引擎："
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "編輯..."

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:23+0000\n"
-"PO-Revision-Date: 2025-12-10 16:55+0100\n"
+"POT-Creation-Date: 2025-12-19 02:42+0000\n"
+"PO-Revision-Date: 2025-12-19 11:40+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -251,13 +251,3 @@ msgstr "Enige van de nieuwe functies in deze uitgave omvatten:"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Enig repareren van bugs:"
-
-#~ msgid "No new version found."
-#~ msgstr "Geen nieuwe versie gevonden."
-
-#~ msgid "Impossible to open %1"
-#~ msgstr "%1 openen is onmogelijk"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Fout bij openen van bestand"
