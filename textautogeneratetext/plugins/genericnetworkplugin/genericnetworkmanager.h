@@ -31,6 +31,7 @@ public:
         GrokAI,
         Qwen,
         ChatGPT,
+        OpenRouterAI,
         KimiAI,
         LastElement = KimiAI,
     };
