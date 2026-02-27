@@ -48,6 +48,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("DeepInfra");
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
         return i18n("OpenAI ChatGPT");
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+        return i18n("CompactifAIT");
     }
     return {};
 }
@@ -72,6 +74,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return u"chat/completions"_s;
     }
     return {};
@@ -111,6 +114,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://deepinfra.com/"_s;
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
         return u"https://chatgpt.com/"_s;
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+        return u"https://docs.compactif.ai/"_s;
     }
     return {};
 }
@@ -149,6 +154,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.deepinfra.com/v1/openai/"_s;
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
         return u"https://api.openai.com/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+        return u"https://your-compactifai-api-endpoint/v1/"_s;
     }
     return {};
 }
@@ -183,6 +190,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Novita AI cloud inference API");
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
         return i18n("DeepInfra cloud inference API");
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+        return i18n("CompactifAI");
     }
     return {};
 }
@@ -221,6 +230,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"deepinfra"_s;
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
         return u"chatgpt"_s;
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+        return u"compactifai"_s;
     }
     return {};
 }
@@ -255,6 +266,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::DeepInfra;
     } else if (str == QLatin1StringView("chatgpt")) {
         return GenericNetworkManager::PluginNetworkType::ChatGPT;
+    } else if (str == QLatin1StringView("compactifai")) {
+        return GenericNetworkManager::PluginNetworkType::CompactifAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -310,6 +323,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     case GenericNetworkManager::PluginNetworkType::GrokAI:
     case GenericNetworkManager::PluginNetworkType::Qwen:
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return limits;
     }
     return limits;
@@ -340,6 +354,7 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return false;
     }
     return false;
@@ -378,6 +393,7 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return false;
     }
     return false;
@@ -403,6 +419,7 @@ bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, Generi
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return false;
     }
     return false;
@@ -429,6 +446,7 @@ bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return false;
     }
     return false;
@@ -454,6 +472,7 @@ bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
         return false;
     }
     return false;
