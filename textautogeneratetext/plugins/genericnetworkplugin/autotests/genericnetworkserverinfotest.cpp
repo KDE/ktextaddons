@@ -32,6 +32,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"qwen"_s), GenericNetworkManager::PluginNetworkType::Qwen);
     QCOMPARE(info.pluginNetworkTypeFromString(u"novitaai"_s), GenericNetworkManager::PluginNetworkType::NovitaAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"deepinfra"_s), GenericNetworkManager::PluginNetworkType::DeepInfra);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"chatgpt"_s), GenericNetworkManager::PluginNetworkType::ChatGPT);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -50,6 +51,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::Qwen), u"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::NovitaAI), u"https://api.novita.ai/v3/openai/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::DeepInfra), u"https://api.deepinfra.com/v1/openai/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::ChatGPT), u"https://api.openai.com/v1/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -68,6 +70,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::Qwen), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::NovitaAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::DeepInfra), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::ChatGPT), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -86,6 +89,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::Qwen), u"qwen"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::NovitaAI), u"novitaai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::DeepInfra), u"deepinfra"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::ChatGPT), u"chatgpt"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -104,6 +108,7 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Qwen), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::NovitaAI), GenericNetworkManager::Limitation::NoSeed);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::DeepInfra), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::ChatGPT), GenericNetworkManager::Limitation::UseMaxCompletionTokens);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"

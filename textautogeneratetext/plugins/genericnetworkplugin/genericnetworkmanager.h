@@ -29,6 +29,7 @@ public:
         Anthropic,
         GrokAI,
         Qwen,
+        ChatGPT,
         KimiAI,
         LastElement = KimiAI,
     };
