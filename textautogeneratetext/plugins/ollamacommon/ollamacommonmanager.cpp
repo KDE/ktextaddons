@@ -74,28 +74,12 @@ void OllamaCommonManager::getVersion()
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
         if (rep->error() != QNetworkReply::NoError) {
-            /*
-            ModelsInfo info;
-            info.errorOccured = i18n("Failed to connect to interface at %1: %2", OllamaSettings::serverUrl().toString(), rep->errorString());
-            info.hasError = true;
-            Q_EMIT modelsLoadDone(std::move(info));
-            */
+            qWarning() << "Error during getting version";
             return;
         }
 
         const auto json = QJsonDocument::fromJson(rep->readAll());
         qDebug() << "json " << json;
-        // TODO implement it.
-        /*
-        ModelsInfo info;
-        const auto models = json["models"_L1].toArray();
-        for (const QJsonValue &model : models) {
-            info.models.push_back(model["name"_L1].toString());
-        }
-        info.isReady = !info.models.isEmpty();
-        info.hasError = false;
-        Q_EMIT modelsLoadDone(std::move(info));
-        */
     });
 }
 
