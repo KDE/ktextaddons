@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-27 00:42+0000\n"
-"PO-Revision-Date: 2026-02-23 07:26+0100\n"
+"POT-Creation-Date: 2026-02-28 00:42+0000\n"
+"PO-Revision-Date: 2026-02-27 07:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -221,7 +221,7 @@ msgstr "Mistral AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Novita AI"
-msgstr ""
+msgstr "Novita AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
@@ -271,60 +271,76 @@ msgstr "Grok (X.ai)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
 #, kde-format
 msgid "Qwen (DashScope)"
-msgstr ""
+msgstr "Qwen (DashScope)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
 #, kde-format
 msgid "DeepInfra"
+msgstr "DeepInfra"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenAI ChatGPT"
+msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#, kde-format
+msgid "CompactifAI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:156
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenRouter AI"
+msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Veliki jezikovni modeli Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:163
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:165
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API za sklepanje za oblak Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:167
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API za sklepanje za oblak Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:169
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:171
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi veliki jezikovni modeli Moonshot AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:173
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
+#, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
-msgstr "Veliki jezikovni modeli Mistral AI"
+msgstr "Veliki jezikovni modeli Alibaba Cloud Qwen prek DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:175
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "API za sklepanje za oblak Kluster AI"
+msgstr "API za sklepanje za oblak Novita AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "API za sklepanje za oblak Cerebras AI"
+msgstr "API za sklepanje za oblak DeepInfra"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -514,7 +530,7 @@ msgstr "Izbira AMD GPE:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
 #, kde-format
 msgid "Hip Visible Device:"
-msgstr ""
+msgstr "Vidna naprava na boku:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format

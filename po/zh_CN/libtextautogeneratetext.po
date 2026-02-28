@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-28 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -133,6 +133,7 @@ msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
+"您是一位人工智能助手。请提供帮助，保持专业和礼貌。不要提供不准确的信息。"
 
 #: core/textautogeneratetextplugin.cpp:279
 #, kde-format
@@ -275,53 +276,69 @@ msgstr ""
 msgid "DeepInfra"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:156
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenAI ChatGPT"
+msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#, kde-format
+msgid "CompactifAI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenRouter AI"
+msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI 大语言模型"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:163
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:165
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AI 云推理 API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:167
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AI 云推理 API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:169
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:171
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Moonshot AI 的 Kimi 大型语言模型"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:173
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
+#, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
-msgstr "Mistral AI 大语言模型"
+msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:175
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "Kluster AI 云推理 API"
+msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "Cerebras AI 云推理 API"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -544,7 +561,7 @@ msgstr "创建模型"
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "端口："
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -2334,6 +2351,8 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"Z.ai 推出的强大的推理和代理模型，总参数量达 7440 亿 (744B，40B 活跃参数），专"
+"为复杂系统工程和长期任务而设计。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2341,12 +2360,13 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 是一款专为实际工作中的生产力和编程任务而设计的先进大型语言模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
-msgstr ""
+msgstr "用户叫做 %1"
 
 #: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
 #: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
@@ -2358,23 +2378,23 @@ msgstr "打开 URL“%1”"
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr ""
+msgstr "暴露 Ollama 到网路"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr ""
+msgstr "思维处理"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "选项"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
-msgstr ""
+msgstr "为本地网络中的其他设备和软件提供 Ollama 服务。"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2382,12 +2402,12 @@ msgctxt "@info:tooltip"
 msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
-msgstr ""
+msgstr "在生成信息之前使用兼容的推理模型来思考它们的反应。"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
 #, kde-format
 msgid "Share Name:"
-msgstr ""
+msgstr "共享名称："
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
@@ -2471,17 +2491,17 @@ msgstr "模型信息"
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr ""
+msgstr "不共享"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr ""
+msgstr "全名"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
@@ -2563,7 +2583,7 @@ msgstr "配置…"
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
 msgid "Power saver mode is enabled, this will slow down message generation."
-msgstr ""
+msgstr "省电模式已启用，这将使消息生成变慢。"
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
 #, kde-format

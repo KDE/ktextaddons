@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-27 00:42+0000\n"
+"POT-Creation-Date: 2026-02-28 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -287,47 +287,64 @@ msgstr ""
 msgid "DeepInfra"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:156
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
+#, kde-format
+msgid "OpenAI ChatGPT"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#, kde-format
+msgid "CompactifAI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#, kde-format
+msgid "OpenRouter AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:163
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
 #, kde-format
 msgid "Groq AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:165
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:167
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:169
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:171
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:173
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:175
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr ""
