@@ -89,11 +89,6 @@ void OllamaManager::createModel(const CreateModelInfo &info)
         Q_EMIT finished(reply->readResponse());
         Q_EMIT refreshInstalledModels();
     });
-    /*
-    connect(reply, &OllamaCommonReply::downloadInProgress, this, [this, modelName](const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info) {
-        Q_EMIT downloadInProgress(modelName, info);
-    });
-    */
 }
 
 QList<OllamaModelInstalledInfo> OllamaManager::installedInfos() const
