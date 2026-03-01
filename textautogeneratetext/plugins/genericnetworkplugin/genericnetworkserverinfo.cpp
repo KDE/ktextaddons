@@ -14,7 +14,7 @@ GenericNetworkServerInfo::GenericNetworkServerInfo() = default;
 
 GenericNetworkServerInfo::~GenericNetworkServerInfo() = default;
 
-QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNetworkType type) const
+QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -56,7 +56,7 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     return {};
 }
 
-QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::PluginNetworkType type) const
+QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -83,7 +83,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     return {};
 }
 
-QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkType type) const
+QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -125,7 +125,7 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
     return {};
 }
 
-QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkType type) const
+QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -167,7 +167,7 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
     return {};
 }
 
-QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetworkType type) const
+QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -205,7 +205,7 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     return {};
 }
 
-QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetworkType type) const
+QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -247,7 +247,7 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
     return {};
 }
 
-GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetworkTypeFromString(const QString &str) const
+GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetworkTypeFromString(const QString &str)
 {
     if (str == QLatin1StringView("mistralai")) {
         return GenericNetworkManager::PluginNetworkType::MistralAI;
@@ -287,7 +287,7 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
     }
 }
 
-QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkServerInfo::supportedServers(const QString &name) const
+QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkServerInfo::supportedServers(const QString &name)
 {
     QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> listInfo;
     for (int i = static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown) + 1;
@@ -305,7 +305,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
     return listInfo;
 }
 
-GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type) const
+GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type)
 {
     GenericNetworkManager::Limitations limits;
     limits |= GenericNetworkManager::Limitation::None;
@@ -343,7 +343,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     return limits;
 }
 
-bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const
+bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -375,7 +375,7 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
     return false;
 }
 
-bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const
+bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type)
 {
     qDebug() << " bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const"
              << currentModel << " type " << static_cast<int>(type);
@@ -415,7 +415,7 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     return false;
 }
 
-bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const
+bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
@@ -442,7 +442,7 @@ bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, Generi
     return false;
 }
 
-bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const
+bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type)
 {
     // TODO
     switch (type) {
@@ -470,7 +470,7 @@ bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, Gener
     return false;
 }
 
-bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const
+bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
