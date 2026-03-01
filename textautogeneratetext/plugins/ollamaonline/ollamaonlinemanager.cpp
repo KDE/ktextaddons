@@ -62,7 +62,7 @@ void OllamaOnlineManager::loadModels()
         }
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        // qDebug() << " json " << json;
+        qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "OllamaOnlineManager::loadModels Json: " << json;
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
@@ -136,8 +136,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     data["num_ctx"_L1] = mOllamaOnlineSettings->contextWindowSize();
 
     data["think"_L1] = request.thinking();
-
-    // qDebug() << " OllamaOnlineManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),

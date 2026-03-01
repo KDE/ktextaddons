@@ -36,15 +36,17 @@ private:
         QList<CategoryLayout> categoriesLayout;
         QRect categoryRect;
     };
-    void draw(QPainter *painter,
-              const OllamaCommonModelAvailableInfosDelegate::ModelInfoLayout &layout,
-              const QModelIndex &index,
-              const QStyleOptionViewItem &option) const;
-    void drawCatergories(QPainter *painter,
-                         const OllamaCommonModelAvailableInfosDelegate::ModelInfoLayout &layout,
-                         const QModelIndex &index,
-                         const QStyleOptionViewItem &option) const;
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void draw(QPainter *painter,
+                                                     const OllamaCommonModelAvailableInfosDelegate::ModelInfoLayout &layout,
+                                                     const QModelIndex &index,
+                                                     const QStyleOptionViewItem &option) const;
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void drawCatergories(QPainter *painter,
+                                                                const OllamaCommonModelAvailableInfosDelegate::ModelInfoLayout &layout,
+                                                                const QModelIndex &index,
+                                                                const QStyleOptionViewItem &option) const;
 
-    [[nodiscard]] OllamaCommonModelAvailableInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT OllamaCommonModelAvailableInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option,
+                                                                                                                           const QModelIndex &index) const;
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT bool
+    handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
 };
