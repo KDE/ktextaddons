@@ -480,7 +480,7 @@ msgstr "AMD GPU 选择："
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
 #, kde-format
 msgid "Hip Visible Device:"
-msgstr ""
+msgstr "HIP 可见设备："
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format

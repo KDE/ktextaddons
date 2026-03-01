@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-27 02:46+0000\n"
-"PO-Revision-Date: 2026-02-01 16:38+0530\n"
+"PO-Revision-Date: 2026-02-28 11:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -30,17 +30,17 @@ msgstr ""
 #: core/models/textautogeneratechatsmodel.cpp:165
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "இன்று"
 
 #: core/models/textautogeneratechatsmodel.cpp:167
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "முந்தைய 7 நாட்கள்"
 
 #: core/models/textautogeneratechatsmodel.cpp:169
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "முந்தைய 30 நாட்கள்"
 
 #: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
@@ -50,7 +50,7 @@ msgstr ""
 #: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "தெரியாதது"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
 #, kde-format
@@ -65,7 +65,7 @@ msgstr ""
 #: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "கருவிகள்"
 
 #: core/textautogeneratemanager.cpp:148
 #, kde-format
@@ -90,22 +90,22 @@ msgstr ""
 #: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "பன்மொழி"
 
 #: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "நிரல்தொடர்"
 
 #: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "கணிதம்"
 
 #: core/textautogeneratemanager.cpp:162
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "பார்வை"
 
 #: core/textautogeneratemanager.cpp:164
 #, kde-format
@@ -125,7 +125,7 @@ msgstr ""
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
-msgstr ""
+msgstr "செய்திக்கு செல்"
 
 #: core/textautogeneratesettings.cpp:47
 #, kde-format
@@ -2061,14 +2061,14 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
 #, kde-format
 msgid "The user is called %1"
-msgstr ""
+msgstr "பயனரின் பெயர் %1"
 
 #: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
 #: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "\"%1\" எனும் முகவரியைத் திற"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
@@ -2083,7 +2083,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "விருப்பங்கள்"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
@@ -2102,7 +2102,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
 #, kde-format
 msgid "Share Name:"
-msgstr ""
+msgstr "பெயரைப் பகிர்"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
@@ -2154,12 +2154,12 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "இயலுமைகள்"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Template"
-msgstr ""
+msgstr "வார்ப்புரு"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
@@ -2174,7 +2174,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "விவரங்கள்"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
@@ -2184,17 +2184,17 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr ""
+msgstr "பகிராதே"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "பயனர் பெயர்"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr ""
+msgstr "முழுப்பெயர்"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
@@ -2216,7 +2216,7 @@ msgstr ""
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "சேவையக முகவரி:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
 #, kde-format
@@ -2225,7 +2225,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
-msgstr ""
+msgstr "ஊரின் பெயர்"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2271,7 +2271,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr ""
+msgstr "அமை..."
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
@@ -2288,20 +2288,20 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "செய்தியை உள்ளிடு"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:470
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr ""
+msgstr "நீக்கு"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr ""
+msgstr "கோப்பை இணை"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
@@ -2322,13 +2322,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr ""
+msgstr "கோப்பை தேர்ந்தெடுப்பது"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
-msgstr ""
+msgstr "அனுப்பு"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:119
 #, kde-format
@@ -2366,7 +2366,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr ""
+msgstr "விவரணம்:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
