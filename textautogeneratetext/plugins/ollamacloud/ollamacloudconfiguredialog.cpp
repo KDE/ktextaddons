@@ -8,7 +8,6 @@
 #include "autogeneratetext_ollamacloud_debug.h"
 #include "ollamacloudconfigurewidget.h"
 #include "ollamacloudmanager.h"
-#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonmodelavailablewidget.h"
 #include "ollamacommonmodelutils.h"
 #include <KConfigGroup>
