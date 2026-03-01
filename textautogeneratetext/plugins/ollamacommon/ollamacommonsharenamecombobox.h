@@ -20,5 +20,5 @@ public:
     void setShareNameType(OllamaCommonSettings::ShareNameType type);
 
 private:
-    void fill();
+    TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void fill();
 };
