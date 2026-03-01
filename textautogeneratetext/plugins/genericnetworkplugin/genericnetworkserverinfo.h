@@ -15,21 +15,21 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 public:
     GenericNetworkServerInfo();
     ~GenericNetworkServerInfo();
-    [[nodiscard]] QString translatedName(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] QString webSite(GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] static QString translatedName(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QString webSite(GenericNetworkManager::PluginNetworkType type);
 
-    [[nodiscard]] QString apiUrl(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] QString description(GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] static QString apiUrl(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QString description(GenericNetworkManager::PluginNetworkType type);
 
-    [[nodiscard]] QString pluginName(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers(const QString &pluginName) const;
-    [[nodiscard]] GenericNetworkManager::PluginNetworkType pluginNetworkTypeFromString(const QString &str) const;
+    [[nodiscard]] static QString pluginName(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers(const QString &pluginName);
+    [[nodiscard]] static GenericNetworkManager::PluginNetworkType pluginNetworkTypeFromString(const QString &str);
 
-    [[nodiscard]] GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] bool hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] bool hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] bool hasAudioSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] bool hasThinkSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] static GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool hasAudioSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool hasThinkSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type);
 };
