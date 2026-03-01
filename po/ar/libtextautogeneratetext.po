@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:42+0000\n"
-"PO-Revision-Date: 2026-02-24 22:30+0400\n"
+"POT-Creation-Date: 2026-03-01 00:44+0000\n"
+"PO-Revision-Date: 2026-02-28 13:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -205,7 +205,7 @@ msgid "Available Models"
 msgstr "النماذج المتاحة"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/ollama/ollamamanager.cpp:155
+#: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
@@ -220,7 +220,7 @@ msgstr "مسترال أيه آي"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Novita AI"
-msgstr ""
+msgstr "Novita AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
@@ -270,31 +270,29 @@ msgstr "غروك (X.ai)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
 #, kde-format
 msgid "Qwen (DashScope)"
-msgstr ""
+msgstr "Qwen (DashScope)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
 #, kde-format
 msgid "DeepInfra"
-msgstr ""
+msgstr "DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI ChatGPT"
-msgstr "أوبن أيه آي"
+msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenRouter AI"
-msgstr "أوبن أيه آي"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format
@@ -327,22 +325,19 @@ msgid "Kimi large language models by Moonshot AI"
 msgstr "نماذج كيمي للغة الضخمة من موشوت للذكاء الاصطناعي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
-msgstr "نماذج ميسطرال للذكاء الاصطناعي للغة الضخمة"
+msgstr "نماذج اللغة الكبيرة علي بابا كلاود كوين عبر داشسكوب"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لكلوستر للذكاء الاصطناعي"
+msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لNovita"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لسيريباس للذكاء الاصطناعي"
+msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لDeepInfra"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -532,7 +527,7 @@ msgstr "تحديد AMD GPU:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
 #, kde-format
 msgid "Hip Visible Device:"
-msgstr ""
+msgstr "جهاز ظاهر للخصر:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format

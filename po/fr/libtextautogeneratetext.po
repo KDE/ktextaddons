@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:42+0000\n"
+"POT-Creation-Date: 2026-03-01 00:44+0000\n"
 "PO-Revision-Date: 2026-02-24 09:05+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -204,7 +204,7 @@ msgid "Available Models"
 msgstr "Modèles disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/ollama/ollamamanager.cpp:155
+#: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format

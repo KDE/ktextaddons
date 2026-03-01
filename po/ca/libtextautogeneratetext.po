@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:42+0000\n"
-"PO-Revision-Date: 2026-02-27 07:26+0100\n"
+"POT-Creation-Date: 2026-03-01 00:44+0000\n"
+"PO-Revision-Date: 2026-02-28 08:09+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -210,7 +210,7 @@ msgid "Available Models"
 msgstr "Models disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/ollama/ollamamanager.cpp:155
+#: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
@@ -283,23 +283,21 @@ msgid "DeepInfra"
 msgstr "DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI ChatGPT"
-msgstr "OpenAI"
+msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenRouter AI"
-msgstr "OpenAI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format

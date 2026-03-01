@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:42+0000\n"
+"POT-Creation-Date: 2026-03-01 00:44+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -209,7 +209,7 @@ msgid "Available Models"
 msgstr "Saatavilla olevat mallit"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/ollama/ollamamanager.cpp:155
+#: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
