@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:44+0000\n"
+"POT-Creation-Date: 2026-03-02 00:43+0000\n"
 "PO-Revision-Date: 2026-02-28 08:09+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -193,7 +193,7 @@ msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:48
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -202,7 +202,7 @@ msgstr "General"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
 #: plugins/ollama/ollamaconfiguredialog.cpp:54
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -629,7 +629,7 @@ msgstr "Impossible iniciar l'Ollama."
 msgid "Ollama (Cloud)"
 msgstr "Ollama (Cloud)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"

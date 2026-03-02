@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:44+0000\n"
-"PO-Revision-Date: 2026-02-24 09:05+0100\n"
+"POT-Creation-Date: 2026-03-02 00:43+0000\n"
+"PO-Revision-Date: 2026-02-28 09:41+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -187,7 +187,7 @@ msgstr "Configurer %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:48
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -196,7 +196,7 @@ msgstr "Général"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
 #: plugins/ollama/ollamaconfiguredialog.cpp:54
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -219,7 +219,7 @@ msgstr "Mistral AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Novita AI"
-msgstr ""
+msgstr "IA Novita"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
@@ -269,12 +269,12 @@ msgstr "Grok (X.ai)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
 #, kde-format
 msgid "Qwen (DashScope)"
-msgstr ""
+msgstr "Qwen (DashScope)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
 #, kde-format
 msgid "DeepInfra"
-msgstr ""
+msgstr "DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
 #, fuzzy, kde-format
@@ -326,22 +326,19 @@ msgid "Kimi large language models by Moonshot AI"
 msgstr "Grands modèles linguistiques Kimi par Moonshot AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
-msgstr "Grands modèles linguistiques pour Mistral IA"
+msgstr "Grands modèles linguistiques pour Alibaba Cloud Qwen grâce à DashScope"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "API d'inférence cloud pour Kluster AI"
+msgstr "API d'inférence Cloud pour IA Novita"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "API d'inférence cloud pour Cerebras AI"
+msgstr "API d'inférence Cloud pour DeepInfra"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -531,7 +528,7 @@ msgstr "Sélection d'un processeur graphique AMD :"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
 #, kde-format
 msgid "Hip Visible Device:"
-msgstr ""
+msgstr "Périphérique visible à la mode :"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
 #, kde-format
@@ -626,7 +623,7 @@ msgstr "Impossible de démarrer Ollama."
 msgid "Ollama (Cloud)"
 msgstr "Ollama (Cloud)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"

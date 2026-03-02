@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:44+0000\n"
+"POT-Creation-Date: 2026-03-02 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -187,7 +187,7 @@ msgstr "配置 %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:48
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -196,7 +196,7 @@ msgstr "常规"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
 #: plugins/ollama/ollamaconfiguredialog.cpp:54
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -279,19 +279,19 @@ msgstr "DeepInfra"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
 #, kde-format
 msgid "OpenAI ChatGPT"
-msgstr ""
+msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
 #, kde-format
 msgid "OpenRouter AI"
-msgstr ""
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format
@@ -619,7 +619,7 @@ msgstr "无法启动 Ollama。"
 msgid "Ollama (Cloud)"
 msgstr "Ollama (云)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
