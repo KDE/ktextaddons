@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -200,6 +200,15 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
         mDatabaseManager->insertOrUpdateChat(chat);
     }
     switchToChatId(chatId);
+}
+
+void TextAutoGenerateManager::askStartOllama()
+{
+    if (mPluginWasInitialized) {
+        Q_EMIT startOllamaRequested();
+    } else {
+        mAskStartOllama = true;
+    }
 }
 
 void TextAutoGenerateManager::switchToChatId(const QByteArray &chatId)
@@ -600,6 +609,9 @@ void TextAutoGenerateManager::loadEngine()
 
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, [this]() {
         setPluginWasInitialized(true);
+        if (mAskStartOllama) {
+            Q_EMIT startOllamaRequested();
+        }
         if (!mSwitchToChatId.isEmpty()) {
             setCurrentChatId(mSwitchToChatId);
             mSwitchToChatId.clear();

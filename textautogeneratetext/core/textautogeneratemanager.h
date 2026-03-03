@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -386,6 +386,12 @@ public:
      * \param chatId
      */
     void duplicateChat(const QByteArray &chatId);
+
+    /*!
+     * \brief askStartOllama
+     */
+    void askStartOllama();
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
@@ -501,6 +507,7 @@ private:
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
     QString mSwitchToChatName;
+    bool mAskStartOllama = false;
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
