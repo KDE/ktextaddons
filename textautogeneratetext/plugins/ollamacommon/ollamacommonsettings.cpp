@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -123,7 +123,7 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"Temperature"_s, temperature());
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
     config.writeEntry(u"ContextWindowSize"_s, contextWindowSize());
-    config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(KeepAliveType()));
+    config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(mKeepAliveType));
     config.writeEntry(u"ThoughtProcessing"_s, thoughtProcessing());
     config.writeEntry(u"ShareName"_s, OllamaCommonSettings::convertShareNameTypeToString(shareNameType()));
 }
