@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -24,8 +24,8 @@ public:
     [[nodiscard]] QString overrideGfxVersion() const;
     void setOverrideGfxVersion(const QString &newOverrideGfxVersion);
 
-    [[nodiscard]] QString vulkanSupport() const;
-    void setVulkanSupport(const QString &newVulkanSupport);
+    [[nodiscard]] bool vulkanSupport() const;
+    void setVulkanSupport(bool newVulkanSupport);
 
     [[nodiscard]] QString rocrVisibleDevice() const;
     void setRocrVisibleDevice(const QString &newRocrVisibleDevice);
@@ -50,7 +50,7 @@ public:
     void setHipVisibleDevice(const QString &newHipVisibleDevice);
 
 private:
-    QString mVulkanSupport;
+    bool mVulkanSupport = false;
     QString mOverrideGfxVersion;
     QString mRocrVisibleDevice;
     QString mCudaVisibleDevice;

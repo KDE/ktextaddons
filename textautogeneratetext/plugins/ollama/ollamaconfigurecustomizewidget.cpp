@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -17,7 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 // https://docs.ollama.com/gpu#overrides-on-linux
 OllamaConfigureCustomizeWidget::OllamaConfigureCustomizeWidget(QWidget *parent)
     : QWidget{parent}
-    , mVulkanSupportLineEdit(new QLineEdit(this))
+    , mVulkanSupportCheckBox(new QCheckBox(this))
     , mCudaVisibleDeviceLineEdit(new QLineEdit(this))
     , mRocrVisibleDeviceLineEdit(new QLineEdit(this))
     , mOverrideGfxVersionLineEdit(new QLineEdit(this))
@@ -28,10 +28,11 @@ OllamaConfigureCustomizeWidget::OllamaConfigureCustomizeWidget(QWidget *parent)
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mVulkanSupportLineEdit->setObjectName(u"mVulkanSupportLineEdit"_s);
-    mVulkanSupportLineEdit->setClearButtonEnabled(true);
-    mainLayout->addRow(i18n("Vulkan GPU Support:"), mVulkanSupportLineEdit);
-    KLineEditEventHandler::catchReturnKey(mVulkanSupportLineEdit);
+    mVulkanSupportCheckBox->setObjectName(u"mVulkanSupportCheckBox"_s);
+    mVulkanSupportCheckBox->setToolTip(
+        i18nc("@info:tooltip", "Use Vulkan for hardware acceleration. May improve performance on some GPUs, but use with caution as it may be unstable."));
+    mainLayout->addRow(i18n("Vulkan GPU Support (Experimental):"), mVulkanSupportCheckBox);
+    KLineEditEventHandler::catchReturnKey(mVulkanSupportCheckBox);
 
     mCudaVisibleDeviceLineEdit->setObjectName(u"mCudaVisibleDeviceLineEdit"_s);
     mCudaVisibleDeviceLineEdit->setClearButtonEnabled(true);
@@ -63,7 +64,7 @@ OllamaConfigureCustomizeWidget::~OllamaConfigureCustomizeWidget() = default;
 
 void OllamaConfigureCustomizeWidget::setCustomizeInfo(const CustomizeInfo &info)
 {
-    mVulkanSupportLineEdit->setText(info.vulkanSupport);
+    mVulkanSupportCheckBox->setChecked(info.vulkanSupport);
     mCudaVisibleDeviceLineEdit->setText(info.cudaVisibleDevice);
     mRocrVisibleDeviceLineEdit->setText(info.rocrVisibleDevice);
     mOverrideGfxVersionLineEdit->setText(info.overrideGfxVersion);
@@ -74,7 +75,7 @@ void OllamaConfigureCustomizeWidget::setCustomizeInfo(const CustomizeInfo &info)
 OllamaConfigureCustomizeWidget::CustomizeInfo OllamaConfigureCustomizeWidget::customizeInfo() const
 {
     const OllamaConfigureCustomizeWidget::CustomizeInfo info{
-        .vulkanSupport = mVulkanSupportLineEdit->text(),
+        .vulkanSupport = mVulkanSupportCheckBox->isChecked(),
         .cudaVisibleDevice = mCudaVisibleDeviceLineEdit->text(),
         .rocrVisibleDevice = mRocrVisibleDeviceLineEdit->text(),
         .overrideGfxVersion = mOverrideGfxVersionLineEdit->text(),

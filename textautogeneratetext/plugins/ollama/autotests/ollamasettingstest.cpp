@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -24,7 +24,7 @@ void OllamaSettingsTest::shouldHaveDefaultValues()
     QVERIFY(w.currentModel().isEmpty());
     QVERIFY(w.displayName().isEmpty());
     QVERIFY(w.overrideGfxVersion().isEmpty());
-    QVERIFY(w.vulkanSupport().isEmpty());
+    QVERIFY(!w.vulkanSupport());
     QVERIFY(w.rocrVisibleDevice().isEmpty());
     QVERIFY(w.cudaVisibleDevice().isEmpty());
     QVERIFY(w.hipVisibleDevice().isEmpty());
@@ -40,13 +40,13 @@ void OllamaSettingsTest::shouldGenerateQProcessEnvironment()
         OllamaSettings w;
         w.setCudaVisibleDevice(u"foo1"_s);
         w.setRocrVisibleDevice(u"bla1"_s);
-        w.setVulkanSupport(u"kde1"_s);
+        w.setVulkanSupport(true);
         w.setOverrideGfxVersion(u"kf6"_s);
         const QStringList variables{{u"CUDA_VISIBLE_DEVICES=foo1"_s,
                                      u"HSA_OVERRIDE_GFX_VERSION=kf6"_s,
                                      u"OLLAMA_HOST=http://127.0.0.1:11434"_s,
                                      u"OLLAMA_ORIGINS=http://127.0.0.1:11434"_s,
-                                     u"OLLAMA_VULKAN=kde1"_s,
+                                     u"OLLAMA_VULKAN=1"_s,
                                      u"ROCR_VISIBLE_DEVICES=bla1"_s}};
         QCOMPARE(w.processEnvironment().toStringList(), variables);
     }

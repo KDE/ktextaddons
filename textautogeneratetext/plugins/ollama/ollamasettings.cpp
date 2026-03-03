@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -35,12 +35,12 @@ void OllamaSettings::setOverrideGfxVersion(const QString &newOverrideGfxVersion)
     mOverrideGfxVersion = newOverrideGfxVersion;
 }
 
-QString OllamaSettings::vulkanSupport() const
+bool OllamaSettings::vulkanSupport() const
 {
     return mVulkanSupport;
 }
 
-void OllamaSettings::setVulkanSupport(const QString &newVulkanSupport)
+void OllamaSettings::setVulkanSupport(bool newVulkanSupport)
 {
     mVulkanSupport = newVulkanSupport;
 }
@@ -71,8 +71,8 @@ QProcessEnvironment OllamaSettings::processEnvironment() const
     if (!mCudaVisibleDevice.isEmpty()) {
         environment.insert(u"CUDA_VISIBLE_DEVICES"_s, mCudaVisibleDevice);
     }
-    if (!mVulkanSupport.isEmpty()) {
-        environment.insert(u"OLLAMA_VULKAN"_s, mVulkanSupport);
+    if (mVulkanSupport) {
+        environment.insert(u"OLLAMA_VULKAN"_s, u"1"_s);
     }
     if (!mRocrVisibleDevice.isEmpty()) {
         environment.insert(u"ROCR_VISIBLE_DEVICES"_s, mRocrVisibleDevice);
@@ -129,7 +129,7 @@ void OllamaSettings::load(const KConfigGroup &config)
         setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
     }
     setOverrideGfxVersion(config.readEntry(u"OverrideGfxVersion"_s));
-    setVulkanSupport(config.readEntry(u"VulkanSupport"_s));
+    setVulkanSupport(config.readEntry(u"VulkanSupport"_s, false));
     setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
     setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
     setHipVisibleDevice(config.readEntry(u"HipVisibleDevice"_s));

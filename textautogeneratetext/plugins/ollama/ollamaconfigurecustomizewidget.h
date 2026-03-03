@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -8,12 +8,13 @@
 #include <QWidget>
 class QLineEdit;
 class KUrlRequester;
+class QCheckBox;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaConfigureCustomizeWidget : public QWidget
 {
     Q_OBJECT
 public:
     struct CustomizeInfo {
-        QString vulkanSupport;
+        bool vulkanSupport = false;
         QString cudaVisibleDevice;
         QString rocrVisibleDevice;
         QString overrideGfxVersion;
@@ -28,7 +29,7 @@ public:
     [[nodiscard]] CustomizeInfo customizeInfo() const;
 
 private:
-    QLineEdit *const mVulkanSupportLineEdit;
+    QCheckBox *const mVulkanSupportCheckBox;
     QLineEdit *const mCudaVisibleDeviceLineEdit;
     QLineEdit *const mRocrVisibleDeviceLineEdit;
     QLineEdit *const mOverrideGfxVersionLineEdit;

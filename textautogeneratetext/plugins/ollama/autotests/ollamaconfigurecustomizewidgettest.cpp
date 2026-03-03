@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -6,6 +6,7 @@
 #include "ollamaconfigurecustomizewidgettest.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include <KUrlRequester>
+#include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QTest>
@@ -26,10 +27,9 @@ void OllamaConfigureCustomizeWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mVulkanSupportLineEdit = w.findChild<QLineEdit *>(u"mVulkanSupportLineEdit"_s);
-    QVERIFY(mVulkanSupportLineEdit);
-    QVERIFY(mVulkanSupportLineEdit->text().isEmpty());
-    QVERIFY(mVulkanSupportLineEdit->isClearButtonEnabled());
+    auto mVulkanSupportCheckBox = w.findChild<QCheckBox *>(u"mVulkanSupportCheckBox"_s);
+    QVERIFY(mVulkanSupportCheckBox);
+    QVERIFY(!mVulkanSupportCheckBox->isChecked());
 
     auto mCudaVisibleDeviceLineEdit = w.findChild<QLineEdit *>(u"mCudaVisibleDeviceLineEdit"_s);
     QVERIFY(mCudaVisibleDeviceLineEdit);
