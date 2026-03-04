@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:43+0000\n"
+"POT-Creation-Date: 2026-03-04 00:43+0000\n"
 "PO-Revision-Date: 2025-09-01 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -510,30 +510,38 @@ msgstr ""
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
-msgid "Vulkan GPU Support:"
+msgctxt "@info:tooltip"
+msgid ""
+"Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
+"but use with caution as it may be unstable."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
+#, kde-format
+msgid "Vulkan GPU Support (Experimental):"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:49
 #, kde-format
 msgid "Hip Visible Device:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:54
 #, kde-format
 msgid "Override GFX version:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:58
 #, kde-format
 msgid "Default Model Path:"
 msgstr ""
