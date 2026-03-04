@@ -236,4 +236,11 @@ void OllamaCommonSettings::setThoughtProcessing(bool newThoughtProcessing)
     mThoughtProcessing = newThoughtProcessing;
 }
 
+bool OllamaCommonSettings::operator==(const OllamaCommonSettings &other) const
+{
+    return other.mDisplayName == mDisplayName && other.mCurrentModel == mCurrentModel && mSeed == other.mSeed && mTemperature == other.mTemperature
+        && mKeepAliveMinutes == other.mKeepAliveMinutes && mContextWindowSize == other.mContextWindowSize && mKeepAliveType == other.mKeepAliveType
+        && mShareNameType == other.mShareNameType && mThoughtProcessing == other.mThoughtProcessing;
+}
+
 #include "moc_ollamacommonsettings.cpp"
