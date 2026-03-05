@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-04 00:43+0000\n"
-"PO-Revision-Date: 2026-02-28 08:09+0100\n"
+"PO-Revision-Date: 2026-03-04 10:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -523,12 +523,13 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"Utilitza Vulkan per a l'acceleració de maquinari. Pot millorar el rendiment "
+"en algunes GPU, però feu-lo servir amb precaució perquè podria ser inestable."
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Vulkan GPU Support:"
+#, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr "Compatibilitat de GPU Vulkan:"
+msgstr "Implementació de les GPU Vulkan (experimental):"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format

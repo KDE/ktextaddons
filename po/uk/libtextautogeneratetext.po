@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-04 00:43+0000\n"
-"PO-Revision-Date: 2026-02-28 16:29+0200\n"
+"PO-Revision-Date: 2026-03-04 14:45+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -517,12 +517,14 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"Використовувати для апаратного прискорення Vulkan. Може покращити швидкодію "
+"на деяких графічних процесора, але слід користуватися обережно, оскільки "
+"робота може стати нестабільною."
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Vulkan GPU Support:"
+#, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr "Підтримка процесорів Vulkan:"
+msgstr "Підтримка процесорів Vulkan (експериментальна):"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
