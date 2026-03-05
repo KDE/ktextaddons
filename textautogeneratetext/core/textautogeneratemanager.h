@@ -481,6 +481,10 @@ Q_SIGNALS:
      */
     void errorOccurred(QNetworkReply::NetworkError e);
 
+    /*!
+     */
+    void discussionListIsEmpty(bool isEmpty);
+
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);
 
