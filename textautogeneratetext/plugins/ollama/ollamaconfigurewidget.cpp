@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -281,8 +281,18 @@ void OllamaConfigureWidget::restoreToDefaults()
     mManager->ollamaSettings()->setCudaVisibleDevice({});
     mManager->ollamaSettings()->setRocrVisibleDevice({});
     mManager->ollamaSettings()->setOverrideGfxVersion({});
-    mManager->ollamaSettings()->setVulkanSupport({});
+    mManager->ollamaSettings()->setVulkanSupport(false);
     mManager->ollamaSettings()->setDefaultModelPath({});
+
+    const OllamaConfigureCustomizeWidget::CustomizeInfo info{
+        .vulkanSupport = false,
+        .cudaVisibleDevice = {},
+        .rocrVisibleDevice = {},
+        .overrideGfxVersion = {},
+        .hipVisibleDevice = {},
+        .defaultModelPath = {},
+    };
+    mOllamaConfigureCustomizeWidget->setCustomizeInfo(info);
 }
 
 void OllamaConfigureWidget::fillModels()
