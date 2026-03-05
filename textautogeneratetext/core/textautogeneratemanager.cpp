@@ -212,6 +212,11 @@ void TextAutoGenerateManager::askStartOllama()
     }
 }
 
+bool TextAutoGenerateManager::hasChatInProgress() const
+{
+    return textAutoGenerateChatsModel()->hasChatInProgress();
+}
+
 void TextAutoGenerateManager::switchToChatId(const QByteArray &chatId)
 {
     if (!mPluginWasInitialized) {

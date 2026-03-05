@@ -392,6 +392,12 @@ public:
      */
     void askStartOllama();
 
+    /*!
+     * \brief hasChatInProgress
+     * \return true if there is at least one chat in progress.
+     */
+    [[nodiscard]] bool hasChatInProgress() const;
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.

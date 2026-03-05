@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -118,6 +118,12 @@ public:
     [[nodiscard]] TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
     /*! Sets the TextAutoGenerateChatSettings to @p newTextAutoGenerateChatSettings. */
     void setTextAutoGenerateChatSettings(TextAutoGenerateChatSettings *newTextAutoGenerateChatSettings);
+
+    /*!
+     * \brief hasChatInProgress
+     * \return true if there is at least one chat in progress.
+     */
+    [[nodiscard]] bool hasChatInProgress() const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
