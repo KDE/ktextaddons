@@ -386,6 +386,12 @@ public:
      * \param chatId
      */
     void duplicateChat(const QByteArray &chatId);
+
+    /*!
+     *
+     */
+    void checkEngineStatus();
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.

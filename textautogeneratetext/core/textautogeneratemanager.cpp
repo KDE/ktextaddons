@@ -615,6 +615,11 @@ void TextAutoGenerateManager::loadEngine()
     Q_EMIT loadEngineDone();
 }
 
+void TextAutoGenerateManager::checkEngineStatus()
+{
+    Q_EMIT loadEngineDone();
+}
+
 void TextAutoGenerateManager::importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs)
 {
     createNewChat(title);
