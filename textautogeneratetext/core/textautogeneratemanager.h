@@ -397,6 +397,10 @@ public:
      * \return true if there is at least one chat in progress.
      */
     [[nodiscard]] bool hasChatInProgress() const;
+    /*!
+     *
+     */
+    void checkEngineStatus();
 
 Q_SIGNALS:
     /*!
