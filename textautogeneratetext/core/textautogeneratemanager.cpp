@@ -200,6 +200,7 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
         mDatabaseManager->insertOrUpdateChat(chat);
     }
     switchToChatId(chatId);
+    Q_EMIT discussionListIsEmpty(false);
 }
 
 void TextAutoGenerateManager::askStartOllama()
@@ -448,6 +449,7 @@ void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
             mDatabaseManager->deleteChat(chatId);
         }
     }
+    Q_EMIT discussionListIsEmpty(mTextAutoGenerateChatsModel->isEmpty());
 }
 
 void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)

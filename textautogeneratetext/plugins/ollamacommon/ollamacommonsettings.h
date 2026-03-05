@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -75,6 +75,8 @@ public:
     [[nodiscard]] bool defaultThoughtProcessing() const;
     [[nodiscard]] OllamaCommonSettings::KeepAliveType defaultKeepAliveType() const;
     [[nodiscard]] OllamaCommonSettings::ShareNameType defaultShareNameType() const;
+
+    [[nodiscard]] bool operator==(const OllamaCommonSettings &other) const;
 
 private:
     QString mDisplayName;

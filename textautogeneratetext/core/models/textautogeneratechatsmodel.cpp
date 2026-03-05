@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -317,7 +317,7 @@ QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
 
 bool TextAutoGenerateChatsModel::isEmpty() const
 {
-    return false;
+    return mChats.isEmpty();
 }
 
 QByteArray TextAutoGenerateChatsModel::chatIdFromChatName(const QString &chatName) const

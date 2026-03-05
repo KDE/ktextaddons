@@ -1,16 +1,20 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamacommonsettingstest.h"
 #include "ollamacommonsettings.h"
+#include <KConfig>
+#include <KConfigGroup>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaCommonSettingsTest)
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonSettingsTest::OllamaCommonSettingsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaCommonSettingsTest::shouldConvertKeepAliveTypeToString()
@@ -65,6 +69,31 @@ void OllamaCommonSettingsTest::shouldHaveDefaultValues()
     QCOMPARE(s.defaultContextWindowSize(), 16384);
     QCOMPARE(s.defaultShareNameType(), OllamaCommonSettings::ShareNameType::DoNotShare);
     QCOMPARE(s.defaultKeepAliveType(), OllamaCommonSettings::KeepAliveType::UnloadAfterUse);
+}
+
+void OllamaCommonSettingsTest::testSaveLoad()
+{
+    OllamaCommonSettings s;
+    s.setSeed(12);
+    s.setTemperature(0.9);
+    s.setCurrentModel(u"test1"_s);
+    s.setDisplayName(u"bla"_s);
+    s.setKeepAliveMinutes(256);
+    s.setKeepAliveType(OllamaCommonSettings::KeepAliveType::SetTimer);
+    s.setContextWindowSize(551);
+    s.setThoughtProcessing(true);
+    s.setShareNameType(OllamaCommonSettings::ShareNameType::FullName);
+
+    KConfig conf;
+    KConfigGroup grp = conf.group(u"foo"_s);
+    s.save(grp);
+
+    OllamaCommonSettings s2;
+    s2.load(grp);
+    QCOMPARE(s, s2);
+
+    conf.deleteGroup(u"foo"_s);
+    conf.sync();
 }
 
 #include "moc_ollamacommonsettingstest.cpp"

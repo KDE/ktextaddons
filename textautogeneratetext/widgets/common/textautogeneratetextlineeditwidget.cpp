@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -113,6 +113,10 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
                 &TextAutoGenerateText::TextAutoGenerateManager::currentModelChanged,
                 this,
                 &TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged);
+
+        connect(mManager, &TextAutoGenerateManager::discussionListIsEmpty, this, [this](bool state) {
+            setEnabled(!state);
+        });
     }
 
     mConfigureTools->setObjectName(u"mConfigureTools"_s);
