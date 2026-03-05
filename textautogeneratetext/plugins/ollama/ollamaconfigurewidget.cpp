@@ -281,11 +281,11 @@ void OllamaConfigureWidget::restoreToDefaults()
     mManager->ollamaSettings()->setCudaVisibleDevice({});
     mManager->ollamaSettings()->setRocrVisibleDevice({});
     mManager->ollamaSettings()->setOverrideGfxVersion({});
-    mManager->ollamaSettings()->setVulkanSupport(false);
+    mManager->ollamaSettings()->setVulkanSupport({});
     mManager->ollamaSettings()->setDefaultModelPath({});
 
     const OllamaConfigureCustomizeWidget::CustomizeInfo info{
-        .vulkanSupport = false,
+        .vulkanSupport = {},
         .cudaVisibleDevice = {},
         .rocrVisibleDevice = {},
         .overrideGfxVersion = {},
