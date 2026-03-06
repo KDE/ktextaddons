@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-04 00:43+0000\n"
-"PO-Revision-Date: 2026-03-01 19:00+0200\n"
+"POT-Creation-Date: 2026-03-06 00:42+0000\n"
+"PO-Revision-Date: 2026-03-05 07:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -286,7 +286,7 @@ msgstr "ChatGPT מבית OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
@@ -516,12 +516,13 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"להשתמש ב־Vulkan להאצת חומרה. עשוי לשפר את הביצועים על חלק מהמעבדים הגרפיים "
+"אבל כדאי לנקוט במשנה זהירות כיוון שהוא עלול להיות לא יציב."
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Vulkan GPU Support:"
+#, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr "תמיכה במעבד גרפי Vulkan:"
+msgstr "תמיכה במעבד גרפי Vulkan (ניסיוני):"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
@@ -536,7 +537,7 @@ msgstr "בחירת מעבד גרפי מבית AMD:"
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:49
 #, kde-format
 msgid "Hip Visible Device:"
-msgstr ""
+msgstr "התקני HIP גלויים:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:54
 #, kde-format
@@ -658,12 +659,12 @@ msgstr "ריענון מודל"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr ""
+msgstr "ערכות שימור חיוניות"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr ""
+msgstr "שימור חיוניות לעד"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
@@ -673,7 +674,7 @@ msgstr "לפרוק לאחר שימוש"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr ""
+msgstr "שימור חיוניות"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
@@ -2255,6 +2256,9 @@ msgid ""
 "scratch by Essential AI, optimized for code and STEM with capabilities on "
 "par with SOTA open-weight models."
 msgstr ""
+"Rnj-1 היא משפחה של מודלים עם משקלים פתוחים, דחוסים בגודל 8B משתנים שאומנו "
+"מאפס על ידי Essential AI, מוטבו ליכולות כתיבת קוד ומדעים עם יכולות משמעותיות "
+"מול מודלי דגל אחרים עם משקלים פתוחים."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:306
 #, kde-format
@@ -2341,6 +2345,8 @@ msgid ""
 "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
 "excels at multilingual retrieval."
 msgstr ""
+"nomic-embed-text-v2-moe הוא מודל הטמעת טקסט רב־לשוני בתצורת ערבוב מומחים "
+"שמצטיין במשיכה של תוכן רב־לשוני."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
 #, kde-format
@@ -2362,6 +2368,8 @@ msgid ""
 "A general-purpose multimodal mixture-of-experts model for production-grade "
 "tasks and enterprise workloads."
 msgstr ""
+"מודל ערבוב מומחים רב מערכתי לשימוש כללי למשימות ברמת הפקה גבוהה ועומס עבודה "
+"תעשייתי."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:327
 #, kde-format
@@ -2679,7 +2687,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "שליחה"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:119
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
