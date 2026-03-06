@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextlineeditwidget.h"
 
+#include "core/models/textautogeneratechatsmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextplugin.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
@@ -139,7 +140,7 @@ void TextAutoGenerateTextLineEditWidget::updateAttachmentButton(bool state)
 
 void TextAutoGenerateTextLineEditWidget::updateEnableState()
 {
-    setEnabled(!mManager->showArchived() && !mManager->chatInProgress(mManager->currentChatId()));
+    setEnabled(!mManager->showArchived() && !mManager->chatInProgress(mManager->currentChatId()) && !mManager->textAutoGenerateChatsModel()->isEmpty());
 }
 
 void TextAutoGenerateTextLineEditWidget::clearLineEdit()

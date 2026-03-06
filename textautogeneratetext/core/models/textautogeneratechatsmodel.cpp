@@ -315,6 +315,15 @@ QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
     return {};
 }
 
+bool TextAutoGenerateChatsModel::hasAtLeastOneNotArchivedChat() const
+{
+    auto isNotArchived = [&](const TextAutoGenerateChat &chat) {
+        return !chat.archived();
+    };
+    const auto it = std::find_if_not(mChats.begin(), mChats.end(), isNotArchived);
+    return (it != mChats.end());
+}
+
 bool TextAutoGenerateChatsModel::isEmpty() const
 {
     return mChats.isEmpty();

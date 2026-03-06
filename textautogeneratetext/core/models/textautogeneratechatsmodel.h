@@ -119,6 +119,12 @@ public:
     /*! Sets the TextAutoGenerateChatSettings to @p newTextAutoGenerateChatSettings. */
     void setTextAutoGenerateChatSettings(TextAutoGenerateChatSettings *newTextAutoGenerateChatSettings);
 
+    /*!
+     * \brief hasAtLeastOneNotArchivedChat
+     * \return true if at least one chat is not archived
+     */
+    [[nodiscard]] bool hasAtLeastOneNotArchivedChat() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
