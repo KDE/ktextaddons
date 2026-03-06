@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 02:42+0000\n"
+"POT-Creation-Date: 2026-03-06 02:41+0000\n"
 "PO-Revision-Date: 2026-02-27 11:22+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2759,7 +2759,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Verzenden"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:119
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
