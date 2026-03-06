@@ -652,15 +652,15 @@ void TextAutoGenerateManager::importChat(const QString &title, const QList<TextA
     auto messagesModel = messagesModelFromChatId(currentChatId());
     if (messagesModel) {
         messagesModel->setMessages(msgs);
-        saveCurrentChatInDataBase(currentChatId());
+        saveCurrentChatInDataBase(currentChatId(), true);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to import file";
     }
 }
 
-void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId)
+void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId, bool force)
 {
-    if (mSaveInDatabase) {
+    if (mSaveInDatabase && !force) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Chat is already saved in database: chatId: " << chatId;
         return;
     }

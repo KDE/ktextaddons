@@ -311,8 +311,9 @@ public:
     /*!
      * Saves the current chat to the database.
      * \param chatId The ID of the chat to save
+     * \param force Useful when we import database
      */
-    void saveCurrentChatInDataBase(const QByteArray &chatId);
+    void saveCurrentChatInDataBase(const QByteArray &chatId, bool force = false);
     /*!
      * Switches to a chat by ID.
      * \param chatId The ID of the chat to switch to
