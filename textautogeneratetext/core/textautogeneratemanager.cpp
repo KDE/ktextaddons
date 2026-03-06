@@ -454,7 +454,16 @@ void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
             mDatabaseManager->deleteChat(chatId);
         }
     }
-    Q_EMIT discussionListIsEmpty(mTextAutoGenerateChatsModel->isEmpty());
+    verifyListEmpty();
+}
+
+void TextAutoGenerateManager::verifyListEmpty()
+{
+    if (mShowArchived) {
+        Q_EMIT discussionListIsEmpty(true);
+    } else {
+        Q_EMIT discussionListIsEmpty(mTextAutoGenerateChatsModel->isEmpty() && !mTextAutoGenerateChatsModel->hasAtLeastOneNotArchivedChat());
+    }
 }
 
 void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)

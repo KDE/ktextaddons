@@ -402,6 +402,10 @@ public:
      */
     void checkEngineStatus();
 
+    /*!
+     * \brief verifyListEmpty
+     */
+    void verifyListEmpty();
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
