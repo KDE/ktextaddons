@@ -1,4 +1,4 @@
-/*
+﻿/*
    SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
@@ -23,7 +23,7 @@ TextUtilsCopyBlockIconCache *TextUtilsCopyBlockIconCache::self()
 void TextUtilsCopyBlockIconCache::clear()
 {
     mCopyBlockUrl.clear();
-    mTemporaryFile.release();
+    mTemporaryFile.reset(nullptr);
 }
 
 QString TextUtilsCopyBlockIconCache::copyBlockUrl()
