@@ -1,4 +1,4 @@
-/*
+﻿/*
    SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
@@ -42,9 +42,9 @@ public:
 
     /*!
      * \brief Initializes the version combo box
-     * \param type The type to initialize
+     * \param identifier The identifier to initialize
      */
-    void initializeVersion(int type);
+    void initializeVersion(int identifier);
 
 Q_SIGNALS:
     /*!

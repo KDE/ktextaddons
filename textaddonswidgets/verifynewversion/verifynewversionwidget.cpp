@@ -1,4 +1,4 @@
-/*
+﻿/*
    SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
@@ -93,6 +93,7 @@ void VerifyNewVersionWidget::addOsUrlInfo(OsVersion os, const QString &url)
 
 void VerifyNewVersionWidget::slotVerifyNewVersion()
 {
+#ifndef Q_OS_LINUX
     QUrl url;
 #ifdef Q_OS_WIN
     url = QUrl(mUrls.value(VerifyNewVersionWidget::OsVersion::Windows));
@@ -113,6 +114,7 @@ void VerifyNewVersionWidget::slotVerifyNewVersion()
     } else {
         qCWarning(TEXTADDONSWIDGETS_LOG) << " url is empty. It seems to be a bug";
     }
+#endif
 }
 
 #include "moc_verifynewversionwidget.cpp"
