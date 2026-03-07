@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-06 00:42+0000\n"
-"PO-Revision-Date: 2026-03-05 07:01+0200\n"
+"POT-Creation-Date: 2026-03-07 00:42+0000\n"
+"PO-Revision-Date: 2026-03-06 14:24+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2191,6 +2191,9 @@ msgid ""
 "Instruct-0905 demonstrates significant improvements in performance on public "
 "benchmarks and real-world coding agent tasks."
 msgstr ""
+"מודל שפה רב תחומי מומחיות מהמדרגה הראשונה. Kimi K2-Instruct-0905 מפגין "
+"שיפורים מהותיים בביצועים מול מדדים ציבוריים ומשימות סוכני כתיבת קוד "
+"מציאותיות."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:294
 #, kde-format
@@ -2266,6 +2269,8 @@ msgid ""
 "The first installment in the Qwen3-Next series with strong performance in "
 "terms of both parameter efficiency and inference speed."
 msgstr ""
+"החלק הראשון בסדרת Qwen3-Next עם ביצועים משופרים מבחינת יעילות משתנים ומהירות "
+"הסקת מסקנות."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
 #, kde-format
@@ -2654,40 +2659,40 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "הסרה"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "צירוף קובץ"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:61
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
 msgstr "תמונות (‎*.png‏ ‎*.xpm‏ ‎*.jpg‏ ‎*.gif)"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:64
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
 msgstr "שמע (‎*.mp4‏ ‎*.avi)"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:66
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text (*.txt *.md)"
 msgstr "טקסט (‎*.txt‏ ‎*.md)"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
 msgstr "בחירת קובץ"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:79
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "שליחה"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:123
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

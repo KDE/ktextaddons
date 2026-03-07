@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-06 00:42+0000\n"
+"POT-Creation-Date: 2026-03-07 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2414,28 +2414,28 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "삭제…"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "파일 첨부"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:61
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:64
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:66
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text (*.txt *.md)"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Select All"
@@ -2443,14 +2443,14 @@ msgctxt "@title:window"
 msgid "Select File"
 msgstr "모두 선택"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:79
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "보내기"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:123
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
