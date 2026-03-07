@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemodelavailablelistview.h"
-// #include "genericnetworkmodelavailableinfosdelegate.h"
+
 using namespace TextAutoGenerateText;
 TextAutoGenerateModelAvailableListView::TextAutoGenerateModelAvailableListView(QWidget *parent)
     : QListView(parent)
