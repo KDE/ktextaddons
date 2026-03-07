@@ -56,7 +56,7 @@ void TextAutoGenerateMenuWidget::initializeMenu()
                 dlg->setAttribute(Qt::WA_DeleteOnClose);
                 dlg->show();
                 TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo info;
-                info.message = u"%1 %2"_s.arg(requestText, mSelectedText);
+                info.message = u"%1: \"%2\""_s.arg(requestText, mSelectedText);
 
                 dlg->ask(info);
             });
