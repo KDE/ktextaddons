@@ -518,7 +518,6 @@ msgstr ""
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, fuzzy, kde-format
-#| msgid "Vulkan GPU Support:"
 msgid "Vulkan GPU Support (Experimental):"
 msgstr "Vulkan GPU 支持："
 

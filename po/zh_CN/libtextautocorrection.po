@@ -264,7 +264,7 @@ msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
 "mistake which is quite hard to find in formatted text."
 msgstr ""
-"确保无法输入多个空格，因为这种输入错误比较常见，而且很难在带有格式的大段文字"
+"确保无法输入多个空格，因为这种输入错误比较常见，而且很难在带有格式的大段文本"
 "中被检查出来。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
@@ -312,8 +312,8 @@ msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
 "asterisks will be converted to underlined or bold text."
 msgstr ""
-"当您使用 _下划线_ 或者 *粗体* 时，下划线和星号之间的文字将会分别被转换为带下"
-"划线、加粗格式的文字。"
+"当您使用 _下划线_ 或者 *粗体* 时，下划线和星号之间的文本将会分别被转换为带下"
+"划线、加粗格式的文本。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
 #: widgets/ui/autocorrectionwidget.ui:415

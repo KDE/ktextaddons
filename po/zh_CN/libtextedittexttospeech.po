@@ -43,7 +43,7 @@ msgstr "播放"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr "配置文字转语音"
+msgstr "配置文本转语音"
 
 #: texttospeechconfiginterface.cpp:86
 #, kde-format
@@ -112,4 +112,4 @@ msgstr "引擎遇到了一个问题。"
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
-msgstr "文字转语音"
+msgstr "文本转语音"

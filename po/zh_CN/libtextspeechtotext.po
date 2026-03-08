@@ -152,7 +152,7 @@ msgstr "配置语音到文本功能"
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
-msgstr "语音转文字…"
+msgstr "语音转文本…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
 #, kde-format
