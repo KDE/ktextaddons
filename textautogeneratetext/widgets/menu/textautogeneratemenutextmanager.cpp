@@ -42,6 +42,9 @@ void TextAutoGenerateMenuTextManager::load()
         info.setEnabled(group.readEntry(u"Enabled"_s, true));
         infos.append(std::move(info));
     }
+    std::sort(infos.begin(), infos.end(), [&](const auto &firstItem, const auto &secondItem) {
+        return firstItem.requestText() < secondItem.requestText();
+    });
     setTextInfos(infos);
 }
 
