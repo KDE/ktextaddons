@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 02:39+0000\n"
-"PO-Revision-Date: 2026-03-06 14:24+0200\n"
+"PO-Revision-Date: 2026-03-08 22:02+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -260,7 +260,7 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:42
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr ""
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:135
 #, kde-format
@@ -460,7 +460,7 @@ msgstr "הסרת מודל"
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (מנוהלת)"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
@@ -513,12 +513,12 @@ msgstr "יצירת מודלים"
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "פתחה:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
 msgid "Show Ollama Log"
-msgstr ""
+msgstr "הצגת היומן של Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:97
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
@@ -612,7 +612,7 @@ msgstr "שימור חיוניות לעד"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr ""
+msgstr "לפרוק לאחר שימוש"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
@@ -623,14 +623,14 @@ msgstr "שימור חיוניות"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "איך העותק צריך לטפל במודלים לא פעילים"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
-msgstr ""
+msgstr "משך הזמן שהעותק צריך להשאיר את המודלים טעונים לאחר שהם אינם פעילים."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
