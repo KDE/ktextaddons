@@ -24,7 +24,7 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
     QString fileClass;
     const QUrl startUrl = KFileWidget::getStartUrl(QUrl(u"kfiledialog:///saveattachment"_s), fileClass);
     const auto info = QFileInfo(fileToSave.path());
-    auto fileName = info.fileName();
+    auto fileName = fileToSave.fileName();
     if (fileToSave.isLocalFile() && info.exists() && info.suffix().isEmpty()) {
         // guess a proper file suffix if none is given
         [&]() {
@@ -43,12 +43,12 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
             }
         }();
     }
-    QUrl localUrl;
-    localUrl.setPath(startUrl.path() + u'/' + fileName);
-    const QString fileStr = QFileDialog::getSaveFileName(parent, title, localUrl.toString());
+    const QUrl localUrl = QUrl::fromLocalFile(startUrl.path() + u'/' + fileName);
+    const QString fileStr = QFileDialog::getSaveFileName(parent, title, localUrl.path());
 
     if (!fileClass.isEmpty() && !fileStr.isEmpty()) {
-        KRecentDirs::add(fileClass, fileStr);
+        const QFileInfo fileInfo(fileStr);
+        KRecentDirs::add(fileClass, fileInfo.absoluteDir().path());
     }
     return fileStr;
 }

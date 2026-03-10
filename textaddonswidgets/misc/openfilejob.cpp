@@ -56,10 +56,10 @@ enum class UserChoice : uint8_t {
 };
 Q_DECLARE_METATYPE(UserChoice)
 
-static UserChoice askUser(const QUrl &url, const KService::Ptr &offer, QWidget *widget)
+static UserChoice askUser(const QString &path, const KService::Ptr &offer, QWidget *widget)
 {
     const QString title = i18nc("@title:window", "Open Attachment?");
-    const QString text = xi18nc("@info", "Open attachment <filename>%1</filename>?<nl/>", url.fileName().replace(u"%20"_s, u" "_s));
+    const QString text = xi18nc("@info", "Open attachment <filename>%1</filename>?<nl/>", QFileInfo(path).fileName());
     QMessageBox msgBox(QMessageBox::Question, title, text, QMessageBox::NoButton, widget);
     const char *prop = "_enumValue";
 #if defined(Q_OS_MACOS) || defined(Q_OS_WIN)
@@ -84,16 +84,16 @@ void OpenFileJob::start()
         deleteLater();
         return;
     }
-    const QUrl url = QUrl::fromLocalFile(mLink);
+    const QString path = QUrl::fromPercentEncoding(mLink.toLatin1());
     const QMimeDatabase db;
-    const QMimeType mimeType = db.mimeTypeForUrl(url);
+    const QMimeType mimeType = db.mimeTypeForFile(path);
     const bool valid = mimeType.isValid() && !mimeType.isDefault();
     const KService::Ptr offer = valid ? KApplicationTrader::preferredService(mimeType.name()) : KService::Ptr{};
-    const UserChoice choice = askUser(url, offer, mParentWidget);
+    const UserChoice choice = askUser(path, offer, mParentWidget);
 
     switch (choice) {
     case UserChoice::Save: {
-        const QString file = SaveFileUtils::querySaveFileName(mParentWidget, i18nc("@title:window", "Save File"), url);
+        const QString file = SaveFileUtils::querySaveFileName(mParentWidget, i18nc("@title:window", "Save File"), QUrl::fromLocalFile(path));
         if (!file.isEmpty()) {
             const QUrl fileUrl = QUrl::fromLocalFile(file);
             downloadFile(fileUrl);
