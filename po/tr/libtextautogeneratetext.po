@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 02:39+0000\n"
-"PO-Revision-Date: 2026-02-27 07:57+0300\n"
+"PO-Revision-Date: 2026-03-09 21:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2568,13 +2568,13 @@ msgstr "Model bilgisini göster"
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr "Ollama (Çevrimiçi)"
+msgstr "Ollama (Çevrim İçi)"
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Ollama Çevrimiçi’yi Yapılandır"
+msgstr "Ollama Çevrim İçi’yi Yapılandır"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
@@ -2584,7 +2584,7 @@ msgstr "Sunucu URL’si:"
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
 #, kde-format
 msgid "Ollama Online"
-msgstr "Ollama Çevrimiçi"
+msgstr "Ollama Çevrim İçi"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
