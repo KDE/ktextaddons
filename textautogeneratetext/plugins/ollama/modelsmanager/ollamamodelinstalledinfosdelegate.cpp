@@ -52,7 +52,7 @@ void OllamaModelInstalledInfosDelegate::draw(QPainter *painter,
                                              const QModelIndex &index,
                                              const QStyleOptionViewItem &option) const
 {
-    QRect rect = layout.textRect;
+    const QRect rect = layout.textRect;
     auto *doc = documentForIndex(index, rect.width());
     if (!doc) {
         return;
@@ -115,9 +115,9 @@ OllamaModelInstalledInfosDelegate::ModelInfoLayout OllamaModelInstalledInfosDele
                                                                                                const QModelIndex &index) const
 {
     OllamaModelInstalledInfosDelegate::ModelInfoLayout layout;
-    int maxWidth = qMax(30, option.rect.width());
+    const int maxWidth = qMax(30, option.rect.width());
     const QSize textSize = documentSizeHint(index, maxWidth, option, &layout.baseLine);
-    QRect usableRect = option.rect;
+    const QRect usableRect = option.rect;
 
     layout.textRect = QRect(OllamaCommonModelInfosDelegateUtils::textMargin(),
                             usableRect.top() + OllamaCommonModelInfosDelegateUtils::textMargin(),

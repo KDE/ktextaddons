@@ -5,10 +5,10 @@
 */
 
 #include "ollamacommonmodelavailablewidget.h"
-#include "ollamacommonmodelavailableinfosdelegate.h"
 #include "ollamacommonmodelavailableinfosmodel.h"
 #include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include "ollamacommonmodelavailableinfowidget.h"
+#include "ollamacommonmodelavailablelistview.h"
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
@@ -19,14 +19,13 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *parent)
     : QWidget{parent}
-    , mAvailableListView(new TextAutoGenerateText::TextAutoGenerateModelAvailableListView(this))
+    , mAvailableListView(new OllamaCommonModelAvailableListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
     , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
     , mProxyModel(new OllamaCommonModelAvailableInfosSortProxyModel(this))
     , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
     , mOllamaModelAvalaibleInfoWidget(new OllamaCommonModelAvailableInfoWidget(this))
 {
-    mAvailableListView->setItemDelegate(new OllamaCommonModelAvailableInfosDelegate(mAvailableListView));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
