@@ -40,6 +40,8 @@ target_sources(
         ollamacommonmodelavailableinfosmodel.cpp
         ollamacommonmodelavailableinfosdelegate.h
         ollamacommonmodelavailableinfosdelegate.cpp
+        ollamacommonmodelavailablelistview.h
+        ollamacommonmodelavailablelistview.cpp
         ollamacommonmodelinfosdelegateutils.cpp
         ollamacommonmodelinfosdelegateutils.h
         ollamacommonoverrideparameterswidget.h

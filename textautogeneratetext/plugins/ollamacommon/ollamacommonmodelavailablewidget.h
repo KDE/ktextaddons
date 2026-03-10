@@ -17,6 +17,7 @@ class OllamaCommonModelsInfosCategoriesComboBox;
 class OllamaCommonModelAvailableInfosSortProxyModel;
 class OllamaCommonModelAvailableInfosModel;
 class OllamaCommonModelAvailableInfoWidget;
+class OllamaCommonModelAvailableListView;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -28,7 +29,7 @@ public:
 
 private:
     TEXTAUTOGENERATEOLLAMACOMMON_NO_EXPORT void slotClicked(const QModelIndex &index);
-    TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mAvailableListView;
+    OllamaCommonModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
     OllamaCommonModelAvailableInfosSortProxyModel *const mProxyModel;
