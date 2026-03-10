@@ -20,3 +20,5 @@ void OllamaCommonModelAvailableListView::resizeEvent(QResizeEvent *ev)
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView::resizeEvent(ev);
     mAvailableInfosDelegate->clearSizeHintCache();
 }
+
+#include "moc_ollamacommonmodelavailablelistview.cpp"
