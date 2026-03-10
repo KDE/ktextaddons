@@ -47,7 +47,8 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
     const QString fileStr = QFileDialog::getSaveFileName(parent, title, localUrl.path());
 
     if (!fileClass.isEmpty() && !fileStr.isEmpty()) {
-        KRecentDirs::add(fileClass, fileStr);
+        const QFileInfo fileInfo(fileStr);
+        KRecentDirs::add(fileClass, fileInfo.absoluteDir().path());
     }
     return fileStr;
 }
