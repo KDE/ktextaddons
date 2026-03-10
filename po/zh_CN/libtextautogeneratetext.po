@@ -515,11 +515,13 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"使用 Vulkan 进行硬件加速。可以提高某些GPU的性能，但谨慎使用，因为它可能不稳"
+"定。"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
+#, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr "Vulkan GPU 支持："
+msgstr "Vulkan GPU 支持 (实验性)："
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
