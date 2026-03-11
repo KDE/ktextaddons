@@ -220,6 +220,8 @@ target_sources(
         core/textautogeneratefilecache.h
         core/textautogeneratefilecache.cpp
         core/icons/ollamamodelicons.qrc
+        core/textautogeneratetextmcpserver.h
+        core/textautogeneratetextmcpserver.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
