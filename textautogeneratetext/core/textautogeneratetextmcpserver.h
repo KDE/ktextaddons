@@ -19,7 +19,11 @@ public:
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
+    bool enabled() const;
+    void setEnabled(bool newEnabled);
+
 private:
+    bool mEnabled = true;
     QUrl mServerUrl;
 };
 }

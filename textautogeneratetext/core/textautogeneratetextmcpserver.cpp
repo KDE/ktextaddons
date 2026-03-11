@@ -20,8 +20,19 @@ void TextAutoGenerateTextMcpServer::setServerUrl(const QUrl &newServerUrl)
     mServerUrl = newServerUrl;
 }
 
+bool TextAutoGenerateTextMcpServer::enabled() const
+{
+    return mEnabled;
+}
+
+void TextAutoGenerateTextMcpServer::setEnabled(bool newEnabled)
+{
+    mEnabled = newEnabled;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t)
 {
     d.space() << "url:" << t.serverUrl();
+    d.space() << "enabled:" << t.enabled();
     return d;
 }

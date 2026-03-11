@@ -18,6 +18,7 @@ void TextAutoGenerateTextMcpServerTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateTextMcpServer w;
     QVERIFY(w.serverUrl().isEmpty());
+    QVERIFY(w.enabled());
 }
 
 #include "moc_textautogeneratetextmcpservertest.cpp"

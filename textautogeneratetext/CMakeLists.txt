@@ -171,6 +171,8 @@ target_sources(
         core/models/textautogeneratetextinstancemodel.cpp
         core/models/textautogeneratetextinstancesortfilterproxymodel.h
         core/models/textautogeneratetextinstancesortfilterproxymodel.cpp
+        core/models/textautogeneratetextmcpservermodel.h
+        core/models/textautogeneratetextmcpservermodel.cpp
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
@@ -512,6 +514,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     TextAutoGenerateMessagesModel
     TextAutoGenerateSearchMessagesModel
     TextAutoGenerateChatsModel
+    TextAutoGenerateTextMcpServerModel
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/models
