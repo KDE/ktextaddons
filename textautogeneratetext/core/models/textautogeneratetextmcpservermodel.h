@@ -7,7 +7,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
-#include <TextAutoGenerateText/TextAutoGenerateTextInstance>
+#include <TextAutoGenerateText/TextAutoGenerateTextMcpServer>
 namespace TextAutoGenerateText
 {
 /*!
@@ -63,67 +63,28 @@ public:
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
 
     /*!
-     * Returns the list of text instances in the model.
-     * \return The list of TextAutoGenerateTextInstance pointers
+     * Returns the list of mcp servers in the model.
+     * \return The list of TextAutoGenerateTextMcpServer pointers
      */
-    [[nodiscard]] QList<TextAutoGenerateTextInstance *> textInstances() const;
+    [[nodiscard]] QList<TextAutoGenerateTextMcpServer *> mcpServers() const;
     /*!
-     * Sets the list of text instances in the model.
+     * Sets the list of mcp servers in the model.
      * \param newTextInstances The instances to set
      */
-    void setTextInstances(const QList<TextAutoGenerateTextInstance *> &newTextInstances);
+    void setMcpServers(const QList<TextAutoGenerateTextMcpServer *> &newTextInstances);
 
     /*!
      * Adds an instance to the model.
      * \param instance The instance to add
      */
-    void addInstance(TextAutoGenerateTextInstance *instance);
-
-    /*!
-     * Removes an instance from the model by UUID.
-     * \param uuid The UUID of the instance to remove
-     * \return The plugin from the removed instance
-     */
-    [[nodiscard]] TextAutoGenerateTextPlugin *removeInstance(const QByteArray &uuid);
-
-    /*!
-     * Gets the plugin for editing an instance by UUID.
-     * \param uuid The UUID of the instance to edit
-     * \return The plugin from the instance
-     */
-    [[nodiscard]] TextAutoGenerateTextPlugin *editInstance(const QByteArray &uuid);
-
+    void addMcpServer(TextAutoGenerateTextMcpServer *instance);
     /*!
      * Returns whether the model is empty.
      * \return true if empty, false otherwise
      */
     [[nodiscard]] bool isEmpty() const;
 
-    /*!
-     * Returns the UUID of the current instance.
-     * \return The current instance UUID
-     */
-    [[nodiscard]] QByteArray currentInstance() const;
-    /*!
-     * Sets the current instance by UUID.
-     * \param newCurrentinstance The UUID to set as current
-     */
-    void setCurrentInstance(const QByteArray &newCurrentinstance);
-
-    /*!
-     * Returns the plugin of the current instance.
-     * \return The plugin pointer or nullptr
-     */
-    [[nodiscard]] TextAutoGenerateTextPlugin *currentPlugin() const;
-
-    /*!
-     * Returns a list of display names for all instances.
-     * \return List of instance display names
-     */
-    [[nodiscard]] QStringList instanceDisplayNames() const;
-
 private:
-    QList<TextAutoGenerateTextInstance *> mTextInstances;
-    QByteArray mCurrentinstance;
+    QList<TextAutoGenerateTextMcpServer *> mMcpServers;
 };
 }

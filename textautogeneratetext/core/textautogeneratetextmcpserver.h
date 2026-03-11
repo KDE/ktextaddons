@@ -19,12 +19,16 @@ public:
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
-    bool enabled() const;
+    [[nodiscard]] bool enabled() const;
     void setEnabled(bool newEnabled);
+
+    [[nodiscard]] QString name() const;
+    void setName(const QString &newName);
 
 private:
     bool mEnabled = true;
     QUrl mServerUrl;
+    QString mName;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextMcpServer, Q_RELOCATABLE_TYPE);

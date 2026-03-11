@@ -30,9 +30,20 @@ void TextAutoGenerateTextMcpServer::setEnabled(bool newEnabled)
     mEnabled = newEnabled;
 }
 
+QString TextAutoGenerateTextMcpServer::name() const
+{
+    return mName;
+}
+
+void TextAutoGenerateTextMcpServer::setName(const QString &newName)
+{
+    mName = newName;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t)
 {
     d.space() << "url:" << t.serverUrl();
     d.space() << "enabled:" << t.enabled();
+    d.space() << "name:" << t.name();
     return d;
 }
