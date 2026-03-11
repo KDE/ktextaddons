@@ -22,8 +22,8 @@ void AutoCorrectionUtilsTest::shouldConvertToLibreOfficeFilename()
 
 void AutoCorrectionUtilsTest::shouldSplitString()
 {
-    QFETCH(QString, words);
-    QFETCH(QStringList, result);
+    QFETCH(const QString, words);
+    QFETCH(const QStringList, result);
     const QStringList resultLst{TextAutoCorrectionCore::AutoCorrectionUtils::wordsFromSentence(words)};
     const bool equal = (resultLst == result);
     if (!equal) {
@@ -35,8 +35,8 @@ void AutoCorrectionUtilsTest::shouldSplitString()
 
 void AutoCorrectionUtilsTest::shouldSplitString_data()
 {
-    QTest::addColumn<QString>("words");
-    QTest::addColumn<QStringList>("result");
+    QTest::addColumn<const QString>("words");
+    QTest::addColumn<const QStringList>("result");
     QTest::addRow("empty") << QString() << QStringList();
     QTest::addRow("1 word") << u"blabla"_s << QStringList({u"blabla"_s});
     QTest::addRow("no word") << u" "_s << QStringList();
