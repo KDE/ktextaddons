@@ -12,3 +12,5 @@ TextAutoGenerateTextMcpServer::TextAutoGenerateTextMcpServer(QObject *parent)
 }
 
 TextAutoGenerateTextMcpServer::~TextAutoGenerateTextMcpServer() = default;
+
+#include "moc_textautogeneratetextmcpserver.cpp"
