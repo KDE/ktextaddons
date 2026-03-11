@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextmcpservertest.h"
+#include "core/textautogeneratetextmcpserver.h"
 
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateTextMcpServerTest)
@@ -15,5 +16,8 @@ TextAutoGenerateTextMcpServerTest::TextAutoGenerateTextMcpServerTest(QObject *pa
 
 void TextAutoGenerateTextMcpServerTest::shouldHaveDefaultValues()
 {
-    // TODO
+    const TextAutoGenerateText::TextAutoGenerateTextMcpServer w;
+    QVERIFY(w.serverUrl().isEmpty());
 }
+
+#include "moc_textautogeneratetextmcpservertest.cpp"
