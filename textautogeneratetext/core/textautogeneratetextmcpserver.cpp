@@ -13,4 +13,14 @@ TextAutoGenerateTextMcpServer::TextAutoGenerateTextMcpServer(QObject *parent)
 
 TextAutoGenerateTextMcpServer::~TextAutoGenerateTextMcpServer() = default;
 
+QUrl TextAutoGenerateTextMcpServer::serverUrl() const
+{
+    return mServerUrl;
+}
+
+void TextAutoGenerateTextMcpServer::setServerUrl(const QUrl &newServerUrl)
+{
+    mServerUrl = newServerUrl;
+}
+
 #include "moc_textautogeneratetextmcpserver.cpp"
