@@ -8,15 +8,14 @@
 #include "textautogeneratetext_private_export.h"
 #include <QObject>
 #include <QUrl>
-
+class QDebug;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextMcpServer : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextMcpServer
 {
-    Q_OBJECT
 public:
-    explicit TextAutoGenerateTextMcpServer(QObject *parent = nullptr);
-    ~TextAutoGenerateTextMcpServer() override;
+    TextAutoGenerateTextMcpServer();
+    ~TextAutoGenerateTextMcpServer();
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
@@ -24,3 +23,5 @@ private:
     QUrl mServerUrl;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextMcpServer, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t);

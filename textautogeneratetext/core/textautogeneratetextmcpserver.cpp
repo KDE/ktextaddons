@@ -4,12 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextmcpserver.h"
-
+#include <QDebug>
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextMcpServer::TextAutoGenerateTextMcpServer(QObject *parent)
-    : QObject{parent}
-{
-}
+TextAutoGenerateTextMcpServer::TextAutoGenerateTextMcpServer() = default;
 
 TextAutoGenerateTextMcpServer::~TextAutoGenerateTextMcpServer() = default;
 
@@ -23,4 +20,8 @@ void TextAutoGenerateTextMcpServer::setServerUrl(const QUrl &newServerUrl)
     mServerUrl = newServerUrl;
 }
 
-#include "moc_textautogeneratetextmcpserver.cpp"
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t)
+{
+    d.space() << "url:" << t.serverUrl();
+    return d;
+}
