@@ -24,7 +24,6 @@ public:
     enum InstanceRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Enabled,
-        IsDefault,
     };
     /*!
      * Constructs a new TextAutoGenerateTextMcpServerModel object.

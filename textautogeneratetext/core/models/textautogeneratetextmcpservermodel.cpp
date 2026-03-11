@@ -60,8 +60,6 @@ QVariant TextAutoGenerateTextMcpServerModel::data(const QModelIndex &index, int 
         return instance->enabled() ? Qt::Checked : Qt::Unchecked;
     case InstanceRoles::Enabled:
         return instance->enabled();
-    case InstanceRoles::IsDefault:
-        return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance) && instance->enabled();
     default:
         break;
     }
