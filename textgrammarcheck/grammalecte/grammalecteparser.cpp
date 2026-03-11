@@ -17,8 +17,6 @@ using namespace Qt::Literals::StringLiterals;
 
 GrammalecteParser::GrammalecteParser() = default;
 
-GrammalecteParser::~GrammalecteParser() = default;
-
 QVector<GrammarError> GrammalecteParser::parseResult(const QJsonObject &obj) const
 {
     QVector<GrammarError> infos;
@@ -27,14 +25,14 @@ QVector<GrammarError> GrammalecteParser::parseResult(const QJsonObject &obj) con
         return infos;
     }
     const QJsonArray array = obj.value("data"_L1).toArray();
-    for (const QJsonValue &current : array) {
+    for (const auto &current : array) {
         if (current.type() == QJsonValue::Object) {
             // Check lGrammarErrors
             const QJsonObject grammaObject = current.toObject();
             const int blockId = grammaObject.value(u"iParagraph"_s).toInt();
             // qDebug() << " blockId " << blockId;
             const QJsonArray grammarErrorArray = grammaObject.value("lGrammarErrors"_L1).toArray();
-            for (const QJsonValue &error : grammarErrorArray) {
+            for (const auto &error : grammarErrorArray) {
                 // qDebug() << " grammarErrorArray"<<error;
                 TextGrammarCheck::GrammalecteGrammarError info;
                 if (error.type() == QJsonValue::Object) {

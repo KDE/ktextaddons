@@ -20,7 +20,7 @@ QVector<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) co
 {
     QVector<GrammarError> infos;
     const QJsonArray array = obj.value("matches"_L1).toArray();
-    for (const QJsonValue &current : array) {
+    for (const auto &current : array) {
         // qDebug() << " current " << current;
         if (current.type() == QJsonValue::Object) {
             const QJsonObject languageToolObject = current.toObject();

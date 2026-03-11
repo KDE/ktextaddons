@@ -16,7 +16,7 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteParser
 {
 public:
     GrammalecteParser();
-    ~GrammalecteParser();
+    ~GrammalecteParser() = default;
     [[nodiscard]] QVector<GrammarError> parseResult(const QJsonObject &obj) const;
 };
 }
