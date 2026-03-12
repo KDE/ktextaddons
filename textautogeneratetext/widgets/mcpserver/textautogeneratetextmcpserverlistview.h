@@ -20,12 +20,12 @@ public:
 Q_SIGNALS:
     void addServer();
     void editServer(const QByteArray &id);
+    void removeServer(const QByteArray &id);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditInstance(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMcpServer(const QModelIndex &index);
 };
 }

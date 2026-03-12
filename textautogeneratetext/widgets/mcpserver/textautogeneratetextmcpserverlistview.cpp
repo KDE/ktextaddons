@@ -22,8 +22,8 @@ TextAutoGenerateTextMcpServerListView::TextAutoGenerateTextMcpServerListView(QWi
         mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
     }
     setModel(mSortFilterProxyModel);
-    connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextInstancesManagerListView::slotEditInstance);
 #endif
+    connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextMcpServerListView::slotEditMcpServer);
 }
 
 TextAutoGenerateTextMcpServerListView::~TextAutoGenerateTextMcpServerListView() = default;
@@ -35,14 +35,12 @@ void TextAutoGenerateTextMcpServerListView::slotSearchChanged(const QString &str
 
 void TextAutoGenerateTextMcpServerListView::slotEditMcpServer(const QModelIndex &index)
 {
-#if 0
-    const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+    const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::Identifier).toByteArray();
     if (uuid.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
     } else {
-        Q_EMIT editInstance(uuid);
+        Q_EMIT editServer(uuid);
     }
-#endif
 }
 
 void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *event)
@@ -57,42 +55,30 @@ void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *
         menu.addSeparator();
         auto editAction = new QAction(QIcon::fromTheme(u"edit-rename"_s), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
-            slotEditInstance(index);
+            slotEditMcpServer(index);
         });
-#if 0
         menu.addAction(editAction);
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Instance"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+            const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::Identifier).toByteArray();
             if (uuid.isEmpty()) {
-                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid identifier";
             } else {
-                const QString name = index.data(TextAutoGenerateTextInstanceModel::Name).toString();
+                const QString name = index.data(TextAutoGenerateTextMcpServerModel::Name).toString();
                 if (KMessageBox::warningTwoActions(this,
-                                                   i18n("Do you want to remove this instance (%1)?", name),
-                                                   i18nc("@title", "Remove Instance"),
+                                                   i18n("Do you want to remove this server (%1)?", name),
+                                                   i18nc("@title", "Remove Server"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())
                     == KMessageBox::PrimaryAction) {
-                    Q_EMIT removeInstance(uuid);
+                    Q_EMIT removeServer(uuid);
                 }
             }
         });
         menu.addAction(removeAction);
-#endif
     }
     menu.exec(event->globalPos());
-}
-
-void TextAutoGenerateTextMcpServerListView::slotEditInstance(const QModelIndex &index)
-{
-    const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::MCPServerRoles::Identifier).toByteArray();
-    if (uuid.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid server uuid";
-    } else {
-        Q_EMIT editServer(uuid);
-    }
 }
 
 #include "moc_textautogeneratetextmcpserverlistview.cpp"
