@@ -10,6 +10,7 @@
 class QLineEdit;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextMcpServerListView;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateTextInstancesMcpServerWidget
  * \brief The TextAutoGenerateTextInstancesMcpServerWidget class
@@ -26,5 +27,6 @@ public:
 
 private:
     QLineEdit *const mSearchLineEdit;
+    TextAutoGenerateTextMcpServerListView *const mMcpServerListView;
 };
 }

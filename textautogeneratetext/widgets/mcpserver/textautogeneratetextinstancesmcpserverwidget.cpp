@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstancesmcpserverwidget.h"
+#include "widgets/mcpserver/textautogeneratetextmcpserverlistview.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
+    , mMcpServerListView(new TextAutoGenerateTextMcpServerListView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -41,6 +43,9 @@ TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpSe
     addMcpServerButton->setAutoRaise(true);
     hboxLayout->addWidget(addMcpServerButton);
     // connect(addMcpServerButton, &QToolButton::clicked, this, &TextAutoGenerateTextInstancesManagerWidget::slotAddInstance);
+
+    mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
+    mainLayout->addWidget(mMcpServerListView);
 }
 
 TextAutoGenerateTextInstancesMcpServerWidget::~TextAutoGenerateTextInstancesMcpServerWidget() = default;

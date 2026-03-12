@@ -6,8 +6,8 @@
 
 #include "textautogeneratetextinstancesmcpserverwidgettest.h"
 
-// #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.h"
 #include "widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.h"
+#include "widgets/mcpserver/textautogeneratetextmcpserverlistview.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QToolButton>
@@ -27,8 +27,8 @@ void TextAutoGenerateTextInstancesMcpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    // auto mInstancesManagerListView = w.findChild<TextAutoGenerateText::TextAutoGenerateTextInstancesManagerListView *>(u"mInstancesManagerListView"_s);
-    // QVERIFY(mInstancesManagerListView);
+    auto mMcpServerListView = w.findChild<TextAutoGenerateText::TextAutoGenerateTextMcpServerListView *>(u"mMcpServerListView"_s);
+    QVERIFY(mMcpServerListView);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);
     QVERIFY(mSearchLineEdit);
