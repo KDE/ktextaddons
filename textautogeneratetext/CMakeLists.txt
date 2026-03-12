@@ -41,7 +41,11 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(KF6TextAutoGenerateText)
+add_library(
+    KF6TextAutoGenerateText
+    widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.h
+    widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp
+)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -590,6 +594,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsi
     RELATIVE widgets/instancesmanager
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextmcpserverwidgets_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateTextInstancesMcpServerWidget
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextmcpserverwidgets_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/mcpserver
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS
     HEADER_NAMES
     TextAutoGeneratePluginText
@@ -631,6 +643,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextmcpserverwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -648,6 +661,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
     ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextconfiguretoolsplugin_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextmcpserverwidgets_HEADERS}
 )
 
 install(
