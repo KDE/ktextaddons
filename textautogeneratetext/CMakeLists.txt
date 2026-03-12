@@ -45,6 +45,8 @@ add_library(
     KF6TextAutoGenerateText
     widgets/mcpserver/textautogenerateaddmcpserverdialog.h
     widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp
+    widgets/mcpserver/textautogenerateaddmcpserverwidget.h
+    widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp
 )
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)

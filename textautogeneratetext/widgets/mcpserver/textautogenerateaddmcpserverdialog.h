@@ -8,11 +8,15 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateAddMcpServerWidget;
 class TextAutoGenerateAddMcpServerDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateAddMcpServerDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateAddMcpServerDialog() override;
+
+private:
+    TextAutoGenerateAddMcpServerWidget *const mTextAutoGenerateAddMcpServerWidget;
 };
 }

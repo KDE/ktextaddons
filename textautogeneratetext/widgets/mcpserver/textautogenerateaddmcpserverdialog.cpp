@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateaddmcpserverdialog.h"
+#include "widgets/mcpserver/textautogenerateaddmcpserverwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -13,15 +14,14 @@ using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateAddMcpServerDialog::TextAutoGenerateAddMcpServerDialog(QWidget *parent)
     : QDialog(parent)
+    , mTextAutoGenerateAddMcpServerWidget(new TextAutoGenerateAddMcpServerWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Add Instance"));
+    setWindowTitle(i18nc("@title:window", "Add Server"));
 
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
-    /*
-        mTextAutoGenerateAddInstanceWidget->setObjectName(u"mTextAutoGenerateAddInstanceWidget"_s);
-        mainLayout->addWidget(mTextAutoGenerateAddInstanceWidget);
-    */
+    mTextAutoGenerateAddMcpServerWidget->setObjectName(u"mTextAutoGenerateAddMcpServerWidget"_s);
+    mainLayout->addWidget(mTextAutoGenerateAddMcpServerWidget);
     auto button = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, this);
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);

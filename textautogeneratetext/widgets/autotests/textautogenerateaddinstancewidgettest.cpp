@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancecombobox.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateAddInstanceWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateAddInstanceWidgetTest::TextAutoGenerateAddInstanceWidgetTest(QObject *parent)
     : QObject{parent}
 {
