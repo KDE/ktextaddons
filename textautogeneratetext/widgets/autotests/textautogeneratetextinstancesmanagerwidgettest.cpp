@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratetextinstancesmanagerwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(TextAutoGenerateTextInstancesManagerWidgetTest)
 TextAutoGenerateTextInstancesManagerWidgetTest::TextAutoGenerateTextInstancesManagerWidgetTest(QObject *parent)
     : QObject{parent}

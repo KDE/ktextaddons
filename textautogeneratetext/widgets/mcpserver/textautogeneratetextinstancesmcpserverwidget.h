@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace TextAutoGenerateText
 {
 /*!
@@ -22,5 +23,8 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesMcpServerWidget :
 public:
     explicit TextAutoGenerateTextInstancesMcpServerWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesMcpServerWidget() override;
+
+private:
+    QLineEdit *const mSearchLineEdit;
 };
 }
