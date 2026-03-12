@@ -21,12 +21,11 @@ TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManag
                                                                                            QWidget *parent)
     : QListView(parent)
     , mSortFilterProxyModel(new TextAutoGenerateTextInstanceSortFilterProxyModel(this))
-    , mTextAutoGenerateManager(manager)
 {
     setItemDelegate(new TextAutoGenerateTextInstancesManagerListViewDelegate(this));
     setDragEnabled(false);
-    if (mTextAutoGenerateManager) {
-        mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
+    if (manager) {
+        mSortFilterProxyModel->setSourceModel(manager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
     }
     setModel(mSortFilterProxyModel);
     connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextInstancesManagerListView::slotEditInstance);
