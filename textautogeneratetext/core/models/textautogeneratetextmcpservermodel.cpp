@@ -36,9 +36,9 @@ bool TextAutoGenerateTextMcpServerModel::setData(const QModelIndex &idx, const Q
     const auto &instance = mMcpServers[id];
     switch (role) {
     case Qt::CheckStateRole:
-    case InstanceRoles::Enabled:
+    case MCPServerRoles::Enabled:
         instance->setEnabled(value.toBool());
-        Q_EMIT dataChanged(idx, idx, {InstanceRoles::Enabled});
+        Q_EMIT dataChanged(idx, idx, {MCPServerRoles::Enabled});
         return true;
     default:
         break;
@@ -54,12 +54,14 @@ QVariant TextAutoGenerateTextMcpServerModel::data(const QModelIndex &index, int 
     const auto &instance = mMcpServers[index.row()];
     switch (role) {
     case Qt::DisplayRole:
-    case InstanceRoles::Name:
+    case MCPServerRoles::Name:
         return instance->name();
     case Qt::CheckStateRole:
         return instance->enabled() ? Qt::Checked : Qt::Unchecked;
-    case InstanceRoles::Enabled:
+    case MCPServerRoles::Enabled:
         return instance->enabled();
+    case MCPServerRoles::Identifier:
+        return instance->identifier();
     default:
         break;
     }

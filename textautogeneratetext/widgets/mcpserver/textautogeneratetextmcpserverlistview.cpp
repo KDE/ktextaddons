@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextmcpserverlistview.h"
+#include "core/models/textautogeneratetextmcpservermodel.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -47,34 +48,18 @@ void TextAutoGenerateTextMcpServerListView::slotEditMcpServer(const QModelIndex 
 void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
-    auto addInstanceAction = new QAction(i18nc("@action", "Add instance…"), &menu);
-    menu.addAction(addInstanceAction);
-#if 0
-    connect(addInstanceAction, &QAction::triggered, this, &TextAutoGenerateTextInstancesManagerListView::addInstance);
+    auto addServerAction = new QAction(i18nc("@action", "Add server…"), &menu);
+    menu.addAction(addServerAction);
+    connect(addServerAction, &QAction::triggered, this, &TextAutoGenerateTextMcpServerListView::addServer);
 
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         menu.addSeparator();
-        const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
-        const bool isEnabled = index.data(TextAutoGenerateTextInstanceModel::Enabled).toBool();
-        if (!isDefault && isEnabled) {
-            auto markAsDefault = new QAction(i18nc("@action", "Mark As Default"), &menu);
-            menu.addAction(markAsDefault);
-            menu.addSeparator();
-            connect(markAsDefault, &QAction::triggered, this, [this, index] {
-                const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
-                if (uuid.isEmpty()) {
-                    qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
-                } else {
-                    Q_EMIT markAsDefaultChanged(uuid);
-                }
-            });
-        }
-
         auto editAction = new QAction(QIcon::fromTheme(u"edit-rename"_s), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
             slotEditInstance(index);
         });
+#if 0
         menu.addAction(editAction);
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Instance"), &menu);
@@ -95,9 +80,19 @@ void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *
             }
         });
         menu.addAction(removeAction);
-    }
 #endif
+    }
     menu.exec(event->globalPos());
+}
+
+void TextAutoGenerateTextMcpServerListView::slotEditInstance(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::MCPServerRoles::Identifier).toByteArray();
+    if (uuid.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid server uuid";
+    } else {
+        Q_EMIT editServer(uuid);
+    }
 }
 
 #include "moc_textautogeneratetextmcpserverlistview.cpp"

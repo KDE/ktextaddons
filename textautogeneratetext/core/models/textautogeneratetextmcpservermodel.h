@@ -21,9 +21,10 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextMcpServerModel : public QA
 {
     Q_OBJECT
 public:
-    enum InstanceRoles : uint16_t {
+    enum MCPServerRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Enabled,
+        Identifier,
     };
     /*!
      * Constructs a new TextAutoGenerateTextMcpServerModel object.
