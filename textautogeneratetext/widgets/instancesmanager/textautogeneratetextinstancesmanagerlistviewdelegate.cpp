@@ -73,7 +73,7 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     painter->setFont(f);
 
     // Calculate the text rectangles
-    QFontMetrics fontMetrics(f);
+    const QFontMetrics fontMetrics(f);
     const QRect rect = option.rect;
 
     const QSize checkboxSize = QApplication::style()->sizeFromContents(QStyle::CT_CheckBox, nullptr, QSize(), nullptr);
@@ -93,7 +93,7 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
 
 QSize TextAutoGenerateTextInstancesManagerListViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QFontMetrics fontMetrics(option.font);
+    const QFontMetrics fontMetrics(option.font);
     const int height = fontMetrics.height() * 2; // Height for two lines
 
     const QString pluginName = index.data(TextAutoGenerateTextInstanceModel::PluginName).toString();
