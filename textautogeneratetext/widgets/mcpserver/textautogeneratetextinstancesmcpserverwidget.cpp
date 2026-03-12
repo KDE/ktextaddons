@@ -47,11 +47,25 @@ TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpSe
 
     mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
     mainLayout->addWidget(mMcpServerListView);
+
+    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::addServer, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer);
+    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::removeServer, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotRemoveServer);
+    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::editServer, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotEditServer);
 }
 
 TextAutoGenerateTextInstancesMcpServerWidget::~TextAutoGenerateTextInstancesMcpServerWidget() = default;
 
 void TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer()
+{
+    // TODO
+}
+
+void TextAutoGenerateTextInstancesMcpServerWidget::slotRemoveServer(const QByteArray &identifier)
+{
+    // TODO
+}
+
+void TextAutoGenerateTextInstancesMcpServerWidget::slotEditServer(const QByteArray &identifier)
 {
     // TODO
 }

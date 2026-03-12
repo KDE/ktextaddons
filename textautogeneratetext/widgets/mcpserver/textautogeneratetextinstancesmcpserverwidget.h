@@ -35,6 +35,8 @@ public:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddServer();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveServer(const QByteArray &identifier);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditServer(const QByteArray &identifier);
     QLineEdit *const mSearchLineEdit;
     TextAutoGenerateTextMcpServerListView *const mMcpServerListView;
 };
