@@ -41,7 +41,11 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(KF6TextAutoGenerateText)
+add_library(
+    KF6TextAutoGenerateText
+    core/textautogeneratetextmcpservermanager.h
+    core/textautogeneratetextmcpservermanager.cpp
+)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -499,6 +503,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateAttachmentUtils
     TextAutoGenerateSearchMessageSettings
     TextAutoGenerateTextMcpServer
+    TextAutoGenerateTextMcpServerManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
