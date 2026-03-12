@@ -22,6 +22,7 @@ class TextAutoGenerateTextPlugin;
 class TextAutoGenerateChatSettings;
 class TextAutoGenerateSettings;
 class TextAutoGenerateTextInstancesManager;
+class TextAutoGenerateTextMcpServerManager;
 class TextAutoGenerateTextToSpeechEnqueueManager;
 class TextAutoGenerateFileCache;
 /*!
@@ -407,6 +408,13 @@ public:
      * \brief verifyListEmpty
      */
     void verifyListEmpty();
+
+    /*!
+     * \brief textAutoGenerateTextMcpServerManager
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateTextMcpServerManager *textAutoGenerateTextMcpServerManager() const;
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
@@ -523,6 +531,7 @@ private:
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextAutoGenerateTextToSpeechEnqueueManager *const mTextAutoGenerateTextToSpeechEnqueueManager;
 #endif
+    TextAutoGenerateTextMcpServerManager *const mTextAutoGenerateTextMcpServerManager;
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
     QString mSwitchToChatName;

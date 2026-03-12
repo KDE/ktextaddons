@@ -7,6 +7,7 @@
 #include "core/models/textautogeneratetextmcpservermodel.h"
 #include "core/models/textautogeneratetextmcpserversortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextmcpservermanager.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -21,7 +22,7 @@ TextAutoGenerateTextMcpServerListView::TextAutoGenerateTextMcpServerListView(Tex
 {
     setDragEnabled(false);
     if (manager) {
-        // TODO mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
+        mSortFilterProxyModel->setSourceModel(manager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel());
     }
     setModel(mSortFilterProxyModel);
     connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextMcpServerListView::slotEditMcpServer);

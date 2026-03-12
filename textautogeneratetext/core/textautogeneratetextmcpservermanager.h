@@ -9,6 +9,7 @@
 #include <QObject>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextMcpServerModel;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateTextMcpServerManager
  * \brief The TextAutoGenerateTextMcpServerManager class
@@ -28,5 +29,14 @@ public:
     /*!
      */
     ~TextAutoGenerateTextMcpServerManager() override;
+
+    /*!
+     * \brief textAutoGenerateTextMcpServerModel
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateTextMcpServerModel *textAutoGenerateTextMcpServerModel() const;
+
+private:
+    TextAutoGenerateTextMcpServerModel *const mTextAutoGenerateTextMcpServerModel;
 };
 }

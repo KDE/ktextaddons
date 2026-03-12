@@ -9,6 +9,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
+#include "core/textautogeneratetextmcpservermanager.h"
 #include "core/textautogeneratetextutils.h"
 #include "core/textautogeneratetoolcalljob.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
@@ -55,6 +56,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     , mTextAutoGenerateTextToSpeechEnqueueManager(new TextAutoGenerateTextToSpeechEnqueueManager(this))
 #endif
+    , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpServerManager(this))
 {
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     // Load TextAutoGenerateTextToolPluginManager
@@ -711,6 +713,11 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     // content.info =
     replaceContent(info.chatId, info.messageUuid, content, info.attachementInfoList);
     changeInProgress(info.chatId, info.messageUuid, false);
+}
+
+TextAutoGenerateTextMcpServerManager *TextAutoGenerateManager::textAutoGenerateTextMcpServerManager() const
+{
+    return mTextAutoGenerateTextMcpServerManager;
 }
 
 TextAutoGenerateLocalDatabaseManager *TextAutoGenerateManager::databaseManager() const
