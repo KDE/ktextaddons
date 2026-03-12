@@ -8,6 +8,7 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextMcpServerSortFilterProxyModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextMcpServerListView : public QListView
 {
     Q_OBJECT
@@ -27,5 +28,6 @@ protected:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMcpServer(const QModelIndex &index);
+    TextAutoGenerateTextMcpServerSortFilterProxyModel *const mSortFilterProxyModel;
 };
 }
