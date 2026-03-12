@@ -13,10 +13,11 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpServerWidget(QWidget *parent)
+TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                           QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
-    , mMcpServerListView(new TextAutoGenerateTextMcpServerListView(this))
+    , mMcpServerListView(new TextAutoGenerateTextMcpServerListView(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -34,7 +35,7 @@ TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpSe
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
-    // connect(mSearchLineEdit, &QLineEdit::textChanged, mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::slotSearchChanged);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mMcpServerListView, &TextAutoGenerateTextMcpServerListView::slotSearchChanged);
 
     auto addMcpServerButton = new QToolButton(this);
     addMcpServerButton->setObjectName(u"addMcpServerButton"_s);
@@ -42,12 +43,17 @@ TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpSe
     addMcpServerButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
     addMcpServerButton->setAutoRaise(true);
     hboxLayout->addWidget(addMcpServerButton);
-    // connect(addMcpServerButton, &QToolButton::clicked, this, &TextAutoGenerateTextInstancesManagerWidget::slotAddInstance);
+    connect(addMcpServerButton, &QToolButton::clicked, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer);
 
     mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
     mainLayout->addWidget(mMcpServerListView);
 }
 
 TextAutoGenerateTextInstancesMcpServerWidget::~TextAutoGenerateTextInstancesMcpServerWidget() = default;
+
+void TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer()
+{
+    // TODO
+}
 
 #include "moc_textautogeneratetextinstancesmcpserverwidget.cpp"

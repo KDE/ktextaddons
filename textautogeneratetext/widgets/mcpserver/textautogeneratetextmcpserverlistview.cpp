@@ -6,6 +6,7 @@
 #include "textautogeneratetextmcpserverlistview.h"
 #include "core/models/textautogeneratetextmcpservermodel.h"
 #include "core/models/textautogeneratetextmcpserversortfilterproxymodel.h"
+#include "core/textautogeneratemanager.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -14,16 +15,14 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateTextMcpServerListView::TextAutoGenerateTextMcpServerListView(QWidget *parent)
+TextAutoGenerateTextMcpServerListView::TextAutoGenerateTextMcpServerListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QListView(parent)
     , mSortFilterProxyModel(new TextAutoGenerateTextMcpServerSortFilterProxyModel(this))
 {
     setDragEnabled(false);
-#if 0
-    if (mTextAutoGenerateManager) {
-        mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
+    if (manager) {
+        // TODO mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
     }
-#endif
     setModel(mSortFilterProxyModel);
     connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextMcpServerListView::slotEditMcpServer);
 }

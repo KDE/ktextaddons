@@ -8,12 +8,13 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateTextMcpServerSortFilterProxyModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextMcpServerListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextMcpServerListView(QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextMcpServerListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextMcpServerListView() override;
 
     void slotSearchChanged(const QString &str);

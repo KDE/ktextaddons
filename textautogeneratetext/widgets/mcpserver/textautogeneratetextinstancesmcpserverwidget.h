@@ -11,6 +11,7 @@ class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextMcpServerListView;
+class TextAutoGenerateManager;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateTextInstancesMcpServerWidget
  * \brief The TextAutoGenerateTextInstancesMcpServerWidget class
@@ -22,10 +23,18 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesMcpServerWidget :
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstancesMcpServerWidget(QWidget *parent = nullptr);
+    /*!
+     * \brief TextAutoGenerateTextInstancesMcpServerWidget
+     * \param manager
+     * \param parent
+     */
+    explicit TextAutoGenerateTextInstancesMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextInstancesMcpServerWidget() override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddServer();
     QLineEdit *const mSearchLineEdit;
     TextAutoGenerateTextMcpServerListView *const mMcpServerListView;
 };
