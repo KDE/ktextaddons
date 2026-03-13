@@ -14,5 +14,8 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateAddMcpServerWidget : pub
 public:
     explicit TextAutoGenerateAddMcpServerWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateAddMcpServerWidget() override;
+
+Q_SIGNALS:
+    void buttonOkEnabled(bool state);
 };
 }

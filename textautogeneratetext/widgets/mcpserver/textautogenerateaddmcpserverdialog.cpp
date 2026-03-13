@@ -29,11 +29,9 @@ TextAutoGenerateAddMcpServerDialog::TextAutoGenerateAddMcpServerDialog(QWidget *
     buttonOk->setEnabled(false);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateAddMcpServerDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateAddMcpServerDialog::accept);
-    /*
-    connect(mTextAutoGenerateAddInstanceWidget, &TextAutoGenerateAddInstanceWidget::buttonOkEnabled, this, [buttonOk](bool state) {
+    connect(mTextAutoGenerateAddMcpServerWidget, &TextAutoGenerateAddMcpServerWidget::buttonOkEnabled, this, [buttonOk](bool state) {
         buttonOk->setEnabled(state);
     });
-    */
 }
 
 TextAutoGenerateAddMcpServerDialog::~TextAutoGenerateAddMcpServerDialog() = default;
