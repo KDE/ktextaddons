@@ -83,6 +83,21 @@ void TextAutoGenerateTextMcpServerModel::setMcpServers(const QList<TextAutoGener
     mMcpServers = newTextInstances;
     endResetModel();
 }
+TextAutoGenerateTextMcpServer TextAutoGenerateTextMcpServerModel::mpcServer(const QByteArray &identifier) const
+{
+    if (identifier.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Empty identifier it's a bug";
+        return {};
+    }
+    const auto matchesIdentifier = [&](const TextAutoGenerateTextMcpServer &msg) {
+        return msg.identifier() == identifier;
+    };
+    const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier);
+    if (it != mMcpServers.end()) {
+        return *it;
+    }
+    return {};
+}
 
 bool TextAutoGenerateTextMcpServerModel::isEmpty() const
 {

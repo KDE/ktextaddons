@@ -91,6 +91,13 @@ public:
      */
     void removeMcpServer(const QByteArray &id);
 
+    /*!
+     * \brief mpcServer
+     * \param identifier
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateTextMcpServer mpcServer(const QByteArray &identifier) const;
+
 private:
     QList<TextAutoGenerateTextMcpServer> mMcpServers;
 };

@@ -82,7 +82,13 @@ void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &ide
 void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &identifier)
 {
     QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
-    // TODO add current server info
+    const TextAutoGenerateTextMcpServer mcpServer =
+        mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->mpcServer(identifier);
+    const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo currentInfo{
+        .name = mcpServer.name(),
+        .serverUrl = mcpServer.serverUrl().toString(),
+    };
+    dlg->setServerWidgetInfo(currentInfo);
     if (dlg->exec()) {
         TextAutoGenerateTextMcpServer server;
         server.createUniqueIdentifier();
