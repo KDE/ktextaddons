@@ -66,7 +66,7 @@ void TextAutoGenerateTextMcpServerWidget::slotAddServer()
     if (dlg->exec()) {
         TextAutoGenerateTextMcpServer server;
         server.createUniqueIdentifier();
-        auto info = dlg->serverWidgetInfo();
+        const auto info = dlg->serverWidgetInfo();
         server.setServerUrl(QUrl(info.serverUrl));
         server.setName(info.name);
         mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
