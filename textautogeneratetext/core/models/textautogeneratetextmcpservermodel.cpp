@@ -97,9 +97,21 @@ bool TextAutoGenerateTextMcpServerModel::isEmpty() const
     return true;
 }
 
-void TextAutoGenerateTextMcpServerModel::removeMcpServer(const QByteArray &id)
+void TextAutoGenerateTextMcpServerModel::removeMcpServer(const QByteArray &identifier)
 {
-    // TODO
+    if (identifier.isEmpty()) {
+        return;
+    }
+    const auto matchesIdentifier = [&](const TextAutoGenerateTextMcpServer &msg) {
+        return msg.identifier() == identifier;
+    };
+    const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier);
+    if (it != mMcpServers.end()) {
+        const int i = std::distance(mMcpServers.begin(), it);
+        beginRemoveRows(QModelIndex(), i, i);
+        mMcpServers.removeAt(i);
+        endRemoveRows();
+    }
 }
 
 Qt::ItemFlags TextAutoGenerateTextMcpServerModel::flags(const QModelIndex &index) const
