@@ -19,19 +19,19 @@ class TextAutoGenerateManager;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstancesMcpServerWidget
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesMcpServerWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextMcpServerWidget : public QWidget
 {
     Q_OBJECT
 public:
     /*!
-     * \brief TextAutoGenerateTextInstancesMcpServerWidget
+     * \brief TextAutoGenerateTextMcpServerWidget
      * \param manager
      * \param parent
      */
-    explicit TextAutoGenerateTextInstancesMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     /*!
      */
-    ~TextAutoGenerateTextInstancesMcpServerWidget() override;
+    ~TextAutoGenerateTextMcpServerWidget() override;
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddServer();

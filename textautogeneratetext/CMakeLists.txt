@@ -408,8 +408,8 @@ target_sources(
         widgets/debug/textautogeneratejsonplaintexteditwidget.cpp
         widgets/availablemodel/textautogeneratemodelavailablelistview.h
         widgets/availablemodel/textautogeneratemodelavailablelistview.cpp
-        widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.h
-        widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp
+        widgets/mcpserver/textautogeneratetextmcpserverwidget.h
+        widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp
         widgets/mcpserver/textautogeneratetextmcpserverlistview.h
         widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp
 )
@@ -608,7 +608,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsi
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextmcpserverwidgets_HEADERS
     HEADER_NAMES
-    TextAutoGenerateTextInstancesMcpServerWidget
+    TextAutoGenerateTextMcpServerWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextmcpserverwidgets_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/mcpserver

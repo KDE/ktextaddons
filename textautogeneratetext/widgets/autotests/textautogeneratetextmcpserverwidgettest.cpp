@@ -4,24 +4,24 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "textautogeneratetextinstancesmcpserverwidgettest.h"
+#include "textautogeneratetextmcpserverwidgettest.h"
 
-#include "widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.h"
 #include "widgets/mcpserver/textautogeneratetextmcpserverlistview.h"
+#include "widgets/mcpserver/textautogeneratetextmcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
-QTEST_MAIN(TextAutoGenerateTextInstancesMcpServerWidgetTest)
-TextAutoGenerateTextInstancesMcpServerWidgetTest::TextAutoGenerateTextInstancesMcpServerWidgetTest(QObject *parent)
+QTEST_MAIN(TextAutoGenerateTextMcpServerWidgetTest)
+TextAutoGenerateTextMcpServerWidgetTest::TextAutoGenerateTextMcpServerWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutoGenerateTextInstancesMcpServerWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateTextMcpServerWidgetTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateText::TextAutoGenerateTextInstancesMcpServerWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateTextMcpServerWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
@@ -41,4 +41,4 @@ void TextAutoGenerateTextInstancesMcpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(addMcpServerButton->autoRaise());
 }
 
-#include "moc_textautogeneratetextinstancesmcpserverwidgettest.cpp"
+#include "moc_textautogeneratetextmcpserverwidgettest.cpp"

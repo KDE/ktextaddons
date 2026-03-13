@@ -3,7 +3,7 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratetextinstancesmcpserverwidget.h"
+#include "textautogeneratetextmcpserverwidget.h"
 #include "widgets/mcpserver/textautogeneratetextmcpserverlistview.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -13,8 +13,7 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager,
-                                                                                           QWidget *parent)
+TextAutoGenerateTextMcpServerWidget::TextAutoGenerateTextMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
     , mMcpServerListView(new TextAutoGenerateTextMcpServerListView(manager, this))
@@ -43,31 +42,31 @@ TextAutoGenerateTextInstancesMcpServerWidget::TextAutoGenerateTextInstancesMcpSe
     addMcpServerButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
     addMcpServerButton->setAutoRaise(true);
     hboxLayout->addWidget(addMcpServerButton);
-    connect(addMcpServerButton, &QToolButton::clicked, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer);
+    connect(addMcpServerButton, &QToolButton::clicked, this, &TextAutoGenerateTextMcpServerWidget::slotAddServer);
 
     mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
     mainLayout->addWidget(mMcpServerListView);
 
-    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::addServer, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer);
-    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::removeServer, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotRemoveServer);
-    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::editServer, this, &TextAutoGenerateTextInstancesMcpServerWidget::slotEditServer);
+    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::addServer, this, &TextAutoGenerateTextMcpServerWidget::slotAddServer);
+    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::removeServer, this, &TextAutoGenerateTextMcpServerWidget::slotRemoveServer);
+    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::editServer, this, &TextAutoGenerateTextMcpServerWidget::slotEditServer);
 }
 
-TextAutoGenerateTextInstancesMcpServerWidget::~TextAutoGenerateTextInstancesMcpServerWidget() = default;
+TextAutoGenerateTextMcpServerWidget::~TextAutoGenerateTextMcpServerWidget() = default;
 
-void TextAutoGenerateTextInstancesMcpServerWidget::slotAddServer()
+void TextAutoGenerateTextMcpServerWidget::slotAddServer()
 {
     // TODO
 }
 
-void TextAutoGenerateTextInstancesMcpServerWidget::slotRemoveServer(const QByteArray &identifier)
+void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &identifier)
 {
     // TODO
 }
 
-void TextAutoGenerateTextInstancesMcpServerWidget::slotEditServer(const QByteArray &identifier)
+void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &identifier)
 {
     // TODO
 }
 
-#include "moc_textautogeneratetextinstancesmcpserverwidget.cpp"
+#include "moc_textautogeneratetextmcpserverwidget.cpp"
