@@ -64,7 +64,12 @@ void TextAutoGenerateTextMcpServerWidget::slotAddServer()
 {
     QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
     if (dlg->exec()) {
-        // TODO
+        TextAutoGenerateTextMcpServer server;
+        server.createUniqueIdentifier();
+        auto info = dlg->serverWidgetInfo();
+        server.setServerUrl(QUrl(info.serverUrl));
+        server.setName(info.name);
+        mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
     }
     delete dlg;
 }
@@ -77,11 +82,14 @@ void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &ide
 void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &identifier)
 {
     QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
+    // TODO add current server info
     if (dlg->exec()) {
         TextAutoGenerateTextMcpServer server;
         server.createUniqueIdentifier();
+        auto info = dlg->serverWidgetInfo();
+        server.setServerUrl(QUrl(info.serverUrl));
+        server.setName(info.name);
         mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
-        // TODO
     }
     delete dlg;
 }
