@@ -4,11 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextmcpserver.h"
+#include "core/textautogeneratetextutils.h"
 #include <QDebug>
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextMcpServer::TextAutoGenerateTextMcpServer() = default;
 
 TextAutoGenerateTextMcpServer::~TextAutoGenerateTextMcpServer() = default;
+
+void TextAutoGenerateTextMcpServer::createUniqueIdentifier()
+{
+    mIdentifier = TextAutoGenerateTextUtils::generateUUid();
+}
 
 QUrl TextAutoGenerateTextMcpServer::serverUrl() const
 {

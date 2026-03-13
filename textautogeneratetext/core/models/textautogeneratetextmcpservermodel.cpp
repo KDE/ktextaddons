@@ -70,6 +70,13 @@ QList<TextAutoGenerateTextMcpServer> TextAutoGenerateTextMcpServerModel::mcpServ
     return mMcpServers;
 }
 
+void TextAutoGenerateTextMcpServerModel::addMcpServer(const TextAutoGenerateTextMcpServer &server)
+{
+    beginInsertRows(QModelIndex(), mMcpServers.count(), mMcpServers.count());
+    mMcpServers.append(server);
+    endInsertRows();
+}
+
 void TextAutoGenerateTextMcpServerModel::setMcpServers(const QList<TextAutoGenerateTextMcpServer> &newTextInstances)
 {
     beginResetModel();

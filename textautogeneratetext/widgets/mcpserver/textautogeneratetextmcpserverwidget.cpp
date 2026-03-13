@@ -4,6 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextmcpserverwidget.h"
+#include "core/models/textautogeneratetextmcpservermodel.h"
+#include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextmcpservermanager.h"
 #include "textautogenerateaddmcpserverdialog.h"
 #include "textautogeneratetextmcpserverlistview.h"
 #include <KLineEditEventHandler>
@@ -19,6 +22,7 @@ TextAutoGenerateTextMcpServerWidget::TextAutoGenerateTextMcpServerWidget(TextAut
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
     , mMcpServerListView(new TextAutoGenerateTextMcpServerListView(manager, this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -74,6 +78,9 @@ void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &ident
 {
     QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
     if (dlg->exec()) {
+        TextAutoGenerateTextMcpServer server;
+        server.createUniqueIdentifier();
+        mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
         // TODO
     }
     delete dlg;

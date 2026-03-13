@@ -16,6 +16,9 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextMcpServer
 public:
     TextAutoGenerateTextMcpServer();
     ~TextAutoGenerateTextMcpServer();
+
+    void createUniqueIdentifier();
+
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
