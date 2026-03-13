@@ -14,14 +14,19 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateAddMcpServerWidget::TextAutoGenerateAddMcpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mServerNameLineEdit(new QLineEdit(this))
+    , mServerUrlLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     mServerNameLineEdit->setObjectName(u"mServerNameLineEdit"_s);
-    mainLayout->addRow(i18nc("@label:textbox", "Name"), mServerNameLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "Name:"), mServerNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerNameLineEdit);
+
+    mServerUrlLineEdit->setObjectName(u"mServerNameLineEdit"_s);
+    mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
+    KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
 }
 
 TextAutoGenerateAddMcpServerWidget::~TextAutoGenerateAddMcpServerWidget() = default;

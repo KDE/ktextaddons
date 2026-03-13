@@ -21,5 +21,6 @@ Q_SIGNALS:
 
 private:
     QLineEdit *const mServerNameLineEdit;
+    QLineEdit *const mServerUrlLineEdit;
 };
 }
