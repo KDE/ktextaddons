@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:42+0000\n"
+"POT-Creation-Date: 2026-03-13 00:42+0000\n"
 "PO-Revision-Date: 2026-02-28 11:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -62,62 +62,62 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Tools"
 msgstr "கருவிகள்"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Small"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Medium"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Big"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Huge"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Multilingual"
 msgstr "பன்மொழி"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Code"
 msgstr "நிரல்தொடர்"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:162
 #, kde-format
 msgid "Math"
 msgstr "கணிதம்"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Vision"
 msgstr "பார்வை"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Embedding"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Reasoning"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Cloud"
 msgstr ""
@@ -2476,42 +2476,45 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:55
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:65
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
+#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:36
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2519,10 +2522,36 @@ msgid "Search…"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
+#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr ""
+
+#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Server"
+msgstr ""
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
+#, kde-format
+msgctxt "@action"
+msgid "Add server…"
+msgstr ""
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
+#, kde-format
+msgid "Do you want to remove this server (%1)?"
+msgstr ""
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title"
+msgid "Remove Server"
+msgstr "நீக்கு"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
