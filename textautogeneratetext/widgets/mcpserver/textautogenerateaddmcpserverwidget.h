@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateAddMcpServerWidget : public QWidget
@@ -17,5 +18,8 @@ public:
 
 Q_SIGNALS:
     void buttonOkEnabled(bool state);
+
+private:
+    QLineEdit *const mServerNameLineEdit;
 };
 }
