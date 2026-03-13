@@ -41,6 +41,11 @@ public:
      */
     void loadServers();
 
+    /*!
+     * \brief saveServers
+     */
+    void saveServers();
+
 private:
     TextAutoGenerateTextMcpServerModel *const mTextAutoGenerateTextMcpServerModel;
 };

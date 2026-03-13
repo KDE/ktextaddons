@@ -8,7 +8,6 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextInstance>
-class KConfig;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstanceModel;
@@ -89,6 +88,5 @@ private:
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
-    KConfig *const mConfig;
 };
 }

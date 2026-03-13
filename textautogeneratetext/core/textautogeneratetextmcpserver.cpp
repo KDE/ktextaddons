@@ -7,6 +7,7 @@
 #include "core/textautogeneratetextutils.h"
 #include <QDebug>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextMcpServer::TextAutoGenerateTextMcpServer() = default;
 
 TextAutoGenerateTextMcpServer::~TextAutoGenerateTextMcpServer() = default;
@@ -58,12 +59,23 @@ void TextAutoGenerateTextMcpServer::setIdentifier(const QByteArray &newIdentifie
 
 void TextAutoGenerateTextMcpServer::load(const KConfigGroup &config)
 {
-    // TODO
+    mEnabled = config.readEntry("Enabled", true);
+    mName = config.readEntry("Name", QString());
+    mIdentifier = config.readEntry("Id", QByteArray());
+    mServerUrl = config.readEntry("ServerUrl", QUrl());
 }
 
 void TextAutoGenerateTextMcpServer::save(KConfigGroup &config)
 {
-    // TODO
+    config.writeEntry(u"ServerUrl"_s, mServerUrl);
+    config.writeEntry(u"Id"_s, mIdentifier);
+    config.writeEntry(u"Name"_s, mName);
+    config.writeEntry(u"Enabled"_s, mEnabled);
+}
+
+bool TextAutoGenerateTextMcpServer::isValid() const
+{
+    return !mIdentifier.isEmpty() && !mName.isEmpty() && !mServerUrl.isEmpty();
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t)

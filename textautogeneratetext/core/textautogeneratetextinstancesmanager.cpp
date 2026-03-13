@@ -10,8 +10,8 @@
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetextutils.h"
-#include <KConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -20,13 +20,11 @@ TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextA
     , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mManager(manager)
-    , mConfig(new KConfig(TextAutoGenerateTextUtils::instanceConfigFileName()))
 {
 }
 
 TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager()
 {
-    delete mConfig;
 }
 
 bool TextAutoGenerateTextInstancesManager::isEmpty() const
@@ -44,15 +42,16 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstancesManager::textAutoGenera
 
 void TextAutoGenerateTextInstancesManager::loadInstances()
 {
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
     mTextAutoGenerateEngineLoader->loadPlugins();
-    const QStringList instancesList = TextAutoGenerateTextUtils::instancesList(mConfig);
+    const QStringList instancesList = TextAutoGenerateTextUtils::instancesList(config);
     if (instancesList.isEmpty()) {
         return; // nothing to be done...
     }
 
     QList<TextAutoGenerateTextInstance *> lstInstances;
     for (const auto &group : instancesList) {
-        const KConfigGroup configGroup(mConfig, group);
+        const KConfigGroup configGroup(config, group);
         auto inst = new TextAutoGenerateTextInstance;
         inst->load(configGroup);
 
@@ -71,26 +70,27 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
     // qDebug() << " lstInstances " << lstInstances;
     setInstances(lstInstances);
     // Set current Instance after loading all instances. Otherwise we can'"t have default instance
-    const KConfigGroup configGeneralGroup(mConfig, u"General"_s);
+    const KConfigGroup configGeneralGroup(config, u"General"_s);
     setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 }
 
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
-    KConfigGroup configGeneralGroup(mConfig, u"General"_s);
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
+    KConfigGroup configGeneralGroup(config, u"General"_s);
     configGeneralGroup.writeEntry("currentInstance", currentInstance());
 
-    const auto instanceList = TextAutoGenerateTextUtils::instancesList(mConfig);
+    const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
     for (const auto &group : instanceList) {
-        mConfig->deleteGroup(group);
+        config->deleteGroup(group);
     }
 
     const QList<TextAutoGenerateTextInstance *> instanceLst = instances();
     for (int i = 0; i < instanceLst.count(); ++i) {
-        KConfigGroup group = mConfig->group(u"Instance #%1"_s.arg(i));
+        KConfigGroup group = config->group(u"Instance #%1"_s.arg(i));
         instanceLst.at(i)->save(group);
     }
-    mConfig->sync();
+    config->sync();
 }
 
 TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAutoGenerateTextInstanceModel() const

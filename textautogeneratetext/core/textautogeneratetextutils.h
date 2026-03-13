@@ -5,8 +5,8 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <KSharedConfig>
 #include <QString>
-class KConfig;
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateTextUtils
@@ -16,9 +16,11 @@ namespace TextAutoGenerateTextUtils
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString instanceConfigFileName();
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList instancesList(KConfig *config);
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList instancesList(const KSharedConfig::Ptr &config);
 /*!
  */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QByteArray generateUUid();
+
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList mcpServerList(const KSharedConfig::Ptr &config);
 };
 }

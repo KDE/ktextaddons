@@ -18,7 +18,7 @@ QString TextAutoGenerateTextUtils::instanceConfigFileName()
     return u"autogeneratetextinstances"_s;
 }
 
-QStringList TextAutoGenerateTextUtils::instancesList(KConfig *config)
+QStringList TextAutoGenerateTextUtils::instancesList(const KSharedConfig::Ptr &config)
 {
     static const QRegularExpression regularExpression(u"^Instance #\\d+$"_s);
     return config->groupList().filter(regularExpression);
@@ -27,4 +27,10 @@ QStringList TextAutoGenerateTextUtils::instancesList(KConfig *config)
 QByteArray TextAutoGenerateTextUtils::generateUUid()
 {
     return QUuid::createUuid().toByteArray(QUuid::Id128);
+}
+
+QStringList TextAutoGenerateTextUtils::mcpServerList(const KSharedConfig::Ptr &config)
+{
+    static const QRegularExpression regularExpression(u"^Mcp Server #\\d+$"_s);
+    return config->groupList().filter(regularExpression);
 }

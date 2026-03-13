@@ -34,6 +34,8 @@ public:
     void load(const KConfigGroup &config);
     void save(KConfigGroup &config);
 
+    [[nodiscard]] bool isValid() const;
+
 private:
     bool mEnabled = true;
     QUrl mServerUrl;

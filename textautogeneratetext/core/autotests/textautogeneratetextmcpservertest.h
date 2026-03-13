@@ -15,4 +15,5 @@ public:
     ~TextAutoGenerateTextMcpServerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldVerifyValidValue();
 };
