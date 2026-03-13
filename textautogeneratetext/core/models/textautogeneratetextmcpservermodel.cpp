@@ -13,10 +13,7 @@ TextAutoGenerateTextMcpServerModel::TextAutoGenerateTextMcpServerModel(QObject *
 {
 }
 
-TextAutoGenerateTextMcpServerModel::~TextAutoGenerateTextMcpServerModel()
-{
-    qDeleteAll(mMcpServers);
-}
+TextAutoGenerateTextMcpServerModel::~TextAutoGenerateTextMcpServerModel() = default;
 
 int TextAutoGenerateTextMcpServerModel::rowCount(const QModelIndex &parent) const
 {
@@ -33,11 +30,11 @@ bool TextAutoGenerateTextMcpServerModel::setData(const QModelIndex &idx, const Q
         return false;
     }
     const int id = idx.row();
-    const auto &instance = mMcpServers[id];
+    auto &server = mMcpServers[id];
     switch (role) {
     case Qt::CheckStateRole:
     case MCPServerRoles::Enabled:
-        instance->setEnabled(value.toBool());
+        server.setEnabled(value.toBool());
         Q_EMIT dataChanged(idx, idx, {MCPServerRoles::Enabled});
         return true;
     default:
@@ -51,33 +48,31 @@ QVariant TextAutoGenerateTextMcpServerModel::data(const QModelIndex &index, int 
     if (index.row() < 0 || index.row() >= mMcpServers.count()) {
         return {};
     }
-    const auto &instance = mMcpServers[index.row()];
+    const auto &server = mMcpServers[index.row()];
     switch (role) {
     case Qt::DisplayRole:
     case MCPServerRoles::Name:
-        return instance->name();
+        return server.name();
     case Qt::CheckStateRole:
-        return instance->enabled() ? Qt::Checked : Qt::Unchecked;
+        return server.enabled() ? Qt::Checked : Qt::Unchecked;
     case MCPServerRoles::Enabled:
-        return instance->enabled();
+        return server.enabled();
     case MCPServerRoles::Identifier:
-        return instance->identifier();
+        return server.identifier();
     default:
         break;
     }
     return {};
 }
 
-QList<TextAutoGenerateTextMcpServer *> TextAutoGenerateTextMcpServerModel::mcpServers() const
+QList<TextAutoGenerateTextMcpServer> TextAutoGenerateTextMcpServerModel::mcpServers() const
 {
     return mMcpServers;
 }
 
-void TextAutoGenerateTextMcpServerModel::setMcpServers(const QList<TextAutoGenerateTextMcpServer *> &newTextInstances)
+void TextAutoGenerateTextMcpServerModel::setMcpServers(const QList<TextAutoGenerateTextMcpServer> &newTextInstances)
 {
     beginResetModel();
-    qDeleteAll(mMcpServers);
-    mMcpServers.clear();
     mMcpServers = newTextInstances;
     endResetModel();
 }
@@ -87,8 +82,8 @@ bool TextAutoGenerateTextMcpServerModel::isEmpty() const
     if (mMcpServers.isEmpty()) {
         return true;
     }
-    for (const auto &inst : mMcpServers) {
-        if (inst->enabled()) {
+    for (const auto &server : mMcpServers) {
+        if (server.enabled()) {
             return false;
         }
     }

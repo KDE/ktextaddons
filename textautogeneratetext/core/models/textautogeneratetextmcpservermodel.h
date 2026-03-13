@@ -67,18 +67,18 @@ public:
      * Returns the list of mcp servers in the model.
      * \return The list of TextAutoGenerateTextMcpServer pointers
      */
-    [[nodiscard]] QList<TextAutoGenerateTextMcpServer *> mcpServers() const;
+    [[nodiscard]] QList<TextAutoGenerateTextMcpServer> mcpServers() const;
     /*!
      * Sets the list of mcp servers in the model.
      * \param newTextInstances The instances to set
      */
-    void setMcpServers(const QList<TextAutoGenerateTextMcpServer *> &newTextInstances);
+    void setMcpServers(const QList<TextAutoGenerateTextMcpServer> &newTextInstances);
 
     /*!
      * Adds an instance to the model.
      * \param instance The instance to add
      */
-    void addMcpServer(TextAutoGenerateTextMcpServer *instance);
+    void addMcpServer(const TextAutoGenerateTextMcpServer &instance);
     /*!
      * Returns whether the model is empty.
      * \return true if empty, false otherwise
@@ -86,6 +86,6 @@ public:
     [[nodiscard]] bool isEmpty() const;
 
 private:
-    QList<TextAutoGenerateTextMcpServer *> mMcpServers;
+    QList<TextAutoGenerateTextMcpServer> mMcpServers;
 };
 }
