@@ -97,6 +97,11 @@ bool TextAutoGenerateTextMcpServerModel::isEmpty() const
     return true;
 }
 
+void TextAutoGenerateTextMcpServerModel::removeMcpServer(const QByteArray &id)
+{
+    // TODO
+}
+
 Qt::ItemFlags TextAutoGenerateTextMcpServerModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid()) {

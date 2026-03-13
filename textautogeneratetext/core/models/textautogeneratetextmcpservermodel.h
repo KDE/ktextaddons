@@ -85,6 +85,12 @@ public:
      */
     [[nodiscard]] bool isEmpty() const;
 
+    /*!
+     * \brief removeMcpServer
+     * \param id
+     */
+    void removeMcpServer(const QByteArray &id);
+
 private:
     QList<TextAutoGenerateTextMcpServer> mMcpServers;
 };

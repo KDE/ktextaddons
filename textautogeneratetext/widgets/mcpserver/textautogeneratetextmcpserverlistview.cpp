@@ -61,7 +61,7 @@ void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *
         });
         menu.addAction(editAction);
         menu.addSeparator();
-        auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Instance"), &menu);
+        auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Server"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
             const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::Identifier).toByteArray();
             if (uuid.isEmpty()) {

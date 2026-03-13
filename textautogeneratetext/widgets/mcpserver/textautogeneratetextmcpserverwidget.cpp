@@ -76,7 +76,7 @@ void TextAutoGenerateTextMcpServerWidget::slotAddServer()
 
 void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &identifier)
 {
-    // TODO
+    mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->removeMcpServer(identifier);
 }
 
 void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &identifier)
