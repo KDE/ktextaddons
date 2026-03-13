@@ -34,4 +34,20 @@ TextAutoGenerateAddMcpServerWidget::TextAutoGenerateAddMcpServerWidget(QWidget *
 }
 
 TextAutoGenerateAddMcpServerWidget::~TextAutoGenerateAddMcpServerWidget() = default;
+
+void TextAutoGenerateAddMcpServerWidget::setServerWidgetInfo(const McpServerWidgetInfo &info)
+{
+    mServerNameLineEdit->setText(info.name);
+    mServerUrlLineEdit->setText(info.serverUrl);
+}
+
+TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo TextAutoGenerateAddMcpServerWidget::serverWidgetInfo() const
+{
+    const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo info{
+        .name = mServerNameLineEdit->text(),
+        .serverUrl = mServerUrlLineEdit->text(),
+    };
+    return info;
+}
+
 #include "moc_textautogenerateaddmcpserverwidget.cpp"

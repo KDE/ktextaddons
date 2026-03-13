@@ -5,16 +5,20 @@
 */
 #pragma once
 
+#include "textautogenerateaddmcpserverwidget.h"
 #include <QDialog>
+
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateAddMcpServerWidget;
 class TextAutoGenerateAddMcpServerDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateAddMcpServerDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateAddMcpServerDialog() override;
+
+    void setServerWidgetInfo(const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo &info);
+    [[nodiscard]] TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo serverWidgetInfo() const;
 
 private:
     TextAutoGenerateAddMcpServerWidget *const mTextAutoGenerateAddMcpServerWidget;

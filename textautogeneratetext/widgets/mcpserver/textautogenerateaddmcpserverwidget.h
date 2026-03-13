@@ -13,9 +13,15 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateAddMcpServerWidget : pub
 {
     Q_OBJECT
 public:
+    struct McpServerWidgetInfo {
+        QString name;
+        QString serverUrl;
+    };
     explicit TextAutoGenerateAddMcpServerWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateAddMcpServerWidget() override;
 
+    void setServerWidgetInfo(const McpServerWidgetInfo &info);
+    [[nodiscard]] McpServerWidgetInfo serverWidgetInfo() const;
 Q_SIGNALS:
     void buttonOkEnabled(bool state);
 

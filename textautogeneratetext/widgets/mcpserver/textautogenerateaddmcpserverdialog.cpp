@@ -5,7 +5,7 @@
 */
 
 #include "textautogenerateaddmcpserverdialog.h"
-#include "widgets/mcpserver/textautogenerateaddmcpserverwidget.h"
+#include "textautogenerateaddmcpserverwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -35,4 +35,15 @@ TextAutoGenerateAddMcpServerDialog::TextAutoGenerateAddMcpServerDialog(QWidget *
 }
 
 TextAutoGenerateAddMcpServerDialog::~TextAutoGenerateAddMcpServerDialog() = default;
+
+void TextAutoGenerateAddMcpServerDialog::setServerWidgetInfo(const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo &info)
+{
+    mTextAutoGenerateAddMcpServerWidget->setServerWidgetInfo(info);
+}
+
+TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo TextAutoGenerateAddMcpServerDialog::serverWidgetInfo() const
+{
+    return mTextAutoGenerateAddMcpServerWidget->serverWidgetInfo();
+}
+
 #include "moc_textautogenerateaddmcpserverdialog.cpp"
