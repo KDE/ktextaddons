@@ -4,11 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextmcpserverwidget.h"
-#include "widgets/mcpserver/textautogeneratetextmcpserverlistview.h"
+#include "textautogenerateaddmcpserverdialog.h"
+#include "textautogeneratetextmcpserverlistview.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QPointer>
 #include <QToolButton>
 
 using namespace TextAutoGenerateText;
@@ -56,7 +58,11 @@ TextAutoGenerateTextMcpServerWidget::~TextAutoGenerateTextMcpServerWidget() = de
 
 void TextAutoGenerateTextMcpServerWidget::slotAddServer()
 {
-    // TODO
+    QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
+    if (dlg->exec()) {
+        // TODO
+    }
+    delete dlg;
 }
 
 void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &identifier)
@@ -66,7 +72,11 @@ void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &ide
 
 void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &identifier)
 {
-    // TODO
+    QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
+    if (dlg->exec()) {
+        // TODO
+    }
+    delete dlg;
 }
 
 #include "moc_textautogeneratetextmcpserverwidget.cpp"
