@@ -20,4 +20,9 @@ TextAutoGenerateTextMcpServerModel *TextAutoGenerateTextMcpServerManager::textAu
     return mTextAutoGenerateTextMcpServerModel;
 }
 
+void TextAutoGenerateTextMcpServerManager::loadServers()
+{
+    // TODO
+}
+
 #include "moc_textautogeneratetextmcpservermanager.cpp"

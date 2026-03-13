@@ -36,6 +36,11 @@ public:
      */
     [[nodiscard]] TextAutoGenerateTextMcpServerModel *textAutoGenerateTextMcpServerModel() const;
 
+    /*!
+     * \brief loadServers
+     */
+    void loadServers();
+
 private:
     TextAutoGenerateTextMcpServerModel *const mTextAutoGenerateTextMcpServerModel;
 };
