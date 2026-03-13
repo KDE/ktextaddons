@@ -22,8 +22,8 @@ TextAutoGenerateTextMcpServerModel *TextAutoGenerateTextMcpServerManager::textAu
 
 void TextAutoGenerateTextMcpServerManager::loadServers()
 {
-    // mTextAutoGenerateTextMcpServerModel->setMcpServers();
-    // TODO
+    QList<TextAutoGenerateTextMcpServer> mcpServers;
+    mTextAutoGenerateTextMcpServerModel->setMcpServers(mcpServers);
 }
 
 #include "moc_textautogeneratetextmcpservermanager.cpp"
