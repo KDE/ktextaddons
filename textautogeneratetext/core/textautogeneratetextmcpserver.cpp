@@ -75,7 +75,18 @@ void TextAutoGenerateTextMcpServer::save(KConfigGroup &config)
 
 bool TextAutoGenerateTextMcpServer::isValid() const
 {
+    // TODO add serverType
     return !mIdentifier.isEmpty() && !mName.isEmpty() && !mServerUrl.isEmpty();
+}
+
+TextAutoGenerateTextMcpServer::ServerType TextAutoGenerateTextMcpServer::serverType() const
+{
+    return mServerType;
+}
+
+void TextAutoGenerateTextMcpServer::setServerType(ServerType newServerType)
+{
+    mServerType = newServerType;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t)
@@ -84,5 +95,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpS
     d.space() << "enabled:" << t.enabled();
     d.space() << "name:" << t.name();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "serverType:" << t.serverType();
     return d;
 }
+
+#include "moc_textautogeneratetextmcpserver.cpp"

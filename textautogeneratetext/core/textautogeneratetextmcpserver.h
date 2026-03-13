@@ -13,7 +13,16 @@ namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextMcpServer
 {
+    Q_GADGET
 public:
+    enum class ServerType : int8_t {
+        Unknown = 0,
+        Sse,
+        Stdio,
+        Http,
+    };
+    Q_ENUM(ServerType)
+
     TextAutoGenerateTextMcpServer();
     ~TextAutoGenerateTextMcpServer();
 
@@ -36,11 +45,15 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] ServerType serverType() const;
+    void setServerType(ServerType newServerType);
+
 private:
     bool mEnabled = true;
     QUrl mServerUrl;
     QString mName;
     QByteArray mIdentifier;
+    ServerType mServerType = ServerType::Unknown;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextMcpServer, Q_RELOCATABLE_TYPE);
