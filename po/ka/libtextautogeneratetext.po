@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:42+0000\n"
-"PO-Revision-Date: 2026-03-04 03:27+0100\n"
+"POT-Creation-Date: 2026-03-14 00:42+0000\n"
+"PO-Revision-Date: 2026-03-13 07:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -64,62 +64,62 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>ხელსაწყოები:</b> %1"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Small"
 msgstr "პატარა"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Medium"
 msgstr "საშუალო"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Big"
 msgstr "დიდი"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Huge"
 msgstr "უზარმაზარი"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Multilingual"
 msgstr "მრავალენოვანი"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Code"
 msgstr "კოდი"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Math"
 msgstr "მათემატიკა"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Vision"
 msgstr "ხედვა"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Embedding"
 msgstr "ჩაშენება"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Cloud"
 msgstr "ღრუბელი"
@@ -2882,6 +2882,7 @@ msgid "Add Instance"
 msgstr "გაშვებული ასლის დამატება"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
+#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2919,7 +2920,6 @@ msgid "Edit…"
 msgstr "ჩასწორება…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
@@ -2937,7 +2937,7 @@ msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:36
+#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2945,7 +2945,7 @@ msgid "Search…"
 msgstr "ძებნა…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:43
+#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2955,29 +2955,38 @@ msgstr "გაშვებული ასლის დამატება…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
+msgstr "სერვერის დამატება"
+
+#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Url:"
 msgstr ""
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "გაშვებული ასლის დამატება…"
+msgstr "სერვერის დამატება…"
 
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
-msgid "Do you want to remove this server (%1)?"
-msgstr "მართლა გნებავთ, წაშალოთ ეს მოდელი (%1)?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "@title"
-#| msgid "Remove Model"
+#| msgid "Remove Server"
+msgctxt "@action"
+msgid "Remove Server"
+msgstr "სერვერის წაშლა"
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
+#, kde-format
+msgid "Do you want to remove this server (%1)?"
+msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
+#, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "მოდელის წაშლა"
+msgstr "სერვერის წაშლა"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format

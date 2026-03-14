@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:42+0000\n"
+"POT-Creation-Date: 2026-03-14 00:42+0000\n"
 "PO-Revision-Date: 2026-03-06 14:24+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -63,62 +63,62 @@ msgstr "<b>מנוע:</b> %1<br><b>דגם:</b> %2<br><b>שם העותק:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>כלים:</b> %1"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Tools"
 msgstr "כלים"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Small"
 msgstr "קטן"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Medium"
 msgstr "בינוני"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Big"
 msgstr "גדול"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Huge"
 msgstr "ענק"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Multilingual"
 msgstr "רב־לשוני"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Code"
 msgstr "קוד"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Math"
 msgstr "מתמטיקה"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Vision"
 msgstr "ראייה"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Embedding"
 msgstr "הטמעה"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Reasoning"
 msgstr "הנמקה"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Cloud"
 msgstr "ענן"
@@ -2766,6 +2766,7 @@ msgid "Add Instance"
 msgstr "הוספת מופע"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
+#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2803,7 +2804,6 @@ msgid "Edit…"
 msgstr "עריכה…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
@@ -2821,7 +2821,7 @@ msgid "Remove Instance"
 msgstr "להסיר את המופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:36
+#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2829,7 +2829,7 @@ msgid "Search…"
 msgstr "חיפוש…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:43
+#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2841,6 +2841,12 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr ""
 
+#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Url:"
+msgstr ""
+
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -2848,6 +2854,14 @@ msgstr ""
 msgctxt "@action"
 msgid "Add server…"
 msgstr "הוספת מופע…"
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Server"
+msgstr "הסרת מודל"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
 #, fuzzy, kde-format

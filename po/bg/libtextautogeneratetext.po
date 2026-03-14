@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:42+0000\n"
+"POT-Creation-Date: 2026-03-14 00:42+0000\n"
 "PO-Revision-Date: 2026-02-25 19:59+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -62,62 +62,62 @@ msgstr "<b>Енджин:</b> %1<br><b>Модел:</b> %2<br><b>Име на ек�
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Инструменти:</b> %1"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Tools"
 msgstr "Инструменти"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Small"
 msgstr "Малък"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Medium"
 msgstr "Среден"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Big"
 msgstr "Големи"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Huge"
 msgstr "Огромен"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Multilingual"
 msgstr "Многоезичен"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Code"
 msgstr "Код"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Math"
 msgstr "Математика"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Vision"
 msgstr "Визия"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Embedding"
 msgstr "Вграждане"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Reasoning"
 msgstr "Разсъждение"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Cloud"
 msgstr "Облак"
@@ -2888,6 +2888,7 @@ msgid "Add Instance"
 msgstr "Добавяне на екземпляр"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
+#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2925,7 +2926,6 @@ msgid "Edit…"
 msgstr "Редактиране…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
@@ -2943,7 +2943,7 @@ msgid "Remove Instance"
 msgstr "Премахване на екземпляр"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:36
+#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2951,7 +2951,7 @@ msgid "Search…"
 msgstr "Търсене…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextinstancesmcpserverwidget.cpp:43
+#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2963,6 +2963,12 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr ""
 
+#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Url:"
+msgstr ""
+
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -2970,6 +2976,14 @@ msgstr ""
 msgctxt "@action"
 msgid "Add server…"
 msgstr "Добавяне на екземпляр…"
+
+#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Server"
+msgstr "Премахване на модел"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
 #, fuzzy, kde-format
