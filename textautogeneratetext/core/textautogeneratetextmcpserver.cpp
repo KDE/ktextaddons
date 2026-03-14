@@ -89,6 +89,36 @@ void TextAutoGenerateTextMcpServer::setServerType(ServerType newServerType)
     mServerType = newServerType;
 }
 
+QString TextAutoGenerateTextMcpServer::command() const
+{
+    return mCommand;
+}
+
+void TextAutoGenerateTextMcpServer::setCommand(const QString &newCommand)
+{
+    mCommand = newCommand;
+}
+
+QStringList TextAutoGenerateTextMcpServer::arguments() const
+{
+    return mArguments;
+}
+
+void TextAutoGenerateTextMcpServer::setArguments(const QStringList &newArguments)
+{
+    mArguments = newArguments;
+}
+
+QMap<QString, QString> TextAutoGenerateTextMcpServer::environments() const
+{
+    return mEnvironments;
+}
+
+void TextAutoGenerateTextMcpServer::setEnvironments(const QMap<QString, QString> &newEnvironments)
+{
+    mEnvironments = newEnvironments;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpServer &t)
 {
     d.space() << "url:" << t.serverUrl();
@@ -96,6 +126,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextMcpS
     d.space() << "name:" << t.name();
     d.space() << "identifier:" << t.identifier();
     d.space() << "serverType:" << t.serverType();
+    d.space() << "command:" << t.command();
+    d.space() << "environments:" << t.environments();
     return d;
 }
 

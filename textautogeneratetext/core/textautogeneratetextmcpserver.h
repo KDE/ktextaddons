@@ -19,7 +19,7 @@ public:
         Unknown = 0,
         Sse,
         Stdio,
-        Http,
+        // Http,
     };
     Q_ENUM(ServerType)
 
@@ -48,12 +48,24 @@ public:
     [[nodiscard]] ServerType serverType() const;
     void setServerType(ServerType newServerType);
 
+    [[nodiscard]] QString command() const;
+    void setCommand(const QString &newCommand);
+
+    [[nodiscard]] QStringList arguments() const;
+    void setArguments(const QStringList &newArguments);
+
+    [[nodiscard]] QMap<QString, QString> environments() const;
+    void setEnvironments(const QMap<QString, QString> &newEnvironments);
+
 private:
     bool mEnabled = true;
     QUrl mServerUrl;
     QString mName;
     QByteArray mIdentifier;
     ServerType mServerType = ServerType::Unknown;
+    QString mCommand;
+    QStringList mArguments;
+    QMap<QString, QString> mEnvironments;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextMcpServer, Q_RELOCATABLE_TYPE);
