@@ -76,7 +76,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextUtils BASE_NAME TextUtils)
+ecm_generate_export_header(KF6TextUtils
+    BASE_NAME TextUtils
+    VERSION ${TEXTUTILS_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_include_directories(KF6TextUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils;>")
 

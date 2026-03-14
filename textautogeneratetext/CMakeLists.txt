@@ -433,7 +433,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextAutoGenerateText BASE_NAME textautogeneratetext)
+ecm_generate_export_header(KF6TextAutoGenerateText
+    BASE_NAME textautogeneratetext
+    VERSION ${TEXTAUTOGENERATETEXT_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_link_libraries(
     KF6TextAutoGenerateText

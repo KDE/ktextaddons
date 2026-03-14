@@ -83,7 +83,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextEditTextToSpeech BASE_NAME textedittexttospeech)
+ecm_generate_export_header(KF6TextEditTextToSpeech
+    BASE_NAME textedittexttospeech
+    VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_include_directories(
     KF6TextEditTextToSpeech

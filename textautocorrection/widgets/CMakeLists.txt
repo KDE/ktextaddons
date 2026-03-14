@@ -74,8 +74,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextAutoCorrectionWidgets BASE_NAME textautocorrectionwidgets)
-
+ecm_generate_export_header(KF6TextAutoCorrectionWidgets
+    BASE_NAME textautocorrectionwidgets
+    VERSION ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
+    USE_VERSION_HEADER
+)
 target_link_libraries(
     KF6TextAutoCorrectionWidgets
     PUBLIC

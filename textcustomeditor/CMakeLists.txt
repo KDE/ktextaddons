@@ -111,7 +111,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextCustomEditor BASE_NAME TextCustomEditor)
+ecm_generate_export_header(KF6TextCustomEditor
+    BASE_NAME TextCustomEditor
+    VERSION ${TEXTCUSTOMEDITOR_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_include_directories(
     KF6TextCustomEditor

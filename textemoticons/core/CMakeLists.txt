@@ -70,7 +70,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextEmoticonsCore BASE_NAME TextEmoticonsCore)
+ecm_generate_export_header(KF6TextEmoticonsCore
+    BASE_NAME TextEmoticonsCore
+    VERSION ${TEXTEMOTICONSCORE_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_include_directories(
     KF6TextEmoticonsCore

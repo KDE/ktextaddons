@@ -92,7 +92,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextTranslator BASE_NAME texttranslator)
+ecm_generate_export_header(KF6TextTranslator
+    BASE_NAME texttranslator
+    VERSION ${TEXTTRANSLATE_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_link_libraries(
     KF6TextTranslator

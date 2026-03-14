@@ -79,7 +79,11 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
                 ON
     )
 endif()
-generate_export_header(KF6TextSpeechToText BASE_NAME textspeechtotext)
+ecm_generate_export_header(KF6TextSpeechToText
+    BASE_NAME textspeechtotext
+    VERSION ${TEXTSPEECHTOTEXT_VERSION}
+    USE_VERSION_HEADER
+)
 
 target_link_libraries(
     KF6TextSpeechToText
