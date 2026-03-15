@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:42+0000\n"
-"PO-Revision-Date: 2026-03-13 10:19+0200\n"
+"PO-Revision-Date: 2026-03-14 13:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2978,7 +2978,7 @@ msgstr "Додавання сервера"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "Адреса:"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
 #, kde-format
@@ -2987,12 +2987,10 @@ msgid "Add server…"
 msgstr "Додати сервер…"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Вилучення сервера"
+msgstr "Вилучити сервер"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
 #, kde-format
