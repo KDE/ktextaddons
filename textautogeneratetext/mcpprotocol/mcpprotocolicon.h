@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
+#include <QJsonObject>
 #include <QString>
 #include <QStringList>
 class QDebug;
@@ -24,17 +25,40 @@ public:
      */
     [[nodiscard]] bool operator==(const McpProtocolIcon &other) const;
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> mimeType() const;
+    /*!
+     */
     void setMimeType(std::optional<QString> newMimeType);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QStringList> sizes() const;
+    /*!
+     */
     void setSizes(std::optional<QStringList> newSizes);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> theme() const;
+    /*!
+     */
     void setTheme(std::optional<QString> newTheme);
 
+    /*!
+     */
     [[nodiscard]] QString src() const;
+    /*!
+     */
     void setSrc(const QString &newSrc);
+
+    /*!
+     */
+    static McpProtocolIcon fromJson(const QJsonObject &obj);
+    /*!
+     */
+    static QJsonObject toJson(const McpProtocolIcon &image);
 
 private:
     QString mSrc;

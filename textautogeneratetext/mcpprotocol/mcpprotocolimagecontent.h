@@ -4,8 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolannotations.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
+#include <QJsonObject>
 #include <QString>
 class QDebug;
 namespace McpProtocol
@@ -44,9 +46,36 @@ public:
      */
     [[nodiscard]] bool operator==(const McpProtocolImageContent &other) const;
 
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolAnnotations> annotations() const;
+    /*!
+     */
+    void setAnnotations(std::optional<McpProtocolAnnotations> newAnnotations);
+
+    /*!
+     */
+    [[nodiscard]] QJsonObject meta() const;
+    /*!
+     */
+    void setMeta(const QJsonObject &newMeta);
+
+    /*!
+     */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
+    static McpProtocolImageContent fromJson(const QJsonObject &obj);
+    /*!
+     */
+    static QJsonObject toJson(const McpProtocolImageContent &image);
+
 private:
+    std::optional<McpProtocolAnnotations> mAnnotations;
     QString mMimeType;
     QString mData;
+    QJsonObject mMeta;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolImageContent, Q_RELOCATABLE_TYPE);

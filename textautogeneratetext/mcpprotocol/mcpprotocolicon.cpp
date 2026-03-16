@@ -58,3 +58,13 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolIcon &t)
     d.space() << "src:" << t.src();
     return d;
 }
+
+McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
+{
+    return {};
+}
+
+QJsonObject McpProtocolIcon::toJson(const McpProtocolIcon &image)
+{
+    return {};
+}

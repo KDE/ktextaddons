@@ -4,8 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolannotations.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
+#include <QJsonObject>
 #include <QString>
 class QDebug;
 namespace McpProtocol
@@ -28,12 +30,37 @@ public:
      */
     [[nodiscard]] bool operator==(const McpProtocolTextContent &other) const;
 
+    /*!
+     */
     [[nodiscard]] QString text() const;
+    /*!
+     */
     void setText(const QString &newText);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolAnnotations> annotations() const;
+    /*!
+     */
+    void setAnnotations(std::optional<McpProtocolAnnotations> newAnnotations);
+
+    /*!
+     */
+    [[nodiscard]] QJsonObject meta() const;
+    /*!
+     */
+    void setMeta(const QJsonObject &newMeta);
+
+    /*!
+     */
+    static McpProtocolTextContent fromJson(const QJsonObject &obj);
+    /*!
+     */
+    static QJsonObject toJson(const McpProtocolTextContent &image);
+
 private:
-    // TODO annotations
-    // TODO additionalProperties
+    std::optional<McpProtocolAnnotations> mAnnotations;
+    QJsonObject mMeta;
     QString mText;
 };
 }

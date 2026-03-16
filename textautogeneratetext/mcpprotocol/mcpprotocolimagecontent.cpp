@@ -38,9 +38,46 @@ void McpProtocolImageContent::setData(const QString &newData)
 
 bool McpProtocolImageContent::operator==(const McpProtocolImageContent &other) const = default;
 
+std::optional<McpProtocolAnnotations> McpProtocolImageContent::annotations() const
+{
+    return mAnnotations;
+}
+
+void McpProtocolImageContent::setAnnotations(std::optional<McpProtocolAnnotations> newAnnotations)
+{
+    mAnnotations = std::move(newAnnotations);
+}
+
+QJsonObject McpProtocolImageContent::meta() const
+{
+    return mMeta;
+}
+
+void McpProtocolImageContent::setMeta(const QJsonObject &newMeta)
+{
+    mMeta = newMeta;
+}
+
+bool McpProtocolImageContent::isValid() const
+{
+    return !mData.isEmpty() && !mMimeType.isEmpty();
+}
+
+McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj)
+{
+    return {};
+}
+
+QJsonObject McpProtocolImageContent::toJson(const McpProtocolImageContent &image)
+{
+    return {};
+}
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolImageContent &t)
 {
     d.space() << "data:" << t.data();
     d.space() << "mimeType:" << t.mimeType();
+    d.space() << "annotations:" << t.annotations();
+    d.space() << "meta:" << t.meta();
     return d;
 }
