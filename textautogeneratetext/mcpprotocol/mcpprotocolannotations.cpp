@@ -6,6 +6,8 @@
 
 #include "mcpprotocolannotations.h"
 #include <QDebug>
+#include <QJsonArray>
+#include <QJsonObject>
 using namespace McpProtocol;
 using namespace Qt::Literals::StringLiterals;
 McpProtocolAnnotations::McpProtocolAnnotations() = default;
@@ -16,6 +18,9 @@ bool McpProtocolAnnotations::operator==(const McpProtocolAnnotations &other) con
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolAnnotations &t)
 {
+    // TODO d.space() << "audience:" << t.audience();
+    d.space() << "priority:" << t.priority();
+    d.space() << "lastModified:" << t.lastModified();
     return d;
 }
 
@@ -27,7 +32,20 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
 QJsonObject McpProtocolAnnotations::toJson(const McpProtocolAnnotations &annot)
 {
     QJsonObject obj;
-    // TODO
+    if (annot.audience().has_value()) {
+        QJsonArray array;
+        const auto audience = *annot.audience();
+        for (const auto &v : audience) {
+            array.append(McpProtocolUtils::convertRoleToString(v));
+        }
+        obj["audience"_L1] = array;
+    }
+    if (annot.lastModified().has_value()) {
+        obj["lastModified"_L1] = *annot.lastModified();
+    }
+    if (annot.priority().has_value()) {
+        obj["priority"_L1], *annot.priority();
+    }
     return obj;
 }
 
@@ -49,4 +67,14 @@ std::optional<QString> McpProtocolAnnotations::lastModified() const
 void McpProtocolAnnotations::setLastModified(std::optional<QString> newLastModified)
 {
     mLastModified = std::move(newLastModified);
+}
+
+std::optional<QList<McpProtocolUtils::Role>> McpProtocolAnnotations::audience() const
+{
+    return mAudience;
+}
+
+void McpProtocolAnnotations::setAudience(std::optional<QList<McpProtocolUtils::Role>> newAudience)
+{
+    mAudience = std::move(newAudience);
 }

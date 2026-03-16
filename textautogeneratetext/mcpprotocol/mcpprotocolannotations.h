@@ -4,9 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
+#include <QList>
 #include <QString>
 class QDebug;
 namespace McpProtocol
@@ -32,15 +34,19 @@ public:
      */
     static QJsonObject toJson(const McpProtocolAnnotations &annot);
 
-    std::optional<double> priority() const;
+    [[nodiscard]] std::optional<double> priority() const;
     void setPriority(std::optional<double> newPriority);
 
-    std::optional<QString> lastModified() const;
+    [[nodiscard]] std::optional<QString> lastModified() const;
     void setLastModified(std::optional<QString> newLastModified);
+
+    [[nodiscard]] std::optional<QList<McpProtocolUtils::Role>> audience() const;
+    void setAudience(std::optional<QList<McpProtocolUtils::Role>> newAudience);
 
 private:
     std::optional<QString> mLastModified;
     std::optional<double> mPriority;
+    std::optional<QList<McpProtocolUtils::Role>> mAudience;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolAnnotations, Q_RELOCATABLE_TYPE);
