@@ -60,6 +60,11 @@ void McpProtocolTextContent::setMeta(const QJsonObject &newMeta)
 McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 {
     McpProtocolTextContent text;
+    if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolTextContent::type())) {
+        qWarning() << "McpProtocolTextContent: type is not correct " << obj.value("type"_L1).toString();
+        return {};
+    }
+
     text.setText(obj["text"_L1].toString());
     if (obj.contains("annotations"_L1)) {
         text.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));

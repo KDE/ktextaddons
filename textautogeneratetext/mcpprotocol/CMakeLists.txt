@@ -11,9 +11,11 @@ target_sources(
         mcpprotocolimagecontent.h
         mcpprotocolimagecontent.cpp
         mcpprotocoltextcontent.cpp
+        mcpprotocoltextcontent.h
+        mcpprotocolaudiocontent.cpp
         mcpprotocolicon.cpp
         mcpprotocolicon.h
-        mcpprotocoltextcontent.h
+        mcpprotocolaudiocontent.h
         mcpprotocolannotations.cpp
         mcpprotocolannotations.h
 )

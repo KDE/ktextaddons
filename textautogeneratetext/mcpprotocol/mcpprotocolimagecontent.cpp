@@ -6,6 +6,7 @@
 
 #include "mcpprotocolimagecontent.h"
 #include <QDebug>
+using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolImageContent::McpProtocolImageContent() = default;
 
@@ -65,12 +66,20 @@ bool McpProtocolImageContent::isValid() const
 
 McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj)
 {
+    McpProtocolImageContent audio;
+    if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolImageContent::type())) {
+        qWarning() << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
+        return {};
+    }
+    // TODO
     return {};
 }
 
 QJsonObject McpProtocolImageContent::toJson(const McpProtocolImageContent &image)
 {
-    return {};
+    QJsonObject obj;
+    // TODO
+    return obj;
 }
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolImageContent &t)

@@ -25,5 +25,27 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
 
 QJsonObject McpProtocolAnnotations::toJson(const McpProtocolAnnotations &annot)
 {
-    return {};
+    QJsonObject obj;
+    // TODO
+    return obj;
+}
+
+std::optional<double> McpProtocolAnnotations::priority() const
+{
+    return mPriority;
+}
+
+void McpProtocolAnnotations::setPriority(std::optional<double> newPriority)
+{
+    mPriority = newPriority;
+}
+
+std::optional<QString> McpProtocolAnnotations::lastModified() const
+{
+    return mLastModified;
+}
+
+void McpProtocolAnnotations::setLastModified(std::optional<QString> newLastModified)
+{
+    mLastModified = std::move(newLastModified);
 }

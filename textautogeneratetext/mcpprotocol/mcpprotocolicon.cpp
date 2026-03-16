@@ -6,6 +6,8 @@
 
 #include "mcpprotocolicon.h"
 #include <QDebug>
+#include <QJsonArray>
+using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolIcon::McpProtocolIcon() = default;
 
@@ -56,6 +58,9 @@ void McpProtocolIcon::setSrc(const QString &newSrc)
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolIcon &t)
 {
     d.space() << "src:" << t.src();
+    d.space() << "sizes:" << t.sizes();
+    d.space() << "mimeType:" << t.mimeType();
+    d.space() << "theme:" << t.theme();
     return d;
 }
 
@@ -66,5 +71,22 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
 
 QJsonObject McpProtocolIcon::toJson(const McpProtocolIcon &image)
 {
-    return {};
+    QJsonObject obj;
+    obj["src"_L1] = image.src();
+
+    if (image.mimeType().has_value()) {
+        obj["mimeType"_L1] = *image.mimeType();
+    }
+    if (image.theme().has_value()) {
+        obj["theme"_L1] = *image.theme();
+    }
+    if (image.sizes().has_value()) {
+        QJsonArray sizes;
+        const QStringList lst = *image.sizes();
+        for (const auto &t : lst) {
+            sizes.append(t);
+        }
+        obj["sizes"_L1] = sizes;
+    }
+    return obj;
 }

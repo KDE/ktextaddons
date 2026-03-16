@@ -377,15 +377,15 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
 
 bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type)
 {
-    qDebug() << " bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const"
-             << currentModel << " type " << static_cast<int>(type);
+    // qDebug() << " bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const"
+    //          << currentModel << " type " << static_cast<int>(type);
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return false;
     case GenericNetworkManager::PluginNetworkType::MistralAI: {
         // https://docs.mistral.ai/capabilities/function_calling/#tools
-        qDebug() << " currentModel " << currentModel;
+        // qDebug() << " currentModel " << currentModel;
         if (currentModel.startsWith("mistral-large"_L1) || currentModel.startsWith("mistral-medium"_L1) || currentModel.startsWith("mistral-small"_L1)
             || currentModel.startsWith("magistral-small"_L1) || currentModel.startsWith("magistral-medium"_L1) || currentModel.startsWith("devstral-small"_L1)
             || currentModel.startsWith("devstral-medium"_L1) || currentModel.startsWith("voxtral-small"_L1) || currentModel.startsWith("voxtral-mini"_L1)
@@ -444,7 +444,6 @@ bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, Generi
 
 bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type)
 {
-    // TODO
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";

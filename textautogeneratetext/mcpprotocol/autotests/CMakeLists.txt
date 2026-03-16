@@ -10,3 +10,5 @@ macro(add_textautogenerate_mcpprotocol_unittest _source)
 endmacro()
 
 add_textautogenerate_mcpprotocol_unittest(mcpprotocoltextcontenttest.cpp)
+add_textautogenerate_mcpprotocol_unittest(mcpprotocolicontest.cpp)
+add_textautogenerate_mcpprotocol_unittest(mcpprotocolaudiocontenttest.cpp)

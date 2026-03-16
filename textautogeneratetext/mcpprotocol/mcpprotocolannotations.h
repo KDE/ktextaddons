@@ -32,7 +32,15 @@ public:
      */
     static QJsonObject toJson(const McpProtocolAnnotations &annot);
 
+    std::optional<double> priority() const;
+    void setPriority(std::optional<double> newPriority);
+
+    std::optional<QString> lastModified() const;
+    void setLastModified(std::optional<QString> newLastModified);
+
 private:
+    std::optional<QString> mLastModified;
+    std::optional<double> mPriority;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolAnnotations, Q_RELOCATABLE_TYPE);
