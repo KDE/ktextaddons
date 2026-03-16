@@ -10,6 +10,10 @@ target_sources(
     PRIVATE
         mcpprotocolimagecontent.h
         mcpprotocolimagecontent.cpp
+        mcpprotocoltextcontent.cpp
+        mcpprotocoltextcontent.h
+        mcpprotocolannotations.cpp
+        mcpprotocolannotations.h
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
