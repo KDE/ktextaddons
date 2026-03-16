@@ -26,6 +26,15 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolAnnotations &t)
 
 McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
 {
+    McpProtocolAnnotations annot;
+    if (obj.contains("lastModified"_L1)) {
+        annot.setLastModified(obj.value("lastModified"_L1).toString());
+    }
+    if (obj.contains("priority"_L1)) {
+        annot.setPriority(obj.value("priority"_L1).toDouble());
+    }
+    // Add audience
+
     return {};
 }
 
