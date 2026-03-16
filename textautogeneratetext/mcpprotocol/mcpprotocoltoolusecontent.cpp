@@ -23,6 +23,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolUseContent &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "name:" << t.name();
+    d.space() << "id:" << t.id();
     return d;
 }
 
@@ -38,21 +39,30 @@ void McpProtocolToolUseContent::setMeta(const QJsonObject &newMeta)
 
 McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject &obj)
 {
-    McpProtocolToolUseContent text;
+    McpProtocolToolUseContent tool;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolToolUseContent::type())) {
         qWarning() << "McpProtocolToolUseContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 
     if (obj.contains("_meta"_L1)) {
-        text.setMeta(obj["_meta"_L1].toObject());
+        tool.setMeta(obj["_meta"_L1].toObject());
     }
-    return text;
+    tool.setId(obj["id"_L1].toString());
+
+    // TODO input
+    return tool;
 }
 
-QJsonObject McpProtocolToolUseContent::toJson(const McpProtocolToolUseContent &text)
+QJsonObject McpProtocolToolUseContent::toJson(const McpProtocolToolUseContent &tool)
 {
-    return {};
+    QJsonObject obj;
+    obj["id"_L1] = tool.id();
+    obj["name"_L1] = tool.name();
+    obj["type"_L1] = QString::fromLatin1(tool.type());
+
+    // TODO add more
+    return obj;
 }
 
 QString McpProtocolToolUseContent::name() const
@@ -63,4 +73,14 @@ QString McpProtocolToolUseContent::name() const
 void McpProtocolToolUseContent::setName(const QString &newName)
 {
     mName = newName;
+}
+
+QString McpProtocolToolUseContent::id() const
+{
+    return mId;
+}
+
+void McpProtocolToolUseContent::setId(const QString &newId)
+{
+    mId = newId;
 }

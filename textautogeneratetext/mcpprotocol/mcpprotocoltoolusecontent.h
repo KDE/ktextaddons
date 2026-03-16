@@ -47,9 +47,13 @@ public:
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
 
+    [[nodiscard]] QString id() const;
+    void setId(const QString &newId);
+
 private:
     QJsonObject mMeta;
     QString mName;
+    QString mId;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolToolUseContent, Q_RELOCATABLE_TYPE);
