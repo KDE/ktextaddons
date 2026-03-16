@@ -7,20 +7,20 @@
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
-QString McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
+QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
 {
     switch (role) {
     case McpProtocolUtils::Role::Assistant:
-        return {};
+        return u"assistant"_s;
     case McpProtocolUtils::Role::User:
-        return {};
+        return u"user"_s;
     case McpProtocolUtils::Role::Unknown:
         return {};
     }
     return {};
 }
 
-McpProtocolUtils::Role convertRoleFromString(const QString &str)
+McpProtocol::McpProtocolUtils::Role McpProtocol::McpProtocolUtils::convertRoleFromString(const QString &str)
 {
     if (str == "assistant"_L1) {
         return McpProtocolUtils::Role::Assistant;

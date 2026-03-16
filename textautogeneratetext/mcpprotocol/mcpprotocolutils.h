@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QString>
-namespace McpProtocolUtils
+namespace McpProtocol::McpProtocolUtils
 {
 enum class Role : uint8_t {
     Unknown,
