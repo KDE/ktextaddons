@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:42+0000\n"
-"PO-Revision-Date: 2026-03-05 09:10+0100\n"
+"PO-Revision-Date: 2026-03-14 10:07+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -3011,7 +3011,7 @@ msgstr "Ajouter une instance..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr ""
+msgstr "Ajouter un serveur"
 
 #: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
 #, kde-format
@@ -3020,12 +3020,10 @@ msgid "Url:"
 msgstr ""
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "Ajouter une instance..."
+msgstr "Ajouter un serveur…"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, fuzzy, kde-format
@@ -3036,18 +3034,15 @@ msgid "Remove Server"
 msgstr "Supprimer un modèle"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr "Voulez-vous vraiment supprimer ce modèle (%1) ?"
+msgstr "Voulez-vous vraiment supprimer ce serveur (%1) ?"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "Supprimer un modèle"
+msgstr "Supprimer un serveur"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format

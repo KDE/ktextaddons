@@ -2798,7 +2798,7 @@ msgstr "添加服务器"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL："
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
 #, kde-format
@@ -2810,7 +2810,7 @@ msgstr "添加服务器…"
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr ""
+msgstr "移除服务器"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
 #, kde-format
