@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
+#include <QJsonObject>
 #include <QString>
 class QDebug;
 namespace McpProtocol
@@ -23,6 +24,13 @@ public:
     /*!
      */
     [[nodiscard]] bool operator==(const McpProtocolAnnotations &other) const;
+
+    /*!
+     */
+    static McpProtocolAnnotations fromJson(const QJsonObject &obj);
+    /*!
+     */
+    static QJsonObject toJson(const McpProtocolAnnotations &annot);
 
 private:
 };

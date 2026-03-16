@@ -17,3 +17,13 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolAnnotations &t)
 {
     return d;
 }
+
+McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
+{
+    return {};
+}
+
+QJsonObject McpProtocolAnnotations::toJson(const McpProtocolAnnotations &annot)
+{
+    return {};
+}

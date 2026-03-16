@@ -6,6 +6,7 @@
 
 #include "mcpprotocoltextcontent.h"
 #include <QDebug>
+using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolTextContent::McpProtocolTextContent() = default;
 
@@ -58,10 +59,18 @@ void McpProtocolTextContent::setMeta(const QJsonObject &newMeta)
 
 McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 {
-    return {};
+    McpProtocolTextContent text;
+    text.setText(obj["text"_L1].toString());
+    if (obj.contains("annotations"_L1)) {
+        text.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    }
+    if (obj.contains("_meta"_L1)) {
+        text.setMeta(obj["_meta"_L1].toObject());
+    }
+    return text;
 }
 
-QJsonObject McpProtocolTextContent::toJson(const McpProtocolTextContent &image)
+QJsonObject McpProtocolTextContent::toJson(const McpProtocolTextContent &text)
 {
     return {};
 }
