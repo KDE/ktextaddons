@@ -8,3 +8,5 @@ macro(add_textautogenerate_mcpprotocol_unittest _source)
         LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateTextMcpProtocol
     )
 endmacro()
+
+add_textautogenerate_mcpprotocol_unittest(mcpprotocoltextcontenttest.cpp)
