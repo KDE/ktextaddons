@@ -22,7 +22,8 @@ enum class LoggingLevel : uint8_t {
     Error,
     Info,
     Notice,
-    Warning
+    Warning,
+    Unknown,
 };
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
