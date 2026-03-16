@@ -41,13 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    widgets/mcpserver/textautogenerateaddmcpserverdialog.h
-    widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp
-    widgets/mcpserver/textautogenerateaddmcpserverwidget.h
-    widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -412,7 +406,13 @@ target_sources(
         widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp
         widgets/mcpserver/textautogeneratetextmcpserverlistview.h
         widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp
+        widgets/mcpserver/textautogenerateaddmcpserverdialog.h
+        widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp
+        widgets/mcpserver/textautogenerateaddmcpserverwidget.h
+        widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp
 )
+
+add_subdirectory(mcpprotocol)
 
 if(BUILD_TESTING)
     add_subdirectory(core/autotests)
