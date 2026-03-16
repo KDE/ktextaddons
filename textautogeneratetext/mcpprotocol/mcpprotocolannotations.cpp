@@ -33,9 +33,15 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
     if (obj.contains("priority"_L1)) {
         annot.setPriority(obj.value("priority"_L1).toDouble());
     }
-    // Add audience
-
-    return {};
+    if (obj.contains("audience"_L1) && obj["audience"_L1].isArray()) {
+        const QJsonArray arr = obj["audience"_L1].toArray();
+        QList<McpProtocolUtils::Role> audience;
+        for (const QJsonValue &v : arr) {
+            audience.append(McpProtocolUtils::convertRoleFromString(v.toString()));
+        }
+        annot.setAudience(audience);
+    }
+    return annot;
 }
 
 QJsonObject McpProtocolAnnotations::toJson(const McpProtocolAnnotations &annot)

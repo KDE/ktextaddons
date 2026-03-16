@@ -30,3 +30,25 @@ McpProtocol::McpProtocolUtils::Role McpProtocol::McpProtocolUtils::convertRoleFr
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Unknown role name " << str;
     return McpProtocolUtils::Role::Unknown;
 }
+
+QString McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level)
+{
+    // TODO
+    switch (level) {
+    case McpProtocolUtils::LoggingLevel::Alert:
+    case McpProtocolUtils::LoggingLevel::Critical:
+    case McpProtocolUtils::LoggingLevel::Debug:
+    case McpProtocolUtils::LoggingLevel::Emergency:
+    case McpProtocolUtils::LoggingLevel::Error:
+    case McpProtocolUtils::LoggingLevel::Info:
+    case McpProtocolUtils::LoggingLevel::Notice:
+    case McpProtocolUtils::LoggingLevel::Warning:
+        return u"assistant"_s;
+    }
+    return {};
+}
+
+McpProtocol::McpProtocolUtils::LoggingLevel McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(const QString &str)
+{
+    return {};
+}

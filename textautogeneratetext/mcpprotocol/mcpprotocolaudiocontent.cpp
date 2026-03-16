@@ -78,7 +78,11 @@ QJsonObject McpProtocolAudioContent::toJson(const McpProtocolAudioContent &audio
     obj["data"_L1] = audio.data();
     obj["mimeType"_L1] = audio.mimeType();
     obj["type"_L1] = QString::fromLatin1(audio.type());
+    if (audio.annotations().has_value()) {
+        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*audio.annotations());
+    }
 
+    // TODO add meta !
     // TODO
     return obj;
 }

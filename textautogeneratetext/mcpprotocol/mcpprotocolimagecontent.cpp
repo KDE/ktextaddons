@@ -66,18 +66,26 @@ bool McpProtocolImageContent::isValid() const
 
 McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj)
 {
-    McpProtocolImageContent audio;
+    McpProtocolImageContent image;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolImageContent::type())) {
         qWarning() << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
+    image.setData(obj["data"_L1].toString());
+    image.setMimeType(obj["mimeType"_L1].toString());
     // TODO
-    return {};
+    return image;
 }
 
 QJsonObject McpProtocolImageContent::toJson(const McpProtocolImageContent &image)
 {
     QJsonObject obj;
+    obj["type"_L1] = QString::fromLatin1(image.type());
+    obj["data"_L1] = image.data();
+    obj["mimeType"_L1] = image.mimeType();
+    if (image.annotations().has_value()) {
+        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*image.annotations());
+    }
     // TODO
     return obj;
 }
