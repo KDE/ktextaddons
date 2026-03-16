@@ -12,11 +12,7 @@ target_sources(
         mcpprotocolimagecontent.cpp
 )
 
-ecm_generate_export_header(KF6TextAutoGenerateTextMcpProtocol
-    BASE_NAME textautogeneratetextmcpprotocol
-    VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-    USE_VERSION_HEADER
-)
+generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
 
 target_link_libraries(KF6TextAutoGenerateTextMcpProtocol Qt::Core)
 
@@ -26,3 +22,6 @@ install(
     EXPORT KF6TextAutoGenerateTextMcpProtocolTargets
     ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
