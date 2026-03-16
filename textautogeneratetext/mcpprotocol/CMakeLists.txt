@@ -5,6 +5,13 @@ add_library(KF6TextAutoGenerateTextMcpProtocol)
 
 add_library(KF6::TextAutoGenerateTextMcpProtocol ALIAS KF6TextAutoGenerateTextMcpProtocol)
 
+ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocol HEADER textautogeneratetextmcpprotocol_debug.h
+    IDENTIFIER TEXTAUTOGENERATEMCPPROTOCOL_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetextmcpprotocol
+    DESCRIPTION "KF6 (TextAutoGenerateText MCP protocols)"
+    EXPORT KTEXTADDONS
+)
+
 target_sources(
     KF6TextAutoGenerateTextMcpProtocol
     PRIVATE
@@ -18,6 +25,8 @@ target_sources(
         mcpprotocolaudiocontent.h
         mcpprotocolannotations.cpp
         mcpprotocolannotations.h
+        mcpprotocolutils.h
+        mcpprotocolutils.cpp
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)

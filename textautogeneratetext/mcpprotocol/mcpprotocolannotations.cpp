@@ -7,6 +7,7 @@
 #include "mcpprotocolannotations.h"
 #include <QDebug>
 using namespace McpProtocol;
+using namespace Qt::Literals::StringLiterals;
 McpProtocolAnnotations::McpProtocolAnnotations() = default;
 
 McpProtocolAnnotations::~McpProtocolAnnotations() = default;
