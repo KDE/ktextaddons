@@ -23,3 +23,5 @@ void McpProtocolToolAnnotationsTest::shouldHaveDefaultValues()
     QVERIFY(!w.readOnlyHint());
     QVERIFY(w.title().isEmpty());
 }
+
+#include "moc_mcpprotocoltoolannotationstest.cpp"

@@ -29,7 +29,7 @@ QJsonObject McpProtocolToolChoice::toJson(const McpProtocolToolChoice &choice)
 {
     QJsonObject obj;
     if (choice.mode() != McpProtocolToolChoice::Mode::Unknown) {
-        // obj.insert("mode", toJsonValue(*data._mode));
+        obj["mode"_L1] = convertModeToString(choice.mode());
     }
     return obj;
 }
@@ -43,3 +43,20 @@ void McpProtocolToolChoice::setMode(Mode newMode)
 {
     mMode = newMode;
 }
+
+QString McpProtocolToolChoice::convertModeToString(McpProtocolToolChoice::Mode mode)
+{
+    switch (mode) {
+    case Mode::Auto:
+        return u"auto"_s;
+    case Mode::None:
+        return u"none"_s;
+    case Mode::Required:
+        return u"required"_s;
+    case Mode::Unknown:
+        return {};
+    }
+    return {};
+}
+
+#include "moc_mcpprotocoltoolchoice.cpp"

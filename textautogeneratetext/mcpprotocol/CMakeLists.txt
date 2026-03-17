@@ -19,10 +19,14 @@ target_sources(
         mcpprotocolimagecontent.cpp
         mcpprotocoltextcontent.cpp
         mcpprotocoltoolchoice.cpp
-        mcpprotocoltoolannotations.cpp
+        mcpprotocoltoolchoice.h
+        mcpprotocolloggingmessagenotificationparams.cpp
+        mcpprotocolloggingmessagenotificationparams.h
+        mcpprotocoltoolexecution.cpp
+        mcpprotocoltoolexecution.h
         mcpprotocoltoolusecontent.cpp
         mcpprotocoltextcontent.h
-        mcpprotocoltoolchoice.h
+        mcpprotocoltoolannotations.cpp
         mcpprotocoltoolannotations.h
         mcpprotocoltoolusecontent.h
         mcpprotocolaudiocontent.cpp

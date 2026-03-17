@@ -49,6 +49,8 @@ public:
      */
     void setMode(Mode newMode);
 
+    [[nodiscard]] static QString convertModeToString(McpProtocolToolChoice::Mode mode);
+
 private:
     Mode mMode = Mode::Unknown;
 };
