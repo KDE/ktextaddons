@@ -21,12 +21,27 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLoggingMessageNotifica
 
 McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificationParams::fromJson(const QJsonObject &obj)
 {
-    return {};
+    McpProtocolLoggingMessageNotificationParams params;
+    params.setData(obj.value("data"_L1).toString());
+    if (obj.contains("level"_L1) && obj["level"_L1].isString()) {
+        params.setLevel(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(obj["level"_L1].toString()));
+    }
+    if (obj.contains("logger"_L1)) {
+        params.setLogger(obj.value("logger"_L1).toString());
+    }
+    // TODO params
+    return params;
 }
 
-QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtocolLoggingMessageNotificationParams &choice)
+QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtocolLoggingMessageNotificationParams &params)
 {
     QJsonObject obj;
+    obj["data"_L1] = params.data();
+    obj["level"_L1] = McpProtocol::McpProtocolUtils::convertLoggingLevelToString(params.level());
+    // TODO add param
+    if (params.logger().has_value()) {
+        obj["logger"_L1] = *params.logger();
+    }
     return obj;
 }
 
