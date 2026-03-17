@@ -17,4 +17,6 @@ public:
 private Q_SLOTS:
     void shouldConvertRoleToString();
     void shouldConvertRoleFromString();
+    void shouldConvertLoggingLevelToString();
+    void shouldConvertLoggingLevelFromString();
 };

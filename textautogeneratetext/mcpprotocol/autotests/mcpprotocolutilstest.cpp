@@ -28,4 +28,31 @@ void McpProtocolUtilsTest::shouldConvertRoleFromString()
     QCOMPARE(McpProtocol::McpProtocolUtils::convertRoleFromString(u"user"_s), McpProtocol::McpProtocolUtils::Role::User);
 }
 
+void McpProtocolUtilsTest::shouldConvertLoggingLevelToString()
+{
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Alert), u"alert"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Unknown), QString());
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Critical), u"critical"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Debug), u"debug"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Emergency), u"emergency"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Error), u"error"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Info), u"info"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Warning), u"warning"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocol::McpProtocolUtils::LoggingLevel::Notice), u"notice"_s);
+}
+
+void McpProtocolUtilsTest::shouldConvertLoggingLevelFromString()
+{
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(QString()), McpProtocol::McpProtocolUtils::LoggingLevel::Unknown);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"bla"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Unknown);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"alert"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Alert);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"critical"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Critical);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"debug"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Debug);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"emergency"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Emergency);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"error"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Error);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"info"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Info);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"warning"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Warning);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"notice"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Notice);
+}
+
 #include "moc_mcpprotocolutilstest.cpp"
