@@ -19,7 +19,9 @@ target_sources(
         mcpprotocolimagecontent.cpp
         mcpprotocoltextcontent.cpp
         mcpprotocoltoolchoice.cpp
+        mcpprotocolerror.cpp
         mcpprotocoltoolchoice.h
+        mcpprotocolerror.h
         mcpprotocolloggingmessagenotificationparams.cpp
         mcpprotocolloggingmessagenotificationparams.h
         mcpprotocoltoolexecution.cpp
@@ -37,6 +39,8 @@ target_sources(
         mcpprotocolannotations.h
         mcpprotocolutils.h
         mcpprotocolutils.cpp
+        mcpprotocolmodelhint.cpp
+        mcpprotocolmodelhint.h
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
