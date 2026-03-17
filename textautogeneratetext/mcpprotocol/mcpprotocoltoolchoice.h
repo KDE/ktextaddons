@@ -19,7 +19,8 @@ public:
     enum class Mode : uint8_t {
         Auto = 0,
         None,
-        Required
+        Required,
+        Unknown,
     };
     Q_ENUM(Mode)
 
@@ -49,7 +50,7 @@ public:
     void setMode(Mode newMode);
 
 private:
-    Mode mMode = Mode::Auto;
+    Mode mMode = Mode::Unknown;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolToolChoice, Q_RELOCATABLE_TYPE);

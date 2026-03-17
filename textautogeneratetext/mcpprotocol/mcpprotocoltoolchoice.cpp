@@ -25,9 +25,13 @@ McpProtocolToolChoice McpProtocolToolChoice::fromJson(const QJsonObject &obj)
     return {};
 }
 
-QJsonObject McpProtocolToolChoice::toJson(const McpProtocolToolChoice &text)
+QJsonObject McpProtocolToolChoice::toJson(const McpProtocolToolChoice &choice)
 {
-    return {};
+    QJsonObject obj;
+    if (choice.mode() != McpProtocolToolChoice::Mode::Unknown) {
+        // obj.insert("mode", toJsonValue(*data._mode));
+    }
+    return obj;
 }
 
 McpProtocolToolChoice::Mode McpProtocolToolChoice::mode() const
