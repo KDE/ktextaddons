@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:42+0000\n"
-"PO-Revision-Date: 2026-03-14 10:07+0100\n"
+"PO-Revision-Date: 2026-03-15 17:40+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -3017,7 +3017,7 @@ msgstr "Ajouter un serveur"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "URL :"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
 #, kde-format
@@ -3026,12 +3026,10 @@ msgid "Add server…"
 msgstr "Ajouter un serveur…"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Supprimer un modèle"
+msgstr "Supprimer un serveur"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
 #, kde-format
