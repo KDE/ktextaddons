@@ -18,6 +18,8 @@ target_sources(
         mcpprotocolimagecontent.h
         mcpprotocolimagecontent.cpp
         mcpprotocoltextcontent.cpp
+        mcpprotocolimplementation.cpp
+        mcpprotocolresourcetemplatereference.cpp
         mcpprotocolpromptargument.cpp
         mcpprotocolbooleanschema.cpp
         mcpprotocolrelatedtaskmetadata.cpp
@@ -32,6 +34,8 @@ target_sources(
         mcpprotocoltoolexecution.h
         mcpprotocoltoolusecontent.cpp
         mcpprotocoltextcontent.h
+        mcpprotocolimplementation.h
+        mcpprotocolresourcetemplatereference.h
         mcpprotocolpromptargument.h
         mcpprotocolbooleanschema.h
         mcpprotocolrelatedtaskmetadata.h
