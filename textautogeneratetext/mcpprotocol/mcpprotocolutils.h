@@ -8,6 +8,8 @@
 #include <QString>
 namespace McpProtocol::McpProtocolUtils
 {
+using RequestId = std::variant<QString, int>;
+
 enum class Role : uint8_t {
     Unknown,
     Assistant,

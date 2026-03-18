@@ -29,17 +29,17 @@ public:
 
     /*!
      */
-    static McpProtocolLoggingMessageNotificationParams fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolLoggingMessageNotificationParams fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolLoggingMessageNotificationParams &image);
-    QString data() const;
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolLoggingMessageNotificationParams &image);
+    [[nodiscard]] QString data() const;
     void setData(const QString &newData);
 
-    McpProtocolUtils::LoggingLevel level() const;
+    [[nodiscard]] McpProtocolUtils::LoggingLevel level() const;
     void setLevel(McpProtocolUtils::LoggingLevel newLevel);
 
-    std::optional<QString> logger() const;
+    [[nodiscard]] std::optional<QString> logger() const;
     void setLogger(std::optional<QString> newLogger);
 
 private:

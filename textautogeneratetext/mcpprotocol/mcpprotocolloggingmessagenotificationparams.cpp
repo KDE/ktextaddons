@@ -16,6 +16,9 @@ bool McpProtocolLoggingMessageNotificationParams::operator==(const McpProtocolLo
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLoggingMessageNotificationParams &t)
 {
+    d.space() << "data:" << t.data();
+    d.space() << "logger:" << t.logger();
+    d.space() << "level:" << McpProtocol::McpProtocolUtils::convertLoggingLevelToString(t.level());
     return d;
 }
 
