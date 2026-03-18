@@ -19,7 +19,7 @@ TextAutoGenerateMenuListView::TextAutoGenerateMenuListView(QWidget *parent)
     : QListView(parent)
     , mModel(new TextAutoGenerateMenuModel(this))
 {
-    setDragEnabled(false);
+    setDragDropMode(QAbstractItemView::InternalMove);
     setModel(mModel);
     setItemDelegate(new TextAutoGenerateMenuListViewDelegate(this));
 }
@@ -43,7 +43,7 @@ void TextAutoGenerateMenuListView::contextMenuEvent(QContextMenuEvent *event)
     connect(addAction, &QAction::triggered, this, [this]() {
         TextAutoGenerateMenuTextInfo info;
         info.setRequestText(i18n("Ask to AI"));
-        mModel->addItem(std::move(info));
+        mModel->addItem(info);
     });
     menu.addAction(addAction);
     const QModelIndex index = indexAt(event->pos());

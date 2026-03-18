@@ -40,10 +40,16 @@ void TextAutoGenerateMenuTextManager::load()
         TextAutoGenerateMenuTextInfo info;
         info.setRequestText(group.readEntry(u"RequestedText"_s));
         info.setEnabled(group.readEntry(u"Enabled"_s, true));
+        info.setOrder(group.readEntry(QStringLiteral("Order"), 0));
         infos.append(std::move(info));
     }
     std::sort(infos.begin(), infos.end(), [&](const auto &firstItem, const auto &secondItem) {
-        return firstItem.requestText() < secondItem.requestText();
+        const int firstOrder = firstItem.order();
+        const int secondOrder = secondItem.order();
+        if (firstOrder == secondOrder) {
+            return firstItem.requestText() < secondItem.requestText();
+        }
+        return firstOrder < secondOrder;
     });
     setTextInfos(infos);
 }
@@ -62,6 +68,7 @@ void TextAutoGenerateMenuTextManager::save()
         const TextAutoGenerateMenuTextInfo &info = mTextInfos.at(i);
         group.writeEntry(u"RequestedText"_s, info.requestText());
         group.writeEntry(u"Enabled"_s, info.enabled());
+        group.writeEntry(u"Order"_s, info.order());
     }
     config->sync();
 }

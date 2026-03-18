@@ -45,9 +45,17 @@ public:
      */
     [[nodiscard]] bool operator==(const TextAutoGenerateMenuTextInfo &other) const;
 
+    /*!
+     */
+    [[nodiscard]] int order() const;
+    /*!
+     */
+    void setOrder(int newOrder);
+
 private:
     QString mRequestText;
     bool mEnabled = true;
+    int mOrder = 0;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateMenuTextInfo, Q_RELOCATABLE_TYPE);

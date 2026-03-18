@@ -16,9 +16,10 @@ TextAutoGenerateMenuTextInfoTest::TextAutoGenerateMenuTextInfoTest(QObject *pare
 
 void TextAutoGenerateMenuTextInfoTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateMenuTextInfo info;
+    const TextAutoGenerateText::TextAutoGenerateMenuTextInfo info;
     QVERIFY(info.enabled());
     QVERIFY(info.requestText().isEmpty());
+    QCOMPARE(info.order(), 0);
 }
 
 #include "moc_textautogeneratemenutextinfotest.cpp"
