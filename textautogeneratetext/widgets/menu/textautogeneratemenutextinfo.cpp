@@ -36,9 +36,20 @@ bool TextAutoGenerateMenuTextInfo::operator==(const TextAutoGenerateMenuTextInfo
     return mEnabled == other.mEnabled && mRequestText == other.mRequestText;
 }
 
+int TextAutoGenerateMenuTextInfo::order() const
+{
+    return mOrder;
+}
+
+void TextAutoGenerateMenuTextInfo::setOrder(int newOrder)
+{
+    mOrder = newOrder;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateMenuTextInfo &t)
 {
     d.space() << "enabled:" << t.enabled();
     d.space() << "requestText:" << t.requestText();
+    d.space() << "order:" << t.order();
     return d;
 }

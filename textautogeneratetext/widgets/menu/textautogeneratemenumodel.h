@@ -27,12 +27,18 @@ public:
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
     [[nodiscard]] bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
+    [[nodiscard]] Qt::DropActions supportedDropActions() const override;
+    [[nodiscard]] Qt::DropActions supportedDragActions() const override;
+
+    [[nodiscard]] QStringList mimeTypes() const override;
 
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
     void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems);
 
     void addItem(const TextAutoGenerateMenuTextInfo &msg);
     void removeInfo(int index);
+
+    [[nodiscard]] bool moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild) override;
 
 private:
     QList<TextAutoGenerateMenuTextInfo> mTextInfos;

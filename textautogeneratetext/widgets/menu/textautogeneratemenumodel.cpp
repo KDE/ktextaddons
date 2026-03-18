@@ -96,10 +96,41 @@ void TextAutoGenerateMenuModel::removeInfo(int index)
 
 Qt::ItemFlags TextAutoGenerateMenuModel::flags(const QModelIndex &index) const
 {
-    if (!index.isValid())
-        return Qt::NoItemFlags;
+    if (!index.isValid()) {
+        return Qt::ItemIsDropEnabled; // allow dropping between items
+    }
+    return Qt::ItemIsEditable | Qt::ItemIsUserCheckable | Qt::ItemIsDragEnabled | QAbstractListModel::flags(index);
+}
 
-    return Qt::ItemIsEditable | Qt::ItemIsUserCheckable | QAbstractListModel::flags(index);
+Qt::DropActions TextAutoGenerateMenuModel::supportedDropActions() const
+{
+    return Qt::MoveAction;
+}
+
+Qt::DropActions TextAutoGenerateMenuModel::supportedDragActions() const
+{
+    return Qt::MoveAction;
+}
+
+QStringList TextAutoGenerateMenuModel::mimeTypes() const
+{
+    return {QString::fromLatin1("application/x-autogenerate-menu")};
+}
+
+bool TextAutoGenerateMenuModel::moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild)
+{
+    if (!beginMoveRows(sourceParent, sourceRow, sourceRow + count - 1, destinationParent, destinationChild)) {
+        return false; // invalid move, e.g. no-op (move row 2 to row 2 or to row 3)
+    }
+
+    for (int i = 0; i < count; ++i) {
+        mTextInfos.move(sourceRow + i, destinationChild + (sourceRow > destinationChild ? 0 : -1));
+    }
+    for (int i = 0; i < mTextInfos.count(); ++i) {
+        mTextInfos[i].setOrder(i);
+    }
+    endMoveRows();
+    return true;
 }
 
 #include "moc_textautogeneratemenumodel.cpp"
