@@ -19,6 +19,7 @@ target_sources(
         mcpprotocolimagecontent.cpp
         mcpprotocoltextcontent.cpp
         mcpprotocolpromptargument.cpp
+        mcpprotocolrelatedtaskmetadata.cpp
         mcpprotocolmodelpreferences.cpp
         mcpprotocoltoolchoice.cpp
         mcpprotocolerror.cpp
@@ -31,6 +32,7 @@ target_sources(
         mcpprotocoltoolusecontent.cpp
         mcpprotocoltextcontent.h
         mcpprotocolpromptargument.h
+        mcpprotocolrelatedtaskmetadata.h
         mcpprotocolmodelpreferences.h
         mcpprotocoltoolannotations.cpp
         mcpprotocoltoolannotations.h
