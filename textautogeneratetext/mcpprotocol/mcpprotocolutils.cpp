@@ -77,3 +77,39 @@ McpProtocol::McpProtocolUtils::LoggingLevel McpProtocol::McpProtocolUtils::conve
     }
     return McpProtocolUtils::LoggingLevel::Unknown;
 }
+
+QString McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocolUtils::TaskStatus level)
+{
+    switch (level) {
+    case McpProtocolUtils::TaskStatus::Cancelled:
+        return u"cancelled"_s;
+    case McpProtocolUtils::TaskStatus::Completed:
+        return u"completed"_s;
+    case McpProtocolUtils::TaskStatus::Failed:
+        return u"failed"_s;
+    case McpProtocolUtils::TaskStatus::InputRequired:
+        return u"input_required"_s;
+    case McpProtocolUtils::TaskStatus::Working:
+        return u"working"_s;
+    case McpProtocolUtils::TaskStatus::Unknown:
+        return {};
+    }
+    return {};
+}
+
+McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convertTaskStatusFromString(const QString &str)
+{
+    if (str == "cancelled"_L1) {
+        return McpProtocolUtils::TaskStatus::Cancelled;
+    } else if (str == "completed"_L1) {
+        return McpProtocolUtils::TaskStatus::Completed;
+    } else if (str == "failed"_L1) {
+        return McpProtocolUtils::TaskStatus::Failed;
+    } else if (str == "input_required"_L1) {
+        return McpProtocolUtils::TaskStatus::InputRequired;
+    } else if (str == "working"_L1) {
+        return McpProtocolUtils::TaskStatus::Working;
+    } else {
+        return McpProtocolUtils::TaskStatus::Unknown;
+    }
+}

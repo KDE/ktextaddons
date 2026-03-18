@@ -55,4 +55,25 @@ void McpProtocolUtilsTest::shouldConvertLoggingLevelFromString()
     QCOMPARE(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(u"notice"_s), McpProtocol::McpProtocolUtils::LoggingLevel::Notice);
 }
 
+void McpProtocolUtilsTest::shouldConvertTaskStatusToString()
+{
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocol::McpProtocolUtils::TaskStatus::Cancelled), u"cancelled"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocol::McpProtocolUtils::TaskStatus::Completed), u"completed"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocol::McpProtocolUtils::TaskStatus::Failed), u"failed"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocol::McpProtocolUtils::TaskStatus::InputRequired), u"input_required"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocol::McpProtocolUtils::TaskStatus::Working), u"working"_s);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocol::McpProtocolUtils::TaskStatus::Unknown), QString());
+}
+
+void McpProtocolUtilsTest::shouldConvertTaskStatusFromString()
+{
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(u"cancelled"_s), McpProtocol::McpProtocolUtils::TaskStatus::Cancelled);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(u"completed"_s), McpProtocol::McpProtocolUtils::TaskStatus::Completed);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(u"failed"_s), McpProtocol::McpProtocolUtils::TaskStatus::Failed);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(u"input_required"_s), McpProtocol::McpProtocolUtils::TaskStatus::InputRequired);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(u"working"_s), McpProtocol::McpProtocolUtils::TaskStatus::Working);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(u"foo"_s), McpProtocol::McpProtocolUtils::TaskStatus::Unknown);
+    QCOMPARE(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(QString()), McpProtocol::McpProtocolUtils::TaskStatus::Unknown);
+}
+
 #include "moc_mcpprotocolutilstest.cpp"

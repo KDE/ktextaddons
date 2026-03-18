@@ -18,6 +18,7 @@ target_sources(
         mcpprotocolimagecontent.h
         mcpprotocolimagecontent.cpp
         mcpprotocoltextcontent.cpp
+        mcpprotocoltask.cpp
         mcpprotocolroot.cpp
         mcpprotocolimplementation.cpp
         mcpprotocolresourcetemplatereference.cpp
@@ -35,6 +36,7 @@ target_sources(
         mcpprotocoltoolexecution.h
         mcpprotocoltoolusecontent.cpp
         mcpprotocoltextcontent.h
+        mcpprotocoltask.h
         mcpprotocolroot.h
         mcpprotocolimplementation.h
         mcpprotocolresourcetemplatereference.h

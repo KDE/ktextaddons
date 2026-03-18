@@ -19,4 +19,6 @@ private Q_SLOTS:
     void shouldConvertRoleFromString();
     void shouldConvertLoggingLevelToString();
     void shouldConvertLoggingLevelFromString();
+    void shouldConvertTaskStatusToString();
+    void shouldConvertTaskStatusFromString();
 };
