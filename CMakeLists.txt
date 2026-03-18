@@ -204,7 +204,7 @@ set_package_properties(
 )
 
 if(BUILD_TESTING)
-    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
+    find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
 endif()
 
@@ -241,6 +241,11 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # see e.g. https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56556 or https://gcc.gnu.org/bugzilla/show_bug.cgi?id=79328
     string(APPEND CMAKE_CXX_FLAGS " -Wshadow")
 endif()
+set(EXCLUDE_DEPRECATED_BEFORE_AND_AT
+    0
+    CACHE STRING
+    "Control the range of deprecated API excluded from the build [default=0]."
+)
 
 if(BERGAMOT_TRANSLATOR_PLUGIN)
     find_package(slimt)
@@ -288,7 +293,7 @@ add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
 add_subdirectory(textemoticons)
 add_subdirectory(textutils)
-find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED MultimediaWidgets)
 add_subdirectory(textspeechtotext)
 add_subdirectory(textautogeneratetext)
 
