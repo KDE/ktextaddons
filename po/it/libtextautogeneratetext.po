@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:42+0000\n"
-"PO-Revision-Date: 2026-03-04 14:57+0100\n"
+"PO-Revision-Date: 2026-03-16 07:51+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -2988,43 +2988,36 @@ msgstr "Aggiungi istanza…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr ""
+msgstr "Aggiungi server"
 
 #: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
-msgstr ""
+msgstr "Url:"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "Aggiungi istanza…"
+msgstr "Aggiungi server…"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Rimuovi modello"
+msgstr "Rimuovi server"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr "Vuoi rimuovere questo modello (%1)?"
+msgstr "Vuoi rimuovere questo server (%1)?"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "Rimuovi modello"
+msgstr "Rimuovi server"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format

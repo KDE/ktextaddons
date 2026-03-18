@@ -1,93 +1,91 @@
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
 #
-# SPDX-FileCopyrightText: 2025, 2026 giovanni <g.sora@tiscali.it>
-# giovanni <g.sora@tiscali.it>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:42+0000\n"
-"PO-Revision-Date: 2026-03-17 11:28+0100\n"
-"Last-Translator: giovanni <g.sora@tiscali.it>\n"
-"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
-"Language: ia\n"
+"PO-Revision-Date: 2026-03-17 08:57+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
 msgid "New Chat..."
-msgstr "Nove Conversation de gruppo (Chat)..."
+msgstr "Nový rozhovor..."
 
 #: core/models/textautogeneratechatsmodel.cpp:163
 #, kde-format
 msgid "Favorite"
-msgstr "Favorito"
+msgstr "Oblíbené"
 
 #: core/models/textautogeneratechatsmodel.cpp:165
 #, kde-format
 msgid "Today"
-msgstr "Hodie"
+msgstr "Dnes"
 
 #: core/models/textautogeneratechatsmodel.cpp:167
 #, kde-format
 msgid "7 days previous"
-msgstr "7 dies precedente"
+msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:169
 #, kde-format
 msgid "30 days previous"
-msgstr "30 dies precednte"
+msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Later"
-msgstr "Plus tarde"
+msgstr "Později"
 
 #: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Unknown"
-msgstr "Incognite"
+msgstr "Neznámý"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
 #, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
 msgstr ""
-"<b>Motor:</b> %1<br><b>Modello:</b> %2<br><b>Nomine de Instantia:</b> %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
 #, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr "<br><b>Instrumentos:</b> %1"
+msgstr ""
 
 #: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Tools"
-msgstr "Instrumentos"
+msgstr "Nástroje"
 
 #: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Small"
-msgstr "Parve"
+msgstr "Malý"
 
 #: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Medium"
-msgstr "Medie"
+msgstr "Střední"
 
 #: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Big"
-msgstr "Grande"
+msgstr "Velký"
 
 #: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Huge"
-msgstr "Ponderose (Huge)"
+msgstr "Obrovský"
 
 #: core/textautogeneratemanager.cpp:159
 #, kde-format
@@ -97,12 +95,12 @@ msgstr ""
 #: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Code"
-msgstr "Codice"
+msgstr "Kód"
 
 #: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Math"
-msgstr "Mathematica"
+msgstr "Matematika"
 
 #: core/textautogeneratemanager.cpp:165
 #, kde-format
@@ -112,7 +110,7 @@ msgstr ""
 #: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Embedding"
-msgstr "Incorporante"
+msgstr ""
 
 #: core/textautogeneratemanager.cpp:169
 #, kde-format
@@ -122,12 +120,12 @@ msgstr ""
 #: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Cloud"
-msgstr "Nube (Cloud)"
+msgstr "Cloud"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
-msgstr "Vade a message"
+msgstr "Přejít na zprávu"
 
 #: core/textautogeneratesettings.cpp:47
 #, kde-format
@@ -139,12 +137,12 @@ msgstr ""
 #: core/textautogeneratetextplugin.cpp:279
 #, kde-format
 msgid "Local"
-msgstr "Local"
+msgstr "Místní"
 
 #: core/textautogeneratetextplugin.cpp:281
 #, kde-format
 msgid "Network"
-msgstr "Rete"
+msgstr "Síť"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
@@ -161,30 +159,30 @@ msgstr ""
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr "Activate (On)"
+msgstr "Zapnuto"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr "De-Activate (Off)"
+msgstr "Vypnuto"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr "Activa: %1"
+msgstr "Aktivovat: %1"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
 msgid "Generic"
-msgstr "Generic"
+msgstr "Obecné"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Configura %1"
+msgstr "Nastavit %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:48
@@ -193,7 +191,7 @@ msgstr "Configura %1"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr "General"
+msgstr "Obecné"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
 #: plugins/ollama/ollamaconfiguredialog.cpp:54
@@ -202,7 +200,7 @@ msgstr "General"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr "Modellos disponibile"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:150
@@ -210,12 +208,12 @@ msgstr "Modellos disponibile"
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
-msgstr "Falleva a connecter a interfacie a %1: %2"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
 msgid "Mistral AI"
-msgstr "Mistral AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
@@ -225,7 +223,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "OpenAI"
-msgstr "OpenAI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
@@ -245,7 +243,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Benátky"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
@@ -280,7 +278,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
 #, kde-format
 msgid "OpenAI ChatGPT"
-msgstr "OpenAI ChatGPT"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
@@ -292,7 +290,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
 #, kde-format
 msgid "OpenRouter AI"
-msgstr "OpenRouter AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
 #, kde-format
@@ -355,13 +353,13 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:72
 #, kde-format
 msgid "Models"
-msgstr "Modellos "
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "Adde Modello"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
@@ -371,12 +369,12 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
 #, kde-format
 msgid "Invalid Model Name"
-msgstr "Nomine de modello invalide"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
 #, kde-format
 msgid "Base:"
-msgstr "Base:"
+msgstr "Základna:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:76
@@ -386,23 +384,23 @@ msgstr "Base:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr "Nomine:"
+msgstr "Název:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
 #, kde-format
 msgid "Tag:"
-msgstr "Etiquetta:"
+msgstr "Značka:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
 #, kde-format
 msgid "Prompt:"
-msgstr "Symbolo de demanda:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "Crea"
+msgstr "Vytvořit"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
@@ -414,19 +412,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Selige file de GGUF"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Crea Modello"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "Discarga Modello"
+msgstr "Model stahování"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:23
 #, kde-format
@@ -438,7 +436,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr "Cancella"
+msgstr "Zrušit"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
@@ -448,18 +446,18 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download Model Error"
-msgstr "Error de Discargar Modello"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "Discarga"
+msgstr "Stáhnout"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
 msgid "Family:"
-msgstr "Familia:"
+msgstr "Rodina:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:39
 #, kde-format
@@ -479,7 +477,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:92
 #, kde-format
 msgid "Parent Model:"
-msgstr "Modello Genitor:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:123
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:81
@@ -491,18 +489,18 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "Remove Modello Seligite"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr "Tu vole remover iste modello (%1)?"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "Remove Modello"
+msgstr "Odstranit model"
 
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
@@ -530,7 +528,7 @@ msgstr ""
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
 #, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Selection de AMD GPU:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:49
 #, kde-format
@@ -551,24 +549,24 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr "Configura Ollama"
+msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:60
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr "Modellos installate"
+msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:66
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Crea Modellos"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:81
 #, kde-format
 msgid "Port:"
-msgstr "Porto:"
+msgstr "Port:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:90
 #, kde-format
@@ -580,12 +578,12 @@ msgstr ""
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
-msgstr "Modello:"
+msgstr "Model:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:108
 #, kde-format
 msgid "Customize Ollama"
-msgstr "Configura Ollama"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:118
 #, kde-format
@@ -597,13 +595,13 @@ msgstr ""
 #: plugins/ollama/ollamaconfigurewidget.cpp:188
 #, kde-format
 msgid "Failed to start Ollama"
-msgstr "Falleva a startar Ollama"
+msgstr ""
 
 #: plugins/ollama/ollamalogdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Registro (log) de Ollama"
+msgstr ""
 
 #: plugins/ollama/ollamaplugin.cpp:94
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
@@ -626,31 +624,31 @@ msgstr ""
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
 #, kde-format
 msgid "Ollama (Cloud)"
-msgstr "Ollama (Cloud)"
+msgstr ""
 
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "Configura Ollama Cloud"
+msgstr ""
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
-msgstr "Clave API:"
+msgstr "API klíč:"
 
 #: plugins/ollamacloud/ollamacloudplugin.cpp:118
 #, kde-format
 msgid "Ollama Cloud"
-msgstr "Ollama Cloud"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr "Recarga Modello"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
@@ -688,17 +686,17 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr "Preregulationes:"
+msgstr "Přednastavení:"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr "Minutas:"
+msgstr "Minut:"
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
 msgid "Categories"
-msgstr "Categorias"
+msgstr "Kategorie"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:19
 #, kde-format
@@ -2125,7 +2123,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr "Aperir URL \"%1\""
+msgstr "Otevřít URL \"%1\""
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
@@ -2140,7 +2138,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr "Optiones"
+msgstr "Možnosti"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
@@ -2159,12 +2157,12 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
 #, kde-format
 msgid "Share Name:"
-msgstr "Comparti Nomine:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
 #, kde-format
 msgid "Override Parameters"
-msgstr "Superscribe Parametros"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2178,7 +2176,7 @@ msgstr ""
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr "Temperatura:"
+msgstr "Teplota:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:43
 #, kde-format
@@ -2193,7 +2191,7 @@ msgstr ""
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr "Semine:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
 #, kde-format
@@ -2206,79 +2204,79 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr "Grandor de Fenestrea de Contexto:"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:179
 #, kde-format
 msgid "Capabilities"
-msgstr "Capabilitates"
+msgstr "Schopnosti"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Template"
-msgstr "Patrono"
+msgstr "Šablona"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
 msgid "Modelfile"
-msgstr "Modelfile (file de modello)"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Parameters"
-msgstr "Parametros"
+msgstr "Parametry"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
-msgstr "Detalios"
+msgstr "Podrobnosti"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
 msgid "Model Info"
-msgstr "Info de modello"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Do not Share"
-msgstr "Non comparti"
+msgstr ""
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Username"
-msgstr "Nomine usator"
+msgstr "Uživatelské jméno"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
 #, kde-format
 msgid "Full Name"
-msgstr "Nomine complete"
+msgstr "Celé jméno"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Monstra info de modello"
+msgstr "Zobrazit informace o modelu"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr "Ollama In Linea (Online)"
+msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Configura Ollama Online (in linea)"
+msgstr ""
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
 msgid "Server Url:"
-msgstr "URL de servitor:"
+msgstr "URL serveru:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:119
 #, kde-format
 msgid "Ollama Online"
-msgstr "Ollama In Linea (Online)"
+msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2288,7 +2286,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "Cerca Modello..."
+msgstr ""
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
@@ -2299,7 +2297,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr "Adde instantia…"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
 #, kde-format
@@ -2316,19 +2314,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Discarga Ollama"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Starta Ollama"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configura…"
+msgstr "Nastavit…"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
@@ -2339,26 +2337,26 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Monstra information de modello"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr "Inserta un message"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:470
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "Remove"
+msgstr "Odstranit"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr "Attacha File"
+msgstr "Přiložit soubor"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
@@ -2379,13 +2377,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Selige File"
+msgstr "Vybrat soubor"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
-msgstr "Invia"
+msgstr "Odeslat"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:124
 #, kde-format
@@ -2396,13 +2394,13 @@ msgstr ""
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
 msgid "Impossible to open %1"
-msgstr "Impossibile aperir %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr "Error durante que il aperiva file "
+msgstr "Chyba při otevírání souboru"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
@@ -2412,30 +2410,30 @@ msgstr ""
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
 msgid "Tools Plugins"
-msgstr "Plugins de instrumentos"
+msgstr "Moduly nástrojů"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
 msgid "Prompt"
-msgstr "Prompt (Demanda)"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr "Description:"
+msgstr "Popis:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
-msgstr "Argumentos:"
+msgstr "Argumenty:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr "Information:"
+msgstr "Informace:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
@@ -2452,7 +2450,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr "Cribra (debug)"
+msgstr "Ladění"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2465,7 +2463,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Nomine:"
+msgstr "Název:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:31
 #, kde-format
@@ -2477,7 +2475,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Configura "
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:54
 #, kde-format
@@ -2496,24 +2494,24 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Modifica…"
+msgstr "Upravit…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Remove Instantia"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Tu vole remover iste instantia (%1)?"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Remove Instantia"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
@@ -2521,20 +2519,20 @@ msgstr "Remove Instantia"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Cerca..."
+msgstr "Hledat…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
 #: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Adde instantia..."
+msgstr ""
 
 #: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr "Adde Servitor"
+msgstr "Přidat server"
 
 #: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
 #, kde-format
@@ -2546,112 +2544,112 @@ msgstr "Url:"
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "Adde Servitor…"
+msgstr "Přidat server…"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Remove Servitor"
+msgstr "Odstranit server"
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr "Tu vole remover iste servitor (%1)?"
+msgstr ""
 
 #: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "Remove Servitor"
+msgstr "Odstranit server"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr "Configura plugins de texto de IA (AI)"
+msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr "Adde…"
+msgstr "Přidat…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:45
 #, kde-format
 msgid "Ask to AI"
-msgstr "Demanda a IA (AI) "
+msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
 #: widgets/view/textautogeneratehistorylistview.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
-msgstr "Modifica…"
+msgstr "Změnit…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
 #: widgets/view/textautogeneratehistorylistview.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr "Remove…"
+msgstr "Odstranit…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgid "Do you want to remove it?"
-msgstr "Tu vole remover lo?"
+msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:62
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr "Remove"
+msgstr "Odstranit"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:34
 #, kde-format
 msgid "Ask AI…"
-msgstr "Demanda IA (AI) …"
+msgstr "Dotázat se AI..."
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr "Configura…"
+msgstr "Nastavit…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "Indicios Max:"
+msgstr ""
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr "Instrumento de Plugins:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr "Demanda rapide"
+msgstr "Rychlý dotaz"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
 #: widgets/textautogenerateheaderwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
-msgstr "Cerca..."
+msgstr "Hledat…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configura..."
+msgstr "Nastavit…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
-msgstr "Netta"
+msgstr "Vyprázdnit"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
 #, kde-format
@@ -2663,31 +2661,31 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
-msgstr "Conversatione"
+msgstr ""
 
 #: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "Nove Conversation de gruppo (Chat)"
+msgstr "Nový rozhovor"
 
 #: widgets/textautogenerateheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
-msgstr "Favorito"
+msgstr "Oblíbené"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Cerca... (%1)"
+msgstr "Hledat… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Search Channels"
-msgstr "Cerca canales"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
@@ -2699,55 +2697,55 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "Proxime Conversation de gruppo (Chat)"
+msgstr ""
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr "Cerca"
+msgstr "Hledat"
 
 #: widgets/textautogeneratewidget.cpp:126
 #, kde-format
 msgid "No plugin found."
-msgstr "Necun plugin trovate."
+msgstr ""
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Instrumentos:"
+msgstr "Nástroje:"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:466
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr "Modifica…"
+msgstr "Upravit…"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:475
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr "Stoppa"
+msgstr "Zastavit"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:475
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
-msgstr "Pronuncia"
+msgstr "Číst"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:479
 #: widgets/view/textautogeneratedelegateutils.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
-msgstr "Copia"
+msgstr "Kopírovat"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:487
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr "Refresca"
+msgstr "Obnovit"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:621
 #, kde-format
@@ -2764,188 +2762,123 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
-msgstr "Monstra imagine"
+msgstr "Zobrazit obrázek"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:59
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr "Copia image in area de transferentia"
+msgstr "Zkopírovat obrázek do schránky"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:61
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr "Copia location a area de transferentia"
+msgstr "Kopírovat pozici do schránky"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:143
 #, kde-format
 msgid "Other Application..."
-msgstr "Altere application..."
+msgstr "Jiná aplikace..."
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr "Zoom: "
+msgstr "Zvětšení:"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr "Adapta a Vista"
+msgstr "Vyplnit pohled"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:109
 #, kde-format
 msgid "Save Image"
-msgstr "Salveguarda imagine"
+msgstr "Uložit obrázek"
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr "Copia selection"
+msgstr "Zkopírovat výběr"
 
 #: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
-msgstr "Copia"
+msgstr "Kopírovat"
 
 #: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Copia URL"
+msgstr "Kopírovat URL"
 
 #: widgets/view/textautogeneratebaselistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "Selige toto"
+msgstr "Vybrat vše"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "Nove Conversation de gruppo (Chat)"
+msgstr "Nový rozhovor"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr "Duplica ... "
+msgstr "Duplikovat "
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "Remove como favorito"
+msgstr "Odebrat z oblíbených"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "Fixa como Favorite"
+msgstr "Přidat do oblíbených"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr "Restabili"
+msgstr "Obnovit"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:165
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr "Archivo"
+msgstr "Archivovat"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:180
 #, kde-format
 msgid "Do you want to remove this discussion?"
-msgstr "Tu vole remover iste discussion?"
+msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
-msgstr "Remove Discussion"
+msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:262
 #, kde-format
 msgid "No Archive Found."
-msgstr "Necun Archivo trovate."
+msgstr ""
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "Necun messages trovate."
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "Reinitiar si necessari per applicar le modificationes."
-
-#, fuzzy
-#~| msgctxt "@info:tooltip"
-#~| msgid "Configure…"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Configura"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "New Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Nove Conversation de gruppo (Chat)"
-
-#, fuzzy
-#~| msgid "7 days previous"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "7 dies precedente"
-
-#~ msgid "No system prompt"
-#~ msgstr "Necun prompt de systema"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Edita ..."
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "Le URLal instantia de Ollama"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "Le prompt de systema per le LLM"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "Le modello usate per generar responsas"
-
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Configura Mistral AI"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Configura "
-
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancella"
-
-#~ msgctxt "@action"
-#~ msgid "New Chat…"
-#~ msgstr "Nove Conversation de gruppo (Chat)…"
-
-#~| msgid "Favorite"
-#~ msgctxt "@action"
-#~ msgid "Favorite…"
-#~ msgstr "Favorito…"
+msgstr ""
