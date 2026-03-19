@@ -25,6 +25,7 @@ target_sources(
         mcpprotocolpromptargument.cpp
         mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
+        mcpprotocoltaskmetadata.cpp
         mcpprotocolstringschema.cpp
         mcpprotocolnumberschema.cpp
         mcpprotocolrelatedtaskmetadata.cpp
@@ -46,6 +47,7 @@ target_sources(
         mcpprotocolpromptargument.h
         mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
+        mcpprotocoltaskmetadata.h
         mcpprotocolstringschema.h
         mcpprotocolnumberschema.h
         mcpprotocolrelatedtaskmetadata.h
