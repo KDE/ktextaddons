@@ -25,6 +25,8 @@ target_sources(
         mcpprotocolpromptargument.cpp
         mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
+        mcpprotocolmeta.cpp
+        mcpprotocoluntitledsingleselectenumschema.cpp
         mcpprotocoltaskmetadata.cpp
         mcpprotocolstringschema.cpp
         mcpprotocolnumberschema.cpp
@@ -47,6 +49,8 @@ target_sources(
         mcpprotocolpromptargument.h
         mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
+        mcpprotocolmeta.h
+        mcpprotocoluntitledsingleselectenumschema.h
         mcpprotocoltaskmetadata.h
         mcpprotocolstringschema.h
         mcpprotocolnumberschema.h
