@@ -61,7 +61,6 @@ QJsonObject McpProtocolBooleanSchema::toJson(const McpProtocolBooleanSchema &boo
         obj["title"_L1] = *boolean.title();
     }
     return obj;
-    return obj;
 }
 
 std::optional<QString> McpProtocolBooleanSchema::description() const
