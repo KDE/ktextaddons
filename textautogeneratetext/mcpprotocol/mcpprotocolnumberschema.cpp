@@ -113,11 +113,45 @@ McpProtocolNumberSchema::Type McpProtocolNumberSchema::convertNumberSchemaTypeFr
 McpProtocolNumberSchema McpProtocolNumberSchema::fromJson(const QJsonObject &obj)
 {
     McpProtocolNumberSchema prompt;
+    if (obj.contains("default"_L1)) {
+        prompt.setDefaultValue(obj.value("default"_L1).toInt());
+    }
+    if (obj.contains("description"_L1)) {
+        prompt.setDescription(obj.value("description"_L1).toString());
+    }
+    if (obj.contains("maximum"_L1)) {
+        prompt.setMaximum(obj.value("maximum"_L1).toInt());
+    }
+    if (obj.contains("minimum"_L1)) {
+        prompt.setMinimum(obj.value("minimum"_L1).toInt());
+    }
+    if (obj.contains("title"_L1)) {
+        prompt.setTitle(obj.value("title"_L1).toString());
+    }
+    if (obj.contains("type"_L1) && obj["type"_L1].isString()) {
+        prompt.setType(convertNumberSchemaTypeFromString(obj["type"_L1].toString()));
+    }
     return prompt;
 }
 
 QJsonObject McpProtocolNumberSchema::toJson(const McpProtocolNumberSchema &boolean)
 {
     QJsonObject obj;
+    obj["type"_L1] = convertNumberSchemaTypeToString(boolean.type());
+    if (boolean.defaultValue().has_value()) {
+        obj.insert("default"_L1, *boolean.defaultValue());
+    }
+    if (boolean.description().has_value()) {
+        obj.insert("description"_L1, *boolean.description());
+    }
+    if (boolean.maximum().has_value()) {
+        obj.insert("maximum"_L1, *boolean.maximum());
+    }
+    if (boolean.minimum().has_value()) {
+        obj.insert("minimum"_L1, *boolean.minimum());
+    }
+    if (boolean.title().has_value()) {
+        obj.insert("title"_L1, *boolean.title());
+    }
     return obj;
 }
