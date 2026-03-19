@@ -12,70 +12,129 @@ McpProtocolTask::McpProtocolTask() = default;
 
 McpProtocolTask::~McpProtocolTask() = default;
 
-QByteArray McpProtocolTask::type()
-{
-    return QByteArrayLiteral("text");
-}
-
 bool McpProtocolTask::operator==(const McpProtocolTask &other) const = default;
-
-QString McpProtocolTask::text() const
-{
-    return mText;
-}
-
-void McpProtocolTask::setText(const QString &newText)
-{
-    mText = newText;
-}
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTask &t)
 {
-    d.space() << "text:" << t.text();
-    d.space() << "annotations:" << t.annotations();
-    d.space() << "meta:" << t.meta();
+    d.space() << "createdAt" << t.createdAt();
+    d.space() << "lastUpdatedAt" << t.lastUpdatedAt();
+    d.space() << "pollInterval" << t.pollInterval();
+    d.space() << "status" << convertTaskStatusToString(t.status());
+    d.space() << "statusMessage" << t.statusMessage();
+    d.space() << "taskId" << t.taskId();
+    d.space() << "ttl" << t.ttl();
+
     return d;
-}
-
-std::optional<McpProtocolAnnotations> McpProtocolTask::annotations() const
-{
-    return mAnnotations;
-}
-
-void McpProtocolTask::setAnnotations(std::optional<McpProtocolAnnotations> newAnnotations)
-{
-    mAnnotations = std::move(newAnnotations);
-}
-
-QJsonObject McpProtocolTask::meta() const
-{
-    return mMeta;
-}
-
-void McpProtocolTask::setMeta(const QJsonObject &newMeta)
-{
-    mMeta = newMeta;
 }
 
 McpProtocolTask McpProtocolTask::fromJson(const QJsonObject &obj)
 {
     McpProtocolTask text;
-    if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolTask::type())) {
-        qWarning() << "McpProtocolTask: type is not correct " << obj.value("type"_L1).toString();
-        return {};
+    text.setCreatedAt(obj.value("createdAt"_L1).toString());
+    text.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
+    if (obj.contains("pollInterval"_L1)) {
+        text.setPollInterval(obj.value("pollInterval"_L1).toInt());
     }
-
-    text.setText(obj["text"_L1].toString());
-    if (obj.contains("annotations"_L1)) {
-        text.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    if (obj.contains("status"_L1) && obj["status"_L1].isString()) {
+        text.setStatus(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(obj["status"_L1].toString()));
     }
-    if (obj.contains("_meta"_L1)) {
-        text.setMeta(obj["_meta"_L1].toObject());
+    if (obj.contains("statusMessage"_L1)) {
+        text.setStatusMessage(obj.value("statusMessage"_L1).toString());
+    }
+    text.setTaskId(obj.value("taskId"_L1).toString());
+    if (!obj["ttl"_L1].isNull()) {
+        text.setTtl(obj.value("ttl"_L1).toInt());
     }
     return text;
 }
 
 QJsonObject McpProtocolTask::toJson(const McpProtocolTask &text)
 {
-    return {};
+    QJsonObject obj;
+    obj["createdAt"_L1] = text.createdAt();
+    obj["lastUpdatedAt"_L1] = text.lastUpdatedAt();
+    obj["status"_L1] = convertTaskStatusToString(text.status());
+    obj["taskId"_L1] = text.taskId();
+    if (text.pollInterval().has_value()) {
+        obj["pollInterval"_L1] = *text.pollInterval();
+    }
+    if (text.statusMessage().has_value()) {
+        obj["statusMessage"_L1] = *text.statusMessage();
+    }
+    if (text.ttl().has_value()) {
+        obj["ttl"_L1] = *text.ttl();
+    } else {
+        obj["ttl"_L1] = QJsonValue::Null;
+    }
+    return obj;
+}
+
+QString McpProtocolTask::createdAt() const
+{
+    return mCreatedAt;
+}
+
+void McpProtocolTask::setCreatedAt(const QString &newCreatedAt)
+{
+    mCreatedAt = newCreatedAt;
+}
+
+QString McpProtocolTask::lastUpdatedAt() const
+{
+    return mLastUpdatedAt;
+}
+
+void McpProtocolTask::setLastUpdatedAt(const QString &newLastUpdatedAt)
+{
+    mLastUpdatedAt = newLastUpdatedAt;
+}
+
+std::optional<int> McpProtocolTask::pollInterval() const
+{
+    return mPollInterval;
+}
+
+void McpProtocolTask::setPollInterval(std::optional<int> newPollInterval)
+{
+    mPollInterval = std::move(newPollInterval);
+}
+
+McpProtocolUtils::TaskStatus McpProtocolTask::status() const
+{
+    return mStatus;
+}
+
+void McpProtocolTask::setStatus(McpProtocol::McpProtocolUtils::TaskStatus newStatus)
+{
+    mStatus = newStatus;
+}
+
+std::optional<QString> McpProtocolTask::statusMessage() const
+{
+    return mStatusMessage;
+}
+
+void McpProtocolTask::setStatusMessage(std::optional<QString> newStatusMessage)
+{
+    mStatusMessage = std::move(newStatusMessage);
+}
+
+QString McpProtocolTask::taskId() const
+{
+    return mTaskId;
+}
+
+void McpProtocolTask::setTaskId(const QString &newTaskId)
+{
+    mTaskId = newTaskId;
+}
+
+std::optional<int> McpProtocolTask::ttl() const
+{
+    return mTtl;
+}
+
+void McpProtocolTask::setTtl(std::optional<int> newTtl)
+{
+    mTtl = std::move(newTtl);
 }
