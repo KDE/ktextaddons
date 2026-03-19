@@ -23,7 +23,9 @@ target_sources(
         mcpprotocolimplementation.cpp
         mcpprotocolresourcetemplatereference.cpp
         mcpprotocolpromptargument.cpp
+        mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
+        mcpprotocolnumberschema.cpp
         mcpprotocolrelatedtaskmetadata.cpp
         mcpprotocolmodelpreferences.cpp
         mcpprotocoltoolchoice.cpp
@@ -41,7 +43,9 @@ target_sources(
         mcpprotocolimplementation.h
         mcpprotocolresourcetemplatereference.h
         mcpprotocolpromptargument.h
+        mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
+        mcpprotocolnumberschema.h
         mcpprotocolrelatedtaskmetadata.h
         mcpprotocolmodelpreferences.h
         mcpprotocoltoolannotations.cpp
