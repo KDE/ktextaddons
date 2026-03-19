@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolstringschema.h"
+#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
@@ -157,7 +158,7 @@ QString McpProtocolStringSchema::convertModeToString(McpProtocolStringSchema::Fo
     case Format::Uri:
         return u"uri"_s;
     case Format::Unknown:
-        qWarning() << " Not defined mode";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << " Not defined mode";
         return {};
     }
     return {};
@@ -174,7 +175,7 @@ McpProtocolStringSchema::Format McpProtocolStringSchema::convertModeFromString(c
     } else if (str == "uri"_L1) {
         return Format::Uri;
     } else {
-        qWarning() << " Str is not supported " << str;
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << " Str is not supported " << str;
         return Format::Unknown;
     }
 }

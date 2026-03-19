@@ -83,7 +83,6 @@ QJsonObject McpProtocolAudioContent::toJson(const McpProtocolAudioContent &audio
     }
 
     // TODO add meta !
-    // TODO
     return obj;
 }
 
