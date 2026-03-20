@@ -25,6 +25,7 @@ target_sources(
         mcpprotocolpromptargument.cpp
         mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
+        mcpprotocolcancellednotificationparams.cpp
         mcpprotocolloggingmessagenotification.cpp
         mcpprotocolmeta.cpp
         mcpprotocoluntitledsingleselectenumschema.cpp
@@ -50,6 +51,7 @@ target_sources(
         mcpprotocolpromptargument.h
         mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
+        mcpprotocolcancellednotificationparams.h
         mcpprotocolloggingmessagenotification.h
         mcpprotocolmeta.h
         mcpprotocoluntitledsingleselectenumschema.h
