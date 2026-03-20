@@ -24,25 +24,55 @@ public:
      */
     ~McpProtocolPrompt();
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const McpProtocolPrompt &other) const;
+    /*!
+     */
     [[nodiscard]] static McpProtocolPrompt fromJson(const QJsonObject &obj);
+    /*!
+     */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolPrompt &boolean);
+    /*!
+     */
     [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QList<McpProtocolPromptArgument>> arguments() const;
+    /*!
+     */
     void setArguments(std::optional<QList<McpProtocolPromptArgument>> newArguments);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> description() const;
+    /*!
+     */
     void setDescription(std::optional<QString> newDescription);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QList<McpProtocolIcon>> icons() const;
+    /*!
+     */
     void setIcons(std::optional<QList<McpProtocolIcon>> newIcons);
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> title() const;
+    /*!
+     */
     void setTitle(std::optional<QString> newTitle);
 
 private:

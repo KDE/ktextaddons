@@ -29,21 +29,37 @@ public:
 
     /*!
      */
-    static McpProtocolModelPreferences fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolModelPreferences fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolModelPreferences &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolModelPreferences &image);
 
+    /*!
+     */
     [[nodiscard]] std::optional<double> costPriority() const;
+    /*!
+     */
     void setCostPriority(std::optional<double> newCostPriority);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QList<McpProtocolModelHint>> hints() const;
+    /*!
+     */
     void setHints(std::optional<QList<McpProtocolModelHint>> newHints);
 
+    /*!
+     */
     [[nodiscard]] std::optional<double> intelligencePriority() const;
+    /*!
+     */
     void setIntelligencePriority(std::optional<double> newIntelligencePriority);
 
+    /*!
+     */
     [[nodiscard]] std::optional<double> speedPriority() const;
+    /*!
+     */
     void setSpeedPriority(std::optional<double> newSpeedPriority);
 
 private:

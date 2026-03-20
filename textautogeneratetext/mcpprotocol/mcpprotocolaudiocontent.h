@@ -46,10 +46,10 @@ public:
 
     /*!
      */
-    static McpProtocolAudioContent fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolAudioContent fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolAudioContent &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolAudioContent &image);
 
     /*!
      */

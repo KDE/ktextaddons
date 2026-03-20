@@ -29,18 +29,30 @@ public:
 
     /*!
      */
-    static McpProtocolAnnotations fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolAnnotations fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolAnnotations &annot);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolAnnotations &annot);
 
+    /*!
+     */
     [[nodiscard]] std::optional<double> priority() const;
+    /*!
+     */
     void setPriority(std::optional<double> newPriority);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> lastModified() const;
+    /*!
+     */
     void setLastModified(std::optional<QString> newLastModified);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QList<McpProtocolUtils::Role>> audience() const;
+    /*!
+     */
     void setAudience(std::optional<QList<McpProtocolUtils::Role>> newAudience);
 
 private:

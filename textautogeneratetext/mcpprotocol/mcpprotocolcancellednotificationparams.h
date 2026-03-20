@@ -34,13 +34,25 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelledNotificationParams &image);
 
+    /*!
+     */
     [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> reason() const;
+    /*!
+     */
     void setReason(std::optional<QString> newReason);
 
+    /*!
+     */
     [[nodiscard]] std::optional<McpProtocolUtils::RequestId> requestId() const;
+    /*!
+     */
     void setRequestId(std::optional<McpProtocolUtils::RequestId> newRequestId);
 
 private:

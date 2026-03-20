@@ -55,10 +55,10 @@ public:
 
     /*!
      */
-    static McpProtocolIcon fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolIcon fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolIcon &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolIcon &image);
 
 private:
     QString mSrc;

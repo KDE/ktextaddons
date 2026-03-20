@@ -39,15 +39,23 @@ public:
 
     /*!
      */
-    static McpProtocolToolUseContent fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolToolUseContent fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolToolUseContent &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolUseContent &image);
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] QString id() const;
+    /*!
+     */
     void setId(const QString &newId);
 
 private:

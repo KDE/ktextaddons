@@ -96,6 +96,8 @@ public:
      */
     void setUri(const QString &newUri);
 
+    /*!
+     */
     [[nodiscard]] static QByteArray type();
 
 private:

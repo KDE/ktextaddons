@@ -43,7 +43,11 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitationCompleteNotification &image);
 
+    /*!
+     */
     [[nodiscard]] Params params() const;
+    /*!
+     */
     void setParams(const Params &newParams);
 
 private:

@@ -28,12 +28,16 @@ public:
 
     /*!
      */
-    static McpProtocolRelatedTaskMetadata fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolRelatedTaskMetadata fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolRelatedTaskMetadata &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolRelatedTaskMetadata &image);
 
+    /*!
+     */
     [[nodiscard]] QString taskId() const;
+    /*!
+     */
     void setTaskId(const QString &newTaskId);
 
 private:

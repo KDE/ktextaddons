@@ -28,12 +28,16 @@ public:
 
     /*!
      */
-    static McpProtocolTaskMetadata fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolTaskMetadata fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolTaskMetadata &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskMetadata &image);
 
+    /*!
+     */
     [[nodiscard]] std::optional<int> ttl() const;
+    /*!
+     */
     void setTtl(std::optional<int> newTtl);
 
 private:

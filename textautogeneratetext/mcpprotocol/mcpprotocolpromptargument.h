@@ -33,16 +33,32 @@ public:
      */
     static QJsonObject toJson(const McpProtocolPromptArgument &image);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> description() const;
+    /*!
+     */
     void setDescription(std::optional<QString> newDescription);
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] std::optional<bool> required() const;
+    /*!
+     */
     void setRequired(std::optional<bool> newRequired);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> title() const;
+    /*!
+     */
     void setTitle(std::optional<QString> newTitle);
 
 private:

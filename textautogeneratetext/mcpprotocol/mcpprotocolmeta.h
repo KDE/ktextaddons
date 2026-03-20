@@ -33,7 +33,11 @@ public:
      */
     static QJsonObject toJson(const McpProtocolMeta &image);
 
-    std::optional<QMap<QString, QJsonValue>> meta() const;
+    /*!
+     */
+    [[nodiscard]] std::optional<QMap<QString, QJsonValue>> meta() const;
+    /*!
+     */
     void setMeta(std::optional<QMap<QString, QJsonValue>> newMeta);
 
 private:

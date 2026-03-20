@@ -33,7 +33,11 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelledNotification &image);
 
+    /*!
+     */
     [[nodiscard]] McpProtocolCancelledNotificationParams params() const;
+    /*!
+     */
     void setParams(const McpProtocolCancelledNotificationParams &newParams);
 
 private:

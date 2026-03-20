@@ -37,14 +37,20 @@ public:
 
     /*!
      */
-    static McpProtocolToolExecution fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolToolExecution fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolToolExecution &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolExecution &image);
 
+    /*!
+     */
     [[nodiscard]] TaskSupport taskSupport() const;
+    /*!
+     */
     void setTaskSupport(TaskSupport newTaskSupport);
 
+    /*!
+     */
     [[nodiscard]] static QString convertTaskSupportToString(McpProtocolToolExecution::TaskSupport mode);
 
 private:

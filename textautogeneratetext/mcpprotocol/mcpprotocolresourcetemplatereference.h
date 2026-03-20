@@ -32,12 +32,16 @@ public:
 
     /*!
      */
-    static McpProtocolResourceTemplateReference fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolResourceTemplateReference fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolResourceTemplateReference &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceTemplateReference &image);
 
-    QString uri() const;
+    /*!
+     */
+    [[nodiscard]] QString uri() const;
+    /*!
+     */
     void setUri(const QString &newUri);
 
 private:

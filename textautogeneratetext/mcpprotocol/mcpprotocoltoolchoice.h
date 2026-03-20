@@ -37,10 +37,10 @@ public:
 
     /*!
      */
-    static McpProtocolToolChoice fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolToolChoice fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolToolChoice &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolChoice &image);
 
     /*!
      */
@@ -49,6 +49,8 @@ public:
      */
     void setMode(Mode newMode);
 
+    /*!
+     */
     [[nodiscard]] static QString convertModeToString(McpProtocolToolChoice::Mode mode);
 
 private:

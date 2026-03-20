@@ -33,10 +33,18 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolBaseMetadata &image);
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> title() const;
+    /*!
+     */
     void setTitle(std::optional<QString> newTitle);
 
 private:

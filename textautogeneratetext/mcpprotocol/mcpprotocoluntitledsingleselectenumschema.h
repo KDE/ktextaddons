@@ -58,7 +58,11 @@ public:
      */
     void setDefaultValue(std::optional<QString> newDefaultValue);
 
-    QStringList enums() const;
+    /*!
+     */
+    [[nodiscard]] QStringList enums() const;
+    /*!
+     */
     void setEnums(const QStringList &newEnums);
 
 private:

@@ -40,10 +40,10 @@ public:
 
     /*!
      */
-    static McpProtocolStringSchema fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolStringSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolStringSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolStringSchema &image);
 
     /*!
      */

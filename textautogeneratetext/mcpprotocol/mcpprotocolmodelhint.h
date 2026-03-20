@@ -29,11 +29,15 @@ public:
 
     /*!
      */
-    static McpProtocolModelHint fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolModelHint fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolModelHint &image);
-    std::optional<QString> name() const;
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolModelHint &image);
+    /*!
+     */
+    [[nodiscard]] std::optional<QString> name() const;
+    /*!
+     */
     void setName(std::optional<QString> newName);
 
 private:

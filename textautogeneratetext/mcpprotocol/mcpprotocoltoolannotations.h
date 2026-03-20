@@ -61,8 +61,12 @@ public:
      */
     [[nodiscard]] bool operator==(const McpProtocolToolAnnotations &other) const;
 
-    static McpProtocolToolAnnotations fromJson(const QJsonObject &obj);
-    static QJsonObject toJson(const McpProtocolToolAnnotations &text);
+    /*!
+     */
+    [[nodiscard]] static McpProtocolToolAnnotations fromJson(const QJsonObject &obj);
+    /*!
+     */
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolAnnotations &text);
 
 private:
     bool mDestructiveHint = true;

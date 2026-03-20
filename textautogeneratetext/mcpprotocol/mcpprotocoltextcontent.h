@@ -53,10 +53,10 @@ public:
 
     /*!
      */
-    static McpProtocolTextContent fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolTextContent fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolTextContent &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolTextContent &image);
 
 private:
     std::optional<McpProtocolAnnotations> mAnnotations;

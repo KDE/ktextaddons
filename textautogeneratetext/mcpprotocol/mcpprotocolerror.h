@@ -29,10 +29,10 @@ public:
 
     /*!
      */
-    static McpProtocolError fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolError fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolError &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolError &image);
     /*!
      */
     [[nodiscard]] int code() const;
