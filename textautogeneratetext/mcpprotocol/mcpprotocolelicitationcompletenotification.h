@@ -14,7 +14,7 @@ namespace McpProtocol
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolElicitationCompleteNotification
 {
 public:
-    struct Params {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Params {
         QString mElicitationId;
         [[nodiscard]] Params &elicitationId(const QString &v);
         [[nodiscard]] const QString &elicitationId() const;
