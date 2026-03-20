@@ -13,6 +13,11 @@ McpProtocolElicitationCompleteNotification::McpProtocolElicitationCompleteNotifi
 
 McpProtocolElicitationCompleteNotification::~McpProtocolElicitationCompleteNotification() = default;
 
+QByteArray McpProtocolElicitationCompleteNotification::type()
+{
+    return "notifications/elicitation/complete"_ba;
+}
+
 bool McpProtocolElicitationCompleteNotification::operator==(const McpProtocolElicitationCompleteNotification &other) const = default;
 
 bool McpProtocolElicitationCompleteNotification::Params::operator==(const McpProtocolElicitationCompleteNotification::Params &other) const = default;
@@ -22,16 +27,33 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolElicitationCompleteNot
     return d;
 }
 
+McpProtocolElicitationCompleteNotification::Params McpProtocolElicitationCompleteNotification::Params::fromJson(const QJsonObject &obj)
+{
+    McpProtocolElicitationCompleteNotification::Params result;
+    result.mElicitationId = obj.value("elicitationId"_L1).toString();
+    return result;
+}
+
+QJsonObject McpProtocolElicitationCompleteNotification::Params::toJson(const McpProtocolElicitationCompleteNotification::Params &image)
+{
+    QJsonObject obj;
+    obj["elicitationId"_L1] = image.mElicitationId;
+    ;
+    return obj;
+}
+
 McpProtocolElicitationCompleteNotification McpProtocolElicitationCompleteNotification::fromJson(const QJsonObject &obj)
 {
     McpProtocolElicitationCompleteNotification prompt;
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
-        co_return Utils::ResultError("Field 'jsonrpc' must be '2.0', got: " + obj.value("jsonrpc").toString());
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
     }
-    if (obj.value("method").toString() != "notifications/elicitation/complete")
-        co_return Utils::ResultError("Field 'method' must be 'notifications/elicitation/complete', got: " + obj.value("method").toString());
-    if (obj.contains("params") && obj["params"].isObject())
-        prompt._params = co_await fromJson<ElicitationCompleteNotification::Params>(obj["params"]);
+    if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolElicitationCompleteNotification::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'notifications/elicitation/complete', got: " << obj.value("method"_L1).toString();
+    }
+    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
+        prompt.setParams(McpProtocolElicitationCompleteNotification::Params::fromJson(obj["params"_L1].toObject()));
+    }
 
     return prompt;
 }
@@ -40,9 +62,8 @@ QJsonObject McpProtocolElicitationCompleteNotification::toJson(const McpProtocol
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
-    obj["method"_L1], u"notifications/elicitation/complete"_s;
-    obj["params"_L1], toJson(boolean.params());
-
+    obj["method"_L1] = QString::fromLatin1(McpProtocolElicitationCompleteNotification::type());
+    obj["params"_L1] = McpProtocolElicitationCompleteNotification::Params::toJson(boolean.params());
     return obj;
 }
 

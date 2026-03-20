@@ -19,6 +19,8 @@ public:
         [[nodiscard]] Params &elicitationId(const QString &v);
         [[nodiscard]] const QString &elicitationId() const;
         [[nodiscard]] bool operator==(const McpProtocolElicitationCompleteNotification::Params &other) const;
+        [[nodiscard]] static Params fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const Params &image);
     };
 
     /*!
@@ -27,6 +29,8 @@ public:
     /*!
      */
     ~McpProtocolElicitationCompleteNotification();
+
+    [[nodiscard]] static QByteArray type();
 
     /*!
      */
