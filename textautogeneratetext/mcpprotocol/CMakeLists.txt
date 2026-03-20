@@ -25,6 +25,7 @@ target_sources(
         mcpprotocolpromptargument.cpp
         mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
+        mcpprotocolelicitationcompletenotification.cpp
         mcpprotocolresourcelink.cpp
         mcpprotocolinitializednotification.cpp
         mcpprotocolrootslistchangednotification.cpp
@@ -56,6 +57,7 @@ target_sources(
         mcpprotocolpromptargument.h
         mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
+        mcpprotocolelicitationcompletenotification.h
         mcpprotocolresourcelink.h
         mcpprotocolinitializednotification.h
         mcpprotocolrootslistchangednotification.h

@@ -7,7 +7,7 @@
 #include "mcpprotocolresourcelink.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolResourceLinkTest)
-
+using namespace Qt::Literals::StringLiterals;
 McpProtocolResourceLinkTest::McpProtocolResourceLinkTest(QObject *parent)
     : QObject{parent}
 {
@@ -16,6 +16,14 @@ McpProtocolResourceLinkTest::McpProtocolResourceLinkTest(QObject *parent)
 void McpProtocolResourceLinkTest::shouldHaveDefaultValues()
 {
     const McpProtocol::McpProtocolResourceLink w;
-    // TODO
+    QVERIFY(!w.meta().has_value());
+    QVERIFY(!w.annotations().has_value());
+    QVERIFY(!w.description().has_value());
+    QVERIFY(!w.mimeType().has_value());
+    QVERIFY(!w.size().has_value());
+    QVERIFY(!w.title().has_value());
+    QVERIFY(w.name().isEmpty());
+    QVERIFY(w.uri().isEmpty());
+    QCOMPARE(w.type(), "resource_link"_ba);
 }
 #include "moc_mcpprotocolresourcelinktest.cpp"
