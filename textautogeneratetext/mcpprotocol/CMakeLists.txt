@@ -28,6 +28,7 @@ target_sources(
         mcpprotocolelicitationcompletenotification.cpp
         mcpprotocolresourcelink.cpp
         mcpprotocolinitializednotification.cpp
+        mcpprotocollistpromptsresult.cpp
         mcpprotocolprompt.cpp
         mcpprotocolrootslistchangednotification.cpp
         mcpprotocolnotificationparams.cpp
@@ -61,6 +62,7 @@ target_sources(
         mcpprotocolelicitationcompletenotification.h
         mcpprotocolresourcelink.h
         mcpprotocolinitializednotification.h
+        mcpprotocollistpromptsresult.h
         mcpprotocolprompt.h
         mcpprotocolrootslistchangednotification.h
         mcpprotocolnotificationparams.h
