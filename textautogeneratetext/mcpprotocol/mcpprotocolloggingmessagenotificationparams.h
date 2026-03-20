@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -33,17 +34,36 @@ public:
     /*!
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolLoggingMessageNotificationParams &image);
+    /*!
+     */
     [[nodiscard]] QString data() const;
+    /*!
+     */
     void setData(const QString &newData);
 
+    /*!
+     */
     [[nodiscard]] McpProtocolUtils::LoggingLevel level() const;
+    /*!
+     */
     void setLevel(McpProtocolUtils::LoggingLevel newLevel);
 
+    /*!
+     */
     [[nodiscard]] std::optional<QString> logger() const;
+    /*!
+     */
     void setLogger(std::optional<QString> newLogger);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
+
 private:
-    // TODO missing _meta
+    std::optional<McpProtocolMeta> mMeta;
     QString mData;
     McpProtocolUtils::LoggingLevel mLevel = McpProtocolUtils::LoggingLevel::Unknown;
     std::optional<QString> mLogger;

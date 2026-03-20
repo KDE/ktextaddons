@@ -19,6 +19,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLoggingMessageNotifica
     d.space() << "data:" << t.data();
     d.space() << "logger:" << t.logger();
     d.space() << "level:" << McpProtocol::McpProtocolUtils::convertLoggingLevelToString(t.level());
+    d.space() << "meta:" << t.meta();
     return d;
 }
 
@@ -32,7 +33,9 @@ McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificatio
     if (obj.contains("logger"_L1)) {
         params.setLogger(obj.value("logger"_L1).toString());
     }
-    // TODO params
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        params.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
     return params;
 }
 
@@ -41,7 +44,9 @@ QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtoco
     QJsonObject obj;
     obj["data"_L1] = params.data();
     obj["level"_L1] = McpProtocol::McpProtocolUtils::convertLoggingLevelToString(params.level());
-    // TODO add param
+    if (params.meta().has_value()) {
+        obj["meta"_L1] = McpProtocolMeta::toJson(*params.meta());
+    }
     if (params.logger().has_value()) {
         obj["logger"_L1] = *params.logger();
     }
@@ -76,6 +81,16 @@ std::optional<QString> McpProtocolLoggingMessageNotificationParams::logger() con
 void McpProtocolLoggingMessageNotificationParams::setLogger(std::optional<QString> newLogger)
 {
     mLogger = std::move(newLogger);
+}
+
+std::optional<McpProtocolMeta> McpProtocolLoggingMessageNotificationParams::meta() const
+{
+    return mMeta;
+}
+
+void McpProtocolLoggingMessageNotificationParams::setMeta(std::optional<McpProtocolMeta> newMeta)
+{
+    mMeta = std::move(newMeta);
 }
 
 #include "moc_mcpprotocolloggingmessagenotificationparams.cpp"
