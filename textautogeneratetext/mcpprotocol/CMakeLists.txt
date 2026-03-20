@@ -26,6 +26,7 @@ target_sources(
         mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
         mcpprotocolinitializednotification.cpp
+        mcpprotocolrootslistchangednotification.cpp
         mcpprotocolnotificationparams.cpp
         mcpprotocolcancellednotification.cpp
         mcpprotocolcancellednotificationparams.cpp
@@ -55,6 +56,7 @@ target_sources(
         mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
         mcpprotocolinitializednotification.h
+        mcpprotocolrootslistchangednotification.h
         mcpprotocolnotificationparams.h
         mcpprotocolcancellednotification.h
         mcpprotocolcancellednotificationparams.h
