@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolannotations.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -32,10 +31,10 @@ public:
 
     /*!
      */
-    static McpProtocolBooleanSchema fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolBooleanSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolBooleanSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolBooleanSchema &image);
 
     /*!
      */
