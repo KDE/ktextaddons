@@ -25,6 +25,7 @@ target_sources(
         mcpprotocolpromptargument.cpp
         mcpprotocolbasemetadata.cpp
         mcpprotocolbooleanschema.cpp
+        mcpprotocolcancellednotification.cpp
         mcpprotocolcancellednotificationparams.cpp
         mcpprotocolloggingmessagenotification.cpp
         mcpprotocolmeta.cpp
@@ -51,6 +52,7 @@ target_sources(
         mcpprotocolpromptargument.h
         mcpprotocolbasemetadata.h
         mcpprotocolbooleanschema.h
+        mcpprotocolcancellednotification.h
         mcpprotocolcancellednotificationparams.h
         mcpprotocolloggingmessagenotification.h
         mcpprotocolmeta.h
