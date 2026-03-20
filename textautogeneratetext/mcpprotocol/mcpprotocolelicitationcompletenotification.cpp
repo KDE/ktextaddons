@@ -24,6 +24,7 @@ bool McpProtocolElicitationCompleteNotification::Params::operator==(const McpPro
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolElicitationCompleteNotification &t)
 {
+    d.space() << " params" << t.params().elicitationId();
     return d;
 }
 
@@ -38,7 +39,6 @@ QJsonObject McpProtocolElicitationCompleteNotification::Params::toJson(const Mcp
 {
     QJsonObject obj;
     obj["elicitationId"_L1] = image.mElicitationId;
-    ;
     return obj;
 }
 
