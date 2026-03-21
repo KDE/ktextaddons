@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -32,13 +33,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] QJsonObject meta() const;
-    /*!
-     */
-    void setMeta(const QJsonObject &newMeta);
-
-    /*!
-     */
     [[nodiscard]] static McpProtocolToolUseContent fromJson(const QJsonObject &obj);
     /*!
      */
@@ -58,8 +52,16 @@ public:
      */
     void setId(const QString &newId);
 
+    [[nodiscard]] QMap<QString, QJsonValue> input() const;
+    void setInput(const QMap<QString, QJsonValue> &newInput);
+
+    std::optional<McpProtocolMeta> meta() const;
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
+
 private:
-    QJsonObject mMeta;
+    std::optional<McpProtocolMeta> mMeta;
+    QMap<QString, QJsonValue> mInput;
+
     QString mName;
     QString mId;
 };

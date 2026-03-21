@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -46,21 +47,17 @@ public:
 
     /*!
      */
-    [[nodiscard]] QJsonObject meta() const;
-    /*!
-     */
-    void setMeta(const QJsonObject &newMeta);
-
-    /*!
-     */
     [[nodiscard]] static McpProtocolTextContent fromJson(const QJsonObject &obj);
     /*!
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolTextContent &image);
 
+    std::optional<McpProtocolMeta> meta() const;
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
+
 private:
     std::optional<McpProtocolAnnotations> mAnnotations;
-    QJsonObject mMeta;
+    std::optional<McpProtocolMeta> mMeta;
     QString mText;
 };
 }

@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocoltoolchoice.h"
-#include <QDebug>
+#include "textautogeneratetextmcpprotocol_debug.h"
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolToolChoice::McpProtocolToolChoice() = default;
@@ -22,7 +22,11 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolChoice &t)
 
 McpProtocolToolChoice McpProtocolToolChoice::fromJson(const QJsonObject &obj)
 {
-    return {};
+    McpProtocolToolChoice result;
+    if (obj.contains("mode"_L1) && obj["mode"_L1].isString()) {
+        result.setMode(convertModeFromString(obj["mode"_L1].toString()));
+    }
+    return result;
 }
 
 QJsonObject McpProtocolToolChoice::toJson(const McpProtocolToolChoice &choice)
@@ -56,6 +60,21 @@ QString McpProtocolToolChoice::convertModeToString(McpProtocolToolChoice::Mode m
     case Mode::Unknown:
         return {};
     }
+    return {};
+}
+
+McpProtocolToolChoice::Mode McpProtocolToolChoice::convertModeFromString(const QString &str)
+{
+    if (str == "auto"_L1) {
+        return McpProtocolToolChoice::Mode::Auto;
+    }
+    if (str == "none"_L1) {
+        return McpProtocolToolChoice::Mode::None;
+    }
+    if (str == "required"_L1) {
+        return McpProtocolToolChoice::Mode::Required;
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ToolChoice::Mode value: " << str;
     return {};
 }
 

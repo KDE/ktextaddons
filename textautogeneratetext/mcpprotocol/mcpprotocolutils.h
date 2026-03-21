@@ -10,6 +10,8 @@ namespace McpProtocol::McpProtocolUtils
 {
 using RequestId = std::variant<QString, int>;
 
+using ProgressToken = std::variant<QString, int>;
+
 using Cursor = QString;
 
 enum class Role : uint8_t {

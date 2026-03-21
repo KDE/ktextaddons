@@ -17,7 +17,7 @@ void McpProtocolTextContentTest::shouldHaveDefaultValues()
 {
     const McpProtocol::McpProtocolTextContent w;
     QVERIFY(w.text().isEmpty());
-    QVERIFY(!w.annotations());
-    QVERIFY(w.meta().isEmpty());
+    QVERIFY(!w.annotations().has_value());
+    QVERIFY(!w.meta().has_value());
 }
 #include "moc_mcpprotocoltextcontenttest.cpp"

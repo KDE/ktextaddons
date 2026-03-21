@@ -53,6 +53,10 @@ public:
      */
     [[nodiscard]] static QString convertModeToString(McpProtocolToolChoice::Mode mode);
 
+    /*!
+     */
+    [[nodiscard]] static McpProtocolToolChoice::Mode convertModeFromString(const QString &str);
+
 private:
     Mode mMode = Mode::Unknown;
 };

@@ -47,16 +47,6 @@ void McpProtocolTextContent::setAnnotations(std::optional<McpProtocolAnnotations
     mAnnotations = std::move(newAnnotations);
 }
 
-QJsonObject McpProtocolTextContent::meta() const
-{
-    return mMeta;
-}
-
-void McpProtocolTextContent::setMeta(const QJsonObject &newMeta)
-{
-    mMeta = newMeta;
-}
-
 McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 {
     McpProtocolTextContent text;
@@ -70,7 +60,7 @@ McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
         text.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
     }
     if (obj.contains("_meta"_L1)) {
-        text.setMeta(obj["_meta"_L1].toObject());
+        text.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
     return text;
 }
@@ -78,4 +68,14 @@ McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 QJsonObject McpProtocolTextContent::toJson(const McpProtocolTextContent &text)
 {
     return {};
+}
+
+std::optional<McpProtocolMeta> McpProtocolTextContent::meta() const
+{
+    return mMeta;
+}
+
+void McpProtocolTextContent::setMeta(std::optional<McpProtocolMeta> newMeta)
+{
+    mMeta = newMeta;
 }

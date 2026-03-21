@@ -24,17 +24,8 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolUseContent &t)
     d.space() << "meta:" << t.meta();
     d.space() << "name:" << t.name();
     d.space() << "id:" << t.id();
+    d.space() << "input:" << t.input();
     return d;
-}
-
-QJsonObject McpProtocolToolUseContent::meta() const
-{
-    return mMeta;
-}
-
-void McpProtocolToolUseContent::setMeta(const QJsonObject &newMeta)
-{
-    mMeta = newMeta;
 }
 
 McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject &obj)
@@ -46,9 +37,10 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
     }
 
     if (obj.contains("_meta"_L1)) {
-        tool.setMeta(obj["_meta"_L1].toObject());
+        tool.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
     tool.setId(obj["id"_L1].toString());
+    tool.setName(obj.value("name"_L1).toString());
 
     // TODO input
     return tool;
@@ -83,4 +75,24 @@ QString McpProtocolToolUseContent::id() const
 void McpProtocolToolUseContent::setId(const QString &newId)
 {
     mId = newId;
+}
+
+QMap<QString, QJsonValue> McpProtocolToolUseContent::input() const
+{
+    return mInput;
+}
+
+void McpProtocolToolUseContent::setInput(const QMap<QString, QJsonValue> &newInput)
+{
+    mInput = newInput;
+}
+
+std::optional<McpProtocolMeta> McpProtocolToolUseContent::meta() const
+{
+    return mMeta;
+}
+
+void McpProtocolToolUseContent::setMeta(std::optional<McpProtocolMeta> newMeta)
+{
+    mMeta = newMeta;
 }
