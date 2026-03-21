@@ -6,11 +6,18 @@
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QString>
+namespace McpProtocol
+{
+class McpProtocolTextResourceContents;
+class McpProtocolBlobResourceContents;
+}
 namespace McpProtocol::McpProtocolUtils
 {
 using RequestId = std::variant<QString, int>;
 
 using ProgressToken = std::variant<QString, int>;
+
+using EmbeddedResourceResource = std::variant<McpProtocolTextResourceContents, McpProtocolBlobResourceContents>;
 
 using Cursor = QString;
 
