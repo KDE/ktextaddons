@@ -29,6 +29,7 @@ target_sources(
         mcpprotocolresourcelink.cpp
         mcpprotocolinitializednotification.cpp
         mcpprotocollistpromptsresult.cpp
+        mcpprotocollegacytitledenumschema.cpp
         mcpprotocolcreatetaskresult.cpp
         mcpprotocolblobresourcecontents.cpp
         mcpprotocolgetpromptresult.cpp
@@ -70,6 +71,7 @@ target_sources(
         mcpprotocolresourcelink.h
         mcpprotocolinitializednotification.h
         mcpprotocollistpromptsresult.h
+        mcpprotocollegacytitledenumschema.h
         mcpprotocolcreatetaskresult.h
         mcpprotocolblobresourcecontents.h
         mcpprotocolgetpromptresult.h
