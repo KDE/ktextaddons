@@ -19,6 +19,9 @@ using ProgressToken = std::variant<QString, int>;
 
 using EmbeddedResourceResource = std::variant<McpProtocolTextResourceContents, McpProtocolBlobResourceContents>;
 
+// TODO using ContentBlock = std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink,
+// McpProtocolEmbeddedResource>;
+
 using Cursor = QString;
 
 enum class Role : uint8_t {
