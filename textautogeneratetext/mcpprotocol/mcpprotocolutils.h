@@ -10,6 +10,11 @@ namespace McpProtocol
 {
 class McpProtocolTextResourceContents;
 class McpProtocolBlobResourceContents;
+class McpProtocolTextContent;
+class McpProtocolImageContent;
+class McpProtocolAudioContent;
+class McpProtocolResourceLink;
+class McpProtocolEmbeddedResource;
 }
 namespace McpProtocol::McpProtocolUtils
 {
@@ -19,8 +24,8 @@ using ProgressToken = std::variant<QString, int>;
 
 using EmbeddedResourceResource = std::variant<McpProtocolTextResourceContents, McpProtocolBlobResourceContents>;
 
-// TODO using ContentBlock = std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink,
-// McpProtocolEmbeddedResource>;
+using ContentBlock =
+    std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
 
 using Cursor = QString;
 
