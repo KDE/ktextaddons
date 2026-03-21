@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -55,10 +56,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] QJsonObject meta() const;
+    [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
     /*!
      */
-    void setMeta(const QJsonObject &newMeta);
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
 
     /*!
      */
@@ -73,9 +74,9 @@ public:
 
 private:
     std::optional<McpProtocolAnnotations> mAnnotations;
+    std::optional<McpProtocolMeta> mMeta;
     QString mMimeType;
     QString mData;
-    QJsonObject mMeta;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolImageContent, Q_RELOCATABLE_TYPE);

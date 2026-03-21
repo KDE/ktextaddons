@@ -49,14 +49,14 @@ void McpProtocolImageContent::setAnnotations(std::optional<McpProtocolAnnotation
     mAnnotations = std::move(newAnnotations);
 }
 
-QJsonObject McpProtocolImageContent::meta() const
+std::optional<McpProtocolMeta> McpProtocolImageContent::meta() const
 {
     return mMeta;
 }
 
-void McpProtocolImageContent::setMeta(const QJsonObject &newMeta)
+void McpProtocolImageContent::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 bool McpProtocolImageContent::isValid() const
@@ -71,9 +71,15 @@ McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj
         qWarning() << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        image.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
+        image.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    }
+
     image.setData(obj["data"_L1].toString());
     image.setMimeType(obj["mimeType"_L1].toString());
-    // TODO
     return image;
 }
 
@@ -86,7 +92,9 @@ QJsonObject McpProtocolImageContent::toJson(const McpProtocolImageContent &image
     if (image.annotations().has_value()) {
         obj["annotations"_L1] = McpProtocolAnnotations::toJson(*image.annotations());
     }
-    // TODO
+    if (image.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*image.meta());
+    }
     return obj;
 }
 
