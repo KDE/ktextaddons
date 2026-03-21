@@ -29,6 +29,7 @@ target_sources(
         mcpprotocolresourcelink.cpp
         mcpprotocolinitializednotification.cpp
         mcpprotocollistpromptsresult.cpp
+        mcpprotocolgetpromptresult.cpp
         mcpprotocolresourceupdatednotificationparams.cpp
         mcpprotocolpromptlistchangednotification.cpp
         mcpprotocolpaginatedresult.cpp
@@ -67,6 +68,7 @@ target_sources(
         mcpprotocolresourcelink.h
         mcpprotocolinitializednotification.h
         mcpprotocollistpromptsresult.h
+        mcpprotocolgetpromptresult.h
         mcpprotocolresourceupdatednotificationparams.h
         mcpprotocolpromptlistchangednotification.h
         mcpprotocolpaginatedresult.h
