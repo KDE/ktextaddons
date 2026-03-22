@@ -39,7 +39,7 @@ using ContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
 
 using Cursor = QString;
-
+using ElicitResultContentValue = std::variant<QStringList, QString, int, bool>;
 enum class Role : uint8_t {
     Unknown,
     Assistant,

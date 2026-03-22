@@ -34,6 +34,7 @@ target_sources(
         mcpprotocolcalltoolrequest.cpp
         mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolunsubscriberequestparams.cpp
+        mcpprotocolresourcetemplate.cpp
         mcpprotocoltoollistchangednotification.cpp
         mcpprotocolresourcelistchangednotification.cpp
         mcpprotocolresourceupdatednotification.cpp
@@ -93,6 +94,7 @@ target_sources(
         mcpprotocolcalltoolrequest.h
         mcpprotocolcalltoolrequestparams.h
         mcpprotocolunsubscriberequestparams.h
+        mcpprotocolresourcetemplate.h
         mcpprotocoltoollistchangednotification.h
         mcpprotocolresourcelistchangednotification.h
         mcpprotocolresourceupdatednotification.h
