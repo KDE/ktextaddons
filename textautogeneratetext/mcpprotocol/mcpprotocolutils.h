@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
+#include <QJsonValue>
 #include <QString>
 namespace McpProtocol
 {
@@ -55,6 +56,8 @@ enum class TaskStatus : uint8_t {
     Working,
     Unknown,
 };
+
+[[nodiscard]] ProgressToken fromJson(const QJsonValue &val);
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);

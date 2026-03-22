@@ -113,3 +113,14 @@ McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convert
         return McpProtocolUtils::TaskStatus::Unknown;
     }
 }
+
+McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::fromJson(const QJsonValue &val)
+{
+    if (val.isString()) {
+        return ProgressToken(val.toString());
+    }
+    if (val.isDouble()) {
+        return ProgressToken(val.toInt());
+    }
+    return {};
+}

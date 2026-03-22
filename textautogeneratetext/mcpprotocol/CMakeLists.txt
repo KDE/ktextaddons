@@ -29,6 +29,7 @@ target_sources(
         mcpprotocolresourcelink.cpp
         mcpprotocolinitializednotification.cpp
         mcpprotocollistpromptsresult.cpp
+        mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolpromptreference.cpp
         mcpprotocolprogressnotificationparams.cpp
         mcpprotocolembeddedresource.cpp
@@ -75,6 +76,7 @@ target_sources(
         mcpprotocolresourcelink.h
         mcpprotocolinitializednotification.h
         mcpprotocollistpromptsresult.h
+        mcpprotocolcalltoolrequestparams.h
         mcpprotocolpromptreference.h
         mcpprotocolprogressnotificationparams.h
         mcpprotocolembeddedresource.h
