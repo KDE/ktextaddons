@@ -1,0 +1,61 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+#include "mcpprotocolnotificationparams.h"
+#include "mcpprotocolprompt.h"
+#include "textautogeneratetextmcpprotocol_export.h"
+#include <QByteArray>
+#include <QJsonObject>
+#include <QString>
+class QDebug;
+namespace McpProtocol
+{
+class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolCancelTaskRequest
+{
+public:
+    struct Params {
+        QString mTaskId;
+
+        [[nodiscard]] QString taskId() const;
+        void setTaskId(const QString &newTaskId);
+        [[nodiscard]] bool operator==(const McpProtocolCancelTaskRequest::Params &other) const;
+    };
+    /*!
+     */
+    McpProtocolCancelTaskRequest();
+    /*!
+     */
+    ~McpProtocolCancelTaskRequest();
+
+    /*!
+     */
+    [[nodiscard]] static QByteArray type();
+
+    /*!
+     */
+    [[nodiscard]] bool operator==(const McpProtocolCancelTaskRequest &other) const;
+
+    /*!
+     */
+    [[nodiscard]] static McpProtocolCancelTaskRequest fromJson(const QJsonObject &obj);
+    /*!
+     */
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelTaskRequest &image);
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolCancelTaskRequest::Params params() const;
+    /*!
+     */
+    void setParams(const McpProtocolCancelTaskRequest::Params &newParams);
+
+private:
+    McpProtocolUtils::RequestId mId;
+    McpProtocolCancelTaskRequest::Params mParams;
+};
+}
+Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolCancelTaskRequest, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t);

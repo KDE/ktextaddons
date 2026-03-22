@@ -29,6 +29,7 @@ target_sources(
         mcpprotocolresourcelink.cpp
         mcpprotocolinitializednotification.cpp
         mcpprotocollistpromptsresult.cpp
+        mcpprotocolcanceltaskrequest.cpp
         mcpprotocolcalltoolrequest.cpp
         mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolpromptreference.cpp
@@ -77,6 +78,7 @@ target_sources(
         mcpprotocolresourcelink.h
         mcpprotocolinitializednotification.h
         mcpprotocollistpromptsresult.h
+        mcpprotocolcanceltaskrequest.h
         mcpprotocolcalltoolrequest.h
         mcpprotocolcalltoolrequestparams.h
         mcpprotocolpromptreference.h
