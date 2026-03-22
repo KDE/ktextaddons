@@ -33,7 +33,7 @@ McpProtocolCancelledNotificationParams McpProtocolCancelledNotificationParams::f
         prompt.setReason(obj.value("reason"_L1).toString());
     }
     if (obj.contains("requestId"_L1)) {
-        // RODO result._requestId = co_await fromJson<RequestId>(obj["requestId"_L1]);
+        prompt.setRequestId(McpProtocolUtils::requestIdFromJson(obj["requestId"_L1]));
     }
     return prompt;
 }
@@ -48,7 +48,7 @@ QJsonObject McpProtocolCancelledNotificationParams::toJson(const McpProtocolCanc
         obj["reason"_L1] = *boolean.reason();
     }
     if (boolean.requestId().has_value()) {
-        // TODO obj.insert("requestId", toJsonValue(*boolean.requestId()));
+        obj["requestId"_L1] = McpProtocolUtils::requestIdToJson(*boolean.requestId());
     }
     return obj;
 }

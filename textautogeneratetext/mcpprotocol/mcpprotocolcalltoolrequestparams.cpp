@@ -19,6 +19,10 @@ bool McpProtocolCallToolRequestParams::Meta::operator==(const McpProtocolCallToo
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCallToolRequestParams &t)
 {
+    d.space() << "name:" << t.name();
+    // TODO d.space() << "meta:" << t.meta();
+    d.space() << "task:" << t.task();
+    d.space() << "arguments:" << t.arguments();
     return d;
 }
 
@@ -103,7 +107,7 @@ std::optional<McpProtocolCallToolRequestParams::Meta> McpProtocolCallToolRequest
 
 void McpProtocolCallToolRequestParams::setMeta(std::optional<Meta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolCallToolRequestParams::Meta::progressToken() const

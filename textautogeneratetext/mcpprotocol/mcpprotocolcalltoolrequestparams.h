@@ -41,10 +41,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] static QByteArray type();
-
-    /*!
-     */
     [[nodiscard]] bool operator==(const McpProtocolCallToolRequestParams &other) const;
 
     /*!
