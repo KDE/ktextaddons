@@ -35,6 +35,7 @@ target_sources(
         mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolunsubscriberequestparams.cpp
         mcpprotocoltoollistchangednotification.cpp
+        mcpprotocolresourceupdatednotification.cpp
         mcpprotocoljsonrpcerrorresponse.cpp
         mcpprotocolpaginatedrequestparams.cpp
         mcpprotocolrequestparams.cpp
@@ -92,6 +93,7 @@ target_sources(
         mcpprotocolcalltoolrequestparams.h
         mcpprotocolunsubscriberequestparams.h
         mcpprotocoltoollistchangednotification.h
+        mcpprotocolresourceupdatednotification.h
         mcpprotocoljsonrpcerrorresponse.h
         mcpprotocolpaginatedrequestparams.h
         mcpprotocolrequestparams.h
