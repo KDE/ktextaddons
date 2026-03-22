@@ -28,3 +28,5 @@ bool TextAutoGenerateTextToolsLoadingJob::canStart() const
     // TODO
     return true;
 }
+
+#include "moc_textautogeneratetexttoolsloadingjob.cpp"
