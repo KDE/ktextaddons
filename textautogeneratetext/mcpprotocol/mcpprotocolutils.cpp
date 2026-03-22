@@ -114,7 +114,7 @@ McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convert
     }
 }
 
-McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::fromJson(const QJsonValue &val)
+McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::ProgressTokenFromJson(const QJsonValue &val)
 {
     if (val.isString()) {
         return ProgressToken(val.toString());
@@ -123,4 +123,25 @@ McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::from
         return ProgressToken(val.toInt());
     }
     return {};
+}
+
+McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::RequestIdFromJson(const QJsonValue &val)
+{
+    if (val.isString()) {
+        return RequestId(val.toString());
+    }
+    if (val.isDouble()) {
+        return RequestId(val.toInt());
+    }
+    return {};
+}
+
+QJsonValue McpProtocol::McpProtocolUtils::RequestIdToJson(const McpProtocol::McpProtocolUtils::RequestId &val)
+{
+    return QVariant::fromValue(val).toJsonValue();
+}
+
+QJsonValue McpProtocol::McpProtocolUtils::ProgressTokenToJson(const ProgressToken &val)
+{
+    return QVariant::fromValue(val).toJsonValue();
 }
