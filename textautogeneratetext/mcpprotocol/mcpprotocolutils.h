@@ -16,6 +16,9 @@ class McpProtocolImageContent;
 class McpProtocolAudioContent;
 class McpProtocolResourceLink;
 class McpProtocolEmbeddedResource;
+class McpProtocolToolUseContent;
+class McpProtocolToolResultContent;
+class McpProtocolSamplingMessageContentBlock;
 }
 namespace McpProtocol::McpProtocolUtils
 {
@@ -24,6 +27,13 @@ using RequestId = std::variant<QString, int>;
 using ProgressToken = std::variant<QString, int>;
 
 using EmbeddedResourceResource = std::variant<McpProtocolTextResourceContents, McpProtocolBlobResourceContents>;
+
+using CreateMessageResultContent = std::variant<McpProtocolTextContent,
+                                                McpProtocolImageContent,
+                                                McpProtocolAudioContent,
+                                                McpProtocolToolUseContent,
+                                                McpProtocolToolResultContent,
+                                                QList<McpProtocolSamplingMessageContentBlock>>;
 
 using ContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
