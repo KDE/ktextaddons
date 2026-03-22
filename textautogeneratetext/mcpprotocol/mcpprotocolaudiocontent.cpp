@@ -38,16 +38,6 @@ void McpProtocolAudioContent::setAnnotations(std::optional<McpProtocolAnnotation
     mAnnotations = std::move(newAnnotations);
 }
 
-QJsonObject McpProtocolAudioContent::meta() const
-{
-    return mMeta;
-}
-
-void McpProtocolAudioContent::setMeta(const QJsonObject &newMeta)
-{
-    mMeta = newMeta;
-}
-
 McpProtocolAudioContent McpProtocolAudioContent::fromJson(const QJsonObject &obj)
 {
     McpProtocolAudioContent audio;
@@ -60,7 +50,7 @@ McpProtocolAudioContent McpProtocolAudioContent::fromJson(const QJsonObject &obj
         audio.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
     }
     if (obj.contains("_meta"_L1)) {
-        audio.setMeta(obj["_meta"_L1].toObject());
+        audio.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
     audio.setData(obj.value("data"_L1).toString());
     audio.setMimeType(obj.value("mimeType"_L1).toString());
@@ -72,6 +62,16 @@ bool McpProtocolAudioContent::isValid() const
     return !mData.isEmpty() && !mMimeType.isEmpty();
 }
 
+std::optional<McpProtocolMeta> McpProtocolAudioContent::meta() const
+{
+    return mMeta;
+}
+
+void McpProtocolAudioContent::setMeta(std::optional<McpProtocolMeta> newMeta)
+{
+    mMeta = newMeta;
+}
+
 QJsonObject McpProtocolAudioContent::toJson(const McpProtocolAudioContent &audio)
 {
     QJsonObject obj;
@@ -81,8 +81,9 @@ QJsonObject McpProtocolAudioContent::toJson(const McpProtocolAudioContent &audio
     if (audio.annotations().has_value()) {
         obj["annotations"_L1] = McpProtocolAnnotations::toJson(*audio.annotations());
     }
-
-    // TODO add meta !
+    if (audio.annotations().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*audio.meta());
+    }
     return obj;
 }
 

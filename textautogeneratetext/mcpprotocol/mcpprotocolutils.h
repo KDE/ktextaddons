@@ -67,8 +67,8 @@ enum class TaskStatus : uint8_t {
     Unknown,
 };
 
-[[nodiscard]] RequestId RequestIdFromJson(const QJsonValue &val);
-[[nodiscard]] QJsonValue RequestIdToJson(const RequestId &val);
+[[nodiscard]] RequestId requestIdFromJson(const QJsonValue &val);
+[[nodiscard]] QJsonValue requestIdToJson(const RequestId &val);
 
 [[nodiscard]] ProgressToken ProgressTokenFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue ProgressTokenToJson(const ProgressToken &val);

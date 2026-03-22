@@ -31,14 +31,27 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCallToolRequest &t)
 McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObject &obj)
 {
     McpProtocolCallToolRequest prompt;
-    // TODO
+    if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        return {};
+    }
+    if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCallToolRequest::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'tools/call', got: " << obj.value("method"_L1).toString();
+        return {};
+    }
+    if (obj.contains("id"_L1)) {
+        prompt.setId(McpProtocol::McpProtocolUtils::requestIdFromJson(obj["id"_L1].toObject()));
+    }
+    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
+        prompt.setParams(McpProtocolCallToolRequestParams::fromJson(obj["params"_L1].toObject()));
+    }
     return prompt;
 }
 
 QJsonObject McpProtocolCallToolRequest::toJson(const McpProtocolCallToolRequest &boolean)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocol::McpProtocolUtils::RequestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocol::McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCallToolRequest::type());
     obj["params"_L1] = McpProtocolCallToolRequestParams::toJson(boolean.params());

@@ -18,7 +18,7 @@ void McpProtocolAudioContentTest::shouldHaveDefaultValues()
     const McpProtocol::McpProtocolAudioContent w;
     QVERIFY(w.data().isEmpty());
     QVERIFY(!w.annotations());
-    QVERIFY(w.meta().isEmpty());
+    QVERIFY(!w.meta().has_value());
     QVERIFY(w.mimeType().isEmpty());
 }
 #include "moc_mcpprotocolaudiocontenttest.cpp"

@@ -125,7 +125,7 @@ McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::Prog
     return {};
 }
 
-McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::RequestIdFromJson(const QJsonValue &val)
+McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::requestIdFromJson(const QJsonValue &val)
 {
     if (val.isString()) {
         return RequestId(val.toString());
@@ -136,7 +136,7 @@ McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::RequestI
     return {};
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::RequestIdToJson(const McpProtocol::McpProtocolUtils::RequestId &val)
+QJsonValue McpProtocol::McpProtocolUtils::requestIdToJson(const McpProtocol::McpProtocolUtils::RequestId &val)
 {
     return QVariant::fromValue(val).toJsonValue();
 }

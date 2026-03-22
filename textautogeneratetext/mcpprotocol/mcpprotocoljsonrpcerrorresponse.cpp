@@ -33,7 +33,7 @@ QJsonObject McpProtocolJSONRPCErrorResponse::toJson(const McpProtocolJSONRPCErro
     obj["error"_L1] = McpProtocolError::toJson(boolean.error());
     obj["jsonrpc"_L1] = u"2.0"_s;
     if (boolean.id().has_value()) {
-        obj["id"_L1] = McpProtocol::McpProtocolUtils::RequestIdToJson(*boolean.id());
+        obj["id"_L1] = McpProtocol::McpProtocolUtils::requestIdToJson(*boolean.id());
     }
     return obj;
 }

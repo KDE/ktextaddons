@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -39,13 +40,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] QJsonObject meta() const;
-    /*!
-     */
-    void setMeta(const QJsonObject &newMeta);
-
-    /*!
-     */
     [[nodiscard]] static McpProtocolAudioContent fromJson(const QJsonObject &obj);
     /*!
      */
@@ -69,9 +63,12 @@ public:
      */
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
+
 private:
     std::optional<McpProtocolAnnotations> mAnnotations;
-    QJsonObject mMeta;
+    std::optional<McpProtocolMeta> mMeta;
     QString mData;
     QString mMimeType;
 };
