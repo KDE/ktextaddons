@@ -85,8 +85,9 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
         if (!enumTypes.isEmpty()) {
             prop["enum"_L1] = QJsonArray::fromStringList(enumTypes);
         }
-        propertiesObj[property.name()] = prop;
-        lst.append(property.name());
+        const QString propertyName = property.name();
+        propertiesObj[propertyName] = prop;
+        lst.append(propertyName);
     }
     required = QJsonArray::fromStringList(lst);
     parameters["required"_L1] = required;

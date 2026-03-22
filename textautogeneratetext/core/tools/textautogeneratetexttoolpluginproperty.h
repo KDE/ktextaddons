@@ -9,6 +9,7 @@
 #include <KLazyLocalizedString>
 #include <QStringList>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 /*!
@@ -48,6 +49,8 @@ public:
     /*!
      */
     void setTypeElements(const QStringList &newEnumElements);
+
+    void parse(const QJsonObject &obj);
 
 private:
     QStringList mTypeElements;

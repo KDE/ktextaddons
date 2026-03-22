@@ -21,14 +21,36 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolsLoadingJob : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateTextToolsLoadingJob(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateTextToolsLoadingJob() override;
 
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
+    [[nodiscard]] QString fileName() const;
+    /*!
+     */
+    void setFileName(const QString &newFileName);
+
 Q_SIGNALS:
+    /*!
+     */
     void properties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &list);
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void parseJsonTools(const QJsonArray &array);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadTools();
+    QString mFileName;
 };
 }
