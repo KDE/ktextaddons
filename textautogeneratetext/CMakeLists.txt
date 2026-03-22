@@ -221,6 +221,8 @@ target_sources(
         core/tools/textautogeneratetexttoolpluginproperty.cpp
         core/tools/textautogeneratetexttoolpluginjob.h
         core/tools/textautogeneratetexttoolpluginjob.cpp
+        core/tools/textautogeneratetexttoolsloadingjob.h
+        core/tools/textautogeneratetexttoolsloadingjob.cpp
         core/textautogeneratesearchmessagesettings.h
         core/textautogeneratesearchmessagesettings.cpp
         core/textautogeneratefilecache.h
@@ -523,6 +525,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     TextAutoGenerateTextToolPluginProperty
     TextAutoGenerateTextToolPluginManager
     TextAutoGenerateTextToolPluginJob
+    TextAutoGenerateTextToolsLoadingJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools
