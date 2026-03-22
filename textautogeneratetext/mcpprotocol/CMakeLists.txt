@@ -34,6 +34,10 @@ target_sources(
         mcpprotocolcalltoolrequest.cpp
         mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolunsubscriberequestparams.cpp
+        mcpprotocolpaginatedrequestparams.cpp
+        mcpprotocolrequestparams.cpp
+        mcpprotocolreadresourcerequestparams.cpp
+        mcpprotocolsubscriberequestparams.cpp
         mcpprotocolpromptreference.cpp
         mcpprotocolprogressnotificationparams.cpp
         mcpprotocolembeddedresource.cpp
@@ -85,6 +89,10 @@ target_sources(
         mcpprotocolcalltoolrequest.h
         mcpprotocolcalltoolrequestparams.h
         mcpprotocolunsubscriberequestparams.h
+        mcpprotocolpaginatedrequestparams.h
+        mcpprotocolrequestparams.h
+        mcpprotocolreadresourcerequestparams.h
+        mcpprotocolsubscriberequestparams.h
         mcpprotocolpromptreference.h
         mcpprotocolprogressnotificationparams.h
         mcpprotocolembeddedresource.h
