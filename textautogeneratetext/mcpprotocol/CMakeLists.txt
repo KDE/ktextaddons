@@ -34,6 +34,7 @@ target_sources(
         mcpprotocolcalltoolrequest.cpp
         mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolgetpromptrequestparams.cpp
+        mcpprotocolgettaskpayloadrequest.cpp
         mcpprotocolunsubscriberequestparams.cpp
         mcpprotocolresourcetemplate.cpp
         mcpprotocoltoollistchangednotification.cpp
@@ -100,6 +101,7 @@ target_sources(
         mcpprotocolcalltoolrequest.h
         mcpprotocolcalltoolrequestparams.h
         mcpprotocolgetpromptrequestparams.h
+        mcpprotocolgettaskpayloadrequest.h
         mcpprotocolunsubscriberequestparams.h
         mcpprotocolresourcetemplate.h
         mcpprotocoltoollistchangednotification.h
