@@ -32,7 +32,7 @@ void TextAutoGenerateTextToolsLoadingJob::start()
 
 void TextAutoGenerateTextToolsLoadingJob::loadTools()
 {
-    QFile f(u"://tools.json"_s);
+    QFile f(mFileName);
     if (!f.open(QIODevice::ReadOnly)) {
         qWarning() << " Impossible to open tools json file";
     }
