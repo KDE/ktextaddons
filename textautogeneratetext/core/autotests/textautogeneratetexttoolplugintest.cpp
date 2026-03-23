@@ -110,11 +110,13 @@ void TextAutoGenerateTextToolPluginTest::shouldGenerateMetadata()
 {
     QFETCH(QByteArray, toolNameId);
     QFETCH(QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>, properties);
+    QFETCH(QStringList, required);
     QFETCH(QByteArray, result);
 
     CustomTextToolPlugin2 w;
     w.setToolNameId(toolNameId);
     w.setProperties(properties);
+    w.setRequired(required);
     const QJsonObject obj = w.testGenerateMetadata();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
@@ -126,16 +128,17 @@ void TextAutoGenerateTextToolPluginTest::shouldGenerateMetadata_data()
 {
     QTest::addColumn<QByteArray>("toolNameId");
     QTest::addColumn<QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>>("properties");
+    QTest::addColumn<QStringList>("required");
     QTest::addColumn<QByteArray>("result");
     {
-        QTest::addRow("empty") << ""_ba << QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>{}
+        QTest::addRow("empty") << ""_ba << QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>{} << QStringList{}
                                << QByteArray(
                                       "{\n    \"function\": {\n        \"description\": \"foo bla\",\n        \"name\": \"\",\n        \"parameters\": {\n     "
                                       "       \"properties\": {\n            },\n            \"required\": [\n            ],\n            \"type\": "
                                       "\"object\"\n        }\n    },\n    \"type\": \"function\"\n}\n");
     }
     {
-        QTest::addRow("test1") << "test_example1"_ba << QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>{}
+        QTest::addRow("test1") << "test_example1"_ba << QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>{} << QStringList()
                                << QByteArray(
                                       "{\n    \"function\": {\n        \"description\": \"foo bla\",\n        \"name\": \"test_example1\",\n        "
                                       "\"parameters\": {\n            \"properties\": {\n            },\n            \"required\": [\n            ],\n         "
@@ -150,7 +153,7 @@ void TextAutoGenerateTextToolPluginTest::shouldGenerateMetadata_data()
             lst.append(prop);
         }
         QTest::addRow("test2")
-            << "test_example2"_ba << lst
+            << "test_example2"_ba << lst << QStringList()
             << QByteArray(
                    "{\n    \"function\": {\n        \"description\": \"foo bla\",\n        \"name\": \"test_example2\",\n        \"parameters\": {\n           "
                    " \"properties\": {\n                \"city\": {\n                    \"description\": \"The name of the city\",\n                    "
@@ -168,13 +171,39 @@ void TextAutoGenerateTextToolPluginTest::shouldGenerateMetadata_data()
             lst.append(prop);
         }
         QTest::addRow("test3-enum")
-            << "test_example_enum"_ba << lst
+            << "test_example_enum"_ba << lst << QStringList()
             << QByteArray(
                    "{\n    \"function\": {\n        \"description\": \"foo bla\",\n        \"name\": \"test_example_enum\",\n        \"parameters\": {\n       "
                    "     \"properties\": {\n                \"type\": {\n                    \"description\": \"Time or date\",\n                    \"enum\": "
                    "[\n                        \"date\",\n                        \"time\",\n                        \"date and time\"\n                    "
                    "],\n                    \"type\": \"string\"\n                }\n            },\n            \"required\": [\n                \"type\"\n   "
                    "         ],\n            \"type\": \"object\"\n        }\n    },\n    \"type\": \"function\"\n}\n");
+    }
+    {
+        QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> lst;
+        {
+            TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty prop;
+            prop.setDescription(kli18n("Time or date"));
+            prop.setName(u"type"_s);
+            prop.setTypeElements({u"date"_s, u"time"_s, u"date and time"_s});
+            lst.append(prop);
+        }
+        {
+            TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty prop;
+            prop.setDescription(kli18n("day"));
+            prop.setName(u"day"_s);
+            lst.append(prop);
+        }
+        const QStringList required{u"type"_s};
+        QTest::addRow("test3-enum-with-required")
+            << "test_example_enum"_ba << lst << required
+            << QByteArray(
+                   "{\n    \"function\": {\n        \"description\": \"foo bla\",\n        \"name\": \"test_example_enum\",\n        \"parameters\": {\n       "
+                   "     \"properties\": {\n                \"day\": {\n                    \"description\": \"day\",\n                    \"type\": "
+                   "\"string\"\n                },\n                \"type\": {\n                    \"description\": \"Time or date\",\n                    "
+                   "\"enum\": [\n                        \"date\",\n                        \"time\",\n                        \"date and time\"\n             "
+                   "       ],\n                    \"type\": \"string\"\n                }\n            },\n            \"required\": [\n                "
+                   "\"type\"\n            ],\n            \"type\": \"object\"\n        }\n    },\n    \"type\": \"function\"\n}\n");
     }
 }
 
