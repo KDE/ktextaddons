@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    core/tools/textautogeneratetexttoolinternalproperty.h
-    core/tools/textautogeneratetexttoolinternalproperty.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -227,6 +223,10 @@ target_sources(
         core/tools/textautogeneratetexttoolpluginjob.cpp
         core/tools/textautogeneratetexttoolsloadingjob.h
         core/tools/textautogeneratetexttoolsloadingjob.cpp
+        core/tools/textautogeneratetexttoolinternalproperty.h
+        core/tools/textautogeneratetexttoolinternalproperty.cpp
+        core/tools/textautogeneratetexttoolinternal.h
+        core/tools/textautogeneratetexttoolinternal.cpp
         core/textautogeneratesearchmessagesettings.h
         core/textautogeneratesearchmessagesettings.cpp
         core/textautogeneratefilecache.h
@@ -530,6 +530,8 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     TextAutoGenerateTextToolPluginManager
     TextAutoGenerateTextToolPluginJob
     TextAutoGenerateTextToolsLoadingJob
+    TextAutoGenerateTextToolInternalProperty
+    TextAutoGenerateTextToolInternal
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools
