@@ -40,7 +40,11 @@ public:
      */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
 
-    QJsonObject additionalProperties() const;
+    /*!
+     */
+    [[nodiscard]] QJsonObject additionalProperties() const;
+    /*!
+     */
     void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
 
 private:
