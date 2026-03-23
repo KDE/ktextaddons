@@ -19,6 +19,8 @@ class McpProtocolEmbeddedResource;
 class McpProtocolToolUseContent;
 class McpProtocolToolResultContent;
 class McpProtocolSamplingMessageContentBlock;
+class McpProtocolPromptReference;
+class McpProtocolResourceTemplateReference;
 }
 namespace McpProtocol::McpProtocolUtils
 {
@@ -34,6 +36,8 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 McpProtocolToolUseContent,
                                                 McpProtocolToolResultContent,
                                                 QList<McpProtocolSamplingMessageContentBlock>>;
+
+using CompleteRequestParamsRef = std::variant<McpProtocolPromptReference, McpProtocolResourceTemplateReference>;
 
 using ContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
