@@ -21,6 +21,23 @@ class McpProtocolToolResultContent;
 class McpProtocolSamplingMessageContentBlock;
 class McpProtocolPromptReference;
 class McpProtocolResourceTemplateReference;
+class McpProtocolInitializeRequest;
+class McpProtocolPingRequest;
+class McpProtocolListResourcesRequest;
+class McpProtocolListResourceTemplatesRequest;
+class McpProtocolReadResourceRequest;
+class McpProtocolSubscribeRequest;
+class McpProtocolUnsubscribeRequest;
+class McpProtocolListPromptsRequest;
+class McpProtocolGetPromptRequest;
+class McpProtocolListToolsRequest;
+class McpProtocolCallToolRequest;
+class McpProtocolGetTaskRequest;
+class McpProtocolGetTaskPayloadRequest;
+class McpProtocolCancelTaskRequest;
+class McpProtocolListTasksRequest;
+class McpProtocolSetLevelRequest;
+class McpProtocolCompleteRequest;
 }
 namespace McpProtocol::McpProtocolUtils
 {
@@ -38,6 +55,24 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 QList<McpProtocolSamplingMessageContentBlock>>;
 
 using CompleteRequestParamsRef = std::variant<McpProtocolPromptReference, McpProtocolResourceTemplateReference>;
+
+using ClientRequest = std::variant<McpProtocolInitializeRequest,
+                                   McpProtocolPingRequest,
+                                   McpProtocolListResourcesRequest,
+                                   McpProtocolListResourceTemplatesRequest,
+                                   McpProtocolReadResourceRequest,
+                                   McpProtocolSubscribeRequest,
+                                   McpProtocolUnsubscribeRequest,
+                                   McpProtocolListPromptsRequest,
+                                   McpProtocolGetPromptRequest,
+                                   McpProtocolListToolsRequest,
+                                   McpProtocolCallToolRequest,
+                                   McpProtocolGetTaskRequest,
+                                   McpProtocolGetTaskPayloadRequest,
+                                   McpProtocolCancelTaskRequest,
+                                   McpProtocolListTasksRequest,
+                                   McpProtocolSetLevelRequest,
+                                   McpProtocolCompleteRequest>;
 
 using ContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
