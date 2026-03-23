@@ -54,6 +54,7 @@ target_sources(
         mcpprotocolresourceupdatednotificationparams.cpp
         mcpprotocolpromptlistchangednotification.cpp
         mcpprotocolpaginatedresult.cpp
+        mcpprotocoltaskstatusnotification.cpp
         mcpprotocolprogressnotification.cpp
         mcpprotocolresult.cpp
         mcpprotocollistresourcetemplatesresult.cpp
@@ -117,6 +118,7 @@ target_sources(
         mcpprotocolresourceupdatednotificationparams.h
         mcpprotocolpromptlistchangednotification.h
         mcpprotocolpaginatedresult.h
+        mcpprotocoltaskstatusnotification.h
         mcpprotocolprogressnotification.h
         mcpprotocolresult.h
         mcpprotocollistresourcetemplatesresult.h
