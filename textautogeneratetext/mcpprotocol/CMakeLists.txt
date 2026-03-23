@@ -35,6 +35,7 @@ target_sources(
         mcpprotocolcalltoolrequestparams.cpp
         mcpprotocolgetpromptrequestparams.cpp
         mcpprotocolgettaskpayloadrequest.cpp
+        mcpprotocolgettaskrequest.cpp
         mcpprotocolunsubscriberequestparams.cpp
         mcpprotocolresourcetemplate.cpp
         mcpprotocoltoollistchangednotification.cpp
@@ -57,6 +58,7 @@ target_sources(
         mcpprotocolpromptlistchangednotification.cpp
         mcpprotocolpaginatedresult.cpp
         mcpprotocolgetpromptrequest.cpp
+        mcpprotocollistresourcesrequest.cpp
         mcpprotocoltaskstatusnotification.cpp
         mcpprotocolprogressnotification.cpp
         mcpprotocolresult.cpp
@@ -102,6 +104,7 @@ target_sources(
         mcpprotocolcalltoolrequestparams.h
         mcpprotocolgetpromptrequestparams.h
         mcpprotocolgettaskpayloadrequest.h
+        mcpprotocolgettaskrequest.h
         mcpprotocolunsubscriberequestparams.h
         mcpprotocolresourcetemplate.h
         mcpprotocoltoollistchangednotification.h
@@ -124,6 +127,7 @@ target_sources(
         mcpprotocolpromptlistchangednotification.h
         mcpprotocolpaginatedresult.h
         mcpprotocolgetpromptrequest.h
+        mcpprotocollistresourcesrequest.h
         mcpprotocoltaskstatusnotification.h
         mcpprotocolprogressnotification.h
         mcpprotocolresult.h
