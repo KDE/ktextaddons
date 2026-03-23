@@ -101,7 +101,6 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalChatsDatabase::loadChats() cons
     Q_ASSERT(db.isOpen());
     const QString query = TextAutoGenerateLocalChatsDatabase::generateQueryStr();
     QSqlQuery resultQuery(db);
-    resultQuery.prepare(query);
     if (!resultQuery.prepare(query)) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " Invalid query" << query << " resultQuery " << resultQuery.lastError().text();
         return {};
