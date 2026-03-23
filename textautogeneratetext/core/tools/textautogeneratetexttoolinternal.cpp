@@ -105,5 +105,17 @@ void TextAutoGenerateTextToolInternal::setDescription(const QString &newDescript
 
 void TextAutoGenerateTextToolInternal::parse(const QJsonObject &obj)
 {
-    // TODO
+    const QJsonObject function = obj["function"_L1].toObject();
+    mDescription = function["description"_L1].toString();
+    mToolNameId = function["name"_L1].toString().toLatin1();
+    const QJsonObject parameters = function["parameters"_L1].toObject();
+    const QJsonObject properties = parameters["properties"_L1].toObject();
+    const QStringList keys = properties.keys();
+    for (const QString &k : keys) {
+        TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty property;
+        property.parse(properties[k].toObject());
+        if (property.isValid()) {
+            mProperties.append(property);
+        }
+    }
 }
