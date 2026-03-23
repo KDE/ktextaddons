@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    core/tools/textautogeneratetexttoolinternal.h
-    core/tools/textautogeneratetexttoolinternal.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -231,6 +227,8 @@ target_sources(
         core/tools/textautogeneratetexttoolinternalproperty.cpp
         core/tools/textautogeneratetexttoolinternalinterface.h
         core/tools/textautogeneratetexttoolinternalinterface.cpp
+        core/tools/textautogeneratetexttoolinternal.h
+        core/tools/textautogeneratetexttoolinternal.cpp
         core/textautogeneratesearchmessagesettings.h
         core/textautogeneratesearchmessagesettings.cpp
         core/textautogeneratefilecache.h

@@ -8,24 +8,57 @@
 #include "textautogeneratetext_export.h"
 #include <QList>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolInternalProperty;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternal
 {
 public:
+    /*!
+     */
     TextAutoGenerateTextToolInternal();
+    /*!
+     */
     ~TextAutoGenerateTextToolInternal();
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateTextToolInternalProperty> properties() const;
+    /*!
+     */
     void setProperties(const QList<TextAutoGenerateTextToolInternalProperty> &newProperties);
 
+    /*!
+     */
     [[nodiscard]] QStringList required() const;
+    /*!
+     */
     void setRequired(const QStringList &newRequired);
+
+    /*!
+     */
+    [[nodiscard]] QByteArray toolNameId() const;
+    /*!
+     */
+    void setToolNameId(const QByteArray &newToolNameId);
+
+    /*!
+     */
+    [[nodiscard]] QJsonObject generateMetadata() const;
+
+    /*!
+     */
+    [[nodiscard]] QString description() const;
+    /*!
+     */
+    void setDescription(const QString &newDescription);
 
 private:
     QList<TextAutoGenerateTextToolInternalProperty> mProperties;
     QStringList mRequired;
+    QByteArray mToolNameId;
+    QString mDescription;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternal &t);

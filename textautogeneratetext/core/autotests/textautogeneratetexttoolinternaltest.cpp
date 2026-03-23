@@ -19,4 +19,6 @@ void TextAutoGenerateTextToolInternalTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGenerateTextToolInternal w;
     QVERIFY(w.properties().isEmpty());
     QVERIFY(w.required().isEmpty());
+    QVERIFY(w.description().isEmpty());
+    QVERIFY(w.toolNameId().isEmpty());
 }
