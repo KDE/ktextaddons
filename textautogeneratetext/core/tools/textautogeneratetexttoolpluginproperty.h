@@ -50,8 +50,6 @@ public:
      */
     void setTypeElements(const QStringList &newEnumElements);
 
-    void parse(const QJsonObject &obj);
-
 private:
     QStringList mTypeElements;
     KLazyLocalizedString mDescription;

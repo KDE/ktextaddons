@@ -54,6 +54,10 @@ public:
      */
     void setDescription(const QString &newDescription);
 
+    /*!
+     */
+    void parse(const QJsonObject &obj);
+
 private:
     QList<TextAutoGenerateTextToolInternalProperty> mProperties;
     QStringList mRequired;

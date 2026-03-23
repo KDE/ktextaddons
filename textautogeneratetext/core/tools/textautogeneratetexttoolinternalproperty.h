@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QStringList>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 /*!
@@ -48,6 +49,14 @@ public:
     /*!
      */
     void setName(const QString &newName);
+
+    /*!
+     */
+    void parse(const QJsonObject &obj);
+
+    /*!
+     */
+    [[nodiscard]] bool isValid() const;
 
 private:
     QStringList mTypeElements;

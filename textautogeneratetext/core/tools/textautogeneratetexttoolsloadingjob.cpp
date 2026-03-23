@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetexttoolsloadingjob.h"
+#include "core/tools/textautogeneratetexttoolpluginproperty.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QFile>
 #include <QJsonArray>
@@ -54,10 +55,10 @@ void TextAutoGenerateTextToolsLoadingJob::parseJsonTools(const QJsonArray &array
 {
     QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> lstTool;
     for (const auto &v : array) {
-        TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty tool;
+        TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty tool;
         const auto obj = v.toObject();
-        /*
         tool.parse(obj);
+        /*
         if (tool.isValid()) {
             lstTool.insert(tool);
         }

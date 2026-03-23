@@ -49,6 +49,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextTool
     d.space() << "properties:" << t.properties();
     d.space() << "required:" << t.required();
     d.space() << "toolNameId:" << t.toolNameId();
+    d.space() << "description:" << t.description();
     return d;
 }
 
@@ -100,4 +101,9 @@ QString TextAutoGenerateTextToolInternal::description() const
 void TextAutoGenerateTextToolInternal::setDescription(const QString &newDescription)
 {
     mDescription = newDescription;
+}
+
+void TextAutoGenerateTextToolInternal::parse(const QJsonObject &obj)
+{
+    // TODO
 }

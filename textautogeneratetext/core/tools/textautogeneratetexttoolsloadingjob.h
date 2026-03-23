@@ -7,7 +7,7 @@
 #include "textautogeneratetext_export.h"
 #include <QList>
 #include <QObject>
-#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty>
 namespace TextAutoGenerateText
 {
 /*!
@@ -46,7 +46,7 @@ public:
 Q_SIGNALS:
     /*!
      */
-    void properties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &list);
+    void properties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> &list);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void parseJsonTools(const QJsonArray &array);

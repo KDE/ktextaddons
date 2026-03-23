@@ -22,3 +22,5 @@ void TextAutoGenerateTextToolInternalTest::shouldHaveDefaultValues()
     QVERIFY(w.description().isEmpty());
     QVERIFY(w.toolNameId().isEmpty());
 }
+
+#include "moc_textautogeneratetexttoolinternaltest.cpp"

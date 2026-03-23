@@ -6,6 +6,7 @@
 
 #include "textautogeneratetexttoolinternalproperty.h"
 #include <QDebug>
+#include <QJsonObject>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextToolInternalProperty::TextAutoGenerateTextToolInternalProperty() = default;
@@ -48,4 +49,31 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextTool
     d.space() << "description:" << t.description();
     d.space() << "typeElements:" << t.typeElements();
     return d;
+}
+
+bool TextAutoGenerateTextToolInternalProperty::isValid() const
+{
+    return !mName.isEmpty();
+}
+
+void TextAutoGenerateTextToolInternalProperty::parse(const QJsonObject &obj)
+{
+#if 0
+    const QJsonObject function = obj["function"_L1].toObject();
+    mDescription = function["description"_L1].toString();
+    mName = function["name"_L1].toString();
+
+    const QJsonObject parameters = function["parameters"_L1].toObject();
+    const QJsonObject properties = parameters["properties"_L1].toObject();
+    const QJsonObject required = parameters["required"_L1].toObject();
+    const QStringList keys = properties.keys();
+    for (const QString &k : keys) {
+        KAITodoToolProperty property;
+        property.parse(properties[k].toObject(), k);
+        if (property.isValid()) {
+            mProperties.append(property);
+        }
+    }
+    // qDebug() << " parse tool " << *this;
+#endif
 }
