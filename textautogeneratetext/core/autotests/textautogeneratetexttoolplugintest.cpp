@@ -103,6 +103,7 @@ void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
     QVERIFY(w.iconName().isEmpty());
     QVERIFY(w.enabled());
     QVERIFY(!w.isValid());
+    QVERIFY(w.required().isEmpty());
 }
 
 void TextAutoGenerateTextToolPluginTest::shouldGenerateMetadata()

@@ -60,6 +60,7 @@ void TextAutoGenerateTextToolPluginProperty::parse(const QJsonObject &obj)
 
     const QJsonObject parameters = function["parameters"_L1].toObject();
     const QJsonObject properties = parameters["properties"_L1].toObject();
+    const QJsonObject required = parameters["required"_L1].toObject();
     const QStringList keys = properties.keys();
     for (const QString &k : keys) {
         KAITodoToolProperty property;

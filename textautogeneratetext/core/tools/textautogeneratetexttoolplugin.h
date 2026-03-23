@@ -91,11 +91,19 @@ public:
      */
     [[nodiscard]] virtual QString iconName() const;
 
+    /*!
+     */
+    [[nodiscard]] QStringList required() const;
+    /*!
+     */
+    void setRequired(const QStringList &newRequired);
+
 protected:
     /*!
      */
     [[nodiscard]] QJsonObject generateMetadata() const;
     QList<TextAutoGenerateTextToolPluginProperty> mProperties;
+    QStringList mRequired;
     QByteArray mToolNameId;
     QJsonObject mMetaData;
     bool mEnabled = true;

@@ -89,7 +89,11 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
         propertiesObj[propertyName] = prop;
         lst.append(propertyName);
     }
-    required = QJsonArray::fromStringList(lst);
+    if (mRequired.isEmpty()) {
+        required = QJsonArray::fromStringList(lst);
+    } else {
+        required = QJsonArray::fromStringList(mRequired);
+    }
     parameters["required"_L1] = required;
     parameters["properties"_L1] = propertiesObj;
     functionObj["parameters"_L1] = parameters;
@@ -97,6 +101,16 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
     toolObj["function"_L1] = functionObj;
 
     return toolObj;
+}
+
+QStringList TextAutoGenerateTextToolPlugin::required() const
+{
+    return mRequired;
+}
+
+void TextAutoGenerateTextToolPlugin::setRequired(const QStringList &newRequired)
+{
+    mRequired = newRequired;
 }
 
 QString TextAutoGenerateTextToolPlugin::iconName() const
