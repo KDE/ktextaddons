@@ -18,3 +18,5 @@ void TextAutoGenerateTextToolInternalPropertyTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty w;
     // TODO
 }
+
+#include "moc_textautogeneratetexttoolinternalpropertytest.cpp"
