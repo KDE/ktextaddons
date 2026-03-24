@@ -12,6 +12,7 @@
 #include "core/textautogeneratetextmcpservermanager.h"
 #include "core/textautogeneratetextutils.h"
 #include "core/textautogeneratetoolcalljob.h"
+#include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
@@ -309,13 +310,24 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
 
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
-    // TODO verify that all tools is ok
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
     connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
+    connect(job, &TextAutoGenerateToolCallJob::executeInternalTool, this, &TextAutoGenerateManager::slotExecuteInternalTool);
     job->start();
 
     // qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
+}
+
+void TextAutoGenerateManager::slotExecuteInternalTool(const QByteArray &chatId,
+                                                      const QByteArray &uuid,
+                                                      const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info)
+{
+    if (!mTextAutoGenerateTextToolInternalInterface) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Internal Interface not. It's a bug";
+        return;
+    }
+    // TODO mTextAutoGenerateTextToolInternalInterface->executeTool()
 }
 
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)

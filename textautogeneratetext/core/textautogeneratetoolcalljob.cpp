@@ -86,7 +86,8 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
         job->start();
     } else {
         // Internal tools.
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "plugin not found";
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "plugin not found. Try with internal tools";
+        Q_EMIT executeInternalTool(chatId, uuid, info);
     }
 }
 

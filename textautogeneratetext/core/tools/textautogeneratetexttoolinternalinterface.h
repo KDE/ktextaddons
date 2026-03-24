@@ -24,7 +24,7 @@ public:
 
     /*!
      */
-    virtual void execute(const QByteArray &toolName) = 0;
+    virtual void executeTool(const QByteArray &toolName) = 0;
 
     /*!
      */
