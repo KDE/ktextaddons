@@ -193,4 +193,12 @@ QString TextAutoGenerateTextToolPluginManager::generatePluginsInformation() cons
     return result;
 }
 
+bool TextAutoGenerateTextToolPluginManager::contains(const QByteArray &toolNameId)
+{
+    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [toolNameId](const TextAutoGenerateTextToolPluginManagerInfo &info) {
+        return info.plugin->toolNameId() == toolNameId;
+    });
+    return (it != mPluginList.end());
+}
+
 #include "moc_textautogeneratetexttoolpluginmanager.cpp"

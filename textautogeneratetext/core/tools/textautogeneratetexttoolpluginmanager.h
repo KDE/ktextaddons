@@ -64,6 +64,8 @@ public:
 
     [[nodiscard]] QString generatePluginsInformation() const;
 
+    [[nodiscard]] bool contains(const QByteArray &toolNamzId);
+
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
