@@ -1,0 +1,48 @@
+[
+    {
+        "function": {
+            "description": "bla bla",
+            "name": "calendar_plugin",
+            "parameters": {
+                "properties": {
+                    "calendarinfo": {
+                        "description": "calendar info",
+                        "enum": [
+                            "email"
+                        ],
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "Name of user",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "calendarinfo",
+                    "username"
+                ],
+                "type": "object"
+            }
+        },
+        "type": "function"
+    },
+    {
+        "function": {
+            "description": "example",
+            "name": "example_tool",
+            "parameters": {
+                "properties": {
+                    "city": {
+                        "description": "The name of the city",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "city"
+                ],
+                "type": "object"
+            }
+        },
+        "type": "function"
+    }
+]
