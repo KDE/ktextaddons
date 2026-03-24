@@ -12,6 +12,7 @@
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextToolInternalInterface;
 class TextAutoGenerateTextToolPluginJob;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateToolCallJob
@@ -50,6 +51,13 @@ public:
      */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
+    [[nodiscard]] TextAutoGenerateTextToolInternalInterface *textAutoGenerateTextToolInternalInterface() const;
+    /*!
+     */
+    void setTextAutoGenerateTextToolInternalInterface(TextAutoGenerateTextToolInternalInterface *newTextAutoGenerateTextToolInternalInterface);
+
 Q_SIGNALS:
     /*!
      * \brief Emitted when tool processing is in progress
@@ -78,5 +86,6 @@ private:
     const QByteArray mMessageUuid;
     const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &mInfos;
     QStringList mResult;
+    TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;
 };
 }
