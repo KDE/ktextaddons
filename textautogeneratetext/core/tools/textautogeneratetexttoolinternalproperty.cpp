@@ -6,9 +6,11 @@
 
 #include "textautogeneratetexttoolinternalproperty.h"
 #include <QDebug>
+#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextToolInternalProperty::TextAutoGenerateTextToolInternalProperty() = default;
 
 TextAutoGenerateTextToolInternalProperty::~TextAutoGenerateTextToolInternalProperty() = default;
@@ -56,24 +58,16 @@ bool TextAutoGenerateTextToolInternalProperty::isValid() const
     return !mName.isEmpty();
 }
 
-void TextAutoGenerateTextToolInternalProperty::parse(const QJsonObject &obj)
+void TextAutoGenerateTextToolInternalProperty::parse(const QJsonObject &obj, const QString &name)
 {
-#if 0
-    const QJsonObject function = obj["function"_L1].toObject();
-    mDescription = function["description"_L1].toString();
-    mName = function["name"_L1].toString();
-
-    const QJsonObject parameters = function["parameters"_L1].toObject();
-    const QJsonObject properties = parameters["properties"_L1].toObject();
-    const QJsonObject required = parameters["required"_L1].toObject();
-    const QStringList keys = properties.keys();
-    for (const QString &k : keys) {
-        KAITodoToolProperty property;
-        property.parse(properties[k].toObject(), k);
-        if (property.isValid()) {
-            mProperties.append(property);
+    mDescription = obj["description"_L1].toString();
+    mTypeElements.clear();
+    mName = name;
+    if (obj.contains("enum"_L1)) {
+        const QJsonArray enumArray = obj["enum"_L1].toArray();
+        for (const auto &v : enumArray) {
+            mTypeElements.append(v.toString());
         }
     }
     // qDebug() << " parse tool " << *this;
-#endif
 }

@@ -113,9 +113,14 @@ void TextAutoGenerateTextToolInternal::parse(const QJsonObject &obj)
     const QStringList keys = properties.keys();
     for (const QString &k : keys) {
         TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty property;
-        property.parse(properties[k].toObject());
+        property.parse(properties[k].toObject(), k);
         if (property.isValid()) {
             mProperties.append(property);
         }
+    }
+    mRequired.clear();
+    const QJsonArray required = parameters["required"_L1].toArray();
+    for (const auto &v : required) {
+        mRequired.append(v.toString());
     }
 }

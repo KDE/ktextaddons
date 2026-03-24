@@ -52,7 +52,7 @@ public:
 
     /*!
      */
-    void parse(const QJsonObject &obj);
+    void parse(const QJsonObject &obj, const QString &name);
 
     /*!
      */
