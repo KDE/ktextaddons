@@ -36,3 +36,5 @@ void TextAutoGenerateTextToolInternalInterface::setTools(const QList<TextAutoGen
 {
     mTools = newTools;
 }
+
+#include "moc_textautogeneratetexttoolinternalinterface.cpp"
