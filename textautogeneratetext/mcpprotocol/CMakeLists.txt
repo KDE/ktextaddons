@@ -44,6 +44,7 @@ target_sources(
         mcpprotocoljsonrpcerrorresponse.cpp
         mcpprotocolpaginatedrequestparams.cpp
         mcpprotocolrequestparams.cpp
+        mcpprotocolcompleterequestparams.cpp
         mcpprotocolreadresourcerequestparams.cpp
         mcpprotocolsubscriberequestparams.cpp
         mcpprotocolpromptreference.cpp
@@ -61,6 +62,7 @@ target_sources(
         mcpprotocolreadresourcerequest.cpp
         mcpprotocolpingrequest.cpp
         mcpprotocollisttoolsrequest.cpp
+        mcpprotocolcompleterequest.cpp
         mcpprotocollistresourcesrequest.cpp
         mcpprotocoltaskstatusnotification.cpp
         mcpprotocolprogressnotification.cpp
@@ -116,6 +118,7 @@ target_sources(
         mcpprotocoljsonrpcerrorresponse.h
         mcpprotocolpaginatedrequestparams.h
         mcpprotocolrequestparams.h
+        mcpprotocolcompleterequestparams.h
         mcpprotocolreadresourcerequestparams.h
         mcpprotocolsubscriberequestparams.h
         mcpprotocolpromptreference.h
@@ -133,6 +136,7 @@ target_sources(
         mcpprotocolreadresourcerequest.h
         mcpprotocolpingrequest.h
         mcpprotocollisttoolsrequest.h
+        mcpprotocolcompleterequest.h
         mcpprotocollistresourcesrequest.h
         mcpprotocoltaskstatusnotification.h
         mcpprotocolprogressnotification.h
