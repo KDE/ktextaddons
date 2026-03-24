@@ -1,27 +1,29 @@
-{
-    "function": {
-        "description": "bla bla",
-        "name": "calendar_plugin",
-        "parameters": {
-            "properties": {
-                "calendarinfo": {
-                    "description": "calendar info",
-                    "enum": [
-                        "email"
-                    ],
-                    "type": "string"
+[
+    {
+        "function": {
+            "description": "bla bla",
+            "name": "calendar_plugin",
+            "parameters": {
+                "properties": {
+                    "calendarinfo": {
+                        "description": "calendar info",
+                        "enum": [
+                            "email"
+                        ],
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "Name of user",
+                        "type": "string"
+                    }
                 },
-                "username": {
-                    "description": "Name of user",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "calendarinfo",
-                "username"
-            ],
-            "type": "object"
-        }
-    },
-    "type": "function"
-}
+                "required": [
+                    "calendarinfo",
+                    "username"
+                ],
+                "type": "object"
+            }
+        },
+        "type": "function"
+    }
+]

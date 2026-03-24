@@ -8,6 +8,7 @@
 #include <QJsonObject>
 #include <QSignalSpy>
 #include <QTest>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty>
 using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateTextToolsLoadingJobTest)
 
@@ -20,6 +21,34 @@ void TextAutoGenerateTextToolsLoadingJobTest::shouldLoadTools_data()
 {
     QTest::addColumn<QString>("name");
     QTest::addColumn<const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal>>("tools");
+
+    QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> tools;
+    {
+        TextAutoGenerateText::TextAutoGenerateTextToolInternal tool;
+        tool.setToolNameId("calendar_plugin"_ba);
+        tool.setDescription(u"bla bla"_s);
+        QStringList lst;
+        lst << QStringLiteral("calendarinfo") << QStringLiteral("username");
+        tool.setRequired(lst);
+        QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> properties;
+        {
+            TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty property;
+            property.setDescription(u"calendar info"_s);
+            property.setName(u"calendarinfo"_s);
+            property.setTypeElements({u"email"_s});
+            properties.append(property);
+        }
+        {
+            TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty property;
+            property.setDescription(u"Name of user"_s);
+            property.setName(u"username"_s);
+            properties.append(property);
+        }
+        tool.setProperties(properties);
+        tools.append(tool);
+    }
+
+    QTest::addRow("tools1") << u"tools1"_s << tools;
 }
 
 void TextAutoGenerateTextToolsLoadingJobTest::shouldLoadTools()

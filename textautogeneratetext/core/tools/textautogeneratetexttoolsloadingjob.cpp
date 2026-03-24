@@ -6,6 +6,7 @@
 
 #include "textautogeneratetexttoolsloadingjob.h"
 #include "core/tools/textautogeneratetexttoolinternal.h"
+#include "core/tools/textautogeneratetexttoolinternalproperty.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QFile>
 #include <QJsonArray>
@@ -57,7 +58,9 @@ void TextAutoGenerateTextToolsLoadingJob::parseJsonTools(const QJsonArray &array
     for (const auto &v : array) {
         TextAutoGenerateText::TextAutoGenerateTextToolInternal tool;
         tool.parse(v.toObject());
+        lstTool.append(tool);
     }
+    // qDebug() << " lstTool " << lstTool;
     Q_EMIT tools(lstTool);
 }
 
