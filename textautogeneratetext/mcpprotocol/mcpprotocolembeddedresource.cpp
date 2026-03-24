@@ -37,7 +37,7 @@ McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObj
         prompt.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
     }
     if (obj.contains("resource"_L1)) {
-        // TODO prompt._resource = co_await fromJson<EmbeddedResourceResource>(obj["resource"]);
+        prompt.setResource(McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1]));
     }
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolEmbeddedResource::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'resource', got: " << obj.value("type"_L1).toString();
@@ -52,7 +52,7 @@ QJsonObject McpProtocolEmbeddedResource::toJson(const McpProtocolEmbeddedResourc
         obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
     }
 
-    // TODO {"resource", toJsonValue(data._resource)},
+    obj["resource"_L1] = McpProtocolUtils::embeddedResourceResourceToJson(boolean.resource());
     obj["type"_L1] = QString::fromLatin1(McpProtocolEmbeddedResource::type());
     if (boolean.annotations().has_value()) {
         obj["annotations"_L1] = McpProtocolAnnotations::toJson(*boolean.annotations());

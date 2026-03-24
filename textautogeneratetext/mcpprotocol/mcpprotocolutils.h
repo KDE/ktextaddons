@@ -106,11 +106,14 @@ enum class TaskStatus : uint8_t {
     Unknown,
 };
 
+[[nodiscard]] EmbeddedResourceResource embeddedResourceResourceFromJson(const QJsonValue &val);
+[[nodiscard]] QJsonValue embeddedResourceResourceToJson(const EmbeddedResourceResource &val);
+
 [[nodiscard]] RequestId requestIdFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue requestIdToJson(const RequestId &val);
 
-[[nodiscard]] ProgressToken ProgressTokenFromJson(const QJsonValue &val);
-[[nodiscard]] QJsonValue ProgressTokenToJson(const ProgressToken &val);
+[[nodiscard]] ProgressToken progressTokenFromJson(const QJsonValue &val);
+[[nodiscard]] QJsonValue progressTokenToJson(const ProgressToken &val);
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);

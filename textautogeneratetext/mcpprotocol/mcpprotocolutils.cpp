@@ -4,8 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolutils.h"
+#include "mcpprotocolblobresourcecontents.h"
+#include "mcpprotocoltextresourcecontents.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
+#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
 {
@@ -114,7 +117,7 @@ McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convert
     }
 }
 
-McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::ProgressTokenFromJson(const QJsonValue &val)
+McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::progressTokenFromJson(const QJsonValue &val)
 {
     if (val.isString()) {
         return ProgressToken(val.toString());
@@ -141,7 +144,30 @@ QJsonValue McpProtocol::McpProtocolUtils::requestIdToJson(const McpProtocol::Mcp
     return QVariant::fromValue(val).toJsonValue();
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::ProgressTokenToJson(const ProgressToken &val)
+QJsonValue McpProtocol::McpProtocolUtils::progressTokenToJson(const ProgressToken &val)
 {
     return QVariant::fromValue(val).toJsonValue();
+}
+
+McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocolUtils::embeddedResourceResourceFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid EmbeddedResourceResource: expected object or array";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    if (obj.contains("text"_L1)) {
+        return EmbeddedResourceResource(McpProtocolTextResourceContents::fromJson(obj));
+    }
+    if (obj.contains("blob"_L1)) {
+        return EmbeddedResourceResource(McpProtocolBlobResourceContents::fromJson(obj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid EmbeddedResourceResource";
+    return {};
+}
+
+QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const McpProtocol::McpProtocolUtils::EmbeddedResourceResource &val)
+{
+    // TODO
+    return {};
 }
