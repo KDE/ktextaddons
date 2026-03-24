@@ -38,6 +38,12 @@ class McpProtocolCancelTaskRequest;
 class McpProtocolListTasksRequest;
 class McpProtocolSetLevelRequest;
 class McpProtocolCompleteRequest;
+
+class McpProtocolCancelledNotification;
+class McpProtocolInitializedNotification;
+class McpProtocolProgressNotification;
+class McpProtocolTaskStatusNotification;
+class McpProtocolRootsListChangedNotification;
 }
 namespace McpProtocol::McpProtocolUtils
 {
@@ -105,6 +111,11 @@ enum class TaskStatus : uint8_t {
     Working,
     Unknown,
 };
+using ClientNotification = std::variant<McpProtocolCancelledNotification,
+                                        McpProtocolInitializedNotification,
+                                        McpProtocolProgressNotification,
+                                        McpProtocolTaskStatusNotification,
+                                        McpProtocolRootsListChangedNotification>;
 
 [[nodiscard]] EmbeddedResourceResource embeddedResourceResourceFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue embeddedResourceResourceToJson(const EmbeddedResourceResource &val);
