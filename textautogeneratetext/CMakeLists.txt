@@ -229,6 +229,10 @@ target_sources(
         core/tools/textautogeneratetexttoolinternalinterface.cpp
         core/tools/textautogeneratetexttoolinternal.h
         core/tools/textautogeneratetexttoolinternal.cpp
+        core/tools/textautogeneratetexttoolbasejob.h
+        core/tools/textautogeneratetexttoolbasejob.cpp
+        core/tools/textautogeneratetexttoolinternaljob.h
+        core/tools/textautogeneratetexttoolinternaljob.cpp
         core/textautogeneratesearchmessagesettings.h
         core/textautogeneratesearchmessagesettings.cpp
         core/textautogeneratefilecache.h
@@ -535,6 +539,8 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     TextAutoGenerateTextToolInternalProperty
     TextAutoGenerateTextToolInternalInterface
     TextAutoGenerateTextToolInternal
+    TextAutoGenerateTextToolBaseJob
+    TextAutoGenerateTextToolInternalJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools

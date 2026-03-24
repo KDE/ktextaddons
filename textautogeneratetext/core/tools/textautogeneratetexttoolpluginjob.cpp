@@ -8,7 +8,7 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextToolPluginJob::TextAutoGenerateTextToolPluginJob(QObject *parent)
-    : QObject{parent}
+    : TextAutoGenerateTextToolBaseJob{parent}
 {
 }
 

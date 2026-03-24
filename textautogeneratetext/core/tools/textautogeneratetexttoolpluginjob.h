@@ -9,6 +9,7 @@
 #include <QByteArray>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolBaseJob>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 class QDebug;
@@ -21,7 +22,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginJob : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginJob : public TextAutoGenerateTextToolBaseJob
 {
     Q_OBJECT
 public:
@@ -34,10 +35,10 @@ public:
 
     /*!
      */
-    virtual void start();
+    void start() override;
     /*!
      */
-    [[nodiscard]] bool canStart() const;
+    [[nodiscard]] bool canStart() const override;
 
     /*!
      */
