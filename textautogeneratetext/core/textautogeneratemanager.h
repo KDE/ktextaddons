@@ -25,6 +25,7 @@ class TextAutoGenerateTextInstancesManager;
 class TextAutoGenerateTextMcpServerManager;
 class TextAutoGenerateTextToSpeechEnqueueManager;
 class TextAutoGenerateFileCache;
+class TextAutoGenerateTextToolInternalInterface;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateManager
  * \brief The TextAutoGenerateManager class
@@ -415,6 +416,9 @@ public:
      */
     [[nodiscard]] TextAutoGenerateTextMcpServerManager *textAutoGenerateTextMcpServerManager() const;
 
+    [[nodiscard]] TextAutoGenerateTextToolInternalInterface *textAutoGenerateTextToolInternalInterface() const;
+    void setTextAutoGenerateTextToolInternalInterface(TextAutoGenerateTextToolInternalInterface *newTextAutoGenerateTextToolInternalInterface);
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
@@ -523,9 +527,10 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
-    std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
+    std::unique_ptr<TextAutoGenerateLocalDatabaseManager> const mDatabaseManager;
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
     std::unique_ptr<TextAutoGenerateFileCache> const mTextAutoGenerateFileCache;
+    TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     TextAutoGenerateSettings *const mTextAutoGenerateSettings;
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT

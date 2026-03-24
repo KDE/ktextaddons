@@ -309,6 +309,7 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
 
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
+    // TODO verify that all tools is ok
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
     connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
@@ -714,6 +715,17 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     // content.info =
     replaceContent(info.chatId, info.messageUuid, content, info.attachementInfoList);
     changeInProgress(info.chatId, info.messageUuid, false);
+}
+
+TextAutoGenerateTextToolInternalInterface *TextAutoGenerateManager::textAutoGenerateTextToolInternalInterface() const
+{
+    return mTextAutoGenerateTextToolInternalInterface;
+}
+
+void TextAutoGenerateManager::setTextAutoGenerateTextToolInternalInterface(
+    TextAutoGenerateTextToolInternalInterface *newTextAutoGenerateTextToolInternalInterface)
+{
+    mTextAutoGenerateTextToolInternalInterface = newTextAutoGenerateTextToolInternalInterface;
 }
 
 TextAutoGenerateTextMcpServerManager *TextAutoGenerateManager::textAutoGenerateTextMcpServerManager() const

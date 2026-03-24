@@ -49,40 +49,45 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                                                 const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info)
 {
     auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromToolNameId(info.toolName);
-    auto job = plugin->callTool();
-    mListJob.append(job);
-    job->setToolArguments(info.toolCallArgument);
-    job->setChatId(chatId);
-    job->setMessageUuid(uuid);
-    job->setToolIdentifier(info.toolName);
-    job->setProperties(plugin->properties());
-    connect(job,
-            &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::finished,
-            this,
-            [this, job](const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info) {
-                mResult.append(info.content);
-                // Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
-                Q_EMIT toolInProgress({});
-                qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " TextAutoGenerateTextToolPlugin::finished: " << info.content;
-                mListJob.removeAll(job);
-                if (mListJob.isEmpty()) {
-                    const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo newInfo{
-                        .content = mResult.join(u'\n'),
-                        .messageUuid = info.messageUuid,
-                        .chatId = info.chatId,
-                        .toolIdentifier = info.toolIdentifier,
-                        .attachementInfoList = info.attachementInfoList,
-                    };
-                    Q_EMIT finished(newInfo);
+    if (plugin) {
+        auto job = plugin->callTool();
+        mListJob.append(job);
+        job->setToolArguments(info.toolCallArgument);
+        job->setChatId(chatId);
+        job->setMessageUuid(uuid);
+        job->setToolIdentifier(info.toolName);
+        job->setProperties(plugin->properties());
+        connect(job,
+                &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::finished,
+                this,
+                [this, job](const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info) {
+                    mResult.append(info.content);
+                    // Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
                     Q_EMIT toolInProgress({});
-                    deleteLater();
-                }
-            });
-    connect(job,
-            &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::toolInProgress,
-            this,
-            &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
-    job->start();
+                    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " TextAutoGenerateTextToolPlugin::finished: " << info.content;
+                    mListJob.removeAll(job);
+                    if (mListJob.isEmpty()) {
+                        const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo newInfo{
+                            .content = mResult.join(u'\n'),
+                            .messageUuid = info.messageUuid,
+                            .chatId = info.chatId,
+                            .toolIdentifier = info.toolIdentifier,
+                            .attachementInfoList = info.attachementInfoList,
+                        };
+                        Q_EMIT finished(newInfo);
+                        Q_EMIT toolInProgress({});
+                        deleteLater();
+                    }
+                });
+        connect(job,
+                &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::toolInProgress,
+                this,
+                &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
+        job->start();
+    } else {
+        // Internal tools.
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "plugin not found";
+    }
 }
 
 #include "moc_textautogeneratetoolcalljob.cpp"
