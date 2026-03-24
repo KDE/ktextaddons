@@ -58,6 +58,10 @@ public:
      */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
+    [[nodiscard]] bool operator==(const TextAutoGenerateTextToolInternalProperty &other) const;
+
 private:
     QStringList mTypeElements;
     QString mDescription;

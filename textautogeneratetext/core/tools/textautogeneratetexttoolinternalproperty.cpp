@@ -15,6 +15,11 @@ TextAutoGenerateTextToolInternalProperty::TextAutoGenerateTextToolInternalProper
 
 TextAutoGenerateTextToolInternalProperty::~TextAutoGenerateTextToolInternalProperty() = default;
 
+bool TextAutoGenerateTextToolInternalProperty::operator==(const TextAutoGenerateTextToolInternalProperty &other) const
+{
+    return mTypeElements == other.typeElements() && mDescription == other.description() && mName == other.name();
+}
+
 QStringList TextAutoGenerateTextToolInternalProperty::typeElements() const
 {
     return mTypeElements;

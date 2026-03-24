@@ -14,6 +14,11 @@ TextAutoGenerateTextToolInternal::TextAutoGenerateTextToolInternal() = default;
 
 TextAutoGenerateTextToolInternal::~TextAutoGenerateTextToolInternal() = default;
 
+bool TextAutoGenerateTextToolInternal::operator==(const TextAutoGenerateTextToolInternal &other) const
+{
+    return mProperties == other.properties() && mRequired == other.required() && mToolNameId == other.toolNameId() && mDescription == other.description();
+}
+
 QList<TextAutoGenerateTextToolInternalProperty> TextAutoGenerateTextToolInternal::properties() const
 {
     return mProperties;

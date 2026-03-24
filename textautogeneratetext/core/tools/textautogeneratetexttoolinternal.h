@@ -58,6 +58,10 @@ public:
      */
     void parse(const QJsonObject &obj);
 
+    /*!
+     */
+    [[nodiscard]] bool operator==(const TextAutoGenerateTextToolInternal &other) const;
+
 private:
     QList<TextAutoGenerateTextToolInternalProperty> mProperties;
     QStringList mRequired;

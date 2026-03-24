@@ -13,4 +13,8 @@ class TextAutoGenerateTextToolsLoadingJobTest : public QObject
 public:
     explicit TextAutoGenerateTextToolsLoadingJobTest(QObject *parent = nullptr);
     ~TextAutoGenerateTextToolsLoadingJobTest() override = default;
+
+private Q_SLOTS:
+    void shouldLoadTools();
+    void shouldLoadTools_data();
 };
