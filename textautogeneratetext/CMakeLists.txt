@@ -534,6 +534,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     TextAutoGenerateTextToolsLoadingJob
     TextAutoGenerateTextToolInternalProperty
     TextAutoGenerateTextToolInternalInterface
+    TextAutoGenerateTextToolInternal
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools
