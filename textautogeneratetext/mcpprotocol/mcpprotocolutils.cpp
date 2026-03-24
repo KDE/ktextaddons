@@ -5,10 +5,16 @@
 */
 #include "mcpprotocolutils.h"
 #include "mcpprotocolblobresourcecontents.h"
+#include "mcpprotocolcancellednotification.h"
+#include "mcpprotocolinitializednotification.h"
+#include "mcpprotocolprogressnotification.h"
+#include "mcpprotocolrootslistchangednotification.h"
+#include "mcpprotocoltaskstatusnotification.h"
 #include "mcpprotocoltextresourcecontents.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonObject>
+#include <coroutine>
 using namespace Qt::Literals::StringLiterals;
 QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
 {
@@ -167,6 +173,35 @@ McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocol
 }
 
 QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const McpProtocol::McpProtocolUtils::EmbeddedResourceResource &val)
+{
+    // TODO
+    return {};
+}
+
+McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils::clientNotificationFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientNotification: expected object";
+        return {};
+    }
+    const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = valObj.value("method"_L1).toString();
+    if (dispatchValue == "notifications/cancelled"_L1) {
+        return ClientNotification(McpProtocolCancelledNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/initialized"_L1) {
+        return ClientNotification(McpProtocolInitializedNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/progress"_L1) {
+        return ClientNotification(McpProtocolProgressNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/tasks/status"_L1) {
+        return ClientNotification(McpProtocolTaskStatusNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/roots/list_changed"_L1) {
+        return ClientNotification(McpProtocolRootsListChangedNotification::fromJson(valObj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientNotification: unknown method \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonValue McpProtocol::McpProtocolUtils::clientNotificationToJson(const McpProtocol::McpProtocolUtils::ClientNotification &val)
 {
     // TODO
     return {};

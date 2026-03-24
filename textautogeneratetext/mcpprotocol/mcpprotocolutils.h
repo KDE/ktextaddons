@@ -117,6 +117,9 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolTaskStatusNotification,
                                         McpProtocolRootsListChangedNotification>;
 
+[[nodiscard]] ClientNotification clientNotificationFromJson(const QJsonValue &val);
+[[nodiscard]] QJsonValue clientNotificationToJson(const ClientNotification &val);
+
 [[nodiscard]] EmbeddedResourceResource embeddedResourceResourceFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue embeddedResourceResourceToJson(const EmbeddedResourceResource &val);
 
