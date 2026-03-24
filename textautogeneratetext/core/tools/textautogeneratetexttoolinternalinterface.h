@@ -24,7 +24,7 @@ public:
 
     /*!
      */
-    virtual void execute() = 0;
+    virtual void execute(const QByteArray &toolName) = 0;
 
     /*!
      */
@@ -36,6 +36,8 @@ public:
     /*!
      */
     void setTools(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> &newTools);
+
+    [[nodiscard]] bool contains(const QByteArray &toolName) const;
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;

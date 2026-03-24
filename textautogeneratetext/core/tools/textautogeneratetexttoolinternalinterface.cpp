@@ -37,4 +37,14 @@ void TextAutoGenerateTextToolInternalInterface::setTools(const QList<TextAutoGen
     mTools = newTools;
 }
 
+bool TextAutoGenerateTextToolInternalInterface::contains(const QByteArray &toolName) const
+{
+    for (const auto &t : mTools) {
+        if (t.toolNameId() == toolName) {
+            return true;
+        }
+    }
+    return false;
+}
+
 #include "moc_textautogeneratetexttoolinternalinterface.cpp"
