@@ -7,11 +7,11 @@
 
 #include "textautogeneratetext_export.h"
 #include <QList>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateTextToolInternalProperty;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternal
 {
 public:

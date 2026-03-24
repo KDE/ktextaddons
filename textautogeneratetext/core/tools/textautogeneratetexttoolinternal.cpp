@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetexttoolinternal.h"
-#include "textautogeneratetexttoolinternalproperty.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
