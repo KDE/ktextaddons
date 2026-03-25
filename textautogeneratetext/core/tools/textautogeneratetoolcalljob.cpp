@@ -59,6 +59,7 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
         job->setMessageUuid(uuid);
         job->setToolIdentifier(info.toolName);
         job->setProperties(plugin->properties());
+        job->setRequired(plugin->required());
         connect(job,
                 &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::finished,
                 this,
@@ -95,6 +96,7 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
             job->setMessageUuid(uuid);
             job->setToolIdentifier(info.toolName);
             // TODO job->setProperties(plugin->properties());
+            // TODO job->setRequired(plugin->required());
             connect(job,
                     &TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::toolInProgress,
                     this,

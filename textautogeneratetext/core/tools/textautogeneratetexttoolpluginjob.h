@@ -48,10 +48,6 @@ public:
      */
     [[nodiscard]] bool verifyRequiredArguments() const override;
 
-    /*!
-     */
-    [[nodiscard]] QStringList requiredArguments() const override;
-
 Q_SIGNALS:
     /*!
      */

@@ -47,9 +47,6 @@ public:
     /*!
      */
     [[nodiscard]] bool verifyRequiredArguments() const override;
-    /*!
-     */
-    [[nodiscard]] QStringList requiredArguments() const override;
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;

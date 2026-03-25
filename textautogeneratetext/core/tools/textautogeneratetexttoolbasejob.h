@@ -63,14 +63,17 @@ public:
 
     /*!
      */
-    [[nodiscard]] virtual QStringList requiredArguments() const = 0;
-
-    /*!
-     */
     [[nodiscard]] QByteArray chatId() const;
     /*!
      */
     void setChatId(const QByteArray &newChatId);
+
+    /*!
+     */
+    [[nodiscard]] QStringList required() const;
+    /*!
+     */
+    void setRequired(const QStringList &newRequired);
 
 Q_SIGNALS:
     /*!
@@ -82,6 +85,7 @@ Q_SIGNALS:
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
+    QStringList mRequired;
     QByteArray mMessageUuid;
     QByteArray mChatId;
     QByteArray mToolIdentifier;

@@ -17,7 +17,7 @@ void TextAutoGenerateTextToolPluginJobTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob w;
     QVERIFY(w.toolArguments().isEmpty());
-    QVERIFY(w.requiredArguments().isEmpty());
+    QVERIFY(w.required().isEmpty());
     QVERIFY(!w.canStart());
     QVERIFY(w.messageUuid().isEmpty());
     QVERIFY(w.toolIdentifier().isEmpty());
@@ -30,12 +30,16 @@ void TextAutoGenerateTextToolPluginJobTest::shouldVerifyRequiredArguments_data()
     QTest::addColumn<const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>>("properties");
     QTest::addColumn<QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument>>("toolArguments");
     QTest::addColumn<bool>("result");
+    QTest::addColumn<QStringList>("required");
     {
+        const QStringList lst;
         const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> properties;
         const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> tt;
-        QTest::addRow("empty") << properties << tt << false;
+        QTest::addRow("empty") << properties << tt << false << lst;
     }
     {
+        const QStringList lst;
+
         QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> properties;
         {
             TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty p;
@@ -48,9 +52,10 @@ void TextAutoGenerateTextToolPluginJobTest::shouldVerifyRequiredArguments_data()
             properties.append(p);
         }
         const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> tt;
-        QTest::addRow("no tools") << properties << tt << false;
+        QTest::addRow("no tools") << properties << tt << false << lst;
     }
     {
+        const QStringList lst;
         QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> tt;
         TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument tool;
         tool.keyTool = u"jrt"_s;
@@ -69,7 +74,7 @@ void TextAutoGenerateTextToolPluginJobTest::shouldVerifyRequiredArguments_data()
             properties.append(p);
         }
 
-        QTest::addRow("no some many tools") << properties << tt << false;
+        QTest::addRow("no some many tools") << properties << tt << false << lst;
     }
     {
         QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> tt;
@@ -96,7 +101,8 @@ void TextAutoGenerateTextToolPluginJobTest::shouldVerifyRequiredArguments_data()
             p.setName(u"bla"_s);
             properties.append(p);
         }
-        QTest::addRow("ok") << properties << tt << true;
+        const QStringList lst = {u"foo"_s};
+        QTest::addRow("ok") << properties << tt << true << lst;
     }
 }
 
@@ -105,9 +111,11 @@ void TextAutoGenerateTextToolPluginJobTest::shouldVerifyRequiredArguments()
     QFETCH(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty>, properties);
     QFETCH(QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument>, toolArguments);
     QFETCH(bool, result);
+    QFETCH(QStringList, required);
     TextAutoGenerateText::TextAutoGenerateTextToolPluginJob w;
     w.setProperties(properties);
     w.setToolArguments(toolArguments);
+    w.setRequired(required);
     QCOMPARE(w.verifyRequiredArguments(), result);
 }
 

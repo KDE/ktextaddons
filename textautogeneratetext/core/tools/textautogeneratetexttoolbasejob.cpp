@@ -25,6 +25,16 @@ void TextAutoGenerateTextToolBaseJob::setChatId(const QByteArray &newChatId)
     mChatId = newChatId;
 }
 
+QStringList TextAutoGenerateTextToolBaseJob::required() const
+{
+    return mRequired;
+}
+
+void TextAutoGenerateTextToolBaseJob::setRequired(const QStringList &newRequired)
+{
+    mRequired = newRequired;
+}
+
 bool TextAutoGenerateTextToolBaseJob::canStart() const
 {
     if (!verifyRequiredArguments()) {

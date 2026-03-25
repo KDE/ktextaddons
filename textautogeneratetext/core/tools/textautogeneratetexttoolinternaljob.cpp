@@ -30,12 +30,6 @@ bool TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::verifyRequiredAr
     return true;
 }
 
-QStringList TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::requiredArguments() const
-{
-    // TODO
-    return {};
-}
-
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &t)
 {
     d.space() << "content" << t.content;

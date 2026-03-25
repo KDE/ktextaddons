@@ -29,20 +29,9 @@ QList<TextAutoGenerateTextToolPluginProperty> TextAutoGenerateTextToolPluginJob:
     return mProperties;
 }
 
-QStringList TextAutoGenerateTextToolPluginJob::requiredArguments() const
-{
-    // TODO use required();
-    QStringList lst;
-    lst.reserve(mProperties.count());
-    for (const auto &p : mProperties) {
-        lst.append(p.name());
-    }
-    return lst;
-}
-
 bool TextAutoGenerateTextToolPluginJob::verifyRequiredArguments() const
 {
-    const QStringList requiredArgs = requiredArguments();
+    const QStringList requiredArgs = required();
     if (mToolArguments.isEmpty() || requiredArgs.isEmpty()) {
         return false;
     }
