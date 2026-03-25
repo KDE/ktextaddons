@@ -31,6 +31,7 @@ QList<TextAutoGenerateTextToolPluginProperty> TextAutoGenerateTextToolPluginJob:
 
 QStringList TextAutoGenerateTextToolPluginJob::requiredArguments() const
 {
+    // TODO use required();
     QStringList lst;
     lst.reserve(mProperties.count());
     for (const auto &p : mProperties) {
