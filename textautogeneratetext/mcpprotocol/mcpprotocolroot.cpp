@@ -18,6 +18,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolRoot &t)
 {
     d.space() << "uri:" << t.uri();
     d.space() << "name:" << t.name();
+    d.space() << "meta:" << t.meta();
     return d;
 }
 
@@ -28,7 +29,7 @@ McpProtocolRoot McpProtocolRoot::fromJson(const QJsonObject &obj)
         text.setName(obj.value("name"_L1).toString());
     }
     text.setUri(obj.value("uri"_L1).toString());
-    // TODO add meta
+    text.setMeta(McpProtocolMeta::fromJson(obj.value("_meta"_L1).toObject()));
     return text;
 }
 
@@ -36,9 +37,11 @@ QJsonObject McpProtocolRoot::toJson(const McpProtocolRoot &text)
 {
     QJsonObject obj;
     obj["uri"_L1] = text.uri();
-    // TODO add meta
     if (text.name().has_value()) {
         obj["name"_L1] = *text.name();
+    }
+    if (text.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*text.meta());
     }
     return obj;
 }
@@ -61,4 +64,14 @@ QString McpProtocolRoot::uri() const
 void McpProtocolRoot::setUri(const QString &newUri)
 {
     mUri = newUri;
+}
+
+std::optional<McpProtocolMeta> McpProtocolRoot::meta() const
+{
+    return mMeta;
+}
+
+void McpProtocolRoot::setMeta(std::optional<McpProtocolMeta> newMeta)
+{
+    mMeta = std::move(newMeta);
 }

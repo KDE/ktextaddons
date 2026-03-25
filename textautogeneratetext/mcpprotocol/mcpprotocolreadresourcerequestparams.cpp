@@ -24,17 +24,19 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolReadResourceRequestPar
 
 McpProtocolReadResourceRequestParams::Meta McpProtocolReadResourceRequestParams::Meta::fromJson(const QJsonObject &obj)
 {
-    return {};
+    McpProtocolReadResourceRequestParams::Meta meta;
+    if (obj.contains("progressToken"_L1)) {
+        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1].toObject()));
+    }
+    return meta;
 }
 
 QJsonObject McpProtocolReadResourceRequestParams::Meta::toJson(const McpProtocolReadResourceRequestParams::Meta &image)
 {
     QJsonObject obj;
-#if 0
     if (image.progressToken().has_value()) {
-        obj.insert("progressToken", McpProtocolUtils::toJson(*image.progressToken()));
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
     }
-#endif
     return obj;
 }
 

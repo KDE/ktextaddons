@@ -24,24 +24,21 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskPayloadRequest 
 
 McpProtocolGetTaskPayloadRequest::Params McpProtocolGetTaskPayloadRequest::Params::fromJson(const QJsonObject &obj)
 {
+    McpProtocolGetTaskPayloadRequest::Params params;
+    params.setTaskId(obj.value("taskId"_L1).toString());
     return {};
 }
 
 QJsonObject McpProtocolGetTaskPayloadRequest::Params::toJson(const McpProtocolGetTaskPayloadRequest::Params &image)
 {
     QJsonObject obj;
-#if 0
-    if (image.progressToken().has_value()) {
-        obj.insert("progressToken", McpProtocolUtils::toJson(*image.progressToken()));
-    }
-#endif
+    obj["taskId"_L1] = image.taskId();
     return obj;
 }
 
 McpProtocolGetTaskPayloadRequest McpProtocolGetTaskPayloadRequest::fromJson(const QJsonObject &obj)
 {
     McpProtocolGetTaskPayloadRequest prompt;
-    // TODO
     return prompt;
 }
 

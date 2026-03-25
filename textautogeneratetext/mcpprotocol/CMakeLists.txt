@@ -63,6 +63,7 @@ target_sources(
         mcpprotocolreadresourcerequest.cpp
         mcpprotocolpingrequest.cpp
         mcpprotocollisttoolsrequest.cpp
+        mcpprotocollistresourcetemplatesrequest.cpp
         mcpprotocolinitializerequest.cpp
         mcpprotocollisttasksrequest.cpp
         mcpprotocollistpromptsrequest.cpp
@@ -141,6 +142,7 @@ target_sources(
         mcpprotocolreadresourcerequest.h
         mcpprotocolpingrequest.h
         mcpprotocollisttoolsrequest.h
+        mcpprotocollistresourcetemplatesrequest.h
         mcpprotocolinitializerequest.h
         mcpprotocollisttasksrequest.h
         mcpprotocollistpromptsrequest.h

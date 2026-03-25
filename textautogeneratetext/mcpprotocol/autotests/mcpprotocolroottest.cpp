@@ -18,5 +18,6 @@ void McpProtocolRootTest::shouldHaveDefaultValues()
     const McpProtocol::McpProtocolRoot w;
     QVERIFY(w.uri().isEmpty());
     QVERIFY(!w.name().has_value());
+    QVERIFY(!w.meta().has_value());
 }
 #include "moc_mcpprotocolroottest.cpp"

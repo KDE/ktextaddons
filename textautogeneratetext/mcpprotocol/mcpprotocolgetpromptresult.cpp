@@ -39,7 +39,11 @@ QJsonObject McpProtocolGetPromptResult::toJson(const McpProtocolGetPromptResult 
     if (boolean.description().has_value()) {
         obj["description"_L1] = *boolean.description();
     }
-
+#if 0 // TODO
+    QJsonArray messages;
+    for (const auto &v : boolean.messages()) messages.append(toJson(v));
+    obj.insert("messages", messages);
+#endif
     return obj;
 }
 

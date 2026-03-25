@@ -32,8 +32,11 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams
 
 McpProtocolPaginatedRequestParams::Meta McpProtocolPaginatedRequestParams::Meta::fromJson(const QJsonObject &obj)
 {
-    // TODO
-    return {};
+    McpProtocolPaginatedRequestParams::Meta meta;
+    if (obj.contains("progressToken"_L1)) {
+        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1].toObject()));
+    }
+    return meta;
 }
 
 QJsonObject McpProtocolPaginatedRequestParams::Meta::toJson(const McpProtocolPaginatedRequestParams::Meta &image)

@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -47,8 +48,11 @@ public:
      */
     void setUri(const QString &newUri);
 
+    std::optional<McpProtocolMeta> meta() const;
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
+
 private:
-    // TODO _meta
+    std::optional<McpProtocolMeta> mMeta;
     std::optional<QString> mName;
     QString mUri;
 };
