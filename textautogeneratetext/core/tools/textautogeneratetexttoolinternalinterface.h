@@ -11,6 +11,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextToolInternal>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextToolInternalJob;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternalInterface : public QObject
 {
     Q_OBJECT
@@ -37,7 +38,13 @@ public:
      */
     void setTools(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> &newTools);
 
+    /*!
+     */
     [[nodiscard]] bool contains(const QByteArray &toolName) const;
+
+    /*!
+     */
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolInternalJob *callTool() = 0;
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;
