@@ -45,6 +45,16 @@ class McpProtocolInitializedNotification;
 class McpProtocolProgressNotification;
 class McpProtocolTaskStatusNotification;
 class McpProtocolRootsListChangedNotification;
+
+class McpProtocolCancelledNotification;
+class McpProtocolProgressNotification;
+class McpProtocolResourceListChangedNotification;
+class McpProtocolResourceUpdatedNotification;
+class McpProtocolPromptListChangedNotification;
+class McpProtocolToolListChangedNotification;
+class McpProtocolTaskStatusNotification;
+class McpProtocolLoggingMessageNotification;
+class McpProtocolElicitationCompleteNotification;
 }
 namespace McpProtocol::McpProtocolUtils
 {
@@ -112,6 +122,16 @@ enum class TaskStatus : uint8_t {
     Working,
     Unknown,
 };
+using ServerNotification = std::variant<McpProtocolCancelledNotification,
+                                        McpProtocolProgressNotification,
+                                        McpProtocolResourceListChangedNotification,
+                                        McpProtocolResourceUpdatedNotification,
+                                        McpProtocolPromptListChangedNotification,
+                                        McpProtocolToolListChangedNotification,
+                                        McpProtocolTaskStatusNotification,
+                                        McpProtocolLoggingMessageNotification,
+                                        McpProtocolElicitationCompleteNotification>;
+
 using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolInitializedNotification,
                                         McpProtocolProgressNotification,
@@ -140,5 +160,6 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
+
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
