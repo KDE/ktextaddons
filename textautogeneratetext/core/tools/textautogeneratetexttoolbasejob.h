@@ -72,6 +72,14 @@ public:
      */
     void setChatId(const QByteArray &newChatId);
 
+Q_SIGNALS:
+    /*!
+     */
+    void toolInProgress(const QString &info);
+    /*!
+     */
+    void error(const QString &errorStr);
+
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
     QByteArray mMessageUuid;
