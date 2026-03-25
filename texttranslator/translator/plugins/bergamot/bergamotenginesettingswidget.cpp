@@ -68,8 +68,8 @@ void BergamotEngineSettingsWidget::fillCombobox()
         mNumberThreads->addItem(QString::number(cores), cores);
     }
 
-    const QList<int> memorys = {64, 128, 256, 512, 768, 1024, 1280, 1536, 1762, 2048};
-    for (const int memory : memorys) {
+    const QList<int> memories = {64, 128, 256, 512, 768, 1024, 1280, 1536, 1762, 2048};
+    for (const int memory : memories) {
         mMemoryByThreads->addItem(QString::number(memory), memory);
     }
 }
