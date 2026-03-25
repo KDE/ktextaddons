@@ -13,7 +13,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolInternalInterface;
-class TextAutoGenerateTextToolPluginJob;
+class TextAutoGenerateTextToolBaseJob;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateToolCallJob
  * \brief The TextAutoGenerateToolCallJob class
@@ -81,7 +81,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void
     initializeJob(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
-    QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *> mListJob;
+    QList<TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *> mListJob;
     const QByteArray mChatId;
     const QByteArray mMessageUuid;
     const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &mInfos;
