@@ -23,7 +23,7 @@ bool McpProtocolCallToolRequest::operator==(const McpProtocolCallToolRequest &ot
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCallToolRequest &t)
 {
-    // TODO d.space() << "id:" << t.id();
+    d.space() << "id:" << t.id();
     d.space() << "params:" << t.params();
     return d;
 }

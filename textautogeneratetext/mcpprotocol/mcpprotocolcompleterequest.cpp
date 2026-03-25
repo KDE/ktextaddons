@@ -24,6 +24,7 @@ bool McpProtocolCompleteRequest::operator==(const McpProtocolCompleteRequest &ot
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequest &t)
 {
     d.space() << "params:" << t.params();
+    d.space() << "id:" << t.id();
     // TODO id
     return d;
 }
@@ -42,14 +43,16 @@ McpProtocolCompleteRequest McpProtocolCompleteRequest::fromJson(const QJsonObjec
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolCompleteRequestParams::fromJson(obj["params"_L1].toObject()));
     }
-    // TODO add id !
+    if (obj.contains("id"_L1)) {
+        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    }
     return prompt;
 }
 
 QJsonObject McpProtocolCompleteRequest::toJson(const McpProtocolCompleteRequest &boolean)
 {
     QJsonObject obj;
-    // TODO obj["id"_L1] = toJsonValue(data._id)};
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCompleteRequest::type());
     obj["params"_L1] = McpProtocolCompleteRequestParams::toJson(boolean.params());

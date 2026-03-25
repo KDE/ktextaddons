@@ -17,24 +17,31 @@ McpProtocolPaginatedRequestParams::~McpProtocolPaginatedRequestParams() = defaul
 bool McpProtocolPaginatedRequestParams::operator==(const McpProtocolPaginatedRequestParams &other) const = default;
 bool McpProtocolPaginatedRequestParams::Meta::operator==(const McpProtocolPaginatedRequestParams::Meta &other) const = default;
 
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams::Meta &t)
+{
+    d.space() << "progressToken:" << t.progressToken();
+    return d;
+}
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "cursor:" << t.cursor();
     return d;
 }
 
 McpProtocolPaginatedRequestParams::Meta McpProtocolPaginatedRequestParams::Meta::fromJson(const QJsonObject &obj)
 {
+    // TODO
     return {};
 }
 
 QJsonObject McpProtocolPaginatedRequestParams::Meta::toJson(const McpProtocolPaginatedRequestParams::Meta &image)
 {
     QJsonObject obj;
-#if 0
     if (image.progressToken().has_value()) {
-        obj.insert("progressToken", McpProtocolUtils::toJson(*image.progressToken()));
+        obj.insert("progressToken"_L1, McpProtocolUtils::progressTokenToJson(*image.progressToken()));
     }
-#endif
     return obj;
 }
 

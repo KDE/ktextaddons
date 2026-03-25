@@ -52,6 +52,13 @@ public:
      */
     void setParams(const McpProtocolCancelTaskRequest::Params &newParams);
 
+    /*!
+     */
+    [[nodiscard]] McpProtocolUtils::RequestId id() const;
+    /*!
+     */
+    void setId(const McpProtocolUtils::RequestId &newId);
+
 private:
     McpProtocolUtils::RequestId mId;
     McpProtocolCancelTaskRequest::Params mParams;

@@ -45,7 +45,11 @@ public:
      */
     void setId(const McpProtocolUtils::RequestId &newId);
 
-    McpProtocolCompleteRequestParams params() const;
+    /*!
+     */
+    [[nodiscard]] McpProtocolCompleteRequestParams params() const;
+    /*!
+     */
     void setParams(const McpProtocolCompleteRequestParams &newParams);
 
 private:

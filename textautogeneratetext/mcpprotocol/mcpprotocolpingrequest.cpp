@@ -23,8 +23,8 @@ bool McpProtocolPingRequest::operator==(const McpProtocolPingRequest &other) con
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPingRequest &t)
 {
+    d.space() << "id:" << t.id();
     d.space() << "params:" << t.params();
-    // TODO id
     return d;
 }
 
@@ -42,14 +42,16 @@ McpProtocolPingRequest McpProtocolPingRequest::fromJson(const QJsonObject &obj)
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolRequestParams::fromJson(obj["params"_L1].toObject()));
     }
-    // TODO add id !
+    if (obj.contains("id"_L1)) {
+        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    }
     return prompt;
 }
 
 QJsonObject McpProtocolPingRequest::toJson(const McpProtocolPingRequest &boolean)
 {
     QJsonObject obj;
-    // TODO obj["id"_L1] = toJsonValue(data._id)};
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolPingRequest::type());
     if (boolean.params().has_value()) {

@@ -37,7 +37,7 @@ McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonO
 QJsonObject McpProtocolCancelTaskRequest::toJson(const McpProtocolCancelTaskRequest &boolean)
 {
     QJsonObject obj;
-    // {"id", toJsonValue(data._id)},
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCancelTaskRequest::type());
     // TODO obj["params"_L1] = McpProtocolCancelTaskRequest::Params::toJson(data._params);
@@ -52,6 +52,16 @@ McpProtocolCancelTaskRequest::Params McpProtocolCancelTaskRequest::params() cons
 void McpProtocolCancelTaskRequest::setParams(const McpProtocolCancelTaskRequest::Params &newParams)
 {
     mParams = newParams;
+}
+
+McpProtocolUtils::RequestId McpProtocolCancelTaskRequest::id() const
+{
+    return mId;
+}
+
+void McpProtocolCancelTaskRequest::setId(const McpProtocolUtils::RequestId &newId)
+{
+    mId = newId;
 }
 
 QString McpProtocolCancelTaskRequest::Params::taskId() const

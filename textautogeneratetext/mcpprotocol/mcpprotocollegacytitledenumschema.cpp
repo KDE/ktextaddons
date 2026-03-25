@@ -18,6 +18,11 @@ bool McpProtocolLegacyTitledEnumSchema::operator==(const McpProtocolLegacyTitled
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLegacyTitledEnumSchema &t)
 {
+    d.space() << "defaultValue:" << t.defaultValue();
+    d.space() << "description:" << t.description();
+    d.space() << "enums:" << t.enums();
+    d.space() << "enumNames:" << t.enumNames();
+    d.space() << "title:" << t.title();
     return d;
 }
 

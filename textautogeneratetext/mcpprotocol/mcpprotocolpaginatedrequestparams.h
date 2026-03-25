@@ -71,3 +71,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolPaginatedRequestParams, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams::Meta &t);

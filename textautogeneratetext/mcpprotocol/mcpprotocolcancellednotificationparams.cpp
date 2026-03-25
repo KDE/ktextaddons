@@ -19,7 +19,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelledNotificationP
 {
     d.space() << "meta:" << t.meta();
     d.space() << "reason:" << t.reason();
-    // TODO d.space() << "requestId:" << t.requestId();
+    d.space() << "requestId:" << t.requestId();
     return d;
 }
 
