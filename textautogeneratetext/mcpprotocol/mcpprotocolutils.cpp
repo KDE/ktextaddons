@@ -173,8 +173,16 @@ McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocol
 
 QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const McpProtocol::McpProtocolUtils::EmbeddedResourceResource &val)
 {
-    // TODO
-    return {};
+    return std::visit(
+        [](const auto &v) -> QJsonValue {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
 }
 
 McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils::clientNotificationFromJson(const QJsonValue &val)
@@ -202,8 +210,16 @@ McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils:
 
 QJsonValue McpProtocol::McpProtocolUtils::clientNotificationToJson(const McpProtocol::McpProtocolUtils::ClientNotification &val)
 {
-    // TODO
-    return {};
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
 }
 
 QString McpProtocol::McpProtocolUtils::getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token)
