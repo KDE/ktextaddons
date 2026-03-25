@@ -44,10 +44,6 @@ public:
      */
     [[nodiscard]] bool canStart() const override;
 
-    /*!
-     */
-    [[nodiscard]] bool verifyRequiredArguments() const override;
-
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;
 };

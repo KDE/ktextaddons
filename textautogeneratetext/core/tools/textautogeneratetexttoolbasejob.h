@@ -59,7 +59,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] virtual bool verifyRequiredArguments() const = 0;
+    [[nodiscard]] bool verifyRequiredArguments() const;
 
     /*!
      */

@@ -35,6 +35,30 @@ void TextAutoGenerateTextToolBaseJob::setRequired(const QStringList &newRequired
     mRequired = newRequired;
 }
 
+bool TextAutoGenerateTextToolBaseJob::verifyRequiredArguments() const
+{
+    const QStringList requiredArgs = required();
+    if (mToolArguments.isEmpty() || requiredArgs.isEmpty()) {
+        return false;
+    }
+    if (requiredArgs.count() > mToolArguments.count()) {
+        return false;
+    }
+    for (const auto &arg : requiredArgs) {
+        bool found = false;
+        for (const auto &tools : mToolArguments) {
+            if (tools.keyTool == arg) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool TextAutoGenerateTextToolBaseJob::canStart() const
 {
     if (!verifyRequiredArguments()) {
@@ -80,6 +104,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextTool
     d.space() << "messageUuid" << t.messageUuid();
     d.space() << "chatId" << t.chatId();
     d.space() << "toolIdentifier" << t.toolIdentifier();
+    d.space() << "required" << t.required();
     return d;
 }
 

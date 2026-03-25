@@ -44,10 +44,6 @@ public:
      */
     void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &newProperties);
 
-    /*!
-     */
-    [[nodiscard]] bool verifyRequiredArguments() const override;
-
 Q_SIGNALS:
     /*!
      */

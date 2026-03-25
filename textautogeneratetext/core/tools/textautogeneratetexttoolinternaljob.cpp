@@ -24,12 +24,6 @@ bool TextAutoGenerateTextToolInternalJob::canStart() const
     return true;
 }
 
-bool TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::verifyRequiredArguments() const
-{
-    // TODO
-    return true;
-}
-
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &t)
 {
     d.space() << "content" << t.content;

@@ -29,30 +29,6 @@ QList<TextAutoGenerateTextToolPluginProperty> TextAutoGenerateTextToolPluginJob:
     return mProperties;
 }
 
-bool TextAutoGenerateTextToolPluginJob::verifyRequiredArguments() const
-{
-    const QStringList requiredArgs = required();
-    if (mToolArguments.isEmpty() || requiredArgs.isEmpty()) {
-        return false;
-    }
-    if (requiredArgs.count() > mToolArguments.count()) {
-        return false;
-    }
-    for (const auto &arg : requiredArgs) {
-        bool found = false;
-        for (const auto &tools : mToolArguments) {
-            if (tools.keyTool == arg) {
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            return false;
-        }
-    }
-    return true;
-}
-
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob &t)
 {
     d.space() << "toolArguments" << t.toolArguments();
