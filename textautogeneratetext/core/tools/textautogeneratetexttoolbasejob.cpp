@@ -13,3 +13,5 @@ TextAutoGenerateTextToolBaseJob::TextAutoGenerateTextToolBaseJob(QObject *parent
 }
 
 TextAutoGenerateTextToolBaseJob::~TextAutoGenerateTextToolBaseJob() = default;
+
+#include "moc_textautogeneratetexttoolbasejob.cpp"

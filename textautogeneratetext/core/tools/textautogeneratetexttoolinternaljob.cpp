@@ -23,3 +23,5 @@ bool TextAutoGenerateTextToolInternalJob::canStart() const
     // TODO
     return true;
 }
+
+#include "moc_textautogeneratetexttoolinternaljob.cpp"
