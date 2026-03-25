@@ -147,8 +147,6 @@ target_sources(
         core/textautogenerateattachments.cpp
         core/textautogeneratemessageutils.h
         core/textautogeneratemessageutils.cpp
-        core/textautogeneratetoolcalljob.h
-        core/textautogeneratetoolcalljob.cpp
         core/textautogeneratechat.h
         core/textautogeneratechat.cpp
         core/textautogeneratesettings.h
@@ -233,6 +231,8 @@ target_sources(
         core/tools/textautogeneratetexttoolbasejob.cpp
         core/tools/textautogeneratetexttoolinternaljob.h
         core/tools/textautogeneratetexttoolinternaljob.cpp
+        core/tools/textautogeneratetoolcalljob.h
+        core/tools/textautogeneratetoolcalljob.cpp
         core/textautogeneratesearchmessagesettings.h
         core/textautogeneratesearchmessagesettings.cpp
         core/textautogeneratefilecache.h
