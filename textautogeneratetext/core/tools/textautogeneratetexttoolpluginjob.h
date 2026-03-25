@@ -36,45 +36,6 @@ public:
     /*!
      */
     void start() override;
-    /*!
-     */
-    [[nodiscard]] bool canStart() const override;
-
-    /*!
-     */
-    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> toolArguments() const;
-    /*!
-     */
-    void setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments);
-
-    /*!
-     */
-    [[nodiscard]] QStringList requiredArguments() const;
-
-    /*!
-     */
-    [[nodiscard]] QByteArray messageUuid() const;
-    /*!
-     */
-    void setMessageUuid(const QByteArray &newMessageUuid);
-
-    /*!
-     */
-    [[nodiscard]] QByteArray toolIdentifier() const;
-    /*!
-     */
-    void setToolIdentifier(const QByteArray &newToolIdentifier);
-
-    /*!
-     */
-    [[nodiscard]] bool verifyRequiredArguments() const;
-
-    /*!
-     */
-    [[nodiscard]] QByteArray chatId() const;
-    /*!
-     */
-    void setChatId(const QByteArray &newChatId);
 
     /*!
      */
@@ -82,6 +43,14 @@ public:
     /*!
      */
     void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &newProperties);
+
+    /*!
+     */
+    [[nodiscard]] bool verifyRequiredArguments() const override;
+
+    /*!
+     */
+    [[nodiscard]] QStringList requiredArguments() const override;
 
 Q_SIGNALS:
     /*!
@@ -96,10 +65,6 @@ Q_SIGNALS:
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> mProperties;
-    QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
-    QByteArray mMessageUuid;
-    QByteArray mChatId;
-    QByteArray mToolIdentifier;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob &t);

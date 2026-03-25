@@ -33,6 +33,13 @@ public:
     /*!
      */
     [[nodiscard]] bool canStart() const override;
+
+    /*!
+     */
+    [[nodiscard]] bool verifyRequiredArguments() const override;
+    /*!
+     */
+    [[nodiscard]] QStringList requiredArguments() const override;
 };
 
 }

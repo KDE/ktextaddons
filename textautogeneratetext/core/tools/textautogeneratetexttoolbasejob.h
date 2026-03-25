@@ -8,6 +8,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
 {
 /*!
@@ -33,6 +34,49 @@ public:
     virtual void start() = 0;
     /*!
      */
-    [[nodiscard]] virtual bool canStart() const = 0;
+    [[nodiscard]] virtual bool canStart() const;
+
+    /*!
+     */
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> toolArguments() const;
+    /*!
+     */
+    void setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments);
+
+    /*!
+     */
+    [[nodiscard]] QByteArray messageUuid() const;
+    /*!
+     */
+    void setMessageUuid(const QByteArray &newMessageUuid);
+
+    /*!
+     */
+    [[nodiscard]] QByteArray toolIdentifier() const;
+    /*!
+     */
+    void setToolIdentifier(const QByteArray &newToolIdentifier);
+
+    /*!
+     */
+    [[nodiscard]] virtual bool verifyRequiredArguments() const = 0;
+
+    /*!
+     */
+    [[nodiscard]] virtual QStringList requiredArguments() const = 0;
+
+    /*!
+     */
+    [[nodiscard]] QByteArray chatId() const;
+    /*!
+     */
+    void setChatId(const QByteArray &newChatId);
+
+protected:
+    QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
+    QByteArray mMessageUuid;
+    QByteArray mChatId;
+    QByteArray mToolIdentifier;
 };
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolBaseJob &t);

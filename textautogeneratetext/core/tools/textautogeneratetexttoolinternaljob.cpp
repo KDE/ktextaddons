@@ -24,4 +24,16 @@ bool TextAutoGenerateTextToolInternalJob::canStart() const
     return true;
 }
 
+bool TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::verifyRequiredArguments() const
+{
+    // TODO
+    return true;
+}
+
+QStringList TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::requiredArguments() const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_textautogeneratetexttoolinternaljob.cpp"
