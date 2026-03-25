@@ -6,6 +6,7 @@
 
 #include "mcpprotocoltoolusecontent.h"
 #include <QDebug>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolToolUseContent::McpProtocolToolUseContent() = default;
@@ -42,7 +43,14 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
     tool.setId(obj["id"_L1].toString());
     tool.setName(obj.value("name"_L1).toString());
 
-    // TODO input
+    if (obj.contains("input"_L1) && obj["input"_L1].isObject()) {
+        const QJsonObject mapObj_input = obj["input"_L1].toObject();
+        QMap<QString, QJsonValue> map_input;
+        for (auto it = mapObj_input.constBegin(); it != mapObj_input.constEnd(); ++it) {
+            map_input.insert(it.key(), it.value());
+        }
+        tool.setInput(map_input);
+    }
     return tool;
 }
 
@@ -51,9 +59,16 @@ QJsonObject McpProtocolToolUseContent::toJson(const McpProtocolToolUseContent &t
     QJsonObject obj;
     obj["id"_L1] = tool.id();
     obj["name"_L1] = tool.name();
-    obj["type"_L1] = QString::fromLatin1(tool.type());
+    obj["type"_L1] = QString::fromLatin1(McpProtocolToolUseContent::type());
+    if (tool.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*tool.meta());
+    }
 
-    // TODO add more
+    QJsonObject map_input;
+    for (auto it = tool.input().constBegin(); it != tool.input().constEnd(); ++it) {
+        map_input.insert(it.key(), it.value());
+    }
+    obj["input"_L1] = map_input;
     return obj;
 }
 
@@ -94,5 +109,5 @@ std::optional<McpProtocolMeta> McpProtocolToolUseContent::meta() const
 
 void McpProtocolToolUseContent::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
