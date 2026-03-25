@@ -47,4 +47,9 @@ bool TextAutoGenerateTextToolInternalInterface::contains(const QByteArray &toolN
     return false;
 }
 
+bool TextAutoGenerateTextToolInternalInterface::hasTools() const
+{
+    return !mTools.isEmpty();
+}
+
 #include "moc_textautogeneratetexttoolinternalinterface.cpp"

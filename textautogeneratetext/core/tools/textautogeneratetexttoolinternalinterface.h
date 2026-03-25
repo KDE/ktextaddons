@@ -42,6 +42,10 @@ public:
      */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolInternalJob *callTool(const QByteArray &toolName) = 0;
 
+    /*!
+     */
+    [[nodiscard]] bool hasTools() const;
+
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;
 
