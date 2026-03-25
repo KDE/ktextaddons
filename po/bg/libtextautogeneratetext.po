@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:42+0000\n"
+"POT-Creation-Date: 2026-03-25 00:43+0000\n"
 "PO-Revision-Date: 2026-02-25 19:59+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -62,62 +62,62 @@ msgstr "<b>Енджин:</b> %1<br><b>Модел:</b> %2<br><b>Име на ек�
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Инструменти:</b> %1"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Tools"
 msgstr "Инструменти"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Small"
 msgstr "Малък"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Medium"
 msgstr "Среден"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Big"
 msgstr "Големи"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Huge"
 msgstr "Огромен"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Multilingual"
 msgstr "Многоезичен"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:162
 #, kde-format
 msgid "Code"
 msgstr "Код"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Math"
 msgstr "Математика"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Vision"
 msgstr "Визия"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Embedding"
 msgstr "Вграждане"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Reasoning"
 msgstr "Разсъждение"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Cloud"
 msgstr "Облак"

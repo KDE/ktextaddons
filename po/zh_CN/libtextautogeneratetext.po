@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:42+0000\n"
+"POT-Creation-Date: 2026-03-25 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -62,62 +62,62 @@ msgstr "<b>引擎：</b> %1<br><b>模型：</b> %2<br><b>实例名称：</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>工具：</b> %1"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Huge"
 msgstr "超大"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Multilingual"
 msgstr "多语言"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:162
 #, kde-format
 msgid "Code"
 msgstr "代码"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Math"
 msgstr "数学"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Vision"
 msgstr "视觉"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Cloud"
 msgstr "云"
