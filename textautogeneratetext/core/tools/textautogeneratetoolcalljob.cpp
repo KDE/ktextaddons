@@ -6,6 +6,7 @@
 
 #include "textautogeneratetoolcalljob.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
+#include "core/tools/textautogeneratetexttoolinternaljob.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
 #include "core/tools/textautogeneratetexttoolpluginjob.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
@@ -87,7 +88,18 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
         job->start();
     } else if (mTextAutoGenerateTextToolInternalInterface) {
         if (mTextAutoGenerateTextToolInternalInterface->contains(info.toolName)) {
-            // TODO
+            auto job = mTextAutoGenerateTextToolInternalInterface->callTool(info.toolName);
+            mListJob.append(job);
+            job->setToolArguments(info.toolCallArgument);
+            job->setChatId(chatId);
+            job->setMessageUuid(uuid);
+            job->setToolIdentifier(info.toolName);
+            // TODO job->setProperties(plugin->properties());
+            connect(job,
+                    &TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::toolInProgress,
+                    this,
+                    &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
+            job->start();
         } else {
             qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << info.toolName;
         }

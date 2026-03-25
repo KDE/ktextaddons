@@ -25,10 +25,6 @@ public:
 
     /*!
      */
-    virtual void executeTool(const QByteArray &toolName) = 0;
-
-    /*!
-     */
     void loadInternalTools(const QString &filename);
 
     /*!
@@ -44,7 +40,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolInternalJob *callTool() = 0;
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolInternalJob *callTool(const QByteArray &toolName) = 0;
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;

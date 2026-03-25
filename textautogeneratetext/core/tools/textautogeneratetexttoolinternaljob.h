@@ -6,7 +6,9 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include "textautogeneratetexttoolbasejob.h"
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolBaseJob>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty>
 namespace TextAutoGenerateText
 {
 /*!
@@ -20,6 +22,14 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternalJob : public T
 {
     Q_OBJECT
 public:
+    struct TEXTAUTOGENERATETEXT_EXPORT TextToolPluginInfo {
+        QString content;
+        QByteArray messageUuid;
+        QByteArray chatId;
+        QByteArray toolIdentifier;
+        QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachementInfoList;
+    };
+
     /*!
      */
     explicit TextAutoGenerateTextToolInternalJob(QObject *parent = nullptr);
@@ -40,6 +50,9 @@ public:
     /*!
      */
     [[nodiscard]] QStringList requiredArguments() const override;
-};
 
+protected:
+    QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;
+};
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &t);
