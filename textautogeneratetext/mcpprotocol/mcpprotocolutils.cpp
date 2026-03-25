@@ -14,7 +14,6 @@
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonObject>
-#include <coroutine>
 using namespace Qt::Literals::StringLiterals;
 QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
 {
@@ -205,4 +204,24 @@ QJsonValue McpProtocol::McpProtocolUtils::clientNotificationToJson(const McpProt
 {
     // TODO
     return {};
+}
+
+QString McpProtocol::McpProtocolUtils::getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token)
+{
+    return std::visit(
+        [](auto &&arg) -> QString {
+            using T = std::decay_t<decltype(arg)>;
+            if constexpr (std::is_same_v<T, QString>) {
+                return arg;
+            } else if constexpr (std::is_same_v<T, int>) {
+                return QString::number(arg);
+            }
+        },
+        token);
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t)
+{
+    d.space() << "progressToken:" << McpProtocol::McpProtocolUtils::getProgressTokenValue(t);
+    return d;
 }

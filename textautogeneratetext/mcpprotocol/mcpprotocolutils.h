@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QJsonValue>
 #include <QString>
+class QDebug;
 namespace McpProtocol
 {
 class McpProtocolTextResourceContents;
@@ -117,6 +118,8 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolTaskStatusNotification,
                                         McpProtocolRootsListChangedNotification>;
 
+[[nodiscard]] QString getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token);
+
 [[nodiscard]] ClientNotification clientNotificationFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue clientNotificationToJson(const ClientNotification &val);
 
@@ -138,3 +141,4 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 };
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);

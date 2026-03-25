@@ -69,7 +69,7 @@ std::optional<McpProtocolMeta> McpProtocolAudioContent::meta() const
 
 void McpProtocolAudioContent::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 QJsonObject McpProtocolAudioContent::toJson(const McpProtocolAudioContent &audio)

@@ -87,3 +87,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolCallToolRequestParams, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCallToolRequestParams &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCallToolRequestParams::Meta &t);
