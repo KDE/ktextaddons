@@ -86,7 +86,7 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                 this,
                 &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
         job->start();
-    } else if (mTextAutoGenerateTextToolInternalInterface) {
+    } else if (mTextAutoGenerateTextToolInternalInterface && mTextAutoGenerateTextToolInternalInterface->hasTools()) {
         if (mTextAutoGenerateTextToolInternalInterface->contains(info.toolName)) {
             auto job = mTextAutoGenerateTextToolInternalInterface->callTool(info.toolName);
             mListJob.append(job);
