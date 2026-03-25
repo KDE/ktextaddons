@@ -526,8 +526,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void
-    slotExecuteInternalTool(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> const mDatabaseManager;
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;

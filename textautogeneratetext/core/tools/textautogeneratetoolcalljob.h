@@ -70,14 +70,6 @@ Q_SIGNALS:
      */
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
 
-    /*!
-     * \brief executeInternalTool
-     * \param chatId
-     * \param uuid
-     * \param info
-     */
-    void executeInternalTool(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
-
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void
     initializeJob(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
