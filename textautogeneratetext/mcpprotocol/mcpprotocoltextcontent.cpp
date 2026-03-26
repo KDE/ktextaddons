@@ -67,7 +67,16 @@ McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 
 QJsonObject McpProtocolTextContent::toJson(const McpProtocolTextContent &text)
 {
-    return {};
+    QJsonObject obj;
+    obj["type"_L1] = QString::fromLatin1(text.type());
+    if (text.annotations().has_value()) {
+        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*text.annotations());
+    }
+    obj["text"_L1] = text.text();
+    if (text.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*text.meta());
+    }
+    return obj;
 }
 
 std::optional<McpProtocolMeta> McpProtocolTextContent::meta() const

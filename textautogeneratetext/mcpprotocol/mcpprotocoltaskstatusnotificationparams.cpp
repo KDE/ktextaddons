@@ -18,6 +18,13 @@ bool McpProtocolTaskStatusNotificationParams::operator==(const McpProtocolTaskSt
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTaskStatusNotificationParams &t)
 {
     d.space() << "meta:" << t.meta();
+    d.space() << "createdAt:" << t.createdAt();
+    d.space() << "lastUpdatedAt:" << t.lastUpdatedAt();
+    d.space() << "pollInterval:" << t.pollInterval();
+    d.space() << "statusMessage:" << t.statusMessage();
+    d.space() << "taskId:" << t.taskId();
+    d.space() << "status:" << McpProtocolUtils::convertTaskStatusToString(t.status());
+    d.space() << "ttl:" << t.ttl();
     return d;
 }
 
@@ -45,10 +52,23 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
 QJsonObject McpProtocolTaskStatusNotificationParams::toJson(const McpProtocolTaskStatusNotificationParams &boolean)
 {
     QJsonObject obj;
+    obj["createdAt"_L1] = boolean.createdAt();
+    obj["lastUpdatedAt"_L1] = boolean.lastUpdatedAt();
+    obj["status"_L1] = McpProtocolUtils::convertTaskStatusToString(boolean.status());
+    obj["taskId"_L1] = boolean.taskId();
+    if (boolean.pollInterval().has_value()) {
+        obj.insert("pollInterval"_L1, *boolean.pollInterval());
+    }
+    if (boolean.statusMessage().has_value()) {
+        obj.insert("statusMessage"_L1, *boolean.statusMessage());
+    }
+    if (boolean.ttl().has_value())
+        obj.insert("ttl"_L1, *boolean.ttl());
+    else
+        obj.insert("ttl"_L1, QJsonValue::Null);
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
     }
-
     return obj;
 }
 

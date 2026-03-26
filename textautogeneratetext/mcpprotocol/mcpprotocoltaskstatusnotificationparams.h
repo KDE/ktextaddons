@@ -40,25 +40,54 @@ public:
     /*!
      */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
-    QString createdAt() const;
+
+    /*!
+     */
+    [[nodiscard]] QString createdAt() const;
+    /*!
+     */
     void setCreatedAt(const QString &newCreatedAt);
 
-    QString lastUpdatedAt() const;
+    /*!
+     */
+    [[nodiscard]] QString lastUpdatedAt() const;
+    /*!
+     */
     void setLastUpdatedAt(const QString &newLastUpdatedAt);
 
-    std::optional<int> pollInterval() const;
+    /*!
+     */
+    [[nodiscard]] std::optional<int> pollInterval() const;
+    /*!
+     */
     void setPollInterval(std::optional<int> newPollInterval);
 
-    McpProtocolUtils::TaskStatus status() const;
+    /*!
+     */
+    [[nodiscard]] McpProtocolUtils::TaskStatus status() const;
+    /*!
+     */
     void setStatus(McpProtocolUtils::TaskStatus newStatus);
 
-    std::optional<QString> statusMessage() const;
+    /*!
+     */
+    [[nodiscard]] std::optional<QString> statusMessage() const;
+    /*!
+     */
     void setStatusMessage(std::optional<QString> newStatusMessage);
 
-    QString taskId() const;
+    /*!
+     */
+    [[nodiscard]] QString taskId() const;
+    /*!
+     */
     void setTaskId(const QString &newTaskId);
 
-    std::optional<int> ttl() const;
+    /*!
+     */
+    [[nodiscard]] std::optional<int> ttl() const;
+    /*!
+     */
     void setTtl(std::optional<int> newTtl);
 
 private:
