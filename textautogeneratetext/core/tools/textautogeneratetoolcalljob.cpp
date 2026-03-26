@@ -103,6 +103,29 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                     &TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::toolInProgress,
                     this,
                     &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
+            connect(job,
+                    &TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::finished,
+                    this,
+                    [this, job](const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &info) {
+                        mResult.append(info.content);
+                        // Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
+                        Q_EMIT toolInProgress({});
+                        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " TextAutoGenerateTextToolPlugin::finished: " << info.content;
+                        mListJob.removeAll(job);
+                        if (mListJob.isEmpty()) {
+                            const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo newInfo{
+                                .content = mResult.join(u'\n'),
+                                .messageUuid = info.messageUuid,
+                                .chatId = info.chatId,
+                                .toolIdentifier = info.toolIdentifier,
+                                .attachementInfoList = info.attachementInfoList,
+                            };
+                            Q_EMIT finished(newInfo);
+                            Q_EMIT toolInProgress({});
+                            deleteLater();
+                        }
+                    });
+
             job->start();
         } else {
             qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << toolName;

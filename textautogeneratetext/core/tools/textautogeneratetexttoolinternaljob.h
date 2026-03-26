@@ -48,6 +48,11 @@ public:
      */
     void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> &newProperties);
 
+Q_SIGNALS:
+    /*!
+     */
+    void finished(const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &info);
+
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;
 };
