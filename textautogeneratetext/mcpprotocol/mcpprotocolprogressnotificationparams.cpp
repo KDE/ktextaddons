@@ -20,9 +20,8 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolProgressNotificationPa
     d.space() << "meta:" << t.meta();
     d.space() << "message:" << t.message();
     d.space() << "progress:" << t.progress();
-    // TODO d.space() << "progressToken:" << t.progressToken();
+    d.space() << "progressToken:" << t.progressToken();
     d.space() << "total:" << t.total();
-
     return d;
 }
 
@@ -38,6 +37,15 @@ QJsonObject McpProtocolProgressNotificationParams::toJson(const McpProtocolProgr
     QJsonObject obj;
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    }
+    obj["progress"_L1] = boolean.progress();
+    obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(boolean.progressToken());
+
+    if (boolean.message().has_value()) {
+        obj.insert("message"_L1, *boolean.message());
+    }
+    if (boolean.total().has_value()) {
+        obj.insert("total"_L1, *boolean.total());
     }
     return obj;
 }

@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocolreadresourcerequestparams.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -19,6 +18,14 @@ bool McpProtocolReadResourceRequestParams::Meta::operator==(const McpProtocolRea
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolReadResourceRequestParams &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "uri:" << t.uri();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolReadResourceRequestParams::Meta &t)
+{
+    d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
