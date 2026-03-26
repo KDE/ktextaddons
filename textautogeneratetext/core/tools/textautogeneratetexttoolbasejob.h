@@ -75,6 +75,10 @@ public:
      */
     void setRequired(const QStringList &newRequired);
 
+    /*!
+     */
+    [[nodiscard]] QStringList requiredArguments() const;
+
 Q_SIGNALS:
     /*!
      */

@@ -35,6 +35,11 @@ void TextAutoGenerateTextToolBaseJob::setRequired(const QStringList &newRequired
     mRequired = newRequired;
 }
 
+QStringList TextAutoGenerateTextToolBaseJob::requiredArguments() const
+{
+    return mRequired;
+}
+
 bool TextAutoGenerateTextToolBaseJob::verifyRequiredArguments() const
 {
     const QStringList requiredArgs = required();
