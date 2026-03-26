@@ -14,11 +14,24 @@ McpProtocolGetTaskPayloadRequest::McpProtocolGetTaskPayloadRequest() = default;
 
 McpProtocolGetTaskPayloadRequest::~McpProtocolGetTaskPayloadRequest() = default;
 
+QByteArray McpProtocolGetTaskPayloadRequest::type()
+{
+    return "tasks/result"_ba;
+}
+
 bool McpProtocolGetTaskPayloadRequest::operator==(const McpProtocolGetTaskPayloadRequest &other) const = default;
 bool McpProtocolGetTaskPayloadRequest::Params::operator==(const McpProtocolGetTaskPayloadRequest::Params &other) const = default;
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskPayloadRequest &t)
 {
+    d.space() << "id:" << t.id();
+    d.space() << "params:" << t.params();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskPayloadRequest::Params &t)
+{
+    d.space() << "taskId:" << t.taskId();
     return d;
 }
 
@@ -39,12 +52,28 @@ QJsonObject McpProtocolGetTaskPayloadRequest::Params::toJson(const McpProtocolGe
 McpProtocolGetTaskPayloadRequest McpProtocolGetTaskPayloadRequest::fromJson(const QJsonObject &obj)
 {
     McpProtocolGetTaskPayloadRequest prompt;
+    if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+    }
+    if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolGetTaskPayloadRequest::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'tasks/result', got: " << obj.value("method"_L1).toString();
+    }
+    if (obj.contains("id"_L1)) {
+        prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    }
+    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
+        prompt.setParams(McpProtocolGetTaskPayloadRequest::Params::fromJson(obj["params"_L1].toObject()));
+    }
     return prompt;
 }
 
 QJsonObject McpProtocolGetTaskPayloadRequest::toJson(const McpProtocolGetTaskPayloadRequest &boolean)
 {
     QJsonObject obj;
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["jsonrpc"_L1] = u"2.0"_s;
+    obj["method"_L1] = QString::fromLatin1(McpProtocolGetTaskPayloadRequest::type());
+    obj["params"_L1] = McpProtocolGetTaskPayloadRequest::Params::toJson(boolean.params());
     return obj;
 }
 

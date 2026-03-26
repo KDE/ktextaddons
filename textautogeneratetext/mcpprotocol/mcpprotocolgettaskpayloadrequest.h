@@ -40,6 +40,8 @@ public:
      */
     ~McpProtocolGetTaskPayloadRequest();
 
+    [[nodiscard]] static QByteArray type();
+
     /*!
      */
     [[nodiscard]] bool operator==(const McpProtocolGetTaskPayloadRequest &other) const;
@@ -72,3 +74,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolGetTaskPayloadRequest, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskPayloadRequest &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskPayloadRequest::Params &t);

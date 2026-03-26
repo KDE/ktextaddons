@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocolcalltoolrequestparams.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -53,7 +52,21 @@ QJsonObject McpProtocolCallToolRequestParams::Meta::toJson(const McpProtocolCall
 McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolCallToolRequestParams prompt;
-    // TODO
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        prompt.setMeta(McpProtocolCallToolRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isObject()) {
+        const QJsonObject mapObj_arguments = obj["arguments"_L1].toObject();
+        QMap<QString, QJsonValue> map_arguments;
+        for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
+            map_arguments.insert(it.key(), it.value());
+        }
+        prompt.setArguments(map_arguments);
+    }
+    prompt.setName(obj.value("name"_L1).toString());
+    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
+        prompt.setTask(McpProtocolTaskMetadata::fromJson(obj["task"_L1].toObject()));
+    }
     return prompt;
 }
 

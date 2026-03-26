@@ -49,7 +49,7 @@ McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject 
 {
     McpProtocolGetTaskRequest prompt;
     if (obj.contains("id"_L1)) {
-        // prompt.setId(fromJson<RequestId>(obj["id"_L1])); // TODO
+        prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
@@ -66,7 +66,7 @@ McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject 
 QJsonObject McpProtocolGetTaskRequest::toJson(const McpProtocolGetTaskRequest &boolean)
 {
     QJsonObject obj;
-    // obj["id"_L1] = toJsonValue(data._id)}, // TODO
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolGetTaskRequest::type());
     obj["params"_L1] = McpProtocolGetTaskRequest::Params::toJson(boolean.params());

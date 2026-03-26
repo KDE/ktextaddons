@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolinitializerequestparams.h"
 #include "mcpprotocolpaginatedrequestparams.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
@@ -44,9 +45,16 @@ public:
      */
     void setId(const McpProtocolUtils::RequestId &newId);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolInitializeRequestParams> params() const;
+    /*!
+     */
+    void setParams(std::optional<McpProtocolInitializeRequestParams> newParams);
+
 private:
     McpProtocolUtils::RequestId mId;
-    // std::optional<McpProtocolInitializeRequestParams> mParams;
+    std::optional<McpProtocolInitializeRequestParams> mParams;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolInitializeRequest, Q_RELOCATABLE_TYPE);

@@ -81,7 +81,7 @@ QJsonObject McpProtocolAudioContent::toJson(const McpProtocolAudioContent &audio
     if (audio.annotations().has_value()) {
         obj["annotations"_L1] = McpProtocolAnnotations::toJson(*audio.annotations());
     }
-    if (audio.annotations().has_value()) {
+    if (audio.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*audio.meta());
     }
     return obj;

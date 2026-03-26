@@ -25,7 +25,6 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequest &t)
 {
     d.space() << "params:" << t.params();
     d.space() << "id:" << t.id();
-    // TODO id
     return d;
 }
 

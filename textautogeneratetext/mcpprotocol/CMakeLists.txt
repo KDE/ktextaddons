@@ -44,6 +44,7 @@ target_sources(
         mcpprotocoljsonrpcerrorresponse.cpp
         mcpprotocolpaginatedrequestparams.cpp
         mcpprotocolrequestparams.cpp
+        mcpprotocolinitializerequestparams.cpp
         mcpprotocolsetlevelrequestparams.cpp
         mcpprotocolcompleterequestparams.cpp
         mcpprotocolreadresourcerequestparams.cpp
@@ -123,6 +124,7 @@ target_sources(
         mcpprotocoljsonrpcerrorresponse.h
         mcpprotocolpaginatedrequestparams.h
         mcpprotocolrequestparams.h
+        mcpprotocolinitializerequestparams.h
         mcpprotocolsetlevelrequestparams.h
         mcpprotocolcompleterequestparams.h
         mcpprotocolreadresourcerequestparams.h

@@ -22,6 +22,8 @@ public:
         [[nodiscard]] QString taskId() const;
         void setTaskId(const QString &newTaskId);
         [[nodiscard]] bool operator==(const McpProtocolCancelTaskRequest::Params &other) const;
+        [[nodiscard]] static Params fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const Params &image);
     };
     /*!
      */
@@ -66,3 +68,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolCancelTaskRequest, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest::Params &t);

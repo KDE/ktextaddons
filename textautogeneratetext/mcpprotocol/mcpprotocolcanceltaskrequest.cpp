@@ -22,8 +22,30 @@ QByteArray McpProtocolCancelTaskRequest::type()
 bool McpProtocolCancelTaskRequest::Params::operator==(const McpProtocolCancelTaskRequest::Params &other) const = default;
 bool McpProtocolCancelTaskRequest::operator==(const McpProtocolCancelTaskRequest &other) const = default;
 
+McpProtocol::McpProtocolCancelTaskRequest::Params McpProtocol::McpProtocolCancelTaskRequest::Params::fromJson(const QJsonObject &obj)
+{
+    McpProtocol::McpProtocolCancelTaskRequest::Params params;
+    // TODO
+    return params;
+}
+
+QJsonObject McpProtocol::McpProtocolCancelTaskRequest::Params::toJson(const McpProtocol::McpProtocolCancelTaskRequest::Params &image)
+{
+    QJsonObject obj;
+    // TODO
+    return obj;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest::Params &t)
+{
+    d.space() << "taskId:" << t.taskId();
+    return d;
+}
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t)
 {
+    d.space() << "params:" << t.params();
+    d.space() << "id:" << t.id();
     return d;
 }
 

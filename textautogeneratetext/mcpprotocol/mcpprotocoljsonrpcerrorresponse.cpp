@@ -18,12 +18,15 @@ bool McpProtocolJSONRPCErrorResponse::operator==(const McpProtocolJSONRPCErrorRe
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolJSONRPCErrorResponse &t)
 {
+    d.space() << "error:" << t.error();
+    d.space() << "id:" << t.id();
     return d;
 }
 
 McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const QJsonObject &obj)
 {
     McpProtocolJSONRPCErrorResponse prompt;
+    // TODO
     return prompt;
 }
 

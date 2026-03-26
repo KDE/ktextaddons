@@ -23,7 +23,7 @@ bool McpProtocolInitializeRequest::operator==(const McpProtocolInitializeRequest
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolInitializeRequest &t)
 {
-    // d.space() << "params:" << t.params();
+    d.space() << "params:" << t.params();
     d.space() << "id:" << t.id();
     return d;
 }
@@ -40,7 +40,7 @@ McpProtocolInitializeRequest McpProtocolInitializeRequest::fromJson(const QJsonO
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        // prompt.setParams(McpProtocolPaginatedRequestParams::fromJson(obj["params"_L1].toObject()));
+        prompt.setParams(McpProtocolInitializeRequestParams::fromJson(obj["params"_L1].toObject()));
     }
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
@@ -54,11 +54,9 @@ QJsonObject McpProtocolInitializeRequest::toJson(const McpProtocolInitializeRequ
     obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolInitializeRequest::type());
-    /*
     if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolPaginatedRequestParams::toJson(*boolean.params());
+        obj["params"_L1] = McpProtocolInitializeRequestParams::toJson(*boolean.params());
     }
-    */
     return obj;
 }
 
@@ -70,4 +68,14 @@ McpProtocolUtils::RequestId McpProtocolInitializeRequest::id() const
 void McpProtocolInitializeRequest::setId(const McpProtocolUtils::RequestId &newId)
 {
     mId = newId;
+}
+
+std::optional<McpProtocolInitializeRequestParams> McpProtocolInitializeRequest::params() const
+{
+    return mParams;
+}
+
+void McpProtocolInitializeRequest::setParams(std::optional<McpProtocolInitializeRequestParams> newParams)
+{
+    mParams = std::move(newParams);
 }

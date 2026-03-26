@@ -48,6 +48,7 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(cons
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
     }
+    // TODO
     return prompt;
 }
 
@@ -57,6 +58,7 @@ QJsonObject McpProtocolCompleteRequestParams::toJson(const McpProtocolCompleteRe
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolCompleteRequestParams::Meta::toJson(*boolean.meta());
     }
+    // TODO
     return obj;
 }
 
