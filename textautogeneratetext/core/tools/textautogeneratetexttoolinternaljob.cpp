@@ -16,6 +16,7 @@ TextAutoGenerateTextToolInternalJob::~TextAutoGenerateTextToolInternalJob() = de
 
 void TextAutoGenerateTextToolInternalJob::start()
 {
+    Q_ASSERT(false);
 }
 
 QList<TextAutoGenerateTextToolInternalProperty> TextAutoGenerateTextToolInternalJob::properties() const
