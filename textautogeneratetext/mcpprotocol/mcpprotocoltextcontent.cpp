@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocoltextcontent.h"
-#include <QDebug>
+#include "textautogeneratetextmcpprotocol_debug.h"
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolTextContent::McpProtocolTextContent() = default;
@@ -51,7 +51,7 @@ McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 {
     McpProtocolTextContent text;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolTextContent::type())) {
-        qWarning() << "McpProtocolTextContent: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolTextContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 
@@ -77,5 +77,5 @@ std::optional<McpProtocolMeta> McpProtocolTextContent::meta() const
 
 void McpProtocolTextContent::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }

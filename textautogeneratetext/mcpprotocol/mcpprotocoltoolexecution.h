@@ -44,17 +44,20 @@ public:
 
     /*!
      */
-    [[nodiscard]] TaskSupport taskSupport() const;
+    [[nodiscard]] static QString convertTaskSupportToString(McpProtocolToolExecution::TaskSupport mode);
     /*!
      */
-    void setTaskSupport(TaskSupport newTaskSupport);
+    [[nodiscard]] static McpProtocolToolExecution::TaskSupport convertTaskSupportFromString(const QString &str);
 
     /*!
      */
-    [[nodiscard]] static QString convertTaskSupportToString(McpProtocolToolExecution::TaskSupport mode);
+    [[nodiscard]] std::optional<TaskSupport> taskSupport() const;
+    /*!
+     */
+    void setTaskSupport(std::optional<TaskSupport> newTaskSupport);
 
 private:
-    TaskSupport mTaskSupport = TaskSupport::Unknown;
+    std::optional<TaskSupport> mTaskSupport;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolToolExecution, Q_RELOCATABLE_TYPE);

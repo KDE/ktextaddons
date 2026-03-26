@@ -5,7 +5,8 @@
 */
 
 #include "mcpprotocoltoolexecution.h"
-#include <QDebug>
+#include "textautogeneratetextmcpprotocol_debug.h"
+
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolToolExecution::McpProtocolToolExecution() = default;
@@ -22,26 +23,32 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolExecution &t)
 
 McpProtocolToolExecution McpProtocolToolExecution::fromJson(const QJsonObject &obj)
 {
-    return {};
+    McpProtocolToolExecution result;
+    if (obj.contains("taskSupport"_L1) && obj["taskSupport"_L1].isString()) {
+        result.setTaskSupport(McpProtocolToolExecution::convertTaskSupportFromString(obj["taskSupport"_L1].toString()));
+    }
+    return result;
 }
 
 QJsonObject McpProtocolToolExecution::toJson(const McpProtocolToolExecution &execution)
 {
     QJsonObject obj;
-    if (execution.taskSupport() != McpProtocolToolExecution::TaskSupport::Unknown) {
-        obj["taskSupport"_L1] = convertTaskSupportToString(execution.taskSupport());
+    if (execution.taskSupport().has_value()) {
+        obj["taskSupport"_L1] = convertTaskSupportToString(*execution.taskSupport());
     }
     return obj;
 }
 
-McpProtocolToolExecution::TaskSupport McpProtocolToolExecution::taskSupport() const
+McpProtocolToolExecution::TaskSupport McpProtocolToolExecution::convertTaskSupportFromString(const QString &str)
 {
-    return mTaskSupport;
-}
-
-void McpProtocolToolExecution::setTaskSupport(TaskSupport newTaskSupport)
-{
-    mTaskSupport = newTaskSupport;
+    if (str == "forbidden"_L1)
+        return TaskSupport::Forbidden;
+    if (str == "optional"_L1)
+        return TaskSupport::Optional;
+    if (str == "required"_L1)
+        return TaskSupport::Required;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid task support " << str;
+    return TaskSupport::Unknown;
 }
 
 QString McpProtocolToolExecution::convertTaskSupportToString(McpProtocolToolExecution::TaskSupport mode)
@@ -57,6 +64,16 @@ QString McpProtocolToolExecution::convertTaskSupportToString(McpProtocolToolExec
         return {};
     }
     return {};
+}
+
+std::optional<McpProtocolToolExecution::TaskSupport> McpProtocolToolExecution::taskSupport() const
+{
+    return mTaskSupport;
+}
+
+void McpProtocolToolExecution::setTaskSupport(std::optional<TaskSupport> newTaskSupport)
+{
+    mTaskSupport = newTaskSupport;
 }
 
 #include "moc_mcpprotocoltoolexecution.cpp"

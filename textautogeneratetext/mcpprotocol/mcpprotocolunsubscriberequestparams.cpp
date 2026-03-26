@@ -6,7 +6,7 @@
 
 #include "mcpprotocolunsubscriberequestparams.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
-#include <QDebug>
+
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
@@ -17,8 +17,16 @@ McpProtocolUnsubscribeRequestParams::~McpProtocolUnsubscribeRequestParams() = de
 bool McpProtocolUnsubscribeRequestParams::operator==(const McpProtocolUnsubscribeRequestParams &other) const = default;
 bool McpProtocolUnsubscribeRequestParams::Meta::operator==(const McpProtocolUnsubscribeRequestParams::Meta &other) const = default;
 
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUnsubscribeRequestParams::Meta &t)
+{
+    d.space() << "progressToken:" << t.progressToken();
+    return d;
+}
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUnsubscribeRequestParams &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "uri:" << t.uri();
     return d;
 }
 

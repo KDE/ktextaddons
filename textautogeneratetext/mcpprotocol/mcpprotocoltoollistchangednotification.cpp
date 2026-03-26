@@ -23,6 +23,7 @@ bool McpProtocolToolListChangedNotification::operator==(const McpProtocolToolLis
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolListChangedNotification &t)
 {
+    d.space() << "params:" << t.params();
     return d;
 }
 
