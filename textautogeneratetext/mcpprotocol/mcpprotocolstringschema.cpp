@@ -35,7 +35,7 @@ McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj
 {
     McpProtocolStringSchema prompt;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolStringSchema::type())) {
-        qWarning() << "McpProtocolStringSchema: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolStringSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 

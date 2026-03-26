@@ -19,6 +19,14 @@ bool McpProtocolRequestParams::Meta::operator==(const McpProtocolRequestParams::
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolRequestParams &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "uri:" << t.uri();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolRequestParams::Meta &t)
+{
+    d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 

@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocolresourcetemplate.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -18,13 +17,45 @@ bool McpProtocolResourceTemplate::operator==(const McpProtocolResourceTemplate &
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceTemplate &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "annotations:" << t.annotations();
+    d.space() << "description:" << t.description();
+    d.space() << "mimeType:" << t.mimeType();
+    d.space() << "icons:" << t.icons();
+    d.space() << "name:" << t.name();
+    d.space() << "title:" << t.title();
+    d.space() << "uriTemplate:" << t.uriTemplate();
     return d;
 }
 
 McpProtocolResourceTemplate McpProtocolResourceTemplate::fromJson(const QJsonObject &obj)
 {
     McpProtocolResourceTemplate prompt;
-    // TODO
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
+        prompt.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    }
+    if (obj.contains("description"_L1)) {
+        prompt.setDescription(obj.value("description"_L1).toString());
+    }
+    if (obj.contains("mimeType"_L1)) {
+        prompt.setMimeType(obj.value("mimeType"_L1).toString());
+    }
+    prompt.setName(obj.value("name"_L1).toString());
+    if (obj.contains("title"_L1)) {
+        prompt.setTitle(obj.value("title"_L1).toString());
+    }
+    prompt.setUriTemplate(obj.value("uriTemplate"_L1).toString());
+    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
+        const QJsonArray arr = obj["icons"_L1].toArray();
+        QList<McpProtocolIcon> list_icons;
+        for (const QJsonValue &v : arr) {
+            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+        }
+        prompt.setIcons(list_icons);
+    }
     return prompt;
 }
 
@@ -50,8 +81,9 @@ QJsonObject McpProtocolResourceTemplate::toJson(const McpProtocolResourceTemplat
         }
         obj.insert("icons"_L1, arr_icons);
     }
-    if (boolean.mimeType().has_value())
+    if (boolean.mimeType().has_value()) {
         obj.insert("mimeType"_L1, *boolean.mimeType());
+    }
     if (boolean.title().has_value()) {
         obj.insert("title"_L1, *boolean.title());
     }

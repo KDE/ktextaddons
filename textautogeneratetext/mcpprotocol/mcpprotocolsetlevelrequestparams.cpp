@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocolsetlevelrequestparams.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -19,6 +18,14 @@ bool McpProtocolSetLevelRequestParams::Meta::operator==(const McpProtocolSetLeve
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolSetLevelRequestParams &t)
 {
+    d.space() << "level:" << McpProtocolUtils::convertLoggingLevelToString(t.level());
+    d.space() << "meta:" << t.meta();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolSetLevelRequestParams::Meta &t)
+{
+    d.space() << "meta:" << t.progressToken();
     return d;
 }
 
