@@ -2191,7 +2191,7 @@ msgstr ""
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "Semínko:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
 #, kde-format
@@ -2343,7 +2343,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "Zadejte zprávu"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:470
@@ -2415,7 +2415,7 @@ msgstr "Moduly nástrojů"
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
 msgid "Prompt"
-msgstr ""
+msgstr "Výzva"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
@@ -2789,7 +2789,7 @@ msgstr "Zvětšení:"
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
