@@ -16,7 +16,7 @@ McpProtocolToolExecutionTest::McpProtocolToolExecutionTest(QObject *parent)
 void McpProtocolToolExecutionTest::shouldhaveDefaultValues()
 {
     const McpProtocol::McpProtocolToolExecution w;
-    QCOMPARE(w.taskSupport(), McpProtocol::McpProtocolToolExecution::TaskSupport::Unknown);
+    QVERIFY(!w.taskSupport().has_value());
 }
 
 #include "moc_mcpprotocoltoolexecutiontest.cpp"
