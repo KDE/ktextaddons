@@ -50,14 +50,15 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                                                 const QByteArray &uuid,
                                                 const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info)
 {
-    auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromToolNameId(info.toolName);
+    const QByteArray toolName = info.toolName;
+    auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromToolNameId(toolName);
     if (plugin) {
         auto job = plugin->callTool();
         mListJob.append(job);
         job->setToolArguments(info.toolCallArgument);
         job->setChatId(chatId);
         job->setMessageUuid(uuid);
-        job->setToolIdentifier(info.toolName);
+        job->setToolIdentifier(toolName);
         job->setProperties(plugin->properties());
         job->setRequired(plugin->required());
         connect(job,
@@ -88,26 +89,27 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                 &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
         job->start();
     } else if (mTextAutoGenerateTextToolInternalInterface && mTextAutoGenerateTextToolInternalInterface->hasTools()) {
-        if (mTextAutoGenerateTextToolInternalInterface->contains(info.toolName)) {
-            auto job = mTextAutoGenerateTextToolInternalInterface->callTool(info.toolName);
+        if (mTextAutoGenerateTextToolInternalInterface->contains(toolName)) {
+            auto job = mTextAutoGenerateTextToolInternalInterface->callTool(toolName);
             mListJob.append(job);
             job->setToolArguments(info.toolCallArgument);
             job->setChatId(chatId);
             job->setMessageUuid(uuid);
-            job->setToolIdentifier(info.toolName);
-            // TODO job->setProperties(plugin->properties());
-            // TODO job->setRequired(plugin->required());
+            job->setToolIdentifier(toolName);
+            const auto toolInternal = mTextAutoGenerateTextToolInternalInterface->toolInternal(toolName);
+            job->setProperties(toolInternal.properties());
+            job->setRequired(toolInternal.required());
             connect(job,
                     &TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::toolInProgress,
                     this,
                     &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
             job->start();
         } else {
-            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << info.toolName;
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << toolName;
         }
     } else {
         // Internal tools.
-        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << info.toolName;
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << toolName;
     }
 }
 

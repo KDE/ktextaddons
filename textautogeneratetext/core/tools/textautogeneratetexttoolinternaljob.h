@@ -40,9 +40,13 @@ public:
     /*!
      */
     void start() override;
+
     /*!
      */
-    [[nodiscard]] bool canStart() const override;
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> properties() const;
+    /*!
+     */
+    void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> &newProperties);
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;

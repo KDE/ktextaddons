@@ -18,10 +18,14 @@ void TextAutoGenerateTextToolInternalJob::start()
 {
 }
 
-bool TextAutoGenerateTextToolInternalJob::canStart() const
+QList<TextAutoGenerateTextToolInternalProperty> TextAutoGenerateTextToolInternalJob::properties() const
 {
-    // TODO
-    return true;
+    return mProperties;
+}
+
+void TextAutoGenerateTextToolInternalJob::setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> &newProperties)
+{
+    mProperties = newProperties;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &t)

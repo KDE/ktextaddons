@@ -42,6 +42,8 @@ public:
      */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolInternalJob *callTool(const QByteArray &toolName) = 0;
 
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextToolInternal toolInternal(const QByteArray &toolName) const;
+
     /*!
      */
     [[nodiscard]] bool hasTools() const;

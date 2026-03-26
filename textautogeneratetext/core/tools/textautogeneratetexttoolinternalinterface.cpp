@@ -47,6 +47,16 @@ bool TextAutoGenerateTextToolInternalInterface::contains(const QByteArray &toolN
     return false;
 }
 
+TextAutoGenerateTextToolInternal TextAutoGenerateTextToolInternalInterface::toolInternal(const QByteArray &toolName) const
+{
+    for (const auto &t : mTools) {
+        if (t.toolNameId() == toolName) {
+            return t;
+        }
+    }
+    return {};
+}
+
 bool TextAutoGenerateTextToolInternalInterface::hasTools() const
 {
     return !mTools.isEmpty();
