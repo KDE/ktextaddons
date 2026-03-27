@@ -311,6 +311,7 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
+    job->setTextAutoGenerateTextToolInternalInterface(mTextAutoGenerateTextToolInternalInterface);
     connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
     job->start();
