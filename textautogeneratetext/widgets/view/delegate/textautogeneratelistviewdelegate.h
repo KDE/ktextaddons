@@ -47,6 +47,7 @@ Q_SIGNALS:
     void stopTextToSpeechRequested(const QModelIndex &index);
     void updateView();
     void updateColors();
+    void insertBlockCode(const QString &str);
 
 private:
     struct MessageLayout {

@@ -69,6 +69,11 @@ QString TextUtilsSyntaxHighlighter::copyHref()
     return u"copy:/"_s;
 }
 
+QString TextUtilsSyntaxHighlighter::insertBlockTextHref()
+{
+    return u"insertBlockText:/"_s;
+}
+
 void TextUtilsSyntaxHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)
 {
     const bool isDefaultTextStyle = format.isDefaultTextStyle(theme());

@@ -44,6 +44,12 @@ public:
      */
     [[nodiscard]] static QString copyHref();
 
+    /*!
+     * \brief Returns the href for the insert block text button
+     * \return The href string
+     */
+    [[nodiscard]] static QString insertBlockTextHref();
+
 protected:
     /*!
      * \brief Applies formatting to a range of text
