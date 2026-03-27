@@ -20,8 +20,14 @@ bool McpProtocolGetPromptRequestParams::Meta::operator==(const McpProtocolGetPro
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams &t)
 {
     d.space() << "name:" << t.name();
-    // TODO d.space() << "meta:" << t.meta();
+    d.space() << "meta:" << t.meta();
     d.space() << "arguments:" << t.arguments();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams::Meta &t)
+{
+    d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
@@ -46,7 +52,18 @@ QJsonObject McpProtocolGetPromptRequestParams::Meta::toJson(const McpProtocolGet
 McpProtocolGetPromptRequestParams McpProtocolGetPromptRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolGetPromptRequestParams prompt;
-    // TODO
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        prompt.setMeta(McpProtocolGetPromptRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isObject()) {
+        const QJsonObject mapObj_arguments = obj["arguments"_L1].toObject();
+        QMap<QString, QString> map_arguments;
+        for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
+            map_arguments.insert(it.key(), it.value().toString());
+        }
+        prompt.setArguments(map_arguments);
+    }
+    prompt.setName(obj.value("name"_L1).toString());
     return prompt;
 }
 
@@ -68,12 +85,12 @@ QJsonObject McpProtocolGetPromptRequestParams::toJson(const McpProtocolGetPrompt
     return obj;
 }
 
-std::optional<QMap<QString, QJsonValue>> McpProtocolGetPromptRequestParams::arguments() const
+std::optional<QMap<QString, QString>> McpProtocolGetPromptRequestParams::arguments() const
 {
     return mArguments;
 }
 
-void McpProtocolGetPromptRequestParams::setArguments(std::optional<QMap<QString, QJsonValue>> newArguments)
+void McpProtocolGetPromptRequestParams::setArguments(std::optional<QMap<QString, QString>> newArguments)
 {
     mArguments = std::move(newArguments);
 }

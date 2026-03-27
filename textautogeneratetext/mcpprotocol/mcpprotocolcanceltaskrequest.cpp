@@ -62,7 +62,7 @@ QJsonObject McpProtocolCancelTaskRequest::toJson(const McpProtocolCancelTaskRequ
     obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCancelTaskRequest::type());
-    // TODO obj["params"_L1] = McpProtocolCancelTaskRequest::Params::toJson(data._params);
+    obj["params"_L1] = McpProtocolCancelTaskRequest::Params::toJson(boolean.params());
     return obj;
 }
 

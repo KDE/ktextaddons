@@ -52,10 +52,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<QMap<QString, QJsonValue>> arguments() const;
+    [[nodiscard]] std::optional<QMap<QString, QString>> arguments() const;
     /*!
      */
-    void setArguments(std::optional<QMap<QString, QJsonValue>> newArguments);
+    void setArguments(std::optional<QMap<QString, QString>> newArguments);
 
     /*!
      */
@@ -73,9 +73,10 @@ public:
 
 private:
     std::optional<Meta> mMeta;
-    std::optional<QMap<QString, QJsonValue>> mArguments;
+    std::optional<QMap<QString, QString>> mArguments;
     QString mName;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolGetPromptRequestParams, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams::Meta &t);

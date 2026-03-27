@@ -25,9 +25,18 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolJSONRPCErrorResponse &
 
 McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const QJsonObject &obj)
 {
-    McpProtocolJSONRPCErrorResponse prompt;
-    // TODO
-    return prompt;
+    McpProtocolJSONRPCErrorResponse response;
+    if (obj.value("jsonrpc"_L1).toString() != u"2.0"_s) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        return {};
+    }
+    if (obj.contains("error"_L1) && obj["error"_L1].isObject()) {
+        response.setError(McpProtocolError::fromJson(obj["error"_L1].toObject()));
+    }
+    if (obj.contains("id"_L1)) {
+        response.setId(McpProtocol::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    }
+    return response;
 }
 
 QJsonObject McpProtocolJSONRPCErrorResponse::toJson(const McpProtocolJSONRPCErrorResponse &boolean)
