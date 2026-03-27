@@ -60,7 +60,7 @@ void TextAutoGenerateTextToolsLoadingJob::parseJsonTools(const QJsonArray &array
         tool.parse(v.toObject());
         lstTool.append(tool);
     }
-    // qDebug() << " lstTool " << lstTool;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " lstTool " << lstTool;
     Q_EMIT tools(lstTool);
 }
 
