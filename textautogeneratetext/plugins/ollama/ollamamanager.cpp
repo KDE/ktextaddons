@@ -235,9 +235,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mOllamaSettings->temperature();
-    if (!request.tools().isEmpty()) {
-        data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
-    }
+    generateToolsArray(request.tools(), data);
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }

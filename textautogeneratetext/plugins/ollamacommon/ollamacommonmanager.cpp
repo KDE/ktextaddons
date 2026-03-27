@@ -8,6 +8,7 @@
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
 #include <QJsonObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonManager::OllamaCommonManager(QObject *parent)
@@ -103,6 +104,14 @@ void OllamaCommonManager::addKeepAliveType(QJsonObject &data, OllamaCommonSettin
         break;
     case OllamaCommonSettings::KeepAliveType::Unknown:
         break;
+    }
+}
+
+void OllamaCommonManager::generateToolsArray(const QList<QByteArray> &tools, QJsonObject &data) const
+{
+    const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(tools);
+    if (!array.isEmpty()) {
+        data["tools"_L1] = array;
     }
 }
 #include "moc_ollamacommonmanager.cpp"

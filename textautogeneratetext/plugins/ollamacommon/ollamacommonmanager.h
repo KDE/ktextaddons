@@ -27,4 +27,5 @@ public:
     void getVersion();
     [[nodiscard]] virtual bool hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const;
     void addKeepAliveType(QJsonObject &data, OllamaCommonSettings::KeepAliveType type, int keepAliveMinutes);
+    void generateToolsArray(const QList<QByteArray> &tools, QJsonObject &data) const;
 };

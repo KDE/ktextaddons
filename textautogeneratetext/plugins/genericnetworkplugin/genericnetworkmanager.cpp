@@ -97,8 +97,9 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
-    if (!request.tools().isEmpty()) {
-        data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
+    const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
+    if (!array.isEmpty()) {
+        data["tools"_L1] = array;
         // data["tool_choice"_L1] = u"none"_s;
     }
     if (mGenericNetworkSettings->maxTokens() > 0) {

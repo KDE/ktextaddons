@@ -126,9 +126,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     data["messages"_L1] = request.messages();
 
     data["temperature"_L1] = mOllamaOnlineSettings->temperature();
-    if (!request.tools().isEmpty()) {
-        data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
-    }
+    generateToolsArray(request.tools(), data);
     if (mOllamaOnlineSettings->seed() != 0) {
         data["seed"_L1] = mOllamaOnlineSettings->seed();
     }
