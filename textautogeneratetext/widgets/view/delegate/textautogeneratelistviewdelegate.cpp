@@ -619,6 +619,11 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                         clipboard->setText(blockCodeStr, QClipboard::Clipboard);
                         clipboard->setText(blockCodeStr, QClipboard::Selection);
                         KMessageBox::information(mListView, i18n("Block Code copied."), i18nc("@title", "Copy Block Code"));
+                    } else if (link.startsWith(TextUtils::TextUtilsSyntaxHighlighter::insertBlockTextHref())) {
+                        QString identifier = link;
+                        identifier.remove(TextUtils::TextUtilsSyntaxHighlighter::insertBlockTextHref());
+                        const QString blockCodeStr = TextUtils::TextUtilsBlockCodeManager::self()->blockCode(identifier);
+                        Q_EMIT insertBlockCode(blockCodeStr);
                     } else {
                         QDesktopServices::openUrl(QUrl(link));
                     }
