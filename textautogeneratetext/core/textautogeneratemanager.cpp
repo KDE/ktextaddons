@@ -63,6 +63,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     // Load TextAutoGenerateTextToolPluginManager
     (void)TextAutoGenerateTextToolPluginManager::self();
+    TextAutoGenerateTextToolPluginManager::self()->setManager(this);
 
     mDebug = !qEnvironmentVariableIsEmpty("TEXTAUTOGENERATE_DEBUGGING");
 

@@ -6,6 +6,8 @@
 
 #include "textautogeneratetexttoolpluginmanager.h"
 
+#include "core/textautogeneratemanager.h"
+#include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetexttoolplugin.h"
 
@@ -89,6 +91,16 @@ void TextAutoGenerateTextToolPluginManager::loadPlugin(TextAutoGenerateTextToolP
     }
 }
 
+TextAutoGenerateManager *TextAutoGenerateTextToolPluginManager::manager() const
+{
+    return mManager;
+}
+
+void TextAutoGenerateTextToolPluginManager::setManager(TextAutoGenerateManager *newManager)
+{
+    mManager = newManager;
+}
+
 QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> TextAutoGenerateTextToolPluginManager::activePluginTools() const
 {
     QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> list;
@@ -158,7 +170,13 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
             }
         }
         if (!toolFound) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found" << t;
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found:" << t;
+        }
+    }
+    if (mManager && mManager->textAutoGenerateTextToolInternalInterface()) {
+        const auto lstJson = mManager->textAutoGenerateTextToolInternalInterface()->toolInternalMetaData();
+        for (const auto &json : lstJson) {
+            toolsArray.append(json);
         }
     }
     return toolsArray;
@@ -173,6 +191,9 @@ QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const 
             if (it->plugin->toolNameId() == t) {
                 toolDisplayList.append(u"<li>"_s + it->plugin->displayName() + u"</li>"_s);
                 break;
+            } else {
+                // TODO use internal tools ?
+                qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "tools not found:" << t;
             }
         }
     }

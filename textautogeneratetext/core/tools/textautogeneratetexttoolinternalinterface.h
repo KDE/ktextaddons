@@ -48,6 +48,10 @@ public:
      */
     [[nodiscard]] bool hasTools() const;
 
+    /*!
+     */
+    [[nodiscard]] QList<QJsonObject> toolInternalMetaData() const;
+
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;
 

@@ -6,6 +6,7 @@
 
 #include "textautogeneratetexttoolinternalinterface.h"
 #include "core/tools/textautogeneratetexttoolsloadingjob.h"
+#include <QJsonObject>
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextToolInternalInterface::TextAutoGenerateTextToolInternalInterface(QObject *parent)
     : QObject(parent)
@@ -60,6 +61,16 @@ TextAutoGenerateTextToolInternal TextAutoGenerateTextToolInternalInterface::tool
 bool TextAutoGenerateTextToolInternalInterface::hasTools() const
 {
     return !mTools.isEmpty();
+}
+
+QList<QJsonObject> TextAutoGenerateTextToolInternalInterface::toolInternalMetaData() const
+{
+    QList<QJsonObject> lstMetaData;
+    lstMetaData.reserve(mTools.count());
+    for (const auto &t : mTools) {
+        lstMetaData.append(t.generateMetadata());
+    }
+    return lstMetaData;
 }
 
 #include "moc_textautogeneratetexttoolinternalinterface.cpp"

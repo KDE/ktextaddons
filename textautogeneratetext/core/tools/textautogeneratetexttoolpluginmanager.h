@@ -16,6 +16,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPlugin;
+class TextAutoGenerateManager;
 class TextAutoGenerateTextToolPluginManagerInfo
 {
 public:
@@ -66,12 +67,16 @@ public:
 
     [[nodiscard]] bool contains(const QByteArray &toolNamzId);
 
+    [[nodiscard]] TextAutoGenerateManager *manager() const;
+    void setManager(TextAutoGenerateManager *newManager);
+
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item);
     QList<TextAutoGenerateTextToolPluginManagerInfo> mPluginList;
     QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
+    TextAutoGenerateManager *mManager = nullptr;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::PluginToolInfo, Q_RELOCATABLE_TYPE);
