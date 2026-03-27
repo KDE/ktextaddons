@@ -719,6 +719,16 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     changeInProgress(info.chatId, info.messageUuid, false);
 }
 
+bool TextAutoGenerateManager::haveInsertText() const
+{
+    return mHaveInsertText;
+}
+
+void TextAutoGenerateManager::setHaveInsertText(bool newHaveInsertText)
+{
+    mHaveInsertText = newHaveInsertText;
+}
+
 TextAutoGenerateTextToolInternalInterface *TextAutoGenerateManager::textAutoGenerateTextToolInternalInterface() const
 {
     return mTextAutoGenerateTextToolInternalInterface;

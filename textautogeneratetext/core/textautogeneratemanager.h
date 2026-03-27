@@ -416,8 +416,19 @@ public:
      */
     [[nodiscard]] TextAutoGenerateTextMcpServerManager *textAutoGenerateTextMcpServerManager() const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextToolInternalInterface *textAutoGenerateTextToolInternalInterface() const;
+    /*!
+     */
     void setTextAutoGenerateTextToolInternalInterface(TextAutoGenerateTextToolInternalInterface *newTextAutoGenerateTextToolInternalInterface);
+
+    /*!
+     */
+    [[nodiscard]] bool haveInsertText() const;
+    /*!
+     */
+    void setHaveInsertText(bool newHaveInsertText);
 
 Q_SIGNALS:
     /*!
@@ -518,6 +529,10 @@ Q_SIGNALS:
      */
     void discussionListIsEmpty(bool isEmpty);
 
+    /*!
+     */
+    void insertBlockCode(const QString &str);
+
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);
 
@@ -545,6 +560,7 @@ private:
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
     bool mDebug = false;
+    bool mHaveInsertText = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo, Q_RELOCATABLE_TYPE);
