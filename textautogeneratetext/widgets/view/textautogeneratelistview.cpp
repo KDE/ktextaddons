@@ -32,6 +32,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, [delegate](bool inProgress) {
             delegate->setInProgress(inProgress);
         });
+        connect(delegate, &TextAutoGenerateListViewDelegate::insertBlockCode, mManager, &TextAutoGenerateText::TextAutoGenerateManager::insertBlockCode);
     }
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);
