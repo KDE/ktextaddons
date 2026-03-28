@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:43+0000\n"
+"POT-Creation-Date: 2026-03-28 00:42+0000\n"
 "PO-Revision-Date: 2026-01-28 19:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -62,62 +62,62 @@ msgstr "<b>引擎</b>：%1<br><b>模型</b>：%2<br><b>實體名稱</b>：%3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Huge"
 msgstr "巨大"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Multilingual"
 msgstr "多語言"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Code"
 msgstr "程式碼"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Math"
 msgstr "數學"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Vision"
 msgstr "視覺"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:173
 #, fuzzy, kde-format
 #| msgid "Groq Cloud"
 msgid "Cloud"
@@ -153,30 +153,30 @@ msgstr "本地"
 msgid "Network"
 msgstr "網路"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:205
 #, kde-format
 msgid "Plugins Text:"
 msgstr "外掛程式文字："
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:211
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "工具識別子：%1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "開啟"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "關閉"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:43+0000\n"
+"POT-Creation-Date: 2026-03-28 00:42+0000\n"
 "PO-Revision-Date: 2026-01-25 13:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -77,62 +77,62 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Tools"
 msgstr "Tresnak"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Small"
 msgstr "Txikia"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Medium"
 msgstr "Ertaina"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Big"
 msgstr "Handia"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Huge"
 msgstr "Itzela"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Multilingual"
 msgstr "Eleaniztuna"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Code"
 msgstr "Kodea"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Math"
 msgstr "Matematika"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Vision"
 msgstr "Ikusmena"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Embedding"
 msgstr "Txertatzea"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Reasoning"
 msgstr "Arrazoiketa"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:173
 #, fuzzy, kde-format
 #| msgid "Groq Cloud"
 msgid "Cloud"
@@ -166,30 +166,30 @@ msgstr "Lokala"
 msgid "Network"
 msgstr "Sarea"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:205
 #, kde-format
 msgid "Plugins Text:"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:211
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:43+0000\n"
+"POT-Creation-Date: 2026-03-28 00:42+0000\n"
 "PO-Revision-Date: 2026-03-14 11:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -62,62 +62,62 @@ msgstr "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Naam exemplaar:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Hulpmiddelen:</b> %1"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Tools"
 msgstr "Hulpmiddelen"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Small"
 msgstr "Klein"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Medium"
 msgstr "Middel"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Big"
 msgstr "Groot"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Huge"
 msgstr "Enorm"
 
-#: core/textautogeneratemanager.cpp:160
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Multilingual"
 msgstr "Meerdere talen"
 
-#: core/textautogeneratemanager.cpp:162
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Code"
 msgstr "Code"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Math"
 msgstr "Wiskunde"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Vision"
 msgstr "Visie"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Embedding"
 msgstr "Inbedden"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Reasoning"
 msgstr "Redenering"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Cloud"
 msgstr "Wolk"
@@ -146,30 +146,30 @@ msgstr "Lokaal"
 msgid "Network"
 msgstr "Netwerk"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:205
 #, kde-format
 msgid "Plugins Text:"
 msgstr "Tekst van plug-ins:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:211
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Hulpmiddel-identifier: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Aan"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Uit"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
