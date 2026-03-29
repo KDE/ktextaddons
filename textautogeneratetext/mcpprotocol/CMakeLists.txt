@@ -97,6 +97,7 @@ target_sources(
         mcpprotocoltoolexecution.cpp
         mcpprotocoltoolexecution.h
         mcpprotocoltoolusecontent.cpp
+        mcpprotocoltoolresultcontent.cpp
         mcpprotocoltextcontent.h
         mcpprotocoltask.h
         mcpprotocolroot.h
@@ -171,6 +172,7 @@ target_sources(
         mcpprotocoltoolannotations.cpp
         mcpprotocoltoolannotations.h
         mcpprotocoltoolusecontent.h
+        mcpprotocoltoolresultcontent.h
         mcpprotocolaudiocontent.cpp
         mcpprotocolicon.cpp
         mcpprotocolicon.h
