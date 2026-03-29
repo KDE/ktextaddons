@@ -180,7 +180,9 @@ target_sources(
         mcpprotocolutils.h
         mcpprotocolutils.cpp
         mcpprotocolmodelhint.cpp
+        mcpprotocolpromptmessage.cpp
         mcpprotocolmodelhint.h
+        mcpprotocolpromptmessage.h
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
