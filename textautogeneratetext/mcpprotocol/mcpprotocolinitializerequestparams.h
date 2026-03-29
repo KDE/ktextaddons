@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolclientcapabilities.h"
 #include "mcpprotocolimplementation.h"
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolprompt.h"
@@ -72,9 +73,12 @@ public:
      */
     void setClientInfo(const McpProtocolImplementation &newClientInfo);
 
+    McpProtocolClientCapabilities capabilities() const;
+    void setCapabilities(const McpProtocolClientCapabilities &newCapabilities);
+
 private:
     std::optional<Meta> mMeta;
-    // TODO ClientCapabilities mCapabilities;
+    McpProtocolClientCapabilities mCapabilities;
     McpProtocolImplementation mClientInfo;
     QString mProtocolVersion;
 };

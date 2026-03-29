@@ -29,9 +29,27 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolImplementation &t)
 
 McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject &obj)
 {
-    McpProtocolImplementation text;
-    // TODO
-    return text;
+    McpProtocolImplementation impl;
+    if (obj.contains("description"_L1)) {
+        impl.setDescription(obj.value("description"_L1).toString());
+    }
+    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
+        const QJsonArray arr = obj["icons"_L1].toArray();
+        QList<McpProtocolIcon> icons;
+        for (const QJsonValue &v : arr) {
+            icons.append(McpProtocolIcon::fromJson(v.toObject()));
+        }
+        impl.setIcons(icons);
+    }
+    impl.setName(obj.value("name"_L1).toString());
+    if (obj.contains("title"_L1)) {
+        impl.setTitle(obj.value("title"_L1).toString());
+    }
+    impl.setVersion(obj.value("version"_L1).toString());
+    if (obj.contains("websiteUrl"_L1)) {
+        impl.setWebsiteUrl(obj.value("websiteUrl"_L1).toString());
+    }
+    return impl;
 }
 
 QJsonObject McpProtocolImplementation::toJson(const McpProtocolImplementation &impl)

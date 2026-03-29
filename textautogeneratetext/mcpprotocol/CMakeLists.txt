@@ -182,8 +182,10 @@ target_sources(
         mcpprotocolutils.h
         mcpprotocolutils.cpp
         mcpprotocolmodelhint.cpp
+        mcpprotocolclientcapabilities.cpp
         mcpprotocolpromptmessage.cpp
         mcpprotocolmodelhint.h
+        mcpprotocolclientcapabilities.h
         mcpprotocolpromptmessage.h
 )
 
