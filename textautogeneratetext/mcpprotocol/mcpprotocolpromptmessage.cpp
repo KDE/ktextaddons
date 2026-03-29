@@ -16,18 +16,29 @@ bool McpProtocolPromptMessage::operator==(const McpProtocolPromptMessage &other)
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPromptMessage &t)
 {
+    d.space() << "role:" << t.role();
+    // TODO d.space() << "content:" << t.content();
     return d;
 }
 
 McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &obj)
 {
-    McpProtocolPromptMessage modelHint;
-    return modelHint;
+    McpProtocolPromptMessage message;
+    if (obj.contains("content"_L1)) {
+        // result.setContent(obj["content"_L1]);
+    }
+    if (obj.contains("role"_L1) && obj["role"_L1].isString()) {
+        message.setRole(McpProtocol::McpProtocolUtils::convertRoleFromString(obj["role"_L1].toString()));
+    }
+
+    return message;
 }
 
 QJsonObject McpProtocolPromptMessage::toJson(const McpProtocolPromptMessage &choice)
 {
     QJsonObject obj;
+    // TODO obj["content"_L1] =  choice.content();
+    obj["role"_L1] = convertRoleToString(choice.role());
     return obj;
 }
 
