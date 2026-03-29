@@ -48,6 +48,10 @@ public:
      */
     void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> &newProperties);
 
+    /*!
+     */
+    [[nodiscard]] virtual QByteArray toolName() const = 0;
+
 Q_SIGNALS:
     /*!
      */
