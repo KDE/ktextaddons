@@ -138,6 +138,13 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolTaskStatusNotification,
                                         McpProtocolRootsListChangedNotification>;
 
+using CreateMessageResultContent = std::variant<McpProtocolTextContent,
+                                                McpProtocolImageContent,
+                                                McpProtocolAudioContent,
+                                                McpProtocolToolUseContent,
+                                                McpProtocolToolResultContent,
+                                                QList<McpProtocolSamplingMessageContentBlock>>;
+
 [[nodiscard]] QString getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token);
 
 [[nodiscard]] ClientNotification clientNotificationFromJson(const QJsonValue &val);
