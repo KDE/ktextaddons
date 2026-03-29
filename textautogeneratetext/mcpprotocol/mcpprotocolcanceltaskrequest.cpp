@@ -25,14 +25,14 @@ bool McpProtocolCancelTaskRequest::operator==(const McpProtocolCancelTaskRequest
 McpProtocol::McpProtocolCancelTaskRequest::Params McpProtocol::McpProtocolCancelTaskRequest::Params::fromJson(const QJsonObject &obj)
 {
     McpProtocol::McpProtocolCancelTaskRequest::Params params;
-    // TODO
+    params.setTaskId(obj.value("taskId"_L1).toString());
     return params;
 }
 
 QJsonObject McpProtocol::McpProtocolCancelTaskRequest::Params::toJson(const McpProtocol::McpProtocolCancelTaskRequest::Params &image)
 {
     QJsonObject obj;
-    // TODO
+    obj["taskId"_L1] = image.taskId();
     return obj;
 }
 
@@ -52,7 +52,18 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t)
 McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonObject &obj)
 {
     McpProtocolCancelTaskRequest prompt;
-    // TODO
+    if (obj.contains("id"_L1)) {
+        prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    }
+    if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+    }
+    if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCancelTaskRequest::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'tasks/cancel', got: " << obj.value("method"_L1).toString();
+    }
+    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
+        prompt.setParams(McpProtocolCancelTaskRequest::Params::fromJson(obj["params"_L1].toObject()));
+    }
     return prompt;
 }
 
