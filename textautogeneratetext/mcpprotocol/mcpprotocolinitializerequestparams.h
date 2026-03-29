@@ -73,7 +73,11 @@ public:
      */
     void setClientInfo(const McpProtocolImplementation &newClientInfo);
 
-    McpProtocolClientCapabilities capabilities() const;
+    /*!
+     */
+    [[nodiscard]] McpProtocolClientCapabilities capabilities() const;
+    /*!
+     */
     void setCapabilities(const McpProtocolClientCapabilities &newCapabilities);
 
 private:
