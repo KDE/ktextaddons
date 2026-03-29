@@ -241,3 +241,9 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &
     d.space() << "progressToken:" << McpProtocol::McpProtocolUtils::getProgressTokenValue(t);
     return d;
 }
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t)
+{
+    d.space() << "role:" << McpProtocol::McpProtocolUtils::convertRoleToString(t);
+    return d;
+}

@@ -18,7 +18,7 @@ bool McpProtocolAnnotations::operator==(const McpProtocolAnnotations &other) con
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolAnnotations &t)
 {
-    // TODO d.space() << "audience:" << t.audience();
+    d.space() << "audience:" << t.audience();
     d.space() << "priority:" << t.priority();
     d.space() << "lastModified:" << t.lastModified();
     return d;
@@ -59,7 +59,7 @@ QJsonObject McpProtocolAnnotations::toJson(const McpProtocolAnnotations &annot)
         obj["lastModified"_L1] = *annot.lastModified();
     }
     if (annot.priority().has_value()) {
-        obj["priority"_L1], *annot.priority();
+        obj["priority"_L1] = *annot.priority();
     }
     return obj;
 }
