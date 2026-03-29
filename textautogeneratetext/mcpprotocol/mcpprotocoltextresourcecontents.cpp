@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocoltextresourcecontents.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -60,7 +59,7 @@ std::optional<McpProtocolMeta> McpProtocolTextResourceContents::meta() const
 
 void McpProtocolTextResourceContents::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 std::optional<QString> McpProtocolTextResourceContents::mimeType() const
@@ -70,7 +69,7 @@ std::optional<QString> McpProtocolTextResourceContents::mimeType() const
 
 void McpProtocolTextResourceContents::setMimeType(std::optional<QString> newMimeType)
 {
-    mMimeType = newMimeType;
+    mMimeType = std::move(newMimeType);
 }
 
 QString McpProtocolTextResourceContents::text() const

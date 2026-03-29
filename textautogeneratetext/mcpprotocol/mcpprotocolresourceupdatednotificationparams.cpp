@@ -50,7 +50,7 @@ std::optional<McpProtocolMeta> McpProtocolResourceUpdatedNotificationParams::met
 
 void McpProtocolResourceUpdatedNotificationParams::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 QString McpProtocolResourceUpdatedNotificationParams::uri() const

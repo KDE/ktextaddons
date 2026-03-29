@@ -45,5 +45,5 @@ std::optional<McpProtocolMeta> McpProtocolNotificationParams::meta() const
 
 void McpProtocolNotificationParams::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }

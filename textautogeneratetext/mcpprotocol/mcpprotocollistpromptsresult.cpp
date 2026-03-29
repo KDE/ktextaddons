@@ -8,6 +8,7 @@
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolListPromptsResult::McpProtocolListPromptsResult() = default;
@@ -55,7 +56,7 @@ std::optional<McpProtocolMeta> McpProtocolListPromptsResult::meta() const
 
 void McpProtocolListPromptsResult::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 std::optional<QString> McpProtocolListPromptsResult::nextCursor() const
@@ -65,7 +66,7 @@ std::optional<QString> McpProtocolListPromptsResult::nextCursor() const
 
 void McpProtocolListPromptsResult::setNextCursor(std::optional<QString> newNextCursor)
 {
-    mNextCursor = newNextCursor;
+    mNextCursor = std::move(newNextCursor);
 }
 
 QList<McpProtocolPrompt> McpProtocolListPromptsResult::prompts() const

@@ -54,7 +54,7 @@ std::optional<McpProtocolMeta> McpProtocolPaginatedResult::meta() const
 
 void McpProtocolPaginatedResult::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
-    mMeta = newMeta;
+    mMeta = std::move(newMeta);
 }
 
 std::optional<QString> McpProtocolPaginatedResult::nextCursor() const
@@ -64,5 +64,5 @@ std::optional<QString> McpProtocolPaginatedResult::nextCursor() const
 
 void McpProtocolPaginatedResult::setNextCursor(std::optional<QString> newNextCursor)
 {
-    mNextCursor = newNextCursor;
+    mNextCursor = std::move(newNextCursor);
 }

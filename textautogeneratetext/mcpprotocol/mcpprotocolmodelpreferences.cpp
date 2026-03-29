@@ -77,7 +77,7 @@ std::optional<double> McpProtocolModelPreferences::costPriority() const
 
 void McpProtocolModelPreferences::setCostPriority(std::optional<double> newCostPriority)
 {
-    mCostPriority = std::move(newCostPriority);
+    mCostPriority = newCostPriority;
 }
 
 std::optional<QList<McpProtocolModelHint>> McpProtocolModelPreferences::hints() const
@@ -97,7 +97,7 @@ std::optional<double> McpProtocolModelPreferences::intelligencePriority() const
 
 void McpProtocolModelPreferences::setIntelligencePriority(std::optional<double> newIntelligencePriority)
 {
-    mIntelligencePriority = std::move(newIntelligencePriority);
+    mIntelligencePriority = newIntelligencePriority;
 }
 
 std::optional<double> McpProtocolModelPreferences::speedPriority() const

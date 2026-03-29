@@ -6,6 +6,7 @@
 
 #include "mcpprotocolimplementation.h"
 #include <QDebug>
+#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
@@ -17,18 +18,45 @@ bool McpProtocolImplementation::operator==(const McpProtocolImplementation &othe
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolImplementation &t)
 {
+    d.space() << "version:" << t.version();
+    d.space() << "name:" << t.name();
+    d.space() << "title:" << t.title();
+    d.space() << "description:" << t.description();
+    d.space() << "icons:" << t.icons();
+    d.space() << "websiteUrl:" << t.websiteUrl();
     return d;
 }
 
 McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject &obj)
 {
     McpProtocolImplementation text;
+    // TODO
     return text;
 }
 
-QJsonObject McpProtocolImplementation::toJson(const McpProtocolImplementation &text)
+QJsonObject McpProtocolImplementation::toJson(const McpProtocolImplementation &impl)
 {
-    return {};
+    QJsonObject obj;
+    obj["name"_L1] = impl.name();
+    obj["version"_L1] = impl.version();
+    if (impl.description().has_value()) {
+        obj["description"_L1] = *impl.description();
+    }
+    if (impl.icons().has_value()) {
+        QJsonArray arr_icons;
+        const auto icons = *impl.icons();
+        for (const auto &v : icons) {
+            arr_icons.append(McpProtocolIcon::toJson(v));
+        }
+        obj["icons"_L1] = arr_icons;
+    }
+    if (impl.title().has_value()) {
+        obj["title"_L1] = *impl.title();
+    }
+    if (impl.websiteUrl().has_value()) {
+        obj["websiteUrl"_L1] = *impl.websiteUrl();
+    }
+    return obj;
 }
 
 std::optional<QString> McpProtocolImplementation::description() const
@@ -58,7 +86,7 @@ QString McpProtocolImplementation::name() const
 
 void McpProtocolImplementation::setName(const QString &newName)
 {
-    mName = std::move(newName);
+    mName = newName;
 }
 
 std::optional<QString> McpProtocolImplementation::title() const

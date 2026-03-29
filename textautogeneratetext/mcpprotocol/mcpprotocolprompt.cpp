@@ -30,7 +30,33 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPrompt &t)
 McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
 {
     McpProtocolPrompt prompt;
-    // TODO
+
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isArray()) {
+        const QJsonArray arr = obj["arguments"_L1].toArray();
+        QList<McpProtocolPromptArgument> list_arguments;
+        for (const QJsonValue &v : arr) {
+            list_arguments.append(McpProtocolPromptArgument::fromJson(v.toObject()));
+        }
+        prompt.setArguments(list_arguments);
+    }
+    if (obj.contains("description"_L1)) {
+        prompt.setDescription(obj.value("description"_L1).toString());
+    }
+    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
+        const QJsonArray arr = obj["icons"_L1].toArray();
+        QList<McpProtocolIcon> list_icons;
+        for (const QJsonValue &v : arr) {
+            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+        }
+        prompt.setIcons(list_icons);
+    }
+    prompt.setName(obj.value("name"_L1).toString());
+    if (obj.contains("title"_L1)) {
+        prompt.setTitle(obj.value("title"_L1).toString());
+    }
     return prompt;
 }
 

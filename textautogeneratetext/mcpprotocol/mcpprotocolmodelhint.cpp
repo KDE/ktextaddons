@@ -45,7 +45,7 @@ std::optional<QString> McpProtocolModelHint::name() const
 
 void McpProtocolModelHint::setName(std::optional<QString> newName)
 {
-    mName = newName;
+    mName = std::move(newName);
 }
 
 #include "moc_mcpprotocolmodelhint.cpp"

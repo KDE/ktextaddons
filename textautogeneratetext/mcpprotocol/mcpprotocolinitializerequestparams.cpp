@@ -87,6 +87,16 @@ void McpProtocolInitializeRequestParams::setProtocolVersion(const QString &newPr
     mProtocolVersion = newProtocolVersion;
 }
 
+McpProtocolImplementation McpProtocolInitializeRequestParams::clientInfo() const
+{
+    return mClientInfo;
+}
+
+void McpProtocolInitializeRequestParams::setClientInfo(const McpProtocolImplementation &newClientInfo)
+{
+    mClientInfo = newClientInfo;
+}
+
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolInitializeRequestParams::Meta::progressToken() const
 {
     return mProgressToken;
