@@ -161,6 +161,8 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 
+[[nodiscard]] QJsonObject contentBlocktoJson(const McpProtocol::McpProtocolUtils::ContentBlock &val);
+[[nodiscard]] McpProtocol::McpProtocolUtils::ContentBlock contentBlockFromJson(const QJsonValue &val);
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);

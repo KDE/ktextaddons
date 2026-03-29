@@ -25,7 +25,7 @@ McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &o
 {
     McpProtocolPromptMessage message;
     if (obj.contains("content"_L1)) {
-        // result.setContent(obj["content"_L1]);
+        message.setContent(McpProtocol::McpProtocolUtils::contentBlockFromJson(obj["content"_L1]));
     }
     if (obj.contains("role"_L1) && obj["role"_L1].isString()) {
         message.setRole(McpProtocol::McpProtocolUtils::convertRoleFromString(obj["role"_L1].toString()));
@@ -37,7 +37,7 @@ McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &o
 QJsonObject McpProtocolPromptMessage::toJson(const McpProtocolPromptMessage &choice)
 {
     QJsonObject obj;
-    // TODO obj["content"_L1] =  choice.content();
+    obj["content"_L1] = McpProtocol::McpProtocolUtils::contentBlocktoJson(choice.content());
     obj["role"_L1] = convertRoleToString(choice.role());
     return obj;
 }

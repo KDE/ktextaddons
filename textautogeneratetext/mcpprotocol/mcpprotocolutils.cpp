@@ -4,12 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolutils.h"
+#include "mcpprotocolaudiocontent.h"
 #include "mcpprotocolblobresourcecontents.h"
 #include "mcpprotocolcancellednotification.h"
+#include "mcpprotocolembeddedresource.h"
+#include "mcpprotocolimagecontent.h"
 #include "mcpprotocolinitializednotification.h"
 #include "mcpprotocolprogressnotification.h"
+#include "mcpprotocolresourcelink.h"
 #include "mcpprotocolrootslistchangednotification.h"
 #include "mcpprotocoltaskstatusnotification.h"
+#include "mcpprotocoltextcontent.h"
 #include "mcpprotocoltextresourcecontents.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
@@ -246,4 +251,42 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t)
 {
     d.space() << "role:" << McpProtocol::McpProtocolUtils::convertRoleToString(t);
     return d;
+}
+
+QJsonObject McpProtocol::McpProtocolUtils::contentBlocktoJson(const McpProtocol::McpProtocolUtils::ContentBlock &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+McpProtocol::McpProtocolUtils::ContentBlock McpProtocol::McpProtocolUtils::contentBlockFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ContentBlock: expected object";
+        return {};
+    }
+
+    const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = val.toObject().value("type"_L1).toString();
+    if (dispatchValue == "text"_L1) {
+        return ContentBlock(McpProtocolTextContent::fromJson(valObj));
+    } else if (dispatchValue == "image"_L1) {
+        return ContentBlock(McpProtocolImageContent::fromJson(valObj));
+    } else if (dispatchValue == "audio"_L1) {
+        return ContentBlock(McpProtocolAudioContent::fromJson(valObj));
+    } else if (dispatchValue == "resource_link"_L1) {
+        return ContentBlock(McpProtocolResourceLink::fromJson(valObj));
+    } else if (dispatchValue == "resource"_L1) {
+        return ContentBlock(McpProtocolEmbeddedResource::fromJson(valObj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ContentBlock: unknown method \"" << dispatchValue << "\"";
+    return {};
 }
