@@ -36,6 +36,11 @@ QByteArray McpProtocolToolResultContent::type()
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolResultContent &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "isError:" << t.isError();
+    d.space() << "toolUseId:" << t.toolUseId();
+    d.space() << "structuredContent:" << t.structuredContent();
+    // TODO d.space() << "content:" << t.content();
     return d;
 }
 
