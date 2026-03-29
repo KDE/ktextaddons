@@ -28,6 +28,16 @@ public:
         void setUrl(std::optional<QMap<QString, QJsonValue>> newUrl);
     };
 
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Roots {
+        [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Roots &other) const;
+        [[nodiscard]] static Roots fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const Roots &image);
+        std::optional<bool> mListChanged;
+
+        [[nodiscard]] std::optional<bool> listChanged() const;
+        void setListChanged(std::optional<bool> newListChanged);
+    };
+
     /*!
      */
     McpProtocolClientCapabilities();
@@ -53,8 +63,16 @@ public:
      */
     void setElicitation(std::optional<Elicitation> newElicitation);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<Roots> roots() const;
+    /*!
+     */
+    void setRoots(std::optional<Roots> newRoots);
+
 private:
     std::optional<Elicitation> mElicitation;
+    std::optional<Roots> mRoots;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);
