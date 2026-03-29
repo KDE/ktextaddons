@@ -6,6 +6,7 @@
 #pragma once
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolprompt.h"
+#include "mcpprotocolpromptmessage.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -48,10 +49,17 @@ public:
      */
     void setDescription(std::optional<QString> newDescription);
 
+    /*!
+     */
+    [[nodiscard]] QList<McpProtocolPromptMessage> messages() const;
+    /*!
+     */
+    void setMessages(const QList<McpProtocolPromptMessage> &newMessages);
+
 private:
     std::optional<McpProtocolMeta> mMeta;
     std::optional<QString> mDescription;
-    // TODO QList<McpProtocolPromptMessage> mMessage;
+    QList<McpProtocolPromptMessage> mMessages;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolGetPromptResult, Q_RELOCATABLE_TYPE);

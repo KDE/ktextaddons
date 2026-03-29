@@ -18,5 +18,6 @@ void McpProtocolGetPromptResultTest::shouldHaveDefaultValues()
     const McpProtocol::McpProtocolGetPromptResult w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.description().has_value());
+    QVERIFY(w.messages().isEmpty());
 }
 #include "moc_mcpprotocolgetpromptresulttest.cpp"
