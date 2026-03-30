@@ -38,6 +38,20 @@ public:
         void setListChanged(std::optional<bool> newListChanged);
     };
 
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Sampling {
+        [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Sampling &other) const;
+        [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const Sampling &image);
+
+        [[nodiscard]] std::optional<QMap<QString, QJsonValue>> context() const;
+        void setContext(std::optional<QMap<QString, QJsonValue>> newContext);
+        [[nodiscard]] std::optional<QMap<QString, QJsonValue>> tools() const;
+        void setTools(std::optional<QMap<QString, QJsonValue>> newTools);
+
+        std::optional<QMap<QString, QJsonValue>> mContext;
+        std::optional<QMap<QString, QJsonValue>> mTools;
+    };
+
     /*!
      */
     McpProtocolClientCapabilities();
@@ -70,11 +84,21 @@ public:
      */
     void setRoots(std::optional<Roots> newRoots);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<Sampling> sampling() const;
+    /*!
+     */
+    void setSampling(std::optional<Sampling> newSampling);
+
 private:
     std::optional<Elicitation> mElicitation;
     std::optional<Roots> mRoots;
+    std::optional<Sampling> mSampling;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Elicitation &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sampling &t);
