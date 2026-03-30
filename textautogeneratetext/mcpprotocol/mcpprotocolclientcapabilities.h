@@ -52,15 +52,29 @@ public:
         std::optional<QMap<QString, QJsonValue>> mTools;
     };
     struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Tasks {
+        struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Requests {
+            struct Elicitation {
+                // TODO
+                std::optional<QMap<QString, QJsonValue>> mCreate;
+            };
+            struct Sampling {
+                // TODO
+                std::optional<QMap<QString, QJsonValue>> mCreateMessage;
+            };
+            std::optional<Elicitation> mElicitation;
+            std::optional<Sampling> mSampling;
+        };
+
         std::optional<QMap<QString, QJsonValue>> mCancel;
         std::optional<QMap<QString, QJsonValue>> mList;
-        // std::optional<Requests> _requests;  //!< Specifies which request types can be augmented with tasks.
+        std::optional<Requests> mRequests;
 
-    public:
-        std::optional<QMap<QString, QJsonValue>> list() const;
+        [[nodiscard]] std::optional<QMap<QString, QJsonValue>> list() const;
         void setList(std::optional<QMap<QString, QJsonValue>> newList);
-        std::optional<QMap<QString, QJsonValue>> cancel() const;
+        [[nodiscard]] std::optional<QMap<QString, QJsonValue>> cancel() const;
         void setCancel(std::optional<QMap<QString, QJsonValue>> newCancel);
+        [[nodiscard]] std::optional<Requests> requests() const;
+        void setRequests(std::optional<Requests> newRequests);
     };
 
     /*!

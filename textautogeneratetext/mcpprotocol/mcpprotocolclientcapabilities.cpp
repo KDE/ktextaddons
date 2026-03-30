@@ -254,6 +254,16 @@ QJsonObject toJson(const McpProtocolClientCapabilities::Sampling &sampling)
     return obj;
 }
 
+std::optional<McpProtocolClientCapabilities::Tasks::Requests> McpProtocolClientCapabilities::Tasks::requests() const
+{
+    return mRequests;
+}
+
+void McpProtocolClientCapabilities::Tasks::setRequests(std::optional<McpProtocolClientCapabilities::Tasks::Requests> newRequests)
+{
+    mRequests = newRequests;
+}
+
 std::optional<QMap<QString, QJsonValue>> McpProtocolClientCapabilities::Tasks::list() const
 {
     return mList;
