@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textutils_export.h"
+#include <QMap>
 #include <QString>
 #include <QTemporaryFile>
 #include <memory>
@@ -21,6 +22,12 @@ namespace TextUtils
 class TEXTUTILS_EXPORT TextUtilsCopyBlockIconCache
 {
 public:
+    enum class IconType : uint8_t {
+        Unknown = 0,
+        CopyText,
+        InsertText
+    };
+
     /*!
      * \brief Returns the singleton instance of TextUtilsCopyBlockIconCache
      * \return Pointer to the singleton instance
@@ -32,14 +39,16 @@ public:
     void clear();
 
     /*!
-     * \brief Returns the URL of the copy block icon
-     * \return The URL string for the copy icon
+     * \brief iconUrl
+     * \param type
+     * \return
      */
-    [[nodiscard]] QString copyBlockUrl();
+    [[nodiscard]] QString iconUrl(TextUtilsCopyBlockIconCache::IconType type);
 
 private:
-    TEXTUTILS_NO_EXPORT void saveIconToTempFile(const QString &iconName);
-    QString mCopyBlockUrl;
-    std::unique_ptr<QTemporaryFile> mTemporaryFile;
+    TEXTUTILS_NO_EXPORT [[nodiscard]] QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
+    TEXTUTILS_NO_EXPORT [[nodiscard]] QString iconName(TextUtilsCopyBlockIconCache::IconType type) const;
+    QMap<IconType, QString> mIconUrlMap;
+    QMap<IconType, QTemporaryFile *> mIconTemporaryFileMap;
 };
 }
