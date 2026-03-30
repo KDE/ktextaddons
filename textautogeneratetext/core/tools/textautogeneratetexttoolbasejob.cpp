@@ -43,7 +43,11 @@ QStringList TextAutoGenerateTextToolBaseJob::requiredArguments() const
 bool TextAutoGenerateTextToolBaseJob::verifyRequiredArguments() const
 {
     const QStringList requiredArgs = required();
-    if (mToolArguments.isEmpty() || requiredArgs.isEmpty()) {
+    if (requiredArgs.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "requiredArgs is empty. It's a bug in plugins";
+        return false;
+    }
+    if (mToolArguments.isEmpty()) {
         return false;
     }
     if (requiredArgs.count() > mToolArguments.count()) {
