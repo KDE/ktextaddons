@@ -27,6 +27,8 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Ro
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t)
 {
     d.space() << "elicitation:" << t.elicitation();
+    d.space() << "roots:" << t.roots();
+    d.space() << "sampling:" << t.sampling();
     // TODO
     return d;
 }
@@ -200,14 +202,42 @@ void McpProtocolClientCapabilities::Sampling::setTools(std::optional<QMap<QStrin
 McpProtocolClientCapabilities::Sampling fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Sampling sampling;
-    // TODO
+    if (obj.contains("context"_L1) && obj["context"_L1].isObject()) {
+        const QJsonObject mapObj_context = obj["context"_L1].toObject();
+        QMap<QString, QJsonValue> map_context;
+        for (auto it = mapObj_context.constBegin(); it != mapObj_context.constEnd(); ++it) {
+            map_context.insert(it.key(), it.value());
+        }
+        sampling.setContext(map_context);
+    }
+    if (obj.contains("tools"_L1) && obj["tools"_L1].isObject()) {
+        const QJsonObject mapObj_tools = obj["tools"_L1].toObject();
+        QMap<QString, QJsonValue> map_tools;
+        for (auto it = mapObj_tools.constBegin(); it != mapObj_tools.constEnd(); ++it) {
+            map_tools.insert(it.key(), it.value());
+        }
+        sampling.setTools(map_tools);
+    }
     return sampling;
 }
 
-QJsonObject toJson(const McpProtocolClientCapabilities::Sampling &image)
+QJsonObject toJson(const McpProtocolClientCapabilities::Sampling &sampling)
 {
     QJsonObject obj;
-    // TODO
+    if (sampling.context().has_value()) {
+        QJsonObject map_context;
+        for (auto it = sampling.context()->constBegin(); it != sampling.context()->constEnd(); ++it) {
+            map_context.insert(it.key(), it.value());
+        }
+        obj["context"_L1] = map_context;
+    }
+    if (sampling.tools().has_value()) {
+        QJsonObject map_tools;
+        for (auto it = sampling.tools()->constBegin(); it != sampling.tools()->constEnd(); ++it) {
+            map_tools.insert(it.key(), it.value());
+        }
+        obj["tools"_L1] = map_tools;
+    }
     return obj;
 }
 
