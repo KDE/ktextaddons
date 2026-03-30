@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-29 00:42+0000\n"
-"PO-Revision-Date: 2026-03-14 07:22+0100\n"
+"PO-Revision-Date: 2026-03-29 08:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -3250,7 +3250,7 @@ msgstr "Izberi vse"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Code"
-msgstr ""
+msgstr "Vstavi kodo"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
