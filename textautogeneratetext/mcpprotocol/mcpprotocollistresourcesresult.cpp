@@ -34,7 +34,18 @@ McpProtocolListResourcesResult McpProtocolListResourcesResult::fromJson(const QJ
 QJsonObject McpProtocolListResourcesResult::toJson(const McpProtocolListResourcesResult &boolean)
 {
     QJsonObject obj;
+    if (boolean.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    }
+    if (boolean.nextCursor().has_value()) {
+        obj.insert("nextCursor"_L1, *boolean.nextCursor());
+    }
     // TODO
+    /*
+    QJsonArray arr_resources;
+    for (const auto &v : data._resources) arr_resources.append(toJson(v));
+    obj.insert("resources"_L1, arr_resources);
+    */
     return obj;
 }
 
