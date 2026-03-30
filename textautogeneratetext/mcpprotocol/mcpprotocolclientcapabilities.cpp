@@ -93,12 +93,14 @@ QJsonObject McpProtocolClientCapabilities::Elicitation::toJson(const McpProtocol
 McpProtocolClientCapabilities McpProtocolClientCapabilities::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities modelHint;
+    // TODO
     return modelHint;
 }
 
 QJsonObject McpProtocolClientCapabilities::toJson(const McpProtocolClientCapabilities &choice)
 {
     QJsonObject obj;
+    // TODO
     return obj;
 }
 
