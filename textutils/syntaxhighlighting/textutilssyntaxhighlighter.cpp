@@ -55,10 +55,11 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
         *mStream << u"</td><td align=\"right\" valign=\"top\">"_s;
 
         // Add copy url
-        *mStream << u"<a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></div>"_s.arg(identifier,
-                                                                                                    QString::number(iconSize),
-                                                                                                    TextUtilsCopyBlockIconCache::self()->copyBlockUrl(),
-                                                                                                    copyHref());
+        *mStream << u"<a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></div>"_s.arg(
+            identifier,
+            QString::number(iconSize),
+            TextUtilsCopyBlockIconCache::self()->iconUrl(TextUtilsCopyBlockIconCache::IconType::CopyText),
+            copyHref());
         *mStream << u"</td></tr></table>"_s;
     }
     *mStream << "</code>"_L1;
@@ -107,4 +108,14 @@ void TextUtilsSyntaxHighlighter::applyFormat(int offset, int length, const KSynt
     if (!isDefaultTextStyle) {
         *mStream << u"</span>"_s;
     }
+}
+
+bool TextUtilsSyntaxHighlighter::allowInsertText() const
+{
+    return mAllowInsertText;
+}
+
+void TextUtilsSyntaxHighlighter::setAllowInsertText(bool newAllowInsertText)
+{
+    mAllowInsertText = newAllowInsertText;
 }

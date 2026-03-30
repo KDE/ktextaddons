@@ -20,7 +20,8 @@ protected:
                                          const QByteArray &uuid,
                                          int &blockCodeIndex,
                                          int &numberOfTextSearched,
-                                         int hightLightStringIndex) override;
+                                         int hightLightStringIndex,
+                                         bool allowInsertText = false) override;
 };
 
 }

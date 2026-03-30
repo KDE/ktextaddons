@@ -86,6 +86,7 @@ protected:
                                                  const QByteArray &uuid,
                                                  int &blockCodeIndex,
                                                  int &numberOfTextSearched,
-                                                 int hightLightStringIndex) = 0;
+                                                 int hightLightStringIndex,
+                                                 bool allowInsertText = false) = 0;
 };
 }

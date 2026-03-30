@@ -159,7 +159,8 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
                                                           const QByteArray &uuid,
                                                           int &blockCodeIndex,
                                                           int &numberOfTextSearched,
-                                                          int hightLightStringIndex)
+                                                          int hightLightStringIndex,
+                                                          bool allowInsertText)
 {
     QString richText;
     QTextStream richTextStream(&richText);
@@ -169,6 +170,7 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     QString highlighted;
     QTextStream stream(&highlighted);
     TextUtils::TextUtilsSyntaxHighlighter highlighter(&stream);
+    highlighter.setAllowInsertText(allowInsertText);
     const auto useHighlighter = TextUtils::TextUtilsSyntaxHighlightingManager::self()->syntaxHighlightingInitialized();
 
     if (useHighlighter) {

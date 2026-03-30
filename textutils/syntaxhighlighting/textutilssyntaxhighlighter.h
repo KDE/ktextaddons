@@ -50,6 +50,17 @@ public:
      */
     [[nodiscard]] static QString insertBlockTextHref();
 
+    /*!
+     * \brief Returns true if we display icon for inserting text
+     * \return The Insert Text boolean
+     */
+    [[nodiscard]] bool allowInsertText() const;
+    /*!
+     * \brief setAllowInsertText
+     * \param newAllowInsertText
+     */
+    void setAllowInsertText(bool newAllowInsertText);
+
 protected:
     /*!
      * \brief Applies formatting to a range of text
@@ -62,5 +73,6 @@ protected:
 private:
     QString mCurrentLine;
     QTextStream *const mStream;
+    bool mAllowInsertText = false;
 };
 }
