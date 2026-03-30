@@ -44,7 +44,7 @@ QString TextUtilsCopyBlockIconCache::iconName(TextUtilsCopyBlockIconCache::IconT
     case TextUtilsCopyBlockIconCache::IconType::CopyText:
         return u"edit-copy"_s;
     case TextUtilsCopyBlockIconCache::IconType::InsertText:
-        return u"edit-copy"_s;
+        return u"insert-text"_s;
     }
     qCWarning(TEXTUTILS_LOG) << "Icon name not defined";
     return {};
