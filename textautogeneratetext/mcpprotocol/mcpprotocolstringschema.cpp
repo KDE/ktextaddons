@@ -6,7 +6,6 @@
 
 #include "mcpprotocolstringschema.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
-#include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolStringSchema::McpProtocolStringSchema() = default;

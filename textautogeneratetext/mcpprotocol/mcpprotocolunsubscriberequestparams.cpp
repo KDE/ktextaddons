@@ -5,8 +5,7 @@
 */
 
 #include "mcpprotocolunsubscriberequestparams.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
-
+#include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;

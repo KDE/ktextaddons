@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocolprogressnotificationparams.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
