@@ -91,10 +91,18 @@ public:
      */
     void setSampling(std::optional<Sampling> newSampling);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<QMap<QString, QJsonObject>> experimental() const;
+    /*!
+     */
+    void setExperimental(std::optional<QMap<QString, QJsonObject>> newExperimental);
+
 private:
     std::optional<Elicitation> mElicitation;
     std::optional<Roots> mRoots;
     std::optional<Sampling> mSampling;
+    std::optional<QMap<QString, QJsonObject>> mExperimental;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);

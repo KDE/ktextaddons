@@ -29,6 +29,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t)
     d.space() << "elicitation:" << t.elicitation();
     d.space() << "roots:" << t.roots();
     d.space() << "sampling:" << t.sampling();
+    d.space() << "experimental:" << t.experimental();
     // TODO
     return d;
 }
@@ -129,6 +130,16 @@ std::optional<McpProtocolClientCapabilities::Sampling> McpProtocolClientCapabili
 void McpProtocolClientCapabilities::setSampling(std::optional<Sampling> newSampling)
 {
     mSampling = std::move(newSampling);
+}
+
+std::optional<QMap<QString, QJsonObject>> McpProtocolClientCapabilities::experimental() const
+{
+    return mExperimental;
+}
+
+void McpProtocolClientCapabilities::setExperimental(std::optional<QMap<QString, QJsonObject>> newExperimental)
+{
+    mExperimental = std::move(newExperimental);
 }
 
 std::optional<QMap<QString, QJsonValue>> McpProtocolClientCapabilities::Elicitation::url() const
