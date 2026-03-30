@@ -39,15 +39,43 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::El
 
 McpProtocolClientCapabilities::Elicitation McpProtocolClientCapabilities::Elicitation::fromJson(const QJsonObject &obj)
 {
-    McpProtocolClientCapabilities::Elicitation modelHint;
-    // TODO
-    return modelHint;
+    McpProtocolClientCapabilities::Elicitation elicitation;
+    if (obj.contains("form"_L1) && obj["form"_L1].isObject()) {
+        const QJsonObject mapObj_form = obj["form"_L1].toObject();
+        QMap<QString, QJsonValue> map_form;
+        for (auto it = mapObj_form.constBegin(); it != mapObj_form.constEnd(); ++it) {
+            map_form.insert(it.key(), it.value());
+        }
+        elicitation.setForm(map_form);
+    }
+    if (obj.contains("url"_L1) && obj["url"_L1].isObject()) {
+        const QJsonObject mapObj_url = obj["url"_L1].toObject();
+        QMap<QString, QJsonValue> map_url;
+        for (auto it = mapObj_url.constBegin(); it != mapObj_url.constEnd(); ++it) {
+            map_url.insert(it.key(), it.value());
+        }
+        elicitation.setUrl(map_url);
+    }
+    return elicitation;
 }
 
-QJsonObject McpProtocolClientCapabilities::Elicitation::toJson(const McpProtocolClientCapabilities::Elicitation &choice)
+QJsonObject McpProtocolClientCapabilities::Elicitation::toJson(const McpProtocolClientCapabilities::Elicitation &elicitation)
 {
     QJsonObject obj;
-    // TODO
+    if (elicitation.form().has_value()) {
+        QJsonObject map_form;
+        for (auto it = elicitation.form()->constBegin(); it != elicitation.form()->constEnd(); ++it) {
+            map_form.insert(it.key(), it.value());
+        }
+        obj.insert("form"_L1, map_form);
+    }
+    if (elicitation.url().has_value()) {
+        QJsonObject map_url;
+        for (auto it = elicitation.url()->constBegin(); it != elicitation.url()->constEnd(); ++it) {
+            map_url.insert(it.key(), it.value());
+        }
+        obj.insert("url"_L1, map_url);
+    }
     return obj;
 }
 
