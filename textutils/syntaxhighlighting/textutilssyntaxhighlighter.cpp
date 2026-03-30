@@ -54,6 +54,14 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
 
         *mStream << u"</td><td align=\"right\" valign=\"top\">"_s;
 
+        if (allowInsertText()) {
+            // Add insert text url
+            *mStream << u"<a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></div>"_s.arg(
+                identifier,
+                QString::number(iconSize),
+                TextUtilsCopyBlockIconCache::self()->iconUrl(TextUtilsCopyBlockIconCache::IconType::InsertText),
+                insertBlockTextHref());
+        }
         // Add copy url
         *mStream << u"<a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></div>"_s.arg(
             identifier,

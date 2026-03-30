@@ -721,12 +721,12 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
 
 bool TextAutoGenerateManager::haveInsertText() const
 {
-    return mHaveInsertText;
+    return TextAutoGenerateMessage::allowInsertText();
 }
 
 void TextAutoGenerateManager::setHaveInsertText(bool newHaveInsertText)
 {
-    mHaveInsertText = newHaveInsertText;
+    TextAutoGenerateMessage::setAllowInsertText(newHaveInsertText);
 }
 
 TextAutoGenerateTextToolInternalInterface *TextAutoGenerateManager::textAutoGenerateTextToolInternalInterface() const

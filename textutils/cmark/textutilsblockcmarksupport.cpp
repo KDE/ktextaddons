@@ -73,6 +73,16 @@ QString TextUtilsBlockCMarkSupport::markdownToRichTextCMark(const QString &markD
     return str;
 }
 
+bool TextUtilsBlockCMarkSupport::allowInsertText() const
+{
+    return mAllowInsertText;
+}
+
+void TextUtilsBlockCMarkSupport::setAllowInsertText(bool newAllowInsertText)
+{
+    mAllowInsertText = newAllowInsertText;
+}
+
 QString TextUtilsBlockCMarkSupport::convertTextWithUrl(const QString &str)
 {
     static const QRegularExpression regularExpressionAHref(u"<a href=\"(.*)\">(.*)</a>"_s);

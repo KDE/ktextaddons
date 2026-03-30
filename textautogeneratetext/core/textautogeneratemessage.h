@@ -266,6 +266,9 @@ public:
      */
     void setTextToSpeechInProgress(bool newTextToSpeechInProgress);
 
+    [[nodiscard]] static bool allowInsertText();
+    static void setAllowInsertText(bool newSAllowInsertText);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(MessageStates newMessageStates);
@@ -284,6 +287,7 @@ private:
     MessageStates mMessageStates = MessageStates(MessageState::None);
     int mNumberOfTextSearched = -1;
     qint64 mDateTime = -1;
+    static bool sAllowInsertText;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);

@@ -10,9 +10,15 @@
 using namespace Qt::StringLiterals;
 using namespace TextAutoGenerateText;
 
-static QString convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText, int &numberOfTextSearched, int hightLightStringIndex)
+static QString convertMessageText(const QString &str,
+                                  const QByteArray &uuid,
+                                  const QString &searchText,
+                                  int &numberOfTextSearched,
+                                  int hightLightStringIndex,
+                                  bool allowInsertText)
 {
     TextAutoGenerateBlockCMarkSupport cmark;
+    cmark.setAllowInsertText(allowInsertText);
     return cmark.convertMessageText(str, uuid, searchText, numberOfTextSearched, hightLightStringIndex);
 }
 
@@ -20,9 +26,10 @@ QString TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str,
                                                         const QByteArray &uuid,
                                                         const QString &searchedText,
                                                         int &numberOfTextSearched,
-                                                        int hightLightStringIndex)
+                                                        int hightLightStringIndex,
+                                                        bool allowInsertText)
 {
-    const QString result = convertMessageText(str, uuid, searchedText, numberOfTextSearched, hightLightStringIndex);
+    const QString result = convertMessageText(str, uuid, searchedText, numberOfTextSearched, hightLightStringIndex, allowInsertText);
     // qDebug() << " RESULT ************ " << result;
     return "<qt>"_L1 + result + "</qt>"_L1;
 }

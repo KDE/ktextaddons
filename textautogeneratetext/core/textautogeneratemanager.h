@@ -560,7 +560,6 @@ private:
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
     bool mDebug = false;
-    bool mHaveInsertText = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo, Q_RELOCATABLE_TYPE);

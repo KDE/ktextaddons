@@ -14,6 +14,8 @@
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+bool TextAutoGenerateMessage::sAllowInsertText = false;
+
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
 TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
@@ -47,7 +49,8 @@ QString TextAutoGenerateMessage::content() const
 void TextAutoGenerateMessage::generateHtml(const QString &searchText, int hightLightStringIndex)
 {
     int numberOfTextSearchFound = 0;
-    mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid, searchText, numberOfTextSearchFound, hightLightStringIndex);
+    mHtmlGenerated =
+        TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid, searchText, numberOfTextSearchFound, hightLightStringIndex, sAllowInsertText);
     mNumberOfTextSearched = numberOfTextSearchFound;
 }
 
@@ -373,6 +376,16 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessa
 bool TextAutoGenerateMessage::messageStateValue(MessageState type) const
 {
     return mMessageStates & type;
+}
+
+bool TextAutoGenerateMessage::allowInsertText()
+{
+    return sAllowInsertText;
+}
+
+void TextAutoGenerateMessage::setAllowInsertText(bool newSAllowInsertText)
+{
+    sAllowInsertText = newSAllowInsertText;
 }
 
 int TextAutoGenerateMessage::numberOfTextSearched() const

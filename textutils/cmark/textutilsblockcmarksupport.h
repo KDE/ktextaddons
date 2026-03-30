@@ -77,6 +77,17 @@ public:
      */
     [[nodiscard]] static QString markdownToRichTextCMark(const QString &markDown);
 
+    /*!
+     * \brief allowInsertText
+     * \return
+     */
+    [[nodiscard]] bool allowInsertText() const;
+    /*!
+     * \brief setAllowInsertText
+     * \param newAllowInsertText
+     */
+    void setAllowInsertText(bool newAllowInsertText);
+
 protected:
     /*!
      */
@@ -86,7 +97,7 @@ protected:
                                                  const QByteArray &uuid,
                                                  int &blockCodeIndex,
                                                  int &numberOfTextSearched,
-                                                 int hightLightStringIndex,
-                                                 bool allowInsertText = false) = 0;
+                                                 int hightLightStringIndex) = 0;
+    bool mAllowInsertText = false;
 };
 }
