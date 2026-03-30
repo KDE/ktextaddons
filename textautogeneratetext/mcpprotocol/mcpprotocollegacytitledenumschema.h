@@ -23,6 +23,8 @@ public:
      */
     ~McpProtocolLegacyTitledEnumSchema();
 
+    [[nodiscard]] static QByteArray type();
+
     /*!
      */
     [[nodiscard]] bool operator==(const McpProtocolLegacyTitledEnumSchema &other) const;

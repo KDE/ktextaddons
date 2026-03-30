@@ -26,9 +26,15 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLegacyTitledEnumSchema
     return d;
 }
 
+QByteArray McpProtocolLegacyTitledEnumSchema::type()
+{
+    return QByteArrayLiteral("string");
+}
+
 McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(const QJsonObject &obj)
 {
     McpProtocolLegacyTitledEnumSchema prompt;
+
     // TODO
     return prompt;
 }
@@ -36,7 +42,29 @@ McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(co
 QJsonObject McpProtocolLegacyTitledEnumSchema::toJson(const McpProtocolLegacyTitledEnumSchema &boolean)
 {
     QJsonObject obj;
-    // TODO
+    obj["type"_L1] = QString::fromLatin1(type());
+    if (boolean.defaultValue().has_value()) {
+        obj.insert("default"_L1, *boolean.defaultValue());
+    }
+    if (boolean.description().has_value()) {
+        obj.insert("description"_L1, *boolean.description());
+    }
+    QJsonArray arr_enum_;
+    for (const auto &v : boolean.enums()) {
+        arr_enum_.append(v);
+    }
+    obj.insert("enum"_L1, arr_enum_);
+    if (boolean.enumNames().has_value()) {
+        QJsonArray arr_enumNames;
+        const auto enumNames = *boolean.enumNames();
+        for (const auto &v : enumNames) {
+            arr_enumNames.append(v);
+        }
+        obj.insert("enumNames"_L1, arr_enumNames);
+    }
+    if (boolean.title().has_value()) {
+        obj.insert("title"_L1, *boolean.title());
+    }
     return obj;
 }
 
