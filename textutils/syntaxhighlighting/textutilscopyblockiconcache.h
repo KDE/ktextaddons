@@ -46,8 +46,8 @@ public:
     [[nodiscard]] QString iconUrl(TextUtilsCopyBlockIconCache::IconType type);
 
 private:
-    TEXTUTILS_NO_EXPORT [[nodiscard]] QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
-    TEXTUTILS_NO_EXPORT [[nodiscard]] QString iconName(TextUtilsCopyBlockIconCache::IconType type) const;
+    [[nodiscard]] TEXTUTILS_NO_EXPORT QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
+    [[nodiscard]] TEXTUTILS_NO_EXPORT QString iconName(TextUtilsCopyBlockIconCache::IconType type) const;
     QMap<IconType, QString> mIconUrlMap;
     QMap<IconType, QTemporaryFile *> mIconTemporaryFileMap;
 };
