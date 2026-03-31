@@ -5,6 +5,8 @@
 */
 
 #include "mcpprotocoltextcontent.h"
+#include "mcpprotocolpromptreference.h"
+#include "mcpprotocolresourcetemplatereference.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;

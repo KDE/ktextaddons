@@ -241,6 +241,14 @@ QString McpProtocol::McpProtocolUtils::getProgressTokenValue(const McpProtocol::
         token);
 }
 
+/*
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t)
+{
+    // TODO
+    return d;
+}
+*/
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t)
 {
     d.space() << "progressToken:" << McpProtocol::McpProtocolUtils::getProgressTokenValue(t);

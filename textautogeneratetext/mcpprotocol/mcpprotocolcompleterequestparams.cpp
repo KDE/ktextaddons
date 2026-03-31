@@ -6,7 +6,6 @@
 
 #include "mcpprotocolcompleterequestparams.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
-#include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
@@ -16,11 +15,66 @@ McpProtocolCompleteRequestParams::~McpProtocolCompleteRequestParams() = default;
 
 bool McpProtocolCompleteRequestParams::operator==(const McpProtocolCompleteRequestParams &other) const = default;
 bool McpProtocolCompleteRequestParams::Meta::operator==(const McpProtocolCompleteRequestParams::Meta &other) const = default;
+
+std::optional<QMap<QString, QString>> McpProtocolCompleteRequestParams::Context::arguments() const
+{
+    return mArguments;
+}
+
+void McpProtocolCompleteRequestParams::Context::setArguments(std::optional<QMap<QString, QString>> newArguments)
+{
+    mArguments = newArguments;
+}
+
 bool McpProtocolCompleteRequestParams::Context::operator==(const McpProtocolCompleteRequestParams::Context &other) const = default;
+QString McpProtocolCompleteRequestParams::Argument::value() const
+{
+    return mValue;
+}
+
+void McpProtocolCompleteRequestParams::Argument::setValue(const QString &newValue)
+{
+    mValue = newValue;
+}
+
+QString McpProtocolCompleteRequestParams::Argument::name() const
+{
+    return mName;
+}
+
+void McpProtocolCompleteRequestParams::Argument::setName(const QString &newName)
+{
+    mName = newName;
+}
+
 bool McpProtocolCompleteRequestParams::Argument::operator==(const McpProtocolCompleteRequestParams::Argument &other) const = default;
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams &t)
 {
+    d.space() << "meta:" << t.meta();
+    d.space() << "argument:" << t.argument();
+    d.space() << "context:" << t.context();
+    // TODO d.space() << "ref:" << t.ref();
+
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams::Meta &t)
+{
+    d.space() << "progressToken" << t.progressToken();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams::Argument &t)
+{
+    d.space() << "value" << t.value();
+    d.space() << "name" << t.name();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams::Context &t)
+{
+    d.space() << "arguments" << t.arguments();
     return d;
 }
 
@@ -70,6 +124,36 @@ std::optional<McpProtocolCompleteRequestParams::Meta> McpProtocolCompleteRequest
 void McpProtocolCompleteRequestParams::setMeta(std::optional<Meta> newMeta)
 {
     mMeta = std::move(newMeta);
+}
+
+McpProtocolCompleteRequestParams::Argument McpProtocolCompleteRequestParams::argument() const
+{
+    return mArgument;
+}
+
+void McpProtocolCompleteRequestParams::setArgument(const Argument &newArgument)
+{
+    mArgument = newArgument;
+}
+
+std::optional<McpProtocolCompleteRequestParams::Context> McpProtocolCompleteRequestParams::context() const
+{
+    return mContext;
+}
+
+void McpProtocolCompleteRequestParams::setContext(std::optional<Context> newContext)
+{
+    mContext = newContext;
+}
+
+McpProtocolUtils::CompleteRequestParamsRef McpProtocolCompleteRequestParams::ref() const
+{
+    return mRef;
+}
+
+void McpProtocolCompleteRequestParams::setRef(const McpProtocolUtils::CompleteRequestParamsRef &newRef)
+{
+    mRef = newRef;
 }
 
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolCompleteRequestParams::Meta::progressToken() const

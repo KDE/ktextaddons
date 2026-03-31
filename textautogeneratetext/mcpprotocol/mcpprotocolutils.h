@@ -173,3 +173,4 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);
+// TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t);
