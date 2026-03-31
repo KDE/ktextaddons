@@ -6,6 +6,7 @@
 #pragma once
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolprompt.h"
+#include "mcpprotocolresource.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
 #include <QJsonObject>
@@ -48,10 +49,17 @@ public:
      */
     void setNextCursor(std::optional<QString> newNextCursor);
 
+    /*!
+     */
+    [[nodiscard]] QList<McpProtocolResource> resources() const;
+    /*!
+     */
+    void setResources(const QList<McpProtocolResource> &newResources);
+
 private:
     std::optional<McpProtocolMeta> mMeta;
     std::optional<QString> mNextCursor;
-    // TODO QList<Resource> _resources;
+    QList<McpProtocolResource> mResources;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolListResourcesResult, Q_RELOCATABLE_TYPE);

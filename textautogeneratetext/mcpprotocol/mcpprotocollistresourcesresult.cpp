@@ -21,6 +21,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListResourcesResult &t
 {
     d.space() << "meta:" << t.meta();
     d.space() << "nextCursor:" << t.nextCursor();
+    d.space() << "resources:" << t.resources();
     return d;
 }
 
@@ -67,4 +68,14 @@ std::optional<QString> McpProtocolListResourcesResult::nextCursor() const
 void McpProtocolListResourcesResult::setNextCursor(std::optional<QString> newNextCursor)
 {
     mNextCursor = std::move(newNextCursor);
+}
+
+QList<McpProtocolResource> McpProtocolListResourcesResult::resources() const
+{
+    return mResources;
+}
+
+void McpProtocolListResourcesResult::setResources(const QList<McpProtocolResource> &newResources)
+{
+    mResources = newResources;
 }

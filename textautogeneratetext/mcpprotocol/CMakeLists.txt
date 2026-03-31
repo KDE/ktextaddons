@@ -76,6 +76,7 @@ target_sources(
         mcpprotocollistresourcetemplatesresult.cpp
         mcpprotocollistresourcesresult.cpp
         mcpprotocolprompt.cpp
+        mcpprotocolresource.cpp
         mcpprotocolrootslistchangednotification.cpp
         mcpprotocolnotificationparams.cpp
         mcpprotocolcancellednotification.cpp
@@ -157,6 +158,7 @@ target_sources(
         mcpprotocollistresourcetemplatesresult.h
         mcpprotocollistresourcesresult.h
         mcpprotocolprompt.h
+        mcpprotocolresource.h
         mcpprotocolrootslistchangednotification.h
         mcpprotocolnotificationparams.h
         mcpprotocolcancellednotification.h
