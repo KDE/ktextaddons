@@ -29,14 +29,28 @@ void McpProtocolCompleteRequestParams::Context::setArguments(std::optional<QMap<
 McpProtocolCompleteRequestParams::Context McpProtocolCompleteRequestParams::Context::fromJson(const QJsonObject &obj)
 {
     McpProtocolCompleteRequestParams::Context context;
-    // TODO
+    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isObject()) {
+        const QJsonObject mapObj_arguments = obj["arguments"_L1].toObject();
+        QMap<QString, QString> map_arguments;
+        for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
+            map_arguments.insert(it.key(), it.value().toString());
+        }
+        context.setArguments(map_arguments);
+    }
     return context;
 }
 
 QJsonObject McpProtocolCompleteRequestParams::Context::toJson(const Context &image)
 {
     QJsonObject obj;
-    // TODO
+    if (image.arguments().has_value()) {
+        const auto arguments = *image.arguments();
+        QJsonObject map_arguments;
+        for (auto it = arguments.constBegin(); it != arguments.constEnd(); ++it) {
+            map_arguments.insert(it.key(), QJsonValue(it.value()));
+        }
+        obj.insert("arguments"_L1, map_arguments);
+    }
     return obj;
 }
 
@@ -64,14 +78,16 @@ void McpProtocolCompleteRequestParams::Argument::setName(const QString &newName)
 McpProtocolCompleteRequestParams::Argument McpProtocolCompleteRequestParams::Argument::fromJson(const QJsonObject &obj)
 {
     McpProtocolCompleteRequestParams::Argument argument;
-    // TODO
+    argument.setName(obj.value("name"_L1).toString());
+    argument.setValue(obj.value("value"_L1).toString());
     return argument;
 }
 
 QJsonObject McpProtocolCompleteRequestParams::Argument::toJson(const Argument &image)
 {
     QJsonObject obj;
-    // TODO
+    obj["name"_L1] = image.name();
+    obj["value"_L1] = image.value();
     return obj;
 }
 
