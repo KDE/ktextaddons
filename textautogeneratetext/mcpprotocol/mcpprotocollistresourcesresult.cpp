@@ -5,7 +5,6 @@
 */
 
 #include "mcpprotocollistresourcesresult.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <utility>
@@ -28,7 +27,20 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListResourcesResult &t
 McpProtocolListResourcesResult McpProtocolListResourcesResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolListResourcesResult prompt;
-    // TODO
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("nextCursor"_L1)) {
+        prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
+    }
+    if (obj.contains("resources"_L1) && obj["resources"_L1].isArray()) {
+        const QJsonArray arr = obj["resources"_L1].toArray();
+        QList<McpProtocolResource> res;
+        for (const QJsonValue &v : arr) {
+            res.append(McpProtocolResource::fromJson(v.toObject()));
+        }
+        prompt.setResources(res);
+    }
     return prompt;
 }
 
