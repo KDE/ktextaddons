@@ -14,6 +14,12 @@ namespace McpProtocol
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolIcon
 {
 public:
+    enum class Theme : uint8_t {
+        Unknown,
+        Dark,
+        Light,
+    };
+
     /*!
      */
     McpProtocolIcon();

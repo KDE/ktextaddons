@@ -24,6 +24,14 @@ bool McpProtocolGetTaskRequest::Params::operator==(const McpProtocolGetTaskReque
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskRequest &t)
 {
+    d.space() << "id:" << t.id();
+    d.space() << "params:" << t.params();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskRequest::Params &t)
+{
+    d.space() << "taskId:" << t.taskId();
     return d;
 }
 
