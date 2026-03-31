@@ -20,7 +20,16 @@ namespace TextAutoGenerateText
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternalProperty
 {
+    Q_GADGET
 public:
+    enum class PropertyType : uint8_t {
+        String = 0,
+        Number,
+        Integer,
+        Boolean,
+    };
+    Q_ENUM(PropertyType)
+
     /*!
      * \brief TextAutoGenerateTextToolInternalProperty
      */
@@ -62,10 +71,26 @@ public:
      */
     [[nodiscard]] bool operator==(const TextAutoGenerateTextToolInternalProperty &other) const;
 
+    /*!
+     */
+    [[nodiscard]] PropertyType propertyType() const;
+    /*!
+     */
+    void setPropertyType(PropertyType newPropertyType);
+
+    /*!
+     */
+    [[nodiscard]] static QString convertPropertyTypeToString(TextAutoGenerateTextToolInternalProperty::PropertyType type);
+
+    /*!
+     */
+    [[nodiscard]] static TextAutoGenerateTextToolInternalProperty::PropertyType convertPropertyTypeFromString(const QString &str);
+
 private:
     QStringList mTypeElements;
     QString mDescription;
     QString mName;
+    PropertyType mPropertyType = PropertyType::String;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty &t);

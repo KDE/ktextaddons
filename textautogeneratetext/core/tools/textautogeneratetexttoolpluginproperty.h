@@ -21,7 +21,16 @@ namespace TextAutoGenerateText
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginProperty
 {
+    Q_GADGET
 public:
+    enum class PropertyType : uint8_t {
+        String = 0,
+        Number,
+        Integer,
+        Boolean,
+    };
+    Q_ENUM(PropertyType)
+
     /*!
      */
     TextAutoGenerateTextToolPluginProperty();
@@ -50,10 +59,26 @@ public:
      */
     void setTypeElements(const QStringList &newEnumElements);
 
+    /*!
+     */
+    [[nodiscard]] PropertyType propertyType() const;
+    /*!
+     */
+    void setPropertyType(PropertyType newPropertyType);
+
+    /*!
+     */
+    [[nodiscard]] static QString convertPropertyTypeToString(TextAutoGenerateTextToolPluginProperty::PropertyType type);
+
+    /*!
+     */
+    [[nodiscard]] static TextAutoGenerateTextToolPluginProperty::PropertyType convertPropertyTypeFromString(const QString &str);
+
 private:
     QStringList mTypeElements;
     KLazyLocalizedString mDescription;
     QString mName;
+    PropertyType mPropertyType = PropertyType::String;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty &t);

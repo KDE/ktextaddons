@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratetexttoolinternalproperty.h"
-#include <QDebug>
+#include "textautogeneratetextcore_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
@@ -17,7 +17,17 @@ TextAutoGenerateTextToolInternalProperty::~TextAutoGenerateTextToolInternalPrope
 
 bool TextAutoGenerateTextToolInternalProperty::operator==(const TextAutoGenerateTextToolInternalProperty &other) const
 {
-    return mTypeElements == other.typeElements() && mDescription == other.description() && mName == other.name();
+    return mTypeElements == other.typeElements() && mDescription == other.description() && mName == other.name() && mPropertyType == other.propertyType();
+}
+
+TextAutoGenerateTextToolInternalProperty::PropertyType TextAutoGenerateTextToolInternalProperty::propertyType() const
+{
+    return mPropertyType;
+}
+
+void TextAutoGenerateTextToolInternalProperty::setPropertyType(PropertyType newPropertyType)
+{
+    mPropertyType = newPropertyType;
 }
 
 QStringList TextAutoGenerateTextToolInternalProperty::typeElements() const
@@ -55,6 +65,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextTool
     d.space() << "name:" << t.name();
     d.space() << "description:" << t.description();
     d.space() << "typeElements:" << t.typeElements();
+    d.space() << "propertyType:" << t.propertyType();
     return d;
 }
 
@@ -74,5 +85,38 @@ void TextAutoGenerateTextToolInternalProperty::parse(const QJsonObject &obj, con
             mTypeElements.append(v.toString());
         }
     }
+    mPropertyType = TextAutoGenerateTextToolInternalProperty::convertPropertyTypeFromString(obj["type"_L1].toString());
     // qDebug() << " parse tool " << *this;
+}
+
+QString TextAutoGenerateTextToolInternalProperty::convertPropertyTypeToString(TextAutoGenerateTextToolInternalProperty::PropertyType type)
+{
+    switch (type) {
+    case PropertyType::String:
+        return u"string"_s;
+    case PropertyType::Number:
+        return u"number"_s;
+    case PropertyType::Integer:
+        return u"integer"_s;
+    case PropertyType::Boolean:
+        return u"boolean"_s;
+    }
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "invalid type " << type;
+    return {};
+}
+
+TextAutoGenerateTextToolInternalProperty::PropertyType TextAutoGenerateTextToolInternalProperty::convertPropertyTypeFromString(const QString &str)
+{
+    if (str == "string"_L1) {
+        return PropertyType::String;
+    } else if (str == "number"_L1) {
+        return PropertyType::Number;
+    } else if (str == "integer"_L1) {
+        return PropertyType::Integer;
+    } else if (str == "boolean"_L1) {
+        return PropertyType::Boolean;
+    } else {
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid type :" << str;
+        return PropertyType::String;
+    }
 }

@@ -79,7 +79,7 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
     QStringList lst;
     for (const TextAutoGenerateTextToolPluginProperty &property : std::as_const(mProperties)) {
         QJsonObject prop;
-        prop["type"_L1] = u"string"_s;
+        prop["type"_L1] = TextAutoGenerateTextToolPluginProperty::convertPropertyTypeToString(property.propertyType());
         prop["description"_L1] = QString::fromLatin1(property.description().untranslatedText());
         const QStringList enumTypes = property.typeElements();
         if (!enumTypes.isEmpty()) {
