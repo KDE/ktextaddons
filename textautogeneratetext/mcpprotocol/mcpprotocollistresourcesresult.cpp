@@ -41,12 +41,11 @@ QJsonObject McpProtocolListResourcesResult::toJson(const McpProtocolListResource
     if (boolean.nextCursor().has_value()) {
         obj.insert("nextCursor"_L1, *boolean.nextCursor());
     }
-    // TODO
-    /*
     QJsonArray arr_resources;
-    for (const auto &v : data._resources) arr_resources.append(toJson(v));
+    for (const auto &v : boolean.resources()) {
+        arr_resources.append(McpProtocolResource::toJson(v));
+    }
     obj.insert("resources"_L1, arr_resources);
-    */
     return obj;
 }
 
