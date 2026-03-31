@@ -16,6 +16,14 @@ McpProtocolResourceTest::McpProtocolResourceTest(QObject *parent)
 void McpProtocolResourceTest::shouldHaveDefaultValues()
 {
     const McpProtocol::McpProtocolResource w;
-    // TODO
+    QVERIFY(w.uri().isEmpty());
+    QVERIFY(!w.title().has_value());
+    QVERIFY(!w.size().has_value());
+    QVERIFY(w.name().isEmpty());
+    QVERIFY(!w.mimeType().has_value());
+    QVERIFY(!w.icons().has_value());
+    QVERIFY(!w.description().has_value());
+    QVERIFY(!w.annotations().has_value());
+    QVERIFY(!w.meta().has_value());
 }
 #include "moc_mcpprotocolresourcetest.cpp"
