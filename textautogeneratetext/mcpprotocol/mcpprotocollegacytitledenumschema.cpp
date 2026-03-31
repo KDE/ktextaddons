@@ -6,7 +6,6 @@
 
 #include "mcpprotocollegacytitledenumschema.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
-#include <QDebug>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
@@ -33,9 +32,37 @@ QByteArray McpProtocolLegacyTitledEnumSchema::type()
 
 McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(const QJsonObject &obj)
 {
+    if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolLegacyTitledEnumSchema::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'string', got: " << obj.value("type"_L1).toString();
+        return {};
+    }
     McpProtocolLegacyTitledEnumSchema prompt;
+    if (obj.contains("default"_L1)) {
+        prompt.setDefaultValue(obj.value("default"_L1).toString());
+    }
+    if (obj.contains("description"_L1)) {
+        prompt.setDescription(obj.value("description"_L1).toString());
+    }
+    if (obj.contains("enum"_L1) && obj["enum"_L1].isArray()) {
+        const QJsonArray arr = obj["enum"_L1].toArray();
+        QStringList lst;
+        for (const QJsonValue &v : arr) {
+            lst.append(v.toString());
+        }
+        prompt.setEnums(lst);
+    }
+    if (obj.contains("enumNames"_L1) && obj["enumNames"_L1].isArray()) {
+        const QJsonArray arr = obj["enumNames"_L1].toArray();
+        QStringList list_enumNames;
+        for (const QJsonValue &v : arr) {
+            list_enumNames.append(v.toString());
+        }
+        prompt.setEnumNames(list_enumNames);
+    }
 
-    // TODO
+    if (obj.contains("title"_L1)) {
+        prompt.setTitle(obj.value("title"_L1).toString());
+    }
     return prompt;
 }
 
