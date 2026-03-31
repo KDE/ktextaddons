@@ -17,7 +17,7 @@ namespace McpProtocol
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolCompleteRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -32,7 +32,7 @@ public:
         [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Meta &image);
     };
 
-    struct Argument {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Argument {
         QString mName;
         QString mValue;
         /*!
@@ -50,7 +50,7 @@ public:
         void setName(const QString &newName);
     };
 
-    struct Context {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Context {
         std::optional<QMap<QString, QString>> mArguments;
         /*!
          */

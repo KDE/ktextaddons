@@ -23,7 +23,21 @@ std::optional<QMap<QString, QString>> McpProtocolCompleteRequestParams::Context:
 
 void McpProtocolCompleteRequestParams::Context::setArguments(std::optional<QMap<QString, QString>> newArguments)
 {
-    mArguments = newArguments;
+    mArguments = std::move(newArguments);
+}
+
+McpProtocolCompleteRequestParams::Context McpProtocolCompleteRequestParams::Context::fromJson(const QJsonObject &obj)
+{
+    McpProtocolCompleteRequestParams::Context context;
+    // TODO
+    return context;
+}
+
+QJsonObject McpProtocolCompleteRequestParams::Context::toJson(const Context &image)
+{
+    QJsonObject obj;
+    // TODO
+    return obj;
 }
 
 bool McpProtocolCompleteRequestParams::Context::operator==(const McpProtocolCompleteRequestParams::Context &other) const = default;
@@ -45,6 +59,20 @@ QString McpProtocolCompleteRequestParams::Argument::name() const
 void McpProtocolCompleteRequestParams::Argument::setName(const QString &newName)
 {
     mName = newName;
+}
+
+McpProtocolCompleteRequestParams::Argument McpProtocolCompleteRequestParams::Argument::fromJson(const QJsonObject &obj)
+{
+    McpProtocolCompleteRequestParams::Argument argument;
+    // TODO
+    return argument;
+}
+
+QJsonObject McpProtocolCompleteRequestParams::Argument::toJson(const Argument &image)
+{
+    QJsonObject obj;
+    // TODO
+    return obj;
 }
 
 bool McpProtocolCompleteRequestParams::Argument::operator==(const McpProtocolCompleteRequestParams::Argument &other) const = default;
@@ -102,6 +130,13 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(cons
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
     }
+    if (obj.contains("argument"_L1) && obj["argument"_L1].isObject()) {
+        prompt.setArgument(McpProtocolCompleteRequestParams::Argument::fromJson(obj["argument"_L1].toObject()));
+    }
+    if (obj.contains("context"_L1) && obj["context"_L1].isObject()) {
+        prompt.setContext(McpProtocolCompleteRequestParams::Context::fromJson(obj["context"_L1].toObject()));
+    }
+    // REF
     // TODO
     return prompt;
 }
@@ -112,7 +147,11 @@ QJsonObject McpProtocolCompleteRequestParams::toJson(const McpProtocolCompleteRe
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolCompleteRequestParams::Meta::toJson(*boolean.meta());
     }
-    // TODO
+    obj["argument"_L1] = Argument::toJson(boolean.argument());
+    // TODO obj["ref"_L1] = toJsonValue(boolean.ref());
+    if (boolean.context().has_value()) {
+        obj.insert("context"_L1, Context::toJson(*boolean.context()));
+    }
     return obj;
 }
 
