@@ -143,7 +143,7 @@ std::optional<McpProtocolCompleteRequestParams::Context> McpProtocolCompleteRequ
 
 void McpProtocolCompleteRequestParams::setContext(std::optional<Context> newContext)
 {
-    mContext = newContext;
+    mContext = std::move(newContext);
 }
 
 McpProtocolUtils::CompleteRequestParamsRef McpProtocolCompleteRequestParams::ref() const
