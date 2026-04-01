@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetoolpluginshowmetadatadialogtest.h"
-#include "widgets/configuretoolsplugin/textautogeneratetoolshowmetadatadialog.h"
-#include "widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.h"
+#include "widgets/common/textautogeneratetoolshowmetadatadialog.h"
+#include "widgets/common/textautogeneratetoolshowmetadatawidget.h"
 #include <QDialogButtonBox>
 #include <QTest>
 #include <QVBoxLayout>

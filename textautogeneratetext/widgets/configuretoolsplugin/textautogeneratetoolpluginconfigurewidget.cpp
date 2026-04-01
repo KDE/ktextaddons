@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratetoolpluginconfigurewidget.h"
-#include "textautogeneratetoolshowmetadatadialog.h"
+#include "widgets/common/textautogeneratetoolshowmetadatadialog.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QToolButton>

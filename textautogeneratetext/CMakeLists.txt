@@ -400,10 +400,10 @@ target_sources(
         widgets/plugintext/textautogenerateplugintextmanager.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp
-        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatadialog.h
-        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatadialog.cpp
-        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.h
-        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.cpp
+        widgets/common/textautogeneratetoolshowmetadatadialog.h
+        widgets/common/textautogeneratetoolshowmetadatadialog.cpp
+        widgets/common/textautogeneratetoolshowmetadatawidget.h
+        widgets/common/textautogeneratetoolshowmetadatawidget.cpp
         widgets/toolswidget/textautogeneratetoolswidget.h
         widgets/toolswidget/textautogeneratetoolswidget.cpp
         widgets/debug/textautogenerateshowdebugdialog.cpp
