@@ -156,6 +156,19 @@ TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFro
     return nullptr;
 }
 
+QJsonArray TextAutoGenerateTextToolPluginManager::internalToolsMetaData() const
+{
+    QJsonArray toolsArray;
+    if (mManager && mManager->textAutoGenerateTextToolInternalInterface()) {
+        const auto lstJson = mManager->textAutoGenerateTextToolInternalInterface()->toolInternalMetaData();
+        for (const auto &json : lstJson) {
+            toolsArray.append(json);
+        }
+        return toolsArray;
+    }
+    return toolsArray;
+}
+
 QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList<QByteArray> &tools) const
 {
     QJsonArray toolsArray;

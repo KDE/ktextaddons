@@ -729,6 +729,11 @@ void TextAutoGenerateManager::setHaveInsertText(bool newHaveInsertText)
     TextAutoGenerateMessage::setAllowInsertText(newHaveInsertText);
 }
 
+QJsonArray TextAutoGenerateManager::internalToolsMetaData() const
+{
+    return TextAutoGenerateTextToolPluginManager::self()->internalToolsMetaData();
+}
+
 TextAutoGenerateTextToolInternalInterface *TextAutoGenerateManager::textAutoGenerateTextToolInternalInterface() const
 {
     return mTextAutoGenerateTextToolInternalInterface;

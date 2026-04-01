@@ -430,6 +430,10 @@ public:
      */
     void setHaveInsertText(bool newHaveInsertText);
 
+    /*!
+     */
+    [[nodiscard]] QJsonArray internalToolsMetaData() const;
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.

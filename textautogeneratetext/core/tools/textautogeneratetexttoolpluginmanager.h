@@ -46,29 +46,61 @@ public:
         QString description;
         QByteArray identifier;
     };
+    /*!
+     */
     ~TextAutoGenerateTextToolPluginManager() override;
+    /*!
+     */
     static TextAutoGenerateTextToolPluginManager *self();
 
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromIdentifier(const QString &identifier) const;
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromToolNameId(const QByteArray &identifier) const;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> activePluginTools() const;
 
+    /*!
+     */
     [[nodiscard]] QJsonArray generateToolsArray(const QList<QByteArray> &tools) const;
 
+    /*!
+     */
     [[nodiscard]] QString convertIdentifierToDisplay(const QList<QByteArray> &tools) const;
 
+    /*!
+     */
     [[nodiscard]] QString generatePluginsInformation() const;
 
+    /*!
+     */
     [[nodiscard]] bool contains(const QByteArray &toolNamzId);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateManager *manager() const;
+    /*!
+     */
     void setManager(TextAutoGenerateManager *newManager);
+
+    /*!
+     */
+    [[nodiscard]] QJsonArray internalToolsMetaData() const;
 
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
