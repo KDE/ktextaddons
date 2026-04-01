@@ -400,10 +400,10 @@ target_sources(
         widgets/plugintext/textautogenerateplugintextmanager.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp
-        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.h
-        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp
-        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.h
-        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.cpp
+        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatadialog.h
+        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatadialog.cpp
+        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.h
+        widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.cpp
         widgets/toolswidget/textautogeneratetoolswidget.h
         widgets/toolswidget/textautogeneratetoolswidget.cpp
         widgets/debug/textautogenerateshowdebugdialog.cpp
@@ -422,6 +422,8 @@ target_sources(
         widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp
         widgets/mcpserver/textautogenerateaddmcpserverwidget.h
         widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp
+        widgets/internaltools/textautogenerateinternaltoolsdialog.h
+        widgets/internaltools/textautogenerateinternaltoolsdialog.cpp
 )
 
 add_subdirectory(mcpprotocol)
