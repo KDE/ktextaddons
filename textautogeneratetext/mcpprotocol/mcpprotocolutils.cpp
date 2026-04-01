@@ -10,6 +10,7 @@
 #include "mcpprotocolcancellednotification.h"
 #include "mcpprotocolcanceltaskrequest.h"
 #include "mcpprotocolcompleterequest.h"
+#include "mcpprotocolelicitationcompletenotification.h"
 #include "mcpprotocolembeddedresource.h"
 #include "mcpprotocolgetpromptrequest.h"
 #include "mcpprotocolgettaskpayloadrequest.h"
@@ -22,16 +23,21 @@
 #include "mcpprotocollistresourcetemplatesrequest.h"
 #include "mcpprotocollisttasksrequest.h"
 #include "mcpprotocollisttoolsrequest.h"
+#include "mcpprotocolloggingmessagenotification.h"
 #include "mcpprotocolpingrequest.h"
 #include "mcpprotocolprogressnotification.h"
+#include "mcpprotocolpromptlistchangednotification.h"
 #include "mcpprotocolreadresourcerequest.h"
 #include "mcpprotocolresourcelink.h"
+#include "mcpprotocolresourcelistchangednotification.h"
+#include "mcpprotocolresourceupdatednotification.h"
 #include "mcpprotocolrootslistchangednotification.h"
 #include "mcpprotocolsetlevelrequest.h"
 #include "mcpprotocolsubscriberequest.h"
 #include "mcpprotocoltaskstatusnotification.h"
 #include "mcpprotocoltextcontent.h"
 #include "mcpprotocoltextresourcecontents.h"
+#include "mcpprotocoltoollistchangednotification.h"
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
@@ -365,6 +371,52 @@ McpProtocol::McpProtocolUtils::ClientRequest McpProtocol::McpProtocolUtils::clie
 }
 
 QJsonObject McpProtocol::McpProtocolUtils::clientRequestToJson(const McpProtocol::McpProtocolUtils::ClientRequest &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+McpProtocol::McpProtocolUtils::ServerNotification McpProtocol::McpProtocolUtils::serverNotificationFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ServerNotification: expected object";
+        return {};
+    }
+    const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = val.toObject().value("method"_L1).toString();
+    if (dispatchValue == "notifications/cancelled"_L1) {
+        return ServerNotification(McpProtocolCancelledNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/progress"_L1) {
+        return ServerNotification(McpProtocolProgressNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/resources/list_changed"_L1) {
+        return ServerNotification(McpProtocolResourceListChangedNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/resources/updated"_L1) {
+        return ServerNotification(McpProtocolResourceUpdatedNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/prompts/list_changed"_L1) {
+        return ServerNotification(McpProtocolPromptListChangedNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/tools/list_changed"_L1) {
+        return ServerNotification(McpProtocolToolListChangedNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/tasks/status"_L1) {
+        return ServerNotification(McpProtocolTaskStatusNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/message"_L1) {
+        return ServerNotification(McpProtocolLoggingMessageNotification::fromJson(valObj));
+    } else if (dispatchValue == "notifications/elicitation/complete"_L1) {
+        return ServerNotification(McpProtocolElicitationCompleteNotification::fromJson(valObj));
+    }
+
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ServerNotification: unknown method \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonObject McpProtocol::McpProtocolUtils::serverNotificationToJson(const ServerNotification &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonObject {

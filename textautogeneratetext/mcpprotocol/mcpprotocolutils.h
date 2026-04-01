@@ -64,13 +64,6 @@ using ProgressToken = std::variant<QString, int>;
 
 using EmbeddedResourceResource = std::variant<McpProtocolTextResourceContents, McpProtocolBlobResourceContents>;
 
-using CreateMessageResultContent = std::variant<McpProtocolTextContent,
-                                                McpProtocolImageContent,
-                                                McpProtocolAudioContent,
-                                                McpProtocolToolUseContent,
-                                                McpProtocolToolResultContent,
-                                                QList<McpProtocolSamplingMessageContentBlock>>;
-
 using CompleteRequestParamsRef = std::variant<McpProtocolPromptReference, McpProtocolResourceTemplateReference>;
 
 using ClientRequest = std::variant<McpProtocolInitializeRequest,
@@ -172,6 +165,9 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 [[nodiscard]] McpProtocol::McpProtocolUtils::ContentBlock contentBlockFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonObject clientRequestToJson(const McpProtocol::McpProtocolUtils::ClientRequest &val);
 [[nodiscard]] McpProtocol::McpProtocolUtils::ClientRequest clientRequestFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonObject serverNotificationToJson(const ServerNotification &val);
+[[nodiscard]] McpProtocol::McpProtocolUtils::ServerNotification serverNotificationFromJson(const QJsonValue &val);
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);
