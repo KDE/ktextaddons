@@ -47,4 +47,11 @@ void TextAutoGenerateToolShowMetaDataWidget::setMetaData(const QJsonObject &obj)
     mTextEdit->setPlainText(QString::fromUtf8(ba));
 }
 
+void TextAutoGenerateToolShowMetaDataWidget::setMetaData(const QJsonArray &array)
+{
+    const QJsonDocument doc(array);
+    const QByteArray ba = doc.toJson();
+    mTextEdit->setPlainText(QString::fromUtf8(ba));
+}
+
 #include "moc_textautogeneratetoolshowmetadatawidget.cpp"

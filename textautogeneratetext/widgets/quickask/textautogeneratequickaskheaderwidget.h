@@ -28,6 +28,7 @@ public:
 Q_SIGNALS:
     void configureRequested();
     void searchText(bool checked);
+    void showInternalToolsMetaData();
 
 private:
     QLabel *const mModelInstanceLabel;

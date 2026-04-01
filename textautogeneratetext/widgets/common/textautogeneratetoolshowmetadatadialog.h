@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QDialog>
+class QJsonArray;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateToolShowMetaDataWidget;
@@ -18,6 +19,7 @@ public:
     ~TextAutoGenerateToolShowMetaDataDialog() override;
 
     void setMetaData(const QJsonObject &obj);
+    void setMetaData(const QJsonArray &array);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();

@@ -7,6 +7,7 @@
 
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
+#include "widgets/common/textautogeneratetoolshowmetadatadialog.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
 #include <QVBoxLayout>
@@ -38,6 +39,11 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
             &TextAutoGenerateQuickAskHeaderWidget::configureRequested,
             this,
             &TextAutoGenerateQuickAskViewWidget::slotConfigureInstances);
+
+    connect(mTextAutoGenerateQuickAskHeaderWidget,
+            &TextAutoGenerateQuickAskHeaderWidget::showInternalToolsMetaData,
+            this,
+            &TextAutoGenerateQuickAskViewWidget::slotShowInternalToolsMetaData);
 
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::cancelRequested, this, &TextAutoGenerateQuickAskViewWidget::cancelRequested);
     connect(mTextAutoGenerateResultWidget,
@@ -77,6 +83,13 @@ void TextAutoGenerateQuickAskViewWidget::editMessage(const QByteArray &uuid, con
 {
     mTextAutoGenerateTextLineWidget->setText(messageStr);
     mTextAutoGenerateTextLineWidget->setUuid(uuid);
+}
+
+void TextAutoGenerateQuickAskViewWidget::slotShowInternalToolsMetaData()
+{
+    TextAutoGenerateToolShowMetaDataDialog dlg(this);
+    dlg.setMetaData(mManager->internalToolsMetaData());
+    dlg.exec();
 }
 
 #include "moc_textautogeneratequickaskviewwidget.cpp"

@@ -9,6 +9,7 @@
 #include <QWidget>
 class QTextEdit;
 class QJsonObject;
+class QJsonArray;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolShowMetaDataWidget : public QWidget
@@ -19,6 +20,7 @@ public:
     ~TextAutoGenerateToolShowMetaDataWidget() override;
 
     void setMetaData(const QJsonObject &obj);
+    void setMetaData(const QJsonArray &array);
 
 private:
     KSyntaxHighlighting::Repository mRepo;

@@ -63,4 +63,9 @@ void TextAutoGenerateToolShowMetaDataDialog::setMetaData(const QJsonObject &obj)
     mTextAutoGenerateToolPluginShowMetaDataWidget->setMetaData(obj);
 }
 
+void TextAutoGenerateToolShowMetaDataDialog::setMetaData(const QJsonArray &array)
+{
+    mTextAutoGenerateToolPluginShowMetaDataWidget->setMetaData(array);
+}
+
 #include "moc_textautogeneratetoolshowmetadatadialog.cpp"

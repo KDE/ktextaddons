@@ -40,6 +40,13 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     mainLayout->addWidget(mSearchButton);
     connect(mSearchButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::searchText);
 
+    auto showInternaltoolsButton = new QToolButton(this);
+    showInternaltoolsButton->setAutoRaise(true);
+    showInternaltoolsButton->setObjectName(u"showInternaltoolsButton"_s);
+    showInternaltoolsButton->setIcon(QIcon::fromTheme(u"settings-configure"_s));
+    showInternaltoolsButton->setToolTip(i18nc("@info:tooltip", "Show internal tools…"));
+    mainLayout->addWidget(showInternaltoolsButton);
+
     auto configureButton = new QToolButton(this);
     configureButton->setAutoRaise(true);
     configureButton->setObjectName(u"configureButton"_s);
@@ -90,6 +97,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
         connect(saveQuickAskButton, &QToolButton::clicked, this, [this]() {
             mManager->saveCurrentChatInDataBase(mManager->currentChatId());
         });
+        connect(showInternaltoolsButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::showInternalToolsMetaData);
     }
 }
 
