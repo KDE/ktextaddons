@@ -285,4 +285,53 @@ void McpProtocolClientCapabilities::Tasks::setCancel(std::optional<QMap<QString,
     mCancel = newCancel;
 }
 
+std::optional<QMap<QString, QJsonValue>> McpProtocolClientCapabilities::Tasks::Requests::Elicitation::create() const
+{
+    return mCreate;
+}
+
+void McpProtocolClientCapabilities::Tasks::Requests::Elicitation::setCreate(std::optional<QMap<QString, QJsonValue>> newCreate)
+{
+    mCreate = newCreate;
+}
+
+bool McpProtocolClientCapabilities::Tasks::Requests::Elicitation::operator==(const Elicitation &other) const = default;
+McpProtocolClientCapabilities::Tasks::Requests::Elicitation McpProtocolClientCapabilities::Tasks::Requests::Elicitation::fromJson(const QJsonObject &obj)
+{
+    McpProtocolClientCapabilities::Tasks::Requests::Elicitation elicitation;
+    if (obj.contains("create"_L1) && obj["create"_L1].isObject()) {
+        const QJsonObject mapObj_create = obj["create"_L1].toObject();
+        QMap<QString, QJsonValue> map_create;
+        for (auto it = mapObj_create.constBegin(); it != mapObj_create.constEnd(); ++it) {
+            map_create.insert(it.key(), it.value());
+        }
+        elicitation.setCreate(map_create);
+    }
+    return elicitation;
+}
+
+QJsonObject McpProtocolClientCapabilities::Tasks::Requests::Elicitation::toJson(const McpProtocolClientCapabilities::Tasks::Requests::Elicitation &image)
+{
+    QJsonObject obj;
+    if (image.create().has_value()) {
+        QJsonObject map_create;
+        const auto create = *image.create();
+        for (auto it = create.constBegin(); it != create.constEnd(); ++it) {
+            map_create.insert(it.key(), it.value());
+        }
+        obj.insert("create"_L1, map_create);
+    }
+    return obj;
+}
+
+std::optional<QMap<QString, QJsonValue>> McpProtocolClientCapabilities::Tasks::Requests::Sampling::createMessage() const
+{
+    return mCreateMessage;
+}
+
+void McpProtocolClientCapabilities::Tasks::Requests::Sampling::setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage)
+{
+    mCreateMessage = newCreateMessage;
+}
+
 #include "moc_mcpprotocolclientcapabilities.cpp"

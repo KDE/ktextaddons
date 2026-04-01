@@ -54,12 +54,21 @@ public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Tasks {
         struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Requests {
             struct Elicitation {
-                // TODO
                 std::optional<QMap<QString, QJsonValue>> mCreate;
+
+                [[nodiscard]] bool operator==(const Elicitation &other) const;
+                [[nodiscard]] static Elicitation fromJson(const QJsonObject &obj);
+                [[nodiscard]] static QJsonObject toJson(const Elicitation &image);
+
+                [[nodiscard]] std::optional<QMap<QString, QJsonValue>> create() const;
+                void setCreate(std::optional<QMap<QString, QJsonValue>> newCreate);
             };
             struct Sampling {
-                // TODO
                 std::optional<QMap<QString, QJsonValue>> mCreateMessage;
+
+            public:
+                [[nodiscard]] std::optional<QMap<QString, QJsonValue>> createMessage() const;
+                void setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage);
             };
             std::optional<Elicitation> mElicitation;
             std::optional<Sampling> mSampling;
