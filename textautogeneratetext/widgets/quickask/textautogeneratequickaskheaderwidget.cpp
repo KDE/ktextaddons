@@ -98,6 +98,9 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
             mManager->saveCurrentChatInDataBase(mManager->currentChatId());
         });
         connect(showInternaltoolsButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::showInternalToolsMetaData);
+        showInternaltoolsButton->setVisible(mManager->textAutoGenerateTextToolInternalInterface());
+    } else {
+        showInternaltoolsButton->hide();
     }
 }
 
