@@ -76,6 +76,11 @@ public:
             [[nodiscard]] bool operator==(const Requests &other) const;
             std::optional<Elicitation> mElicitation;
             std::optional<Sampling> mSampling;
+
+            [[nodiscard]] std::optional<Sampling> sampling() const;
+            void setSampling(std::optional<Sampling> newSampling);
+            [[nodiscard]] std::optional<Elicitation> elicitation() const;
+            void setElicitation(std::optional<Elicitation> newElicitation);
         };
 
         [[nodiscard]] bool operator==(const Tasks &other) const;
@@ -157,3 +162,7 @@ TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProt
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Elicitation &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sampling &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t);

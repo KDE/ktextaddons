@@ -21,6 +21,26 @@ bool McpProtocolClientCapabilities::Sampling::operator==(const McpProtocolClient
 bool McpProtocolClientCapabilities::Tasks::operator==(const McpProtocolClientCapabilities::Tasks &other) const = default;
 bool McpProtocolClientCapabilities::Tasks::Requests::operator==(const McpProtocolClientCapabilities::Tasks::Requests &other) const = default;
 
+std::optional<McpProtocolClientCapabilities::Tasks::Requests::Elicitation> McpProtocolClientCapabilities::Tasks::Requests::elicitation() const
+{
+    return mElicitation;
+}
+
+void McpProtocolClientCapabilities::Tasks::Requests::setElicitation(std::optional<Elicitation> newElicitation)
+{
+    mElicitation = newElicitation;
+}
+
+std::optional<McpProtocolClientCapabilities::Tasks::Requests::Sampling> McpProtocolClientCapabilities::Tasks::Requests::sampling() const
+{
+    return mSampling;
+}
+
+void McpProtocolClientCapabilities::Tasks::Requests::setSampling(std::optional<Sampling> newSampling)
+{
+    mSampling = newSampling;
+}
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t)
 {
     d.space() << "listChanged:" << t.listChanged();
@@ -33,7 +53,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t)
     d.space() << "roots:" << t.roots();
     d.space() << "sampling:" << t.sampling();
     d.space() << "experimental:" << t.experimental();
-    // TODO
+    d.space() << "tasks:" << t.tasks();
     return d;
 }
 
@@ -48,6 +68,33 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sa
 {
     d.space() << "tools:" << t.tools();
     d.space() << "context:" << t.context();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks &t)
+{
+    d.space() << "cancel:" << t.cancel();
+    d.space() << "list:" << t.list();
+    d.space() << "requests:" << t.requests();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests &t)
+{
+    d.space() << "sampling:" << t.sampling();
+    d.space() << "elicitation:" << t.elicitation();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t)
+{
+    d.space() << "createMessage:" << t.createMessage();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t)
+{
+    d.space() << "create:" << t.create();
     return d;
 }
 
