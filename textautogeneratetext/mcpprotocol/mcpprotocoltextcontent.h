@@ -8,8 +8,9 @@
 #include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QString>
+class QJsonObject;
+
 class QDebug;
 namespace McpProtocol
 {
@@ -52,7 +53,11 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolTextContent &image);
 
-    std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
 
 private:

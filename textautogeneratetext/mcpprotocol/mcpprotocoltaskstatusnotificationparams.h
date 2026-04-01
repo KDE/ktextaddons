@@ -8,8 +8,9 @@
 #include "mcpprotocolprompt.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QString>
+class QJsonObject;
+
 class QDebug;
 namespace McpProtocol
 {
@@ -95,7 +96,7 @@ private:
     QString mCreatedAt;
     QString mLastUpdatedAt;
     std::optional<int> mPollInterval;
-    McpProtocolUtils::TaskStatus mStatus;
+    McpProtocolUtils::TaskStatus mStatus = McpProtocolUtils::TaskStatus::Unknown;
     std::optional<QString> mStatusMessage;
     QString mTaskId;
     std::optional<int> mTtl;
