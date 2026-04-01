@@ -93,3 +93,5 @@ void TextAutoGenerateTextToolPluginProperty::setPropertyType(PropertyType newPro
 {
     mPropertyType = newPropertyType;
 }
+
+#include "moc_textautogeneratetexttoolpluginproperty.cpp"

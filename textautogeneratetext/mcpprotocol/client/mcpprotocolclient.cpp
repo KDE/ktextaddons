@@ -13,3 +13,5 @@ McpProtocolClient::McpProtocolClient(QObject *parent)
 }
 
 McpProtocolClient::~McpProtocolClient() = default;
+
+#include "moc_mcpprotocolclient.cpp"

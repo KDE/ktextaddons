@@ -120,3 +120,5 @@ TextAutoGenerateTextToolInternalProperty::PropertyType TextAutoGenerateTextToolI
         return PropertyType::String;
     }
 }
+
+#include "moc_textautogeneratetexttoolinternalproperty.cpp"
