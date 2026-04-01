@@ -5,6 +5,8 @@
 */
 
 #include "mcpprotocolerror.h"
+#include <QJsonObject>
+
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;

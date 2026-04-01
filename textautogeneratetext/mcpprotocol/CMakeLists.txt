@@ -199,6 +199,10 @@ target_sources(
         server/mcpprotocolserver.cpp
         client/mcpprotocolclient.h
         client/mcpprotocolclient.cpp
+        common/mcpprotocolplugin.h
+        common/mcpprotocolplugin.cpp
+        common/mcpprotocolplugininterface.h
+        common/mcpprotocolplugininterface.cpp
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
@@ -215,3 +219,5 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()
+
+add_subdirectory(plugins)

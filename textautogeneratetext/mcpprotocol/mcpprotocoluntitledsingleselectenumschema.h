@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolannotations.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QString>
+#include <QStringList>
 class QDebug;
+class QJsonObject;
 namespace McpProtocol
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUntitledSingleSelectEnumSchema

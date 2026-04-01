@@ -4,14 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolnotificationparams.h"
-#include "mcpprotocolprompt.h"
+#include "mcpprotocolmeta.h"
 #include "mcpprotocoltask.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QString>
 class QDebug;
+class QJsonObject;
 namespace McpProtocol
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolCreateTaskResult

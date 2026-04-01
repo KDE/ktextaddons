@@ -6,6 +6,7 @@
 
 #include "mcpprotocolclientcapabilities.h"
 #include <QDebug>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolClientCapabilities::McpProtocolClientCapabilities() = default;
