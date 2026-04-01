@@ -7,6 +7,7 @@
 #include "mcpprotocolcompleterequestparams.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QJsonArray>
+#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolCompleteRequestParams::McpProtocolCompleteRequestParams() = default;
@@ -152,8 +153,9 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(cons
     if (obj.contains("context"_L1) && obj["context"_L1].isObject()) {
         prompt.setContext(McpProtocolCompleteRequestParams::Context::fromJson(obj["context"_L1].toObject()));
     }
-    // REF
-    // TODO
+    if (obj.contains("ref"_L1)) {
+        prompt.setRef(McpProtocolUtils::completeRequestParamsRefFromJson(obj["ref"_L1].toObject()));
+    }
     return prompt;
 }
 
@@ -164,7 +166,7 @@ QJsonObject McpProtocolCompleteRequestParams::toJson(const McpProtocolCompleteRe
         obj["_meta"_L1] = McpProtocolCompleteRequestParams::Meta::toJson(*boolean.meta());
     }
     obj["argument"_L1] = Argument::toJson(boolean.argument());
-    // TODO obj["ref"_L1] = toJsonValue(boolean.ref());
+    obj["ref"_L1] = McpProtocolUtils::completeRequestParamsRefToJson(boolean.ref());
     if (boolean.context().has_value()) {
         obj.insert("context"_L1, Context::toJson(*boolean.context()));
     }
