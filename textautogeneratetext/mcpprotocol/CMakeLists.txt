@@ -70,6 +70,7 @@ target_sources(
         mcpprotocollistpromptsrequest.cpp
         mcpprotocolsetlevelrequest.cpp
         mcpprotocolsubscriberequest.cpp
+        mcpprotocolunsubscriberequest.cpp
         mcpprotocolcompleterequest.cpp
         mcpprotocollistresourcesrequest.cpp
         mcpprotocoltaskstatusnotification.cpp
@@ -154,6 +155,7 @@ target_sources(
         mcpprotocollistpromptsrequest.h
         mcpprotocolsetlevelrequest.h
         mcpprotocolsubscriberequest.h
+        mcpprotocolunsubscriberequest.h
         mcpprotocolcompleterequest.h
         mcpprotocollistresourcesrequest.h
         mcpprotocoltaskstatusnotification.h
