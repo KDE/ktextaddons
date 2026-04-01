@@ -122,7 +122,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
         this};
     connect(reply, &GenericNetworkReply::finished, this, [this, reply] {
         const auto response = reply->readResponse();
-        qDebug() << "response  " << response;
+        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "response  " << response;
         Q_EMIT finished(response);
     });
     return reply;
