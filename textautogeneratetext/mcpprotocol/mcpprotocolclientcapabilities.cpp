@@ -143,7 +143,26 @@ QJsonObject McpProtocolClientCapabilities::Elicitation::toJson(const McpProtocol
 McpProtocolClientCapabilities McpProtocolClientCapabilities::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities modelHint;
-    // TODO
+    if (obj.contains("elicitation"_L1) && obj["elicitation"_L1].isObject()) {
+        modelHint.setElicitation(McpProtocolClientCapabilities::Elicitation::fromJson(obj["elicitation"_L1].toObject()));
+    }
+    if (obj.contains("experimental"_L1) && obj["experimental"_L1].isObject()) {
+        const QJsonObject mapObj_experimental = obj["experimental"_L1].toObject();
+        QMap<QString, QJsonObject> map_experimental;
+        for (auto it = mapObj_experimental.constBegin(); it != mapObj_experimental.constEnd(); ++it) {
+            map_experimental.insert(it.key(), it.value().toObject());
+        }
+        modelHint.setExperimental(map_experimental);
+    }
+    if (obj.contains("roots"_L1) && obj["roots"_L1].isObject()) {
+        modelHint.setRoots(McpProtocolClientCapabilities::Roots::fromJson(obj["roots"_L1].toObject()));
+    }
+    if (obj.contains("sampling"_L1) && obj["sampling"_L1].isObject()) {
+        modelHint.setSampling(McpProtocolClientCapabilities::Sampling::fromJson(obj["sampling"_L1].toObject()));
+    }
+    if (obj.contains("tasks"_L1) && obj["tasks"_L1].isObject()) {
+        modelHint.setTasks(McpProtocolClientCapabilities::Tasks::fromJson(obj["tasks"_L1].toObject()));
+    }
     return modelHint;
 }
 
@@ -153,28 +172,23 @@ QJsonObject McpProtocolClientCapabilities::toJson(const McpProtocolClientCapabil
     if (choice.elicitation().has_value()) {
         obj.insert("elicitation"_L1, McpProtocolClientCapabilities::Elicitation::toJson(*choice.elicitation()));
     }
-    // TODO
-    /*
-    if (choice._experimental.has_value()) {
+    if (choice.experimental().has_value()) {
         QJsonObject map_experimental;
-        for (auto it = data._experimental->constBegin(); it != data._experimental->constEnd(); ++it) {
+        const auto experimental = *choice.experimental();
+        for (auto it = experimental.constBegin(); it != experimental.constEnd(); ++it) {
             map_experimental.insert(it.key(), QJsonValue(it.value()));
         }
         obj.insert("experimental"_L1, map_experimental);
     }
-    */
     if (choice.roots().has_value()) {
         obj.insert("roots"_L1, McpProtocolClientCapabilities::Roots::toJson(*choice.roots()));
     }
     if (choice.sampling().has_value()) {
         obj.insert("sampling"_L1, McpProtocolClientCapabilities::Sampling::toJson(*choice.sampling()));
     }
-    // TODO
-    /*
     if (choice.tasks().has_value()) {
-        obj.insert("tasks"_L1, toJson(*choice.tasks()));
+        obj.insert("tasks"_L1, McpProtocolClientCapabilities::Tasks::toJson(*choice.tasks()));
     }
-    */
     return obj;
 }
 
@@ -334,6 +348,80 @@ QJsonObject McpProtocolClientCapabilities::Sampling::toJson(const McpProtocolCli
             map_tools.insert(it.key(), it.value());
         }
         obj["tools"_L1] = map_tools;
+    }
+    return obj;
+}
+
+McpProtocolClientCapabilities::Tasks::Requests McpProtocolClientCapabilities::Tasks::Requests::fromJson(const QJsonObject &obj)
+{
+    McpProtocolClientCapabilities::Tasks::Requests request;
+    if (obj.contains("elicitation"_L1) && obj["elicitation"_L1].isObject()) {
+        request.setElicitation(McpProtocolClientCapabilities::Tasks::Requests::Elicitation::fromJson(obj["elicitation"_L1].toObject()));
+    }
+    if (obj.contains("sampling"_L1) && obj["sampling"_L1].isObject()) {
+        request.setSampling(McpProtocolClientCapabilities::Tasks::Requests::Sampling::fromJson(obj["sampling"_L1].toObject()));
+    }
+    return request;
+}
+
+QJsonObject McpProtocolClientCapabilities::Tasks::Requests::toJson(const McpProtocolClientCapabilities::Tasks::Requests &image)
+{
+    QJsonObject obj;
+    if (image.elicitation().has_value()) {
+        obj.insert("elicitation"_L1, McpProtocolClientCapabilities::Tasks::Requests::Elicitation::toJson(*image.elicitation()));
+    }
+    if (image.sampling().has_value()) {
+        obj.insert("sampling"_L1, McpProtocolClientCapabilities::Tasks::Requests::Sampling::toJson(*image.sampling()));
+    }
+    return obj;
+}
+
+McpProtocolClientCapabilities::Tasks McpProtocolClientCapabilities::Tasks::fromJson(const QJsonObject &obj)
+{
+    McpProtocolClientCapabilities::Tasks request;
+    if (obj.contains("cancel"_L1) && obj["cancel"_L1].isObject()) {
+        const QJsonObject mapObj_cancel = obj["cancel"_L1].toObject();
+        QMap<QString, QJsonValue> map_cancel;
+        for (auto it = mapObj_cancel.constBegin(); it != mapObj_cancel.constEnd(); ++it) {
+            map_cancel.insert(it.key(), it.value());
+        }
+        request.setCancel(map_cancel);
+    }
+    if (obj.contains("list"_L1) && obj["list"_L1].isObject()) {
+        const QJsonObject mapObj_list = obj["list"_L1].toObject();
+        QMap<QString, QJsonValue> map_list;
+        for (auto it = mapObj_list.constBegin(); it != mapObj_list.constEnd(); ++it) {
+            map_list.insert(it.key(), it.value());
+        }
+        request.setList(map_list);
+    }
+    if (obj.contains("requests"_L1) && obj["requests"_L1].isObject()) {
+        request.setRequests(McpProtocolClientCapabilities::Tasks::Requests::fromJson(obj["requests"_L1].toObject()));
+    }
+    return request;
+}
+
+QJsonObject McpProtocolClientCapabilities::Tasks::toJson(const McpProtocolClientCapabilities::Tasks &image)
+{
+    QJsonObject obj;
+    if (image.cancel().has_value()) {
+        QJsonObject map_cancel;
+        const auto cancel = *image.cancel();
+        for (auto it = cancel.constBegin(); it != cancel.constEnd(); ++it) {
+            map_cancel.insert(it.key(), it.value());
+        }
+        obj.insert("cancel"_L1, map_cancel);
+    }
+    if (image.list().has_value()) {
+        QJsonObject map_list;
+        const auto list = *image.list();
+        for (auto it = list.constBegin(); it != list.constEnd(); ++it) {
+            map_list.insert(it.key(), it.value());
+        }
+        obj.insert("list"_L1, map_list);
+    }
+    if (image.requests().has_value()) {
+        obj.insert("requests"_L1, McpProtocolClientCapabilities::Tasks::Requests::toJson(*image.requests()));
     }
     return obj;
 }

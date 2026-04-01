@@ -74,6 +74,9 @@ public:
                 void setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage);
             };
             [[nodiscard]] bool operator==(const Requests &other) const;
+            [[nodiscard]] static Requests fromJson(const QJsonObject &obj);
+            [[nodiscard]] static QJsonObject toJson(const Requests &image);
+
             std::optional<Elicitation> mElicitation;
             std::optional<Sampling> mSampling;
 
@@ -84,6 +87,9 @@ public:
         };
 
         [[nodiscard]] bool operator==(const Tasks &other) const;
+        [[nodiscard]] static Tasks fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const Tasks &image);
+
         std::optional<QMap<QString, QJsonValue>> mCancel;
         std::optional<QMap<QString, QJsonValue>> mList;
         std::optional<Requests> mRequests;
