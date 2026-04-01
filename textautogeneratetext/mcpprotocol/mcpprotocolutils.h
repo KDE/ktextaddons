@@ -19,7 +19,6 @@ class McpProtocolResourceLink;
 class McpProtocolEmbeddedResource;
 class McpProtocolToolUseContent;
 class McpProtocolToolResultContent;
-class McpProtocolSamplingMessageContentBlock;
 class McpProtocolPromptReference;
 class McpProtocolResourceTemplateReference;
 class McpProtocolInitializeRequest;
@@ -131,12 +130,15 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolTaskStatusNotification,
                                         McpProtocolRootsListChangedNotification>;
 
+using SamplingMessageContentBlock =
+    std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolToolUseContent, McpProtocolToolResultContent>;
+
 using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 McpProtocolImageContent,
                                                 McpProtocolAudioContent,
                                                 McpProtocolToolUseContent,
                                                 McpProtocolToolResultContent,
-                                                QList<McpProtocolSamplingMessageContentBlock>>;
+                                                QList<SamplingMessageContentBlock>>;
 
 [[nodiscard]] QString getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token);
 

@@ -38,10 +38,13 @@
 #include "mcpprotocoltextcontent.h"
 #include "mcpprotocoltextresourcecontents.h"
 #include "mcpprotocoltoollistchangednotification.h"
+#include "mcpprotocoltoolresultcontent.h"
+#include "mcpprotocoltoolusecontent.h"
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
+#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
@@ -429,3 +432,79 @@ QJsonObject McpProtocol::McpProtocolUtils::serverNotificationToJson(const Server
         },
         val);
 }
+
+#if 0
+McpProtocol::McpProtocolUtils::CreateMessageResultContent McpProtocol::McpProtocolUtils::createMessageResultContentFromJson(const QJsonValue &val)
+{
+    if (val.isArray()) {
+        QList<SamplingMessageContentBlock> list;
+        for (const QJsonValue &v : val.toArray()) {
+            list.append(SamplingMessageContentBlock::fromJson(v));
+        }
+        return CreateMessageResultContent(std::move(list));
+    }
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CreateMessageResultContent: expected object or array");
+    }
+    const QString dispatchValue = val.toObject().value("type"_L1).toString();
+    const QJsonObject valObj = val.toObject();
+    if (dispatchValue == "text"_L1) {
+        return CreateMessageResultContent(McpProtocolTextContent::fromJson(valObj));
+    } else if (dispatchValue == "image"_L1) {
+        return CreateMessageResultContent(McpProtocolImageContent::fromJson(valObj));
+    } else if (dispatchValue == "audio"_L1) {
+        return CreateMessageResultContent(McpProtocolAudioContent::fromJson(valObj));
+    } else if (dispatchValue == "tool_use"_L1) {
+        return CreateMessageResultContent(McpProtocolToolUseContent::fromJson(valObj));
+    } else if (dispatchValue == "tool_result"_L1) {
+        return CreateMessageResultContent(McpProtocolToolResultContent::fromJson(valObj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CreateMessageResultContent: unknown type \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonValue McpProtocol::McpProtocolUtils::createMessageResultContentToJson(const CreateMessageResultContent &val) {
+    return std::visit([](const auto &v) -> QJsonValue {
+        using T = std::decay_t<decltype(v)>;
+        if constexpr (std::is_same_v<T, QList<SamplingMessageContentBlock>>) {
+            QJsonArray arr;
+            for (const auto &item : v) arr.append(T::toJson(item));
+            return arr;
+        } else if constexpr (std::is_same_v<T, QJsonObject>) {
+            return v;
+        } else {
+            return T::toJson(v);
+        }
+    }, val);
+}
+
+template<>
+Utils::Result<SamplingMessageContentBlock> fromJson<SamplingMessageContentBlock>(const QJsonValue &val) {
+    if (!val.isObject())
+        co_return Utils::ResultError("Invalid SamplingMessageContentBlock: expected object");
+    const QString dispatchValue = val.toObject().value("type").toString();
+    if (dispatchValue == "text")
+        co_return SamplingMessageContentBlock(co_await fromJson<TextContent>(val));
+    else if (dispatchValue == "image")
+        co_return SamplingMessageContentBlock(co_await fromJson<ImageContent>(val));
+    else if (dispatchValue == "audio")
+        co_return SamplingMessageContentBlock(co_await fromJson<AudioContent>(val));
+    else if (dispatchValue == "tool_use")
+        co_return SamplingMessageContentBlock(co_await fromJson<ToolUseContent>(val));
+    else if (dispatchValue == "tool_result")
+        co_return SamplingMessageContentBlock(co_await fromJson<ToolResultContent>(val));
+    co_return Utils::ResultError("Invalid SamplingMessageContentBlock: unknown type \"" + dispatchValue + "\"");
+}
+
+QJsonObject toJson(const SamplingMessageContentBlock &val) {
+    return std::visit([](const auto &v) -> QJsonObject {
+        using T = std::decay_t<decltype(v)>;
+        if constexpr (std::is_same_v<T, QJsonObject>) {
+            return v;
+        } else {
+            return toJson(v);
+        }
+    }, val);
+}
+
+#endif
