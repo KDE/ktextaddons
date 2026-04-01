@@ -176,6 +176,10 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 
 [[nodiscard]] QJsonValue createMessageResultContentToJson(const CreateMessageResultContent &val);
 [[nodiscard]] McpProtocol::McpProtocolUtils::CreateMessageResultContent createMessageResultContentFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonValue completeRequestParamsRefToJson(const CompleteRequestParamsRef &val);
+[[nodiscard]] McpProtocol::McpProtocolUtils::CompleteRequestParamsRef completeRequestParamsRefFromJson(const QJsonValue &val);
+// [[nodiscard]] QString getCompleteRequestParamsRef(const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &token);
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);

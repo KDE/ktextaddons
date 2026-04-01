@@ -27,9 +27,11 @@
 #include "mcpprotocolpingrequest.h"
 #include "mcpprotocolprogressnotification.h"
 #include "mcpprotocolpromptlistchangednotification.h"
+#include "mcpprotocolpromptreference.h"
 #include "mcpprotocolreadresourcerequest.h"
 #include "mcpprotocolresourcelink.h"
 #include "mcpprotocolresourcelistchangednotification.h"
+#include "mcpprotocolresourcetemplatereference.h"
 #include "mcpprotocolresourceupdatednotification.h"
 #include "mcpprotocolrootslistchangednotification.h"
 #include "mcpprotocolsetlevelrequest.h"
@@ -42,6 +44,7 @@
 #include "mcpprotocoltoolusecontent.h"
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
+
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonArray>
@@ -217,6 +220,36 @@ QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const M
         val);
 }
 
+McpProtocol::McpProtocolUtils::CompleteRequestParamsRef McpProtocol::McpProtocolUtils::completeRequestParamsRefFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CompleteRequestParamsRef: expected object or array";
+        return {};
+    }
+    const QString dispatchValue = val.toObject().value("type"_L1).toString();
+    if (dispatchValue == "ref/prompt"_L1) {
+        return CompleteRequestParamsRef(McpProtocolPromptReference::fromJson(val.toObject()));
+    } else if (dispatchValue == "ref/resource"_L1) {
+        return CompleteRequestParamsRef(McpProtocolResourceTemplateReference::fromJson(val.toObject()));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CompleteRequestParamsRef: unknown type \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonValue McpProtocol::McpProtocolUtils::completeRequestParamsRefToJson(const CompleteRequestParamsRef &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonValue {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
 McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils::clientNotificationFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
@@ -268,14 +301,27 @@ QString McpProtocol::McpProtocolUtils::getProgressTokenValue(const McpProtocol::
         token);
 }
 
-/*
+#if 0
+QString McpProtocol::McpProtocolUtils::getCompleteRequestParamsRef(const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &token)
+{
+    return std::visit(
+        [](auto &&arg) -> QString {
+            using T = std::decay_t<decltype(arg)>;
+            if constexpr (std::is_same_v<T, McpProtocolPromptReference>) {
+                return arg.name();
+            } else if constexpr (std::is_same_v<T, McpProtocolResourceTemplateReference>) {
+                return arg.uri();
+            }
+        },
+        token);
+}
+
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t)
 {
-    // TODO
+    d.space() << "t:" << McpProtocol::McpProtocolUtils::getCompleteRequestParamsRef(t);
     return d;
 }
-*/
-
+#endif
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t)
 {
     d.space() << "progressToken:" << McpProtocol::McpProtocolUtils::getProgressTokenValue(t);
