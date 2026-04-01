@@ -43,7 +43,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     auto showInternaltoolsButton = new QToolButton(this);
     showInternaltoolsButton->setAutoRaise(true);
     showInternaltoolsButton->setObjectName(u"showInternaltoolsButton"_s);
-    showInternaltoolsButton->setIcon(QIcon::fromTheme(u"settings-configure"_s));
+    showInternaltoolsButton->setIcon(QIcon::fromTheme(u"documentinfo"_s));
     showInternaltoolsButton->setToolTip(i18nc("@info:tooltip", "Show internal tools…"));
     mainLayout->addWidget(showInternaltoolsButton);
 
