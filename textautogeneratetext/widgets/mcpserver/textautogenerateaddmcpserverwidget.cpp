@@ -28,12 +28,16 @@ TextAutoGenerateAddMcpServerWidget::TextAutoGenerateAddMcpServerWidget(QWidget *
     mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
 
-    connect(mServerNameLineEdit, &QLineEdit::textChanged, this, [this](const QString &text) {
-        Q_EMIT buttonOkEnabled(!text.trimmed().isEmpty());
-    });
+    connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateAddMcpServerWidget::checkValidSettings);
+    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateAddMcpServerWidget::checkValidSettings);
 }
 
 TextAutoGenerateAddMcpServerWidget::~TextAutoGenerateAddMcpServerWidget() = default;
+
+void TextAutoGenerateAddMcpServerWidget::checkValidSettings()
+{
+    Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty() && !mServerUrlLineEdit->text().trimmed().isEmpty());
+}
 
 void TextAutoGenerateAddMcpServerWidget::setServerWidgetInfo(const McpServerWidgetInfo &info)
 {

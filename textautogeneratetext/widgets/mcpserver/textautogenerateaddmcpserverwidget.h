@@ -26,6 +26,7 @@ Q_SIGNALS:
     void buttonOkEnabled(bool state);
 
 private:
+    void checkValidSettings();
     QLineEdit *const mServerNameLineEdit;
     QLineEdit *const mServerUrlLineEdit;
 };
