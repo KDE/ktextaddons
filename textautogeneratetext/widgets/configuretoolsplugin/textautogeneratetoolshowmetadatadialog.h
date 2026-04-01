@@ -9,19 +9,19 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateToolPluginShowMetaDataWidget;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolPluginShowMetaDataDialog : public QDialog
+class TextAutoGenerateToolShowMetaDataWidget;
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolShowMetaDataDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateToolPluginShowMetaDataDialog(QWidget *parent = nullptr);
-    ~TextAutoGenerateToolPluginShowMetaDataDialog() override;
+    explicit TextAutoGenerateToolShowMetaDataDialog(QWidget *parent = nullptr);
+    ~TextAutoGenerateToolShowMetaDataDialog() override;
 
     void setMetaData(const QJsonObject &obj);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
-    TextAutoGenerateToolPluginShowMetaDataWidget *const mTextAutoGenerateToolPluginShowMetaDataWidget;
+    TextAutoGenerateToolShowMetaDataWidget *const mTextAutoGenerateToolPluginShowMetaDataWidget;
 };
 }

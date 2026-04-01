@@ -3,21 +3,21 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratetoolpluginshowmetadatawidgettest.h"
-#include "widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.h"
+#include "textautogeneratetoolshowmetadatawidgettest.h"
+#include "widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.h"
 #include <QTest>
 #include <QTextEdit>
 #include <QVBoxLayout>
-QTEST_MAIN(TextAutoGenerateToolPluginShowMetaDataWidgetTest)
+QTEST_MAIN(TextAutoGenerateToolShowMetaDataWidgetTest)
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateToolPluginShowMetaDataWidgetTest::TextAutoGenerateToolPluginShowMetaDataWidgetTest(QObject *parent)
+TextAutoGenerateToolShowMetaDataWidgetTest::TextAutoGenerateToolShowMetaDataWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutoGenerateToolPluginShowMetaDataWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateToolShowMetaDataWidgetTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateToolShowMetaDataWidget w(nullptr);
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -28,4 +28,4 @@ void TextAutoGenerateToolPluginShowMetaDataWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mTextEdit->toPlainText().isEmpty());
 }
 
-#include "moc_textautogeneratetoolpluginshowmetadatawidgettest.cpp"
+#include "moc_textautogeneratetoolshowmetadatawidgettest.cpp"

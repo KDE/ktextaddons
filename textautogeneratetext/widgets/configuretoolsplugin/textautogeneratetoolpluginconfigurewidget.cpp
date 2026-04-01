@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratetoolpluginconfigurewidget.h"
-#include "textautogeneratetoolpluginshowmetadatadialog.h"
+#include "textautogeneratetoolshowmetadatadialog.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QToolButton>
@@ -41,7 +41,7 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mInfoToolButton->setFocusPolicy(Qt::NoFocus);
     mInfoToolButton->setToolTip(i18nc("@info:tooltip", "Show metadata info"));
     connect(mInfoToolButton, &QToolButton::clicked, this, [this, plugin]() {
-        TextAutoGenerateToolPluginShowMetaDataDialog d(this);
+        TextAutoGenerateToolShowMetaDataDialog d(this);
         if (plugin) {
             d.setMetaData(plugin->metadata());
         }

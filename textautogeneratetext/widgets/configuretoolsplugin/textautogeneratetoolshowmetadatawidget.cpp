@@ -3,7 +3,7 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratetoolpluginshowmetadatawidget.h"
+#include "textautogeneratetoolshowmetadatawidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
@@ -15,7 +15,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateToolPluginShowMetaDataWidget::TextAutoGenerateToolPluginShowMetaDataWidget(QWidget *parent)
+TextAutoGenerateToolShowMetaDataWidget::TextAutoGenerateToolShowMetaDataWidget(QWidget *parent)
     : QWidget{parent}
     , mTextEdit(new QTextEdit(this))
 {
@@ -38,13 +38,13 @@ TextAutoGenerateToolPluginShowMetaDataWidget::TextAutoGenerateToolPluginShowMeta
     hl->setDefinition(def);
 }
 
-TextAutoGenerateToolPluginShowMetaDataWidget::~TextAutoGenerateToolPluginShowMetaDataWidget() = default;
+TextAutoGenerateToolShowMetaDataWidget::~TextAutoGenerateToolShowMetaDataWidget() = default;
 
-void TextAutoGenerateToolPluginShowMetaDataWidget::setMetaData(const QJsonObject &obj)
+void TextAutoGenerateToolShowMetaDataWidget::setMetaData(const QJsonObject &obj)
 {
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     mTextEdit->setPlainText(QString::fromUtf8(ba));
 }
 
-#include "moc_textautogeneratetoolpluginshowmetadatawidget.cpp"
+#include "moc_textautogeneratetoolshowmetadatawidget.cpp"

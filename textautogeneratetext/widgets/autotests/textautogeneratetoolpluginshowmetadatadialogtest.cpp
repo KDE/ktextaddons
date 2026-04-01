@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetoolpluginshowmetadatadialogtest.h"
-#include "widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.h"
-#include "widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.h"
+#include "widgets/configuretoolsplugin/textautogeneratetoolshowmetadatadialog.h"
+#include "widgets/configuretoolsplugin/textautogeneratetoolshowmetadatawidget.h"
 #include <QDialogButtonBox>
 #include <QTest>
 #include <QVBoxLayout>
@@ -19,14 +19,14 @@ TextAutoGenerateToolPluginShowMetaDataDialogTest::TextAutoGenerateToolPluginShow
 
 void TextAutoGenerateToolPluginShowMetaDataDialogTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataDialog w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateToolShowMetaDataDialog w(nullptr);
     QVERIFY(!w.windowTitle().isEmpty());
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
     auto mTextAutoGenerateToolPluginShowMetaDataWidget =
-        w.findChild<TextAutoGenerateText::TextAutoGenerateToolPluginShowMetaDataWidget *>(u"mTextAutoGenerateToolPluginShowMetaDataWidget"_s);
+        w.findChild<TextAutoGenerateText::TextAutoGenerateToolShowMetaDataWidget *>(u"mTextAutoGenerateToolPluginShowMetaDataWidget"_s);
     QVERIFY(mTextAutoGenerateToolPluginShowMetaDataWidget);
 
     auto button = w.findChild<QDialogButtonBox *>(u"button"_s);

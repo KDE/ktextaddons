@@ -11,12 +11,12 @@ class QTextEdit;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolPluginShowMetaDataWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolShowMetaDataWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateToolPluginShowMetaDataWidget(QWidget *parent = nullptr);
-    ~TextAutoGenerateToolPluginShowMetaDataWidget() override;
+    explicit TextAutoGenerateToolShowMetaDataWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateToolShowMetaDataWidget() override;
 
     void setMetaData(const QJsonObject &obj);
 
