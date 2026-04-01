@@ -6,16 +6,34 @@
 #include "mcpprotocolutils.h"
 #include "mcpprotocolaudiocontent.h"
 #include "mcpprotocolblobresourcecontents.h"
+#include "mcpprotocolcalltoolrequest.h"
 #include "mcpprotocolcancellednotification.h"
+#include "mcpprotocolcanceltaskrequest.h"
+#include "mcpprotocolcompleterequest.h"
 #include "mcpprotocolembeddedresource.h"
+#include "mcpprotocolgetpromptrequest.h"
+#include "mcpprotocolgettaskpayloadrequest.h"
+#include "mcpprotocolgettaskrequest.h"
 #include "mcpprotocolimagecontent.h"
 #include "mcpprotocolinitializednotification.h"
+#include "mcpprotocolinitializerequest.h"
+#include "mcpprotocollistpromptsrequest.h"
+#include "mcpprotocollistresourcesrequest.h"
+#include "mcpprotocollistresourcetemplatesrequest.h"
+#include "mcpprotocollisttasksrequest.h"
+#include "mcpprotocollisttoolsrequest.h"
+#include "mcpprotocolpingrequest.h"
 #include "mcpprotocolprogressnotification.h"
+#include "mcpprotocolreadresourcerequest.h"
 #include "mcpprotocolresourcelink.h"
 #include "mcpprotocolrootslistchangednotification.h"
+#include "mcpprotocolsetlevelrequest.h"
+#include "mcpprotocolsubscriberequest.h"
 #include "mcpprotocoltaskstatusnotification.h"
 #include "mcpprotocoltextcontent.h"
 #include "mcpprotocoltextresourcecontents.h"
+#include "mcpprotocolunsubscriberequest.h"
+#include "mcpprotocolunsubscriberequestparams.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QDebug>
 #include <QJsonObject>
@@ -297,4 +315,65 @@ McpProtocol::McpProtocolUtils::ContentBlock McpProtocol::McpProtocolUtils::conte
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ContentBlock: unknown method \"" << dispatchValue << "\"";
     return {};
+}
+
+McpProtocol::McpProtocolUtils::ClientRequest McpProtocol::McpProtocolUtils::clientRequestFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientRequest: expected object";
+        return {};
+    }
+    const QString dispatchValue = val.toObject().value("method"_L1).toString();
+    const QJsonObject valObj = val.toObject();
+    if (dispatchValue == "initialize"_L1) {
+        return ClientRequest(McpProtocolInitializeRequest::fromJson(valObj));
+    } else if (dispatchValue == "ping"_L1) {
+        return ClientRequest(McpProtocolPingRequest::fromJson(valObj));
+    } else if (dispatchValue == "resources/list"_L1) {
+        return ClientRequest(McpProtocolListResourcesRequest::fromJson(valObj));
+    } else if (dispatchValue == "resources/templates/list"_L1) {
+        return ClientRequest(McpProtocolListResourceTemplatesRequest::fromJson(valObj));
+    } else if (dispatchValue == "resources/read"_L1) {
+        return ClientRequest(McpProtocolReadResourceRequest::fromJson(valObj));
+    } else if (dispatchValue == "resources/subscribe"_L1) {
+        return ClientRequest(McpProtocolSubscribeRequest::fromJson(valObj));
+    } else if (dispatchValue == "resources/unsubscribe"_L1) {
+        return ClientRequest(McpProtocolUnsubscribeRequest::fromJson(valObj));
+    } else if (dispatchValue == "prompts/list"_L1) {
+        return ClientRequest(McpProtocolListPromptsRequest::fromJson(valObj));
+    } else if (dispatchValue == "prompts/get"_L1) {
+        return ClientRequest(McpProtocolGetPromptRequest::fromJson(valObj));
+    } else if (dispatchValue == "tools/list"_L1) {
+        return ClientRequest(McpProtocolListToolsRequest::fromJson(valObj));
+    } else if (dispatchValue == "tools/call"_L1) {
+        return ClientRequest(McpProtocolCallToolRequest::fromJson(valObj));
+    } else if (dispatchValue == "tasks/get"_L1) {
+        return ClientRequest(McpProtocolGetTaskRequest::fromJson(valObj));
+    } else if (dispatchValue == "tasks/result"_L1) {
+        return ClientRequest(McpProtocolGetTaskPayloadRequest::fromJson(valObj));
+    } else if (dispatchValue == "tasks/cancel"_L1) {
+        return ClientRequest(McpProtocolCancelTaskRequest::fromJson(valObj));
+    } else if (dispatchValue == "tasks/list"_L1) {
+        return ClientRequest(McpProtocolListTasksRequest::fromJson(valObj));
+    } else if (dispatchValue == "logging/setLevel"_L1) {
+        return ClientRequest(McpProtocolSetLevelRequest::fromJson(valObj));
+    } else if (dispatchValue == "completion/complete"_L1) {
+        return ClientRequest(McpProtocolCompleteRequest::fromJson(valObj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientRequest: unknown method \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonObject McpProtocol::McpProtocolUtils::clientRequestToJson(const McpProtocol::McpProtocolUtils::ClientRequest &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
 }
