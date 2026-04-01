@@ -66,7 +66,10 @@ public:
             struct Sampling {
                 std::optional<QMap<QString, QJsonValue>> mCreateMessage;
 
-            public:
+                [[nodiscard]] bool operator==(const Sampling &other) const;
+                [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
+                [[nodiscard]] static QJsonObject toJson(const Sampling &image);
+
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> createMessage() const;
                 void setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage);
             };
