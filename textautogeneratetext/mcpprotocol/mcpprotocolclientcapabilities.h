@@ -73,10 +73,12 @@ public:
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> createMessage() const;
                 void setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage);
             };
+            [[nodiscard]] bool operator==(const Requests &other) const;
             std::optional<Elicitation> mElicitation;
             std::optional<Sampling> mSampling;
         };
 
+        [[nodiscard]] bool operator==(const Tasks &other) const;
         std::optional<QMap<QString, QJsonValue>> mCancel;
         std::optional<QMap<QString, QJsonValue>> mList;
         std::optional<Requests> mRequests;
@@ -135,11 +137,19 @@ public:
      */
     void setExperimental(std::optional<QMap<QString, QJsonObject>> newExperimental);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<Tasks> tasks() const;
+    /*!
+     */
+    void setTasks(std::optional<Tasks> newTasks);
+
 private:
     std::optional<Elicitation> mElicitation;
     std::optional<Roots> mRoots;
     std::optional<Sampling> mSampling;
     std::optional<QMap<QString, QJsonObject>> mExperimental;
+    std::optional<Tasks> mTasks;
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);

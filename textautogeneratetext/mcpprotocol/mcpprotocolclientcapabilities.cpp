@@ -18,6 +18,8 @@ bool McpProtocolClientCapabilities::operator==(const McpProtocolClientCapabiliti
 bool McpProtocolClientCapabilities::Elicitation::operator==(const McpProtocolClientCapabilities::Elicitation &other) const = default;
 bool McpProtocolClientCapabilities::Roots::operator==(const McpProtocolClientCapabilities::Roots &other) const = default;
 bool McpProtocolClientCapabilities::Sampling::operator==(const McpProtocolClientCapabilities::Sampling &other) const = default;
+bool McpProtocolClientCapabilities::Tasks::operator==(const McpProtocolClientCapabilities::Tasks &other) const = default;
+bool McpProtocolClientCapabilities::Tasks::Requests::operator==(const McpProtocolClientCapabilities::Tasks::Requests &other) const = default;
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t)
 {
@@ -101,7 +103,31 @@ McpProtocolClientCapabilities McpProtocolClientCapabilities::fromJson(const QJso
 QJsonObject McpProtocolClientCapabilities::toJson(const McpProtocolClientCapabilities &choice)
 {
     QJsonObject obj;
+    if (choice.elicitation().has_value()) {
+        obj.insert("elicitation"_L1, McpProtocolClientCapabilities::Elicitation::toJson(*choice.elicitation()));
+    }
     // TODO
+    /*
+    if (choice._experimental.has_value()) {
+        QJsonObject map_experimental;
+        for (auto it = data._experimental->constBegin(); it != data._experimental->constEnd(); ++it) {
+            map_experimental.insert(it.key(), QJsonValue(it.value()));
+        }
+        obj.insert("experimental"_L1, map_experimental);
+    }
+    */
+    if (choice.roots().has_value()) {
+        obj.insert("roots"_L1, McpProtocolClientCapabilities::Roots::toJson(*choice.roots()));
+    }
+    if (choice.sampling().has_value()) {
+        obj.insert("sampling"_L1, McpProtocolClientCapabilities::Sampling::toJson(*choice.sampling()));
+    }
+    // TODO
+    /*
+    if (choice.tasks().has_value()) {
+        obj.insert("tasks"_L1, toJson(*choice.tasks()));
+    }
+    */
     return obj;
 }
 
@@ -143,6 +169,16 @@ std::optional<QMap<QString, QJsonObject>> McpProtocolClientCapabilities::experim
 void McpProtocolClientCapabilities::setExperimental(std::optional<QMap<QString, QJsonObject>> newExperimental)
 {
     mExperimental = std::move(newExperimental);
+}
+
+std::optional<McpProtocolClientCapabilities::Tasks> McpProtocolClientCapabilities::tasks() const
+{
+    return mTasks;
+}
+
+void McpProtocolClientCapabilities::setTasks(std::optional<Tasks> newTasks)
+{
+    mTasks = std::move(newTasks);
 }
 
 std::optional<QMap<QString, QJsonValue>> McpProtocolClientCapabilities::Elicitation::url() const
@@ -213,7 +249,7 @@ void McpProtocolClientCapabilities::Sampling::setTools(std::optional<QMap<QStrin
     mTools = newTools;
 }
 
-McpProtocolClientCapabilities::Sampling fromJson(const QJsonObject &obj)
+McpProtocolClientCapabilities::Sampling McpProtocolClientCapabilities::Sampling::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Sampling sampling;
     if (obj.contains("context"_L1) && obj["context"_L1].isObject()) {
@@ -235,7 +271,7 @@ McpProtocolClientCapabilities::Sampling fromJson(const QJsonObject &obj)
     return sampling;
 }
 
-QJsonObject toJson(const McpProtocolClientCapabilities::Sampling &sampling)
+QJsonObject McpProtocolClientCapabilities::Sampling::toJson(const McpProtocolClientCapabilities::Sampling &sampling)
 {
     QJsonObject obj;
     if (sampling.context().has_value()) {
@@ -339,7 +375,7 @@ McpProtocolClientCapabilities::Tasks::Requests::Sampling McpProtocolClientCapabi
     }
     return sampling;
 }
-QJsonObject toJson(const McpProtocolClientCapabilities::Tasks::Requests::Sampling &image)
+QJsonObject McpProtocolClientCapabilities::Tasks::Requests::Sampling::toJson(const McpProtocolClientCapabilities::Tasks::Requests::Sampling &image)
 {
     QJsonObject obj;
     if (image.createMessage().has_value()) {
