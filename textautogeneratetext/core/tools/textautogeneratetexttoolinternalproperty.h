@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QMetaType>
 #include <QStringList>
 class QDebug;
 class QJsonObject;
