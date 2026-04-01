@@ -170,6 +170,12 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 
 [[nodiscard]] QJsonObject serverNotificationToJson(const ServerNotification &val);
 [[nodiscard]] McpProtocol::McpProtocolUtils::ServerNotification serverNotificationFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonObject samplingMessageContentBlockToJson(const SamplingMessageContentBlock &val);
+[[nodiscard]] McpProtocol::McpProtocolUtils::SamplingMessageContentBlock samplingMessageContentBlockFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonValue createMessageResultContentToJson(const CreateMessageResultContent &val);
+[[nodiscard]] McpProtocol::McpProtocolUtils::CreateMessageResultContent createMessageResultContentFromJson(const QJsonValue &val);
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);
