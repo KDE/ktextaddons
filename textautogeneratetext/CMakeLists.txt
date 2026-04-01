@@ -422,8 +422,6 @@ target_sources(
         widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp
         widgets/mcpserver/textautogenerateaddmcpserverwidget.h
         widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp
-        widgets/internaltools/textautogenerateinternaltoolsdialog.h
-        widgets/internaltools/textautogenerateinternaltoolsdialog.cpp
 )
 
 add_subdirectory(mcpprotocol)
