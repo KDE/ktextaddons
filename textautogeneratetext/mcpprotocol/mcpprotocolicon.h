@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
+#include <QMetaType>
 #include <QString>
 #include <QStringList>
 class QDebug;
@@ -14,12 +15,6 @@ namespace McpProtocol
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolIcon
 {
 public:
-    enum class Theme : uint8_t {
-        Unknown,
-        Dark,
-        Light,
-    };
-
     /*!
      */
     McpProtocolIcon();

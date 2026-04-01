@@ -81,14 +81,9 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
         }
         icon.setSizes(list_sizes);
     }
-    // TODO icons theme
-    /*
     if (obj.contains("theme"_L1) && obj["theme"_L1].isString()) {
-        icon._theme = co_await fromJson<Icon::Theme>(obj["theme"]);
+        icon.setTheme(obj["theme"_L1].toString());
     }
-    */
-
-    // TODO
     return icon;
 }
 
