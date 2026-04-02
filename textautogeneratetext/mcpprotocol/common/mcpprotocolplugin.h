@@ -9,6 +9,7 @@
 #include <QObject>
 namespace McpProtocol
 {
+class McpProtocolPluginInterface;
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolPlugin : public QObject
 {
     Q_OBJECT
@@ -20,7 +21,30 @@ public:
     };
     Q_ENUM(PluginType)
 
+    enum class InterfaceType : uint8_t {
+        Unknown = 0,
+        Sse,
+        Stdio,
+        StreamableHttp,
+    };
+    Q_ENUM(InterfaceType)
+
+    /*!
+     */
     explicit McpProtocolPlugin(QObject *parent = nullptr);
+    /*!
+     */
     ~McpProtocolPlugin() override;
+
+    /*!
+     */
+    [[nodiscard]] PluginType pluginType() const;
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::InterfaceType type, QObject *parent);
+
+protected:
+    PluginType mPluginType = PluginType::Unknown;
 };
 }

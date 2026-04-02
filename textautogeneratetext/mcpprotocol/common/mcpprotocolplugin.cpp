@@ -14,4 +14,15 @@ McpProtocolPlugin::McpProtocolPlugin(QObject *parent)
 
 McpProtocolPlugin::~McpProtocolPlugin() = default;
 
+McpProtocolPlugin::PluginType McpProtocolPlugin::pluginType() const
+{
+    return mPluginType;
+}
+
+McpProtocolPluginInterface *McpProtocolPlugin::createInterface(McpProtocol::McpProtocolPlugin::InterfaceType type, QObject *parent)
+{
+    // TODO
+    return {};
+}
+
 #include "moc_mcpprotocolplugin.cpp"
