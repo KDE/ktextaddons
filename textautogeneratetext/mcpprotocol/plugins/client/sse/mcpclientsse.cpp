@@ -11,3 +11,5 @@ McpClientSse::McpClientSse(QObject *parent)
 }
 
 McpClientSse::~McpClientSse() = default;
+
+#include "moc_mcpclientsse.cpp"

@@ -19,5 +19,5 @@ public:
 
     /*!
      */
-    [[nodiscard]] McpProtocol::McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::InterfaceType type, QObject *parent) override;
+    [[nodiscard]] McpProtocol::McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
 };

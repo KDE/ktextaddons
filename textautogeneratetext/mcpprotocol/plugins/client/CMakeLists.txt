@@ -18,6 +18,8 @@ target_sources(
     PRIVATE
         sse/mcpclientsse.h
         sse/mcpclientsse.cpp
+        sse/mcpclientsseplugininterface.h
+        sse/mcpclientsseplugininterface.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -51,16 +53,21 @@ install(
 )
 
 ######
-add_library(
+add_library(autogeneratetext_mcpprotocolclientplugin MODULE)
+
+target_sources(
     autogeneratetext_mcpprotocolclientplugin
-    MODULE
-    mcpclientplugin.h
-    mcpclientplugin.cpp
+    PRIVATE
+        mcpclientplugin.h
+        mcpclientplugin.cpp
 )
 
-target_sources(autogeneratetext_mcpprotocolclientplugin PRIVATE)
-
-target_link_libraries(autogeneratetext_mcpprotocolclientplugin PRIVATE KF6::TextAutoGenerateTextMcpProtocol)
+target_link_libraries(
+    autogeneratetext_mcpprotocolclientplugin
+    PRIVATE
+        KF6::TextAutoGenerateTextMcpProtocol
+        mcpprotocolclientplugin
+)
 install(
     TARGETS
         autogeneratetext_mcpprotocolclientplugin
