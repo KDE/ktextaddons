@@ -24,9 +24,11 @@ TextAutoGenerateAddMcpServerWidget::TextAutoGenerateAddMcpServerWidget(QWidget *
     mainLayout->addRow(i18nc("@label:textbox", "Name:"), mServerNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerNameLineEdit);
 
-    mServerUrlLineEdit->setObjectName(u"mServerNameLineEdit"_s);
+    mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
+    mServerUrlLineEdit->setClearButtonEnabled(true);
+    mServerNameLineEdit->setClearButtonEnabled(true);
 
     connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateAddMcpServerWidget::checkValidSettings);
     connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateAddMcpServerWidget::checkValidSettings);
