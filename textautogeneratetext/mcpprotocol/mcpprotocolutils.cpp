@@ -118,6 +118,7 @@ McpProtocol::McpProtocolUtils::LoggingLevel McpProtocol::McpProtocolUtils::conve
     } else if (str == "warning"_L1) {
         return McpProtocolUtils::LoggingLevel::Warning;
     }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid LoggingLevel: " << str;
     return McpProtocolUtils::LoggingLevel::Unknown;
 }
 
@@ -153,6 +154,7 @@ McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convert
     } else if (str == "working"_L1) {
         return McpProtocolUtils::TaskStatus::Working;
     } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid TaskStatus: " << str;
         return McpProtocolUtils::TaskStatus::Unknown;
     }
 }
@@ -165,6 +167,7 @@ McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::prog
     if (val.isDouble()) {
         return ProgressToken(val.toInt());
     }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid requestIdFromJson: " << val;
     return {};
 }
 
@@ -176,6 +179,7 @@ McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::requestI
     if (val.isDouble()) {
         return RequestId(val.toInt());
     }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid requestIdFromJson: " << val;
     return {};
 }
 
