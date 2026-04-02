@@ -42,7 +42,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::InterfaceType type, QObject *parent);
+    [[nodiscard]] virtual McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::InterfaceType type, QObject *parent) = 0;
 
 protected:
     PluginType mPluginType = PluginType::Unknown;

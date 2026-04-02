@@ -13,7 +13,12 @@ ecm_qt_declare_logging_category(mcpprotocolclientplugin
     EXPORT KTEXTADDONS
 )
 
-target_sources(mcpprotocolclientplugin PRIVATE)
+target_sources(
+    mcpprotocolclientplugin
+    PRIVATE
+        sse/mcpclientsse.h
+        sse/mcpclientsse.cpp
+)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
@@ -46,7 +51,12 @@ install(
 )
 
 ######
-add_library(autogeneratetext_mcpprotocolclientplugin MODULE)
+add_library(
+    autogeneratetext_mcpprotocolclientplugin
+    MODULE
+    mcpclientplugin.h
+    mcpclientplugin.cpp
+)
 
 target_sources(autogeneratetext_mcpprotocolclientplugin PRIVATE)
 
