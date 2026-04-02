@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:43+0000\n"
+"POT-Creation-Date: 2026-04-02 00:42+0000\n"
 "PO-Revision-Date: 2026-03-31 06:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -148,30 +148,30 @@ msgstr "ლოკალური"
 msgid "Network"
 msgstr "ქსელური"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:205
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:218
 #, kde-format
 msgid "Plugins Text:"
 msgstr "დამატებების ტექსტი:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:211
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:224
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "ხელსაწყოს იდენტიფიკატორი: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "ჩართული"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "გამორთული"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -2825,6 +2825,11 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "ფაილის გახსნის შეცდომა"
 
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:26
+#, kde-format
+msgid "Metadata Info"
+msgstr "მეტამონაცემების ინფორმაცია"
+
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
@@ -2863,11 +2868,6 @@ msgstr "ინფორმაცია:"
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "მეტამონაცემების ინფორმაციის ჩვენება"
-
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
-#, kde-format
-msgid "Metadata Info"
-msgstr "მეტამონაცემების ინფორმაცია"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
 #, kde-format
@@ -3065,16 +3065,22 @@ msgstr "ძებნა…"
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Show internal tools…"
+msgstr ""
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#, kde-format
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "გასუფთავება"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"

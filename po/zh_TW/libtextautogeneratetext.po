@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:43+0000\n"
+"POT-Creation-Date: 2026-04-02 00:42+0000\n"
 "PO-Revision-Date: 2026-01-28 19:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -153,30 +153,30 @@ msgstr "本地"
 msgid "Network"
 msgstr "網路"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:205
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:218
 #, kde-format
 msgid "Plugins Text:"
 msgstr "外掛程式文字："
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:211
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:224
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "工具識別子：%1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "開啟"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "關閉"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -2597,6 +2597,11 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "開啟檔案時發生錯誤"
 
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:26
+#, kde-format
+msgid "Metadata Info"
+msgstr "中繼資料資訊"
+
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
@@ -2635,11 +2640,6 @@ msgstr "資訊："
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "顯示中繼資料資訊"
-
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
-#, kde-format
-msgid "Metadata Info"
-msgstr "中繼資料資訊"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
 #, kde-format
@@ -2844,16 +2844,22 @@ msgstr "搜尋…"
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Show internal tools…"
+msgstr ""
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#, kde-format
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "設定…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"

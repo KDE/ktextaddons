@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:43+0000\n"
+"POT-Creation-Date: 2026-04-02 00:42+0000\n"
 "PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -151,30 +151,30 @@ msgstr "Lokalny"
 msgid "Network"
 msgstr "Sieć"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:205
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:218
 #, kde-format
 msgid "Plugins Text:"
 msgstr "Tekst wtyczek:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:211
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:224
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identyfikator narzędzia: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Włączone"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Wyłączone"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:212
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -2764,6 +2764,11 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "Błąd otwierania pliku"
 
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:26
+#, kde-format
+msgid "Metadata Info"
+msgstr "Informacje o metadanych"
+
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
@@ -2802,11 +2807,6 @@ msgstr "Informacje:"
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "Pokaż informacje o metadanych"
-
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
-#, kde-format
-msgid "Metadata Info"
-msgstr "Informacje o metadanych"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
 #, kde-format
@@ -3011,16 +3011,22 @@ msgstr "Poszukaj…"
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Show internal tools…"
+msgstr ""
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#, kde-format
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Ustawienia…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "Wyczyść"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
