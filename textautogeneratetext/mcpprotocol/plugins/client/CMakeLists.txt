@@ -1,15 +1,13 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
-add_subdirectory(sse)
-add_subdirectory(stdio)
 
 add_library(mcpprotocolclientplugin)
 
 ecm_qt_declare_logging_category(mcpprotocolclientplugin
-    HEADER autogeneratetext_mcpprotocolclientplugin_debug.h
-    IDENTIFIER AUTOGENERATETEXT_MCPPROTOCOLCLIENTPLUGIN_LOG
-    CATEGORY_NAME org.kde.kf.autogeneratetext.mcpprotocolclientplugin
-    DESCRIPTION "autogenerate text mcpprotocol client plugin"
+    HEADER autogeneratetext_mcpprotocolclientplugin_lib_debug.h
+    IDENTIFIER AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG
+    CATEGORY_NAME org.kde.kf.autogeneratetext.mcpprotocolclientplugin_lib
+    DESCRIPTION "autogenerate text mcpprotocol client plugin lib"
     EXPORT KTEXTADDONS
 )
 
@@ -20,6 +18,8 @@ target_sources(
         sse/mcpclientsse.cpp
         sse/mcpclientsseplugininterface.h
         sse/mcpclientsseplugininterface.cpp
+        stdio/mcpclientstdioplugininterface.cpp
+        stdio/mcpclientstdioplugininterface.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -54,6 +54,14 @@ install(
 
 ######
 add_library(autogeneratetext_mcpprotocolclientplugin MODULE)
+
+ecm_qt_declare_logging_category(autogeneratetext_mcpprotocolclientplugin
+    HEADER autogeneratetext_mcpprotocolclientplugin_debug.h
+    IDENTIFIER AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LOG
+    CATEGORY_NAME org.kde.kf.autogeneratetext.mcpprotocolclientplugin
+    DESCRIPTION "autogenerate text mcpprotocol client plugin"
+    EXPORT KTEXTADDONS
+)
 
 target_sources(
     autogeneratetext_mcpprotocolclientplugin

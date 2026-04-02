@@ -78,7 +78,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
     case RequestTypes::StreamingGenerate:
         break;
     case RequestTypes::StreamingChat:
-        // qDebug() << " mTokens " << mTokens;
+        qDebug() << " mTokens " << mTokens;
         for (const auto &tok : mTokens) {
             const QJsonArray choicesArray = tok["choices"_L1].toArray();
             if (!choicesArray.isEmpty()) {
