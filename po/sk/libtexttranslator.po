@@ -327,13 +327,13 @@ msgstr "Jidiš"
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr ""
+msgstr "Nastavenia doplnku Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
-msgstr ""
+msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
@@ -342,39 +342,39 @@ msgid "Search..."
 msgstr "Hľadať..."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgid "Download"
 msgstr "Stiahnuť"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete"
 msgstr "Vymazať"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:104
 #, kde-format
 msgid "Update List"
-msgstr ""
+msgstr "Aktualizovať zoznam"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:105
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Aktualizovať zoznam jazykov zo siete"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr ""
+msgstr "Použiť vyrovnávaciu pamäť prekladov"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
-msgstr ""
+msgstr "Využitie zdrojov"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, fuzzy, kde-format
@@ -384,7 +384,7 @@ msgstr "<b>%1</b> vlákno"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
-msgstr ""
+msgstr "Pamäť podľa vlákna:"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
@@ -392,20 +392,19 @@ msgid "Languages"
 msgstr "Jazyky"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Settings"
 msgstr "Nastavenia"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
-#, fuzzy, kde-format
-#| msgid "Server url is not defined."
+#, kde-format
 msgid "Language model is not defined."
 msgstr "Url adresa servera nie je definovaná."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Nie je možné otvoriť súbor na stiahnutie."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
@@ -423,26 +422,25 @@ msgstr ""
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "Nie je možné pristúpiť k URL: %1"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "Kontrolný súčet nie je správny."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Chyba pri zápise na disk: %1"
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:30
-#, fuzzy, kde-format
-#| msgid "Detect language"
+#, kde-format
 msgid "Impossible to extract language"
 msgstr "Zistiť jazyk"
 
 #: translator/plugins/bergamot/translatormodel.cpp:47
-#, fuzzy, kde-format
+#, kde-format
 msgid "Source"
 msgstr "Zdroj"
 
@@ -452,12 +450,12 @@ msgid "Target"
 msgstr "Cieľ"
 
 #: translator/plugins/bergamot/translatormodel.cpp:51
-#, fuzzy, kde-format
+#, kde-format
 msgid "Type"
 msgstr "Typ"
 
 #: translator/plugins/bergamot/translatormodel.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgid "Repository"
 msgstr "Repozitár"
 
@@ -469,11 +467,11 @@ msgstr "Nainštalovaná verzia"
 #: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
-msgstr ""
+msgstr "Dostupná verzia"
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgid "Installed"
 msgstr "Nainštalované"
 
@@ -541,7 +539,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:81
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "Neplatná odpoveď."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -693,10 +691,7 @@ msgid "Configure"
 msgstr "Konfigurovať"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
@@ -705,10 +700,7 @@ msgstr ""
 "Server)."
 
 #: translator/widgets/translatorwidget.cpp:357
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid "Drag text that you want to translate."
 msgstr ""
 "Pretiahnite text, ktorý chcete preložiť. (Pozor, text sa odošle na Google "
