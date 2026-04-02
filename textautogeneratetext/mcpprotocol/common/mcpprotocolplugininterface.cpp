@@ -12,3 +12,5 @@ McpProtocolPluginInterface::McpProtocolPluginInterface(QObject *parent)
 }
 
 McpProtocolPluginInterface::~McpProtocolPluginInterface() = default;
+
+#include "moc_mcpprotocolplugininterface.cpp"
