@@ -173,17 +173,17 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
 {
     QJsonArray toolsArray;
     for (const QByteArray &t : tools) {
-        bool toolFound = false;
+        bool found = false;
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
             if (it->plugin->toolNameId() == t) {
                 toolsArray.append(it->plugin->metadata());
-                toolFound = true;
+                found = true;
                 break;
             }
         }
-        if (!toolFound) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found:" << t;
+        if (!found) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << t;
         }
     }
     if (mManager && mManager->textAutoGenerateTextToolInternalInterface()) {
@@ -192,6 +192,10 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
             toolsArray.append(json);
         }
     }
+    if (toolsArray.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "No json generated";
+    }
+    qDebug() << "toolsArray********************************" << toolsArray;
     return toolsArray;
 }
 

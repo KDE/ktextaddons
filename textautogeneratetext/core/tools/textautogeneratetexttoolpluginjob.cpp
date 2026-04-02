@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetexttoolpluginjob.h"
-#include "textautogeneratetextcore_debug.h"
-
+#include <QDebug>
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextToolPluginJob::TextAutoGenerateTextToolPluginJob(QObject *parent)
     : TextAutoGenerateTextToolBaseJob{parent}
