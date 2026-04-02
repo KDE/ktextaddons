@@ -13,6 +13,13 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolPlugin : public QObject
 {
     Q_OBJECT
 public:
+    enum class PluginType : uint8_t {
+        Unknown = 0,
+        Server,
+        Client,
+    };
+    Q_ENUM(PluginType)
+
     explicit McpProtocolPlugin(QObject *parent = nullptr);
     ~McpProtocolPlugin() override;
 };
