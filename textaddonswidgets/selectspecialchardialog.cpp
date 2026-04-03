@@ -105,7 +105,7 @@ void SelectSpecialCharDialog::showSelectButton(bool show)
 {
     if (show) {
         d->addSelectButton();
-    } else {
+    } else if (d->mSelectButton) {
         d->mButtonBox->removeButton(d->mSelectButton);
     }
 }
