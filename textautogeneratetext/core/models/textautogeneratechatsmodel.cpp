@@ -224,7 +224,7 @@ void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };
-        emitChanged(i, {Title | DateTime});
+        emitChanged(i, {Title, DateTime});
     }
 }
 
