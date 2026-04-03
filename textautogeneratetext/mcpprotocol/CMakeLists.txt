@@ -203,6 +203,8 @@ target_sources(
         common/mcpprotocolplugin.cpp
         common/mcpprotocolplugininterface.h
         common/mcpprotocolplugininterface.cpp
+        common/mcpprotocolsettings.h
+        common/mcpprotocolsettings.cpp
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
