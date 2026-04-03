@@ -76,7 +76,7 @@ private:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *> mListJob;
     const QByteArray mChatId;
     const QByteArray mMessageUuid;
-    const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &mInfos;
+    const QList<TextAutoGenerateReply::ToolCallArgumentInfo> mInfos;
     QStringList mResult;
     TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;
 };
