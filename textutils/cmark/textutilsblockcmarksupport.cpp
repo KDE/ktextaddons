@@ -183,10 +183,11 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
     const QByteArray ba = str.toUtf8();
     cmark_node *doc = cmark_parse_document(ba.constData(), ba.length(), CMARK_OPT_DEFAULT);
     cmark_iter *iter = cmark_iter_new(doc);
+    cmark_mem *allocator = cmark_get_default_mem_allocator();
 #ifdef DEBUG_CMARK_RC
     char *beforehtml = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
     qCDebug(TEXTUTILS_CMARK_LOG) << " beforehtml " << beforehtml;
-    delete beforehtml;
+    allocator->free(beforehtml);
 #endif
 
     qCDebug(TEXTUTILS_CMARK_LOG) << " ba " << ba;
@@ -275,11 +276,10 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
     char *html = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
     qCDebug(TEXTUTILS_CMARK_LOG) << " generated html: " << html;
 
+    const QString result = QString::fromUtf8(html);
+    allocator->free(html);
+
     cmark_iter_free(iter);
     cmark_node_free(doc);
-    const QString result = QString::fromUtf8(html);
-
-    cmark_mem *allocator = cmark_get_default_mem_allocator();
-    allocator->free(html);
     return result;
 }
