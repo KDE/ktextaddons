@@ -74,7 +74,11 @@ static UserChoice askUser(const QString &path, const KService::Ptr &offer, QWidg
     msgBox.addButton(i18nc("@action:button", "Save &As…"), QMessageBox::ActionRole)->setProperty(prop, QVariant::fromValue(UserChoice::Save));
     msgBox.addButton(QMessageBox::Cancel)->setProperty(prop, QVariant::fromValue(UserChoice::Cancel));
     msgBox.exec();
-    return msgBox.clickedButton()->property(prop).value<UserChoice>();
+    QAbstractButton *clickedButton = msgBox.clickedButton();
+    if (!clickedButton) {
+        return UserChoice::Cancel; // Default to cancel if dialog closed
+    }
+    return clickedButton->property(prop).value<UserChoice>();
 }
 
 void OpenFileJob::start()
