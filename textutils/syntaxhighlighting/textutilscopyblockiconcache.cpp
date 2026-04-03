@@ -64,12 +64,13 @@ QString TextUtilsCopyBlockIconCache::saveIconToTempFile(TextUtilsCopyBlockIconCa
     auto temp = new QTemporaryFile(QDir::tempPath() + u"/icon_XXXXXX.png"_s);
     if (!temp->open()) {
         qCWarning(TEXTUTILS_LOG) << "Impossible to create temporary file.";
-        temp = nullptr;
+        delete temp;
         return {};
     }
 
     if (!pixmap.save(temp, "PNG")) {
         qCWarning(TEXTUTILS_LOG) << "Impossible to save file.";
+        delete temp;
         return {};
     }
     mIconUrlMap.insert(type, temp->fileName());

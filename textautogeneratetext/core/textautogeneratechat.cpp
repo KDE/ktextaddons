@@ -17,7 +17,7 @@ TextAutoGenerateChat::TextAutoGenerateChat()
 }
 
 TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
-    : mMessageModel(other.mMessageModel)
+    : mMessageModel(new TextAutoGenerateMessagesModel())
     , mIdentifier(other.mIdentifier)
     , mTitle(other.mTitle)
     , mPrompt(other.mPrompt)
@@ -27,13 +27,23 @@ TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
     , mInitialized(other.mInitialized)
     , mInProgress(other.mInProgress)
 {
+    if (mMessageModel && other.mMessageModel) {
+        mMessageModel->setMessages(other.mMessageModel->messages());
+        mMessageModel->setChatId(mIdentifier);
+    }
 }
 
 TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat &other)
 {
     if (this != &other) {
-        mMessageModel = other.mMessageModel;
+        mMessageModel = QSharedPointer<TextAutoGenerateMessagesModel>(new TextAutoGenerateMessagesModel());
+        if (mMessageModel && other.mMessageModel) {
+            mMessageModel->setMessages(other.mMessageModel->messages());
+        }
         mIdentifier = other.mIdentifier;
+        if (mMessageModel) {
+            mMessageModel->setChatId(mIdentifier);
+        }
         mDateTime = other.mDateTime;
         mTitle = other.mTitle;
         mFavorite = other.mFavorite;

@@ -29,6 +29,7 @@ RunningAnimatedImage::RunningAnimatedImage(RunningAnimatedImage &&other) noexcep
 
 RunningAnimatedImage &RunningAnimatedImage::operator=(RunningAnimatedImage &&other)
 {
+    delete movie;
     index = other.index;
     movie = other.movie;
     other.movie = nullptr;

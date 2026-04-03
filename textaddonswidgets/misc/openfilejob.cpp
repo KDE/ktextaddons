@@ -111,6 +111,7 @@ void OpenFileJob::start()
         runApplication({});
         break;
     case UserChoice::Cancel:
+        deleteLater();
         break;
     }
 }

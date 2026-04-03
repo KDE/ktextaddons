@@ -21,7 +21,6 @@ TextAutoGenerateToolCallJob::TextAutoGenerateToolCallJob(const QByteArray &chatI
     , mChatId(chatId)
     , mMessageUuid(uuid)
     , mInfos(infos)
-
 {
 }
 
