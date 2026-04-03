@@ -6,6 +6,7 @@
 
 #include "textautogenerateimportchatasjsonjob.h"
 #include "core/textautogeneratetextutils.h"
+#include "textautogeneratetextcore_debug.h"
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -27,6 +28,12 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
 
         QJsonParseError error;
         const auto doc = QJsonDocument::fromJson(content, &error);
+        if (error.error != QJsonParseError::NoError) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to parse JSON file" << mInfo.filename << "error:" << error.errorString() << "at offset"
+                                                     << error.offset;
+            deleteLater();
+            return;
+        }
         const QJsonObject obj = doc.object();
         const QString title = obj[u"title"_s].toString();
 
