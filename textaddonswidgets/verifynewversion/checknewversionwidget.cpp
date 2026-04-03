@@ -27,6 +27,12 @@ CheckNewVersionWidget::CheckNewVersionWidget(QWidget *parent)
     mCheckVersionResultLabel->setOpenExternalLinks(true);
     mCheckVersionResultLabel->setTextFormat(Qt::RichText);
     mainLayout->addWidget(mCheckVersionResultLabel);
+
+    connect(mCheckVersionResultLabel, &QLabel::linkActivated, this, [](const QString &url) {
+        if (!QDesktopServices::openUrl(QUrl(url))) {
+            qCWarning(TEXTADDONSWIDGETS_LOG) << "Impossible to open url: " << url;
+        }
+    });
 }
 
 CheckNewVersionWidget::~CheckNewVersionWidget() = default;
@@ -47,17 +53,15 @@ void CheckNewVersionWidget::setUrl(const QUrl &url)
 
 void CheckNewVersionWidget::slotFoundNewVersion(bool found)
 {
-    Q_ASSERT(!mUrl.isEmpty());
+    if (mUrl.isEmpty()) {
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "URL is empty in CheckNewVersionWidget";
+        return;
+    }
     if (found) {
         mCheckVersionResultLabel->setText(i18n("A new version found. Click <a href=\"%1\">here</a> for downloading it.", mUrl.toString()));
     } else {
         mCheckVersionResultLabel->setText(i18n("No new version found. Build can be found <a href=\"%1\">here</a>.", mUrl.toString()));
     }
-    connect(mCheckVersionResultLabel, &QLabel::linkActivated, this, [](const QString &url) {
-        if (!QDesktopServices::openUrl(QUrl(url))) {
-            qCWarning(TEXTADDONSWIDGETS_LOG) << "Impossible to open url: " << url;
-        }
-    });
 }
 
 #include "moc_checknewversionwidget.cpp"
