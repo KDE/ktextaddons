@@ -125,9 +125,7 @@ void TextAutoGenerateTextInstancesManager::setInstances(const QList<TextAutoGene
 
 void TextAutoGenerateTextInstancesManager::deleteInstance(const QByteArray &uuid)
 {
-    if (auto plugin = mTextAutoGenerateTextInstanceModel->removeInstance(uuid); plugin) {
-        plugin->remove();
-    }
+    mTextAutoGenerateTextInstanceModel->removeInstance(uuid);
 }
 
 void TextAutoGenerateTextInstancesManager::addInstance(TextAutoGenerateTextInstance *instance)

@@ -87,10 +87,10 @@ public:
 
     /*!
      * Removes an instance from the model by UUID.
+     * Calls plugin->remove() and deletes the instance.
      * \param uuid The UUID of the instance to remove
-     * \return The plugin from the removed instance
      */
-    [[nodiscard]] TextAutoGenerateTextPlugin *removeInstance(const QByteArray &uuid);
+    void removeInstance(const QByteArray &uuid);
 
     /*!
      * Gets the plugin for editing an instance by UUID.

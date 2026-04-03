@@ -13,10 +13,9 @@ TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()" << this;
-    // if (mPlugin) {
-    // mPlugin->deleteLater();
-    // mPlugin = nullptr;
-    // }
+    if (mPlugin && !mPlugin->parent()) {
+        delete mPlugin;
+    }
 }
 
 QString TextAutoGenerateTextInstance::displayName() const

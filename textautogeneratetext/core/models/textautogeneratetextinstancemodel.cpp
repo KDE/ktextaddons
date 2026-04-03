@@ -175,21 +175,23 @@ void TextAutoGenerateTextInstanceModel::addInstance(TextAutoGenerateTextInstance
     endInsertRows();
 }
 
-TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
+void TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
 {
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == uuid;
     };
-    TextAutoGenerateTextPlugin *plugin = nullptr;
     const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
     if (answerIt != mTextInstances.constEnd()) {
         const int i = std::distance(mTextInstances.constBegin(), answerIt);
         beginRemoveRows(QModelIndex(), i, i);
-        plugin = mTextInstances.at(i)->plugin();
+        auto instance = mTextInstances.at(i);
         mTextInstances.removeAt(i);
         endRemoveRows();
+        if (auto plugin = instance->plugin()) {
+            plugin->remove();
+        }
+        delete instance;
     }
-    return plugin;
 }
 
 TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(const QByteArray &uuid)
