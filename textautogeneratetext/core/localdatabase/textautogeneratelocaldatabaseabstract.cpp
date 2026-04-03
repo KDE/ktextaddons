@@ -90,14 +90,14 @@ bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id
             return false;
         }
         const QString fileName = dbFileName(id);
-        const bool newDb = QFileInfo::exists(fileName);
+        const bool newDb = !QFileInfo::exists(fileName);
         db.setDatabaseName(fileName);
         if (!db.open()) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create" << db.databaseName();
             return false;
         }
         QSqlQuery query(db);
-        if (!newDb) {
+        if (newDb) {
             query.exec(schemaDataBase());
             if (query.lastError().isValid()) {
                 qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create table LOGS in" << db.databaseName() << ":" << db.lastError();
