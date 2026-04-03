@@ -15,5 +15,12 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolPluginInterface : public
 public:
     explicit McpProtocolPluginInterface(QObject *parent = nullptr);
     ~McpProtocolPluginInterface() override;
+
+    virtual void start() = 0;
+
+Q_SIGNALS:
+    void started();
+    void received(const QJsonObject &obj);
+    void error(const QString &str);
 };
 }

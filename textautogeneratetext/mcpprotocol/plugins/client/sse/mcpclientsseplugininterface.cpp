@@ -12,4 +12,9 @@ McpClientSsePluginInterface::McpClientSsePluginInterface(QObject *parent)
 
 McpClientSsePluginInterface::~McpClientSsePluginInterface() = default;
 
+void McpClientSsePluginInterface::start()
+{
+    // TODO
+}
+
 #include "moc_mcpclientsseplugininterface.cpp"

@@ -14,4 +14,6 @@ class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientStdioPluginInterface : public McpP
 public:
     explicit McpClientStdioPluginInterface(QObject *parent = nullptr);
     ~McpClientStdioPluginInterface() override;
+
+    void start() override;
 };

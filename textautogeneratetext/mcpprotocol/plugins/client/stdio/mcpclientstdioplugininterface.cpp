@@ -12,4 +12,9 @@ McpClientStdioPluginInterface::McpClientStdioPluginInterface(QObject *parent)
 
 McpClientStdioPluginInterface::~McpClientStdioPluginInterface() = default;
 
+void McpClientStdioPluginInterface::start()
+{
+    // TODO
+}
+
 #include "moc_mcpclientstdioplugininterface.cpp"

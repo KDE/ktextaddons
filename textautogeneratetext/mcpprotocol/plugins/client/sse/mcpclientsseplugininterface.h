@@ -14,4 +14,5 @@ class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientSsePluginInterface : public McpPro
 public:
     explicit McpClientSsePluginInterface(QObject *parent = nullptr);
     ~McpClientSsePluginInterface() override;
+    void start() override;
 };
