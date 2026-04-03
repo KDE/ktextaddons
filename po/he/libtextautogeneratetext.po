@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:42+0000\n"
-"PO-Revision-Date: 2026-03-29 09:24+0300\n"
+"POT-Creation-Date: 2026-04-03 00:42+0000\n"
+"PO-Revision-Date: 2026-04-02 08:48+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -146,30 +146,30 @@ msgstr "מקומי"
 msgid "Network"
 msgstr "רשת"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:218
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:222
 #, kde-format
 msgid "Plugins Text:"
 msgstr "טקסט תוספים:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:224
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "מזהה כלי: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "פעיל"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "כבוי"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -2950,7 +2950,7 @@ msgstr "חיפוש…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "הצגת כלים פנימיים…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format

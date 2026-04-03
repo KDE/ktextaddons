@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:42+0000\n"
-"PO-Revision-Date: 2026-03-31 08:47+0300\n"
+"POT-Creation-Date: 2026-04-03 00:42+0000\n"
+"PO-Revision-Date: 2026-04-02 09:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -147,30 +147,30 @@ msgstr "Локальний"
 msgid "Network"
 msgstr "Мережевий"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:218
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:222
 #, kde-format
 msgid "Plugins Text:"
 msgstr "Текст додатків:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:224
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Ідентифікатор інструменту: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Увімкнено"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Вимкнено"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -3083,7 +3083,7 @@ msgstr "Шукати…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "Показ зовнішніх інструментів…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
