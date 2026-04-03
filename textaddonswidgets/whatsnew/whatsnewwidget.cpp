@@ -50,6 +50,9 @@ void WhatsNewWidget::fillComboBox()
 
 int WhatsNewWidget::currentVersion() const
 {
+    if (mWhatsNewInfo.isEmpty()) {
+        return -1; // Return invalid index for empty list
+    }
     return mWhatsNewInfo.count() - 1;
 }
 
@@ -66,6 +69,10 @@ QString WhatsNewWidget::generateStartEndHtml(const QString &str) const
 
 void WhatsNewWidget::slotVersionChanged(int type)
 {
+    if (mWhatsNewInfo.isEmpty()) {
+        mLabelInfo->clear();
+        return;
+    }
     if (type == allVersion) { // All
         QString message;
         for (int i = mWhatsNewInfo.count() - 1; i >= 0; i--) {
@@ -74,7 +81,7 @@ void WhatsNewWidget::slotVersionChanged(int type)
             message += createVersionInformation(info);
         }
         mLabelInfo->setHtml(generateStartEndHtml(message));
-    } else {
+    } else if (type >= 0 && type < mWhatsNewInfo.count()) {
         const QString message = generateStartEndHtml(createVersionInformation(mWhatsNewInfo.at(type)));
         mLabelInfo->setHtml(message);
     }
