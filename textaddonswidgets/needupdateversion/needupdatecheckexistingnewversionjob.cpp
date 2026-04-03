@@ -42,6 +42,12 @@ void NeedUpdateCheckExistingNewVersionJob::slotDownloadDone(const QString &str)
     qCDebug(TEXTADDONSWIDGETS_LOG) << " currentCompiledDate " << mCompileDate;
 
     const QDate dateFromUrl = QDate::fromString(compileDateStr, QStringLiteral("yyyy-MM-dd"));
+    if (!dateFromUrl.isValid()) {
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "Invalid date parsed from URL:" << compileDateStr;
+        Q_EMIT foundNewVersion(false);
+        deleteLater();
+        return;
+    }
     qCDebug(TEXTADDONSWIDGETS_LOG) << " dateFromUrl " << dateFromUrl << " original " << compileDateStr;
 
     if (dateFromUrl > mCompileDate) {

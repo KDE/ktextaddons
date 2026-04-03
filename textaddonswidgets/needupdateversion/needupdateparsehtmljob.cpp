@@ -43,6 +43,8 @@ void NeedUpdateParseHtmlJob::start()
     connect(tjob, &KIO::TransferJob::data, this, &NeedUpdateParseHtmlJob::slotHttpDataFile);
     if (!tjob->exec()) {
         qCWarning(TEXTADDONSWIDGETS_LOG) << "Impossible execute KIO::TransferJob";
+        Q_EMIT downLoadDone({});
+        deleteLater();
     }
 }
 
