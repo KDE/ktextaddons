@@ -106,7 +106,7 @@ QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> Text
     QSqlQuery resultQuery(db);
     if (!resultQuery.prepare(query)) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " Invalid query" << query << " resultQuery " << resultQuery.lastError().text();
-        return {};
+        return info;
     }
     if (!resultQuery.exec()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " Impossible to execute query: " << resultQuery.lastError() << " query: " << query;

@@ -85,7 +85,13 @@ QSize TextAutoGenerateFlowLayout::minimumSize() const
 
 void TextAutoGenerateFlowLayout::addItem(QLayoutItem *item)
 {
-    Q_ASSERT(!mItems.contains(item));
+    if (!item) {
+        return;
+    }
+    if (mItems.contains(item)) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Item already added to layout";
+        return;
+    }
     mItems.append(item);
     invalidate();
 }

@@ -46,6 +46,10 @@ TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 QByteArray TextAutoGenerateTextPlugin::instanceUuid() const
 {
     // qDebug() << " d->instance " << d->instance;
+    if (!d->instance) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Instance is null in TextAutoGenerateTextPlugin";
+        return {};
+    }
     return d->instance->instanceUuid();
 }
 
@@ -249,7 +253,9 @@ void TextAutoGenerateTextPlugin::clear()
     for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
         auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
         const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
-        reply->cancel();
+        if (reply) {
+            reply->cancel();
+        }
         disconnect(connection.second);
     }
     mConnections.clear();
@@ -264,7 +270,9 @@ void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
             auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
             const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
             if (connection.first == uuid) {
-                reply->cancel();
+                if (reply) {
+                    reply->cancel();
+                }
                 disconnect(connection.second);
                 break;
             }

@@ -63,13 +63,13 @@ void GenericNetworkPlugin::removeApiKey()
     auto deleteJob = new QKeychain::DeletePasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
     deleteJob->setKey(QString::fromLatin1(instanceUuid()));
     connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
-        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
-        Q_ASSERT(job);
+        auto job = qobject_cast<QKeychain::DeletePasswordJob *>(baseJob);
+        if (!job) {
+            qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << "Invalid job cast in removeApiKey";
+            return;
+        }
         if (job->error()) {
             qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << "We have an error during deleting password " << job->errorString();
-        } else {
-            mGenericManager->setApiKey(job->textData());
-            Q_EMIT loadApiKeyDone();
         }
     });
     deleteJob->start();
@@ -180,6 +180,9 @@ void GenericNetworkPlugin::askToAssistant(const QString &msg)
     req.setMessages(array);
     req.setModel(currentModel());
     auto reply = mGenericManager->getCompletion(req);
+    if (!reply) {
+        return;
+    }
     const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,

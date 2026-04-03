@@ -423,6 +423,10 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
         return;
     }
     auto messagesModel = messagesModelFromChatId(chatId);
+    if (!messagesModel) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
+        return;
+    }
     const auto messages = messagesModel->messages();
     const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
     createNewChat(chat.title());

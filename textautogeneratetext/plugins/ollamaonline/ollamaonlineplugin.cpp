@@ -80,13 +80,13 @@ void OllamaOnlinePlugin::removeApiKey()
     auto deleteJob = new QKeychain::DeletePasswordJob(passwordServiceName());
     deleteJob->setKey(QString::fromLatin1(instanceUuid()));
     connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
-        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
-        Q_ASSERT(job);
+        auto job = qobject_cast<QKeychain::DeletePasswordJob *>(baseJob);
+        if (!job) {
+            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "Invalid job cast in removeApiKey";
+            return;
+        }
         if (job->error()) {
             qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "We have an error during deleting password " << job->errorString();
-        } else {
-            mOllamaOnlineManager->setApiKey(job->textData());
-            Q_EMIT loadApiKeyDone();
         }
     });
     deleteJob->start();
@@ -138,6 +138,9 @@ void OllamaOnlinePlugin::askToAssistant(const QString &msg)
     req.setMessage(msg);
     req.setModel(currentModel());
     auto reply = mOllamaOnlineManager->getCompletion(req);
+    if (!reply) {
+        return;
+    }
     const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,
@@ -163,6 +166,9 @@ void OllamaOnlinePlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);
     auto reply = mOllamaOnlineManager->getChatCompletion(req);
+    if (!reply) {
+        return;
+    }
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
     mConnections.insert(

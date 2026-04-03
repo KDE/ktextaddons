@@ -81,7 +81,7 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalChatsDatabase::loadChats() cons
 {
     const QString dbName = generateDbName(QString());
     QSqlDatabase db = QSqlDatabase::database(dbName);
-    if (!db.isValid()) {
+    if (!db.isValid() || !db.isOpen()) {
         // Open the DB if it exists (don't create a new one)
         const QString fileName = dbFileName(QString());
         // qDebug() << " fileName " << fileName;
@@ -113,12 +113,12 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalChatsDatabase::loadChats() cons
     QList<TextAutoGenerateChat> listChats;
     while (resultQuery.next()) {
         const QString json = resultQuery.value(u"json"_s).toString();
-        listChats.append(convertJsonToMessage(json));
+        listChats.append(convertJsonToChat(json));
     }
     return listChats;
 }
 
-TextAutoGenerateChat TextAutoGenerateLocalChatsDatabase::convertJsonToMessage(const QString &json) const
+TextAutoGenerateChat TextAutoGenerateLocalChatsDatabase::convertJsonToChat(const QString &json) const
 {
     const QJsonDocument doc = QJsonDocument::fromJson(json.toUtf8());
     const TextAutoGenerateChat msg = TextAutoGenerateChat::deserialize(doc.object());

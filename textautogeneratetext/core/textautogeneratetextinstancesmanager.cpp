@@ -61,10 +61,15 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
             delete inst;
         } else {
             auto plugin = client->createTextAutoGeneratePlugin(mManager, inst);
-            plugin->load(configGroup);
-            connect(plugin, &TextAutoGenerateTextPlugin::configChanged, this, &TextAutoGenerateTextInstancesManager::saveInstances);
-            inst->setPlugin(plugin);
-            lstInstances.append(inst);
+            if (!plugin) {
+                qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to create plugin for " << inst->pluginName();
+                delete inst;
+            } else {
+                plugin->load(configGroup);
+                connect(plugin, &TextAutoGenerateTextPlugin::configChanged, this, &TextAutoGenerateTextInstancesManager::saveInstances);
+                inst->setPlugin(plugin);
+                lstInstances.append(inst);
+            }
         }
     }
     // qDebug() << " lstInstances " << lstInstances;

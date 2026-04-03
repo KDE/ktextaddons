@@ -5,7 +5,7 @@
  */
 
 #include "textautogenerateexportchatasjsonjob.h"
-
+#include "textautogeneratetextcore_debug.h"
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -34,10 +34,17 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
     obj[u"title"_s] = mInfo.chatTitle;
     // qDebug() << " obj" << QJsonDocument(obj).toJson();
     QFile data(mInfo.filename);
-    if (data.open(QFile::WriteOnly)) {
-        QTextStream out(&data);
-        out << QJsonDocument(obj).toJson();
+    if (!data.open(QFile::WriteOnly)) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to open file for writing:" << mInfo.filename << "error:" << data.errorString();
+        deleteLater();
+        return;
     }
+    QTextStream out(&data);
+    out << QJsonDocument(obj).toJson();
+    if (out.status() != QTextStream::Ok) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to write to file:" << mInfo.filename;
+    }
+    data.close();
     deleteLater();
 }
 

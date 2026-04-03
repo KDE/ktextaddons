@@ -41,7 +41,7 @@ void TextAutoGenerateSearchJob::start()
     // Sort messages
     std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateSearchMessage &left, const TextAutoGenerateSearchMessage &right) {
         if (left.dateTime() == right.dateTime()) {
-            return true;
+            return false;
         }
         return left.dateTime() < right.dateTime();
     });

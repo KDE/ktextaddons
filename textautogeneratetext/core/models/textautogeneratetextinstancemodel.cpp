@@ -28,7 +28,7 @@ int TextAutoGenerateTextInstanceModel::rowCount(const QModelIndex &parent) const
 
 bool TextAutoGenerateTextInstanceModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
-    if (!idx.isValid()) {
+    if (!idx.isValid() || idx.row() < 0 || idx.row() >= mTextInstances.count()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
         return false;
     }

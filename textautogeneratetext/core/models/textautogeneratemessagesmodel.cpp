@@ -156,6 +156,9 @@ void TextAutoGenerateMessagesModel::setChatId(const QByteArray &newChatId)
 
 QByteArray TextAutoGenerateMessagesModel::lastMessageUuid() const
 {
+    if (mMessages.isEmpty()) {
+        return {};
+    }
     const auto lastMessage = mMessages.constLast();
     if (lastMessage.isValid()) {
         return lastMessage.uuid();

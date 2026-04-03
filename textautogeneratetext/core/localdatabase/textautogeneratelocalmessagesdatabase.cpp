@@ -123,7 +123,7 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalMessagesDatabase::loadMessag
 {
     const QString dbName = generateDbName(chatIdentifier);
     QSqlDatabase db = QSqlDatabase::database(dbName);
-    if (!db.isValid()) {
+    if (!db.isValid() || !db.isOpen()) {
         // Open the DB if it exists (don't create a new one)
         const QString fileName = dbFileName(chatIdentifier);
         // qDebug() << " fileName " << fileName;
@@ -164,7 +164,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
 {
     const QString dbName = generateDbName(chatIdentifier);
     QSqlDatabase db = QSqlDatabase::database(dbName);
-    if (!db.isValid()) {
+    if (!db.isValid() || !db.isOpen()) {
         // Open the DB if it exists (don't create a new one)
         const QString fileName = dbFileName(chatIdentifier);
         // qDebug() << " fileName " << fileName;

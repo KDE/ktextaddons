@@ -98,7 +98,7 @@ void TextAutoGenerateChatsModel::setTextAutoGenerateChatSettings(TextAutoGenerat
 
 bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
-    if (!idx.isValid()) {
+    if (!idx.isValid() || idx.row() < 0 || idx.row() >= mChats.count()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
         return false;
     }
@@ -186,7 +186,7 @@ TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const Q
     if (it != mChats.end()) {
         return (*it).messageModel();
     }
-    return {};
+    return nullptr;
 }
 
 bool TextAutoGenerateChatsModel::isInitialized(const QByteArray &chatId) const

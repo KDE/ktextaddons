@@ -203,15 +203,18 @@ QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const 
 {
     QString toolDisplayList;
     for (const QByteArray &t : tools) {
+        bool found = false;
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
             if (it->plugin->toolNameId() == t) {
                 toolDisplayList.append(u"<li>"_s + it->plugin->displayName() + u"</li>"_s);
+                found = true;
                 break;
-            } else {
-                // TODO use internal tools ?
-                qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "tools not found:" << t;
             }
+        }
+        if (!found) {
+            // TODO use internal tools ?
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "tools not found:" << t;
         }
     }
     return toolDisplayList;

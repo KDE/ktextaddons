@@ -113,6 +113,9 @@ void OllamaPlugin::askToAssistant(const QString &msg)
     req.setMessage(msg);
     req.setModel(currentModel());
     auto reply = mOllamaManager->getCompletion(req);
+    if (!reply) {
+        return;
+    }
     const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,
@@ -138,6 +141,9 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);
     auto reply = mOllamaManager->getChatCompletion(req);
+    if (!reply) {
+        return;
+    }
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
     mConnections.insert(

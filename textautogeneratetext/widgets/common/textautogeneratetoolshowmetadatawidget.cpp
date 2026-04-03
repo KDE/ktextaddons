@@ -35,7 +35,9 @@ TextAutoGenerateToolShowMetaDataWidget::TextAutoGenerateToolShowMetaDataWidget(Q
     auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                      : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
-    hl->setDefinition(def);
+    if (def.isValid()) {
+        hl->setDefinition(def);
+    }
 }
 
 TextAutoGenerateToolShowMetaDataWidget::~TextAutoGenerateToolShowMetaDataWidget() = default;
