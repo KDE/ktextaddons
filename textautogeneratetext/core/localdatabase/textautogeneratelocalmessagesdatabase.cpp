@@ -42,6 +42,7 @@ void TextAutoGenerateLocalMessagesDatabase::deleteDatabase(const QByteArray &cha
         return;
     }
     const QString dbName = generateDbName(chatId);
+    db.close();
     QSqlDatabase::removeDatabase(dbName);
     const QString path = dbFileName(chatId);
     if (!QFile(path).remove()) {
