@@ -56,13 +56,23 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
 void SaveFileUtils::saveFile(QWidget *parentWidget, const QString &filePath, const QString &title)
 {
     const auto file = SaveFileUtils::querySaveFileName(parentWidget, title, QUrl::fromLocalFile(filePath));
-    if (!file.isEmpty()) {
-        if (QFile::exists(file) && !QFile::remove(file)) { // copy() doesn't overwrite
-            qCWarning(TEXTADDONSWIDGETS_LOG) << "Impossible to remove : " << file;
-        }
-        QFile sourceFile(filePath);
-        if (!sourceFile.copy(file)) {
-            KMessageBox::error(parentWidget, sourceFile.errorString(), i18nc("@title:window", "Error saving file"));
-        }
+    if (file.isEmpty()) {
+        return;
+    }
+
+    QFile sourceFile(filePath);
+    if (!sourceFile.exists()) {
+        KMessageBox::error(parentWidget, i18n("Source file no longer exists"), i18nc("@title:window", "Error saving file"));
+        return;
+    }
+
+    QFile destFile(file);
+    if (destFile.exists() && !destFile.remove()) {
+        KMessageBox::error(parentWidget, i18n("Cannot overwrite existing file"), i18nc("@title:window", "Error saving file"));
+        return;
+    }
+
+    if (!sourceFile.copy(file)) {
+        KMessageBox::error(parentWidget, sourceFile.errorString(), i18nc("@title:window", "Error saving file"));
     }
 }
