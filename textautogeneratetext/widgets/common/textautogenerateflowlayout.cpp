@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateflowlayout.h"
+#include "textautogeneratetextwidget_debug.h"
 
 #include <QStyle>
 #include <QWidget>
