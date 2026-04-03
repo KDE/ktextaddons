@@ -209,6 +209,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
                 cmark_node_append_child(p, htmlInline);
 
                 cmark_node_replace(node, p);
+                cmark_node_free(node);
             }
             break;
         }
@@ -229,6 +230,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
                     cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
 
                     cmark_node_replace(node, htmlInline);
+                    cmark_node_free(node);
                 }
             }
             break;
@@ -247,6 +249,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
 
                 cmark_node_replace(node, htmlInline);
+                cmark_node_free(node);
             }
             break;
         }
