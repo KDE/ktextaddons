@@ -41,6 +41,7 @@ void McpClientSse::connection()
 
 void McpClientSse::send(const QJsonObject &obj)
 {
+    // Use post
     // TODO
 }
 
