@@ -6,11 +6,18 @@
 #pragma once
 
 #include <QObject>
-
+class QNetworkAccessManager;
+class QNetworkReply;
 class McpClientSse : public QObject
 {
     Q_OBJECT
 public:
     explicit McpClientSse(QObject *parent = nullptr);
     ~McpClientSse() override;
+
+    void connection();
+
+private:
+    QNetworkAccessManager *const mNetworkAccessManager;
+    QNetworkReply *mReply = nullptr;
 };

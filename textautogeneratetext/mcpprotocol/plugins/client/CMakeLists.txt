@@ -32,7 +32,12 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(mcpprotocolclientplugin BASE_NAME mcpprotocolclientplugin)
 
-target_link_libraries(mcpprotocolclientplugin PUBLIC KF6::TextAutoGenerateTextMcpProtocol)
+target_link_libraries(
+    mcpprotocolclientplugin
+    PUBLIC
+        KF6::TextAutoGenerateTextMcpProtocol
+        Qt::Network
+)
 set_target_properties(
     mcpprotocolclientplugin
     PROPERTIES
