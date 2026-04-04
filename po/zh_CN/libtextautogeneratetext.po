@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -135,40 +135,40 @@ msgid ""
 msgstr ""
 "您是一位人工智能助手。请提供帮助，保持专业和礼貌。不要提供不准确的信息。"
 
-#: core/textautogeneratetextplugin.cpp:279
+#: core/textautogeneratetextplugin.cpp:287
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: core/textautogeneratetextplugin.cpp:281
+#: core/textautogeneratetextplugin.cpp:289
 #, kde-format
 msgid "Network"
 msgstr "网络"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:222
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "Plugins Text:"
 msgstr "插件文本："
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:231
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "工具识别符：%1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "开"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "关"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -2903,7 +2903,7 @@ msgstr "搜索…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "显示内建工具…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format

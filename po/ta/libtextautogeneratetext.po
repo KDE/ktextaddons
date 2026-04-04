@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2026-02-28 11:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -134,40 +134,40 @@ msgid ""
 "give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:279
+#: core/textautogeneratetextplugin.cpp:287
 #, kde-format
 msgid "Local"
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:281
+#: core/textautogeneratetextplugin.cpp:289
 #, kde-format
 msgid "Network"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:222
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "Plugins Text:"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:231
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"

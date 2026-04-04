@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2026-01-29 20:43+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -55,7 +55,7 @@ msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "Сохранить &как..."
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -63,9 +63,20 @@ msgstr "Сохранение файла"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
+msgid "Source file no longer exists"
+msgstr ""
+
+#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:76
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Ошибка сохранения файла"
+
+#: misc/savefileutils.cpp:71
+#, kde-format
+msgid "Cannot overwrite existing file"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -191,12 +202,12 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Проверка наличия новой версии"
 
-#: verifynewversion/checknewversionwidget.cpp:52
+#: verifynewversion/checknewversionwidget.cpp:61
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "Найдена новая версия. Нажмите <a href=\"%1\">сюда</a> для её загрузки."
 
-#: verifynewversion/checknewversionwidget.cpp:54
+#: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "Новая версия не найдена. Сборка доступна <a href=\"%1\">здесь</a>."
@@ -238,17 +249,17 @@ msgstr "Все версии"
 msgid "Version %1"
 msgstr "Версия %1"
 
-#: whatsnew/whatsnewwidget.cpp:85
+#: whatsnew/whatsnewwidget.cpp:92
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Важные изменения по сравнению с предыдущей версией:"
 
-#: whatsnew/whatsnewwidget.cpp:90
+#: whatsnew/whatsnewwidget.cpp:97
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Некоторые из новых возможностей в этой версии:"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:102
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Исправление некоторых ошибок:"

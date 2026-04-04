@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2026-01-28 19:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -143,40 +143,40 @@ msgstr ""
 "professional, and courteous. Do not give inaccurate information. Continue "
 "the conversation in Traditional Chinese."
 
-#: core/textautogeneratetextplugin.cpp:279
+#: core/textautogeneratetextplugin.cpp:287
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: core/textautogeneratetextplugin.cpp:281
+#: core/textautogeneratetextplugin.cpp:289
 #, kde-format
 msgid "Network"
 msgstr "網路"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:222
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "Plugins Text:"
 msgstr "外掛程式文字："
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:231
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "工具識別子：%1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "開啟"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "關閉"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:229
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2025-12-10 12:53+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -54,7 +54,7 @@ msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "שמירה &בשם…"
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -62,9 +62,20 @@ msgstr "שמירת קובץ"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
+msgid "Source file no longer exists"
+msgstr ""
+
+#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:76
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "שגיאה בשמירת קובץ"
+
+#: misc/savefileutils.cpp:71
+#, kde-format
+msgid "Cannot overwrite existing file"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -186,12 +197,12 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "בדיקה לאיתור גרסה חדשה"
 
-#: verifynewversion/checknewversionwidget.cpp:52
+#: verifynewversion/checknewversionwidget.cpp:61
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "נמצאה גרסה חדשה. לחיצה <a href=\"%1\">כאן</a> תוריד אותה."
 
-#: verifynewversion/checknewversionwidget.cpp:54
+#: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "לא נמצאו גרסאות חדשות. <a href=\"%1\">כאן</a> אפשר למצוא את הבנייה."
@@ -233,17 +244,17 @@ msgstr "כל הגרסאות"
 msgid "Version %1"
 msgstr "גרסה %1"
 
-#: whatsnew/whatsnewwidget.cpp:85
+#: whatsnew/whatsnewwidget.cpp:92
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "שינויים חשובים מאז הגרסה האחרונה:"
 
-#: whatsnew/whatsnewwidget.cpp:90
+#: whatsnew/whatsnewwidget.cpp:97
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:102
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "תיקוני תקלות:"

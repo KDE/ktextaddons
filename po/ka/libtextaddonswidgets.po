@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2025-12-10 06:27+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -54,7 +54,7 @@ msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "შენახვა &როგორც…"
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -62,9 +62,20 @@ msgstr "ფაილის შენახვა"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
+msgid "Source file no longer exists"
+msgstr ""
+
+#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:76
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "ფაილის შენახვის შეცდომა"
+
+#: misc/savefileutils.cpp:71
+#, kde-format
+msgid "Cannot overwrite existing file"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -186,13 +197,13 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "ახალი ვერსიის შემოწმება"
 
-#: verifynewversion/checknewversionwidget.cpp:52
+#: verifynewversion/checknewversionwidget.cpp:61
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "აღმოჩენილია ახალი ვერსია. მის გადმოსაწერად დააწკაპუნეთ <a href=\"%1\">აქ</a>."
 
-#: verifynewversion/checknewversionwidget.cpp:54
+#: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
@@ -235,17 +246,17 @@ msgstr "ყველა ვერსია"
 msgid "Version %1"
 msgstr "ვერსია %1"
 
-#: whatsnew/whatsnewwidget.cpp:85
+#: whatsnew/whatsnewwidget.cpp:92
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "მნიშვნელოვანი ცვლილებები ბოლო ვერსიის შემდეგ:"
 
-#: whatsnew/whatsnewwidget.cpp:90
+#: whatsnew/whatsnewwidget.cpp:97
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "ამ რელიზის ზოგიერთი ახალი ფუნქცია:"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:102
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "გამოსწორდა ზოგიერთი შეცდომა:"

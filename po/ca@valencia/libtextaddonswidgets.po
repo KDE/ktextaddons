@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2025-12-10 09:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -55,7 +55,7 @@ msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "Anomena i gu&arda…"
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -63,9 +63,20 @@ msgstr "Guarda el fitxer"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
+msgid "Source file no longer exists"
+msgstr ""
+
+#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:76
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "S'ha produït un error mentre es guardava el fitxer"
+
+#: misc/savefileutils.cpp:71
+#, kde-format
+msgid "Cannot overwrite existing file"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -188,13 +199,13 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Comprovació de versió nova"
 
-#: verifynewversion/checknewversionwidget.cpp:52
+#: verifynewversion/checknewversionwidget.cpp:61
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "S'ha trobat una versió nova. Cliqueu <a href=\"%1\">ací</a> per a baixar-la."
 
-#: verifynewversion/checknewversionwidget.cpp:54
+#: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
@@ -238,17 +249,17 @@ msgstr "Totes les versions"
 msgid "Version %1"
 msgstr "Versió %1"
 
-#: whatsnew/whatsnewwidget.cpp:85
+#: whatsnew/whatsnewwidget.cpp:92
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Canvis importants des de l'última versió:"
 
-#: whatsnew/whatsnewwidget.cpp:90
+#: whatsnew/whatsnewwidget.cpp:97
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Alguna de les característiques noves que inclou esta versió:"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:102
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Algunes esmenes d'errors:"

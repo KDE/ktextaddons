@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-04 00:43+0000\n"
 "PO-Revision-Date: 2025-11-30 11:01+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -53,7 +53,7 @@ msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "வேறு பெயரில் சேமி…"
 
-#: misc/openfilejob.cpp:96
+#: misc/openfilejob.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -61,9 +61,20 @@ msgstr "கோப்பை சேமிப்பது"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
+msgid "Source file no longer exists"
+msgstr ""
+
+#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:76
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "கோப்பை சேமிப்பதில் சிக்கல்"
+
+#: misc/savefileutils.cpp:71
+#, kde-format
+msgid "Cannot overwrite existing file"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -189,13 +200,13 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "புதிய பதிப்பு உள்ளதா என பார்ப்பது"
 
-#: verifynewversion/checknewversionwidget.cpp:52
+#: verifynewversion/checknewversionwidget.cpp:61
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "புதிய பதிப்பு உள்ளது. அதைப் பதிவிறக்க <a href=\"%1\">இங்கு</a> கிளிக் செய்யவும்."
 
-#: verifynewversion/checknewversionwidget.cpp:54
+#: verifynewversion/checknewversionwidget.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
@@ -240,17 +251,17 @@ msgstr "அனைத்து பதிப்புகளும்"
 msgid "Version %1"
 msgstr "பதிப்பு %1"
 
-#: whatsnew/whatsnewwidget.cpp:85
+#: whatsnew/whatsnewwidget.cpp:92
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "சென்ற பதிப்புக்கு பிந்தைய முக்கிய மாற்றங்கள்:"
 
-#: whatsnew/whatsnewwidget.cpp:90
+#: whatsnew/whatsnewwidget.cpp:97
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "இப்பதிப்பின் சில புதிய அம்சங்கள் பின்வருவன:"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:102
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "திருத்தப்பட்ட சில பிழைகள்:"
