@@ -10,3 +10,13 @@ using namespace McpProtocol;
 McpProtocolSettings::McpProtocolSettings() = default;
 
 McpProtocolSettings::~McpProtocolSettings() = default;
+
+QVariant McpProtocolSettings::serverInfo() const
+{
+    return mServerInfo;
+}
+
+void McpProtocolSettings::setServerInfo(const QVariant &newServerInfo)
+{
+    mServerInfo = newServerInfo;
+}

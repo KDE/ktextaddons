@@ -22,32 +22,41 @@ void McpProtocolClient::initialize()
 {
     if (mPlugin) {
         mPluginInterface = mPlugin->createInterface(mProtocolType, this);
-        connect(mPluginInterface, &McpProtocolPluginInterface::error, this, &McpProtocolClient::error);
-        connect(mPluginInterface, &McpProtocolPluginInterface::received, this, &McpProtocolClient::received);
-        connect(mPluginInterface, &McpProtocolPluginInterface::started, this, &McpProtocolClient::started);
+        if (mPluginInterface) {
+            connect(mPluginInterface, &McpProtocolPluginInterface::error, this, &McpProtocolClient::error);
+            connect(mPluginInterface, &McpProtocolPluginInterface::received, this, &McpProtocolClient::received);
+            connect(mPluginInterface, &McpProtocolPluginInterface::started, this, &McpProtocolClient::started);
+        }
     }
 }
 
 void McpProtocolClient::setSettings(McpProtocolSettings *settings)
 {
-    mPluginInterface->setSettings(settings);
+    if (mPluginInterface) {
+        mPluginInterface->setSettings(settings);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "mPluginInterface is nullptr. It's a bug";
+    }
 }
 
 bool McpProtocolClient::canStart() const
 {
-    const bool result = mPluginInterface->canStart();
-    if (!result) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
+    if (mPluginInterface) {
+        const bool result = mPluginInterface->canStart();
+        if (!result) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
+        }
+        return result;
     }
-    return result;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. mPluginInterface is null. It's a bug";
+    return false;
 }
 
 void McpProtocolClient::start()
 {
-    if (mPluginInterface) {
+    if (canStart()) {
         mPluginInterface->start();
     }
-    // TODO
 }
 
 McpProtocolPlugin::ProtocolType McpProtocolClient::protocolType() const

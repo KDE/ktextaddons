@@ -8,6 +8,7 @@
 
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QObject>
+#include <QVariant>
 namespace McpProtocol
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolSettings
@@ -15,6 +16,11 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolSettings
 public:
     McpProtocolSettings();
     ~McpProtocolSettings();
-};
 
+    [[nodiscard]] QVariant serverInfo() const;
+    void setServerInfo(const QVariant &newServerInfo);
+
+private:
+    QVariant mServerInfo;
+};
 }
