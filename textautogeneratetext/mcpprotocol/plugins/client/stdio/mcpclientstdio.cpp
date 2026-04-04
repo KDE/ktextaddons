@@ -11,18 +11,18 @@ McpClientStdio::McpClientStdio(QObject *parent)
     : QObject{parent}
     , mProcess(new QProcess(this))
 {
-}
-
-McpClientStdio::~McpClientStdio() = default;
-
-void McpClientStdio::connection()
-{
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
         Q_EMIT error(mProcess->errorString());
     });
     connect(mProcess, &QProcess::started, this, &McpClientStdio::started);
     connect(mProcess, &QProcess::finished, this, &McpClientStdio::finished);
+}
+
+McpClientStdio::~McpClientStdio() = default;
+
+void McpClientStdio::connection()
+{
 }
 
 void McpClientStdio::send(const QJsonObject &obj)
