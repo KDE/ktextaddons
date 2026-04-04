@@ -22,6 +22,8 @@ public:
 
     void setSettings(McpProtocolSettings *settings);
 
+    [[nodiscard]] bool canStart() const;
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);

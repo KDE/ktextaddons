@@ -19,4 +19,9 @@ void McpProtocolPluginInterface::setSettings(McpProtocolSettings *settings)
     mProtocolSettings.reset(settings);
 }
 
+bool McpProtocolPluginInterface::canStart() const
+{
+    return mProtocolSettings.get();
+}
+
 #include "moc_mcpprotocolplugininterface.cpp"

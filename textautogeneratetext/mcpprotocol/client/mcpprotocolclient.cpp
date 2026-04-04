@@ -5,6 +5,7 @@
 */
 #include "mcpprotocolclient.h"
 #include "common/mcpprotocolplugininterface.h"
+#include "textautogeneratetextmcpprotocol_debug.h"
 
 using namespace McpProtocol;
 using namespace Qt::Literals::StringLiterals;
@@ -30,6 +31,15 @@ void McpProtocolClient::initialize()
 void McpProtocolClient::setSettings(McpProtocolSettings *settings)
 {
     mPluginInterface->setSettings(settings);
+}
+
+bool McpProtocolClient::canStart() const
+{
+    const bool result = mPluginInterface->canStart();
+    if (!result) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
+    }
+    return result;
 }
 
 void McpProtocolClient::start()
