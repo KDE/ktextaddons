@@ -8,6 +8,7 @@
 #include <QObject>
 class QNetworkAccessManager;
 class QNetworkReply;
+class QJsonObject;
 class McpClientSse : public QObject
 {
     Q_OBJECT
@@ -17,7 +18,14 @@ public:
 
     void connection();
 
+Q_SIGNALS:
+    void started();
+    void received(const QJsonObject &obj);
+    void error(const QString &str);
+    void finished();
+
 private:
+    void slotRead();
     QNetworkAccessManager *const mNetworkAccessManager;
     QNetworkReply *mReply = nullptr;
 };

@@ -28,6 +28,7 @@ Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);
     void error(const QString &str);
+    void finished();
 
 private:
     std::unique_ptr<McpProtocolSettings> mProtocolSettings;
