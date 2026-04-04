@@ -39,9 +39,16 @@ void McpClientSse::connection()
     connect(mReply, &QNetworkReply::readyRead, this, &McpClientSse::slotRead);
 }
 
+void McpClientSse::send(const QJsonObject &obj)
+{
+    // TODO
+}
+
 void McpClientSse::slotRead()
 {
     // TODO
+    const QByteArray response = mReply->readAll();
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " response " << response;
 }
 
 #include "moc_mcpclientsse.cpp"

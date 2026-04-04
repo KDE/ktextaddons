@@ -24,4 +24,9 @@ void McpClientSsePluginInterface::start()
     // TODO
 }
 
+void McpClientSsePluginInterface::send(const QJsonObject &obj)
+{
+    mClientSse->send(obj);
+}
+
 #include "moc_mcpclientsseplugininterface.cpp"

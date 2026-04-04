@@ -20,6 +20,8 @@ target_sources(
         sse/mcpclientsseplugininterface.cpp
         stdio/mcpclientstdioplugininterface.cpp
         stdio/mcpclientstdioplugininterface.h
+        stdio/mcpclientstdio.h
+        stdio/mcpclientstdio.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

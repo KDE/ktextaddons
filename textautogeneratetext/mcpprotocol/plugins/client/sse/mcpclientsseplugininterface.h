@@ -16,6 +16,8 @@ public:
     ~McpClientSsePluginInterface() override;
     void start() override;
 
+    void send(const QJsonObject &obj) override;
+
 private:
     McpClientSse *const mClientSse;
 };

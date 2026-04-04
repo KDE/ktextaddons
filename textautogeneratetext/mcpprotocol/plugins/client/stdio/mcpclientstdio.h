@@ -6,18 +6,15 @@
 #pragma once
 
 #include <QObject>
-class QNetworkAccessManager;
-class QNetworkReply;
-class QJsonObject;
-class McpClientSse : public QObject
+class QProcess;
+class McpClientStdio : public QObject
 {
     Q_OBJECT
 public:
-    explicit McpClientSse(QObject *parent = nullptr);
-    ~McpClientSse() override;
+    explicit McpClientStdio(QObject *parent = nullptr);
+    ~McpClientStdio() override;
 
     void connection();
-
     void send(const QJsonObject &obj);
 
 Q_SIGNALS:
@@ -27,7 +24,5 @@ Q_SIGNALS:
     void finished();
 
 private:
-    void slotRead();
-    QNetworkAccessManager *const mNetworkAccessManager;
-    QNetworkReply *mReply = nullptr;
+    QProcess *const mProcess;
 };

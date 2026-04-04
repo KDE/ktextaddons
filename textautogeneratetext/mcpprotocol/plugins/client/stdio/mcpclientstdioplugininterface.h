@@ -7,7 +7,7 @@
 #include "common/mcpprotocolplugininterface.h"
 #include "mcpprotocolclientplugin_export.h"
 #include <QObject>
-
+class McpClientStdio;
 class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientStdioPluginInterface : public McpProtocol::McpProtocolPluginInterface
 {
     Q_OBJECT
@@ -16,4 +16,9 @@ public:
     ~McpClientStdioPluginInterface() override;
 
     void start() override;
+
+    void send(const QJsonObject &obj) override;
+
+private:
+    McpClientStdio *const mClientStdio;
 };

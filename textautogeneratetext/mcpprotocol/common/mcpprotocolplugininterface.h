@@ -24,6 +24,8 @@ public:
 
     [[nodiscard]] bool canStart() const;
 
+    virtual void send(const QJsonObject &obj) = 0;
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);
