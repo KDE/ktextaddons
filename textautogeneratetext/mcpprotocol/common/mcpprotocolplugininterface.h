@@ -7,8 +7,10 @@
 
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QObject>
+#include <memory>
 namespace McpProtocol
 {
+class McpProtocolSettings;
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolPluginInterface : public QObject
 {
     Q_OBJECT
@@ -18,9 +20,14 @@ public:
 
     virtual void start() = 0;
 
+    void setSettings(McpProtocolSettings *settings);
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);
     void error(const QString &str);
+
+private:
+    std::unique_ptr<McpProtocolSettings> mProtocolSettings;
 };
 }

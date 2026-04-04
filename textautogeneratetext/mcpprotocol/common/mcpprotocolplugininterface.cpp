@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolplugininterface.h"
+#include "common/mcpprotocolsettings.h"
 
 using namespace McpProtocol;
 McpProtocolPluginInterface::McpProtocolPluginInterface(QObject *parent)
@@ -12,5 +13,10 @@ McpProtocolPluginInterface::McpProtocolPluginInterface(QObject *parent)
 }
 
 McpProtocolPluginInterface::~McpProtocolPluginInterface() = default;
+
+void McpProtocolPluginInterface::setSettings(McpProtocolSettings *settings)
+{
+    mProtocolSettings.reset(settings);
+}
 
 #include "moc_mcpprotocolplugininterface.cpp"

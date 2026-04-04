@@ -10,6 +10,7 @@
 #include <QObject>
 namespace McpProtocol
 {
+class McpProtocolSettings;
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolClient : public QObject
 {
     Q_OBJECT
@@ -18,6 +19,7 @@ public:
     ~McpProtocolClient() override;
 
     [[nodiscard]] McpProtocol::McpProtocolPlugin::ProtocolType protocolType() const;
+    void setSettings(McpProtocolSettings *settings);
 
     void start();
 
@@ -31,5 +33,6 @@ private:
     const McpProtocol::McpProtocolPlugin::ProtocolType mProtocolType;
     McpProtocolPlugin *mPlugin = nullptr;
     McpProtocolPluginInterface *mPluginInterface = nullptr;
+    McpProtocolSettings *mProtocolSettings = nullptr;
 };
 }
