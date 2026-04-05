@@ -11,12 +11,12 @@ McpProtocolSettings::McpProtocolSettings() = default;
 
 McpProtocolSettings::~McpProtocolSettings() = default;
 
-QVariant McpProtocolSettings::serverInfo() const
+QVariant McpProtocolSettings::connectionInfo() const
 {
-    return mServerInfo;
+    return mConnectionInfo;
 }
 
-void McpProtocolSettings::setServerInfo(const QVariant &newServerInfo)
+void McpProtocolSettings::setConnectionInfo(const QVariant &newConnectionInfo)
 {
-    mServerInfo = newServerInfo;
+    mConnectionInfo = newConnectionInfo;
 }

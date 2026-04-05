@@ -17,10 +17,10 @@ public:
     McpProtocolSettings();
     ~McpProtocolSettings();
 
-    [[nodiscard]] QVariant serverInfo() const;
-    void setServerInfo(const QVariant &newServerInfo);
+    [[nodiscard]] QVariant connectionInfo() const;
+    void setConnectionInfo(const QVariant &newConnectionInfo);
 
 private:
-    QVariant mServerInfo;
+    QVariant mConnectionInfo;
 };
 }
