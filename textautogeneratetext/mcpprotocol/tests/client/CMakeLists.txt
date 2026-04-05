@@ -1,2 +1,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+add_executable(mcpclient_gui main.cpp)
+
+target_link_libraries(
+    mcpclient_gui
+    KF6::TextAutoGenerateTextMcpProtocol
+    Qt::Widgets
+)
