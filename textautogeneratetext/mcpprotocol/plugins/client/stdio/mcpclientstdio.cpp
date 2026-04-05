@@ -5,11 +5,13 @@
 */
 #include "mcpclientstdio.h"
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
+#include "stdio/mcpclientstdioplugininterface.h"
 #include <QProcess>
 
-McpClientStdio::McpClientStdio(QObject *parent)
+McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent)
     : QObject{parent}
     , mProcess(new QProcess(this))
+    , mInterface(interface)
 {
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();

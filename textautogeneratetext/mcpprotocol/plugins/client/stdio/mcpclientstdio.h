@@ -7,11 +7,12 @@
 
 #include <QObject>
 class QProcess;
+class McpClientStdioPluginInterface;
 class McpClientStdio : public QObject
 {
     Q_OBJECT
 public:
-    explicit McpClientStdio(QObject *parent = nullptr);
+    explicit McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent = nullptr);
     ~McpClientStdio() override;
 
     void connection();
@@ -25,4 +26,5 @@ Q_SIGNALS:
 
 private:
     QProcess *const mProcess;
+    McpClientStdioPluginInterface *const mInterface;
 };

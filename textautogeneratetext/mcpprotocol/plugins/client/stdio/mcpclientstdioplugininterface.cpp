@@ -8,7 +8,7 @@
 
 McpClientStdioPluginInterface::McpClientStdioPluginInterface(QObject *parent)
     : McpProtocol::McpProtocolPluginInterface{parent}
-    , mClientStdio(new McpClientStdio(this))
+    , mClientStdio(new McpClientStdio(this, this))
 {
 }
 
