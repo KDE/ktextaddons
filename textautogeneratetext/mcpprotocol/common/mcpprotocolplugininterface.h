@@ -26,6 +26,8 @@ public:
 
     virtual void send(const QJsonObject &obj) = 0;
 
+    [[nodiscard]] QVariant connectionInfo() const;
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);

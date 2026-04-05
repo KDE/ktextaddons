@@ -7,6 +7,7 @@
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "stdio/mcpclientstdioplugininterface.h"
 #include <QProcess>
+#include <QVariant>
 
 McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent)
     : QObject{parent}
@@ -25,6 +26,10 @@ McpClientStdio::~McpClientStdio() = default;
 
 void McpClientStdio::connection()
 {
+    const QVariant connection = mInterface->connectionInfo();
+    if (!connection.isNull()) {
+        const QStringList info = connection.toStringList();
+    }
 }
 
 void McpClientStdio::send(const QJsonObject &obj)
