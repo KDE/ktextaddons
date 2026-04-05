@@ -17,7 +17,5 @@ public:
     explicit McpClientPlugin(QObject *parent = nullptr);
     ~McpClientPlugin() override;
 
-    /*!
-     */
     [[nodiscard]] McpProtocol::McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
 };

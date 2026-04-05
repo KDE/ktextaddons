@@ -25,7 +25,7 @@ McpProtocol::McpProtocolPluginInterface *McpClientPlugin::createInterface(McpPro
         return new McpClientStdioPluginInterface(parent);
     case McpProtocol::McpProtocolPlugin::ProtocolType::StreamableHttp:
         qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LOG) << "Not implemented yet." << type;
-        break;
+        return nullptr;
     default:
         break;
     }
