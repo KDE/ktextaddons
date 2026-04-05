@@ -8,7 +8,7 @@
 
 McpClientSsePluginInterface::McpClientSsePluginInterface(QObject *parent)
     : McpProtocol::McpProtocolPluginInterface{parent}
-    , mClientSse(new McpClientSse(this))
+    , mClientSse(new McpClientSse(this, this))
 {
     connect(mClientSse, &McpClientSse::started, this, &McpClientSsePluginInterface::started);
     connect(mClientSse, &McpClientSse::received, this, &McpClientSsePluginInterface::received);
@@ -21,7 +21,6 @@ McpClientSsePluginInterface::~McpClientSsePluginInterface() = default;
 void McpClientSsePluginInterface::start()
 {
     mClientSse->connection();
-    // TODO
 }
 
 void McpClientSsePluginInterface::send(const QJsonObject &obj)

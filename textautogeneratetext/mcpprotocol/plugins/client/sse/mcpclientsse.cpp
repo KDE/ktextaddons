@@ -8,9 +8,10 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 using namespace Qt::Literals::StringLiterals;
-McpClientSse::McpClientSse(QObject *parent)
+McpClientSse::McpClientSse(McpClientSsePluginInterface *interface, QObject *parent)
     : QObject{parent}
     , mNetworkAccessManager(new QNetworkAccessManager(this))
+    , mInterface(interface)
 {
 }
 
