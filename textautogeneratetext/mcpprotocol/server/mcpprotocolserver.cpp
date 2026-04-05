@@ -8,8 +8,9 @@
 using namespace McpProtocol;
 using namespace Qt::Literals::StringLiterals;
 
-McpProtocolServer::McpProtocolServer(QObject *parent)
+McpProtocolServer::McpProtocolServer(McpProtocolPlugin::ProtocolType protocolType, QObject *parent)
     : QObject{parent}
+    , mProtocolType(protocolType)
 {
 }
 

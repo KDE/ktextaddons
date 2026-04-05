@@ -5,14 +5,23 @@
 */
 #pragma once
 
+#include "common/mcpprotocolplugin.h"
+#include "textautogeneratetextmcpprotocol_export.h"
 #include <QObject>
 namespace McpProtocol
 {
-class McpProtocolServer : public QObject
+class McpProtocolSettings;
+class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolServer : public QObject
 {
     Q_OBJECT
 public:
-    explicit McpProtocolServer(QObject *parent = nullptr);
+    explicit McpProtocolServer(McpProtocolPlugin::ProtocolType protocolType, QObject *parent = nullptr);
     ~McpProtocolServer() override;
+
+private:
+    const McpProtocol::McpProtocolPlugin::ProtocolType mProtocolType;
+    McpProtocolPlugin *mPlugin = nullptr;
+    McpProtocolPluginInterface *mPluginInterface = nullptr;
+    McpProtocolSettings *mProtocolSettings = nullptr;
 };
 }

@@ -14,6 +14,7 @@ McpProtocolClient::McpProtocolClient(McpProtocolPlugin::ProtocolType protocolTyp
     , mProtocolType(protocolType)
 {
     initialize();
+    // TODO load plugins !
 }
 
 McpProtocolClient::~McpProtocolClient() = default;
@@ -27,6 +28,8 @@ void McpProtocolClient::initialize()
             connect(mPluginInterface, &McpProtocolPluginInterface::received, this, &McpProtocolClient::received);
             connect(mPluginInterface, &McpProtocolPluginInterface::started, this, &McpProtocolClient::started);
         }
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "plugin not found for " << mProtocolType;
     }
 }
 
