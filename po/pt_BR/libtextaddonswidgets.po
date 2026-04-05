@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-04 00:43+0000\n"
-"PO-Revision-Date: 2025-12-10 05:06-0300\n"
+"PO-Revision-Date: 2026-04-04 06:13-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "Salvar arquivo"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "O arquivo de origem não existe mais"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -75,7 +75,7 @@ msgstr "Erro ao salvar o arquivo"
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "Não foi possível sobrescrever o arquivo existente"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
