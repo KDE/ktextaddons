@@ -1,15 +1,15 @@
 # Translation of libtextaddonswidgets.po to Catalan (Valencian)
-# Copyright (C) 2023-2025 This_file_is_part_of_KDE
+# Copyright (C) 2023-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-04 00:43+0000\n"
-"PO-Revision-Date: 2025-12-10 09:49+0100\n"
+"PO-Revision-Date: 2026-04-04 10:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -64,7 +64,7 @@ msgstr "Guarda el fitxer"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "El fitxer d'origen ja no existix"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -76,7 +76,7 @@ msgstr "S'ha produït un error mentre es guardava el fitxer"
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "No s'ha pogut sobreescriure el fitxer existent"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
