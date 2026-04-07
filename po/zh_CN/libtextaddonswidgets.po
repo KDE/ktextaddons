@@ -62,7 +62,7 @@ msgstr "保存文件"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "源文件已不存在"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -74,7 +74,7 @@ msgstr "保存文件时发生错误"
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "无法覆盖已有文件"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
