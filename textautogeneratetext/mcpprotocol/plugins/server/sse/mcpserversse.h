@@ -9,13 +9,13 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class QJsonObject;
-class McpClientSsePluginInterface;
-class McpClientSse : public QObject
+class McpServerSsePluginInterface;
+class McpServerSse : public QObject
 {
     Q_OBJECT
 public:
-    explicit McpClientSse(McpClientSsePluginInterface *interface, QObject *parent = nullptr);
-    ~McpClientSse() override;
+    explicit McpServerSse(McpServerSsePluginInterface *interface, QObject *parent = nullptr);
+    ~McpServerSse() override;
 
     void connection();
 
@@ -31,5 +31,5 @@ private:
     void slotRead();
     QNetworkAccessManager *const mNetworkAccessManager;
     QNetworkReply *mReply = nullptr;
-    McpClientSsePluginInterface *const mInterface;
+    McpServerSsePluginInterface *const mInterface;
 };

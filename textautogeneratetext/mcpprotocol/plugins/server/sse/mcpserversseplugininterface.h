@@ -8,12 +8,12 @@
 #include "mcpprotocolclientplugin_export.h"
 #include <QObject>
 class McpClientSse;
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientSsePluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpServerSsePluginInterface : public McpProtocol::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:
-    explicit McpClientSsePluginInterface(QObject *parent = nullptr);
-    ~McpClientSsePluginInterface() override;
+    explicit McpServerSsePluginInterface(QObject *parent = nullptr);
+    ~McpServerSsePluginInterface() override;
     void start() override;
 
     void send(const QJsonObject &obj) override;
