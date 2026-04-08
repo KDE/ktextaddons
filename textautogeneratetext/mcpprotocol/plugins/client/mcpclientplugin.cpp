@@ -7,6 +7,7 @@
 #include "autogeneratetext_mcpprotocolclientplugin_debug.h"
 #include "sse/mcpclientsseplugininterface.h"
 #include "stdio/mcpclientstdioplugininterface.h"
+#include "streamanblehttp/mcpclientstreamblehttpplugininterface.h"
 
 McpClientPlugin::McpClientPlugin(QObject *parent)
     : McpProtocol::McpProtocolPlugin{parent}
@@ -24,8 +25,7 @@ McpProtocol::McpProtocolPluginInterface *McpClientPlugin::createInterface(McpPro
     case McpProtocol::McpProtocolPlugin::ProtocolType::Stdio:
         return new McpClientStdioPluginInterface(parent);
     case McpProtocol::McpProtocolPlugin::ProtocolType::StreamableHttp:
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LOG) << "Not implemented yet." << type;
-        return nullptr;
+        return new McpClientStreambleHttpPluginInterface(parent);
     default:
         break;
     }
