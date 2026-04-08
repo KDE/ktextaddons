@@ -377,9 +377,9 @@ msgid "Resource Usage"
 msgstr "Využitie zdrojov"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thread:"
-msgstr "<b>%1</b> vlákno"
+msgstr "Vlákno:"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
