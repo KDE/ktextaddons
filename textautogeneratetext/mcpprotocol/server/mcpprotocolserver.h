@@ -18,6 +18,13 @@ public:
     explicit McpProtocolServer(McpProtocolPlugin::ProtocolType protocolType, QObject *parent = nullptr);
     ~McpProtocolServer() override;
 
+    [[nodiscard]] McpProtocol::McpProtocolPlugin::ProtocolType protocolType() const;
+    void setSettings(McpProtocolSettings *settings);
+
+    void start();
+
+    [[nodiscard]] bool canStart() const;
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);

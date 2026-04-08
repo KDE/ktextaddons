@@ -34,4 +34,33 @@ void McpProtocolServer::initialize()
     }
 }
 
+void McpProtocolServer::setSettings(McpProtocolSettings *settings)
+{
+    if (mPluginInterface) {
+        mPluginInterface->setSettings(settings);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "mPluginInterface is nullptr. It's a bug";
+    }
+}
+
+bool McpProtocolServer::canStart() const
+{
+    if (mPluginInterface) {
+        const bool result = mPluginInterface->canStart();
+        if (!result) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
+        }
+        return result;
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. mPluginInterface is null. It's a bug";
+    return false;
+}
+
+void McpProtocolServer::start()
+{
+    if (canStart()) {
+        mPluginInterface->start();
+    }
+}
+
 #include "moc_mcpprotocolserver.cpp"
