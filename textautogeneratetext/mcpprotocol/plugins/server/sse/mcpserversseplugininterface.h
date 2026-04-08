@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "common/mcpprotocolplugininterface.h"
-#include "mcpprotocolclientplugin_export.h"
+#include "mcpprotocolserverplugin_export.h"
 #include <QObject>
-class McpClientSse;
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpServerSsePluginInterface : public McpProtocol::McpProtocolPluginInterface
+class McpServerSse;
+class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerSsePluginInterface : public McpProtocol::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:
@@ -19,5 +19,5 @@ public:
     void send(const QJsonObject &obj) override;
 
 private:
-    McpClientSse *const mClientSse;
+    McpServerSse *const mServerSse;
 };

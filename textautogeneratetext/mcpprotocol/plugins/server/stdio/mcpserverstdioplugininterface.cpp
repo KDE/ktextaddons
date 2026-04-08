@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverstdioplugininterface.h"
-#include "stdio/mcpclientstdio.h"
+#include "stdio/mcpserverstdio.h"
 
 McpServerStdioPluginInterface::McpServerStdioPluginInterface(QObject *parent)
     : McpProtocol::McpProtocolPluginInterface{parent}
-    , mClientStdio(new McpClientStdio(this, this))
+    , mServerStdio(new McpServerStdio(this, this))
 {
 }
 
@@ -16,12 +16,12 @@ McpServerStdioPluginInterface::~McpServerStdioPluginInterface() = default;
 
 void McpServerStdioPluginInterface::start()
 {
-    mClientStdio->connection();
+    mServerStdio->connection();
 }
 
 void McpServerStdioPluginInterface::send(const QJsonObject &obj)
 {
-    mClientStdio->send(obj);
+    mServerStdio->send(obj);
 }
 
 #include "moc_mcpserverstdioplugininterface.cpp"

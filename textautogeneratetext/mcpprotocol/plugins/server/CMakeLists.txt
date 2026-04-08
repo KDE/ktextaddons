@@ -11,7 +11,20 @@ ecm_qt_declare_logging_category(mcpprotocolserverplugin
     EXPORT KTEXTADDONS
 )
 
-target_sources(mcpprotocolserverplugin PRIVATE)
+target_sources(
+    mcpprotocolserverplugin
+    PRIVATE
+        sse/mcpserversse.h
+        sse/mcpserversse.cpp
+        sse/mcpserversseplugininterface.h
+        sse/mcpserversseplugininterface.cpp
+        stdio/mcpserverstdioplugininterface.cpp
+        stdio/mcpserverstdioplugininterface.h
+        stdio/mcpserverstdio.h
+        stdio/mcpserverstdio.cpp
+        streamanblehttp/mcpserverstreamblehttpplugininterface.h
+        streamanblehttp/mcpserverstreamblehttpplugininterface.cpp
+)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
@@ -23,7 +36,12 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(mcpprotocolserverplugin BASE_NAME mcpprotocolserverplugin)
 
-target_link_libraries(mcpprotocolserverplugin PUBLIC KF6::TextAutoGenerateTextMcpProtocol)
+target_link_libraries(
+    mcpprotocolserverplugin
+    PUBLIC
+        KF6::TextAutoGenerateTextMcpProtocol
+        Qt::Network
+)
 set_target_properties(
     mcpprotocolserverplugin
     PROPERTIES

@@ -6,9 +6,9 @@
 #pragma once
 
 #include "common/mcpprotocolplugininterface.h"
-#include "mcpprotocolclientplugin_export.h"
+#include "mcpprotocolserverplugin_export.h"
 
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpServerStreambleHttpPluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerStreambleHttpPluginInterface : public McpProtocol::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:

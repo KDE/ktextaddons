@@ -4,28 +4,28 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserversseplugininterface.h"
-#include "sse/mcpclientsse.h"
+#include "sse/mcpserversse.h"
 
 McpServerSsePluginInterface::McpServerSsePluginInterface(QObject *parent)
     : McpProtocol::McpProtocolPluginInterface{parent}
-    , mClientSse(new McpClientSse(this, this))
+    , mServerSse(new McpServerSse(this, this))
 {
-    connect(mClientSse, &McpClientSse::started, this, &McpServerSsePluginInterface::started);
-    connect(mClientSse, &McpClientSse::received, this, &McpServerSsePluginInterface::received);
-    connect(mClientSse, &McpClientSse::error, this, &McpServerSsePluginInterface::error);
-    connect(mClientSse, &McpClientSse::finished, this, &McpServerSsePluginInterface::finished);
+    connect(mServerSse, &McpServerSse::started, this, &McpServerSsePluginInterface::started);
+    connect(mServerSse, &McpServerSse::received, this, &McpServerSsePluginInterface::received);
+    connect(mServerSse, &McpServerSse::error, this, &McpServerSsePluginInterface::error);
+    connect(mServerSse, &McpServerSse::finished, this, &McpServerSsePluginInterface::finished);
 }
 
 McpServerSsePluginInterface::~McpServerSsePluginInterface() = default;
 
 void McpServerSsePluginInterface::start()
 {
-    mClientSse->connection();
+    mServerSse->connection();
 }
 
 void McpServerSsePluginInterface::send(const QJsonObject &obj)
 {
-    mClientSse->send(obj);
+    mServerSse->send(obj);
 }
 
 #include "moc_mcpserversseplugininterface.cpp"

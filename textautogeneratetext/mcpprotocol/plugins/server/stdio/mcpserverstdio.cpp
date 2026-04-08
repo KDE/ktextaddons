@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverstdio.h"
-#include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
-#include "stdio/mcpclientstdioplugininterface.h"
+#include "autogeneratetext_mcpprotocolserverplugin_lib_debug.h"
+#include "stdio/mcpserverstdioplugininterface.h"
 #include <QJsonDocument>
 #include <QProcess>
 #include <QVariant>
@@ -16,7 +16,7 @@ McpServerStdio::McpServerStdio(McpServerStdioPluginInterface *interface, QObject
     , mInterface(interface)
 {
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << mProcess->errorString();
         Q_EMIT error(mProcess->errorString());
     });
     connect(mProcess, &QProcess::started, this, &McpServerStdio::started);

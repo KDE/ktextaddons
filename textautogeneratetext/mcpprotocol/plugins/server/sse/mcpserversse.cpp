@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserversse.h"
-#include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
+#include "autogeneratetext_mcpprotocolserverplugin_lib_debug.h"
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 using namespace Qt::Literals::StringLiterals;
@@ -29,7 +29,7 @@ void McpServerSse::connection()
     connect(mReply, &QNetworkReply::finished, this, &McpServerSse::finished);
     connect(mReply, &QNetworkReply::sslErrors, this, [this](const QList<QSslError> &errors) {
         for (const QSslError &error : errors) {
-            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << error.errorString();
+            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << error.errorString();
         }
         mReply->ignoreSslErrors();
     });
@@ -50,7 +50,7 @@ void McpServerSse::slotRead()
 {
     // TODO
     const QByteArray response = mReply->readAll();
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " response " << response;
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << " response " << response;
 }
 
 #include "moc_mcpserversse.cpp"
