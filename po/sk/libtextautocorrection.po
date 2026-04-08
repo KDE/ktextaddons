@@ -33,15 +33,13 @@ msgid "Select Custom System Path"
 msgstr "Vybrať vlastnú systémovú cestu"
 
 #: widgets/autocorrectionwidget.cpp:151
-#, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Automatické opravy LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:155
-#, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Automatické opravy KMail/Calligra"
@@ -52,8 +50,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Reťazec \"Nahradiť\" je rovnaký ako reťazec \"Nájsť\"."
 
 #: widgets/autocorrectionwidget.cpp:433
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Pridať položku automatických opráv"
@@ -92,8 +89,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Súbor automatických opráv KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:659
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importovať súbor automatických opráv"
@@ -105,8 +101,7 @@ msgstr ""
 "Jazyk bol zmenený, chcete uložiť konfiguráciu pre predchádzajúci jazyk?"
 
 #: widgets/autocorrectionwidget.cpp:684
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Uložiť konfiguráciu"
@@ -117,8 +112,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Prosím, uložte zmeny pred exportom nastavení."
 
 #: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Exportovať súbor automatických opráv"
@@ -137,17 +131,15 @@ msgstr "Náhrady a výnimky pre jazyk:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
-msgstr "Exportovať..."
+msgstr "Exportovať…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Importovať..."
+msgstr "Importovať…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -176,8 +168,7 @@ msgstr "&Nájsť"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgid "&Replace"
 msgstr "Nahradiť"
 
@@ -296,10 +287,9 @@ msgstr "Väčšina štandardných zápisov zlomkov sa skonvertuje, ak je to mož
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "&Nahradiť 1/2... s ½..."
+msgstr "&Nahradiť 1/2… s ½…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -343,10 +333,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "Nahradiť 1st... za 1^st... (režim HTML)"
+msgstr "Nahradiť 1st… za 1^st… (režim HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -474,7 +463,7 @@ msgstr "Vlastná systémová cesta:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

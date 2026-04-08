@@ -327,21 +327,20 @@ msgstr "Jidiš"
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr ""
+msgstr "Bergamot Plugin Settings"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Bergamot"
-msgstr ""
+msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:49
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Hľadať..."
+msgstr "Hľadať…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
 #, kde-format
@@ -357,13 +356,13 @@ msgstr "Vymazať"
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr ""
+msgstr "Update List"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Update zoznam languages from network"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
@@ -374,22 +373,22 @@ msgstr "Chyba: %1"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr ""
+msgstr "Use translation cache"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:27
 #, kde-format
 msgid "Resource Usage"
-msgstr ""
+msgstr "Resource Usage"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thread:"
 msgstr "niť"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:40
 #, kde-format
 msgid "Memory by Thread:"
-msgstr ""
+msgstr "Memory by Thread:"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:31
 #, kde-format
@@ -402,15 +401,14 @@ msgid "Settings"
 msgstr "Nastavenia"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
-#, fuzzy, kde-format
-#| msgid "Server url is not defined."
+#, kde-format
 msgid "Language model is not defined."
 msgstr "Url adresa servera nie je definovaná."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Cannot open file for downloading."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:48
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
@@ -428,21 +426,20 @@ msgstr ""
 #: translator/plugins/bergamot/managermodeltranslator.cpp:54
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "Impossible to access to url: %1"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "CheckSum is not correct."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Error during writing on disk: %1"
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:32
-#, fuzzy, kde-format
-#| msgid "Detect language"
+#, kde-format
 msgid "Impossible to extract language"
 msgstr "Zistiť jazyk"
 
@@ -474,7 +471,7 @@ msgstr "Nainštalovaná verzia"
 #: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
-msgstr ""
+msgstr "Available Version"
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:128
@@ -522,8 +519,7 @@ msgid "Configure Engine"
 msgstr "Konfigurácia nástroja"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Použiť bezplatný licenčný kľúč"
@@ -548,7 +544,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:83
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "Invalid answer."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
 #, kde-format
@@ -556,8 +552,7 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Server vyžaduje Api kľúč"
@@ -594,8 +589,7 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Chyba: Nie je možné získať Yandex SID z webovej verzie."
 
 #: translator/translatorengineclient.cpp:63
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
 msgstr "Lokalizácia"
 
@@ -627,8 +621,7 @@ msgstr "Do:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:41
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Nástroj:"
@@ -640,10 +633,9 @@ msgid "Translator Debug"
 msgstr "Ladenie pre Translator"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Uložiť ako..."
+msgstr "Uložiť ako…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -655,8 +647,7 @@ msgstr ""
 "\"%2\" je detailný popis chyby."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Chyba ukladania súboru"
@@ -667,14 +658,12 @@ msgid "All Files (*)"
 msgstr "Všetky súbory (*)"
 
 #: translator/widgets/translatormenu.cpp:25
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
 msgstr "Preložiť"
 
 #: translator/widgets/translatorwidget.cpp:213
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zatvoriť"
@@ -703,8 +692,7 @@ msgid "Invert"
 msgstr "Otočiť"
 
 #: translator/widgets/translatorwidget.cpp:248
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Vymazať"
@@ -715,8 +703,7 @@ msgid "Clear"
 msgstr "Vymazať"
 
 #: translator/widgets/translatorwidget.cpp:256
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Preložiť"
@@ -727,24 +714,19 @@ msgid "Translate"
 msgstr "Preložiť"
 
 #: translator/widgets/translatorwidget.cpp:266
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Ladenie"
 
 #: translator/widgets/translatorwidget.cpp:284
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Konfigurovať"
 
 #: translator/widgets/translatorwidget.cpp:364
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -754,10 +736,7 @@ msgstr ""
 "Server)."
 
 #: translator/widgets/translatorwidget.cpp:366
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr ""
@@ -770,15 +749,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "Nebolo zistené žiadne sieťové pripojenie, nemôžeme preložiť text."
 
 #: translator/widgets/translatorwidget.cpp:415
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Žiadna sieť"
 
 #: translator/widgets/translatorwidget.cpp:452
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Chyba prekladu"
@@ -787,7 +764,6 @@ msgstr "Chyba prekladu"
 #~ msgstr "Preložiť..."
 
 #, fuzzy
-#~| msgid "Persian"
 #~ msgid "Version"
 #~ msgstr "Perzština"
 

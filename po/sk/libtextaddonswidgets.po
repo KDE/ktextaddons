@@ -12,150 +12,149 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "Otvoriť prílohu?"
 
 #: misc/openfilejob.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "Otvoriť prílohu <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Otvorené"
 
 #: misc/openfilejob.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "&Open With '%1'"
 
 #: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "Otvoriť po&mocou…"
 
 #: misc/openfilejob.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "Uložiť &ako…"
 
 #: misc/openfilejob.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Uložiť súbor"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "Chyba pri ukladaní súboru"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "Vypnúť kontrolu verzie"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
-msgstr ""
+msgstr "Vaša verzia je staršia ako 6 mesiacov, odporúčame vám aktualizovať."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
-msgstr ""
+msgstr "Vaša verzia je staršia ako 1 rok, dôrazne vám odporúčame aktualizovať."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "Na uplatnenie zmien je potrebný reštart."
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr ""
+msgstr "Nastaviť"
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr ""
+msgstr "Hľadať… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "Ďalej"
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "Predchádzajúci"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Tučné"
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
-msgstr ""
+msgstr "Prečiarknutie"
 
 #: richtextquicktextformat.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "Podčiarknuť"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
-msgstr ""
+msgstr "Blok kódu"
 
 #: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
-msgstr ""
+msgstr "Citovať text"
 
 #: richtextquicktextformat.cpp:156
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "Vložiť"
@@ -167,15 +166,13 @@ msgid "Select Special Characters"
 msgstr "Vybrať špeciálne znaky"
 
 #: selectspecialchardialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Vložiť"
 
 #: selectspecialchardialog.cpp:55
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select"
 msgstr "Vybrať"
@@ -184,66 +181,68 @@ msgstr "Vybrať"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr ""
+msgstr "Skontrolovať novú verziu"
 
 #: verifynewversion/checknewversionwidget.cpp:52
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
+"Bola nájdená nová verzia. Kliknite <a href=\"%1\">sem</a> na jej stiahnutie."
 
 #: verifynewversion/checknewversionwidget.cpp:54
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
+"Nebola nájdená žiadna nová verzia. Zostavu nájdete <a href=\"%1\">tu</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr ""
+msgstr "Skontrolovať novú verziu"
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "Verzia:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr ""
+msgstr "Čo je nové v %1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(Zobraziť novinky)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr ""
+msgstr "Čo je nové v %2. %1"
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr ""
+msgstr "Všetky verzie"
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "Verzia %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "Dôležité zmeny od poslednej verzie:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr ""
+msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr ""
+msgstr "Niektoré opravy chýb:"

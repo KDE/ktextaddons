@@ -18,15 +18,13 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 
 #: texttospeechactions.cpp:30
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Zastaviť"
 
 #: texttospeechactions.cpp:33
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Zastaviť"
@@ -88,25 +86,22 @@ msgid "Voice:"
 msgstr "Hlas:"
 
 #: texttospeechwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zatvoriť"
 
 #: texttospeechwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "Volume:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Hlasitosť:"
 
 #: texttospeechwidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Konfigurovať..."
+msgstr "Konfigurovať…"
 
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
 #, kde-format
@@ -114,8 +109,7 @@ msgid "Engine has a problem."
 msgstr "Nástroj má problém."
 
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Text To Speech"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Text na reč"
