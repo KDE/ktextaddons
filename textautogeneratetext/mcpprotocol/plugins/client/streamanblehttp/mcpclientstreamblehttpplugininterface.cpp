@@ -21,3 +21,5 @@ void McpClientStreambleHttpPluginInterface::send(const QJsonObject &obj)
 {
     // TODO
 }
+
+#include "moc_mcpclientstreamblehttpplugininterface.cpp"
