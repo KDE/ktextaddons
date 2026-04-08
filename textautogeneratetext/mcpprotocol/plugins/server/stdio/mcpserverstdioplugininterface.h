@@ -8,12 +8,12 @@
 #include "mcpprotocolclientplugin_export.h"
 #include <QObject>
 class McpClientStdio;
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientStdioPluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpServerStdioPluginInterface : public McpProtocol::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:
-    explicit McpClientStdioPluginInterface(QObject *parent = nullptr);
-    ~McpClientStdioPluginInterface() override;
+    explicit McpServerStdioPluginInterface(QObject *parent = nullptr);
+    ~McpServerStdioPluginInterface() override;
 
     void start() override;
 

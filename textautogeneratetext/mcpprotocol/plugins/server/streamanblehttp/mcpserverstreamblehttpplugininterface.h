@@ -8,12 +8,12 @@
 #include "common/mcpprotocolplugininterface.h"
 #include "mcpprotocolclientplugin_export.h"
 
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientStreambleHttpPluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpServerStreambleHttpPluginInterface : public McpProtocol::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:
-    explicit McpClientStreambleHttpPluginInterface(QObject *parent = nullptr);
-    ~McpClientStreambleHttpPluginInterface() override;
+    explicit McpServerStreambleHttpPluginInterface(QObject *parent = nullptr);
+    ~McpServerStreambleHttpPluginInterface() override;
 
     void start() override;
     void send(const QJsonObject &obj) override;

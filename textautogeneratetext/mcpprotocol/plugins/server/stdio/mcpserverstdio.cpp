@@ -3,14 +3,14 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "mcpclientstdio.h"
+#include "mcpserverstdio.h"
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "stdio/mcpclientstdioplugininterface.h"
 #include <QJsonDocument>
 #include <QProcess>
 #include <QVariant>
 
-McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent)
+McpServerStdio::McpServerStdio(McpServerStdioPluginInterface *interface, QObject *parent)
     : QObject{parent}
     , mProcess(new QProcess(this))
     , mInterface(interface)
@@ -19,13 +19,13 @@ McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
         Q_EMIT error(mProcess->errorString());
     });
-    connect(mProcess, &QProcess::started, this, &McpClientStdio::started);
-    connect(mProcess, &QProcess::finished, this, &McpClientStdio::finished);
+    connect(mProcess, &QProcess::started, this, &McpServerStdio::started);
+    connect(mProcess, &QProcess::finished, this, &McpServerStdio::finished);
 }
 
-McpClientStdio::~McpClientStdio() = default;
+McpServerStdio::~McpServerStdio() = default;
 
-void McpClientStdio::connection()
+void McpServerStdio::connection()
 {
     const QVariant connection = mInterface->connectionInfo();
     if (!connection.isNull()) {
@@ -34,10 +34,10 @@ void McpClientStdio::connection()
     }
 }
 
-void McpClientStdio::send(const QJsonObject &obj)
+void McpServerStdio::send(const QJsonObject &obj)
 {
     const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
     mProcess->write(data + "\n");
 }
 
-#include "moc_mcpclientstdio.cpp"
+#include "moc_mcpserverstdio.cpp"

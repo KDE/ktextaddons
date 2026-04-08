@@ -7,13 +7,13 @@
 
 #include <QObject>
 class QProcess;
-class McpClientStdioPluginInterface;
-class McpClientStdio : public QObject
+class McpServerStdioPluginInterface;
+class McpServerStdio : public QObject
 {
     Q_OBJECT
 public:
-    explicit McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent = nullptr);
-    ~McpClientStdio() override;
+    explicit McpServerStdio(McpServerStdioPluginInterface *interface, QObject *parent = nullptr);
+    ~McpServerStdio() override;
 
     void connection();
     void send(const QJsonObject &obj);
@@ -26,5 +26,5 @@ Q_SIGNALS:
 
 private:
     QProcess *const mProcess;
-    McpClientStdioPluginInterface *const mInterface;
+    McpServerStdioPluginInterface *const mInterface;
 };
