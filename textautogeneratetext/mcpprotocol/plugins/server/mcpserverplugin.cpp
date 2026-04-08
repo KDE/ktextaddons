@@ -5,6 +5,9 @@
 */
 #include "mcpserverplugin.h"
 #include "autogeneratetext_mcpprotocolserverplugin_debug.h"
+#include "sse/mcpserversseplugininterface.h"
+#include "stdio/mcpserverstdioplugininterface.h"
+#include "streamanblehttp/mcpserverstreamblehttpplugininterface.h"
 
 McpServerPlugin::McpServerPlugin(QObject *parent)
     : McpProtocol::McpProtocolPlugin{parent}
@@ -18,10 +21,11 @@ McpProtocol::McpProtocolPluginInterface *McpServerPlugin::createInterface(McpPro
 {
     switch (type) {
     case McpProtocol::McpProtocolPlugin::ProtocolType::Sse:
+        return new McpServerSsePluginInterface(this);
     case McpProtocol::McpProtocolPlugin::ProtocolType::Stdio:
+        return new McpServerStdioPluginInterface(this);
     case McpProtocol::McpProtocolPlugin::ProtocolType::StreamableHttp:
-        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LOG) << "Not implemented yet." << type;
-        break;
+        return new McpServerStreambleHttpPluginInterface(this);
     default:
         break;
     }
