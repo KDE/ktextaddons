@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-04 00:43+0000\n"
-"PO-Revision-Date: 2026-03-16 07:51+0100\n"
+"PO-Revision-Date: 2026-04-02 14:09+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3099,7 +3099,7 @@ msgstr "Cerca…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "Mostra gli strumenti interni…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
@@ -3292,7 +3292,7 @@ msgstr "Seleziona tutto"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Text"
-msgstr ""
+msgstr "Inserisci testo"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format

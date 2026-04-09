@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -26,10 +26,9 @@ msgstr[2] "Vykonaných %1 náhrad"
 
 #: plaintexteditor/plaintexteditor.cpp:172
 #: richtexteditor/richtexteditor.cpp:237
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "Kontrola pravopisu..."
+msgstr "Kontrola pravopisu…"
 
 #: plaintexteditor/plaintexteditor.cpp:175
 #: richtexteditor/richtexteditor.cpp:242
@@ -83,15 +82,13 @@ msgid "Send"
 msgstr "Poslať"
 
 #: richtexteditor/richtexteditor.cpp:543
-#, fuzzy, kde-format
-#| msgid "Skip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Preskočiť"
 
 #: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavrieť"
@@ -111,15 +108,13 @@ msgstr ""
 "Výraz '%1' sa nenašiel."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Nahradiť"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Replace All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Nahradiť všetko"
@@ -149,22 +144,19 @@ msgid "F&ind:"
 msgstr "&Nájsť:"
 
 #: widgets/textfindreplacewidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Text na hľadanie"
 
 #: widgets/textfindreplacewidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Prejsť na ďaľšiu zhodu"
 
 #: widgets/textfindreplacewidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Prejsť na predchádzajúcu zhodu"
@@ -175,8 +167,7 @@ msgid "Options"
 msgstr "Voľby"
 
 #: widgets/textfindreplacewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Zmeniť chovanie vyhľadávania"
@@ -202,8 +193,7 @@ msgid "Respect Diacritic and Accents"
 msgstr "Rešpektovať diakritiku a akcenty"
 
 #: widgets/textgotolinewidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Go to Line:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Prejsť na riadok:"
