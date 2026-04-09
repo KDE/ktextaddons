@@ -13,11 +13,16 @@ McpProtocolClient::McpProtocolClient(McpProtocolPlugin::ProtocolType protocolTyp
     : QObject{parent}
     , mProtocolType(protocolType)
 {
+    loadPlugin();
     initialize();
-    // TODO load plugins !
 }
 
 McpProtocolClient::~McpProtocolClient() = default;
+
+void McpProtocolClient::loadPlugin()
+{
+    // TODO load plugins !
+}
 
 void McpProtocolClient::initialize()
 {

@@ -31,6 +31,7 @@ Q_SIGNALS:
     void error(const QString &str);
 
 private:
+    TEXTAUTOGENERATETEXTMCPPROTOCOL_NO_EXPORT void loadPlugin();
     TEXTAUTOGENERATETEXTMCPPROTOCOL_NO_EXPORT void initialize();
     const McpProtocol::McpProtocolPlugin::ProtocolType mProtocolType;
     McpProtocolPlugin *mPlugin = nullptr;
