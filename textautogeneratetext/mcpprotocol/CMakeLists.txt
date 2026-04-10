@@ -209,6 +209,23 @@ target_sources(
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
 
+ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS
+    HEADER_NAMES
+    McpProtocolPlugin
+    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS
+    PREFIX TextAutoGenerateTextMcpProtocol
+    RELATIVE common
+)
+
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocol_export.h
+        ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
+        ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocol/textautogeneratetextmcpprotocol
+    COMPONENT Devel
+)
+
 target_link_libraries(KF6TextAutoGenerateTextMcpProtocol Qt::Core)
 
 install(
