@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 02:39+0000\n"
-"PO-Revision-Date: 2026-04-11 12:00+0200\n"
+"PO-Revision-Date: 2026-04-12 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
 "Language: sk\n"
@@ -978,10 +978,7 @@ msgid "Embedding models on very large sentence level datasets."
 msgstr "Modely vkladania na veľmi veľkých dátových sadách na úrovni viet."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "Codestral is Mistral AI's first-ever code model designed for code "
-#| "generation tasks."
+#, kde-format
 msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
 "tasks."
@@ -1400,10 +1397,7 @@ msgstr ""
 "nazývaný Free Willy."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:143
-#, fuzzy, kde-format
-#| msgid ""
-#| "Mistral Small 3 sets a new benchmark in the \"small\" Large Language "
-#| "Models category below 70B."
+#, kde-format
 msgid ""
 "Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
 "category below 70B."
@@ -1832,11 +1826,7 @@ msgstr ""
 "matematike a programovaní vďaka inovatívnym tréningovým technikám."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:214
-#, fuzzy, kde-format
-#| msgid ""
-#| "The IBM Granite 2B and 8B models are text-only dense LLMs trained on over "
-#| "12 trillion tokens of data, demonstrated significant improvements over "
-#| "their predecessors in performance and speed in IBM's initial testing."
+#, kde-format
 msgid ""
 "The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 "
 "trillion tokens of data, demonstrated significant improvements over their "
@@ -1945,11 +1935,7 @@ msgstr ""
 "odvodenej destiláciou DeepSeek-R1."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:238
-#, fuzzy, kde-format
-#| msgid ""
-#| "A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses "
-#| "the performance of OpenAI's o1-preview with just 1.5B parameters on "
-#| "popular math evaluations."
+#, kde-format
 msgid ""
 "A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the "
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
@@ -2148,10 +2134,7 @@ msgid "Devstral: the best open source model for coding agents."
 msgstr "Devstral: najlepší open source model pre programátorských agentov."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:280
-#, fuzzy, kde-format
-#| msgid ""
-#| "OpenAI's open-weight models designed for powerful reasoning, agentic "
-#| "tasks, and versatile developer use cases."
+#, kde-format
 msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
