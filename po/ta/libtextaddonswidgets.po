@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-04 00:43+0000\n"
-"PO-Revision-Date: 2025-11-30 11:01+0530\n"
+"PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "கோப்பை சேமிப்பது"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "மூலக் கோப்பு இப்போது இல்லை"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -74,7 +74,7 @@ msgstr "கோப்பை சேமிப்பதில் சிக்கல�
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "ஏற்கனவே உள்ள கோப்பை மேலெழுத முடியாது"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -211,8 +211,7 @@ msgstr ""
 #| msgid ""
 #| "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
-msgstr ""
-"புதிய பதிப்பு உள்ளது. அதைப் பதிவிறக்க <a href=\"%1\">இங்கு</a> கிளிக் செய்யவும்."
+msgstr "புதிய பதிப்பு இல்லை. ?? <a href=\"%1\">இங்கு</a> ??."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
