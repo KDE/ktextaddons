@@ -21,7 +21,7 @@ void McpProtocolPluginInterface::setSettings(McpProtocolSettings *settings)
 
 bool McpProtocolPluginInterface::canStart() const
 {
-    return mProtocolSettings.get();
+    return mProtocolSettings.get() != nullptr;
 }
 
 QVariant McpProtocolPluginInterface::connectionInfo() const
