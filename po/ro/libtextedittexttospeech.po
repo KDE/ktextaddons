@@ -1,0 +1,116 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2026 Sergiu Bivol <sergiu@cip.md>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-19 00:41+0000\n"
+"PO-Revision-Date: 2026-04-13 13:36+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#: texttospeechactions.cpp:30
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr "Oprește"
+
+#: texttospeechactions.cpp:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Stop"
+msgstr "Oprește"
+
+#: texttospeechactions.cpp:73
+#, kde-format
+msgid "Pause"
+msgstr "Întrerupe"
+
+#: texttospeechactions.cpp:73
+#, kde-format
+msgid "Play"
+msgstr "Redă"
+
+#: texttospeechconfigdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "Configurează text-în-vorbire"
+
+#: texttospeechconfiginterface.cpp:86
+#, kde-format
+msgid "Morning, this is the test for testing settings."
+msgstr "'Neața, acesta e testul pentru testarea configurărilor."
+
+#: texttospeechconfigwidget.cpp:36
+#, kde-format
+msgid "Test"
+msgstr "Testează"
+
+#: texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Volume:"
+msgstr "Volum:"
+
+#: texttospeechconfigwidget.cpp:48
+#, kde-format
+msgid "Rate:"
+msgstr "Rată:"
+
+#: texttospeechconfigwidget.cpp:54
+#, kde-format
+msgid "Pitch:"
+msgstr "Tonalitate:"
+
+#: texttospeechconfigwidget.cpp:57
+#, kde-format
+msgid "Engine:"
+msgstr "Motor:"
+
+#: texttospeechconfigwidget.cpp:61
+#, kde-format
+msgid "Language:"
+msgstr "Limbă:"
+
+#: texttospeechconfigwidget.cpp:65
+#, kde-format
+msgid "Voice:"
+msgstr "Voce:"
+
+#: texttospeechwidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Închide"
+
+#: texttospeechwidget.cpp:61
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "Volum:"
+
+#: texttospeechwidget.cpp:83
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure…"
+msgstr "Configurează…"
+
+#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#, kde-format
+msgid "Engine has a problem."
+msgstr "Motorul are o problemă."
+
+#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#, kde-format
+msgctxt "@title:window"
+msgid "Text To Speech"
+msgstr "Text-în-vorbire"
