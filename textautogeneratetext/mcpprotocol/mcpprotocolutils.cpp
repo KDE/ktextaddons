@@ -519,8 +519,9 @@ QJsonValue McpProtocol::McpProtocolUtils::createMessageResultContentToJson(const
             using T = std::decay_t<decltype(v)>;
             if constexpr (std::is_same_v<T, QList<SamplingMessageContentBlock>>) {
                 QJsonArray arr;
-                for (const auto &item : v)
+                for (const auto &item : v) {
                     arr.append(samplingMessageContentBlockToJson(item));
+                }
                 return arr;
             } else if constexpr (std::is_same_v<T, QJsonObject>) {
                 return v;
