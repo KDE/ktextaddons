@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolToolChoice::McpProtocolToolChoice() = default;
 
-McpProtocolToolChoice::~McpProtocolToolChoice() = default;
-
 bool McpProtocolToolChoice::operator==(const McpProtocolToolChoice &other) const = default;
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolChoice &t)

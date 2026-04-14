@@ -136,5 +136,5 @@ std::optional<int> McpProtocolTask::ttl() const
 
 void McpProtocolTask::setTtl(std::optional<int> newTtl)
 {
-    mTtl = std::move(newTtl);
+    mTtl = newTtl;
 }

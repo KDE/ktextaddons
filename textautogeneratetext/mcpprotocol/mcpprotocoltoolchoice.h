@@ -29,7 +29,7 @@ public:
     McpProtocolToolChoice();
     /*!
      */
-    ~McpProtocolToolChoice();
+    ~McpProtocolToolChoice() = default;
 
     /*!
      */

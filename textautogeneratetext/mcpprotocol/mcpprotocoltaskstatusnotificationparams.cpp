@@ -64,10 +64,11 @@ QJsonObject McpProtocolTaskStatusNotificationParams::toJson(const McpProtocolTas
     if (boolean.statusMessage().has_value()) {
         obj.insert("statusMessage"_L1, *boolean.statusMessage());
     }
-    if (boolean.ttl().has_value())
+    if (boolean.ttl().has_value()) {
         obj.insert("ttl"_L1, *boolean.ttl());
-    else
+    } else {
         obj.insert("ttl"_L1, QJsonValue::Null);
+    }
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
     }
