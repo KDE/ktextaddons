@@ -15,7 +15,6 @@ McpProtocolServer::McpProtocolServer(McpProtocolPlugin::ProtocolType protocolTyp
     , mProtocolType(protocolType)
 {
     loadPlugin();
-    initialize();
 }
 
 McpProtocolServer::~McpProtocolServer() = default;
@@ -23,6 +22,7 @@ McpProtocolServer::~McpProtocolServer() = default;
 void McpProtocolServer::loadPlugin()
 {
     // TODO load plugins !
+    initialize();
 }
 
 void McpProtocolServer::initialize()

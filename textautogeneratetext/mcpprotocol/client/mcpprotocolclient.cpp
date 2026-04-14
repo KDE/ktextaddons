@@ -14,7 +14,6 @@ McpProtocolClient::McpProtocolClient(McpProtocolPlugin::ProtocolType protocolTyp
     , mProtocolType(protocolType)
 {
     loadPlugin();
-    initialize();
 }
 
 McpProtocolClient::~McpProtocolClient() = default;
@@ -22,6 +21,7 @@ McpProtocolClient::~McpProtocolClient() = default;
 void McpProtocolClient::loadPlugin()
 {
     // TODO load plugins !
+    initialize();
 }
 
 void McpProtocolClient::initialize()
