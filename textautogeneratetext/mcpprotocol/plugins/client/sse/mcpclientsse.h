@@ -5,12 +5,13 @@
 */
 #pragma once
 
+#include "common/mcpbase.h"
 #include <QObject>
 class QNetworkAccessManager;
 class QNetworkReply;
 class QJsonObject;
 class McpClientSsePluginInterface;
-class McpClientSse : public QObject
+class McpClientSse : public McpProtocol::McpBase
 {
     Q_OBJECT
 public:
@@ -20,12 +21,6 @@ public:
     void connection();
 
     void send(const QJsonObject &obj);
-
-Q_SIGNALS:
-    void started();
-    void received(const QJsonObject &obj);
-    void error(const QString &str);
-    void finished();
 
 private:
     void slotRead();

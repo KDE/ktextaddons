@@ -5,10 +5,11 @@
 */
 #pragma once
 
+#include "common/mcpbase.h"
 #include <QObject>
 class QProcess;
 class McpClientStdioPluginInterface;
-class McpClientStdio : public QObject
+class McpClientStdio : public McpProtocol::McpBase
 {
     Q_OBJECT
 public:
@@ -17,12 +18,6 @@ public:
 
     void connection();
     void send(const QJsonObject &obj);
-
-Q_SIGNALS:
-    void started();
-    void received(const QJsonObject &obj);
-    void error(const QString &str);
-    void finished();
 
 private:
     QProcess *const mProcess;

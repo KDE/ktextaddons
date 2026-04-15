@@ -15,5 +15,11 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpBase : public QObject
 public:
     explicit McpBase(QObject *parent = nullptr);
     ~McpBase() override;
+
+Q_SIGNALS:
+    void started();
+    void received(const QJsonObject &obj);
+    void error(const QString &str);
+    void finished();
 };
 }
