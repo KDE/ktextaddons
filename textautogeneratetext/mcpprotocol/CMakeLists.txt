@@ -1,7 +1,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
-add_library(KF6TextAutoGenerateTextMcpProtocol)
+add_library(
+    KF6TextAutoGenerateTextMcpProtocol
+    common/mcpbase.h
+    common/mcpbase.cpp
+)
 
 add_library(KF6::TextAutoGenerateTextMcpProtocol ALIAS KF6TextAutoGenerateTextMcpProtocol)
 
