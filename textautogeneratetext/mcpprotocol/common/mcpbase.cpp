@@ -12,3 +12,5 @@ McpBase::McpBase(QObject *parent)
 }
 
 McpBase::~McpBase() = default;
+
+#include "moc_mcpbase.cpp"
