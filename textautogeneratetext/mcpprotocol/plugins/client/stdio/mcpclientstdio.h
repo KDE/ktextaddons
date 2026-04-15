@@ -16,8 +16,8 @@ public:
     explicit McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent = nullptr);
     ~McpClientStdio() override;
 
-    void connection();
-    void send(const QJsonObject &obj);
+    void connection() override;
+    void send(const QJsonObject &obj) override;
 
 private:
     QProcess *const mProcess;

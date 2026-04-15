@@ -18,9 +18,9 @@ public:
     explicit McpClientSse(McpClientSsePluginInterface *interface, QObject *parent = nullptr);
     ~McpClientSse() override;
 
-    void connection();
+    void connection() override;
 
-    void send(const QJsonObject &obj);
+    void send(const QJsonObject &obj) override;
 
 private:
     void slotRead();

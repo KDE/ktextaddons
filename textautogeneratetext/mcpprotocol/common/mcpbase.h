@@ -16,6 +16,9 @@ public:
     explicit McpBase(QObject *parent = nullptr);
     ~McpBase() override;
 
+    virtual void connection() = 0;
+    virtual void send(const QJsonObject &obj) = 0;
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);
