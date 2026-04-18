@@ -6,6 +6,8 @@
 #include "mcpprotocolserver.h"
 #include "common/mcpprotocolplugininterface.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
+#include <KPluginFactory>
+#include <KPluginMetaData>
 
 using namespace McpProtocol;
 using namespace Qt::Literals::StringLiterals;
@@ -21,6 +23,25 @@ McpProtocolServer::~McpProtocolServer() = default;
 
 void McpProtocolServer::loadPlugin()
 {
+    switch (mProtocolType) {
+    case McpProtocolPlugin::ProtocolType::Sse: {
+        const KPluginMetaData sseClientPlugin(u"kf6/textautogeneratetext/mcpprotocol"_s);
+
+        // const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractMoveImapFolderWidget>(editWidgetPlugin);
+
+        break;
+    }
+    case McpProtocolPlugin::ProtocolType::Stdio: {
+        break;
+    }
+    case McpProtocolPlugin::ProtocolType::StreamableHttp: {
+        break;
+    }
+    case McpProtocolPlugin::ProtocolType::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Unknown type. It's a bug";
+        return;
+    }
+
     // TODO load plugins !
     initialize();
 }

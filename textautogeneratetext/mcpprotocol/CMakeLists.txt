@@ -256,7 +256,11 @@ install(
     COMPONENT Devel
 )
 
-target_link_libraries(KF6TextAutoGenerateTextMcpProtocol Qt::Core)
+target_link_libraries(
+    KF6TextAutoGenerateTextMcpProtocol
+    Qt::Core
+    KF6::CoreAddons
+)
 
 install(
     TARGETS
