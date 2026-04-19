@@ -62,7 +62,7 @@ install(
 )
 
 ######
-add_library(autogeneratetext_mcpprotocolserverplugin MODULE)
+kcoreaddons_add_plugin(autogeneratetext_mcpprotocolserverplugin INSTALL_NAMESPACE kf6/textautogeneratetext/mcpprotocol)
 
 ecm_qt_declare_logging_category(autogeneratetext_mcpprotocolserverplugin
     HEADER autogeneratetext_mcpprotocolserverplugin_debug.h
@@ -84,9 +84,4 @@ target_link_libraries(
     PRIVATE
         KF6::TextAutoGenerateTextMcpProtocol
         mcpprotocolserverplugin
-)
-install(
-    TARGETS
-        autogeneratetext_mcpprotocolserverplugin
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/mcpprotocol
 )

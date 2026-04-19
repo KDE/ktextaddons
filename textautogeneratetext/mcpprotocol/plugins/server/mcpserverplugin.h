@@ -14,7 +14,7 @@ class McpServerPlugin : public McpProtocol::McpProtocolPlugin
 {
     Q_OBJECT
 public:
-    explicit McpServerPlugin(QObject *parent = nullptr);
+    explicit McpServerPlugin(QObject *parent = nullptr, const QList<QVariant> & = {});
     ~McpServerPlugin() override;
 
     /*!
