@@ -3,13 +3,16 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "mcpclientplugin.h"
+#include <KPluginFactory>
+
 #include "autogeneratetext_mcpprotocolclientplugin_debug.h"
+#include "mcpclientplugin.h"
 #include "sse/mcpclientsseplugininterface.h"
 #include "stdio/mcpclientstdioplugininterface.h"
 #include "streamanblehttp/mcpclientstreamblehttpplugininterface.h"
+K_PLUGIN_CLASS_WITH_JSON(McpClientPlugin, "mcpclientplugin.json")
 
-McpClientPlugin::McpClientPlugin(QObject *parent)
+McpClientPlugin::McpClientPlugin(QObject *parent, const QList<QVariant> &)
     : McpProtocol::McpProtocolPlugin{parent}
 {
     mPluginType = McpProtocol::McpProtocolPlugin::PluginType::Client;
@@ -34,4 +37,5 @@ McpProtocol::McpProtocolPluginInterface *McpClientPlugin::createInterface(McpPro
     return {};
 }
 
+#include "mcpclientplugin.moc"
 #include "moc_mcpclientplugin.cpp"

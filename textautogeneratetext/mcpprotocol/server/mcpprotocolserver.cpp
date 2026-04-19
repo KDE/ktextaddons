@@ -23,26 +23,14 @@ McpProtocolServer::~McpProtocolServer() = default;
 
 void McpProtocolServer::loadPlugin()
 {
-    switch (mProtocolType) {
-    case McpProtocolPlugin::ProtocolType::Sse: {
-        const KPluginMetaData sseClientPlugin(u"kf6/textautogeneratetext/mcpprotocol"_s);
+#if 0
+    const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolserverplugin"_s);
+    const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin *>(serverPlugin);
+    if (result) {
+        mPlugin = *result.plugin;
+    }
+#endif
 
-        // const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractMoveImapFolderWidget>(editWidgetPlugin);
-
-        break;
-    }
-    case McpProtocolPlugin::ProtocolType::Stdio: {
-        break;
-    }
-    case McpProtocolPlugin::ProtocolType::StreamableHttp: {
-        break;
-    }
-    case McpProtocolPlugin::ProtocolType::Unknown:
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Unknown type. It's a bug";
-        return;
-    }
-
-    // TODO load plugins !
     initialize();
 }
 

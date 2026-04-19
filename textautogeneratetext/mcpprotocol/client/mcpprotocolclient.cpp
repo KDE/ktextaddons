@@ -6,6 +6,7 @@
 #include "mcpprotocolclient.h"
 #include "common/mcpprotocolplugininterface.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
+#include <KPluginFactory>
 
 using namespace McpProtocol;
 using namespace Qt::Literals::StringLiterals;
@@ -20,7 +21,13 @@ McpProtocolClient::~McpProtocolClient() = default;
 
 void McpProtocolClient::loadPlugin()
 {
-    // TODO load plugins !
+#if 0
+    const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolserverplugin"_s);
+    const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin *>(serverPlugin);
+    if (result) {
+        mPlugin = *result.plugin;
+    }
+#endif
     initialize();
 }
 
