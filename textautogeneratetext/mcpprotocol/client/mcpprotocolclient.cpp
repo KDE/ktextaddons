@@ -21,13 +21,11 @@ McpProtocolClient::~McpProtocolClient() = default;
 
 void McpProtocolClient::loadPlugin()
 {
-#if 0
     const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolserverplugin"_s);
-    const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin *>(serverPlugin);
+    const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin>(serverPlugin, this);
     if (result) {
-        mPlugin = *result.plugin;
+        mPlugin = result.plugin;
     }
-#endif
     initialize();
 }
 
