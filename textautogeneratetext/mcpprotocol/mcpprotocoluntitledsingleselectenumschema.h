@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QString>
+
 #include <QStringList>
 class QDebug;
 class QJsonObject;

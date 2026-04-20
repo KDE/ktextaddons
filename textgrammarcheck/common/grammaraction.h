@@ -6,7 +6,7 @@
 #pragma once
 #include "textgrammarcheck_export.h"
 #include <QObject>
-#include <QString>
+
 #include <QStringList>
 class QDebug;
 namespace TextGrammarCheck

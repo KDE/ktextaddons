@@ -9,7 +9,7 @@
 #include "textaddonswidgets_export.h"
 
 #include <KPluginMetaData>
-#include <QString>
+
 #include <QStringList>
 
 namespace TextAddonsWidgets
