@@ -137,7 +137,7 @@ QString WhatsNewWidget::createVersionInformation(const WhatsNewInfo &info)
 QString WhatsNewWidget::generateVersionHeader(int type) const
 {
     if (type != allVersion) {
-        return QStringLiteral("<h1><i> Version %1 </i></h1><hr/><br>").arg(mWhatsNewInfo.at(type).version());
+        return i18n("<h1><i> Version %1 </i></h1><hr/><br>", mWhatsNewInfo.at(type).version());
     }
     return {};
 }
