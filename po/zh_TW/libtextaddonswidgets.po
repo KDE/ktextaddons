@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-04 00:43+0000\n"
+"POT-Creation-Date: 2026-04-21 00:44+0000\n"
 "PO-Revision-Date: 2026-04-20 02:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -257,6 +257,11 @@ msgstr "這一個版本包含一些新功能："
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "一些錯誤修正："
+
+#: whatsnew/whatsnewwidget.cpp:140
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
 
 #~ msgid "No new version found."
 #~ msgstr "沒有找到新版本。"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-04 00:43+0000\n"
+"POT-Creation-Date: 2026-04-21 00:44+0000\n"
 "PO-Revision-Date: 2026-04-05 08:44+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -262,6 +262,11 @@ msgstr "Certaines des nouvelles fonctionnalités de cette version incluent :"
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Quelques corrections de bogues :"
+
+#: whatsnew/whatsnewwidget.cpp:140
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
 
 #~ msgid "No new version found."
 #~ msgstr "Aucune nouvelle version n'a été trouvée !"
