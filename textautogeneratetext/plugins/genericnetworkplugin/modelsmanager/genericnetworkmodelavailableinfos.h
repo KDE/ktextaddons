@@ -6,7 +6,8 @@
 #pragma once
 #include "genericnetworkmodelavailableinfo.h"
 #include "textautogenerategeneric_private_export.h"
-#include <QJsonArray>
+#include <QList>
+class QJsonArray;
 class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkModelAvailableInfos
 {
 public:
