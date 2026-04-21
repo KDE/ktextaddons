@@ -6,12 +6,12 @@
 
 #pragma once
 #include "textaddonswidgets_private_export.h"
-#include "whatsnewcomboboxwidget.h"
 #include "whatsnewinfo.h"
 #include <QWidget>
 class QTextBrowser;
 namespace TextAddonsWidgets
 {
+class WhatsNewComboBoxWidget;
 class TEXTADDONSWIDGETS_TESTS_EXPORT WhatsNewWidget : public QWidget
 {
     Q_OBJECT

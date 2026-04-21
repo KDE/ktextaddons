@@ -5,6 +5,7 @@
 */
 #include "whatsnewwidget.h"
 
+#include "whatsnewcomboboxwidget.h"
 #include <KLocalizedString>
 #include <QTextBrowser>
 #include <QVBoxLayout>
