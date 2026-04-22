@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the ktextaddons package.
 # Automatically generated, 2023.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2023-2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-21 00:44+0000\n"
-"PO-Revision-Date: 2026-04-04 12:33+0100\n"
+"POT-Creation-Date: 2026-04-22 00:43+0000\n"
+"PO-Revision-Date: 2026-04-22 00:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -242,32 +242,32 @@ msgstr "(Mostrar novedades)"
 msgid "What's new in %2. %1"
 msgstr "Novedades de %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:44
+#: whatsnew/whatsnewwidget.cpp:45
 #, kde-format
 msgid "All Versions"
 msgstr "Todas las versiones"
 
-#: whatsnew/whatsnewwidget.cpp:47
+#: whatsnew/whatsnewwidget.cpp:48
 #, kde-format
 msgid "Version %1"
 msgstr "Versión %1"
 
-#: whatsnew/whatsnewwidget.cpp:92
+#: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Cambios importantes desde la última versión:"
 
-#: whatsnew/whatsnewwidget.cpp:97
+#: whatsnew/whatsnewwidget.cpp:98
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Estas son algunas de las nuevas funcionalidades de esta versión:"
 
-#: whatsnew/whatsnewwidget.cpp:102
+#: whatsnew/whatsnewwidget.cpp:103
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Varias correcciones de errores:"
 
-#: whatsnew/whatsnewwidget.cpp:140
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Versión %1 </i></h1><hr/><br>"

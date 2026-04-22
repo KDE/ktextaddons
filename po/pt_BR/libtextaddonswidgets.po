@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-21 00:44+0000\n"
-"PO-Revision-Date: 2026-04-04 06:13-0300\n"
+"POT-Creation-Date: 2026-04-22 00:43+0000\n"
+"PO-Revision-Date: 2026-04-21 07:26-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -238,35 +238,35 @@ msgstr "(Mostrar novidades)"
 msgid "What's new in %2. %1"
 msgstr "O que há de novo em %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:44
+#: whatsnew/whatsnewwidget.cpp:45
 #, kde-format
 msgid "All Versions"
 msgstr "Todas as versões"
 
-#: whatsnew/whatsnewwidget.cpp:47
+#: whatsnew/whatsnewwidget.cpp:48
 #, kde-format
 msgid "Version %1"
 msgstr "Versão %1"
 
-#: whatsnew/whatsnewwidget.cpp:92
+#: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Mudanças importantes desde a última versão:"
 
-#: whatsnew/whatsnewwidget.cpp:97
+#: whatsnew/whatsnewwidget.cpp:98
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Algumas novas funcionalidades desta versão incluem:"
 
-#: whatsnew/whatsnewwidget.cpp:102
+#: whatsnew/whatsnewwidget.cpp:103
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Algumas correções de erro:"
 
-#: whatsnew/whatsnewwidget.cpp:140
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Versão %1 </i></h1><hr/><br>"
 
 #~ msgid "No new version found."
 #~ msgstr "Nenhum nova versão encontrada."

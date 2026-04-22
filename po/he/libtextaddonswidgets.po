@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-21 00:44+0000\n"
+"POT-Creation-Date: 2026-04-22 00:43+0000\n"
 "PO-Revision-Date: 2026-04-05 08:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -234,32 +234,32 @@ msgstr "(הצגת חדשות)"
 msgid "What's new in %2. %1"
 msgstr "מה חדש ב־%2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:44
+#: whatsnew/whatsnewwidget.cpp:45
 #, kde-format
 msgid "All Versions"
 msgstr "כל הגרסאות"
 
-#: whatsnew/whatsnewwidget.cpp:47
+#: whatsnew/whatsnewwidget.cpp:48
 #, kde-format
 msgid "Version %1"
 msgstr "גרסה %1"
 
-#: whatsnew/whatsnewwidget.cpp:92
+#: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "שינויים חשובים מאז הגרסה האחרונה:"
 
-#: whatsnew/whatsnewwidget.cpp:97
+#: whatsnew/whatsnewwidget.cpp:98
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
 
-#: whatsnew/whatsnewwidget.cpp:102
+#: whatsnew/whatsnewwidget.cpp:103
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "תיקוני תקלות:"
 
-#: whatsnew/whatsnewwidget.cpp:140
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr ""
