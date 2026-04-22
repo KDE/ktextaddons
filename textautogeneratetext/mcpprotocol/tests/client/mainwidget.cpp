@@ -5,6 +5,7 @@
 */
 #include "mainwidget.h"
 #include <QSplitter>
+#include <QTreeWidget>
 #include <QVBoxLayout>
 
 MainWidget::MainWidget(QWidget *parent)
@@ -14,6 +15,9 @@ MainWidget::MainWidget(QWidget *parent)
     auto splitter = new QSplitter(this);
     mainLayout->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
+
+    auto treeview = new QTreeWidget(this);
+    splitter->addWidget(treeview);
     // TODO
 }
 
