@@ -6,6 +6,7 @@
 
 #include "mcpprotocolimagecontent.h"
 #include <QDebug>
+#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolImageContent::McpProtocolImageContent() = default;
