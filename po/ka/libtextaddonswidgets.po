@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-22 00:43+0000\n"
-"PO-Revision-Date: 2026-04-04 04:39+0200\n"
+"PO-Revision-Date: 2026-04-22 06:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -264,7 +264,7 @@ msgstr "გამოსწორდა ზოგიერთი შეცდო�
 #: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> ვერსია %1 </i></h1><hr/><br>"
 
 #~ msgid "No new version found."
 #~ msgstr "ახალი ვერსია აღმოჩენილი არაა."
