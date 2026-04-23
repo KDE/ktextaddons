@@ -6,6 +6,8 @@
 
 #include "mcpprotocolstringschema.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
+#include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolStringSchema::McpProtocolStringSchema() = default;

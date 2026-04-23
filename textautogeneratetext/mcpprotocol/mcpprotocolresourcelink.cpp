@@ -7,6 +7,8 @@
 #include "mcpprotocolresourcelink.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
 #include <QJsonArray>
+#include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolResourceLink::McpProtocolResourceLink() = default;

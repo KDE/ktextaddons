@@ -6,6 +6,8 @@
 
 #include "mcpprotocolresourcelistchangednotification.h"
 #include "textautogeneratetextmcpprotocol_debug.h"
+#include <QJsonObject>
+
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;

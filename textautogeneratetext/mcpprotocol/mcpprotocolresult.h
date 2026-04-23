@@ -7,9 +7,9 @@
 #include "mcpprotocolnotificationparams.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QString>
 class QDebug;
+class QJsonObject;
 namespace McpProtocol
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolResult

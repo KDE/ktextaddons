@@ -6,6 +6,8 @@
 
 #include "mcpprotocoltask.h"
 #include <QDebug>
+#include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolTask::McpProtocolTask() = default;
