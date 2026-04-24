@@ -21,10 +21,12 @@ McpProtocolClient::~McpProtocolClient() = default;
 
 void McpProtocolClient::loadPlugin()
 {
-    const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolserverplugin"_s);
+    const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolclientplugin"_s);
     const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin>(serverPlugin, this);
     if (result) {
         mPlugin = result.plugin;
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to find  autogeneratetext_mcpprotocolclientplugin plugin";
     }
     initialize();
 }
