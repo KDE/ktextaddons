@@ -7,6 +7,7 @@
 #include <QSplitter>
 #include <QTreeWidget>
 #include <QVBoxLayout>
+#include <TextAutoGenerateTextMcpProtocol/McpProtocolClient>
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget{parent}
@@ -19,6 +20,7 @@ MainWidget::MainWidget(QWidget *parent)
     auto treeview = new QTreeWidget(this);
     splitter->addWidget(treeview);
     // TODO
+    auto client = new McpProtocol::McpProtocolClient(McpProtocol::McpProtocolPlugin::ProtocolType::Sse, this);
 }
 
 MainWidget::~MainWidget() = default;
