@@ -7,6 +7,7 @@
 #include "mcpprotocolpaginatedrequestparams.h"
 #include <QDebug>
 #include <QJsonArray>
+#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
 McpProtocolPaginatedRequestParams::McpProtocolPaginatedRequestParams() = default;

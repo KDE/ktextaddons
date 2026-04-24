@@ -10,8 +10,8 @@
 #include "mcpprotocoltaskmetadata.h"
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QString>
+class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {

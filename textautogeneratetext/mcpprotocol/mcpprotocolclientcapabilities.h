@@ -6,9 +6,10 @@
 #pragma once
 #include "textautogeneratetextmcpprotocol_export.h"
 #include <QByteArray>
-#include <QJsonObject>
+#include <QJsonValue>
 #include <QString>
 class QDebug;
+class QJsonObject;
 namespace McpProtocol
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolClientCapabilities

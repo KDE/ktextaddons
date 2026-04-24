@@ -7,6 +7,7 @@
 #include "mcpprotocollistresourcesresult.h"
 #include <QDebug>
 #include <QJsonArray>
+#include <QJsonObject>
 #include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
