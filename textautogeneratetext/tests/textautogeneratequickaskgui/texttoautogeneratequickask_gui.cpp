@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto *manager = new TextAutoGenerateText::TextAutoGenerateManager;
+    auto manager = new TextAutoGenerateText::TextAutoGenerateManager;
     auto d = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(manager);
     manager->setParent(d);
     const int result = d->exec();
