@@ -261,4 +261,4 @@ msgstr "修复的部分程序缺陷："
 #: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
