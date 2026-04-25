@@ -32,10 +32,10 @@ public:
 
     /*!
      */
-    static McpProtocolUntitledSingleSelectEnumSchema fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolUntitledSingleSelectEnumSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolUntitledSingleSelectEnumSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledSingleSelectEnumSchema &image);
 
     /*!
      */
