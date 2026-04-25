@@ -35,7 +35,6 @@ McpProtocolResource McpProtocolResource::fromJson(const QJsonObject &obj)
 {
     McpProtocolResource prompt;
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        const QJsonObject mapObj__meta = obj["_meta"_L1].toObject();
         prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
     if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
