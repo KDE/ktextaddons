@@ -41,7 +41,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolResultContent &t)
     d.space() << "isError:" << t.isError();
     d.space() << "toolUseId:" << t.toolUseId();
     d.space() << "structuredContent:" << t.structuredContent();
-    // TODO d.space() << "content:" << t.content();
+    // d.space() << "content:" << t.content();
     return d;
 }
 
@@ -55,7 +55,7 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
     if (obj.contains("content"_L1) && obj["content"_L1].isArray()) {
         const QJsonArray arr = obj["content"_L1].toArray();
         QList<McpProtocolUtils::ContentBlock> contents;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             contents.append(McpProtocolUtils::contentBlockFromJson(v));
         }
         tool.setContent(contents);
