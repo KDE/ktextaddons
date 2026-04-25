@@ -25,10 +25,10 @@ void McpProtocolClient::loadPlugin()
     const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin>(serverPlugin, this);
     if (result) {
         mPlugin = result.plugin;
+        initialize();
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to find  autogeneratetext_mcpprotocolclientplugin plugin";
     }
-    initialize();
 }
 
 void McpProtocolClient::initialize()
