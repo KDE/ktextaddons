@@ -16,6 +16,7 @@ McpProtocolGetPromptRequestParams::McpProtocolGetPromptRequestParams() = default
 McpProtocolGetPromptRequestParams::~McpProtocolGetPromptRequestParams() = default;
 
 bool McpProtocolGetPromptRequestParams::operator==(const McpProtocolGetPromptRequestParams &other) const = default;
+
 bool McpProtocolGetPromptRequestParams::Meta::operator==(const McpProtocolGetPromptRequestParams::Meta &other) const = default;
 
 QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams &t)

@@ -36,7 +36,7 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
     if (obj.contains("audience"_L1) && obj["audience"_L1].isArray()) {
         const QJsonArray arr = obj["audience"_L1].toArray();
         QList<McpProtocolUtils::Role> audience;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             audience.append(McpProtocolUtils::convertRoleFromString(v.toString()));
         }
         annot.setAudience(audience);

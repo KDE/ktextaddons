@@ -56,6 +56,7 @@ QJsonObject McpProtocolCompleteRequestParams::Context::toJson(const Context &ima
 }
 
 bool McpProtocolCompleteRequestParams::Context::operator==(const McpProtocolCompleteRequestParams::Context &other) const = default;
+
 QString McpProtocolCompleteRequestParams::Argument::value() const
 {
     return mValue;
