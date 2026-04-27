@@ -5,5 +5,5 @@ add_subdirectory(core)
 if(BUILD_TESTING)
     add_subdirectory(tests)
 endif()
-
+add_subdirectory(widgets)
 add_subdirectory(plugins)
