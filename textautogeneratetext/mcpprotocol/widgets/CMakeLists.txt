@@ -47,18 +47,12 @@ generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME texta
 # install(
 #     FILES
 #         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_export.h
-#         ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
-#         ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
-#         ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}
 #     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
 #     COMPONENT Devel
 # )
 
 # install(
 #     FILES
-#         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS}
-#         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS}
-#         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS}
 #     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
 #     COMPONENT Devel
 # )
@@ -71,6 +65,6 @@ install(
     EXPORT KF6TextAutoGenerateTextMcpProtocolWidgetsTargets
     ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
-# if(BUILD_TESTING)
-#     add_subdirectory(autotests)
-# endif()
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
