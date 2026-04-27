@@ -4,14 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QDebug;
 class QJsonObject;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolBooleanSchema
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolBooleanSchema
 {
 public:
     /*!
@@ -64,4 +64,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolBooleanSchema, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolBooleanSchema &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolBooleanSchema &t);

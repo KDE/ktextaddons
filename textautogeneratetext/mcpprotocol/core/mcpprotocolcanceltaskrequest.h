@@ -6,14 +6,14 @@
 #pragma once
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolprompt.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolCancelTaskRequest
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCancelTaskRequest
 {
 public:
     struct Params {
@@ -67,5 +67,5 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolCancelTaskRequest, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest::Params &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest::Params &t);

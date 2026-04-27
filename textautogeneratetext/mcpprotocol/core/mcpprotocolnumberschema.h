@@ -5,14 +5,14 @@
 */
 #pragma once
 #include "mcpprotocolannotations.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolNumberSchema
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolNumberSchema
 {
 public:
     enum class Type : uint8_t {
@@ -98,4 +98,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolNumberSchema, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolNumberSchema &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolNumberSchema &t);

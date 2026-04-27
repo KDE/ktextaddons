@@ -5,14 +5,14 @@
 */
 #pragma once
 #include "mcpprotocolcancellednotificationparams.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QDebug;
 class QJsonObject;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolCancelledNotification
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCancelledNotification
 {
 public:
     /*!
@@ -45,4 +45,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolCancelledNotification, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelledNotification &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelledNotification &t);

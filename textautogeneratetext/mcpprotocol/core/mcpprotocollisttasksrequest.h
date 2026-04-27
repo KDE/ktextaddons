@@ -5,14 +5,14 @@
 */
 #pragma once
 #include "mcpprotocolpaginatedrequestparams.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolListTasksRequest
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolListTasksRequest
 {
 public:
     /*!
@@ -57,4 +57,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolListTasksRequest, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListTasksRequest &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListTasksRequest &t);

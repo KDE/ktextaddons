@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 
 #include <QStringList>
@@ -12,7 +12,7 @@ class QDebug;
 class QJsonObject;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUntitledSingleSelectEnumSchema
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUntitledSingleSelectEnumSchema
 {
 public:
     /*!
@@ -73,4 +73,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolUntitledSingleSelectEnumSchema, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUntitledSingleSelectEnumSchema &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUntitledSingleSelectEnumSchema &t);

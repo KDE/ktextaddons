@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QJsonValue>
 #include <QString>
 class QDebug;
@@ -154,14 +154,14 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 [[nodiscard]] ProgressToken progressTokenFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue progressTokenToJson(const ProgressToken &val);
 
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);
 
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level);
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::LoggingLevel convertLoggingLevelFromString(const QString &str);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::LoggingLevel convertLoggingLevelFromString(const QString &str);
 
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 
 [[nodiscard]] QJsonObject contentBlocktoJson(const McpProtocol::McpProtocolUtils::ContentBlock &val);
 [[nodiscard]] McpProtocol::McpProtocolUtils::ContentBlock contentBlockFromJson(const QJsonValue &val);
@@ -181,6 +181,6 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 [[nodiscard]] McpProtocol::McpProtocolUtils::CompleteRequestParamsRef completeRequestParamsRefFromJson(const QJsonValue &val);
 // [[nodiscard]] QString getCompleteRequestParamsRef(const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &token);
 };
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);
-// TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);
+// TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t);

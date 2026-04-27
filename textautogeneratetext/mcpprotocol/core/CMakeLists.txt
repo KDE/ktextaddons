@@ -209,7 +209,7 @@ target_sources(
         common/mcpbase.cpp
 )
 
-generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocol)
+generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocolcore)
 
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS
     HEADER_NAMES
@@ -239,7 +239,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver
 
 install(
     FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocol_export.h
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_export.h
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}

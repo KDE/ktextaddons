@@ -9,14 +9,14 @@
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolprompt.h"
 #include "mcpprotocoltaskmetadata.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolInitializeRequestParams
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolInitializeRequestParams
 {
 public:
     struct Meta {
@@ -88,5 +88,5 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolInitializeRequestParams, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolInitializeRequestParams &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolInitializeRequestParams::Meta &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolInitializeRequestParams &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolInitializeRequestParams::Meta &t);

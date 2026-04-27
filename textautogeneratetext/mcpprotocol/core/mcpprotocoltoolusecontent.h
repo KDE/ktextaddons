@@ -6,14 +6,14 @@
 #pragma once
 #include "mcpprotocolannotations.h"
 #include "mcpprotocolmeta.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolToolUseContent
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolToolUseContent
 {
 public:
     /*!
@@ -75,4 +75,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolToolUseContent, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolUseContent &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolUseContent &t);

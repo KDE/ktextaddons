@@ -7,14 +7,14 @@
 #include "mcpprotocolgetpromptrequestparams.h"
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolrequestparams.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QDebug;
 class QJsonObject;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolPingRequest
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPingRequest
 {
 public:
     /*!
@@ -59,4 +59,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolPingRequest, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPingRequest &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPingRequest &t);

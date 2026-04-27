@@ -4,17 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QDebug;
 class QJsonObject;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolElicitationCompleteNotification
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitationCompleteNotification
 {
 public:
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Params {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
         QString mElicitationId;
         [[nodiscard]] Params &elicitationId(const QString &v);
         [[nodiscard]] const QString &elicitationId() const;
@@ -55,4 +55,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolElicitationCompleteNotification, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolElicitationCompleteNotification &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolElicitationCompleteNotification &t);

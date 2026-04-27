@@ -6,14 +6,14 @@
 #pragma once
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolprompt.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolLegacyTitledEnumSchema
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolLegacyTitledEnumSchema
 {
 public:
     /*!
@@ -80,4 +80,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolLegacyTitledEnumSchema, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLegacyTitledEnumSchema &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLegacyTitledEnumSchema &t);

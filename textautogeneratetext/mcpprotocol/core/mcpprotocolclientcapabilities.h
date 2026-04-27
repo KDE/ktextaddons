@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QJsonValue>
 #include <QString>
@@ -12,11 +12,11 @@ class QDebug;
 class QJsonObject;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolClientCapabilities
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientCapabilities
 {
     Q_GADGET
 public:
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Elicitation {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Elicitation {
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Elicitation &other) const;
         [[nodiscard]] static Elicitation fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const Elicitation &image);
@@ -29,7 +29,7 @@ public:
         void setUrl(std::optional<QMap<QString, QJsonValue>> newUrl);
     };
 
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Roots {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Roots {
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Roots &other) const;
         [[nodiscard]] static Roots fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const Roots &image);
@@ -39,7 +39,7 @@ public:
         void setListChanged(std::optional<bool> newListChanged);
     };
 
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Sampling {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Sampling {
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Sampling &other) const;
         [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const Sampling &image);
@@ -52,8 +52,8 @@ public:
         std::optional<QMap<QString, QJsonValue>> mContext;
         std::optional<QMap<QString, QJsonValue>> mTools;
     };
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Tasks {
-        struct TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT Requests {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tasks {
+        struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Requests {
             struct Elicitation {
                 std::optional<QMap<QString, QJsonValue>> mCreate;
 
@@ -165,11 +165,11 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Elicitation &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sampling &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Elicitation &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sampling &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t);

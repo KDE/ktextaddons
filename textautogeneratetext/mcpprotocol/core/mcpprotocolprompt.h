@@ -7,7 +7,7 @@
 #include "mcpprotocolicon.h"
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolpromptargument.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 
@@ -15,7 +15,7 @@ class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolPrompt
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPrompt
 {
 public:
     /*!
@@ -86,4 +86,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolPrompt, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPrompt &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPrompt &t);

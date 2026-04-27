@@ -5,11 +5,11 @@
 */
 #pragma once
 
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpBase : public QObject
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpBase : public QObject
 {
     Q_OBJECT
 public:

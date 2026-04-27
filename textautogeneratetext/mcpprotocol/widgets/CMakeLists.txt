@@ -46,7 +46,7 @@ generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME texta
 
 # install(
 #     FILES
-#         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocol_export.h
+#         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_export.h
 #         ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
 #         ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
 #         ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}

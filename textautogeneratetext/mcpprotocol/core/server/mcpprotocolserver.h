@@ -6,12 +6,12 @@
 #pragma once
 
 #include "common/mcpprotocolplugin.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 namespace McpProtocol
 {
 class McpProtocolSettings;
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolServer : public QObject
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServer : public QObject
 {
     Q_OBJECT
 public:
@@ -31,8 +31,8 @@ Q_SIGNALS:
     void error(const QString &str);
 
 private:
-    TEXTAUTOGENERATETEXTMCPPROTOCOL_NO_EXPORT void initialize();
-    TEXTAUTOGENERATETEXTMCPPROTOCOL_NO_EXPORT void loadPlugin();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void loadPlugin();
     const McpProtocol::McpProtocolPlugin::ProtocolType mProtocolType;
     McpProtocolPlugin *mPlugin = nullptr;
     McpProtocolPluginInterface *mPluginInterface = nullptr;

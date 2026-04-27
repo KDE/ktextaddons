@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "mcpprotocolprompt.h"
-#include "textautogeneratetextmcpprotocol_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QJsonObject;
@@ -13,7 +13,7 @@ class QJsonObject;
 class QDebug;
 namespace McpProtocol
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT McpProtocolTextResourceContents
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTextResourceContents
 {
 public:
     /*!
@@ -70,4 +70,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolTextResourceContents, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOL_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTextResourceContents &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTextResourceContents &t);
