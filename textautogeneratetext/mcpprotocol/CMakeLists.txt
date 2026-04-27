@@ -243,7 +243,7 @@ install(
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocol/textautogeneratetextmcpprotocol
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore/textautogeneratetextmcpprotocolcore
     COMPONENT Devel
 )
 
@@ -252,7 +252,7 @@ install(
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocol/TextAutoGenerateTextMcpProtocol
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore/TextAutoGenerateTextMcpProtocolCore
     COMPONENT Devel
 )
 
