@@ -10,7 +10,7 @@
 #include <QString>
 class QDebug;
 class QJsonObject;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientCapabilities
 {
@@ -164,12 +164,16 @@ private:
     std::optional<Tasks> mTasks;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Elicitation &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sampling &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
+                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Elicitation &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Roots &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Sampling &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
+                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug
+operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug
+operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t);

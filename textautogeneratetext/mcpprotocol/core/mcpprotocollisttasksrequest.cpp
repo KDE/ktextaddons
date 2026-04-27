@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListTasksRequest::McpProtocolListTasksRequest() = default;
 
 McpProtocolListTasksRequest::~McpProtocolListTasksRequest() = default;
@@ -22,7 +22,7 @@ QByteArray McpProtocolListTasksRequest::type()
 
 bool McpProtocolListTasksRequest::operator==(const McpProtocolListTasksRequest &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListTasksRequest &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolListTasksRequest &t)
 {
     d.space() << "params:" << t.params();
     d.space() << "id:" << t.id();

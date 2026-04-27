@@ -15,7 +15,7 @@ McpProtocolRootsListChangedNotificationTest::McpProtocolRootsListChangedNotifica
 
 void McpProtocolRootsListChangedNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolRootsListChangedNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolRootsListChangedNotification w;
     QVERIFY(!w.params().has_value());
 }
 #include "moc_mcpprotocolrootslistchangednotificationtest.cpp"

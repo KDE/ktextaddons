@@ -9,7 +9,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 #include <QVariant>
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSettings
 {

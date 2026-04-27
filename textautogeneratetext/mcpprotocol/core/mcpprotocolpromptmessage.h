@@ -15,7 +15,7 @@
 #include <QString>
 class QJsonObject;
 class QDebug;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPromptMessage
 {
@@ -58,5 +58,5 @@ private:
     McpProtocolUtils::Role mRole = McpProtocolUtils::Role::Unknown;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolPromptMessage, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPromptMessage &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage &t);

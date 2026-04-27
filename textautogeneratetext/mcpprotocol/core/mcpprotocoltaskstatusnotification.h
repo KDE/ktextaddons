@@ -11,7 +11,7 @@
 class QJsonObject;
 
 class QDebug;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTaskStatusNotification
 {
@@ -49,5 +49,5 @@ private:
     McpProtocolTaskStatusNotificationParams mParams;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolTaskStatusNotification, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTaskStatusNotification &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskStatusNotification, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskStatusNotification &t);

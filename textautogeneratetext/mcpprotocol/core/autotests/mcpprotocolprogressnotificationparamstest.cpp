@@ -15,7 +15,7 @@ McpProtocolProgressNotificationParamsTest::McpProtocolProgressNotificationParams
 
 void McpProtocolProgressNotificationParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolProgressNotificationParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotificationParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.message().has_value());
     QVERIFY(!w.total().has_value());

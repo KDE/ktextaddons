@@ -11,7 +11,7 @@
 #include <QString>
 class QDebug;
 class QJsonObject;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolBlobResourceContents
 {
@@ -73,5 +73,5 @@ private:
     QString mUri;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolBlobResourceContents, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolBlobResourceContents &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolBlobResourceContents, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolBlobResourceContents &t);

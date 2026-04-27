@@ -15,7 +15,7 @@ McpProtocolProgressNotificationTest::McpProtocolProgressNotificationTest(QObject
 
 void McpProtocolProgressNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolProgressNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotification w;
     QCOMPARE(w.type(), "notifications/progress"_ba);
     // TODO
 }

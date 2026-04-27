@@ -9,14 +9,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolProgressNotificationParams::McpProtocolProgressNotificationParams() = default;
 
 McpProtocolProgressNotificationParams::~McpProtocolProgressNotificationParams() = default;
 
 bool McpProtocolProgressNotificationParams::operator==(const McpProtocolProgressNotificationParams &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolProgressNotificationParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotificationParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "message:" << t.message();

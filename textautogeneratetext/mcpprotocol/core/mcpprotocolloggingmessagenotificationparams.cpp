@@ -9,18 +9,18 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLoggingMessageNotificationParams::McpProtocolLoggingMessageNotificationParams() = default;
 
 McpProtocolLoggingMessageNotificationParams::~McpProtocolLoggingMessageNotificationParams() = default;
 
 bool McpProtocolLoggingMessageNotificationParams::operator==(const McpProtocolLoggingMessageNotificationParams &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLoggingMessageNotificationParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotificationParams &t)
 {
     d.space() << "data:" << t.data();
     d.space() << "logger:" << t.logger();
-    d.space() << "level:" << McpProtocol::McpProtocolUtils::convertLoggingLevelToString(t.level());
+    d.space() << "level:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(t.level());
     d.space() << "meta:" << t.meta();
     return d;
 }
@@ -30,7 +30,7 @@ McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificatio
     McpProtocolLoggingMessageNotificationParams params;
     params.setData(obj.value("data"_L1).toString());
     if (obj.contains("level"_L1) && obj["level"_L1].isString()) {
-        params.setLevel(McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(obj["level"_L1].toString()));
+        params.setLevel(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelFromString(obj["level"_L1].toString()));
     }
     if (obj.contains("logger"_L1)) {
         params.setLogger(obj.value("logger"_L1).toString());
@@ -45,7 +45,7 @@ QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtoco
 {
     QJsonObject obj;
     obj["data"_L1] = params.data();
-    obj["level"_L1] = McpProtocol::McpProtocolUtils::convertLoggingLevelToString(params.level());
+    obj["level"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(params.level());
     if (params.meta().has_value()) {
         obj["meta"_L1] = McpProtocolMeta::toJson(*params.meta());
     }

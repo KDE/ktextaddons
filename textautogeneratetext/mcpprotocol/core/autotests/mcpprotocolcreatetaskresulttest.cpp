@@ -15,7 +15,7 @@ McpProtocolCreateTaskResultTest::McpProtocolCreateTaskResultTest(QObject *parent
 
 void McpProtocolCreateTaskResultTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCreateTaskResult w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateTaskResult w;
     QVERIFY(!w.meta().has_value());
     // TODO QVERIFY(w.task().isEmpty());
 }

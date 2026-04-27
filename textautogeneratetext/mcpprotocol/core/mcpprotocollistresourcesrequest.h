@@ -10,7 +10,7 @@
 #include <QString>
 class QDebug;
 class QJsonObject;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolListResourcesRequest
 {
@@ -56,5 +56,5 @@ private:
     std::optional<McpProtocolPaginatedRequestParams> mParams;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolListResourcesRequest, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListResourcesRequest &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourcesRequest, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourcesRequest &t);

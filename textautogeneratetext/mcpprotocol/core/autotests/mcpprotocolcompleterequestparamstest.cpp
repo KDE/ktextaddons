@@ -15,7 +15,7 @@ McpProtocolCompleteRequestParamsTest::McpProtocolCompleteRequestParamsTest(QObje
 
 void McpProtocolCompleteRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCompleteRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams w;
     QVERIFY(!w.meta().has_value());
     // TODO
 }

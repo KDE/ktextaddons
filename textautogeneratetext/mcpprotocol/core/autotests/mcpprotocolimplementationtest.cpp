@@ -15,7 +15,7 @@ McpProtocolImplementationTest::McpProtocolImplementationTest(QObject *parent)
 
 void McpProtocolImplementationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolImplementation w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolImplementation w;
     QVERIFY(!w.description().has_value());
     QVERIFY(!w.icons().has_value());
     QVERIFY(!w.title().has_value());

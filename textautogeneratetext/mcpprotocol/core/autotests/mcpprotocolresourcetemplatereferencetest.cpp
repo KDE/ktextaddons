@@ -15,7 +15,7 @@ McpProtocolResourceTemplateReferenceTest::McpProtocolResourceTemplateReferenceTe
 
 void McpProtocolResourceTemplateReferenceTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResourceTemplateReference w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplateReference w;
     QCOMPARE(w.type(), "ref/resource"_ba);
     QVERIFY(w.uri().isEmpty());
 }

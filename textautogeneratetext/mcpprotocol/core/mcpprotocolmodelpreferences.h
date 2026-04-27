@@ -11,7 +11,7 @@
 #include <QString>
 class QJsonObject;
 class QDebug;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolModelPreferences
 {
@@ -69,5 +69,5 @@ private:
     std::optional<double> mSpeedPriority;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolModelPreferences, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolModelPreferences &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolModelPreferences, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolModelPreferences &t);

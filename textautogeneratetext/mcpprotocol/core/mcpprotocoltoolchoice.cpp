@@ -9,12 +9,12 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolChoice::McpProtocolToolChoice() = default;
 
 bool McpProtocolToolChoice::operator==(const McpProtocolToolChoice &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolChoice &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolChoice &t)
 {
     d.space() << "mode:" << t.mode();
     return d;

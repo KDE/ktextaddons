@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolGetPromptRequestParams::McpProtocolGetPromptRequestParams() = default;
 
 McpProtocolGetPromptRequestParams::~McpProtocolGetPromptRequestParams() = default;
@@ -19,7 +19,7 @@ bool McpProtocolGetPromptRequestParams::operator==(const McpProtocolGetPromptReq
 
 bool McpProtocolGetPromptRequestParams::Meta::operator==(const McpProtocolGetPromptRequestParams::Meta &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "meta:" << t.meta();
@@ -27,7 +27,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptRequestParams::Meta &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams::Meta &t)
 {
     d.space() << "progressToken:" << t.progressToken();
     return d;

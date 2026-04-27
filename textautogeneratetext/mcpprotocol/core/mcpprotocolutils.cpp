@@ -49,7 +49,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Role role)
 {
     switch (role) {
     case McpProtocolUtils::Role::Assistant:
@@ -62,7 +62,7 @@ QString McpProtocol::McpProtocolUtils::convertRoleToString(McpProtocolUtils::Rol
     return {};
 }
 
-McpProtocol::McpProtocolUtils::Role McpProtocol::McpProtocolUtils::convertRoleFromString(const QString &str)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleFromString(const QString &str)
 {
     if (str == "assistant"_L1) {
         return McpProtocolUtils::Role::Assistant;
@@ -73,7 +73,7 @@ McpProtocol::McpProtocolUtils::Role McpProtocol::McpProtocolUtils::convertRoleFr
     return McpProtocolUtils::Role::Unknown;
 }
 
-QString McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level)
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level)
 {
     switch (level) {
     case McpProtocolUtils::LoggingLevel::Alert:
@@ -98,7 +98,8 @@ QString McpProtocol::McpProtocolUtils::convertLoggingLevelToString(McpProtocolUt
     return {};
 }
 
-McpProtocol::McpProtocolUtils::LoggingLevel McpProtocol::McpProtocolUtils::convertLoggingLevelFromString(const QString &str)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::LoggingLevel
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelFromString(const QString &str)
 {
     if (str == "alert"_L1) {
         return McpProtocolUtils::LoggingLevel::Alert;
@@ -121,7 +122,7 @@ McpProtocol::McpProtocolUtils::LoggingLevel McpProtocol::McpProtocolUtils::conve
     return McpProtocolUtils::LoggingLevel::Unknown;
 }
 
-QString McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocolUtils::TaskStatus level)
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(McpProtocolUtils::TaskStatus level)
 {
     switch (level) {
     case McpProtocolUtils::TaskStatus::Cancelled:
@@ -140,7 +141,8 @@ QString McpProtocol::McpProtocolUtils::convertTaskStatusToString(McpProtocolUtil
     return {};
 }
 
-McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convertTaskStatusFromString(const QString &str)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(const QString &str)
 {
     if (str == "cancelled"_L1) {
         return McpProtocolUtils::TaskStatus::Cancelled;
@@ -158,7 +160,8 @@ McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convert
     }
 }
 
-McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::progressTokenFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::progressTokenFromJson(const QJsonValue &val)
 {
     if (val.isString()) {
         return ProgressToken(val.toString());
@@ -170,7 +173,7 @@ McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::prog
     return {};
 }
 
-McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::requestIdFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(const QJsonValue &val)
 {
     if (val.isString()) {
         return RequestId(val.toString());
@@ -182,17 +185,18 @@ McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::requestI
     return {};
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::requestIdToJson(const McpProtocol::McpProtocolUtils::RequestId &val)
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &val)
 {
     return QVariant::fromValue(val).toJsonValue();
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::progressTokenToJson(const ProgressToken &val)
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::progressTokenToJson(const ProgressToken &val)
 {
     return QVariant::fromValue(val).toJsonValue();
 }
 
-McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocolUtils::embeddedResourceResourceFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid EmbeddedResourceResource: expected object or array";
@@ -209,7 +213,8 @@ McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocol
     return {};
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const McpProtocol::McpProtocolUtils::EmbeddedResourceResource &val)
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceToJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonValue {
@@ -223,7 +228,8 @@ QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const M
         val);
 }
 
-McpProtocol::McpProtocolUtils::CompleteRequestParamsRef McpProtocol::McpProtocolUtils::completeRequestParamsRefFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::completeRequestParamsRefFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CompleteRequestParamsRef: expected object or array";
@@ -239,7 +245,7 @@ McpProtocol::McpProtocolUtils::CompleteRequestParamsRef McpProtocol::McpProtocol
     return {};
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::completeRequestParamsRefToJson(const CompleteRequestParamsRef &val)
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::completeRequestParamsRefToJson(const CompleteRequestParamsRef &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonValue {
@@ -253,7 +259,8 @@ QJsonValue McpProtocol::McpProtocolUtils::completeRequestParamsRefToJson(const C
         val);
 }
 
-McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils::clientNotificationFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientNotification
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientNotificationFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientNotification: expected object";
@@ -276,7 +283,8 @@ McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils:
     return {};
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::clientNotificationToJson(const McpProtocol::McpProtocolUtils::ClientNotification &val)
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientNotificationToJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientNotification &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonObject {
@@ -290,7 +298,8 @@ QJsonValue McpProtocol::McpProtocolUtils::clientNotificationToJson(const McpProt
         val);
 }
 
-QString McpProtocol::McpProtocolUtils::getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token)
+QString
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getProgressTokenValue(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &token)
 {
     return std::visit(
         [](auto &&arg) -> QString {
@@ -305,7 +314,7 @@ QString McpProtocol::McpProtocolUtils::getProgressTokenValue(const McpProtocol::
 }
 
 #if 0
-QString McpProtocol::McpProtocolUtils::getCompleteRequestParamsRef(const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &token)
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token)
 {
     return std::visit(
         [](auto &&arg) -> QString {
@@ -319,25 +328,26 @@ QString McpProtocol::McpProtocolUtils::getCompleteRequestParamsRef(const McpProt
         token);
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &t)
 {
-    d.space() << "t:" << McpProtocol::McpProtocolUtils::getCompleteRequestParamsRef(t);
+    d.space() << "t:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(t);
     return d;
 }
 #endif
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &t)
 {
-    d.space() << "progressToken:" << McpProtocol::McpProtocolUtils::getProgressTokenValue(t);
+    d.space() << "progressToken:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getProgressTokenValue(t);
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role &t)
 {
-    d.space() << "role:" << McpProtocol::McpProtocolUtils::convertRoleToString(t);
+    d.space() << "role:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleToString(t);
     return d;
 }
 
-QJsonObject McpProtocol::McpProtocolUtils::contentBlocktoJson(const McpProtocol::McpProtocolUtils::ContentBlock &val)
+QJsonObject
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlocktoJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonObject {
@@ -351,7 +361,8 @@ QJsonObject McpProtocol::McpProtocolUtils::contentBlocktoJson(const McpProtocol:
         val);
 }
 
-McpProtocol::McpProtocolUtils::ContentBlock McpProtocol::McpProtocolUtils::contentBlockFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ContentBlock: expected object";
@@ -375,7 +386,8 @@ McpProtocol::McpProtocolUtils::ContentBlock McpProtocol::McpProtocolUtils::conte
     return {};
 }
 
-McpProtocol::McpProtocolUtils::ClientRequest McpProtocol::McpProtocolUtils::clientRequestFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientRequest
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientRequestFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientRequest: expected object";
@@ -422,7 +434,8 @@ McpProtocol::McpProtocolUtils::ClientRequest McpProtocol::McpProtocolUtils::clie
     return {};
 }
 
-QJsonObject McpProtocol::McpProtocolUtils::clientRequestToJson(const McpProtocol::McpProtocolUtils::ClientRequest &val)
+QJsonObject
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientRequestToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientRequest &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonObject {
@@ -436,7 +449,8 @@ QJsonObject McpProtocol::McpProtocolUtils::clientRequestToJson(const McpProtocol
         val);
 }
 
-McpProtocol::McpProtocolUtils::ServerNotification McpProtocol::McpProtocolUtils::serverNotificationFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerNotification
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverNotificationFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ServerNotification: expected object";
@@ -468,7 +482,7 @@ McpProtocol::McpProtocolUtils::ServerNotification McpProtocol::McpProtocolUtils:
     return {};
 }
 
-QJsonObject McpProtocol::McpProtocolUtils::serverNotificationToJson(const ServerNotification &val)
+QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverNotificationToJson(const ServerNotification &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonObject {
@@ -482,12 +496,13 @@ QJsonObject McpProtocol::McpProtocolUtils::serverNotificationToJson(const Server
         val);
 }
 
-McpProtocol::McpProtocolUtils::CreateMessageResultContent McpProtocol::McpProtocolUtils::createMessageResultContentFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CreateMessageResultContent
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageResultContentFromJson(const QJsonValue &val)
 {
     if (val.isArray()) {
         QList<SamplingMessageContentBlock> list;
         for (const QJsonValue &v : val.toArray()) {
-            list.append(McpProtocol::McpProtocolUtils::samplingMessageContentBlockFromJson(v));
+            list.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockFromJson(v));
         }
         return CreateMessageResultContent(std::move(list));
     }
@@ -511,7 +526,7 @@ McpProtocol::McpProtocolUtils::CreateMessageResultContent McpProtocol::McpProtoc
     return {};
 }
 
-QJsonValue McpProtocol::McpProtocolUtils::createMessageResultContentToJson(const CreateMessageResultContent &val)
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageResultContentToJson(const CreateMessageResultContent &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonValue {
@@ -531,7 +546,8 @@ QJsonValue McpProtocol::McpProtocolUtils::createMessageResultContentToJson(const
         val);
 }
 
-McpProtocol::McpProtocolUtils::SamplingMessageContentBlock McpProtocol::McpProtocolUtils::samplingMessageContentBlockFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::SamplingMessageContentBlock
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid SamplingMessageContentBlock: expected object";
@@ -554,7 +570,7 @@ McpProtocol::McpProtocolUtils::SamplingMessageContentBlock McpProtocol::McpProto
     return {};
 }
 
-QJsonObject McpProtocol::McpProtocolUtils::samplingMessageContentBlockToJson(const SamplingMessageContentBlock &val)
+QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockToJson(const SamplingMessageContentBlock &val)
 {
     return std::visit(
         [](const auto &v) -> QJsonObject {

@@ -5,7 +5,7 @@
 */
 #include "mcpbase.h"
 
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpBase::McpBase(QObject *parent)
     : QObject{parent}
 {

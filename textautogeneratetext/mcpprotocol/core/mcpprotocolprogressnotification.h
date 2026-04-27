@@ -10,7 +10,7 @@
 #include <QString>
 class QJsonObject;
 class QDebug;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolProgressNotification
 {
@@ -48,5 +48,5 @@ private:
     McpProtocolProgressNotificationParams mParams;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolProgressNotification, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolProgressNotification &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotification, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotification &t);

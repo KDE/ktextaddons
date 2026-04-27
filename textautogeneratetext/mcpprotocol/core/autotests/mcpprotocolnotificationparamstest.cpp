@@ -15,7 +15,7 @@ McpProtocolNotificationParamsTest::McpProtocolNotificationParamsTest(QObject *pa
 
 void McpProtocolNotificationParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolNotificationParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolNotificationParams w;
     QVERIFY(!w.meta().has_value());
 }
 #include "moc_mcpprotocolnotificationparamstest.cpp"

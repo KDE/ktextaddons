@@ -10,7 +10,7 @@
 #include <QString>
 class QDebug;
 class QJsonObject;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTask
 {
@@ -56,10 +56,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] McpProtocol::McpProtocolUtils::TaskStatus status() const;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus status() const;
     /*!
      */
-    void setStatus(McpProtocol::McpProtocolUtils::TaskStatus newStatus);
+    void setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus newStatus);
 
     /*!
      */
@@ -86,11 +86,11 @@ private:
     QString mCreatedAt;
     QString mLastUpdatedAt;
     std::optional<int> mPollInterval;
-    McpProtocol::McpProtocolUtils::TaskStatus mStatus = McpProtocol::McpProtocolUtils::TaskStatus::Unknown;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus mStatus = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus::Unknown;
     std::optional<QString> mStatusMessage;
     QString mTaskId;
     std::optional<int> mTtl;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolTask, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTask &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolTask, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTask &t);

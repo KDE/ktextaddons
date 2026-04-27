@@ -11,7 +11,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCancelTaskRequest::McpProtocolCancelTaskRequest() = default;
 
 McpProtocolCancelTaskRequest::~McpProtocolCancelTaskRequest() = default;
@@ -24,27 +24,29 @@ QByteArray McpProtocolCancelTaskRequest::type()
 bool McpProtocolCancelTaskRequest::Params::operator==(const McpProtocolCancelTaskRequest::Params &other) const = default;
 bool McpProtocolCancelTaskRequest::operator==(const McpProtocolCancelTaskRequest &other) const = default;
 
-McpProtocol::McpProtocolCancelTaskRequest::Params McpProtocol::McpProtocolCancelTaskRequest::Params::fromJson(const QJsonObject &obj)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params
+TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params::fromJson(const QJsonObject &obj)
 {
-    McpProtocol::McpProtocolCancelTaskRequest::Params params;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params params;
     params.setTaskId(obj.value("taskId"_L1).toString());
     return params;
 }
 
-QJsonObject McpProtocol::McpProtocolCancelTaskRequest::Params::toJson(const McpProtocol::McpProtocolCancelTaskRequest::Params &image)
+QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params::toJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params &image)
 {
     QJsonObject obj;
     obj["taskId"_L1] = image.taskId();
     return obj;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest::Params &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params &t)
 {
     d.space() << "taskId:" << t.taskId();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelTaskRequest &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest &t)
 {
     d.space() << "params:" << t.params();
     d.space() << "id:" << t.id();

@@ -15,7 +15,7 @@ McpProtocolCancelledNotificationParamsTest::McpProtocolCancelledNotificationPara
 
 void McpProtocolCancelledNotificationParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCancelledNotificationParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelledNotificationParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.reason().has_value());
     QVERIFY(!w.requestId().has_value());

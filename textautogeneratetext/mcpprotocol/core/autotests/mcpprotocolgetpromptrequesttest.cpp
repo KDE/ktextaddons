@@ -15,7 +15,7 @@ McpProtocolGetPromptRequestTest::McpProtocolGetPromptRequestTest(QObject *parent
 
 void McpProtocolGetPromptRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolGetPromptRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequest w;
     QCOMPARE(w.type(), "prompts/get"_ba);
     // TODO
 }

@@ -15,7 +15,7 @@ McpProtocolResourceLinkTest::McpProtocolResourceLinkTest(QObject *parent)
 
 void McpProtocolResourceLinkTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResourceLink w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceLink w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.annotations().has_value());
     QVERIFY(!w.description().has_value());

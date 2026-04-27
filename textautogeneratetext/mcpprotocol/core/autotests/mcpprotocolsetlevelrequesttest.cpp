@@ -15,7 +15,7 @@ McpProtocolSetLevelRequestTest::McpProtocolSetLevelRequestTest(QObject *parent)
 
 void McpProtocolSetLevelRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolSetLevelRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequest w;
     QCOMPARE(w.type(), "logging/setLevel"_ba);
     // TODO
 }

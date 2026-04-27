@@ -11,7 +11,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTextContent::McpProtocolTextContent() = default;
 
 McpProtocolTextContent::~McpProtocolTextContent() = default;
@@ -33,7 +33,7 @@ void McpProtocolTextContent::setText(const QString &newText)
     mText = newText;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTextContent &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTextContent &t)
 {
     d.space() << "text:" << t.text();
     d.space() << "annotations:" << t.annotations();

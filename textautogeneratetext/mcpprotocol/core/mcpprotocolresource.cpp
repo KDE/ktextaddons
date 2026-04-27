@@ -10,14 +10,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResource::McpProtocolResource() = default;
 
 McpProtocolResource::~McpProtocolResource() = default;
 
 bool McpProtocolResource::operator==(const McpProtocolResource &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResource &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResource &t)
 {
     d.space() << "uri:" << t.uri();
     d.space() << "title:" << t.title();

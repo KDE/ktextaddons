@@ -9,14 +9,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolRelatedTaskMetadata::McpProtocolRelatedTaskMetadata() = default;
 
 McpProtocolRelatedTaskMetadata::~McpProtocolRelatedTaskMetadata() = default;
 
 bool McpProtocolRelatedTaskMetadata::operator==(const McpProtocolRelatedTaskMetadata &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolRelatedTaskMetadata &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolRelatedTaskMetadata &t)
 {
     d.space() << "taskId:" << t.taskId();
     return d;

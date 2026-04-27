@@ -9,14 +9,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLoggingMessageNotification::McpProtocolLoggingMessageNotification() = default;
 
 McpProtocolLoggingMessageNotification::~McpProtocolLoggingMessageNotification() = default;
 
 bool McpProtocolLoggingMessageNotification::operator==(const McpProtocolLoggingMessageNotification &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLoggingMessageNotification &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotification &t)
 {
     d.space() << "params:" << t.params();
     return d;

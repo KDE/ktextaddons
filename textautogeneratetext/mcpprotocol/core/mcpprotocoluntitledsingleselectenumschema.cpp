@@ -9,14 +9,14 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUntitledSingleSelectEnumSchema::McpProtocolUntitledSingleSelectEnumSchema() = default;
 
 McpProtocolUntitledSingleSelectEnumSchema::~McpProtocolUntitledSingleSelectEnumSchema() = default;
 
 bool McpProtocolUntitledSingleSelectEnumSchema::operator==(const McpProtocolUntitledSingleSelectEnumSchema &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUntitledSingleSelectEnumSchema &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledSingleSelectEnumSchema &t)
 {
     d.space() << "title:" << t.title();
     d.space() << "description:" << t.description();

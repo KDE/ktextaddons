@@ -9,7 +9,7 @@
 #include <QString>
 class QDebug;
 class QJsonObject;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitationCompleteNotification
 {
@@ -54,5 +54,6 @@ private:
     Params mParams;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolElicitationCompleteNotification, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolElicitationCompleteNotification &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitationCompleteNotification, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
+                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitationCompleteNotification &t);

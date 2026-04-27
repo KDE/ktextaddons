@@ -8,7 +8,7 @@
 #include "mcpprotocolserverplugin_export.h"
 #include <QObject>
 class McpServerStdio;
-class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerStdioPluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerStdioPluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:

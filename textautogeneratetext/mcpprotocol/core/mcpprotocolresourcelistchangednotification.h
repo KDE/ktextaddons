@@ -12,7 +12,7 @@
 #include <QString>
 class QJsonObject;
 class QDebug;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolResourceListChangedNotification
 {
@@ -50,5 +50,6 @@ private:
     std::optional<McpProtocolNotificationParams> mParams;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolResourceListChangedNotification, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceListChangedNotification &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceListChangedNotification, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
+                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceListChangedNotification &t);

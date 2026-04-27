@@ -15,7 +15,7 @@ McpProtocolSubscribeRequestParamsTest::McpProtocolSubscribeRequestParamsTest(QOb
 
 void McpProtocolSubscribeRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolSubscribeRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscribeRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.uri().isEmpty());
 }

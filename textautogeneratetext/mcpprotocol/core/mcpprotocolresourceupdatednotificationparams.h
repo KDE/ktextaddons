@@ -11,7 +11,7 @@
 #include <QString>
 class QDebug;
 class QJsonObject;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolResourceUpdatedNotificationParams
 {
@@ -51,5 +51,6 @@ private:
     QString mUri;
 };
 }
-Q_DECLARE_TYPEINFO(McpProtocol::McpProtocolResourceUpdatedNotificationParams, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceUpdatedNotificationParams &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
+                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams &t);

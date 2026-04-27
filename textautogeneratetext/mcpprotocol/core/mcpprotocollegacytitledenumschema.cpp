@@ -10,14 +10,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLegacyTitledEnumSchema::McpProtocolLegacyTitledEnumSchema() = default;
 
 McpProtocolLegacyTitledEnumSchema::~McpProtocolLegacyTitledEnumSchema() = default;
 
 bool McpProtocolLegacyTitledEnumSchema::operator==(const McpProtocolLegacyTitledEnumSchema &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolLegacyTitledEnumSchema &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolLegacyTitledEnumSchema &t)
 {
     d.space() << "defaultValue:" << t.defaultValue();
     d.space() << "description:" << t.description();

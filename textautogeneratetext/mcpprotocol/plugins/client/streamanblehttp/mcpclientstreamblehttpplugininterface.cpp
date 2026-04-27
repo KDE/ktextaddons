@@ -6,7 +6,7 @@
 #include "mcpclientstreamblehttpplugininterface.h"
 
 McpClientStreambleHttpPluginInterface::McpClientStreambleHttpPluginInterface(QObject *parent)
-    : McpProtocol::McpProtocolPluginInterface{parent}
+    : TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface{parent}
 {
 }
 

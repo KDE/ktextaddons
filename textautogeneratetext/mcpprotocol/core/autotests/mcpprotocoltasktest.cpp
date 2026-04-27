@@ -15,13 +15,13 @@ McpProtocolTaskTest::McpProtocolTaskTest(QObject *parent)
 
 void McpProtocolTaskTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolTask w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolTask w;
     QVERIFY(w.createdAt().isEmpty());
     QVERIFY(w.lastUpdatedAt().isEmpty());
     QVERIFY(w.taskId().isEmpty());
     QVERIFY(!w.pollInterval().has_value());
     QVERIFY(!w.statusMessage().has_value());
     QVERIFY(!w.ttl().has_value());
-    QCOMPARE(w.status(), McpProtocol::McpProtocolUtils::TaskStatus::Unknown);
+    QCOMPARE(w.status(), TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus::Unknown);
 }
 #include "moc_mcpprotocoltasktest.cpp"

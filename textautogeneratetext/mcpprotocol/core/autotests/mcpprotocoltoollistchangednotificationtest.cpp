@@ -15,7 +15,7 @@ McpProtocolToolListChangedNotificationTest::McpProtocolToolListChangedNotificati
 
 void McpProtocolToolListChangedNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolToolListChangedNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolListChangedNotification w;
     QVERIFY(!w.params().has_value());
 }
 #include "moc_mcpprotocoltoollistchangednotificationtest.cpp"

@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSetLevelRequestParams::McpProtocolSetLevelRequestParams() = default;
 
 McpProtocolSetLevelRequestParams::~McpProtocolSetLevelRequestParams() = default;
@@ -18,14 +18,14 @@ McpProtocolSetLevelRequestParams::~McpProtocolSetLevelRequestParams() = default;
 bool McpProtocolSetLevelRequestParams::operator==(const McpProtocolSetLevelRequestParams &other) const = default;
 bool McpProtocolSetLevelRequestParams::Meta::operator==(const McpProtocolSetLevelRequestParams::Meta &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolSetLevelRequestParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams &t)
 {
     d.space() << "level:" << McpProtocolUtils::convertLoggingLevelToString(t.level());
     d.space() << "meta:" << t.meta();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolSetLevelRequestParams::Meta &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams::Meta &t)
 {
     d.space() << "meta:" << t.progressToken();
     return d;

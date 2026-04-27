@@ -15,7 +15,7 @@ McpProtocolTaskStatusNotificationParamsTest::McpProtocolTaskStatusNotificationPa
 
 void McpProtocolTaskStatusNotificationParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolTaskStatusNotificationParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskStatusNotificationParams w;
     QVERIFY(!w.meta().has_value());
     // TODO
 }

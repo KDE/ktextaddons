@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolImageContent::McpProtocolImageContent() = default;
 
 McpProtocolImageContent::~McpProtocolImageContent() = default;
@@ -99,7 +99,7 @@ QJsonObject McpProtocolImageContent::toJson(const McpProtocolImageContent &image
     return obj;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolImageContent &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolImageContent &t)
 {
     d.space() << "data:" << t.data();
     d.space() << "mimeType:" << t.mimeType();

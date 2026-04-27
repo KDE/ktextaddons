@@ -20,7 +20,7 @@ MainWidget::MainWidget(QWidget *parent)
     auto treeview = new QTreeWidget(this);
     splitter->addWidget(treeview);
     // TODO
-    auto client = new McpProtocol::McpProtocolClient(McpProtocol::McpProtocolPlugin::ProtocolType::Sse, this);
+    auto client = new TextAutoGenerateTextMcpProtocolCore::McpProtocolClient(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse, this);
 }
 
 MainWidget::~MainWidget() = default;

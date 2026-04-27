@@ -10,7 +10,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolEmbeddedResource::McpProtocolEmbeddedResource() = default;
 
 McpProtocolEmbeddedResource::~McpProtocolEmbeddedResource() = default;
@@ -22,7 +22,7 @@ QByteArray McpProtocolEmbeddedResource::type()
 
 bool McpProtocolEmbeddedResource::operator==(const McpProtocolEmbeddedResource &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolEmbeddedResource &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolEmbeddedResource &t)
 {
     d.space() << "meta:" << t.meta();
     return d;

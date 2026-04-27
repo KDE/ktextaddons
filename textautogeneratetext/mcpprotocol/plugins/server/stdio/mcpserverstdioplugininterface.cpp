@@ -7,7 +7,7 @@
 #include "stdio/mcpserverstdio.h"
 
 McpServerStdioPluginInterface::McpServerStdioPluginInterface(QObject *parent)
-    : McpProtocol::McpProtocolPluginInterface{parent}
+    : TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface{parent}
     , mServerStdio(new McpServerStdio(this, this))
 {
 }

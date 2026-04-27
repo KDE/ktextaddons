@@ -15,8 +15,8 @@ McpProtocolBooleanSchemaTest::McpProtocolBooleanSchemaTest(QObject *parent)
 
 void McpProtocolBooleanSchemaTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolBooleanSchema w;
-    QCOMPARE(McpProtocol::McpProtocolBooleanSchema::type(), "boolean");
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolBooleanSchema w;
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolBooleanSchema::type(), "boolean");
     QVERIFY(!w.description().has_value());
     QVERIFY(!w.title().has_value());
     QVERIFY(!w.defaultValue().has_value());

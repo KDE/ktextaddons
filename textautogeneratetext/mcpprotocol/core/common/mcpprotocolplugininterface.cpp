@@ -6,7 +6,7 @@
 #include "mcpprotocolplugininterface.h"
 #include "common/mcpprotocolsettings.h"
 
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPluginInterface::McpProtocolPluginInterface(QObject *parent)
     : QObject{parent}
 {

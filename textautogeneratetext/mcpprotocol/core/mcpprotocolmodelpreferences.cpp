@@ -10,14 +10,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolModelPreferences::McpProtocolModelPreferences() = default;
 
 McpProtocolModelPreferences::~McpProtocolModelPreferences() = default;
 
 bool McpProtocolModelPreferences::operator==(const McpProtocolModelPreferences &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolModelPreferences &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolModelPreferences &t)
 {
     d.space() << "costPriority:" << t.costPriority();
     d.space() << "hints:" << t.hints();

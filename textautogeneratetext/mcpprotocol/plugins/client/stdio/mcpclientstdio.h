@@ -9,7 +9,7 @@
 #include <QObject>
 class QProcess;
 class McpClientStdioPluginInterface;
-class McpClientStdio : public McpProtocol::McpBase
+class McpClientStdio : public TextAutoGenerateTextMcpProtocolCore::McpBase
 {
     Q_OBJECT
 public:

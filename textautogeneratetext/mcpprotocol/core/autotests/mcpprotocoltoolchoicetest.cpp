@@ -15,8 +15,8 @@ McpProtocolToolChoiceTest::McpProtocolToolChoiceTest(QObject *parent)
 
 void McpProtocolToolChoiceTest::shouldhaveDefaultValues()
 {
-    const McpProtocol::McpProtocolToolChoice w;
-    QCOMPARE(w.mode(), McpProtocol::McpProtocolToolChoice::Mode::Unknown);
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolChoice w;
+    QCOMPARE(w.mode(), TextAutoGenerateTextMcpProtocolCore::McpProtocolToolChoice::Mode::Unknown);
 }
 
 #include "moc_mcpprotocoltoolchoicetest.cpp"

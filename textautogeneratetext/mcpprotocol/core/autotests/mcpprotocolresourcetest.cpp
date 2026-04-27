@@ -15,7 +15,7 @@ McpProtocolResourceTest::McpProtocolResourceTest(QObject *parent)
 
 void McpProtocolResourceTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResource w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResource w;
     QVERIFY(w.uri().isEmpty());
     QVERIFY(!w.title().has_value());
     QVERIFY(!w.size().has_value());

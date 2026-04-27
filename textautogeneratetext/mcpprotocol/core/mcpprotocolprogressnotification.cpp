@@ -9,7 +9,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolProgressNotification::McpProtocolProgressNotification() = default;
 
 McpProtocolProgressNotification::~McpProtocolProgressNotification() = default;
@@ -21,7 +21,7 @@ QByteArray McpProtocolProgressNotification::type()
 
 bool McpProtocolProgressNotification::operator==(const McpProtocolProgressNotification &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolProgressNotification &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotification &t)
 {
     d.space() << "params:" << t.params();
     return d;

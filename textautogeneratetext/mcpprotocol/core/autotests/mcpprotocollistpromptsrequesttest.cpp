@@ -15,7 +15,7 @@ McpProtocolListPromptsRequestTest::McpProtocolListPromptsRequestTest(QObject *pa
 
 void McpProtocolListPromptsRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolListPromptsRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsRequest w;
     QCOMPARE(w.type(), "prompts/list"_ba);
     QVERIFY(!w.params().has_value());
     // TODO

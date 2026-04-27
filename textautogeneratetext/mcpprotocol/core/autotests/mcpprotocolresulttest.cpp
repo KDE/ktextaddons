@@ -15,7 +15,7 @@ McpProtocolResultTest::McpProtocolResultTest(QObject *parent)
 
 void McpProtocolResultTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResult w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResult w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.additionalProperties().isEmpty());
 }

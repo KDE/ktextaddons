@@ -15,7 +15,7 @@ McpProtocolToolAnnotationsTest::McpProtocolToolAnnotationsTest(QObject *parent)
 
 void McpProtocolToolAnnotationsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolToolAnnotations w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolAnnotations w;
     QString mTitle;
     QVERIFY(w.destructiveHint());
     QVERIFY(!w.idempotentHint());

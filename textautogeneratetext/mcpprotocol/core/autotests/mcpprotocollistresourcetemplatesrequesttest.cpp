@@ -15,7 +15,7 @@ McpProtocolListResourceTemplatesRequestTest::McpProtocolListResourceTemplatesReq
 
 void McpProtocolListResourceTemplatesRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolListResourceTemplatesRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourceTemplatesRequest w;
     QCOMPARE(w.type(), "resources/templates/list"_ba);
     QVERIFY(!w.params().has_value());
     // TODO

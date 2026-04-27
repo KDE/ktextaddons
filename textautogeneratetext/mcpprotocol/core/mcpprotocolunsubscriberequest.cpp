@@ -9,7 +9,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUnsubscribeRequest::McpProtocolUnsubscribeRequest() = default;
 
 McpProtocolUnsubscribeRequest::~McpProtocolUnsubscribeRequest() = default;
@@ -21,7 +21,7 @@ QByteArray McpProtocolUnsubscribeRequest::type()
 
 bool McpProtocolUnsubscribeRequest::operator==(const McpProtocolUnsubscribeRequest &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUnsubscribeRequest &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequest &t)
 {
     d.space() << "params:" << t.params();
     d.space() << "id:" << t.id();

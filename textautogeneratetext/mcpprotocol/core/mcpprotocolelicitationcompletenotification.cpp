@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitationCompleteNotification::McpProtocolElicitationCompleteNotification() = default;
 
 McpProtocolElicitationCompleteNotification::~McpProtocolElicitationCompleteNotification() = default;
@@ -23,7 +23,7 @@ bool McpProtocolElicitationCompleteNotification::operator==(const McpProtocolEli
 
 bool McpProtocolElicitationCompleteNotification::Params::operator==(const McpProtocolElicitationCompleteNotification::Params &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolElicitationCompleteNotification &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitationCompleteNotification &t)
 {
     d.space() << " params" << t.params().elicitationId();
     return d;

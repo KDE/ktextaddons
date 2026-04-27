@@ -15,7 +15,7 @@ McpProtocolGetPromptRequestParamsTest::McpProtocolGetPromptRequestParamsTest(QOb
 
 void McpProtocolGetPromptRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolGetPromptRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.arguments().has_value());
     QVERIFY(w.name().isEmpty());

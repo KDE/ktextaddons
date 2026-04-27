@@ -15,7 +15,7 @@ McpProtocolCallToolRequestParamsTest::McpProtocolCallToolRequestParamsTest(QObje
 
 void McpProtocolCallToolRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCallToolRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.arguments().has_value());
     QVERIFY(!w.task().has_value());

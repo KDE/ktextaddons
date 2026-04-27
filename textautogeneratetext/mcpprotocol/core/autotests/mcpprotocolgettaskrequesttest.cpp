@@ -15,7 +15,7 @@ McpProtocolGetTaskRequestTest::McpProtocolGetTaskRequestTest(QObject *parent)
 
 void McpProtocolGetTaskRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolGetTaskRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetTaskRequest w;
     // TODO
 }
 #include "moc_mcpprotocolgettaskrequesttest.cpp"

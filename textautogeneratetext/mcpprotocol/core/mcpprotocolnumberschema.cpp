@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolNumberSchema::McpProtocolNumberSchema() = default;
 
 McpProtocolNumberSchema::~McpProtocolNumberSchema() = default;
@@ -75,7 +75,7 @@ void McpProtocolNumberSchema::setType(Type newType)
     mType = newType;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolNumberSchema &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolNumberSchema &t)
 {
     d.space() << "defaultValue:" << t.defaultValue();
     d.space() << "description:" << t.description();

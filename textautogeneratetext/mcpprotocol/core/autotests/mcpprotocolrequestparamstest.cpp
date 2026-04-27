@@ -15,7 +15,7 @@ McpProtocolRequestParamsTest::McpProtocolRequestParamsTest(QObject *parent)
 
 void McpProtocolRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.uri().isEmpty());
 }

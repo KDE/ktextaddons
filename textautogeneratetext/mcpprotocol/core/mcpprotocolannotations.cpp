@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 McpProtocolAnnotations::McpProtocolAnnotations() = default;
 
@@ -16,7 +16,7 @@ McpProtocolAnnotations::~McpProtocolAnnotations() = default;
 
 bool McpProtocolAnnotations::operator==(const McpProtocolAnnotations &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolAnnotations &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolAnnotations &t)
 {
     d.space() << "audience:" << t.audience();
     d.space() << "priority:" << t.priority();

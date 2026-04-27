@@ -9,7 +9,7 @@
 #include <KPluginFactory>
 #include <KPluginMetaData>
 
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 
 McpProtocolServer::McpProtocolServer(McpProtocolPlugin::ProtocolType protocolType, QObject *parent)
@@ -24,7 +24,7 @@ McpProtocolServer::~McpProtocolServer() = default;
 void McpProtocolServer::loadPlugin()
 {
     const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolserverplugin"_s);
-    const auto result = KPluginFactory::instantiatePlugin<McpProtocol::McpProtocolPlugin>(serverPlugin, this);
+    const auto result = KPluginFactory::instantiatePlugin<TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin>(serverPlugin, this);
     if (result) {
         mPlugin = result.plugin;
         initialize();

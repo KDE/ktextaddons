@@ -9,14 +9,14 @@
 
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolError::McpProtocolError() = default;
 
 McpProtocolError::~McpProtocolError() = default;
 
 bool McpProtocolError::operator==(const McpProtocolError &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolError &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolError &t)
 {
     d.space() << "code:" << t.code();
     d.space() << "data:" << t.data();

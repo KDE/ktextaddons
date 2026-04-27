@@ -9,14 +9,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolExecution::McpProtocolToolExecution() = default;
 
 McpProtocolToolExecution::~McpProtocolToolExecution() = default;
 
 bool McpProtocolToolExecution::operator==(const McpProtocolToolExecution &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolExecution &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolExecution &t)
 {
     d.space() << "taskSupport:" << t.taskSupport();
     return d;

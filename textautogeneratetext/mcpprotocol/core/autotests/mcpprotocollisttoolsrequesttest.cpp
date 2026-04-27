@@ -15,7 +15,7 @@ McpProtocolListToolsRequestTest::McpProtocolListToolsRequestTest(QObject *parent
 
 void McpProtocolListToolsRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolListToolsRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsRequest w;
     QCOMPARE(w.type(), "tools/list"_ba);
     // TODO
 }

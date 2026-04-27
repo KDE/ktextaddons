@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceUpdatedNotification::McpProtocolResourceUpdatedNotification() = default;
 
 McpProtocolResourceUpdatedNotification::~McpProtocolResourceUpdatedNotification() = default;
@@ -22,7 +22,7 @@ QByteArray McpProtocolResourceUpdatedNotification::type()
 
 bool McpProtocolResourceUpdatedNotification::operator==(const McpProtocolResourceUpdatedNotification &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceUpdatedNotification &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotification &t)
 {
     d.space() << "param:" << t.params();
     return d;

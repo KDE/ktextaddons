@@ -15,7 +15,7 @@ McpProtocolCancelledNotificationTest::McpProtocolCancelledNotificationTest(QObje
 
 void McpProtocolCancelledNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCancelledNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelledNotification w;
     // TODO
 }
 #include "moc_mcpprotocolcancellednotificationtest.cpp"

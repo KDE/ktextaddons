@@ -15,7 +15,7 @@ McpProtocolTextResourceContentsTest::McpProtocolTextResourceContentsTest(QObject
 
 void McpProtocolTextResourceContentsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolTextResourceContents w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolTextResourceContents w;
     QVERIFY(w.text().isEmpty());
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.mimeType().has_value());

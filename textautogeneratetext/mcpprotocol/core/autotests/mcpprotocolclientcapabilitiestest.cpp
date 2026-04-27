@@ -15,7 +15,7 @@ McpProtocolClientCapabilitiesTest::McpProtocolClientCapabilitiesTest(QObject *pa
 
 void McpProtocolClientCapabilitiesTest::shouldhaveDefaultValues()
 {
-    const McpProtocol::McpProtocolClientCapabilities w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities w;
     // TODO
 }
 

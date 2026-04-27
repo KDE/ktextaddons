@@ -15,7 +15,7 @@ McpProtocolCancelTaskRequestTest::McpProtocolCancelTaskRequestTest(QObject *pare
 
 void McpProtocolCancelTaskRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCancelTaskRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest w;
     // TODO
 }
 #include "moc_mcpprotocolcanceltaskrequesttest.cpp"

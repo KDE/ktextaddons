@@ -10,7 +10,7 @@
 
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolIcon::McpProtocolIcon() = default;
 
 McpProtocolIcon::~McpProtocolIcon() = default;
@@ -57,7 +57,7 @@ void McpProtocolIcon::setSrc(const QString &newSrc)
     mSrc = newSrc;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolIcon &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolIcon &t)
 {
     d.space() << "src:" << t.src();
     d.space() << "sizes:" << t.sizes();

@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPromptReference::McpProtocolPromptReference() = default;
 
 McpProtocolPromptReference::~McpProtocolPromptReference() = default;
@@ -22,7 +22,7 @@ QByteArray McpProtocolPromptReference::type()
 
 bool McpProtocolPromptReference::operator==(const McpProtocolPromptReference &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPromptReference &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptReference &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "title:" << t.title();

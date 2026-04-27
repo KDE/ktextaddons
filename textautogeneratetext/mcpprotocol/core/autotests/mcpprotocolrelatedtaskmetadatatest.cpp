@@ -15,7 +15,7 @@ McpProtocolRelatedTaskMetadataTest::McpProtocolRelatedTaskMetadataTest(QObject *
 
 void McpProtocolRelatedTaskMetadataTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolRelatedTaskMetadata w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolRelatedTaskMetadata w;
     QVERIFY(w.taskId().isEmpty());
 }
 #include "moc_mcpprotocolrelatedtaskmetadatatest.cpp"

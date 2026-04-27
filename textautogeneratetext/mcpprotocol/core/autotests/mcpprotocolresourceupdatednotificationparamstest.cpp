@@ -15,7 +15,7 @@ McpProtocolResourceUpdatedNotificationParamsTest::McpProtocolResourceUpdatedNoti
 
 void McpProtocolResourceUpdatedNotificationParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResourceUpdatedNotificationParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.uri().isEmpty());
 }

@@ -8,7 +8,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 #include <memory>
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolSettings;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPluginInterface : public QObject

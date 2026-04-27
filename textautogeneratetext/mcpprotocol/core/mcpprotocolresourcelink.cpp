@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceLink::McpProtocolResourceLink() = default;
 
 McpProtocolResourceLink::~McpProtocolResourceLink() = default;
@@ -22,7 +22,7 @@ QByteArray McpProtocolResourceLink::type()
     return QByteArrayLiteral("resource_link");
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceLink &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceLink &t)
 {
     d.space() << "title:" << t.title();
     d.space() << "description:" << t.description();

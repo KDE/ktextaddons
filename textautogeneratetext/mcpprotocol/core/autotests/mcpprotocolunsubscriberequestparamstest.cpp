@@ -15,7 +15,7 @@ McpProtocolUnsubscribeRequestParamsTest::McpProtocolUnsubscribeRequestParamsTest
 
 void McpProtocolUnsubscribeRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolUnsubscribeRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.uri().isEmpty());
 }

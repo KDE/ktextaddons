@@ -15,7 +15,7 @@ McpProtocolElicitationCompleteNotificationTest::McpProtocolElicitationCompleteNo
 
 void McpProtocolElicitationCompleteNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolElicitationCompleteNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitationCompleteNotification w;
     QVERIFY(w.params().elicitationId().isEmpty());
 }
 #include "moc_mcpprotocolelicitationcompletenotificationtest.cpp"

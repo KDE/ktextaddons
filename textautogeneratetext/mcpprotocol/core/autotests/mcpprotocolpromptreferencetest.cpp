@@ -15,7 +15,7 @@ McpProtocolPromptReferenceTest::McpProtocolPromptReferenceTest(QObject *parent)
 
 void McpProtocolPromptReferenceTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPromptReference w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptReference w;
     QVERIFY(!w.title().has_value());
     QVERIFY(w.name().isEmpty());
 }

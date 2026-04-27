@@ -15,8 +15,8 @@ McpProtocolUntitledSingleSelectEnumSchemaTest::McpProtocolUntitledSingleSelectEn
 
 void McpProtocolUntitledSingleSelectEnumSchemaTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolUntitledSingleSelectEnumSchema w;
-    QCOMPARE(McpProtocol::McpProtocolUntitledSingleSelectEnumSchema::type(), "string");
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledSingleSelectEnumSchema w;
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledSingleSelectEnumSchema::type(), "string");
     QVERIFY(!w.description().has_value());
     QVERIFY(!w.title().has_value());
     QVERIFY(!w.defaultValue().has_value());

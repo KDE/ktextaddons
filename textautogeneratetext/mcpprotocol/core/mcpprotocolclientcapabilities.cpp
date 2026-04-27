@@ -9,7 +9,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolClientCapabilities::McpProtocolClientCapabilities() = default;
 
 McpProtocolClientCapabilities::~McpProtocolClientCapabilities() = default;
@@ -42,13 +42,13 @@ void McpProtocolClientCapabilities::Tasks::Requests::setSampling(std::optional<S
     mSampling = newSampling;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Roots &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Roots &t)
 {
     d.space() << "listChanged:" << t.listChanged();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities &t)
 {
     d.space() << "elicitation:" << t.elicitation();
     d.space() << "roots:" << t.roots();
@@ -58,21 +58,21 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities &t)
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Elicitation &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Elicitation &t)
 {
     d.space() << "form:" << t.form();
     d.space() << "url:" << t.url();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Sampling &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Sampling &t)
 {
     d.space() << "tools:" << t.tools();
     d.space() << "context:" << t.context();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks &t)
 {
     d.space() << "cancel:" << t.cancel();
     d.space() << "list:" << t.list();
@@ -80,20 +80,20 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Ta
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests &t)
 {
     d.space() << "sampling:" << t.sampling();
     d.space() << "elicitation:" << t.elicitation();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests::Sampling &t)
 {
     d.space() << "createMessage:" << t.createMessage();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests::Elicitation &t)
 {
     d.space() << "create:" << t.create();
     return d;

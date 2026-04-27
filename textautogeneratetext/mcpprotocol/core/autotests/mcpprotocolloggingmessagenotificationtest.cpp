@@ -15,7 +15,7 @@ McpProtocolLoggingMessageNotificationTest::McpProtocolLoggingMessageNotification
 
 void McpProtocolLoggingMessageNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolLoggingMessageNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotification w;
     // TODO
 }
 #include "moc_mcpprotocolloggingmessagenotificationtest.cpp"

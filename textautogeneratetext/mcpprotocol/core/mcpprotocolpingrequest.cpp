@@ -10,7 +10,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPingRequest::McpProtocolPingRequest() = default;
 
 McpProtocolPingRequest::~McpProtocolPingRequest() = default;
@@ -22,7 +22,7 @@ QByteArray McpProtocolPingRequest::type()
 
 bool McpProtocolPingRequest::operator==(const McpProtocolPingRequest &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPingRequest &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest &t)
 {
     d.space() << "id:" << t.id();
     d.space() << "params:" << t.params();

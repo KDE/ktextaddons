@@ -15,7 +15,7 @@ McpProtocolInitializedNotificationTest::McpProtocolInitializedNotificationTest(Q
 
 void McpProtocolInitializedNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolInitializedNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializedNotification w;
     QVERIFY(!w.params().has_value());
 }
 #include "moc_mcpprotocolinitializednotificationtest.cpp"

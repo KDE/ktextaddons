@@ -15,7 +15,7 @@ McpProtocolSubscribeRequestTest::McpProtocolSubscribeRequestTest(QObject *parent
 
 void McpProtocolSubscribeRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolSubscribeRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscribeRequest w;
     QCOMPARE(w.type(), "resources/subscribe"_ba);
     // TODO
 }

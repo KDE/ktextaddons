@@ -6,7 +6,7 @@
 
 #include "mcpprotocolsettings.h"
 
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSettings::McpProtocolSettings() = default;
 
 McpProtocolSettings::~McpProtocolSettings() = default;

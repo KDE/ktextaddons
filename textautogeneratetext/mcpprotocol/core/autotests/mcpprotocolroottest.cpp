@@ -15,7 +15,7 @@ McpProtocolRootTest::McpProtocolRootTest(QObject *parent)
 
 void McpProtocolRootTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolRoot w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot w;
     QVERIFY(w.uri().isEmpty());
     QVERIFY(!w.name().has_value());
     QVERIFY(!w.meta().has_value());

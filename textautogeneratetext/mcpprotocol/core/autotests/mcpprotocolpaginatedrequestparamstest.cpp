@@ -15,7 +15,7 @@ McpProtocolPaginatedRequestParamsTest::McpProtocolPaginatedRequestParamsTest(QOb
 
 void McpProtocolPaginatedRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPaginatedRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.cursor().isEmpty());
 }

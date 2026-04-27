@@ -9,7 +9,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequestParams::McpProtocolCompleteRequestParams() = default;
 
 McpProtocolCompleteRequestParams::~McpProtocolCompleteRequestParams() = default;
@@ -95,7 +95,7 @@ QJsonObject McpProtocolCompleteRequestParams::Argument::toJson(const Argument &i
 
 bool McpProtocolCompleteRequestParams::Argument::operator==(const McpProtocolCompleteRequestParams::Argument &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "argument:" << t.argument();
@@ -105,20 +105,20 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams 
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams::Meta &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Meta &t)
 {
     d.space() << "progressToken" << t.progressToken();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams::Argument &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument &t)
 {
     d.space() << "value" << t.value();
     d.space() << "name" << t.name();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCompleteRequestParams::Context &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Context &t)
 {
     d.space() << "arguments" << t.arguments();
     return d;

@@ -15,7 +15,7 @@ McpProtocolLegacyTitledEnumSchemaTest::McpProtocolLegacyTitledEnumSchemaTest(QOb
 
 void McpProtocolLegacyTitledEnumSchemaTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolLegacyTitledEnumSchema w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolLegacyTitledEnumSchema w;
     // TODO
 }
 #include "moc_mcpprotocollegacytitledenumschematest.cpp"

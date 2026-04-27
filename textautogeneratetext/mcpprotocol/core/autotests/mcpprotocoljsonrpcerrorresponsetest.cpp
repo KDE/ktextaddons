@@ -15,7 +15,7 @@ McpProtocolJSONRPCErrorResponseTest::McpProtocolJSONRPCErrorResponseTest(QObject
 
 void McpProtocolJSONRPCErrorResponseTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolJSONRPCErrorResponse w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse w;
     QVERIFY(!w.id().has_value());
     // TODO QVERIFY(w.uri().isEmpty());
 }

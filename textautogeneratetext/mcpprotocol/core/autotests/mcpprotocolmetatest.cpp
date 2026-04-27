@@ -15,7 +15,7 @@ McpProtocolMetaTest::McpProtocolMetaTest(QObject *parent)
 
 void McpProtocolMetaTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolMeta w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta w;
     QVERIFY(!w.meta().has_value());
 }
 #include "moc_mcpprotocolmetatest.cpp"

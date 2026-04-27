@@ -9,14 +9,14 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceTemplate::McpProtocolResourceTemplate() = default;
 
 McpProtocolResourceTemplate::~McpProtocolResourceTemplate() = default;
 
 bool McpProtocolResourceTemplate::operator==(const McpProtocolResourceTemplate &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceTemplate &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplate &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "annotations:" << t.annotations();

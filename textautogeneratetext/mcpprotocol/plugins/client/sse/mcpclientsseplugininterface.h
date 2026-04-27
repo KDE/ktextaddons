@@ -8,7 +8,7 @@
 #include "mcpprotocolclientplugin_export.h"
 #include <QObject>
 class McpClientSse;
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientSsePluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientSsePluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:

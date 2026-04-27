@@ -9,7 +9,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolAnnotations::McpProtocolToolAnnotations() = default;
 
 McpProtocolToolAnnotations::~McpProtocolToolAnnotations() = default;
@@ -66,7 +66,7 @@ void McpProtocolToolAnnotations::setTitle(const QString &newTitle)
 
 bool McpProtocolToolAnnotations::operator==(const McpProtocolToolAnnotations &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolAnnotations &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolAnnotations &t)
 {
     d.space() << "destructiveHint:" << t.destructiveHint();
     d.space() << "idempotentHint:" << t.idempotentHint();

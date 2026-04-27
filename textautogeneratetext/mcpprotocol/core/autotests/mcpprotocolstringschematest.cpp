@@ -15,8 +15,8 @@ McpProtocolStringSchemaTest::McpProtocolStringSchemaTest(QObject *parent)
 
 void McpProtocolStringSchemaTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolStringSchema w;
-    QCOMPARE(McpProtocol::McpProtocolStringSchema::type(), "string");
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolStringSchema w;
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolStringSchema::type(), "string");
     QVERIFY(!w.description().has_value());
     QVERIFY(!w.title().has_value());
     QVERIFY(!w.defaultValue().has_value());

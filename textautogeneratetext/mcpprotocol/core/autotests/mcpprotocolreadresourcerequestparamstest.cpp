@@ -15,7 +15,7 @@ McpProtocolReadResourceRequestParamsTest::McpProtocolReadResourceRequestParamsTe
 
 void McpProtocolReadResourceRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolReadResourceRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceRequestParams w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.uri().isEmpty());
 }

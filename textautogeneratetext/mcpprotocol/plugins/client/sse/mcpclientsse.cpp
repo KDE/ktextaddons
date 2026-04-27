@@ -9,7 +9,7 @@
 #include <QNetworkReply>
 using namespace Qt::Literals::StringLiterals;
 McpClientSse::McpClientSse(McpClientSsePluginInterface *interface, QObject *parent)
-    : McpProtocol::McpBase{parent}
+    : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
     , mNetworkAccessManager(new QNetworkAccessManager(this))
     , mInterface(interface)
 {

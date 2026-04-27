@@ -9,7 +9,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolAudioContent::McpProtocolAudioContent() = default;
 
 McpProtocolAudioContent::~McpProtocolAudioContent() = default;
@@ -21,7 +21,7 @@ QByteArray McpProtocolAudioContent::type()
 
 bool McpProtocolAudioContent::operator==(const McpProtocolAudioContent &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolAudioContent &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolAudioContent &t)
 {
     d.space() << "annotations:" << t.annotations();
     d.space() << "meta:" << t.meta();

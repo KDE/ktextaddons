@@ -15,7 +15,7 @@ McpProtocolCompleteRequestTest::McpProtocolCompleteRequestTest(QObject *parent)
 
 void McpProtocolCompleteRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolCompleteRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequest w;
     QCOMPARE(w.type(), "completion/complete"_ba);
     // TODO
 }

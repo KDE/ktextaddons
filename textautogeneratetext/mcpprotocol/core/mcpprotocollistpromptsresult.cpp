@@ -11,14 +11,14 @@
 #include <utility>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListPromptsResult::McpProtocolListPromptsResult() = default;
 
 McpProtocolListPromptsResult::~McpProtocolListPromptsResult() = default;
 
 bool McpProtocolListPromptsResult::operator==(const McpProtocolListPromptsResult &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolListPromptsResult &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsResult &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "nextCursor:" << t.nextCursor();

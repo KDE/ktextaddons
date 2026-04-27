@@ -8,14 +8,14 @@
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCancelledNotificationParams::McpProtocolCancelledNotificationParams() = default;
 
 McpProtocolCancelledNotificationParams::~McpProtocolCancelledNotificationParams() = default;
 
 bool McpProtocolCancelledNotificationParams::operator==(const McpProtocolCancelledNotificationParams &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCancelledNotificationParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelledNotificationParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "reason:" << t.reason();

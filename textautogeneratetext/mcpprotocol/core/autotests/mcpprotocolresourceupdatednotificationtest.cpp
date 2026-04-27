@@ -16,7 +16,7 @@ McpProtocolResourceUpdatedNotificationTest::McpProtocolResourceUpdatedNotificati
 
 void McpProtocolResourceUpdatedNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResourceUpdatedNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotification w;
     // QVERIFY(!w.params().has_value());
     QCOMPARE(w.type(), "notifications/resources/updated"_ba);
 }

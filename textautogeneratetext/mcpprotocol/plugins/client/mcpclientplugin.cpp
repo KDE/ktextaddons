@@ -13,21 +13,22 @@
 K_PLUGIN_CLASS_WITH_JSON(McpClientPlugin, "mcpclientplugin.json")
 
 McpClientPlugin::McpClientPlugin(QObject *parent, const QList<QVariant> &)
-    : McpProtocol::McpProtocolPlugin{parent}
+    : TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin{parent}
 {
-    mPluginType = McpProtocol::McpProtocolPlugin::PluginType::Client;
+    mPluginType = TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::PluginType::Client;
 }
 
 McpClientPlugin::~McpClientPlugin() = default;
 
-McpProtocol::McpProtocolPluginInterface *McpClientPlugin::createInterface(McpProtocol::McpProtocolPlugin::ProtocolType type, QObject *parent)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface *
+McpClientPlugin::createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type, QObject *parent)
 {
     switch (type) {
-    case McpProtocol::McpProtocolPlugin::ProtocolType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse:
         return new McpClientSsePluginInterface(parent);
-    case McpProtocol::McpProtocolPlugin::ProtocolType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio:
         return new McpClientStdioPluginInterface(parent);
-    case McpProtocol::McpProtocolPlugin::ProtocolType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp:
         return new McpClientStreambleHttpPluginInterface(parent);
     default:
         break;

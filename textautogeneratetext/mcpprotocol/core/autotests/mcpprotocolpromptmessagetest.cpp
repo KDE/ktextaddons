@@ -15,8 +15,8 @@ McpProtocolPromptMessageTest::McpProtocolPromptMessageTest(QObject *parent)
 
 void McpProtocolPromptMessageTest::shouldhaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPromptMessage w;
-    QCOMPARE(w.role(), McpProtocol::McpProtocolUtils::Role::Unknown);
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage w;
+    QCOMPARE(w.role(), TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role::Unknown);
 }
 
 #include "moc_mcpprotocolpromptmessagetest.cpp"

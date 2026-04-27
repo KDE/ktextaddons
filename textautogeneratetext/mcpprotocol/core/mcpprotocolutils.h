@@ -8,7 +8,7 @@
 #include <QJsonValue>
 #include <QString>
 class QDebug;
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolTextResourceContents;
 class McpProtocolBlobResourceContents;
@@ -55,7 +55,7 @@ class McpProtocolTaskStatusNotification;
 class McpProtocolLoggingMessageNotification;
 class McpProtocolElicitationCompleteNotification;
 }
-namespace McpProtocol::McpProtocolUtils
+namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
 using RequestId = std::variant<QString, int>;
 
@@ -140,7 +140,7 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 McpProtocolToolResultContent,
                                                 QList<SamplingMessageContentBlock>>;
 
-[[nodiscard]] QString getProgressTokenValue(const McpProtocol::McpProtocolUtils::ProgressToken &token);
+[[nodiscard]] QString getProgressTokenValue(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &token);
 
 [[nodiscard]] ClientNotification clientNotificationFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue clientNotificationToJson(const ClientNotification &val);
@@ -163,24 +163,25 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 
-[[nodiscard]] QJsonObject contentBlocktoJson(const McpProtocol::McpProtocolUtils::ContentBlock &val);
-[[nodiscard]] McpProtocol::McpProtocolUtils::ContentBlock contentBlockFromJson(const QJsonValue &val);
-[[nodiscard]] QJsonObject clientRequestToJson(const McpProtocol::McpProtocolUtils::ClientRequest &val);
-[[nodiscard]] McpProtocol::McpProtocolUtils::ClientRequest clientRequestFromJson(const QJsonValue &val);
+[[nodiscard]] QJsonObject contentBlocktoJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock contentBlockFromJson(const QJsonValue &val);
+[[nodiscard]] QJsonObject clientRequestToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientRequest &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientRequest clientRequestFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonObject serverNotificationToJson(const ServerNotification &val);
-[[nodiscard]] McpProtocol::McpProtocolUtils::ServerNotification serverNotificationFromJson(const QJsonValue &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerNotification serverNotificationFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonObject samplingMessageContentBlockToJson(const SamplingMessageContentBlock &val);
-[[nodiscard]] McpProtocol::McpProtocolUtils::SamplingMessageContentBlock samplingMessageContentBlockFromJson(const QJsonValue &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::SamplingMessageContentBlock samplingMessageContentBlockFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonValue createMessageResultContentToJson(const CreateMessageResultContent &val);
-[[nodiscard]] McpProtocol::McpProtocolUtils::CreateMessageResultContent createMessageResultContentFromJson(const QJsonValue &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CreateMessageResultContent createMessageResultContentFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonValue completeRequestParamsRefToJson(const CompleteRequestParamsRef &val);
-[[nodiscard]] McpProtocol::McpProtocolUtils::CompleteRequestParamsRef completeRequestParamsRefFromJson(const QJsonValue &val);
-// [[nodiscard]] QString getCompleteRequestParamsRef(const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &token);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef completeRequestParamsRefFromJson(const QJsonValue &val);
+// [[nodiscard]] QString getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
 };
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::ProgressToken &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::Role &t);
-// TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUtils::CompleteRequestParamsRef &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role &t);
+// TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef
+// &t);

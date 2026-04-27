@@ -15,7 +15,7 @@ McpProtocolInitializeRequestParamsTest::McpProtocolInitializeRequestParamsTest(Q
 
 void McpProtocolInitializeRequestParamsTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolInitializeRequestParams w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequestParams w;
     QVERIFY(!w.meta().has_value());
     // TODO
 }

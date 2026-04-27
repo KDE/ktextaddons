@@ -9,14 +9,14 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPaginatedResult::McpProtocolPaginatedResult() = default;
 
 McpProtocolPaginatedResult::~McpProtocolPaginatedResult() = default;
 
 bool McpProtocolPaginatedResult::operator==(const McpProtocolPaginatedResult &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedResult &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedResult &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "nextCursor:" << t.nextCursor();

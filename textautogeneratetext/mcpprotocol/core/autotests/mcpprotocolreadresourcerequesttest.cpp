@@ -15,7 +15,7 @@ McpProtocolReadResourceRequestTest::McpProtocolReadResourceRequestTest(QObject *
 
 void McpProtocolReadResourceRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolReadResourceRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceRequest w;
     QCOMPARE(w.type(), "resources/read"_ba);
     // TODO
 }

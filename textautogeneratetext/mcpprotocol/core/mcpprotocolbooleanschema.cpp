@@ -8,14 +8,14 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolBooleanSchema::McpProtocolBooleanSchema() = default;
 
 McpProtocolBooleanSchema::~McpProtocolBooleanSchema() = default;
 
 bool McpProtocolBooleanSchema::operator==(const McpProtocolBooleanSchema &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolBooleanSchema &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolBooleanSchema &t)
 {
     d.space() << "title:" << t.title();
     d.space() << "description:" << t.description();

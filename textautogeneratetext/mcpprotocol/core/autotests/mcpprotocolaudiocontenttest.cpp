@@ -15,7 +15,7 @@ McpProtocolAudioContentTest::McpProtocolAudioContentTest(QObject *parent)
 
 void McpProtocolAudioContentTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolAudioContent w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolAudioContent w;
     QVERIFY(w.data().isEmpty());
     QVERIFY(!w.annotations());
     QVERIFY(!w.meta().has_value());

@@ -11,7 +11,7 @@
 #include <QVariant>
 
 McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent)
-    : McpProtocol::McpBase{parent}
+    : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
     , mProcess(new QProcess(this))
     , mInterface(interface)
 {

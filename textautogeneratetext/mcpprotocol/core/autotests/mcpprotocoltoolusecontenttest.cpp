@@ -20,7 +20,7 @@ McpProtocolToolUseContentTest::McpProtocolToolUseContentTest(QObject *parent)
 
 void McpProtocolToolUseContentTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolToolUseContent w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolUseContent w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.input().isEmpty());
     QVERIFY(w.name().isEmpty());

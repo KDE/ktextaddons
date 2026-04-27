@@ -15,7 +15,7 @@ McpProtocolIconTest::McpProtocolIconTest(QObject *parent)
 
 void McpProtocolIconTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolIcon w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolIcon w;
     QVERIFY(w.src().isEmpty());
     QVERIFY(!w.mimeType());
     QVERIFY(!w.sizes());

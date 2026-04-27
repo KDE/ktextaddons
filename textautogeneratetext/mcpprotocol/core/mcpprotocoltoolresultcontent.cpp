@@ -23,7 +23,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolResultContent::McpProtocolToolResultContent() = default;
 
 McpProtocolToolResultContent::~McpProtocolToolResultContent() = default;
@@ -35,7 +35,7 @@ QByteArray McpProtocolToolResultContent::type()
 
 // bool McpProtocolToolResultContent::operator==(const McpProtocolToolResultContent &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolResultContent &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolResultContent &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "isError:" << t.isError();

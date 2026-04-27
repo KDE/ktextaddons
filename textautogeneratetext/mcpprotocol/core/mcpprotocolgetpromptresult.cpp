@@ -10,14 +10,14 @@
 
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolGetPromptResult::McpProtocolGetPromptResult() = default;
 
 McpProtocolGetPromptResult::~McpProtocolGetPromptResult() = default;
 
 bool McpProtocolGetPromptResult::operator==(const McpProtocolGetPromptResult &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetPromptResult &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptResult &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "description:" << t.description();

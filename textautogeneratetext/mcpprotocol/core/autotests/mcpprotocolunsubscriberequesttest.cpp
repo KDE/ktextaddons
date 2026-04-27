@@ -15,7 +15,7 @@ McpProtocolUnsubscribeRequestTest::McpProtocolUnsubscribeRequestTest(QObject *pa
 
 void McpProtocolUnsubscribeRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolUnsubscribeRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequest w;
     QCOMPARE(w.type(), "resources/unsubscribe"_ba);
     // TODO
 }

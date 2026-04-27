@@ -15,7 +15,7 @@ McpProtocolToolExecutionTest::McpProtocolToolExecutionTest(QObject *parent)
 
 void McpProtocolToolExecutionTest::shouldhaveDefaultValues()
 {
-    const McpProtocol::McpProtocolToolExecution w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolExecution w;
     QVERIFY(!w.taskSupport().has_value());
 }
 

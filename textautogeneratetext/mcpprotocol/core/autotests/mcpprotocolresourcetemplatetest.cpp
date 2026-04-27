@@ -15,7 +15,7 @@ McpProtocolResourceTemplateTest::McpProtocolResourceTemplateTest(QObject *parent
 
 void McpProtocolResourceTemplateTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResourceTemplate w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplate w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.annotations().has_value());
     QVERIFY(!w.description().has_value());

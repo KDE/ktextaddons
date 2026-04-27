@@ -10,14 +10,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTaskStatusNotificationParams::McpProtocolTaskStatusNotificationParams() = default;
 
 McpProtocolTaskStatusNotificationParams::~McpProtocolTaskStatusNotificationParams() = default;
 
 bool McpProtocolTaskStatusNotificationParams::operator==(const McpProtocolTaskStatusNotificationParams &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTaskStatusNotificationParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskStatusNotificationParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "createdAt:" << t.createdAt();

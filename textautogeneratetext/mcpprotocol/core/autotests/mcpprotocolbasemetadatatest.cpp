@@ -15,7 +15,7 @@ McpProtocolBaseMetadataTest::McpProtocolBaseMetadataTest(QObject *parent)
 
 void McpProtocolBaseMetadataTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolBaseMetadata w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolBaseMetadata w;
     QVERIFY(!w.title().has_value());
     QVERIFY(w.name().isEmpty());
 }

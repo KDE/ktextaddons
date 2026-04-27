@@ -9,7 +9,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceTemplateReference::McpProtocolResourceTemplateReference() = default;
 
 McpProtocolResourceTemplateReference::~McpProtocolResourceTemplateReference() = default;
@@ -20,7 +20,7 @@ QByteArray McpProtocolResourceTemplateReference::type()
 }
 
 bool McpProtocolResourceTemplateReference::operator==(const McpProtocolResourceTemplateReference &other) const = default;
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolResourceTemplateReference &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplateReference &t)
 {
     d.space() << "uri:" << t.uri();
     return d;

@@ -9,14 +9,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPromptMessage::McpProtocolPromptMessage() = default;
 
 McpProtocolPromptMessage::~McpProtocolPromptMessage() = default;
 
 bool McpProtocolPromptMessage::operator==(const McpProtocolPromptMessage &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPromptMessage &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage &t)
 {
     d.space() << "role:" << t.role();
     // TODO d.space() << "content:" << t.content();
@@ -27,10 +27,10 @@ McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &o
 {
     McpProtocolPromptMessage message;
     if (obj.contains("content"_L1)) {
-        message.setContent(McpProtocol::McpProtocolUtils::contentBlockFromJson(obj["content"_L1]));
+        message.setContent(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(obj["content"_L1]));
     }
     if (obj.contains("role"_L1) && obj["role"_L1].isString()) {
-        message.setRole(McpProtocol::McpProtocolUtils::convertRoleFromString(obj["role"_L1].toString()));
+        message.setRole(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleFromString(obj["role"_L1].toString()));
     }
 
     return message;
@@ -39,7 +39,7 @@ McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &o
 QJsonObject McpProtocolPromptMessage::toJson(const McpProtocolPromptMessage &choice)
 {
     QJsonObject obj;
-    obj["content"_L1] = McpProtocol::McpProtocolUtils::contentBlocktoJson(choice.content());
+    obj["content"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlocktoJson(choice.content());
     obj["role"_L1] = convertRoleToString(choice.role());
     return obj;
 }

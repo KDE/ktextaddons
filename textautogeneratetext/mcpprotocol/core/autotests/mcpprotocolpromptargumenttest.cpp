@@ -15,7 +15,7 @@ McpProtocolPromptArgumentTest::McpProtocolPromptArgumentTest(QObject *parent)
 
 void McpProtocolPromptArgumentTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPromptArgument w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptArgument w;
     QVERIFY(!w.description().has_value());
     QVERIFY(!w.required().has_value());
     QVERIFY(!w.title().has_value());

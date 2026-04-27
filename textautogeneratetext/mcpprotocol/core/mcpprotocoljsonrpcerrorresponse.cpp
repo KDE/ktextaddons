@@ -10,14 +10,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolJSONRPCErrorResponse::McpProtocolJSONRPCErrorResponse() = default;
 
 McpProtocolJSONRPCErrorResponse::~McpProtocolJSONRPCErrorResponse() = default;
 
 bool McpProtocolJSONRPCErrorResponse::operator==(const McpProtocolJSONRPCErrorResponse &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolJSONRPCErrorResponse &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse &t)
 {
     d.space() << "error:" << t.error();
     d.space() << "id:" << t.id();
@@ -35,7 +35,7 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
         response.setError(McpProtocolError::fromJson(obj["error"_L1].toObject()));
     }
     if (obj.contains("id"_L1)) {
-        response.setId(McpProtocol::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+        response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     return response;
 }
@@ -46,7 +46,7 @@ QJsonObject McpProtocolJSONRPCErrorResponse::toJson(const McpProtocolJSONRPCErro
     obj["error"_L1] = McpProtocolError::toJson(boolean.error());
     obj["jsonrpc"_L1] = u"2.0"_s;
     if (boolean.id().has_value()) {
-        obj["id"_L1] = McpProtocol::McpProtocolUtils::requestIdToJson(*boolean.id());
+        obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(*boolean.id());
     }
     return obj;
 }

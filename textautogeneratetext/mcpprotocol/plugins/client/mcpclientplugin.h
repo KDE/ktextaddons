@@ -8,16 +8,17 @@
 #include "common/mcpprotocolplugin.h"
 #include <QList>
 #include <QVariant>
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;
 };
-class McpClientPlugin : public McpProtocol::McpProtocolPlugin
+class McpClientPlugin : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin
 {
     Q_OBJECT
 public:
     explicit McpClientPlugin(QObject *parent = nullptr, const QList<QVariant> & = {});
     ~McpClientPlugin() override;
 
-    [[nodiscard]] McpProtocol::McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface *
+    createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
 };

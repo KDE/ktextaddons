@@ -9,7 +9,7 @@
 #include <QJsonObject>
 #include <utility>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolUseContent::McpProtocolToolUseContent() = default;
 
 McpProtocolToolUseContent::~McpProtocolToolUseContent() = default;
@@ -21,7 +21,7 @@ QByteArray McpProtocolToolUseContent::type()
 
 bool McpProtocolToolUseContent::operator==(const McpProtocolToolUseContent &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolToolUseContent &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolUseContent &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "name:" << t.name();

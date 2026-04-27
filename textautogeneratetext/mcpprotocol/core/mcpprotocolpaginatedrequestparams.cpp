@@ -9,7 +9,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPaginatedRequestParams::McpProtocolPaginatedRequestParams() = default;
 
 McpProtocolPaginatedRequestParams::~McpProtocolPaginatedRequestParams() = default;
@@ -17,13 +17,13 @@ McpProtocolPaginatedRequestParams::~McpProtocolPaginatedRequestParams() = defaul
 bool McpProtocolPaginatedRequestParams::operator==(const McpProtocolPaginatedRequestParams &other) const = default;
 bool McpProtocolPaginatedRequestParams::Meta::operator==(const McpProtocolPaginatedRequestParams::Meta &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams::Meta &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::Meta &t)
 {
     d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolPaginatedRequestParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "cursor:" << t.cursor();

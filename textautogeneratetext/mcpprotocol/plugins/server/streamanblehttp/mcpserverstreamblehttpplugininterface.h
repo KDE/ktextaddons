@@ -8,7 +8,7 @@
 #include "common/mcpprotocolplugininterface.h"
 #include "mcpprotocolserverplugin_export.h"
 
-class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerStreambleHttpPluginInterface : public McpProtocol::McpProtocolPluginInterface
+class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerStreambleHttpPluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:

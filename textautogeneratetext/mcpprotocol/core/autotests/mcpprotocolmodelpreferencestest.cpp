@@ -15,7 +15,7 @@ McpProtocolModelPreferencesTest::McpProtocolModelPreferencesTest(QObject *parent
 
 void McpProtocolModelPreferencesTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolModelPreferences w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolModelPreferences w;
     QVERIFY(!w.costPriority().has_value());
     QVERIFY(!w.hints().has_value());
     QVERIFY(!w.intelligencePriority().has_value());

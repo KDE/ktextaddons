@@ -15,7 +15,7 @@ McpProtocolListResourcesRequestTest::McpProtocolListResourcesRequestTest(QObject
 
 void McpProtocolListResourcesRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolListResourcesRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourcesRequest w;
     QCOMPARE(w.type(), "resources/list"_ba);
     // TODO
 }

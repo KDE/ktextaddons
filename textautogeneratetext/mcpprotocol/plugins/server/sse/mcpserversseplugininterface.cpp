@@ -7,7 +7,7 @@
 #include "sse/mcpserversse.h"
 
 McpServerSsePluginInterface::McpServerSsePluginInterface(QObject *parent)
-    : McpProtocol::McpProtocolPluginInterface{parent}
+    : TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface{parent}
     , mServerSse(new McpServerSse(this, this))
 {
     connect(mServerSse, &McpServerSse::started, this, &McpServerSsePluginInterface::started);

@@ -15,7 +15,7 @@ McpProtocolPingRequestTest::McpProtocolPingRequestTest(QObject *parent)
 
 void McpProtocolPingRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPingRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest w;
     QCOMPARE(w.type(), "ping"_ba);
     QVERIFY(!w.params().has_value());
     // TODO

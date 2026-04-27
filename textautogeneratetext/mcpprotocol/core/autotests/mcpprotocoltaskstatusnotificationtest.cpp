@@ -15,7 +15,7 @@ McpProtocolTaskStatusNotificationTest::McpProtocolTaskStatusNotificationTest(QOb
 
 void McpProtocolTaskStatusNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolTaskStatusNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskStatusNotification w;
     QCOMPARE(w.type(), "notifications/tasks/status"_ba);
 }
 #include "moc_mcpprotocoltaskstatusnotificationtest.cpp"

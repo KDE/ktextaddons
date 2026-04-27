@@ -15,7 +15,7 @@ McpProtocolPromptListChangedNotificationTest::McpProtocolPromptListChangedNotifi
 
 void McpProtocolPromptListChangedNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPromptListChangedNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptListChangedNotification w;
     QVERIFY(!w.params().has_value());
     QCOMPARE(w.type(), "notifications/prompts/list_changed"_ba);
 }

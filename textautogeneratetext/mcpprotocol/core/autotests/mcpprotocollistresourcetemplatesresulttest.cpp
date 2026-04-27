@@ -15,7 +15,7 @@ McpProtocolListResourceTemplatesResultTest::McpProtocolListResourceTemplatesResu
 
 void McpProtocolListResourceTemplatesResultTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolListResourceTemplatesResult w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourceTemplatesResult w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.nextCursor().has_value());
     QVERIFY(w.resourceTemplates().isEmpty());

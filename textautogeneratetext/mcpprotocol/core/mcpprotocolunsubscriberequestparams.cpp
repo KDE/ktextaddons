@@ -9,7 +9,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUnsubscribeRequestParams::McpProtocolUnsubscribeRequestParams() = default;
 
 McpProtocolUnsubscribeRequestParams::~McpProtocolUnsubscribeRequestParams() = default;
@@ -17,13 +17,13 @@ McpProtocolUnsubscribeRequestParams::~McpProtocolUnsubscribeRequestParams() = de
 bool McpProtocolUnsubscribeRequestParams::operator==(const McpProtocolUnsubscribeRequestParams &other) const = default;
 bool McpProtocolUnsubscribeRequestParams::Meta::operator==(const McpProtocolUnsubscribeRequestParams::Meta &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUnsubscribeRequestParams::Meta &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequestParams::Meta &t)
 {
     d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolUnsubscribeRequestParams &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "uri:" << t.uri();

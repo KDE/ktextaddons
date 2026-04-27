@@ -9,14 +9,14 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTask::McpProtocolTask() = default;
 
 McpProtocolTask::~McpProtocolTask() = default;
 
 bool McpProtocolTask::operator==(const McpProtocolTask &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolTask &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTask &t)
 {
     d.space() << "createdAt" << t.createdAt();
     d.space() << "lastUpdatedAt" << t.lastUpdatedAt();
@@ -38,7 +38,7 @@ McpProtocolTask McpProtocolTask::fromJson(const QJsonObject &obj)
         text.setPollInterval(obj.value("pollInterval"_L1).toInt());
     }
     if (obj.contains("status"_L1) && obj["status"_L1].isString()) {
-        text.setStatus(McpProtocol::McpProtocolUtils::convertTaskStatusFromString(obj["status"_L1].toString()));
+        text.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(obj["status"_L1].toString()));
     }
     if (obj.contains("statusMessage"_L1)) {
         text.setStatusMessage(obj.value("statusMessage"_L1).toString());
@@ -106,7 +106,7 @@ McpProtocolUtils::TaskStatus McpProtocolTask::status() const
     return mStatus;
 }
 
-void McpProtocolTask::setStatus(McpProtocol::McpProtocolUtils::TaskStatus newStatus)
+void McpProtocolTask::setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus newStatus)
 {
     mStatus = newStatus;
 }

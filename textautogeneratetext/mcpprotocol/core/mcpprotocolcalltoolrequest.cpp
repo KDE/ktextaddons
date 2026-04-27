@@ -11,7 +11,7 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace McpProtocol;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCallToolRequest::McpProtocolCallToolRequest() = default;
 
 McpProtocolCallToolRequest::~McpProtocolCallToolRequest() = default;
@@ -23,7 +23,7 @@ QByteArray McpProtocolCallToolRequest::type()
 
 bool McpProtocolCallToolRequest::operator==(const McpProtocolCallToolRequest &other) const = default;
 
-QDebug operator<<(QDebug d, const McpProtocol::McpProtocolCallToolRequest &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolRequest &t)
 {
     d.space() << "id:" << t.id();
     d.space() << "params:" << t.params();
@@ -42,7 +42,7 @@ McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObjec
         return {};
     }
     if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocol::McpProtocolUtils::requestIdFromJson(obj["id"_L1].toObject()));
+        prompt.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1].toObject()));
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolCallToolRequestParams::fromJson(obj["params"_L1].toObject()));
@@ -53,7 +53,7 @@ McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObjec
 QJsonObject McpProtocolCallToolRequest::toJson(const McpProtocolCallToolRequest &boolean)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocol::McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCallToolRequest::type());
     obj["params"_L1] = McpProtocolCallToolRequestParams::toJson(boolean.params());

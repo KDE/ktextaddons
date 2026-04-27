@@ -15,12 +15,12 @@ McpProtocolNumberSchemaTest::McpProtocolNumberSchemaTest(QObject *parent)
 
 void McpProtocolNumberSchemaTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolNumberSchema w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolNumberSchema w;
     QVERIFY(!w.description().has_value());
     QVERIFY(!w.title().has_value());
     QVERIFY(!w.defaultValue().has_value());
     QVERIFY(!w.maximum().has_value());
     QVERIFY(!w.minimum().has_value());
-    QCOMPARE(w.type(), McpProtocol::McpProtocolNumberSchema::Type::Unknown);
+    QCOMPARE(w.type(), TextAutoGenerateTextMcpProtocolCore::McpProtocolNumberSchema::Type::Unknown);
 }
 #include "moc_mcpprotocolnumberschematest.cpp"

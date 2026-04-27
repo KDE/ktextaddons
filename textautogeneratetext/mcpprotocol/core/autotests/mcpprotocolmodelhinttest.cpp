@@ -15,7 +15,7 @@ McpProtocolModelHintTest::McpProtocolModelHintTest(QObject *parent)
 
 void McpProtocolModelHintTest::shouldhaveDefaultValues()
 {
-    const McpProtocol::McpProtocolModelHint w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolModelHint w;
     QVERIFY(!w.name().has_value());
 }
 

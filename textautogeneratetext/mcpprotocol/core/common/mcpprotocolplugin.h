@@ -7,7 +7,7 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPlugin : public QObject
@@ -42,7 +42,8 @@ public:
 
     /*!
      */
-    [[nodiscard]] virtual McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::ProtocolType type, QObject *parent) = 0;
+    [[nodiscard]] virtual McpProtocolPluginInterface *createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type,
+                                                                      QObject *parent) = 0;
 
 protected:
     PluginType mPluginType = PluginType::Unknown;

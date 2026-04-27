@@ -15,7 +15,7 @@ McpProtocolResourceListChangedNotificationTest::McpProtocolResourceListChangedNo
 
 void McpProtocolResourceListChangedNotificationTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolResourceListChangedNotification w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceListChangedNotification w;
     QVERIFY(!w.params().has_value());
     QCOMPARE(w.type(), "notifications/resources/list_changed"_ba);
 }

@@ -15,7 +15,7 @@ McpProtocolListTasksRequestTest::McpProtocolListTasksRequestTest(QObject *parent
 
 void McpProtocolListTasksRequestTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolListTasksRequest w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolListTasksRequest w;
     QCOMPARE(w.type(), "tasks/list"_ba);
     QVERIFY(!w.params().has_value());
 }

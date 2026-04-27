@@ -11,7 +11,7 @@ class QNetworkAccessManager;
 class QNetworkReply;
 class QJsonObject;
 class McpClientSsePluginInterface;
-class McpClientSse : public McpProtocol::McpBase
+class McpClientSse : public TextAutoGenerateTextMcpProtocolCore::McpBase
 {
     Q_OBJECT
 public:

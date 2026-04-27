@@ -15,7 +15,7 @@ McpProtocolPaginatedResultTest::McpProtocolPaginatedResultTest(QObject *parent)
 
 void McpProtocolPaginatedResultTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolPaginatedResult w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedResult w;
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.nextCursor().has_value());
 }

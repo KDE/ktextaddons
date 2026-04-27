@@ -6,11 +6,11 @@
 #pragma once
 
 #include "common/mcpprotocolplugin.h"
-namespace McpProtocol
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;
 };
-class McpServerPlugin : public McpProtocol::McpProtocolPlugin
+class McpServerPlugin : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin
 {
     Q_OBJECT
 public:
@@ -19,5 +19,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] McpProtocol::McpProtocolPluginInterface *createInterface(McpProtocol::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface *
+    createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
 };
