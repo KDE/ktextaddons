@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocoltoolexecution.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -48,7 +48,7 @@ McpProtocolToolExecution::TaskSupport McpProtocolToolExecution::convertTaskSuppo
         return TaskSupport::Optional;
     if (str == "required"_L1)
         return TaskSupport::Required;
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid task support " << str;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid task support " << str;
     return TaskSupport::Unknown;
 }
 

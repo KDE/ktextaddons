@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocoltoolchoice.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -74,7 +74,7 @@ McpProtocolToolChoice::Mode McpProtocolToolChoice::convertModeFromString(const Q
     if (str == "required"_L1) {
         return McpProtocolToolChoice::Mode::Required;
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ToolChoice::Mode value: " << str;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ToolChoice::Mode value: " << str;
     return {};
 }
 

@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocollistpromptsresult.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 #include <utility>

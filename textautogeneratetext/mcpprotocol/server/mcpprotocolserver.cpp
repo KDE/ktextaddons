@@ -5,7 +5,7 @@
 */
 #include "mcpprotocolserver.h"
 #include "common/mcpprotocolplugininterface.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <KPluginFactory>
 #include <KPluginMetaData>
 
@@ -29,7 +29,7 @@ void McpProtocolServer::loadPlugin()
         mPlugin = result.plugin;
         initialize();
     } else {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to find  autogeneratetext_mcpprotocolserverplugin plugin";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to find  autogeneratetext_mcpprotocolserverplugin plugin";
     }
 }
 
@@ -43,7 +43,7 @@ void McpProtocolServer::initialize()
             connect(mPluginInterface, &McpProtocolPluginInterface::started, this, &McpProtocolServer::started);
         }
     } else {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "plugin not found for " << mProtocolType;
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "plugin not found for " << mProtocolType;
     }
 }
 
@@ -52,7 +52,7 @@ void McpProtocolServer::setSettings(McpProtocolSettings *settings)
     if (mPluginInterface) {
         mPluginInterface->setSettings(settings);
     } else {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "mPluginInterface is nullptr. It's a bug";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "mPluginInterface is nullptr. It's a bug";
     }
 }
 
@@ -61,11 +61,11 @@ bool McpProtocolServer::canStart() const
     if (mPluginInterface) {
         const bool result = mPluginInterface->canStart();
         if (!result) {
-            qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
         }
         return result;
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Impossible to start client. mPluginInterface is null. It's a bug";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start client. mPluginInterface is null. It's a bug";
     return false;
 }
 

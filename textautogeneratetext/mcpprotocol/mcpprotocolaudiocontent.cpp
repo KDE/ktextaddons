@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolaudiocontent.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -44,7 +44,7 @@ McpProtocolAudioContent McpProtocolAudioContent::fromJson(const QJsonObject &obj
 {
     McpProtocolAudioContent audio;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolAudioContent::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 

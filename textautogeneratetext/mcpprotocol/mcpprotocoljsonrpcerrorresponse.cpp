@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocoljsonrpcerrorresponse.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
@@ -28,7 +28,7 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
 {
     McpProtocolJSONRPCErrorResponse response;
     if (obj.value("jsonrpc"_L1).toString() != u"2.0"_s) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
     if (obj.contains("error"_L1) && obj["error"_L1].isObject()) {

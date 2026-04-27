@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolstringschema.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -36,7 +36,7 @@ McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj
 {
     McpProtocolStringSchema prompt;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolStringSchema::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolStringSchema: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolStringSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 
@@ -159,7 +159,7 @@ QString McpProtocolStringSchema::convertModeToString(McpProtocolStringSchema::Fo
     case Format::Uri:
         return u"uri"_s;
     case Format::Unknown:
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << " Not defined mode";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Not defined mode";
         return {};
     }
     return {};
@@ -176,7 +176,7 @@ McpProtocolStringSchema::Format McpProtocolStringSchema::convertModeFromString(c
     } else if (str == "uri"_L1) {
         return Format::Uri;
     } else {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << " Str is not supported " << str;
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Str is not supported " << str;
         return Format::Unknown;
     }
 }

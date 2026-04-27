@@ -39,7 +39,7 @@ generate_export_header(mcpprotocolserverplugin BASE_NAME mcpprotocolserverplugin
 target_link_libraries(
     mcpprotocolserverplugin
     PUBLIC
-        KF6::TextAutoGenerateTextMcpProtocol
+        KF6::TextAutoGenerateTextMcpProtocolCore
         Qt::Network
 )
 set_target_properties(
@@ -82,6 +82,6 @@ target_sources(
 target_link_libraries(
     autogeneratetext_mcpprotocolserverplugin
     PRIVATE
-        KF6::TextAutoGenerateTextMcpProtocol
+        KF6::TextAutoGenerateTextMcpProtocolCore
         mcpprotocolserverplugin
 )

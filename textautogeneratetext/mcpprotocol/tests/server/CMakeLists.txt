@@ -10,7 +10,7 @@ if(0)
 
     target_link_libraries(
         mcpserver_gui
-        KF6::TextAutoGenerateTextMcpProtocol
+        KF6::TextAutoGenerateTextMcpProtocolCore
         Qt::Widgets
     )
 endif()

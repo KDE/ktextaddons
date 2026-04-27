@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocollegacytitledenumschema.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
@@ -35,7 +35,7 @@ QByteArray McpProtocolLegacyTitledEnumSchema::type()
 McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(const QJsonObject &obj)
 {
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolLegacyTitledEnumSchema::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'string', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'string', got: " << obj.value("type"_L1).toString();
         return {};
     }
     McpProtocolLegacyTitledEnumSchema prompt;

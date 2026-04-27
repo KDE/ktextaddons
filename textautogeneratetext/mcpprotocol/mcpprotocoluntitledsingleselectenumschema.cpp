@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocoluntitledsingleselectenumschema.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -34,7 +34,7 @@ McpProtocolUntitledSingleSelectEnumSchema McpProtocolUntitledSingleSelectEnumSch
 {
     McpProtocolUntitledSingleSelectEnumSchema prompt;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolUntitledSingleSelectEnumSchema::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolUntitledSingleSelectEnumSchema: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolUntitledSingleSelectEnumSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 

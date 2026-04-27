@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolembeddedresource.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -41,7 +41,7 @@ McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObj
         prompt.setResource(McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1]));
     }
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolEmbeddedResource::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'resource', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'resource', got: " << obj.value("type"_L1).toString();
     }
     return prompt;
 }

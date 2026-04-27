@@ -45,7 +45,7 @@
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
 
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -69,7 +69,7 @@ McpProtocol::McpProtocolUtils::Role McpProtocol::McpProtocolUtils::convertRoleFr
     } else if (str == "user"_L1) {
         return McpProtocolUtils::Role::User;
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Unknown role name " << str;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unknown role name " << str;
     return McpProtocolUtils::Role::Unknown;
 }
 
@@ -117,7 +117,7 @@ McpProtocol::McpProtocolUtils::LoggingLevel McpProtocol::McpProtocolUtils::conve
     } else if (str == "warning"_L1) {
         return McpProtocolUtils::LoggingLevel::Warning;
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid LoggingLevel: " << str;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid LoggingLevel: " << str;
     return McpProtocolUtils::LoggingLevel::Unknown;
 }
 
@@ -153,7 +153,7 @@ McpProtocol::McpProtocolUtils::TaskStatus McpProtocol::McpProtocolUtils::convert
     } else if (str == "working"_L1) {
         return McpProtocolUtils::TaskStatus::Working;
     } else {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid TaskStatus: " << str;
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid TaskStatus: " << str;
         return McpProtocolUtils::TaskStatus::Unknown;
     }
 }
@@ -166,7 +166,7 @@ McpProtocol::McpProtocolUtils::ProgressToken McpProtocol::McpProtocolUtils::prog
     if (val.isDouble()) {
         return ProgressToken(val.toInt());
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid requestIdFromJson: " << val;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid requestIdFromJson: " << val;
     return {};
 }
 
@@ -178,7 +178,7 @@ McpProtocol::McpProtocolUtils::RequestId McpProtocol::McpProtocolUtils::requestI
     if (val.isDouble()) {
         return RequestId(val.toInt());
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid requestIdFromJson: " << val;
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid requestIdFromJson: " << val;
     return {};
 }
 
@@ -195,7 +195,7 @@ QJsonValue McpProtocol::McpProtocolUtils::progressTokenToJson(const ProgressToke
 McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocolUtils::embeddedResourceResourceFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid EmbeddedResourceResource: expected object or array";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid EmbeddedResourceResource: expected object or array";
         return {};
     }
     const QJsonObject obj = val.toObject();
@@ -205,7 +205,7 @@ McpProtocol::McpProtocolUtils::EmbeddedResourceResource McpProtocol::McpProtocol
     if (obj.contains("blob"_L1)) {
         return EmbeddedResourceResource(McpProtocolBlobResourceContents::fromJson(obj));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid EmbeddedResourceResource";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid EmbeddedResourceResource";
     return {};
 }
 
@@ -226,7 +226,7 @@ QJsonValue McpProtocol::McpProtocolUtils::embeddedResourceResourceToJson(const M
 McpProtocol::McpProtocolUtils::CompleteRequestParamsRef McpProtocol::McpProtocolUtils::completeRequestParamsRefFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CompleteRequestParamsRef: expected object or array";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CompleteRequestParamsRef: expected object or array";
         return {};
     }
     const QString dispatchValue = val.toObject().value("type"_L1).toString();
@@ -235,7 +235,7 @@ McpProtocol::McpProtocolUtils::CompleteRequestParamsRef McpProtocol::McpProtocol
     } else if (dispatchValue == "ref/resource"_L1) {
         return CompleteRequestParamsRef(McpProtocolResourceTemplateReference::fromJson(val.toObject()));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CompleteRequestParamsRef: unknown type \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CompleteRequestParamsRef: unknown type \"" << dispatchValue << "\"";
     return {};
 }
 
@@ -256,7 +256,7 @@ QJsonValue McpProtocol::McpProtocolUtils::completeRequestParamsRefToJson(const C
 McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils::clientNotificationFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientNotification: expected object";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientNotification: expected object";
         return {};
     }
     const QJsonObject valObj = val.toObject();
@@ -272,7 +272,7 @@ McpProtocol::McpProtocolUtils::ClientNotification McpProtocol::McpProtocolUtils:
     } else if (dispatchValue == "notifications/roots/list_changed"_L1) {
         return ClientNotification(McpProtocolRootsListChangedNotification::fromJson(valObj));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientNotification: unknown method \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientNotification: unknown method \"" << dispatchValue << "\"";
     return {};
 }
 
@@ -354,7 +354,7 @@ QJsonObject McpProtocol::McpProtocolUtils::contentBlocktoJson(const McpProtocol:
 McpProtocol::McpProtocolUtils::ContentBlock McpProtocol::McpProtocolUtils::contentBlockFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ContentBlock: expected object";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ContentBlock: expected object";
         return {};
     }
 
@@ -371,14 +371,14 @@ McpProtocol::McpProtocolUtils::ContentBlock McpProtocol::McpProtocolUtils::conte
     } else if (dispatchValue == "resource"_L1) {
         return ContentBlock(McpProtocolEmbeddedResource::fromJson(valObj));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ContentBlock: unknown method \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ContentBlock: unknown method \"" << dispatchValue << "\"";
     return {};
 }
 
 McpProtocol::McpProtocolUtils::ClientRequest McpProtocol::McpProtocolUtils::clientRequestFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientRequest: expected object";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientRequest: expected object";
         return {};
     }
     const QString dispatchValue = val.toObject().value("method"_L1).toString();
@@ -418,7 +418,7 @@ McpProtocol::McpProtocolUtils::ClientRequest McpProtocol::McpProtocolUtils::clie
     } else if (dispatchValue == "completion/complete"_L1) {
         return ClientRequest(McpProtocolCompleteRequest::fromJson(valObj));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ClientRequest: unknown method \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientRequest: unknown method \"" << dispatchValue << "\"";
     return {};
 }
 
@@ -439,7 +439,7 @@ QJsonObject McpProtocol::McpProtocolUtils::clientRequestToJson(const McpProtocol
 McpProtocol::McpProtocolUtils::ServerNotification McpProtocol::McpProtocolUtils::serverNotificationFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ServerNotification: expected object";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ServerNotification: expected object";
         return {};
     }
     const QJsonObject valObj = val.toObject();
@@ -464,7 +464,7 @@ McpProtocol::McpProtocolUtils::ServerNotification McpProtocol::McpProtocolUtils:
         return ServerNotification(McpProtocolElicitationCompleteNotification::fromJson(valObj));
     }
 
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid ServerNotification: unknown method \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ServerNotification: unknown method \"" << dispatchValue << "\"";
     return {};
 }
 
@@ -492,7 +492,7 @@ McpProtocol::McpProtocolUtils::CreateMessageResultContent McpProtocol::McpProtoc
         return CreateMessageResultContent(std::move(list));
     }
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CreateMessageResultContent: expected object or array";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CreateMessageResultContent: expected object or array";
     }
     const QString dispatchValue = val.toObject().value("type"_L1).toString();
     const QJsonObject valObj = val.toObject();
@@ -507,7 +507,7 @@ McpProtocol::McpProtocolUtils::CreateMessageResultContent McpProtocol::McpProtoc
     } else if (dispatchValue == "tool_result"_L1) {
         return CreateMessageResultContent(McpProtocolToolResultContent::fromJson(valObj));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid CreateMessageResultContent: unknown type \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CreateMessageResultContent: unknown type \"" << dispatchValue << "\"";
     return {};
 }
 
@@ -534,7 +534,7 @@ QJsonValue McpProtocol::McpProtocolUtils::createMessageResultContentToJson(const
 McpProtocol::McpProtocolUtils::SamplingMessageContentBlock McpProtocol::McpProtocolUtils::samplingMessageContentBlockFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid SamplingMessageContentBlock: expected object";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid SamplingMessageContentBlock: expected object";
         return {};
     }
     const QString dispatchValue = val.toObject().value("type"_L1).toString();
@@ -550,7 +550,7 @@ McpProtocol::McpProtocolUtils::SamplingMessageContentBlock McpProtocol::McpProto
     } else if (dispatchValue == "tool_result"_L1) {
         return SamplingMessageContentBlock(McpProtocolToolResultContent::fromJson(valObj));
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Invalid SamplingMessageContentBlock: unknown type \"" << dispatchValue << "\"";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid SamplingMessageContentBlock: unknown type \"" << dispatchValue << "\"";
     return {};
 }
 

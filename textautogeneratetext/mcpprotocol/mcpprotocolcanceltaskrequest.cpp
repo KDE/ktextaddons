@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolcanceltaskrequest.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -58,10 +58,10 @@ McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonO
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCancelTaskRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'tasks/cancel', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'tasks/cancel', got: " << obj.value("method"_L1).toString();
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolCancelTaskRequest::Params::fromJson(obj["params"_L1].toObject()));

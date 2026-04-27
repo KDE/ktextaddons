@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolbooleanschema.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace McpProtocol;
@@ -32,7 +32,7 @@ McpProtocolBooleanSchema McpProtocolBooleanSchema::fromJson(const QJsonObject &o
 {
     McpProtocolBooleanSchema prompt;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolBooleanSchema::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolBooleanSchema: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolBooleanSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 

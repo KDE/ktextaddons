@@ -7,7 +7,7 @@
 #include "mcpprotocoltextcontent.h"
 #include "mcpprotocolpromptreference.h"
 #include "mcpprotocolresourcetemplatereference.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -55,7 +55,7 @@ McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
 {
     McpProtocolTextContent text;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolTextContent::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "McpProtocolTextContent: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTextContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 

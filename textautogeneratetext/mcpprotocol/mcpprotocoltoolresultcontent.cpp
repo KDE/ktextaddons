@@ -17,7 +17,7 @@
 #include "mcpprotocoltaskstatusnotification.h"
 #include "mcpprotocoltextcontent.h"
 #include "mcpprotocoltextresourcecontents.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 
 #include <QJsonArray>
 #include <QJsonObject>
@@ -73,7 +73,7 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
     }
     tool.setToolUseId(obj.value("toolUseId"_L1).toString());
     if (obj.value("type"_L1).toString() != QString::fromLatin1(type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'tool_result', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'tool_result', got: " << obj.value("type"_L1).toString();
     }
     return tool;
 }

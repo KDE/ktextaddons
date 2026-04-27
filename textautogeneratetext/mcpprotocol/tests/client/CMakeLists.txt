@@ -10,6 +10,6 @@ add_executable(
 
 target_link_libraries(
     mcpclient_gui
-    KF6::TextAutoGenerateTextMcpProtocol
+    KF6::TextAutoGenerateTextMcpProtocolCore
     Qt::Widgets
 )

@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolgettaskrequest.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
@@ -39,7 +39,7 @@ QDebug operator<<(QDebug d, const McpProtocol::McpProtocolGetTaskRequest::Params
 McpProtocolGetTaskRequest::Params McpProtocolGetTaskRequest::Params::fromJson(const QJsonObject &obj)
 {
     if (!obj.contains("taskId"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Missing required field: taskId";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: taskId";
         return {};
     }
     McpProtocolGetTaskRequest::Params result;
@@ -61,10 +61,10 @@ McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject 
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolGetTaskRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'tasks/get', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'tasks/get', got: " << obj.value("method"_L1).toString();
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolGetTaskRequest::Params::fromJson(obj["params"_L1].toObject()));

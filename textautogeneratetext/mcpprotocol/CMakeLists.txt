@@ -1,19 +1,19 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
-add_library(KF6TextAutoGenerateTextMcpProtocol)
+add_library(KF6TextAutoGenerateTextMcpProtocolCore)
 
-add_library(KF6::TextAutoGenerateTextMcpProtocol ALIAS KF6TextAutoGenerateTextMcpProtocol)
+add_library(KF6::TextAutoGenerateTextMcpProtocolCore ALIAS KF6TextAutoGenerateTextMcpProtocolCore)
 
-ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocol HEADER textautogeneratetextmcpprotocol_debug.h
-    IDENTIFIER TEXTAUTOGENERATEMCPPROTOCOL_LOG
-    CATEGORY_NAME org.kde.kf.textautogeneratetextmcpprotocol
-    DESCRIPTION "KF6 (TextAutoGenerateText MCP protocols)"
+ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocolCore HEADER textautogeneratetextmcpprotocol_core_debug.h
+    IDENTIFIER TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetextmcpprotocolcore
+    DESCRIPTION "KF6 (TextAutoGenerateText core MCP protocols)"
     EXPORT KTEXTADDONS
 )
 
 target_sources(
-    KF6TextAutoGenerateTextMcpProtocol
+    KF6TextAutoGenerateTextMcpProtocolCore
     PRIVATE
         mcpprotocolimagecontent.h
         mcpprotocolimagecontent.cpp
@@ -209,7 +209,7 @@ target_sources(
         common/mcpbase.cpp
 )
 
-generate_export_header(KF6TextAutoGenerateTextMcpProtocol BASE_NAME textautogeneratetextmcpprotocol)
+generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocol)
 
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS
     HEADER_NAMES
@@ -257,15 +257,15 @@ install(
 )
 
 target_link_libraries(
-    KF6TextAutoGenerateTextMcpProtocol
+    KF6TextAutoGenerateTextMcpProtocolCore
     Qt::Core
     KF6::CoreAddons
 )
 
 install(
     TARGETS
-        KF6TextAutoGenerateTextMcpProtocol
-    EXPORT KF6TextAutoGenerateTextMcpProtocolTargets
+        KF6TextAutoGenerateTextMcpProtocolCore
+    EXPORT KF6TextAutoGenerateTextMcpProtocolCoreTargets
     ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 if(BUILD_TESTING)

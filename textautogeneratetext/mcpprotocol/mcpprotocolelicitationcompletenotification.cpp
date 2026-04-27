@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolelicitationcompletenotification.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -47,10 +47,11 @@ McpProtocolElicitationCompleteNotification McpProtocolElicitationCompleteNotific
 {
     McpProtocolElicitationCompleteNotification prompt;
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolElicitationCompleteNotification::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'method' must be 'notifications/elicitation/complete', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be 'notifications/elicitation/complete', got: " << obj.value("method"_L1).toString();
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolElicitationCompleteNotification::Params::fromJson(obj["params"_L1].toObject()));

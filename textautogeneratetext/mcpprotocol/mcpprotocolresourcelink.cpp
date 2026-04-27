@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolresourcelink.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
@@ -40,7 +40,7 @@ McpProtocolResourceLink McpProtocolResourceLink::fromJson(const QJsonObject &obj
 {
     McpProtocolResourceLink prompt;
     if (obj.value("type"_L1).toString().toLatin1() != McpProtocolResourceLink::type()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'resource_link', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'resource_link', got: " << obj.value("type"_L1).toString();
         return {};
     }
     if (obj.contains("description"_L1)) {

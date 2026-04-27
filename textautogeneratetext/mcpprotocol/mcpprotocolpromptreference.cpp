@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolpromptreference.h"
-#include "textautogeneratetextmcpprotocol_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
@@ -36,7 +36,7 @@ McpProtocolPromptReference McpProtocolPromptReference::fromJson(const QJsonObjec
     if (obj.contains("title"_L1))
         prompt.setTitle(obj.value("title"_L1).toString());
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolPromptReference::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOL_LOG) << "Field 'type' must be 'ref/prompt', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'ref/prompt', got: " << obj.value("type"_L1).toString();
     }
     return prompt;
 }
