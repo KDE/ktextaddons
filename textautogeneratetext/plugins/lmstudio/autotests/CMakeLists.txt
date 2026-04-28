@@ -27,3 +27,5 @@ macro(add_lmstudio_plugin_unittest _source)
                 ON
     )
 endmacro()
+
+add_lmstudio_plugin_unittest(lmstudiomodelinstalledinfotest.cpp)
