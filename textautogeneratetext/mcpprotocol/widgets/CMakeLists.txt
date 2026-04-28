@@ -44,12 +44,13 @@ generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME texta
 #     RELATIVE server
 # )
 
-# install(
-#     FILES
-#         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_export.h
-#     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
-#     COMPONENT Devel
-# )
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolwidgets_export.h
+    DESTINATION
+        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
+    COMPONENT Devel
+)
 
 # install(
 #     FILES
