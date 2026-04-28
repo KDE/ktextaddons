@@ -153,7 +153,7 @@ msgstr "Text na hľadanie"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "Prejsť na ďaľšiu zhodu"
+msgstr "Prejsť na ďalšiu zhodu"
 
 #: widgets/textfindreplacewidget.cpp:89
 #, kde-format
