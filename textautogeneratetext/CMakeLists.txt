@@ -114,7 +114,11 @@ endif()
 kconfig_add_kcfg_files(KF6TextAutoGenerateText
     core/settings/textautogeneratetextglobalconfig.kcfgc
 )
-
+install(
+    FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/core/settings/textautogeneratetextglobalconfig.kcfg
+    DESTINATION ${KDE_INSTALL_KCFGDIR}
+)
 target_sources(
     KF6TextAutoGenerateText
     PRIVATE
