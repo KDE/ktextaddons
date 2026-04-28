@@ -26,12 +26,23 @@ target_sources(
         lmstudioconfiguredialog.h
         lmstudioconfigurewidget.cpp
         lmstudioconfigurewidget.h
+        lmstudioinstalledmodelwidget.cpp
+        lmstudioinstalledmodelwidget.h
         lmstudiomanager.h
         lmstudiomanager.cpp
         lmstudioreply.h
         lmstudioreply.cpp
         lmstudiosettings.h
         lmstudiosettings.cpp
+        modelsmanager/lmstudiomodelinstalledinfo.h
+        modelsmanager/lmstudiomodelinstalledinfo.cpp
+        modelsmanager/lmstudiomodelinstalledinfosmodel.cpp
+        modelsmanager/lmstudiomodelinstalledinfosmodel.h
+        modelsmanager/lmstudiomodelinstalledinfowidget.cpp
+        modelsmanager/lmstudiomodelinstalledinfowidget.h
+        modelsmanager/lmstudiomodelinstalledwidget.cpp
+        modelsmanager/lmstudiomodelinstalledwidget.h
+        textautogeneratelmstudio_private_export.h
 )
 
 # precompiled headers support

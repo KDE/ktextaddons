@@ -7,6 +7,7 @@
 
 #pragma once
 #include "lmstudiosettings.h"
+#include "modelsmanager/lmstudiomodelinstalledinfo.h"
 #include "textautogeneratelmstudio_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
@@ -31,6 +32,9 @@ public:
     [[nodiscard]] QString apiKey() const;
     void setApiKey(const QString &newApiKey);
 
+    [[nodiscard]] QList<LMStudioModelInstalledInfo> installedInfos() const;
+    void setInstalledInfos(const QList<LMStudioModelInstalledInfo> &newInstalledInfos);
+
     [[nodiscard]] bool hasVisionSupport(const QString &modelName) const;
     [[nodiscard]] bool hasToolsSupport(const QString &modelName) const;
     [[nodiscard]] bool hasOcrSupport(const QString &modelName) const;
@@ -41,6 +45,9 @@ Q_SIGNALS:
     void errorOccurred(QNetworkReply::NetworkError e);
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_NO_EXPORT bool hasCategorySupport(const QString &modelName,
+                                                                             TextAutoGenerateText::TextAutoGenerateManager::Category cat) const;
+    QList<LMStudioModelInstalledInfo> mInstalledInfos;
     QString mApiKey;
     LMStudioSettings *const mLMStudioSettings;
 };
