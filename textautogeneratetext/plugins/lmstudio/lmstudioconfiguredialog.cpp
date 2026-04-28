@@ -24,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, QWidget *parent)
     : KPageDialog(parent)
     , mConfigureWidget(new LMStudioConfigureWidget(manager, this))
+    , mModelInstalledWidget(new LMStudioModelInstalledWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure LMStudio"));
     setFaceType(KPageDialog::List);
@@ -34,6 +35,12 @@ LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, QWidg
     configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
     mConfigureWidget->setObjectName(u"mLMStudioConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
+
+    const QString modelInstalledPageName = i18nc("@title Preferences page name", "Installed model");
+    auto configureInstalledModelWidgetPage = new KPageWidgetItem(mModelInstalledWidget, modelInstalledPageName);
+    configureInstalledModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
+    mModelInstalledWidget->setObjectName(u"mLMStudioModelInstalledWidget"_s);
+    addPage(configureInstalledModelWidgetPage);
 
     auto okButton = button(QDialogButtonBox::StandardButton::Ok);
     connect(mConfigureWidget, &LMStudioConfigureWidget::enableOkButton, this, [okButton](bool state) {

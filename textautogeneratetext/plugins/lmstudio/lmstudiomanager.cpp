@@ -10,6 +10,7 @@
 #include "core/textautogenerateengineaccessmanager.h"
 #include "lmstudioreply.h"
 #include "lmstudiosettings.h"
+#include "modelsmanager/lmstudiomodelinstalledinfo.h"
 
 #include <KLocalizedString>
 
@@ -31,12 +32,12 @@ LMStudioManager::~LMStudioManager() = default;
 
 bool LMStudioManager::hasVisionSupport([[maybe_unused]] const QString &modelName) const
 {
-    return false;
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision);
 }
 
 bool LMStudioManager::hasToolsSupport([[maybe_unused]] const QString &modelName) const
 {
-    return false;
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools);
 }
 
 bool LMStudioManager::hasOcrSupport([[maybe_unused]] const QString &modelName) const
@@ -51,7 +52,7 @@ bool LMStudioManager::hasAudioSupport([[maybe_unused]] const QString &modelName)
 
 bool LMStudioManager::hasThinkSupport([[maybe_unused]] const QString &modelName) const
 {
-    return false;
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning);
 }
 
 LMStudioSettings *LMStudioManager::lmStudioSettings() const
@@ -69,11 +70,22 @@ void LMStudioManager::setApiKey(const QString &newApiKey)
     mApiKey = newApiKey;
 }
 
+QList<LMStudioModelInstalledInfo> LMStudioManager::installedInfos() const
+{
+    return mInstalledInfos;
+}
+
+void LMStudioManager::setInstalledInfos(const QList<LMStudioModelInstalledInfo> &newInstalledInfos)
+{
+    mInstalledInfos = newInstalledInfos;
+}
+
 void LMStudioManager::loadModels()
 {
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
+    mInstalledInfos.clear();
     QUrl url = mLMStudioSettings->serverUrl();
     url.setPath(u"/api/v1/models"_s);
     QNetworkRequest req{url};
@@ -96,12 +108,21 @@ void LMStudioManager::loadModels()
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["models"_L1].toArray();
         for (const auto &model : models) {
+            LMStudioModelInstalledInfo installed;
+            installed.parseInfo(model.toObject());
+
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
-            i.modelName = model["display_name"_L1].toString();
-            i.identifier = model["key"_L1].toString();
+            i.modelName = installed.name();
+            i.identifier = installed.model();
 
             info.models.push_back(std::move(i));
+            mInstalledInfos.append(std::move(installed));
         }
+
+        // sort list of models
+        std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const LMStudioModelInstalledInfo &left, const LMStudioModelInstalledInfo &right) {
+            return left.name().toLower() < right.name().toLower();
+        });
 
         std::sort(info.models.begin(),
                   info.models.end(),
@@ -120,7 +141,6 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getCompletion(cons
 {
     QUrl url = mLMStudioSettings->serverUrl();
     // Use OpenAI API exposed by LM Studio
-    // TODO: Move to /api/v1/chat
     url.setPath(u"/v1/completions"_s);
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
@@ -149,6 +169,7 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getCompletion(cons
 TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
     QUrl url = mLMStudioSettings->serverUrl();
+    // Use OpenAI API exposed by LM Studio
     url.setPath(u"/v1/chat/completions"_s);
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
@@ -173,6 +194,23 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getChatCompletion(
         Q_EMIT errorOccurred(e);
     });
     return reply;
+}
+
+bool LMStudioManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
+{
+    if (modelName.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_LMSTUDIO_LOG) << " modelName is empty. it's a bug";
+        return false;
+    }
+    auto matchesModelName = [&](const LMStudioModelInstalledInfo &info) {
+        return info.model() == modelName;
+    };
+    auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName);
+    if (it == mInstalledInfos.constEnd()) {
+        qCWarning(AUTOGENERATETEXT_LMSTUDIO_LOG) << " modelName is not installed " << modelName;
+        return false;
+    }
+    return it->categories() & cat;
 }
 
 QDebug operator<<(QDebug d, const LMStudioManager &t)

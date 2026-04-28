@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "modelsmanager/lmstudiomodelinstalledwidget.h"
 #include "textautogeneratelmstudio_export.h"
 #include <KPageDialog>
 class LMStudioConfigureWidget;
@@ -21,4 +22,5 @@ private:
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotRestoreDefaults();
     LMStudioConfigureWidget *const mConfigureWidget;
+    LMStudioModelInstalledWidget *const mModelInstalledWidget;
 };
