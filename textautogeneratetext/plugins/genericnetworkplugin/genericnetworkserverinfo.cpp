@@ -52,6 +52,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("CompactifAI");
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return i18n("OpenRouter AI");
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+        return i18n("Sarvam AI");
     }
     return {};
 }
@@ -78,6 +80,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return u"chat/completions"_s;
     }
     return {};
@@ -121,6 +124,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://docs.compactif.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return u"https://openrouter.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+        return u"https://api.sarvam.ai/"_s;
     }
     return {};
 }
@@ -163,6 +168,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://your-compactifai-api-endpoint/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return u"https://openrouter.ai/api/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+        return u"https://api.sarvam.ai/v1/"_s;
     }
     return {};
 }
@@ -201,6 +208,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("CompactifAI");
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return i18n("OpenRouter AI");
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+        return i18n("Sarvam AI instance");
     }
     return {};
 }
@@ -243,6 +252,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"compactifai"_s;
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return u"openrouterai"_s;
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+        return u"sarvamai"_s;
     }
     return {};
 }
@@ -281,6 +292,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::CompactifAI;
     } else if (str == QLatin1StringView("openrouterai")) {
         return GenericNetworkManager::PluginNetworkType::OpenRouterAI;
+    } else if (str == QLatin1StringView("sarvamai")) {
+        return GenericNetworkManager::PluginNetworkType::SarvamAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -338,6 +351,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return limits;
     }
     return limits;
@@ -370,6 +384,7 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return false;
     }
     return false;
@@ -410,6 +425,7 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return false;
     }
     return false;
@@ -437,6 +453,7 @@ bool GenericNetworkServerInfo::hasOcrSupport(const QString &currentModel, Generi
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return false;
     }
     return false;
@@ -464,6 +481,7 @@ bool GenericNetworkServerInfo::hasThinkSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return false;
     }
     return false;
@@ -491,6 +509,7 @@ bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, Gener
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return false;
     }
     return false;

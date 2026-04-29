@@ -35,6 +35,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"chatgpt"_s), GenericNetworkManager::PluginNetworkType::ChatGPT);
     QCOMPARE(info.pluginNetworkTypeFromString(u"compactifai"_s), GenericNetworkManager::PluginNetworkType::CompactifAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"openrouterai"_s), GenericNetworkManager::PluginNetworkType::OpenRouterAI);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"sarvamai"_s), GenericNetworkManager::PluginNetworkType::SarvamAI);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -56,6 +57,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::ChatGPT), u"https://api.openai.com/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::CompactifAI), u"https://your-compactifai-api-endpoint/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"https://openrouter.ai/api/v1/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::SarvamAI), u"https://api.sarvam.ai/v1/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -77,6 +79,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::ChatGPT), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::CompactifAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::SarvamAI), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -98,6 +101,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::ChatGPT), u"chatgpt"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::CompactifAI), u"compactifai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"openrouterai"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::SarvamAI), u"sarvamai"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -119,6 +123,7 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::ChatGPT), GenericNetworkManager::Limitation::UseMaxCompletionTokens);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::CompactifAI), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenRouterAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::SarvamAI), GenericNetworkManager::Limitation::None);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"
