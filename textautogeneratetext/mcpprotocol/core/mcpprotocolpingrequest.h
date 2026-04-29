@@ -48,7 +48,7 @@ public:
 
     /*!
      */
-    std::optional<McpProtocolRequestParams> params() const;
+    [[nodiscard]] std::optional<McpProtocolRequestParams> params() const;
     /*!
      */
     void setParams(std::optional<McpProtocolRequestParams> newParams);
