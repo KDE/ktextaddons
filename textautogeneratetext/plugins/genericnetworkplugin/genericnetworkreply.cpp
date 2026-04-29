@@ -17,6 +17,12 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
+        if ((mRequestType == RequestTypes::StreamingGenerate || mRequestType == RequestTypes::StreamingChat) && !mTokens.empty()) {
+            // TODO: verify it.
+            const auto finalResponse = mTokens.constLast();
+            // TODO use "usage" in openAI api
+            mInfo.tokenCount = finalResponse["total_tokens"_L1].toVariant().toULongLong();
+        }
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply response finished";
         Q_EMIT finished();
     });
