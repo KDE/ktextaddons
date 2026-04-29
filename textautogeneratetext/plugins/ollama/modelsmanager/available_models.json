@@ -6202,6 +6202,10 @@
                 "24 GB"
             ],
             [
+                "4b",
+                "2.8 GB"
+            ],
+            [
                 "30b",
                 "24 GB"
             ],
@@ -6215,6 +6219,7 @@
             "tools",
             "reasoning",
             "huge",
+            "small",
             "cloud"
         ],
         "author": "Nvidia",
