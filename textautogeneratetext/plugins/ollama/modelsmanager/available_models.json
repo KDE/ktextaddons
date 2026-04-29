@@ -6710,6 +6710,180 @@
             "en"
         ]
     },
+    "qwen3.5": {
+        "tags": [
+            [
+                "latest",
+                "6.6 GB"
+            ],
+            [
+                "0.8b",
+                "1.0 GB"
+            ],
+            [
+                "2b",
+                "2.7 GB"
+            ],
+            [
+                "4b",
+                "3.4 GB"
+            ],
+            [
+                "9b",
+                "6.6 GB"
+            ],
+            [
+                "27b",
+                "17 GB"
+            ],
+            [
+                "35b",
+                "24 GB"
+            ],
+            [
+                "122b",
+                "81 GB"
+            ],
+            [
+                "cloud",
+                "cloud"
+            ],
+            [
+                "397b-cloud",
+                "cloud"
+            ]
+        ],
+        "url": "https://ollama.com/library/qwen3.5",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "medium",
+            "small",
+            "big",
+            "huge",
+            "cloud",
+            "code",
+            "multilingual",
+            "math"
+        ],
+        "author": "Alibaba",
+        "languages": [
+            "en",
+            "de",
+            "es",
+            "fr",
+            "ja",
+            "pt",
+            "ar",
+            "cs",
+            "it",
+            "ko",
+            "nl",
+            "zh"
+        ]
+    },
+    "lfm2": {
+        "tags": [
+            [
+                "latest",
+                "14 GB"
+            ],
+            [
+                "24b",
+                "14 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/lfm2",
+        "categories": [
+            "tools",
+            "big",
+            "huge",
+            "code"
+        ],
+        "author": "Liquid",
+        "languages": [
+            "en"
+        ]
+    },
+    "nemotron-3-super": {
+        "tags": [
+            [
+                "latest",
+                "87 GB"
+            ],
+            [
+                "120b",
+                "87 GB"
+            ],
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "url": "https://ollama.com/library/nemotron-3-super",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge",
+            "cloud",
+            "code",
+            "multilingual"
+        ],
+        "author": "Nvidia",
+        "languages": [
+            "en",
+            "fr",
+            "de",
+            "it",
+            "ja",
+            "es",
+            "zh"
+        ]
+    },
+    "nemotron-cascade-2": {
+        "tags": [
+            [
+                "latest",
+                "24 GB"
+            ],
+            [
+                "30b",
+                "24 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/nemotron-cascade-2",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge",
+            "code",
+            "math"
+        ],
+        "author": "Nvidia",
+        "languages": [
+            "en"
+        ]
+    },
+    "minimax-m2.7": {
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "url": "https://ollama.com/library/minimax-m2.7",
+        "categories": [
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "author": "Mistral AI",
+        "languages": [
+            "en"
+        ]
+    },
     "gemma4": {
         "tags": [
             [

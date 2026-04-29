@@ -336,6 +336,16 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
         {u"gemma4"_s,
          i18n("Gemma 4 models are designed to deliver frontier-level performance at each size. They are well-suited for reasoning, agentic workflows, coding, "
               "and multimodal understanding.")},
+        {u"qwen3.5"_s, i18n("Qwen 3.5 is a family of open-source multimodal models that delivers exceptional utility and performance.")},
+        {u"lfm2"_s,
+         i18n("LFM2 is a family of hybrid models designed for on-device deployment. LFM2-24B-A2B is the largest model in the family, scaling the architecture "
+              "to 24 billion parameters while keeping inference efficient.")},
+        {u"nemotron-3-super"_s,
+         i18n("NVIDIA Nemotron 3 Super is a 120B open MoE model activating just 12B parameters to deliver maximum compute efficiency and accuracy for complex "
+              "multi-agent applications.")},
+        {u"nemotron-cascade-2"_s,
+         i18n("An open 30B MoE model from NVIDIA with 3B activated parameters that delivers strong reasoning and agentic capabilities.")},
+        {u"minimax-m2.7"_s, i18n("MiniMax's M2-series model for coding, agentic workflows, and professional productivity.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
