@@ -155,6 +155,7 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
                                 } else {
                                     manager()->changeInProgress(chatId, messageUuid, false);
                                 }
+                                // TODO store reply->info();
 
                                 qCDebug(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << " progress finished";
                                 mConnections.remove(reply);
