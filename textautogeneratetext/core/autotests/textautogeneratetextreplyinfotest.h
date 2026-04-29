@@ -1,0 +1,20 @@
+/*
+  SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+#pragma once
+
+#include <QObject>
+
+class TextAutoGenerateTextReplyInfoTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit TextAutoGenerateTextReplyInfoTest(QObject *parent = nullptr);
+    ~TextAutoGenerateTextReplyInfoTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
+};
