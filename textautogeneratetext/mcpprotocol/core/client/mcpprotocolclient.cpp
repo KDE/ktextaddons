@@ -67,6 +67,21 @@ bool McpProtocolClient::canStart() const
     return false;
 }
 
+void McpProtocolClient::notify(const QJsonObject &obj)
+{
+    emit(obj);
+}
+
+void McpProtocolClient::request(const QJsonObject &obj)
+{
+    emit(obj);
+}
+
+void McpProtocolClient::emit(const QJsonObject &obj)
+{
+    // TODO
+}
+
 void McpProtocolClient::start()
 {
     if (canStart()) {
