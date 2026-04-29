@@ -76,6 +76,10 @@ public:
      */
     void slotCloseWidget();
 
+    /*!
+     */
+    void disableMessageBox();
+
 private:
     TEXTTRANSLATOR_NO_EXPORT void slotFromLanguageChanged(int, bool initialize = false);
     TEXTTRANSLATOR_NO_EXPORT void slotTextChanged();

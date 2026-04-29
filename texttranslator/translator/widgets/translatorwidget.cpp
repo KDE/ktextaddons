@@ -71,6 +71,7 @@ public:
     QString engineName;
     bool languageSettingsChanged = false;
     bool standalone = true;
+    bool disableMessageBox = false;
 };
 
 void TranslatorWidget::TranslatorWidgetPrivate::fillToCombobox(const QString &lang)
@@ -412,7 +413,9 @@ void TranslatorWidget::slotTranslate()
         return;
     }
     if (!TextTranslator::NetworkManager::self()->isOnline()) {
-        KMessageBox::information(this, i18n("No network connection detected, we cannot translate text."), i18nc("@title:window", "No network"));
+        if (!d->disableMessageBox) {
+            KMessageBox::information(this, i18n("No network connection detected, we cannot translate text."), i18nc("@title:window", "No network"));
+        }
         return;
     }
     const QString textToTranslate = d->inputText->toPlainText();
@@ -491,6 +494,11 @@ void TranslatorWidget::slotCloseWidget()
         hide();
     }
     Q_EMIT toolsWasClosed();
+}
+
+void TranslatorWidget::disableMessageBox()
+{
+    d->disableMessageBox = true;
 }
 
 bool TranslatorWidget::event(QEvent *e)

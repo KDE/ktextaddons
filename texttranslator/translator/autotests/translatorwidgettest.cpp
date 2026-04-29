@@ -5,7 +5,6 @@
 */
 
 #include "translatorwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/widgets/translatorwidget.h"
 
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <qtestmouse.h>
 QTEST_MAIN(TranslatorWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 TranslatorWidgetTest::TranslatorWidgetTest()
 {
     QStandardPaths::setTestModeEnabled(true);
@@ -28,6 +28,7 @@ TranslatorWidgetTest::TranslatorWidgetTest()
 void TranslatorWidgetTest::shouldHaveDefaultValuesOnCreation()
 {
     TextTranslator::TranslatorWidget edit;
+    edit.disableMessageBox();
     auto from = edit.findChild<QComboBox *>(u"from"_s);
     auto to = edit.findChild<QComboBox *>(u"to"_s);
 
@@ -54,6 +55,7 @@ void TranslatorWidgetTest::shouldHaveDefaultValuesOnCreation()
 void TranslatorWidgetTest::shouldEnableTranslateButtonWhenTextToTranslateIsNotEmpty()
 {
     TextTranslator::TranslatorWidget edit;
+    edit.disableMessageBox();
 
     auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(u"inputtext"_s);
     auto translate = edit.findChild<QPushButton *>(u"translate-button"_s);
@@ -64,6 +66,7 @@ void TranslatorWidgetTest::shouldEnableTranslateButtonWhenTextToTranslateIsNotEm
 void TranslatorWidgetTest::shouldDisableTranslateButtonAndClearTextWhenClickOnClearButton()
 {
     TextTranslator::TranslatorWidget edit;
+    edit.disableMessageBox();
     auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(u"inputtext"_s);
     auto translate = edit.findChild<QPushButton *>(u"translate-button"_s);
     inputtext->setPlainText(u"Foo"_s);
@@ -76,6 +79,7 @@ void TranslatorWidgetTest::shouldDisableTranslateButtonAndClearTextWhenClickOnCl
 void TranslatorWidgetTest::shouldInvertLanguageWhenClickOnInvertButton()
 {
     TextTranslator::TranslatorWidget edit;
+    edit.disableMessageBox();
     auto from = edit.findChild<QComboBox *>(u"from"_s);
     auto to = edit.findChild<QComboBox *>(u"to"_s);
 
@@ -94,6 +98,7 @@ void TranslatorWidgetTest::shouldInvertLanguageWhenClickOnInvertButton()
 void TranslatorWidgetTest::shouldHideWidgetWhenPressEscape()
 {
     TextTranslator::TranslatorWidget edit;
+    edit.disableMessageBox();
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QTest::keyPress(&edit, Qt::Key_Escape);
@@ -103,6 +108,7 @@ void TranslatorWidgetTest::shouldHideWidgetWhenPressEscape()
 void TranslatorWidgetTest::shouldEmitTranslatorWasClosedSignalWhenCloseIt()
 {
     TextTranslator::TranslatorWidget edit;
+    edit.disableMessageBox();
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QSignalSpy spy(&edit, &TextTranslator::TranslatorWidget::toolsWasClosed);
