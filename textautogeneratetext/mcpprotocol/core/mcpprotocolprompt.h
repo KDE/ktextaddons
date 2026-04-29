@@ -7,7 +7,6 @@
 #include "mcpprotocolicon.h"
 #include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolpromptargument.h"
-#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
 

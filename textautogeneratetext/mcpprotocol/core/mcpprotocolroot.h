@@ -7,7 +7,6 @@
 #include "mcpprotocolannotations.h"
 #include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 class QJsonObject;
 class QDebug;

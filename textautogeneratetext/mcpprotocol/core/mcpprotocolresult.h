@@ -6,7 +6,6 @@
 #pragma once
 #include "mcpprotocolnotificationparams.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QJsonObject>
 #include <QString>
 
