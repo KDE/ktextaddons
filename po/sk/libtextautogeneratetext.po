@@ -1775,7 +1775,7 @@ msgid ""
 "Tülu 3 is a leading instruction following model family, offering fully open-"
 "source data, code, and recipes by the The Allen Institute for AI."
 msgstr ""
-"Tülu 3 je popredná rodina modelov nasledujúcich inštrukcie, ponúkajúca plne "
+"Tülu 3 je popredná rodina modelov sledujúcich inštrukcie, ponúkajúca plne "
 "open-source dáta, kód a recepty od The Allen Institute for AI."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:205
