@@ -9,3 +9,5 @@ AddMcpProtocolWidget::AddMcpProtocolWidget(QWidget *parent)
     : QWidget{parent}
 {
 }
+
+#include "moc_addmcpprotocolwidget.cpp"

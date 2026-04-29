@@ -18,3 +18,5 @@ void TextAutoGenerateTextReplyInfoTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_textautogeneratetextreplyinfotest.cpp"
