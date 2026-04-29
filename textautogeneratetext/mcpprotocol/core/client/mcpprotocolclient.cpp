@@ -69,15 +69,15 @@ bool McpProtocolClient::canStart() const
 
 void McpProtocolClient::notify(const QJsonObject &obj)
 {
-    emit(obj);
+    emitNotificationOrRequest(obj);
 }
 
 void McpProtocolClient::request(const QJsonObject &obj)
 {
-    emit(obj);
+    emitNotificationOrRequest(obj);
 }
 
-void McpProtocolClient::emit(const QJsonObject &obj)
+void McpProtocolClient::emitNotificationOrRequest(const QJsonObject &obj)
 {
     // TODO
 }

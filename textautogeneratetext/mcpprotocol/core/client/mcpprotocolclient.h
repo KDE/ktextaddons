@@ -34,7 +34,7 @@ Q_SIGNALS:
     void error(const QString &str);
 
 private:
-    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void emit(const QJsonObject &obj);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void emitNotificationOrRequest(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void loadPlugin();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
     const TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType mProtocolType;
