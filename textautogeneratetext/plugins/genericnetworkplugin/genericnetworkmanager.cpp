@@ -97,6 +97,9 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
+    QJsonObject streamOptions;
+    streamOptions["include_usage"_L1] = true;
+    data["stream_options"_L1] = streamOptions;
     const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
     if (!array.isEmpty()) {
         data["tools"_L1] = array;
