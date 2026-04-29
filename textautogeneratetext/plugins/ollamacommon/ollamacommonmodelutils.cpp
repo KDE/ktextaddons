@@ -333,6 +333,9 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
          i18n("A strong reasoning and agentic model from Z.ai with 744B total parameters (40B active), built for complex systems engineering and long-horizon "
               "tasks.")},
         {u"minimax-m2.5"_s, i18n("MiniMax-M2.5 is a state-of-the-art large language model designed for real-world productivity and coding tasks.")},
+        {u"gemma4"_s,
+         i18n("Gemma 4 models are designed to deliver frontier-level performance at each size. They are well-suited for reasoning, agentic workflows, coding, "
+              "and multimodal understanding.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
