@@ -6,10 +6,12 @@
 #pragma once
 
 #include <QWidget>
-
+namespace TextAutoGenerateTextMcpProtocolWidgets
+{
 class AddMcpProtocolWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit AddMcpProtocolWidget(QWidget *parent = nullptr);
 };
+}
