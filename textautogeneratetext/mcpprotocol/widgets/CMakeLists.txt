@@ -15,8 +15,8 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocolWidgets HEADER
 target_sources(
     KF6TextAutoGenerateTextMcpProtocolWidgets
     PRIVATE
-        addmcpprotocolwidget.h
-        addmcpprotocolwidget.cpp
+        addmcpprotocolclientwidget.h
+        addmcpprotocolclientwidget.cpp
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)

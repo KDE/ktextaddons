@@ -8,10 +8,10 @@
 #include <QWidget>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class AddMcpProtocolWidget : public QWidget
+class AddMcpProtocolClientWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit AddMcpProtocolWidget(QWidget *parent = nullptr);
+    explicit AddMcpProtocolClientWidget(QWidget *parent = nullptr);
 };
 }

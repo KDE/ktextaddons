@@ -3,11 +3,11 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "addmcpprotocolwidget.h"
+#include "addmcpprotocolclientwidget.h"
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
-AddMcpProtocolWidget::AddMcpProtocolWidget(QWidget *parent)
+AddMcpProtocolClientWidget::AddMcpProtocolClientWidget(QWidget *parent)
     : QWidget{parent}
 {
 }
 
-#include "moc_addmcpprotocolwidget.cpp"
+#include "moc_addmcpprotocolclientwidget.cpp"
