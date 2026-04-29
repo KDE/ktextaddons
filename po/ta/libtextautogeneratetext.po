@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-04 00:43+0000\n"
+"POT-Creation-Date: 2026-04-29 00:43+0000\n"
 "PO-Revision-Date: 2026-02-28 11:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -2112,8 +2112,53 @@ msgid ""
 "world productivity and coding tasks."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:376
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:380
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:337
+#, kde-format
+msgid ""
+"Gemma 4 models are designed to deliver frontier-level performance at each "
+"size. They are well-suited for reasoning, agentic workflows, coding, and "
+"multimodal understanding."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
+#, kde-format
+msgid ""
+"Qwen 3.5 is a family of open-source multimodal models that delivers "
+"exceptional utility and performance."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
+#, kde-format
+msgid ""
+"LFM2 is a family of hybrid models designed for on-device deployment. "
+"LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
+"24 billion parameters while keeping inference efficient."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
+#, kde-format
+msgid ""
+"NVIDIA Nemotron 3 Super is a 120B open MoE model activating just 12B "
+"parameters to deliver maximum compute efficiency and accuracy for complex "
+"multi-agent applications."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
+#, kde-format
+msgid ""
+"An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
+"strong reasoning and agentic capabilities."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
+#, kde-format
+msgid ""
+"MiniMax's M2-series model for coding, agentic workflows, and professional "
+"productivity."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:393
 #, kde-format
 msgid "The user is called %1"
 msgstr "பயனரின் பெயர் %1"
