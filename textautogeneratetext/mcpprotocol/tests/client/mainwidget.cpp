@@ -23,6 +23,9 @@ MainWidget::MainWidget(QWidget *parent)
     auto client = new TextAutoGenerateTextMcpProtocolCore::McpProtocolClient(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse, this);
 }
 
-MainWidget::~MainWidget() = default;
+MainWidget::~MainWidget()
+{
+    qDeleteAll(mListClient);
+}
 
 #include "moc_mainwidget.cpp"
