@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:43+0000\n"
-"PO-Revision-Date: 2026-04-02 06:39+0200\n"
+"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"PO-Revision-Date: 2026-04-29 09:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -284,61 +284,73 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:208
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:210
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
+#, kde-format
+msgid "Sarvam AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Veliki jezikovni modeli Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:192
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:194
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API za sklepanje za oblak Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:196
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API za sklepanje za oblak Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:198
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:200
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi veliki jezikovni modeli Moonshot AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:202
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "Veliki jezikovni modeli Alibaba Cloud Qwen prek DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:204
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "API za sklepanje za oblak Novita AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:206
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "API za sklepanje za oblak DeepInfra"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add instance…"
+msgid "Sarvam AI instance"
+msgstr "Dodaj pojavek…"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2525,6 +2537,9 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Modeli Gemma 4 so zasnovani tako, da zagotavljajo zmogljivost na mejni ravni "
+"pri vsaki velikosti. Primerni so za sklepanje, agentne delovne procese, "
+"kodiranje in multimodalno razumevanje."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2532,6 +2547,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 je družina odprtokodnih multimodalnih modelov, ki zagotavlja "
+"izjemno uporabnost in zmogljivost."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2540,6 +2557,10 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 je družina hibridnih modelov, zasnovanih za uvajanje na napravah. "
+"LFM2-24B-A2B je največji model v družini, ki omogoča prilagajanje merila  "
+"arhitekture na 24 bilionih parametrov, hkrati pa ohranja učinkovitost "
+"sklepanja."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2548,6 +2569,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super je odprt model MoE s 120B pomnilnikom, ki aktivira "
+"le 12B parametrov za zagotavljanje največje računske učinkovitosti in "
+"natančnosti za kompleksne večagentne aplikacije."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2555,6 +2579,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"Odprt model 30B MoE podjetja NVIDIA s 3B aktiviranimi parametri, ki "
+"zagotavlja močno sklepanje in agentne zmogljivosti."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2562,6 +2588,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"MiniMaxov model serije M2 za kodiranje, agentske delovne procese in "
+"profesionalno produktivnost."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:393

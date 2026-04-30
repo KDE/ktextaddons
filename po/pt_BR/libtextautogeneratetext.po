@@ -1,15 +1,15 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 # SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 # SPDX-FileCopyrightText: 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:43+0000\n"
-"PO-Revision-Date: 2026-04-02 06:30-0300\n"
+"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"PO-Revision-Date: 2026-04-29 07:08-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -285,61 +285,73 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:208
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:210
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "IA do OpenRouter"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
+#, kde-format
+msgid "Sarvam AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Modelos de linguagem grandes da IA Mistral"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:192
 #, kde-format
 msgid "Groq AI"
 msgstr "IA do Groq"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:194
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API de inferência da nuvem da IA Kluster"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:196
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API de inferência da nuvem da IA Cerebras"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:198
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "API do Llama para a IA do Meta"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:200
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Modelos de linguagem grandes da Kimi pela IA Moonshot"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:202
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "Alibaba Cloud Qwen: modelos de linguagem de grande porte via DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:204
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "API de inferência da nuvem da IA Novita"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:206
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "API de inferência da nuvem da IA DeepInfra"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add instance…"
+msgid "Sarvam AI instance"
+msgstr "Adicionar instância…"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2557,6 +2569,9 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Os modelos Gemma 4 são projetados para oferecer desempenho de ponta em cada "
+"tamanho. Eles são ideais para raciocínio, fluxos de trabalho com agentes, "
+"codificação e compreensão multimodal."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2564,6 +2579,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"O Qwen 3.5 é uma família de modelos multimodais de código aberto que oferece "
+"utilidade e desempenho excepcionais."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2572,6 +2589,9 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"O LFM2 é uma família de modelos híbridos projetados para implantação em "
+"dispositivos. O LFM2-24B-A2B é o maior modelo da família, dimensionando a "
+"arquitetura para 24 bilhões de parâmetros, mantendo a inferência eficiente."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2580,6 +2600,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"O NVIDIA Nemotron 3 Super é um modelo MoE aberto de 120 bits que ativa "
+"apenas 12 bits de parâmetros para oferecer máxima eficiência computacional e "
+"precisão para aplicações multiagentes complexas."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2587,6 +2610,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"Um modelo aberto de MoE de 30 bits da NVIDIA com 3 bits de parâmetros "
+"ativados que oferece forte capacidade de raciocínio e ação."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2594,6 +2619,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"O modelo da série M2 da MiniMax é voltado para codificação, fluxos de "
+"trabalho com agentes e produtividade profissional."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:393

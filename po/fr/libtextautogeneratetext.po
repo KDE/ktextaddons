@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:43+0000\n"
+"POT-Creation-Date: 2026-04-30 00:42+0000\n"
 "PO-Revision-Date: 2026-04-03 10:04+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -282,61 +282,73 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:208
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:210
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
+#, kde-format
+msgid "Sarvam AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Grands modèles linguistiques pour Mistral IA"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:192
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:194
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API d'inférence cloud pour Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:196
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API d'inférence cloud pour Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:198
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "API Llama pour AI Meta"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:200
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Grands modèles linguistiques Kimi par Moonshot AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:202
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "Grands modèles linguistiques pour Alibaba Cloud Qwen grâce à DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:204
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "API d'inférence Cloud pour IA Novita"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:206
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "API d'inférence Cloud pour DeepInfra"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add instance…"
+msgid "Sarvam AI instance"
+msgstr "Ajouter une instance..."
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format

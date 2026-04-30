@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:43+0000\n"
-"PO-Revision-Date: 2026-04-02 14:30+0300\n"
+"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"PO-Revision-Date: 2026-04-29 14:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -283,61 +283,73 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:208
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:210
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:177
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
+#, kde-format
+msgid "Sarvam AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:185
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:192
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:187
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:194
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:189
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:196
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:198
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:193
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:200
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi, Moonshot AI tarafından geliştirilmiş bir büyük dil modelidir."
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:195
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:202
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "DashScope aracılığıyla Alibaba Cloud Qwen büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:197
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:204
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "Novita AI bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:206
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "DeepInfa bulut öngörü API’si"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add instance…"
+msgid "Sarvam AI instance"
+msgstr "Örnek Ekle…"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2533,6 +2545,9 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Gemma 4 modelleri, her boyutta en üst düzey başarımı sunmak üzere "
+"tasarlanmıştır. Akıl yürütme, aracı tabanlı iş akışları, kodlama ve çok "
+"kipli anlama için oldukça uygundurlar."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2540,6 +2555,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5, olağanüstü kullanışlılık ve başarım sunan, açık kaynaklı çok kipli "
+"modeller ailesidir."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2548,6 +2565,9 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2, aygıt üzerinde kullanım için tasarlanmış hibrit modeller ailesidir. "
+"LFM2-24B-A2B, ailenin en büyük modelidir ve mimariyi 24 milyar parametreye "
+"kadar ölçeklendirirken çıkarım verimliliğini korur."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2556,6 +2576,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super, karmaşık çoklu ajan uygulamaları için en çok "
+"hesaplama verimliliği ve doğruluğu sağlamak amacıyla yalnızca 12 milyar "
+"parametreyi etkinleştiren 120 milyarlık açık kaynaklı bir MoE modelidir."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2563,6 +2586,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"NVIDIA’dan 3 milyar etkin parametreye sahip, güçlü mantıksal çıkarım ve "
+"aracısal yetenekler sunan açık kaynaklı 30B MoE modeli."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2570,6 +2595,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"MiniMax’in kodlama, aracı tabanlı iş akışları ve profesyonel verimlilik için "
+"tasarlanmış M2 serisi modeli."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:393
