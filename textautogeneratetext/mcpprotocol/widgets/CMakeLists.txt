@@ -17,6 +17,8 @@ target_sources(
     PRIVATE
         addmcpprotocolclientwidget.h
         addmcpprotocolclientwidget.cpp
+        addmcpprotocolclientdialog.h
+        addmcpprotocolclientdialog.cpp
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)
