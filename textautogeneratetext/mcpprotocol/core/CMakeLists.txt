@@ -241,6 +241,8 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS
     HEADER_NAMES
     McpProtocolServer
+    McpServer
+    McpServerManager
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocol
     RELATIVE server
