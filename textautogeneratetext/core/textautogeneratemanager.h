@@ -12,6 +12,12 @@
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 #include <memory>
+
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpServerManager;
+}
+
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
@@ -413,7 +419,7 @@ public:
      * \brief textAutoGenerateTextMcpServerManager
      * \return
      */
-    // TODO [[nodiscard]] TextAutoGenerateTextMcpServerManager *textAutoGenerateTextMcpServerManager() const;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpServerManager *textAutoGenerateTextMcpServerManager() const;
 
     /*!
      */
@@ -554,7 +560,7 @@ private:
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextAutoGenerateTextToSpeechEnqueueManager *const mTextAutoGenerateTextToSpeechEnqueueManager;
 #endif
-    // TODO TextAutoGenerateTextMcpServerManager *const mTextAutoGenerateTextMcpServerManager;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mTextAutoGenerateTextMcpServerManager;
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
     QString mSwitchToChatName;

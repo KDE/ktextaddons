@@ -9,7 +9,6 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
-// TODO #include <TextAutoGenerateTextMcpProtocol/McpServerManager>
 #include "core/textautogeneratetextutils.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
@@ -20,6 +19,7 @@
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetextinstancesmanager.h"
 #include "textautogeneratetextplugin.h"
+#include <TextAutoGenerateTextMcpProtocol/McpServerManager>
 
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
 #include "textautogeneratemanageradaptor.h"
@@ -57,7 +57,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     , mTextAutoGenerateTextToSpeechEnqueueManager(new TextAutoGenerateTextToSpeechEnqueueManager(this))
 #endif
-// TODO , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpServerManager(this))
+    , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpProtocolCore::McpServerManager(this))
 {
     // TODO mTextAutoGenerateTextMcpServerManager->loadServers();
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
@@ -749,12 +749,10 @@ void TextAutoGenerateManager::setTextAutoGenerateTextToolInternalInterface(
     mTextAutoGenerateTextToolInternalInterface = newTextAutoGenerateTextToolInternalInterface;
 }
 
-#if 0
-TextAutoGenerateTextMcpServerManager *TextAutoGenerateManager::textAutoGenerateTextMcpServerManager() const
+TextAutoGenerateTextMcpProtocolCore::McpServerManager *TextAutoGenerateManager::textAutoGenerateTextMcpServerManager() const
 {
     return mTextAutoGenerateTextMcpServerManager;
 }
-#endif
 
 TextAutoGenerateLocalDatabaseManager *TextAutoGenerateManager::databaseManager() const
 {

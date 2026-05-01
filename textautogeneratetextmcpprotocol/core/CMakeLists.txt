@@ -233,7 +233,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon
     McpProtocolPluginInterface
     McpProtocolSettings
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS
-    PREFIX TextAutoGenerateTextMcpProtocol
+    PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE common
 )
 
@@ -241,7 +241,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient
     HEADER_NAMES
     McpProtocolClient
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS
-    PREFIX TextAutoGenerateTextMcpProtocol
+    PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE client
 )
 
@@ -251,7 +251,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver
     McpServer
     McpServerManager
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS
-    PREFIX TextAutoGenerateTextMcpProtocol
+    PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE server
 )
 
