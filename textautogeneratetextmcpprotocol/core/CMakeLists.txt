@@ -289,6 +289,13 @@ install(
 )
 
 install(
+    EXPORT KF6TextAutoGenerateTextMcpProtocolCoreTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF6TextAutoGenerateTextMcpProtocolCore.cmake
+    NAMESPACE KF6::
+)
+
+install(
     FILES
         "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolCoreConfig.cmake"
         "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolCoreConfigVersion.cmake"
