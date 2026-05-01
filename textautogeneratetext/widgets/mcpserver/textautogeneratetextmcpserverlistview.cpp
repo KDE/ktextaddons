@@ -39,7 +39,7 @@ void TextAutoGenerateTextMcpServerListView::slotEditMcpServer(const QModelIndex 
 {
     const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::Identifier).toByteArray();
     if (uuid.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid mcp instance uuid";
     } else {
         Q_EMIT editServer(uuid);
     }
