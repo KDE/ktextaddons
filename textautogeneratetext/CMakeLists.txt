@@ -412,8 +412,6 @@ target_sources(
         widgets/availablemodel/textautogeneratemodelavailablelistview.cpp
 )
 
-add_subdirectory(mcpprotocol)
-
 if(BUILD_TESTING)
     add_subdirectory(core/autotests)
     add_subdirectory(tests)

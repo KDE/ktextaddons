@@ -295,6 +295,7 @@ add_subdirectory(textemoticons)
 add_subdirectory(textutils)
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED MultimediaWidgets)
 add_subdirectory(textspeechtotext)
+add_subdirectory(textautogeneratetextmcpprotocol)
 add_subdirectory(textautogeneratetext)
 
 add_subdirectory(textcustomeditor)
