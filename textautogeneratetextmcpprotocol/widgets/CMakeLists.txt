@@ -36,6 +36,11 @@ target_sources(
         server/mcpserverwidget.h
 )
 
+target_include_directories(
+    KF6TextAutoGenerateTextMcpProtocolWidgets
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets;>"
+)
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)
 
 ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS
@@ -66,10 +71,23 @@ install(
 
 target_link_libraries(
     KF6TextAutoGenerateTextMcpProtocolWidgets
-    Qt::Widgets
-    KF6::TextAutoGenerateTextMcpProtocolCore
-    KF6::I18n
-    KF6::WidgetsAddons
+    PUBLIC
+        Qt::Widgets
+        KF6::TextAutoGenerateTextMcpProtocolCore
+    PRIVATE
+        KF6::I18n
+        KF6::WidgetsAddons
+)
+
+set_target_properties(
+    KF6TextAutoGenerateTextMcpProtocolWidgets
+    PROPERTIES
+        VERSION
+            ${TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_VERSION}
+        SOVERSION
+            ${TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_SOVERSION}
+        EXPORT_NAME
+            TextAutoGenerateTextMcpProtocolWidgets
 )
 
 install(

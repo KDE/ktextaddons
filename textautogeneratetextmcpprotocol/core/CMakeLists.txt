@@ -19,6 +19,12 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocolCore HEADER te
     EXPORT KTEXTADDONS
 )
 
+target_include_directories(
+    KF6TextAutoGenerateTextMcpProtocolCore
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore;>"
+)
+
 target_sources(
     KF6TextAutoGenerateTextMcpProtocolCore
     PRIVATE
@@ -279,6 +285,17 @@ target_link_libraries(
     Qt::Core
     KF6::CoreAddons
     KF6::ConfigCore
+)
+
+set_target_properties(
+    KF6TextAutoGenerateTextMcpProtocolCore
+    PROPERTIES
+        VERSION
+            ${TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION}
+        SOVERSION
+            ${TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_SOVERSION}
+        EXPORT_NAME
+            TextAutoGenerateTextMcpProtocolCore
 )
 
 install(
