@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "textautogeneratetextmcpserverwidgettest.h"
+#include "mcpserverwidgettest.h"
 
 #include "mcpserverlistview.h"
 #include "mcpserverwidget.h"
@@ -13,13 +13,13 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
-QTEST_MAIN(TextAutoGenerateTextMcpServerWidgetTest)
-TextAutoGenerateTextMcpServerWidgetTest::TextAutoGenerateTextMcpServerWidgetTest(QObject *parent)
+QTEST_MAIN(McpServerWidgetTest)
+McpServerWidgetTest::McpServerWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutoGenerateTextMcpServerWidgetTest::shouldHaveDefaultValues()
+void McpServerWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget w(nullptr);
 
@@ -41,4 +41,4 @@ void TextAutoGenerateTextMcpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(addMcpServerButton->autoRaise());
 }
 
-#include "moc_textautogeneratetextmcpserverwidgettest.cpp"
+#include "moc_mcpserverwidgettest.cpp"

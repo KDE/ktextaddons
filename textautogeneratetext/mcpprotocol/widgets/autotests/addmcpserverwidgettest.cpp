@@ -3,18 +3,18 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogenerateaddmcpserverwidgettest.h"
+#include "addmcpserverwidgettest.h"
 #include "addmcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
-QTEST_MAIN(TextAutoGenerateAddMcpServerWidgetTest)
+QTEST_MAIN(AddMcpServerWidgetTest)
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateAddMcpServerWidgetTest::TextAutoGenerateAddMcpServerWidgetTest(QObject *parent)
+AddMcpServerWidgetTest::AddMcpServerWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutoGenerateAddMcpServerWidgetTest::shouldHaveDefaultValues()
+void AddMcpServerWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget w;
     auto mServerNameLineEdit = w.findChild<QLineEdit *>(u"mServerNameLineEdit"_s);
@@ -27,4 +27,4 @@ void TextAutoGenerateAddMcpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mServerUrlLineEdit->text().isEmpty());
     QVERIFY(mServerUrlLineEdit->isClearButtonEnabled());
 }
-#include "moc_textautogenerateaddmcpserverwidgettest.cpp"
+#include "moc_addmcpserverwidgettest.cpp"

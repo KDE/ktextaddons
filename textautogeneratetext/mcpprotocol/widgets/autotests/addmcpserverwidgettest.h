@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutoGenerateAddMcpServerWidgetTest : public QObject
+class AddMcpServerWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateAddMcpServerWidgetTest(QObject *parent = nullptr);
-    ~TextAutoGenerateAddMcpServerWidgetTest() override = default;
+    explicit AddMcpServerWidgetTest(QObject *parent = nullptr);
+    ~AddMcpServerWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
