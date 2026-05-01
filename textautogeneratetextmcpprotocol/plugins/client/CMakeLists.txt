@@ -46,11 +46,9 @@ set_target_properties(
     mcpprotocolclientplugin
     PROPERTIES
         VERSION
-            ${TEXTAUTOGENERATETEXT_VERSION}
+            0
         SOVERSION
-            ${TEXTAUTOGENERATETEXT_SOVERSION}
-        EXPORT_NAME
-            TextAutoGenerateText
+            0
 )
 
 install(

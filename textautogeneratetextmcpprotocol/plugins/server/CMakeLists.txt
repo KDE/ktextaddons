@@ -42,15 +42,14 @@ target_link_libraries(
         KF6::TextAutoGenerateTextMcpProtocolCore
         Qt::Network
 )
+
 set_target_properties(
     mcpprotocolserverplugin
     PROPERTIES
         VERSION
-            ${TEXTAUTOGENERATETEXT_VERSION}
+            0
         SOVERSION
-            ${TEXTAUTOGENERATETEXT_SOVERSION}
-        EXPORT_NAME
-            TextAutoGenerateText
+            0
 )
 
 install(
