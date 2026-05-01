@@ -19,7 +19,7 @@
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetextinstancesmanager.h"
 #include "textautogeneratetextplugin.h"
-#include <TextAutoGenerateTextMcpProtocol/McpServerManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
 #include "textautogeneratemanageradaptor.h"

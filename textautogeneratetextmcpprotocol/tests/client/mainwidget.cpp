@@ -7,7 +7,7 @@
 #include <QSplitter>
 #include <QTreeWidget>
 #include <QVBoxLayout>
-#include <TextAutoGenerateTextMcpProtocol/McpProtocolClient>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClient>
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget{parent}
