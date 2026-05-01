@@ -20,7 +20,5 @@ namespace TextAutoGenerateTextUtils
 /*!
  */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QByteArray generateUUid();
-
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList mcpServerList(const KSharedConfig::Ptr &config);
 };
 }

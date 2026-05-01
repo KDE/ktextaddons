@@ -159,8 +159,6 @@ target_sources(
         core/textautogenerateattachmentutils.cpp
         core/textautogenerateblockcmarksupport.h
         core/textautogenerateblockcmarksupport.cpp
-        core/textautogeneratetextmcpservermanager.h
-        core/textautogeneratetextmcpservermanager.cpp
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -175,10 +173,6 @@ target_sources(
         core/models/textautogeneratetextinstancemodel.cpp
         core/models/textautogeneratetextinstancesortfilterproxymodel.h
         core/models/textautogeneratetextinstancesortfilterproxymodel.cpp
-        core/models/textautogeneratetextmcpservermodel.h
-        core/models/textautogeneratetextmcpservermodel.cpp
-        core/models/textautogeneratetextmcpserversortfilterproxymodel.h
-        core/models/textautogeneratetextmcpserversortfilterproxymodel.cpp
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
@@ -242,8 +236,6 @@ target_sources(
         core/textautogeneratefilecache.h
         core/textautogeneratefilecache.cpp
         core/icons/ollamamodelicons.qrc
-        core/textautogeneratetextmcpserver.h
-        core/textautogeneratetextmcpserver.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
@@ -418,14 +410,6 @@ target_sources(
         widgets/debug/textautogeneratejsonplaintexteditwidget.cpp
         widgets/availablemodel/textautogeneratemodelavailablelistview.h
         widgets/availablemodel/textautogeneratemodelavailablelistview.cpp
-        widgets/mcpserver/textautogeneratetextmcpserverwidget.h
-        widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp
-        widgets/mcpserver/textautogeneratetextmcpserverlistview.h
-        widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp
-        widgets/mcpserver/textautogenerateaddmcpserverdialog.h
-        widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp
-        widgets/mcpserver/textautogenerateaddmcpserverwidget.h
-        widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp
 )
 
 add_subdirectory(mcpprotocol)
@@ -526,8 +510,6 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateSettings
     TextAutoGenerateAttachmentUtils
     TextAutoGenerateSearchMessageSettings
-    TextAutoGenerateTextMcpServer
-    TextAutoGenerateTextMcpServerManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
@@ -556,8 +538,6 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     TextAutoGenerateMessagesModel
     TextAutoGenerateSearchMessagesModel
     TextAutoGenerateChatsModel
-    TextAutoGenerateTextMcpServerModel
-    TextAutoGenerateTextMcpServerSortFilterProxyModel
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/models
@@ -632,14 +612,6 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsi
     RELATIVE widgets/instancesmanager
 )
 
-ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextmcpserverwidgets_HEADERS
-    HEADER_NAMES
-    TextAutoGenerateTextMcpServerWidget
-    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextmcpserverwidgets_HEADERS
-    PREFIX TextAutoGenerateText
-    RELATIVE widgets/mcpserver
-)
-
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS
     HEADER_NAMES
     TextAutoGeneratePluginText
@@ -681,7 +653,6 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextmcpserverwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -699,7 +670,6 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
     ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextconfiguretoolsplugin_HEADERS}
-    ${TextAutoGenerateText_textautogeneratetextmcpserverwidgets_HEADERS}
 )
 
 install(

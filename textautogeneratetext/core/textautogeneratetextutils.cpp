@@ -28,9 +28,3 @@ QByteArray TextAutoGenerateTextUtils::generateUUid()
 {
     return QUuid::createUuid().toByteArray(QUuid::Id128);
 }
-
-QStringList TextAutoGenerateTextUtils::mcpServerList(const KSharedConfig::Ptr &config)
-{
-    static const QRegularExpression regularExpression(u"^Mcp Server #\\d+$"_s);
-    return config->groupList().filter(regularExpression);
-}
