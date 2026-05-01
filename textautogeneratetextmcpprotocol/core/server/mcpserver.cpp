@@ -65,7 +65,7 @@ void McpServer::load(const KConfigGroup &config)
     mServerUrl = config.readEntry("ServerUrl", QUrl());
 }
 
-void McpServer::save(KConfigGroup &config)
+void McpServer::save(KConfigGroup &config) const
 {
     config.writeEntry(u"ServerUrl"_s, mServerUrl);
     config.writeEntry(u"Id"_s, mIdentifier);

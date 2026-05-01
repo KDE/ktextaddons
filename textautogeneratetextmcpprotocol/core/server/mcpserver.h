@@ -41,7 +41,7 @@ public:
     void setIdentifier(const QByteArray &newIdentifier);
 
     void load(const KConfigGroup &config);
-    void save(KConfigGroup &config);
+    void save(KConfigGroup &config) const;
 
     [[nodiscard]] bool isValid() const;
 
