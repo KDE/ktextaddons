@@ -11,11 +11,11 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpServerModel;
 /*!
- * \class TextAutoGenerateText::McpServerManager
+ * \class TextAutoGenerateTextMcpProtocolCore::McpServerManager
  * \brief The McpServerManager class
  * \author Laurent Montel <montel@kde.org>
  * \inmodule TextAutoGenerateText
- * \inheaderfile TextAutoGenerateText/McpServerManager
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpServerManager
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServerManager : public QObject
 {
@@ -31,10 +31,10 @@ public:
     ~McpServerManager() override;
 
     /*!
-     * \brief textAutoGenerateTextMcpServerModel
+     * \brief mcpServerModel
      * \return
      */
-    [[nodiscard]] McpServerModel *textAutoGenerateTextMcpServerModel() const;
+    [[nodiscard]] McpServerModel *mcpServerModel() const;
 
     /*!
      * \brief loadServers
@@ -47,6 +47,6 @@ public:
     void saveServers();
 
 private:
-    McpServerModel *const mTextAutoGenerateTextMcpServerModel;
+    McpServerModel *const mMcpServerModel;
 };
 }

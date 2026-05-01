@@ -17,10 +17,11 @@
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
-McpServerWidget::McpServerWidget(QWidget *parent)
+McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerModel *model, QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
-    , mMcpServerListView(new McpServerListView(this))
+    , mMcpServerListView(new McpServerListView(model, this))
+    , mModel(model)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -67,38 +68,34 @@ void McpServerWidget::slotAddServer()
         const auto info = dlg->serverWidgetInfo();
         server.setServerUrl(QUrl(info.serverUrl));
         server.setName(info.name);
-        // TODO mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
+        mModel->addMcpServer(server);
     }
     delete dlg;
 }
 
 void McpServerWidget::slotRemoveServer(const QByteArray &identifier)
 {
-    // TODO mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->removeMcpServer(identifier);
+    mModel->removeMcpServer(identifier);
 }
 
 void McpServerWidget::slotEditServer(const QByteArray &identifier)
 {
-    // TODO
-#if 0
     QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
-    const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer =
-        mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->mpcServer(identifier);
-    const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo currentInfo{
+    const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mpcServer(identifier);
+    const AddMcpServerWidget::McpServerWidgetInfo currentInfo{
         .name = mcpServer.name(),
         .serverUrl = mcpServer.serverUrl().toString(),
     };
     dlg->setServerWidgetInfo(currentInfo);
     if (dlg->exec()) {
-        McpServer server;
+        TextAutoGenerateTextMcpProtocolCore::McpServer server;
         server.createUniqueIdentifier();
         auto info = dlg->serverWidgetInfo();
         server.setServerUrl(QUrl(info.serverUrl));
         server.setName(info.name);
-        mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
+        mModel->addMcpServer(server);
     }
     delete dlg;
-#endif
 }
 
 #include "moc_mcpserverwidget.cpp"

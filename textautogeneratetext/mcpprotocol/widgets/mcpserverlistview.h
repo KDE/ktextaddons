@@ -10,13 +10,17 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpServerSortFilterProxyModel;
 }
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpServerModel;
+}
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpServerListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit McpServerListView(QWidget *parent = nullptr);
+    explicit McpServerListView(TextAutoGenerateTextMcpProtocolCore::McpServerModel *model, QWidget *parent = nullptr);
     ~McpServerListView() override;
 
     void slotSearchChanged(const QString &str);

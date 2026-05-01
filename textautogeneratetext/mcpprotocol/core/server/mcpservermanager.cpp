@@ -13,15 +13,15 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpServerManager::McpServerManager(QObject *parent)
     : QObject{parent}
-    , mTextAutoGenerateTextMcpServerModel(new McpServerModel(this))
+    , mMcpServerModel(new McpServerModel(this))
 {
 }
 
 McpServerManager::~McpServerManager() = default;
 
-McpServerModel *McpServerManager::textAutoGenerateTextMcpServerModel() const
+McpServerModel *McpServerManager::mcpServerModel() const
 {
-    return mTextAutoGenerateTextMcpServerModel;
+    return mMcpServerModel;
 }
 
 void McpServerManager::loadServers()
@@ -41,7 +41,7 @@ void McpServerManager::loadServers()
             mcpServers.append(server);
         }
     }
-    mTextAutoGenerateTextMcpServerModel->setMcpServers(mcpServers);
+    mMcpServerModel->setMcpServers(mcpServers);
 }
 
 void McpServerManager::saveServers()
@@ -52,7 +52,7 @@ void McpServerManager::saveServers()
         config->deleteGroup(group);
     }
 
-    const QList<McpServer> serverLst = mTextAutoGenerateTextMcpServerModel->mcpServers();
+    const QList<McpServer> serverLst = mMcpServerModel->mcpServers();
     for (int i = 0; i < serverLst.count(); ++i) {
         auto server = serverLst.at(i);
         KConfigGroup group = config->group(u"Mcp Server #%1"_s.arg(i));

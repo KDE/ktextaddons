@@ -15,16 +15,14 @@
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
-McpServerListView::McpServerListView(QWidget *parent)
+McpServerListView::McpServerListView(TextAutoGenerateTextMcpProtocolCore::McpServerModel *model, QWidget *parent)
     : QListView(parent)
     , mSortFilterProxyModel(new TextAutoGenerateTextMcpProtocolCore::McpServerSortFilterProxyModel(this))
 {
     setDragEnabled(false);
-#if 0
-    if (manager) {
-        mSortFilterProxyModel->setSourceModel(manager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel());
+    if (model) {
+        mSortFilterProxyModel->setSourceModel(model);
     }
-#endif
     setModel(mSortFilterProxyModel);
     connect(this, &QListView::doubleClicked, this, &McpServerListView::slotEditMcpServer);
 }

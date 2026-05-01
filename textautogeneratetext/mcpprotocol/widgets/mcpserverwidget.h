@@ -8,6 +8,11 @@
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
 class QLineEdit;
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpServerModel;
+}
+
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpServerListView;
@@ -27,7 +32,7 @@ public:
      * \param manager
      * \param parent
      */
-    explicit McpServerWidget(QWidget *parent = nullptr);
+    explicit McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerModel *model, QWidget *parent = nullptr);
     /*!
      */
     ~McpServerWidget() override;
@@ -38,5 +43,6 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotEditServer(const QByteArray &identifier);
     QLineEdit *const mSearchLineEdit;
     McpServerListView *const mMcpServerListView;
+    TextAutoGenerateTextMcpProtocolCore::McpServerModel *const mModel;
 };
 }
