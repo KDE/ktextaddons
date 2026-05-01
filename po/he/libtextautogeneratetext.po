@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-30 00:42+0000\n"
-"PO-Revision-Date: 2026-04-21 14:10+0300\n"
+"PO-Revision-Date: 2026-04-30 13:55+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -297,7 +297,7 @@ msgstr "OpenRouter AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
@@ -345,11 +345,9 @@ msgid "DeepInfra cloud inference API"
 msgstr "API להסקת מסקנות בענן DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "הוספת מופע…"
+msgstr "עותק של Sarvam AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2435,6 +2433,8 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"המודלים מסוג Gemma 4 תוכננו לספק ביצועי חוד חנית בכל גודל שהוא. הם מותאמים "
+"היטב להנמקה, רצפי עבודה עם סוכנים, פיתוח תוכנה והבנה ממגוון ערוצי קלט."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2442,6 +2442,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 היא משפחה של מודלים רבי ערוצי קלט שמספקים יעילות וביצועים ברמה "
+"יוצאת דופן."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2450,6 +2452,9 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 היא משפחה של מודלים משולבים שמתוכננת להטמעה על מכשירים. LFM2-24B-A2B "
+"הוא המודל הגדול ביותר במשפחה, מסוגל להרים את הארכיטקטורה ל־24 מיליארד משתנים "
+"תוך שמירה על יעילות הסקה."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2458,6 +2463,8 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super הוא מודל ערבוב תחומי מומחיות פתוח שמפעיל רק 12B "
+"משתנים כדי לספק יעילות חישוב ודיוק מרביים ליישומים מורכבים רבי סוכנים."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2465,6 +2472,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"מודל ערבוב תחומי מומחיות בגודל 30B מבית NVIDIA עם 3B משתנים מופעלים שמספק "
+"יכולות הנמקה והאצלה לסוכנים חזקות."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2472,6 +2481,7 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"מודל מסדרת M2 של MiniMax לפיתוח קוד, רצפי עבודה עם סוכנים ויעילות מקצועית."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:393

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-30 00:42+0000\n"
-"PO-Revision-Date: 2026-04-29 07:08-0300\n"
+"PO-Revision-Date: 2026-04-30 07:11-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -299,7 +299,7 @@ msgstr "IA do OpenRouter"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "IA do Sarvam"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
@@ -347,11 +347,9 @@ msgid "DeepInfra cloud inference API"
 msgstr "API de inferência da nuvem da IA DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "Adicionar instância…"
+msgstr "Instância de IA do Sarvam"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-30 00:42+0000\n"
-"PO-Revision-Date: 2026-04-09 11:20+0400\n"
+"PO-Revision-Date: 2026-04-30 09:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2457,6 +2457,8 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"صُممت نماذج Gemma 4 لتقديم أداء رائد في كل حجم. وهي مناسبة تمامًا للمنطق، وسير "
+"العمل التفاعلي، والبرمجة، والفهم متعدد الوسائط."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2464,6 +2466,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 هي مجموعة من النماذج متعددة الوسائط مفتوحة المصدر التي توفر فائدة "
+"وأداءً استثنائيين."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2472,6 +2476,9 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 هي مجموعة من النماذج الهجينة المصممة للتنفيذ على الأجهزة. ويُعد LFM2-24B-"
+"A2B أكبر نموذج في هذه المجموعة، حيث يوسع نطاق البنية لتشمل 24 مليار معلمة مع "
+"الحفاظ على كفاءة عملية الاستدلال."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2480,6 +2487,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super هو نموذج MoE مفتوح يضم 120 مليار معلمة، ولا يُفعّل سوى "
+"12 مليار معلمة منها، مما يوفر أقصى قدر من الكفاءة الحاسوبية والدقة للتطبيقات "
+"المعقدة متعددة العوامل."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2487,6 +2497,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"نموذج مفتوح من NVIDIA يعتمد على شبكة عصبية ذات 30 مليار وحدة، ويحتوي على 3 "
+"مليارات معلمة نشطة، ويوفر قدرات قوية في مجال الاستدلال والتصرف الذاتي."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2494,6 +2506,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"طراز سلسلة M2 من MiniMax المخصص للبرمجة وسير العمل التفاعلي والإنتاجية "
+"المهنية."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:393
