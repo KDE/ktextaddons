@@ -6,8 +6,8 @@
 
 #include "textautogeneratetextmcpserverwidgettest.h"
 
-#include "widgets/mcpserver/textautogeneratetextmcpserverlistview.h"
-#include "widgets/mcpserver/textautogeneratetextmcpserverwidget.h"
+#include "mcpserverlistview.h"
+#include "mcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QToolButton>
@@ -21,13 +21,13 @@ TextAutoGenerateTextMcpServerWidgetTest::TextAutoGenerateTextMcpServerWidgetTest
 
 void TextAutoGenerateTextMcpServerWidgetTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateText::TextAutoGenerateTextMcpServerWidget w(nullptr);
+    const TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mMcpServerListView = w.findChild<TextAutoGenerateText::TextAutoGenerateTextMcpServerListView *>(u"mMcpServerListView"_s);
+    auto mMcpServerListView = w.findChild<TextAutoGenerateTextMcpProtocolWidgets::McpServerListView *>(u"mMcpServerListView"_s);
     QVERIFY(mMcpServerListView);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);

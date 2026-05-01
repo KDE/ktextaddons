@@ -3,12 +3,11 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratetextmcpserverwidget.h"
-#include "core/models/textautogeneratetextmcpservermodel.h"
-#include "core/textautogeneratemanager.h"
-#include "core/textautogeneratetextmcpservermanager.h"
-#include "textautogenerateaddmcpserverdialog.h"
-#include "textautogeneratetextmcpserverlistview.h"
+#include "mcpserverwidget.h"
+#include "addmcpserverdialog.h"
+#include "mcpserverlistview.h"
+#include "mcpserverwidget.h"
+#include "models/mcpservermodel.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -16,13 +15,12 @@
 #include <QPointer>
 #include <QToolButton>
 
-using namespace TextAutoGenerateText;
+using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateTextMcpServerWidget::TextAutoGenerateTextMcpServerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
+McpServerWidget::McpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
-    , mMcpServerListView(new TextAutoGenerateTextMcpServerListView(manager, this))
-    , mManager(manager)
+    , mMcpServerListView(new McpServerListView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -40,7 +38,7 @@ TextAutoGenerateTextMcpServerWidget::TextAutoGenerateTextMcpServerWidget(TextAut
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
-    connect(mSearchLineEdit, &QLineEdit::textChanged, mMcpServerListView, &TextAutoGenerateTextMcpServerListView::slotSearchChanged);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mMcpServerListView, &McpServerListView::slotSearchChanged);
 
     auto addMcpServerButton = new QToolButton(this);
     addMcpServerButton->setObjectName(u"addMcpServerButton"_s);
@@ -48,41 +46,43 @@ TextAutoGenerateTextMcpServerWidget::TextAutoGenerateTextMcpServerWidget(TextAut
     addMcpServerButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
     addMcpServerButton->setAutoRaise(true);
     hboxLayout->addWidget(addMcpServerButton);
-    connect(addMcpServerButton, &QToolButton::clicked, this, &TextAutoGenerateTextMcpServerWidget::slotAddServer);
+    connect(addMcpServerButton, &QToolButton::clicked, this, &McpServerWidget::slotAddServer);
 
     mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
     mainLayout->addWidget(mMcpServerListView);
 
-    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::addServer, this, &TextAutoGenerateTextMcpServerWidget::slotAddServer);
-    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::removeServer, this, &TextAutoGenerateTextMcpServerWidget::slotRemoveServer);
-    connect(mMcpServerListView, &TextAutoGenerateTextMcpServerListView::editServer, this, &TextAutoGenerateTextMcpServerWidget::slotEditServer);
+    connect(mMcpServerListView, &McpServerListView::addServer, this, &McpServerWidget::slotAddServer);
+    connect(mMcpServerListView, &McpServerListView::removeServer, this, &McpServerWidget::slotRemoveServer);
+    connect(mMcpServerListView, &McpServerListView::editServer, this, &McpServerWidget::slotEditServer);
 }
 
-TextAutoGenerateTextMcpServerWidget::~TextAutoGenerateTextMcpServerWidget() = default;
+McpServerWidget::~McpServerWidget() = default;
 
-void TextAutoGenerateTextMcpServerWidget::slotAddServer()
+void McpServerWidget::slotAddServer()
 {
-    QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
+    QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
     if (dlg->exec()) {
-        TextAutoGenerateTextMcpServer server;
+        TextAutoGenerateTextMcpProtocolCore::McpServer server;
         server.createUniqueIdentifier();
         const auto info = dlg->serverWidgetInfo();
         server.setServerUrl(QUrl(info.serverUrl));
         server.setName(info.name);
-        mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
+        // TODO mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
     }
     delete dlg;
 }
 
-void TextAutoGenerateTextMcpServerWidget::slotRemoveServer(const QByteArray &identifier)
+void McpServerWidget::slotRemoveServer(const QByteArray &identifier)
 {
-    mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->removeMcpServer(identifier);
+    // TODO mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->removeMcpServer(identifier);
 }
 
-void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &identifier)
+void McpServerWidget::slotEditServer(const QByteArray &identifier)
 {
-    QPointer<TextAutoGenerateAddMcpServerDialog> dlg = new TextAutoGenerateAddMcpServerDialog(this);
-    const TextAutoGenerateTextMcpServer mcpServer =
+    // TODO
+#if 0
+    QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
+    const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer =
         mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->mpcServer(identifier);
     const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo currentInfo{
         .name = mcpServer.name(),
@@ -90,7 +90,7 @@ void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &ident
     };
     dlg->setServerWidgetInfo(currentInfo);
     if (dlg->exec()) {
-        TextAutoGenerateTextMcpServer server;
+        McpServer server;
         server.createUniqueIdentifier();
         auto info = dlg->serverWidgetInfo();
         server.setServerUrl(QUrl(info.serverUrl));
@@ -98,6 +98,7 @@ void TextAutoGenerateTextMcpServerWidget::slotEditServer(const QByteArray &ident
         mManager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel()->addMcpServer(server);
     }
     delete dlg;
+#endif
 }
 
-#include "moc_textautogeneratetextmcpserverwidget.cpp"
+#include "moc_mcpserverwidget.cpp"

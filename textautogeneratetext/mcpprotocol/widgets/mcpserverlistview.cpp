@@ -3,54 +3,55 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratetextmcpserverlistview.h"
-#include "core/models/textautogeneratetextmcpservermodel.h"
-#include "core/models/textautogeneratetextmcpserversortfilterproxymodel.h"
-#include "core/textautogeneratemanager.h"
-#include "core/textautogeneratetextmcpservermanager.h"
-#include "textautogeneratetextwidget_debug.h"
+#include "mcpserverlistview.h"
+#include "models/mcpservermodel.h"
+#include "models/mcpserversortfilterproxymodel.h"
+#include "server/mcpservermanager.h"
+#include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
 
-using namespace TextAutoGenerateText;
+using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateTextMcpServerListView::TextAutoGenerateTextMcpServerListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
+McpServerListView::McpServerListView(QWidget *parent)
     : QListView(parent)
-    , mSortFilterProxyModel(new TextAutoGenerateTextMcpServerSortFilterProxyModel(this))
+    , mSortFilterProxyModel(new TextAutoGenerateTextMcpProtocolCore::McpServerSortFilterProxyModel(this))
 {
     setDragEnabled(false);
+#if 0
     if (manager) {
         mSortFilterProxyModel->setSourceModel(manager->textAutoGenerateTextMcpServerManager()->textAutoGenerateTextMcpServerModel());
     }
+#endif
     setModel(mSortFilterProxyModel);
-    connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextMcpServerListView::slotEditMcpServer);
+    connect(this, &QListView::doubleClicked, this, &McpServerListView::slotEditMcpServer);
 }
 
-TextAutoGenerateTextMcpServerListView::~TextAutoGenerateTextMcpServerListView() = default;
+McpServerListView::~McpServerListView() = default;
 
-void TextAutoGenerateTextMcpServerListView::slotSearchChanged(const QString &str)
+void McpServerListView::slotSearchChanged(const QString &str)
 {
     mSortFilterProxyModel->setSearchText(str);
 }
 
-void TextAutoGenerateTextMcpServerListView::slotEditMcpServer(const QModelIndex &index)
+void McpServerListView::slotEditMcpServer(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::Identifier).toByteArray();
+    const QByteArray uuid = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Identifier).toByteArray();
     if (uuid.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid mcp instance uuid";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "invalid mcp instance uuid";
     } else {
         Q_EMIT editServer(uuid);
     }
 }
 
-void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *event)
+void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
     auto addServerAction = new QAction(i18nc("@action", "Add server…"), &menu);
     menu.addAction(addServerAction);
-    connect(addServerAction, &QAction::triggered, this, &TextAutoGenerateTextMcpServerListView::addServer);
+    connect(addServerAction, &QAction::triggered, this, &McpServerListView::addServer);
 
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
@@ -63,11 +64,11 @@ void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Server"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateTextMcpServerModel::Identifier).toByteArray();
+            const QByteArray uuid = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Identifier).toByteArray();
             if (uuid.isEmpty()) {
-                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid identifier";
+                qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "invalid identifier";
             } else {
-                const QString name = index.data(TextAutoGenerateTextMcpServerModel::Name).toString();
+                const QString name = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Name).toString();
                 if (KMessageBox::warningTwoActions(this,
                                                    i18n("Do you want to remove this server (%1)?", name),
                                                    i18nc("@title", "Remove Server"),
@@ -83,4 +84,4 @@ void TextAutoGenerateTextMcpServerListView::contextMenuEvent(QContextMenuEvent *
     menu.exec(event->globalPos());
 }
 
-#include "moc_textautogeneratetextmcpserverlistview.cpp"
+#include "moc_mcpserverlistview.cpp"

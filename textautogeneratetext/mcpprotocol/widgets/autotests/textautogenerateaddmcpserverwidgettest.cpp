@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddmcpserverwidgettest.h"
-#include "widgets/mcpserver/textautogenerateaddmcpserverwidget.h"
+#include "addmcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateAddMcpServerWidgetTest)
@@ -16,7 +16,7 @@ TextAutoGenerateAddMcpServerWidgetTest::TextAutoGenerateAddMcpServerWidgetTest(Q
 
 void TextAutoGenerateAddMcpServerWidgetTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateText::TextAutoGenerateAddMcpServerWidget w;
+    const TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget w;
     auto mServerNameLineEdit = w.findChild<QLineEdit *>(u"mServerNameLineEdit"_s);
     QVERIFY(mServerNameLineEdit);
     QVERIFY(mServerNameLineEdit->text().isEmpty());

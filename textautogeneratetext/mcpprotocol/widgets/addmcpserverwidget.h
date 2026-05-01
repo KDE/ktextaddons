@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
 class QLineEdit;
-namespace TextAutoGenerateText
+namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateAddMcpServerWidget : public QWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -17,8 +17,8 @@ public:
         QString name;
         QString serverUrl;
     };
-    explicit TextAutoGenerateAddMcpServerWidget(QWidget *parent = nullptr);
-    ~TextAutoGenerateAddMcpServerWidget() override;
+    explicit AddMcpServerWidget(QWidget *parent = nullptr);
+    ~AddMcpServerWidget() override;
 
     void setServerWidgetInfo(const McpServerWidgetInfo &info);
     [[nodiscard]] McpServerWidgetInfo serverWidgetInfo() const;

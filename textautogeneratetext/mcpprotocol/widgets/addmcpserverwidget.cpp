@@ -3,15 +3,15 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogenerateaddmcpserverwidget.h"
+#include "addmcpserverwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
 
-using namespace TextAutoGenerateText;
+using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateAddMcpServerWidget::TextAutoGenerateAddMcpServerWidget(QWidget *parent)
+AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mServerNameLineEdit(new QLineEdit(this))
     , mServerUrlLineEdit(new QLineEdit(this))
@@ -30,30 +30,30 @@ TextAutoGenerateAddMcpServerWidget::TextAutoGenerateAddMcpServerWidget(QWidget *
     mServerUrlLineEdit->setClearButtonEnabled(true);
     mServerNameLineEdit->setClearButtonEnabled(true);
 
-    connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateAddMcpServerWidget::checkValidSettings);
-    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateAddMcpServerWidget::checkValidSettings);
+    connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
+    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
 }
 
-TextAutoGenerateAddMcpServerWidget::~TextAutoGenerateAddMcpServerWidget() = default;
+AddMcpServerWidget::~AddMcpServerWidget() = default;
 
-void TextAutoGenerateAddMcpServerWidget::checkValidSettings()
+void AddMcpServerWidget::checkValidSettings()
 {
     Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty() && !mServerUrlLineEdit->text().trimmed().isEmpty());
 }
 
-void TextAutoGenerateAddMcpServerWidget::setServerWidgetInfo(const McpServerWidgetInfo &info)
+void AddMcpServerWidget::setServerWidgetInfo(const McpServerWidgetInfo &info)
 {
     mServerNameLineEdit->setText(info.name);
     mServerUrlLineEdit->setText(info.serverUrl);
 }
 
-TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo TextAutoGenerateAddMcpServerWidget::serverWidgetInfo() const
+AddMcpServerWidget::McpServerWidgetInfo AddMcpServerWidget::serverWidgetInfo() const
 {
-    const TextAutoGenerateAddMcpServerWidget::McpServerWidgetInfo info{
+    const AddMcpServerWidget::McpServerWidgetInfo info{
         .name = mServerNameLineEdit->text(),
         .serverUrl = mServerUrlLineEdit->text(),
     };
     return info;
 }
 
-#include "moc_textautogenerateaddmcpserverwidget.cpp"
+#include "moc_addmcpserverwidget.cpp"

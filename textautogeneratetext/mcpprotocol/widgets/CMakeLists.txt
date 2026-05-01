@@ -19,6 +19,14 @@ target_sources(
         addmcpprotocolclientwidget.cpp
         addmcpprotocolclientdialog.h
         addmcpprotocolclientdialog.cpp
+        addmcpserverdialog.cpp
+        addmcpserverdialog.h
+        addmcpserverwidget.cpp
+        addmcpserverwidget.h
+        mcpserverlistview.cpp
+        mcpserverlistview.h
+        mcpserverwidget.cpp
+        mcpserverwidget.h
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)
@@ -60,7 +68,13 @@ install(
 #     COMPONENT Devel
 # )
 
-target_link_libraries(KF6TextAutoGenerateTextMcpProtocolWidgets Qt::Widgets)
+target_link_libraries(
+    KF6TextAutoGenerateTextMcpProtocolWidgets
+    Qt::Widgets
+    KF6::TextAutoGenerateTextMcpProtocolCore
+    KF6::I18n
+    KF6::WidgetsAddons
+)
 
 install(
     TARGETS
