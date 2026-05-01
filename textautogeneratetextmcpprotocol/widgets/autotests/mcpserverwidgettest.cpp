@@ -6,8 +6,8 @@
 
 #include "mcpserverwidgettest.h"
 
-#include "mcpserverlistview.h"
-#include "mcpserverwidget.h"
+#include "server/mcpserverlistview.h"
+#include "server/mcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QToolButton>

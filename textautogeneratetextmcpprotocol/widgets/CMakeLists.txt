@@ -26,14 +26,14 @@ target_sources(
         addmcpprotocolclientwidget.cpp
         addmcpprotocolclientdialog.h
         addmcpprotocolclientdialog.cpp
-        addmcpserverdialog.cpp
-        addmcpserverdialog.h
-        addmcpserverwidget.cpp
-        addmcpserverwidget.h
-        mcpserverlistview.cpp
-        mcpserverlistview.h
-        mcpserverwidget.cpp
-        mcpserverwidget.h
+        server/addmcpserverdialog.cpp
+        server/addmcpserverdialog.h
+        server/addmcpserverwidget.cpp
+        server/addmcpserverwidget.h
+        server/mcpserverlistview.cpp
+        server/mcpserverlistview.h
+        server/mcpserverwidget.cpp
+        server/mcpserverwidget.h
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)

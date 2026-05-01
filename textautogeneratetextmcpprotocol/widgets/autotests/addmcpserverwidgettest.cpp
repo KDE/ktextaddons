@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpserverwidgettest.h"
-#include "addmcpserverwidget.h"
+#include "server/addmcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(AddMcpServerWidgetTest)
