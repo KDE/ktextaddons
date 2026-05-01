@@ -19,7 +19,7 @@ public:
         Unknown = 0,
         Sse,
         Stdio,
-        // Http,
+        StreamableHttp,
     };
     Q_ENUM(ServerType)
 

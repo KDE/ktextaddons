@@ -63,6 +63,7 @@ void McpServer::load(const KConfigGroup &config)
     mName = config.readEntry("Name", QString());
     mIdentifier = config.readEntry("Id", QByteArray());
     mServerUrl = config.readEntry("ServerUrl", QUrl());
+    // TODO add server type
 }
 
 void McpServer::save(KConfigGroup &config) const
@@ -71,6 +72,7 @@ void McpServer::save(KConfigGroup &config) const
     config.writeEntry(u"Id"_s, mIdentifier);
     config.writeEntry(u"Name"_s, mName);
     config.writeEntry(u"Enabled"_s, mEnabled);
+    // TODO add server type
 }
 
 bool McpServer::isValid() const
