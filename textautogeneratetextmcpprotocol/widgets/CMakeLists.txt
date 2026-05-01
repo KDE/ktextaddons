@@ -82,7 +82,7 @@ install(
 install(
     EXPORT KF6TextAutoGenerateTextMcpProtocolWidgetsTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF6TextAutoGenerateTextMcpProtocolWidgets.cmake
+    FILE KF6TextAutoGenerateTextMcpProtocolWidgetsTargets.cmake
     NAMESPACE KF6::
 )
 
