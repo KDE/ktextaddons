@@ -9,7 +9,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
-// TODO #include "core/textautogeneratetextmcpservermanager.h"
+// TODO #include <TextAutoGenerateTextMcpProtocol/McpServerManager>
 #include "core/textautogeneratetextutils.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"

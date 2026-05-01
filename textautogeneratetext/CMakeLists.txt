@@ -447,6 +447,7 @@ target_link_libraries(
         KF6::CoreAddons
         KF6::I18n
         KF6::TextAddonsWidgets
+    #KF6::TextAutoGenerateTextMcpProtocolCore
     PRIVATE
         Qt::Sql
         KF6::WidgetsAddons
