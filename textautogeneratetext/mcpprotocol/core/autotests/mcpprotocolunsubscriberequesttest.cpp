@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolunsubscriberequesttest.h"
-#include "mcpprotocolunsubscriberequest.h"
+#include "impl/mcpprotocolunsubscriberequest.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolUnsubscribeRequestTest)
 using namespace Qt::Literals::StringLiterals;

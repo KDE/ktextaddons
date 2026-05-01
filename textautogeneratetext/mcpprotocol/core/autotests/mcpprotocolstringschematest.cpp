@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolstringschematest.h"
-#include "mcpprotocolstringschema.h"
+#include "impl/mcpprotocolstringschema.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolStringSchemaTest)
 

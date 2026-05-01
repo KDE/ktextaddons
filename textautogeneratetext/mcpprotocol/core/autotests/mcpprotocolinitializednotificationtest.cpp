@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolinitializednotificationtest.h"
-#include "mcpprotocolinitializednotification.h"
+#include "impl/mcpprotocolinitializednotification.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolInitializedNotificationTest)
 

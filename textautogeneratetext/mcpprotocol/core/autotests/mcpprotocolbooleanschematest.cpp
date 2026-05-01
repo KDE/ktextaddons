@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolbooleanschematest.h"
-#include "mcpprotocolbooleanschema.h"
+#include "impl/mcpprotocolbooleanschema.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolBooleanSchemaTest)
 

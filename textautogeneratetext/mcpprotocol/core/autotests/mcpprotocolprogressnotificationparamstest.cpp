@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolprogressnotificationparamstest.h"
-#include "mcpprotocolprogressnotificationparams.h"
+#include "impl/mcpprotocolprogressnotificationparams.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolProgressNotificationParamsTest)
 

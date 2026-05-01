@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocoltoolusecontenttest.h"
-#include "mcpprotocolaudiocontent.h"
-#include "mcpprotocolembeddedresource.h"
-#include "mcpprotocolimagecontent.h"
-#include "mcpprotocolresourcelink.h"
-#include "mcpprotocoltextcontent.h"
-#include "mcpprotocoltoolusecontent.h"
+#include "impl/mcpprotocolaudiocontent.h"
+#include "impl/mcpprotocolembeddedresource.h"
+#include "impl/mcpprotocolimagecontent.h"
+#include "impl/mcpprotocolresourcelink.h"
+#include "impl/mcpprotocoltextcontent.h"
+#include "impl/mcpprotocoltoolusecontent.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolToolUseContentTest)
 

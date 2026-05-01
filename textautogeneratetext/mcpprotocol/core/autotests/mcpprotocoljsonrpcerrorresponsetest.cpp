@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocoljsonrpcerrorresponsetest.h"
-#include "mcpprotocoljsonrpcerrorresponse.h"
+#include "impl/mcpprotocoljsonrpcerrorresponse.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolJSONRPCErrorResponseTest)
 

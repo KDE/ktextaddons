@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolpaginatedrequestparamstest.h"
-#include "mcpprotocolpaginatedrequestparams.h"
+#include "impl/mcpprotocolpaginatedrequestparams.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolPaginatedRequestParamsTest)
 

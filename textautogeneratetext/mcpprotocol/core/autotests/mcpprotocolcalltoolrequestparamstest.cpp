@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolcalltoolrequestparamstest.h"
-#include "mcpprotocolcalltoolrequestparams.h"
+#include "impl/mcpprotocolcalltoolrequestparams.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolCallToolRequestParamsTest)
 

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolgetpromptrequestparamstest.h"
-#include "mcpprotocolgetpromptrequestparams.h"
+#include "impl/mcpprotocolgetpromptrequestparams.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolGetPromptRequestParamsTest)
 

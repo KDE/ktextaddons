@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolgetpromptrequesttest.h"
-#include "mcpprotocolgetpromptrequest.h"
+#include "impl/mcpprotocolgetpromptrequest.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolGetPromptRequestTest)
 using namespace Qt::Literals::StringLiterals;

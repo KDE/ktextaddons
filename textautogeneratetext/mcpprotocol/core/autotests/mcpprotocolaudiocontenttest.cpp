@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolaudiocontenttest.h"
-#include "mcpprotocolaudiocontent.h"
+#include "impl/mcpprotocolaudiocontent.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolAudioContentTest)
 

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolresourcetemplatereferencetest.h"
-#include "mcpprotocolresourcetemplatereference.h"
+#include "impl/mcpprotocolresourcetemplatereference.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolResourceTemplateReferenceTest)
 using namespace Qt::Literals::StringLiterals;

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolblobresourcecontentstest.h"
-#include "mcpprotocolblobresourcecontents.h"
+#include "impl/mcpprotocolblobresourcecontents.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolBlobResourceContentsTest)
 

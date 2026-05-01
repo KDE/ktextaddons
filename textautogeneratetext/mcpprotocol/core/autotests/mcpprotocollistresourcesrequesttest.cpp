@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocollistresourcesrequesttest.h"
-#include "mcpprotocollistresourcesrequest.h"
+#include "impl/mcpprotocollistresourcesrequest.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolListResourcesRequestTest)
 using namespace Qt::Literals::StringLiterals;

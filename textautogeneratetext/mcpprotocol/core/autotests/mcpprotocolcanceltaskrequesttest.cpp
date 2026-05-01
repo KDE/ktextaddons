@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolcanceltaskrequesttest.h"
-#include "mcpprotocolcanceltaskrequest.h"
+#include "impl/mcpprotocolcanceltaskrequest.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolCancelTaskRequestTest)
 

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocollegacytitledenumschematest.h"
-#include "mcpprotocollegacytitledenumschema.h"
+#include "impl/mcpprotocollegacytitledenumschema.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolLegacyTitledEnumSchemaTest)
 

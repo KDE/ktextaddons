@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolrelatedtaskmetadatatest.h"
-#include "mcpprotocolrelatedtaskmetadata.h"
+#include "impl/mcpprotocolrelatedtaskmetadata.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolRelatedTaskMetadataTest)
 

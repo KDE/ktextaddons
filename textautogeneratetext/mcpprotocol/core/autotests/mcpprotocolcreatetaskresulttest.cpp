@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolcreatetaskresulttest.h"
-#include "mcpprotocolcreatetaskresult.h"
+#include "impl/mcpprotocolcreatetaskresult.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolCreateTaskResultTest)
 

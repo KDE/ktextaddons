@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocoltextresourcecontentstest.h"
-#include "mcpprotocoltextresourcecontents.h"
+#include "impl/mcpprotocoltextresourcecontents.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolTextResourceContentsTest)
 

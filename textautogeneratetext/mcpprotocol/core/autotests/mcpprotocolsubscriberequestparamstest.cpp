@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolsubscriberequestparamstest.h"
-#include "mcpprotocolsubscriberequestparams.h"
+#include "impl/mcpprotocolsubscriberequestparams.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolSubscribeRequestParamsTest)
 

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolroottest.h"
-#include "mcpprotocolroot.h"
+#include "impl/mcpprotocolroot.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolRootTest)
 

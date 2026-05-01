@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocoltaskstatusnotificationtest.h"
-#include "mcpprotocoltaskstatusnotification.h"
+#include "impl/mcpprotocoltaskstatusnotification.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolTaskStatusNotificationTest)
 using namespace Qt::Literals::StringLiterals;

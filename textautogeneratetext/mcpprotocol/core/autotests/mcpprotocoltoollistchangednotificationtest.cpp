@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocoltoollistchangednotificationtest.h"
-#include "mcpprotocoltoollistchangednotification.h"
+#include "impl/mcpprotocoltoollistchangednotification.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolToolListChangedNotificationTest)
 

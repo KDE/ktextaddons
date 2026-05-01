@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolresourcelistchangednotificationtest.h"
-#include "mcpprotocolresourcelistchangednotification.h"
+#include "impl/mcpprotocolresourcelistchangednotification.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolResourceListChangedNotificationTest)
 using namespace Qt::Literals::StringLiterals;
