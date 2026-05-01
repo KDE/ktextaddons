@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpservermodel.h"
-#include "textautogeneratetextcore_debug.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpServerModel::McpServerModel(QObject *parent)
@@ -25,7 +25,7 @@ int McpServerModel::rowCount(const QModelIndex &parent) const
 bool McpServerModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
     if (!idx.isValid()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "ERROR: invalid index";
         return false;
     }
     const int id = idx.row();
@@ -64,31 +64,32 @@ QVariant McpServerModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-QList<TextAutoGenerateTextMcpServer> McpServerModel::mcpServers() const
+QList<McpServer> McpServerModel::mcpServers() const
 {
     return mMcpServers;
 }
 
-void McpServerModel::addMcpServer(const TextAutoGenerateTextMcpServer &server)
+void McpServerModel::addMcpServer(const McpServer &server)
 {
     beginInsertRows(QModelIndex(), mMcpServers.count(), mMcpServers.count());
     mMcpServers.append(server);
     endInsertRows();
 }
 
-void McpServerModel::setMcpServers(const QList<TextAutoGenerateTextMcpServer> &newTextInstances)
+void McpServerModel::setMcpServers(const QList<McpServer> &newTextInstances)
 {
     beginResetModel();
     mMcpServers = newTextInstances;
     endResetModel();
 }
-TextAutoGenerateTextMcpServer McpServerModel::mpcServer(const QByteArray &identifier) const
+
+McpServer McpServerModel::mpcServer(const QByteArray &identifier) const
 {
     if (identifier.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Empty identifier it's a bug";
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Empty identifier it's a bug";
         return {};
     }
-    const auto matchesIdentifier = [&](const TextAutoGenerateTextMcpServer &msg) {
+    const auto matchesIdentifier = [&](const McpServer &msg) {
         return msg.identifier() == identifier;
     };
     const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier);
@@ -116,7 +117,7 @@ void McpServerModel::removeMcpServer(const QByteArray &identifier)
     if (identifier.isEmpty()) {
         return;
     }
-    const auto matchesIdentifier = [&](const TextAutoGenerateTextMcpServer &msg) {
+    const auto matchesIdentifier = [&](const McpServer &msg) {
         return msg.identifier() == identifier;
     };
     const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier);

@@ -12,7 +12,7 @@ McpServerSortFilterProxyModel::McpServerSortFilterProxyModel(QObject *parent)
 {
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
-    setFilterRole(TextAutoGenerateTextMcpServerModel::Name);
+    setFilterRole(McpServerModel::Name);
     sort(0);
 }
 
@@ -24,7 +24,7 @@ bool McpServerSortFilterProxyModel::filterAcceptsRow(int source_row, const QMode
         return true;
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    const QString serverName = sourceIndex.data(TextAutoGenerateTextMcpServerModel::Name).toString();
+    const QString serverName = sourceIndex.data(McpServerModel::Name).toString();
     if (serverName.contains(mSearchText, Qt::CaseInsensitive)) {
         return true;
     }

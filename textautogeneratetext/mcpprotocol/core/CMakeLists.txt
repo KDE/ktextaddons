@@ -197,6 +197,10 @@ target_sources(
         impl/mcpprotocolpromptmessage.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
+        server/mcpserver.cpp
+        server/mcpserver.h
+        server/mcpservermanager.cpp
+        server/mcpservermanager.h
         client/mcpprotocolclient.h
         client/mcpprotocolclient.cpp
         common/mcpprotocolplugin.h
@@ -207,12 +211,13 @@ target_sources(
         common/mcpprotocolsettings.cpp
         common/mcpbase.h
         common/mcpbase.cpp
-    # models/mcpservermodel.cpp
-    # models/mcpservermodel.h
-    # models/mcpserversortfilterproxymodel.cpp
-    # models/mcpserversortfilterproxymodel.h
+        common/mcpprotocolutils.h
+        common/mcpprotocolutils.cpp
+        models/mcpservermodel.cpp
+        models/mcpservermodel.h
+        models/mcpserversortfilterproxymodel.cpp
+        models/mcpserversortfilterproxymodel.h
 )
-
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocolcore)
 
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS
@@ -264,6 +269,7 @@ target_link_libraries(
     KF6TextAutoGenerateTextMcpProtocolCore
     Qt::Core
     KF6::CoreAddons
+    KF6::ConfigCore
 )
 
 install(

@@ -5,9 +5,9 @@
 */
 #pragma once
 
+#include "server/mcpserver.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QAbstractListModel>
-#include <TextAutoGenerateText/TextAutoGenerateTextMcpServer>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 /*!
@@ -67,18 +67,18 @@ public:
      * Returns the list of mcp servers in the model.
      * \return The list of TextAutoGenerateTextMcpServer pointers
      */
-    [[nodiscard]] QList<TextAutoGenerateTextMcpServer> mcpServers() const;
+    [[nodiscard]] QList<McpServer> mcpServers() const;
     /*!
      * Sets the list of mcp servers in the model.
      * \param newTextInstances The instances to set
      */
-    void setMcpServers(const QList<TextAutoGenerateTextMcpServer> &newTextInstances);
+    void setMcpServers(const QList<McpServer> &newTextInstances);
 
     /*!
      * Adds an instance to the model.
      * \param instance The instance to add
      */
-    void addMcpServer(const TextAutoGenerateTextMcpServer &instance);
+    void addMcpServer(const McpServer &instance);
     /*!
      * Returns whether the model is empty.
      * \return true if empty, false otherwise
@@ -96,9 +96,9 @@ public:
      * \param identifier
      * \return
      */
-    [[nodiscard]] TextAutoGenerateTextMcpServer mpcServer(const QByteArray &identifier) const;
+    [[nodiscard]] McpServer mpcServer(const QByteArray &identifier) const;
 
 private:
-    QList<TextAutoGenerateTextMcpServer> mMcpServers;
+    QList<McpServer> mMcpServers;
 };
 }
