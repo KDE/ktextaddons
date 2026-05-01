@@ -1,5 +1,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoGenerateTextMcpProtocolWidgets")
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolwidgets_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolWidgetsConfigVersion.cmake"
+    SOVERSION 1
+)
 
 add_library(KF6TextAutoGenerateTextMcpProtocolWidgets)
 
@@ -31,26 +38,11 @@ target_sources(
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)
 
-# ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS
-#     HEADER_NAMES
-#     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS
-#     PREFIX TextAutoGenerateTextMcpProtocol
-#     RELATIVE common
-# )
-
-# ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS
-#     HEADER_NAMES
-#     McpProtocolClient
-#     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS
-#     PREFIX TextAutoGenerateTextMcpProtocol
-#     RELATIVE client
-# )
-
 # ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS
 #     HEADER_NAMES
 #     McpProtocolServer
 #     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS
-#     PREFIX TextAutoGenerateTextMcpProtocol
+#     PREFIX TextAutoGenerateTextMcpProtocolWidgets
 #     RELATIVE server
 # )
 
@@ -82,6 +74,28 @@ install(
     EXPORT KF6TextAutoGenerateTextMcpProtocolWidgetsTargets
     ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
+
+install(
+    EXPORT KF6TextAutoGenerateTextMcpProtocolWidgetsTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF6TextAutoGenerateTextMcpProtocolWidgets.cmake
+    NAMESPACE KF6::
+)
+
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolWidgetsConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolWidgetsConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+)
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoGenerateTextMcpProtocolWidgetsConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolWidgetsConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+)
+
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
