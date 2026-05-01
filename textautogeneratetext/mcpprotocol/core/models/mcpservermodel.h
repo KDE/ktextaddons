@@ -11,11 +11,11 @@
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 /*!
- * \class TextAutoGenerateText::McpServerModel
+ * \class TextAutoGenerateTextMcpProtocolCore::McpServerModel
  * \brief The McpServerModel class
  * \author Laurent Montel <montel@kde.org>
- * \inmodule TextAutoGenerateText
- * \inheaderfile TextAutoGenerateText/McpServerModel
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpServerModel
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServerModel : public QAbstractListModel
 {

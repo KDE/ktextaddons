@@ -207,10 +207,10 @@ target_sources(
         common/mcpprotocolsettings.cpp
         common/mcpbase.h
         common/mcpbase.cpp
-        models/mcpservermodel.cpp
-        models/mcpservermodel.h
-        models/mcpserversortfilterproxymodel.cpp
-        models/mcpserversortfilterproxymodel.h
+    # models/mcpservermodel.cpp
+    # models/mcpservermodel.h
+    # models/mcpserversortfilterproxymodel.cpp
+    # models/mcpserversortfilterproxymodel.h
 )
 
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocolcore)

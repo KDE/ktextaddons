@@ -5,18 +5,18 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QSortFilterProxyModel>
-namespace TextAutoGenerateText
+namespace TextAutoGenerateTextMcpProtocolCore
 {
 /*!
- * \class TextAutoGenerateText::McpServerSortFilterProxyModel
+ * \class TextAutoGenerateTextMcpProtocolCore::McpServerSortFilterProxyModel
  * \brief The McpServerSortFilterProxyModel class
  * \author Laurent Montel <montel@kde.org>
- * \inmodule TextAutoGenerateText
- * \inheaderfile TextAutoGenerateText/McpServerSortFilterProxyModel
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpServerSortFilterProxyModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT McpServerSortFilterProxyModel : public QSortFilterProxyModel
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServerSortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:

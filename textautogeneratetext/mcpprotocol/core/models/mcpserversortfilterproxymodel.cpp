@@ -6,7 +6,7 @@
 #include "mcpserversortfilterproxymodel.h"
 #include "mcpservermodel.h"
 
-using namespace TextAutoGenerateText;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpServerSortFilterProxyModel::McpServerSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {

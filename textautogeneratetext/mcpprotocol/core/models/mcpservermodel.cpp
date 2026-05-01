@@ -6,7 +6,7 @@
 #include "mcpservermodel.h"
 #include "textautogeneratetextcore_debug.h"
 
-using namespace TextAutoGenerateText;
+using namespace TextAutoGenerateTextMcpProtocolCore;
 McpServerModel::McpServerModel(QObject *parent)
     : QAbstractListModel{parent}
 {
