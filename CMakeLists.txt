@@ -234,7 +234,7 @@ option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)"
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(
     QT 6.12.0
-    KF 6.25.0
+    KF 6.26.0
 )
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # Not setting for GNU due to too many warnings related to private members of base classes or around lambdas
