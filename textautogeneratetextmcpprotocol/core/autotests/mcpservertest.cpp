@@ -38,6 +38,9 @@ void McpServerTest::shouldVerifyValidValue()
     QVERIFY(!w.isValid());
 
     w.setServerUrl(QUrl(u"bla"_s));
+    QVERIFY(!w.isValid());
+
+    w.setServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse);
     QVERIFY(w.isValid());
 }
 
