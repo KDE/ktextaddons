@@ -34,6 +34,8 @@ target_sources(
         server/mcpserverlistview.h
         server/mcpserverwidget.cpp
         server/mcpserverwidget.h
+        common/selecttypecombobox.h
+        common/selecttypecombobox.cpp
 )
 
 target_include_directories(
