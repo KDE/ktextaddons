@@ -22,10 +22,10 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocolWidgets HEADER
 target_sources(
     KF6TextAutoGenerateTextMcpProtocolWidgets
     PRIVATE
-        addmcpprotocolclientwidget.h
-        addmcpprotocolclientwidget.cpp
-        addmcpprotocolclientdialog.h
-        addmcpprotocolclientdialog.cpp
+        client/addmcpprotocolclientwidget.h
+        client/addmcpprotocolclientwidget.cpp
+        client/addmcpprotocolclientdialog.h
+        client/addmcpprotocolclientdialog.cpp
         server/addmcpserverdialog.cpp
         server/addmcpserverdialog.h
         server/addmcpserverwidget.cpp
