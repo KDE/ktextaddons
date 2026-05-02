@@ -14,3 +14,5 @@ SelectTypeComboBox::SelectTypeComboBox(QWidget *parent)
 }
 
 SelectTypeComboBox::~SelectTypeComboBox() = default;
+
+#include "moc_selecttypecombobox.cpp"
