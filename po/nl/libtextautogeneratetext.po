@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
 "PO-Revision-Date: 2026-04-30 10:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2962,7 +2962,6 @@ msgid "Add Instance"
 msgstr "Exemplaar toevoegen"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2993,7 +2992,6 @@ msgid "Mark As Default"
 msgstr "Als standaard markeren"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3017,7 +3015,6 @@ msgid "Remove Instance"
 msgstr "Exemplaar verwijderen"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3025,46 +3022,10 @@ msgid "Search…"
 msgstr "Zoeken…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Exemplaar toevoegen…"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr "Server toevoegen"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "URL:"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, kde-format
-msgctxt "@action"
-msgid "Add server…"
-msgstr "Server toevoegen…"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, kde-format
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "Server verwijderen"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, kde-format
-msgid "Do you want to remove this server (%1)?"
-msgstr "Wilt u deze server (%1) verwijderen?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, kde-format
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "Server verwijderen"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3397,6 +3358,29 @@ msgstr "Geen archief gevonden."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Geen berichten gevonden."
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Server"
+#~ msgstr "Server toevoegen"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "URL:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "Server toevoegen…"
+
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "Server verwijderen"
+
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "Wilt u deze server (%1) verwijderen?"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Server verwijderen"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "Opnieuw opstarten is nodig om de wijzigingen toe te passen."

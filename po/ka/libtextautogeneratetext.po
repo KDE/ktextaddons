@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
 "PO-Revision-Date: 2026-04-30 06:53+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2953,7 +2953,6 @@ msgid "Add Instance"
 msgstr "გაშვებული ასლის დამატება"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2984,7 +2983,6 @@ msgid "Mark As Default"
 msgstr "ნაგულისხმევად მონიშვნა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3008,7 +3006,6 @@ msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3016,46 +3013,10 @@ msgid "Search…"
 msgstr "ძებნა…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "გაშვებული ასლის დამატება…"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr "სერვერის დამატება"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "Url:"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, kde-format
-msgctxt "@action"
-msgid "Add server…"
-msgstr "სერვერის დამატება…"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, kde-format
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "სერვერის წაშლა"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, kde-format
-msgid "Do you want to remove this server (%1)?"
-msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, kde-format
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "სერვერის წაშლა"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3388,6 +3349,29 @@ msgstr "არქივი ვერ მოიძებნა."
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Server"
+#~ msgstr "სერვერის დამატება"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "Url:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "სერვერის დამატება…"
+
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "სერვერის წაშლა"
+
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "სერვერის წაშლა"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "ცვლილებების გადასატარებლად გადატვირთვა აუცილებელია."

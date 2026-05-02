@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
-"PO-Revision-Date: 2026-04-29 14:56+0300\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
+"PO-Revision-Date: 2026-05-01 15:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -297,7 +297,7 @@ msgstr "OpenRouter AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
@@ -345,11 +345,9 @@ msgid "DeepInfra cloud inference API"
 msgstr "DeepInfa bulut öngörü API’si"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "Örnek Ekle…"
+msgstr "Sarvam AI örneği"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2957,7 +2955,6 @@ msgid "Add Instance"
 msgstr "Örnek Ekle"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2988,7 +2985,6 @@ msgid "Mark As Default"
 msgstr "Öntanımlı Olarak İmle"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3012,7 +3008,6 @@ msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3020,46 +3015,10 @@ msgid "Search…"
 msgstr "Ara…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Örnek ekle…"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr "Sunucu Ekle"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "URL:"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, kde-format
-msgctxt "@action"
-msgid "Add server…"
-msgstr "Sunucu Ekle…"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, kde-format
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "Sunucuyu Kaldır"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, kde-format
-msgid "Do you want to remove this server (%1)?"
-msgstr "Bu sunucuyu kaldırmak istiyor musunuz (%1)?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, kde-format
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "Sunucuyu Kaldır"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3392,3 +3351,26 @@ msgstr "Bulunan arşiv yok."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Server"
+#~ msgstr "Sunucu Ekle"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "URL:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "Sunucu Ekle…"
+
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "Sunucuyu Kaldır"
+
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "Bu sunucuyu kaldırmak istiyor musunuz (%1)?"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Sunucuyu Kaldır"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
 "PO-Revision-Date: 2026-04-20 02:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2700,7 +2700,6 @@ msgid "Add Instance"
 msgstr "新增實體"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2731,7 +2730,6 @@ msgid "Mark As Default"
 msgstr "標記為預設"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -2755,7 +2753,6 @@ msgid "Remove Instance"
 msgstr "移除實體"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2763,46 +2760,10 @@ msgid "Search…"
 msgstr "搜尋…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "新增實體…"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr "新增伺服器"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "網址："
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, kde-format
-msgctxt "@action"
-msgid "Add server…"
-msgstr "新增伺服器…"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, kde-format
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "移除伺服器"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, kde-format
-msgid "Do you want to remove this server (%1)?"
-msgstr "您確定要移除這個伺服器（%1）嗎？"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, kde-format
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "移除伺服器"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3135,6 +3096,29 @@ msgstr "找不到封存檔。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "找不到訊息"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Server"
+#~ msgstr "新增伺服器"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "網址："
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "新增伺服器…"
+
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "移除伺服器"
+
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "您確定要移除這個伺服器（%1）嗎？"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "移除伺服器"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "需要重新啟動變更才會生效。"

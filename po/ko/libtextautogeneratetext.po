@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2582,7 +2582,6 @@ msgid "Add Instance"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2615,7 +2614,6 @@ msgid "Mark As Default"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -2641,7 +2639,6 @@ msgid "Remove Instance"
 msgstr "IA 설정"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2649,51 +2646,10 @@ msgid "Search…"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr ""
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr ""
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr ""
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, kde-format
-msgctxt "@action"
-msgid "Add server…"
-msgstr ""
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "모델 새로 고침"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Do you want to remove it?"
-msgid "Do you want to remove this server (%1)?"
-msgstr "삭제하시겠습니까?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "모델 새로 고침"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3029,6 +2985,25 @@ msgstr ""
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Reload Model"
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "모델 새로 고침"
+
+#, fuzzy
+#~| msgid "Do you want to remove it?"
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "삭제하시겠습니까?"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Reload Model"
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "모델 새로 고침"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "변경 사항을 적용하려면 다시 시작해야 합니다."

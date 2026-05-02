@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
 "PO-Revision-Date: 2026-04-30 09:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2983,7 +2983,6 @@ msgid "Add Instance"
 msgstr "Afegeix una instància"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -3014,7 +3013,6 @@ msgid "Mark As Default"
 msgstr "Marca com a predeterminada"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3038,7 +3036,6 @@ msgid "Remove Instance"
 msgstr "Elimina la instància"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3046,46 +3043,10 @@ msgid "Search…"
 msgstr "Cerca…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Afegeix una instància…"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr "Afegir un servidor"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "URL:"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, kde-format
-msgctxt "@action"
-msgid "Add server…"
-msgstr "Afegir un servidor…"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, kde-format
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "Elimina el servidor"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, kde-format
-msgid "Do you want to remove this server (%1)?"
-msgstr "Voleu eliminar aquest servidor (%1)?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, kde-format
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "Elimina el servidor"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3418,6 +3379,29 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Server"
+#~ msgstr "Afegir un servidor"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "URL:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "Afegir un servidor…"
+
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "Elimina el servidor"
+
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "Voleu eliminar aquest servidor (%1)?"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Elimina el servidor"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "Cal reiniciar per a aplicar els canvis."

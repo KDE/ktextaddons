@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-05-02 00:42+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2658,7 +2658,6 @@ msgid "Add Instance"
 msgstr "Lisää ilmentymä"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2689,7 +2688,6 @@ msgid "Mark As Default"
 msgstr "Merkitse oletukseksi"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -2713,7 +2711,6 @@ msgid "Remove Instance"
 msgstr "Poista ilmentymä"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:41
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2721,53 +2718,10 @@ msgid "Search…"
 msgstr "Etsi…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
-#: widgets/mcpserver/textautogeneratetextmcpserverwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Lisää ilmentymä…"
-
-#: widgets/mcpserver/textautogenerateaddmcpserverdialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Server"
-msgstr ""
-
-#: widgets/mcpserver/textautogenerateaddmcpserverwidget.cpp:28
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Url:"
-msgstr ""
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
-msgctxt "@action"
-msgid "Add server…"
-msgstr "Lisää ilmentymä…"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
-msgctxt "@action"
-msgid "Remove Server"
-msgstr "Poista malli"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
-msgid "Do you want to remove this server (%1)?"
-msgstr "Haluatko poistaa tämän mallin (%1)?"
-
-#: widgets/mcpserver/textautogeneratetextmcpserverlistview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
-msgctxt "@title"
-msgid "Remove Server"
-msgstr "Poista malli"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -3100,6 +3054,32 @@ msgstr "Arkistoa ei löytynyt."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Viestejä ei löytynyt."
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Add instance…"
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "Lisää ilmentymä…"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Remove Model"
+#~ msgctxt "@action"
+#~ msgid "Remove Server"
+#~ msgstr "Poista malli"
+
+#, fuzzy
+#~| msgid "Do you want to remove this model (%1)?"
+#~ msgid "Do you want to remove this server (%1)?"
+#~ msgstr "Haluatko poistaa tämän mallin (%1)?"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Remove Model"
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Poista malli"
 
 #~ msgid "Restart is necessary for applying the changes."
 #~ msgstr "Muutosten käyttöönotto vaatii uudelleenkäynnistyksen."
