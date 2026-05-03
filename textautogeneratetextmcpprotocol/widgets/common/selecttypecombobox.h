@@ -5,15 +5,18 @@
 */
 
 #pragma once
-
+#include "mcpprotocolwidgets_private_export.h"
 #include <QComboBox>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class SelectTypeComboBox : public QComboBox
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT SelectTypeComboBox : public QComboBox
 {
     Q_OBJECT
 public:
     explicit SelectTypeComboBox(QWidget *parent = nullptr);
     ~SelectTypeComboBox() override;
+
+private:
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void fill();
 };
 }
