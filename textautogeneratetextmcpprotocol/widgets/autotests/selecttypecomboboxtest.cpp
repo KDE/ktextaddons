@@ -19,3 +19,5 @@ void SelectTypeComboBoxTest::shouldHaveDefaultValues()
     TextAutoGenerateTextMcpProtocolWidgets::SelectTypeComboBox w;
     // TODO
 }
+
+#include "moc_selecttypecomboboxtest.cpp"
