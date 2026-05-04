@@ -28,6 +28,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
 
     mSelectTypeComboBox->setObjectName(u"mSelectTypeComboBox"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Type:"), mSelectTypeComboBox);
+    connect(mSelectTypeComboBox, &SelectTypeComboBox::activated, this, &AddMcpServerWidget::changeType);
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
@@ -40,6 +41,11 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
 }
 
 AddMcpServerWidget::~AddMcpServerWidget() = default;
+
+void AddMcpServerWidget::changeType(int index)
+{
+    // TODO
+}
 
 void AddMcpServerWidget::checkValidSettings()
 {

@@ -27,7 +27,8 @@ Q_SIGNALS:
     void buttonOkEnabled(bool state);
 
 private:
-    void checkValidSettings();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void checkValidSettings();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void changeType(int index);
     QLineEdit *const mServerNameLineEdit;
     QLineEdit *const mServerUrlLineEdit;
     SelectTypeComboBox *const mSelectTypeComboBox;
