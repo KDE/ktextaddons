@@ -36,6 +36,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"compactifai"_s), GenericNetworkManager::PluginNetworkType::CompactifAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"openrouterai"_s), GenericNetworkManager::PluginNetworkType::OpenRouterAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"sarvamai"_s), GenericNetworkManager::PluginNetworkType::SarvamAI);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"atlascloudai"_s), GenericNetworkManager::PluginNetworkType::AtlasCloud);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -58,6 +59,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::CompactifAI), u"https://your-compactifai-api-endpoint/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"https://openrouter.ai/api/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::SarvamAI), u"https://api.sarvam.ai/v1/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::AtlasCloud), u"https://api.atlascloud.ai/v1/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -80,6 +82,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::CompactifAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::SarvamAI), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::AtlasCloud), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -102,6 +105,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::CompactifAI), u"compactifai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"openrouterai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::SarvamAI), u"sarvamai"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::AtlasCloud), u"atlascloudai"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -124,6 +128,7 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::CompactifAI), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenRouterAI), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::SarvamAI), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::AtlasCloud), GenericNetworkManager::Limitation::None);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"
