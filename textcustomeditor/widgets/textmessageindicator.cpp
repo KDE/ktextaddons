@@ -81,7 +81,7 @@ void TextMessageIndicator::display(const QString &message, const QString &detail
 QRect TextMessageIndicator::computeTextRect(const QString &message, int extra_width) const
 // Return the QRect which embeds the text
 {
-    int charSize = fontMetrics().averageCharWidth();
+    const int charSize = fontMetrics().averageCharWidth();
     /* width of the viewport, minus 20 (~ size removed by further resizing),
        minus the extra size (usually the icon width), minus (a bit empirical)
        twice the mean width of a character to ensure that the bounding box is
