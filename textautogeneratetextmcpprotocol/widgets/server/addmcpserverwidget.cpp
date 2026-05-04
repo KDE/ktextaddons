@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QStackedWidget>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
@@ -17,6 +18,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     , mServerNameLineEdit(new QLineEdit(this))
     , mServerUrlLineEdit(new QLineEdit(this))
     , mSelectTypeComboBox(new SelectTypeComboBox(this))
+    , mStackedWidget(new QStackedWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -29,6 +31,9 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     mSelectTypeComboBox->setObjectName(u"mSelectTypeComboBox"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Type:"), mSelectTypeComboBox);
     connect(mSelectTypeComboBox, &SelectTypeComboBox::activated, this, &AddMcpServerWidget::changeType);
+
+    mStackedWidget->setObjectName(u"mStackedWidget"_s);
+    mainLayout->addWidget(mStackedWidget);
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);

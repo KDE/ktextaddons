@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
 class QLineEdit;
+class QStackedWidget;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class SelectTypeComboBox;
@@ -32,5 +33,6 @@ private:
     QLineEdit *const mServerNameLineEdit;
     QLineEdit *const mServerUrlLineEdit;
     SelectTypeComboBox *const mSelectTypeComboBox;
+    QStackedWidget *const mStackedWidget;
 };
 }
