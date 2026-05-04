@@ -55,7 +55,8 @@ public:
         Vision = 256,
         Embedding = 512,
         Reasoning = 1024,
-        Cloud = 2048
+        Cloud = 2048,
+        Thinking = 4096,
     };
     Q_DECLARE_FLAGS(Categories, Category)
     Q_FLAG(Categories)

@@ -137,6 +137,8 @@ TextAutoGenerateManager::Category TextAutoGenerateManager::convertStringToCatego
         return Category::Reasoning;
     } else if (str == "cloud"_L1) {
         return Category::Cloud;
+    } else if (str == "thinking"_L1) {
+        return Category::Thinking;
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to convert " << str;
     return Category::Unknown;
@@ -171,6 +173,8 @@ QString TextAutoGenerateManager::convertCategoryToI18n(TextAutoGenerateManager::
         return i18n("Reasoning");
     case Category::Cloud:
         return i18n("Cloud");
+    case Category::Thinking:
+        return i18n("Thinking");
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Missing translating Category " << static_cast<int>(cat);
     return {};
