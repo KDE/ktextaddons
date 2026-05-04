@@ -6925,5 +6925,34 @@
         "languages": [
             "en"
         ]
+    },
+    "qwen3.6": {
+        "tags": [
+            [
+                "latest",
+                "24 GB"
+            ],
+            [
+                "27b",
+                "17 GB"
+            ],
+            [
+                "35b",
+                "24 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/qwen3.6",
+        "categories": [
+            "vision",
+            "tools",
+            "thinking",
+            "big",
+            "huge",
+            "code"
+        ],
+        "author": "Alibaba Cloud",
+        "languages": [
+            "en"
+        ]
     }
 }

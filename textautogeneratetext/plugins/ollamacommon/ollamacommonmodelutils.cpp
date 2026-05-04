@@ -346,6 +346,7 @@ QString OllamaCommonModelUtils::description(const QString &modelName)
         {u"nemotron-cascade-2"_s,
          i18n("An open 30B MoE model from NVIDIA with 3B activated parameters that delivers strong reasoning and agentic capabilities.")},
         {u"minimax-m2.7"_s, i18n("MiniMax's M2-series model for coding, agentic workflows, and professional productivity.")},
+        {u"qwen3.6"_s, i18n("Qwen3.6 delivers substantial upgrades in agentic coding and thinking preservation than previous Qwen models.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
