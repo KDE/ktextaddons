@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpserverwidgettest.h"
+#include "common/selecttypecombobox.h"
 #include "server/addmcpserverwidget.h"
 #include <QLineEdit>
 #include <QTest>
@@ -26,5 +27,8 @@ void AddMcpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mServerUrlLineEdit);
     QVERIFY(mServerUrlLineEdit->text().isEmpty());
     QVERIFY(mServerUrlLineEdit->isClearButtonEnabled());
+
+    auto mSelectTypeComboBox = w.findChild<TextAutoGenerateTextMcpProtocolWidgets::SelectTypeComboBox *>(u"mSelectTypeComboBox"_s);
+    QVERIFY(mSelectTypeComboBox);
 }
 #include "moc_addmcpserverwidgettest.cpp"

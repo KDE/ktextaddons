@@ -9,6 +9,7 @@
 class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
+class SelectTypeComboBox;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerWidget : public QWidget
 {
     Q_OBJECT
@@ -29,5 +30,6 @@ private:
     void checkValidSettings();
     QLineEdit *const mServerNameLineEdit;
     QLineEdit *const mServerUrlLineEdit;
+    SelectTypeComboBox *const mSelectTypeComboBox;
 };
 }

@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpserverwidget.h"
+#include "common/selecttypecombobox.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -15,6 +16,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mServerNameLineEdit(new QLineEdit(this))
     , mServerUrlLineEdit(new QLineEdit(this))
+    , mSelectTypeComboBox(new SelectTypeComboBox(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -23,6 +25,9 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     mServerNameLineEdit->setObjectName(u"mServerNameLineEdit"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Name:"), mServerNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerNameLineEdit);
+
+    mSelectTypeComboBox->setObjectName(u"mSelectTypeComboBox"_s);
+    mainLayout->addRow(i18nc("@label:textbox", "Type:"), mSelectTypeComboBox);
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
