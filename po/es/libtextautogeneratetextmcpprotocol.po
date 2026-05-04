@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:42+0000\n"
+"POT-Creation-Date: 2026-05-04 00:42+0000\n"
 "PO-Revision-Date: 2026-05-02 17:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -18,6 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.04.0\n"
+
+#: widgets/common/selecttypecombobox.cpp:22
+#, kde-format
+msgid "Sse"
+msgstr ""
+
+#: widgets/common/selecttypecombobox.cpp:23
+#, kde-format
+msgid "Stdio"
+msgstr ""
+
+#: widgets/common/selecttypecombobox.cpp:24
+#, kde-format
+msgid "Streamble Http"
+msgstr ""
 
 #: widgets/server/addmcpserverdialog.cpp:19
 #, kde-format

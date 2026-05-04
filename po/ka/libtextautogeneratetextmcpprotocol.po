@@ -1,21 +1,21 @@
-# Copyright (C) 2026 This file is copyright:
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# SPDX-FileCopyrightText: 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-04 00:42+0000\n"
-"PO-Revision-Date: 2026-05-02 18:48+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2026-05-03 04:26+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.9\n"
 
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
@@ -36,13 +36,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr "Sunucu Ekle"
+msgstr "სერვერის დამატება"
 
 #: widgets/server/addmcpserverwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Ad:"
+msgstr "სახელი:"
 
 #: widgets/server/addmcpserverwidget.cpp:28
 #, kde-format
@@ -54,39 +54,39 @@ msgstr "URL:"
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "Sunucu Ekle…"
+msgstr "სერვერის დამატება…"
 
 #: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Düzenle…"
+msgstr "ჩასწორება…"
 
 #: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Sunucuyu Kaldır"
+msgstr "სერვერის წაშლა"
 
 #: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr "Bu sunucuyu (%1) kaldırmak istiyor musunuz?"
+msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
 
 #: widgets/server/mcpserverlistview.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "Uzak Sunucu"
+msgstr "სერვერის წაშლა"
 
 #: widgets/server/mcpserverwidget.cpp:40
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Ara…"
+msgstr "ძებნა…"
 
 #: widgets/server/mcpserverwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Örnek ekle…"
+msgstr "გაშვებული ასლის დამატება…"

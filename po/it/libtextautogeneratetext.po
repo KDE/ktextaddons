@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2025, 2026 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-02 00:42+0000\n"
-"PO-Revision-Date: 2026-04-02 14:09+0200\n"
+"PO-Revision-Date: 2026-04-30 17:11+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -297,7 +297,7 @@ msgstr "OpenRouter AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "AI Sarvam"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
 #, kde-format
@@ -347,11 +347,9 @@ msgid "DeepInfra cloud inference API"
 msgstr "API di inferenza cloud di DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "Aggiungi istanza…"
+msgstr "Istanza AI Sarvam"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2573,6 +2571,10 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"I modelli Gemma 4 sono progettati per offrire prestazioni di livello "
+"all'avanguardia in ogni dimensione. Sono particolarmente adatti per il "
+"ragionamento, i flussi di lavoro agentici, la codifica e la comprensione "
+"multimodale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2580,6 +2582,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 è una famiglia di modelli multimodali open-source che offre utilità "
+"e prestazioni eccezionali."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2588,6 +2592,10 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 è una famiglia di modelli ibridi progettati per l'implementazione su "
+"dispositivo. LFM2-24B-A2B è il modello più grande della famiglia, che scala "
+"l'architettura fino a 24 miliardi di parametri mantenendo l'efficienza "
+"dell'inferenza."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2596,6 +2604,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super è un modello MoE aperto a 120 miliardi di parametri, "
+"che ne attiva solo 12 miliardi per offrire la massima efficienza di calcolo "
+"e precisione per applicazioni multi-agente complesse."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2603,6 +2614,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"Un modello MoE aperto da 30 miliardi di parametri di NVIDIA con 3 miliardi "
+"di parametri attivati ​​che offre solide capacità di ragionamento e di azione."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2610,6 +2623,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"Il modello M2 di MiniMax per la programmazione, i flussi di lavoro "
+"automatizzati e la produttività professionale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:393

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:42+0000\n"
+"POT-Creation-Date: 2026-05-04 00:42+0000\n"
 "PO-Revision-Date: 2026-05-02 04:58-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -16,6 +16,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 26.04.0\n"
+
+#: widgets/common/selecttypecombobox.cpp:22
+#, kde-format
+msgid "Sse"
+msgstr ""
+
+#: widgets/common/selecttypecombobox.cpp:23
+#, kde-format
+msgid "Stdio"
+msgstr ""
+
+#: widgets/common/selecttypecombobox.cpp:24
+#, kde-format
+msgid "Streamble Http"
+msgstr ""
 
 #: widgets/server/addmcpserverdialog.cpp:19
 #, kde-format
