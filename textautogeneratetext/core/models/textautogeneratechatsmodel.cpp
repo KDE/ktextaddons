@@ -38,6 +38,13 @@ void TextAutoGenerateChatsModel::setChats(const QList<TextAutoGenerateChat> &new
     endResetModel();
 }
 
+void TextAutoGenerateChatsModel::clear()
+{
+    beginResetModel();
+    mChats.clear();
+    endResetModel();
+}
+
 void TextAutoGenerateChatsModel::addChat(const TextAutoGenerateChat &chat)
 {
     beginInsertRows(QModelIndex(), mChats.count(), mChats.count());
