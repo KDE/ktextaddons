@@ -6,11 +6,16 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 class QLineEdit;
 class QStackedWidget;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class SelectTypeComboBox;
+class AddMcpSseServerWidget;
+class AddMcpStdioServerWidget;
+class AddMcpSteamableHttpServerWidget;
+
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerWidget : public QWidget
 {
     Q_OBJECT
@@ -18,6 +23,8 @@ public:
     struct McpServerWidgetInfo {
         QString name;
         QString serverUrl;
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType protocolType =
+            TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown;
     };
     /*!
      * \brief AddMcpServerWidget
@@ -47,10 +54,13 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void checkValidSettings();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void changeType(int index);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void changeType();
     QLineEdit *const mServerNameLineEdit;
     QLineEdit *const mServerUrlLineEdit;
     SelectTypeComboBox *const mSelectTypeComboBox;
     QStackedWidget *const mStackedWidget;
+    AddMcpSseServerWidget *const mAddMcpSseServerWidget;
+    AddMcpStdioServerWidget *const mAddMcpStdioServerWidget;
+    AddMcpSteamableHttpServerWidget *const mAddMcpSteamableHttpServerWidget;
 };
 }

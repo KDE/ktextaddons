@@ -3,12 +3,12 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "addmcpstdioserverwidget.h"
+#include "addmcpsseserverwidget.h"
 #include <KLocalizedString>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
-AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
+AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
     : QWidget{parent}
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -17,6 +17,6 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
     mainLayout->setSpacing(0);
 }
 
-AddMcpStdioServerWidget::~AddMcpStdioServerWidget() = default;
+AddMcpSseServerWidget::~AddMcpSseServerWidget() = default;
 
-#include "moc_addmcpstdioserverwidget.cpp"
+#include "moc_addmcpsseserverwidget.cpp"
