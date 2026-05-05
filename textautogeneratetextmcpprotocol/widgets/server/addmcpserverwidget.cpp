@@ -52,7 +52,9 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     mServerNameLineEdit->setClearButtonEnabled(true);
 
     connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
-    // TODO connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
+    connect(mAddMcpSseServerWidget, &AddMcpSseServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
+    connect(mAddMcpStdioServerWidget, &AddMcpStdioServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
+    connect(mAddMcpSteamableHttpServerWidget, &AddMcpSteamableHttpServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
 }
 
 AddMcpServerWidget::~AddMcpServerWidget() = default;

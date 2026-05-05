@@ -20,9 +20,11 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerWidget : public 
 {
     Q_OBJECT
 public:
-    struct McpServerWidgetInfo {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpServerWidgetInfo {
         QString name;
         QString serverUrl;
+        QString processName;
+        QStringList arguments;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType protocolType =
             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown;
     };
@@ -63,3 +65,4 @@ private:
     AddMcpSteamableHttpServerWidget *const mAddMcpSteamableHttpServerWidget;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget::McpServerWidgetInfo, Q_RELOCATABLE_TYPE);

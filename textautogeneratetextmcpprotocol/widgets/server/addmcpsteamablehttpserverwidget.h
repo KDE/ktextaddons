@@ -33,6 +33,9 @@ public:
      */
     [[nodiscard]] QString url() const;
 
+Q_SIGNALS:
+    void settingChanged();
+
 private:
     QLineEdit *const mServerUrlLineEdit;
 };

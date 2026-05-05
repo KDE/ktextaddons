@@ -20,5 +20,7 @@ public:
     /*!
      */
     ~AddMcpStdioServerWidget() override;
+Q_SIGNALS:
+    void settingChanged();
 };
 }

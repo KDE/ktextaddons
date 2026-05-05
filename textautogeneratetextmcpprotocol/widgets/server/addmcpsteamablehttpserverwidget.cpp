@@ -6,21 +6,21 @@
 #include "addmcpsteamablehttpserverwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <QFormLayout>
 #include <QLineEdit>
-#include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mServerUrlLineEdit(new QLineEdit(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
     mainLayout->setSpacing(0);
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
-    mainLayout->addWidget(mServerUrlLineEdit);
+    mainLayout->addRow(i18n("Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
 }
 
