@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:42+0000\n"
+"POT-Creation-Date: 2026-05-05 00:42+0000\n"
 "PO-Revision-Date: 2026-04-30 17:11+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -62,65 +62,70 @@ msgstr "<b>Motore:</b> %1<br><b>Modello:</b> %2<br><b>Nome istanza:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Strumenti:</b> %1"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:153
 #, kde-format
 msgid "Tools"
 msgstr "Strumenti"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Small"
 msgstr "Piccola"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Medium"
 msgstr "Media"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Big"
 msgstr "Grande"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingua"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Code"
 msgstr "Codice"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Math"
 msgstr "Matematica"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Vision"
 msgstr "Visione"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Embedding"
 msgstr "Integrazione"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Reasoning"
 msgstr "Ragionamento"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Cloud"
 msgstr "Cloud"
+
+#: core/textautogeneratemanager.cpp:177
+#, kde-format
+msgid "Thinking"
+msgstr ""
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -283,13 +288,13 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:208
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:215
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:210
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:217
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
@@ -299,54 +304,60 @@ msgstr "OpenRouter AI"
 msgid "Sarvam AI"
 msgstr "AI Sarvam"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:184
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:221
+#, kde-format
+msgid "AtlasCloud OpenAI-compatible API"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Modelli linguistici di grandi dimensioni di Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:192
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:194
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API di inferenza cloud Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:196
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API di inferenza cloud di Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:198
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:205
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:200
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:207
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Modelli linguistici di grandi dimensioni Kimi di Moonshot AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:202
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:209
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr ""
 "Modelli linguistici di grandi dimensioni di Mistral AIModelli linguistici di "
 "grandi dimensioni Alibaba Cloud Qwen tramite DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:204
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:211
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "API di inferenza cloud Novita AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:206
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:213
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "API di inferenza cloud di DeepInfra"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:212
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:219
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "Istanza AI Sarvam"
@@ -2626,8 +2637,15 @@ msgstr ""
 "Il modello M2 di MiniMax per la programmazione, i flussi di lavoro "
 "automatizzati e la produttività professionale."
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:389
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:393
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:349
+#, kde-format
+msgid ""
+"Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
+"preservation than previous Qwen models."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
 #, kde-format
 msgid "The user is called %1"
 msgstr "L'utente si chiama %1"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:42+0000\n"
-"PO-Revision-Date: 2026-05-02 18:48+0300\n"
+"POT-Creation-Date: 2026-05-05 00:42+0000\n"
+"PO-Revision-Date: 2026-05-04 20:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,22 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
 msgid "Sse"
-msgstr ""
+msgstr "SSE"
 
 #: widgets/common/selecttypecombobox.cpp:23
 #, kde-format
 msgid "Stdio"
-msgstr ""
+msgstr "Standard IO"
 
 #: widgets/common/selecttypecombobox.cpp:24
 #, kde-format
 msgid "Streamble Http"
-msgstr ""
+msgstr "Aktarılabilir HTTP"
 
 #: widgets/server/addmcpserverdialog.cpp:19
 #, kde-format
@@ -38,13 +38,19 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr "Sunucu Ekle"
 
-#: widgets/server/addmcpserverwidget.cpp:24
+#: widgets/server/addmcpserverwidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Ad:"
 
-#: widgets/server/addmcpserverwidget.cpp:28
+#: widgets/server/addmcpserverwidget.cpp:32
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Type:"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:42+0000\n"
-"PO-Revision-Date: 2026-05-02 04:58-0300\n"
+"POT-Creation-Date: 2026-05-05 00:42+0000\n"
+"PO-Revision-Date: 2026-05-04 08:07-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,17 +20,17 @@ msgstr ""
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
 msgid "Sse"
-msgstr ""
+msgstr "Sse"
 
 #: widgets/common/selecttypecombobox.cpp:23
 #, kde-format
 msgid "Stdio"
-msgstr ""
+msgstr "Stdio"
 
 #: widgets/common/selecttypecombobox.cpp:24
 #, kde-format
 msgid "Streamble Http"
-msgstr ""
+msgstr "Http transmissível"
 
 #: widgets/server/addmcpserverdialog.cpp:19
 #, kde-format
@@ -38,13 +38,19 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr "Adicionar servidor"
 
-#: widgets/server/addmcpserverwidget.cpp:24
+#: widgets/server/addmcpserverwidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nome:"
 
-#: widgets/server/addmcpserverwidget.cpp:28
+#: widgets/server/addmcpserverwidget.cpp:32
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Type:"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"

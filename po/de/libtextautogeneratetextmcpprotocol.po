@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:42+0000\n"
+"POT-Creation-Date: 2026-05-05 00:42+0000\n"
 "PO-Revision-Date: 2026-05-02 10:59+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -37,13 +37,19 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr ""
 
-#: widgets/server/addmcpserverwidget.cpp:24
+#: widgets/server/addmcpserverwidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr ""
 
-#: widgets/server/addmcpserverwidget.cpp:28
+#: widgets/server/addmcpserverwidget.cpp:32
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Type:"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
