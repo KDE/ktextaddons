@@ -135,8 +135,9 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
 
 Qt::ItemFlags TextAutoGenerateChatsModel::flags(const QModelIndex &index) const
 {
-    if (!index.isValid())
+    if (!index.isValid()) {
         return Qt::NoItemFlags;
+    }
 
     return Qt::ItemIsEditable | QAbstractListModel::flags(index);
 }
