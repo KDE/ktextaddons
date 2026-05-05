@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpsteamablehttpserverwidget.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLineEdit>
 #include <QVBoxLayout>
@@ -20,6 +21,7 @@ AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mainLayout->addWidget(mServerUrlLineEdit);
+    KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
 }
 
 AddMcpSteamableHttpServerWidget::~AddMcpSteamableHttpServerWidget() = default;

@@ -20,7 +20,6 @@ using namespace Qt::Literals::StringLiterals;
 AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     : QWidget{parent}
     , mServerNameLineEdit(new QLineEdit(this))
-    , mServerUrlLineEdit(new QLineEdit(this))
     , mSelectTypeComboBox(new SelectTypeComboBox(this))
     , mStackedWidget(new QStackedWidget(this))
     , mAddMcpSseServerWidget(new AddMcpSseServerWidget(this))
@@ -50,14 +49,10 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     mStackedWidget->addWidget(mAddMcpStdioServerWidget);
     mStackedWidget->addWidget(mAddMcpSteamableHttpServerWidget);
 
-    mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
-    mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
-    KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
-    mServerUrlLineEdit->setClearButtonEnabled(true);
     mServerNameLineEdit->setClearButtonEnabled(true);
 
     connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
-    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
+    // TODO connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
 }
 
 AddMcpServerWidget::~AddMcpServerWidget() = default;
@@ -82,20 +77,21 @@ void AddMcpServerWidget::changeType()
 
 void AddMcpServerWidget::checkValidSettings()
 {
-    Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty() && !mServerUrlLineEdit->text().trimmed().isEmpty());
+    Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty()); // && !mServerUrlLineEdit->text().trimmed().isEmpty());
 }
 
 void AddMcpServerWidget::setServerWidgetInfo(const McpServerWidgetInfo &info)
 {
     mServerNameLineEdit->setText(info.name);
-    mServerUrlLineEdit->setText(info.serverUrl);
+    // mServerUrlLineEdit->setText(info.serverUrl);
 }
 
 AddMcpServerWidget::McpServerWidgetInfo AddMcpServerWidget::serverWidgetInfo() const
 {
     const AddMcpServerWidget::McpServerWidgetInfo info{
         .name = mServerNameLineEdit->text(),
-        .serverUrl = mServerUrlLineEdit->text(),
+        // .serverUrl = mServerUrlLineEdit->text(),
+        .protocolType = mSelectTypeComboBox->type(),
     };
     return info;
 }

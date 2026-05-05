@@ -56,7 +56,6 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void checkValidSettings();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void changeType();
     QLineEdit *const mServerNameLineEdit;
-    QLineEdit *const mServerUrlLineEdit;
     SelectTypeComboBox *const mSelectTypeComboBox;
     QStackedWidget *const mStackedWidget;
     AddMcpSseServerWidget *const mAddMcpSseServerWidget;
