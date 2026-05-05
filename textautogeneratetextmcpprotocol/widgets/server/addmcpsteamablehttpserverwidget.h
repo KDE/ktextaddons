@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerWidget : public QWidget
@@ -20,5 +21,19 @@ public:
     /*!
      */
     ~AddMcpSteamableHttpServerWidget() override;
+
+    /*!
+     * \brief setUrl
+     * \param str
+     */
+    void setUrl(const QString &str);
+    /*!
+     * \brief url
+     * \return
+     */
+    [[nodiscard]] QString url() const;
+
+private:
+    QLineEdit *const mServerUrlLineEdit;
 };
 }
