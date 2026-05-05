@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAutoGenerateTextMcpProtocolCore
+description = TextAutoGenerateTextMcpProtocolCore provides mcp protocol support core lib.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextAutoGenerateTextMcpProtocolCore"
+
+qhp.projects            = textautogeneratetextmcpprotocolcore
+
+qhp.textautogeneratetextmcpprotocolcore.file                = textautogeneratetextmcpprotocolcore.qhp
+qhp.textautogeneratetextmcpprotocolcore.namespace           = org.kde.textautogeneratetextmcpprotocolcore.$QT_VERSION_TAG
+qhp.textautogeneratetextmcpprotocolcore.virtualFolder       = textautogeneratetextmcpprotocolcore
+qhp.textautogeneratetextmcpprotocolcore.indexTitle          = textautogeneratetextmcpprotocolcore
+qhp.textautogeneratetextmcpprotocolcore.indexRoot           =
+
+qhp.textautogeneratetextmcpprotocolcore.subprojects         = classes
+qhp.textautogeneratetextmcpprotocolcore.subprojects.classes.title = C++ Classes
+qhp.textautogeneratetextmcpprotocolcore.subprojects.classes.indexTitle = TextAutoGenerateTextMcpProtocolCore C++ Classes
+qhp.textautogeneratetextmcpprotocolcore.subprojects.classes.selectors = class fake:headerfile
+qhp.textautogeneratetextmcpprotocolcore.subprojects.classes.sortPages = true
+
+tagfile = textautogeneratetextmcpprotocolcore.tags

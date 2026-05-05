@@ -1,0 +1,9 @@
+/*!
+    \module TextAutoGenerateTextMcpProtocolCore
+    \title TextAutoGenerateTextMcpProtocolCore C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent TextAutoGenerateTextMcpProtocolCore
+
+    \brief TextAutoGenerateTextMcpProtocolCore provides mcp protocol support core lib.
+*/
