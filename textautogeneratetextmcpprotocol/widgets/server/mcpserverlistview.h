@@ -9,9 +9,6 @@
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpServerSortFilterProxyModel;
-}
-namespace TextAutoGenerateTextMcpProtocolCore
-{
 class McpServerModel;
 }
 namespace TextAutoGenerateTextMcpProtocolWidgets
@@ -20,14 +17,36 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpServerListView : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief McpServerListView
+     * \param model
+     * \param parent
+     */
     explicit McpServerListView(TextAutoGenerateTextMcpProtocolCore::McpServerModel *model, QWidget *parent = nullptr);
+    /*!
+     */
     ~McpServerListView() override;
 
+    /*!
+     * \brief slotSearchChanged
+     * \param str
+     */
     void slotSearchChanged(const QString &str);
 
 Q_SIGNALS:
+    /*!
+     * \brief addServer
+     */
     void addServer();
+    /*!
+     * \brief editServer
+     * \param id
+     */
     void editServer(const QByteArray &id);
+    /*!
+     * \brief removeServer
+     * \param id
+     */
     void removeServer(const QByteArray &id);
 
 protected:

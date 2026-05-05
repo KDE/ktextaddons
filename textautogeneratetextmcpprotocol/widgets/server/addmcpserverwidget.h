@@ -19,12 +19,30 @@ public:
         QString name;
         QString serverUrl;
     };
+    /*!
+     * \brief AddMcpServerWidget
+     * \param parent
+     */
     explicit AddMcpServerWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~AddMcpServerWidget() override;
 
+    /*!
+     * \brief setServerWidgetInfo
+     * \param info
+     */
     void setServerWidgetInfo(const McpServerWidgetInfo &info);
+    /*!
+     * \brief serverWidgetInfo
+     * \return
+     */
     [[nodiscard]] McpServerWidgetInfo serverWidgetInfo() const;
 Q_SIGNALS:
+    /*!
+     * \brief buttonOkEnabled
+     * \param state
+     */
     void buttonOkEnabled(bool state);
 
 private:
