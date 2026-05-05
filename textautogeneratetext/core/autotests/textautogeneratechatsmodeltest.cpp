@@ -15,6 +15,11 @@ TextAutoGenerateChatsModelTest::TextAutoGenerateChatsModelTest(QObject *parent)
 
 void TextAutoGenerateChatsModelTest::shouldHaveDefaultValues()
 {
-    // TODO
+    TextAutoGenerateText::TextAutoGenerateChatsModel model;
+    QVERIFY(model.chats().isEmpty());
+    QVERIFY(!model.hasChatInProgress());
+    QVERIFY(!model.hasAtLeastOneNotArchivedChat());
+    QVERIFY(model.chatsId().isEmpty());
+    QVERIFY(!model.textAutoGenerateChatSettings());
 }
 #include "moc_textautogeneratechatsmodeltest.cpp"
