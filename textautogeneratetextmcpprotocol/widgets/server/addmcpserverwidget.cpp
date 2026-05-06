@@ -39,7 +39,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     connect(mSelectTypeComboBox, &SelectTypeComboBox::activated, this, &AddMcpServerWidget::changeType);
 
     mStackedWidget->setObjectName(u"mStackedWidget"_s);
-    mainLayout->addWidget(mStackedWidget);
+    mainLayout->addRow(mStackedWidget);
 
     mAddMcpSseServerWidget->setObjectName(u"mAddMcpSseServerWidget"_s);
     mAddMcpStdioServerWidget->setObjectName(u"mAddMcpStdioServerWidget"_s);
