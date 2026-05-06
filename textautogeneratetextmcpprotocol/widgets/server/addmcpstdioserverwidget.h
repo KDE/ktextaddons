@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStdioServerWidget : public QWidget
@@ -22,5 +23,9 @@ public:
     ~AddMcpStdioServerWidget() override;
 Q_SIGNALS:
     void settingChanged();
+
+private:
+    QLineEdit *const mCommandLineEdit;
+    QLineEdit *const mArgumentsLineEdit;
 };
 }
