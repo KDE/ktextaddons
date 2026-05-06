@@ -100,7 +100,18 @@ AddMcpServerWidget::McpServerWidgetInfo AddMcpServerWidget::serverWidgetInfo() c
 
 bool AddMcpServerWidget::McpServerWidgetInfo::isValid() const
 {
-    // TODO
+    if (name.isEmpty()) {
+        return false;
+    }
+    if (protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown) {
+        return false;
+    } else if (protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse
+               || protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp) {
+        return !serverUrl.isEmpty();
+    } else if (protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse
+               || protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp) {
+        return !processName.isEmpty(); // TODO check arguments ?
+    }
     return false;
 }
 
