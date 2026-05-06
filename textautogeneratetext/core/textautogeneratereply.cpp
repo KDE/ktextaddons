@@ -8,7 +8,6 @@
 #include "textautogeneratetextcore_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
-#include <QNetworkReply>
 
 using namespace Qt::StringLiterals;
 using namespace TextAutoGenerateText;
