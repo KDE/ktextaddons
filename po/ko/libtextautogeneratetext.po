@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 24.12.3\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:81
+#: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
 msgid "New Chat..."
 msgstr "새 대화..."
 
-#: core/models/textautogeneratechatsmodel.cpp:163
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Favorite"
 msgstr "책갈피"
 
-#: core/models/textautogeneratechatsmodel.cpp:165
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Today"
 msgstr "오늘"
 
-#: core/models/textautogeneratechatsmodel.cpp:167
+#: core/models/textautogeneratechatsmodel.cpp:175
 #, kde-format
 msgid "7 days previous"
 msgstr "7일 전"
 
-#: core/models/textautogeneratechatsmodel.cpp:169
+#: core/models/textautogeneratechatsmodel.cpp:177
 #, kde-format
 msgid "30 days previous"
 msgstr "30일 전"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:179
 #, kde-format
 msgid "Later"
 msgstr "나중에"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:181
 #, kde-format
 msgid "Unknown"
 msgstr "알 수 없음"

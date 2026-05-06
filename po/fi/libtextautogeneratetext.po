@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:81
+#: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
 msgid "New Chat..."
 msgstr "Uusi keskustelu…"
 
-#: core/models/textautogeneratechatsmodel.cpp:163
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Favorite"
 msgstr "Suosikki"
 
-#: core/models/textautogeneratechatsmodel.cpp:165
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
 
-#: core/models/textautogeneratechatsmodel.cpp:167
+#: core/models/textautogeneratechatsmodel.cpp:175
 #, kde-format
 msgid "7 days previous"
 msgstr "Edelliset 7 päivää"
 
-#: core/models/textautogeneratechatsmodel.cpp:169
+#: core/models/textautogeneratechatsmodel.cpp:177
 #, kde-format
 msgid "30 days previous"
 msgstr "Edelliset 30 päivää"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:179
 #, kde-format
 msgid "Later"
 msgstr "Myöhemmin"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:181
 #, kde-format
 msgid "Unknown"
 msgstr "Tuntematon"

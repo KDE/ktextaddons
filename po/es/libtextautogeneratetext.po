@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
-"PO-Revision-Date: 2026-04-30 17:36+0100\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
+"PO-Revision-Date: 2026-05-05 23:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -19,37 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.04.0\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:81
+#: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
 msgid "New Chat..."
 msgstr "Nueva conversación…"
 
-#: core/models/textautogeneratechatsmodel.cpp:163
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Favorite"
 msgstr "Favorita"
 
-#: core/models/textautogeneratechatsmodel.cpp:165
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Today"
 msgstr "Hoy"
 
-#: core/models/textautogeneratechatsmodel.cpp:167
+#: core/models/textautogeneratechatsmodel.cpp:175
 #, kde-format
 msgid "7 days previous"
 msgstr "7 días anteriores"
 
-#: core/models/textautogeneratechatsmodel.cpp:169
+#: core/models/textautogeneratechatsmodel.cpp:177
 #, kde-format
 msgid "30 days previous"
 msgstr "30 días anteriores"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:179
 #, kde-format
 msgid "Later"
 msgstr "Más tarde"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:181
 #, kde-format
 msgid "Unknown"
 msgstr "Desconocido"
@@ -128,7 +128,7 @@ msgstr "Nube"
 #: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "Pensando"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -311,7 +311,7 @@ msgstr "Sarvam AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:221
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "API compatible con OpenAI de AtlasCloud"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
@@ -2647,6 +2647,8 @@ msgid ""
 "Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
 "preservation than previous Qwen models."
 msgstr ""
+"Qwen 3.6 ofrece mejoras sustanciales en la codificación de agentes y la "
+"preservación del pensamiento en comparación con los modelos Qwen anteriores."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
@@ -3406,26 +3408,3 @@ msgstr "No se ha encontrado ningún archivo."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
-
-#~ msgctxt "@title:window"
-#~ msgid "Add Server"
-#~ msgstr "Añadir servidor"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "Url:"
-#~ msgstr "URL:"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Añadir servidor…"
-
-#~ msgctxt "@action"
-#~ msgid "Remove Server"
-#~ msgstr "Eliminar servidor"
-
-#~ msgid "Do you want to remove this server (%1)?"
-#~ msgstr "¿Quiere eliminar este servidor (%1)?"
-
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "Eliminar servidor"

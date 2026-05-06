@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
 "PO-Revision-Date: 2026-04-30 09:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,37 +22,37 @@ msgstr ""
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
-#: core/models/textautogeneratechatsmodel.cpp:81
+#: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
 msgid "New Chat..."
 msgstr "Xat nou…"
 
-#: core/models/textautogeneratechatsmodel.cpp:163
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: core/models/textautogeneratechatsmodel.cpp:165
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Today"
 msgstr "Hui"
 
-#: core/models/textautogeneratechatsmodel.cpp:167
+#: core/models/textautogeneratechatsmodel.cpp:175
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:169
+#: core/models/textautogeneratechatsmodel.cpp:177
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:179
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:181
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"

@@ -1,19 +1,22 @@
-#
-# SPDX-FileCopyrightText: 2026 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: ktextaddons\n"
+"Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-06 00:43+0000\n"
-"PO-Revision-Date: 2026-05-03 08:45+0200\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: fr\n"
-"Language: fr\n"
+"PO-Revision-Date: 2026-05-05 07:05\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/"
+"libtextautogeneratetextmcpprotocol.pot\n"
+"X-Crowdin-File-ID: 60128\n"
 
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
@@ -34,13 +37,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr "Ajouter un serveur"
+msgstr ""
 
 #: widgets/server/addmcpserverwidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Nom :"
+msgstr ""
 
 #: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
@@ -50,49 +53,47 @@ msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
-msgstr "URL :"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "Ajouter un serveur…"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Modifier…"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Supprimer le serveur"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr "Voulez-vous supprimer ce serveur (%1) ?"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "Supprimer le serveur"
+msgstr ""
 
 #: widgets/server/mcpserverwidget.cpp:40
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Rechercher…"
+msgstr ""
 
 #: widgets/server/mcpserverwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Ajouter une instance…"
+msgstr ""

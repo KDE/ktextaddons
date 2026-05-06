@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
-"PO-Revision-Date: 2026-05-04 07:02+0200\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
+"PO-Revision-Date: 2026-05-05 06:57+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -39,21 +39,23 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr "Dodaj strežnik"
 
-#: widgets/server/addmcpserverwidget.cpp:28
+#: widgets/server/addmcpserverwidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Ime:"
 
-#: widgets/server/addmcpserverwidget.cpp:32
+#: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "Zvrst:"
 
-#: widgets/server/addmcpserverwidget.cpp:39
-#, kde-format
-msgctxt "@label:textbox"
+#: widgets/server/addmcpsseserverwidget.cpp:23
+#: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Url:"
 msgid "Url:"
 msgstr "Url:"
 

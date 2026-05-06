@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,37 +17,37 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextautogeneratetext.pot\n"
 "X-Crowdin-File-ID: 57198\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:81
+#: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
 msgid "New Chat..."
 msgstr "新聊天..."
 
-#: core/models/textautogeneratechatsmodel.cpp:163
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Favorite"
 msgstr "常用"
 
-#: core/models/textautogeneratechatsmodel.cpp:165
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Today"
 msgstr "今天"
 
-#: core/models/textautogeneratechatsmodel.cpp:167
+#: core/models/textautogeneratechatsmodel.cpp:175
 #, kde-format
 msgid "7 days previous"
 msgstr "过去 7 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:169
+#: core/models/textautogeneratechatsmodel.cpp:177
 #, kde-format
 msgid "30 days previous"
 msgstr "过去 30 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:179
 #, kde-format
 msgid "Later"
 msgstr "之后"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:181
 #, kde-format
 msgid "Unknown"
 msgstr "未知"
@@ -355,11 +355,9 @@ msgid "DeepInfra cloud inference API"
 msgstr "DeepInfra 云推理 API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "新增实例…"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -3190,26 +3188,3 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add Server"
-#~ msgstr "添加服务器"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "Url:"
-#~ msgstr "URL："
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "添加服务器…"
-
-#~ msgctxt "@action"
-#~ msgid "Remove Server"
-#~ msgstr "移除服务器"
-
-#~ msgid "Do you want to remove this server (%1)?"
-#~ msgstr "您想要移除此服务器 (%1) 吗？"
-
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "移除服务器"

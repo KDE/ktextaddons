@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:42+0000\n"
-"PO-Revision-Date: 2026-05-04 05:44+0200\n"
+"POT-Creation-Date: 2026-05-06 00:43+0000\n"
+"PO-Revision-Date: 2026-05-05 04:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -39,21 +39,23 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr "სერვერის დამატება"
 
-#: widgets/server/addmcpserverwidget.cpp:28
+#: widgets/server/addmcpserverwidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "სახელი:"
 
-#: widgets/server/addmcpserverwidget.cpp:32
+#: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "ტიპი:"
 
-#: widgets/server/addmcpserverwidget.cpp:39
-#, kde-format
-msgctxt "@label:textbox"
+#: widgets/server/addmcpsseserverwidget.cpp:23
+#: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Url:"
 msgid "Url:"
 msgstr "URL:"
 
