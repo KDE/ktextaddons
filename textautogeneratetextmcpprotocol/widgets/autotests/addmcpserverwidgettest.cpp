@@ -26,4 +26,24 @@ void AddMcpServerWidgetTest::shouldHaveDefaultValues()
     auto mSelectTypeComboBox = w.findChild<TextAutoGenerateTextMcpProtocolWidgets::SelectTypeComboBox *>(u"mSelectTypeComboBox"_s);
     QVERIFY(mSelectTypeComboBox);
 }
+
+void AddMcpServerWidgetTest::shouldValidateMcpServerWidgetInfo()
+{
+    const TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget::McpServerWidgetInfo info;
+    QVERIFY(info.serverUrl.isEmpty());
+    QVERIFY(info.arguments.isEmpty());
+    QVERIFY(info.processName.isEmpty());
+    QVERIFY(!info.isValid());
+    QCOMPARE(info.protocolType, TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown);
+
+    {
+        const TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget::McpServerWidgetInfo info2{
+            .name = u"gg"_s,
+            .serverUrl = u"foo"_s,
+            .protocolType = TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp,
+        };
+        QVERIFY(info2.isValid());
+    }
+}
+
 #include "moc_addmcpserverwidgettest.cpp"
