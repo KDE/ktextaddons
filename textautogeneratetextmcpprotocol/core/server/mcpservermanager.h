@@ -46,6 +46,12 @@ public:
      */
     void saveServers();
 
+    /*!
+     * \brief serverConfigFileName
+     * \return
+     */
+    [[nodiscard]] virtual QString serverConfigFileName() const;
+
 private:
     McpServerModel *const mMcpServerModel;
 };

@@ -24,9 +24,14 @@ McpServerModel *McpServerManager::mcpServerModel() const
     return mMcpServerModel;
 }
 
+QString McpServerManager::serverConfigFileName() const
+{
+    return McpProtocolUtils::serverConfigFileName();
+}
+
 void McpServerManager::loadServers()
 {
-    auto config = KSharedConfig::openConfig(McpProtocolUtils::serverConfigFileName());
+    const auto config = KSharedConfig::openConfig(serverConfigFileName());
     const QStringList mcpServerList = McpProtocolUtils::mcpServerList(config);
     if (mcpServerList.isEmpty()) {
         return; // nothing to be done...
