@@ -34,4 +34,19 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
 
 AddMcpStdioServerWidget::~AddMcpStdioServerWidget() = default;
 
+void AddMcpStdioServerWidget::setStdioInfo(const StdioInfo &info)
+{
+    mCommandLineEdit->setText(info.command);
+    mArgumentsLineEdit->setText(info.arguments);
+}
+
+AddMcpStdioServerWidget::StdioInfo AddMcpStdioServerWidget::stdioInfo() const
+{
+    const AddMcpStdioServerWidget::StdioInfo info{
+        .command = mCommandLineEdit->text(),
+        .arguments = mArgumentsLineEdit->text(),
+    };
+    return info;
+}
+
 #include "moc_addmcpstdioserverwidget.cpp"
