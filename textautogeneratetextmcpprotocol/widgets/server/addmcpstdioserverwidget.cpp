@@ -18,15 +18,16 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
-    mainLayout->setSpacing(0);
 
     mCommandLineEdit->setObjectName(u"mCommandLineEdit"_s);
     mainLayout->addRow(i18n("Command:"), mCommandLineEdit);
     KLineEditEventHandler::catchReturnKey(mCommandLineEdit);
+    mCommandLineEdit->setClearButtonEnabled(true);
 
     mArgumentsLineEdit->setObjectName(u"mArgumentsLineEdit"_s);
     mainLayout->addRow(i18n("Arguments:"), mArgumentsLineEdit);
     KLineEditEventHandler::catchReturnKey(mArgumentsLineEdit);
+    mArgumentsLineEdit->setClearButtonEnabled(true);
 
     connect(mCommandLineEdit, &QLineEdit::textChanged, this, &AddMcpStdioServerWidget::settingChanged);
     connect(mArgumentsLineEdit, &QLineEdit::textChanged, this, &AddMcpStdioServerWidget::settingChanged);

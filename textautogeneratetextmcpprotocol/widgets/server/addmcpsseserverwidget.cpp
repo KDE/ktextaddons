@@ -17,9 +17,9 @@ AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
-    mainLayout->setSpacing(0);
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
+    mServerUrlLineEdit->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
     connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpSseServerWidget::settingChanged);
