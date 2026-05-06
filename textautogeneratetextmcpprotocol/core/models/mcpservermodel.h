@@ -5,9 +5,9 @@
 */
 #pragma once
 
-#include "server/mcpserver.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QAbstractListModel>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 /*!
