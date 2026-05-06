@@ -243,6 +243,15 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon
     RELATIVE common
 )
 
+ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolmodel_HEADERS
+    HEADER_NAMES
+    McpServerModel
+    McpServerSortFilterProxyModel
+    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolmodel_HEADERS
+    PREFIX TextAutoGenerateTextMcpProtocolCore
+    RELATIVE models
+)
+
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS
     HEADER_NAMES
     McpProtocolClient
@@ -267,6 +276,7 @@ install(
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}
+        ${TextAutoGenerateTextMcpProtocol_mcpprotocolmodel_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore/textautogeneratetextmcpprotocolcore
     COMPONENT Devel
 )
@@ -276,6 +286,7 @@ install(
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS}
+        ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolmodel_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore/TextAutoGenerateTextMcpProtocolCore
     COMPONENT Devel
 )
