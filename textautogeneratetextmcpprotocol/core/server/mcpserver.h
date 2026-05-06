@@ -6,9 +6,11 @@
 
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <KConfigGroup>
+#include <QMap>
+#include <QObject>
 #include <QUrl>
 class QDebug;
+class KConfigGroup;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServer

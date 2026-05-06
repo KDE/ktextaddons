@@ -5,6 +5,7 @@
 */
 #include "mcpserver.h"
 #include "common/mcpprotocolutils.h"
+#include <KConfigGroup>
 #include <QDebug>
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
