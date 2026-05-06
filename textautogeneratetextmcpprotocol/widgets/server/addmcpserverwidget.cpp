@@ -98,4 +98,10 @@ AddMcpServerWidget::McpServerWidgetInfo AddMcpServerWidget::serverWidgetInfo() c
     return info;
 }
 
+bool AddMcpServerWidget::McpServerWidgetInfo::isValid() const
+{
+    // TODO
+    return false;
+}
+
 #include "moc_addmcpserverwidget.cpp"

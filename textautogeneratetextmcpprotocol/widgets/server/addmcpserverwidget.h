@@ -24,9 +24,11 @@ public:
         QString name;
         QString serverUrl;
         QString processName;
-        QStringList arguments;
+        QString arguments;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType protocolType =
             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown;
+
+        [[nodiscard]] bool isValid() const;
     };
     /*!
      * \brief AddMcpServerWidget
