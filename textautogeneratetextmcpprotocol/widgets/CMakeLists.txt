@@ -54,7 +54,8 @@ generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME texta
 ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS
     HEADER_NAMES
     AddMcpServerDialog
-      McpServerWidget
+    McpServerWidget
+    AddMcpServerWidget
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolWidgets
     RELATIVE server
