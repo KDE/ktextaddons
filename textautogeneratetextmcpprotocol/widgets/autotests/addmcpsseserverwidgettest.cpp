@@ -19,3 +19,5 @@ void AddMcpSseServerWidgetTest::shouldHaveDefaultValues()
     const TextAutoGenerateTextMcpProtocolWidgets::AddMcpSseServerWidget w;
     // TODO
 }
+
+#include "moc_addmcpsseserverwidgettest.cpp"
