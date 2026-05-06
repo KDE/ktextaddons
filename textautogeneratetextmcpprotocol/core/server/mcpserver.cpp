@@ -5,8 +5,9 @@
 */
 #include "mcpserver.h"
 #include "common/mcpprotocolutils.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <KConfigGroup>
-#include <QDebug>
+
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 McpServer::McpServer() = default;
@@ -63,17 +64,25 @@ void McpServer::load(const KConfigGroup &config)
     mEnabled = config.readEntry("Enabled", true);
     mName = config.readEntry("Name", QString());
     mIdentifier = config.readEntry("Id", QByteArray());
+    mServerType = convertServerTypeFromString(config.readEntry("Type", QString()));
+
     mServerUrl = config.readEntry("ServerUrl", QUrl());
-    // TODO add server type
+    mCommand = config.readEntry("Command", QString());
+    mArguments = config.readEntry("Arguments", QString());
 }
 
 void McpServer::save(KConfigGroup &config) const
 {
-    config.writeEntry(u"ServerUrl"_s, mServerUrl);
     config.writeEntry(u"Id"_s, mIdentifier);
     config.writeEntry(u"Name"_s, mName);
     config.writeEntry(u"Enabled"_s, mEnabled);
-    // TODO add server type
+    config.writeEntry(u"Type"_s, convertServerTypeToString(mServerType));
+    if (mServerType == ServerType::Stdio) {
+        config.writeEntry(u"Command"_s, mCommand);
+        config.writeEntry(u"Arguments"_s, mArguments);
+    } else {
+        config.writeEntry(u"ServerUrl"_s, mServerUrl);
+    }
 }
 
 bool McpServer::isValid() const
@@ -101,12 +110,12 @@ void McpServer::setCommand(const QString &newCommand)
     mCommand = newCommand;
 }
 
-QStringList McpServer::arguments() const
+QString McpServer::arguments() const
 {
     return mArguments;
 }
 
-void McpServer::setArguments(const QStringList &newArguments)
+void McpServer::setArguments(const QString &newArguments)
 {
     mArguments = newArguments;
 }
@@ -119,6 +128,36 @@ QMap<QString, QString> McpServer::environments() const
 void McpServer::setEnvironments(const QMap<QString, QString> &newEnvironments)
 {
     mEnvironments = newEnvironments;
+}
+
+QString McpServer::convertServerTypeToString(ServerType type)
+{
+    switch (type) {
+    case ServerType::Sse:
+        return u"sse"_s;
+    case ServerType::Stdio:
+        return u"stdio"_s;
+    case ServerType::StreamableHttp:
+        return u"streamablehttp"_s;
+    case ServerType::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug";
+        return {};
+    }
+    return {};
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType McpServer::convertServerTypeFromString(const QString &str)
+{
+    if (str == "sse"_L1) {
+        return TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse;
+    } else if (str == "stdio"_L1) {
+        return TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio;
+    } else if (str == "streamablehttp"_L1) {
+        return TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp;
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug" << str;
+        return TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown;
+    }
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpServer &t)

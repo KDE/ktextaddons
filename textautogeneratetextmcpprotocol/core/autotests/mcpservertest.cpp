@@ -44,4 +44,32 @@ void McpServerTest::shouldVerifyValidValue()
     QVERIFY(w.isValid());
 }
 
+void McpServerTest::verifyConvertServerTypeToString()
+{
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse),
+             u"sse"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio),
+             u"stdio"_s);
+    QCOMPARE(
+        TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp),
+        u"streamablehttp"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown),
+             QString());
+}
+
+void McpServerTest::verifyConvertServerTypeFromString()
+{
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeFromString(u"sse"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeFromString(u"stdio"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeFromString(u"streamablehttp"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp);
+
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeFromString(u"kde"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertServerTypeFromString(QString()),
+             TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown);
+}
+
 #include "moc_mcpservertest.cpp"

@@ -53,11 +53,14 @@ public:
     [[nodiscard]] QString command() const;
     void setCommand(const QString &newCommand);
 
-    [[nodiscard]] QStringList arguments() const;
-    void setArguments(const QStringList &newArguments);
+    [[nodiscard]] QString arguments() const;
+    void setArguments(const QString &newArguments);
 
     [[nodiscard]] QMap<QString, QString> environments() const;
     void setEnvironments(const QMap<QString, QString> &newEnvironments);
+
+    [[nodiscard]] static QString convertServerTypeToString(ServerType type);
+    [[nodiscard]] static ServerType convertServerTypeFromString(const QString &str);
 
 private:
     bool mEnabled = true;
@@ -66,7 +69,7 @@ private:
     QByteArray mIdentifier;
     ServerType mServerType = ServerType::Unknown;
     QString mCommand;
-    QStringList mArguments;
+    QString mArguments;
     QMap<QString, QString> mEnvironments;
 };
 }
