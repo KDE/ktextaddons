@@ -59,7 +59,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 #endif
     , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpProtocolCore::McpServerManager(this))
 {
-    // TODO mTextAutoGenerateTextMcpServerManager->loadServers();
+    mTextAutoGenerateTextMcpServerManager->loadServers();
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     // Load TextAutoGenerateTextToolPluginManager
     (void)TextAutoGenerateTextToolPluginManager::self();
