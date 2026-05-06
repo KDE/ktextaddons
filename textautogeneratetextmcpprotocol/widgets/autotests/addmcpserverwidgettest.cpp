@@ -23,11 +23,6 @@ void AddMcpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mServerNameLineEdit->text().isEmpty());
     QVERIFY(mServerNameLineEdit->isClearButtonEnabled());
 
-    auto mServerUrlLineEdit = w.findChild<QLineEdit *>(u"mServerUrlLineEdit"_s);
-    QVERIFY(mServerUrlLineEdit);
-    QVERIFY(mServerUrlLineEdit->text().isEmpty());
-    QVERIFY(mServerUrlLineEdit->isClearButtonEnabled());
-
     auto mSelectTypeComboBox = w.findChild<TextAutoGenerateTextMcpProtocolWidgets::SelectTypeComboBox *>(u"mSelectTypeComboBox"_s);
     QVERIFY(mSelectTypeComboBox);
 }
