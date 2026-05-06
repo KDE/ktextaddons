@@ -27,6 +27,9 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
     mArgumentsLineEdit->setObjectName(u"mArgumentsLineEdit"_s);
     mainLayout->addRow(i18n("Arguments:"), mArgumentsLineEdit);
     KLineEditEventHandler::catchReturnKey(mArgumentsLineEdit);
+
+    connect(mCommandLineEdit, &QLineEdit::textChanged, this, &AddMcpStdioServerWidget::settingChanged);
+    connect(mArgumentsLineEdit, &QLineEdit::textChanged, this, &AddMcpStdioServerWidget::settingChanged);
 }
 
 AddMcpStdioServerWidget::~AddMcpStdioServerWidget() = default;

@@ -22,6 +22,7 @@ AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mainLayout->addRow(i18n("Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
+    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpSteamableHttpServerWidget::settingChanged);
 }
 
 AddMcpSteamableHttpServerWidget::~AddMcpSteamableHttpServerWidget() = default;
