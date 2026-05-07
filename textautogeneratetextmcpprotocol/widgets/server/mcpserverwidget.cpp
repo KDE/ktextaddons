@@ -63,10 +63,8 @@ void McpServerWidget::slotAddServer()
 {
     QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
     if (dlg->exec()) {
-        TextAutoGenerateTextMcpProtocolCore::McpServer server;
-        server.createUniqueIdentifier();
         const auto info = dlg->serverInfo();
-        mModel->addMcpServer(server);
+        mModel->addMcpServer(info);
     }
     delete dlg;
 }

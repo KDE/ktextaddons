@@ -62,15 +62,18 @@ AddMcpServerWidget::~AddMcpServerWidget() = default;
 
 void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
+    mServer = server;
     mServerNameLineEdit->setText(server.name());
     // TODO
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() const
 {
-    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    TextAutoGenerateTextMcpProtocolCore::McpServer server = mServer;
+    if (server.identifier().isEmpty()) {
+        server.createUniqueIdentifier();
+    }
     server.setName(mServerNameLineEdit->text());
-    // TODO
     return server;
 }
 

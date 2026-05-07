@@ -7,12 +7,9 @@
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 class QLineEdit;
 class QStackedWidget;
-namespace TextAutoGenerateTextMcpProtocolCore
-{
-class McpServer;
-}
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class SelectTypeComboBox;
@@ -61,5 +58,6 @@ private:
     AddMcpSseServerWidget *const mAddMcpSseServerWidget;
     AddMcpStdioServerWidget *const mAddMcpStdioServerWidget;
     AddMcpSteamableHttpServerWidget *const mAddMcpSteamableHttpServerWidget;
+    TextAutoGenerateTextMcpProtocolCore::McpServer mServer;
 };
 }
