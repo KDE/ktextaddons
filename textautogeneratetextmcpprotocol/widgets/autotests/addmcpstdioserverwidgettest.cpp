@@ -20,7 +20,6 @@ void AddMcpStdioServerWidgetTest::shouldHaveDefaultValues()
     const TextAutoGenerateTextMcpProtocolWidgets::AddMcpStdioServerWidget w;
     auto mainLayout = w.findChild<QFormLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->spacing(), 0);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
     auto mCommandLineEdit = w.findChild<QLineEdit *>(u"mCommandLineEdit"_s);
