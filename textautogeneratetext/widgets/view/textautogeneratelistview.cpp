@@ -291,7 +291,6 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
     QListView::setModel(newModel);
     if (newModel) {
         connect(newModel, &QAbstractItemModel::rowsAboutToBeInserted, this, &TextAutoGenerateListView::checkIfAtBottom);
-        connect(newModel, &QAbstractItemModel::rowsAboutToBeInserted, this, &TextAutoGenerateListView::checkIfAtBottom);
         connect(newModel, &QAbstractItemModel::rowsAboutToBeRemoved, this, &TextAutoGenerateListView::checkIfAtBottom);
         connect(newModel, &QAbstractItemModel::modelAboutToBeReset, this, &TextAutoGenerateListView::checkIfAtBottom);
         // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
