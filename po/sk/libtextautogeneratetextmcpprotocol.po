@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:43+0000\n"
+"POT-Creation-Date: 2026-05-07 00:43+0000\n"
 "PO-Revision-Date: 2026-05-04 12:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -54,6 +54,16 @@ msgstr ""
 #| msgid "Url:"
 msgid "Url:"
 msgstr "Url:"
+
+#: widgets/server/addmcpstdioserverwidget.cpp:23
+#, kde-format
+msgid "Command:"
+msgstr ""
+
+#: widgets/server/addmcpstdioserverwidget.cpp:28
+#, kde-format
+msgid "Arguments:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format

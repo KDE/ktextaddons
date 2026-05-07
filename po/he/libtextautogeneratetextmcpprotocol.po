@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:43+0000\n"
-"PO-Revision-Date: 2026-05-02 07:50+0300\n"
+"POT-Creation-Date: 2026-05-07 00:43+0000\n"
+"PO-Revision-Date: 2026-05-06 21:22+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,17 +21,17 @@ msgstr ""
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
 msgid "Sse"
-msgstr ""
+msgstr "Sse"
 
 #: widgets/common/selecttypecombobox.cpp:23
 #, kde-format
 msgid "Stdio"
-msgstr ""
+msgstr "Stdio"
 
 #: widgets/common/selecttypecombobox.cpp:24
 #, kde-format
 msgid "Streamble Http"
-msgstr ""
+msgstr "Http שאפשר להזרים"
 
 #: widgets/server/addmcpserverdialog.cpp:19
 #, kde-format
@@ -49,15 +49,23 @@ msgstr "שם:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "סוג:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "כתובת:"
+
+#: widgets/server/addmcpstdioserverwidget.cpp:23
+#, kde-format
+msgid "Command:"
+msgstr ""
+
+#: widgets/server/addmcpstdioserverwidget.cpp:28
+#, kde-format
+msgid "Arguments:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format

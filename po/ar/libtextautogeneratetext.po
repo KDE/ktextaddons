@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:43+0000\n"
+"POT-Creation-Date: 2026-05-07 00:43+0000\n"
 "PO-Revision-Date: 2026-04-30 09:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2657,17 +2657,17 @@ msgstr "التفاصيل"
 msgid "Model Info"
 msgstr "معلومات النموذج"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:19
 #, kde-format
 msgid "Do not Share"
 msgstr "لا تشارك"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Full Name"
 msgstr "الاسم الكامل"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:43+0000\n"
-"PO-Revision-Date: 2026-05-04 09:07+0200\n"
+"POT-Creation-Date: 2026-05-07 00:43+0000\n"
+"PO-Revision-Date: 2026-05-06 09:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -50,15 +50,23 @@ msgstr "Nom:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "Tipus:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "URL:"
+
+#: widgets/server/addmcpstdioserverwidget.cpp:23
+#, kde-format
+msgid "Command:"
+msgstr ""
+
+#: widgets/server/addmcpstdioserverwidget.cpp:28
+#, kde-format
+msgid "Arguments:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format

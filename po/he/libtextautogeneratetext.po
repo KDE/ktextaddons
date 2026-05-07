@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:43+0000\n"
-"PO-Revision-Date: 2026-04-30 13:55+0300\n"
+"POT-Creation-Date: 2026-05-07 00:43+0000\n"
+"PO-Revision-Date: 2026-05-05 08:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -126,7 +126,7 @@ msgstr "ענן"
 #: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "חשיבה"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -308,7 +308,7 @@ msgstr "Sarvam AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:221
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "API של AtlasCloud תואם OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
@@ -2500,6 +2500,8 @@ msgid ""
 "Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
 "preservation than previous Qwen models."
 msgstr ""
+"Qwen3.6 מציע שדרוגים נרחבים בכתיבת קוד עם סוכנים ושימור חשיבה ביחס למודלים "
+"קודמים של Qwen."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
@@ -2628,17 +2630,17 @@ msgstr "פרטים"
 msgid "Model Info"
 msgstr "פרטי מודל"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:19
 #, kde-format
 msgid "Do not Share"
 msgstr "לא לשתף"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Username"
 msgstr "שם משתמש"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Full Name"
 msgstr "שם מלא"

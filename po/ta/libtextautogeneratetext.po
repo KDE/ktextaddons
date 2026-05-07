@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:43+0000\n"
+"POT-Creation-Date: 2026-05-07 00:43+0000\n"
 "PO-Revision-Date: 2026-02-28 11:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -2309,17 +2309,17 @@ msgstr "விவரங்கள்"
 msgid "Model Info"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:19
 #, kde-format
 msgid "Do not Share"
 msgstr "பகிராதே"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Username"
 msgstr "பயனர் பெயர்"
 
-#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:22
+#: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Full Name"
 msgstr "முழுப்பெயர்"
