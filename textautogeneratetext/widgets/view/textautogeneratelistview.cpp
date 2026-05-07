@@ -331,7 +331,10 @@ void TextAutoGenerateListView::slotRefreshMessage(const QByteArray &currentIdent
         mCurrentModel->regenerateHtmlMessage(previousIdentifier, -1); // Clear
     }
     mCurrentModel->regenerateHtmlMessage(currentIdentifier, index);
-    // TODO scroll to model index
+    const QModelIndex modelIndex = mCurrentModel->indexForUuid(currentIdentifier);
+    if (modelIndex.isValid()) {
+        scrollTo(modelIndex);
+    }
 }
 
 #include "moc_textautogeneratelistview.cpp"
