@@ -65,9 +65,7 @@ void McpServerWidget::slotAddServer()
     if (dlg->exec()) {
         TextAutoGenerateTextMcpProtocolCore::McpServer server;
         server.createUniqueIdentifier();
-        const auto info = dlg->serverWidgetInfo();
-        server.setServerUrl(QUrl(info.serverUrl));
-        server.setName(info.name);
+        const auto info = dlg->serverInfo();
         mModel->addMcpServer(server);
     }
     delete dlg;
@@ -82,18 +80,10 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
 {
     QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
     const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mpcServer(identifier);
-    const AddMcpServerWidget::McpServerWidgetInfo currentInfo{
-        .name = mcpServer.name(),
-        .serverUrl = mcpServer.serverUrl().toString(),
-    };
-    dlg->setServerWidgetInfo(currentInfo);
+    dlg->setServerInfo(mcpServer);
     if (dlg->exec()) {
-        TextAutoGenerateTextMcpProtocolCore::McpServer server;
-        server.createUniqueIdentifier();
-        auto info = dlg->serverWidgetInfo();
-        server.setServerUrl(QUrl(info.serverUrl));
-        server.setName(info.name);
-        mModel->addMcpServer(server);
+        auto info = dlg->serverInfo();
+        mModel->addMcpServer(info);
     }
     delete dlg;
 }

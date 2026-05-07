@@ -33,6 +33,12 @@ public:
      */
     [[nodiscard]] QString url() const;
 
+    /*!
+     * \brief isValid
+     * \return
+     */
+    [[nodiscard]] bool isValid() const;
+
 Q_SIGNALS:
     void settingChanged();
 

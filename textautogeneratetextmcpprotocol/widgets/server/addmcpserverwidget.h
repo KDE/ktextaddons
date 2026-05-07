@@ -9,6 +9,10 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 class QLineEdit;
 class QStackedWidget;
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpServer;
+}
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class SelectTypeComboBox;
@@ -20,16 +24,6 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerWidget : public 
 {
     Q_OBJECT
 public:
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpServerWidgetInfo {
-        QString name;
-        QString serverUrl;
-        QString processName;
-        QString arguments;
-        TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType protocolType =
-            TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown;
-
-        [[nodiscard]] bool isValid() const;
-    };
     /*!
      * \brief AddMcpServerWidget
      * \param parent
@@ -40,15 +34,17 @@ public:
     ~AddMcpServerWidget() override;
 
     /*!
-     * \brief setServerWidgetInfo
-     * \param info
+     * \brief setServerInfo
+     * \param server
      */
-    void setServerWidgetInfo(const McpServerWidgetInfo &info);
+    void setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpServer &server);
+
     /*!
-     * \brief serverWidgetInfo
+     * \brief serverInfo
      * \return
      */
-    [[nodiscard]] McpServerWidgetInfo serverWidgetInfo() const;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpServer serverInfo() const;
+
 Q_SIGNALS:
     /*!
      * \brief buttonOkEnabled
@@ -67,4 +63,3 @@ private:
     AddMcpSteamableHttpServerWidget *const mAddMcpSteamableHttpServerWidget;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget::McpServerWidgetInfo, Q_RELOCATABLE_TYPE);

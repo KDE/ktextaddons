@@ -37,4 +37,9 @@ QString AddMcpSteamableHttpServerWidget::url() const
     return mServerUrlLineEdit->text();
 }
 
+bool AddMcpSteamableHttpServerWidget::isValid() const
+{
+    return !mServerUrlLineEdit->text().isEmpty();
+}
+
 #include "moc_addmcpsteamablehttpserverwidget.cpp"

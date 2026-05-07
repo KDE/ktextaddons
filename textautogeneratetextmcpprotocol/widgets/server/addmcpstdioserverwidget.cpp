@@ -41,6 +41,11 @@ void AddMcpStdioServerWidget::setStdioInfo(const StdioInfo &info)
     mArgumentsLineEdit->setText(info.arguments);
 }
 
+bool AddMcpStdioServerWidget::isValid() const
+{
+    return !mCommandLineEdit->text().isEmpty();
+}
+
 AddMcpStdioServerWidget::StdioInfo AddMcpStdioServerWidget::stdioInfo() const
 {
     const AddMcpStdioServerWidget::StdioInfo info{

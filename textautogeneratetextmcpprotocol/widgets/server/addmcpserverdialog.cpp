@@ -10,6 +10,8 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
+
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
 AddMcpServerDialog::AddMcpServerDialog(QWidget *parent)
@@ -36,14 +38,14 @@ AddMcpServerDialog::AddMcpServerDialog(QWidget *parent)
 
 AddMcpServerDialog::~AddMcpServerDialog() = default;
 
-void AddMcpServerDialog::setServerWidgetInfo(const AddMcpServerWidget::McpServerWidgetInfo &info)
+void AddMcpServerDialog::setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    mAddMcpServerWidget->setServerWidgetInfo(info);
+    mAddMcpServerWidget->setServerInfo(server);
 }
 
-AddMcpServerWidget::McpServerWidgetInfo AddMcpServerDialog::serverWidgetInfo() const
+TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerDialog::serverInfo() const
 {
-    return mAddMcpServerWidget->serverWidgetInfo();
+    return mAddMcpServerWidget->serverInfo();
 }
 
 #include "moc_addmcpserverdialog.cpp"

@@ -8,6 +8,11 @@
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QDialog>
 
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpServer;
+}
+
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerDialog : public QDialog
@@ -24,15 +29,16 @@ public:
     ~AddMcpServerDialog() override;
 
     /*!
-     * \brief setServerWidgetInfo
-     * \param info
+     * \brief setServerInfo
+     * \param server
      */
-    void setServerWidgetInfo(const AddMcpServerWidget::McpServerWidgetInfo &info);
+    void setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpServer &server);
+
     /*!
-     * \brief serverWidgetInfo
+     * \brief serverInfo
      * \return
      */
-    [[nodiscard]] AddMcpServerWidget::McpServerWidgetInfo serverWidgetInfo() const;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpServer serverInfo() const;
 
 private:
     AddMcpServerWidget *const mAddMcpServerWidget;

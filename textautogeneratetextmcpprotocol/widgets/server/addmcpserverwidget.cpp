@@ -14,6 +14,7 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QStackedWidget>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
@@ -59,6 +60,20 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
 
 AddMcpServerWidget::~AddMcpServerWidget() = default;
 
+void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+    mServerNameLineEdit->setText(server.name());
+    // TODO
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() const
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    server.setName(mServerNameLineEdit->text());
+    // TODO
+    return server;
+}
+
 void AddMcpServerWidget::changeType()
 {
     switch (mSelectTypeComboBox->type()) {
@@ -80,39 +95,6 @@ void AddMcpServerWidget::changeType()
 void AddMcpServerWidget::checkValidSettings()
 {
     Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty()); // && !mServerUrlLineEdit->text().trimmed().isEmpty());
-}
-
-void AddMcpServerWidget::setServerWidgetInfo(const McpServerWidgetInfo &info)
-{
-    mServerNameLineEdit->setText(info.name);
-    // mServerUrlLineEdit->setText(info.serverUrl);
-}
-
-AddMcpServerWidget::McpServerWidgetInfo AddMcpServerWidget::serverWidgetInfo() const
-{
-    const AddMcpServerWidget::McpServerWidgetInfo info{
-        .name = mServerNameLineEdit->text(),
-        // .serverUrl = mServerUrlLineEdit->text(),
-        .protocolType = mSelectTypeComboBox->type(),
-    };
-    return info;
-}
-
-bool AddMcpServerWidget::McpServerWidgetInfo::isValid() const
-{
-    if (name.isEmpty()) {
-        return false;
-    }
-    if (protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown) {
-        return false;
-    } else if (protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse
-               || protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp) {
-        return !serverUrl.isEmpty();
-    } else if (protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse
-               || protocolType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp) {
-        return !processName.isEmpty(); // TODO check arguments ?
-    }
-    return false;
 }
 
 #include "moc_addmcpserverwidget.cpp"

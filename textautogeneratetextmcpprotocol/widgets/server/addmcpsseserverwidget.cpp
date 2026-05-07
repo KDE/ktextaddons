@@ -37,4 +37,9 @@ QString AddMcpSseServerWidget::url() const
     return mServerUrlLineEdit->text();
 }
 
+bool AddMcpSseServerWidget::isValid() const
+{
+    return !mServerUrlLineEdit->text().isEmpty();
+}
+
 #include "moc_addmcpsseserverwidget.cpp"

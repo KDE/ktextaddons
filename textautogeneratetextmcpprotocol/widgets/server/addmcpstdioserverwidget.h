@@ -27,8 +27,22 @@ public:
      */
     ~AddMcpStdioServerWidget() override;
 
+    /*!
+     * \brief setStdioInfo
+     * \param info
+     */
     void setStdioInfo(const StdioInfo &info);
+    /*!
+     * \brief stdioInfo
+     * \return
+     */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolWidgets::AddMcpStdioServerWidget::StdioInfo stdioInfo() const;
+
+    /*!
+     * \brief isValid
+     * \return
+     */
+    [[nodiscard]] bool isValid() const;
 
 Q_SIGNALS:
     void settingChanged();
