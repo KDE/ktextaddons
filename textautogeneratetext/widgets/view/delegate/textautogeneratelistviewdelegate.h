@@ -94,7 +94,7 @@ private:
 
     [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
-    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect decoRect, QRect textRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     void drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
     [[nodiscard]] int buttonIconSize(const QStyleOptionViewItem &option) const;
