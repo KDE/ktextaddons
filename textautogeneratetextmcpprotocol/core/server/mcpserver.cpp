@@ -69,6 +69,7 @@ void McpServer::load(const KConfigGroup &config)
     mServerUrl = config.readEntry("ServerUrl", QUrl());
     mCommand = config.readEntry("Command", QString());
     mArguments = config.readEntry("Arguments", QString());
+    // TODO mEnvironments
 }
 
 void McpServer::save(KConfigGroup &config) const
@@ -83,6 +84,7 @@ void McpServer::save(KConfigGroup &config) const
     } else {
         config.writeEntry(u"ServerUrl"_s, mServerUrl);
     }
+    // TODO mEnvironments
 }
 
 bool McpServer::isValid() const
