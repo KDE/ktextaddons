@@ -6,7 +6,6 @@
 #include "mcpserverwidget.h"
 #include "addmcpserverdialog.h"
 #include "mcpserverlistview.h"
-#include "mcpserverwidget.h"
 #include "models/mcpservermodel.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
