@@ -26,6 +26,7 @@ public:
     [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index) override;
     [[nodiscard]] bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index) override;
     [[nodiscard]] bool helpEvent(QHelpEvent *event, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
+    [[nodiscard]] QString urlAt(const QModelIndex &index, QPoint pos) const override;
 
     [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const override;
 

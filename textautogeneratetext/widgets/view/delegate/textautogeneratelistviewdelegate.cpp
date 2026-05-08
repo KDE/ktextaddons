@@ -285,6 +285,20 @@ int TextAutoGenerateListViewDelegate::buttonIconSize(const QStyleOptionViewItem 
     return option.widget->style()->pixelMetric(QStyle::PM_ButtonIconSize);
 }
 
+QString TextAutoGenerateListViewDelegate::urlAt(const QModelIndex &index, QPoint pos) const
+{
+    QStyleOptionViewItem option;
+    // TODO crash option.initFrom(mListView);
+    option.rect = mListView->visualRect(index);
+    const MessageLayout layout = doLayout(option, index);
+    const QPoint relativePos = pos - layout.textRect.topLeft();
+    auto document = documentForIndex(index, layout.textRect.width());
+    if (!document) {
+        return {};
+    }
+    return document->documentLayout()->anchorAt(relativePos);
+}
+
 TextAutoGenerateListViewDelegate::MessageLayout TextAutoGenerateListViewDelegate::doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const int iconSize = buttonIconSize(option);
