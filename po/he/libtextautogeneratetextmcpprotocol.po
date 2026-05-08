@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:43+0000\n"
-"PO-Revision-Date: 2026-05-06 21:22+0300\n"
+"POT-Creation-Date: 2026-05-08 00:42+0000\n"
+"PO-Revision-Date: 2026-05-07 08:30+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -33,19 +33,19 @@ msgstr "Stdio"
 msgid "Streamble Http"
 msgstr "Http שאפשר להזרים"
 
-#: widgets/server/addmcpserverdialog.cpp:19
+#: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
 msgstr "הוספת שרת"
 
-#: widgets/server/addmcpserverwidget.cpp:34
+#: widgets/server/addmcpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "שם:"
 
-#: widgets/server/addmcpserverwidget.cpp:38
+#: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
@@ -60,12 +60,12 @@ msgstr "כתובת:"
 #: widgets/server/addmcpstdioserverwidget.cpp:23
 #, kde-format
 msgid "Command:"
-msgstr ""
+msgstr "פקודה:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:28
 #, kde-format
 msgid "Arguments:"
-msgstr ""
+msgstr "ארגומנטים:"
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format
@@ -96,13 +96,13 @@ msgctxt "@title"
 msgid "Remove Server"
 msgstr "הסרת שרת"
 
-#: widgets/server/mcpserverwidget.cpp:40
+#: widgets/server/mcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "חיפוש…"
 
-#: widgets/server/mcpserverwidget.cpp:47
+#: widgets/server/mcpserverwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"

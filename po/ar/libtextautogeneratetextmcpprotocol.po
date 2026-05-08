@@ -1,108 +1,109 @@
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-08 00:42+0000\n"
-"PO-Revision-Date: 2026-05-07 14:07+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2026-05-07 12:27+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
 msgid "Sse"
-msgstr "SSE"
+msgstr "Sse"
 
 #: widgets/common/selecttypecombobox.cpp:23
 #, kde-format
 msgid "Stdio"
-msgstr "Standard IO"
+msgstr "Stdio"
 
 #: widgets/common/selecttypecombobox.cpp:24
 #, kde-format
 msgid "Streamble Http"
-msgstr "Aktarılabilir HTTP"
+msgstr "Streamble Http"
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr "Sunucu Ekle"
+msgstr "أضف خادمًا"
 
 #: widgets/server/addmcpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Ad:"
+msgstr "الاسم:"
 
 #: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr "Tür:"
+msgstr "النوع:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
 #, kde-format
 msgid "Url:"
-msgstr "URL:"
+msgstr "العنوان:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:23
 #, kde-format
 msgid "Command:"
-msgstr "Komut:"
+msgstr ""
 
 #: widgets/server/addmcpstdioserverwidget.cpp:28
 #, kde-format
 msgid "Arguments:"
-msgstr "Argümanlar:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr "Sunucu Ekle…"
+msgstr "أضف خادمًا…"
 
 #: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Düzenle…"
+msgstr "حرّر…"
 
 #: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr "Sunucuyu Kaldır"
+msgstr "أزل الخادم"
 
 #: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr "Bu sunucuyu (%1) kaldırmak istiyor musunuz?"
+msgstr "أتريد إزالة هذا الخادم (%1)؟"
 
 #: widgets/server/mcpserverlistview.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr "Uzak Sunucu"
+msgstr "أزل الخادم"
 
 #: widgets/server/mcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Ara…"
+msgstr "ابحث…"
 
 #: widgets/server/mcpserverwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Örnek ekle…"
+msgstr "أضف نسخة…"

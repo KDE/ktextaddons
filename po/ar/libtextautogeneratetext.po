@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-07 00:43+0000\n"
-"PO-Revision-Date: 2026-04-30 09:07+0400\n"
+"PO-Revision-Date: 2026-05-07 12:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -126,7 +126,7 @@ msgstr "سحابة"
 #: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "تفكير"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -302,13 +302,13 @@ msgstr "OpenRouter AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:221
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "AtlasCloud OpenAI-compatible API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
 #, kde-format
@@ -356,11 +356,9 @@ msgid "DeepInfra cloud inference API"
 msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لDeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "أضف نسخة…"
+msgstr "نسخة Sarvam AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2526,6 +2524,8 @@ msgid ""
 "Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
 "preservation than previous Qwen models."
 msgstr ""
+"يقدم Qwen 3.6 تحسينات جوهرية في مجال الترميز التفاعلي والحفاظ على التفكير "
+"مقارنة بنماذج Qwen السابقة."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394

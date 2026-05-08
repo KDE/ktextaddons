@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:43+0000\n"
-"PO-Revision-Date: 2026-05-06 10:50+0300\n"
+"POT-Creation-Date: 2026-05-08 00:42+0000\n"
+"PO-Revision-Date: 2026-05-07 10:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -33,19 +33,19 @@ msgstr "Stdio"
 msgid "Streamble Http"
 msgstr "Потоковий HTTP"
 
-#: widgets/server/addmcpserverdialog.cpp:19
+#: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
 msgstr "Додати сервер"
 
-#: widgets/server/addmcpserverwidget.cpp:34
+#: widgets/server/addmcpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Назва:"
 
-#: widgets/server/addmcpserverwidget.cpp:38
+#: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
@@ -60,12 +60,12 @@ msgstr "Адреса:"
 #: widgets/server/addmcpstdioserverwidget.cpp:23
 #, kde-format
 msgid "Command:"
-msgstr ""
+msgstr "Команда:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:28
 #, kde-format
 msgid "Arguments:"
-msgstr ""
+msgstr "Аргументи:"
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format
@@ -96,13 +96,13 @@ msgctxt "@title"
 msgid "Remove Server"
 msgstr "Вилучення сервера"
 
-#: widgets/server/mcpserverwidget.cpp:40
+#: widgets/server/mcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Шукати…"
 
-#: widgets/server/mcpserverwidget.cpp:47
+#: widgets/server/mcpserverwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
