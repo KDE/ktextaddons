@@ -40,6 +40,8 @@ target_sources(
         server/addmcpsseserverwidget.h
         server/addmcpsteamablehttpserverwidget.cpp
         server/addmcpsteamablehttpserverwidget.h
+        server/addmcpserverbasewidget.h
+        server/addmcpserverbasewidget.cpp
         common/selecttypecombobox.h
         common/selecttypecombobox.cpp
 )
