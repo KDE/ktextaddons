@@ -428,7 +428,7 @@ bool TextAutoGenerateListViewDelegate::mouseEvent(QEvent *event, const QStyleOpt
     if (eventType == QEvent::MouseButtonRelease) {
         auto mev = static_cast<QMouseEvent *>(event);
         const TextAutoGenerateListViewDelegate::MessageLayout layout = doLayout(option, index);
-        if (handleMouseEvent(mev, layout.decoRect, layout.textRect, option, index)) {
+        if (handleMouseEvent(mev, layout.decoRect.united(layout.dateAreaRect), layout.textRect, option, index)) {
             return true;
         }
         const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
