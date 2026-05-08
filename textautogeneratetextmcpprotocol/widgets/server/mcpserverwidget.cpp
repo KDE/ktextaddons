@@ -80,7 +80,7 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
     const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mpcServer(identifier);
     dlg->setServerInfo(mcpServer);
     if (dlg->exec()) {
-        auto info = dlg->serverInfo();
+        const auto info = dlg->serverInfo();
         mModel->addMcpServer(info);
     }
     delete dlg;
