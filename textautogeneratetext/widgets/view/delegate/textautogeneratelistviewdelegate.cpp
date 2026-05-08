@@ -288,7 +288,8 @@ int TextAutoGenerateListViewDelegate::buttonIconSize(const QStyleOptionViewItem 
 QString TextAutoGenerateListViewDelegate::urlAt(const QModelIndex &index, QPoint pos) const
 {
     QStyleOptionViewItem option;
-    // TODO crash option.initFrom(mListView);
+    option.initFrom(mListView);
+    option.widget = mListView;
     option.rect = mListView->visualRect(index);
     const MessageLayout layout = doLayout(option, index);
     const QPoint relativePos = pos - layout.textRect.topLeft();
