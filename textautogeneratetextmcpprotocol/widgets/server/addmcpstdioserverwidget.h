@@ -42,7 +42,7 @@ public:
      * \brief isValid
      * \return
      */
-    [[nodiscard]] bool isValid() const;
+    [[nodiscard]] bool isValid() const override;
 
 private:
     QLineEdit *const mCommandLineEdit;

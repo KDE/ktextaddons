@@ -16,6 +16,8 @@ public:
     explicit AddMcpServerBaseWidget(QWidget *parent = nullptr);
     ~AddMcpServerBaseWidget() override;
 
+    [[nodiscard]] virtual bool isValid() const = 0;
+
 Q_SIGNALS:
     void settingChanged();
 };
