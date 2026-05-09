@@ -183,8 +183,8 @@ target_sources(
         core/localdatabase/textautogeneratelocalmessagesdatabase.h
         core/localdatabase/textautogeneratelocaldatabasemanager.h
         core/localdatabase/textautogeneratelocaldatabasemanager.cpp
-        core/localdatabase/textautogeneratelocalroompendingtypedinfodatabase.cpp
-        core/localdatabase/textautogeneratelocalroompendingtypedinfodatabase.h
+        core/localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.cpp
+        core/localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.h
         core/textautogeneratesearchmessageutils.h
         core/textautogeneratesearchmessageutils.cpp
         core/textautogeneratereply.h
@@ -544,7 +544,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS
     HEADER_NAMES
-    TextAutoGenerateLocalRoomPendingTypedInfoDatabase
+    TextAutoGenerateLocalChatPendingTypedInfoDatabase
     TextAutoGenerateLocalChatsDatabase
     TextAutoGenerateLocalMessagesDatabase
     TextAutoGenerateLocalDatabaseManager

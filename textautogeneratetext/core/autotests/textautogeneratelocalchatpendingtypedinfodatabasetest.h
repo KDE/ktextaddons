@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest : public QObject
+class TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest(QObject *parent = nullptr);
-    ~TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest() override = default;
+    explicit TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest(QObject *parent = nullptr);
+    ~TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest() override = default;
 private Q_SLOTS:
     void initTestCase();
     void shouldDefaultValues();

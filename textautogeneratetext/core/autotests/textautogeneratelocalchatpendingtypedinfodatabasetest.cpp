@@ -3,51 +3,51 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#include "textautogeneratelocalroompendingtypedinfodatabasetest.h"
-#include "core/localdatabase/textautogeneratelocalroompendingtypedinfodatabase.h"
+#include "textautogeneratelocalchatpendingtypedinfodatabasetest.h"
+#include "core/localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.h"
 #include <QJsonObject>
 #include <QSqlRecord>
 #include <QSqlTableModel>
 #include <QStandardPaths>
 #include <QTest>
-QTEST_GUILESS_MAIN(TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest)
+QTEST_GUILESS_MAIN(TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest)
 using namespace Qt::Literals::StringLiterals;
 enum class RoomPendingTypedFields {
     RoomId,
     Json,
 }; // in the same order as the table
 
-TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest(QObject *parent)
+TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::initTestCase()
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::initTestCase()
 {
     QStandardPaths::setTestModeEnabled(true);
 
     // Clean up after previous runs
-    TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
+    TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
     QFile::remove(roomPendingTypedInfoDataBase.dbFileName({}));
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDefaultValues()
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
+    TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
     QCOMPARE(roomPendingTypedInfoDataBase.schemaDatabaseStr(), u"CREATE TABLE ROOMPENDINGTYPED (roomId TEXT PRIMARY KEY NOT NULL, json TEXT)"_s);
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldVerifyDbFileName()
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldVerifyDbFileName()
 {
-    TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
+    TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
     QCOMPARE(roomPendingTypedInfoDataBase.dbFileName({}),
              QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/roompendingtypedinfo/pendingtypedinfo.sqlite"_s);
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldStoreRoomPendingTypedInfo()
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldStoreRoomPendingTypedInfo()
 {
     // GIVEN
-    TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase logger;
+    TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase logger;
 
     QByteArray roomId = "foo1"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info1;
@@ -85,10 +85,10 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldStoreRoomPendi
     QCOMPARE(record1.value(int(RoomPendingTypedFields::RoomId)).toByteArray(), roomId2);
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDeleteRoomPendingTypedInfo() // this test depends on shouldStoreRoomPendingTypedInfo()
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDeleteRoomPendingTypedInfo() // this test depends on shouldStoreRoomPendingTypedInfo()
 {
     // GIVEN
-    TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase logger;
+    TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase logger;
     const QByteArray roomId = "foo2"_ba;
 
     // WHEN
@@ -100,11 +100,11 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     QCOMPARE(tableModel->rowCount(), 2);
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDeleteRoomPendingTypedInfoInvalidRoomId() // this test depends on
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDeleteRoomPendingTypedInfoInvalidRoomId() // this test depends on
                                                                                                             // shouldStoreRoomPendingTypedInfo()
 {
     // GIVEN
-    TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase logger;
+    TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase logger;
     const QByteArray roomId = "foo2"_ba;
 
     // WHEN
@@ -116,12 +116,12 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     QCOMPARE(tableModel->rowCount(), 2);
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldExtractJsonFromDatabase()
+void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldExtractJsonFromDatabase()
 {
     {
-        TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase logger;
+        TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase logger;
         QCOMPARE(logger.loadRoomPendingTypedInfo().count(), 2);
     }
 }
 
-#include "moc_textautogeneratelocalroompendingtypedinfodatabasetest.cpp"
+#include "moc_textautogeneratelocalchatpendingtypedinfodatabasetest.cpp"

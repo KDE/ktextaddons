@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "textautogeneratelocalroompendingtypedinfodatabase.h"
+#include "textautogeneratelocalchatpendingtypedinfodatabase.h"
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
 #include <QFileInfo>
@@ -21,20 +21,20 @@ enum class RoomPendingTypedFields {
     Json,
 }; // in the same order as the table
 using namespace TextAutoGenerateText;
-TextAutoGenerateLocalRoomPendingTypedInfoDatabase::TextAutoGenerateLocalRoomPendingTypedInfoDatabase()
+TextAutoGenerateLocalChatPendingTypedInfoDatabase::TextAutoGenerateLocalChatPendingTypedInfoDatabase()
     : TextAutoGenerateLocalDatabaseAbstract(TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath(),
                                             TextAutoGenerateLocalDatabaseAbstract::DatabaseType::PendingTypedInfo)
 {
 }
 
-TextAutoGenerateLocalRoomPendingTypedInfoDatabase::~TextAutoGenerateLocalRoomPendingTypedInfoDatabase() = default;
+TextAutoGenerateLocalChatPendingTypedInfoDatabase::~TextAutoGenerateLocalChatPendingTypedInfoDatabase() = default;
 
-QString TextAutoGenerateLocalRoomPendingTypedInfoDatabase::schemaDataBase() const
+QString TextAutoGenerateLocalChatPendingTypedInfoDatabase::schemaDataBase() const
 {
     return QString::fromLatin1(s_schemaRoomPendingTypedDataBase);
 }
 
-std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalRoomPendingTypedInfoDatabase::createRoomsModel() const
+std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatPendingTypedInfoDatabase::createRoomsModel() const
 {
     const QString dbName = generateDbName({});
     QSqlDatabase db = QSqlDatabase::database(dbName);
@@ -62,7 +62,7 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalRoomPendingTypedInfoDatabas
     return model;
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::updateRoomPendingTypedInfo(const QByteArray &roomId,
+void TextAutoGenerateLocalChatPendingTypedInfoDatabase::updateRoomPendingTypedInfo(const QByteArray &roomId,
                                                                                    const TextAutoGenerateChatSettings::PendingTypedInfo &room)
 {
     QSqlDatabase db;
@@ -77,7 +77,7 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::updateRoomPendingTypedIn
     }
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::deleteRoomPendingTypedInfo(const QByteArray &roomId)
+void TextAutoGenerateLocalChatPendingTypedInfoDatabase::deleteRoomPendingTypedInfo(const QByteArray &roomId)
 {
     QSqlDatabase db;
     if (!checkDataBase({}, db)) {
@@ -90,7 +90,7 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::deleteRoomPendingTypedIn
     }
 }
 
-QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalRoomPendingTypedInfoDatabase::loadRoomPendingTypedInfo()
+QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalChatPendingTypedInfoDatabase::loadRoomPendingTypedInfo()
 {
     QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> info;
     QSqlDatabase db;
@@ -121,7 +121,7 @@ QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> Text
     return info;
 }
 
-TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateLocalRoomPendingTypedInfoDatabase::convertJsonToRoomPendingTypedInfo(const QString &json)
+TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateLocalChatPendingTypedInfoDatabase::convertJsonToRoomPendingTypedInfo(const QString &json)
 {
     const QJsonDocument doc = QJsonDocument::fromJson(json.toUtf8());
     const TextAutoGenerateChatSettings::PendingTypedInfo msg = TextAutoGenerateChatSettings::PendingTypedInfo::deserialize(doc.object());

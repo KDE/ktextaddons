@@ -11,11 +11,11 @@
 class QSqlTableModel;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalRoomPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalChatPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
 {
 public:
-    TextAutoGenerateLocalRoomPendingTypedInfoDatabase();
-    ~TextAutoGenerateLocalRoomPendingTypedInfoDatabase() override;
+    TextAutoGenerateLocalChatPendingTypedInfoDatabase();
+    ~TextAutoGenerateLocalChatPendingTypedInfoDatabase() override;
 
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createRoomsModel() const;
 
