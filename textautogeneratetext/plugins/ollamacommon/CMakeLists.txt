@@ -42,8 +42,6 @@ target_sources(
         ollamacommonmodelavailableinfosdelegate.cpp
         ollamacommonmodelavailablelistview.h
         ollamacommonmodelavailablelistview.cpp
-        ollamacommonmodelinfosdelegateutils.cpp
-        ollamacommonmodelinfosdelegateutils.h
         ollamacommonoverrideparameterswidget.h
         ollamacommonoverrideparameterswidget.cpp
         ollamacommonsettings.cpp
@@ -74,7 +72,12 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(textautogenerateollamacommon BASE_NAME textautogenerateollamacommon)
 
-target_link_libraries(textautogenerateollamacommon PUBLIC KF6::TextAutoGenerateText)
+target_link_libraries(
+    textautogenerateollamacommon
+    PUBLIC
+        KF6::TextAutoGenerateText
+        textautogenerateplugincommon
+)
 
 set_target_properties(
     textautogenerateollamacommon
