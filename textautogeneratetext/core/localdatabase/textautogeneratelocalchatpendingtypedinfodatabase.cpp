@@ -67,7 +67,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabase::updateRoomPendingTypedIn
 {
     QSqlDatabase db;
     if (initializeDataBase({}, db)) {
-        QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::insertReplaceRoomPendingTypedInfo(), db);
+        QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::insertReplaceChatPendingTypedInfo(), db);
         query.addBindValue(QString::fromLatin1(roomId));
         query.addBindValue(QJsonDocument(TextAutoGenerateChatSettings::PendingTypedInfo::serialize(room)).toJson(QJsonDocument::Compact));
         if (!query.exec()) {
@@ -83,7 +83,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabase::deleteRoomPendingTypedIn
     if (!checkDataBase({}, db)) {
         return;
     }
-    QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteRoomPendingTypedInfo(), db);
+    QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteChatPendingTypedInfo(), db);
     query.addBindValue(QString::fromLatin1(roomId));
     if (!query.exec()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in ROOMPENDINGTYPED table" << db.databaseName() << query.lastError();

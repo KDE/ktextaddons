@@ -13,7 +13,7 @@ namespace TextAutoGenerateLocalDatabaseUtils
 enum class DatabasePath : uint8_t {
     Chats,
     Messages,
-    RoomPendingTypedInfo,
+    ChatPendingTypedInfo,
 };
 
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localDatabasePath();
@@ -28,7 +28,7 @@ enum class DatabasePath : uint8_t {
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceMessage();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteMessage();
 
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceRoomPendingTypedInfo();
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteRoomPendingTypedInfo();
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceChatPendingTypedInfo();
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteChatPendingTypedInfo();
 }
 }
