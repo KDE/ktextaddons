@@ -13,3 +13,5 @@ AddMcpServerBaseWidget::AddMcpServerBaseWidget(QWidget *parent)
 }
 
 AddMcpServerBaseWidget::~AddMcpServerBaseWidget() = default;
+
+#include "moc_addmcpserverbasewidget.cpp"
