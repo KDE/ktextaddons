@@ -4,31 +4,22 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "plugins/plugincommon/plugincommonmodelinstalledinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 class QDebug;
 class QJsonObject;
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledInfo
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledInfo : public PluginCommonModelInstalledInfo
 {
 public:
     OllamaModelInstalledInfo();
     ~OllamaModelInstalledInfo();
-    [[nodiscard]] QString name() const;
-    void setName(const QString &newName);
-
-    [[nodiscard]] QString model() const;
-    void setModel(const QString &newModel);
-
-    [[nodiscard]] QString quantizationLevel() const;
-    void setQuantizationLevel(const QString &newQuantizationLevel);
 
     [[nodiscard]] QString family() const;
     void setFamily(const QString &newFamily);
 
-    void parseInfo(const QJsonObject &obj);
-    [[nodiscard]] QString parameterSize() const;
-    void setParameterSize(const QString &newParameterSize);
+    void parseInfo(const QJsonObject &obj) override;
 
     [[nodiscard]] QString modifyAt() const;
     void setModifyAt(const QString &newModifyAt);
@@ -44,9 +35,6 @@ public:
     [[nodiscard]] QString parentModel() const;
     void setParentModel(const QString &newParentModel);
 
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
-    void setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories);
-
     [[nodiscard]] QStringList languages() const;
     void setLanguages(const QStringList &newLanguages);
 
@@ -54,17 +42,12 @@ public:
     void setModelUrl(const QString &newModelUrl);
 
 private:
-    QString mName;
-    QString mModel;
-    QString mQuantizationLevel;
     QString mFamily;
-    QString mParameterSize;
     QString mModifyAt;
     QString mGeneratedModelName;
     QString mParentModel;
     QString mModelUrl;
     QStringList mLanguages;
-    TextAutoGenerateText::TextAutoGenerateManager::Categories mCategories = TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown;
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t);

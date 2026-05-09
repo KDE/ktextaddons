@@ -53,16 +53,6 @@ void OllamaModelInstalledInfo::setParentModel(const QString &newParentModel)
     mParentModel = newParentModel;
 }
 
-TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaModelInstalledInfo::categories() const
-{
-    return mCategories;
-}
-
-void OllamaModelInstalledInfo::setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories)
-{
-    mCategories = newCategories;
-}
-
 QStringList OllamaModelInstalledInfo::languages() const
 {
     return mLanguages;
@@ -83,16 +73,6 @@ void OllamaModelInstalledInfo::setModelUrl(const QString &newModelUrl)
     mModelUrl = newModelUrl;
 }
 
-QString OllamaModelInstalledInfo::parameterSize() const
-{
-    return mParameterSize;
-}
-
-void OllamaModelInstalledInfo::setParameterSize(const QString &newParameterSize)
-{
-    mParameterSize = newParameterSize;
-}
-
 QString OllamaModelInstalledInfo::modifyAt() const
 {
     return mModifyAt;
@@ -101,36 +81,6 @@ QString OllamaModelInstalledInfo::modifyAt() const
 void OllamaModelInstalledInfo::setModifyAt(const QString &newModifyAt)
 {
     mModifyAt = newModifyAt;
-}
-
-QString OllamaModelInstalledInfo::name() const
-{
-    return mName;
-}
-
-void OllamaModelInstalledInfo::setName(const QString &newName)
-{
-    mName = newName;
-}
-
-QString OllamaModelInstalledInfo::model() const
-{
-    return mModel;
-}
-
-void OllamaModelInstalledInfo::setModel(const QString &newModel)
-{
-    mModel = newModel;
-}
-
-QString OllamaModelInstalledInfo::quantizationLevel() const
-{
-    return mQuantizationLevel;
-}
-
-void OllamaModelInstalledInfo::setQuantizationLevel(const QString &newQuantizationLevel)
-{
-    mQuantizationLevel = newQuantizationLevel;
 }
 
 QString OllamaModelInstalledInfo::family() const

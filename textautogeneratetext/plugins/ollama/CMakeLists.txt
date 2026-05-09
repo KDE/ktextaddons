@@ -75,8 +75,6 @@ target_sources(
         modelsmanager/ollamamodelcreatefromexistingmodelwidget.h
         modelsmanager/ollamamodelcreatecombobox.h
         modelsmanager/ollamamodelcreatecombobox.cpp
-        modelsmanager/ollamamodelinstalledinfossortproxymodel.h
-        modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
 )
 
 # precompiled headers support
@@ -106,6 +104,7 @@ target_link_libraries(
     PUBLIC
         KF6::TextAutoGenerateText
         textautogenerateollamacommon
+        textautogenerateplugincommon
     PRIVATE
         KF6::I18n
         KF6::ConfigGui

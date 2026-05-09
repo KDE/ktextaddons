@@ -8,10 +8,10 @@
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "ollamamanager.h"
 #include "ollamamodelinstalledinfosmodel.h"
-#include "ollamamodelinstalledinfossortproxymodel.h"
 #include "ollamamodelinstalledinfowidget.h"
 #include "ollamamodelinstalledlistview.h"
 
+#include "plugincommonmodelinstalledinfossortproxymodel.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -28,7 +28,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     , mRemoveModelButton(new QToolButton(this))
     , mOllamaModelInstalledInfoWidget(new OllamaModelInstalledInfoWidget(this))
     , mManager(manager)
-    , mProxyModel(new OllamaModelInstalledInfosSortProxyModel(this))
+    , mProxyModel(new PluginCommonModelInstalledInfosSortProxyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);

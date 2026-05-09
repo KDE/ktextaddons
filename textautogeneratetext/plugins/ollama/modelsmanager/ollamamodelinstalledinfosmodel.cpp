@@ -6,7 +6,7 @@
 #include "ollamamodelinstalledinfosmodel.h"
 
 OllamaModelInstalledInfosModel::OllamaModelInstalledInfosModel(QObject *parent)
-    : QAbstractListModel{parent}
+    : PluginCommonModelInstalledInfosModel{parent}
 {
 }
 

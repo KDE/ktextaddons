@@ -11,7 +11,7 @@ class OllamaModelInstalledInfoWidget;
 class OllamaManager;
 class QToolButton;
 class OllamaCommonModelsInfosCategoriesComboBox;
-class OllamaModelInstalledInfosSortProxyModel;
+class PluginCommonModelInstalledInfosSortProxyModel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;
@@ -32,5 +32,5 @@ private:
     QToolButton *const mRemoveModelButton;
     OllamaModelInstalledInfoWidget *const mOllamaModelInstalledInfoWidget;
     OllamaManager *const mManager;
-    OllamaModelInstalledInfosSortProxyModel *const mProxyModel;
+    PluginCommonModelInstalledInfosSortProxyModel *const mProxyModel;
 };

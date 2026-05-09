@@ -7,23 +7,17 @@
 #pragma once
 
 #include "ollamamodelinstalledinfo.h"
+#include "plugincommonmodelinstalledinfosmodel.h"
 
 #include <QAbstractListModel>
 
-class OllamaModelInstalledInfosModel : public QAbstractListModel
+class OllamaModelInstalledInfosModel : public PluginCommonModelInstalledInfosModel
 {
     Q_OBJECT
 public:
     enum ModelInfoRoles {
-        ModelGeneratedName = Qt::UserRole + 1,
-        OriginalName,
-        Name,
-        Description,
+        ModelGeneratedName = PluginCommonModelInstalledInfosModel::ModelInfoRoles::Categories + 1,
         Family,
-        QuantizationLevel,
-        ParameterSize,
-        DescriptionInfo,
-        Categories,
         Languages,
     };
     Q_ENUM(ModelInfoRoles)
