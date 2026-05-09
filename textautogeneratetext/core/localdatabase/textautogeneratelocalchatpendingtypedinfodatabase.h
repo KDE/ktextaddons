@@ -28,6 +28,6 @@ protected:
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:
-    [[nodiscard]] TextAutoGenerateChatSettings::PendingTypedInfo convertJsonToChatPendingTypedInfo(const QString &json);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatSettings::PendingTypedInfo convertJsonToChatPendingTypedInfo(const QString &json);
 };
 }
