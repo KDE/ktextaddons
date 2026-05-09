@@ -11,7 +11,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
-    : QWidget{parent}
+    : AddMcpServerBaseWidget{parent}
     , mCommandLineEdit(new QLineEdit(this))
     , mArgumentsLineEdit(new QLineEdit(this))
 {

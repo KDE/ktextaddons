@@ -15,5 +15,8 @@ class AddMcpServerBaseWidget : public QWidget
 public:
     explicit AddMcpServerBaseWidget(QWidget *parent = nullptr);
     ~AddMcpServerBaseWidget() override;
+
+Q_SIGNALS:
+    void settingChanged();
 };
 }

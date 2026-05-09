@@ -11,7 +11,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent)
-    : QWidget{parent}
+    : AddMcpServerBaseWidget{parent}
     , mServerUrlLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
