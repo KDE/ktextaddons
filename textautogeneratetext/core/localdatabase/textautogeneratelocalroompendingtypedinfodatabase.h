@@ -12,7 +12,7 @@
 class QSqlTableModel;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalRoomPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalRoomPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalRoomPendingTypedInfoDatabase();

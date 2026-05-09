@@ -13,7 +13,7 @@
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalMessagesDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalMessagesDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalMessagesDatabase();

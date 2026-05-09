@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "core/textautogeneratechatsettings.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateLocalChatsDatabase;
 class TextAutoGenerateLocalMessagesDatabase;
 class TextAutoGenerateLocalRoomPendingTypedInfoDatabase;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalDatabaseManager final
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalDatabaseManager final
 {
 public:
     TextAutoGenerateLocalDatabaseManager();

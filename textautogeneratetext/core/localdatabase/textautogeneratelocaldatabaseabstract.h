@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QSqlDatabase>
 #include <QString>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     enum class DatabaseType {
