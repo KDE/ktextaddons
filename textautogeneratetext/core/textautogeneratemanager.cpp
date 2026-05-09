@@ -99,7 +99,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             this,
             &TextAutoGenerateManager::slotAboutToSynthesizeChanged);
 #endif
-    mTextAutoGenerateChatSettings->loadRoomPendingTypedInfo();
+    mTextAutoGenerateChatSettings->loadChatPendingTypedInfo();
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()

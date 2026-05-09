@@ -52,21 +52,21 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldStoreRoomPendi
     QByteArray roomId = "foo1"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info1;
     info1.text = u"foo"_s;
-    logger.updateRoomPendingTypedInfo(roomId, info1);
+    logger.updateChatPendingTypedInfo(roomId, info1);
 
     // Update PendingTypedInfo
     info1.scrollbarPosition = 5;
-    logger.updateRoomPendingTypedInfo(roomId, info1);
+    logger.updateChatPendingTypedInfo(roomId, info1);
 
     QByteArray roomId2 = "foo2"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info2;
     info2.scrollbarPosition = 5;
-    logger.updateRoomPendingTypedInfo(roomId2, info2);
+    logger.updateChatPendingTypedInfo(roomId2, info2);
 
     QByteArray roomId3 = "foo3"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info3;
     info3.scrollbarPosition = 5;
-    logger.updateRoomPendingTypedInfo(roomId3, info2);
+    logger.updateChatPendingTypedInfo(roomId3, info2);
 
     // WHEN
     auto tableModel = logger.createRoomsModel();
@@ -92,7 +92,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     const QByteArray roomId = "foo2"_ba;
 
     // WHEN
-    logger.deleteRoomPendingTypedInfo(roomId);
+    logger.deleteChatPendingTypedInfo(roomId);
 
     // THEN
     auto tableModel = logger.createRoomsModel();
@@ -108,7 +108,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     const QByteArray roomId = "foo2"_ba;
 
     // WHEN
-    logger.deleteRoomPendingTypedInfo(roomId);
+    logger.deleteChatPendingTypedInfo(roomId);
 
     // THEN
     auto tableModel = logger.createRoomsModel();
@@ -120,7 +120,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldExtractJsonFro
 {
     {
         TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase logger;
-        QCOMPARE(logger.loadRoomPendingTypedInfo().count(), 2);
+        QCOMPARE(logger.loadChatPendingTypedInfo().count(), 2);
     }
 }
 

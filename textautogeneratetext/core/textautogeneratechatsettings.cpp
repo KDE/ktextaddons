@@ -22,7 +22,7 @@ void TextAutoGenerateChatSettings::remove(const QByteArray &chatId)
 {
     if (mPendingTypedTexts.remove(chatId) > 0) {
         if (mManager) {
-            mManager->databaseManager()->deleteRoomPendingTypedInfo(chatId);
+            mManager->databaseManager()->deleteChatPendingTypedInfo(chatId);
         }
     }
 }
@@ -31,7 +31,7 @@ void TextAutoGenerateChatSettings::add(const QByteArray &chatId, const PendingTy
 {
     mPendingTypedTexts[chatId] = info;
     if (mManager) {
-        mManager->databaseManager()->updateRoomPendingTypedInfo(chatId, info);
+        mManager->databaseManager()->updateChatPendingTypedInfo(chatId, info);
     }
 }
 
@@ -45,7 +45,7 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::val
     const auto pending = mPendingTypedTexts.take(chatId);
     if (pending.isValid()) {
         if (mManager) {
-            mManager->databaseManager()->deleteRoomPendingTypedInfo(chatId);
+            mManager->databaseManager()->deleteChatPendingTypedInfo(chatId);
         }
     }
     return pending;
@@ -118,9 +118,9 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::Pen
     return pendingTypedInfo;
 }
 
-void TextAutoGenerateChatSettings::loadRoomPendingTypedInfo()
+void TextAutoGenerateChatSettings::loadChatPendingTypedInfo()
 {
-    setPendingTypedTexts(mManager->databaseManager()->loadRoomPendingTypedInfo());
+    setPendingTypedTexts(mManager->databaseManager()->loadChatPendingTypedInfo());
 }
 
 void TextAutoGenerateChatSettings::setPendingTypedTexts(const QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> &newPendingTypedTexts)

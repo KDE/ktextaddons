@@ -19,15 +19,15 @@ public:
 
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createRoomsModel() const;
 
-    void updateRoomPendingTypedInfo(const QByteArray &roomId, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
-    void deleteRoomPendingTypedInfo(const QByteArray &roomId);
+    void updateChatPendingTypedInfo(const QByteArray &roomId, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
+    void deleteChatPendingTypedInfo(const QByteArray &roomId);
 
-    [[nodiscard]] QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> loadRoomPendingTypedInfo();
+    [[nodiscard]] QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> loadChatPendingTypedInfo();
 
 protected:
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:
-    [[nodiscard]] TextAutoGenerateChatSettings::PendingTypedInfo convertJsonToRoomPendingTypedInfo(const QString &json);
+    [[nodiscard]] TextAutoGenerateChatSettings::PendingTypedInfo convertJsonToChatPendingTypedInfo(const QString &json);
 };
 }

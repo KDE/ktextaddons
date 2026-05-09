@@ -41,7 +41,7 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
     return {};
 }
 
-QString TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath()
+QString TextAutoGenerateLocalDatabaseUtils::localChatPendingTypedInfoDatabasePath()
 {
     return TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
         + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::ChatPendingTypedInfo);

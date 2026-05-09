@@ -15,7 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateLocalDatabaseManager::TextAutoGenerateLocalDatabaseManager()
     : mMessagesDatabase(std::make_unique<TextAutoGenerateLocalMessagesDatabase>())
     , mChatsDatabase(std::make_unique<TextAutoGenerateLocalChatsDatabase>())
-    , mRoomPendingTypedInfoDatabase(std::make_unique<TextAutoGenerateLocalChatPendingTypedInfoDatabase>())
+    , mChatPendingTypedInfoDatabase(std::make_unique<TextAutoGenerateLocalChatPendingTypedInfoDatabase>())
 {
 }
 
@@ -73,18 +73,18 @@ void TextAutoGenerateLocalDatabaseManager::insertOrUpdateChat(const TextAutoGene
     mChatsDatabase->insertOrUpdateChat(chat);
 }
 
-void TextAutoGenerateLocalDatabaseManager::updateRoomPendingTypedInfo(const QByteArray &chatIdentifier,
+void TextAutoGenerateLocalDatabaseManager::updateChatPendingTypedInfo(const QByteArray &chatIdentifier,
                                                                       const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo)
 {
-    mRoomPendingTypedInfoDatabase->updateRoomPendingTypedInfo(chatIdentifier, pendingTypedInfo);
+    mChatPendingTypedInfoDatabase->updateChatPendingTypedInfo(chatIdentifier, pendingTypedInfo);
 }
 
-void TextAutoGenerateLocalDatabaseManager::deleteRoomPendingTypedInfo(const QByteArray &chatIdentifier)
+void TextAutoGenerateLocalDatabaseManager::deleteChatPendingTypedInfo(const QByteArray &chatIdentifier)
 {
-    mRoomPendingTypedInfoDatabase->deleteRoomPendingTypedInfo(chatIdentifier);
+    mChatPendingTypedInfoDatabase->deleteChatPendingTypedInfo(chatIdentifier);
 }
 
-QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalDatabaseManager::loadRoomPendingTypedInfo() const
+QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalDatabaseManager::loadChatPendingTypedInfo() const
 {
-    return mRoomPendingTypedInfoDatabase->loadRoomPendingTypedInfo();
+    return mChatPendingTypedInfoDatabase->loadChatPendingTypedInfo();
 }

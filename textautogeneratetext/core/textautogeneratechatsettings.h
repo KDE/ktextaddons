@@ -83,7 +83,7 @@ public:
     /*!
      * Loads the pending typed information for rooms from the configuration.
      */
-    void loadRoomPendingTypedInfo();
+    void loadChatPendingTypedInfo();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void setPendingTypedTexts(const QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> &newPendingTypedTexts);

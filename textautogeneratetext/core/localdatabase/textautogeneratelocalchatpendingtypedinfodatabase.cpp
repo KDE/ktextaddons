@@ -22,7 +22,7 @@ enum class RoomPendingTypedFields {
 }; // in the same order as the table
 using namespace TextAutoGenerateText;
 TextAutoGenerateLocalChatPendingTypedInfoDatabase::TextAutoGenerateLocalChatPendingTypedInfoDatabase()
-    : TextAutoGenerateLocalDatabaseAbstract(TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath(),
+    : TextAutoGenerateLocalDatabaseAbstract(TextAutoGenerateLocalDatabaseUtils::localChatPendingTypedInfoDatabasePath(),
                                             TextAutoGenerateLocalDatabaseAbstract::DatabaseType::PendingTypedInfo)
 {
 }
@@ -62,7 +62,7 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatPendingTypedInfoDatabas
     return model;
 }
 
-void TextAutoGenerateLocalChatPendingTypedInfoDatabase::updateRoomPendingTypedInfo(const QByteArray &roomId,
+void TextAutoGenerateLocalChatPendingTypedInfoDatabase::updateChatPendingTypedInfo(const QByteArray &roomId,
                                                                                    const TextAutoGenerateChatSettings::PendingTypedInfo &room)
 {
     QSqlDatabase db;
@@ -77,7 +77,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabase::updateRoomPendingTypedIn
     }
 }
 
-void TextAutoGenerateLocalChatPendingTypedInfoDatabase::deleteRoomPendingTypedInfo(const QByteArray &roomId)
+void TextAutoGenerateLocalChatPendingTypedInfoDatabase::deleteChatPendingTypedInfo(const QByteArray &roomId)
 {
     QSqlDatabase db;
     if (!checkDataBase({}, db)) {
@@ -90,7 +90,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabase::deleteRoomPendingTypedIn
     }
 }
 
-QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalChatPendingTypedInfoDatabase::loadRoomPendingTypedInfo()
+QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalChatPendingTypedInfoDatabase::loadChatPendingTypedInfo()
 {
     QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> info;
     QSqlDatabase db;
@@ -116,12 +116,12 @@ QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> Text
     while (resultQuery.next()) {
         const QString json = resultQuery.value(u"json"_s).toString();
         const QByteArray roomId = resultQuery.value(u"roomId"_s).toByteArray();
-        info.insert(roomId, convertJsonToRoomPendingTypedInfo(json));
+        info.insert(roomId, convertJsonToChatPendingTypedInfo(json));
     }
     return info;
 }
 
-TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateLocalChatPendingTypedInfoDatabase::convertJsonToRoomPendingTypedInfo(const QString &json)
+TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateLocalChatPendingTypedInfoDatabase::convertJsonToChatPendingTypedInfo(const QString &json)
 {
     const QJsonDocument doc = QJsonDocument::fromJson(json.toUtf8());
     const TextAutoGenerateChatSettings::PendingTypedInfo msg = TextAutoGenerateChatSettings::PendingTypedInfo::deserialize(doc.object());
