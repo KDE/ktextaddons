@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "core/textautogeneratechatsettings.h"
 #include "textautogeneratetext_export.h"
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
+#include <TextAutoGenerateText/TextAutoGenerateChatSettings>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 #include <memory>
