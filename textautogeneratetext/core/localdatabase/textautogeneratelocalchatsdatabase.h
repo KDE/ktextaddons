@@ -5,13 +5,13 @@
 */
 #pragma once
 #include "textautogeneratelocaldatabaseabstract.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QSqlTableModel>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalChatsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalChatsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalChatsDatabase();

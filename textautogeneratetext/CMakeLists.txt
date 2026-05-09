@@ -542,6 +542,17 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     RELATIVE core/models
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateLocalRoomPendingTypedInfoDatabase
+    TextAutoGenerateLocalChatsDatabase
+    TextAutoGenerateLocalMessagesDatabase
+    TextAutoGenerateLocalDatabaseManager
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcorelocaldatabase_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/localdatabase
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS
     HEADER_NAMES
     TextAutoGenerateExportChatAsJsonJob
@@ -652,6 +663,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -669,6 +681,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
     ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextconfiguretoolsplugin_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcorelocaldatabase_HEADERS}
 )
 
 install(

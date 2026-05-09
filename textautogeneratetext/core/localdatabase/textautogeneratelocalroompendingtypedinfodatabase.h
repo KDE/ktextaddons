@@ -7,7 +7,6 @@
 
 #include "core/textautogeneratechatsettings.h"
 #include "textautogeneratelocaldatabaseabstract.h"
-#include "textautogeneratetext_private_export.h"
 #include <QMap>
 class QSqlTableModel;
 namespace TextAutoGenerateText
