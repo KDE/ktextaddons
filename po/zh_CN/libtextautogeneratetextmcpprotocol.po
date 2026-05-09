@@ -21,35 +21,35 @@ msgstr ""
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
 msgid "Sse"
-msgstr ""
+msgstr "SSE"
 
 #: widgets/common/selecttypecombobox.cpp:23
 #, kde-format
 msgid "Stdio"
-msgstr ""
+msgstr "Stdio"
 
 #: widgets/common/selecttypecombobox.cpp:24
 #, kde-format
 msgid "Streamble Http"
-msgstr ""
+msgstr "Streamble HTTP"
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr ""
+msgstr "添加服务器"
 
 #: widgets/server/addmcpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "名称："
 
 #: widgets/server/addmcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "类型："
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
@@ -71,39 +71,39 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr ""
+msgstr "添加服务器…"
 
 #: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "编辑…"
 
 #: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr ""
+msgstr "移除服务器"
 
 #: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr ""
+msgstr "您想要移除此服务器 (%1) 吗？"
 
 #: widgets/server/mcpserverlistview.cpp:72
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr ""
+msgstr "移除服务器"
 
 #: widgets/server/mcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "搜索…"
 
 #: widgets/server/mcpserverwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr ""
+msgstr "添加实例…"

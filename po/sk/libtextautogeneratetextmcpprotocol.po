@@ -45,25 +45,23 @@ msgstr "Názov:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "Url:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:23
 #, kde-format
 msgid "Command:"
-msgstr ""
+msgstr "Príkaz:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:28
 #, kde-format
 msgid "Arguments:"
-msgstr ""
+msgstr "Argumenty:"
 
 #: widgets/server/mcpserverlistview.cpp:50
 #, kde-format

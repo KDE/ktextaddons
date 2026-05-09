@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-08 00:42+0000\n"
-"PO-Revision-Date: 2026-05-03 08:45+0200\n"
+"PO-Revision-Date: 2026-05-07 18:29+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -17,17 +17,17 @@ msgstr ""
 #: widgets/common/selecttypecombobox.cpp:22
 #, kde-format
 msgid "Sse"
-msgstr ""
+msgstr "Sse"
 
 #: widgets/common/selecttypecombobox.cpp:23
 #, kde-format
 msgid "Stdio"
-msgstr ""
+msgstr "Stdio"
 
 #: widgets/common/selecttypecombobox.cpp:24
 #, kde-format
 msgid "Streamble Http"
-msgstr ""
+msgstr "Streamble Http"
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
@@ -45,13 +45,11 @@ msgstr "Nom :"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "Type :"
 
 #: widgets/server/addmcpsseserverwidget.cpp:23
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "URL :"
 
