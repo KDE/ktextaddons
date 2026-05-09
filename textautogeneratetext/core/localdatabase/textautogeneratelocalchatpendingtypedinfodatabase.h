@@ -17,7 +17,7 @@ public:
     TextAutoGenerateLocalChatPendingTypedInfoDatabase();
     ~TextAutoGenerateLocalChatPendingTypedInfoDatabase() override;
 
-    [[nodiscard]] std::unique_ptr<QSqlTableModel> createRoomsModel() const;
+    [[nodiscard]] std::unique_ptr<QSqlTableModel> createChatPendingInfoModel() const;
 
     void updateChatPendingTypedInfo(const QByteArray &roomId, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
     void deleteChatPendingTypedInfo(const QByteArray &roomId);

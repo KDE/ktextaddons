@@ -34,7 +34,7 @@ QString TextAutoGenerateLocalChatPendingTypedInfoDatabase::schemaDataBase() cons
     return QString::fromLatin1(s_schemaRoomPendingTypedDataBase);
 }
 
-std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatPendingTypedInfoDatabase::createRoomsModel() const
+std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatPendingTypedInfoDatabase::createChatPendingInfoModel() const
 {
     const QString dbName = generateDbName({});
     QSqlDatabase db = QSqlDatabase::database(dbName);

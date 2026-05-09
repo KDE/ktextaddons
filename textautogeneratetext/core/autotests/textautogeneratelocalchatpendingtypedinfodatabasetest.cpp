@@ -69,7 +69,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldStoreRoomPendi
     logger.updateChatPendingTypedInfo(roomId3, info2);
 
     // WHEN
-    auto tableModel = logger.createRoomsModel();
+    auto tableModel = logger.createChatPendingInfoModel();
 
     // THEN
     QVERIFY(tableModel);
@@ -95,7 +95,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     logger.deleteChatPendingTypedInfo(roomId);
 
     // THEN
-    auto tableModel = logger.createRoomsModel();
+    auto tableModel = logger.createChatPendingInfoModel();
     QVERIFY(tableModel);
     QCOMPARE(tableModel->rowCount(), 2);
 }
@@ -111,7 +111,7 @@ void TextAutoGenerateLocalChatPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     logger.deleteChatPendingTypedInfo(roomId);
 
     // THEN
-    auto tableModel = logger.createRoomsModel();
+    auto tableModel = logger.createChatPendingInfoModel();
     QVERIFY(tableModel);
     QCOMPARE(tableModel->rowCount(), 2);
 }
