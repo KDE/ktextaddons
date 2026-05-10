@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include "textautogenerateimportchatbasejob.h"
+#include <TextAutoGenerateText/TextAutoGenerateImportChatBaseJob>
 namespace TextAutoGenerateText
 {
 /*!

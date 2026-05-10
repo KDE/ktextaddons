@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratemenutextinfo.h"
 #include "textautogeneratetext_export.h"
+#include <TextAutoGenerateText/TextAutoGenerateMenuTextInfo>
 
 #include <KSharedConfig>
 #include <QObject>
