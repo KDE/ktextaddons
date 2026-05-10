@@ -11,6 +11,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
+#include <TextAutoGenerateTextMcpProtocolWidgets/AddMcpServerWidget>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
