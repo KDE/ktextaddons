@@ -37,8 +37,6 @@ target_sources(
         modelsmanager/genericnetworkmodelavailableinfos.cpp
         modelsmanager/genericnetworkmodelavailableinfosdelegate.h
         modelsmanager/genericnetworkmodelavailableinfosdelegate.cpp
-        modelsmanager/genericnetworkmodelinfosdelegateutils.h
-        modelsmanager/genericnetworkmodelinfosdelegateutils.cpp
         modelsmanager/genericnetworkmodelavailablewidget.h
         modelsmanager/genericnetworkmodelavailablewidget.cpp
         modelsmanager/genericnetworkmodelavailableinfossortproxymodel.h
@@ -63,6 +61,7 @@ target_link_libraries(
     textautogenerategenericnetwork
     PUBLIC
         KF6::TextAutoGenerateText
+        textautogenerateplugincommon
     PRIVATE
         KF6::I18n
         KF6::ConfigGui
