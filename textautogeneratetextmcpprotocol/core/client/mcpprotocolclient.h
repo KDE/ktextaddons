@@ -5,9 +5,9 @@
 */
 
 #pragma once
-#include "common/mcpprotocolplugin.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolSettings;
