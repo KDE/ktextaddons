@@ -5,11 +5,10 @@
 */
 #pragma once
 
-#include "core/textautogeneratemessage.h"
-#include "core/textautogeneratesearchmessage.h"
-#include "textautogeneratelocaldatabaseabstract.h"
-
 #include <QSqlTableModel>
+#include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
+#include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 
 namespace TextAutoGenerateText
 {

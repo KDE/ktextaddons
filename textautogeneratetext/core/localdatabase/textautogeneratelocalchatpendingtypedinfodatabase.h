@@ -5,9 +5,9 @@
 */
 #pragma once
 
-#include "core/textautogeneratechatsettings.h"
-#include "textautogeneratelocaldatabaseabstract.h"
 #include <QMap>
+#include <TextAutoGenerateText/TextAutoGenerateChatSettings>
+#include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
 class QSqlTableModel;
 namespace TextAutoGenerateText
 {
