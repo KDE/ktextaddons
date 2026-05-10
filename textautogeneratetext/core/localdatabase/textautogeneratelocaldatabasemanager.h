@@ -40,6 +40,12 @@ public:
     void deleteChatPendingTypedInfo(const QByteArray &chatIdentifier);
     [[nodiscard]] QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> loadChatPendingTypedInfo() const;
 
+    [[nodiscard]] TextAutoGenerateLocalMessagesDatabase *messagesDatabase() const;
+
+    [[nodiscard]] TextAutoGenerateLocalChatsDatabase *chatsDatabase() const;
+
+    [[nodiscard]] TextAutoGenerateLocalChatPendingTypedInfoDatabase *chatPendingTypedInfoDatabase() const;
+
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatsDatabase> mChatsDatabase;

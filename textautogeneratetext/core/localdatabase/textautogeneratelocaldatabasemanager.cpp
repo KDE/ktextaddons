@@ -88,3 +88,18 @@ QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> Text
 {
     return mChatPendingTypedInfoDatabase->loadChatPendingTypedInfo();
 }
+
+TextAutoGenerateLocalMessagesDatabase *TextAutoGenerateLocalDatabaseManager::messagesDatabase() const
+{
+    return mMessagesDatabase.get();
+}
+
+TextAutoGenerateLocalChatsDatabase *TextAutoGenerateLocalDatabaseManager::chatsDatabase() const
+{
+    return mChatsDatabase.get();
+}
+
+TextAutoGenerateLocalChatPendingTypedInfoDatabase *TextAutoGenerateLocalDatabaseManager::chatPendingTypedInfoDatabase() const
+{
+    return mChatPendingTypedInfoDatabase.get();
+}
