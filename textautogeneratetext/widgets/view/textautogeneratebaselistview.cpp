@@ -92,7 +92,7 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
 
         auto copyUrlAction = [&]() -> QAction * {
             const QString url = mDelegate->urlAt(index, viewport()->mapFromGlobal(event->globalPos()));
-            qDebug() << " url " << url;
+            // qDebug() << " url " << url;
             if (url.isEmpty()) {
                 return nullptr;
             }
