@@ -548,6 +548,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreloca
     TextAutoGenerateLocalChatsDatabase
     TextAutoGenerateLocalMessagesDatabase
     TextAutoGenerateLocalDatabaseManager
+    TextAutoGenerateLocalDatabaseAbstract
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcorelocaldatabase_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/localdatabase

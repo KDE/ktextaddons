@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratelocaldatabaseabstract.h"
 #include "textautogeneratetext_export.h"
 #include <QSqlTableModel>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
+#include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
 
 namespace TextAutoGenerateText
 {
