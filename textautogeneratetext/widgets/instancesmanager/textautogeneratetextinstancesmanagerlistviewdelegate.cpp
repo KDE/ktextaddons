@@ -18,8 +18,9 @@ TextAutoGenerateTextInstancesManagerListViewDelegate::~TextAutoGenerateTextInsta
 
 void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    if (!index.isValid())
+    if (!index.isValid()) {
         return;
+    }
 
     // Get the text and split it into two lines
     const QString text = index.data(Qt::DisplayRole).toString();
