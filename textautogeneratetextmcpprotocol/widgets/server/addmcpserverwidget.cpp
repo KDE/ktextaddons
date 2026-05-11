@@ -125,7 +125,22 @@ void AddMcpServerWidget::changeType()
 
 void AddMcpServerWidget::checkValidSettings()
 {
-    Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty()); // && !mServerUrlLineEdit->text().trimmed().isEmpty());
+    bool settingsIsValid = false;
+    switch (mSelectTypeComboBox->type()) {
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse:
+        settingsIsValid = mAddMcpSseServerWidget->isValid();
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio:
+        settingsIsValid = mAddMcpStdioServerWidget->isValid();
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp:
+        settingsIsValid = mAddMcpSteamableHttpServerWidget->isValid();
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
+        break;
+    }
+    Q_EMIT buttonOkEnabled(!mServerNameLineEdit->text().trimmed().isEmpty() && settingsIsValid);
 }
 
 #include "moc_addmcpserverwidget.cpp"
