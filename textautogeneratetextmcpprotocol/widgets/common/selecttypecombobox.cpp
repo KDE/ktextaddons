@@ -17,19 +17,24 @@ SelectTypeComboBox::SelectTypeComboBox(QWidget *parent)
 
 SelectTypeComboBox::~SelectTypeComboBox() = default;
 
+void SelectTypeComboBox::addServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type)
+{
+    addItem(TextAutoGenerateTextMcpProtocolCore::McpServer::serverTypeI18n(type), QVariant::fromValue(type));
+}
+
 void SelectTypeComboBox::fill()
 {
-    addItem(i18n("Sse"), QVariant::fromValue(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse));
-    addItem(i18n("Stdio"), QVariant::fromValue(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio));
-    addItem(i18n("Streamble Http"), QVariant::fromValue(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp));
+    addServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse);
+    addServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio);
+    addServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp);
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType SelectTypeComboBox::type() const
+TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType SelectTypeComboBox::type() const
 {
-    return currentData().value<TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType>();
+    return currentData().value<TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType>();
 }
 
-void SelectTypeComboBox::setType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type)
+void SelectTypeComboBox::setType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type)
 {
     const int index = findData(QVariant::fromValue(type));
     if (index != -1) {

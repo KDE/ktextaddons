@@ -7,7 +7,7 @@
 #pragma once
 #include "mcpprotocolwidgets_private_export.h"
 #include <QComboBox>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT SelectTypeComboBox : public QComboBox
@@ -17,10 +17,11 @@ public:
     explicit SelectTypeComboBox(QWidget *parent = nullptr);
     ~SelectTypeComboBox() override;
 
-    void setType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type);
-    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type() const;
+    void setType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type);
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type() const;
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void fill();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void addServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type);
 };
 }
