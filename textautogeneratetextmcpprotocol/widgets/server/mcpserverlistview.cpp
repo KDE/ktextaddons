@@ -6,6 +6,7 @@
 #include "mcpserverlistview.h"
 #include "models/mcpservermodel.h"
 #include "models/mcpserversortfilterproxymodel.h"
+#include "server/mcpserverlistviewdelegate.h"
 #include "server/mcpservermanager.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLocalizedString>
@@ -19,6 +20,7 @@ McpServerListView::McpServerListView(TextAutoGenerateTextMcpProtocolCore::McpSer
     : QListView(parent)
     , mSortFilterProxyModel(new TextAutoGenerateTextMcpProtocolCore::McpServerSortFilterProxyModel(this))
 {
+    setItemDelegate(new McpServerListViewDelegate(this));
     setDragEnabled(false);
     if (model) {
         mSortFilterProxyModel->setSourceModel(model);
