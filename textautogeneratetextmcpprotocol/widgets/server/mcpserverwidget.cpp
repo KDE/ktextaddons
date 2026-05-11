@@ -65,6 +65,7 @@ void McpServerWidget::slotAddServer()
     if (dlg->exec()) {
         const auto info = dlg->serverInfo();
         mModel->addMcpServer(info);
+        Q_EMIT settingsChanged();
     }
     delete dlg;
 }
@@ -72,6 +73,7 @@ void McpServerWidget::slotAddServer()
 void McpServerWidget::slotRemoveServer(const QByteArray &identifier)
 {
     mModel->removeMcpServer(identifier);
+    Q_EMIT settingsChanged();
 }
 
 void McpServerWidget::slotEditServer(const QByteArray &identifier)
@@ -82,6 +84,7 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
     if (dlg->exec()) {
         const auto info = dlg->serverInfo();
         mModel->addMcpServer(info);
+        Q_EMIT settingsChanged();
     }
     delete dlg;
 }

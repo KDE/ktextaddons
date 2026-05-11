@@ -37,6 +37,12 @@ public:
      */
     ~McpServerWidget() override;
 
+Q_SIGNALS:
+    /*!
+     * \brief settingsChanged
+     */
+    void settingsChanged();
+
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddServer();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveServer(const QByteArray &identifier);
