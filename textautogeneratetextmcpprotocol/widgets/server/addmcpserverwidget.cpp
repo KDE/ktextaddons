@@ -81,6 +81,7 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
     }
     mSelectTypeComboBox->setType(serverType);
     updateWidget(serverType);
+    checkValidSettings();
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() const
@@ -130,6 +131,7 @@ void AddMcpServerWidget::updateWidget(TextAutoGenerateTextMcpProtocolCore::McpSe
 void AddMcpServerWidget::changeType()
 {
     updateWidget(mSelectTypeComboBox->type());
+    checkValidSettings();
 }
 
 void AddMcpServerWidget::checkValidSettings()
