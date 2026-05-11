@@ -7,6 +7,7 @@
 #include "common/mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
@@ -130,6 +131,22 @@ QMap<QString, QString> McpServer::environments() const
 void McpServer::setEnvironments(const QMap<QString, QString> &newEnvironments)
 {
     mEnvironments = newEnvironments;
+}
+
+QString McpServer::serverTypeI18n(ServerType type)
+{
+    switch (type) {
+    case ServerType::Sse:
+        return i18n("Sse");
+    case ServerType::Stdio:
+        return i18n("Standard IO");
+    case ServerType::StreamableHttp:
+        return i18n("Streamable HTTP");
+    case ServerType::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug";
+        return {};
+    }
+    return {};
 }
 
 QString McpServer::convertServerTypeToString(ServerType type)

@@ -61,6 +61,7 @@ public:
 
     [[nodiscard]] static QString convertServerTypeToString(ServerType type);
     [[nodiscard]] static ServerType convertServerTypeFromString(const QString &str);
+    [[nodiscard]] static QString serverTypeI18n(ServerType type);
 
 private:
     bool mEnabled = true;

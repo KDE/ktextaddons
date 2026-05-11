@@ -296,6 +296,7 @@ target_link_libraries(
     Qt::Core
     KF6::CoreAddons
     KF6::ConfigCore
+    KF6::I18n
 )
 
 set_target_properties(
