@@ -25,11 +25,11 @@ McpServerPlugin::createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtoco
 {
     switch (type) {
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse:
-        return new McpServerSsePluginInterface(this);
+        return new McpServerSsePluginInterface(parent);
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio:
-        return new McpServerStdioPluginInterface(this);
+        return new McpServerStdioPluginInterface(parent);
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp:
-        return new McpServerStreambleHttpPluginInterface(this);
+        return new McpServerStreambleHttpPluginInterface(parent);
     default:
         break;
     }
