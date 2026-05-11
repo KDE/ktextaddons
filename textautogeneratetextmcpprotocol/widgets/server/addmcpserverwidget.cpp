@@ -64,7 +64,8 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
 {
     mServer = server;
     mServerNameLineEdit->setText(server.name());
-    switch (server.serverType()) {
+    const auto serverType = server.serverType();
+    switch (serverType) {
     case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
         mAddMcpSseServerWidget->loadSettings(server);
         break;
@@ -78,6 +79,8 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
+    mSelectTypeComboBox->setType(serverType);
+    updateWidget(serverType);
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() const
@@ -107,9 +110,9 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
     return server;
 }
 
-void AddMcpServerWidget::changeType()
+void AddMcpServerWidget::updateWidget(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type)
 {
-    switch (mSelectTypeComboBox->type()) {
+    switch (type) {
     case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
         mStackedWidget->setCurrentWidget(mAddMcpSseServerWidget);
         break;
@@ -123,6 +126,10 @@ void AddMcpServerWidget::changeType()
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
+}
+void AddMcpServerWidget::changeType()
+{
+    updateWidget(mSelectTypeComboBox->type());
 }
 
 void AddMcpServerWidget::checkValidSettings()
