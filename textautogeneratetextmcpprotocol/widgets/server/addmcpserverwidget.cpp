@@ -64,7 +64,7 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
 {
     mServer = server;
     mServerNameLineEdit->setText(server.name());
-    switch (mSelectTypeComboBox->type()) {
+    switch (server.serverType()) {
     case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
         mAddMcpSseServerWidget->loadSettings(server);
         break;
