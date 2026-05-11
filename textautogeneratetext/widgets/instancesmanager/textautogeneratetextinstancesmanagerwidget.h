@@ -39,6 +39,12 @@ public:
      */
     void save();
 
+Q_SIGNALS:
+    /*!
+     * \brief settingsChanged
+     */
+    void settingsChanged();
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddInstance();
     TextAutoGenerateTextInstancesManagerListView *const mInstancesManagerListView;

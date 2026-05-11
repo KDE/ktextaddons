@@ -60,14 +60,17 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             &TextAutoGenerateTextInstancesManagerWidget::slotAddInstance);
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QByteArray &uuid) {
         mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->removeInstance(uuid);
+        Q_EMIT settingsChanged();
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid);
         Q_ASSERT(plugin);
         plugin->showConfigureDialog(this);
+        Q_EMIT settingsChanged();
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::markAsDefaultChanged, this, [this](const QByteArray &uuid) {
         mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->setCurrentInstance(uuid);
+        Q_EMIT settingsChanged();
     });
     mInstancesManagerListView->setObjectName(u"mInstancesManagerListView"_s);
     mainLayout->addWidget(mInstancesManagerListView);
@@ -100,6 +103,7 @@ void TextAutoGenerateTextInstancesManagerWidget::slotAddInstance()
             plugin->setDisplayName(d.instanceName());
             instance->setPlugin(plugin);
             mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
+            Q_EMIT settingsChanged();
         }
     }
 }
