@@ -83,7 +83,7 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
     dlg->setServerInfo(mcpServer);
     if (dlg->exec()) {
         const auto info = dlg->serverInfo();
-        mModel->addMcpServer(info);
+        mModel->editMcpServer(info);
         Q_EMIT settingsChanged();
     }
     delete dlg;
