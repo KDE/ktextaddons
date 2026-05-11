@@ -58,6 +58,8 @@ QVariant McpServerModel::data(const QModelIndex &index, int role) const
         return server.enabled();
     case MCPServerRoles::Identifier:
         return server.identifier();
+    case MCPServerRoles::ServerType:
+        return McpServer::serverTypeI18n(server.serverType());
     default:
         break;
     }
@@ -67,6 +69,20 @@ QVariant McpServerModel::data(const QModelIndex &index, int role) const
 QList<McpServer> McpServerModel::mcpServers() const
 {
     return mMcpServers;
+}
+
+void McpServerModel::editMcpServer(const McpServer &server)
+{
+    auto matchesUuid = [&](const McpServer &s) {
+        return s.identifier() == server.identifier();
+    };
+    const auto answerIt = std::find_if(mMcpServers.constBegin(), mMcpServers.constEnd(), matchesUuid);
+    if (answerIt != mMcpServers.constEnd()) {
+        const int i = std::distance(mMcpServers.constBegin(), answerIt);
+        mMcpServers[i] = server;
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server not found for identifier:" << server.identifier();
+    }
 }
 
 void McpServerModel::addMcpServer(const McpServer &server)

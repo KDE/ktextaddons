@@ -25,6 +25,7 @@ public:
         Name = Qt::UserRole + 1,
         Enabled,
         Identifier,
+        ServerType,
     };
     /*!
      * Constructs a new McpServerModel object.
@@ -97,6 +98,12 @@ public:
      * \return
      */
     [[nodiscard]] McpServer mpcServer(const QByteArray &identifier) const;
+
+    /*!
+     * \brief editMcpServer
+     * \param server
+     */
+    void editMcpServer(const McpServer &server);
 
 private:
     QList<McpServer> mMcpServers;
