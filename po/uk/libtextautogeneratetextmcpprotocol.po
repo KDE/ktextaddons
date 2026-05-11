@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-08 00:42+0000\n"
+"POT-Creation-Date: 2026-05-11 00:42+0000\n"
 "PO-Revision-Date: 2026-05-07 10:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -33,7 +33,7 @@ msgstr "Stdio"
 msgid "Streamble Http"
 msgstr "Потоковий HTTP"
 
-#: widgets/server/addmcpserverdialog.cpp:21
+#: widgets/server/addmcpserverdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"

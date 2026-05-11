@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 00:42+0000\n"
-"PO-Revision-Date: 2026-02-28 11:56+0530\n"
+"PO-Revision-Date: 2026-05-10 15:37+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -25,7 +25,7 @@ msgstr "புதிய உரையாடல்"
 #: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "பிடித்தவை"
 
 #: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
@@ -70,22 +70,22 @@ msgstr "கருவிகள்"
 #: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "சிறியது"
 
 #: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "நடுத்தரமானது"
 
 #: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "பெரியது"
 
 #: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "மிகப்பெரியது"
 
 #: core/textautogeneratemanager.cpp:163
 #, kde-format
@@ -107,10 +107,11 @@ msgstr "கணிதம்"
 msgid "Vision"
 msgstr "பார்வை"
 
+# Not sure what exactly this means in the LLM context
 #: core/textautogeneratemanager.cpp:171
-#, kde-format
+#, fuzzy, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "உட்பொதிப்பது"
 
 #: core/textautogeneratemanager.cpp:173
 #, kde-format
@@ -120,18 +121,20 @@ msgstr ""
 #: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Cloud"
-msgstr ""
+msgstr "தொலை சேவையகம்"
 
+# Not sure if this should be distinguished from 'reasoning'.
 #: core/textautogeneratemanager.cpp:177
-#, kde-format
+#, fuzzy, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "யோசிப்பது"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
 msgstr "செய்திக்கு செல்"
 
+# Not sure if this should be translated, since English is much better supported than Tamil by most LLMs.
 #: core/textautogeneratesettings.cpp:47
 #, kde-format
 msgid ""
@@ -142,12 +145,12 @@ msgstr ""
 #: core/textautogeneratetextplugin.cpp:287
 #, kde-format
 msgid "Local"
-msgstr ""
+msgstr "இக்கணினியிலுள்ளது"
 
 #: core/textautogeneratetextplugin.cpp:289
 #, kde-format
 msgid "Network"
-msgstr ""
+msgstr "தொலை சேவையகம்"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -187,7 +190,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr ""
+msgstr "%1 தனை அமை"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:48
@@ -196,16 +199,16 @@ msgstr ""
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "பொதுவானவை"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
 #: plugins/ollama/ollamaconfiguredialog.cpp:54
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "பயன்படுத்தக்கூடிய "
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:150
@@ -369,7 +372,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:58
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "ஆதரிக்கும் மொழிகள்"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:72
 #, kde-format
@@ -421,7 +424,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "உருவாக்கு"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
@@ -457,7 +460,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr ""
+msgstr "ரத்து செய்"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
@@ -473,7 +476,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr ""
+msgstr "பதிவிறக்கு"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
