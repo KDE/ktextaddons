@@ -64,7 +64,20 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
 {
     mServer = server;
     mServerNameLineEdit->setText(server.name());
-    // TODO
+    switch (mSelectTypeComboBox->type()) {
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse:
+        mAddMcpSseServerWidget->loadSettings(server);
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio:
+        mAddMcpStdioServerWidget->loadSettings(server);
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp:
+        mAddMcpSteamableHttpServerWidget->loadSettings(server);
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
+        break;
+    }
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() const
@@ -74,6 +87,21 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
         server.createUniqueIdentifier();
     }
     server.setName(mServerNameLineEdit->text());
+
+    switch (mSelectTypeComboBox->type()) {
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse:
+        mAddMcpSseServerWidget->saveSettings(server);
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio:
+        mAddMcpStdioServerWidget->saveSettings(server);
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp:
+        mAddMcpSteamableHttpServerWidget->saveSettings(server);
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
+        break;
+    }
     return server;
 }
 
