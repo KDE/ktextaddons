@@ -45,6 +45,7 @@ bool AddMcpSseServerWidget::isValid() const
 
 void AddMcpSseServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
+    server.setServerUrl(QUrl(mServerUrlLineEdit->text()));
 }
 
 void AddMcpSseServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)

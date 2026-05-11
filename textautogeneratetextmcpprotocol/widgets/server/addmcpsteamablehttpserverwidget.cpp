@@ -45,6 +45,7 @@ bool AddMcpSteamableHttpServerWidget::isValid() const
 
 void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
+    server.setServerUrl(QUrl(mServerUrlLineEdit->text()));
 }
 
 void AddMcpSteamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)

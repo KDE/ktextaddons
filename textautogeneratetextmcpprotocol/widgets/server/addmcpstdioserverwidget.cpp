@@ -49,6 +49,8 @@ bool AddMcpStdioServerWidget::isValid() const
 
 void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
+    server.setCommand(mCommandLineEdit->text());
+    server.setArguments(mArgumentsLineEdit->text());
 }
 
 void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
