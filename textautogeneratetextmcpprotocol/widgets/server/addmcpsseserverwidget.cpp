@@ -42,4 +42,12 @@ bool AddMcpSseServerWidget::isValid() const
     return !mServerUrlLineEdit->text().isEmpty();
 }
 
+void AddMcpSseServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+}
+
+void AddMcpSseServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+}
+
 #include "moc_addmcpsseserverwidget.cpp"

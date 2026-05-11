@@ -42,4 +42,12 @@ bool AddMcpSteamableHttpServerWidget::isValid() const
     return !mServerUrlLineEdit->text().isEmpty();
 }
 
+void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+}
+
+void AddMcpSteamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+}
+
 #include "moc_addmcpsteamablehttpserverwidget.cpp"

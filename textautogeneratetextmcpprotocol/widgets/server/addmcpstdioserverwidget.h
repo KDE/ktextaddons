@@ -44,6 +44,17 @@ public:
      */
     [[nodiscard]] bool isValid() const override;
 
+    /*!
+     * \brief saveSettings
+     * \param server
+     */
+    void saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server) override;
+    /*!
+     * \brief loadSettings
+     * \param server
+     */
+    void loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server) override;
+
 private:
     QLineEdit *const mCommandLineEdit;
     QLineEdit *const mArgumentsLineEdit;

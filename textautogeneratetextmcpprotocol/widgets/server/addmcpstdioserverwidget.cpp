@@ -46,6 +46,14 @@ bool AddMcpStdioServerWidget::isValid() const
     return !mCommandLineEdit->text().isEmpty();
 }
 
+void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+}
+
+void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+{
+}
+
 AddMcpStdioServerWidget::StdioInfo AddMcpStdioServerWidget::stdioInfo() const
 {
     const AddMcpStdioServerWidget::StdioInfo info{

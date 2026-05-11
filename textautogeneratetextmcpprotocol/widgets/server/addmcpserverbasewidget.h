@@ -7,6 +7,10 @@
 #pragma once
 
 #include <QWidget>
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpServer;
+}
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class AddMcpServerBaseWidget : public QWidget
@@ -17,6 +21,9 @@ public:
     ~AddMcpServerBaseWidget() override;
 
     [[nodiscard]] virtual bool isValid() const = 0;
+
+    virtual void saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server) = 0;
+    virtual void loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server) = 0;
 
 Q_SIGNALS:
     void settingChanged();
