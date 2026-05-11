@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
@@ -52,6 +53,8 @@ void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::
 
 void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
+    mArgumentsLineEdit->setText(server.arguments());
+    mCommandLineEdit->setText(server.command());
 }
 
 AddMcpStdioServerWidget::StdioInfo AddMcpStdioServerWidget::stdioInfo() const
