@@ -12,6 +12,15 @@ add_library(KF6TextAutoGenerateTextMcpProtocolCore)
 
 add_library(KF6::TextAutoGenerateTextMcpProtocolCore ALIAS KF6TextAutoGenerateTextMcpProtocolCore)
 
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(
+        KF6TextAutoGenerateTextMcpProtocolCore
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
+endif()
+
 ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocolCore HEADER textautogeneratetextmcpprotocol_core_debug.h
     IDENTIFIER TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG
     CATEGORY_NAME org.kde.kf.textautogeneratetextmcpprotocolcore
