@@ -11,7 +11,6 @@
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
-class QDebug;
 class OllamaCloudSettings;
 class TEXTAUTOGENERATEOLLAMACLOUD_EXPORT OllamaCloudManager : public OllamaCommonManager
 {

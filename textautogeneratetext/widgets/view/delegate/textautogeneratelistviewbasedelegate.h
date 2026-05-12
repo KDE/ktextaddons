@@ -14,7 +14,6 @@
 class QListView;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateAttachmentDelegateHelperBase;
 class TextAutoGenerateListViewTextSelection;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate

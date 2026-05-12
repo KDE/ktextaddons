@@ -7,9 +7,6 @@
 #include "textautogeneratetext_export.h"
 #include <TextAddonsWidgets/ConfigurePluginsWidget>
 #include <TextAddonsWidgets/PluginUtil>
-class KTreeWidgetSearchLineWidget;
-class QTreeWidget;
-class KMessageWidget;
 namespace TextAutoGenerateText
 {
 /*!

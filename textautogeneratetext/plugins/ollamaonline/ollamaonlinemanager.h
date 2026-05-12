@@ -12,7 +12,6 @@
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
-class QDebug;
 class OllamaOnlineSettings;
 class TEXTAUTOGENERATEOLLAMAONLINE_EXPORT OllamaOnlineManager : public OllamaCommonManager
 {

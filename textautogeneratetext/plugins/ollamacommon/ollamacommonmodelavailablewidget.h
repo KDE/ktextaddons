@@ -10,7 +10,6 @@
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateModelAvailableListView;
 class TextAutoGenerateModelSearchLineEdit;
 }
 class OllamaCommonModelsInfosCategoriesComboBox;

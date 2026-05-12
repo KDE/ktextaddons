@@ -8,7 +8,6 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class OllamaModelAvailableSearchWidget;
-class OllamaModelAvailableListView;
 class OllamaModelAvailableInfoWidget;
 class OllamaCommonModelAvailableInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;

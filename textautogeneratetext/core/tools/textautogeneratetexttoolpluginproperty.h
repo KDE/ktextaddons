@@ -10,7 +10,6 @@
 #include <QMetaType>
 #include <QStringList>
 class QDebug;
-class QJsonObject;
 namespace TextAutoGenerateText
 {
 /*!
