@@ -5,7 +5,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "plugincommonmodelinstalledinfosdelegate.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autogeneratetext_plugincommon_debug.h"
 #include "plugincommonmodelinfosdelegateutils.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDesktopServices>
 #include <QPainter>
 
+using namespace Qt::Literals::StringLiterals;
 PluginCommonModelInstalledInfosDelegate::PluginCommonModelInstalledInfosDelegate(QListView *view)
     : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(view)
 {
