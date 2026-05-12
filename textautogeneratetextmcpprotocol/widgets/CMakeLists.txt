@@ -69,6 +69,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotoco
     AddMcpServerDialog
     McpServerWidget
     AddMcpServerWidget
+    McpServerListView
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolWidgets
     RELATIVE server
