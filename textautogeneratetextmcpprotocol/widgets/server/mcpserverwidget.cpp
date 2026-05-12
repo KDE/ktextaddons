@@ -49,7 +49,6 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     connect(addMcpServerButton, &QToolButton::clicked, this, &McpServerWidget::slotAddServer);
 
     mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
-    mMcpServerListView->setModel(mModel);
     mainLayout->addWidget(mMcpServerListView);
 
     connect(mMcpServerListView, &McpServerListView::addServer, this, &McpServerWidget::slotAddServer);
