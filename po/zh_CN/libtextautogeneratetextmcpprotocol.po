@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:42+0000\n"
+"POT-Creation-Date: 2026-05-12 00:43+0000\n"
 "PO-Revision-Date: 2026-05-05 07:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,19 +18,20 @@ msgstr ""
 "libtextautogeneratetextmcpprotocol.pot\n"
 "X-Crowdin-File-ID: 60128\n"
 
-#: widgets/common/selecttypecombobox.cpp:22
+#: core/server/mcpserver.cpp:140
 #, kde-format
 msgid "Sse"
 msgstr "SSE"
 
-#: widgets/common/selecttypecombobox.cpp:23
+#: core/server/mcpserver.cpp:142
 #, kde-format
-msgid "Stdio"
-msgstr "Stdio"
+msgid "Standard IO"
+msgstr ""
 
-#: widgets/common/selecttypecombobox.cpp:24
-#, kde-format
-msgid "Streamble Http"
+#: core/server/mcpserver.cpp:144
+#, fuzzy, kde-format
+#| msgid "Streamble Http"
+msgid "Streamable HTTP"
 msgstr "Streamble HTTP"
 
 #: widgets/server/addmcpserverdialog.cpp:22
@@ -51,46 +52,46 @@ msgctxt "@label:textbox"
 msgid "Type:"
 msgstr "类型："
 
-#: widgets/server/addmcpsseserverwidget.cpp:23
-#: widgets/server/addmcpsteamablehttpserverwidget.cpp:23
+#: widgets/server/addmcpsseserverwidget.cpp:24
+#: widgets/server/addmcpsteamablehttpserverwidget.cpp:24
 #, kde-format
 msgid "Url:"
 msgstr "URL："
 
-#: widgets/server/addmcpstdioserverwidget.cpp:23
+#: widgets/server/addmcpstdioserverwidget.cpp:24
 #, kde-format
 msgid "Command:"
 msgstr "命令："
 
-#: widgets/server/addmcpstdioserverwidget.cpp:28
+#: widgets/server/addmcpstdioserverwidget.cpp:29
 #, kde-format
 msgid "Arguments:"
 msgstr "参数："
 
-#: widgets/server/mcpserverlistview.cpp:50
+#: widgets/server/mcpserverlistview.cpp:52
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
 msgstr "添加服务器…"
 
-#: widgets/server/mcpserverlistview.cpp:57
+#: widgets/server/mcpserverlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "编辑…"
 
-#: widgets/server/mcpserverlistview.cpp:63
+#: widgets/server/mcpserverlistview.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "移除服务器"
 
-#: widgets/server/mcpserverlistview.cpp:71
+#: widgets/server/mcpserverlistview.cpp:73
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
 msgstr "您想要移除此服务器 (%1) 吗？"
 
-#: widgets/server/mcpserverlistview.cpp:72
+#: widgets/server/mcpserverlistview.cpp:74
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
@@ -107,3 +108,6 @@ msgstr "搜索…"
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "添加实例…"
+
+#~ msgid "Stdio"
+#~ msgstr "Stdio"
