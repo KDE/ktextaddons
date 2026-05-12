@@ -34,13 +34,13 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaOnlineConfigureWidget, generalPageName);
-    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
+    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://general-model"_s));
     mOllamaOnlineConfigureWidget->setObjectName(u"mOllamaConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
 
     const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
     auto configureModelWidgetPage = new KPageWidgetItem(mOllamaOnlineModelWidget, modelAvailablePageName);
-    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
+    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://available-models"_s));
     mOllamaOnlineModelWidget->setObjectName(u"mOllamaOnlineModelWidget"_s);
     if (manager) {
         connect(manager, &OllamaOnlineManager::modelsLoadDone, this, [this, manager](const OllamaOnlineManager::ModelsInfo &modelinfo) {

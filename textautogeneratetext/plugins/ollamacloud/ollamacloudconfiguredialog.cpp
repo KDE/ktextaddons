@@ -33,13 +33,13 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaCloudConfigureWidget, generalPageName);
-    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
+    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://general-model"_s));
     mOllamaCloudConfigureWidget->setObjectName(u"mOllamaConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
 
     const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
     auto configureModelWidgetPage = new KPageWidgetItem(mOllamaCloudModelWidget, modelAvailablePageName);
-    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-available-models"_s));
+    configureModelWidgetPage->setIcon(QIcon::fromTheme(u"://available-models"_s));
     mOllamaCloudModelWidget->setObjectName(u"mOllamaCloudModelWidget"_s);
     addPage(configureModelWidgetPage);
     if (manager) {

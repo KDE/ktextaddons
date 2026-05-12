@@ -1,0 +1,12 @@
+<!--
+    SPDX-FileCopyrightText: Laurent Montel <montel@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
+<RCC>
+    <qresource prefix="/">
+        <file alias="available-models">available-models.svg</file>
+        <file alias="created-model">created-model.svg</file>
+        <file alias="general-model">general-model.svg</file>
+        <file alias="installed-models">installed-models.svg</file>
+    </qresource>
+</RCC>
