@@ -59,7 +59,7 @@ QVariant McpServerModel::data(const QModelIndex &index, int role) const
     case MCPServerRoles::Identifier:
         return server.identifier();
     case MCPServerRoles::ServerType:
-        return McpServer::serverTypeI18n(server.serverType());
+        return McpServer::transportTypeI18n(server.transportType());
     default:
         break;
     }

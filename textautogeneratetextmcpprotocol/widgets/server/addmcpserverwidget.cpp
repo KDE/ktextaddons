@@ -64,18 +64,18 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
 {
     mServer = server;
     mServerNameLineEdit->setText(server.name());
-    const auto serverType = server.serverType();
+    const auto serverType = server.transportType();
     switch (serverType) {
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse:
         mAddMcpSseServerWidget->loadSettings(server);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio:
         mAddMcpStdioServerWidget->loadSettings(server);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp:
         mAddMcpSteamableHttpServerWidget->loadSettings(server);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
@@ -92,38 +92,38 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
     }
     server.setName(mServerNameLineEdit->text());
     const auto serverType = mSelectTypeComboBox->type();
-    server.setServerType(serverType);
+    server.setTransportType(serverType);
 
     switch (serverType) {
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse:
         mAddMcpSseServerWidget->saveSettings(server);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio:
         mAddMcpStdioServerWidget->saveSettings(server);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp:
         mAddMcpSteamableHttpServerWidget->saveSettings(server);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
     return server;
 }
 
-void AddMcpServerWidget::updateWidget(TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType type)
+void AddMcpServerWidget::updateWidget(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType type)
 {
     switch (type) {
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse:
         mStackedWidget->setCurrentWidget(mAddMcpSseServerWidget);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio:
         mStackedWidget->setCurrentWidget(mAddMcpStdioServerWidget);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp:
         mStackedWidget->setCurrentWidget(mAddMcpSteamableHttpServerWidget);
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
@@ -138,16 +138,16 @@ void AddMcpServerWidget::checkValidSettings()
 {
     bool settingsIsValid = false;
     switch (mSelectTypeComboBox->type()) {
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse:
         settingsIsValid = mAddMcpSseServerWidget->isValid();
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio:
         settingsIsValid = mAddMcpStdioServerWidget->isValid();
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp:
         settingsIsValid = mAddMcpSteamableHttpServerWidget->isValid();
         break;
-    case TextAutoGenerateTextMcpProtocolCore::McpServer::ServerType::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }

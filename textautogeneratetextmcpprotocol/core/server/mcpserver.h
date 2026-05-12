@@ -17,13 +17,13 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServer
 {
     Q_GADGET
 public:
-    enum class ServerType : int8_t {
+    enum class TransportType : int8_t {
         Unknown = 0,
         Sse,
         Stdio,
         StreamableHttp,
     };
-    Q_ENUM(ServerType)
+    Q_ENUM(TransportType)
 
     McpServer();
     ~McpServer();
@@ -47,8 +47,8 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
-    [[nodiscard]] ServerType serverType() const;
-    void setServerType(ServerType newServerType);
+    [[nodiscard]] TransportType transportType() const;
+    void setTransportType(TransportType newServerType);
 
     [[nodiscard]] QString command() const;
     void setCommand(const QString &newCommand);
@@ -59,16 +59,16 @@ public:
     [[nodiscard]] QMap<QString, QString> environments() const;
     void setEnvironments(const QMap<QString, QString> &newEnvironments);
 
-    [[nodiscard]] static QString convertServerTypeToString(ServerType type);
-    [[nodiscard]] static ServerType convertServerTypeFromString(const QString &str);
-    [[nodiscard]] static QString serverTypeI18n(ServerType type);
+    [[nodiscard]] static QString convertTransportTypeToString(TransportType type);
+    [[nodiscard]] static TransportType convertTransportTypeFromString(const QString &str);
+    [[nodiscard]] static QString transportTypeI18n(TransportType type);
 
 private:
     bool mEnabled = true;
     QUrl mServerUrl;
     QString mName;
     QByteArray mIdentifier;
-    ServerType mServerType = ServerType::Unknown;
+    TransportType mTransportType = TransportType::Unknown;
     QString mCommand;
     QString mArguments;
     QMap<QString, QString> mEnvironments;
