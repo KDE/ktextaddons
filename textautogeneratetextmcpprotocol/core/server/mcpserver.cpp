@@ -90,7 +90,7 @@ void McpServer::save(KConfigGroup &config) const
 
 bool McpServer::isValid() const
 {
-    return !mIdentifier.isEmpty() && !mName.isEmpty() && !mServerUrl.isEmpty() && mServerType != ServerType::Unknown;
+    return !mIdentifier.isEmpty() && !mName.isEmpty() && mServerType != ServerType::Unknown;
 }
 
 McpServer::ServerType McpServer::serverType() const
