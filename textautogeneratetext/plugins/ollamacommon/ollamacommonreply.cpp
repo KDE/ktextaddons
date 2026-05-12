@@ -11,7 +11,6 @@
 #include <QJsonObject>
 #include <QNetworkReply>
 
-using namespace Qt::StringLiterals;
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}

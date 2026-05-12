@@ -9,7 +9,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
-using namespace Qt::StringLiterals;
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateReply::TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : QObject{parent}

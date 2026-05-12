@@ -11,7 +11,7 @@
 #include <QRegularExpression>
 // #define DEBUG_CMARK_RC 1
 using namespace TextUtils;
-using namespace Qt::StringLiterals;
+using namespace Qt::Literals::StringLiterals;
 TextUtilsBlockCMarkSupport::TextUtilsBlockCMarkSupport() = default;
 
 TextUtilsBlockCMarkSupport::~TextUtilsBlockCMarkSupport() = default;

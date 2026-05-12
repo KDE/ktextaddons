@@ -7,7 +7,7 @@
 #include "textautogeneratemessageutils.h"
 
 #include "textautogenerateblockcmarksupport.h"
-using namespace Qt::StringLiterals;
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 
 static QString convertMessageText(const QString &str,
