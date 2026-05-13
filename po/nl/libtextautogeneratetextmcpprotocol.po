@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-12 00:43+0000\n"
-"PO-Revision-Date: 2026-05-07 17:28+0200\n"
+"PO-Revision-Date: 2026-05-12 13:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -25,13 +25,12 @@ msgstr "Sse"
 #: core/server/mcpserver.cpp:142
 #, kde-format
 msgid "Standard IO"
-msgstr ""
+msgstr "Standaard-IO"
 
 #: core/server/mcpserver.cpp:144
-#, fuzzy, kde-format
-#| msgid "Streamble Http"
+#, kde-format
 msgid "Streamable HTTP"
-msgstr "Te stromen HTTP"
+msgstr "Te streamen HTTP"
 
 #: widgets/server/addmcpserverdialog.cpp:22
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:42+0000\n"
+"POT-Creation-Date: 2026-05-13 00:44+0000\n"
 "PO-Revision-Date: 2026-05-05 07:51-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2744,32 +2744,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "Tamanho da janela de contexto:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:179
+#: plugins/ollamacommon/ollamacommonreply.cpp:178
 #, kde-format
 msgid "Capabilities"
 msgstr "Capacidades"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:181
+#: plugins/ollamacommon/ollamacommonreply.cpp:180
 #, kde-format
 msgid "Template"
 msgstr "Modelo"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:182
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Modelfile"
 msgstr "Arquivo de modelo"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:185
+#: plugins/ollamacommon/ollamacommonreply.cpp:184
 #, kde-format
 msgid "Parameters"
 msgstr "Parâmetros"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:187
 #, kde-format
 msgid "Details"
 msgstr "Detalhes"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:189
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Model Info"
 msgstr "Informações do modelo"

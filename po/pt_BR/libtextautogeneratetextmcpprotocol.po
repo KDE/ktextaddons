@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-12 00:43+0000\n"
-"PO-Revision-Date: 2026-05-07 05:06-0300\n"
+"PO-Revision-Date: 2026-05-12 06:42-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/server/mcpserver.cpp:140
 #, kde-format
@@ -25,13 +25,12 @@ msgstr "Sse"
 #: core/server/mcpserver.cpp:142
 #, kde-format
 msgid "Standard IO"
-msgstr ""
+msgstr "E/S Padrão"
 
 #: core/server/mcpserver.cpp:144
-#, fuzzy, kde-format
-#| msgid "Streamble Http"
+#, kde-format
 msgid "Streamable HTTP"
-msgstr "Http transmissível"
+msgstr "HTTP transmissível"
 
 #: widgets/server/addmcpserverdialog.cpp:22
 #, kde-format

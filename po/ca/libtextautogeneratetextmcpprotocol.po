@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-12 00:43+0000\n"
-"PO-Revision-Date: 2026-05-07 09:49+0200\n"
+"PO-Revision-Date: 2026-05-12 08:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -27,11 +27,10 @@ msgstr "SSE"
 #: core/server/mcpserver.cpp:142
 #, kde-format
 msgid "Standard IO"
-msgstr ""
+msgstr "E/S estàndard"
 
 #: core/server/mcpserver.cpp:144
-#, fuzzy, kde-format
-#| msgid "Streamble Http"
+#, kde-format
 msgid "Streamable HTTP"
 msgstr "HTTP Streamable"
 
