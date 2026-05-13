@@ -28,20 +28,42 @@ void McpServerTest::shouldHaveDefaultValues()
 
 void McpServerTest::shouldVerifyValidValue()
 {
-    TextAutoGenerateTextMcpProtocolCore::McpServer w;
-    QVERIFY(!w.isValid());
+    {
+        TextAutoGenerateTextMcpProtocolCore::McpServer w;
+        QVERIFY(!w.isValid());
 
-    w.setName(u"foo"_s);
-    QVERIFY(!w.isValid());
+        w.setName(u"foo"_s);
+        QVERIFY(!w.isValid());
 
-    w.setIdentifier("bla"_ba);
-    QVERIFY(!w.isValid());
+        w.setIdentifier("bla"_ba);
+        QVERIFY(!w.isValid());
 
-    w.setServerUrl(QUrl(u"bla"_s));
-    QVERIFY(!w.isValid());
+        w.setServerUrl(QUrl(u"bla"_s));
+        QVERIFY(!w.isValid());
 
-    w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse);
-    QVERIFY(w.isValid());
+        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse);
+        QVERIFY(w.isValid());
+    }
+    {
+        TextAutoGenerateTextMcpProtocolCore::McpServer w;
+        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio);
+        w.setName(u"foo"_s);
+        w.setIdentifier("bla"_ba);
+        QVERIFY(!w.isValid());
+        w.setArguments(u"ddd"_s);
+        QVERIFY(!w.isValid());
+        w.setCommand(u"foo"_s);
+        QVERIFY(w.isValid());
+    }
+    {
+        TextAutoGenerateTextMcpProtocolCore::McpServer w;
+        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp);
+        w.setName(u"foo"_s);
+        w.setIdentifier("bla"_ba);
+        QVERIFY(!w.isValid());
+        w.setServerUrl(QUrl(u"foo"_s));
+        QVERIFY(w.isValid());
+    }
 }
 
 void McpServerTest::verifyConvertServerTypeToString()
