@@ -51,7 +51,7 @@ void McpServerManager::loadServers()
 
 void McpServerManager::saveServers()
 {
-    auto config = KSharedConfig::openConfig(McpProtocolUtils::serverConfigFileName());
+    auto config = KSharedConfig::openConfig(serverConfigFileName());
     const auto instanceList = McpProtocolUtils::mcpServerList(config);
     for (const auto &group : instanceList) {
         config->deleteGroup(group);
