@@ -90,7 +90,19 @@ void McpServer::save(KConfigGroup &config) const
 
 bool McpServer::isValid() const
 {
-    return !mIdentifier.isEmpty() && !mName.isEmpty() && mTransportType != TransportType::Unknown;
+    if (mTransportType == TransportType::Unknown) {
+        return false;
+    }
+    if (mTransportType == TransportType::Stdio) {
+        if (mCommand.isEmpty()) {
+            return false;
+        }
+    } else {
+        if (mServerUrl.isEmpty()) {
+            return false;
+        }
+    }
+    return !mIdentifier.isEmpty() && !mName.isEmpty();
 }
 
 McpServer::TransportType McpServer::transportType() const
