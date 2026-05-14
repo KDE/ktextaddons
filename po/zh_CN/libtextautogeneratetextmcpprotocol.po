@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:43+0000\n"
+"POT-Creation-Date: 2026-05-14 00:42+0000\n"
 "PO-Revision-Date: 2026-05-05 07:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,21 +18,20 @@ msgstr ""
 "libtextautogeneratetextmcpprotocol.pot\n"
 "X-Crowdin-File-ID: 60128\n"
 
-#: core/server/mcpserver.cpp:140
+#: core/server/mcpserver.cpp:152
 #, kde-format
 msgid "Sse"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:142
+#: core/server/mcpserver.cpp:154
 #, kde-format
 msgid "Standard IO"
 msgstr ""
 
-#: core/server/mcpserver.cpp:144
-#, fuzzy, kde-format
-#| msgid "Streamble Http"
+#: core/server/mcpserver.cpp:156
+#, kde-format
 msgid "Streamable HTTP"
-msgstr "Streamble HTTP"
+msgstr ""
 
 #: widgets/server/addmcpserverdialog.cpp:22
 #, kde-format
@@ -108,6 +107,3 @@ msgstr "搜索…"
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "添加实例…"
-
-#~ msgid "Stdio"
-#~ msgstr "Stdio"

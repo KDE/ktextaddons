@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-22 00:43+0000\n"
-"PO-Revision-Date: 2026-02-17 17:30+0100\n"
+"PO-Revision-Date: 2026-05-13 15:27+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "Salveguarda file"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "Fonte non es plus existente"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -74,7 +74,7 @@ msgstr "Error durante que il salveguardava "
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "Non poite superscriber file  existente"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -266,4 +266,4 @@ msgstr "Alcun correction de faltas (bug)"
 #: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Version %1 </i></h1><hr/><br>"

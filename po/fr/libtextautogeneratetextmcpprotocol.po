@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:43+0000\n"
+"POT-Creation-Date: 2026-05-14 00:42+0000\n"
 "PO-Revision-Date: 2026-05-08 18:40+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -14,17 +14,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 26.04.0\n"
 
-#: core/server/mcpserver.cpp:140
+#: core/server/mcpserver.cpp:152
 #, kde-format
 msgid "Sse"
 msgstr "Sse"
 
-#: core/server/mcpserver.cpp:142
+#: core/server/mcpserver.cpp:154
 #, kde-format
 msgid "Standard IO"
 msgstr ""
 
-#: core/server/mcpserver.cpp:144
+#: core/server/mcpserver.cpp:156
 #, fuzzy, kde-format
 #| msgid "Streamble Http"
 msgid "Streamable HTTP"

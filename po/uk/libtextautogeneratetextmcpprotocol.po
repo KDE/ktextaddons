@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:43+0000\n"
+"POT-Creation-Date: 2026-05-14 00:42+0000\n"
 "PO-Revision-Date: 2026-05-12 08:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -18,17 +18,17 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: core/server/mcpserver.cpp:140
+#: core/server/mcpserver.cpp:152
 #, kde-format
 msgid "Sse"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:142
+#: core/server/mcpserver.cpp:154
 #, kde-format
 msgid "Standard IO"
 msgstr "Стандартне введення-виведення"
 
-#: core/server/mcpserver.cpp:144
+#: core/server/mcpserver.cpp:156
 #, kde-format
 msgid "Streamable HTTP"
 msgstr "Потоковий HTTP"

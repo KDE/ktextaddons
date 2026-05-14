@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-12 00:43+0000\n"
-"PO-Revision-Date: 2026-05-07 14:07+0300\n"
+"POT-Creation-Date: 2026-05-14 00:42+0000\n"
+"PO-Revision-Date: 2026-05-13 13:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,19 +17,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 26.04.0\n"
 
-#: core/server/mcpserver.cpp:140
+#: core/server/mcpserver.cpp:152
 #, kde-format
 msgid "Sse"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:142
+#: core/server/mcpserver.cpp:154
 #, kde-format
 msgid "Standard IO"
-msgstr ""
+msgstr "Standard Girdi–Çıktı"
 
-#: core/server/mcpserver.cpp:144
-#, fuzzy, kde-format
-#| msgid "Streamble Http"
+#: core/server/mcpserver.cpp:156
+#, kde-format
 msgid "Streamable HTTP"
 msgstr "Aktarılabilir HTTP"
 
