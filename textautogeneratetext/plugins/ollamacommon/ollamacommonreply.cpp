@@ -134,6 +134,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
         replyInfo.promptEvalDuration = std::chrono::nanoseconds{finalResponse["prompt_eval_duration"_L1].toVariant().toULongLong()};
         replyInfo.tokenCount = finalResponse["eval_count"_L1].toVariant().toULongLong();
         replyInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
+        ret.replyInfo = replyInfo;
         break;
     }
     case RequestTypes::ShowModelInfo:
