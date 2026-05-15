@@ -21,6 +21,7 @@ void TextAutoGenerateTextReplyInfoTest::shouldHaveDefaultValues()
     QCOMPARE(info.promptTokens, 0);
     QCOMPARE(info.promptEvalTokenCount, 0);
     QCOMPARE(info.tokenCount, 0);
+    QVERIFY(!info.isValid());
     // TODO
 }
 
