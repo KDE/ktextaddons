@@ -11,7 +11,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRepl
     d.space() << "loadDuration:" << t.loadDuration;
     d.space() << "promptEvalTokenCount:" << t.promptEvalTokenCount;
     d.space() << "promptEvalDuration:" << t.promptEvalDuration;
-    d.space() << "tokenCount:" << t.tokenCount;
     d.space() << "duration:" << t.duration;
+    d.space() << "tokenCount:" << t.tokenCount;
+    d.space() << "completionTokens:" << t.completionTokens;
+    d.space() << "promptTokens:" << t.promptTokens;
     return d;
 }
