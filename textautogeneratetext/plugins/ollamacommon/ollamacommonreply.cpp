@@ -152,29 +152,31 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
 QString OllamaCommonReply::generateModelInfo() const
 {
     QString mardown;
-    const QJsonDocument doc = mTokens.constFirst();
-    QString capabilities;
-    const QJsonArray array = doc["capabilities"_L1].toArray();
-    for (const auto &val : array) {
-        if (!capabilities.isEmpty()) {
-            capabilities += u", "_s;
+    if (!mTokens.isEmpty()) {
+        const QJsonDocument doc = mTokens.constFirst();
+        QString capabilities;
+        const QJsonArray array = doc["capabilities"_L1].toArray();
+        for (const auto &val : array) {
+            if (!capabilities.isEmpty()) {
+                capabilities += u", "_s;
+            }
+            capabilities += val.toString();
         }
-        capabilities += val.toString();
+        if (!capabilities.isEmpty()) {
+            mardown += u"## %1: \n```\n"_s.arg(i18n("Capabilities")) + capabilities + u"\n```\n\n\n"_s;
+        }
+        mardown += u"## %1: \n```\n"_s.arg(i18n("Template")) + doc["template"_L1].toString() + u"\n```\n\n\n"_s;
+        mardown += u"## %1: \n```\n"_s.arg(i18n("Modelfile")) + doc["modelfile"_L1].toString() + u"\n```\n\n\n"_s;
+        const QString parameters = doc["parameters"_L1].toString();
+        if (!parameters.isEmpty()) {
+            mardown += u"## %1: \n```\n"_s.arg(i18n("Parameters")) + doc["parameters"_L1].toString() + u"\n```\n\n\n"_s;
+        }
+        mardown += u"## %1: \n```\n"_s.arg(i18n("Details")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["details"_L1].toVariant()).toJson())
+            + u"\n```\n\n\n"_s;
+        mardown += u"## %1: \n```\n"_s.arg(i18n("Model Info")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["model_info"_L1].toVariant()).toJson())
+            + u"\n```\n\n\n"_s;
+        // qDebug() << " mTokens " << doc;
     }
-    if (!capabilities.isEmpty()) {
-        mardown += u"## %1: \n```\n"_s.arg(i18n("Capabilities")) + capabilities + u"\n```\n\n\n"_s;
-    }
-    mardown += u"## %1: \n```\n"_s.arg(i18n("Template")) + doc["template"_L1].toString() + u"\n```\n\n\n"_s;
-    mardown += u"## %1: \n```\n"_s.arg(i18n("Modelfile")) + doc["modelfile"_L1].toString() + u"\n```\n\n\n"_s;
-    const QString parameters = doc["parameters"_L1].toString();
-    if (!parameters.isEmpty()) {
-        mardown += u"## %1: \n```\n"_s.arg(i18n("Parameters")) + doc["parameters"_L1].toString() + u"\n```\n\n\n"_s;
-    }
-    mardown +=
-        u"## %1: \n```\n"_s.arg(i18n("Details")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["details"_L1].toVariant()).toJson()) + u"\n```\n\n\n"_s;
-    mardown += u"## %1: \n```\n"_s.arg(i18n("Model Info")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["model_info"_L1].toVariant()).toJson())
-        + u"\n```\n\n\n"_s;
-    // qDebug() << " mTokens " << doc;
     return mardown;
 }
 
