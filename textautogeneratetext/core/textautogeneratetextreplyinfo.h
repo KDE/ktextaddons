@@ -58,7 +58,7 @@ struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
      * \param toBinary true to serialize to binary format, false for JSON format
      * \return The serialized data as a QByteArray
      */
-    [[nodiscard]] static QByteArray serialize(const TextAutoGenerateTextReplyInfo &msg, bool toBinary = true);
+    [[nodiscard]] static QJsonObject serialize(const TextAutoGenerateTextReplyInfo &msg);
     /*!
      * Deserializes a TextAutoGenerateMessage object from JSON.
      * \param o The JSON object to deserialize from

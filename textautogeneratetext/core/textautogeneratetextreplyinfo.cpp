@@ -59,9 +59,8 @@ QString TextAutoGenerateTextReplyInfo::generateReplyTypeInfoOpenAI() const
     return toolTip;
 }
 
-QByteArray TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info, bool toBinary)
+QJsonObject TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info)
 {
-    QJsonDocument d;
     QJsonObject o;
     o["replyType"_L1] = TextAutoGenerateTextReplyInfo::convertReplyTypeToString(info.replyType);
     o["totalDuration"_L1] = static_cast<qint64>(info.totalDuration.count());
@@ -73,11 +72,7 @@ QByteArray TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText::
     o["promptTokens"_L1] = static_cast<qint64>(info.promptTokens);
     o["duration"_L1] = static_cast<qint64>(info.duration.count());
 
-    if (toBinary) {
-        return QCborValue::fromJsonValue(o).toCbor();
-    }
-    d.setObject(o);
-    return d.toJson(QJsonDocument::Indented);
+    return o;
 }
 
 TextAutoGenerateText::TextAutoGenerateTextReplyInfo TextAutoGenerateTextReplyInfo::deserialize(const QJsonObject &o)
