@@ -5,8 +5,8 @@
 */
 
 #include "textautogeneratetextreplyinfotest.h"
-
 #include <QTest>
+#include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 QTEST_GUILESS_MAIN(TextAutoGenerateTextReplyInfoTest)
 
 TextAutoGenerateTextReplyInfoTest::TextAutoGenerateTextReplyInfoTest(QObject *parent)
@@ -16,6 +16,11 @@ TextAutoGenerateTextReplyInfoTest::TextAutoGenerateTextReplyInfoTest(QObject *pa
 
 void TextAutoGenerateTextReplyInfoTest::shouldHaveDefaultValues()
 {
+    const TextAutoGenerateText::TextAutoGenerateTextReplyInfo info;
+    QCOMPARE(info.completionTokens, 0);
+    QCOMPARE(info.promptTokens, 0);
+    QCOMPARE(info.promptEvalTokenCount, 0);
+    QCOMPARE(info.tokenCount, 0);
     // TODO
 }
 
