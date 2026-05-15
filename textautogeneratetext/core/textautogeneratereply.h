@@ -57,6 +57,7 @@ public:
         QList<ToolCallArgumentInfo> info;
         QString response;
         QString thinking;
+        TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
         [[nodiscard]] bool hasToolCallArguments() const;
     };
 
@@ -92,16 +93,6 @@ public:
      * Destroys the TextAutoGenerateReply object.
      */
     ~TextAutoGenerateReply() override;
-
-    /*!
-     * \brief Get extra information about the reply.
-     *
-     * This function returns a TextAutoGenerateTextReplyInfo object containing information about this reply. If the reply has not finished, the KLLMReplyInfo
-     * object will have all members set to their default values.
-     *
-     * Returns Extra information about the reply.
-     */
-    const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info() const;
 
     /*!
      * \brief Get request type.
@@ -181,7 +172,6 @@ protected:
     QList<QJsonDocument> mTokens;
 
     const RequestTypes mRequestType = RequestTypes::Unknown;
-    TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     qint64 mReceivedSize = 0;
 };

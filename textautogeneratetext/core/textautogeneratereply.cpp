@@ -87,11 +87,6 @@ const TextAutoGenerateReply::RequestTypes &TextAutoGenerateReply::requestType() 
     return mRequestType;
 }
 
-const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &TextAutoGenerateReply::info() const
-{
-    return mInfo;
-}
-
 void TextAutoGenerateReply::cancel()
 {
     if (mReply) {

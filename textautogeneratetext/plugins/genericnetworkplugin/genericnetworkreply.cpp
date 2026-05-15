@@ -17,16 +17,6 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
-        if ((mRequestType == RequestTypes::StreamingGenerate || mRequestType == RequestTypes::StreamingChat) && !mTokens.empty()) {
-            const auto finalResponse = mTokens.constLast();
-            // TODO use "usage" in openAI api
-            // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
-
-            mInfo.tokenCount = finalResponse["total_tokens"_L1].toVariant().toULongLong();
-            mInfo.completionTokens = finalResponse["completion_tokens"_L1].toVariant().toULongLong();
-            mInfo.promptTokens = finalResponse["prompt_tokens"_L1].toVariant().toULongLong();
-            // qDebug() << " usage " << finalResponse["usage"_L1];
-        }
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply response finished";
         Q_EMIT finished();
     });
@@ -110,6 +100,16 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
                 }
             }
         }
+        const auto finalResponse = mTokens.constLast();
+        // TODO use "usage" in openAI api
+        // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
+
+        TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+        replyInfo.tokenCount = finalResponse["total_tokens"_L1].toVariant().toULongLong();
+        replyInfo.completionTokens = finalResponse["completion_tokens"_L1].toVariant().toULongLong();
+        replyInfo.promptTokens = finalResponse["prompt_tokens"_L1].toVariant().toULongLong();
+        ret.replyInfo = replyInfo;
+
         // "{\"id\":\"b72cdf33d58440838134fc042e98521b\",\"object\":\"chat.completion.chunk\",\"created\":1759381277,\"model\":\"magistral-small-2509\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"id\":\"QNfTI1iiJ\",\"function\":{\"name\":\"current_date_time_tool\",\"arguments\":\"{\\\"currentdatetime\\\":
         // \\\"time\\\"}\"},\"index\":0}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":275,\"total_tokens\":324,\"completion_tokens\":49}}\n\n[DONE]\n\n
         break;

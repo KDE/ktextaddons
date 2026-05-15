@@ -16,17 +16,6 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
     : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}
 {
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
-        // Normally, we could assume that the tokens will never be empty once the request finishes, but it could be possible
-        // that the request failed and we have no tokens to parse.
-        if ((mRequestType == RequestTypes::StreamingGenerate || mRequestType == RequestTypes::StreamingChat) && !mTokens.empty()) {
-            const auto finalResponse = mTokens.constLast();
-            mInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
-            mInfo.loadDuration = std::chrono::nanoseconds{finalResponse["load_duration"_L1].toVariant().toULongLong()};
-            mInfo.promptEvalTokenCount = finalResponse["prompt_eval_count"_L1].toVariant().toULongLong();
-            mInfo.promptEvalDuration = std::chrono::nanoseconds{finalResponse["prompt_eval_duration"_L1].toVariant().toULongLong()};
-            mInfo.tokenCount = finalResponse["eval_count"_L1].toVariant().toULongLong();
-            mInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
-        }
         qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama response finished";
         if (mDownloadError) {
             return;
@@ -83,6 +72,7 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
         case RequestTypes::ShowModelInfo:
             mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
             break;
+        case RequestTypes::StreamingGenerate:
         case RequestTypes::StreamingChat: {
             auto completeTokens = mIncompleteTokens.split('\n');
             if (completeTokens.size() <= 1) {
@@ -99,21 +89,7 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
             // qDebug() << " mTokens " << mTokens;
             break;
         }
-        case RequestTypes::StreamingGenerate:
-            auto completeTokens = mIncompleteTokens.split('\n');
-            if (completeTokens.size() <= 1) {
-                return;
-            }
-            mIncompleteTokens = completeTokens.last();
-            completeTokens.removeLast();
-
-            mTokens.reserve(completeTokens.count());
-            for (const auto &tok : std::as_const(completeTokens)) {
-                mTokens.append(QJsonDocument::fromJson(tok));
-            }
-            break;
         }
-
         Q_EMIT contentAdded();
     });
 }
@@ -134,7 +110,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
     case RequestTypes::CreateModel:
     case RequestTypes::Unknown:
         break;
-    case RequestTypes::StreamingChat:
+    case RequestTypes::StreamingChat: {
         for (const auto &tok : mTokens) {
             const QJsonObject messageObj = tok["message"_L1].toObject();
             if (messageObj.contains("tool_calls"_L1)) {
@@ -150,7 +126,16 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
                 ret.response += messageObj["content"_L1].toString();
             }
         }
+        const auto finalResponse = mTokens.constLast();
+        TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+        replyInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
+        replyInfo.loadDuration = std::chrono::nanoseconds{finalResponse["load_duration"_L1].toVariant().toULongLong()};
+        replyInfo.promptEvalTokenCount = finalResponse["prompt_eval_count"_L1].toVariant().toULongLong();
+        replyInfo.promptEvalDuration = std::chrono::nanoseconds{finalResponse["prompt_eval_duration"_L1].toVariant().toULongLong()};
+        replyInfo.tokenCount = finalResponse["eval_count"_L1].toVariant().toULongLong();
+        replyInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
         break;
+    }
     case RequestTypes::ShowModelInfo:
         ret.response = generateModelInfo();
         break;
