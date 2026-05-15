@@ -38,7 +38,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(!msg.messageAttachments());
 
     // 10/05/2025 => size 224
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 160);
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 232);
 }
 
 void TextAutoGenerateMessageTest::shouldCheckFromString()
