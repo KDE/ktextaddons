@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurelanguagelistwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/widgets/translatorconfigurelanguagelistwidget.h"
 #include <QLabel>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TranslatorConfigureLanguageListWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TranslatorConfigureLanguageListWidgetTest::TranslatorConfigureLanguageListWidgetTest(QObject *parent)
     : QObject{parent}
 {

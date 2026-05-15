@@ -5,12 +5,12 @@
 */
 
 #include "languagetoolresultjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textgrammarcheck_debug.h"
 
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolResultJob::LanguageToolResultJob(QObject *parent)
     : QObject(parent)

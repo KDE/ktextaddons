@@ -5,7 +5,6 @@
 */
 
 #include "lingvaenginedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "lingvaenginewidget.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineDialog::LingvaEngineDialog(QWidget *parent)
     : QDialog(parent)
     , mConfigureWidget(new LingvaEngineWidget(this))

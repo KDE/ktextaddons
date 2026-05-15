@@ -5,12 +5,12 @@
 */
 
 #include "importkmailautocorrectiontest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "import/importkmailautocorrection.h"
 #include <QTest>
 QTEST_MAIN(ImportKMailAutocorrectionTest)
 
+using namespace Qt::Literals::StringLiterals;
 ImportKMailAutocorrectionTest::ImportKMailAutocorrectionTest(QObject *parent)
     : QObject(parent)
 {

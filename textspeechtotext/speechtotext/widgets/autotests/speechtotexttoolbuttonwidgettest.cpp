@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotexttoolbuttonwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotext/widgets/speechtotexttoolbuttonwidget.h"
 #include <QHBoxLayout>
 #include <QTest>
 #include <QToolButton>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(SpeechToTextToolButtonWidgetTest)
 SpeechToTextToolButtonWidgetTest::SpeechToTextToolButtonWidgetTest(QObject *parent)
     : QObject{parent}

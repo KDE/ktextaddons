@@ -6,7 +6,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include <QApplication>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QVBoxLayout>
 #include <QWidget>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "customemojiiconmanagerguitest.h"
 #include "emoticontexteditselector.h"
 
+using namespace Qt::Literals::StringLiterals;
 class Window : public QWidget
 {
     Q_OBJECT

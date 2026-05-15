@@ -5,11 +5,11 @@
 */
 
 #include "speechtotextmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 SpeechToTextMenu::SpeechToTextMenu(QObject *parent)
     : QObject{parent}

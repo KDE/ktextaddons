@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurelanguagelistwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSortFilterProxyModel>
 #include <QStandardItemModel>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 
 TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(const QString &labelText, QWidget *parent)

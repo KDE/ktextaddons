@@ -5,7 +5,6 @@
 */
 
 #include "textgotolinewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/textgotolinewidget.h"
 #include <QPushButton>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <qtestkeyboard.h>
 #include <qtestmouse.h>
 
+using namespace Qt::Literals::StringLiterals;
 TextGoToLineWidgetTest::TextGoToLineWidgetTest(QObject *parent)
     : QObject(parent)
 {

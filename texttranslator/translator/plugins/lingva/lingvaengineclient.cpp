@@ -5,7 +5,6 @@
 */
 
 #include "lingvaengineclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "lingvaenginedialog.h"
 #include "lingvaengineplugin.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <QPointer>
 
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineClient::LingvaEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {

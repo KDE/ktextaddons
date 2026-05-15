@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmodelavailableinfosdelegate.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autogeneratetext_genericnetwork_debug.h"
 #include "genericnetworkavailableinfosmodel.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDesktopServices>
 #include <QPainter>
 
+using namespace Qt::Literals::StringLiterals;
 GenericNetworkModelAvailableInfosDelegate::GenericNetworkModelAvailableInfosDelegate(QListView *view)
     : TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate(view)
 {

@@ -5,11 +5,11 @@
 */
 
 #include "languagetoolresultjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetool/languagetoolresultjob.h"
 #include <QTest>
 QTEST_MAIN(LanguageToolResultJobTest)
+using namespace Qt::Literals::StringLiterals;
 LanguageToolResultJobTest::LanguageToolResultJobTest(QObject *parent)
     : QObject(parent)
 {

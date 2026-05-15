@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/ollamamodeldownloadwidget.h"
 #include <QHBoxLayout>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(OllamaModelDownloadWidgetTest)
 
 OllamaModelDownloadWidgetTest::OllamaModelDownloadWidgetTest(QObject *parent)

@@ -5,13 +5,13 @@
 */
 
 #include "translatorconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translatorconfigurewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 TranslatorConfigureDialog::TranslatorConfigureDialog(QWidget *parent)
     : QDialog(parent)

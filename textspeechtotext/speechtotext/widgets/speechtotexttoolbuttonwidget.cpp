@@ -5,12 +5,12 @@
 */
 
 #include "speechtotexttoolbuttonwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textspeechtotext/speechtotextmanager.h"
 #include <QHBoxLayout>
 #include <QToolButton>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 SpeechToTextToolButtonWidget::SpeechToTextToolButtonWidget(QWidget *parent)
     : QWidget{parent}

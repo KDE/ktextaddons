@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextconfiguredialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotext/widgets/speechtotextconfiguredialog.h"
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(SpeechToTextConfigureDialogTest)
+using namespace Qt::Literals::StringLiterals;
 SpeechToTextConfigureDialogTest::SpeechToTextConfigureDialogTest(QObject *parent)
     : QObject{parent}
 {

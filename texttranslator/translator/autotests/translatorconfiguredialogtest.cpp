@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfiguredialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/widgets/translatorconfiguredialog.h"
 #include "translator/widgets/translatorconfigurewidget.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TranslatorConfigureDialogTest)
+using namespace Qt::Literals::StringLiterals;
 TranslatorConfigureDialogTest::TranslatorConfigureDialogTest(QObject *parent)
     : QObject{parent}
 {

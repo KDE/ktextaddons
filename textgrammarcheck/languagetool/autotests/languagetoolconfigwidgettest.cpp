@@ -5,7 +5,6 @@
 */
 
 #include "languagetoolconfigwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetool/languagetoolcombobox.h"
 #include "languagetool/languagetoolconfigwidget.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <qtestmouse.h>
 
 QTEST_MAIN(LanguageToolConfigWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 LanguageToolConfigWidgetTest::LanguageToolConfigWidgetTest(QObject *parent)
     : QObject(parent)
 {

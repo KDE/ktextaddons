@@ -5,12 +5,12 @@
 */
 
 #include "richtextbrowserfindbartest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "richtextbrowser/richtextbrowserfindbar.h"
 #include <QTest>
 #include <QTextBrowser>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RichTextBrowserFindBarTest)
 Q_DECLARE_METATYPE(TextCustomEditor::TextEditFindBarBase::FindFlags)
 RichTextBrowserFindBarTest::RichTextBrowserFindBarTest(QObject *parent)

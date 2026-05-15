@@ -5,7 +5,6 @@
 */
 
 #include "deeplengineconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFormLayout>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
 DeeplEngineConfigureWidget::DeeplEngineConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mUseFreeLicense(new QCheckBox(i18nc("@option:check", "Use Free License Key"), this))

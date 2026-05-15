@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "whisperspeechtotextclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextplugin.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 WhisperSpeechToTextClient::WhisperSpeechToTextClient(QObject *parent)
     : TextSpeechToText::SpeechToTextClient{parent}
 {

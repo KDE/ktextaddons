@@ -5,7 +5,6 @@
 */
 
 #include "languagetoolconfigdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetoolconfigwidget.h"
 #include <KConfigGroup>
@@ -20,6 +19,7 @@ namespace
 {
 const char myConfigGroupName[] = "LanguageToolConfigDialog";
 }
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolConfigDialog::LanguageToolConfigDialog(QWidget *parent)
     : QDialog(parent)

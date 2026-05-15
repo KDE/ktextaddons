@@ -5,8 +5,8 @@
 */
 
 #include "deeplengineutil.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 QString DeeplEngineUtil::groupName()
 {
     return u"DeepLTranslator"_s;

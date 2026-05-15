@@ -5,7 +5,6 @@
 */
 
 #include "grammalecteconfigdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalecte/grammalecteconfigdialog.h"
 #include "grammalecte/grammalecteconfigwidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(GrammalecteConfigDialogTest)
 GrammalecteConfigDialogTest::GrammalecteConfigDialogTest(QObject *parent)
     : QObject(parent)

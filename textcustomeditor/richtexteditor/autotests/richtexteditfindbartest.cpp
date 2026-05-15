@@ -5,13 +5,13 @@
 */
 
 #include "richtexteditfindbartest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "richtexteditor/richtexteditfindbar.h"
 #include "widgets/findutils.h"
 #include <QTest>
 #include <QTextEdit>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RichTextEditFindBarTest)
 Q_DECLARE_METATYPE(TextCustomEditor::TextEditFindBarBase::FindFlags)
 RichTextEditFindBarTest::RichTextEditFindBarTest(QObject *parent)

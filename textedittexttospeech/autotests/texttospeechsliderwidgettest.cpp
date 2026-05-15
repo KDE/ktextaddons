@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechsliderwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeechsliderwidget.h"
 #include <QHBoxLayout>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSlider>
 #include <QTest>
 QTEST_MAIN(TextToSpeechSliderWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TextToSpeechSliderWidgetTest::TextToSpeechSliderWidgetTest(QObject *parent)
     : QObject{parent}
 {

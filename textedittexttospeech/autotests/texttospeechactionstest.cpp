@@ -5,13 +5,13 @@
 */
 
 #include "texttospeechactionstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../texttospeechactions.h"
 #include <QSignalSpy>
 #include <QTest>
 
 Q_DECLARE_METATYPE(TextEditTextToSpeech::TextToSpeechWidget::State)
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(TextToSpeechActionsTest)
 TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
     : QObject(parent)

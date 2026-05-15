@@ -5,7 +5,6 @@
 */
 
 #include "grammalecteurlrequesterwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 #include <QToolButton>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammalecteUrlRequesterWidget::GrammalecteUrlRequesterWidget(QWidget *parent)
     : QWidget{parent}

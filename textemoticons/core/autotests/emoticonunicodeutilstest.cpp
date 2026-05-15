@@ -5,13 +5,13 @@
 */
 
 #include "emoticonunicodeutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emoticonunicodeutils.h"
 #include <QTest>
 
 QTEST_GUILESS_MAIN(EmoticonUnicodeUtilsTest)
 
+using namespace Qt::Literals::StringLiterals;
 EmoticonUnicodeUtilsTest::EmoticonUnicodeUtilsTest(QObject *parent)
     : QObject{parent}
 {

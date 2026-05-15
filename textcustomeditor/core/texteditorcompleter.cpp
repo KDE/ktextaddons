@@ -5,7 +5,6 @@
  */
 
 #include "texteditorcompleter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QAbstractItemView>
 #include <QCompleter>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace TextCustomEditor;
 
+using namespace Qt::Literals::StringLiterals;
 class TextEditorCompleter::TextEditorCompleterPrivate
 {
 public:

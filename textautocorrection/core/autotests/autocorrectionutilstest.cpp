@@ -5,10 +5,10 @@
 */
 
 #include "autocorrectionutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocorrectionutils.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(AutoCorrectionUtilsTest)
 AutoCorrectionUtilsTest::AutoCorrectionUtilsTest(QObject *parent)
     : QObject{parent}

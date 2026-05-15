@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadprogresswidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/ollamamodeldownloadprogresswidget.h"
 #include <QLabel>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 #include <QVBoxLayout>
 QTEST_MAIN(OllamaModelDownloadProgressWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 
 OllamaModelDownloadProgressWidgetTest::OllamaModelDownloadProgressWidgetTest(QObject *parent)
     : QObject{parent}

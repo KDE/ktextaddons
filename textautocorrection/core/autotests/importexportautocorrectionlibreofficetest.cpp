@@ -5,7 +5,6 @@
 */
 
 #include "importexportautocorrectionlibreofficetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "export/exportlibreofficeautocorrection.h"
 #include "import/importlibreofficeautocorrection.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryFile>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(ImportExportAutocorrectionLibreOfficeTest)
 ImportExportAutocorrectionLibreOfficeTest::ImportExportAutocorrectionLibreOfficeTest(QObject *parent)
     : QObject{parent}

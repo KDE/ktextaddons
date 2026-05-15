@@ -5,12 +5,12 @@
 */
 
 #include "grammalecteresultjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textgrammarcheck_debug.h"
 
 #include <QFileInfo>
 #include <QTemporaryFile>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammalecteResultJob::GrammalecteResultJob(QObject *parent)
     : QObject(parent)

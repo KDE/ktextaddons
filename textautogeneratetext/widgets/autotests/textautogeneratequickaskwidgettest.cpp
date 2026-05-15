@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/quickask/textautogeneratequickaskwidget.h"
 #include <QStackedWidget>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateQuickAskWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateQuickAskWidgetTest::TextAutoGenerateQuickAskWidgetTest(QObject *parent)
     : QObject{parent}
 {

@@ -5,12 +5,12 @@
 */
 
 #include "deeplengineclienttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../deeplengineclient.h"
 #include <QTest>
 QTEST_MAIN(DeeplEngineClientTest)
 
+using namespace Qt::Literals::StringLiterals;
 DeeplEngineClientTest::DeeplEngineClientTest(QObject *parent)
     : QObject{parent}
 {

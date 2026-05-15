@@ -5,7 +5,6 @@
 */
 
 #include "deeplengineclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "deeplengineconfiguredialog.h"
 #include "deeplengineplugin.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <qt6keychain/keychain.h>
 
+using namespace Qt::Literals::StringLiterals;
 DeeplEngineClient::DeeplEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {

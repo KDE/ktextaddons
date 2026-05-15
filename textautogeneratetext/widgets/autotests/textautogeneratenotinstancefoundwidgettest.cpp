@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratenotinstancefoundwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/common/textautogeneratenotinstancefoundwidget.h"
 #include <QLabel>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <qtestmouse.h>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(TextAutoGenerateNotInstanceFoundWidgetTest)
 
 TextAutoGenerateNotInstanceFoundWidgetTest::TextAutoGenerateNotInstanceFoundWidgetTest(QObject *parent)

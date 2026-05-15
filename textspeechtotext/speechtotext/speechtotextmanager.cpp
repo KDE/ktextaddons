@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotextclient.h"
 #include "speechtotextengineloader.h"
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "textspeechtotext_debug.h"
 #include <QAudioSource>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 
 class SpeechToTextManager::SpeechToTextPluginPrivate

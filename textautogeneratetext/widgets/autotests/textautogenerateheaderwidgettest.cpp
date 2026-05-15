@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateheaderwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/textautogenerateheaderwidget.h"
 #include <QHBoxLayout>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <qtestmouse.h>
 QTEST_MAIN(TextAutoGenerateHeaderWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateHeaderWidgetTest::TextAutoGenerateHeaderWidgetTest(QObject *parent)
     : QObject{parent}
 {

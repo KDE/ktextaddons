@@ -5,11 +5,11 @@
 */
 
 #include "textautogeneratesearchmessageutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/textautogeneratesearchmessageutils.h"
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateSearchMessageUtilsTest)
 TextAutoGenerateSearchMessageUtilsTest::TextAutoGenerateSearchMessageUtilsTest(QObject *parent)
     : QObject{parent}

@@ -5,7 +5,6 @@
 */
 
 #include "speechtotextcomboboxwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotext/textspeechtotextutil.h"
 #include <KConfigGroup>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 #include <TextSpeechToText/SpeechToTextEngineLoader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
     : QWidget(parent)

@@ -5,7 +5,6 @@
 */
 
 #include "textgotolinewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QIcon>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 
 using namespace TextCustomEditor;
+using namespace Qt::Literals::StringLiterals;
 
 class Q_DECL_HIDDEN TextCustomEditor::TextGoToLineWidgetPrivate
 {

@@ -5,7 +5,6 @@
 */
 
 #include "languagetoolconfigwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetoolcombobox.h"
 #include "languagetoolmanager.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 #include <QToolButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     : QWidget(parent)

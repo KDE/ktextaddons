@@ -5,7 +5,6 @@
 */
 
 #include "autocorrectiontest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../autocorrection.h"
 #include "settings/textautocorrectionsettings.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextDocument>
 QTEST_MAIN(AutoCorrectionTest)
 
+using namespace Qt::Literals::StringLiterals;
 #ifndef Q_OS_WIN
 static void initLocale()
 {

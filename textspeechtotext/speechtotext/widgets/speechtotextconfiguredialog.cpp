@@ -5,13 +5,13 @@
 */
 
 #include "speechtotextconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotextconfigurewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 SpeechToTextConfigureDialog::SpeechToTextConfigureDialog(QWidget *parent)
     : QDialog(parent)

@@ -5,8 +5,8 @@
 */
 #include "texttospeechkokoro.h"
 
-using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
+using namespace Qt::Literals::StringLiterals;
 TextToSpeechKokoro::TextToSpeechKokoro(QObject *parent)
     : QObject{parent}
 {

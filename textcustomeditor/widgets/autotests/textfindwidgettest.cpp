@@ -5,12 +5,12 @@
 */
 
 #include "textfindwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/textfindreplacewidget.h"
 #include <QPushButton>
 #include <QTest>
 QTEST_MAIN(TextFindWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TextFindWidgetTest::TextFindWidgetTest(QObject *parent)
     : QObject{parent}
 {

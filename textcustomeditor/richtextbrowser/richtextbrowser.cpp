@@ -5,7 +5,6 @@
 */
 
 #include "richtextbrowser.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/textmessageindicator.h"
 #include <KCursor>
@@ -31,6 +30,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextCursor>
 #include <QTextDocumentFragment>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextCustomEditor;
 class Q_DECL_HIDDEN RichTextBrowser::RichTextBrowserPrivate
 {

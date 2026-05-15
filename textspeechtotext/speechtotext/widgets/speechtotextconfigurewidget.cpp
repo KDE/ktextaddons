@@ -5,7 +5,6 @@
 */
 
 #include "speechtotextconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotextcomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 
 SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)

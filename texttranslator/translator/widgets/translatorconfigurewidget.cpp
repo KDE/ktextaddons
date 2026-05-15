@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translatorconfigurecombowidget.h"
 #include <KLocalizedString>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QVBoxLayout>
 using namespace TextTranslator;
+using namespace Qt::Literals::StringLiterals;
 
 class Q_DECL_HIDDEN TextTranslator::TranslatorConfigureWidget::TranslatorConfigureWidgetPrivate
 {

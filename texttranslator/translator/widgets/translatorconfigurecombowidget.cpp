@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurecombowidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/misc/translatorutil.h"
 #include "translator/translatorengineloader.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QToolButton>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 TranslatorConfigureComboWidget::TranslatorConfigureComboWidget(QWidget *parent)
     : QWidget{parent}

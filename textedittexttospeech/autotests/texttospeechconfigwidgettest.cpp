@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechconfigwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeechconfiginterface.h"
 #include "texttospeechconfigwidget.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(TextToSpeechConfigWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 TextToSpeechConfigWidgetTest::TextToSpeechConfigWidgetTest(QObject *parent)
     : QObject(parent)
 {

@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurecombowidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/widgets/translatorconfigurecombowidget.h"
 #include <QComboBox>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QToolButton>
 QTEST_MAIN(TranslatorConfigureComboWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TranslatorConfigureComboWidgetTest::TranslatorConfigureComboWidgetTest(QObject *parent)
     : QObject{parent}
 {

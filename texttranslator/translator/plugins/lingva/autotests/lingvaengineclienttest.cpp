@@ -5,13 +5,13 @@
 */
 
 #include "lingvaengineclienttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../lingvaengineclient.h"
 #include "translator/translatorengineplugin.h"
 #include <QTest>
 QTEST_MAIN(LingvaEngineClientTest)
 
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineClientTest::LingvaEngineClientTest(QObject *parent)
     : QObject{parent}
 {

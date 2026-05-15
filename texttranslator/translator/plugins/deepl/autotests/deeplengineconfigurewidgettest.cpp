@@ -5,7 +5,6 @@
 */
 
 #include "deeplengineconfigurewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../deeplengineconfigurewidget.h"
 #include <QCheckBox>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(DeeplEngineConfigureWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 DeeplEngineConfigureWidgetTest::DeeplEngineConfigureWidgetTest(QObject *parent)
     : QObject{parent}
 {

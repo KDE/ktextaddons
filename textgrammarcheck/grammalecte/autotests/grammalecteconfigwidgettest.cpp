@@ -5,7 +5,6 @@
 */
 
 #include "grammalecteconfigwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalecte/grammalecteconfigwidget.h"
 #include "grammalecte/grammalecteurlrequesterwidget.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(GrammalecteConfigWidgetTest)
 GrammalecteConfigWidgetTest::GrammalecteConfigWidgetTest(QObject *parent)
     : QObject(parent)

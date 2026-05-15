@@ -5,7 +5,6 @@
 */
 
 #include "libretranslateengineclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libretranslateengineconfiguredialog.h"
 #include "libretranslateengineplugin.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <qt6keychain/keychain.h>
 
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineClient::LibreTranslateEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {

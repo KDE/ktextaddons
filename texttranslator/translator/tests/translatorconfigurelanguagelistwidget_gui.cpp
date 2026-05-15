@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurelanguagelistwidget_gui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/misc/translatorutil.h"
 #include "translator/widgets/translatorconfigurelanguagelistwidget.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 TranslatorConfigureLanguageListWidget_gui::TranslatorConfigureLanguageListWidget_gui(QWidget *parent)
     : QDialog(parent)
 {

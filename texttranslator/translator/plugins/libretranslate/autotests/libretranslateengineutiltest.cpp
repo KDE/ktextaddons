@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "libretranslateengineutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../libretranslateengineutil.h"
 #include <QTest>
 QTEST_MAIN(LibreTranslateEngineUtilTest)
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineUtilTest::LibreTranslateEngineUtilTest(QObject *parent)
     : QObject{parent}
 {

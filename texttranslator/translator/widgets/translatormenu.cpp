@@ -5,7 +5,6 @@
 */
 
 #include "translatormenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttranslator_debug.h"
 #include "translator/misc/translatorutil.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 TranslatorMenu::TranslatorMenu(QObject *parent)
     : QObject(parent)

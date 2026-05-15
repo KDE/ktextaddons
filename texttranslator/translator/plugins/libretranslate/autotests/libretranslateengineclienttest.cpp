@@ -5,12 +5,12 @@
 */
 
 #include "libretranslateengineclienttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../libretranslateengineclient.h"
 #include <QTest>
 QTEST_MAIN(LibreTranslateEngineClientTest)
 
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineClientTest::LibreTranslateEngineClientTest(QObject *parent)
     : QObject{parent}
 {

@@ -5,8 +5,8 @@
 */
 
 #include "lingvaengineutil.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 QString LingvaEngineUtil::groupName()
 {
     return u"LingvaTranslator"_s;

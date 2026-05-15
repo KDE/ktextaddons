@@ -5,7 +5,6 @@
 */
 
 #include "speechtotextselectdevicewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include <QComboBox>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(SpeechToTextSelectDeviceWidgetTest)
 SpeechToTextSelectDeviceWidgetTest::SpeechToTextSelectDeviceWidgetTest(QObject *parent)
     : QObject{parent}

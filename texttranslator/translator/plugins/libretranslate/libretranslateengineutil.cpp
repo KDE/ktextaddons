@@ -5,8 +5,8 @@
 */
 
 #include "libretranslateengineutil.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 QString LibreTranslateEngineUtil::groupName()
 {
     return u"LibreTranslateTranslator"_s;

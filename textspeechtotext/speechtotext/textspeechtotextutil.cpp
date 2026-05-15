@@ -5,8 +5,8 @@
 */
 
 #include "textspeechtotextutil.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 QString TextSpeechToTextUtil::groupTranslateName()
 {

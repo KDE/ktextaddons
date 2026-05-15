@@ -5,13 +5,13 @@
 */
 
 #include "deeplengineconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "deeplengineconfigurewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 DeeplEngineConfigureDialog::DeeplEngineConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mConfigureWidget(new DeeplEngineConfigureWidget(this))

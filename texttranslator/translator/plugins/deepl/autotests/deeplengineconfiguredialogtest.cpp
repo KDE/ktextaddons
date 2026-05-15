@@ -5,7 +5,6 @@
 */
 
 #include "deeplengineconfiguredialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../deeplengineconfiguredialog.h"
 #include "../deeplengineconfigurewidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(DeeplEngineConfigureDialogTest)
+using namespace Qt::Literals::StringLiterals;
 DeeplEngineConfigureDialogTest::DeeplEngineConfigureDialogTest(QObject *parent)
     : QObject{parent}
 {

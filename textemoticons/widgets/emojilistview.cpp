@@ -5,7 +5,6 @@
 */
 
 #include "emojilistview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojiitemdelegate.h"
 #include "emojimodel.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QKeyEvent>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsWidgets;
 EmojiListView::EmojiListView(QWidget *parent)
     : QListView(parent)

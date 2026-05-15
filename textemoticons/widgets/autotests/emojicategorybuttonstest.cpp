@@ -4,13 +4,13 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emojicategorybuttonstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojicategorybuttons.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QTest>
 QTEST_MAIN(EmojiCategoryButtonsTest)
+using namespace Qt::Literals::StringLiterals;
 EmojiCategoryButtonsTest::EmojiCategoryButtonsTest(QObject *parent)
     : QObject{parent}
 {

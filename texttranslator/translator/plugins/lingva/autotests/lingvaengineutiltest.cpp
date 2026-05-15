@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "lingvaengineutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../lingvaengineutil.h"
 #include <QTest>
 QTEST_MAIN(LingvaEngineUtilTest)
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineUtilTest::LingvaEngineUtilTest(QObject *parent)
     : QObject{parent}
 {

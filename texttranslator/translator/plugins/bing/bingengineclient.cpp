@@ -5,12 +5,12 @@
 */
 
 #include "bingengineclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bingengineplugin.h"
 #include "translator/misc/translatorutil.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 BingEngineClient::BingEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {

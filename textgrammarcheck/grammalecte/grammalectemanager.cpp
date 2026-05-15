@@ -5,7 +5,6 @@
 */
 
 #include "grammalectemanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -14,6 +13,7 @@ namespace
 {
 const char myConfigGroupName[] = "Grammalecte";
 }
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammalecteManager::GrammalecteManager(QObject *parent)
     : QObject(parent)

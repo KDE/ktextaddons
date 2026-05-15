@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/widgets/translatorconfigurecombowidget.h"
 #include "translator/widgets/translatorconfigurewidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TranslatorConfigureWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TranslatorConfigureWidgetTest::TranslatorConfigureWidgetTest(QObject *parent)
     : QObject{parent}
 {

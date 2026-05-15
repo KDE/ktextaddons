@@ -5,13 +5,13 @@
 */
 
 #include "libretranslateengineconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libretranslateengineconfigurewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineConfigureDialog::LibreTranslateEngineConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mConfigureWidget(new LibreTranslateEngineConfigureWidget(this))

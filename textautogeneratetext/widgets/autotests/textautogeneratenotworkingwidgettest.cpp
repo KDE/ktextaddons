@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratenotworkingwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/common/textautogeneratenotworkingwidget.h"
 #include <KMessageWidget>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateNotWorkingWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 
 TextAutoGenerateNotWorkingWidgetTest::TextAutoGenerateNotWorkingWidgetTest(QObject *parent)
     : QObject{parent}

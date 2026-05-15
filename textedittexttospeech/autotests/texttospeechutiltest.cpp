@@ -5,11 +5,11 @@
 */
 
 #include "texttospeechutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeechutil.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(TextToSpeechUtilTest)
+using namespace Qt::Literals::StringLiterals;
 TextToSpeechUtilTest::TextToSpeechUtilTest(QObject *parent)
     : QObject{parent}
 {

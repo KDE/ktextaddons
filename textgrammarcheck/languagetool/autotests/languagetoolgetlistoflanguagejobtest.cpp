@@ -5,10 +5,10 @@
 */
 
 #include "languagetoolgetlistoflanguagejobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetool/languagetoolgetlistoflanguagejob.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(LanguageToolGetListOfLanguageJobTest)
 LanguageToolGetListOfLanguageJobTest::LanguageToolGetListOfLanguageJobTest(QObject *parent)
     : QObject(parent)

@@ -5,12 +5,12 @@
 */
 
 #include "yandexengineclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/misc/translatorutil.h"
 #include "yandexengineplugin.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 YandexEngineClient::YandexEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {

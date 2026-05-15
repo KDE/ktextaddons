@@ -4,11 +4,11 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emojisortfilterproxymodeltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojimodelmanager.h"
 #include "emojisortfilterproxymodel.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(EmojiSortFilterProxyModelTest)
 EmojiSortFilterProxyModelTest::EmojiSortFilterProxyModelTest(QObject *parent)
     : QObject{parent}

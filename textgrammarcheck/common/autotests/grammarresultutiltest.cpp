@@ -5,12 +5,12 @@
 */
 
 #include "grammarresultutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "common/grammarresultutil.h"
 #include <QTest>
 #include <QTextDocument>
 QTEST_MAIN(GrammarResultUtilTest)
+using namespace Qt::Literals::StringLiterals;
 GrammarResultUtilTest::GrammarResultUtilTest(QObject *parent)
     : QObject{parent}
 {

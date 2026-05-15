@@ -5,7 +5,6 @@
 */
 
 #include "textreplacewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/textfindreplacewidget.h"
 #include <QLineEdit>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 QTEST_MAIN(TextReplaceWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 TextReplaceWidgetTest::TextReplaceWidgetTest(QObject *parent)
     : QObject{parent}
 {

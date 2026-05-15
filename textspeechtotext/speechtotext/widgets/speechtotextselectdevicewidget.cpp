@@ -5,7 +5,6 @@
 */
 
 #include "speechtotextselectdevicewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QLabel>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 namespace
 {

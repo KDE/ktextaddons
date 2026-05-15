@@ -5,7 +5,6 @@
 */
 
 #include "lingvaenginedialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../lingvaenginedialog.h"
 #include "../lingvaenginewidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(LingvaEngineDialogTest)
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineDialogTest::LingvaEngineDialogTest(QObject *parent)
     : QObject{parent}
 {

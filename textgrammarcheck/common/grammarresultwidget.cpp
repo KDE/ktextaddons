@@ -5,7 +5,6 @@
 */
 
 #include "grammarresultwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammarresulttextedit.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QHBoxLayout>
 #include <QToolButton>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammarResultWidget::GrammarResultWidget(QWidget *parent)
     : QWidget(parent)

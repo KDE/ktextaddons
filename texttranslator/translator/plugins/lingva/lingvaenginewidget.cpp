@@ -5,13 +5,13 @@
 */
 
 #include "lingvaenginewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     : QWidget{parent}
     , mServerUrl(new QLineEdit(this))

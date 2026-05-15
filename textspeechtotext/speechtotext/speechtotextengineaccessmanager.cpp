@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextengineaccessmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QNetworkAccessManager>
 
 using namespace TextSpeechToText;
+using namespace Qt::Literals::StringLiterals;
 SpeechToTextEngineAccessManager::SpeechToTextEngineAccessManager(QObject *parent)
     : QObject(parent)
     , mNetworkAccessManager(new QNetworkAccessManager(this))

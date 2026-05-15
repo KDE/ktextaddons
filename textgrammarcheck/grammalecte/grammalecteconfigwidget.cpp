@@ -5,7 +5,6 @@
 */
 
 #include "grammalecteconfigwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalectemanager.h"
 #include "grammalecteurlrequesterwidget.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammalecteConfigWidget::GrammalecteConfigWidget(QWidget *parent, bool disableMessageBox)
     : QWidget(parent)

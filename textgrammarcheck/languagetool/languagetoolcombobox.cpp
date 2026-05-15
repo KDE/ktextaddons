@@ -5,11 +5,11 @@
 */
 
 #include "languagetoolcombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languageinfo.h"
 #include <KLocalizedString>
 using namespace TextGrammarCheck;
+using namespace Qt::Literals::StringLiterals;
 LanguageToolComboBox::LanguageToolComboBox(QWidget *parent)
     : QComboBox(parent)
 {

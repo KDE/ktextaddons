@@ -5,7 +5,6 @@
 */
 
 #include "emoticontexteditselectortest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojicategorybuttons.h"
 #include "emojilistview.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(EmoticonTextEditSelectorTest)
 
 EmoticonTextEditSelectorTest::EmoticonTextEditSelectorTest(QObject *parent)

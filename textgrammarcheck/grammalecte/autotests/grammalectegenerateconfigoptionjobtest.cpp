@@ -5,11 +5,11 @@
 */
 
 #include "grammalectegenerateconfigoptionjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalecte/grammalectegenerateconfigoptionjob.h"
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(GrammalecteGenerateConfigOptionJobTest)
 
 GrammalecteGenerateConfigOptionJobTest::GrammalecteGenerateConfigOptionJobTest(QObject *parent)

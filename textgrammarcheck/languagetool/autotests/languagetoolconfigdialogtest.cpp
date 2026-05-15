@@ -5,7 +5,6 @@
 */
 
 #include "languagetoolconfigdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetool/languagetoolconfigdialog.h"
 #include "languagetool/languagetoolconfigwidget.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(LanguageToolConfigDialogTest)
+using namespace Qt::Literals::StringLiterals;
 LanguageToolConfigDialogTest::LanguageToolConfigDialogTest(QObject *parent)
     : QObject(parent)
 {

@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratelistviewtextselection.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "delegate/textautogeneratelistviewdelegate.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextDocument>
 #include <QTextDocumentFragment>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 
 TextAutoGenerateListViewTextSelection::TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewBaseDelegate *delegate, QObject *parent)
     : QObject(parent)

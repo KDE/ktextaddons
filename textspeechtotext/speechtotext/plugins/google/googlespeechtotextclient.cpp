@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "googlespeechtotextclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "googlespeechtotextplugin.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 GoogleSpeechToTextClient::GoogleSpeechToTextClient(QObject *parent)
     : TextSpeechToText::SpeechToTextClient{parent}
 {

@@ -5,11 +5,11 @@
 */
 
 #include "emojilistviewtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojilistview.h"
 #include <QTest>
 QTEST_MAIN(EmojiListViewTest)
+using namespace Qt::Literals::StringLiterals;
 EmojiListViewTest::EmojiListViewTest(QObject *parent)
     : QObject(parent)
 {

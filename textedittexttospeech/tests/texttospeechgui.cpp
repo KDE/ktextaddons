@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechgui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeech.h"
 #include <KLocalizedString>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTextEdit>
 
+using namespace Qt::Literals::StringLiterals;
 TextToSpeechGui::TextToSpeechGui(QWidget *parent)
     : QMainWindow(parent)
 {

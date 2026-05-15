@@ -5,13 +5,13 @@
 */
 
 #include "libretranslateengineconfigurewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../libretranslateengineconfigurewidget.h"
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(LibreTranslateEngineConfigureWidgetTest)
 LibreTranslateEngineConfigureWidgetTest::LibreTranslateEngineConfigureWidgetTest(QObject *parent)
     : QObject{parent}

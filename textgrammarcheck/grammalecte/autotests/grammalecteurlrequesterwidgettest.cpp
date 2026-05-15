@@ -4,7 +4,6 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "grammalecteurlrequesterwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalecte/grammalecteurlrequesterwidget.h"
 #include <QHBoxLayout>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(GrammalecteUrlRequesterWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 GrammalecteUrlRequesterWidgetTest::GrammalecteUrlRequesterWidgetTest(QObject *parent)
     : QObject{parent}
 {

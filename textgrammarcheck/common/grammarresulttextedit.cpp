@@ -5,7 +5,6 @@
 */
 
 #include "grammarresulttextedit.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammarresultutil.h"
 #include "textgrammarcheck_debug.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QPainter>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammarResultTextEdit::GrammarResultTextEdit(QWidget *parent)
     : QTextEdit(parent)

@@ -5,7 +5,6 @@
 */
 
 #include "libretranslateengineconfiguredialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../libretranslateengineconfiguredialog.h"
 #include "../libretranslateengineconfigurewidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(LibreTranslateEngineConfigureDialogTest)
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineConfigureDialogTest::LibreTranslateEngineConfigureDialogTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,7 +20,7 @@ LibreTranslateEngineConfigureDialogTest::LibreTranslateEngineConfigureDialogTest
 
 void LibreTranslateEngineConfigureDialogTest::shouldHaveDefaultValues()
 {
-    LibreTranslateEngineConfigureDialog d;
+    const LibreTranslateEngineConfigureDialog d;
     QVERIFY(!d.windowTitle().isEmpty());
     auto mConfigureWidget = d.findChild<LibreTranslateEngineConfigureWidget *>(u"mConfigureWidget"_s);
     QVERIFY(mConfigureWidget);

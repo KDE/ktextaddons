@@ -5,7 +5,6 @@
 */
 
 #include "languagetoolwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetool/languagetoolconfigdialog.h"
 #include "languagetool/languagetoolgetlistoflanguagejob.h"
@@ -25,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextEdit>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 LanguageToolWidget::LanguageToolWidget(QWidget *parent)
     : QWidget(parent)
     , mNetworkAccessManager(new QNetworkAccessManager(this))

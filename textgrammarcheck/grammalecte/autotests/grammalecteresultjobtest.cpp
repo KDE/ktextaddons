@@ -5,12 +5,12 @@
 */
 
 #include "grammalecteresultjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalecte/grammalecteresultjob.h"
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(GrammarResultJobTest)
+using namespace Qt::Literals::StringLiterals;
 GrammarResultJobTest::GrammarResultJobTest(QObject *parent)
     : QObject(parent)
 {

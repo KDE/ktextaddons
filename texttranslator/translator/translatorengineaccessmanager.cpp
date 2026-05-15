@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "translatorengineaccessmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QNetworkAccessManager>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 TranslatorEngineAccessManager::TranslatorEngineAccessManager(QObject *parent)
     : QObject(parent)

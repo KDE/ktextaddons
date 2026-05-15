@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextconfigurewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotext/widgets/speechtotextcomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(SpeechToTextConfigureWidgetTest)
 SpeechToTextConfigureWidgetTest::SpeechToTextConfigureWidgetTest(QObject *parent)
     : QObject{parent}

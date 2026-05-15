@@ -5,7 +5,6 @@
 */
 
 #include "libretranslateengineconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFormLayout>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mServerUrl(new QLineEdit(this))

@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechattest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/textautogeneratechat.h"
 #include <QJsonDocument>
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateChatTest)
 
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateChatTest::TextAutoGenerateChatTest(QObject *parent)
     : QObject{parent}
 {

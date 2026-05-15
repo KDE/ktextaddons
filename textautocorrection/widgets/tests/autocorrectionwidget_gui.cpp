@@ -5,7 +5,6 @@
 */
 
 #include "autocorrectionwidget_gui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocorrectionlineedit.h"
 #include "autocorrectiontextedit.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolBar>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 ConfigureTestDialog::ConfigureTestDialog(TextAutoCorrectionCore::AutoCorrection *autoCorrection, QWidget *parent)
     : QDialog(parent)
 {

@@ -5,13 +5,13 @@
 */
 
 #include "lingvaenginewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../lingvaenginewidget.h"
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(LingvaEngineWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 LingvaEngineWidgetTest::LingvaEngineWidgetTest(QObject *parent)
     : QObject{parent}
 {

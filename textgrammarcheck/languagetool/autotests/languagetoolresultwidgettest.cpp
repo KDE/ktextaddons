@@ -5,13 +5,13 @@
 */
 
 #include "languagetoolresultwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "common/grammarresulttextedit.h"
 #include "languagetool/languagetoolresultwidget.h"
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(LanguageToolResultWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 LanguageToolResultWidgetTest::LanguageToolResultWidgetTest(QObject *parent)
     : QObject(parent)
 {
