@@ -47,6 +47,7 @@ void McpServerManager::loadServers()
         }
     }
     mMcpServerModel->setMcpServers(mcpServers);
+    Q_EMIT serverLoaded();
 }
 
 void McpServerManager::saveServers()

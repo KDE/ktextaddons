@@ -52,6 +52,12 @@ public:
      */
     [[nodiscard]] virtual QString serverConfigFileName() const;
 
+Q_SIGNALS:
+    /*!
+     * \brief serverLoaded
+     */
+    void serverLoaded();
+
 private:
     McpServerModel *const mMcpServerModel;
 };
