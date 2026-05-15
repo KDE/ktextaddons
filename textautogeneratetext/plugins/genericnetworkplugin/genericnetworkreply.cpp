@@ -21,7 +21,10 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
             // TODO: verify it.
             const auto finalResponse = mTokens.constLast();
             // TODO use "usage" in openAI api
+            // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
+
             mInfo.tokenCount = finalResponse["total_tokens"_L1].toVariant().toULongLong();
+            qDebug() << " usage " << finalResponse["usage"_L1];
         }
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply response finished";
         Q_EMIT finished();
@@ -58,7 +61,10 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
                 if (tok.isEmpty()) {
                     continue;
                 }
-                mTokens.append(QJsonDocument::fromJson(tok));
+                // Message send by server => it's not a json element
+                if (tok != "[DONE]") {
+                    mTokens.append(QJsonDocument::fromJson(tok));
+                }
             }
             break;
         }
@@ -84,11 +90,14 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
     case RequestTypes::StreamingGenerate:
         break;
     case RequestTypes::StreamingChat:
-        qDebug() << " mTokens " << mTokens;
+        // qDebug() << " mTokens " << mTokens;
         for (const auto &tok : mTokens) {
+            // qDebug() << " tok" << tok;
             const QJsonArray choicesArray = tok["choices"_L1].toArray();
+            // qDebug() << " choicesArray " << choicesArray;
             if (!choicesArray.isEmpty()) {
-                const QJsonObject deltaObject = choicesArray.at(0).toObject()["delta"_L1].toObject();
+                const QJsonObject firstObject = choicesArray.at(0).toObject();
+                const QJsonObject deltaObject = firstObject["delta"_L1].toObject();
                 if (deltaObject.contains(u"content"_s)) {
                     ret.response += deltaObject["content"_L1].toString();
                 }
