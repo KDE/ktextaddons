@@ -63,6 +63,15 @@ QByteArray TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText::
 {
     QJsonDocument d;
     QJsonObject o;
+    o["replyType"_L1] = TextAutoGenerateTextReplyInfo::convertReplyTypeToString(info.replyType);
+    o["totalDuration"_L1] = static_cast<qint64>(info.totalDuration.count());
+    o["loadDuration"_L1] = static_cast<qint64>(info.loadDuration.count());
+    o["promptEvalTokenCount"_L1] = static_cast<qint64>(info.promptEvalTokenCount);
+    o["promptEvalDuration"_L1] = static_cast<qint64>(info.promptEvalDuration.count());
+    o["tokenCount"_L1] = static_cast<qint64>(info.tokenCount);
+    o["completionTokens"_L1] = static_cast<qint64>(info.completionTokens);
+    o["promptTokens"_L1] = static_cast<qint64>(info.promptTokens);
+    o["duration"_L1] = static_cast<qint64>(info.duration.count());
 
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
@@ -74,7 +83,15 @@ QByteArray TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText::
 TextAutoGenerateText::TextAutoGenerateTextReplyInfo TextAutoGenerateTextReplyInfo::deserialize(const QJsonObject &o)
 {
     TextAutoGenerateTextReplyInfo info;
-
+    info.replyType = TextAutoGenerateTextReplyInfo::convertReplyTypeFromString(o["replyType"_L1].toString());
+    info.totalDuration = std::chrono::nanoseconds(o["totalDuration"_L1].toInteger());
+    info.loadDuration = std::chrono::nanoseconds(o["loadDuration"_L1].toInteger());
+    info.promptEvalTokenCount = o["promptEvalTokenCount"_L1].toInteger();
+    info.promptEvalDuration = std::chrono::nanoseconds(o["promptEvalDuration"_L1].toInteger());
+    info.tokenCount = o["tokenCount"_L1].toInteger();
+    info.completionTokens = o["completionTokens"_L1].toInteger();
+    info.promptTokens = o["promptTokens"_L1].toInteger();
+    info.duration = std::chrono::nanoseconds(o["duration"_L1].toInteger());
     return info;
 }
 
