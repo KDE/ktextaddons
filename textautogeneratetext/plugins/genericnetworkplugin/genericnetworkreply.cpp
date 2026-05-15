@@ -18,13 +18,14 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
     });
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
         if ((mRequestType == RequestTypes::StreamingGenerate || mRequestType == RequestTypes::StreamingChat) && !mTokens.empty()) {
-            // TODO: verify it.
             const auto finalResponse = mTokens.constLast();
             // TODO use "usage" in openAI api
             // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
 
             mInfo.tokenCount = finalResponse["total_tokens"_L1].toVariant().toULongLong();
-            qDebug() << " usage " << finalResponse["usage"_L1];
+            mInfo.completionTokens = finalResponse["completion_tokens"_L1].toVariant().toULongLong();
+            mInfo.promptTokens = finalResponse["prompt_tokens"_L1].toVariant().toULongLong();
+            // qDebug() << " usage " << finalResponse["usage"_L1];
         }
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply response finished";
         Q_EMIT finished();

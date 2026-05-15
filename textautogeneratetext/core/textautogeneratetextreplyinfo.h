@@ -24,13 +24,19 @@ struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
     std::chrono::nanoseconds loadDuration = {};
 
     //! The number of tokens in the prompt.
-    int promptEvalTokenCount = 0;
+    quint64 promptEvalTokenCount = 0;
 
     //! The time spent evaluating the prompt.
     std::chrono::nanoseconds promptEvalDuration = {};
 
     //! The number of tokens in the reply.
-    int tokenCount = 0;
+    quint64 tokenCount = 0;
+
+    //! The number of completion in the reply.
+    quint64 completionTokens = 0;
+
+    //! The number of prompt tokens in the reply.
+    quint64 promptTokens = 0;
 
     //! The time spent generating the reply.
     std::chrono::nanoseconds duration = {};
