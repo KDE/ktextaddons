@@ -88,7 +88,7 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     }
     const QString replyInfo = m.info().generateReplyInfo();
     if (!replyInfo.isEmpty()) {
-        toolTip += u"<br>%1"_s.arg(replyInfo);
+        toolTip += replyInfo;
     }
     return toolTip + u"</qt>"_s;
 }
