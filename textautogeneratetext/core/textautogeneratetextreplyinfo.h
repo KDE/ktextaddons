@@ -7,6 +7,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 /*!

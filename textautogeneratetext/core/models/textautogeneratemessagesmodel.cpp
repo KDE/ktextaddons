@@ -86,6 +86,10 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
             u"<ul>"_s + TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->convertIdentifierToDisplay(m.messageInfo()->tools()) + u"</ul>"_s;
         toolTip += i18n("<br><b>Tools:</b> %1", displayList);
     }
+    const QString replyInfo = m.info().generateReplyInfo();
+    if (!replyInfo.isEmpty()) {
+        toolTip += u"<br>%1"_s.arg(replyInfo);
+    }
     return toolTip + u"</qt>"_s;
 }
 
