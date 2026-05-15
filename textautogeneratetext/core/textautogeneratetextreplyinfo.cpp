@@ -34,7 +34,7 @@ QString TextAutoGenerateTextReplyInfo::generateReplyInfo() const
     QString info;
     switch (replyType) {
     case ReplyType::Unknown:
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid type. It's a bug";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "generateReplyInfo: Invalid type. It's a bug";
         break;
     case ReplyType::Ollama:
         info = generateReplyTypeInfoOllama();
@@ -96,7 +96,7 @@ QString TextAutoGenerateTextReplyInfo::convertReplyTypeToString(TextAutoGenerate
 {
     switch (type) {
     case ReplyType::Unknown:
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid type. It's a bug";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "convertReplyTypeToString: Invalid type. It's a bug";
         return {};
     case ReplyType::Ollama:
         return u"ollama"_s;
@@ -114,7 +114,7 @@ TextAutoGenerateTextReplyInfo::ReplyType TextAutoGenerateTextReplyInfo::convertR
     } else if (str == "openai"_L1) {
         return TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
     } else {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid type. It's a bug";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "convertReplyTypeFromString: Invalid type. It's a bug";
         return TextAutoGenerateTextReplyInfo::ReplyType::Unknown;
     }
 }
