@@ -123,6 +123,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::R
     d.space() << "Response:" << t.response;
     d.space() << "thinking:" << t.thinking;
     d.space() << "tool call response:" << t.info;
+    d.space() << "Reply info:" << t.replyInfo;
     return d;
 }
 
