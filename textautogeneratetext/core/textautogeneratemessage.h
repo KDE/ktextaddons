@@ -9,6 +9,7 @@
 #include "textautogeneratetext_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
 #include <TextAutoGenerateText/TextAutoGenerateAttachments>
+#include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
 class QDebug;
 namespace TextAutoGenerateText
@@ -282,7 +283,7 @@ private:
     QString mHtmlGenerated;
     QString mDateTimeStr;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
-    // TextAutoGenerateMessage::KLLMReplyInfo info;
+    // TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     MessageStates mMessageStates = MessageStates(MessageState::None);
     int mNumberOfTextSearched = -1;
