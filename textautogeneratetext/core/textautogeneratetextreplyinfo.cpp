@@ -7,6 +7,7 @@
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 #include <QDebug>
+#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &t)
