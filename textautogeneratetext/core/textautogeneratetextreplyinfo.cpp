@@ -20,6 +20,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRepl
     d.space() << "tokenCount:" << t.tokenCount;
     d.space() << "completionTokens:" << t.completionTokens;
     d.space() << "promptTokens:" << t.promptTokens;
+    d.space() << "ReplyType:" << TextAutoGenerateTextReplyInfo::convertReplyTypeToString(t.replyType);
     return d;
 }
 
