@@ -105,6 +105,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
         // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
 
         TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+        replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
         replyInfo.tokenCount = finalResponse["total_tokens"_L1].toVariant().toULongLong();
         replyInfo.completionTokens = finalResponse["completion_tokens"_L1].toVariant().toULongLong();
         replyInfo.promptTokens = finalResponse["prompt_tokens"_L1].toVariant().toULongLong();

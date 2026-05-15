@@ -270,6 +270,9 @@ public:
     [[nodiscard]] static bool allowInsertText();
     static void setAllowInsertText(bool newSAllowInsertText);
 
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextReplyInfo info() const;
+    void setInfo(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &newInfo);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(MessageStates newMessageStates);
@@ -283,7 +286,7 @@ private:
     QString mHtmlGenerated;
     QString mDateTimeStr;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
-    // TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
+    TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     MessageStates mMessageStates = MessageStates(MessageState::None);
     int mNumberOfTextSearched = -1;

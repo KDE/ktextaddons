@@ -315,7 +315,7 @@ bool TextAutoGenerateMessagesModel::waitingAnswer(const TextAutoGenerateMessage 
 }
 
 void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
-                                                   const QString &content,
+                                                   const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
                                                    const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList)
 {
     if (uuid.isEmpty()) {
@@ -326,7 +326,14 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
     };
     auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
     if (it != mMessages.end()) {
-        (*it).setContent(content);
+        if (!content.response.isEmpty()) {
+            (*it).setContent(content.response);
+        } else if (!content.thinking.isEmpty()) {
+            (*it).setContent(content.thinking);
+        }
+        if (content.replyInfo.isValid()) {
+            (*it).setInfo(content.replyInfo);
+        }
         (*it).generateHtml();
         TextAutoGenerateAttachments attachments;
         attachments.setMessageAttachments(TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(attachementInfoList));

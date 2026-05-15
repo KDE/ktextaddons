@@ -378,6 +378,16 @@ bool TextAutoGenerateMessage::messageStateValue(MessageState type) const
     return mMessageStates & type;
 }
 
+TextAutoGenerateTextReplyInfo TextAutoGenerateMessage::info() const
+{
+    return mInfo;
+}
+
+void TextAutoGenerateMessage::setInfo(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &newInfo)
+{
+    mInfo = newInfo;
+}
+
 bool TextAutoGenerateMessage::allowInsertText()
 {
     return sAllowInsertText;

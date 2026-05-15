@@ -128,6 +128,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
         }
         const auto finalResponse = mTokens.constLast();
         TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+        replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::Ollama;
         replyInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
         replyInfo.loadDuration = std::chrono::nanoseconds{finalResponse["load_duration"_L1].toVariant().toULongLong()};
         replyInfo.promptEvalTokenCount = finalResponse["prompt_eval_count"_L1].toVariant().toULongLong();

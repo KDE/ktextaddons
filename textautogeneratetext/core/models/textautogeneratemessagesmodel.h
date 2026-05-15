@@ -10,6 +10,7 @@
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateSearchMessageSettings;
@@ -128,8 +129,9 @@ public:
      * \param content The new content
      * \param attachementInfoList List of attachment information
      */
-    void
-    replaceContent(const QByteArray &uuid, const QString &content, const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList);
+    void replaceContent(const QByteArray &uuid,
+                        const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
+                        const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList);
     /*!
      * Changes the in-progress state for a message.
      * \param uuid The message identifier
