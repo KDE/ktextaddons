@@ -59,7 +59,7 @@ QString TextAutoGenerateTextReplyInfo::generateReplyTypeInfoOpenAI() const
     return toolTip;
 }
 
-QByteArray serialize(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info, bool toBinary)
+QByteArray TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info, bool toBinary)
 {
     QJsonDocument d;
     QJsonObject o;
@@ -71,9 +71,36 @@ QByteArray serialize(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &
     return d.toJson(QJsonDocument::Indented);
 }
 
-TextAutoGenerateText::TextAutoGenerateTextReplyInfo deserialize(const QJsonObject &o)
+TextAutoGenerateText::TextAutoGenerateTextReplyInfo TextAutoGenerateTextReplyInfo::deserialize(const QJsonObject &o)
 {
     TextAutoGenerateTextReplyInfo info;
 
     return info;
+}
+
+QString TextAutoGenerateTextReplyInfo::convertReplyTypeToString(TextAutoGenerateTextReplyInfo::ReplyType type)
+{
+    switch (type) {
+    case ReplyType::Unknown:
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid type. It's a bug";
+        return {};
+    case ReplyType::Ollama:
+        return u"ollama"_s;
+        break;
+    case ReplyType::OpenAI:
+        return u"openai"_s;
+    }
+    return {};
+}
+
+TextAutoGenerateTextReplyInfo::ReplyType TextAutoGenerateTextReplyInfo::convertReplyTypeFromString(const QString &str)
+{
+    if (str == "ollama"_L1) {
+        return TextAutoGenerateTextReplyInfo::ReplyType::Ollama;
+    } else if (str == "openai"_L1) {
+        return TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid type. It's a bug";
+        return TextAutoGenerateTextReplyInfo::ReplyType::Unknown;
+    }
 }

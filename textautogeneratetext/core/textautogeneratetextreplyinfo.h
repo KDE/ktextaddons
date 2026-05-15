@@ -83,6 +83,20 @@ struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
      * \return
      */
     [[nodiscard]] QString generateReplyTypeInfoOpenAI() const;
+
+    /*!
+     * \brief convertReplyTypeToString
+     * \param type
+     * \return
+     */
+    [[nodiscard]] static QString convertReplyTypeToString(TextAutoGenerateTextReplyInfo::ReplyType type);
+
+    /*!
+     * \brief convertReplyTypeFromString
+     * \param str
+     * \return
+     */
+    [[nodiscard]] static TextAutoGenerateTextReplyInfo::ReplyType convertReplyTypeFromString(const QString &str);
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextReplyInfo, Q_RELOCATABLE_TYPE);
