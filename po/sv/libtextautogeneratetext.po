@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-13 00:44+0000\n"
+"POT-Creation-Date: 2026-05-16 00:41+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -166,6 +166,56 @@ msgstr "Lokal"
 #, kde-format
 msgid "Network"
 msgstr "Nätverk"
+
+#: core/textautogeneratetextreplyinfo.cpp:51
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
+msgid "<br><b>Total Duration:</b> %1 seconds"
+msgstr ""
+"\n"
+"Verktyg: %1"
+
+#: core/textautogeneratetextreplyinfo.cpp:52
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
+msgid "<br><b>Tokens:</b> %1"
+msgstr ""
+"\n"
+"Verktyg: %1"
+
+#: core/textautogeneratetextreplyinfo.cpp:58
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
+msgid "<br><b>Token Count:</b> %1"
+msgstr ""
+"\n"
+"Verktyg: %1"
+
+#: core/textautogeneratetextreplyinfo.cpp:59
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
+msgid "<br><b>Prompt Token:</b> %1"
+msgstr ""
+"\n"
+"Verktyg: %1"
+
+#: core/textautogeneratetextreplyinfo.cpp:60
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Tools: %1"
+msgid "<br><b>Completion Token:</b> %1"
+msgstr ""
+"\n"
+"Verktyg: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -2680,35 +2730,35 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:178
+#: plugins/ollamacommon/ollamacommonreply.cpp:166
 #, kde-format
 msgid "Capabilities"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
 #, fuzzy, kde-format
 #| msgid "Temperature:"
 msgid "Template"
 msgstr "Temperatur:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:181
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, fuzzy, kde-format
 #| msgid "Models"
 msgid "Modelfile"
 msgstr "Modeller"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:172
 #, fuzzy, kde-format
 #| msgid "Parameter Size:"
 msgid "Parameters"
 msgstr "Parameterstorlek:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:187
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open Model Information Url"

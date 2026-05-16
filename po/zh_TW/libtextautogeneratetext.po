@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-13 00:44+0000\n"
+"POT-Creation-Date: 2026-05-16 00:41+0000\n"
 "PO-Revision-Date: 2026-04-20 02:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -153,6 +153,36 @@ msgstr "本地"
 #, kde-format
 msgid "Network"
 msgstr "網路"
+
+#: core/textautogeneratetextreplyinfo.cpp:51
+#, fuzzy, kde-format
+#| msgid "<br><b>Tools:</b> %1"
+msgid "<br><b>Total Duration:</b> %1 seconds"
+msgstr "<br><b>工具</b>：%1"
+
+#: core/textautogeneratetextreplyinfo.cpp:52
+#, fuzzy, kde-format
+#| msgid "<br><b>Tools:</b> %1"
+msgid "<br><b>Tokens:</b> %1"
+msgstr "<br><b>工具</b>：%1"
+
+#: core/textautogeneratetextreplyinfo.cpp:58
+#, fuzzy, kde-format
+#| msgid "<br><b>Tools:</b> %1"
+msgid "<br><b>Token Count:</b> %1"
+msgstr "<br><b>工具</b>：%1"
+
+#: core/textautogeneratetextreplyinfo.cpp:59
+#, fuzzy, kde-format
+#| msgid "<br><b>Tools:</b> %1"
+msgid "<br><b>Prompt Token:</b> %1"
+msgstr "<br><b>工具</b>：%1"
+
+#: core/textautogeneratetextreplyinfo.cpp:60
+#, fuzzy, kde-format
+#| msgid "<br><b>Tools:</b> %1"
+msgid "<br><b>Completion Token:</b> %1"
+msgstr "<br><b>工具</b>：%1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -2465,32 +2495,32 @@ msgstr "控制模型能同時記住並處理多少 token（詞元）。"
 msgid "Context Window Size:"
 msgstr "前後文窗口大小："
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:178
+#: plugins/ollamacommon/ollamacommonreply.cpp:166
 #, kde-format
 msgid "Capabilities"
 msgstr "能力"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:168
 #, kde-format
 msgid "Template"
 msgstr "樣本"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:181
+#: plugins/ollamacommon/ollamacommonreply.cpp:169
 #, kde-format
 msgid "Modelfile"
 msgstr "模型檔案"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:172
 #, kde-format
 msgid "Parameters"
 msgstr "參數"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:187
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Details"
 msgstr "詳細資料"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:176
 #, kde-format
 msgid "Model Info"
 msgstr "模型資訊"

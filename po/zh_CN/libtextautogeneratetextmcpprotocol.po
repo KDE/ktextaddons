@@ -26,12 +26,12 @@ msgstr "SSE"
 #: core/server/mcpserver.cpp:154
 #, kde-format
 msgid "Standard IO"
-msgstr ""
+msgstr "Standard IO"
 
 #: core/server/mcpserver.cpp:156
 #, kde-format
 msgid "Streamable HTTP"
-msgstr ""
+msgstr "Streamable HTTP"
 
 #: widgets/server/addmcpserverdialog.cpp:22
 #, kde-format
