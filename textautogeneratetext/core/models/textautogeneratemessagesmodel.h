@@ -233,6 +233,12 @@ public:
      */
     void refreshMessageColors();
 
+    /*!
+     * \brief updateMessageInfo
+     * \param uuid
+     * \param messageInfo
+     */
+    void updateMessageInfo(const QByteArray &uuid, const TextAutoGenerateAnswerInfo &messageInfo);
 Q_SIGNALS:
     /*!
      * Emitted when the conversation is cleared.

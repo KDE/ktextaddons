@@ -318,6 +318,20 @@ bool TextAutoGenerateMessagesModel::waitingAnswer(const TextAutoGenerateMessage 
     return false;
 }
 
+void TextAutoGenerateMessagesModel::updateMessageInfo(const QByteArray &uuid, const TextAutoGenerateAnswerInfo &messageInfo)
+{
+    if (uuid.isEmpty()) {
+        return;
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        (*it).setMessageInfo(messageInfo);
+    }
+}
+
 void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
                                                    const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
                                                    const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList)
