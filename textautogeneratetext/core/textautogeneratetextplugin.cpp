@@ -129,6 +129,12 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
 {
     // Start progress
     d->manager->changeInProgress(info.chatId, info.messageUuid, true);
+    TextAutoGenerateAnswerInfo answerInfo;
+    answerInfo.setEngineName(engineName());
+    answerInfo.setModelName(currentModel());
+    answerInfo.setInstanceName(d->instance->displayName());
+    answerInfo.setTools(info.tools);
+    d->manager->updateMessageInfo(info.chatId, info.messageUuid, answerInfo);
     sendToAssistant(info);
 }
 

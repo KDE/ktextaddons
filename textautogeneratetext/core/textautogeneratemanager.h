@@ -440,6 +440,13 @@ public:
      */
     [[nodiscard]] QJsonArray internalToolsMetaData() const;
 
+    /*!
+     * \brief updateMessageInfo
+     * \param chatId
+     * \param uuid
+     * \param messageInfo
+     */
+    void updateMessageInfo(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateAnswerInfo &messageInfo);
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.

@@ -240,6 +240,16 @@ QStringList TextAutoGenerateManager::chatsList() const
     return mDatabaseManager->chatsList();
 }
 
+void TextAutoGenerateManager::updateMessageInfo(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateAnswerInfo &messageInfo)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        messagesModel->updateMessageInfo(uuid, messageInfo);
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
+    }
+}
+
 void TextAutoGenerateManager::replaceContent(const QByteArray &chatId,
                                              const QByteArray &uuid,
                                              const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
