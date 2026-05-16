@@ -135,7 +135,10 @@ QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, boo
     o["archived"_L1] = chat.mArchived;
     o["identifier"_L1] = QString::fromLatin1(chat.mIdentifier);
     o["datetime"_L1] = chat.dateTime();
-    o["prompt"_L1] = chat.prompt();
+    const QString prompt = chat.prompt();
+    if (!prompt.isEmpty()) {
+        o["prompt"_L1] = prompt;
+    }
 
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
