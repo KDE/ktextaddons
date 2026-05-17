@@ -21,8 +21,7 @@ void McpProtocolPluginInterface::setSettings(const McpProtocolSettings &settings
 
 bool McpProtocolPluginInterface::canStart() const
 {
-    // TODO
-    return true;
+    return mProtocolSettings.isValid();
 }
 
 McpProtocolSettings McpProtocolPluginInterface::protocolSettings() const

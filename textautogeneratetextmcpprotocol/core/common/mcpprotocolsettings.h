@@ -35,6 +35,8 @@ public:
     void load(const KConfigGroup &config);
     void save(KConfigGroup &config) const;
 
+    [[nodiscard]] bool isValid() const;
+
 private:
     QUrl mServerUrl;
     QString mCommand;

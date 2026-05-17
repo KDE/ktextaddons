@@ -77,3 +77,8 @@ void McpProtocolSettings::save(KConfigGroup &config) const
     config.writeEntry(u"ServerUrl"_s, mServerUrl);
     // TODO mEnvironments
 }
+
+bool McpProtocolSettings::isValid() const
+{
+    return (mServerUrl.isValid()) || (!mCommand.isEmpty());
+}
