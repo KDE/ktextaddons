@@ -7,11 +7,11 @@
 
 #include "plugincommonmodelinstalledinfosmodel.h"
 
-PluginCommonModelInstalledInfosModel::PluginCommonModelInstalledInfosModel(QObject *parent)
+PluginCommonModelInstalledInfosModelBase::PluginCommonModelInstalledInfosModelBase(QObject *parent)
     : QAbstractListModel{parent}
 {
 }
 
-PluginCommonModelInstalledInfosModel::~PluginCommonModelInstalledInfosModel() = default;
+PluginCommonModelInstalledInfosModelBase::~PluginCommonModelInstalledInfosModelBase() = default;
 
 #include "moc_plugincommonmodelinstalledinfosmodel.cpp"

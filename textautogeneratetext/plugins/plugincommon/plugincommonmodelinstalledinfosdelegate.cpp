@@ -231,7 +231,7 @@ bool PluginCommonModelInstalledInfosDelegate::handleMouseEvent(QMouseEvent *mous
 
 QSize PluginCommonModelInstalledInfosDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const QByteArray modelName = index.data(PluginCommonModelInstalledInfosModel::OriginalName).toByteArray();
+    const QByteArray modelName = index.data(PluginCommonModelInstalledInfosModelBase::OriginalName).toByteArray();
     auto it = mSizeHintCache.find(modelName);
     if (it != mSizeHintCache.end()) {
         const QSize result = it->value;
@@ -253,7 +253,7 @@ QSize PluginCommonModelInstalledInfosDelegate::sizeHint(const QStyleOptionViewIt
 QTextDocument *PluginCommonModelInstalledInfosDelegate::documentForIndex(const QModelIndex &index, int width) const
 {
     Q_ASSERT(index.isValid());
-    const QByteArray identifier = index.data(PluginCommonModelInstalledInfosModel::OriginalName).toByteArray();
+    const QByteArray identifier = index.data(PluginCommonModelInstalledInfosModelBase::OriginalName).toByteArray();
     Q_ASSERT(!identifier.isEmpty());
     auto it = mDocumentCache.find(identifier);
     if (it != mDocumentCache.end()) {
@@ -263,7 +263,7 @@ QTextDocument *PluginCommonModelInstalledInfosDelegate::documentForIndex(const Q
         }
         return ret;
     }
-    const QString description = index.data(PluginCommonModelInstalledInfosModel::Description).toString();
+    const QString description = index.data(PluginCommonModelInstalledInfosModelBase::Description).toString();
     // if (description.isEmpty()) {
     //     return nullptr;
     // }

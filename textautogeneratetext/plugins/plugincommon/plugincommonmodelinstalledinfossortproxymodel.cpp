@@ -41,7 +41,7 @@ bool PluginCommonModelInstalledInfosSortProxyModel::filterAcceptsRow(int source_
     const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
     if (!mCategories.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateManager::Categories categories =
-            modelIndex.data(PluginCommonModelInstalledInfosModel::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
+            modelIndex.data(PluginCommonModelInstalledInfosModelBase::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
         if (categories == TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown) {
             return true;
         }

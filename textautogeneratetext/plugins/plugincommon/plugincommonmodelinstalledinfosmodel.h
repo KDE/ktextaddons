@@ -6,12 +6,12 @@
 */
 
 #pragma once
-
+#include "plugincommonmodelinstalledinfo.h"
 #include "textautogenerateplugincommon_export.h"
-
 #include <QAbstractListModel>
+#include <concepts>
 
-class TEXTAUTOGENERATEPLUGINCOMMON_EXPORT PluginCommonModelInstalledInfosModel : public QAbstractListModel
+class TEXTAUTOGENERATEPLUGINCOMMON_EXPORT PluginCommonModelInstalledInfosModelBase : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -26,6 +26,65 @@ public:
     };
     Q_ENUM(ModelInfoRoles)
 
-    explicit PluginCommonModelInstalledInfosModel(QObject *parent = nullptr);
-    ~PluginCommonModelInstalledInfosModel() override;
+    explicit PluginCommonModelInstalledInfosModelBase(QObject *parent = nullptr);
+    ~PluginCommonModelInstalledInfosModelBase() override;
+};
+
+template<typename T>
+    requires std::derived_from<T, PluginCommonModelInstalledInfo>
+class PluginCommonModelInstalledInfosModel : public PluginCommonModelInstalledInfosModelBase
+{
+public:
+    explicit PluginCommonModelInstalledInfosModel(QObject *parent = nullptr)
+        : PluginCommonModelInstalledInfosModelBase(parent)
+    {
+    }
+
+    ~PluginCommonModelInstalledInfosModel() override = default;
+
+    [[nodiscard]] QList<T> modelInstalledInfos() const
+    {
+        return mModelInstalledInfos;
+    }
+
+    void setModelInstalledInfos(const QList<T> &newModelInfos)
+    {
+        beginResetModel();
+        mModelInstalledInfos = newModelInfos;
+        endResetModel();
+    }
+
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override
+    {
+        if (parent.isValid()) {
+            return 0; // flat model
+        }
+        return mModelInstalledInfos.count();
+    }
+
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override
+    {
+        const auto &info = mModelInstalledInfos.at(index.row());
+        switch (role) {
+        case ModelInfoRoles::DescriptionInfo:
+            return QVariant::fromValue(info);
+        case ModelInfoRoles::QuantizationLevel:
+            return info.quantizationLevel();
+        case ModelInfoRoles::ParameterSize:
+            return info.parameterSize();
+        case ModelInfoRoles::OriginalName:
+            return info.model();
+        case ModelInfoRoles::Name:
+        case Qt::DisplayRole:
+            return info.name();
+        case ModelInfoRoles::Categories:
+            return QVariant::fromValue(info.categories());
+        default:
+            break;
+        }
+        return {};
+    }
+
+protected:
+    QList<T> mModelInstalledInfos;
 };
