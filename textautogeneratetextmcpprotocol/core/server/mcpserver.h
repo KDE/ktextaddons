@@ -41,21 +41,12 @@ public:
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType transportType() const;
     void setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType newServerType);
 
-    [[nodiscard]] QString command() const;
-    void setCommand(const QString &newCommand);
-
-    [[nodiscard]] QString arguments() const;
-    void setArguments(const QString &newArguments);
-
-    [[nodiscard]] QMap<QString, QString> environments() const;
-    void setEnvironments(const QMap<QString, QString> &newEnvironments);
-
-    [[nodiscard]] QUrl serverUrl() const;
-    void setServerUrl(const QUrl &newServerUrl);
-
     [[nodiscard]] static QString convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
     [[nodiscard]] static TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType convertTransportTypeFromString(const QString &str);
     [[nodiscard]] static QString transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
+
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings() const;
+    void setSettings(const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &newSettings);
 
 private:
     bool mEnabled = true;
@@ -64,10 +55,6 @@ private:
     TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mTransportType =
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings mSettings;
-    QUrl mServerUrl;
-    QString mCommand;
-    QString mArguments;
-    QMap<QString, QString> mEnvironments;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpServer, Q_RELOCATABLE_TYPE);

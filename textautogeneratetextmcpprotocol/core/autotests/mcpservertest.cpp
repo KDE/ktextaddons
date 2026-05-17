@@ -19,7 +19,6 @@ McpServerTest::McpServerTest(QObject *parent)
 void McpServerTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateTextMcpProtocolCore::McpServer w;
-    QVERIFY(w.serverUrl().isEmpty());
     QVERIFY(w.enabled());
     QVERIFY(w.name().isEmpty());
     QVERIFY(w.identifier().isEmpty());
@@ -38,7 +37,10 @@ void McpServerTest::shouldVerifyValidValue()
         w.setIdentifier("bla"_ba);
         QVERIFY(!w.isValid());
 
-        w.setServerUrl(QUrl(u"bla"_s));
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings s;
+
+        s.setServerUrl(QUrl(u"bla"_s));
+        w.setSettings(s);
         QVERIFY(!w.isValid());
 
         w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse);
@@ -50,9 +52,12 @@ void McpServerTest::shouldVerifyValidValue()
         w.setName(u"foo"_s);
         w.setIdentifier("bla"_ba);
         QVERIFY(!w.isValid());
-        w.setArguments(u"ddd"_s);
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings s;
+        s.setArguments(u"ddd"_s);
+        w.setSettings(s);
         QVERIFY(!w.isValid());
-        w.setCommand(u"foo"_s);
+        s.setCommand(u"foo"_s);
+        w.setSettings(s);
         QVERIFY(w.isValid());
     }
     {
@@ -61,7 +66,9 @@ void McpServerTest::shouldVerifyValidValue()
         w.setName(u"foo"_s);
         w.setIdentifier("bla"_ba);
         QVERIFY(!w.isValid());
-        w.setServerUrl(QUrl(u"foo"_s));
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings s;
+        s.setServerUrl(QUrl(u"foo"_s));
+        w.setSettings(s);
         QVERIFY(w.isValid());
     }
 }

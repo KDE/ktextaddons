@@ -45,12 +45,14 @@ bool AddMcpSteamableHttpServerWidget::isValid() const
 
 void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    server.setServerUrl(QUrl(mServerUrlLineEdit->text()));
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(QUrl(mServerUrlLineEdit->text()));
+    server.setSettings(settings);
 }
 
 void AddMcpSteamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    mServerUrlLineEdit->setText(server.serverUrl().toString());
+    mServerUrlLineEdit->setText(server.settings().serverUrl().toString());
 }
 
 #include "moc_addmcpsteamablehttpserverwidget.cpp"

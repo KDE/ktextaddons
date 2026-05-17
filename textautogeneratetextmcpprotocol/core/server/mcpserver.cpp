@@ -20,16 +20,6 @@ void McpServer::createUniqueIdentifier()
     mIdentifier = McpProtocolUtils::generateUUid();
 }
 
-QUrl McpServer::serverUrl() const
-{
-    return mServerUrl;
-}
-
-void McpServer::setServerUrl(const QUrl &newServerUrl)
-{
-    mServerUrl = newServerUrl;
-}
-
 bool McpServer::enabled() const
 {
     return mEnabled;
@@ -67,10 +57,7 @@ void McpServer::load(const KConfigGroup &config)
     mIdentifier = config.readEntry("Id", QByteArray());
     mTransportType = convertTransportTypeFromString(config.readEntry("TransportType", QString()));
 
-    mServerUrl = config.readEntry("ServerUrl", QUrl());
-    mCommand = config.readEntry("Command", QString());
-    mArguments = config.readEntry("Arguments", QString());
-    // TODO mEnvironments
+    mSettings.load(config);
 }
 
 void McpServer::save(KConfigGroup &config) const
@@ -79,13 +66,7 @@ void McpServer::save(KConfigGroup &config) const
     config.writeEntry(u"Name"_s, mName);
     config.writeEntry(u"Enabled"_s, mEnabled);
     config.writeEntry(u"TransportType"_s, convertTransportTypeToString(mTransportType));
-    if (mTransportType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio) {
-        config.writeEntry(u"Command"_s, mCommand);
-        config.writeEntry(u"Arguments"_s, mArguments);
-    } else {
-        config.writeEntry(u"ServerUrl"_s, mServerUrl);
-    }
-    // TODO mEnvironments
+    mSettings.save(config);
 }
 
 bool McpServer::isValid() const
@@ -94,11 +75,11 @@ bool McpServer::isValid() const
         return false;
     }
     if (mTransportType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio) {
-        if (mCommand.isEmpty()) {
+        if (mSettings.command().isEmpty()) {
             return false;
         }
     } else {
-        if (mServerUrl.isEmpty()) {
+        if (mSettings.serverUrl().isEmpty()) {
             return false;
         }
     }
@@ -115,36 +96,6 @@ void McpServer::setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtoco
     mTransportType = newServerType;
 }
 
-QString McpServer::command() const
-{
-    return mCommand;
-}
-
-void McpServer::setCommand(const QString &newCommand)
-{
-    mCommand = newCommand;
-}
-
-QString McpServer::arguments() const
-{
-    return mArguments;
-}
-
-void McpServer::setArguments(const QString &newArguments)
-{
-    mArguments = newArguments;
-}
-
-QMap<QString, QString> McpServer::environments() const
-{
-    return mEnvironments;
-}
-
-void McpServer::setEnvironments(const QMap<QString, QString> &newEnvironments)
-{
-    mEnvironments = newEnvironments;
-}
-
 QString McpServer::transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
 {
     switch (type) {
@@ -159,6 +110,16 @@ QString McpServer::transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpPro
         return {};
     }
     return {};
+}
+
+McpProtocolSettings McpServer::settings() const
+{
+    return mSettings;
+}
+
+void McpServer::setSettings(const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &newSettings)
+{
+    mSettings = newSettings;
 }
 
 QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
@@ -193,13 +154,12 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType McpServer:
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpServer &t)
 {
-    d.space() << "url:" << t.serverUrl();
     d.space() << "enabled:" << t.enabled();
     d.space() << "name:" << t.name();
     d.space() << "identifier:" << t.identifier();
     d.space() << "serverType:" << t.transportType();
-    d.space() << "command:" << t.command();
-    d.space() << "environments:" << t.environments();
+
+    d.space() << "settings:" << t.settings();
     return d;
 }
 

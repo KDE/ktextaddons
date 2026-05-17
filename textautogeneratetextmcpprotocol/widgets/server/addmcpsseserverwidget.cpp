@@ -45,12 +45,14 @@ bool AddMcpSseServerWidget::isValid() const
 
 void AddMcpSseServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    server.setServerUrl(QUrl(mServerUrlLineEdit->text()));
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(QUrl(mServerUrlLineEdit->text()));
+    server.setSettings(settings);
 }
 
 void AddMcpSseServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    mServerUrlLineEdit->setText(server.serverUrl().toString());
+    mServerUrlLineEdit->setText(server.settings().serverUrl().toString());
 }
 
 #include "moc_addmcpsseserverwidget.cpp"

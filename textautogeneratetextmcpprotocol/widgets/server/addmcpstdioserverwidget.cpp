@@ -49,14 +49,18 @@ bool AddMcpStdioServerWidget::isValid() const
 
 void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    server.setCommand(mCommandLineEdit->text());
-    server.setArguments(mArgumentsLineEdit->text());
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(mCommandLineEdit->text());
+    settings.setArguments(mArgumentsLineEdit->text());
+
+    server.setSettings(settings);
 }
 
 void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    mArgumentsLineEdit->setText(server.arguments());
-    mCommandLineEdit->setText(server.command());
+    auto settings = server.settings();
+    mArgumentsLineEdit->setText(settings.arguments());
+    mCommandLineEdit->setText(settings.command());
 }
 
 AddMcpStdioServerWidget::StdioInfo AddMcpStdioServerWidget::stdioInfo() const

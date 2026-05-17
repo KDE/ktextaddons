@@ -5,8 +5,9 @@
 */
 
 #include "mcpprotocolsettings.h"
+#include <KConfigGroup>
 #include <QDebug>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSettings::McpProtocolSettings() = default;
 
@@ -59,4 +60,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "arguments" << t.arguments();
     d.space() << "command" << t.command();
     return d;
+}
+
+void McpProtocolSettings::load(const KConfigGroup &config)
+{
+    mServerUrl = config.readEntry("ServerUrl", QUrl());
+    mCommand = config.readEntry("Command", QString());
+    mArguments = config.readEntry("Arguments", QString());
+    // TODO mEnvironments
+}
+
+void McpProtocolSettings::save(KConfigGroup &config) const
+{
+    config.writeEntry(u"Command"_s, mCommand);
+    config.writeEntry(u"Arguments"_s, mArguments);
+    config.writeEntry(u"ServerUrl"_s, mServerUrl);
+    // TODO mEnvironments
 }

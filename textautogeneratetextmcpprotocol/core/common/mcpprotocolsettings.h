@@ -11,6 +11,7 @@
 #include <QObject>
 #include <QUrl>
 class QDebug;
+class KConfigGroup;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSettings
@@ -30,6 +31,9 @@ public:
 
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
+
+    void load(const KConfigGroup &config);
+    void save(KConfigGroup &config) const;
 
 private:
     QUrl mServerUrl;
