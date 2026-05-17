@@ -9,6 +9,7 @@
 #include <QMap>
 #include <QObject>
 #include <QUrl>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 class QDebug;
 class KConfigGroup;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -17,14 +18,6 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServer
 {
     Q_GADGET
 public:
-    enum class TransportType : int8_t {
-        Unknown = 0,
-        Sse,
-        Stdio,
-        StreamableHttp,
-    };
-    Q_ENUM(TransportType)
-
     McpServer();
     ~McpServer();
 
@@ -47,8 +40,8 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
-    [[nodiscard]] TransportType transportType() const;
-    void setTransportType(TransportType newServerType);
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType transportType() const;
+    void setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType newServerType);
 
     [[nodiscard]] QString command() const;
     void setCommand(const QString &newCommand);
@@ -59,16 +52,17 @@ public:
     [[nodiscard]] QMap<QString, QString> environments() const;
     void setEnvironments(const QMap<QString, QString> &newEnvironments);
 
-    [[nodiscard]] static QString convertTransportTypeToString(TransportType type);
-    [[nodiscard]] static TransportType convertTransportTypeFromString(const QString &str);
-    [[nodiscard]] static QString transportTypeI18n(TransportType type);
+    [[nodiscard]] static QString convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
+    [[nodiscard]] static TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType convertTransportTypeFromString(const QString &str);
+    [[nodiscard]] static QString transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
 
 private:
     bool mEnabled = true;
     QUrl mServerUrl;
     QString mName;
     QByteArray mIdentifier;
-    TransportType mTransportType = TransportType::Unknown;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mTransportType =
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;
     QString mCommand;
     QString mArguments;
     QMap<QString, QString> mEnvironments;

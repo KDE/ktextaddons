@@ -79,7 +79,7 @@ void McpServer::save(KConfigGroup &config) const
     config.writeEntry(u"Name"_s, mName);
     config.writeEntry(u"Enabled"_s, mEnabled);
     config.writeEntry(u"TransportType"_s, convertTransportTypeToString(mTransportType));
-    if (mTransportType == TransportType::Stdio) {
+    if (mTransportType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio) {
         config.writeEntry(u"Command"_s, mCommand);
         config.writeEntry(u"Arguments"_s, mArguments);
     } else {
@@ -90,10 +90,10 @@ void McpServer::save(KConfigGroup &config) const
 
 bool McpServer::isValid() const
 {
-    if (mTransportType == TransportType::Unknown) {
+    if (mTransportType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown) {
         return false;
     }
-    if (mTransportType == TransportType::Stdio) {
+    if (mTransportType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio) {
         if (mCommand.isEmpty()) {
             return false;
         }
@@ -105,12 +105,12 @@ bool McpServer::isValid() const
     return !mIdentifier.isEmpty() && !mName.isEmpty();
 }
 
-McpServer::TransportType McpServer::transportType() const
+TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType McpServer::transportType() const
 {
     return mTransportType;
 }
 
-void McpServer::setTransportType(TransportType newServerType)
+void McpServer::setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType newServerType)
 {
     mTransportType = newServerType;
 }
@@ -145,49 +145,49 @@ void McpServer::setEnvironments(const QMap<QString, QString> &newEnvironments)
     mEnvironments = newEnvironments;
 }
 
-QString McpServer::transportTypeI18n(TransportType type)
+QString McpServer::transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
 {
     switch (type) {
-    case TransportType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse:
         return i18n("Sse");
-    case TransportType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio:
         return i18n("Standard IO");
-    case TransportType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
         return i18n("Streamable HTTP");
-    case TransportType::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug";
         return {};
     }
     return {};
 }
 
-QString McpServer::convertTransportTypeToString(TransportType type)
+QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
 {
     switch (type) {
-    case TransportType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse:
         return u"sse"_s;
-    case TransportType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio:
         return u"stdio"_s;
-    case TransportType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
         return u"streamablehttp"_s;
-    case TransportType::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug";
         return {};
     }
     return {};
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType McpServer::convertTransportTypeFromString(const QString &str)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType McpServer::convertTransportTypeFromString(const QString &str)
 {
     if (str == "sse"_L1) {
-        return TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse;
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse;
     } else if (str == "stdio"_L1) {
-        return TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio;
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio;
     } else if (str == "streamablehttp"_L1) {
-        return TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp;
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp;
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug" << str;
-        return TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown;
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;
     }
 }
 

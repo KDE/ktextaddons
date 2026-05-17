@@ -52,7 +52,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void checkValidSettings();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void changeType();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void updateWidget(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType type);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void updateWidget(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
     QLineEdit *const mServerNameLineEdit;
     SelectTypeComboBox *const mSelectTypeComboBox;
     QStackedWidget *const mStackedWidget;

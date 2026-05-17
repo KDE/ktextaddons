@@ -41,12 +41,12 @@ void McpServerTest::shouldVerifyValidValue()
         w.setServerUrl(QUrl(u"bla"_s));
         QVERIFY(!w.isValid());
 
-        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse);
+        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse);
         QVERIFY(w.isValid());
     }
     {
         TextAutoGenerateTextMcpProtocolCore::McpServer w;
-        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio);
+        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio);
         w.setName(u"foo"_s);
         w.setIdentifier("bla"_ba);
         QVERIFY(!w.isValid());
@@ -57,7 +57,7 @@ void McpServerTest::shouldVerifyValidValue()
     }
     {
         TextAutoGenerateTextMcpProtocolCore::McpServer w;
-        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp);
+        w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp);
         w.setName(u"foo"_s);
         w.setIdentifier("bla"_ba);
         QVERIFY(!w.isValid());
@@ -68,31 +68,33 @@ void McpServerTest::shouldVerifyValidValue()
 
 void McpServerTest::verifyConvertServerTypeToString()
 {
-    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse),
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse),
              u"sse"_s);
-    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio),
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio),
              u"stdio"_s);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(
-                 TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp),
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp),
              u"streamablehttp"_s);
-    QCOMPARE(
-        TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown),
-        QString());
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown),
+             QString());
 }
 
 void McpServerTest::verifyConvertServerTypeFromString()
 {
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeFromString(u"sse"_s),
-             TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Sse);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeFromString(u"stdio"_s),
-             TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Stdio);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeFromString(u"streamablehttp"_s),
-             TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::StreamableHttp);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp);
 
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeFromString(u"kde"_s),
-             TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpServer::convertTransportTypeFromString(QString()),
-             TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType::Unknown);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown);
 }
 
 #include "moc_mcpservertest.cpp"

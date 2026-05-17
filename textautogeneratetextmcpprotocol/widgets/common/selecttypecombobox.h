@@ -17,11 +17,11 @@ public:
     explicit SelectTypeComboBox(QWidget *parent = nullptr);
     ~SelectTypeComboBox() override;
 
-    void setType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType type);
-    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType type() const;
+    void setType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type() const;
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void fill();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void addServerType(TextAutoGenerateTextMcpProtocolCore::McpServer::TransportType type);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void addServerType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
 };
 }
