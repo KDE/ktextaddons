@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-16 00:41+0000\n"
-"PO-Revision-Date: 2026-05-05 09:12+0200\n"
+"POT-Creation-Date: 2026-05-17 00:42+0000\n"
+"PO-Revision-Date: 2026-05-16 11:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -146,45 +146,40 @@ msgstr ""
 "Ets un assistent d'IA. Sigues útil, professional i cortès. No donis "
 "informació inexacta."
 
-#: core/textautogeneratetextplugin.cpp:287
+#: core/textautogeneratetextplugin.cpp:293
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:289
+#: core/textautogeneratetextplugin.cpp:295
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>Eines:</b> %1"
+msgstr "<br><b>Durada total:</b> %1 segons"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>Eines:</b> %1"
+msgstr "<br><b>Segments textuals:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>Eines:</b> %1"
+msgstr "<br><b>Comptador de segments textuals:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Eines:</b> %1"
+msgstr "<br><b>Segment textual de petició:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>Eines:</b> %1"
+msgstr "<br><b>Segment textual de compleció:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format

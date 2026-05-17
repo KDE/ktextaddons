@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-16 00:41+0000\n"
-"PO-Revision-Date: 2026-05-05 04:30+0200\n"
+"POT-Creation-Date: 2026-05-17 00:42+0000\n"
+"PO-Revision-Date: 2026-05-16 04:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -143,45 +143,40 @@ msgstr ""
 "ბრძანდებით ხი დამხმარე. იყავით სასარგებლო, პროფესიონალი და თავაზიანი. ნუ "
 "მიაწვდით არაზუსტ ინფორმაციას."
 
-#: core/textautogeneratetextplugin.cpp:287
+#: core/textautogeneratetextplugin.cpp:293
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: core/textautogeneratetextplugin.cpp:289
+#: core/textautogeneratetextplugin.cpp:295
 #, kde-format
 msgid "Network"
 msgstr "ქსელური"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>ხელსაწყოები:</b> %1"
+msgstr "<br><b>სრული ხანგრძლივობა:</b> %1 seconds"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>ხელსაწყოები:</b> %1"
+msgstr "<br><b>ტოკენები:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>ხელსაწყოები:</b> %1"
+msgstr "<br><b>ჯამური რაოდენობა:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>ხელსაწყოები:</b> %1"
+msgstr "<br><b>მოთხოვნის ტოკენები:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>ხელსაწყოები:</b> %1"
+msgstr "<br><b>დასრულების ტოკენი:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -3399,99 +3394,3 @@ msgstr "არქივი ვერ მოიძებნა."
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
-
-#~ msgctxt "@title:window"
-#~ msgid "Add Server"
-#~ msgstr "სერვერის დამატება"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "Url:"
-#~ msgstr "Url:"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "სერვერის დამატება…"
-
-#~ msgctxt "@action"
-#~ msgid "Remove Server"
-#~ msgstr "სერვერის წაშლა"
-
-#~ msgid "Do you want to remove this server (%1)?"
-#~ msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
-
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "სერვერის წაშლა"
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "ცვლილებების გადასატარებლად გადატვირთვა აუცილებელია."
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "მორგება"
-
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "შემდეგი"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "წინა"
-
-#~ msgid "No system prompt"
-#~ msgstr "სისტემური კითხვის გარეშე"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "ჩასწორება..."
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "Ollama-ის გაშვებული ასლის ბმული"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "სისტემური მოთხოვნა LLM-სთვის"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
-
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
-#~ "შემოქმედებით გიპასუხოთ."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "აყენებს შემთხვევით რიცხვების თესლს გენერაციისთვის. ამის სპეციფიკურ "
-#~ "რიცხვზე დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე "
-#~ "მოთხოვნისთვის. (ნაგულისხმევი: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "ძრავა:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Mistral AI-ის მორგება"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Openai IA-ის მორგება"
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "გაუქმება"
-
-#~ msgctxt "@action"
-#~ msgid "New Chat…"
-#~ msgstr "ახალი ჩატი…"
-
-#~ msgctxt "@action"
-#~ msgid "Favorite…"
-#~ msgstr "რჩეული…"

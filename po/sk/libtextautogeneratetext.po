@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-16 00:41+0000\n"
+"POT-Creation-Date: 2026-05-17 00:42+0000\n"
 "PO-Revision-Date: 2026-04-11 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -141,45 +141,40 @@ msgstr ""
 "Ste asistent AI. Buďte nápomocný, profesionálny a zdvorilý. Neposkytujte "
 "nepresné informácie."
 
-#: core/textautogeneratetextplugin.cpp:287
+#: core/textautogeneratetextplugin.cpp:293
 #, kde-format
 msgid "Local"
 msgstr "Lokálny"
 
-#: core/textautogeneratetextplugin.cpp:289
+#: core/textautogeneratetextplugin.cpp:295
 #, kde-format
 msgid "Network"
 msgstr "Sieť"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>Nástroje:</b> %1"
+msgstr "<br><b>Celkové trvanie:</b> %1 sekúnd"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>Nástroje:</b> %1"
+msgstr "<br><b>Tokeny:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>Nástroje:</b> %1"
+msgstr "<br><b>Počet tokenov:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Nástroje:</b> %1"
+msgstr "<br><b>Tokeny výzvy:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>Nástroje:</b> %1"
+msgstr "<br><b>Tokeny dokončenia:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format

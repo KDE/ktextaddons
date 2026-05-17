@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-16 00:41+0000\n"
-"PO-Revision-Date: 2026-05-05 11:32+0300\n"
+"POT-Creation-Date: 2026-05-17 00:42+0000\n"
+"PO-Revision-Date: 2026-05-16 20:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -141,45 +141,40 @@ msgstr ""
 "Sen bir yapay zekâ asistanısın. Nâzik, profesyonel ve yardımcı ol. Doğru "
 "olmayan bilgiler verme."
 
-#: core/textautogeneratetextplugin.cpp:287
+#: core/textautogeneratetextplugin.cpp:293
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: core/textautogeneratetextplugin.cpp:289
+#: core/textautogeneratetextplugin.cpp:295
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>Araçlar:</b> %1"
+msgstr "<br><b>Toplam süre:</b> %1 saniye"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>Araçlar:</b> %1"
+msgstr "<br><b>Jetonlar:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>Araçlar:</b> %1"
+msgstr "<br><b>Jeton sayısı:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Araçlar:</b> %1"
+msgstr "<br><b>İstem jetonu:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>Araçlar:</b> %1"
+msgstr "<br><b>Tamamlama jetonu:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
