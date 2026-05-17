@@ -29,12 +29,10 @@ McpServerStdio::~McpServerStdio() = default;
 void McpServerStdio::connection()
 {
     const auto settings = mInterface->protocolSettings();
-    if (settings) {
-        mProcess->setProgram(settings->command());
-        const QStringList lst = settings->arguments().split(u' ');
-        mProcess->setArguments(lst);
-        mProcess->start();
-    }
+    mProcess->setProgram(settings.command());
+    const QStringList lst = settings.arguments().split(u' ');
+    mProcess->setArguments(lst);
+    mProcess->start();
 }
 
 void McpServerStdio::send(const QJsonObject &obj)

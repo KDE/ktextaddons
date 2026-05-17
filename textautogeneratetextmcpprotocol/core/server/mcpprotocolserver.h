@@ -8,9 +8,9 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
-class McpProtocolSettings;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServer : public QObject
 {
     Q_OBJECT
@@ -19,7 +19,7 @@ public:
     ~McpProtocolServer() override;
 
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType protocolType() const;
-    void setSettings(McpProtocolSettings *settings);
+    void setSettings(const McpProtocolSettings &settings);
 
     void start();
 
@@ -36,6 +36,6 @@ private:
     const TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mProtocolType;
     McpProtocolPlugin *mPlugin = nullptr;
     McpProtocolPluginInterface *mPluginInterface = nullptr;
-    McpProtocolSettings *mProtocolSettings = nullptr;
+    McpProtocolSettings mProtocolSettings;
 };
 }

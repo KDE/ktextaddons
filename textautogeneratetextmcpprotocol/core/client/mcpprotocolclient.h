@@ -19,7 +19,7 @@ public:
     ~McpProtocolClient() override;
 
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType protocolType() const;
-    void setSettings(McpProtocolSettings *settings);
+    void setSettings(const McpProtocolSettings &settings);
 
     void start();
 

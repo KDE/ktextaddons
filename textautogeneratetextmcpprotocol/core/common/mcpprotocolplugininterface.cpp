@@ -14,19 +14,20 @@ McpProtocolPluginInterface::McpProtocolPluginInterface(QObject *parent)
 
 McpProtocolPluginInterface::~McpProtocolPluginInterface() = default;
 
-void McpProtocolPluginInterface::setSettings(McpProtocolSettings *settings)
+void McpProtocolPluginInterface::setSettings(const McpProtocolSettings &settings)
 {
-    mProtocolSettings.reset(settings);
+    mProtocolSettings = settings;
 }
 
 bool McpProtocolPluginInterface::canStart() const
 {
-    return mProtocolSettings.get() != nullptr;
+    // TODO
+    return true;
 }
 
-McpProtocolSettings *McpProtocolPluginInterface::protocolSettings() const
+McpProtocolSettings McpProtocolPluginInterface::protocolSettings() const
 {
-    return mProtocolSettings.get();
+    return mProtocolSettings;
 }
 
 #include "moc_mcpprotocolplugininterface.cpp"

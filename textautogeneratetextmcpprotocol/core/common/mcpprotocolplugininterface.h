@@ -5,12 +5,12 @@
 */
 #pragma once
 
+#include "common/mcpprotocolsettings.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
-#include <memory>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
-class McpProtocolSettings;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPluginInterface : public QObject
 {
     Q_OBJECT
@@ -20,13 +20,13 @@ public:
 
     virtual void start() = 0;
 
-    void setSettings(McpProtocolSettings *settings);
+    void setSettings(const McpProtocolSettings &settings);
 
     [[nodiscard]] bool canStart() const;
 
     virtual void send(const QJsonObject &obj) = 0;
 
-    [[nodiscard]] McpProtocolSettings *protocolSettings() const;
+    [[nodiscard]] McpProtocolSettings protocolSettings() const;
 
 Q_SIGNALS:
     void started();
@@ -35,6 +35,6 @@ Q_SIGNALS:
     void finished();
 
 private:
-    std::unique_ptr<McpProtocolSettings> mProtocolSettings;
+    McpProtocolSettings mProtocolSettings;
 };
 }

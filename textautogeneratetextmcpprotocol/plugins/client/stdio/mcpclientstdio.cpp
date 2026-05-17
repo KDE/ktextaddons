@@ -28,9 +28,7 @@ McpClientStdio::~McpClientStdio() = default;
 void McpClientStdio::connection()
 {
     const auto settings = mInterface->protocolSettings();
-    if (settings) {
-        // TODO
-    }
+    // TODO
 }
 
 void McpClientStdio::send(const QJsonObject &obj)

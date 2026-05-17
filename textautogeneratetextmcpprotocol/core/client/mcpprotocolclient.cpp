@@ -45,7 +45,7 @@ void McpProtocolClient::initialize()
     }
 }
 
-void McpProtocolClient::setSettings(McpProtocolSettings *settings)
+void McpProtocolClient::setSettings(const McpProtocolSettings &settings)
 {
     if (mPluginInterface) {
         mPluginInterface->setSettings(settings);
