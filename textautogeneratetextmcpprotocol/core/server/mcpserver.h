@@ -10,6 +10,7 @@
 #include <QObject>
 #include <QUrl>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 class QDebug;
 class KConfigGroup;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -22,9 +23,6 @@ public:
     ~McpServer();
 
     void createUniqueIdentifier();
-
-    [[nodiscard]] QUrl serverUrl() const;
-    void setServerUrl(const QUrl &newServerUrl);
 
     [[nodiscard]] bool enabled() const;
     void setEnabled(bool newEnabled);
@@ -52,17 +50,21 @@ public:
     [[nodiscard]] QMap<QString, QString> environments() const;
     void setEnvironments(const QMap<QString, QString> &newEnvironments);
 
+    [[nodiscard]] QUrl serverUrl() const;
+    void setServerUrl(const QUrl &newServerUrl);
+
     [[nodiscard]] static QString convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
     [[nodiscard]] static TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType convertTransportTypeFromString(const QString &str);
     [[nodiscard]] static QString transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type);
 
 private:
     bool mEnabled = true;
-    QUrl mServerUrl;
     QString mName;
     QByteArray mIdentifier;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mTransportType =
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings mSettings;
+    QUrl mServerUrl;
     QString mCommand;
     QString mArguments;
     QMap<QString, QString> mEnvironments;
