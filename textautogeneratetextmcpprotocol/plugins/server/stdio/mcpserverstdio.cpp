@@ -5,6 +5,7 @@
 */
 #include "mcpserverstdio.h"
 #include "autogeneratetext_mcpprotocolserverplugin_lib_debug.h"
+#include "common/mcpprotocolsettings.h"
 #include "stdio/mcpserverstdioplugininterface.h"
 #include <QJsonDocument>
 #include <QProcess>
@@ -29,7 +30,10 @@ void McpServerStdio::connection()
 {
     const auto settings = mInterface->protocolSettings();
     if (settings) {
-        // TODO
+        mProcess->setProgram(settings->command());
+        const QStringList lst = settings->arguments().split(u' ');
+        mProcess->setArguments(lst);
+        mProcess->start();
     }
 }
 
