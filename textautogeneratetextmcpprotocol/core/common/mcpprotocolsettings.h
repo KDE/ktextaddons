@@ -7,8 +7,10 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QMap>
 #include <QObject>
-#include <QVariant>
+#include <QUrl>
+class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSettings
@@ -17,10 +19,24 @@ public:
     McpProtocolSettings();
     ~McpProtocolSettings();
 
-    [[nodiscard]] QVariant connectionInfo() const;
-    void setConnectionInfo(const QVariant &newConnectionInfo);
+    [[nodiscard]] QString command() const;
+    void setCommand(const QString &newCommand);
+
+    [[nodiscard]] QString arguments() const;
+    void setArguments(const QString &newArguments);
+
+    [[nodiscard]] QMap<QString, QString> environments() const;
+    void setEnvironments(const QMap<QString, QString> &newEnvironments);
+
+    [[nodiscard]] QUrl serverUrl() const;
+    void setServerUrl(const QUrl &newServerUrl);
 
 private:
-    QVariant mConnectionInfo;
+    QUrl mServerUrl;
+    QString mCommand;
+    QString mArguments;
+    QMap<QString, QString> mEnvironments;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &t);

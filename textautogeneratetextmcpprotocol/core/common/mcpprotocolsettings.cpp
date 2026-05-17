@@ -5,18 +5,58 @@
 */
 
 #include "mcpprotocolsettings.h"
+#include <QDebug>
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSettings::McpProtocolSettings() = default;
 
 McpProtocolSettings::~McpProtocolSettings() = default;
 
-QVariant McpProtocolSettings::connectionInfo() const
+QString McpProtocolSettings::command() const
 {
-    return mConnectionInfo;
+    return mCommand;
 }
 
-void McpProtocolSettings::setConnectionInfo(const QVariant &newConnectionInfo)
+void McpProtocolSettings::setCommand(const QString &newCommand)
 {
-    mConnectionInfo = newConnectionInfo;
+    mCommand = newCommand;
+}
+
+QString McpProtocolSettings::arguments() const
+{
+    return mArguments;
+}
+
+void McpProtocolSettings::setArguments(const QString &newArguments)
+{
+    mArguments = newArguments;
+}
+
+QMap<QString, QString> McpProtocolSettings::environments() const
+{
+    return mEnvironments;
+}
+
+void McpProtocolSettings::setEnvironments(const QMap<QString, QString> &newEnvironments)
+{
+    mEnvironments = newEnvironments;
+}
+
+QUrl McpProtocolSettings::serverUrl() const
+{
+    return mServerUrl;
+}
+
+void McpProtocolSettings::setServerUrl(const QUrl &newServerUrl)
+{
+    mServerUrl = newServerUrl;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &t)
+{
+    d.space() << "serverUrl" << t.serverUrl();
+    d.space() << "environments" << t.environments();
+    d.space() << "arguments" << t.arguments();
+    d.space() << "command" << t.command();
+    return d;
 }

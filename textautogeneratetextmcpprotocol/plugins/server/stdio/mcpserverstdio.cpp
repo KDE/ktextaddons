@@ -27,9 +27,8 @@ McpServerStdio::~McpServerStdio() = default;
 
 void McpServerStdio::connection()
 {
-    const QVariant connection = mInterface->connectionInfo();
-    if (!connection.isNull()) {
-        const QStringList info = connection.toStringList();
+    const auto settings = mInterface->protocolSettings();
+    if (settings) {
         // TODO
     }
 }

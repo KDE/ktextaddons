@@ -24,9 +24,9 @@ bool McpProtocolPluginInterface::canStart() const
     return mProtocolSettings.get() != nullptr;
 }
 
-QVariant McpProtocolPluginInterface::connectionInfo() const
+McpProtocolSettings *McpProtocolPluginInterface::protocolSettings() const
 {
-    return mProtocolSettings->connectionInfo();
+    return mProtocolSettings.get();
 }
 
 #include "moc_mcpprotocolplugininterface.cpp"

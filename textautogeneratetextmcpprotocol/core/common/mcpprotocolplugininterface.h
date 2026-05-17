@@ -26,7 +26,7 @@ public:
 
     virtual void send(const QJsonObject &obj) = 0;
 
-    [[nodiscard]] QVariant connectionInfo() const;
+    [[nodiscard]] McpProtocolSettings *protocolSettings() const;
 
 Q_SIGNALS:
     void started();
