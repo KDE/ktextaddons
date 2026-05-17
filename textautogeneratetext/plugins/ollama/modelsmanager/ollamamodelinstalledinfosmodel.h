@@ -11,12 +11,12 @@
 
 #include <QAbstractListModel>
 
-class OllamaModelInstalledInfosModel : public PluginCommonModelInstalledInfosModel
+class OllamaModelInstalledInfosModel : public PluginCommonModelInstalledInfosModel<OllamaModelInstalledInfo>
 {
     Q_OBJECT
 public:
     enum ModelInfoRoles {
-        ModelGeneratedName = PluginCommonModelInstalledInfosModel::ModelInfoRoles::Categories + 1,
+        ModelGeneratedName = PluginCommonModelInstalledInfosModelBase::ModelInfoRoles::Categories + 1,
         Family,
         Languages,
     };
@@ -25,12 +25,5 @@ public:
     explicit OllamaModelInstalledInfosModel(QObject *parent = nullptr);
     ~OllamaModelInstalledInfosModel() override;
 
-    [[nodiscard]] QList<OllamaModelInstalledInfo> modelInstalledInfos() const;
-    void setModelInstalledInfos(const QList<OllamaModelInstalledInfo> &newModelInfos);
-
-    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
-
-private:
-    QList<OllamaModelInstalledInfo> mModelInstalledInfos;
 };
