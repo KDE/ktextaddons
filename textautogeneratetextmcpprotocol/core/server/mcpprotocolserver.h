@@ -15,10 +15,10 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServer : public QObj
 {
     Q_OBJECT
 public:
-    explicit McpProtocolServer(McpProtocolPlugin::ProtocolType protocolType, QObject *parent = nullptr);
+    explicit McpProtocolServer(McpProtocolPlugin::TransportType protocolType, QObject *parent = nullptr);
     ~McpProtocolServer() override;
 
-    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType protocolType() const;
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType protocolType() const;
     void setSettings(McpProtocolSettings *settings);
 
     void start();
@@ -33,7 +33,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void loadPlugin();
-    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType mProtocolType;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mProtocolType;
     McpProtocolPlugin *mPlugin = nullptr;
     McpProtocolPluginInterface *mPluginInterface = nullptr;
     McpProtocolSettings *mProtocolSettings = nullptr;

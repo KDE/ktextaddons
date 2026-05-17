@@ -20,5 +20,5 @@ public:
     ~McpClientPlugin() override;
 
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface *
-    createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type, QObject *parent) override;
+    createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type, QObject *parent) override;
 };

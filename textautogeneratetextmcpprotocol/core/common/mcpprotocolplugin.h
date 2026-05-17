@@ -21,13 +21,13 @@ public:
     };
     Q_ENUM(PluginType)
 
-    enum class ProtocolType : uint8_t {
+    enum class TransportType : uint8_t {
         Unknown = 0,
         Sse,
         Stdio,
         StreamableHttp,
     };
-    Q_ENUM(ProtocolType)
+    Q_ENUM(TransportType)
 
     /*!
      */
@@ -42,7 +42,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] virtual McpProtocolPluginInterface *createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type,
+    [[nodiscard]] virtual McpProtocolPluginInterface *createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type,
                                                                       QObject *parent) = 0;
 
 protected:

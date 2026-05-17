@@ -10,7 +10,7 @@
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
-McpProtocolClient::McpProtocolClient(McpProtocolPlugin::ProtocolType protocolType, QObject *parent)
+McpProtocolClient::McpProtocolClient(McpProtocolPlugin::TransportType protocolType, QObject *parent)
     : QObject{parent}
     , mProtocolType(protocolType)
 {
@@ -91,7 +91,7 @@ void McpProtocolClient::start()
     }
 }
 
-McpProtocolPlugin::ProtocolType McpProtocolClient::protocolType() const
+McpProtocolPlugin::TransportType McpProtocolClient::protocolType() const
 {
     return mProtocolType;
 }

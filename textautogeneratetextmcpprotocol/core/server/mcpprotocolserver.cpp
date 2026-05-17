@@ -12,7 +12,7 @@
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 
-McpProtocolServer::McpProtocolServer(McpProtocolPlugin::ProtocolType protocolType, QObject *parent)
+McpProtocolServer::McpProtocolServer(McpProtocolPlugin::TransportType protocolType, QObject *parent)
     : QObject{parent}
     , mProtocolType(protocolType)
 {

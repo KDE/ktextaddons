@@ -21,14 +21,14 @@ McpServerPlugin::McpServerPlugin(QObject *parent, const QList<QVariant> &)
 McpServerPlugin::~McpServerPlugin() = default;
 
 TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface *
-McpServerPlugin::createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType type, QObject *parent)
+McpServerPlugin::createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type, QObject *parent)
 {
     switch (type) {
-    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Sse:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse:
         return new McpServerSsePluginInterface(parent);
-    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::Stdio:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio:
         return new McpServerStdioPluginInterface(parent);
-    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::ProtocolType::StreamableHttp:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
         return new McpServerStreambleHttpPluginInterface(parent);
     default:
         break;
