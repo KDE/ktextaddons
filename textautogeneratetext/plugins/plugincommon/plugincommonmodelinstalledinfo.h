@@ -40,4 +40,4 @@ protected:
     QString mParameterSize;
     TextAutoGenerateText::TextAutoGenerateManager::Categories mCategories = TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown;
 };
-QDebug operator<<(QDebug d, const PluginCommonModelInstalledInfo &t);
+TEXTAUTOGENERATEPLUGINCOMMON_EXPORT QDebug operator<<(QDebug d, const PluginCommonModelInstalledInfo &t);
