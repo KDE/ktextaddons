@@ -13,17 +13,17 @@
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 
-QString McpProtocolUtils::serverConfigFileName()
+QString McpProtocolCommonUtils::serverConfigFileName()
 {
     return u"mcpprotocolserver"_s;
 }
 
-QByteArray McpProtocolUtils::generateUUid()
+QByteArray McpProtocolCommonUtils::generateUUid()
 {
     return QUuid::createUuid().toByteArray(QUuid::Id128);
 }
 
-QStringList McpProtocolUtils::mcpServerList(const KSharedConfig::Ptr &config)
+QStringList McpProtocolCommonUtils::mcpServerList(const KSharedConfig::Ptr &config)
 {
     static const QRegularExpression regularExpression(u"^Mcp Server #\\d+$"_s);
     return config->groupList().filter(regularExpression);

@@ -26,13 +26,13 @@ McpServerModel *McpServerManager::mcpServerModel() const
 
 QString McpServerManager::serverConfigFileName() const
 {
-    return McpProtocolUtils::serverConfigFileName();
+    return McpProtocolCommonUtils::serverConfigFileName();
 }
 
 void McpServerManager::loadServers()
 {
     const auto config = KSharedConfig::openConfig(serverConfigFileName());
-    const QStringList mcpServerList = McpProtocolUtils::mcpServerList(config);
+    const QStringList mcpServerList = McpProtocolCommonUtils::mcpServerList(config);
     if (mcpServerList.isEmpty()) {
         return; // nothing to be done...
     }
@@ -53,7 +53,7 @@ void McpServerManager::loadServers()
 void McpServerManager::saveServers()
 {
     auto config = KSharedConfig::openConfig(serverConfigFileName());
-    const auto instanceList = McpProtocolUtils::mcpServerList(config);
+    const auto instanceList = McpProtocolCommonUtils::mcpServerList(config);
     for (const auto &group : instanceList) {
         config->deleteGroup(group);
     }

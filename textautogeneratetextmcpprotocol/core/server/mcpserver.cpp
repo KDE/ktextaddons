@@ -17,7 +17,7 @@ McpServer::~McpServer() = default;
 
 void McpServer::createUniqueIdentifier()
 {
-    mIdentifier = McpProtocolUtils::generateUUid();
+    mIdentifier = McpProtocolCommonUtils::generateUUid();
 }
 
 bool McpServer::enabled() const

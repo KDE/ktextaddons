@@ -9,7 +9,7 @@
 #include <QString>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
-namespace McpProtocolUtils
+namespace McpProtocolCommonUtils
 {
 /*!
  */
