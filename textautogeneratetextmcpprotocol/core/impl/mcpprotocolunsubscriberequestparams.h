@@ -54,7 +54,15 @@ public:
      */
     void setMeta(std::optional<Meta> newMeta);
 
+    /*!
+     * \brief uri
+     * \return
+     */
     [[nodiscard]] QString uri() const;
+    /*!
+     * \brief setUri
+     * \param newUri
+     */
     void setUri(const QString &newUri);
 
 private:

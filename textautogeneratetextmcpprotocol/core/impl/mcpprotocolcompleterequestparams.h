@@ -6,6 +6,7 @@
 #pragma once
 #include "mcpprotocolpromptreference.h"
 #include "mcpprotocolresourcetemplatereference.h"
+
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>

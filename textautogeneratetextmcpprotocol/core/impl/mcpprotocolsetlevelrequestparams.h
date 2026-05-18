@@ -54,7 +54,7 @@ public:
      */
     void setMeta(std::optional<Meta> newMeta);
 
-    McpProtocolUtils::LoggingLevel level() const;
+    [[nodiscard]] McpProtocolUtils::LoggingLevel level() const;
     void setLevel(McpProtocolUtils::LoggingLevel newLevel);
 
 private:

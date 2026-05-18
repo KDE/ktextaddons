@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolicon.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QList>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolIcon>
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
