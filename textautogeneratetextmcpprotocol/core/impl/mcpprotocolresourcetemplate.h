@@ -4,9 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolannotations.h"
+#include "mcpprotocolicon.h"
 #include "mcpprotocolnotificationparams.h"
-#include "mcpprotocolprompt.h"
-#include "mcpprotocoltaskmetadata.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 class QDebug;

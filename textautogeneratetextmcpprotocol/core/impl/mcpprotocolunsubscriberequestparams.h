@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "mcpprotocoltaskmetadata.h"
+#include "mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 class QJsonObject;

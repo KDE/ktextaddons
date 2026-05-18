@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "mcpprotocolannotations.h"
 #include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
