@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "impl/mcpprotocolresourcetemplatereference.h"
 #include "mcpprotocolpromptreference.h"
+#include "mcpprotocolresourcetemplatereference.h"
 #include "mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>

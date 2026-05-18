@@ -6,7 +6,7 @@
 #pragma once
 #include "mcpprotocolannotations.h"
 #include "mcpprotocolicon.h"
-#include "mcpprotocolnotificationparams.h"
+#include "mcpprotocolmeta.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 class QDebug;
