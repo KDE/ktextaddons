@@ -11,6 +11,7 @@
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "lmstudioconfiguredialog.h"
 #include "lmstudiomanager.h"
+#include "lmstudioreply.h"
 #include "lmstudiosettings.h"
 #include <KLocalizedString>
 #include <qt6keychain/keychain.h>
@@ -36,6 +37,12 @@ LMStudioPlugin::LMStudioPlugin(TextAutoGenerateText::TextAutoGenerateManager *ma
     });
     connect(mLMStudioManager, &LMStudioManager::downloadDone, this, &LMStudioPlugin::downloadModelFinished);
     connect(mLMStudioManager, &LMStudioManager::errorOccurred, this, &LMStudioPlugin::errorOccurred);
+
+    connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
+        if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
+            mLMStudioManager->loadModels();
+        }
+    });
 
     connect(mLMStudioManager, &LMStudioManager::finished, this, [this](const TextAutoGenerateText::TextAutoGenerateReply::Response &replyResponse) {
         if (replyResponse.hasToolCallArguments()) {
@@ -105,7 +112,37 @@ void LMStudioPlugin::askToAssistant(const QString &msg)
 
 void LMStudioPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
-    Q_UNUSED(info)
+    const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);
+    auto reply = mLMStudioManager->getChatCompletion(req);
+    if (!reply) {
+        return;
+    }
+    const QByteArray messageUuid = info.messageUuid;
+    const QByteArray chatId = info.chatId;
+    mConnections.insert(
+        reply,
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+                                                       manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
+                                                   })));
+    mConnections.insert(
+        reply,
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::finished, this, [reply, messageUuid, chatId, this] {
+                                                       const auto response = reply->readResponse();
+                                                       if (response.hasToolCallArguments()) {
+                                                           manager()->callTools(chatId, messageUuid, response.info);
+                                                       } else {
+                                                           manager()->changeInProgress(chatId, messageUuid, false);
+                                                       }
+                                                       qCDebug(AUTOGENERATETEXT_LMSTUDIO_PLUGIN_LOG) << " progress finished";
+                                                       mConnections.remove(reply);
+                                                       reply->deleteLater();
+#if 0
+                                // TODO add context + info
+                            message.context = message.llmReply->context();
+                            message.info = message.llmReply->info();
+#endif
+                                                       // Q_EMIT finished(message); // TODO add message as argument ???
+                                                   })));
 }
 
 QString LMStudioPlugin::displayName() const

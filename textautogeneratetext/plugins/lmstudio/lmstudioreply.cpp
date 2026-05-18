@@ -106,16 +106,20 @@ TextAutoGenerateText::TextAutoGenerateReply::Response LMStudioReply::readRespons
         }
         if (!mTokens.isEmpty()) {
             const auto finalResponse = mTokens.constLast();
+            // TODO it seems that it doesn't return completion token and others !
+            // We need to investigate it.
             // TODO use "usage" in openAI api
             // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
 
             TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
             replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
             const auto usage = finalResponse["usage"_L1].toObject();
-            replyInfo.tokenCount = usage["total_tokens"_L1].toVariant().toULongLong();
-            replyInfo.completionTokens = usage["completion_tokens"_L1].toVariant().toULongLong();
-            replyInfo.promptTokens = usage["prompt_tokens"_L1].toVariant().toULongLong();
-            ret.replyInfo = replyInfo;
+            if (!usage.isEmpty()) {
+                replyInfo.tokenCount = usage["total_tokens"_L1].toVariant().toULongLong();
+                replyInfo.completionTokens = usage["completion_tokens"_L1].toVariant().toULongLong();
+                replyInfo.promptTokens = usage["prompt_tokens"_L1].toVariant().toULongLong();
+                ret.replyInfo = replyInfo;
+            }
 
             // "{\"id\":\"b72cdf33d58440838134fc042e98521b\",\"object\":\"chat.completion.chunk\",\"created\":1759381277,\"model\":\"magistral-small-2509\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"id\":\"QNfTI1iiJ\",\"function\":{\"name\":\"current_date_time_tool\",\"arguments\":\"{\\\"currentdatetime\\\":
             // \\\"time\\\"}\"},\"index\":0}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":275,\"total_tokens\":324,\"completion_tokens\":49}}\n\n[DONE]\n\n
