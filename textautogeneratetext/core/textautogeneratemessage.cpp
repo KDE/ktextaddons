@@ -292,7 +292,10 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
-    o["replyInfo"_L1] = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::serialize(msg.info());
+    const auto msgInfo = msg.info();
+    if (msgInfo.isValid()) {
+        o["replyInfo"_L1] = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::serialize(msgInfo);
+    }
 
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
