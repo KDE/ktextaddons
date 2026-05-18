@@ -186,7 +186,7 @@ bool OllamaCloudManager::hasCategorySupport(const QString &modelName, TextAutoGe
     };
     const auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
     if (it == mAvailableInfos.constEnd()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " modelName is not installed " << modelName;
+        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << "hasCategorySupport: modelName is not installed " << modelName;
         return false;
     }
     return it->categories() & cat;
