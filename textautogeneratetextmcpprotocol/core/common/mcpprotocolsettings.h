@@ -9,6 +9,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QMap>
 #include <QObject>
+#include <QString>
 #include <QUrl>
 class QDebug;
 class KConfigGroup;
