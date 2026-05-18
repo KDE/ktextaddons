@@ -5,7 +5,6 @@
 */
 #pragma once
 #include "mcpprotocolinitializerequestparams.h"
-#include "mcpprotocolpaginatedrequestparams.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>

@@ -4,8 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolgetpromptrequestparams.h"
-#include "mcpprotocolnotificationparams.h"
 #include "mcpprotocolrequestparams.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>

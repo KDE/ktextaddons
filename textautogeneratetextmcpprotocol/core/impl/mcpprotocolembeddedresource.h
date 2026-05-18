@@ -6,8 +6,6 @@
 #pragma once
 #include "mcpprotocolannotations.h"
 #include "mcpprotocolblobresourcecontents.h"
-#include "mcpprotocolnotificationparams.h"
-#include "mcpprotocolprompt.h"
 #include "mcpprotocoltextresourcecontents.h"
 #include "mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"

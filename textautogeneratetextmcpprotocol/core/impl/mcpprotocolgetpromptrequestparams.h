@@ -5,9 +5,6 @@
 */
 #pragma once
 #include "impl/mcpprotocolutils.h"
-#include "mcpprotocolnotificationparams.h"
-#include "mcpprotocolprompt.h"
-#include "mcpprotocoltaskmetadata.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
