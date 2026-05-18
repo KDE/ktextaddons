@@ -7,6 +7,7 @@
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "stdio/mcpclientstdioplugininterface.h"
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QProcess>
 #include <QVariant>
 
@@ -21,6 +22,15 @@ McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject
     });
     connect(mProcess, &QProcess::started, this, &McpClientStdio::started);
     connect(mProcess, &QProcess::finished, this, &McpClientStdio::finished);
+    connect(mProcess, &QProcess::readyReadStandardOutput, this, [this]() {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
+        qDebug() << " received !!! ; " << mProcess->readAllStandardOutput();
+        // Q_EMIT error(mProcess->errorString());
+    });
+    connect(mProcess, &QProcess::readyReadStandardError, this, [this]() {
+        qWarning() << "error " << mProcess->readAllStandardError();
+    });
+    qDebug() << " cCCCCCCCCcccccccsdfsdfdsf";
 }
 
 McpClientStdio::~McpClientStdio() = default;
@@ -39,6 +49,7 @@ void McpClientStdio::send(const QJsonObject &obj)
 {
     const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
     mProcess->write(data + "\n");
+    qDebug() << " obj " << obj;
 }
 
 #include "moc_mcpclientstdio.cpp"
