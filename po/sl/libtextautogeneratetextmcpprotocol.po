@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:42+0000\n"
+"POT-Creation-Date: 2026-05-18 00:42+0000\n"
 "PO-Revision-Date: 2026-05-12 07:04+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,17 +18,17 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: core/server/mcpserver.cpp:152
+#: core/server/mcpserver.cpp:103
 #, kde-format
 msgid "Sse"
 msgstr "Sse"
 
-#: core/server/mcpserver.cpp:154
+#: core/server/mcpserver.cpp:105
 #, kde-format
 msgid "Standard IO"
 msgstr "Standard VI"
 
-#: core/server/mcpserver.cpp:156
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgid "Streamable HTTP"
 msgstr "Streamble HTTP"

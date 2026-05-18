@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:42+0000\n"
+"POT-Creation-Date: 2026-05-18 00:42+0000\n"
 "PO-Revision-Date: 2026-05-12 08:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,17 +18,17 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 26.04.0\n"
 
-#: core/server/mcpserver.cpp:152
+#: core/server/mcpserver.cpp:103
 #, kde-format
 msgid "Sse"
 msgstr "Sse"
 
-#: core/server/mcpserver.cpp:154
+#: core/server/mcpserver.cpp:105
 #, kde-format
 msgid "Standard IO"
 msgstr "קלט/פלט רגילים"
 
-#: core/server/mcpserver.cpp:156
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgid "Streamable HTTP"
 msgstr "HTTP שניתן להזרים"
