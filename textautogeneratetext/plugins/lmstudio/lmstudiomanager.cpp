@@ -31,12 +31,12 @@ LMStudioManager::LMStudioManager(LMStudioSettings *settings, QObject *parent)
 
 LMStudioManager::~LMStudioManager() = default;
 
-bool LMStudioManager::hasVisionSupport([[maybe_unused]] const QString &modelName) const
+bool LMStudioManager::hasVisionSupport(const QString &modelName) const
 {
     return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision);
 }
 
-bool LMStudioManager::hasToolsSupport([[maybe_unused]] const QString &modelName) const
+bool LMStudioManager::hasToolsSupport(const QString &modelName) const
 {
     return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools);
 }
@@ -51,7 +51,7 @@ bool LMStudioManager::hasAudioSupport([[maybe_unused]] const QString &modelName)
     return false;
 }
 
-bool LMStudioManager::hasThinkSupport([[maybe_unused]] const QString &modelName) const
+bool LMStudioManager::hasThinkSupport(const QString &modelName) const
 {
     return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning);
 }
@@ -208,7 +208,7 @@ bool LMStudioManager::hasCategorySupport(const QString &modelName, TextAutoGener
     };
     auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName);
     if (it == mInstalledInfos.constEnd()) {
-        qCWarning(AUTOGENERATETEXT_LMSTUDIO_LOG) << " modelName is not installed " << modelName;
+        qCWarning(AUTOGENERATETEXT_LMSTUDIO_LOG) << "hasCategorySupport: modelName is not installed " << modelName;
         return false;
     }
     return it->categories() & cat;

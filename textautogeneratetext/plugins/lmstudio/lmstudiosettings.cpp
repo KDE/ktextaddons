@@ -27,9 +27,10 @@ void LMStudioSettings::setDisplayName(const QString &newName)
 {
     mDisplayName = newName;
 }
+
 QString LMStudioSettings::currentModel() const
 {
-    return mDisplayName;
+    return mCurrentModel;
 }
 
 void LMStudioSettings::setCurrentModel(const QString &newCurrentModel)
