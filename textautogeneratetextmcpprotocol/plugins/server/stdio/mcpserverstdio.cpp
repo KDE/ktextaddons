@@ -29,6 +29,7 @@ McpServerStdio::~McpServerStdio() = default;
 void McpServerStdio::connection()
 {
     const auto settings = mInterface->protocolSettings();
+    qDebug() << " settings " << settings;
     mProcess->setProgram(settings.command());
     const QStringList lst = settings.arguments().split(u' ');
     mProcess->setArguments(lst);

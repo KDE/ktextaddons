@@ -28,7 +28,11 @@ McpClientStdio::~McpClientStdio() = default;
 void McpClientStdio::connection()
 {
     const auto settings = mInterface->protocolSettings();
-    // TODO
+    qDebug() << " settings " << settings;
+    mProcess->setProgram(settings.command());
+    const QStringList lst = settings.arguments().split(u' ');
+    mProcess->setArguments(lst);
+    mProcess->start();
 }
 
 void McpClientStdio::send(const QJsonObject &obj)
