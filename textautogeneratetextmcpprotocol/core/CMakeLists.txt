@@ -281,6 +281,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver
 
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_HEADERS
     HEADER_NAMES
+    McpProtocolUtils
     McpProtocolAnnotations
     McpProtocolAudioContent
     McpProtocolBaseMetadata

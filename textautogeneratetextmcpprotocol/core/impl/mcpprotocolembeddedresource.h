@@ -7,10 +7,10 @@
 #include "mcpprotocolannotations.h"
 #include "mcpprotocolblobresourcecontents.h"
 #include "mcpprotocoltextresourcecontents.h"
-#include "mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore

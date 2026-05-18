@@ -6,10 +6,10 @@
 #pragma once
 #include "mcpprotocolpromptreference.h"
 #include "mcpprotocolresourcetemplatereference.h"
-#include "mcpprotocolutils.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
