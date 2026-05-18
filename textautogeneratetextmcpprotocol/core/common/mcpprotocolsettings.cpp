@@ -80,9 +80,15 @@ void McpProtocolSettings::load(const KConfigGroup &config)
 
 void McpProtocolSettings::save(KConfigGroup &config) const
 {
-    config.writeEntry(u"Command"_s, mCommand);
-    config.writeEntry(u"Arguments"_s, mArguments);
-    config.writeEntry(u"ServerUrl"_s, mServerUrl);
+    if (!mCommand.isEmpty()) {
+        config.writeEntry(u"Command"_s, mCommand);
+    }
+    if (!mArguments.isEmpty()) {
+        config.writeEntry(u"Arguments"_s, mArguments);
+    }
+    if (!mServerUrl.isEmpty()) {
+        config.writeEntry(u"ServerUrl"_s, mServerUrl);
+    }
     // TODO mEnvironments
 }
 
