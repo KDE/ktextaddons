@@ -3,7 +3,7 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "mcpprotocolutils.h"
+#include "mcpprotocolcommonutils.h"
 
 #include <KConfig>
 #include <QCoreApplication>

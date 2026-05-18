@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpservermanager.h"
-#include "common/mcpprotocolutils.h"
+#include "common/mcpprotocolcommonutils.h"
 #include "models/mcpservermodel.h"
 #include <KConfigGroup>
 #include <KSharedConfig>

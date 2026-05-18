@@ -233,8 +233,8 @@ target_sources(
         common/mcpprotocolsettings.cpp
         common/mcpbase.h
         common/mcpbase.cpp
-        common/mcpprotocolutils.h
-        common/mcpprotocolutils.cpp
+        common/mcpprotocolcommonutils.h
+        common/mcpprotocolcommonutils.cpp
         models/mcpservermodel.cpp
         models/mcpservermodel.h
         models/mcpserversortfilterproxymodel.cpp

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserver.h"
-#include "common/mcpprotocolutils.h"
+#include "common/mcpprotocolcommonutils.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
