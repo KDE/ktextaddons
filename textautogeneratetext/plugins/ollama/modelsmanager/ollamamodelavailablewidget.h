@@ -9,7 +9,7 @@
 #include <QWidget>
 class OllamaModelAvailableSearchWidget;
 class OllamaModelAvailableInfoWidget;
-class OllamaCommonModelAvailableInfosSortProxyModel;
+class PluginCommonModelInstalledInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
 class OllamaManager;
@@ -35,7 +35,7 @@ private:
     OllamaModelAvailableSearchWidget *const mSearchWidget;
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mListView;
     OllamaModelAvailableInfoWidget *const mInfoWidget;
-    OllamaCommonModelAvailableInfosSortProxyModel *const mProxyModel;
+    PluginCommonModelInstalledInfosSortProxyModel *const mProxyModel;
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;
     QStackedWidget *const mStackedWidget;
     OllamaCommonModelAvailableInfosModel *const mAvailableInfosModel;

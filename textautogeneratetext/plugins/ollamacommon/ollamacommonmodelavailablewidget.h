@@ -13,7 +13,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateModelSearchLineEdit;
 }
 class OllamaCommonModelsInfosCategoriesComboBox;
-class OllamaCommonModelAvailableInfosSortProxyModel;
+class PluginCommonModelInstalledInfosSortProxyModel;
 class OllamaCommonModelAvailableInfosModel;
 class OllamaCommonModelAvailableInfoWidget;
 class OllamaCommonModelAvailableListView;
@@ -31,7 +31,7 @@ private:
     OllamaCommonModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     OllamaCommonModelsInfosCategoriesComboBox *const mCategoriesComboBox;
-    OllamaCommonModelAvailableInfosSortProxyModel *const mProxyModel;
+    PluginCommonModelInstalledInfosSortProxyModel *const mProxyModel;
     OllamaCommonModelAvailableInfosModel *const mAvailableInfosModel;
     OllamaCommonModelAvailableInfoWidget *const mOllamaModelAvalaibleInfoWidget;
 };

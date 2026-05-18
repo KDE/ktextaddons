@@ -6,10 +6,10 @@
 
 #include "ollamacommonmodelavailablewidget.h"
 #include "ollamacommonmodelavailableinfosmodel.h"
-#include "ollamacommonmodelavailableinfossortproxymodel.h"
 #include "ollamacommonmodelavailableinfowidget.h"
 #include "ollamacommonmodelavailablelistview.h"
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
+#include "plugincommonmodelinstalledinfossortproxymodel.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QScrollArea>
@@ -22,7 +22,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     , mAvailableListView(new OllamaCommonModelAvailableListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
     , mCategoriesComboBox(new OllamaCommonModelsInfosCategoriesComboBox(this))
-    , mProxyModel(new OllamaCommonModelAvailableInfosSortProxyModel(this))
+    , mProxyModel(new PluginCommonModelInstalledInfosSortProxyModel(this))
     , mAvailableInfosModel(new OllamaCommonModelAvailableInfosModel(this))
     , mOllamaModelAvalaibleInfoWidget(new OllamaCommonModelAvailableInfoWidget(this))
 {
@@ -73,7 +73,7 @@ OllamaCommonModelAvailableWidget::OllamaCommonModelAvailableWidget(QWidget *pare
     mAvailableListView->setModel(mProxyModel);
 
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
-    connect(mSearchLineEdit, &QLineEdit::textChanged, mProxyModel, &OllamaCommonModelAvailableInfosSortProxyModel::setFilterFixedString);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mProxyModel, &PluginCommonModelInstalledInfosSortProxyModel::setFilterFixedString);
     connect(mAvailableListView, &TextAutoGenerateText::TextAutoGenerateModelAvailableListView::pressed, this, &OllamaCommonModelAvailableWidget::slotClicked);
     connect(mAvailableListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, scrollArea]() {
         const bool isEnabled = mAvailableListView->currentIndex().isValid();

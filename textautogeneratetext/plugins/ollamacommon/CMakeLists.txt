@@ -34,8 +34,6 @@ target_sources(
         ollamacommonmodelsinfoscategoriescombobox.h
         ollamacommonmodelcategoriesmodel.cpp
         ollamacommonmodelcategoriesmodel.h
-        ollamacommonmodelavailableinfossortproxymodel.cpp
-        ollamacommonmodelavailableinfossortproxymodel.h
         ollamacommonmodelavailableinfosmodel.h
         ollamacommonmodelavailableinfosmodel.cpp
         ollamacommonmodelavailableinfosdelegate.h
