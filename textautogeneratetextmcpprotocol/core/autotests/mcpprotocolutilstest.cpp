@@ -130,4 +130,29 @@ void McpProtocolUtilsTest::shouldConvertTaskStatusFromString()
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus::Unknown);
 }
 
+void McpProtocolUtilsTest::shouldConvertProtocolVersionToString()
+{
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown),
+             u"2025-03-26"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26),
+             u"2025-03-26"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05),
+             u"2024-11-05"_s);
+}
+
+void McpProtocolUtilsTest::shouldConvertProtocolVersionFromString()
+{
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2025-03-26"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2024-11-05"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"kde"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(QString()),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26);
+}
+
 #include "moc_mcpprotocolutilstest.cpp"

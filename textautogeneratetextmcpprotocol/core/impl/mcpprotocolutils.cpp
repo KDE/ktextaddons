@@ -583,3 +583,31 @@ QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessa
         },
         val);
 }
+
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion protocol)
+{
+    switch (protocol) {
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "convertProtocolVersionToString invalid";
+        break;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05:
+        return u"2024-11-05"_s;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26:
+        return u"2025-03-26"_s;
+    }
+    return u"2025-03-26"_s;
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(const QString &str)
+{
+    if (str == "2024-11-05"_L1) {
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05;
+    } else if (str == "2025-03-26"_L1) {
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26;
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "convertProtocolVersionFromString invalid: " << str;
+    }
+    return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26;
+}

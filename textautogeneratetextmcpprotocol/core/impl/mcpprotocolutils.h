@@ -94,6 +94,12 @@ enum class Role : uint8_t {
     User,
 };
 
+enum class ProtocolVersion : uint8_t {
+    Unknown = 0,
+    V2024_11_05,
+    V2025_03_26,
+};
+
 enum class LoggingLevel : uint8_t {
     Alert,
     Critical,
@@ -156,6 +162,9 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);
+
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertProtocolVersionToString(McpProtocolUtils::ProtocolVersion role);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::ProtocolVersion convertProtocolVersionFromString(const QString &str);
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::LoggingLevel convertLoggingLevelFromString(const QString &str);

@@ -21,4 +21,6 @@ private Q_SLOTS:
     void shouldConvertLoggingLevelFromString();
     void shouldConvertTaskStatusToString();
     void shouldConvertTaskStatusFromString();
+    void shouldConvertProtocolVersionToString();
+    void shouldConvertProtocolVersionFromString();
 };
