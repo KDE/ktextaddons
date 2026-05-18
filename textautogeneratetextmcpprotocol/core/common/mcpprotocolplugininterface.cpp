@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolplugininterface.h"
-#include "common/mcpprotocolsettings.h"
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPluginInterface::McpProtocolPluginInterface(QObject *parent)

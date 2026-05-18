@@ -14,7 +14,6 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QStackedWidget>
-#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
