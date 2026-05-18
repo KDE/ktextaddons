@@ -279,6 +279,102 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver
     RELATIVE server
 )
 
+ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_HEADERS
+    HEADER_NAMES
+    McpProtocolAnnotations
+    McpProtocolAudioContent
+    McpProtocolBaseMetadata
+    McpProtocolBlobResourceContents
+    McpProtocolBooleanSchema
+    McpProtocolCallToolRequest
+    McpProtocolCallToolRequestParams
+    McpProtocolCancelledNotification
+    McpProtocolCancelledNotificationParams
+    McpProtocolCancelTaskRequest
+    McpProtocolClientCapabilities
+    McpProtocolCompleteRequest
+    McpProtocolCompleteRequestParams
+    McpProtocolCreateTaskResult
+    McpProtocolElicitationCompleteNotification
+    McpProtocolEmbeddedResource
+    McpProtocolError
+    McpProtocolGetPromptRequest
+    McpProtocolGetPromptRequestParams
+    McpProtocolGetPromptResult
+    McpProtocolGetTaskPayloadRequest
+    McpProtocolGetTaskRequest
+    McpProtocolIcon
+    McpProtocolImageContent
+    McpProtocolImplementation
+    McpProtocolInitializedNotification
+    McpProtocolInitializeRequest
+    McpProtocolInitializeRequestParams
+    McpProtocolJSONRPCErrorResponse
+    McpProtocolLegacyTitledEnumSchema
+    McpProtocolListPromptsRequest
+    McpProtocolListPromptsResult
+    McpProtocolListResourcesRequest
+    McpProtocolListResourcesResult
+    McpProtocolListResourceTemplatesRequest
+    McpProtocolListResourceTemplatesResult
+    McpProtocolListTasksRequest
+    McpProtocolListToolsRequest
+    McpProtocolLoggingMessageNotification
+    McpProtocolLoggingMessageNotificationParams
+    McpProtocolMeta
+    McpProtocolModelHint
+    McpProtocolModelPreferences
+    McpProtocolNotificationParams
+    McpProtocolNumberSchema
+    McpProtocolPaginatedRequestParams
+    McpProtocolPaginatedResult
+    McpProtocolPingRequest
+    McpProtocolProgressNotification
+    McpProtocolProgressNotificationParams
+    McpProtocolPromptArgument
+    McpProtocolPrompt
+    McpProtocolPromptListChangedNotification
+    McpProtocolPromptMessage
+    McpProtocolPromptReference
+    McpProtocolReadResourceRequest
+    McpProtocolReadResourceRequestParams
+    McpProtocolRelatedTaskMetadata
+    McpProtocolRequestParams
+    McpProtocolResource
+    McpProtocolResourceLink
+    McpProtocolResourceListChangedNotification
+    McpProtocolResourceTemplate
+    McpProtocolResourceTemplateReference
+    McpProtocolResourceUpdatedNotification
+    McpProtocolResourceUpdatedNotificationParams
+    McpProtocolResult
+    McpProtocolRoot
+    McpProtocolRootsListChangedNotification
+    McpProtocolSetLevelRequest
+    McpProtocolSetLevelRequestParams
+    McpProtocolStringSchema
+    McpProtocolSubscribeRequest
+    McpProtocolSubscribeRequestParams
+    McpProtocolTask
+    McpProtocolTaskMetadata
+    McpProtocolTaskStatusNotification
+    McpProtocolTaskStatusNotificationParams
+    McpProtocolTextContent
+    McpProtocolTextResourceContents
+    McpProtocolToolAnnotations
+    McpProtocolToolChoice
+    McpProtocolToolExecution
+    McpProtocolToolListChangedNotification
+    McpProtocolToolResultContent
+    McpProtocolToolUseContent
+    McpProtocolUnsubscribeRequest
+    McpProtocolUnsubscribeRequestParams
+    McpProtocolUntitledSingleSelectEnumSchema
+    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
+    PREFIX TextAutoGenerateTextMcpProtocolCore
+    RELATIVE impl
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_export.h
@@ -286,6 +382,7 @@ install(
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_mcpprotocolmodel_HEADERS}
+        ${TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore/textautogeneratetextmcpprotocolcore
     COMPONENT Devel
 )
@@ -296,6 +393,7 @@ install(
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolmodel_HEADERS}
+        ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore/TextAutoGenerateTextMcpProtocolCore
     COMPONENT Devel
 )
