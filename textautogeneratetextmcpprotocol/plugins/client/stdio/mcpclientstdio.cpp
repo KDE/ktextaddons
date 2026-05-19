@@ -24,7 +24,10 @@ McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject
     connect(mProcess, &QProcess::finished, this, &McpClientStdio::finished);
     connect(mProcess, &QProcess::readyReadStandardOutput, this, [this]() {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
-        qDebug() << " received !!! ; " << mProcess->readAllStandardOutput();
+        const QByteArray ba = mProcess->readAllStandardOutput();
+        const QJsonDocument doc = QJsonDocument::fromJson(ba);
+        qDebug() << " doc " << doc;
+        Q_EMIT received(doc.object());
         // Q_EMIT error(mProcess->errorString());
     });
     connect(mProcess, &QProcess::readyReadStandardError, this, [this]() {
