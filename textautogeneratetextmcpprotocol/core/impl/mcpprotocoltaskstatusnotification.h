@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocoltaskstatusnotificationparams.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskStatusNotificationParams>
 class QJsonObject;
 
 class QDebug;

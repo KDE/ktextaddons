@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolpromptargument.h"
 #include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolIcon>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptArgument>
 
 class QJsonObject;
 class QDebug;

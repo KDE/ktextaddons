@@ -4,11 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolpaginatedrequestparams.h"
-#include "mcpprotocolsubscriberequestparams.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSubscribeRequestParams>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore

@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolcancellednotificationparams.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotificationParams>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
