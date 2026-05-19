@@ -187,12 +187,24 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId TextAutoGenerat
 
 QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &val)
 {
-    return QVariant::fromValue(val).toJsonValue();
+    return std::visit(
+        [](const auto &v) -> QJsonValue {
+            {
+                return QVariant::fromValue(v).toJsonValue();
+            }
+        },
+        val);
 }
 
 QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::progressTokenToJson(const ProgressToken &val)
 {
-    return QVariant::fromValue(val).toJsonValue();
+    return std::visit(
+        [](const auto &v) -> QJsonValue {
+            {
+                return QVariant::fromValue(v).toJsonValue();
+            }
+        },
+        val);
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource
