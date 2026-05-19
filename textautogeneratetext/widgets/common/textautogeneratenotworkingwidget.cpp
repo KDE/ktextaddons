@@ -27,13 +27,15 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
     mainLayout->setContentsMargins({});
 
     mMessageWidget->setObjectName("mMessageWidget"_L1);
-    mainLayout->addWidget(mMessageWidget, 0, Qt::AlignVCenter);
+    mainLayout->addWidget(mMessageWidget, 0, Qt::AlignTop);
     connect(mMessageWidget, &TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &TextAutoGenerateNotWorkingWidget::slotStartOllama);
 
+    mainLayout->addStretch(1);
     auto configureButton = new QPushButton(i18nc("@action:button", "Configure…"), this);
     configureButton->setObjectName("configureButton"_L1);
+    configureButton->setToolTip(i18nc("@info:tooltip", "Configure Instance"));
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::configureInstances);
-    mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
+    mainLayout->addWidget(configureButton, 0, Qt::AlignHCenter | Qt::AlignVCenter);
     mainLayout->addStretch(1);
     // TODO configure from activate instance
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaProcessOk, this, [this](bool state) {
