@@ -246,14 +246,14 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance OllamaPlugin:
         activateInstance.text = i18n("Ollama not found on system. Please install it.");
         auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
         downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
-        connect(downloadOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::slotDownloadOllama);
+        connect(downloadOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotDownloadOllama);
         addAction(downloadOllamaAction);
         mCurrentAction = downloadOllamaAction;
 #endif
     } else {
         auto startOllamaAction = new QAction(i18nc("@action", "Start Ollama"), this);
         startOllamaAction->setObjectName(u"startOllamaAction"_s);
-        // connect(startOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::startOllama);
+        connect(startOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotOllamaRequested);
         mCurrentAction = startOllamaAction;
     }
     activateInstance.action = mCurrentAction;
