@@ -81,15 +81,18 @@ TextAutoGenerateText::TextAutoGenerateTextReplyInfo TextAutoGenerateTextReplyInf
 {
     TextAutoGenerateTextReplyInfo info;
     if (o.contains("replyType"_L1)) {
-        info.replyType = TextAutoGenerateTextReplyInfo::convertReplyTypeFromString(o["replyType"_L1].toString());
-        info.totalDuration = std::chrono::nanoseconds(o["totalDuration"_L1].toInteger());
-        info.loadDuration = std::chrono::nanoseconds(o["loadDuration"_L1].toInteger());
-        info.promptEvalTokenCount = o["promptEvalTokenCount"_L1].toInteger();
-        info.promptEvalDuration = std::chrono::nanoseconds(o["promptEvalDuration"_L1].toInteger());
-        info.tokenCount = o["tokenCount"_L1].toInteger();
-        info.completionTokens = o["completionTokens"_L1].toInteger();
-        info.promptTokens = o["promptTokens"_L1].toInteger();
-        info.duration = std::chrono::nanoseconds(o["duration"_L1].toInteger());
+        const QString replyType = o["replyType"_L1].toString();
+        if (!replyType.isEmpty()) {
+            info.replyType = TextAutoGenerateTextReplyInfo::convertReplyTypeFromString(replyType);
+            info.totalDuration = std::chrono::nanoseconds(o["totalDuration"_L1].toInteger());
+            info.loadDuration = std::chrono::nanoseconds(o["loadDuration"_L1].toInteger());
+            info.promptEvalTokenCount = o["promptEvalTokenCount"_L1].toInteger();
+            info.promptEvalDuration = std::chrono::nanoseconds(o["promptEvalDuration"_L1].toInteger());
+            info.tokenCount = o["tokenCount"_L1].toInteger();
+            info.completionTokens = o["completionTokens"_L1].toInteger();
+            info.promptTokens = o["promptTokens"_L1].toInteger();
+            info.duration = std::chrono::nanoseconds(o["duration"_L1].toInteger());
+        }
     }
     return info;
 }
