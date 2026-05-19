@@ -14,6 +14,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 #include <memory>
 class QDebug;
+class QAction;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
@@ -69,6 +70,12 @@ public:
     /*!
      */
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;
+
+    /*!
+     * \brief activateInstanceAction
+     * \return widget as button or other for activate
+     */
+    [[nodiscard]] virtual QAction *activateInstanceAction(QObject *parent);
 
     /*!
      */

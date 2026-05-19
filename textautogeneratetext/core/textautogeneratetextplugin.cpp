@@ -43,6 +43,11 @@ TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(TextAutoGenerateManager *
 
 TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
+QAction *TextAutoGenerateTextPlugin::activateInstanceAction([[maybe_unused]] QObject *parent)
+{
+    return nullptr;
+}
+
 QByteArray TextAutoGenerateTextPlugin::instanceUuid() const
 {
     // qDebug() << " d->instance " << d->instance;

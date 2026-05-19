@@ -42,6 +42,8 @@ public:
     [[nodiscard]] bool hasThinkSupport() const override;
     [[nodiscard]] QString shareNamePrompt() const override;
 
+    [[nodiscard]] QAction *activateInstanceAction(QObject *parent) override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;

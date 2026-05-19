@@ -15,6 +15,7 @@
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 #include <KLocalizedString>
+#include <QAction>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
@@ -225,6 +226,12 @@ bool OllamaPlugin::hasThinkSupport() const
 QString OllamaPlugin::shareNamePrompt() const
 {
     return OllamaCommonModelUtils::generateUserPrompt(mOllamaSettings->shareNameType());
+}
+
+QAction *OllamaPlugin::activateInstanceAction(QObject *parentWidget)
+{
+    // TODO
+    return nullptr;
 }
 
 #include "moc_ollamaplugin.cpp"
