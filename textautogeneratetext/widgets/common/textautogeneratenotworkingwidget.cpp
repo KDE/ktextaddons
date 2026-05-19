@@ -6,6 +6,7 @@
 
 #include "textautogeneratenotworkingwidget.h"
 
+#include "core/textautogeneratetextplugin.h"
 #include "textautogeneratenotworkingmessagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
@@ -52,6 +53,7 @@ TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
 
 void TextAutoGenerateNotWorkingWidget::setMessageError(const QString &str)
 {
+    mMessageWidget->addAction(mManager->textAutoGeneratePlugin()->activateInstanceAction().action);
     mMessageWidget->setMessageInfo(str);
     mMessageWidget->animatedShow();
 }
