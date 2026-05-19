@@ -228,7 +228,7 @@ QString OllamaPlugin::shareNamePrompt() const
     return OllamaCommonModelUtils::generateUserPrompt(mOllamaSettings->shareNameType());
 }
 
-QAction *OllamaPlugin::activateInstanceAction(QObject *parentWidget)
+QAction *OllamaPlugin::activateInstanceAction(QObject *parent)
 {
     // TODO
     return nullptr;
