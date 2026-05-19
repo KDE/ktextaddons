@@ -42,7 +42,7 @@ public:
     [[nodiscard]] bool hasThinkSupport() const override;
     [[nodiscard]] QString shareNamePrompt() const override;
 
-    [[nodiscard]] QAction *activateInstanceAction(QObject *parent) override;
+    [[nodiscard]] ActivateInstance activateInstanceAction() override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
@@ -52,6 +52,8 @@ private:
     void slotOllamaRequested();
     void slotOllamaFailed(const QString &errorStr);
     void slotOllamaStarted();
+    void slotDownloadOllama();
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mOllamaManager;
+    QAction *mCurrentAction = nullptr;
 };

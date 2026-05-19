@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextutils.h"
+#include "misc/executableutils.h"
 #include "ollamacommonmodelutils.h"
 #include "ollamacommonreply.h"
 #include "ollamaconfiguredialog.h"
@@ -16,6 +17,8 @@
 #include "ollamasettings.h"
 #include <KLocalizedString>
 #include <QAction>
+#include <QDesktopServices>
+#include <QUrl>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
@@ -228,10 +231,41 @@ QString OllamaPlugin::shareNamePrompt() const
     return OllamaCommonModelUtils::generateUserPrompt(mOllamaSettings->shareNameType());
 }
 
-QAction *OllamaPlugin::activateInstanceAction(QObject *parent)
+TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance OllamaPlugin::activateInstanceAction()
 {
-    // TODO
-    return nullptr;
+    if (mCurrentAction) {
+        delete mCurrentAction;
+        mCurrentAction = nullptr;
+    }
+    TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance activateInstance;
+    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
+    if (ollamaPath.isEmpty()) {
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
+        activateInstance.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
+#else
+        activateInstance.text = i18n("Ollama not found on system. Please install it.");
+        auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
+        downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
+        connect(downloadOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::slotDownloadOllama);
+        addAction(downloadOllamaAction);
+        mCurrentAction = downloadOllamaAction;
+#endif
+    } else {
+        auto startOllamaAction = new QAction(i18nc("@action", "Start Ollama"), this);
+        startOllamaAction->setObjectName(u"startOllamaAction"_s);
+        // connect(startOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::startOllama);
+        mCurrentAction = startOllamaAction;
+    }
+    activateInstance.action = mCurrentAction;
+    return activateInstance;
 }
 
+void OllamaPlugin::slotDownloadOllama()
+{
+#if defined(Q_OS_WIN)
+    QDesktopServices::openUrl(QUrl(u"https://ollama.com/download/windows"_s));
+#elif defined(Q_OS_MACOS)
+    QDesktopServices::openUrl(QUrl(u"https://ollama.com/download/mac"_s));
+#endif
+}
 #include "moc_ollamaplugin.cpp"
