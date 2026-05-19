@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2025-2026 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-17 00:42+0000\n"
-"PO-Revision-Date: 2026-05-07 18:28+0200\n"
+"PO-Revision-Date: 2026-05-17 12:58+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -151,34 +151,29 @@ msgid "Network"
 msgstr "Réseau"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>Outils : </b> %1"
+msgstr "<br><b>Durée totale : </b> %1 secondes"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>Outils : </b> %1"
+msgstr "<br><b>Jetons : </b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>Outils : </b> %1"
+msgstr "<br><b>Compteur de jetons : </b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Outils : </b> %1"
+msgstr "<br><b>Jeton de demande : </b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>Outils : </b> %1"
+msgstr "<br><b>Jeton de réalisation : </b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format

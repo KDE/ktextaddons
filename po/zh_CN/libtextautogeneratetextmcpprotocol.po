@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:42+0000\n"
+"POT-Creation-Date: 2026-05-19 00:43+0000\n"
 "PO-Revision-Date: 2026-05-05 07:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -39,13 +39,13 @@ msgctxt "@title:window"
 msgid "Add Server"
 msgstr "添加服务器"
 
-#: widgets/server/addmcpserverwidget.cpp:35
+#: widgets/server/addmcpserverwidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "名称："
 
-#: widgets/server/addmcpserverwidget.cpp:39
+#: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
