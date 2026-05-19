@@ -53,6 +53,7 @@ TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
 
 void TextAutoGenerateNotWorkingWidget::setMessageError(const QString &str)
 {
+    // TODO improve it.
     mMessageWidget->addAction(mManager->textAutoGeneratePlugin()->activateInstanceAction().action);
     mMessageWidget->setMessageInfo(str);
     mMessageWidget->animatedShow();
