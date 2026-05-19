@@ -247,7 +247,6 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance OllamaPlugin:
         auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
         downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
         connect(downloadOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotDownloadOllama);
-        addAction(downloadOllamaAction);
         mCurrentAction = downloadOllamaAction;
 #endif
     } else {
