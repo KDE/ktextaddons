@@ -34,14 +34,5 @@ public:
      * \param errorMessage The error message text
      */
     void setMessageInfo(const QString &errorMessage);
-Q_SIGNALS:
-    /*!
-     * \brief Emitted when Ollama should be started
-     */
-    void startOllama();
-
-private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotDownloadOllama();
-    QAction *mCurrentAction = nullptr;
 };
 }

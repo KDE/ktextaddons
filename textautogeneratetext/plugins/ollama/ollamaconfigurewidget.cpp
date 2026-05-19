@@ -159,7 +159,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     connect(mManager, &OllamaManager::ollamaStarted, this, &OllamaConfigureWidget::slotOllamaStarted);
     connect(mManager, &OllamaManager::ollamaFailed, this, &OllamaConfigureWidget::slotOllamaFailed);
     fillModels();
-    connect(mMessageWidget, &TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &OllamaConfigureWidget::slotStartOllama);
+    // connect(mMessageWidget, &TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &OllamaConfigureWidget::slotStartOllama);
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;

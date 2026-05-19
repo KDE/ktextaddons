@@ -51,13 +51,8 @@ Q_SIGNALS:
      * \brief Emitted when the configuration of instances is requested
      */
     void configureInstances();
-    /*!
-     * \brief Emitted when Ollama startup is requested
-     */
-    void startOllamaRequested();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotStartOllama();
     TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };

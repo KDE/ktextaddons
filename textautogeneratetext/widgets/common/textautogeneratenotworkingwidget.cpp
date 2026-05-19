@@ -28,7 +28,6 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
 
     mMessageWidget->setObjectName("mMessageWidget"_L1);
     mainLayout->addWidget(mMessageWidget, 0, Qt::AlignTop);
-    connect(mMessageWidget, &TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &TextAutoGenerateNotWorkingWidget::slotStartOllama);
 
     mainLayout->addStretch(1);
     auto configureButton = new QPushButton(i18nc("@action:button", "Configure…"), this);
@@ -61,11 +60,6 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 {
     mMessageWidget->setText({});
     mMessageWidget->animatedHide();
-}
-
-void TextAutoGenerateNotWorkingWidget::slotStartOllama()
-{
-    Q_EMIT startOllamaRequested();
 }
 
 #include "moc_textautogeneratenotworkingwidget.cpp"
