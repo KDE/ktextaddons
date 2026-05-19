@@ -11,11 +11,12 @@ class OllamaManager;
 class OllamaModelAvailableWidget;
 class OllamaModelInstalledWidget;
 class OllamaModelCreateWidget;
+class OllamaPlugin;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureDialog : public KPageDialog
 {
     Q_OBJECT
 public:
-    explicit OllamaConfigureDialog(OllamaManager *manager, QWidget *parent = nullptr);
+    explicit OllamaConfigureDialog(OllamaManager *manager, OllamaPlugin *plugin, QWidget *parent = nullptr);
     ~OllamaConfigureDialog() override;
 
 private:

@@ -10,6 +10,7 @@
 #include "modelsmanager/ollamamodelcreatewidget.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
 #include "ollamaconfigurewidget.h"
+#include "ollamaplugin.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -24,9 +25,9 @@ const char myOllamaConfigureDialogGroupName[] = "OllamaConfigureDialog";
 }
 
 using namespace Qt::Literals::StringLiterals;
-OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *parent)
+OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, OllamaPlugin *plugin, QWidget *parent)
     : KPageDialog(parent)
-    , mOllamaConfigureWidget(new OllamaConfigureWidget(manager, this))
+    , mOllamaConfigureWidget(new OllamaConfigureWidget(manager, plugin, this))
     , mOllamaModelWidget(new OllamaModelAvailableWidget(manager, this))
     , mOllamaModelInstalledWidget(new OllamaModelInstalledWidget(manager, this))
     , mOllamaModelCreateWidget(new OllamaModelCreateWidget(manager, this))

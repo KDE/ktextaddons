@@ -9,6 +9,7 @@
 #include "common/textautogeneratenotworkingwidget.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
+#include "core/textautogeneratetextplugin.h"
 #include "textautogeneratewidget.h"
 #include "widgets/common/textautogeneratenotinstancefoundwidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"

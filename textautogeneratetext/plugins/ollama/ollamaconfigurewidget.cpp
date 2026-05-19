@@ -11,8 +11,10 @@
 #include "ollamacommonoverrideparameterswidget.h"
 #include "ollamaconfigurecustomizewidget.h"
 #include "ollamalogdialog.h"
+#include "ollamaplugin.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 
 #include "ollamacommoncomboboxwidget.h"
 #include "ollamamanager.h"
@@ -32,7 +34,7 @@
 #include <TextAddonsWidgets/ExecutableUtils>
 
 using namespace Qt::Literals::StringLiterals;
-OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *parent)
+OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, OllamaPlugin *plugin, QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
     , mPort(new QSpinBox(this))
@@ -139,10 +141,13 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
         mModelComboBoxWidget->setEnabled(state);
     });
 
-    connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
+    connect(mManager, &OllamaManager::modelsLoadDone, this, [this, plugin](const OllamaManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
-            mMessageWidget->setMessageInfo(modelinfo.errorOccured);
+            const TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance activateInstanceInfo = plugin->activateInstanceAction();
+            mMessageWidget->setMessageInfo(activateInstanceInfo.action,
+                                           activateInstanceInfo.text.isEmpty() ? modelinfo.errorOccured : activateInstanceInfo.text);
+
             mMessageWidget->animatedShow();
             Q_EMIT ollamaProcessOk(false);
         } else {
@@ -159,7 +164,6 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     connect(mManager, &OllamaManager::ollamaStarted, this, &OllamaConfigureWidget::slotOllamaStarted);
     connect(mManager, &OllamaManager::ollamaFailed, this, &OllamaConfigureWidget::slotOllamaFailed);
     fillModels();
-    // connect(mMessageWidget, &TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &OllamaConfigureWidget::slotStartOllama);
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;
@@ -186,11 +190,6 @@ void OllamaConfigureWidget::slotOllamaStarted()
 void OllamaConfigureWidget::slotOllamaFailed(const QString &errorStr)
 {
     KMessageBox::error(this, errorStr, i18n("Failed to start Ollama"));
-}
-
-void OllamaConfigureWidget::slotStartOllama()
-{
-    mManager->startOllama();
 }
 
 void OllamaConfigureWidget::loadSettings()

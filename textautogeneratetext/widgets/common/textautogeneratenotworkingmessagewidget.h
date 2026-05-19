@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KMessageWidget>
+class QAction;
 namespace TextAutoGenerateText
 {
 /*!
@@ -33,6 +34,9 @@ public:
      * \brief Sets the error message to display
      * \param errorMessage The error message text
      */
-    void setMessageInfo(const QString &errorMessage);
+    void setMessageInfo(QAction *act, const QString &errorMessage);
+
+private:
+    QAction *mCurrentAction = nullptr;
 };
 }

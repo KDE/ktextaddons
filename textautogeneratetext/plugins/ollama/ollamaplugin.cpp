@@ -100,7 +100,7 @@ QString OllamaPlugin::translatedPluginName() const
 
 void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    OllamaConfigureDialog d(mOllamaManager, parentWidget);
+    OllamaConfigureDialog d(mOllamaManager, this, parentWidget);
     if (d.exec()) {
         Q_EMIT configChanged();
     }

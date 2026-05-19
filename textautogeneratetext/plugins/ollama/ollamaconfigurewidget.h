@@ -8,6 +8,7 @@
 #include <QWidget>
 class OllamaCommonOverrideParametersWidget;
 class QLineEdit;
+class OllamaPlugin;
 class QSpinBox;
 class OllamaCommonComboBoxWidget;
 class OllamaManager;
@@ -22,7 +23,7 @@ class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaConfigureWidget(OllamaManager *manager, QWidget *parent = nullptr);
+    explicit OllamaConfigureWidget(OllamaManager *manager, OllamaPlugin *plugin, QWidget *parent = nullptr);
     ~OllamaConfigureWidget() override;
 
     void loadSettings();
@@ -35,7 +36,6 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillModels();
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotStartOllama();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void showModelInfo(const QString &modelName);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void displayModelInfo(const QString &modelStr);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotOllamaStarted();

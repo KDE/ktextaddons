@@ -17,8 +17,13 @@ TextAutoGenerateNotWorkingMessageWidget::TextAutoGenerateNotWorkingMessageWidget
 
 TextAutoGenerateNotWorkingMessageWidget::~TextAutoGenerateNotWorkingMessageWidget() = default;
 
-void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(const QString &errorMessage)
+void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(QAction *act, const QString &errorMessage)
 {
+    if (mCurrentAction) {
+        removeAction(mCurrentAction);
+    }
+    mCurrentAction = act;
+    addAction(act);
     setText(errorMessage);
 }
 
