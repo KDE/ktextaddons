@@ -531,7 +531,7 @@ Q_SIGNALS:
     /*!
      * Emitted when the Ollama process state changes.
      */
-    void ollamaProcessOk(bool state);
+    void ollamaProcessOk();
     /*!
      * Emitted when Ollama fails.
      */

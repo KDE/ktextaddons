@@ -65,7 +65,7 @@ OllamaPlugin::~OllamaPlugin()
 
 void OllamaPlugin::slotOllamaStarted()
 {
-    Q_EMIT this->manager()->ollamaProcessOk(true);
+    Q_EMIT this->manager()->ollamaProcessOk();
 }
 
 void OllamaPlugin::slotOllamaFailed([[maybe_unused]] const QString &errorStr)

@@ -37,12 +37,9 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::configureInstances);
     mainLayout->addWidget(configureButton, 0, Qt::AlignHCenter | Qt::AlignVCenter);
     mainLayout->addStretch(1);
-    // TODO configure from activate instance
-    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaProcessOk, this, [this](bool state) {
-        if (state) {
-            clearMessage();
-            Q_EMIT ollamaStarted();
-        }
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaProcessOk, this, [this]() {
+        clearMessage();
+        Q_EMIT ollamaStarted();
     });
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::ollamaFailed, this, []() {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
