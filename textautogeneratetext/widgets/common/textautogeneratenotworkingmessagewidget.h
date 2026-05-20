@@ -6,7 +6,8 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KMessageWidget>
-class QAction;
+#include <QAction>
+#include <QPointer>
 namespace TextAutoGenerateText
 {
 /*!
@@ -37,6 +38,6 @@ public:
     void setMessageInfo(QAction *act, const QString &errorMessage);
 
 private:
-    QAction *mCurrentAction = nullptr;
+    QPointer<QAction> mCurrentAction = nullptr;
 };
 }
