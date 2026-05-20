@@ -144,7 +144,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, OllamaPlugi
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this, plugin](const OllamaManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
-            const TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance activateInstanceInfo = plugin->activateInstanceAction();
+            const TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo = plugin->activateInstanceAction();
             mMessageWidget->setMessageInfo(activateInstanceInfo.action,
                                            activateInstanceInfo.text.isEmpty() ? modelinfo.errorOccured : activateInstanceInfo.text);
 

@@ -43,7 +43,7 @@ TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(TextAutoGenerateManager *
 
 TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
-TextAutoGenerateTextPlugin::ActivateInstance TextAutoGenerateTextPlugin::activateInstanceAction()
+TextAutoGenerateTextPlugin::ActivateInstanceActionInfo TextAutoGenerateTextPlugin::activateInstanceAction()
 {
     return {};
 }

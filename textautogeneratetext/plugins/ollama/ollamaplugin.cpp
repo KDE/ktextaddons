@@ -219,17 +219,17 @@ QString OllamaPlugin::shareNamePrompt() const
     return OllamaCommonModelUtils::generateUserPrompt(mOllamaSettings->shareNameType());
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance OllamaPlugin::activateInstanceAction()
+TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo OllamaPlugin::activateInstanceAction()
 {
     if (mCurrentAction) {
         delete mCurrentAction;
         mCurrentAction = nullptr;
     }
-    TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance activateInstance;
+    TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo;
     const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
-        activateInstance.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
+        activateInstanceInfo.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
 #else
         activateInstance.text = i18n("Ollama not found on system. Please install it.");
         auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
@@ -243,8 +243,8 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance OllamaPlugin:
         connect(startOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotOllamaRequested);
         mCurrentAction = startOllamaAction;
     }
-    activateInstance.action = mCurrentAction;
-    return activateInstance;
+    activateInstanceInfo.action = mCurrentAction;
+    return activateInstanceInfo;
 }
 
 void OllamaPlugin::slotDownloadOllama()

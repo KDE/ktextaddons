@@ -42,7 +42,7 @@ public:
     [[nodiscard]] bool hasThinkSupport() const override;
     [[nodiscard]] QString shareNamePrompt() const override;
 
-    [[nodiscard]] ActivateInstance activateInstanceAction() override;
+    [[nodiscard]] ActivateInstanceActionInfo activateInstanceAction() override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;

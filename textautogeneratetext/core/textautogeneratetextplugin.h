@@ -71,7 +71,7 @@ public:
      */
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
-    struct ActivateInstance {
+    struct ActivateInstanceActionInfo {
         QAction *action = nullptr;
         QString text;
     };
@@ -80,7 +80,7 @@ public:
      * \brief activateInstanceAction
      * \return widget as button or other for activate
      */
-    [[nodiscard]] virtual ActivateInstance activateInstanceAction();
+    [[nodiscard]] virtual ActivateInstanceActionInfo activateInstanceAction();
 
     /*!
      */
