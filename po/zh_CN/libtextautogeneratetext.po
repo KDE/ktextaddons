@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -140,45 +140,40 @@ msgid ""
 msgstr ""
 "您是一位人工智能助手。请提供帮助，保持专业和礼貌。不要提供不准确的信息。"
 
-#: core/textautogeneratetextplugin.cpp:293
+#: core/textautogeneratetextplugin.cpp:298
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: core/textautogeneratetextplugin.cpp:295
+#: core/textautogeneratetextplugin.cpp:300
 #, kde-format
 msgid "Network"
 msgstr "网络"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>工具：</b> %1"
+msgstr ""
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>工具：</b> %1"
+msgstr ""
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>工具：</b> %1"
+msgstr ""
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>工具：</b> %1"
+msgstr ""
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>工具：</b> %1"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -221,7 +216,7 @@ msgid "Configure %1"
 msgstr "配置 %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:48
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
@@ -230,7 +225,7 @@ msgid "General"
 msgstr "常规"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
@@ -429,7 +424,7 @@ msgid "Base:"
 msgstr "基础："
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
@@ -599,54 +594,54 @@ msgstr "覆盖 GFX 版本："
 msgid "Default Model Path:"
 msgstr "默认模型路径："
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "配置 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:60
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "已安装的模型"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:66
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "创建模型"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:81
+#: plugins/ollama/ollamaconfigurewidget.cpp:83
 #, kde-format
 msgid "Port:"
 msgstr "端口："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid "Show Ollama Log"
 msgstr "显示 Ollama 日志"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:108
+#: plugins/ollama/ollamaconfigurewidget.cpp:110
 #, kde-format
 msgid "Customize Ollama"
 msgstr "自定义 Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:118
+#: plugins/ollama/ollamaconfigurewidget.cpp:120
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr "这此条目是可选的，它们用于排除与 Ollama 有关的GPU 问题。"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:188
+#: plugins/ollama/ollamaconfigurewidget.cpp:192
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "启动 Ollama 失败"
@@ -657,12 +652,35 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Ollama 日志"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamaplugin.cpp:98
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:244
+#, kde-format
+msgid ""
+"Ollama not found on system. Ask to your administrator system to install it."
+msgstr "系统中没有找到 Ollama。请向您的系统管理员请求安装它。"
+
+#: plugins/ollama/ollamaplugin.cpp:246
+#, kde-format
+msgid "Ollama not found on system. Please install it."
+msgstr "系统系统没有未找到 Ollama。请安装它。"
+
+#: plugins/ollama/ollamaplugin.cpp:247
+#, kde-format
+msgctxt "@action"
+msgid "Download Ollama"
+msgstr "下载 Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:253
+#, kde-format
+msgctxt "@action"
+msgid "Start Ollama"
+msgstr "启动 Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
@@ -2671,34 +2689,19 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "添加实例…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
-#, kde-format
-msgid ""
-"Ollama not found on system. Ask to your administrator system to install it."
-msgstr "系统中没有找到 Ollama。请向您的系统管理员请求安装它。"
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
-#, kde-format
-msgid "Ollama not found on system. Please install it."
-msgstr "系统系统没有未找到 Ollama。请安装它。"
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, kde-format
-msgctxt "@action"
-msgid "Download Ollama"
-msgstr "下载 Ollama"
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
-#, kde-format
-msgctxt "@action"
-msgid "Start Ollama"
-msgstr "启动 Ollama"
-
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "配置…"
+
+#: widgets/common/textautogeneratenotworkingwidget.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Instances"
+msgctxt "@info:tooltip"
+msgid "Configure Instance"
+msgstr "配置实例"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format

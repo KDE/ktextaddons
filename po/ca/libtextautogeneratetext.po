@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:42+0000\n"
-"PO-Revision-Date: 2026-05-16 11:47+0200\n"
+"POT-Creation-Date: 2026-05-20 00:43+0000\n"
+"PO-Revision-Date: 2026-05-19 11:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -146,12 +146,12 @@ msgstr ""
 "Ets un assistent d'IA. Sigues útil, professional i cortès. No donis "
 "informació inexacta."
 
-#: core/textautogeneratetextplugin.cpp:293
+#: core/textautogeneratetextplugin.cpp:298
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:295
+#: core/textautogeneratetextplugin.cpp:300
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
@@ -222,7 +222,7 @@ msgid "Configure %1"
 msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:48
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
@@ -231,7 +231,7 @@ msgid "General"
 msgstr "General"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
@@ -430,7 +430,7 @@ msgid "Base:"
 msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
@@ -602,47 +602,47 @@ msgstr "Sobreescriu la versió de GFX:"
 msgid "Default Model Path:"
 msgstr "Camí predeterminat dels models:"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura l'Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:60
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Models instal·lats"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:66
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Crea models"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:81
+#: plugins/ollama/ollamaconfigurewidget.cpp:83
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid "Show Ollama Log"
 msgstr "Mostra el registre de l'Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:108
+#: plugins/ollama/ollamaconfigurewidget.cpp:110
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Personalitza l'Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:118
+#: plugins/ollama/ollamaconfigurewidget.cpp:120
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -651,7 +651,7 @@ msgstr ""
 "Aquestes entrades són opcionals, s'utilitzen per a resoldre problemes "
 "relacionats amb la GPU amb l'Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:188
+#: plugins/ollama/ollamaconfigurewidget.cpp:192
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Ha falla en iniciar l'Ollama"
@@ -662,12 +662,37 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Registre de l'Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamaplugin.cpp:98
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:244
+#, kde-format
+msgid ""
+"Ollama not found on system. Ask to your administrator system to install it."
+msgstr ""
+"No s'ha trobat l'Ollama en el sistema. Demaneu a l'administrador del sistema "
+"que l'instal·li."
+
+#: plugins/ollama/ollamaplugin.cpp:246
+#, kde-format
+msgid "Ollama not found on system. Please install it."
+msgstr "No s'ha trobat l'Ollama en el sistema. Si us plau, instal·leu-lo."
+
+#: plugins/ollama/ollamaplugin.cpp:247
+#, kde-format
+msgctxt "@action"
+msgid "Download Ollama"
+msgstr "Baixada de l'Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:253
+#, kde-format
+msgctxt "@action"
+msgid "Start Ollama"
+msgstr "Inicia l'Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
@@ -2023,9 +2048,9 @@ msgid ""
 "model, enabling coding, math, agentic, function calling, and general use "
 "cases."
 msgstr ""
-"El Dolphin 3.0 Llama 3.1 8B 🐬 és la propera generació de la sèrie Dolphin de "
+"El Dolphin 3.0 Llama 3.1 8B 🐬 és la generació següent de la sèrie Dolphin de "
 "models afinats d'instruccions dissenyats per ser un model local de propòsit "
-"general final, habilitat de codificació, matemàtiques, agèntica, crida de "
+"general final, habilitat de codificació, matemàtiques, agentiva, crida de "
 "funcions, i casos d'ús general."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:227
@@ -2293,14 +2318,14 @@ msgid ""
 "and versatile developer use cases."
 msgstr ""
 "Models de ponderació oberta d'OpenAI dissenyats per a un raonament potent, "
-"tasques d'agents i casos d'ús versàtils de desenvolupament."
+"tasques agentives i casos d'ús versàtils de desenvolupament."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:281
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
-"Models grans de context amb bon rendiment d'Alibaba per a tasques d'agents i "
-"de codificació."
+"Models grans de context amb bon rendiment d'Alibaba per a tasques agentives "
+"i de codificació."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:282
 #, kde-format
@@ -2347,7 +2372,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
 #, kde-format
 msgid "Advanced agentic, reasoning and coding capabilities.."
-msgstr "Agèntica avançada, capacitat de raonament i de codificació."
+msgstr "Tasques d'agentiva avançada, capacitat de raonament i de codificació."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
 #, kde-format
@@ -2368,7 +2393,7 @@ msgid ""
 "agentic workflows."
 msgstr ""
 "El MiniMax M2 és un model de llenguatge gran d'alta eficiència construït per "
-"a la codificació i els fluxos de treball d'agents."
+"a la codificació i els fluxos de treball agentius."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:295
 #, kde-format
@@ -2394,7 +2419,7 @@ msgid ""
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
 "El model més intel·ligent de Google amb raonament SOTA i comprensió "
-"multimodal, i capacitats d'agents potents i de codificació de vibracions."
+"multimodal, i capacitats agentives potents i de codificació de vibracions."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
@@ -2447,7 +2472,7 @@ msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
 msgstr ""
-"Nemotron 3 Nano: un estàndard nou per a models d'agents eficients, oberts i "
+"Nemotron 3 Nano: un estàndard nou per a models agentius eficients, oberts i "
 "intel·ligents."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
@@ -2571,9 +2596,9 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 "El Kimi K2.5 és un model multimodal multimodal de codi obert que integra la "
-"visió i la comprensió del llenguatge amb capacitats d'agents avançades, "
+"visió i la comprensió del llenguatge amb capacitats agentives avançades, "
 "modes instantanis i de pensament, així com paradigmes conversacionals i "
-"d'agents."
+"agentius."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2581,7 +2606,7 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
-"Un model fort de raonament i agèntic de Z.ai amb un total de 744B paràmetres "
+"Un model fort de raonament i agentiu de Z.ai amb un total de 744B paràmetres "
 "(40B actius), construït per a l'enginyeria de sistemes complexos i tasques "
 "de llarg recorregut."
 
@@ -2603,7 +2628,7 @@ msgid ""
 "multimodal understanding."
 msgstr ""
 "Els models Gemma 4 estan dissenyats per a oferir un rendiment límit en cada "
-"mida. Són adequats per al raonament, els fluxos de treball d'agents, la "
+"mida. Són adequats per al raonament, els fluxos de treball agentius, la "
 "codificació i la comprensió multimodal."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
@@ -2646,7 +2671,7 @@ msgid ""
 "strong reasoning and agentic capabilities."
 msgstr ""
 "Un model de 30B MoE obert de NVIDIA amb 3B de paràmetres activats que "
-"ofereix un raonament fort i capacitats d'agents."
+"ofereix un raonament fort i capacitats agentives."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2655,7 +2680,7 @@ msgid ""
 "productivity."
 msgstr ""
 "Model de la sèrie M2 de MiniMax per a la codificació, els fluxos de treball "
-"d'agents i la productivitat professional."
+"agentius i la productivitat professional."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:349
 #, kde-format
@@ -2664,7 +2689,7 @@ msgid ""
 "preservation than previous Qwen models."
 msgstr ""
 "El Qwen3.6 ofereix millores substancials en la codificació i el manteniment "
-"del pensament d'agents que els models anteriors de Qwen."
+"del pensament agentiu que els models anteriors de Qwen."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
@@ -2864,36 +2889,19 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Afegeix una instància…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
-#, kde-format
-msgid ""
-"Ollama not found on system. Ask to your administrator system to install it."
-msgstr ""
-"No s'ha trobat l'Ollama en el sistema. Demaneu a l'administrador del sistema "
-"que l'instal·li."
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
-#, kde-format
-msgid "Ollama not found on system. Please install it."
-msgstr "No s'ha trobat l'Ollama en el sistema. Si us plau, instal·leu-lo."
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, kde-format
-msgctxt "@action"
-msgid "Download Ollama"
-msgstr "Baixada de l'Ollama"
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
-#, kde-format
-msgctxt "@action"
-msgid "Start Ollama"
-msgstr "Inicia l'Ollama"
-
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Configura…"
+
+#: widgets/common/textautogeneratenotworkingwidget.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Instances"
+msgctxt "@info:tooltip"
+msgid "Configure Instance"
+msgstr "Configuració d'instàncies"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
@@ -3424,51 +3432,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgctxt "@title:window"
-#~ msgid "Add Server"
-#~ msgstr "Afegir un servidor"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "Url:"
-#~ msgstr "URL:"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Afegir un servidor…"
-
-#~ msgctxt "@action"
-#~ msgid "Remove Server"
-#~ msgstr "Elimina el servidor"
-
-#~ msgid "Do you want to remove this server (%1)?"
-#~ msgstr "Voleu eliminar aquest servidor (%1)?"
-
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "Elimina el servidor"
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "Cal reiniciar per a aplicar els canvis."
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Configuració"
-
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Següent"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "No system prompt"
-#~ msgstr "Sense indicació del sistema"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Edita..."

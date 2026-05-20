@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:42+0000\n"
-"PO-Revision-Date: 2026-05-05 08:37+0300\n"
+"POT-Creation-Date: 2026-05-20 00:43+0000\n"
+"PO-Revision-Date: 2026-05-16 20:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -141,45 +141,40 @@ msgid ""
 msgstr ""
 "אתה מסייע בינה מלאכותית. נא להיות מועיל, מקצועי ואדיב. לא לספק מידע לא מדויק."
 
-#: core/textautogeneratetextplugin.cpp:293
+#: core/textautogeneratetextplugin.cpp:298
 #, kde-format
 msgid "Local"
 msgstr "מקומי"
 
-#: core/textautogeneratetextplugin.cpp:295
+#: core/textautogeneratetextplugin.cpp:300
 #, kde-format
 msgid "Network"
 msgstr "רשת"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>כלים:</b> %1"
+msgstr "<br><b>משך זמן כולל:</b> %1 שניות"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>כלים:</b> %1"
+msgstr "<br><b>אסימונים:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>כלים:</b> %1"
+msgstr "<br><b>כמות אסימונים:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>כלים:</b> %1"
+msgstr "<br><b>אסימון בקשה:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>כלים:</b> %1"
+msgstr "<br><b>אסימון השלמה:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -222,7 +217,7 @@ msgid "Configure %1"
 msgstr "הגדרת %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:48
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
@@ -231,7 +226,7 @@ msgid "General"
 msgstr "כללי"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
@@ -430,7 +425,7 @@ msgid "Base:"
 msgstr "בסיס:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
@@ -600,47 +595,47 @@ msgstr "דריסת גרסת GFX:"
 msgid "Default Model Path:"
 msgstr "נתיב למודל ברירת מחדל:"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "הגדרת Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:60
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "מודלים מותקנים"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:66
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "יצירת מודלים"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:81
+#: plugins/ollama/ollamaconfigurewidget.cpp:83
 #, kde-format
 msgid "Port:"
 msgstr "פתחה:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid "Show Ollama Log"
 msgstr "הצגת היומן של Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "מודל:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:108
+#: plugins/ollama/ollamaconfigurewidget.cpp:110
 #, kde-format
 msgid "Customize Ollama"
 msgstr "התאמה אישית של Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:118
+#: plugins/ollama/ollamaconfigurewidget.cpp:120
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
@@ -649,7 +644,7 @@ msgstr ""
 "הרשומות האלה הן בגדר רשות, הן משמשות לטיפול בבעיות שקשורות במעבד הגרפי מול "
 "Ollama."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:188
+#: plugins/ollama/ollamaconfigurewidget.cpp:192
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "הפעלת Ollama נכשלה"
@@ -660,12 +655,35 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "יומן Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamaplugin.cpp:98
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:244
+#, kde-format
+msgid ""
+"Ollama not found on system. Ask to your administrator system to install it."
+msgstr "Ollama לא נמצאה במערכת. נא לבקש מהנהלת המערכת שלך להתקין אותה."
+
+#: plugins/ollama/ollamaplugin.cpp:246
+#, kde-format
+msgid "Ollama not found on system. Please install it."
+msgstr "Ollama לא נמצאה במערכת. נא להתקין אותה."
+
+#: plugins/ollama/ollamaplugin.cpp:247
+#, kde-format
+msgctxt "@action"
+msgid "Download Ollama"
+msgstr "הורדת Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:253
+#, kde-format
+msgctxt "@action"
+msgid "Start Ollama"
+msgstr "הפעלת Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
@@ -2723,34 +2741,19 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "הוספת מופע…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
-#, kde-format
-msgid ""
-"Ollama not found on system. Ask to your administrator system to install it."
-msgstr "Ollama לא נמצאה במערכת. נא לבקש מהנהלת המערכת שלך להתקין אותה."
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
-#, kde-format
-msgid "Ollama not found on system. Please install it."
-msgstr "Ollama לא נמצאה במערכת. נא להתקין אותה."
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, kde-format
-msgctxt "@action"
-msgid "Download Ollama"
-msgstr "הורדת Ollama"
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
-#, kde-format
-msgctxt "@action"
-msgid "Start Ollama"
-msgstr "הפעלת Ollama"
-
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "הגדרה…"
+
+#: widgets/common/textautogeneratenotworkingwidget.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Instances"
+msgctxt "@info:tooltip"
+msgid "Configure Instance"
+msgstr "הגדרת מופעים"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format

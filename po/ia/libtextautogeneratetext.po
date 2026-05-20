@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:43+0000\n"
 "PO-Revision-Date: 2026-05-18 11:52+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -141,12 +141,12 @@ msgid ""
 "give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:293
+#: core/textautogeneratetextplugin.cpp:298
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:295
+#: core/textautogeneratetextplugin.cpp:300
 #, kde-format
 msgid "Network"
 msgstr "Rete"
@@ -217,7 +217,7 @@ msgid "Configure %1"
 msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:48
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
 #, kde-format
@@ -226,7 +226,7 @@ msgid "General"
 msgstr "General"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
 #, kde-format
@@ -425,7 +425,7 @@ msgid "Base:"
 msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:76
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
@@ -593,54 +593,54 @@ msgstr ""
 msgid "Default Model Path:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:60
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Modellos installate"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:66
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Crea Modellos"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:81
+#: plugins/ollama/ollamaconfigurewidget.cpp:83
 #, kde-format
 msgid "Port:"
 msgstr "Porto:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:90
+#: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid "Show Ollama Log"
 msgstr "Monstra log (registro) de Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:97
+#: plugins/ollama/ollamaconfigurewidget.cpp:99
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:82
 #, kde-format
 msgid "Model:"
 msgstr "Modello:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:108
+#: plugins/ollama/ollamaconfigurewidget.cpp:110
 #, kde-format
 msgid "Customize Ollama"
 msgstr "Configura Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:118
+#: plugins/ollama/ollamaconfigurewidget.cpp:120
 #, kde-format
 msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:188
+#: plugins/ollama/ollamaconfigurewidget.cpp:192
 #, kde-format
 msgid "Failed to start Ollama"
 msgstr "Falleva a startar Ollama"
@@ -651,12 +651,35 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Registro (log) de Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:94
+#: plugins/ollama/ollamaplugin.cpp:98
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:244
+#, kde-format
+msgid ""
+"Ollama not found on system. Ask to your administrator system to install it."
+msgstr ""
+
+#: plugins/ollama/ollamaplugin.cpp:246
+#, kde-format
+msgid "Ollama not found on system. Please install it."
+msgstr ""
+
+#: plugins/ollama/ollamaplugin.cpp:247
+#, kde-format
+msgctxt "@action"
+msgid "Download Ollama"
+msgstr "Discarga Ollama"
+
+#: plugins/ollama/ollamaplugin.cpp:253
+#, kde-format
+msgctxt "@action"
+msgid "Start Ollama"
+msgstr "Starta Ollama"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
 #, kde-format
@@ -2399,34 +2422,19 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Adde instantia…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
-#, kde-format
-msgid ""
-"Ollama not found on system. Ask to your administrator system to install it."
-msgstr ""
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
-#, kde-format
-msgid "Ollama not found on system. Please install it."
-msgstr ""
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, kde-format
-msgctxt "@action"
-msgid "Download Ollama"
-msgstr "Discarga Ollama"
-
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
-#, kde-format
-msgctxt "@action"
-msgid "Start Ollama"
-msgstr "Starta Ollama"
-
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Configura…"
+
+#: widgets/common/textautogeneratenotworkingwidget.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Instances"
+msgctxt "@info:tooltip"
+msgid "Configure Instance"
+msgstr "Configura "
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
