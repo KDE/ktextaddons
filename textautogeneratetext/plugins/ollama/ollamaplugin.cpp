@@ -251,9 +251,10 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstance OllamaPlugin:
 
 void OllamaPlugin::slotDownloadOllama()
 {
-#if defined(Q_OS_WIN)
+#ifdef Q_OS_WIN
     QDesktopServices::openUrl(QUrl(u"https://ollama.com/download/windows"_s));
-#elif defined(Q_OS_MACOS)
+#endif
+#ifdef Q_OS_MACOS
     QDesktopServices::openUrl(QUrl(u"https://ollama.com/download/mac"_s));
 #endif
 }
