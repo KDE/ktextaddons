@@ -531,11 +531,11 @@ Q_SIGNALS:
     /*!
      * Emitted when the Ollama process state changes.
      */
-    void ollamaProcessOk();
+    void instanceProcessOk();
     /*!
      * Emitted when Ollama fails.
      */
-    void ollamaFailed();
+    void instanceFailed();
 
     /*!
      * Emitted when a network error occurs.
