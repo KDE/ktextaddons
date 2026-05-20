@@ -51,9 +51,7 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             Q_EMIT callTools(replyResponse.info);
         }
     });
-    connect(this->manager(), &TextAutoGenerateText::TextAutoGenerateManager::startOllamaRequested, this, [this]() {
-        slotOllamaRequested();
-    });
+    connect(this->manager(), &TextAutoGenerateText::TextAutoGenerateManager::startOllamaRequested, this, &OllamaPlugin::slotOllamaRequested);
     connect(mOllamaManager, &OllamaManager::ollamaStarted, this, &OllamaPlugin::processStartSuccessed);
     connect(mOllamaManager, &OllamaManager::ollamaFailed, this, &OllamaPlugin::processStartFailed);
 }
