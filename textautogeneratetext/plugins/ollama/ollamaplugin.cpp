@@ -231,7 +231,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo Oll
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
         activateInstanceInfo.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
 #else
-        activateInstance.text = i18n("Ollama not found on system. Please install it.");
+        activateInstanceInfo.text = i18n("Ollama not found on system. Please install it.");
         auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
         downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
         connect(downloadOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotDownloadOllama);
