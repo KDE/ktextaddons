@@ -50,8 +50,6 @@ protected:
 
 private:
     void slotOllamaRequested();
-    void slotOllamaFailed(const QString &errorStr);
-    void slotOllamaStarted();
     void slotDownloadOllama();
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mOllamaManager;

@@ -54,23 +54,13 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
     connect(this->manager(), &TextAutoGenerateText::TextAutoGenerateManager::startOllamaRequested, this, [this]() {
         slotOllamaRequested();
     });
-    connect(mOllamaManager, &OllamaManager::ollamaStarted, this, &OllamaPlugin::slotOllamaStarted);
-    connect(mOllamaManager, &OllamaManager::ollamaFailed, this, &OllamaPlugin::slotOllamaFailed);
+    connect(mOllamaManager, &OllamaManager::ollamaStarted, this, &OllamaPlugin::processStartSuccessed);
+    connect(mOllamaManager, &OllamaManager::ollamaFailed, this, &OllamaPlugin::processStartFailed);
 }
 
 OllamaPlugin::~OllamaPlugin()
 {
     delete mOllamaSettings;
-}
-
-void OllamaPlugin::slotOllamaStarted()
-{
-    Q_EMIT this->manager()->instanceProcessOk();
-}
-
-void OllamaPlugin::slotOllamaFailed([[maybe_unused]] const QString &errorStr)
-{
-    Q_EMIT this->manager()->instanceFailed();
 }
 
 void OllamaPlugin::slotOllamaRequested()

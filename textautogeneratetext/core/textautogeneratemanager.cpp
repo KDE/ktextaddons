@@ -631,6 +631,13 @@ void TextAutoGenerateManager::loadEngine()
     }
 
     connect(textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::processStartSuccessed,
+            this,
+            &TextAutoGenerateManager::instanceProcessOk);
+
+    connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::processStartFailed, this, &TextAutoGenerateManager::instanceFailed);
+
+    connect(textAutoGeneratePlugin(),
             &TextAutoGenerateText::TextAutoGenerateTextPlugin::currentModelChanged,
             this,
             &TextAutoGenerateManager::currentModelChanged);

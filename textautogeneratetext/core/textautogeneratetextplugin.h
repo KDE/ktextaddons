@@ -225,6 +225,14 @@ Q_SIGNALS:
      */
     void errorOccurred(QNetworkReply::NetworkError e);
 
+    /*!
+     */
+    void processStartSuccessed();
+
+    /*!
+     */
+    void processStartFailed(const QString &errorStr);
+
 protected:
     /*!
      */
