@@ -87,6 +87,8 @@ target_sources(
         misc/savefileutils.cpp
         misc/executableutils.h
         misc/executableutils.cpp
+        opensavedfilefolderwidget.cpp
+        opensavedfilefolderwidget.h
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -152,6 +154,7 @@ ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     SelectSpecialCharDialog
     SlideContainer
     RichTextQuickTextFormat
+    OpenSavedFileFolderWidget
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )
