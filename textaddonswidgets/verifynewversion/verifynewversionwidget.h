@@ -24,11 +24,12 @@ class TEXTADDONSWIDGETS_EXPORT VerifyNewVersionWidget : public QObject
     Q_OBJECT
 public:
     enum class OsVersion : uint8_t {
-        Unknown,
+        Unknown = 0,
         Windows,
         MacOsArm64,
         MacOs,
     };
+    Q_ENUM(OsVersion)
     struct TEXTADDONSWIDGETS_EXPORT VerifyNewVersionInfo {
         TextAddonsWidgets::VerifyNewVersionWidget::OsVersion osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::Unknown;
         QString generatedUrl;
