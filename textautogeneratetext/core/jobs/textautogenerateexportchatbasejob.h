@@ -73,7 +73,7 @@ Q_SIGNALS:
     /*!
      * \brief Emitted when export is complete
      */
-    void exportDone();
+    void exportDone(const QString &filename);
 
 protected:
     /*!

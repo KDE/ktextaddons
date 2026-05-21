@@ -5,6 +5,7 @@
 */
 
 #include "opensavedfilefolderwidget.h"
+#include "textaddonswidgets_debug.h"
 
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenFileManagerWindowJob>
@@ -64,6 +65,9 @@ void OpenSavedFileFolderWidget::setUrls(const QList<QUrl> &urls, FileType fileTy
     case FileType::Pdf:
         mShowFolderAction->setText(i18nc("@action", "Open folder where PDF file was saved"));
         break;
+    case FileType::Unknown:
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "Invalid FileType! It's a bug";
+        return;
     }
     slotShowWarning();
 }

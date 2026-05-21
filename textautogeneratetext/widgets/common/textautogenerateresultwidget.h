@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 
 namespace TextAddonsWidgets
 {
@@ -17,7 +18,6 @@ class OpenSavedFileFolderWidget;
 
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateManager;
 class TextAutoGenerateListView;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateResultWidget
@@ -114,6 +114,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotFindNext();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotFindPrev();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotOpenSavedFileFolderDone(const QList<QUrl> &urls, TextAutoGenerateText::TextAutoGenerateManager::FileType fileType);
     TextAutoGenerateListView *const mTextAutoGenerateListView;
     TextAddonsWidgets::QuickSearchBarWidget *const mQuickSearchBarWidget;
     TextAddonsWidgets::OpenSavedFileFolderWidget *const mOpenSavedFileFolderWidget;

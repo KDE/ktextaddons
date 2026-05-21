@@ -68,6 +68,13 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
+    enum class FileType : uint8_t {
+        Unknown = 0,
+        Attachment,
+        Pdf,
+    };
+    Q_ENUM(FileType)
+
     /*!
      * Constructs a new TextAutoGenerateManager object.
      * \param parent The parent QObject
@@ -549,6 +556,13 @@ Q_SIGNALS:
     /*!
      */
     void insertBlockCode(const QString &str);
+
+    /*!
+     * \brief openSavedFileFolderDone
+     * \param urls
+     * \param fileType
+     */
+    void openSavedFileFolderDone(const QList<QUrl> &urls, TextAutoGenerateText::TextAutoGenerateManager::FileType fileType);
 
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);

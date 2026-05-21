@@ -45,6 +45,7 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to write to file:" << mInfo.filename;
     }
     data.close();
+    Q_EMIT exportDone(mInfo.filename);
     deleteLater();
 }
 

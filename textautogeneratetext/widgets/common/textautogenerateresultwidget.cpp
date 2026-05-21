@@ -7,7 +7,6 @@
 #include "textautogenerateresultwidget.h"
 #include <QScrollBar>
 
-#include "core/textautogeneratemanager.h"
 #include "widgets/view/textautogeneratelistview.h"
 #include <TextAddonsWidgets/OpenSavedFileFolderWidget>
 #include <TextAddonsWidgets/QuickSearchBarWidget>
@@ -66,10 +65,31 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
                 mQuickSearchBarWidget->updateButtons(false, false);
             }
         });
+        connect(manager,
+                &TextAutoGenerateText::TextAutoGenerateManager::openSavedFileFolderDone,
+                this,
+                &TextAutoGenerateResultWidget::slotOpenSavedFileFolderDone);
     }
 }
 
 TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;
+
+void TextAutoGenerateResultWidget::slotOpenSavedFileFolderDone(const QList<QUrl> &urls, TextAutoGenerateText::TextAutoGenerateManager::FileType fileType)
+{
+    TextAddonsWidgets::OpenSavedFileFolderWidget::FileType openSavedFileType = TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Unknown;
+    switch (fileType) {
+    case TextAutoGenerateText::TextAutoGenerateManager::FileType::Unknown:
+        openSavedFileType = TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Unknown;
+        break;
+    case TextAutoGenerateText::TextAutoGenerateManager::FileType::Attachment:
+        openSavedFileType = TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment;
+        break;
+    case TextAutoGenerateText::TextAutoGenerateManager::FileType::Pdf:
+        openSavedFileType = TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Pdf;
+        break;
+    }
+    mOpenSavedFileFolderWidget->setUrls(urls, openSavedFileType);
+}
 
 void TextAutoGenerateResultWidget::slotFindPrev()
 {
