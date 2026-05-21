@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateresultwidgettest.h"
+#include "widgets/common/textautogenerateresultwidget.h"
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateResultWidgetTest)
 
@@ -15,6 +16,7 @@ TextAutoGenerateResultWidgetTest::TextAutoGenerateResultWidgetTest(QObject *pare
 
 void TextAutoGenerateResultWidgetTest::shouldHaveDefaultValues()
 {
+    const TextAutoGenerateText::TextAutoGenerateResultWidget w(nullptr);
     // TODO
 }
 
