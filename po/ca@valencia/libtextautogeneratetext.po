@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 02:40+0000\n"
-"PO-Revision-Date: 2026-02-27 07:18+0100\n"
+"PO-Revision-Date: 2026-05-19 11:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -1915,9 +1915,9 @@ msgid ""
 "model, enabling coding, math, agentic, function calling, and general use "
 "cases."
 msgstr ""
-"Dolphin 3.0 Llama 3.1 amb 8 B 🐬 és la propera generació de la sèrie Dolphin "
+"Dolphin 3.0 Llama 3.1 amb 8 B 🐬 és la generació següent de la sèrie Dolphin "
 "de models afinats d'instruccions dissenyats per a ser un model local de "
-"propòsit general final, habilitat de codificació, matemàtiques, agèntica, "
+"propòsit general final, habilitat de codificació, matemàtiques, agentiva, "
 "crida de funcions, i casos d'ús general."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:227
@@ -2185,14 +2185,14 @@ msgid ""
 "and versatile developer use cases."
 msgstr ""
 "Models de ponderació oberta d'OpenAI dissenyats per a un raonament potent, "
-"tasques d'agents i casos d'ús versàtils de desenvolupament."
+"tasques agentives i casos d'ús versàtils de desenvolupament."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:281
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
-"Models grans de context amb bon rendiment d'Alibaba per a tasques d'agents i "
-"de codificació."
+"Models grans de context amb bon rendiment d'Alibaba per a tasques agentives "
+"i de codificació."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:282
 #, kde-format
@@ -2239,7 +2239,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
 #, kde-format
 msgid "Advanced agentic, reasoning and coding capabilities.."
-msgstr "Agèntica avançada, capacitat de raonament i de codificació."
+msgstr "Tasques d'agentiva avançada, capacitat de raonament i de codificació."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
 #, kde-format
@@ -2260,7 +2260,7 @@ msgid ""
 "agentic workflows."
 msgstr ""
 "MiniMax M2 és un model de llenguatge gran d'alta eficiència construït per a "
-"la codificació i els fluxos de treball d'agents."
+"la codificació i els fluxos de treball agentius."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:295
 #, kde-format
@@ -2286,7 +2286,7 @@ msgid ""
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
 "El model més intel·ligent de Google amb raonament SOTA i comprensió "
-"multimodal, i capacitats d'agents potents i de codificació de vibracions."
+"multimodal, i capacitats agentives potents i de codificació de vibracions."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
@@ -2338,7 +2338,7 @@ msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
 msgstr ""
-"Nemotron 3 Nano: un estàndard nou per a models d'agents eficients, oberts i "
+"Nemotron 3 Nano: un estàndard nou per a models agentius eficients, oberts i "
 "intel·ligents."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
@@ -2461,9 +2461,9 @@ msgid ""
 "agentic paradigms."
 msgstr ""
 "Kimi K2.5 és un model multimodal multimodal de codi obert que integra la "
-"visió i la comprensió del llenguatge amb capacitats d'agents avançades, "
+"visió i la comprensió del llenguatge amb capacitats agentives avançades, "
 "modes instantanis i de pensament, així com paradigmes conversacionals i "
-"d'agents."
+"agentius."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2471,7 +2471,7 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
-"Un model fort de raonament i agèntic de Z.ai amb un total de 744 B "
+"Un model fort de raonament i agentiu de Z.ai amb un total de 744 B "
 "paràmetres (40 B actius), construït per a l'enginyeria de sistemes complexos "
 "i tasques de llarg recorregut."
 
