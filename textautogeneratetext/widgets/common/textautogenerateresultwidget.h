@@ -12,6 +12,7 @@
 namespace TextAddonsWidgets
 {
 class QuickSearchBarWidget;
+class OpenSavedFileFolderWidget;
 }
 
 namespace TextAutoGenerateText
@@ -115,6 +116,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotFindPrev();
     TextAutoGenerateListView *const mTextAutoGenerateListView;
     TextAddonsWidgets::QuickSearchBarWidget *const mQuickSearchBarWidget;
+    TextAddonsWidgets::OpenSavedFileFolderWidget *const mOpenSavedFileFolderWidget;
 };
 
 }

@@ -9,6 +9,7 @@
 
 #include "core/textautogeneratemanager.h"
 #include "widgets/view/textautogeneratelistview.h"
+#include <TextAddonsWidgets/OpenSavedFileFolderWidget>
 #include <TextAddonsWidgets/QuickSearchBarWidget>
 
 #include <QVBoxLayout>
@@ -19,6 +20,7 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
     : QWidget{parent}
     , mTextAutoGenerateListView(new TextAutoGenerateListView(manager, this))
     , mQuickSearchBarWidget(new TextAddonsWidgets::QuickSearchBarWidget(this))
+    , mOpenSavedFileFolderWidget(new TextAddonsWidgets::OpenSavedFileFolderWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -26,6 +28,9 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
 
     mQuickSearchBarWidget->setObjectName(u"mQuickSearchBarWidget"_s);
     mainLayout->addWidget(mQuickSearchBarWidget);
+
+    mOpenSavedFileFolderWidget->setObjectName(u"mOpenSavedFileFolderWidget"_s);
+    mainLayout->addWidget(mOpenSavedFileFolderWidget);
 
     mTextAutoGenerateListView->setObjectName(u"mTextAutoGenerateListView"_s);
     mainLayout->addWidget(mTextAutoGenerateListView);
