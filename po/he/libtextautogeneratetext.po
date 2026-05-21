@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:43+0000\n"
-"PO-Revision-Date: 2026-05-16 20:52+0300\n"
+"POT-Creation-Date: 2026-05-21 00:43+0000\n"
+"PO-Revision-Date: 2026-05-20 12:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -655,31 +655,31 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "יומן Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:98
+#: plugins/ollama/ollamaplugin.cpp:86
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:244
+#: plugins/ollama/ollamaplugin.cpp:232
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr "Ollama לא נמצאה במערכת. נא לבקש מהנהלת המערכת שלך להתקין אותה."
 
-#: plugins/ollama/ollamaplugin.cpp:246
+#: plugins/ollama/ollamaplugin.cpp:234
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "Ollama לא נמצאה במערכת. נא להתקין אותה."
 
-#: plugins/ollama/ollamaplugin.cpp:247
+#: plugins/ollama/ollamaplugin.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "הורדת Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:253
+#: plugins/ollama/ollamaplugin.cpp:241
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2748,12 +2748,10 @@ msgid "Configure…"
 msgstr "הגדרה…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "הגדרת מופעים"
+msgstr "הגדרת מופע"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format

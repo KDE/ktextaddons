@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:43+0000\n"
-"PO-Revision-Date: 2026-05-16 11:08+0200\n"
+"POT-Creation-Date: 2026-05-21 00:43+0000\n"
+"PO-Revision-Date: 2026-05-20 11:48+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -655,14 +655,14 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Ollama-log"
 
-#: plugins/ollama/ollamaplugin.cpp:98
+#: plugins/ollama/ollamaplugin.cpp:86
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:244
+#: plugins/ollama/ollamaplugin.cpp:232
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
@@ -670,18 +670,18 @@ msgstr ""
 "Ollama niet gevonden op systeem. Vraag uw systeembeheerder om het te "
 "installeren."
 
-#: plugins/ollama/ollamaplugin.cpp:246
+#: plugins/ollama/ollamaplugin.cpp:234
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "Ollama niet gevonden op systeem. Installeer het."
 
-#: plugins/ollama/ollamaplugin.cpp:247
+#: plugins/ollama/ollamaplugin.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Ollama downloaden"
 
-#: plugins/ollama/ollamaplugin.cpp:253
+#: plugins/ollama/ollamaplugin.cpp:241
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2875,12 +2875,10 @@ msgid "Configure…"
 msgstr "Configureren…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "Exemplaren configureren"
+msgstr "Exemplaar configureren"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format

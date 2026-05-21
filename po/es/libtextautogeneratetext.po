@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:43+0000\n"
-"PO-Revision-Date: 2026-05-16 17:32+0100\n"
+"POT-Creation-Date: 2026-05-21 00:43+0000\n"
+"PO-Revision-Date: 2026-05-20 20:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -659,14 +659,14 @@ msgctxt "@title:window"
 msgid "Ollama Log"
 msgstr "Registro de Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:98
+#: plugins/ollama/ollamaplugin.cpp:86
 #: plugins/ollamacloud/ollamapluginonline.cpp:110
 #: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:244
+#: plugins/ollama/ollamaplugin.cpp:232
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
@@ -674,18 +674,18 @@ msgstr ""
 "No se ha encontrado Ollama en el sistema. Solicite a su administrador que lo "
 "instale."
 
-#: plugins/ollama/ollamaplugin.cpp:246
+#: plugins/ollama/ollamaplugin.cpp:234
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "No se ha encontrado Ollama en el sistema. Debería instalarlo."
 
-#: plugins/ollama/ollamaplugin.cpp:247
+#: plugins/ollama/ollamaplugin.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Descargar Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:253
+#: plugins/ollama/ollamaplugin.cpp:241
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2905,12 +2905,10 @@ msgid "Configure…"
 msgstr "Configurar…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "Configurar instancias"
+msgstr "Configurar instancia"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
