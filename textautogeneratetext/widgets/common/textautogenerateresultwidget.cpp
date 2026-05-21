@@ -87,6 +87,9 @@ void TextAutoGenerateResultWidget::slotOpenSavedFileFolderDone(const QList<QUrl>
     case TextAutoGenerateText::TextAutoGenerateManager::FileType::Pdf:
         openSavedFileType = TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Pdf;
         break;
+    case TextAutoGenerateText::TextAutoGenerateManager::FileType::File:
+        openSavedFileType = TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::File;
+        break;
     }
     mOpenSavedFileFolderWidget->setUrls(urls, openSavedFileType);
 }
