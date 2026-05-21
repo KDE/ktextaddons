@@ -26,6 +26,7 @@ public:
     enum class FileType : uint8_t {
         Unknown = 0,
         Attachment,
+        File,
         Pdf,
     };
     Q_ENUM(FileType)
