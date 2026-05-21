@@ -21,7 +21,7 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
 {
     TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
     QCOMPARE(t.focusPolicy(), Qt::NoFocus);
-    QVERIFY(t.enabled());
+    QVERIFY(t.isEnabled());
 
     QCOMPARE(t.formatTypes(),
              TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes{TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown});

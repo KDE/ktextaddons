@@ -162,19 +162,9 @@ void RichTextQuickTextFormat::updateActions()
     }
 }
 
-bool RichTextQuickTextFormat::enabled() const
-{
-    return mEnabled;
-}
-
-void RichTextQuickTextFormat::setEnabled(bool newEnabled)
-{
-    mEnabled = newEnabled;
-}
-
 void RichTextQuickTextFormat::updatePosition()
 {
-    if (!mEnabled) {
+    if (!isEnabled()) {
         return;
     }
     if (mEditor->textCursor().hasSelection()) {
@@ -189,7 +179,7 @@ void RichTextQuickTextFormat::updatePosition()
 
 void RichTextQuickTextFormat::slotSelectionChanged()
 {
-    if (!mEnabled) {
+    if (!isEnabled()) {
         return;
     }
     if (!mEditor->textCursor().hasSelection()) {
@@ -199,7 +189,7 @@ void RichTextQuickTextFormat::slotSelectionChanged()
 
 bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
 {
-    if (mEnabled) {
+    if (isEnabled()) {
         if (watched == mEditor->viewport()) {
             if (event->type() == QEvent::Move || event->type() == QEvent::Resize) {
                 if (isVisible()) {

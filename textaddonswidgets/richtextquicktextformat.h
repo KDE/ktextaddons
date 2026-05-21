@@ -61,14 +61,12 @@ public:
     void setFormatTypes(QuickTextFormatTypes newFormatTypes);
 
     /*!
-     * Returns whether the quick text format is enabled
+     * \brief Handles events for the quick text format widget
+     * \param watched The object being watched
+     * \param event The event that occurred
+     * \return True if the event was handled, false otherwise
      */
-    [[nodiscard]] bool enabled() const;
-    /*!
-     * Sets whether the quick text format is enabled
-     * \param newEnabled Whether to enable or disable
-     */
-    void setEnabled(bool newEnabled);
+    [[nodiscard]] bool eventFilter(QObject *watched, QEvent *event) override;
 
 Q_SIGNALS:
     /*!
@@ -76,15 +74,6 @@ Q_SIGNALS:
      * \param type The type of text format requested
      */
     void quickTextFormatRequested(TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type);
-
-protected:
-    /*!
-     * \brief Handles events for the quick text format widget
-     * \param watched The object being watched
-     * \param event The event that occurred
-     * \return True if the event was handled, false otherwise
-     */
-    [[nodiscard]] bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void updatePosition();
@@ -94,6 +83,5 @@ private:
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;
     QHBoxLayout *const mMainLayout;
-    bool mEnabled = true;
 };
 }
