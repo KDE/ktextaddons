@@ -264,9 +264,6 @@ QTextDocument *PluginCommonModelInstalledInfosDelegate::documentForIndex(const Q
         return ret;
     }
     const QString description = index.data(PluginCommonModelInstalledInfosModelBase::Description).toString();
-    // if (description.isEmpty()) {
-    //     return nullptr;
-    // }
 
     auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(identifier)) + description, width);
     auto ret = doc.get();
