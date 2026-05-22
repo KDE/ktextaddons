@@ -65,5 +65,5 @@ std::optional<McpProtocolNotificationParams> McpProtocolResourceListChangedNotif
 
 void McpProtocolResourceListChangedNotification::setParams(std::optional<McpProtocolNotificationParams> newParams)
 {
-    mParams = std::move(newParams);
+    mParams = newParams;
 }

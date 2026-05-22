@@ -37,7 +37,7 @@ McpProtocolListResourcesResult McpProtocolListResourcesResult::fromJson(const QJ
     if (obj.contains("resources"_L1) && obj["resources"_L1].isArray()) {
         const QJsonArray arr = obj["resources"_L1].toArray();
         QList<McpProtocolResource> res;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             res.append(McpProtocolResource::fromJson(v.toObject()));
         }
         prompt.setResources(res);

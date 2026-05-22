@@ -33,8 +33,9 @@ McpProtocolPromptReference McpProtocolPromptReference::fromJson(const QJsonObjec
 {
     McpProtocolPromptReference prompt;
     prompt.setName(obj.value("name"_L1).toString());
-    if (obj.contains("title"_L1))
+    if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
+    }
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolPromptReference::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'ref/prompt', got: " << obj.value("type"_L1).toString();
     }

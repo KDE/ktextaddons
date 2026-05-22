@@ -36,7 +36,7 @@ McpProtocolListResourceTemplatesResult McpProtocolListResourceTemplatesResult::f
     if (obj.contains("resourceTemplates"_L1) && obj["resourceTemplates"_L1].isArray()) {
         const QJsonArray arr = obj["resourceTemplates"_L1].toArray();
         QList<McpProtocolResourceTemplate> lst;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             lst.append(McpProtocolResourceTemplate::fromJson(v.toObject()));
         }
         prompt.setResourceTemplates(lst);

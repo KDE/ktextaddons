@@ -35,7 +35,7 @@ McpProtocolModelPreferences McpProtocolModelPreferences::fromJson(const QJsonObj
     if (obj.contains("hints"_L1) && obj["hints"_L1].isArray()) {
         const QJsonArray arr = obj["hints"_L1].toArray();
         QList<McpProtocolModelHint> hints;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             hints.append(McpProtocolModelHint::fromJson(v.toObject()));
         }
         result.setHints(hints);

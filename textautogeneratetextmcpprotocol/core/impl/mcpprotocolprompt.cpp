@@ -38,7 +38,7 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
     if (obj.contains("arguments"_L1) && obj["arguments"_L1].isArray()) {
         const QJsonArray arr = obj["arguments"_L1].toArray();
         QList<McpProtocolPromptArgument> list_arguments;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             list_arguments.append(McpProtocolPromptArgument::fromJson(v.toObject()));
         }
         prompt.setArguments(list_arguments);
@@ -49,7 +49,7 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
     if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
         const QJsonArray arr = obj["icons"_L1].toArray();
         QList<McpProtocolIcon> list_icons;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
         prompt.setIcons(list_icons);

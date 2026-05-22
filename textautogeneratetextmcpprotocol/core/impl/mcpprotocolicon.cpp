@@ -76,7 +76,7 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
     if (obj.contains("sizes"_L1) && obj["sizes"_L1].isArray()) {
         const QJsonArray arr = obj["sizes"_L1].toArray();
         QStringList list_sizes;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             list_sizes.append(v.toString());
         }
         icon.setSizes(list_sizes);

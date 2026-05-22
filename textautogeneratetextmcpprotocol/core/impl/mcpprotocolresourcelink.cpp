@@ -62,7 +62,7 @@ McpProtocolResourceLink McpProtocolResourceLink::fromJson(const QJsonObject &obj
     if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
         const QJsonArray arr = obj["icons"_L1].toArray();
         QList<McpProtocolIcon> list_icons;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
         prompt.setIcons(list_icons);

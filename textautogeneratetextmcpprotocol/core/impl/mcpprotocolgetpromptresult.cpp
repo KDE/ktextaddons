@@ -37,7 +37,7 @@ McpProtocolGetPromptResult McpProtocolGetPromptResult::fromJson(const QJsonObjec
     if (obj.contains("messages"_L1) && obj["messages"_L1].isArray()) {
         const QJsonArray arr = obj["messages"_L1].toArray();
         QList<McpProtocolPromptMessage> msgs;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             msgs.append(McpProtocolPromptMessage::fromJson(v.toObject()));
         }
         prompt.setMessages(msgs);

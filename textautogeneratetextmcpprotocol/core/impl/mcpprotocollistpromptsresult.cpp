@@ -38,7 +38,7 @@ McpProtocolListPromptsResult McpProtocolListPromptsResult::fromJson(const QJsonO
     if (obj.contains("prompts"_L1) && obj["prompts"_L1].isArray()) {
         const QJsonArray arr = obj["prompts"_L1].toArray();
         QList<McpProtocolPrompt> lst;
-        for (const QJsonValue &v : arr) {
+        for (const auto &v : arr) {
             lst.append(McpProtocolPrompt::fromJson(v.toObject()));
         }
         prompt.setPrompts(lst);

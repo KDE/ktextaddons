@@ -84,7 +84,7 @@ std::optional<bool> McpProtocolPromptArgument::required() const
 
 void McpProtocolPromptArgument::setRequired(std::optional<bool> newRequired)
 {
-    mRequired = std::move(newRequired);
+    mRequired = newRequired;
 }
 
 std::optional<QString> McpProtocolPromptArgument::title() const
