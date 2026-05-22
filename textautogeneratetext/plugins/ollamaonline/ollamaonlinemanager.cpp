@@ -148,6 +148,12 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     return reply;
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return nullptr;
+}
+
 OllamaOnlineSettings *OllamaOnlineManager::ollamaOnlineSettings() const
 {
     return mOllamaOnlineSettings;

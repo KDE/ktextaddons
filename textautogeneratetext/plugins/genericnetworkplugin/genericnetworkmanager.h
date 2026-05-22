@@ -54,6 +54,7 @@ public:
     void loadModels() override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
 
     [[nodiscard]] PluginNetworkType pluginNetworkType() const;
     void setPluginNetworkType(PluginNetworkType newPluginNetworkType);

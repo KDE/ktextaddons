@@ -137,6 +137,11 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletio
     return getChatCompletion(request);
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    return nullptr;
+}
+
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const
 {
     return mPluginNetworkType;

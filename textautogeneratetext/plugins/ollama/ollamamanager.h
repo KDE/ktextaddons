@@ -33,6 +33,7 @@ public:
     void loadModels() override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] OllamaCommonReply *downloadModel(const QString &modelName);
     void deleteModel(const QString &modelName);
 

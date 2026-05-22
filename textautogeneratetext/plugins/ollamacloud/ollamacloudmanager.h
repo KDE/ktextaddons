@@ -23,6 +23,7 @@ public:
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
 
     [[nodiscard]] OllamaCloudSettings *ollamaCloudSettings() const;
 

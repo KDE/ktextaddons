@@ -147,6 +147,12 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     return reply;
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return nullptr;
+}
+
 OllamaCloudSettings *OllamaCloudManager::ollamaCloudSettings() const
 {
     return mOllamaCloudSettings;

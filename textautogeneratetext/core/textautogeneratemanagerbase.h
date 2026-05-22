@@ -53,6 +53,13 @@ public:
      * \return A TextAutoGenerateReply object representing the reply
      */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
+
+    /*!
+     * \brief getResponses
+     * \param request
+     * \return
+     */
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
 Q_SIGNALS:
     /*!
      * Emitted when the models have finished loading.

@@ -258,6 +258,12 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     return reply;
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return nullptr;
+}
+
 bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
 {
     if (modelName.isEmpty()) {
