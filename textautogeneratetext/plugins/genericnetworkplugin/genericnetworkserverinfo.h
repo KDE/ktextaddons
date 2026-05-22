@@ -27,6 +27,7 @@ public:
 
     [[nodiscard]] static GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QString responsesPath(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static bool hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static bool hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type);

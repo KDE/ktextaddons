@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldChatCompletionPath();
     void shouldDefinePluginName();
     void shouldDefineLimitations();
+    void shouldResponsesPath();
 };

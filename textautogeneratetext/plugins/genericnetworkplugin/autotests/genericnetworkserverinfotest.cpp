@@ -85,6 +85,29 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::AtlasCloud), u"chat/completions"_s);
 }
 
+void GenericNetworkServerInfoTest::shouldResponsesPath()
+{
+    const GenericNetworkServerInfo info;
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::MistralAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::OpenAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::KlusterAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::GroqAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::CerebrasAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::VeniceAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::LlamaApi), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::Anthropic), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::KimiAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::GrokAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::Qwen), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::NovitaAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::DeepInfra), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::ChatGPT), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::CompactifAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::SarvamAI), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::AtlasCloud), u"responses"_s);
+}
+
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
 {
     const GenericNetworkServerInfo info;

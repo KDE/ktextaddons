@@ -60,6 +60,35 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     return {};
 }
 
+QString GenericNetworkServerInfo::responsesPath(GenericNetworkManager::PluginNetworkType type)
+{
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return {};
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+    case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+        return u"responses"_s;
+    }
+    return {};
+}
+
 QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::PluginNetworkType type)
 {
     switch (type) {
