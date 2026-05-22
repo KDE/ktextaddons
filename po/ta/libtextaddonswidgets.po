@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:43+0000\n"
+"POT-Creation-Date: 2026-05-22 00:42+0000\n"
 "PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -96,6 +96,45 @@ msgid ""
 msgstr ""
 "இப்பதிப்பு வெளியிடப்பட்டு ஒரு ஆண்டுக்கு மேல் ஆகிவிட்டது. புதுப்பிக்குமாறு "
 "பரிந்துரைக்கிறோம்."
+
+#: opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Error Opening File"
+msgctxt "@action"
+msgid "Open File"
+msgstr "கோப்பைத் திறப்பதில் சிக்கல்"
+
+#: opensavedfilefolderwidget.cpp:63
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
+msgstr[1] ""
+
+#: opensavedfilefolderwidget.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where PDF file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:69
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:86
+#, kde-format
+msgid "Unable to open the attachment."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
@@ -275,7 +314,3 @@ msgstr ""
 
 #~ msgid "Impossible to open %1"
 #~ msgstr "%1 தனைத் திறக்க முடியவில்லை"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "கோப்பைத் திறப்பதில் சிக்கல்"

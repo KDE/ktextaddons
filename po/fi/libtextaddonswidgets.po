@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:43+0000\n"
+"POT-Creation-Date: 2026-05-22 00:42+0000\n"
 "PO-Revision-Date: 2026-01-16 17:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -92,6 +92,45 @@ msgstr "Versiosi on yli 6 kuukautta vanha: suosittelemme päivittämään."
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr "Versiosi on yli vuoden vanha: suosittelemme vakavasti päivittämään."
+
+#: opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save File"
+msgctxt "@action"
+msgid "Open File"
+msgstr "Tallenna tiedosto"
+
+#: opensavedfilefolderwidget.cpp:63
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
+msgstr[1] ""
+
+#: opensavedfilefolderwidget.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where PDF file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:69
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:86
+#, kde-format
+msgid "Unable to open the attachment."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

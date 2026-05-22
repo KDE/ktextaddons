@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:43+0000\n"
+"POT-Creation-Date: 2026-05-22 00:42+0000\n"
 "PO-Revision-Date: 2026-04-21 07:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -94,6 +94,47 @@ msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
 "Ваша версія застаріла на понад 1 рік. Ми наполегливо рекомендуємо її оновити."
+
+#: opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Error Opening File"
+msgctxt "@action"
+msgid "Open File"
+msgstr "Помилка під час відкриття файла"
+
+#: opensavedfilefolderwidget.cpp:63
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: opensavedfilefolderwidget.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where PDF file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:69
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:86
+#, kde-format
+msgid "Unable to open the attachment."
+msgstr ""
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
@@ -271,7 +312,3 @@ msgstr "<h1><i> Версія %1 </i></h1><hr/><br>"
 
 #~ msgid "Impossible to open %1"
 #~ msgstr "Не вдалося відкрити %1"
-
-#~ msgctxt "@title:window"
-#~ msgid "Error Opening File"
-#~ msgstr "Помилка під час відкриття файла"
