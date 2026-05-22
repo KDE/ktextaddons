@@ -31,29 +31,28 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
         if (error.error != QJsonParseError::NoError) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to parse JSON file" << mInfo.filename << "error:" << error.errorString() << "at offset"
                                                      << error.offset;
-            deleteLater();
-            return;
-        }
-        const QJsonObject obj = doc.object();
-        const QString title = obj[u"title"_s].toString();
+        } else {
+            const QJsonObject obj = doc.object();
+            const QString title = obj[u"title"_s].toString();
 
-        QMap<QByteArray, QByteArray> convertUuid;
-        QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
-        const QJsonArray array = obj[u"messages"_s].toArray();
-        for (const auto &val : array) {
-            const TextAutoGenerateMessage msg = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(val.toObject());
-            if (msg.isValid()) {
-                convertUuid.insert(msg.uuid(), TextAutoGenerateTextUtils::generateUUid());
-                msgs.append(msg);
+            QMap<QByteArray, QByteArray> convertUuid;
+            QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
+            const QJsonArray array = obj[u"messages"_s].toArray();
+            for (const auto &val : array) {
+                const TextAutoGenerateMessage msg = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(val.toObject());
+                if (msg.isValid()) {
+                    convertUuid.insert(msg.uuid(), TextAutoGenerateTextUtils::generateUUid());
+                    msgs.append(msg);
+                }
             }
-        }
-        // Convert
-        for (auto &msg : msgs) {
-            if (convertUuid.contains(msg.answerUuid())) {
-                msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
+            // Convert
+            for (auto &msg : msgs) {
+                if (convertUuid.contains(msg.answerUuid())) {
+                    msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
+                }
             }
+            Q_EMIT importDone(title, msgs);
         }
-        Q_EMIT importDone(title, msgs);
     }
     deleteLater();
 }
