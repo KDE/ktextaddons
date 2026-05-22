@@ -155,16 +155,10 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
                                 } else {
                                     manager()->changeInProgress(chatId, messageUuid, false);
                                 }
-                                // TODO store reply->info();
 
                                 qCDebug(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << " progress finished";
                                 mConnections.remove(reply);
                                 reply->deleteLater();
-#if 0
-                                // TODO add context + info
-                            message.context = message.llmReply->context();
-                            message.info = message.llmReply->info();
-#endif
                                 // Q_EMIT finished(message); // TODO add message as argument ???
                             })));
 }
@@ -196,11 +190,6 @@ void GenericNetworkPlugin::askToAssistant(const QString &msg)
                                                        Q_EMIT askToAssistantDone();
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
-#if 0
-                                // TODO add context + info
-                            message.context = message.llmReply->context();
-                            message.info = message.llmReply->info();
-#endif
                                                        // Q_EMIT finished(message); // TODO add message as argument ???
                                                    })));
 }

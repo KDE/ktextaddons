@@ -152,12 +152,6 @@ void OllamaCloudPlugin::askToAssistant(const QString &msg)
                                                        Q_EMIT askToAssistantDone();
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
-#if 0
-                                // TODO add context + info
-                            message.context = message.llmReply->context();
-                            message.info = message.llmReply->info();
-#endif
-                                                       // Q_EMIT finished(message); // TODO add message as argument ???
                                                    })));
 }
 
@@ -187,12 +181,6 @@ void OllamaCloudPlugin::sendToAssistant(const SendToAssistantInfo &info)
                                                        qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_PLUGIN_LOG) << " progress finished";
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
-#if 0
-                                // TODO add context + info
-                            message.context = message.llmReply->context();
-                            message.info = message.llmReply->info();
-#endif
-                                                       // Q_EMIT finished(message); // TODO add message as argument ???
                                                    })));
 }
 
