@@ -27,6 +27,7 @@ void OllamaCommonUtilsTest::shouldHaveUtilsPath()
     QCOMPARE(OllamaCommonUtils::chatPath(), u"/api/chat"_s);
     QCOMPARE(OllamaCommonUtils::deletePath(), u"/api/delete"_s);
     QCOMPARE(OllamaCommonUtils::createPath(), u"/api/create"_s);
+    QCOMPARE(OllamaCommonUtils::responsesPath(), u"/api/responses"_s);
 }
 
 #include "moc_ollamacommonutilstest.cpp"

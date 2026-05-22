@@ -45,3 +45,8 @@ QString OllamaCommonUtils::createPath()
 {
     return u"/api/create"_s;
 }
+
+QString OllamaCommonUtils::responsesPath()
+{
+    return u"/api/responses"_s;
+}
