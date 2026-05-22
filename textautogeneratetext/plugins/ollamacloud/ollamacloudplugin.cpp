@@ -78,7 +78,7 @@ void OllamaCloudPlugin::removeApiKey()
 {
     auto deleteJob = new QKeychain::DeletePasswordJob(passwordServiceName());
     deleteJob->setKey(QString::fromLatin1(instanceUuid()));
-    connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
+    connect(deleteJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::DeletePasswordJob *>(baseJob);
         if (!job) {
             qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_PLUGIN_LOG) << "Invalid job cast in removeApiKey";
