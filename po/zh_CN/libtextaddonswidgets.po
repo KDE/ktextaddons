@@ -100,12 +100,10 @@ msgid "Open folder where attachment was saved"
 msgstr ""
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "保存文件"
+msgstr ""
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format

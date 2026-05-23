@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-22 00:42+0000\n"
-"PO-Revision-Date: 2026-04-21 07:35+0200\n"
+"PO-Revision-Date: 2026-05-22 06:36+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -102,42 +102,40 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Odpri mapo, kjer je bila shranjena priloga"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error Opening File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Napaka pri odpiranju datoteke"
+msgstr "Odpri datoteko"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Odpri mapo, kjer so bile shranjene priloge"
+msgstr[1] "Odpri mapo, kjer je bila shranjena priloga"
+msgstr[2] "Odpri mapo, kjer sta bili shranjeni prilogi"
+msgstr[3] "Odpri mapo, kjer so bile shranjene priloge"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Odpri mapo, kjer je bila shranjena datoteka PDF"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Odpri mapo, kjer je bila shranjena datoteka"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Ni mogoče odpreti priloge."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

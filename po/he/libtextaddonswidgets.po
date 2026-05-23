@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-22 00:42+0000\n"
-"PO-Revision-Date: 2026-04-21 14:11+0300\n"
+"PO-Revision-Date: 2026-05-22 11:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -98,42 +98,40 @@ msgstr "הגרסה שלך בת יותר משנה, מומלץ בחום לשדרג
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "פתיחת התיקייה בה נשמר הקובץ המצורף"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error Opening File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "שגיאה בפתיחת קובץ"
+msgstr "פתיחת קובץ"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פתיחת התיקייה בה נשמר הקובץ המצורף"
+msgstr[1] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
+msgstr[2] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
+msgstr[3] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "פתיחת התיקייה בה נשמר ה־PDF"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "פתיחת התיקייה בה נשמר הקובץ"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "לא ניתן לפתוח את הצרופה."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

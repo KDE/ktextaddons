@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-21 00:43+0000\n"
+"POT-Creation-Date: 2026-05-23 00:42+0000\n"
 "PO-Revision-Date: 2026-05-20 20:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -316,13 +316,13 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:215
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:217
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:246
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
@@ -333,58 +333,58 @@ msgid "Sarvam AI"
 msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:221
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:250
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr "API compatible con OpenAI de AtlasCloud"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:191
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:220
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Modelos de lenguaje extensos de Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:199
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:201
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:230
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API de inferencia de la nube Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:203
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:232
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API de inferencia de la nube Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:205
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:234
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "API Llama de Meta AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:207
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:236
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Modelos de lenguaje extensos Kimi de Moonshot AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:209
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:238
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr ""
 "Modelos de lenguaje extensos de Alibaba Cloud Qwen a través de DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:211
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:240
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "API de inferencia de la nube Novita AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:213
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:242
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "API de inferencia de la nube DeepInfra"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:219
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:248
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "Instancia de Sarvam AI"
@@ -666,7 +666,7 @@ msgstr "Registro de Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:232
+#: plugins/ollama/ollamaplugin.cpp:222
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
@@ -674,18 +674,18 @@ msgstr ""
 "No se ha encontrado Ollama en el sistema. Solicite a su administrador que lo "
 "instale."
 
-#: plugins/ollama/ollamaplugin.cpp:234
+#: plugins/ollama/ollamaplugin.cpp:224
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "No se ha encontrado Ollama en el sistema. Debería instalarlo."
 
-#: plugins/ollama/ollamaplugin.cpp:235
+#: plugins/ollama/ollamaplugin.cpp:225
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Descargar Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:241
+#: plugins/ollama/ollamaplugin.cpp:231
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"

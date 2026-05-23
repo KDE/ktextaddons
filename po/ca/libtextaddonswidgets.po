@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-22 00:42+0000\n"
-"PO-Revision-Date: 2026-04-21 09:24+0200\n"
+"PO-Revision-Date: 2026-05-22 09:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -100,40 +100,38 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Obre la carpeta a on s'ha desat l'adjunt"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error Opening File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Error en obrir el fitxer"
+msgstr "Obre un fitxer"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Obre la carpeta a on s'ha desat l'adjunt"
+msgstr[1] "Obre la carpeta a on s'han desat els adjunts"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Obre la carpeta a on s'ha desat el fitxer PDF"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Obre la carpeta a on s'ha desat el fitxer"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "No s'ha pogut obrir l'adjunt."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-22 00:42+0000\n"
-"PO-Revision-Date: 2026-04-21 07:55+0300\n"
+"PO-Revision-Date: 2026-05-22 09:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -99,42 +99,40 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Відкрити теку, до якої було збережено долучення"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error Opening File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Помилка під час відкриття файла"
+msgstr "Відкрити файл"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Відкрити теку, до якої було збережено долучення"
+msgstr[1] "Відкрити теку, до якої було збережено долучення"
+msgstr[2] "Відкрити теку, до якої було збережено долучення"
+msgstr[3] "Відкрити теку, до якої було збережено долучення"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Відкрити теку, до якої було збережено файл PDF"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Відкрити теку, до якої було збережено файл"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Не вдалося відкрити долучення."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

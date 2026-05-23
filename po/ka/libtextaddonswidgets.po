@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-22 00:42+0000\n"
-"PO-Revision-Date: 2026-04-22 06:02+0200\n"
+"PO-Revision-Date: 2026-05-22 03:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -98,40 +98,38 @@ msgstr "თქვენი ვერსია 1 წელზე ძველი�
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error Opening File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "ფაილის გახსნის შეცდომა"
+msgstr "ფაილის გახსნა"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
+msgstr[1] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილები შევინახე"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "იმ საქაღალდის გახსნა, სადაც PDF ფაილი შევინახე"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "იმ საქაღალდის გახსნა, სადაც ფაილი შევინახე"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "მიმაგრებული ფაილის გახსნა შეუძლებელია."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
