@@ -97,30 +97,28 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Otevřít složku, kam byla příloha uložena"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Uložit soubor"
+msgstr "Otevřít soubor"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Otevřít složku, kam byla příloha uložena"
+msgstr[1] "Otevřít složku, kam byla příloha uložena"
+msgstr[2] "Otevřít složku, kam byla příloha uložena"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Otevřít složku, kam byl soubor PDF uložen"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
