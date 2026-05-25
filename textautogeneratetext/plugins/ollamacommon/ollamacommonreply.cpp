@@ -72,6 +72,9 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
         case RequestTypes::ShowModelInfo:
             mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
             break;
+        case RequestTypes::StreamingResponses:
+            // TODO
+            break;
         case RequestTypes::StreamingGenerate:
         case RequestTypes::StreamingChat: {
             auto completeTokens = mIncompleteTokens.split('\n');
@@ -140,6 +143,9 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
     }
     case RequestTypes::ShowModelInfo:
         ret.response = generateModelInfo();
+        break;
+    case RequestTypes::StreamingResponses:
+        // TODO
         break;
     case RequestTypes::StreamingGenerate:
         for (const auto &tok : mTokens) {

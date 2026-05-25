@@ -61,6 +61,9 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
         }
         case RequestTypes::StreamingGenerate:
             break;
+        case RequestTypes::StreamingResponses:
+            // TODO
+            break;
         }
 
         Q_EMIT contentAdded();
@@ -79,6 +82,9 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
     case RequestTypes::Unknown:
     case RequestTypes::ShowModelInfo:
     case RequestTypes::StreamingGenerate:
+        break;
+    case RequestTypes::StreamingResponses:
+        // TODO
         break;
     case RequestTypes::StreamingChat:
         // qDebug() << " mTokens " << mTokens;

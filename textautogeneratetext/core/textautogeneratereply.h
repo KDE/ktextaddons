@@ -81,6 +81,7 @@ public:
         DownloadModel,
         DeleteModel,
         CreateModel,
+        StreamingResponses,
     };
     /*!
      * Constructs a new TextAutoGenerateReply object.
