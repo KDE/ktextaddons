@@ -97,37 +97,37 @@ msgstr "您的软件版本已超过 1 年未更新，我们建议您进行升级
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "打开保存附件的文件夹"
 
 #: opensavedfilefolderwidget.cpp:28
 #, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr ""
+msgstr "打开文件"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
+msgstr[0] "打开保存附件的文件夹"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "打开保存 PDF 文件的文件夹"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "打开保存文件的文件夹"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "无法打开附件。"
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

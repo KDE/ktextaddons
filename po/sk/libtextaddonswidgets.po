@@ -95,41 +95,39 @@ msgstr "Vaša verzia je staršia ako 1 rok, dôrazne vám odporúčame aktualizo
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Otvoriť priečinok, kam bola uložená príloha"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Uložiť súbor"
+msgstr "Otvoriť súbor"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Otvoriť priečinok, kam bola uložená príloha"
+msgstr[1] "Otvoriť priečinok, kam boli uložené prílohy"
+msgstr[2] "Otvoriť priečinok, kam boli uložené prílohy"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Otvoriť priečinok, kam bol uložený PDF súbor"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Otvoriť priečinok, kam bol uložený súbor"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Nepodarilo sa otvoriť prílohu."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format

@@ -2835,12 +2835,10 @@ msgid "Configure…"
 msgstr "Nastaviť…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "Nastaviť inštancie"
+msgstr "Nastaviť inštanciu"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format

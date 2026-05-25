@@ -2699,7 +2699,7 @@ msgstr "配置…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr ""
+msgstr "配置实例"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
