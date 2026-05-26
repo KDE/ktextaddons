@@ -11,6 +11,7 @@
 
 class LMStudioManager;
 class LMStudioSettings;
+class QAction;
 class LMStudioPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
@@ -46,6 +47,8 @@ public:
 
     [[nodiscard]] QString passwordServiceName() const;
 
+    [[nodiscard]] ActivateInstanceActionInfo activateInstanceAction() override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
@@ -61,4 +64,5 @@ private:
     void slotLMStudioStarted();
     LMStudioSettings *const mLMStudioSettings;
     LMStudioManager *const mLMStudioManager;
+    QAction *mCurrentAction = nullptr;
 };

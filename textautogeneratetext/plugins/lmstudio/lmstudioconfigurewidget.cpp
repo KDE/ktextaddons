@@ -6,6 +6,7 @@
 */
 
 #include "lmstudioconfigurewidget.h"
+#include "lmstudioplugin.h"
 #include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 
@@ -27,7 +28,7 @@
 #include <qurl.h>
 
 using namespace Qt::Literals::StringLiterals;
-LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, QWidget *parent)
+LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, LMStudioPlugin *plugin, QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
     , mUrl(new QLineEdit(this))
@@ -75,19 +76,21 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, QWidg
 
     mainLayout->addStretch(1);
 
-    connect(mManager, &LMStudioManager::modelsLoadDone, this, [this](const LMStudioManager::ModelsInfo &modelinfo) {
-    // qDebug() << " LMStudioConfigureWidget::fillModels() " << modelinfo;
-#if 0 // TODO PORT IT
+    connect(mManager, &LMStudioManager::modelsLoadDone, this, [this, plugin](const LMStudioManager::ModelsInfo &modelinfo) {
+        // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
-            mMessageWidget->setMessageInfo(modelinfo.errorOccured);
+            const TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo = plugin->activateInstanceAction();
+            mMessageWidget->setMessageInfo(activateInstanceInfo.action,
+                                           activateInstanceInfo.text.isEmpty() ? modelinfo.errorOccured : activateInstanceInfo.text);
+
             mMessageWidget->animatedShow();
             Q_EMIT lmStudioProcessOk(false);
         } else {
-            // mModelComboBoxWidget->setModels(modelinfo.models);
+            // TODO mModelComboBoxWidget->setModels(modelinfo.models);
             Q_EMIT lmStudioProcessOk(true);
         }
-#endif
     });
+
     connect(mName, &QLineEdit::textChanged, this, [this](const QString &str) {
         Q_EMIT enableOkButton(!str.trimmed().isEmpty());
     });

@@ -12,6 +12,7 @@
 class QLineEdit;
 class QSpinBox;
 class LMStudioManager;
+class LMStudioPlugin;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateNotWorkingMessageWidget;
@@ -20,7 +21,7 @@ class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit LMStudioConfigureWidget(LMStudioManager *manager, QWidget *parent = nullptr);
+    explicit LMStudioConfigureWidget(LMStudioManager *manager, LMStudioPlugin *plugin, QWidget *parent = nullptr);
     ~LMStudioConfigureWidget() override;
 
     void loadSettings();
