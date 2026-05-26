@@ -8,6 +8,7 @@
 #include "lmstudiomanager.h"
 
 #include "lmstudioconfigurewidget.h"
+#include "lmstudioplugin.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -22,9 +23,9 @@ const char myLMStudioConfigureDialogGroupName[] = "LMStudioConfigureDialog";
 }
 
 using namespace Qt::Literals::StringLiterals;
-LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, QWidget *parent)
+LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, LMStudioPlugin *plugin, QWidget *parent)
     : KPageDialog(parent)
-    , mConfigureWidget(new LMStudioConfigureWidget(manager, this))
+    , mConfigureWidget(new LMStudioConfigureWidget(manager, plugin, this))
     , mModelInstalledWidget(new LMStudioModelInstalledWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure LMStudio"));

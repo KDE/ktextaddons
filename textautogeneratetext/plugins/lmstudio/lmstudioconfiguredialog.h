@@ -10,11 +10,12 @@
 #include <KPageDialog>
 class LMStudioConfigureWidget;
 class LMStudioManager;
+class LMStudioPlugin;
 class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioConfigureDialog : public KPageDialog
 {
     Q_OBJECT
 public:
-    explicit LMStudioConfigureDialog(LMStudioManager *manager, QWidget *parent = nullptr);
+    explicit LMStudioConfigureDialog(LMStudioManager *manager, LMStudioPlugin *plugin, QWidget *parent = nullptr);
     ~LMStudioConfigureDialog() override;
 
 private:

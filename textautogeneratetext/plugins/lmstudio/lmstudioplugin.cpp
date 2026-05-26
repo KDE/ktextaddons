@@ -94,7 +94,7 @@ QString LMStudioPlugin::translatedPluginName() const
 void LMStudioPlugin::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget)
-    LMStudioConfigureDialog d(mLMStudioManager, parentWidget);
+    LMStudioConfigureDialog d(mLMStudioManager, this, parentWidget);
     if (d.exec()) {
         Q_EMIT configChanged();
     }
@@ -206,6 +206,45 @@ QString LMStudioPlugin::passwordServiceName() const
     return QStringLiteral("LMStudioPluginAutoGenerateText");
 }
 
+TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMStudioPlugin::activateInstanceAction()
+{
+#if 0
+    if (mCurrentAction) {
+        delete mCurrentAction;
+        mCurrentAction = nullptr;
+    }
+    TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo;
+    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
+    if (ollamaPath.isEmpty()) {
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
+        activateInstanceInfo.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
+#else
+        activateInstanceInfo.text = i18n("Ollama not found on system. Please install it.");
+        auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
+        downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
+        connect(downloadOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotDownloadOllama);
+        mCurrentAction = downloadOllamaAction;
+#endif
+    } else {
+        auto startOllamaAction = new QAction(i18nc("@action", "Start Ollama"), this);
+        startOllamaAction->setObjectName(u"startOllamaAction"_s);
+        connect(startOllamaAction, &QAction::triggered, this, &LMStudioPlugin::slotLMStudioRequested);
+        mCurrentAction = startOllamaAction;
+    }
+    activateInstanceInfo.action = mCurrentAction;
+    return activateInstanceInfo;
+#else
+    return {};
+#endif
+}
+
+void LMStudioPlugin::slotLMStudioRequested()
+{
+#if 0
+    mLMStudioManager->startLMStudio();
+#endif
+}
+
 void LMStudioPlugin::loadApiKey()
 {
     auto readJob = new QKeychain::ReadPasswordJob(passwordServiceName());
@@ -227,7 +266,7 @@ void LMStudioPlugin::removeApiKey()
 {
     auto deleteJob = new QKeychain::DeletePasswordJob(passwordServiceName());
     deleteJob->setKey(QString::fromLatin1(instanceUuid()));
-    connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
+    connect(deleteJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::DeletePasswordJob *>(baseJob);
         if (!job) {
             qCWarning(AUTOGENERATETEXT_LMSTUDIO_PLUGIN_LOG) << "Invalid job cast in removeApiKey";
