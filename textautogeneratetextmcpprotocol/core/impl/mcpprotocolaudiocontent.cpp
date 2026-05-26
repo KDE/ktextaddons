@@ -16,7 +16,7 @@ McpProtocolAudioContent::~McpProtocolAudioContent() = default;
 
 QByteArray McpProtocolAudioContent::type()
 {
-    return QByteArrayLiteral("audio");
+    return "audio"_ba;
 }
 
 bool McpProtocolAudioContent::operator==(const McpProtocolAudioContent &other) const = default;

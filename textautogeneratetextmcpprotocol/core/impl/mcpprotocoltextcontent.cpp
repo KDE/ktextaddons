@@ -18,7 +18,7 @@ McpProtocolTextContent::~McpProtocolTextContent() = default;
 
 QByteArray McpProtocolTextContent::type()
 {
-    return QByteArrayLiteral("text");
+    return "text"_ba;
 }
 
 bool McpProtocolTextContent::operator==(const McpProtocolTextContent &other) const = default;

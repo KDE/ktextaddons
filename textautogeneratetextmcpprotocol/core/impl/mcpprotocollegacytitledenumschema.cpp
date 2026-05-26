@@ -29,7 +29,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QByteArray McpProtocolLegacyTitledEnumSchema::type()
 {
-    return QByteArrayLiteral("string");
+    return "string"_ba;
 }
 
 McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(const QJsonObject &obj)

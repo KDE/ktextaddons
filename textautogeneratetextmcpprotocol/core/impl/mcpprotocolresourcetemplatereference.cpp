@@ -16,7 +16,7 @@ McpProtocolResourceTemplateReference::~McpProtocolResourceTemplateReference() = 
 
 QByteArray McpProtocolResourceTemplateReference::type()
 {
-    return QByteArrayLiteral("ref/resource");
+    return "ref/resource"_ba;
 }
 
 bool McpProtocolResourceTemplateReference::operator==(const McpProtocolResourceTemplateReference &other) const = default;

@@ -19,7 +19,7 @@ bool McpProtocolResourceLink::operator==(const McpProtocolResourceLink &other) c
 
 QByteArray McpProtocolResourceLink::type()
 {
-    return QByteArrayLiteral("resource_link");
+    return "resource_link"_ba;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceLink &t)

@@ -27,7 +27,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QByteArray McpProtocolUntitledSingleSelectEnumSchema::type()
 {
-    return QByteArrayLiteral("string");
+    return "string"_ba;
 }
 
 McpProtocolUntitledSingleSelectEnumSchema McpProtocolUntitledSingleSelectEnumSchema::fromJson(const QJsonObject &obj)
