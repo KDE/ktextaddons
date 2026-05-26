@@ -5,19 +5,85 @@
 */
 
 #include "whatsnewngwidget.h"
+#include "whatsnew/whatsnewcomboboxwidget.h"
 #include <KAboutData>
+#include <KLocalizedString>
+#include <QDebug>
+#include <QTextBrowser>
 #include <QVBoxLayout>
+namespace
+{
+constexpr int allVersion = -1;
+}
 using namespace TextAddonsWidgets;
-WhatsNewNgWidget::WhatsNewNgWidget(const QString &applicationName, QWidget *parent)
+WhatsNewNgWidget::WhatsNewNgWidget(const QString &applicationId, QWidget *parent)
     : QWidget{parent}
+    , mLabelInfo(new QTextBrowser(this))
+    , mWhatsNewComboBoxWidget(new WhatsNewComboBoxWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    const KAboutData aboutData = KAboutData::fromAppStreamId(applicationName);
-    // TODO
+    mWhatsNewComboBoxWidget->setObjectName(QStringLiteral("mWhatsNewComboBoxWidget"));
+    mainLayout->addWidget(mWhatsNewComboBoxWidget);
+    connect(mWhatsNewComboBoxWidget, &WhatsNewComboBoxWidget::versionChanged, this, &WhatsNewNgWidget::slotVersionChanged);
+
+    mLabelInfo->setObjectName(QStringLiteral("mLabelInfo"));
+    mLabelInfo->setReadOnly(true);
+    mLabelInfo->setOpenExternalLinks(true);
+    mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
+    mainLayout->addWidget(mLabelInfo);
+    initialize(applicationId);
+    qDebug() << " applicationName **** " << applicationId;
 }
 
 WhatsNewNgWidget::~WhatsNewNgWidget() = default;
+
+void WhatsNewNgWidget::initialize(const QString &applicationId)
+{
+    const KAboutData aboutData = applicationId.isEmpty() ? KAboutData::fromAppStreamForApplication() : KAboutData::fromAppStreamId(applicationId);
+    qDebug() << " aboutData " << aboutData.releases().count();
+    mAboutRelease = aboutData.releases();
+    mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
+    for (int i = mAboutRelease.count() - 1; i >= 0; i--) {
+        const auto &info = mAboutRelease.at(i);
+        mWhatsNewComboBoxWidget->addVersion(i18n("Version %1", info.version()), i);
+    }
+}
+
+void WhatsNewNgWidget::slotVersionChanged(int type)
+{
+    if (mAboutRelease.isEmpty()) {
+        mLabelInfo->clear();
+        return;
+    }
+    if (type == allVersion) { // All
+        QString message;
+        for (int i = mAboutRelease.count() - 1; i >= 0; i--) {
+            const auto &info = mAboutRelease.at(i);
+            message += generateVersionHeader(i);
+            message += info.description();
+        }
+        mLabelInfo->setHtml(generateStartEndHtml(message));
+    } else if (type >= 0 && type < mAboutRelease.count()) {
+        const QString message = generateStartEndHtml(mAboutRelease.at(type).description());
+        mLabelInfo->setHtml(message);
+    }
+}
+
+QString WhatsNewNgWidget::generateVersionHeader(int type) const
+{
+    if (type != allVersion) {
+        return i18n("<h1><i> Version %1 </i></h1><hr/><br>", mAboutRelease.at(type).version());
+    }
+    return {};
+}
+
+QString WhatsNewNgWidget::generateStartEndHtml(const QString &str) const
+{
+    const QString message = QStringLiteral("<qt>") + str + QStringLiteral("</qt>");
+    return message;
+}
+
 #include "moc_whatsnewngwidget.cpp"

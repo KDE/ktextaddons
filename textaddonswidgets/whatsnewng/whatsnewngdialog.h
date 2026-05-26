@@ -30,7 +30,7 @@ public:
      * \param parent The parent widget
      * \param applicationName The name of the application
      */
-    explicit WhatsNewNgDialog(QWidget *parent = nullptr, const QString &applicationName = QCoreApplication::applicationName());
+    explicit WhatsNewNgDialog(QWidget *parent = nullptr, const QString &applicationId = {});
     /*!
      * \brief Destructor for WhatsNewDialog
      */
