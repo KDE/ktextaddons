@@ -33,13 +33,13 @@ LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, QWidg
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mConfigureWidget, generalPageName);
-    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
+    configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"://general-model"_s));
     mConfigureWidget->setObjectName(u"mLMStudioConfigureWidget"_s);
     addPage(configureGeneralWidgetPage);
 
     const QString modelInstalledPageName = i18nc("@title Preferences page name", "Installed model");
     auto configureInstalledModelWidgetPage = new KPageWidgetItem(mModelInstalledWidget, modelInstalledPageName);
-    configureInstalledModelWidgetPage->setIcon(QIcon::fromTheme(u"://ollama-general-model"_s));
+    configureInstalledModelWidgetPage->setIcon(QIcon::fromTheme(u"://general-model"_s));
     mModelInstalledWidget->setObjectName(u"mLMStudioModelInstalledWidget"_s);
     addPage(configureInstalledModelWidgetPage);
 
