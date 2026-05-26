@@ -25,7 +25,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QByteArray McpProtocolBooleanSchema::type()
 {
-    return QByteArrayLiteral("boolean");
+    return "boolean"_ba;
 }
 
 McpProtocolBooleanSchema McpProtocolBooleanSchema::fromJson(const QJsonObject &obj)
