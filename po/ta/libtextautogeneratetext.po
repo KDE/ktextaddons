@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:42+0000\n"
+"POT-Creation-Date: 2026-05-26 00:43+0000\n"
 "PO-Revision-Date: 2026-05-10 15:37+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -2330,32 +2330,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:166
+#: plugins/ollamacommon/ollamacommonreply.cpp:172
 #, kde-format
 msgid "Capabilities"
 msgstr "இயலுமைகள்"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Template"
 msgstr "வார்ப்புரு"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:169
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
 #, kde-format
 msgid "Modelfile"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:172
+#: plugins/ollamacommon/ollamacommonreply.cpp:178
 #, kde-format
 msgid "Parameters"
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:180
 #, kde-format
 msgid "Details"
 msgstr "விவரங்கள்"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
 msgid "Model Info"
 msgstr ""

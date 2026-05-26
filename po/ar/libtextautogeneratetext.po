@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:42+0000\n"
+"POT-Creation-Date: 2026-05-26 00:43+0000\n"
 "PO-Revision-Date: 2026-05-21 11:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2675,32 +2675,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "حجم نافذة السياق:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:166
+#: plugins/ollamacommon/ollamacommonreply.cpp:172
 #, kde-format
 msgid "Capabilities"
 msgstr "الإمكانيات"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:168
+#: plugins/ollamacommon/ollamacommonreply.cpp:174
 #, kde-format
 msgid "Template"
 msgstr "القالب"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:169
+#: plugins/ollamacommon/ollamacommonreply.cpp:175
 #, kde-format
 msgid "Modelfile"
 msgstr "ملف النمط"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:172
+#: plugins/ollamacommon/ollamacommonreply.cpp:178
 #, kde-format
 msgid "Parameters"
 msgstr "المعاملات"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:180
 #, kde-format
 msgid "Details"
 msgstr "التفاصيل"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:176
+#: plugins/ollamacommon/ollamacommonreply.cpp:182
 #, kde-format
 msgid "Model Info"
 msgstr "معلومات النموذج"
