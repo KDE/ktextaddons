@@ -28,11 +28,10 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewNgDialog : public QDialog
 public:
     /*!
      * \brief Constructor for WhatsNewDialogNg
-     * \param infos A list of WhatsNewInfo objects to display
      * \param parent The parent widget
      * \param applicationName The name of the application
      */
-    explicit WhatsNewNgDialog(QWidget *parent = nullptr);
+    explicit WhatsNewNgDialog(const QString &applicationName, QWidget *parent = nullptr);
     /*!
      * \brief Destructor for WhatsNewDialog
      */

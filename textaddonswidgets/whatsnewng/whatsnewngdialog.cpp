@@ -19,11 +19,11 @@ namespace
 const char myWhatsNewNgDialogNgGroupName[] = "WhatsNewNgDialogNg";
 }
 using namespace TextAddonsWidgets;
-WhatsNewNgDialog::WhatsNewNgDialog(QWidget *parent)
+WhatsNewNgDialog::WhatsNewNgDialog(const QString &applicationName, QWidget *parent)
     : QDialog(parent)
     , mWhatsNewWidget(new WhatsNewNgWidget(this))
 {
-    // TODO setWindowTitle(i18nc("@title:window", "What's new in %1", applicationName));
+    setWindowTitle(i18nc("@title:window", "What's new in %1", applicationName));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
