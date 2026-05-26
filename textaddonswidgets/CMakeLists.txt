@@ -90,6 +90,18 @@ target_sources(
         opensavedfilefolderwidget.cpp
         opensavedfilefolderwidget.h
 )
+
+if(WHATSNEWSNGSUPPORT)
+    target_sources(
+        KF6TextAddonsWidgets
+        PRIVATE
+            whatsnewng/whatsnewngdialog.cpp
+            whatsnewng/whatsnewngdialog.h
+            whatsnewng/whatsnewngwidget.h
+            whatsnewng/whatsnewngwidget.cpp
+    )
+endif()
+
 target_link_libraries(
     KF6TextAddonsWidgets
     PUBLIC
@@ -200,6 +212,16 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
     RELATIVE whatsnew
 )
 
+if(WHATSNEWSNGSUPPORT)
+    ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
+        HEADER_NAMES
+        WhatsNewNgDialog
+        REQUIRED_HEADERS TextAddonsWidgets_whatsnewng_HEADERS
+        PREFIX TextAddonsWidgets
+        RELATIVE whatsnewng
+    )
+endif()
+
 ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
     HEADER_NAMES
     PluginUtil
@@ -227,6 +249,7 @@ set(TEXTAUTOGENERATE_INCLUDES_FILES
     ${TextAddonsWidgets_quicksearchbar_HEADERS}
     ${TextAddonsWidgets_plugins_HEADERS}
     ${TextAddonsWidgets_misc_HEADERS}
+    ${TextAddonsWidgets_whatsnewng_HEADERS}
 )
 
 install(
@@ -245,6 +268,7 @@ install(
         ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
         ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
         ${TextAddonsWidgets_Camelcasemisc_HEADERS}
+        ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
@@ -284,5 +308,9 @@ if(BUILD_TESTING)
     add_subdirectory(needupdateversion/autotests)
     add_subdirectory(whatsnew/autotests)
     add_subdirectory(quicksearchbar/autotests)
+    if(WHATSNEWSNGSUPPORT)
+        add_subdirectory(whatsnewng/autotests)
+        add_subdirectory(whatsnewng/tests)
+    endif()
 endif()
 ecm_generate_qdoc(KF6TextAddonsWidgets textaddonswidgets.qdocconf)
