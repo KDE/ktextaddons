@@ -76,7 +76,8 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, QWidg
     mainLayout->addStretch(1);
 
     connect(mManager, &LMStudioManager::modelsLoadDone, this, [this](const LMStudioManager::ModelsInfo &modelinfo) {
-        // qDebug() << " LMStudioConfigureWidget::fillModels() " << modelinfo;
+    // qDebug() << " LMStudioConfigureWidget::fillModels() " << modelinfo;
+#if 0 // TODO PORT IT
         if (modelinfo.hasError) {
             mMessageWidget->setMessageInfo(modelinfo.errorOccured);
             mMessageWidget->animatedShow();
@@ -85,6 +86,7 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, QWidg
             // mModelComboBoxWidget->setModels(modelinfo.models);
             Q_EMIT lmStudioProcessOk(true);
         }
+#endif
     });
     connect(mName, &QLineEdit::textChanged, this, [this](const QString &str) {
         Q_EMIT enableOkButton(!str.trimmed().isEmpty());
