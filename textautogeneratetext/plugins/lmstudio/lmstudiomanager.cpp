@@ -197,6 +197,12 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getChatCompletion(
     return reply;
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return nullptr;
+}
+
 bool LMStudioManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
 {
     if (modelName.isEmpty()) {
