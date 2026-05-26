@@ -6,7 +6,6 @@
 #pragma once
 
 #include "textaddonswidgets_export.h"
-#include <TextAddonsWidgets/WhatsNewInfo>
 
 #include <QCoreApplication>
 #include <QDialog>
@@ -31,7 +30,7 @@ public:
      * \param parent The parent widget
      * \param applicationName The name of the application
      */
-    explicit WhatsNewNgDialog(const QString &applicationName, QWidget *parent = nullptr);
+    explicit WhatsNewNgDialog(QWidget *parent = nullptr, const QString &applicationName = QCoreApplication::applicationName());
     /*!
      * \brief Destructor for WhatsNewDialog
      */

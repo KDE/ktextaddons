@@ -19,7 +19,7 @@ namespace
 const char myWhatsNewNgDialogNgGroupName[] = "WhatsNewNgDialogNg";
 }
 using namespace TextAddonsWidgets;
-WhatsNewNgDialog::WhatsNewNgDialog(const QString &applicationName, QWidget *parent)
+WhatsNewNgDialog::WhatsNewNgDialog(QWidget *parent, const QString &applicationName)
     : QDialog(parent)
     , mWhatsNewWidget(new WhatsNewNgWidget(applicationName, this))
 {
