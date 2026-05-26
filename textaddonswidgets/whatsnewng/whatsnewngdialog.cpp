@@ -21,7 +21,7 @@ const char myWhatsNewNgDialogNgGroupName[] = "WhatsNewNgDialogNg";
 using namespace TextAddonsWidgets;
 WhatsNewNgDialog::WhatsNewNgDialog(const QString &applicationName, QWidget *parent)
     : QDialog(parent)
-    , mWhatsNewWidget(new WhatsNewNgWidget(this))
+    , mWhatsNewWidget(new WhatsNewNgWidget(applicationName, this))
 {
     setWindowTitle(i18nc("@title:window", "What's new in %1", applicationName));
     auto mainLayout = new QVBoxLayout(this);
@@ -55,11 +55,6 @@ void WhatsNewNgDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myWhatsNewNgDialogNgGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
-}
-
-void WhatsNewNgDialog::updateInformations()
-{
-    // mWhatsNewWidget->updateInformations();
 }
 
 #include "moc_whatsnewngdialog.cpp"

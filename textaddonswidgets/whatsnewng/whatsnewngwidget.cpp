@@ -8,14 +8,15 @@
 #include <KAboutData>
 #include <QVBoxLayout>
 using namespace TextAddonsWidgets;
-WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent)
+WhatsNewNgWidget::WhatsNewNgWidget(const QString &applicationName, QWidget *parent)
     : QWidget{parent}
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    const KAboutData about = KAboutData::fromAppStreamForApplication();
+    const KAboutData aboutData = KAboutData::fromAppStreamId(applicationName);
+    // TODO
 }
 
 WhatsNewNgWidget::~WhatsNewNgWidget() = default;

@@ -37,11 +37,6 @@ public:
      */
     ~WhatsNewNgDialog() override;
 
-    /*!
-     * \brief Updates the WhatsNew information display
-     */
-    void updateInformations();
-
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void readConfig();
     TEXTADDONSWIDGETS_NO_EXPORT void writeConfig();

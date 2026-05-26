@@ -14,7 +14,7 @@ class WhatsNewNgWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WhatsNewNgWidget(QWidget *parent = nullptr);
+    explicit WhatsNewNgWidget(const QString &applicationName, QWidget *parent = nullptr);
     ~WhatsNewNgWidget() override;
 };
 }
