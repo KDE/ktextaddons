@@ -29,3 +29,4 @@ macro(add_lmstudio_plugin_unittest _source)
 endmacro()
 
 add_lmstudio_plugin_unittest(lmstudiomodelinstalledinfotest.cpp)
+add_lmstudio_plugin_unittest(lmstudiocommonutilstest.cpp)

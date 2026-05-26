@@ -9,6 +9,7 @@
 #include "autogeneratetext_lmstudio_debug.h"
 #include "autogeneratetext_lmstudio_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
+#include "lmstudiocommonutils.h"
 #include "lmstudioreply.h"
 #include "lmstudiosettings.h"
 #include "modelsmanager/lmstudiomodelinstalledinfo.h"
@@ -19,7 +20,6 @@
 #include <QJsonObject>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-#include <qnetworkrequest.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -88,7 +88,7 @@ void LMStudioManager::loadModels()
     }
     mInstalledInfos.clear();
     QUrl url = mLMStudioSettings->serverUrl();
-    url.setPath(u"/api/v1/models"_s);
+    url.setPath(LMStudioCommonUtils::modelsPath());
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (!mApiKey.isEmpty()) {

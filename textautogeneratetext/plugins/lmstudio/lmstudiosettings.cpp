@@ -138,3 +138,5 @@ bool LMStudioSettings::operator==(const LMStudioSettings &other) const
     return other.mDisplayName == mDisplayName && other.mCurrentModel == mCurrentModel && other.mServerUrl == mServerUrl
         && mShareNameType == other.mShareNameType && mThoughtProcessing == other.mThoughtProcessing;
 }
+
+#include "moc_lmstudiosettings.cpp"
