@@ -34,6 +34,8 @@ target_sources(
         lmstudioreply.cpp
         lmstudiosettings.h
         lmstudiosettings.cpp
+        lmstudiocommonutils.cpp
+        lmstudiocommonutils.h
         modelsmanager/lmstudiomodelinstalledinfo.h
         modelsmanager/lmstudiomodelinstalledinfo.cpp
         modelsmanager/lmstudiomodelinstalledinfosmodel.cpp
