@@ -6,9 +6,6 @@
 #pragma once
 #include "textaddonswidgets_export.h"
 #include <KMessageWidget>
-#include <TextAddonsWidgets/WhatsNewInfo>
-
-#include <QCoreApplication>
 
 namespace TextAddonsWidgets
 {
@@ -26,10 +23,15 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewMessageNgWidget : public KMessageWidget
 public:
     /*!
      * \brief Constructor for WhatsNewMessageNgWidget
-     * \param parent The parent widget
-     * \param applicationName The name of the application
+     * \param applicationId
+     * \param applicationName
+     * \param parent
      */
     explicit WhatsNewMessageNgWidget(const QString &applicationId, const QString &applicationName, QWidget *parent = nullptr);
+    /*!
+     * \brief Constructor for WhatsNewMessageNgWidget
+     * \param parent
+     */
     explicit WhatsNewMessageNgWidget(QWidget *parent = nullptr);
     /*!
      * \brief Destructor for WhatsNewMessageNgWidget
