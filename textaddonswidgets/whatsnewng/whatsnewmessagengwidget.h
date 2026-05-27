@@ -8,7 +8,6 @@
 #include <KMessageWidget>
 #include <TextAddonsWidgets/WhatsNewInfo>
 
-#include <KAboutData>
 #include <QCoreApplication>
 
 namespace TextAddonsWidgets
@@ -37,15 +36,8 @@ public:
      */
     ~WhatsNewMessageNgWidget() override;
 
-    /*!
-     * \brief Sets the WhatsNew information to display
-     * \param release A list of WhatsNewInfo objects to display
-     */
-    void setWhatsNewRelease(const KAboutRelease &release);
-
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotLinkActivated(const QString &contents);
-    KAboutRelease mWhatsNewInfos;
     QString mApplicationName;
     QString mApplicationId;
 };
