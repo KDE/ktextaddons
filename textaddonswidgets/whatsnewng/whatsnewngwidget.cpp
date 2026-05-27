@@ -58,7 +58,7 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
     }
     if (type == allVersion) { // All
         QString message;
-        for (int i = mAboutRelease.count() - 1; i >= 0; i--) {
+        for (int i = 0; i < mAboutRelease.count(); i++) {
             const auto &info = mAboutRelease.at(i);
             message += generateVersionHeader(i);
             message += featuresChangeStr();
