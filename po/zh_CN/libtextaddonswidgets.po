@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-22 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -16,6 +16,16 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextaddonswidgets.pot\n"
 "X-Crowdin-File-ID: 49514\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -253,7 +263,7 @@ msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "版本："
 
-#: whatsnew/whatsnewdialog.cpp:26
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -269,12 +279,12 @@ msgstr "(显示新闻)"
 msgid "What's new in %2. %1"
 msgstr "%2. %1 的新功能"
 
-#: whatsnew/whatsnewwidget.cpp:45
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:48
 #, kde-format
 msgid "All Versions"
 msgstr "所有版本"
 
-#: whatsnew/whatsnewwidget.cpp:48
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "Version %1"
 msgstr "版本 %1"
@@ -294,7 +304,7 @@ msgstr "此版本新增的部分特性："
 msgid "Some bug fixing:"
 msgstr "修复的部分程序缺陷："
 
-#: whatsnew/whatsnewwidget.cpp:141
+#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:78
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"

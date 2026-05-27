@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-22 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:43+0000\n"
 "PO-Revision-Date: 2025-12-16 22:16+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.07.70\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -260,7 +270,7 @@ msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Версия:"
 
-#: whatsnew/whatsnewdialog.cpp:26
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -276,12 +286,12 @@ msgstr "(Показване на новото)"
 msgid "What's new in %2. %1"
 msgstr "Какво ново в %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:48
 #, kde-format
 msgid "All Versions"
 msgstr "Всички версии"
 
-#: whatsnew/whatsnewwidget.cpp:48
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "Version %1"
 msgstr "Версия %1"
@@ -301,7 +311,7 @@ msgstr "Някои от новите функции в тази версия в�
 msgid "Some bug fixing:"
 msgstr "Поправка на някои грешки:"
 
-#: whatsnew/whatsnewwidget.cpp:141
+#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:78
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr ""

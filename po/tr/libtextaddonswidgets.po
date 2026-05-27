@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-22 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:43+0000\n"
 "PO-Revision-Date: 2026-05-22 12:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 26.04.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -257,7 +267,7 @@ msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Sürüm:"
 
-#: whatsnew/whatsnewdialog.cpp:26
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -273,12 +283,12 @@ msgstr "(Haberleri Göster)"
 msgid "What's new in %2. %1"
 msgstr "%2 içinde neler yeni. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:48
 #, kde-format
 msgid "All Versions"
 msgstr "Tüm Sürümler"
 
-#: whatsnew/whatsnewwidget.cpp:48
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "Version %1"
 msgstr "Sürüm %1"
@@ -298,7 +308,7 @@ msgstr "Bu sürümdeki yeni özelliklerden bazıları:"
 msgid "Some bug fixing:"
 msgstr "Hata düzeltmeleri:"
 
-#: whatsnew/whatsnewwidget.cpp:141
+#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:78
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i>Sürüm %1 </i></h1><hr/><br>"
