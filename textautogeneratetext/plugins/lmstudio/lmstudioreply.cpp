@@ -35,6 +35,9 @@ LMStudioReply::LMStudioReply(QNetworkReply *netReply, RequestTypes requestType, 
         case RequestTypes::DownloadModel: {
             break;
         }
+        case RequestTypes::StreamingResponses: {
+            break;
+        }
         case RequestTypes::DeleteModel:
         case RequestTypes::CreateModel:
         case RequestTypes::Unknown:
@@ -83,6 +86,8 @@ TextAutoGenerateText::TextAutoGenerateReply::Response LMStudioReply::readRespons
     case RequestTypes::Unknown:
     case RequestTypes::ShowModelInfo:
     case RequestTypes::StreamingGenerate:
+        break;
+    case RequestTypes::StreamingResponses:
         break;
     case RequestTypes::StreamingChat:
         // qDebug() << " mTokens " << mTokens;
