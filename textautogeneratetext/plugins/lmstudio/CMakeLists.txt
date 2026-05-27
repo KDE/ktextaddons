@@ -36,6 +36,8 @@ target_sources(
         lmstudiosettings.cpp
         lmstudiocommonutils.cpp
         lmstudiocommonutils.h
+        lmstudiostartprocessjob.cpp
+        lmstudiostartprocessjob.h
         modelsmanager/lmstudiomodelinstalledinfo.h
         modelsmanager/lmstudiomodelinstalledinfo.cpp
         modelsmanager/lmstudiomodelinstalledinfosmodel.cpp

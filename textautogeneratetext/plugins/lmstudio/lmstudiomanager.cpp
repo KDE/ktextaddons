@@ -12,6 +12,7 @@
 #include "lmstudiocommonutils.h"
 #include "lmstudioreply.h"
 #include "lmstudiosettings.h"
+#include "lmstudiostartprocessjob.h"
 #include "modelsmanager/lmstudiomodelinstalledinfo.h"
 
 #include <KLocalizedString>
@@ -54,6 +55,33 @@ bool LMStudioManager::hasAudioSupport([[maybe_unused]] const QString &modelName)
 bool LMStudioManager::hasThinkSupport(const QString &modelName) const
 {
     return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning);
+}
+
+void LMStudioManager::startLMStudio()
+{
+    auto job = new LMStudioStartProcessJob(this, this);
+    connect(job, &LMStudioStartProcessJob::lmsStarted, this, [this]() {
+        Q_EMIT lmsStarted();
+    });
+    connect(job, &LMStudioStartProcessJob::lmsFailed, this, [this](const QString &errorStr) {
+        Q_EMIT lmsFailed(errorStr);
+    });
+    if (job->start()) {
+        mLMStudioStartProcessJob = job;
+    }
+}
+
+bool LMStudioManager::isLMStudioStarted() const
+{
+    return mLMStudioStartProcessJob != nullptr;
+}
+
+QByteArray LMStudioManager::lsmStudioOutputData() const
+{
+    if (mLMStudioStartProcessJob) {
+        return mLMStudioStartProcessJob->processOutputData();
+    }
+    return {};
 }
 
 LMStudioSettings *LMStudioManager::lmStudioSettings() const

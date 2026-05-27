@@ -16,6 +16,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class QDebug;
 class LMStudioSettings;
+class LMStudioStartProcessJob;
 class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
@@ -42,8 +43,14 @@ public:
     [[nodiscard]] bool hasAudioSupport(const QString &modelName) const;
     [[nodiscard]] bool hasThinkSupport(const QString &modelName) const;
 
+    void startLMStudio();
+
+    [[nodiscard]] QByteArray lsmStudioOutputData() const;
+    [[nodiscard]] bool isLMStudioStarted() const;
 Q_SIGNALS:
     void errorOccurred(QNetworkReply::NetworkError e);
+    void lmsStarted();
+    void lmsFailed(const QString &errorStr);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_NO_EXPORT bool hasCategorySupport(const QString &modelName,
@@ -51,5 +58,6 @@ private:
     QList<LMStudioModelInstalledInfo> mInstalledInfos;
     QString mApiKey;
     LMStudioSettings *const mLMStudioSettings;
+    LMStudioStartProcessJob *mLMStudioStartProcessJob = nullptr;
 };
 QDebug operator<<(QDebug d, const LMStudioManager &t);
