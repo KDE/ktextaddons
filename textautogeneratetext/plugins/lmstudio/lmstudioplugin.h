@@ -62,6 +62,7 @@ private:
     void slotLMStudioRequested();
     void slotLMStudioFailed(const QString &errorStr);
     void slotLMStudioStarted();
+    void slotDownloadLMStudio();
     LMStudioSettings *const mLMStudioSettings;
     LMStudioManager *const mLMStudioManager;
     QAction *mCurrentAction = nullptr;
