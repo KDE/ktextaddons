@@ -208,7 +208,6 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMS
         delete mCurrentAction;
         mCurrentAction = nullptr;
     }
-#if 1
     TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo;
     const QString lmsPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"lms"_s);
     if (lmsPath.isEmpty()) {
@@ -229,9 +228,6 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMS
     }
     activateInstanceInfo.action = mCurrentAction;
     return activateInstanceInfo;
-#else
-    return {};
-#endif
 }
 
 void LMStudioPlugin::slotDownloadLMStudio()
@@ -246,9 +242,7 @@ void LMStudioPlugin::slotDownloadLMStudio()
 
 void LMStudioPlugin::slotLMStudioRequested()
 {
-#if 0
     mLMStudioManager->startLMStudio();
-#endif
 }
 
 void LMStudioPlugin::loadApiKey()
