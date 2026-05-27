@@ -13,6 +13,7 @@
 #include "lmstudiomanager.h"
 #include "lmstudioreply.h"
 #include "lmstudiosettings.h"
+#include "misc/executableutils.h"
 #include <KLocalizedString>
 #include <qt6keychain/keychain.h>
 #include <qtpreprocessorsupport.h>
@@ -203,33 +204,43 @@ QString LMStudioPlugin::passwordServiceName() const
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMStudioPlugin::activateInstanceAction()
 {
-#if 0
     if (mCurrentAction) {
         delete mCurrentAction;
         mCurrentAction = nullptr;
     }
+#if 1
     TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo;
-    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
-    if (ollamaPath.isEmpty()) {
+    const QString lmsPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"lms"_s);
+    if (lmsPath.isEmpty()) {
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
-        activateInstanceInfo.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
+        activateInstanceInfo.text = i18n("LMStudio not found on system. Ask to your administrator system to install it.");
 #else
-        activateInstanceInfo.text = i18n("Ollama not found on system. Please install it.");
-        auto downloadOllamaAction = new QAction(i18nc("@action", "Download Ollama"), this);
-        downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
-        connect(downloadOllamaAction, &QAction::triggered, this, &OllamaPlugin::slotDownloadOllama);
+        activateInstanceInfo.text = i18n("LMStudio not found on system. Please install it.");
+        auto downloadLMSAction = new QAction(i18nc("@action", "Download LMStudio"), this);
+        downloadLMSAction->setObjectName(u"downloadLMSAction"_s);
+        connect(downloadLMSAction, &QAction::triggered, this, &LMStudioPlugin::slotDownloadLMStudio);
         mCurrentAction = downloadOllamaAction;
 #endif
     } else {
-        auto startOllamaAction = new QAction(i18nc("@action", "Start Ollama"), this);
-        startOllamaAction->setObjectName(u"startOllamaAction"_s);
-        connect(startOllamaAction, &QAction::triggered, this, &LMStudioPlugin::slotLMStudioRequested);
-        mCurrentAction = startOllamaAction;
+        auto startLMSAction = new QAction(i18nc("@action", "Start LMStudio"), this);
+        startLMSAction->setObjectName(u"startLMSAction"_s);
+        connect(startLMSAction, &QAction::triggered, this, &LMStudioPlugin::slotLMStudioRequested);
+        mCurrentAction = startLMSAction;
     }
     activateInstanceInfo.action = mCurrentAction;
     return activateInstanceInfo;
 #else
     return {};
+#endif
+}
+
+void LMStudioPlugin::slotDownloadLMStudio()
+{
+#ifdef Q_OS_WIN
+    QDesktopServices::openUrl(QUrl(u"https://lmstudio.ai/download?os=win32"_s));
+#endif
+#ifdef Q_OS_MACOS
+    QDesktopServices::openUrl(QUrl(u"https://lmstudio.ai/download?os=darwin"_s));
 #endif
 }
 
