@@ -44,7 +44,7 @@ void WhatsNewNgWidget::initialize(const QString &applicationId)
     const KAboutData aboutData = applicationId.isEmpty() ? KAboutData::fromAppStreamForApplication() : KAboutData::fromAppStreamId(applicationId);
     mAboutRelease = aboutData.releases();
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
-    for (int i = mAboutRelease.count() - 1; i >= 0; i--) {
+    for (int i = 0; i < mAboutRelease.count(); i++) {
         const auto &info = mAboutRelease.at(i);
         mWhatsNewComboBoxWidget->addVersion(i18n("Version %1", info.version()), i);
     }
