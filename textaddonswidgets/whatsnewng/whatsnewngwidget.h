@@ -18,7 +18,7 @@ class TEXTADDONSWIDGETS_TESTS_EXPORT WhatsNewNgWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WhatsNewNgWidget(const QString &applicationId, QWidget *parent = nullptr);
+    explicit WhatsNewNgWidget(QWidget *parent = nullptr, const QString &applicationId = {});
     ~WhatsNewNgWidget() override;
 
 private:

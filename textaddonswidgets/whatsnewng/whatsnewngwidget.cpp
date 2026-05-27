@@ -16,7 +16,7 @@ namespace
 constexpr int allVersion = -1;
 }
 using namespace TextAddonsWidgets;
-WhatsNewNgWidget::WhatsNewNgWidget(const QString &applicationId, QWidget *parent)
+WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent, const QString &applicationId)
     : QWidget{parent}
     , mLabelInfo(new QTextBrowser(this))
     , mWhatsNewComboBoxWidget(new WhatsNewComboBoxWidget(this))

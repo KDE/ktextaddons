@@ -30,13 +30,15 @@ public:
      * \param parent The parent widget
      * \param applicationName The name of the application
      */
-    explicit WhatsNewNgDialog(QWidget *parent = nullptr, const QString &applicationId = {});
+    explicit WhatsNewNgDialog(const QString &applicationId, const QString &applicationName, QWidget *parent = nullptr);
+    explicit WhatsNewNgDialog(QWidget *parent = nullptr);
     /*!
      * \brief Destructor for WhatsNewDialog
      */
     ~WhatsNewNgDialog() override;
 
 private:
+    TEXTADDONSWIDGETS_NO_EXPORT void initialize();
     TEXTADDONSWIDGETS_NO_EXPORT void readConfig();
     TEXTADDONSWIDGETS_NO_EXPORT void writeConfig();
     WhatsNewNgWidget *const mWhatsNewWidget;
