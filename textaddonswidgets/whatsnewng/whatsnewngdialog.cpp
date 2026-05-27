@@ -23,8 +23,7 @@ WhatsNewNgDialog::WhatsNewNgDialog(QWidget *parent, const QString &applicationId
     : QDialog(parent)
     , mWhatsNewWidget(new WhatsNewNgWidget(applicationId, this))
 {
-    // TODO fix me
-    setWindowTitle(i18nc("@title:window", "What's new in %1", applicationId));
+    setWindowTitle(i18nc("@title:window", "What's new in %1", applicationId.isEmpty() ? QCoreApplication::applicationName() : applicationId));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 

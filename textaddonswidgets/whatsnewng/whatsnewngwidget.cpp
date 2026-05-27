@@ -63,11 +63,13 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
         for (int i = mAboutRelease.count() - 1; i >= 0; i--) {
             const auto &info = mAboutRelease.at(i);
             message += generateVersionHeader(i);
+            message += featuresChangeStr();
             message += info.description();
         }
         mLabelInfo->setHtml(generateStartEndHtml(message));
     } else if (type >= 0 && type < mAboutRelease.count()) {
-        const QString message = generateStartEndHtml(mAboutRelease.at(type).description());
+        QString message = featuresChangeStr();
+        message += generateStartEndHtml(mAboutRelease.at(type).description());
         mLabelInfo->setHtml(message);
     }
 }
@@ -78,6 +80,11 @@ QString WhatsNewNgWidget::generateVersionHeader(int type) const
         return i18n("<h1><i> Version %1 </i></h1><hr/><br>", mAboutRelease.at(type).version());
     }
     return {};
+}
+
+QString WhatsNewNgWidget::featuresChangeStr() const
+{
+    return QStringLiteral("<b>") + i18n("Some of the new features in this release include:") + QStringLiteral("</b>");
 }
 
 QString WhatsNewNgWidget::generateStartEndHtml(const QString &str) const
