@@ -99,6 +99,8 @@ if(WHATSNEWSNGSUPPORT)
             whatsnewng/whatsnewngdialog.h
             whatsnewng/whatsnewngwidget.h
             whatsnewng/whatsnewngwidget.cpp
+            whatsnewng/whatsnewmessagengwidget.cpp
+            whatsnewng/whatsnewmessagengwidget.h
     )
 endif()
 
@@ -216,6 +218,7 @@ if(WHATSNEWSNGSUPPORT)
     ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
         HEADER_NAMES
         WhatsNewNgDialog
+        WhatsNewMessageNgWidget
         REQUIRED_HEADERS TextAddonsWidgets_whatsnewng_HEADERS
         PREFIX TextAddonsWidgets
         RELATIVE whatsnewng
