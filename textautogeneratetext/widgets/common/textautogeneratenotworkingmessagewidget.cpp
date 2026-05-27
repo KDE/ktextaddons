@@ -23,7 +23,9 @@ void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(QAction *act, const
         removeAction(mCurrentAction);
     }
     mCurrentAction = act;
-    addAction(act);
+    if (act) {
+        addAction(act);
+    }
     setText(errorMessage);
 }
 
