@@ -35,7 +35,6 @@ WhatsNewNgWidget::WhatsNewNgWidget(const QString &applicationId, QWidget *parent
     mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
     mainLayout->addWidget(mLabelInfo);
     initialize(applicationId);
-    qDebug() << " applicationName **** " << applicationId;
 }
 
 WhatsNewNgWidget::~WhatsNewNgWidget() = default;
@@ -43,7 +42,6 @@ WhatsNewNgWidget::~WhatsNewNgWidget() = default;
 void WhatsNewNgWidget::initialize(const QString &applicationId)
 {
     const KAboutData aboutData = applicationId.isEmpty() ? KAboutData::fromAppStreamForApplication() : KAboutData::fromAppStreamId(applicationId);
-    qDebug() << " aboutData " << aboutData.releases().count();
     mAboutRelease = aboutData.releases();
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
     for (int i = mAboutRelease.count() - 1; i >= 0; i--) {
