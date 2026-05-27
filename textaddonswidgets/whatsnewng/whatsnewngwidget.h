@@ -18,11 +18,13 @@ class TEXTADDONSWIDGETS_TESTS_EXPORT WhatsNewNgWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WhatsNewNgWidget(QWidget *parent = nullptr, const QString &applicationId = {});
+    explicit WhatsNewNgWidget(QWidget *parent = nullptr);
     ~WhatsNewNgWidget() override;
 
+    void setReleases(const QList<KAboutRelease> &info);
+
 private:
-    TEXTADDONSWIDGETS_NO_EXPORT void initialize(const QString &applicationName);
+    TEXTADDONSWIDGETS_NO_EXPORT void initialize();
     TEXTADDONSWIDGETS_NO_EXPORT void slotVersionChanged(int type);
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateVersionHeader(int type) const;
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateStartEndHtml(const QString &str) const;

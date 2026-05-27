@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textaddonswidgets_export.h"
+#include <KAboutData>
 #include <KMessageWidget>
 
 namespace TextAddonsWidgets
@@ -23,11 +24,10 @@ class TEXTADDONSWIDGETS_EXPORT WhatsNewMessageNgWidget : public KMessageWidget
 public:
     /*!
      * \brief Constructor for WhatsNewMessageNgWidget
-     * \param applicationId
      * \param applicationName
      * \param parent
      */
-    explicit WhatsNewMessageNgWidget(const QString &applicationId, const QString &applicationName, QWidget *parent = nullptr);
+    explicit WhatsNewMessageNgWidget(const QString &applicationName, QWidget *parent = nullptr);
     /*!
      * \brief Constructor for WhatsNewMessageNgWidget
      * \param parent
@@ -37,10 +37,15 @@ public:
      * \brief Destructor for WhatsNewMessageNgWidget
      */
     ~WhatsNewMessageNgWidget() override;
+    /*!
+     * \brief setReleases
+     * \param info
+     */
+    void setReleases(const QList<KAboutRelease> &info);
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotLinkActivated(const QString &contents);
     QString mApplicationName;
-    QString mApplicationId;
+    QList<KAboutRelease> mReleasesInfo;
 };
 }

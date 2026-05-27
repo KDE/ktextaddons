@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KWindowConfig>
+#include <QCoreApplication>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
@@ -19,9 +20,9 @@ namespace
 const char myWhatsNewNgDialogNgGroupName[] = "WhatsNewNgDialogNg";
 }
 using namespace TextAddonsWidgets;
-WhatsNewNgDialog::WhatsNewNgDialog(const QString &applicationId, const QString &applicationName, QWidget *parent)
+WhatsNewNgDialog::WhatsNewNgDialog(const QString &applicationName, QWidget *parent)
     : QDialog(parent)
-    , mWhatsNewWidget(new WhatsNewNgWidget(this, applicationId))
+    , mWhatsNewWidget(new WhatsNewNgWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "What's new in %1", applicationName));
     initialize();
@@ -33,6 +34,11 @@ WhatsNewNgDialog::WhatsNewNgDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "What's new in %1", QCoreApplication::applicationName()));
     initialize();
+}
+
+void WhatsNewNgDialog::setReleases(const QList<KAboutRelease> &info)
+{
+    mWhatsNewWidget->setReleases(info);
 }
 
 void WhatsNewNgDialog::initialize()

@@ -16,7 +16,7 @@ namespace
 constexpr int allVersion = -1;
 }
 using namespace TextAddonsWidgets;
-WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent, const QString &applicationId)
+WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent)
     : QWidget{parent}
     , mLabelInfo(new QTextBrowser(this))
     , mWhatsNewComboBoxWidget(new WhatsNewComboBoxWidget(this))
@@ -34,15 +34,18 @@ WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent, const QString &applicationId
     mLabelInfo->setOpenExternalLinks(true);
     mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
     mainLayout->addWidget(mLabelInfo);
-    initialize(applicationId);
 }
 
 WhatsNewNgWidget::~WhatsNewNgWidget() = default;
 
-void WhatsNewNgWidget::initialize(const QString &applicationId)
+void WhatsNewNgWidget::setReleases(const QList<KAboutRelease> &info)
 {
-    const KAboutData aboutData = applicationId.isEmpty() ? KAboutData::fromAppStreamForApplication() : KAboutData::fromAppStreamId(applicationId);
-    mAboutRelease = aboutData.releases();
+    mAboutRelease = info;
+    initialize();
+}
+
+void WhatsNewNgWidget::initialize()
+{
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
     for (int i = 0; i < mAboutRelease.count(); i++) {
         const auto &info = mAboutRelease.at(i);

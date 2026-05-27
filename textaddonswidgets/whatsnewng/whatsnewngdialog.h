@@ -7,8 +7,9 @@
 
 #include "textaddonswidgets_export.h"
 
-#include <QCoreApplication>
+#include <KAboutData>
 #include <QDialog>
+#include <QList>
 
 namespace TextAddonsWidgets
 {
@@ -29,9 +30,8 @@ public:
      * \brief Constructor for WhatsNewDialogNg
      * \param parent The parent widget
      * \param applicationName The name of the application
-     * \param applicationId The applicationId of the application
      */
-    explicit WhatsNewNgDialog(const QString &applicationId, const QString &applicationName, QWidget *parent = nullptr);
+    explicit WhatsNewNgDialog(const QString &applicationName, QWidget *parent = nullptr);
     /*!
      * \brief Constructor for WhatsNewDialogNg
      * \param parent The parent widget
@@ -41,6 +41,12 @@ public:
      * \brief Destructor for WhatsNewDialog
      */
     ~WhatsNewNgDialog() override;
+
+    /*!
+     * \brief setReleases
+     * \param info
+     */
+    void setReleases(const QList<KAboutRelease> &info);
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void initialize();
