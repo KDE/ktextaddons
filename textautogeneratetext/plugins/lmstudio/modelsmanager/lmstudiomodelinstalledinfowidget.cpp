@@ -18,4 +18,9 @@ LMStudioModelInstalledInfoWidget::LMStudioModelInstalledInfoWidget(QWidget *pare
 
 LMStudioModelInstalledInfoWidget::~LMStudioModelInstalledInfoWidget() = default;
 
+void LMStudioModelInstalledInfoWidget::setOllamaModelInstalledInfo(const LMStudioModelInstalledInfo &info)
+{
+    // TODO
+}
+
 #include "moc_lmstudiomodelinstalledinfowidget.cpp"

@@ -24,6 +24,7 @@ public:
     ~LMStudioModelInstalledWidget() override;
 
 private:
+    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotClicked(const QModelIndex &index);
     TextAutoGenerateText::TextAutoGenerateModelAvailableListView *const mInstalledListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     LMStudioModelInstalledInfosModel *const mInstalledInfosModel;

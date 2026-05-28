@@ -13,6 +13,7 @@
 #include "plugincommonmodelinstalledinfossortproxymodel.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
+#include <QScrollArea>
 #include <QSplitter>
 #include <QVBoxLayout>
 
@@ -26,16 +27,16 @@ LMStudioModelInstalledWidget::LMStudioModelInstalledWidget(LMStudioManager *mana
     , mInstalledInfoWidget(new LMStudioModelInstalledInfoWidget(this))
     , mManager(manager)
 {
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(u"mainlayout"_s);
+    mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
+
     mInstalledListView->setItemDelegate(new PluginCommonModelInstalledInfosDelegate(mInstalledListView));
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
     splitter->setObjectName(u"splitter"_s);
     splitter->setChildrenCollapsible(false);
-
-    auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(u"mainlayout"_s);
-    mainLayout->setContentsMargins({});
-    mainLayout->setSpacing(0);
 
     mainLayout->addWidget(splitter);
 
@@ -58,13 +59,34 @@ LMStudioModelInstalledWidget::LMStudioModelInstalledWidget(LMStudioManager *mana
 
     splitter->addWidget(widget);
 
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setObjectName(u"scrollArea"_s);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    splitter->addWidget(scrollArea);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setWidget(mInstalledInfoWidget);
+    scrollArea->hide();
     mInstalledInfoWidget->setObjectName(u"mInstalledInfoWidget"_s);
-    splitter->addWidget(mInstalledInfoWidget);
+
     connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [this](const QString &str) {
         mProxyModel->setFilterFixedString(str);
+    });
+    connect(mInstalledListView, &TextAutoGenerateText::TextAutoGenerateModelAvailableListView::pressed, this, &LMStudioModelInstalledWidget::slotClicked);
+    connect(mInstalledListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, scrollArea]() {
+        const bool isEnabled = mInstalledListView->currentIndex().isValid();
+        scrollArea->setVisible(isEnabled);
     });
 }
 
 LMStudioModelInstalledWidget::~LMStudioModelInstalledWidget() = default;
+
+void LMStudioModelInstalledWidget::slotClicked(const QModelIndex &index)
+{
+    if (index.isValid()) {
+        const LMStudioModelInstalledInfo info = index.data(LMStudioModelInstalledInfosModel::DescriptionInfo).value<LMStudioModelInstalledInfo>();
+        mInstalledInfoWidget->setOllamaModelInstalledInfo(info);
+    }
+}
 
 #include "moc_lmstudiomodelinstalledwidget.cpp"

@@ -260,6 +260,13 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
+    QUrl url = mOllamaSettings->serverUrl();
+    url.setPath(OllamaCommonUtils::responsesPath());
+    QNetworkRequest req{url};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    QJsonObject data;
+    data["model"_L1] = request.model();
+    // data["input"_L1] = ;
     // TODO
     return nullptr;
 }

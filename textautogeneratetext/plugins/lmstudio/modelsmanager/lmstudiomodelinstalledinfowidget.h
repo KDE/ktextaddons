@@ -7,11 +7,12 @@
 #pragma once
 #include "textautogeneratelmstudio_private_export.h"
 #include <QWidget>
-
+class LMStudioModelInstalledInfo;
 class TEXTAUTOGENERATELMSTUDIO_TESTS_EXPORT LMStudioModelInstalledInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit LMStudioModelInstalledInfoWidget(QWidget *parent = nullptr);
     ~LMStudioModelInstalledInfoWidget() override;
+    void setOllamaModelInstalledInfo(const LMStudioModelInstalledInfo &info);
 };
