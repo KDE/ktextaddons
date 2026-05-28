@@ -50,6 +50,8 @@ LMStudioPlugin::LMStudioPlugin(TextAutoGenerateText::TextAutoGenerateManager *ma
             Q_EMIT callTools(replyResponse.info);
         }
     });
+    connect(mLMStudioManager, &LMStudioManager::lmsStarted, this, &LMStudioPlugin::processStartSuccessed);
+    connect(mLMStudioManager, &LMStudioManager::lmsFailed, this, &LMStudioPlugin::processStartFailed);
 }
 
 LMStudioPlugin::~LMStudioPlugin()

@@ -45,7 +45,7 @@ bool LMStudioStartProcessJob::start()
 
     mProcess = new QProcess(this);
     mProcess->setProgram(lmsPath);
-    mProcess->setArguments({u"start"_s});
+    mProcess->setArguments({u"server"_s, u"start"_s});
     connect(mProcess, &QProcess::readyReadStandardOutput, this, &LMStudioStartProcessJob::slotReadStandardOutput);
     connect(mProcess, &QProcess::readyReadStandardError, this, &LMStudioStartProcessJob::slotReadStandardOutput);
     mProcess->start();
