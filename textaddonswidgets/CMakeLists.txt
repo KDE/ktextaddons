@@ -101,6 +101,8 @@ if(WHATSNEWSNGSUPPORT)
             whatsnewng/whatsnewngwidget.cpp
             whatsnewng/whatsnewmessagengwidget.cpp
             whatsnewng/whatsnewmessagengwidget.h
+            whatsnewng/whatsnewngutils.h
+            whatsnewng/whatsnewngutils.cpp
     )
 endif()
 
@@ -219,6 +221,7 @@ if(WHATSNEWSNGSUPPORT)
         HEADER_NAMES
         WhatsNewNgDialog
         WhatsNewMessageNgWidget
+        WhatsNewNgUtils
         REQUIRED_HEADERS TextAddonsWidgets_whatsnewng_HEADERS
         PREFIX TextAddonsWidgets
         RELATIVE whatsnewng
