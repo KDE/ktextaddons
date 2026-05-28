@@ -19,6 +19,11 @@ find_dependency(
 )
 
 find_dependency(
+    Qt6Sql
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
     KF6TextAddonsWidgets
     "@KTEXTADDONS_CURRENT_VERSION@"
 )

@@ -448,8 +448,8 @@ target_link_libraries(
         KF6::TextAddonsWidgets
         KF6::TextAutoGenerateTextMcpProtocolCore
         KF6::I18n
-    PRIVATE
         Qt::Sql
+    PRIVATE
         KF6::WidgetsAddons
         KF6::TextWidgets
         KF6::ColorScheme
