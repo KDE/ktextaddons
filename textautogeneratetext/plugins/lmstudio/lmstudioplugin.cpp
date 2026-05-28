@@ -15,6 +15,7 @@
 #include "lmstudiosettings.h"
 #include "misc/executableutils.h"
 #include <KLocalizedString>
+#include <QDesktopServices>
 #include <qt6keychain/keychain.h>
 #include <qtpreprocessorsupport.h>
 
@@ -220,7 +221,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMS
         auto downloadLMSAction = new QAction(i18nc("@action", "Download LMStudio"), this);
         downloadLMSAction->setObjectName(u"downloadLMSAction"_s);
         connect(downloadLMSAction, &QAction::triggered, this, &LMStudioPlugin::slotDownloadLMStudio);
-        mCurrentAction = downloadOllamaAction;
+        mCurrentAction = downloadLMSAction;
 #endif
     } else {
         auto startLMSAction = new QAction(i18nc("@action", "Start LMStudio"), this);
