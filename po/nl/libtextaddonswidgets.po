@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:43+0000\n"
-"PO-Revision-Date: 2026-05-22 11:15+0200\n"
+"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"PO-Revision-Date: 2026-05-27 12:07+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Freek de Kruijf - 2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "freekdekruijf@kde.nl"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -270,27 +270,32 @@ msgid "Version:"
 msgstr "Versie:"
 
 #: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#: whatsnewng/whatsnewngdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
 msgstr "Wat is er nieuw in %1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "(Show News)"
 msgstr "(Nieuws tonen)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "Wat is er nieuw in %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:48
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr "Alle versies"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
 #, kde-format
 msgid "Version %1"
 msgstr "Versie %1"
@@ -300,7 +305,7 @@ msgstr "Versie %1"
 msgid "Important changes since last version:"
 msgstr "Belangrijke wijzigingen sinds de laatste versie:"
 
-#: whatsnew/whatsnewwidget.cpp:98
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Enige van de nieuwe functies in deze uitgave omvatten:"
@@ -310,7 +315,7 @@ msgstr "Enige van de nieuwe functies in deze uitgave omvatten:"
 msgid "Some bug fixing:"
 msgstr "Enig repareren van bugs:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:78
+#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Versie %1 </i></h1><hr/><br>"

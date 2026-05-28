@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:43+0000\n"
+"POT-Creation-Date: 2026-05-28 00:42+0000\n"
 "PO-Revision-Date: 2025-12-16 22:16+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -271,27 +271,32 @@ msgid "Version:"
 msgstr "Версия:"
 
 #: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#: whatsnewng/whatsnewngdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
 msgstr "Какво ново в %1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "(Show News)"
 msgstr "(Показване на новото)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "Какво ново в %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:48
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr "Всички версии"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
 #, kde-format
 msgid "Version %1"
 msgstr "Версия %1"
@@ -301,7 +306,7 @@ msgstr "Версия %1"
 msgid "Important changes since last version:"
 msgstr "Важни промени от последната версия:"
 
-#: whatsnew/whatsnewwidget.cpp:98
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Някои от новите функции в тази версия включват:"
@@ -311,7 +316,7 @@ msgstr "Някои от новите функции в тази версия в�
 msgid "Some bug fixing:"
 msgstr "Поправка на някои грешки:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:78
+#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr ""
