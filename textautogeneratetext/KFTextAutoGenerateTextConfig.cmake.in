@@ -4,8 +4,32 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 find_dependency(
+    Qt6Core
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
+    Qt6Gui
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
+    Qt6Network
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
     KF6TextAddonsWidgets
     "@KTEXTADDONS_CURRENT_VERSION@"
+)
+
+find_dependency(
+    KF6Config
+    "@KF_MIN_VERSION@"
+)
+find_dependency(
+    KF6I18n
+    "@KF_MIN_VERSION@"
 )
 
 find_dependency(

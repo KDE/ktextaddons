@@ -401,10 +401,12 @@ install(
 
 target_link_libraries(
     KF6TextAutoGenerateTextMcpProtocolCore
-    Qt::Core
-    KF6::CoreAddons
-    KF6::ConfigCore
-    KF6::I18n
+    PUBLIC
+        Qt::Core
+        KF6::CoreAddons
+    PRIVATE
+        KF6::ConfigCore
+        KF6::I18n
 )
 
 set_target_properties(
