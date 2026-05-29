@@ -28,7 +28,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificationParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolLoggingMessageNotificationParams params;
-    params.setData(obj.value("data"_L1).toString());
+    params.setData(obj.value("data"_L1));
     if (obj.contains("level"_L1) && obj["level"_L1].isString()) {
         params.setLevel(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelFromString(obj["level"_L1].toString()));
     }
@@ -44,7 +44,7 @@ McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificatio
 QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtocolLoggingMessageNotificationParams &params)
 {
     QJsonObject obj;
-    obj["data"_L1] = params.data();
+    obj["data"_L1] = params.data().isUndefined() ? QJsonValue::Null : params.data();
     obj["level"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(params.level());
     if (params.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*params.meta());
@@ -55,12 +55,12 @@ QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtoco
     return obj;
 }
 
-QString McpProtocolLoggingMessageNotificationParams::data() const
+QJsonValue McpProtocolLoggingMessageNotificationParams::data() const
 {
     return mData;
 }
 
-void McpProtocolLoggingMessageNotificationParams::setData(const QString &newData)
+void McpProtocolLoggingMessageNotificationParams::setData(const QJsonValue &newData)
 {
     mData = newData;
 }

@@ -29,7 +29,7 @@ McpProtocolError McpProtocolError::fromJson(const QJsonObject &obj)
     McpProtocolError error;
     error.setCode(obj.value("code"_L1).toInt());
     if (obj.contains("data"_L1)) {
-        error.setData(obj["data"_L1].toString());
+        error.setData(obj["data"_L1]);
     }
     error.setMessage(obj["message"_L1].toString());
     return error;
@@ -56,12 +56,12 @@ void McpProtocolError::setCode(int newCode)
     mCode = newCode;
 }
 
-std::optional<QString> McpProtocolError::data() const
+std::optional<QJsonValue> McpProtocolError::data() const
 {
     return mData;
 }
 
-void McpProtocolError::setData(std::optional<QString> newData)
+void McpProtocolError::setData(std::optional<QJsonValue> newData)
 {
     mData = std::move(newData);
 }

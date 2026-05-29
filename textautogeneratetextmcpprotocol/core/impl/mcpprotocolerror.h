@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
+#include <QJsonValue>
 #include <QObject>
 #include <QString>
 class QJsonObject;
@@ -42,10 +43,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<QString> data() const;
+    [[nodiscard]] std::optional<QJsonValue> data() const;
     /*!
      */
-    void setData(std::optional<QString> newData);
+    void setData(std::optional<QJsonValue> newData);
 
     /*!
      */
@@ -56,7 +57,7 @@ public:
 
 private:
     int mCode = 0;
-    std::optional<QString> mData;
+    std::optional<QJsonValue> mData;
     QString mMessage;
 };
 }
