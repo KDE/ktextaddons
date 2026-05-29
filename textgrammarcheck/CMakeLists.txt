@@ -127,8 +127,8 @@ target_link_libraries(
     PUBLIC
         Qt::Gui
         Qt::Widgets
-    PRIVATE
         Qt::Network
+    PRIVATE
         KF6::I18n
         KF6::WidgetsAddons
         KF6::ConfigCore

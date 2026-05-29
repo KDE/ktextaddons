@@ -3,4 +3,20 @@
 
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
+
+find_dependency(
+    Qt6Gui
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
+    Qt6Widgets
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
+    Qt6Network
+    "@QT_REQUIRED_VERSION@"
+)
+
 include("${CMAKE_CURRENT_LIST_DIR}/KF6TextGrammarCheckTargets.cmake")
