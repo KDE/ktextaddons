@@ -201,11 +201,8 @@ install(
 
 install(
     FILES
-        ${TextGrammarCheck_common_HEADERS}
         ${TextGrammarCheck_Camelcasecommon_HEADERS}
-        ${TextGrammarCheck_grammalecte_HEADERS}
         ${TextGrammarCheck_Camelcasegrammalecte_HEADERS}
-        ${TextGrammarCheck_languagetool_HEADERS}
         ${TextGrammarCheck_Camelcaselanguagetool_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/TextGrammarCheck
     COMPONENT Devel
