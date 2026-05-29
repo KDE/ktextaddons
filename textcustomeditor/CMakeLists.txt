@@ -63,14 +63,16 @@ target_sources(
 
 target_link_libraries(
     KF6TextCustomEditor
+    PUBLIC
+        Qt::Widgets
+        KF6::SyntaxHighlighting
+        KF6::SonnetUi
     PRIVATE
         KF6::ConfigGui
         KF6::ColorScheme
-        KF6::SonnetUi
         KF6::SonnetCore
         KF6::WidgetsAddons
         KF6::I18n
-        KF6::SyntaxHighlighting
         KF6::TextUtils
         KF6::TextEmoticonsWidgets
         KF6::TextAddonsWidgets
