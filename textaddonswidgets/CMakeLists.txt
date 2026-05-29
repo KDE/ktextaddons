@@ -112,6 +112,8 @@ target_link_libraries(
         Qt::Widgets
         KF6::WidgetsAddons
         KF6::Service
+        KF6::I18n
+        KF6::CoreAddons
     PRIVATE
         KF6::ConfigGui
         KF6::KIOCore
