@@ -171,10 +171,7 @@ install(
 install(
     FILES
         ${TextTranslator_Camelcasetranslatorwidgets_HEADERS}
-        ${TextTranslator_translatorwidgets_HEADERS}
         ${TextTranslator_Camelcasetranslatormisc_HEADERS}
-        ${TextTranslator_translatormisc_HEADERS}
-        ${TextTranslator_translator_HEADERS}
         ${TextTranslator_Camelcasetranslator_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/TextTranslator
     COMPONENT Devel
