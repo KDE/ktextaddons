@@ -38,7 +38,7 @@ McpProtocolGetPromptRequest McpProtocolGetPromptRequest::fromJson(const QJsonObj
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolGetPromptRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'prompts/get', got: " << obj.value("method"_L1).toString();
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolGetPromptRequestParams::fromJson(obj["params"_L1].toObject()));
