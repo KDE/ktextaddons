@@ -3212,14 +3212,3 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr ""
-#~ "Необходимо е да се извърши рестартиране, за да се приложат промените."
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Конфигуриране"
