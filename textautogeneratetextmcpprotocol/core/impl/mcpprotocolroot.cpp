@@ -31,7 +31,9 @@ McpProtocolRoot McpProtocolRoot::fromJson(const QJsonObject &obj)
         text.setName(obj.value("name"_L1).toString());
     }
     text.setUri(obj.value("uri"_L1).toString());
-    text.setMeta(McpProtocolMeta::fromJson(obj.value("_meta"_L1).toObject()));
+    if (obj.contains("_meta"_L1) && obj.value("_meta"_L1).isObject()) {
+        text.setMeta(McpProtocolMeta::fromJson(obj.value("_meta"_L1).toObject()));
+    }
     return text;
 }
 
