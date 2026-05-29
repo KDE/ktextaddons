@@ -37,7 +37,7 @@ McpProtocolProgressNotificationParams McpProtocolProgressNotificationParams::fro
     }
     prompt.setProgress(obj.value("progress"_L1).toDouble());
     if (obj.contains("progressToken"_L1)) {
-        prompt.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1].toObject()));
+        prompt.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
     }
     if (obj.contains("total"_L1)) {
         prompt.setTotal(obj.value("total"_L1).toDouble());

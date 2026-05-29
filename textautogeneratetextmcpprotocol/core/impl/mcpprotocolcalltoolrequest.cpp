@@ -41,7 +41,7 @@ McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObjec
         return {};
     }
     if (obj.contains("id"_L1)) {
-        prompt.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1].toObject()));
+        prompt.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
         prompt.setParams(McpProtocolCallToolRequestParams::fromJson(obj["params"_L1].toObject()));

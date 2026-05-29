@@ -37,7 +37,7 @@ McpProtocolCallToolRequestParams::Meta McpProtocolCallToolRequestParams::Meta::f
 {
     McpProtocolCallToolRequestParams::Meta meta;
     if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1].toObject()));
+        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
     }
     return meta;
 }

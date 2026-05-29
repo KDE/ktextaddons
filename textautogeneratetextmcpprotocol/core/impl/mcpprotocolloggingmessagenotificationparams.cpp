@@ -47,7 +47,7 @@ QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtoco
     obj["data"_L1] = params.data();
     obj["level"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(params.level());
     if (params.meta().has_value()) {
-        obj["meta"_L1] = McpProtocolMeta::toJson(*params.meta());
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*params.meta());
     }
     if (params.logger().has_value()) {
         obj["logger"_L1] = *params.logger();
