@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:43+0000\n"
+"POT-Creation-Date: 2026-05-29 00:42+0000\n"
 "PO-Revision-Date: 2026-05-20 20:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -220,6 +220,7 @@ msgid "Configure %1"
 msgstr "Configurar %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:35
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
 #: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
 #: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
@@ -238,6 +239,7 @@ msgid "Available Models"
 msgstr "Modelos disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
+#: plugins/lmstudio/lmstudiomanager.cpp:130
 #: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -389,6 +391,94 @@ msgstr "API de inferencia de la nube DeepInfra"
 msgid "Sarvam AI instance"
 msgstr "Instancia de Sarvam AI"
 
+#: plugins/lmstudio/lmstudioclient.cpp:27
+#: plugins/lmstudio/lmstudioplugin.cpp:95
+#, kde-format
+msgid "LMStudio"
+msgstr ""
+
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure %1"
+msgctxt "@title:window"
+msgid "Configure LMStudio"
+msgstr "Configurar %1"
+
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Installed Models"
+msgctxt "@title Preferences page name"
+msgid "Installed model"
+msgstr "Modelos instalados"
+
+#: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:78
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
+#: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
+#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Nombre:"
+
+#: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
+#, kde-format
+msgid "Url:"
+msgstr ""
+
+#: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
+#, fuzzy, kde-format
+#| msgid "Api Key:"
+msgid "Api token:"
+msgstr "Clave de la API:"
+
+#: plugins/lmstudio/lmstudioplugin.cpp:218
+#, fuzzy, kde-format
+#| msgid ""
+#| "Ollama not found on system. Ask to your administrator system to install "
+#| "it."
+msgid ""
+"LMStudio not found on system. Ask to your administrator system to install it."
+msgstr ""
+"No se ha encontrado Ollama en el sistema. Solicite a su administrador que lo "
+"instale."
+
+#: plugins/lmstudio/lmstudioplugin.cpp:220
+#, fuzzy, kde-format
+#| msgid "Ollama not found on system. Please install it."
+msgid "LMStudio not found on system. Please install it."
+msgstr "No se ha encontrado Ollama en el sistema. Debería instalarlo."
+
+#: plugins/lmstudio/lmstudioplugin.cpp:221
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgctxt "@action"
+msgid "Download LMStudio"
+msgstr "Descargar modelo"
+
+#: plugins/lmstudio/lmstudioplugin.cpp:227
+#, kde-format
+msgctxt "@action"
+msgid "Start LMStudio"
+msgstr ""
+
+#: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
+#, fuzzy, kde-format
+#| msgid "Ollama not found on system."
+msgid "LMStudio not found on system."
+msgstr "No se ha encontrado Ollama en el sistema."
+
+#: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
+#: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to start LMStudio."
+msgstr "No se ha podido iniciar Ollama."
+
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
@@ -427,16 +517,6 @@ msgstr "Nombre de modelo no válido"
 #, kde-format
 msgid "Base:"
 msgstr "Base:"
-
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:78
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
-#: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
-#: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
-#, kde-format
-msgid "Name:"
-msgstr "Nombre:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
 #, kde-format
