@@ -5,7 +5,6 @@
 */
 #pragma once
 
-#include "common/mcpprotocolsettings.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
