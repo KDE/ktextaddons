@@ -391,23 +391,19 @@ msgstr "Inštancia Sarvam AI"
 #: plugins/lmstudio/lmstudioplugin.cpp:95
 #, kde-format
 msgid "LMStudio"
-msgstr ""
+msgstr "LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "Nastaviť %1"
+msgstr "Nastaviť LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
-msgstr "Nainštalované modely"
+msgstr "Nainštalovaný model"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
@@ -421,60 +417,49 @@ msgid "Name:"
 msgstr "Názov:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "Url:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Api Key:"
+#, kde-format
 msgid "Api token:"
-msgstr "Kľúč API:"
+msgstr "Token API:"
 
 #: plugins/lmstudio/lmstudioplugin.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "Ollama not found on system. Ask to your administrator system to install "
-#| "it."
+#, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr ""
-"Ollama sa nenašla v systéme. Požiadajte správcu systému o jej inštaláciu."
+"LMStudio sa nenašlo v systéme. Požiadajte správcu systému o jeho inštaláciu."
 
 #: plugins/lmstudio/lmstudioplugin.cpp:220
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "LMStudio not found on system. Please install it."
-msgstr "Ollama sa nenašla v systéme. Nainštalujte ju prosím."
+msgstr "LMStudio sa nenašlo v systéme. Nainštalujte ho prosím."
 
 #: plugins/lmstudio/lmstudioplugin.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "Stiahnuť model"
+msgstr "Stiahnuť LMStudio"
 
 #: plugins/lmstudio/lmstudioplugin.cpp:227
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
-msgstr ""
+msgstr "Spustiť LMStudio"
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system."
+#, kde-format
 msgid "LMStudio not found on system."
-msgstr "Ollama sa nenašla v systéme."
+msgstr "LMStudio sa nenašlo v systéme."
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to start LMStudio."
-msgstr "Nie je možné spustiť Ollama."
+msgstr "Nie je možné spustiť LMStudio."
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format

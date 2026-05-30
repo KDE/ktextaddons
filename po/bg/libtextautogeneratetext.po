@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2025-2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:42+0000\n"
-"PO-Revision-Date: 2026-04-02 23:12+0200\n"
+"PO-Revision-Date: 2026-05-29 15:28+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "Облак"
 #: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "Разсъждаване"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -152,34 +152,29 @@ msgid "Network"
 msgstr "Мрежа"
 
 #: core/textautogeneratetextreplyinfo.cpp:51
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>Инструменти:</b> %1"
+msgstr "<br><b>Обща продължителност::</b> %1 секунди"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>Инструменти:</b> %1"
+msgstr "Токени: %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:58
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>Инструменти:</b> %1"
+msgstr "<br><b>Брой токени:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Инструменти:</b> %1"
+msgstr "<br><b>Prompt Token:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>Инструменти:</b> %1"
+msgstr "<br><b>Токен за завършване:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
@@ -257,7 +252,7 @@ msgstr "Мистрал ИИ"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Novita AI"
-msgstr ""
+msgstr "Novita AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
@@ -307,42 +302,40 @@ msgstr "Grok (X.ai)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
 #, kde-format
 msgid "Qwen (DashScope)"
-msgstr ""
+msgstr "Qwen (DashScope)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
 #, kde-format
 msgid "DeepInfra"
-msgstr ""
+msgstr "DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI ChatGPT"
-msgstr "OpenAI"
+msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:246
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenRouter AI"
-msgstr "OpenAI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:250
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "AtlasCloud API, съвместим с OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:220
 #, kde-format
@@ -375,51 +368,42 @@ msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi large language models by Moonshot AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:238
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
-msgstr "Mistral AI large language models"
+msgstr "Alibaba Cloud Qwen големи езикови модели чрез DashScope"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:240
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "API клауд интерфейс на Kluster AI"
+msgstr "Novita AI API за извода в облак"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:242
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "API клауд интерфейс на Cerebras AI"
+msgstr "DeepInfra cloud inference API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "Добавяне на екземпляр…"
+msgstr "Sarvam AI инстанс"
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
 #: plugins/lmstudio/lmstudioplugin.cpp:95
 #, kde-format
 msgid "LMStudio"
-msgstr ""
+msgstr "LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "Настройване на %1"
+msgstr "Конфигуриране на LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
-msgstr "Инсталирани модели"
+msgstr "Инсталиран модел"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
@@ -435,57 +419,48 @@ msgstr "Име:"
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
 #, kde-format
 msgid "Url:"
-msgstr ""
+msgstr "Url:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Api Key:"
+#, kde-format
 msgid "Api token:"
-msgstr "Api ключ:"
+msgstr "Api токен:"
 
 #: plugins/lmstudio/lmstudioplugin.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "Ollama not found on system. Ask to your administrator system to install "
-#| "it."
+#, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr ""
-"Ollama не е открит в системата. Помолете системния администратор да го "
-"инсталира."
+"LMStudio не е намерен в системата. Кажете на администратора на системата да "
+"го инсталира."
 
 #: plugins/lmstudio/lmstudioplugin.cpp:220
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "LMStudio not found on system. Please install it."
-msgstr "Ollama не е открит в системата.Моля, инсталирайте го."
+msgstr "LMStudio не е намерен в системата. Моля, инсталирайте."
 
 #: plugins/lmstudio/lmstudioplugin.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "Изтегляне на модел"
+msgstr "Изтегляне на LMStudio"
 
 #: plugins/lmstudio/lmstudioplugin.cpp:227
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
-msgstr ""
+msgstr "Стартиране на LMStudio"
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system."
+#, kde-format
 msgid "LMStudio not found on system."
-msgstr "Ollama не е открита в системата."
+msgstr "LMStudio не е намерен в системата."
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to start LMStudio."
-msgstr "Невъзможно е да се стартира Ollama."
+msgstr "Не е възможно да се стартира LMStudio."
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -654,12 +629,14 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"Използвайте Vulkan за хардуерно ускорение. Може да подобри "
+"производителността на някои GPU, но използвайте с внимание, тъй като може да "
+"бъде нестабилно."
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Vulkan GPU Support:"
+#, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr "Поддръжка на графични карти Vulkan:"
+msgstr "Поддръжка на Vulkan GPU (Експериментално):"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
@@ -2693,6 +2670,9 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Моделите Gemma 4 са проектирани да осигуряват върхови показатели във всеки "
+"размер. Те са подходящи за аргументация, агентни работни потоци, кодиране и "
+"мултимодално разбиране."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2700,6 +2680,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 е семейство от отворени мултимодални модели, които предлагат "
+"изключителна разнообразно приложение и производителност."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2708,6 +2690,10 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 е семейство от хибридни модели, създадени за внедряване на устройство. "
+"LFM2-24B-A2B е най-големият модел в семейството, който мащабира "
+"архитектурата до 24 милиарда параметри, като същевременно поддържа ефективно "
+"извеждане (inference)."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2716,6 +2702,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super е 120B отворен MoE модел, активиращ само 12B "
+"параметъра, за да осигури максимална изчислителна ефективност и точност за "
+"сложни приложения с множество агенти."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2723,6 +2712,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"Отворен модел 30B MoE на NVIDIA с 3 милиарда активирани параметри, който "
+"предлагасилни способности за разсъждение и агентно поведение."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2730,6 +2721,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"MiniMax модел серия M2 за кодиране, агентни работни процеси и професионална "
+"продуктивност."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:349
 #, kde-format
@@ -2737,6 +2730,8 @@ msgid ""
 "Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
 "preservation than previous Qwen models."
 msgstr ""
+"Qwen3.6 предоставя значителни подобрения в агентното кодиране и запазването "
+"на мисленето в сравнение с предишните модели Qwen."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
@@ -2941,12 +2936,10 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "Конфигуриране на екземплярите"
+msgstr "Конфигуриране на инстанцията"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
@@ -3226,7 +3219,7 @@ msgstr "Търсене…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "Показване на вътрешни инструменти…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
@@ -3419,7 +3412,7 @@ msgstr "Избиране на всичко"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Text"
-msgstr ""
+msgstr "Вмъкване на текст"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
@@ -3477,29 +3470,3 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Add instance…"
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Добавяне на екземпляр…"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Remove Model"
-#~ msgctxt "@action"
-#~ msgid "Remove Server"
-#~ msgstr "Премахване на модел"
-
-#, fuzzy
-#~| msgid "Do you want to remove this model (%1)?"
-#~ msgid "Do you want to remove this server (%1)?"
-#~ msgstr "Искате ли да премахнете този модел (%1)?"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Remove Model"
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "Премахване на модел"

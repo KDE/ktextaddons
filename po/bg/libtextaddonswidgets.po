@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2024-2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-28 00:42+0000\n"
-"PO-Revision-Date: 2025-12-16 22:16+0100\n"
+"PO-Revision-Date: 2026-05-29 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Минчо Кондарев"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mkondarev@yahoo.de"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -72,7 +72,7 @@ msgstr "Запазване на файл"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "Файлът не съществува"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -84,7 +84,7 @@ msgstr "Грешка при записване на файла"
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "Не може да се презапише съществуващ файл"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -109,40 +109,38 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Отваряне на папка, където е запазено прикачването"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Запазване на файл"
+msgstr "Отваряне на файл"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Отваряне на папката, където е запазено прикачването"
+msgstr[1] "Отваряне на папката, където са запазени прикачванията"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Отваряне на папката, където е запазен PDF файлът"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Отваряне на папката, където е запазен файлът"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Не може да се отвори прикачването."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
@@ -319,7 +317,7 @@ msgstr "Поправка на някои грешки:"
 #: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Версия %1 </i></h1><hr/><br>"
 
 #~ msgid "No new version found."
 #~ msgstr "Не е намерена нова версия."
