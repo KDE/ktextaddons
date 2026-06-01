@@ -22,7 +22,7 @@ using namespace TextCustomEditor;
 namespace TextCustomEditor
 {
 struct SpellCheckRange {
-    SpellCheckRange(int o, int l)
+    SpellCheckRange(int o, int l) noexcept
         : offset(o)
         , length(l)
     {

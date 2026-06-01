@@ -314,7 +314,7 @@ QString
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getProgressTokenValue(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &token)
 {
     return std::visit(
-        [](auto &&arg) -> QString {
+        [](auto &&arg) noexcept -> QString {
             using T = std::decay_t<decltype(arg)>;
             if constexpr (std::is_same_v<T, QString>) {
                 return arg;
