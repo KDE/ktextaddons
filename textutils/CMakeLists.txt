@@ -39,14 +39,15 @@ target_sources(
 
 target_link_libraries(
     KF6TextUtils
+    PUBLIC
+        KF6::SyntaxHighlighting
+        KF6::ColorScheme
     PRIVATE
         Qt::Core
-        KF6::SyntaxHighlighting
         KF6::IconThemes
         KF6::I18n
         cmark-rc
         KF6::CoreAddons
-        KF6::ColorScheme
 )
 
 ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
