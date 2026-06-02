@@ -1,0 +1,316 @@
+# Uyghur translation for libtextaddonswidgets.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"PO-Revision-Date: 2026-05-31 19:48-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: misc/openfilejob.cpp:61
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr ""
+
+#: misc/openfilejob.cpp:62
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Open attachment <filename>%1</filename>?<nl/>"
+msgstr ""
+
+#: misc/openfilejob.cpp:66
+#, kde-format
+msgctxt "@action:button"
+msgid "Open"
+msgstr "ئاچ"
+
+#: misc/openfilejob.cpp:69
+#, kde-format
+msgctxt "@action:button"
+msgid "&Open With '%1'"
+msgstr ""
+
+#: misc/openfilejob.cpp:72
+#, kde-format
+msgctxt "@action:button"
+msgid "Open &With…"
+msgstr ""
+
+#: misc/openfilejob.cpp:74
+#, kde-format
+msgctxt "@action:button"
+msgid "Save &As…"
+msgstr "باشقا ئاتتا ساقلا(&A)…"
+
+#: misc/openfilejob.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "ھۆججەت ساقلا"
+
+#: misc/savefileutils.cpp:65
+#, kde-format
+msgid "Source file no longer exists"
+msgstr ""
+
+#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:76
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving file"
+msgstr ""
+
+#: misc/savefileutils.cpp:71
+#, kde-format
+msgid "Cannot overwrite existing file"
+msgstr ""
+
+#: needupdateversion/needupdateversionwidget.cpp:19
+#, kde-format
+msgctxt "@action"
+msgid "Disable version check"
+msgstr ""
+
+#: needupdateversion/needupdateversionwidget.cpp:35
+#, kde-format
+msgid "Your version is older than 6 months, we encourage you to upgrade."
+msgstr ""
+
+#: needupdateversion/needupdateversionwidget.cpp:40
+#, kde-format
+msgid ""
+"Your version is older than 1 year, we strongly encourage you to upgrade."
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "ھۆججەت ئاچ"
+
+#: opensavedfilefolderwidget.cpp:63
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
+
+#: opensavedfilefolderwidget.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where PDF file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:69
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where file was saved"
+msgstr ""
+
+#: opensavedfilefolderwidget.cpp:86
+#, kde-format
+msgid "Unable to open the attachment."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:23
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:157
+#, kde-format
+msgid "..."
+msgstr "…"
+
+#: plugins/configurepluginswidget.cpp:159
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr "سەپلە"
+
+#: quicksearchbar/quicksearchbar.cpp:27
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search… (%1)"
+msgstr ""
+
+#: quicksearchbar/quicksearchbar.cpp:40
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "كېيىنكى"
+
+#: quicksearchbar/quicksearchbar.cpp:49
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "ئالدىنقى"
+
+#: richtextquicktextformat.cpp:67
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Bold"
+msgstr "توم"
+
+#: richtextquicktextformat.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Italic"
+msgstr "يانتۇ"
+
+#: richtextquicktextformat.cpp:95
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Strike Through"
+msgstr ""
+
+#: richtextquicktextformat.cpp:109
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Underline"
+msgstr "ئاستى سىزىق"
+
+#: richtextquicktextformat.cpp:124
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Code Block"
+msgstr ""
+
+#: richtextquicktextformat.cpp:139
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Quote Text"
+msgstr ""
+
+#: richtextquicktextformat.cpp:156
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Insert Link"
+msgstr "ئۇلانما قىستۇر"
+
+#: selectspecialchardialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Special Characters"
+msgstr ""
+
+#: selectspecialchardialog.cpp:42
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "قىستۇر"
+
+#: selectspecialchardialog.cpp:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Select"
+msgstr "تاللا"
+
+#: verifynewversion/checknewversiondialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Check New Version"
+msgstr ""
+
+#: verifynewversion/checknewversionwidget.cpp:61
+#, kde-format
+msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
+msgstr ""
+
+#: verifynewversion/checknewversionwidget.cpp:63
+#, kde-format
+msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
+msgstr ""
+
+#: verifynewversion/verifynewversionwidget.cpp:32
+#, kde-format
+msgid "Check New Version"
+msgstr ""
+
+#: whatsnew/whatsnewcomboboxwidget.cpp:27
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Version:"
+msgstr "نەشرى:"
+
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#: whatsnewng/whatsnewngdialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr ""
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#: whatsnewng/whatsnewmessagengwidget.cpp:36
+#, kde-format
+msgid "(Show News)"
+msgstr ""
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#: whatsnewng/whatsnewmessagengwidget.cpp:36
+#, kde-format
+msgid "What's new in %2. %1"
+msgstr ""
+
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#, kde-format
+msgid "All Versions"
+msgstr ""
+
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#, kde-format
+msgid "Version %1"
+msgstr "نەشرى  %1"
+
+#: whatsnew/whatsnewwidget.cpp:93
+#, kde-format
+msgid "Important changes since last version:"
+msgstr ""
+
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#, kde-format
+msgid "Some of the new features in this release include:"
+msgstr ""
+
+#: whatsnew/whatsnewwidget.cpp:103
+#, kde-format
+msgid "Some bug fixing:"
+msgstr ""
+
+#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
