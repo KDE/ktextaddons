@@ -243,6 +243,10 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # see e.g. https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56556 or https://gcc.gnu.org/bugzilla/show_bug.cgi?id=79328
     string(APPEND CMAKE_CXX_FLAGS " -Wshadow")
 endif()
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    string(APPEND CMAKE_CXX_FLAGS " -Wnoexcept")
+endif()
+
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT
     0
     CACHE STRING
