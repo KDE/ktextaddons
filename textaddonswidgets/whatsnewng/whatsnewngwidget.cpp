@@ -8,7 +8,9 @@
 #include "whatsnew/whatsnewcomboboxwidget.h"
 #include <KAboutData>
 #include <KLocalizedString>
+#include <QDate>
 #include <QDebug>
+#include <QLocale>
 #include <QTextBrowser>
 #include <QVBoxLayout>
 namespace
@@ -78,7 +80,13 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
 QString WhatsNewNgWidget::generateVersionHeader(int type) const
 {
     if (type != allVersion) {
-        return i18n("<h1><i> Version %1 </i></h1><hr/><br>", mAboutRelease.at(type).version());
+        const auto release = mAboutRelease.at(type);
+        const QDate date = release.date();
+        if (date.isValid()) {
+            return i18n("<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
+        } else {
+            return i18n("<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>", release.version());
+        }
     }
     return {};
 }
