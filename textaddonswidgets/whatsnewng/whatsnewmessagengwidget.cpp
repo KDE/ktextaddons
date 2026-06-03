@@ -26,16 +26,8 @@ WhatsNewMessageNgWidget::WhatsNewMessageNgWidget(const QString &applicationName,
 }
 
 WhatsNewMessageNgWidget::WhatsNewMessageNgWidget(QWidget *parent)
-    : KMessageWidget(parent)
+    : WhatsNewMessageNgWidget(QCoreApplication::applicationName(), parent)
 {
-    setVisible(false);
-    setCloseButtonVisible(true);
-    setMessageType(Information);
-
-    mApplicationName = QCoreApplication::applicationName();
-    setText(i18n("What's new in %2. %1", QStringLiteral("<a href=\"show_whats_new\">%1</a>").arg(i18n("(Show News)")), mApplicationName));
-    setPosition(KMessageWidget::Header);
-    connect(this, &KMessageWidget::linkActivated, this, &WhatsNewMessageNgWidget::slotLinkActivated);
 }
 
 WhatsNewMessageNgWidget::~WhatsNewMessageNgWidget() = default;
