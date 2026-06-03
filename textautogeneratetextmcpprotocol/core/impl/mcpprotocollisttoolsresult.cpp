@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocollisttoolsresult.h"
-#include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <utility>
@@ -22,7 +22,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 {
     d.space() << "meta:" << t.meta();
     d.space() << "nextCursor:" << t.nextCursor();
-    d.space() << "prompts:" << t.prompts();
+    d.space() << "tools:" << t.tools();
     return d;
 }
 
@@ -35,13 +35,13 @@ McpProtocolListToolsResult McpProtocolListToolsResult::fromJson(const QJsonObjec
     if (obj.contains("nextCursor"_L1)) {
         prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
     }
-    if (obj.contains("prompts"_L1) && obj["prompts"_L1].isArray()) {
-        const QJsonArray arr = obj["prompts"_L1].toArray();
-        QList<McpProtocolPrompt> lst;
+    if (obj.contains("tools"_L1) && obj["tools"_L1].isArray()) {
+        const QJsonArray arr = obj["tools"_L1].toArray();
+        QList<McpProtocolTool> lst;
         for (const auto &v : arr) {
-            lst.append(McpProtocolPrompt::fromJson(v.toObject()));
+            lst.append(McpProtocolTool::fromJson(v.toObject()));
         }
-        prompt.setPrompts(lst);
+        prompt.setTools(lst);
     }
     return prompt;
 }
@@ -56,10 +56,11 @@ QJsonObject McpProtocolListToolsResult::toJson(const McpProtocolListToolsResult 
         obj["nextCursor"_L1] = *boolean.nextCursor();
     }
     QJsonArray promptsArray;
-    for (const auto &v : boolean.prompts()) {
-        promptsArray.append(McpProtocolPrompt::toJson(v));
+    const auto tools = boolean.tools();
+    for (const auto &v : tools) {
+        promptsArray.append(McpProtocolTool::toJson(v));
     }
-    obj["prompts"_L1] = promptsArray;
+    obj["tools"_L1] = promptsArray;
     return obj;
 }
 
@@ -83,12 +84,12 @@ void McpProtocolListToolsResult::setNextCursor(std::optional<QString> newNextCur
     mNextCursor = std::move(newNextCursor);
 }
 
-QList<McpProtocolPrompt> McpProtocolListToolsResult::prompts() const
+QList<McpProtocolTool> McpProtocolListToolsResult::tools() const
 {
-    return mPrompts;
+    return mTools;
 }
 
-void McpProtocolListToolsResult::setPrompts(const QList<McpProtocolPrompt> &newPrompts)
+void McpProtocolListToolsResult::setTools(const QList<McpProtocolTool> &newTools)
 {
-    mPrompts = newPrompts;
+    mTools = newTools;
 }

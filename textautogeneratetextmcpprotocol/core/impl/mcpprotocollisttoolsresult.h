@@ -8,7 +8,7 @@
 #include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPrompt>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -50,16 +50,15 @@ public:
 
     /*!
      */
-    [[nodiscard]] QList<McpProtocolPrompt> prompts() const;
+    [[nodiscard]] QList<McpProtocolTool> tools() const;
     /*!
      */
-    void setPrompts(const QList<McpProtocolPrompt> &newPrompts);
+    void setTools(const QList<McpProtocolTool> &newTools);
 
 private:
     std::optional<McpProtocolMeta> mMeta;
     std::optional<QString> mNextCursor;
-    // TODO Add missing Tool !!!!
-    QList<McpProtocolPrompt> mPrompts;
+    QList<McpProtocolTool> mTools;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsResult, Q_RELOCATABLE_TYPE);
