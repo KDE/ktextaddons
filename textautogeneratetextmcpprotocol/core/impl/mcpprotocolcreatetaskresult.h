@@ -25,10 +25,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] static QByteArray type();
-
-    /*!
-     */
     [[nodiscard]] bool operator==(const McpProtocolCreateTaskResult &other) const;
 
     /*!

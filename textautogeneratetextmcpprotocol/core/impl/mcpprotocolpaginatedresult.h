@@ -24,10 +24,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] static QByteArray type();
-
-    /*!
-     */
     [[nodiscard]] bool operator==(const McpProtocolPaginatedResult &other) const;
 
     /*!
