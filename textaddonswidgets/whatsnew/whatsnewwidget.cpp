@@ -45,7 +45,7 @@ void WhatsNewWidget::fillComboBox()
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
     for (int i = mWhatsNewInfo.count() - 1; i >= 0; i--) {
         const WhatsNewInfo &info = mWhatsNewInfo.at(i);
-        mWhatsNewComboBoxWidget->addVersion(i18n("Version %1", info.version()), i);
+        mWhatsNewComboBoxWidget->addVersion(info.version(), i);
     }
 }
 
