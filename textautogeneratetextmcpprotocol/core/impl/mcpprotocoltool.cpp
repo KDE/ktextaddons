@@ -30,8 +30,46 @@ QByteArray McpProtocolTool::type()
 
 McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
 {
-    McpProtocolTool text;
-    return text;
+    McpProtocolTool tool;
+    if (!obj.contains("inputSchema"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: inputSchema";
+        return {};
+    }
+    if (!obj.contains("name"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: name";
+        return {};
+    }
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        tool.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
+    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
+        tool.setAnnotations(McpProtocolToolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    }
+    if (obj.contains("description"_L1)) {
+        tool.setDescription(obj.value("description"_L1).toString());
+    }
+    if (obj.contains("execution"_L1) && obj["execution"_L1].isObject()) {
+        tool.setExecution(McpProtocolToolExecution::fromJson(obj["execution"_L1].toObject()));
+    }
+    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
+        const QJsonArray arr = obj["icons"_L1].toArray();
+        QList<McpProtocolIcon> list_icons;
+        for (const auto &v : arr) {
+            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+        }
+        tool.setIcons(list_icons);
+    }
+    if (obj.contains("inputSchema"_L1) && obj["inputSchema"_L1].isObject()) {
+        tool.setInputSchema(InputSchema::fromJson(obj["inputSchema"_L1].toObject()));
+    }
+    tool.setName(obj.value("name"_L1).toString());
+    if (obj.contains("outputSchema"_L1) && obj["outputSchema"_L1].isObject()) {
+        tool.setOutputSchema(OutputSchema::fromJson(obj["outputSchema"_L1].toObject()));
+    }
+    if (obj.contains("title"_L1)) {
+        tool.setTitle(obj.value("title"_L1).toString());
+    }
+    return tool;
 }
 
 QJsonObject McpProtocolTool::toJson(const McpProtocolTool &tool)
