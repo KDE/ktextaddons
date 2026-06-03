@@ -78,16 +78,13 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
 
 QString WhatsNewNgWidget::generateVersionHeader(int type) const
 {
-    if (type != allVersion) {
-        const auto release = mAboutRelease.at(type);
-        const QDate date = release.date();
-        if (date.isValid()) {
-            return i18n("<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
-        } else {
-            return i18n("<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>", release.version());
-        }
+    const auto release = mAboutRelease.at(type);
+    const QDate date = release.date();
+    if (date.isValid()) {
+        return i18n("<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
+    } else {
+        return i18n("<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>", release.version());
     }
-    return {};
 }
 
 QString WhatsNewNgWidget::featuresChangeStr() const
