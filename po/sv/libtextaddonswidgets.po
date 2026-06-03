@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"POT-Creation-Date: 2026-06-03 00:54+0000\n"
 "PO-Revision-Date: 2025-10-15 21:08+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -291,12 +291,12 @@ msgstr "(Visa nyheter)"
 msgid "What's new in %2. %1"
 msgstr "Vad är nytt i %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Alla versioner"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
 #, kde-format
 msgid "Version %1"
 msgstr "Version %1"
@@ -306,7 +306,7 @@ msgstr "Version %1"
 msgid "Important changes since last version:"
 msgstr "Viktiga ändringar sedan föregående version:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Vissa av de nya funktionerna i den här utgåvan omfattar:"
@@ -316,9 +316,19 @@ msgstr "Vissa av de nya funktionerna i den här utgåvan omfattar:"
 msgid "Some bug fixing:"
 msgstr "En del felrättning:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:86
+#, kde-format
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:88
+#, kde-format
+msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr ""
 
 #~ msgid "No new version found."

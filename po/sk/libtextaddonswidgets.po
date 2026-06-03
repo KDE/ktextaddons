@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"POT-Creation-Date: 2026-06-03 00:54+0000\n"
 "PO-Revision-Date: 2023-12-08 20:09+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -286,12 +286,12 @@ msgstr "(Zobraziť novinky)"
 msgid "What's new in %2. %1"
 msgstr "Čo je nové v %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Všetky verzie"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
 #, kde-format
 msgid "Version %1"
 msgstr "Verzia %1"
@@ -301,7 +301,7 @@ msgstr "Verzia %1"
 msgid "Important changes since last version:"
 msgstr "Dôležité zmeny od poslednej verzie:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
@@ -311,7 +311,19 @@ msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
 msgid "Some bug fixing:"
 msgstr "Niektoré opravy chýb:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"

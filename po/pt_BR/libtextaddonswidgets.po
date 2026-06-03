@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"POT-Creation-Date: 2026-06-03 00:54+0000\n"
 "PO-Revision-Date: 2026-05-27 06:29-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -290,12 +290,12 @@ msgstr "(Mostrar novidades)"
 msgid "What's new in %2. %1"
 msgstr "O que há de novo em %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Todas as versões"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
 #, kde-format
 msgid "Version %1"
 msgstr "Versão %1"
@@ -305,7 +305,7 @@ msgstr "Versão %1"
 msgid "Important changes since last version:"
 msgstr "Mudanças importantes desde a última versão:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Algumas novas funcionalidades desta versão incluem:"
@@ -315,9 +315,21 @@ msgstr "Algumas novas funcionalidades desta versão incluem:"
 msgid "Some bug fixing:"
 msgstr "Algumas correções de erro:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Versão %1 </i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr "<h1><i> Versão %1 </i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Versão %1 </i></h1><hr/><br>"
 
 #~ msgid "No new version found."

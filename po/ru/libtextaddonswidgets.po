@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"POT-Creation-Date: 2026-06-03 00:54+0000\n"
 "PO-Revision-Date: 2026-01-29 20:43+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -295,12 +295,12 @@ msgstr "(Показать новое)"
 msgid "What's new in %2. %1"
 msgstr "Новое в %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Все версии"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
 #, kde-format
 msgid "Version %1"
 msgstr "Версия %1"
@@ -310,7 +310,7 @@ msgstr "Версия %1"
 msgid "Important changes since last version:"
 msgstr "Важные изменения по сравнению с предыдущей версией:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Некоторые из новых возможностей в этой версии:"
@@ -320,9 +320,19 @@ msgstr "Некоторые из новых возможностей в этой 
 msgid "Some bug fixing:"
 msgstr "Исправление некоторых ошибок:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:86
+#, kde-format
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:88
+#, kde-format
+msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr ""
 
 #~ msgid "No new version found."

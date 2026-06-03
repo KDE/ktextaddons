@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"POT-Creation-Date: 2026-06-03 00:54+0000\n"
 "PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -294,12 +294,12 @@ msgstr "(செய்திகளை காட்டு)"
 msgid "What's new in %2. %1"
 msgstr "%2 தனில் புதியவை. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "அனைத்து பதிப்புகளும்"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
 #, kde-format
 msgid "Version %1"
 msgstr "பதிப்பு %1"
@@ -309,7 +309,7 @@ msgstr "பதிப்பு %1"
 msgid "Important changes since last version:"
 msgstr "சென்ற பதிப்புக்கு பிந்தைய முக்கிய மாற்றங்கள்:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "இப்பதிப்பின் சில புதிய அம்சங்கள் பின்வருவன:"
@@ -319,9 +319,19 @@ msgstr "இப்பதிப்பின் சில புதிய அம்
 msgid "Some bug fixing:"
 msgstr "திருத்தப்பட்ட சில பிழைகள்:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:86
+#, kde-format
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:88
+#, kde-format
+msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr ""
 
 #~ msgid "No new version found."

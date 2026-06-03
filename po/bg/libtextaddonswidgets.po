@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:42+0000\n"
+"POT-Creation-Date: 2026-06-03 00:54+0000\n"
 "PO-Revision-Date: 2026-05-29 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -289,12 +289,12 @@ msgstr "(Показване на новото)"
 msgid "What's new in %2. %1"
 msgstr "Какво ново в %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Всички версии"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
 #, kde-format
 msgid "Version %1"
 msgstr "Версия %1"
@@ -304,7 +304,7 @@ msgstr "Версия %1"
 msgid "Important changes since last version:"
 msgstr "Важни промени от последната версия:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Някои от новите функции в тази версия включват:"
@@ -314,9 +314,21 @@ msgstr "Някои от новите функции в тази версия в�
 msgid "Some bug fixing:"
 msgstr "Поправка на някои грешки:"
 
-#: whatsnew/whatsnewwidget.cpp:141 whatsnewng/whatsnewngwidget.cpp:81
+#: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Версия %1 </i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr "<h1><i> Версия %1 </i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Версия %1 </i></h1><hr/><br>"
 
 #~ msgid "No new version found."
