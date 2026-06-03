@@ -219,6 +219,8 @@ target_sources(
         impl/mcpprotocolpromptmessage.h
         impl/mcpprotocollisttoolsresult.cpp
         impl/mcpprotocollisttoolsresult.h
+        impl/mcpprotocoltool.h
+        impl/mcpprotocoltool.cpp
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -373,6 +375,8 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolUnsubscribeRequest
     McpProtocolUnsubscribeRequestParams
     McpProtocolUntitledSingleSelectEnumSchema
+    McpProtocolTool
+    McpProtocolListToolsResult
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
@@ -454,3 +458,30 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 ecm_generate_qdoc(KF6TextAutoGenerateTextMcpProtocolCore textautogeneratetextmcpprotocolcore.qdocconf)
+
+ecm_add_installed_library_check(KF6TextAutoGenerateTextMcpProtocolCore
+    PACKAGE_NAME "KF6TextAutoGenerateTextMcpProtocolCore"
+    PACKAGE_VERSION ${TEXTAUTOGENERATETEXT_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolCore
+    HEADERS
+    ${TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_mcpprotocolserver_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_mcpprotocolmodel_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS}
+    PREFIX textautogeneratetextmcpprotocolcore
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolCore
+    HEADERS
+    ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolmodel_HEADERS}
+    ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_HEADERS}
+
+    PREFIX TextAutoGenerateTextMcpProtocolCore
+)
