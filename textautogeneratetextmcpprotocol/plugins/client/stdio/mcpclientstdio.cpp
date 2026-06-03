@@ -26,14 +26,13 @@ McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
         const QByteArray ba = mProcess->readAllStandardOutput();
         const QJsonDocument doc = QJsonDocument::fromJson(ba);
-        qDebug() << " doc " << doc;
+        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " doc " << doc;
         Q_EMIT received(doc.object());
         // Q_EMIT error(mProcess->errorString());
     });
     connect(mProcess, &QProcess::readyReadStandardError, this, [this]() {
-        qWarning() << "error " << mProcess->readAllStandardError();
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "error " << mProcess->readAllStandardError();
     });
-    qDebug() << " cCCCCCCCCcccccccsdfsdfdsf";
 }
 
 McpClientStdio::~McpClientStdio() = default;
@@ -41,7 +40,7 @@ McpClientStdio::~McpClientStdio() = default;
 void McpClientStdio::connection()
 {
     const auto settings = mInterface->protocolSettings();
-    qDebug() << " settings " << settings;
+    // qDebug() << " settings " << settings;
     mProcess->setProgram(settings.command());
     const QStringList lst = settings.arguments().split(u' ');
     mProcess->setArguments(lst);
@@ -52,7 +51,7 @@ void McpClientStdio::send(const QJsonObject &obj)
 {
     const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
     mProcess->write(data + "\n");
-    qDebug() << " obj " << obj;
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " obj " << obj;
 }
 
 #include "moc_mcpclientstdio.cpp"
