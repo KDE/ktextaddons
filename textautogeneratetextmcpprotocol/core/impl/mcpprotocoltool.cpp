@@ -20,6 +20,16 @@ bool McpProtocolTool::operator==(const McpProtocolTool &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &t)
 {
+    d.space() << "meta " << t.meta();
+    d.space() << "annotations " << t.annotations();
+    d.space() << "description " << t.description();
+    d.space() << "execution " << t.execution();
+    d.space() << "icons " << t.icons();
+    // TODO d.space() << "inputSchema " << t.inputSchema();
+    d.space() << "description " << t.description();
+    d.space() << "name " << t.name();
+    // TODO d.space() << "outputSchema " << t.outputSchema();
+    d.space() << "title " << t.title();
     return d;
 }
 
