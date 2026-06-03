@@ -26,7 +26,7 @@ public:
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void initialize();
     TEXTADDONSWIDGETS_NO_EXPORT void slotVersionChanged(int type);
-    [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateVersionHeader(int type) const;
+    [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateVersionHeader(const KAboutRelease &release) const;
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateStartEndHtml(const QString &str) const;
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString featuresChangeStr() const;
     QList<KAboutRelease> mAboutRelease;

@@ -65,7 +65,7 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
         QString message;
         for (int i = 0, total = mAboutRelease.count(); i < total; ++i) {
             const auto &info = mAboutRelease.at(i);
-            message += generateVersionHeader(i);
+            message += generateVersionHeader(info);
             message += featuresChangeStr();
             message += info.description();
         }
@@ -76,9 +76,8 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
     }
 }
 
-QString WhatsNewNgWidget::generateVersionHeader(int type) const
+QString WhatsNewNgWidget::generateVersionHeader(const KAboutRelease &release) const
 {
-    const auto release = mAboutRelease.at(type);
     const QDate date = release.date();
     if (date.isValid()) {
         return i18n("<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
