@@ -49,7 +49,7 @@ void WhatsNewNgWidget::setReleases(const QList<KAboutRelease> &info)
 void WhatsNewNgWidget::initialize()
 {
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
-    for (int i = 0; i < mAboutRelease.count(); i++) {
+    for (int i = 0, total = mAboutRelease.count(); i < total; ++i) {
         const auto &info = mAboutRelease.at(i);
         mWhatsNewComboBoxWidget->addVersion(info.version(), i);
     }
