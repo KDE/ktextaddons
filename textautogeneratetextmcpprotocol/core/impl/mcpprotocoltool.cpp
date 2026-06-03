@@ -123,6 +123,60 @@ void McpProtocolTool::setTitle(std::optional<QString> newTitle)
     mTitle = std::move(newTitle);
 }
 
+const std::optional<QString> &McpProtocolTool::InputSchema::dollarschema() const
+{
+    return mDollarschema;
+}
+
+const std::optional<QMap<QString, QJsonObject>> &McpProtocolTool::InputSchema::properties() const
+{
+    return mProperties;
+}
+
+const std::optional<QStringList> &McpProtocolTool::InputSchema::required() const
+{
+    return mRequired;
+}
+
 bool McpProtocolTool::InputSchema::operator==(const InputSchema &other) const = default;
 
+McpProtocolTool::InputSchema McpProtocolTool::InputSchema::fromJson(const QJsonObject &obj)
+{
+    // TODO
+    return {};
+}
+
+QJsonObject McpProtocolTool::InputSchema::toJson(const InputSchema &input)
+{
+    // TODO
+    return {};
+}
+
+const std::optional<QString> &McpProtocolTool::OutputSchema::dollarschema() const
+{
+    return mDollarschema;
+}
+
+const std::optional<QMap<QString, QJsonObject>> &McpProtocolTool::OutputSchema::properties() const
+{
+    return mProperties;
+}
+
+const std::optional<QStringList> &McpProtocolTool::OutputSchema::required() const
+{
+    return mRequired;
+}
+
 bool McpProtocolTool::OutputSchema::operator==(const OutputSchema &other) const = default;
+
+McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJsonObject &obj)
+{
+    // TODO
+    return {};
+}
+
+QJsonObject McpProtocolTool::OutputSchema::toJson(const OutputSchema &input)
+{
+    // TODO
+    return {};
+}

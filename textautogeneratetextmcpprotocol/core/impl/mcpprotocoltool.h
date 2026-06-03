@@ -24,38 +24,24 @@ public:
         std::optional<QString> mDollarschema;
         std::optional<QMap<QString, QJsonObject>> mProperties;
         std::optional<QStringList> mRequired;
-        const std::optional<QString> &dollarschema() const
-        {
-            return mDollarschema;
-        }
-        const std::optional<QMap<QString, QJsonObject>> &properties() const
-        {
-            return mProperties;
-        }
-        const std::optional<QStringList> &required() const
-        {
-            return mRequired;
-        }
+        const std::optional<QString> &dollarschema() const;
+        const std::optional<QMap<QString, QJsonObject>> &properties() const;
+        const std::optional<QStringList> &required() const;
         [[nodiscard]] bool operator==(const InputSchema &other) const;
+        [[nodiscard]] static McpProtocolTool::InputSchema fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolTool::InputSchema &input);
     };
 
     struct OutputSchema {
         std::optional<QString> mDollarschema;
         std::optional<QMap<QString, QJsonObject>> mProperties;
         std::optional<QStringList> mRequired;
-        const std::optional<QString> &dollarschema() const
-        {
-            return mDollarschema;
-        }
-        const std::optional<QMap<QString, QJsonObject>> &properties() const
-        {
-            return mProperties;
-        }
-        const std::optional<QStringList> &required() const
-        {
-            return mRequired;
-        }
+        const std::optional<QString> &dollarschema() const;
+        const std::optional<QMap<QString, QJsonObject>> &properties() const;
+        const std::optional<QStringList> &required() const;
         [[nodiscard]] bool operator==(const OutputSchema &other) const;
+        [[nodiscard]] static McpProtocolTool::OutputSchema fromJson(const QJsonObject &obj);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolTool::OutputSchema &input);
     };
 
     /*!
