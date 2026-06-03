@@ -7,6 +7,8 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -32,7 +34,23 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolURLElicitationRequiredError &image);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolUtils::RequestId> id() const;
+    /*!
+     */
+    void setId(std::optional<McpProtocolUtils::RequestId> newId);
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolError error() const;
+    /*!
+     */
+    void setError(const McpProtocolError &newError);
+
 private:
+    std::optional<McpProtocolUtils::RequestId> mId;
+    McpProtocolError mError;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError, Q_RELOCATABLE_TYPE);
