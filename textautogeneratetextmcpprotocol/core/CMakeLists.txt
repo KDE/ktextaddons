@@ -217,6 +217,8 @@ target_sources(
         impl/mcpprotocolmodelhint.h
         impl/mcpprotocolclientcapabilities.h
         impl/mcpprotocolpromptmessage.h
+        impl/mcpprotocollisttoolsresult.cpp
+        impl/mcpprotocollisttoolsresult.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
