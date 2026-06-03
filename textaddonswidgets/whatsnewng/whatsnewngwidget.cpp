@@ -68,12 +68,22 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
             message += generateVersionHeader(info);
             message += featuresChangeStr();
             message += info.description();
+            message += generateUrl(info);
         }
         mLabelInfo->setHtml(generateStartEndHtml(message));
     } else if (type >= 0 && type < mAboutRelease.count()) {
-        const QString message = featuresChangeStr() + generateStartEndHtml(mAboutRelease.at(type).description());
+        const auto &info = mAboutRelease.at(type);
+        const QString message = featuresChangeStr() + generateStartEndHtml(info.description()) + generateUrl(info);
         mLabelInfo->setHtml(message);
     }
+}
+
+QString WhatsNewNgWidget::generateUrl(const KAboutRelease &release) const
+{
+    if (release.url().isValid()) {
+        return i18n("<b><i><a href=\"%1\">Release Note</a></i></b>", release.url().toString());
+    }
+    return {};
 }
 
 QString WhatsNewNgWidget::generateVersionHeader(const KAboutRelease &release) const
