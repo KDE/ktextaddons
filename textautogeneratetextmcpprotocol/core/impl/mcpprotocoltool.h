@@ -51,6 +51,8 @@ public:
      */
     ~McpProtocolTool();
 
+    [[nodiscard]] static QByteArray type();
+
     /*!
      */
     [[nodiscard]] bool operator==(const McpProtocolTool &other) const;
