@@ -29,11 +29,8 @@ WhatsNewNgDialog::WhatsNewNgDialog(const QString &applicationName, QWidget *pare
 }
 
 WhatsNewNgDialog::WhatsNewNgDialog(QWidget *parent)
-    : QDialog(parent)
-    , mWhatsNewWidget(new WhatsNewNgWidget(this))
+    : WhatsNewNgDialog(QCoreApplication::applicationName(), parent)
 {
-    setWindowTitle(i18nc("@title:window", "What's new in %1", QCoreApplication::applicationName()));
-    initialize();
 }
 
 void WhatsNewNgDialog::setReleases(const QList<KAboutRelease> &info)
