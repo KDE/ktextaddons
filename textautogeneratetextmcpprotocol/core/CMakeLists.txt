@@ -221,6 +221,8 @@ target_sources(
         impl/mcpprotocollisttoolsresult.h
         impl/mcpprotocoltool.h
         impl/mcpprotocoltool.cpp
+        impl/mcpprotocolurlelicitationrequirederror.cpp
+        impl/mcpprotocolurlelicitationrequirederror.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -377,6 +379,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolUntitledSingleSelectEnumSchema
     McpProtocolTool
     McpProtocolListToolsResult
+    McpProtocolURLElicitationRequiredError
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
