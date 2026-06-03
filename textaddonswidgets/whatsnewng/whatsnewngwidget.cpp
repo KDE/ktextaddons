@@ -51,7 +51,7 @@ void WhatsNewNgWidget::initialize()
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
     for (int i = 0; i < mAboutRelease.count(); i++) {
         const auto &info = mAboutRelease.at(i);
-        mWhatsNewComboBoxWidget->addVersion(i18n("Version %1", info.version()), i);
+        mWhatsNewComboBoxWidget->addVersion(info.version(), i);
     }
 }
 
