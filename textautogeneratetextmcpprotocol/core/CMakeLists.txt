@@ -229,6 +229,8 @@ target_sources(
         impl/mcpprotocollistrootsrequest.h
         impl/mcpprotocolelicitrequest.cpp
         impl/mcpprotocolelicitrequest.h
+        impl/mcpprotocolcreatemessagerequest.cpp
+        impl/mcpprotocolcreatemessagerequest.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -389,6 +391,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolPaginatedRequest
     McpProtocolListRootsRequest
     McpProtocolElicitRequest
+    McpProtocolCreateMessageRequest
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
