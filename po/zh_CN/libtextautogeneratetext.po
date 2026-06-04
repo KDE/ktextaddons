@@ -696,7 +696,7 @@ msgstr "Mistral AI 发布的 70 亿参数 (7B) 模型已更新至 0.3 版本。"
 #, kde-format
 msgid ""
 "A high-performing open embedding model with a large token context window."
-msgstr "一种高性能的开放式嵌入模型，具有较大的标记上下文窗口。"
+msgstr "一种高性能的开放式嵌入模型，具有较大的词元上下文窗口。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:27
 #, kde-format
@@ -745,7 +745,7 @@ msgid ""
 "and has multilingual support."
 msgstr ""
 "Qwen 2.5 (通义千问 2.5) 模型在阿里巴巴最新的大规模数据集上进行了预训练，该数"
-"据集包含多达 18 万亿 (18T) 个标记。该模型支持多达 12 万 8 千 (128K) 个标记，"
+"据集包含多达 18 万亿 (18T) 个词元。该模型支持多达 12 万 8 千 (128K) 个词元，"
 "并具备多语言支持能力。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:35
@@ -798,7 +798,7 @@ msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
 "model on 3 trillion tokens."
 msgstr ""
-"TinyLlama 项目是一个开源的大模型项目，旨在用 3 万亿 (3T) 个标记来训练一个紧凑"
+"TinyLlama 项目是一个开源的大模型项目，旨在用 3 万亿 (3T) 个词元来训练一个紧凑"
 "的 11 亿参数 (1.1B) 的 Llama 模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:44
@@ -873,7 +873,7 @@ msgid ""
 "DeepSeek Coder is a capable coding model trained on two trillion code and "
 "natural language tokens."
 msgstr ""
-"DeepSeek Coder 是一个强大的编码模型，基于两万亿 (2T) 个代码和自然语言标记进行"
+"DeepSeek Coder 是一个强大的编码模型，基于两万亿 (2T) 个词元和自然语言标记进行"
 "训练。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:59
@@ -1168,15 +1168,15 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:110
 #, kde-format
 msgid "An advanced language model crafted with 2 trillion bilingual tokens."
-msgstr "一款基于 2 万亿 (2T) 双语标记打造的先进语言模型。"
+msgstr "一款基于 2 万亿 (2T) 双语词元打造的先进语言模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:111
 #, kde-format
 msgid ""
 "This model extends LLama-3 8B's context length from 8k to over 1m tokens."
 msgstr ""
-"此模型将 LLama-3 8B (80 亿参数) 的上下文长度从 8000 (8k) 个标记扩展到了超过 "
-"100 万 (1M) 个标记。"
+"此模型将 LLama-3 8B (80 亿参数) 的上下文长度从 8000 (8k) 个词元扩展到了超过 "
+"100 万 (1M) 个词元。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:112
 #, kde-format
@@ -1234,7 +1234,7 @@ msgstr "基于 Code Llama 的代码生成模型。"
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:121
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
-msgstr "Llama 2 的一个扩展版本，支持高达 12 万 8 千  128k 个标记的上下文。"
+msgstr "Llama 2 的一个扩展版本，支持高达 12 万 8 千  128k 个词元的上下文。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:122
 #, kde-format
@@ -1505,7 +1505,7 @@ msgid ""
 "trained over 5T tokens."
 msgstr ""
 "Falcon2 是由 TII 构建的一个 110 亿参数 (11B) 的因果解码器模型，其训练数据量超"
-"过 5 万亿 (5T) 个标记。"
+"过 5 万亿 (5T) 个词元。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:172
 #, kde-format
@@ -1762,7 +1762,7 @@ msgid ""
 "predecessors in performance and speed in IBM’s initial testing."
 msgstr ""
 "IBM 的 Granite 2B (20 亿参数) 和 8B (80 亿参数) 模型是仅包含文本的密集型大型"
-"语言模型，基于超过 12 万亿 (12T) 个标记的数据进行训练，在 IBM 的初步测试中，"
+"语言模型，基于超过 12 万亿 (12T) 个词元的数据进行训练，在 IBM 的初步测试中，"
 "它们在性能和速度方面均显著优于其前代产品。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:217
@@ -1826,7 +1826,7 @@ msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
 "with 37B activated for each token."
 msgstr ""
-"一个强大的混合专家 (MoE) 语言模型，总参数量达 6710 亿 (671B)，每个标记激活 "
+"一个强大的混合专家 (MoE) 语言模型，总参数量达 6710 亿 (671B)，每个词元激活 "
 "370 亿参数 (37B)。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:231
@@ -1838,7 +1838,7 @@ msgid ""
 "academic benchmarks."
 msgstr ""
 "OLMo 2 是一系列全新的 70 亿 (7B) 和 130 亿 (13B) 参数模型，基于多达 5 万亿 "
-"(5T) 个标记进行训练。这些模型在性能上与同等规模的完全开源模型相当，甚至更优，"
+"(5T) 个词元进行训练。这些模型在性能上与同等规模的完全开源模型相当，甚至更优，"
 "并且在英语学术基准测试中与诸如 Llama 3.1 等开放权重模型具有竞争力。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:234
@@ -1949,7 +1949,7 @@ msgid ""
 "tokens without compromising text performance."
 msgstr ""
 "Mistral Small 3.1 (2503) 在 Mistral Small 3 的基础上增加了 Mistral 家族最先进"
-"的视觉理解能力，并将长上下文处理能力提升至 12 万 8 千 (128k) 个标记，同时不牺"
+"的视觉理解能力，并将长上下文处理能力提升至 12 万 8 千 (128k) 个词元，同时不牺"
 "牲文本性能。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:261
@@ -2122,7 +2122,8 @@ msgstr ""
 #, kde-format
 msgid ""
 "DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
-msgstr "DeepSeek-OCR 是一款能够执行高效率标记光学识别的视觉语言模型。"
+msgstr ""
+"DeepSeek-OCR 是一款能够执行光学识别的视觉语言模型，具有较高的词元使用效率。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
 #, kde-format
@@ -2404,7 +2405,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
-msgstr "控制模型可以同时处理和记住多少条标记 (文本单元)。"
+msgstr "控制模型可以同时处理和记住多少个词元 (文本单元)。"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
@@ -2785,7 +2786,7 @@ msgstr "配置…"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "最大标记数："
+msgstr "最大词元数："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
