@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-03 00:54+0000\n"
+"POT-Creation-Date: 2026-06-04 00:42+0000\n"
 "PO-Revision-Date: 2026-05-03 21:19+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -275,7 +275,6 @@ msgid "Version:"
 msgstr "Version:"
 
 #: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
-#: whatsnewng/whatsnewngdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -283,14 +282,12 @@ msgstr "Was ist neu in %1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "(Show News)"
 msgstr "(Neuigkeiten anzeigen)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "Was ist neu in %2. %1"
@@ -300,17 +297,12 @@ msgstr "Was ist neu in %2. %1"
 msgid "All Versions"
 msgstr "Alle Versionen"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
-#, kde-format
-msgid "Version %1"
-msgstr "Version %1"
-
 #: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Wichtige Änderungen seit der letzten Version:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:101
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Einige der neuen Funktionen in dieser Version sind:"
@@ -325,14 +317,22 @@ msgstr "Ein paar Fehlerkorrekturen:"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:86
+#: whatsnewng/whatsnewngwidget.cpp:84
+#, kde-format
+msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
+msgstr ""
+
+#: whatsnewng/whatsnewngwidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:88
+#: whatsnewng/whatsnewngwidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
+
+#~ msgid "Version %1"
+#~ msgstr "Version %1"

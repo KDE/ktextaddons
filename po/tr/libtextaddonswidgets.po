@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-03 00:54+0000\n"
-"PO-Revision-Date: 2026-05-27 12:59+0300\n"
+"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"PO-Revision-Date: 2026-06-03 11:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -268,7 +268,6 @@ msgid "Version:"
 msgstr "Sürüm:"
 
 #: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
-#: whatsnewng/whatsnewngdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -276,14 +275,12 @@ msgstr "%1 Yenilikleri"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "(Show News)"
 msgstr "(Haberleri Göster)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "%2 içinde neler yeni. %1"
@@ -293,17 +290,12 @@ msgstr "%2 içinde neler yeni. %1"
 msgid "All Versions"
 msgstr "Tüm Sürümler"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
-#, kde-format
-msgid "Version %1"
-msgstr "Sürüm %1"
-
 #: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Önceki sürümden bu yana olan önemli değişiklikler:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:101
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Bu sürümdeki yeni özelliklerden bazıları:"
@@ -318,17 +310,23 @@ msgstr "Hata düzeltmeleri:"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i>Sürüm %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
-msgstr "<h1><i>Sürüm %1 </i></h1><hr/><br>"
+#: whatsnewng/whatsnewngwidget.cpp:84
+#, kde-format
+msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
+msgstr ""
 
-#: whatsnewng/whatsnewngwidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#: whatsnewng/whatsnewngwidget.cpp:93
+#, kde-format
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr "<h1><i>Sürüm %1 (yayım: %2)</i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:95
+#, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
-msgstr "<h1><i>Sürüm %1 </i></h1><hr/><br>"
+msgstr "<h1><i>Sürüm %1 (henüz yayımlanmadı)</i></h1><hr/><br>"
+
+#~ msgid "Version %1"
+#~ msgstr "Sürüm %1"
 
 #~ msgid "No new version found."
 #~ msgstr "Bulunan yeni sürüm yok."

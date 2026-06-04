@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-03 00:54+0000\n"
-"PO-Revision-Date: 2026-05-28 08:35+0300\n"
+"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"PO-Revision-Date: 2026-06-03 08:05+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -268,7 +268,6 @@ msgid "Version:"
 msgstr "גרסה:"
 
 #: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
-#: whatsnewng/whatsnewngdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -276,14 +275,12 @@ msgstr "מה חדש ב־%1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "(Show News)"
 msgstr "(הצגת חדשות)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#: whatsnewng/whatsnewmessagengwidget.cpp:36
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "מה חדש ב־%2. %1"
@@ -293,17 +290,12 @@ msgstr "מה חדש ב־%2. %1"
 msgid "All Versions"
 msgstr "כל הגרסאות"
 
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:54
-#, kde-format
-msgid "Version %1"
-msgstr "גרסה %1"
-
 #: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "שינויים חשובים מאז הגרסה האחרונה:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:101
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
@@ -318,17 +310,23 @@ msgstr "תיקוני תקלות:"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> גרסה %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
-msgstr "<h1><i> גרסה %1 </i></h1><hr/><br>"
+#: whatsnewng/whatsnewngwidget.cpp:84
+#, kde-format
+msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
+msgstr ""
 
-#: whatsnewng/whatsnewngwidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#: whatsnewng/whatsnewngwidget.cpp:93
+#, kde-format
+msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgstr "<h1><i> גרסה %1 (יצאה לאור: %2)</i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngwidget.cpp:95
+#, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
-msgstr "<h1><i> גרסה %1 </i></h1><hr/><br>"
+msgstr "<h1><i> גרסה %1 (טרם יצאה לאור)</i></h1><hr/><br>"
+
+#~ msgid "Version %1"
+#~ msgstr "גרסה %1"
 
 #~ msgid "No new version found."
 #~ msgstr "לא נמצאו גרסאות חדשות."
