@@ -54,6 +54,29 @@ class McpProtocolToolListChangedNotification;
 class McpProtocolTaskStatusNotification;
 class McpProtocolLoggingMessageNotification;
 class McpProtocolElicitationCompleteNotification;
+
+class McpProtocolResult;
+class McpProtocolInitializeResult;
+class McpProtocolListResourcesResult;
+class McpProtocolListResourceTemplatesResult;
+class McpProtocolReadResourceResult;
+class McpProtocolListPromptsResult;
+class McpProtocolGetPromptResult;
+class McpProtocolListToolsResult;
+class McpProtocolCallToolResult;
+class McpProtocolGetTaskResult;
+class McpProtocolGetTaskPayloadResult;
+class McpProtocolCancelTaskResult;
+class McpProtocolListTasksResult;
+class McpProtocolCompleteResult;
+class McpProtocolPingRequest;
+class McpProtocolGetTaskRequest;
+class McpProtocolGetTaskPayloadRequest;
+class McpProtocolCancelTaskRequest;
+class McpProtocolListTasksRequest;
+class McpProtocolCreateMessageRequest;
+class McpProtocolListRootsRequest;
+class McpProtocolElicitRequest;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
@@ -135,6 +158,30 @@ using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolProgressNotification,
                                         McpProtocolTaskStatusNotification,
                                         McpProtocolRootsListChangedNotification>;
+
+using ServerResult = std::variant<McpProtocolResult,
+                                  McpProtocolInitializeResult,
+                                  McpProtocolListResourcesResult,
+                                  McpProtocolListResourceTemplatesResult,
+                                  McpProtocolReadResourceResult,
+                                  McpProtocolListPromptsResult,
+                                  McpProtocolGetPromptResult,
+                                  McpProtocolListToolsResult,
+                                  McpProtocolCallToolResult,
+                                  McpProtocolGetTaskResult,
+                                  McpProtocolGetTaskPayloadResult,
+                                  McpProtocolCancelTaskResult,
+                                  McpProtocolListTasksResult,
+                                  McpProtocolCompleteResult>;
+
+using ServerRequest = std::variant<McpProtocolPingRequest,
+                                   McpProtocolGetTaskRequest,
+                                   McpProtocolGetTaskPayloadRequest,
+                                   McpProtocolCancelTaskRequest,
+                                   McpProtocolListTasksRequest,
+                                   McpProtocolCreateMessageRequest,
+                                   McpProtocolListRootsRequest,
+                                   McpProtocolElicitRequest>;
 
 using SamplingMessageContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolToolUseContent, McpProtocolToolResultContent>;
