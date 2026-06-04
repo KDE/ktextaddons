@@ -20,3 +20,5 @@ void McpProtocolListRootsResultTest::shouldHaveDefaultValues()
     TextAutoGenerateTextMcpProtocolCore::McpProtocolListRootsResult request;
     QVERIFY(request.roots().isEmpty());
 }
+
+#include "moc_mcpprotocollistrootsresulttest.cpp"

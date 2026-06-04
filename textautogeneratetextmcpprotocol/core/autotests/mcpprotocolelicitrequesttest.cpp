@@ -20,3 +20,5 @@ void McpProtocolElicitRequestTest::shouldHaveDefaultValues()
     TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
     QCOMPARE(request.type(), "elicitation/create");
 }
+
+#include "moc_mcpprotocolelicitrequesttest.cpp"
