@@ -189,8 +189,8 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getCompletion(cons
     connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
     });
-    connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::errorOccurred, this, [this](QNetworkReply::NetworkError e) {
-        Q_EMIT errorOccurred(e);
+    connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::errorOccurred, this, [this](QNetworkReply::NetworkError e, const QString &errorString) {
+        Q_EMIT errorOccurred(e, errorString);
     });
     return reply;
 }
@@ -219,8 +219,8 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getChatCompletion(
     connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
     });
-    connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::errorOccurred, this, [this](QNetworkReply::NetworkError e) {
-        Q_EMIT errorOccurred(e);
+    connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::errorOccurred, this, [this](QNetworkReply::NetworkError e, const QString &errorString) {
+        Q_EMIT errorOccurred(e, errorString);
     });
     return reply;
 }

@@ -59,7 +59,6 @@ public:
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);
-    void errorOccurred(QNetworkReply::NetworkError e);
     void ollamaStarted();
     void ollamaFailed(const QString &errorStr);
 

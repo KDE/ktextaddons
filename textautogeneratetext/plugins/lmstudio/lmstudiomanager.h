@@ -48,7 +48,6 @@ public:
     [[nodiscard]] QByteArray lsmStudioOutputData() const;
     [[nodiscard]] bool isLMStudioStarted() const;
 Q_SIGNALS:
-    void errorOccurred(QNetworkReply::NetworkError e);
     void lmsStarted();
     void lmsFailed(const QString &errorStr);
 

@@ -91,6 +91,13 @@ Q_SIGNALS:
      */
     void showModelInfoDone(const QString &replyText);
 
+    /*!
+     * \brief errorOccurred
+     * \param e
+     * \param errorString
+     */
+    void errorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
+
 protected:
     QMetaObject::Connection mCheckConnect;
 };

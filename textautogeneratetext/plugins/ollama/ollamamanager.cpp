@@ -219,8 +219,8 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
     connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
     });
-    connect(reply, &OllamaCommonReply::errorOccurred, this, [this](QNetworkReply::NetworkError e) {
-        Q_EMIT errorOccurred(e);
+    connect(reply, &OllamaCommonReply::errorOccurred, this, [this](QNetworkReply::NetworkError e, const QString &errorString) {
+        Q_EMIT errorOccurred(e, errorString);
     });
     return reply;
 }
@@ -252,8 +252,8 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     connect(reply, &OllamaCommonReply::finished, this, [this, reply]() {
         Q_EMIT finished(reply->readResponse());
     });
-    connect(reply, &OllamaCommonReply::errorOccurred, this, [this](QNetworkReply::NetworkError e) {
-        Q_EMIT errorOccurred(e);
+    connect(reply, &OllamaCommonReply::errorOccurred, this, [this](QNetworkReply::NetworkError e, const QString &errorString) {
+        Q_EMIT errorOccurred(e, errorString);
     });
     return reply;
 }

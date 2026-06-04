@@ -35,9 +35,6 @@ public:
 
     [[nodiscard]] QUrl instanceUrl() override;
 
-Q_SIGNALS:
-    void errorOccurred(QNetworkReply::NetworkError e);
-
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT bool hasCategorySupport(const QString &modelName,
                                                                                 TextAutoGenerateText::TextAutoGenerateManager::Category cat) const override;

@@ -236,8 +236,11 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
     mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
 
-void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e)
+void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e, const QString &errorString)
 {
+    if (e != QNetworkReply::NetworkError::NoError) {
+        qDebug() << " void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e)" << e << " error string " << errorString;
+    }
     // TODO
 }
 

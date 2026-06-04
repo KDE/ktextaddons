@@ -36,7 +36,7 @@ public:
     [[nodiscard]] QUrl instanceUrl() override;
 
 Q_SIGNALS:
-    void errorOccurred(QNetworkReply::NetworkError e);
+    void errorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT bool hasCategorySupport(const QString &modelName,

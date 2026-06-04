@@ -223,7 +223,7 @@ Q_SIGNALS:
 
     /*!
      */
-    void errorOccurred(QNetworkReply::NetworkError e);
+    void errorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
 
     /*!
      */

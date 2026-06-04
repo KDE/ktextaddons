@@ -156,7 +156,7 @@ Q_SIGNALS:
     /*!
      * Emitted when a network error occurs.
      */
-    void errorOccurred(QNetworkReply::NetworkError e);
+    void errorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
 
     /*!
      * Emitted when Ollama login is required.
