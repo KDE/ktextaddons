@@ -58,8 +58,8 @@ public:
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
 #endif
     {
-        KConfig sonnetKConfig(u"sonnetrc"_s);
-        KConfigGroup group(&sonnetKConfig, "Spelling"_L1);
+        const KConfig sonnetKConfig(u"sonnetrc"_s);
+        const KConfigGroup group(&sonnetKConfig, "Spelling"_L1);
         checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         supportFeatures |= RichTextEditor::Search;
         supportFeatures |= RichTextEditor::SpellChecking;
