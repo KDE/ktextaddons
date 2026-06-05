@@ -19,11 +19,15 @@ TextMessageIndicatorTest::TextMessageIndicatorTest(QObject *parent)
 
 void TextMessageIndicatorTest::shouldHaveDefaultValues()
 {
-    // TODO
     TextCustomEditor::TextMessageIndicator w;
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto mMessageWidget = w.findChild<KMessageWidget *>(u"mMessageWidget"_s);
+    QVERIFY(mMessageWidget);
+    QVERIFY(!mMessageWidget->isCloseButtonVisible());
+    QCOMPARE(mMessageWidget->position(), KMessageWidget::Position::Inline);
 }
 
 #include "moc_textmessageindicatortest.cpp"
