@@ -8,6 +8,7 @@
 
 #include <QWidget>
 class QTimer;
+class KMessageWidget;
 namespace TextCustomEditor
 {
 /**
@@ -26,8 +27,8 @@ public:
      */
     explicit TextMessageIndicator(QWidget *parent = nullptr);
 
-    enum Icon {
-        None,
+    enum Icon : uint8_t {
+        None = 0,
         Info,
         Warning,
         Error,
@@ -37,24 +38,13 @@ public:
      */
     void display(const QString &message, const QString &details = QString(), Icon icon = None, int durationMs = 4000);
 
-protected:
-    /*!
+protected Q_SLOTS:
+    /**
+     * Start autoHide timer if requested
      */
-    bool eventFilter(QObject *obj, QEvent *event) override;
-    /*!
-     */
-    void paintEvent(QPaintEvent *e) override;
-    /*!
-     */
-    void mousePressEvent(QMouseEvent *e) override;
-
+    // void startAutoHideTimer();
 private:
-    QRect computeTextRect(const QString &message, int extra_width) const;
-    void computeSizeAndResize();
-    QString mMessage;
-    QString mDetails;
-    QPixmap mSymbol;
-    QTimer *mTimer = nullptr;
-    int mLineSpacing = 0;
+    KMessageWidget *const mMessageWidget;
+    QTimer *mAutoHideTimer = nullptr;
 };
 }
