@@ -140,7 +140,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
         OllamaCommonReply::RequestTypes::StreamingChat,
         this};
     connect(reply, &OllamaCommonReply::finished, this, [this, reply]() {
-        qDebug() << " FINISHED******";
         Q_EMIT finished(reply->readResponse());
     });
     connect(reply, &OllamaCommonReply::errorOccurred, this, [this](QNetworkReply::NetworkError e, const QString &errorString) {
