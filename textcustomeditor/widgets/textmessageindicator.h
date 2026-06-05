@@ -38,6 +38,12 @@ public:
      */
     void display(const QString &message, const QString &details = QString(), Icon icon = None, int durationMs = 4000);
 
+    /*!
+     * \brief setTextFormat
+     * \param textFormat
+     */
+    void setTextFormat(Qt::TextFormat textFormat);
+
 private:
     KMessageWidget *const mMessageWidget;
     QTimer *const mAutoHideTimer;

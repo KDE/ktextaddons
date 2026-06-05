@@ -25,6 +25,7 @@ TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     mMessageWidget->setObjectName(u"mMessageWidget"_s);
     mMessageWidget->setCloseButtonVisible(false);
     mMessageWidget->setPosition(KMessageWidget::Position::Inline);
+    mMessageWidget->setWordWrap(false);
 
     mainLayout->addWidget(mMessageWidget);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
@@ -34,14 +35,24 @@ TextMessageIndicator::TextMessageIndicator(QWidget *parent)
 
     connect(mAutoHideTimer, &QTimer::timeout, this, &TextMessageIndicator::hide);
 
-    // setup autoHide timer details
     mAutoHideTimer->setSingleShot(true);
 }
 
-void TextMessageIndicator::display(const QString &message, [[maybe_unused]] const QString &details, Icon icon, int durationMs)
+void TextMessageIndicator::setTextFormat(Qt::TextFormat textFormat)
 {
-    mAutoHideTimer->stop();
-    mMessageWidget->setText(message);
+    mMessageWidget->setTextFormat(textFormat);
+}
+
+void TextMessageIndicator::display(const QString &message, const QString &details, Icon icon, int durationMs)
+{
+    if (mAutoHideTimer->isActive()) {
+        mAutoHideTimer->stop();
+    }
+    QString str = message;
+    if (!details.isEmpty()) {
+        str += u'\n' + details;
+    }
+    mMessageWidget->setText(str);
     switch (icon) {
     case None:
         mMessageWidget->setMessageType(KMessageWidget::Positive);
@@ -56,8 +67,6 @@ void TextMessageIndicator::display(const QString &message, [[maybe_unused]] cons
         mMessageWidget->setMessageType(KMessageWidget::Error);
         break;
     }
-    mMessageWidget->setTextFormat(Qt::PlainText);
-    mMessageWidget->setWordWrap(false);
 
     // make sure the widget's size is up-to-date in its hidden state
     mMessageWidget->ensurePolished();

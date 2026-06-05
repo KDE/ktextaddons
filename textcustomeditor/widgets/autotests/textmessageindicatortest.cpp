@@ -28,6 +28,7 @@ void TextMessageIndicatorTest::shouldHaveDefaultValues()
     QVERIFY(mMessageWidget);
     QVERIFY(!mMessageWidget->isCloseButtonVisible());
     QCOMPARE(mMessageWidget->position(), KMessageWidget::Position::Inline);
+    QVERIFY(!mMessageWidget->wordWrap());
 }
 
 #include "moc_textmessageindicatortest.cpp"
