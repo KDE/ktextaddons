@@ -7,7 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 class QJsonObject;
 class QDebug;
@@ -41,9 +41,15 @@ public:
      */
     void setId(const McpProtocolUtils::RequestId &newId);
 
+    /*!
+     */
+    [[nodiscard]] McpProtocolResult result() const;
+    /*!
+     */
+    void setResult(const McpProtocolResult &newResult);
+
 private:
-    // TODO result
-    // McpProtocolError mError;
+    McpProtocolResult mResult;
     McpProtocolUtils::RequestId mId;
 };
 }

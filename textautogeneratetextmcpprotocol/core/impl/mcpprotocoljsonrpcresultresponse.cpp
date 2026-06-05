@@ -19,6 +19,7 @@ bool McpProtocolJSONRPCResultResponse::operator==(const McpProtocolJSONRPCResult
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCResultResponse &t)
 {
+    d.space() << "result:" << t.result();
     d.space() << "id:" << t.id();
     return d;
 }
@@ -33,13 +34,16 @@ McpProtocolJSONRPCResultResponse McpProtocolJSONRPCResultResponse::fromJson(cons
     if (obj.contains("id"_L1)) {
         response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
+    if (obj.contains("result"_L1)) {
+        response.setResult(McpProtocolResult::fromJson(obj["result"_L1].toObject()));
+    }
     return response;
 }
 
 QJsonObject McpProtocolJSONRPCResultResponse::toJson(const McpProtocolJSONRPCResultResponse &boolean)
 {
     QJsonObject obj;
-    // obj["error"_L1] = McpProtocolError::toJson(boolean.error());
+    obj["result"_L1] = McpProtocolResult::toJson(boolean.result());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(boolean.id());
     return obj;
@@ -53,4 +57,14 @@ McpProtocolUtils::RequestId McpProtocolJSONRPCResultResponse::id() const
 void McpProtocolJSONRPCResultResponse::setId(const McpProtocolUtils::RequestId &newId)
 {
     mId = newId;
+}
+
+McpProtocolResult McpProtocolJSONRPCResultResponse::result() const
+{
+    return mResult;
+}
+
+void McpProtocolJSONRPCResultResponse::setResult(const McpProtocolResult &newResult)
+{
+    mResult = newResult;
 }
