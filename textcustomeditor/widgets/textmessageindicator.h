@@ -38,13 +38,8 @@ public:
      */
     void display(const QString &message, const QString &details = QString(), Icon icon = None, int durationMs = 4000);
 
-protected Q_SLOTS:
-    /**
-     * Start autoHide timer if requested
-     */
-    // void startAutoHideTimer();
 private:
     KMessageWidget *const mMessageWidget;
-    QTimer *mAutoHideTimer = nullptr;
+    QTimer *const mAutoHideTimer;
 };
 }

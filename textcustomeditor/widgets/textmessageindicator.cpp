@@ -18,18 +18,15 @@ TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     , mMessageWidget(new KMessageWidget(this))
     , mAutoHideTimer(new QTimer(this))
 {
-    QVBoxLayout *l = new QVBoxLayout(this);
-    l->setContentsMargins(0, 0, 0, 0);
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(u"mainLayout"_s);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
 
     mMessageWidget->setCloseButtonVisible(false);
 
-    // if (layoutDirection() == Qt::LeftToRight) {
-    move(10, parentWidget()->height());
-    // }
-
-    l->addWidget(mMessageWidget);
-    // setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
-
+    mainLayout->addWidget(mMessageWidget);
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
+    mMessageWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
     mMessageWidget->hide();
     hide();
 
@@ -63,13 +60,12 @@ void TextMessageIndicator::display(const QString &message, [[maybe_unused]] cons
     // make sure the widget's size is up-to-date in its hidden state
     mMessageWidget->ensurePolished();
     mMessageWidget->adjustSize();
-    mMessageWidget->show();
     adjustSize();
+    mMessageWidget->show();
+    move(parentWidget()->width() - width() - 10, 10);
     show();
     if (durationMs > 0) {
         mAutoHideTimer->start(durationMs);
-    } else {
-        mAutoHideTimer->stop();
     }
 }
 
