@@ -89,6 +89,8 @@ target_sources(
         misc/executableutils.cpp
         opensavedfilefolderwidget.cpp
         opensavedfilefolderwidget.h
+        textmessagewidget.cpp
+        textmessagewidget.h
 )
 
 if(WHATSNEWSNGSUPPORT)
@@ -173,6 +175,7 @@ ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     SlideContainer
     RichTextQuickTextFormat
     OpenSavedFileFolderWidget
+    TextMessageWidget
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )
