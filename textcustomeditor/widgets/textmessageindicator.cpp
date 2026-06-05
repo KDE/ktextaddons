@@ -55,8 +55,8 @@ void TextMessageIndicator::display(const QString &message, [[maybe_unused]] cons
         mMessageWidget->setMessageType(KMessageWidget::Error);
         break;
     }
-    mMessageWidget->setTextFormat(Qt::RichText);
-    mMessageWidget->setWordWrap(true);
+    mMessageWidget->setTextFormat(Qt::PlainText);
+    mMessageWidget->setWordWrap(false);
 
     // make sure the widget's size is up-to-date in its hidden state
     mMessageWidget->ensurePolished();
