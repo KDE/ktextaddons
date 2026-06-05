@@ -20,8 +20,9 @@ TextMessageIndicator::TextMessageIndicator(QWidget *parent)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
 
+    mMessageWidget->setObjectName(u"mMessageWidget"_s);
     mMessageWidget->setCloseButtonVisible(false);
     mMessageWidget->setPosition(KMessageWidget::Position::Inline);
 

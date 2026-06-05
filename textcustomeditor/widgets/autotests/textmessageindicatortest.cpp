@@ -7,9 +7,11 @@
 #include "textmessageindicatortest.h"
 #include "widgets/textmessageindicator.h"
 
+#include <KMessageWidget>
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(TextMessageIndicatorTest)
-
+using namespace Qt::Literals::StringLiterals;
 TextMessageIndicatorTest::TextMessageIndicatorTest(QObject *parent)
     : QObject{parent}
 {
@@ -19,4 +21,9 @@ void TextMessageIndicatorTest::shouldHaveDefaultValues()
 {
     // TODO
     TextCustomEditor::TextMessageIndicator w;
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }
+
+#include "moc_textmessageindicatortest.cpp"
