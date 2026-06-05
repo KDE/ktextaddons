@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-04 00:42+0000\n"
-"PO-Revision-Date: 2026-06-03 07:39+0200\n"
+"PO-Revision-Date: 2026-06-04 05:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -318,7 +318,7 @@ msgstr "<h1><i> Različica %1 </i></h1><hr/><br>"
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">Opomba ob izdaji</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
 #, kde-format

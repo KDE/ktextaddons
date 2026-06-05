@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-04 00:42+0000\n"
-"PO-Revision-Date: 2026-06-03 14:01+0100\n"
+"PO-Revision-Date: 2026-06-04 11:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -319,7 +319,7 @@ msgstr "<h1><i> Versión %1 </i></h1><hr/><br>"
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">Nota de lanzamiento</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
 #, kde-format
@@ -330,6 +330,3 @@ msgstr "<h1><i> Versión %1 (Publicada: %2)</i></h1><hr/><br>"
 #, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Versión %1 (todavía no publicada)</i></h1><hr/><br>"
-
-#~ msgid "Version %1"
-#~ msgstr "Versión %1"

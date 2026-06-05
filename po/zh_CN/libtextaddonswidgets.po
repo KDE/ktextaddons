@@ -314,12 +314,9 @@ msgstr ""
 #: whatsnewng/whatsnewngwidget.cpp:93
 #, kde-format
 msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> 版本 %1 (发布日期：%2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
 #, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
-msgstr ""
-
-#~ msgid "Version %1"
-#~ msgstr "版本 %1"
+msgstr "<h1><i> 版本 %1 (尚未发布)</i></h1><hr/><br>"
