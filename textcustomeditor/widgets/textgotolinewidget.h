@@ -34,6 +34,9 @@ public:
 
     /*! Sets the maximum line count for validation. */
     void setMaximumLineCount(int max);
+
+    /*! Filters events for the parent widget. */
+    bool eventFilter(QObject *obj, QEvent *event) override;
 Q_SIGNALS:
     /*! Emitted when the user wants to move to a specific line. */
     void moveToLine(int);
@@ -45,8 +48,6 @@ protected:
     bool event(QEvent *e) override;
     /*! Handles the show event. */
     void showEvent(QShowEvent *e) override;
-    /*! Filters events for the parent widget. */
-    bool eventFilter(QObject *obj, QEvent *event) override;
 
 public:
     /*! Called when the block count of the text document changes. */
