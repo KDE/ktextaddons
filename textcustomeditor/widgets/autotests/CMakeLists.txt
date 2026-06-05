@@ -11,5 +11,5 @@ endmacro()
 add_widgets_unittest(textgotolinewidgettest.cpp)
 
 add_widgets_unittest(textfindwidgettest.cpp)
-
 add_widgets_unittest(textreplacewidgettest.cpp)
+add_widgets_unittest(textmessageindicatortest.cpp)

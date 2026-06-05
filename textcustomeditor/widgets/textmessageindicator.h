@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include "textcustomeditor_export.h"
 #include <QWidget>
 class QTimer;
 class KMessageWidget;
@@ -19,7 +19,7 @@ namespace TextCustomEditor
  * user by placing this above other widgets.
  * \author Laurent Montel <montel@kde.org>
  */
-class TextMessageIndicator : public QWidget
+class TEXTCUSTOMEDITOR_EXPORT TextMessageIndicator : public QWidget
 {
     Q_OBJECT
 public:
