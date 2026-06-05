@@ -20,6 +20,7 @@
 
 #include <KConfigGroup>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
 #include <QKeyEvent>
@@ -239,9 +240,9 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
 void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e, const QString &errorString)
 {
     if (e != QNetworkReply::NetworkError::NoError) {
-        qDebug() << " void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e)" << e << " error string " << errorString;
+        KMessageBox::error(this, i18n("Error reported: %1", errorString), i18nc("@title:window", "Error"));
+        // qDebug() << " void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e)" << e << " error string " << errorString;
     }
-    // TODO
 }
 
 void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
