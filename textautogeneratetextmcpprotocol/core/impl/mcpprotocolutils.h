@@ -77,6 +77,8 @@ class McpProtocolListTasksRequest;
 class McpProtocolCreateMessageRequest;
 class McpProtocolListRootsRequest;
 class McpProtocolElicitRequest;
+class McpProtocolJSONRPCResultResponse;
+class McpProtocolJSONRPCErrorResponse;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
@@ -192,6 +194,8 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 McpProtocolToolUseContent,
                                                 McpProtocolToolResultContent,
                                                 QList<SamplingMessageContentBlock>>;
+
+using JSONRPCResponse = std::variant<McpProtocolJSONRPCResultResponse, McpProtocolJSONRPCErrorResponse>;
 
 [[nodiscard]] QString getProgressTokenValue(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &token);
 
