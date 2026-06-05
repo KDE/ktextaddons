@@ -23,6 +23,7 @@ TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
     mMessageWidget->setCloseButtonVisible(false);
+    mMessageWidget->setPosition(KMessageWidget::Position::Inline);
 
     mainLayout->addWidget(mMessageWidget);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
