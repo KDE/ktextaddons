@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-04 00:42+0000\n"
-"PO-Revision-Date: 2026-05-28 14:14+0200\n"
+"PO-Revision-Date: 2026-06-04 08:16+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -320,16 +320,14 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr ""
 
 #: whatsnewng/whatsnewngwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#, kde-format
 msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
-msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Version %1 (Date de publication : %2) </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
-msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Version %1 (Non encore publiée) </i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"

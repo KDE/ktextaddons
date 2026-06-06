@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:42+0000\n"
+"POT-Creation-Date: 2026-06-06 00:42+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2874,9 +2874,20 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:126
+#: widgets/textautogeneratewidget.cpp:127
 #, kde-format
 msgid "No plugin found."
+msgstr ""
+
+#: widgets/textautogeneratewidget.cpp:243
+#, kde-format
+msgid "Error reported: %1"
+msgstr ""
+
+#: widgets/textautogeneratewidget.cpp:243
+#, kde-format
+msgctxt "@title:window"
+msgid "Error"
 msgstr ""
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
