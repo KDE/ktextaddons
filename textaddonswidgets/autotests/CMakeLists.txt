@@ -10,3 +10,4 @@ endmacro()
 
 add_textaddonswidgets_unittest(slidecontainertest.cpp)
 add_textaddonswidgets_unittest(richtextquicktextformattest.cpp)
+add_textaddonswidgets_unittest(textmessagewidgettest.cpp)
