@@ -35,7 +35,6 @@ target_sources(
         widgets/textfindreplacewidget.cpp
         widgets/texteditfindbarbase.cpp
         widgets/textgotolinewidget.cpp
-        widgets/textmessageindicator.cpp
         richtexteditor/richtexteditor.cpp
         richtexteditor/richtexteditfindbar.cpp
         richtexteditor/richtexteditorwidget.cpp
@@ -47,7 +46,6 @@ target_sources(
         widgets/textfindreplacewidget.h
         widgets/texteditfindbarbase.h
         widgets/textgotolinewidget.h
-        widgets/textmessageindicator.h
         richtexteditor/richtexteditor.h
         richtexteditor/richtexteditfindbar.h
         richtexteditor/richtexteditorwidget.h

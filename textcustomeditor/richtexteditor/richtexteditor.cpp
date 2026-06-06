@@ -8,7 +8,7 @@
 
 #include "config-textcustomeditor.h"
 #include "textcustomeditor_debug.h"
-#include "widgets/textmessageindicator.h"
+#include <TextAddonsWidgets/TextMessageWidget>
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
@@ -53,7 +53,7 @@ class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
 public:
     RichTextEditorPrivate(RichTextEditor *qq)
         : q(qq)
-        , textIndicator(new TextCustomEditor::TextMessageIndicator(q))
+        , textIndicator(new TextAddonsWidgets::TextMessageWidget(q))
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
 #endif
@@ -102,7 +102,7 @@ public:
 
     QStringList ignoreSpellCheckingWords;
     RichTextEditor *const q;
-    TextCustomEditor::TextMessageIndicator *const textIndicator;
+    TextAddonsWidgets::TextMessageWidget *const textIndicator;
     QString spellCheckingConfigFileName;
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
@@ -147,7 +147,7 @@ void RichTextEditor::setDefaultFontSize(int val)
 
 void RichTextEditor::slotDisplayMessageIndicator(const QString &message)
 {
-    d->textIndicator->display(message);
+    d->textIndicator->showMessage(message);
 }
 
 Sonnet::Highlighter *RichTextEditor::highlighter() const

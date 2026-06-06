@@ -5,7 +5,7 @@
 */
 #include "plaintexteditor.h"
 #include "config-textcustomeditor.h"
-#include "widgets/textmessageindicator.h"
+#include <TextAddonsWidgets/TextMessageWidget>
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
@@ -45,7 +45,7 @@ class Q_DECL_HIDDEN PlainTextEditor::PlainTextEditorPrivate
 public:
     PlainTextEditorPrivate(PlainTextEditor *qq)
         : q(qq)
-        , mTextIndicator(new TextCustomEditor::TextMessageIndicator(q))
+        , mTextIndicator(new TextAddonsWidgets::TextMessageWidget(q))
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
 #endif
@@ -69,7 +69,7 @@ public:
 
     QStringList ignoreSpellCheckingWords;
     PlainTextEditor *const q;
-    TextCustomEditor::TextMessageIndicator *const mTextIndicator;
+    TextAddonsWidgets::TextMessageWidget *const mTextIndicator;
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
 #endif
@@ -113,7 +113,7 @@ void PlainTextEditor::addIgnoreWords(const QStringList &lst)
 
 void PlainTextEditor::slotDisplayMessageIndicator(const QString &message)
 {
-    d->mTextIndicator->display(message);
+    d->mTextIndicator->showMessage(message);
 }
 
 void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)

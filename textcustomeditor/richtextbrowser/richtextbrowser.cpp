@@ -6,7 +6,8 @@
 
 #include "richtextbrowser.h"
 
-#include "widgets/textmessageindicator.h"
+#include <TextAddonsWidgets/TextMessageWidget>
+
 #include <KCursor>
 #include <KLocalizedString>
 #include <KStandardActions>
@@ -37,7 +38,7 @@ class Q_DECL_HIDDEN RichTextBrowser::RichTextBrowserPrivate
 public:
     RichTextBrowserPrivate(RichTextBrowser *qq)
         : q(qq)
-        , textIndicator(new TextCustomEditor::TextMessageIndicator(q))
+        , textIndicator(new TextAddonsWidgets::TextMessageWidget(q))
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
 #endif
@@ -78,7 +79,7 @@ public:
     }
 
     RichTextBrowser *const q;
-    TextCustomEditor::TextMessageIndicator *const textIndicator;
+    TextAddonsWidgets::TextMessageWidget *const textIndicator;
     QTextDocumentFragment originalDoc;
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
@@ -115,7 +116,7 @@ void RichTextBrowser::setDefaultFontSize(int val)
 
 void RichTextBrowser::slotDisplayMessageIndicator(const QString &message)
 {
-    d->textIndicator->display(message);
+    d->textIndicator->showMessage(message);
 }
 
 void RichTextBrowser::contextMenuEvent(QContextMenuEvent *event)
