@@ -30,6 +30,9 @@ TextMessageWidget::TextMessageWidget(QWidget *parent)
     mainLayout->addWidget(mMessageWidget);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
     mMessageWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
+    mMessageWidget->ensurePolished();
+    mMessageWidget->adjustSize();
+    adjustSize();
     mMessageWidget->hide();
     hide();
 
@@ -73,8 +76,8 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
     // make sure the widget's size is up-to-date in its hidden state
     mMessageWidget->ensurePolished();
     mMessageWidget->adjustSize();
-    adjustSize();
     mMessageWidget->show();
+    adjustSize();
     move(parentWidget()->width() - width() - 10, 10);
     show();
     if (durationMs > 0) {
