@@ -43,7 +43,7 @@ void TextMessageWidget::setTextFormat(Qt::TextFormat textFormat)
     mMessageWidget->setTextFormat(textFormat);
 }
 
-void TextMessageWidget::showMessage(const QString &message, const QString &details, Icon icon, int durationMs)
+void TextMessageWidget::showMessage(const QString &message, const QString &details, KMessageWidget::MessageType type, int durationMs)
 {
     if (mAutoHideTimer->isActive()) {
         mAutoHideTimer->stop();
@@ -53,18 +53,20 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
         str += u'\n' + details;
     }
     mMessageWidget->setText(str);
-    switch (icon) {
-    case None:
+    switch (type) {
+    case KMessageWidget::MessageType::Positive:
         mMessageWidget->setMessageType(KMessageWidget::Positive);
         break;
-    case Info:
+    case KMessageWidget::MessageType::Information:
         mMessageWidget->setMessageType(KMessageWidget::Information);
         break;
-    case Warning:
+    case KMessageWidget::MessageType::Warning:
         mMessageWidget->setMessageType(KMessageWidget::Warning);
+        mMessageWidget->setIcon(QIcon::fromTheme(u"state-warning-symbolic"_s));
         break;
-    case Error:
+    case KMessageWidget::MessageType::Error:
         mMessageWidget->setMessageType(KMessageWidget::Error);
+        mMessageWidget->setIcon(QIcon::fromTheme(u"state-error-symbolic"_s));
         break;
     }
 

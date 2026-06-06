@@ -6,9 +6,9 @@
 
 #pragma once
 #include "textaddonswidgets_export.h"
+#include <KMessageWidget>
 #include <QWidget>
 class QTimer;
-class KMessageWidget;
 namespace TextAddonsWidgets
 {
 /**
@@ -27,16 +27,12 @@ public:
      */
     explicit TextMessageWidget(QWidget *parent = nullptr);
 
-    enum Icon : uint8_t {
-        None = 0,
-        Info,
-        Warning,
-        Error,
-    };
-
     /*!
      */
-    void showMessage(const QString &message, const QString &details = QString(), Icon icon = None, int durationMs = 4000);
+    void showMessage(const QString &message,
+                     const QString &details = QString(),
+                     KMessageWidget::MessageType type = KMessageWidget::MessageType::Positive,
+                     int durationMs = 4000);
 
     /*!
      * \brief setTextFormat
