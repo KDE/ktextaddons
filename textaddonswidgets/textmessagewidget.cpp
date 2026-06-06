@@ -75,11 +75,11 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
 
     // make sure the widget's size is up-to-date in its hidden state
     mMessageWidget->ensurePolished();
-    mMessageWidget->adjustSize();
     mMessageWidget->show();
+    mMessageWidget->adjustSize();
+    show();
     adjustSize();
     move(parentWidget()->width() - width() - 10, 10);
-    show();
     if (durationMs > 0) {
         mAutoHideTimer->start(durationMs);
     }
