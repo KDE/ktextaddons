@@ -2862,7 +2862,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
