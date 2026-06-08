@@ -241,6 +241,8 @@ target_sources(
         impl/mcpprotocolreadresourceresult.h
         impl/mcpprotocoljsonrpcresultresponse.cpp
         impl/mcpprotocoljsonrpcresultresponse.h
+        impl/mcpprotocolinitializeresult.cpp
+        impl/mcpprotocolinitializeresult.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -407,6 +409,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolListTasksResult
     McpProtocolReadResourceResult
     McpProtocolJSONRPCResultResponse
+    McpProtocolInitializeResult
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
