@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolinitializeresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -29,6 +30,29 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolInitializeResult prompt;
+    if (!obj.contains("capabilities"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: capabilities";
+        return prompt;
+    }
+    if (!obj.contains("protocolVersion"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: protocolVersion";
+        return prompt;
+    }
+    if (!obj.contains("serverInfo"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: serverInfo";
+        return prompt;
+    }
+    if (obj.contains("capabilities"_L1) && obj["capabilities"_L1].isObject()) {
+        // TODO prompt.setCapabilities = McpProtocolServerCapabilities::fromJson<>(obj["capabilities"_L1]);
+    }
+    if (obj.contains("instructions"_L1)) {
+        prompt.setInstructions(obj.value("instructions"_L1).toString());
+    }
+    prompt.setProtocolVersion(obj["protocolVersion"_L1].toString());
+    if (obj.contains("serverInfo"_L1) && obj["serverInfo"_L1].isObject()) {
+        prompt.setServerInfo(McpProtocolImplementation::fromJson(obj["serverInfo"_L1].toObject()));
+    }
+
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
@@ -38,8 +62,15 @@ McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObj
 QJsonObject McpProtocolInitializeResult::toJson(const McpProtocolInitializeResult &boolean)
 {
     QJsonObject obj;
+    // TODO obj["capabilities"_L1] = toJson(boolean.capabilities());
+    obj["protocolVersion"_L1] = boolean.protocolVersion();
+    obj["serverInfo"_L1] = McpProtocolImplementation::toJson(boolean.serverInfo());
+
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    }
+    if (boolean.instructions().has_value()) {
+        obj["instructions"_L1] = *boolean.instructions();
     }
     return obj;
 }
@@ -61,7 +92,7 @@ std::optional<QString> McpProtocolInitializeResult::instructions() const
 
 void McpProtocolInitializeResult::setInstructions(std::optional<QString> newInstructions)
 {
-    mInstructions = newInstructions;
+    mInstructions = std::move(newInstructions);
 }
 
 QString McpProtocolInitializeResult::protocolVersion() const
