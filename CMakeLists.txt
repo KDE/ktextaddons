@@ -5,7 +5,7 @@ set(KTEXTADDONS_CURRENT_VERSION "2.0.82")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 set(QT_REQUIRED_VERSION "6.9.0")
-set(KF_MIN_VERSION "6.23.0")
+set(KF_MIN_VERSION "6.26.0")
 set(QT6KEYCHAIN_LIB_VERSION "0.15.0")
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 include(FeatureSummary)
@@ -164,10 +164,6 @@ find_package(
         ItemViews
         IconThemes
 )
-
-if(${KF6CoreAddons_VERSION} VERSION_GREATER_EQUAL 6.26.0)
-    set(WHATSNEWSNGSUPPORT TRUE)
-endif()
 
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
 add_feature_info(

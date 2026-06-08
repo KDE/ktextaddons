@@ -93,20 +93,18 @@ target_sources(
         textmessagewidget.h
 )
 
-if(WHATSNEWSNGSUPPORT)
-    target_sources(
-        KF6TextAddonsWidgets
-        PRIVATE
-            whatsnewng/whatsnewngdialog.cpp
-            whatsnewng/whatsnewngdialog.h
-            whatsnewng/whatsnewngwidget.h
-            whatsnewng/whatsnewngwidget.cpp
-            whatsnewng/whatsnewmessagengwidget.cpp
-            whatsnewng/whatsnewmessagengwidget.h
-            whatsnewng/whatsnewngutils.h
-            whatsnewng/whatsnewngutils.cpp
-    )
-endif()
+target_sources(
+    KF6TextAddonsWidgets
+    PRIVATE
+        whatsnewng/whatsnewngdialog.cpp
+        whatsnewng/whatsnewngdialog.h
+        whatsnewng/whatsnewngwidget.h
+        whatsnewng/whatsnewngwidget.cpp
+        whatsnewng/whatsnewmessagengwidget.cpp
+        whatsnewng/whatsnewmessagengwidget.h
+        whatsnewng/whatsnewngutils.h
+        whatsnewng/whatsnewngutils.cpp
+)
 
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -221,8 +219,7 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
     RELATIVE whatsnew
 )
 
-if(WHATSNEWSNGSUPPORT)
-    ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
+ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
         HEADER_NAMES
         WhatsNewNgDialog
         WhatsNewMessageNgWidget
@@ -230,8 +227,7 @@ if(WHATSNEWSNGSUPPORT)
         REQUIRED_HEADERS TextAddonsWidgets_whatsnewng_HEADERS
         PREFIX TextAddonsWidgets
         RELATIVE whatsnewng
-    )
-endif()
+)
 
 ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
     HEADER_NAMES
@@ -319,9 +315,7 @@ if(BUILD_TESTING)
     add_subdirectory(needupdateversion/autotests)
     add_subdirectory(whatsnew/autotests)
     add_subdirectory(quicksearchbar/autotests)
-    if(WHATSNEWSNGSUPPORT)
-        add_subdirectory(whatsnewng/autotests)
-        add_subdirectory(whatsnewng/tests)
-    endif()
+    add_subdirectory(whatsnewng/autotests)
+    add_subdirectory(whatsnewng/tests)
 endif()
 ecm_generate_qdoc(KF6TextAddonsWidgets textaddonswidgets.qdocconf)
