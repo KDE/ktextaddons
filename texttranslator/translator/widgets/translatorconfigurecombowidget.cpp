@@ -66,7 +66,7 @@ void TranslatorConfigureComboWidget::slotEngineChanged(int index)
 
 void TranslatorConfigureComboWidget::load()
 {
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
+    const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
     const QString engine = groupTranslate.readEntry(TranslatorUtil::engineTranslateName(), TranslatorUtil::defaultEngineName()); // Google by default
     const int index = mEngineComboBox->findData(engine);
     if (index != -1) {

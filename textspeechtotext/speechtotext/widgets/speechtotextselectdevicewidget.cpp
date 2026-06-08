@@ -44,7 +44,7 @@ SpeechToTextSelectDeviceWidget::~SpeechToTextSelectDeviceWidget() = default;
 
 void SpeechToTextSelectDeviceWidget::loadSettings()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
+    const KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
     const QByteArray deviceIdentifier = group.readEntry("SoundDevice", QByteArray());
     if (!deviceIdentifier.isEmpty()) {
         const int nbDevice{mDeviceComboBox->count()};

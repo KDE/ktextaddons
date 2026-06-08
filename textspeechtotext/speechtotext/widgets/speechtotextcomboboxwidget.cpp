@@ -88,7 +88,7 @@ void SpeechToTextComboBoxWidget::slotEngineChanged(int index)
 
 void SpeechToTextComboBoxWidget::load()
 {
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
+    const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
     const QString engine = groupTranslate.readEntry(TextSpeechToTextUtil::engineTextToSpeechName(), TextSpeechToTextUtil::defaultEngineName());
     const int index = mEngine->findData(engine);
     if (index != -1) {

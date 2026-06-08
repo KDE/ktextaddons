@@ -90,7 +90,7 @@ void TranslatorConfigureListsWidget::slotEngineSettingsChanged(const QString &en
 
 void TranslatorConfigureListsWidget::loadLanguagesList()
 {
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
+    const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
     const auto fromLanguages = groupTranslate.readEntry(u"From"_s, QStringList());
     const auto toLanguages = groupTranslate.readEntry(u"To"_s, QStringList());
     d->mFromLanguageWidget->setSelectedLanguages(fromLanguages);
