@@ -3258,13 +3258,13 @@ msgstr "Nenašiel sa žiadny modul."
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "Nahlásená chyba: %1"
 
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
