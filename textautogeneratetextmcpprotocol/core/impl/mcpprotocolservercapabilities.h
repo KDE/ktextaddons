@@ -13,6 +13,13 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServerCapabilities
 {
 public:
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Prompts {
+        std::optional<bool> mListChanged;
+
+        Prompts &listChanged(std::optional<bool> v);
+
+        const std::optional<bool> &listChanged() const;
+    };
     /*!
      */
     McpProtocolServerCapabilities();
@@ -34,3 +41,4 @@ public:
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Prompts &t);

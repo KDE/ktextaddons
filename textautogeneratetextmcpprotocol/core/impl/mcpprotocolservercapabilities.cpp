@@ -19,6 +19,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Prompts &t)
+{
+    d.space() << "listChanged:" << t.listChanged();
+    return d;
+}
+
 bool McpProtocolServerCapabilities::operator==(const McpProtocolServerCapabilities &other) const = default;
 
 McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJsonObject &obj)
@@ -29,4 +35,15 @@ McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJso
 QJsonObject McpProtocolServerCapabilities::toJson(const McpProtocolServerCapabilities &image)
 {
     return {};
+}
+
+McpProtocolServerCapabilities::Prompts &McpProtocolServerCapabilities::Prompts::listChanged(std::optional<bool> v)
+{
+    mListChanged = v;
+    return *this;
+}
+
+const std::optional<bool> &McpProtocolServerCapabilities::Prompts::listChanged() const
+{
+    return mListChanged;
 }
