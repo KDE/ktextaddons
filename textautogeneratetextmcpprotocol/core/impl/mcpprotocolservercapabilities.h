@@ -20,6 +20,31 @@ public:
 
         const std::optional<bool> &listChanged() const;
     };
+
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Resources {
+        std::optional<bool> mListChanged;
+        std::optional<bool> mSubscribe;
+
+        Resources &listChanged(std::optional<bool> v)
+        {
+            mListChanged = v;
+            return *this;
+        }
+        Resources &subscribe(std::optional<bool> v)
+        {
+            mSubscribe = v;
+            return *this;
+        }
+
+        const std::optional<bool> &listChanged() const
+        {
+            return mListChanged;
+        }
+        const std::optional<bool> &subscribe() const
+        {
+            return mSubscribe;
+        }
+    };
     /*!
      */
     McpProtocolServerCapabilities();
@@ -42,3 +67,4 @@ public:
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Prompts &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Resources &t);

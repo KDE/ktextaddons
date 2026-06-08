@@ -25,6 +25,13 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Resources &t)
+{
+    d.space() << "listChanged:" << t.listChanged();
+    d.space() << "subscribe:" << t.subscribe();
+    return d;
+}
+
 bool McpProtocolServerCapabilities::operator==(const McpProtocolServerCapabilities &other) const = default;
 
 McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJsonObject &obj)
