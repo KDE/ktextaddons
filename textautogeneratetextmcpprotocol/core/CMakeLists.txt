@@ -249,6 +249,8 @@ target_sources(
         impl/mcpprotocolelicitrequestformparams.cpp
         impl/mcpprotocolelicitrequesturlparams.cpp
         impl/mcpprotocolelicitrequesturlparams.h
+        impl/mcpprotocolsamplingmessage.h
+        impl/mcpprotocolsamplingmessage.cpp
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -419,6 +421,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolServerCapabilities
     McpProtocolElicitRequestFormParams
     McpProtocolElicitRequestURLParams
+    McpProtocolSamplingMessage
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
