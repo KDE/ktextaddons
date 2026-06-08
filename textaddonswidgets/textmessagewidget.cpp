@@ -36,7 +36,10 @@ TextMessageWidget::TextMessageWidget(QWidget *parent)
     mMessageWidget->hide();
     hide();
 
-    connect(mAutoHideTimer, &QTimer::timeout, this, &TextMessageWidget::hide);
+    connect(mAutoHideTimer, &QTimer::timeout, this, [this]() {
+        mMessageWidget->animatedHide();
+    });
+    connect(mMessageWidget, &KMessageWidget::hideAnimationFinished, this, &TextMessageWidget::hide);
 
     mAutoHideTimer->setSingleShot(true);
 }
@@ -75,8 +78,8 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
 
     // make sure the widget's size is up-to-date in its hidden state
     mMessageWidget->ensurePolished();
-    mMessageWidget->show();
     mMessageWidget->adjustSize();
+    mMessageWidget->animatedShow();
     show();
     adjustSize();
     move(parentWidget()->width() - width() - 10, 10);
