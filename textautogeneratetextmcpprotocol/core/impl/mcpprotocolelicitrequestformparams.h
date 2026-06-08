@@ -7,6 +7,7 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
+class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -17,3 +18,6 @@ public:
     ~McpProtocolElicitRequestFormParams();
 };
 }
+
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams &t);
