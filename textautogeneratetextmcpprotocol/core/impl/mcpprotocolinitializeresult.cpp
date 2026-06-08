@@ -24,6 +24,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "resources:" << t.instructions();
     d.space() << "protocolVersion:" << t.protocolVersion();
     d.space() << "serverInfo:" << t.serverInfo();
+    d.space() << "capabilities:" << t.capabilities();
     return d;
 }
 
@@ -43,7 +44,7 @@ McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObj
         return prompt;
     }
     if (obj.contains("capabilities"_L1) && obj["capabilities"_L1].isObject()) {
-        // TODO prompt.setCapabilities = McpProtocolServerCapabilities::fromJson<>(obj["capabilities"_L1]);
+        prompt.setCapabilities(McpProtocolServerCapabilities::fromJson(obj["capabilities"_L1].toObject()));
     }
     if (obj.contains("instructions"_L1)) {
         prompt.setInstructions(obj.value("instructions"_L1).toString());
@@ -62,7 +63,7 @@ McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObj
 QJsonObject McpProtocolInitializeResult::toJson(const McpProtocolInitializeResult &boolean)
 {
     QJsonObject obj;
-    // TODO obj["capabilities"_L1] = toJson(boolean.capabilities());
+    obj["capabilities"_L1] = McpProtocolServerCapabilities::toJson(boolean.capabilities());
     obj["protocolVersion"_L1] = boolean.protocolVersion();
     obj["serverInfo"_L1] = McpProtocolImplementation::toJson(boolean.serverInfo());
 
@@ -113,4 +114,14 @@ McpProtocolImplementation McpProtocolInitializeResult::serverInfo() const
 void McpProtocolInitializeResult::setServerInfo(const McpProtocolImplementation &newServerInfo)
 {
     mServerInfo = newServerInfo;
+}
+
+McpProtocolServerCapabilities McpProtocolInitializeResult::capabilities() const
+{
+    return mCapabilities;
+}
+
+void McpProtocolInitializeResult::setCapabilities(const McpProtocolServerCapabilities &newCapabilities)
+{
+    mCapabilities = newCapabilities;
 }

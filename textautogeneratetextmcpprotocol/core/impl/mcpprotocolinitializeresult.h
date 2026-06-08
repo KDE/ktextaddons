@@ -8,6 +8,7 @@
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerCapabilities>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -61,9 +62,16 @@ public:
      */
     void setServerInfo(const McpProtocolImplementation &newServerInfo);
 
+    /*!
+     */
+    [[nodiscard]] McpProtocolServerCapabilities capabilities() const;
+    /*!
+     */
+    void setCapabilities(const McpProtocolServerCapabilities &newCapabilities);
+
 private:
     std::optional<McpProtocolMeta> mMeta;
-    // TODO McpProtocolServerCapabilities mCapabilities;
+    McpProtocolServerCapabilities mCapabilities;
     std::optional<QString> mInstructions;
     QString mProtocolVersion;
     McpProtocolImplementation mServerInfo;
