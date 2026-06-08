@@ -25,26 +25,23 @@ public:
         std::optional<bool> mListChanged;
         std::optional<bool> mSubscribe;
 
-        Resources &listChanged(std::optional<bool> v)
-        {
-            mListChanged = v;
-            return *this;
-        }
-        Resources &subscribe(std::optional<bool> v)
-        {
-            mSubscribe = v;
-            return *this;
-        }
+        Resources &listChanged(std::optional<bool> v);
+        Resources &subscribe(std::optional<bool> v);
 
-        const std::optional<bool> &listChanged() const
-        {
-            return mListChanged;
-        }
-        const std::optional<bool> &subscribe() const
-        {
-            return mSubscribe;
-        }
+        const std::optional<bool> &listChanged() const;
+        const std::optional<bool> &subscribe() const;
     };
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tools {
+        std::optional<bool> mListChanged;
+
+        Tools &listChanged(std::optional<bool> v);
+
+        const std::optional<bool> &listChanged() const;
+    };
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tasks {
+        // TODO
+    };
+
     /*!
      */
     McpProtocolServerCapabilities();
@@ -68,3 +65,5 @@ Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabil
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Prompts &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Resources &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Tools &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Tasks &t);

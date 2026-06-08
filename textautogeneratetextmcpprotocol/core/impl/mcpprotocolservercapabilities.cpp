@@ -25,6 +25,18 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Tools &t)
+{
+    d.space() << "listChanged:" << t.listChanged();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Tasks &t)
+{
+    // TODO
+    return d;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities::Resources &t)
 {
     d.space() << "listChanged:" << t.listChanged();
@@ -51,6 +63,39 @@ McpProtocolServerCapabilities::Prompts &McpProtocolServerCapabilities::Prompts::
 }
 
 const std::optional<bool> &McpProtocolServerCapabilities::Prompts::listChanged() const
+{
+    return mListChanged;
+}
+
+McpProtocolServerCapabilities::Resources &McpProtocolServerCapabilities::Resources::listChanged(std::optional<bool> v)
+{
+    mListChanged = v;
+    return *this;
+}
+
+McpProtocolServerCapabilities::Resources &McpProtocolServerCapabilities::Resources::subscribe(std::optional<bool> v)
+{
+    mSubscribe = v;
+    return *this;
+}
+
+const std::optional<bool> &McpProtocolServerCapabilities::Resources::listChanged() const
+{
+    return mListChanged;
+}
+
+const std::optional<bool> &McpProtocolServerCapabilities::Resources::subscribe() const
+{
+    return mSubscribe;
+}
+
+McpProtocolServerCapabilities::Tools &McpProtocolServerCapabilities::Tools::listChanged(std::optional<bool> v)
+{
+    mListChanged = v;
+    return *this;
+}
+
+const std::optional<bool> &McpProtocolServerCapabilities::Tools::listChanged() const
 {
     return mListChanged;
 }
