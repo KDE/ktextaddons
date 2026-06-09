@@ -7,7 +7,9 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAudioContent>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolEmbeddedResource>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImageContent>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceLink>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolResultContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolUseContent>
