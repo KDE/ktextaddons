@@ -79,6 +79,14 @@ class McpProtocolListRootsRequest;
 class McpProtocolElicitRequest;
 class McpProtocolJSONRPCResultResponse;
 class McpProtocolJSONRPCErrorResponse;
+class McpProtocolStringSchema;
+class McpProtocolNumberSchema;
+class McpProtocolBooleanSchema;
+class McpProtocolUntitledSingleSelectEnumSchema;
+class McpProtocolTitledSingleSelectEnumSchema;
+class McpProtocolUntitledMultiSelectEnumSchema;
+class McpProtocolTitledMultiSelectEnumSchema;
+class McpProtocolLegacyTitledEnumSchema;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
@@ -194,6 +202,15 @@ using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 McpProtocolToolUseContent,
                                                 McpProtocolToolResultContent,
                                                 QList<SamplingMessageContentBlock>>;
+
+using PrimitiveSchemaDefinition = std::variant<McpProtocolStringSchema,
+                                               McpProtocolNumberSchema,
+                                               McpProtocolBooleanSchema,
+                                               McpProtocolUntitledSingleSelectEnumSchema,
+                                               McpProtocolTitledSingleSelectEnumSchema,
+                                               McpProtocolUntitledMultiSelectEnumSchema,
+                                               McpProtocolTitledMultiSelectEnumSchema,
+                                               McpProtocolLegacyTitledEnumSchema>;
 
 using JSONRPCResponse = std::variant<McpProtocolJSONRPCResultResponse, McpProtocolJSONRPCErrorResponse>;
 

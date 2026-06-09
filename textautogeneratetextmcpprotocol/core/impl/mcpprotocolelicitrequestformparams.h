@@ -30,6 +30,12 @@ public:
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::Meta &image);
     };
+    struct RequestedSchema {
+        // TODO
+        std::optional<QString> mDollarschema;
+        QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
+        std::optional<QStringList> mRequired;
+    };
     /*!
      */
     McpProtocolElicitRequestFormParams();
@@ -61,7 +67,7 @@ public:
 private:
     std::optional<Meta> mMeta;
     QString mMessage;
-    // TODO RequestedSchema _requestedSchema;
+    // RequestedSchema mRequestedSchema;
     std::optional<McpProtocolTaskMetadata> mTask;
 };
 }
