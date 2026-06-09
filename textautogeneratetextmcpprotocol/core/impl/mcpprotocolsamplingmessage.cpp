@@ -5,6 +5,7 @@
 */
 #include "mcpprotocolsamplingmessage.h"
 #include <QDebug>
+#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -15,4 +16,18 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 {
     // TODO
     return d;
+}
+
+// TODO bool McpProtocolSamplingMessage::operator==(const McpProtocolSamplingMessage &other) const = default;
+
+McpProtocolSamplingMessage McpProtocolSamplingMessage::fromJson(const QJsonObject &obj)
+{
+    // TODO
+    return {};
+}
+
+QJsonObject McpProtocolSamplingMessage::toJson(const McpProtocolSamplingMessage &image)
+{
+    // TODO
+    return {};
 }

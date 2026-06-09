@@ -20,6 +20,16 @@ public:
             QString mConstValue;
             QString mTitle;
             [[nodiscard]] bool operator==(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &other) const;
+
+            [[nodiscard]] static McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem fromJson(const QJsonObject &obj);
+            /*!
+             */
+            [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &image);
+
+            [[nodiscard]] QString constValue() const;
+            void setConstValue(const QString &newConstValue);
+            [[nodiscard]] QString title() const;
+            void setTitle(const QString &newTitle);
         };
 
         QList<AnyOfItem> mAnyOf;
@@ -30,7 +40,13 @@ public:
         /*!
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items &image);
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolTitledMultiSelectEnumSchema::Items &other) const;
+
+    public:
+        QList<AnyOfItem> anyOf() const;
+        void setAnyOf(const QList<AnyOfItem> &newAnyOf);
     };
     /*!
      */
@@ -107,3 +123,7 @@ private:
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug
+operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
+                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items &t);

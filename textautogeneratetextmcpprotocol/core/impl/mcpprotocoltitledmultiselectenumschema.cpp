@@ -18,37 +18,114 @@ bool McpProtocolTitledMultiSelectEnumSchema::operator==(const McpProtocolTitledM
 
 bool McpProtocolTitledMultiSelectEnumSchema::Items::operator==(const McpProtocolTitledMultiSelectEnumSchema::Items &other) const = default;
 
+QString McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::constValue() const
+{
+    return mConstValue;
+}
+
+void McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::setConstValue(const QString &newConstValue)
+{
+    mConstValue = newConstValue;
+}
+
+QString McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::title() const
+{
+    return mTitle;
+}
+
+void McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::setTitle(const QString &newTitle)
+{
+    mTitle = newTitle;
+}
+
 bool McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::operator==(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &other) const =
     default;
 
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &t)
+{
+    d.space() << "title:" << t.title();
+    d.space() << "constValue:" << t.constValue();
+    return d;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items &t)
+{
+    d.space() << "anyOf:" << t.anyOf();
+    return d;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema &t)
 {
+    d.space() << "default:" << t.defaultValue();
+    d.space() << "description:" << t.description();
+    d.space() << "minItems:" << t.minItems();
+    d.space() << "maxItems:" << t.maxItems();
+    d.space() << "title:" << t.title();
+    d.space() << "items:" << t.items();
     return d;
+}
+
+QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem>
+TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items::anyOf() const
+{
+    return mAnyOf;
+}
+
+void TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items::setAnyOf(const QList<AnyOfItem> &newAnyOf)
+{
+    mAnyOf = newAnyOf;
+}
+
+McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(const QJsonObject &obj)
+{
+    if (!obj.contains("const"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: const";
+        return {};
+    }
+    if (!obj.contains("title"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: title";
+        return {};
+    }
+    McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem result;
+    result.setConstValue(obj.value("const"_L1).toString());
+    result.setTitle(obj.value("title"_L1).toString());
+    return result;
+}
+
+QJsonObject McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::toJson(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &image)
+{
+    QJsonObject obj;
+    obj["const"_L1] = image.constValue();
+    obj["title"_L1] = image.title();
+    return obj;
 }
 
 McpProtocolTitledMultiSelectEnumSchema::Items McpProtocolTitledMultiSelectEnumSchema::Items::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("enum"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: enum";
-        return {};
-    }
-    if (!obj.contains("type"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: type";
+    if (!obj.contains("anyOf"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: anyOf";
         return {};
     }
     McpProtocolTitledMultiSelectEnumSchema::Items result;
-    if (obj.value("type"_L1).toString() != u"string"_s) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'string', got: " << obj.value("type"_L1).toString();
-        return {};
+    if (obj.contains("anyOf"_L1) && obj["anyOf"_L1].isArray()) {
+        QList<AnyOfItem> anyOf;
+        const QJsonArray arr = obj["anyOf"_L1].toArray();
+        for (const QJsonValue &v : arr) {
+            anyOf.append(McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()));
+        }
+        result.setAnyOf(anyOf);
     }
-    // TODO
     return result;
 }
 
 QJsonObject McpProtocolTitledMultiSelectEnumSchema::Items::toJson(const McpProtocolTitledMultiSelectEnumSchema::Items &image)
 {
     QJsonObject obj;
-    // TODO
+    QJsonArray arr_anyOf;
+    for (const auto &v : image.anyOf()) {
+        arr_anyOf.append(McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::toJson(v));
+    }
+    obj.insert("anyOf"_L1, arr_anyOf);
     return obj;
 }
 
@@ -163,7 +240,7 @@ std::optional<int> McpProtocolTitledMultiSelectEnumSchema::maxItems() const
 
 void McpProtocolTitledMultiSelectEnumSchema::setMaxItems(std::optional<int> newMaxItems)
 {
-    mMaxItems = std::move(newMaxItems);
+    mMaxItems = newMaxItems;
 }
 
 std::optional<int> McpProtocolTitledMultiSelectEnumSchema::minItems() const
@@ -173,7 +250,7 @@ std::optional<int> McpProtocolTitledMultiSelectEnumSchema::minItems() const
 
 void McpProtocolTitledMultiSelectEnumSchema::setMinItems(std::optional<int> newMinItems)
 {
-    mMinItems = std::move(newMinItems);
+    mMinItems = newMinItems;
 }
 
 std::optional<QString> McpProtocolTitledMultiSelectEnumSchema::title() const

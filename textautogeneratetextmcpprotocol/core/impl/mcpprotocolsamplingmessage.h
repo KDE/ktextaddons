@@ -20,8 +20,23 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSamplingMessage
 {
 public:
+    /*!
+     */
     McpProtocolSamplingMessage();
+    /*!
+     */
     ~McpProtocolSamplingMessage();
+
+    /*!
+     */
+    // TODO [[nodiscard]] bool operator==(const McpProtocolSamplingMessage &other) const;
+
+    /*!
+     */
+    [[nodiscard]] static McpProtocolSamplingMessage fromJson(const QJsonObject &obj);
+    /*!
+     */
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolSamplingMessage &image);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

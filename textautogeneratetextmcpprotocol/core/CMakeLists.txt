@@ -255,6 +255,10 @@ target_sources(
         impl/mcpprotocoluntitledmultiselectenumschema.h
         impl/mcpprotocoltitledmultiselectenumschema.cpp
         impl/mcpprotocoltitledmultiselectenumschema.h
+        impl/mcpprotocolresourcecontents.cpp
+        impl/mcpprotocolresourcecontents.h
+        impl/mcpprotocolcreatemessagerequestparams.cpp
+        impl/mcpprotocolcreatemessagerequestparams.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -428,6 +432,8 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolSamplingMessage
     McpProtocolUntitledMultiSelectEnumSchema
     McpProtocolTitledMultiSelectEnumSchema
+    McpProtocolResourceContents
+    McpProtocolCreateMessageRequestParams
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl

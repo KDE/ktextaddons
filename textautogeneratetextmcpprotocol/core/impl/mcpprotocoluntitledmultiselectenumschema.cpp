@@ -27,8 +27,20 @@ void McpProtocolUntitledMultiSelectEnumSchema::Items::setEnum(const QStringList 
 
 bool McpProtocolUntitledMultiSelectEnumSchema::Items::operator==(const McpProtocolUntitledMultiSelectEnumSchema::Items &other) const = default;
 
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledMultiSelectEnumSchema::Items &t)
+{
+    d.space() << "enumValue:" << t.enumValue();
+    return d;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledMultiSelectEnumSchema &t)
 {
+    d.space() << "default:" << t.defaultValue();
+    d.space() << "description:" << t.description();
+    d.space() << "minItems:" << t.minItems();
+    d.space() << "maxItems:" << t.maxItems();
+    d.space() << "title:" << t.title();
+    d.space() << "items:" << t.items();
     return d;
 }
 
@@ -181,7 +193,7 @@ std::optional<int> McpProtocolUntitledMultiSelectEnumSchema::maxItems() const
 
 void McpProtocolUntitledMultiSelectEnumSchema::setMaxItems(std::optional<int> newMaxItems)
 {
-    mMaxItems = std::move(newMaxItems);
+    mMaxItems = newMaxItems;
 }
 
 std::optional<int> McpProtocolUntitledMultiSelectEnumSchema::minItems() const
@@ -191,7 +203,7 @@ std::optional<int> McpProtocolUntitledMultiSelectEnumSchema::minItems() const
 
 void McpProtocolUntitledMultiSelectEnumSchema::setMinItems(std::optional<int> newMinItems)
 {
-    mMinItems = std::move(newMinItems);
+    mMinItems = newMinItems;
 }
 
 std::optional<QString> McpProtocolUntitledMultiSelectEnumSchema::title() const
