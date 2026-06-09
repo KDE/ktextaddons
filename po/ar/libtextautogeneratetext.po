@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-06 00:42+0000\n"
-"PO-Revision-Date: 2026-06-05 13:28+0400\n"
+"PO-Revision-Date: 2026-06-08 20:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3197,13 +3197,13 @@ msgstr "لم يعثر على ملحق."
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "أُبلغ عن خطأ: %1"
 
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "خطأ"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format

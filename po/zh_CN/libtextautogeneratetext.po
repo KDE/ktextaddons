@@ -3119,13 +3119,13 @@ msgstr "没有找到插件。"
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "报告的错误：%1"
 
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
