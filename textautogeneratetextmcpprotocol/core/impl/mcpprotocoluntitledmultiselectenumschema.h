@@ -21,6 +21,13 @@ public:
 
         [[nodiscard]] QStringList enumValue() const;
         void setEnum(const QStringList &newEnum);
+
+        /*!
+         */
+        [[nodiscard]] static McpProtocolUntitledMultiSelectEnumSchema::Items fromJson(const QJsonObject &obj);
+        /*!
+         */
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledMultiSelectEnumSchema::Items &image);
     };
     /*!
      */
