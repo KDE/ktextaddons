@@ -4,14 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "textautogeneratetext_export.h"
+#include <TextAutoGenerateText/TextAutoGenerateListViewBaseDelegate>
 
-#include "textautogenerateattachmentdelegatehelperfile.h"
-#include "textautogenerateattachmentdelegatehelperimage.h"
-#include "textautogeneratelistviewbasedelegate.h"
 #include <QScopedPointer>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateListViewMessageBaseDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
+class TextAutoGenerateAttachmentDelegateHelperImage;
+class TextAutoGenerateAttachmentDelegateHelperFile;
+class TextAutoGenerateAttachmentDelegateHelperBase;
+class TextAutoGenerateManager;
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewMessageBaseDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
 {
     Q_OBJECT
 public:

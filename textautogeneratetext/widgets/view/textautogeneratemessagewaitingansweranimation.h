@@ -4,19 +4,22 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratemessagewaitingansweranimationbase.h"
-#include "textautogeneratetext_private_export.h"
-
+#include "textautogeneratetext_export.h"
+#include <TextAutoGenerateText/TextAutoGenerateMessageWaitingAnswerAnimationBase>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMessageWaitingAnswerAnimation : public TextAutoGenerateMessageWaitingAnswerAnimationBase
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessageWaitingAnswerAnimation : public TextAutoGenerateMessageWaitingAnswerAnimationBase
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TextAutoGenerateMessageWaitingAnswerAnimation(const QByteArray &chatId,
                                                            TextAutoGenerateText::TextAutoGenerateManager *manager,
                                                            QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateMessageWaitingAnswerAnimation() override;
 };
 }

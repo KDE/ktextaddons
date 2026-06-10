@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include "widgets/view/lrucache.h"
 #include <QItemDelegate>
 #include <QScopedPointer>
 #include <QTextDocument>
+#include <TextAutoGenerateText/LRUCache>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
 #include <memory>
 class QListView;

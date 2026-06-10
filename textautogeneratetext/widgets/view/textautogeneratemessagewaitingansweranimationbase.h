@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 
 class QDebug;
 #include <QObject>
@@ -12,7 +12,7 @@ class QDebug;
 class QSequentialAnimationGroup;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMessageWaitingAnswerAnimationBase : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessageWaitingAnswerAnimationBase : public QObject
 {
     Q_OBJECT
 public:
@@ -21,22 +21,44 @@ public:
         qreal opacity = 0.0;
     };
 
+    /*!
+     */
     explicit TextAutoGenerateMessageWaitingAnswerAnimationBase(QObject *parent = nullptr);
+    /*!
+     */
     ~TextAutoGenerateMessageWaitingAnswerAnimationBase() override;
 
+    /*!
+     */
     [[nodiscard]] QPersistentModelIndex modelIndex() const;
+    /*!
+     */
     void setModelIndex(const QPersistentModelIndex &newModelIndex);
 
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] ScaleAndOpacity value(int i) const;
 
+    /*!
+     */
     [[nodiscard]] int count() const;
+    /*!
+     */
     [[nodiscard]] QList<ScaleAndOpacity> scaleOpacities() const;
 
+    /*!
+     */
     void stopAndDelete();
 Q_SIGNALS:
+    /*!
+     */
     void valueChanged();
+    /*!
+     */
     void waitingAnswerDone(const QModelIndex &index);
 
 protected:

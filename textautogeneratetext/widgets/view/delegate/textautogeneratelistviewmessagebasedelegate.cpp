@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelistviewmessagebasedelegate.h"
+#include "textautogenerateattachmentdelegatehelperfile.h"
+#include "textautogenerateattachmentdelegatehelperimage.h"
 #include "textautogeneratetextwidget_debug.h"
 
 using namespace TextAutoGenerateText;
