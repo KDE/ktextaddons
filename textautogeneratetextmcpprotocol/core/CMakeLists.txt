@@ -259,6 +259,8 @@ target_sources(
         impl/mcpprotocolresourcecontents.h
         impl/mcpprotocolcreatemessagerequestparams.cpp
         impl/mcpprotocolcreatemessagerequestparams.h
+        impl/mcpprotocoljsonrpcnotification.cpp
+        impl/mcpprotocoljsonrpcnotification.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -437,6 +439,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolTitledMultiSelectEnumSchema
     McpProtocolResourceContents
     McpProtocolCreateMessageRequestParams
+    McpProtocolJSONRPCNotification
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
