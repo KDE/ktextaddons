@@ -261,6 +261,8 @@ target_sources(
         impl/mcpprotocolcreatemessagerequestparams.h
         impl/mcpprotocoljsonrpcnotification.cpp
         impl/mcpprotocoljsonrpcnotification.h
+        impl/mcpprotocoljsonrpcrequest.cpp
+        impl/mcpprotocoljsonrpcrequest.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -440,6 +442,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolResourceContents
     McpProtocolCreateMessageRequestParams
     McpProtocolJSONRPCNotification
+    McpProtocolJSONRPCRequest
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
