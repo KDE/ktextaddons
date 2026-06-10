@@ -78,6 +78,9 @@ void TextAutoGenerateBaseListView::clearDocumentCache()
 
 void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
 {
+    if (mMode == Mode::Viewing) {
+        return;
+    }
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         QMenu menu(this);
@@ -122,7 +125,7 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
                 interface->addAction(&menu);
             }
         }
-        if (mManager && mManager->debug()) {
+        if (mManager && mManager->debug() && (mMode != Mode::Searching)) {
             menu.addSeparator();
             auto debugMessageAction = new QAction(u"Dump Message"_s, &menu); // Don't translate it.
             connect(debugMessageAction, &QAction::triggered, this, [this, index]() {
@@ -162,6 +165,16 @@ void TextAutoGenerateBaseListView::slotDebugGeneratedTextMessage(const QModelInd
 void TextAutoGenerateBaseListView::slotFontChanged()
 {
     mDelegate->clearCache();
+}
+
+TextAutoGenerateBaseListView::Mode TextAutoGenerateBaseListView::mode() const
+{
+    return mMode;
+}
+
+void TextAutoGenerateBaseListView::setMode(Mode newMode)
+{
+    mMode = newMode;
 }
 
 void TextAutoGenerateBaseListView::slotSelectAll(const QModelIndex &index)

@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratesearchlistview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratesearchmessagesmodel.h"
 #include "core/textautogeneratemanager.h"
@@ -15,11 +14,13 @@ using namespace Qt::Literals::StringLiterals;
 #include <QEvent>
 #include <QPainter>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchListView::TextAutoGenerateSearchListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : TextAutoGenerateBaseListView(manager, parent)
     , mModel(new TextAutoGenerateSearchMessagesModel(this))
 {
+    setMode(TextAutoGenerateBaseListView::Mode::Searching);
     auto delegate = new TextAutoGenerateSearchListViewDelegate(manager, this);
     connect(delegate, &TextAutoGenerateSearchListViewDelegate::goToMessage, this, &TextAutoGenerateSearchListView::slotGoToMessage);
     mDelegate = delegate;

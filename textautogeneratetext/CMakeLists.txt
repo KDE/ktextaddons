@@ -593,6 +593,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextnetworkp
     RELATIVE widgets/networkpluginconfigure
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextview_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateBaseListView
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextview_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/view
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS
     HEADER_NAMES
     TextAutoGenerateMenuWidget
@@ -665,6 +673,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextview_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -683,6 +692,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextconfiguretoolsplugin_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextcorelocaldatabase_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextview_HEADERS}
 )
 
 install(
