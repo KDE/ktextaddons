@@ -54,6 +54,7 @@ McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fro
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolCreateMessageRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
     }
+    // TODO
     return prompt;
 }
 
@@ -63,6 +64,7 @@ QJsonObject McpProtocolCreateMessageRequestParams::toJson(const McpProtocolCreat
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolCreateMessageRequestParams::Meta::toJson(*boolean.meta());
     }
+    // TODO
     return obj;
 }
 
