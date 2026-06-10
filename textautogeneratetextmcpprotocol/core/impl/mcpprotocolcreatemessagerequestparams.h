@@ -64,6 +64,83 @@ public:
      */
     void setMeta(std::optional<Meta> newMeta);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<IncludeContext> includeContext() const;
+    /*!
+     */
+    void setIncludeContext(std::optional<IncludeContext> newIncludeContext);
+
+    /*!
+     */
+    [[nodiscard]] int maxTokens() const;
+    /*!
+     */
+    void setMaxTokens(int newMaxTokens);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<QMap<QString, QJsonValue>> metadata() const;
+    /*!
+     */
+    void setMetadata(std::optional<QMap<QString, QJsonValue>> newMetadata);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolModelPreferences> modelPreferences() const;
+    /*!
+     */
+    void setModelPreferences(std::optional<McpProtocolModelPreferences> newModelPreferences);
+
+    /*!
+     */
+    [[nodiscard]] QList<McpProtocolSamplingMessage> messages() const;
+    /*!
+     */
+    void setMessages(const QList<McpProtocolSamplingMessage> &newMessages);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<QStringList> stopSequences() const;
+    /*!
+     */
+    void setStopSequences(std::optional<QStringList> newStopSequences);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<QString> systemPrompt() const;
+    /*!
+     */
+    void setSystemPrompt(std::optional<QString> newSystemPrompt);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolTaskMetadata> task() const;
+    /*!
+     */
+    void setTask(std::optional<McpProtocolTaskMetadata> newTask);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<double> temperature() const;
+    /*!
+     */
+    void setTemperature(std::optional<double> newTemperature);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolToolChoice> toolChoice() const;
+    /*!
+     */
+    void setToolChoice(std::optional<McpProtocolToolChoice> newToolChoice);
+
+    /*!
+     */
+    [[nodiscard]] std::optional<QList<McpProtocolTool>> tools() const;
+    /*!
+     */
+    void setTools(std::optional<QList<McpProtocolTool>> newTools);
+
 private:
     std::optional<IncludeContext> mIncludeContext;
     int mMaxTokens;
