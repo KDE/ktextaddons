@@ -14,7 +14,6 @@ class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolClient;
-}
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientProtocolManager : public QObject
 {
     Q_OBJECT
@@ -60,3 +59,4 @@ private:
     TextAutoGenerateTextMcpProtocolCore::McpProtocolClient *mClient = nullptr;
     QHash<int, McpProtocolClientProtocolManager::MethodType> mMapIdentifier;
 };
+}
