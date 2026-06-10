@@ -8,6 +8,7 @@
 
 #include "textautogeneratemenuconfiguredialog.h"
 #include "textautogeneratemenutextmanager.h"
+#include "textautogeneratetextwidget_debug.h"
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateQuickAskDialog>
 
@@ -46,6 +47,10 @@ TextAutoGenerateMenuWidget::~TextAutoGenerateMenuWidget()
 
 void TextAutoGenerateMenuWidget::initializeMenu()
 {
+    if (!mManager) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Manager is null! It's a bug";
+        return;
+    }
     const auto infos = mMenuTextManager->textInfos();
     for (const TextAutoGenerateMenuTextInfo &info : infos) {
         if (info.enabled()) {
