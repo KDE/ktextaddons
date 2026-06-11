@@ -15,26 +15,35 @@
 #include "mcpprotocolelicitationcompletenotification.h"
 #include "mcpprotocolembeddedresource.h"
 #include "mcpprotocolgetpromptrequest.h"
+#include "mcpprotocolgetpromptresult.h"
 #include "mcpprotocolgettaskpayloadrequest.h"
 #include "mcpprotocolgettaskrequest.h"
 #include "mcpprotocolimagecontent.h"
 #include "mcpprotocolinitializednotification.h"
 #include "mcpprotocolinitializerequest.h"
+#include "mcpprotocolinitializeresult.h"
 #include "mcpprotocollistpromptsrequest.h"
+#include "mcpprotocollistpromptsresult.h"
 #include "mcpprotocollistresourcesrequest.h"
+#include "mcpprotocollistresourcesresult.h"
 #include "mcpprotocollistresourcetemplatesrequest.h"
+#include "mcpprotocollistresourcetemplatesresult.h"
 #include "mcpprotocollisttasksrequest.h"
+#include "mcpprotocollisttasksresult.h"
 #include "mcpprotocollisttoolsrequest.h"
+#include "mcpprotocollisttoolsresult.h"
 #include "mcpprotocolloggingmessagenotification.h"
 #include "mcpprotocolpingrequest.h"
 #include "mcpprotocolprogressnotification.h"
 #include "mcpprotocolpromptlistchangednotification.h"
 #include "mcpprotocolpromptreference.h"
 #include "mcpprotocolreadresourcerequest.h"
+#include "mcpprotocolreadresourceresult.h"
 #include "mcpprotocolresourcelink.h"
 #include "mcpprotocolresourcelistchangednotification.h"
 #include "mcpprotocolresourcetemplatereference.h"
 #include "mcpprotocolresourceupdatednotification.h"
+#include "mcpprotocolresult.h"
 #include "mcpprotocolrootslistchangednotification.h"
 #include "mcpprotocolsetlevelrequest.h"
 #include "mcpprotocolsubscriberequest.h"
@@ -46,6 +55,13 @@
 #include "mcpprotocoltoolusecontent.h"
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
+/*
+#include "McpProtocolCallToolResult.h"
+#include "McpProtocolGetTaskResult."
+#include "McpProtocolGetTaskPayloadResult"
+#include "McpProtocolCancelTaskResult."
+#include "McpProtocolCompleteResult."
+*/
 
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
@@ -358,6 +374,84 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponseFromJson(c
     }
     return {};
 }
+#if 0
+
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult &val)
+{
+    return std::visit([](const auto &v) -> QJsonObject {
+        using T = std::decay_t<decltype(v)>;
+        if constexpr (std::is_same_v<T, QJsonObject>) {
+            return v;
+        } else {
+            return toJson(v);
+        }
+    }, val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ServerResult: expected object";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    if (obj.contains("capabilities"_L1)) {
+        return McpProtocolInitializeResult::fromJson(obj);
+    }
+    if (obj.contains("resources"_L1)) {
+        return McpProtocolListResourcesResult::fromJson(obj);
+    }
+    if (obj.contains("resourceTemplates"_L1)) {
+        return  McpProtocolListResourceTemplatesResult::fromJson(obj);
+    }
+    if (obj.contains("contents"_L1)) {
+        return McpProtocolReadResourceResult::fromJson(obj);
+    }
+    if (obj.contains("prompts"_L1)) {
+        return McpProtocolListPromptsResult::fromJson(obj);
+    }
+    if (obj.contains("messages"_L1)) {
+        return McpProtocolGetPromptResult::fromJson(obj);
+    }
+    if (obj.contains("tools"_L1)) {
+        return McpProtocolListToolsResult::fromJson(obj);
+    }
+    if (obj.contains("content"_L1)) {
+        return McpProtocolCallToolResult::fromJson(obj);
+    }
+    if (obj.contains("tasks"_L1)) {
+        return McpProtocolListTasksResult::fromJson(obj);
+    }
+    if (obj.contains("completion"_L1)) {
+        return McpProtocolCompleteResult::fromJson(obj);
+    }
+    {
+        auto result = McpProtocolResult::fromJson(obj);
+        if (result)  {
+            return result;
+        }
+    }
+    {
+        auto result = McpProtocolGetTaskResult::fromJson(obj);
+        if (result) {
+            return result;
+        }
+    }
+    {
+        auto result = McpProtocolGetTaskPayloadResult::fromJson(obj);
+        if (result) {
+            return result;
+        }
+    }
+    {
+        auto result = McpProtocolCancelTaskResult::fromJson(obj);
+        if (result) {
+            return result;
+        }
+    }
+    return {};
+}
+#endif
 
 #if 0
 QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token)

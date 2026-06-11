@@ -267,6 +267,9 @@ using JSONRPCMessage =
 [[nodiscard]] QJsonValue JSONRPCResponseToJson(const JSONRPCResponse &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponse JSONRPCResponseFromJson(const QJsonValue &val);
 
+// [[nodiscard]] QJsonValue serverResultToJson(const ServerResult &val);
+// [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult serverResultFromJson(const QJsonValue &val);
+
 // [[nodiscard]] QString getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &t);
