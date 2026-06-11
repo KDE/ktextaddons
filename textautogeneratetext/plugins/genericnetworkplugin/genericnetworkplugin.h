@@ -47,10 +47,11 @@ public:
 
     [[nodiscard]] QString passwordServiceName() const;
 
-protected:
-    void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
     void cancelRequest(const QByteArray &uuid) override;
+
+protected:
+    void sendToAssistant(const SendToAssistantInfo &info) override;
 
 Q_SIGNALS:
     void loadApiKeyDone();
