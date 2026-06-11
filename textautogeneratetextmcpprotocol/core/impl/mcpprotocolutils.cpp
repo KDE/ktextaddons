@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolutils.h"
+#include "impl/mcpprotocoljsonrpcerrorresponse.h"
+#include "impl/mcpprotocoljsonrpcresultresponse.h"
 #include "mcpprotocolaudiocontent.h"
 #include "mcpprotocolblobresourcecontents.h"
 #include "mcpprotocolcalltoolrequest.h"
@@ -323,6 +325,38 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getProgressTokenValue(con
             }
         },
         token);
+}
+
+QJsonValue
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponseToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponse &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponse
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponseFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid JSONRPCResponse: expected object";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    if (obj.contains("result"_L1)) {
+        return McpProtocolJSONRPCResultResponse::fromJson(obj);
+    }
+    if (obj.contains("error"_L1)) {
+        return McpProtocolJSONRPCErrorResponse::fromJson(obj);
+    }
+    return {};
 }
 
 #if 0
