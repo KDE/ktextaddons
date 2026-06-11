@@ -6904,6 +6904,10 @@
                 "9.6 GB"
             ],
             [
+                "12b",
+                "7.6 GB"
+            ],
+            [
                 "26b",
                 "18 GB"
             ],
@@ -6917,6 +6921,7 @@
             "vision",
             "tools",
             "medium",
+            "reasoning",
             "big",
             "huge",
             "code"
@@ -6945,7 +6950,7 @@
         "categories": [
             "vision",
             "tools",
-            "thinking",
+            "reasoning",
             "big",
             "huge",
             "code"
