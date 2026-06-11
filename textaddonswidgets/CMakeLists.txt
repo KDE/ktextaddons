@@ -91,6 +91,10 @@ target_sources(
         opensavedfilefolderwidget.h
         textmessagewidget.cpp
         textmessagewidget.h
+        completionlineedit/completionlistview.cpp
+        completionlineedit/completionlistview.h
+        completionlineedit/completionlineedit.h
+        completionlineedit/completionlineedit.cpp
 )
 
 target_sources(
@@ -207,6 +211,15 @@ ecm_generate_headers(TextAddonsWidgets_Camelquicksearchbar_HEADERS
     RELATIVE quicksearchbar
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS
+    HEADER_NAMES
+    CompletionListView
+    CompletionLineEdit
+    REQUIRED_HEADERS TextAddonsWidgets_completionlineedit_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE completionlineedit
+)
+
 ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
     HEADER_NAMES
     WhatsNewComboBoxWidget
@@ -257,6 +270,7 @@ set(TEXTAUTOGENERATE_INCLUDES_FILES
     ${TextAddonsWidgets_plugins_HEADERS}
     ${TextAddonsWidgets_misc_HEADERS}
     ${TextAddonsWidgets_whatsnewng_HEADERS}
+    ${TextAddonsWidgets_completionlineedit_HEADERS}
 )
 
 install(
@@ -276,6 +290,7 @@ install(
         ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
         ${TextAddonsWidgets_Camelcasemisc_HEADERS}
         ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
+        ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
