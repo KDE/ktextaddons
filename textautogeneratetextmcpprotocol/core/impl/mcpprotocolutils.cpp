@@ -11,6 +11,7 @@
 #include "mcpprotocolcalltoolrequest.h"
 #include "mcpprotocolcancellednotification.h"
 #include "mcpprotocolcanceltaskrequest.h"
+#include "mcpprotocolcanceltaskresult.h"
 #include "mcpprotocolcompleterequest.h"
 #include "mcpprotocolelicitationcompletenotification.h"
 #include "mcpprotocolembeddedresource.h"
@@ -18,6 +19,7 @@
 #include "mcpprotocolgetpromptresult.h"
 #include "mcpprotocolgettaskpayloadrequest.h"
 #include "mcpprotocolgettaskrequest.h"
+#include "mcpprotocolgettaskresult.h"
 #include "mcpprotocolimagecontent.h"
 #include "mcpprotocolinitializednotification.h"
 #include "mcpprotocolinitializerequest.h"
@@ -56,10 +58,9 @@
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
 /*
+ * // TODO
 #include "McpProtocolCallToolResult.h"
-#include "McpProtocolGetTaskResult."
 #include "McpProtocolGetTaskPayloadResult"
-#include "McpProtocolCancelTaskResult."
 #include "McpProtocolCompleteResult."
 */
 

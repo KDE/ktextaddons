@@ -22,7 +22,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "createdAt:" << t.createdAt();
     d.space() << "lastUpdatedAt:" << t.lastUpdatedAt();
     d.space() << "pollInterval:" << t.pollInterval();
-    // TODO d.space() << "status:" << t.status();
+    d.space() << "status:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(t.status());
     d.space() << "statusMessage:" << t.statusMessage();
     d.space() << "taskId:" << t.taskId();
     d.space() << "ttl:" << t.ttl();
@@ -35,7 +35,41 @@ McpProtocolCancelTaskResult McpProtocolCancelTaskResult::fromJson(const QJsonObj
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
-    // TODO
+    if (!obj.contains("createdAt"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: createdAt";
+        return {};
+    }
+    if (!obj.contains("lastUpdatedAt"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: lastUpdatedAt";
+        return {};
+    }
+    if (!obj.contains("status"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: status";
+        return {};
+    }
+    if (!obj.contains("taskId"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: taskId";
+        return {};
+    }
+    if (!obj.contains("ttl"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: ttl";
+        return {};
+    }
+    prompt.setCreatedAt(obj.value("createdAt"_L1).toString());
+    prompt.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
+    if (obj.contains("pollInterval"_L1)) {
+        prompt.setPollInterval(obj.value("pollInterval"_L1).toInt());
+    }
+    if (obj.contains("status"_L1) && obj["status"_L1].isString()) {
+        prompt.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(obj["status"_L1].toString()));
+    }
+    if (obj.contains("statusMessage"_L1)) {
+        prompt.setStatusMessage(obj.value("statusMessage"_L1).toString());
+    }
+    prompt.setTaskId(obj.value("taskId"_L1).toString());
+    if (!obj["ttl"_L1].isNull()) {
+        prompt.setTtl(obj.value("ttl"_L1).toInt());
+    }
     return prompt;
 }
 
@@ -45,7 +79,21 @@ QJsonObject McpProtocolCancelTaskResult::toJson(const McpProtocolCancelTaskResul
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
     }
-    // TODO
+    obj["createdAt"_L1] = boolean.createdAt();
+    obj["lastUpdatedAt"_L1] = boolean.lastUpdatedAt();
+    obj["status"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(boolean.status());
+    obj["taskId"_L1] = boolean.taskId();
+    if (boolean.pollInterval().has_value()) {
+        obj["pollInterval"_L1], *boolean.pollInterval();
+    }
+    if (boolean.statusMessage().has_value()) {
+        obj["statusMessage"_L1] = *boolean.statusMessage();
+    }
+    if (boolean.ttl().has_value()) {
+        obj["ttl"_L1], *boolean.ttl();
+    } else {
+        obj["ttl"_L1] = QJsonValue::Null;
+    }
     return obj;
 }
 
