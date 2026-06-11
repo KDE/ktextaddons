@@ -263,6 +263,8 @@ target_sources(
         impl/mcpprotocoljsonrpcnotification.h
         impl/mcpprotocoljsonrpcrequest.cpp
         impl/mcpprotocoljsonrpcrequest.h
+        impl/mcpprotocolcanceltaskresult.cpp
+        impl/mcpprotocolcanceltaskresult.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -443,6 +445,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolCreateMessageRequestParams
     McpProtocolJSONRPCNotification
     McpProtocolJSONRPCRequest
+    McpProtocolCancelTaskResult
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
