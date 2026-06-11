@@ -87,6 +87,10 @@ class McpProtocolTitledSingleSelectEnumSchema;
 class McpProtocolUntitledMultiSelectEnumSchema;
 class McpProtocolTitledMultiSelectEnumSchema;
 class McpProtocolLegacyTitledEnumSchema;
+class McpProtocolJSONRPCRequest;
+class McpProtocolJSONRPCNotification;
+class McpProtocolJSONRPCResultResponse;
+class McpProtocolJSONRPCErrorResponse;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
@@ -213,6 +217,9 @@ using PrimitiveSchemaDefinition = std::variant<McpProtocolStringSchema,
                                                McpProtocolLegacyTitledEnumSchema>;
 
 using JSONRPCResponse = std::variant<McpProtocolJSONRPCResultResponse, McpProtocolJSONRPCErrorResponse>;
+
+using JSONRPCMessage =
+    std::variant<McpProtocolJSONRPCRequest, McpProtocolJSONRPCNotification, McpProtocolJSONRPCResultResponse, McpProtocolJSONRPCErrorResponse>;
 
 [[nodiscard]] QString getProgressTokenValue(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &token);
 
