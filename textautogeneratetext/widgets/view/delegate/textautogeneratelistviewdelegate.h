@@ -46,6 +46,7 @@ Q_SIGNALS:
     void removeMessage(const QModelIndex &index);
     void textToSpeechRequested(const QModelIndex &index);
     void stopTextToSpeechRequested(const QModelIndex &index);
+    void forkRequested(const QModelIndex &index);
     void updateView();
     void updateColors();
     void insertBlockCode(const QString &str);
@@ -89,6 +90,9 @@ private:
         // TextToSpeech Icon
         QRect textToSpeechIconRect;
 
+        // Fork Icon
+        QRect forkIconRect;
+
         // Attachment Rect
         QList<QRect> attachmentsRectList;
     };
@@ -109,6 +113,7 @@ private:
     const QIcon mInformationIcon;
     const QIcon mRemoveIcon;
     const QIcon mTextToSpeechIcon;
+    const QIcon mForkIcon;
 
     QColor mEditingColorMode;
 
