@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 # SPDX-FileCopyrightText: 2026 Florian Richer <florian.richer@protonmail.com>
+
 add_library(textautogenerateplugincommon)
 ecm_qt_declare_logging_category(textautogenerateplugincommon
     HEADER autogeneratetext_plugincommon_debug.h
@@ -23,6 +24,8 @@ target_sources(
         plugincommonmodelinstalledinfosmodel.h
         plugincommonmodelinstalledinfossortproxymodel.cpp
         plugincommonmodelinstalledinfossortproxymodel.h
+        plugincommonsettings.h
+        plugincommonsettings.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
