@@ -455,6 +455,14 @@ public:
      * \param messageInfo
      */
     void updateMessageInfo(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateAnswerInfo &messageInfo);
+
+    /*!
+     * \brief forkDiscussionUntilMessage
+     * \param chatId
+     * \param uuid
+     */
+    void forkDiscussionUntilMessage(const QByteArray &chatId, const QByteArray &uuid);
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.

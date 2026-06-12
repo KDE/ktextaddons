@@ -43,6 +43,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(delegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveRequested);
+    connect(delegate, &TextAutoGenerateListViewDelegate::forkRequested, this, &TextAutoGenerateListView::slotForkRequested);
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(delegate, &TextAutoGenerateListViewDelegate::textToSpeechRequested, this, &TextAutoGenerateListView::slotTextToSpeechRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::stopTextToSpeechRequested, this, &TextAutoGenerateListView::slotStopTextToSpeechRequested);
@@ -99,6 +100,16 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
         if (mManager->cancelRequest(mManager->currentChatId(), index)) {
             Q_EMIT cancelRequested(uuid);
         }
+    }
+}
+
+void TextAutoGenerateListView::slotForkRequested(const QModelIndex &index)
+{
+    // TODO
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    if (!uuid.isEmpty()) {
+        const QByteArray chatId = mManager->currentChatId();
+        mManager->forkDiscussionUntilMessage(chatId, uuid);
     }
 }
 

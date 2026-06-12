@@ -60,6 +60,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearEditingMode();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshMessage(const QByteArray &currentIdentifier, const QByteArray &previousIdentifier, int index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotUpdateColors();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotForkRequested(const QModelIndex &index);
     QByteArray mMessageIdBeingEdited;
     QPointer<TextAutoGenerateMessagesModel> mCurrentModel;
 };

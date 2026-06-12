@@ -393,6 +393,11 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
     return mTextAutoGenerateTextInstancesManager->textAutoGeneratePlugin();
 }
 
+void TextAutoGenerateManager::forkDiscussionUntilMessage(const QByteArray &chatId, const QByteArray &uuid)
+{
+    // TODO
+}
+
 void TextAutoGenerateManager::removeMessage(const QByteArray &chatId, const QByteArray &uuid)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
