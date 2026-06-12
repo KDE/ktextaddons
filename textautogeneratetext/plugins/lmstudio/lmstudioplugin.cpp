@@ -97,7 +97,6 @@ QString LMStudioPlugin::translatedPluginName() const
 
 void LMStudioPlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    Q_UNUSED(parentWidget)
     LMStudioConfigureDialog d(mLMStudioManager, this, parentWidget);
     if (d.exec()) {
         Q_EMIT configChanged();
