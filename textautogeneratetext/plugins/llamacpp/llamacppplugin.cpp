@@ -95,7 +95,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType LLamaCppPlugin::eng
 
 QString LLamaCppPlugin::translatedPluginName() const
 {
-    return i18n("LMStudio");
+    return i18n("LLamaCpp");
 }
 
 void LLamaCppPlugin::showConfigureDialog(QWidget *parentWidget)
