@@ -93,11 +93,6 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::defaultKeepAliveType()
     return OllamaCommonSettings::KeepAliveType::UnloadAfterUse;
 }
 
-OllamaCommonSettings::ShareNameType OllamaCommonSettings::defaultShareNameType() const
-{
-    return OllamaCommonSettings::ShareNameType::DoNotShare;
-}
-
 void OllamaCommonSettings::load(const KConfigGroup &config)
 {
     setDisplayName(config.readEntry(u"Name"_s));
@@ -111,8 +106,8 @@ void OllamaCommonSettings::load(const KConfigGroup &config)
     setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, defaultThoughtProcessing()));
     setKeepAliveType(OllamaCommonSettings::convertKeepAliveTypeFromString(
         config.readEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(defaultKeepAliveType()))));
-    setShareNameType(OllamaCommonSettings::convertShareNameTypeFromString(
-        config.readEntry(u"ShareName"_s, OllamaCommonSettings::convertShareNameTypeToString(defaultShareNameType()))));
+    setShareNameType(PluginCommonSettings::convertShareNameTypeFromString(
+        config.readEntry(u"ShareName"_s, PluginCommonSettings::convertShareNameTypeToString(defaultShareNameType()))));
 }
 
 void OllamaCommonSettings::save(KConfigGroup &config)
@@ -125,7 +120,7 @@ void OllamaCommonSettings::save(KConfigGroup &config)
     config.writeEntry(u"ContextWindowSize"_s, contextWindowSize());
     config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(mKeepAliveType));
     config.writeEntry(u"ThoughtProcessing"_s, thoughtProcessing());
-    config.writeEntry(u"ShareName"_s, OllamaCommonSettings::convertShareNameTypeToString(shareNameType()));
+    config.writeEntry(u"ShareName"_s, PluginCommonSettings::convertShareNameTypeToString(shareNameType()));
 }
 
 OllamaCommonSettings::KeepAliveType OllamaCommonSettings::keepAliveType() const
@@ -178,42 +173,6 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::convertKeepAliveTypeFr
         return OllamaCommonSettings::KeepAliveType::SetTimer;
     }
     return OllamaCommonSettings::KeepAliveType::Unknown;
-}
-
-QString OllamaCommonSettings::convertShareNameTypeToString(OllamaCommonSettings::ShareNameType type)
-{
-    switch (type) {
-    case ShareNameType::DoNotShare:
-        return u"DoNotShare"_s;
-    case ShareNameType::UserName:
-        return u"UserName"_s;
-    case ShareNameType::FullName:
-        return u"FullName"_s;
-    }
-
-    return {};
-}
-
-OllamaCommonSettings::ShareNameType OllamaCommonSettings::shareNameType() const
-{
-    return mShareNameType;
-}
-
-void OllamaCommonSettings::setShareNameType(const OllamaCommonSettings::ShareNameType &newShareNameType)
-{
-    mShareNameType = newShareNameType;
-}
-
-OllamaCommonSettings::ShareNameType OllamaCommonSettings::convertShareNameTypeFromString(const QString &str)
-{
-    if (str == "DoNotShare"_L1) {
-        return OllamaCommonSettings::ShareNameType::DoNotShare;
-    } else if (str == "UserName"_L1) {
-        return OllamaCommonSettings::ShareNameType::UserName;
-    } else if (str == "FullName"_L1) {
-        return OllamaCommonSettings::ShareNameType::FullName;
-    }
-    return OllamaCommonSettings::ShareNameType::DoNotShare;
 }
 
 qint64 OllamaCommonSettings::contextWindowSize() const

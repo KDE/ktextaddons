@@ -92,47 +92,6 @@ bool LMStudioSettings::defaultThoughtProcessing() const
     return false;
 }
 
-QString LMStudioSettings::convertShareNameTypeToString(LMStudioSettings::ShareNameType type)
-{
-    switch (type) {
-    case ShareNameType::DoNotShare:
-        return u"DoNotShare"_s;
-    case ShareNameType::UserName:
-        return u"UserName"_s;
-    case ShareNameType::FullName:
-        return u"FullName"_s;
-    }
-
-    return {};
-}
-
-LMStudioSettings::ShareNameType LMStudioSettings::convertShareNameTypeFromString(const QString &str)
-{
-    if (str == "DoNotShare"_L1) {
-        return LMStudioSettings::ShareNameType::DoNotShare;
-    } else if (str == "UserName"_L1) {
-        return LMStudioSettings::ShareNameType::UserName;
-    } else if (str == "FullName"_L1) {
-        return LMStudioSettings::ShareNameType::FullName;
-    }
-    return LMStudioSettings::ShareNameType::DoNotShare;
-}
-
-LMStudioSettings::ShareNameType LMStudioSettings::shareNameType() const
-{
-    return mShareNameType;
-}
-
-void LMStudioSettings::setShareNameType(const LMStudioSettings::ShareNameType &newShareNameType)
-{
-    mShareNameType = newShareNameType;
-}
-
-LMStudioSettings::ShareNameType LMStudioSettings::defaultShareNameType() const
-{
-    return LMStudioSettings::ShareNameType::DoNotShare;
-}
-
 bool LMStudioSettings::operator==(const LMStudioSettings &other) const
 {
     return other.mDisplayName == mDisplayName && other.mCurrentModel == mCurrentModel && other.mServerUrl == mServerUrl

@@ -5,23 +5,16 @@
 */
 
 #pragma once
+#include "plugincommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
-
 #include <QString>
 #include <QUrl>
 class QDebug;
 class KConfigGroup;
-class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonSettings
+class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonSettings : public PluginCommonSettings
 {
     Q_GADGET
 public:
-    enum class ShareNameType : uint8_t {
-        DoNotShare = 0,
-        UserName,
-        FullName,
-    };
-    Q_ENUM(ShareNameType)
-
     enum class KeepAliveType : uint8_t {
         Unknown = 0,
         KeepAliveForever,
@@ -62,19 +55,12 @@ public:
     [[nodiscard]] bool thoughtProcessing() const;
     void setThoughtProcessing(bool newThoughtProcessing);
 
-    [[nodiscard]] static OllamaCommonSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
-    [[nodiscard]] static QString convertShareNameTypeToString(OllamaCommonSettings::ShareNameType type);
-
-    [[nodiscard]] OllamaCommonSettings::ShareNameType shareNameType() const;
-    void setShareNameType(const OllamaCommonSettings::ShareNameType &newShareNameType);
-
     [[nodiscard]] double defaultTemperature() const;
     [[nodiscard]] int defaultSeed() const;
     [[nodiscard]] int defaultKeepAliveMinutes() const;
     [[nodiscard]] qint64 defaultContextWindowSize() const;
     [[nodiscard]] bool defaultThoughtProcessing() const;
     [[nodiscard]] OllamaCommonSettings::KeepAliveType defaultKeepAliveType() const;
-    [[nodiscard]] OllamaCommonSettings::ShareNameType defaultShareNameType() const;
 
     [[nodiscard]] bool operator==(const OllamaCommonSettings &other) const;
 
@@ -86,7 +72,6 @@ private:
     int mKeepAliveMinutes = 1;
     qint64 mContextWindowSize = 16384;
     OllamaCommonSettings::KeepAliveType mKeepAliveType = KeepAliveType::Unknown;
-    OllamaCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
     bool mThoughtProcessing = false;
 };
 TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonSettings &t);
