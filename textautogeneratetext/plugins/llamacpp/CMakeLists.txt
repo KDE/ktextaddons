@@ -18,7 +18,14 @@ ecm_qt_declare_logging_category(textautogeneratellamacpp
     EXPORT KTEXTADDONS
 )
 
-target_sources(textautogeneratellamacpp PRIVATE textautogeneratellamacpp_private_export.h)
+target_sources(
+    textautogeneratellamacpp
+    PRIVATE
+        # This empty dummy is required to let MSVC create the import library (.lib),
+        # given that there is only a header, but no other cpp source files yet
+        empty_dummy.cpp
+        textautogeneratellamacpp_private_export.h
+)
 
 # precompiled headers support
 if(ENABLE_PCH)
