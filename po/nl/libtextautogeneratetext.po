@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-13 00:42+0000\n"
-"PO-Revision-Date: 2026-06-06 23:56+0200\n"
+"PO-Revision-Date: 2026-06-13 13:21+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -391,7 +391,7 @@ msgstr "Sarvam-AI exemplaar"
 #: plugins/llamacpp/llamacppplugin.cpp:98
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
 #: plugins/lmstudio/lmstudioplugin.cpp:217
@@ -3360,7 +3360,7 @@ msgstr "Vernieuwen"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "Afsplitsen"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:647
 #, kde-format

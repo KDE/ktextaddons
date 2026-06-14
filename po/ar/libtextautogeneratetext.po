@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-13 00:42+0000\n"
-"PO-Revision-Date: 2026-06-08 20:34+0400\n"
+"PO-Revision-Date: 2026-06-13 19:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -391,7 +391,7 @@ msgstr "نسخة Sarvam AI"
 #: plugins/llamacpp/llamacppplugin.cpp:98
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
 #: plugins/lmstudio/lmstudioplugin.cpp:217
@@ -3256,7 +3256,7 @@ msgstr "حدّث"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "فرّع"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:647
 #, kde-format
