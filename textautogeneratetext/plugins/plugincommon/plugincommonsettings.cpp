@@ -50,3 +50,13 @@ QString PluginCommonSettings::convertShareNameTypeToString(PluginCommonSettings:
 
     return {};
 }
+
+bool PluginCommonSettings::thoughtProcessing() const
+{
+    return mThoughtProcessing;
+}
+
+void PluginCommonSettings::setThoughtProcessing(bool newThoughtProcessing)
+{
+    mThoughtProcessing = newThoughtProcessing;
+}

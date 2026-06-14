@@ -32,9 +32,6 @@ public:
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
-    [[nodiscard]] bool thoughtProcessing() const;
-    void setThoughtProcessing(bool newThoughtProcessing);
-
     [[nodiscard]] static LMStudioSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
     [[nodiscard]] static QString convertShareNameTypeToString(LMStudioSettings::ShareNameType type);
 
@@ -47,6 +44,5 @@ private:
     QString mDisplayName;
     QString mCurrentModel;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:1234"_s);
-    bool mThoughtProcessing = false;
 };
 TEXTAUTOGENERATELMSTUDIO_EXPORT QDebug operator<<(QDebug d, const LMStudioSettings &t);

@@ -185,16 +185,6 @@ void OllamaCommonSettings::setContextWindowSize(qint64 newContextWindowSize)
     mContextWindowSize = newContextWindowSize;
 }
 
-bool OllamaCommonSettings::thoughtProcessing() const
-{
-    return mThoughtProcessing;
-}
-
-void OllamaCommonSettings::setThoughtProcessing(bool newThoughtProcessing)
-{
-    mThoughtProcessing = newThoughtProcessing;
-}
-
 bool OllamaCommonSettings::operator==(const OllamaCommonSettings &other) const
 {
     return other.mDisplayName == mDisplayName && other.mCurrentModel == mCurrentModel && mSeed == other.mSeed && mTemperature == other.mTemperature

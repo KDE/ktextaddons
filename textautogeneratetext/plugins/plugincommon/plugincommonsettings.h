@@ -29,6 +29,10 @@ public:
     [[nodiscard]] static PluginCommonSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
     [[nodiscard]] static QString convertShareNameTypeToString(PluginCommonSettings::ShareNameType type);
 
+    [[nodiscard]] bool thoughtProcessing() const;
+    void setThoughtProcessing(bool newThoughtProcessing);
+
 protected:
     PluginCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
+    bool mThoughtProcessing = false;
 };

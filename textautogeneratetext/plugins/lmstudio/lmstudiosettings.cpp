@@ -72,19 +72,9 @@ void LMStudioSettings::setServerUrl(const QUrl &newServerUrl)
     mServerUrl = newServerUrl;
 }
 
-bool LMStudioSettings::thoughtProcessing() const
-{
-    return mThoughtProcessing;
-}
-
 QUrl LMStudioSettings::defaultServerUrl() const
 {
     return QUrl(u"http://127.0.0.1:1234"_s);
-}
-
-void LMStudioSettings::setThoughtProcessing(bool newThoughtProcessing)
-{
-    mThoughtProcessing = newThoughtProcessing;
 }
 
 bool LMStudioSettings::defaultThoughtProcessing() const

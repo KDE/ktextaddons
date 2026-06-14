@@ -52,9 +52,6 @@ public:
     [[nodiscard]] qint64 contextWindowSize() const;
     void setContextWindowSize(qint64 newContextWindowSize);
 
-    [[nodiscard]] bool thoughtProcessing() const;
-    void setThoughtProcessing(bool newThoughtProcessing);
-
     [[nodiscard]] double defaultTemperature() const;
     [[nodiscard]] int defaultSeed() const;
     [[nodiscard]] int defaultKeepAliveMinutes() const;
@@ -72,6 +69,5 @@ private:
     int mKeepAliveMinutes = 1;
     qint64 mContextWindowSize = 16384;
     OllamaCommonSettings::KeepAliveType mKeepAliveType = KeepAliveType::Unknown;
-    bool mThoughtProcessing = false;
 };
 TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QDebug operator<<(QDebug d, const OllamaCommonSettings &t);
