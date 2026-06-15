@@ -57,6 +57,19 @@ void TextAutoGenerateListViewDelegate::slotUpdateColors()
     Q_EMIT updateColors();
 }
 
+bool TextAutoGenerateListViewDelegate::showFork() const
+{
+    return mShowFork;
+}
+
+void TextAutoGenerateListViewDelegate::setShowFork(bool newShowFork)
+{
+    if (mShowFork != newShowFork) {
+        mShowFork = newShowFork;
+        Q_EMIT updateView();
+    }
+}
+
 void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     painter->save();
@@ -250,7 +263,7 @@ void TextAutoGenerateListViewDelegate::drawDateAndIcons(QPainter *painter,
             mInformationIcon.paint(painter, layout.infoIconRect);
         }
         // TODO disable it in quick answer
-        if (layout.forkIconRect.isValid() && !waitingAnswer) {
+        if (layout.forkIconRect.isValid() && !waitingAnswer && mShowFork) {
             mForkIcon.paint(painter, layout.forkIconRect);
         }
     }

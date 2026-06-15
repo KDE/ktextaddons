@@ -105,7 +105,6 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 
 void TextAutoGenerateListView::slotForkRequested(const QModelIndex &index)
 {
-    // TODO
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         const QByteArray chatId = mManager->currentChatId();
