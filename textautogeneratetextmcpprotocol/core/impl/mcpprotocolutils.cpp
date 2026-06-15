@@ -9,6 +9,7 @@
 #include "mcpprotocolaudiocontent.h"
 #include "mcpprotocolblobresourcecontents.h"
 #include "mcpprotocolcalltoolrequest.h"
+#include "mcpprotocolcalltoolresult.h"
 #include "mcpprotocolcancellednotification.h"
 #include "mcpprotocolcanceltaskrequest.h"
 #include "mcpprotocolcanceltaskresult.h"
@@ -59,7 +60,6 @@
 #include "mcpprotocolunsubscriberequestparams.h"
 /*
  * // TODO
-#include "McpProtocolCallToolResult.h"
 #include "McpProtocolGetTaskPayloadResult"
 #include "McpProtocolCompleteResult."
 */

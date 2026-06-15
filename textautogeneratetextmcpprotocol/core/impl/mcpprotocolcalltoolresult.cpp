@@ -29,6 +29,9 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
+    if (obj.contains("isError"_L1)) {
+        prompt.setIsError(obj["isError"_L1].toBool());
+    }
     // TODO
     return prompt;
 }
