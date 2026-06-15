@@ -240,6 +240,8 @@ target_sources(
         core/prompts/textautogenerateskill.cpp
         core/prompts/textautogenerateprompt.h
         core/prompts/textautogenerateprompt.cpp
+        core/prompts/textautogenerateagent.cpp
+        core/prompts/textautogenerateagent.h
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
@@ -562,6 +564,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreprom
     HEADER_NAMES
     TextAutoGenerateSkill
     TextAutoGeneratePrompt
+    TextAutoGenerateAgent
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/prompts
