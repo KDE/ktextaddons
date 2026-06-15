@@ -238,6 +238,8 @@ target_sources(
         core/icons/icons.qrc
         core/prompts/textautogenerateskill.h
         core/prompts/textautogenerateskill.cpp
+        core/prompts/textautogenerateprompt.h
+        core/prompts/textautogenerateprompt.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
@@ -559,6 +561,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreloca
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS
     HEADER_NAMES
     TextAutoGenerateSkill
+    TextAutoGeneratePrompt
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/prompts
