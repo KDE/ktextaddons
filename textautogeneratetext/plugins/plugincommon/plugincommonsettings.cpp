@@ -60,3 +60,5 @@ void PluginCommonSettings::setThoughtProcessing(bool newThoughtProcessing)
 {
     mThoughtProcessing = newThoughtProcessing;
 }
+
+#include "moc_plugincommonsettings.cpp"
