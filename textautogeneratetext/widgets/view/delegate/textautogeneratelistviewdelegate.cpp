@@ -249,6 +249,7 @@ void TextAutoGenerateListViewDelegate::drawDateAndIcons(QPainter *painter,
         if (layout.infoIconRect.isValid() && !waitingAnswer) {
             mInformationIcon.paint(painter, layout.infoIconRect);
         }
+        // TODO disable it in quick answer
         if (layout.forkIconRect.isValid() && !waitingAnswer) {
             mForkIcon.paint(painter, layout.forkIconRect);
         }
