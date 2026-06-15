@@ -236,6 +236,8 @@ target_sources(
         core/textautogeneratefilecache.h
         core/textautogeneratefilecache.cpp
         core/icons/icons.qrc
+        core/prompts/textautogenerateskill.h
+        core/prompts/textautogenerateskill.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
@@ -554,6 +556,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreloca
     RELATIVE core/localdatabase
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateSkill
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/prompts
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS
     HEADER_NAMES
     TextAutoGenerateExportChatAsJsonJob
@@ -689,6 +699,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextview_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextviewdelegate_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -709,6 +720,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextcorelocaldatabase_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextview_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextviewdelegate_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS}
 )
 
 install(
