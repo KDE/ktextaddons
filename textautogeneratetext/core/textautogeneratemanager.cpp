@@ -395,7 +395,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
 
 void TextAutoGenerateManager::forkDiscussionUntilMessage(const QByteArray &chatId, const QByteArray &uuid)
 {
-    // TODO
+    duplicateChat(chatId, uuid);
 }
 
 void TextAutoGenerateManager::removeMessage(const QByteArray &chatId, const QByteArray &uuid)
@@ -431,7 +431,7 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
     return false;
 }
 
-void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
+void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId, const QByteArray &untilMessageUUid)
 {
     if (chatId.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "chatId is empty. It's a bug";
@@ -452,6 +452,9 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId)
         newMsg.setUuid(TextAutoGenerateTextUtils::generateUUid());
         convertUuid.insert(m.uuid(), newMsg.uuid());
         newMessages.append(newMsg);
+        if (m.uuid() == untilMessageUUid) {
+            break;
+        }
     }
     for (auto &m : newMessages) {
         if (convertUuid.contains(m.answerUuid())) {

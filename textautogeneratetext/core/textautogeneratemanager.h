@@ -402,7 +402,7 @@ public:
      * \brief duplicateChat This method duplicates chats and messages
      * \param chatId
      */
-    void duplicateChat(const QByteArray &chatId);
+    void duplicateChat(const QByteArray &chatId, const QByteArray &untilMessageUUid = {});
 
     /*!
      * \brief askStartOllama
