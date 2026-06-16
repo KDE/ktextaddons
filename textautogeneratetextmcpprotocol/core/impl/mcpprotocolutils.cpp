@@ -372,21 +372,24 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::JSONRPCResponseFromJson(c
     }
     return {};
 }
-#if 0
 
-QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult &val)
+QJsonValue
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult &val)
 {
-    return std::visit([](const auto &v) -> QJsonObject {
-        using T = std::decay_t<decltype(v)>;
-        if constexpr (std::is_same_v<T, QJsonObject>) {
-            return v;
-        } else {
-            return toJson(v);
-        }
-    }, val);
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultFromJson(const QJsonValue &val)
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ServerResult: expected object";
@@ -400,7 +403,7 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult TextAutoGene
         return McpProtocolListResourcesResult::fromJson(obj);
     }
     if (obj.contains("resourceTemplates"_L1)) {
-        return  McpProtocolListResourceTemplatesResult::fromJson(obj);
+        return McpProtocolListResourceTemplatesResult::fromJson(obj);
     }
     if (obj.contains("contents"_L1)) {
         return McpProtocolReadResourceResult::fromJson(obj);
@@ -423,6 +426,7 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult TextAutoGene
     if (obj.contains("completion"_L1)) {
         return McpProtocolCompleteResult::fromJson(obj);
     }
+#if 0 // TODO
     {
         auto result = McpProtocolResult::fromJson(obj);
         if (result)  {
@@ -447,9 +451,9 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult TextAutoGene
             return result;
         }
     }
+#endif
     return {};
 }
-#endif
 
 #if 0
 QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token)
