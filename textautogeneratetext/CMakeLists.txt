@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    widgets/promptswidget/textautogeneratepromptwidget.h
-    widgets/promptswidget/textautogeneratepromptwidget.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -420,6 +416,8 @@ target_sources(
         widgets/debug/textautogeneratejsonplaintexteditwidget.cpp
         widgets/availablemodel/textautogeneratemodelavailablelistview.h
         widgets/availablemodel/textautogeneratemodelavailablelistview.cpp
+        widgets/promptswidget/textautogeneratepromptwidget.h
+        widgets/promptswidget/textautogeneratepromptwidget.cpp
 )
 
 if(BUILD_TESTING)
