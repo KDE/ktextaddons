@@ -32,3 +32,5 @@ void TextAutoGeneratePromptWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mText);
     QVERIFY(mText->toPlainText().isEmpty());
 }
+
+#include "moc_textautogeneratepromptwidgettest.cpp"
