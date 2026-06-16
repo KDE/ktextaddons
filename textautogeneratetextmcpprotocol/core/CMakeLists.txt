@@ -269,6 +269,8 @@ target_sources(
         impl/mcpprotocolgettaskresult.h
         impl/mcpprotocolcalltoolresult.h
         impl/mcpprotocolcalltoolresult.cpp
+        impl/mcpprotocolgettaskpayloadresult.cpp
+        impl/mcpprotocolgettaskpayloadresult.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -452,6 +454,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolCancelTaskResult
     McpProtocolGetTaskResult
     McpProtocolCallToolResult
+    McpProtocolGetTaskPayloadResult
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl
