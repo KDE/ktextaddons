@@ -10,3 +10,4 @@ macro(add_textautogenerate_widgets_prompts_unittest _source)
 endmacro()
 
 add_textautogenerate_widgets_prompts_unittest(textautogeneratepromptwidgettest.cpp)
+add_textautogenerate_widgets_prompts_unittest(textautogenerateskillwidgettest.cpp)

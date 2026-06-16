@@ -418,6 +418,8 @@ target_sources(
         widgets/availablemodel/textautogeneratemodelavailablelistview.cpp
         widgets/promptswidget/textautogeneratepromptwidget.h
         widgets/promptswidget/textautogeneratepromptwidget.cpp
+        widgets/promptswidget/textautogenerateskillwidget.h
+        widgets/promptswidget/textautogenerateskillwidget.cpp
 )
 
 if(BUILD_TESTING)
