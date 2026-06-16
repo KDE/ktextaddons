@@ -14,6 +14,7 @@
 #include "mcpprotocolcanceltaskrequest.h"
 #include "mcpprotocolcanceltaskresult.h"
 #include "mcpprotocolcompleterequest.h"
+#include "mcpprotocolcompleteresult.h"
 #include "mcpprotocolelicitationcompletenotification.h"
 #include "mcpprotocolembeddedresource.h"
 #include "mcpprotocolgetpromptrequest.h"
@@ -59,10 +60,6 @@
 #include "mcpprotocoltoolusecontent.h"
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
-/*
- * // TODO
-#include "McpProtocolCompleteResult."
-*/
 
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
