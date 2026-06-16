@@ -32,6 +32,14 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
     if (obj.contains("isError"_L1)) {
         prompt.setIsError(obj["isError"_L1].toBool());
     }
+    if (obj.contains("structuredContent"_L1) && obj["structuredContent"_L1].isObject()) {
+        const QJsonObject mapObj_structuredContent = obj["structuredContent"_L1].toObject();
+        QMap<QString, QJsonValue> map_structuredContent;
+        for (auto it = mapObj_structuredContent.constBegin(); it != mapObj_structuredContent.constEnd(); ++it) {
+            map_structuredContent.insert(it.key(), it.value());
+        }
+        prompt.setStructuredContent(map_structuredContent);
+    }
     // TODO
     return prompt;
 }
@@ -45,6 +53,14 @@ QJsonObject McpProtocolCallToolResult::toJson(const McpProtocolCallToolResult &b
     if (boolean.isError().has_value()) {
         obj["isError"_L1] = *boolean.isError();
     }
+    if (boolean.structuredContent().has_value()) {
+        QJsonObject map_structuredContent;
+        for (auto it = boolean.structuredContent()->constBegin(); it != boolean.structuredContent()->constEnd(); ++it) {
+            map_structuredContent.insert(it.key(), it.value());
+        }
+        obj["structuredContent"_L1] = map_structuredContent;
+    }
+
     // TODO
     return obj;
 }
@@ -86,5 +102,5 @@ std::optional<QMap<QString, QJsonValue>> McpProtocolCallToolResult::structuredCo
 
 void McpProtocolCallToolResult::setStructuredContent(std::optional<QMap<QString, QJsonValue>> newStructuredContent)
 {
-    mStructuredContent = newStructuredContent;
+    mStructuredContent = std::move(newStructuredContent);
 }
