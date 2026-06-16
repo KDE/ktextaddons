@@ -45,3 +45,5 @@ TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::promp
     prompt.setName(mName->text());
     return prompt;
 }
+
+#include "moc_textautogeneratepromptwidget.cpp"
