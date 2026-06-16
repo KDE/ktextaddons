@@ -19,6 +19,7 @@
 #include "mcpprotocolgetpromptrequest.h"
 #include "mcpprotocolgetpromptresult.h"
 #include "mcpprotocolgettaskpayloadrequest.h"
+#include "mcpprotocolgettaskpayloadresult.h"
 #include "mcpprotocolgettaskrequest.h"
 #include "mcpprotocolgettaskresult.h"
 #include "mcpprotocolimagecontent.h"
@@ -60,7 +61,6 @@
 #include "mcpprotocolunsubscriberequestparams.h"
 /*
  * // TODO
-#include "McpProtocolGetTaskPayloadResult"
 #include "McpProtocolCompleteResult."
 */
 
