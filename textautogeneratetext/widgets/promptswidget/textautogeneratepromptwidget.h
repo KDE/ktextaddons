@@ -8,7 +8,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
-
+class QPlainTextEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGeneratePrompt;
@@ -24,6 +24,6 @@ public:
 
 private:
     QLineEdit *const mName;
-    QLineEdit *const mDescription;
+    QPlainTextEdit *const mText;
 };
 }
