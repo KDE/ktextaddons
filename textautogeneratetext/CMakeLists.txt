@@ -424,6 +424,8 @@ target_sources(
         widgets/promptswidget/textautogeneratepromptwidget.cpp
         widgets/promptswidget/textautogenerateskillwidget.h
         widgets/promptswidget/textautogenerateskillwidget.cpp
+        widgets/promptswidget/textautogenerateskilldialog.cpp
+        widgets/promptswidget/textautogenerateskilldialog.h
 )
 
 if(BUILD_TESTING)
