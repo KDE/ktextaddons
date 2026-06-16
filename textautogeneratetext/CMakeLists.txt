@@ -426,6 +426,7 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/menu/autotests)
     add_subdirectory(widgets/autotests)
     add_subdirectory(widgets/availablemodel/autotests)
+    add_subdirectory(widgets/promptswidget/autotests)
 endif()
 
 add_subdirectory(plugins)
