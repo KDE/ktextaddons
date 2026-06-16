@@ -20,7 +20,7 @@ TextAutoGenerateAddInstanceWidgetTest::TextAutoGenerateAddInstanceWidgetTest(QOb
 
 void TextAutoGenerateAddInstanceWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateAddInstanceWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateAddInstanceWidget w(nullptr);
     auto mainLayout = w.findChild<QFormLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

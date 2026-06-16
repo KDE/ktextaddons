@@ -8,3 +8,5 @@ macro(add_textautogenerate_widgets_prompts_unittest _source)
         LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText
     )
 endmacro()
+
+add_textautogenerate_widgets_prompts_unittest(textautogeneratepromptwidgettest.cpp)
