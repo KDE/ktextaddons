@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:42+0000\n"
+"POT-Creation-Date: 2026-06-17 00:43+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -463,6 +463,8 @@ msgstr "已安裝的模型"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:29
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
 msgstr "名稱："
@@ -2830,6 +2832,8 @@ msgid "Show metadata info"
 msgstr "顯示中繼資料資訊"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:26
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -2969,6 +2973,21 @@ msgstr "最大 token 數："
 #, kde-format
 msgid "Plugins Tool:"
 msgstr "外掛程式工具："
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Description:"
+msgid "Description:"
+msgstr "描述："
+
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:35
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Information:"
+msgid "Instructions:"
+msgstr "資訊："
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format

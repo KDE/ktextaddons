@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:42+0000\n"
+"POT-Creation-Date: 2026-06-17 00:43+0000\n"
 "PO-Revision-Date: 2026-06-13 03:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -449,6 +449,8 @@ msgstr "დაყენებული მოდელი"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:29
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
 msgstr "სახელი:"
@@ -3069,6 +3071,8 @@ msgid "Show metadata info"
 msgstr "მეტამონაცემების ინფორმაციის ჩვენება"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:26
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3208,6 +3212,21 @@ msgstr "მაქს. კოდები:"
 #, kde-format
 msgid "Plugins Tool:"
 msgstr "დამატებების ხელსაწყო:"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Description:"
+msgid "Description:"
+msgstr "აღწერა:"
+
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:35
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Information:"
+msgid "Instructions:"
+msgstr "ინფორმაცია:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format

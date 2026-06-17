@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:42+0000\n"
+"POT-Creation-Date: 2026-06-17 00:43+0000\n"
 "PO-Revision-Date: 2026-05-10 15:37+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -450,6 +450,8 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:29
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
 msgstr ""
@@ -2635,6 +2637,8 @@ msgid "Show metadata info"
 msgstr ""
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:26
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -2773,6 +2777,19 @@ msgstr ""
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Description:"
+msgid "Description:"
+msgstr "விவரணம்:"
+
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:35
+#, kde-format
+msgid "Instructions:"
 msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
