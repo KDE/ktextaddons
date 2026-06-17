@@ -91,6 +91,8 @@ class McpProtocolJSONRPCRequest;
 class McpProtocolJSONRPCNotification;
 class McpProtocolJSONRPCResultResponse;
 class McpProtocolJSONRPCErrorResponse;
+class McpProtocolElicitRequestURLParams;
+class McpProtocolElicitRequestFormParams;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
@@ -199,6 +201,8 @@ using ServerRequest = std::variant<McpProtocolPingRequest,
 
 using SamplingMessageContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolToolUseContent, McpProtocolToolResultContent>;
+
+using ElicitRequestParams = std::variant<McpProtocolElicitRequestURLParams, McpProtocolElicitRequestFormParams>;
 
 using CreateMessageResultContent = std::variant<McpProtocolTextContent,
                                                 McpProtocolImageContent,

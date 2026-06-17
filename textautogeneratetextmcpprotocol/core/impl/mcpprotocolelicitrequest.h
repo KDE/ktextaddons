@@ -48,7 +48,7 @@ public:
 private:
     McpProtocolUtils::RequestId mId;
     // TODO
-    // McpProtocolElicitRequestParams mParams;
+    // McpProtocolUtils::ElicitRequestParams mParams;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest, Q_RELOCATABLE_TYPE);
