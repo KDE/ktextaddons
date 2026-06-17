@@ -15,3 +15,8 @@ QString LMStudioCommonUtils::modelsPath()
 {
     return u"/api/v1/models"_s;
 }
+
+QString LMStudioCommonUtils::completionPath()
+{
+    return u"/v1/completions"_s;
+}

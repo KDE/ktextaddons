@@ -17,5 +17,6 @@ void LMStudioCommonUtilsTest::shouldHaveDefaultValues()
 {
     QCOMPARE(LMStudioCommonUtils::modelsPath(), u"/api/v1/models"_s);
     QCOMPARE(LMStudioCommonUtils::responsesPath(), u"/api/responses"_s);
+    QCOMPARE(LMStudioCommonUtils::completionPath(), u"/v1/completions"_s);
 }
 #include "moc_lmstudiocommonutilstest.cpp"
