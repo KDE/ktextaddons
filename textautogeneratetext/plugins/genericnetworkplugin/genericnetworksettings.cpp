@@ -9,21 +9,6 @@ GenericNetworkSettings::GenericNetworkSettings() = default;
 
 GenericNetworkSettings::~GenericNetworkSettings() = default;
 
-QString GenericNetworkSettings::displayName() const
-{
-    return mDisplayName;
-}
-
-void GenericNetworkSettings::setDisplayName(const QString &newDisplayName)
-{
-    mDisplayName = newDisplayName;
-}
-
-QString GenericNetworkSettings::currentModel() const
-{
-    return mCurrentModel;
-}
-
 int GenericNetworkSettings::maxTokens() const
 {
     return mMaxTokens;
@@ -52,9 +37,4 @@ int GenericNetworkSettings::seed() const
 void GenericNetworkSettings::setSeed(int newSeed)
 {
     mSeed = newSeed;
-}
-
-void GenericNetworkSettings::setCurrentModel(const QString &newCurrentModel)
-{
-    mCurrentModel = newCurrentModel;
 }
