@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    widgets/promptswidget/textautogeneratepromptdialog.h
-    widgets/promptswidget/textautogeneratepromptdialog.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -426,6 +422,8 @@ target_sources(
         widgets/promptswidget/textautogenerateskillwidget.cpp
         widgets/promptswidget/textautogenerateskilldialog.cpp
         widgets/promptswidget/textautogenerateskilldialog.h
+        widgets/promptswidget/textautogeneratepromptdialog.h
+        widgets/promptswidget/textautogeneratepromptdialog.cpp
 )
 
 if(BUILD_TESTING)
