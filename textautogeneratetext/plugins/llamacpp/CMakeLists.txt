@@ -1,11 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
-add_library(
-    textautogeneratellamacpp
-    llamacppmanager.h
-    llamacppmanager.cpp
-)
+add_library(textautogeneratellamacpp)
+
 ecm_qt_declare_logging_category(textautogeneratellamacpp
     HEADER autogeneratetext_llamacpp_debug.h
     IDENTIFIER AUTOGENERATETEXT_LLAMACPP_LOG
@@ -22,7 +19,13 @@ ecm_qt_declare_logging_category(textautogeneratellamacpp
     EXPORT KTEXTADDONS
 )
 
-target_sources(textautogeneratellamacpp PRIVATE textautogeneratellamacpp_private_export.h)
+target_sources(
+    textautogeneratellamacpp
+    PRIVATE
+        textautogeneratellamacpp_private_export.h
+        llamacppmanager.h
+        llamacppmanager.cpp
+)
 
 # precompiled headers support
 if(ENABLE_PCH)
