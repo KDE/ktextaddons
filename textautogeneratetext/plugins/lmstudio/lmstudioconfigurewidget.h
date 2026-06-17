@@ -33,10 +33,10 @@ Q_SIGNALS:
     void enableOkButton(bool status);
 
 private:
+    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotLMSStarted();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void fillModels();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotStartLMStudio();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void displayModelInfo(const QString &modelStr);
-    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void showModelInfo(const QString &modelName);
     QLineEdit *const mName;
     QLineEdit *const mUrl;
     KPasswordLineEdit *const mApiKey;

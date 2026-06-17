@@ -77,7 +77,6 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, LMStu
     mainLayout->addStretch(1);
 
     connect(mManager, &LMStudioManager::modelsLoadDone, this, [this, plugin](const LMStudioManager::ModelsInfo &modelinfo) {
-        // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
             const TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo = plugin->activateInstanceAction();
             mMessageWidget->setMessageInfo(activateInstanceInfo.action,
@@ -86,7 +85,6 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, LMStu
             mMessageWidget->animatedShow();
             Q_EMIT lmStudioProcessOk(false);
         } else {
-            // TODO mModelComboBoxWidget->setModels(modelinfo.models);
             Q_EMIT lmStudioProcessOk(true);
         }
     });
@@ -97,6 +95,7 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, LMStu
     loadSettings();
     connect(mManager, &LMStudioManager::refreshInstalledModels, this, &LMStudioConfigureWidget::fillModels);
     connect(mManager, &LMStudioManager::showModelInfoDone, this, &LMStudioConfigureWidget::displayModelInfo);
+    connect(mManager, &LMStudioManager::lmsStarted, this, &LMStudioConfigureWidget::slotLMSStarted);
     fillModels();
 }
 
@@ -107,12 +106,6 @@ void LMStudioConfigureWidget::displayModelInfo(const QString &modelStr)
     TextAutoGenerateText::TextAutoGenerateShowModelInfoDialog dlg(this);
     dlg.setText(modelStr);
     dlg.exec();
-}
-
-void LMStudioConfigureWidget::showModelInfo(const QString &modelName)
-{
-    // qDebug() << " showModelInfo " << modelName;
-    // mManager->showModelInfo(modelName);
 }
 
 void LMStudioConfigureWidget::loadSettings()
@@ -132,6 +125,12 @@ void LMStudioConfigureWidget::saveSettings()
 void LMStudioConfigureWidget::restoreToDefaults()
 {
     mManager->lmStudioSettings()->setServerUrl(mManager->lmStudioSettings()->defaultServerUrl());
+}
+
+void LMStudioConfigureWidget::slotLMSStarted()
+{
+    mMessageWidget->animatedHide();
+    Q_EMIT lmStudioProcessOk(true);
 }
 
 void LMStudioConfigureWidget::fillModels()

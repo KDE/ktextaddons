@@ -18,14 +18,13 @@ public:
 
     [[nodiscard]] bool start();
 
-    [[nodiscard]] QByteArray processOutputData() const;
-
 Q_SIGNALS:
     void lmsStarted();
     void lmsFailed(const QString &errorStr);
 
 private:
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotReadStandardOutput();
+    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotReadErrorOutput();
     LMStudioManager *const mLMStudioManager;
     QProcess *mProcess = nullptr;
     QByteArray mProcessOutputData;

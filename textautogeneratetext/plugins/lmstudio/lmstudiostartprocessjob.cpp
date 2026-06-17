@@ -47,7 +47,7 @@ bool LMStudioStartProcessJob::start()
     mProcess->setProgram(lmsPath);
     mProcess->setArguments({u"server"_s, u"start"_s});
     connect(mProcess, &QProcess::readyReadStandardOutput, this, &LMStudioStartProcessJob::slotReadStandardOutput);
-    connect(mProcess, &QProcess::readyReadStandardError, this, &LMStudioStartProcessJob::slotReadStandardOutput);
+    connect(mProcess, &QProcess::readyReadStandardError, this, &LMStudioStartProcessJob::slotReadErrorOutput);
     mProcess->start();
     if (mProcess->waitForStarted()) {
         Q_EMIT lmsStarted();
@@ -62,13 +62,12 @@ bool LMStudioStartProcessJob::start()
 
 void LMStudioStartProcessJob::slotReadStandardOutput()
 {
-    mProcessOutputData += mProcess->readAllStandardOutput();
-    // qDebug() << " mProcessOutputData " << mProcessOutputData;
+    qDebug() << " mProcessOutputData " << mProcess->readAllStandardOutput();
 }
 
-QByteArray LMStudioStartProcessJob::processOutputData() const
+void LMStudioStartProcessJob::slotReadErrorOutput()
 {
-    return mProcessOutputData;
+    qDebug() << " mProcessOutputData " << mProcess->readAllStandardError();
 }
 
 #include "moc_lmstudiostartprocessjob.cpp"

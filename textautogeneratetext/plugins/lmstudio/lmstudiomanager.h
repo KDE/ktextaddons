@@ -45,7 +45,6 @@ public:
 
     void startLMStudio();
 
-    [[nodiscard]] QByteArray lsmStudioOutputData() const;
     [[nodiscard]] bool isLMStudioStarted() const;
 Q_SIGNALS:
     void lmsStarted();

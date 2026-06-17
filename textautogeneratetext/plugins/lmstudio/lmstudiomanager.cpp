@@ -76,14 +76,6 @@ bool LMStudioManager::isLMStudioStarted() const
     return mLMStudioStartProcessJob != nullptr;
 }
 
-QByteArray LMStudioManager::lsmStudioOutputData() const
-{
-    if (mLMStudioStartProcessJob) {
-        return mLMStudioStartProcessJob->processOutputData();
-    }
-    return {};
-}
-
 LMStudioSettings *LMStudioManager::lmStudioSettings() const
 {
     return mLMStudioSettings;
@@ -170,7 +162,7 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getCompletion(cons
 {
     QUrl url = mLMStudioSettings->serverUrl();
     // Use OpenAI API exposed by LM Studio
-    url.setPath(u"/v1/completions"_s);
+    url.setPath(LMStudioCommonUtils::completionPath());
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (!mApiKey.isEmpty()) {
@@ -199,7 +191,7 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getChatCompletion(
 {
     QUrl url = mLMStudioSettings->serverUrl();
     // Use OpenAI API exposed by LM Studio
-    url.setPath(u"/v1/chat/completions"_s);
+    url.setPath(LMStudioCommonUtils::completionPath());
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (!mApiKey.isEmpty()) {
