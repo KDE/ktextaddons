@@ -26,6 +26,7 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotReadStandardOutput();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotReadErrorOutput();
     OllamaManager *const mOllamaManager;
     QProcess *mProcess = nullptr;
     QByteArray mProcessOutputData;
