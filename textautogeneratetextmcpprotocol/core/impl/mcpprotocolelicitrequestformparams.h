@@ -7,8 +7,17 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBooleanSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolNumberSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolStringSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskMetadata>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledSingleSelectEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+// TODO #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledSingleSelectEnumSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLegacyTitledEnumSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledMultiSelectEnumSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledMultiSelectEnumSchema>
+
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -31,10 +40,24 @@ public:
         [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::Meta &image);
     };
     struct RequestedSchema {
-        // TODO
         std::optional<QString> mDollarschema;
-        QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
+        // TODO QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
         std::optional<QStringList> mRequired;
+
+        [[nodiscard]] std::optional<QString> dollarschema() const;
+        void setDollarschema(std::optional<QString> newDollarschema);
+        [[nodiscard]] std::optional<QStringList> required() const;
+        void setRequired(std::optional<QStringList> newRequired);
+#if 0 // TODO
+        [[nodiscard]] QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> properties() const;
+        void setProperties(const QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> &newProperties);
+#endif
+        /*!
+         */
+        [[nodiscard]] static McpProtocolElicitRequestFormParams::RequestedSchema fromJson(const QJsonObject &obj);
+        /*!
+         */
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::RequestedSchema &image);
     };
     /*!
      */
