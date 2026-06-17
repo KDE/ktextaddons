@@ -10,6 +10,26 @@ using namespace Qt::Literals::StringLiterals;
 PluginCommonSettings::PluginCommonSettings() = default;
 PluginCommonSettings::~PluginCommonSettings() = default;
 
+QString PluginCommonSettings::displayName() const
+{
+    return mDisplayName;
+}
+
+void PluginCommonSettings::setDisplayName(const QString &newName)
+{
+    mDisplayName = newName;
+}
+
+QString PluginCommonSettings::currentModel() const
+{
+    return mCurrentModel;
+}
+
+void PluginCommonSettings::setCurrentModel(const QString &newCurrentModel)
+{
+    mCurrentModel = newCurrentModel;
+}
+
 PluginCommonSettings::ShareNameType PluginCommonSettings::shareNameType() const
 {
     return mShareNameType;

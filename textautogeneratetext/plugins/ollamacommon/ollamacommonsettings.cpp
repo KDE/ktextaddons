@@ -13,16 +13,6 @@ OllamaCommonSettings::OllamaCommonSettings() = default;
 
 OllamaCommonSettings::~OllamaCommonSettings() = default;
 
-QString OllamaCommonSettings::currentModel() const
-{
-    return mCurrentModel;
-}
-
-void OllamaCommonSettings::setCurrentModel(const QString &newCurrentModel)
-{
-    mCurrentModel = newCurrentModel;
-}
-
 int OllamaCommonSettings::seed() const
 {
     return mSeed;
@@ -41,16 +31,6 @@ double OllamaCommonSettings::temperature() const
 void OllamaCommonSettings::setTemperature(double newTemperature)
 {
     mTemperature = newTemperature;
-}
-
-QString OllamaCommonSettings::displayName() const
-{
-    return mDisplayName;
-}
-
-void OllamaCommonSettings::setDisplayName(const QString &newName)
-{
-    mDisplayName = newName;
 }
 
 int OllamaCommonSettings::keepAliveMinutes() const

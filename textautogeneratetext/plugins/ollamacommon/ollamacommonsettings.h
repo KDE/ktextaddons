@@ -31,12 +31,6 @@ public:
     [[nodiscard]] double temperature() const;
     void setTemperature(double newTemperature);
 
-    [[nodiscard]] QString currentModel() const;
-    void setCurrentModel(const QString &newCurrentModel);
-
-    [[nodiscard]] QString displayName() const;
-    void setDisplayName(const QString &newName);
-
     [[nodiscard]] int keepAliveMinutes() const;
     void setKeepAliveMinutes(int newKeepAliveMinutes);
 
@@ -62,8 +56,6 @@ public:
     [[nodiscard]] bool operator==(const OllamaCommonSettings &other) const;
 
 private:
-    QString mDisplayName;
-    QString mCurrentModel;
     int mSeed = 0;
     double mTemperature = 0.8;
     int mKeepAliveMinutes = 1;

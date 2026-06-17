@@ -20,12 +20,6 @@ public:
     LMStudioSettings();
     ~LMStudioSettings();
 
-    [[nodiscard]] QString displayName() const;
-    void setDisplayName(const QString &newName);
-
-    [[nodiscard]] QString currentModel() const;
-    void setCurrentModel(const QString &newCurrentModel);
-
     void load(const KConfigGroup &config);
     void save(KConfigGroup &config);
 
@@ -41,8 +35,6 @@ public:
     [[nodiscard]] bool operator==(const LMStudioSettings &other) const;
 
 private:
-    QString mDisplayName;
-    QString mCurrentModel;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:1234"_s);
 };
 TEXTAUTOGENERATELMSTUDIO_EXPORT QDebug operator<<(QDebug d, const LMStudioSettings &t);

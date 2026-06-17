@@ -18,26 +18,6 @@ LMStudioSettings::LMStudioSettings() = default;
 
 LMStudioSettings::~LMStudioSettings() = default;
 
-QString LMStudioSettings::displayName() const
-{
-    return mDisplayName;
-}
-
-void LMStudioSettings::setDisplayName(const QString &newName)
-{
-    mDisplayName = newName;
-}
-
-QString LMStudioSettings::currentModel() const
-{
-    return mCurrentModel;
-}
-
-void LMStudioSettings::setCurrentModel(const QString &newCurrentModel)
-{
-    mCurrentModel = newCurrentModel;
-}
-
 QDebug operator<<(QDebug d, const LMStudioSettings &t)
 {
     d.space() << "displayName:" << t.displayName();

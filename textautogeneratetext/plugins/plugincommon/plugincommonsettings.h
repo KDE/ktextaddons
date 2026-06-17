@@ -32,7 +32,15 @@ public:
     [[nodiscard]] bool thoughtProcessing() const;
     void setThoughtProcessing(bool newThoughtProcessing);
 
+    [[nodiscard]] QString displayName() const;
+    void setDisplayName(const QString &newName);
+
+    [[nodiscard]] QString currentModel() const;
+    void setCurrentModel(const QString &newCurrentModel);
+
 protected:
     PluginCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
+    QString mDisplayName;
+    QString mCurrentModel;
     bool mThoughtProcessing = false;
 };
