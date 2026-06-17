@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetexttoolpluginmanager.h"
+#include "textautogeneratetextcore_toolplugin_debug.h"
 
 #include "core/textautogeneratemanager.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
@@ -195,7 +196,7 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
     if (toolsArray.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "No json generated";
     }
-    qDebug() << "toolsArray********************************" << toolsArray;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_TOOL_PLUGIN_LOG) << "generated toolsArray:" << toolsArray;
     return toolsArray;
 }
 

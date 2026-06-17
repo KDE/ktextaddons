@@ -86,6 +86,13 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
     EXPORT KTEXTADDONS
 )
 
+ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_toolplugin_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_CORE_TOOL_PLUGIN_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext.core.tool.plugin
+    DESCRIPTION "KF6 (TextAutoGenerateText core tool plugin)"
+    EXPORT KTEXTADDONS
+)
+
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextwidget_debug.h
     IDENTIFIER TEXTAUTOGENERATETEXT_WIDGET_LOG
     CATEGORY_NAME org.kde.kf.textautogeneratetext.widget
