@@ -276,7 +276,7 @@ void LLamaCppPlugin::loadApiKey()
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
         Q_ASSERT(job);
         if (job->error()) {
-            qCWarning(AUTOGENERATETEXT_LMSTUDIO_PLUGIN_LOG) << "We have an error during reading password " << job->errorString();
+            qCWarning(AUTOGENERATETEXT_LLAMACPP_PLUGIN_LOG) << "We have an error during reading password " << job->errorString();
         } else {
             mLMStudioManager->setApiKey(job->textData());
             Q_EMIT loadApiKeyDone();
