@@ -49,7 +49,8 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
             lstPos.append(std::move(pos));
         }
 
-        const QRegularExpression exp(u"(%1)"_s.arg(searchedText), QRegularExpression::CaseInsensitiveOption);
+        const QString escapedSearchText = QRegularExpression::escape(searchedText);
+        const QRegularExpression exp(u"(%1)"_s.arg(escapedSearchText), QRegularExpression::CaseInsensitiveOption);
         QRegularExpressionMatchIterator userIterator = exp.globalMatch(newStr);
         int offset = 0;
         while (userIterator.hasNext()) {
