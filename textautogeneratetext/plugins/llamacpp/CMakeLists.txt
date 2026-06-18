@@ -25,6 +25,8 @@ target_sources(
         textautogeneratellamacpp_private_export.h
         llamacppmanager.h
         llamacppmanager.cpp
+        llamacppsettings.cpp
+        llamacppsettings.h
 )
 
 # precompiled headers support
