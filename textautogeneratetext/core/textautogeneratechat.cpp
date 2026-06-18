@@ -206,17 +206,23 @@ TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::sectionMessage(qint64
     if (dt == -1) {
         return TextAutoGenerateChat::SectionHistory::Unknown;
     }
-    const QDate d = QDateTime::fromSecsSinceEpoch(dt).date();
+    // Some persisted data may still contain millisecond timestamps.
+    const qint64 dtInSeconds = (qAbs(dt) > 100000000000LL) ? (dt / 1000) : dt;
+    const QDate d = QDateTime::fromSecsSinceEpoch(dtInSeconds).date();
+    const QDate currentDate = QDate::currentDate();
     if (d == QDate::currentDate()) {
         return TextAutoGenerateChat::SectionHistory::Today;
-    } else if (d < QDate::currentDate().addDays(7)) {
-        return TextAutoGenerateChat::SectionHistory::LessThanSevenDays;
-    } else if (d < QDate::currentDate().addDays(30)) {
-        return TextAutoGenerateChat::SectionHistory::LessThanThirtyDays;
-    } else {
-        return TextAutoGenerateChat::SectionHistory::Later;
     }
-    return TextAutoGenerateChat::SectionHistory::Unknown;
+
+    const int daysOld = d.daysTo(currentDate);
+    if (daysOld >= 1 && daysOld < 7) {
+        return TextAutoGenerateChat::SectionHistory::LessThanSevenDays;
+    }
+    if (daysOld >= 7 && daysOld < 30) {
+        return TextAutoGenerateChat::SectionHistory::LessThanThirtyDays;
+    }
+
+    return TextAutoGenerateChat::SectionHistory::Later;
 }
 
 QString TextAutoGenerateChat::prompt() const
