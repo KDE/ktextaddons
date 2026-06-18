@@ -47,6 +47,9 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
             }
             // Convert
             for (auto &msg : msgs) {
+                if (convertUuid.contains(msg.uuid())) {
+                    msg.setUuid(convertUuid.value(msg.uuid()));
+                }
                 if (convertUuid.contains(msg.answerUuid())) {
                     msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
                 }
