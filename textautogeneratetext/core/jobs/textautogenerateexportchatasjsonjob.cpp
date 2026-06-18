@@ -39,7 +39,8 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
     } else {
         QTextStream out(&data);
         out << QJsonDocument(obj).toJson();
-        if (out.status() != QTextStream::Ok) {
+        out.flush();
+        if ((out.status() != QTextStream::Ok) || (data.error() != QFile::NoError)) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to write to file:" << mInfo.filename;
         } else {
             Q_EMIT exportDone(mInfo.filename);
