@@ -120,6 +120,9 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::Pen
 
 void TextAutoGenerateChatSettings::loadChatPendingTypedInfo()
 {
+    if (!mManager) {
+        return;
+    }
     setPendingTypedTexts(mManager->databaseManager()->loadChatPendingTypedInfo());
 }
 
