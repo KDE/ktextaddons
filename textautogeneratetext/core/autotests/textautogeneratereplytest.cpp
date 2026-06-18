@@ -71,7 +71,19 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
         infos.append(i);
         QTest::addRow("return-1") << ba << infos;
     }
-    // TODO add index
+    {
+        const QByteArray ba(R"([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"},"index":2}])"_ba);
+        QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> infos;
+        TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo i;
+        i.toolName = "example_tool"_ba;
+        i.index = 2;
+        i.toolCallArgument = {{
+            .keyTool = u"city"_s,
+            .value = u"Grenoble"_s,
+        }};
+        infos.append(i);
+        QTest::addRow("return-index") << ba << infos;
+    }
 }
 
 #include "moc_textautogeneratereplytest.cpp"

@@ -32,13 +32,20 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
         const QJsonObject argumentObj = functionObj["arguments"_L1].toObject();
-        if (functionObj.contains("index"_L1)) {
-            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << functionObj.value("index"_L1).toInt();
+        int index = -1;
+        if (obj.contains("index"_L1)) {
+            index = obj.value("index"_L1).toInteger();
+        } else if (functionObj.contains("index"_L1)) {
+            index = functionObj.value("index"_L1).toInteger();
+        }
+        if (index != -1) {
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << index;
         }
 
         const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
+        toolInfo.index = index;
         for (const QString &k : functionKeys) {
             const ToolCallArgument arg{.keyTool = k, .value = argumentObj[k].toString()};
             toolInfo.toolCallArgument.append(arg);
@@ -61,8 +68,14 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
 
-        if (functionObj.contains("index"_L1)) {
-            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << functionObj.value("index"_L1).toInt();
+        int index = -1;
+        if (obj.contains("index"_L1)) {
+            index = obj.value("index"_L1).toInteger();
+        } else if (functionObj.contains("index"_L1)) {
+            index = functionObj.value("index"_L1).toInteger();
+        }
+        if (index != -1) {
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << index;
         }
         const QString arguments = functionObj["arguments"_L1].toString();
         // qDebug() << " arguments: " << arguments;
@@ -72,6 +85,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
+        toolInfo.index = index;
         for (const QString &k : functionKeys) {
             const ToolCallArgument arg{.keyTool = k, .value = argumentObj[k].toString()};
             toolInfo.toolCallArgument.append(arg);
