@@ -81,6 +81,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             &TextAutoGenerateQuickAskWidget::slotRefreshAnswer);
 
     if (mManager) {
+        mPreviousSaveInDatabase = mManager->saveInDatabase();
         mManager->setSaveInDatabase(false);
         connect(mManager,
                 &TextAutoGenerateManager::askMessageRequested,
@@ -96,6 +97,7 @@ TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget()
 {
     if (mManager) {
         mManager->resetCurrentChatId();
+        mManager->setSaveInDatabase(mPreviousSaveInDatabase);
     }
 }
 
