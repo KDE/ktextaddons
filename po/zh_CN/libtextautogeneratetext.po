@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:43+0000\n"
+"POT-Creation-Date: 2026-06-18 02:39+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -14,8 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextautogeneratetext.pot\n"
-"X-Crowdin-File-ID: 57198\n"
+"X-Crowdin-File: /kf6-stable/messages/ktextaddons/libtextautogeneratetext."
+"pot\n"
+"X-Crowdin-File-ID: 57624\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -175,30 +176,30 @@ msgstr "<br><b>提示词词元：</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>补全词元：</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "Plugins Text:"
 msgstr "插件文本："
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:231
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "工具识别符：%1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "开"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "关"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -235,7 +236,7 @@ msgid "Available Models"
 msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/lmstudio/lmstudiomanager.cpp:130
+#: plugins/lmstudio/lmstudiomanager.cpp:122
 #: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -390,7 +391,7 @@ msgstr "Sarvam AI 实例"
 #: plugins/llamacpp/llamacppplugin.cpp:98
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
 #: plugins/lmstudio/lmstudioplugin.cpp:217
@@ -3042,18 +3043,14 @@ msgstr "插件工具："
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "描述："
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "信息："
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -3197,7 +3194,7 @@ msgstr "刷新"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "分叉"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
 #, kde-format

@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtexttranslator.pot\n"
-"X-Crowdin-File-ID: 49528\n"
+"X-Crowdin-File: /kf6-stable/messages/ktextaddons/libtexttranslator.pot\n"
+"X-Crowdin-File-ID: 57632\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format

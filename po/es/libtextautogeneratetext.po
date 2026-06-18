@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:43+0000\n"
-"PO-Revision-Date: 2026-06-13 19:03+0100\n"
+"POT-Creation-Date: 2026-06-18 02:39+0000\n"
+"PO-Revision-Date: 2026-06-17 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -179,30 +179,30 @@ msgstr "<br><b>Token de introducción:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token de terminación:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "Plugins Text:"
 msgstr "Texto del complemento:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:231
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identificador de la herramienta: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Activado"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Desactivado"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -239,7 +239,7 @@ msgid "Available Models"
 msgstr "Modelos disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/lmstudio/lmstudiomanager.cpp:130
+#: plugins/lmstudio/lmstudiomanager.cpp:122
 #: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
@@ -3254,18 +3254,14 @@ msgstr "Herramienta del complemento:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "Descripción:"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "Información:"
+msgstr "Instrucciones:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format

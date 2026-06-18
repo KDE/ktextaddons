@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:43+0000\n"
+"POT-Creation-Date: 2026-06-18 02:39+0000\n"
 "PO-Revision-Date: 2026-01-25 13:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -221,30 +221,30 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "Plugins Text:"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:231
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -281,7 +281,7 @@ msgid "Available Models"
 msgstr "Eredu erabilgarriak"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/lmstudio/lmstudiomanager.cpp:130
+#: plugins/lmstudio/lmstudiomanager.cpp:122
 #: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:58
