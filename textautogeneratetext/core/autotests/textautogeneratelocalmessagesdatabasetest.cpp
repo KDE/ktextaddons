@@ -7,6 +7,9 @@
 
 #include "core/localdatabase/textautogeneratelocalmessagesdatabase.h"
 #include "core/textautogeneratemessage.h"
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <QSqlRecord>
 #include <QStandardPaths>
 #include <QTest>
@@ -57,6 +60,51 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldVerifyDbFileName()
     QCOMPARE(messagesDataBase.dbFileName(QString::fromLatin1(chatId())),
              QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/messages/myChatId.sqlite"_s);
     qDebug() << "messagesDataBase.dbFileName(QString::fromLatin1(chatId())) " << messagesDataBase.dbFileName(QString::fromLatin1(chatId()));
+}
+
+void TextAutoGenerateLocalMessagesDatabaseTest::shouldPersistFirstInsertForFreshConnection()
+{
+    // GIVEN
+    TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
+    const QString firstWriteChatId = u"firstWriteChatId"_s;
+    const QString dbFileName = logger.dbFileName(firstWriteChatId);
+    QFile::remove(dbFileName);
+    QFile::remove(dbFileName + u"-wal"_s);
+    QFile::remove(dbFileName + u"-shm"_s);
+
+    TextAutoGenerateText::TextAutoGenerateMessage message;
+    message.setContent(u"first write message"_s);
+    message.setUuid("first-write-id");
+    message.setDateTime(QDateTime(QDate(2026, 1, 1), QTime(12, 0, 0)).toMSecsSinceEpoch());
+    message.generateHtml();
+
+    // WHEN
+    logger.insertOrReplaceMessage(firstWriteChatId.toLatin1(), message);
+
+    const QString sourceConnectionName = u"messages-"_s + firstWriteChatId;
+    if (QSqlDatabase::contains(sourceConnectionName)) {
+        {
+            QSqlDatabase sourceDb = QSqlDatabase::database(sourceConnectionName);
+            sourceDb.close();
+        }
+        QSqlDatabase::removeDatabase(sourceConnectionName);
+    }
+
+    const QString freshConnectionName = u"messages-fresh-check"_s;
+    {
+        QSqlDatabase freshDb = QSqlDatabase::addDatabase(u"QSQLITE"_s, freshConnectionName);
+        freshDb.setDatabaseName(dbFileName);
+        QVERIFY2(freshDb.open(), qPrintable(freshDb.lastError().text()));
+
+        QSqlQuery countQuery(freshDb);
+        QVERIFY2(countQuery.prepare(u"SELECT COUNT(*) FROM MESSAGES WHERE messageId = ?"_s), qPrintable(countQuery.lastError().text()));
+        countQuery.addBindValue(u"first-write-id"_s);
+        QVERIFY2(countQuery.exec(), qPrintable(countQuery.lastError().text()));
+        QVERIFY(countQuery.next());
+        QCOMPARE(countQuery.value(0).toInt(), 1);
+        freshDb.close();
+    }
+    QSqlDatabase::removeDatabase(freshConnectionName);
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()

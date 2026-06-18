@@ -18,6 +18,7 @@ private Q_SLOTS:
     void shouldDefaultValues();
     void initTestCase();
     void shouldVerifyDbFileName();
+    void shouldPersistFirstInsertForFreshConnection();
     void shouldStoreMessages();
     void shouldDeleteMessages();
     void shouldReturnNullIfDoesNotExist();

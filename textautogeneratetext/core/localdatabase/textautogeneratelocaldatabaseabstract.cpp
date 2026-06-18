@@ -104,11 +104,10 @@ bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id
                 return false;
             }
         }
-        // Using the write-ahead log and sync = NORMAL for faster writes
-        // (idea taken from kactivities-stat)
-        query.exec(u"PRAGMA synchronous = 1"_s);
-        // use the write-ahead log (requires sqlite > 3.7.0)
-        query.exec(u"PRAGMA journal_mode = WAL"_s);
+        // Force direct writes to the main sqlite file so first save is visible
+        // immediately without relying on a separate .sqlite-wal side file.
+        query.exec(u"PRAGMA synchronous = FULL"_s);
+        query.exec(u"PRAGMA journal_mode = DELETE"_s);
     }
 
     Q_ASSERT(db.isValid());
