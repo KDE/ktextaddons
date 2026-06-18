@@ -9,10 +9,7 @@
 // #include "autogeneratetext_lmstudio_plugin_debug.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
-// #include "lmstudioconfiguredialog.h"
-// #include "lmstudiomanager.h"
-// #include "lmstudioreply.h"
-// #include "lmstudiosettings.h"
+#include "llamacppsettings.h"
 #include "misc/executableutils.h"
 #include <KLocalizedString>
 #include <QDesktopServices>
@@ -23,7 +20,7 @@ LLamaCppPlugin::LLamaCppPlugin(TextAutoGenerateText::TextAutoGenerateManager *ma
                                TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
-// , mLMStudioSettings(new LMStudioSettings)
+    , mLLamaCppSettings(new LLamaCppSettings)
 // , mLMStudioManager(new LMStudioManager(mLMStudioSettings, this))
 {
 #if 0
@@ -58,19 +55,19 @@ LLamaCppPlugin::LLamaCppPlugin(TextAutoGenerateText::TextAutoGenerateManager *ma
 
 LLamaCppPlugin::~LLamaCppPlugin()
 {
-    // delete mLMStudioSettings;
+    delete mLLamaCppSettings;
 }
 
 void LLamaCppPlugin::load(const KConfigGroup &config)
 {
-    // mLMStudioSettings->load(config);
+    mLLamaCppSettings->load(config);
     loadApiKey();
 }
 
 void LLamaCppPlugin::save(KConfigGroup &config)
 {
+    mLLamaCppSettings->save(config);
 #if 0
-    mLMStudioSettings->save(config);
     auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
     connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         if (baseJob->error() != QKeychain::Error::NoError) {
@@ -152,33 +149,27 @@ void LLamaCppPlugin::sendToAssistant(const SendToAssistantInfo &info)
 
 QString LLamaCppPlugin::displayName() const
 {
-    return {};
-    // return mLMStudioSettings->displayName();
+    return mLLamaCppSettings->displayName();
 }
 
 void LLamaCppPlugin::setDisplayName(const QString &newName)
 {
-    // mLMStudioSettings->setDisplayName(newName);
+    mLLamaCppSettings->setDisplayName(newName);
 }
 
 QString LLamaCppPlugin::currentModel() const
 {
-#if 0
-    if (mLMStudioSettings->currentModel().isEmpty()) {
+    if (mLLamaCppSettings->currentModel().isEmpty()) {
         return fallBackModel();
     }
-    return mLMStudioSettings->currentModel();
-#endif
-    return {};
+    return mLLamaCppSettings->currentModel();
 }
 
 void LLamaCppPlugin::setCurrentModel(const QString &m)
 {
-#if 0
-    mLMStudioSettings->setCurrentModel(m);
+    mLLamaCppSettings->setCurrentModel(m);
     Q_EMIT configChanged();
     Q_EMIT currentModelChanged();
-#endif
 }
 
 bool LLamaCppPlugin::hasVisionSupport() const
