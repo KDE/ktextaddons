@@ -78,3 +78,5 @@ void TextAutoGenerateExportChatAsJsonJobTest::shouldNotEmitExportDoneWhenWriteFa
 
     QCOMPARE(spy.count(), 0);
 }
+
+#include "moc_textautogenerateexportchatasjsonjobtest.cpp"

@@ -61,3 +61,5 @@ void TextAutoGenerateImportChatAsJsonJobTest::shouldRemapMessageAndAnswerUuids()
     QVERIFY(second.uuid() != "id-b");
     QCOMPARE(second.answerUuid(), first.uuid());
 }
+
+#include "moc_textautogenerateimportchatasjsonjobtest.cpp"
