@@ -103,6 +103,9 @@ bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) c
     if (!result) {
         return false;
     }
+    if (mInfo != other.info()) {
+        return false;
+    }
     if (messageInfo() && other.messageInfo()) {
         if (*messageInfo() == (*other.messageInfo())) {
             result = true;

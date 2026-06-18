@@ -172,6 +172,32 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
     }
 }
 
+void TextAutoGenerateMessageTest::shouldSerializeReplyInfo()
+{
+    TextAutoGenerateText::TextAutoGenerateMessage message;
+    message.setUuid("message-id");
+    message.setContent(u"answer"_s);
+    message.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+    message.setDateTime(1753338990);
+
+    TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+    replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
+    replyInfo.totalDuration = std::chrono::nanoseconds(111);
+    replyInfo.loadDuration = std::chrono::nanoseconds(222);
+    replyInfo.promptEvalTokenCount = 333;
+    replyInfo.promptEvalDuration = std::chrono::nanoseconds(444);
+    replyInfo.tokenCount = 555;
+    replyInfo.completionTokens = 666;
+    replyInfo.promptTokens = 777;
+    replyInfo.duration = std::chrono::nanoseconds(888);
+    message.setInfo(replyInfo);
+
+    const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(message);
+    const TextAutoGenerateText::TextAutoGenerateMessage output =
+        TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
+    QCOMPARE(message, output);
+}
+
 // TODO add image support
 
 #include "moc_textautogeneratemessagetest.cpp"
