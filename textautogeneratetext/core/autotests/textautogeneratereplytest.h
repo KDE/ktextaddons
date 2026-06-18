@@ -16,4 +16,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldParseToolCalls();
     void shouldParseToolCalls_data();
+    void shouldParseToolCallsOpenAI();
+    void shouldParseToolCallsOpenAI_data();
 };
