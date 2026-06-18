@@ -9,8 +9,7 @@
 
 #include "core/textautogeneratetextplugin.h"
 
-class LMStudioManager;
-class LMStudioSettings;
+class LLamaCppSettings;
 class QAction;
 class LLamaCppPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
@@ -64,7 +63,7 @@ private:
     void slotLMStudioFailed(const QString &errorStr);
     void slotLMStudioStarted();
     void slotDownloadLMStudio();
-    // LMStudioSettings *const mLMStudioSettings;
+    LLamaCppSettings *const mLLamaCppSettings;
     // LMStudioManager *const mLMStudioManager;
     QAction *mCurrentAction = nullptr;
 };

@@ -26,9 +26,6 @@ public:
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
-    [[nodiscard]] static LMStudioSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
-    [[nodiscard]] static QString convertShareNameTypeToString(LMStudioSettings::ShareNameType type);
-
     [[nodiscard]] QUrl defaultServerUrl() const;
     [[nodiscard]] bool defaultThoughtProcessing() const;
 

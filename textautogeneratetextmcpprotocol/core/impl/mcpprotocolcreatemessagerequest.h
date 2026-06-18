@@ -7,7 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequestParams>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,7 +28,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] bool operator==(const McpProtocolCreateMessageRequest &other) const;
+    // TODO [[nodiscard]] bool operator==(const McpProtocolCreateMessageRequest &other) const;
 
     /*!
      */
@@ -44,9 +44,16 @@ public:
      */
     void setId(const McpProtocolUtils::RequestId &newId);
 
+    /*!
+     */
+    [[nodiscard]] McpProtocolCreateMessageRequestParams params() const;
+    /*!
+     */
+    void setParams(const McpProtocolCreateMessageRequestParams &newParams);
+
 private:
     McpProtocolUtils::RequestId mId;
-    // TODO McpProtocolCreateMessageRequestParams mParams;
+    McpProtocolCreateMessageRequestParams mParams;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest, Q_RELOCATABLE_TYPE);

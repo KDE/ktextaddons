@@ -21,11 +21,11 @@ QByteArray McpProtocolCreateMessageRequest::type()
     return "sampling/createMessage"_ba;
 }
 
-bool McpProtocolCreateMessageRequest::operator==(const McpProtocolCreateMessageRequest &other) const = default;
+// TODO bool McpProtocolCreateMessageRequest::operator==(const McpProtocolCreateMessageRequest &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &t)
 {
-    // d.space() << "params:" << t.params();
+    d.space() << "params:" << t.params();
     d.space() << "id:" << t.id();
     return d;
 }
@@ -41,11 +41,9 @@ McpProtocolCreateMessageRequest McpProtocolCreateMessageRequest::fromJson(const 
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCreateMessageRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
     }
-#if 0
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolRequestParams::fromJson(obj["params"_L1].toObject()));
+        prompt.setParams(McpProtocolCreateMessageRequestParams::fromJson(obj["params"_L1].toObject()));
     }
-#endif
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
     }
@@ -58,11 +56,7 @@ QJsonObject McpProtocolCreateMessageRequest::toJson(const McpProtocolCreateMessa
     obj["id"_L1] = McpProtocolUtils::requestIdToJson(request.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCreateMessageRequest::type());
-#if 0
-    if (request.params().has_value()) {
-        obj["params"_L1] = McpProtocolRequestParams::toJson(*request.params());
-    }
-#endif
+    obj["params"_L1] = McpProtocolCreateMessageRequestParams::toJson(request.params());
     return obj;
 }
 
@@ -74,4 +68,14 @@ McpProtocolUtils::RequestId McpProtocolCreateMessageRequest::id() const
 void McpProtocolCreateMessageRequest::setId(const McpProtocolUtils::RequestId &newId)
 {
     mId = newId;
+}
+
+McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequest::params() const
+{
+    return mParams;
+}
+
+void McpProtocolCreateMessageRequest::setParams(const McpProtocolCreateMessageRequestParams &newParams)
+{
+    mParams = newParams;
 }
