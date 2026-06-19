@@ -49,7 +49,8 @@ QString TextAutoGenerateTextReplyInfo::generateReplyInfo() const
 QString TextAutoGenerateTextReplyInfo::generateReplyTypeInfoOllama() const
 {
     QString toolTip = i18n("<br><b>Total Duration:</b> %1 seconds", QString::number(std::chrono::duration_cast<std::chrono::seconds>(totalDuration).count()));
-    toolTip += i18n("<br><b>Tokens:</b> %1", promptEvalTokenCount);
+    toolTip += i18n("<br><b>Prompt Tokens:</b> %1", promptEvalTokenCount);
+    toolTip += i18n("<br><b>Tokens:</b> %1", tokenCount);
     return toolTip;
 }
 
