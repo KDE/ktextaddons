@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-18 02:39+0000\n"
+"POT-Creation-Date: 2026-06-19 02:38+0000\n"
 "PO-Revision-Date: 2026-06-17 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -392,12 +392,12 @@ msgid "Sarvam AI instance"
 msgstr "Instancia de Sarvam AI"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
-#: plugins/llamacpp/llamacppplugin.cpp:98
+#: plugins/llamacpp/llamacppplugin.cpp:95
 #, kde-format
 msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
-#: plugins/llamacpp/llamacppplugin.cpp:236
+#: plugins/llamacpp/llamacppplugin.cpp:227
 #: plugins/lmstudio/lmstudioplugin.cpp:217
 #, kde-format
 msgid ""
@@ -406,20 +406,20 @@ msgstr ""
 "No se ha encontrado LMStudio en el sistema. Solicite a su administrador que "
 "lo instale."
 
-#: plugins/llamacpp/llamacppplugin.cpp:238
+#: plugins/llamacpp/llamacppplugin.cpp:229
 #: plugins/lmstudio/lmstudioplugin.cpp:219
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "No se ha encontrado LMStudio en el sistema. Debería instalarlo."
 
-#: plugins/llamacpp/llamacppplugin.cpp:239
+#: plugins/llamacpp/llamacppplugin.cpp:230
 #: plugins/lmstudio/lmstudioplugin.cpp:220
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "Descargar LMStudio"
 
-#: plugins/llamacpp/llamacppplugin.cpp:245
+#: plugins/llamacpp/llamacppplugin.cpp:236
 #: plugins/lmstudio/lmstudioplugin.cpp:226
 #, kde-format
 msgctxt "@action"
@@ -739,8 +739,6 @@ msgid "Ollama Log"
 msgstr "Registro de Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:86
-#: plugins/ollamacloud/ollamapluginonline.cpp:110
-#: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
