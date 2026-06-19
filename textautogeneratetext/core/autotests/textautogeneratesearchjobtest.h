@@ -16,4 +16,5 @@ public:
     ~TextAutoGenerateSearchJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldNotStartForWhitespaceOnlySearchText();
 };

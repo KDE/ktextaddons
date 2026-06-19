@@ -5,12 +5,12 @@
 */
 
 #pragma once
-
 #include "core/models/textautogeneratechatsmodel.h"
+#include "textautogeneratetext_private_export.h"
 #include <QAbstractProxyModel>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateHistoryListHeadingsProxyModel final : public QAbstractProxyModel
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListHeadingsProxyModel final : public QAbstractProxyModel
 {
     Q_OBJECT
 public:

@@ -7,11 +7,13 @@ macro(add_textautogenerate_core_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-core-"
-        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText Qt::Sql
+        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText Qt::Sql KF6::TextUtils
     )
 endmacro()
 add_textautogenerate_core_unittest(textautogeneratesearchmessageutilstest.cpp)
 add_textautogenerate_core_unittest(textautogenerateexportchatbasejobtest.cpp)
+add_textautogenerate_core_unittest(textautogenerateexportchatasjsonjobtest.cpp)
+add_textautogenerate_core_unittest(textautogenerateimportchatasjsonjobtest.cpp)
 add_textautogenerate_core_unittest(textautogeneratemessagetest.cpp)
 add_textautogenerate_core_unittest(textautogeneratemanagertest.cpp)
 add_textautogenerate_core_unittest(textautogeneratechattest.cpp)
@@ -46,6 +48,8 @@ add_textautogenerate_core_unittest(textautogeneratetexttoolinternaltest.cpp)
 add_textautogenerate_core_unittest(textautogeneratetexttoolsloadingjobtest.cpp)
 add_textautogenerate_core_unittest(textautogeneratetextreplyinfotest.cpp)
 add_textautogenerate_core_unittest(textautogeneratechatsmodeltest.cpp)
+add_textautogenerate_core_unittest(textautogeneratehistorylistheadingsproxymodeltest.cpp)
 add_textautogenerate_core_unittest(textautogenerateskilltest.cpp)
 add_textautogenerate_core_unittest(textautogenerateprompttest.cpp)
 add_textautogenerate_core_unittest(textautogenerateagenttest.cpp)
+add_textautogenerate_core_unittest(textautogenerateblockcmarksupporttest.cpp)

@@ -113,4 +113,11 @@ void TextAutoGenerateChatSettingsTest::shouldSerializeDeserialize()
     }
 }
 
+void TextAutoGenerateChatSettingsTest::shouldNotCrashWhenLoadingWithoutManager()
+{
+    TextAutoGenerateText::TextAutoGenerateChatSettings settings(nullptr);
+    settings.loadChatPendingTypedInfo();
+    QVERIFY(settings.isEmpty());
+}
+
 #include "moc_textautogeneratechatsettingstest.cpp"

@@ -23,7 +23,7 @@ bool TextAutoGenerateSearchJob::canStart() const
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Manager is null! It's a bug";
         return false;
     }
-    if (mSearchText.isEmpty()) {
+    if (mSearchText.trimmed().isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Text is empty! It's a bug";
         return false;
     }

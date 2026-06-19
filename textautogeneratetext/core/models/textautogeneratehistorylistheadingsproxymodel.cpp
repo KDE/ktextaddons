@@ -17,6 +17,14 @@ TextAutoGenerateHistoryListHeadingsProxyModel::TextAutoGenerateHistoryListHeadin
 
 TextAutoGenerateHistoryListHeadingsProxyModel::~TextAutoGenerateHistoryListHeadingsProxyModel() = default;
 
+namespace
+{
+bool isValidSectionRow(int row)
+{
+    return row >= 0 && row < int(TextAutoGenerateHistoryListHeadingsProxyModel::sectionCount);
+}
+}
+
 QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &index, int role) const
 {
     switch (type(index)) {
@@ -45,11 +53,27 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::index(int row, int column, const QModelIndex &parent) const
 {
+    if (column != 0 || row < 0) {
+        return {};
+    }
+
     switch (type(parent)) {
-    case IndexType::Root:
+    case IndexType::Root: {
+        if (!isValidSectionRow(row)) {
+            return {};
+        }
         return createIndex(row, column, sectionCount);
-    case IndexType::Section:
+    }
+    case IndexType::Section: {
+        if (!isValidSectionRow(parent.row())) {
+            return {};
+        }
+        const auto &section = mSections.at(parent.row());
+        if (row >= int(section.size())) {
+            return {};
+        }
         return createIndex(row, column, parent.row());
+    }
     case IndexType::History:
         return {};
     }
@@ -76,6 +100,9 @@ int TextAutoGenerateHistoryListHeadingsProxyModel::rowCount(const QModelIndex &p
     case IndexType::Root:
         return sectionCount;
     case IndexType::Section:
+        if (!isValidSectionRow(parent.row())) {
+            return 0;
+        }
         return int(mSections.at(parent.row()).size());
     case IndexType::History:
         return 0;
@@ -125,7 +152,16 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::setSourceModel(QAbstractItem
         disconnect(oldModel, nullptr, this, nullptr);
     }
 
+    for (auto &section : mSections) {
+        section.clear();
+    }
+
     QAbstractProxyModel::setSourceModel(sourceModel);
+
+    if (!sourceModel) {
+        endResetModel();
+        return;
+    }
 
     connect(sourceModel, &QAbstractItemModel::rowsInserted, this, &TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted);
 
@@ -164,8 +200,17 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QMo
     case IndexType::Root:
     case IndexType::Section:
         return {};
-    case IndexType::History:
-        return mSections.at(proxyIndex.internalId()).at(proxyIndex.row());
+    case IndexType::History: {
+        const auto sectionId = int(proxyIndex.internalId());
+        if (!isValidSectionRow(sectionId)) {
+            return {};
+        }
+        const auto &section = mSections.at(sectionId);
+        if (proxyIndex.row() < 0 || proxyIndex.row() >= int(section.size())) {
+            return {};
+        }
+        return section.at(proxyIndex.row());
+    }
     }
     Q_UNREACHABLE();
     return {};

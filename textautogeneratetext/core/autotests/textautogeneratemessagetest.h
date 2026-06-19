@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldParseMessage();
     void shouldParseMessage_data();
     void shouldSerializeMessage();
+    void shouldSerializeReplyInfo();
 };

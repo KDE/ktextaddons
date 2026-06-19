@@ -11,6 +11,15 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+
+static QString jsonValueToString(const QJsonValue &value)
+{
+    if (value.isString()) {
+        return value.toString();
+    }
+    return value.toVariant().toString();
+}
+
 TextAutoGenerateReply::TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : QObject{parent}
     , mReply{netReply}
@@ -32,15 +41,22 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
         const QJsonObject argumentObj = functionObj["arguments"_L1].toObject();
-        if (functionObj.contains("index"_L1)) {
-            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << functionObj.value("index"_L1).toInt();
+        int index = -1;
+        if (obj.contains("index"_L1)) {
+            index = obj.value("index"_L1).toInteger();
+        } else if (functionObj.contains("index"_L1)) {
+            index = functionObj.value("index"_L1).toInteger();
+        }
+        if (index != -1) {
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << index;
         }
 
         const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
+        toolInfo.index = index;
         for (const QString &k : functionKeys) {
-            const ToolCallArgument arg{.keyTool = k, .value = argumentObj[k].toString()};
+            const ToolCallArgument arg{.keyTool = k, .value = jsonValueToString(argumentObj.value(k))};
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);
@@ -61,19 +77,33 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
 
-        if (functionObj.contains("index"_L1)) {
-            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << functionObj.value("index"_L1).toInt();
+        int index = -1;
+        if (obj.contains("index"_L1)) {
+            index = obj.value("index"_L1).toInteger();
+        } else if (functionObj.contains("index"_L1)) {
+            index = functionObj.value("index"_L1).toInteger();
         }
-        const QString arguments = functionObj["arguments"_L1].toString();
-        // qDebug() << " arguments: " << arguments;
-        const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1());
-
-        const QJsonObject argumentObj = doc.object();
+        if (index != -1) {
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << index;
+        }
+        QJsonObject argumentObj;
+        const QJsonValue argumentsValue = functionObj["arguments"_L1];
+        if (argumentsValue.isObject()) {
+            argumentObj = argumentsValue.toObject();
+        } else if (argumentsValue.isString()) {
+            const QString arguments = argumentsValue.toString();
+            // qDebug() << " arguments: " << arguments;
+            const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1());
+            if (doc.isObject()) {
+                argumentObj = doc.object();
+            }
+        }
         const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
+        toolInfo.index = index;
         for (const QString &k : functionKeys) {
-            const ToolCallArgument arg{.keyTool = k, .value = argumentObj[k].toString()};
+            const ToolCallArgument arg{.keyTool = k, .value = jsonValueToString(argumentObj.value(k))};
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);

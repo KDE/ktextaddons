@@ -6,6 +6,7 @@
 #include "textautogeneratechattest.h"
 
 #include "core/textautogeneratechat.h"
+#include <QDateTime>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTest>
@@ -57,6 +58,27 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(w, ba1);
     }
+}
+
+void TextAutoGenerateChatTest::shouldClassifySectionHistory()
+{
+    TextAutoGenerateText::TextAutoGenerateChat chat;
+
+    chat.setDateTime(QDateTime(QDate::currentDate(), QTime(12, 0)).toSecsSinceEpoch());
+    QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::Today);
+
+    chat.setDateTime(QDateTime(QDate::currentDate().addDays(-3), QTime(12, 0)).toSecsSinceEpoch());
+    QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::LessThanSevenDays);
+
+    chat.setDateTime(QDateTime(QDate::currentDate().addDays(-10), QTime(12, 0)).toSecsSinceEpoch());
+    QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::LessThanThirtyDays);
+
+    chat.setDateTime(QDateTime(QDate::currentDate().addDays(-45), QTime(12, 0)).toSecsSinceEpoch());
+    QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::Later);
+
+    // Compatibility with millisecond timestamps.
+    chat.setDateTime(QDateTime(QDate::currentDate().addDays(-2), QTime(12, 0)).toMSecsSinceEpoch());
+    QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::LessThanSevenDays);
 }
 
 #include "moc_textautogeneratechattest.cpp"

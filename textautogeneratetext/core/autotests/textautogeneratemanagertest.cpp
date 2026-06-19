@@ -6,6 +6,7 @@
 
 #include "textautogeneratemanagertest.h"
 #include "core/textautogeneratemanager.h"
+#include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateManagerTest)
 
@@ -34,5 +35,19 @@ void TextAutoGenerateManagerTest::shouldSetDebug()
     qputenv("TEXTAUTOGENERATE_DEBUGGING", "1");
     const TextAutoGenerateText::TextAutoGenerateManager w;
     QVERIFY(w.debug());
+}
+
+void TextAutoGenerateManagerTest::shouldEmitCurrentChatIdChangedWhenReset()
+{
+    TextAutoGenerateText::TextAutoGenerateManager w;
+    QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged);
+
+    w.setCurrentChatId("chat-1");
+    QCOMPARE(spy.count(), 1);
+    QCOMPARE(w.currentChatId(), QByteArray("chat-1"));
+
+    w.resetCurrentChatId();
+    QCOMPARE(spy.count(), 2);
+    QVERIFY(w.currentChatId().isEmpty());
 }
 #include "moc_textautogeneratemanagertest.cpp"

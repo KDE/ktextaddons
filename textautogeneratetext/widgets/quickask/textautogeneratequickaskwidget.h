@@ -56,6 +56,7 @@ private:
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
     TextAutoGenerateNotInstanceFoundWidget *const mTextAutoGenerateNotInstanceFoundWidget;
     TextAutoGenerateManager *const mManager;
+    bool mPreviousSaveInDatabase = true;
     QList<TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo> mAskMessageList;
     bool mPluginWasInitialized = false;
 };

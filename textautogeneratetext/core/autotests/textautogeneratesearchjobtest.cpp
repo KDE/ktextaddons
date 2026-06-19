@@ -21,4 +21,11 @@ void TextAutoGenerateSearchJobTest::shouldHaveDefaultValues()
     QVERIFY(!job.canStart());
 }
 
+void TextAutoGenerateSearchJobTest::shouldNotStartForWhitespaceOnlySearchText()
+{
+    TextAutoGenerateText::TextAutoGenerateSearchJob job(nullptr);
+    job.setSearchText(QStringLiteral("   \t\n"));
+    QVERIFY(!job.canStart());
+}
+
 #include "moc_textautogeneratesearchjobtest.cpp"

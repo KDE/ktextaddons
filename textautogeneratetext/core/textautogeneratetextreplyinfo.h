@@ -50,6 +50,8 @@ struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
 
     ReplyType replyType = ReplyType::Unknown;
 
+    [[nodiscard]] bool operator==(const TextAutoGenerateTextReplyInfo &other) const = default;
+
     [[nodiscard]] bool isValid() const;
 
     /*!
