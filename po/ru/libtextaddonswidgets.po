@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
-# SPDX-FileCopyrightText: 2025, 2026 Alexander Yavorskiy <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Alexander Yavorskiy <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-04 00:42+0000\n"
-"PO-Revision-Date: 2026-01-29 20:43+0200\n"
+"PO-Revision-Date: 2026-06-18 19:37+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Ваши имена"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Ваши адреса электронной почты"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "Сохранение файла"
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "Исходный файл больше не существует"
 
 #: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
 #: misc/savefileutils.cpp:76
@@ -86,7 +86,7 @@ msgstr "Ошибка сохранения файла"
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "Не удалось перезаписать существующий файл"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -113,42 +113,40 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Открыть папку с сохранёнными вложениями"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Сохранение файла"
+msgstr "Открыть файл"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Открыть папку с сохранённым вложением"
+msgstr[1] "Открыть папку с сохранёнными вложениями"
+msgstr[2] "Открыть папку с сохранёнными вложениями"
+msgstr[3] "Открыть папку с сохранённым вложением"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Открыть папку с сохранённым файлом в формате PDF"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Открыть папку с сохранённым файлом"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Не удалось открыть вложение."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
@@ -315,22 +313,22 @@ msgstr "Исправление некоторых ошибок:"
 #: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i>Версия %1</i></h1><hr><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">Примечания к выпуску</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
 #, kde-format
 msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Версия %1 (Выпущена: %2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
 #, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i>Версия %1 (ещё не выпущена)</i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "Версия %1"
