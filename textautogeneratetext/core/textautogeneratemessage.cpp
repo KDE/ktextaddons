@@ -376,8 +376,8 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessa
         }
     }
     obj["content"_L1] = contentStr;
-    if (hasTextOnlySupport) {
-        // Otherwise don't add images
+    if (!hasTextOnlySupport) {
+        // TODO add images
         // obj["images"_L1] = //TODO add list;
     }
     return obj;
