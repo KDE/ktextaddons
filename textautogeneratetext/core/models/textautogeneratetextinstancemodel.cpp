@@ -127,14 +127,31 @@ void TextAutoGenerateTextInstanceModel::setCurrentInstance(const QByteArray &new
             return instance->instanceUuid() == newCurrentinstance;
         };
         const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
+
+        // Notify for old current instance row before changing state
+        auto notifyRow = [&](const QByteArray &uuid) {
+            auto it = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), [&](TextAutoGenerateTextInstance *instance) {
+                return instance->instanceUuid() == uuid;
+            });
+            if (it != mTextInstances.constEnd()) {
+                const int row = std::distance(mTextInstances.constBegin(), it);
+                const auto idx = index(row, 0);
+                Q_EMIT dataChanged(idx, idx, {InstanceRoles::IsDefault});
+            }
+        };
+
         if (answerIt == mTextInstances.constEnd()) {
             // If we don't find it. => clear it.
+            const QByteArray oldInstance = mCurrentinstance;
             mCurrentinstance.clear();
+            notifyRow(oldInstance);
             return;
         }
-        beginResetModel();
+        notifyRow(mCurrentinstance);
         mCurrentinstance = newCurrentinstance;
-        endResetModel();
+        const int newRow = std::distance(mTextInstances.constBegin(), answerIt);
+        const auto newIdx = index(newRow, 0);
+        Q_EMIT dataChanged(newIdx, newIdx, {InstanceRoles::IsDefault});
     }
 }
 
