@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 02:38+0000\n"
-"PO-Revision-Date: 2026-05-29 15:28+0200\n"
+"POT-Creation-Date: 2026-06-20 02:40+0000\n"
+"PO-Revision-Date: 2026-06-17 21:03+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -157,21 +157,27 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Обща продължителност::</b> %1 секунди"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
+#, fuzzy, kde-format
+#| msgid "<br><b>Prompt Token:</b> %1"
+msgid "<br><b>Prompt Tokens:</b> %1"
+msgstr "<br><b>Prompt Token:</b> %1"
+
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
 msgid "<br><b>Tokens:</b> %1"
 msgstr "Токени: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:58
+#: core/textautogeneratetextreplyinfo.cpp:59
 #, kde-format
 msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>Брой токени:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:60
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr "<br><b>Prompt Token:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Токен за завършване:</b> %1"
@@ -391,7 +397,7 @@ msgstr "Sarvam AI инстанс"
 #: plugins/llamacpp/llamacppplugin.cpp:95
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
 #: plugins/lmstudio/lmstudioplugin.cpp:217
@@ -3216,18 +3222,14 @@ msgstr "Инструмент на приставка:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "Описание:"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "Информация:"
+msgstr "Инструкции:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -3322,13 +3324,13 @@ msgstr "Не е намерен плъгин."
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "Error reported: %1"
 
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
@@ -3371,7 +3373,7 @@ msgstr "Обновяване"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "Форк"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
 #, kde-format
