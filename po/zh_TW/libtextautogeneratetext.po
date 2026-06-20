@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:42+0000\n"
+"POT-Creation-Date: 2026-06-20 00:42+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -163,22 +163,28 @@ msgstr "<br><b>工具</b>：%1"
 #: core/textautogeneratetextreplyinfo.cpp:52
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
-msgid "<br><b>Tokens:</b> %1"
+msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratetextreplyinfo.cpp:58
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
-msgid "<br><b>Token Count:</b> %1"
+msgid "<br><b>Tokens:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:59
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
-msgid "<br><b>Prompt Token:</b> %1"
+msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:60
+#, fuzzy, kde-format
+#| msgid "<br><b>Tools:</b> %1"
+msgid "<br><b>Prompt Token:</b> %1"
+msgstr "<br><b>工具</b>：%1"
+
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
@@ -754,8 +760,6 @@ msgid "Ollama Log"
 msgstr "Ollama 紀錄"
 
 #: plugins/ollama/ollamaplugin.cpp:86
-#: plugins/ollamacloud/ollamapluginonline.cpp:110
-#: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"

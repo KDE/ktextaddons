@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:42+0000\n"
+"POT-Creation-Date: 2026-06-20 00:42+0000\n"
 "PO-Revision-Date: 2026-04-11 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -157,21 +157,27 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Celkové trvanie:</b> %1 sekúnd"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
+#, fuzzy, kde-format
+#| msgid "<br><b>Prompt Token:</b> %1"
+msgid "<br><b>Prompt Tokens:</b> %1"
+msgstr "<br><b>Tokeny výzvy:</b> %1"
+
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
 msgid "<br><b>Tokens:</b> %1"
 msgstr "<br><b>Tokeny:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:58
+#: core/textautogeneratetextreplyinfo.cpp:59
 #, kde-format
 msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>Počet tokenov:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:60
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr "<br><b>Tokeny výzvy:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Tokeny dokončenia:</b> %1"
@@ -734,8 +740,6 @@ msgid "Ollama Log"
 msgstr "Záznam Ollama"
 
 #: plugins/ollama/ollamaplugin.cpp:86
-#: plugins/ollamacloud/ollamapluginonline.cpp:110
-#: plugins/ollamaonline/ollamapluginonline.cpp:110
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
