@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-20 00:42+0000\n"
-"PO-Revision-Date: 2026-06-17 16:02+0200\n"
+"PO-Revision-Date: 2026-06-20 10:27+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -157,10 +157,9 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Обща продължителност::</b> %1 секунди"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Prompt Token:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>Prompt Token:</b> %1"
+msgstr "<br><b>Брой токени в заявката:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
@@ -175,7 +174,7 @@ msgstr "<br><b>Брой токени:</b> %1"
 #: core/textautogeneratetextreplyinfo.cpp:60
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Prompt Token:</b> %1"
+msgstr "<br><b>Брой токени в заявката:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format

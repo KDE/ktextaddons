@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-20 00:42+0000\n"
-"PO-Revision-Date: 2026-06-17 08:45+0200\n"
+"PO-Revision-Date: 2026-06-20 10:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -162,10 +162,9 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Durada total:</b> %1 segons"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Prompt Token:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>Segment textual de petició:</b> %1"
+msgstr "<br><b>Segments textual de petició:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
