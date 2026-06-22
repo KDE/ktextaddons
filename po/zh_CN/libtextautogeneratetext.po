@@ -158,7 +158,7 @@ msgstr "<br><b>总时长：</b> %1 秒"
 #: core/textautogeneratetextreplyinfo.cpp:52
 #, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr ""
+msgstr "<br><b>提示词词元：</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format

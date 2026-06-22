@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-20 00:42+0000\n"
-"PO-Revision-Date: 2026-06-13 19:47+0400\n"
+"PO-Revision-Date: 2026-06-21 20:22+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -157,10 +157,9 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>المدة الإجمالية:</b> %1 ثانية"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Prompt Token:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>رمز الأمر:</b> %1"
+msgstr "<br><b>رموز الأمر:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
@@ -3124,18 +3123,14 @@ msgstr "أداة الملحقات:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "الوصف:"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "معلومات:"
+msgstr "التعليمات:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
