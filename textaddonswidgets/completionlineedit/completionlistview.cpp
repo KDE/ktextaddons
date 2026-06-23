@@ -12,7 +12,8 @@
 #include <QScreen>
 #include <QScrollBar>
 using namespace TextAddonsWidgets;
-CompletionListView::CompletionListView()
+CompletionListView::CompletionListView(QWidget *parent)
+    : QListView(parent)
 {
     setUniformItemSizes(true);
     setWindowFlag(Qt::Popup);

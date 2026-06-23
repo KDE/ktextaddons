@@ -10,7 +10,7 @@
 using namespace TextAddonsWidgets;
 CompletionLineEdit::CompletionLineEdit(QWidget *parent)
     : QLineEdit(parent)
-    , mCompletionListView(new CompletionListView)
+    , mCompletionListView(new CompletionListView(this))
 {
     setClearButtonEnabled(true);
     KLineEditEventHandler::catchReturnKey(this);
