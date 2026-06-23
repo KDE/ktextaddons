@@ -12,7 +12,7 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkSettings : public Plug
 {
 public:
     GenericNetworkSettings();
-    ~GenericNetworkSettings();
+    virtual ~GenericNetworkSettings();
 
     [[nodiscard]] int maxTokens() const;
     void setMaxTokens(int newMaxTokens);

@@ -87,7 +87,8 @@ void GenericNetworkPlugin::loadApiKey()
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
         Q_ASSERT(job);
         if (job->error()) {
-            qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << "We have an error during reading password " << job->errorString();
+            qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG)
+                << "We have an error during reading password " << job->errorString() << " engineName :" << engineName() << " name " << name();
         } else {
             mGenericManager->setApiKey(job->textData());
             Q_EMIT loadApiKeyDone();

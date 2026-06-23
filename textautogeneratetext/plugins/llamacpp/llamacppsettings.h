@@ -17,10 +17,10 @@ class TEXTAUTOGENERATELLAMACPP_EXPORT LLamaCppSettings : public PluginCommonSett
     Q_GADGET
 public:
     LLamaCppSettings();
-    ~LLamaCppSettings();
+    virtual ~LLamaCppSettings();
 
-    void load(const KConfigGroup &config);
-    void save(KConfigGroup &config);
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
 
     [[nodiscard]] bool operator==(const LLamaCppSettings &other) const;
 };

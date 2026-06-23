@@ -75,12 +75,12 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::defaultKeepAliveType()
 
 void OllamaCommonSettings::load(const KConfigGroup &config)
 {
-    setDisplayName(config.readEntry(u"Name"_s));
+    PluginCommonSettings::load(config);
+
     if (config.hasKey(u"Temperature"_s)) {
         setTemperature(config.readEntry(u"Temperature"_s, defaultTemperature()));
     }
     setSeed(config.readEntry(u"Seed"_s, defaultSeed()));
-    setCurrentModel(config.readEntry(u"CurrentModel"_s));
     setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, defaultKeepAliveMinutes()));
     setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, defaultContextWindowSize()));
     setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, defaultThoughtProcessing()));
@@ -92,8 +92,7 @@ void OllamaCommonSettings::load(const KConfigGroup &config)
 
 void OllamaCommonSettings::save(KConfigGroup &config)
 {
-    config.writeEntry(u"Name"_s, displayName());
-    config.writeEntry(u"CurrentModel"_s, currentModel());
+    PluginCommonSettings::save(config);
     config.writeEntry(u"Seed"_s, seed());
     config.writeEntry(u"Temperature"_s, temperature());
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());

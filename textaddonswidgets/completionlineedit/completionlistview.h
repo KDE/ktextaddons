@@ -23,7 +23,7 @@ public:
     /*!
      * \brief CompletionListView
      */
-    CompletionListView();
+    explicit CompletionListView(QWidget *parent = nullptr);
     /*!
      */
     ~CompletionListView() override;

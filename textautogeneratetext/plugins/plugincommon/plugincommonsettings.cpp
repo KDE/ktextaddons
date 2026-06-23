@@ -5,10 +5,23 @@
 */
 
 #include "plugincommonsettings.h"
+#include <KConfigGroup>
 using namespace Qt::Literals::StringLiterals;
 
 PluginCommonSettings::PluginCommonSettings() = default;
 PluginCommonSettings::~PluginCommonSettings() = default;
+
+void PluginCommonSettings::load(const KConfigGroup &config)
+{
+    setDisplayName(config.readEntry(u"Name"_s));
+    setCurrentModel(config.readEntry(u"CurrentModel"_s));
+}
+
+void PluginCommonSettings::save(KConfigGroup &config)
+{
+    config.writeEntry(u"Name"_s, displayName());
+    config.writeEntry(u"CurrentModel"_s, currentModel());
+}
 
 QString PluginCommonSettings::displayName() const
 {

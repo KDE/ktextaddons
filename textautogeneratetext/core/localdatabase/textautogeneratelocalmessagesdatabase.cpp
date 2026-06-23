@@ -157,6 +157,10 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalMessagesDatabase::loadMessag
         const QString json = resultQuery.value(u"json"_s).toString();
         listMessages.append(convertJsonToMessage(json));
     }
+    std::sort(listMessages.begin(), listMessages.end(), [](const TextAutoGenerateMessage &lhs, const TextAutoGenerateMessage &rhs) {
+        return lhs.dateTime() < rhs.dateTime();
+    });
+
     return listMessages;
 }
 
