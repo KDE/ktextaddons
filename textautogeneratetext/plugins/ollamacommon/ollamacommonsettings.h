@@ -34,8 +34,8 @@ public:
     [[nodiscard]] int keepAliveMinutes() const;
     void setKeepAliveMinutes(int newKeepAliveMinutes);
 
-    virtual void load(const KConfigGroup &config);
-    virtual void save(KConfigGroup &config);
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
 
     [[nodiscard]] OllamaCommonSettings::KeepAliveType keepAliveType() const;
     void setKeepAliveType(OllamaCommonSettings::KeepAliveType newKeepAliveType);

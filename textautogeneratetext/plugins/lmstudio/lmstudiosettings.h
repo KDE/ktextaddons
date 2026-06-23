@@ -18,10 +18,10 @@ class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioSettings : public PluginCommonSett
     Q_GADGET
 public:
     LMStudioSettings();
-    ~LMStudioSettings();
+    virtual ~LMStudioSettings();
 
-    void load(const KConfigGroup &config);
-    void save(KConfigGroup &config);
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
 
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);

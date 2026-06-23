@@ -28,18 +28,16 @@ QDebug operator<<(QDebug d, const LMStudioSettings &t)
 
 void LMStudioSettings::load(const KConfigGroup &config)
 {
-    setDisplayName(config.readEntry(u"Name"_s));
+    PluginCommonSettings::load(config);
     if (config.hasKey(u"ServerUrl"_s)) {
         setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
     }
-    setCurrentModel(config.readEntry(u"CurrentModel"_s));
 }
 
 void LMStudioSettings::save(KConfigGroup &config)
 {
-    config.writeEntry(u"Name"_s, displayName());
+    PluginCommonSettings::save(config);
     config.writeEntry(u"ServerUrl"_s, serverUrl());
-    config.writeEntry(u"CurrentModel"_s, currentModel());
 }
 
 QUrl LMStudioSettings::serverUrl() const

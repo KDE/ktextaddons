@@ -8,6 +8,7 @@
 #include "textautogenerateplugincommon_export.h"
 #include <QString>
 #include <QUrl>
+class KConfigGroup;
 class TEXTAUTOGENERATEPLUGINCOMMON_EXPORT PluginCommonSettings
 {
     Q_GADGET
@@ -20,7 +21,7 @@ public:
     Q_ENUM(ShareNameType)
 
     PluginCommonSettings();
-    ~PluginCommonSettings();
+    virtual ~PluginCommonSettings();
 
     [[nodiscard]] PluginCommonSettings::ShareNameType shareNameType() const;
     void setShareNameType(const PluginCommonSettings::ShareNameType &newShareNameType);
@@ -37,6 +38,9 @@ public:
 
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
+
+    virtual void load(const KConfigGroup &config);
+    virtual void save(KConfigGroup &config);
 
 protected:
     PluginCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
