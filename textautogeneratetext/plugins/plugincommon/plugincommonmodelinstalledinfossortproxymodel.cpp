@@ -24,15 +24,9 @@ QList<TextAutoGenerateText::TextAutoGenerateManager::Category> PluginCommonModel
 void PluginCommonModelInstalledInfosSortProxyModel::setCategories(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &newCategories)
 {
     if (mCategories != newCategories) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
         beginFilterChange();
-#endif
         mCategories = newCategories;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
         endFilterChange(QSortFilterProxyModel::Direction::Rows);
-#else
-        invalidateFilter();
-#endif
     }
 }
 
