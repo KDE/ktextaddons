@@ -100,21 +100,13 @@ void GenericNetworkPlugin::loadApiKey()
 
 void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
-    mSettings->setDisplayName(config.readEntry(u"Name"_s));
-    mSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
-    mSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
-    mSettings->setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
-    mSettings->setSeed(config.readEntry(u"Seed"_s, 0));
+    mSettings->load(config);
     loadApiKey();
 }
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
 {
-    config.writeEntry(u"Name"_s, mSettings->displayName());
-    config.writeEntry(u"CurrentModel"_s, mSettings->currentModel());
-    config.writeEntry(u"MaxToken"_s, mSettings->maxTokens());
-    config.writeEntry(u"Temperature"_s, mSettings->temperature());
-    config.writeEntry(u"Seed"_s, mSettings->seed());
+    mSettings->save(config);
     auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
     connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
         if (baseJob->error() != QKeychain::Error::NoError) {
