@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-20 02:40+0000\n"
-"PO-Revision-Date: 2026-05-22 12:11+0200\n"
+"PO-Revision-Date: 2026-06-24 16:22+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -157,10 +157,9 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Duration Total:</b> %1 secundas"
 
 #: core/textautogeneratetextreplyinfo.cpp:52
-#, fuzzy, kde-format
-#| msgid "<br><b>Prompt Token:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>Token de Prompt:</b> %1"
+msgstr "<br><b>Tokens de Prompt:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
@@ -414,12 +413,10 @@ msgstr ""
 
 #: plugins/llamacpp/llamacppplugin.cpp:230
 #: plugins/lmstudio/lmstudioplugin.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "Discarga Modello"
+msgstr "Discarga LMStudio"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
 #: plugins/lmstudio/lmstudioplugin.cpp:226
@@ -435,20 +432,16 @@ msgid "LMStudio"
 msgstr ""
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "Configura %1"
+msgstr "Configura LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
-msgstr "Modellos installate"
+msgstr "Modello installate"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
@@ -464,17 +457,14 @@ msgid "Name:"
 msgstr "Nomine:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "Url:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Api Key:"
+#, kde-format
 msgid "Api token:"
-msgstr "Clave API:"
+msgstr "Token API:"
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
 #, kde-format
@@ -483,10 +473,9 @@ msgstr ""
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Impossible to open %1"
+#, kde-format
 msgid "Impossible to start LMStudio."
-msgstr "Impossibile aperir %1"
+msgstr "Impossibile startar LMStudio."
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -2788,18 +2777,14 @@ msgstr "Instrumento de Plugins:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "Description:"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "Information:"
+msgstr "Instructiones:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -2900,7 +2885,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
@@ -2943,7 +2928,7 @@ msgstr "Refresca"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "Fork"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
 #, kde-format

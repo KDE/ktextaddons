@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-04 00:42+0000\n"
-"PO-Revision-Date: 2026-05-22 12:11+0200\n"
+"PO-Revision-Date: 2026-06-24 16:07+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Giovanni Sora"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "g.sora@tiscali.it"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -109,7 +109,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Aperi dossier ubi le attachamento esseva salveguardate"
 
 #: opensavedfilefolderwidget.cpp:28
 #, kde-format
@@ -122,25 +122,25 @@ msgstr "Aperi file"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Aperi dossier ubi le attachamento esseva salveguardate"
+msgstr[1] "Aperi dossier ubi le attachamentos esseva salveguardate"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Aperi dossier ubi le file PDF  esseva salveguardate"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Aperi dossier ubi le file esseva salveguardate"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Incapace a aperir le attachamento."
 
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
@@ -315,19 +315,17 @@ msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">Nota de liberation</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#, kde-format
 msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
-msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Version %1 (Liberate: %2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
-msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Version %1 (Non ancora liberate)</i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"
