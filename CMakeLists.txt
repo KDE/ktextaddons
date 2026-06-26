@@ -125,10 +125,6 @@ if(GIT_SOURCE_TARBALL)
         endif()
     endif()
 endif()
-option(BUILD_QUICK "Build with QtQuick support (experimental)" OFF)
-if(BUILD_QUICK)
-    include(ECMQmlModule)
-endif()
 
 find_package(
     Qt6
