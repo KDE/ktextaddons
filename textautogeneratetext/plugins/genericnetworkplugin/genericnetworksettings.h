@@ -23,6 +23,9 @@ public:
     [[nodiscard]] int seed() const;
     void setSeed(int newSeed);
 
+    void load(const KConfigGroup &config) override;
+    void save(KConfigGroup &config) override;
+
 private:
     int mMaxTokens = 2048;
     int mSeed = 0;
