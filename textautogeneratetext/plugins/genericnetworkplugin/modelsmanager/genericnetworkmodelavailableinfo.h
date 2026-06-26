@@ -35,9 +35,6 @@ public:
     [[nodiscard]] QString modelName() const;
     void setModelName(const QString &newName);
 
-    [[nodiscard]] bool toolsSupported() const;
-    void setToolsSupported(bool newToolsSupported);
-
     [[nodiscard]] QString modelSize() const;
     void setModelSize(const QString &newModelSize);
 
@@ -58,7 +55,6 @@ private:
     QString mModelSize;
     QString mIdentifier;
     QString mOwnedBy;
-    bool mToolsSupported = false;
     // TODO add tags
 };
 Q_DECLARE_TYPEINFO(GenericNetworkModelAvailableInfo, Q_RELOCATABLE_TYPE);
