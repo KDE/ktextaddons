@@ -15,6 +15,9 @@ class AutoCorrectionLanguageModel;
 /*!
  * \brief The AutoCorrectionLanguage class
  * \author Laurent Montel <montel@kde.org>
+ * \class TextAutoCorrectionWidgets::AutoCorrectionLanguage
+ * \inmodule TextAutoCorrectionWidgets
+ * \inheaderfile TextAutoCorrectionWidgets/AutoCorrectionLanguage
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLanguage : public QComboBox
 {

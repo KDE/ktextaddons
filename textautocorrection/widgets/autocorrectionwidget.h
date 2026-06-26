@@ -12,17 +12,15 @@
 
 class QTreeWidgetItem;
 
-namespace Ui
-{
-class AutoCorrectionWidget;
-}
-
 namespace TextAutoCorrectionWidgets
 {
 class AutoCorrectionWidgetPrivate;
 /*!
  * \brief The AutoCorrectionWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \class TextAutoCorrectionWidgets::AutoCorrectionWidget
+ * \inmodule TextAutoCorrectionWidgets
+ * \inheaderfile TextAutoCorrectionWidgets/AutoCorrectionWidget
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionWidget : public QWidget
 {
