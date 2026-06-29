@@ -114,7 +114,6 @@ target_link_libraries(
         KF6::CoreAddons
         KF6::I18n
         KF6::WidgetsAddons
-        qt6keychain
         textautogenerateollamacommon
 )
 install(TARGETS autogeneratetext_ollamacloud DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
