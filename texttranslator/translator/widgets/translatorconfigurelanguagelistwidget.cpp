@@ -59,7 +59,7 @@ void TranslatorConfigureLanguageListWidget::clear()
 
 void TranslatorConfigureLanguageListWidget::addItem(const QString &translatedStr, const QString &languageCode)
 {
-    QStandardItem *item = new QStandardItem();
+    auto item = new QStandardItem();
     item->setText(translatedStr);
     item->setData(languageCode, LanguageCode);
     item->setFlags(item->flags() | Qt::ItemIsUserCheckable);

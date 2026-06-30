@@ -96,7 +96,7 @@ void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &ans
 
 TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonObject &o)
 {
-    TextAutoGenerateAnswerInfo *messageInfo = new TextAutoGenerateAnswerInfo;
+    auto messageInfo = new TextAutoGenerateAnswerInfo;
     messageInfo->setModelName(o["modelName"_L1].toString());
     messageInfo->setEngineName(o["engineName"_L1].toString());
     messageInfo->setInstanceName(o["instanceName"_L1].toString());

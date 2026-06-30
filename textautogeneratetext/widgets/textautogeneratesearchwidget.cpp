@@ -41,7 +41,7 @@ TextAutoGenerateSearchWidget::~TextAutoGenerateSearchWidget() = default;
 
 void TextAutoGenerateSearchWidget::slotSearchTextChanged(const QString &str)
 {
-    TextAutoGenerateSearchJob *job = new TextAutoGenerateSearchJob(mManager, this);
+    auto job = new TextAutoGenerateSearchJob(mManager, this);
     job->setSearchText(str);
     connect(job, &TextAutoGenerateSearchJob::searchDone, this, &TextAutoGenerateSearchWidget::slotSearchDone);
     job->start();

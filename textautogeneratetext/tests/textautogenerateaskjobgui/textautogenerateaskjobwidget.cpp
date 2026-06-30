@@ -41,7 +41,7 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
     manager->loadEngine();
     connect(askButton, &QPushButton::clicked, this, [this, lineEdit, plainTextEdit, manager]() {
         if (const QString text = lineEdit->text(); !text.isEmpty()) {
-            TextAutoGenerateText::TextAutoGenerateAskJob *job = new TextAutoGenerateText::TextAutoGenerateAskJob(this);
+            auto job = new TextAutoGenerateText::TextAutoGenerateAskJob(this);
             job->setText(text);
             job->setManager(manager);
             connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextDone, this, []() {
