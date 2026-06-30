@@ -6,9 +6,9 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 
-class QDebug;
 #include <QObject>
 #include <QPersistentModelIndex>
+class QDebug;
 class QSequentialAnimationGroup;
 namespace TextAutoGenerateText
 {
