@@ -347,3 +347,27 @@ if(BUILD_TESTING)
     add_subdirectory(whatsnewng/tests)
 endif()
 ecm_generate_qdoc(KF6TextAddonsWidgets textaddonswidgets.qdocconf)
+
+ecm_add_installed_library_check(KF6TextAddonsWidgets
+    PACKAGE_NAME "KF6TextAddonsWidgets"
+    PACKAGE_VERSION ${TEXTADDONSWIDGETS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
+    HEADERS ${TEXTAUTOGENERATE_INCLUDES_FILES}
+    PREFIX textaddonswidgets
+)
+
+ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
+    HEADERS
+    ${TextAddonsWidgets_CamelCase_HEADERS}
+    ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
+    ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
+    ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
+    ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
+    ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
+    ${TextAddonsWidgets_Camelcasemisc_HEADERS}
+    ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
+    PREFIX TextAddonsWidgets
+)

@@ -22,6 +22,7 @@ set_package_properties(
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ecmcopy
     ${ECM_MODULE_PATH}
 )
 
@@ -39,6 +40,7 @@ include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 include(ECMCheckOutboundLicense)
+include(ECMInstalledLibraryCheck)
 
 file(
     GLOB_RECURSE ALL_SOURCE_FILES

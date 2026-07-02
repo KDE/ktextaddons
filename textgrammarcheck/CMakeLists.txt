@@ -218,3 +218,26 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KF6TextGrammarCheck textgrammarcheck.qdocconf)
+
+ecm_add_installed_library_check(KF6TextGrammarCheck
+    PACKAGE_NAME "KF6TextGrammarCheck"
+    PACKAGE_VERSION ${TEXTGRAMMARCHECK_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextGrammarCheck
+    HEADERS
+    ${TextGrammarCheck_common_HEADERS}
+    ${TextGrammarCheck_grammalecte_HEADERS}
+    ${TextGrammarCheck_languagetool_HEADERS}
+    PREFIX textgrammarcheck
+)
+
+ecm_installed_library_check_include_strings(KF6TextGrammarCheck
+    HEADERS
+    ${TextGrammarCheck_Camelcasecommon_HEADERS}
+    ${TextGrammarCheck_Camelcasegrammalecte_HEADERS}
+    ${TextGrammarCheck_Camelcaselanguagetool_HEADERS}
+
+    PREFIX TextGrammarCheck
+)

@@ -172,3 +172,22 @@ install(
     NAMESPACE KF6::
 )
 ecm_generate_qdoc(KF6TextEditTextToSpeech textedittexttospeech.qdocconf)
+
+ecm_add_installed_library_check(KF6TextEditTextToSpeech
+    PACKAGE_NAME "KF6TextEditTextToSpeech"
+    PACKAGE_VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextEditTextToSpeech
+    HEADERS
+   ${TextEdit_texttospeechs_HEADERS}
+    PREFIX textedittexttospeech
+)
+
+ecm_installed_library_check_include_strings(KF6TextEditTextToSpeech
+    HEADERS
+${TextEdit_CamelCasetexttospeechs_HEADERS}
+
+    PREFIX TextEditTextToSpeech
+)

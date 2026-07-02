@@ -156,3 +156,21 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KF6TextAutoCorrectionWidgets textautocorrection-widgets.qdocconf)
+
+ecm_add_installed_library_check(KF6TextAutoCorrectionWidgets
+    PACKAGE_NAME "KF6TextAutoCorrectionWidgets"
+    PACKAGE_VERSION ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoCorrectionWidgets
+    HEADERS
+${TextAutoCorrection_autocorrectionwidgets_HEADERS}
+    PREFIX textautocorrectionwidgets
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoCorrectionWidgets
+    HEADERS
+ ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
+    PREFIX TextAutoCorrectionWidgets
+)

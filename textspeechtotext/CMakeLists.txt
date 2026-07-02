@@ -179,3 +179,22 @@ if(BUILD_TESTING)
     add_subdirectory(speechtotext/widgets/tests)
     add_subdirectory(tests)
 endif()
+
+ecm_add_installed_library_check(KF6TextSpeechToText
+    PACKAGE_NAME "KF6TextSpeechToText"
+    PACKAGE_VERSION ${TEXTSPEECHTOTEXT_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextSpeechToText
+    HEADERS
+    ${TEXTSPEECHTOTEXT_FILES}
+    PREFIX textspeechtotext
+)
+
+ecm_installed_library_check_include_strings(KF6TextSpeechToText
+    HEADERS
+    ${TextSpeechToText_Camelcasespeechtotext_HEADERS}
+    ${TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS}
+    PREFIX TextSpeechToText
+)
