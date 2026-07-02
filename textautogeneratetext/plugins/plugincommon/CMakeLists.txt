@@ -26,6 +26,8 @@ target_sources(
         plugincommonmodelinstalledinfossortproxymodel.h
         plugincommonsettings.h
         plugincommonsettings.cpp
+        plugincommonsaveloadpassword.h
+        plugincommonsaveloadpassword.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -38,7 +40,7 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(textautogenerateplugincommon BASE_NAME textautogenerateplugincommon)
 
-target_link_libraries(textautogenerateplugincommon PUBLIC KF6::TextAutoGenerateText)
+target_link_libraries(textautogenerateplugincommon PUBLIC KF6::TextAutoGenerateText PRIVATE qt6keychain)
 
 set_target_properties(
     textautogenerateplugincommon

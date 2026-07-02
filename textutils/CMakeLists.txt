@@ -191,3 +191,24 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 ecm_generate_qdoc(KF6TextUtils textutils.qdocconf)
+
+ecm_add_installed_library_check(KF6TextUtils
+    PACKAGE_NAME "KF6TextUtils"
+    PACKAGE_VERSION ${TEXTUTILS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextUtils
+    HEADERS
+    ${TEXTUTILS_FILES}
+    PREFIX textutils
+)
+
+ecm_installed_library_check_include_strings(KF6TextUtils
+    HEADERS
+    ${TextUtils_CamelCase_HEADERS}
+    ${TextUtils_Syntaxhighlighting_CamelCase_HEADERS}
+    ${TextUtils_CMark_CamelCase_HEADERS}
+    ${TextUtils_Colors_CamelCase_HEADERS}
+    PREFIX TextUtils
+)

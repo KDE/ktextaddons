@@ -95,6 +95,8 @@ target_sources(
         completionlineedit/completionlistview.h
         completionlineedit/completionlineedit.h
         completionlineedit/completionlineedit.cpp
+        model/sortfilterproxymodelbase.h
+        model/sortfilterproxymodelbase.cpp
 )
 
 target_sources(
@@ -123,6 +125,7 @@ target_link_libraries(
         KF6::KIOCore
         KF6::ItemViews
         KF6::KIOFileWidgets
+        KF6::TextUtils
 )
 
 ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER textaddonswidgets_debug.h
@@ -242,6 +245,14 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
         RELATIVE whatsnewng
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelcasemodel_HEADERS
+    HEADER_NAMES
+    SortFilterProxyModelBase
+    REQUIRED_HEADERS TextAddonsWidgets_model_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE model
+)
+
 ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
     HEADER_NAMES
     PluginUtil
@@ -271,6 +282,7 @@ set(TEXTAUTOGENERATE_INCLUDES_FILES
     ${TextAddonsWidgets_misc_HEADERS}
     ${TextAddonsWidgets_whatsnewng_HEADERS}
     ${TextAddonsWidgets_completionlineedit_HEADERS}
+    ${TextAddonsWidgets_model_HEADERS}
 )
 
 install(
@@ -291,6 +303,7 @@ install(
         ${TextAddonsWidgets_Camelcasemisc_HEADERS}
         ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
         ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
+        ${TextAddonsWidgets_Camelcasemodel_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
@@ -334,3 +347,27 @@ if(BUILD_TESTING)
     add_subdirectory(whatsnewng/tests)
 endif()
 ecm_generate_qdoc(KF6TextAddonsWidgets textaddonswidgets.qdocconf)
+
+ecm_add_installed_library_check(KF6TextAddonsWidgets
+    PACKAGE_NAME "KF6TextAddonsWidgets"
+    PACKAGE_VERSION ${TEXTADDONSWIDGETS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
+    HEADERS ${TEXTAUTOGENERATE_INCLUDES_FILES}
+    PREFIX textaddonswidgets
+)
+
+ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
+    HEADERS
+    ${TextAddonsWidgets_CamelCase_HEADERS}
+    ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
+    ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
+    ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
+    ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
+    ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
+    ${TextAddonsWidgets_Camelcasemisc_HEADERS}
+    ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
+    PREFIX TextAddonsWidgets
+)

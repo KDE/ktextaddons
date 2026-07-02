@@ -22,6 +22,7 @@ set_package_properties(
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ecmcopy
     ${ECM_MODULE_PATH}
 )
 
@@ -39,6 +40,7 @@ include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 include(ECMCheckOutboundLicense)
+include(ECMInstalledLibraryCheck)
 
 file(
     GLOB_RECURSE ALL_SOURCE_FILES
@@ -124,10 +126,6 @@ if(GIT_SOURCE_TARBALL)
             endif()
         endif()
     endif()
-endif()
-option(BUILD_QUICK "Build with QtQuick support (experimental)" OFF)
-if(BUILD_QUICK)
-    include(ECMQmlModule)
 endif()
 
 find_package(
@@ -233,7 +231,7 @@ option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)"
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(
     QT 6.12.0
-    KF 6.27.0
+    KF 6.28.0
 )
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # Not setting for GNU due to too many warnings related to private members of base classes or around lambdas

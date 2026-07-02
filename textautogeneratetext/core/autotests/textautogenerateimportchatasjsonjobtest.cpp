@@ -36,7 +36,7 @@ void TextAutoGenerateImportChatAsJsonJobTest::shouldRemapMessageAndAnswerUuids()
 })");
     f.close();
 
-    auto *job = new TextAutoGenerateText::TextAutoGenerateImportChatAsJsonJob(this);
+    auto job = new TextAutoGenerateText::TextAutoGenerateImportChatAsJsonJob(this);
     TextAutoGenerateText::TextAutoGenerateImportChatBaseJob::ImportChatInfo info;
     info.filename = fileName;
     job->setInfo(info);

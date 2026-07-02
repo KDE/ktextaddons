@@ -14,7 +14,9 @@ GenericNetworkModelAvailableInfo::~GenericNetworkModelAvailableInfo() = default;
 void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
 {
     qDebug() << " obj " << obj;
-    mToolsSupported = obj["tools_supported"_L1].toBool();
+    if (obj["tools_supported"_L1].toBool()) {
+        mCapabilities |= Capability::Tools;
+    }
     mDescription = obj["description"_L1].toString();
     mModelName = obj["name"_L1].toString();
     mModelSize = obj["model_size"_L1].toString();
@@ -55,8 +57,8 @@ void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescript
 
 bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
 {
-    return mDescription == other.description() && mModelName == other.modelName() && mToolsSupported == other.toolsSupported()
-        && mModelSize == other.modelSize() && mIdentifier == other.identifier() && mOwnedBy == other.ownedBy() && mCapabilities == other.mCapabilities;
+    return mDescription == other.description() && mModelName == other.modelName() && mModelSize == other.modelSize() && mIdentifier == other.identifier()
+        && mOwnedBy == other.ownedBy() && mCapabilities == other.mCapabilities;
 }
 
 QString GenericNetworkModelAvailableInfo::modelName() const
@@ -67,16 +69,6 @@ QString GenericNetworkModelAvailableInfo::modelName() const
 void GenericNetworkModelAvailableInfo::setModelName(const QString &newName)
 {
     mModelName = newName;
-}
-
-bool GenericNetworkModelAvailableInfo::toolsSupported() const
-{
-    return mToolsSupported;
-}
-
-void GenericNetworkModelAvailableInfo::setToolsSupported(bool newToolsSupported)
-{
-    mToolsSupported = newToolsSupported;
 }
 
 QString GenericNetworkModelAvailableInfo::modelSize() const
@@ -123,10 +115,10 @@ QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
 {
     d.space() << "name:" << t.modelName();
     d.space() << "description:" << t.description();
-    d.space() << "toolsSupported:" << t.toolsSupported();
     d.space() << "modelSize:" << t.modelSize();
     d.space() << "identifier:" << t.identifier();
     d.space() << "ownedBy:" << t.ownedBy();
+    d.space() << "capabilities:" << t.capabilities();
     return d;
 }
 

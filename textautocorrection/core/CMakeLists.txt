@@ -192,3 +192,25 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KF6TextAutoCorrectionCore textautocorrection-core.qdocconf)
+
+ecm_add_installed_library_check(KF6TextAutoCorrectionCore
+    PACKAGE_NAME "KF6TextAutoCorrectionCore"
+    PACKAGE_VERSION ${TEXTAUTOCORRECTIONCORE_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoCorrectionCore
+    HEADERS
+    ${TextAutoCorrectionCore_autocorrection_HEADERS}
+    ${TextAutoCorrectionCore_settings_HEADERS}
+    ${TextAutoCorrectionCore_autocorrectionimport_HEADERS}
+    PREFIX textautocorrectioncore
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoCorrectionCore
+    HEADERS
+    ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
+    ${TextAutoCorrectionCore_Camelcaseautocorrectionimport_HEADERS}
+    ${TextAutoCorrectionCore_Camelcasesettings_HEADERS}
+    PREFIX TextAutoCorrectionCore
+)

@@ -156,3 +156,20 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 ecm_generate_qdoc(KF6TextEmoticonsWidgets textemoticons-widgets.qdocconf)
+
+ecm_add_installed_library_check(KF6TextEmoticonsWidgets
+    PACKAGE_NAME "KF6TextEmoticonsWidgets"
+    PACKAGE_VERSION ${TEXTEMOTICONSWIDGETS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextEmoticonsWidgets
+    HEADERS  ${TextEmoticonsWidgets_HEADERS}
+    PREFIX textemoticonswidgets
+)
+
+ecm_installed_library_check_include_strings(KF6TextEmoticonsWidgets
+    HEADERS
+    ${TextEmoticonsWidgets_CamelCase_HEADERS}
+    PREFIX TextEmoticonsWidgets
+)

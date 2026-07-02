@@ -14,8 +14,8 @@
 #include "ollamaonlineconfiguredialog.h"
 #include "ollamaonlinemanager.h"
 #include "ollamaonlinesettings.h"
+#include "plugincommonsaveloadpassword.h"
 #include <KLocalizedString>
-#include <qt6keychain/keychain.h>
 using namespace Qt::Literals::StringLiterals;
 OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                        TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
@@ -64,49 +64,24 @@ void OllamaOnlinePlugin::save(KConfigGroup &config)
 {
     mOllamaOnlineSettings->save(config);
 
-    auto writeJob = new QKeychain::WritePasswordJob(passwordServiceName());
-    connect(writeJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
-        if (baseJob->error() != QKeychain::Error::NoError) {
-            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "Error writing password using QKeychain:" << baseJob->errorString();
-        }
-    });
-    writeJob->setKey(QString::fromLatin1(instanceUuid()));
-    writeJob->setTextData(mOllamaOnlineManager->apiKey());
-    writeJob->start();
+    auto saveLoadJob = new PluginCommonSaveLoadPassword(this);
+    saveLoadJob->writePassword(passwordServiceName(), instanceUuid(), mOllamaOnlineManager->apiKey());
 }
 
 void OllamaOnlinePlugin::removeApiKey()
 {
-    auto deleteJob = new QKeychain::DeletePasswordJob(passwordServiceName());
-    deleteJob->setKey(QString::fromLatin1(instanceUuid()));
-    connect(deleteJob, &QKeychain::Job::finished, this, [](QKeychain::Job *baseJob) {
-        auto job = qobject_cast<QKeychain::DeletePasswordJob *>(baseJob);
-        if (!job) {
-            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "Invalid job cast in removeApiKey";
-            return;
-        }
-        if (job->error()) {
-            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "We have an error during deleting password " << job->errorString();
-        }
-    });
-    deleteJob->start();
+    auto saveLoadJob = new PluginCommonSaveLoadPassword(this);
+    saveLoadJob->removeApiKey(passwordServiceName(), instanceUuid());
 }
 
 void OllamaOnlinePlugin::loadApiKey()
 {
-    auto readJob = new QKeychain::ReadPasswordJob(passwordServiceName());
-    connect(readJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
-        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
-        Q_ASSERT(job);
-        if (job->error()) {
-            qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_PLUGIN_LOG) << "We have an error during reading password " << job->errorString();
-        } else {
-            mOllamaOnlineManager->setApiKey(job->textData());
-            Q_EMIT loadApiKeyDone();
-        }
+    auto saveLoadJob = new PluginCommonSaveLoadPassword(this);
+    connect(saveLoadJob, &PluginCommonSaveLoadPassword::loadApiKeyDone, this, [this](const QString &data) {
+        mOllamaOnlineManager->setApiKey(data);
+        Q_EMIT loadApiKeyDone();
     });
-    readJob->setKey(QString::fromLatin1(instanceUuid()));
-    readJob->start();
+    saveLoadJob->loadApiKey(passwordServiceName(), instanceUuid());
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType OllamaOnlinePlugin::engineType() const

@@ -9,7 +9,6 @@
 #include "genericnetworkplugin.h"
 #include "genericnetworkserverinfo.h"
 #include <KLocalizedString>
-#include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkClient::GenericNetworkClient(QObject *parent)

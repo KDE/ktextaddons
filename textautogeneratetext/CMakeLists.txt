@@ -761,3 +761,32 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 ecm_generate_qdoc(KF6TextAutoGenerateText textautogeneratetext.qdocconf)
+
+ecm_add_installed_library_check(KF6TextAutoGenerateText
+    PACKAGE_NAME "KF6TextAutoGenerateText"
+    PACKAGE_VERSION ${TEXTAUTOGENERATETEXT_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoGenerateText
+    HEADERS ${TextAutoGenerateTextIncludeFiles}
+    PREFIX textautogeneratetext
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoGenerateText
+    HEADERS
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
+    PREFIX TextAutoGenerateText
+)

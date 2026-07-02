@@ -294,7 +294,9 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
     const QAbstractItemModel *oldModel = model();
     if (oldModel) {
         disconnect(oldModel, nullptr, this, nullptr);
-        disconnect(mCurrentModel->searchMessageSettings(), nullptr, this, nullptr);
+        if (mCurrentModel && mCurrentModel->searchMessageSettings()) {
+            disconnect(mCurrentModel->searchMessageSettings(), nullptr, this, nullptr);
+        }
 
         mDelegate->clearSelection();
     }

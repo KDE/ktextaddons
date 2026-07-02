@@ -24,6 +24,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRepl
     return d;
 }
 
+bool TextAutoGenerateTextReplyInfo::operator==(const TextAutoGenerateTextReplyInfo &other) const = default;
+
 bool TextAutoGenerateTextReplyInfo::isValid() const
 {
     return (replyType != ReplyType::Unknown) && (promptEvalTokenCount != 0 || tokenCount != 0 || completionTokens != 0 || promptTokens != 0);

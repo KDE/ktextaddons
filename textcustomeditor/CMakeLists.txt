@@ -252,3 +252,25 @@ if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
 endif()
 ecm_generate_qdoc(KF6TextCustomEditor textcustomeditor.qdocconf)
+
+ecm_add_installed_library_check(KF6TextCustomEditor
+    PACKAGE_NAME "KF6TextCustomEditor"
+    PACKAGE_VERSION ${TEXTCUSTOMEDITOR_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextCustomEditor
+    HEADERS ${TEXTCUSTOM_EDITOR_FILES}
+    PREFIX textcustomeditor
+)
+
+ecm_installed_library_check_include_strings(KF6TextCustomEditor
+    HEADERS
+    ${TextCustomEditor_CamelCasetexteditor_core_HEADERS}
+    ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
+    ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
+    ${TextCustomEditor_CamelCasetexteditor_widgets_HEADERS}
+    ${TextCustomEditor_CamelCaserichtextbrowser_HEADERS}
+
+    PREFIX TextCustomEditor
+)

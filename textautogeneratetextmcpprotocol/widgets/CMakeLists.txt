@@ -144,3 +144,22 @@ configure_package_config_file(
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
+
+ecm_add_installed_library_check(KF6TextAutoGenerateTextMcpProtocolWidgets
+    PACKAGE_NAME "KF6TextAutoGenerateTextMcpProtocolWidgets"
+    PACKAGE_VERSION ${TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWidgets
+    HEADERS
+    ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS}
+    PREFIX textautogeneratetextmcpprotocolwidgets
+)
+
+ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWidgets
+    HEADERS
+    ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
+
+    PREFIX TextAutoGenerateTextMcpProtocolWidgets
+)

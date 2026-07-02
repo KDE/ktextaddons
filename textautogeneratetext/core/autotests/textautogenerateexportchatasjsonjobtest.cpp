@@ -33,7 +33,7 @@ void TextAutoGenerateExportChatAsJsonJobTest::shouldEmitExportDoneOnSuccess()
     message.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
     message.setContent(QStringLiteral("hello"));
 
-    auto *job = new TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob(this);
+    auto job = new TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob(this);
     TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo info;
     info.filename = fileName;
     info.chatTitle = QStringLiteral("title");
@@ -66,7 +66,7 @@ void TextAutoGenerateExportChatAsJsonJobTest::shouldNotEmitExportDoneWhenWriteFa
     message.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
     message.setContent(QStringLiteral("hello"));
 
-    auto *job = new TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob(this);
+    auto job = new TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob(this);
     TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo info;
     info.filename = QStringLiteral("/dev/full");
     info.chatTitle = QStringLiteral("title");

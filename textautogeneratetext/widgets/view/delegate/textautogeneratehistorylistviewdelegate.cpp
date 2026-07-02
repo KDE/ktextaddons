@@ -137,7 +137,7 @@ QWidget *TextAutoGenerateHistoryListViewDelegate::createEditor(QWidget *parent,
                                                                [[maybe_unused]] const QStyleOptionViewItem &option,
                                                                [[maybe_unused]] const QModelIndex &index) const
 {
-    QLineEdit *editor = new QLineEdit(parent);
+    auto editor = new QLineEdit(parent);
     return editor;
 }
 

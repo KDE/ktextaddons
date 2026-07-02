@@ -18,6 +18,9 @@ class AutoCorrectionTextEditPrivate;
 /*!
  * \brief The AutoCorrectionTextEdit class
  * \author Laurent Montel <montel@kde.org>
+ * \class TextAutoCorrectionWidgets::AutoCorrectionTextEdit
+ * \inmodule TextAutoCorrectionWidgets
+ * \inheaderfile TextAutoCorrectionWidgets/AutoCorrectionTextEdit
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionTextEdit : public QTextEdit
 {

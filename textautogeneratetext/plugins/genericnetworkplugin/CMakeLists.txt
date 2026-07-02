@@ -116,7 +116,7 @@ target_link_libraries(
         KF6::WidgetsAddons
         KF6::CoreAddons
         textautogenerategenericnetwork
-        qt6keychain
+        textautogenerateplugincommon
 )
 install(TARGETS autogeneratetext_genericnetwork DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
