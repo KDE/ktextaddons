@@ -197,7 +197,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 
 void TextAutoGenerateHistoryListView::slotSearchTextChanged(const QString &str)
 {
-    mHistoryProxyModel->setFilterFixedString(str);
+    mHistoryProxyModel->setFilterString(str);
 }
 
 TextAutoGenerateHistorySortFilterProxyModel *TextAutoGenerateHistoryListView::filterModel() const
