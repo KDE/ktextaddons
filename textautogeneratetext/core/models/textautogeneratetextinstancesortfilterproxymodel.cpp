@@ -8,7 +8,7 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstanceSortFilterProxyModel::TextAutoGenerateTextInstanceSortFilterProxyModel(QObject *parent)
-    : QSortFilterProxyModel{parent}
+    : TextAddonsWidgets::SortFilterProxyModelBase{parent}
 {
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
@@ -20,36 +20,16 @@ TextAutoGenerateTextInstanceSortFilterProxyModel::~TextAutoGenerateTextInstanceS
 
 bool TextAutoGenerateTextInstanceSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    if (mSearchText.trimmed().isEmpty()) {
+    if (mFilterString.trimmed().isEmpty()) {
         return true;
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
     const QString instanceName = sourceIndex.data(TextAutoGenerateTextInstanceModel::Name).toString();
     const QString pluginName = sourceIndex.data(TextAutoGenerateTextInstanceModel::PluginName).toString();
-    if (pluginName.contains(mSearchText, Qt::CaseInsensitive) || instanceName.contains(mSearchText, Qt::CaseInsensitive)) {
+    if (contains(pluginName) || contains(instanceName)) {
         return true;
     }
     return false;
-}
-
-QString TextAutoGenerateTextInstanceSortFilterProxyModel::searchText() const
-{
-    return mSearchText;
-}
-
-void TextAutoGenerateTextInstanceSortFilterProxyModel::setSearchText(const QString &newSearchText)
-{
-    if (mSearchText != newSearchText) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
-        beginFilterChange();
-#endif
-        mSearchText = newSearchText;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
-        endFilterChange(QSortFilterProxyModel::Direction::Rows);
-#else
-        invalidateFilter();
-#endif
-    }
 }
 
 #include "moc_textautogeneratetextinstancesortfilterproxymodel.cpp"

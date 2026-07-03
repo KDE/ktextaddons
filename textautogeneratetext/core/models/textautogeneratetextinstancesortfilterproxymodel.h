@@ -6,7 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QSortFilterProxyModel>
+#include <TextAddonsWidgets/SortFilterProxyModelBase>
 namespace TextAutoGenerateText
 {
 /*!
@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstanceSortFilterProxyModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public QSortFilterProxyModel
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
 {
     Q_OBJECT
 public:
@@ -27,19 +27,9 @@ public:
      */
     ~TextAutoGenerateTextInstanceSortFilterProxyModel() override;
 
-    /*!
-     */
-    [[nodiscard]] QString searchText() const;
-    /*!
-     */
-    void setSearchText(const QString &newSearchText);
-
 protected:
     /*!
      */
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
-
-private:
-    QString mSearchText;
 };
 }
