@@ -8,7 +8,7 @@
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpServerSortFilterProxyModel::McpServerSortFilterProxyModel(QObject *parent)
-    : QSortFilterProxyModel{parent}
+    : TextAddonsWidgets::SortFilterProxyModelBase{parent}
 {
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
@@ -20,36 +20,16 @@ McpServerSortFilterProxyModel::~McpServerSortFilterProxyModel() = default;
 
 bool McpServerSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    if (mSearchText.trimmed().isEmpty()) {
+    if (mFilterString.trimmed().isEmpty()) {
         return true;
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
     const QString serverName = sourceIndex.data(McpServerModel::Name).toString();
     const QString serverType = sourceIndex.data(McpServerModel::ServerType).toString();
-    if (serverName.contains(mSearchText, Qt::CaseInsensitive) || serverType.contains(mSearchText, Qt::CaseInsensitive)) {
+    if (contains(mFilterString) || contains(mFilterString)) {
         return true;
     }
     return false;
-}
-
-QString McpServerSortFilterProxyModel::searchText() const
-{
-    return mSearchText;
-}
-
-void McpServerSortFilterProxyModel::setSearchText(const QString &newSearchText)
-{
-    if (mSearchText != newSearchText) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
-        beginFilterChange();
-#endif
-        mSearchText = newSearchText;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
-        endFilterChange(QSortFilterProxyModel::Direction::Rows);
-#else
-        invalidateFilter();
-#endif
-    }
 }
 
 #include "moc_mcpserversortfilterproxymodel.cpp"

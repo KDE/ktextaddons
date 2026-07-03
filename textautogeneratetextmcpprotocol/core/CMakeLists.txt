@@ -491,6 +491,7 @@ target_link_libraries(
     PUBLIC
         Qt::Core
         KF6::CoreAddons
+        KF6::TextAddonsWidgets
     PRIVATE
         KF6::ConfigCore
         KF6::I18n
