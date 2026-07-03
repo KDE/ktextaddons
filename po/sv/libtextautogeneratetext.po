@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 02:33+0000\n"
+"POT-Creation-Date: 2026-07-03 02:41+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -167,7 +167,7 @@ msgstr "Lokal"
 msgid "Network"
 msgstr "Nätverk"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -177,7 +177,7 @@ msgstr ""
 "\n"
 "Verktyg: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -187,7 +187,7 @@ msgstr ""
 "\n"
 "Verktyg: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -197,7 +197,7 @@ msgstr ""
 "\n"
 "Verktyg: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -207,7 +207,7 @@ msgstr ""
 "\n"
 "Verktyg: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -217,7 +217,7 @@ msgstr ""
 "\n"
 "Verktyg: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"

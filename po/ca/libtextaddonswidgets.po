@@ -328,6 +328,3 @@ msgstr "<h1><i> Versió %1 (Publicada: %2)</i></h1><hr/><br>"
 #, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Versió %1 (Encara no publicada)</i></h1><hr/><br>"
-
-#~ msgid "Version %1"
-#~ msgstr "Versió %1"

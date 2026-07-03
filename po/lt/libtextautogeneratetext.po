@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 02:33+0000\n"
+"POT-Creation-Date: 2026-07-03 02:41+0000\n"
 "PO-Revision-Date: 2025-09-01 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -150,32 +150,32 @@ msgstr ""
 msgid "Network"
 msgstr ""
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr ""
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr ""
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, kde-format
 msgid "<br><b>Tokens:</b> %1"
 msgstr ""
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format
 msgid "<br><b>Token Count:</b> %1"
 msgstr ""
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr ""
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, kde-format
 msgid "<br><b>Completion Token:</b> %1"
 msgstr ""

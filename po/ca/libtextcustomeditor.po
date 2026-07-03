@@ -205,7 +205,3 @@ msgstr "Ves a la línia:"
 #, kde-format
 msgid "Go"
 msgstr "Ves"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Bold"
-#~ msgstr "Negreta"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 02:33+0000\n"
+"POT-Creation-Date: 2026-07-03 02:41+0000\n"
 "PO-Revision-Date: 2026-01-25 13:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -171,7 +171,7 @@ msgstr "Lokala"
 msgid "Network"
 msgstr "Sarea"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -181,7 +181,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -191,7 +191,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -201,7 +201,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -211,7 +211,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -221,7 +221,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"

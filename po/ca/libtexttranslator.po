@@ -761,6 +761,3 @@ msgstr "Sense xarxa"
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Error de traducció"
-
-#~ msgid "Translate..."
-#~ msgstr "Tradueix..."

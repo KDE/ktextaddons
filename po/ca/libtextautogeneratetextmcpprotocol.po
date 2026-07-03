@@ -108,6 +108,3 @@ msgstr "Cerca…"
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Afegeix una instància…"
-
-#~ msgid "Stdio"
-#~ msgstr "Stdio"

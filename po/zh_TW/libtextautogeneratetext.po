@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 02:33+0000\n"
+"POT-Creation-Date: 2026-07-03 02:41+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -154,37 +154,37 @@ msgstr "本地"
 msgid "Network"
 msgstr "網路"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Tokens:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, fuzzy, kde-format
 #| msgid "<br><b>Tools:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 02:33+0000\n"
+"POT-Creation-Date: 2026-07-03 02:41+0000\n"
 "PO-Revision-Date: 2026-06-21 17:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -152,32 +152,32 @@ msgstr "Локальний"
 msgid "Network"
 msgstr "Мережевий"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Загальна тривалість:</b> %1 секунд"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr "<br><b>Жетони запиту:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, kde-format
 msgid "<br><b>Tokens:</b> %1"
 msgstr "<br><b>Жетони:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format
 msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>Кількість жетонів:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr "<br><b>Жетон запиту:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, kde-format
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Жетон завершеності:</b> %1"
