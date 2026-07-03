@@ -8,7 +8,7 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterProxyModel(QObject *parent)
-    : QSortFilterProxyModel{parent}
+    : TextAddonsWidgets::SortFilterProxyModelBase{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortRole(TextAutoGenerateChatsModel::DateTime);
@@ -31,6 +31,16 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
     if (mShowArchived != archived) {
         return false;
     }
+    auto match = [&](int role) {
+        if (mFilterString.isEmpty()) {
+            return true;
+        };
+        return contains(sourceIndex.data(role).toString());
+    };
+    if (!match(TextAutoGenerateChatsModel::Title)) {
+        return false;
+    }
+
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 

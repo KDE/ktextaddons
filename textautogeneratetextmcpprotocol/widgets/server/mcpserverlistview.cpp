@@ -33,7 +33,7 @@ McpServerListView::~McpServerListView() = default;
 
 void McpServerListView::slotSearchChanged(const QString &str)
 {
-    mSortFilterProxyModel->setSearchText(str);
+    mSortFilterProxyModel->setFilterString(str);
 }
 
 void McpServerListView::slotEditMcpServer(const QModelIndex &index)

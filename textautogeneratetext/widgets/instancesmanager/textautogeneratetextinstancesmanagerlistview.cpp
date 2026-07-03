@@ -35,7 +35,7 @@ TextAutoGenerateTextInstancesManagerListView::~TextAutoGenerateTextInstancesMana
 
 void TextAutoGenerateTextInstancesManagerListView::slotSearchChanged(const QString &str)
 {
-    mSortFilterProxyModel->setSearchText(str);
+    mSortFilterProxyModel->setFilterString(str);
 }
 
 void TextAutoGenerateTextInstancesManagerListView::slotEditInstance(const QModelIndex &index)
