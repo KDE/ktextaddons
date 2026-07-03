@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:42+0000\n"
+"POT-Creation-Date: 2026-07-03 00:44+0000\n"
 "PO-Revision-Date: 2026-06-21 00:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -154,32 +154,32 @@ msgstr "Local"
 msgid "Network"
 msgstr "Red"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Duración total:</b> %1 segundos"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr "<br><b>Tókenes de introducción:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, kde-format
 msgid "<br><b>Tokens:</b> %1"
 msgstr "<br><b>Tókenes:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format
 msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>Número de tókenes:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr "<br><b>Token de introducción:</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, kde-format
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token de terminación:</b> %1"
@@ -213,7 +213,7 @@ msgstr "Desactivado"
 msgid "Activate: %1"
 msgstr "Activar: %1"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Genérico"
@@ -403,7 +403,7 @@ msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:217
+#: plugins/lmstudio/lmstudioplugin.cpp:210
 #, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
@@ -412,27 +412,27 @@ msgstr ""
 "lo instale."
 
 #: plugins/llamacpp/llamacppplugin.cpp:229
-#: plugins/lmstudio/lmstudioplugin.cpp:219
+#: plugins/lmstudio/lmstudioplugin.cpp:212
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "No se ha encontrado LMStudio en el sistema. Debería instalarlo."
 
 #: plugins/llamacpp/llamacppplugin.cpp:230
-#: plugins/lmstudio/lmstudioplugin.cpp:220
+#: plugins/lmstudio/lmstudioplugin.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "Descargar LMStudio"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
-#: plugins/lmstudio/lmstudioplugin.cpp:226
+#: plugins/lmstudio/lmstudioplugin.cpp:219
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
 msgstr "Iniciar LMStudio"
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
-#: plugins/lmstudio/lmstudioplugin.cpp:95
+#: plugins/lmstudio/lmstudioplugin.cpp:88
 #, kde-format
 msgid "LMStudio"
 msgstr "LMStudio"
@@ -802,7 +802,7 @@ msgstr "Configurar Ollama Cloud"
 msgid "Api Key:"
 msgstr "Clave de la API:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:118
+#: plugins/ollamacloud/ollamacloudplugin.cpp:93
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "Ollama Cloud"
@@ -2954,7 +2954,7 @@ msgstr "Configurar Ollama Online"
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:119
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:94
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama Online"

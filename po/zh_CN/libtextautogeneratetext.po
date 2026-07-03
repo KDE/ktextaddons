@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:42+0000\n"
+"POT-Creation-Date: 2026-07-03 00:44+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -150,32 +150,32 @@ msgstr "本地"
 msgid "Network"
 msgstr "网络"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>总时长：</b> %1 秒"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr "<br><b>提示词词元：</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, kde-format
 msgid "<br><b>Tokens:</b> %1"
 msgstr "<br><b>词元：</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, kde-format
 msgid "<br><b>Token Count:</b> %1"
 msgstr "<br><b>词元数：</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
 msgstr "<br><b>提示词词元：</b> %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, kde-format
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>补全词元：</b> %1"
@@ -209,7 +209,7 @@ msgstr "关"
 msgid "Activate: %1"
 msgstr "激活：%1"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "常规"
@@ -398,34 +398,34 @@ msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:217
+#: plugins/lmstudio/lmstudioplugin.cpp:210
 #, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr "系统中没有找到 LMStudio。请向您的系统管理员请求安装它。"
 
 #: plugins/llamacpp/llamacppplugin.cpp:229
-#: plugins/lmstudio/lmstudioplugin.cpp:219
+#: plugins/lmstudio/lmstudioplugin.cpp:212
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "系统系统没有未找到 LMStudio。请安装它。"
 
 #: plugins/llamacpp/llamacppplugin.cpp:230
-#: plugins/lmstudio/lmstudioplugin.cpp:220
+#: plugins/lmstudio/lmstudioplugin.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "下载 LMStudio"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
-#: plugins/lmstudio/lmstudioplugin.cpp:226
+#: plugins/lmstudio/lmstudioplugin.cpp:219
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
 msgstr "启动 LMStudio"
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
-#: plugins/lmstudio/lmstudioplugin.cpp:95
+#: plugins/lmstudio/lmstudioplugin.cpp:88
 #, kde-format
 msgid "LMStudio"
 msgstr "LMStudio"
@@ -791,7 +791,7 @@ msgstr "Configure Ollama 云"
 msgid "Api Key:"
 msgstr "API 密钥："
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:118
+#: plugins/ollamacloud/ollamacloudplugin.cpp:93
 #, kde-format
 msgid "Ollama Cloud"
 msgstr "Ollama 云"
@@ -2744,7 +2744,7 @@ msgstr "配置 Ollama 在线"
 msgid "Server Url:"
 msgstr "服务器 URL："
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:119
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:94
 #, kde-format
 msgid "Ollama Online"
 msgstr "Ollama 在线"

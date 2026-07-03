@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-20 00:42+0000\n"
+"POT-Creation-Date: 2026-07-03 00:44+0000\n"
 "PO-Revision-Date: 2026-01-25 13:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -171,7 +171,7 @@ msgstr "Lokala"
 msgid "Network"
 msgstr "Sarea"
 
-#: core/textautogeneratetextreplyinfo.cpp:51
+#: core/textautogeneratetextreplyinfo.cpp:53
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -181,7 +181,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:52
+#: core/textautogeneratetextreplyinfo.cpp:54
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -191,7 +191,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:53
+#: core/textautogeneratetextreplyinfo.cpp:55
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -201,7 +201,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:59
+#: core/textautogeneratetextreplyinfo.cpp:61
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -211,7 +211,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:60
+#: core/textautogeneratetextreplyinfo.cpp:62
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -221,7 +221,7 @@ msgstr ""
 "\n"
 "Tresnak: %1"
 
-#: core/textautogeneratetextreplyinfo.cpp:61
+#: core/textautogeneratetextreplyinfo.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Activate: %1"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Generikoa"
@@ -456,7 +456,7 @@ msgid "LLamaCpp"
 msgstr ""
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:217
+#: plugins/lmstudio/lmstudioplugin.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "Ollama not found on system. Ask to your administrator system to install "
@@ -468,14 +468,14 @@ msgstr ""
 "instalatu dezala."
 
 #: plugins/llamacpp/llamacppplugin.cpp:229
-#: plugins/lmstudio/lmstudioplugin.cpp:219
+#: plugins/lmstudio/lmstudioplugin.cpp:212
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "LMStudio not found on system. Please install it."
 msgstr "Sisteman ez da Ollama aurkitu. Mesedez instalatu."
 
 #: plugins/llamacpp/llamacppplugin.cpp:230
-#: plugins/lmstudio/lmstudioplugin.cpp:220
+#: plugins/lmstudio/lmstudioplugin.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Model"
@@ -484,14 +484,14 @@ msgid "Download LMStudio"
 msgstr "Eredua zama-jaistea"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
-#: plugins/lmstudio/lmstudioplugin.cpp:226
+#: plugins/lmstudio/lmstudioplugin.cpp:219
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
 msgstr ""
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
-#: plugins/lmstudio/lmstudioplugin.cpp:95
+#: plugins/lmstudio/lmstudioplugin.cpp:88
 #, kde-format
 msgid "LMStudio"
 msgstr ""
@@ -881,7 +881,7 @@ msgstr "Konfiguratu Ollama"
 msgid "Api Key:"
 msgstr "APIaren gakoa:"
 
-#: plugins/ollamacloud/ollamacloudplugin.cpp:118
+#: plugins/ollamacloud/ollamacloudplugin.cpp:93
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Cloud"
@@ -2690,7 +2690,7 @@ msgstr "Konfiguratu Ollama"
 msgid "Server Url:"
 msgstr "Zerbitzariaren URLa:"
 
-#: plugins/ollamaonline/ollamaonlineplugin.cpp:119
+#: plugins/ollamaonline/ollamaonlineplugin.cpp:94
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgid "Ollama Online"
