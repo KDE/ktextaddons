@@ -87,6 +87,8 @@ public:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;
+    [[nodiscard]] bool hasCategorySupport(const QString &currentModel, GenericNetworkModelAvailableInfo::Capability capacity) const;
+
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
     QString mApiKey;
     GenericNetworkSettings *const mGenericNetworkSettings;

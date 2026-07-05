@@ -20,6 +20,7 @@ public:
         Audio = 4,
         Ocr = 8,
         Tools = 16,
+        Thinking = 32,
     };
     Q_DECLARE_FLAGS(Capabilities, Capability)
     Q_FLAG(Capabilities)

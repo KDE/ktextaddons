@@ -207,29 +207,39 @@ void GenericNetworkManager::setApiKey(const QString &newApiKey)
     mApiKey = newApiKey;
 }
 
+bool GenericNetworkManager::hasCategorySupport(const QString &currentModel, GenericNetworkModelAvailableInfo::Capability capacity) const
+{
+    for (const auto &modelInfo : mAvailableModelsInfos) {
+        if (modelInfo.modelName() == currentModel) {
+            return modelInfo.capabilities() & capacity;
+        }
+    }
+    return false;
+}
+
 bool GenericNetworkManager::hasVisionSupport(const QString &currentModel) const
 {
-    return mServerInfo->hasToolsSupport(currentModel, mPluginNetworkType);
+    return hasCategorySupport(currentModel, GenericNetworkModelAvailableInfo::Capability::Vision);
 }
 
 bool GenericNetworkManager::hasToolsSupport(const QString &currentModel) const
 {
-    return mServerInfo->hasToolsSupport(currentModel, mPluginNetworkType);
+    return hasCategorySupport(currentModel, GenericNetworkModelAvailableInfo::Capability::Tools);
 }
 
 bool GenericNetworkManager::hasOcrSupport(const QString &currentModel) const
 {
-    return mServerInfo->hasOcrSupport(currentModel, mPluginNetworkType);
+    return hasCategorySupport(currentModel, GenericNetworkModelAvailableInfo::Capability::Ocr);
 }
 
 bool GenericNetworkManager::hasAudioSupport(const QString &currentModel) const
 {
-    return mServerInfo->hasAudioSupport(currentModel, mPluginNetworkType);
+    return hasCategorySupport(currentModel, GenericNetworkModelAvailableInfo::Capability::Audio);
 }
 
 bool GenericNetworkManager::hasThinkSupport(const QString &currentModel) const
 {
-    return mServerInfo->hasThinkSupport(currentModel, mPluginNetworkType);
+    return hasCategorySupport(currentModel, GenericNetworkModelAvailableInfo::Capability::Thinking);
 }
 
 GenericNetworkManager::Limitations GenericNetworkManager::limitations(GenericNetworkManager::PluginNetworkType type) const
