@@ -73,8 +73,8 @@ public:
 
     [[nodiscard]] GenericNetworkSettings *genericNetworkSettings() const;
 
-    [[nodiscard]] QList<GenericNetworkModelAvailableInfo> infos() const;
-    void setInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos);
+    [[nodiscard]] QList<GenericNetworkModelAvailableInfo> availableModelsinfos() const;
+    void setAvailableModelsInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos);
 
     [[nodiscard]] bool hasVisionSupport(const QString &currentModel) const;
     [[nodiscard]] bool hasToolsSupport(const QString &currentModel) const;
@@ -92,5 +92,5 @@ private:
     GenericNetworkSettings *const mGenericNetworkSettings;
     GenericNetworkServerInfo *const mServerInfo;
 
-    QList<GenericNetworkModelAvailableInfo> mInfos;
+    QList<GenericNetworkModelAvailableInfo> mAvailableModelsInfos;
 };

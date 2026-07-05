@@ -56,10 +56,10 @@ void GenericNetworkManager::loadModels()
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["data"_L1].toArray();
         infos.parseModelsInfo(models);
-        mInfos = infos.infos();
+        mAvailableModelsInfos = infos.infos();
         ModelsInfo info;
         // qDebug() << " json " << json;
-        for (const auto &parsedInfo : std::as_const(mInfos)) {
+        for (const auto &parsedInfo : std::as_const(mAvailableModelsInfos)) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
             i.identifier = parsedInfo.identifier();
             if (parsedInfo.modelName().isEmpty()) {
@@ -187,14 +187,14 @@ GenericNetworkSettings *GenericNetworkManager::genericNetworkSettings() const
     return mGenericNetworkSettings;
 }
 
-QList<GenericNetworkModelAvailableInfo> GenericNetworkManager::infos() const
+QList<GenericNetworkModelAvailableInfo> GenericNetworkManager::availableModelsinfos() const
 {
-    return mInfos;
+    return mAvailableModelsInfos;
 }
 
-void GenericNetworkManager::setInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos)
+void GenericNetworkManager::setAvailableModelsInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos)
 {
-    mInfos = newInfos;
+    mAvailableModelsInfos = newInfos;
 }
 
 QString GenericNetworkManager::apiKey() const

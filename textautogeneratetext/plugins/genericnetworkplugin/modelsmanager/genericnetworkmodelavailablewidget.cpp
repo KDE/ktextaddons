@@ -52,7 +52,7 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(GenericNe
     mProxyModel->sort(0);
     if (mManager) {
         connect(mManager, &GenericNetworkManager::modelsLoadDone, this, [this]() {
-            mAvailableInfosModel->setModelInfos(mManager->infos());
+            mAvailableInfosModel->setModelInfos(mManager->availableModelsinfos());
         });
     }
 
