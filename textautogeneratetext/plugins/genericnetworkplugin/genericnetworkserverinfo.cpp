@@ -56,6 +56,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Sarvam AI");
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return i18n("AtlasCloud OpenAI-compatible API");
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+        return i18n("Google Gemini");
     }
     return {};
 }
@@ -84,6 +86,7 @@ QString GenericNetworkServerInfo::responsesPath(GenericNetworkManager::PluginNet
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
         return u"responses"_s;
     }
     return {};
@@ -113,6 +116,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
         return u"chat/completions"_s;
     }
     return {};
@@ -160,6 +164,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://api.sarvam.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return u"https://www.atlascloud.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+        return u"https://gemini.google.com"_s;
     }
     return {};
 }
@@ -206,6 +212,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.sarvam.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return u"https://api.atlascloud.ai/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+        return u"https://generativelanguage.googleapis.com/v1beta/openai/"_s;
     }
     return {};
 }
@@ -223,6 +231,7 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
         return {};
     case GenericNetworkManager::PluginNetworkType::GroqAI:
         return i18n("Groq AI");
@@ -294,6 +303,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"sarvamai"_s;
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return u"atlascloudai"_s;
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+        return u"gemini"_s;
     }
     return {};
 }
@@ -336,6 +347,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::SarvamAI;
     } else if (str == QLatin1StringView("atlascloudai")) {
         return GenericNetworkManager::PluginNetworkType::AtlasCloud;
+    } else if (str == QLatin1StringView("gemini")) {
+        return GenericNetworkManager::PluginNetworkType::Gemini;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -388,6 +401,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
     case GenericNetworkManager::PluginNetworkType::GrokAI:
     case GenericNetworkManager::PluginNetworkType::Qwen:
     case GenericNetworkManager::PluginNetworkType::DeepInfra:

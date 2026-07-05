@@ -34,7 +34,8 @@ public:
         OpenRouterAI = 15,
         SarvamAI = 16,
         AtlasCloud = 17,
-        KimiAI = 18,
+        Gemini = 18,
+        KimiAI = 19,
         LastElement = KimiAI,
     };
 
