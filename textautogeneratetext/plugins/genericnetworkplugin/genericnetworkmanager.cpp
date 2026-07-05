@@ -139,7 +139,51 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletio
 
 TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getResponses(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    return nullptr;
+    if (mApiKey.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Api key is missing";
+        return nullptr;
+    }
+    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + chatPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    req.setRawHeader("Accept", "application/json"_ba);
+    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+    QJsonObject data;
+    data["model"_L1] = request.model();
+    data["input"_L1] = request.messages();
+    data["temperature"_L1] = mGenericNetworkSettings->temperature();
+    data["stream"_L1] = true;
+    QJsonObject streamOptions;
+    streamOptions["include_usage"_L1] = true;
+    data["stream_options"_L1] = streamOptions;
+    const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
+    if (!array.isEmpty()) {
+        data["tools"_L1] = array;
+        // data["tool_choice"_L1] = u"none"_s;
+    }
+    if (mGenericNetworkSettings->maxTokens() > 0) {
+        if (limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::UseMaxCompletionTokens) {
+            data["max_completion_tokens"_L1] = mGenericNetworkSettings->maxTokens();
+        } else {
+            data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
+        }
+    }
+    // qDebug() << " limitations(mPluginNetworkType) " << limitations(mPluginNetworkType);
+    if (!(limitations(mPluginNetworkType) & GenericNetworkManager::Limitation::NoSeed)) {
+        if (mGenericNetworkSettings->seed() > 0) {
+            data["seed"_L1] = mGenericNetworkSettings->seed();
+        }
+    }
+    qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " Json: " << data << " req " << req.url();
+    auto reply = new GenericNetworkReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        GenericNetworkReply::RequestTypes::StreamingResponses,
+        this};
+    connect(reply, &GenericNetworkReply::finished, this, [this, reply] {
+        const auto response = reply->readResponse();
+        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "response  " << response;
+        Q_EMIT finished(response);
+    });
+    return reply;
 }
 
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const
