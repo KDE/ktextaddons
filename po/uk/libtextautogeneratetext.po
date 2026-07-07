@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-06 00:43+0000\n"
-"PO-Revision-Date: 2026-06-20 12:01+0300\n"
+"PO-Revision-Date: 2026-07-06 09:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -346,7 +346,7 @@ msgstr "Сумісний з OpenAI програмний інтерфейс Atlas
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
 #, kde-format
