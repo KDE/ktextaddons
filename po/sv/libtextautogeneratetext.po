@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-03 02:41+0000\n"
-"PO-Revision-Date: 2026-07-04 21:39+0200\n"
+"PO-Revision-Date: 2026-07-06 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2484,7 +2484,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
 msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
-msgstr ""
+msgstr "Kimi K2 Thinking, Moonshot AI:s bästa tankemodell med öppen källkod."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:300
 #, kde-format
@@ -2492,6 +2492,8 @@ msgid ""
 "The Cogito v2.1 LLMs are instruction tuned generative models. All models are "
 "released under MIT license for commercial use."
 msgstr ""
+"Cogito v2.1 LLM:er är instruktionsanpassade generative modeller. Alla "
+"modeller är utgivna med MIT-licens för kommersiell användning."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:301
 #, kde-format
@@ -2499,6 +2501,8 @@ msgid ""
 "The Ministral 3 family is designed for edge deployment, capable of running "
 "on a wide range of hardware."
 msgstr ""
+"Ministral 3-familjen är konstruerad för randdistribution, kapabel att köras "
+"på en mängd olika maskinvaror."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:303
 #, kde-format
@@ -2507,6 +2511,9 @@ msgid ""
 "scratch by Essential AI, optimized for code and STEM with capabilities on "
 "par with SOTA open-weight models."
 msgstr ""
+"Rnj-1 är en familj av 8B-parametrars täta modeller med öppna vikter, tränade "
+"från grunden av Essential AI, optimerade för kod och STEM med kapacitet i "
+"nivå med SOTA-modeller med öppna vikter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:306
 #, kde-format
@@ -2514,6 +2521,8 @@ msgid ""
 "The first installment in the Qwen3-Next series with strong performance in "
 "terms of both parameter efficiency and inference speed."
 msgstr ""
+"Den första delen i Qwen3-Next-serien med stark prestanda vad gäller både "
+"parametereffektivitet och inferenshastighet."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
 #, kde-format
@@ -2521,6 +2530,8 @@ msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
 msgstr ""
+"Nemotron 3 Nano: En ny standard för effektiva, öppna och intelligenta "
+"agentmodeller."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
 #, kde-format
@@ -2528,6 +2539,9 @@ msgid ""
 "24B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
+"24B-modell som utmärker sig när det gäller att använda verktyg för att "
+"utforska kodbaser, redigera många filer och driva "
+"programvaruutvecklingsagenter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:311
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:318
@@ -2537,6 +2551,9 @@ msgid ""
 "language models. These models are pre-trained on the Dolma 3 dataset and "
 "post-trained on the Dolci datasets."
 msgstr ""
+"Olmo är en serie öppna språkmodeller utformade för att möjliggöra "
+"språkmodellers vetenskap. Modellerna är tränade i förväg på Dolma 3-"
+"datamängden och tränade i efterskott på Dolci-datamängderna."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
 #, kde-format
@@ -2544,6 +2561,8 @@ msgid ""
 "A new collection of open translation models built on Gemma 3, helping people "
 "communicate across 55 languages."
 msgstr ""
+"En ny samling modeller för öppen översättning byggda på Gemma 3, som hjälper "
+"människor att kommunicera på 55 språk."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:315
 #, kde-format
@@ -2551,6 +2570,9 @@ msgid ""
 "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
 "for lightweight deployment that balances performance and efficiency."
 msgstr ""
+"Som den starkaste modellen i 30 miljarders-klassen erbjuder GLM-4.7-Flash "
+"ett nytt alternativ för lättviktsdrift som balanserar prestanda och "
+"effektivitet."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
 #, kde-format
@@ -2558,6 +2580,9 @@ msgid ""
 "123B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
+"123 miljarders modell som utmärker sig på att använda verktyg för att "
+"utforska kodbaser, redigera många filer och driva "
+"programvaruutvecklingsagenter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:321
 #, kde-format
@@ -2565,6 +2590,8 @@ msgid ""
 "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
 "tuned explicitly for function calling."
 msgstr ""
+"FunctionGemma är en specialiserad version av Googles Gemma 3 270 miljarders-"
+"modell, explicit finjusterad för funktionsanrop."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
 #, kde-format
@@ -2572,6 +2599,8 @@ msgid ""
 "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
 "the cost."
 msgstr ""
+"Gemini 3 Flash erbjuder frontlinjeintelligens byggd för hastighet till en "
+"bråkdel av kostnaden."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
 #, kde-format
@@ -2579,11 +2608,13 @@ msgid ""
 "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
 "excels at multilingual retrieval."
 msgstr ""
+"nomic-embed-text-v2-moe är en flerspråkig textinbäddningsmodell med blandade "
+"experter (MoE) som utmärker sig vid flerspråkig hämtning."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
 #, kde-format
 msgid "Advancing the Coding Capability"
-msgstr ""
+msgstr "Förbättra kodningsförmågan"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:325
 #, kde-format
@@ -2591,6 +2622,8 @@ msgid ""
 "DeepSeek-V3.2, a model that harmonizes high computational efficiency with "
 "superior reasoning and agent performance."
 msgstr ""
+"DeepSeek-V3.2, en modell som harmoniserar hög beräkningseffektivitet med "
+"överlägsen resonemang och agentprestanda."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:326
 #, kde-format
@@ -2605,12 +2638,15 @@ msgstr ""
 #, kde-format
 msgid "Exceptional multilingual capabilities to elevate code engineering"
 msgstr ""
+"Exceptionella flerspråkiga funktioner för att förbättra utveckling av kod"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:328
 #, kde-format
 msgid ""
 "LFM2.5 is a new family of hybrid models designed for on-device deployment."
 msgstr ""
+"LFM2.5 är en ny familj av hybridmodeller utformade för driftsättning på "
+"enheter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:330
 #, kde-format
@@ -2620,6 +2656,9 @@ msgid ""
 "capabilities, instant and thinking modes, as well as conversational and "
 "agentic paradigms."
 msgstr ""
+"Kimi K2.5 är en inbyggd multimodal agentmodell med öppen källkod, som "
+"sömlöst integrerar syn och språkförståelse med avancerade agentfunktioner, "
+"snabb- och tankelägen, samt konversations- och agentparadigmer."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2627,6 +2666,9 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"En stark resonemangs- och agentmodell från Z.ai med totalt 744 miljarder "
+"parametrar (40 miljarder aktiva), byggd för komplex systemteknik och "
+"långsiktiga uppgifter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2634,6 +2676,8 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 är en toppmodern stor språkmodell utformad för verkliga "
+"produktivitets- och kodningsuppgifter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:337
 #, kde-format
@@ -2642,6 +2686,9 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Gemma 4 modeller är utformade för att leverera prestanda i toppklass i alla "
+"storlekar. De är väl lämpade för resonemang, agentarbetsflöden, kodning och "
+"multimodal förståelse."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2649,6 +2696,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 är en familj av multimodala modeller med öppen källkod som "
+"levererar exceptionell användbarhet och prestanda."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2657,6 +2706,9 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 är en familj av hybridmodeller utformade för driftsättning på enheter. "
+"LFM2-24B-A2B är den största modellen i familjen och skalar arkitekturen till "
+"24 miljarder parametrar samtidigt som inferensen hålls effektiv."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2665,6 +2717,10 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super är en 120 miljarders öppen modell med blandade "
+"experter (MoE) som bara aktiverar 12B parametrar för att leverera maximal "
+"beräkningseffektivitet och noggrannhet för komplexa applikationer med flera "
+"agenter."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
