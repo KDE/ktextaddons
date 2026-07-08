@@ -60,10 +60,7 @@ EmojiModelManager::EmojiModelManager(QObject *parent)
     d->loadSettings();
 }
 
-EmojiModelManager::~EmojiModelManager()
-{
-    d->writeSettings();
-}
+EmojiModelManager::~EmojiModelManager() = default;
 
 EmojiModelManager *EmojiModelManager::self()
 {
