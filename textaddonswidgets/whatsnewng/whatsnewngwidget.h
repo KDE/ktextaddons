@@ -28,7 +28,6 @@ private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotVersionChanged(int type);
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateVersionHeader(const KAboutRelease &release) const;
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateStartEndHtml(const QString &str) const;
-    [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString featuresChangeStr() const;
     [[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT QString generateUrl(const KAboutRelease &release) const;
     QList<KAboutRelease> mAboutRelease;
     QTextBrowser *const mLabelInfo;

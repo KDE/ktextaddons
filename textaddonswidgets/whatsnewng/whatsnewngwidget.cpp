@@ -63,17 +63,17 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
     }
     if (type == allVersion) { // All
         QString message;
+        message += i18n("<h1>What's New History</h1></hr>");
         for (int i = 0, total = mAboutRelease.count(); i < total; ++i) {
             const auto &info = mAboutRelease.at(i);
             message += generateVersionHeader(info);
-            message += featuresChangeStr();
             message += info.description();
             message += generateUrl(info);
         }
         mLabelInfo->setHtml(generateStartEndHtml(message));
     } else if (type >= 0 && type < mAboutRelease.count()) {
         const auto &info = mAboutRelease.at(type);
-        const QString message = featuresChangeStr() + generateStartEndHtml(info.description()) + generateUrl(info);
+        const QString message = generateVersionHeader(info) + generateStartEndHtml(info.description()) + generateUrl(info);
         mLabelInfo->setHtml(message);
     }
 }
@@ -90,15 +90,10 @@ QString WhatsNewNgWidget::generateVersionHeader(const KAboutRelease &release) co
 {
     const QDate date = release.date();
     if (date.isValid()) {
-        return i18n("<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
+        return i18n("<h3><i>What's New in Version %1 (Released: %2)</i></h3>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
     } else {
-        return i18n("<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>", release.version());
+        return i18n("<h3><i>What's New in Version %1 (Unreleased)</i></h3>", release.version());
     }
-}
-
-QString WhatsNewNgWidget::featuresChangeStr() const
-{
-    return QStringLiteral("<b>") + i18n("Some of the new features in this release include:") + QStringLiteral("</b>");
 }
 
 QString WhatsNewNgWidget::generateStartEndHtml(const QString &str) const
