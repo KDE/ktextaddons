@@ -344,7 +344,7 @@ msgstr "AtlasCloud OpenAI 兼容 API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "谷歌 Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
 #, kde-format
