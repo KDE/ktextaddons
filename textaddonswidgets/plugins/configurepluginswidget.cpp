@@ -5,6 +5,7 @@
 */
 #include "configurepluginswidget.h"
 #include "configurepluginstreewidgetdelegate.h"
+#include "configurepluginstreewidgetsearchlinewidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KMessageWidget>
@@ -44,7 +45,7 @@ ConfigurePluginsWidget::ConfigurePluginsWidget(QWidget *parent)
     mTreePluginWidget->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     mTreePluginWidget->header()->setStretchLastSection(false);
 
-    mSearchLineEdit = new KTreeWidgetSearchLineWidget(this, mTreePluginWidget);
+    mSearchLineEdit = new ConfigurePluginsTreeWidgetSearchLineWidget(this, mTreePluginWidget);
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     mSearchLineEdit->searchLine()->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::BottomEdge}));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit->searchLine());

@@ -9,11 +9,11 @@
 #include <QTreeWidgetItem>
 #include <QWidget>
 #include <TextAddonsWidgets/PluginUtil>
-class KTreeWidgetSearchLineWidget;
 class QTreeWidget;
 class KMessageWidget;
 namespace TextAddonsWidgets
 {
+class ConfigurePluginsTreeWidgetSearchLineWidget;
 /*!
  * \class TextAddonsWidgets::ConfigurePluginsWidget
  * \inmodule TextAddonsWidgets
@@ -116,7 +116,7 @@ private:
 
     TEXTADDONSWIDGETS_NO_EXPORT void slotConfigureButtonClicked(QAction *act);
 
-    KTreeWidgetSearchLineWidget *mSearchLineEdit = nullptr;
+    ConfigurePluginsTreeWidgetSearchLineWidget *mSearchLineEdit = nullptr;
     KMessageWidget *const mMessageWidget;
     bool mInitializeDone = false;
 };
