@@ -5,6 +5,7 @@
 */
 
 #include "configurepluginstreewidgetsearchlinewidget.h"
+#include "configurepluginstreewidgetsearchline.h"
 
 using namespace TextAddonsWidgets;
 
@@ -17,6 +18,5 @@ ConfigurePluginsTreeWidgetSearchLineWidget::~ConfigurePluginsTreeWidgetSearchLin
 
 KTreeWidgetSearchLine *ConfigurePluginsTreeWidgetSearchLineWidget::createSearchLine(QTreeWidget *treeWidget) const
 {
-    // TODO
-    return KTreeWidgetSearchLineWidget::createSearchLine(treeWidget);
+    return new ConfigurePluginsTreeWidgetSearchLine(const_cast<ConfigurePluginsTreeWidgetSearchLineWidget *>(this), treeWidget);
 }
