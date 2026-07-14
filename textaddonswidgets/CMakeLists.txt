@@ -81,6 +81,8 @@ target_sources(
         plugins/configurepluginstreewidgetdelegate.h
         plugins/configurepluginswidget.cpp
         plugins/configurepluginswidget.h
+        plugins/configurepluginstreewidgetsearchline.h
+        plugins/configurepluginstreewidgetsearchline.cpp
         misc/openfilejob.h
         misc/openfilejob.cpp
         misc/savefileutils.h
