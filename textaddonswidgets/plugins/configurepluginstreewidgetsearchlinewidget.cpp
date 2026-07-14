@@ -20,3 +20,5 @@ KTreeWidgetSearchLine *ConfigurePluginsTreeWidgetSearchLineWidget::createSearchL
 {
     return new ConfigurePluginsTreeWidgetSearchLine(const_cast<ConfigurePluginsTreeWidgetSearchLineWidget *>(this), treeWidget);
 }
+
+#include "moc_configurepluginstreewidgetsearchlinewidget.cpp"
