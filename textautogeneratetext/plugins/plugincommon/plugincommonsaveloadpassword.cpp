@@ -65,3 +65,5 @@ void PluginCommonSaveLoadPassword::removeApiKey(const QString &passwordServiceNa
     });
     deleteJob->start();
 }
+
+#include "moc_plugincommonsaveloadpassword.cpp"
