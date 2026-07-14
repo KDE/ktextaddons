@@ -16,5 +16,7 @@ ConfigurePluginsTreeWidgetSearchLine::~ConfigurePluginsTreeWidgetSearchLine() = 
 bool ConfigurePluginsTreeWidgetSearchLine::itemMatches(const QTreeWidgetItem *item, const QString &pattern) const
 {
     // TODO
-    return false;
+    return KTreeWidgetSearchLine::itemMatches(item, pattern);
 }
+
+#include "moc_configurepluginstreewidgetsearchline.cpp"
