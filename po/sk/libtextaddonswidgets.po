@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 02:37+0000\n"
 "PO-Revision-Date: 2023-12-08 20:09+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -139,17 +139,17 @@ msgstr "Otvoriť priečinok, kam bol uložený súbor"
 msgid "Unable to open the attachment."
 msgstr "Nepodarilo sa otvoriť prílohu."
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Na uplatnenie zmien je potrebný reštart."
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

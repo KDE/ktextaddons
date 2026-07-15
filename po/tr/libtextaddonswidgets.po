@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 02:37+0000\n"
 "PO-Revision-Date: 2026-06-04 13:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -142,17 +142,17 @@ msgstr "Dosyanın Kaydedildiği Klasörü Aç"
 msgid "Unable to open the attachment."
 msgstr "Ek açılamadı."
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Değişikliklerin uygulanması için yeniden başlatma gerekiyor."
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

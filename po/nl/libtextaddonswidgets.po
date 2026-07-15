@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 02:37+0000\n"
 "PO-Revision-Date: 2026-06-05 01:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -142,17 +142,17 @@ msgstr "Map openen waar bestand is opgeslagen"
 msgid "Unable to open the attachment."
 msgstr "Kon de bijlage niet openen."
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Opnieuw opstarten is nodig om de wijzigingen toe te passen."
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 02:37+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -139,17 +139,17 @@ msgstr "打开保存文件的文件夹"
 msgid "Unable to open the attachment."
 msgstr "无法打开附件。"
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "应用更改需要重新启动。"
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

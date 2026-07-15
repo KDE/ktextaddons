@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 02:37+0000\n"
 "PO-Revision-Date: 2026-06-06 14:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -140,17 +140,17 @@ msgstr "파일이 저장된 폴더 열기"
 msgid "Unable to open the attachment."
 msgstr "첨부 파일을 열 수 없습니다."
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "변경 사항을 적용하려면 다시 시작해야 합니다."
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
