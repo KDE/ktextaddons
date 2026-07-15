@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 00:43+0000\n"
 "PO-Revision-Date: 2023-12-08 20:09+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -139,17 +139,17 @@ msgstr "Otvoriť priečinok, kam bol uložený súbor"
 msgid "Unable to open the attachment."
 msgstr "Nepodarilo sa otvoriť prílohu."
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Na uplatnenie zmien je potrebný reštart."
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -293,7 +293,7 @@ msgstr "Všetky verzie"
 msgid "Important changes since last version:"
 msgstr "Dôležité zmeny od poslednej verzie:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:101
+#: whatsnew/whatsnewwidget.cpp:98
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
@@ -308,19 +308,26 @@ msgstr "Niektoré opravy chýb:"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
 
+#: whatsnewng/whatsnewngwidget.cpp:66
+#, kde-format
+msgid "<h1>What's New History</h1></hr>"
+msgstr ""
+
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Poznámky k vydaniu</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
-#, kde-format
-msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h1><i> Verzia %1 (Vydané: %2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
-#, kde-format
-msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i> Verzia %1 (Zatiaľ nevydané)</i></h1><hr/><br>"
 
 #~ msgid "Version %1"

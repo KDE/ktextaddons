@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:42+0000\n"
+"POT-Creation-Date: 2026-07-15 00:43+0000\n"
 "PO-Revision-Date: 2026-06-24 17:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -142,17 +142,17 @@ msgstr "Aperi dossier ubi le file esseva salveguardate"
 msgid "Unable to open the attachment."
 msgstr "Incapace a aperir le attachamento."
 
-#: plugins/configurepluginswidget.cpp:23
+#: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Reinitiar si necessari per applicar le modificationes."
 
-#: plugins/configurepluginswidget.cpp:157
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:159
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -297,7 +297,7 @@ msgstr "Omne Versiones"
 msgid "Important changes since last version:"
 msgstr "Modificationes importante depost ultime version:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:101
+#: whatsnew/whatsnewwidget.cpp:98
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Alcun del nove characteristicas in iste version include:"
@@ -312,19 +312,26 @@ msgstr "Alcun correction de faltas (bug)"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
+#: whatsnewng/whatsnewngwidget.cpp:66
+#, kde-format
+msgid "<h1>What's New History</h1></hr>"
+msgstr ""
+
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Nota de liberation</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
-#, kde-format
-msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h1><i> Version %1 (Liberate: %2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
-#, kde-format
-msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i> Version %1 (Non ancora liberate)</i></h1><hr/><br>"
 
 #~ msgid "Version %1"
