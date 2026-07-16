@@ -6,14 +6,12 @@
 
 #include "savefileutils.h"
 
-#include "textaddonswidgets_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KRecentDirs>
 
 #include <QFileDialog>
 #include <QMimeDatabase>
-#include <QStandardPaths>
 #include <QUrl>
 
 #include <KFileWidget>
