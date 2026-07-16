@@ -704,24 +704,28 @@ install(
     COMPONENT Devel
 )
 
+set(TextAutoGenerateTextCamelCaseIncludeFiles
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextview_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextviewdelegate_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS}
+)
+
 install(
     FILES
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextview_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextviewdelegate_HEADERS}
-        ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS}
+        ${TextAutoGenerateTextCamelCaseIncludeFiles}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -775,18 +779,6 @@ ecm_installed_library_check_include_strings(KF6TextAutoGenerateText
 
 ecm_installed_library_check_include_strings(KF6TextAutoGenerateText
     HEADERS
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextcorelocaldatabase_HEADERS}
+    ${TextAutoGenerateTextCamelCaseIncludeFiles}
     PREFIX TextAutoGenerateText
 )
