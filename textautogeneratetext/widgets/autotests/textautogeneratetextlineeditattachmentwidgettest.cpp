@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextlineeditattachmentwidgettest.h"
-#include "widgets/common/textautogenerateflowlayout.h"
 #include "widgets/common/textautogeneratetextlineeditattachmentwidget.h"
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
@@ -19,7 +19,7 @@ void TextAutoGenerateTextLineEditAttachmentWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentWidget w;
 
-    auto mainLayout = w.findChild<TextAutoGenerateText::TextAutoGenerateFlowLayout *>(u"mainLayout"_s);
+    auto mainLayout = w.findChild<TextAddonsWidgets::TextAddonsWidgetFlowLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(w.contentsMargins(), QMargins{});
 

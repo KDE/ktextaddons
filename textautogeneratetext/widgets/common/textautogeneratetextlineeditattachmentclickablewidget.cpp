@@ -11,6 +11,7 @@
 #include <QFileInfo>
 #include <QHBoxLayout>
 #include <QMimeDatabase>
+#include <QToolButton>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -47,7 +48,6 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(QWidget *parent)
     : QWidget{parent}
-    , mClickableLabel(new TextAutoGenerateTextLineEditAttachmentClickableLabel(this))
     , mFileNameLabel(new QLabel(this))
     , mMimetypeLabel(new QLabel(this))
 {
@@ -61,12 +61,15 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
     mFileNameLabel->setObjectName(u"mFileNameLabel"_s);
     mainLayout->addWidget(mFileNameLabel);
 
-    mClickableLabel->setObjectName(u"mClickableLabel"_s);
-    mainLayout->addWidget(mClickableLabel);
-    connect(mClickableLabel,
-            &TextAutoGenerateTextLineEditAttachmentClickableLabel::clicked,
-            this,
-            &TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove);
+    auto removeBtn = new QToolButton(this);
+    removeBtn->setObjectName(u"removeBtn"_s);
+    removeBtn->setAutoRaise(true);
+    removeBtn->setIcon(QIcon::fromTheme(u"edit-delete-remove"_s));
+    removeBtn->setFixedSize(18, 18);
+    removeBtn->setIconSize(QSize(12, 12));
+    removeBtn->setToolTip(i18nc("@info:tooltip", "Remove"));
+    mainLayout->addWidget(removeBtn);
+    connect(removeBtn, &QToolButton::clicked, this, &TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove);
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::~TextAutoGenerateTextLineEditAttachmentClickableWidget() = default;
@@ -79,21 +82,6 @@ void TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove()
 QString TextAutoGenerateTextLineEditAttachmentClickableWidget::fileName() const
 {
     return mFileName;
-}
-
-TextAutoGenerateTextLineEditAttachmentClickableLabel::TextAutoGenerateTextLineEditAttachmentClickableLabel(QWidget *parent)
-    : QLabel(parent)
-{
-    setToolTip(i18nc("@info:tooltip", "Remove"));
-    setPixmap(QIcon::fromTheme(u"delete"_s).pixmap(24, 24));
-}
-
-TextAutoGenerateTextLineEditAttachmentClickableLabel::~TextAutoGenerateTextLineEditAttachmentClickableLabel() = default;
-
-void TextAutoGenerateTextLineEditAttachmentClickableLabel::mousePressEvent(QMouseEvent *event)
-{
-    Q_EMIT clicked();
-    QLabel::mousePressEvent(event);
 }
 
 #include "moc_textautogeneratetextlineeditattachmentclickablewidget.cpp"

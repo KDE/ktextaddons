@@ -7,6 +7,10 @@
 #include "core/textautogenerateattachmentutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+namespace TextAddonsWidgets
+{
+class TextAddonsWidgetFlowLayout;
+}
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextLineEditAttachmentClickableWidget;
@@ -26,6 +30,6 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveAttachment(const QString &fileName);
     QMap<QString, TextAutoGenerateTextLineEditAttachmentClickableWidget *> mMap;
-    TextAutoGenerateFlowLayout *const mMainLayout;
+    TextAddonsWidgets::TextAddonsWidgetFlowLayout *const mMainLayout;
 };
 }

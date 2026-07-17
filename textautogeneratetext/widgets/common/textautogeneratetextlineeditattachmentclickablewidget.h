@@ -11,20 +11,6 @@
 namespace TextAutoGenerateText
 {
 
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditAttachmentClickableLabel : public QLabel
-{
-    Q_OBJECT
-public:
-    explicit TextAutoGenerateTextLineEditAttachmentClickableLabel(QWidget *parent = nullptr);
-    ~TextAutoGenerateTextLineEditAttachmentClickableLabel() override;
-
-Q_SIGNALS:
-    void clicked();
-
-protected:
-    void mousePressEvent(QMouseEvent *event) override;
-};
-
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditAttachmentClickableWidget : public QWidget
 {
     Q_OBJECT
@@ -42,7 +28,6 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemove();
     QString mFileName;
-    TextAutoGenerateTextLineEditAttachmentClickableLabel *const mClickableLabel;
     QLabel *const mFileNameLabel;
     QLabel *const mMimetypeLabel;
 };

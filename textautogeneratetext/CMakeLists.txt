@@ -306,8 +306,6 @@ target_sources(
         widgets/common/textautogeneratenotinstancefoundwidget.cpp
         widgets/common/textautogeneratemodelsearchlineedit.cpp
         widgets/common/textautogeneratemodelsearchlineedit.h
-        widgets/common/textautogenerateflowlayout.cpp
-        widgets/common/textautogenerateflowlayout.h
         widgets/common/textautogeneratetextlineeditattachmentwidget.h
         widgets/common/textautogeneratetextlineeditattachmentwidget.cpp
         widgets/common/textautogeneratetextlineeditattachmentclickablewidget.h

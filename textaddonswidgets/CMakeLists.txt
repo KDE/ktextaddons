@@ -101,6 +101,8 @@ target_sources(
         completionlineedit/completionlineedit.cpp
         model/sortfilterproxymodelbase.h
         model/sortfilterproxymodelbase.cpp
+        layout/textaddonswidgetflowlayout.h
+        layout/textaddonswidgetflowlayout.cpp
 )
 
 target_sources(
@@ -276,6 +278,14 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     RELATIVE misc
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelcaselayout_HEADERS
+    HEADER_NAMES
+    TextAddonsWidgetFlowLayout
+    REQUIRED_HEADERS TextAddonsWidgets_layout_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE layout
+)
+
 set(TEXTAUTOGENERATE_INCLUDES_FILES
     ${TextAddonsWidgets_HEADERS}
     ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
@@ -287,6 +297,7 @@ set(TEXTAUTOGENERATE_INCLUDES_FILES
     ${TextAddonsWidgets_whatsnewng_HEADERS}
     ${TextAddonsWidgets_completionlineedit_HEADERS}
     ${TextAddonsWidgets_model_HEADERS}
+    ${TextAddonsWidgets_layout_HEADERS}
 )
 
 install(
@@ -308,6 +319,7 @@ install(
         ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
         ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
         ${TextAddonsWidgets_Camelcasemodel_HEADERS}
+        ${TextAddonsWidgets_Camelcaselayout_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
@@ -373,5 +385,8 @@ ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
     ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
     ${TextAddonsWidgets_Camelcasemisc_HEADERS}
     ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
+    ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
+    ${TextAddonsWidgets_Camelcasemodel_HEADERS}
+    ${TextAddonsWidgets_Camelcaselayout_HEADERS}
     PREFIX TextAddonsWidgets
 )

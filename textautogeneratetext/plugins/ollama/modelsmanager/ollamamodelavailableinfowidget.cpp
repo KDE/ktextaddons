@@ -10,12 +10,12 @@
 #include "ollamacommonnetworkurlbutton.h"
 #include "ollamamanager.h"
 #include "ollamamodeldownloadwidget.h"
-#include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QDesktopServices>
 #include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *manager, QWidget *parent)
@@ -57,7 +57,7 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     auto infoLayout = new QVBoxLayout(mInfoWidget);
 
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
-    auto languagesGroupBoxLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
+    auto languagesGroupBoxLayout = new TextAddonsWidgets::TextAddonsWidgetFlowLayout(languagesGroupBox);
     const QStringList languages = index.data(OllamaCommonModelAvailableInfosModel::Languages).toStringList();
     for (const auto &l : languages) {
         const QLocale locale(l);

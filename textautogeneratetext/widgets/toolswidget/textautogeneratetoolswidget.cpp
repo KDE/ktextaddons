@@ -6,10 +6,10 @@
 #include "textautogeneratetoolswidget.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextwidget_debug.h"
-#include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QToolButton>
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -20,7 +20,7 @@ constexpr const char *button_property("identifier");
 TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     : QWidget{parent}
 {
-    auto mainLayout = new TextAutoGenerateFlowLayout(this);
+    auto mainLayout = new TextAddonsWidgets::TextAddonsWidgetFlowLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
