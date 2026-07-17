@@ -64,10 +64,12 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         if (hasAudioSupport) {
             filterFiles << i18n("Audio (*.mp4 *.avi)"); // TODO add more
         }
-        filterFiles << i18n("Text (*.txt *.md)"); // TODO add more
-        const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"), {}, filterFiles.join(u";;"_s));
-        if (!fileName.isEmpty()) {
-            mTextLineEditAttachmentWidget->addAttachement(fileName);
+        filterFiles << i18n("Text %1", u"(*.txt *.md)"_s); // TODO add more
+        const QStringList fileNames = QFileDialog::getOpenFileNames(this, i18nc("@title:window", "Select File"), {}, filterFiles.join(u";;"_s));
+        if (!fileNames.isEmpty()) {
+            for (const auto &f : fileNames) {
+                mTextLineEditAttachmentWidget->addAttachement(f);
+            }
         }
     });
 
