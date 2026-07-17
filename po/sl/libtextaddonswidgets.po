@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 00:43+0000\n"
+"POT-Creation-Date: 2026-07-17 00:42+0000\n"
 "PO-Revision-Date: 2026-07-15 06:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -70,19 +70,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: misc/savefileutils.cpp:65
+#: misc/savefileutils.cpp:63
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Izvorna datoteka ne obstaja več"
 
-#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
-#: misc/savefileutils.cpp:76
+#: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
+#: misc/savefileutils.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Napaka pri shranjevanju datoteke"
 
-#: misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:69
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Obstoječe datoteke ni mogoče prepisati"

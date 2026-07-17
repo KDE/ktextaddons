@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 00:43+0000\n"
+"POT-Creation-Date: 2026-07-17 00:42+0000\n"
 "PO-Revision-Date: 2026-06-18 19:37+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -71,19 +71,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Сохранение файла"
 
-#: misc/savefileutils.cpp:65
+#: misc/savefileutils.cpp:63
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Исходный файл больше не существует"
 
-#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
-#: misc/savefileutils.cpp:76
+#: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
+#: misc/savefileutils.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Ошибка сохранения файла"
 
-#: misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:69
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Не удалось перезаписать существующий файл"
