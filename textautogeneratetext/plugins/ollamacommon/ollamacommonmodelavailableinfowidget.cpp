@@ -8,11 +8,11 @@
 #include "autogeneratetext_ollamacommon_debug.h"
 #include "ollamacommonmodelavailableinfo.h"
 #include "ollamacommonnetworkurlbutton.h"
-#include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 using namespace Qt::Literals::StringLiterals;
 
 OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidget *parent)
@@ -57,7 +57,7 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelAvailableInfo(const Oll
 
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
     infoLayout->addWidget(languagesGroupBox);
-    auto vboxLanguagesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
+    auto vboxLanguagesLayout = new TextAddonsWidgets::TextAddonsWidgetFlowLayout(languagesGroupBox);
     const auto languages = info.languages();
     for (const auto &lang : languages) {
         const QLocale locale(lang);
@@ -80,7 +80,7 @@ void OllamaCommonModelAvailableInfoWidget::setOllamaModelAvailableInfo(const Oll
     if (!categoriesName.isEmpty()) {
         auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
         infoLayout->addWidget(featuresGroupBox);
-        auto vboxfeaturesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(featuresGroupBox);
+        auto vboxfeaturesLayout = new TextAddonsWidgets::TextAddonsWidgetFlowLayout(featuresGroupBox);
         for (const QString &name : std::as_const(categoriesName)) {
             vboxfeaturesLayout->addWidget(new QLabel(name, mInfoWidget));
         }

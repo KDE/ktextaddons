@@ -4,12 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "textautogenerateflowlayout.h"
-#include "textautogeneratetextwidget_debug.h"
+#include "textaddonswidgetflowlayout.h"
+#include "textaddonswidgets_debug.h"
 
 #include <QStyle>
 #include <QWidget>
-using namespace TextAutoGenerateText;
+using namespace TextAddonsWidgets;
 static int smartSpacing(QObject *parent, QStyle::PixelMetric pm)
 {
     if (!parent) {
@@ -22,17 +22,17 @@ static int smartSpacing(QObject *parent, QStyle::PixelMetric pm)
     }
 }
 
-TextAutoGenerateFlowLayout::TextAutoGenerateFlowLayout(QWidget *parent)
+TextAddonsWidgetFlowLayout::TextAddonsWidgetFlowLayout(QWidget *parent)
     : QLayout(parent)
 {
 }
 
-TextAutoGenerateFlowLayout::~TextAutoGenerateFlowLayout()
+TextAddonsWidgetFlowLayout::~TextAddonsWidgetFlowLayout()
 {
     clear();
 }
 
-int TextAutoGenerateFlowLayout::horizontalSpacing() const
+int TextAddonsWidgetFlowLayout::horizontalSpacing() const
 {
     if (mHorizontalSpacing >= 0) {
         return mHorizontalSpacing;
@@ -41,7 +41,7 @@ int TextAutoGenerateFlowLayout::horizontalSpacing() const
     }
 }
 
-void TextAutoGenerateFlowLayout::setHorizontalSpacing(int horizontalSpacing)
+void TextAddonsWidgetFlowLayout::setHorizontalSpacing(int horizontalSpacing)
 {
     if (mHorizontalSpacing != horizontalSpacing) {
         mHorizontalSpacing = horizontalSpacing;
@@ -49,7 +49,7 @@ void TextAutoGenerateFlowLayout::setHorizontalSpacing(int horizontalSpacing)
     }
 }
 
-int TextAutoGenerateFlowLayout::verticalSpacing() const
+int TextAddonsWidgetFlowLayout::verticalSpacing() const
 {
     if (mVerticalSpacing >= 0) {
         return mVerticalSpacing;
@@ -58,7 +58,7 @@ int TextAutoGenerateFlowLayout::verticalSpacing() const
     }
 }
 
-void TextAutoGenerateFlowLayout::setVerticalSpacing(int verticalSpacing)
+void TextAddonsWidgetFlowLayout::setVerticalSpacing(int verticalSpacing)
 {
     if (mVerticalSpacing != verticalSpacing) {
         mVerticalSpacing = verticalSpacing;
@@ -66,12 +66,12 @@ void TextAutoGenerateFlowLayout::setVerticalSpacing(int verticalSpacing)
     }
 }
 
-QSize TextAutoGenerateFlowLayout::sizeHint() const
+QSize TextAddonsWidgetFlowLayout::sizeHint() const
 {
     return minimumSize();
 }
 
-QSize TextAutoGenerateFlowLayout::minimumSize() const
+QSize TextAddonsWidgetFlowLayout::minimumSize() const
 {
     const QMargins margins = contentsMargins();
     QSize size;
@@ -84,20 +84,20 @@ QSize TextAutoGenerateFlowLayout::minimumSize() const
     return size;
 }
 
-void TextAutoGenerateFlowLayout::addItem(QLayoutItem *item)
+void TextAddonsWidgetFlowLayout::addItem(QLayoutItem *item)
 {
     if (!item) {
         return;
     }
     if (mItems.contains(item)) {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Item already added to layout";
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "Item already added to layout";
         return;
     }
     mItems.append(item);
     invalidate();
 }
 
-QLayoutItem *TextAutoGenerateFlowLayout::itemAt(int index) const
+QLayoutItem *TextAddonsWidgetFlowLayout::itemAt(int index) const
 {
     if (index >= 0 && index < mItems.count()) {
         return mItems[index];
@@ -106,7 +106,7 @@ QLayoutItem *TextAutoGenerateFlowLayout::itemAt(int index) const
     return nullptr;
 }
 
-QLayoutItem *TextAutoGenerateFlowLayout::takeAt(int index)
+QLayoutItem *TextAddonsWidgetFlowLayout::takeAt(int index)
 {
     if (index >= 0 && index < mItems.count()) {
         auto *it = mItems.takeAt(index);
@@ -117,40 +117,40 @@ QLayoutItem *TextAutoGenerateFlowLayout::takeAt(int index)
     return nullptr;
 }
 
-int TextAutoGenerateFlowLayout::count() const
+int TextAddonsWidgetFlowLayout::count() const
 {
     return mItems.count();
 }
 
-Qt::Orientations TextAutoGenerateFlowLayout::expandingDirections() const
+Qt::Orientations TextAddonsWidgetFlowLayout::expandingDirections() const
 {
     return {};
 }
 
-bool TextAutoGenerateFlowLayout::hasHeightForWidth() const
+bool TextAddonsWidgetFlowLayout::hasHeightForWidth() const
 {
     return true;
 }
 
-int TextAutoGenerateFlowLayout::heightForWidth(int width) const
+int TextAddonsWidgetFlowLayout::heightForWidth(int width) const
 {
     return doFlow(QRect(0, 0, width, 0), false);
 }
 
-void TextAutoGenerateFlowLayout::setGeometry(const QRect &rect)
+void TextAddonsWidgetFlowLayout::setGeometry(const QRect &rect)
 {
     QLayout::setGeometry(rect);
     doFlow(rect, true);
 }
 
-void TextAutoGenerateFlowLayout::clear()
+void TextAddonsWidgetFlowLayout::clear()
 {
     while (QLayoutItem *item = takeAt(0)) {
         delete item;
     }
 }
 
-void TextAutoGenerateFlowLayout::clearAndDeleteWidgets()
+void TextAddonsWidgetFlowLayout::clearAndDeleteWidgets()
 {
     while (QLayoutItem *item = takeAt(0)) {
         item->widget()->deleteLater();
@@ -158,7 +158,7 @@ void TextAutoGenerateFlowLayout::clearAndDeleteWidgets()
     }
 }
 
-int TextAutoGenerateFlowLayout::doFlow(QRect rect, bool effective) const
+int TextAddonsWidgetFlowLayout::doFlow(QRect rect, bool effective) const
 {
     const QMargins margins = contentsMargins();
     const QRect effectiveRect = rect.adjusted(margins.left(), margins.top(), -margins.right(), -margins.bottom());
@@ -204,4 +204,4 @@ int TextAutoGenerateFlowLayout::doFlow(QRect rect, bool effective) const
     return y + highest - rect.y() + margins.bottom();
 }
 
-#include "moc_textautogenerateflowlayout.cpp"
+#include "moc_textaddonswidgetflowlayout.cpp"

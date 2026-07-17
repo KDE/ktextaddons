@@ -4,29 +4,29 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textaddonswidgets_export.h"
 #include <QLayout>
 #include <QList>
-namespace TextAutoGenerateText
+namespace TextAddonsWidgets
 {
 /*!
- * \class TextAutoGenerateText::TextAutoGenerateFlowLayout
- * \brief The TextAutoGenerateFlowLayout class
+ * \class TextAddonsWidgets::TextAddonsWidgetFlowLayout
+ * \brief The TextAddonsWidgetFlowLayout class
  * \author Laurent Montel <montel@kde.org>
  * \inmodule TextAutoGenerateText
- * \inheaderfile TextAutoGenerateText/TextAutoGenerateFlowLayout
+ * \inheaderfile TextAddonsWidgets/TextAddonsWidgetFlowLayout
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateFlowLayout : public QLayout
+class TEXTADDONSWIDGETS_EXPORT TextAddonsWidgetFlowLayout : public QLayout
 {
     Q_OBJECT
 
 public:
     /*!
      */
-    explicit TextAutoGenerateFlowLayout(QWidget *parent = nullptr);
+    explicit TextAddonsWidgetFlowLayout(QWidget *parent = nullptr);
     /*!
      */
-    ~TextAutoGenerateFlowLayout() override;
+    ~TextAddonsWidgetFlowLayout() override;
 
     /*!
      */
@@ -81,8 +81,8 @@ public:
     void clearAndDeleteWidgets();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void clear();
-    TEXTAUTOGENERATETEXT_NO_EXPORT int doFlow(QRect rect, bool effective) const;
+    TEXTADDONSWIDGETS_NO_EXPORT void clear();
+    TEXTADDONSWIDGETS_NO_EXPORT int doFlow(QRect rect, bool effective) const;
     QList<QLayoutItem *> mItems;
     int mHorizontalSpacing = -1;
     int mVerticalSpacing = -1;

@@ -7,12 +7,12 @@
 #include "textautogeneratetextlineeditattachmentwidget.h"
 
 #include "textautogeneratetextlineeditattachmentclickablewidget.h"
-#include "widgets/common/textautogenerateflowlayout.h"
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextLineEditAttachmentWidget::TextAutoGenerateTextLineEditAttachmentWidget(QWidget *parent)
     : QWidget{parent}
-    , mMainLayout(new TextAutoGenerateFlowLayout(this))
+    , mMainLayout(new TextAddonsWidgets::TextAddonsWidgetFlowLayout(this))
 {
     mMainLayout->setObjectName(u"mainLayout"_s);
     mMainLayout->setContentsMargins({});
