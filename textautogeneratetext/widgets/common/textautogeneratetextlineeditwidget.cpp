@@ -59,12 +59,12 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         const bool hasAudioSupport = mManager->textAutoGeneratePlugin()->hasAudioSupport();
         QStringList filterFiles;
         if (hasVisionSupport || hasOcrSupport) {
-            filterFiles << i18n("Images (*.png *.xpm *.jpg *.gif)"); // TODO add more
+            filterFiles << i18n("Image file %1", u"(*.png *.xpm *.jpg *.gif)"_s); // TODO add more
         }
         if (hasAudioSupport) {
-            filterFiles << i18n("Audio (*.mp4 *.avi)"); // TODO add more
+            filterFiles << i18n("Audio file %1", u"(*.mp4 *.avi)"_s); // TODO add more
         }
-        filterFiles << i18n("Text %1", u"(*.txt *.md)"_s); // TODO add more
+        filterFiles << i18n("Text file %1", u"(*.txt *.md)"_s); // TODO add more
         const QStringList fileNames = QFileDialog::getOpenFileNames(this, i18nc("@title:window", "Select File"), {}, filterFiles.join(u";;"_s));
         if (!fileNames.isEmpty()) {
             for (const auto &f : fileNames) {
