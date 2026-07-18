@@ -184,7 +184,7 @@ QList<QByteArray> TextAutoGenerateTextLineEditWidget::activatedTools() const
 
 void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()
 {
-    const bool hasVisionSupport = true; // mManager->textAutoGeneratePlugin()->hasVisionSupport();
+    const bool hasVisionSupport = mManager->textAutoGeneratePlugin()->hasVisionSupport();
     const bool hasToolsSupport = mManager->textAutoGeneratePlugin()->hasToolsSupport();
     mConfigureTools->setEnabled(hasToolsSupport);
     if (!hasToolsSupport) {
