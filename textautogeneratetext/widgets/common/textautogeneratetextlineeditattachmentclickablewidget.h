@@ -29,6 +29,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemove();
     QString mFileName;
     QLabel *const mFileNameLabel;
-    QLabel *const mMimetypeLabel;
+    QLabel *const mIconLabel;
+    QLabel *const mSizeLabel;
 };
 }

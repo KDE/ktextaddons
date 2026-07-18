@@ -6,6 +6,7 @@
 
 #include "textautogeneratetextlineeditattachmentclickablewidget.h"
 
+#include <KFormat>
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <QFileInfo>
@@ -27,7 +28,7 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
     const QString mimeTypeIconName = mimeType.iconName();
 
     const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
-    mMimetypeLabel->setPixmap(QPixmap(mimeTypeIconPath));
+    mIconLabel->setPixmap(QPixmap(mimeTypeIconPath));
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &fileName, QWidget *parent)
@@ -42,24 +43,34 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
     const QMimeType mimeType = db.mimeTypeForFile(info);
     const QString mimeTypeIconName = mimeType.iconName();
 
-    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
-    mMimetypeLabel->setPixmap(QPixmap(mimeTypeIconPath));
+    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::MainToolbar);
+    mIconLabel->setPixmap(QPixmap(mimeTypeIconPath));
+    mSizeLabel->setText(KFormat().formatByteSize(info.size()));
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(QWidget *parent)
     : QWidget{parent}
     , mFileNameLabel(new QLabel(this))
-    , mMimetypeLabel(new QLabel(this))
+    , mIconLabel(new QLabel(this))
+    , mSizeLabel(new QLabel(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mMimetypeLabel->setObjectName(u"mMimetypeLabel"_s);
-    mainLayout->addWidget(mMimetypeLabel);
+    mIconLabel->setObjectName(u"mMimetypeLabel"_s);
+    mainLayout->addWidget(mIconLabel, 0, Qt::AlignTop);
+
+    auto vboxLayout = new QVBoxLayout;
+    vboxLayout->setContentsMargins({});
+    vboxLayout->setSpacing(0);
+    mainLayout->addLayout(vboxLayout);
 
     mFileNameLabel->setObjectName(u"mFileNameLabel"_s);
-    mainLayout->addWidget(mFileNameLabel);
+    vboxLayout->addWidget(mFileNameLabel);
+
+    mSizeLabel->setObjectName(u"sizeLabel"_s);
+    vboxLayout->addWidget(mSizeLabel);
 
     auto removeBtn = new QToolButton(this);
     removeBtn->setObjectName(u"removeBtn"_s);
@@ -68,7 +79,7 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
     removeBtn->setFixedSize(18, 18);
     removeBtn->setIconSize(QSize(12, 12));
     removeBtn->setToolTip(i18nc("@info:tooltip", "Remove"));
-    mainLayout->addWidget(removeBtn);
+    mainLayout->addWidget(removeBtn, 0, Qt::AlignTop);
     connect(removeBtn, &QToolButton::clicked, this, &TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove);
 }
 
