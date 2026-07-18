@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 02:41+0000\n"
+"POT-Creation-Date: 2026-07-18 02:41+0000\n"
 "PO-Revision-Date: 2026-06-21 09:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -3028,7 +3028,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Saisissez un message"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:70
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"

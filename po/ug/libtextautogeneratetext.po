@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-03 02:41+0000\n"
+"POT-Creation-Date: 2026-07-18 02:41+0000\n"
 "PO-Revision-Date: 2026-05-31 19:48-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -2534,7 +2534,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:70
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"
