@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-06 00:43+0000\n"
+"POT-Creation-Date: 2026-07-18 00:42+0000\n"
 "PO-Revision-Date: 2026-07-08 12:24+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2984,7 +2984,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Skriv in ett meddelande"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:70
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"
@@ -3009,8 +3009,8 @@ msgstr "Ljud (*.mp4 *.avi)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
-msgid "Text (*.txt *.md)"
-msgstr "Text (*.txt *.md)"
+msgid "Text %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -3018,13 +3018,13 @@ msgctxt "@title:window"
 msgid "Select File"
 msgstr "Välj fil"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:80
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Skicka"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:124
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3524,6 +3524,9 @@ msgstr "Inget arkiv hittades."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Inga meddelanden hittades."
+
+#~ msgid "Text (*.txt *.md)"
+#~ msgstr "Text (*.txt *.md)"
 
 #, fuzzy
 #~| msgctxt "@action"
