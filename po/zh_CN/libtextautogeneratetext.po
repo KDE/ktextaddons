@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:42+0000\n"
+"POT-Creation-Date: 2026-07-19 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2804,7 +2804,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "输入信息"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:70
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2819,17 +2819,17 @@ msgstr "附加文件"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
-msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr "图像 (*.png *.xpm *.jpg *.gif)"
+msgid "Image file %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
-msgid "Audio (*.mp4 *.avi)"
-msgstr "音频 (*.mp4 *.avi)"
+msgid "Audio file %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
-msgid "Text %1"
+msgid "Text file %1"
 msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
@@ -3344,6 +3344,12 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
+
+#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
+#~ msgstr "图像 (*.png *.xpm *.jpg *.gif)"
+
+#~ msgid "Audio (*.mp4 *.avi)"
+#~ msgstr "音频 (*.mp4 *.avi)"
 
 #~ msgid "Text (*.txt *.md)"
 #~ msgstr "文本 (*.txt *.md)"

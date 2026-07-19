@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:42+0000\n"
-"PO-Revision-Date: 2026-07-06 06:33+0200\n"
+"POT-Creation-Date: 2026-07-19 00:42+0000\n"
+"PO-Revision-Date: 2026-07-18 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2977,7 +2977,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "შეიყვანეთ შეტყობინება"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:70
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2992,18 +2992,19 @@ msgstr "ფაილის მიმაგრება"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
-msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr "გამოსახულებები (*.png *.xpm *.jpg *.gif)"
+msgid "Image file %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
-msgid "Audio (*.mp4 *.avi)"
-msgstr "აუდიო (*.mp4 *.avi)"
+msgid "Audio file %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, kde-format
-msgid "Text %1"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Text %1"
+msgid "Text file %1"
+msgstr "ტექტი %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -3517,6 +3518,12 @@ msgstr "არქივი ვერ მოიძებნა."
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
+#~ msgstr "გამოსახულებები (*.png *.xpm *.jpg *.gif)"
+
+#~ msgid "Audio (*.mp4 *.avi)"
+#~ msgstr "აუდიო (*.mp4 *.avi)"
 
 #~ msgid "Text (*.txt *.md)"
 #~ msgstr "ტექსტი (*.txt *.md)"

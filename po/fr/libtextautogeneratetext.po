@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:42+0000\n"
+"POT-Creation-Date: 2026-07-19 00:42+0000\n"
 "PO-Revision-Date: 2026-07-07 09:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -3033,7 +3033,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Saisissez un message"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:70
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"
@@ -3048,17 +3048,17 @@ msgstr "Joindre un fichier"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
-msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr "Images (*.png *.xpm *.jpg *.gif)"
+msgid "Image file %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
-msgid "Audio (*.mp4 *.avi)"
-msgstr "Audio (*.mp4 *.avi)"
+msgid "Audio file %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
-msgid "Text %1"
+msgid "Text file %1"
 msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
@@ -3573,6 +3573,12 @@ msgstr "Aucune archive trouvée."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Aucun message trouvé."
+
+#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
+#~ msgstr "Images (*.png *.xpm *.jpg *.gif)"
+
+#~ msgid "Audio (*.mp4 *.avi)"
+#~ msgstr "Audio (*.mp4 *.avi)"
 
 #~ msgid "Text (*.txt *.md)"
 #~ msgstr "Text (*.txt *.md)"
