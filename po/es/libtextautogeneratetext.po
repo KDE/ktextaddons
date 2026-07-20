@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-19 00:42+0000\n"
-"PO-Revision-Date: 2026-07-19 00:04+0100\n"
+"PO-Revision-Date: 2026-07-19 12:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3032,18 +3032,17 @@ msgstr "Adjuntar archivo"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "Archivo de imagen %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "Archivo de sonido %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Text %1"
+#, kde-format
 msgid "Text file %1"
-msgstr "Texto %1"
+msgstr "Archivo de texto %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -3557,9 +3556,3 @@ msgstr "No se ha encontrado ningún archivo."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
-
-#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
-#~ msgstr "Imágenes (*.png *.xpm *.jpg *.gif)"
-
-#~ msgid "Audio (*.mp4 *.avi)"
-#~ msgstr "Sonido (*.mp4 *.avi)"

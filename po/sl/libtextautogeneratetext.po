@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-19 00:42+0000\n"
-"PO-Revision-Date: 2026-07-18 06:32+0200\n"
+"PO-Revision-Date: 2026-07-19 07:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2990,18 +2990,17 @@ msgstr "Priloži datoteko"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "Slikovna datoteka %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "Zvokovna datoteka %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Text %1"
+#, kde-format
 msgid "Text file %1"
-msgstr "Besedilo %1"
+msgstr "Besedilna datoteka %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
