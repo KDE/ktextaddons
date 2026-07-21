@@ -28,9 +28,6 @@ public:
     [[nodiscard]] int seed() const;
     void setSeed(int newSeed);
 
-    [[nodiscard]] double temperature() const;
-    void setTemperature(double newTemperature);
-
     [[nodiscard]] int keepAliveMinutes() const;
     void setKeepAliveMinutes(int newKeepAliveMinutes);
 
@@ -46,7 +43,6 @@ public:
     [[nodiscard]] qint64 contextWindowSize() const;
     void setContextWindowSize(qint64 newContextWindowSize);
 
-    [[nodiscard]] double defaultTemperature() const;
     [[nodiscard]] int defaultSeed() const;
     [[nodiscard]] int defaultKeepAliveMinutes() const;
     [[nodiscard]] qint64 defaultContextWindowSize() const;

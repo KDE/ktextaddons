@@ -23,16 +23,6 @@ void OllamaCommonSettings::setSeed(int newSeed)
     mSeed = newSeed;
 }
 
-double OllamaCommonSettings::temperature() const
-{
-    return mTemperature;
-}
-
-void OllamaCommonSettings::setTemperature(double newTemperature)
-{
-    mTemperature = newTemperature;
-}
-
 int OllamaCommonSettings::keepAliveMinutes() const
 {
     return mKeepAliveMinutes;
@@ -41,11 +31,6 @@ int OllamaCommonSettings::keepAliveMinutes() const
 void OllamaCommonSettings::setKeepAliveMinutes(int newKeepAliveMinutes)
 {
     mKeepAliveMinutes = newKeepAliveMinutes;
-}
-
-double OllamaCommonSettings::defaultTemperature() const
-{
-    return 0.8;
 }
 
 int OllamaCommonSettings::defaultSeed() const
@@ -76,10 +61,6 @@ OllamaCommonSettings::KeepAliveType OllamaCommonSettings::defaultKeepAliveType()
 void OllamaCommonSettings::load(const KConfigGroup &config)
 {
     PluginCommonSettings::load(config);
-
-    if (config.hasKey(u"Temperature"_s)) {
-        setTemperature(config.readEntry(u"Temperature"_s, defaultTemperature()));
-    }
     setSeed(config.readEntry(u"Seed"_s, defaultSeed()));
     setKeepAliveMinutes(config.readEntry(u"KeepAliveMinutes"_s, defaultKeepAliveMinutes()));
     setContextWindowSize(config.readEntry(u"ContextWindowSize"_s, defaultContextWindowSize()));
@@ -94,7 +75,6 @@ void OllamaCommonSettings::save(KConfigGroup &config)
 {
     PluginCommonSettings::save(config);
     config.writeEntry(u"Seed"_s, seed());
-    config.writeEntry(u"Temperature"_s, temperature());
     config.writeEntry(u"KeepAliveMinutes"_s, keepAliveMinutes());
     config.writeEntry(u"ContextWindowSize"_s, contextWindowSize());
     config.writeEntry(u"KeepAliveType"_s, OllamaCommonSettings::convertKeepAliveTypeToString(mKeepAliveType));

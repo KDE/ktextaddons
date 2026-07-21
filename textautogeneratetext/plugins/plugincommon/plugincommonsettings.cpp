@@ -5,22 +5,31 @@
 */
 
 #include "plugincommonsettings.h"
+#include "autogeneratetext_plugincommon_debug.h"
 #include <KConfigGroup>
 using namespace Qt::Literals::StringLiterals;
 
 PluginCommonSettings::PluginCommonSettings() = default;
 PluginCommonSettings::~PluginCommonSettings() = default;
 
+double PluginCommonSettings::defaultTemperature() const
+{
+    return 0.8;
+}
 void PluginCommonSettings::load(const KConfigGroup &config)
 {
     setDisplayName(config.readEntry(u"Name"_s));
     setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    if (config.hasKey(u"Temperature"_s)) {
+        setTemperature(config.readEntry(u"Temperature"_s, defaultTemperature()));
+    }
 }
 
 void PluginCommonSettings::save(KConfigGroup &config)
 {
     config.writeEntry(u"Name"_s, displayName());
     config.writeEntry(u"CurrentModel"_s, currentModel());
+    config.writeEntry(u"Temperature"_s, temperature());
 }
 
 QString PluginCommonSettings::displayName() const
@@ -93,6 +102,16 @@ bool PluginCommonSettings::thoughtProcessing() const
 void PluginCommonSettings::setThoughtProcessing(bool newThoughtProcessing)
 {
     mThoughtProcessing = newThoughtProcessing;
+}
+
+double PluginCommonSettings::temperature() const
+{
+    return mTemperature;
+}
+
+void PluginCommonSettings::setTemperature(double newTemperature)
+{
+    mTemperature = newTemperature;
 }
 
 #include "moc_plugincommonsettings.cpp"

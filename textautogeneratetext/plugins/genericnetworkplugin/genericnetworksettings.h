@@ -17,9 +17,6 @@ public:
     [[nodiscard]] int maxTokens() const;
     void setMaxTokens(int newMaxTokens);
 
-    [[nodiscard]] double temperature() const;
-    void setTemperature(double newTemperature);
-
     [[nodiscard]] int seed() const;
     void setSeed(int newSeed);
 
@@ -29,5 +26,4 @@ public:
 private:
     int mMaxTokens = 2048;
     int mSeed = 0;
-    double mTemperature = 0.8;
 };

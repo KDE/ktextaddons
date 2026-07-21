@@ -42,9 +42,14 @@ public:
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
 
+    [[nodiscard]] double temperature() const;
+    void setTemperature(double newTemperature);
+    [[nodiscard]] double defaultTemperature() const;
+
 protected:
     PluginCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
     QString mDisplayName;
     QString mCurrentModel;
     bool mThoughtProcessing = false;
+    double mTemperature = 0.8;
 };
