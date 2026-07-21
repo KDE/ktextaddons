@@ -67,6 +67,7 @@ PluginCommonSettings::ShareNameType PluginCommonSettings::convertShareNameTypeFr
     } else if (str == "FullName"_L1) {
         return PluginCommonSettings::ShareNameType::FullName;
     }
+    qCWarning(AUTOGENERATETEXT_PLUGINCOMMON_LOG) << "Invalid ShareNameType: " << str;
     return PluginCommonSettings::ShareNameType::DoNotShare;
 }
 
