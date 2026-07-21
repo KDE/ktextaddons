@@ -25,7 +25,7 @@ public:
 
     [[nodiscard]] PluginCommonSettings::ShareNameType shareNameType() const;
     void setShareNameType(const PluginCommonSettings::ShareNameType &newShareNameType);
-    [[nodiscard]] ShareNameType defaultShareNameType() const;
+    [[nodiscard]] static ShareNameType defaultShareNameType();
 
     [[nodiscard]] static PluginCommonSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
     [[nodiscard]] static QString convertShareNameTypeToString(PluginCommonSettings::ShareNameType type);
@@ -42,9 +42,14 @@ public:
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
 
+    [[nodiscard]] double temperature() const;
+    void setTemperature(double newTemperature);
+    [[nodiscard]] double defaultTemperature() const;
+
 protected:
     PluginCommonSettings::ShareNameType mShareNameType = ShareNameType::DoNotShare;
     QString mDisplayName;
     QString mCurrentModel;
     bool mThoughtProcessing = false;
+    double mTemperature = 0.8;
 };
