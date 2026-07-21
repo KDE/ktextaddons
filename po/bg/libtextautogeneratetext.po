@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-19 00:42+0000\n"
-"PO-Revision-Date: 2026-06-20 10:27+0200\n"
+"PO-Revision-Date: 2026-07-20 20:22+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -345,7 +345,7 @@ msgstr "AtlasCloud API, съвместим с OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
 #, kde-format
@@ -2996,17 +2996,17 @@ msgstr "Прикачване на файл"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "Файл с изображение %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "Файл с аудио %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "Текстов файл %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
