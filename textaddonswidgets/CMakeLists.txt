@@ -307,19 +307,22 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
 )
+set(TextAddonsWidgets_List_CamelCase_HEADERS
+    ${TextAddonsWidgets_CamelCase_HEADERS}
+    ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
+    ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
+    ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
+    ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
+    ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
+    ${TextAddonsWidgets_Camelcasemisc_HEADERS}
+    ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
+    ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
+    ${TextAddonsWidgets_Camelcasemodel_HEADERS}
+    ${TextAddonsWidgets_Camelcaselayout_HEADERS}
+)
 install(
     FILES
-        ${TextAddonsWidgets_CamelCase_HEADERS}
-        ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
-        ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
-        ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
-        ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
-        ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
-        ${TextAddonsWidgets_Camelcasemisc_HEADERS}
-        ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
-        ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
-        ${TextAddonsWidgets_Camelcasemodel_HEADERS}
-        ${TextAddonsWidgets_Camelcaselayout_HEADERS}
+        ${TextAddonsWidgets_List_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
@@ -377,16 +380,6 @@ ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
 
 ecm_installed_library_check_include_strings(KF6TextAddonsWidgets
     HEADERS
-    ${TextAddonsWidgets_CamelCase_HEADERS}
-    ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
-    ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
-    ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
-    ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
-    ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
-    ${TextAddonsWidgets_Camelcasemisc_HEADERS}
-    ${TextAddonsWidgets_Camelcasewhatsnewng_HEADERS}
-    ${TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS}
-    ${TextAddonsWidgets_Camelcasemodel_HEADERS}
-    ${TextAddonsWidgets_Camelcaselayout_HEADERS}
+    ${TextAddonsWidgets_List_CamelCase_HEADERS}
     PREFIX TextAddonsWidgets
 )

@@ -158,23 +158,29 @@ ecm_generate_headers(TextAutoCorrectionCore_Camelcasesettings_HEADERS
     PREFIX TextAutoCorrectionCore
     RELATIVE settings
 )
-
-install(
-    FILES
-        ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
-        ${TextAutoCorrectionCore_Camelcaseautocorrectionimport_HEADERS}
-        ${TextAutoCorrectionCore_Camelcasesettings_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/TextAutoCorrectionCore
-    COMPONENT Devel
+set(TextAutoCorrectionCore_camelcaseautocorrection_list_HEADERS
+    ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
+    ${TextAutoCorrectionCore_Camelcaseautocorrectionimport_HEADERS}
+    ${TextAutoCorrectionCore_Camelcasesettings_HEADERS}
 )
 
 install(
     FILES
+        ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/TextAutoCorrectionCore
+    COMPONENT Devel
+)
+
+set(TextAutoCorrectionCore_autocorrection_list_HEADERS
+    ${TextAutoCorrectionCore_autocorrection_HEADERS}
+    ${TextAutoCorrectionCore_settings_HEADERS}
+    ${TextAutoCorrectionCore_autocorrectionimport_HEADERS}
+)
+install(
+    FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectioncore_export.h
         ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionsetting_base.h
-        ${TextAutoCorrectionCore_autocorrection_HEADERS}
-        ${TextAutoCorrectionCore_settings_HEADERS}
-        ${TextAutoCorrectionCore_autocorrectionimport_HEADERS}
+        ${TextAutoCorrectionCore_autocorrection_list_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/textautocorrectioncore
     COMPONENT Devel
 )
@@ -201,16 +207,12 @@ ecm_add_installed_library_check(KF6TextAutoCorrectionCore
 
 ecm_installed_library_check_include_strings(KF6TextAutoCorrectionCore
     HEADERS
-    ${TextAutoCorrectionCore_autocorrection_HEADERS}
-    ${TextAutoCorrectionCore_settings_HEADERS}
-    ${TextAutoCorrectionCore_autocorrectionimport_HEADERS}
+    ${TextAutoCorrectionCore_autocorrection_list_HEADERS}
     PREFIX textautocorrectioncore
 )
 
 ecm_installed_library_check_include_strings(KF6TextAutoCorrectionCore
     HEADERS
     ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
-    ${TextAutoCorrectionCore_Camelcaseautocorrectionimport_HEADERS}
-    ${TextAutoCorrectionCore_Camelcasesettings_HEADERS}
     PREFIX TextAutoCorrectionCore
 )
