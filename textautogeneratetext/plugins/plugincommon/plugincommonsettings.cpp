@@ -48,7 +48,7 @@ PluginCommonSettings::ShareNameType PluginCommonSettings::shareNameType() const
     return mShareNameType;
 }
 
-PluginCommonSettings::ShareNameType PluginCommonSettings::defaultShareNameType() const
+PluginCommonSettings::ShareNameType PluginCommonSettings::defaultShareNameType()
 {
     return PluginCommonSettings::ShareNameType::DoNotShare;
 }

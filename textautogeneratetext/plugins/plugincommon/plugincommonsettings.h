@@ -25,7 +25,7 @@ public:
 
     [[nodiscard]] PluginCommonSettings::ShareNameType shareNameType() const;
     void setShareNameType(const PluginCommonSettings::ShareNameType &newShareNameType);
-    [[nodiscard]] ShareNameType defaultShareNameType() const;
+    [[nodiscard]] static ShareNameType defaultShareNameType();
 
     [[nodiscard]] static PluginCommonSettings::ShareNameType convertShareNameTypeFromString(const QString &str);
     [[nodiscard]] static QString convertShareNameTypeToString(PluginCommonSettings::ShareNameType type);
