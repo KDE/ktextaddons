@@ -34,7 +34,7 @@ private:
     struct ModelInfoLayout {
         // Text
         QRect textRect;
-        qreal baseLine; // used to draw sender/timestamp
+        qreal baseLine = 0.0; // used to draw sender/timestamp
 
         QList<CategoryLayout> categoriesLayout;
         QRect categoryRect;
