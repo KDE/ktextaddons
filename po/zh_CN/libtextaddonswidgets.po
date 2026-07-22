@@ -309,7 +309,7 @@ msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 #: whatsnewng/whatsnewngwidget.cpp:66
 #, kde-format
 msgid "<h1>What's New History</h1></hr>"
-msgstr ""
+msgstr "<h1>版本更新历史</h1></hr>"
 
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
@@ -319,9 +319,9 @@ msgstr "<b><i><a href=\"%1\">版本说明</a></i></b>"
 #: whatsnewng/whatsnewngwidget.cpp:93
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr ""
+msgstr "<h3><i>版本 %1 的更新 (发布于：%2)</i></h3>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr ""
+msgstr "<h3><i>版本 %1 的更新 (未发布)</i></h3>"
