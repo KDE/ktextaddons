@@ -166,7 +166,7 @@ set(TextAutoCorrectionCore_camelcaseautocorrection_list_HEADERS
 
 install(
     FILES
-        ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
+        ${TextAutoCorrectionCore_camelcaseautocorrection_list_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/TextAutoCorrectionCore
     COMPONENT Devel
 )
@@ -213,6 +213,6 @@ ecm_installed_library_check_include_strings(KF6TextAutoCorrectionCore
 
 ecm_installed_library_check_include_strings(KF6TextAutoCorrectionCore
     HEADERS
-    ${TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS}
+    ${TextAutoCorrectionCore_camelcaseautocorrection_list_HEADERS}
     PREFIX TextAutoCorrectionCore
 )
