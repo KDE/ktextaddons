@@ -28,3 +28,4 @@ Options:
   allow-failing-tests-on: ['Windows', 'FreeBSD']
   tests-run-in-parallel: True
   enable-lsan: True
+  run-installed-library-check: true
