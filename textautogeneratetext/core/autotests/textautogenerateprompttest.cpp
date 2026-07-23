@@ -18,6 +18,8 @@ void TextAutoGeneratePromptTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGeneratePrompt prompt;
     QVERIFY(prompt.name().isEmpty());
     QVERIFY(prompt.text().isEmpty());
+    QVERIFY(prompt.description().isEmpty());
+    QVERIFY(prompt.enabled());
 }
 
 #include "moc_textautogenerateprompttest.cpp"

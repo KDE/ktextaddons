@@ -43,9 +43,25 @@ public:
      */
     void setText(const QString &newText);
 
+    /*!
+     */
+    [[nodiscard]] QString description() const;
+    /*!
+     */
+    void setDescription(const QString &newDescription);
+
+    /*!
+     */
+    [[nodiscard]] bool enabled() const;
+    /*!
+     */
+    void setEnabled(bool newEnabled);
+
 private:
     QString mName;
     QString mText;
+    QString mDescription;
+    bool mEnabled = true;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGeneratePrompt, Q_RELOCATABLE_TYPE);

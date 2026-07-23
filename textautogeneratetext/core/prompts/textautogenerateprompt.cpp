@@ -30,9 +30,31 @@ void TextAutoGeneratePrompt::setText(const QString &newText)
     mText = newText;
 }
 
+QString TextAutoGeneratePrompt::description() const
+{
+    return mDescription;
+}
+
+void TextAutoGeneratePrompt::setDescription(const QString &newDescription)
+{
+    mDescription = newDescription;
+}
+
+bool TextAutoGeneratePrompt::enabled() const
+{
+    return mEnabled;
+}
+
+void TextAutoGeneratePrompt::setEnabled(bool newEnabled)
+{
+    mEnabled = newEnabled;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "text" << t.text();
+    d.space() << "description:" << t.description();
+    d.space() << "enabled:" << t.enabled();
     return d;
 }
