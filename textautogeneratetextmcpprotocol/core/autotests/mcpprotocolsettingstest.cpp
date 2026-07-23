@@ -21,6 +21,7 @@ void McpProtocolSettingsTest::shouldHaveDefaultValues()
     QVERIFY(w.arguments().isEmpty());
     QVERIFY(w.environments().isEmpty());
     QVERIFY(w.serverUrl().isEmpty());
+    QVERIFY(w.headers().isEmpty());
 }
 
 #include "moc_mcpprotocolsettingstest.cpp"

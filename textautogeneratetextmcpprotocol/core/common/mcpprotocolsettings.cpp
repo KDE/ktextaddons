@@ -65,6 +65,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
         }
     }
     d << "]";
+    // TODO add headers
     d.space() << "arguments" << t.arguments();
     d.space() << "command" << t.command();
     return d;
@@ -76,6 +77,7 @@ void McpProtocolSettings::load(const KConfigGroup &config)
     mCommand = config.readEntry("Command", QString());
     mArguments = config.readEntry("Arguments", QString());
     // TODO mEnvironments
+    // TODO headers
 }
 
 void McpProtocolSettings::save(KConfigGroup &config) const
@@ -90,9 +92,20 @@ void McpProtocolSettings::save(KConfigGroup &config) const
         config.writeEntry(u"ServerUrl"_s, mServerUrl);
     }
     // TODO mEnvironments
+    // TODO headers
 }
 
 bool McpProtocolSettings::isValid() const
 {
     return (mServerUrl.isValid()) || (!mCommand.isEmpty());
+}
+
+QMap<QString, QString> McpProtocolSettings::headers() const
+{
+    return mHeaders;
+}
+
+void McpProtocolSettings::setHeaders(const QMap<QString, QString> &newHeaders)
+{
+    mHeaders = newHeaders;
 }

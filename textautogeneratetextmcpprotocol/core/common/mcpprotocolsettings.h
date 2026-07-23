@@ -38,11 +38,15 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] QMap<QString, QString> headers() const;
+    void setHeaders(const QMap<QString, QString> &newHeaders);
+
 private:
     QUrl mServerUrl;
     QString mCommand;
     QString mArguments;
     QMap<QString, QString> mEnvironments;
+    QMap<QString, QString> mHeaders;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings, Q_RELOCATABLE_TYPE);
