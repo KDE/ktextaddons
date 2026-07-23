@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-06-24 00:41+0000\n"
+"PO-Revision-Date: 2026-07-22 14:58+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,16 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
 msgid "Impossible to store language info."
-msgstr ""
+msgstr "Neįmanoma saugoti informacijos apie kalbą."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
@@ -35,133 +36,135 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Klaida: Modulio sistemos pastebėjo įtartiną duomenų srautą iš jūsų "
+"kompiuterio tinklo. Pabandykite dar kartą pateikti užklausą šiek tiek vėliau."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "Neįmanoma gauti prieigos prie URL: %1"
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Nepavyksta atverti failą atsisiuntimui."
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "Kontrolinė suma yra neteisinga."
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Klaida rašant į diską: %1"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Vosk įskiepio nuostatos"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "Ieškoti…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:85
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Atsiųsti"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:106
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Ištrinti"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr ""
+msgstr "Atnaujinti sąrašą"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Atnaujinti kalbų sąrašą iš tinklo"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Klaida: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"
-msgstr ""
+msgstr "Vosk"
 
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
 #, kde-format
 msgid "Impossible to extract language"
-msgstr ""
+msgstr "Neįmanoma išpakuoti kalbos"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
 #, kde-format
 msgid "Language"
-msgstr ""
+msgstr "Kalba"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Įdiegta"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
 #, kde-format
 msgid "Installed Version"
-msgstr ""
+msgstr "Įdiegta versija"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
 #, kde-format
 msgid "Available Version"
-msgstr ""
+msgstr "Prieinama versija"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "Dydis"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
 #, kde-format
 msgid "Whisper"
-msgstr ""
+msgstr "Whisper"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr ""
+msgstr "Modulis:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr ""
+msgstr "Konfigūruoti rašymą balsu"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
-msgstr ""
+msgstr "Rašymas balsu…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
-msgstr ""
+msgstr "Įvedimas:"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:73
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Numatytasis"

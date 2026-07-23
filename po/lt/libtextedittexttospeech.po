@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-19 00:41+0000\n"
-"PO-Revision-Date: 2023-02-24 00:57+0000\n"
+"PO-Revision-Date: 2026-07-22 14:41+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,100 +17,101 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: texttospeechactions.cpp:30
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr ""
+msgstr "Stabdyti"
 
 #: texttospeechactions.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr ""
+msgstr "Stabdyti"
 
 #: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
-msgstr ""
+msgstr "Pristabdyti"
 
 #: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
-msgstr ""
+msgstr "Atkurti"
 
 #: texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr ""
+msgstr "Konfigūruoti garsinį teksto atkūrimą"
 
 #: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr ""
+msgstr "Labas rytas, tai yra nuostatų testavimo bandymas."
 
 #: texttospeechconfigwidget.cpp:36
 #, kde-format
 msgid "Test"
-msgstr ""
+msgstr "Išbandyti"
 
 #: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Volume:"
-msgstr ""
+msgstr "Garsumas:"
 
 #: texttospeechconfigwidget.cpp:48
 #, kde-format
 msgid "Rate:"
-msgstr ""
+msgstr "Sparta:"
 
 #: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Pitch:"
-msgstr ""
+msgstr "Tonas:"
 
 #: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "Modulis:"
 
 #: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Language:"
-msgstr ""
+msgstr "Kalba:"
 
 #: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
-msgstr ""
+msgstr "Balsas:"
 
 #: texttospeechwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: texttospeechwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
-msgstr ""
+msgstr "Garsumas:"
 
 #: texttospeechwidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr ""
+msgstr "Konfigūruoti…"
 
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "Modulis susidūrė su problema."
 
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
-msgstr ""
+msgstr "Garsinis teksto atkūrimas"
