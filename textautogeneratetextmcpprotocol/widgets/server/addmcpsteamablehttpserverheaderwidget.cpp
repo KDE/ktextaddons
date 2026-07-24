@@ -29,18 +29,37 @@ AddMcpSteamableHttpServerHeaderWidget::AddMcpSteamableHttpServerHeaderWidget(QWi
     auto addHeaderButton = new QPushButton(i18nc("@action:button", "Add"), this);
     addHeaderButton->setObjectName(u"addHeaderButton"_s);
     buttonsLayout->addWidget(addHeaderButton);
+    connect(addHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotAddHeader);
 
     auto modifyHeaderButton = new QPushButton(i18nc("@action:button", "Modify"), this);
     modifyHeaderButton->setObjectName(u"modifyHeaderButton"_s);
     buttonsLayout->addWidget(modifyHeaderButton);
+    connect(modifyHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader);
 
     auto removeHeaderButton = new QPushButton(i18nc("@action:button", "Remove"), this);
     removeHeaderButton->setObjectName(u"removeHeaderButton"_s);
     buttonsLayout->addWidget(removeHeaderButton);
     buttonsLayout->addStretch(1);
+    connect(removeHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader);
+    mainLayout->addLayout(buttonsLayout);
 }
 
 AddMcpSteamableHttpServerHeaderWidget::~AddMcpSteamableHttpServerHeaderWidget() = default;
+
+void AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader()
+{
+    // TODO
+}
+
+void AddMcpSteamableHttpServerHeaderWidget::slotAddHeader()
+{
+    // TODO
+}
+
+void AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader()
+{
+    // TODO
+}
 
 QStringList AddMcpSteamableHttpServerHeaderWidget::headers() const
 {

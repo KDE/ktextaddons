@@ -23,6 +23,9 @@ public:
     void setHeaders(const QStringList &h);
 
 private:
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotModifyHeader();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddHeader();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveHeader();
     QListWidget *const mListBox;
 };
 }
