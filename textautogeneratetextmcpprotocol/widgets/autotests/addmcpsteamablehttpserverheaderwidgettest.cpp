@@ -5,8 +5,8 @@
 */
 #include "addmcpsteamablehttpserverheaderwidgettest.h"
 #include "server/addmcpsteamablehttpserverheaderwidget.h"
+#include <QHBoxLayout>
 #include <QTest>
-#include <QVBoxLayout>
 QTEST_MAIN(AddMcpSteamableHttpServerHeaderWidgetTest)
 using namespace Qt::Literals::StringLiterals;
 AddMcpSteamableHttpServerHeaderWidgetTest::AddMcpSteamableHttpServerHeaderWidgetTest(QObject *parent)
@@ -18,7 +18,7 @@ void AddMcpSteamableHttpServerHeaderWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateTextMcpProtocolWidgets::AddMcpSteamableHttpServerHeaderWidget w;
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     // TODO
