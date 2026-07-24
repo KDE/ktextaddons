@@ -330,8 +330,7 @@ msgstr "<h3><i>Que es de novo in  Version %1 (Liberate: %2)</i></h3>"
 #: whatsnewng/whatsnewngwidget.cpp:95
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr ""
-"<h1><i>Que es de novo in Version %1 (Non ancora liberate)</i></h1><hr/><br>"
+msgstr "<h3><i>Que es de novo in Version %1 (Non ancora liberate)</i></h3>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"
