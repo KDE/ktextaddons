@@ -9,6 +9,7 @@
 class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
+class AddMcpSteamableHttpServerHeaderWidget;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerWidget : public AddMcpServerBaseWidget
 {
     Q_OBJECT
@@ -52,5 +53,6 @@ public:
 
 private:
     QLineEdit *const mServerUrlLineEdit;
+    AddMcpSteamableHttpServerHeaderWidget *const mHttpServerHeaderWidget;
 };
 }

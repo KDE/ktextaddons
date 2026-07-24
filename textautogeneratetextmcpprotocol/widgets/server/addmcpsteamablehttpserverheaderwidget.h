@@ -18,5 +18,8 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerHea
 public:
     explicit AddMcpSteamableHttpServerHeaderWidget(QWidget *parent = nullptr);
     ~AddMcpSteamableHttpServerHeaderWidget() override;
+
+    [[nodiscard]] QStringList headers() const;
+    void setHeaders(const QStringList &h);
 };
 }

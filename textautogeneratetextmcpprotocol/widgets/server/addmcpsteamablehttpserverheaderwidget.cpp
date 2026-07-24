@@ -18,4 +18,16 @@ AddMcpSteamableHttpServerHeaderWidget::AddMcpSteamableHttpServerHeaderWidget(QWi
 }
 
 AddMcpSteamableHttpServerHeaderWidget::~AddMcpSteamableHttpServerHeaderWidget() = default;
+
+QStringList AddMcpSteamableHttpServerHeaderWidget::headers() const
+{
+    // TODO
+    return {};
+}
+
+void AddMcpSteamableHttpServerHeaderWidget::setHeaders(const QStringList &h)
+{
+    // TODO
+}
+
 #include "moc_addmcpsteamablehttpserverheaderwidget.cpp"
