@@ -19,7 +19,6 @@ McpServerSse::~McpServerSse() = default;
 
 void McpServerSse::connection()
 {
-    // TODO use get
     QUrl url;
     QNetworkRequest request(url);
     request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
