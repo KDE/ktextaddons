@@ -9,7 +9,7 @@
 #include <QWidget>
 
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
-
+class QListWidget;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerHeaderWidget : public QWidget
@@ -21,5 +21,8 @@ public:
 
     [[nodiscard]] QStringList headers() const;
     void setHeaders(const QStringList &h);
+
+private:
+    QListWidget *const mListBox;
 };
 }
