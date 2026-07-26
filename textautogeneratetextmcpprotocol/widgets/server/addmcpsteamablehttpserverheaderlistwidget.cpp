@@ -21,7 +21,10 @@ void AddMcpSteamableHttpServerHeaderListWidget::setHeaders(const QStringList &ls
 
 QStringList AddMcpSteamableHttpServerHeaderListWidget::headers() const
 {
-    // TODO
-    return {};
+    QStringList lst;
+    for (int i = 0; i < count(); ++i) {
+        lst.append(item(i)->text());
+    }
+    return lst;
 }
 #include "moc_addmcpsteamablehttpserverheaderlistwidget.cpp"
