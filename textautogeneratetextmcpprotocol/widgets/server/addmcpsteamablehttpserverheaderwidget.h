@@ -12,6 +12,7 @@
 class QListWidget;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
+class AddMcpSteamableHttpServerHeaderListWidget;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerHeaderWidget : public QWidget
 {
     Q_OBJECT
@@ -26,6 +27,6 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotModifyHeader();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddHeader();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveHeader();
-    QListWidget *const mListBox;
+    AddMcpSteamableHttpServerHeaderListWidget *const mListBox;
 };
 }

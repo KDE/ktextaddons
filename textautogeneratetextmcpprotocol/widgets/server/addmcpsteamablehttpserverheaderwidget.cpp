@@ -5,6 +5,7 @@
 */
 
 #include "addmcpsteamablehttpserverheaderwidget.h"
+#include "addmcpsteamablehttpserverheaderlistwidget.h"
 #include <KLocalizedString>
 #include <QListWidget>
 #include <QPushButton>
@@ -13,7 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpSteamableHttpServerHeaderWidget::AddMcpSteamableHttpServerHeaderWidget(QWidget *parent)
     : QWidget{parent}
-    , mListBox(new QListWidget(this))
+    , mListBox(new AddMcpSteamableHttpServerHeaderListWidget(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
