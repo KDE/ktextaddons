@@ -13,3 +13,15 @@ AddMcpSteamableHttpServerHeaderListWidget::AddMcpSteamableHttpServerHeaderListWi
 }
 
 AddMcpSteamableHttpServerHeaderListWidget::~AddMcpSteamableHttpServerHeaderListWidget() = default;
+
+void AddMcpSteamableHttpServerHeaderListWidget::setHeaders(const QStringList &lst)
+{
+    addItems(lst);
+}
+
+QStringList AddMcpSteamableHttpServerHeaderListWidget::headers() const
+{
+    // TODO
+    return {};
+}
+#include "moc_addmcpsteamablehttpserverheaderlistwidget.cpp"

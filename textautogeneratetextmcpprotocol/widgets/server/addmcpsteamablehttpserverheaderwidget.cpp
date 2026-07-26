@@ -64,13 +64,12 @@ void AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader()
 
 QStringList AddMcpSteamableHttpServerHeaderWidget::headers() const
 {
-    // TODO
-    return {};
+    return mListBox->headers();
 }
 
 void AddMcpSteamableHttpServerHeaderWidget::setHeaders(const QStringList &h)
 {
-    mListBox->addItems(h);
+    mListBox->setHeaders(h);
 }
 
 #include "moc_addmcpsteamablehttpserverheaderwidget.cpp"
