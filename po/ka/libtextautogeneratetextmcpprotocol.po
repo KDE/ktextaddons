@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-25 00:42+0000\n"
-"PO-Revision-Date: 2026-05-12 06:25+0200\n"
+"PO-Revision-Date: 2026-07-25 04:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -71,26 +71,24 @@ msgstr "არგუმენტები:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "დამატება"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr ""
+msgstr "ჩასწორება"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "სერვერის წაშლა"
+msgstr "წაშლა"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr ""
+msgstr "თავსართები:"
 
 #: widgets/server/mcpserverlistview.cpp:52
 #, kde-format

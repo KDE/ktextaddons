@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-25 00:42+0000\n"
-"PO-Revision-Date: 2026-05-12 21:35+0100\n"
+"PO-Revision-Date: 2026-07-25 23:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: core/server/mcpserver.cpp:103
 #, kde-format
@@ -72,26 +72,24 @@ msgstr "Argumentos:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "Añadir"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr ""
+msgstr "Modificar"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Eliminar servidor"
+msgstr "Eliminar"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr ""
+msgstr "Cabeceras:"
 
 #: widgets/server/mcpserverlistview.cpp:52
 #, kde-format

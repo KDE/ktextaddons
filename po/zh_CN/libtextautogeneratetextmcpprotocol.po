@@ -80,12 +80,10 @@ msgid "Modify"
 msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "移除服务器"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
