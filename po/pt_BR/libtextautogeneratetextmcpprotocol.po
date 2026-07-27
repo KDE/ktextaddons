@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-25 00:42+0000\n"
+"POT-Creation-Date: 2026-07-27 00:43+0000\n"
 "PO-Revision-Date: 2026-07-25 08:10-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -66,19 +66,19 @@ msgstr "Comando:"
 msgid "Arguments:"
 msgstr "Argumentos:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:29
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Adicionar"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Modificar"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

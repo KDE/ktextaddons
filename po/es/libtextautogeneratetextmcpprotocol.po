@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-25 00:42+0000\n"
+"POT-Creation-Date: 2026-07-27 00:43+0000\n"
 "PO-Revision-Date: 2026-07-25 23:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -68,19 +68,19 @@ msgstr "Orden:"
 msgid "Arguments:"
 msgstr "Argumentos:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:29
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Añadir"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Modificar"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"

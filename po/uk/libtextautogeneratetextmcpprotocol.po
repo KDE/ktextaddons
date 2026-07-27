@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-25 00:42+0000\n"
+"POT-Creation-Date: 2026-07-27 00:43+0000\n"
 "PO-Revision-Date: 2026-07-25 12:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -67,19 +67,19 @@ msgstr "Команда:"
 msgid "Arguments:"
 msgstr "Аргументи:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:29
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Додати"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:35
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Змінити"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
