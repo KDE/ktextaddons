@@ -7,6 +7,7 @@
 #include "addmcpsteamablehttpserverheaderwidget.h"
 #include "addmcpsteamablehttpserverheaderlistwidget.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QListWidget>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -49,7 +50,14 @@ AddMcpSteamableHttpServerHeaderWidget::~AddMcpSteamableHttpServerHeaderWidget() 
 
 void AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader()
 {
-    // TODO
+    if (KMessageBox::ButtonCode::PrimaryAction
+        == KMessageBox::questionTwoActions(this,
+                                           i18n("Are you sure that you want to delete this header?"),
+                                           i18nc("@title:window", "Remove Header"),
+                                           KStandardGuiItem::remove(),
+                                           KStandardGuiItem::cancel())) {
+        // TODO
+    }
 }
 
 void AddMcpSteamableHttpServerHeaderWidget::slotAddHeader()
