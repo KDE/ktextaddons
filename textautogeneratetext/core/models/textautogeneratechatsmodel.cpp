@@ -182,6 +182,7 @@ QString TextAutoGenerateChatsModel::sectionName(TextAutoGenerateChat::SectionHis
     case TextAutoGenerateChat::SectionHistory::NSections:
         break;
     }
+    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Invalid section type";
     return u"ERROR"_s;
 }
 
