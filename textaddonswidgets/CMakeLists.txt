@@ -11,6 +11,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTADDONSWIDGETS
     SOVERSION 1
 )
 
+configure_file(config-textaddonswidgets.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textaddonswidgets.h)
+
 add_library(KF6TextAddonsWidgets)
 add_library(KF6::TextAddonsWidgets ALIAS KF6TextAddonsWidgets)
 
@@ -24,12 +26,6 @@ if(ENABLE_PCH)
             <QStringList>
             <QString>
     )
-endif()
-
-if(ENABLE_WARN_OUTDATED)
-    target_compile_definitions(KF6TextAddonsWidgets PRIVATE ENABLE_WARN_OUTDATED=1)
-else()
-    target_compile_definitions(KF6TextAddonsWidgets PRIVATE ENABLE_WARN_OUTDATED=0)
 endif()
 
 target_sources(

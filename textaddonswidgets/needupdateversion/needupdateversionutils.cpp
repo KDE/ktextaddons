@@ -6,7 +6,7 @@
 */
 
 #include "needupdateversionutils.h"
-
+#include "config-textaddonswidgets.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 
@@ -62,7 +62,7 @@ void TextAddonsWidgets::NeedUpdateVersionUtils::disableCheckVersion()
 
 bool TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()
 {
-#if ENABLE_WARN_OUTDATED == 1
+#if ENABLE_WARN_OUTDATED
     const KSharedConfig::Ptr config = KSharedConfig::openConfig();
     const KConfigGroup group(config, QStringLiteral("Check Version"));
     return group.readEntry("checkerVersionEnabled", true);
