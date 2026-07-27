@@ -22,15 +22,16 @@ headers in the deployed layout.
       [EXTRA_LINK_LIBRARIES <library> [...]])
 
 The function creates a target "<library_target>_installed_library_check" which
-can be invoked after the installation to check if the installed library artifacts
-are self-contained when used from a consumer.
+can be invoked after the installation to check if the installed library
+artifacts are self-contained when used from a consumer.
 All these targets are added as dependency to a target
 "all_installed_library_check", which is created at the level where this module
 is first included.
-The check generates a CMake project with a dummy library which searches the given
-package for any specified version, links to the exported target as imported from
-the package's Cmake config file and as its sources for each given include strings
-adds a C++ source file with just the content "#include <include_string>".
+The check generates a CMake project with a dummy library which searches the
+given package for any specified version, links to the exported target as
+imported from the package's Cmake config file and as its sources for each given
+include strings adds a C++ source file with just the content
+"#include <include_string>".
 This project then is configured with cmake and all these sources are built.
 
 ``PACKAGE_NAME`` specifies the name of the CMake package to check for.
@@ -67,9 +68,9 @@ in the public interface is not complete, but can not be changed.
 ``HEADERS`` specifies the header files whose base names will be available as
 public include strings.
 
-``PREFIX`` specifies a prefix, which consumers need to append next to the base names
-of the headers passed to ``HEADERS``. The argument <prefix> is specified without a
-trailing "/". Default is none.
+``PREFIX`` specifies a prefix, which consumers need to append next to the base
+names of the headers passed to ``HEADERS``. The argument <prefix> is specified
+without a trailing "/". Default is none.
 
 ::
 
@@ -82,8 +83,9 @@ trailing "/". Default is none.
 ``NAME`` specifies the name of a variable expected to be set after finding the
 package.
 
-``VALUE`` specifies the value expected to be set for the variable. For variables
-of the type "BOOL" the usual evaluation of CMake to a boolean value is compared.
+``VALUE`` specifies the value expected to be set for the variable. For
+variables of the type "BOOL" the usual evaluation of CMake to a boolean value
+is compared.
 
 ``TYPE`` specifies the type of the variable. The options are "BOOL", "STRING".
 Default is "STRING"
@@ -129,9 +131,10 @@ the macro is only tested for being defined. Only numeric values are supported.
       [SILENT])
 
 
-``PREFIX`` specifies the prefix of the version macros to test. The expected macro
-names are: "<prefix>_VERSION" (hexadecimal number), "<prefix>_VERSION_MAJOR",
-"<prefix>_VERSION_MINOR" and "<prefix>_VERSION_PATCH".
+``PREFIX`` specifies the prefix of the version macros to test. The expected
+macro names are: "<prefix>_VERSION" (hexadecimal number),
+"<prefix>_VERSION_MAJOR", "<prefix>_VERSION_MINOR" and
+"<prefix>_VERSION_PATCH".
 
 ``VERSION`` specifies the version string "<major>.<minor>.<patch>".
 
@@ -168,7 +171,7 @@ Example usage:
       PREFIX ML
   )
 
-Since 6.29
+Since 6.30
 #]=======================================================================]
 
 cmake_policy(VERSION 3.29)
