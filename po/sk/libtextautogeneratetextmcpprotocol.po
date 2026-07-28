@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-27 00:43+0000\n"
+"POT-Creation-Date: 2026-07-28 00:43+0000\n"
 "PO-Revision-Date: 2026-05-04 12:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -63,24 +63,37 @@ msgstr "Príkaz:"
 msgid "Arguments:"
 msgstr "Argumenty:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:30
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr ""
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:35
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:36
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr ""
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:40
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove Server"
 msgctxt "@action:button"
 msgid "Remove"
+msgstr "Odstrániť server"
+
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:55
+#, kde-format
+msgid "Are you sure that you want to delete this header?"
+msgstr ""
+
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Remove Header"
 msgstr "Odstrániť server"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30

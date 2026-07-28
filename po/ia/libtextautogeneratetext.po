@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-19 00:42+0000\n"
-"PO-Revision-Date: 2026-06-24 17:39+0200\n"
+"PO-Revision-Date: 2026-07-27 11:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2552,17 +2552,17 @@ msgstr "Attacha File"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "File image %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "File audio %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "File de texto %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2580,7 +2580,7 @@ msgstr "Invia"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr ""
+msgstr "Permitte selectionar instrumentos"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
@@ -2596,7 +2596,7 @@ msgstr "Error durante que il aperiva file "
 #: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Info de Metadatos"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
@@ -2635,7 +2635,7 @@ msgstr "Information:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Monstra info de metadatos"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:25
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:26

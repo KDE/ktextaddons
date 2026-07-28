@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-27 00:43+0000\n"
+"POT-Creation-Date: 2026-07-28 00:43+0000\n"
 "PO-Revision-Date: 2026-07-25 04:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -67,23 +67,36 @@ msgstr "ბრძანება:"
 msgid "Arguments:"
 msgstr "არგუმენტები:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:30
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "დამატება"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:35
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:36
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "ჩასწორება"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:40
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "წაშლა"
+
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:55
+#, kde-format
+msgid "Are you sure that you want to delete this header?"
+msgstr ""
+
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Remove Header"
+msgstr "სერვერის წაშლა"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
