@@ -431,6 +431,10 @@ target_sources(
         widgets/promptswidget/textautogenerateskilldialog.h
         widgets/promptswidget/textautogeneratepromptdialog.h
         widgets/promptswidget/textautogeneratepromptdialog.cpp
+        widgets/promptswidget/textautogenerateselectpromptwidget.h
+        widgets/promptswidget/textautogenerateselectpromptwidget.cpp
+        widgets/promptswidget/textautogenerateselectpromptlistwidget.h
+        widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp
 )
 
 if(BUILD_TESTING)
