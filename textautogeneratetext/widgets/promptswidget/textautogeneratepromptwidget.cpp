@@ -16,7 +16,8 @@ using namespace TextAutoGenerateText;
 TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
-    , mText(new QPlainTextEdit(this))
+    , mDescription(new QPlainTextEdit(this))
+    , mPrompt(new QPlainTextEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -24,10 +25,12 @@ TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
 
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
-    mText->setObjectName(u"mText"_s);
+    mDescription->setObjectName(u"mDescription"_s);
+    mPrompt->setObjectName(u"mPrompt"_s);
 
     mainLayout->addRow(i18n("Name:"), mName);
-    mainLayout->addRow(i18n("Description:"), mText);
+    mainLayout->addRow(i18n("Description:"), mDescription);
+    mainLayout->addRow(i18n("Prompt:"), mPrompt);
 }
 
 TextAutoGeneratePromptWidget::~TextAutoGeneratePromptWidget() = default;
@@ -35,13 +38,15 @@ TextAutoGeneratePromptWidget::~TextAutoGeneratePromptWidget() = default;
 void TextAutoGeneratePromptWidget::setPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
     mName->setText(prompt.name());
-    mText->setPlainText(prompt.text());
+    mDescription->setPlainText(prompt.description());
+    mPrompt->setPlainText(prompt.text());
 }
 
 TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::prompt() const
 {
     TextAutoGenerateText::TextAutoGeneratePrompt prompt;
-    prompt.setText(mText->toPlainText());
+    prompt.setDescription(mDescription->toPlainText());
+    prompt.setText(mPrompt->toPlainText());
     prompt.setName(mName->text());
     return prompt;
 }

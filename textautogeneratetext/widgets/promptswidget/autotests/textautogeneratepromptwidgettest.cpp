@@ -28,9 +28,13 @@ void TextAutoGeneratePromptWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mName);
     QVERIFY(mName->text().isEmpty());
 
-    auto mText = w.findChild<QPlainTextEdit *>(u"mText"_s);
-    QVERIFY(mText);
-    QVERIFY(mText->toPlainText().isEmpty());
+    auto mDescription = w.findChild<QPlainTextEdit *>(u"mDescription"_s);
+    QVERIFY(mDescription);
+    QVERIFY(mDescription->toPlainText().isEmpty());
+
+    auto mPrompt = w.findChild<QPlainTextEdit *>(u"mPrompt"_s);
+    QVERIFY(mPrompt);
+    QVERIFY(mPrompt->toPlainText().isEmpty());
 }
 
 #include "moc_textautogeneratepromptwidgettest.cpp"

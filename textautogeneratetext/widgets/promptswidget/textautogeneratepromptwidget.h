@@ -24,6 +24,7 @@ public:
 
 private:
     QLineEdit *const mName;
-    QPlainTextEdit *const mText;
+    QPlainTextEdit *const mDescription;
+    QPlainTextEdit *const mPrompt;
 };
 }
