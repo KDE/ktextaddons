@@ -27,9 +27,17 @@ QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int rol
     if (index.row() < 0 || index.row() >= mPrompt.count()) {
         return {};
     }
-    const auto &instance = mPrompt[index.row()];
+    const auto &prompt = mPrompt[index.row()];
     switch (role) {
     case Qt::DisplayRole:
+    case Name:
+        return prompt.name();
+    case Description:
+        return prompt.description();
+    case PromptText:
+        return prompt.text();
+    case Enabled:
+        return prompt.enabled();
     default:
         break;
     }
