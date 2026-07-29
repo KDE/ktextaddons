@@ -5,11 +5,12 @@
 */
 
 #include "textautogenerateselectpromptlistwidget.h"
-
+#include "textautogenerateselectpromptdelegate.h"
 using namespace TextAutoGenerateText;
 TextAutoGenerateSelectPromptListWidget::TextAutoGenerateSelectPromptListWidget(QWidget *parent)
     : QListWidget(parent)
 {
+    setItemDelegate(new TextAutoGenerateSelectPromptDelegate(this));
 }
 
 TextAutoGenerateSelectPromptListWidget::~TextAutoGenerateSelectPromptListWidget() = default;
