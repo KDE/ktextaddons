@@ -46,6 +46,8 @@ public:
     void setAutocorrectionLanguage(const QString &language);
 
 protected:
+    /*!
+     */
     void keyPressEvent(QKeyEvent *e) override;
 
 private:

@@ -26,16 +26,30 @@ class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionTextEdit : public QTextEdit
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief AutoCorrectionTextEdit
+     * \param parent
+     */
     explicit AutoCorrectionTextEdit(QWidget *parent = nullptr);
+    /*!
+     */
     ~AutoCorrectionTextEdit() override;
 
+    /*!
+     */
     [[nodiscard]] TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
 
+    /*!
+     */
     void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
 
+    /*!
+     */
     void setAutocorrectionLanguage(const QString &language);
 
 protected:
+    /*!
+     */
     void keyPressEvent(QKeyEvent *e) override;
 
 private:
