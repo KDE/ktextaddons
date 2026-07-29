@@ -25,6 +25,7 @@ void TextAutoGenerateHistoryListViewTest::shouldHaveDefaultValues()
     QVERIFY(w.itemsExpandable());
     QCOMPARE(w.horizontalScrollBarPolicy(), Qt::ScrollBarAlwaysOff);
     QVERIFY(w.isHeaderHidden());
+    QVERIFY(!w.expandsOnDoubleClick());
 }
 
 #include "moc_textautogeneratehistorylistviewtest.cpp"
