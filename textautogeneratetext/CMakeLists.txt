@@ -435,6 +435,8 @@ target_sources(
         widgets/promptswidget/textautogenerateselectpromptwidget.cpp
         widgets/promptswidget/textautogenerateselectpromptlistwidget.h
         widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp
+        widgets/promptswidget/textautogenerateselectpromptdelegate.h
+        widgets/promptswidget/textautogenerateselectpromptdelegate.cpp
 )
 
 if(BUILD_TESTING)
