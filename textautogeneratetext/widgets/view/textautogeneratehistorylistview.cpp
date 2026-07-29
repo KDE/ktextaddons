@@ -33,6 +33,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
     setIndentation(0);
     setRootIsDecorated(false);
     setItemsExpandable(true);
+    setExpandsOnDoubleClick(false);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setItemDelegate(mDelegate);
 
