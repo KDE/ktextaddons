@@ -18,7 +18,7 @@ TextAutoGenerateHistoryListViewTest::~TextAutoGenerateHistoryListViewTest() = de
 
 void TextAutoGenerateHistoryListViewTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateHistoryListView w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateHistoryListView w(nullptr);
     QVERIFY(!w.dragEnabled());
     QCOMPARE(w.indentation(), 0);
     QVERIFY(!w.rootIsDecorated());
