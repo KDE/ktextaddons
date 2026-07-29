@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-28 00:43+0000\n"
-"PO-Revision-Date: 2026-07-25 12:46+0300\n"
+"PO-Revision-Date: 2026-07-28 08:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -88,15 +88,13 @@ msgstr "Вилучити"
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:55
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "Ви справді хочете вилучити цей заголовок?"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Вилучити сервер"
+msgstr "Вилучення заголовка"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format

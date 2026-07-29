@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-19 00:42+0000\n"
-"PO-Revision-Date: 2026-07-19 19:07+0300\n"
+"POT-Creation-Date: 2026-07-29 00:44+0000\n"
+"PO-Revision-Date: 2026-07-28 21:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -456,7 +456,7 @@ msgstr "Kurulu Model"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:29
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
@@ -528,6 +528,7 @@ msgid "Tag:"
 msgstr "Künye:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
 #, kde-format
 msgid "Prompt:"
 msgstr "İstem:"
@@ -1402,7 +1403,7 @@ msgid ""
 "BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
 "augmented with the LLaVA architecture."
 msgstr ""
-"BakLLaVA, Mistral 7B temel modelinin LLaVA mimarîsiyle zenginleştirilmesiyle "
+"BakLLaVA, Mistral 7B temel modelinin LLaVA mimârisiyle zenginleştirilmesiyle "
 "oluşan çok kipli bir modeldir."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:108
@@ -2710,7 +2711,7 @@ msgid ""
 "24 billion parameters while keeping inference efficient."
 msgstr ""
 "LFM2, aygıt üzerinde kullanım için tasarlanmış hibrit modeller ailesidir. "
-"LFM2-24B-A2B, ailenin en büyük modelidir ve mimarîyi 24 milyar parametreye "
+"LFM2-24B-A2B, ailenin en büyük modelidir ve mimâriyi 24 milyar parametreye "
 "kadar ölçeklendirirken çıkarım verimliliğini korur."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
@@ -3222,7 +3223,7 @@ msgstr "En çok jeton sayısı:"
 msgid "Plugins Tool:"
 msgstr "Eklenti aracı:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"

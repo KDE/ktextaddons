@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-28 00:43+0000\n"
-"PO-Revision-Date: 2026-07-25 23:46+0100\n"
+"PO-Revision-Date: 2026-07-28 15:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -89,15 +89,13 @@ msgstr "Eliminar"
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:55
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "¿Seguro que quiere borrar esta cabecera?"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Eliminar servidor"
+msgstr "Eliminar cabecera"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
