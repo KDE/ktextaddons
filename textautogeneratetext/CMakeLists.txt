@@ -114,6 +114,7 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
     EXPORT KTEXTADDONS
 )
 
+set(textautogeneratetext_dbs_adaptor_SRCS)
 if(NOT WIN32 AND NOT APPLE)
     qt_add_dbus_adaptor(textautogeneratetext_dbs_adaptor_SRCS core/org.kde.textautogeneratetext.TextAutoGenerateManager.xml core/textautogeneratemanager.h TextAutoGenerateText::TextAutoGenerateManager)
 endif()
