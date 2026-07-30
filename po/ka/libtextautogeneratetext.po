@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 02:41+0000\n"
+"POT-Creation-Date: 2026-07-30 02:39+0000\n"
 "PO-Revision-Date: 2026-06-23 05:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3171,14 +3171,14 @@ msgid "Ask to AI"
 msgstr "ხი-სთვის კითხვა"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:131
+#: widgets/view/textautogeneratehistorylistview.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "შეცვლა…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:176
+#: widgets/view/textautogeneratehistorylistview.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3456,54 +3456,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "ტექსტის ჩასმა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:120
+#: widgets/view/textautogeneratehistorylistview.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "ახალი ჩატი"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:142
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "დუბლირება…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:154
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "რჩეულებიდან წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:154
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "რჩეულად მონიშვნა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:165
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:165
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "დაარქივება"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:180
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "წაშლით ამ კამათს?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:182
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:262
+#: widgets/view/textautogeneratehistorylistview.cpp:263
 #, kde-format
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
