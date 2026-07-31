@@ -16,7 +16,7 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QWindow>
-
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myLMStudioConfigureDialogGroupName[] = "LMStudioConfigureDialog";
@@ -73,10 +73,7 @@ void LMStudioConfigureDialog::slotAccepted()
 void LMStudioConfigureDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myLMStudioConfigureDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myLMStudioConfigureDialogGroupName), 400, 300);
 }
 
 void LMStudioConfigureDialog::writeConfig()

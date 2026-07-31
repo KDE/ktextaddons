@@ -14,6 +14,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myTextAutoGenerateTextInstancesManagerDialogGroupName[] = "TextAutoGenerateTextInstancesManagerDialog";
@@ -48,10 +49,7 @@ TextAutoGenerateTextInstancesManagerDialog::~TextAutoGenerateTextInstancesManage
 void TextAutoGenerateTextInstancesManagerDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName), 400, 300);
 }
 
 void TextAutoGenerateTextInstancesManagerDialog::slotAccept()

@@ -15,6 +15,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myWhatsNewNgDialogNgGroupName[] = "WhatsNewNgDialogNg";
@@ -61,10 +62,7 @@ WhatsNewNgDialog::~WhatsNewNgDialog()
 void WhatsNewNgDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myWhatsNewNgDialogNgGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myWhatsNewNgDialogNgGroupName), 400, 300);
 }
 
 void WhatsNewNgDialog::writeConfig()

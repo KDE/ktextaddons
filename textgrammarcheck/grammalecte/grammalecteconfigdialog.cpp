@@ -14,6 +14,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myConfigGrammalecteConfigDialog[] = "GrammalecteConfigDialog";
@@ -53,10 +54,7 @@ void GrammalecteConfigDialog::writeConfig()
 void GrammalecteConfigDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(500, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGrammalecteConfigDialog));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myConfigGrammalecteConfigDialog), 500, 300);
 }
 
 #include "moc_grammalecteconfigdialog.cpp"

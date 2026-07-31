@@ -21,6 +21,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace
 {
@@ -98,10 +99,7 @@ void TextAutoGenerateShowImageDialog::setImage(const QString &path)
 void TextAutoGenerateShowImageDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName), 800, 600);
 }
 
 void TextAutoGenerateShowImageDialog::writeConfig()

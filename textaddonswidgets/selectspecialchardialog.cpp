@@ -16,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";
@@ -72,10 +73,7 @@ public:
 void SelectSpecialCharDialogPrivate::readConfig()
 {
     q->create(); // ensure a window is created
-    q->windowHandle()->resize(QSize(300, 200));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectSpecialCharDialogConfigGroupName));
-    KWindowConfig::restoreWindowSize(q->windowHandle(), group);
-    q->resize(q->windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(q, QLatin1StringView(mySelectSpecialCharDialogConfigGroupName), 300, 200);
 }
 
 void SelectSpecialCharDialogPrivate::writeConfig()

@@ -12,6 +12,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myTextAutoGenerateShowModelInfoDialogGroupName[] = "TextAutoGenerateShowModelInfoDialog";
@@ -51,10 +52,7 @@ void TextAutoGenerateShowModelInfoDialog::setText(const QString &text)
 void TextAutoGenerateShowModelInfoDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName), 400, 300);
 }
 
 void TextAutoGenerateShowModelInfoDialog::writeConfig()

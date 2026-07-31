@@ -15,6 +15,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myOllamaModelDialogGroupName[] = "OllamaModelAvailableDialog";
@@ -48,10 +49,7 @@ OllamaModelAvailableDialog::~OllamaModelAvailableDialog()
 void OllamaModelAvailableDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaModelDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaModelDialogGroupName), 400, 300);
 }
 
 void OllamaModelAvailableDialog::writeConfig()

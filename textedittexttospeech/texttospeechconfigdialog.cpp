@@ -15,6 +15,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myTextToSpeechConfigDialogConfigGroupName[] = "TextToSpeechConfigDialog";
@@ -53,10 +54,7 @@ void TextToSpeechConfigDialog::slotRestoreDefaults()
 void TextToSpeechConfigDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(300, 200));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName), 300, 200);
     mTextToSpeechConfigWidget->initializeSettings();
 }
 
