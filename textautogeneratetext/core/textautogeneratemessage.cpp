@@ -275,7 +275,6 @@ TextAutoGenerateMessage::Sender TextAutoGenerateMessage::senderFromString(const 
 
 QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg, bool toBinary)
 {
-    QJsonDocument d;
     QJsonObject o;
     o["identifier"_L1] = QString::fromLatin1(msg.mUuid);
     if (!msg.mAnswerUuid.isEmpty()) {
@@ -303,6 +302,7 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
     }
+    QJsonDocument d;
     d.setObject(o);
     return d.toJson(QJsonDocument::Indented);
 }
