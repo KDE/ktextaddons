@@ -128,7 +128,6 @@ void TextAutoGenerateChat::setDateTime(qint64 dt)
 
 QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, bool toBinary)
 {
-    QJsonDocument d;
     QJsonObject o;
     o["title"_L1] = chat.title();
     o["favorite"_L1] = chat.mFavorite;
@@ -143,6 +142,7 @@ QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, boo
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
     }
+    QJsonDocument d;
     d.setObject(o);
     return d.toJson(QJsonDocument::Indented);
 }
