@@ -99,6 +99,8 @@ target_sources(
         model/sortfilterproxymodelbase.cpp
         layout/textaddonswidgetflowlayout.h
         layout/textaddonswidgetflowlayout.cpp
+        misc/loaddialogsizeutils.h
+        misc/loaddialogsizeutils.cpp
 )
 
 target_sources(
@@ -269,6 +271,7 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     OpenFileJob
     SaveFileUtils
     ExecutableUtils
+    LoadDialogSizeUtils
     REQUIRED_HEADERS TextAddonsWidgets_misc_HEADERS
     PREFIX TextAddonsWidgets
     RELATIVE misc
