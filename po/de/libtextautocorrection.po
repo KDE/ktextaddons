@@ -233,7 +233,7 @@ msgid ""
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
 "&Ersten Buchstaben in einem Satz in Großbuchstaben umwandeln\n"
-"(z. B. „mein Haus. in dieser Stadt“ in „mein Haus. In dieser Stadt“)"
+"(z. B. „mein Haus. in dieser Stadt“ in „mein Haus. In dieser Stadt“)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:364
@@ -258,7 +258,7 @@ msgid ""
 msgstr ""
 "Zwei &Großbuchstaben am Wortanfang in einen Groß- und einen Kleinbuchstaben "
 "umwandeln\n"
-"(z. B. PErfekt in Perfekt)"
+"(z. B. PErfekt in Perfekt)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
 #: widgets/ui/autocorrectionwidget.ui:375
