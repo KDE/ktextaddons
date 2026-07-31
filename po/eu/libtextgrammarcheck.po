@@ -1,16 +1,16 @@
 # Translation for libtextgrammarcheck.po to Euskara/Basque (eu).
-# Copyright (C) 2022-2024 This file is copyright:
+# Copyright (C) 2022-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2024, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:41+0000\n"
-"PO-Revision-Date: 2024-08-05 23:41+0200\n"
+"PO-Revision-Date: 2026-07-30 23:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
-msgstr "Egiaztatu beharreko testu oro."
+msgstr "Egiaztatu beharreko edozein testu."
 
 #: common/grammarresulttextedit.cpp:89
 #, kde-format
@@ -43,7 +43,7 @@ msgstr "Egiaztatu berriz"
 #: common/grammarresulttextedit.cpp:114
 #, kde-format
 msgid "Configure…"
-msgstr "Konfiguratu..."
+msgstr "Konfiguratu…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
@@ -70,28 +70,26 @@ msgstr "Orokorra"
 #: grammalecte/grammalecteconfigwidget.cpp:38
 #, kde-format
 msgid "Grammar Settings"
-msgstr "Gramatika ezarpenak"
+msgstr "Gramatika-ezarpenak"
 
 #: grammalecte/grammalecteconfigwidget.cpp:63
 #, kde-format
 msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
-msgstr ""
-"Aukerak lortzea ezinezkoa da. Mesedez, egiaztatu «grammalected» instalatuta "
-"duzula."
+msgstr "Ezin dira aukerak eskuratu. Egiaztatu grammalected instalatuta duzula."
 
 #: grammalecte/grammalecteconfigwidget.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr "Errorea erauzteko aukeretan"
+msgstr "Errorea aukerak erauztean"
 
 #: grammalecte/grammalecteconfigwidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
-msgstr "Botoia sakatu ezarpenak birzamatzeko"
+msgstr "Sakatu botoia ezarpenak birzamatzeko"
 
 #: grammalecte/grammalecteconfigwidget.cpp:121
 #, kde-format
@@ -108,7 +106,7 @@ msgstr "Python-en bide-izena:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr "Gehitu 'grammalecte-cli.py' bide-izen osoa"
+msgstr "Gehitu 'grammalecte-cli.py' fitxategiaren bide-izen osoa"
 
 #: grammalecte/grammalecteconfigwidget.cpp:144
 #, kde-format
@@ -132,17 +130,17 @@ msgstr "Python-en bide-izena falta da."
 #: grammalecte/grammalecteresultwidget.cpp:60
 #, kde-format
 msgid "Grammalecte path not found."
-msgstr "Ez du aurkitu «Grammalecte»ren bide-izena."
+msgstr "Ez da «Grammalecte»ren bide-izena aurkitu."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr "Ez du aurkitu «Grammalecte» programaren fitxategia."
+msgstr "Ez da Grammalecte programaren fitxategia aurkitu."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Ez du aurkitu «Grammalecte» «cli» fitxategia."
+msgstr "Ez da Grammalecte CLI fitxategia aurkitu."
 
 #: grammalecte/grammalecteresultwidget.cpp:75
 #, kde-format
@@ -153,7 +151,7 @@ msgstr "«Grammalecte»ren errorea"
 #: grammalecte/grammalecteurlrequesterwidget.cpp:35
 #, kde-format
 msgid "Select Path"
-msgstr "Aukeratu bide-izena"
+msgstr "Bide-izena hautatu"
 
 #: languagetool/languagetoolcombobox.cpp:32
 #, kde-format
@@ -315,7 +313,7 @@ msgstr "Konfiguratu «LanguageTool»"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
-msgstr "Erabili instantzia lokala"
+msgstr "Instantzia lokala erabili"
 
 #: languagetool/languagetoolconfigwidget.cpp:26
 #, kde-format
@@ -338,19 +336,19 @@ msgstr "Berritu"
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgid "An error was reported: %1"
-msgstr "Errore baten berri eman du: %1"
+msgstr "Errore baten berri eman da: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr "Gramatika aztertzea huts egin du."
+msgstr "Gramatika egiaztatzeak huts egin du."
 
 #: languagetool/languagetoolresultwidget.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
-msgstr "Aztertu"
+msgstr "Egiaztatu"
 
 #: languagetool/languagetoolupdatecombobox.cpp:76
 #, kde-format
