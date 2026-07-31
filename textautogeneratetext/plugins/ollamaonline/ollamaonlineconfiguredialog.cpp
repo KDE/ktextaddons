@@ -17,6 +17,7 @@
 #include <KWindowConfig>
 #include <QPushButton>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myOllamaOnlineConfigureDialogGroupName[] = "OllamaOnlineConfigureDialog";
@@ -85,10 +86,7 @@ void OllamaOnlineConfigureDialog::slotAccepted()
 void OllamaOnlineConfigureDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaOnlineConfigureDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaOnlineConfigureDialogGroupName), 400, 300);
 }
 
 void OllamaOnlineConfigureDialog::writeConfig()

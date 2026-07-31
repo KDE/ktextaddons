@@ -13,6 +13,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 namespace
@@ -46,10 +47,7 @@ TextAutoGenerateToolShowMetaDataDialog::~TextAutoGenerateToolShowMetaDataDialog(
 void TextAutoGenerateToolShowMetaDataDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName), 400, 300);
 }
 
 void TextAutoGenerateToolShowMetaDataDialog::writeConfig()

@@ -67,6 +67,7 @@ target_link_libraries(
         KF6::ConfigGui
         KF6::WidgetsAddons
         KF6::I18n
+        KF6::TextAddonsWidgets
 )
 
 ecm_qt_declare_logging_category(KF6TextEditTextToSpeech HEADER textedittexttospeech_debug.h

@@ -14,6 +14,7 @@
 #include <QPlainTextEdit>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myOllamaLogDialogGroupName[] = "OllamaLogDialog";
@@ -50,10 +51,7 @@ void OllamaLogDialog::setLog(const QByteArray &ba)
 void OllamaLogDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaLogDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaLogDialogGroupName), 400, 300);
 }
 
 void OllamaLogDialog::writeConfig()

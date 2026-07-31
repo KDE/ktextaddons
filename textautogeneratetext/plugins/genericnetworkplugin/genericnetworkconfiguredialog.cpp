@@ -15,6 +15,7 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 const char myGenericNetworkConfigureDialogGroupName[] = "GenericNetworkConfigureDialog";
@@ -63,10 +64,7 @@ void GenericNetworkConfigureDialog::slotAccepted()
 void GenericNetworkConfigureDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myGenericNetworkConfigureDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myGenericNetworkConfigureDialogGroupName), 400, 300);
 }
 
 void GenericNetworkConfigureDialog::writeConfig()

@@ -19,6 +19,7 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 #include <cerrno>
 namespace
@@ -63,10 +64,7 @@ void TranslatorDebugDialog::setDebug(const QString &debugStr)
 void TranslatorDebugDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTranslatorDebugDialogConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTranslatorDebugDialogConfigGroupName), 800, 600);
 }
 
 void TranslatorDebugDialog::writeConfig()

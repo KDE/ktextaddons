@@ -134,6 +134,7 @@ target_link_libraries(
         KF6::ConfigCore
         KF6::ConfigGui
         KF6::ColorScheme
+        KF6::TextAddonsWidgets
 )
 
 target_include_directories(
