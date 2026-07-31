@@ -161,11 +161,11 @@ void TranslatorWidget::writeConfig()
 
 void TranslatorWidget::readConfig()
 {
-    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1StringView(myTranslatorWidgetConfigGroupName));
+    const KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1StringView(myTranslatorWidgetConfigGroupName));
     const QList<int> size = {100, 100};
     d->splitter->setSizes(myGroupUi.readEntry("mainSplitter", size));
 
-    KConfigGroup myGroup(KSharedConfig::openConfig(), u"General"_s);
+    const KConfigGroup myGroup(KSharedConfig::openConfig(), u"General"_s);
     const QString from = myGroup.readEntry(u"FromLanguage"_s);
     if (from.isEmpty()) {
         return;
