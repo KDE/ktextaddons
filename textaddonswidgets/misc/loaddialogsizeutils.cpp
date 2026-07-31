@@ -17,9 +17,12 @@ void TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(QWidget *w, co
         qCWarning(TEXTADDONSWIDGETS_LOG) << "widget is not define or windowHandle not defined. It's a bug";
         return;
     }
-    const qreal scaleFactor = w->windowHandle()->screen()->devicePixelRatio();
-    w->windowHandle()->resize(QSize(width * scaleFactor, height * scaleFactor));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), key);
-    KWindowConfig::restoreWindowSize(w->windowHandle(), group);
-    w->resize(w->windowHandle()->size()); // workaround for QTBUG-40584
+    if (KSharedConfig::openStateConfig()->hasGroup(key)) {
+        const KConfigGroup group(KSharedConfig::openStateConfig(), key);
+        KWindowConfig::restoreWindowSize(w->windowHandle(), group);
+        w->resize(w->windowHandle()->size()); // workaround for QTBUG-40584
+    } else {
+        const qreal scaleFactor = w->windowHandle()->screen()->devicePixelRatio();
+        w->windowHandle()->resize(QSize(width * scaleFactor, height * scaleFactor));
+    }
 }
