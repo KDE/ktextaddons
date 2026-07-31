@@ -1,16 +1,16 @@
 # Translation for libtextspeechtotext.po to Euskara/Basque (eu).
-# Copyright (C) 2023-2024 This file is copyright:
+# Copyright (C) 2023-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2024, 2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2023, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2024-07-11 17:41+0200\n"
+"PO-Revision-Date: 2026-07-30 18:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -37,19 +37,19 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"Errorea: Motor sistemek zure ordenagailu saretik trafiko susmagarria "
-"antzeman dute. Mesedez saiatu zure eskaerak beranduago berriz egiten."
+"Errorea: motor-sistemek zure ordenagailu-saretik datorren trafiko "
+"susmagarria hauteman dute. Saiatu eskaera geroago berriro egiten."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr "Ezinezkoa URL atzitzea: %1"
+msgstr "Ezin da URLa atzitu: %1"
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr "Ezin du fitxategia zama-jaisteko ireki."
+msgstr "Ezin da fitxategia ireki zama-jaisteko."
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
 #, kde-format
@@ -71,7 +71,7 @@ msgstr "Vosk pluginaren ezarpenak"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Bilatu..."
+msgstr "Bilatu…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:85
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "Eguneratu zerrenda"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr "Eguneratu hizkuntzen zerrendan saretik"
+msgstr "Hizkuntzen zerrenda saretik eguneratu"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
 #, kde-format
@@ -109,7 +109,7 @@ msgstr "Vosk"
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
 #, kde-format
 msgid "Impossible to extract language"
-msgstr "Ezinezkoa hizkuntza erauztea"
+msgstr "Ezin da hizkuntza erauzi"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
 #, kde-format
@@ -152,12 +152,12 @@ msgstr "Motorra:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Konfiguratu Hizketatik testura"
+msgstr "Hizketatik testurako bihurketa konfiguratu"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
-msgstr "Hizketatik testura..."
+msgstr "Hizketatik testura…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
 #, kde-format
