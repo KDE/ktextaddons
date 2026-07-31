@@ -223,7 +223,7 @@ QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const 
 
 QString TextAutoGenerateTextToolPluginManager::generatePluginsInformation() const
 {
-    QString result = i18n("Plugins Text:");
+    QString result = i18n("Tool Plugins:");
     const QString tab = u"   "_s;
     for (const auto &p : mPluginDataList) {
         result += u'\n';

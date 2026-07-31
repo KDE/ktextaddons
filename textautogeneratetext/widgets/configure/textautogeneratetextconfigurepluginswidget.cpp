@@ -61,7 +61,7 @@ void TextAutoGenerateTextConfigurePluginsWidget::initialize()
                  textPluginGroupName());
 
     fillTopItems(TextAutoGenerateTextToolPluginManager::self()->pluginDataList(),
-                 i18n("Tools Plugins"),
+                 i18n("Tool Plugins"),
                  TextAutoGenerateTextToolPluginManager::self()->configGroupName(),
                  TextAutoGenerateTextToolPluginManager::self()->configPrefixSettingKey(),
                  mPluginToolsItems,

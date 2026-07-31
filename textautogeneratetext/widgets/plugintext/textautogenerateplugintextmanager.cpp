@@ -118,7 +118,7 @@ QList<TextAutoGeneratePluginText *> TextAutoGeneratePluginTextManager::pluginsLi
 
 QString TextAutoGeneratePluginTextManager::generatePluginsInformation() const
 {
-    QString result = i18n("Plugins Tool:");
+    QString result = i18n("Text Plugins:");
     const QString tab = u"   "_s;
     for (const auto &p : mPluginDataList) {
         result += u'\n';
