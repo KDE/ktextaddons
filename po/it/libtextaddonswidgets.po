@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:42+0000\n"
+"POT-Creation-Date: 2026-08-01 00:45+0000\n"
 "PO-Revision-Date: 2026-07-15 16:31+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -223,19 +223,19 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "Inserisci collegamento"
 
-#: selectspecialchardialog.cpp:34
+#: selectspecialchardialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Seleziona caratteri speciali"
 
-#: selectspecialchardialog.cpp:42
+#: selectspecialchardialog.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Inserisci"
 
-#: selectspecialchardialog.cpp:55
+#: selectspecialchardialog.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"
@@ -272,7 +272,7 @@ msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Versione:"
 
-#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#: whatsnew/whatsnewdialog.cpp:27 whatsnewng/whatsnewngdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"

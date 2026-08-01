@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail_editorgrammar_plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:41+0000\n"
+"POT-Creation-Date: 2026-08-01 00:45+0000\n"
 "PO-Revision-Date: 2023-02-11 18:35+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -53,7 +53,7 @@ msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavrieť"
 
-#: grammalecte/grammalecteconfigdialog.cpp:27
+#: grammalecte/grammalecteconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
@@ -302,7 +302,7 @@ msgstr "Tamilčina"
 msgid "Ukrainian"
 msgstr "Ukrajinčina"
 
-#: languagetool/languagetoolconfigdialog.cpp:28
+#: languagetool/languagetoolconfigdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"

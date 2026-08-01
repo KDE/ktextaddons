@@ -1,16 +1,16 @@
 # Translation for libtextautogeneratetext.po to Euskara/Basque (eu).
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2025-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2025-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: Iñigo Salvador Azurmendi <xalba@ni.eus>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-30 00:42+0000\n"
-"PO-Revision-Date: 2026-01-25 13:52+0100\n"
+"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"PO-Revision-Date: 2026-07-31 19:31+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -48,7 +48,7 @@ msgstr "30 egun lehenago"
 #: core/models/textautogeneratechatsmodel.cpp:179
 #, kde-format
 msgid "Later"
-msgstr "Beranduago"
+msgstr "Lehenagokoak"
 
 #: core/models/textautogeneratechatsmodel.cpp:181
 #, kde-format
@@ -56,26 +56,15 @@ msgid "Unknown"
 msgstr "Ezezaguna"
 
 #: core/models/textautogeneratemessagesmodel.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2\n"
-#| "Instance Name: %3"
+#, kde-format
 msgid "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3"
 msgstr ""
-"Motorra: %1\n"
-"Eredua: %2\n"
-"Instantziaren izena: %3"
+"<b>Motorra:</b> %1<br><b>Eredua:</b> %2<br><b>Instantziaren izena:</b> %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tools:</b> %1"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Tresnak:</b> %1"
 
 #: core/textautogeneratemanager.cpp:153
 #, kde-format
@@ -133,33 +122,28 @@ msgid "Reasoning"
 msgstr "Arrazoiketa"
 
 #: core/textautogeneratemanager.cpp:175
-#, fuzzy, kde-format
-#| msgid "Groq Cloud"
+#, kde-format
 msgid "Cloud"
-msgstr "Groq Cloud"
+msgstr "Hodeia"
 
 #: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "Arrazoitzen…"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
-msgstr "Joan mezura"
+msgstr "Mezura joan"
 
 #: core/textautogeneratesettings.cpp:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "You are an AI assistant. You are speaking to a person named %1. Be "
-#| "helpful, professional, and courteous. Do not give inaccurate information."
+#, kde-format
 msgid ""
 "You are an AI assistant. Be helpful, professional, and courteous. Do not "
 "give inaccurate information."
 msgstr ""
-"AA laguntzaile bat zara. %1 izeneko pertsona batekin hizketan ari zara. "
-"Mesedez, izan zaitez lagungarria, profesionala, eta adeitsua. Ez eman "
-"zehatza ez den informaziorik."
+"AA laguntzaile bat zara. Izan lagungarria, profesionala eta adeitsua. Ez "
+"eman informazio okerrik."
 
 #: core/textautogeneratetextplugin.cpp:298
 #, kde-format
@@ -172,119 +156,89 @@ msgid "Network"
 msgstr "Sarea"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Iraupena guztira:</b> %1 segundo"
 
 #: core/textautogeneratetextreplyinfo.cpp:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Eskaeraren tokenak:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Tokenak:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Token kopurua:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:62
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Eskaeraren tokena:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Tools: %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr ""
-"\n"
-"Tresnak: %1"
+msgstr "<br><b>Osatzearen tokena:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "Plugins Text:"
-msgstr ""
+msgstr "Tresna-pluginak:"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr ""
+msgstr "Tresnaren identifikatzailea: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr ""
+msgstr "Aktibatuta"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "Desaktibatuta"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr ""
+msgstr "Aktibatu: %1"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Generikoa"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Konfiguratu %1"
+msgstr "%1 konfiguratu"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:36
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Orokorra"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:56
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:42
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -307,7 +261,7 @@ msgstr "Mistral AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Novita AI"
-msgstr ""
+msgstr "Novita AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
@@ -337,7 +291,7 @@ msgstr "Venice"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Llama Api"
-msgstr "Llama Api"
+msgstr "Llama APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
 #, kde-format
@@ -352,57 +306,55 @@ msgstr "Kimi (Moonshot AI)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:44
 #, kde-format
 msgid "Grok (X.ai)"
-msgstr ""
+msgstr "Grok (X.ai)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
 #, kde-format
 msgid "Qwen (DashScope)"
-msgstr ""
+msgstr "Qwen (DashScope)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
 #, kde-format
 msgid "DeepInfra"
-msgstr ""
+msgstr "DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI ChatGPT"
-msgstr "OpenAI"
+msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenRouter AI"
-msgstr "OpenAI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "OpenAIrekin bateragarria den AtlasCloud APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr "Mistral AI hizkuntza eredu handiak"
+msgstr "Mistral AIren hizkuntza-eredu handiak"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:237
 #, kde-format
@@ -412,110 +364,95 @@ msgstr "Groq AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:239
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr "Kluster AI hodei inferentzia API"
+msgstr "Kluster AIren hodeiko inferentzia-APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:241
 #, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "Cerebras AI hodei inferentzia API"
+msgstr "Cerebras AIren hodeiko inferentzia-APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:243
 #, kde-format
 msgid "Meta AI Llama API"
-msgstr "Meta AI Llama API"
+msgstr "Meta AI Llama APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:245
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Moonshot AIren Kimi hizkuntza eredu handiak"
+msgstr "Moonshot AIren Kimi hizkuntza-eredu handiak"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:247
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
-msgstr "Mistral AI hizkuntza eredu handiak"
+msgstr "Alibaba Clouden Qwen hizkuntza-eredu handiak DashScoperen bidez"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:249
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "Kluster AI hodei inferentzia API"
+msgstr "Novita AIren hodeiko inferentzia-APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:251
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "Cerebras AI hodei inferentzia API"
+msgstr "DeepInfraren hodeiko inferentzia-APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "Gehitu instantzia…"
+msgstr "Sarvam AI instantzia"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
 #: plugins/lmstudio/lmstudioplugin.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Ollama not found on system. Ask to your administrator system to install "
-#| "it."
+#, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr ""
-"Sisteman ez da Ollama aurkitu. Eskatu zure sistemaren administratzaileari "
-"instalatu dezala."
+"LMStudio ez da sisteman aurkitu. Sistema-administratzaileari instalatu dezan "
+"eskatu."
 
 #: plugins/llamacpp/llamacppplugin.cpp:229
 #: plugins/lmstudio/lmstudioplugin.cpp:212
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "LMStudio not found on system. Please install it."
-msgstr "Sisteman ez da Ollama aurkitu. Mesedez instalatu."
+msgstr "LMStudio ez da sisteman aurkitu. Instalatu."
 
 #: plugins/llamacpp/llamacppplugin.cpp:230
 #: plugins/lmstudio/lmstudioplugin.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "Eredua zama-jaistea"
+msgstr "LMStudio zama-jaitsi"
 
 #: plugins/llamacpp/llamacppplugin.cpp:236
 #: plugins/lmstudio/lmstudioplugin.cpp:219
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
-msgstr ""
+msgstr "LMStudio abiarazi"
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
 #: plugins/lmstudio/lmstudioplugin.cpp:88
 #, kde-format
 msgid "LMStudio"
-msgstr ""
+msgstr "LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "Konfiguratu %1"
+msgstr "LMStudio konfiguratu"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
-msgstr "Instalatutako ereduak"
+msgstr "Instalatutako eredua"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
@@ -533,27 +470,25 @@ msgstr "Izena:"
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
 #, kde-format
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Api Key:"
+#, kde-format
 msgid "Api token:"
-msgstr "APIaren gakoa:"
+msgstr "API-tokena:"
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "LMStudio not found on system."
-msgstr "Sisteman ez da Ollama aurkitu. Mesedez instalatu."
+msgstr "LMStudio ez da sisteman aurkitu."
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
 #, kde-format
 msgid "Impossible to start LMStudio."
-msgstr ""
+msgstr "Ezin da LMStudio abiarazi."
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -564,7 +499,7 @@ msgstr "Ollama ereduak kudeatu"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:58
 #, kde-format
 msgid "Languages Supported"
-msgstr "Onartutako lengoaiak"
+msgstr "Onartutako hizkuntzak"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:72
 #, kde-format
@@ -575,20 +510,17 @@ msgstr "Ereduak"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "Gehitu eredua"
+msgstr "Eredua gehitu"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Please enter model name as \"name:tag\""
+#, kde-format
 msgid "Model name must be as \"name:tag\""
-msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
+msgstr "Ereduaren izenak «izena:etiketa» formatua izan behar du"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgid "Invalid Model Name"
-msgstr "Instalatutako ereduak"
+msgstr "Eredu-izen baliogabea"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
 #, kde-format
@@ -604,7 +536,7 @@ msgstr "Etiketa:"
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
 #, kde-format
 msgid "Prompt:"
-msgstr "Gonbita:"
+msgstr "Eskaera:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:49
 #, kde-format
@@ -651,22 +583,18 @@ msgstr "Utzi"
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
 #, kde-format
 msgid "Download model reported an error: %1"
-msgstr ""
+msgstr "Eredua zama-jaistean errore baten berri eman da: %1"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgid "Download Model Error"
-msgstr "Eredua zama-jaistea"
+msgstr "Errorea eredua zama-jaistean"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "Eredua zama-jaistea"
+msgstr "Zama-jaitsi"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
@@ -686,7 +614,7 @@ msgstr "Kuantifikazio-maila:"
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:57
 #, kde-format
 msgid "Modified At:"
-msgstr "v"
+msgstr "Aldatze-data:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:92
 #, kde-format
@@ -697,7 +625,7 @@ msgstr "Guraso-eredua:"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:81
 #, kde-format
 msgid "Features Supported"
-msgstr "Onartutako ezaugarriak"
+msgstr "Onartutako eginbideak"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
 #, kde-format
@@ -719,7 +647,7 @@ msgstr "Kendu eredua"
 #: plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama (Managed)"
-msgstr ""
+msgstr "Ollama (kudeatua)"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:33
 #, kde-format
@@ -728,52 +656,52 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"Erabili Vulkan hardware-azeleraziorako. GPU batzuetan errendimendua hobetu "
+"dezake, baina erabili kontuz, ezegonkorra izan baitaiteke."
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
 #, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr ""
+msgstr "Vulkan GPU euskarria (esperimentala):"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
 msgid "NVIDIA GPU Selection:"
-msgstr ""
+msgstr "NVIDIA GPUaren hautapena:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy Selection"
+#, kde-format
 msgid "AMD GPU Selection:"
-msgstr "Kopiatu hautapena"
+msgstr "AMD GPUaren hautapena:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:49
 #, kde-format
 msgid "Hip Visible Device:"
-msgstr ""
+msgstr "HIP gailu ikusgaia:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:54
 #, kde-format
 msgid "Override GFX version:"
-msgstr ""
+msgstr "GFX bertsioa gainidatzi:"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:58
 #, kde-format
 msgid "Default Model Path:"
-msgstr ""
+msgstr "Ereduaren bide-izen lehenetsia:"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr "Konfiguratu Ollama"
+msgstr "Ollama konfiguratu"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Instalatutako ereduak"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#: plugins/ollama/ollamaconfiguredialog.cpp:68
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -782,12 +710,12 @@ msgstr "Ereduak sortzea"
 #: plugins/ollama/ollamaconfigurewidget.cpp:83
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Ataka:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:92
 #, kde-format
 msgid "Show Ollama Log"
-msgstr ""
+msgstr "Ollamaren egunkaria erakutsi"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:99
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:77
@@ -797,11 +725,9 @@ msgid "Model:"
 msgstr "Eredua:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#, kde-format
 msgid "Customize Ollama"
-msgstr "Konfiguratu Ollama"
+msgstr "Ollama neurrira ipini"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:120
 #, kde-format
@@ -809,20 +735,19 @@ msgid ""
 "These entries are optional, they are used to troubleshoot GPU related "
 "problems with Ollama."
 msgstr ""
+"Sarrera hauek aukerakoak dira; Ollamarekin GPUari lotuta dauden arazoak "
+"konpontzeko erabiltzen dira."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start Ollama"
+#, kde-format
 msgid "Failed to start Ollama"
-msgstr "Abiarazi Ollama"
+msgstr "Ollama abiarazteak huts egin du"
 
-#: plugins/ollama/ollamalogdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#: plugins/ollama/ollamalogdialog.cpp:27
+#, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
-msgstr "Ollama"
+msgstr "Ollamaren egunkaria"
 
 #: plugins/ollama/ollamaplugin.cpp:86
 #, kde-format
@@ -846,52 +771,47 @@ msgstr "Sisteman ez da Ollama aurkitu. Mesedez instalatu."
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Zama-jaitsi Ollama"
+msgstr "Ollama zama-jaitsi"
 
 #: plugins/ollama/ollamaplugin.cpp:231
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Abiarazi Ollama"
+msgstr "Ollama abiarazi"
 
 #: plugins/ollama/ollamastartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "Ollama not found on system."
-msgstr "Sisteman ez da Ollama aurkitu. Mesedez instalatu."
+msgstr "Ollama ez da sisteman aurkitu."
 
 #: plugins/ollama/ollamastartprocessjob.cpp:41
 #: plugins/ollama/ollamastartprocessjob.cpp:59
 #, kde-format
 msgid "Impossible to start Ollama."
-msgstr ""
+msgstr "Ezin da Ollama abiarazi."
 
 #: plugins/ollamacloud/ollamacloudclient.cpp:26
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama (Cloud)"
-msgstr "Ollama"
+msgstr "Ollama (hodeia)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "Konfiguratu Ollama"
+msgstr "Ollama Cloud konfiguratu"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
-msgstr "APIaren gakoa:"
+msgstr "API-gakoa:"
 
 #: plugins/ollamacloud/ollamacloudplugin.cpp:93
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Cloud"
-msgstr "Ollama"
+msgstr "Ollama Cloud"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -902,28 +822,28 @@ msgstr "Birzamatu eredua"
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:19
 #, kde-format
 msgid "Keep Alive Presets"
-msgstr ""
+msgstr "Zamatuta mantentzeko aurrezarpenak"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:20
 #, kde-format
 msgid "Keep Alive Forever"
-msgstr ""
+msgstr "Beti zamatuta mantendu"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterscombobox.cpp:21
 #, kde-format
 msgid "Unload After Use"
-msgstr ""
+msgstr "Erabili ondoren memoriatik kendu"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:24
 #, kde-format
 msgid "Keep Alive"
-msgstr ""
+msgstr "Zamatuta mantentzea"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
-msgstr ""
+msgstr "Instantziak nola kudeatu behar dituen jarduerarik gabeko ereduak"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
 #, kde-format
@@ -931,16 +851,18 @@ msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr ""
+"Jarduerarik gabe gelditu ondoren instantziak ereduak zamatuta mantendu behar "
+"dituen denbora."
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Presets:"
-msgstr ""
+msgstr "Aurrezarpenak:"
 
 #: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
 #, kde-format
 msgid "Minutes:"
-msgstr ""
+msgstr "Minutuak:"
 
 #: plugins/ollamacommon/ollamacommonmodelcategoriesmodel.cpp:42
 #, kde-format
@@ -953,13 +875,13 @@ msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
 "compared to the Llama 3.1 405B model."
 msgstr ""
-"70B eredu berri modernoa. Llama 3.3 70B(e)k Llama 3.1 405B ereduarekin "
-"alderatuz antzeko errendimendua eskaintzen du."
+"Puntako 70Bko eredu berria. Llama 3.3 70Bk Llama 3.1 405B ereduaren antzeko "
+"errendimendua eskaintzen du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:20
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr "QwQ Qwen seriearen arrazoiketa-eredua da."
+msgstr "QwQ Qwen saileko arrazoiketa-eredua da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:21
 #, kde-format
@@ -967,13 +889,14 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
-"Llama 3.2 vision, argibideetara doitutako irudi arrazoiketa eredu generatibo "
-"bilduma bat da, 11B eta 90B neurrikoa."
+"Llama 3.2 Vision jarraibideetara doitutako irudi-arrazoiketako eredu "
+"sortzaileen bilduma da, 11B eta 90B tamainetan."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:22
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr "Meta-ren Llama 3.2 txikira doa 1B eta 3B ereduekin."
+msgstr ""
+"Metaren Llama 3.2 ereduak tamaina txikietara jotzen du, 1B eta 3B ereduekin."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:23
 #, kde-format
@@ -981,15 +904,15 @@ msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
 "405B parameter sizes."
 msgstr ""
-"Llama 3.1 Meta-ren azken belaunaldiko eredu berri bat da, 3B, 70B eta 405B "
-"parametroko neurritan erabilgarri."
+"Llama 3.1 Metaren puntako eredu berria da, 8B, 70B eta 405B parametroko "
+"tamainetan eskuragarri."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:24
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
 msgstr ""
-"Meta Llama 3: Orain arte irekian eskuragarri dagoen gaitasun handiena duen "
-"LLM"
+"Meta Llama 3: orain arte modu irekian eskuragarri jarritako LLMrik "
+"ahaltsuena da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:25
 #, kde-format
@@ -1001,8 +924,8 @@ msgstr "Mistral AIk argitaratutako 7Bko eredua, 0.3 bertsiora eguneratua."
 msgid ""
 "A high-performing open embedding model with a large token context window."
 msgstr ""
-"Errendimendu handiko txertatze-eredu ireki bat, token-testuinguru leiho "
-"zabalekoa."
+"Errendimendu handiko txertatze-eredu irekia, tokenen testuinguru-leiho "
+"handia duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:27
 #, kde-format
@@ -1010,8 +933,8 @@ msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
-"Gemma, Google DeepMind-ek garatutako puntako teknologiako eredu ireki arinen "
-"familia bat da. 1.1 bertsiora eguneratua"
+"Gemma Google DeepMindek eraikitako puntako eredu ireki arinen familia da. "
+"1.1 bertsiora eguneratua"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:28
 #, kde-format
@@ -1019,13 +942,13 @@ msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
 "0.5B to 110B parameters"
 msgstr ""
-"Qwen 1.5, Alibaba Cloud-en hizkuntza-eredu handien sail bat da, 0,5Btik 110B "
-"parametrora artekoa"
+"Qwen 1.5 Alibaba Clouden hizkuntza-eredu handien saila da, 0,5Btik 110B "
+"parametrora bitartekoa"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:29
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
-msgstr "Qwen2, Alibaba taldearen hizkuntza-eredu handien sail berri bat da"
+msgstr "Qwen2 Alibaba taldearen hizkuntza-eredu handien sail berria da"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:30
 #, kde-format
@@ -1033,8 +956,8 @@ msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
 "open models by Microsoft."
 msgstr ""
-"Phi-3 Microsoften puntako teknologiako eredu ireki arinen 3B (Mini) eta 14B "
-"(Ertaina) familia bat da."
+"Phi-3 Microsoften puntako eredu ireki arinen familia da, 3B (Mini) eta 14B "
+"(Medium) tamainetan."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:31
 #, kde-format
@@ -1042,8 +965,8 @@ msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
 "parameters."
 msgstr ""
-"Llama 2 oinarrizko hizkuntza-ereduen bilduma bat da, 7Btik 70B parametrora "
-"artekoa."
+"Llama 2 oinarrizko hizkuntza-ereduen bilduma da, 7Btik 70B parametro "
+"bitartekoa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:33
 #, kde-format
@@ -1052,9 +975,9 @@ msgid ""
 "encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
 "and has multilingual support."
 msgstr ""
-"Qwen2.5 ereduak Alibaba-ren azken datu-multzo handiarekin aurre-entrenatu "
-"dira, 18 bilioi token barne hartzen dituena. Ereduak 128K token arte "
-"onartzen ditu eta euskarri eleaniztuna du."
+"Qwen2.5 ereduak Alibabaren eskala handiko azken datu-multzoarekin aurretik "
+"trebatu dira; multzoak 18 bilioi token arte ditu. Ereduak 128K token arte "
+"onartzen ditu, eta hizkuntza anitzeko euskarria du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:35
 #, kde-format
@@ -1062,8 +985,8 @@ msgid ""
 "Google Gemma 2 is a high-performing and efficient model available in three "
 "sizes: 2B, 9B, and 27B."
 msgstr ""
-"Google Gemma 2 errendimendu handiko eredu eraginkor bat da, hiru tamainatan "
-"eskuragarri dagoena: 2B, 9B eta 27B."
+"Google Gemma 2 errendimendu handiko eredu eraginkorra da, hiru tamainatan "
+"eskuragarri: 2B, 9B eta 27B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:37
 #, kde-format
@@ -1072,9 +995,9 @@ msgid ""
 "vision encoder and Vicuna for general-purpose visual and language "
 "understanding. Updated to version 1.6."
 msgstr ""
-"LLaVa, helburu orokorreko ikus- eta hizkuntza ulermenerako, "
-"muturretikmuturrera trebatutako eredu multimodal handi berri bat da, ikusmen-"
-"kodetzaile bat eta Vicuna konbinatzen dituena.1.6 bertsiora eguneratua."
+"LLaVA muturretik muturrera trebatutako eredu multimodal handi berritzailea "
+"da; ikusmen-kodetzaile bat eta Vicuna bateratzen ditu, helburu orokorreko "
+"ikusmen- eta hizkuntza-ulermenerako. 1.6 bertsiora eguneratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:39
 #, kde-format
@@ -1082,8 +1005,8 @@ msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
 msgstr ""
-"Kodea sortzeko eta eztabaidatzeko testu-eskaerak erabil ditzakeen hizkuntza-"
-"eredu handia."
+"Kodea sortzeko eta kodeari buruz jarduteko testu-eskaerak erabil ditzakeen "
+"hizkuntza-eredu handia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:41
 #, kde-format
@@ -1091,8 +1014,8 @@ msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
 "improvements in code generation, code reasoning, and code fixing."
 msgstr ""
-"Berariaz koderako Qwen ereduen sail berriena, kode-sorkuntzan, kode-"
-"arrazoiketan, eta kode-konponketan hobekuntza nabarmenekin."
+"Berariaz koderako Qwen ereduen azken saila, kode-sorkuntzan, kode-"
+"arrazoiketan eta kode-konponketan hobekuntza nabarmenak dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:42
 #, kde-format
@@ -1100,8 +1023,8 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
-"Puntako teknologiako 12Bko eredu bat, 128k-ko testuinguru-luzerakoa, Mistral "
-"AI-k NVIDIArekin elkarlanean eraikia."
+"Mistral AIk NVIDIArekin elkarlanean eraikitako puntako 12Bko eredua, 128K-ko "
+"testuinguru-luzera duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:43
 #, kde-format
@@ -1109,13 +1032,13 @@ msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
 "model on 3 trillion tokens."
 msgstr ""
-"TinyLlama proiektua 1,1Bko Llama eredu trinko bat 3 bilioi tokenekin "
-"trebatzeko ekimen ireki bat da."
+"TinyLlama proiektua 1,1Bko Llama eredu trinkoa 3 bilioi tokenekin trebatzeko "
+"ekimen irekia da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:44
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr "mixedbread.ai-ren puntako teknologiako txertatze-eredu handia"
+msgstr "«mixedbread.ai»ren puntako txertatze-eredu handia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:46
 #, kde-format
@@ -1123,8 +1046,8 @@ msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
 "that comes in three sizes: 3B, 7B and 15B parameters."
 msgstr ""
-"StarCoder2, modu gardenean trebatutako kode irekiko LLMen hurrengo "
-"belaunaldia da, hiru tamainatan datorrena: 3B, 7B eta 15B parametro."
+"StarCoder2 modu gardenean trebatutako kode irekiko LLMen hurrengo "
+"belaunaldia da, hiru tamainatan eskuragarri: 3B, 7B eta 15B parametro."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:47
 #, kde-format
@@ -1132,8 +1055,8 @@ msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
 "8x7b and 8x22b parameter sizes."
 msgstr ""
-"Mistral AI-ren Adituen Nahasketa (MoE: Mixture of Experts) eredu multzo bat, "
-"pisu irekiekin, 8x7B eta 8x22B parametroko tamainetan."
+"Mistral AIren pisu irekiko adituen nahasketa-ereduen (MoE) multzoa, 8×7B eta "
+"8×22B tamainetan."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:49
 #, kde-format
@@ -1141,9 +1064,9 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
-"Zentsuratu gabeko, doitutako 8x7b eta 8x22b ereduak, kodetze-lanetan "
-"bikainak diren Mixtral eredu adituen nahasketan oinarritua. Eric Hartford-ek "
-"sortua."
+"Zentsurarik gabeko 8×7B eta 8×22B tamainako eredu doituak, kodegintza-"
+"lanetan bikainak diren Mixtral adituen nahasketa-ereduetan oinarrituak. Eric "
+"Hartfordek sortuak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:52
 #, kde-format
@@ -1153,9 +1076,10 @@ msgid ""
 "generation, natural language understanding, mathematical reasoning, and "
 "instruction following."
 msgstr ""
-"CodeGemma eredu ahaltsu, arinen bilduma bat da, kodeketa lan ugari egiteko "
-"gai direnak, hala nola tarteko kodea osatzea, kodea sortzea, hizkuntza "
-"naturala ulertzea, arrazoiketa matematikoa, eta argibideak jarraitzea."
+"CodeGemma eredu ahaltsu eta arinen bilduma bat da; hainbat kodegintza-lan "
+"egin ditzake, hala nola erdiko hutsunea betetzeko kode-osaketa, kode-"
+"sorkuntza, hizkuntza naturalaren ulermena, arrazoiketa matematikoa eta "
+"jarraibideei jarraitzea."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:55
 #, kde-format
@@ -1163,8 +1087,9 @@ msgid ""
 "An open-source Mixture-of-Experts code language model that achieves "
 "performance comparable to GPT4-Turbo in code-specific tasks."
 msgstr ""
-"Kode-zeregin espezifikoetan GPT4-Turbo-ren pareko errendimendua lortzen duen "
-"sorburu irekiko Adituen Nahasketa (MoE) kode-lengoaia eredua."
+"Sorburu irekiko adituen nahasketa motako (MoE) koderako hizkuntza-eredua, "
+"kodeari berariazko atazetan GPT-4 Turboren pareko errendimendua lortzen "
+"duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:56
 #, kde-format
@@ -1172,14 +1097,14 @@ msgid ""
 "Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
 "outstanding reasoning and language understanding capabilities."
 msgstr ""
-"Phi-2: Microsoft Research-en 2,7Bko hizkuntza-eredua, arrazoitzeko eta "
-"hizkuntza ulertzeko gaitasun bikainak erakusten dituena."
+"Phi-2: Microsoft Researchen 2,7Bko hizkuntza-eredua, arrazoiketa- eta "
+"hizkuntza-ulermeneko gaitasun bikainak erakusten dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:57
 #, kde-format
 msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
 msgstr ""
-"Llama 2 eredu zentsuratu gabea, George Sung(e)k eta Jarrad Hope-k sortua."
+"George Sungek eta Jarrad Hopek sortutako Llama 2 zentsurarik gabeko eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:58
 #, kde-format
@@ -1187,16 +1112,15 @@ msgid ""
 "DeepSeek Coder is a capable coding model trained on two trillion code and "
 "natural language tokens."
 msgstr ""
-"DeepSeek Coder bi bilioi kode eta hizkuntza naturaleko tokenetan trebatutako "
-"kodeketa-eredu trebe bat da."
+"DeepSeek Coder bi bilioi kode- eta hizkuntza naturaleko tokenekin "
+"trebatutako kodegintza-eredu trebea da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:59
 #, kde-format
 msgid ""
 "A suite of text embedding models by Snowflake, optimized for performance."
 msgstr ""
-"Snowflake(r)en testu-txertatze ereduen multzo bat da, errendimendurako "
-"optimizatua."
+"Snowflakeren testu-txertatze ereduen multzoa, errendimendurako optimizatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:61
 #, kde-format
@@ -1204,8 +1128,8 @@ msgid ""
 "State of the art large language model from Microsoft AI with improved "
 "performance on complex chat, multilingual, reasoning and agent use cases."
 msgstr ""
-"Microsoft AI-ren, puntako teknologiako hizkuntza-eredu handia, berriketa "
-"konplexuetan, eleaniztunetan, arrazoiketan eta agenteen erabilera-kasuetan "
+"Microsoft AIren puntako hizkuntza-eredu handia, berriketa konplexuetan, "
+"hizkuntza anitzeko erabileran, arrazoiketan eta agenteen erabilera-kasuetan "
 "errendimendu hobetua duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:63
@@ -1214,8 +1138,8 @@ msgid ""
 "The uncensored Dolphin model based on Mistral that excels at coding tasks. "
 "Updated to version 2.8."
 msgstr ""
-"Mistral-en oinarritutako Dolphin eredu zentsuratu gabea, kode-lanetan "
-"bikaina dena. 2.8 bertsiora eguneratua."
+"Mistralen oinarritutako Dolphin eredu zentsuratu gabea, kodegintza-atazetan "
+"bikain aritzen dena. 2.8 bertsiora eguneratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:65
 #, kde-format
@@ -1223,14 +1147,14 @@ msgid ""
 "Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on "
 "Llama 3 that has a variety of instruction, conversational, and coding skills."
 msgstr ""
-"Dolphin 2.9 Eric Hartford-ek Llama 3-n oinarrituta egindako 8B eta 70B "
-"tamainetako eredu berri bat da, jarraibide, elkarrizketa eta kodeketa "
-"trebetasun ugari dituena."
+"Dolphin 2.9 Eric Hartfordek Llama 3n oinarrituta egindako 8B eta 70B "
+"tamainetako eredu berria da, jarraibideak betetzeko, elkarrizketarako eta "
+"kodegintzarako hainbat gaitasun dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:67
 #, kde-format
 msgid "Yi 1.5 is a high-performing, bilingual language model."
-msgstr "Yi 1.5 errendimendu handiko, hizkuntza-eredua elebiduna da."
+msgstr "Yi 1.5 errendimendu handiko hizkuntza-eredu elebiduna da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:68
 #, kde-format
@@ -1238,8 +1162,8 @@ msgid ""
 "Command R is a Large Language Model optimized for conversational interaction "
 "and long context tasks."
 msgstr ""
-"Command R, elkarrizketa bidezko elkarreragiketarako eta testuinguru luzeko "
-"zereginetarako optimizatutako hizkuntza eredu handi bat da."
+"Command R elkarrizketa bidezko elkarreraginerako eta testuinguru luzeko "
+"atazetarako optimizatutako hizkuntza-eredu handia da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:69
 #, kde-format
@@ -1247,8 +1171,8 @@ msgid ""
 "A general-purpose model ranging from 3 billion parameters to 70 billion, "
 "suitable for entry-level hardware."
 msgstr ""
-"3 mila milioi eta 180 mila milioi parametro bitarteko helburu orokorreko "
-"eredu bat, oinarrizko mailako hardwarerako egokia."
+"3 mila milioi eta 70 mila milioi parametro bitarteko erabilera orokorreko "
+"eredua, oinarrizko hardwarerako egokia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:70
 #, kde-format
@@ -1256,8 +1180,8 @@ msgid ""
 "A LLaVA model fine-tuned from Llama 3 Instruct with better scores in several "
 "benchmarks."
 msgstr ""
-"Llama 3 Instruct-etik doitutako LLaVA eredu bat, hainbat erreferentzia-"
-"probatan puntuazio hobeak dituena."
+"Llama 3 Instructetik doitutako LLaVA eredua, hainbat erreferentzia-probatan "
+"puntuazio hobeak dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:71
 #, kde-format
@@ -1265,8 +1189,8 @@ msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
 "that are trained to act as helpful assistants."
 msgstr ""
-"Zephyr, doitutako Mistral eta Mixtral ereduen bertsio sail bat da, "
-"laguntzaile lagungarri gisa jarduteko trebatuak."
+"Zephyr Mistral eta Mixtral ereduen bertsio doituen saila da, laguntzaile "
+"erabilgarri gisa jarduteko trebatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:72
 #, kde-format
@@ -1274,14 +1198,14 @@ msgid ""
 "A lightweight AI model with 3.8 billion parameters with performance "
 "overtaking similarly and larger sized models."
 msgstr ""
-"3,8 mila milioi parametro dituen AA eredu arin bat, neurri antzeko eta "
-"handiagoko ereduen errendimendua gainditzen dituena."
+"3,8 mila milioi parametroko AA eredu arina, tamaina bereko eta handiagoko "
+"ereduen errendimendua gainditzen duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:73
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
 msgstr ""
-"Esaldi-mailako datu-multzo oso handietan oinarritutako txertatzeko ereduak."
+"Esaldi-mailako datu-multzo oso handiekin trebatutako txertatze-ereduak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:74
 #, kde-format
@@ -1289,7 +1213,7 @@ msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
 "tasks."
 msgstr ""
-"Codestral Mistral AI-ren lehen kode-eredua da, kode-sorkuntza atazetarako "
+"Codestral Mistral AIren lehen kode-eredua da, kode-sorkuntzako atazetarako "
 "diseinatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:75
@@ -1297,8 +1221,8 @@ msgstr ""
 msgid ""
 "StarCoder is a code generation model trained on 80+ programming languages."
 msgstr ""
-"StarCoder programatzeko 80+ lengoaiatan trebatutako kodea sortzeko eredu bat "
-"da."
+"StarCoder 80 programazio-lengoaia baino gehiagorekin trebatutako kode-"
+"sorkuntzako eredua da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:76
 #, kde-format
@@ -1306,13 +1230,13 @@ msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
 "sizes."
 msgstr ""
-"Llama eta Llama 2-n oinarritutako erabilera orokorreko berriketa eredu bat, "
-"2K eta 16K bitarteko testuinguru-tamainakoa."
+"Llaman eta Llama 2n oinarritutako erabilera orokorreko berriketa-eredua, 2K "
+"eta 16K bitarteko testuinguru-tamainekin."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:77
 #, kde-format
 msgid "A family of open foundation models by IBM for Code Intelligence"
-msgstr "Kode-adimenerako IBM-ren oinarri irekiko ereduen familia bat"
+msgstr "Kode-adimenerako IBMren oinarri irekiko ereduen familia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:78
 #, kde-format
@@ -1320,8 +1244,8 @@ msgid ""
 "Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
 "Mistral 7B model using the OpenOrca dataset."
 msgstr ""
-"Mistral OpenOrca 7 mila milioi parametroko eredu bat da, Mistral 7B "
-"ereduaren gainean, OpenOrca datu-multzoa erabiliz doitua."
+"Mistral OpenOrca 7 mila milioi parametroko eredua da, OpenOrca datu-multzoa "
+"erabiliz Mistral 7B ereduaren gainean doitua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:79
 #, kde-format
@@ -1329,8 +1253,8 @@ msgid ""
 "A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
 "new high-quality dataset."
 msgstr ""
-"135M, 360M, eta 1,7B parametroko eredu txikien familia bat, kalitate handiko "
-"datu-multzo berri batean trebatuta."
+"135M, 360M eta 1,7B parametroko eredu txikien familia, kalitate handiko datu-"
+"multzo berri batekin trebatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:80
 #, kde-format
@@ -1338,16 +1262,15 @@ msgid ""
 "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
 "Llama 2 uncensored by Eric Hartford."
 msgstr ""
-"Wizard Vicuna Uncensored 7B, 13B eta 30B parametroko eredu bat da, Eric "
-"Hartford-ek sortutako zentsurarik gabeko Llama 2 ereduaren gainean "
-"oinarritua."
+"Wizard Vicuna Uncensored 7B, 13B eta 30B parametroko eredua da, Eric "
+"Hartforden zentsurarik gabeko Llama 2 ereduan oinarritua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:81
 #, kde-format
 msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
 msgstr ""
-"Txineraz mintzatzeko gaitasuna hobetzeko doitutako Llama 2-n oinarritutako "
-"eredua."
+"Txineraz elkarrizketatzeko gaitasuna hobetzeko doitutako Llama 2n "
+"oinarritutako eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:83
 #, kde-format
@@ -1355,9 +1278,8 @@ msgid ""
 "BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
 "Functionality, Multi-Linguality, and Multi-Granularity."
 msgstr ""
-"BGE-M3 BAAI-ren eredu berri bat da, funtzio-aniztasunean, hizkuntza-"
-"aniztasunean eta xehetasun-maila aniztasunean duen moldakortasunagatik "
-"nabarmentzen dena."
+"BGE-M3 BAAIren eredu berria da, funtzio-, hizkuntza- eta xehetasun-maila "
+"anitzeko moldakortasunagatik nabarmentzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:84
 #, kde-format
@@ -1365,8 +1287,7 @@ msgid ""
 "A versatile model for AI software development scenarios, including code "
 "completion."
 msgstr ""
-"AA software garapen-eszenatokietarako, eredu moldakor bat, kodea osatzea "
-"barne."
+"AA softwarea garatzeko agertokietarako eredu moldakorra, kodea osatzea barne."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:86
 #, kde-format
@@ -1374,8 +1295,8 @@ msgid ""
 "A family of open-source models trained on a wide variety of data, surpassing "
 "ChatGPT on various benchmarks. Updated to version 3.5-0106."
 msgstr ""
-"Datu mota askorekin trebatu eta hainbat erreferentzia-probatan ChatGPT "
-"gainditzen duen sorburu irekiko ereduen familia bat. 3.5-0106 bertsiora "
+"Askotariko datuekin trebatutako sorburu irekiko ereduen familia, hainbat "
+"erreferentzia-probatan ChatGPT gainditzen duena. 3.5-0106 bertsiora "
 "eguneratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:87
@@ -1384,8 +1305,8 @@ msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
 "multilingual models that support 23 languages."
 msgstr ""
-"Cohere-k kaleratutako Aya 23, puntako teknologiako eredu eleaniztun familia "
-"berri bat da, 23 hizkuntza onartzen dituena."
+"Coherek argitaratutako Aya 23 puntako eredu eleaniztunen familia berria da, "
+"23 hizkuntza onartzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:88
 #, kde-format
@@ -1393,8 +1314,8 @@ msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
 "data."
 msgstr ""
-"CodeQwen1.5 kode datu kopuru handian aurre-entrenatutako hizkuntza-eredu "
-"handia bat da."
+"CodeQwen1.5 kode-datu kopuru handiarekin aurretik trebatutako hizkuntza-"
+"eredu handia da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:89
 #, kde-format
@@ -1402,8 +1323,8 @@ msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
 "discussion and coding tasks."
 msgstr ""
-"Nous Research-eren ereduen familia ahaltsua, eztabaida zientifikoetan eta "
-"kodetze-zereginetan bikaina dena."
+"Nous Researchen eredu-familia ahaltsua, eztabaida zientifikoetan eta "
+"kodegintza-atazetan bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:90
 #, kde-format
@@ -1411,13 +1332,13 @@ msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
 "excel at real-world enterprise use cases."
 msgstr ""
-"Command R+ hizkuntza eredu handi ahaltsu eta eskalagarri bat da, enpresen "
-"erabilera-kasu errealetarako bikain aritzeko bereziki eraikia."
+"Command R+ hizkuntza-eredu handi ahaltsu eta eskalagarria da, enpresen mundu "
+"errealeko erabilera-kasuetan bikain aritzeko berariaz eraikia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:91
 #, kde-format
 msgid "State-of-the-art code generation model"
-msgstr "Puntako teknologiako kodea sortzeko eredua"
+msgstr "Puntako kode-sorkuntzako eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:93
 #, kde-format
@@ -1425,6 +1346,8 @@ msgid ""
 "Stable Code 3B is a coding model with instruct and code completion variants "
 "on par with models such as Code Llama 7B that are 2.5x larger."
 msgstr ""
+"Stable Code 3B kode-ereduak jarraibideetarako eta kodea osatzeko aldaerak "
+"ditu, eta 2,5 aldiz handiagoak diren Code Llama 7B gisako ereduen parekoa da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:94
 #, kde-format
@@ -1432,6 +1355,8 @@ msgid ""
 "An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset "
 "by Eric Hartford and based on TinyLlama."
 msgstr ""
+"Eric Hartfordek Dolphin 2.8 datu-multzo berriarekin trebatutako eta "
+"TinyLlaman oinarritutako 1,1B parametroko eredu esperimentala."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:95
 #, kde-format
@@ -1439,6 +1364,8 @@ msgid ""
 "OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
 "open datasets."
 msgstr ""
+"OpenHermes 2.5 Tekniumek datu-multzo guztiz irekiak erabiliz Mistralen "
+"gainean doitutako 7Bko eredu bat da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:97
 #, kde-format
@@ -1447,6 +1374,9 @@ msgid ""
 "capable in code generation, mathematics, and reasoning with 128k context "
 "window and support for dozens of languages."
 msgstr ""
+"Mistral Large 2 Mistralen eredu enblematiko berria da; kode-sorkuntzan, "
+"matematikan eta arrazoiketan askoz gaitasun handiagoa du, 128K-ko "
+"testuinguru-leihoa eta dozenaka hizkuntzatarako euskarria."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:100
 #, kde-format
@@ -1455,6 +1385,9 @@ msgid ""
 "Qwen2 LLMs, which significantly outperforms the mathematical capabilities of "
 "open-source models and even closed-source models (e.g., GPT4o)."
 msgstr ""
+"Qwen2 Math Qwen2 LLMen gainean eraikitako matematikako hizkuntza-eredu "
+"espezializatuen sail bat da, eta sorburu irekiko nahiz sorburu itxiko "
+"ereduen (adibidez, GPT-4o) matematika-gaitasunak nabarmen gainditzen ditu."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:102
 #, kde-format
@@ -1462,6 +1395,8 @@ msgid ""
 "A strong multi-lingual general language model with competitive performance "
 "to Llama 3."
 msgstr ""
+"Hizkuntza anitzeko erabilera orokorreko eredu sendoa, Llama 3ren pareko "
+"errendimendua duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:104
 #, kde-format
@@ -1470,6 +1405,9 @@ msgid ""
 "trained on multilingual data in English, Spanish, German, Italian, French, "
 "Portuguese, and Dutch."
 msgstr ""
+"Stable LM 2 puntako teknologiako 1,6B eta 12B parametroko hizkuntza-eredua "
+"da, ingelesezko, gaztelaniazko, alemanezko, italierazko, frantsesezko, "
+"portugesezko eta nederlanderazko datu eleaniztunekin trebatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:106
 #, kde-format
@@ -1477,6 +1415,8 @@ msgid ""
 "BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
 "augmented with the LLaVA architecture."
 msgstr ""
+"BakLLaVA eredu multimodal bat da, LLaVA arkitekturarekin hedatutako Mistral "
+"7B oinarrizko ereduak osatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:108
 #, kde-format
@@ -1485,22 +1425,27 @@ msgid ""
 "tuning that teaches a LLM to detect mistakes in its reasoning and correct "
 "course."
 msgstr ""
+"Reflection-tuning izeneko teknika berri batekin trebatutako errendimendu "
+"handiko eredua; teknika horrek LLMari bere arrazoiketako akatsak hautematen "
+"eta norabidea zuzentzen irakasten dio."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:110
 #, kde-format
 msgid "An advanced language model crafted with 2 trillion bilingual tokens."
-msgstr ""
+msgstr "Bi bilioi token elebidunekin sortutako hizkuntza-eredu aurreratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:111
 #, kde-format
 msgid ""
 "This model extends LLama-3 8B's context length from 8k to over 1m tokens."
 msgstr ""
+"Eredu honek Llama 3 8Bren testuinguru-luzera 8K tokenetik milioi bat token "
+"baino gehiagora hedatzen du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:112
 #, kde-format
 msgid "Model focused on math and logic problems"
-msgstr "Arreta matematika eta logika problemetan ipintzen duen eredua"
+msgstr "Matematika- eta logika-problemetan ardaztutako eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:113
 #, kde-format
@@ -1508,6 +1453,8 @@ msgid ""
 "moondream2 is a small vision language model designed to run efficiently on "
 "edge devices."
 msgstr ""
+"moondream2 gailu periferikoetan eraginkortasunez exekutatzeko diseinatutako "
+"ikusmen- eta hizkuntza-eredu txiki bat da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:114
 #, kde-format
@@ -1515,6 +1462,8 @@ msgid ""
 "A fine-tuned model based on Mistral with good coverage of domain and "
 "language."
 msgstr ""
+"Mistralen oinarritutako eredu doitua, arlo eta hizkuntza ugari hartzen "
+"dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:116
 #, kde-format
@@ -1522,6 +1471,9 @@ msgid ""
 "A model from NVIDIA based on Llama 3 that excels at conversational question "
 "answering (QA) and retrieval-augmented generation (RAG)."
 msgstr ""
+"NVIDIAren eredu bat, Llama 3n oinarritua, elkarrizketa bidezko galdera-"
+"erantzunetan (QA) eta berreskuratze bidez aberastutako sorkuntzan (RAG) "
+"bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:117
 #, kde-format
@@ -1529,6 +1481,8 @@ msgid ""
 "Conversational model based on Llama 2 that performs competitively on various "
 "benchmarks."
 msgstr ""
+"Llama 2n oinarritutako elkarrizketa-eredua, hainbat erreferentzia-probatan "
+"errendimendu lehiakorra duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:118
 #, kde-format
@@ -1536,21 +1490,25 @@ msgid ""
 "SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
 "generation tasks"
 msgstr ""
+"SQLCoder StarCoderren gainean SQLa sortzeko atazetarako doitutako kodea "
+"osatzeko eredua da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:119
 #, kde-format
 msgid "General use models based on Llama and Llama 2 from Nous Research."
 msgstr ""
+"Nous Researchen erabilera orokorreko ereduak, Llaman eta Llama 2n "
+"oinarrituak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:120
 #, kde-format
 msgid "Code generation model based on Code Llama."
-msgstr "Kodea sortzeko eredua, Llama-n oinarritua."
+msgstr "Code Llaman oinarritutako kode-sorkuntzako eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:121
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
-msgstr ""
+msgstr "Llama 2ren hedapen bat, 128K token arteko testuingurua onartzen duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:122
 #, kde-format
@@ -1558,16 +1516,18 @@ msgid ""
 "A 7B and 15B uncensored variant of the Dolphin model family that excels at "
 "coding, based on StarCoder2."
 msgstr ""
+"StarCoder2n oinarritutako Dolphin eredu-familiaren 7B eta 15Bko zentsurarik "
+"gabeko aldaera, kodegintzan bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:123
 #, kde-format
 msgid "General use model based on Llama 2."
-msgstr "Erabilera orokorreko eredua, Llama 2(a)n oinarritua."
+msgstr "Llama 2n oinarritutako erabilera orokorreko eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:124
 #, kde-format
 msgid "A strong, economical, and efficient Mixture-of-Experts language model."
-msgstr ""
+msgstr "Adituen nahasketako hizkuntza-eredu sendo, ekonomiko eta eraginkorra."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:126
 #, kde-format
@@ -1575,6 +1535,9 @@ msgid ""
 "Starling is a large language model trained by reinforcement learning from AI "
 "feedback focused on improving chatbot helpfulness."
 msgstr ""
+"Starling AAren atzeraelikaduratik abiatutako indartze-ikaskuntzaren bidez "
+"trebatutako hizkuntza-eredu handi bat da, berriketa-boten erabilgarritasuna "
+"hobetzera bideratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:127
 #, kde-format
@@ -1582,6 +1545,8 @@ msgid ""
 "A companion assistant trained in philosophy, psychology, and personal "
 "relationships. Based on Mistral."
 msgstr ""
+"Filosofian, psikologian eta harreman pertsonaletan trebatutako laguntzaile "
+"pertsonala. Mistralen oinarritua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:128
 #, kde-format
@@ -1589,6 +1554,7 @@ msgid ""
 "Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous "
 "Research"
 msgstr ""
+"Hermes 3 Nous Researchen Hermes LLM sail enblematikoaren azken bertsioa da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:130
 #, kde-format
@@ -1596,6 +1562,9 @@ msgid ""
 "Yi-Coder is a series of open-source code language models that delivers state-"
 "of-the-art coding performance with fewer than 10 billion parameters."
 msgstr ""
+"Yi-Coder sorburu irekiko kode-hizkuntzako ereduen sail bat da, 10 mila "
+"milioi parametro baino gutxiagorekin puntako kodegintza-errendimendua "
+"eskaintzen duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:133
 #, kde-format
@@ -1603,6 +1572,8 @@ msgid ""
 "A large language model built by the Technology Innovation Institute (TII) "
 "for use in summarization, text generation, and chat bots."
 msgstr ""
+"Technology Innovation Institutek (TII) laburpenak egiteko, testua sortzeko "
+"eta berriketa-botetan erabiltzeko eraikitako hizkuntza-eredu handia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:134
 #, kde-format
@@ -1610,6 +1581,8 @@ msgid ""
 "InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
 "outstanding reasoning capability."
 msgstr ""
+"InternLM2.5 7B parametroko eredu bat da, egoera praktikoetarako egokitua eta "
+"arrazoiketa-gaitasun bikaina duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:135
 #, kde-format
@@ -1617,6 +1590,8 @@ msgid ""
 "A compact, yet powerful 10.7B large language model designed for single-turn "
 "conversation."
 msgstr ""
+"Txanda bakarreko elkarrizketetarako diseinatutako 10,7Bko hizkuntza-eredu "
+"handi trinko baina ahaltsua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:136
 #, kde-format
@@ -1624,11 +1599,13 @@ msgid ""
 "Athene-V2 is a 72B parameter model which excels at code completion, "
 "mathematics, and log extraction tasks."
 msgstr ""
+"Athene-V2 72B parametroko eredua da, kodea osatzen, matematikan eta "
+"egunkarietako datuak erauzten bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:137
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
-msgstr ""
+msgstr "Phi 3 Minitik doitutako LLaVA eredu txiki berria."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:139
 #, kde-format
@@ -1637,6 +1614,8 @@ msgid ""
 "Meta's Llama 2 models. The model is designed to excel particularly in "
 "reasoning."
 msgstr ""
+"Orca 2 Microsoft Researchek eraiki du, eta Metaren Llama 2 ereduen bertsio "
+"doitua da. Arrazoiketan bereziki bikain aritzeko diseinatuta dago."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:141
 #, kde-format
@@ -1644,6 +1623,8 @@ msgid ""
 "A series of multimodal LLMs (MLLMs) designed for vision-language "
 "understanding."
 msgstr ""
+"Ikusmenaren eta hizkuntzaren ulermenerako diseinatutako LLM multimodalen "
+"(MLLM) sail bat."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:142
 #, kde-format
@@ -1651,13 +1632,17 @@ msgid ""
 "Llama 2 based model fine tuned on an Orca-style dataset. Originally called "
 "Free Willy."
 msgstr ""
+"Orca estiloko datu-multzo batekin doitutako Llama 2n oinarritutako eredua. "
+"Hasieran Free Willy izenekoa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
 "category below 70B."
-msgstr "“txiki”"
+msgstr ""
+"Mistral Small 3k erreferentzia berri bat ezartzen du 70Btik beherako "
+"hizkuntza-eredu handi «txikien» kategorian."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:144
 #, kde-format
@@ -1665,6 +1650,8 @@ msgid ""
 "2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language "
 "model by Microsoft Research."
 msgstr ""
+"Eric Hartforden 2,7Bko Dolphin zentsurarik gabeko eredua, Microsoft "
+"Researchen Phi hizkuntza-ereduan oinarritua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:145
 #, kde-format
@@ -1672,11 +1659,13 @@ msgid ""
 "SmolLM2 is a family of compact language models available in three size: "
 "135M, 360M, and 1.7B parameters."
 msgstr ""
+"SmolLM2 hiru tamainatan eskuragarri dagoen hizkuntza-eredu trinkoen familia "
+"da: 135M, 360M eta 1,7B parametro."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:146
 #, kde-format
 msgid "Uncensored version of Wizard LM model"
-msgstr ""
+msgstr "Wizard LM ereduaren zentsurarik gabeko bertsioa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:147
 #, kde-format
@@ -1684,11 +1673,14 @@ msgid ""
 "A commercial-friendly small language model by NVIDIA optimized for roleplay, "
 "RAG QA, and function calling."
 msgstr ""
+"NVIDIAren hizkuntza-eredu txiki bat, merkataritza-erabilerarako egokia eta "
+"rol-jokoetarako, RAG bidezko galdera-erantzunetarako eta funtzio-deietarako "
+"optimizatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:148
 #, kde-format
 msgid "An extension of Mistral to support context windows of 64K or 128K."
-msgstr ""
+msgstr "Mistralen hedapen bat, 64K edo 128K-ko testuinguru-leihoak onartzeko."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:150
 #, kde-format
@@ -1697,6 +1689,9 @@ msgid ""
 "language understanding and domain-specific knowledge, particularly in "
 "programming and mathematics."
 msgstr ""
+"Llama 2ren hedapen bat, hizkuntzaren ulermen orokorra eta arlo jakinetako "
+"ezagutza —bereziki programaziokoa eta matematikakoa— bateratzen "
+"espezializatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:152
 #, kde-format
@@ -1704,6 +1699,8 @@ msgid ""
 "Fine-tuned Llama 2 model to answer medical questions based on an open source "
 "medical dataset."
 msgstr ""
+"Medikuntzako datu-multzo ireki batean oinarrituta galdera medikoei "
+"erantzuteko doitutako Llama 2 eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:153
 #, kde-format
@@ -1711,6 +1708,8 @@ msgid ""
 "Open-source medical large language model adapted from Llama 2 to the medical "
 "domain."
 msgstr ""
+"Llama 2tik medikuntzaren arlora egokitutako sorburu irekiko hizkuntza-eredu "
+"handia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:155
 #, kde-format
@@ -1718,6 +1717,8 @@ msgid ""
 "A series of models from Groq that represent a significant advancement in "
 "open-source AI capabilities for tool use/function calling."
 msgstr ""
+"Groqen eredu-sail bat, tresnen erabilerarako eta funtzio-deietarako sorburu "
+"irekiko AAren gaitasunetan aurrerapen nabarmena dakarrena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:157
 #, kde-format
@@ -1725,27 +1726,35 @@ msgid ""
 "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
 "NVIDIA to improve the helpfulness of LLM generated responses to user queries."
 msgstr ""
+"Llama-3.1-Nemotron-70B-Instruct NVIDIAk pertsonalizatutako hizkuntza-eredu "
+"handi bat da, erabiltzaileen kontsultei LLMek sortutako erantzunen "
+"erabilgarritasuna hobetzeko."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:159
 #, kde-format
 msgid ""
 "Nexus Raven is a 13B instruction tuned model for function calling tasks."
 msgstr ""
+"Nexus Raven funtzio-deien atazetarako jarraibideetara doitutako 13Bko eredua "
+"da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:160
 #, kde-format
 msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
 msgstr ""
+"Nous Researchen Nous Hermes 2 eredua, orain Mixtralen gainean trebatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:161
 #, kde-format
 msgid "Great code generation model based on Llama2."
-msgstr ""
+msgstr "Llama 2n oinarritutako kode-sorkuntzako eredu bikaina."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:162
 #, kde-format
 msgid "Uncensored Llama2 based model with support for a 16K context window."
 msgstr ""
+"Llama 2n oinarritutako zentsurarik gabeko eredua, 16K-ko testuinguru-leihoa "
+"onartzen duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:164
 #, kde-format
@@ -1754,6 +1763,9 @@ msgid ""
 "cases and support for retrieval augmented generation (RAG), streamlining "
 "code generation, translation and bug fixing."
 msgstr ""
+"IBM Granite 2B eta 8B ereduak tresnetan oinarritutako erabilera-kasuak eta "
+"berreskuratze bidez aberastutako sorkuntza (RAG) onartzeko diseinatuta "
+"daude, kode-sorkuntza, itzulpena eta akatsen konponketa arinduz."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:167
 #, kde-format
@@ -1762,6 +1774,9 @@ msgid ""
 "instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
 "with open-source code snippets."
 msgstr ""
+"Magicoder 7B parametroko ereduen familia da, OSS-Instruct erabiliz 75K "
+"jarraibide-datu sintetikorekin trebatua; LLMak sorburu irekiko kode-zatiekin "
+"gaitzeko ikuspegi berria da OSS-Instruct."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:169
 #, kde-format
@@ -1769,6 +1784,8 @@ msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
 msgstr ""
+"Berriketa-eredu arina, goi-mailako hardwarerik behar izan gabe emaitza "
+"zehatzak eta erantzun arinak ematen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:170
 #, kde-format
@@ -1776,6 +1793,8 @@ msgid ""
 "A high-performing code instruct model created by merging two existing code "
 "models."
 msgstr ""
+"Lehendik zeuden bi kode-eredu bateratuz sortutako errendimendu handiko "
+"jarraibideetarako kode-eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:171
 #, kde-format
@@ -1783,6 +1802,8 @@ msgid ""
 "Falcon2 is an 11B parameters causal decoder-only model built by TII and "
 "trained over 5T tokens."
 msgstr ""
+"Falcon2 TIIk eraikitako 11B parametroko deskodetzaile kausal hutseko eredua "
+"da, 5 bilioi token baino gehiagorekin trebatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:172
 #, kde-format
@@ -1790,6 +1811,8 @@ msgid ""
 "Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
 "MelodysDreamj."
 msgstr ""
+"Wizard Vicuna Llama 2n oinarritutako 13B parametroko eredua da, "
+"MelodysDreamjek trebatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:173
 #, kde-format
@@ -1797,6 +1820,8 @@ msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
 "capabilities of processing long contexts."
 msgstr ""
+"MistralLite Mistralen oinarritutako eredu doitua da, testuinguru luzeak "
+"prozesatzeko gaitasun hobetua duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:174
 #, kde-format
@@ -1804,11 +1829,15 @@ msgid ""
 "MathΣtral: a 7B model designed for math reasoning and scientific discovery "
 "by Mistral AI."
 msgstr ""
+"MathΣtral: Mistral AIk matematika-arrazoiketarako eta aurkikuntza "
+"zientifikorako diseinatutako 7Bko eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:175
 #, kde-format
 msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
 msgstr ""
+"MotherDuckek eta Numbers Stationek egindako testutik SQLrako 7B parametroko "
+"eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:176
 #, kde-format
@@ -1816,6 +1845,8 @@ msgid ""
 "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
 "interleaving the model with itself."
 msgstr ""
+"MegaDolphin-2.2-120B Dolphin-2.2-70B bere buruarekin tartekatuz sortutako "
+"eraldaketa bat da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:177
 #, kde-format
@@ -1823,6 +1854,8 @@ msgid ""
 "Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
 "parameters designed to fit into a single GPU"
 msgstr ""
+"Solar Pro Preview: GPU bakarrean sartzeko diseinatutako 22 mila milioi "
+"parametroko hizkuntza-eredu handi (LLM) aurreratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:178
 #, kde-format
@@ -1830,17 +1863,23 @@ msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
 "useful for content conversion tasks."
 msgstr ""
+"HTML edukia Markdown eduki bihurtzen duten ereduen saila, edukia bihurtzeko "
+"atazetarako erabilgarria."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:179
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
 msgstr ""
+"Adituen nahasketako errendimendu handieneko eredua, kalitate handiko "
+"datuekin doitua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:180
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
 msgstr ""
+"Kalitate handiko datuekin doitutako eta Zephyrren oinarritutako 7Bko "
+"berriketa-eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:181
 #, kde-format
@@ -1848,6 +1887,8 @@ msgid ""
 "Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
 "Designed for chat and code generation."
 msgstr ""
+"Open Orca OpenChat ereduaren eta Garage-bAInd Platypus 2 ereduaren "
+"bateratzea. Berriketarako eta kode-sorkuntzarako diseinatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:182
 #, kde-format
@@ -1855,6 +1896,8 @@ msgid ""
 "A language model created by combining two fine-tuned Llama 2 70B models into "
 "one."
 msgstr ""
+"Doitutako Llama 2 70Bko bi eredu bakarrean konbinatuz sortutako hizkuntza-"
+"eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:184
 #, kde-format
@@ -1862,6 +1905,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
+"IBM Granite 1B eta 3B ereduak IBMren adituen nahasketako (MoE) lehen Granite "
+"ereduak dira, latentzia txikiko erabilerarako diseinatuak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:185
 #, kde-format
@@ -1869,6 +1914,8 @@ msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
 "information extraction, based on Phi-3."
 msgstr ""
+"Phi-3n oinarritutako 3,8Bko eredua, informazioa erauzteko kalitate handiko "
+"datu-multzo sintetiko pribatu batekin doitua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:186
 #, kde-format
@@ -1876,11 +1923,12 @@ msgid ""
 "Cohere For AI's language models trained to perform well across 23 different "
 "languages."
 msgstr ""
+"Cohere For AIren hizkuntza-ereduak, 23 hizkuntzatan ondo aritzeko trebatuak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:187
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
-msgstr ""
+msgstr "DBRX Databricksek sortutako erabilera orokorreko LLM ireki bat da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:188
 #, kde-format
@@ -1888,11 +1936,13 @@ msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
 "International Digital Commerce Group (AIDC-AI)."
 msgstr ""
+"Alibaba International Digital Commerce Groupek (AIDC-AI) mundu errealeko "
+"konponbideetarako egindako arrazoiketa-eredu handi irekia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:189
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
-msgstr ""
+msgstr "BAAIren txertatze-eredua, testuak bektore bihurtzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:190
 #, kde-format
@@ -1900,6 +1950,8 @@ msgid ""
 "An open weights function calling model based on Llama 3, competitive with "
 "GPT-4o function calling capabilities."
 msgstr ""
+"Llama 3n oinarritutako pisu irekiko funtzio-deien eredua, GPT-4oren funtzio-"
+"deietarako gaitasunen parekoa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:191
 #, kde-format
@@ -1907,6 +1959,8 @@ msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
 "use cases."
 msgstr ""
+"Berriketako nahiz jarraibideetako erabilera-kasuetarako diseinatutako "
+"elkarrizketa-eredu sendoa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:193
 #, kde-format
@@ -1914,6 +1968,8 @@ msgid ""
 "An upgraded version of DeekSeek-V2 that integrates the general and coding "
 "abilities of both DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct."
 msgstr ""
+"DeepSeek-V2ren bertsio berritua, DeepSeek-V2-Chat eta DeepSeek-Coder-V2-"
+"Instruct ereduen gaitasun orokorrak eta kodegintzakoak bateratzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:195
 #, kde-format
@@ -1922,11 +1978,15 @@ msgid ""
 "text prompt input and text output responses against a set of defined safety "
 "policies."
 msgstr ""
+"ShieldGemma testu-eskaeren sarrerak eta testuzko erantzunak zehaztutako "
+"segurtasun-politiken arabera ebaluatzeko jarraibideetara doitutako ereduen "
+"multzoa da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:197
 #, kde-format
 msgid "A state-of-the-art fact-checking model developed by Bespoke Labs."
 msgstr ""
+"Bespoke Labsek garatutako puntako teknologiako egitateak egiaztatzeko eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:198
 #, kde-format
@@ -1934,6 +1994,8 @@ msgid ""
 "Llama Guard 3 is a series of models fine-tuned for content safety "
 "classification of LLM inputs and responses."
 msgstr ""
+"Llama Guard 3 LLMen sarreren eta erantzunen eduki-segurtasuna sailkatzeko "
+"doitutako ereduen saila da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:199
 #, kde-format
@@ -1941,6 +2003,8 @@ msgid ""
 "Sentence-transformers model that can be used for tasks like clustering or "
 "semantic search."
 msgstr ""
+"Multzokatzea edo bilaketa semantikoa bezalako atazetarako erabil daitekeen "
+"sentence-transformers eredua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:201
 #, kde-format
@@ -1948,6 +2012,8 @@ msgid ""
 "OpenCoder is an open and reproducible code LLM family which includes 1.5B "
 "and 8B models, supporting chat in English and Chinese languages."
 msgstr ""
+"OpenCoder kode-LLMen familia ireki eta erreproduzigarria da; 1,5B eta 8B "
+"ereduak ditu, eta ingelesezko eta txinerazko berriketa onartzen du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:203
 #, kde-format
@@ -1955,6 +2021,9 @@ msgid ""
 "Tülu 3 is a leading instruction following model family, offering fully open-"
 "source data, code, and recipes by the The Allen Institute for AI."
 msgstr ""
+"Tülu 3 jarraibideak betetzeko ereduen familia aitzindaria da; The Allen "
+"Institute for AIk sorburu guztiz irekiko datuak, kodea eta errezetak "
+"eskaintzen ditu."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:205
 #, kde-format
@@ -1962,6 +2031,9 @@ msgid ""
 "Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
 "support without sacrificing English performance or scalability."
 msgstr ""
+"Snowflakeren puntako txertatze-eredua. Arctic Embed 2.0k hizkuntza anitzeko "
+"euskarria gehitzen du ingelesezko errendimenduari edo eskalagarritasunari "
+"uko egin gabe."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:206
 #, kde-format
@@ -1969,6 +2041,8 @@ msgid ""
 "The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
 "in prompts and/or responses."
 msgstr ""
+"IBM Granite Guardian 3.0ren 2B eta 8B ereduak eskaeretan eta/edo "
+"erantzunetan arriskuak hautemateko diseinatuta daude."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:208
 #, kde-format
@@ -1977,6 +2051,9 @@ msgid ""
 "Korean) generative models ranging from 2.4B to 32B parameters, developed and "
 "released by LG AI Research."
 msgstr ""
+"EXAONE 3.5 ingelesezko eta koreerazko eredu sortzaile elebidunen bilduma bat "
+"da, jarraibideetara doitua, 2,4B eta 32B parametro bitartekoa, eta LG AI "
+"Researchek garatu eta argitaratua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:210
 #, kde-format
@@ -1984,6 +2061,8 @@ msgid ""
 "Sailor2 are multilingual language models made for South-East Asia. Available "
 "in 1B, 8B, and 20B parameter sizes."
 msgstr ""
+"Sailor2 Asiako hego-ekialderako egindako hizkuntza-eredu eleaniztunak dira. "
+"1B, 8B eta 20B parametroko tamainetan daude eskuragarri."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:212
 #, kde-format
@@ -1991,6 +2070,9 @@ msgid ""
 "A family of efficient AI models under 10B parameters performant in science, "
 "math, and coding through innovative training techniques."
 msgstr ""
+"10B parametro baino gutxiagoko AA eredu eraginkorren familia, trebakuntza-"
+"teknika berritzaileen bidez zientzian, matematikan eta kodegintzan "
+"errendimendu ona duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:214
 #, kde-format
@@ -1999,6 +2081,9 @@ msgid ""
 "trillion tokens of data, demonstrated significant improvements over their "
 "predecessors in performance and speed in IBM’s initial testing."
 msgstr ""
+"IBM Granite 2B eta 8B ereduak testu hutseko LLM trinkoak dira, 12 bilioi "
+"datu-token baino gehiagorekin trebatuak; IBMren hasierako probetan aurreko "
+"ereduekiko errendimendu- eta abiadura-hobekuntza nabarmenak erakutsi dituzte."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:217
 #, kde-format
@@ -2006,6 +2091,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
+"IBM Granite 1B eta 3B ereduak IBMren testuinguru luzeko adituen nahasketako "
+"(MoE) Granite ereduak dira, latentzia txikiko erabilerarako diseinatuak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:219
 #, kde-format
@@ -2014,17 +2101,22 @@ msgid ""
 "biencoder embedding models, with 30M available in English only and 278M "
 "serving multilingual use cases."
 msgstr ""
+"IBM Granite Embedding 30M eta 278M ereduak testu hutseko bi kodetzaileko "
+"txertatze-eredu trinkoak dira; 30M ingelesez soilik dago eskuragarri, eta "
+"278M ereduak hizkuntza anitzeko erabilera-kasuak zerbitzatzen ditu."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:221
 #, kde-format
 msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
 msgstr ""
+"Phi-4 Microsoften puntako teknologiako 14B parametroko eredu ireki bat da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:222
 #, kde-format
 msgid ""
 "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
 msgstr ""
+"Qwen 2.5 3B Instruct eredutik doitutako arrazoiketa-eredu txiki berria."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:224
 #, kde-format
@@ -2034,6 +2126,10 @@ msgid ""
 "model, enabling coding, math, agentic, function calling, and general use "
 "cases."
 msgstr ""
+"Dolphin 3.0 Llama 3.1 8B 🐬 Dolphin sailaren jarraibideetara doitutako "
+"ereduen hurrengo belaunaldia da; erabilera orokorreko tokiko behin betiko "
+"eredua izateko diseinatu da, kodegintza, matematika, agente bidezko lana, "
+"funtzio-deiak eta erabilera orokorrak ahalbidetuz."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:227
 #, kde-format
@@ -2042,6 +2138,9 @@ msgid ""
 "to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on "
 "Llama and Qwen."
 msgstr ""
+"DeepSeeken lehen belaunaldiko arrazoiketa-ereduak, OpenAI-o1en pareko "
+"errendimendua dutenak; horien artean daude DeepSeek-R1etik destilatutako eta "
+"Llaman nahiz Qwenen oinarritutako sei eredu trinko."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:229
 #, kde-format
@@ -2049,6 +2148,8 @@ msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
 "with 37B activated for each token."
 msgstr ""
+"Adituen nahasketako (MoE) hizkuntza-eredu sendoa, guztira 671B parametro "
+"dituena eta token bakoitzeko 37B aktibatzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:231
 #, kde-format
@@ -2058,6 +2159,10 @@ msgid ""
 "models, and competitive with open-weight models such as Llama 3.1 on English "
 "academic benchmarks."
 msgstr ""
+"OLMo 2 7B eta 13Bko ereduen familia berria da, gehienez 5 bilioi tokenekin "
+"trebatua. Tamaina bereko eredu guztiz irekien parekoak edo hobeak dira, eta "
+"ingelesezko erreferentzia-proba akademikoetan Llama 3.1 gisako pisu irekiko "
+"ereduen lehiakide dira."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:234
 #, kde-format
@@ -2066,6 +2171,9 @@ msgid ""
 "and quality to build powerful AI applications on commodity GPUs and edge "
 "devices."
 msgstr ""
+"Cohereren R saileko eredu txikienak goi-mailako abiadura, eraginkortasuna "
+"eta kalitatea eskaintzen ditu, ohiko GPUetan eta gailu periferikoetan AA "
+"aplikazio ahaltsuak eraikitzeko."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:236
 #, kde-format
@@ -2073,6 +2181,8 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
+"DeepSeek-R1 destilatuz eratorritako datu-multzo batekin eraikitako sorburu "
+"guztiz irekiko arrazoiketa-ereduen familia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:238
 #, kde-format
@@ -2081,6 +2191,9 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
+"Deepseek-R1-Distilled-Qwen-1.5B ereduaren bertsio doitua, 1,5B "
+"parametrorekin soilik matematikako ebaluazio ezagunetan OpenAIren o1-preview "
+"ereduaren errendimendua gainditzen duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:241
 #, kde-format
@@ -2088,11 +2201,13 @@ msgid ""
 "A version of the DeepSeek-R1 model that has been post trained to provide "
 "unbiased, accurate, and factual information by Perplexity."
 msgstr ""
+"Perplexityk informazio alboragabea, zehatza eta egitateetan oinarritua "
+"emateko osteko trebakuntza egin dion DeepSeek-R1 ereduaren bertsioa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:242
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
-msgstr ""
+msgstr "GPU bakarrean exekutatzen den egungo eredurik gaitasun handienekoa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:244
 #, kde-format
@@ -2101,6 +2216,9 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
+"Phi-4-minik hobekuntza nabarmenak dakartza hizkuntza anitzeko euskarrian, "
+"arrazoiketan eta matematikan; gainera, luzaroan espero izandako funtzio-"
+"deien eginbidea onartzen du orain."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:247
 #, kde-format
@@ -2109,6 +2227,9 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"Ikusmen- eta hizkuntza-eredu trinko eta eraginkorra, ikusizko dokumentuak "
+"ulertzeko berariaz diseinatua; tauletatik, grafikoetatik, infografietatik, "
+"diagrametatik eta abarretatik edukia automatikoki erauztea ahalbidetzen du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:249
 #, kde-format
@@ -2116,6 +2237,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
+"Granite-3.2 IBM Graniteren testuinguru luzeko AA ereduen familia da, "
+"arrazoiketa-gaitasunetarako doitua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:251
 #, kde-format
@@ -2125,8 +2248,8 @@ msgid ""
 "Middle East and Northern Africa."
 msgstr ""
 "Command R7B eredu arinaren puntako teknologiako bertsio berria, Ekialde "
-"Hurbileko eta Ipar Afrikako enpresetarako, arabierazko gaitasun "
-"aurreratuetan bikain aritzeko doitua."
+"Hurbileko eta Ipar Afrikako enpresetarako arabierazko gaitasun aurreratuetan "
+"bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:253
 #, kde-format
@@ -2134,6 +2257,8 @@ msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
 "fast, secure, and high-quality AI"
 msgstr ""
+"111 mila milioi parametroko eredua, AA azkarra, segurua eta kalitate "
+"handikoa behar duten enpresa zorrotzetarako optimizatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:255
 #, kde-format
@@ -2142,6 +2267,9 @@ msgid ""
 "including math and coding benchmarks, ranging from 2.4B to 32B parameters "
 "developed and released by LG AI Research."
 msgstr ""
+"EXAONE Deepek gaitasun bikainak ditu hainbat arrazoiketa-atazatan, "
+"matematika- eta kodegintza-erreferentzia-probak barne; LG AI Researchek "
+"garatu eta argitaratutako 2,4B eta 32B parametro bitarteko ereduak dira."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:258
 #, kde-format
@@ -2150,6 +2278,9 @@ msgid ""
 "art vision understanding and enhances long context capabilities up to 128k "
 "tokens without compromising text performance."
 msgstr ""
+"Mistral Small 3n oinarrituta, Mistral Small 3.1 (2503) ereduak puntako "
+"ikusmen-ulermena gehitzen du eta testuinguru luzeko gaitasunak 128K token "
+"arte hobetzen ditu, testuaren errendimendua kaltetu gabe."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:261
 #, kde-format
@@ -2158,6 +2289,10 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
+"Cogito v1 Preview Deep Cogitoren arrazoiketa-eredu hibridoen familia da; "
+"erreferentzia-proba estandar gehienetan tamaina bereko eredu ireki "
+"erabilgarri onenak gainditzen ditu, LLaMAren, DeepSeeken eta Qwenen "
+"baliokideak barne."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:263
 #, kde-format
@@ -2165,6 +2300,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
+"DeepCoder sorburu guztiz irekiko 14Bko kode-eredua da, O3-mini mailakoa; "
+"1,5Bko bertsioa ere eskuragarri dago."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:265
 #, kde-format
@@ -2172,6 +2309,8 @@ msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
+"Qwen3 Qwen saileko hizkuntza-eredu handien azken belaunaldia da, eredu "
+"trinkoen eta adituen nahasketako (MoE) ereduen multzo osoa eskaintzen duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:267
 #, kde-format
@@ -2185,6 +2324,9 @@ msgid ""
 "have been fine-tuned for improved reasoning and instruction-following "
 "capabilities."
 msgstr ""
+"IBM Granite 2B eta 8B ereduak 128K-ko testuinguru-luzera duten hizkuntza-"
+"ereduak dira, arrazoiketa eta jarraibideak betetzeko gaitasunak hobetzeko "
+"doituak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:272
 #, kde-format
@@ -2192,6 +2334,9 @@ msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
 "reasoning models that rival much larger models on complex reasoning tasks."
 msgstr ""
+"Phi 4 reasoning eta reasoning plus 14 mila milioi parametroko pisu irekiko "
+"arrazoiketa-ereduak dira, arrazoiketa-ataza konplexuetan askoz eredu "
+"handiagoen parekoak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:274
 #, kde-format
@@ -2199,6 +2344,8 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
+"Phi 4 mini reasoning eredu ireki arina da, eraginkortasuna eta arrazoiketa-"
+"gaitasun aurreratua orekatzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:275
 #, kde-format
@@ -2206,11 +2353,13 @@ msgid ""
 "Gemma 3n models are designed for efficient execution on everyday devices "
 "such as laptops, tablets or phones."
 msgstr ""
+"Gemma 3n ereduak ordenagailu eramangarrietan, tabletetan eta telefonoetan "
+"eraginkortasunez exekutatzeko diseinatuta daude."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:276
 #, kde-format
 msgid "Magistral is a small, efficient reasoning model with 24B parameters."
-msgstr ""
+msgstr "Magistral 24B parametroko arrazoiketa-eredu txiki eta eraginkorra da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:277
 #, kde-format
@@ -2218,6 +2367,8 @@ msgid ""
 "An update to Mistral Small that improves on function calling, instruction "
 "following, and less repetition errors."
 msgstr ""
+"Mistral Smallen eguneraketa bat, funtzio-deiak eta jarraibideak betetzea "
+"hobetzen dituena eta errepikapen-akats gutxiago egiten dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:278
 #, kde-format
@@ -2225,11 +2376,13 @@ msgid ""
 "Flagship vision-language model of Qwen and also a significant leap from the "
 "previous Qwen2-VL."
 msgstr ""
+"Qwenen ikusmen- eta hizkuntza-eredu enblematikoa, eta aurreko Qwen2-VLrekiko "
+"jauzi nabarmena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:279
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr "Devstral: kodea sortzeko agenteetarako sorburu irekiko eredu onena."
+msgstr "Devstral: kodegintza-agenteetarako sorburu irekiko eredurik onena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:280
 #, kde-format
@@ -2237,11 +2390,15 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
+"OpenAIren pisu irekiko ereduak, arrazoiketa ahaltsurako, agente bidezko "
+"atazetarako eta garatzaileen erabilera-kasu moldakorretarako diseinatuak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:281
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
+"Alibabaren testuinguru luzeko errendimendu handiko ereduak, agente bidezko "
+"eta kodegintzako atazetarako."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:282
 #, kde-format
@@ -2249,11 +2406,13 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
+"DeepSeek-V3.1 eredu hibridoa da, arrazoiketa-modua eta arrazoiketarik gabeko "
+"modua onartzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:283
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr ""
+msgstr "EmbeddingGemma Googleren 300M parametroko txertatze-eredua da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:285
 #, kde-format
@@ -2261,6 +2420,8 @@ msgid ""
 "EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
 "provides a comprehensive range of text embeddings models in various sizes."
 msgstr ""
+"Qwen3 saileko oinarrizko ereduetatik abiatuta, Qwen3 Embeddingek hainbat "
+"tamainatako testu-txertatze ereduen sorta osoa eskaintzen du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:288
 #, kde-format
@@ -2268,17 +2429,20 @@ msgid ""
 "Granite 4 features improved instruction following (IF) and tool-calling "
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
+"Granite 4k jarraibideak betetzeko (IF) eta tresna-deietarako gaitasun hobeak "
+"ditu, eta horri esker eraginkorragoa da enpresa-aplikazioetan."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:289
 #, kde-format
 msgid ""
 "The most powerful vision-language model in the Qwen model family to date."
 msgstr ""
+"Orain arteko Qwen eredu-familiako ikusmen- eta hizkuntza-eredurik ahaltsuena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
 #, kde-format
 msgid "Advanced agentic, reasoning and coding capabilities.."
-msgstr ""
+msgstr "Agente bidezko, arrazoiketako eta kodegintzako gaitasun aurreratuak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
 #, kde-format
@@ -2287,6 +2451,9 @@ msgid ""
 "Instruct-0905 demonstrates significant improvements in performance on public "
 "benchmarks and real-world coding agent tasks."
 msgstr ""
+"Adituen nahasketako (MoE) puntako hizkuntza-eredua. Kimi K2-Instruct-0905ek "
+"errendimendu-hobekuntza nabarmenak erakusten ditu erreferentzia-proba "
+"publikoetan eta mundu errealeko kodegintza-agenteen atazetan."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:294
 #, kde-format
@@ -2294,12 +2461,16 @@ msgid ""
 "MiniMax M2 is a high-efficiency large language model built for coding and "
 "agentic workflows."
 msgstr ""
+"MiniMax M2 kodegintzarako eta agente bidezko lan-fluxuetarako eraikitako "
+"eraginkortasun handiko hizkuntza-eredu handia da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:295
 #, kde-format
 msgid ""
 "DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
 msgstr ""
+"DeepSeek-OCR tokenak eraginkortasunez erabiltzen dituen OCRa egin dezakeen "
+"ikusmen- eta hizkuntza-eredua da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
 #, kde-format
@@ -2307,6 +2478,8 @@ msgid ""
 "gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models "
 "built-upon gpt-oss."
 msgstr ""
+"gpt-oss-safeguard-20b eta gpt-oss-safeguard-120b gpt-ossen gainean "
+"eraikitako segurtasuneko arrazoiketa-ereduak dira."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:298
 #, kde-format
@@ -2314,11 +2487,15 @@ msgid ""
 "Google's most intelligent model with SOTA reasoning and multimodal "
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
+"Googleren eredurik adimentsuena, puntako arrazoiketa eta ulermen "
+"multimodala, eta agente bidezko nahiz «vibe coding» kodegintzako gaitasun "
+"ahaltsuak dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
 msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
 msgstr ""
+"Kimi K2 Thinking, Moonshot AIren sorburu irekiko arrazoiketa-eredurik onena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:300
 #, kde-format
@@ -2326,6 +2503,8 @@ msgid ""
 "The Cogito v2.1 LLMs are instruction tuned generative models. All models are "
 "released under MIT license for commercial use."
 msgstr ""
+"Cogito v2.1 LLMak jarraibideetara doitutako eredu sortzaileak dira. Eredu "
+"guztiak MIT lizentziarekin argitaratzen dira merkataritza-erabilerarako."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:301
 #, kde-format
@@ -2333,6 +2512,8 @@ msgid ""
 "The Ministral 3 family is designed for edge deployment, capable of running "
 "on a wide range of hardware."
 msgstr ""
+"Ministral 3 familia gailu periferikoetan hedatzeko diseinatuta dago, eta "
+"hardware mota askotan exekuta daiteke."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:303
 #, kde-format
@@ -2341,6 +2522,9 @@ msgid ""
 "scratch by Essential AI, optimized for code and STEM with capabilities on "
 "par with SOTA open-weight models."
 msgstr ""
+"Rnj-1 Essential AIk hutsetik trebatutako 8B parametroko pisu irekiko eredu "
+"trinkoen familia da; kodegintzarako eta STEM arloetarako optimizatuta dago, "
+"eta puntako pisu irekiko ereduen pareko gaitasunak ditu."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:306
 #, kde-format
@@ -2348,6 +2532,8 @@ msgid ""
 "The first installment in the Qwen3-Next series with strong performance in "
 "terms of both parameter efficiency and inference speed."
 msgstr ""
+"Qwen3-Next saileko lehen eredua, parametroen eraginkortasunean eta "
+"inferentzia-abiaduran errendimendu sendoa duena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
 #, kde-format
@@ -2355,6 +2541,8 @@ msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
 msgstr ""
+"Nemotron 3 Nano: agente bidezko eredu eraginkor, ireki eta adimentsuetarako "
+"estandar berria."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
 #, kde-format
@@ -2362,6 +2550,9 @@ msgid ""
 "24B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
+"24Bko eredua, tresnak erabiliz kode-oinarriak aztertzen, hainbat fitxategi "
+"editatzen eta software-ingeniaritzako agenteak bultzatzen bikain aritzen "
+"dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:311
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:318
@@ -2371,6 +2562,9 @@ msgid ""
 "language models. These models are pre-trained on the Dolma 3 dataset and "
 "post-trained on the Dolci datasets."
 msgstr ""
+"Olmo hizkuntza-ereduen zientzia ahalbidetzeko diseinatutako hizkuntza-eredu "
+"irekien saila da. Eredu horiek Dolma 3 datu-multzoarekin aurretik trebatu "
+"eta Dolci datu-multzoekin ondoren trebatu dira."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
 #, kde-format
@@ -2378,6 +2572,8 @@ msgid ""
 "A new collection of open translation models built on Gemma 3, helping people "
 "communicate across 55 languages."
 msgstr ""
+"Gemma 3n oinarritutako itzulpen-eredu irekien bilduma berria, pertsonei 55 "
+"hizkuntzatan komunikatzen laguntzen diena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:315
 #, kde-format
@@ -2385,6 +2581,9 @@ msgid ""
 "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
 "for lightweight deployment that balances performance and efficiency."
 msgstr ""
+"30B mailako eredurik sendoena denez, GLM-4.7-Flash ereduak errendimendua eta "
+"eraginkortasuna orekatzen dituen hedapen arinerako aukera berria eskaintzen "
+"du."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
 #, kde-format
@@ -2392,6 +2591,9 @@ msgid ""
 "123B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
+"123Bko eredua, tresnak erabiliz kode-oinarriak aztertzen, hainbat fitxategi "
+"editatzen eta software-ingeniaritzako agenteak bultzatzen bikain aritzen "
+"dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:321
 #, kde-format
@@ -2399,6 +2601,8 @@ msgid ""
 "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
 "tuned explicitly for function calling."
 msgstr ""
+"FunctionGemma Googleren Gemma 3 270M ereduaren bertsio espezializatua da, "
+"funtzio-deietarako berariaz doitua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
 #, kde-format
@@ -2406,6 +2610,8 @@ msgid ""
 "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
 "the cost."
 msgstr ""
+"Gemini 3 Flashek puntako adimena eskaintzen du, abiadurarako eraikia eta "
+"kostuaren zati baten truke."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
 #, kde-format
@@ -2413,11 +2619,13 @@ msgid ""
 "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
 "excels at multilingual retrieval."
 msgstr ""
+"nomic-embed-text-v2-moe adituen nahasketako (MoE) testu-txertatze eredu "
+"eleaniztuna da, hizkuntza anitzeko berreskuratzean bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
 #, kde-format
 msgid "Advancing the Coding Capability"
-msgstr ""
+msgstr "Kodegintza-gaitasuna aurreratzea."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:325
 #, kde-format
@@ -2425,6 +2633,8 @@ msgid ""
 "DeepSeek-V3.2, a model that harmonizes high computational efficiency with "
 "superior reasoning and agent performance."
 msgstr ""
+"DeepSeek-V3.2k konputazio-eraginkortasun handia eta arrazoiketan nahiz "
+"agenteen jardunean errendimendu bikaina bateratzen ditu."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:326
 #, kde-format
@@ -2432,17 +2642,21 @@ msgid ""
 "A general-purpose multimodal mixture-of-experts model for production-grade "
 "tasks and enterprise workloads."
 msgstr ""
+"Ekoizpen-mailako atazetarako eta enpresa-lanetarako erabilera orokorreko "
+"adituen nahasketako eredu multimodala."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:327
 #, kde-format
 msgid "Exceptional multilingual capabilities to elevate code engineering"
-msgstr ""
+msgstr "Kode-ingeniaritza goratzeko hizkuntza anitzeko gaitasun bikainak."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:328
 #, kde-format
 msgid ""
 "LFM2.5 is a new family of hybrid models designed for on-device deployment."
 msgstr ""
+"LFM2.5 gailuan bertan hedatzeko diseinatutako eredu hibridoen familia berria "
+"da."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:330
 #, kde-format
@@ -2452,6 +2666,10 @@ msgid ""
 "capabilities, instant and thinking modes, as well as conversational and "
 "agentic paradigms."
 msgstr ""
+"Kimi K2.5 sorburu irekiko berezko eredu multimodal eta agente bidezkoa da; "
+"ikusmenaren eta hizkuntzaren ulermena agente-gaitasun aurreratuekin, "
+"berehalako eta arrazoiketa moduekin, eta elkarrizketa- nahiz agente-"
+"paradigmekin bateratzen ditu."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2459,6 +2677,9 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"Z.airen arrazoiketa-eredu agentiko sendoa, guztira 744B parametro dituena "
+"(40B aktibo); sistema-ingeniaritza konplexurako eta epe luzeko atazetarako "
+"eraikia."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2466,6 +2687,8 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 puntako hizkuntza-eredu handia da, mundu errealeko "
+"produktibitaterako eta kodegintza-atazetarako diseinatua."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:337
 #, kde-format
@@ -2474,6 +2697,9 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Gemma 4 ereduak tamaina bakoitzean puntako errendimendua emateko diseinatuta "
+"daude. Egokiak dira arrazoiketarako, agente bidezko lan-fluxuetarako, "
+"kodegintzarako eta ulermen multimodalerako."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
@@ -2481,6 +2707,8 @@ msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
 msgstr ""
+"Qwen 3.5 sorburu irekiko eredu multimodalen familia da, erabilgarritasun eta "
+"errendimendu bikainak eskaintzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2489,6 +2717,9 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 gailuan bertan hedatzeko diseinatutako eredu hibridoen familia da. "
+"LFM2-24B-A2B familiako eredurik handiena da; arkitektura 24 mila milioi "
+"parametrora eskalatzen du, inferentziaren eraginkortasuna mantenduz."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2497,6 +2728,9 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super 120Bko MoE eredu irekia da, 12B parametro soilik "
+"aktibatzen dituena, agente anitzeko aplikazio konplexuetan konputazio-"
+"eraginkortasun eta zehaztasun handienak eskaintzeko."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2504,6 +2738,8 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"NVIDIAren 30Bko MoE eredu irekia, 3B parametro aktibatzen dituena eta "
+"arrazoiketa- nahiz agente-gaitasun sendoak eskaintzen dituena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
@@ -2511,6 +2747,8 @@ msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
 msgstr ""
+"MiniMaxen M2 saileko eredua, kodegintzarako, agente bidezko lan-fluxuetarako "
+"eta lanbide-produktibitaterako."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:349
 #, kde-format
@@ -2518,40 +2756,42 @@ msgid ""
 "Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
 "preservation than previous Qwen models."
 msgstr ""
+"Qwen3.6k aurreko Qwen ereduek baino hobekuntza nabarmenak eskaintzen ditu "
+"agente bidezko kodegintzan eta arrazoiketa mantentzen."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
 #, kde-format
 msgid "The user is called %1"
-msgstr ""
+msgstr "Erabiltzaileak %1 du izena."
 
 #: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
 #: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
-msgstr ""
+msgstr "«%1» URLa ireki"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr ""
+msgstr "Ollama sarean eskuragarri ipini"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr ""
+msgstr "Arrazoiketaren prozesamendua"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Aukerak"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
-msgstr ""
+msgstr "Ipini Ollama sare lokaleko beste gailu eta software batzuen eskura."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2560,18 +2800,18 @@ msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
 msgstr ""
+"Mezua sortu aurretik, arrazoiketa-eredu bateragarriei beren erantzunari "
+"buruz arrazoituarazi."
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Share Name:"
-msgstr "Izena:"
+msgstr "Partekatzeko izena:"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Override Parameters"
-msgstr "Parametroen neurria:"
+msgstr "Gainidazte-parametroak"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
 #, kde-format
@@ -2614,82 +2854,75 @@ msgid ""
 "Controls how many token (piece of text) the model can process and remember "
 "at once."
 msgstr ""
+"Ereduak aldi berean prozesatu eta gogora ditzakeen tokenen (testu-zatien) "
+"kopurua kontrolatzen du."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
 #, kde-format
 msgid "Context Window Size:"
-msgstr ""
+msgstr "Testuinguru-leihoaren neurria:"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:172
 #, kde-format
 msgid "Capabilities"
-msgstr ""
+msgstr "Gaitasunak"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:174
-#, fuzzy, kde-format
-#| msgid "Temperature:"
+#, kde-format
 msgid "Template"
-msgstr "Tenperatura:"
+msgstr "Txantiloia"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:175
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Modelfile"
-msgstr "Ereduak"
+msgstr "Eredu-fitxategia"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:178
-#, fuzzy, kde-format
-#| msgid "Parameter Size:"
+#, kde-format
 msgid "Parameters"
-msgstr "Parametroen neurria:"
+msgstr "Parametroak"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:180
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Xehetasunak"
 
 #: plugins/ollamacommon/ollamacommonreply.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Model Info"
-msgstr "Informazioa:"
+msgstr "Ereduaren informazioa"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:19
 #, kde-format
 msgid "Do not Share"
-msgstr ""
+msgstr "Ez partekatu"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:20
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Erabiltzaile-izena"
 
 #: plugins/ollamacommon/ollamacommonsharenamecombobox.cpp:21
 #, kde-format
 msgid "Full Name"
-msgstr ""
+msgstr "Izen osoa"
 
 #: plugins/ollamacommon/ollamacommonshowmodelinfobutton.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Model Info"
-msgstr "Informazioa:"
+msgstr "Ereduaren informazioa erakutsi"
 
 #: plugins/ollamaonline/ollamaonlineclient.cpp:26
 #, kde-format
 msgid "Ollama (Online)"
-msgstr ""
+msgstr "Ollama (lerroan)"
 
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Ollama"
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
-msgstr "Konfiguratu Ollama"
+msgstr "Ollama Online konfiguratu"
 
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:73
 #, kde-format
@@ -2697,10 +2930,9 @@ msgid "Server Url:"
 msgstr "Zerbitzariaren URLa:"
 
 #: plugins/ollamaonline/ollamaonlineplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgid "Ollama Online"
-msgstr "Ollama"
+msgstr "Ollama Online"
 
 #: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
@@ -2730,25 +2962,22 @@ msgid "Configure…"
 msgstr "Konfiguratu…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "Konfiguratu instantziak"
+msgstr "Instantzia konfiguratu"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
+"Energia aurrezteko modua gaituta dago; horrek mezuen sorrera motelduko du."
 
-#: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:27
+#, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
-msgstr "Informazioa:"
+msgstr "Ereduaren informazioa erakutsi"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2772,25 +3001,23 @@ msgstr "Erantsi fitxategia"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "%1 irudi-fitxategia"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "%1 audio-fitxategia"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "%1 testu-fitxategia"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select GGUF File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Hautatu GGUF fitxategia"
+msgstr "Fitxategia hautatu"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:82
 #, kde-format
@@ -2807,15 +3034,15 @@ msgstr "Tresnak hautatzeko aukera ematen du"
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Ezin da %1 ireki"
 
 #: widgets/common/textautogeneratetextopenfilejob.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Errorea fitxategia irekitzean"
 
-#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:26
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:27
 #, kde-format
 msgid "Metadata Info"
 msgstr "Metadatuen informazioa"
@@ -2823,17 +3050,17 @@ msgstr "Metadatuen informazioa"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
-msgstr "Testu pluginak"
+msgstr "Testu-pluginak"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
 msgid "Tools Plugins"
-msgstr "Tresnen pluginak"
+msgstr "Tresna-pluginak"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
 msgid "Prompt"
-msgstr "Gonbita"
+msgstr "Eskaera"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
@@ -2859,13 +3086,13 @@ msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "Metadatuen informazioa erakutsi"
 
-#: widgets/debug/textautogenerateshowdebugdialog.cpp:25
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:26
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:26
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:26
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "Arazketa"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2885,11 +3112,11 @@ msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Hautatu instantzia mota bat:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Konfiguratu instantziak"
+msgstr "Instantziak konfiguratu"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:54
 #, kde-format
@@ -2939,11 +3166,11 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Gehitu instantzia…"
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr "Konfiguratu AA testu pluginak"
+msgstr "AA testu-pluginak konfiguratu"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:42
 #, kde-format
@@ -2995,27 +3222,23 @@ msgstr "Konfiguratu…"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "Token gehienez:"
+msgstr "Gehieneko token kopurua:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr ""
+msgstr "Testu-pluginak:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "Deskribapena:"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "Informazioa:"
+msgstr "Jarraibideak:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -3034,7 +3257,7 @@ msgstr "Bilatu…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "Erakutsi barneko tresnak…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
@@ -3096,7 +3319,7 @@ msgctxt "@action"
 msgid "Next Chat"
 msgstr "Hurrengo berriketa"
 
-#: widgets/textautogeneratesearchdialog.cpp:28
+#: widgets/textautogeneratesearchdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
@@ -3110,13 +3333,13 @@ msgstr "Ez da pluginik aurkitu."
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "Jakinarazitako errorea: %1"
 
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "Errorea"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
@@ -3134,13 +3357,13 @@ msgstr "Editatu…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr ""
+msgstr "Gelditu"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:506
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
-msgstr ""
+msgstr "Irakurri ozen"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:510
 #: widgets/view/textautogeneratedelegateutils.cpp:70
@@ -3159,68 +3382,68 @@ msgstr "Berritu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "Adarkatu"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "Kode-blokea kopiatu da."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Kopiatu kode-blokea"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:39
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
-msgstr ""
+msgstr "Irudia erakutsi"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:59
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:60
 #, kde-format
 msgid "Copy Image to Clipboard"
-msgstr ""
+msgstr "Irudia arbelera kopiatu"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:61
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:62
 #, kde-format
 msgid "Copy Location to Clipboard"
-msgstr ""
+msgstr "Kokalekua arbelera kopiatu"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:143
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:141
 #, kde-format
 msgid "Other Application..."
-msgstr ""
+msgstr "Beste aplikazio bat…"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Zoom:"
-msgstr ""
+msgstr "Zooma:"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr ""
+msgstr "% 100"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Fit to View"
-msgstr ""
+msgstr "Ikuspegira egokitu"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:109
 #, kde-format
 msgid "Save Image"
-msgstr ""
+msgstr "Irudia gorde"
 
 #: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr "Kopiatu hautapena"
+msgstr "Hautapena kopiatu"
 
 #: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
@@ -3232,7 +3455,7 @@ msgstr "Kopiatu"
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Kopiatu URL"
+msgstr "URLa kopiatu"
 
 #: widgets/view/textautogeneratebaselistview.cpp:114
 #, kde-format
@@ -3244,7 +3467,7 @@ msgstr "Hautatu dena"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Text"
-msgstr ""
+msgstr "Testua txertatu"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:121
 #, kde-format
@@ -3256,13 +3479,13 @@ msgstr "Berriketa berria"
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
-msgstr ""
+msgstr "Bikoiztu…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "Kendu gogokoetatik"
+msgstr "Gogokoetatik kendu"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
