@@ -1,16 +1,16 @@
 # Translation for libtextautocorrection.po to Euskara/Basque (eu).
-# Copyright (C) 2023-2024 This file is copyright:
+# Copyright (C) 2023-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2024-08-05 23:43+0200\n"
+"PO-Revision-Date: 2026-07-31 11:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -28,35 +28,35 @@ msgstr "Artxiboa ezin da ireki irakurtzeko moduan."
 #: widgets/autocorrectionwidget.cpp:136
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr "Hautatu idazgarria den neurrira ipinitako bide-izena"
+msgstr "Neurrira ipinitako bide-izen idazgarria hautatu"
 
 #: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "Select Custom System Path"
-msgstr "Hautatu neurrira ipinitako sistemaren bide-izena"
+msgstr "Neurrira ipinitako sistemaren bide-izena hautatu"
 
 #: widgets/autocorrectionwidget.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
-msgstr "LibreOffice-en zuzenketa automatikoa"
+msgstr "«LibreOffice»ren zuzenketa automatikoa"
 
 #: widgets/autocorrectionwidget.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
-msgstr "KMail/Calligra-ren zuzenketa automatikoa"
+msgstr "«KMail/Calligra»ren zuzenketa automatikoa"
 
 #: widgets/autocorrectionwidget.cpp:433
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr "\"Ordeztu\" katea \"Aurkitu\" katearen berdina da."
+msgstr "«Ordeztu» eta «Aurkitu» kateak berdinak dira."
 
 #: widgets/autocorrectionwidget.cpp:433
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr "Gehitu zuzenketa automatikorako sarrera"
+msgstr "Zuzenketa automatikorako sarrera gehitu"
 
 #: widgets/autocorrectionwidget.cpp:512
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "&Gehitu"
 #: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
-msgstr "Inportatu «LibreOffice»ko zuzenketa automatikoa"
+msgstr "«LibreOffice»ko zuzenketa automatikoa inportatu"
 
 #: widgets/autocorrectionwidget.cpp:623
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "«LibreOffice»ko zuzenketa automatikorako fitxategia (*.dat)"
 #: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "Import KMail Autocorrection"
-msgstr "Inportatu «KMail»eko zuzenketa automatikoa"
+msgstr "«KMail»eko zuzenketa automatikoa inportatu"
 
 #: widgets/autocorrectionwidget.cpp:627
 #, kde-format
@@ -95,36 +95,36 @@ msgstr "«KMail»eko zuzenketa automatikorako fitxategia (*.xml)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
-msgstr "Inportatu zuzenketa automatikorako fitxategia"
+msgstr "Zuzenketa automatikorako fitxategia inportatu"
 
 #: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
-"Hizkuntza aldatu da, aurreko hizkuntzaren konfigurazioa gorde nahi duzu?"
+"Hizkuntza aldatu da. Aurreko hizkuntzaren konfigurazioa gorde nahi duzu?"
 
 #: widgets/autocorrectionwidget.cpp:684
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
-msgstr "Gorde konfigurazioa"
+msgstr "Konfigurazioa gorde"
 
 #: widgets/autocorrectionwidget.cpp:719
 #, kde-format
 msgid "Please save changes before exporting settings."
-msgstr "Mesedez, gorde aldaketak ezarpenak esportatu aurretik."
+msgstr "Gorde aldaketak ezarpenak esportatu aurretik."
 
 #: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
-msgstr "Esportatu zuzenketa automatikorako fitxategia"
+msgstr "Zuzenketa automatikorako fitxategia esportatu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr "Gaitu zuzenketa automatikoa"
+msgstr "Zuzenketa automatikoa gaitu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/autocorrectionwidget.ui:30
@@ -136,13 +136,13 @@ msgstr "Hizkuntzaren ordezkapena eta salbuespena:"
 #: widgets/ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export…"
-msgstr "Esportatu..."
+msgstr "Esportatu…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import…"
-msgstr "Inportatu..."
+msgstr "Inportatu…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -161,7 +161,7 @@ msgstr "Kendu"
 #: widgets/ui/autocorrectionwidget.ui:120
 #, kde-format
 msgid "&Enable word replacement"
-msgstr "&Gaitu hitz ordezkapena"
+msgstr "Hitz-ordezkapena &gaitu"
 
 #. i18n: ectx: property (text), widget (QLabel, findLabel)
 #: widgets/ui/autocorrectionwidget.ui:129
@@ -230,8 +230,8 @@ msgid ""
 "Detect when a new sentence is started and always ensure that the first "
 "character is an uppercase character"
 msgstr ""
-"Hauteman perpausa berri bat noiz hasten den eta ziurtatu aurreneko "
-"karakterea letra larri bat dela"
+"Perpaus berri baten hasiera hauteman eta aurreneko karakterea beti letra "
+"larria dela ziurtatu."
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperCase)
 #: widgets/ui/autocorrectionwidget.ui:354
@@ -240,7 +240,7 @@ msgid ""
 "Convert &first letter of a sentence automatically to uppercase\n"
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
-"Bihurtu perpausa bateko aurreneko letra automatikoki letra larrira\n"
+"Perpaus bateko &aurreneko letra automatikoki letra larri bihurtu\n"
 "(adib. «nire etxea. herri honetan» honetara «nire etxea. Herri honetan»)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
@@ -251,10 +251,9 @@ msgid ""
 "bit too long. If some words must have two uppercase characters, then those "
 "exceptions should be added in the 'Exceptions' tab."
 msgstr ""
-"Hitz guztiak egiaztatzen dira maiuskula tekla denbora luzeegi sakatuta "
-"izatearen ohiko akatsa aurkitzeko. Hitz batzuek bi karaktere larri izan "
-"behar badituzte, salbuespen horiek 'Salbuespenak\" fitxan gehitu beharko "
-"lirateke."
+"Hitz guztiak egiaztatzen dira Maius tekla denbora luzeegi sakatuta izatearen "
+"ohiko akatsa aurkitzeko. Hitz batzuek bi letra larri izan behar badituzte, "
+"salbuespen horiek «Salbuespenak» fitxan gehitu behar dira."
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:368
@@ -275,32 +274,34 @@ msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
 "mistake which is quite hard to find in formatted text."
 msgstr ""
-"Ziurtatu ezin dela zuriune bat baino gehiago jarraian tekleatu, ohiko akats "
-"bat izanik, formatua duen testu batean aurkitzen zaila delako."
+"Ziurtatu zuriune bat baino gehiago jarraian ezin dela tekleatu; hori ohiko "
+"akatsa da eta formatua duen testuan aurkitzea nahiko zaila da."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
 #: widgets/ui/autocorrectionwidget.ui:378
 #, kde-format
 msgid "&Suppress double spaces"
-msgstr "Zuriune bikoitzak &kentzea"
+msgstr "Zuriune bikoitzak &kendu"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:385
 #, kde-format
 msgid "Most standard fraction notations will be converted when available"
-msgstr "Zatikien notazio estandar gehienak, ahal dela, bihurtuko dira"
+msgstr ""
+"Zatikien notazio estandar gehienak bihurtu egingo dira dagokien karakterea "
+"erabilgarri dagoenean"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "Orde&ztu 1/2... ½-ekin..."
+msgstr "Orde&ztu 1/2… ½ erabiliz…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
 #, kde-format
 msgid "Capitalize name of days"
-msgstr "Aurreneko letra larria egun izenetan"
+msgstr "Egunen izenak letra larriz hasi"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
 #: widgets/ui/autocorrectionwidget.ui:402
@@ -326,8 +327,8 @@ msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
 "asterisks will be converted to underlined or bold text."
 msgstr ""
-"_azpimarra_ edo *lodia* erabiltzen duzunean, azpimarra edo asterisko arteko "
-"testua azpimarratu edo lodi bihurtuko du."
+"_azpimarra_ edo *lodia* erabiltzen duzunean, azpimarren edo asteriskoen "
+"arteko testua azpimarratu edo lodi bihurtuko da."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
 #: widgets/ui/autocorrectionwidget.ui:415
@@ -340,33 +341,33 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "Ordeztu 1st... 1^st-rekin... (HTML modua)"
+msgstr "Ordeztu 1st… 1^st erabiliz… (HTML modua)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
 msgstr ""
-"Gehitu etenik gabeko zuriunea puntuazio-marka jakinetan frantsesezko "
-"testuetan"
+"Frantsesezko testuetan, puntuazio-marka jakin batzuen aurretik etenik gabeko "
+"zuriunea gehitu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
 #: widgets/ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr "Ordeztu aipu-kakotx bikoitzak aipu-kakotx frantsesekin"
+msgstr "Kakotx bikoitzak kakotx frantsesekin ordeztu"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: widgets/ui/autocorrectionwidget.ui:457
 #, kde-format
 msgid "Custom &Quotes"
-msgstr "Neurrira ipinitako ai&puak"
+msgstr "Neurrira ipinitako kakot&xak"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
 #: widgets/ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
-msgstr "Ordeztu aipu &bikoitzak aipu tipografikoekin"
+msgstr "Kakotx &bikoitzak kakotx tipografikoekin ordeztu"
 
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
@@ -378,7 +379,7 @@ msgstr "Ordeztu aipu &bikoitzak aipu tipografikoekin"
 #: widgets/ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr "Lehenetsia"
+msgstr "Lehenespenez"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
@@ -392,7 +393,7 @@ msgstr "\""
 #: widgets/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr "Aipu amaiera:"
+msgstr "Amaierako kakotxa:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -400,7 +401,7 @@ msgstr "Aipu amaiera:"
 #: widgets/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr "Aipu hasiera:"
+msgstr "Hasierako kakotxa:"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
@@ -414,7 +415,7 @@ msgstr "Lehenetsia"
 #: widgets/ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
-msgstr "Ordeztu aipu ba&kunak aipu tipografikoekin"
+msgstr "Kakotx bak&unak kakotx tipografikoekin ordeztu"
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
@@ -428,7 +429,7 @@ msgstr "'"
 #: widgets/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr "Aipua amaiera:"
+msgstr "Amaierako kakotxa:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: widgets/ui/autocorrectionwidget.ui:707

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:41+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2026-05-31 19:49-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -54,7 +54,7 @@ msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "ياپ"
 
-#: grammalecte/grammalecteconfigdialog.cpp:27
+#: grammalecte/grammalecteconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
@@ -299,7 +299,7 @@ msgstr "تامىلچە"
 msgid "Ukrainian"
 msgstr "ئۇكرائىنچە"
 
-#: languagetool/languagetoolconfigdialog.cpp:28
+#: languagetool/languagetoolconfigdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"

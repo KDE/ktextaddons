@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-30 02:39+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -215,26 +215,26 @@ msgstr "激活：%1"
 msgid "Generic"
 msgstr "常规"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "配置 %1"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:34
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:36
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "常规"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:37
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:40
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:41
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:56
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:42
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -477,7 +477,7 @@ msgstr "系统中没有找到 LMStudio。"
 msgid "Impossible to start LMStudio."
 msgstr "无法启动 LMStudio。"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -677,19 +677,19 @@ msgstr "覆盖 GFX 版本："
 msgid "Default Model Path:"
 msgstr "默认模型路径："
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "配置 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "已安装的模型"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#: plugins/ollama/ollamaconfiguredialog.cpp:68
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -729,7 +729,7 @@ msgstr "这此条目是可选的，它们用于排除与 Ollama 有关的GPU 问
 msgid "Failed to start Ollama"
 msgstr "启动 Ollama 失败"
 
-#: plugins/ollama/ollamalogdialog.cpp:26
+#: plugins/ollama/ollamalogdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
@@ -779,7 +779,7 @@ msgstr "无法启动 Ollama。"
 msgid "Ollama (Cloud)"
 msgstr "Ollama (云)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:30
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
@@ -2734,7 +2734,7 @@ msgstr "显示模型信息"
 msgid "Ollama (Online)"
 msgstr "Ollama (在线)"
 
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:31
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
@@ -2788,7 +2788,7 @@ msgstr "配置实例"
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr "省电模式已启用，这将使消息生成变慢。"
 
-#: widgets/common/textautogenerateshowmodelinfodialog.cpp:26
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
@@ -2857,7 +2857,7 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "打开文件时出错"
 
-#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:26
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:27
 #, kde-format
 msgid "Metadata Info"
 msgstr "元数据信息"
@@ -2901,9 +2901,9 @@ msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "显示元数据信息"
 
-#: widgets/debug/textautogenerateshowdebugdialog.cpp:25
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:26
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:26
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:26
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -2927,7 +2927,7 @@ msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "选择实例类型："
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
@@ -2981,7 +2981,7 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "添加实例…"
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
@@ -3134,7 +3134,7 @@ msgctxt "@action"
 msgid "Next Chat"
 msgstr "下一个聊天"
 
-#: widgets/textautogeneratesearchdialog.cpp:28
+#: widgets/textautogeneratesearchdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
@@ -3210,23 +3210,23 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "复制代码块"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:39
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
 msgstr "显示图像"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:59
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:60
 #, kde-format
 msgid "Copy Image to Clipboard"
 msgstr "复制图像到剪贴板"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:61
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:62
 #, kde-format
 msgid "Copy Location to Clipboard"
 msgstr "复制位置到剪贴板"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:143
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:141
 #, kde-format
 msgid "Other Application..."
 msgstr "其他应用程序..."

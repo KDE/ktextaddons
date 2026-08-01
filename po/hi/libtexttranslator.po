@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -626,18 +626,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "इंजन:"
 
-#: translator/widgets/translatordebugdialog.cpp:34
+#: translator/widgets/translatordebugdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "अनुवादक डीबग"
 
-#: translator/widgets/translatordebugdialog.cpp:41
+#: translator/widgets/translatordebugdialog.cpp:42
 #, kde-format
 msgid "Save As…"
 msgstr "के रूप रक्षित करें…"
 
-#: translator/widgets/translatordebugdialog.cpp:90
+#: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -646,13 +646,13 @@ msgstr ""
 "फ़ाइल %1 नहीं लिखी जा सकी:\n"
 "\"%2\" विस्तृत त्रुटि विवरण है।"
 
-#: translator/widgets/translatordebugdialog.cpp:94
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "फ़ाइल सहेजने में त्रुटि"
 
-#: translator/widgets/translatordebugdialog.cpp:114
+#: translator/widgets/translatordebugdialog.cpp:112
 #, kde-format
 msgid "All Files (*)"
 msgstr "सभी फाइलें (*)"

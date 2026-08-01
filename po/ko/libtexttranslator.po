@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2025-04-06 23:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -625,18 +625,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "엔진:"
 
-#: translator/widgets/translatordebugdialog.cpp:34
+#: translator/widgets/translatordebugdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "번역기 디버그"
 
-#: translator/widgets/translatordebugdialog.cpp:41
+#: translator/widgets/translatordebugdialog.cpp:42
 #, kde-format
 msgid "Save As…"
 msgstr "다른 이름으로 저장…"
 
-#: translator/widgets/translatordebugdialog.cpp:90
+#: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -645,13 +645,13 @@ msgstr ""
 "파일 %1에 쓸 수 없습니다:\n"
 "자세한 오류 설명은 \"%2\"입니다."
 
-#: translator/widgets/translatordebugdialog.cpp:94
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "파일 저장 오류"
 
-#: translator/widgets/translatordebugdialog.cpp:114
+#: translator/widgets/translatordebugdialog.cpp:112
 #, kde-format
 msgid "All Files (*)"
 msgstr "모든 파일 (*)"

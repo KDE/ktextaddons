@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2025-02-22 08:47+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -627,18 +627,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Stroj:"
 
-#: translator/widgets/translatordebugdialog.cpp:34
+#: translator/widgets/translatordebugdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Razhroščevanje prevajalnika"
 
-#: translator/widgets/translatordebugdialog.cpp:41
+#: translator/widgets/translatordebugdialog.cpp:42
 #, kde-format
 msgid "Save As…"
 msgstr "Shrani kot…"
 
-#: translator/widgets/translatordebugdialog.cpp:90
+#: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -647,13 +647,13 @@ msgstr ""
 "Ni bilo mogoče pisati datoteke %1:\n"
 "\"%2\" je podrobni opis napake."
 
-#: translator/widgets/translatordebugdialog.cpp:94
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Napaka shranjevanja datoteke"
 
-#: translator/widgets/translatordebugdialog.cpp:114
+#: translator/widgets/translatordebugdialog.cpp:112
 #, kde-format
 msgid "All Files (*)"
 msgstr "Vse datoteke (*)"

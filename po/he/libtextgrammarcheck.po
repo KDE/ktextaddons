@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:41+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2025-01-24 09:26+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -54,7 +54,7 @@ msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "סגירה"
 
-#: grammalecte/grammalecteconfigdialog.cpp:27
+#: grammalecte/grammalecteconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
@@ -301,7 +301,7 @@ msgstr "טמילית"
 msgid "Ukrainian"
 msgstr "אוקראינית"
 
-#: languagetool/languagetoolconfigdialog.cpp:28
+#: languagetool/languagetoolconfigdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"

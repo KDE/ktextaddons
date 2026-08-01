@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:41+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2024-08-18 16:29+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -53,7 +53,7 @@ msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "மூடு"
 
-#: grammalecte/grammalecteconfigdialog.cpp:27
+#: grammalecte/grammalecteconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
@@ -301,7 +301,7 @@ msgstr "தமிழ்"
 msgid "Ukrainian"
 msgstr "உக்ரேனியன்"
 
-#: languagetool/languagetoolconfigdialog.cpp:28
+#: languagetool/languagetoolconfigdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"

@@ -1,16 +1,16 @@
 # Translation for libtexttranslator.po to Euskara/Basque (eu).
-# Copyright (C) 2023-2025 This file is copyright:
+# Copyright (C) 2023-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:42+0000\n"
-"PO-Revision-Date: 2025-05-15 22:40+0200\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
+"PO-Revision-Date: 2026-07-31 12:27+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,17 +18,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
 msgid "Detect language"
-msgstr "Hauteman hizkuntza"
+msgstr "Hizkuntza hauteman"
 
 #: translator/misc/translatorutil.cpp:36
 #, kde-format
 msgid "Hmong"
-msgstr "Hmong"
+msgstr "Hmonga"
 
 #: translator/misc/translatorutil.cpp:39
 #, kde-format
@@ -168,7 +168,7 @@ msgstr "Estoniera"
 #: translator/misc/translatorutil.cpp:120
 #, kde-format
 msgid "Filipino"
-msgstr "Filipinarra"
+msgstr "Filipinera"
 
 #: translator/misc/translatorutil.cpp:123
 #, kde-format
@@ -188,7 +188,7 @@ msgstr "Georgiera"
 #: translator/misc/translatorutil.cpp:132
 #, kde-format
 msgid "Haitian Creole"
-msgstr "Haitiko Kreolera"
+msgstr "Haitiko kreolera"
 
 #: translator/misc/translatorutil.cpp:135
 #, kde-format
@@ -342,7 +342,7 @@ msgstr "Bergamot"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Bilatu..."
+msgstr "Bilatu…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
 #, kde-format
@@ -358,13 +358,13 @@ msgstr "Ezabatu"
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr "Eguneratu zerrenda"
+msgstr "Zerrenda eguneratu"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr "Eguneratu hizkuntzen zerrendan saretik"
+msgstr "Hizkuntzen zerrenda saretik eguneratu"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
@@ -375,12 +375,12 @@ msgstr "Errorea: %1"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr "Erabili itzulpen-cachea"
+msgstr "Itzulpen-cachea erabili"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:27
 #, kde-format
 msgid "Resource Usage"
-msgstr "Baliabide erabilera"
+msgstr "Baliabideen erabilera"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:39
 #, kde-format
@@ -390,7 +390,7 @@ msgstr "Haria:"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:40
 #, kde-format
 msgid "Memory by Thread:"
-msgstr "Memoria hariko:"
+msgstr "Hari bakoitzeko memoria:"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:31
 #, kde-format
@@ -405,12 +405,12 @@ msgstr "Ezarpenak"
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
 #, kde-format
 msgid "Language model is not defined."
-msgstr "Hizkuntzaren eredua ez dago definituta."
+msgstr "Hizkuntza-eredua ez dago definituta."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr "Ezin du fitxategia zama-jaisteko ireki."
+msgstr "Fitxategia ezin da zama-jaisteko ireki."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:48
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
@@ -421,14 +421,14 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"Errorea: Motor sistemek zure ordenagailu saretik trafiko susmagarria "
-"antzeman dute. Mesedez saiatu zure eskaerak beranduago berriz egiten."
+"Errorea: motor-sistemek zure ordenagailu-saretik datorren trafiko "
+"susmagarria hauteman dute. Saiatu eskaera geroago berriro egiten."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:54
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr "Ezinezkoa URL atzitzea: %1"
+msgstr "Ezin da %1 URLa atzitu"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:61
 #, kde-format
@@ -443,7 +443,7 @@ msgstr "Errorea diskoan idaztean: %1"
 #: translator/plugins/bergamot/extractlanguagejob.cpp:32
 #, kde-format
 msgid "Impossible to extract language"
-msgstr "Ezinezkoa hizkuntza erauztea"
+msgstr "Ezin da hizkuntza erauzi"
 
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
@@ -489,24 +489,24 @@ msgstr "Bing"
 #: translator/plugins/bing/bingengineplugin.cpp:59
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr "Errorea: Ez da «Bing»eren egiaztagiriak web bertsioan aurkitzeko gai."
+msgstr "Errorea: ezin izan dira «Bing»en egiaztagiriak web bertsioan aurkitu."
 
 #: translator/plugins/bing/bingengineplugin.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr "Errorea: Ez da «Bing»eren gakoa web bertsiotik ateratzeko gai."
+msgstr "Errorea: ezin izan da «Bing»en gakoa web bertsiotik erauzi."
 
 #: translator/plugins/bing/bingengineplugin.cpp:76
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr "Errorea: Ez da «Bing»eren tokena web bertsiotik ateratzeko gai."
+msgstr "Errorea: ezin izan da «Bing»en tokena web bertsiotik erauzi."
 
 #: translator/plugins/bing/bingengineplugin.cpp:85
 #: translator/plugins/bing/bingengineplugin.cpp:94
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
-"Errorea: Ez da «Bing»eren informazio osagarria web bertsiotik ateratzeko gai."
+"Errorea: ezin izan da «Bing»en informazio osagarria web bertsiotik erauzi."
 
 #: translator/plugins/deepl/deeplengineclient.cpp:35
 #, kde-format
@@ -519,25 +519,25 @@ msgstr "DeepL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr "Konfiguratu motorra"
+msgstr "Motorra konfiguratu"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
-msgstr "Erabili lizentzia askeko gakoa"
+msgstr "Doako lizentzia-gakoa erabili"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:31
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:36
 #, kde-format
 msgid "Api Key:"
-msgstr "APIaren gakoa:"
+msgstr "API-gakoa:"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:39
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
 #, kde-format
 msgid "Server needs Api Key."
-msgstr "Zerbitzariak APIaren gakoa behar du."
+msgstr "Zerbitzariak API-gakoa behar du."
 
 #: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
@@ -558,7 +558,7 @@ msgstr "Libre Translate"
 #, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
-msgstr "Zerbitzariak behar duen API-gakoa"
+msgstr "Zerbitzariak API-gakoa behar du"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:29
 #: translator/plugins/lingva/lingvaenginewidget.cpp:25
@@ -584,12 +584,12 @@ msgstr "Yandex"
 #: translator/plugins/yandex/yandexengineplugin.cpp:64
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr "Errorea: Ez da «Yandex SID» web bertsioan aurkitzeko gai."
+msgstr "Errorea: ezin izan da «Yandex»en SIDa web bertsioan aurkitu."
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:72
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr "Errorea: Ez da «Yandex SID» web bertsiotik ateratzeko gai."
+msgstr "Errorea: ezin izan da «Yandex»en SIDa web bertsiotik erauzi."
 
 #: translator/translatorengineclient.cpp:63
 #, kde-format
@@ -604,18 +604,18 @@ msgstr "Sarea"
 #: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
-msgstr "Hizkuntza bera erabili duzu 'jatorri' eta 'helburu' gisa."
+msgstr "Hizkuntza bera erabili duzu sorburu- eta helburu-hizkuntza gisa."
 
 #: translator/widgets/translatorconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr "Konfiguratu itzultzailea"
+msgstr "Itzultzailea konfiguratu"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
-msgstr "Jatorria:"
+msgstr "Sorburua:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
@@ -629,33 +629,33 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motorra:"
 
-#: translator/widgets/translatordebugdialog.cpp:34
+#: translator/widgets/translatordebugdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
-msgstr "Itzultzailea araztea"
+msgstr "Itzultzailearen arazketa"
 
-#: translator/widgets/translatordebugdialog.cpp:41
+#: translator/widgets/translatordebugdialog.cpp:42
 #, kde-format
 msgid "Save As…"
-msgstr "Gorde honela..."
+msgstr "Gorde honela…"
 
-#: translator/widgets/translatordebugdialog.cpp:90
+#: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
-"Ezin izan du %1 fitxategia idatzi:\n"
+"Ezin izan da %1 fitxategia idatzi:\n"
 "«%2» da errorearen deskribapen xehatua."
 
-#: translator/widgets/translatordebugdialog.cpp:94
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Fitxategia gordetzeko errorea"
 
-#: translator/widgets/translatordebugdialog.cpp:114
+#: translator/widgets/translatordebugdialog.cpp:112
 #, kde-format
 msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"
@@ -663,7 +663,7 @@ msgstr "Fitxategi guztiak (*)"
 #: translator/widgets/translatormenu.cpp:25
 #, kde-format
 msgid "Translate…"
-msgstr "Itzuli..."
+msgstr "Itzuli…"
 
 #: translator/widgets/translatorwidget.cpp:214
 #, kde-format
@@ -680,7 +680,7 @@ msgstr "Itxi"
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
-msgstr "Jatorria:"
+msgstr "Sorburua:"
 
 #: translator/widgets/translatorwidget.cpp:231
 #, kde-format
@@ -692,7 +692,7 @@ msgstr "Helburua:"
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
-msgstr "Alderantziz"
+msgstr "Alderantzikatu"
 
 #: translator/widgets/translatorwidget.cpp:249
 #, kde-format
@@ -735,8 +735,8 @@ msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
-"Arrastatu itzuli nahi duzun testua (Kontu izan, testua kanpoko zerbitzarira "
-"bidaliko da)."
+"Arrastatu itzuli nahi duzun testua. Kontuz: testua kanpoko zerbitzari batera "
+"bidaliko da."
 
 #: translator/widgets/translatorwidget.cpp:367
 #, kde-format
@@ -747,19 +747,19 @@ msgstr "Arrastatu itzuli nahi duzun testua."
 #: translator/widgets/translatorwidget.cpp:417
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
-msgstr "Ez da sareko konexiorik antzeman, testua ezin dugu itzuli."
+msgstr "Ez da sareko konexiorik hauteman; ezin dugu testua itzuli."
 
 #: translator/widgets/translatorwidget.cpp:417
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
-msgstr "Sarerik gabe"
+msgstr "Sarerik ez"
 
 #: translator/widgets/translatorwidget.cpp:455
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
-msgstr "Itzulpen errorea"
+msgstr "Itzulpen-errorea"
 
 #~ msgid "Translate..."
 #~ msgstr "Itzuli..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 02:37+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -225,19 +225,19 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "இணைப்பை உள்ளிடு"
 
-#: selectspecialchardialog.cpp:34
+#: selectspecialchardialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "மேம்பட்ட எழுத்துகளைத் தேர்ந்தெடுப்பது"
 
-#: selectspecialchardialog.cpp:42
+#: selectspecialchardialog.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "நுழை"
 
-#: selectspecialchardialog.cpp:55
+#: selectspecialchardialog.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"
@@ -273,7 +273,7 @@ msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "பதிப்பு:"
 
-#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#: whatsnew/whatsnewdialog.cpp:27 whatsnewng/whatsnewngdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
