@@ -1,5 +1,6 @@
 # Translation of libtexttranslator to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2023, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
