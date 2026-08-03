@@ -91,12 +91,10 @@ msgid "Are you sure that you want to delete this header?"
 msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "移除服务器"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format

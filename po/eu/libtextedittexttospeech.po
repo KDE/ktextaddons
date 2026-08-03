@@ -5,6 +5,12 @@
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2026.
+#
+# Egoera:
+# Proiektu osoaren berrikuspen integrala: 2026-08-01.
+# Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
+# Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
+# Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
