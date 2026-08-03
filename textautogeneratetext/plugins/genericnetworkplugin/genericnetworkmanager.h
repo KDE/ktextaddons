@@ -32,10 +32,11 @@ public:
         Qwen = 13,
         ChatGPT = 14,
         OpenRouterAI = 15,
-        SarvamAI = 16,
-        AtlasCloud = 17,
-        Gemini = 18,
-        KimiAI = 19,
+        OrcaRouterAI = 16,
+        SarvamAI = 17,
+        AtlasCloud = 18,
+        Gemini = 19,
+        KimiAI = 20,
         LastElement = KimiAI,
     };
 

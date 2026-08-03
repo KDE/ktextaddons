@@ -52,6 +52,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("CompactifAI");
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return i18n("OpenRouter AI");
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return i18n("OrcaRouter AI");
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
         return i18n("Sarvam AI");
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
@@ -87,6 +89,7 @@ QString GenericNetworkServerInfo::responsesPath(GenericNetworkManager::PluginNet
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
     case GenericNetworkManager::PluginNetworkType::Gemini:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
         return u"responses"_s;
     }
     return {};
@@ -117,6 +120,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
     case GenericNetworkManager::PluginNetworkType::Gemini:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
         return u"chat/completions"_s;
     }
     return {};
@@ -166,6 +170,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.atlascloud.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::Gemini:
         return u"https://gemini.google.com"_s;
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return u"https://www.orcarouter.ai/"_s;
     }
     return {};
 }
@@ -212,6 +218,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.sarvam.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return u"https://api.atlascloud.ai/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return u"https://api.orcarouter.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::Gemini:
         return u"https://generativelanguage.googleapis.com/v1beta/openai/"_s;
     }
@@ -257,6 +265,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Sarvam AI instance");
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return i18n("AtlasCloud OpenAI-compatible API");
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return i18n("Orca Router OpenAI-compatible API");
     }
     return {};
 }
@@ -305,6 +315,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"atlascloudai"_s;
     case GenericNetworkManager::PluginNetworkType::Gemini:
         return u"gemini"_s;
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return u"orcarouterai"_s;
     }
     return {};
 }
@@ -349,6 +361,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::AtlasCloud;
     } else if (str == QLatin1StringView("gemini")) {
         return GenericNetworkManager::PluginNetworkType::Gemini;
+    } else if (str == QLatin1StringView("orcarouterai")) {
+        return GenericNetworkManager::PluginNetworkType::OrcaRouterAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -407,6 +421,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     case GenericNetworkManager::PluginNetworkType::DeepInfra:
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return limits;
