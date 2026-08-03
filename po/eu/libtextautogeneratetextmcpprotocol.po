@@ -1,9 +1,16 @@
+# Translation for libtextautogeneratetextmcpprotocol.po to Euskara/Basque (eu).
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2026 Iñigo Salvador Azurmendi <xalba@ni.eus>
+#
+# Egoera:
+# Proiektu osoaren berrikuspen integrala: 2026-08-01.
+# Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
+# Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
+# Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
