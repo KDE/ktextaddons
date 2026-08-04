@@ -48,12 +48,10 @@ target_sources(
         autocorrectionlanguage.h
         autocorrectionwidget.h
         autocorrectiontreewidget.h
-        autocorrectiontextedit.cpp
-        autocorrectiontextedit.h
-        autocorrectionlineedit.cpp
-        autocorrectionlineedit.h
         autocorrectionlanguagemodel.h
         autocorrectionlanguagemodel.cpp
+        autocorrector.h
+        autocorrector.cpp
 )
 
 # precompiled headers support
@@ -123,7 +121,7 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
     HEADER_NAMES
     AutoCorrectionWidget
     AutoCorrectionLanguage
-    AutoCorrectionTextEdit
+    AutoCorrector
     REQUIRED_HEADERS TextAutoCorrection_autocorrectionwidgets_HEADERS
     PREFIX TextAutoCorrectionWidgets
 )

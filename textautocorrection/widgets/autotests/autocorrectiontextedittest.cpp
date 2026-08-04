@@ -11,7 +11,8 @@ using namespace Qt::Literals::StringLiterals;
 #include "autocorrectionsettings.h"
 #include <QStandardPaths>
 #include <QTest>
-#include <TextAutoCorrection/AutoCorrectionTextEdit>
+#include <QTextEdit>
+#include <TextAutoCorrection/AutoCorrector>
 #include <qtestkeyboard.h>
 
 AutoCorrectionTextEditTest::AutoCorrectionTextEditTest()
@@ -21,14 +22,15 @@ AutoCorrectionTextEditTest::AutoCorrectionTextEditTest()
 
 void AutoCorrectionTextEditTest::shouldNotAutocorrectWhenDisabled()
 {
-    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    QTextEdit richtext(nullptr);
+    auto corrector = new AutoCorrector(&richText);
     QHash<QString, QString> entries;
     const QString originalWord = u"FOOFOO"_s;
     const QString replaceWord = u"BLABLA"_s;
     entries.insert(originalWord, replaceWord);
     auto settings = new TextAutoCorrection::AutoCorrectionSettings;
     settings->setAutocorrectEntries(entries);
-    richtext.autocorrection()->setAutoCorrectionSettings(settings);
+    corrector->autocorrection()->setAutoCorrectionSettings(settings);
     richtext.show();
     QVERIFY(QTest::qWaitForWindowExposed(&richtext));
     QTest::keyClicks(&richtext, originalWord);
@@ -38,7 +40,8 @@ void AutoCorrectionTextEditTest::shouldNotAutocorrectWhenDisabled()
 
 void AutoCorrectionTextEditTest::shouldReplaceWordWhenExactText()
 {
-    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    QTextEdit richtext(nullptr);
+    auto corrector = new AutoCorrector(&richText);
     const QString originalWord = u"FOOFOO"_s;
     const QString replaceWord = u"BLABLA"_s;
     QHash<QString, QString> entries;
@@ -47,7 +50,7 @@ void AutoCorrectionTextEditTest::shouldReplaceWordWhenExactText()
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
-    richtext.autocorrection()->setAutoCorrectionSettings(settings);
+    corrector->autocorrection()->setAutoCorrectionSettings(settings);
     richtext.show();
     QVERIFY(QTest::qWaitForWindowExposed(&richtext));
     QTest::keyClicks(&richtext, originalWord);
@@ -57,7 +60,8 @@ void AutoCorrectionTextEditTest::shouldReplaceWordWhenExactText()
 
 void AutoCorrectionTextEditTest::shouldNotReplaceWordWhenInexactText()
 {
-    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    QTextEdit richtext(nullptr);
+    auto corrector = new AutoCorrector(&richText);
     const QString originalWord = u"FOOFOO"_s;
     const QString replaceWord = u"BLABLA"_s;
     QHash<QString, QString> entries;
@@ -66,7 +70,7 @@ void AutoCorrectionTextEditTest::shouldNotReplaceWordWhenInexactText()
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
-    richtext.autocorrection()->setAutoCorrectionSettings(settings);
+    corrector->autocorrection()->setAutoCorrectionSettings(settings);
 
     richtext.show();
     const QString nonExactText = u"BLIBLI"_s;
@@ -78,7 +82,8 @@ void AutoCorrectionTextEditTest::shouldNotReplaceWordWhenInexactText()
 
 void AutoCorrectionTextEditTest::shouldReplaceWhenPressEnter()
 {
-    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    QTextEdit richtext(nullptr);
+    auto corrector = new AutoCorrector(&richText);
     const QString originalWord = u"FOOFOO"_s;
     const QString replaceWord = u"BLABLA"_s;
     QHash<QString, QString> entries;
@@ -88,7 +93,7 @@ void AutoCorrectionTextEditTest::shouldReplaceWhenPressEnter()
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
-    richtext.autocorrection()->setAutoCorrectionSettings(settings);
+    corrector()->autocorrection()->setAutoCorrectionSettings(settings);
 
     richtext.show();
     QVERIFY(QTest::qWaitForWindowExposed(&richtext));
@@ -99,7 +104,8 @@ void AutoCorrectionTextEditTest::shouldReplaceWhenPressEnter()
 
 void AutoCorrectionTextEditTest::shouldReplaceWhenPressReturn()
 {
-    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    QTextEdit richtext(nullptr);
+    auto corrector = new AutoCorrector(&richText);
     const QString originalWord = u"FOOFOO"_s;
     const QString replaceWord = u"BLABLA"_s;
     QHash<QString, QString> entries;
@@ -108,7 +114,7 @@ void AutoCorrectionTextEditTest::shouldReplaceWhenPressReturn()
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
-    richtext.autocorrection()->setAutoCorrectionSettings(settings);
+    corrector->autocorrection()->setAutoCorrectionSettings(settings);
     richtext.show();
     QVERIFY(QTest::qWaitForWindowExposed(&richtext));
     QTest::keyClicks(&richtext, originalWord);

@@ -4,11 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "autocorrectiontextedit.h"
+#include "autocorrector.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
+#include <QTextEdit>
 
 int main(int argc, char **argv)
 {
@@ -19,7 +20,8 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new TextAutoCorrectionWidgets::AutoCorrectionTextEdit;
+    auto w = new QTextEdit;
+    new TextAutoCorrectionWidgets::AutoCorrector(w);
 
     w->show();
     app.exec();

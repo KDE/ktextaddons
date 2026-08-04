@@ -10,6 +10,9 @@
 #include <QDialog>
 #include <QWidget>
 
+class QPlainTextEdit;
+class QTextEdit;
+
 namespace TextAutoCorrectionCore
 {
 class AutoCorrection;
@@ -17,8 +20,6 @@ class AutoCorrection;
 namespace TextAutoCorrectionWidgets
 {
 class AutoCorrectionWidget;
-class AutoCorrectionTextEdit;
-class AutoCorrectionLineEdit;
 }
 class ConfigureTestDialog : public QDialog
 {
@@ -46,8 +47,8 @@ private Q_SLOTS:
     void slotChangeMode(bool);
 
 private:
-    TextAutoCorrectionWidgets::AutoCorrectionTextEdit *mEdit = nullptr;
-    TextAutoCorrectionWidgets::AutoCorrectionLineEdit *mSubject = nullptr;
+    QTextEdit *mEdit = nullptr;
+    QPlainTextEdit *mSubject = nullptr;
     TextAutoCorrectionCore::AutoCorrection *mAutoCorrection = nullptr;
     KSharedConfig::Ptr mConfig;
 };
