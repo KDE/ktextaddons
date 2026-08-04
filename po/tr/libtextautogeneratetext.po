@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:42+0000\n"
 "PO-Revision-Date: 2026-07-28 21:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -320,82 +320,94 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
+#, fuzzy, kde-format
+#| msgid "OpenRouter AI"
+msgid "OrcaRouter AI"
+msgstr "OpenRouter AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
 msgid "Sarvam AI"
 msgstr "Sarvam AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr "AtlasCloud OpenAI uyumlu API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
 msgstr "Google Gemini"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:236
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:237
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:245
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:239
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:247
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:241
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:249
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:243
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:251
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:245
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi, Moonshot AI tarafından geliştirilmiş bir büyük dil modelidir."
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:247
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "DashScope aracılığıyla Alibaba Cloud Qwen büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:249
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "Novita AI bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:251
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "DeepInfa bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "Sarvam AI örneği"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
+#, fuzzy, kde-format
+#| msgid "AtlasCloud OpenAI-compatible API"
+msgid "Orca Router OpenAI-compatible API"
+msgstr "AtlasCloud OpenAI uyumlu API’si"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95

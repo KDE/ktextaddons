@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:42+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -329,82 +329,93 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
+#, fuzzy, kde-format
+#| msgid "OpenRouter AI"
+msgid "OrcaRouter AI"
+msgstr "OpenRouter AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
 msgid "Sarvam AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:228
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:236
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI 大型語言模型"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:237
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:245
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:239
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:247
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AI 雲端推論 API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:241
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:249
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AI 雲端推論 API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:243
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:251
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:245
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Moonshot AI 的 Kimi 大型語言模型"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:247
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "阿里巴巴雲端的 Qwen 大型語言模型（透過 DashScope）"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:249
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "Novita AI 雲端推論 API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:251
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "DeepInfra 雲端推論 API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "Sarvam AI 實體"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
+#, kde-format
+msgid "Orca Router OpenAI-compatible API"
+msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
