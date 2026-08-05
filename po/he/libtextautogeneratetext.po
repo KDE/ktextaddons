@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-04 00:42+0000\n"
-"PO-Revision-Date: 2026-07-19 08:22+0300\n"
+"PO-Revision-Date: 2026-08-04 09:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -332,10 +332,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "OrcaRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -404,10 +403,9 @@ msgid "Sarvam AI instance"
 msgstr "עותק של Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "Orca Router OpenAI-compatible API"
-msgstr "API של AtlasCloud תואם OpenAI"
+msgstr "API של Orca Router תואם OpenAI"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95

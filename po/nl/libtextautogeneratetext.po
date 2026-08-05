@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-04 00:42+0000\n"
-"PO-Revision-Date: 2026-07-19 11:47+0200\n"
+"PO-Revision-Date: 2026-08-04 12:08+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -332,10 +332,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "OrcaRouter-AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -404,10 +403,9 @@ msgid "Sarvam AI instance"
 msgstr "Sarvam-AI exemplaar"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "Orca Router OpenAI-compatible API"
-msgstr "AtlasCloud OpenAI-compatibele API"
+msgstr "Orca-router OpenAI-compatibele API"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
