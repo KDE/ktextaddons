@@ -15,6 +15,7 @@ GenericNetworkNetworkPluginConfigureWidget::GenericNetworkNetworkPluginConfigure
     mManager->loadModels();
     setWebSiteUrl(mManager->webSite());
     setDescription(mManager->description());
+    setHasCustomUrl(mManager->hasCustomUrl());
 }
 
 GenericNetworkNetworkPluginConfigureWidget::~GenericNetworkNetworkPluginConfigureWidget() = default;
@@ -26,6 +27,9 @@ void GenericNetworkNetworkPluginConfigureWidget::loadSettings()
     setTemperature(mManager->genericNetworkSettings()->temperature());
     setSeed(mManager->genericNetworkSettings()->seed());
     setApiKey(mManager->apiKey());
+    if (mManager->hasCustomUrl()) {
+        setCustomUrl(mManager->genericNetworkSettings()->customUrl());
+    }
 }
 
 void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
@@ -34,6 +38,9 @@ void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
     mManager->genericNetworkSettings()->setTemperature(temperature());
     mManager->genericNetworkSettings()->setMaxTokens(maxTokens());
     mManager->genericNetworkSettings()->setSeed(seed());
+    if (mManager->hasCustomUrl()) {
+        mManager->genericNetworkSettings()->setCustomUrl(customUrl());
+    }
     mManager->setApiKey(apiKey());
 }
 

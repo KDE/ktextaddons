@@ -21,15 +21,16 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     : QWidget{parent}
     , mApiKey(new KPasswordLineEdit(this))
     , mInstanceName(new QLineEdit(this))
+    , mCustomUrl(new QLineEdit(this))
     , mMaxToken(new QSpinBox(this))
     , mTemperature(new QDoubleSpinBox(this))
     , mSeed(new QSpinBox(this))
     , mWebSite(new QLabel(this))
     , mDescription(new QLabel(this))
+    , mMainLayout(new QFormLayout(this))
 {
-    auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(u"mainLayout"_s);
-    mainLayout->setContentsMargins({});
+    mMainLayout->setObjectName(u"mainLayout"_s);
+    mMainLayout->setContentsMargins({});
 
     mApiKey->setObjectName(u"mApiKey"_s);
     mInstanceName->setObjectName(u"mInstanceName"_s);
@@ -41,14 +42,17 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mTemperature->setSingleStep(0.1);
     mSeed->setMaximum(9999);
     mSeed->setObjectName(u"mSeed"_s);
+    mCustomUrl->setObjectName(u"mCustomUrl"_s);
 
     mApiKey->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew : KPassword::RevealMode::Never);
 
-    mainLayout->addRow(i18n("Name:"), mInstanceName);
-    mainLayout->addRow(i18n("Api Key:"), mApiKey);
-    mainLayout->addRow(i18n("Max Tokens:"), mMaxToken);
-    mainLayout->addRow(i18n("Temperature:"), mTemperature);
-    mainLayout->addRow(i18n("Seed:"), mSeed);
+    mMainLayout->addRow(i18n("Name:"), mInstanceName);
+    mMainLayout->addRow(i18n("Custom URL:"), mCustomUrl);
+
+    mMainLayout->addRow(i18n("Api Key:"), mApiKey);
+    mMainLayout->addRow(i18n("Max Tokens:"), mMaxToken);
+    mMainLayout->addRow(i18n("Temperature:"), mTemperature);
+    mMainLayout->addRow(i18n("Seed:"), mSeed);
 
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     KLineEditEventHandler::catchReturnKey(mInstanceName);
@@ -56,12 +60,12 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mWebSite->setTextInteractionFlags(Qt::TextBrowserInteraction);
     mWebSite->setTextFormat(Qt::RichText);
     mWebSite->setOpenExternalLinks(true);
-    mainLayout->addWidget(mWebSite);
+    mMainLayout->addWidget(mWebSite);
 
     mDescription->setObjectName(u"mDescription"_s);
     mDescription->setTextFormat(Qt::PlainText);
     mDescription->setWordWrap(true);
-    mainLayout->addWidget(mDescription);
+    mMainLayout->addWidget(mDescription);
 
     connect(mInstanceName, &QLineEdit::textChanged, this, [this](const QString &str) {
         Q_EMIT enableOkButton(!str.trimmed().isEmpty());
@@ -69,6 +73,12 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
 }
 
 TextAutoGenerateNetworkPluginConfigureWidget::~TextAutoGenerateNetworkPluginConfigureWidget() = default;
+
+void TextAutoGenerateNetworkPluginConfigureWidget::setHasCustomUrl(bool b)
+{
+    mMainLayout->labelForField(mCustomUrl)->setVisible(b);
+    mCustomUrl->setVisible(b);
+}
 
 void TextAutoGenerateNetworkPluginConfigureWidget::setApiKey(const QString &key)
 {
@@ -136,6 +146,16 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setWebSiteUrl(const QString &
     } else {
         mWebSite->setText(u"<a href=\"%1\">%1</a>"_s.arg(url));
     }
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidget::setCustomUrl(const QString &url)
+{
+    mCustomUrl->setText(url);
+}
+
+QString TextAutoGenerateNetworkPluginConfigureWidget::customUrl() const
+{
+    return mCustomUrl->text();
 }
 
 #include "moc_textautogeneratenetworkpluginconfigurewidget.cpp"

@@ -16,6 +16,7 @@ double PluginCommonSettings::defaultTemperature() const
 {
     return 0.8;
 }
+
 void PluginCommonSettings::load(const KConfigGroup &config)
 {
     setDisplayName(config.readEntry(u"Name"_s));

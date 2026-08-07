@@ -37,7 +37,8 @@ public:
         AtlasCloud = 18,
         Gemini = 19,
         KimiAI = 20,
-        LastElement = KimiAI,
+        OpenAIGeneric = 21,
+        LastElement = OpenAIGeneric,
     };
 
     enum Limitation : uint8_t {
@@ -86,6 +87,8 @@ public:
     [[nodiscard]] GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasSystemMessageSupport() const;
     [[nodiscard]] bool hasTextOnlySupport() const;
+
+    [[nodiscard]] bool hasCustomUrl() const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;

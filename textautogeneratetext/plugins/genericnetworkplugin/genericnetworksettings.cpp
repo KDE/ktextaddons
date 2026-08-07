@@ -35,6 +35,7 @@ void GenericNetworkSettings::load(const KConfigGroup &config)
     PluginCommonSettings::load(config);
     setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
     setSeed(config.readEntry(u"Seed"_s, 0));
+    setCustomUrl(config.readEntry(u"CustomUrl"_s, QString()));
 }
 
 void GenericNetworkSettings::save(KConfigGroup &config)
@@ -42,4 +43,15 @@ void GenericNetworkSettings::save(KConfigGroup &config)
     PluginCommonSettings::save(config);
     config.writeEntry(u"MaxToken"_s, maxTokens());
     config.writeEntry(u"Seed"_s, seed());
+    config.writeEntry(u"CustomUrl"_s, customUrl());
+}
+
+QString GenericNetworkSettings::customUrl() const
+{
+    return mCustomUrl;
+}
+
+void GenericNetworkSettings::setCustomUrl(const QString &newCustomUrl)
+{
+    mCustomUrl = newCustomUrl;
 }

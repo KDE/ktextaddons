@@ -28,4 +28,5 @@ public:
     [[nodiscard]] static GenericNetworkManager::Limitations limitations(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QString responsesPath(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool hasCustomUrl(GenericNetworkManager::PluginNetworkType type);
 };

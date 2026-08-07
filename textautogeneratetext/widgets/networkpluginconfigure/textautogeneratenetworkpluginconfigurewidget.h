@@ -13,6 +13,7 @@ class QLineEdit;
 class QSpinBox;
 class QDoubleSpinBox;
 class QLabel;
+class QFormLayout;
 namespace TextAutoGenerateText
 {
 /*!
@@ -102,6 +103,23 @@ public:
      */
     void setDescription(const QString &description);
 
+    /*!
+     * \brief setHasCustomUrl
+     * \param b
+     */
+    void setHasCustomUrl(bool b);
+
+    /*!
+     * \brief setCustomUrl
+     * \param url
+     */
+    void setCustomUrl(const QString &url);
+    /*!
+     * \brief customUrl
+     * \return
+     */
+    [[nodiscard]] QString customUrl() const;
+
 Q_SIGNALS:
     /*!
      * \brief send true if we need to update button
@@ -112,10 +130,12 @@ Q_SIGNALS:
 private:
     KPasswordLineEdit *const mApiKey;
     QLineEdit *const mInstanceName;
+    QLineEdit *const mCustomUrl;
     QSpinBox *const mMaxToken;
     QDoubleSpinBox *const mTemperature;
     QSpinBox *const mSeed;
     QLabel *const mWebSite;
     QLabel *const mDescription;
+    QFormLayout *const mMainLayout;
 };
 }

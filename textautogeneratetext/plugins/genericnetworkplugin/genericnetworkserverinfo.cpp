@@ -60,6 +60,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("AtlasCloud OpenAI-compatible API");
     case GenericNetworkManager::PluginNetworkType::Gemini:
         return i18n("Google Gemini");
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return i18n("API OpenAI");
     }
     return {};
 }
@@ -90,6 +92,7 @@ QString GenericNetworkServerInfo::responsesPath(GenericNetworkManager::PluginNet
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
     case GenericNetworkManager::PluginNetworkType::Gemini:
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return u"responses"_s;
     }
     return {};
@@ -121,6 +124,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
     case GenericNetworkManager::PluginNetworkType::Gemini:
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return u"chat/completions"_s;
     }
     return {};
@@ -172,6 +176,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://gemini.google.com"_s;
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
         return u"https://www.orcarouter.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return {};
     }
     return {};
 }
@@ -222,6 +228,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.orcarouter.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::Gemini:
         return u"https://generativelanguage.googleapis.com/v1beta/openai/"_s;
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return {};
     }
     return {};
 }
@@ -267,6 +275,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("AtlasCloud OpenAI-compatible API");
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
         return i18n("Orca Router OpenAI-compatible API");
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return i18n("API Open AI (custom)");
     }
     return {};
 }
@@ -317,6 +327,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"gemini"_s;
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
         return u"orcarouterai"_s;
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return u"openaigeneric"_s;
     }
     return {};
 }
@@ -363,6 +375,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::Gemini;
     } else if (str == QLatin1StringView("orcarouterai")) {
         return GenericNetworkManager::PluginNetworkType::OrcaRouterAI;
+    } else if (str == QLatin1StringView("openaigeneric")) {
+        return GenericNetworkManager::PluginNetworkType::OpenAIGeneric;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -385,6 +399,14 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
         listInfo.append(info);
     }
     return listInfo;
+}
+
+bool GenericNetworkServerInfo::hasCustomUrl(GenericNetworkManager::PluginNetworkType type)
+{
+    if (type == GenericNetworkManager::PluginNetworkType::OpenAIGeneric) {
+        return true;
+    }
+    return false;
 }
 
 GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type)
@@ -424,6 +446,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return limits;
     }
     return limits;

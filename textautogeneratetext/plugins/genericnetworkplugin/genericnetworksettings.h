@@ -23,7 +23,11 @@ public:
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
 
+    [[nodiscard]] QString customUrl() const;
+    void setCustomUrl(const QString &newCustomUrl);
+
 private:
     int mMaxTokens = 2048;
     int mSeed = 0;
+    QString mCustomUrl;
 };

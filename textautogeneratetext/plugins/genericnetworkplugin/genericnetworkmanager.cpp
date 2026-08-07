@@ -35,6 +35,7 @@ void GenericNetworkManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
+    qDebug() << " apiUrl() ********* " << apiUrl();
     QNetworkRequest req{QUrl::fromUserInput(apiUrl() + u"models"_s)};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
@@ -206,9 +207,17 @@ QString GenericNetworkManager::chatPath() const
     return mServerInfo->chatCompletionPath(mPluginNetworkType);
 }
 
+bool GenericNetworkManager::hasCustomUrl() const
+{
+    return mServerInfo->hasCustomUrl(mPluginNetworkType);
+}
+
 QString GenericNetworkManager::apiUrl() const
 {
-    return mServerInfo->apiUrl(mPluginNetworkType);
+    if (!mServerInfo->hasCustomUrl(mPluginNetworkType)) {
+        return mServerInfo->apiUrl(mPluginNetworkType);
+    }
+    return mGenericNetworkSettings->customUrl();
 }
 
 QString GenericNetworkManager::description() const
