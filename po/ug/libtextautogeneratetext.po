@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-05-31 19:48-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -181,9 +181,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "قورال قىستۇرمىسى"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -2618,8 +2619,9 @@ msgid "Text Plugins"
 msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "قورال قىستۇرمىسى"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -2790,9 +2792,10 @@ msgid "Max Tokens:"
 msgstr ""
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Text Plugins:"
+msgstr "قورال قىستۇرمىسى"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34

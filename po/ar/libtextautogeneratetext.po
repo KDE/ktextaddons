@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-07-06 17:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -182,9 +182,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>رمز الإكمال:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "نص الملحقات:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "ملحقات الأدوات"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -2963,8 +2964,9 @@ msgid "Text Plugins"
 msgstr "ملحقات النصوص"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "ملحقات الأدوات"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3135,9 +3137,10 @@ msgid "Max Tokens:"
 msgstr "الرموز المميزة القصوى:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "أداة الملحقات:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "ملحقات النصوص"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3435,6 +3438,12 @@ msgstr "لم يعثر على أرشيف."
 #, kde-format
 msgid "No Messages Found."
 msgstr "لم يعثر على رسائل"
+
+#~ msgid "Plugins Text:"
+#~ msgstr "نص الملحقات:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "أداة الملحقات:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "صور (*.png *.xpm *.jpg *.gif)"

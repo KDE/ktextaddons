@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
-"PO-Revision-Date: 2026-07-20 10:21+0200\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
+"PO-Revision-Date: 2026-08-05 12:45+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -181,9 +181,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Jeton de réalisation : </b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "Texte des modules externes :"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Modules externes d'outils"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -331,10 +332,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "IA OrcaRouter"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -403,10 +403,9 @@ msgid "Sarvam AI instance"
 msgstr "Instance d'IA Sarvam"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "Orca Router OpenAI-compatible API"
-msgstr "API compatible avec OpenAI AtlasCloud"
+msgstr "API compatible avec OpenAI pour Orca Router"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3114,8 +3113,9 @@ msgid "Text Plugins"
 msgstr "Modules externes de texte"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Modules externes d'outils"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3286,9 +3286,10 @@ msgid "Max Tokens:"
 msgstr "Nombre maximal de jetons :"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Outil de modules externes :"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Modules externes de texte"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3586,6 +3587,12 @@ msgstr "Aucune archive trouvée."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Aucun message trouvé."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Texte des modules externes :"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Outil de modules externes :"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Images (*.png *.xpm *.jpg *.gif)"

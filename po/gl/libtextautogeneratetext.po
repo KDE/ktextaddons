@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
-msgid "Plugins Text:"
+msgid "Tool Plugins:"
 msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
@@ -2639,7 +2639,7 @@ msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
-msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -2817,7 +2817,7 @@ msgstr ""
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
-msgid "Plugins Tool:"
+msgid "Text Plugins:"
 msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32

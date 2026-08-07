@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-08-04 05:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -184,9 +184,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>დასრულების ტოკენი:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "დამატებების ტექსტი:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "ხელსაწყოს დამატებები"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -3056,8 +3057,9 @@ msgid "Text Plugins"
 msgstr "ტექსტის დამატებები"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "ხელსაწყოს დამატებები"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3228,9 +3230,10 @@ msgid "Max Tokens:"
 msgstr "მაქს. კოდები:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "დამატებების ხელსაწყო:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "ტექსტის დამატებები"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3528,6 +3531,12 @@ msgstr "არქივი ვერ მოიძებნა."
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "დამატებების ტექსტი:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "დამატებების ხელსაწყო:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "გამოსახულებები (*.png *.xpm *.jpg *.gif)"

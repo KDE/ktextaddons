@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-07-27 11:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -182,9 +182,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token de Completion:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Plugins de instrumentos"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -2616,8 +2617,9 @@ msgid "Text Plugins"
 msgstr "Plugins de Texto"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Plugins de instrumentos"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -2788,9 +2790,10 @@ msgid "Max Tokens:"
 msgstr "Indicios Max:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Instrumento de Plugins:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Plugins de Texto"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3088,6 +3091,9 @@ msgstr "Necun Archivo trovate."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Necun messages trovate."
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Instrumento de Plugins:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Images (*.png *.xpm *.jpg *.gif)"

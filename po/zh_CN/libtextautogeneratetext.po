@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -181,9 +181,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>补全词元：</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "插件文本："
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "工具插件"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -2885,8 +2886,9 @@ msgid "Text Plugins"
 msgstr "文本插件"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "工具插件"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3057,9 +3059,10 @@ msgid "Max Tokens:"
 msgstr "最大词元数："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "插件工具："
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "文本插件"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3357,3 +3360,9 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
+
+#~ msgid "Plugins Text:"
+#~ msgstr "插件文本："
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "插件工具："

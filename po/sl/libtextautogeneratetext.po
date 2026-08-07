@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-08-04 07:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -183,9 +183,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Žeton dokončanja:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "Besedilo vtičnikov:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Vtičniki orodij"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -3053,8 +3054,9 @@ msgid "Text Plugins"
 msgstr "Besedilni vtičniki"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Vtičniki orodij"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3225,9 +3227,10 @@ msgid "Max Tokens:"
 msgstr "Maks. žetonov:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Orodje vtičnikov:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Besedilni vtičniki"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3525,6 +3528,12 @@ msgstr "Ni najdenega arhiva."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Ni najdenih sporočil."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Besedilo vtičnikov:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Orodje vtičnikov:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Slike (*.png *.xpm *.jpg *.gif)"

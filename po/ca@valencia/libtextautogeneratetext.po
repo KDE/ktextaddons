@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-08-04 09:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -187,9 +187,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Segment textual de compleció:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "Text dels connectors:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Connectors d'eines"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -3084,8 +3085,9 @@ msgid "Text Plugins"
 msgstr "Connectors de text"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Connectors d'eines"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3256,9 +3258,10 @@ msgid "Max Tokens:"
 msgstr "Màxim de segments textuals:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Eina dels connectors:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Connectors de text"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3556,3 +3559,9 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Text dels connectors:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Eina dels connectors:"

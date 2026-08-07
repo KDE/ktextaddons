@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -191,9 +191,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>工具</b>：%1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "外掛程式文字："
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "工具外掛程式"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -2819,8 +2820,9 @@ msgid "Text Plugins"
 msgstr "文字外掛程式"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "工具外掛程式"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -2991,9 +2993,10 @@ msgid "Max Tokens:"
 msgstr "最大 token 數："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "外掛程式工具："
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "文字外掛程式"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3295,6 +3298,12 @@ msgstr "找不到封存檔。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "找不到訊息"
+
+#~ msgid "Plugins Text:"
+#~ msgstr "外掛程式文字："
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "外掛程式工具："
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "影像 (*.png *.xpm *.jpg *.gif)"

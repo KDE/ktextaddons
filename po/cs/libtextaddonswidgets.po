@@ -1,31 +1,32 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # Vit Pelcak <vit@pelcak.org>, 2023.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 00:45+0000\n"
-"PO-Revision-Date: 2023-06-05 11:18+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-06 17:58+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: misc/openfilejob.cpp:61
 #, kde-format
@@ -72,19 +73,19 @@ msgstr "Uložit soubor"
 #: misc/savefileutils.cpp:63
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "Zdrojový soubor již neexistuje"
 
 #: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
 #: misc/savefileutils.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "Chyba při ukládání souboru"
 
 #: misc/savefileutils.cpp:69
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "Nelze přepsat existující soubor"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -96,12 +97,14 @@ msgstr "Vypnout kontrolu verze"
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
 msgstr ""
+"Vaše verze je starší než 6 měsíců, doporučujeme vám provést aktualizaci."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
+"Vaše verze je starší než 1 rok, důrazně vám doporučujeme provést aktualizaci."
 
 #: opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -134,12 +137,12 @@ msgstr "Otevřít složku, kam byl soubor PDF uložen"
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Otevřít složku, do které byl soubor uložen"
 
 #: opensavedfilefolderwidget.cpp:86
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Přílohu nelze otevřít."
 
 #: plugins/configurepluginswidget.cpp:24
 #, kde-format
@@ -162,7 +165,7 @@ msgstr "Nastavit"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr ""
+msgstr "Hledat… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
@@ -194,7 +197,7 @@ msgstr "Kurzíva"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
-msgstr ""
+msgstr "Přeškrtnuté"
 
 #: richtextquicktextformat.cpp:109
 #, kde-format
@@ -206,19 +209,19 @@ msgstr "Podtržené"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
-msgstr ""
+msgstr "Blok kódu"
 
 #: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
-msgstr ""
+msgstr "Citace"
 
 #: richtextquicktextformat.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr ""
+msgstr "Vložit odkaz"
 
 #: selectspecialchardialog.cpp:35
 #, kde-format
@@ -242,22 +245,24 @@ msgstr "Vybrat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr ""
+msgstr "Zkontrolovat novou verzi"
 
 #: verifynewversion/checknewversionwidget.cpp:61
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
+"Byla nalezena nová verze. Klikněte <a href=\"%1\">zde</a> a stáhněte si ji."
 
 #: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
+"Nebyla nalezena žádná nová verze. Sestavení najdete <a href=\"%1\">zde</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:32
 #, kde-format
 msgid "Check New Version"
-msgstr ""
+msgstr "Zkontrolovat novou verzi"
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
@@ -269,7 +274,7 @@ msgstr "Verze:"
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr ""
+msgstr "Co je nového v %1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
@@ -281,12 +286,12 @@ msgstr "(Zobrazit novinky)"
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr ""
+msgstr "Co je nového v %2. %1"
 
 #: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
-msgstr ""
+msgstr "Všechny verze"
 
 #: whatsnew/whatsnewwidget.cpp:93
 #, kde-format
@@ -296,37 +301,37 @@ msgstr "Důležité změny od poslední verze:"
 #: whatsnew/whatsnewwidget.cpp:98
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr ""
+msgstr "Mezi nové funkce této verze patří mimo jiné:"
 
 #: whatsnew/whatsnewwidget.cpp:103
 #, kde-format
 msgid "Some bug fixing:"
-msgstr ""
+msgstr "Oprava několika chyb:"
 
 #: whatsnew/whatsnewwidget.cpp:141
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Verze %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngwidget.cpp:66
 #, kde-format
 msgid "<h1>What's New History</h1></hr>"
-msgstr ""
+msgstr "<h1>Historie novinek</h1></hr>"
 
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">Poznámky k vydání</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr ""
+msgstr "<h3><i>Co je nového ve verzi %1 (vydáno: %2)</i></h3>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr ""
+msgstr "<h3><i>Co je nového ve verzi %1 (nevydáno)</i></h3>"
 
 #~ msgid "Version %1"
 #~ msgstr "Verze %1"

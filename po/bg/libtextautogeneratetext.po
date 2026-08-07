@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-07-20 20:22+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -182,9 +182,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Токен за завършване:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "Текст на приставка:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Приставки за инструменти"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -3061,8 +3062,9 @@ msgid "Text Plugins"
 msgstr "Приставки за текст"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Приставки за инструменти"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3233,9 +3235,10 @@ msgid "Max Tokens:"
 msgstr "Макс токени:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Инструмент на приставка:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Приставки за текст"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3533,6 +3536,12 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Текст на приставка:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Инструмент на приставка:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Изображения (*.png *.xpm *.jpg *.gif)"

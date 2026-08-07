@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
 "PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -193,9 +193,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Narzędzia:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "Tekst wtyczek:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Wtyczki narzędzi"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -3001,8 +3002,9 @@ msgid "Text Plugins"
 msgstr "Wtyczki tekstowe"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Wtyczki narzędzi"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3173,9 +3175,10 @@ msgid "Max Tokens:"
 msgstr "Maksymalna liczba tokenów:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Narzędzie wtyczek:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Wtyczki tekstowe"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3477,6 +3480,12 @@ msgstr "Nie znaleziono żadnego archiwum."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Nie znaleziono żadnej wiadomości."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Tekst wtyczek:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Narzędzie wtyczek:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Obrazy (*.png *.xpm *.jpg *.gif)"

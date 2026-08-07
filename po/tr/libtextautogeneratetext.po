@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:42+0000\n"
-"PO-Revision-Date: 2026-08-04 19:07+0300\n"
+"POT-Creation-Date: 2026-08-07 00:43+0000\n"
+"PO-Revision-Date: 2026-08-06 20:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -182,9 +182,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Tamamlama jetonu:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, kde-format
-msgid "Plugins Text:"
-msgstr "Eklenti metni:"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins:"
+msgstr "Araç Eklentileri"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -2125,7 +2126,7 @@ msgid ""
 "cases."
 msgstr ""
 "Dolphin 3.0 Llama 3.1 8B 🐬, kodlama, matematik, aracı, işlev çağırma ve "
-"genel kullanım durumlarını etkinleştiren, nihai genel amaçlı yerel model "
+"genel kullanım durumlarını etkinleştiren, nihâî genel amaçlı yerel model "
 "olacak şekilde tasarlanmış, Dolphin serisi yönerge ayarlı modellerin yeni "
 "neslidir."
 
@@ -3057,8 +3058,9 @@ msgid "Text Plugins"
 msgstr "Metin Eklentileri"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, kde-format
-msgid "Tools Plugins"
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
+msgid "Tool Plugins"
 msgstr "Araç Eklentileri"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
@@ -3229,9 +3231,10 @@ msgid "Max Tokens:"
 msgstr "En çok jeton sayısı:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, kde-format
-msgid "Plugins Tool:"
-msgstr "Eklenti aracı:"
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Text Plugins:"
+msgstr "Metin Eklentileri"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3529,6 +3532,12 @@ msgstr "Bulunan arşiv yok."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Eklenti metni:"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Eklenti aracı:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Görseller (*.png *.xpm *.jpg *.gif)"
