@@ -158,7 +158,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpServer
     d.space() << "name:" << t.name();
     d.space() << "identifier:" << t.identifier();
     d.space() << "serverType:" << t.transportType();
-
     d.space() << "settings:" << t.settings();
     return d;
 }

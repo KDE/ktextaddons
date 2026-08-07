@@ -11,23 +11,64 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolServer
+ * \brief The McpProtocolServer class
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolServer
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServer : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief McpProtocolServer
+     * \param protocolType
+     * \param parent
+     */
     explicit McpProtocolServer(McpProtocolPlugin::TransportType protocolType, QObject *parent = nullptr);
+    /*!
+     * \brief ~McpProtocolServer
+     */
     ~McpProtocolServer() override;
 
+    /*!
+     * \brief protocolType
+     * \return
+     */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType protocolType() const;
+    /*!
+     * \brief setSettings
+     * \param settings
+     */
     void setSettings(const McpProtocolSettings &settings);
 
+    /*!
+     * \brief start
+     */
     void start();
 
+    /*!
+     * \brief canStart
+     * \return
+     */
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
+    /*!
+     * \brief started
+     */
     void started();
+    /*!
+     * \brief received
+     * \param obj
+     */
     void received(const QJsonObject &obj);
+    /*!
+     * \brief error
+     * \param str
+     */
     void error(const QString &str);
 
 private:
