@@ -60,7 +60,7 @@ void McpServerManager::saveServers()
 
     const QList<McpServer> serverLst = mMcpServerModel->mcpServers();
     for (int i = 0; i < serverLst.count(); ++i) {
-        auto server = serverLst.at(i);
+        const auto server = serverLst.at(i);
         KConfigGroup group = config->group(u"Mcp Server #%1"_s.arg(i));
         server.save(group);
     }
