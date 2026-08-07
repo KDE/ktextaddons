@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateprompt.h"
+#include <QDebug>
 
 using namespace TextAutoGenerateText;
 TextAutoGeneratePrompt::TextAutoGeneratePrompt() = default;
@@ -50,11 +51,22 @@ void TextAutoGeneratePrompt::setEnabled(bool newEnabled)
     mEnabled = newEnabled;
 }
 
+TextAutoGeneratePrompt::Category TextAutoGeneratePrompt::category() const
+{
+    return mCategory;
+}
+
+void TextAutoGeneratePrompt::setCategory(Category newCategory)
+{
+    mCategory = newCategory;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "text" << t.text();
     d.space() << "description:" << t.description();
     d.space() << "enabled:" << t.enabled();
+    d.space() << "category:" << t.category();
     return d;
 }

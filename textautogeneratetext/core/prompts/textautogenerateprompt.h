@@ -6,8 +6,8 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QDebug>
-class QDebig;
+#include <QObject>
+class QDebug;
 namespace TextAutoGenerateText
 {
 /*!
@@ -19,7 +19,16 @@ namespace TextAutoGenerateText
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePrompt
 {
+    Q_GADGET
 public:
+    enum class Category : uint8_t {
+        Unknown,
+        Travel,
+        Code,
+        Misc,
+    };
+    Q_ENUM(Category)
+
     /*!
      * \brief TextAutoGeneratePrompt
      */
@@ -57,7 +66,15 @@ public:
      */
     void setEnabled(bool newEnabled);
 
+    /*!
+     */
+    [[nodiscard]] Category category() const;
+    /*!
+     */
+    void setCategory(Category newCategory);
+
 private:
+    Category mCategory = Category::Unknown;
     QString mName;
     QString mText;
     QString mDescription;

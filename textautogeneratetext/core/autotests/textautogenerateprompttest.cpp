@@ -20,6 +20,7 @@ void TextAutoGeneratePromptTest::shouldHaveDefaultValues()
     QVERIFY(prompt.text().isEmpty());
     QVERIFY(prompt.description().isEmpty());
     QVERIFY(prompt.enabled());
+    QCOMPARE(prompt.category(), TextAutoGenerateText::TextAutoGeneratePrompt::Category::Unknown);
 }
 
 #include "moc_textautogenerateprompttest.cpp"

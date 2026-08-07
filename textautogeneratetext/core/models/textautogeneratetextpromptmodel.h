@@ -26,6 +26,7 @@ public:
         Description,
         PromptText,
         Enabled,
+        Category,
     };
     /*!
      * Constructs a new TextAutoGenerateTextPromptModel object.
