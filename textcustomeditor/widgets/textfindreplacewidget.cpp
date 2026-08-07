@@ -144,7 +144,7 @@ void TextFindWidget::setFoundMatch(bool match)
             bgColorScheme = KColorScheme::NegativeBackground;
         }
 
-        KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
+        const KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
 
         styleSheet = u"QLineEdit{ background-color:%1 }"_s.arg(bgBrush.brush(mSearch->palette()).color().name());
     }

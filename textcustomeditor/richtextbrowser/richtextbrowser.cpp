@@ -368,7 +368,7 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
         qreal lastY = cursorRect(cursor).bottom();
         qreal distance = 0;
         do {
-            qreal y = cursorRect(cursor).bottom();
+            const qreal y = cursorRect(cursor).bottom();
             distance += qAbs(y - lastY);
             lastY = y;
             moved = cursor.movePosition(QTextCursor::Down);
@@ -386,7 +386,7 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
         qreal lastY = cursorRect(cursor).bottom();
         qreal distance = 0;
         do {
-            qreal y = cursorRect(cursor).bottom();
+            const qreal y = cursorRect(cursor).bottom();
             distance += qAbs(y - lastY);
             lastY = y;
             moved = cursor.movePosition(QTextCursor::Up);
@@ -422,14 +422,14 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
         Q_EMIT findText();
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
-        QString text = QApplication::clipboard()->text(QClipboard::Selection);
+        const QString text = QApplication::clipboard()->text(QClipboard::Selection);
         if (!text.isEmpty()) {
             insertPlainText(text); // TODO: check if this is html? (MiB)
         }
         return true;
     } else if (event == QKeySequence::DeleteEndOfLine) {
         QTextCursor cursor = textCursor();
-        QTextBlock block = cursor.block();
+        const QTextBlock block = cursor.block();
         if (cursor.position() == block.position() + block.length() - 2) {
             cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
         } else {
@@ -547,7 +547,7 @@ void RichTextBrowser::moveCursorBeginUpDown(bool moveUp)
 
 void RichTextBrowser::moveLineUpDown(bool moveUp)
 {
-    QTextCursor cursor = textCursor();
+    const QTextCursor cursor = textCursor();
     QTextCursor move = cursor;
     move.beginEditBlock();
 
@@ -582,10 +582,10 @@ void RichTextBrowser::moveLineUpDown(bool moveUp)
         }
     }
 
-    int start = move.position();
+    const int start = move.position();
     move.clearSelection();
     move.insertText(text);
-    int end = move.position();
+    const int end = move.position();
 
     if (hasSelection) {
         move.setPosition(end);

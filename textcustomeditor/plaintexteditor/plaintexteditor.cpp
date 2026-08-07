@@ -587,7 +587,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
         qreal lastY = cursorRect(cursor).bottom();
         qreal distance = 0;
         do {
-            qreal y = cursorRect(cursor).bottom();
+            const qreal y = cursorRect(cursor).bottom();
             distance += qAbs(y - lastY);
             lastY = y;
             moved = cursor.movePosition(QTextCursor::Down);
@@ -605,7 +605,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
         qreal lastY = cursorRect(cursor).bottom();
         qreal distance = 0;
         do {
-            qreal y = cursorRect(cursor).bottom();
+            const qreal y = cursorRect(cursor).bottom();
             distance += qAbs(y - lastY);
             lastY = y;
             moved = cursor.movePosition(QTextCursor::Up);
@@ -646,7 +646,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
         }
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
-        QString text = QApplication::clipboard()->text(QClipboard::Selection);
+        const QString text = QApplication::clipboard()->text(QClipboard::Selection);
         if (!text.isEmpty()) {
             insertPlainText(text); // TODO: check if this is html? (MiB)
         }
@@ -661,7 +661,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
 void PlainTextEditor::deleteEndOfLine()
 {
     QTextCursor cursor = textCursor();
-    QTextBlock block = cursor.block();
+    const QTextBlock block = cursor.block();
     if (cursor.position() == block.position() + block.length() - 2) {
         cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
     } else {
@@ -685,7 +685,7 @@ void PlainTextEditor::moveCursorBeginUpDown(bool moveUp)
 
 void PlainTextEditor::moveLineUpDown(bool moveUp)
 {
-    QTextCursor cursor = textCursor();
+    const QTextCursor cursor = textCursor();
     QTextCursor move = cursor;
     move.beginEditBlock();
 
@@ -881,7 +881,7 @@ void PlainTextEditor::setSpellCheckingConfigFileName(const QString &_fileName)
     d->spellCheckingConfigFileName = _fileName;
     KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
     if (config->hasGroup("Spelling"_L1)) {
-        KConfigGroup group(config, "Spelling"_L1);
+        const KConfigGroup group(config, "Spelling"_L1);
         d->checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         d->spellCheckingLanguage = group.readEntry("Language", QString());
     }
@@ -918,7 +918,7 @@ void PlainTextEditor::setSpellCheckingLanguage(const QString &_language)
 
     if (_language != d->spellCheckingLanguage) {
         d->spellCheckingLanguage = _language;
-        KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
+        const KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
         KConfigGroup group(config, "Spelling"_L1);
         group.writeEntry("Language", d->spellCheckingLanguage);
         setCheckSpellingEnabled(checkSpellingEnabled());
@@ -930,7 +930,7 @@ void PlainTextEditor::setSpellCheckingLanguage(const QString &_language)
 void PlainTextEditor::slotToggleAutoSpellCheck()
 {
     setCheckSpellingEnabled(!checkSpellingEnabled());
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
     KConfigGroup group(config, "Spelling"_L1);
     group.writeEntry("checkerEnabledByDefault", d->checkSpellingEnabled);
 }

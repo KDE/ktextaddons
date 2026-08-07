@@ -62,7 +62,7 @@ void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()
 
 QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
 {
-    static QString eow = u"~!@#$%^&*()+{}|\"<>,./;'[]\\-= "_s; // everything without ':', '?' and '_'
+    static const QString eow = u"~!@#$%^&*()+{}|\"<>,./;'[]\\-= "_s; // everything without ':', '?' and '_'
     QTextCursor tc;
     QTextDocument *document = nullptr;
     if (plainTextEdit) {
@@ -78,7 +78,7 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
     while (true) {
         // vHanda: I don't understand why the cursor seems to give a pos 1 past the last char instead
         // of just the last char.
-        int pos = tc.position() - 1;
+        const int pos = tc.position() - 1;
         if (pos < 0 || eowStr.contains(document->characterAt(pos)) || document->characterAt(pos) == QChar(QChar::LineSeparator)
             || document->characterAt(pos) == QChar(QChar::ParagraphSeparator)) {
             break;
