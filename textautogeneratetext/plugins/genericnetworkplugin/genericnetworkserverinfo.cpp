@@ -61,7 +61,7 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     case GenericNetworkManager::PluginNetworkType::Gemini:
         return i18n("Google Gemini");
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
-        return i18n("API OpenAI");
+        return i18n("OpenAI API");
     }
     return {};
 }
@@ -274,9 +274,9 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     case GenericNetworkManager::PluginNetworkType::AtlasCloud:
         return i18n("AtlasCloud OpenAI-compatible API");
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
-        return i18n("Orca Router OpenAI-compatible API");
+        return i18n("OrcaRouter OpenAI-compatible API");
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
-        return i18n("API Open AI (custom)");
+        return i18n("OpenAI API (custom)");
     }
     return {};
 }
