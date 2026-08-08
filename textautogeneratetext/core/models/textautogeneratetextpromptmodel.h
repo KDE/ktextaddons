@@ -51,6 +51,17 @@ public:
      */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
+    /*!
+     * \brief prompt
+     * \return
+     */
+    [[nodiscard]] QList<TextAutoGeneratePrompt> prompt() const;
+    /*!
+     * \brief setPrompt
+     * \param newPrompt
+     */
+    void setPrompt(const QList<TextAutoGeneratePrompt> &newPrompt);
+
 private:
     QList<TextAutoGeneratePrompt> mPrompt;
 };

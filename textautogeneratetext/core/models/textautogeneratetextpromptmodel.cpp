@@ -24,10 +24,12 @@ int TextAutoGenerateTextPromptModel::rowCount(const QModelIndex &parent) const
 
 QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int role) const
 {
-    if (index.row() < 0 || index.row() >= mPrompt.count()) {
+    const int row = index.row();
+    if (row < 0 || row >= mPrompt.count()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid index:" << row;
         return {};
     }
-    const auto &prompt = mPrompt[index.row()];
+    const auto &prompt = mPrompt[row];
     switch (role) {
     case Qt::DisplayRole:
     case Name:
@@ -44,6 +46,18 @@ QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int rol
         break;
     }
     return {};
+}
+
+QList<TextAutoGeneratePrompt> TextAutoGenerateTextPromptModel::prompt() const
+{
+    return mPrompt;
+}
+
+void TextAutoGenerateTextPromptModel::setPrompt(const QList<TextAutoGeneratePrompt> &newPrompt)
+{
+    beginResetModel();
+    mPrompt = newPrompt;
+    endResetModel();
 }
 
 #include "moc_textautogeneratetextpromptmodel.cpp"
