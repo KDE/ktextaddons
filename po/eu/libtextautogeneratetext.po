@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:43+0000\n"
-"PO-Revision-Date: 2026-08-04 06:43+0200\n"
+"POT-Creation-Date: 2026-08-08 00:43+0000\n"
+"PO-Revision-Date: 2026-08-07 19:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -191,10 +191,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Osatzearen tokena:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "Tresna-pluginak"
+msgstr "Tresna-pluginak:"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -250,7 +249,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Eredu erabilgarriak"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:50
 #: plugins/lmstudio/lmstudiomanager.cpp:122
 #: plugins/ollama/ollamamanager.cpp:150
 #: plugins/ollamacloud/ollamacloudmanager.cpp:57
@@ -330,13 +329,13 @@ msgid "OpenAI ChatGPT"
 msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
@@ -352,7 +351,7 @@ msgid "Sarvam AI"
 msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr "OpenAIrekin bateragarria den AtlasCloud APIa"
@@ -362,60 +361,71 @@ msgstr "OpenAIrekin bateragarria den AtlasCloud APIa"
 msgid "Google Gemini"
 msgstr "Google Gemini"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:236
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "API OpenAI"
+msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AIren hizkuntza-eredu handiak"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:245
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:247
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AIren hodeiko inferentzia-APIa"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:249
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AIren hodeiko inferentzia-APIa"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:251
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama APIa"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:253
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Moonshot AIren Kimi hizkuntza-eredu handiak"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "Alibaba Clouden Qwen hizkuntza-eredu handiak DashScoperen bidez"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "Novita AIren hodeiko inferentzia-APIa"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "DeepInfraren hodeiko inferentzia-APIa"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "Sarvam AI instantzia"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "Orca Router OpenAI-compatible API"
 msgstr "OpenAIrekin bateragarria den OrcaRouter APIa"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
+#, kde-format
+msgid "API Open AI (custom)"
+msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -476,7 +486,7 @@ msgstr "Instalatutako eredua"
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:69
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
@@ -819,7 +829,7 @@ msgstr "Ollama Cloud konfiguratu"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:52
 #, kde-format
 msgid "Api Key:"
 msgstr "API-gakoa:"
@@ -2840,7 +2850,7 @@ msgstr ""
 "modu sortzaileagoan erantzungo du."
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:54
 #, kde-format
 msgid "Temperature:"
 msgstr "Tenperatura:"
@@ -2858,7 +2868,7 @@ msgstr ""
 "bera sortzea eragingo du. (Lehenetsia: 0)"
 
 #: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:55
 #, kde-format
 msgid "Seed:"
 msgstr "Hazia:"
@@ -3069,8 +3079,7 @@ msgid "Text Plugins"
 msgstr "Testu-pluginak"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "Tresna-pluginak"
 
@@ -3236,16 +3245,22 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Konfiguratu…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy URL"
+msgid "Custom URL:"
+msgstr "URLa kopiatu"
+
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
 msgid "Max Tokens:"
 msgstr "Gehieneko token kopurua:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "Testu-pluginak"
+msgstr "Testu-pluginak:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
