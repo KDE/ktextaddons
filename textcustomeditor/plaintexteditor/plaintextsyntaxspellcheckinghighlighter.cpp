@@ -157,7 +157,9 @@ void PlainTextSyntaxSpellCheckingHighlighter::setMisspelled(int start, int count
 void PlainTextSyntaxSpellCheckingHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)
 {
     if (format.spellCheck() && length > 0) {
-        if (d->spellCheckRanges.back().end() + 1 == offset) {
+        if (d->spellCheckRanges.empty()) {
+            d->spellCheckRanges.emplace_back(offset, length);
+        } else if (d->spellCheckRanges.back().end() + 1 == offset) {
             d->spellCheckRanges.back().length += length;
         } else {
             d->spellCheckRanges.emplace_back(offset, length);
