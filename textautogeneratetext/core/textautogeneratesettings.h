@@ -51,7 +51,7 @@ public:
     [[nodiscard]] static QString defaultPrompt();
 
 private:
-    void save();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void save();
     QString mSystemPrompt;
 };
 

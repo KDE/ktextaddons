@@ -19,7 +19,14 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateModelAvailableListView : publi
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief TextAutoGenerateModelAvailableListView
+     * \param parent
+     */
     explicit TextAutoGenerateModelAvailableListView(QWidget *parent = nullptr);
+    /*!
+     * \brief ~TextAutoGenerateModelAvailableListView
+     */
     ~TextAutoGenerateModelAvailableListView() override;
 };
 }

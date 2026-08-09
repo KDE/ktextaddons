@@ -31,9 +31,12 @@ public:
      */
     void save() override;
 
-private:
+    /*!
+     * \brief initialize
+     */
     void initialize() override;
 
+private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureClicked(const QString &groupName, const QString &identifier);
     QList<PluginItem *> mPluginTextItems;
     QList<PluginItem *> mPluginToolsItems;

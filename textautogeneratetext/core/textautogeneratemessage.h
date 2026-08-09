@@ -25,6 +25,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessage
 {
     Q_GADGET
 public:
+    /*!
+     * \brief The Sender enum
+     */
     enum class Sender : uint8_t {
         Unknown,
         User,
@@ -34,6 +37,9 @@ public:
     };
     Q_ENUM(Sender)
 
+    /*!
+     * \brief The MessageState enum
+     */
     enum MessageState {
         None = 0,
         HoverHighlight = 1,

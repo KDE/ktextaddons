@@ -38,18 +38,50 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextManager final : publ
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief ~TextAutoGeneratePluginTextManager
+     */
     ~TextAutoGeneratePluginTextManager() override;
+    /*!
+     * \brief self
+     * \return
+     */
     static TextAutoGeneratePluginTextManager *self();
 
+    /*!
+     * \brief pluginsList
+     * \return
+     */
     [[nodiscard]] QList<TextAutoGeneratePluginText *> pluginsList() const;
 
+    /*!
+     * \brief configGroupName
+     * \return
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     * \brief configPrefixSettingKey
+     * \return
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
 
+    /*!
+     * \brief pluginDataList
+     * \return
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
 
+    /*!
+     * \brief pluginFromIdentifier
+     * \param identifier
+     * \return
+     */
     [[nodiscard]] TextAutoGeneratePluginText *pluginFromIdentifier(const QString &identifier) const;
 
+    /*!
+     * \brief generatePluginsInformation
+     * \return
+     */
     [[nodiscard]] QString generatePluginsInformation() const;
 
 private:

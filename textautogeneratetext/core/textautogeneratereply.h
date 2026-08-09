@@ -40,12 +40,18 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateReply : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     * \brief The ToolCallArgument class
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgument {
         QString keyTool;
         QString value;
         [[nodiscard]] bool operator==(const ToolCallArgument &other) const;
     };
 
+    /*!
+     * \brief The ToolCallArgumentInfo class
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgumentInfo {
         QList<ToolCallArgument> toolCallArgument;
         QByteArray toolName;
@@ -53,6 +59,9 @@ public:
         [[nodiscard]] bool operator==(const ToolCallArgumentInfo &other) const;
     };
 
+    /*!
+     * \brief The Response class
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT Response {
         QList<ToolCallArgumentInfo> info;
         QString response;
@@ -61,6 +70,9 @@ public:
         [[nodiscard]] bool hasToolCallArguments() const;
     };
 
+    /*!
+     * \brief The DownloadModelInfo class
+     */
     struct DownloadModelInfo {
         quint64 total = 0;
         quint64 completed = 0;

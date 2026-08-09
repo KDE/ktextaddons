@@ -25,10 +25,16 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
     Q_OBJECT
 public:
     // Add more status
+    /*!
+     * \brief The Status enum
+     */
     enum class Status : uint8_t {
         Unknown,
         Broken,
     };
+    /*!
+     * \brief The SupportedServer class
+     */
     struct SupportedServer {
         QString localizedName;
         QString identifier;

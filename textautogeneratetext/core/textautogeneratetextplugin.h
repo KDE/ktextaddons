@@ -32,16 +32,25 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief The EngineType enum
+     */
     enum class EngineType : uint8_t {
         Local,
         Network,
     };
+    /*!
+     * \brief The ModelInfoNameAndIdentifier class
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT ModelInfoNameAndIdentifier {
         QString modelName;
         QString identifier;
         [[nodiscard]] bool isValid() const;
     };
 
+    /*!
+     * \brief The SendToAssistantInfo class
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT SendToAssistantInfo {
         QString message;
         QByteArray messageUuid;
@@ -50,6 +59,9 @@ public:
         QList<QByteArray> tools;
     };
 
+    /*!
+     * \brief The EditSendInfo class
+     */
     struct TEXTAUTOGENERATETEXT_EXPORT EditSendInfo {
         QString message;
         QByteArray messageUuid;
