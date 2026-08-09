@@ -21,6 +21,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessagesModel : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief The MessageSearchRoles enum
+     */
     enum MessageSearchRoles : uint16_t {
         ChatUuid = Qt::UserRole + 1,
         MessageUuid,

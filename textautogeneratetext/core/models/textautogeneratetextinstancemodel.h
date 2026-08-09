@@ -21,6 +21,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceModel : public QAb
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief The InstanceRoles enum
+     */
     enum InstanceRoles : uint16_t {
         Name = Qt::UserRole + 1,
         PluginName,

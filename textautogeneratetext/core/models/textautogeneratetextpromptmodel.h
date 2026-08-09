@@ -21,6 +21,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPromptModel : public QAbst
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief The PromptRoles enum
+     */
     enum PromptRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Description,

@@ -21,6 +21,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatsModel : public QAbstractL
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief The ChatRoles enum
+     */
     enum ChatRoles : uint16_t {
         Title = Qt::UserRole + 1,
         Archived,
@@ -32,6 +35,9 @@ public:
         HasPendingMessageTyped,
     };
 
+    /*!
+     * \brief The SectionHistory enum
+     */
     enum class SectionHistory : uint8_t {
         Favorite,
         Today,
