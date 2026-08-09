@@ -6,7 +6,7 @@
 
 #include "textautogenerateprompt.h"
 #include <QDebug>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGeneratePrompt::TextAutoGeneratePrompt() = default;
 TextAutoGeneratePrompt::~TextAutoGeneratePrompt() = default;
@@ -59,6 +59,35 @@ TextAutoGeneratePrompt::Category TextAutoGeneratePrompt::category() const
 void TextAutoGeneratePrompt::setCategory(Category newCategory)
 {
     mCategory = newCategory;
+}
+
+QString TextAutoGeneratePrompt::convertCategoryToString(Category c)
+{
+    switch (c) {
+    case Category::Unknown:
+        return QString();
+    case Category::Travel:
+        return u"travel"_s;
+    case Category::Code:
+        return u"code"_s;
+    case Category::Misc:
+        return u"misc"_s;
+    }
+    return {};
+}
+
+TextAutoGeneratePrompt::Category TextAutoGeneratePrompt::convertStringToCategory(const QString &str)
+{
+    if (str.isEmpty()) {
+        return Category::Unknown;
+    } else if (str == "travel"_L1) {
+        return Category::Travel;
+    } else if (str == "code"_L1) {
+        return Category::Code;
+    } else if (str == "misc"_L1) {
+        return Category::Misc;
+    }
+    return Category::Unknown;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &t)

@@ -73,6 +73,19 @@ public:
      */
     void setCategory(Category newCategory);
 
+    /*!
+     * \brief convertCategoryToString
+     * \param c
+     * \return
+     */
+    [[nodiscard]] static QString convertCategoryToString(Category c);
+    /*!
+     * \brief convertStringToCategory
+     * \param str
+     * \return
+     */
+    [[nodiscard]] static Category convertStringToCategory(const QString &str);
+
 private:
     Category mCategory = Category::Unknown;
     QString mName;
