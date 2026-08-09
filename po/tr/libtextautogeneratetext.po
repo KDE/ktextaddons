@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-08 00:43+0000\n"
-"PO-Revision-Date: 2026-08-07 19:10+0300\n"
+"PO-Revision-Date: 2026-08-08 19:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -353,10 +353,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "API OpenAI"
-msgstr "OpenAI"
+msgstr "OpenAI API’si"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -416,7 +415,7 @@ msgstr "OpenAI uyumlu OrcaRouter API’si"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "API Open AI (custom)"
-msgstr ""
+msgstr "OpenAI API’si"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -2200,7 +2199,7 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
-"OpenAI’nin o1-preview’inin popüler matematik değerlendirmelerinde sadece 1,5 "
+"OpenAI’ın o1-preview’inin popüler matematik değerlendirmelerinde sadece 1,5 "
 "milyar parametresiyle başarımını aşan Deepseek-R1-Distilled-Qwen-1.5B’nin "
 "ince ayarlanmış bir sürümü."
 
@@ -3235,11 +3234,9 @@ msgid "Configure…"
 msgstr "Yapılandır…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "URL’yi Kopyala"
+msgstr "Özel URL:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
