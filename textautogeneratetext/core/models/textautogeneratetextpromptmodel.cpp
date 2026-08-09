@@ -60,4 +60,11 @@ void TextAutoGenerateTextPromptModel::setPrompt(const QList<TextAutoGenerateProm
     endResetModel();
 }
 
+void TextAutoGenerateTextPromptModel::addPrompt(const TextAutoGeneratePrompt &newPrompt)
+{
+    beginInsertRows(QModelIndex(), mPrompt.count(), mPrompt.count());
+    mPrompt.append(newPrompt);
+    endInsertRows();
+}
+
 #include "moc_textautogeneratetextpromptmodel.cpp"

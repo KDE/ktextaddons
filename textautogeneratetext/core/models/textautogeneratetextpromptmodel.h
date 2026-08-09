@@ -62,6 +62,12 @@ public:
      */
     void setPrompt(const QList<TextAutoGeneratePrompt> &newPrompt);
 
+    /*!
+     * \brief addPrompt
+     * \param newPrompt
+     */
+    void addPrompt(const TextAutoGeneratePrompt &newPrompt);
+
 private:
     QList<TextAutoGeneratePrompt> mPrompt;
 };
