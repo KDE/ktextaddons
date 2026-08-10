@@ -99,3 +99,5 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
     d.space() << "category:" << t.category();
     return d;
 }
+
+// TODO save/load
