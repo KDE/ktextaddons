@@ -20,9 +20,14 @@ AddMcpSteamableHttpServerHeaderConfigureWidget::AddMcpSteamableHttpServerHeaderC
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    auto label = new QLabel(i18n("Header:"), this);
+    label->setObjectName(u"label"_s);
+    mainLayout->addWidget(label);
+
     mHeaderLineEdit->setObjectName(u"mHeaderLineEdit"_s);
     mHeaderLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Define Header…"));
     mHeaderLineEdit->setClearButtonEnabled(true);
+    mainLayout->addWidget(mHeaderLineEdit);
     KLineEditEventHandler::catchReturnKey(mHeaderLineEdit);
     connect(mHeaderLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
         Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty());
