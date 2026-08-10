@@ -67,4 +67,19 @@ void TextAutoGenerateTextPromptModel::addPrompt(const TextAutoGeneratePrompt &ne
     endInsertRows();
 }
 
+void TextAutoGenerateTextPromptModel::removePrompt(const QByteArray &uuid)
+{
+    auto matchesUuid = [&](const TextAutoGeneratePrompt &prompt) {
+        return prompt.identifier() == uuid;
+    };
+    const auto answerIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesUuid);
+    if (answerIt != mPrompt.constEnd()) {
+        const int i = std::distance(mPrompt.constBegin(), answerIt);
+        beginRemoveRows(QModelIndex(), i, i);
+        auto instance = mPrompt.at(i);
+        mPrompt.removeAt(i);
+        endRemoveRows();
+    }
+}
+
 #include "moc_textautogeneratetextpromptmodel.cpp"

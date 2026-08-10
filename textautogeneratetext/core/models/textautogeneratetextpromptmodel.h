@@ -71,6 +71,12 @@ public:
      */
     void addPrompt(const TextAutoGeneratePrompt &newPrompt);
 
+    /*!
+     * \brief removePrompt
+     * \param uuid
+     */
+    void removePrompt(const QByteArray &uuid);
+
 private:
     QList<TextAutoGeneratePrompt> mPrompt;
 };
