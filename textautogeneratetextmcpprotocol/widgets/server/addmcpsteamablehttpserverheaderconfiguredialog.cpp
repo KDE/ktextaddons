@@ -30,9 +30,9 @@ AddMcpSteamableHttpServerHeaderConfigureDialog::AddMcpSteamableHttpServerHeaderC
     buttonOk->setEnabled(false);
     connect(button, &QDialogButtonBox::rejected, this, &AddMcpSteamableHttpServerHeaderConfigureDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &AddMcpSteamableHttpServerHeaderConfigureDialog::accept);
-    // TODO connect(mAddMcpServerWidget, &AddMcpServerWidget::buttonOkEnabled, this, [buttonOk](bool state) {
-    // TODO buttonOk->setEnabled(state);
-    // TODO });
+    connect(mAddMcpSteamableHttpServerHeaderConfigureWidget, &AddMcpSteamableHttpServerHeaderConfigureWidget::buttonOkEnabled, this, [buttonOk](bool state) {
+        buttonOk->setEnabled(state);
+    });
 }
 
 AddMcpSteamableHttpServerHeaderConfigureDialog::~AddMcpSteamableHttpServerHeaderConfigureDialog() = default;

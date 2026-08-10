@@ -24,6 +24,9 @@ AddMcpSteamableHttpServerHeaderConfigureWidget::AddMcpSteamableHttpServerHeaderC
     mHeaderLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Define Header…"));
     mHeaderLineEdit->setClearButtonEnabled(true);
     KLineEditEventHandler::catchReturnKey(mHeaderLineEdit);
+    connect(mHeaderLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
+        Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty());
+    });
 }
 
 AddMcpSteamableHttpServerHeaderConfigureWidget::~AddMcpSteamableHttpServerHeaderConfigureWidget() = default;

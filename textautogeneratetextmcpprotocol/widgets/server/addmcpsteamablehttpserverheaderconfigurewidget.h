@@ -19,6 +19,9 @@ public:
     void setHeader(const QString &str);
     [[nodiscard]] QString header() const;
 
+Q_SIGNALS:
+    void buttonOkEnabled(bool state);
+
 private:
     QLineEdit *const mHeaderLineEdit;
 };
