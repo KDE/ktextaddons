@@ -30,9 +30,25 @@ void TextAutoGenerateAgent::setDescription(const QString &newDescription)
     mDescription = newDescription;
 }
 
+QByteArray TextAutoGenerateAgent::identifier() const
+{
+    return mIdentifier;
+}
+
+void TextAutoGenerateAgent::setIdentifier(const QByteArray &newIdentifier)
+{
+    mIdentifier = newIdentifier;
+}
+
+bool TextAutoGenerateAgent::isValid() const
+{
+    return !mIdentifier.isEmpty();
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAgent &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "description:" << t.description();
+    d.space() << "identifier:" << t.identifier();
     return d;
 }

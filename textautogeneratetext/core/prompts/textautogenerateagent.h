@@ -43,9 +43,27 @@ public:
      */
     void setDescription(const QString &newDescription);
 
+    /*!
+     * \brief identifier
+     * \return
+     */
+    [[nodiscard]] QByteArray identifier() const;
+    /*!
+     * \brief setIdentifier
+     * \param newIdentifier
+     */
+    void setIdentifier(const QByteArray &newIdentifier);
+
+    /*!
+     * \brief isValid
+     * \return
+     */
+    [[nodiscard]] bool isValid() const;
+
 private:
     QString mName;
     QString mDescription;
+    QByteArray mIdentifier;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateAgent, Q_RELOCATABLE_TYPE);

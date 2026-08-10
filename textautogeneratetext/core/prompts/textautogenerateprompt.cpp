@@ -113,6 +113,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
     d.space() << "description:" << t.description();
     d.space() << "enabled:" << t.enabled();
     d.space() << "category:" << t.category();
+    d.space() << "identifier:" << t.identifier();
     return d;
 }
 
