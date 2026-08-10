@@ -76,6 +76,22 @@ QString TextAutoGeneratePrompt::convertCategoryToString(Category c)
     return {};
 }
 
+QByteArray TextAutoGeneratePrompt::identifier() const
+{
+    return mIdentifier;
+}
+
+void TextAutoGeneratePrompt::setIdentifier(const QByteArray &newIdentifier)
+{
+    mIdentifier = newIdentifier;
+}
+
+bool TextAutoGeneratePrompt::isValid() const
+{
+    // TODO add more
+    return !mIdentifier.isEmpty();
+}
+
 TextAutoGeneratePrompt::Category TextAutoGeneratePrompt::convertStringToCategory(const QString &str)
 {
     if (str.isEmpty()) {

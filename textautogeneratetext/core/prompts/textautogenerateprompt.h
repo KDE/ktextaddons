@@ -86,11 +86,29 @@ public:
      */
     [[nodiscard]] static Category convertStringToCategory(const QString &str);
 
+    /*!
+     * \brief identifier
+     * \return
+     */
+    [[nodiscard]] QByteArray identifier() const;
+    /*!
+     * \brief setIdentifier
+     * \param newIdentifier
+     */
+    void setIdentifier(const QByteArray &newIdentifier);
+
+    /*!
+     * \brief isValid
+     * \return
+     */
+    [[nodiscard]] bool isValid() const;
+
 private:
     Category mCategory = Category::Unknown;
     QString mName;
     QString mText;
     QString mDescription;
+    QByteArray mIdentifier;
     bool mEnabled = true;
 };
 }
