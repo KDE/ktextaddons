@@ -57,6 +57,8 @@ target_sources(
         server/addmcpsteamablehttpserverheaderwidget.cpp
         server/addmcpsteamablehttpserverheaderlistwidget.h
         server/addmcpsteamablehttpserverheaderlistwidget.cpp
+        server/addmcpsteamablehttpserverheaderconfiguredialog.h
+        server/addmcpsteamablehttpserverheaderconfiguredialog.cpp
         common/selecttypecombobox.h
         common/selecttypecombobox.cpp
 )
