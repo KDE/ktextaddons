@@ -5,12 +5,15 @@
 */
 
 #include "addmcpsteamablehttpserverheaderwidget.h"
+#include "addmcpsteamablehttpserverheaderconfiguredialog.h"
 #include "addmcpsteamablehttpserverheaderlistwidget.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QListWidget>
+#include <QPointer>
 #include <QPushButton>
 #include <QVBoxLayout>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpSteamableHttpServerHeaderWidget::AddMcpSteamableHttpServerHeaderWidget(QWidget *parent)
@@ -62,11 +65,22 @@ void AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader()
 
 void AddMcpSteamableHttpServerHeaderWidget::slotAddHeader()
 {
-    // TODO
+    QPointer<AddMcpSteamableHttpServerHeaderConfigureDialog> dlg = new AddMcpSteamableHttpServerHeaderConfigureDialog(this);
+    if (dlg->exec()) {
+        const QString header = dlg->header();
+        mListBox->addHeader(header);
+    }
+    delete dlg;
 }
 
 void AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader()
 {
+    QPointer<AddMcpSteamableHttpServerHeaderConfigureDialog> dlg = new AddMcpSteamableHttpServerHeaderConfigureDialog(this);
+    if (dlg->exec()) {
+        const QString header = dlg->header();
+        mListBox->addHeader(header);
+    }
+    delete dlg;
     // TODO
 }
 

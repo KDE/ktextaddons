@@ -27,4 +27,18 @@ QStringList AddMcpSteamableHttpServerHeaderListWidget::headers() const
     }
     return lst;
 }
+
+void AddMcpSteamableHttpServerHeaderListWidget::addHeader(const QString &str)
+{
+    addItem(str);
+}
+
+QString AddMcpSteamableHttpServerHeaderListWidget::currentText() const
+{
+    if (auto c = currentItem(); c) {
+        return c->text();
+    }
+    return {};
+}
+
 #include "moc_addmcpsteamablehttpserverheaderlistwidget.cpp"

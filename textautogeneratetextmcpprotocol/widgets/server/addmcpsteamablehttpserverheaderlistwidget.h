@@ -18,5 +18,8 @@ public:
     ~AddMcpSteamableHttpServerHeaderListWidget() override;
     void setHeaders(const QStringList &lst);
     [[nodiscard]] QStringList headers() const;
+    void addHeader(const QString &str);
+
+    [[nodiscard]] QString currentText() const;
 };
 }
