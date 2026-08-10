@@ -33,6 +33,13 @@ void AddMcpSteamableHttpServerHeaderListWidget::addHeader(const QString &str)
     addItem(str);
 }
 
+void AddMcpSteamableHttpServerHeaderListWidget::modifyHeader(const QString &str)
+{
+    if (auto c = currentItem(); c) {
+        c->setText(str);
+    }
+}
+
 QString AddMcpSteamableHttpServerHeaderListWidget::currentText() const
 {
     if (auto c = currentItem(); c) {

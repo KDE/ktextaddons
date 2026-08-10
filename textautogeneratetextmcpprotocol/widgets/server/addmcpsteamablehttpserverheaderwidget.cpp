@@ -76,12 +76,12 @@ void AddMcpSteamableHttpServerHeaderWidget::slotAddHeader()
 void AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader()
 {
     QPointer<AddMcpSteamableHttpServerHeaderConfigureDialog> dlg = new AddMcpSteamableHttpServerHeaderConfigureDialog(this);
+    dlg->setHeader(mListBox->currentText());
     if (dlg->exec()) {
         const QString header = dlg->header();
-        mListBox->addHeader(header);
+        mListBox->modifyHeader(header);
     }
     delete dlg;
-    // TODO
 }
 
 QStringList AddMcpSteamableHttpServerHeaderWidget::headers() const

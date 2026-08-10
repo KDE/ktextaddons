@@ -21,5 +21,6 @@ public:
     void addHeader(const QString &str);
 
     [[nodiscard]] QString currentText() const;
+    void modifyHeader(const QString &str);
 };
 }
