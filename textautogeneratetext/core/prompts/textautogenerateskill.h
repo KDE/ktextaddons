@@ -50,10 +50,28 @@ public:
      */
     void setInstructions(const QString &newInstructions);
 
+    /*!
+     * \brief identifier
+     * \return
+     */
+    [[nodiscard]] QByteArray identifier() const;
+    /*!
+     * \brief setIdentifier
+     * \param newIdentifier
+     */
+    void setIdentifier(const QByteArray &newIdentifier);
+
+    /*!
+     * \brief isValid
+     * \return
+     */
+    [[nodiscard]] bool isValid() const;
+
 private:
     QString mName;
     QString mDescription;
     QString mInstructions;
+    QByteArray mIdentifier;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateSkill, Q_RELOCATABLE_TYPE);

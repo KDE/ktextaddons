@@ -40,10 +40,26 @@ void TextAutoGenerateSkill::setInstructions(const QString &newInstructions)
     mInstructions = newInstructions;
 }
 
+QByteArray TextAutoGenerateSkill::identifier() const
+{
+    return mIdentifier;
+}
+
+void TextAutoGenerateSkill::setIdentifier(const QByteArray &newIdentifier)
+{
+    mIdentifier = newIdentifier;
+}
+
+bool TextAutoGenerateSkill::isValid() const
+{
+    return !mIdentifier.isEmpty();
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSkill &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "description:" << t.description();
-    d.space() << "instructions" << t.instructions();
+    d.space() << "instructions:" << t.instructions();
+    d.space() << "identifier:" << t.identifier();
     return d;
 }

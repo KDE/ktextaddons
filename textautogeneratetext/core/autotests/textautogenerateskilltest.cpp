@@ -19,6 +19,8 @@ void TextAutoGenerateSkillTest::shouldHaveDefaultValues()
     QVERIFY(skill.description().isEmpty());
     QVERIFY(skill.name().isEmpty());
     QVERIFY(skill.instructions().isEmpty());
+    QVERIFY(skill.identifier().isEmpty());
+    QVERIFY(!skill.isValid());
 }
 
 #include "moc_textautogenerateskilltest.cpp"
