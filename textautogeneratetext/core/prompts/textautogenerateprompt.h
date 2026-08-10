@@ -108,13 +108,13 @@ public:
      * \brief save
      * \param config
      */
-    void save(KConfigGroup &config);
+    void save(KConfigGroup &grp);
 
     /*!
      * \brief load
      * \param config
      */
-    void load(const KConfigGroup &config);
+    void load(const KConfigGroup &grp);
 
 private:
     Category mCategory = Category::Unknown;
