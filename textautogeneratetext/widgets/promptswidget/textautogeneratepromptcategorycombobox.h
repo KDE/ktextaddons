@@ -9,12 +9,12 @@
 #include <QComboBox>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePromptComboBox : public QComboBox
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePromptCategoryComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit TextAutoGeneratePromptComboBox(QWidget *parent = nullptr);
-    ~TextAutoGeneratePromptComboBox() override;
+    explicit TextAutoGeneratePromptCategoryComboBox(QWidget *parent = nullptr);
+    ~TextAutoGeneratePromptCategoryComboBox() override;
 
     [[nodiscard]] TextAutoGeneratePrompt::Category category() const;
     void setCategory(TextAutoGeneratePrompt::Category type);

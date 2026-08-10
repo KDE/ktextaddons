@@ -3,31 +3,31 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratepromptcombobox.h"
+#include "textautogeneratepromptcategorycombobox.h"
 #include <KLocalizedString>
 
 using namespace TextAutoGenerateText;
-TextAutoGeneratePromptComboBox::TextAutoGeneratePromptComboBox(QWidget *parent)
+TextAutoGeneratePromptCategoryComboBox::TextAutoGeneratePromptCategoryComboBox(QWidget *parent)
     : QComboBox(parent)
 {
     fill();
 }
 
-TextAutoGeneratePromptComboBox::~TextAutoGeneratePromptComboBox() = default;
+TextAutoGeneratePromptCategoryComboBox::~TextAutoGeneratePromptCategoryComboBox() = default;
 
-void TextAutoGeneratePromptComboBox::fill()
+void TextAutoGeneratePromptCategoryComboBox::fill()
 {
     addItem(i18n("Code"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Code));
     addItem(i18n("Misc"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Misc));
     addItem(i18n("Travel"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Travel));
 }
 
-TextAutoGeneratePrompt::Category TextAutoGeneratePromptComboBox::category() const
+TextAutoGeneratePrompt::Category TextAutoGeneratePromptCategoryComboBox::category() const
 {
     return currentData().value<TextAutoGeneratePrompt::Category>();
 }
 
-void TextAutoGeneratePromptComboBox::setCategory(TextAutoGeneratePrompt::Category type)
+void TextAutoGeneratePromptCategoryComboBox::setCategory(TextAutoGeneratePrompt::Category type)
 {
     const int index = findData(QVariant::fromValue(type));
     if (index != -1) {
@@ -35,4 +35,4 @@ void TextAutoGeneratePromptComboBox::setCategory(TextAutoGeneratePrompt::Categor
     }
 }
 
-#include "moc_textautogeneratepromptcombobox.cpp"
+#include "moc_textautogeneratepromptcategorycombobox.cpp"

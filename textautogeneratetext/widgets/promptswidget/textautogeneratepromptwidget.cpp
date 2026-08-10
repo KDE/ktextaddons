@@ -6,7 +6,7 @@
 
 #include "textautogeneratepromptwidget.h"
 #include "core/prompts/textautogenerateprompt.h"
-#include "widgets/promptswidget/textautogeneratepromptcombobox.h"
+#include "widgets/promptswidget/textautogeneratepromptcategorycombobox.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -19,7 +19,7 @@ TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     , mName(new QLineEdit(this))
     , mDescription(new QPlainTextEdit(this))
     , mPrompt(new QPlainTextEdit(this))
-    , mCategory(new TextAutoGeneratePromptComboBox(this))
+    , mCategory(new TextAutoGeneratePromptCategoryComboBox(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);

@@ -11,7 +11,7 @@ class QLineEdit;
 class QPlainTextEdit;
 namespace TextAutoGenerateText
 {
-class TextAutoGeneratePromptComboBox;
+class TextAutoGeneratePromptCategoryComboBox;
 class TextAutoGeneratePrompt;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePromptWidget : public QWidget
 {
@@ -27,6 +27,6 @@ private:
     QLineEdit *const mName;
     QPlainTextEdit *const mDescription;
     QPlainTextEdit *const mPrompt;
-    TextAutoGeneratePromptComboBox *const mCategory;
+    TextAutoGeneratePromptCategoryComboBox *const mCategory;
 };
 }

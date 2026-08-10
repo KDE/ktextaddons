@@ -438,8 +438,8 @@ target_sources(
         widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp
         widgets/promptswidget/textautogenerateselectpromptdelegate.h
         widgets/promptswidget/textautogenerateselectpromptdelegate.cpp
-        widgets/promptswidget/textautogeneratepromptcombobox.cpp
-        widgets/promptswidget/textautogeneratepromptcombobox.h
+        widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp
+        widgets/promptswidget/textautogeneratepromptcategorycombobox.h
 )
 
 if(BUILD_TESTING)
