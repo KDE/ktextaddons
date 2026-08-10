@@ -101,3 +101,5 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
 }
 
 // TODO save/load
+
+#include "moc_textautogenerateprompt.cpp"

@@ -34,3 +34,5 @@ void TextAutoGeneratePromptComboBox::setCategory(TextAutoGeneratePrompt::Categor
         setCurrentIndex(index);
     }
 }
+
+#include "moc_textautogeneratepromptcombobox.cpp"

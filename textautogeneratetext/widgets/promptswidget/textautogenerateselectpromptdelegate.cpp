@@ -12,3 +12,5 @@ TextAutoGenerateSelectPromptDelegate::TextAutoGenerateSelectPromptDelegate(QObje
 }
 
 TextAutoGenerateSelectPromptDelegate::~TextAutoGenerateSelectPromptDelegate() = default;
+
+#include "moc_textautogenerateselectpromptdelegate.cpp"
