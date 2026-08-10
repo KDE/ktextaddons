@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateprompt.h"
+#include <KConfigGroup>
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -117,6 +118,24 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
     return d;
 }
 
-// TODO save/load
+void TextAutoGeneratePrompt::save(KConfigGroup &grp)
+{
+    grp.writeEntry("name", name());
+    grp.writeEntry("text", text());
+    grp.writeEntry("description", description());
+    grp.writeEntry("enabled", enabled());
+    grp.writeEntry("category", TextAutoGeneratePrompt::convertCategoryToString(category()));
+    grp.writeEntry("identifier", identifier());
+}
+
+void TextAutoGeneratePrompt::load(const KConfigGroup &grp)
+{
+    setText(grp.readEntry("text"));
+    setName(grp.readEntry("name"));
+    setDescription(grp.readEntry("description"));
+    setEnabled(grp.readEntry("enabled", true));
+    setIdentifier(grp.readEntry("identifier").toLatin1());
+    setCategory(TextAutoGeneratePrompt::convertStringToCategory(grp.readEntry("category")));
+}
 
 #include "moc_textautogenerateprompt.cpp"

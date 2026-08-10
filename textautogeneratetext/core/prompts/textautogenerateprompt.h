@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QObject>
+class KConfigGroup;
 class QDebug;
 namespace TextAutoGenerateText
 {
@@ -102,6 +103,18 @@ public:
      * \return
      */
     [[nodiscard]] bool isValid() const;
+
+    /*!
+     * \brief save
+     * \param config
+     */
+    void save(KConfigGroup &config);
+
+    /*!
+     * \brief load
+     * \param config
+     */
+    void load(const KConfigGroup &config);
 
 private:
     Category mCategory = Category::Unknown;
