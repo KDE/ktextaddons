@@ -6,8 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QDebug>
-class QDebig;
+class QDebug;
 namespace TextAutoGenerateText
 {
 /*!

@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateagent.h"
+#include <QDebug>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateAgent::TextAutoGenerateAgent()
