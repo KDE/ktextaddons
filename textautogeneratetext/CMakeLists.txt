@@ -444,6 +444,10 @@ target_sources(
         widgets/promptswidget/textautogenerateselectpromptdelegate.cpp
         widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp
         widgets/promptswidget/textautogeneratepromptcategorycombobox.h
+        widgets/promptswidget/textautogeneratesearchpromptwidget.h
+        widgets/promptswidget/textautogeneratesearchpromptwidget.cpp
+        widgets/promptswidget/textautogeneratesearchpromptcombobox.h
+        widgets/promptswidget/textautogeneratesearchpromptcombobox.cpp
 )
 
 if(BUILD_TESTING)
