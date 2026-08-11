@@ -14,4 +14,34 @@ TextAutoGenerateAgentPrompSkillManager::TextAutoGenerateAgentPrompSkillManager(Q
 
 TextAutoGenerateAgentPrompSkillManager::~TextAutoGenerateAgentPrompSkillManager() = default;
 
+QList<TextAutoGeneratePrompt> TextAutoGenerateAgentPrompSkillManager::prompts() const
+{
+    return mPrompts;
+}
+
+void TextAutoGenerateAgentPrompSkillManager::setPrompts(const QList<TextAutoGeneratePrompt> &newPrompts)
+{
+    mPrompts = newPrompts;
+}
+
+QList<TextAutoGenerateSkill> TextAutoGenerateAgentPrompSkillManager::skills() const
+{
+    return mSkills;
+}
+
+void TextAutoGenerateAgentPrompSkillManager::setSkills(const QList<TextAutoGenerateSkill> &newSkills)
+{
+    mSkills = newSkills;
+}
+
+QList<TextAutoGenerateAgent> TextAutoGenerateAgentPrompSkillManager::agents() const
+{
+    return mAgents;
+}
+
+void TextAutoGenerateAgentPrompSkillManager::setAgents(const QList<TextAutoGenerateAgent> &newAgents)
+{
+    mAgents = newAgents;
+}
+
 #include "moc_textautogenerateagentprompskillmanager.cpp"

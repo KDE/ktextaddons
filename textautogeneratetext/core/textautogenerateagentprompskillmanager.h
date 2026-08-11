@@ -5,9 +5,12 @@
 */
 #pragma once
 
-#include <QObject>
-
 #include "textautogeneratetext_export.h"
+#include <QList>
+#include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateAgent>
+#include <TextAutoGenerateText/TextAutoGeneratePrompt>
+#include <TextAutoGenerateText/TextAutoGenerateSkill>
 
 namespace TextAutoGenerateText
 {
@@ -31,5 +34,43 @@ public:
      * \brief ~TextAutoGenerateAgentPrompSkillManager
      */
     ~TextAutoGenerateAgentPrompSkillManager() override;
+
+    /*!
+     * \brief prompts
+     * \return
+     */
+    [[nodiscard]] QList<TextAutoGeneratePrompt> prompts() const;
+    /*!
+     * \brief setPrompts
+     * \param newPrompts
+     */
+    void setPrompts(const QList<TextAutoGeneratePrompt> &newPrompts);
+
+    /*!
+     * \brief skills
+     * \return
+     */
+    [[nodiscard]] QList<TextAutoGenerateSkill> skills() const;
+    /*!
+     * \brief setSkills
+     * \param newSkills
+     */
+    void setSkills(const QList<TextAutoGenerateSkill> &newSkills);
+
+    /*!
+     * \brief agents
+     * \return
+     */
+    [[nodiscard]] QList<TextAutoGenerateAgent> agents() const;
+    /*!
+     * \brief setAgents
+     * \param newAgents
+     */
+    void setAgents(const QList<TextAutoGenerateAgent> &newAgents);
+
+private:
+    QList<TextAutoGeneratePrompt> mPrompts;
+    QList<TextAutoGenerateSkill> mSkills;
+    QList<TextAutoGenerateAgent> mAgents;
 };
 }
