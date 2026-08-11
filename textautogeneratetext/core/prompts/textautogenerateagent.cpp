@@ -7,7 +7,11 @@
 #include "textautogenerateagent.h"
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateAgent::TextAutoGenerateAgent() = default;
+TextAutoGenerateAgent::TextAutoGenerateAgent()
+    : mIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128))
+{
+}
+
 TextAutoGenerateAgent::~TextAutoGenerateAgent() = default;
 
 QString TextAutoGenerateAgent::name() const

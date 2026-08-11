@@ -9,7 +9,11 @@
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGeneratePrompt::TextAutoGeneratePrompt() = default;
+TextAutoGeneratePrompt::TextAutoGeneratePrompt()
+    : mIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128))
+{
+}
+
 TextAutoGeneratePrompt::~TextAutoGeneratePrompt() = default;
 
 QString TextAutoGeneratePrompt::name() const

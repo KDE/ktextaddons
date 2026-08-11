@@ -7,7 +7,11 @@
 #include "textautogenerateskill.h"
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateSkill::TextAutoGenerateSkill() = default;
+TextAutoGenerateSkill::TextAutoGenerateSkill()
+    : mIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128))
+{
+}
+
 TextAutoGenerateSkill::~TextAutoGenerateSkill() = default;
 
 QString TextAutoGenerateSkill::name() const
