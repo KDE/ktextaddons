@@ -18,3 +18,5 @@ void TextAutoGenerateSearchPromptWidgetTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGenerateSearchPromptWidget w;
     // TODO
 }
+
+#include "moc_textautogeneratesearchpromptwidgettest.cpp"

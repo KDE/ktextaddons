@@ -13,3 +13,5 @@ TextAutoGenerateSearchPromptComboBox::TextAutoGenerateSearchPromptComboBox(QWidg
 }
 
 TextAutoGenerateSearchPromptComboBox::~TextAutoGenerateSearchPromptComboBox() = default;
+
+#include "moc_textautogeneratesearchpromptcombobox.cpp"
