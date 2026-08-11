@@ -464,6 +464,8 @@ public:
      */
     void forkDiscussionUntilMessage(const QByteArray &chatId, const QByteArray &uuid);
 
+    [[nodiscard]] TextAutoGenerateAgentPrompSkillManager *textAutoGenerateAgentPrompSkillManager() const;
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.

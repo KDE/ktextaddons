@@ -752,6 +752,11 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     changeInProgress(info.chatId, info.messageUuid, false);
 }
 
+TextAutoGenerateAgentPrompSkillManager *TextAutoGenerateManager::textAutoGenerateAgentPrompSkillManager() const
+{
+    return mTextAutoGenerateAgentPrompSkillManager;
+}
+
 bool TextAutoGenerateManager::haveInsertText() const
 {
     return TextAutoGenerateMessage::allowInsertText();
