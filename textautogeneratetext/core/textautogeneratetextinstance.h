@@ -98,7 +98,8 @@ public:
      */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *plugin() const;
     /*!
-     * Sets the plugin instance.
+     * Sets the plugin instance. The instance takes ownership of \a newPlugin and deletes
+     * the previously assigned plugin, if any.
      * \param newPlugin The plugin to set
      */
     void setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin);

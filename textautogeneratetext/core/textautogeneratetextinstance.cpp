@@ -13,9 +13,9 @@ TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()" << this;
-    if (mPlugin && !mPlugin->parent()) {
-        delete mPlugin;
-    }
+    // The instance owns its plugin: the plugin stores a raw pointer to us, so it must not outlive the instance
+    // even when it was created with a parent (deleting a QObject removes it from its parent's children).
+    delete mPlugin;
 }
 
 QString TextAutoGenerateTextInstance::displayName() const
@@ -95,6 +95,10 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstance::plugin() const
 
 void TextAutoGenerateTextInstance::setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin)
 {
+    if (mPlugin == newPlugin) {
+        return;
+    }
+    delete mPlugin;
     mPlugin = newPlugin;
 }
 
