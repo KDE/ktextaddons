@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratesearchpromptwidget.h"
-#include "widgets/promptswidget/textautogeneratesearchpromptcombobox.h"
+#include "textautogeneratepromptcategorycombobox.h"
 #include <KLineEditEventHandler>
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -14,7 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateSearchPromptWidget::TextAutoGenerateSearchPromptWidget(QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
-    , mPromptComboBox(new TextAutoGenerateSearchPromptComboBox(this))
+    , mPromptComboBox(new TextAutoGeneratePromptCategoryComboBox(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
