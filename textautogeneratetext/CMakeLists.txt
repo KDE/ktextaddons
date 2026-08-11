@@ -167,6 +167,8 @@ target_sources(
         core/textautogenerateattachmentutils.cpp
         core/textautogenerateblockcmarksupport.h
         core/textautogenerateblockcmarksupport.cpp
+        core/textautogenerateagentprompskillmanager.h
+        core/textautogenerateagentprompskillmanager.cpp
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -540,6 +542,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateSettings
     TextAutoGenerateAttachmentUtils
     TextAutoGenerateSearchMessageSettings
+    TextAutoGenerateAgentPrompSkillManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
