@@ -11,3 +11,4 @@ endmacro()
 
 add_textautogenerate_widgets_prompts_unittest(textautogeneratepromptwidgettest.cpp)
 add_textautogenerate_widgets_prompts_unittest(textautogenerateskillwidgettest.cpp)
+add_textautogenerate_widgets_prompts_unittest(textautogeneratesearchpromptwidgettest.cpp)
