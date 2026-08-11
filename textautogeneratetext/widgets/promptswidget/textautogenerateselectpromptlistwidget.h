@@ -7,10 +7,10 @@
 #pragma once
 
 #include "textautogeneratetext_private_export.h"
-#include <QListWidget>
+#include <QListView>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectPromptListWidget : public QListWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectPromptListWidget : public QListView
 {
     Q_OBJECT
 public:
