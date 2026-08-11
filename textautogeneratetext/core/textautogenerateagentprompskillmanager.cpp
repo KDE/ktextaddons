@@ -13,3 +13,5 @@ TextAutoGenerateAgentPrompSkillManager::TextAutoGenerateAgentPrompSkillManager(Q
 }
 
 TextAutoGenerateAgentPrompSkillManager::~TextAutoGenerateAgentPrompSkillManager() = default;
+
+#include "moc_textautogenerateagentprompskillmanager.cpp"
