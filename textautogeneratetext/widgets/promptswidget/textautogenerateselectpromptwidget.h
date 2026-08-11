@@ -10,15 +10,18 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
+class TextAutoGenerateTextPromptModel;
 class TextAutoGenerateSelectPromptListWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectPromptWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateSelectPromptWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateSelectPromptWidget(TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateSelectPromptWidget() override;
 
 private:
     TextAutoGenerateSelectPromptListWidget *const mListWidget;
+    TextAutoGenerateTextPromptModel *const mPromptModel;
 };
 }
