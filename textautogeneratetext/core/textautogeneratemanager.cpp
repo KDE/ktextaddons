@@ -204,8 +204,8 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
     const QByteArray chatId = TextAutoGenerateTextUtils::generateUUid();
     chat.setIdentifier(chatId);
     chat.setTitle(title);
-    // we don't need to initialize it. (new chat => no data)
-    chat.setInitialized(true);
+    // Don't mark it as initialized here: there's no message to load from database yet, but the messages model still
+    // needs to be connected in checkInitializedMessagesModel() so that generated answers are stored in database.
     mTextAutoGenerateChatsModel->addChat(chat);
     if (mSaveInDatabase) {
         mDatabaseManager->insertOrUpdateChat(chat);
