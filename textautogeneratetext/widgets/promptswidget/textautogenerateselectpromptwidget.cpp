@@ -20,6 +20,7 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    mPromptModel->setObjectName(u"mPromptModel"_s);
     mPromptModel->setPrompt(manager->textAutoGenerateAgentPrompSkillManager()->prompts());
     mListWidget->setModel(mPromptModel);
     mListWidget->setObjectName(u"mainLayout"_s);
