@@ -94,7 +94,7 @@ void TextAutoGeneratePrompt::setIdentifier(const QByteArray &newIdentifier)
 bool TextAutoGeneratePrompt::isValid() const
 {
     // TODO add more
-    return !mIdentifier.isEmpty();
+    return !mIdentifier.isEmpty() && !mName.isEmpty();
 }
 
 TextAutoGeneratePrompt::Category TextAutoGeneratePrompt::convertStringToCategory(const QString &str)

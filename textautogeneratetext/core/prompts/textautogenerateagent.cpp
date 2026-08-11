@@ -47,7 +47,7 @@ void TextAutoGenerateAgent::setIdentifier(const QByteArray &newIdentifier)
 
 bool TextAutoGenerateAgent::isValid() const
 {
-    return !mIdentifier.isEmpty();
+    return !mIdentifier.isEmpty() && !mName.isEmpty();
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAgent &t)

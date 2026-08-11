@@ -57,7 +57,7 @@ void TextAutoGenerateSkill::setIdentifier(const QByteArray &newIdentifier)
 
 bool TextAutoGenerateSkill::isValid() const
 {
-    return !mIdentifier.isEmpty();
+    return !mIdentifier.isEmpty() && !mName.isEmpty();
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSkill &t)

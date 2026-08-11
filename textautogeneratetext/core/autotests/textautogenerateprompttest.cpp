@@ -21,7 +21,7 @@ void TextAutoGeneratePromptTest::shouldHaveDefaultValues()
     QVERIFY(prompt.description().isEmpty());
     QVERIFY(prompt.enabled());
     QVERIFY(!prompt.isValid());
-    QVERIFY(prompt.identifier().isEmpty());
+    QVERIFY(!prompt.identifier().isEmpty());
     QCOMPARE(prompt.category(), TextAutoGenerateText::TextAutoGeneratePrompt::Category::Unknown);
 }
 

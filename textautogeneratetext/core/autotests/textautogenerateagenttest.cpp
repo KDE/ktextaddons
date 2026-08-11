@@ -18,7 +18,7 @@ void TextAutoGenerateAgentTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGenerateAgent agent;
     QVERIFY(agent.description().isEmpty());
     QVERIFY(agent.name().isEmpty());
-    QVERIFY(agent.identifier().isEmpty());
+    QVERIFY(!agent.identifier().isEmpty());
 }
 
 #include "moc_textautogenerateagenttest.cpp"
