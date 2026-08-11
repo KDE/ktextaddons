@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-08 00:43+0000\n"
-"PO-Revision-Date: 2026-07-06 17:50+0400\n"
+"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"PO-Revision-Date: 2026-08-10 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -94,6 +94,7 @@ msgid "Multilingual"
 msgstr "متعدد اللغات"
 
 #: core/textautogeneratemanager.cpp:165
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "شفرة"
@@ -182,10 +183,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>رمز الإكمال:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "ملحقات الأدوات"
+msgstr "ملحقات الأدوات:"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -333,10 +333,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "ذكاء أوركاروتر الاصطناعي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -355,10 +354,9 @@ msgid "Google Gemini"
 msgstr "غوغل غمناي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "API OpenAI"
-msgstr "أوبن أيه آي"
+msgstr "واجهة برمجة تطبيقات أوبن إيه آي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -411,15 +409,14 @@ msgid "Sarvam AI instance"
 msgstr "نسخة Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "Orca Router OpenAI-compatible API"
-msgstr "AtlasCloud OpenAI-compatible API"
+msgstr "واجهة برمجة تطبيقات أوركا راوتر المتوافقة مع أوبن إيه آي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "API Open AI (custom)"
-msgstr ""
+msgstr "واجهة برمجة تطبيقات أوبن إيه آي (مخصصة)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -479,7 +476,7 @@ msgstr "النموذج المثبت"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
@@ -551,7 +548,7 @@ msgid "Tag:"
 msgstr "الوسم:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
 #, kde-format
 msgid "Prompt:"
 msgstr "الموجه:"
@@ -2923,17 +2920,17 @@ msgstr "أرفق ملفًّا"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "ملف صورة %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "ملف صوتي %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "ملف نصي %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2975,8 +2972,7 @@ msgid "Text Plugins"
 msgstr "ملحقات النصوص"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "ملحقات الأدوات"
 
@@ -3143,11 +3139,9 @@ msgid "Configure…"
 msgstr "اضبط…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "انسخ الرابط"
+msgstr "عنوان مخصص:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3155,12 +3149,27 @@ msgid "Max Tokens:"
 msgstr "الرموز المميزة القصوى:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "ملحقات النصوص"
+msgstr "ملحقات النصوص:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
+#, kde-format
+msgid "Travel"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "Category:"
+msgstr "الفئات"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"

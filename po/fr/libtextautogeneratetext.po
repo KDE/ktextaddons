@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-08 00:43+0000\n"
-"PO-Revision-Date: 2026-08-05 12:45+0200\n"
+"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"PO-Revision-Date: 2026-08-09 09:34+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -92,6 +92,7 @@ msgid "Multilingual"
 msgstr "Multilingue"
 
 #: core/textautogeneratemanager.cpp:165
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Code"
@@ -181,10 +182,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Jeton de réalisation : </b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "Modules externes d'outils"
+msgstr "Modules externes d'outils :"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -353,10 +353,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "API OpenAI"
-msgstr "OpenAI"
+msgstr "API de OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -416,7 +415,7 @@ msgstr "API compatible avec OpenAI pour Orca Router"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "API Open AI (custom)"
-msgstr ""
+msgstr "API pour Open AI (Personnalisé)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -478,7 +477,7 @@ msgstr "Modèle installé"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
@@ -550,7 +549,7 @@ msgid "Tag:"
 msgstr "Étiquette :"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
 #, kde-format
 msgid "Prompt:"
 msgstr "Invite de commandes :"
@@ -3124,8 +3123,7 @@ msgid "Text Plugins"
 msgstr "Modules externes de texte"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "Modules externes d'outils"
 
@@ -3292,11 +3290,9 @@ msgid "Configure…"
 msgstr "Configurer..."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "Copier une URL"
+msgstr "URL personnalisée :"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3304,12 +3300,27 @@ msgid "Max Tokens:"
 msgstr "Nombre maximal de jetons :"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "Modules externes de texte"
+msgstr "Modules externes de texte :"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
+#, kde-format
+msgid "Travel"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "Category:"
+msgstr "Catégories"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"

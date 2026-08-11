@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-08 00:43+0000\n"
+"POT-Creation-Date: 2026-08-11 00:44+0000\n"
 "PO-Revision-Date: 2026-08-09 23:48+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -94,6 +94,7 @@ msgid "Multilingual"
 msgstr "Vícejazyčný"
 
 #: core/textautogeneratemanager.cpp:165
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Kód"
@@ -478,7 +479,7 @@ msgstr "Nainstalovaný model"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
@@ -550,7 +551,7 @@ msgid "Tag:"
 msgstr "Značka:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
@@ -2824,7 +2825,23 @@ msgstr "Maximum tokenů:"
 msgid "Text Plugins:"
 msgstr "Moduly textu:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
+#, kde-format
+msgid "Travel"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "Category:"
+msgstr "Kategorie"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"

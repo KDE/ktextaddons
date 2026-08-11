@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-08 00:43+0000\n"
-"PO-Revision-Date: 2026-08-07 19:57+0200\n"
+"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"PO-Revision-Date: 2026-08-10 09:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -102,6 +102,7 @@ msgid "Multilingual"
 msgstr "Eleaniztuna"
 
 #: core/textautogeneratemanager.cpp:165
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Kodea"
@@ -362,10 +363,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "API OpenAI"
-msgstr "OpenAI"
+msgstr "OpenAI APIa"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -425,7 +425,7 @@ msgstr "OpenAIrekin bateragarria den OrcaRouter APIa"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "API Open AI (custom)"
-msgstr ""
+msgstr "OpenAI APIa (neurrira)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -487,7 +487,7 @@ msgstr "Instalatutako eredua"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
@@ -559,7 +559,7 @@ msgid "Tag:"
 msgstr "Etiketa:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
 #, kde-format
 msgid "Prompt:"
 msgstr "Eskaera:"
@@ -3246,11 +3246,9 @@ msgid "Configure…"
 msgstr "Konfiguratu…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "URLa kopiatu"
+msgstr "Neurriko URLa:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3262,7 +3260,23 @@ msgstr "Gehieneko token kopurua:"
 msgid "Text Plugins:"
 msgstr "Testu-pluginak:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
+#, kde-format
+msgid "Travel"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "Category:"
+msgstr "Kategoriak"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"

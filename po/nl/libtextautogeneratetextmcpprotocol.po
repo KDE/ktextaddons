@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-28 00:43+0000\n"
+"POT-Creation-Date: 2026-08-11 00:44+0000\n"
 "PO-Revision-Date: 2026-07-28 10:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -66,30 +66,50 @@ msgstr "Commando:"
 msgid "Arguments:"
 msgstr "Argumenten:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:31
+#: widgets/server/addmcpsteamablehttpserverheaderconfiguredialog.cpp:20
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Custom Header"
+msgstr ""
+
+#: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "Headers:"
+msgid "Header:"
+msgstr "Koppen:"
+
+#: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Remove Header"
+msgctxt "@info:placeholder"
+msgid "Define Header…"
+msgstr "Kop verwijderen"
+
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Toevoegen"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:36
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Wijzigen"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:41
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:55
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
 msgstr "Weet u zeker dat u deze kop wilt verwijderen?"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:56
+#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"

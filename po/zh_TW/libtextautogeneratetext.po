@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-08 00:43+0000\n"
+"POT-Creation-Date: 2026-08-11 00:44+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -93,6 +93,7 @@ msgid "Multilingual"
 msgstr "多語言"
 
 #: core/textautogeneratemanager.cpp:165
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "程式碼"
@@ -497,7 +498,7 @@ msgstr "已安裝的模型"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:31
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #, kde-format
 msgid "Name:"
@@ -574,7 +575,7 @@ msgid "Tag:"
 msgstr "標籤："
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:33
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt："
@@ -3016,7 +3017,23 @@ msgstr "最大 token 數："
 msgid "Text Plugins:"
 msgstr "文字外掛程式"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:32
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
+#, kde-format
+msgid "Travel"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "Category:"
+msgstr "分類"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
