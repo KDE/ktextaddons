@@ -7,6 +7,7 @@
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
+#include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
 #include "core/textautogeneratetextutils.h"
@@ -57,6 +58,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     , mTextAutoGenerateTextToSpeechEnqueueManager(new TextAutoGenerateTextToSpeechEnqueueManager(this))
 #endif
+    , mTextAutoGenerateAgentPrompSkillManager(new TextAutoGenerateAgentPrompSkillManager(this))
     , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpProtocolCore::McpServerManager(this))
 {
     mTextAutoGenerateTextMcpServerManager->loadServers();

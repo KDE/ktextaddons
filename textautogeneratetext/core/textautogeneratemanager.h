@@ -31,6 +31,7 @@ class TextAutoGenerateTextInstancesManager;
 class TextAutoGenerateTextToSpeechEnqueueManager;
 class TextAutoGenerateFileCache;
 class TextAutoGenerateTextToolInternalInterface;
+class TextAutoGenerateAgentPrompSkillManager;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateManager
  * \brief The TextAutoGenerateManager class
@@ -591,6 +592,7 @@ private:
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextAutoGenerateTextToSpeechEnqueueManager *const mTextAutoGenerateTextToSpeechEnqueueManager;
 #endif
+    TextAutoGenerateAgentPrompSkillManager *const mTextAutoGenerateAgentPrompSkillManager;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mTextAutoGenerateTextMcpServerManager;
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
