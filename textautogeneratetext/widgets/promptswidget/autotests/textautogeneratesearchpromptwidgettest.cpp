@@ -5,9 +5,10 @@
 */
 #include "textautogeneratesearchpromptwidgettest.h"
 #include "widgets/promptswidget/textautogeneratesearchpromptwidget.h"
+#include <QHBoxLayout>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateSearchPromptWidgetTest)
-
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateSearchPromptWidgetTest::TextAutoGenerateSearchPromptWidgetTest(QObject *parent)
     : QObject{parent}
 {
@@ -16,7 +17,9 @@ TextAutoGenerateSearchPromptWidgetTest::TextAutoGenerateSearchPromptWidgetTest(Q
 void TextAutoGenerateSearchPromptWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateSearchPromptWidget w;
-    // TODO
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }
 
 #include "moc_textautogeneratesearchpromptwidgettest.cpp"
