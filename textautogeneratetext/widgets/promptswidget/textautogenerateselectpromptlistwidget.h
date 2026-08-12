@@ -16,5 +16,12 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectPromptListWidget :
 public:
     explicit TextAutoGenerateSelectPromptListWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateSelectPromptListWidget() override;
+
+protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
+
+Q_SIGNALS:
+    void addPrompt();
+    void removePrompt(const QByteArray &id);
 };
 }
