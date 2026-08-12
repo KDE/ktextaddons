@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QString>
 class QDebug;
 namespace TextAutoGenerateText
 {

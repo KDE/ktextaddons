@@ -6,6 +6,7 @@
 
 #include "textautogenerateagent.h"
 #include <QDebug>
+#include <QUuid>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateAgent::TextAutoGenerateAgent()

@@ -6,6 +6,7 @@
 
 #include "textautogenerateskill.h"
 #include <QDebug>
+#include <QUuid>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateSkill::TextAutoGenerateSkill()
