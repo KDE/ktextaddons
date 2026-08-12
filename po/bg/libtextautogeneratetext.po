@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"POT-Creation-Date: 2026-08-12 00:44+0000\n"
 "PO-Revision-Date: 2026-07-20 20:22+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -62,68 +62,68 @@ msgstr "<b>Енджин:</b> %1<br><b>Модел:</b> %2<br><b>Име на ек�
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Инструменти:</b> %1"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Tools"
 msgstr "Инструменти"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Small"
 msgstr "Малък"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Medium"
 msgstr "Среден"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Big"
 msgstr "Големи"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Huge"
 msgstr "Огромен"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Multilingual"
 msgstr "Многоезичен"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:167
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Код"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Math"
 msgstr "Математика"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Vision"
 msgstr "Визия"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Embedding"
 msgstr "Вграждане"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Reasoning"
 msgstr "Разсъждение"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Cloud"
 msgstr "Облак"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Thinking"
 msgstr "Разсъждаване"

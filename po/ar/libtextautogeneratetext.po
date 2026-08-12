@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"POT-Creation-Date: 2026-08-12 00:44+0000\n"
 "PO-Revision-Date: 2026-08-10 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -63,68 +63,68 @@ msgstr "<b>المحرك:</b> %1<br><b>النموذج:</b> %2<br><b>اسم الن
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>أدوات:</b> %1"
 
-#: core/textautogeneratemanager.cpp:153
+#: core/textautogeneratemanager.cpp:155
 #, kde-format
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:157
 #, kde-format
 msgid "Small"
 msgstr "صغير"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Medium"
 msgstr "متوسط"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Big"
 msgstr "كبير"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Huge"
 msgstr "ضخمة"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Multilingual"
 msgstr "متعدد اللغات"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:167
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "شفرة"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Math"
 msgstr "رياضيات"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Vision"
 msgstr "رؤية"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Embedding"
 msgstr "تضمين"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Reasoning"
 msgstr "تفكير"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Cloud"
 msgstr "سحابة"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Thinking"
 msgstr "تفكير"
@@ -1682,7 +1682,7 @@ msgid ""
 "A series of models from Groq that represent a significant advancement in "
 "open-source AI capabilities for tool use/function calling."
 msgstr ""
-"سلسلة نماذج من Groq تمثل تقدماً كبيراً في قدرات الذكاء الاصطناعي مفتوحة المصدر "
+"سلسلة نماذج من Groq تمثل تقدمًا كبيرًا في قدرات الذكاء الاصطناعي مفتوحة المصدر "
 "لاستخدام الأدوات / استدعاء الوظائف."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:157
@@ -2343,7 +2343,7 @@ msgstr "نماذج السياق الطويل عالية الأداء من Alibab
 msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
-msgstr "DeepSeek-V3.1 هو نموذج هجين يدعم كلاً من وضع التفكير ووضع عدم التفكير."
+msgstr "DeepSeek-V3.1 هو نموذج هجين يدعم كلًا من وضع التفكير ووضع عدم التفكير."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:283
 #, kde-format
@@ -2494,7 +2494,7 @@ msgid ""
 "post-trained on the Dolci datasets."
 msgstr ""
 "Olmo هي سلسلة من نماذج اللغة المفتوحة المصممة لتمكين علوم نماذج اللغة. دُرّبت "
-"هذه النماذج مسبقاً على مجموعة بيانات Dolma 3 ودُرّبت لاحقاً على مجموعات بيانات "
+"هذه النماذج مسبقًا على مجموعة بيانات Dolma 3 ودُرّبت لاحقًا على مجموعات بيانات "
 "Dolci."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
@@ -2512,7 +2512,7 @@ msgid ""
 "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
 "for lightweight deployment that balances performance and efficiency."
 msgstr ""
-"باعتباره أقوى نموذج في فئة 30B، يقدم GLM-4.7-Flash خياراً جديداً للنشر الخفيف "
+"باعتباره أقوى نموذج في فئة 30B، يقدم GLM-4.7-Flash خيارًا جديدًا للنشر الخفيف "
 "الذي يوازن بين الأداء والكفاءة."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
@@ -2530,7 +2530,7 @@ msgid ""
 "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
 "tuned explicitly for function calling."
 msgstr ""
-"إن FunctionGemma نسخة متخصصة من نموذج Gemma 3 270M من جوجل، دُقّق ضبطه خصيصاً "
+"إن FunctionGemma نسخة متخصصة من نموذج Gemma 3 270M من جوجل، دُقّق ضبطه خصيصًا "
 "لاستدعاء الدوال."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
@@ -2539,7 +2539,7 @@ msgid ""
 "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
 "the cost."
 msgstr ""
-"يقدم Gemini 3 Flash ذكاءً متطوراً بُني من أجل السرعة وبجزء بسيط من التكلفة."
+"يقدم Gemini 3 Flash ذكاءً متطورًا بُني من أجل السرعة وبجزء بسيط من التكلفة."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
 #, kde-format

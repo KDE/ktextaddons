@@ -8,6 +8,7 @@
 #
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-01.
+# Azken berrikuspena: 2026-08-11 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
 # Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:44+0000\n"
-"PO-Revision-Date: 2026-07-30 18:04+0200\n"
+"PO-Revision-Date: 2026-08-11 13:04+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -82,21 +83,18 @@ msgstr "Argumentuak:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "Neurrira ipinitako goiburua gehitu"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgid "Header:"
-msgstr "Goiburuak:"
+msgstr "Goiburua:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "Goiburua kendu"
+msgstr "Goiburua definitu…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format

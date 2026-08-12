@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:44+0000\n"
-"PO-Revision-Date: 2026-07-28 10:25+0200\n"
+"PO-Revision-Date: 2026-08-11 08:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -72,21 +72,18 @@ msgstr "Arguments:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "Afig una capçalera personalitzada"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgid "Header:"
-msgstr "Capçaleres:"
+msgstr "Capçalera:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "Elimina la capçalera"
+msgstr "Definix una capçalera…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
