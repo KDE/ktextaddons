@@ -34,7 +34,7 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
         menu.addSeparator();
         auto editAction = new QAction(QIcon::fromTheme(u"edit-rename"_s), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
-            // TODO slotEditPrompt(index);
+            slotEditPrompt(index);
         });
         menu.addAction(editAction);
         menu.addSeparator();
@@ -59,4 +59,10 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
     }
     menu.exec(event->globalPos());
 }
+
+void TextAutoGenerateSelectPromptListWidget::slotEditPrompt(const QModelIndex &index)
+{
+    // TODO
+}
+
 #include "moc_textautogenerateselectpromptlistwidget.cpp"

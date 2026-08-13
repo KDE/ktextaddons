@@ -23,5 +23,8 @@ protected:
 Q_SIGNALS:
     void addPrompt();
     void removePrompt(const QByteArray &id);
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditPrompt(const QModelIndex &index);
 };
 }
