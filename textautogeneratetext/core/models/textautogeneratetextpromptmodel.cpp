@@ -40,6 +40,8 @@ QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int rol
         return prompt.text();
     case Enabled:
         return prompt.enabled();
+    case Identifier:
+        return prompt.identifier();
     case Category:
         return QVariant::fromValue(prompt.category());
     default:

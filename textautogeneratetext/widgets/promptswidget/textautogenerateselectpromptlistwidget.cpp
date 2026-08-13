@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateselectpromptlistwidget.h"
+#include "core/models/textautogeneratetextpromptmodel.h"
 #include "textautogenerateselectpromptdelegate.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
@@ -39,12 +40,11 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Prompt"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-#if 0 // TODO
-            const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+            const QByteArray uuid = index.data(TextAutoGenerateTextPromptModel::Identifier).toByteArray();
             if (uuid.isEmpty()) {
-                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid prompt identifier";
             } else {
-                const QString name = index.data(TextAutoGenerateTextInstanceModel::Name).toString();
+                const QString name = index.data(TextAutoGenerateTextPromptModel::Name).toString();
                 if (KMessageBox::warningTwoActions(this,
                                                    i18n("Do you want to remove this instance (%1)?", name),
                                                    i18nc("@title", "Remove Instance"),
@@ -54,7 +54,6 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
                     Q_EMIT removePrompt(uuid);
                 }
             }
-#endif
         });
         menu.addAction(removeAction);
     }
