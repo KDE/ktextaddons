@@ -51,26 +51,28 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
     return fileStr;
 }
 
-void SaveFileUtils::saveFile(QWidget *parentWidget, const QString &filePath, const QString &title)
+bool SaveFileUtils::saveFile(QWidget *parentWidget, const QString &filePath, const QString &title)
 {
     const auto file = SaveFileUtils::querySaveFileName(parentWidget, title, QUrl::fromLocalFile(filePath));
     if (file.isEmpty()) {
-        return;
+        return false;
     }
 
     QFile sourceFile(filePath);
     if (!sourceFile.exists()) {
         KMessageBox::error(parentWidget, i18n("Source file no longer exists"), i18nc("@title:window", "Error saving file"));
-        return;
+        return false;
     }
 
     QFile destFile(file);
     if (destFile.exists() && !destFile.remove()) {
         KMessageBox::error(parentWidget, i18n("Cannot overwrite existing file"), i18nc("@title:window", "Error saving file"));
-        return;
+        return false;
     }
 
     if (!sourceFile.copy(file)) {
         KMessageBox::error(parentWidget, sourceFile.errorString(), i18nc("@title:window", "Error saving file"));
+        return false;
     }
+    return true;
 }

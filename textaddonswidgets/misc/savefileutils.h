@@ -15,6 +15,6 @@ namespace TextAddonsWidgets
 namespace SaveFileUtils
 {
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString querySaveFileName(QWidget *parent, const QString &title, const QUrl &fileToSave);
-TEXTADDONSWIDGETS_EXPORT void saveFile(QWidget *parent, const QString &filePath, const QString &title);
+[[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool saveFile(QWidget *parent, const QString &filePath, const QString &title);
 }
 }
