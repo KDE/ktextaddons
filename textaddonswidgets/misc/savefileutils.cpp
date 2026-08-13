@@ -41,6 +41,9 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
             }
         }();
     }
+#ifdef Q_OS_WIN
+    fileName.replace(u':', u"_"_s);
+#endif
     const QUrl localUrl = QUrl::fromLocalFile(startUrl.path() + u'/' + fileName);
     const QString fileStr = QFileDialog::getSaveFileName(parent, title, localUrl.path());
 
