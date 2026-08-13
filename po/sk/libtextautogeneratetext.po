@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-13 00:45+0000\n"
 "PO-Revision-Date: 2026-04-11 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -3117,6 +3117,7 @@ msgid "Mark As Default"
 msgstr "Označiť ako predvolené"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3129,11 +3130,13 @@ msgid "Remove Instance"
 msgstr "Odstrániť inštanciu"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Chcete odstrániť túto inštanciu (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3246,6 +3249,22 @@ msgstr "Kategórie"
 #| msgid "Description:"
 msgid "Description:"
 msgstr "Popis:"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@action"
+msgid "Add prompt…"
+msgstr "Pridať server…"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "Odstrániť model"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, fuzzy, kde-format
@@ -3558,10 +3577,6 @@ msgstr "Nenašli sa žiadne správy."
 #~ msgctxt "@title:window"
 #~ msgid "Add Server"
 #~ msgstr "Pridať server"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Pridať server…"
 
 #~ msgctxt "@action"
 #~ msgid "Remove Server"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-13 00:45+0000\n"
 "PO-Revision-Date: 2026-08-11 08:42+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3023,6 +3023,7 @@ msgid "Mark As Default"
 msgstr "סימון כברירת מחדל"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3035,11 +3036,13 @@ msgid "Remove Instance"
 msgstr "הסרת מופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "להסיר את המופע הזה (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3146,6 +3149,22 @@ msgstr "קטגוריה:"
 #, kde-format
 msgid "Description:"
 msgstr "תיאור:"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@action"
+msgid "Add prompt…"
+msgstr "הוספת שרת…"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "הסרת מודל"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3456,10 +3475,6 @@ msgstr "לא נמצאו הודעות."
 #~ msgctxt "@title:window"
 #~ msgid "Add Server"
 #~ msgstr "הוספת שרת"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "הוספת שרת…"
 
 #~ msgctxt "@action"
 #~ msgid "Remove Server"

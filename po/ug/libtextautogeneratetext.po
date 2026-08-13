@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-13 00:45+0000\n"
 "PO-Revision-Date: 2026-05-31 19:48-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -2709,6 +2709,7 @@ msgid "Mark As Default"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -2721,11 +2722,13 @@ msgid "Remove Instance"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2836,6 +2839,19 @@ msgstr "سەھىپە"
 #| msgid "Description:"
 msgid "Description:"
 msgstr "چۈشەندۈرۈش:"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Add prompt…"
+msgstr ""
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "ئەسكەرت"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format

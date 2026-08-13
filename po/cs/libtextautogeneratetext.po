@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-13 00:45+0000\n"
 "PO-Revision-Date: 2026-08-09 23:48+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2722,6 +2722,7 @@ msgid "Mark As Default"
 msgstr "Označit jako výchozí"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -2734,11 +2735,13 @@ msgid "Remove Instance"
 msgstr "Odstranit instanci"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Chcete tuto instanci (%1) odstranit?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2845,6 +2848,22 @@ msgstr "Kategorie:"
 #, kde-format
 msgid "Description:"
 msgstr "Popis:"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@action"
+msgid "Add prompt…"
+msgstr "Přidat server…"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "Odstranit model"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3146,10 +3165,6 @@ msgstr "Nenalezena žádná zpráva."
 #~ msgctxt "@title:window"
 #~ msgid "Add Server"
 #~ msgstr "Přidat server"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Přidat server…"
 
 #~ msgctxt "@action"
 #~ msgid "Remove Server"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-13 00:45+0000\n"
 "PO-Revision-Date: 2026-08-11 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3142,6 +3142,7 @@ msgid "Mark As Default"
 msgstr "Označi kot privzeto"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3154,11 +3155,13 @@ msgid "Remove Instance"
 msgstr "Odstrani pojavek"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Ali želite odstraniti ta pojavek (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3265,6 +3268,22 @@ msgstr "Kategorije:"
 #, kde-format
 msgid "Description:"
 msgstr "Opis:"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@action"
+msgid "Add prompt…"
+msgstr "Dodaj strežnik…"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "Odstrani model"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3575,10 +3594,6 @@ msgstr "Ni najdenih sporočil."
 #~ msgctxt "@title:window"
 #~ msgid "Add Server"
 #~ msgstr "Dodaj strežnik"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Dodaj strežnik…"
 
 #~ msgctxt "@action"
 #~ msgid "Remove Server"
