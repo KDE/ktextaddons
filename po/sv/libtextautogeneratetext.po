@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
-"PO-Revision-Date: 2026-08-11 17:00+0200\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"PO-Revision-Date: 2026-08-13 17:16+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -3152,7 +3152,7 @@ msgid "Mark As Default"
 msgstr "Markera som förval"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3279,21 +3279,17 @@ msgstr "Kategori:"
 msgid "Description:"
 msgstr "Beskrivning:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Lägg till instans…"
+msgstr "Lägg till prompt…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Ta bort modell"
+msgstr "Ta bort prompt"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format

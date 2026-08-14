@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
-"PO-Revision-Date: 2026-08-11 08:42+0300\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"PO-Revision-Date: 2026-08-13 08:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -3023,7 +3023,7 @@ msgid "Mark As Default"
 msgstr "סימון כברירת מחדל"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3150,21 +3150,17 @@ msgstr "קטגוריה:"
 msgid "Description:"
 msgstr "תיאור:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "הוספת שרת…"
+msgstr "הוספת בקשה…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "הסרת מודל"
+msgstr "הסרת בקשה"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format

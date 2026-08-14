@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
-"PO-Revision-Date: 2026-08-11 08:22+0200\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"PO-Revision-Date: 2026-08-13 09:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3176,7 +3176,7 @@ msgid "Mark As Default"
 msgstr "Marca com a predeterminada"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3303,19 +3303,17 @@ msgstr "Categoria:"
 msgid "Description:"
 msgstr "Descripció:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr ""
+msgstr "Afegeix una petició…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Elimina el model"
+msgstr "Elimina la petició"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format

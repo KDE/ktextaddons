@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2026-07-15 10:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -71,19 +71,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Guarda el fitxer"
 
-#: misc/savefileutils.cpp:63
+#: misc/savefileutils.cpp:66
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "El fitxer d'origen ja no existix"
 
-#: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
-#: misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:66 misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "S'ha produït un error mentre es guardava el fitxer"
 
-#: misc/savefileutils.cpp:69
+#: misc/savefileutils.cpp:72
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "No s'ha pogut sobreescriure el fitxer existent"

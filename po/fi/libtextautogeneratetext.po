@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2026-01-16 18:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2873,7 +2873,7 @@ msgid "Mark As Default"
 msgstr "Merkitse oletukseksi"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3006,7 +3006,7 @@ msgstr "Luokat"
 msgid "Description:"
 msgstr "Kuvaus:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add instance…"
@@ -3014,7 +3014,7 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr "Lisää ilmentymä…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"

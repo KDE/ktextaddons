@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -69,19 +69,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "கோப்பை சேமிப்பது"
 
-#: misc/savefileutils.cpp:63
+#: misc/savefileutils.cpp:66
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "மூலக் கோப்பு இப்போது இல்லை"
 
-#: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
-#: misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:66 misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "கோப்பை சேமிப்பதில் சிக்கல்"
 
-#: misc/savefileutils.cpp:69
+#: misc/savefileutils.cpp:72
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "ஏற்கனவே உள்ள கோப்பை மேலெழுத முடியாது"

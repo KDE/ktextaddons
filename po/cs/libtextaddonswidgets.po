@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2026-08-06 17:58+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -70,19 +70,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Uložit soubor"
 
-#: misc/savefileutils.cpp:63
+#: misc/savefileutils.cpp:66
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Zdrojový soubor již neexistuje"
 
-#: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
-#: misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:66 misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Chyba při ukládání souboru"
 
-#: misc/savefileutils.cpp:69
+#: misc/savefileutils.cpp:72
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Nelze přepsat existující soubor"

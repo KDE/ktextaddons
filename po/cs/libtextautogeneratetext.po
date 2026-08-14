@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2026-08-09 23:48+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2722,7 +2722,7 @@ msgid "Mark As Default"
 msgstr "Označit jako výchozí"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -2849,7 +2849,7 @@ msgstr "Kategorie:"
 msgid "Description:"
 msgstr "Popis:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -2857,7 +2857,7 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr "Přidat server…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"

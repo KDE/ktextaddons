@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2026-08-10 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3050,7 +3050,7 @@ msgid "Mark As Default"
 msgstr "علّمه مبدئي"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3178,7 +3178,7 @@ msgstr "الفئات"
 msgid "Description:"
 msgstr "الوصف:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -3186,7 +3186,7 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr "أضف خادمًا…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"

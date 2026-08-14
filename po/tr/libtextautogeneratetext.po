@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
-"PO-Revision-Date: 2026-08-11 19:16+0300\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"PO-Revision-Date: 2026-08-13 19:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3146,7 +3146,7 @@ msgid "Mark As Default"
 msgstr "Öntanımlı Olarak İmle"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3273,21 +3273,17 @@ msgstr "Kategori:"
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Sunucu Ekle…"
+msgstr "İstem Ekle…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Modeli Kaldır"
+msgstr "İstemi Kaldır"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
 "PO-Revision-Date: 2023-05-02 10:52+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -64,19 +64,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr ""
 
-#: misc/savefileutils.cpp:63
+#: misc/savefileutils.cpp:66
 #, kde-format
 msgid "Source file no longer exists"
 msgstr ""
 
-#: misc/savefileutils.cpp:63 misc/savefileutils.cpp:69
-#: misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:66 misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr ""
 
-#: misc/savefileutils.cpp:69
+#: misc/savefileutils.cpp:72
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr ""

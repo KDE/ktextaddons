@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:45+0000\n"
-"PO-Revision-Date: 2026-08-11 08:49+0300\n"
+"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"PO-Revision-Date: 2026-08-13 11:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3164,7 +3164,7 @@ msgid "Mark As Default"
 msgstr "Позначити як типовий"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3291,21 +3291,17 @@ msgstr "Категорія:"
 msgid "Description:"
 msgstr "Опис:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Додати сервер…"
+msgstr "Додати запит…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Вилучення моделі"
+msgstr "Вилучити запит"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
