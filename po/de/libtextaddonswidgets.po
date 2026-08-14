@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 02:39+0000\n"
+"POT-Creation-Date: 2026-08-14 02:43+0000\n"
 "PO-Revision-Date: 2026-05-03 21:19+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -70,19 +70,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Datei speichern"
 
-#: misc/savefileutils.cpp:65
+#: misc/savefileutils.cpp:68
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Quelldatei existiert nicht mehr"
 
-#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
-#: misc/savefileutils.cpp:76
+#: misc/savefileutils.cpp:68 misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Fehler beim Speichern der Datei"
 
-#: misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:74
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Bestehende Datei kann nicht überschrieben werden"

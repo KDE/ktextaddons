@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 02:39+0000\n"
+"POT-Creation-Date: 2026-08-14 02:43+0000\n"
 "PO-Revision-Date: 2026-06-06 14:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -69,19 +69,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "파일 저장"
 
-#: misc/savefileutils.cpp:65
+#: misc/savefileutils.cpp:68
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "원본 파일이 더 이상 없음"
 
-#: misc/savefileutils.cpp:65 misc/savefileutils.cpp:71
-#: misc/savefileutils.cpp:76
+#: misc/savefileutils.cpp:68 misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "파일 저장 오류"
 
-#: misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:74
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "기존 파일에 덮어쓸 수 없음"
