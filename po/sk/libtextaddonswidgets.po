@@ -311,7 +311,7 @@ msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
 #: whatsnewng/whatsnewngwidget.cpp:66
 #, kde-format
 msgid "<h1>What's New History</h1></hr>"
-msgstr ""
+msgstr "<h1>História noviniek</h1></hr>"
 
 #: whatsnewng/whatsnewngwidget.cpp:84
 #, kde-format
@@ -319,16 +319,14 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Poznámky k vydaniu</a></i></b>"
 
 #: whatsnewng/whatsnewngwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h1><i> Verzia %1 (Vydané: %2)</i></h1><hr/><br>"
+msgstr "<h3><i>Čo je nové vo verzii %1 (vydané: %2)</i></h3>"
 
 #: whatsnewng/whatsnewngwidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h1><i> Verzia %1 (Zatiaľ nevydané)</i></h1><hr/><br>"
+msgstr "<h3><i>Čo je nové vo verzii %1 (zatiaľ nevydané)</i></h3>"
 
 #~ msgid "Version %1"
 #~ msgstr "Verzia %1"

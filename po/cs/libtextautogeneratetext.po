@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-14 00:44+0000\n"
-"PO-Revision-Date: 2026-08-09 23:48+0200\n"
+"PO-Revision-Date: 2026-08-14 11:26+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -2850,20 +2850,16 @@ msgid "Description:"
 msgstr "Popis:"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Přidat server…"
+msgstr "Přidat prompt…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Odstranit model"
+msgstr "Odstranit prompt"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
