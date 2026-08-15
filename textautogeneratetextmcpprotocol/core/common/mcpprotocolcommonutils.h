@@ -19,5 +19,5 @@ namespace McpProtocolCommonUtils
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QByteArray generateUUid();
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QStringList mcpServerList(const KSharedConfig::Ptr &config);
-};
+}
 }
