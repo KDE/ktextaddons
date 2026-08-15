@@ -191,7 +191,7 @@ void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()
         mConfigureTools->setChecked(false);
         mTextAutoGenerateToolsWidget->setHidden(true);
     }
-    mAttachFile->setChecked(hasVisionSupport);
+    // mAttachFile->setChecked(hasVisionSupport);
 }
 
 #include "moc_textautogeneratetextlineeditwidget.cpp"
