@@ -78,7 +78,7 @@ void McpServerWidget::slotRemoveServer(const QByteArray &identifier)
 void McpServerWidget::slotEditServer(const QByteArray &identifier)
 {
     QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
-    const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mpcServer(identifier);
+    const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mcpServer(identifier);
     dlg->setServerInfo(mcpServer);
     if (dlg->exec()) {
         const auto info = dlg->serverInfo();

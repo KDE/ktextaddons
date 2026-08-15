@@ -88,16 +88,16 @@ public:
 
     /*!
      * \brief removeMcpServer
-     * \param id
+     * \param identifier
      */
-    void removeMcpServer(const QByteArray &id);
+    void removeMcpServer(const QByteArray &identifier);
 
     /*!
-     * \brief mpcServer
+     * \brief mcpServer
      * \param identifier
      * \return
      */
-    [[nodiscard]] McpServer mpcServer(const QByteArray &identifier) const;
+    [[nodiscard]] McpServer mcpServer(const QByteArray &identifier) const;
 
     /*!
      * \brief editMcpServer
