@@ -101,6 +101,8 @@ void OpenFileJob::start()
         if (!file.isEmpty()) {
             const QUrl fileUrl = QUrl::fromLocalFile(file);
             downloadFile(fileUrl);
+        } else {
+            deleteLater();
         }
         break;
     }
