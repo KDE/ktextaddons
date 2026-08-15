@@ -126,7 +126,7 @@ bool TextAutoGenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
     if (helpEvent->type() == QEvent::ToolTip) {
         const QLocale locale;
         const QString toolTip = u"%1 (%2)"_s.arg(index.data(TextAutoGenerateChatsModel::Title).toString(),
-                                                 locale.toString(QDateTime::fromSecsSinceEpoch(index.data(TextAutoGenerateChatsModel::DateTime).toInt())));
+                                                 locale.toString(QDateTime::fromSecsSinceEpoch(index.data(TextAutoGenerateChatsModel::DateTime).toLongLong())));
         QToolTip::showText(helpEvent->globalPos(), toolTip, view);
         return true;
     }
