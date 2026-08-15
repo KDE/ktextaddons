@@ -25,6 +25,7 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     // Get the text and split it into two lines
     const QString text = index.data(Qt::DisplayRole).toString();
     if (text.isEmpty()) {
+        QStyledItemDelegate::paint(painter, option, index);
         return;
     }
 
@@ -79,7 +80,7 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
 
     const QSize checkboxSize = QApplication::style()->sizeFromContents(QStyle::CT_CheckBox, nullptr, QSize(), nullptr);
     // Draw the two lines
-    painter->setPen(option.palette.text().color());
+    painter->setPen((option.state & QStyle::State_Selected) ? option.palette.highlightedText().color() : option.palette.text().color());
     const QRect line1Rect(rect.left() + 5 + checkboxSize.width(), rect.top(), rect.width(), fontMetrics.height());
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
     if (!translatedPluginName.isEmpty()) {
