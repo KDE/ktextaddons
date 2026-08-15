@@ -24,17 +24,18 @@ int McpServerModel::rowCount(const QModelIndex &parent) const
 
 bool McpServerModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
-    if (!idx.isValid()) {
+    if (!idx.isValid() || idx.row() < 0 || idx.row() >= mMcpServers.count()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "ERROR: invalid index";
         return false;
     }
     const int id = idx.row();
+
     auto &server = mMcpServers[id];
     switch (role) {
     case Qt::CheckStateRole:
     case MCPServerRoles::Enabled:
         server.setEnabled(value.toBool());
-        Q_EMIT dataChanged(idx, idx, {MCPServerRoles::Enabled});
+        Q_EMIT dataChanged(idx, idx, {MCPServerRoles::Enabled, Qt::CheckStateRole});
         return true;
     default:
         break;
@@ -80,6 +81,11 @@ void McpServerModel::editMcpServer(const McpServer &server)
     if (answerIt != mMcpServers.constEnd()) {
         const int i = std::distance(mMcpServers.constBegin(), answerIt);
         mMcpServers[i] = server;
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {Qt::DisplayRole, MCPServerRoles::ServerType, MCPServerRoles::Name, MCPServerRoles::Enabled, MCPServerRoles::Identifier});
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server not found for identifier:" << server.identifier();
     }
@@ -99,7 +105,7 @@ void McpServerModel::setMcpServers(const QList<McpServer> &newTextInstances)
     endResetModel();
 }
 
-McpServer McpServerModel::mpcServer(const QByteArray &identifier) const
+McpServer McpServerModel::mcpServer(const QByteArray &identifier) const
 {
     if (identifier.isEmpty()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Empty identifier it's a bug";
