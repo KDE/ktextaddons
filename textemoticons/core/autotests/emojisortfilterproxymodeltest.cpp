@@ -7,6 +7,7 @@
 
 #include "emojimodelmanager.h"
 #include "emojisortfilterproxymodel.h"
+#include <QSignalSpy>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(EmojiSortFilterProxyModelTest)
@@ -53,6 +54,25 @@ void EmojiSortFilterProxyModelTest::shouldHaveToneSuffix()
         w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark);
         QCOMPARE(w.emojiToneSuffix(), u"_tone5"_s);
     }
+}
+
+void EmojiSortFilterProxyModelTest::shouldChangeCategoryWhenSearching()
+{
+    TextEmoticonsCore::EmojiSortFilterProxyModel w;
+    QSignalSpy categorySpy(&w, &TextEmoticonsCore::EmojiSortFilterProxyModel::categoryChanged);
+
+    w.setCategory(u"people"_s);
+    QCOMPARE(w.category(), u"people"_s);
+    QCOMPARE(categorySpy.count(), 1);
+
+    w.setSearchIdentifier(u"smile"_s);
+    QCOMPARE(w.searchIdentifier(), u"smile"_s);
+
+    // Selecting a category while searching clears the search and applies the new category
+    w.setCategory(u"nature"_s);
+    QCOMPARE(w.category(), u"nature"_s);
+    QVERIFY(w.searchIdentifier().isEmpty());
+    QCOMPARE(categorySpy.count(), 2);
 }
 
 #include "moc_emojisortfilterproxymodeltest.cpp"

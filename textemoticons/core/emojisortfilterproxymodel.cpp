@@ -170,11 +170,10 @@ void EmojiSortFilterProxyModel::setCategory(const QString &newCategorie)
     if (d->category != newCategorie) {
         if (!d->searchIdentifier.isEmpty()) {
             d->clearSearch();
-        } else {
-            beginFilterChange();
-            d->category = newCategorie;
-            endFilterChange(QSortFilterProxyModel::Direction::Rows);
         }
+        beginFilterChange();
+        d->category = newCategorie;
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
         if ((TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->category)
             || (TextEmoticonsCore::EmoticonUnicodeUtils::customIdentifier() == d->category)) {
             // Make sure that we reorder recent/custom category
