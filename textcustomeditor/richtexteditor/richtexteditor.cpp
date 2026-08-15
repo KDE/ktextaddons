@@ -921,22 +921,26 @@ bool RichTextEditor::handleShortcut(QKeyEvent *event)
         }
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
-        QString text = QApplication::clipboard()->text(QClipboard::Selection);
-        if (!text.isEmpty()) {
-            insertPlainText(text); // TODO: check if this is html? (MiB)
+        if (!isReadOnly()) {
+            QString text = QApplication::clipboard()->text(QClipboard::Selection);
+            if (!text.isEmpty()) {
+                insertPlainText(text); // TODO: check if this is html? (MiB)
+            }
+            return true;
         }
-        return true;
     } else if (event == QKeySequence::DeleteEndOfLine) {
-        QTextCursor cursor = textCursor();
-        QTextBlock block = cursor.block();
-        if (cursor.position() == block.position() + block.length() - 2) {
-            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
-        } else {
-            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (!isReadOnly()) {
+            QTextCursor cursor = textCursor();
+            QTextBlock block = cursor.block();
+            if (cursor.position() == block.position() + block.length() - 2) {
+                cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+            } else {
+                cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            }
+            cursor.removeSelectedText();
+            setTextCursor(cursor);
+            return true;
         }
-        cursor.removeSelectedText();
-        setTextCursor(cursor);
-        return true;
     }
 
     return false;

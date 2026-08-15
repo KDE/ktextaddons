@@ -645,14 +645,18 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
         }
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
-        const QString text = QApplication::clipboard()->text(QClipboard::Selection);
-        if (!text.isEmpty()) {
-            insertPlainText(text); // TODO: check if this is html? (MiB)
+        if (!isReadOnly()) {
+            const QString text = QApplication::clipboard()->text(QClipboard::Selection);
+            if (!text.isEmpty()) {
+                insertPlainText(text); // TODO: check if this is html? (MiB)
+            }
+            return true;
         }
-        return true;
     } else if (event == QKeySequence::DeleteEndOfLine) {
-        deleteEndOfLine();
-        return true;
+        if (!isReadOnly()) {
+            deleteEndOfLine();
+            return true;
+        }
     }
     return false;
 }
