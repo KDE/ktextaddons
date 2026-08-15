@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textutilscopyblockiconcache.h"
-#include "textutils_debug.h"
+#include "textutils_syntaxhighlighting_debug.h"
 
 #include <QDir>
 #include <QIcon>
@@ -46,7 +46,7 @@ QString TextUtilsCopyBlockIconCache::iconName(TextUtilsCopyBlockIconCache::IconT
     case TextUtilsCopyBlockIconCache::IconType::InsertText:
         return u"insert-text"_s;
     }
-    qCWarning(TEXTUTILS_LOG) << "Icon name not defined";
+    qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Icon name not defined";
     return {};
 }
 
@@ -54,7 +54,7 @@ QString TextUtilsCopyBlockIconCache::saveIconToTempFile(TextUtilsCopyBlockIconCa
 {
     const QIcon icon = QIcon::fromTheme(iconName(type));
     if (icon.isNull()) {
-        qCWarning(TEXTUTILS_LOG) << "Icon is not found:" << static_cast<int>(type);
+        qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Icon is not found:" << static_cast<int>(type);
         return {};
     }
 
@@ -63,13 +63,13 @@ QString TextUtilsCopyBlockIconCache::saveIconToTempFile(TextUtilsCopyBlockIconCa
 
     auto temp = new QTemporaryFile(QDir::tempPath() + u"/icon_XXXXXX.png"_s);
     if (!temp->open()) {
-        qCWarning(TEXTUTILS_LOG) << "Impossible to create temporary file.";
+        qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Impossible to create temporary file.";
         delete temp;
         return {};
     }
 
     if (!pixmap.save(temp, "PNG")) {
-        qCWarning(TEXTUTILS_LOG) << "Impossible to save file.";
+        qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Impossible to save file.";
         delete temp;
         return {};
     }

@@ -43,7 +43,7 @@ private:
     {
     public:
         QString fileName;
-        int size;
+        int size = 0;
         [[nodiscard]] bool operator<(const Entry &other) const;
     };
 
