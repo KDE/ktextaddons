@@ -16,6 +16,7 @@ AddMcpSteamableHttpServerHeaderListWidget::~AddMcpSteamableHttpServerHeaderListW
 
 void AddMcpSteamableHttpServerHeaderListWidget::setHeaders(const QStringList &lst)
 {
+    clear();
     addItems(lst);
 }
 
