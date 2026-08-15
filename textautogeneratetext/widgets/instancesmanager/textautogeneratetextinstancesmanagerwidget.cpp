@@ -64,9 +64,12 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid);
-        Q_ASSERT(plugin);
-        plugin->showConfigureDialog(this);
-        Q_EMIT settingsChanged();
+        if (plugin) {
+            plugin->showConfigureDialog(this);
+            Q_EMIT settingsChanged();
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to edit instance " << uuid;
+        }
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::markAsDefaultChanged, this, [this](const QByteArray &uuid) {
         mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->setCurrentInstance(uuid);
