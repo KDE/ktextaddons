@@ -142,9 +142,9 @@ void McpServerModel::removeMcpServer(const QByteArray &identifier)
     const auto matchesIdentifier = [&](const McpServer &msg) {
         return msg.identifier() == identifier;
     };
-    const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier);
-    if (it != mMcpServers.end()) {
-        const int i = std::distance(mMcpServers.begin(), it);
+    const auto it = std::find_if(mMcpServers.cbegin(), mMcpServers.cend(), matchesIdentifier);
+    if (it != mMcpServers.cend()) {
+        const int i = std::distance(mMcpServers.cbegin(), it);
         beginRemoveRows(QModelIndex(), i, i);
         mMcpServers.removeAt(i);
         endRemoveRows();
