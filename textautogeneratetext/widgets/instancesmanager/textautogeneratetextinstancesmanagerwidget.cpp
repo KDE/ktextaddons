@@ -90,15 +90,15 @@ void TextAutoGenerateTextInstancesManagerWidget::slotAddInstance()
     if (d.exec()) {
         const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
         // qDebug() << " selectedInstanceType:" << server;
-        auto instance = new TextAutoGenerateTextInstance;
-        instance->setPluginName(server.pluginName);
-        instance->setPluginIdentifier(server.identifier);
-        instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
-        instance->setEnabled(true);
         auto client = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(server.pluginName);
         if (!client) {
             qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
         } else {
+            auto instance = new TextAutoGenerateTextInstance;
+            instance->setPluginName(server.pluginName);
+            instance->setPluginIdentifier(server.identifier);
+            instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+            instance->setEnabled(true);
             auto plugin = client->createTextAutoGeneratePlugin(mManager, instance);
             plugin->setDisplayName(d.instanceName());
             instance->setPlugin(plugin);
