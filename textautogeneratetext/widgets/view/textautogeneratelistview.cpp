@@ -297,6 +297,7 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
         if (mCurrentModel && mCurrentModel->searchMessageSettings()) {
             disconnect(mCurrentModel->searchMessageSettings(), nullptr, this, nullptr);
         }
+        disconnect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateListView::maybeScrollToBottom);
 
         mDelegate->clearSelection();
     }
