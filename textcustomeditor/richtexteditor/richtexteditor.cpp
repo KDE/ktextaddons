@@ -242,7 +242,6 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, &RichTextEditor::slotToggleAutoSpellCheck);
                 autoSpellCheckAction->setCheckable(true);
                 autoSpellCheckAction->setChecked(checkSpellingEnabled());
-                popup->addAction(autoSpellCheckAction);
 
                 if (checkSpellingEnabled() && d->activateLanguageMenu) {
                     auto languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
