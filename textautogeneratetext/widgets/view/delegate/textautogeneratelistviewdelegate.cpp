@@ -122,7 +122,9 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         const auto attachments = att->messageAttachments();
         for (const auto &attachment : attachments) {
             const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(attachment);
-            helper->draw(attachment, painter, layout.attachmentsRectList.isEmpty() ? QRect{} : layout.attachmentsRectList.at(i), index, option);
+            if (helper) {
+                helper->draw(attachment, painter, layout.attachmentsRectList.isEmpty() ? QRect{} : layout.attachmentsRectList.at(i), index, option);
+            }
             i++;
         }
     }
@@ -572,6 +574,9 @@ bool TextAutoGenerateListViewDelegate::maybeStartDrag(QMouseEvent *mouseEvent, Q
     if (mTextSelection->hasSelection()) {
         const QPoint pos = mouseEvent->pos() - messageRect.topLeft();
         const auto *doc = documentForIndex(index, messageRect.width());
+        if (!doc) {
+            return false;
+        }
         const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
         if (charPos != -1 && mTextSelection->contains(index, charPos)) {
             auto mimeData = new QMimeData;
