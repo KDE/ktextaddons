@@ -184,7 +184,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                                                        KStandardGuiItem::cancel())) {
                     const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                     if (!uuid.isEmpty()) {
-                        mManager->removeDiscussion(mManager->currentChatId());
+                        mManager->removeDiscussion(uuid);
                     }
                 }
             });
