@@ -52,8 +52,8 @@ TextAutoGenerateTextLineEditAttachmentWidget::attachmentElementInfoList() const
 {
     QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> lst;
     lst.reserve(mMap.count());
-    for (const auto &[key, value] : mMap.asKeyValueRange()) {
-        lst.append(TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFile(value->fileName()));
+    for (const auto &v : std::as_const(mMap)) {
+        lst.append(TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFile(v->fileName()));
     }
     return lst;
 }
