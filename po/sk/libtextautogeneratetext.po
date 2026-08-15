@@ -157,8 +157,7 @@ msgid "<br><b>Total Duration:</b> %1 seconds"
 msgstr "<br><b>Celkové trvanie:</b> %1 sekúnd"
 
 #: core/textautogeneratetextreplyinfo.cpp:54
-#, fuzzy, kde-format
-#| msgid "<br><b>Prompt Token:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
 msgstr "<br><b>Tokeny výzvy:</b> %1"
 
@@ -397,7 +396,7 @@ msgstr "Inštancia Sarvam AI"
 #: plugins/llamacpp/llamacppplugin.cpp:95
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
 #: plugins/lmstudio/lmstudioplugin.cpp:210
@@ -3185,18 +3184,14 @@ msgstr "Nástroj modulov:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:30
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "Popis:"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "Informácie:"
+msgstr "Pokyny:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format
@@ -3340,7 +3335,7 @@ msgstr "Obnoviť"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "Rozvetviť"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
 #, kde-format
