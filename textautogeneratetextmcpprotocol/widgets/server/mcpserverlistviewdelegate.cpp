@@ -25,6 +25,7 @@ void McpServerListViewDelegate::paint(QPainter *painter, const QStyleOptionViewI
     // Get the text and split it into two lines
     const QString text = index.data(Qt::DisplayRole).toString();
     if (text.isEmpty()) {
+        QStyledItemDelegate::paint(painter, option, index);
         return;
     }
     const QString serverTypeName = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::ServerType).toString();
