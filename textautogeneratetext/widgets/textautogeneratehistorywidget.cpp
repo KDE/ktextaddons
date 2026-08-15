@@ -38,28 +38,28 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::slotSearchTextChanged);
     connect(mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::switchToChat, this, &TextAutoGenerateHistoryWidget::switchToChat);
 
-    auto searchRoomAction = new QAction(i18nc("@action", "Search Channels"), this);
-    searchRoomAction->setShortcut(shortcut);
-    connect(searchRoomAction, &QAction::triggered, this, [this]() {
+    auto searchChatAction = new QAction(i18nc("@action", "Search Chat"), this);
+    searchChatAction->setShortcut(shortcut);
+    connect(searchChatAction, &QAction::triggered, this, [this]() {
         mSearchLineEdit->setFocus();
     });
-    addAction(searchRoomAction);
+    addAction(searchChatAction);
 
-    auto previousRoomAction = new QAction(i18nc("@action", "Previous Chat"), this);
-    previousRoomAction->setShortcut(Qt::CTRL | Qt::Key_Up);
-    connect(previousRoomAction, &QAction::triggered, this, [this]() {
+    auto previousChatAction = new QAction(i18nc("@action", "Previous Chat"), this);
+    previousChatAction->setShortcut(Qt::CTRL | Qt::Key_Up);
+    connect(previousChatAction, &QAction::triggered, this, [this]() {
         mTextAutoGenerateHistoryListView->selectNextChat(TextAutoGenerateHistoryListView::Direction::Up);
         mSearchLineEdit->clear();
     });
-    addAction(previousRoomAction);
+    addAction(previousChatAction);
 
-    auto nextRoomAction = new QAction(i18nc("@action", "Next Chat"), this);
-    nextRoomAction->setShortcut(Qt::CTRL | Qt::Key_Down);
-    connect(nextRoomAction, &QAction::triggered, this, [this]() {
+    auto nextChatAction = new QAction(i18nc("@action", "Next Chat"), this);
+    nextChatAction->setShortcut(Qt::CTRL | Qt::Key_Down);
+    connect(nextChatAction, &QAction::triggered, this, [this]() {
         mTextAutoGenerateHistoryListView->selectNextChat(TextAutoGenerateHistoryListView::Direction::Down);
         mSearchLineEdit->clear();
     });
-    addAction(nextRoomAction);
+    addAction(nextChatAction);
 }
 
 TextAutoGenerateHistoryWidget::~TextAutoGenerateHistoryWidget() = default;
