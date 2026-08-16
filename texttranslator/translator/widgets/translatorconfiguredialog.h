@@ -18,6 +18,7 @@ class TranslatorConfigureWidget;
  */
 class TEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog
 {
+    Q_OBJECT
 public:
     /*!
      */
