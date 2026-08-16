@@ -163,7 +163,7 @@ int TranslatorModel::versionInstalled(const QString &shortName) const
             return lang.version;
         }
     }
-    return false;
+    return -1;
 }
 
 void TranslatorModel::clear()
