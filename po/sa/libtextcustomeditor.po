@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:43+0000\n"
+"POT-Creation-Date: 2026-08-16 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -39,50 +39,50 @@ msgstr "वर्तनीपरीक्षां कुर्वन्तु..
 msgid "Auto Spell Check"
 msgstr "स्वतः वर्तनी जाँच"
 
-#: plaintexteditor/plaintexteditor.cpp:181
-#: richtexteditor/richtexteditor.cpp:248
+#: plaintexteditor/plaintexteditor.cpp:180
+#: richtexteditor/richtexteditor.cpp:247
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "वर्तनीपरीक्षा भाषा"
 
-#: plaintexteditor/plaintexteditor.cpp:207
+#: plaintexteditor/plaintexteditor.cpp:206
 #: richtextbrowser/richtextbrowser.cpp:174
-#: richtexteditor/richtexteditor.cpp:280
+#: richtexteditor/richtexteditor.cpp:279
 #, kde-format
 msgid "Speak Text"
 msgstr "पाठं वदतु"
 
-#: plaintexteditor/plaintexteditor.cpp:383
-#: richtexteditor/richtexteditor.cpp:509
+#: plaintexteditor/plaintexteditor.cpp:382
+#: richtexteditor/richtexteditor.cpp:508
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "वर्तनीपरीक्षायै किमपि नास्ति।"
 
-#: plaintexteditor/plaintexteditor.cpp:388
-#: richtexteditor/richtexteditor.cpp:527
+#: plaintexteditor/plaintexteditor.cpp:387
+#: richtexteditor/richtexteditor.cpp:526
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "वर्तनीपरीक्षायै पृष्ठभागः उपलब्धः नास्ति ।"
 
-#: richtexteditor/richtexteditor.cpp:272
+#: richtexteditor/richtexteditor.cpp:271
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "सारणीकरणं अनुमन्यताम्"
 
-#: richtexteditor/richtexteditor.cpp:519
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "वर्तनीपरीक्षायै पृष्ठभागः उपलब्धः नास्ति । तथापि भवन्तः ईमेल प्रेषयितुम् इच्छन्ति वा?"
 
-#: richtexteditor/richtexteditor.cpp:521
+#: richtexteditor/richtexteditor.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "प्रेषयतु"
 
-#: richtexteditor/richtexteditor.cpp:543
+#: richtexteditor/richtexteditor.cpp:542
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

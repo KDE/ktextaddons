@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:43+0000\n"
+"POT-Creation-Date: 2026-08-16 00:42+0000\n"
 "PO-Revision-Date: 2024-11-10 20:12+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -37,37 +37,37 @@ msgstr "Проверка на правописа…"
 msgid "Auto Spell Check"
 msgstr "Автоматична проверка на правописа"
 
-#: plaintexteditor/plaintexteditor.cpp:181
-#: richtexteditor/richtexteditor.cpp:248
+#: plaintexteditor/plaintexteditor.cpp:180
+#: richtexteditor/richtexteditor.cpp:247
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Език за проверка на правописа"
 
-#: plaintexteditor/plaintexteditor.cpp:207
+#: plaintexteditor/plaintexteditor.cpp:206
 #: richtextbrowser/richtextbrowser.cpp:174
-#: richtexteditor/richtexteditor.cpp:280
+#: richtexteditor/richtexteditor.cpp:279
 #, kde-format
 msgid "Speak Text"
 msgstr "Изговаряне на текст"
 
-#: plaintexteditor/plaintexteditor.cpp:383
-#: richtexteditor/richtexteditor.cpp:509
+#: plaintexteditor/plaintexteditor.cpp:382
+#: richtexteditor/richtexteditor.cpp:508
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Няма нищо за проверка."
 
-#: plaintexteditor/plaintexteditor.cpp:388
-#: richtexteditor/richtexteditor.cpp:527
+#: plaintexteditor/plaintexteditor.cpp:387
+#: richtexteditor/richtexteditor.cpp:526
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Не е намерен бекенд за проверка на правописа."
 
-#: richtexteditor/richtexteditor.cpp:272
+#: richtexteditor/richtexteditor.cpp:271
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Разрешаване на табулациите"
 
-#: richtexteditor/richtexteditor.cpp:519
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,13 +76,13 @@ msgstr ""
 "Не е намерен бекенд за проверка на правописа.Искате ли да изпратите "
 "имейлакакто е непроверен?"
 
-#: richtexteditor/richtexteditor.cpp:521
+#: richtexteditor/richtexteditor.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Изпращане"
 
-#: richtexteditor/richtexteditor.cpp:543
+#: richtexteditor/richtexteditor.cpp:542
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
