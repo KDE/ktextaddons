@@ -480,6 +480,8 @@ void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
 {
     if (!chatId.isEmpty()) {
         mTextAutoGenerateChatsModel->removeDiscussion(chatId);
+        // Drop the pending typed info too, otherwise it survives the discussion it belongs to.
+        mTextAutoGenerateChatSettings->remove(chatId);
         if (mSaveInDatabase) {
             mDatabaseManager->deleteChat(chatId);
         }
