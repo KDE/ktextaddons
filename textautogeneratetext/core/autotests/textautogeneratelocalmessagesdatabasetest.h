@@ -22,4 +22,5 @@ private Q_SLOTS:
     void shouldStoreMessages();
     void shouldDeleteMessages();
     void shouldReturnNullIfDoesNotExist();
+    void shouldDeleteDatabaseWhenConnectionWasNeverOpened();
 };

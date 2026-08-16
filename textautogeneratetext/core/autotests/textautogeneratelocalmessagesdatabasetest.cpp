@@ -176,4 +176,35 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldReturnNullIfDoesNotExist()
     // THEN
     QVERIFY(!tableModel);
 }
+
+void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteDatabaseWhenConnectionWasNeverOpened()
+{
+    // GIVEN a database file on disk without a registered connection, as after a
+    // restart where the chat was never selected.
+    TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
+    const QByteArray neverOpenedChatId = QByteArrayLiteral("neverOpenedChatId");
+    const QString neverOpenedChatIdStr = QString::fromLatin1(neverOpenedChatId);
+    const QString dbFileName = logger.dbFileName(neverOpenedChatIdStr);
+
+    TextAutoGenerateText::TextAutoGenerateMessage message;
+    message.setContent(u"never opened message"_s);
+    message.setUuid("never-opened-id");
+    message.generateHtml();
+    logger.insertOrReplaceMessage(neverOpenedChatId, message);
+    QVERIFY(QFile::exists(dbFileName));
+
+    const QString connectionName = u"messages-"_s + neverOpenedChatIdStr;
+    {
+        QSqlDatabase db = QSqlDatabase::database(connectionName, false);
+        db.close();
+    }
+    QSqlDatabase::removeDatabase(connectionName);
+    QVERIFY(!QSqlDatabase::contains(connectionName));
+
+    // WHEN
+    logger.deleteDatabase(neverOpenedChatId);
+
+    // THEN
+    QVERIFY(!QFile::exists(dbFileName));
+}
 #include "moc_textautogeneratelocalmessagesdatabasetest.cpp"

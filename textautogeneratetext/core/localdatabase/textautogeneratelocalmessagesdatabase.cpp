@@ -9,6 +9,7 @@
 #include "core/textautogeneratesearchmessageutils.h"
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
+#include <QFile>
 #include <QFileInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -37,14 +38,26 @@ void TextAutoGenerateLocalMessagesDatabase::deleteDatabase(const QByteArray &cha
     qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "deleteDatabase" << chatIdentifier;
 
     const QString chatId = QString::fromLatin1(chatIdentifier);
-    QSqlDatabase db;
-    if (!checkDataBase(chatId, db)) {
+    const QString dbName = generateDbName(chatId);
+    // The connection only exists when this chat was opened during this session.
+    // Close it in its own scope: removeDatabase() must not be called while a
+    // QSqlDatabase copy is still alive, otherwise the connection is leaked.
+    {
+        QSqlDatabase db = QSqlDatabase::database(dbName, false);
+        if (db.isValid()) {
+            db.close();
+        }
+    }
+    if (QSqlDatabase::contains(dbName)) {
+        QSqlDatabase::removeDatabase(dbName);
+    }
+    // Remove the file even when no connection was opened: the messages database is
+    // created lazily when a chat is selected, so deleting a chat which was never
+    // opened must not leave its messages behind.
+    const QString path = dbFileName(chatId);
+    if (!QFileInfo::exists(path)) {
         return;
     }
-    const QString dbName = generateDbName(chatId);
-    db.close();
-    QSqlDatabase::removeDatabase(dbName);
-    const QString path = dbFileName(chatId);
     if (!QFile(path).remove()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Impossible to remove file" << path;
     }
