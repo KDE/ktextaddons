@@ -30,4 +30,4 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT static QString generateQueryStr();
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat convertJsonToChat(const QString &json) const;
 };
-};
+}
