@@ -53,7 +53,7 @@ void TranslatorMenu::updateMenu()
     for (const auto &fromLang : fromList) {
         const QString fromLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(fromLang);
         if (fromLangI18n.isEmpty()) {
-            qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"from\" language " << fromLangI18n;
+            qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"from\" language " << fromLang;
         } else {
             for (const auto &toLang : toList) {
                 const QString toLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(toLang);
