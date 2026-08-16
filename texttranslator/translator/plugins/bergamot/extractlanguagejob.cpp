@@ -38,12 +38,14 @@ void ExtractLanguageJob::start()
     if (!tar->open(QIODevice::ReadOnly)) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open temporary file" << mSource;
         Q_EMIT finished();
+        delete tar;
         deleteLater();
         return;
     }
     if (!QDir().mkpath(BergamotEngineUtils::storageLanguagePath())) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << BergamotEngineUtils::storageLanguagePath();
         Q_EMIT finished();
+        delete tar;
         deleteLater();
         return;
     }
