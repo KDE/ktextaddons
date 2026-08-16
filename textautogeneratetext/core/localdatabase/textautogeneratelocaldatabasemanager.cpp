@@ -66,6 +66,7 @@ void TextAutoGenerateLocalDatabaseManager::deleteChat(const QByteArray &chatId)
     qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Delete Chat" << chatId;
     mChatsDatabase->deleteChat(chatId);
     mMessagesDatabase->deleteDatabase(chatId);
+    mChatPendingTypedInfoDatabase->deleteChatPendingTypedInfo(chatId);
 }
 
 void TextAutoGenerateLocalDatabaseManager::insertOrUpdateChat(const TextAutoGenerateChat &chat)
