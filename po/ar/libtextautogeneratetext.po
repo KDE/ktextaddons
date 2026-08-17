@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:42+0000\n"
+"POT-Creation-Date: 2026-08-17 00:44+0000\n"
 "PO-Revision-Date: 2026-08-10 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -354,9 +354,10 @@ msgid "Google Gemini"
 msgstr "غوغل غمناي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, kde-format
-msgid "API OpenAI"
-msgstr "واجهة برمجة تطبيقات أوبن إيه آي"
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenAI API"
+msgstr "أوبن أيه آي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -409,13 +410,15 @@ msgid "Sarvam AI instance"
 msgstr "نسخة Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, kde-format
-msgid "Orca Router OpenAI-compatible API"
+#, fuzzy, kde-format
+#| msgid "Orca Router OpenAI-compatible API"
+msgid "OrcaRouter OpenAI-compatible API"
 msgstr "واجهة برمجة تطبيقات أوركا راوتر المتوافقة مع أوبن إيه آي"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, kde-format
-msgid "API Open AI (custom)"
+#, fuzzy, kde-format
+#| msgid "API Open AI (custom)"
+msgid "OpenAI API (custom)"
 msgstr "واجهة برمجة تطبيقات أوبن إيه آي (مخصصة)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
@@ -3486,6 +3489,9 @@ msgstr "لم يعثر على أرشيف."
 #, kde-format
 msgid "No Messages Found."
 msgstr "لم يعثر على رسائل"
+
+#~ msgid "API OpenAI"
+#~ msgstr "واجهة برمجة تطبيقات أوبن إيه آي"
 
 #~ msgid "Plugins Text:"
 #~ msgstr "نص الملحقات:"

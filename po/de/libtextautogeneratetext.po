@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:42+0000\n"
+"POT-Creation-Date: 2026-08-17 00:44+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -352,7 +352,7 @@ msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
 #, kde-format
-msgid "API OpenAI"
+msgid "OpenAI API"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
@@ -407,12 +407,12 @@ msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
-msgid "Orca Router OpenAI-compatible API"
+msgid "OrcaRouter OpenAI-compatible API"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
-msgid "API Open AI (custom)"
+msgid "OpenAI API (custom)"
 msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27

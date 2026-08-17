@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:42+0000\n"
-"PO-Revision-Date: 2026-08-13 07:05+0200\n"
+"POT-Creation-Date: 2026-08-17 00:44+0000\n"
+"PO-Revision-Date: 2026-08-16 08:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -356,9 +356,10 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, kde-format
-msgid "API OpenAI"
-msgstr "API OpenAI"
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenAI API"
+msgstr "OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -411,13 +412,15 @@ msgid "Sarvam AI instance"
 msgstr "Sarvam AI-ის გაშვებული ასლი"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, kde-format
-msgid "Orca Router OpenAI-compatible API"
+#, fuzzy, kde-format
+#| msgid "Orca Router OpenAI-compatible API"
+msgid "OrcaRouter OpenAI-compatible API"
 msgstr "Orca Router-ის OpenAI-თან თავსებადი API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, kde-format
-msgid "API Open AI (custom)"
+#, fuzzy, kde-format
+#| msgid "API Open AI (custom)"
+msgid "OpenAI API (custom)"
 msgstr "API Open AI (მორგებული)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
@@ -3351,12 +3354,10 @@ msgid "Search… (%1)"
 msgstr "ძებნა… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "არხების ძებნა"
+msgstr "ჩატის ძებნა"
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
@@ -3576,6 +3577,9 @@ msgstr "არქივი ვერ მოიძებნა."
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgid "API OpenAI"
+#~ msgstr "API OpenAI"
 
 #~ msgid "Plugins Text:"
 #~ msgstr "დამატებების ტექსტი:"

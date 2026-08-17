@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:42+0000\n"
+"POT-Creation-Date: 2026-08-17 00:44+0000\n"
 "PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -371,7 +371,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
 #, fuzzy, kde-format
 #| msgid "OpenAI"
-msgid "API OpenAI"
+msgid "OpenAI API"
 msgstr "OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
@@ -431,12 +431,12 @@ msgstr "Dodaj wystąpienie…"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
-msgid "Orca Router OpenAI-compatible API"
+msgid "OrcaRouter OpenAI-compatible API"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
-msgid "API Open AI (custom)"
+msgid "OpenAI API (custom)"
 msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27
@@ -3536,6 +3536,11 @@ msgstr "Nie znaleziono żadnego archiwum."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Nie znaleziono żadnej wiadomości."
+
+#, fuzzy
+#~| msgid "OpenAI"
+#~ msgid "API OpenAI"
+#~ msgstr "OpenAI"
 
 #~ msgid "Plugins Text:"
 #~ msgstr "Tekst wtyczek:"

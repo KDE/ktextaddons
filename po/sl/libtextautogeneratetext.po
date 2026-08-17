@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:42+0000\n"
-"PO-Revision-Date: 2026-08-13 07:17+0200\n"
+"POT-Creation-Date: 2026-08-17 00:44+0000\n"
+"PO-Revision-Date: 2026-08-16 07:57+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -355,9 +355,10 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, kde-format
-msgid "API OpenAI"
-msgstr "API OpenAI"
+#, fuzzy, kde-format
+#| msgid "OpenAI"
+msgid "OpenAI API"
+msgstr "OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -410,13 +411,15 @@ msgid "Sarvam AI instance"
 msgstr "Pojavek Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, kde-format
-msgid "Orca Router OpenAI-compatible API"
+#, fuzzy, kde-format
+#| msgid "Orca Router OpenAI-compatible API"
+msgid "OrcaRouter OpenAI-compatible API"
 msgstr "API združljiv z Orca Router OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, kde-format
-msgid "API Open AI (custom)"
+#, fuzzy, kde-format
+#| msgid "API Open AI (custom)"
+msgid "OpenAI API (custom)"
 msgstr "API Open AI (po meri)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
@@ -3348,12 +3351,10 @@ msgid "Search… (%1)"
 msgstr "Išči… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Išči kanale"
+msgstr "Išči klepet"
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
@@ -3573,6 +3574,9 @@ msgstr "Ni najdenega arhiva."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Ni najdenih sporočil."
+
+#~ msgid "API OpenAI"
+#~ msgstr "API OpenAI"
 
 #~ msgid "Plugins Text:"
 #~ msgstr "Besedilo vtičnikov:"
