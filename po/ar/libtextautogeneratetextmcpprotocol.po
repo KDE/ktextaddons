@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:44+0000\n"
-"PO-Revision-Date: 2026-08-10 16:50+0400\n"
+"PO-Revision-Date: 2026-08-17 21:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -71,21 +71,18 @@ msgstr "المعاملات:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "أضف ترويسة مخصصة"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgid "Header:"
-msgstr "الترويسات:"
+msgstr "الترويسة:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "أزِل الترويسة"
+msgstr "عرّف الترويسة…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format

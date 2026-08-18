@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:44+0000\n"
-"PO-Revision-Date: 2026-08-13 08:59+0300\n"
+"PO-Revision-Date: 2026-08-17 09:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -354,10 +354,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "ה־API של OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -410,14 +409,12 @@ msgid "Sarvam AI instance"
 msgstr "עותק של Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "Orca Router OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API של Orca Router תואם OpenAI"
+msgstr "API של OrcaRouter תואם OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, fuzzy, kde-format
-#| msgid "API Open AI (custom)"
+#, kde-format
 msgid "OpenAI API (custom)"
 msgstr "ה־API של Open AI (מותאם אישית)"
 
@@ -3232,12 +3229,10 @@ msgid "Search… (%1)"
 msgstr "חיפוש… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "חיפוש ערוצים"
+msgstr "חיפוש שיחה"
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format

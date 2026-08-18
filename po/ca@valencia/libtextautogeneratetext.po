@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:44+0000\n"
-"PO-Revision-Date: 2026-08-16 09:49+0200\n"
+"PO-Revision-Date: 2026-08-17 09:19+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -359,10 +359,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "API d'OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -416,16 +415,14 @@ msgstr "Instància de Sarvam AI"
 
 # skip-rule: common-router
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "Orca Router OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API compatible amb OpenAI d'Orca Router"
+msgstr "API compatible amb OpenAI d'OrcaRouter"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, fuzzy, kde-format
-#| msgid "API Open AI (custom)"
+#, kde-format
 msgid "OpenAI API (custom)"
-msgstr "API d'Open AI (personalitzada)"
+msgstr "API d'OpenAI (personalitzada)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3605,6 +3602,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgid "API OpenAI"
-#~ msgstr "API d'OpenAI"

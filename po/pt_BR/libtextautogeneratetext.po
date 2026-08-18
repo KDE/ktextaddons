@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:44+0000\n"
-"PO-Revision-Date: 2026-08-16 07:48-0300\n"
+"PO-Revision-Date: 2026-08-17 06:56-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -356,10 +356,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "API do OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -412,16 +411,14 @@ msgid "Sarvam AI instance"
 msgstr "Instância de IA do Sarvam"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "Orca Router OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API compatível com o OpenAI do Orca Router"
+msgstr "API compatível com o OpenAI do OrcaRouter"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, fuzzy, kde-format
-#| msgid "API Open AI (custom)"
+#, kde-format
 msgid "OpenAI API (custom)"
-msgstr "API da Open AI (personalizada)"
+msgstr "API do OpenAI (personalizada)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-16 00:42+0000\n"
-"PO-Revision-Date: 2025-08-27 00:42+0000\n"
+"PO-Revision-Date: 2026-08-17 15:56+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,57 +17,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Atliktas %1 pakeitimas"
+msgstr[1] "Atlikti %1 pakeitimai"
+msgstr[2] "Atlikta %1 pakeitimų"
+msgstr[3] "Atliktas %1 pakeitimas"
 
 #: plaintexteditor/plaintexteditor.cpp:172
 #: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
-msgstr ""
+msgstr "Tikrinti rašybą…"
 
 #: plaintexteditor/plaintexteditor.cpp:175
 #: richtexteditor/richtexteditor.cpp:242
 #, kde-format
 msgid "Auto Spell Check"
-msgstr ""
+msgstr "Automatiškai tikrinti rašybą"
 
 #: plaintexteditor/plaintexteditor.cpp:180
 #: richtexteditor/richtexteditor.cpp:247
 #, kde-format
 msgid "Spell Checking Language"
-msgstr ""
+msgstr "Rašybos tikrinimo kalba"
 
 #: plaintexteditor/plaintexteditor.cpp:206
 #: richtextbrowser/richtextbrowser.cpp:174
 #: richtexteditor/richtexteditor.cpp:279
 #, kde-format
 msgid "Speak Text"
-msgstr ""
+msgstr "Skaityti tekstą balsu"
 
 #: plaintexteditor/plaintexteditor.cpp:382
 #: richtexteditor/richtexteditor.cpp:508
 #, kde-format
 msgid "Nothing to spell check."
-msgstr ""
+msgstr "Nėra ką tikrinti."
 
 #: plaintexteditor/plaintexteditor.cpp:387
 #: richtexteditor/richtexteditor.cpp:526
 #, kde-format
 msgid "No backend available for spell checking."
-msgstr ""
+msgstr "Neprieinama jokia rašybos tikrinimo vidinė pusė."
 
 #: richtexteditor/richtexteditor.cpp:271
 #, kde-format
 msgid "Allow Tabulations"
-msgstr ""
+msgstr "Leisti tabuliavimą"
 
 #: richtexteditor/richtexteditor.cpp:518
 #, kde-format
@@ -75,29 +77,31 @@ msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
+"Neprieinama jokia rašybos tikrinimo vidinė pusė. Ar norite vis tiek išsiųsti "
+"el. laišką?"
 
 #: richtexteditor/richtexteditor.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
-msgstr ""
+msgstr "Siųsti"
 
 #: richtexteditor/richtexteditor.cpp:542
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Praleisti"
 
 #: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: widgets/texteditfindbarbase.cpp:40 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: widgets/texteditfindbarbase.cpp:142
 #, kde-format
@@ -105,99 +109,101 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
+"Pasiekta laiško pabaiga.\n"
+"Nepavyko rasti frazės „%1“."
 
 #: widgets/textfindreplacewidget.cpp:26
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace"
-msgstr ""
+msgstr "Pakeisti"
 
 #: widgets/textfindreplacewidget.cpp:27
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
-msgstr ""
+msgstr "Pakeisti visas"
 
 #: widgets/textfindreplacewidget.cpp:30
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
-msgstr ""
+msgstr "Pakeisti:"
 
 #: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "Ankstesnė"
 
 #: widgets/textfindreplacewidget.cpp:68
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "Kita"
 
 #: widgets/textfindreplacewidget.cpp:74
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr ""
+msgstr "&Rasti:"
 
 #: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr ""
+msgstr "Tekstas, kurio ieškoti"
 
 #: widgets/textfindreplacewidget.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr ""
+msgstr "Peršokti prie kitos atitikties"
 
 #: widgets/textfindreplacewidget.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr ""
+msgstr "Peršokti prie ankstesnės atitikties"
 
 #: widgets/textfindreplacewidget.cpp:95
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Parinktys"
 
 #: widgets/textfindreplacewidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr ""
+msgstr "Modifikuoti paieškos elgseną"
 
 #: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Skirti raidžių dydį"
 
 #: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Whole word"
-msgstr ""
+msgstr "Visas žodis"
 
 #: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Regular Expression"
-msgstr ""
+msgstr "Reguliarusis reiškinys"
 
 #: widgets/textfindreplacewidget.cpp:108
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr ""
+msgstr "Paisyti diakritinius ženklus ir kirčius"
 
 #: widgets/textgotolinewidget.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
-msgstr ""
+msgstr "Eiti į eilutę:"
 
 #: widgets/textgotolinewidget.cpp:58
 #, kde-format
 msgid "Go"
-msgstr ""
+msgstr "Eiti"
