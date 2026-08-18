@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 02:39+0000\n"
-"PO-Revision-Date: 2026-08-10 16:50+0400\n"
+"PO-Revision-Date: 2026-08-17 21:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
 msgid "New Chat..."
-msgstr "دردشة جديدة…"
+msgstr "محادثة جديدة…"
 
 #: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
@@ -1099,8 +1099,8 @@ msgid ""
 "State of the art large language model from Microsoft AI with improved "
 "performance on complex chat, multilingual, reasoning and agent use cases."
 msgstr ""
-"نموذج لغة اللغة الكبيرة من Microsoft AI مع تحسين الأداء على الدردشة المعقدة، "
-"والتعدد اللغات، والتفكير واستخدام الوكلاء."
+"نموذج لغة اللغة الكبيرة من Microsoft AI مع تحسين الأداء على المحادثة "
+"المعقدة، والتعدد اللغات، والتفكير واستخدام الوكلاء."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:63
 #, kde-format
@@ -1481,7 +1481,7 @@ msgid ""
 "feedback focused on improving chatbot helpfulness."
 msgstr ""
 "Starling هو نموذج لغوي كبير دُرِّب بالتعلم التعزيزي من ملاحظات الذكاء "
-"الاصطناعي، ويركز على تحسين فائدة مساعد الدردشة (chatbot)."
+"الاصطناعي، ويركز على تحسين فائدة مساعد المحادثة (chatbot)."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:127
 #, kde-format
@@ -1516,7 +1516,7 @@ msgid ""
 "for use in summarization, text generation, and chat bots."
 msgstr ""
 "نموذج لغوي كبير بُنِيَ بواسطة معهد الابتكار التكنولوجي (TII) للاستخدام في "
-"التلخيص، وتوليد النصوص، وروبوتات الدردشة."
+"التلخيص، وتوليد النصوص، وروبوتات المحادثة."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:134
 #, kde-format
@@ -1887,7 +1887,7 @@ msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
 "use cases."
 msgstr ""
-"نموذج محادثة قوي صُمِّم لِيُستخدَم في كل من حالات استخدام الدردشة والتعليمات."
+"نموذج محادثة قوي صُمِّم لِيُستخدَم في كل من حالات استخدام المحادثة والتعليمات."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:193
 #, kde-format
@@ -1937,7 +1937,7 @@ msgid ""
 "and 8B models, supporting chat in English and Chinese languages."
 msgstr ""
 "OpenCoder هي عائلة نماذج تعليمات برمجية (code LLM) مفتوحة المصدر وقابلة "
-"لإعادة الإنتاج، تتضمن نماذج 1.5B و 8B، وتدعم الدردشة باللغتين الإنجليزية "
+"لإعادة الإنتاج، تتضمن نماذج 1.5B و 8B، وتدعم المحادثة باللغتين الإنجليزية "
 "والصينية."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:203
@@ -3179,7 +3179,7 @@ msgstr "محادثة"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "دردشة جديدة"
+msgstr "محادثة جديدة"
 
 #: widgets/textautogenerateheaderwidget.cpp:54
 #, kde-format
@@ -3203,13 +3203,13 @@ msgstr "ابحث القنوات"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr "الدردشة السابقة"
+msgstr "المحادثة السابقة"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "الدردشة التالية"
+msgstr "المحادثة التالية"
 
 #: widgets/textautogeneratesearchdialog.cpp:29
 #, kde-format
@@ -3365,7 +3365,7 @@ msgstr "أدرج نصًا"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "دردشة جديدة"
+msgstr "محادثة جديدة"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:142
 #, kde-format

@@ -325,9 +325,3 @@ msgstr "<h1><i> Версия %1 (Издадена: %2)</i></h1><hr/><br>"
 #, kde-format
 msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgstr "<h1><i> Версия %1 (Все още неиздадена)</i></h1><hr/><br>"
-
-#~ msgid "Version %1"
-#~ msgstr "Версия %1"
-
-#~ msgid "No new version found."
-#~ msgstr "Не е намерена нова версия."
