@@ -182,10 +182,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>补全词元：</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "工具插件"
+msgstr "工具插件："
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
@@ -333,10 +332,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "OrcaRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -355,10 +353,9 @@ msgid "Google Gemini"
 msgstr "谷歌 Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -411,10 +408,9 @@ msgid "Sarvam AI instance"
 msgstr "Sarvam AI 实例"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "AtlasCloud OpenAI 兼容 API"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
@@ -2898,8 +2894,7 @@ msgid "Text Plugins"
 msgstr "文本插件"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "工具插件"
 
@@ -3069,11 +3064,9 @@ msgid "Configure…"
 msgstr "配置…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "复制 URL"
+msgstr "自定义 URL："
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3081,26 +3074,24 @@ msgid "Max Tokens:"
 msgstr "最大词元数："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "文本插件"
+msgstr "文本插件："
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "杂项"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "旅行"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgid "Category:"
-msgstr "类别"
+msgstr "类别："
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3112,15 +3103,13 @@ msgstr "描述："
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr ""
+msgstr "添加提示词…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "移除模型"
+msgstr "移除提示词"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3189,12 +3178,10 @@ msgid "Search… (%1)"
 msgstr "搜索… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "搜索频道"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
@@ -3414,14 +3401,3 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
-
-#, fuzzy
-#~| msgid "OpenAI"
-#~ msgid "API OpenAI"
-#~ msgstr "OpenAI"
-
-#~ msgid "Plugins Text:"
-#~ msgstr "插件文本："
-
-#~ msgid "Plugins Tool:"
-#~ msgstr "插件工具："

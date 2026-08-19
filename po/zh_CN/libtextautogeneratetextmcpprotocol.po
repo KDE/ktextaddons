@@ -71,11 +71,10 @@ msgstr "参数："
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "添加自定义标头"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgid "Header:"
 msgstr "标头："
 
@@ -83,7 +82,7 @@ msgstr "标头："
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr ""
+msgstr "定义标头…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
@@ -106,13 +105,13 @@ msgstr "移除"
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "您确定要删除此标头吗？"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr ""
+msgstr "移除标头"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format

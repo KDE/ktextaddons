@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 00:45+0000\n"
-"PO-Revision-Date: 2019-04-20 03:34+0200\n"
+"PO-Revision-Date: 2026-08-19 14:04+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,58 +17,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
-msgstr ""
+msgstr "Bet koks tekstas, kurį tikrinti."
 
 #: common/grammarresulttextedit.cpp:89
 #, kde-format
 msgid "Replacement"
-msgstr ""
+msgstr "Pakeitimas"
 
 #: common/grammarresulttextedit.cpp:98
 #, kde-format
 msgid "Online Grammar Information"
-msgstr ""
+msgstr "Internetinė informacija apie gramatiką"
 
 #: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Check Again"
-msgstr ""
+msgstr "Tikrinti dar kartą"
 
 #: common/grammarresulttextedit.cpp:114
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Konfigūruoti…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
 msgid "See on: %1"
-msgstr ""
+msgstr "Žiūrėkite: %1"
 
 #: common/grammarresultwidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: grammalecte/grammalecteconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr ""
+msgstr "Konfigūruoti Grammalecte"
 
 #: grammalecte/grammalecteconfigwidget.cpp:37
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Bendra"
 
 #: grammalecte/grammalecteconfigwidget.cpp:38
 #, kde-format
 msgid "Grammar Settings"
-msgstr ""
+msgstr "Gramatikos nuostatos"
 
 #: grammalecte/grammalecteconfigwidget.cpp:63
 #, kde-format
@@ -76,40 +77,41 @@ msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
 msgstr ""
+"Neįmanoma gauti parinkčių. Įsitikinkite, kad esate įsidiegę grammalected."
 
 #: grammalecte/grammalecteconfigwidget.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "Klaida išpakavimo parinkčių metu"
 
 #: grammalecte/grammalecteconfigwidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
-msgstr ""
+msgstr "Paspauskite mygtuką norėdami įkelti nuostatas iš naujo"
 
 #: grammalecte/grammalecteconfigwidget.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
-msgstr ""
+msgstr "Įkelti nuostatas iš naujo"
 
 #: grammalecte/grammalecteconfigwidget.cpp:138
 #, kde-format
 msgid "Python Path:"
-msgstr ""
+msgstr "Python kelias:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:142
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "Pridėkite visą 'grammalecte-cli.py' kelią"
 
 #: grammalecte/grammalecteconfigwidget.cpp:144
 #, kde-format
 msgid "Grammalecte Path:"
-msgstr ""
+msgstr "Grammalecte kelias:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:150
 #, kde-format
@@ -117,234 +119,236 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte galima rasti <a href=\"https://grammalecte.net/#download\">čia</"
+"a>. Atsisiųskite jį ir išpakuokite."
 
 #: grammalecte/grammalecteresultwidget.cpp:56
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "Trūksta Python kelio."
 
 #: grammalecte/grammalecteresultwidget.cpp:60
 #, kde-format
 msgid "Grammalecte path not found."
-msgstr ""
+msgstr "Nerastas Grammalecte kelias."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr ""
+msgstr "Nerastas Grammalecte programos failas."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
-msgstr ""
+msgstr "Nerastas Grammalecte komandų eilutės (cli) failas."
 
 #: grammalecte/grammalecteresultwidget.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
-msgstr ""
+msgstr "Grammalecte klaida"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:35
 #, kde-format
 msgid "Select Path"
-msgstr ""
+msgstr "Pasirinkti kelią"
 
 #: languagetool/languagetoolcombobox.cpp:32
 #, kde-format
 msgid "Asturian"
-msgstr ""
+msgstr "Astūrų"
 
 #: languagetool/languagetoolcombobox.cpp:33
 #, kde-format
 msgid "English"
-msgstr ""
+msgstr "Anglų"
 
 #: languagetool/languagetoolcombobox.cpp:34
 #, kde-format
 msgid "English (Australian)"
-msgstr ""
+msgstr "Anglų (Australų)"
 
 #: languagetool/languagetoolcombobox.cpp:35
 #, kde-format
 msgid "English (Canadian)"
-msgstr ""
+msgstr "Anglų (Kanadiečių)"
 
 #: languagetool/languagetoolcombobox.cpp:36
 #, kde-format
 msgid "Belarusian"
-msgstr ""
+msgstr "Baltarusių"
 
 #: languagetool/languagetoolcombobox.cpp:37
 #, kde-format
 msgid "Breton"
-msgstr ""
+msgstr "Bretonų"
 
 #: languagetool/languagetoolcombobox.cpp:38
 #, kde-format
 msgid "Catalan"
-msgstr ""
+msgstr "Katalonų"
 
 #: languagetool/languagetoolcombobox.cpp:39
 #, kde-format
 msgid "Chinese"
-msgstr ""
+msgstr "Kinų"
 
 #: languagetool/languagetoolcombobox.cpp:40
 #, kde-format
 msgid "Danish"
-msgstr ""
+msgstr "Danų"
 
 #: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
 msgid "Dutch"
-msgstr ""
+msgstr "Olandų"
 
 #: languagetool/languagetoolcombobox.cpp:42
 #, kde-format
 msgid "Esperanto"
-msgstr ""
+msgstr "Esperanto"
 
 #: languagetool/languagetoolcombobox.cpp:43
 #, kde-format
 msgid "French"
-msgstr ""
+msgstr "Prancūzų"
 
 #: languagetool/languagetoolcombobox.cpp:44
 #, kde-format
 msgid "Galician"
-msgstr ""
+msgstr "Galisų"
 
 #: languagetool/languagetoolcombobox.cpp:45
 #, kde-format
 msgid "German"
-msgstr ""
+msgstr "Vokiečių"
 
 #: languagetool/languagetoolcombobox.cpp:46
 #, kde-format
 msgid "Greek"
-msgstr ""
+msgstr "Graikų"
 
 #: languagetool/languagetoolcombobox.cpp:47
 #, kde-format
 msgid "Italian"
-msgstr ""
+msgstr "Italų"
 
 #: languagetool/languagetoolcombobox.cpp:48
 #, kde-format
 msgid "Japanese"
-msgstr ""
+msgstr "Japonų"
 
 #: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Khmer"
-msgstr ""
+msgstr "Chmerų"
 
 #: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "Persų"
 
 #: languagetool/languagetoolcombobox.cpp:51
 #, kde-format
 msgid "Polish"
-msgstr ""
+msgstr "Lenkų"
 
 #: languagetool/languagetoolcombobox.cpp:52
 #, kde-format
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugalų"
 
 #: languagetool/languagetoolcombobox.cpp:53
 #, kde-format
 msgid "Romanian"
-msgstr ""
+msgstr "Rumunų"
 
 #: languagetool/languagetoolcombobox.cpp:54
 #, kde-format
 msgid "Russian"
-msgstr ""
+msgstr "Rusų"
 
 #: languagetool/languagetoolcombobox.cpp:55
 #, kde-format
 msgid "Slovak"
-msgstr ""
+msgstr "Slovakų"
 
 #: languagetool/languagetoolcombobox.cpp:56
 #, kde-format
 msgid "Slovenian"
-msgstr ""
+msgstr "Slovėnų"
 
 #: languagetool/languagetoolcombobox.cpp:57
 #, kde-format
 msgid "Spanish"
-msgstr ""
+msgstr "Ispanų"
 
 #: languagetool/languagetoolcombobox.cpp:58
 #, kde-format
 msgid "Swedish"
-msgstr ""
+msgstr "Švedų"
 
 #: languagetool/languagetoolcombobox.cpp:59
 #, kde-format
 msgid "Tagalog"
-msgstr ""
+msgstr "Tagalų"
 
 #: languagetool/languagetoolcombobox.cpp:60
 #, kde-format
 msgid "Tamil"
-msgstr ""
+msgstr "Tamilų"
 
 #: languagetool/languagetoolcombobox.cpp:61
 #, kde-format
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrainiečių"
 
 #: languagetool/languagetoolconfigdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr ""
+msgstr "Konfigūruoti LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
-msgstr ""
+msgstr "Naudoti vietinį egzempliorių"
 
 #: languagetool/languagetoolconfigwidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
-msgstr ""
+msgstr "Egzemplioriaus kelias:"
 
 #: languagetool/languagetoolconfigwidget.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
-msgstr ""
+msgstr "Kalba:"
 
 #: languagetool/languagetoolconfigwidget.cpp:69
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "Atnaujinti"
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgid "An error was reported: %1"
-msgstr ""
+msgstr "Buvo pranešta apie klaidą: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "Nepavyko patikrinti gramatikos."
 
 #: languagetool/languagetoolresultwidget.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
-msgstr ""
+msgstr "Tikrinti"
 
 #: languagetool/languagetoolupdatecombobox.cpp:76
 #, kde-format
@@ -352,9 +356,11 @@ msgid ""
 "An error occurred attempting to load the list of available languages:\n"
 "%1"
 msgstr ""
+"Įvyko klaida bandant įkelti prieinamų kalbų sąrašą:\n"
+"%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
-msgstr ""
+msgstr "Kalbų sąrašas"
