@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:44+0000\n"
-"PO-Revision-Date: 2026-05-19 00:43+0000\n"
+"PO-Revision-Date: 2026-08-19 02:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,144 +17,145 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/server/mcpserver.cpp:103
 #, kde-format
 msgid "Sse"
-msgstr ""
+msgstr "Sse"
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
 msgid "Standard IO"
-msgstr ""
+msgstr "Standartinis IO"
 
 #: core/server/mcpserver.cpp:107
 #, kde-format
 msgid "Streamable HTTP"
-msgstr ""
+msgstr "Srautiniu būdu perduodamas HTTP"
 
 #: widgets/server/addmcpserverdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
-msgstr ""
+msgstr "Pridėti serverį"
 
 #: widgets/server/addmcpserverwidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Pavadinimas:"
 
 #: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Type:"
-msgstr ""
+msgstr "Tipas:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:24
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:26
 #, kde-format
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:24
 #, kde-format
 msgid "Command:"
-msgstr ""
+msgstr "Komanda:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:29
 #, kde-format
 msgid "Arguments:"
-msgstr ""
+msgstr "Argumentai:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "Pridėti tinkintą antraštę"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgid "Header:"
-msgstr ""
+msgstr "Antraštė:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr ""
+msgstr "Apibrėžti antraštę…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "Pridėti"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr ""
+msgstr "Modifikuoti"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr ""
+msgstr "Šalinti"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "Ar tikrai norite ištrinti šią antraštę?"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr ""
+msgstr "Šalinti antraštę"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr ""
+msgstr "Antraštės:"
 
 #: widgets/server/mcpserverlistview.cpp:52
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
-msgstr ""
+msgstr "Pridėti serverį…"
 
 #: widgets/server/mcpserverlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Taisyti…"
 
 #: widgets/server/mcpserverlistview.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
-msgstr ""
+msgstr "Šalinti serverį"
 
 #: widgets/server/mcpserverlistview.cpp:73
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
-msgstr ""
+msgstr "Ar tikrai norite pašalinti šį serverį (%1)?"
 
 #: widgets/server/mcpserverlistview.cpp:74
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
-msgstr ""
+msgstr "Šalinti serverį"
 
 #: widgets/server/mcpserverwidget.cpp:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "Ieškoti…"
 
 #: widgets/server/mcpserverwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr ""
+msgstr "Pridėti egzempliorių…"

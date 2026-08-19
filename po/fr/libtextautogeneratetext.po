@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:44+0000\n"
-"PO-Revision-Date: 2026-08-14 11:49+0200\n"
+"PO-Revision-Date: 2026-08-17 09:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -3410,12 +3410,10 @@ msgid "Search… (%1)"
 msgstr "Rechercher... (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Rechercher des canaux"
+msgstr "Rechercher une discussion"
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
