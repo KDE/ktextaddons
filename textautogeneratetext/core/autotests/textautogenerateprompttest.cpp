@@ -5,12 +5,14 @@
 */
 #include "textautogenerateprompttest.h"
 #include "core/prompts/textautogenerateprompt.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGeneratePromptTest)
 using namespace Qt::Literals::StringLiterals;
 TextAutoGeneratePromptTest::TextAutoGeneratePromptTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGeneratePromptTest::shouldHaveDefaultValues()

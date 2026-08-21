@@ -5,12 +5,14 @@
 */
 #include "textautogenerateattachmentutilstest.h"
 #include "core/textautogenerateattachmentutils.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateAttachmentUtilsTest)
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateAttachmentUtilsTest::TextAutoGenerateAttachmentUtilsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateAttachmentUtilsTest::shouldGenerateAttachmentType()

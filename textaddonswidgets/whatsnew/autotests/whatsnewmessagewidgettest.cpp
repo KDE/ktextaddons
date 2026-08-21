@@ -5,11 +5,13 @@
 */
 #include "whatsnewmessagewidgettest.h"
 #include "whatsnew/whatsnewmessagewidget.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(WhatsNewMessageWidgetTest)
 WhatsNewMessageWidgetTest::WhatsNewMessageWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void WhatsNewMessageWidgetTest::shouldHaveDefaultValues()

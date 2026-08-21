@@ -15,6 +15,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_MAIN(TextToSpeechConfigWidgetTest)
@@ -23,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 TextToSpeechConfigWidgetTest::TextToSpeechConfigWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 TextToSpeechConfigWidgetTest::~TextToSpeechConfigWidgetTest() = default;

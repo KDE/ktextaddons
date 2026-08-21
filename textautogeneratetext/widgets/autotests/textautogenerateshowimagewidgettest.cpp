@@ -11,6 +11,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QSlider>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateShowImageWidgetTest)
@@ -18,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateShowImageWidgetTest::TextAutoGenerateShowImageWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateShowImageWidgetTest::shouldHaveDefaultValues()

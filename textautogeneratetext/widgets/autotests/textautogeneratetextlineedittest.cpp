@@ -6,12 +6,14 @@
 
 #include "textautogeneratetextlineedittest.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateTextLineEditTest)
 
 TextAutoGenerateTextLineEditTest::TextAutoGenerateTextLineEditTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateTextLineEditTest::shouldHaveDefaultValues()

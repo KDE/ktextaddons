@@ -8,11 +8,13 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "managermodeltranslator.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(ManagerModelTranslatorTest)
 ManagerModelTranslatorTest::ManagerModelTranslatorTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void ManagerModelTranslatorTest::shouldHaveDefaultValues()

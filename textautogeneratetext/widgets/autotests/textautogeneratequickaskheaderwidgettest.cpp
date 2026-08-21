@@ -10,6 +10,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
@@ -19,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateQuickAskHeaderWidgetTest::TextAutoGenerateQuickAskHeaderWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()

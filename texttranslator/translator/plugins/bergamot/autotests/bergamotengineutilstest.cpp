@@ -8,12 +8,14 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotengineutils.h"
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_GUILESS_MAIN(BergamotEngineUtilsTest)
 BergamotEngineUtilsTest::BergamotEngineUtilsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void BergamotEngineUtilsTest::shouldDefaultBergamotRepository()

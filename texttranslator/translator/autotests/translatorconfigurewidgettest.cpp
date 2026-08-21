@@ -9,6 +9,7 @@
 #include "translator/widgets/translatorconfigurecombowidget.h"
 #include "translator/widgets/translatorconfigurewidget.h"
 #include <QLabel>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TranslatorConfigureWidgetTest)
@@ -16,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 TranslatorConfigureWidgetTest::TranslatorConfigureWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TranslatorConfigureWidgetTest::shouldHaveDefaultValues()

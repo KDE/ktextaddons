@@ -12,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "texttospeechwidget.h"
 #include <QHBoxLayout>
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
@@ -21,6 +22,7 @@ QTEST_MAIN(TextToSpeechWidgetTest)
 TextToSpeechWidgetTest::TextToSpeechWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
     qRegisterMetaType<TextEditTextToSpeech::TextToSpeechWidget::State>();
     QIcon::setThemeName(u"breeze"_s);
 }

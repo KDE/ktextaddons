@@ -7,12 +7,14 @@
 
 #include "ollamasettings.h"
 #include <QProcessEnvironment>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaSettingsTest)
 using namespace Qt::Literals::StringLiterals;
 OllamaSettingsTest::OllamaSettingsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaSettingsTest::shouldHaveDefaultValues()

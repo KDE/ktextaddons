@@ -8,6 +8,7 @@
 #include "modelsmanager/ollamamodeldownloadprogresswidget.h"
 #include <QLabel>
 #include <QProgressBar>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -17,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaModelDownloadProgressWidgetTest::OllamaModelDownloadProgressWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaModelDownloadProgressWidgetTest::shouldHaveDefaultValues()

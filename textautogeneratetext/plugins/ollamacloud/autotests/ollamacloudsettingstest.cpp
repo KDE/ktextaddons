@@ -5,12 +5,14 @@
 */
 #include "ollamacloudsettingstest.h"
 #include "ollamacloudsettings.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaCloudSettingsTest)
 
 OllamaCloudSettingsTest::OllamaCloudSettingsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaCloudSettingsTest::shouldHaveDefaultValues()

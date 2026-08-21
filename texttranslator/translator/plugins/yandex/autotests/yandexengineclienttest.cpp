@@ -8,6 +8,7 @@
 #include <TextTranslator/TranslatorEnginePlugin>
 
 #include "../yandexengineclient.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <memory>
 QTEST_MAIN(YandexEngineClientTest)
@@ -16,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 YandexEngineClientTest::YandexEngineClientTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void YandexEngineClientTest::shouldHaveDefaultValues()

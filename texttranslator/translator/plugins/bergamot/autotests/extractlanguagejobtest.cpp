@@ -6,12 +6,14 @@
 
 #include "extractlanguagejobtest.h"
 #include "extractlanguagejob.h"
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_GUILESS_MAIN(ExtractLanguageJobTest)
 ExtractLanguageJobTest::ExtractLanguageJobTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void ExtractLanguageJobTest::shouldHaveDefaultValues()

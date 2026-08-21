@@ -6,12 +6,14 @@
 
 #include "downloadlanguagejobtest.h"
 #include "downloadlanguagejob.h"
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_GUILESS_MAIN(DownloadLanguageJobTest)
 DownloadLanguageJobTest::DownloadLanguageJobTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DownloadLanguageJobTest::shouldHaveDefaultValues()

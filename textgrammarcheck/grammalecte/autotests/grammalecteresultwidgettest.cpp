@@ -9,6 +9,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "common/grammarresulttextedit.h"
 #include "grammalecte/grammalecteresultwidget.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -17,6 +18,7 @@ QTEST_MAIN(GrammarResultWidgetTest)
 GrammarResultWidgetTest::GrammarResultWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void GrammarResultWidgetTest::shouldHaveDefaultValue()

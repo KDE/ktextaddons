@@ -6,12 +6,14 @@
 #include "textautogeneratesearchpromptwidgettest.h"
 #include "widgets/promptswidget/textautogeneratesearchpromptwidget.h"
 #include <QHBoxLayout>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateSearchPromptWidgetTest)
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateSearchPromptWidgetTest::TextAutoGenerateSearchPromptWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateSearchPromptWidgetTest::shouldHaveDefaultValues()

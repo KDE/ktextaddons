@@ -9,12 +9,14 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(TextAutoGeneratePromptWidgetTest)
 using namespace Qt::Literals::StringLiterals;
 TextAutoGeneratePromptWidgetTest::TextAutoGeneratePromptWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGeneratePromptWidgetTest::shouldHaveDefaultValues()

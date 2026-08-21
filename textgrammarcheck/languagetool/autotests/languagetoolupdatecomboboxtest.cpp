@@ -6,12 +6,14 @@
 
 #include "languagetoolupdatecomboboxtest.h"
 #include "languagetool/languagetoolupdatecombobox.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(LanguageToolUpdateComboBoxTest)
 
 LanguageToolUpdateComboBoxTest::LanguageToolUpdateComboBoxTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void LanguageToolUpdateComboBoxTest::shouldHaveDefaultValues()

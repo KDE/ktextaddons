@@ -7,6 +7,7 @@
 
 #include "widgets/quickask/textautogeneratequickaskwidget.h"
 #include <QStackedWidget>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateQuickAskWidgetTest)
@@ -14,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateQuickAskWidgetTest::TextAutoGenerateQuickAskWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateQuickAskWidgetTest::shouldHaveDefaultValues()

@@ -5,6 +5,7 @@
 */
 #include "ollamacommonoptionswidgettest.h"
 #include "ollamacommonoptionswidget.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(OllamaCommonOptionsWidgetTest)
@@ -12,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaCommonOptionsWidgetTest::OllamaCommonOptionsWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaCommonOptionsWidgetTest::shouldHaveDefaultValues()

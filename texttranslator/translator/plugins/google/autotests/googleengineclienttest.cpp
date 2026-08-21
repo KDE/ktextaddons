@@ -6,6 +6,7 @@
 
 #include "googleengineclienttest.h"
 #include "../googleengineclient.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <TextTranslator/TranslatorEnginePlugin>
 #include <memory>
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 GoogleEngineClientTest::GoogleEngineClientTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void GoogleEngineClientTest::shouldHaveDefaultValues()

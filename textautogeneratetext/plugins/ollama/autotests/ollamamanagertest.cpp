@@ -6,11 +6,13 @@
 
 #include "ollamamanagertest.h"
 #include "ollamamanager.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(OllamaManagerTest)
 OllamaManagerTest::OllamaManagerTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaManagerTest::shouldHaveDefaultValues()

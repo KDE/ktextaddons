@@ -7,12 +7,14 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginelanguagewidget.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(BergamotEngineLanguageWidgetTest)
 BergamotEngineLanguageWidgetTest::BergamotEngineLanguageWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void BergamotEngineLanguageWidgetTest::shouldHaveDefaultValues()

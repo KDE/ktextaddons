@@ -9,6 +9,7 @@
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
 #include <QLineEdit>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -17,6 +18,7 @@ QTEST_MAIN(TextAutoGenerateTextInstancesManagerWidgetTest)
 TextAutoGenerateTextInstancesManagerWidgetTest::TextAutoGenerateTextInstancesManagerWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateTextInstancesManagerWidgetTest::shouldHaveDefaultValues()

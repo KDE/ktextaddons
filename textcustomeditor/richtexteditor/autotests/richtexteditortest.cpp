@@ -6,11 +6,13 @@
 
 #include "richtexteditortest.h"
 #include "richtexteditor/richtexteditor.h"
+#include <QStandardPaths>
 #include <QTest>
 
 RichTextEditorTest::RichTextEditorTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 RichTextEditorTest::~RichTextEditorTest() = default;

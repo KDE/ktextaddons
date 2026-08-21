@@ -5,12 +5,14 @@
 */
 #include "genericnetworkmodelavailablewidgettest.h"
 #include "modelsmanager/genericnetworkmodelavailablewidget.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(GenericNetworkModelAvailableWidgetTest)
 
 GenericNetworkModelAvailableWidgetTest::GenericNetworkModelAvailableWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void GenericNetworkModelAvailableWidgetTest::shouldHaveDefaultValues()

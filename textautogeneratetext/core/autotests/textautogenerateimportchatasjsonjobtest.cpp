@@ -7,6 +7,7 @@
 #include "textautogenerateimportchatasjsonjobtest.h"
 
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTest>
 
@@ -17,6 +18,7 @@ QTEST_GUILESS_MAIN(TextAutoGenerateImportChatAsJsonJobTest)
 TextAutoGenerateImportChatAsJsonJobTest::TextAutoGenerateImportChatAsJsonJobTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateImportChatAsJsonJobTest::shouldRemapMessageAndAnswerUuids()

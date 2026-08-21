@@ -8,6 +8,7 @@
 
 #include "common/grammarresulttextedit.h"
 #include "languagetool/languagetoolresultwidget.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(LanguageToolResultWidgetTest)
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 LanguageToolResultWidgetTest::LanguageToolResultWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void LanguageToolResultWidgetTest::shouldHaveDefaultValue()

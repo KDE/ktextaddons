@@ -7,12 +7,14 @@
 #include "widgets/common/textautogeneratetextlineeditattachmentwidget.h"
 #include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 
+#include <QStandardPaths>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(TextAutoGenerateTextLineEditAttachmentWidgetTest)
 TextAutoGenerateTextLineEditAttachmentWidgetTest::TextAutoGenerateTextLineEditAttachmentWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateTextLineEditAttachmentWidgetTest::shouldHaveDefaultValues()

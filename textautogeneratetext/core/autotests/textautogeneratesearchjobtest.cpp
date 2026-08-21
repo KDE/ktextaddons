@@ -6,12 +6,14 @@
 
 #include "textautogeneratesearchjobtest.h"
 #include "core/jobs/textautogeneratesearchjob.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateSearchJobTest)
 
 TextAutoGenerateSearchJobTest::TextAutoGenerateSearchJobTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateSearchJobTest::shouldHaveDefaultValues()

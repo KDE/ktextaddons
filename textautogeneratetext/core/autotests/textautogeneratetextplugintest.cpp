@@ -6,11 +6,13 @@
 
 #include "textautogeneratetextplugintest.h"
 #include "core/textautogeneratetextplugin.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateTextPluginTest)
 TextAutoGenerateTextPluginTest::TextAutoGenerateTextPluginTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateTextPluginTest::shouldSendToLLMInfoDefaultValues()

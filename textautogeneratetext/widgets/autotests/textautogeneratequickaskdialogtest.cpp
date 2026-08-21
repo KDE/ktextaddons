@@ -5,12 +5,14 @@
 */
 #include "textautogeneratequickaskdialogtest.h"
 #include "widgets/quickask/textautogeneratequickaskdialog.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateQuickAskDialogTest)
 
 TextAutoGenerateQuickAskDialogTest::TextAutoGenerateQuickAskDialogTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateQuickAskDialogTest::shouldHaveDefaultValues()

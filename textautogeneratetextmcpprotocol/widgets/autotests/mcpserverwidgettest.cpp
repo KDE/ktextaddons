@@ -9,6 +9,7 @@
 #include "server/mcpserverlistview.h"
 #include "server/mcpserverwidget.h"
 #include <QLineEdit>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -17,6 +18,7 @@ QTEST_MAIN(McpServerWidgetTest)
 McpServerWidgetTest::McpServerWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void McpServerWidgetTest::shouldHaveDefaultValues()

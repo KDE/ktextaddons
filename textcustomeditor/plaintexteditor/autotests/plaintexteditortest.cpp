@@ -6,11 +6,13 @@
 
 #include "plaintexteditortest.h"
 #include "plaintexteditor/plaintexteditor.h"
+#include <QStandardPaths>
 #include <QTest>
 
 PlainTextEditorTest::PlainTextEditorTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 PlainTextEditorTest::~PlainTextEditorTest() = default;

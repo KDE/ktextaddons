@@ -5,12 +5,14 @@
 */
 #include "ollamaonlinesettingstest.h"
 #include "ollamaonlinesettings.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaOnlineSettingsTest)
 
 OllamaOnlineSettingsTest::OllamaOnlineSettingsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaOnlineSettingsTest::shouldHaveDefaultValues()

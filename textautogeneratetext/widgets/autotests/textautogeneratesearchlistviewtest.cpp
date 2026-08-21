@@ -5,12 +5,14 @@
 */
 #include "textautogeneratesearchlistviewtest.h"
 #include "widgets/view/textautogeneratesearchlistview.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateSearchListViewTest)
 
 TextAutoGenerateSearchListViewTest::TextAutoGenerateSearchListViewTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateSearchListViewTest::shouldHaveDefaultValues()

@@ -6,12 +6,14 @@
 
 #include "mcpprotocolsettingstest.h"
 #include "common/mcpprotocolsettings.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolSettingsTest)
 
 McpProtocolSettingsTest::McpProtocolSettingsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void McpProtocolSettingsTest::shouldHaveDefaultValues()

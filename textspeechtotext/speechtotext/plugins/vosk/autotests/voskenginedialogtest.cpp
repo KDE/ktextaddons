@@ -16,6 +16,7 @@ QTEST_MAIN(VoskEngineDialogTest)
 VoskEngineDialogTest::VoskEngineDialogTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void VoskEngineDialogTest::shouldHaveDefaultValues()

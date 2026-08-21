@@ -8,12 +8,14 @@
 #include "languagetool/languagetoolgrammarerror.h"
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(LanguageToolGrammarErrorTest)
 using namespace Qt::Literals::StringLiterals;
 LanguageToolGrammarErrorTest::LanguageToolGrammarErrorTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void LanguageToolGrammarErrorTest::shouldParseJson_data()

@@ -6,6 +6,7 @@
 #include "genericnetworkserverinfotest.h"
 
 #include "genericnetworkserverinfo.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(GenericNetworkServerInfoTest)
 
@@ -13,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 GenericNetworkServerInfoTest::GenericNetworkServerInfoTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()

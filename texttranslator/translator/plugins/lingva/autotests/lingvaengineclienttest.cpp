@@ -8,6 +8,7 @@
 
 #include "../lingvaengineclient.h"
 #include "translator/translatorengineplugin.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(LingvaEngineClientTest)
 
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 LingvaEngineClientTest::LingvaEngineClientTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void LingvaEngineClientTest::shouldHaveDefaultValues()

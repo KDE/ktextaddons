@@ -7,6 +7,7 @@
 
 #include "widgets/common/textautogeneratenotworkingwidget.h"
 #include <KMessageWidget>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateNotWorkingWidgetTest)
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateNotWorkingWidgetTest::TextAutoGenerateNotWorkingWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateNotWorkingWidgetTest::shouldHaveDefaultValues()

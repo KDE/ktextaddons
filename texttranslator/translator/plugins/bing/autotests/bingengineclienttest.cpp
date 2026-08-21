@@ -8,6 +8,7 @@
 #include <TextTranslator/TranslatorEnginePlugin>
 
 #include "../bingengineclient.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <memory>
 QTEST_MAIN(BingEngineClientTest)
@@ -16,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 BingEngineClientTest::BingEngineClientTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void BingEngineClientTest::shouldHaveDefaultValues()

@@ -6,6 +6,7 @@
 #include "textautogeneratetoolpluginconfigurewidgettest.h"
 #include "widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.h"
 #include <QLabel>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateToolPluginConfigureWidgetTest::TextAutoGenerateToolPluginConfigureWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateToolPluginConfigureWidgetTest::shouldHaveDefaultValues()

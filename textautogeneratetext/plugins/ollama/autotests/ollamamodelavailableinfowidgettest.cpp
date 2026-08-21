@@ -5,12 +5,14 @@
 */
 #include "ollamamodelavailableinfowidgettest.h"
 #include "modelsmanager/ollamamodelavailableinfowidget.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(OllamaModelAvailableInfoWidgetTest)
 
 OllamaModelAvailableInfoWidgetTest::OllamaModelAvailableInfoWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaModelAvailableInfoWidgetTest::shouldHaveDefaultValues()

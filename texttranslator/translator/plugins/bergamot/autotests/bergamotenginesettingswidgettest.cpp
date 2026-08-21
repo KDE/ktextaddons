@@ -10,12 +10,14 @@ using namespace Qt::Literals::StringLiterals;
 #include "bergamotenginesettingswidget.h"
 #include <QComboBox>
 #include <QGroupBox>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(BergamotEngineSettingsWidgetTest)
 BergamotEngineSettingsWidgetTest::BergamotEngineSettingsWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void BergamotEngineSettingsWidgetTest::shouldHaveDefaultValues()

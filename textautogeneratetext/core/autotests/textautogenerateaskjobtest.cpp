@@ -5,12 +5,14 @@
 */
 #include "textautogenerateaskjobtest.h"
 #include "core/jobs/textautogenerateaskjob.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateAskJobTest)
 
 TextAutoGenerateAskJobTest::TextAutoGenerateAskJobTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateAskJobTest::shouldHaveDefaultValues()

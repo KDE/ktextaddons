@@ -7,6 +7,7 @@
 #include "deeplengineclienttest.h"
 
 #include "../deeplengineclient.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(DeeplEngineClientTest)
 
@@ -14,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 DeeplEngineClientTest::DeeplEngineClientTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DeeplEngineClientTest::shouldHaveDefaultValues()

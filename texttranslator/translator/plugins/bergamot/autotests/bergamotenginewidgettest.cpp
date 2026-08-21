@@ -8,6 +8,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginewidget.h"
+#include <QStandardPaths>
 #include <QTabWidget>
 #include <QTest>
 #include <QVBoxLayout>
@@ -15,6 +16,7 @@ QTEST_MAIN(BergamotEngineWidgetTest)
 BergamotEngineWidgetTest::BergamotEngineWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void BergamotEngineWidgetTest::shouldHaveDefaultValues()

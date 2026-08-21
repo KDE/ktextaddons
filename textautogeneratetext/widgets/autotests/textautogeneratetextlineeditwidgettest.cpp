@@ -12,6 +12,7 @@
 #include "widgets/toolswidget/textautogeneratetoolswidget.h"
 
 #include <QHBoxLayout>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
@@ -19,6 +20,7 @@ QTEST_MAIN(TextAutoGenerateTextLineEditWidgetTest)
 TextAutoGenerateTextLineEditWidgetTest::TextAutoGenerateTextLineEditWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()

@@ -11,6 +11,7 @@
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QScrollArea>
+#include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -20,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledWidgetTest::OllamaModelInstalledWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()

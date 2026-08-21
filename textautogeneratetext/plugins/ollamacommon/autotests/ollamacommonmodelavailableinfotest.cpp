@@ -5,12 +5,14 @@
 */
 #include "ollamacommonmodelavailableinfotest.h"
 #include "ollamacommonmodelavailableinfo.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaCommonModelAvailableInfoTest)
 
 OllamaCommonModelAvailableInfoTest::OllamaCommonModelAvailableInfoTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaCommonModelAvailableInfoTest::shouldHaveDefaultValues()

@@ -6,12 +6,14 @@
 
 #include "mcpserverlistviewtest.h"
 #include "server/mcpserverlistview.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(McpServerListViewTest)
 
 McpServerListViewTest::McpServerListViewTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void McpServerListViewTest::shouldHaveDefaultValues()

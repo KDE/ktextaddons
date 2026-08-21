@@ -7,12 +7,14 @@
 #include "textautogeneratemanagertest.h"
 #include "core/textautogeneratemanager.h"
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateManagerTest)
 
 TextAutoGenerateManagerTest::TextAutoGenerateManagerTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateManagerTest::shouldHaveDefaultValues()

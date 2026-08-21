@@ -7,12 +7,14 @@
 #include "texttospeechutiltest.h"
 
 #include "texttospeechutil.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextToSpeechUtilTest)
 using namespace Qt::Literals::StringLiterals;
 TextToSpeechUtilTest::TextToSpeechUtilTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextToSpeechUtilTest::shouldHaveDefaultValues()

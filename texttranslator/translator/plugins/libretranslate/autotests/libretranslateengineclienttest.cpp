@@ -7,6 +7,7 @@
 #include "libretranslateengineclienttest.h"
 
 #include "../libretranslateengineclient.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(LibreTranslateEngineClientTest)
 
@@ -14,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 LibreTranslateEngineClientTest::LibreTranslateEngineClientTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void LibreTranslateEngineClientTest::shouldHaveDefaultValues()

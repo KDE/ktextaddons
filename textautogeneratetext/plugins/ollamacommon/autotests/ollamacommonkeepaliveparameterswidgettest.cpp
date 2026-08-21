@@ -8,6 +8,7 @@
 #include "ollamacommonkeepaliveparameterswidget.h"
 #include <QGroupBox>
 #include <QSpinBox>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
@@ -16,6 +17,7 @@ QTEST_MAIN(OllamaCommonKeepAliveParametersWidgetTest)
 OllamaCommonKeepAliveParametersWidgetTest::OllamaCommonKeepAliveParametersWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void OllamaCommonKeepAliveParametersWidgetTest::shouldHaveDefaultValues()

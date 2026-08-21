@@ -6,6 +6,7 @@
 #include "textautogeneratechatsettingstest.h"
 #include "core/textautogeneratechatsettings.h"
 #include <QJsonObject>
+#include <QStandardPaths>
 #include <QTest>
 
 using namespace Qt::Literals::StringLiterals;
@@ -13,6 +14,7 @@ QTEST_GUILESS_MAIN(TextAutoGenerateChatSettingsTest)
 TextAutoGenerateChatSettingsTest::TextAutoGenerateChatSettingsTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
