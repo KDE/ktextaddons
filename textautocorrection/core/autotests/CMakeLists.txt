@@ -17,7 +17,7 @@ macro(add_autocorrect_unittest _source)
             ENVIRONMENT
                 "QT_HASH_SEED=0"
     )
-    ecm_mark_as_test(autocorrection-${_name})
+    ecm_mark_as_test(${_name})
     target_link_libraries(
         ${_name}
         Qt::Test

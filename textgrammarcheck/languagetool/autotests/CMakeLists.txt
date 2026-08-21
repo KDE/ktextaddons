@@ -12,7 +12,7 @@ macro(add_languagetool_unittest _source)
     )
     add_test(NAME ${_name} COMMAND ${_name})
 
-    ecm_mark_as_test(kmail_grammalecte-${_name})
+    ecm_mark_as_test(${_name})
     target_link_libraries(
         ${_name}
         Qt::Test
