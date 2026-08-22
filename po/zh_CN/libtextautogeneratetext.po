@@ -355,7 +355,7 @@ msgstr "谷歌 Gemini"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
 #, kde-format
 msgid "OpenAI API"
-msgstr ""
+msgstr "OpenAI API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -410,12 +410,12 @@ msgstr "Sarvam AI 实例"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr ""
+msgstr "OrcaRouter OpenAI 兼容 API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr ""
+msgstr "OpenAI API (自定义)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3181,7 +3181,7 @@ msgstr "搜索… (%1)"
 #, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr ""
+msgstr "搜索聊天记录"
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
