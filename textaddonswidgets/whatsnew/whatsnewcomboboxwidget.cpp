@@ -56,6 +56,9 @@ void WhatsNewComboBoxWidget::initializeVersion(int identifier)
 
 void WhatsNewComboBoxWidget::slotCurrentIndexChanged(int index)
 {
+    if (index == -1) {
+        return;
+    }
     const int type = mVersionComboBox->itemData(index).toInt();
     Q_EMIT versionChanged(type);
 }
