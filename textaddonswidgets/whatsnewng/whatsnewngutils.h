@@ -9,4 +9,4 @@
 namespace TextAddonsWidgets::WhatsNewNgUtils
 {
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString createMD5(const QString &str);
-};
+}
