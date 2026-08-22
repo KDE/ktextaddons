@@ -6,6 +6,7 @@
 
 #include "textautogenerateselectpromptlistwidget.h"
 #include "core/models/textautogeneratetextpromptmodel.h"
+#include "textautogeneratepromptdialog.h"
 #include "textautogenerateselectpromptdelegate.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
@@ -62,7 +63,11 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
 
 void TextAutoGenerateSelectPromptListWidget::slotEditPrompt(const QModelIndex &index)
 {
-    // TODO
+    auto dlg = new TextAutoGeneratePromptDialog(this);
+    if (dlg->exec()) {
+        // TODO
+    }
+    delete dlg;
 }
 
 #include "moc_textautogenerateselectpromptlistwidget.cpp"
