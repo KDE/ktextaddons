@@ -63,7 +63,7 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
     }
     if (type == allVersion) { // All
         QString message;
-        message += i18n("<h1>What's New History</h1></hr>");
+        message += i18n("<h1>What's New History</h1>");
         for (int i = 0, total = mAboutRelease.count(); i < total; ++i) {
             const auto &info = mAboutRelease.at(i);
             message += generateVersionHeader(info);
@@ -73,7 +73,7 @@ void WhatsNewNgWidget::slotVersionChanged(int type)
         mLabelInfo->setHtml(generateStartEndHtml(message));
     } else if (type >= 0 && type < mAboutRelease.count()) {
         const auto &info = mAboutRelease.at(type);
-        const QString message = generateVersionHeader(info) + generateStartEndHtml(info.description()) + generateUrl(info);
+        const QString message = generateVersionHeader(info) + info.description() + generateUrl(info);
         mLabelInfo->setHtml(message);
     }
 }
