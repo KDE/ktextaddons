@@ -60,4 +60,9 @@ void WhatsNewComboBoxWidget::slotCurrentIndexChanged(int index)
     Q_EMIT versionChanged(type);
 }
 
+void WhatsNewComboBoxWidget::clear()
+{
+    mVersionComboBox->clear();
+}
+
 #include "moc_whatsnewcomboboxwidget.cpp"

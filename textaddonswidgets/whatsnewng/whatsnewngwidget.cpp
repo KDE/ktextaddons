@@ -42,6 +42,7 @@ WhatsNewNgWidget::~WhatsNewNgWidget() = default;
 
 void WhatsNewNgWidget::setReleases(const QList<KAboutRelease> &info)
 {
+    mWhatsNewComboBoxWidget->clear();
     mAboutRelease = info;
     initialize();
 }

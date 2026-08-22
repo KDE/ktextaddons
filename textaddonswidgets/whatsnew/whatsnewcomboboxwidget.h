@@ -46,6 +46,11 @@ public:
      */
     void initializeVersion(int identifier);
 
+    /*!
+     * \brief Clears all versions from the combo box
+     */
+    void clear();
+
 Q_SIGNALS:
     /*!
      * \brief Emitted when the version selection changes
