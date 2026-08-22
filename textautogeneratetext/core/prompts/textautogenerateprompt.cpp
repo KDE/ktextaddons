@@ -66,21 +66,6 @@ void TextAutoGeneratePrompt::setCategory(Category newCategory)
     mCategory = newCategory;
 }
 
-QString TextAutoGeneratePrompt::convertCategoryToString(Category c)
-{
-    switch (c) {
-    case Category::Unknown:
-        return QString();
-    case Category::Travel:
-        return u"travel"_s;
-    case Category::Code:
-        return u"code"_s;
-    case Category::Misc:
-        return u"misc"_s;
-    }
-    return {};
-}
-
 QByteArray TextAutoGeneratePrompt::identifier() const
 {
     return mIdentifier;
@@ -109,6 +94,21 @@ TextAutoGeneratePrompt::Category TextAutoGeneratePrompt::convertStringToCategory
         return Category::Misc;
     }
     return Category::Unknown;
+}
+
+QString TextAutoGeneratePrompt::convertCategoryToString(Category c)
+{
+    switch (c) {
+    case Category::Unknown:
+        return QString();
+    case Category::Travel:
+        return u"travel"_s;
+    case Category::Code:
+        return u"code"_s;
+    case Category::Misc:
+        return u"misc"_s;
+    }
+    return {};
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &t)
