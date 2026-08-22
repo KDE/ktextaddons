@@ -9,6 +9,6 @@
 QString TextAddonsWidgets::WhatsNewNgUtils::createMD5(const QString &str)
 {
     QCryptographicHash md5(QCryptographicHash::Md5);
-    md5.addData(str.toLatin1());
+    md5.addData(str.toUtf8());
     return QLatin1StringView(md5.result().toBase64());
 }
