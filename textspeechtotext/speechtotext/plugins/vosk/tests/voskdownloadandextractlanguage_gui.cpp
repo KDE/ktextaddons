@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
         info.name = info.url.path() + u'/' + baseName;
 
-        download->setInfo(std::move(info));
+        download->setInfo(info);
         QObject::connect(download, &VoskDownloadLanguageJob::extractDone, &app, []() {
             qDebug() << "Extraction Done";
         });

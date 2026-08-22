@@ -77,7 +77,7 @@ void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
             .systemPrompt = mPromptPlainTextEdit->toPlainText().trimmed(),
         };
         // qDebug() << " info " << info;
-        mOllamaManager->createModel(std::move(info));
+        mOllamaManager->createModel(info);
     }
     Q_EMIT createNewModelDone();
 }

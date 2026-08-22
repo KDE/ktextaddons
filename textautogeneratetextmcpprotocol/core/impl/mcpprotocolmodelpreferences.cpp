@@ -109,5 +109,5 @@ std::optional<double> McpProtocolModelPreferences::speedPriority() const
 
 void McpProtocolModelPreferences::setSpeedPriority(std::optional<double> newSpeedPriority)
 {
-    mSpeedPriority = std::move(newSpeedPriority);
+    mSpeedPriority = newSpeedPriority;
 }

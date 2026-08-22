@@ -110,7 +110,7 @@ void ManagerModelVoskSpeechToText::downloadLanguage(const VoskDownloadLanguageJo
         info.bytesReceived = bytesReceived;
         info.bytesTotal = bytesTotal;
         info.languageName = url;
-        Q_EMIT progress(std::move(info));
+        Q_EMIT progress(info);
     });
     downloadJob->start();
 }

@@ -98,7 +98,7 @@ std::optional<int> McpProtocolTask::pollInterval() const
 
 void McpProtocolTask::setPollInterval(std::optional<int> newPollInterval)
 {
-    mPollInterval = std::move(newPollInterval);
+    mPollInterval = newPollInterval;
 }
 
 McpProtocolUtils::TaskStatus McpProtocolTask::status() const
