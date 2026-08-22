@@ -24,7 +24,7 @@ TextAutoGeneratePromptDialog::TextAutoGeneratePromptDialog(QWidget *parent)
     : QDialog(parent)
     , mPromptWidget(new TextAutoGeneratePromptWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Debug"));
+    setWindowTitle(i18nc("@title:window", "Prompt"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
 
