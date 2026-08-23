@@ -59,7 +59,7 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
             bool inAnUrl = false;
             const int matchCapturedStart = match.capturedStart(1);
             for (const HrefPos &hrefPos : lstPos) {
-                if ((matchCapturedStart > hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
+                if ((matchCapturedStart >= hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
                     inAnUrl = true;
                     break;
                 }
