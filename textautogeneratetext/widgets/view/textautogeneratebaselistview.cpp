@@ -238,7 +238,9 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     if (!mManager->textAutoGenerateTextToSpeechEnqueueManager()->contains(info)) {
         mManager->textAutoGenerateTextToSpeechEnqueueManager()->insert(info);
         if (TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText) == -1) {
-            mManager->textAutoGenerateTextToSpeechEnqueueManager()->clear();
+            // Only drop the element we just added, the previous ones can still be
+            // spoken and their index must not change.
+            mManager->textAutoGenerateTextToSpeechEnqueueManager()->removeLast();
         }
     }
 #endif

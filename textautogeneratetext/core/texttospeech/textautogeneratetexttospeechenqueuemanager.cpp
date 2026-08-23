@@ -18,7 +18,7 @@ void TextAutoGenerateTextToSpeechEnqueueManager::clear()
     mEnqueueList.clear();
 }
 
-TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::value(qsizetype index)
+TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::value(qsizetype index) const
 {
     return mEnqueueList.value(index);
 }
@@ -40,6 +40,13 @@ bool TextAutoGenerateTextToSpeechEnqueueManager::contains(const TextAutoGenerate
 void TextAutoGenerateTextToSpeechEnqueueManager::insert(const TextAutoGenerateTextToSpeechEnqueueInfo &info)
 {
     mEnqueueList.append(info);
+}
+
+void TextAutoGenerateTextToSpeechEnqueueManager::removeLast()
+{
+    if (!mEnqueueList.isEmpty()) {
+        mEnqueueList.removeLast();
+    }
 }
 
 #include "moc_textautogeneratetexttospeechenqueuemanager.cpp"

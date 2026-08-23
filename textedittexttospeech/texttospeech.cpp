@@ -80,10 +80,14 @@ void TextToSpeech::initialize()
     }
 }
 
-void TextToSpeech::slotAboutToSynthesize([[maybe_unused]] qsizetype id)
+void TextToSpeech::slotAboutToSynthesize(qsizetype id)
 {
-    const auto currentSpeechId = d->mCurrentTextToSpeechId;
-    Q_EMIT aboutToSynthesize(currentSpeechId, ++d->mCurrentTextToSpeechId);
+    // Use the id given by QTextToSpeech, it's the index returned by enqueue().
+    // Don't use a self incremented counter here: say() clears the queue and
+    // restarts the ids from 0, a counter would drift from the queue index.
+    const auto previousSpeechId = d->mCurrentTextToSpeechId;
+    d->mCurrentTextToSpeechId = id;
+    Q_EMIT aboutToSynthesize(previousSpeechId, id);
 }
 
 void TextToSpeech::slotStateChanged()
@@ -127,6 +131,8 @@ bool TextToSpeech::isReady() const
 void TextToSpeech::say(const QString &text)
 {
     initialize();
+    // say() clears the queue in QTextToSpeech, forget the current index.
+    d->mCurrentTextToSpeechId = -1;
     d->mTextToSpeech->say(text);
 }
 

@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include "textautogeneratetexttospeechenqueueinfo.h"
-#include <QMap>
+#include <QList>
 #include <QObject>
 namespace TextAutoGenerateText
 {
@@ -30,8 +30,17 @@ public:
     void clear();
 
     /*!
+     * Appends \a info to the queue. The position in the list must match the
+     * index of the matching utterance in the text-to-speech queue.
      */
     void insert(const TextAutoGenerateTextToSpeechEnqueueInfo &info);
+
+    /*!
+     * Removes the last inserted element. Use it to undo an insert() when
+     * enqueuing the text in the text-to-speech engine failed, so that the
+     * elements which are still being spoken keep their index.
+     */
+    void removeLast();
 
     /*!
      */
@@ -39,7 +48,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueInfo value(qsizetype index);
+    [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueInfo value(qsizetype index) const;
 
     /*!
      */
