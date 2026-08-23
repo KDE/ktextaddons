@@ -53,7 +53,7 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
     deleteLater();
 }
 
-QString TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob::filter() const
+QString TextAutoGenerateExportChatAsJsonJob::filter() const
 {
     return u"*.json"_s;
 }
