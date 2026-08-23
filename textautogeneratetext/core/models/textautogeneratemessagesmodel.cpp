@@ -278,7 +278,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
             (*answerIt).setContent({});
             (*answerIt).setDateTime(dt);
             (*answerIt).generateHtml();
-            emitChanged(idx, {MessageHtmlGeneratedRole | FinishedRole});
+            emitChanged(idx, {MessageHtmlGeneratedRole, FinishedRole});
         }
         return answerUuid;
     }
@@ -301,7 +301,7 @@ void TextAutoGenerateMessagesModel::changeInProgress(const QByteArray &uuid, boo
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };
-        emitChanged(i, {MessageHtmlGeneratedRole | FinishedRole});
+        emitChanged(i, {MessageHtmlGeneratedRole, FinishedRole});
     }
 }
 
