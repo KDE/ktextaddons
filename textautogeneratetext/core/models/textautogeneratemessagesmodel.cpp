@@ -332,6 +332,12 @@ void TextAutoGenerateMessagesModel::updateMessageInfo(const QByteArray &uuid, co
     auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
     if (it != mMessages.end()) {
         (*it).setMessageInfo(messageInfo);
+        const int i = std::distance(mMessages.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {ModelInfoRole});
     }
 }
 
