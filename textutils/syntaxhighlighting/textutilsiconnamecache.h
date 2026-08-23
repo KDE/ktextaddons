@@ -48,6 +48,5 @@ private:
     };
 
     mutable QMap<Entry, QString> mCachedEntries;
-    mutable QString mPicsPath;
 };
 }
