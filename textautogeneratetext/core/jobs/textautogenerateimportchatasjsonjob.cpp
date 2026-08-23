@@ -7,9 +7,11 @@
 #include "textautogenerateimportchatasjsonjob.h"
 #include "core/textautogeneratetextutils.h"
 #include "textautogeneratetextcore_debug.h"
+#include <KLocalizedString>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonObject>
+
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateImportChatAsJsonJob::TextAutoGenerateImportChatAsJsonJob(QObject *parent)
@@ -56,6 +58,9 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
             }
             Q_EMIT importDone(title, msgs);
         }
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to open file for reading:" << mInfo.filename << "error:" << f.errorString();
+        Q_EMIT importFailed(i18n("Failed to open file for reading: %1", mInfo.filename));
     }
     deleteLater();
 }
