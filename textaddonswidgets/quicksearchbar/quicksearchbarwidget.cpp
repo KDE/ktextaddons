@@ -53,8 +53,6 @@ void QuickSearchBarWidget::updateButtons(bool next, bool previous)
 
 void QuickSearchBarWidget::closeBar()
 {
-    // Make sure that all old searches are cleared
-    mQuickSearchBar->setSearchText({});
     slideOut();
     Q_EMIT closeSearchBarRequested();
 }
