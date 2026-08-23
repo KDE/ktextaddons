@@ -63,12 +63,6 @@ public:
      */
     void start();
 
-    /*!
-     * \brief Returns the file filter for export dialogs
-     * \return The file filter string
-     */
-    [[nodiscard]] virtual QString filter() const;
-
 Q_SIGNALS:
     /*!
      * \brief Emitted when export is complete

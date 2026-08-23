@@ -30,7 +30,11 @@ public:
      */
     ~TextAutoGenerateExportChatAsJsonJob() override;
 
-    [[nodiscard]] QString filter() const override;
+    /*!
+     * \brief fileFilter
+     * \return
+     */
+    [[nodiscard]] static QString fileFilter();
 
 protected:
     /*!

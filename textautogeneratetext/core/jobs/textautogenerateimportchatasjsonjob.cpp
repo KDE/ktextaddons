@@ -65,4 +65,9 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
     deleteLater();
 }
 
+QString TextAutoGenerateImportChatAsJsonJob::fileFilter()
+{
+    return u"%1 (*.json)"_s.arg(i18n("Json File"));
+}
+
 #include "moc_textautogenerateimportchatasjsonjob.cpp"

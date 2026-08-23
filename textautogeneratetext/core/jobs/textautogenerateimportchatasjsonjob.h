@@ -29,6 +29,12 @@ public:
      */
     ~TextAutoGenerateImportChatAsJsonJob() override;
 
+    /*!
+     * \brief fileFilter
+     * \return
+     */
+    [[nodiscard]] static QString fileFilter();
+
 protected:
     /*!
      * \brief Imports the chat from JSON format
