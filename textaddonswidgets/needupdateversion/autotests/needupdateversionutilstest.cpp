@@ -15,6 +15,12 @@ NeedUpdateVersionUtilsTest::NeedUpdateVersionUtilsTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
+void NeedUpdateVersionUtilsTest::shouldReturnValidCompileDate()
+{
+    // __DATE__ space-pads a single-digit day, so this used to fail on the first 9 days of a month.
+    QVERIFY(TextAddonsWidgets::NeedUpdateVersionUtils::compileDate().isValid());
+}
+
 void NeedUpdateVersionUtilsTest::shouldReturnObsoleteVersionStatus()
 {
     QFETCH(QString, str);

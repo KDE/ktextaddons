@@ -73,5 +73,7 @@ bool TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()
 
 QDate TextAddonsWidgets::NeedUpdateVersionUtils::compileDate()
 {
-    return QDate::fromString(QStringLiteral(__DATE__), QStringLiteral("MMM dd yyyy"));
+    // __DATE__ pads a single-digit day with a space ("Jun  3 2026"), so simplify whitespace
+    // and use a single "d" which accepts both one and two digit days.
+    return QDate::fromString(QStringLiteral(__DATE__).simplified(), QStringLiteral("MMM d yyyy"));
 }

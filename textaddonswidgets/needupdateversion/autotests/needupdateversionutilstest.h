@@ -15,6 +15,7 @@ public:
     explicit NeedUpdateVersionUtilsTest(QObject *parent = nullptr);
     ~NeedUpdateVersionUtilsTest() override = default;
 private Q_SLOTS:
+    void shouldReturnValidCompileDate();
     void shouldReturnObsoleteVersionStatus();
     void shouldReturnObsoleteVersionStatus_data();
 };
