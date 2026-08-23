@@ -16,4 +16,5 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldGenerateCreateMD5();
+    void shouldGenerateChangelog();
 };
