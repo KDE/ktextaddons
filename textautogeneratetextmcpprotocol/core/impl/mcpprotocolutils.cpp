@@ -642,6 +642,7 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageResultConten
     }
     if (!val.isObject()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CreateMessageResultContent: expected object or array";
+        return CreateMessageResultContent({});
     }
     const QString dispatchValue = val.toObject().value("type"_L1).toString();
     const QJsonObject valObj = val.toObject();
