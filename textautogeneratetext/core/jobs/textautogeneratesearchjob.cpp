@@ -40,9 +40,6 @@ void TextAutoGenerateSearchJob::start()
     QList<TextAutoGenerateSearchMessage> messages = mManager->searchTextInDatabase(mSearchText.trimmed().toLower());
     // Sort messages
     std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateSearchMessage &left, const TextAutoGenerateSearchMessage &right) {
-        if (left.dateTime() == right.dateTime()) {
-            return false;
-        }
         return left.dateTime() < right.dateTime();
     });
 
