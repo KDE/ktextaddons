@@ -32,6 +32,7 @@ bool TextAutoGenerateAskJob::canStart() const
 void TextAutoGenerateAskJob::start()
 {
     if (!canStart()) {
+        Q_EMIT errorOccured(i18n("Impossible to start job. Manager is null or text is empty."));
         deleteLater();
         return;
     }
