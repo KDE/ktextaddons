@@ -74,6 +74,7 @@ Q_SIGNALS:
      * \brief Emitted when export is complete
      */
     void exportDone(const QString &filename);
+    void exportFailed(const QString &msg);
 
 protected:
     /*!
