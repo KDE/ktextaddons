@@ -15,4 +15,5 @@ public:
     ~WhatsNewNgUtilsTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldGenerateCreateMD5();
 };
