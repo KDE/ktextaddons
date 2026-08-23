@@ -55,7 +55,7 @@ public:
     };
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tasks {
         struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Requests {
-            struct Tools {
+            struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tools {
                 std::optional<QMap<QString, QJsonValue>> mCall;
 
                 [[nodiscard]] bool operator==(const Tools &other) const;
