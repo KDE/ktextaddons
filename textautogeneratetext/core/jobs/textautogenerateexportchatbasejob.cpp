@@ -55,8 +55,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateExportChatBaseJob::ExportChatI
 
 bool TextAutoGenerateExportChatBaseJob::ExportChatInfo::isValid() const
 {
-    // TODO add more
-    return !filename.isEmpty();
+    return !filename.isEmpty() && !chatTitle.isEmpty() && !listMessages.isEmpty();
 }
 
 #include "moc_textautogenerateexportchatbasejob.cpp"
