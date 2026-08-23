@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolsettings.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <KConfigGroup>
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
@@ -76,7 +77,16 @@ void McpProtocolSettings::load(const KConfigGroup &config)
     mCommand = config.readEntry("Command", QString());
     mArguments = config.readEntry("Arguments", QString());
     mHeaders = config.readEntry("Headers", QStringList());
-    // TODO mEnvironments
+    mEnvironments.clear();
+    const QStringList environments = config.readEntry("Environments", QStringList());
+    for (const QString &environment : environments) {
+        const qsizetype index = environment.indexOf(u'=');
+        if (index <= 0) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid environment entry, expected \"KEY=VALUE\": " << environment;
+            continue;
+        }
+        mEnvironments.insert(environment.left(index), environment.mid(index + 1));
+    }
 }
 
 void McpProtocolSettings::save(KConfigGroup &config) const
@@ -93,7 +103,14 @@ void McpProtocolSettings::save(KConfigGroup &config) const
     if (!mHeaders.isEmpty()) {
         config.writeEntry(u"Headers"_s, mHeaders);
     }
-    // TODO mEnvironments
+    if (!mEnvironments.isEmpty()) {
+        QStringList environments;
+        environments.reserve(mEnvironments.count());
+        for (auto it = mEnvironments.constBegin(); it != mEnvironments.constEnd(); ++it) {
+            environments.append(it.key() + u'=' + it.value());
+        }
+        config.writeEntry(u"Environments"_s, environments);
+    }
 }
 
 bool McpProtocolSettings::isValid() const
