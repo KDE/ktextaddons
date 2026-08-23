@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
+add_definitions(-DTEXTADDONSWIDGETS_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+
 macro(add_whatsnewng_test _source)
     set(_test ${_source})
     get_filename_component(_name ${_source} NAME_WE)
