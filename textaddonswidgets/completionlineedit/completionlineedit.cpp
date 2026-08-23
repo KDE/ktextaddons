@@ -20,10 +20,7 @@ CompletionLineEdit::CompletionLineEdit(QWidget *parent)
     connect(mCompletionListView, &CompletionListView::complete, this, &CompletionLineEdit::complete);
 }
 
-CompletionLineEdit::~CompletionLineEdit()
-{
-    delete mCompletionListView;
-}
+CompletionLineEdit::~CompletionLineEdit() = default;
 
 void CompletionLineEdit::setCompletionModel(QAbstractItemModel *model)
 {
