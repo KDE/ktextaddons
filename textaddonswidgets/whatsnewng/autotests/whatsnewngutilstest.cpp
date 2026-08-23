@@ -8,6 +8,7 @@
 #include <KAboutData>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 void initLocale()
 {
 #ifndef Q_OS_WIN
@@ -20,7 +21,6 @@ void initLocale()
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 
 QTEST_GUILESS_MAIN(WhatsNewNgUtilsTest)
-using namespace Qt::Literals::StringLiterals;
 WhatsNewNgUtilsTest::WhatsNewNgUtilsTest(QObject *parent)
     : QObject{parent}
 {
