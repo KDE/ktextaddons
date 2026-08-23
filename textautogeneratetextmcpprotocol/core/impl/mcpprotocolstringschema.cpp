@@ -23,7 +23,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "defaultValue:" << t.defaultValue();
     d.space() << "minLength:" << t.minLength();
     d.space() << "maxLength:" << t.maxLength();
-    d.space() << "format:" << McpProtocolStringSchema::convertModeToString(*t.format());
+    if (t.format().has_value()) {
+        d.space() << "format:" << McpProtocolStringSchema::convertModeToString(*t.format());
+    }
     return d;
 }
 
