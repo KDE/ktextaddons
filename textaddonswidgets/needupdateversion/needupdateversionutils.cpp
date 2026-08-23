@@ -57,6 +57,7 @@ void TextAddonsWidgets::NeedUpdateVersionUtils::disableCheckVersion()
     const KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, QStringLiteral("Check Version"));
     group.writeEntry("checkerVersionEnabled", false);
+    group.sync();
 }
 
 bool TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()
