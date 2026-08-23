@@ -126,10 +126,14 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
             job->start();
         } else {
             qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << toolName;
+            Q_EMIT finished({});
+            deleteLater();
         }
     } else {
         // Internal tools.
         qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << toolName;
+        Q_EMIT finished({});
+        deleteLater();
     }
 }
 
