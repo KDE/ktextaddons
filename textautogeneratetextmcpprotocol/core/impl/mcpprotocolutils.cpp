@@ -61,6 +61,18 @@
 #include "mcpprotocolunsubscriberequest.h"
 #include "mcpprotocolunsubscriberequestparams.h"
 
+#include "mcpprotocolbooleanschema.h"
+#include "mcpprotocolcreatemessageresult.h"
+#include "mcpprotocolelicitresult.h"
+#include "mcpprotocollegacytitledenumschema.h"
+#include "mcpprotocollistrootsresult.h"
+#include "mcpprotocolnumberschema.h"
+#include "mcpprotocolstringschema.h"
+#include "mcpprotocoltitledmultiselectenumschema.h"
+#include "mcpprotocoltitledsingleselectenumschema.h"
+#include "mcpprotocoluntitledmultiselectenumschema.h"
+#include "mcpprotocoluntitledsingleselectenumschema.h"
+
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
@@ -752,4 +764,205 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFro
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "convertProtocolVersionFromString invalid: " << str;
     }
     return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26;
+}
+
+QJsonValue
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientResultToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientResult &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientResult
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientResultFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientResult: expected object";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    if (obj.contains("action"_L1)) {
+        return McpProtocolElicitResult::fromJson(obj);
+    }
+    if (obj.contains("roots"_L1)) {
+        return McpProtocolListRootsResult::fromJson(obj);
+    }
+    if (obj.contains("model"_L1) && obj.contains("content"_L1)) {
+        return McpProtocolCreateMessageResult::fromJson(obj);
+    }
+    if (obj.contains("tasks"_L1)) {
+        return McpProtocolListTasksResult::fromJson(obj);
+    }
+    if (obj.contains("status"_L1)) {
+        return McpProtocolGetTaskResult::fromJson(obj);
+    }
+    return McpProtocolResult::fromJson(obj);
+}
+
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::elicitResultContentValueToJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitResultContentValue &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonValue {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QStringList>) {
+                QJsonArray arr;
+                for (const auto &item : v) {
+                    arr.append(item);
+                }
+                return arr;
+            } else {
+                return QJsonValue(v);
+            }
+        },
+        val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitResultContentValue
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::elicitResultContentValueFromJson(const QJsonValue &val)
+{
+    if (val.isArray()) {
+        QStringList list;
+        const QJsonArray arr = val.toArray();
+        list.reserve(arr.count());
+        for (const QJsonValue &v : arr) {
+            list.append(v.toString());
+        }
+        return ElicitResultContentValue(std::move(list));
+    }
+    if (val.isBool()) {
+        return ElicitResultContentValue(val.toBool());
+    }
+    if (val.isDouble()) {
+        return ElicitResultContentValue(val.toInt());
+    }
+    if (val.isString()) {
+        return ElicitResultContentValue(val.toString());
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ElicitResultContentValue: " << val;
+    return {};
+}
+
+QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::elicitResultContentToJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitResultContent &val)
+{
+    QJsonObject obj;
+    for (auto it = val.constBegin(); it != val.constEnd(); ++it) {
+        obj.insert(it.key(), elicitResultContentValueToJson(it.value()));
+    }
+    return obj;
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitResultContent
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::elicitResultContentFromJson(const QJsonObject &obj)
+{
+    ElicitResultContent content;
+    for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
+        content.insert(it.key(), elicitResultContentValueFromJson(it.value()));
+    }
+    return content;
+}
+
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::enumSchemaToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EnumSchema &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EnumSchema
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::enumSchemaFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid EnumSchema: expected object";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    const QString dispatchValue = obj.value("type"_L1).toString();
+    if (dispatchValue == "array"_L1) {
+        if (obj.value("items"_L1).toObject().contains("anyOf"_L1)) {
+            return EnumSchema(McpProtocolTitledMultiSelectEnumSchema::fromJson(obj));
+        }
+        return EnumSchema(McpProtocolUntitledMultiSelectEnumSchema::fromJson(obj));
+    }
+    if (dispatchValue == "string"_L1) {
+        if (obj.contains("oneOf"_L1)) {
+            return EnumSchema(McpProtocolTitledSingleSelectEnumSchema::fromJson(obj));
+        }
+        if (obj.contains("enumNames"_L1)) {
+            return EnumSchema(McpProtocolLegacyTitledEnumSchema::fromJson(obj));
+        }
+        if (obj.contains("enum"_L1)) {
+            return EnumSchema(McpProtocolUntitledSingleSelectEnumSchema::fromJson(obj));
+        }
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid EnumSchema: unknown type \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::primitiveSchemaDefinitionToJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::primitiveSchemaDefinitionFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid PrimitiveSchemaDefinition: expected object";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    const QString dispatchValue = obj.value("type"_L1).toString();
+    if (dispatchValue == "boolean"_L1) {
+        return PrimitiveSchemaDefinition(McpProtocolBooleanSchema::fromJson(obj));
+    }
+    if (dispatchValue == "integer"_L1 || dispatchValue == "number"_L1) {
+        return PrimitiveSchemaDefinition(McpProtocolNumberSchema::fromJson(obj));
+    }
+    if (dispatchValue == "array"_L1) {
+        if (obj.value("items"_L1).toObject().contains("anyOf"_L1)) {
+            return PrimitiveSchemaDefinition(McpProtocolTitledMultiSelectEnumSchema::fromJson(obj));
+        }
+        return PrimitiveSchemaDefinition(McpProtocolUntitledMultiSelectEnumSchema::fromJson(obj));
+    }
+    if (dispatchValue == "string"_L1) {
+        if (obj.contains("oneOf"_L1)) {
+            return PrimitiveSchemaDefinition(McpProtocolTitledSingleSelectEnumSchema::fromJson(obj));
+        }
+        if (obj.contains("enumNames"_L1)) {
+            return PrimitiveSchemaDefinition(McpProtocolLegacyTitledEnumSchema::fromJson(obj));
+        }
+        if (obj.contains("enum"_L1)) {
+            return PrimitiveSchemaDefinition(McpProtocolUntitledSingleSelectEnumSchema::fromJson(obj));
+        }
+        return PrimitiveSchemaDefinition(McpProtocolStringSchema::fromJson(obj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid PrimitiveSchemaDefinition: unknown type \"" << dispatchValue << "\"";
+    return {};
 }

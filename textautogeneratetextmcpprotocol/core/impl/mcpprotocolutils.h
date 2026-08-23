@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QJsonValue>
+#include <QMap>
 #include <QString>
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -93,6 +94,9 @@ class McpProtocolJSONRPCResultResponse;
 class McpProtocolJSONRPCErrorResponse;
 class McpProtocolElicitRequestURLParams;
 class McpProtocolElicitRequestFormParams;
+class McpProtocolCreateMessageResult;
+class McpProtocolElicitResult;
+class McpProtocolListRootsResult;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
@@ -126,7 +130,12 @@ using ContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
 
 using Cursor = QString;
+
+using EmptyResult = McpProtocolResult;
+
 using ElicitResultContentValue = std::variant<QStringList, QString, int, bool>;
+
+using ElicitResultContent = QMap<QString, ElicitResultContentValue>;
 enum class Role : uint8_t {
     Unknown,
     Assistant,
@@ -190,6 +199,15 @@ using ServerResult = std::variant<McpProtocolResult,
                                   McpProtocolListTasksResult,
                                   McpProtocolCompleteResult>;
 
+using ClientResult = std::variant<McpProtocolResult,
+                                  McpProtocolGetTaskResult,
+                                  McpProtocolGetTaskPayloadResult,
+                                  McpProtocolCancelTaskResult,
+                                  McpProtocolListTasksResult,
+                                  McpProtocolCreateMessageResult,
+                                  McpProtocolListRootsResult,
+                                  McpProtocolElicitResult>;
+
 using ServerRequest = std::variant<McpProtocolPingRequest,
                                    McpProtocolGetTaskRequest,
                                    McpProtocolGetTaskPayloadRequest,
@@ -219,6 +237,16 @@ using PrimitiveSchemaDefinition = std::variant<McpProtocolStringSchema,
                                                McpProtocolUntitledMultiSelectEnumSchema,
                                                McpProtocolTitledMultiSelectEnumSchema,
                                                McpProtocolLegacyTitledEnumSchema>;
+
+using SingleSelectEnumSchema = std::variant<McpProtocolUntitledSingleSelectEnumSchema, McpProtocolTitledSingleSelectEnumSchema>;
+
+using MultiSelectEnumSchema = std::variant<McpProtocolUntitledMultiSelectEnumSchema, McpProtocolTitledMultiSelectEnumSchema>;
+
+using EnumSchema = std::variant<McpProtocolUntitledSingleSelectEnumSchema,
+                                McpProtocolTitledSingleSelectEnumSchema,
+                                McpProtocolUntitledMultiSelectEnumSchema,
+                                McpProtocolTitledMultiSelectEnumSchema,
+                                McpProtocolLegacyTitledEnumSchema>;
 
 using JSONRPCResponse = std::variant<McpProtocolJSONRPCResultResponse, McpProtocolJSONRPCErrorResponse>;
 
@@ -273,6 +301,21 @@ using JSONRPCMessage =
 
 [[nodiscard]] QJsonValue serverResultToJson(const ServerResult &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerResult serverResultFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonValue clientResultToJson(const ClientResult &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientResult clientResultFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonValue elicitResultContentValueToJson(const ElicitResultContentValue &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitResultContentValue elicitResultContentValueFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonObject elicitResultContentToJson(const ElicitResultContent &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitResultContent elicitResultContentFromJson(const QJsonObject &obj);
+
+[[nodiscard]] QJsonValue enumSchemaToJson(const EnumSchema &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EnumSchema enumSchemaFromJson(const QJsonValue &val);
+
+[[nodiscard]] QJsonValue primitiveSchemaDefinitionToJson(const PrimitiveSchemaDefinition &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition primitiveSchemaDefinitionFromJson(const QJsonValue &val);
 
 // [[nodiscard]] QString getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
 };

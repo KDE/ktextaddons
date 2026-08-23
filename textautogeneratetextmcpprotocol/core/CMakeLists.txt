@@ -273,6 +273,12 @@ target_sources(
         impl/mcpprotocolgettaskpayloadresult.h
         impl/mcpprotocolcompleteresult.cpp
         impl/mcpprotocolcompleteresult.h
+        impl/mcpprotocoltitledsingleselectenumschema.cpp
+        impl/mcpprotocoltitledsingleselectenumschema.h
+        impl/mcpprotocolcreatemessageresult.cpp
+        impl/mcpprotocolcreatemessageresult.h
+        impl/mcpprotocolelicitresult.cpp
+        impl/mcpprotocolelicitresult.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
         server/mcpserver.cpp
@@ -458,6 +464,9 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolCallToolResult
     McpProtocolGetTaskPayloadResult
     McpProtocolCompleteResult
+    McpProtocolTitledSingleSelectEnumSchema
+    McpProtocolCreateMessageResult
+    McpProtocolElicitResult
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolimpl_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE impl

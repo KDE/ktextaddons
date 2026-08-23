@@ -6,17 +6,19 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QByteArray>
+#include <QMap>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBooleanSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLegacyTitledEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolNumberSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolStringSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskMetadata>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledMultiSelectEnumSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledSingleSelectEnumSchema>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledMultiSelectEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledSingleSelectEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
-// TODO #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledSingleSelectEnumSchema>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLegacyTitledEnumSchema>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledMultiSelectEnumSchema>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledMultiSelectEnumSchema>
 
 class QDebug;
 class QJsonObject;
@@ -41,17 +43,15 @@ public:
     };
     struct RequestedSchema {
         std::optional<QString> mDollarschema;
-        // TODO QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
+        QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
         std::optional<QStringList> mRequired;
 
         [[nodiscard]] std::optional<QString> dollarschema() const;
         void setDollarschema(std::optional<QString> newDollarschema);
         [[nodiscard]] std::optional<QStringList> required() const;
         void setRequired(std::optional<QStringList> newRequired);
-#if 0 // TODO
         [[nodiscard]] QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> properties() const;
         void setProperties(const QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> &newProperties);
-#endif
         /*!
          */
         [[nodiscard]] static McpProtocolElicitRequestFormParams::RequestedSchema fromJson(const QJsonObject &obj);
@@ -75,10 +75,28 @@ public:
 
     /*!
      */
+    [[nodiscard]] static QByteArray mode();
+
+    /*!
+     */
+    [[nodiscard]] std::optional<Meta> meta() const;
+    /*!
+     */
+    void setMeta(std::optional<Meta> newMeta);
+
+    /*!
+     */
     [[nodiscard]] QString message() const;
     /*!
      */
     void setMessage(const QString &newMessage);
+
+    /*!
+     */
+    [[nodiscard]] RequestedSchema requestedSchema() const;
+    /*!
+     */
+    void setRequestedSchema(const RequestedSchema &newRequestedSchema);
 
     /*!
      */
@@ -90,7 +108,7 @@ public:
 private:
     std::optional<Meta> mMeta;
     QString mMessage;
-    // RequestedSchema mRequestedSchema;
+    RequestedSchema mRequestedSchema;
     std::optional<McpProtocolTaskMetadata> mTask;
 };
 }
