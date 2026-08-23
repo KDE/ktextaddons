@@ -48,7 +48,7 @@ public:
      * \brief Sets the search text
      * \param str The text to set
      */
-    void setTearchText(const QString &str);
+    void setSearchText(const QString &str);
 
     /*!
      * \brief Finds the next occurrence

@@ -43,7 +43,7 @@ void QuickSearchBarWidget::slideIn()
 
 void QuickSearchBarWidget::slideOut()
 {
-    mQuickSearchBar->setTearchText({});
+    mQuickSearchBar->setSearchText({});
     mSliderContainer->slideOut();
 }
 
@@ -55,7 +55,7 @@ void QuickSearchBarWidget::updateButtons(bool next, bool previous)
 void QuickSearchBarWidget::closeBar()
 {
     // Make sure that all old searches are cleared
-    mQuickSearchBar->setTearchText({});
+    mQuickSearchBar->setSearchText({});
     slideOut();
     Q_EMIT closeSearchBarRequested();
 }

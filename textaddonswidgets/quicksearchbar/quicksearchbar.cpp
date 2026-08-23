@@ -64,7 +64,7 @@ QString QuickSearchBar::searchText() const
     return mSearchLineEdit->text();
 }
 
-void QuickSearchBar::setTearchText(const QString &str)
+void QuickSearchBar::setSearchText(const QString &str)
 {
     mSearchLineEdit->setText(str);
 }
