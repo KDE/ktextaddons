@@ -48,6 +48,9 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
     if (!obj["ttl"_L1].isNull()) {
         prompt.setTtl(obj.value("ttl"_L1).toInt());
     }
+    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    }
     return prompt;
 }
 
