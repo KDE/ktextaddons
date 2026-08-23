@@ -36,9 +36,8 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
                     }
                     const QDate releaseDate = QDate(year, month, 1);
                     if (releaseDate.isValid()) {
-                        const int days = releaseDate.daysTo(currentDate);
-                        if (days > 180) {
-                            if (days > 360) {
+                        if (currentDate > releaseDate.addMonths(6)) {
+                            if (currentDate > releaseDate.addYears(1)) {
                                 return TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan12Months;
                             }
                             return TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan6Months;
