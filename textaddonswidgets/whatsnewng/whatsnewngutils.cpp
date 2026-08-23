@@ -63,7 +63,7 @@ QString TextAddonsWidgets::WhatsNewNgUtils::generateChangelog(const QList<KAbout
     return {};
 }
 
-constexpr int TextAddonsWidgets::WhatsNewNgUtils::allVersion()
+int TextAddonsWidgets::WhatsNewNgUtils::allVersion()
 {
     return -1;
 }

@@ -14,5 +14,5 @@ namespace TextAddonsWidgets::WhatsNewNgUtils
 [[nodiscard]] QString generateVersionHeader(const KAboutRelease &release);
 [[nodiscard]] QString generateStartEndHtml(const QString &str);
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString generateChangelog(const QList<KAboutRelease> &releases, int type);
-[[nodiscard]] TEXTADDONSWIDGETS_EXPORT constexpr int allVersion();
+[[nodiscard]] TEXTADDONSWIDGETS_EXPORT int allVersion();
 }
