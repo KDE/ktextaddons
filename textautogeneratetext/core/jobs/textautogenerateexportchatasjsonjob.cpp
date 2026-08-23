@@ -53,4 +53,9 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
     deleteLater();
 }
 
+QString TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob::filter() const
+{
+    return u"*.json"_s;
+}
+
 #include "moc_textautogenerateexportchatasjsonjob.cpp"

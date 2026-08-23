@@ -30,6 +30,8 @@ public:
      */
     ~TextAutoGenerateExportChatAsJsonJob() override;
 
+    [[nodiscard]] QString filter() const override;
+
 protected:
     /*!
      * \brief Exports the chat in JSON format
