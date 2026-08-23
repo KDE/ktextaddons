@@ -15,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTitledSingleSelectEnumSchema
 {
 public:
-    struct OneOfItem {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT OneOfItem {
         QString mConstValue;
         QString mTitle;
 

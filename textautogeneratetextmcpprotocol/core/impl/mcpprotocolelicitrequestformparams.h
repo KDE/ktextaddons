@@ -27,7 +27,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitRequestFormParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -41,7 +41,7 @@ public:
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::Meta &image);
     };
-    struct RequestedSchema {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT RequestedSchema {
         std::optional<QString> mDollarschema;
         QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
         std::optional<QStringList> mRequired;
