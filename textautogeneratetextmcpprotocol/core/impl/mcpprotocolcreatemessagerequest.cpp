@@ -21,7 +21,7 @@ QByteArray McpProtocolCreateMessageRequest::type()
     return "sampling/createMessage"_ba;
 }
 
-// TODO bool McpProtocolCreateMessageRequest::operator==(const McpProtocolCreateMessageRequest &other) const = default;
+bool McpProtocolCreateMessageRequest::operator==(const McpProtocolCreateMessageRequest &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &t)
 {

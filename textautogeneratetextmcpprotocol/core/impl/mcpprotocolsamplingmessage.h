@@ -9,6 +9,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAudioContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolEmbeddedResource>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImageContent>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceLink>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolResultContent>
@@ -29,7 +30,7 @@ public:
 
     /*!
      */
-    // TODO [[nodiscard]] bool operator==(const McpProtocolSamplingMessage &other) const;
+    [[nodiscard]] bool operator==(const McpProtocolSamplingMessage &other) const;
 
     /*!
      */
@@ -38,10 +39,31 @@ public:
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolSamplingMessage &image);
 
+    /*!
+     */
+    [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
+    void setMeta(std::optional<McpProtocolMeta> newMeta);
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolUtils::CreateMessageResultContent content() const;
+    /*!
+     */
+    void setContent(const McpProtocolUtils::CreateMessageResultContent &newContent);
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolUtils::Role role() const;
+    /*!
+     */
+    void setRole(McpProtocolUtils::Role newRole);
+
 private:
     std::optional<McpProtocolMeta> mMeta;
     McpProtocolUtils::CreateMessageResultContent mContent;
-    McpProtocolUtils::Role mRole;
+    McpProtocolUtils::Role mRole = McpProtocolUtils::Role::Unknown;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolSamplingMessage, Q_RELOCATABLE_TYPE);

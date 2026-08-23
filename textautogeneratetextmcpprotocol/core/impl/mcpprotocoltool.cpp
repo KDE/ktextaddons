@@ -25,10 +25,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "description " << t.description();
     d.space() << "execution " << t.execution();
     d.space() << "icons " << t.icons();
-    // TODO d.space() << "inputSchema " << t.inputSchema();
+    d.space() << "inputSchema " << McpProtocolTool::InputSchema::toJson(t.inputSchema());
     d.space() << "description " << t.description();
     d.space() << "name " << t.name();
-    // TODO d.space() << "outputSchema " << t.outputSchema();
+    if (t.outputSchema().has_value()) {
+        d.space() << "outputSchema " << McpProtocolTool::OutputSchema::toJson(*t.outputSchema());
+    }
     d.space() << "title " << t.title();
     return d;
 }

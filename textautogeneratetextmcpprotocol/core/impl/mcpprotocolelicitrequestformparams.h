@@ -52,6 +52,7 @@ public:
         void setRequired(std::optional<QStringList> newRequired);
         [[nodiscard]] QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> properties() const;
         void setProperties(const QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> &newProperties);
+        [[nodiscard]] bool operator==(const McpProtocolElicitRequestFormParams::RequestedSchema &other) const;
         /*!
          */
         [[nodiscard]] static McpProtocolElicitRequestFormParams::RequestedSchema fromJson(const QJsonObject &obj);
@@ -65,6 +66,10 @@ public:
     /*!
      */
     ~McpProtocolElicitRequestFormParams();
+
+    /*!
+     */
+    [[nodiscard]] bool operator==(const McpProtocolElicitRequestFormParams &other) const;
 
     /*!
      */

@@ -21,7 +21,11 @@ McpProtocolReadResourceResult::~McpProtocolReadResourceResult() = default;
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceResult &t)
 {
     d.space() << "meta:" << t.meta();
-    // TODO d.space() << "roots:" << t.contents();
+    QJsonArray arr_contents;
+    for (const auto &v : t.contents()) {
+        arr_contents.append(McpProtocolUtils::embeddedResourceResourceToJson(v));
+    }
+    d.space() << "contents:" << arr_contents;
     return d;
 }
 

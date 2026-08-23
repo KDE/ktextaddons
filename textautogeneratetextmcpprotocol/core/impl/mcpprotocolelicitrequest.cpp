@@ -24,7 +24,7 @@ bool McpProtocolElicitRequest::operator==(const McpProtocolElicitRequest &other)
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &t)
 {
-    // d.space() << "params:" << t.params();
+    d.space() << "params:" << McpProtocolUtils::elicitRequestParamsToJson(t.params());
     d.space() << "id:" << t.id();
     return d;
 }
@@ -40,11 +40,9 @@ McpProtocolElicitRequest McpProtocolElicitRequest::fromJson(const QJsonObject &o
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolElicitRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
     }
-#if 0
     if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolPaginatedRequestParams::fromJson(obj["params"_L1].toObject()));
+        prompt.setParams(McpProtocolUtils::elicitRequestParamsFromJson(obj["params"_L1]));
     }
-#endif
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
     }
@@ -57,11 +55,7 @@ QJsonObject McpProtocolElicitRequest::toJson(const McpProtocolElicitRequest &boo
     obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolElicitRequest::type());
-#if 0
-    if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolPaginatedRequestParams::toJson(*boolean.params());
-    }
-#endif
+    obj["params"_L1] = McpProtocolUtils::elicitRequestParamsToJson(boolean.params());
     return obj;
 }
 
@@ -73,4 +67,14 @@ McpProtocolUtils::RequestId McpProtocolElicitRequest::id() const
 void McpProtocolElicitRequest::setId(const McpProtocolUtils::RequestId &newId)
 {
     mId = newId;
+}
+
+McpProtocolUtils::ElicitRequestParams McpProtocolElicitRequest::params() const
+{
+    return mParams;
+}
+
+void McpProtocolElicitRequest::setParams(const McpProtocolUtils::ElicitRequestParams &newParams)
+{
+    mParams = newParams;
 }

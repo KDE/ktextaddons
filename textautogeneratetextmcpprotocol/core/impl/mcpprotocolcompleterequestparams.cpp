@@ -100,7 +100,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "meta:" << t.meta();
     d.space() << "argument:" << t.argument();
     d.space() << "context:" << t.context();
-    // TODO d.space() << "ref:" << t.ref();
+    d.space() << "ref:" << McpProtocolUtils::getCompleteRequestParamsRef(t.ref());
 
     return d;
 }

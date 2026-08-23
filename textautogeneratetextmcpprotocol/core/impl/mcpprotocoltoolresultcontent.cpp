@@ -33,7 +33,7 @@ QByteArray McpProtocolToolResultContent::type()
     return QByteArrayLiteral("tool_result");
 }
 
-// bool McpProtocolToolResultContent::operator==(const McpProtocolToolResultContent &other) const = default;
+bool McpProtocolToolResultContent::operator==(const McpProtocolToolResultContent &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolResultContent &t)
 {

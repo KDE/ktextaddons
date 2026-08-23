@@ -19,10 +19,11 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCreateMessageRequestParams
 {
 public:
-    enum class IncludeContext {
+    enum class IncludeContext : uint8_t {
         allServers,
         none,
-        thisServer
+        thisServer,
+        Unknown,
     };
     struct Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
@@ -48,7 +49,7 @@ public:
 
     /*!
      */
-    // TODO [[nodiscard]] bool operator==(const McpProtocolCreateMessageRequestParams &other) const;
+    [[nodiscard]] bool operator==(const McpProtocolCreateMessageRequestParams &other) const;
 
     /*!
      */
@@ -141,9 +142,17 @@ public:
      */
     void setTools(std::optional<QList<McpProtocolTool>> newTools);
 
+    /*!
+     */
+    [[nodiscard]] static QString convertIncludeContextToString(McpProtocolCreateMessageRequestParams::IncludeContext includeContext);
+
+    /*!
+     */
+    [[nodiscard]] static McpProtocolCreateMessageRequestParams::IncludeContext convertIncludeContextFromString(const QString &str);
+
 private:
     std::optional<IncludeContext> mIncludeContext;
-    int mMaxTokens;
+    int mMaxTokens = 0;
     std::optional<QMap<QString, QJsonValue>> mMetadata;
     std::optional<McpProtocolModelPreferences> mModelPreferences;
     QList<McpProtocolSamplingMessage> mMessages;

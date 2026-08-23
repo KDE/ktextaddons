@@ -7,7 +7,12 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QJsonObject>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAudioContent>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolEmbeddedResource>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImageContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceLink>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 
 class QDebug;
@@ -25,7 +30,7 @@ public:
 
     /*!
      */
-    // TODO [[nodiscard]] bool operator==(const McpProtocolCallToolResult &other) const;
+    [[nodiscard]] bool operator==(const McpProtocolCallToolResult &other) const;
 
     /*!
      */
@@ -40,14 +45,14 @@ public:
     /*!
      */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
-#if 0
+
     /*!
      */
     [[nodiscard]] QList<McpProtocolUtils::ContentBlock> content() const;
     /*!
      */
     void setContent(const QList<McpProtocolUtils::ContentBlock> &newContent);
-#endif
+
     /*!
      */
     [[nodiscard]] std::optional<bool> isError() const;
@@ -63,7 +68,7 @@ public:
 
 private:
     std::optional<McpProtocolMeta> mMeta;
-    // QList<McpProtocolUtils::ContentBlock> mContent;
+    QList<McpProtocolUtils::ContentBlock> mContent;
     std::optional<bool> mIsError;
     std::optional<QMap<QString, QJsonValue>> mStructuredContent;
 };

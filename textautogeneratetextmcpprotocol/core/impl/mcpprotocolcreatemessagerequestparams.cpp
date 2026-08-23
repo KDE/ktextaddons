@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolcreatemessagerequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -15,12 +16,25 @@ McpProtocolCreateMessageRequestParams::McpProtocolCreateMessageRequestParams() =
 
 McpProtocolCreateMessageRequestParams::~McpProtocolCreateMessageRequestParams() = default;
 
-// TODO bool McpProtocolCreateMessageRequestParams::operator==(const McpProtocolCreateMessageRequestParams &other) const = default;
+bool McpProtocolCreateMessageRequestParams::operator==(const McpProtocolCreateMessageRequestParams &other) const = default;
 bool McpProtocolCreateMessageRequestParams::Meta::operator==(const McpProtocolCreateMessageRequestParams::Meta &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
+    d.space() << "maxTokens:" << t.maxTokens();
+    d.space() << "messages:" << t.messages();
+    if (t.includeContext().has_value()) {
+        d.space() << "includeContext:" << McpProtocolCreateMessageRequestParams::convertIncludeContextToString(*t.includeContext());
+    }
+    d.space() << "metadata:" << t.metadata();
+    d.space() << "modelPreferences:" << t.modelPreferences();
+    d.space() << "stopSequences:" << t.stopSequences();
+    d.space() << "systemPrompt:" << t.systemPrompt();
+    d.space() << "task:" << t.task();
+    d.space() << "temperature:" << t.temperature();
+    d.space() << "toolChoice:" << t.toolChoice();
+    d.space() << "tools:" << t.tools();
     return d;
 }
 
@@ -51,10 +65,71 @@ QJsonObject McpProtocolCreateMessageRequestParams::Meta::toJson(const McpProtoco
 McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolCreateMessageRequestParams prompt;
+    if (!obj.contains("maxTokens"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: maxTokens";
+        return prompt;
+    }
+    if (!obj.contains("messages"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: messages";
+        return prompt;
+    }
     if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
         prompt.setMeta(McpProtocolCreateMessageRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
     }
-    // TODO
+    if (obj.contains("includeContext"_L1)) {
+        prompt.setIncludeContext(convertIncludeContextFromString(obj.value("includeContext"_L1).toString()));
+    }
+    prompt.setMaxTokens(obj.value("maxTokens"_L1).toInt());
+    if (obj["messages"_L1].isArray()) {
+        const QJsonArray arr = obj["messages"_L1].toArray();
+        QList<McpProtocolSamplingMessage> messages;
+        messages.reserve(arr.count());
+        for (const QJsonValue &v : arr) {
+            messages.append(McpProtocolSamplingMessage::fromJson(v.toObject()));
+        }
+        prompt.setMessages(messages);
+    }
+    if (obj.contains("metadata"_L1) && obj["metadata"_L1].isObject()) {
+        const QJsonObject mapObj_metadata = obj["metadata"_L1].toObject();
+        QMap<QString, QJsonValue> map_metadata;
+        for (auto it = mapObj_metadata.constBegin(); it != mapObj_metadata.constEnd(); ++it) {
+            map_metadata.insert(it.key(), it.value());
+        }
+        prompt.setMetadata(map_metadata);
+    }
+    if (obj.contains("modelPreferences"_L1) && obj["modelPreferences"_L1].isObject()) {
+        prompt.setModelPreferences(McpProtocolModelPreferences::fromJson(obj["modelPreferences"_L1].toObject()));
+    }
+    if (obj.contains("stopSequences"_L1) && obj["stopSequences"_L1].isArray()) {
+        const QJsonArray arr = obj["stopSequences"_L1].toArray();
+        QStringList list_stopSequences;
+        list_stopSequences.reserve(arr.count());
+        for (const QJsonValue &v : arr) {
+            list_stopSequences.append(v.toString());
+        }
+        prompt.setStopSequences(list_stopSequences);
+    }
+    if (obj.contains("systemPrompt"_L1)) {
+        prompt.setSystemPrompt(obj.value("systemPrompt"_L1).toString());
+    }
+    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
+        prompt.setTask(McpProtocolTaskMetadata::fromJson(obj["task"_L1].toObject()));
+    }
+    if (obj.contains("temperature"_L1)) {
+        prompt.setTemperature(obj.value("temperature"_L1).toDouble());
+    }
+    if (obj.contains("toolChoice"_L1) && obj["toolChoice"_L1].isObject()) {
+        prompt.setToolChoice(McpProtocolToolChoice::fromJson(obj["toolChoice"_L1].toObject()));
+    }
+    if (obj.contains("tools"_L1) && obj["tools"_L1].isArray()) {
+        const QJsonArray arr = obj["tools"_L1].toArray();
+        QList<McpProtocolTool> tools;
+        tools.reserve(arr.count());
+        for (const QJsonValue &v : arr) {
+            tools.append(McpProtocolTool::fromJson(v.toObject()));
+        }
+        prompt.setTools(tools);
+    }
     return prompt;
 }
 
@@ -64,7 +139,54 @@ QJsonObject McpProtocolCreateMessageRequestParams::toJson(const McpProtocolCreat
     if (boolean.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolCreateMessageRequestParams::Meta::toJson(*boolean.meta());
     }
-    // TODO
+    obj["maxTokens"_L1] = boolean.maxTokens();
+    QJsonArray arr_messages;
+    for (const auto &v : boolean.messages()) {
+        arr_messages.append(McpProtocolSamplingMessage::toJson(v));
+    }
+    obj["messages"_L1] = arr_messages;
+    if (boolean.includeContext().has_value()) {
+        obj.insert("includeContext"_L1, convertIncludeContextToString(*boolean.includeContext()));
+    }
+    if (boolean.metadata().has_value()) {
+        QJsonObject map_metadata;
+        const auto metadata = *boolean.metadata();
+        for (auto it = metadata.constBegin(); it != metadata.constEnd(); ++it) {
+            map_metadata.insert(it.key(), it.value());
+        }
+        obj.insert("metadata"_L1, map_metadata);
+    }
+    if (boolean.modelPreferences().has_value()) {
+        obj.insert("modelPreferences"_L1, McpProtocolModelPreferences::toJson(*boolean.modelPreferences()));
+    }
+    if (boolean.stopSequences().has_value()) {
+        QJsonArray arr_stopSequences;
+        const auto stopSequences = *boolean.stopSequences();
+        for (const auto &v : stopSequences) {
+            arr_stopSequences.append(v);
+        }
+        obj.insert("stopSequences"_L1, arr_stopSequences);
+    }
+    if (boolean.systemPrompt().has_value()) {
+        obj.insert("systemPrompt"_L1, *boolean.systemPrompt());
+    }
+    if (boolean.task().has_value()) {
+        obj.insert("task"_L1, McpProtocolTaskMetadata::toJson(*boolean.task()));
+    }
+    if (boolean.temperature().has_value()) {
+        obj.insert("temperature"_L1, *boolean.temperature());
+    }
+    if (boolean.toolChoice().has_value()) {
+        obj.insert("toolChoice"_L1, McpProtocolToolChoice::toJson(*boolean.toolChoice()));
+    }
+    if (boolean.tools().has_value()) {
+        QJsonArray arr_tools;
+        const auto tools = *boolean.tools();
+        for (const auto &v : tools) {
+            arr_tools.append(McpProtocolTool::toJson(v));
+        }
+        obj.insert("tools"_L1, arr_tools);
+    }
     return obj;
 }
 
@@ -196,4 +318,34 @@ std::optional<McpProtocolUtils::ProgressToken> McpProtocolCreateMessageRequestPa
 void McpProtocolCreateMessageRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
 {
     mProgressToken = std::move(newProgressToken);
+}
+
+QString McpProtocolCreateMessageRequestParams::convertIncludeContextToString(McpProtocolCreateMessageRequestParams::IncludeContext includeContext)
+{
+    switch (includeContext) {
+    case IncludeContext::allServers:
+        return u"allServers"_s;
+    case IncludeContext::none:
+        return u"none"_s;
+    case IncludeContext::thisServer:
+        return u"thisServer"_s;
+    case IncludeContext::Unknown:
+        return {};
+    }
+    return {};
+}
+
+McpProtocolCreateMessageRequestParams::IncludeContext McpProtocolCreateMessageRequestParams::convertIncludeContextFromString(const QString &str)
+{
+    if (str == "allServers"_L1) {
+        return McpProtocolCreateMessageRequestParams::IncludeContext::allServers;
+    }
+    if (str == "none"_L1) {
+        return McpProtocolCreateMessageRequestParams::IncludeContext::none;
+    }
+    if (str == "thisServer"_L1) {
+        return McpProtocolCreateMessageRequestParams::IncludeContext::thisServer;
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CreateMessageRequestParams::IncludeContext value: " << str;
+    return McpProtocolCreateMessageRequestParams::IncludeContext::Unknown;
 }

@@ -63,6 +63,8 @@
 
 #include "mcpprotocolbooleanschema.h"
 #include "mcpprotocolcreatemessageresult.h"
+#include "mcpprotocolelicitrequestformparams.h"
+#include "mcpprotocolelicitrequesturlparams.h"
 #include "mcpprotocolelicitresult.h"
 #include "mcpprotocollegacytitledenumschema.h"
 #include "mcpprotocollistrootsresult.h"
@@ -438,56 +440,34 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultFromJson(cons
     if (obj.contains("completion"_L1)) {
         return McpProtocolCompleteResult::fromJson(obj);
     }
-#if 0 // TODO
-    {
-        auto result = McpProtocolResult::fromJson(obj);
-        if (result)  {
-            return result;
-        }
+    // The remaining alternatives cannot be told apart by shape: GetTaskResult and
+    // CancelTaskResult both carry the Task fields, and GetTaskPayloadResult is a bare
+    // Result. Pick the task result when the Task fields are there, otherwise fall back
+    // to Result. A caller that knows which request it sent should parse the concrete
+    // class directly instead of going through this dispatcher.
+    if (obj.contains("taskId"_L1) && obj.contains("status"_L1)) {
+        return McpProtocolGetTaskResult::fromJson(obj);
     }
-    {
-        auto result = McpProtocolGetTaskResult::fromJson(obj);
-        if (result) {
-            return result;
-        }
-    }
-    {
-        auto result = McpProtocolGetTaskPayloadResult::fromJson(obj);
-        if (result) {
-            return result;
-        }
-    }
-    {
-        auto result = McpProtocolCancelTaskResult::fromJson(obj);
-        if (result) {
-            return result;
-        }
-    }
-#endif
-    return {};
+    return McpProtocolResult::fromJson(obj);
 }
 
-#if 0
-QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token)
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token)
 {
     return std::visit(
-        [](auto &&arg) -> QString {
+        [](const auto &arg) -> QString {
             using T = std::decay_t<decltype(arg)>;
             if constexpr (std::is_same_v<T, McpProtocolPromptReference>) {
                 return arg.name();
             } else if constexpr (std::is_same_v<T, McpProtocolResourceTemplateReference>) {
                 return arg.uri();
+            } else {
+                return {};
             }
         },
         token);
 }
 
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &t)
-{
-    d.space() << "t:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getCompleteRequestParamsRef(t);
-    return d;
-}
-#endif
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &t)
 {
     d.space() << "progressToken:" << TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::getProgressTokenValue(t);
@@ -964,5 +944,39 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::primitiveSchemaDefinition
         return PrimitiveSchemaDefinition(McpProtocolStringSchema::fromJson(obj));
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid PrimitiveSchemaDefinition: unknown type \"" << dispatchValue << "\"";
+    return {};
+}
+
+QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::elicitRequestParamsToJson(
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitRequestParams &val)
+{
+    return std::visit(
+        [](const auto &v) -> QJsonObject {
+            using T = std::decay_t<decltype(v)>;
+            if constexpr (std::is_same_v<T, QJsonObject>) {
+                return v;
+            } else {
+                return T::toJson(v);
+            }
+        },
+        val);
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitRequestParams
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::elicitRequestParamsFromJson(const QJsonValue &val)
+{
+    if (!val.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ElicitRequestParams: expected object";
+        return {};
+    }
+    const QJsonObject obj = val.toObject();
+    const QString dispatchValue = obj.value("mode"_L1).toString();
+    if (dispatchValue == "url"_L1) {
+        return ElicitRequestParams(McpProtocolElicitRequestURLParams::fromJson(obj));
+    }
+    if (dispatchValue == "form"_L1) {
+        return ElicitRequestParams(McpProtocolElicitRequestFormParams::fromJson(obj));
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ElicitRequestParams: unknown mode \"" << dispatchValue << "\"";
     return {};
 }

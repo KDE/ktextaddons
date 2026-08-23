@@ -14,12 +14,18 @@ McpProtocolCallToolResult::McpProtocolCallToolResult() = default;
 
 McpProtocolCallToolResult::~McpProtocolCallToolResult() = default;
 
-// TODO bool McpProtocolCallToolResult::operator==(const McpProtocolCallToolResult &other) const = default;
+bool McpProtocolCallToolResult::operator==(const McpProtocolCallToolResult &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolResult &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "isError:" << t.isError();
+    d.space() << "structuredContent:" << t.structuredContent();
+    QJsonArray arr_content;
+    for (const auto &v : t.content()) {
+        arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
+    }
+    d.space() << "content:" << arr_content;
     return d;
 }
 
@@ -40,7 +46,15 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
         }
         prompt.setStructuredContent(map_structuredContent);
     }
-    // TODO
+    if (obj.contains("content"_L1) && obj["content"_L1].isArray()) {
+        const QJsonArray arr = obj["content"_L1].toArray();
+        QList<McpProtocolUtils::ContentBlock> content;
+        content.reserve(arr.count());
+        for (const QJsonValue &v : arr) {
+            content.append(McpProtocolUtils::contentBlockFromJson(v));
+        }
+        prompt.setContent(content);
+    }
     return prompt;
 }
 
@@ -60,8 +74,11 @@ QJsonObject McpProtocolCallToolResult::toJson(const McpProtocolCallToolResult &b
         }
         obj["structuredContent"_L1] = map_structuredContent;
     }
-
-    // TODO
+    QJsonArray arr_content;
+    for (const auto &v : boolean.content()) {
+        arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
+    }
+    obj["content"_L1] = arr_content;
     return obj;
 }
 
@@ -74,7 +91,6 @@ void McpProtocolCallToolResult::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
     mMeta = std::move(newMeta);
 }
-#if 0
 QList<McpProtocolUtils::ContentBlock> McpProtocolCallToolResult::content() const
 {
     return mContent;
@@ -84,7 +100,6 @@ void McpProtocolCallToolResult::setContent(const QList<McpProtocolUtils::Content
 {
     mContent = newContent;
 }
-#endif
 std::optional<bool> McpProtocolCallToolResult::isError() const
 {
     return mIsError;

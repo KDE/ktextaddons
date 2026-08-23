@@ -19,7 +19,7 @@ bool McpProtocolPromptMessage::operator==(const McpProtocolPromptMessage &other)
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage &t)
 {
     d.space() << "role:" << t.role();
-    // TODO d.space() << "content:" << t.content();
+    d.space() << "content:" << McpProtocolUtils::contentBlocktoJson(t.content());
     return d;
 }
 

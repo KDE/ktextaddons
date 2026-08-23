@@ -14,6 +14,12 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitRequestFormParams::McpProtocolElicitRequestFormParams() = default;
 McpProtocolElicitRequestFormParams::~McpProtocolElicitRequestFormParams() = default;
 
+bool McpProtocolElicitRequestFormParams::operator==(const McpProtocolElicitRequestFormParams &other) const = default;
+
+bool McpProtocolElicitRequestFormParams::Meta::operator==(const McpProtocolElicitRequestFormParams::Meta &other) const = default;
+
+bool McpProtocolElicitRequestFormParams::RequestedSchema::operator==(const McpProtocolElicitRequestFormParams::RequestedSchema &other) const = default;
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams &t)
 {
     d.space() << "message:" << t.message();

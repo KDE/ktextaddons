@@ -7,8 +7,9 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
-// #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestParams>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -45,10 +46,16 @@ public:
      */
     void setId(const McpProtocolUtils::RequestId &newId);
 
+    /*!
+     */
+    [[nodiscard]] McpProtocolUtils::ElicitRequestParams params() const;
+    /*!
+     */
+    void setParams(const McpProtocolUtils::ElicitRequestParams &newParams);
+
 private:
     McpProtocolUtils::RequestId mId;
-    // TODO
-    // McpProtocolUtils::ElicitRequestParams mParams;
+    McpProtocolUtils::ElicitRequestParams mParams;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest, Q_RELOCATABLE_TYPE);

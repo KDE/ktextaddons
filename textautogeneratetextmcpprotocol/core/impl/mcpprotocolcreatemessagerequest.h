@@ -28,7 +28,7 @@ public:
 
     /*!
      */
-    // TODO [[nodiscard]] bool operator==(const McpProtocolCreateMessageRequest &other) const;
+    [[nodiscard]] bool operator==(const McpProtocolCreateMessageRequest &other) const;
 
     /*!
      */

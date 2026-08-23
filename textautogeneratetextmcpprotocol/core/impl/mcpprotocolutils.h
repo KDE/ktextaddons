@@ -317,9 +317,11 @@ using JSONRPCMessage =
 [[nodiscard]] QJsonValue primitiveSchemaDefinitionToJson(const PrimitiveSchemaDefinition &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition primitiveSchemaDefinitionFromJson(const QJsonValue &val);
 
-// [[nodiscard]] QString getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
+[[nodiscard]] QJsonValue elicitRequestParamsToJson(const ElicitRequestParams &val);
+[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitRequestParams elicitRequestParamsFromJson(const QJsonValue &val);
+
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString
+getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
 };
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role &t);
-// TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef
-// &t);

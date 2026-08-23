@@ -29,7 +29,7 @@ public:
 
     /*!
      */
-    // [[nodiscard]] bool operator==(const McpProtocolToolResultContent &other) const;
+    [[nodiscard]] bool operator==(const McpProtocolToolResultContent &other) const;
 
     /*!
      */
