@@ -639,6 +639,7 @@ void TextAutoGenerateManager::loadEngine()
     if (mTextAutoGenerateTextInstancesManager->isEmpty()) {
         qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "We need to add instances";
         Q_EMIT needToAddInstances();
+        Q_EMIT pluginsInitializedDone();
         return;
     }
 
