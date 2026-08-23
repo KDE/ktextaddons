@@ -37,7 +37,7 @@ void TextAutoGenerateSearchJob::start()
         deleteLater();
         return;
     }
-    QList<TextAutoGenerateSearchMessage> messages = mManager->searchTextInDatabase(mSearchText.toLower());
+    QList<TextAutoGenerateSearchMessage> messages = mManager->searchTextInDatabase(mSearchText.trimmed().toLower());
     // Sort messages
     std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateSearchMessage &left, const TextAutoGenerateSearchMessage &right) {
         if (left.dateTime() == right.dateTime()) {
