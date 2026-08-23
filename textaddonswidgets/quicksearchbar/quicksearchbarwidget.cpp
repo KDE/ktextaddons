@@ -24,7 +24,6 @@ QuickSearchBarWidget::QuickSearchBarWidget(QWidget *parent)
     mainLayout->addWidget(mSliderContainer);
 
     mQuickSearchBar->setObjectName(u"mQuickSearchBar"_s);
-    mainLayout->addWidget(mQuickSearchBar);
 
     mSliderContainer->setContent(mQuickSearchBar);
 
