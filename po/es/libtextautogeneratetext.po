@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-17 00:44+0000\n"
+"POT-Creation-Date: 2026-08-23 00:43+0000\n"
 "PO-Revision-Date: 2026-08-17 14:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3140,7 +3140,6 @@ msgid "Show metadata info"
 msgstr "Mostrar información de metadatos"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:26
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
@@ -3184,7 +3183,7 @@ msgid "Mark As Default"
 msgstr "Marcar como predeterminada"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3197,13 +3196,13 @@ msgid "Remove Instance"
 msgstr "Eliminar instancia"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "¿Quiere eliminar esta instancia (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:51
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3300,6 +3299,13 @@ msgstr "Varios"
 msgid "Travel"
 msgstr "Viaje"
 
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@title:window"
+msgid "Prompt"
+msgstr "Indicaciones"
+
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
 #, kde-format
 msgid "Category:"
@@ -3311,13 +3317,13 @@ msgstr "Categoría:"
 msgid "Description:"
 msgstr "Descripción:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
 msgstr "Añadir indicaciones…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-17 00:44+0000\n"
+"POT-Creation-Date: 2026-08-23 00:43+0000\n"
 "PO-Revision-Date: 2026-08-17 09:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2979,7 +2979,6 @@ msgid "Show metadata info"
 msgstr "הצגת פרטי נתוני־על"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:26
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
@@ -3023,7 +3022,7 @@ msgid "Mark As Default"
 msgstr "סימון כברירת מחדל"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3036,13 +3035,13 @@ msgid "Remove Instance"
 msgstr "הסרת מופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "להסיר את המופע הזה (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:51
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3139,6 +3138,13 @@ msgstr "שונות"
 msgid "Travel"
 msgstr "טיול"
 
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@title:window"
+msgid "Prompt"
+msgstr "בקשה"
+
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
 #, kde-format
 msgid "Category:"
@@ -3150,13 +3156,13 @@ msgstr "קטגוריה:"
 msgid "Description:"
 msgstr "תיאור:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
 msgstr "הוספת בקשה…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"

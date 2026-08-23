@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-17 00:44+0000\n"
+"POT-Creation-Date: 2026-08-23 00:43+0000\n"
 "PO-Revision-Date: 2026-08-17 07:25+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3101,7 +3101,6 @@ msgid "Show metadata info"
 msgstr "მეტამონაცემების ინფორმაციის ჩვენება"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:26
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
@@ -3145,7 +3144,7 @@ msgid "Mark As Default"
 msgstr "ნაგულისხმევად მონიშვნა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3158,13 +3157,13 @@ msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:51
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3261,6 +3260,13 @@ msgstr "სხვადასხვა"
 msgid "Travel"
 msgstr "მოგზაურობა"
 
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@title:window"
+msgid "Prompt"
+msgstr "მოთხოვნის ზოლი"
+
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
 #, kde-format
 msgid "Category:"
@@ -3272,13 +3278,13 @@ msgstr "კატეგორია:"
 msgid "Description:"
 msgstr "აღწერა:"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
 msgstr "მოთხოვნის დამატება…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"POT-Creation-Date: 2026-08-23 00:43+0000\n"
 "PO-Revision-Date: 2026-07-30 21:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -294,12 +294,11 @@ msgid "(Show News)"
 msgstr "(Berritasunak erakutsi)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
-#: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "Zer berri %2(e)n. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
 #, kde-format
 msgid "All Versions"
 msgstr "Bertsio guztiak"
@@ -324,22 +323,29 @@ msgstr "Akats-zuzenketa batzuk:"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> %1 bertsioa </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:66
-#, kde-format
-msgid "<h1>What's New History</h1></hr>"
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "What's new in %2. %1"
+msgid "What's new in %1. %2"
+msgstr "Zer berri %2(e)n. %1"
+
+#: whatsnewng/whatsnewngwidget.cpp:67
+#, fuzzy, kde-format
+#| msgid "<h1>What's New History</h1></hr>"
+msgid "<h1>What's New History</h1>"
 msgstr "<h1>Berritasunen historia</h1></hr>"
 
-#: whatsnewng/whatsnewngwidget.cpp:84
+#: whatsnewng/whatsnewngwidget.cpp:85
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Argitalpen-oharra</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:93
+#: whatsnewng/whatsnewngwidget.cpp:94
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>%1 bertsioko berritasunak (argitaratua: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngwidget.cpp:95
+#: whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>%1 bertsioko berritasunak (argitaratu gabea)</i></h3>"

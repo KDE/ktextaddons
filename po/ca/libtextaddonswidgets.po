@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 00:44+0000\n"
+"POT-Creation-Date: 2026-08-23 00:43+0000\n"
 "PO-Revision-Date: 2026-07-15 10:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -284,12 +284,11 @@ msgid "(Show News)"
 msgstr "(Mostra les novetats)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
-#: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "Què hi ha de nou a %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
 #, kde-format
 msgid "All Versions"
 msgstr "Totes les versions"
@@ -314,22 +313,29 @@ msgstr "Algunes correccions d'errors:"
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Versió %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:66
-#, kde-format
-msgid "<h1>What's New History</h1></hr>"
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "What's new in %2. %1"
+msgid "What's new in %1. %2"
+msgstr "Què hi ha de nou a %2. %1"
+
+#: whatsnewng/whatsnewngwidget.cpp:67
+#, fuzzy, kde-format
+#| msgid "<h1>What's New History</h1></hr>"
+msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de Què hi ha de nou</h1></hr>"
 
-#: whatsnewng/whatsnewngwidget.cpp:84
+#: whatsnewng/whatsnewngwidget.cpp:85
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Notes de la versió</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:93
+#: whatsnewng/whatsnewngwidget.cpp:94
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>Què hi ha de nou a la versió %1 (Publicada: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngwidget.cpp:95
+#: whatsnewng/whatsnewngwidget.cpp:96
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Què hi ha de nou a la versió %1 (No publicada)</i></h3>"
