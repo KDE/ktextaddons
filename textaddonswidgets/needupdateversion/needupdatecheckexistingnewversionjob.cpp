@@ -70,7 +70,7 @@ void NeedUpdateCheckExistingNewVersionJob::setUrl(const QUrl &newUrl)
 
 bool NeedUpdateCheckExistingNewVersionJob::canStart() const
 {
-    return !mUrl.isEmpty() && mCompileDate.isValid();
+    return mUrl.isValid() && mCompileDate.isValid();
 }
 
 QDate NeedUpdateCheckExistingNewVersionJob::compileDate() const
