@@ -138,7 +138,7 @@ QList<TextAddonsWidgets::PluginUtilData> TextAutoGenerateTextToolPluginManager::
 TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFromToolNameId(const QByteArray &identifier) const
 {
     const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [identifier](const TextAutoGenerateTextToolPluginManagerInfo &info) {
-        return info.plugin->toolNameId() == identifier;
+        return info.plugin->toolNameId() == identifier && info.isEnabled;
     });
     if (it != mPluginList.end()) {
         return (*it).plugin;
@@ -178,8 +178,10 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
             if (it->plugin->toolNameId() == t) {
-                toolsArray.append(it->plugin->metadata());
-                found = true;
+                if (it->plugin->enabled()) {
+                    toolsArray.append(it->plugin->metadata());
+                    found = true;
+                }
                 break;
             }
         }
