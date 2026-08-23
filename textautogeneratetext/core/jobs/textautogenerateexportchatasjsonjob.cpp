@@ -55,7 +55,7 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
 
 QString TextAutoGenerateExportChatAsJsonJob::filter() const
 {
-    return u"*.json"_s;
+    return u"%1 (*.json)"_s.arg(i18n("Json File"));
 }
 
 #include "moc_textautogenerateexportchatasjsonjob.cpp"
