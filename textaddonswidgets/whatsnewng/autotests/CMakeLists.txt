@@ -23,3 +23,5 @@ macro(add_whatsnewng_test _source)
                 ON
     )
 endmacro()
+
+add_whatsnewng_test(whatsnewngutilstest.cpp)
