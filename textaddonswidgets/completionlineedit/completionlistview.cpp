@@ -43,8 +43,10 @@ void CompletionListView::setModel(QAbstractItemModel *model)
             disconnect(oldModel, &QAbstractItemModel::rowsInserted, this, &CompletionListView::slotCompletionAvailable);
             disconnect(oldModel, &QAbstractItemModel::rowsRemoved, this, &CompletionListView::slotCompletionAvailable);
         }
-        connect(model, &QAbstractItemModel::rowsInserted, this, &CompletionListView::slotCompletionAvailable);
-        connect(model, &QAbstractItemModel::rowsRemoved, this, &CompletionListView::slotCompletionAvailable);
+        if (model) {
+            connect(model, &QAbstractItemModel::rowsInserted, this, &CompletionListView::slotCompletionAvailable);
+            connect(model, &QAbstractItemModel::rowsRemoved, this, &CompletionListView::slotCompletionAvailable);
+        }
         QListView::setModel(model);
     }
 }
