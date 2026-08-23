@@ -60,10 +60,10 @@ void WhatsNewNgUtilsTest::shouldGenerateChangelog()
 
     QCOMPARE(
         TextAddonsWidgets::WhatsNewNgUtils::generateChangelog(releases, 0),
-        u"<h3><i>What's New in Version 25.12.1 (Released: 1/8/26)</i></h3><ul><li>Patch release change 1.</li><li>Patch release change 2 &amp; 3.</li></ul>"_s);
+        u"<qt><h3><i>What's New in Version 25.12.1 (Released: 1/8/26)</i></h3><ul><li>Patch release change 1.</li><li>Patch release change 2 &amp; 3.</li></ul></qt>"_s);
 
     QCOMPARE(
         TextAddonsWidgets::WhatsNewNgUtils::generateChangelog(releases, 1),
-        u"<h3><i>What's New in Version 25.12.0 (Released: 12/11/25)</i></h3><p>&quot;Cool&quot; (untranslated) Features:</p><ul><li><em>Important</em> untranslated feature release change 1.</li><li>Not so <em>important</em> untranslated feature release change 2.</li><li>Feature release change 3.</li></ul><b><i><a href=\"https://kde.org/announcements/gear/25.12.0/\">Release Note</a></i></b>"_s);
+        u"<qt><h3><i>What's New in Version 25.12.0 (Released: 12/11/25)</i></h3><p>&quot;Cool&quot; (untranslated) Features:</p><ul><li><em>Important</em> untranslated feature release change 1.</li><li>Not so <em>important</em> untranslated feature release change 2.</li><li>Feature release change 3.</li></ul><b><i><a href=\"https://kde.org/announcements/gear/25.12.0/\">Release Note</a></i></b></qt>"_s);
 }
 #include "moc_whatsnewngutilstest.cpp"

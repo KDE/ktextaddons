@@ -58,7 +58,7 @@ QString TextAddonsWidgets::WhatsNewNgUtils::generateChangelog(const QList<KAbout
     } else if (type >= 0 && type < releases.count()) {
         const auto &info = releases.at(type);
         const QString message = generateVersionHeader(info) + info.description() + generateUrl(info);
-        return message;
+        return generateStartEndHtml(message);
     }
     return {};
 }
