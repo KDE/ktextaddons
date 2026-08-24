@@ -10,6 +10,10 @@ McpServerStdioPluginInterface::McpServerStdioPluginInterface(QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface{parent}
     , mServerStdio(new McpServerStdio(this, this))
 {
+    connect(mServerStdio, &McpServerStdio::started, this, &McpServerStdioPluginInterface::started);
+    connect(mServerStdio, &McpServerStdio::received, this, &McpServerStdioPluginInterface::received);
+    connect(mServerStdio, &McpServerStdio::error, this, &McpServerStdioPluginInterface::error);
+    connect(mServerStdio, &McpServerStdio::finished, this, &McpServerStdioPluginInterface::finished);
 }
 
 McpServerStdioPluginInterface::~McpServerStdioPluginInterface() = default;

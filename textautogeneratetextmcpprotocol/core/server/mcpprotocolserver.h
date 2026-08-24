@@ -55,6 +55,12 @@ public:
      */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     * \brief send
+     * \param obj
+     */
+    void send(const QJsonObject &obj);
+
 Q_SIGNALS:
     /*!
      * \brief started
@@ -70,6 +76,10 @@ Q_SIGNALS:
      * \param str
      */
     void error(const QString &str);
+    /*!
+     * \brief finished
+     */
+    void finished();
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();

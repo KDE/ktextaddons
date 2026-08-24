@@ -5,26 +5,28 @@
 */
 #pragma once
 
-#include <QObject>
+#include "common/mcpbase.h"
+#include <QByteArray>
 class QProcess;
 class McpServerStdioPluginInterface;
-class McpServerStdio : public QObject
+class McpServerStdio : public TextAutoGenerateTextMcpProtocolCore::McpBase
 {
     Q_OBJECT
 public:
     explicit McpServerStdio(McpServerStdioPluginInterface *interface, QObject *parent = nullptr);
     ~McpServerStdio() override;
 
-    void connection();
-    void send(const QJsonObject &obj);
+    void connection() override;
+    void send(const QJsonObject &obj) override;
 
-Q_SIGNALS:
-    void started();
-    void received(const QJsonObject &obj);
-    void error(const QString &str);
-    void finished();
+    void stop();
+
+    [[nodiscard]] bool isRunning() const;
 
 private:
+    void slotReadStandardOutput();
+    void slotReadStandardError();
     QProcess *const mProcess;
     McpServerStdioPluginInterface *const mInterface;
+    QByteArray mBuffer;
 };

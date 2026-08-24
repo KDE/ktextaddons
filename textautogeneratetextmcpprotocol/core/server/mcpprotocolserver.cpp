@@ -41,6 +41,7 @@ void McpProtocolServer::initialize()
             connect(mPluginInterface, &McpProtocolPluginInterface::error, this, &McpProtocolServer::error);
             connect(mPluginInterface, &McpProtocolPluginInterface::received, this, &McpProtocolServer::received);
             connect(mPluginInterface, &McpProtocolPluginInterface::started, this, &McpProtocolServer::started);
+            connect(mPluginInterface, &McpProtocolPluginInterface::finished, this, &McpProtocolServer::finished);
         }
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "plugin not found for " << mProtocolType;
@@ -74,6 +75,20 @@ void McpProtocolServer::start()
     if (canStart()) {
         mPluginInterface->start();
     }
+}
+
+void McpProtocolServer::send(const QJsonObject &obj)
+{
+    if (mPluginInterface) {
+        mPluginInterface->send(obj);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "mPluginInterface is nullptr. It's a bug";
+    }
+}
+
+McpProtocolPlugin::TransportType McpProtocolServer::protocolType() const
+{
+    return mProtocolType;
 }
 
 #include "moc_mcpprotocolserver.cpp"
