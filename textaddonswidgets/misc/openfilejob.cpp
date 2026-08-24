@@ -9,10 +9,10 @@
 #include <KApplicationTrader>
 #include <KLocalizedString>
 #include <KService>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QMimeDatabase>
 #include <QPushButton>
-#include <QTemporaryDir>
 #include <QUrl>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAddonsWidgets;
@@ -88,7 +88,7 @@ void OpenFileJob::start()
         deleteLater();
         return;
     }
-    const QString path = QUrl::fromPercentEncoding(mLink.toLatin1());
+    const QString path = QUrl::fromPercentEncoding(mLink.toUtf8());
     const QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForFile(path);
     const bool valid = mimeType.isValid() && !mimeType.isDefault();
