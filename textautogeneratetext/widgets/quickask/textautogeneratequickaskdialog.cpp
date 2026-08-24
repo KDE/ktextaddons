@@ -48,7 +48,9 @@ TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog()
 
 void TextAutoGenerateQuickAskDialog::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
-    mManager->ask(info);
+    if (mManager) {
+        mManager->ask(info);
+    }
 }
 
 void TextAutoGenerateQuickAskDialog::readConfig()

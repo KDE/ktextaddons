@@ -92,7 +92,9 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
             updateEngineModelName(mManager->generateEngineDisplayName());
         });
         connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::activated, this, [this]() {
-            mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
+            if (mManager) {
+                mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
+            }
         });
         connect(saveQuickAskButton, &QToolButton::clicked, this, [this]() {
             mManager->saveCurrentChatInDataBase(mManager->currentChatId());
@@ -115,7 +117,9 @@ void TextAutoGenerateQuickAskHeaderWidget::setModelList(const QList<TextAutoGene
 {
     mModelComboBox->setModelList(lst);
     // Initialize current Model
-    mModelComboBox->setCurrentModel(mManager->textAutoGeneratePlugin()->currentModel());
+    if (mManager) {
+        mModelComboBox->setCurrentModel(mManager->textAutoGeneratePlugin()->currentModel());
+    }
 }
 
 QString TextAutoGenerateQuickAskHeaderWidget::currentModel() const

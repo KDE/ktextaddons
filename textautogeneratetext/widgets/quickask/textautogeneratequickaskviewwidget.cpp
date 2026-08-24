@@ -55,9 +55,11 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
             this,
             &TextAutoGenerateQuickAskViewWidget::refreshAnswerRequested);
 
-    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
-        mTextAutoGenerateQuickAskHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
-    });
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
+            mTextAutoGenerateQuickAskHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
+        });
+    }
     connect(mTextAutoGenerateQuickAskHeaderWidget,
             &TextAutoGenerateQuickAskHeaderWidget::searchText,
             mTextAutoGenerateResultWidget,
