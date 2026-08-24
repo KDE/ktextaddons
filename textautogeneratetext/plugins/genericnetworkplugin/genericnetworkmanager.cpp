@@ -40,9 +40,9 @@ void GenericNetworkManager::loadModels()
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     }
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
-
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
