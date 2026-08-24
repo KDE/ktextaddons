@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
-"PO-Revision-Date: 2026-07-15 06:03+0200\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"PO-Revision-Date: 2026-08-23 06:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -158,21 +158,18 @@ msgid "Configure"
 msgstr "მორგება"
 
 #: quicksearchbar/quicksearchbar.cpp:27
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "ძებნა… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "შემდეგი"
 
 #: quicksearchbar/quicksearchbar.cpp:49
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
@@ -284,7 +281,7 @@ msgstr "(სიახლეების ჩვენება)"
 msgid "What's new in %2. %1"
 msgstr "რა არის ახალი %2-ში. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr "ყველა ვერსია"
@@ -310,31 +307,29 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> ვერსია %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "რა არის ახალი %2-ში. %1"
+msgstr "რა არის ახალი %1-ში. %2"
 
-#: whatsnewng/whatsnewngwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
-msgid "<h1>What's New History</h1>"
-msgstr "<h1>რა არის ახალი ისტორია</h1>"
-
-#: whatsnewng/whatsnewngwidget.cpp:85
+#: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">გამოშვების შენიშვნები</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:94
+#: whatsnewng/whatsnewngutils.cpp:31
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>რა არის ახალი ისტორიაში %1 (გამოსვლის დრო: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>რა არის ახალი ისტორიაში %1 (ჯერ არ გამოსულა)</i></h3>"
+
+#: whatsnewng/whatsnewngutils.cpp:50
+#, kde-format
+msgid "<h1>What's New History</h1>"
+msgstr "<h1>სიახლეების ისტორია</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "ვერსია %1"

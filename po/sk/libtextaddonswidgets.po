@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
 "PO-Revision-Date: 2023-12-08 20:09+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -156,21 +156,18 @@ msgid "Configure"
 msgstr "Nastaviť"
 
 #: quicksearchbar/quicksearchbar.cpp:27
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Hľadať… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Ďalej"
 
 #: quicksearchbar/quicksearchbar.cpp:49
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
@@ -282,7 +279,7 @@ msgstr "(Zobraziť novinky)"
 msgid "What's new in %2. %1"
 msgstr "Čo je nové v %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr "Všetky verzie"
@@ -313,26 +310,26 @@ msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
 msgid "What's new in %1. %2"
 msgstr "Čo je nové v %2. %1"
 
-#: whatsnewng/whatsnewngwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
-msgid "<h1>What's New History</h1>"
-msgstr "<h1>História noviniek</h1></hr>"
-
-#: whatsnewng/whatsnewngwidget.cpp:85
+#: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Poznámky k vydaniu</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:94
+#: whatsnewng/whatsnewngutils.cpp:31
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>Čo je nové vo verzii %1 (vydané: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Čo je nové vo verzii %1 (zatiaľ nevydané)</i></h3>"
+
+#: whatsnewng/whatsnewngutils.cpp:50
+#, fuzzy, kde-format
+#| msgid "<h1>What's New History</h1></hr>"
+msgid "<h1>What's New History</h1>"
+msgstr "<h1>História noviniek</h1></hr>"
 
 #~ msgid "Version %1"
 #~ msgstr "Verzia %1"

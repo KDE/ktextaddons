@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
-"PO-Revision-Date: 2026-08-17 07:25+0200\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"PO-Revision-Date: 2026-08-23 06:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.9\n"
+
+#: core/jobs/textautogenerateaskjob.cpp:35
+#, kde-format
+msgid "Impossible to start job. Manager is null or text is empty."
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
+#, kde-format
+msgid "Failed to open file for writing: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
+#, kde-format
+msgid "Failed to write to file: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#, kde-format
+msgid "Json File"
+msgstr ""
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#, kde-format
+msgid "Failed to open file for reading: %1"
+msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -184,30 +210,30 @@ msgstr "<br><b>მოთხოვნის ტოკენები:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>დასრულების ტოკენი:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "ხელსაწყოს დამატებები:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "ხელსაწყოს იდენტიფიკატორი: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "ჩართული"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "გამორთული"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -3261,8 +3287,7 @@ msgid "Travel"
 msgstr "მოგზაურობა"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "მოთხოვნის ზოლი"

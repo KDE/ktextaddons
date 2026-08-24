@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
 "PO-Revision-Date: 2026-04-11 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -16,6 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: core/jobs/textautogenerateaskjob.cpp:35
+#, kde-format
+msgid "Impossible to start job. Manager is null or text is empty."
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
+#, kde-format
+msgid "Failed to open file for writing: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
+#, kde-format
+msgid "Failed to write to file: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#, kde-format
+msgid "Json File"
+msgstr ""
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#, kde-format
+msgid "Failed to open file for reading: %1"
+msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -182,30 +208,30 @@ msgstr "<br><b>Tokeny výzvy:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Tokeny dokončenia:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Moduly nástrojov:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identifikátor nástroja: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Zapnuté"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Vypnuté"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"

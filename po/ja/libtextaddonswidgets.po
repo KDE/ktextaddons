@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
 "PO-Revision-Date: 2023-05-01 23:31-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -153,21 +153,18 @@ msgid "Configure"
 msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:40
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:49
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
@@ -277,7 +274,7 @@ msgstr ""
 msgid "What's new in %2. %1"
 msgstr ""
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr ""
@@ -307,22 +304,22 @@ msgstr ""
 msgid "What's new in %1. %2"
 msgstr ""
 
-#: whatsnewng/whatsnewngwidget.cpp:67
-#, kde-format
-msgid "<h1>What's New History</h1>"
-msgstr ""
-
-#: whatsnewng/whatsnewngwidget.cpp:85
+#: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr ""
 
-#: whatsnewng/whatsnewngwidget.cpp:94
+#: whatsnewng/whatsnewngutils.cpp:31
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr ""
 
-#: whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
+msgstr ""
+
+#: whatsnewng/whatsnewngutils.cpp:50
+#, kde-format
+msgid "<h1>What's New History</h1>"
 msgstr ""

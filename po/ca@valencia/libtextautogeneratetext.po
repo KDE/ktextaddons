@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
-"PO-Revision-Date: 2026-08-17 09:19+0200\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"PO-Revision-Date: 2026-08-23 09:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
+
+#: core/jobs/textautogenerateaskjob.cpp:35
+#, kde-format
+msgid "Impossible to start job. Manager is null or text is empty."
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
+#, kde-format
+msgid "Failed to open file for writing: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
+#, kde-format
+msgid "Failed to write to file: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#, kde-format
+msgid "Json File"
+msgstr ""
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#, kde-format
+msgid "Failed to open file for reading: %1"
+msgstr ""
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -187,30 +213,30 @@ msgstr "<br><b>Segment textual de petició:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Segment textual de compleció:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Connectors d'eines:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identificador de l'eina: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Actiu"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Inactiu"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -3289,8 +3315,7 @@ msgid "Travel"
 msgstr "Viatge"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Petició"

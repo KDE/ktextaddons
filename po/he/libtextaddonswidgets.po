@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
-"PO-Revision-Date: 2026-07-17 12:15+0300\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"PO-Revision-Date: 2026-08-23 11:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -160,21 +160,18 @@ msgid "Configure"
 msgstr "הגדרה"
 
 #: quicksearchbar/quicksearchbar.cpp:27
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "חיפוש… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "הבא"
 
 #: quicksearchbar/quicksearchbar.cpp:49
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
@@ -284,7 +281,7 @@ msgstr "(הצגת חדשות)"
 msgid "What's new in %2. %1"
 msgstr "מה חדש ב־%2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr "כל הגרסאות"
@@ -310,31 +307,29 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> גרסה %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "מה חדש ב־%2. %1"
+msgstr "מה חדש ב־%1. %2"
 
-#: whatsnewng/whatsnewngwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
-msgid "<h1>What's New History</h1>"
-msgstr "<h1>היסטוריית מה חדש</h1></hr>"
-
-#: whatsnewng/whatsnewngwidget.cpp:85
+#: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">הערות הוצאה לאור</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:94
+#: whatsnewng/whatsnewngutils.cpp:31
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>מה חדש בגרסה %1 (יצאה לאור: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>מה חדש בגרסה %1 (לא יצאה לאור)</i></h3>"
+
+#: whatsnewng/whatsnewngutils.cpp:50
+#, kde-format
+msgid "<h1>What's New History</h1>"
+msgstr "<h1>היסטוריית מה חדש</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "גרסה %1"

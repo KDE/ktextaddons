@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
-"PO-Revision-Date: 2026-08-17 09:25+0300\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"PO-Revision-Date: 2026-08-23 11:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 26.04.3\n"
+
+#: core/jobs/textautogenerateaskjob.cpp:35
+#, kde-format
+msgid "Impossible to start job. Manager is null or text is empty."
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
+#, kde-format
+msgid "Failed to open file for writing: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
+#, kde-format
+msgid "Failed to write to file: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#, kde-format
+msgid "Json File"
+msgstr ""
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#, kde-format
+msgid "Failed to open file for reading: %1"
+msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -182,30 +208,30 @@ msgstr "<br><b>אסימון בקשה:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>אסימון השלמה:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "תוספי כלים:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "מזהה כלי: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "פעיל"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "כבוי"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -3139,8 +3165,7 @@ msgid "Travel"
 msgstr "טיול"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "בקשה"

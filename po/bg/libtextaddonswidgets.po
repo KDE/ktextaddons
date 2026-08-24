@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
 "PO-Revision-Date: 2026-07-20 22:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -159,21 +159,18 @@ msgid "Configure"
 msgstr "Конфигуриране"
 
 #: quicksearchbar/quicksearchbar.cpp:27
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Търсене… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Следващ"
 
 #: quicksearchbar/quicksearchbar.cpp:49
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
@@ -285,7 +282,7 @@ msgstr "(Показване на новото)"
 msgid "What's new in %2. %1"
 msgstr "Какво ново в %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
 #, kde-format
 msgid "All Versions"
 msgstr "Всички версии"
@@ -316,23 +313,23 @@ msgstr "<h1><i> Версия %1 </i></h1><hr/><br>"
 msgid "What's new in %1. %2"
 msgstr "Какво ново в %2. %1"
 
-#: whatsnewng/whatsnewngwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
-msgid "<h1>What's New History</h1>"
-msgstr "<h1>История на новостите</h1></hr>"
-
-#: whatsnewng/whatsnewngwidget.cpp:85
+#: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Бележки към версията</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:94
+#: whatsnewng/whatsnewngutils.cpp:31
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>Какво е новото във версия %1 (издадена: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngwidget.cpp:96
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Какво е новото във версия %1 (неиздадена)</i></h3>"
+
+#: whatsnewng/whatsnewngutils.cpp:50
+#, fuzzy, kde-format
+#| msgid "<h1>What's New History</h1></hr>"
+msgid "<h1>What's New History</h1>"
+msgstr "<h1>История на новостите</h1></hr>"

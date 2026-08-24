@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:43+0000\n"
-"PO-Revision-Date: 2026-08-17 07:00+0200\n"
+"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"PO-Revision-Date: 2026-08-23 08:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.9\n"
+
+#: core/jobs/textautogenerateaskjob.cpp:35
+#, kde-format
+msgid "Impossible to start job. Manager is null or text is empty."
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
+#, kde-format
+msgid "Failed to open file for writing: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
+#, kde-format
+msgid "Failed to write to file: %1"
+msgstr ""
+
+#: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#, kde-format
+msgid "Json File"
+msgstr ""
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#, kde-format
+msgid "Failed to open file for reading: %1"
+msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -183,30 +209,30 @@ msgstr "<br><b>Žeton poziva:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Žeton dokončanja:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Vtičniki orodij:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:232
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Določilnik orodja: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
 msgstr "Vključeno"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
 msgstr "Izključeno"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
@@ -3258,8 +3284,7 @@ msgid "Travel"
 msgstr "Potovanja"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Poziv"
