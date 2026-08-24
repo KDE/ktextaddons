@@ -61,6 +61,10 @@ QString SaveFileUtils::saveFile(QWidget *parentWidget, const QString &filePath, 
         return {};
     }
 
+    if (QFileInfo(filePath) == QFileInfo(file)) {
+        return file; // source and destination are the same file
+    }
+
     QFile sourceFile(filePath);
     if (!sourceFile.exists()) {
         KMessageBox::error(parentWidget, i18n("Source file no longer exists"), i18nc("@title:window", "Error saving file"));
