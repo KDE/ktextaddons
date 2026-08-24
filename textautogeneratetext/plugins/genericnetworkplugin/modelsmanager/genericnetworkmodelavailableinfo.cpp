@@ -13,7 +13,7 @@ GenericNetworkModelAvailableInfo::~GenericNetworkModelAvailableInfo() = default;
 
 void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
 {
-    qDebug() << " obj " << obj;
+    // qDebug() << " obj " << obj;
     if (obj["tools_supported"_L1].toBool()) {
         mCapabilities |= Capability::Tools;
     }
