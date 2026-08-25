@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"POT-Creation-Date: 2026-08-25 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -69,19 +69,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "保存文件"
 
-#: misc/savefileutils.cpp:66
+#: misc/savefileutils.cpp:72
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "源文件已不存在"
 
-#: misc/savefileutils.cpp:66 misc/savefileutils.cpp:72
-#: misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:72 misc/savefileutils.cpp:78
+#: misc/savefileutils.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "保存文件时发生错误"
 
-#: misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:78
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "无法覆盖已有文件"
@@ -305,7 +305,7 @@ msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %1. %2"
-msgstr ""
+msgstr "%1. %2 的新功能"
 
 #: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
@@ -325,4 +325,4 @@ msgstr "<h3><i>版本 %1 的更新 (未发布)</i></h3>"
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr ""
+msgstr "<h1>版本更新历史</h1>"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-24 00:43+0000\n"
-"PO-Revision-Date: 2026-08-23 09:01+0200\n"
+"PO-Revision-Date: 2026-08-24 19:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -23,28 +23,28 @@ msgstr ""
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "Impossible iniciar la tasca. El gestor és nul o el text és buit."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "Ha fallat en obrir el fitxer per a escriptura: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "Ha fallat en escriure al fitxer: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "Fitxer JSON"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "Ha fallat en obrir el fitxer per lectura: %1"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/

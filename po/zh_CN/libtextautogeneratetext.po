@@ -3117,7 +3117,7 @@ msgstr "旅行"
 #, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
-msgstr ""
+msgstr "提示词"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
 #, kde-format

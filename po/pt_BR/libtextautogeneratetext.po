@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-24 00:43+0000\n"
-"PO-Revision-Date: 2026-08-23 06:59-0300\n"
+"PO-Revision-Date: 2026-08-24 07:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,27 +23,28 @@ msgstr ""
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr ""
+"Impossível iniciar a tarefa. O gerenciador é nulo ou o texto está vazio."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "Falha ao abrir o arquivo para gravação: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "Falha ao gravar no arquivo : %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "Arquivo json"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "Falha ao abrir o arquivo para leitura: %1"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
