@@ -35,7 +35,30 @@ McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject
     });
 }
 
-McpClientStdio::~McpClientStdio() = default;
+McpClientStdio::~McpClientStdio()
+{
+    // Don't emit signals while we are destroyed.
+    mProcess->disconnect(this);
+    stop();
+}
+
+bool McpClientStdio::isRunning() const
+{
+    return mProcess->state() != QProcess::NotRunning;
+}
+
+void McpClientStdio::stop()
+{
+    if (!isRunning()) {
+        return;
+    }
+    mProcess->closeWriteChannel();
+    mProcess->terminate();
+    if (!mProcess->waitForFinished(1000)) {
+        mProcess->kill();
+        mProcess->waitForFinished(1000);
+    }
+}
 
 void McpClientStdio::connection()
 {

@@ -20,6 +20,8 @@ public:
     void send(const QJsonObject &obj) override;
 
 private:
+    [[nodiscard]] bool isRunning() const;
+    void stop();
     QProcess *const mProcess;
     McpClientStdioPluginInterface *const mInterface;
 };
