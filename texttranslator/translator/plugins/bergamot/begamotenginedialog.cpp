@@ -18,7 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
-static const char myConfigGroupName[] = "BegamotEngineDialog";
+const char myConfigGroupName[] = "BegamotEngineDialog";
 }
 BegamotEngineDialog::BegamotEngineDialog(QWidget *parent)
     : QDialog(parent)

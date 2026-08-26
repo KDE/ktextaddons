@@ -18,7 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myConfigGroupName[] = "VoskEngineDialog";
+const char myConfigGroupName[] = "VoskEngineDialog";
 }
 
 VoskEngineDialog::VoskEngineDialog(QWidget *parent)
