@@ -100,7 +100,7 @@ void TranslatorConfigureListsWidget::loadLanguagesList()
 void TranslatorConfigureListsWidget::fillFromToLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listFromLanguage,
                                                          const QMap<TextTranslator::TranslatorUtil::Language, QString> &listToLanguage)
 {
-    TranslatorUtil translatorUtil;
+    const TranslatorUtil translatorUtil;
     for (const auto &[key, value] : listFromLanguage.asKeyValueRange()) {
         const QString languageCode = TranslatorUtil::languageCode(key);
         d->mFromLanguageWidget->addItem(value, languageCode);
@@ -114,7 +114,7 @@ void TranslatorConfigureListsWidget::fillFromToLanguages(const QMap<TextTranslat
 
 void TranslatorConfigureListsWidget::fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage)
 {
-    TranslatorUtil translatorUtil;
+    const TranslatorUtil translatorUtil;
     for (const auto &[key, value] : listLanguage.asKeyValueRange()) {
         const QString languageCode = TranslatorUtil::languageCode(key);
         d->mFromLanguageWidget->addItem(value, languageCode);
