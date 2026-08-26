@@ -17,7 +17,6 @@ repos:
       args: [--allow-multiple-documents]
       exclude: ^(.clang-tidy)
     - id: check-json
-      exclude: (texttranslator/translator/plugins/bergamot/autotests/data/test-model-files/incomplete/model_info.json|texttranslator/translator/plugins/bergamot/autotests/data/test-model-files/enfr/model_info.json)
     - id: check-symlinks
     - id: destroyed-symlinks
     - id: check-executables-have-shebangs
