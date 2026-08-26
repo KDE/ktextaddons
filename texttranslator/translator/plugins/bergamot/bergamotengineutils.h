@@ -5,6 +5,8 @@
 */
 #pragma once
 #include "libbergamot_export.h"
+#include <QDebug>
+#include <QList>
 #include <QString>
 
 namespace BergamotEngineUtils
@@ -26,6 +28,19 @@ struct LIBBERGAMOT_EXPORT LanguageInstalled {
 };
 
 [[nodiscard]] LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
+
+/* Paths to the files slimt needs in order to load a language model. */
+struct LIBBERGAMOT_EXPORT ModelFiles {
+    QString model;
+    QString vocabulary;
+    QString shortlist;
+    QString ssplit;
+    [[nodiscard]] bool isValid() const;
+    [[nodiscard]] bool operator==(const ModelFiles &other) const;
+};
+
+[[nodiscard]] LIBBERGAMOT_EXPORT ModelFiles modelFiles(const QString &modelDirectory);
+
 struct LIBBERGAMOT_EXPORT SettingsInfo {
     void loadSettingsInfo();
     void saveSettingsInfo();
@@ -38,3 +53,6 @@ struct LIBBERGAMOT_EXPORT SettingsInfo {
 
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t);
 Q_DECLARE_TYPEINFO(BergamotEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);
+
+LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::ModelFiles &t);
+Q_DECLARE_TYPEINFO(BergamotEngineUtils::ModelFiles, Q_MOVABLE_TYPE);

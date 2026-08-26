@@ -41,4 +41,29 @@ void BergamotEngineUtilsTest::shouldExtractInfoFromLanguageLocallyStored()
     }
 }
 
+void BergamotEngineUtilsTest::shouldFindModelFiles()
+{
+    {
+        // Missing directory.
+        const BergamotEngineUtils::ModelFiles files = BergamotEngineUtils::modelFiles(QLatin1String(BERGAMOT_DATA_DIR) + u"/test-model-files/unknown"_s);
+        QVERIFY(!files.isValid());
+    }
+    {
+        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + u"/test-model-files/enfr"_s;
+        const BergamotEngineUtils::ModelFiles files = BergamotEngineUtils::modelFiles(originalDir);
+        QVERIFY(files.isValid());
+        QCOMPARE(files.model, originalDir + u"/model.intgemm.alphas.bin"_s);
+        QCOMPARE(files.vocabulary, originalDir + u"/vocab.fren.spm"_s);
+        QCOMPARE(files.shortlist, originalDir + u"/lex.s2t.bin"_s);
+        QVERIFY(files.ssplit.isEmpty());
+    }
+    {
+        // A vocabulary and a shortlist are mandatory.
+        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + u"/test-model-files/incomplete"_s;
+        const BergamotEngineUtils::ModelFiles files = BergamotEngineUtils::modelFiles(originalDir);
+        QVERIFY(!files.isValid());
+        QCOMPARE(files.model, originalDir + u"/model.intgemm.alphas.bin"_s);
+    }
+}
+
 #include "moc_bergamotengineutilstest.cpp"

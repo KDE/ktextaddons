@@ -412,7 +412,8 @@ void TranslatorWidget::slotTranslate()
         qCWarning(TEXTTRANSLATOR_LOG) << " Translator plugin invalid";
         return;
     }
-    if (!TextTranslator::NetworkManager::self()->isOnline()) {
+    // A local engine (bergamot) translates without any network access.
+    if (d->translatorClient->engineType() == TextTranslator::TranslatorEngineClient::Network && !TextTranslator::NetworkManager::self()->isOnline()) {
         if (!d->disableMessageBox) {
             KMessageBox::information(this, i18n("No network connection detected, we cannot translate text."), i18nc("@title:window", "No network"));
         }

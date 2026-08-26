@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDebug>
+#include <QDir>
+#include <QFile>
 #include <QJsonDocument>
 #include <QStandardPaths>
 
@@ -111,6 +113,57 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
         }
     }
     return languages;
+}
+
+BergamotEngineUtils::ModelFiles BergamotEngineUtils::modelFiles(const QString &modelDirectory)
+{
+    ModelFiles files;
+    QDir dir(modelDirectory);
+    if (!dir.exists()) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Model directory does not exist:" << modelDirectory;
+        return files;
+    }
+    // The archives published by translatelocally.com follow a fixed naming scheme:
+    // model.<pair>.intgemm.alphas.bin, vocab.<pair>.spm and lex.<n>.<n>.<pair>.s2t.bin
+    const QStringList entries = dir.entryList(QDir::Files);
+    for (const QString &entry : entries) {
+        if (entry.endsWith(u".spm"_s)) {
+            // slimt only knows about a single (shared) vocabulary, prefer it over srcvocab/trgvocab.
+            if (files.vocabulary.isEmpty() || entry.startsWith(u"vocab"_s)) {
+                files.vocabulary = dir.absoluteFilePath(entry);
+            }
+        } else if (entry.startsWith(u"lex."_s) && entry.endsWith(u".bin"_s)) {
+            files.shortlist = dir.absoluteFilePath(entry);
+        } else if (entry.startsWith(u"model"_s) && entry.endsWith(u".bin"_s)) {
+            files.model = dir.absoluteFilePath(entry);
+        } else if (entry.endsWith(u".ssplit"_s)) {
+            files.ssplit = dir.absoluteFilePath(entry);
+        }
+    }
+    if (!files.isValid()) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Incomplete language model in" << modelDirectory << files;
+    }
+    return files;
+}
+
+bool BergamotEngineUtils::ModelFiles::isValid() const
+{
+    // slimt aborts when the shortlist is missing, so it is required too.
+    return !model.isEmpty() && !vocabulary.isEmpty() && !shortlist.isEmpty();
+}
+
+bool BergamotEngineUtils::ModelFiles::operator==(const ModelFiles &other) const
+{
+    return model == other.model && vocabulary == other.vocabulary && shortlist == other.shortlist && ssplit == other.ssplit;
+}
+
+QDebug operator<<(QDebug d, const BergamotEngineUtils::ModelFiles &t)
+{
+    d << " model " << t.model;
+    d << " vocabulary " << t.vocabulary;
+    d << " shortlist " << t.shortlist;
+    d << " ssplit " << t.ssplit;
+    return d;
 }
 
 QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t)

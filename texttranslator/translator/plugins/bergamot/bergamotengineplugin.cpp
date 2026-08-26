@@ -6,8 +6,10 @@
 
 #include "bergamotengineplugin.h"
 #include "bergamotmarianinterface.h"
+#include "bergamottranslator_debug.h"
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <QDir>
 
 BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)
@@ -37,12 +39,14 @@ void BergamotEnginePlugin::loadSettings()
 {
     mInstalledLanguages = BergamotEngineUtils::languageLocallyStored();
     mSettingInfo.loadSettingsInfo();
+    // The settings may have changed the way the model has to be loaded, so forget
+    // about the model currently in use and load it again.
+    mModelLanguageName.clear();
     updateBergamotModel();
 }
 
 void BergamotEnginePlugin::updateBergamotModel()
 {
-    // qDebug() << "mInstalledLanguages  " << mInstalledLanguages << " from " << from() << " to() " << to();
     if (from().isEmpty() || to().isEmpty()) {
         return;
     }
@@ -53,13 +57,25 @@ void BergamotEnginePlugin::updateBergamotModel()
             break;
         }
     }
+    if (!absolutePath.isEmpty() && !QDir().exists(absolutePath)) {
+        qCWarning(TRANSLATOR_BERGAMOT_LOG) << "Language model directory is gone:" << absolutePath;
+        absolutePath.clear();
+    }
     if (absolutePath.isEmpty()) {
+        // Unload the current model, otherwise we would keep translating with the
+        // previously selected language pair.
+        qCWarning(TRANSLATOR_BERGAMOT_LOG) << "No language model installed for" << from() << "->" << to();
+        mModelLanguageName.clear();
+        mBergamotInterface->setModel({}, mSettingInfo);
         return;
     }
-    qDebug() << " absolutePath " << absolutePath;
-    if (QDir().exists(absolutePath)) {
-        mBergamotInterface->setModel(absolutePath, mSettingInfo);
+    // Loading a model is expensive: from() and to() are set one after the other,
+    // so skip the reload when we already use this very model.
+    if (mModelLanguageName == absolutePath) {
+        return;
     }
+    mModelLanguageName = absolutePath;
+    mBergamotInterface->setModel(absolutePath, mSettingInfo);
 }
 
 void BergamotEnginePlugin::slotConfigureChanged()

@@ -36,6 +36,9 @@ if(0)
 
     add_subdirectory(bergamot-translator EXCLUDE_FROM_ALL)
 endif()
+# slimt reports i/o failures (missing or unreadable model files) by throwing.
+kde_enable_exceptions()
+
 add_library(libbergamot)
 
 target_sources(

@@ -9,6 +9,7 @@
 
 #include <KLocalizedString>
 #include <QColor>
+#include <QDir>
 
 TranslatorModel::TranslatorModel(QObject *parent)
     : QAbstractListModel{parent}

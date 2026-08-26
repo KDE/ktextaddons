@@ -228,27 +228,13 @@ QString TranslatorUtil::searchI18nFromLanguage(const QString &langCode)
 
 TranslatorUtil::Language TranslatorUtil::stringToLanguage(const QString &str)
 {
-    if (str == "en"_L1) {
-        return TranslatorUtil::en;
-    } else if (str == "fr"_L1) {
-        return TranslatorUtil::fr;
-    } else if (str == "es"_L1) {
-        return TranslatorUtil::es;
-    } else if (str == "pl"_L1) {
-        return TranslatorUtil::pl;
-    } else if (str == "de"_L1) {
-        return TranslatorUtil::de;
-    } else if (str == "cs"_L1) {
-        return TranslatorUtil::cs;
-    } else if (str == "bg"_L1) {
-        return TranslatorUtil::bg;
-    } else if (str == "et"_L1) {
-        return TranslatorUtil::et;
-        //    } else if (str == "nn"_L1) {
-        //        return TranslatorUtil::nn;
-    } else {
-        qCWarning(TEXTTRANSLATOR_LOG) << " Impossible to find TranslatorUtil::Language for " << str;
+    for (int i = TranslatorUtil::Language::automatic; i <= TranslatorUtil::Language::lastLanguage; ++i) {
+        const auto language = static_cast<TranslatorUtil::Language>(i);
+        if (str == languageCode(language)) {
+            return language;
+        }
     }
+    qCWarning(TEXTTRANSLATOR_LOG) << " Impossible to find TranslatorUtil::Language for " << str;
     return TranslatorUtil::en;
 }
 

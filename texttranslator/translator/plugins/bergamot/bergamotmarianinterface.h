@@ -43,7 +43,7 @@ private:
     std::mutex mMutex;
     std::condition_variable mConditionVariable;
 
-    std::thread mWorke;
+    std::thread mWorker;
     QString mModelString;
     bool mPendingShutdown = false;
 };

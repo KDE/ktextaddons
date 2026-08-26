@@ -95,10 +95,10 @@ void BergamotEngineClient::updateToLanguageList()
 {
     mToLanguages.clear();
     for (const auto &lang : std::as_const(mLanguageInstalled)) {
-        // qDebug() << " lang.to " << lang.to << " mLanguageCode " << mLanguageCode;
-        if (lang.to == mLanguageCode || mLanguageCode.isEmpty()) {
+        // mLanguageCode is the currently selected source language: only the models
+        // starting from it can be used, so only their targets are offered.
+        if (lang.from == mLanguageCode || mLanguageCode.isEmpty()) {
             const TextTranslator::TranslatorUtil::Language langUtil = TextTranslator::TranslatorUtil::stringToLanguage(lang.to);
-            // qDebug() << " lang.to " << lang.to;
             mToLanguages.insert(langUtil, TextTranslator::TranslatorUtil::translatedLanguage(langUtil));
         }
     }
@@ -117,7 +117,7 @@ void BergamotEngineClient::generateToListFromCurrentToLanguage(const QString &la
 
 TextTranslator::TranslatorEngineClient::EngineType BergamotEngineClient::engineType() const
 {
-    return TextTranslator::TranslatorEngineClient::Locale;
+    return TextTranslator::TranslatorEngineClient::Local;
 }
 
 bool BergamotEngineClient::isSupported([[maybe_unused]] TextTranslator::TranslatorUtil::Language lang) const
