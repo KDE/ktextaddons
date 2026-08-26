@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-25 00:43+0000\n"
-"PO-Revision-Date: 2026-07-16 14:43+0200\n"
+"PO-Revision-Date: 2026-08-24 09:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -311,10 +311,9 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "Quoi de neuf dans %2. %1"
+msgstr "Quoi de neuf dans %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
@@ -333,10 +332,9 @@ msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i> Quoi de neuf dans la version %1 (Non encore publiée) </i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
+#, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>Quoi de neuf dans l'historique</h1></hr>"
+msgstr "<h1>Quoi de neuf dans l'historique</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"
