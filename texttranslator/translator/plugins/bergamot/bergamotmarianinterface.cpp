@@ -84,7 +84,8 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
 
                     service = std::make_unique<slimt::Blocking>(config);
 
-                    const slimt::Model::Config modelConfig;
+                    // languageLocallyStored() only reports the "tiny" models.
+                    const slimt::Model::Config modelConfig = slimt::preset::tiny();
                     const slimt::Package<std::string> package{
                         .model = modelChange->files.model.toStdString(),
                         .vocabulary = modelChange->files.vocabulary.toStdString(),
