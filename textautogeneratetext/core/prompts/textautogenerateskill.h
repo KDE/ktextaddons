@@ -24,10 +24,6 @@ public:
      * \brief TextAutoGenerateSkill
      */
     TextAutoGenerateSkill();
-    /*!
-     * \brief TextAutoGenerateSkill
-     */
-    ~TextAutoGenerateSkill();
 
     /*!
      */

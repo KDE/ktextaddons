@@ -20,9 +20,6 @@ public:
     /*!
      */
     TextAutoGenerateTextToSpeechEnqueueInfo();
-    /*!
-     */
-    ~TextAutoGenerateTextToSpeechEnqueueInfo();
 
     /*!
      */

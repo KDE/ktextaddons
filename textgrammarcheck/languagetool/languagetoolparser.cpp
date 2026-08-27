@@ -27,7 +27,7 @@ QVector<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) co
             LanguageToolGrammarError error;
             error.parse(languageToolObject, -1);
             if (error.isValid()) {
-                infos.append(error);
+                infos.append(std::move(error));
             }
         }
     }

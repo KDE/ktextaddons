@@ -107,7 +107,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
                     lang.shortName = shortName;
                     lang.absoluteLanguageModelPath = modelLanguagePath;
                     lang.version = translator.version();
-                    languages.append(lang);
+                    languages.append(std::move(lang));
                 }
             }
         }

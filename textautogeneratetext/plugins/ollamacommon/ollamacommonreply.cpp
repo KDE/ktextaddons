@@ -119,9 +119,9 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
             if (messageObj.contains("tool_calls"_L1)) {
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
                 // qDebug() << " tool_calls: " << array;
-                const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOllama(array);
+                QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOllama(array);
                 // qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
-                ret.info.append(infos);
+                ret.info.append(std::move(infos));
             }
             if (messageObj.contains("thinking"_L1)) {
                 ret.thinking += messageObj["thinking"_L1].toString();

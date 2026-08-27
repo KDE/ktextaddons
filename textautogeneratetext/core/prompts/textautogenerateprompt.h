@@ -34,10 +34,6 @@ public:
      * \brief TextAutoGeneratePrompt
      */
     TextAutoGeneratePrompt();
-    /*!
-     * \brief TextAutoGeneratePrompt
-     */
-    ~TextAutoGeneratePrompt();
 
     /*!
      */

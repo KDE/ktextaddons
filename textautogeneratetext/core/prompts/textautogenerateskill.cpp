@@ -14,8 +14,6 @@ TextAutoGenerateSkill::TextAutoGenerateSkill()
 {
 }
 
-TextAutoGenerateSkill::~TextAutoGenerateSkill() = default;
-
 QString TextAutoGenerateSkill::name() const
 {
     return mName;

@@ -10,8 +10,6 @@ using namespace TextAutoGenerateText;
 
 TextAutoGenerateTextToSpeechEnqueueInfo::TextAutoGenerateTextToSpeechEnqueueInfo() = default;
 
-TextAutoGenerateTextToSpeechEnqueueInfo::~TextAutoGenerateTextToSpeechEnqueueInfo() = default;
-
 QByteArray TextAutoGenerateTextToSpeechEnqueueInfo::chatId() const
 {
     return mChatId;

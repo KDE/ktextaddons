@@ -14,8 +14,6 @@ TextAutoGeneratePrompt::TextAutoGeneratePrompt()
 {
 }
 
-TextAutoGeneratePrompt::~TextAutoGeneratePrompt() = default;
-
 QString TextAutoGeneratePrompt::name() const
 {
     return mName;

@@ -11,8 +11,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextToolPluginProperty::TextAutoGenerateTextToolPluginProperty() = default;
 
-TextAutoGenerateTextToolPluginProperty::~TextAutoGenerateTextToolPluginProperty() = default;
-
 KLazyLocalizedString TextAutoGenerateTextToolPluginProperty::description() const
 {
     return mDescription;

@@ -28,6 +28,14 @@ public:
     GrammarError();
     /*! Destroys the error object. */
     virtual ~GrammarError();
+    /*! Copy-constructs an error object. */
+    GrammarError(const GrammarError &other) = default;
+    /*! Copy-assigns an error object. */
+    GrammarError &operator=(const GrammarError &other) = default;
+    /*! Move-constructs an error object. */
+    GrammarError(GrammarError &&other) noexcept = default;
+    /*! Move-assigns an error object. */
+    GrammarError &operator=(GrammarError &&other) noexcept = default;
     /*! Returns the color associated with this error. */
     [[nodiscard]] QColor color() const;
     /*! Sets the color associated with this error. */

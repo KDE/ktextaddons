@@ -24,10 +24,6 @@ public:
      * \brief TextAutoGenerateAgent
      */
     TextAutoGenerateAgent();
-    /*!
-     * \brief TextAutoGenerateAgent
-     */
-    ~TextAutoGenerateAgent();
 
     /*!
      */

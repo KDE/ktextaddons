@@ -734,8 +734,7 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
 void TextAutoGenerateListViewDelegate::needUpdateIndexBackground(const QPersistentModelIndex &index, const QColor &color)
 {
     removeNeedUpdateIndexBackground(index);
-    const IndexBackgroundColor back{.index = index, .color = color};
-    mIndexBackgroundColorList.append(back);
+    mIndexBackgroundColorList.append(IndexBackgroundColor{.index = index, .color = color});
 }
 
 void TextAutoGenerateListViewDelegate::removeNeedUpdateIndexBackground(const QPersistentModelIndex &index)
