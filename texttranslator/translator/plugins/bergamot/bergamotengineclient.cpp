@@ -58,7 +58,7 @@ bool BergamotEngineClient::hasConfigurationDialog() const
 bool BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
     bool settingsChanged = false;
-    KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
+    const KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
     QPointer<BegamotEngineDialog> dlg = new BegamotEngineDialog(parentWidget);
     BergamotEngineUtils::SettingsInfo info;
     info.loadSettingsInfo();
