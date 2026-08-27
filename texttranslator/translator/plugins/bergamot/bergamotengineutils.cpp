@@ -71,7 +71,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
     if (newPath.isEmpty()) {
         newPath = BergamotEngineUtils::storageLanguagePath();
     }
-    QDir dir(newPath);
+    const QDir dir(newPath);
     QVector<BergamotEngineUtils::LanguageInstalled> languages;
     const QStringList list = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
     // qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " list " << list;
@@ -118,7 +118,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
 BergamotEngineUtils::ModelFiles BergamotEngineUtils::modelFiles(const QString &modelDirectory)
 {
     ModelFiles files;
-    QDir dir(modelDirectory);
+    const QDir dir(modelDirectory);
     if (!dir.exists()) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Model directory does not exist:" << modelDirectory;
         return files;
