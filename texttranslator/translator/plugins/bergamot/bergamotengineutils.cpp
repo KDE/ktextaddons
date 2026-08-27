@@ -102,8 +102,8 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
                 const QStringList langIdentifier = shortName.split(u'-');
                 if (langIdentifier.count() >= 2) {
                     BergamotEngineUtils::LanguageInstalled lang;
-                    lang.from = langIdentifier.at(0);
-                    lang.to = langIdentifier.at(1);
+                    lang.from = adaptLangIdentifier(langIdentifier.at(0));
+                    lang.to = adaptLangIdentifier(langIdentifier.at(1));
                     lang.shortName = shortName;
                     lang.absoluteLanguageModelPath = modelLanguagePath;
                     lang.version = translator.version();
@@ -113,6 +113,14 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
         }
     }
     return languages;
+}
+
+QString BergamotEngineUtils::adaptLangIdentifier(const QString &str)
+{
+    if (str == "eng"_L1) {
+        return u"en"_s;
+    }
+    return str;
 }
 
 BergamotEngineUtils::ModelFiles BergamotEngineUtils::modelFiles(const QString &modelDirectory)

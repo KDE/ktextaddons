@@ -17,6 +17,7 @@ namespace BergamotEngineUtils
 [[nodiscard]] LIBBERGAMOT_EXPORT QString memoryByThreadKey();
 [[nodiscard]] LIBBERGAMOT_EXPORT QString storageLanguagePath();
 [[nodiscard]] LIBBERGAMOT_EXPORT QString useLocalCacheKey();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString adaptLangIdentifier(const QString &str);
 
 struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString from;
