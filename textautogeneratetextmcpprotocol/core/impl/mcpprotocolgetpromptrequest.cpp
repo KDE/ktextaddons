@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolGetPromptRequest::McpProtocolGetPromptRequest() = default;
 
-McpProtocolGetPromptRequest::~McpProtocolGetPromptRequest() = default;
-
 QByteArray McpProtocolGetPromptRequest::type()
 {
     return "prompts/get"_ba;

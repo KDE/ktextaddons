@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCancelTaskRequest::McpProtocolCancelTaskRequest() = default;
 
-McpProtocolCancelTaskRequest::~McpProtocolCancelTaskRequest() = default;
-
 QByteArray McpProtocolCancelTaskRequest::type()
 {
     return "tasks/cancel"_ba;

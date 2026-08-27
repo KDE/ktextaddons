@@ -14,8 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListToolsResult::McpProtocolListToolsResult() = default;
 
-McpProtocolListToolsResult::~McpProtocolListToolsResult() = default;
-
 bool McpProtocolListToolsResult::operator==(const McpProtocolListToolsResult &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsResult &t)

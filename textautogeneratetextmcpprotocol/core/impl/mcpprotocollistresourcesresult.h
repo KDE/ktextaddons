@@ -17,9 +17,6 @@ public:
     /*!
      */
     McpProtocolListResourcesResult();
-    /*!
-     */
-    ~McpProtocolListResourcesResult();
 
     /*!
      */

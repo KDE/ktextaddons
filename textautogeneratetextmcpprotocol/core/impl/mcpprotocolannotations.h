@@ -19,9 +19,6 @@ public:
     /*!
      */
     McpProtocolAnnotations();
-    /*!
-     */
-    ~McpProtocolAnnotations();
 
     /*!
      */

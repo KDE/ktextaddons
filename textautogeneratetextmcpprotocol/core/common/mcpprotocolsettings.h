@@ -19,7 +19,6 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSettings
 {
 public:
     McpProtocolSettings();
-    ~McpProtocolSettings();
 
     [[nodiscard]] QString command() const;
     void setCommand(const QString &newCommand);

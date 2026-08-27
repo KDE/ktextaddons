@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolListChangedNotification::McpProtocolToolListChangedNotification() = default;
 
-McpProtocolToolListChangedNotification::~McpProtocolToolListChangedNotification() = default;
-
 QByteArray McpProtocolToolListChangedNotification::type()
 {
     return "notifications/tools/list_changed"_ba;

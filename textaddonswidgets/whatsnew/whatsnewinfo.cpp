@@ -10,8 +10,6 @@ QT_IMPL_METATYPE_EXTERN_TAGGED(TextAddonsWidgets::WhatsNewInfo, TextAddonsWidget
 using namespace TextAddonsWidgets;
 WhatsNewInfo::WhatsNewInfo() = default;
 
-WhatsNewInfo::~WhatsNewInfo() = default;
-
 QStringList WhatsNewInfo::changes() const
 {
     return mChanges;

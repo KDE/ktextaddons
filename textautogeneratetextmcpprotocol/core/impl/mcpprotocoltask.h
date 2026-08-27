@@ -18,9 +18,6 @@ public:
     /*!
      */
     McpProtocolTask();
-    /*!
-     */
-    ~McpProtocolTask();
 
     /*!
      */

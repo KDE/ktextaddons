@@ -66,9 +66,6 @@ public:
     /*!
      */
     McpProtocolCompleteRequestParams();
-    /*!
-     */
-    ~McpProtocolCompleteRequestParams();
 
     /*!
      */

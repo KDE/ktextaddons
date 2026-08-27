@@ -17,9 +17,6 @@ public:
     /*!
      */
     McpProtocolRootsListChangedNotification();
-    /*!
-     */
-    ~McpProtocolRootsListChangedNotification();
 
     /*!
      */

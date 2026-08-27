@@ -20,9 +20,6 @@ public:
     /*!
      */
     McpProtocolTextContent();
-    /*!
-     */
-    ~McpProtocolTextContent();
 
     /*!
      */

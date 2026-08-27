@@ -32,9 +32,6 @@ public:
     /*!
      */
     McpProtocolUnsubscribeRequestParams();
-    /*!
-     */
-    ~McpProtocolUnsubscribeRequestParams();
 
     /*!
      */

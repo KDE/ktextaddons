@@ -41,9 +41,6 @@ public:
     /*!
      */
     McpProtocolCompleteResult();
-    /*!
-     */
-    ~McpProtocolCompleteResult();
 
     /*!
      */

@@ -18,9 +18,6 @@ public:
     /*!
      */
     McpProtocolSubscribeRequest();
-    /*!
-     */
-    ~McpProtocolSubscribeRequest();
 
     /*!
      */

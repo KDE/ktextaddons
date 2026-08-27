@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolProgressNotification::McpProtocolProgressNotification() = default;
 
-McpProtocolProgressNotification::~McpProtocolProgressNotification() = default;
-
 QByteArray McpProtocolProgressNotification::type()
 {
     return "notifications/progress"_ba;

@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolURLElicitationRequiredError::McpProtocolURLElicitationRequiredError() = default;
 
-McpProtocolURLElicitationRequiredError::~McpProtocolURLElicitationRequiredError() = default;
-
 bool McpProtocolURLElicitationRequiredError::operator==(const McpProtocolURLElicitationRequiredError &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError &t)

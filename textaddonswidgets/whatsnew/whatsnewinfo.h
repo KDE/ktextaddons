@@ -27,10 +27,6 @@ public:
      * \brief Constructor for WhatsNewInfo
      */
     WhatsNewInfo();
-    /*!
-     * \brief Destructor for WhatsNewInfo
-     */
-    ~WhatsNewInfo();
 
     /*!
      * \brief Returns the list of changes

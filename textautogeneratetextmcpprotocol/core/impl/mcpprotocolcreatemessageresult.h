@@ -25,9 +25,6 @@ public:
     /*!
      */
     McpProtocolCreateMessageResult();
-    /*!
-     */
-    ~McpProtocolCreateMessageResult();
 
     /*!
      */

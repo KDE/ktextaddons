@@ -11,8 +11,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolBooleanSchema::McpProtocolBooleanSchema() = default;
 
-McpProtocolBooleanSchema::~McpProtocolBooleanSchema() = default;
-
 bool McpProtocolBooleanSchema::operator==(const McpProtocolBooleanSchema &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolBooleanSchema &t)

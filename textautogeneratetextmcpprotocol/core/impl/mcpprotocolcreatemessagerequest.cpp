@@ -14,8 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCreateMessageRequest::McpProtocolCreateMessageRequest() = default;
 
-McpProtocolCreateMessageRequest::~McpProtocolCreateMessageRequest() = default;
-
 QByteArray McpProtocolCreateMessageRequest::type()
 {
     return "sampling/createMessage"_ba;

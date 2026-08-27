@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPaginatedRequest::McpProtocolPaginatedRequest() = default;
 
-McpProtocolPaginatedRequest::~McpProtocolPaginatedRequest() = default;
-
 bool McpProtocolPaginatedRequest::operator==(const McpProtocolPaginatedRequest &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequest &t)

@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSettings::McpProtocolSettings() = default;
 
-McpProtocolSettings::~McpProtocolSettings() = default;
-
 QString McpProtocolSettings::command() const
 {
     return mCommand;

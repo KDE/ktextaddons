@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolReadResourceRequestParams::McpProtocolReadResourceRequestParams() = default;
 
-McpProtocolReadResourceRequestParams::~McpProtocolReadResourceRequestParams() = default;
-
 bool McpProtocolReadResourceRequestParams::operator==(const McpProtocolReadResourceRequestParams &other) const = default;
 bool McpProtocolReadResourceRequestParams::Meta::operator==(const McpProtocolReadResourceRequestParams::Meta &other) const = default;
 

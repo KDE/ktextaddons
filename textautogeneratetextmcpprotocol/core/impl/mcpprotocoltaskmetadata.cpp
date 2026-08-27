@@ -11,8 +11,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTaskMetadata::McpProtocolTaskMetadata() = default;
 
-McpProtocolTaskMetadata::~McpProtocolTaskMetadata() = default;
-
 bool McpProtocolTaskMetadata::operator==(const McpProtocolTaskMetadata &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskMetadata &t)

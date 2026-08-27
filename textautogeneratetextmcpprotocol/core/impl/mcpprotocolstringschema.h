@@ -25,9 +25,6 @@ public:
     /*!
      */
     McpProtocolStringSchema();
-    /*!
-     */
-    ~McpProtocolStringSchema();
 
     /*!
      */

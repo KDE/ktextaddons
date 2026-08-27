@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolUseContent::McpProtocolToolUseContent() = default;
 
-McpProtocolToolUseContent::~McpProtocolToolUseContent() = default;
-
 QByteArray McpProtocolToolUseContent::type()
 {
     return QByteArrayLiteral("tool_use");

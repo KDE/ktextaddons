@@ -12,7 +12,6 @@ class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkModelAvailableIn
 {
 public:
     GenericNetworkModelAvailableInfos();
-    ~GenericNetworkModelAvailableInfos();
 
     void parseModelsInfo(const QJsonArray &array);
 

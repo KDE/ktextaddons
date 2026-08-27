@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListTasksRequest::McpProtocolListTasksRequest() = default;
 
-McpProtocolListTasksRequest::~McpProtocolListTasksRequest() = default;
-
 QByteArray McpProtocolListTasksRequest::type()
 {
     return "tasks/list"_ba;

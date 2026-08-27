@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLegacyTitledEnumSchema::McpProtocolLegacyTitledEnumSchema() = default;
 
-McpProtocolLegacyTitledEnumSchema::~McpProtocolLegacyTitledEnumSchema() = default;
-
 bool McpProtocolLegacyTitledEnumSchema::operator==(const McpProtocolLegacyTitledEnumSchema &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolLegacyTitledEnumSchema &t)

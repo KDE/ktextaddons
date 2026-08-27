@@ -35,9 +35,6 @@ public:
     /*!
      */
     McpProtocolInitializeRequestParams();
-    /*!
-     */
-    ~McpProtocolInitializeRequestParams();
 
     /*!
      */

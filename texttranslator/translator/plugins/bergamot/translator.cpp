@@ -7,8 +7,6 @@
 
 Translator::Translator() = default;
 
-Translator::~Translator() = default;
-
 void Translator::parse(const QJsonObject &obj, bool remote)
 {
     mUrl = obj[QLatin1String("url")].toString();

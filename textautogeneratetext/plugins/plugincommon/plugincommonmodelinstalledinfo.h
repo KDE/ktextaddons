@@ -13,7 +13,12 @@ class QJsonObject;
 class TEXTAUTOGENERATEPLUGINCOMMON_EXPORT PluginCommonModelInstalledInfo
 {
 public:
+    PluginCommonModelInstalledInfo() = default;
     virtual ~PluginCommonModelInstalledInfo() = default;
+    PluginCommonModelInstalledInfo(const PluginCommonModelInstalledInfo &other) = default;
+    PluginCommonModelInstalledInfo &operator=(const PluginCommonModelInstalledInfo &other) = default;
+    PluginCommonModelInstalledInfo(PluginCommonModelInstalledInfo &&other) noexcept = default;
+    PluginCommonModelInstalledInfo &operator=(PluginCommonModelInstalledInfo &&other) noexcept = default;
 
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);

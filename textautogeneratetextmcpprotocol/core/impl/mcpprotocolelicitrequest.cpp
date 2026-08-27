@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitRequest::McpProtocolElicitRequest() = default;
 
-McpProtocolElicitRequest::~McpProtocolElicitRequest() = default;
-
 QByteArray McpProtocolElicitRequest::type()
 {
     return "elicitation/create"_ba;

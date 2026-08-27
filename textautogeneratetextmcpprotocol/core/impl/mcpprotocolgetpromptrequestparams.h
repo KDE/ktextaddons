@@ -33,9 +33,6 @@ public:
     /*!
      */
     McpProtocolGetPromptRequestParams();
-    /*!
-     */
-    ~McpProtocolGetPromptRequestParams();
 
     /*!
      */

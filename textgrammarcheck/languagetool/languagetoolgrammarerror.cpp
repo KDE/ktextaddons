@@ -15,8 +15,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolGrammarError::LanguageToolGrammarError() = default;
 
-LanguageToolGrammarError::~LanguageToolGrammarError() = default;
-
 void LanguageToolGrammarError::parse(const QJsonObject &obj, int blockindex)
 {
     // We use block id index based on 1 in API

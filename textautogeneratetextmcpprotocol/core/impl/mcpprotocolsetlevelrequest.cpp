@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSetLevelRequest::McpProtocolSetLevelRequest() = default;
 
-McpProtocolSetLevelRequest::~McpProtocolSetLevelRequest() = default;
-
 QByteArray McpProtocolSetLevelRequest::type()
 {
     return "logging/setLevel"_ba;

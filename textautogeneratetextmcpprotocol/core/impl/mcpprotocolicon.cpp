@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolIcon::McpProtocolIcon() = default;
 
-McpProtocolIcon::~McpProtocolIcon() = default;
-
 bool McpProtocolIcon::operator==(const McpProtocolIcon &other) const = default;
 
 std::optional<QString> McpProtocolIcon::mimeType() const

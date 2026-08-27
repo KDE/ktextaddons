@@ -18,9 +18,6 @@ public:
     /*!
      */
     McpProtocolGetTaskPayloadResult();
-    /*!
-     */
-    ~McpProtocolGetTaskPayloadResult();
 
     /*!
      */

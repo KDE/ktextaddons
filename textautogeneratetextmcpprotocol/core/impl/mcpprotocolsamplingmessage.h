@@ -24,9 +24,6 @@ public:
     /*!
      */
     McpProtocolSamplingMessage();
-    /*!
-     */
-    ~McpProtocolSamplingMessage();
 
     /*!
      */

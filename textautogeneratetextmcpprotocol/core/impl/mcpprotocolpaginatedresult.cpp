@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPaginatedResult::McpProtocolPaginatedResult() = default;
 
-McpProtocolPaginatedResult::~McpProtocolPaginatedResult() = default;
-
 bool McpProtocolPaginatedResult::operator==(const McpProtocolPaginatedResult &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedResult &t)

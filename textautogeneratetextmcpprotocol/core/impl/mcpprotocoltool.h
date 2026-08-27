@@ -47,9 +47,6 @@ public:
     /*!
      */
     McpProtocolTool();
-    /*!
-     */
-    ~McpProtocolTool();
 
     [[nodiscard]] static QByteArray type();
 

@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceTemplateReference::McpProtocolResourceTemplateReference() = default;
 
-McpProtocolResourceTemplateReference::~McpProtocolResourceTemplateReference() = default;
-
 QByteArray McpProtocolResourceTemplateReference::type()
 {
     return "ref/resource"_ba;

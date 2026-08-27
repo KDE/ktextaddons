@@ -20,9 +20,6 @@ public:
     /*!
      */
     McpProtocolTaskStatusNotificationParams();
-    /*!
-     */
-    ~McpProtocolTaskStatusNotificationParams();
 
     /*!
      */

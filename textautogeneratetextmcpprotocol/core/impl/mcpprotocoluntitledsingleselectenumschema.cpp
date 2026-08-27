@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUntitledSingleSelectEnumSchema::McpProtocolUntitledSingleSelectEnumSchema() = default;
 
-McpProtocolUntitledSingleSelectEnumSchema::~McpProtocolUntitledSingleSelectEnumSchema() = default;
-
 bool McpProtocolUntitledSingleSelectEnumSchema::operator==(const McpProtocolUntitledSingleSelectEnumSchema &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledSingleSelectEnumSchema &t)

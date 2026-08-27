@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUntitledMultiSelectEnumSchema::McpProtocolUntitledMultiSelectEnumSchema() = default;
 
-McpProtocolUntitledMultiSelectEnumSchema::~McpProtocolUntitledMultiSelectEnumSchema() = default;
-
 bool McpProtocolUntitledMultiSelectEnumSchema::operator==(const McpProtocolUntitledMultiSelectEnumSchema &other) const = default;
 QStringList McpProtocolUntitledMultiSelectEnumSchema::Items::enumValue() const
 {

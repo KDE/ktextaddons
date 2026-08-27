@@ -11,8 +11,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCreateMessageResult::McpProtocolCreateMessageResult() = default;
 
-McpProtocolCreateMessageResult::~McpProtocolCreateMessageResult() = default;
-
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult &t)
 {
     d.space() << "meta:" << t.meta();

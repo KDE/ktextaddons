@@ -14,7 +14,6 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageInfo
 {
 public:
     LanguageInfo();
-    ~LanguageInfo();
 
     [[nodiscard]] QString name() const;
     void setName(const QString &name);

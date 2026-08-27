@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTaskStatusNotification::McpProtocolTaskStatusNotification() = default;
 
-McpProtocolTaskStatusNotification::~McpProtocolTaskStatusNotification() = default;
-
 QByteArray McpProtocolTaskStatusNotification::type()
 {
     return "notifications/tasks/status"_ba;

@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceLink::McpProtocolResourceLink() = default;
 
-McpProtocolResourceLink::~McpProtocolResourceLink() = default;
-
 bool McpProtocolResourceLink::operator==(const McpProtocolResourceLink &other) const = default;
 
 QByteArray McpProtocolResourceLink::type()

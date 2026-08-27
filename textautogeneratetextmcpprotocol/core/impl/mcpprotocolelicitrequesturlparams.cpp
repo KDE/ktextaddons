@@ -10,8 +10,6 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitRequestURLParams::McpProtocolElicitRequestURLParams() = default;
-McpProtocolElicitRequestURLParams::~McpProtocolElicitRequestURLParams() = default;
-
 McpProtocolElicitRequestURLParams::Meta McpProtocolElicitRequestURLParams::Meta::fromJson(const QJsonObject &obj)
 {
     McpProtocolElicitRequestURLParams::Meta meta;

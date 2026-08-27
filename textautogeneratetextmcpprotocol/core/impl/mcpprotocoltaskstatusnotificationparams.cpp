@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTaskStatusNotificationParams::McpProtocolTaskStatusNotificationParams() = default;
 
-McpProtocolTaskStatusNotificationParams::~McpProtocolTaskStatusNotificationParams() = default;
-
 bool McpProtocolTaskStatusNotificationParams::operator==(const McpProtocolTaskStatusNotificationParams &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskStatusNotificationParams &t)

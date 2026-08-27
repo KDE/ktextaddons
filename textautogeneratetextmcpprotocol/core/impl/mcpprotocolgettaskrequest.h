@@ -34,9 +34,6 @@ public:
     /*!
      */
     McpProtocolGetTaskRequest();
-    /*!
-     */
-    ~McpProtocolGetTaskRequest();
 
     [[nodiscard]] static QByteArray type();
     /*!

@@ -10,8 +10,6 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledInfo::OllamaModelInstalledInfo() = default;
 
-OllamaModelInstalledInfo::~OllamaModelInstalledInfo() = default;
-
 void OllamaModelInstalledInfo::parseInfo(const QJsonObject &obj)
 {
     mName = obj["name"_L1].toString();

@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPromptListChangedNotification::McpProtocolPromptListChangedNotification() = default;
 
-McpProtocolPromptListChangedNotification::~McpProtocolPromptListChangedNotification() = default;
-
 QByteArray McpProtocolPromptListChangedNotification::type()
 {
     return "notifications/prompts/list_changed"_ba;

@@ -13,8 +13,6 @@
 using namespace Qt::StringLiterals;
 
 LMStudioModelInstalledInfo::LMStudioModelInstalledInfo() = default;
-LMStudioModelInstalledInfo::~LMStudioModelInstalledInfo() = default;
-
 QString LMStudioModelInstalledInfo::publisher() const
 {
     return mPublisher;

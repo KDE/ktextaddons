@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSubscribeRequest::McpProtocolSubscribeRequest() = default;
 
-McpProtocolSubscribeRequest::~McpProtocolSubscribeRequest() = default;
-
 QByteArray McpProtocolSubscribeRequest::type()
 {
     return "resources/subscribe"_ba;

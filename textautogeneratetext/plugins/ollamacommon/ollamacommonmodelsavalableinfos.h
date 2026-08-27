@@ -11,7 +11,6 @@ class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelsAvalableInfos
 {
 public:
     OllamaCommonModelsAvalableInfos();
-    ~OllamaCommonModelsAvalableInfos();
 
     void parseModelsInfo(const QJsonObject &obj);
 

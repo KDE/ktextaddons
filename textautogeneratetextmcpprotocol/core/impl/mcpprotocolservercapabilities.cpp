@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolServerCapabilities::McpProtocolServerCapabilities() = default;
 
-McpProtocolServerCapabilities::~McpProtocolServerCapabilities() = default;
-
 bool McpProtocolServerCapabilities::operator==(const McpProtocolServerCapabilities &other) const = default;
 
 bool McpProtocolServerCapabilities::Prompts::operator==(const McpProtocolServerCapabilities::Prompts &other) const = default;

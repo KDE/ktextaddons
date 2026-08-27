@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLoggingMessageNotification::McpProtocolLoggingMessageNotification() = default;
 
-McpProtocolLoggingMessageNotification::~McpProtocolLoggingMessageNotification() = default;
-
 bool McpProtocolLoggingMessageNotification::operator==(const McpProtocolLoggingMessageNotification &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotification &t)

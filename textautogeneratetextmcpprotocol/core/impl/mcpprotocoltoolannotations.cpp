@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolAnnotations::McpProtocolToolAnnotations() = default;
 
-McpProtocolToolAnnotations::~McpProtocolToolAnnotations() = default;
-
 bool McpProtocolToolAnnotations::destructiveHint() const
 {
     return mDestructiveHint;

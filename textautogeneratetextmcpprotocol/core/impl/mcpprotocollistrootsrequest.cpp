@@ -14,8 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListRootsRequest::McpProtocolListRootsRequest() = default;
 
-McpProtocolListRootsRequest::~McpProtocolListRootsRequest() = default;
-
 QByteArray McpProtocolListRootsRequest::type()
 {
     return "roots/list"_ba;

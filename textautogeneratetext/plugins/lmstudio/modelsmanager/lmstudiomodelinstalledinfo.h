@@ -15,7 +15,6 @@ class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioModelInstalledInfo : public Plugin
 {
 public:
     LMStudioModelInstalledInfo();
-    ~LMStudioModelInstalledInfo();
 
     [[nodiscard]] QString publisher() const;
     void setPublisher(const QString &newPublisher);

@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUnsubscribeRequestParams::McpProtocolUnsubscribeRequestParams() = default;
 
-McpProtocolUnsubscribeRequestParams::~McpProtocolUnsubscribeRequestParams() = default;
-
 bool McpProtocolUnsubscribeRequestParams::operator==(const McpProtocolUnsubscribeRequestParams &other) const = default;
 bool McpProtocolUnsubscribeRequestParams::Meta::operator==(const McpProtocolUnsubscribeRequestParams::Meta &other) const = default;
 

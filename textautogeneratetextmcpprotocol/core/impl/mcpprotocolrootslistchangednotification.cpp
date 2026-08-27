@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolRootsListChangedNotification::McpProtocolRootsListChangedNotification() = default;
 
-McpProtocolRootsListChangedNotification::~McpProtocolRootsListChangedNotification() = default;
-
 bool McpProtocolRootsListChangedNotification::operator==(const McpProtocolRootsListChangedNotification &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolRootsListChangedNotification &t)

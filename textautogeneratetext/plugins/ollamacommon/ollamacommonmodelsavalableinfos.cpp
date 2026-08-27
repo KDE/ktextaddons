@@ -9,8 +9,6 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonModelsAvalableInfos::OllamaCommonModelsAvalableInfos() = default;
 
-OllamaCommonModelsAvalableInfos::~OllamaCommonModelsAvalableInfos() = default;
-
 void OllamaCommonModelsAvalableInfos::parseModelsInfo(const QJsonObject &obj)
 {
     QList<OllamaCommonModelAvailableInfo> lstInfo;

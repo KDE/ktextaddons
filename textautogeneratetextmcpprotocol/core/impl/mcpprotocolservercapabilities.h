@@ -94,9 +94,6 @@ public:
     /*!
      */
     McpProtocolServerCapabilities();
-    /*!
-     */
-    ~McpProtocolServerCapabilities();
 
     /*!
      */

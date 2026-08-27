@@ -13,7 +13,6 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextInfo
 {
 public:
     VoskSpeechToTextInfo();
-    ~VoskSpeechToTextInfo();
 
     [[nodiscard]] bool isValid() const;
 

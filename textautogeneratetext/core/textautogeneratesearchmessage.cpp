@@ -8,8 +8,6 @@
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchMessage::TextAutoGenerateSearchMessage() = default;
 
-TextAutoGenerateSearchMessage::~TextAutoGenerateSearchMessage() = default;
-
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSearchMessage &t)
 {
     d.space() << "chatId:" << t.chatId();

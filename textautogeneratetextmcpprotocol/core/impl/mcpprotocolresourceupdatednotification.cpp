@@ -13,8 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceUpdatedNotification::McpProtocolResourceUpdatedNotification() = default;
 
-McpProtocolResourceUpdatedNotification::~McpProtocolResourceUpdatedNotification() = default;
-
 QByteArray McpProtocolResourceUpdatedNotification::type()
 {
     return "notifications/resources/updated"_ba;

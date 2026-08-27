@@ -63,9 +63,6 @@ public:
     /*!
      */
     McpProtocolElicitRequestFormParams();
-    /*!
-     */
-    ~McpProtocolElicitRequestFormParams();
 
     /*!
      */

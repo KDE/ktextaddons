@@ -22,9 +22,6 @@ public:
     McpProtocolResourceLink();
     /*!
      */
-    ~McpProtocolResourceLink();
-    /*!
-     */
     [[nodiscard]] bool operator==(const McpProtocolResourceLink &other) const;
 
     /*!
