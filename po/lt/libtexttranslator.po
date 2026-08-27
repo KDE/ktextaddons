@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-27 00:43+0000\n"
 "PO-Revision-Date: 2026-08-19 13:40+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -324,7 +324,7 @@ msgstr "Valų"
 msgid "Yiddish"
 msgstr "Jidiš"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:26
+#: translator/plugins/bergamot/begamotenginedialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -401,9 +401,28 @@ msgstr "Kalbos"
 msgid "Settings"
 msgstr "Nuostatos"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
+msgid "Translation failed."
+msgstr "Naudoti vertimo podėlį"
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
+msgid "Language model is not loaded."
+msgstr "Kalbos modelis nėra apibrėžtas."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
 msgid "Language model is not defined."
+msgstr "Kalbos modelis nėra apibrėžtas."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
+msgid "Language model files are missing in %1."
 msgstr "Kalbos modelis nėra apibrėžtas."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
@@ -444,38 +463,38 @@ msgstr "Klaida rašant į diską: %1"
 msgid "Impossible to extract language"
 msgstr "Neįmanoma išpakuoti kalbos"
 
-#: translator/plugins/bergamot/translatormodel.cpp:47
+#: translator/plugins/bergamot/translatormodel.cpp:48
 #, kde-format
 msgid "Source"
 msgstr "Šaltinis"
 
-#: translator/plugins/bergamot/translatormodel.cpp:49
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Target"
 msgstr "Paskirties vieta"
 
-#: translator/plugins/bergamot/translatormodel.cpp:51
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Type"
 msgstr "Tipas"
 
-#: translator/plugins/bergamot/translatormodel.cpp:53
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Repository"
 msgstr "Saugykla"
 
-#: translator/plugins/bergamot/translatormodel.cpp:55
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Installed Version"
 msgstr "Įdiegta versija"
 
-#: translator/plugins/bergamot/translatormodel.cpp:57
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Available Version"
 msgstr "Prieinama versija"
 
-#: translator/plugins/bergamot/translatormodel.cpp:59
-#: translator/plugins/bergamot/translatormodel.cpp:128
+#: translator/plugins/bergamot/translatormodel.cpp:60
+#: translator/plugins/bergamot/translatormodel.cpp:130
 #, kde-format
 msgid "Installed"
 msgstr "Įdiegta"
@@ -743,18 +762,18 @@ msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Tempkite tekstą, kurį norite versti."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Neaptiktas joks tinklo ryšys, nepavyks išversti teksto."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Nėra tinklo"
 
-#: translator/widgets/translatorwidget.cpp:455
+#: translator/widgets/translatorwidget.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-27 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -322,7 +322,7 @@ msgstr "वेल्श"
 msgid "Yiddish"
 msgstr "यहूदी"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:26
+#: translator/plugins/bergamot/begamotenginedialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -399,9 +399,28 @@ msgstr "बोली"
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
+msgid "Translation failed."
+msgstr "अनुवाद कैश का उपयोग करें"
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
+msgid "Language model is not loaded."
+msgstr "भाषा मॉडल परिभाषित नहीं है."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
 msgid "Language model is not defined."
+msgstr "भाषा मॉडल परिभाषित नहीं है."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
+msgid "Language model files are missing in %1."
 msgstr "भाषा मॉडल परिभाषित नहीं है."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
@@ -442,38 +461,38 @@ msgstr "डिस्क पर लिखते समय त्रुटि: %1"
 msgid "Impossible to extract language"
 msgstr "भाषा निकालना असंभव"
 
-#: translator/plugins/bergamot/translatormodel.cpp:47
+#: translator/plugins/bergamot/translatormodel.cpp:48
 #, kde-format
 msgid "Source"
 msgstr "स्रोत"
 
-#: translator/plugins/bergamot/translatormodel.cpp:49
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Target"
 msgstr "लक्ष्य"
 
-#: translator/plugins/bergamot/translatormodel.cpp:51
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Type"
 msgstr "प्रकार"
 
-#: translator/plugins/bergamot/translatormodel.cpp:53
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Repository"
 msgstr "कोष"
 
-#: translator/plugins/bergamot/translatormodel.cpp:55
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Installed Version"
 msgstr "स्थापित संस्करण"
 
-#: translator/plugins/bergamot/translatormodel.cpp:57
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Available Version"
 msgstr "उपलब्ध संस्करण"
 
-#: translator/plugins/bergamot/translatormodel.cpp:59
-#: translator/plugins/bergamot/translatormodel.cpp:128
+#: translator/plugins/bergamot/translatormodel.cpp:60
+#: translator/plugins/bergamot/translatormodel.cpp:130
 #, kde-format
 msgid "Installed"
 msgstr "स्थापित"
@@ -741,18 +760,18 @@ msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "वह पाठ खींचें जिसका आप अनुवाद करना चाहते हैं."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "कोई नेटवर्क कनेक्शन नहीं मिला, हम पाठ का अनुवाद नहीं कर सकते."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "कोई नेटवर्क नहीं"
 
-#: translator/widgets/translatorwidget.cpp:455
+#: translator/widgets/translatorwidget.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

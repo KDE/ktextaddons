@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-27 00:43+0000\n"
 "PO-Revision-Date: 2025-04-06 23:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -322,7 +322,7 @@ msgstr "웨일스어"
 msgid "Yiddish"
 msgstr "이디시어"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:26
+#: translator/plugins/bergamot/begamotenginedialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -399,9 +399,28 @@ msgstr "언어"
 msgid "Settings"
 msgstr "설정"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
+msgid "Translation failed."
+msgstr "번역 캐시 사용"
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
+msgid "Language model is not loaded."
+msgstr "언어 모델이 정의되지 않았습니다."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
 msgid "Language model is not defined."
+msgstr "언어 모델이 정의되지 않았습니다."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
+msgid "Language model files are missing in %1."
 msgstr "언어 모델이 정의되지 않았습니다."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
@@ -442,38 +461,38 @@ msgstr "디스크에 쓰는 중 오류 발생: %1"
 msgid "Impossible to extract language"
 msgstr "언어를 감지할 수 없음"
 
-#: translator/plugins/bergamot/translatormodel.cpp:47
+#: translator/plugins/bergamot/translatormodel.cpp:48
 #, kde-format
 msgid "Source"
 msgstr "원본"
 
-#: translator/plugins/bergamot/translatormodel.cpp:49
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Target"
 msgstr "대상"
 
-#: translator/plugins/bergamot/translatormodel.cpp:51
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Type"
 msgstr "형식"
 
-#: translator/plugins/bergamot/translatormodel.cpp:53
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Repository"
 msgstr "저장소"
 
-#: translator/plugins/bergamot/translatormodel.cpp:55
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Installed Version"
 msgstr "설치된 버전"
 
-#: translator/plugins/bergamot/translatormodel.cpp:57
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Available Version"
 msgstr "사용 가능한 버전"
 
-#: translator/plugins/bergamot/translatormodel.cpp:59
-#: translator/plugins/bergamot/translatormodel.cpp:128
+#: translator/plugins/bergamot/translatormodel.cpp:60
+#: translator/plugins/bergamot/translatormodel.cpp:130
 #, kde-format
 msgid "Installed"
 msgstr "설치됨"
@@ -739,18 +758,18 @@ msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "번역할 텍스트를 끌어 놓으십시오."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "네트워크에 연결되지 않아서 텍스트를 번역할 수 없습니다."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "네트워크 사용 불가"
 
-#: translator/widgets/translatorwidget.cpp:455
+#: translator/widgets/translatorwidget.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

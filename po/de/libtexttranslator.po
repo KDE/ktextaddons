@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-27 00:43+0000\n"
 "PO-Revision-Date: 2023-08-14 21:57+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -322,7 +322,7 @@ msgstr "Walisisch"
 msgid "Yiddish"
 msgstr "Jiddish"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:26
+#: translator/plugins/bergamot/begamotenginedialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -401,10 +401,28 @@ msgstr "Sprachen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#, fuzzy, kde-format
+#| msgid "Translate..."
+msgid "Translation failed."
+msgstr "Übersetzen ..."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#, fuzzy, kde-format
+#| msgid "Server url is not defined."
+msgid "Language model is not loaded."
+msgstr "Server-Adresse ist nicht angegeben."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, fuzzy, kde-format
 #| msgid "Server url is not defined."
 msgid "Language model is not defined."
+msgstr "Server-Adresse ist nicht angegeben."
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#, fuzzy, kde-format
+#| msgid "Server url is not defined."
+msgid "Language model files are missing in %1."
 msgstr "Server-Adresse ist nicht angegeben."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
@@ -447,40 +465,40 @@ msgstr ""
 msgid "Impossible to extract language"
 msgstr "Sprache erkennen"
 
-#: translator/plugins/bergamot/translatormodel.cpp:47
+#: translator/plugins/bergamot/translatormodel.cpp:48
 #, kde-format
 msgid "Source"
 msgstr "Quelle"
 
-#: translator/plugins/bergamot/translatormodel.cpp:49
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Target"
 msgstr "Ziel"
 
-#: translator/plugins/bergamot/translatormodel.cpp:51
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Type"
 msgstr "Art"
 
-#: translator/plugins/bergamot/translatormodel.cpp:53
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Repository"
 msgstr ""
 
-#: translator/plugins/bergamot/translatormodel.cpp:55
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Installed"
 msgid "Installed Version"
 msgstr "Installiert"
 
-#: translator/plugins/bergamot/translatormodel.cpp:57
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Available"
 msgid "Available Version"
 msgstr "Verfügbar"
 
-#: translator/plugins/bergamot/translatormodel.cpp:59
-#: translator/plugins/bergamot/translatormodel.cpp:128
+#: translator/plugins/bergamot/translatormodel.cpp:60
+#: translator/plugins/bergamot/translatormodel.cpp:130
 #, kde-format
 msgid "Installed"
 msgstr "Installiert"
@@ -766,29 +784,26 @@ msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Ziehen Sie Text hierher, den Sie übersetzen möchten."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 "Es wurde keine Netzwerkverbindung erkannt; der Text kann nicht übersetzt "
 "werden."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:418
 #, fuzzy, kde-format
 #| msgid "No network"
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Keine Netzwerkverbindung"
 
-#: translator/widgets/translatorwidget.cpp:455
+#: translator/widgets/translatorwidget.cpp:456
 #, fuzzy, kde-format
 #| msgid "Translate error"
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Übersetzungsfehler"
-
-#~ msgid "Translate..."
-#~ msgstr "Übersetzen ..."
 
 #~ msgid "Version"
 #~ msgstr "Version"
