@@ -16,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDir>
 #include <QFile>
 #include <QJsonDocument>
+#include <QLocale>
 #include <QStandardPaths>
 
 QString BergamotEngineUtils::defaultBergamotRepository()
@@ -117,10 +118,28 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
 
 QString BergamotEngineUtils::adaptLangIdentifier(const QString &str)
 {
-    if (str == "eng"_L1) {
-        return u"en"_s;
+    // Most models from translatelocally.com use ISO 639-1 codes in their shortName ("en-fr-tiny"),
+    // but some of them use ISO 639-3 ones ("hbs-eng-tiny"). TranslatorUtil only knows about
+    // ISO 639-1, so convert the three letters codes.
+    if (str.length() != 3) {
+        return str;
     }
-    return str;
+    // "hbs" (Serbo-Croatian) is a macrolanguage which has no ISO 639-1 code of its own. QLocale
+    // resolves its withdrawn "sh" alias to Serbian, do the same here.
+    if (str == "hbs"_L1) {
+        return u"sr"_s;
+    }
+    const QLocale::Language language = QLocale::codeToLanguage(str, QLocale::ISO639Part3);
+    if (language == QLocale::AnyLanguage) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Unknown language identifier:" << str;
+        return str;
+    }
+    const QString iso639Part1 = QLocale::languageToCode(language, QLocale::ISO639Part1);
+    if (iso639Part1.isEmpty()) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "No ISO 639-1 code for language identifier:" << str;
+        return str;
+    }
+    return iso639Part1;
 }
 
 BergamotEngineUtils::ModelFiles BergamotEngineUtils::modelFiles(const QString &modelDirectory)

@@ -18,4 +18,6 @@ private Q_SLOTS:
     void shouldDefaultBergamotRepository();
     void shouldExtractInfoFromLanguageLocallyStored();
     void shouldFindModelFiles();
+    void shouldAdaptLangIdentifier();
+    void shouldAdaptLangIdentifier_data();
 };
