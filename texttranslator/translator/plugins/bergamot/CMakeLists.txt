@@ -1,41 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
-if(0)
-    include(ExternalProject)
-    include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
-    kde_enable_exceptions()
-    set(COMPILE_CUDA OFF CACHE BOOL "Compile GPU version")
-    set(USE_SENTENCEPIECE ON CACHE BOOL "Download and compile SentencePiece")
-    set(USE_STATIC_LIBS ON CACHE BOOL "Link statically against non-system libs")
-    set(USE_WASM_COMPATIBLE_SOURCE OFF CACHE BOOL "Don't build wasm compatible sources")
-
-    add_definitions(-DPHF_NO_LIBCXX=0)
-    #add_definitions(-DCUDA_FOUND=0)
-    add_definitions(-D__STDC_VERSION__=0)
-    if(0)
-        include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/)
-        include_directories(
-            ${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/3rd_party/spdlog/include/
-        )
-        include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/3rd_party)
-        include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/)
-        include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/ssplit-cpp/src/ssplit/)
-        include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/src/)
-        set(ext_source_dir ${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator)
-        ExternalProject_Add(
-            3rdparty_bergamot
-            #PREFIX ${ext_source_dir}/build
-            GIT_REPOSITORY "https://github.com/browsermt/bergamot-translator.git"
-            GIT_TAG "main"
-            SOURCE_DIR ${ext_source_dir}
-            BUILD_IN_SOURCE ON
-            CMAKE_ARGS
-                -DBLA_PREFER_PKGCONFIG:BOOL=ON -DBLA_PKGCONFIG_BLAS:STRING=openblas -Dcblas_cblas_LIBRARY:STRING=cblas
-        )
-    endif()
-
-    add_subdirectory(bergamot-translator EXCLUDE_FROM_ALL)
-endif()
 # slimt reports i/o failures (missing or unreadable model files) by throwing.
 kde_enable_exceptions()
 
