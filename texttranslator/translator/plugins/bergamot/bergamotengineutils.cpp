@@ -98,10 +98,10 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
             if (translator.type() == QLatin1String("tiny")) {
                 // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
                 // qDebug() << " translator " << translator;
-                BergamotEngineUtils::LanguageInstalled lang;
                 const QString shortName = translator.shortName();
                 const QStringList langIdentifier = shortName.split(u'-');
                 if (langIdentifier.count() >= 2) {
+                    BergamotEngineUtils::LanguageInstalled lang;
                     lang.from = langIdentifier.at(0);
                     lang.to = langIdentifier.at(1);
                     lang.shortName = shortName;
