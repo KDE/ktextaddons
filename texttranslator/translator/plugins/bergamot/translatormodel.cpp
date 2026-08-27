@@ -36,8 +36,10 @@ void TranslatorModel::insertTranslators(const QVector<Translator> &translators)
 
 void TranslatorModel::updateInstalledLanguage()
 {
+    beginResetModel();
     mLanguageInstalled = BergamotEngineUtils::languageLocallyStored();
     qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << "mLanguageInstalled " << mLanguageInstalled;
+    endResetModel();
 }
 
 QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, int role) const
