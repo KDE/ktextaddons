@@ -105,7 +105,6 @@ void ManagerModelTranslator::downloadLanguage(const QString &url, const QString 
     auto downloadJob = new DownloadLanguageJob(this);
     downloadJob->setUrl(QUrl(url));
     downloadJob->setCheckSum(checkSum);
-    const QString name = url;
     connect(downloadJob, &DownloadLanguageJob::errorText, this, &ManagerModelTranslator::errorText);
     connect(downloadJob, &DownloadLanguageJob::extractDone, this, &ManagerModelTranslator::extractDone);
     connect(downloadJob, &DownloadLanguageJob::downloadProgress, this, [this, url](qint64 bytesReceived, qint64 bytesTotal) {
