@@ -205,12 +205,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
     QJsonObject data;
     data["prompt"_L1] = request.message();
     data["model"_L1] = request.model();
-    // TODO add prompt here too
-#if 0
-    if (!mOllamaSettings->systemPrompt().isEmpty()) {
-        data["system"_L1] = mOllamaSettings->systemPrompt();
-    }
-#endif
+    // TODO need prompt
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
