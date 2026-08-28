@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 
 #include <QFile>
+#include <QHash>
 #include <QJsonDocument>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -21,6 +22,9 @@ public:
     void loadUnicodeEmoji(const QString &filename = {});
     [[nodiscard]] QString i18nUnicodeCategory(const QString &name) const;
     QList<UnicodeEmoticon> unicodeEmojiList;
+    // Every name an emoji answers to, mapped to its position in unicodeEmojiList, so
+    // that looking one up does not walk the whole list comparing aliases.
+    QHash<QString, int> emojiIndexes;
 };
 
 void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji(const QString &filename)
@@ -35,6 +39,25 @@ void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji(const QString &filename)
 
     const QJsonObject obj = doc.object();
     unicodeEmojiList = unicodeParser.parse(obj);
+
+    emojiIndexes.clear();
+    emojiIndexes.reserve(unicodeEmojiList.count() * 3);
+    for (int i = 0, total = unicodeEmojiList.count(); i < total; ++i) {
+        const UnicodeEmoticon &emoticon = unicodeEmojiList.at(i);
+        // The list is sorted, so on a name claimed twice keep the first emoji, which is
+        // the one a search through the list would have stopped on.
+        const auto index = [this, i](const QString &name) {
+            if (!name.isEmpty()) {
+                emojiIndexes.tryEmplace(name, i);
+            }
+        };
+        index(emoticon.identifier());
+        index(emoticon.unicode());
+        const auto aliases = emoticon.aliases();
+        for (const QString &alias : aliases) {
+            index(alias);
+        }
+    }
 }
 
 QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) const
@@ -126,12 +149,11 @@ QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &
 
 UnicodeEmoticon UnicodeEmoticonManager::unicodeEmoticonForEmoji(const QString &emojiIdentifier) const
 {
-    for (const UnicodeEmoticon &emo : std::as_const(d->unicodeEmojiList)) {
-        if (emo.hasEmoji(emojiIdentifier)) {
-            return emo;
-        }
+    const auto it = d->emojiIndexes.constFind(emojiIdentifier);
+    if (it == d->emojiIndexes.cend()) {
+        return {};
     }
-    return {};
+    return d->unicodeEmojiList.at(it.value());
 }
 
 #include "moc_unicodeemoticonmanager.cpp"
