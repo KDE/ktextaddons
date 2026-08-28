@@ -17,4 +17,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldHaveToneSuffix();
     void shouldChangeCategoryWhenSearching();
+    void shouldSearchInAliases();
+    void shouldFilterMixedSkinTones();
 };

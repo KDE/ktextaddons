@@ -6,6 +6,8 @@
 #include "emojisortfilterproxymodel.h"
 #include "emojimodel.h"
 #include "emoticonunicodeutils.h"
+
+#include <algorithm>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsCore;
 
@@ -61,11 +63,23 @@ public:
             if (diversityChildren) {
                 return false;
             }
-            if ((identifier.contains("_tone"_L1) && identifier.contains(suffix)) || !identifier.contains("_tone"_L1)) {
-                return true;
-            }
-            return false;
+            // Match the suffix at the end of the identifier: :handshake_tone1-3: is a
+            // mixed tone emoji, it belongs to no single tone.
+            return !identifier.contains("_tone"_L1) || identifier.endsWith(suffix + u':');
         }
+    }
+
+    [[nodiscard]] bool matchesSearch(const QModelIndex &sourceIndex) const
+    {
+        if (sourceIndex.data(EmojiModel::Identifier).toString().contains(searchIdentifier, Qt::CaseInsensitive)) {
+            return true;
+        }
+        // The identifier is the name used by the emoji set we ship; the names users
+        // remember from elsewhere are aliases, so search those too.
+        const QStringList aliases = sourceIndex.data(EmojiModel::Aliases).toStringList();
+        return std::any_of(aliases.cbegin(), aliases.cend(), [this](const QString &alias) {
+            return alias.contains(searchIdentifier, Qt::CaseInsensitive);
+        });
     }
 
     QString category;
@@ -93,11 +107,7 @@ bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelInd
     }
     if (!d->searchIdentifier.isEmpty()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-        if (d->filterTone(source_row, source_parent) && identifier.contains(d->searchIdentifier)) {
-            return true;
-        }
-        return false;
+        return d->filterTone(source_row, source_parent) && d->matchesSearch(sourceIndex);
     }
     if (d->category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);

@@ -49,6 +49,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             return false;
         case DiversityChildren:
             return unicodeEmoti.diversityChildren();
+        case Aliases:
+            return unicodeEmoti.aliases();
         default:
             break;
         }
@@ -102,6 +104,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         }
         case DiversityChildren:
             return false;
+        case Aliases:
+            return QStringList{};
         default:
             break;
         }
@@ -164,7 +168,8 @@ QHash<int, QByteArray> EmojiModel::roleNames() const
              {Category, QByteArrayLiteral("category")},
              {IsCustom, QByteArrayLiteral("isCustom")},
              {FileName, QByteArrayLiteral("fileName")},
-             {DiversityChildren, QByteArrayLiteral("diversityChildren")}}};
+             {DiversityChildren, QByteArrayLiteral("diversityChildren")},
+             {Aliases, QByteArrayLiteral("aliases")}}};
 }
 
 #include "moc_emojimodel.cpp"

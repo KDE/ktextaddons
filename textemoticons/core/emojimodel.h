@@ -35,6 +35,7 @@ public:
         IsCustom,
         FileName,
         DiversityChildren,
+        Aliases,
     };
     Q_ENUM(EmoticonsRoles)
 

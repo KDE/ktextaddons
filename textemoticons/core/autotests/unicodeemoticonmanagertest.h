@@ -16,4 +16,6 @@ public:
     ~UnicodeEmoticonManagerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldFindEmoji_data();
+    void shouldFindEmoji();
 };
