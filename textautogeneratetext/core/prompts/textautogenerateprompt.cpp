@@ -117,6 +117,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
     d.space() << "enabled:" << t.enabled();
     d.space() << "category:" << t.category();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "command:" << t.commandCompletion();
     return d;
 }
 
@@ -124,6 +125,7 @@ void TextAutoGeneratePrompt::save(KConfigGroup &grp)
 {
     grp.writeEntry("name", name());
     grp.writeEntry("text", text());
+    grp.writeEntry("command", commandCompletion());
     grp.writeEntry("description", description());
     grp.writeEntry("enabled", enabled());
     grp.writeEntry("category", TextAutoGeneratePrompt::convertCategoryToString(category()));
@@ -137,7 +139,18 @@ void TextAutoGeneratePrompt::load(const KConfigGroup &grp)
     setDescription(grp.readEntry("description"));
     setEnabled(grp.readEntry("enabled", true));
     setIdentifier(grp.readEntry("identifier").toLatin1());
+    setCommandCompletion(grp.readEntry("command"));
     setCategory(TextAutoGeneratePrompt::convertStringToCategory(grp.readEntry("category")));
+}
+
+QString TextAutoGeneratePrompt::commandCompletion() const
+{
+    return mCommandCompletion;
+}
+
+void TextAutoGeneratePrompt::setCommandCompletion(const QString &newCommandCompletion)
+{
+    mCommandCompletion = newCommandCompletion;
 }
 
 #include "moc_textautogenerateprompt.cpp"

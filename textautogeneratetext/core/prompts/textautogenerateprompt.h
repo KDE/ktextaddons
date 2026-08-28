@@ -112,11 +112,23 @@ public:
      */
     void load(const KConfigGroup &grp);
 
+    /*!
+     * \brief commandCompletion
+     * \return
+     */
+    [[nodiscard]] QString commandCompletion() const;
+    /*!
+     * \brief setCommandCompletion
+     * \param newCommandCompletion
+     */
+    void setCommandCompletion(const QString &newCommandCompletion);
+
 private:
     Category mCategory = Category::Unknown;
     QString mName;
     QString mText;
     QString mDescription;
+    QString mCommandCompletion;
     QByteArray mIdentifier;
     bool mEnabled = true;
 };
