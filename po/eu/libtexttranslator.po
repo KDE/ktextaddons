@@ -8,6 +8,7 @@
 #
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-01.
+# Azken berrikuspena: 2028-08-27 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
 # Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
@@ -15,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:43+0000\n"
-"PO-Revision-Date: 2026-07-31 12:27+0200\n"
+"POT-Creation-Date: 2026-08-28 00:44+0000\n"
+"PO-Revision-Date: 2026-08-27 21:59+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -338,7 +339,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot pluginaren ezarpenak"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -350,29 +351,29 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Bilatu…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:80
 #, kde-format
 msgid "Download"
 msgstr "Zama-jaitsi"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:94
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Zerrenda eguneratu"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Hizkuntzen zerrenda saretik eguneratu"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Error: %1"
 msgstr "Errorea: %1"
@@ -409,17 +410,14 @@ msgid "Settings"
 msgstr "Ezarpenak"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use translation cache"
+#, kde-format
 msgid "Translation failed."
-msgstr "Itzulpen-cachea erabili"
+msgstr "Itzulpenak huts egin du."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model is not loaded."
-msgstr "Hizkuntza-eredua ez dago definituta."
+msgstr "Hizkuntza-eredua ez dago zamatuta."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
@@ -427,10 +425,9 @@ msgid "Language model is not defined."
 msgstr "Hizkuntza-eredua ez dago definituta."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model files are missing in %1."
-msgstr "Hizkuntza-eredua ez dago definituta."
+msgstr "%1(e)n hizkuntza-ereduaren fitxategiak falta dira."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
@@ -470,38 +467,38 @@ msgstr "Errorea diskoan idaztean: %1"
 msgid "Impossible to extract language"
 msgstr "Ezin da hizkuntza erauzi"
 
-#: translator/plugins/bergamot/translatormodel.cpp:48
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Source"
 msgstr "Sorburua"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Target"
 msgstr "Jomuga"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Type"
 msgstr "Mota"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Repository"
 msgstr "Gordetegia"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Installed Version"
 msgstr "Instalatutako bertsioa"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:60
 #, kde-format
 msgid "Available Version"
 msgstr "Bertsio eskuragarria"
 
-#: translator/plugins/bergamot/translatormodel.cpp:60
-#: translator/plugins/bergamot/translatormodel.cpp:130
+#: translator/plugins/bergamot/translatormodel.cpp:62
+#: translator/plugins/bergamot/translatormodel.cpp:132
 #, kde-format
 msgid "Installed"
 msgstr "Instalatuta"

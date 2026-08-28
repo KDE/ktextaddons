@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:43+0000\n"
+"POT-Creation-Date: 2026-08-28 00:44+0000\n"
 "PO-Revision-Date: 2025-02-24 20:45+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Настройки на приставка Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -341,29 +341,29 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Търсене…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:80
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:94
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Обновяване на списъка"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Актуализиране на списъка с езици от интернет"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Error: %1"
 msgstr "Грешка: %1"
@@ -461,38 +461,38 @@ msgstr "Грешка по време на запис на диск: %1"
 msgid "Impossible to extract language"
 msgstr "Невъзможно извличане на език"
 
-#: translator/plugins/bergamot/translatormodel.cpp:48
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Source"
 msgstr "Източник"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Target"
 msgstr "Цел"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Type"
 msgstr "Вид"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Repository"
 msgstr "Хранилище"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Installed Version"
 msgstr "Инсталирана версия"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:60
 #, kde-format
 msgid "Available Version"
 msgstr "Налична версия"
 
-#: translator/plugins/bergamot/translatormodel.cpp:60
-#: translator/plugins/bergamot/translatormodel.cpp:130
+#: translator/plugins/bergamot/translatormodel.cpp:62
+#: translator/plugins/bergamot/translatormodel.cpp:132
 #, kde-format
 msgid "Installed"
 msgstr "Инсталирани"

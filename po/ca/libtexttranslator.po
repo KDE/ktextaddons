@@ -1,15 +1,15 @@
 # Translation of libtexttranslator.po to Catalan
-# Copyright (C) 2023-2025 This_file_is_part_of_KDE
+# Copyright (C) 2023-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023-2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:43+0000\n"
-"PO-Revision-Date: 2025-02-22 08:38+0100\n"
+"POT-Creation-Date: 2026-08-28 00:44+0000\n"
+"PO-Revision-Date: 2026-08-27 08:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -332,7 +332,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Configuració del connector Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -344,29 +344,29 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Cerca…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:80
 #, kde-format
 msgid "Download"
 msgstr "Baixada"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:94
 #, kde-format
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Actualitza la llista"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Actualitza la llista d'idiomes des de la xarxa"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
@@ -403,17 +403,14 @@ msgid "Settings"
 msgstr "Configuració"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use translation cache"
+#, kde-format
 msgid "Translation failed."
-msgstr "Usa la memòria cau de traducció"
+msgstr "Ha fallat la traducció."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model is not loaded."
-msgstr "No s'ha definit el model d'idioma."
+msgstr "No s'ha carregat el model d'idioma."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
@@ -421,10 +418,9 @@ msgid "Language model is not defined."
 msgstr "No s'ha definit el model d'idioma."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model files are missing in %1."
-msgstr "No s'ha definit el model d'idioma."
+msgstr "Manquen fitxers de model d'idioma a %1."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
@@ -464,38 +460,38 @@ msgstr "Error durant l'escriptura al disc: %1"
 msgid "Impossible to extract language"
 msgstr "És impossible extreure l'idioma"
 
-#: translator/plugins/bergamot/translatormodel.cpp:48
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Source"
 msgstr "Origen"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Target"
 msgstr "Destinació"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Repository"
 msgstr "Repositori"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Installed Version"
 msgstr "Versió instal·lada"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:60
 #, kde-format
 msgid "Available Version"
 msgstr "Versió disponible"
 
-#: translator/plugins/bergamot/translatormodel.cpp:60
-#: translator/plugins/bergamot/translatormodel.cpp:130
+#: translator/plugins/bergamot/translatormodel.cpp:62
+#: translator/plugins/bergamot/translatormodel.cpp:132
 #, kde-format
 msgid "Installed"
 msgstr "Instal·lat"

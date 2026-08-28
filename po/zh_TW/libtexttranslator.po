@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:43+0000\n"
+"POT-Creation-Date: 2026-08-28 00:44+0000\n"
 "PO-Revision-Date: 2025-07-03 23:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot 外掛程式設定"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -341,29 +341,29 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "搜尋…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:80
 #, kde-format
 msgid "Download"
 msgstr "下載"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:94
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "更新清單"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "從網路更新語言列表"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Error: %1"
 msgstr "錯誤：%1"
@@ -459,38 +459,38 @@ msgstr "寫入磁碟時發生錯誤：%1"
 msgid "Impossible to extract language"
 msgstr "無法取出語言"
 
-#: translator/plugins/bergamot/translatormodel.cpp:48
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Source"
 msgstr "原文"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Target"
 msgstr "譯文"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Type"
 msgstr "類型"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Repository"
 msgstr "儲存庫"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:58
 #, kde-format
 msgid "Installed Version"
 msgstr "已安裝版本"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:60
 #, kde-format
 msgid "Available Version"
 msgstr "可用版本"
 
-#: translator/plugins/bergamot/translatormodel.cpp:60
-#: translator/plugins/bergamot/translatormodel.cpp:130
+#: translator/plugins/bergamot/translatormodel.cpp:62
+#: translator/plugins/bergamot/translatormodel.cpp:132
 #, kde-format
 msgid "Installed"
 msgstr "已安裝"
