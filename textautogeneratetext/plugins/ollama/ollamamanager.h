@@ -56,6 +56,7 @@ public:
     [[nodiscard]] QUrl instanceUrl() override;
 
     [[nodiscard]] bool isOllamaStarted() const;
+    [[nodiscard]] bool hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const override;
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void downloadError(const QString &modelName, const QString &errorStr);
@@ -63,8 +64,6 @@ Q_SIGNALS:
     void ollamaFailed(const QString &errorStr);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT bool hasCategorySupport(const QString &modelName,
-                                                                           TextAutoGenerateText::TextAutoGenerateManager::Category cat) const override;
     QList<OllamaModelInstalledInfo> mInstalledInfos;
     QList<OllamaCommonModelAvailableInfo> mAvailableInfos;
     OllamaSettings *const mOllamaSettings;
