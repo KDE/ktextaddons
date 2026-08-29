@@ -25,8 +25,7 @@ bool TextAutoGenerateTextInstanceSortFilterProxyModel::filterAcceptsRow(int sour
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
     const QString instanceName = sourceIndex.data(TextAutoGenerateTextInstanceModel::Name).toString();
-    const QString pluginName = sourceIndex.data(TextAutoGenerateTextInstanceModel::PluginName).toString();
-    if (contains(pluginName) || contains(instanceName)) {
+    if (const QString pluginName = sourceIndex.data(TextAutoGenerateTextInstanceModel::PluginName).toString(); contains(pluginName) || contains(instanceName)) {
         return true;
     }
     return false;

@@ -171,8 +171,7 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
 void ConfigurePluginsWidget::slotConfigureButtonClicked(QAction *act)
 {
     if (act) {
-        const QStringList lst = act->data().toStringList();
-        if (lst.count() == 2) {
+        if (const QStringList lst = act->data().toStringList(); lst.count() == 2) {
             Q_EMIT configureClicked(lst.at(0), lst.at(1));
         }
     }

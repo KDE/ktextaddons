@@ -60,8 +60,7 @@ void GrammalecteWidget::slotConfigure()
 
 void GrammalecteWidget::slotReplaceText(const TextGrammarCheck::GrammarAction &act)
 {
-    QTextBlock block = mInput->document()->findBlockByNumber(act.blockId() - 1);
-    if (block.isValid()) {
+    if (QTextBlock block = mInput->document()->findBlockByNumber(act.blockId() - 1); block.isValid()) {
         QTextCursor cur(block);
         const int position = cur.position() + act.start();
         cur.setPosition(position);

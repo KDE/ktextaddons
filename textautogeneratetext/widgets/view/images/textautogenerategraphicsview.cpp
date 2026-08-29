@@ -47,8 +47,7 @@ TextAutoGenerateGraphicsView::~TextAutoGenerateGraphicsView()
 void TextAutoGenerateGraphicsView::wheelEvent(QWheelEvent *e)
 {
     if (e->modifiers() == Qt::ControlModifier) {
-        const int y = e->angleDelta().y();
-        if (y < 0) {
+        if (const int y = e->angleDelta().y(); y < 0) {
             zoomOut(e->position());
         } else if (y > 0) {
             zoomIn(e->position());

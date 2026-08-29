@@ -86,10 +86,8 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
             u"<ul>"_s + TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->convertIdentifierToDisplay(m.messageInfo()->tools()) + u"</ul>"_s;
         toolTip += i18n("<br><b>Tools:</b> %1", displayList);
     }
-    const auto replyInfo = m.info();
-    if (replyInfo.isValid()) {
-        const QString replyInfoToolTip = replyInfo.generateReplyInfo();
-        if (!replyInfoToolTip.isEmpty()) {
+    if (const auto replyInfo = m.info(); replyInfo.isValid()) {
+        if (const QString replyInfoToolTip = replyInfo.generateReplyInfo(); !replyInfoToolTip.isEmpty()) {
             toolTip += replyInfoToolTip;
         }
     }
@@ -121,8 +119,7 @@ void TextAutoGenerateMessagesModel::regenerateHtmlMessage(const QByteArray &iden
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == identifier;
     };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it != mMessages.end()) {
+    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
         (*it).generateHtml(searchText(), index);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -166,8 +163,7 @@ QByteArray TextAutoGenerateMessagesModel::lastMessageUuid() const
     if (mMessages.isEmpty()) {
         return {};
     }
-    const auto lastMessage = mMessages.constLast();
-    if (lastMessage.isValid()) {
+    if (const auto lastMessage = mMessages.constLast(); lastMessage.isValid()) {
         return lastMessage.uuid();
     }
     return {};
@@ -252,8 +248,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
-    const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it != mMessages.end()) {
+    if (const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
         const int i = std::distance(mMessages.begin(), it);
         const QByteArray answerUuid = it->answerUuid();
 
@@ -271,8 +266,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
         auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
             return msg.uuid() == answerUuid;
         };
-        const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
-        if (answerIt != mMessages.end()) {
+        if (const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid); answerIt != mMessages.end()) {
             const int idx = std::distance(mMessages.begin(), answerIt);
             (*answerIt).setInProgress(true);
             (*answerIt).setContent({});
@@ -293,8 +287,7 @@ void TextAutoGenerateMessagesModel::changeInProgress(const QByteArray &uuid, boo
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it != mMessages.end()) {
+    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
         (*it).setInProgress(inProgress);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -314,8 +307,7 @@ bool TextAutoGenerateMessagesModel::waitingAnswer(const TextAutoGenerateMessage 
     auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == answerUuid;
     };
-    const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
-    if (answerIt != mMessages.end()) {
+    if (const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid); answerIt != mMessages.end()) {
         return (*answerIt).inProgress();
     }
     return false;
@@ -329,8 +321,7 @@ void TextAutoGenerateMessagesModel::updateMessageInfo(const QByteArray &uuid, co
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it != mMessages.end()) {
+    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
         (*it).setMessageInfo(messageInfo);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -351,8 +342,7 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it != mMessages.end()) {
+    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
         if (!content.response.isEmpty()) {
             (*it).setContent(content.response);
         } else if (!content.thinking.isEmpty()) {
@@ -404,8 +394,7 @@ void TextAutoGenerateMessagesModel::changeTextToSpeechInProgress(const QByteArra
     const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it != mMessages.end()) {
+    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
         (*it).setTextToSpeechInProgress(inProgress);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -477,8 +466,7 @@ QList<QJsonObject> TextAutoGenerateMessagesModel::convertToOllamaChat(bool hasSy
 {
     QList<QJsonObject> lst;
     for (const auto &msg : mMessages) {
-        const auto obj = msg.convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport);
-        if (!obj.isEmpty()) {
+        if (const auto obj = msg.convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport); !obj.isEmpty()) {
             lst.append(obj);
         }
     }

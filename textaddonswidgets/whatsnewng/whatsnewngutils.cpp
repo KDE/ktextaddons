@@ -26,8 +26,7 @@ QString TextAddonsWidgets::WhatsNewNgUtils::generateUrl(const KAboutRelease &rel
 
 QString TextAddonsWidgets::WhatsNewNgUtils::generateVersionHeader(const KAboutRelease &release)
 {
-    const QDate date = release.date();
-    if (date.isValid()) {
+    if (const QDate date = release.date(); date.isValid()) {
         return i18n("<h3><i>What's New in Version %1 (Released: %2)</i></h3>", release.version(), QLocale().toString(date, QLocale::ShortFormat));
     } else {
         return i18n("<h3><i>What's New in Version %1 (Unreleased)</i></h3>", release.version());

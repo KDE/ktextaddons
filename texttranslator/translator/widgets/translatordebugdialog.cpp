@@ -82,8 +82,7 @@ void TranslatorDebugDialog::saveTextAs(const QString &text, const QString &filte
     }
     fdlg->setAcceptMode(QFileDialog::AcceptSave);
     if (fdlg->exec() == QDialog::Accepted) {
-        const QString fileName = fdlg->selectedFiles().at(0);
-        if (!saveToFile(fileName, text)) {
+        if (const QString fileName = fdlg->selectedFiles().at(0); !saveToFile(fileName, text)) {
             KMessageBox::error(parent,
                                i18n("Could not write the file %1:\n"
                                     "\"%2\" is the detailed error description.",

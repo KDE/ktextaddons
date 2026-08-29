@@ -121,8 +121,7 @@ void TextEditFindBarBase::slotClearSearch()
 
 void TextEditFindBarBase::autoSearch(const QString &str)
 {
-    const bool isNotEmpty = (!str.isEmpty());
-    if (isNotEmpty) {
+    if (const bool isNotEmpty = (!str.isEmpty()); isNotEmpty) {
         QTimer::singleShot(0, this, [this]() {
             slotSearchText();
         });
@@ -218,10 +217,8 @@ bool TextEditFindBarBase::event(QEvent *e)
     // Not using a QShortcut for this because it could conflict with
     // window-global actions (e.g. Emil Sedgh binds Esc to "close tab").
     // With a shortcut override we can catch this before it gets to kactions.
-    const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
-    if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        auto kev = static_cast<QKeyEvent *>(e);
-        if (kev->key() == Qt::Key_Escape) {
+    if (const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride); shortCutOverride || e->type() == QEvent::KeyPress) {
+        if (auto kev = static_cast<QKeyEvent *>(e); kev->key() == Qt::Key_Escape) {
             if (shortCutOverride) {
                 e->accept();
                 return true;

@@ -229,8 +229,7 @@ QString TranslatorUtil::searchI18nFromLanguage(const QString &langCode)
 TranslatorUtil::Language TranslatorUtil::stringToLanguage(const QString &str)
 {
     for (int i = TranslatorUtil::Language::automatic; i <= TranslatorUtil::Language::lastLanguage; ++i) {
-        const auto language = static_cast<TranslatorUtil::Language>(i);
-        if (str == languageCode(language)) {
+        if (const auto language = static_cast<TranslatorUtil::Language>(i); str == languageCode(language)) {
             return language;
         }
     }

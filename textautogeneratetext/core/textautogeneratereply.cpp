@@ -87,14 +87,12 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
             qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " INDEX : " << index;
         }
         QJsonObject argumentObj;
-        const QJsonValue argumentsValue = functionObj["arguments"_L1];
-        if (argumentsValue.isObject()) {
+        if (const QJsonValue argumentsValue = functionObj["arguments"_L1]; argumentsValue.isObject()) {
             argumentObj = argumentsValue.toObject();
         } else if (argumentsValue.isString()) {
             const QString arguments = argumentsValue.toString();
             // qDebug() << " arguments: " << arguments;
-            const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1());
-            if (doc.isObject()) {
+            if (const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1()); doc.isObject()) {
                 argumentObj = doc.object();
             }
         }

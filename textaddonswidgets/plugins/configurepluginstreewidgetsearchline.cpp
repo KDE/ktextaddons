@@ -25,21 +25,17 @@ bool ConfigurePluginsTreeWidgetSearchLine::itemMatches(const QTreeWidgetItem *it
     // If the search column list is populated, search just the columns
     // specified.  If it is empty default to searching all of the columns.
 
-    const QList<int> columns = searchColumns();
-
-    if (!columns.isEmpty()) {
+    if (const QList<int> columns = searchColumns(); !columns.isEmpty()) {
         QList<int>::ConstIterator it = columns.constBegin();
         for (; it != columns.constEnd(); ++it) {
-            const QString currentText = TextUtils::ConvertText::normalize(item->text(*it));
-            if (*it < item->treeWidget()->columnCount() //
+            if (const QString currentText = TextUtils::ConvertText::normalize(item->text(*it)); *it < item->treeWidget()->columnCount() //
                 && currentText.indexOf(newPattern, 0, caseSensitivity()) >= 0) {
                 return true;
             }
         }
     } else {
         for (int i = 0; i < item->treeWidget()->columnCount(); i++) {
-            const QString currentText = TextUtils::ConvertText::normalize(item->text(i));
-            if (item->treeWidget()->columnWidth(i) > 0 //
+            if (const QString currentText = TextUtils::ConvertText::normalize(item->text(i)); item->treeWidget()->columnWidth(i) > 0 //
                 && currentText.indexOf(newPattern, 0, caseSensitivity()) >= 0) {
                 return true;
             }

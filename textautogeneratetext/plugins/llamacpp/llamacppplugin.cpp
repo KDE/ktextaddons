@@ -133,8 +133,7 @@ void LLamaCppPlugin::sendToAssistant(const SendToAssistantInfo &info)
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::finished, this, [reply, messageUuid, chatId, this] {
-                                                       const auto response = reply->readResponse();
-                                                       if (response.hasToolCallArguments()) {
+                                                       if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
                                                            manager()->callTools(chatId, messageUuid, response.info);
                                                        } else {
                                                            manager()->changeInProgress(chatId, messageUuid, false);
@@ -221,8 +220,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LLa
         mCurrentAction = nullptr;
     }
     TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo;
-    const QString lmsPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"lms"_s);
-    if (lmsPath.isEmpty()) {
+    if (const QString lmsPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"lms"_s); lmsPath.isEmpty()) {
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
         activateInstanceInfo.text = i18n("LMStudio not found on system. Ask to your administrator system to install it.");
 #else

@@ -80,8 +80,7 @@ void TranslatorWidget::TranslatorWidgetPrivate::fillToCombobox(const QString &la
 
     TranslatorUtil translatorUtil;
     for (const auto &[key, value] : translatorClient->supportedToLanguages().asKeyValueRange()) {
-        const QString languageCode = TranslatorUtil::languageCode(key);
-        if ((key != TranslatorUtil::automatic) && languageCode != lang) {
+        if (const QString languageCode = TranslatorUtil::languageCode(key); (key != TranslatorUtil::automatic) && languageCode != lang) {
             translatorUtil.addItemToFromComboBox(toCombobox, languageCode, value);
         }
     }
@@ -170,8 +169,7 @@ void TranslatorWidget::readConfig()
     if (from.isEmpty()) {
         return;
     }
-    const int indexFrom = d->fromCombobox->findData(from);
-    if (indexFrom != -1) {
+    if (const int indexFrom = d->fromCombobox->findData(from); indexFrom != -1) {
         d->fromCombobox->setCurrentIndex(indexFrom);
     }
     d->translatorClient->generateToListFromCurrentToLanguage(from);
@@ -181,8 +179,7 @@ void TranslatorWidget::readConfig()
     d->toCombobox->blockSignals(false);
 
     const QString to = myGroup.readEntry(u"ToLanguage"_s);
-    const int indexTo = d->toCombobox->findData(to);
-    if (indexTo != -1) {
+    if (const int indexTo = d->toCombobox->findData(to); indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
     }
     d->invert->setEnabled(from != "auto"_L1);
@@ -342,8 +339,7 @@ void TranslatorWidget::switchEngine()
     }
     d->translatorClient = TextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(d->engineName);
     if (!d->translatorClient) {
-        const QString fallBackEngineName = TextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine();
-        if (!fallBackEngineName.isEmpty()) {
+        if (const QString fallBackEngineName = TextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine(); !fallBackEngineName.isEmpty()) {
             d->translatorClient = TextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(fallBackEngineName);
         }
     }
@@ -391,8 +387,7 @@ void TranslatorWidget::slotFromLanguageChanged(int index, bool initialize)
     d->toCombobox->blockSignals(true);
     d->fillToCombobox(lang);
     d->toCombobox->blockSignals(false);
-    const int indexTo = d->toCombobox->findData(to);
-    if (indexTo != -1) {
+    if (const int indexTo = d->toCombobox->findData(to); indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
     }
     if (!initialize) {
@@ -419,8 +414,7 @@ void TranslatorWidget::slotTranslate()
         }
         return;
     }
-    const QString textToTranslate = d->inputText->toPlainText();
-    if (textToTranslate.trimmed().isEmpty()) {
+    if (const QString textToTranslate = d->inputText->toPlainText(); textToTranslate.trimmed().isEmpty()) {
         return;
     }
 
@@ -466,12 +460,10 @@ void TranslatorWidget::slotInvertLanguage()
     }
 
     const QString toLanguage = d->toCombobox->itemData(d->toCombobox->currentIndex()).toString();
-    const int indexFrom = d->fromCombobox->findData(toLanguage);
-    if (indexFrom != -1) {
+    if (const int indexFrom = d->fromCombobox->findData(toLanguage); indexFrom != -1) {
         d->fromCombobox->setCurrentIndex(indexFrom);
     }
-    const int indexTo = d->toCombobox->findData(fromLanguage);
-    if (indexTo != -1) {
+    if (const int indexTo = d->toCombobox->findData(fromLanguage); indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
     }
     slotTranslate();
@@ -509,8 +501,7 @@ bool TranslatorWidget::event(QEvent *e)
     // window-global actions (e.g. Emil Sedgh binds Esc to "close tab").
     // With a shortcut override we can catch this before it gets to kactions.
     if (e->type() == QEvent::ShortcutOverride || e->type() == QEvent::KeyPress) {
-        auto kev = static_cast<QKeyEvent *>(e);
-        if (kev->key() == Qt::Key_Escape) {
+        if (auto kev = static_cast<QKeyEvent *>(e); kev->key() == Qt::Key_Escape) {
             e->accept();
             slotCloseWidget();
             return true;

@@ -117,8 +117,7 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
                         QPair<QByteArray, QMetaObject::Connection>(
                             messageUuid,
                             connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, messageUuid, chatId, this] {
-                                const auto response = reply->readResponse();
-                                if (response.hasToolCallArguments()) {
+                                if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
                                     manager()->callTools(chatId, messageUuid, response.info);
                                 } else {
                                     manager()->changeInProgress(chatId, messageUuid, false);

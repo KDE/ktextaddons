@@ -76,8 +76,7 @@ public:
         // It's impossible if the whole document ends with a link.
         // The same happens when text starts with a link: it's impossible to write normal text before it.
         QObject::connect(q, &RichTextEditor::cursorPositionChanged, q, [this]() {
-            QTextCursor c = q->textCursor();
-            if (c.charFormat().isAnchor() && !c.hasSelection()) {
+            if (QTextCursor c = q->textCursor(); c.charFormat().isAnchor() && !c.hasSelection()) {
                 QTextCharFormat fmt;
                 // If we are at block start or end (and at anchor), we just set the "default" format
                 if (!c.atBlockEnd() && !c.atBlockStart() && !c.hasSelection()) {
@@ -196,8 +195,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 NCountActs
             };
             QAction *separatorAction = nullptr;
-            const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
-            if (idx < actionList.count()) {
+            if (const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1; idx < actionList.count()) {
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
@@ -537,8 +535,7 @@ void RichTextEditor::checkSpelling(bool force)
         }
     }
     auto spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
-    auto buttonBox = spellDialog->findChild<QDialogButtonBox *>();
-    if (buttonBox) {
+    if (auto buttonBox = spellDialog->findChild<QDialogButtonBox *>(); buttonBox) {
         auto skipButton = new QPushButton(i18nc("@action:button", "Skip"));
         buttonBox->addButton(skipButton, QDialogButtonBox::ActionRole);
         connect(skipButton, &QPushButton::clicked, spellDialog, &Sonnet::Dialog::close);
@@ -672,8 +669,7 @@ void RichTextEditor::focusInEvent(QFocusEvent *event)
 void RichTextEditor::setSpellCheckingConfigFileName(const QString &_fileName)
 {
     d->spellCheckingConfigFileName = _fileName;
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    if (config->hasGroup("Spelling"_L1)) {
+    if (KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName); config->hasGroup("Spelling"_L1)) {
         KConfigGroup group(config, "Spelling"_L1);
         d->checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         d->spellCheckingLanguage = group.readEntry("Language", QString());
@@ -787,8 +783,7 @@ void RichTextEditor::deleteWordForward()
 bool RichTextEditor::event(QEvent *ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        auto e = static_cast<QKeyEvent *>(ev);
-        if (overrideShortcut(e)) {
+        if (auto e = static_cast<QKeyEvent *>(ev); overrideShortcut(e)) {
             e->accept();
             return true;
         }
@@ -815,9 +810,7 @@ void RichTextEditor::wheelEvent(QWheelEvent *event)
 
 bool RichTextEditor::handleShortcut(QKeyEvent *event)
 {
-    const int key = event->key() | event->modifiers();
-
-    if (KStandardShortcut::copy().contains(key)) {
+    if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         copy();
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
@@ -922,8 +915,7 @@ bool RichTextEditor::handleShortcut(QKeyEvent *event)
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
         if (!isReadOnly()) {
-            QString text = QApplication::clipboard()->text(QClipboard::Selection);
-            if (!text.isEmpty()) {
+            if (QString text = QApplication::clipboard()->text(QClipboard::Selection); !text.isEmpty()) {
                 insertPlainText(text); // TODO: check if this is html? (MiB)
             }
             return true;
@@ -931,8 +923,7 @@ bool RichTextEditor::handleShortcut(QKeyEvent *event)
     } else if (event == QKeySequence::DeleteEndOfLine) {
         if (!isReadOnly()) {
             QTextCursor cursor = textCursor();
-            QTextBlock block = cursor.block();
-            if (cursor.position() == block.position() + block.length() - 2) {
+            if (QTextBlock block = cursor.block(); cursor.position() == block.position() + block.length() - 2) {
                 cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
             } else {
                 cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
@@ -948,9 +939,7 @@ bool RichTextEditor::handleShortcut(QKeyEvent *event)
 
 bool RichTextEditor::overrideShortcut(QKeyEvent *event)
 {
-    const int key = event->key() | event->modifiers();
-
-    if (KStandardShortcut::copy().contains(key)) {
+    if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
         return true;
@@ -1022,8 +1011,7 @@ void RichTextEditor::keyPressEvent(QKeyEvent *event)
 int RichTextEditor::zoomFactor() const
 {
     int pourcentage = 100;
-    const QFont f = font();
-    if (d->mInitialFontSize != f.pointSize()) {
+    if (const QFont f = font(); d->mInitialFontSize != f.pointSize()) {
         pourcentage = (f.pointSize() * 100) / d->mInitialFontSize;
     }
     return pourcentage;
@@ -1031,8 +1019,7 @@ int RichTextEditor::zoomFactor() const
 
 void RichTextEditor::slotZoomReset()
 {
-    QFont f = font();
-    if (d->mInitialFontSize != f.pointSize()) {
+    if (QFont f = font(); d->mInitialFontSize != f.pointSize()) {
         f.setPointSize(d->mInitialFontSize);
         setFont(f);
     }

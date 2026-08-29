@@ -24,16 +24,14 @@ QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelI
     Q_ASSERT(index.isValid());
     const QByteArray modelName = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toByteArray();
     Q_ASSERT(!modelName.isEmpty());
-    auto it = mDocumentCache.find(modelName);
-    if (it != mDocumentCache.end()) {
+    if (auto it = mDocumentCache.find(modelName); it != mDocumentCache.end()) {
         auto ret = it->value.get();
         if (width != -1 && !qFuzzyCompare(ret->textWidth(), width)) {
             ret->setTextWidth(width);
         }
         return ret;
     }
-    const QString text = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toString();
-    if (text.isEmpty()) {
+    if (const QString text = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toString(); text.isEmpty()) {
         return nullptr;
     }
     const QString name = index.data(OllamaModelInstalledInfosModel::Name).toString();

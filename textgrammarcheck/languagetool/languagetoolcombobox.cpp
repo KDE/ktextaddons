@@ -63,8 +63,7 @@ void LanguageToolComboBox::fillComboBox()
 
 void LanguageToolComboBox::setLanguage(const QString &str)
 {
-    const int pos = findData(str);
-    if (pos != -1) {
+    if (const int pos = findData(str); pos != -1) {
         setCurrentIndex(pos);
     }
 }

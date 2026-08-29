@@ -80,11 +80,9 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu *popup = createStandardContextMenu();
     if (popup) {
-        const QTextCursor cursor = cursorForPosition(event->pos());
-        if (cursor.charFormat().hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
+        if (const QTextCursor cursor = cursorForPosition(event->pos()); cursor.charFormat().hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
             const auto act = cursor.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<TextGrammarCheck::GrammarAction>();
-            const QStringList sugg = act.suggestions();
-            if (!sugg.isEmpty()) {
+            if (const QStringList sugg = act.suggestions(); !sugg.isEmpty()) {
                 popup->addSeparator();
                 QMenu *popupReplacement = popup->addMenu(i18n("Replacement"));
                 for (const QString &str : sugg) {
@@ -93,8 +91,7 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
                         slotReplaceWord(act, str);
                     });
                 }
-                const QStringList lst = act.infoUrls();
-                if (!lst.isEmpty()) {
+                if (const QStringList lst = act.infoUrls(); !lst.isEmpty()) {
                     QMenu *popupUrlInfo = popup->addMenu(i18n("Online Grammar Information"));
                     for (const QString &str : lst) {
                         const QAction *actUrlInfo = popupUrlInfo->addAction(str);

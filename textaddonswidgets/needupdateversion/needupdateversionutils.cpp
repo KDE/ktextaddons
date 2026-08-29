@@ -24,8 +24,7 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
         captured = str;
     }
     if (!captured.isEmpty()) {
-        const QStringList version = captured.split(QLatin1Char('.'));
-        if (version.size() > 2) {
+        if (const QStringList version = captured.split(QLatin1Char('.')); version.size() > 2) {
             bool ok;
             int year = version.at(0).toInt(&ok);
             if (ok) {
@@ -34,8 +33,7 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
                     if (year < 100) {
                         year += 2000;
                     }
-                    const QDate releaseDate = QDate(year, month, 1);
-                    if (releaseDate.isValid()) {
+                    if (const QDate releaseDate = QDate(year, month, 1); releaseDate.isValid()) {
                         if (currentDate > releaseDate.addMonths(6)) {
                             if (currentDate > releaseDate.addYears(1)) {
                                 return TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan12Months;

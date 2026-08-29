@@ -105,8 +105,7 @@ QString AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath()
 QStringList AutoCorrectionUtils::searchAutoCorrectLibreOfficeFiles()
 {
     QStringList files;
-    const QString path = libreOfficeSystemPath();
-    if (QFileInfo::exists(path)) {
+    if (const QString path = libreOfficeSystemPath(); QFileInfo::exists(path)) {
         const QDir dir(path);
         const QStringList entryList = dir.entryList(QDir::Files | QDir::NoDotAndDotDot);
         for (const QString &file : entryList) {
@@ -187,9 +186,8 @@ QString AutoCorrectionUtils::containsAutoCorrectionFile(const QString &lang, con
         QString fixLangExtension = lang;
         fixLangExtension.replace(u'_', u'-');
         for (const auto &path : std::as_const(libreOfficeAutocorrectPaths)) {
-            const QString filename = path + AutoCorrectionUtils::libreofficeFile(fixLangExtension);
             // qDebug() << " filename " << filename;
-            if (QFileInfo::exists(filename)) {
+            if (const QString filename = path + AutoCorrectionUtils::libreofficeFile(fixLangExtension); QFileInfo::exists(filename)) {
                 return filename;
             }
         }

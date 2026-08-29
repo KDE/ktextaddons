@@ -47,8 +47,7 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
     deletePlugin();
     d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(d->mEngineName);
     if (!d->mSpeechToTextClient) {
-        const QString fallBackEngineName = TextSpeechToText::SpeechToTextEngineLoader::self()->fallbackFirstEngine();
-        if (!fallBackEngineName.isEmpty()) {
+        if (const QString fallBackEngineName = TextSpeechToText::SpeechToTextEngineLoader::self()->fallbackFirstEngine(); !fallBackEngineName.isEmpty()) {
             d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(fallBackEngineName);
         } else {
             qCWarning(TEXTSPEECHTOTEXT_LOG) << "Fallback engine not found.";

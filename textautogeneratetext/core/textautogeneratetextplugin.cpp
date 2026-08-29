@@ -97,8 +97,7 @@ void TextAutoGenerateTextPlugin::setReady(bool newReady)
 QJsonArray TextAutoGenerateTextPlugin::createListMessages(const QList<QJsonObject> &objs) const
 {
     QList<QJsonObject> lstObj;
-    const auto obj = createPromptMessage();
-    if (!obj.isEmpty()) {
+    if (const auto obj = createPromptMessage(); !obj.isEmpty()) {
         lstObj.append(obj);
     }
     lstObj += objs;
@@ -112,8 +111,7 @@ QJsonArray TextAutoGenerateTextPlugin::createListMessages(const QList<QJsonObjec
 void TextAutoGenerateTextPlugin::editMessage(const EditSendInfo &editSendInfo)
 {
     if (ready()) {
-        auto messageModel = d->manager->messagesModelFromChatId(editSendInfo.chatId);
-        if (messageModel) {
+        if (auto messageModel = d->manager->messagesModelFromChatId(editSendInfo.chatId); messageModel) {
             const QByteArray llmUuid = messageModel->editMessage(editSendInfo.messageUuid, editSendInfo.message);
 
             SendToAssistantInfo info;

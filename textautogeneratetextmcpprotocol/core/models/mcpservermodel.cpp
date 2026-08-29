@@ -77,8 +77,7 @@ void McpServerModel::editMcpServer(const McpServer &server)
     auto matchesUuid = [&](const McpServer &s) {
         return s.identifier() == server.identifier();
     };
-    const auto answerIt = std::find_if(mMcpServers.constBegin(), mMcpServers.constEnd(), matchesUuid);
-    if (answerIt != mMcpServers.constEnd()) {
+    if (const auto answerIt = std::find_if(mMcpServers.constBegin(), mMcpServers.constEnd(), matchesUuid); answerIt != mMcpServers.constEnd()) {
         const int i = std::distance(mMcpServers.constBegin(), answerIt);
         mMcpServers[i] = server;
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -114,8 +113,7 @@ McpServer McpServerModel::mcpServer(const QByteArray &identifier) const
     const auto matchesIdentifier = [&](const McpServer &msg) {
         return msg.identifier() == identifier;
     };
-    const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier);
-    if (it != mMcpServers.end()) {
+    if (const auto it = std::find_if(mMcpServers.begin(), mMcpServers.end(), matchesIdentifier); it != mMcpServers.end()) {
         return *it;
     }
     return {};
@@ -142,8 +140,7 @@ void McpServerModel::removeMcpServer(const QByteArray &identifier)
     const auto matchesIdentifier = [&](const McpServer &msg) {
         return msg.identifier() == identifier;
     };
-    const auto it = std::find_if(mMcpServers.cbegin(), mMcpServers.cend(), matchesIdentifier);
-    if (it != mMcpServers.cend()) {
+    if (const auto it = std::find_if(mMcpServers.cbegin(), mMcpServers.cend(), matchesIdentifier); it != mMcpServers.cend()) {
         const int i = std::distance(mMcpServers.cbegin(), it);
         beginRemoveRows(QModelIndex(), i, i);
         mMcpServers.removeAt(i);

@@ -16,12 +16,10 @@ TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAns
     : TextAutoGenerateMessageWaitingAnswerAnimationBase{parent}
 {
     if (manager) {
-        auto messagesModel = manager->messagesModelFromChatId(chatId);
-        if (messagesModel) {
+        if (auto messagesModel = manager->messagesModelFromChatId(chatId); messagesModel) {
             connect(messagesModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
                 if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                    const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
-                    if (!inProgress) {
+                    if (const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool(); !inProgress) {
                         if (mModelIndex == topLeft) {
                             stopAndDelete();
                             Q_EMIT waitingAnswerDone(topLeft);

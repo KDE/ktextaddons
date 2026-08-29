@@ -93,9 +93,8 @@ TextAutoGenerateText::TextAutoGenerateReply::Response LMStudioReply::readRespons
         // qDebug() << " mTokens " << mTokens;
         for (const auto &tok : mTokens) {
             // qDebug() << " tok" << tok;
-            const QJsonArray choicesArray = tok["choices"_L1].toArray();
             // qDebug() << " choicesArray " << choicesArray;
-            if (!choicesArray.isEmpty()) {
+            if (const QJsonArray choicesArray = tok["choices"_L1].toArray(); !choicesArray.isEmpty()) {
                 const QJsonObject firstObject = choicesArray.at(0).toObject();
                 const QJsonObject deltaObject = firstObject["delta"_L1].toObject();
                 if (deltaObject.contains(u"content"_s)) {
@@ -118,8 +117,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response LMStudioReply::readRespons
 
             TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
             replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
-            const auto usage = finalResponse["usage"_L1].toObject();
-            if (!usage.isEmpty()) {
+            if (const auto usage = finalResponse["usage"_L1].toObject(); !usage.isEmpty()) {
                 replyInfo.tokenCount = usage["total_tokens"_L1].toVariant().toULongLong();
                 replyInfo.completionTokens = usage["completion_tokens"_L1].toVariant().toULongLong();
                 replyInfo.promptTokens = usage["prompt_tokens"_L1].toVariant().toULongLong();

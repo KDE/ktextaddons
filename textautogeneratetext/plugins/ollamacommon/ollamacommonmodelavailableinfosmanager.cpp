@@ -54,8 +54,7 @@ OllamaCommonModelAvailableInfo OllamaCommonModelAvailableInfosManager::modelInfo
     auto matchesModelName = [&](const OllamaCommonModelAvailableInfo &info) {
         return info.name() == modelName;
     };
-    auto it = std::find_if(mModelInfos.begin(), mModelInfos.end(), matchesModelName);
-    if (it != mModelInfos.end()) {
+    if (auto it = std::find_if(mModelInfos.begin(), mModelInfos.end(), matchesModelName); it != mModelInfos.end()) {
         return *it;
     }
     return {};

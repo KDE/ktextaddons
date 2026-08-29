@@ -147,8 +147,7 @@ void OllamaCloudPlugin::sendToAssistant(const SendToAssistantInfo &info)
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, this] {
-                                                       const auto response = reply->readResponse();
-                                                       if (response.hasToolCallArguments()) {
+                                                       if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
                                                            manager()->callTools(chatId, messageUuid, response.info);
                                                        } else {
                                                            manager()->changeInProgress(chatId, messageUuid, false);

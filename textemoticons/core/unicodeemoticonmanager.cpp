@@ -118,8 +118,7 @@ QList<EmoticonCategory> UnicodeEmoticonManager::categories() const
     QSet<QString> seen;
     for (const UnicodeEmoticon &emo : std::as_const(d->unicodeEmojiList)) {
         // Pick the first icon in each category
-        const QString category = emo.category();
-        if (!seen.contains(category)) {
+        if (const QString category = emo.category(); !seen.contains(category)) {
             seen.insert(category);
             if (category == "modifier"_L1) { // pointless icons
                 continue;

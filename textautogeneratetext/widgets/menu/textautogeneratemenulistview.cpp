@@ -46,8 +46,7 @@ void TextAutoGenerateMenuListView::contextMenuEvent(QContextMenuEvent *event)
         mModel->addItem(info);
     });
     menu.addAction(addAction);
-    const QModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
+    if (const QModelIndex index = indexAt(event->pos()); index.isValid()) {
         auto editAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
             edit(index);

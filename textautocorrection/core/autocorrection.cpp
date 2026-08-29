@@ -64,8 +64,7 @@ void AutoCorrection::selectStringOnMaximumSearchString(QTextCursor &cursor, int 
     // TODO otherwise we must not autoconvert it.
     if (pos != block.position()) {
         const QString text = block.text();
-        const int currentPos = (pos - block.position());
-        if (!text.at(currentPos - 1).isSpace()) {
+        if (const int currentPos = (pos - block.position()); !text.at(currentPos - 1).isSpace()) {
             // qDebug() << " current Text " << text << " currentPos "<< currentPos << " pos " << pos;
             // qDebug() << "selected text " << text.right(text.length() - currentPos);
             // qDebug() << "  text after " << text.at(currentPos - 1);
@@ -180,8 +179,7 @@ bool AutoCorrection::autocorrect(bool htmlMode, QTextDocument &document, int &po
                     const int positionEnd(d->mCursor.selectionEnd());
                     d->mCursor.setPosition(d->mCursor.selectionStart() + diffSize);
                     d->mCursor.setPosition(positionEnd, QTextCursor::KeepAnchor);
-                    const int newPos = advancedAutocorrect();
-                    if (newPos != -1) {
+                    if (const int newPos = advancedAutocorrect(); newPos != -1) {
                         if (d->mCursor.selectedText() != d->mWord) {
                             d->mCursor.insertText(d->mWord);
                         }
@@ -224,8 +222,7 @@ void AutoCorrection::superscriptAppendix()
             endPos = startPos - 1 + trimmedLenght;
             break;
         } else if (i.key() == "othernb"_L1) {
-            const int pos = trimmed.indexOf(i.value());
-            if (pos > 0) {
+            if (const int pos = trimmed.indexOf(i.value()); pos > 0) {
                 const QString number = trimmed.left(pos);
                 QString::ConstIterator constIter = number.constBegin();
                 bool found = true;
@@ -274,8 +271,7 @@ void AutoCorrection::addNonBreakingSpace()
         if (lastChar == u':' || lastChar == u';' || lastChar == u'!' || lastChar == u'?' || lastChar == u'%') {
             const int pos = d->mCursor.position() - 2 - block.position();
             if (pos >= 0) {
-                const QChar previousChar = text.at(pos);
-                if (previousChar.isSpace()) {
+                if (const QChar previousChar = text.at(pos); previousChar.isSpace()) {
                     QTextCursor cursor(d->mCursor);
                     cursor.setPosition(pos);
                     cursor.setPosition(pos + 1, QTextCursor::KeepAnchor);
@@ -285,15 +281,10 @@ void AutoCorrection::addNonBreakingSpace()
             }
         } else {
             // °C (degrees)
-            const int pos = d->mCursor.position() - 2 - block.position();
-            if (pos >= 0) {
-                const QChar previousChar = text.at(pos);
-
-                if (lastChar == u'C' && previousChar == QChar(0x000B0)) {
-                    const int posCursor = d->mCursor.position() - 3 - block.position();
-                    if (posCursor >= 0) {
-                        const QChar previousCharFromDegrees = text.at(posCursor);
-                        if (previousCharFromDegrees.isSpace()) {
+            if (const int pos = d->mCursor.position() - 2 - block.position(); pos >= 0) {
+                if (const QChar previousChar = text.at(pos); lastChar == u'C' && previousChar == QChar(0x000B0)) {
+                    if (const int posCursor = d->mCursor.position() - 3 - block.position(); posCursor >= 0) {
+                        if (const QChar previousCharFromDegrees = text.at(posCursor); previousCharFromDegrees.isSpace()) {
                             QTextCursor cursor(d->mCursor);
                             cursor.setPosition(posCursor);
                             cursor.setPosition(posCursor + 1, QTextCursor::KeepAnchor);
@@ -323,8 +314,7 @@ bool AutoCorrection::autoBoldUnderline()
     const QChar trimmedLastChar(trimmed.at(trimmedLength - 1));
     const bool underline = (trimmedFirstChar == u'_') && (trimmedLastChar == u'_');
     const bool bold = (trimmedFirstChar == u'*') && (trimmedLastChar == u'*');
-    const bool strikeOut = (trimmedFirstChar == u'-') && (trimmedLastChar == u'-');
-    if (underline || bold || strikeOut) {
+    if (const bool strikeOut = (trimmedFirstChar == u'-') && (trimmedLastChar == u'-'); underline || bold || strikeOut) {
         const int startPos = d->mCursor.selectionStart();
         const QString replacement = trimmed.mid(1, trimmedLength - 2);
         bool foundLetterNumber = false;
@@ -470,8 +460,7 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
         }
     }
     if (linkType == UNCLASSIFIED) {
-        const int separatorPos = word.lastIndexOf(u'@');
-        if (separatorPos != -1) {
+        if (const int separatorPos = word.lastIndexOf(u'@'); separatorPos != -1) {
             pos = separatorPos - 1;
             QChar c;
             while (pos >= 0) {
@@ -537,12 +526,9 @@ void AutoCorrection::fixTwoUppercaseChars()
     }
 
     const QChar firstChar = d->mWord.at(0);
-    const QChar secondChar = d->mWord.at(1);
 
-    if (secondChar.isUpper() && firstChar.isUpper()) {
-        const QChar thirdChar = d->mWord.at(2);
-
-        if (thirdChar.isLower()) {
+    if (const QChar secondChar = d->mWord.at(1); secondChar.isUpper() && firstChar.isUpper()) {
+        if (const QChar thirdChar = d->mWord.at(2); thirdChar.isLower()) {
             d->mWord.replace(1, 1, secondChar.toLower());
         }
     }
@@ -557,8 +543,7 @@ bool AutoCorrection::singleSpaces() const
     if (!d->mCursor.atBlockStart()) {
         // then when the prev char is also a space, don't insert one.
         const QTextBlock block = d->mCursor.block();
-        const QString text = block.text();
-        if (text.at(d->mCursor.position() - 1 - block.position()) == u' ') {
+        if (const QString text = block.text(); text.at(d->mCursor.position() - 1 - block.position()) == u' ') {
             return false;
         }
     }
@@ -604,9 +589,7 @@ void AutoCorrection::uppercaseFirstCharOfSentence()
 
     int position = d->mCursor.selectionEnd();
 
-    const QString text = d->mCursor.selectedText();
-
-    if (text.isEmpty()) { // start of a paragraph
+    if (const QString text = d->mCursor.selectedText(); text.isEmpty()) { // start of a paragraph
         if (!excludeToUppercase(d->mWord)) {
             d->mWord.replace(0, 1, d->mWord.at(0).toUpper());
         }
@@ -627,10 +610,9 @@ void AutoCorrection::uppercaseFirstCharOfSentence()
                     --constIter;
                 }
                 selectPreviousWord(d->mCursor, --position);
-                const QString prevWord = d->mCursor.selectedText();
 
                 // search for exception
-                if (d->mAutoCorrectionSettings->upperCaseExceptions().contains(prevWord.trimmed())) {
+                if (const QString prevWord = d->mCursor.selectedText(); d->mAutoCorrectionSettings->upperCaseExceptions().contains(prevWord.trimmed())) {
                     break;
                 }
                 if (excludeToUppercase(d->mWord)) {
@@ -755,8 +737,7 @@ int AutoCorrection::advancedAutocorrect()
             const QChar actualWordFirstChar = d->mWord.at(pos);
             qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " actualWordFirstChar " << actualWordFirstChar;
 
-            const QChar replacementFirstChar = replacement[0];
-            if (actualWordFirstChar.isUpper() && replacementFirstChar.isLower()) {
+            if (const QChar replacementFirstChar = replacement[0]; actualWordFirstChar.isUpper() && replacementFirstChar.isLower()) {
                 replacement[0] = replacementFirstChar.toUpper();
             } else if (actualWordFirstChar.isLower() && replacementFirstChar.isUpper()) {
                 replacement[0] = replacementFirstChar.toLower();
@@ -810,8 +791,7 @@ void AutoCorrection::replaceTypographicQuotes()
 
     bool ending = true;
     for (int i = d->mWord.length(); i > 1; --i) {
-        const QChar c = d->mWord.at(i - 1);
-        if ((c == u'"') || (c == u'\'')) {
+        if (const QChar c = d->mWord.at(i - 1); (c == u'"') || (c == u'\'')) {
             const bool doubleQuotes = (c == u'"');
             if (i > 2) {
                 const QChar::Category c1 = d->mWord.at(i - 1).category();

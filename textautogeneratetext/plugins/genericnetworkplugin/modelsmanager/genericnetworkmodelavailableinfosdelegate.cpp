@@ -92,16 +92,14 @@ void GenericNetworkModelAvailableInfosDelegate::draw(QPainter *painter,
 
 bool GenericNetworkModelAvailableInfosDelegate::mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
-    const QEvent::Type eventType = event->type();
-    if (eventType == QEvent::MouseButtonRelease) {
+    if (const QEvent::Type eventType = event->type(); eventType == QEvent::MouseButtonRelease) {
         auto mev = static_cast<QMouseEvent *>(event);
         const GenericNetworkModelAvailableInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
         if (handleMouseEvent(mev, layout.textRect, option, index)) {
             return true;
         }
     } else if (eventType == QEvent::MouseButtonPress || eventType == QEvent::MouseMove || eventType == QEvent::MouseButtonDblClick) {
-        auto mev = static_cast<QMouseEvent *>(event);
-        if (mev->buttons() & Qt::LeftButton) {
+        if (auto mev = static_cast<QMouseEvent *>(event); mev->buttons() & Qt::LeftButton) {
             const GenericNetworkModelAvailableInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
             if (handleMouseEvent(mev, layout.textRect, option, index)) {
                 return true;
@@ -166,8 +164,7 @@ bool GenericNetworkModelAvailableInfosDelegate::handleMouseEvent(QMouseEvent *mo
     case QEvent::MouseMove:
         if (!mTextSelection->mightStartDrag()) {
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
-                const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
-                if (charPos != -1) {
+                if (const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit); charPos != -1) {
                     // QWidgetTextControl also has code to support isPreediting()/commitPreedit(), selectBlockOnTripleClick
                     mTextSelection->setTextSelectionEnd(index, charPos);
                     return true;
@@ -182,8 +179,7 @@ bool GenericNetworkModelAvailableInfosDelegate::handleMouseEvent(QMouseEvent *mo
         // Clicks on links
         if (!mTextSelection->hasSelection()) {
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
-                const QString link = doc->documentLayout()->anchorAt(pos);
-                if (!link.isEmpty()) {
+                if (const QString link = doc->documentLayout()->anchorAt(pos); !link.isEmpty()) {
                     QDesktopServices::openUrl(QUrl(link));
                     return true;
                 }
@@ -217,8 +213,7 @@ bool GenericNetworkModelAvailableInfosDelegate::handleMouseEvent(QMouseEvent *mo
 QSize GenericNetworkModelAvailableInfosDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const QByteArray modelName = index.data(GenericNetworkAvailableInfosModel::Identifier).toByteArray();
-    auto it = mSizeHintCache.find(modelName);
-    if (it != mSizeHintCache.end()) {
+    if (auto it = mSizeHintCache.find(modelName); it != mSizeHintCache.end()) {
         const QSize result = it->value;
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "ApplicationsSettingsDelegate: SizeHint found in cache: " << result;
         return result;
@@ -240,8 +235,7 @@ QTextDocument *GenericNetworkModelAvailableInfosDelegate::documentForIndex(const
     Q_ASSERT(index.isValid());
     const QByteArray identifier = index.data(GenericNetworkAvailableInfosModel::Identifier).toByteArray();
     Q_ASSERT(!identifier.isEmpty());
-    auto it = mDocumentCache.find(identifier);
-    if (it != mDocumentCache.end()) {
+    if (auto it = mDocumentCache.find(identifier); it != mDocumentCache.end()) {
         auto ret = it->value.get();
         if (width != -1 && !qFuzzyCompare(ret->textWidth(), width)) {
             ret->setTextWidth(width);

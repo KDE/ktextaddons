@@ -71,8 +71,7 @@ void TextAutoGenerateToolPluginConfigureWidget::generateArguments(TextAutoGenera
     const auto properties = plugin->properties();
     for (const auto &prop : properties) {
         propertiesText += u"<li>%1: %2</li>"_s.arg(prop.name(), prop.description().toString());
-        const QStringList typeElements = prop.typeElements();
-        if (!typeElements.isEmpty()) {
+        if (const QStringList typeElements = prop.typeElements(); !typeElements.isEmpty()) {
             propertiesText += u"<ul>"_s;
             for (const QString &e : typeElements) {
                 propertiesText += u"<li>%1</li>"_s.arg(e);

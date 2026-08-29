@@ -93,8 +93,7 @@ TranslatorEngineClient *TranslatorEngineLoader::createTranslatorClient(const QSt
 
 QString TranslatorEngineLoader::currentPluginName(const QString &key) const
 {
-    auto clientsItr = d->translatorClients.constFind(key);
-    if (clientsItr != d->translatorClients.constEnd()) {
+    if (auto clientsItr = d->translatorClients.constFind(key); clientsItr != d->translatorClients.constEnd()) {
         return (*clientsItr)->translatedName();
     }
     return {};

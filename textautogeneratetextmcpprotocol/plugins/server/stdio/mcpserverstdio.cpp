@@ -56,8 +56,7 @@ void McpServerStdio::connection()
     mBuffer.clear();
     mProcess->setProgram(settings.command());
     mProcess->setArguments(settings.arguments().isEmpty() ? QStringList{} : QProcess::splitCommand(settings.arguments()));
-    const QMap<QString, QString> environments = settings.environments();
-    if (!environments.isEmpty()) {
+    if (const QMap<QString, QString> environments = settings.environments(); !environments.isEmpty()) {
         QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
         for (auto it = environments.cbegin(); it != environments.cend(); ++it) {
             processEnvironment.insert(it.key(), it.value());

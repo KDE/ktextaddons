@@ -24,8 +24,7 @@ bool TextAutoGenerateTextPromptSortFilterProxyModel::filterAcceptsRow(int source
         return true;
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    const QString instanceName = sourceIndex.data(TextAutoGenerateTextPromptModel::Name).toString();
-    if (contains(instanceName)) {
+    if (const QString instanceName = sourceIndex.data(TextAutoGenerateTextPromptModel::Name).toString(); contains(instanceName)) {
         return true;
     }
     return false;

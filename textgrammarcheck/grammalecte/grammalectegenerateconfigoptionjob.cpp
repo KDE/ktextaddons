@@ -102,12 +102,10 @@ QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOpt
     static const QRegularExpression reg(u"^([a-zA-Z0-9]+):\\s*(True|False)\\s*(.*)$"_s);
     const QList<QStringView> lst = QStringView(mResult).split(u'\n');
     for (const QStringView &str : lst) {
-        const QRegularExpressionMatch match = reg.matchView(str);
-        if (match.hasMatch()) {
+        if (const QRegularExpressionMatch match = reg.matchView(str); match.hasMatch()) {
             const QString optionName = match.captured(1);
             const QString value = match.captured(2);
-            const QString description = match.captured(3);
-            if (!optionName.isEmpty() && !description.isEmpty() && !value.isEmpty()) {
+            if (const QString description = match.captured(3); !optionName.isEmpty() && !description.isEmpty() && !value.isEmpty()) {
                 if (description == u'?') {
                     continue;
                 }

@@ -191,8 +191,7 @@ void TranslatorModel::removeLanguage(const QString &identifier)
         return (identifier == installed.shortName);
     });
     if (index != mLanguageInstalled.end()) {
-        const QString absoluteLanguageModelPath = (*index).absoluteLanguageModelPath;
-        if (!QDir(absoluteLanguageModelPath).removeRecursively()) {
+        if (const QString absoluteLanguageModelPath = (*index).absoluteLanguageModelPath; !QDir(absoluteLanguageModelPath).removeRecursively()) {
             qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to delete " << absoluteLanguageModelPath;
             return;
         }

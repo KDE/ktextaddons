@@ -42,8 +42,7 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
     importModelFromGGUFFileButton->setObjectName(u"importModelFromGGUFFileButton"_s);
     selectModeWidgetLayout->addWidget(importModelFromGGUFFileButton, 0, Qt::AlignTop);
     connect(importModelFromGGUFFileButton, &QPushButton::clicked, this, [this]() {
-        const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select GGUF File"));
-        if (!fileName.isEmpty()) {
+        if (const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select GGUF File")); !fileName.isEmpty()) {
             // TODO
         }
     });

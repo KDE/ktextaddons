@@ -62,10 +62,9 @@ TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJso
     QList<TextAutoGenerateAttachment> attachmentList;
     for (int i = 0; i < attachmentsArray.count(); ++i) {
         const QJsonObject attachment = attachmentsArray.at(i).toObject();
-        const TextAutoGenerateAttachment att = TextAutoGenerateAttachment::deserialize(attachment);
         // TODO adapt it
         // att.setAttachmentId(TextAutoGenerateAttachmentUtils::generateUniqueId(messageId, i));
-        if (att.isValid()) {
+        if (const TextAutoGenerateAttachment att = TextAutoGenerateAttachment::deserialize(attachment); att.isValid()) {
             attachmentList.append(att);
         }
     }

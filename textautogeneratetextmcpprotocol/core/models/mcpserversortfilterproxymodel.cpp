@@ -25,8 +25,7 @@ bool McpServerSortFilterProxyModel::filterAcceptsRow(int source_row, const QMode
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
     const QString serverName = sourceIndex.data(McpServerModel::Name).toString();
-    const QString serverType = sourceIndex.data(McpServerModel::ServerType).toString();
-    if (contains(serverName) || contains(serverType)) {
+    if (const QString serverType = sourceIndex.data(McpServerModel::ServerType).toString(); contains(serverName) || contains(serverType)) {
         return true;
     }
     return false;

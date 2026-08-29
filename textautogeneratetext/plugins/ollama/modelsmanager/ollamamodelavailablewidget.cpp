@@ -84,8 +84,7 @@ void OllamaModelAvailableWidget::slotAddModel()
 {
     OllamaModelDownloadFromNameDialog d(this);
     if (d.exec()) {
-        const QString modelName = d.modelName().trimmed();
-        if (!modelName.isEmpty() && modelName.contains(u':')) {
+        if (const QString modelName = d.modelName().trimmed(); !modelName.isEmpty() && modelName.contains(u':')) {
             slotDownloadModel(modelName);
         } else {
             qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Invalid modelname " << modelName;

@@ -33,8 +33,7 @@ QString AutoCorrectionLanguageModel::language(int index) const
 
 static bool stripCountryCode(QString *languageCode)
 {
-    const int idx = languageCode->indexOf(u'_');
-    if (idx != -1) {
+    if (const int idx = languageCode->indexOf(u'_'); idx != -1) {
         *languageCode = languageCode->left(idx);
         return true;
     }

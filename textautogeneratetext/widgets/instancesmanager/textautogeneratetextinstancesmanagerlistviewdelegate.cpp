@@ -42,8 +42,7 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     painter->save();
 
     // Check if the item has a CheckStateRole
-    const QVariant checkStateData = index.data(Qt::CheckStateRole);
-    if (checkStateData.isValid()) {
+    if (const QVariant checkStateData = index.data(Qt::CheckStateRole); checkStateData.isValid()) {
         // Get the checkbox state
         const Qt::CheckState checkState = static_cast<Qt::CheckState>(checkStateData.toInt());
 

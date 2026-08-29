@@ -63,8 +63,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
         Q_EMIT settingsChanged();
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
-        auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid);
-        if (plugin) {
+        if (auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid); plugin) {
             plugin->showConfigureDialog(this);
             Q_EMIT settingsChanged();
         } else {

@@ -50,8 +50,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
                 this,
                 [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
                     if (roles.contains(TextAutoGenerateChatsModel::InProgress)) {
-                        const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool();
-                        if (inProgress) {
+                        if (const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool(); inProgress) {
                             addWaitingAnswerAnimation(topLeft);
                         }
                     }
@@ -81,8 +80,7 @@ void TextAutoGenerateHistoryListView::slotCurrentChatIdChanged()
 
         for (int roomIdx = 0; roomIdx < sectionSize; ++roomIdx) {
             const auto roomModelIndex = mHistoryProxyModel->index(roomIdx, 0, section);
-            const auto identifier = roomModelIndex.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-            if (identifier == chatId) {
+            if (const auto identifier = roomModelIndex.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); identifier == chatId) {
                 selectionModel()->setCurrentIndex(roomModelIndex, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
             }
         }
@@ -106,8 +104,7 @@ void TextAutoGenerateHistoryListView::keyPressEvent(QKeyEvent *event)
 void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
-        const QByteArray uuid = idx.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-        if (!uuid.isEmpty()) {
+        if (const QByteArray uuid = idx.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
             Q_EMIT switchToChat(uuid);
         }
     }
@@ -124,15 +121,13 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         });
         menu.addAction(newChatHistory);
     }
-    const QModelIndex index = indexAt(event->pos());
-    if (index.parent().isValid()) {
+    if (const QModelIndex index = indexAt(event->pos()); index.parent().isValid()) {
         menu.addSeparator();
 
         if (index.isValid()) {
             auto renameHistoryAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
             connect(renameHistoryAction, &QAction::triggered, this, [index, this]() {
-                const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                if (!uuid.isEmpty()) {
+                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
                     edit(index);
                 }
             });
@@ -141,8 +136,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             menu.addSeparator();
             auto duplicateChatAction = new QAction(QIcon::fromTheme(u"edit-duplicate"_s), i18nc("@action", "Duplicate…"), &menu);
             connect(duplicateChatAction, &QAction::triggered, this, [index, this]() {
-                const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                if (!uuid.isEmpty()) {
+                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
                     mManager->duplicateChat(uuid);
                 }
             });
@@ -154,8 +148,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             auto changeFavoriteHistory =
                 new QAction(QIcon::fromTheme(u"favorite"_s), isFavorite ? i18nc("@action", "Remove as Favorite") : i18nc("@action", "Set as Favorite"), &menu);
             connect(changeFavoriteHistory, &QAction::triggered, this, [index, isFavorite, this]() {
-                const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                if (!uuid.isEmpty()) {
+                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
                     mManager->changeFavoriteHistory(uuid, !isFavorite);
                 }
             });
@@ -165,8 +158,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             menu.addSeparator();
             auto archivedAction = new QAction(archived ? i18nc("@action", "Restore") : i18nc("@action", "Archive"), &menu);
             connect(archivedAction, &QAction::triggered, this, [index, archived, this]() {
-                const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                if (!uuid.isEmpty()) {
+                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
                     mManager->archiveDiscussion(uuid, !archived);
                 }
             });
@@ -182,8 +174,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                                                        i18nc("@title:window", "Remove Discussion"),
                                                        KStandardGuiItem::remove(),
                                                        KStandardGuiItem::cancel())) {
-                    const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                    if (!uuid.isEmpty()) {
+                    if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
                         mManager->removeDiscussion(uuid);
                     }
                 }
@@ -210,8 +201,7 @@ void TextAutoGenerateHistoryListView::selectNextChat(Direction direction)
 {
     Q_ASSERT(filterModel());
 
-    const auto nSections = filterModel()->rowCount();
-    if (nSections == 0) {
+    if (const auto nSections = filterModel()->rowCount(); nSections == 0) {
         // FIXME : switch to empty room widget ?
         return;
     }

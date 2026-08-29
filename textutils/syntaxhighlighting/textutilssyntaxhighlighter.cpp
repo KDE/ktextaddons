@@ -101,8 +101,7 @@ void TextUtilsSyntaxHighlighter::applyFormat(int offset, int length, const KSynt
             *mStream << u"font-style:italic;"_s;
         }
         const bool hasUnderline = format.isUnderline(theme());
-        const bool hasStrikeThrough = format.isStrikeThrough(theme());
-        if (hasUnderline || hasStrikeThrough) {
+        if (const bool hasStrikeThrough = format.isStrikeThrough(theme()); hasUnderline || hasStrikeThrough) {
             *mStream << u"text-decoration:"_s;
             if (hasUnderline) {
                 *mStream << u"underline"_s;

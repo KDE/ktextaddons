@@ -229,8 +229,7 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const Q
     for (auto sectionId = size_t(0), iMax = mSections.size(); sectionId < iMax; ++sectionId) {
         const auto &section = mSections.at(sectionId);
 
-        const auto it = std::lower_bound(section.cbegin(), section.cend(), sourceIndex);
-        if (it != section.cend() && *it == sourceIndex) {
+        if (const auto it = std::lower_bound(section.cbegin(), section.cend(), sourceIndex); it != section.cend() && *it == sourceIndex) {
             return createIndex(int(it - section.cbegin()), 0, sectionId);
         }
     }

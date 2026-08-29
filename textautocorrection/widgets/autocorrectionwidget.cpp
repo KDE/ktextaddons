@@ -627,8 +627,7 @@ void AutoCorrectionWidget::slotImportAutoCorrection(QAction *act)
             filter = i18n("KMail Autocorrection File (*.xml)");
             break;
         }
-        const QString fileName = QFileDialog::getOpenFileName(this, title, QString(), filter);
-        if (!fileName.isEmpty()) {
+        if (const QString fileName = QFileDialog::getOpenFileName(this, title, QString(), filter); !fileName.isEmpty()) {
             TextAutoCorrectionCore::ImportAbstractAutocorrection *importAutoCorrection = nullptr;
             switch (type) {
             case AutoCorrectionWidget::LibreOffice:

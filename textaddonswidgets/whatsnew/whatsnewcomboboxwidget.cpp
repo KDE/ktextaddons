@@ -48,8 +48,7 @@ WhatsNewComboBoxWidget::~WhatsNewComboBoxWidget() = default;
 
 void WhatsNewComboBoxWidget::initializeVersion(int identifier)
 {
-    const int index = mVersionComboBox->findData(identifier);
-    if (index != -1) {
+    if (const int index = mVersionComboBox->findData(identifier); index != -1) {
         mVersionComboBox->setCurrentIndex(index);
     }
 }

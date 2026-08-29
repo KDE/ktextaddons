@@ -34,8 +34,7 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language,
     const QString fname = fileName.isEmpty() ? libreOfficeWritableLocalAutoCorrectionPath + u"acor_%1.dat"_s.arg(fixLangExtension) : fileName;
     // qDebug() << " fname " << fname;
     mZip = new KZip(fname);
-    const bool result = mZip->open(QIODevice::WriteOnly);
-    if (!result) {
+    if (const bool result = mZip->open(QIODevice::WriteOnly); !result) {
         qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
         return false;
     }

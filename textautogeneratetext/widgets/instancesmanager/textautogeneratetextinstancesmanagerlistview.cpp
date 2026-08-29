@@ -40,8 +40,7 @@ void TextAutoGenerateTextInstancesManagerListView::slotSearchChanged(const QStri
 
 void TextAutoGenerateTextInstancesManagerListView::slotEditInstance(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
-    if (uuid.isEmpty()) {
+    if (const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray(); uuid.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
     } else {
         Q_EMIT editInstance(uuid);
@@ -55,18 +54,15 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     menu.addAction(addInstanceAction);
     connect(addInstanceAction, &QAction::triggered, this, &TextAutoGenerateTextInstancesManagerListView::addInstance);
 
-    const QModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
+    if (const QModelIndex index = indexAt(event->pos()); index.isValid()) {
         menu.addSeparator();
         const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
-        const bool isEnabled = index.data(TextAutoGenerateTextInstanceModel::Enabled).toBool();
-        if (!isDefault && isEnabled) {
+        if (const bool isEnabled = index.data(TextAutoGenerateTextInstanceModel::Enabled).toBool(); !isDefault && isEnabled) {
             auto markAsDefault = new QAction(i18nc("@action", "Mark As Default"), &menu);
             menu.addAction(markAsDefault);
             menu.addSeparator();
             connect(markAsDefault, &QAction::triggered, this, [this, index] {
-                const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
-                if (uuid.isEmpty()) {
+                if (const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray(); uuid.isEmpty()) {
                     qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
                 } else {
                     Q_EMIT markAsDefaultChanged(uuid);
@@ -82,8 +78,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Instance"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
-            if (uuid.isEmpty()) {
+            if (const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray(); uuid.isEmpty()) {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
             } else {
                 const QString name = index.data(TextAutoGenerateTextInstanceModel::Name).toString();

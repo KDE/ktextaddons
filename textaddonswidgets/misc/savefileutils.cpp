@@ -36,8 +36,7 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
             if (!mime.isValid()) {
                 return;
             }
-            const auto suffix = mime.preferredSuffix();
-            if (!suffix.isEmpty()) {
+            if (const auto suffix = mime.preferredSuffix(); !suffix.isEmpty()) {
                 fileName += u'.' + suffix;
             }
         }();

@@ -43,8 +43,7 @@ void TextAutoGenerateLocalMessagesDatabase::deleteDatabase(const QByteArray &cha
     // Close it in its own scope: removeDatabase() must not be called while a
     // QSqlDatabase copy is still alive, otherwise the connection is leaked.
     {
-        QSqlDatabase db = QSqlDatabase::database(dbName, false);
-        if (db.isValid()) {
+        if (QSqlDatabase db = QSqlDatabase::database(dbName, false); db.isValid()) {
             db.close();
         }
     }
@@ -213,8 +212,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
     QList<TextAutoGenerateSearchMessage> lstSearchMessages;
     while (resultQuery.next()) {
         const QString json = resultQuery.value(u"json"_s).toString();
-        const TextAutoGenerateMessage msg = convertJsonToMessage(json);
-        if (msg.content().contains(searchText, Qt::CaseInsensitive)) {
+        if (const TextAutoGenerateMessage msg = convertJsonToMessage(json); msg.content().contains(searchText, Qt::CaseInsensitive)) {
             TextAutoGenerateSearchMessage searchMessage;
             searchMessage.setMessageId(msg.uuid());
             searchMessage.setChatId(chatIdentifier.toLatin1());

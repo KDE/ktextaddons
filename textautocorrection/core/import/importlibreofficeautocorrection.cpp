@@ -45,8 +45,7 @@ bool ImportLibreOfficeAutocorrection::import(const QString &fileName, QString &e
     }
     closeArchive();
     mArchive = new KZip(fileName);
-    const bool result = mArchive->open(QIODevice::ReadOnly);
-    if (result) {
+    if (const bool result = mArchive->open(QIODevice::ReadOnly); result) {
         importAutoCorrectionFile();
         return true;
     } else {
@@ -111,13 +110,11 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
         }
         QDomDocument doc;
         if (loadDomElement(doc, &file)) {
-            const QDomElement list = doc.documentElement();
-            if (list.isNull()) {
+            if (const QDomElement list = doc.documentElement(); list.isNull()) {
                 qCDebug(TEXTAUTOCORRECTION_LOG) << "No list defined in " << type;
             } else {
                 for (QDomElement e = list.firstChildElement(); !e.isNull(); e = e.nextSiblingElement()) {
-                    const QString tag = e.tagName();
-                    if (tag == "block-list:block"_L1) {
+                    if (const QString tag = e.tagName(); tag == "block-list:block"_L1) {
                         switch (type) {
                         case Type::DOCUMENT:
                             if (e.hasAttribute(u"block-list:abbreviated-name"_s) && e.hasAttribute(u"block-list:name"_s)) {
@@ -155,8 +152,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
 
 bool ImportLibreOfficeAutocorrection::loadDomElement(QDomDocument &doc, QFile *file)
 {
-    const QDomDocument::ParseResult parseResult = doc.setContent(file);
-    if (!parseResult) {
+    if (const QDomDocument::ParseResult parseResult = doc.setContent(file); !parseResult) {
         qCDebug(TEXTAUTOCORRECTION_LOG) << "Unable to load document.Parse error in line " << parseResult.errorLine << ", col " << parseResult.errorColumn
                                         << ": " << parseResult.errorMessage;
         return false;

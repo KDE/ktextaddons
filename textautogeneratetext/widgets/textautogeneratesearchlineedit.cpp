@@ -37,8 +37,7 @@ void TextAutoGenerateSearchLineEdit::slotSearchTextEdited()
 
 void TextAutoGenerateSearchLineEdit::slotTextChanged(const QString &text)
 {
-    const QString trimmedStr = text.trimmed();
-    if (!trimmedStr.isEmpty()) {
+    if (const QString trimmedStr = text.trimmed(); !trimmedStr.isEmpty()) {
         Q_EMIT searchText(trimmedStr);
     }
 }

@@ -141,8 +141,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, this] {
-                                                       const auto response = reply->readResponse();
-                                                       if (response.hasToolCallArguments()) {
+                                                       if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
                                                            manager()->callTools(chatId, messageUuid, response.info);
                                                        } else {
                                                            manager()->changeInProgress(chatId, messageUuid, false);
@@ -216,8 +215,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo Oll
         mCurrentAction = nullptr;
     }
     TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo activateInstanceInfo;
-    const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s);
-    if (ollamaPath.isEmpty()) {
+    if (const QString ollamaPath = TextAddonsWidgets::ExecutableUtils::findExecutable(u"ollama"_s); ollamaPath.isEmpty()) {
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
         activateInstanceInfo.text = i18n("Ollama not found on system. Ask to your administrator system to install it.");
 #else

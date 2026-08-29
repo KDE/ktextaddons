@@ -244,8 +244,7 @@ QStringList TextAutoGenerateManager::chatsList() const
 
 void TextAutoGenerateManager::updateMessageInfo(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateAnswerInfo &messageInfo)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         messagesModel->updateMessageInfo(uuid, messageInfo);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
@@ -257,8 +256,7 @@ void TextAutoGenerateManager::replaceContent(const QByteArray &chatId,
                                              const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
                                              const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         messagesModel->replaceContent(uuid, content, attachementInfoList); // TODO use tools
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
@@ -334,8 +332,7 @@ void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArr
 
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         messagesModel->changeInProgress(uuid, inProgress);
         changeChatInPogressStatus(chatId, inProgress);
         if (!inProgress) {
@@ -372,8 +369,7 @@ void TextAutoGenerateManager::setShowArchived(bool newShowArchived)
 void TextAutoGenerateManager::loadHistory()
 {
     // Load chat from database
-    const QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats();
-    if (chats.isEmpty()) {
+    if (const QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats(); chats.isEmpty()) {
         createNewChat();
     } else {
         mTextAutoGenerateChatsModel->setChats(chats);
@@ -402,8 +398,7 @@ void TextAutoGenerateManager::forkDiscussionUntilMessage(const QByteArray &chatI
 
 void TextAutoGenerateManager::removeMessage(const QByteArray &chatId, const QByteArray &uuid)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         const QList<QByteArray> lst = messagesModel->removeDiscussion(uuid);
         if (mSaveInDatabase) {
             for (const auto &b : lst) {
@@ -425,8 +420,7 @@ void TextAutoGenerateManager::setSystemPrompt(const QString &newSystemPrompt)
 
 bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QModelIndex &index)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         changeChatInPogressStatus(chatId, false);
         return messagesModel->cancelRequest(index);
     }
@@ -500,8 +494,7 @@ void TextAutoGenerateManager::verifyListEmpty()
 
 void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         if (mSaveInDatabase) {
             mDatabaseManager->insertOrReplaceMessage(chatId, msg);
         }
@@ -516,8 +509,7 @@ void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAut
 
 QModelIndex TextAutoGenerateManager::refreshAnswer(const QByteArray &chatId, const QByteArray &uuid) const
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         return messagesModel->refreshAnswer(uuid);
     }
     return {};
@@ -537,8 +529,7 @@ void TextAutoGenerateManager::checkCurrentChat()
 
 void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteArray &messageId)
 {
-    const auto messagesModel = messagesModelFromChatId(chatId);
-    if (!messagesModel) {
+    if (const auto messagesModel = messagesModelFromChatId(chatId); !messagesModel) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find channel" << chatId;
         return;
     }
@@ -577,10 +568,8 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
 void TextAutoGenerateManager::checkInitializedMessagesModel()
 {
     if (!mCurrentChatId.isEmpty()) {
-        const QByteArray chatId = mCurrentChatId;
-        if (!mTextAutoGenerateChatsModel->isInitialized(chatId)) {
-            auto messagesModel = messagesModelFromChatId(chatId);
-            if (messagesModel) {
+        if (const QByteArray chatId = mCurrentChatId; !mTextAutoGenerateChatsModel->isInitialized(chatId)) {
+            if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
                 if (mSaveInDatabase) {
                     QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
                     // Sort messages
@@ -691,8 +680,7 @@ void TextAutoGenerateManager::checkEngineStatus()
 void TextAutoGenerateManager::importChat(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs)
 {
     createNewChat(title);
-    auto messagesModel = messagesModelFromChatId(currentChatId());
-    if (messagesModel) {
+    if (auto messagesModel = messagesModelFromChatId(currentChatId()); messagesModel) {
         messagesModel->setMessages(msgs);
         saveCurrentChatInDataBase(currentChatId(), true);
     } else {
@@ -711,8 +699,7 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
         return;
     }
 
-    auto model = mTextAutoGenerateChatsModel->messagesModel(chatId);
-    if (model) {
+    if (auto model = mTextAutoGenerateChatsModel->messagesModel(chatId); model) {
         const auto msgs = model->messages();
         if (msgs.isEmpty()) {
             return;
@@ -739,8 +726,7 @@ void TextAutoGenerateManager::slotChatListChanged([[maybe_unused]] const QString
 {
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
     qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateManager::slotChatListChanged :" << id;
-    const QString ourIdentifier = u"%1/%2"_s.arg(QDBusConnection::sessionBus().baseService(), property("uniqueDBusPath").toString());
-    if (id != ourIdentifier) {
+    if (const QString ourIdentifier = u"%1/%2"_s.arg(QDBusConnection::sessionBus().baseService(), property("uniqueDBusPath").toString()); id != ourIdentifier) {
         loadHistory();
     }
 #endif
@@ -823,10 +809,8 @@ void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId,
     // qDebug() << " previousId " << previousId << " currentId " << currentId;
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     if (previousId != -1) {
-        const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(previousId);
-        if (info.isValid()) {
-            auto messagesModel = messagesModelFromChatId(info.chatId());
-            if (messagesModel) {
+        if (const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(previousId); info.isValid()) {
+            if (auto messagesModel = messagesModelFromChatId(info.chatId()); messagesModel) {
                 messagesModel->changeTextToSpeechInProgress(info.messageId(), false);
             } else {
                 qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << info.chatId();
@@ -835,10 +819,8 @@ void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId,
         // qDebug() << " enqueue list " << mTextAutoGenerateTextToSpeechEnqueueManager->enqueueList() << "previousId " << previousId;
     }
     if (currentId != -1) {
-        const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(currentId);
-        if (info.isValid()) {
-            auto messagesModel = messagesModelFromChatId(info.chatId());
-            if (messagesModel) {
+        if (const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(currentId); info.isValid()) {
+            if (auto messagesModel = messagesModelFromChatId(info.chatId()); messagesModel) {
                 messagesModel->changeTextToSpeechInProgress(info.messageId(), true);
             } else {
                 qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << info.chatId();

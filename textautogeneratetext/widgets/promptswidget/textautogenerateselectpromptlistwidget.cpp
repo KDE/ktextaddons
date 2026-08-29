@@ -30,8 +30,7 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
     menu.addAction(addInstanceAction);
     connect(addInstanceAction, &QAction::triggered, this, &TextAutoGenerateSelectPromptListWidget::addPrompt);
 
-    const QModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
+    if (const QModelIndex index = indexAt(event->pos()); index.isValid()) {
         menu.addSeparator();
         auto editAction = new QAction(QIcon::fromTheme(u"edit-rename"_s), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
@@ -41,8 +40,7 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Prompt"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateTextPromptModel::Identifier).toByteArray();
-            if (uuid.isEmpty()) {
+            if (const QByteArray uuid = index.data(TextAutoGenerateTextPromptModel::Identifier).toByteArray(); uuid.isEmpty()) {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid prompt identifier";
             } else {
                 const QString name = index.data(TextAutoGenerateTextPromptModel::Name).toString();

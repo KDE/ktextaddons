@@ -15,8 +15,7 @@ TextUtilsIconNameCache *TextUtilsIconNameCache::self()
 
 bool TextUtilsIconNameCache::Entry::operator<(const Entry &other) const
 {
-    const int fileNameCompare = fileName.compare(other.fileName);
-    if (fileNameCompare != 0) {
+    if (const int fileNameCompare = fileName.compare(other.fileName); fileNameCompare != 0) {
         return fileNameCompare < 0;
     } else {
         return size < other.size;
@@ -34,8 +33,7 @@ QString TextUtilsIconNameCache::iconPath(const QString &name, int size) const
     entry.fileName = name;
     entry.size = size;
 
-    const QString val = mCachedEntries.value(entry);
-    if (!val.isEmpty()) {
+    if (const QString val = mCachedEntries.value(entry); !val.isEmpty()) {
         return val;
     }
 

@@ -18,8 +18,7 @@ QVariant OllamaModelInstalledInfosModel::data(const QModelIndex &index, int role
         return {};
     }
 
-    auto parentResult = PluginCommonModelInstalledInfosModel::data(index, role);
-    if (parentResult.isValid()) {
+    if (auto parentResult = PluginCommonModelInstalledInfosModel::data(index, role); parentResult.isValid()) {
         return parentResult;
     }
 

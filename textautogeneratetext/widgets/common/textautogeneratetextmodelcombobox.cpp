@@ -28,8 +28,7 @@ QString TextAutoGenerateTextModelComboBox::currentModel() const
 
 void TextAutoGenerateTextModelComboBox::setCurrentModel(const QString &identifier)
 {
-    const int index = findData(identifier);
-    if (index != -1) {
+    if (const int index = findData(identifier); index != -1) {
         setCurrentIndex(index);
     }
 }

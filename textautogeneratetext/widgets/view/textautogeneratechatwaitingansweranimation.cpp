@@ -14,12 +14,10 @@ TextAutoGenerateChatWaitingAnswerAnimation::TextAutoGenerateChatWaitingAnswerAni
     : TextAutoGenerateMessageWaitingAnswerAnimationBase{parent}
 {
     if (manager) {
-        auto chatsModel = manager->textAutoGenerateChatsModel();
-        if (chatsModel) {
+        if (auto chatsModel = manager->textAutoGenerateChatsModel(); chatsModel) {
             connect(chatsModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
                 if (roles.contains(TextAutoGenerateChatsModel::InProgress)) {
-                    const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool();
-                    if (!inProgress) {
+                    if (const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool(); !inProgress) {
                         if (mModelIndex == topLeft) {
                             stopAndDelete();
                             Q_EMIT waitingAnswerDone(topLeft);

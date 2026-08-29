@@ -41,8 +41,7 @@ QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecent
     QList<EmoticonWidgetAction::EmoticonInfo> emoticons;
     const QStringList lst = TextEmoticonsCore::EmojiModelManager::self()->recentIdentifier();
     for (const QString &id : lst) {
-        const EmoticonWidgetAction::EmoticonInfo info = generateEmoticonInfo(id);
-        if (info.isValid()) {
+        if (const EmoticonWidgetAction::EmoticonInfo info = generateEmoticonInfo(id); info.isValid()) {
             emoticons.append(info);
         }
         // Don't load all emoji history. Use the 5 first elements

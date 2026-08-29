@@ -27,8 +27,7 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
         return false;
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    const bool archived = sourceIndex.data(TextAutoGenerateChatsModel::Archived).toBool();
-    if (mShowArchived != archived) {
+    if (const bool archived = sourceIndex.data(TextAutoGenerateChatsModel::Archived).toBool(); mShowArchived != archived) {
         return false;
     }
     auto match = [&](int role) {

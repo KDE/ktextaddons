@@ -191,8 +191,7 @@ TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const Q
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).messageModel();
     }
     return nullptr;
@@ -203,8 +202,7 @@ bool TextAutoGenerateChatsModel::isInitialized(const QByteArray &chatId) const
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).initialized();
     }
     return false;
@@ -215,8 +213,7 @@ void TextAutoGenerateChatsModel::setInitialized(const QByteArray &chatId, bool s
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         (*it).setInitialized(state);
     }
 }
@@ -226,8 +223,7 @@ void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         const int i = std::distance(mChats.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
             const QModelIndex index = createIndex(rowNumber, 0);
@@ -242,8 +238,7 @@ void TextAutoGenerateChatsModel::removeDiscussion(const QByteArray &chatId)
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         const int i = std::distance(mChats.begin(), it);
         beginRemoveRows(QModelIndex(), i, i);
         mChats.removeAt(i);
@@ -256,8 +251,7 @@ void TextAutoGenerateChatsModel::archiveDiscussion(const QByteArray &chatId, boo
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         (*it).setArchived(archive);
         const int i = std::distance(mChats.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -273,8 +267,7 @@ bool TextAutoGenerateChatsModel::chatIsFavorited(const QByteArray &chatId) const
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).favorite();
     }
     return false;
@@ -285,8 +278,7 @@ bool TextAutoGenerateChatsModel::chatIsArchived(const QByteArray &chatId) const
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).archived();
     }
     return false;
@@ -300,8 +292,7 @@ void TextAutoGenerateChatsModel::setChatInProgress(const QByteArray &chatId, boo
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         (*it).setInProgress(state);
         const int i = std::distance(mChats.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -317,8 +308,7 @@ QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).title();
     }
     return {};
@@ -343,8 +333,7 @@ QByteArray TextAutoGenerateChatsModel::chatIdFromChatName(const QString &chatNam
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.title() == chatName;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).identifier();
     }
     return {};
@@ -364,8 +353,7 @@ bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).inProgress();
     }
     return false;
@@ -385,8 +373,7 @@ void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool f
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
-    if (it != mChats.end()) {
+    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         (*it).setFavorite(favorite);
         const int i = std::distance(mChats.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {

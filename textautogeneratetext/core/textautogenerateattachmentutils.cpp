@@ -93,8 +93,7 @@ TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(const Q
     QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> infos;
     infos.reserve(files.count());
     for (const auto &file : files) {
-        const auto info = createAttachmentElementInfoFromFile(file);
-        if (info.isValid()) {
+        if (const auto info = createAttachmentElementInfoFromFile(file); info.isValid()) {
             infos.append(info);
         }
     }

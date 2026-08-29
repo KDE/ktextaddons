@@ -50,8 +50,7 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                                                 const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info)
 {
     const QByteArray toolName = info.toolName;
-    auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromToolNameId(toolName);
-    if (plugin) {
+    if (auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromToolNameId(toolName); plugin) {
         auto job = plugin->callTool();
         mListJob.append(job);
         job->setToolArguments(info.toolCallArgument);

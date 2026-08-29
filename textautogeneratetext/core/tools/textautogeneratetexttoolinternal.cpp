@@ -73,8 +73,7 @@ QJsonObject TextAutoGenerateTextToolInternal::generateMetadata() const
         QJsonObject prop;
         prop["type"_L1] = TextAutoGenerateTextToolInternalProperty::convertPropertyTypeToString(property.propertyType());
         prop["description"_L1] = property.description();
-        const QStringList enumTypes = property.typeElements();
-        if (!enumTypes.isEmpty()) {
+        if (const QStringList enumTypes = property.typeElements(); !enumTypes.isEmpty()) {
             prop["enum"_L1] = QJsonArray::fromStringList(enumTypes);
         }
         const QString propertyName = property.name();

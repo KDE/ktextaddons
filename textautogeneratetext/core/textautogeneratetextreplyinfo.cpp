@@ -83,8 +83,7 @@ QJsonObject TextAutoGenerateTextReplyInfo::serialize(const TextAutoGenerateText:
 TextAutoGenerateText::TextAutoGenerateTextReplyInfo TextAutoGenerateTextReplyInfo::deserialize(const QJsonObject &o)
 {
     TextAutoGenerateTextReplyInfo info;
-    const QString replyType = o["replyType"_L1].toString();
-    if (!replyType.isEmpty()) {
+    if (const QString replyType = o["replyType"_L1].toString(); !replyType.isEmpty()) {
         info.replyType = TextAutoGenerateTextReplyInfo::convertReplyTypeFromString(replyType);
         info.totalDuration = std::chrono::nanoseconds(o["totalDuration"_L1].toInteger());
         info.loadDuration = std::chrono::nanoseconds(o["loadDuration"_L1].toInteger());

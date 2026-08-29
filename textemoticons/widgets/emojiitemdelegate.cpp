@@ -19,8 +19,7 @@ EmojiItemDelegate::~EmojiItemDelegate() = default;
 
 void EmojiItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const bool imageAnimated = index.data(TextEmoticonsCore::EmojiModel::Animated).toBool();
-    if (imageAnimated) {
+    if (const bool imageAnimated = index.data(TextEmoticonsCore::EmojiModel::Animated).toBool(); imageAnimated) {
         const QString imageAnimatedFilename = index.data(TextEmoticonsCore::EmojiModel::AnimatedFileName).toString();
         auto it = findRunningAnimatedImage(index);
         QPixmap scaledPixmap;
@@ -65,8 +64,7 @@ std::vector<TextEmoticonsCore::RunningAnimatedImage>::iterator EmojiItemDelegate
 
 void EmojiItemDelegate::removeRunningAnimatedImage(const QModelIndex &index) const
 {
-    auto it = findRunningAnimatedImage(index);
-    if (it != mRunningAnimatedImages.end()) {
+    if (auto it = findRunningAnimatedImage(index); it != mRunningAnimatedImages.end()) {
         mRunningAnimatedImages.erase(it);
     }
 }

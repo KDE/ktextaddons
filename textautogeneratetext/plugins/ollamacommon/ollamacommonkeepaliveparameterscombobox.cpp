@@ -28,8 +28,7 @@ OllamaCommonSettings::KeepAliveType OllamaCommonKeepAliveParametersComboBox::kee
 
 void OllamaCommonKeepAliveParametersComboBox::setKeepAliveType(OllamaCommonSettings::KeepAliveType type)
 {
-    const int index = findData(QVariant::fromValue(type));
-    if (index != -1) {
+    if (const int index = findData(QVariant::fromValue(type)); index != -1) {
         setCurrentIndex(index);
     }
 }

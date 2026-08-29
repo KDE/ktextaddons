@@ -172,8 +172,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() c
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return (instance->instanceUuid() == mCurrentinstance) && instance->enabled();
     };
-    const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
-    if (answerIt != mTextInstances.constEnd()) {
+    if (const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid); answerIt != mTextInstances.constEnd()) {
         return (*answerIt)->plugin();
     }
     // Fall back to first enable instance
@@ -197,8 +196,7 @@ void TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == uuid;
     };
-    const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
-    if (answerIt != mTextInstances.constEnd()) {
+    if (const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid); answerIt != mTextInstances.constEnd()) {
         const int i = std::distance(mTextInstances.constBegin(), answerIt);
         beginRemoveRows(QModelIndex(), i, i);
         auto instance = mTextInstances.at(i);
@@ -216,8 +214,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(cons
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == uuid;
     };
-    const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
-    if (answerIt != mTextInstances.constEnd()) {
+    if (const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid); answerIt != mTextInstances.constEnd()) {
         const int i = std::distance(mTextInstances.constBegin(), answerIt);
         return mTextInstances.at(i)->plugin();
     }

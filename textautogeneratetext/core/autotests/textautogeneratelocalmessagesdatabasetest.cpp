@@ -81,8 +81,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldPersistFirstInsertForFresh
     // WHEN
     logger.insertOrReplaceMessage(firstWriteChatId.toLatin1(), message);
 
-    const QString sourceConnectionName = u"messages-"_s + firstWriteChatId;
-    if (QSqlDatabase::contains(sourceConnectionName)) {
+    if (const QString sourceConnectionName = u"messages-"_s + firstWriteChatId; QSqlDatabase::contains(sourceConnectionName)) {
         {
             QSqlDatabase sourceDb = QSqlDatabase::database(sourceConnectionName);
             sourceDb.close();

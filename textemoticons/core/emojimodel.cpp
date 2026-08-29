@@ -73,8 +73,7 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         case Qt::DecorationRole: {
             if (mCustomEmojiIconManager) {
                 if (customEmoji.isAnimatedEmoji()) {
-                    const QString filename = mCustomEmojiIconManager->fileName(customEmoji.identifier());
-                    if (!filename.isEmpty()) {
+                    if (const QString filename = mCustomEmojiIconManager->fileName(customEmoji.identifier()); !filename.isEmpty()) {
                         const QIcon icon(filename);
                         return icon;
                     }

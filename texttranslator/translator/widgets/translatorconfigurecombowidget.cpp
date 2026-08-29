@@ -42,8 +42,7 @@ TranslatorConfigureComboWidget::~TranslatorConfigureComboWidget() = default;
 
 void TranslatorConfigureComboWidget::slotConfigureEngine()
 {
-    const QString engine = mEngineComboBox->currentData().toString();
-    if (TextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine)) {
+    if (const QString engine = mEngineComboBox->currentData().toString(); TextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine)) {
         if (TextTranslator::TranslatorEngineLoader::self()->showConfigureDialog(engine, this)) {
             Q_EMIT configureChanged(engine);
         }
@@ -68,8 +67,7 @@ void TranslatorConfigureComboWidget::load()
 {
     const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
     const QString engine = groupTranslate.readEntry(TranslatorUtil::engineTranslateName(), TranslatorUtil::defaultEngineName()); // Google by default
-    const int index = mEngineComboBox->findData(engine);
-    if (index != -1) {
+    if (const int index = mEngineComboBox->findData(engine); index != -1) {
         mEngineComboBox->setCurrentIndex(index);
     }
 }

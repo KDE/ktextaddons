@@ -32,10 +32,8 @@ EmojiCategoryButtons::~EmojiCategoryButtons() = default;
 
 void EmojiCategoryButtons::wheelEvent(QWheelEvent *event)
 {
-    auto button = mButtonGroup->checkedButton();
-    if (button) {
-        const int index = mButtonGroup->buttons().indexOf(button);
-        if (index != -1) {
+    if (auto button = mButtonGroup->checkedButton(); button) {
+        if (const int index = mButtonGroup->buttons().indexOf(button); index != -1) {
             QAbstractButton *nextButton = nullptr;
             if (event->angleDelta().y() > 0) {
                 if (index > 0) {

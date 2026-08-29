@@ -97,8 +97,7 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
                     if (service && model) {
                         std::vector<std::string> sources;
                         sources.push_back(std::move(input->text));
-                        std::vector<slimt::Response> responses = service->translate(model, std::move(sources), input->options);
-                        if (responses.empty()) {
+                        if (std::vector<slimt::Response> responses = service->translate(model, std::move(sources), input->options); responses.empty()) {
                             Q_EMIT errorText(i18n("Translation failed."));
                         } else {
                             Q_EMIT translationReady(Translation(std::move(responses.front())));

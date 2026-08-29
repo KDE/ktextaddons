@@ -425,8 +425,7 @@ void AutoCorrectionSettings::loadLocalFileName(const QString &localFileName, con
 void AutoCorrectionSettings::loadGlobalFileName(const QString &fname)
 {
     if (fname.isEmpty()) {
-        const QString fileName = containsAutoCorrectionFile(d->mAutoCorrectLang);
-        if (!fileName.isEmpty()) {
+        if (const QString fileName = containsAutoCorrectionFile(d->mAutoCorrectLang); !fileName.isEmpty()) {
             QString errorMessage;
             ImportLibreOfficeAutocorrection import;
             if (import.import(fileName, errorMessage)) {
@@ -461,8 +460,7 @@ void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)
     d->mSuperScriptEntries.clear();
 
     QString kdelang = u"en-US"_s;
-    const QStringList lst = QLocale::system().uiLanguages();
-    if (!lst.isEmpty()) {
+    if (const QStringList lst = QLocale::system().uiLanguages(); !lst.isEmpty()) {
         kdelang = lst.at(0);
         if (kdelang == u'C') {
             kdelang = u"en-US"_s;

@@ -154,8 +154,7 @@ bool TextAutoGenerateWidget::lineEditWidgetEnabledState() const
 
 void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
 {
-    const int key = ev->key();
-    if (key == Qt::Key_Escape) {
+    if (const int key = ev->key(); key == Qt::Key_Escape) {
         ev->accept();
         if (const QByteArray uuid = mTextAutoGenerateTextLineEditWidget->uuid(); !uuid.isEmpty()) {
             Q_EMIT stopEditingMode(uuid);

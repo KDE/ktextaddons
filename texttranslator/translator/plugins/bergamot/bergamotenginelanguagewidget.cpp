@@ -129,9 +129,8 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
         const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Installed);
         const QModelIndex modelIndexNeedToUpdate = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::NeedToUpdateLanguage);
         const bool isInstalled = modelIndex.data().toBool();
-        const bool needToUpdate = modelIndexNeedToUpdate.data().toBool();
 
-        if (needToUpdate) {
+        if (const bool needToUpdate = modelIndexNeedToUpdate.data().toBool(); needToUpdate) {
             downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
         } else {
             downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);

@@ -47,20 +47,17 @@ public:
     {
         if (tone == EmojiModelManager::EmojiTone::Original) {
             const QModelIndex sourceIndex = q->sourceModel()->index(source_row, 0, source_parent);
-            const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-            if (!identifier.contains("_tone"_L1)) {
+            if (const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString(); !identifier.contains("_tone"_L1)) {
                 return true;
             }
             return false;
         }
-        const QString suffix = emojiToneSuffix();
-        if (suffix.isEmpty()) {
+        if (const QString suffix = emojiToneSuffix(); suffix.isEmpty()) {
             return true;
         } else {
             const QModelIndex sourceIndex = q->sourceModel()->index(source_row, 0, source_parent);
             const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-            const bool diversityChildren = sourceIndex.data(EmojiModel::DiversityChildren).toBool();
-            if (diversityChildren) {
+            if (const bool diversityChildren = sourceIndex.data(EmojiModel::DiversityChildren).toBool(); diversityChildren) {
                 return false;
             }
             // Match the suffix at the end of the identifier: :handshake_tone1-3: is a
@@ -111,14 +108,12 @@ bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelInd
     }
     if (d->category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-        if (d->recentEmoticons.contains(identifier)) {
+        if (const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString(); d->recentEmoticons.contains(identifier)) {
             return true;
         }
     } else {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const auto category = sourceIndex.data(EmojiModel::Category).toString();
-        if (d->filterTone(source_row, source_parent) && d->category == category) {
+        if (const auto category = sourceIndex.data(EmojiModel::Category).toString(); d->filterTone(source_row, source_parent) && d->category == category) {
             return true;
         }
     }

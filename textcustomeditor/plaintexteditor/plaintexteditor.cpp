@@ -134,8 +134,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 NCountActs
             };
             QAction *separatorAction = nullptr;
-            const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
-            if (idx < actionList.count()) {
+            if (const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1; idx < actionList.count()) {
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
@@ -476,8 +475,7 @@ void PlainTextEditor::deleteWordForward()
 bool PlainTextEditor::event(QEvent *ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        auto e = static_cast<QKeyEvent *>(ev);
-        if (overrideShortcut(e)) {
+        if (auto e = static_cast<QKeyEvent *>(ev); overrideShortcut(e)) {
             e->accept();
             return true;
         }
@@ -490,8 +488,7 @@ bool PlainTextEditor::event(QEvent *ev)
 
 bool PlainTextEditor::overrideShortcut(QKeyEvent *event)
 {
-    const int key = event->key() | event->modifiers();
-    if (KStandardShortcut::copy().contains(key)) {
+    if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
         return true;
@@ -539,9 +536,7 @@ bool PlainTextEditor::overrideShortcut(QKeyEvent *event)
 
 bool PlainTextEditor::handleShortcut(QKeyEvent *event)
 {
-    const int key = event->key() | event->modifiers();
-
-    if (KStandardShortcut::copy().contains(key)) {
+    if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         copy();
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
@@ -646,8 +641,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
         if (!isReadOnly()) {
-            const QString text = QApplication::clipboard()->text(QClipboard::Selection);
-            if (!text.isEmpty()) {
+            if (const QString text = QApplication::clipboard()->text(QClipboard::Selection); !text.isEmpty()) {
                 insertPlainText(text); // TODO: check if this is html? (MiB)
             }
             return true;
@@ -664,8 +658,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
 void PlainTextEditor::deleteEndOfLine()
 {
     QTextCursor cursor = textCursor();
-    const QTextBlock block = cursor.block();
-    if (cursor.position() == block.position() + block.length() - 2) {
+    if (const QTextBlock block = cursor.block(); cursor.position() == block.position() + block.length() - 2) {
         cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
     } else {
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
@@ -882,8 +875,7 @@ void PlainTextEditor::createHighlighter()
 void PlainTextEditor::setSpellCheckingConfigFileName(const QString &_fileName)
 {
     d->spellCheckingConfigFileName = _fileName;
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    if (config->hasGroup("Spelling"_L1)) {
+    if (KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName); config->hasGroup("Spelling"_L1)) {
         const KConfigGroup group(config, "Spelling"_L1);
         d->checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         d->spellCheckingLanguage = group.readEntry("Language", QString());
@@ -940,8 +932,7 @@ void PlainTextEditor::slotToggleAutoSpellCheck()
 
 void PlainTextEditor::slotZoomReset()
 {
-    QFont f = font();
-    if (d->mInitialFontSize != f.pointSize()) {
+    if (QFont f = font(); d->mInitialFontSize != f.pointSize()) {
         f.setPointSize(d->mInitialFontSize);
         setFont(f);
     }

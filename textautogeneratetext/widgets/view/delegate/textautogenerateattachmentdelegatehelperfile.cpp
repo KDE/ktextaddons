@@ -68,11 +68,9 @@ bool TextAutoGenerateAttachmentDelegateHelperFile::handleMouseEvent(const TextAu
     const QEvent::Type eventType = mouseEvent->type();
     switch (eventType) {
     case QEvent::MouseButtonRelease: {
-        const QPoint pos = mouseEvent->pos();
         // const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
-        if (attachmentsRect.contains(pos)) {
-            const auto attachmentId = msgAttach.attachmentId();
-            if (!attachmentId.isEmpty()) {
+        if (const QPoint pos = mouseEvent->pos(); attachmentsRect.contains(pos)) {
+            if (const auto attachmentId = msgAttach.attachmentId(); !attachmentId.isEmpty()) {
                 qDebug() << " Click on file " << msgAttach;
                 handleDownloadClicked(const_cast<QWidget *>(option.widget), attachmentId);
                 return true;

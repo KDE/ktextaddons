@@ -23,11 +23,9 @@ void LanguageToolGrammarError::parse(const QJsonObject &obj, int blockindex)
     mStart = obj["offset"_L1].toInt(-1);
     mLength = obj["length"_L1].toInt(-1);
     mSuggestions = parseSuggestion(obj);
-    const QJsonObject rulesObj = obj["rule"_L1].toObject();
-    if (!rulesObj.isEmpty()) {
+    if (const QJsonObject rulesObj = obj["rule"_L1].toObject(); !rulesObj.isEmpty()) {
         mRule = rulesObj["id"_L1].toString();
-        const QJsonArray urlArray = rulesObj["urls"_L1].toArray();
-        if (!urlArray.isEmpty()) {
+        if (const QJsonArray urlArray = rulesObj["urls"_L1].toArray(); !urlArray.isEmpty()) {
             if (urlArray.count() > 1) {
                 qCWarning(TEXTGRAMMARCHECK_LOG) << "LanguageToolGrammarError::parse : more than 1 url found. Perhaps need to adapt api ";
             }

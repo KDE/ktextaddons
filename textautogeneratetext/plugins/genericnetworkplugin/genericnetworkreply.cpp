@@ -90,9 +90,8 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
         // qDebug() << " mTokens " << mTokens;
         for (const auto &tok : mTokens) {
             // qDebug() << " tok" << tok;
-            const QJsonArray choicesArray = tok["choices"_L1].toArray();
             // qDebug() << " choicesArray " << choicesArray;
-            if (!choicesArray.isEmpty()) {
+            if (const QJsonArray choicesArray = tok["choices"_L1].toArray(); !choicesArray.isEmpty()) {
                 const QJsonObject firstObject = choicesArray.at(0).toObject();
                 const QJsonObject deltaObject = firstObject["delta"_L1].toObject();
                 if (deltaObject.contains(u"content"_s)) {

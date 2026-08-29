@@ -19,15 +19,13 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
         int startSelectionIndex = info.start();
         // Block id based on 1 not 0 as QTextDocument (perhaps remove -1 when loading ?)
         if (blockNumberId == -1) { // Languagetool adapt grammar error We need to generate info. By default languagetool uses 1 paragraph info.
-            const QTextBlock firstBlock = document->findBlockByNumber(0);
-            if (firstBlock.isValid()) {
+            if (const QTextBlock firstBlock = document->findBlockByNumber(0); firstBlock.isValid()) {
                 QTextCursor cur(document);
 
                 cur.setPosition(info.start());
                 blockNumberId = cur.blockNumber();
                 for (int i = 0; i < blockNumberId; ++i) {
-                    const QTextBlock block = document->findBlockByNumber(i);
-                    if (block.isValid()) {
+                    if (const QTextBlock block = document->findBlockByNumber(i); block.isValid()) {
                         if (block.text() != u'\n') {
                             startSelectionIndex -= block.length();
                         }
@@ -37,8 +35,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
         } else {
             blockNumberId = info.blockId() - 1;
         }
-        const QTextBlock block = document->findBlockByNumber(blockNumberId);
-        if (block.isValid()) {
+        if (const QTextBlock block = document->findBlockByNumber(blockNumberId); block.isValid()) {
             QTextCursor cur(block);
             QTextCharFormat format;
             // Verify color
@@ -70,8 +67,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
 
 void GrammarResultUtil::replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document)
 {
-    const QTextBlock block = document->findBlockByNumber(act.blockId() - 1);
-    if (block.isValid()) {
+    if (const QTextBlock block = document->findBlockByNumber(act.blockId() - 1); block.isValid()) {
         QTextCursor cur(block);
         const int initialCurrentPosition = cur.position();
         qCDebug(TEXTGRAMMARCHECK_LOG) << " cur.position()" << cur.position();
@@ -88,8 +84,7 @@ void GrammarResultUtil::replaceWord(const TextGrammarCheck::GrammarAction &act, 
             for (int i = position + replacementWord.length() + 1; i < blockLength + initialCurrentPosition; ++i) {
                 cur.setPosition(i);
                 qCDebug(TEXTGRAMMARCHECK_LOG) << " Position  " << i;
-                QTextCharFormat currentCharFormat = cur.charFormat();
-                if (currentCharFormat.hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
+                if (QTextCharFormat currentCharFormat = cur.charFormat(); currentCharFormat.hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
                     auto grammarAct = cur.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<TextGrammarCheck::GrammarAction>();
                     qCDebug(TEXTGRAMMARCHECK_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << grammarAct;
                     grammarAct.setStart(grammarAct.start() + diff);

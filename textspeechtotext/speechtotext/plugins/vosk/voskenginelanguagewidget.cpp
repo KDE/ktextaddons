@@ -143,9 +143,8 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Installed);
         const QModelIndex modelIndexNeedToUpdate = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::NeedToUpdateLanguage);
         const bool isInstalled = modelIndex.data().toBool();
-        const bool needToUpdate = modelIndexNeedToUpdate.data().toBool();
 
-        if (needToUpdate) {
+        if (const bool needToUpdate = modelIndexNeedToUpdate.data().toBool(); needToUpdate) {
             downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
         } else {
             downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);

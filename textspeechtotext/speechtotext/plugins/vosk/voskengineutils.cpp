@@ -74,8 +74,7 @@ QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStor
     for (const auto &name : list) {
         // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " name " << dir;
         const QString modelLanguagePath{dir.absolutePath() + u'/' + name};
-        const VoskEngineUtils::LanguageInstalled info = loadInstalledLanguageInfo(modelLanguagePath);
-        if (info.isValid()) {
+        if (const VoskEngineUtils::LanguageInstalled info = loadInstalledLanguageInfo(modelLanguagePath); info.isValid()) {
             languages.append(info);
         }
     }

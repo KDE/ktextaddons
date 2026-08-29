@@ -51,8 +51,7 @@ void LanguageToolGetListOfLanguageJob::slotFinish(QNetworkReply *reply)
 
 void LanguageToolGetListOfLanguageJob::slotCheckListOfLanguagesFinished()
 {
-    auto reply = qobject_cast<QNetworkReply *>(sender());
-    if (reply) {
+    if (auto reply = qobject_cast<QNetworkReply *>(sender()); reply) {
         const QByteArray data = reply->readAll();
         Q_EMIT finished(QString::fromUtf8(data));
         reply->deleteLater();

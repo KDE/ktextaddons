@@ -55,8 +55,7 @@ void EmojiListView::keyPressEvent(QKeyEvent *event)
         }
     } else {
         if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
-            auto index = currentIndex();
-            if (index.isValid()) {
+            if (auto index = currentIndex(); index.isValid()) {
                 selectEmoji(index);
             }
         }
@@ -68,8 +67,7 @@ void EmojiListView::wheelEvent(QWheelEvent *e)
 {
     int fontSize = mFontSize;
     if (e->modifiers() == Qt::ControlModifier) {
-        const int y = e->angleDelta().y();
-        if (y < 0) {
+        if (const int y = e->angleDelta().y(); y < 0) {
             Q_EMIT fontSizeChanged(--fontSize);
         } else if (y > 0) {
             Q_EMIT fontSizeChanged(++fontSize);

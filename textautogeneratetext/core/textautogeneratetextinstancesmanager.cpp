@@ -55,13 +55,11 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
         auto inst = new TextAutoGenerateTextInstance;
         inst->load(configGroup);
 
-        auto client = mTextAutoGenerateEngineLoader->searchTextAutoGenerateTextClient(inst->pluginName());
-        if (!client) {
+        if (auto client = mTextAutoGenerateEngineLoader->searchTextAutoGenerateTextClient(inst->pluginName()); !client) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to create client " << inst->pluginName();
             delete inst;
         } else {
-            auto plugin = client->createTextAutoGeneratePlugin(mManager, inst);
-            if (!plugin) {
+            if (auto plugin = client->createTextAutoGeneratePlugin(mManager, inst); !plugin) {
                 qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to create plugin for " << inst->pluginName();
                 delete inst;
             } else {

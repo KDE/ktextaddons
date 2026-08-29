@@ -38,8 +38,7 @@ void TextAutoGenerateTextLineEditAttachmentWidget::slotRemoveAttachment(const QS
 {
     TextAutoGenerateTextLineEditAttachmentClickableWidget *userWidget = mMap.value(fileName);
     if (userWidget) {
-        const int index = mMainLayout->indexOf(userWidget);
-        if (index != -1) {
+        if (const int index = mMainLayout->indexOf(userWidget); index != -1) {
             userWidget->deleteLater();
             delete mMainLayout->takeAt(index);
             mMap.remove(fileName);

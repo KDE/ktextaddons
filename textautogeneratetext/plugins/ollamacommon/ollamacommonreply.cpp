@@ -173,8 +173,7 @@ QString OllamaCommonReply::generateModelInfo() const
         }
         mardown += u"## %1: \n```\n"_s.arg(i18n("Template")) + doc["template"_L1].toString() + u"\n```\n\n\n"_s;
         mardown += u"## %1: \n```\n"_s.arg(i18n("Modelfile")) + doc["modelfile"_L1].toString() + u"\n```\n\n\n"_s;
-        const QString parameters = doc["parameters"_L1].toString();
-        if (!parameters.isEmpty()) {
+        if (const QString parameters = doc["parameters"_L1].toString(); !parameters.isEmpty()) {
             mardown += u"## %1: \n```\n"_s.arg(i18n("Parameters")) + doc["parameters"_L1].toString() + u"\n```\n\n\n"_s;
         }
         mardown += u"## %1: \n```\n"_s.arg(i18n("Details")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["details"_L1].toVariant()).toJson())

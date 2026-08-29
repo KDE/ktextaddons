@@ -124,8 +124,7 @@ void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text
     }
     d->blockState.insert(currentBlockState(), state);
 
-    const auto nextBlock = currentBlock().next();
-    if (nextBlock.isValid()) {
+    if (const auto nextBlock = currentBlock().next(); nextBlock.isValid()) {
         QMetaObject::invokeMethod(
             this,
             [this, nextBlock] {

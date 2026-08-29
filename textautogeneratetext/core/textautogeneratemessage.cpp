@@ -287,15 +287,13 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
         }
     }
     if (auto att = msg.messageAttachments(); att) {
-        const QJsonArray array = TextAutoGenerateAttachments::serialize(*att);
-        if (!array.isEmpty()) {
+        if (const QJsonArray array = TextAutoGenerateAttachments::serialize(*att); !array.isEmpty()) {
             o["attachments"_L1] = array;
         }
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
-    const auto msgInfo = msg.info();
-    if (msgInfo.isValid()) {
+    if (const auto msgInfo = msg.info(); msgInfo.isValid()) {
         o["replyInfo"_L1] = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::serialize(msgInfo);
     }
 

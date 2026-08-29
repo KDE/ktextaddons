@@ -81,8 +81,7 @@ void TextAutoGenerateTextConfigurePluginsWidget::slotConfigureClicked(const QStr
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find text plugin " << identifier;
             }
         } else if (groupName == toolPluginGroupName()) {
-            const auto p = TextAutoGenerateTextToolPluginManager::self()->pluginFromIdentifier(identifier);
-            if (p) {
+            if (const auto p = TextAutoGenerateTextToolPluginManager::self()->pluginFromIdentifier(identifier); p) {
                 p->showConfigureDialog(this);
             } else {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find text plugin " << identifier;

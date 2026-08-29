@@ -59,8 +59,7 @@ void TextAutoGenerateListView::slotUpdateView()
 
 void TextAutoGenerateListView::slotUpdateColors()
 {
-    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
-    if (model) {
+    if (auto model = mManager->messagesModelFromChatId(mManager->currentChatId()); model) {
         model->refreshMessageColors();
         clearDocumentCache();
     }
@@ -87,16 +86,14 @@ void TextAutoGenerateListView::clearEditingMode()
     // Remove old mark as editing
     auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
 
-    const QModelIndex index = model->indexForUuid(mMessageIdBeingEdited);
-    if (index.isValid()) {
+    if (const QModelIndex index = model->indexForUuid(mMessageIdBeingEdited); index.isValid()) {
         model->setData(index, false, TextAutoGenerateMessagesModel::EditingRole);
     }
 }
 
 void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-    if (!uuid.isEmpty()) {
+    if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
         if (mManager->cancelRequest(mManager->currentChatId(), index)) {
             Q_EMIT cancelRequested(uuid);
         }
@@ -105,8 +102,7 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 
 void TextAutoGenerateListView::slotForkRequested(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-    if (!uuid.isEmpty()) {
+    if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
         const QByteArray chatId = mManager->currentChatId();
         mManager->forkDiscussionUntilMessage(chatId, uuid);
     }
@@ -114,8 +110,7 @@ void TextAutoGenerateListView::slotForkRequested(const QModelIndex &index)
 
 void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-    if (!uuid.isEmpty()) {
+    if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
         const QByteArray chatId = mManager->currentChatId();
         mManager->removeMessage(chatId, uuid);
     }
@@ -123,13 +118,10 @@ void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 
 void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-
-    if (!uuid.isEmpty()) {
+    if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
         const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
         const QByteArray chatId = mManager->currentChatId();
-        const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid);
-        if (indexAnswer.isValid()) {
+        if (const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid); indexAnswer.isValid()) {
             Q_EMIT refreshAnswerRequested(chatId, indexAnswer, tools, {}); // TODO use attachmentList !
         }
     }
@@ -137,8 +129,7 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 
 void TextAutoGenerateListView::handleMouseEvent(QMouseEvent *event)
 {
-    const QPersistentModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
+    if (const QPersistentModelIndex index = indexAt(event->pos()); index.isValid()) {
         // When the cursor hovers another message, hide/show the reaction icon accordingly
         if (mCurrentIndex != index) {
             if (mCurrentIndex.isValid()) {
@@ -174,8 +165,7 @@ QString TextAutoGenerateListView::originalMessage(const QModelIndex &index) cons
 
 void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
 {
-    const int key = ev->key();
-    if (key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_PageDown || key == Qt::Key_PageUp) {
+    if (const int key = ev->key(); key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_PageDown || key == Qt::Key_PageUp) {
         // QListView/QAIV PageUp/PageDown moves the current item, first inside visible bounds
         // before it triggers scrolling around. Let's just let the scrollarea handle it,
         // since we don't show the current item.
@@ -194,10 +184,8 @@ void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
 
 void TextAutoGenerateListView::goToMessageId(const QByteArray &uuid)
 {
-    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
-    if (model) {
-        const QModelIndex idx = model->indexForUuid(uuid);
-        if (idx.isValid()) {
+    if (auto model = mManager->messagesModelFromChatId(mManager->currentChatId()); model) {
+        if (const QModelIndex idx = model->indexForUuid(uuid); idx.isValid()) {
             scrollTo(idx);
         }
     }
@@ -211,10 +199,8 @@ void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 {
-    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
-    if (model) {
-        const QModelIndex idx = model->indexForUuid(uuid);
-        if (idx.isValid()) {
+    if (auto model = mManager->messagesModelFromChatId(mManager->currentChatId()); model) {
+        if (const QModelIndex idx = model->indexForUuid(uuid); idx.isValid()) {
             auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
             lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
             mMessageIdBeingEdited.clear();
@@ -312,13 +298,11 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
 
         connect(newModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
             if (roles.contains(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole) || roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-                if (!uuid.isEmpty()) {
+                if (const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
                     mDelegate->removeMessageCache(uuid);
                 }
                 if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                    const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
-                    if (inProgress) {
+                    if (const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool(); inProgress) {
                         addWaitingAnswerAnimation(topLeft);
                     }
                 }
@@ -344,8 +328,7 @@ void TextAutoGenerateListView::slotRefreshMessage(const QByteArray &currentIdent
         mCurrentModel->regenerateHtmlMessage(previousIdentifier, -1); // Clear
     }
     mCurrentModel->regenerateHtmlMessage(currentIdentifier, index);
-    const QModelIndex modelIndex = mCurrentModel->indexForUuid(currentIdentifier);
-    if (modelIndex.isValid()) {
+    if (const QModelIndex modelIndex = mCurrentModel->indexForUuid(currentIdentifier); modelIndex.isValid()) {
         scrollTo(modelIndex);
     }
 }

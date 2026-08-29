@@ -56,8 +56,7 @@ public:
         // It's impossible if the whole document ends with a link.
         // The same happens when text starts with a link: it's impossible to write normal text before it.
         QObject::connect(q, &RichTextBrowser::cursorPositionChanged, q, [this]() {
-            QTextCursor c = q->textCursor();
-            if (c.charFormat().isAnchor() && !c.hasSelection()) {
+            if (QTextCursor c = q->textCursor(); c.charFormat().isAnchor() && !c.hasSelection()) {
                 QTextCharFormat fmt;
                 // If we are at block start or end (and at anchor), we just set the "default" format
                 if (!c.atBlockEnd() && !c.atBlockStart() && !c.hasSelection()) {
@@ -146,8 +145,7 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
                 NCountActs
             };
             QAction *separatorAction = nullptr;
-            const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
-            if (idx < actionList.count()) {
+            if (const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1; idx < actionList.count()) {
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
@@ -293,8 +291,7 @@ void RichTextBrowser::deleteWordForward()
 bool RichTextBrowser::event(QEvent *ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        auto e = static_cast<QKeyEvent *>(ev);
-        if (overrideShortcut(e)) {
+        if (auto e = static_cast<QKeyEvent *>(ev); overrideShortcut(e)) {
             e->accept();
             return true;
         }
@@ -321,9 +318,7 @@ void RichTextBrowser::wheelEvent(QWheelEvent *event)
 
 bool RichTextBrowser::handleShortcut(QKeyEvent *event)
 {
-    const int key = event->key() | event->modifiers();
-
-    if (KStandardShortcut::copy().contains(key)) {
+    if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         copy();
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
@@ -423,8 +418,7 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
         return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
         if (!isReadOnly()) {
-            const QString text = QApplication::clipboard()->text(QClipboard::Selection);
-            if (!text.isEmpty()) {
+            if (const QString text = QApplication::clipboard()->text(QClipboard::Selection); !text.isEmpty()) {
                 insertPlainText(text); // TODO: check if this is html? (MiB)
             }
             return true;
@@ -432,8 +426,7 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
     } else if (event == QKeySequence::DeleteEndOfLine) {
         if (!isReadOnly()) {
             QTextCursor cursor = textCursor();
-            const QTextBlock block = cursor.block();
-            if (cursor.position() == block.position() + block.length() - 2) {
+            if (const QTextBlock block = cursor.block(); cursor.position() == block.position() + block.length() - 2) {
                 cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
             } else {
                 cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
@@ -449,9 +442,7 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
 
 bool RichTextBrowser::overrideShortcut(QKeyEvent *event)
 {
-    const int key = event->key() | event->modifiers();
-
-    if (KStandardShortcut::copy().contains(key)) {
+    if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
         return true;
@@ -521,8 +512,7 @@ void RichTextBrowser::keyPressEvent(QKeyEvent *event)
 int RichTextBrowser::zoomFactor() const
 {
     int pourcentage = 100;
-    const QFont f = font();
-    if (d->mInitialFontSize != f.pointSize()) {
+    if (const QFont f = font(); d->mInitialFontSize != f.pointSize()) {
         pourcentage = (f.pointSize() * 100) / d->mInitialFontSize;
     }
     return pourcentage;
@@ -530,8 +520,7 @@ int RichTextBrowser::zoomFactor() const
 
 void RichTextBrowser::slotZoomReset()
 {
-    QFont f = font();
-    if (d->mInitialFontSize != f.pointSize()) {
+    if (QFont f = font(); d->mInitialFontSize != f.pointSize()) {
         f.setPointSize(d->mInitialFontSize);
         setFont(f);
     }

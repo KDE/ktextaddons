@@ -45,8 +45,7 @@ int TextUtilsBlockCMarkSupport::findNonEscaped(const QString &str, const QString
 
 int TextUtilsBlockCMarkSupport::findNewLineOrEndLine(const QString &str, const QString &regionMarker, int startFrom)
 {
-    const int index = str.indexOf(regionMarker, startFrom);
-    if (index == -1) {
+    if (const int index = str.indexOf(regionMarker, startFrom); index == -1) {
         return str.length() - 1;
     } else {
         return index;
@@ -96,8 +95,7 @@ QString TextUtilsBlockCMarkSupport::convertTextWithUrl(const QString &str)
     QString url;
     QString references;
     for (int i = 0; i < str.length(); ++i) {
-        const QChar ref = str.at(i);
-        if (ref == u'[') {
+        if (const QChar ref = str.at(i); ref == u'[') {
             if (isRef) {
                 isRef = false;
                 newStr += u'[' + references + u'[';
@@ -201,12 +199,10 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
         case CMARK_NODE_CODE_BLOCK: {
             isALink = false;
             const char *literal = cmark_node_get_literal(node);
-            QString literalStr = QString::fromUtf8(literal);
-            if (!literalStr.isEmpty()) {
+            if (QString literalStr = QString::fromUtf8(literal); !literalStr.isEmpty()) {
                 convertHtmlChar(literalStr);
                 QString language;
-                const auto l = cmark_node_get_fence_info(node);
-                if (l) {
+                if (const auto l = cmark_node_get_fence_info(node); l) {
                     language = QString::fromUtf8(l);
                 }
                 qCDebug(TEXTUTILS_CMARK_LOG) << " language " << language;
@@ -232,8 +228,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
                 // qDebug() << " literal" << literal;
                 qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
 
-                const QString strLiteral = QString::fromUtf8(literal);
-                if (!strLiteral.isEmpty()) {
+                if (const QString strLiteral = QString::fromUtf8(literal); !strLiteral.isEmpty()) {
                     const QString convertedString =
                         addHighlighter(strLiteral, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
                     qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
@@ -250,8 +245,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
             isALink = false;
             const char *literal = cmark_node_get_literal(node);
             qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
-            QString strLiteral = QString::fromUtf8(literal);
-            if (!strLiteral.isEmpty()) {
+            if (QString strLiteral = QString::fromUtf8(literal); !strLiteral.isEmpty()) {
                 convertHtmlChar(strLiteral);
                 const QString stringHtml = u"`"_s + strLiteral + u"`"_s;
                 const QString convertedString = addHighlighter(stringHtml, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);

@@ -147,8 +147,7 @@ void VoskSpeechToTextModel::removeLanguage(const QString &name)
         return (name == installed.name);
     });
     if (index != mLanguageInstalled.end()) {
-        const QString absoluteLanguageModelPath = (*index).absoluteLanguageModelPath;
-        if (!QDir(absoluteLanguageModelPath).removeRecursively()) {
+        if (const QString absoluteLanguageModelPath = (*index).absoluteLanguageModelPath; !QDir(absoluteLanguageModelPath).removeRecursively()) {
             qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to delete " << absoluteLanguageModelPath;
             return;
         }

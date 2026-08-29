@@ -108,8 +108,7 @@ bool TextAutoGenerateListViewTextSelection::contains(const QModelIndex &index, i
     }
     Q_ASSERT(index.model() == mStartIndex.model());
     const int row = index.row();
-    const OrderedPositions ordered = orderedPositions();
-    if (row == ordered.fromRow) {
+    if (const OrderedPositions ordered = orderedPositions(); row == ordered.fromRow) {
         if (row == ordered.toRow) { // single line selection
             return ordered.fromCharPos <= charPos && charPos <= ordered.toCharPos;
         }
@@ -154,8 +153,7 @@ void TextAutoGenerateListViewTextSelection::setTextSelectionStart(const QModelIn
 void TextAutoGenerateListViewTextSelection::setTextSelectionEnd(const QModelIndex &index, int charPos)
 {
     int from = mEndIndex.row();
-    int to = index.row();
-    if (from != -1 && from != to) {
+    if (int to = index.row(); from != -1 && from != to) {
         mEndIndex = index;
 
         if (from > to) { // reducing (moving the end up)

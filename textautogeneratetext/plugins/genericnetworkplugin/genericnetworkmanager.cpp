@@ -101,8 +101,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     QJsonObject streamOptions;
     streamOptions["include_usage"_L1] = true;
     data["stream_options"_L1] = streamOptions;
-    const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
-    if (!array.isEmpty()) {
+    if (const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools()); !array.isEmpty()) {
         data["tools"_L1] = array;
         // data["tool_choice"_L1] = u"none"_s;
     }
@@ -156,8 +155,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getResponses
     QJsonObject streamOptions;
     streamOptions["include_usage"_L1] = true;
     data["stream_options"_L1] = streamOptions;
-    const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
-    if (!array.isEmpty()) {
+    if (const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools()); !array.isEmpty()) {
         data["tools"_L1] = array;
         // data["tool_choice"_L1] = u"none"_s;
     }

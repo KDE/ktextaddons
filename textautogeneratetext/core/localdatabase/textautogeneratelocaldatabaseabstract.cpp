@@ -84,8 +84,7 @@ bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id
     db = QSqlDatabase::database(dbName);
     if (!db.isValid()) {
         db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
-        const QString dirPath = mBasePath;
-        if (!QDir().mkpath(dirPath)) {
+        if (const QString dirPath = mBasePath; !QDir().mkpath(dirPath)) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create" << dirPath;
             return false;
         }

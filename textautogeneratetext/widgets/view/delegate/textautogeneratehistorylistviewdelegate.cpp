@@ -48,8 +48,7 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
 
     const QRect displayRect = layout.textRect;
 
-    const bool hasPendingMessageTyped = index.data(TextAutoGenerateChatsModel::HasPendingMessageTyped).toBool();
-    if (hasPendingMessageTyped) {
+    if (const bool hasPendingMessageTyped = index.data(TextAutoGenerateChatsModel::HasPendingMessageTyped).toBool(); hasPendingMessageTyped) {
         QFont font = opt.font;
         font.setItalic(true);
         opt.font = font;

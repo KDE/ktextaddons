@@ -30,13 +30,11 @@ void LMStudioModelInstalledInfo::parseInfo(const QJsonObject &obj)
     mModel = obj["key"_L1].toString();
     mParameterSize = obj["params_string"_L1].toString();
 
-    const QJsonObject quantizationObj = obj["quantization"_L1].toObject();
-    if (!quantizationObj.isEmpty()) {
+    if (const QJsonObject quantizationObj = obj["quantization"_L1].toObject(); !quantizationObj.isEmpty()) {
         mQuantizationLevel = quantizationObj["name"_L1].toString();
     }
 
-    const QJsonObject capabilitiesObj = obj["capabilities"_L1].toObject();
-    if (!capabilitiesObj.isEmpty()) {
+    if (const QJsonObject capabilitiesObj = obj["capabilities"_L1].toObject(); !capabilitiesObj.isEmpty()) {
         mCategories &= 0; // Reset all categories
         if (capabilitiesObj.contains("trained_for_tool_use"_L1) && capabilitiesObj["trained_for_tool_use"_L1].toBool()) {
             mCategories |= TextAutoGenerateText::TextAutoGenerateManager::Category::Tools;

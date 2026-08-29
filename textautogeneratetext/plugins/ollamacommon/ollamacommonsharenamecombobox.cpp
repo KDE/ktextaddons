@@ -28,8 +28,7 @@ OllamaCommonSettings::ShareNameType OllamaCommonShareNameComboBox::shareNameType
 
 void OllamaCommonShareNameComboBox::setShareNameType(OllamaCommonSettings::ShareNameType type)
 {
-    const int index = findData(QVariant::fromValue(type));
-    if (index != -1) {
+    if (const int index = findData(QVariant::fromValue(type)); index != -1) {
         setCurrentIndex(index);
     }
 }

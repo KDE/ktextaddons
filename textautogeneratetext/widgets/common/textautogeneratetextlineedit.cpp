@@ -31,8 +31,7 @@ TextAutoGenerateTextLineEdit::~TextAutoGenerateTextLineEdit() = default;
 
 void TextAutoGenerateTextLineEdit::loadSpellCheckingSettings()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    if (config->hasGroup("Spelling"_L1)) {
+    if (KSharedConfig::Ptr config = KSharedConfig::openConfig(); config->hasGroup("Spelling"_L1)) {
         const KConfigGroup group(config, u"Spelling"_s);
         setCheckSpellingEnabled(group.readEntry("checkerEnabledByDefault", false));
         const QString language = group.readEntry("Language", QString());
@@ -77,9 +76,7 @@ QString TextAutoGenerateTextLineEdit::text() const
 
 void TextAutoGenerateTextLineEdit::keyPressEvent(QKeyEvent *e)
 {
-    const int key = e->key();
-
-    if (key == Qt::Key_Return || key == Qt::Key_Enter) {
+    if (const int key = e->key(); key == Qt::Key_Return || key == Qt::Key_Enter) {
         if ((key == Qt::Key_Enter && (e->modifiers() == Qt::KeypadModifier)) || !e->modifiers()) {
             Q_EMIT sendMessage(text());
         } else {

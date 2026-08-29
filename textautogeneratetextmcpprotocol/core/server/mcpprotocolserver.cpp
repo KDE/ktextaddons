@@ -24,8 +24,7 @@ McpProtocolServer::~McpProtocolServer() = default;
 void McpProtocolServer::loadPlugin()
 {
     const KPluginMetaData serverPlugin(u"kf6/textautogeneratetext/mcpprotocol/autogeneratetext_mcpprotocolserverplugin"_s);
-    const auto result = KPluginFactory::instantiatePlugin<TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin>(serverPlugin, this);
-    if (result) {
+    if (const auto result = KPluginFactory::instantiatePlugin<TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin>(serverPlugin, this); result) {
         mPlugin = result.plugin;
         initialize();
     } else {

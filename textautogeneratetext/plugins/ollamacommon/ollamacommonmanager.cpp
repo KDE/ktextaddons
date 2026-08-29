@@ -109,8 +109,7 @@ void OllamaCommonManager::addKeepAliveType(QJsonObject &data, OllamaCommonSettin
 
 void OllamaCommonManager::generateToolsArray(const QList<QByteArray> &tools, QJsonObject &data) const
 {
-    const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(tools);
-    if (!array.isEmpty()) {
+    if (const QJsonArray array = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(tools); !array.isEmpty()) {
         data["tools"_L1] = array;
     }
 }

@@ -118,9 +118,8 @@ void TextToSpeechConfigWidget::readConfig()
     mLanguage->selectLocaleName(settings.localeName);
     const QString engineName = settings.engineName;
     // qDebug() << " engineName " << engineName;
-    const int engineIndex = mAvailableEngine->findData(engineName);
     // qDebug() << " engineIndex " << engineIndex;
-    if (engineIndex != -1) {
+    if (const int engineIndex = mAvailableEngine->findData(engineName); engineIndex != -1) {
         mAvailableEngine->setCurrentIndex(engineIndex);
     }
     // FIXME: list of voice is not loading here... need to fix it

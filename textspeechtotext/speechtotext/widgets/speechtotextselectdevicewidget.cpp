@@ -45,12 +45,10 @@ SpeechToTextSelectDeviceWidget::~SpeechToTextSelectDeviceWidget() = default;
 void SpeechToTextSelectDeviceWidget::loadSettings()
 {
     const KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
-    const QByteArray deviceIdentifier = group.readEntry("SoundDevice", QByteArray());
-    if (!deviceIdentifier.isEmpty()) {
+    if (const QByteArray deviceIdentifier = group.readEntry("SoundDevice", QByteArray()); !deviceIdentifier.isEmpty()) {
         const int nbDevice{mDeviceComboBox->count()};
         for (int i = 0; i < nbDevice; ++i) {
-            const QAudioDevice audioDevice = mDeviceComboBox->itemData(i).value<QAudioDevice>();
-            if (audioDevice.id() == deviceIdentifier) {
+            if (const QAudioDevice audioDevice = mDeviceComboBox->itemData(i).value<QAudioDevice>(); audioDevice.id() == deviceIdentifier) {
                 mDeviceComboBox->setCurrentIndex(i);
                 break;
             }
@@ -61,8 +59,7 @@ void SpeechToTextSelectDeviceWidget::loadSettings()
 void SpeechToTextSelectDeviceWidget::saveSettings()
 {
     KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
-    const auto device = mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).value<QAudioDevice>();
-    if (!device.isNull()) {
+    if (const auto device = mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).value<QAudioDevice>(); !device.isNull()) {
         const QByteArray deviceIdentifier = device.id();
         group.writeEntry("SoundDevice", deviceIdentifier);
     }

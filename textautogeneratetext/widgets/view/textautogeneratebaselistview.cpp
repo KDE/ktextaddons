@@ -81,8 +81,7 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
     if (mMode == Mode::Viewing) {
         return;
     }
-    const QModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
+    if (const QModelIndex index = indexAt(event->pos()); index.isValid()) {
         QMenu menu(this);
         auto copyAction =
             new QAction(QIcon::fromTheme(u"edit-copy"_s), mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"), &menu);
@@ -300,11 +299,9 @@ void TextAutoGenerateBaseListView::mousePressEvent(QMouseEvent *event)
 void TextAutoGenerateBaseListView::mouseMoveEvent(QMouseEvent *event)
 {
     // Drag support
-    const int distance = (event->pos() - mPressedPosition).manhattanLength();
-    if (distance > QApplication::startDragDistance()) {
+    if (const int distance = (event->pos() - mPressedPosition).manhattanLength(); distance > QApplication::startDragDistance()) {
         mPressedPosition = {};
-        const QPersistentModelIndex index = indexAt(event->pos());
-        if (index.isValid()) {
+        if (const QPersistentModelIndex index = indexAt(event->pos()); index.isValid()) {
             QStyleOptionViewItem options = listViewOptions();
             options.rect = visualRect(index);
             if (maybeStartDrag(event, options, index)) {
@@ -317,8 +314,7 @@ void TextAutoGenerateBaseListView::mouseMoveEvent(QMouseEvent *event)
 
 void TextAutoGenerateBaseListView::handleMouseEvent(QMouseEvent *event)
 {
-    const QPersistentModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
+    if (const QPersistentModelIndex index = indexAt(event->pos()); index.isValid()) {
         mCurrentIndex = index;
         QStyleOptionViewItem options = listViewOptions();
         options.rect = visualRect(mCurrentIndex);

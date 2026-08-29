@@ -71,8 +71,7 @@ void SpeechToTextComboBoxWidget::setEngineName(const QString &engineName)
 
 void SpeechToTextComboBoxWidget::slotConfigureEngine()
 {
-    const QString engine = mEngine->currentData().toString();
-    if (TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine)) {
+    if (const QString engine = mEngine->currentData().toString(); TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine)) {
         if (TextSpeechToText::SpeechToTextEngineLoader::self()->showConfigureDialog(engine, this)) {
             Q_EMIT configureChanged(engine);
         }
@@ -90,8 +89,7 @@ void SpeechToTextComboBoxWidget::load()
 {
     const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
     const QString engine = groupTranslate.readEntry(TextSpeechToTextUtil::engineTextToSpeechName(), TextSpeechToTextUtil::defaultEngineName());
-    const int index = mEngine->findData(engine);
-    if (index != -1) {
+    if (const int index = mEngine->findData(engine); index != -1) {
         mEngine->setCurrentIndex(index);
     }
 }

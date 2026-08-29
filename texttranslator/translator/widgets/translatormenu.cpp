@@ -51,13 +51,11 @@ void TranslatorMenu::updateMenu()
     const auto fromList = groupTranslate.readEntry(u"From"_s, QStringList());
     const auto toList = groupTranslate.readEntry(u"To"_s, QStringList());
     for (const auto &fromLang : fromList) {
-        const QString fromLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(fromLang);
-        if (fromLangI18n.isEmpty()) {
+        if (const QString fromLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(fromLang); fromLangI18n.isEmpty()) {
             qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"from\" language " << fromLang;
         } else {
             for (const auto &toLang : toList) {
-                const QString toLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(toLang);
-                if (toLangI18n.isEmpty()) {
+                if (const QString toLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(toLang); toLangI18n.isEmpty()) {
                     qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"to\" language " << fromLangI18n;
                 } else {
                     if (fromLangI18n != toLangI18n) {

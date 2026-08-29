@@ -27,8 +27,7 @@ QTextDocument *TextAutoGenerateSearchListViewDelegate::documentForIndex(const QM
     Q_ASSERT(index.isValid());
     const QByteArray uuid = index.data(TextAutoGenerateSearchMessagesModel::MessageUuid).toByteArray();
     Q_ASSERT(!uuid.isEmpty());
-    auto it = mDocumentCache.find(uuid);
-    if (it != mDocumentCache.end()) {
+    if (auto it = mDocumentCache.find(uuid); it != mDocumentCache.end()) {
         auto ret = it->value.get();
         if (width != -1 && !qFuzzyCompare(ret->textWidth(), width)) {
             ret->setTextWidth(width);
@@ -52,8 +51,7 @@ void TextAutoGenerateSearchListViewDelegate::paint(QPainter *painter, const QSty
     drawBackground(painter, option, index);
     painter->restore();
 
-    const MessageLayout layout = doLayout(option, index);
-    if (layout.textRect.isValid()) {
+    if (const MessageLayout layout = doLayout(option, index); layout.textRect.isValid()) {
         painter->save();
         painter->setPen(Qt::NoPen);
         painter->setBrush(QBrush(option.palette.color(QPalette::Active, QPalette::Mid)));
@@ -104,8 +102,7 @@ void TextAutoGenerateSearchListViewDelegate::draw(QPainter *painter,
 QSize TextAutoGenerateSearchListViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const QByteArray uuid = index.data(TextAutoGenerateSearchMessagesModel::MessageUuid).toByteArray();
-    auto it = mSizeHintCache.find(uuid);
-    if (it != mSizeHintCache.end()) {
+    if (auto it = mSizeHintCache.find(uuid); it != mSizeHintCache.end()) {
         const QSize result = it->value;
         qCDebug(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "TextAutoGenerateListViewDelegate: SizeHint found in cache: " << result;
         return result;
@@ -149,16 +146,14 @@ TextAutoGenerateSearchListViewDelegate::MessageLayout TextAutoGenerateSearchList
 
 bool TextAutoGenerateSearchListViewDelegate::mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
-    const QEvent::Type eventType = event->type();
-    if (eventType == QEvent::MouseButtonRelease) {
+    if (const QEvent::Type eventType = event->type(); eventType == QEvent::MouseButtonRelease) {
         auto mev = static_cast<QMouseEvent *>(event);
         const TextAutoGenerateSearchListViewDelegate::MessageLayout layout = doLayout(option, index);
         if (handleMouseEvent(mev, layout.decoRect, option, index)) {
             return true;
         }
     } else if (eventType == QEvent::MouseButtonPress || eventType == QEvent::MouseMove || eventType == QEvent::MouseButtonDblClick) {
-        auto mev = static_cast<QMouseEvent *>(event);
-        if (mev->buttons() & Qt::LeftButton) {
+        if (auto mev = static_cast<QMouseEvent *>(event); mev->buttons() & Qt::LeftButton) {
             const TextAutoGenerateSearchListViewDelegate::MessageLayout layout = doLayout(option, index);
             if (handleMouseEvent(mev, layout.decoRect, option, index)) {
                 return true;
@@ -209,8 +204,7 @@ bool TextAutoGenerateSearchListViewDelegate::handleMouseEvent(QMouseEvent *mouse
     case QEvent::MouseMove:
         if (!mTextSelection->mightStartDrag()) {
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
-                const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
-                if (charPos != -1) {
+                if (const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit); charPos != -1) {
                     // QWidgetTextControl also has code to support isPreediting()/commitPreedit(), selectBlockOnTripleClick
                     mTextSelection->setTextSelectionEnd(index, charPos);
                     return true;
@@ -224,8 +218,7 @@ bool TextAutoGenerateSearchListViewDelegate::handleMouseEvent(QMouseEvent *mouse
         // Clicks on links
         if (!mTextSelection->hasSelection()) {
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
-                const QString link = doc->documentLayout()->anchorAt(pos);
-                if (!link.isEmpty()) {
+                if (const QString link = doc->documentLayout()->anchorAt(pos); !link.isEmpty()) {
                     if (link.startsWith(TextAutoGenerateSearchMessageUtils::scheme())) {
                         Q_EMIT goToMessage(link);
                     } else {

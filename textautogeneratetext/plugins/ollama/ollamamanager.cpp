@@ -168,8 +168,7 @@ void OllamaManager::loadModels()
             auto matchesModelName = [installedName](const OllamaCommonModelAvailableInfo &availableInfo) {
                 return availableInfo.name() == installedName;
             };
-            auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
-            if (it != mAvailableInfos.constEnd()) {
+            if (auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName); it != mAvailableInfos.constEnd()) {
                 installed.setCategories((*it).categories());
                 installed.setLanguages((*it).languages());
                 installed.setModelUrl((*it).url());
@@ -274,8 +273,7 @@ bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
     auto matchesModelName = [&](const OllamaModelInstalledInfo &info) {
         return info.model() == modelName;
     };
-    auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName);
-    if (it == mInstalledInfos.constEnd()) {
+    if (auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName); it == mInstalledInfos.constEnd()) {
         return false;
     }
     return true;

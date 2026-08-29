@@ -66,8 +66,7 @@ void ExtractLanguageJob::start()
             for (const QString &file : entries) {
                 const KArchiveEntry *filePathEntry = zipDir->entry(name + u"/%1"_s.arg(file));
                 if (filePathEntry && filePathEntry->isFile()) {
-                    const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
-                    if (!filePath->copyTo(storeDirectory)) {
+                    if (const auto filePath = static_cast<const KArchiveFile *>(filePathEntry); !filePath->copyTo(storeDirectory)) {
                         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to copy to " << storeDirectory;
                     }
                 } else {
