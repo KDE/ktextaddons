@@ -79,8 +79,8 @@ void RichTextEditFindBar::autoSearchMoveCursor()
 
 void RichTextEditFindBar::slotReplaceText()
 {
-    const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
     if (d->mView->textCursor().hasSelection()) {
+        const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
         if (mFindWidget->isRegularExpression()) {
             if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegularExpression())) {
                 d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());

@@ -32,8 +32,8 @@ void PluginCommonModelInstalledInfosSortProxyModel::setCategories(const QList<Te
 
 bool PluginCommonModelInstalledInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
     if (!mCategories.isEmpty()) {
+        const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
         const TextAutoGenerateText::TextAutoGenerateManager::Categories categories =
             modelIndex.data(PluginCommonModelInstalledInfosModelBase::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
         if (categories == TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown) {

@@ -52,7 +52,6 @@ VerifyNewVersionWidget::VerifyNewVersionInfo VerifyNewVersionWidget::generateVer
     VerifyNewVersionWidget::VerifyNewVersionInfo info;
 #if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
     const QString defaultUrlPath = url;
-    const QString stableBranch = stableBranchVersion;
     QString osName;
 
     TextAddonsWidgets::VerifyNewVersionWidget::OsVersion osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::Unknown;
@@ -74,7 +73,7 @@ VerifyNewVersionWidget::VerifyNewVersionInfo VerifyNewVersionWidget::generateVer
 
     QString generatedUrl;
     if (stable) {
-        generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
+        generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranchVersion, osName);
     } else {
         generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
     }

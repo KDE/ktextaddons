@@ -1077,9 +1077,8 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
     int start = move.position();
     move.clearSelection();
     move.insertText(text);
-    int end = move.position();
-
     if (hasSelection) {
+        int end = move.position();
         move.setPosition(end);
         move.setPosition(start, QTextCursor::KeepAnchor);
     } else {

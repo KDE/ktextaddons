@@ -118,10 +118,10 @@ void CompletionListView::slotCompletionAvailable()
         pos.setX(screenRect.x());
     }
 
-    int top = pos.y() - rh - screenRect.top() + 2;
-    int bottom = screenRect.bottom() - pos.y();
+    const int bottom = screenRect.bottom() - pos.y();
     h = qMax(h, minimumHeight());
     if (h > bottom) {
+        const int top = pos.y() - rh - screenRect.top() + 2;
         h = qMin(qMax(top, bottom), h);
 
         if (top > bottom) {

@@ -587,13 +587,12 @@ void AutoCorrection::uppercaseFirstCharOfSentence()
     d->mCursor.setPosition(block.position());
     d->mCursor.setPosition(startPos, QTextCursor::KeepAnchor);
 
-    int position = d->mCursor.selectionEnd();
-
     if (const QString text = d->mCursor.selectedText(); text.isEmpty()) { // start of a paragraph
         if (!excludeToUppercase(d->mWord)) {
             d->mWord.replace(0, 1, d->mWord.at(0).toUpper());
         }
     } else {
+        int position = d->mCursor.selectionEnd();
         QString::ConstIterator constIter = text.constEnd();
         --constIter;
 

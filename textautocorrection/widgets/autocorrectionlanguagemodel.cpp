@@ -65,8 +65,8 @@ void AutoCorrectionLanguageModel::fillModel()
     const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyTerritory);
     mLocalInfos.reserve(allLocales.count() + 1);
     for (const QLocale &lang : allLocales) {
-        QString languageCode = lang.name();
         if (lang != cLocale) {
+            QString languageCode = lang.name();
             // bug 484328 => don't translate locale name.
 #if 0
             const QString nativeName = lang.nativeLanguageName();

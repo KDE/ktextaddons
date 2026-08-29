@@ -46,8 +46,8 @@ void EmojiListView::selectEmoji(const QModelIndex &index)
 void EmojiListView::keyPressEvent(QKeyEvent *event)
 {
     const bool isControlClicked = event->modifiers() & Qt::ControlModifier;
-    int fontSize = mFontSize;
     if (isControlClicked) {
+        int fontSize = mFontSize;
         if (event->key() == Qt::Key_Plus) {
             Q_EMIT fontSizeChanged(++fontSize);
         } else if (event->key() == Qt::Key_Minus) {
@@ -65,8 +65,8 @@ void EmojiListView::keyPressEvent(QKeyEvent *event)
 
 void EmojiListView::wheelEvent(QWheelEvent *e)
 {
-    int fontSize = mFontSize;
     if (e->modifiers() == Qt::ControlModifier) {
+        int fontSize = mFontSize;
         if (const int y = e->angleDelta().y(); y < 0) {
             Q_EMIT fontSizeChanged(--fontSize);
         } else if (y > 0) {

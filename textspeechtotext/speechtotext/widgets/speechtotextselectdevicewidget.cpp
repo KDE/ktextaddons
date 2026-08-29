@@ -58,8 +58,8 @@ void SpeechToTextSelectDeviceWidget::loadSettings()
 
 void SpeechToTextSelectDeviceWidget::saveSettings()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
     if (const auto device = mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).value<QAudioDevice>(); !device.isNull()) {
+        KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
         const QByteArray deviceIdentifier = device.id();
         group.writeEntry("SoundDevice", deviceIdentifier);
     }

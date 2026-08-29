@@ -276,9 +276,9 @@ void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
         clear();
     } else {
         for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
-            auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
             const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
             if (connection.first == uuid) {
+                auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
                 if (reply) {
                     reply->cancel();
                 }

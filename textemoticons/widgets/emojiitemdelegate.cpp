@@ -20,7 +20,6 @@ EmojiItemDelegate::~EmojiItemDelegate() = default;
 void EmojiItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (const bool imageAnimated = index.data(TextEmoticonsCore::EmojiModel::Animated).toBool(); imageAnimated) {
-        const QString imageAnimatedFilename = index.data(TextEmoticonsCore::EmojiModel::AnimatedFileName).toString();
         auto it = findRunningAnimatedImage(index);
         QPixmap scaledPixmap;
         if (it != mRunningAnimatedImages.end()) {
@@ -28,6 +27,7 @@ void EmojiItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
         } else {
             mRunningAnimatedImages.emplace_back(index);
             auto &rai = mRunningAnimatedImages.back();
+            const QString imageAnimatedFilename = index.data(TextEmoticonsCore::EmojiModel::AnimatedFileName).toString();
             rai.movie->setFileName(imageAnimatedFilename);
             rai.movie->setScaledSize(option.decorationSize);
             auto view = qobject_cast<QAbstractItemView *>(const_cast<QWidget *>(option.widget));

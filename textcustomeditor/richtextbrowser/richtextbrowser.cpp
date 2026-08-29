@@ -578,9 +578,8 @@ void RichTextBrowser::moveLineUpDown(bool moveUp)
     const int start = move.position();
     move.clearSelection();
     move.insertText(text);
-    const int end = move.position();
-
     if (hasSelection) {
+        const int end = move.position();
         move.setPosition(end);
         move.setPosition(start, QTextCursor::KeepAnchor);
     } else {

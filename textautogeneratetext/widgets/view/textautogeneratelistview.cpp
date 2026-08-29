@@ -119,9 +119,9 @@ void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
-        const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
         const QByteArray chatId = mManager->currentChatId();
         if (const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid); indexAnswer.isValid()) {
+            const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
             Q_EMIT refreshAnswerRequested(chatId, indexAnswer, tools, {}); // TODO use attachmentList !
         }
     }
