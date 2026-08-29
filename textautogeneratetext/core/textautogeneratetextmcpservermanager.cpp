@@ -34,6 +34,7 @@ void TextAutoGenerateTextMcpServerManager::loadServers()
     }
 
     QList<TextAutoGenerateTextMcpServer> mcpServers;
+    mcpServers.reserve(mcpServerList.count());
     for (const auto &group : mcpServerList) {
         const KConfigGroup configGroup(config, group);
         TextAutoGenerateTextMcpServer server;

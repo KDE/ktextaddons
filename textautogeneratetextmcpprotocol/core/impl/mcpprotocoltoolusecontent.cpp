@@ -42,8 +42,8 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
     tool.setId(obj["id"_L1].toString());
     tool.setName(obj.value("name"_L1).toString());
 
-    if (obj.contains("input"_L1) && obj["input"_L1].isObject()) {
-        const QJsonObject mapObj_input = obj["input"_L1].toObject();
+    if (const QJsonValue inputValue = obj.value("input"_L1); inputValue.isObject()) {
+        const QJsonObject mapObj_input = inputValue.toObject();
         QMap<QString, QJsonValue> map_input;
         for (auto it = mapObj_input.constBegin(); it != mapObj_input.constEnd(); ++it) {
             map_input.insert(it.key(), it.value());

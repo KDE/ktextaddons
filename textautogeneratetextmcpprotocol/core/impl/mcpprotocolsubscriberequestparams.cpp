@@ -50,8 +50,8 @@ QJsonObject McpProtocolSubscribeRequestParams::Meta::toJson(const McpProtocolSub
 McpProtocolSubscribeRequestParams McpProtocolSubscribeRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolSubscribeRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolSubscribeRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolSubscribeRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     prompt.setUri(obj.value("uri"_L1).toString());
     return prompt;

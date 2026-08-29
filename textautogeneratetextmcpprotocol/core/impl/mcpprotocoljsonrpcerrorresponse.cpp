@@ -29,8 +29,8 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    if (obj.contains("error"_L1) && obj["error"_L1].isObject()) {
-        response.setError(McpProtocolError::fromJson(obj["error"_L1].toObject()));
+    if (const QJsonValue errorValue = obj.value("error"_L1); errorValue.isObject()) {
+        response.setError(McpProtocolError::fromJson(errorValue.toObject()));
     }
     if (obj.contains("id"_L1)) {
         response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));

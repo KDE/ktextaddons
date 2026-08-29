@@ -38,8 +38,8 @@ McpProtocolElicitRequest McpProtocolElicitRequest::fromJson(const QJsonObject &o
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolElicitRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolUtils::elicitRequestParamsFromJson(obj["params"_L1]));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolUtils::elicitRequestParamsFromJson(paramsValue));
     }
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));

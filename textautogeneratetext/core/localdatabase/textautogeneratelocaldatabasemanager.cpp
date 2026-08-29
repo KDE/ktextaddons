@@ -45,6 +45,7 @@ QStringList TextAutoGenerateLocalDatabaseManager::chatsList() const
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalDatabaseManager::searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText)
 {
     QList<TextAutoGenerateSearchMessage> lst;
+    lst.reserve(listIds.count());
     for (const QByteArray &id : listIds) {
         lst.append(mMessagesDatabase->searchMessages(QString::fromLatin1(id), searchText));
     }

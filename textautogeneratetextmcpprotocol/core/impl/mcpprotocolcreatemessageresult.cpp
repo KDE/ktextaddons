@@ -36,8 +36,8 @@ McpProtocolCreateMessageResult McpProtocolCreateMessageResult::fromJson(const QJ
         return {};
     }
     McpProtocolCreateMessageResult prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     prompt.setContent(McpProtocolUtils::createMessageResultContentFromJson(obj["content"_L1]));
     prompt.setModel(obj.value("model"_L1).toString());

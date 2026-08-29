@@ -38,8 +38,8 @@ McpProtocolJSONRPCNotification McpProtocolJSONRPCNotification::fromJson(const QJ
         return {};
     }
     response.setMethod(obj.value("method"_L1).toString());
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        const QJsonObject mapObj_params = obj["params"_L1].toObject();
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        const QJsonObject mapObj_params = paramsValue.toObject();
         QMap<QString, QJsonValue> map_params;
         for (auto it = mapObj_params.constBegin(); it != mapObj_params.constEnd(); ++it) {
             map_params.insert(it.key(), it.value());

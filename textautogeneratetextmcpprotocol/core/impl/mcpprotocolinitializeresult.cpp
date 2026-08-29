@@ -41,19 +41,19 @@ McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObj
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: serverInfo";
         return prompt;
     }
-    if (obj.contains("capabilities"_L1) && obj["capabilities"_L1].isObject()) {
-        prompt.setCapabilities(McpProtocolServerCapabilities::fromJson(obj["capabilities"_L1].toObject()));
+    if (const QJsonValue capabilitiesValue = obj.value("capabilities"_L1); capabilitiesValue.isObject()) {
+        prompt.setCapabilities(McpProtocolServerCapabilities::fromJson(capabilitiesValue.toObject()));
     }
     if (obj.contains("instructions"_L1)) {
         prompt.setInstructions(obj.value("instructions"_L1).toString());
     }
     prompt.setProtocolVersion(obj["protocolVersion"_L1].toString());
-    if (obj.contains("serverInfo"_L1) && obj["serverInfo"_L1].isObject()) {
-        prompt.setServerInfo(McpProtocolImplementation::fromJson(obj["serverInfo"_L1].toObject()));
+    if (const QJsonValue serverInfoValue = obj.value("serverInfo"_L1); serverInfoValue.isObject()) {
+        prompt.setServerInfo(McpProtocolImplementation::fromJson(serverInfoValue.toObject()));
     }
 
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     return prompt;
 }

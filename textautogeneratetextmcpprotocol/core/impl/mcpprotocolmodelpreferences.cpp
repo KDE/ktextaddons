@@ -30,9 +30,10 @@ McpProtocolModelPreferences McpProtocolModelPreferences::fromJson(const QJsonObj
     if (obj.contains("costPriority"_L1)) {
         result.setCostPriority(obj.value("costPriority"_L1).toDouble());
     }
-    if (obj.contains("hints"_L1) && obj["hints"_L1].isArray()) {
-        const QJsonArray arr = obj["hints"_L1].toArray();
+    if (const QJsonValue hintsValue = obj.value("hints"_L1); hintsValue.isArray()) {
+        const QJsonArray arr = hintsValue.toArray();
         QList<McpProtocolModelHint> hints;
+        hints.reserve(arr.count());
         for (const auto &v : arr) {
             hints.append(McpProtocolModelHint::fromJson(v.toObject()));
         }

@@ -28,8 +28,8 @@ void McpProtocolCompleteRequestParams::Context::setArguments(std::optional<QMap<
 McpProtocolCompleteRequestParams::Context McpProtocolCompleteRequestParams::Context::fromJson(const QJsonObject &obj)
 {
     McpProtocolCompleteRequestParams::Context context;
-    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isObject()) {
-        const QJsonObject mapObj_arguments = obj["arguments"_L1].toObject();
+    if (const QJsonValue argumentsValue = obj.value("arguments"_L1); argumentsValue.isObject()) {
+        const QJsonObject mapObj_arguments = argumentsValue.toObject();
         QMap<QString, QString> map_arguments;
         for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value().toString());
@@ -143,14 +143,14 @@ QJsonObject McpProtocolCompleteRequestParams::Meta::toJson(const McpProtocolComp
 McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolCompleteRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("argument"_L1) && obj["argument"_L1].isObject()) {
-        prompt.setArgument(McpProtocolCompleteRequestParams::Argument::fromJson(obj["argument"_L1].toObject()));
+    if (const QJsonValue argumentValue = obj.value("argument"_L1); argumentValue.isObject()) {
+        prompt.setArgument(McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject()));
     }
-    if (obj.contains("context"_L1) && obj["context"_L1].isObject()) {
-        prompt.setContext(McpProtocolCompleteRequestParams::Context::fromJson(obj["context"_L1].toObject()));
+    if (const QJsonValue contextValue = obj.value("context"_L1); contextValue.isObject()) {
+        prompt.setContext(McpProtocolCompleteRequestParams::Context::fromJson(contextValue.toObject()));
     }
     if (obj.contains("ref"_L1)) {
         prompt.setRef(McpProtocolUtils::completeRequestParamsRefFromJson(obj["ref"_L1].toObject()));

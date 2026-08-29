@@ -52,11 +52,11 @@ QJsonObject McpProtocolGetPromptRequestParams::Meta::toJson(const McpProtocolGet
 McpProtocolGetPromptRequestParams McpProtocolGetPromptRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolGetPromptRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolGetPromptRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolGetPromptRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isObject()) {
-        const QJsonObject mapObj_arguments = obj["arguments"_L1].toObject();
+    if (const QJsonValue argumentsValue = obj.value("arguments"_L1); argumentsValue.isObject()) {
+        const QJsonObject mapObj_arguments = argumentsValue.toObject();
         QMap<QString, QString> map_arguments;
         for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value().toString());

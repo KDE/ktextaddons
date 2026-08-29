@@ -31,9 +31,10 @@ McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject 
     if (obj.contains("description"_L1)) {
         impl.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
-        const QJsonArray arr = obj["icons"_L1].toArray();
+    if (const QJsonValue iconsValue = obj.value("icons"_L1); iconsValue.isArray()) {
+        const QJsonArray arr = iconsValue.toArray();
         QList<McpProtocolIcon> icons;
+        icons.reserve(arr.count());
         for (const auto &v : arr) {
             icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }

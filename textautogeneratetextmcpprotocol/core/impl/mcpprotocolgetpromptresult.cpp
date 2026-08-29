@@ -26,15 +26,16 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolGetPromptResult McpProtocolGetPromptResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolGetPromptResult prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("messages"_L1) && obj["messages"_L1].isArray()) {
-        const QJsonArray arr = obj["messages"_L1].toArray();
+    if (const QJsonValue messagesValue = obj.value("messages"_L1); messagesValue.isArray()) {
+        const QJsonArray arr = messagesValue.toArray();
         QList<McpProtocolPromptMessage> msgs;
+        msgs.reserve(arr.count());
         for (const auto &v : arr) {
             msgs.append(McpProtocolPromptMessage::fromJson(v.toObject()));
         }

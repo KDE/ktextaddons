@@ -52,11 +52,11 @@ QJsonObject McpProtocolCallToolRequestParams::Meta::toJson(const McpProtocolCall
 McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolCallToolRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolCallToolRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolCallToolRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("arguments"_L1) && obj["arguments"_L1].isObject()) {
-        const QJsonObject mapObj_arguments = obj["arguments"_L1].toObject();
+    if (const QJsonValue argumentsValue = obj.value("arguments"_L1); argumentsValue.isObject()) {
+        const QJsonObject mapObj_arguments = argumentsValue.toObject();
         QMap<QString, QJsonValue> map_arguments;
         for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value());
@@ -64,8 +64,8 @@ McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(cons
         prompt.setArguments(map_arguments);
     }
     prompt.setName(obj.value("name"_L1).toString());
-    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
-        prompt.setTask(McpProtocolTaskMetadata::fromJson(obj["task"_L1].toObject()));
+    if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
+        prompt.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
     return prompt;
 }

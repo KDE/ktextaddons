@@ -52,14 +52,14 @@ QJsonObject McpProtocolInitializeRequestParams::Meta::toJson(const McpProtocolIn
 McpProtocolInitializeRequestParams McpProtocolInitializeRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolInitializeRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolInitializeRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolInitializeRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("capabilities"_L1) && obj["capabilities"_L1].isObject()) {
-        prompt.setCapabilities(McpProtocolClientCapabilities::fromJson(obj["capabilities"_L1].toObject()));
+    if (const QJsonValue capabilitiesValue = obj.value("capabilities"_L1); capabilitiesValue.isObject()) {
+        prompt.setCapabilities(McpProtocolClientCapabilities::fromJson(capabilitiesValue.toObject()));
     }
-    if (obj.contains("clientInfo"_L1) && obj["clientInfo"_L1].isObject()) {
-        prompt.setClientInfo(McpProtocolImplementation::fromJson(obj["clientInfo"_L1].toObject()));
+    if (const QJsonValue clientInfoValue = obj.value("clientInfo"_L1); clientInfoValue.isObject()) {
+        prompt.setClientInfo(McpProtocolImplementation::fromJson(clientInfoValue.toObject()));
     }
     prompt.setProtocolVersion(obj.value("protocolVersion"_L1).toString());
     return prompt;

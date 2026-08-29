@@ -47,12 +47,13 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
 {
     McpProtocolToolResultContent tool;
 
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        tool.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        tool.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("content"_L1) && obj["content"_L1].isArray()) {
-        const QJsonArray arr = obj["content"_L1].toArray();
+    if (const QJsonValue contentValue = obj.value("content"_L1); contentValue.isArray()) {
+        const QJsonArray arr = contentValue.toArray();
         QList<McpProtocolUtils::ContentBlock> contents;
+        contents.reserve(arr.count());
         for (const auto &v : arr) {
             contents.append(McpProtocolUtils::contentBlockFromJson(v));
         }
@@ -61,8 +62,8 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
     if (obj.contains("isError"_L1)) {
         tool.setIsError(obj.value("isError"_L1).toBool());
     }
-    if (obj.contains("structuredContent"_L1) && obj["structuredContent"_L1].isObject()) {
-        const QJsonObject mapObj_structuredContent = obj["structuredContent"_L1].toObject();
+    if (const QJsonValue structuredContentValue = obj.value("structuredContent"_L1); structuredContentValue.isObject()) {
+        const QJsonObject mapObj_structuredContent = structuredContentValue.toObject();
         QMap<QString, QJsonValue> map_structuredContent;
         for (auto it = mapObj_structuredContent.constBegin(); it != mapObj_structuredContent.constEnd(); ++it) {
             map_structuredContent.insert(it.key(), it.value());

@@ -56,6 +56,7 @@ TextAutoGenerateToolsWidget::~TextAutoGenerateToolsWidget() = default;
 QList<QByteArray> TextAutoGenerateToolsWidget::generateListOfActiveTools() const
 {
     QList<QByteArray> activeTools;
+    activeTools.reserve(mListButton.count());
     for (const auto b : std::as_const(mListButton)) {
         if (b->isChecked()) {
             activeTools.append(b->property(button_property).toByteArray());

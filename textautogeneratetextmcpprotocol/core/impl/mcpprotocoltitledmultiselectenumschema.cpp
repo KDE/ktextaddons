@@ -105,9 +105,9 @@ McpProtocolTitledMultiSelectEnumSchema::Items McpProtocolTitledMultiSelectEnumSc
         return {};
     }
     McpProtocolTitledMultiSelectEnumSchema::Items result;
-    if (obj.contains("anyOf"_L1) && obj["anyOf"_L1].isArray()) {
+    if (const QJsonValue anyOfValue = obj.value("anyOf"_L1); anyOfValue.isArray()) {
         QList<AnyOfItem> anyOf;
-        const QJsonArray arr = obj["anyOf"_L1].toArray();
+        const QJsonArray arr = anyOfValue.toArray();
         for (const QJsonValue &v : arr) {
             anyOf.append(McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()));
         }
@@ -147,9 +147,10 @@ McpProtocolTitledMultiSelectEnumSchema McpProtocolTitledMultiSelectEnumSchema::f
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: type";
         return {};
     }
-    if (obj.contains("default"_L1) && obj["default"_L1].isArray()) {
-        const QJsonArray arr = obj["default"_L1].toArray();
+    if (const QJsonValue defaultValue2 = obj.value("default"_L1); defaultValue2.isArray()) {
+        const QJsonArray arr = defaultValue2.toArray();
         QStringList list_default;
+        list_default.reserve(arr.count());
         for (const QJsonValue &v : arr) {
             list_default.append(v.toString());
         }
@@ -158,8 +159,8 @@ McpProtocolTitledMultiSelectEnumSchema McpProtocolTitledMultiSelectEnumSchema::f
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("items"_L1) && obj["items"_L1].isObject()) {
-        prompt.setItems(McpProtocolTitledMultiSelectEnumSchema::Items::fromJson(obj["items"_L1].toObject()));
+    if (const QJsonValue itemsValue = obj.value("items"_L1); itemsValue.isObject()) {
+        prompt.setItems(McpProtocolTitledMultiSelectEnumSchema::Items::fromJson(itemsValue.toObject()));
     }
     if (obj.contains("maxItems"_L1)) {
         prompt.setMaxItems(obj.value("maxItems"_L1).toInt());

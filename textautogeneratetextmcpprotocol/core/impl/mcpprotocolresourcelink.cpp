@@ -48,18 +48,19 @@ McpProtocolResourceLink McpProtocolResourceLink::fromJson(const QJsonObject &obj
         prompt.setTitle(obj.value("title"_L1).toString());
     }
 
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
-        prompt.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    if (const QJsonValue annotationsValue = obj.value("annotations"_L1); annotationsValue.isObject()) {
+        prompt.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
-        const QJsonArray arr = obj["icons"_L1].toArray();
+    if (const QJsonValue iconsValue = obj.value("icons"_L1); iconsValue.isArray()) {
+        const QJsonArray arr = iconsValue.toArray();
         QList<McpProtocolIcon> list_icons;
+        list_icons.reserve(arr.count());
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }

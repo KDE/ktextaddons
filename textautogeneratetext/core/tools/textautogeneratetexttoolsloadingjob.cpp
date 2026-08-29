@@ -55,6 +55,7 @@ void TextAutoGenerateTextToolsLoadingJob::loadTools()
 void TextAutoGenerateTextToolsLoadingJob::parseJsonTools(const QJsonArray &array)
 {
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> lstTool;
+    lstTool.reserve(array.count());
     for (const auto &v : array) {
         TextAutoGenerateText::TextAutoGenerateTextToolInternal tool;
         tool.parse(v.toObject());

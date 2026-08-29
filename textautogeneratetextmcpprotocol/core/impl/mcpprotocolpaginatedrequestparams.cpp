@@ -49,8 +49,8 @@ QJsonObject McpProtocolPaginatedRequestParams::Meta::toJson(const McpProtocolPag
 McpProtocolPaginatedRequestParams McpProtocolPaginatedRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolPaginatedRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolPaginatedRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolPaginatedRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     prompt.setCursor(obj.value("cursor"_L1).toString());
     return prompt;

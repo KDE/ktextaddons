@@ -32,8 +32,8 @@ McpProtocolSamplingMessage McpProtocolSamplingMessage::fromJson(const QJsonObjec
         return {};
     }
     McpProtocolSamplingMessage message;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        message.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        message.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     message.setContent(McpProtocolUtils::createMessageResultContentFromJson(obj["content"_L1]));
     message.setRole(McpProtocolUtils::convertRoleFromString(obj.value("role"_L1).toString()));

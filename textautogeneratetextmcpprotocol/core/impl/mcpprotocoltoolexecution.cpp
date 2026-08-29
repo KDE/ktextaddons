@@ -25,8 +25,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolToolExecution McpProtocolToolExecution::fromJson(const QJsonObject &obj)
 {
     McpProtocolToolExecution result;
-    if (obj.contains("taskSupport"_L1) && obj["taskSupport"_L1].isString()) {
-        result.setTaskSupport(McpProtocolToolExecution::convertTaskSupportFromString(obj["taskSupport"_L1].toString()));
+    if (const QJsonValue taskSupportValue = obj.value("taskSupport"_L1); taskSupportValue.isString()) {
+        result.setTaskSupport(McpProtocolToolExecution::convertTaskSupportFromString(taskSupportValue.toString()));
     }
     return result;
 }

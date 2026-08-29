@@ -43,17 +43,19 @@ McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(co
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("enum"_L1) && obj["enum"_L1].isArray()) {
-        const QJsonArray arr = obj["enum"_L1].toArray();
+    if (const QJsonValue enumValue = obj.value("enum"_L1); enumValue.isArray()) {
+        const QJsonArray arr = enumValue.toArray();
         QStringList lst;
+        lst.reserve(arr.count());
         for (const auto &v : arr) {
             lst.append(v.toString());
         }
         prompt.setEnums(lst);
     }
-    if (obj.contains("enumNames"_L1) && obj["enumNames"_L1].isArray()) {
-        const QJsonArray arr = obj["enumNames"_L1].toArray();
+    if (const QJsonValue enumNamesValue = obj.value("enumNames"_L1); enumNamesValue.isArray()) {
+        const QJsonArray arr = enumNamesValue.toArray();
         QStringList list_enumNames;
+        list_enumNames.reserve(arr.count());
         for (const auto &v : arr) {
             list_enumNames.append(v.toString());
         }

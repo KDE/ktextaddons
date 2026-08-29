@@ -103,6 +103,7 @@ TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonO
     if (o.contains("tools"_L1)) {
         const QJsonArray toolsArray = o["tools"_L1].toArray();
         QList<QByteArray> lst;
+        lst.reserve(toolsArray.count());
         for (int i = 0; i < toolsArray.count(); i++) {
             lst.append(toolsArray[i].toString().toLatin1());
         }

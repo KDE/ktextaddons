@@ -29,14 +29,14 @@ McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificatio
 {
     McpProtocolLoggingMessageNotificationParams params;
     params.setData(obj.value("data"_L1));
-    if (obj.contains("level"_L1) && obj["level"_L1].isString()) {
-        params.setLevel(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelFromString(obj["level"_L1].toString()));
+    if (const QJsonValue levelValue = obj.value("level"_L1); levelValue.isString()) {
+        params.setLevel(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelFromString(levelValue.toString()));
     }
     if (obj.contains("logger"_L1)) {
         params.setLogger(obj.value("logger"_L1).toString());
     }
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        params.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        params.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     return params;
 }

@@ -77,6 +77,7 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
     QJsonObject propertiesObj;
     QJsonArray required;
     QStringList lst;
+    lst.reserve(mProperties.count());
     for (const TextAutoGenerateTextToolPluginProperty &property : std::as_const(mProperties)) {
         QJsonObject prop;
         prop["type"_L1] = TextAutoGenerateTextToolPluginProperty::convertPropertyTypeToString(property.propertyType());

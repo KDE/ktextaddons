@@ -56,8 +56,8 @@ McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj
         prompt.setMinLength(obj.value("minLength"_L1).toInt());
     }
 
-    if (obj.contains("format"_L1) && obj["format"_L1].isString()) {
-        prompt.setFormat(convertModeFromString(obj["format"_L1].toString()));
+    if (const QJsonValue formatValue = obj.value("format"_L1); formatValue.isString()) {
+        prompt.setFormat(convertModeFromString(formatValue.toString()));
     }
     return prompt;
 }

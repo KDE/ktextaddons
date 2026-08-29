@@ -59,8 +59,8 @@ McpProtocolGetTaskPayloadRequest McpProtocolGetTaskPayloadRequest::fromJson(cons
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolGetTaskPayloadRequest::Params::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolGetTaskPayloadRequest::Params::fromJson(paramsValue.toObject()));
     }
     return prompt;
 }

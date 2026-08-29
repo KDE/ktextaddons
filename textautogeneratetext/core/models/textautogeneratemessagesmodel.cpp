@@ -465,6 +465,7 @@ QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) 
 QList<QJsonObject> TextAutoGenerateMessagesModel::convertToOllamaChat(bool hasSystemMessageSupport, bool hasTextOnlySupport) const
 {
     QList<QJsonObject> lst;
+    lst.reserve(mMessages.count());
     for (const auto &msg : mMessages) {
         if (const auto obj = msg.convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport); !obj.isEmpty()) {
             lst.append(obj);

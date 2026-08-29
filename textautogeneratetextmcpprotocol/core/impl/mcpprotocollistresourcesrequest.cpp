@@ -38,8 +38,8 @@ McpProtocolListResourcesRequest McpProtocolListResourcesRequest::fromJson(const 
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolListResourcesRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'resources/list', got: " << obj.value("method"_L1).toString();
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolPaginatedRequestParams::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolPaginatedRequestParams::fromJson(paramsValue.toObject()));
     }
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));

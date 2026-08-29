@@ -33,8 +33,8 @@ McpProtocolURLElicitationRequiredError McpProtocolURLElicitationRequiredError::f
         return {};
     }
     McpProtocolURLElicitationRequiredError result;
-    if (obj.contains("error"_L1) && obj["error"_L1].isObject()) {
-        result.setError(McpProtocolError::fromJson(obj["error"_L1].toObject()));
+    if (const QJsonValue errorValue = obj.value("error"_L1); errorValue.isObject()) {
+        result.setError(McpProtocolError::fromJson(errorValue.toObject()));
     }
     if (obj.contains("id"_L1)) {
         result.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));

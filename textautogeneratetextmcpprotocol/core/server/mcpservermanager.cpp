@@ -38,6 +38,7 @@ void McpServerManager::loadServers()
     }
 
     QList<McpServer> mcpServers;
+    mcpServers.reserve(mcpServerList.count());
     for (const auto &group : mcpServerList) {
         const KConfigGroup configGroup(config, group);
         McpServer server;

@@ -36,8 +36,8 @@ McpProtocolProgressNotification McpProtocolProgressNotification::fromJson(const 
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolProgressNotification::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolProgressNotificationParams::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolProgressNotificationParams::fromJson(paramsValue.toObject()));
     }
     return prompt;
 }

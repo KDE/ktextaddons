@@ -75,41 +75,41 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJsonObject &obj)
 {
     McpProtocolServerCapabilities capabilities;
-    if (obj.contains("completions"_L1) && obj["completions"_L1].isObject()) {
-        const QJsonObject mapObj_completions = obj["completions"_L1].toObject();
+    if (const QJsonValue completionsValue = obj.value("completions"_L1); completionsValue.isObject()) {
+        const QJsonObject mapObj_completions = completionsValue.toObject();
         QMap<QString, QJsonValue> map_completions;
         for (auto it = mapObj_completions.constBegin(); it != mapObj_completions.constEnd(); ++it) {
             map_completions.insert(it.key(), it.value());
         }
         capabilities.setCompletions(map_completions);
     }
-    if (obj.contains("experimental"_L1) && obj["experimental"_L1].isObject()) {
-        const QJsonObject mapObj_experimental = obj["experimental"_L1].toObject();
+    if (const QJsonValue experimentalValue = obj.value("experimental"_L1); experimentalValue.isObject()) {
+        const QJsonObject mapObj_experimental = experimentalValue.toObject();
         QMap<QString, QJsonObject> map_experimental;
         for (auto it = mapObj_experimental.constBegin(); it != mapObj_experimental.constEnd(); ++it) {
             map_experimental.insert(it.key(), it.value().toObject());
         }
         capabilities.setExperimental(map_experimental);
     }
-    if (obj.contains("logging"_L1) && obj["logging"_L1].isObject()) {
-        const QJsonObject mapObj_logging = obj["logging"_L1].toObject();
+    if (const QJsonValue loggingValue = obj.value("logging"_L1); loggingValue.isObject()) {
+        const QJsonObject mapObj_logging = loggingValue.toObject();
         QMap<QString, QJsonValue> map_logging;
         for (auto it = mapObj_logging.constBegin(); it != mapObj_logging.constEnd(); ++it) {
             map_logging.insert(it.key(), it.value());
         }
         capabilities.setLogging(map_logging);
     }
-    if (obj.contains("prompts"_L1) && obj["prompts"_L1].isObject()) {
-        capabilities.setPrompts(McpProtocolServerCapabilities::Prompts::fromJson(obj["prompts"_L1].toObject()));
+    if (const QJsonValue promptsValue = obj.value("prompts"_L1); promptsValue.isObject()) {
+        capabilities.setPrompts(McpProtocolServerCapabilities::Prompts::fromJson(promptsValue.toObject()));
     }
-    if (obj.contains("resources"_L1) && obj["resources"_L1].isObject()) {
-        capabilities.setResources(McpProtocolServerCapabilities::Resources::fromJson(obj["resources"_L1].toObject()));
+    if (const QJsonValue resourcesValue = obj.value("resources"_L1); resourcesValue.isObject()) {
+        capabilities.setResources(McpProtocolServerCapabilities::Resources::fromJson(resourcesValue.toObject()));
     }
-    if (obj.contains("tasks"_L1) && obj["tasks"_L1].isObject()) {
-        capabilities.setTasks(McpProtocolServerCapabilities::Tasks::fromJson(obj["tasks"_L1].toObject()));
+    if (const QJsonValue tasksValue = obj.value("tasks"_L1); tasksValue.isObject()) {
+        capabilities.setTasks(McpProtocolServerCapabilities::Tasks::fromJson(tasksValue.toObject()));
     }
-    if (obj.contains("tools"_L1) && obj["tools"_L1].isObject()) {
-        capabilities.setTools(McpProtocolServerCapabilities::Tools::fromJson(obj["tools"_L1].toObject()));
+    if (const QJsonValue toolsValue = obj.value("tools"_L1); toolsValue.isObject()) {
+        capabilities.setTools(McpProtocolServerCapabilities::Tools::fromJson(toolsValue.toObject()));
     }
     return capabilities;
 }
@@ -219,24 +219,24 @@ QJsonObject McpProtocolServerCapabilities::Tools::toJson(const McpProtocolServer
 McpProtocolServerCapabilities::Tasks McpProtocolServerCapabilities::Tasks::fromJson(const QJsonObject &obj)
 {
     McpProtocolServerCapabilities::Tasks tasks;
-    if (obj.contains("cancel"_L1) && obj["cancel"_L1].isObject()) {
-        const QJsonObject mapObj_cancel = obj["cancel"_L1].toObject();
+    if (const QJsonValue cancelValue = obj.value("cancel"_L1); cancelValue.isObject()) {
+        const QJsonObject mapObj_cancel = cancelValue.toObject();
         QMap<QString, QJsonValue> map_cancel;
         for (auto it = mapObj_cancel.constBegin(); it != mapObj_cancel.constEnd(); ++it) {
             map_cancel.insert(it.key(), it.value());
         }
         tasks.setCancel(map_cancel);
     }
-    if (obj.contains("list"_L1) && obj["list"_L1].isObject()) {
-        const QJsonObject mapObj_list = obj["list"_L1].toObject();
+    if (const QJsonValue listValue = obj.value("list"_L1); listValue.isObject()) {
+        const QJsonObject mapObj_list = listValue.toObject();
         QMap<QString, QJsonValue> map_list;
         for (auto it = mapObj_list.constBegin(); it != mapObj_list.constEnd(); ++it) {
             map_list.insert(it.key(), it.value());
         }
         tasks.setList(map_list);
     }
-    if (obj.contains("requests"_L1) && obj["requests"_L1].isObject()) {
-        tasks.setRequests(McpProtocolServerCapabilities::Tasks::Requests::fromJson(obj["requests"_L1].toObject()));
+    if (const QJsonValue requestsValue = obj.value("requests"_L1); requestsValue.isObject()) {
+        tasks.setRequests(McpProtocolServerCapabilities::Tasks::Requests::fromJson(requestsValue.toObject()));
     }
     return tasks;
 }
@@ -269,8 +269,8 @@ QJsonObject McpProtocolServerCapabilities::Tasks::toJson(const McpProtocolServer
 McpProtocolServerCapabilities::Tasks::Requests McpProtocolServerCapabilities::Tasks::Requests::fromJson(const QJsonObject &obj)
 {
     McpProtocolServerCapabilities::Tasks::Requests requests;
-    if (obj.contains("tools"_L1) && obj["tools"_L1].isObject()) {
-        requests.setTools(McpProtocolServerCapabilities::Tasks::Requests::Tools::fromJson(obj["tools"_L1].toObject()));
+    if (const QJsonValue toolsValue2 = obj.value("tools"_L1); toolsValue2.isObject()) {
+        requests.setTools(McpProtocolServerCapabilities::Tasks::Requests::Tools::fromJson(toolsValue2.toObject()));
     }
     return requests;
 }
@@ -287,8 +287,8 @@ QJsonObject McpProtocolServerCapabilities::Tasks::Requests::toJson(const McpProt
 McpProtocolServerCapabilities::Tasks::Requests::Tools McpProtocolServerCapabilities::Tasks::Requests::Tools::fromJson(const QJsonObject &obj)
 {
     McpProtocolServerCapabilities::Tasks::Requests::Tools tools;
-    if (obj.contains("call"_L1) && obj["call"_L1].isObject()) {
-        const QJsonObject mapObj_call = obj["call"_L1].toObject();
+    if (const QJsonValue callValue = obj.value("call"_L1); callValue.isObject()) {
+        const QJsonObject mapObj_call = callValue.toObject();
         QMap<QString, QJsonValue> map_call;
         for (auto it = mapObj_call.constBegin(); it != mapObj_call.constEnd(); ++it) {
             map_call.insert(it.key(), it.value());

@@ -30,8 +30,8 @@ McpProtocolInitializedNotification McpProtocolInitializedNotification::fromJson(
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/cancelled', got: " << obj.value("method"_L1).toString();
         return {};
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolNotificationParams::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolNotificationParams::fromJson(paramsValue.toObject()));
     }
 
     return prompt;

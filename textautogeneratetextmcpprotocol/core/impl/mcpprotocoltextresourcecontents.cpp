@@ -27,8 +27,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolTextResourceContents McpProtocolTextResourceContents::fromJson(const QJsonObject &obj)
 {
     McpProtocolTextResourceContents prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("mimeType"_L1)) {
         prompt.setMimeType(obj.value("mimeType"_L1).toString());

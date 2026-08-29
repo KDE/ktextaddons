@@ -60,6 +60,7 @@ QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachme
 TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJsonArray &attachmentsArray, [[maybe_unused]] const QByteArray &messageId)
 {
     QList<TextAutoGenerateAttachment> attachmentList;
+    attachmentList.reserve(attachmentsArray.count());
     for (int i = 0; i < attachmentsArray.count(); ++i) {
         const QJsonObject attachment = attachmentsArray.at(i).toObject();
         // TODO adapt it

@@ -362,6 +362,7 @@ bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
 QList<QByteArray> TextAutoGenerateChatsModel::chatsId() const
 {
     QList<QByteArray> lst;
+    lst.reserve(mChats.count());
     for (const TextAutoGenerateChat &c : mChats) {
         lst.append(c.identifier());
     }

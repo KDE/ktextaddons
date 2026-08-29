@@ -64,8 +64,8 @@ McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject 
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolGetTaskRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'tasks/get', got: " << obj.value("method"_L1).toString();
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolGetTaskRequest::Params::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolGetTaskRequest::Params::fromJson(paramsValue.toObject()));
     }
     return prompt;
 }

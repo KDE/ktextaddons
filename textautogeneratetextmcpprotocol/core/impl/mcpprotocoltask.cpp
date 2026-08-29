@@ -35,8 +35,8 @@ McpProtocolTask McpProtocolTask::fromJson(const QJsonObject &obj)
     if (obj.contains("pollInterval"_L1)) {
         text.setPollInterval(obj.value("pollInterval"_L1).toInt());
     }
-    if (obj.contains("status"_L1) && obj["status"_L1].isString()) {
-        text.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(obj["status"_L1].toString()));
+    if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
+        text.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
     }
     if (obj.contains("statusMessage"_L1)) {
         text.setStatusMessage(obj.value("statusMessage"_L1).toString());

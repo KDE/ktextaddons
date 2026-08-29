@@ -70,11 +70,11 @@ McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj
         qWarning() << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        image.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        image.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
-        image.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    if (const QJsonValue annotationsValue = obj.value("annotations"_L1); annotationsValue.isObject()) {
+        image.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
 
     image.setData(obj["data"_L1].toString());

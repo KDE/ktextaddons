@@ -23,8 +23,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolToolChoice McpProtocolToolChoice::fromJson(const QJsonObject &obj)
 {
     McpProtocolToolChoice result;
-    if (obj.contains("mode"_L1) && obj["mode"_L1].isString()) {
-        result.setMode(convertModeFromString(obj["mode"_L1].toString()));
+    if (const QJsonValue modeValue = obj.value("mode"_L1); modeValue.isString()) {
+        result.setMode(convertModeFromString(modeValue.toString()));
     }
     return result;
 }

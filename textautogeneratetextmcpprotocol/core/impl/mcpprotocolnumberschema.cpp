@@ -127,8 +127,8 @@ McpProtocolNumberSchema McpProtocolNumberSchema::fromJson(const QJsonObject &obj
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }
-    if (obj.contains("type"_L1) && obj["type"_L1].isString()) {
-        prompt.setType(convertNumberSchemaTypeFromString(obj["type"_L1].toString()));
+    if (const QJsonValue typeValue = obj.value("type"_L1); typeValue.isString()) {
+        prompt.setType(convertNumberSchemaTypeFromString(typeValue.toString()));
     }
     return prompt;
 }

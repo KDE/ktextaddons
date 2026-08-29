@@ -277,11 +277,12 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::completeRequestParamsRefF
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CompleteRequestParamsRef: expected object or array";
         return {};
     }
-    const QString dispatchValue = val.toObject().value("type"_L1).toString();
+    const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = valObj.value("type"_L1).toString();
     if (dispatchValue == "ref/prompt"_L1) {
-        return CompleteRequestParamsRef(McpProtocolPromptReference::fromJson(val.toObject()));
+        return CompleteRequestParamsRef(McpProtocolPromptReference::fromJson(valObj));
     } else if (dispatchValue == "ref/resource"_L1) {
-        return CompleteRequestParamsRef(McpProtocolResourceTemplateReference::fromJson(val.toObject()));
+        return CompleteRequestParamsRef(McpProtocolResourceTemplateReference::fromJson(valObj));
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CompleteRequestParamsRef: unknown type \"" << dispatchValue << "\"";
     return {};
@@ -504,7 +505,7 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(cons
     }
 
     const QJsonObject valObj = val.toObject();
-    const QString dispatchValue = val.toObject().value("type"_L1).toString();
+    const QString dispatchValue = valObj.value("type"_L1).toString();
     if (dispatchValue == "text"_L1) {
         return ContentBlock(McpProtocolTextContent::fromJson(valObj));
     } else if (dispatchValue == "image"_L1) {
@@ -527,8 +528,8 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientRequestFromJson(con
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientRequest: expected object";
         return {};
     }
-    const QString dispatchValue = val.toObject().value("method"_L1).toString();
     const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = valObj.value("method"_L1).toString();
     if (dispatchValue == "initialize"_L1) {
         return ClientRequest(McpProtocolInitializeRequest::fromJson(valObj));
     } else if (dispatchValue == "ping"_L1) {
@@ -591,7 +592,7 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverNotificationFromJso
         return {};
     }
     const QJsonObject valObj = val.toObject();
-    const QString dispatchValue = val.toObject().value("method"_L1).toString();
+    const QString dispatchValue = valObj.value("method"_L1).toString();
     if (dispatchValue == "notifications/cancelled"_L1) {
         return ServerNotification(McpProtocolCancelledNotification::fromJson(valObj));
     } else if (dispatchValue == "notifications/progress"_L1) {
@@ -634,8 +635,10 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CreateMessageResultConten
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageResultContentFromJson(const QJsonValue &val)
 {
     if (val.isArray()) {
+        const QJsonArray arr = val.toArray();
         QList<SamplingMessageContentBlock> list;
-        for (const QJsonValue &v : val.toArray()) {
+        list.reserve(arr.count());
+        for (const QJsonValue &v : arr) {
             list.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockFromJson(v));
         }
         return CreateMessageResultContent(std::move(list));
@@ -644,8 +647,8 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageResultConten
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CreateMessageResultContent: expected object or array";
         return CreateMessageResultContent({});
     }
-    const QString dispatchValue = val.toObject().value("type"_L1).toString();
     const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = valObj.value("type"_L1).toString();
     if (dispatchValue == "text"_L1) {
         return CreateMessageResultContent(McpProtocolTextContent::fromJson(valObj));
     } else if (dispatchValue == "image"_L1) {
@@ -688,8 +691,8 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlo
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid SamplingMessageContentBlock: expected object";
         return {};
     }
-    const QString dispatchValue = val.toObject().value("type"_L1).toString();
     const QJsonObject valObj = val.toObject();
+    const QString dispatchValue = valObj.value("type"_L1).toString();
     if (dispatchValue == "text"_L1) {
         return SamplingMessageContentBlock(McpProtocolTextContent::fromJson(valObj));
     } else if (dispatchValue == "image"_L1) {

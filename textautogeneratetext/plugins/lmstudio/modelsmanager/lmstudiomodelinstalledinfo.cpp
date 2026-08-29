@@ -36,13 +36,13 @@ void LMStudioModelInstalledInfo::parseInfo(const QJsonObject &obj)
 
     if (const QJsonObject capabilitiesObj = obj["capabilities"_L1].toObject(); !capabilitiesObj.isEmpty()) {
         mCategories &= 0; // Reset all categories
-        if (capabilitiesObj.contains("trained_for_tool_use"_L1) && capabilitiesObj["trained_for_tool_use"_L1].toBool()) {
+        if (capabilitiesObj.value("trained_for_tool_use"_L1).toBool()) {
             mCategories |= TextAutoGenerateText::TextAutoGenerateManager::Category::Tools;
         }
-        if (capabilitiesObj.contains("vision"_L1) && capabilitiesObj["vision"_L1].toBool()) {
+        if (capabilitiesObj.value("vision"_L1).toBool()) {
             mCategories |= TextAutoGenerateText::TextAutoGenerateManager::Category::Vision;
         }
-        if (capabilitiesObj.contains("reasoning"_L1) && capabilitiesObj["reasoning"_L1].isObject()) {
+        if (const QJsonValue reasoningValue = capabilitiesObj.value("reasoning"_L1); reasoningValue.isObject()) {
             mCategories |= TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning;
         }
     }

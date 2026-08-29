@@ -38,8 +38,8 @@ McpProtocolReadResourceRequest McpProtocolReadResourceRequest::fromJson(const QJ
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolReadResourceRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolReadResourceRequestParams::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolReadResourceRequestParams::fromJson(paramsValue.toObject()));
     }
     if (obj.contains("id"_L1)) {
         prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));

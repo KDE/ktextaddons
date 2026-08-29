@@ -57,9 +57,10 @@ McpProtocolUntitledMultiSelectEnumSchema::Items McpProtocolUntitledMultiSelectEn
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'string', got: " << obj.value("type"_L1).toString();
         return {};
     }
-    if (obj.contains("enum"_L1) && obj["enum"_L1].isArray()) {
-        const QJsonArray arr = obj["enum"_L1].toArray();
+    if (const QJsonValue enumValue2 = obj.value("enum"_L1); enumValue2.isArray()) {
+        const QJsonArray arr = enumValue2.toArray();
         QStringList lst;
+        lst.reserve(arr.count());
         for (const QJsonValue &v : arr) {
             lst.append(v.toString());
         }
@@ -100,9 +101,10 @@ McpProtocolUntitledMultiSelectEnumSchema McpProtocolUntitledMultiSelectEnumSchem
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: type";
         return {};
     }
-    if (obj.contains("default"_L1) && obj["default"_L1].isArray()) {
-        const QJsonArray arr = obj["default"_L1].toArray();
+    if (const QJsonValue defaultValue2 = obj.value("default"_L1); defaultValue2.isArray()) {
+        const QJsonArray arr = defaultValue2.toArray();
         QStringList list_default;
+        list_default.reserve(arr.count());
         for (const QJsonValue &v : arr) {
             list_default.append(v.toString());
         }
@@ -111,8 +113,8 @@ McpProtocolUntitledMultiSelectEnumSchema McpProtocolUntitledMultiSelectEnumSchem
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("items"_L1) && obj["items"_L1].isObject()) {
-        prompt.setItems(McpProtocolUntitledMultiSelectEnumSchema::Items::fromJson(obj["items"_L1].toObject()));
+    if (const QJsonValue itemsValue = obj.value("items"_L1); itemsValue.isObject()) {
+        prompt.setItems(McpProtocolUntitledMultiSelectEnumSchema::Items::fromJson(itemsValue.toObject()));
     }
     if (obj.contains("maxItems"_L1)) {
         prompt.setMaxItems(obj.value("maxItems"_L1).toInt());

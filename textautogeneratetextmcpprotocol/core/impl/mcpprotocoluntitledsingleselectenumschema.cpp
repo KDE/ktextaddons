@@ -45,9 +45,10 @@ McpProtocolUntitledSingleSelectEnumSchema McpProtocolUntitledSingleSelectEnumSch
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }
-    if (obj.contains("enum"_L1) && obj["enum"_L1].isArray()) {
-        const QJsonArray arr = obj["enum"_L1].toArray();
+    if (const QJsonValue enumValue = obj.value("enum"_L1); enumValue.isArray()) {
+        const QJsonArray arr = enumValue.toArray();
         QStringList lst;
+        lst.reserve(arr.count());
         for (const auto &v : arr) {
             lst.append(v.toString());
         }

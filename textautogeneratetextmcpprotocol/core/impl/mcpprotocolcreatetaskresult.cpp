@@ -25,11 +25,11 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolCreateTaskResult McpProtocolCreateTaskResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolCreateTaskResult prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
-        prompt.setTask(McpProtocolTask::fromJson(obj["task"_L1].toObject()));
+    if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
+        prompt.setTask(McpProtocolTask::fromJson(taskValue.toObject()));
     }
     return prompt;
 }

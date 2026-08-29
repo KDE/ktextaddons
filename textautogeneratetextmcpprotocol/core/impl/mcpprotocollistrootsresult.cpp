@@ -24,12 +24,13 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolListRootsResult McpProtocolListRootsResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolListRootsResult prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("roots"_L1) && obj["roots"_L1].isArray()) {
-        const QJsonArray arr = obj["roots"_L1].toArray();
+    if (const QJsonValue rootsValue = obj.value("roots"_L1); rootsValue.isArray()) {
+        const QJsonArray arr = rootsValue.toArray();
         QList<McpProtocolRoot> roots;
+        roots.reserve(arr.count());
         for (const QJsonValue &v : arr) {
             roots.append(McpProtocolRoot::fromJson(v.toObject()));
         }

@@ -49,32 +49,33 @@ McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: name";
         return {};
     }
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        tool.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        tool.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
-        tool.setAnnotations(McpProtocolToolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    if (const QJsonValue annotationsValue = obj.value("annotations"_L1); annotationsValue.isObject()) {
+        tool.setAnnotations(McpProtocolToolAnnotations::fromJson(annotationsValue.toObject()));
     }
     if (obj.contains("description"_L1)) {
         tool.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("execution"_L1) && obj["execution"_L1].isObject()) {
-        tool.setExecution(McpProtocolToolExecution::fromJson(obj["execution"_L1].toObject()));
+    if (const QJsonValue executionValue = obj.value("execution"_L1); executionValue.isObject()) {
+        tool.setExecution(McpProtocolToolExecution::fromJson(executionValue.toObject()));
     }
-    if (obj.contains("icons"_L1) && obj["icons"_L1].isArray()) {
-        const QJsonArray arr = obj["icons"_L1].toArray();
+    if (const QJsonValue iconsValue = obj.value("icons"_L1); iconsValue.isArray()) {
+        const QJsonArray arr = iconsValue.toArray();
         QList<McpProtocolIcon> list_icons;
+        list_icons.reserve(arr.count());
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
         tool.setIcons(list_icons);
     }
-    if (obj.contains("inputSchema"_L1) && obj["inputSchema"_L1].isObject()) {
-        tool.setInputSchema(InputSchema::fromJson(obj["inputSchema"_L1].toObject()));
+    if (const QJsonValue inputSchemaValue = obj.value("inputSchema"_L1); inputSchemaValue.isObject()) {
+        tool.setInputSchema(InputSchema::fromJson(inputSchemaValue.toObject()));
     }
     tool.setName(obj.value("name"_L1).toString());
-    if (obj.contains("outputSchema"_L1) && obj["outputSchema"_L1].isObject()) {
-        tool.setOutputSchema(OutputSchema::fromJson(obj["outputSchema"_L1].toObject()));
+    if (const QJsonValue outputSchemaValue = obj.value("outputSchema"_L1); outputSchemaValue.isObject()) {
+        tool.setOutputSchema(OutputSchema::fromJson(outputSchemaValue.toObject()));
     }
     if (obj.contains("title"_L1)) {
         tool.setTitle(obj.value("title"_L1).toString());
@@ -233,17 +234,18 @@ McpProtocolTool::InputSchema McpProtocolTool::InputSchema::fromJson(const QJsonO
     if (obj.contains("$schema"_L1)) {
         result.mDollarschema = obj.value("$schema"_L1).toString();
     }
-    if (obj.contains("properties"_L1) && obj["properties"_L1].isObject()) {
-        const QJsonObject mapObj_properties = obj["properties"_L1].toObject();
+    if (const QJsonValue propertiesValue = obj.value("properties"_L1); propertiesValue.isObject()) {
+        const QJsonObject mapObj_properties = propertiesValue.toObject();
         QMap<QString, QJsonObject> map_properties;
         for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
             map_properties.insert(it.key(), it.value().toObject());
         }
         result.mProperties = map_properties;
     }
-    if (obj.contains("required"_L1) && obj["required"_L1].isArray()) {
-        const QJsonArray arr = obj["required"_L1].toArray();
+    if (const QJsonValue requiredValue = obj.value("required"_L1); requiredValue.isArray()) {
+        const QJsonArray arr = requiredValue.toArray();
         QStringList list_required;
+        list_required.reserve(arr.count());
         for (const auto &v : arr) {
             list_required.append(v.toString());
         }
@@ -306,17 +308,18 @@ McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJso
     if (obj.contains("$schema"_L1)) {
         result.mDollarschema = obj.value("$schema"_L1).toString();
     }
-    if (obj.contains("properties"_L1) && obj["properties"_L1].isObject()) {
-        const QJsonObject mapObj_properties = obj["properties"_L1].toObject();
+    if (const QJsonValue propertiesValue2 = obj.value("properties"_L1); propertiesValue2.isObject()) {
+        const QJsonObject mapObj_properties = propertiesValue2.toObject();
         QMap<QString, QJsonObject> map_properties;
         for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
             map_properties.insert(it.key(), it.value().toObject());
         }
         result.mProperties = map_properties;
     }
-    if (obj.contains("required"_L1) && obj["required"_L1].isArray()) {
-        const QJsonArray arr = obj["required"_L1].toArray();
+    if (const QJsonValue requiredValue2 = obj.value("required"_L1); requiredValue2.isArray()) {
+        const QJsonArray arr = requiredValue2.toArray();
         QStringList list_required;
+        list_required.reserve(arr.count());
         for (const auto &v : arr) {
             list_required.append(v.toString());
         }

@@ -27,8 +27,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolProgressNotificationParams McpProtocolProgressNotificationParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolProgressNotificationParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("message"_L1)) {
         prompt.setMessage(obj.value("message"_L1).toString());

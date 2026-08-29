@@ -50,11 +50,11 @@ QJsonObject McpProtocolSetLevelRequestParams::Meta::toJson(const McpProtocolSetL
 McpProtocolSetLevelRequestParams McpProtocolSetLevelRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolSetLevelRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolSetLevelRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolSetLevelRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("level"_L1) && obj["level"_L1].isString()) {
-        prompt.setLevel(McpProtocolUtils::convertLoggingLevelFromString(obj["level"_L1].toString()));
+    if (const QJsonValue levelValue = obj.value("level"_L1); levelValue.isString()) {
+        prompt.setLevel(McpProtocolUtils::convertLoggingLevelFromString(levelValue.toString()));
     }
     return prompt;
 }

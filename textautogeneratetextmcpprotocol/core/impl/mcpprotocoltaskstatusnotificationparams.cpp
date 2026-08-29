@@ -36,8 +36,8 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
     if (obj.contains("pollInterval"_L1)) {
         prompt.setPollInterval(obj.value("pollInterval"_L1).toInt());
     }
-    if (obj.contains("status"_L1) && obj["status"_L1].isString()) {
-        prompt.setStatus(McpProtocolUtils::convertTaskStatusFromString(obj["status"_L1].toString()));
+    if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
+        prompt.setStatus(McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
     }
     if (obj.contains("statusMessage"_L1)) {
         prompt.setStatusMessage(obj.value("statusMessage"_L1).toString());
@@ -46,8 +46,8 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
     if (!obj["ttl"_L1].isNull()) {
         prompt.setTtl(obj.value("ttl"_L1).toInt());
     }
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     return prompt;
 }

@@ -28,11 +28,11 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObject &obj)
 {
     McpProtocolEmbeddedResource prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("annotations"_L1) && obj["annotations"_L1].isObject()) {
-        prompt.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
+    if (const QJsonValue annotationsValue = obj.value("annotations"_L1); annotationsValue.isObject()) {
+        prompt.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
     if (obj.contains("resource"_L1)) {
         prompt.setResource(McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1]));

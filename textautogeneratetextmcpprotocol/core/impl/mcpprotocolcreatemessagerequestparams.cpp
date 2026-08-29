@@ -71,8 +71,8 @@ McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fro
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: messages";
         return prompt;
     }
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolCreateMessageRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolCreateMessageRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("includeContext"_L1)) {
         prompt.setIncludeContext(convertIncludeContextFromString(obj.value("includeContext"_L1).toString()));
@@ -87,19 +87,19 @@ McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fro
         }
         prompt.setMessages(messages);
     }
-    if (obj.contains("metadata"_L1) && obj["metadata"_L1].isObject()) {
-        const QJsonObject mapObj_metadata = obj["metadata"_L1].toObject();
+    if (const QJsonValue metadataValue = obj.value("metadata"_L1); metadataValue.isObject()) {
+        const QJsonObject mapObj_metadata = metadataValue.toObject();
         QMap<QString, QJsonValue> map_metadata;
         for (auto it = mapObj_metadata.constBegin(); it != mapObj_metadata.constEnd(); ++it) {
             map_metadata.insert(it.key(), it.value());
         }
         prompt.setMetadata(map_metadata);
     }
-    if (obj.contains("modelPreferences"_L1) && obj["modelPreferences"_L1].isObject()) {
-        prompt.setModelPreferences(McpProtocolModelPreferences::fromJson(obj["modelPreferences"_L1].toObject()));
+    if (const QJsonValue modelPreferencesValue = obj.value("modelPreferences"_L1); modelPreferencesValue.isObject()) {
+        prompt.setModelPreferences(McpProtocolModelPreferences::fromJson(modelPreferencesValue.toObject()));
     }
-    if (obj.contains("stopSequences"_L1) && obj["stopSequences"_L1].isArray()) {
-        const QJsonArray arr = obj["stopSequences"_L1].toArray();
+    if (const QJsonValue stopSequencesValue = obj.value("stopSequences"_L1); stopSequencesValue.isArray()) {
+        const QJsonArray arr = stopSequencesValue.toArray();
         QStringList list_stopSequences;
         list_stopSequences.reserve(arr.count());
         for (const QJsonValue &v : arr) {
@@ -110,17 +110,17 @@ McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fro
     if (obj.contains("systemPrompt"_L1)) {
         prompt.setSystemPrompt(obj.value("systemPrompt"_L1).toString());
     }
-    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
-        prompt.setTask(McpProtocolTaskMetadata::fromJson(obj["task"_L1].toObject()));
+    if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
+        prompt.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
     if (obj.contains("temperature"_L1)) {
         prompt.setTemperature(obj.value("temperature"_L1).toDouble());
     }
-    if (obj.contains("toolChoice"_L1) && obj["toolChoice"_L1].isObject()) {
-        prompt.setToolChoice(McpProtocolToolChoice::fromJson(obj["toolChoice"_L1].toObject()));
+    if (const QJsonValue toolChoiceValue = obj.value("toolChoice"_L1); toolChoiceValue.isObject()) {
+        prompt.setToolChoice(McpProtocolToolChoice::fromJson(toolChoiceValue.toObject()));
     }
-    if (obj.contains("tools"_L1) && obj["tools"_L1].isArray()) {
-        const QJsonArray arr = obj["tools"_L1].toArray();
+    if (const QJsonValue toolsValue = obj.value("tools"_L1); toolsValue.isArray()) {
+        const QJsonArray arr = toolsValue.toArray();
         QList<McpProtocolTool> tools;
         tools.reserve(arr.count());
         for (const QJsonValue &v : arr) {

@@ -102,16 +102,16 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolClientCapabilities::Elicitation McpProtocolClientCapabilities::Elicitation::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Elicitation elicitation;
-    if (obj.contains("form"_L1) && obj["form"_L1].isObject()) {
-        const QJsonObject mapObj_form = obj["form"_L1].toObject();
+    if (const QJsonValue formValue = obj.value("form"_L1); formValue.isObject()) {
+        const QJsonObject mapObj_form = formValue.toObject();
         QMap<QString, QJsonValue> map_form;
         for (auto it = mapObj_form.constBegin(); it != mapObj_form.constEnd(); ++it) {
             map_form.insert(it.key(), it.value());
         }
         elicitation.setForm(map_form);
     }
-    if (obj.contains("url"_L1) && obj["url"_L1].isObject()) {
-        const QJsonObject mapObj_url = obj["url"_L1].toObject();
+    if (const QJsonValue urlValue = obj.value("url"_L1); urlValue.isObject()) {
+        const QJsonObject mapObj_url = urlValue.toObject();
         QMap<QString, QJsonValue> map_url;
         for (auto it = mapObj_url.constBegin(); it != mapObj_url.constEnd(); ++it) {
             map_url.insert(it.key(), it.value());
@@ -144,25 +144,25 @@ QJsonObject McpProtocolClientCapabilities::Elicitation::toJson(const McpProtocol
 McpProtocolClientCapabilities McpProtocolClientCapabilities::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities modelHint;
-    if (obj.contains("elicitation"_L1) && obj["elicitation"_L1].isObject()) {
-        modelHint.setElicitation(McpProtocolClientCapabilities::Elicitation::fromJson(obj["elicitation"_L1].toObject()));
+    if (const QJsonValue elicitationValue = obj.value("elicitation"_L1); elicitationValue.isObject()) {
+        modelHint.setElicitation(McpProtocolClientCapabilities::Elicitation::fromJson(elicitationValue.toObject()));
     }
-    if (obj.contains("experimental"_L1) && obj["experimental"_L1].isObject()) {
-        const QJsonObject mapObj_experimental = obj["experimental"_L1].toObject();
+    if (const QJsonValue experimentalValue = obj.value("experimental"_L1); experimentalValue.isObject()) {
+        const QJsonObject mapObj_experimental = experimentalValue.toObject();
         QMap<QString, QJsonObject> map_experimental;
         for (auto it = mapObj_experimental.constBegin(); it != mapObj_experimental.constEnd(); ++it) {
             map_experimental.insert(it.key(), it.value().toObject());
         }
         modelHint.setExperimental(map_experimental);
     }
-    if (obj.contains("roots"_L1) && obj["roots"_L1].isObject()) {
-        modelHint.setRoots(McpProtocolClientCapabilities::Roots::fromJson(obj["roots"_L1].toObject()));
+    if (const QJsonValue rootsValue = obj.value("roots"_L1); rootsValue.isObject()) {
+        modelHint.setRoots(McpProtocolClientCapabilities::Roots::fromJson(rootsValue.toObject()));
     }
-    if (obj.contains("sampling"_L1) && obj["sampling"_L1].isObject()) {
-        modelHint.setSampling(McpProtocolClientCapabilities::Sampling::fromJson(obj["sampling"_L1].toObject()));
+    if (const QJsonValue samplingValue = obj.value("sampling"_L1); samplingValue.isObject()) {
+        modelHint.setSampling(McpProtocolClientCapabilities::Sampling::fromJson(samplingValue.toObject()));
     }
-    if (obj.contains("tasks"_L1) && obj["tasks"_L1].isObject()) {
-        modelHint.setTasks(McpProtocolClientCapabilities::Tasks::fromJson(obj["tasks"_L1].toObject()));
+    if (const QJsonValue tasksValue = obj.value("tasks"_L1); tasksValue.isObject()) {
+        modelHint.setTasks(McpProtocolClientCapabilities::Tasks::fromJson(tasksValue.toObject()));
     }
     return modelHint;
 }
@@ -314,16 +314,16 @@ void McpProtocolClientCapabilities::Sampling::setTools(std::optional<QMap<QStrin
 McpProtocolClientCapabilities::Sampling McpProtocolClientCapabilities::Sampling::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Sampling sampling;
-    if (obj.contains("context"_L1) && obj["context"_L1].isObject()) {
-        const QJsonObject mapObj_context = obj["context"_L1].toObject();
+    if (const QJsonValue contextValue = obj.value("context"_L1); contextValue.isObject()) {
+        const QJsonObject mapObj_context = contextValue.toObject();
         QMap<QString, QJsonValue> map_context;
         for (auto it = mapObj_context.constBegin(); it != mapObj_context.constEnd(); ++it) {
             map_context.insert(it.key(), it.value());
         }
         sampling.setContext(map_context);
     }
-    if (obj.contains("tools"_L1) && obj["tools"_L1].isObject()) {
-        const QJsonObject mapObj_tools = obj["tools"_L1].toObject();
+    if (const QJsonValue toolsValue = obj.value("tools"_L1); toolsValue.isObject()) {
+        const QJsonObject mapObj_tools = toolsValue.toObject();
         QMap<QString, QJsonValue> map_tools;
         for (auto it = mapObj_tools.constBegin(); it != mapObj_tools.constEnd(); ++it) {
             map_tools.insert(it.key(), it.value());
@@ -356,11 +356,11 @@ QJsonObject McpProtocolClientCapabilities::Sampling::toJson(const McpProtocolCli
 McpProtocolClientCapabilities::Tasks::Requests McpProtocolClientCapabilities::Tasks::Requests::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Tasks::Requests request;
-    if (obj.contains("elicitation"_L1) && obj["elicitation"_L1].isObject()) {
-        request.setElicitation(McpProtocolClientCapabilities::Tasks::Requests::Elicitation::fromJson(obj["elicitation"_L1].toObject()));
+    if (const QJsonValue elicitationValue2 = obj.value("elicitation"_L1); elicitationValue2.isObject()) {
+        request.setElicitation(McpProtocolClientCapabilities::Tasks::Requests::Elicitation::fromJson(elicitationValue2.toObject()));
     }
-    if (obj.contains("sampling"_L1) && obj["sampling"_L1].isObject()) {
-        request.setSampling(McpProtocolClientCapabilities::Tasks::Requests::Sampling::fromJson(obj["sampling"_L1].toObject()));
+    if (const QJsonValue samplingValue2 = obj.value("sampling"_L1); samplingValue2.isObject()) {
+        request.setSampling(McpProtocolClientCapabilities::Tasks::Requests::Sampling::fromJson(samplingValue2.toObject()));
     }
     return request;
 }
@@ -380,24 +380,24 @@ QJsonObject McpProtocolClientCapabilities::Tasks::Requests::toJson(const McpProt
 McpProtocolClientCapabilities::Tasks McpProtocolClientCapabilities::Tasks::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Tasks request;
-    if (obj.contains("cancel"_L1) && obj["cancel"_L1].isObject()) {
-        const QJsonObject mapObj_cancel = obj["cancel"_L1].toObject();
+    if (const QJsonValue cancelValue = obj.value("cancel"_L1); cancelValue.isObject()) {
+        const QJsonObject mapObj_cancel = cancelValue.toObject();
         QMap<QString, QJsonValue> map_cancel;
         for (auto it = mapObj_cancel.constBegin(); it != mapObj_cancel.constEnd(); ++it) {
             map_cancel.insert(it.key(), it.value());
         }
         request.setCancel(map_cancel);
     }
-    if (obj.contains("list"_L1) && obj["list"_L1].isObject()) {
-        const QJsonObject mapObj_list = obj["list"_L1].toObject();
+    if (const QJsonValue listValue = obj.value("list"_L1); listValue.isObject()) {
+        const QJsonObject mapObj_list = listValue.toObject();
         QMap<QString, QJsonValue> map_list;
         for (auto it = mapObj_list.constBegin(); it != mapObj_list.constEnd(); ++it) {
             map_list.insert(it.key(), it.value());
         }
         request.setList(map_list);
     }
-    if (obj.contains("requests"_L1) && obj["requests"_L1].isObject()) {
-        request.setRequests(McpProtocolClientCapabilities::Tasks::Requests::fromJson(obj["requests"_L1].toObject()));
+    if (const QJsonValue requestsValue = obj.value("requests"_L1); requestsValue.isObject()) {
+        request.setRequests(McpProtocolClientCapabilities::Tasks::Requests::fromJson(requestsValue.toObject()));
     }
     return request;
 }
@@ -471,8 +471,8 @@ bool McpProtocolClientCapabilities::Tasks::Requests::Elicitation::operator==(con
 McpProtocolClientCapabilities::Tasks::Requests::Elicitation McpProtocolClientCapabilities::Tasks::Requests::Elicitation::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Tasks::Requests::Elicitation elicitation;
-    if (obj.contains("create"_L1) && obj["create"_L1].isObject()) {
-        const QJsonObject mapObj_create = obj["create"_L1].toObject();
+    if (const QJsonValue createValue = obj.value("create"_L1); createValue.isObject()) {
+        const QJsonObject mapObj_create = createValue.toObject();
         QMap<QString, QJsonValue> map_create;
         for (auto it = mapObj_create.constBegin(); it != mapObj_create.constEnd(); ++it) {
             map_create.insert(it.key(), it.value());
@@ -501,8 +501,8 @@ bool McpProtocolClientCapabilities::Tasks::Requests::Sampling::operator==(const 
 McpProtocolClientCapabilities::Tasks::Requests::Sampling McpProtocolClientCapabilities::Tasks::Requests::Sampling::fromJson(const QJsonObject &obj)
 {
     McpProtocolClientCapabilities::Tasks::Requests::Sampling sampling;
-    if (obj.contains("createMessage"_L1) && obj["createMessage"_L1].isObject()) {
-        const QJsonObject mapObj_create = obj["createMessage"_L1].toObject();
+    if (const QJsonValue createMessageValue = obj.value("createMessage"_L1); createMessageValue.isObject()) {
+        const QJsonObject mapObj_create = createMessageValue.toObject();
         QMap<QString, QJsonValue> map_create;
         for (auto it = mapObj_create.constBegin(); it != mapObj_create.constEnd(); ++it) {
             map_create.insert(it.key(), it.value());

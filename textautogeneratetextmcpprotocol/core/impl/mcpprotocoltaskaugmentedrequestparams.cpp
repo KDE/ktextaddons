@@ -51,11 +51,11 @@ QJsonObject McpProtocolTaskAugmentedRequestParams::Meta::toJson(const McpProtoco
 McpProtocolTaskAugmentedRequestParams McpProtocolTaskAugmentedRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolTaskAugmentedRequestParams prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolTaskAugmentedRequestParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolTaskAugmentedRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
-        prompt.setTasks(McpProtocolTaskMetadata::fromJson(obj["task"_L1].toObject()));
+    if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
+        prompt.setTasks(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
 
     return prompt;

@@ -71,16 +71,17 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
     if (obj.contains("mimeType"_L1)) {
         icon.setMimeType(obj.value("mimeType"_L1).toString());
     }
-    if (obj.contains("sizes"_L1) && obj["sizes"_L1].isArray()) {
-        const QJsonArray arr = obj["sizes"_L1].toArray();
+    if (const QJsonValue sizesValue = obj.value("sizes"_L1); sizesValue.isArray()) {
+        const QJsonArray arr = sizesValue.toArray();
         QStringList list_sizes;
+        list_sizes.reserve(arr.count());
         for (const auto &v : arr) {
             list_sizes.append(v.toString());
         }
         icon.setSizes(list_sizes);
     }
-    if (obj.contains("theme"_L1) && obj["theme"_L1].isString()) {
-        icon.setTheme(obj["theme"_L1].toString());
+    if (const QJsonValue themeValue = obj.value("theme"_L1); themeValue.isString()) {
+        icon.setTheme(themeValue.toString());
     }
     return icon;
 }

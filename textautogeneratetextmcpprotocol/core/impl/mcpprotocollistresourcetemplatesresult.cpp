@@ -25,15 +25,16 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolListResourceTemplatesResult McpProtocolListResourceTemplatesResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolListResourceTemplatesResult prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("nextCursor"_L1)) {
         prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
     }
-    if (obj.contains("resourceTemplates"_L1) && obj["resourceTemplates"_L1].isArray()) {
-        const QJsonArray arr = obj["resourceTemplates"_L1].toArray();
+    if (const QJsonValue resourceTemplatesValue = obj.value("resourceTemplates"_L1); resourceTemplatesValue.isArray()) {
+        const QJsonArray arr = resourceTemplatesValue.toArray();
         QList<McpProtocolResourceTemplate> lst;
+        lst.reserve(arr.count());
         for (const auto &v : arr) {
             lst.append(McpProtocolResourceTemplate::fromJson(v.toObject()));
         }

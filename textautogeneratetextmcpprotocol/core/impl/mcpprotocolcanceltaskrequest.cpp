@@ -62,8 +62,8 @@ McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonO
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCancelTaskRequest::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'tasks/cancel', got: " << obj.value("method"_L1).toString();
     }
-    if (obj.contains("params"_L1) && obj["params"_L1].isObject()) {
-        prompt.setParams(McpProtocolCancelTaskRequest::Params::fromJson(obj["params"_L1].toObject()));
+    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
+        prompt.setParams(McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject()));
     }
     return prompt;
 }

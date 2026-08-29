@@ -32,12 +32,12 @@ McpProtocolElicitResult McpProtocolElicitResult::fromJson(const QJsonObject &obj
         return {};
     }
     McpProtocolElicitResult prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     prompt.setAction(convertActionFromString(obj.value("action"_L1).toString()));
-    if (obj.contains("content"_L1) && obj["content"_L1].isObject()) {
-        prompt.setContent(McpProtocolUtils::elicitResultContentFromJson(obj["content"_L1].toObject()));
+    if (const QJsonValue contentValue = obj.value("content"_L1); contentValue.isObject()) {
+        prompt.setContent(McpProtocolUtils::elicitResultContentFromJson(contentValue.toObject()));
     }
     return prompt;
 }

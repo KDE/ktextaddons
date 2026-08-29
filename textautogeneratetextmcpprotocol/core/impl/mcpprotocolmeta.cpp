@@ -23,8 +23,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolMeta McpProtocolMeta::fromJson(const QJsonObject &obj)
 {
     McpProtocolMeta prompt;
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        const QJsonObject mapObj = obj["_meta"_L1].toObject();
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        const QJsonObject mapObj = metaValue.toObject();
         QMap<QString, QJsonValue> map;
         for (auto it = mapObj.constBegin(); it != mapObj.constEnd(); ++it) {
             map.insert(it.key(), it.value());

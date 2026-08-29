@@ -107,6 +107,7 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::Pen
 {
     const QJsonArray toolsArray = o.value("tools"_L1).toArray();
     QList<QByteArray> tools;
+    tools.reserve(toolsArray.count());
     for (const auto &val : toolsArray) {
         tools.append(val.toString().toLatin1());
     }

@@ -70,8 +70,8 @@ McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestForm
         map_properties.insert(it.key(), McpProtocolUtils::primitiveSchemaDefinitionFromJson(it.value()));
     }
     requestedSchema.setProperties(map_properties);
-    if (obj.contains("required"_L1) && obj["required"_L1].isArray()) {
-        const QJsonArray arr = obj["required"_L1].toArray();
+    if (const QJsonValue requiredValue = obj.value("required"_L1); requiredValue.isArray()) {
+        const QJsonArray arr = requiredValue.toArray();
         QStringList list_required;
         list_required.reserve(arr.count());
         for (const QJsonValue &v : arr) {
@@ -118,15 +118,15 @@ McpProtocolElicitRequestFormParams McpProtocolElicitRequestFormParams::fromJson(
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams: mode is not correct " << obj.value("mode"_L1).toString();
         return {};
     }
-    if (obj.contains("_meta"_L1) && obj["_meta"_L1].isObject()) {
-        params.setMeta(McpProtocolElicitRequestFormParams::Meta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        params.setMeta(McpProtocolElicitRequestFormParams::Meta::fromJson(metaValue.toObject()));
     }
     params.setMessage(obj.value("message"_L1).toString());
-    if (obj.contains("requestedSchema"_L1) && obj["requestedSchema"_L1].isObject()) {
-        params.setRequestedSchema(McpProtocolElicitRequestFormParams::RequestedSchema::fromJson(obj["requestedSchema"_L1].toObject()));
+    if (const QJsonValue requestedSchemaValue = obj.value("requestedSchema"_L1); requestedSchemaValue.isObject()) {
+        params.setRequestedSchema(McpProtocolElicitRequestFormParams::RequestedSchema::fromJson(requestedSchemaValue.toObject()));
     }
-    if (obj.contains("task"_L1) && obj["task"_L1].isObject()) {
-        params.setTask(McpProtocolTaskMetadata::fromJson(obj["task"_L1].toObject()));
+    if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
+        params.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
     return params;
 }
