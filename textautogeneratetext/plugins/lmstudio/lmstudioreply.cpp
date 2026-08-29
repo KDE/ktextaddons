@@ -54,14 +54,16 @@ LMStudioReply::LMStudioReply(QNetworkReply *netReply, RequestTypes requestType, 
             mIncompleteTokens = completeTokens.last();
             completeTokens.removeLast();
 
-            mTokens.reserve(completeTokens.count());
+            mTokens.reserve(mTokens.count() + completeTokens.count());
             for (const auto &tok : std::as_const(completeTokens)) {
                 if (tok.isEmpty()) {
                     continue;
                 }
                 // Message send by server => it's not a json element
                 if (tok != "[DONE]") {
-                    mTokens.append(QJsonDocument::fromJson(tok));
+                    const QJsonDocument doc = QJsonDocument::fromJson(tok);
+                    mTokens.append(doc);
+                    accumulateStreamedToken(doc);
                 }
             }
             break;
@@ -90,46 +92,43 @@ TextAutoGenerateText::TextAutoGenerateReply::Response LMStudioReply::readRespons
     case RequestTypes::StreamingResponses:
         break;
     case RequestTypes::StreamingChat:
-        // qDebug() << " mTokens " << mTokens;
-        for (const auto &tok : mTokens) {
-            // qDebug() << " tok" << tok;
-            // qDebug() << " choicesArray " << choicesArray;
-            if (const QJsonArray choicesArray = tok["choices"_L1].toArray(); !choicesArray.isEmpty()) {
-                const QJsonObject firstObject = choicesArray.at(0).toObject();
-                const QJsonObject deltaObject = firstObject["delta"_L1].toObject();
-                if (deltaObject.contains(u"content"_s)) {
-                    ret.response += deltaObject["content"_L1].toString();
-                }
-                if (deltaObject.contains(u"tool_calls"_s)) {
-                    const QJsonArray toolCallResponse = deltaObject["tool_calls"_L1].toArray();
-                    qDebug() << " tool_calls: " << toolCallResponse;
-                    const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOpenAI(toolCallResponse);
-                    ret.info.append(infos);
-                }
-            }
-        }
-        if (!mTokens.isEmpty()) {
-            const auto finalResponse = mTokens.constLast();
-            // TODO it seems that it doesn't return completion token and others !
-            // We need to investigate it.
-            // TODO use "usage" in openAI api
-            // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
-
-            TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
-            replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
-            if (const auto usage = finalResponse["usage"_L1].toObject(); !usage.isEmpty()) {
-                replyInfo.tokenCount = usage["total_tokens"_L1].toVariant().toULongLong();
-                replyInfo.completionTokens = usage["completion_tokens"_L1].toVariant().toULongLong();
-                replyInfo.promptTokens = usage["prompt_tokens"_L1].toVariant().toULongLong();
-                ret.replyInfo = replyInfo;
-            }
-
-            // "{\"id\":\"b72cdf33d58440838134fc042e98521b\",\"object\":\"chat.completion.chunk\",\"created\":1759381277,\"model\":\"magistral-small-2509\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"id\":\"QNfTI1iiJ\",\"function\":{\"name\":\"current_date_time_tool\",\"arguments\":\"{\\\"currentdatetime\\\":
-            // \\\"time\\\"}\"},\"index\":0}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":275,\"total_tokens\":324,\"completion_tokens\":49}}\n\n[DONE]\n\n
-        }
-        break;
+        // Already folded in by accumulateStreamedToken() as the tokens arrived.
+        return mStreamedResponse;
     }
     return ret;
+}
+
+void LMStudioReply::accumulateStreamedToken(const QJsonDocument &tok)
+{
+    if (mRequestType != RequestTypes::StreamingChat) {
+        return;
+    }
+    // qDebug() << " tok" << tok;
+    if (const QJsonArray choicesArray = tok["choices"_L1].toArray(); !choicesArray.isEmpty()) {
+        const QJsonObject firstObject = choicesArray.at(0).toObject();
+        const QJsonObject deltaObject = firstObject["delta"_L1].toObject();
+        if (const QJsonValue contentValue = deltaObject.value("content"_L1); !contentValue.isUndefined()) {
+            mStreamedResponse.response += contentValue.toString();
+        }
+        if (const QJsonValue toolCallsValue = deltaObject.value("tool_calls"_L1); !toolCallsValue.isUndefined()) {
+            const QJsonArray toolCallResponse = toolCallsValue.toArray();
+            qDebug() << " tool_calls: " << toolCallResponse;
+            mStreamedResponse.info.append(parseToolCallsOpenAI(toolCallResponse));
+        }
+    }
+    // TODO it seems that it doesn't return completion token and others !
+    // We need to investigate it.
+    // TODO use "usage" in openAI api
+    // "usage":{"completion_tokens":478,"prompt_tokens":46,"prompt_tokens_details":{"cached_tokens":0},"total_tokens":524}}
+    // Only the last token carries the usage, so each token carrying one simply overwrites it.
+    if (const auto usage = tok["usage"_L1].toObject(); !usage.isEmpty()) {
+        TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+        replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::OpenAI;
+        replyInfo.tokenCount = usage["total_tokens"_L1].toVariant().toULongLong();
+        replyInfo.completionTokens = usage["completion_tokens"_L1].toVariant().toULongLong();
+        replyInfo.promptTokens = usage["prompt_tokens"_L1].toVariant().toULongLong();
+        mStreamedResponse.replyInfo = replyInfo;
+    }
 }
 
 #include "moc_lmstudioreply.cpp"

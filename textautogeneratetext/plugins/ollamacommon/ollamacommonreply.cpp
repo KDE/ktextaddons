@@ -84,9 +84,11 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
             mIncompleteTokens = completeTokens.last();
             completeTokens.removeLast();
 
-            mTokens.reserve(completeTokens.count());
+            mTokens.reserve(mTokens.count() + completeTokens.count());
             for (const auto &tok : std::as_const(completeTokens)) {
-                mTokens.append(QJsonDocument::fromJson(tok));
+                const QJsonDocument doc = QJsonDocument::fromJson(tok);
+                mTokens.append(doc);
+                accumulateStreamedToken(doc);
             }
             // TODO parse "tool_calls"
             // qDebug() << " mTokens " << mTokens;
@@ -113,46 +115,57 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readRes
     case RequestTypes::CreateModel:
     case RequestTypes::Unknown:
         break;
-    case RequestTypes::StreamingChat: {
-        for (const auto &tok : mTokens) {
-            const QJsonObject messageObj = tok["message"_L1].toObject();
-            if (messageObj.contains("tool_calls"_L1)) {
-                const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
-                // qDebug() << " tool_calls: " << array;
-                QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOllama(array);
-                // qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
-                ret.info.append(std::move(infos));
-            }
-            if (messageObj.contains("thinking"_L1)) {
-                ret.thinking += messageObj["thinking"_L1].toString();
-            } else {
-                ret.response += messageObj["content"_L1].toString();
-            }
-        }
-        const auto finalResponse = mTokens.constLast();
-        TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
-        replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::Ollama;
-        replyInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
-        replyInfo.loadDuration = std::chrono::nanoseconds{finalResponse["load_duration"_L1].toVariant().toULongLong()};
-        replyInfo.promptEvalTokenCount = finalResponse["prompt_eval_count"_L1].toVariant().toULongLong();
-        replyInfo.promptEvalDuration = std::chrono::nanoseconds{finalResponse["prompt_eval_duration"_L1].toVariant().toULongLong()};
-        replyInfo.tokenCount = finalResponse["eval_count"_L1].toVariant().toULongLong();
-        replyInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
-        ret.replyInfo = replyInfo;
-        break;
-    }
+    case RequestTypes::StreamingChat:
+    case RequestTypes::StreamingGenerate:
+        // Already folded in by accumulateStreamedToken() as the tokens arrived.
+        return mStreamedResponse;
     case RequestTypes::ShowModelInfo:
         ret.response = generateModelInfo();
         break;
     case RequestTypes::StreamingResponses:
         // TODO
         break;
-    case RequestTypes::StreamingGenerate:
-        for (const auto &tok : mTokens) {
-            ret.response += tok["response"_L1].toString();
-        }
     }
     return ret;
+}
+
+void OllamaCommonReply::accumulateStreamedToken(const QJsonDocument &tok)
+{
+    switch (mRequestType) {
+    case RequestTypes::StreamingChat: {
+        const QJsonObject messageObj = tok["message"_L1].toObject();
+        if (const QJsonValue toolCallsValue = messageObj.value("tool_calls"_L1); !toolCallsValue.isUndefined()) {
+            // qDebug() << " tool_calls: " << toolCallsValue.toArray();
+            mStreamedResponse.info.append(parseToolCallsOllama(toolCallsValue.toArray()));
+        }
+        if (const QJsonValue thinkingValue = messageObj.value("thinking"_L1); !thinkingValue.isUndefined()) {
+            mStreamedResponse.thinking += thinkingValue.toString();
+        } else {
+            mStreamedResponse.response += messageObj["content"_L1].toString();
+        }
+        // Only the last token carries the timings, so each token simply overwrites them.
+        TextAutoGenerateText::TextAutoGenerateTextReplyInfo replyInfo;
+        replyInfo.replyType = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::ReplyType::Ollama;
+        replyInfo.totalDuration = std::chrono::nanoseconds{tok["total_duration"_L1].toVariant().toULongLong()};
+        replyInfo.loadDuration = std::chrono::nanoseconds{tok["load_duration"_L1].toVariant().toULongLong()};
+        replyInfo.promptEvalTokenCount = tok["prompt_eval_count"_L1].toVariant().toULongLong();
+        replyInfo.promptEvalDuration = std::chrono::nanoseconds{tok["prompt_eval_duration"_L1].toVariant().toULongLong()};
+        replyInfo.tokenCount = tok["eval_count"_L1].toVariant().toULongLong();
+        replyInfo.duration = std::chrono::nanoseconds{tok["eval_duration"_L1].toVariant().toULongLong()};
+        mStreamedResponse.replyInfo = replyInfo;
+        break;
+    }
+    case RequestTypes::StreamingGenerate:
+        mStreamedResponse.response += tok["response"_L1].toString();
+        break;
+    case RequestTypes::DownloadModel:
+    case RequestTypes::DeleteModel:
+    case RequestTypes::CreateModel:
+    case RequestTypes::Unknown:
+    case RequestTypes::ShowModelInfo:
+    case RequestTypes::StreamingResponses:
+        break;
+    }
 }
 
 QString OllamaCommonReply::generateModelInfo() const

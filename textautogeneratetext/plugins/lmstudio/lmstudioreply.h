@@ -43,5 +43,10 @@ private:
     [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_NO_EXPORT TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo
     parseDownLoadInfo(const QJsonDocument &doc) const;
     [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_NO_EXPORT QString generateModelInfo() const;
+    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void accumulateStreamedToken(const QJsonDocument &tok);
+
+    // Streamed tokens are folded into the response as they arrive, so that readResponse() stays O(1)
+    // instead of re-parsing every token received so far each time contentAdded() is emitted.
+    TextAutoGenerateText::TextAutoGenerateReply::Response mStreamedResponse;
     bool mDownloadError = false;
 };
