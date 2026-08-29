@@ -43,9 +43,8 @@ void TranslatorMenu::updateMenu()
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), u"Translate"_s);
     const QString engine = groupTranslate.readEntry(u"engine"_s, u"google"_s); // Google by default
     // qDebug() << " engine " << engine;
-    const QString currentPluginName = TextTranslator::TranslatorEngineLoader::self()->currentPluginName(engine);
     QString actionText;
-    if (!currentPluginName.isEmpty()) {
+    if (const QString currentPluginName = TextTranslator::TranslatorEngineLoader::self()->currentPluginName(engine); !currentPluginName.isEmpty()) {
         actionText = u"[%1] "_s.arg(currentPluginName);
     }
     const auto fromList = groupTranslate.readEntry(u"From"_s, QStringList());

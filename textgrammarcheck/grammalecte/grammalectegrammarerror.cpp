@@ -50,9 +50,8 @@ QColor GrammalecteGrammarError::parseColor(const QJsonObject &obj)
 
 void GrammalecteGrammarError::parse(const QJsonObject &obj, int blockindex)
 {
-    const int end = obj["nEnd"_L1].toInt(-1);
     mStart = obj["nStart"_L1].toInt(-1);
-    if (end != -1) {
+    if (const int end = obj["nEnd"_L1].toInt(-1); end != -1) {
         mLength = end - mStart;
     }
     mError = obj["sMessage"_L1].toString();

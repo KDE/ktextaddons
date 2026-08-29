@@ -89,9 +89,8 @@ QSize McpServerListViewDelegate::sizeHint(const QStyleOptionViewItem &option, co
     const QFontMetrics fontMetrics(option.font);
     const int height = fontMetrics.height() * 2; // Height for two lines
 
-    const QString pluginName = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::ServerType).toString();
     int widthDescription = 0;
-    if (!pluginName.isEmpty()) {
+    if (const QString pluginName = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::ServerType).toString(); !pluginName.isEmpty()) {
         QFont f = option.font;
         f.setItalic(true);
         f.setPointSize(f.pointSize() - 2);

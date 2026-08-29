@@ -50,8 +50,8 @@ KSyntaxHighlighting::Definition TextUtilsSyntaxHighlightingManager::def(const QS
     if (name.isEmpty()) {
         return {};
     }
-    auto it = std::lower_bound(mDefinitions.begin(), mDefinitions.end(), name, sortCaseInsensitively);
-    if (it != mDefinitions.end() && name.compare(*it, Qt::CaseInsensitive) == 0) {
+    if (auto it = std::lower_bound(mDefinitions.begin(), mDefinitions.end(), name, sortCaseInsensitively);
+        it != mDefinitions.end() && name.compare(*it, Qt::CaseInsensitive) == 0) {
         return mRepo.definitionForName(*it);
     }
     return {};

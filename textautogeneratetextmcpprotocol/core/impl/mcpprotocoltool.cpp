@@ -258,20 +258,17 @@ QJsonObject McpProtocolTool::InputSchema::toJson(const InputSchema &input)
 {
     QJsonObject obj;
     obj.insert("type"_L1, QString::fromLatin1(McpProtocolTool::type()));
-    const auto &dollarschema = input.dollarschema();
-    if (dollarschema.has_value()) {
+    if (const auto &dollarschema = input.dollarschema(); dollarschema.has_value()) {
         obj.insert("$schema"_L1, *dollarschema);
     }
-    const auto &properties = input.properties();
-    if (properties.has_value()) {
+    if (const auto &properties = input.properties(); properties.has_value()) {
         QJsonObject map_properties;
         for (auto it = properties->constBegin(); it != properties->constEnd(); ++it) {
             map_properties.insert(it.key(), QJsonValue(it.value()));
         }
         obj.insert("properties"_L1, map_properties);
     }
-    const auto &required = input.required();
-    if (required.has_value()) {
+    if (const auto &required = input.required(); required.has_value()) {
         QJsonArray arr_required;
         for (const auto &v : *required) {
             arr_required.append(v);
@@ -332,20 +329,17 @@ QJsonObject McpProtocolTool::OutputSchema::toJson(const OutputSchema &input)
 {
     QJsonObject obj;
     obj.insert("type"_L1, QString::fromLatin1(McpProtocolTool::type()));
-    const auto &dollarschema = input.dollarschema();
-    if (dollarschema.has_value()) {
+    if (const auto &dollarschema = input.dollarschema(); dollarschema.has_value()) {
         obj.insert("$schema"_L1, *dollarschema);
     }
-    const auto &properties = input.properties();
-    if (properties.has_value()) {
+    if (const auto &properties = input.properties(); properties.has_value()) {
         QJsonObject map_properties;
         for (auto it = properties->constBegin(); it != properties->constEnd(); ++it) {
             map_properties.insert(it.key(), QJsonValue(it.value()));
         }
         obj.insert("properties"_L1, map_properties);
     }
-    const auto &required = input.required();
-    if (required.has_value()) {
+    if (const auto &required = input.required(); required.has_value()) {
         QJsonArray arr_required;
         for (const auto &v : *required) {
             arr_required.append(v);

@@ -53,8 +53,7 @@ LanguageToolResultJob::JobError LanguageToolResultJob::canStartError() const
 
 void LanguageToolResultJob::start()
 {
-    const LanguageToolResultJob::JobError errorType = canStartError();
-    switch (errorType) {
+    switch (canStartError()) {
     case LanguageToolResultJob::JobError::EmptyText:
         return;
     case LanguageToolResultJob::JobError::UrlNotDefined:

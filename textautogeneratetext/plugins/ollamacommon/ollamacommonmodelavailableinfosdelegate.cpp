@@ -159,10 +159,8 @@ bool OllamaCommonModelAvailableInfosDelegate::handleMouseEvent(QMouseEvent *mous
     }
 
     const QPoint pos = mouseEvent->pos() - messageRect.topLeft();
-    const QEvent::Type eventType = mouseEvent->type();
-
     // Text selection
-    switch (eventType) {
+    switch (mouseEvent->type()) {
     case QEvent::MouseButtonPress:
         mTextSelection->setMightStartDrag(false);
         if (const auto *doc = documentForIndex(index, messageRect.width())) {
