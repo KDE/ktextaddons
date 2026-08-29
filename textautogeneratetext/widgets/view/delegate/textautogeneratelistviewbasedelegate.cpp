@@ -19,6 +19,9 @@ TextAutoGenerateListViewBaseDelegate::TextAutoGenerateListViewBaseDelegate(QList
 {
     connect(mTextSelection, &TextAutoGenerateListViewTextSelection::repaintNeeded, this, &TextAutoGenerateListViewBaseDelegate::updateView);
     mSizeHintCache.setMaxEntries(32);
+    // Without a bound the cache defaults to unlimited, so every message ever shown would keep its
+    // QTextDocument (a full rich-text layout) alive for the lifetime of the view.
+    mDocumentCache.setMaxEntries(32);
 }
 
 TextAutoGenerateListViewBaseDelegate::~TextAutoGenerateListViewBaseDelegate() = default;
