@@ -251,6 +251,7 @@ Q_SIGNALS:
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::iterator findMessage(const QByteArray &messageId);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessage(const QByteArray &messageId) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessageByAnswerUuid(const QByteArray &answerUuid) const;
 
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;

@@ -116,10 +116,7 @@ bool TextAutoGenerateMessagesModel::isEmpty() const
 
 void TextAutoGenerateMessagesModel::regenerateHtmlMessage(const QByteArray &identifier, int index)
 {
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == identifier;
-    };
-    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
+    if (auto it = findMessage(identifier); it != mMessages.end()) {
         (*it).generateHtml(searchText(), index);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -192,10 +189,7 @@ TextAutoGenerateMessage TextAutoGenerateMessagesModel::message(const QByteArray 
     if (uuid.isEmpty()) {
         return {};
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    auto it = findMessage(uuid);
     if (it == mMessages.end()) {
         return {};
     }
@@ -207,14 +201,11 @@ QModelIndex TextAutoGenerateMessagesModel::refreshAnswer(const QByteArray &uuid)
     if (uuid.isEmpty()) {
         return {};
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.answerUuid() == uuid;
-    };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    auto it = findMessageByAnswerUuid(uuid);
     if (it == mMessages.end()) {
         return {};
     }
-    const QModelIndex idx = createIndex(std::distance(mMessages.begin(), it), 0);
+    const QModelIndex idx = createIndex(std::distance(mMessages.cbegin(), it), 0);
     return idx;
 }
 
@@ -245,10 +236,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
     if (uuid.isEmpty()) {
         return {};
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    if (const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
+    if (const auto it = findMessage(uuid); it != mMessages.end()) {
         const int i = std::distance(mMessages.begin(), it);
         const QByteArray answerUuid = it->answerUuid();
 
@@ -263,10 +251,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
         };
         emitChanged(i, {MessageHtmlGeneratedRole});
 
-        auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
-            return msg.uuid() == answerUuid;
-        };
-        if (const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid); answerIt != mMessages.end()) {
+        if (const auto answerIt = findMessage(answerUuid); answerIt != mMessages.end()) {
             const int idx = std::distance(mMessages.begin(), answerIt);
             (*answerIt).setInProgress(true);
             (*answerIt).setContent({});
@@ -284,10 +269,7 @@ void TextAutoGenerateMessagesModel::changeInProgress(const QByteArray &uuid, boo
     if (uuid.isEmpty()) {
         return;
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
+    if (auto it = findMessage(uuid); it != mMessages.end()) {
         (*it).setInProgress(inProgress);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -304,10 +286,7 @@ bool TextAutoGenerateMessagesModel::waitingAnswer(const TextAutoGenerateMessage 
     if (answerUuid.isEmpty()) {
         return false;
     }
-    auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == answerUuid;
-    };
-    if (const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid); answerIt != mMessages.end()) {
+    if (const auto answerIt = findMessage(answerUuid); answerIt != mMessages.end()) {
         return (*answerIt).inProgress();
     }
     return false;
@@ -318,10 +297,7 @@ void TextAutoGenerateMessagesModel::updateMessageInfo(const QByteArray &uuid, co
     if (uuid.isEmpty()) {
         return;
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
+    if (auto it = findMessage(uuid); it != mMessages.end()) {
         (*it).setMessageInfo(messageInfo);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -339,10 +315,7 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
     if (uuid.isEmpty()) {
         return;
     }
-    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
+    if (auto it = findMessage(uuid); it != mMessages.end()) {
         if (!content.response.isEmpty()) {
             (*it).setContent(content.response);
         } else if (!content.thinking.isEmpty()) {
@@ -369,10 +342,7 @@ QList<QByteArray> TextAutoGenerateMessagesModel::removeDiscussion(const QByteArr
     if (uuid.isEmpty()) {
         return {};
     }
-    const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    const auto it = findMessage(uuid);
     QList<QByteArray> lst;
     if (it != mMessages.end()) {
         const int i = std::distance(mMessages.begin(), it);
@@ -391,10 +361,7 @@ void TextAutoGenerateMessagesModel::changeTextToSpeechInProgress(const QByteArra
     if (uuid.isEmpty()) {
         return;
     }
-    const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    if (auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid); it != mMessages.end()) {
+    if (auto it = findMessage(uuid); it != mMessages.end()) {
         (*it).setTextToSpeechInProgress(inProgress);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
@@ -451,14 +418,11 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
 
 QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) const
 {
-    const auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
-        return msg.uuid() == uuid;
-    };
-    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
-    if (it == mMessages.end()) {
+    auto it = findMessage(uuid);
+    if (it == mMessages.cend()) {
         return {};
     }
-    const QModelIndex idx = createIndex(std::distance(mMessages.begin(), it), 0);
+    const QModelIndex idx = createIndex(std::distance(mMessages.cbegin(), it), 0);
     return idx;
 }
 
@@ -496,18 +460,32 @@ TextAutoGenerateMessage TextAutoGenerateMessagesModel::findNextMessageAfter(cons
     return it == mMessages.end() ? TextAutoGenerateMessage() : *it;
 }
 
+// Messages are appended in chronological order and lookups overwhelmingly target the most recent
+// ones -- while a reply streams in, every chunk received updates the message being written, which
+// is the last one. Scanning backwards makes that common case O(1) instead of walking the whole
+// conversation on each chunk. Uuids are unique, so the match found is the same either way.
 QList<TextAutoGenerateMessage>::iterator TextAutoGenerateMessagesModel::findMessage(const QByteArray &messageId)
 {
-    return std::find_if(mMessages.begin(), mMessages.end(), [&](const TextAutoGenerateMessage &msg) {
+    const auto rit = std::find_if(mMessages.rbegin(), mMessages.rend(), [&messageId](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == messageId;
     });
+    return rit == mMessages.rend() ? mMessages.end() : std::prev(rit.base());
 }
 
 QList<TextAutoGenerateMessage>::const_iterator TextAutoGenerateMessagesModel::findMessage(const QByteArray &messageId) const
 {
-    return std::find_if(mMessages.cbegin(), mMessages.cend(), [&](const TextAutoGenerateMessage &msg) {
+    const auto rit = std::find_if(mMessages.crbegin(), mMessages.crend(), [&messageId](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == messageId;
     });
+    return rit == mMessages.crend() ? mMessages.cend() : std::prev(rit.base());
+}
+
+QList<TextAutoGenerateMessage>::const_iterator TextAutoGenerateMessagesModel::findMessageByAnswerUuid(const QByteArray &answerUuid) const
+{
+    const auto rit = std::find_if(mMessages.crbegin(), mMessages.crend(), [&answerUuid](const TextAutoGenerateMessage &msg) {
+        return msg.answerUuid() == answerUuid;
+    });
+    return rit == mMessages.crend() ? mMessages.cend() : std::prev(rit.base());
 }
 
 #include "moc_textautogeneratemessagesmodel.cpp"
