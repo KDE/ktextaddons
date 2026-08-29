@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-29 00:44+0000\n"
 "PO-Revision-Date: 2026-05-31 19:49-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: core/unicodeemoticonmanager.cpp:44
+#: core/unicodeemoticonmanager.cpp:67
 #, kde-format
 msgid "Symbols"
 msgstr "بەلگە"
 
-#: core/unicodeemoticonmanager.cpp:46
+#: core/unicodeemoticonmanager.cpp:69
 #, kde-format
 msgid "Activity"
 msgstr "پائالىيەت"
 
-#: core/unicodeemoticonmanager.cpp:48
+#: core/unicodeemoticonmanager.cpp:71
 #, kde-format
 msgid "Objects"
 msgstr "جىسىم"
 
-#: core/unicodeemoticonmanager.cpp:50
+#: core/unicodeemoticonmanager.cpp:73
 #, kde-format
 msgid "Nature"
 msgstr ""
 
-#: core/unicodeemoticonmanager.cpp:52
+#: core/unicodeemoticonmanager.cpp:75
 #, kde-format
 msgid "Food"
 msgstr ""
 
-#: core/unicodeemoticonmanager.cpp:54
+#: core/unicodeemoticonmanager.cpp:77
 #, kde-format
 msgid "People"
 msgstr "كىشى"
 
-#: core/unicodeemoticonmanager.cpp:56
+#: core/unicodeemoticonmanager.cpp:79
 #, kde-format
 msgid "Travel"
 msgstr ""
 
-#: core/unicodeemoticonmanager.cpp:58
+#: core/unicodeemoticonmanager.cpp:81
 #, kde-format
 msgid "Regional"
 msgstr ""
 
-#: core/unicodeemoticonmanager.cpp:60
+#: core/unicodeemoticonmanager.cpp:83
 #, kde-format
 msgid "Flags"
 msgstr "بايراق"

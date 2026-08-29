@@ -20,28 +20,28 @@ msgstr ""
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "无法启动作业。管理器不存在或文本为空。"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "打开文件进行写入失败：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "写入文件失败：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "Json 文件"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "打开文件进行读取失败：%1"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format

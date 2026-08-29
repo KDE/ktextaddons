@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-29 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: core/unicodeemoticonmanager.cpp:44
+#: core/unicodeemoticonmanager.cpp:67
 #, kde-format
 msgid "Symbols"
 msgstr "प्रतीक"
 
-#: core/unicodeemoticonmanager.cpp:46
+#: core/unicodeemoticonmanager.cpp:69
 #, kde-format
 msgid "Activity"
 msgstr "गतिविधि"
 
-#: core/unicodeemoticonmanager.cpp:48
+#: core/unicodeemoticonmanager.cpp:71
 #, kde-format
 msgid "Objects"
 msgstr "वस्तुओं"
 
-#: core/unicodeemoticonmanager.cpp:50
+#: core/unicodeemoticonmanager.cpp:73
 #, kde-format
 msgid "Nature"
 msgstr "प्रकृति"
 
-#: core/unicodeemoticonmanager.cpp:52
+#: core/unicodeemoticonmanager.cpp:75
 #, kde-format
 msgid "Food"
 msgstr "खाना"
 
-#: core/unicodeemoticonmanager.cpp:54
+#: core/unicodeemoticonmanager.cpp:77
 #, kde-format
 msgid "People"
 msgstr "लोग"
 
-#: core/unicodeemoticonmanager.cpp:56
+#: core/unicodeemoticonmanager.cpp:79
 #, kde-format
 msgid "Travel"
 msgstr "यात्रा"
 
-#: core/unicodeemoticonmanager.cpp:58
+#: core/unicodeemoticonmanager.cpp:81
 #, kde-format
 msgid "Regional"
 msgstr "क्षेत्रीय"
 
-#: core/unicodeemoticonmanager.cpp:60
+#: core/unicodeemoticonmanager.cpp:83
 #, kde-format
 msgid "Flags"
 msgstr "झंडे"

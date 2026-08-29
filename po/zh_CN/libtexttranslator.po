@@ -400,17 +400,14 @@ msgid "Settings"
 msgstr "设置"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use translation cache"
+#, kde-format
 msgid "Translation failed."
-msgstr "使用翻译缓存"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model is not loaded."
-msgstr "语言模型没有定义。"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
@@ -418,10 +415,9 @@ msgid "Language model is not defined."
 msgstr "语言模型没有定义。"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model files are missing in %1."
-msgstr "语言模型没有定义。"
+msgstr ""
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
