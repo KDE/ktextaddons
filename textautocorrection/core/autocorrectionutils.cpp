@@ -9,6 +9,8 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QLocale>
+#include <QSet>
 #include <QStandardPaths>
 using namespace TextAutoCorrectionCore;
 using namespace Qt::Literals::StringLiterals;
@@ -124,30 +126,23 @@ QStringList AutoCorrectionUtils::autoCorrectLibreOfficeLanguageToString(const QS
 {
     QStringList languagesStr;
     const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyCountry);
+    QSet<QString> wanted;
+    wanted.reserve(langs.size() * 2);
+    for (const QString &lang : langs) {
+        wanted.insert(lang);
+        QString normalized = lang;
+        normalized.replace(u'-', u'_');
+        wanted.insert(std::move(normalized));
+    }
     for (const QLocale &locale : allLocales) {
         const QString languageCode = locale.name();
-        for (const QString &lang : langs) {
-            if (languageCode == lang) {
-                const QString nativeName = locale.nativeLanguageName();
-                // For some languages the native name might be empty.
-                // In this case use the non native language name as fallback.
-                // See: QTBUG-51323
-                const QString languageName = nativeName.isEmpty() ? QLocale::languageToString(locale.language()) : nativeName;
-                languagesStr.append(languageName);
-                break;
-            } else {
-                QString b = lang;
-                b.replace(u'-', u'_');
-                if (languageCode == b) {
-                    const QString nativeName = locale.nativeLanguageName();
-                    // For some languages the native name might be empty.
-                    // In this case use the non native language name as fallback.
-                    // See: QTBUG-51323
-                    const QString languageName = nativeName.isEmpty() ? QLocale::languageToString(locale.language()) : nativeName;
-                    languagesStr.append(languageName);
-                    break;
-                }
-            }
+        if (wanted.contains(languageCode)) {
+            const QString nativeName = locale.nativeLanguageName();
+            // For some languages the native name might be empty.
+            // In this case use the non native language name as fallback.
+            // See: QTBUG-51323
+            const QString languageName = nativeName.isEmpty() ? QLocale::languageToString(locale.language()) : nativeName;
+            languagesStr.append(languageName);
         }
     }
     return languagesStr;
