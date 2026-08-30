@@ -87,6 +87,7 @@ QString TextUtilsBlockCMarkSupport::convertTextWithUrl(const QString &str)
     static const QRegularExpression regularExpressionAHref(u"<a href=\"(.*)\">(.*)</a>"_s);
     static const QRegularExpression regularExpressionCustomAHref(u"<a href=\"(.*)\\|(.*)\">(.*)</a>"_s);
     QString newStr;
+    newStr.reserve(str.size());
     bool isRef = false;
     bool isUrl = false;
 #if 0
