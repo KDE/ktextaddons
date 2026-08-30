@@ -23,7 +23,7 @@ public:
         q->setSearchIdentifier(QString());
     }
 
-    [[nodiscard]] QString emojiToneSuffix() const
+    [[nodiscard]] QLatin1StringView emojiToneSuffix() const
     {
         switch (tone) {
         case EmojiModelManager::EmojiTone::All:
@@ -52,7 +52,7 @@ public:
             }
             return false;
         }
-        if (const QString suffix = emojiToneSuffix(); suffix.isEmpty()) {
+        if (const QLatin1StringView suffix = emojiToneSuffix(); suffix.isEmpty()) {
             return true;
         } else {
             const QModelIndex sourceIndex = q->sourceModel()->index(source_row, 0, source_parent);
@@ -62,7 +62,7 @@ public:
             }
             // Match the suffix at the end of the identifier: :handshake_tone1-3: is a
             // mixed tone emoji, it belongs to no single tone.
-            return !identifier.contains("_tone"_L1) || identifier.endsWith(suffix + u':');
+            return !identifier.contains("_tone"_L1) || (identifier.endsWith(u':') && identifier.chopped(1).endsWith(suffix));
         }
     }
 
@@ -210,7 +210,7 @@ bool EmojiSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIn
 
 QString EmojiSortFilterProxyModel::emojiToneSuffix() const
 {
-    return d->emojiToneSuffix();
+    return QString::fromLatin1(d->emojiToneSuffix());
 }
 
 #include "moc_emojisortfilterproxymodel.cpp"
