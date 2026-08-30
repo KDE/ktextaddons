@@ -112,7 +112,7 @@ void LMStudioManager::loadModels()
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (!mApiKey.isEmpty()) {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
@@ -166,7 +166,7 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getCompletion(cons
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (!mApiKey.isEmpty()) {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
 
     QJsonObject data;
@@ -195,7 +195,7 @@ TextAutoGenerateText::TextAutoGenerateReply *LMStudioManager::getChatCompletion(
     QNetworkRequest req{url};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     if (!mApiKey.isEmpty()) {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
 
     QJsonObject data;

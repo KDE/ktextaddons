@@ -41,7 +41,7 @@ void GenericNetworkManager::loadModels()
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Api key is missing";
     } else {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
@@ -91,8 +91,8 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     }
     QNetworkRequest req{QUrl::fromUserInput(apiUrl() + chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-    req.setRawHeader("Accept", "application/json"_ba);
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+    req.setRawHeader("Accept"_ba, "application/json"_ba);
+    req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     QJsonObject data;
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
@@ -145,8 +145,8 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getResponses
     }
     QNetworkRequest req{QUrl::fromUserInput(apiUrl() + chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-    req.setRawHeader("Accept", "application/json"_ba);
-    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+    req.setRawHeader("Accept"_ba, "application/json"_ba);
+    req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     QJsonObject data;
     data["model"_L1] = request.model();
     data["input"_L1] = request.messages();

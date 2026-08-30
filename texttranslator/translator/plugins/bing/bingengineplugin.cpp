@@ -52,7 +52,7 @@ void BingEnginePlugin::parseCredentials(QNetworkReply *reply)
 {
     const QByteArray webSiteData = reply->readAll();
     reply->deleteLater();
-    const QByteArray credentialsBeginString = QByteArrayLiteral("var params_RichTranslateHelper = [");
+    const QByteArray credentialsBeginString = "var params_RichTranslateHelper = ["_ba;
     const int credentialsBeginPos = webSiteData.indexOf(credentialsBeginString);
 
     if (credentialsBeginPos == -1) {

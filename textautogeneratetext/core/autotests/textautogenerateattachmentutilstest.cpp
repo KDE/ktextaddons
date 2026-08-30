@@ -27,9 +27,9 @@ void TextAutoGenerateAttachmentUtilsTest::shouldGenerateAttachmentType_data()
     QTest::addColumn<QByteArray>("mimetype");
     QTest::addColumn<TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType>("attachmentType");
     QTest::newRow("unknown") << QByteArray() << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
-    QTest::newRow("image1") << QByteArray("image/png") << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
-    QTest::newRow("audio1") << QByteArray("audio/png") << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio;
-    QTest::newRow("video1") << QByteArray("video/png") << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Video;
+    QTest::newRow("image1") << "image/png"_ba << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
+    QTest::newRow("audio1") << "audio/png"_ba << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio;
+    QTest::newRow("video1") << "video/png"_ba << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Video;
 }
 
 void TextAutoGenerateAttachmentUtilsTest::shouldHaveAttachmentElementInfoDefaultValues()

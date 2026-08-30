@@ -47,7 +47,7 @@ void OllamaCloudManager::loadModels()
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
     } else {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
@@ -91,7 +91,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(c
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
     } else {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
 
     QJsonObject data;
@@ -120,7 +120,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     if (mApiKey.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
     } else {
-        req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
     }
 
     QJsonObject data;

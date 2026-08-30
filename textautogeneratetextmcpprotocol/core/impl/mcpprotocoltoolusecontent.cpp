@@ -14,7 +14,7 @@ McpProtocolToolUseContent::McpProtocolToolUseContent() = default;
 
 QByteArray McpProtocolToolUseContent::type()
 {
-    return QByteArrayLiteral("tool_use");
+    return "tool_use"_ba;
 }
 
 bool McpProtocolToolUseContent::operator==(const McpProtocolToolUseContent &other) const = default;

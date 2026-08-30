@@ -13,7 +13,7 @@ McpProtocolImageContent::McpProtocolImageContent() = default;
 
 QByteArray McpProtocolImageContent::type()
 {
-    return QByteArrayLiteral("image");
+    return "image"_ba;
 }
 
 QString McpProtocolImageContent::mimeType() const

@@ -19,12 +19,12 @@ QTEST_GUILESS_MAIN(TextAutoGenerateLocalMessagesDatabaseTest)
 using namespace Qt::Literals::StringLiterals;
 static QByteArray chatId()
 {
-    return QByteArrayLiteral("myChatId");
+    return "myChatId"_ba;
 }
 
 static QByteArray otherChatId()
 {
-    return QByteArrayLiteral("otherChatId");
+    return "otherChatId"_ba;
 }
 
 enum class Fields {
@@ -181,7 +181,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteDatabaseWhenConnecti
     // GIVEN a database file on disk without a registered connection, as after a
     // restart where the chat was never selected.
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
-    const QByteArray neverOpenedChatId = QByteArrayLiteral("neverOpenedChatId");
+    const QByteArray neverOpenedChatId = "neverOpenedChatId"_ba;
     const QString neverOpenedChatIdStr = QString::fromLatin1(neverOpenedChatId);
     const QString dbFileName = logger.dbFileName(neverOpenedChatIdStr);
 

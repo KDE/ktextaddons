@@ -34,7 +34,7 @@ QByteArray TextAutoGenerateAttachmentUtils::extractContentFromFile(const QString
 
 QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &messageId, int index)
 {
-    return messageId + QByteArray("_") + QByteArray::number(index);
+    return messageId + "_"_ba + QByteArray::number(index);
 }
 
 TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachmentUtils::generateAttachmentType(const QByteArray &mimetype)

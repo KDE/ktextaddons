@@ -7,6 +7,7 @@
 #include "emojimodel.h"
 #include "textemoticonscore_debug.h"
 #include <TextEmoticonsCore/CustomEmojiIconManager>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsCore;
 EmojiModel::EmojiModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -162,13 +163,13 @@ void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
 
 QHash<int, QByteArray> EmojiModel::roleNames() const
 {
-    return {{{UnicodeEmoji, QByteArrayLiteral("unicode")},
-             {Identifier, QByteArrayLiteral("identifier")},
-             {Category, QByteArrayLiteral("category")},
-             {IsCustom, QByteArrayLiteral("isCustom")},
-             {FileName, QByteArrayLiteral("fileName")},
-             {DiversityChildren, QByteArrayLiteral("diversityChildren")},
-             {Aliases, QByteArrayLiteral("aliases")}}};
+    return {{{UnicodeEmoji, "unicode"_ba},
+             {Identifier, "identifier"_ba},
+             {Category, "category"_ba},
+             {IsCustom, "isCustom"_ba},
+             {FileName, "fileName"_ba},
+             {DiversityChildren, "diversityChildren"_ba},
+             {Aliases, "aliases"_ba}}};
 }
 
 #include "moc_emojimodel.cpp"

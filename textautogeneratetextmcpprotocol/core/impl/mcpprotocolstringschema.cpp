@@ -29,7 +29,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QByteArray McpProtocolStringSchema::type()
 {
-    return QByteArrayLiteral("string");
+    return "string"_ba;
 }
 
 McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj)

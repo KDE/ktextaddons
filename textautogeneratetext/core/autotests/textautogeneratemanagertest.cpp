@@ -9,6 +9,9 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(TextAutoGenerateManagerTest)
 
 TextAutoGenerateManagerTest::TextAutoGenerateManagerTest(QObject *parent)
@@ -46,7 +49,7 @@ void TextAutoGenerateManagerTest::shouldEmitCurrentChatIdChangedWhenReset()
 
     w.setCurrentChatId("chat-1");
     QCOMPARE(spy.count(), 1);
-    QCOMPARE(w.currentChatId(), QByteArray("chat-1"));
+    QCOMPARE(w.currentChatId(), "chat-1"_ba);
 
     w.resetCurrentChatId();
     QCOMPARE(spy.count(), 2);

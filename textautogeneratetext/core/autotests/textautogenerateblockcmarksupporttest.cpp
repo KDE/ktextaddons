@@ -9,6 +9,8 @@
 
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(TextAutoGenerateBlockCMarkSupportTest)
 
 TextAutoGenerateBlockCMarkSupportTest::TextAutoGenerateBlockCMarkSupportTest(QObject *parent)
@@ -23,7 +25,7 @@ void TextAutoGenerateBlockCMarkSupportTest::shouldHighlightLiteralSearchText()
     const QString sourceText = QStringLiteral("A.B");
     const QString searchText = QStringLiteral(".");
 
-    const QString converted = support.convertMessageText(sourceText, QByteArrayLiteral("uuid"), searchText, numberOfTextSearched, -1);
+    const QString converted = support.convertMessageText(sourceText, "uuid"_ba, searchText, numberOfTextSearched, -1);
 
     QCOMPARE(numberOfTextSearched, 1);
     QVERIFY(converted.contains(QStringLiteral("A")));
