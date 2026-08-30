@@ -21,7 +21,13 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 
 namespace
 {
-QString generateRichTextCMark(const QString &str, const QString &searchedText, int &numberOfTextSearched, int hightLightStringIndex)
+QString generateRichTextCMark(const QString &str,
+                              const QString &searchedText,
+                              int &numberOfTextSearched,
+                              int hightLightStringIndex,
+                              const QString &userHighlightForegroundColor,
+                              const QString &userHighlightBackgroundColor,
+                              const QString &userHighlightStringIndexBackgroundColor)
 {
     QString newStr = TextUtils::TextUtilsBlockCMarkSupport::markdownToRichTextCMark(str);
     static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
@@ -32,13 +38,6 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
 
     if (!searchedText.isEmpty()) {
         QList<HrefPos> lstPos;
-        const auto userHighlightForegroundColor =
-            TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
-        const auto userHighlightBackgroundColor =
-            TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
-
-        const auto userHighlightStringIndexBackgroundColor =
-            TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::PositiveBackground).color().name();
 
         QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
         while (userIteratorHref.hasNext()) {
@@ -164,8 +163,9 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
 {
     QString richText;
     QTextStream richTextStream(&richText);
-    const QColor codeBackgroundColor = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color();
-    const auto codeBorderColor = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::InactiveText).color().name();
+    const auto scheme = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView();
+    const QColor codeBackgroundColor = scheme.background(KColorScheme::AlternateBackground).color();
+    const auto codeBorderColor = scheme.foreground(KColorScheme::InactiveText).color().name();
 
     QString highlighted;
     QTextStream stream(&highlighted);
@@ -193,6 +193,15 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
 
     const QString codeBackgroundColorName = codeBackgroundColor.name();
 
+    QString userHighlightForegroundColor;
+    QString userHighlightBackgroundColor;
+    QString userHighlightStringIndexBackgroundColor;
+    if (!searchText.isEmpty()) {
+        userHighlightForegroundColor = scheme.foreground(KColorScheme::NeutralText).color().name();
+        userHighlightBackgroundColor = scheme.background(KColorScheme::NeutralBackground).color().name();
+        userHighlightStringIndexBackgroundColor = scheme.background(KColorScheme::PositiveBackground).color().name();
+    }
+
     auto addCodeChunk = [&](const QString &chunk) {
         auto definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->def(language);
         if (!definition.isValid()) {
@@ -210,11 +219,23 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     };
 
     auto addTextChunk = [&](const QString &chunk) {
-        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched, hightLightStringIndex);
+        const auto htmlChunk = generateRichTextCMark(chunk,
+                                                     searchText,
+                                                     numberOfTextSearched,
+                                                     hightLightStringIndex,
+                                                     userHighlightForegroundColor,
+                                                     userHighlightBackgroundColor,
+                                                     userHighlightStringIndexBackgroundColor);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
-        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched, hightLightStringIndex);
+        const auto htmlChunk = generateRichTextCMark(chunk,
+                                                     searchText,
+                                                     numberOfTextSearched,
+                                                     hightLightStringIndex,
+                                                     userHighlightForegroundColor,
+                                                     userHighlightBackgroundColor,
+                                                     userHighlightStringIndexBackgroundColor);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColorName << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
