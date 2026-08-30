@@ -117,15 +117,6 @@ QStringList EmojiModelManager::excludeEmoticons() const
     return d->excludeEmoticons;
 }
 
-void EmojiModelManager::setExcludeEmoticons(const QStringList &emoticons)
-{
-    if (d->excludeEmoticons != emoticons) {
-        d->excludeEmoticons = emoticons;
-        d->emojiModel->setExcludeEmoticons(d->excludeEmoticons);
-        Q_EMIT excludeEmoticonsChanged();
-    }
-}
-
 EmojiModelManager::EmojiTone EmojiModelManager::emojiTone() const
 {
     return d->tone;

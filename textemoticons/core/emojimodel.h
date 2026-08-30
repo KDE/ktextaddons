@@ -97,12 +97,6 @@ public:
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
     /*!
-     * \brief Sets emoticons to exclude from the model
-     * \param emoticons The list of emoticons to exclude
-     */
-    void setExcludeEmoticons(const QStringList &emoticons);
-
-    /*!
      * \brief Returns the role names for the model
      * \return A hash of role numbers to role names
      */

@@ -90,11 +90,6 @@ public:
      * \return A list of emoticon identifiers to exclude from the model
      */
     [[nodiscard]] QStringList excludeEmoticons() const;
-    /*!
-     * \brief Sets the list of emoticons to exclude
-     * \param emoticons The emoticons to exclude
-     */
-    void setExcludeEmoticons(const QStringList &emoticons);
 
     /*!
      * \brief Returns the current emoji tone

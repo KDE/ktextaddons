@@ -147,20 +147,6 @@ void EmojiModel::setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconMan
     mCustomEmojiIconManager = newCustomEmojiIconManager;
 }
 
-void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
-{
-    beginResetModel();
-    for (const auto &identifier : emoticons) {
-        auto index = std::find_if(mEmoticonList.begin(), mEmoticonList.end(), [identifier](const TextEmoticonsCore::UnicodeEmoticon &emoji) {
-            return (identifier == emoji.identifier());
-        });
-        if (index != mEmoticonList.end()) {
-            mEmoticonList.removeAll(*index);
-        }
-    }
-    endResetModel();
-}
-
 QHash<int, QByteArray> EmojiModel::roleNames() const
 {
     return {{{UnicodeEmoji, "unicode"_ba},
