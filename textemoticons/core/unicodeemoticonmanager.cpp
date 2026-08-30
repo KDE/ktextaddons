@@ -138,6 +138,7 @@ QList<EmoticonCategory> UnicodeEmoticonManager::categories() const
 QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &category) const
 {
     QList<UnicodeEmoticon> result;
+    result.reserve(d->unicodeEmojiList.size());
 
     auto hasRequestedCategory = [category](const UnicodeEmoticon &emo) {
         return emo.category() == category;

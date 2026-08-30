@@ -36,6 +36,7 @@ McpProtocolReadResourceResult McpProtocolReadResourceResult::fromJson(const QJso
     if (const QJsonValue contentsValue = obj.value("contents"_L1); contentsValue.isArray()) {
         QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource> resources;
         const QJsonArray arr = contentsValue.toArray();
+        resources.reserve(arr.size());
         for (const auto &v : arr) {
             resources.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceFromJson(v));
         }

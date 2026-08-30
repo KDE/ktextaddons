@@ -34,7 +34,7 @@ void TextAutoGenerateMenuTextManager::load()
     QList<TextAutoGenerateMenuTextInfo> infos;
     KSharedConfig::Ptr config;
     const QStringList keyGroups = keyRecorderList(config);
-
+    infos.reserve(keyGroups.size());
     for (const QString &groupName : keyGroups) {
         const KConfigGroup group = config->group(groupName);
         TextAutoGenerateMenuTextInfo info;

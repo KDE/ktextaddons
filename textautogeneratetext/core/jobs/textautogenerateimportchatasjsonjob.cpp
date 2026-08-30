@@ -40,6 +40,7 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
             QMap<QByteArray, QByteArray> convertUuid;
             QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
             const QJsonArray array = obj[u"messages"_s].toArray();
+            msgs.reserve(qsizetype(array.size()));
             for (const auto &val : array) {
                 if (const TextAutoGenerateMessage msg = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(val.toObject()); msg.isValid()) {
                     convertUuid.insert(msg.uuid(), TextAutoGenerateTextUtils::generateUUid());

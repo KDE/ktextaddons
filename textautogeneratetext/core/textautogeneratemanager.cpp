@@ -443,6 +443,7 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId, const QByt
     createNewChat(chat.title());
     QList<TextAutoGenerateMessage> newMessages;
     QMap<QByteArray, QByteArray> convertUuid;
+    newMessages.reserve(qsizetype(messages.size()));
     for (const auto &m : messages) {
         TextAutoGenerateMessage newMsg = m;
         newMsg.setUuid(TextAutoGenerateTextUtils::generateUUid());

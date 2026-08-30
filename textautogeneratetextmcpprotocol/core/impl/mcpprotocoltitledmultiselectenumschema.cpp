@@ -108,6 +108,7 @@ McpProtocolTitledMultiSelectEnumSchema::Items McpProtocolTitledMultiSelectEnumSc
     if (const QJsonValue anyOfValue = obj.value("anyOf"_L1); anyOfValue.isArray()) {
         QList<AnyOfItem> anyOf;
         const QJsonArray arr = anyOfValue.toArray();
+        anyOf.reserve(arr.size());
         for (const QJsonValue &v : arr) {
             anyOf.append(McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()));
         }

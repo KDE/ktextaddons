@@ -49,6 +49,7 @@ QStringList LanguageToolGrammarError::parseSuggestion(const QJsonObject &obj)
 {
     QStringList lst;
     const QJsonArray array = obj["replacements"_L1].toArray();
+    lst.reserve(qsizetype(array.size()));
     for (const auto &current : array) {
         if (current.type() == QJsonValue::Object) {
             const QJsonObject suggestionObject = current.toObject();

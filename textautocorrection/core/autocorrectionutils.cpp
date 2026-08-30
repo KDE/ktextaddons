@@ -108,6 +108,7 @@ QStringList AutoCorrectionUtils::searchAutoCorrectLibreOfficeFiles()
     if (const QString path = libreOfficeSystemPath(); QFileInfo::exists(path)) {
         const QDir dir(path);
         const QStringList entryList = dir.entryList(QDir::Files | QDir::NoDotAndDotDot);
+        files.reserve(qsizetype(entryList.size()));
         for (const QString &file : entryList) {
             QString curFile = file;
             curFile.remove(path);
