@@ -191,6 +191,8 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
         return highlighted;
     };
 
+    const QString codeBackgroundColorName = codeBackgroundColor.name();
+
     auto addCodeChunk = [&](const QString &chunk) {
         auto definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->def(language);
         if (!definition.isValid()) {
@@ -199,12 +201,12 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
         qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " definition.name() " << definition.name();
         highlighter.setDefinition(definition);
         // Qt's support for borders is limited to tables, so we have to jump through some hoops...
-        richTextStream << "<table><tr><td style='background-color:"_L1 << codeBackgroundColor.name() << "; padding: 5px; border: 1px solid "_L1
-                       << codeBorderColor << "'>"_L1 << highlight(chunk) << "</td></tr></table>"_L1;
+        richTextStream << "<table><tr><td style='background-color:"_L1 << codeBackgroundColorName << "; padding: 5px; border: 1px solid "_L1 << codeBorderColor
+                       << "'>"_L1 << highlight(chunk) << "</td></tr></table>"_L1;
     };
 
     auto addInlineCodeChunk = [&](const QString &chunk) {
-        richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << chunk.toHtmlEscaped() << "</code>"_L1;
+        richTextStream << "<code style='background-color:"_L1 << codeBackgroundColorName << "'>"_L1 << chunk.toHtmlEscaped() << "</code>"_L1;
     };
 
     auto addTextChunk = [&](const QString &chunk) {
@@ -213,7 +215,7 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
         const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched, hightLightStringIndex);
-        richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << htmlChunk << "</code>"_L1;
+        richTextStream << "<code style='background-color:"_L1 << codeBackgroundColorName << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
     auto addInlineQuoteCodeNewLineChunk = [&]() {
