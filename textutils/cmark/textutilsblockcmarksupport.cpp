@@ -247,7 +247,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
             qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
             if (QString strLiteral = QString::fromUtf8(literal); !strLiteral.isEmpty()) {
                 convertHtmlChar(strLiteral);
-                const QString stringHtml = u"`"_s + strLiteral + u"`"_s;
+                const QString stringHtml = u'`' + strLiteral + u'`';
                 const QString convertedString = addHighlighter(stringHtml, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
                 qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);

@@ -89,7 +89,7 @@ void iterateOverEndLineRegions(const QString &str,
                                NewLineCallBack &&newLine)
 {
     // We have quote text if text start with > or we have "\n>"
-    if (str.startsWith(regionMarker) || str.contains(u"\n"_s + regionMarker)) {
+    if (str.startsWith(regionMarker) || str.contains(u'\n' + regionMarker)) {
         int startFrom = 0;
         const auto markerSize = regionMarker.size();
         bool hasCode = false;

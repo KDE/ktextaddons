@@ -28,8 +28,8 @@ void TextAutoGenerateBlockCMarkSupportTest::shouldHighlightLiteralSearchText()
     const QString converted = support.convertMessageText(sourceText, "uuid"_ba, searchText, numberOfTextSearched, -1);
 
     QCOMPARE(numberOfTextSearched, 1);
-    QVERIFY(converted.contains(u"A"_s));
-    QVERIFY(converted.contains(u"B"_s));
+    QVERIFY(converted.contains(u'A'));
+    QVERIFY(converted.contains(u'B'));
 }
 
 #include "moc_textautogenerateblockcmarksupporttest.cpp"

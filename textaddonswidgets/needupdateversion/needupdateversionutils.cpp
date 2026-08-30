@@ -26,7 +26,7 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
         captured = str;
     }
     if (!captured.isEmpty()) {
-        if (const QStringList version = captured.split(QLatin1Char('.')); version.size() > 2) {
+        if (const QStringList version = captured.split(u'.'); version.size() > 2) {
             bool ok;
             int year = version.at(0).toInt(&ok);
             if (ok) {

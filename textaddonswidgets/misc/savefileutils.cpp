@@ -42,7 +42,7 @@ QString SaveFileUtils::querySaveFileName(QWidget *parent, const QString &title, 
         }();
     }
 #ifdef Q_OS_WIN
-    fileName.replace(u':', u"_"_s);
+    fileName.replace(u':', u'_');
 #endif
     const QString startDir = startUrl.isLocalFile() ? startUrl.toLocalFile() : startUrl.path();
     const QString localFilePath = QDir(startDir).filePath(fileName);

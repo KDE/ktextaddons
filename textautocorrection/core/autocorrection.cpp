@@ -647,11 +647,11 @@ bool AutoCorrection::autoFractions() const
     }
 
     if (trimmed.startsWith("1/2"_L1)) {
-        d->mWord.replace(0, 3, u"½"_s);
+        d->mWord.replace(0, 3, u'½');
     } else if (trimmed.startsWith("1/4"_L1)) {
-        d->mWord.replace(0, 3, u"¼"_s);
+        d->mWord.replace(0, 3, u'¼');
     } else if (trimmed.startsWith("3/4"_L1)) {
-        d->mWord.replace(0, 3, u"¾"_s);
+        d->mWord.replace(0, 3, u'¾');
     } else {
         return false;
     }

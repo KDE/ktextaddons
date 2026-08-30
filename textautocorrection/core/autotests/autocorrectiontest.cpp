@@ -168,19 +168,19 @@ void AutoCorrectionTest::shouldReplaceSingleQuote()
 
     QTextDocument doc;
     QString text = u"sss"_s;
-    doc.setPlainText(u"'"_s + text);
+    doc.setPlainText(u'\'' + text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(simpleQuote.begin + text));
 
     text = u"sss"_s;
-    doc.setPlainText(text + u"'"_s);
+    doc.setPlainText(text + u'\'');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + simpleQuote.end));
 
     text = u"sss"_s;
-    doc.setPlainText(u"'"_s + text + u"'"_s);
+    doc.setPlainText(u'\'' + text + u'\'');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(simpleQuote.begin + text + simpleQuote.end));
@@ -208,13 +208,13 @@ void AutoCorrectionTest::shouldReplaceDoubleQuote()
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + text));
 
     text = u"sss"_s;
-    doc.setPlainText(text + u"\""_s);
+    doc.setPlainText(text + u'"');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + doubleQuote.end));
 
     text = u"sss"_s;
-    doc.setPlainText(u"\""_s + text + u"\""_s);
+    doc.setPlainText(u'"' + text + u'"');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + text + doubleQuote.end));
@@ -338,7 +338,7 @@ void AutoCorrectionTest::shouldReplaceAutoFraction()
     text += suffix;
     doc.setPlainText(text);
     autocorrection.autocorrect(false, doc, position);
-    QCOMPARE(doc.toPlainText(), QString(u"½"_s + suffix));
+    QCOMPARE(doc.toPlainText(), QString(u'½' + suffix));
     QCOMPARE(position, 1);
 }
 
@@ -703,33 +703,33 @@ void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text));
 
     text = u"sss"_s;
-    doc.setPlainText(text + u"\""_s);
+    doc.setPlainText(text + u'"');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + nbsp + doubleQuote.end));
 
     // Simple quote
     text = u"sss"_s;
-    doc.setPlainText(text + u"\'"_s);
+    doc.setPlainText(text + u'\'');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + nbsp + simpleQuote.end));
 
     text = u"sss"_s;
-    doc.setPlainText(u"\""_s + text + u"\""_s);
+    doc.setPlainText(u'"' + text + u'"');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text + nbsp + doubleQuote.end));
 
     // Simple quote
     text = u"sss"_s;
-    doc.setPlainText(u"\'"_s + text + u"\'"_s);
+    doc.setPlainText(u'\'' + text + u'\'');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(simpleQuote.begin + nbsp + text + nbsp + simpleQuote.end));
 
     text = u'(';
-    doc.setPlainText(u"\""_s + text + u"\""_s);
+    doc.setPlainText(u'"' + text + u'"');
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text + nbsp + doubleQuote.end));
