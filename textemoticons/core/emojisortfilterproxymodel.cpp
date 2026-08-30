@@ -102,17 +102,15 @@ bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelInd
     if (d->category.isEmpty()) {
         return d->filterTone(source_row, source_parent) && QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
     }
+    const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
     if (!d->searchIdentifier.isEmpty()) {
-        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         return d->filterTone(source_row, source_parent) && d->matchesSearch(sourceIndex);
     }
     if (d->category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
-        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         if (const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString(); d->recentEmoticons.contains(identifier)) {
             return true;
         }
     } else {
-        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         if (const auto category = sourceIndex.data(EmojiModel::Category).toString(); d->filterTone(source_row, source_parent) && d->category == category) {
             return true;
         }
