@@ -71,7 +71,7 @@ protected:
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 
 private:
-    QString mCurrentLine;
+    QStringView mCurrentLine;
     QTextStream *const mStream;
     bool mAllowInsertText = false;
 };

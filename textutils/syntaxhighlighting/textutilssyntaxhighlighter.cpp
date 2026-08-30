@@ -16,6 +16,7 @@
 #include <KIconTheme>
 #include <KLocalizedString>
 #include <QDebug>
+#include <QStringView>
 #include <QTextStream>
 using namespace TextUtils;
 using namespace Qt::Literals::StringLiterals;
@@ -37,12 +38,12 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
         *mStream << u"<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td>"_s;
     }
     for (; lineEnd != -1; lineStart = lineEnd + 1, lineEnd = str.indexOf(u'\n', lineStart)) {
-        mCurrentLine = str.mid(lineStart, lineEnd - lineStart);
+        mCurrentLine = QStringView(str).mid(lineStart, lineEnd - lineStart);
         state = highlightLine(mCurrentLine, state);
         *mStream << u"<br>"_s;
     }
     if (lineStart < str.size()) { // remaining content if str isn't ending with a newline
-        mCurrentLine = str.mid(lineStart);
+        mCurrentLine = QStringView(str).mid(lineStart);
         state = highlightLine(mCurrentLine, state);
     }
 
@@ -116,9 +117,34 @@ void TextUtilsSyntaxHighlighter::applyFormat(int offset, int length, const KSynt
         }
         *mStream << u"\">"_s;
     }
-    QString str = mCurrentLine.mid(offset, length).toHtmlEscaped();
-    str = str.replace(u'\t', "    "_L1);
-    str = str.replace(u' ', "&nbsp;"_L1);
+    const QStringView text = mCurrentLine.mid(offset, length);
+    QString str;
+    str.reserve(length * 2);
+    for (const QChar ch : text) {
+        switch (ch.unicode()) {
+        case u'<':
+            str += "&lt;"_L1;
+            break;
+        case u'>':
+            str += "&gt;"_L1;
+            break;
+        case u'&':
+            str += "&amp;"_L1;
+            break;
+        case u'"':
+            str += "&quot;"_L1;
+            break;
+        case u'\t':
+            str += "&nbsp;&nbsp;&nbsp;&nbsp;"_L1;
+            break;
+        case u' ':
+            str += "&nbsp;"_L1;
+            break;
+        default:
+            str += ch;
+            break;
+        }
+    }
     *mStream << str;
 
     if (!isDefaultTextStyle) {
