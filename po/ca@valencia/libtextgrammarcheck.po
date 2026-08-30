@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 12:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -24,27 +24,27 @@ msgstr ""
 msgid "Any text to check."
 msgstr "Qualsevol text que calga comprovar."
 
-#: common/grammarresulttextedit.cpp:89
+#: common/grammarresulttextedit.cpp:87
 #, kde-format
 msgid "Replacement"
 msgstr "Substitució"
 
-#: common/grammarresulttextedit.cpp:98
+#: common/grammarresulttextedit.cpp:95
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Informació en línia de la gramàtica"
 
-#: common/grammarresulttextedit.cpp:111
+#: common/grammarresulttextedit.cpp:108
 #, kde-format
 msgid "Check Again"
 msgstr "Comprova una altra vegada"
 
-#: common/grammarresulttextedit.cpp:114
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
-#: common/grammarresultutil.cpp:49
+#: common/grammarresultutil.cpp:46
 #, kde-format
 msgid "See on: %1"
 msgstr "Vegeu a: %1"

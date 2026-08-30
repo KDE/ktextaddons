@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-04-11 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -33,12 +33,12 @@ msgid "Failed to write to file: %1"
 msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:69
 #, kde-format
 msgid "Json File"
 msgstr ""
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:62
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr ""
@@ -168,12 +168,12 @@ msgstr ""
 "Ste asistent AI. Buďte nápomocný, profesionálny a zdvorilý. Neposkytujte "
 "nepresné informácie."
 
-#: core/textautogeneratetextplugin.cpp:298
+#: core/textautogeneratetextplugin.cpp:296
 #, kde-format
 msgid "Local"
 msgstr "Lokálny"
 
-#: core/textautogeneratetextplugin.cpp:300
+#: core/textautogeneratetextplugin.cpp:298
 #, kde-format
 msgid "Network"
 msgstr "Sieť"
@@ -453,29 +453,29 @@ msgstr "API Open AI (vlastné)"
 msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
-#: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:210
+#: plugins/llamacpp/llamacppplugin.cpp:225
+#: plugins/lmstudio/lmstudioplugin.cpp:208
 #, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr ""
 "LMStudio sa nenašlo v systéme. Požiadajte správcu systému o jeho inštaláciu."
 
-#: plugins/llamacpp/llamacppplugin.cpp:229
-#: plugins/lmstudio/lmstudioplugin.cpp:212
+#: plugins/llamacpp/llamacppplugin.cpp:227
+#: plugins/lmstudio/lmstudioplugin.cpp:210
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "LMStudio sa nenašlo v systéme. Nainštalujte ho prosím."
 
-#: plugins/llamacpp/llamacppplugin.cpp:230
-#: plugins/lmstudio/lmstudioplugin.cpp:213
+#: plugins/llamacpp/llamacppplugin.cpp:228
+#: plugins/lmstudio/lmstudioplugin.cpp:211
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "Stiahnuť LMStudio"
 
-#: plugins/llamacpp/llamacppplugin.cpp:236
-#: plugins/lmstudio/lmstudioplugin.cpp:219
+#: plugins/llamacpp/llamacppplugin.cpp:234
+#: plugins/lmstudio/lmstudioplugin.cpp:217
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
@@ -557,12 +557,12 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "Pridať model"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:91
 #, kde-format
 msgid "Model name must be as \"name:tag\""
 msgstr "Názov modelu musí byť v tvare \"názov:značka\""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:91
 #, kde-format
 msgid "Invalid Model Name"
 msgstr "Neplatný názov modelu"
@@ -601,7 +601,7 @@ msgctxt "@title:window"
 msgid "Select GGUF File"
 msgstr "Vybrať súbor GGUF"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
@@ -619,7 +619,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Zadajte prosím názov modelu v tvare \"názov:značka\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:523
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:517
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -678,12 +678,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Odstrániť vybraný model"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:113
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Chcete odstrániť tento model (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -799,25 +799,25 @@ msgstr "Záznam Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:222
+#: plugins/ollama/ollamaplugin.cpp:220
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
 "Ollama sa nenašla v systéme. Požiadajte správcu systému o jej inštaláciu."
 
-#: plugins/ollama/ollamaplugin.cpp:224
+#: plugins/ollama/ollamaplugin.cpp:222
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "Ollama sa nenašla v systéme. Nainštalujte ju prosím."
 
-#: plugins/ollama/ollamaplugin.cpp:225
+#: plugins/ollama/ollamaplugin.cpp:223
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Stiahnuť Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:231
+#: plugins/ollama/ollamaplugin.cpp:229
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2872,32 +2872,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "Veľkosť kontextového okna:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:172
+#: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Capabilities"
 msgstr "Schopnosti"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:187
 #, kde-format
 msgid "Template"
 msgstr "Šablóna"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Modelfile"
 msgstr "Súbor modelu"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:178
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Parameters"
 msgstr "Parametre"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:192
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:182
+#: plugins/ollamacommon/ollamacommonreply.cpp:194
 #, kde-format
 msgid "Model Info"
 msgstr "Informácie o modeli"
@@ -2995,7 +2995,7 @@ msgid "Enter a message"
 msgstr "Zadajte správu"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:510
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -3034,7 +3034,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Odoslať"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:130
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3126,39 +3126,39 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Nastaviť inštancie"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:54
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Pridať inštanciu…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:64
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Označiť ako predvolené"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:36
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Upraviť…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Odstrániť inštanciu"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Chcete odstrániť túto inštanciu (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:51
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3194,26 +3194,26 @@ msgstr "Pridať…"
 msgid "Ask to AI"
 msgstr "Opýtať sa AI"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:132
+#: widgets/menu/textautogeneratemenulistview.cpp:50
+#: widgets/view/textautogeneratehistorylistview.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Zmeniť…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:177
+#: widgets/menu/textautogeneratemenulistview.cpp:57
+#: widgets/view/textautogeneratehistorylistview.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Odstrániť…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:61
+#: widgets/menu/textautogeneratemenulistview.cpp:60
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "Chcete to odstrániť?"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:62
+#: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
@@ -3279,7 +3279,7 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr "Pridať výzvu…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:42
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
@@ -3382,12 +3382,12 @@ msgstr "Hľadať"
 msgid "No plugin found."
 msgstr "Nenašiel sa žiadny modul."
 
-#: widgets/textautogeneratewidget.cpp:243
+#: widgets/textautogeneratewidget.cpp:240
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Nahlásená chyba: %1"
 
-#: widgets/textautogeneratewidget.cpp:243
+#: widgets/textautogeneratewidget.cpp:240
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -3399,49 +3399,49 @@ msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Nástroje:"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:506
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Upraviť…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:515
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Zastaviť"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:515
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr "Hovoriť"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:519
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:513
 #: widgets/view/textautogeneratedelegateutils.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:527
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:521
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Obnoviť"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:531
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:525
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
 msgstr "Rozvetviť"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:668
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgid "Block Code copied."
 msgstr "Blok kódu skopírovaný."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:668
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
@@ -3491,25 +3491,25 @@ msgstr "Prispôsobiť zobrazeniu"
 msgid "Save Image"
 msgstr "Uložiť obrázok"
 
-#: widgets/view/textautogeneratebaselistview.cpp:88
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Kopírovať výber"
 
-#: widgets/view/textautogeneratebaselistview.cpp:88
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: widgets/view/textautogeneratebaselistview.cpp:102
+#: widgets/view/textautogeneratebaselistview.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Kopírovať URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:114
+#: widgets/view/textautogeneratebaselistview.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -3521,59 +3521,59 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Vložiť text"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:121
+#: widgets/view/textautogeneratehistorylistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Nový rozhovor"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:142
+#: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplikovať…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Odstrániť z obľúbených"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Nastaviť ako obľúbené"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Archivovať"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:173
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Chcete odstrániť túto diskusiu?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:182
+#: widgets/view/textautogeneratehistorylistview.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Odstrániť diskusiu"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:263
+#: widgets/view/textautogeneratehistorylistview.cpp:253
 #, kde-format
 msgid "No Archive Found."
 msgstr "Nenašiel sa žiadny archív."
 
-#: widgets/view/textautogeneratesearchlistview.cpp:51
+#: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Nenašli sa žiadne správy."

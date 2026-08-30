@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-06 18:04+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Nastavení modulu Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -364,7 +364,7 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Aktualizovat seznam jazyků ze sítě"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -400,25 +400,25 @@ msgstr "Jazyky"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Use translation cache"
 msgid "Translation failed."
 msgstr "Použít mezipaměť překladu"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
 #, fuzzy, kde-format
 #| msgid "Language model is not defined."
 msgid "Language model is not loaded."
 msgstr "Jazykový model není definován."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Jazykový model není definován."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
 #, fuzzy, kde-format
 #| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
@@ -656,7 +656,7 @@ msgstr "Ladění překladače"
 msgid "Save As…"
 msgstr "Uložit jako…"
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:87
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -665,13 +665,13 @@ msgstr ""
 "Nelze zapsat soubor %1:\n"
 "Podrobný popis chyby: %2."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Chyba ukládání souboru"
 
-#: translator/widgets/translatordebugdialog.cpp:112
+#: translator/widgets/translatordebugdialog.cpp:111
 #, kde-format
 msgid "All Files (*)"
 msgstr "Všechny soubory (*)"
@@ -681,70 +681,70 @@ msgstr "Všechny soubory (*)"
 msgid "Translate…"
 msgstr "Přeložit…"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavřít"
 
-#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "Zavřít"
 
-#: translator/widgets/translatorwidget.cpp:223
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Z:"
 
-#: translator/widgets/translatorwidget.cpp:231
+#: translator/widgets/translatorwidget.cpp:228
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Do:"
 
-#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:241
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Obrátit"
 
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:246
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Vyprázdnit"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:249
 #, kde-format
 msgid "Clear"
 msgstr "Vyprázdnit"
+
+#: translator/widgets/translatorwidget.cpp:254
+#, kde-format
+msgctxt "@action:button"
+msgid "Translate"
+msgstr "Přeložit"
 
 #: translator/widgets/translatorwidget.cpp:257
 #, kde-format
-msgctxt "@action:button"
 msgid "Translate"
 msgstr "Přeložit"
 
-#: translator/widgets/translatorwidget.cpp:260
-#, kde-format
-msgid "Translate"
-msgstr "Přeložit"
-
-#: translator/widgets/translatorwidget.cpp:267
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Ladění"
 
-#: translator/widgets/translatorwidget.cpp:285
+#: translator/widgets/translatorwidget.cpp:282
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Nastavit"
 
-#: translator/widgets/translatorwidget.cpp:365
+#: translator/widgets/translatorwidget.cpp:361
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -754,24 +754,24 @@ msgstr ""
 "Přetáhněte text, jenž chcete přeložit. (Pamatujte, že text bude poslán na "
 "externí server)."
 
-#: translator/widgets/translatorwidget.cpp:367
+#: translator/widgets/translatorwidget.cpp:363
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Přetáhněte text, jenž chcete přeložit."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Není dostupné internetové připojení. text nelze přeložit."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Není síť"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:450
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

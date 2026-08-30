@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-05-02 10:59+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -116,30 +116,30 @@ msgstr ""
 msgid "Headers:"
 msgstr ""
 
-#: widgets/server/mcpserverlistview.cpp:52
+#: widgets/server/mcpserverlistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
 msgstr ""
 
-#: widgets/server/mcpserverlistview.cpp:59
+#: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/server/mcpserverlistview.cpp:65
+#: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr ""
 
-#: widgets/server/mcpserverlistview.cpp:73
+#: widgets/server/mcpserverlistview.cpp:70
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
 msgstr ""
 
-#: widgets/server/mcpserverlistview.cpp:74
+#: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"

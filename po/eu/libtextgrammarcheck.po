@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-07-30 23:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -31,27 +31,27 @@ msgstr ""
 msgid "Any text to check."
 msgstr "Egiaztatu beharreko edozein testu."
 
-#: common/grammarresulttextedit.cpp:89
+#: common/grammarresulttextedit.cpp:87
 #, kde-format
 msgid "Replacement"
 msgstr "Ordezkapena"
 
-#: common/grammarresulttextedit.cpp:98
+#: common/grammarresulttextedit.cpp:95
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Lerroko gramatika-informazioa"
 
-#: common/grammarresulttextedit.cpp:111
+#: common/grammarresulttextedit.cpp:108
 #, kde-format
 msgid "Check Again"
 msgstr "Egiaztatu berriz"
 
-#: common/grammarresulttextedit.cpp:114
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Configure…"
 msgstr "Konfiguratu…"
 
-#: common/grammarresultutil.cpp:49
+#: common/grammarresultutil.cpp:46
 #, kde-format
 msgid "See on: %1"
 msgstr "Ikusi hemen: %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautocorrection\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2023-04-03 16:37+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/import/importlibreofficeautocorrection.cpp:54
+#: core/import/importlibreofficeautocorrection.cpp:53
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Archiv kann nicht zum Lesen geöffnet werden."
@@ -91,33 +91,33 @@ msgstr "KMail-Autokorrektur importieren"
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail-Autokorrekturdatei (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:659
+#: widgets/autocorrectionwidget.cpp:658
 #, fuzzy, kde-format
 #| msgid "Import Autocorrection File"
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Autokorrekturdatei importieren"
 
-#: widgets/autocorrectionwidget.cpp:683
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "Die Spracheinstellung wurde geändert, möchten Sie die Einstellungen für die "
 "vorherige Sprache speichern?"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, fuzzy, kde-format
 #| msgid "Save config"
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Einstellungen speichern"
 
-#: widgets/autocorrectionwidget.cpp:719
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Bitte speichern Sie Änderungen vor dem Export der Einstellungen."
 
-#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, fuzzy, kde-format
 #| msgid "Export Autocorrection File"
 msgctxt "@title:window"

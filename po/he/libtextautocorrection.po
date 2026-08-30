@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 07:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,7 +18,7 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: core/import/importlibreofficeautocorrection.cpp:54
+#: core/import/importlibreofficeautocorrection.cpp:53
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "אי אפשר לפתוח ארכיון במצב קריאה."
@@ -89,29 +89,29 @@ msgstr "ייבוא תיקון אוטומטי של KMail"
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "קובץ תיקון אוטומטי של KMail‏ (‎*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:659
+#: widgets/autocorrectionwidget.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "ייבוא קובץ תיקון אוטומטי"
 
-#: widgets/autocorrectionwidget.cpp:683
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "השפה הוחלפה, לשמור את ההגדרות של השפה הקודמת?"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "לשמור הגדרות"
 
-#: widgets/autocorrectionwidget.cpp:719
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "נא לשמור את השינויים בטרם ייצוא ההגדרות."
 
-#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

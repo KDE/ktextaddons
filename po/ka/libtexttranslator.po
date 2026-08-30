@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-27 04:00+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot დამატების მორგება"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -364,7 +364,7 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "ენის სიის ქსელიდან განახლება"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"
@@ -400,22 +400,22 @@ msgstr "ენები"
 msgid "Settings"
 msgstr "მორგება"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
 #, kde-format
 msgid "Translation failed."
 msgstr "თარგმანი ჩავარდა."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
 #, kde-format
 msgid "Language model is not loaded."
 msgstr "ენის მოდელი ჩატვირთული არაა."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
 msgid "Language model is not defined."
 msgstr "ენის მოდელი აღწერილი არაა."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
 #, kde-format
 msgid "Language model files are missing in %1."
 msgstr "ენის მოდელს %1-ში ფაილები აკლია."
@@ -653,7 +653,7 @@ msgstr "თარჯიმანის გამართვა"
 msgid "Save As…"
 msgstr "შენახვა, როგორც…"
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:87
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -662,13 +662,13 @@ msgstr ""
 "ფაილის ჩაწერა შეიძლებელია %1:\n"
 "\"%2\" შეცდომის დეტალურ აღწერას წარმოადგენს."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "ფაილის შენახვის შეცდომა"
 
-#: translator/widgets/translatordebugdialog.cpp:112
+#: translator/widgets/translatordebugdialog.cpp:111
 #, kde-format
 msgid "All Files (*)"
 msgstr "ყველა ფაილი (*)"
@@ -678,70 +678,70 @@ msgstr "ყველა ფაილი (*)"
 msgid "Translate…"
 msgstr "თარგმნა…"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "დახურვა"
 
-#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "დახურვა"
 
-#: translator/widgets/translatorwidget.cpp:223
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "ვისგან:"
 
-#: translator/widgets/translatorwidget.cpp:231
+#: translator/widgets/translatorwidget.cpp:228
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "ვის:"
 
-#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:241
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "ინვერსია"
 
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:246
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "გაწმენდა"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:249
 #, kde-format
 msgid "Clear"
 msgstr "გაწმენდა"
+
+#: translator/widgets/translatorwidget.cpp:254
+#, kde-format
+msgctxt "@action:button"
+msgid "Translate"
+msgstr "თარგმნა"
 
 #: translator/widgets/translatorwidget.cpp:257
 #, kde-format
-msgctxt "@action:button"
 msgid "Translate"
 msgstr "თარგმნა"
 
-#: translator/widgets/translatorwidget.cpp:260
-#, kde-format
-msgid "Translate"
-msgstr "თარგმნა"
-
-#: translator/widgets/translatorwidget.cpp:267
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "გამართვა"
 
-#: translator/widgets/translatorwidget.cpp:285
+#: translator/widgets/translatorwidget.cpp:282
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "მორგება"
 
-#: translator/widgets/translatorwidget.cpp:365
+#: translator/widgets/translatorwidget.cpp:361
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -751,24 +751,24 @@ msgstr ""
 "გადმოათრიეთ ტექსტი, რომელიც გნებავთ, თარგმნოთ. (ფრთხილად, ის გარე სერვერზე "
 "გადაიგზავნება)."
 
-#: translator/widgets/translatorwidget.cpp:367
+#: translator/widgets/translatorwidget.cpp:363
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "გადმოათრიეთ ტექსტი, რომელიც გნებავთ, თარგმნოთ."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "ქსელთან მიერთება აღმოჩენილი არაა. ტექსტს ვერ ვთარგმნით."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "ქსელის გარეშე"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:450
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

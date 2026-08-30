@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-06 18:13+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -23,27 +23,27 @@ msgstr ""
 msgid "Any text to check."
 msgstr "Jakýkoli text ke kontrole."
 
-#: common/grammarresulttextedit.cpp:89
+#: common/grammarresulttextedit.cpp:87
 #, kde-format
 msgid "Replacement"
 msgstr "Nahrazení"
 
-#: common/grammarresulttextedit.cpp:98
+#: common/grammarresulttextedit.cpp:95
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Informace o gramatice na internetu"
 
-#: common/grammarresulttextedit.cpp:111
+#: common/grammarresulttextedit.cpp:108
 #, kde-format
 msgid "Check Again"
 msgstr "Znovu zkontrolovat"
 
-#: common/grammarresulttextedit.cpp:114
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Configure…"
 msgstr "Nastavit…"
 
-#: common/grammarresultutil.cpp:49
+#: common/grammarresultutil.cpp:46
 #, kde-format
 msgid "See on: %1"
 msgstr "Viz: %1"

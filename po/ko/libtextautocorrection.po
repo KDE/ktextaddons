@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-08-19 23:31+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: core/import/importlibreofficeautocorrection.cpp:54
+#: core/import/importlibreofficeautocorrection.cpp:53
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "읽기 모드로 압축 파일을 열 수 없습니다."
@@ -88,29 +88,29 @@ msgstr "KMail 자동 고침 가져오기"
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail 자동 고침 파일 (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:659
+#: widgets/autocorrectionwidget.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "자동 고침 파일 가져오기"
 
-#: widgets/autocorrectionwidget.cpp:683
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "언어가 변경되었습니다. 이전 언어의 설정을 저장하시겠습니까?"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "설정 저장"
 
-#: widgets/autocorrectionwidget.cpp:719
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "설정을 내보내기 전에 저장하십시오."
 
-#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

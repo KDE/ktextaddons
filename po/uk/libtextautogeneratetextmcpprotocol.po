@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-11 08:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -118,30 +118,30 @@ msgstr "Вилучення заголовка"
 msgid "Headers:"
 msgstr "Заголовки:"
 
-#: widgets/server/mcpserverlistview.cpp:52
+#: widgets/server/mcpserverlistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
 msgstr "Додати сервер…"
 
-#: widgets/server/mcpserverlistview.cpp:59
+#: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: widgets/server/mcpserverlistview.cpp:65
+#: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Вилучити сервер"
 
-#: widgets/server/mcpserverlistview.cpp:73
+#: widgets/server/mcpserverlistview.cpp:70
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
 msgstr "Хочете вилучити запис сервера (%1)?"
 
-#: widgets/server/mcpserverlistview.cpp:74
+#: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-29 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-01-28 20:25+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -64,19 +64,19 @@ msgstr "Региональные"
 msgid "Flags"
 msgstr "Флаги"
 
-#: widgets/emojicategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:84
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "История"
 
-#: widgets/emojicategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:88
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Нестандартные"
 
-#: widgets/emojilistview.cpp:118
+#: widgets/emojilistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
@@ -98,7 +98,7 @@ msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Найти смайлик…"
 
-#: widgets/emoticonwidgetactionwidget.cpp:86
+#: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"

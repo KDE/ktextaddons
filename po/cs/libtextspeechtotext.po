@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-06 18:01+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -93,12 +93,12 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Aktualizovat seznam jazyků ze sítě"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"
@@ -163,7 +163,7 @@ msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Vstup:"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:73
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format
 msgid "Default"
 msgstr "Výchozí"

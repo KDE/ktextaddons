@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-29 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2025-09-30 23:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -64,19 +64,19 @@ msgstr "Regional"
 msgid "Flags"
 msgstr "Banderas"
 
-#: widgets/emojicategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:84
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Historial"
 
-#: widgets/emojicategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:88
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Personalizados"
 
-#: widgets/emojilistview.cpp:118
+#: widgets/emojilistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
@@ -98,7 +98,7 @@ msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Buscar emoticono…"
 
-#: widgets/emoticonwidgetactionwidget.cpp:86
+#: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"

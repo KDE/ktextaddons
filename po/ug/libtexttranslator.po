@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-05-31 19:49-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Bergamot"
 msgstr ""
@@ -364,7 +364,7 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Error: %1"
 msgstr "خاتالىق: %1"
@@ -400,23 +400,23 @@ msgstr "تىل"
 msgid "Settings"
 msgstr "تەڭشەك"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
 #, fuzzy, kde-format
 #| msgid "Translate"
 msgid "Translation failed."
 msgstr "تەرجىمە"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
 #, kde-format
 msgid "Language model is not loaded."
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
 msgid "Language model is not defined."
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
 #, kde-format
 msgid "Language model files are missing in %1."
 msgstr ""
@@ -651,7 +651,7 @@ msgstr ""
 msgid "Save As…"
 msgstr ""
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:87
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -660,13 +660,13 @@ msgstr ""
 "%1 ھۆججەتكە يازغىلى بولمىدى:\n"
 "خاتالىقنىڭ تەپسىلاتى «%2»."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "ھۆججەت ساقلاش خاتالىقى"
 
-#: translator/widgets/translatordebugdialog.cpp:112
+#: translator/widgets/translatordebugdialog.cpp:111
 #, kde-format
 msgid "All Files (*)"
 msgstr "ھەممە ھۆججەت(*)"
@@ -676,70 +676,70 @@ msgstr "ھەممە ھۆججەت(*)"
 msgid "Translate…"
 msgstr "تەرجىمە…"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "ياپ"
 
-#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "ياپ"
 
-#: translator/widgets/translatorwidget.cpp:223
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "كىمدىن:"
 
-#: translator/widgets/translatorwidget.cpp:231
+#: translator/widgets/translatorwidget.cpp:228
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "كىمگە:"
 
-#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:241
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "ئەكسى رەڭگە ئالماشتۇر"
 
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:246
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "تازىلا"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:249
 #, kde-format
 msgid "Clear"
 msgstr "تازىلا"
+
+#: translator/widgets/translatorwidget.cpp:254
+#, kde-format
+msgctxt "@action:button"
+msgid "Translate"
+msgstr "تەرجىمە"
 
 #: translator/widgets/translatorwidget.cpp:257
 #, kde-format
-msgctxt "@action:button"
 msgid "Translate"
 msgstr "تەرجىمە"
 
-#: translator/widgets/translatorwidget.cpp:260
-#, kde-format
-msgid "Translate"
-msgstr "تەرجىمە"
-
-#: translator/widgets/translatorwidget.cpp:267
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "سازلا"
 
-#: translator/widgets/translatorwidget.cpp:285
+#: translator/widgets/translatorwidget.cpp:282
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "سەپلە"
 
-#: translator/widgets/translatorwidget.cpp:365
+#: translator/widgets/translatorwidget.cpp:361
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -747,24 +747,24 @@ msgid ""
 "external Server)."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:367
+#: translator/widgets/translatorwidget.cpp:363
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:450
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

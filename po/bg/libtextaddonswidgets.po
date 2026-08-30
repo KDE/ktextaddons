@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-25 00:43+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-07-20 22:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -69,19 +69,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Запазване на файл"
 
-#: misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Файлът не съществува"
 
-#: misc/savefileutils.cpp:72 misc/savefileutils.cpp:78
-#: misc/savefileutils.cpp:83
+#: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Грешка при записване на файла"
 
-#: misc/savefileutils.cpp:78
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Не може да се презапише съществуващ файл"
@@ -318,17 +318,17 @@ msgstr "Какво ново в %2. %1"
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Бележки към версията</a></i></b>"
 
-#: whatsnewng/whatsnewngutils.cpp:31
+#: whatsnewng/whatsnewngutils.cpp:30
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>Какво е новото във версия %1 (издадена: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:33
+#: whatsnewng/whatsnewngutils.cpp:32
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Какво е новото във версия %1 (неиздадена)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:50
+#: whatsnewng/whatsnewngutils.cpp:49
 #, fuzzy, kde-format
 #| msgid "<h1>What's New History</h1></hr>"
 msgid "<h1>What's New History</h1>"

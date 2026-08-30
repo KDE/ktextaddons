@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-25 00:43+0000\n"
-"PO-Revision-Date: 2026-07-15 18:58+0400\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"PO-Revision-Date: 2026-08-29 17:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -70,19 +70,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "احفظ الملفّ"
 
-#: misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "لم يعد الملف الأصل موجودًا"
 
-#: misc/savefileutils.cpp:72 misc/savefileutils.cpp:78
-#: misc/savefileutils.cpp:83
+#: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "خطأ في حفظ الملف"
 
-#: misc/savefileutils.cpp:78
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "لا يمكن الكتابة فوق الملف الموجود"
@@ -309,31 +309,29 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> الإصدار %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "ما الجديد في %2. %1"
+msgstr "ما الجديد في %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:22
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">ملاحظة الإصدار</a></i></b>"
 
-#: whatsnewng/whatsnewngutils.cpp:31
+#: whatsnewng/whatsnewngutils.cpp:30
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>ما الجديد في النسخة %1 (تاريخ الإصدار: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:33
+#: whatsnewng/whatsnewngutils.cpp:32
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>ما الجديد في النسخة %1 (لم تصدر)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
+#: whatsnewng/whatsnewngutils.cpp:49
+#, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>تاريخ الأشياء الجديدة</h1></hr>"
+msgstr "<h1>تاريخ الأشياء الجديدة</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "الإصدار %1"

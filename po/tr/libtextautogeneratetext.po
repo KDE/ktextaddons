@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:43+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-24 20:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -33,12 +33,12 @@ msgid "Failed to write to file: %1"
 msgstr "Dosyaya yazılamadı: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:69
 #, kde-format
 msgid "Json File"
 msgstr "JSON dosyası"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:62
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "Dosya, okumak için açılamadı: %1"
@@ -168,12 +168,12 @@ msgstr ""
 "Sen bir yapay zekâ asistanısın. Nâzik, profesyonel ve yardımcı ol. Doğru "
 "olmayan bilgiler verme."
 
-#: core/textautogeneratetextplugin.cpp:298
+#: core/textautogeneratetextplugin.cpp:296
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: core/textautogeneratetextplugin.cpp:300
+#: core/textautogeneratetextplugin.cpp:298
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
@@ -450,29 +450,29 @@ msgstr "OpenAI API’si (Özel)"
 msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
-#: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:210
+#: plugins/llamacpp/llamacppplugin.cpp:225
+#: plugins/lmstudio/lmstudioplugin.cpp:208
 #, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr ""
 "LMStudio sistemde bulunamadı. Sistem yöneticinize onu kurmasını söyleyin."
 
-#: plugins/llamacpp/llamacppplugin.cpp:229
-#: plugins/lmstudio/lmstudioplugin.cpp:212
+#: plugins/llamacpp/llamacppplugin.cpp:227
+#: plugins/lmstudio/lmstudioplugin.cpp:210
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "LMStudio sistemde bulunamadı. Lütfen onu kurun."
 
-#: plugins/llamacpp/llamacppplugin.cpp:230
-#: plugins/lmstudio/lmstudioplugin.cpp:213
+#: plugins/llamacpp/llamacppplugin.cpp:228
+#: plugins/lmstudio/lmstudioplugin.cpp:211
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "LMStudio’yu İndir"
 
-#: plugins/llamacpp/llamacppplugin.cpp:236
-#: plugins/lmstudio/lmstudioplugin.cpp:219
+#: plugins/llamacpp/llamacppplugin.cpp:234
+#: plugins/lmstudio/lmstudioplugin.cpp:217
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
@@ -554,12 +554,12 @@ msgctxt "@info:tooltip"
 msgid "Add Model"
 msgstr "Model ekle"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:91
 #, kde-format
 msgid "Model name must be as \"name:tag\""
 msgstr "Model adı “ad:künye” biçiminde olmalıdır"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:92
+#: plugins/ollama/modelsmanager/ollamamodelavailablewidget.cpp:91
 #, kde-format
 msgid "Invalid Model Name"
 msgstr "Geçersiz Model Adı"
@@ -598,7 +598,7 @@ msgctxt "@title:window"
 msgid "Select GGUF File"
 msgstr "GGUF Dosyası Seç"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
@@ -616,7 +616,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Model adını “ad:künye” biçiminde girin"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:523
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:517
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -675,12 +675,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Seçili Modeli Kaldır"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:113
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Bu modeli kaldırmak istiyor musunuz (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -796,25 +796,25 @@ msgstr "Ollama Günlüğü"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:222
+#: plugins/ollama/ollamaplugin.cpp:220
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
 "Ollama sistemde bulunamadı. Sistem yöneticinize onu kurmasını söyleyin."
 
-#: plugins/ollama/ollamaplugin.cpp:224
+#: plugins/ollama/ollamaplugin.cpp:222
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "Ollama sistemde bulunamadı. Lütfen onu kurun."
 
-#: plugins/ollama/ollamaplugin.cpp:225
+#: plugins/ollama/ollamaplugin.cpp:223
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Ollama’yı İndir"
 
-#: plugins/ollama/ollamaplugin.cpp:231
+#: plugins/ollama/ollamaplugin.cpp:229
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2904,32 +2904,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "Bağlam penceresi boyutu:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:172
+#: plugins/ollamacommon/ollamacommonreply.cpp:185
 #, kde-format
 msgid "Capabilities"
 msgstr "Yetenekler"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:174
+#: plugins/ollamacommon/ollamacommonreply.cpp:187
 #, kde-format
 msgid "Template"
 msgstr "Şablon"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:175
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Modelfile"
 msgstr "Model dosyası"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:178
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Parameters"
 msgstr "Parametreler"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:180
+#: plugins/ollamacommon/ollamacommonreply.cpp:192
 #, kde-format
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:182
+#: plugins/ollamacommon/ollamacommonreply.cpp:194
 #, kde-format
 msgid "Model Info"
 msgstr "Model Bilgisi"
@@ -3027,7 +3027,7 @@ msgid "Enter a message"
 msgstr "İleti gir…"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:510
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -3066,7 +3066,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Gönder"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:130
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3158,39 +3158,39 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Örnekleri Yapılandır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:54
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Örnek Ekle…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:64
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Öntanımlı Olarak İmle"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:77
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:36
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:83
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:50
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Bu örneği kaldırmak istiyor musunuz (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:51
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3226,26 +3226,26 @@ msgstr "Ekle…"
 msgid "Ask to AI"
 msgstr "Yapay Zekâya Sor"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:132
+#: widgets/menu/textautogeneratemenulistview.cpp:50
+#: widgets/view/textautogeneratehistorylistview.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Değişiklik Yap…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:177
+#: widgets/menu/textautogeneratemenulistview.cpp:57
+#: widgets/view/textautogeneratehistorylistview.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Kaldır…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:61
+#: widgets/menu/textautogeneratemenulistview.cpp:60
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "Kaldırmak istiyor musunuz?"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:62
+#: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
@@ -3310,7 +3310,7 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr "İstem Ekle…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:42
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
@@ -3411,12 +3411,12 @@ msgstr "Ara"
 msgid "No plugin found."
 msgstr "Bulunan eklenti yok."
 
-#: widgets/textautogeneratewidget.cpp:243
+#: widgets/textautogeneratewidget.cpp:240
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Hata bildirildi: %1"
 
-#: widgets/textautogeneratewidget.cpp:243
+#: widgets/textautogeneratewidget.cpp:240
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -3428,49 +3428,49 @@ msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Araçlar:"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:506
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:515
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Durdur"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:515
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr "Konuş"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:519
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:513
 #: widgets/view/textautogeneratedelegateutils.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:527
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:521
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Yenile"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:531
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:525
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
 msgstr "Çatalla"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:668
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgid "Block Code copied."
 msgstr "Kod bloku kopyalandı."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:668
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
@@ -3520,25 +3520,25 @@ msgstr "Görünüme Sığdır"
 msgid "Save Image"
 msgstr "Görseli Kaydet"
 
-#: widgets/view/textautogeneratebaselistview.cpp:88
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Seçimi Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:88
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:102
+#: widgets/view/textautogeneratebaselistview.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "URL’yi Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:114
+#: widgets/view/textautogeneratebaselistview.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -3550,59 +3550,59 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Metin ekle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:121
+#: widgets/view/textautogeneratehistorylistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Yeni Sohbet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:142
+#: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Çoğalt…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Sık Kullanılanlardan Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Sık Kullanılan Yap"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arşivle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:173
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:182
+#: widgets/view/textautogeneratehistorylistview.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Tartışmayı Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:263
+#: widgets/view/textautogeneratehistorylistview.cpp:253
 #, kde-format
 msgid "No Archive Found."
 msgstr "Bulunan arşiv yok."
 
-#: widgets/view/textautogeneratesearchlistview.cpp:51
+#: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."

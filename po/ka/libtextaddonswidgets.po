@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-25 00:43+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-08-23 06:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -70,19 +70,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
 
-#: misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "წყარო ფაილი აღარ არსებობს"
 
-#: misc/savefileutils.cpp:72 misc/savefileutils.cpp:78
-#: misc/savefileutils.cpp:83
+#: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "ფაილის შენახვის შეცდომა"
 
-#: misc/savefileutils.cpp:78
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "არსებული ფაილის თავზე გადაწერა შეუძლებელია"
@@ -316,17 +316,17 @@ msgstr "რა არის ახალი %1-ში. %2"
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">გამოშვების შენიშვნები</a></i></b>"
 
-#: whatsnewng/whatsnewngutils.cpp:31
+#: whatsnewng/whatsnewngutils.cpp:30
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>რა არის ახალი ისტორიაში %1 (გამოსვლის დრო: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:33
+#: whatsnewng/whatsnewngutils.cpp:32
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>რა არის ახალი ისტორიაში %1 (ჯერ არ გამოსულა)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:50
+#: whatsnewng/whatsnewngutils.cpp:49
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>სიახლეების ისტორია</h1>"

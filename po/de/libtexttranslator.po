@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2023-08-14 21:57+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Bergamot"
 msgstr ""
@@ -365,7 +365,7 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
 #, kde-format
 msgid "Error: %1"
 msgstr "Fehler: %1"
@@ -401,25 +401,25 @@ msgstr "Sprachen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
 #, fuzzy, kde-format
 #| msgid "Translate..."
 msgid "Translation failed."
 msgstr "Übersetzen ..."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
 #, fuzzy, kde-format
 #| msgid "Server url is not defined."
 msgid "Language model is not loaded."
 msgstr "Server-Adresse ist nicht angegeben."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, fuzzy, kde-format
 #| msgid "Server url is not defined."
 msgid "Language model is not defined."
 msgstr "Server-Adresse ist nicht angegeben."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
 #, fuzzy, kde-format
 #| msgid "Server url is not defined."
 msgid "Language model files are missing in %1."
@@ -669,7 +669,7 @@ msgstr ""
 msgid "Save As…"
 msgstr "Speichern unter ..."
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:87
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -678,14 +678,14 @@ msgstr ""
 "Die Datei %1 kann nicht geschrieben werden:\n"
 "Die ausführliche Fehlerbeschreibung lautet: „%2“."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:91
 #, fuzzy, kde-format
 #| msgid "Save File Error"
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Fehler beim Speichern der Datei"
 
-#: translator/widgets/translatordebugdialog.cpp:112
+#: translator/widgets/translatordebugdialog.cpp:111
 #, kde-format
 msgid "All Files (*)"
 msgstr "Alle Dateien (*)"
@@ -696,75 +696,75 @@ msgstr "Alle Dateien (*)"
 msgid "Translate…"
 msgstr "Übersetzen"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:211
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Schließen"
 
-#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "Schließen"
 
-#: translator/widgets/translatorwidget.cpp:223
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Von:"
 
-#: translator/widgets/translatorwidget.cpp:231
+#: translator/widgets/translatorwidget.cpp:228
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "An:"
 
-#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:241
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Invertieren"
 
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Leeren"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:249
 #, kde-format
 msgid "Clear"
 msgstr "Leeren"
 
-#: translator/widgets/translatorwidget.cpp:257
+#: translator/widgets/translatorwidget.cpp:254
 #, fuzzy, kde-format
 #| msgid "Translate"
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Übersetzen"
 
-#: translator/widgets/translatorwidget.cpp:260
+#: translator/widgets/translatorwidget.cpp:257
 #, kde-format
 msgid "Translate"
 msgstr "Übersetzen"
 
-#: translator/widgets/translatorwidget.cpp:267
+#: translator/widgets/translatorwidget.cpp:264
 #, fuzzy, kde-format
 #| msgid "Debug"
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Fehlersuche"
 
-#: translator/widgets/translatorwidget.cpp:285
+#: translator/widgets/translatorwidget.cpp:282
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Einrichten"
 
-#: translator/widgets/translatorwidget.cpp:365
+#: translator/widgets/translatorwidget.cpp:361
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -777,28 +777,28 @@ msgstr ""
 "Ziehen Sie Text hierher, den Sie übersetzen möchten. Beachten Sie, dass "
 "dieser Text an externe-Server gesendet wird."
 
-#: translator/widgets/translatorwidget.cpp:367
+#: translator/widgets/translatorwidget.cpp:363
 #, fuzzy, kde-format
 #| msgid "Drag text that you want to translate."
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Ziehen Sie Text hierher, den Sie übersetzen möchten."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 "Es wurde keine Netzwerkverbindung erkannt; der Text kann nicht übersetzt "
 "werden."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:413
 #, fuzzy, kde-format
 #| msgid "No network"
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Keine Netzwerkverbindung"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:450
 #, fuzzy, kde-format
 #| msgid "Translate error"
 msgctxt "@title:window"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-25 00:43+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-05-03 21:19+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -70,19 +70,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Datei speichern"
 
-#: misc/savefileutils.cpp:72
+#: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Quelldatei existiert nicht mehr"
 
-#: misc/savefileutils.cpp:72 misc/savefileutils.cpp:78
-#: misc/savefileutils.cpp:83
+#: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Fehler beim Speichern der Datei"
 
-#: misc/savefileutils.cpp:78
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Bestehende Datei kann nicht überschrieben werden"
@@ -324,19 +324,19 @@ msgstr "Was ist neu in %2. %1"
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr ""
 
-#: whatsnewng/whatsnewngutils.cpp:31
+#: whatsnewng/whatsnewngutils.cpp:30
 #, fuzzy, kde-format
 #| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngutils.cpp:33
+#: whatsnewng/whatsnewngutils.cpp:32
 #, fuzzy, kde-format
 #| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngutils.cpp:50
+#: whatsnewng/whatsnewngutils.cpp:49
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr ""

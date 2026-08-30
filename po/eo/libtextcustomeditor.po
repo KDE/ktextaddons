@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:42+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -26,49 +26,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "faris %1 anstataŭigon"
 msgstr[1] "faris %1 anstataŭigojn"
 
-#: plaintexteditor/plaintexteditor.cpp:172
-#: richtexteditor/richtexteditor.cpp:237
+#: plaintexteditor/plaintexteditor.cpp:171
+#: richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Kontroli Ortografion…"
 
-#: plaintexteditor/plaintexteditor.cpp:175
-#: richtexteditor/richtexteditor.cpp:242
+#: plaintexteditor/plaintexteditor.cpp:174
+#: richtexteditor/richtexteditor.cpp:240
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Aŭtomata literumkontrolo"
 
-#: plaintexteditor/plaintexteditor.cpp:180
-#: richtexteditor/richtexteditor.cpp:247
+#: plaintexteditor/plaintexteditor.cpp:179
+#: richtexteditor/richtexteditor.cpp:245
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Literumkontrola Lingvo"
 
-#: plaintexteditor/plaintexteditor.cpp:206
-#: richtextbrowser/richtextbrowser.cpp:174
-#: richtexteditor/richtexteditor.cpp:279
+#: plaintexteditor/plaintexteditor.cpp:205
+#: richtextbrowser/richtextbrowser.cpp:172
+#: richtexteditor/richtexteditor.cpp:277
 #, kde-format
 msgid "Speak Text"
 msgstr "Paroli Tekston"
 
-#: plaintexteditor/plaintexteditor.cpp:382
-#: richtexteditor/richtexteditor.cpp:508
+#: plaintexteditor/plaintexteditor.cpp:381
+#: richtexteditor/richtexteditor.cpp:506
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Neniu literumenda."
 
-#: plaintexteditor/plaintexteditor.cpp:387
-#: richtexteditor/richtexteditor.cpp:526
+#: plaintexteditor/plaintexteditor.cpp:386
+#: richtexteditor/richtexteditor.cpp:524
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Neniu backend haveblas por literumkontrolo."
 
-#: richtexteditor/richtexteditor.cpp:271
+#: richtexteditor/richtexteditor.cpp:269
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permesi Tabuladojn"
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:516
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -77,13 +77,13 @@ msgstr ""
 "Neniu backend haveblas por literumkontrolo. Ĉu vi tamen volas sendi la "
 "retpoŝton?"
 
-#: richtexteditor/richtexteditor.cpp:520
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Sendi"
 
-#: richtexteditor/richtexteditor.cpp:542
+#: richtexteditor/richtexteditor.cpp:539
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -100,7 +100,7 @@ msgstr "Fermi"
 msgid "Close"
 msgstr "Fermi"
 
-#: widgets/texteditfindbarbase.cpp:142
+#: widgets/texteditfindbarbase.cpp:141
 #, kde-format
 msgid ""
 "End of message reached.\n"

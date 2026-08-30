@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Any text to check."
 msgstr "जाँच करने हेतु कोई पाठ."
 
-#: common/grammarresulttextedit.cpp:89
+#: common/grammarresulttextedit.cpp:87
 #, kde-format
 msgid "Replacement"
 msgstr "प्रतिस्थापन"
 
-#: common/grammarresulttextedit.cpp:98
+#: common/grammarresulttextedit.cpp:95
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "ऑनलाइन व्याकरण जानकारी"
 
-#: common/grammarresulttextedit.cpp:111
+#: common/grammarresulttextedit.cpp:108
 #, kde-format
 msgid "Check Again"
 msgstr "फिर से जाँचो"
 
-#: common/grammarresulttextedit.cpp:114
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Configure…"
 msgstr "कॉन्फ़िगर करें…"
 
-#: common/grammarresultutil.cpp:49
+#: common/grammarresultutil.cpp:46
 #, kde-format
 msgid "See on: %1"
 msgstr "यहाँ देखें: %1"

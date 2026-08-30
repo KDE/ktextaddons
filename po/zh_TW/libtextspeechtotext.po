@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-07-14 17:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -90,12 +90,12 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "從網路更新語言列表"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
 #, kde-format
 msgid "Error: %1"
 msgstr "錯誤：%1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"
@@ -160,7 +160,7 @@ msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "輸入："
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:73
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format
 msgid "Default"
 msgstr "預設"

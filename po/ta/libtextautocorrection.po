@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2024-08-18 17:55+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: core/import/importlibreofficeautocorrection.cpp:54
+#: core/import/importlibreofficeautocorrection.cpp:53
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "காப்பகத்தை படித்தல்-மட்டும் பயன்முறையில் திறக்க முடியாது."
@@ -89,31 +89,31 @@ msgstr ""
 msgid "KMail Autocorrection File (*.xml)"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:659
+#: widgets/autocorrectionwidget.cpp:658
 #, fuzzy, kde-format
 #| msgid "Export Autocorrection File"
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "தான்திருத்த கோப்பை ஏற்றுமதி செய்"
 
-#: widgets/autocorrectionwidget.cpp:683
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "மொழி மாற்றப்பட்டுள்ளது. முந்தைய மொழிக்கான அமைப்புகளை சேமிக்க வேண்டுமா?"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, fuzzy, kde-format
 #| msgid "Save config"
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "அமைப்புகளை சேமி"
 
-#: widgets/autocorrectionwidget.cpp:719
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "அமைப்புகளை ஏற்றுமதி செய்யுமுன் அவற்றை சேமியுங்கள்."
 
-#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, fuzzy, kde-format
 #| msgid "Export Autocorrection File"
 msgctxt "@title:window"

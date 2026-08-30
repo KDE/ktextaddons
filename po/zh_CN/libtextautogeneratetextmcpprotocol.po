@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:44+0000\n"
+"POT-Creation-Date: 2026-08-30 00:44+0000\n"
 "PO-Revision-Date: 2026-05-05 07:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -118,30 +118,30 @@ msgstr "移除标头"
 msgid "Headers:"
 msgstr "标头："
 
-#: widgets/server/mcpserverlistview.cpp:52
+#: widgets/server/mcpserverlistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Add server…"
 msgstr "添加服务器…"
 
-#: widgets/server/mcpserverlistview.cpp:59
+#: widgets/server/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "编辑…"
 
-#: widgets/server/mcpserverlistview.cpp:65
+#: widgets/server/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "移除服务器"
 
-#: widgets/server/mcpserverlistview.cpp:73
+#: widgets/server/mcpserverlistview.cpp:70
 #, kde-format
 msgid "Do you want to remove this server (%1)?"
 msgstr "您想要移除此服务器 (%1) 吗？"
 
-#: widgets/server/mcpserverlistview.cpp:74
+#: widgets/server/mcpserverlistview.cpp:71
 #, kde-format
 msgctxt "@title"
 msgid "Remove Server"
