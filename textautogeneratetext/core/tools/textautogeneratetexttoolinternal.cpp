@@ -112,17 +112,19 @@ void TextAutoGenerateTextToolInternal::parse(const QJsonObject &obj)
     mToolNameId = function["name"_L1].toString().toLatin1();
     const QJsonObject parameters = function["parameters"_L1].toObject();
     const QJsonObject properties = parameters["properties"_L1].toObject();
-    const QStringList keys = properties.keys();
     mProperties.clear();
-    for (const QString &k : keys) {
+    mProperties.reserve(properties.size());
+    for (auto it = properties.constBegin(); it != properties.constEnd(); ++it) {
         TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty property;
-        property.parse(properties[k].toObject(), k);
+        property.parse(it.value().toObject(), it.key());
         if (property.isValid()) {
             mProperties.append(property);
         }
     }
     mRequired.clear();
+
     const QJsonArray required = parameters["required"_L1].toArray();
+    mRequired.reserve(required.size());
     for (const auto &v : required) {
         mRequired.append(v.toString());
     }

@@ -12,10 +12,10 @@ OllamaCommonModelsAvalableInfos::OllamaCommonModelsAvalableInfos() = default;
 void OllamaCommonModelsAvalableInfos::parseModelsInfo(const QJsonObject &obj)
 {
     QList<OllamaCommonModelAvailableInfo> lstInfo;
-    const QStringList keys = obj.keys();
-    for (const auto &k : keys) {
+    lstInfo.reserve(obj.size());
+    for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
         OllamaCommonModelAvailableInfo info;
-        info.parseInfo(k, obj[k].toObject());
+        info.parseInfo(it.key(), it.value().toObject());
         lstInfo.append(std::move(info));
     }
     mInfos = std::move(lstInfo);

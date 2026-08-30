@@ -31,10 +31,11 @@ QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
     };
 
     QList<UnicodeEmoticon> lstEmoticons;
-    const QStringList keys = o.keys();
-    for (const QString &key : keys) {
+    lstEmoticons.reserve(o.size());
+    for (auto it = o.constBegin(); it != o.constEnd(); ++it) {
+        const QString &key = it.key();
         UnicodeEmoticon emoticon;
-        const QJsonObject emojiObj = o[key].toObject();
+        const QJsonObject emojiObj = it.value().toObject();
         emoticon.setKey(key);
         const QString unicodeStr = emojiObj["code_points"_L1].toObject()["fully_qualified"_L1].toString();
         Q_ASSERT(!unicodeStr.isEmpty());
