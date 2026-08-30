@@ -32,4 +32,18 @@ void TextAutoGenerateBlockCMarkSupportTest::shouldHighlightLiteralSearchText()
     QVERIFY(converted.contains(u'B'));
 }
 
+void TextAutoGenerateBlockCMarkSupportTest::shouldNotHighlightWithoutSearchText()
+{
+    TextAutoGenerateText::TextAutoGenerateBlockCMarkSupport support;
+    int numberOfTextSearched = 0;
+    // Long enough that a spurious highlight lands inside the string rather than being clamped away.
+    const QString sourceText = u"Some answer text long enough to be a realistic paragraph of a generated reply."_s;
+
+    const QString converted = support.convertMessageText(sourceText, "uuid"_ba, QString(), numberOfTextSearched, -1);
+
+    QCOMPARE(numberOfTextSearched, 0);
+    QVERIFY(!converted.contains(u"<a "_s));
+    QVERIFY(converted.contains(sourceText));
+}
+
 #include "moc_textautogenerateblockcmarksupporttest.cpp"

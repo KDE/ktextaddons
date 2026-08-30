@@ -22,21 +22,23 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 namespace
 {
 QString generateRichTextCMark(const QString &str,
-                              const QString &searchedText,
                               int &numberOfTextSearched,
                               int hightLightStringIndex,
                               const QString &userHighlightForegroundColor,
                               const QString &userHighlightBackgroundColor,
-                              const QString &userHighlightStringIndexBackgroundColor)
+                              const QString &userHighlightStringIndexBackgroundColor,
+                              const QRegularExpression &exp)
 {
     QString newStr = TextUtils::TextUtilsBlockCMarkSupport::markdownToRichTextCMark(str);
-    static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
-    struct HrefPos {
-        int start = 0;
-        int end = 0;
-    };
-
-    if (!searchedText.isEmpty()) {
+    // A default-constructed QRegularExpression is *valid*: its empty pattern matches at every
+    // position. Test the pattern, otherwise a message rendered without an active search gets
+    // an empty <a/> injected at every character.
+    if (!exp.pattern().isEmpty()) {
+        static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
+        struct HrefPos {
+            int start = 0;
+            int end = 0;
+        };
         QList<HrefPos> lstPos;
 
         QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
@@ -48,8 +50,6 @@ QString generateRichTextCMark(const QString &str,
             lstPos.append(std::move(pos));
         }
 
-        const QString escapedSearchText = QRegularExpression::escape(searchedText);
-        const QRegularExpression exp(u"(%1)"_s.arg(escapedSearchText), QRegularExpression::CaseInsensitiveOption);
         QRegularExpressionMatchIterator userIterator = exp.globalMatch(newStr);
         int offset = 0;
         while (userIterator.hasNext()) {
@@ -218,24 +218,31 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColorName << "'>"_L1 << chunk.toHtmlEscaped() << "</code>"_L1;
     };
 
+    QRegularExpression exp;
+    if (!searchText.isEmpty()) {
+        const QString escapedSearchText = QRegularExpression::escape(searchText);
+        exp.setPattern(u"(%1)"_s.arg(escapedSearchText));
+        exp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+    }
+
     auto addTextChunk = [&](const QString &chunk) {
         const auto htmlChunk = generateRichTextCMark(chunk,
-                                                     searchText,
                                                      numberOfTextSearched,
                                                      hightLightStringIndex,
                                                      userHighlightForegroundColor,
                                                      userHighlightBackgroundColor,
-                                                     userHighlightStringIndexBackgroundColor);
+                                                     userHighlightStringIndexBackgroundColor,
+                                                     exp);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
         const auto htmlChunk = generateRichTextCMark(chunk,
-                                                     searchText,
                                                      numberOfTextSearched,
                                                      hightLightStringIndex,
                                                      userHighlightForegroundColor,
                                                      userHighlightBackgroundColor,
-                                                     userHighlightStringIndexBackgroundColor);
+                                                     userHighlightStringIndexBackgroundColor,
+                                                     exp);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColorName << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
