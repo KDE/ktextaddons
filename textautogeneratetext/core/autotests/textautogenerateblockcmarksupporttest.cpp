@@ -22,14 +22,14 @@ void TextAutoGenerateBlockCMarkSupportTest::shouldHighlightLiteralSearchText()
 {
     TextAutoGenerateText::TextAutoGenerateBlockCMarkSupport support;
     int numberOfTextSearched = 0;
-    const QString sourceText = QStringLiteral("A.B");
-    const QString searchText = QStringLiteral(".");
+    const QString sourceText = u"A.B"_s;
+    const QString searchText = u"."_s;
 
     const QString converted = support.convertMessageText(sourceText, "uuid"_ba, searchText, numberOfTextSearched, -1);
 
     QCOMPARE(numberOfTextSearched, 1);
-    QVERIFY(converted.contains(QStringLiteral("A")));
-    QVERIFY(converted.contains(QStringLiteral("B")));
+    QVERIFY(converted.contains(u"A"_s));
+    QVERIFY(converted.contains(u"B"_s));
 }
 
 #include "moc_textautogenerateblockcmarksupporttest.cpp"

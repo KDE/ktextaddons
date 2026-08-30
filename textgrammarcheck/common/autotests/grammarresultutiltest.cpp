@@ -155,7 +155,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {u"joo"_s, QStringLiteral("AAA")};
+        const QStringList replacement = {u"joo"_s, u"AAA"_s};
         const QString result = u"joo AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
@@ -192,7 +192,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {u"jooAA"_s, QStringLiteral("AAA")};
+        const QStringList replacement = {u"jooAA"_s, u"AAA"_s};
         const QString result = u"jooAA AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors-bigger") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
@@ -228,7 +228,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {u"jooAA"_s, QStringLiteral("AAA")};
+        const QStringList replacement = {u"jooAA"_s, u"AAA"_s};
         const QString result = u"jooAA\n AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors-bigger-1") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
@@ -265,7 +265,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {u"b"_s, QStringLiteral("AAA")};
+        const QStringList replacement = {u"b"_s, u"AAA"_s};
         const QString result = u"b\n AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors-smaller-1") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
@@ -316,7 +316,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {u" "_s, QStringLiteral("EMPECHE"), QStringLiteral("A")};
+        const QStringList replacement = {u" "_s, u"EMPECHE"_s, u"A"_s};
         const QString result = u"Je suis la qui EMPECHE\nil A la.\n tout passage dans l'herbe"_s;
         QTest::newRow("error3") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }

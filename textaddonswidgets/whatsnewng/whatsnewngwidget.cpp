@@ -14,6 +14,9 @@
 #include <QLocale>
 #include <QTextBrowser>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TextAddonsWidgets;
 WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent)
     : QWidget{parent}
@@ -21,14 +24,14 @@ WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent)
     , mWhatsNewComboBoxWidget(new WhatsNewComboBoxWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mWhatsNewComboBoxWidget->setObjectName(QStringLiteral("mWhatsNewComboBoxWidget"));
+    mWhatsNewComboBoxWidget->setObjectName(u"mWhatsNewComboBoxWidget"_s);
     mainLayout->addWidget(mWhatsNewComboBoxWidget);
     connect(mWhatsNewComboBoxWidget, &WhatsNewComboBoxWidget::versionChanged, this, &WhatsNewNgWidget::slotVersionChanged);
 
-    mLabelInfo->setObjectName(QStringLiteral("mLabelInfo"));
+    mLabelInfo->setObjectName(u"mLabelInfo"_s);
     mLabelInfo->setReadOnly(true);
     mLabelInfo->setOpenExternalLinks(true);
     mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);

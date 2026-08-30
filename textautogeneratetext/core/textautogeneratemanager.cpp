@@ -381,7 +381,7 @@ QString TextAutoGenerateManager::generateEngineDisplayName() const
     QString displayName;
     const auto *plugin = textAutoGeneratePlugin();
     if (plugin) {
-        displayName = QStringLiteral("%1 (%2)").arg(plugin->translatedPluginName(), TextAutoGenerateTextPlugin::convertEngineType(plugin->engineType()));
+        displayName = u"%1 (%2)"_s.arg(plugin->translatedPluginName(), TextAutoGenerateTextPlugin::convertEngineType(plugin->engineType()));
     }
     return displayName;
 }

@@ -35,7 +35,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGe
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> OllamaClient::supportedServers() const
 {
     const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
-        .localizedName = QStringLiteral("%1 (%2)").arg(
+        .localizedName = u"%1 (%2)"_s.arg(
             translatedName(),
             TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Local)),
         .identifier = name(),

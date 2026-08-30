@@ -13,6 +13,8 @@
 
 #include <TextAutoGenerateText/TextAutoGenerateImportChatAsJsonJob>
 
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(TextAutoGenerateImportChatAsJsonJobTest)
 
 TextAutoGenerateImportChatAsJsonJobTest::TextAutoGenerateImportChatAsJsonJobTest(QObject *parent)
@@ -26,7 +28,7 @@ void TextAutoGenerateImportChatAsJsonJobTest::shouldRemapMessageAndAnswerUuids()
     QTemporaryDir dir;
     QVERIFY(dir.isValid());
 
-    const QString fileName = dir.filePath(QStringLiteral("import.json"));
+    const QString fileName = dir.filePath(u"import.json"_s);
     QFile f(fileName);
     QVERIFY(f.open(QIODevice::WriteOnly));
     f.write(R"({
@@ -48,7 +50,7 @@ void TextAutoGenerateImportChatAsJsonJobTest::shouldRemapMessageAndAnswerUuids()
 
     QCOMPARE(spy.count(), 1);
     const QList<QVariant> args = spy.takeFirst();
-    QCOMPARE(args.at(0).toString(), QStringLiteral("chat"));
+    QCOMPARE(args.at(0).toString(), u"chat"_s);
 
     const QList<TextAutoGenerateText::TextAutoGenerateMessage> importedMessages =
         qvariant_cast<QList<TextAutoGenerateText::TextAutoGenerateMessage>>(args.at(1));

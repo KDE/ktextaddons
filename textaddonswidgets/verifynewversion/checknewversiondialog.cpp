@@ -9,6 +9,9 @@
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TextAddonsWidgets;
 CheckNewVersionDialog::CheckNewVersionDialog(QWidget *parent)
     : QDialog(parent)
@@ -17,13 +20,13 @@ CheckNewVersionDialog::CheckNewVersionDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Check New Version"));
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mVerifyNewVersionWidget->setObjectName(QStringLiteral("mVerifyNewVersionWidget"));
+    mVerifyNewVersionWidget->setObjectName(u"mVerifyNewVersionWidget"_s);
     mainLayout->addWidget(mVerifyNewVersionWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(u"buttonBox"_s);
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &CheckNewVersionDialog::reject);
     resize(300, 200);

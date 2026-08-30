@@ -8,6 +8,8 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+using namespace Qt::Literals::StringLiterals;
+
 bool TextAddonsWidgets::PluginUtil::isPluginActivated(const QStringList &enabledPluginsList,
                                                       const QStringList &disabledPluginsList,
                                                       bool isEnabledByDefault,
@@ -33,8 +35,8 @@ TextAddonsWidgets::PluginUtil::loadPluginSetting(const QString &configFileName, 
     QStringList disabledPlugins;
     if (config->hasGroup(groupName)) {
         const KConfigGroup grp = config->group(groupName);
-        enabledPlugins = grp.readEntry(QStringLiteral("%1Enabled").arg(prefixSettingKey), QStringList());
-        disabledPlugins = grp.readEntry(QStringLiteral("%1Disabled").arg(prefixSettingKey), QStringList());
+        enabledPlugins = grp.readEntry(u"%1Enabled"_s.arg(prefixSettingKey), QStringList());
+        disabledPlugins = grp.readEntry(u"%1Disabled"_s.arg(prefixSettingKey), QStringList());
     }
 
     pair.enabledPluginList = enabledPlugins;
@@ -52,14 +54,14 @@ void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,
     // qDebug() << " void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,  " << configFileName;
     KConfigGroup grp = config->group(groupName);
     if (enabledPluginsList.isEmpty()) {
-        grp.deleteEntry(QStringLiteral("%1Enabled").arg(prefixSettingKey));
+        grp.deleteEntry(u"%1Enabled"_s.arg(prefixSettingKey));
     } else {
-        grp.writeEntry(QStringLiteral("%1Enabled").arg(prefixSettingKey), enabledPluginsList);
+        grp.writeEntry(u"%1Enabled"_s.arg(prefixSettingKey), enabledPluginsList);
     }
     if (disabledPluginsList.isEmpty()) {
-        grp.deleteEntry(QStringLiteral("%1Disabled").arg(prefixSettingKey));
+        grp.deleteEntry(u"%1Disabled"_s.arg(prefixSettingKey));
     } else {
-        grp.writeEntry(QStringLiteral("%1Disabled").arg(prefixSettingKey), disabledPluginsList);
+        grp.writeEntry(u"%1Disabled"_s.arg(prefixSettingKey), disabledPluginsList);
     }
 }
 

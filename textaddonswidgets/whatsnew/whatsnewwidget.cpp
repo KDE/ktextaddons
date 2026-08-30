@@ -10,6 +10,8 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 constexpr int allVersion = -1;
@@ -22,13 +24,13 @@ WhatsNewWidget::WhatsNewWidget(const QList<TextAddonsWidgets::WhatsNewInfo> &inf
     , mWhatsNewComboBoxWidget(new WhatsNewComboBoxWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mWhatsNewComboBoxWidget->setObjectName(QStringLiteral("mWhatsNewComboBoxWidget"));
+    mWhatsNewComboBoxWidget->setObjectName(u"mWhatsNewComboBoxWidget"_s);
     mainLayout->addWidget(mWhatsNewComboBoxWidget);
 
-    mLabelInfo->setObjectName(QStringLiteral("mLabelInfo"));
+    mLabelInfo->setObjectName(u"mLabelInfo"_s);
     mLabelInfo->setReadOnly(true);
     mLabelInfo->setOpenExternalLinks(true);
     mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
@@ -64,7 +66,7 @@ void WhatsNewWidget::updateInformations()
 
 QString WhatsNewWidget::generateStartEndHtml(const QString &str) const
 {
-    const QString message = QStringLiteral("<qt>") + str + QStringLiteral("</qt>");
+    const QString message = u"<qt>"_s + str + u"</qt>"_s;
     return message;
 }
 
@@ -90,17 +92,17 @@ void WhatsNewWidget::slotVersionChanged(int type)
 
 QString WhatsNewWidget::importantChangeStr() const
 {
-    return QStringLiteral("<b>") + i18n("Important changes since last version:") + QStringLiteral("</b>");
+    return u"<b>"_s + i18n("Important changes since last version:") + u"</b>"_s;
 }
 
 QString WhatsNewWidget::featuresChangeStr() const
 {
-    return QStringLiteral("<b>") + i18n("Some of the new features in this release include:") + QStringLiteral("</b>");
+    return u"<b>"_s + i18n("Some of the new features in this release include:") + u"</b>"_s;
 }
 
 QString WhatsNewWidget::bugFixingChangeStr() const
 {
-    return QStringLiteral("<b>") + i18n("Some bug fixing:") + QStringLiteral("</b>");
+    return u"<b>"_s + i18n("Some bug fixing:") + u"</b>"_s;
 }
 
 QString WhatsNewWidget::createVersionInformation(const WhatsNewInfo &info)
@@ -108,29 +110,29 @@ QString WhatsNewWidget::createVersionInformation(const WhatsNewInfo &info)
     QString message;
     if (!info.changes().isEmpty()) {
         message += importantChangeStr();
-        message += QStringLiteral("<ul>");
+        message += u"<ul>"_s;
         for (int i = 0, total = info.changes().count(); i < total; ++i) {
-            message += QStringLiteral("<li>%1</li>").arg(info.changes().at(i));
+            message += u"<li>%1</li>"_s.arg(info.changes().at(i));
         }
-        message += QStringLiteral("</ul>");
+        message += u"</ul>"_s;
     }
 
     if (!info.newFeatures().isEmpty()) {
         message += featuresChangeStr();
-        message += QStringLiteral("<ul>");
+        message += u"<ul>"_s;
         for (int i = 0, total = info.newFeatures().count(); i < total; ++i) {
-            message += QStringLiteral("<li>%1</li>").arg(info.newFeatures().at(i));
+            message += u"<li>%1</li>"_s.arg(info.newFeatures().at(i));
         }
-        message += QStringLiteral("</ul>");
+        message += u"</ul>"_s;
     }
 
     if (!info.bugFixings().isEmpty()) {
         message += bugFixingChangeStr();
-        message += QStringLiteral("<ul>");
+        message += u"<ul>"_s;
         for (int i = 0, total = info.bugFixings().count(); i < total; ++i) {
-            message += QStringLiteral("<li>%1</li>").arg(info.bugFixings().at(i));
+            message += u"<li>%1</li>"_s.arg(info.bugFixings().at(i));
         }
-        message += QStringLiteral("</ul>");
+        message += u"</ul>"_s;
     }
     return message;
 }

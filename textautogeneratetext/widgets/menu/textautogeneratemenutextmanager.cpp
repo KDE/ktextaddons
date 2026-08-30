@@ -40,7 +40,7 @@ void TextAutoGenerateMenuTextManager::load()
         TextAutoGenerateMenuTextInfo info;
         info.setRequestText(group.readEntry(u"RequestedText"_s));
         info.setEnabled(group.readEntry(u"Enabled"_s, true));
-        info.setOrder(group.readEntry(QStringLiteral("Order"), 0));
+        info.setOrder(group.readEntry(u"Order"_s, 0));
         infos.append(std::move(info));
     }
     std::sort(infos.begin(), infos.end(), [&](const auto &firstItem, const auto &secondItem) {

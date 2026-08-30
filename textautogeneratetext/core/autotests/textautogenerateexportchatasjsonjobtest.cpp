@@ -15,6 +15,8 @@
 #include <TextAutoGenerateText/TextAutoGenerateExportChatAsJsonJob>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(TextAutoGenerateExportChatAsJsonJobTest)
 
 TextAutoGenerateExportChatAsJsonJobTest::TextAutoGenerateExportChatAsJsonJobTest(QObject *parent)
@@ -26,17 +28,17 @@ void TextAutoGenerateExportChatAsJsonJobTest::shouldEmitExportDoneOnSuccess()
 {
     QTemporaryDir dir;
     QVERIFY(dir.isValid());
-    const QString fileName = dir.filePath(QStringLiteral("export.json"));
+    const QString fileName = dir.filePath(u"export.json"_s);
 
     TextAutoGenerateText::TextAutoGenerateMessage message;
     message.setUuid("msg-1");
     message.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
-    message.setContent(QStringLiteral("hello"));
+    message.setContent(u"hello"_s);
 
     auto job = new TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob(this);
     TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo info;
     info.filename = fileName;
-    info.chatTitle = QStringLiteral("title");
+    info.chatTitle = u"title"_s;
     info.listMessages.append(message);
     job->setInfo(info);
 
@@ -51,25 +53,25 @@ void TextAutoGenerateExportChatAsJsonJobTest::shouldEmitExportDoneOnSuccess()
     const QJsonDocument doc = QJsonDocument::fromJson(f.readAll());
     QVERIFY(doc.isObject());
     const QJsonObject obj = doc.object();
-    QCOMPARE(obj.value(QStringLiteral("title")).toString(), QStringLiteral("title"));
-    QCOMPARE(obj.value(QStringLiteral("messages")).toArray().size(), 1);
+    QCOMPARE(obj.value(u"title"_s).toString(), u"title"_s);
+    QCOMPARE(obj.value(u"messages"_s).toArray().size(), 1);
 }
 
 void TextAutoGenerateExportChatAsJsonJobTest::shouldNotEmitExportDoneWhenWriteFails()
 {
-    if (!QFile::exists(QStringLiteral("/dev/full"))) {
+    if (!QFile::exists(u"/dev/full"_s)) {
         QSKIP("/dev/full is not available on this platform");
     }
 
     TextAutoGenerateText::TextAutoGenerateMessage message;
     message.setUuid("msg-1");
     message.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
-    message.setContent(QStringLiteral("hello"));
+    message.setContent(u"hello"_s);
 
     auto job = new TextAutoGenerateText::TextAutoGenerateExportChatAsJsonJob(this);
     TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo info;
-    info.filename = QStringLiteral("/dev/full");
-    info.chatTitle = QStringLiteral("title");
+    info.filename = u"/dev/full"_s;
+    info.chatTitle = u"title"_s;
     info.listMessages.append(message);
     job->setInfo(info);
 

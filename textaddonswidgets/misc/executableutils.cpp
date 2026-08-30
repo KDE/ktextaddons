@@ -10,10 +10,12 @@
 #endif
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
+
 QString TextAddonsWidgets::ExecutableUtils::findExecutable(const QString &exec)
 {
 #ifdef Q_OS_WIN
-    const QString executableName = exec + QStringLiteral(".exe");
+    const QString executableName = exec + u".exe"_s;
     QString path = QStandardPaths::findExecutable(executableName, {QCoreApplication::applicationDirPath()});
     if (path.isEmpty()) {
         path = QStandardPaths::findExecutable(executableName);

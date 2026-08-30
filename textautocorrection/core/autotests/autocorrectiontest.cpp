@@ -562,18 +562,18 @@ void AutoCorrectionTest::shouldAddNonBreakingSpace_data()
     QTest::addColumn<QString>("convertedString");
     QTest::addColumn<QString>("language");
     QTest::addColumn<bool>("enableAddNonBreakingSpace");
-    QTest::newRow("convert1") << u"boo !"_s << u"boob!"_s << QStringLiteral("fr") << true;
-    QTest::newRow("disable") << u"boo !"_s << u"boo !"_s << QStringLiteral("fr") << false;
-    QTest::newRow("nonchanges") << u"boo"_s << u"boo"_s << QStringLiteral("fr") << true;
-    QTest::newRow("convert2") << u"boo ;"_s << u"boob;"_s << QStringLiteral("fr") << true;
-    QTest::newRow("convert3") << u"boo ?"_s << u"boob?"_s << QStringLiteral("fr") << true;
-    QTest::newRow("convert4") << u"boo :"_s << u"boob:"_s << QStringLiteral("fr") << true;
-    QTest::newRow("nonfrenchlanguage") << u"boo :"_s << u"boo :"_s << QStringLiteral("ge") << true;
-    QTest::newRow("onecharacter") << u":"_s << u":"_s << QStringLiteral("fr") << true;
-    QTest::newRow("onecharacter2") << u" "_s << u" "_s << QStringLiteral("fr") << true;
-    QTest::newRow("percentage") << u"50 %"_s << u"50b%"_s << QStringLiteral("fr") << true;
-    QTest::newRow("degrees") << u"50 °C"_s << u"50b°C"_s << QStringLiteral("fr") << true;
-    QTest::newRow("simplespace") << u" "_s << u" "_s << QStringLiteral("fr") << true;
+    QTest::newRow("convert1") << u"boo !"_s << u"boob!"_s << u"fr"_s << true;
+    QTest::newRow("disable") << u"boo !"_s << u"boo !"_s << u"fr"_s << false;
+    QTest::newRow("nonchanges") << u"boo"_s << u"boo"_s << u"fr"_s << true;
+    QTest::newRow("convert2") << u"boo ;"_s << u"boob;"_s << u"fr"_s << true;
+    QTest::newRow("convert3") << u"boo ?"_s << u"boob?"_s << u"fr"_s << true;
+    QTest::newRow("convert4") << u"boo :"_s << u"boob:"_s << u"fr"_s << true;
+    QTest::newRow("nonfrenchlanguage") << u"boo :"_s << u"boo :"_s << u"ge"_s << true;
+    QTest::newRow("onecharacter") << u":"_s << u":"_s << u"fr"_s << true;
+    QTest::newRow("onecharacter2") << u" "_s << u" "_s << u"fr"_s << true;
+    QTest::newRow("percentage") << u"50 %"_s << u"50b%"_s << u"fr"_s << true;
+    QTest::newRow("degrees") << u"50 °C"_s << u"50b°C"_s << u"fr"_s << true;
+    QTest::newRow("simplespace") << u" "_s << u" "_s << u"fr"_s << true;
 }
 
 void AutoCorrectionTest::shouldAddNonBreakingSpace()

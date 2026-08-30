@@ -75,7 +75,7 @@ bool TextAutoGenerateLocalDatabaseAbstract::checkDataBase(const QString &id, QSq
 
 QString TextAutoGenerateLocalDatabaseAbstract::generateDbName(const QString &id) const
 {
-    return id.isEmpty() ? databaseName() : (databaseName() + QLatin1String("-") + id);
+    return id.isEmpty() ? databaseName() : (databaseName() + "-"_L1 + id);
 }
 
 bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id, QSqlDatabase &db)

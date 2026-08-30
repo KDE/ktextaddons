@@ -108,31 +108,29 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords") << u"bla bla"_s << u"bla"_s << QStringLiteral("replace") << flags << 2 << u"replace replace"_s;
+        QTest::newRow("wholewords") << u"bla bla"_s << u"bla"_s << u"replace"_s << flags << 2 << u"replace replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
         flags |= TextCustomEditor::TextEditFindBarBase::FindRespectDiacritics;
-        QTest::newRow("wholewords-diacritics") << u"réunion reunion réunion"_s << u"réunion"_s << QStringLiteral("replace") << flags << 2
-                                               << u"replace reunion replace"_s;
+        QTest::newRow("wholewords-diacritics") << u"réunion reunion réunion"_s << u"réunion"_s << u"replace"_s << flags << 2 << u"replace reunion replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics") << u"réunion reunion réunion"_s << u"réunion"_s << QStringLiteral("replace") << flags << 3
-                                                  << u"replace replace replace"_s;
+        QTest::newRow("wholewords-no-diacritics") << u"réunion reunion réunion"_s << u"réunion"_s << u"replace"_s << flags << 3 << u"replace replace replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics-2") << u"réunion réunion réunion"_s << u"réunion"_s << QStringLiteral("replace") << flags << 3
+        QTest::newRow("wholewords-no-diacritics-2") << u"réunion réunion réunion"_s << u"réunion"_s << u"replace"_s << flags << 3
                                                     << u"replace replace replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics-3") << u"voiture voiture voiture"_s << u"réunion"_s << QStringLiteral("replace") << flags << 0
+        QTest::newRow("wholewords-no-diacritics-3") << u"voiture voiture voiture"_s << u"réunion"_s << u"replace"_s << flags << 0
                                                     << u"voiture voiture voiture"_s;
     }
     {

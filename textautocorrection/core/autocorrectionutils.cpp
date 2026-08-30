@@ -45,7 +45,7 @@ QDebug operator<<(QDebug d, TextAutoCorrectionCore::AutoCorrectionUtils::Typogra
 
 QString AutoCorrectionUtils::libreofficeFile(const QString &lang)
 {
-    return QStringLiteral("acor_%1.dat").arg(lang);
+    return u"acor_%1.dat"_s.arg(lang);
 }
 
 QStringList AutoCorrectionUtils::libreOfficeAutoCorrectionPath()
@@ -64,12 +64,12 @@ QStringList AutoCorrectionUtils::libreOfficeAutoCorrectionPath()
 QString AutoCorrectionUtils::libreOfficeSystemPath()
 {
 #ifdef Q_OS_WIN
-    return QStringLiteral("c:/Program Files/LibreOffice/share/autocorr/");
+    return u"c:/Program Files/LibreOffice/share/autocorr/"_s;
 #else
 #ifdef Q_OS_MACOS
-    return QStringLiteral("/Applications/LibreOffice.app/Contents/Resources/autocorr");
+    return u"/Applications/LibreOffice.app/Contents/Resources/autocorr"_s;
 #else
-    return QStringLiteral("/usr/lib64/libreoffice/share/autocorr/");
+    return u"/usr/lib64/libreoffice/share/autocorr/"_s;
 #endif
 #endif
 }
@@ -78,9 +78,9 @@ QString AutoCorrectionUtils::libreOfficeLocalPath()
 {
 #ifdef Q_OS_MACOS
     // It seems that they don't use lowercase
-    return QStringLiteral("/LibreOffice/4/user/autocorr/");
+    return u"/LibreOffice/4/user/autocorr/"_s;
 #else
-    return QStringLiteral("/libreoffice/4/user/autocorr/");
+    return u"/libreoffice/4/user/autocorr/"_s;
 #endif
 }
 
@@ -111,8 +111,8 @@ QStringList AutoCorrectionUtils::searchAutoCorrectLibreOfficeFiles()
         for (const QString &file : entryList) {
             QString curFile = file;
             curFile.remove(path);
-            curFile.remove(QStringLiteral(".dat"));
-            curFile.remove(QStringLiteral("acor_"));
+            curFile.remove(u".dat"_s);
+            curFile.remove(u"acor_"_s);
             files.append(curFile);
         }
     }

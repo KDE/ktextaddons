@@ -390,7 +390,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
          i <= static_cast<int>(GenericNetworkManager::PluginNetworkType::LastElement);
          ++i) {
         const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
-            .localizedName = QStringLiteral("%1 (%2)").arg(
+            .localizedName = u"%1 (%2)"_s.arg(
                 translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
                 TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network)),
             .identifier = pluginName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),

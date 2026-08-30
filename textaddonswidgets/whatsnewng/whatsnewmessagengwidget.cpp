@@ -20,7 +20,7 @@ WhatsNewMessageNgWidget::WhatsNewMessageNgWidget(const QString &applicationName,
     setMessageType(Information);
 
     mApplicationName = applicationName;
-    setText(i18n("What's new in %1. %2", mApplicationName, QStringLiteral("<a href=\"show_whats_new\">%1</a>").arg(i18n("(Show News)"))));
+    setText(i18n("What's new in %1. %2", mApplicationName, u"<a href=\"show_whats_new\">%1</a>"_s.arg(i18n("(Show News)"))));
     setPosition(KMessageWidget::Header);
     connect(this, &KMessageWidget::linkActivated, this, &WhatsNewMessageNgWidget::slotLinkActivated);
 }

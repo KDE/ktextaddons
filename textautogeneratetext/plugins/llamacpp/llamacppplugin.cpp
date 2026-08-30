@@ -209,7 +209,7 @@ QString LLamaCppPlugin::shareNamePrompt() const
 
 QString LLamaCppPlugin::passwordServiceName() const
 {
-    return QStringLiteral("LLamaCppPluginAutoGenerateText");
+    return u"LLamaCppPluginAutoGenerateText"_s;
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LLamaCppPlugin::activateInstanceAction()

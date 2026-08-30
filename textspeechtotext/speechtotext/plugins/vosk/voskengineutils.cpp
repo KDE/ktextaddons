@@ -34,10 +34,10 @@ VoskEngineUtils::LanguageInstalled VoskEngineUtils::loadInstalledLanguageInfo(co
     const QByteArray ba = file.readAll();
     const QJsonDocument loadDoc(QJsonDocument::fromJson(ba));
     const QJsonObject o = loadDoc.object();
-    info.absoluteLanguageModelPath = o[QLatin1String("absolutePath")].toString();
-    info.name = o[QLatin1String("name")].toString();
-    info.url = o[QLatin1String("url")].toString();
-    info.versionStr = o[QLatin1String("version")].toString();
+    info.absoluteLanguageModelPath = o["absolutePath"_L1].toString();
+    info.name = o["name"_L1].toString();
+    info.url = o["url"_L1].toString();
+    info.versionStr = o["version"_L1].toString();
     return info;
 }
 
@@ -50,10 +50,10 @@ bool VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, 
     }
     QJsonDocument d;
     QJsonObject o;
-    o[QLatin1String("absolutePath")] = installed.absoluteLanguageModelPath;
-    o[QLatin1String("name")] = installed.name;
-    o[QLatin1String("url")] = installed.url;
-    o[QLatin1String("version")] = installed.versionStr;
+    o["absolutePath"_L1] = installed.absoluteLanguageModelPath;
+    o["name"_L1] = installed.name;
+    o["url"_L1] = installed.url;
+    o["version"_L1] = installed.versionStr;
     d.setObject(o);
     const QByteArray ba = d.toJson();
     file.write(d.toJson());

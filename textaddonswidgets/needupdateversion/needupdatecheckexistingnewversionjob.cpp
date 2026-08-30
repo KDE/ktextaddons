@@ -8,6 +8,9 @@
 #include "needupdateparsehtmljob.h"
 #include "needupdateparsehtmlutil.h"
 #include "textaddonswidgets_debug.h"
+
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TextAddonsWidgets;
 NeedUpdateCheckExistingNewVersionJob::NeedUpdateCheckExistingNewVersionJob(QObject *parent)
     : QObject{parent}
@@ -41,7 +44,7 @@ void NeedUpdateCheckExistingNewVersionJob::slotDownloadDone(const QString &str)
 
     qCDebug(TEXTADDONSWIDGETS_LOG) << " currentCompiledDate " << mCompileDate;
 
-    const QDate dateFromUrl = QDate::fromString(compileDateStr, QStringLiteral("yyyy-MM-dd"));
+    const QDate dateFromUrl = QDate::fromString(compileDateStr, u"yyyy-MM-dd"_s);
     if (!dateFromUrl.isValid()) {
         qCWarning(TEXTADDONSWIDGETS_LOG) << "Invalid date parsed from URL:" << compileDateStr;
         Q_EMIT foundNewVersion(false);

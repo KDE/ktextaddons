@@ -8,6 +8,9 @@
 #include "needupdateversion/needupdateversionutils.h"
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(NeedUpdateVersionUtilsTest)
 NeedUpdateVersionUtilsTest::NeedUpdateVersionUtilsTest(QObject *parent)
     : QObject{parent}
@@ -33,10 +36,10 @@ void NeedUpdateVersionUtilsTest::shouldReturnObsoleteVersionStatus_data()
     QTest::addColumn<QString>("str");
     QTest::addColumn<TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion>("status");
     QTest::addRow("empty") << QString() << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::Unknown;
-    QTest::addRow("test1") << QStringLiteral("foo (23.08.2)") << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet;
-    QTest::addRow("test2") << QStringLiteral("(23.08.2)") << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet;
-    QTest::addRow("test3") << QStringLiteral("(20.08.2)") << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan12Months;
-    QTest::addRow("test4") << QStringLiteral("(23.06.2)") << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan6Months;
+    QTest::addRow("test1") << u"foo (23.08.2)"_s << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet;
+    QTest::addRow("test2") << u"(23.08.2)"_s << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet;
+    QTest::addRow("test3") << u"(20.08.2)"_s << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan12Months;
+    QTest::addRow("test4") << u"(23.06.2)"_s << TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::OlderThan6Months;
 }
 
 #include "moc_needupdateversionutilstest.cpp"

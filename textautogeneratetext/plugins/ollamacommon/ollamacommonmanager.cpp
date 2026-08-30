@@ -49,7 +49,7 @@ void OllamaCommonManager::showModelInfo(const QString &modelName)
     url.setPath(OllamaCommonUtils::modelInfoPath());
     QNetworkRequest req{url};
 
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
 
     QJsonObject data;
     data["model"_L1] = modelName;

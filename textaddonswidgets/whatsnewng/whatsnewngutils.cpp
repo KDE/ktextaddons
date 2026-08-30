@@ -9,6 +9,8 @@
 #include <QCryptographicHash>
 #include <QDate>
 
+using namespace Qt::Literals::StringLiterals;
+
 QString TextAddonsWidgets::WhatsNewNgUtils::createMD5(const QString &str)
 {
     QCryptographicHash md5(QCryptographicHash::Md5);
@@ -35,7 +37,7 @@ QString TextAddonsWidgets::WhatsNewNgUtils::generateVersionHeader(const KAboutRe
 
 QString TextAddonsWidgets::WhatsNewNgUtils::generateStartEndHtml(const QString &str)
 {
-    const QString message = QStringLiteral("<qt>") + str + QStringLiteral("</qt>");
+    const QString message = u"<qt>"_s + str + u"</qt>"_s;
     return message;
 }
 

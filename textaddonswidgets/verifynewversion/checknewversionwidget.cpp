@@ -13,16 +13,18 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TextAddonsWidgets;
 CheckNewVersionWidget::CheckNewVersionWidget(QWidget *parent)
     : QWidget{parent}
     , mCheckVersionResultLabel(new QLabel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mCheckVersionResultLabel->setObjectName(QStringLiteral("mCheckVersionResultLabel"));
+    mCheckVersionResultLabel->setObjectName(u"mCheckVersionResultLabel"_s);
     mCheckVersionResultLabel->setWordWrap(true);
     mCheckVersionResultLabel->setOpenExternalLinks(true);
     mCheckVersionResultLabel->setTextFormat(Qt::RichText);

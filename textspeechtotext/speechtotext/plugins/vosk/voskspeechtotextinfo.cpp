@@ -6,6 +6,8 @@
 
 #include "voskspeechtotextinfo.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 VoskSpeechToTextInfo::VoskSpeechToTextInfo() = default;
 
 bool VoskSpeechToTextInfo::isValid() const
@@ -91,15 +93,15 @@ bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
 
 void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
 {
-    mLangText = obj[QLatin1String("lang_text")].toString();
-    mIdentifier = obj[QLatin1String("lang")].toString();
-    mMd5 = obj[QLatin1String("md5")].toString();
-    mObsolete = obj[QLatin1String("obsolete")].toBool();
-    mVersion = obj[QLatin1String("version")].toString();
-    mSize = obj[QLatin1String("size")].toInteger();
-    mUrl = obj[QLatin1String("url")].toString();
-    mType = obj[QLatin1String("type")].toString();
-    mName = obj[QLatin1String("name")].toString();
+    mLangText = obj["lang_text"_L1].toString();
+    mIdentifier = obj["lang"_L1].toString();
+    mMd5 = obj["md5"_L1].toString();
+    mObsolete = obj["obsolete"_L1].toBool();
+    mVersion = obj["version"_L1].toString();
+    mSize = obj["size"_L1].toInteger();
+    mUrl = obj["url"_L1].toString();
+    mType = obj["type"_L1].toString();
+    mName = obj["name"_L1].toString();
 }
 
 QString VoskSpeechToTextInfo::type() const

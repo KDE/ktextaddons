@@ -12,10 +12,12 @@
 
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
+
 TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(const QString &str,
                                                                                                                             QDate currentDate)
 {
-    static const QRegularExpression regular{QStringLiteral("\\((.*)\\)")};
+    static const QRegularExpression regular{u"\\((.*)\\)"_s};
     QRegularExpressionMatch match;
     QString captured;
     if (str.contains(regular, &match)) {
@@ -53,7 +55,7 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
 void TextAddonsWidgets::NeedUpdateVersionUtils::disableCheckVersion()
 {
     const KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, QStringLiteral("Check Version"));
+    KConfigGroup group(config, u"Check Version"_s);
     group.writeEntry("checkerVersionEnabled", false);
     group.sync();
 }
@@ -62,7 +64,7 @@ bool TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()
 {
 #if ENABLE_WARN_OUTDATED
     const KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    const KConfigGroup group(config, QStringLiteral("Check Version"));
+    const KConfigGroup group(config, u"Check Version"_s);
     return group.readEntry("checkerVersionEnabled", true);
 #else
     return false;
@@ -73,5 +75,5 @@ QDate TextAddonsWidgets::NeedUpdateVersionUtils::compileDate()
 {
     // __DATE__ pads a single-digit day with a space ("Jun  3 2026"), so simplify whitespace
     // and use a single "d" which accepts both one and two digit days.
-    return QDate::fromString(QStringLiteral(__DATE__).simplified(), QStringLiteral("MMM d yyyy"));
+    return QDate::fromString(QStringLiteral(__DATE__).simplified(), u"MMM d yyyy"_s);
 }

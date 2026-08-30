@@ -29,7 +29,7 @@ void TextAutoGenerateTextToolsLoadingJobTest::shouldLoadTools_data()
             tool.setToolNameId("calendar_plugin"_ba);
             tool.setDescription(u"bla bla"_s);
             QStringList lst;
-            lst << QStringLiteral("calendarinfo") << QStringLiteral("username");
+            lst << u"calendarinfo"_s << u"username"_s;
             tool.setRequired(lst);
             QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> properties;
             {
@@ -58,7 +58,7 @@ void TextAutoGenerateTextToolsLoadingJobTest::shouldLoadTools_data()
             tool.setToolNameId("calendar_plugin"_ba);
             tool.setDescription(u"bla bla"_s);
             QStringList lst;
-            lst << QStringLiteral("calendarinfo") << QStringLiteral("username");
+            lst << u"calendarinfo"_s << u"username"_s;
             tool.setRequired(lst);
             QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> properties;
             {
@@ -82,7 +82,7 @@ void TextAutoGenerateTextToolsLoadingJobTest::shouldLoadTools_data()
             tool.setToolNameId("example_tool"_ba);
             tool.setDescription(u"example"_s);
             QStringList lst;
-            lst << QStringLiteral("city");
+            lst << u"city"_s;
             tool.setRequired(lst);
             QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> properties;
             {

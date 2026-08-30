@@ -66,7 +66,7 @@ void GenericNetworkPlugin::removeApiKey()
 
 QString GenericNetworkPlugin::passwordServiceName() const
 {
-    return QStringLiteral("GenericPluginAutoGenerateText");
+    return u"GenericPluginAutoGenerateText"_s;
 }
 
 void GenericNetworkPlugin::loadApiKey()

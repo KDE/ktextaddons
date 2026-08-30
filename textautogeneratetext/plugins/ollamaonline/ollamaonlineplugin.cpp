@@ -57,7 +57,7 @@ void OllamaOnlinePlugin::load(const KConfigGroup &config)
 
 QString OllamaOnlinePlugin::passwordServiceName() const
 {
-    return QStringLiteral("OllamaOnlinePluginAutoGenerateText");
+    return u"OllamaOnlinePluginAutoGenerateText"_s;
 }
 
 void OllamaOnlinePlugin::save(KConfigGroup &config)

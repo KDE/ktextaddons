@@ -193,7 +193,7 @@ QString LMStudioPlugin::shareNamePrompt() const
 
 QString LMStudioPlugin::passwordServiceName() const
 {
-    return QStringLiteral("LMStudioPluginAutoGenerateText");
+    return u"LMStudioPluginAutoGenerateText"_s;
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMStudioPlugin::activateInstanceAction()

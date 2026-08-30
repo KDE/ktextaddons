@@ -8,6 +8,9 @@
 #include "core/jobs/textautogeneratesearchjob.h"
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(TextAutoGenerateSearchJobTest)
 
 TextAutoGenerateSearchJobTest::TextAutoGenerateSearchJobTest(QObject *parent)
@@ -26,7 +29,7 @@ void TextAutoGenerateSearchJobTest::shouldHaveDefaultValues()
 void TextAutoGenerateSearchJobTest::shouldNotStartForWhitespaceOnlySearchText()
 {
     TextAutoGenerateText::TextAutoGenerateSearchJob job(nullptr);
-    job.setSearchText(QStringLiteral("   \t\n"));
+    job.setSearchText(u"   \t\n"_s);
     QVERIFY(!job.canStart());
 }
 

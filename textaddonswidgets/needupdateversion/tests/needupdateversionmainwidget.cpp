@@ -11,6 +11,8 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 NeedUpdateVersionMainWidget::NeedUpdateVersionMainWidget(QWidget *parent)
     : QWidget{parent}
     , mNeedUpdateVersionWidget(new TextAddonsWidgets::NeedUpdateVersionWidget(this))
@@ -30,7 +32,6 @@ NeedUpdateVersionMainWidget::~NeedUpdateVersionMainWidget() = default;
 
 void NeedUpdateVersionMainWidget::checkVersion()
 {
-    mNeedUpdateVersionWidget->setObsoleteVersion(
-        TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(QStringLiteral("22.04.1"), QDate::currentDate()));
+    mNeedUpdateVersionWidget->setObsoleteVersion(TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(u"22.04.1"_s, QDate::currentDate()));
 }
 #include "moc_needupdateversionmainwidget.cpp"

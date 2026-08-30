@@ -415,12 +415,10 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
     // we proceed to 3 special cases
 
     // list of the schemes, starting with http:// as most probable
-    const QStringList schemes = QStringList() << QStringLiteral("http://") << QStringLiteral("https://") << QStringLiteral("mailto:/")
-                                              << QStringLiteral("ftp://") << QStringLiteral("file://") << QStringLiteral("git://") << QStringLiteral("sftp://")
-                                              << QStringLiteral("magnet:?") << QStringLiteral("smb://") << QStringLiteral("nfs://") << QStringLiteral("fish://")
-                                              << QStringLiteral("ssh://") << QStringLiteral("telnet://") << QStringLiteral("irc://") << QStringLiteral("sip:")
-                                              << QStringLiteral("news:") << QStringLiteral("gopher://") << QStringLiteral("nntp://") << QStringLiteral("geo:")
-                                              << QStringLiteral("udp://") << QStringLiteral("rsync://") << QStringLiteral("dns://");
+    const QStringList schemes = QStringList() << u"http://"_s << u"https://"_s << u"mailto:/"_s << u"ftp://"_s << u"file://"_s << u"git://"_s << u"sftp://"_s
+                                              << u"magnet:?"_s << u"smb://"_s << u"nfs://"_s << u"fish://"_s << u"ssh://"_s << u"telnet://"_s << u"irc://"_s
+                                              << u"sip:"_s << u"news:"_s << u"gopher://"_s << u"nntp://"_s << u"geo:"_s << u"udp://"_s << u"rsync://"_s
+                                              << u"dns://"_s;
 
     enum LinkType {
         UNCLASSIFIED,
@@ -649,11 +647,11 @@ bool AutoCorrection::autoFractions() const
     }
 
     if (trimmed.startsWith("1/2"_L1)) {
-        d->mWord.replace(0, 3, QStringLiteral("½"));
+        d->mWord.replace(0, 3, u"½"_s);
     } else if (trimmed.startsWith("1/4"_L1)) {
-        d->mWord.replace(0, 3, QStringLiteral("¼"));
+        d->mWord.replace(0, 3, u"¼"_s);
     } else if (trimmed.startsWith("3/4"_L1)) {
-        d->mWord.replace(0, 3, QStringLiteral("¾"));
+        d->mWord.replace(0, 3, u"¾"_s);
     } else {
         return false;
     }

@@ -10,6 +10,8 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(WhatsNewWidgetTest)
 WhatsNewWidgetTest::WhatsNewWidgetTest(QWidget *parent)
     : QWidget{parent}
@@ -19,16 +21,16 @@ WhatsNewWidgetTest::WhatsNewWidgetTest(QWidget *parent)
 void WhatsNewWidgetTest::shouldHaveDefaultValues()
 {
     TextAddonsWidgets::WhatsNewWidget w({});
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mLabelInfo = w.findChild<QTextBrowser *>(QStringLiteral("mLabelInfo"));
+    auto mLabelInfo = w.findChild<QTextBrowser *>(u"mLabelInfo"_s);
     QVERIFY(mLabelInfo);
     QVERIFY(mLabelInfo->toPlainText().isEmpty());
     QVERIFY(mLabelInfo->openExternalLinks());
 
-    auto mWhatsNewComboBoxWidget = w.findChild<TextAddonsWidgets::WhatsNewComboBoxWidget *>(QStringLiteral("mWhatsNewComboBoxWidget"));
+    auto mWhatsNewComboBoxWidget = w.findChild<TextAddonsWidgets::WhatsNewComboBoxWidget *>(u"mWhatsNewComboBoxWidget"_s);
     QVERIFY(mWhatsNewComboBoxWidget);
 }
 

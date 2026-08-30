@@ -96,7 +96,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
         translator.parse(jsonResponse.object(), false);
         if (translator.isValid()) {
             // With slimt we can use only tiny model
-            if (translator.type() == QLatin1String("tiny")) {
+            if (translator.type() == "tiny"_L1) {
                 // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
                 // qDebug() << " translator " << translator;
                 const QString shortName = translator.shortName();

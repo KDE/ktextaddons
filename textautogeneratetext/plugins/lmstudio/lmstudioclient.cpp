@@ -36,7 +36,7 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin *LMStudioClient::createTextAuto
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> LMStudioClient::supportedServers() const
 {
     const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
-        .localizedName = QStringLiteral("%1 (%2)").arg(
+        .localizedName = u"%1 (%2)"_s.arg(
             translatedName(),
             TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network)),
         .identifier = name(),

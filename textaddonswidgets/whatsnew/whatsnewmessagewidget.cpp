@@ -19,7 +19,7 @@ WhatsNewMessageWidget::WhatsNewMessageWidget(QWidget *parent, const QString &app
     setMessageType(Information);
 
     mApplicationName = applicationName;
-    setText(i18n("What's new in %2. %1", QStringLiteral("<a href=\"show_whats_new\">%1</a>").arg(i18n("(Show News)")), mApplicationName));
+    setText(i18n("What's new in %2. %1", u"<a href=\"show_whats_new\">%1</a>"_s.arg(i18n("(Show News)")), mApplicationName));
     setPosition(KMessageWidget::Header);
     connect(this, &KMessageWidget::linkActivated, this, &WhatsNewMessageWidget::slotLinkActivated);
 }

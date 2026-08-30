@@ -10,6 +10,9 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(WhatsNewDialogTest)
 WhatsNewDialogTest::WhatsNewDialogTest(QObject *parent)
     : QObject{parent}
@@ -21,12 +24,12 @@ void WhatsNewDialogTest::shouldHaveDefaultValues()
 {
     TextAddonsWidgets::WhatsNewDialog d({});
     QVERIFY(!d.windowTitle().isEmpty());
-    auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
-    auto mWhatsNewWidget = d.findChild<TextAddonsWidgets::WhatsNewWidget *>(QStringLiteral("mWhatsNewWidget"));
+    auto mWhatsNewWidget = d.findChild<TextAddonsWidgets::WhatsNewWidget *>(u"mWhatsNewWidget"_s);
     QVERIFY(mWhatsNewWidget);
 
-    auto button = d.findChild<QDialogButtonBox *>(QStringLiteral("button"));
+    auto button = d.findChild<QDialogButtonBox *>(u"button"_s);
     QVERIFY(button);
 }
 

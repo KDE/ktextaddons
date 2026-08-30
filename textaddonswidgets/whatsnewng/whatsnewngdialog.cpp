@@ -16,6 +16,9 @@
 #include <QVBoxLayout>
 #include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
+
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 const char myWhatsNewNgDialogNgGroupName[] = "WhatsNewNgDialogNg";
@@ -42,13 +45,13 @@ void WhatsNewNgDialog::setReleases(const QList<KAboutRelease> &info)
 void WhatsNewNgDialog::initialize()
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mWhatsNewWidget->setObjectName(QStringLiteral("mWhatsNewWidget"));
+    mWhatsNewWidget->setObjectName(u"mWhatsNewWidget"_s);
     mainLayout->addWidget(mWhatsNewWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    button->setObjectName(QStringLiteral("button"));
+    button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &WhatsNewNgDialog::reject);
     readConfig();
