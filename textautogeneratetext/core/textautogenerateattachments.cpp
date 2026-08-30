@@ -76,8 +76,8 @@ TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJso
 
 QDebug operator<<(QDebug d, const TextAutoGenerateAttachments &t)
 {
-    for (int i = 0; i < t.messageAttachments().count(); i++) {
-        d.space() << t.messageAttachments().at(i) << "\n";
+    for (const auto &att : t.messageAttachments()) {
+        d.space() << att << "\n";
     }
     return d;
 }
