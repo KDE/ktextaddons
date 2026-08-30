@@ -8,7 +8,10 @@
 #include "autocorrectionutils.h"
 #include "textautocorrectioncore_export.h"
 class QDebug;
+#include <QHash>
 #include <QSet>
+#include <optional>
+#include <utility>
 namespace TextAutoCorrectionCore
 {
 class AutoCorrectionSettingsPrivate;
@@ -349,6 +352,14 @@ public:
      * \param path The custom system path
      */
     void setCustomSystemPath(const QString &path);
+
+    /*!
+     * \brief Looks up an autocorrection entry, ignoring case.
+     * \a word the word to look up
+     * \a wordFirstUpper the same word with its first character upper-cased
+     * \return the matching {key, replacement} pair, or std::nullopt when there is none
+     */
+    [[nodiscard]] std::optional<std::pair<QString, QString>> findEntry(const QString &word, const QString &wordFirstUpper) const;
 
 private:
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);

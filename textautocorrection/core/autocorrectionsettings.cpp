@@ -21,6 +21,15 @@ namespace TextAutoCorrectionCore
 class AutoCorrectionSettingsPrivate
 {
 public:
+    void setEntries(const QHash<QString, QString> &entries)
+    {
+        mAutocorrectEntries = entries;
+        mFoldedEntries.clear();
+        mFoldedEntries.reserve(entries.size());
+        for (auto it = entries.cbegin(); it != entries.cend(); ++it) {
+            mFoldedEntries.insert(it.key().toCaseFolded(), {it.key(), it.value()});
+        }
+    }
     AutoCorrectionUtils::TypographicQuotes mTypographicSingleQuotes;
     AutoCorrectionUtils::TypographicQuotes mTypographicDoubleQuotes;
     AutoCorrectionUtils::TypographicQuotes mDoubleFrenchQuotes;
@@ -58,6 +67,7 @@ public:
 
     bool mAddNonBreakingSpace = false;
     bool mReplaceDoubleQuotesByFrenchQuotes = false;
+    QHash<QString /*folded key*/, std::pair<QString /*original*/, QString /*replaced*/>> mFoldedEntries;
 };
 }
 
@@ -336,6 +346,7 @@ bool AutoCorrectionSettings::addAutoCorrect(const QString &currentWord, const QS
 {
     if (!d->mAutocorrectEntries.contains(currentWord)) {
         d->mAutocorrectEntries.insert(currentWord, replaceWord);
+        d->setEntries(d->mAutocorrectEntries);
         writeAutoCorrectionFile();
         return true;
     } else {
@@ -374,7 +385,7 @@ void AutoCorrectionSettings::setAutocorrectEntries(const QHash<QString, QString>
         d->mMaxFindStringLength = qMax(d->mMaxFindStringLength, findStringLenght);
         d->mMinFindStringLength = qMin(d->mMinFindStringLength, findStringLenght);
     }
-    d->mAutocorrectEntries = entries;
+    d->setEntries(entries);
 }
 
 QHash<QString, QString> AutoCorrectionSettings::autocorrectEntries() const
@@ -411,7 +422,7 @@ void AutoCorrectionSettings::loadLocalFileName(const QString &localFileName, con
     if (import.import(localFileName, messageError, ImportAbstractAutocorrection::All)) {
         d->mUpperCaseExceptions = import.upperCaseExceptions();
         d->mTwoUpperLetterExceptions = import.twoUpperLetterExceptions();
-        d->mAutocorrectEntries = import.autocorrectEntries();
+        d->setEntries(import.autocorrectEntries());
         // Don't import it in local
         // mSuperScriptEntries = import.superScriptEntries();
     }
@@ -431,7 +442,7 @@ void AutoCorrectionSettings::loadGlobalFileName(const QString &fname)
             if (import.import(fileName, errorMessage)) {
                 d->mUpperCaseExceptions = import.upperCaseExceptions();
                 d->mTwoUpperLetterExceptions = import.twoUpperLetterExceptions();
-                d->mAutocorrectEntries = import.autocorrectEntries();
+                d->setEntries(import.autocorrectEntries());
                 d->mSuperScriptEntries = import.superScriptEntries();
                 d->mMaxFindStringLength = import.maxFindStringLenght();
                 d->mMinFindStringLength = import.minFindStringLenght();
@@ -444,7 +455,7 @@ void AutoCorrectionSettings::loadGlobalFileName(const QString &fname)
         if (import.import(fname, messageError, ImportAbstractAutocorrection::All)) {
             d->mUpperCaseExceptions = import.upperCaseExceptions();
             d->mTwoUpperLetterExceptions = import.twoUpperLetterExceptions();
-            d->mAutocorrectEntries = import.autocorrectEntries();
+            d->setEntries(import.autocorrectEntries());
             d->mSuperScriptEntries = import.superScriptEntries();
             d->mMaxFindStringLength = import.maxFindStringLenght();
             d->mMinFindStringLength = import.minFindStringLenght();
@@ -455,7 +466,7 @@ void AutoCorrectionSettings::loadGlobalFileName(const QString &fname)
 void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)
 {
     d->mUpperCaseExceptions.clear();
-    d->mAutocorrectEntries.clear();
+    d->setEntries({});
     d->mTwoUpperLetterExceptions.clear();
     d->mSuperScriptEntries.clear();
 
@@ -543,6 +554,19 @@ QString AutoCorrectionSettings::customSystemPath() const
 void AutoCorrectionSettings::setCustomSystemPath(const QString &path)
 {
     d->mCustomSystemPath = path;
+}
+
+std::optional<std::pair<QString, QString>> AutoCorrectionSettings::findEntry(const QString &word, const QString &wordFirstUpper) const
+{
+    const auto &folded = d->mFoldedEntries;
+    auto it = folded.constFind(word.toCaseFolded());
+    if (it == folded.constEnd()) {
+        it = folded.constFind(wordFirstUpper.toCaseFolded());
+        if (it == folded.constEnd() || it->first != wordFirstUpper) {
+            return std::nullopt;
+        }
+    }
+    return it.value();
 }
 
 QDebug operator<<(QDebug d, const TextAutoCorrectionCore::AutoCorrectionSettings &t)

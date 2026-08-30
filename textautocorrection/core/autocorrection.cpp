@@ -696,68 +696,62 @@ int AutoCorrection::advancedAutocorrect()
     if (!actualWordWithFirstUpperCase.isEmpty()) {
         actualWordWithFirstUpperCase[0] = actualWordWithFirstUpperCase[0].toUpper();
     }
-    QHashIterator<QString, QString> i(d->mAutoCorrectionSettings->autocorrectEntries());
-    while (i.hasNext()) {
-        i.next();
-        const auto key = i.key();
-        const auto keyLength{key.length()};
-        if (hasPunctuation) {
-            // We remove 1 element when we have punctuation
-            if (keyLength != actualWordLength - 1) {
-                continue;
-            }
-        } else {
-            if (keyLength != actualWordLength) {
-                continue;
-            }
-        }
-        qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " i.key() " << key << "actual" << actualWord;
-        if (actualWord.endsWith(key) || actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {
-            int pos = d->mWord.lastIndexOf(key);
-            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 1 " << pos << " d->mWord " << d->mWord;
+
+    // The entries are indexed by case-folded key, so this is a hash lookup rather than a scan
+    // over every entry. Case folding preserves length, so the key necessarily has the same
+    // length as actualWord and no further length check is needed.
+    const auto entry = d->mAutoCorrectionSettings->findEntry(actualWord, actualWordWithFirstUpperCase);
+    if (!entry) {
+        return -1;
+    }
+    const QString &key = entry->first;
+    QString replacement = entry->second;
+
+    qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " key " << key << "actual" << actualWord;
+    if (actualWord.endsWith(key) || actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {
+        int pos = d->mWord.lastIndexOf(key);
+        qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 1 " << pos << " d->mWord " << d->mWord;
+        if (pos == -1) {
+            pos = actualWord.toLower().lastIndexOf(key);
+            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 2 " << pos;
             if (pos == -1) {
-                pos = actualWord.toLower().lastIndexOf(key);
-                qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 2 " << pos;
+                pos = actualWordWithFirstUpperCase.lastIndexOf(key);
+                qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 3 " << pos;
                 if (pos == -1) {
-                    pos = actualWordWithFirstUpperCase.lastIndexOf(key);
-                    qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 3 " << pos;
-                    if (pos == -1) {
-                        continue;
-                    }
+                    return -1;
                 }
             }
-            QString replacement = i.value();
-
-            // qDebug() << " actualWord " << actualWord << " pos " << pos << " actualWord.size" << actualWord.length() << "actualWordWithFirstUpperCase "
-            // <<actualWordWithFirstUpperCase; qDebug() << " d->mWord " << d->mWord << " i.key() " << i.key() << "replacement " << replacement; Keep capitalized
-            // words capitalized. (Necessary to make sure the first letters match???)
-            const QChar actualWordFirstChar = d->mWord.at(pos);
-            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " actualWordFirstChar " << actualWordFirstChar;
-
-            if (const QChar replacementFirstChar = replacement[0]; actualWordFirstChar.isUpper() && replacementFirstChar.isLower()) {
-                replacement[0] = replacementFirstChar.toUpper();
-            } else if (actualWordFirstChar.isLower() && replacementFirstChar.isUpper()) {
-                replacement[0] = replacementFirstChar.toLower();
-            }
-
-            // If a punctuation mark was on the end originally, add it back on
-            if (hasPunctuation) {
-                replacement.append(lastChar);
-            }
-
-            d->mWord.replace(pos, pos + trimmedWord.length(), replacement);
-
-            // We do replacement here, since the length of new word might be different from length of
-            // the old world. Length difference might affect other type of autocorrection
-            d->mCursor.setPosition(startPos);
-            d->mCursor.setPosition(startPos + length, QTextCursor::KeepAnchor);
-            d->mCursor.insertText(d->mWord);
-            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " insert text " << d->mWord << " startPos " << startPos;
-            d->mCursor.setPosition(startPos); // also restore the selection
-            const int newPosition = startPos + d->mWord.length();
-            d->mCursor.setPosition(newPosition, QTextCursor::KeepAnchor);
-            return newPosition;
         }
+
+        // qDebug() << " actualWord " << actualWord << " pos " << pos << " actualWord.size" << actualWord.length() << "actualWordWithFirstUpperCase "
+        // <<actualWordWithFirstUpperCase; qDebug() << " d->mWord " << d->mWord << " key " << key << "replacement " << replacement; Keep capitalized
+        // words capitalized. (Necessary to make sure the first letters match???)
+        const QChar actualWordFirstChar = d->mWord.at(pos);
+        qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " actualWordFirstChar " << actualWordFirstChar;
+
+        if (const QChar replacementFirstChar = replacement[0]; actualWordFirstChar.isUpper() && replacementFirstChar.isLower()) {
+            replacement[0] = replacementFirstChar.toUpper();
+        } else if (actualWordFirstChar.isLower() && replacementFirstChar.isUpper()) {
+            replacement[0] = replacementFirstChar.toLower();
+        }
+
+        // If a punctuation mark was on the end originally, add it back on
+        if (hasPunctuation) {
+            replacement.append(lastChar);
+        }
+
+        d->mWord.replace(pos, pos + trimmedWord.length(), replacement);
+
+        // We do replacement here, since the length of new word might be different from length of
+        // the old world. Length difference might affect other type of autocorrection
+        d->mCursor.setPosition(startPos);
+        d->mCursor.setPosition(startPos + length, QTextCursor::KeepAnchor);
+        d->mCursor.insertText(d->mWord);
+        qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " insert text " << d->mWord << " startPos " << startPos;
+        d->mCursor.setPosition(startPos); // also restore the selection
+        const int newPosition = startPos + d->mWord.length();
+        d->mCursor.setPosition(newPosition, QTextCursor::KeepAnchor);
+        return newPosition;
     }
     return -1;
 }
