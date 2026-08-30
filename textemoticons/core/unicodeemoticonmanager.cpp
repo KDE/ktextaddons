@@ -140,7 +140,7 @@ QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &
     QList<UnicodeEmoticon> result;
     result.reserve(d->unicodeEmojiList.size());
 
-    auto hasRequestedCategory = [category](const UnicodeEmoticon &emo) {
+    auto hasRequestedCategory = [&category](const UnicodeEmoticon &emo) {
         return emo.category() == category;
     };
     std::copy_if(d->unicodeEmojiList.begin(), d->unicodeEmojiList.end(), std::back_inserter(result), hasRequestedCategory);
