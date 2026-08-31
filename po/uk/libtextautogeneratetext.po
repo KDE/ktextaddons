@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-08-31 00:42+0000\n"
 "PO-Revision-Date: 2026-08-24 12:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -35,12 +35,12 @@ msgid "Failed to write to file: %1"
 msgstr "Не вдалося виконати запис до файла: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:69
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
 #, kde-format
 msgid "Json File"
 msgstr "Файл JSON"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:62
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "Не вдалося відкрити файл для читання: %1"

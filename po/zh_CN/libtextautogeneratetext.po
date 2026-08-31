@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-08-31 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33,12 +33,12 @@ msgid "Failed to write to file: %1"
 msgstr "写入文件失败：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:69
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
 #, kde-format
 msgid "Json File"
 msgstr "Json 文件"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:62
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "打开文件进行读取失败：%1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-08-31 00:42+0000\n"
 "PO-Revision-Date: 2026-05-21 22:31+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -235,18 +235,18 @@ msgctxt "@action:button"
 msgid "Select"
 msgstr "選取"
 
-#: verifynewversion/checknewversiondialog.cpp:17
+#: verifynewversion/checknewversiondialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "檢查新版本"
 
-#: verifynewversion/checknewversionwidget.cpp:61
+#: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "已找到新版本。點擊<a href=\"%1\">此處</a>來下載它。"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:65
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "沒有找到新版本。建構版可以<a href=\"%1\">在此</a>找到。"
@@ -256,13 +256,13 @@ msgstr "沒有找到新版本。建構版可以<a href=\"%1\">在此</a>找到�
 msgid "Check New Version"
 msgstr "檢查新版本"
 
-#: whatsnew/whatsnewcomboboxwidget.cpp:27
+#: whatsnew/whatsnewcomboboxwidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "版本："
 
-#: whatsnew/whatsnewdialog.cpp:27 whatsnewng/whatsnewngdialog.cpp:28
+#: whatsnew/whatsnewdialog.cpp:30 whatsnewng/whatsnewngdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -279,27 +279,27 @@ msgstr "（顯示最新消息）"
 msgid "What's new in %2. %1"
 msgstr "%2 的新功能。%1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:49
+#: whatsnew/whatsnewwidget.cpp:47 whatsnewng/whatsnewngwidget.cpp:52
 #, kde-format
 msgid "All Versions"
 msgstr "所有版本"
 
-#: whatsnew/whatsnewwidget.cpp:93
+#: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "上一個版本以來的重要變更："
 
-#: whatsnew/whatsnewwidget.cpp:98
+#: whatsnew/whatsnewwidget.cpp:100
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "這一個版本包含一些新功能："
 
-#: whatsnew/whatsnewwidget.cpp:103
+#: whatsnew/whatsnewwidget.cpp:105
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "一些錯誤修正："
 
-#: whatsnew/whatsnewwidget.cpp:141
+#: whatsnew/whatsnewwidget.cpp:143
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
@@ -310,24 +310,24 @@ msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 msgid "What's new in %1. %2"
 msgstr "%2 的新功能。%1"
 
-#: whatsnewng/whatsnewngutils.cpp:22
+#: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr ""
 
-#: whatsnewng/whatsnewngutils.cpp:30
+#: whatsnewng/whatsnewngutils.cpp:32
 #, fuzzy, kde-format
 #| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngutils.cpp:32
+#: whatsnewng/whatsnewngutils.cpp:34
 #, fuzzy, kde-format
 #| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngutils.cpp:49
+#: whatsnewng/whatsnewngutils.cpp:51
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr ""
