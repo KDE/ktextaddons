@@ -270,6 +270,14 @@ set_package_properties(
             OPTIONAL
 )
 
+option(USE_MOLD_LINKER "Use the mold linker when available (much faster link times)" ON)
+if(USE_MOLD_LINKER AND NOT DEFINED CMAKE_LINKER_TYPE)
+    find_program(MOLD_EXECUTABLE mold)
+    if(MOLD_EXECUTABLE)
+        set(CMAKE_LINKER_TYPE MOLD)
+    endif()
+endif()
+
 option(WARNINGS_AS_ERRORS "Warnings are errors -Werror" OFF)
 if(WARNINGS_AS_ERRORS)
     if(MSVC)
