@@ -210,7 +210,7 @@ void AutoCorrection::superscriptAppendix()
         return;
     }
 
-    const QString trimmed = d->mWord.trimmed();
+    const QStringView trimmed = QStringView(d->mWord).trimmed();
     int startPos = -1;
     int endPos = -1;
     const int trimmedLenght(trimmed.length());
@@ -223,8 +223,8 @@ void AutoCorrection::superscriptAppendix()
             break;
         } else if (i.key() == "othernb"_L1) {
             if (const int pos = trimmed.indexOf(i.value()); pos > 0) {
-                const QString number = trimmed.left(pos);
-                QString::ConstIterator constIter = number.constBegin();
+                const QStringView number = trimmed.left(pos);
+                QStringView::const_iterator constIter = number.constBegin();
                 bool found = true;
                 // don't apply superscript to 1th, 2th and 3th
                 const int numberLength(number.length());
@@ -386,7 +386,7 @@ bool AutoCorrection::autoFormatURLs()
         return false;
     }
 
-    const QString trimmed = d->mWord.trimmed();
+    const QStringView trimmed = QStringView(d->mWord).trimmed();
     const int startPos = d->mCursor.selectionStart();
     d->mCursor.setPosition(startPos);
     d->mCursor.setPosition(startPos + trimmed.length(), QTextCursor::KeepAnchor);
@@ -634,7 +634,7 @@ bool AutoCorrection::autoFractions() const
         return false;
     }
 
-    const QString trimmed = d->mWord.trimmed();
+    const QStringView trimmed = QStringView(d->mWord).trimmed();
     const auto trimmedLength{trimmed.length()};
     if (trimmedLength > 3) {
         const QChar x = trimmed.at(3);

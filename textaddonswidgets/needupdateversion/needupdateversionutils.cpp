@@ -19,14 +19,14 @@ TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion TextAddonsWidgets::Ne
 {
     static const QRegularExpression regular{u"\\((.*)\\)"_s};
     QRegularExpressionMatch match;
-    QString captured;
+    QStringView captured;
     if (str.contains(regular, &match)) {
-        captured = match.captured(1);
+        captured = match.capturedView(1);
     } else {
         captured = str;
     }
     if (!captured.isEmpty()) {
-        if (const QStringList version = captured.split(u'.'); version.size() > 2) {
+        if (const QList<QStringView> version = captured.split(u'.'); version.size() > 2) {
             bool ok;
             int year = version.at(0).toInt(&ok);
             if (ok) {

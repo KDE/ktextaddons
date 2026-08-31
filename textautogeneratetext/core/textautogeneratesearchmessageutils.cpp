@@ -13,7 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
 {
     if (str.length() > 120) {
-        return u"%1..."_s.arg(str.left(120));
+        return u"%1..."_s.arg(QStringView(str).left(120));
     }
     return str;
 }

@@ -10,7 +10,7 @@ using namespace TextUtils;
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-bool sortCaseInsensitively(const QString &lhs, const QString &rhs)
+bool sortCaseInsensitively(QStringView lhs, QStringView rhs)
 {
     return lhs.compare(rhs, Qt::CaseInsensitive) < 0;
 }
