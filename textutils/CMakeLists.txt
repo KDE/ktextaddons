@@ -50,6 +50,17 @@ target_link_libraries(
         KF6::CoreAddons
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextUtils
+        PRIVATE
+            <QObject>
+            <QStringList>
+            <QString>
+    )
+endif()
+
 ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
     IDENTIFIER TEXTUTILS_LOG
     CATEGORY_NAME org.kde.kf.textutils

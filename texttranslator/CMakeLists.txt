@@ -111,6 +111,18 @@ target_link_libraries(
         KF6::TextAddonsWidgets
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KF6TextTranslator
+        PRIVATE
+            <QObject>
+            <QStringList>
+            <QString>
+            <QWidget>
+    )
+endif()
+
 target_include_directories(
     KF6TextTranslator
     INTERFACE
