@@ -58,6 +58,7 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
     if (!details.isEmpty()) {
         str += u'\n' + details;
     }
+    mMessageWidget->setWordWrap(str.length() > 200);
     mMessageWidget->setText(str);
     switch (type) {
     case KMessageWidget::MessageType::Positive:
