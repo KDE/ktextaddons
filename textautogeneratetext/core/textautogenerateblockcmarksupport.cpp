@@ -202,13 +202,13 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
         userHighlightStringIndexBackgroundColor = scheme.background(KColorScheme::PositiveBackground).color().name();
     }
 
+    auto definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->def(language);
+    if (!definition.isValid()) {
+        definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->defaultDef();
+    }
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " definition.name() " << definition.name();
+    highlighter.setDefinition(definition);
     auto addCodeChunk = [&](const QString &chunk) {
-        auto definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->def(language);
-        if (!definition.isValid()) {
-            definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->defaultDef();
-        }
-        qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " definition.name() " << definition.name();
-        highlighter.setDefinition(definition);
         // Qt's support for borders is limited to tables, so we have to jump through some hoops...
         richTextStream << "<table><tr><td style='background-color:"_L1 << codeBackgroundColorName << "; padding: 5px; border: 1px solid "_L1 << codeBorderColor
                        << "'>"_L1 << highlight(chunk) << "</td></tr></table>"_L1;
