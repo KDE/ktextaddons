@@ -69,6 +69,9 @@ void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {
     clearEditingMode();
     auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+    if (!model) {
+        return;
+    }
     model->setData(index, true, TextAutoGenerateMessagesModel::EditingRole);
 
     const QByteArray anwserUuid = index.data(TextAutoGenerateMessagesModel::AnswerUuidRole).toByteArray();
