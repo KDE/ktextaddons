@@ -92,7 +92,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         } else if (argumentsValue.isString()) {
             const QString arguments = argumentsValue.toString();
             // qDebug() << " arguments: " << arguments;
-            if (const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1()); doc.isObject()) {
+            if (const QJsonDocument doc = QJsonDocument::fromJson(arguments.toUtf8()); doc.isObject()) {
                 argumentObj = doc.object();
             }
         }
