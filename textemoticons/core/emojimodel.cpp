@@ -147,15 +147,4 @@ void EmojiModel::setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconMan
     mCustomEmojiIconManager = newCustomEmojiIconManager;
 }
 
-QHash<int, QByteArray> EmojiModel::roleNames() const
-{
-    return {{{UnicodeEmoji, "unicode"_ba},
-             {Identifier, "identifier"_ba},
-             {Category, "category"_ba},
-             {IsCustom, "isCustom"_ba},
-             {FileName, "fileName"_ba},
-             {DiversityChildren, "diversityChildren"_ba},
-             {Aliases, "aliases"_ba}}};
-}
-
 #include "moc_emojimodel.cpp"

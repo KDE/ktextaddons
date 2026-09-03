@@ -96,12 +96,6 @@ public:
      */
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
-    /*!
-     * \brief Returns the role names for the model
-     * \return A hash of role numbers to role names
-     */
-    QHash<int, QByteArray> roleNames() const override;
-
 private:
     Q_DISABLE_COPY(EmojiModel)
     QList<TextEmoticonsCore::UnicodeEmoticon> mEmoticonList;
