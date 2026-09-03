@@ -12,6 +12,8 @@
 #include <TextEmoticonsCore/EmojiModelManager>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
+#include <algorithm>
+
 using namespace TextEmoticonsWidgets;
 using namespace Qt::Literals::StringLiterals;
 EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(QWidget *parent)
@@ -39,6 +41,7 @@ EmoticonWidgetAction::EmoticonInfo EmoticonWidgetActionWidget::generateEmoticonI
 
 QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecentsEmoticons() const
 {
+    constexpr int maximumNumberOfEmoticons{5};
     QList<EmoticonWidgetAction::EmoticonInfo> emoticons;
     const QStringList lst = TextEmoticonsCore::EmojiModelManager::self()->recentIdentifier();
     for (const QString &id : lst) {
@@ -46,22 +49,31 @@ QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecent
             emoticons.append(info);
         }
         // Don't load all emoji history. Use the 5 first elements
-        if (emoticons.count() == 5) {
+        if (emoticons.count() == maximumNumberOfEmoticons) {
             break;
         }
     }
-    // qDebug() << "emoticons***** " << emoticons.count();
     // Make sure that we load 5 emoticons
-    if (emoticons.count() < 5) {
-        const QStringList defaultEmoticonList{
-            u":thumbsup:"_s,
-            u":thumbsdown:"_s,
-            u":smiley:"_s,
-            u":tada:"_s,
-            u":eyes:"_s,
-        };
-        for (int i = emoticons.count(); i < 5; ++i) {
-            emoticons.append(generateEmoticonInfo(defaultEmoticonList.at(i)));
+    const QStringList defaultEmoticonList{
+        u":thumbsup:"_s,
+        u":thumbsdown:"_s,
+        u":smiley:"_s,
+        u":tada:"_s,
+        u":eyes:"_s,
+    };
+    for (const QString &defaultEmoji : defaultEmoticonList) {
+        if (emoticons.count() == maximumNumberOfEmoticons) {
+            break;
+        }
+        const EmoticonWidgetAction::EmoticonInfo info = generateEmoticonInfo(defaultEmoji);
+        if (!info.isValid()) {
+            continue;
+        }
+        const bool alreadyAdded = std::any_of(emoticons.cbegin(), emoticons.cend(), [&info](const EmoticonWidgetAction::EmoticonInfo &current) {
+            return current.emojiIdentifier == info.emojiIdentifier;
+        });
+        if (!alreadyAdded) {
+            emoticons.append(info);
         }
     }
     return emoticons;
