@@ -23,7 +23,8 @@ EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(QWidget *parent)
     constexpr int defaultFontSize{14};
     QFont f;
     f.setPointSize(defaultFontSize);
-    setFont(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
+    f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
+    setFont(f);
     addDefaultEmoticons(loadRecentsEmoticons());
 }
 
