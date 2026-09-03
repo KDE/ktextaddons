@@ -29,7 +29,7 @@ void EmojiItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
             auto &rai = mRunningAnimatedImages.back();
             const QString imageAnimatedFilename = index.data(TextEmoticonsCore::EmojiModel::AnimatedFileName).toString();
             rai.movie->setFileName(imageAnimatedFilename);
-            rai.movie->setScaledSize(option.decorationSize);
+            rai.movie->setScaledSize(option.decorationSize * option.widget->devicePixelRatioF());
             auto view = qobject_cast<QAbstractItemView *>(const_cast<QWidget *>(option.widget));
             const QPersistentModelIndex &idx = rai.index;
             QObject::connect(
