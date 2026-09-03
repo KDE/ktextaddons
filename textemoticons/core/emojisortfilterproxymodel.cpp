@@ -109,9 +109,6 @@ bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelInd
         return d->filterTone(source_row, source_parent) && QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    if (!d->searchIdentifier.isEmpty()) {
-        return d->filterTone(sourceIndex) && d->matchesSearch(sourceIndex);
-    }
     if (d->category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
         if (const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString(); d->recentEmoticons.contains(identifier)) {
             return true;
@@ -120,6 +117,9 @@ bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelInd
         if (const auto category = sourceIndex.data(EmojiModel::Category).toString(); d->filterTone(sourceIndex) && d->category == category) {
             return true;
         }
+    }
+    if (!d->searchIdentifier.isEmpty()) {
+        return d->filterTone(sourceIndex) && d->matchesSearch(sourceIndex);
     }
     return false;
 }
