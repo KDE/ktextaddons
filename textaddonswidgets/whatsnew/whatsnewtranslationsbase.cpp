@@ -12,15 +12,13 @@ WhatsNewTranslationsBase::~WhatsNewTranslationsBase() = default;
 
 QString WhatsNewTranslationsBase::newFeaturesMD5() const
 {
-    QByteArray str;
     const auto features = lastNewFeatures();
-    for (const KLazyLocalizedString &l : features) {
-        str += l.untranslatedText();
-    }
-    if (str.isEmpty()) {
+    if (features.isEmpty()) {
         return {};
     }
     QCryptographicHash md5(QCryptographicHash::Md5);
-    md5.addData(str);
+    for (const KLazyLocalizedString &l : features) {
+        md5.addData(l.untranslatedText());
+    }
     return QLatin1StringView(md5.result().toBase64());
 }
