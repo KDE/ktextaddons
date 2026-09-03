@@ -165,7 +165,7 @@ void OllamaManager::loadModels()
             QString installedName = installed.model();
             const int position = installedName.indexOf(u':');
             installedName = installedName.first(position);
-            auto matchesModelName = [installedName](const OllamaCommonModelAvailableInfo &availableInfo) {
+            auto matchesModelName = [&installedName](const OllamaCommonModelAvailableInfo &availableInfo) {
                 return availableInfo.name() == installedName;
             };
             if (auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName); it != mAvailableInfos.constEnd()) {

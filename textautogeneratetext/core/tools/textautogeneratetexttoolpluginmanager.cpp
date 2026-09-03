@@ -137,7 +137,7 @@ QList<TextAddonsWidgets::PluginUtilData> TextAutoGenerateTextToolPluginManager::
 
 TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFromToolNameId(const QByteArray &identifier) const
 {
-    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [identifier](const TextAutoGenerateTextToolPluginManagerInfo &info) {
+    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [&identifier](const TextAutoGenerateTextToolPluginManagerInfo &info) {
         return info.plugin->toolNameId() == identifier && info.isEnabled;
     });
     if (it != mPluginList.end()) {
@@ -148,7 +148,7 @@ TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFro
 
 TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFromIdentifier(const QString &identifier) const
 {
-    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [identifier](const TextAutoGenerateTextToolPluginManagerInfo &info) {
+    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [&identifier](const TextAutoGenerateTextToolPluginManagerInfo &info) {
         return info.pluginData.mIdentifier == identifier;
     });
     if (it != mPluginList.end()) {
@@ -239,7 +239,7 @@ QString TextAutoGenerateTextToolPluginManager::generatePluginsInformation() cons
 
 bool TextAutoGenerateTextToolPluginManager::contains(const QByteArray &toolNameId)
 {
-    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [toolNameId](const TextAutoGenerateTextToolPluginManagerInfo &info) {
+    const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [&toolNameId](const TextAutoGenerateTextToolPluginManagerInfo &info) {
         return info.plugin->toolNameId() == toolNameId;
     });
     return (it != mPluginList.end());

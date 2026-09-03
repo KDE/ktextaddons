@@ -85,7 +85,7 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         painter->save();
         painter->setPen(QPen(Qt::NoPen));
 
-        auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [index](const IndexBackgroundColor &key) {
+        auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [&index](const IndexBackgroundColor &key) {
             return key.index == index;
         });
         QColor messageBackgroundColor;
@@ -727,7 +727,7 @@ void TextAutoGenerateListViewDelegate::needUpdateIndexBackground(const QPersiste
 
 void TextAutoGenerateListViewDelegate::removeNeedUpdateIndexBackground(const QPersistentModelIndex &index)
 {
-    auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [index](const IndexBackgroundColor &key) {
+    auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [&index](const IndexBackgroundColor &key) {
         return key.index == index;
     });
     if (it != mIndexBackgroundColorList.cend()) {

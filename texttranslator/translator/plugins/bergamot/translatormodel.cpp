@@ -187,7 +187,7 @@ int TranslatorModel::columnCount([[maybe_unused]] const QModelIndex &parent) con
 
 void TranslatorModel::removeLanguage(const QString &identifier)
 {
-    auto index = std::find_if(mLanguageInstalled.begin(), mLanguageInstalled.end(), [identifier](const BergamotEngineUtils::LanguageInstalled &installed) {
+    auto index = std::find_if(mLanguageInstalled.begin(), mLanguageInstalled.end(), [&identifier](const BergamotEngineUtils::LanguageInstalled &installed) {
         return (identifier == installed.shortName);
     });
     if (index != mLanguageInstalled.end()) {
