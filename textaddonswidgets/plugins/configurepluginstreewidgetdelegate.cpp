@@ -99,7 +99,8 @@ QSize ConfigurePluginsTreeWidgetDelegate::sizeHint(const QStyleOptionViewItem &o
         QFont f = option.font;
         f.setItalic(true);
         f.setPointSize(f.pointSize() - 2);
-        widthDescription = fontMetrics.horizontalAdvance(description);
+        const QFontMetrics italicFont(f);
+        widthDescription = italicFont.horizontalAdvance(description);
     }
 
     const int width = qMax(fontMetrics.horizontalAdvance(index.data(Qt::DisplayRole).toString()), widthDescription);
