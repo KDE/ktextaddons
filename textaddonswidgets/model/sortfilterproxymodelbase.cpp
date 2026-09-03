@@ -24,8 +24,11 @@ void SortFilterProxyModelBase::setFilterString(const QString &string)
 
 bool SortFilterProxyModelBase::contains(const QString &string) const
 {
+    if (mFilterString.isEmpty()) {
+        return true;
+    }
     const QString str = TextUtils::ConvertText::normalize(string);
-    return str.contains(mFilterString, Qt::CaseInsensitive);
+    return str.contains(mFilterString);
 }
 
 #include "moc_sortfilterproxymodelbase.cpp"
