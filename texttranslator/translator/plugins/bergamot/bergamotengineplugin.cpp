@@ -20,7 +20,7 @@ BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)
     connect(mBergamotInterface, &BergamotMarianInterface::errorText, this, [this](const QString &message) {
         Q_EMIT translateFailed(message);
     });
-    connect(mBergamotInterface, &BergamotMarianInterface::translationReady, this, [&](Translation translation) {
+    connect(mBergamotInterface, &BergamotMarianInterface::translationReady, this, [this](Translation translation) {
         appendResult(translation.translation());
         Q_EMIT translateDone();
     });
