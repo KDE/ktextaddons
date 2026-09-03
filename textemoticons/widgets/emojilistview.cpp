@@ -94,7 +94,6 @@ void EmojiListView::applyFontSize()
     f.setPointSize(mFontSize);
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
 
-    mRowSize = QFontMetrics(f).height();
     setFont(f);
 }
 
