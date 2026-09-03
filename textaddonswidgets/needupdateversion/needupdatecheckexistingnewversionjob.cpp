@@ -53,11 +53,7 @@ void NeedUpdateCheckExistingNewVersionJob::slotDownloadDone(const QString &str)
     }
     qCDebug(TEXTADDONSWIDGETS_LOG) << " dateFromUrl " << dateFromUrl << " original " << compileDateStr;
 
-    if (dateFromUrl > mCompileDate) {
-        Q_EMIT foundNewVersion(true);
-    } else {
-        Q_EMIT foundNewVersion(false);
-    }
+    Q_EMIT foundNewVersion(dateFromUrl > mCompileDate);
     deleteLater();
 }
 

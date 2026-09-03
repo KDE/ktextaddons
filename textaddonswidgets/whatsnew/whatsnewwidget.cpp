@@ -66,8 +66,7 @@ void WhatsNewWidget::updateInformations()
 
 QString WhatsNewWidget::generateStartEndHtml(const QString &str) const
 {
-    const QString message = u"<qt>"_s + str + u"</qt>"_s;
-    return message;
+    return u"<qt>"_s + str + u"</qt>"_s;
 }
 
 void WhatsNewWidget::slotVersionChanged(int type)
@@ -108,29 +107,32 @@ QString WhatsNewWidget::bugFixingChangeStr() const
 QString WhatsNewWidget::createVersionInformation(const WhatsNewInfo &info)
 {
     QString message;
-    if (!info.changes().isEmpty()) {
+    const QStringList changes = info.changes();
+    if (!changes.isEmpty()) {
         message += importantChangeStr();
         message += u"<ul>"_s;
-        for (int i = 0, total = info.changes().count(); i < total; ++i) {
-            message += u"<li>%1</li>"_s.arg(info.changes().at(i));
+        for (const QString &c : changes) {
+            message += u"<li>%1</li>"_s.arg(c);
         }
         message += u"</ul>"_s;
     }
 
-    if (!info.newFeatures().isEmpty()) {
+    const QStringList newFeatures = info.newFeatures();
+    if (!newFeatures.isEmpty()) {
         message += featuresChangeStr();
         message += u"<ul>"_s;
-        for (int i = 0, total = info.newFeatures().count(); i < total; ++i) {
-            message += u"<li>%1</li>"_s.arg(info.newFeatures().at(i));
+        for (const QString &c : newFeatures) {
+            message += u"<li>%1</li>"_s.arg(c);
         }
         message += u"</ul>"_s;
     }
 
-    if (!info.bugFixings().isEmpty()) {
+    const QStringList bugFixings = info.bugFixings();
+    if (!bugFixings.isEmpty()) {
         message += bugFixingChangeStr();
         message += u"<ul>"_s;
-        for (int i = 0, total = info.bugFixings().count(); i < total; ++i) {
-            message += u"<li>%1</li>"_s.arg(info.bugFixings().at(i));
+        for (const QString &c : bugFixings) {
+            message += u"<li>%1</li>"_s.arg(c);
         }
         message += u"</ul>"_s;
     }

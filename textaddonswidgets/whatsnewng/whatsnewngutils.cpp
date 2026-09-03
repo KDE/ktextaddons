@@ -37,8 +37,7 @@ QString TextAddonsWidgets::WhatsNewNgUtils::generateVersionHeader(const KAboutRe
 
 QString TextAddonsWidgets::WhatsNewNgUtils::generateStartEndHtml(const QString &str)
 {
-    const QString message = u"<qt>"_s + str + u"</qt>"_s;
-    return message;
+    return u"<qt>"_s + str + u"</qt>"_s;
 }
 
 QString TextAddonsWidgets::WhatsNewNgUtils::generateChangelog(const QList<KAboutRelease> &releases, int type)

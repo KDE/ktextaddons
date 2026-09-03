@@ -18,8 +18,7 @@ QString TextAddonsWidgets::NeedUpdateParseHtmlUtil::extractDate(const QString &d
     static const QRegularExpression reg(u"<td align=\"right\">(\\d+\\-\\d\\d\\-\\d\\d).*<"_s);
 
     if (const QRegularExpressionMatch match = reg.match(dataHtml); match.hasMatch()) {
-        const QString matched = match.captured(1);
-        return matched;
+        return match.captured(1);
     }
     return {};
 }

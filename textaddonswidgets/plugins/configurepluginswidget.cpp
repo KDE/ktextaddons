@@ -132,6 +132,7 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
 {
     itemsList.clear();
     if (!lst.isEmpty()) {
+        itemsList.reserve(lst.count());
         auto topLevel = new QTreeWidgetItem(mTreePluginWidget, {topLevelItemName});
         topLevel->setFlags(topLevel->flags() & ~Qt::ItemIsSelectable);
         const TextAddonsWidgets::PluginUtil::PluginsStateList pair = TextAddonsWidgets::PluginUtil::loadPluginSetting(fileName, groupName, prefixKey);
