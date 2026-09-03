@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QTextBrowser>
 #include <QVBoxLayout>
+#include <qobject.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -44,6 +45,7 @@ WhatsNewWidget::~WhatsNewWidget() = default;
 
 void WhatsNewWidget::fillComboBox()
 {
+    const QSignalBlocker w(mWhatsNewComboBoxWidget);
     mWhatsNewComboBoxWidget->addVersion(i18n("All Versions"), allVersion);
     for (int i = mWhatsNewInfo.count() - 1; i >= 0; i--) {
         const WhatsNewInfo &info = mWhatsNewInfo.at(i);

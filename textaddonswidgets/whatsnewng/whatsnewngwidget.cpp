@@ -14,6 +14,7 @@
 #include <QLocale>
 #include <QTextBrowser>
 #include <QVBoxLayout>
+#include <qobject.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -42,8 +43,10 @@ WhatsNewNgWidget::~WhatsNewNgWidget() = default;
 
 void WhatsNewNgWidget::setReleases(const QList<KAboutRelease> &info)
 {
+    mWhatsNewComboBoxWidget->blockSignals(true);
     mWhatsNewComboBoxWidget->clear();
     mAboutRelease = info;
+    mWhatsNewComboBoxWidget->blockSignals(false);
     initialize();
 }
 
