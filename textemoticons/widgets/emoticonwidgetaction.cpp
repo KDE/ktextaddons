@@ -19,10 +19,7 @@ EmoticonWidgetAction::EmoticonWidgetAction(QObject *parent)
     connect(mEmoticonWidgetActionWidget, &EmoticonWidgetActionWidget::selectEmoji, this, &EmoticonWidgetAction::selectEmoji);
 }
 
-EmoticonWidgetAction::~EmoticonWidgetAction()
-{
-    delete mEmoticonWidgetActionWidget;
-}
+EmoticonWidgetAction::~EmoticonWidgetAction() = default;
 
 bool EmoticonWidgetAction::EmoticonInfo::isValid() const
 {
