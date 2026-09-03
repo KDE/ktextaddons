@@ -34,8 +34,8 @@ public:
             // Read the new key from state config
             group = KConfigGroup(KSharedConfig::openStateConfig(), settingsGroupName);
             recentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
+            tone = static_cast<EmojiModelManager::EmojiTone>(group.readEntry("Tone", static_cast<int>(EmojiModelManager::EmojiTone::Original)));
         }
-        tone = static_cast<EmojiModelManager::EmojiTone>(group.readEntry("Tone", static_cast<int>(EmojiModelManager::EmojiTone::Original)));
     }
 
     void writeSettings()
