@@ -23,12 +23,14 @@ QString ConvertText::normalize(QStringView str)
         // combining diacritic markers following it
         // see https://en.wikipedia.org/wiki/Unicode_equivalence
         // see https://en.wikipedia.org/wiki/Combining_character
-        if (n.decompositionTag() == QChar::Canonical) {
-            out.push_back(n.decomposition().at(0));
+        if (const auto tag = n.decompositionTag(); tag == QChar::Canonical) {
+            if (const QString d = n.decomposition(); !d.isEmpty()) {
+                out.push_back(d.at(0));
+            }
         }
         // handle compatibility compositions such as ligatures
         // see https://en.wikipedia.org/wiki/Unicode_compatibility_characters
-        else if (n.decompositionTag() == QChar::Compat && n.isLetter() && n.script() == QChar::Script_Latin) {
+        else if (tag == QChar::Compat && n.isLetter() && n.script() == QChar::Script_Latin) {
             out.append(n.decomposition());
         } else {
             out.push_back(n);
@@ -80,6 +82,7 @@ void ConvertText::reverseCase(QTextCursor &cursor)
         const QString newText = cursor.selectedText();
         QString reverseCaseText;
         const int nbChar(newText.length());
+        reverseCaseText.reserve(nbChar);
         for (int i = 0; i < nbChar; ++i) {
             QChar charVal = newText.at(i);
             if (charVal.isLetter()) {
