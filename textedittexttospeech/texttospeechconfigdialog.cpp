@@ -24,7 +24,7 @@ using namespace TextEditTextToSpeech;
 
 TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     : QDialog(parent)
-    , mTextToSpeechConfigWidget(new TextToSpeechConfigWidget(parent))
+    , mTextToSpeechConfigWidget(new TextToSpeechConfigWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Text-To-Speech"));
     auto mainLayout = new QVBoxLayout(this);
