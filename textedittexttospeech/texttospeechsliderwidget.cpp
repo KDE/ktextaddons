@@ -25,6 +25,8 @@ TextToSpeechSliderWidget::TextToSpeechSliderWidget(const QString &labelInfo, QWi
     mSlider->setObjectName(u"mSlider"_s);
     mLabel->setObjectName(u"mLabel"_s);
     mSlider->setOrientation(Qt::Horizontal);
+    mSlider->setMaximum(100);
+    mSlider->setMinimum(0);
     mainLayout->addWidget(mSlider);
     mainLayout->addWidget(mLabel);
 
@@ -38,7 +40,8 @@ TextToSpeechSliderWidget::~TextToSpeechSliderWidget() = default;
 void TextToSpeechSliderWidget::setValue(int value)
 {
     mSlider->setValue(value);
-    slotValueChanged(value);
+    // Use the slider value: QSlider clamps it to the current range.
+    updateLabel(mSlider->value());
 }
 
 void TextToSpeechSliderWidget::setRange(int min, int max)
@@ -53,7 +56,12 @@ int TextToSpeechSliderWidget::value() const
 
 void TextToSpeechSliderWidget::slotValueChanged(int value)
 {
+    updateLabel(value);
     Q_EMIT valueChanged(value);
+}
+
+void TextToSpeechSliderWidget::updateLabel(int value)
+{
     mLabel->setText(mLabelInfo.arg(QString::number(value)));
 }
 

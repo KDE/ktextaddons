@@ -27,6 +27,7 @@ Q_SIGNALS:
 
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotValueChanged(int value);
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateLabel(int value);
     QString mLabelInfo;
     QLabel *const mLabel;
     QSlider *const mSlider;

@@ -16,4 +16,5 @@ public:
     ~TextToSpeechSliderWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldUpdateLabelAndClampValue();
 };
