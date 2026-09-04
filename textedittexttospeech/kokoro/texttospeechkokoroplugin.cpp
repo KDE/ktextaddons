@@ -11,5 +11,6 @@ using namespace TextEditTextToSpeech;
 QTextToSpeechEngine *
 TextToSpeechKokoroPlugin::createTextToSpeechEngine(const QVariantMap &parameters, QObject *parent, [[maybe_unused]] QString *errorString) const
 {
+    // TODO return error if we can't start it.
     return new TextToSpeechKokoroEngine(parameters, parent);
 }
