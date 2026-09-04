@@ -49,7 +49,7 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
 
     if (addIcon) {
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
-        const QString identifier = QString(QString::fromLatin1(uuid) + u'-' + QString::number(blockCodeIndex++));
+        const QString identifier = QString::fromLatin1(uuid) + u'-' + QString::number(blockCodeIndex++);
 
         TextUtilsBlockCodeManager::self()->insert(identifier, str);
 
@@ -88,23 +88,24 @@ QString TextUtilsSyntaxHighlighter::insertBlockTextHref()
 
 void TextUtilsSyntaxHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)
 {
-    const bool isDefaultTextStyle = format.isDefaultTextStyle(theme());
+    const auto currentTheme = theme();
+    const bool isDefaultTextStyle = format.isDefaultTextStyle(currentTheme);
     if (!isDefaultTextStyle) {
         *mStream << u"<span style=\""_s;
-        if (format.hasTextColor(theme())) {
-            *mStream << u"color:"_s << format.textColor(theme()).name() << u";"_s;
+        if (format.hasTextColor(currentTheme)) {
+            *mStream << u"color:"_s << format.textColor(currentTheme).name() << u";"_s;
         }
-        if (format.hasBackgroundColor(theme())) {
-            *mStream << u"background-color:"_s << format.backgroundColor(theme()).name() << u";"_s;
+        if (format.hasBackgroundColor(currentTheme)) {
+            *mStream << u"background-color:"_s << format.backgroundColor(currentTheme).name() << u";"_s;
         }
-        if (format.isBold(theme())) {
+        if (format.isBold(currentTheme)) {
             *mStream << u"font-weight:bold;"_s;
         }
-        if (format.isItalic(theme())) {
+        if (format.isItalic(currentTheme)) {
             *mStream << u"font-style:italic;"_s;
         }
-        const bool hasUnderline = format.isUnderline(theme());
-        if (const bool hasStrikeThrough = format.isStrikeThrough(theme()); hasUnderline || hasStrikeThrough) {
+        const bool hasUnderline = format.isUnderline(currentTheme);
+        if (const bool hasStrikeThrough = format.isStrikeThrough(currentTheme); hasUnderline || hasStrikeThrough) {
             *mStream << u"text-decoration:"_s;
             if (hasUnderline) {
                 *mStream << u"underline"_s;
