@@ -23,7 +23,6 @@ TextUtilsCopyBlockIconCache *TextUtilsCopyBlockIconCache::self()
 void TextUtilsCopyBlockIconCache::clear()
 {
     mIconUrlMap.clear();
-    qDeleteAll(mIconTemporaryFileMap);
     mIconTemporaryFileMap.clear();
 }
 
@@ -61,16 +60,14 @@ QString TextUtilsCopyBlockIconCache::saveIconToTempFile(TextUtilsCopyBlockIconCa
     const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
     const QPixmap pixmap = icon.pixmap(iconSize, iconSize);
 
-    auto temp = new QTemporaryFile(QDir::tempPath() + u"/icon_XXXXXX.png"_s);
+    auto temp = std::make_unique<QTemporaryFile>(QDir::tempPath() + u"/icon_XXXXXX.png"_s);
     if (!temp->open()) {
         qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Impossible to create temporary file.";
-        delete temp;
         return {};
     }
 
-    if (!pixmap.save(temp, "PNG")) {
+    if (!pixmap.save(temp.get(), "PNG")) {
         qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Impossible to save file.";
-        delete temp;
         return {};
     }
 
@@ -78,10 +75,10 @@ QString TextUtilsCopyBlockIconCache::saveIconToTempFile(TextUtilsCopyBlockIconCa
     // Without flushing, the icon is still in the write buffer and the file on disk is empty.
     if (!temp->flush()) {
         qCWarning(TEXTUTILS_SYNTAXHIGHLIGHTING_LOG) << "Impossible to flush file.";
-        delete temp;
         return {};
     }
-    mIconUrlMap.insert(type, temp->fileName());
-    mIconTemporaryFileMap.insert(type, temp);
-    return temp->fileName();
+    const QString fileName = temp->fileName();
+    mIconUrlMap.insert(type, fileName);
+    mIconTemporaryFileMap.insert_or_assign(type, std::move(temp));
+    return fileName;
 }

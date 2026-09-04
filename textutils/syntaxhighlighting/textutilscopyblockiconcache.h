@@ -8,6 +8,7 @@
 #include <QMap>
 #include <QString>
 #include <QTemporaryFile>
+#include <map>
 #include <memory>
 
 namespace TextUtils
@@ -49,6 +50,6 @@ private:
     [[nodiscard]] TEXTUTILS_NO_EXPORT QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
     [[nodiscard]] TEXTUTILS_NO_EXPORT QString iconName(TextUtilsCopyBlockIconCache::IconType type) const;
     QMap<IconType, QString> mIconUrlMap;
-    QMap<IconType, QTemporaryFile *> mIconTemporaryFileMap;
+    std::map<IconType, std::unique_ptr<QTemporaryFile>> mIconTemporaryFileMap;
 };
 }
