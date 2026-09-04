@@ -79,8 +79,13 @@ void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSetting
     const int volume = engineSettings.volume;
     const double volumeDouble = volume / 100.0;
     mTextToSpeech->setVolume(volumeDouble);
-    mTextToSpeech->setLocale(QLocale(engineSettings.localeName));
-    mTextToSpeech->setVoice(engineSettings.voice);
+
+    if (!engineSettings.localeName.isEmpty()) {
+        mTextToSpeech->setLocale(QLocale(engineSettings.localeName));
+    }
+    if (!engineSettings.voice.name().isEmpty()) {
+        mTextToSpeech->setVoice(engineSettings.voice);
+    }
 
     // TODO change text ?
     mTextToSpeech->say(i18n("Morning, this is the test for testing settings."));
