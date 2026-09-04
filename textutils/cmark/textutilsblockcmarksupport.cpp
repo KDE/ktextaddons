@@ -166,10 +166,10 @@ QString TextUtilsBlockCMarkSupport::convertTextWithUrl(const QString &str)
 
 static void convertHtmlChar(QString &str)
 {
-    str.replace(u"&gt;"_s, u">"_s);
-    str.replace(u"&lt;"_s, u"<"_s);
-    str.replace(u"&quot;"_s, u"\""_s);
-    str.replace(u"&amp;"_s, u"&"_s);
+    str.replace("&gt;"_L1, ">"_L1);
+    str.replace("&lt;"_L1, "<"_L1);
+    str.replace("&quot;"_L1, "\""_L1);
+    str.replace("&amp;"_L1, "&"_L1);
 }
 
 QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
