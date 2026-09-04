@@ -28,12 +28,12 @@ TextUtilsColorsAndMessageViewStyle &TextUtilsColorsAndMessageViewStyle::self()
     return c;
 }
 
-KColorScheme TextUtilsColorsAndMessageViewStyle::schemeView() const
+const KColorScheme &TextUtilsColorsAndMessageViewStyle::schemeView() const
 {
     return mSchemeView;
 }
 
-KColorScheme TextUtilsColorsAndMessageViewStyle::schemeWindow() const
+const KColorScheme &TextUtilsColorsAndMessageViewStyle::schemeWindow() const
 {
     return mSchemeWindow;
 }

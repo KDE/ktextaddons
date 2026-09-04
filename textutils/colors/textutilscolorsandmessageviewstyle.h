@@ -36,13 +36,13 @@ public:
      * \brief Returns the view color scheme
      * \return KColorScheme for view
      */
-    [[nodiscard]] KColorScheme schemeView() const;
+    [[nodiscard]] const KColorScheme &schemeView() const;
 
     /*!
      * \brief Returns the window color scheme
      * \return KColorScheme for window
      */
-    [[nodiscard]] KColorScheme schemeWindow() const;
+    [[nodiscard]] const KColorScheme &schemeWindow() const;
 
 Q_SIGNALS:
     /*!
