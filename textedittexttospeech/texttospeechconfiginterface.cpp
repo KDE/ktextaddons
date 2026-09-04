@@ -93,7 +93,7 @@ void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSetting
 
 void TextToSpeechConfigInterface::stop()
 {
-    if (mTextToSpeech->state() == QTextToSpeech::Speaking) {
+    if (mTextToSpeech && mTextToSpeech->state() == QTextToSpeech::Speaking) {
         mTextToSpeech->stop();
     }
 }
