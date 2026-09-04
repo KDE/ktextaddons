@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-04 00:42+0000\n"
 "PO-Revision-Date: 2026-08-06 17:58+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -149,12 +149,12 @@ msgstr "Přílohu nelze otevřít."
 msgid "Restart is necessary for applying the changes."
 msgstr "Pro provedení změn je potřeba restartovat."
 
-#: plugins/configurepluginswidget.cpp:158
+#: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -289,22 +289,22 @@ msgstr "Co je nového v %2. %1"
 msgid "All Versions"
 msgstr "Všechny verze"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:94
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Důležité změny od poslední verze:"
 
-#: whatsnew/whatsnewwidget.cpp:100
+#: whatsnew/whatsnewwidget.cpp:99
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Mezi nové funkce této verze patří mimo jiné:"
 
-#: whatsnew/whatsnewwidget.cpp:105
+#: whatsnew/whatsnewwidget.cpp:104
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Oprava několika chyb:"
 
-#: whatsnew/whatsnewwidget.cpp:143
+#: whatsnew/whatsnewwidget.cpp:145
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Verze %1 </i></h1><hr/><br>"
@@ -330,7 +330,7 @@ msgstr "<h3><i>Co je nového ve verzi %1 (vydáno: %2)</i></h3>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Co je nového ve verzi %1 (nevydáno)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:51
+#: whatsnewng/whatsnewngutils.cpp:50
 #, fuzzy, kde-format
 #| msgid "<h1>What's New History</h1></hr>"
 msgid "<h1>What's New History</h1>"

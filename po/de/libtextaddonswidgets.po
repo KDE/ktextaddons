@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-04 00:42+0000\n"
 "PO-Revision-Date: 2026-05-03 21:19+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -151,12 +151,12 @@ msgstr ""
 msgid "Restart is necessary for applying the changes."
 msgstr "Zum Anwenden der Änderungen ist ein Neustart erforderlich."
 
-#: plugins/configurepluginswidget.cpp:158
+#: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -293,22 +293,22 @@ msgstr "Was ist neu in %2. %1"
 msgid "All Versions"
 msgstr "Alle Versionen"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:94
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Wichtige Änderungen seit der letzten Version:"
 
-#: whatsnew/whatsnewwidget.cpp:100
+#: whatsnew/whatsnewwidget.cpp:99
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Einige der neuen Funktionen in dieser Version sind:"
 
-#: whatsnew/whatsnewwidget.cpp:105
+#: whatsnew/whatsnewwidget.cpp:104
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Ein paar Fehlerkorrekturen:"
 
-#: whatsnew/whatsnewwidget.cpp:143
+#: whatsnew/whatsnewwidget.cpp:145
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
@@ -336,7 +336,7 @@ msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngutils.cpp:51
+#: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr ""

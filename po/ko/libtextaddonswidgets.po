@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-04 00:42+0000\n"
 "PO-Revision-Date: 2026-06-06 14:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -145,12 +145,12 @@ msgstr "첨부 파일을 열 수 없습니다."
 msgid "Restart is necessary for applying the changes."
 msgstr "변경 사항을 적용하려면 다시 시작해야 합니다."
 
-#: plugins/configurepluginswidget.cpp:158
+#: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -287,22 +287,22 @@ msgstr "%2의 새로운 기능. %1"
 msgid "All Versions"
 msgstr "모든 버전"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:94
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "마지막 버전 이후 중요 변경 사항:"
 
-#: whatsnew/whatsnewwidget.cpp:100
+#: whatsnew/whatsnewwidget.cpp:99
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "이 릴리스에 추가된 주요 기능:"
 
-#: whatsnew/whatsnewwidget.cpp:105
+#: whatsnew/whatsnewwidget.cpp:104
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "일부 버그 수정:"
 
-#: whatsnew/whatsnewwidget.cpp:143
+#: whatsnew/whatsnewwidget.cpp:145
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> 버전 %1 </i></h1><hr/><br>"
@@ -330,7 +330,7 @@ msgstr "<h1><i> 버전 %1(출시: %2)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i> 버전 %1(아직 출시되지 않음)</i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngutils.cpp:51
+#: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr ""

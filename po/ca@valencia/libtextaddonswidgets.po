@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-04 00:42+0000\n"
 "PO-Revision-Date: 2026-08-23 09:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -148,12 +148,12 @@ msgstr "No s'ha pogut obrir l'adjunt."
 msgid "Restart is necessary for applying the changes."
 msgstr "Cal reiniciar per a aplicar els canvis."
 
-#: plugins/configurepluginswidget.cpp:158
+#: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -289,22 +289,22 @@ msgstr "Què hi ha de nou a %2. %1"
 msgid "All Versions"
 msgstr "Totes les versions"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:94
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Canvis importants des de l'última versió:"
 
-#: whatsnew/whatsnewwidget.cpp:100
+#: whatsnew/whatsnewwidget.cpp:99
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Alguna de les característiques noves que inclou esta versió:"
 
-#: whatsnew/whatsnewwidget.cpp:105
+#: whatsnew/whatsnewwidget.cpp:104
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Algunes esmenes d'errors:"
 
-#: whatsnew/whatsnewwidget.cpp:143
+#: whatsnew/whatsnewwidget.cpp:145
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Versió %1 </i></h1><hr/><br>"
@@ -329,7 +329,7 @@ msgstr "<h3><i>Què hi ha de nou a la versió %1 (Publicada: %2)</i></h3>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Què hi ha de nou a la versió %1 (No publicada)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:51
+#: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de Què hi ha de nou</h1>"

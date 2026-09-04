@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-04 00:42+0000\n"
 "PO-Revision-Date: 2026-08-23 16:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -151,12 +151,12 @@ msgstr "No se ha podido abrir el adjunto."
 msgid "Restart is necessary for applying the changes."
 msgstr "Es necesario reiniciar para aplicar los cambios."
 
-#: plugins/configurepluginswidget.cpp:158
+#: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -292,22 +292,22 @@ msgstr "Novedades de %2. %1"
 msgid "All Versions"
 msgstr "Todas las versiones"
 
-#: whatsnew/whatsnewwidget.cpp:95
+#: whatsnew/whatsnewwidget.cpp:94
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Cambios importantes desde la última versión:"
 
-#: whatsnew/whatsnewwidget.cpp:100
+#: whatsnew/whatsnewwidget.cpp:99
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Estas son algunas de las nuevas funcionalidades de esta versión:"
 
-#: whatsnew/whatsnewwidget.cpp:105
+#: whatsnew/whatsnewwidget.cpp:104
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Varias correcciones de errores:"
 
-#: whatsnew/whatsnewwidget.cpp:143
+#: whatsnew/whatsnewwidget.cpp:145
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Versión %1 </i></h1><hr/><br>"
@@ -332,7 +332,7 @@ msgstr "<h3><i>Novedades de la versión %1 (Publicada: %2)</i></h3>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Novedades de la versión %1 (no publicada)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:51
+#: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de novedades</h1>"

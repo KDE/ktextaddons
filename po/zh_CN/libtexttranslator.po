@@ -402,12 +402,12 @@ msgstr "设置"
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
 #, kde-format
 msgid "Translation failed."
-msgstr ""
+msgstr "翻译失败。"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
 #, kde-format
 msgid "Language model is not loaded."
-msgstr ""
+msgstr "语言模型没有加载。"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -417,7 +417,7 @@ msgstr "语言模型没有定义。"
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
 #, kde-format
 msgid "Language model files are missing in %1."
-msgstr ""
+msgstr "在 %1 中缺少语言模型文件。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
