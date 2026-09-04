@@ -72,6 +72,8 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
         *mStream << u"</td></tr></table>"_s;
     }
     *mStream << "</code>"_L1;
+    // Clean up
+    mCurrentLine = {};
 }
 
 QString TextUtilsSyntaxHighlighter::copyHref()
