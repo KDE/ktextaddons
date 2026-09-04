@@ -8,7 +8,6 @@
     "Capabilities": [
         "Speak",
         "PauseResume",
-        "WordByWordProgress",
         "Synthesize"
     ]
 }
