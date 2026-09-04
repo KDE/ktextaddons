@@ -60,10 +60,8 @@ QString TextUtilsBlockCMarkSupport::markdownToRichTextCMark(const QString &markD
     }
 
     qCDebug(TEXTUTILS_CMARK_LOG) << "BEFORE markdownToRichText " << markDown;
-    QString str = markDown;
-
     const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
-    str = KTextToHTML::convertToHtml(str, convertFlags);
+    QString str = KTextToHTML::convertToHtml(markDown, convertFlags);
     qCDebug(TEXTUTILS_CMARK_LOG) << " AFTER convertToHtml " << str;
     // substitute "[example.com](<a href="...">...</a>)" style urls
     str = TextUtils::TextUtilsBlockCMarkSupport::convertTextWithUrl(str);
