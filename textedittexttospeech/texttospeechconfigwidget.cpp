@@ -116,7 +116,7 @@ void TextToSpeechConfigWidget::readConfig()
     mPitch->setValue(settings.pitch);
     mVolume->setValue(settings.volumeValue);
     mLanguage->selectLocaleName(settings.localeName);
-    const QString engineName = settings.engineName;
+    const QString &engineName = settings.engineName;
     // qDebug() << " engineName " << engineName;
     // qDebug() << " engineIndex " << engineIndex;
     if (const int engineIndex = mAvailableEngine->findData(engineName); engineIndex != -1) {
