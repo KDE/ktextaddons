@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textutilsiconnamecache.h"
+#include "textutils_debug.h"
 #include <KIconLoader>
 using namespace TextUtils;
 using namespace Qt::Literals::StringLiterals;
@@ -29,16 +30,18 @@ void TextUtilsIconNameCache::clearCache()
 
 QString TextUtilsIconNameCache::iconPath(const QString &name, int size) const
 {
-    Entry entry;
-    entry.fileName = name;
-    entry.size = size;
+    const Entry entry{name, size};
 
-    if (const QString val = mCachedEntries.value(entry); !val.isEmpty()) {
-        return val;
+    // We store the file name even when it's empty, so that we don't call
+    // KIconLoader::global() again and again for an icon which can't be found.
+    if (const auto it = mCachedEntries.constFind(entry); it != mCachedEntries.constEnd()) {
+        return it.value();
     }
 
-    QString fileName = KIconLoader::global()->iconPath(name, size);
-    if (fileName.startsWith(QLatin1StringView(":/"))) {
+    QString fileName = KIconLoader::global()->iconPath(name, size, true);
+    if (fileName.isEmpty()) {
+        qCWarning(TEXTUTILS_LOG) << "Icon name:" << name << "not found";
+    } else if (fileName.startsWith(":/"_L1)) {
         fileName = u"qrc"_s + fileName;
     }
     mCachedEntries.insert(entry, fileName);
