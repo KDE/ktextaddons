@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:42+0000\n"
+"POT-Creation-Date: 2026-09-05 00:43+0000\n"
 "PO-Revision-Date: 2023-05-01 23:31-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Check New Version"
 msgstr ""
 
-#: whatsnew/whatsnewcomboboxwidget.cpp:30
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
@@ -274,27 +274,27 @@ msgstr ""
 msgid "What's new in %2. %1"
 msgstr ""
 
-#: whatsnew/whatsnewwidget.cpp:47 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
 #, kde-format
 msgid "All Versions"
 msgstr ""
 
-#: whatsnew/whatsnewwidget.cpp:94
+#: whatsnew/whatsnewwidget.cpp:96
 #, kde-format
 msgid "Important changes since last version:"
 msgstr ""
 
-#: whatsnew/whatsnewwidget.cpp:99
+#: whatsnew/whatsnewwidget.cpp:101
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr ""
 
-#: whatsnew/whatsnewwidget.cpp:104
+#: whatsnew/whatsnewwidget.cpp:106
 #, kde-format
 msgid "Some bug fixing:"
 msgstr ""
 
-#: whatsnew/whatsnewwidget.cpp:145
+#: whatsnew/whatsnewwidget.cpp:147
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr ""

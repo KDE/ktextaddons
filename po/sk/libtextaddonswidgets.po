@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-04 00:42+0000\n"
+"POT-Creation-Date: 2026-09-05 00:43+0000\n"
 "PO-Revision-Date: 2023-12-08 20:09+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Check New Version"
 msgstr "Skontrolovať novú verziu"
 
-#: whatsnew/whatsnewcomboboxwidget.cpp:30
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
@@ -279,27 +279,27 @@ msgstr "(Zobraziť novinky)"
 msgid "What's new in %2. %1"
 msgstr "Čo je nové v %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:47 whatsnewng/whatsnewngwidget.cpp:52
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
 #, kde-format
 msgid "All Versions"
 msgstr "Všetky verzie"
 
-#: whatsnew/whatsnewwidget.cpp:94
+#: whatsnew/whatsnewwidget.cpp:96
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Dôležité zmeny od poslednej verzie:"
 
-#: whatsnew/whatsnewwidget.cpp:99
+#: whatsnew/whatsnewwidget.cpp:101
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
 
-#: whatsnew/whatsnewwidget.cpp:104
+#: whatsnew/whatsnewwidget.cpp:106
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Niektoré opravy chýb:"
 
-#: whatsnew/whatsnewwidget.cpp:145
+#: whatsnew/whatsnewwidget.cpp:147
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"

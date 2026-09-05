@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:45+0000\n"
+"POT-Creation-Date: 2026-09-05 00:43+0000\n"
 "PO-Revision-Date: 2024-08-18 16:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -45,44 +45,44 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "உரையை பேச்சாக்குவதை அமைப்பது"
 
-#: texttospeechconfiginterface.cpp:86
+#: texttospeechconfiginterface.cpp:91
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr ""
 "Morning, this is the test for testing settings. வணக்கம், அமைப்புகளை சோதிக்க "
 "பயன்படுத்தக்கூடயி சரம் இது."
 
-#: texttospeechconfigwidget.cpp:36
+#: texttospeechconfigwidget.cpp:37
 #, kde-format
 msgid "Test"
 msgstr "சோதி"
 
-#: texttospeechconfigwidget.cpp:44
+#: texttospeechconfigwidget.cpp:45
 #, kde-format
 msgid "Volume:"
 msgstr "ஒலியளவு:"
 
-#: texttospeechconfigwidget.cpp:48
+#: texttospeechconfigwidget.cpp:49
 #, kde-format
 msgid "Rate:"
 msgstr "வேகம்:"
 
-#: texttospeechconfigwidget.cpp:54
+#: texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Pitch:"
 msgstr "அதிர்வெண்:"
 
-#: texttospeechconfigwidget.cpp:57
+#: texttospeechconfigwidget.cpp:59
 #, kde-format
 msgid "Engine:"
 msgstr "நிரல்:"
 
-#: texttospeechconfigwidget.cpp:61
+#: texttospeechconfigwidget.cpp:63
 #, kde-format
 msgid "Language:"
 msgstr "மொழி:"
 
-#: texttospeechconfigwidget.cpp:65
+#: texttospeechconfigwidget.cpp:67
 #, kde-format
 msgid "Voice:"
 msgstr "குரல்:"
