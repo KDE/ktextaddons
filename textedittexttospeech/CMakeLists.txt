@@ -188,7 +188,6 @@ ecm_installed_library_check_include_strings(KF6TextEditTextToSpeech
 
 ecm_installed_library_check_include_strings(KF6TextEditTextToSpeech
     HEADERS
-${TextEdit_CamelCasetexttospeechs_HEADERS}
-
+    ${TextEdit_CamelCasetexttospeechs_HEADERS}
     PREFIX TextEditTextToSpeech
 )
