@@ -18,10 +18,7 @@ bool VoskSpeechToTextProxyModel::filterAcceptsRow(int source_row, const QModelIn
 {
     if (!mSearchString.isEmpty()) {
         const QString source = sourceModel()->index(source_row, VoskSpeechToTextModel::LangText, source_parent).data().toString();
-        if (source.contains(mSearchString, Qt::CaseInsensitive)) {
-            return true;
-        }
-        return false;
+        return source.contains(mSearchString, Qt::CaseInsensitive);
     }
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
