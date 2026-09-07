@@ -113,3 +113,8 @@ QString TextEditTextToSpeech::TextToSpeechKokoroUtils::languageCode(const QStrin
     const KokoroLanguage *language = languageForIdentifier(identifier);
     return language ? QString(QLatin1Char(language->code)) : QString();
 }
+
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScript()
+{
+    return u"kokoro_helper.py"_s;
+}
