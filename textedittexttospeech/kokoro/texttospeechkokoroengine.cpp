@@ -76,9 +76,9 @@ double TextToSpeechKokoroEngine::pitch() const
     return {};
 }
 
-bool TextToSpeechKokoroEngine::setPitch(double pitch)
+bool TextToSpeechKokoroEngine::setPitch([[maybe_unused]] double pitch)
 {
-    return {};
+    return false;
 }
 
 QLocale TextToSpeechKokoroEngine::locale() const
