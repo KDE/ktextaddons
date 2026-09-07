@@ -10,6 +10,7 @@
 #include <memory>
 namespace TextSpeechToText
 {
+class SpeechToTextPluginPrivate;
 /*!
  * \class TextSpeechToText::SpeechToTextPlugin
  * \inheaderfile TextSpeechToText/SpeechToTextPlugin
@@ -17,7 +18,6 @@ namespace TextSpeechToText
  * \brief Interface for speech-to-text engine implementations.
  * \author Laurent Montel <montel@kde.org>
  */
-class SpeechToTextPluginPrivate;
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextPlugin : public QObject
 {
     Q_OBJECT

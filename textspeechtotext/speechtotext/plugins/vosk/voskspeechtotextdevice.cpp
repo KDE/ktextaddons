@@ -101,9 +101,9 @@ void VoskSpeechToTextDevice::parseText(const char *json)
     const QJsonDocument obj = QJsonDocument::fromJson(json);
     QString text = obj[u"text"_s].toString();
 
-    if (text.isEmpty())
+    if (text.isEmpty()) {
         return;
-    else if (mIsAsking) {
+    } else if (mIsAsking) {
         Q_EMIT result(text);
         return;
     }
@@ -131,8 +131,9 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
 {
     const QJsonDocument obj = QJsonDocument::fromJson(json);
     QString text = obj[u"partial"_s].toString();
-    if (text.isEmpty())
+    if (text.isEmpty()) {
         return;
+    }
     text.append(u' ');
 
     if (text.contains(mWakeWord)) {
