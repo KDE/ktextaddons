@@ -36,6 +36,16 @@ public:
     [[nodiscard]] QTextToSpeech::State state() const override;
     [[nodiscard]] QTextToSpeech::ErrorReason errorReason() const override;
     [[nodiscard]] QString errorString() const override;
+
+private:
+    /*!
+     * Returns the Kokoro identifier carried by \a voice, for example "ff_siwis",
+     * or an empty string when \a voice does not come from this engine.
+     *
+     * QTextToSpeechEngine::voiceData() being protected, only the engine itself
+     * can read back what availableVoices() stored.
+     */
+    [[nodiscard]] static QString kokoroIdentifier(const QVoice &voice);
 };
 
 }

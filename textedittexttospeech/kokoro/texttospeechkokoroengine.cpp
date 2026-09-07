@@ -5,6 +5,7 @@
 */
 
 #include "texttospeechkokoroengine.h"
+#include "texttospeechkokoroutils.h"
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
@@ -17,12 +18,27 @@ TextToSpeechKokoroEngine::~TextToSpeechKokoroEngine() = default;
 
 QList<QLocale> TextToSpeechKokoroEngine::availableLocales() const
 {
-    return {};
+    return TextToSpeechKokoroUtils::availableLocales();
 }
 
 QList<QVoice> TextToSpeechKokoroEngine::availableVoices() const
 {
-    return {};
+    // QTextToSpeechEngine::createVoice() is protected, so the conversion from
+    // the voice table to QVoice can only happen here, in the engine itself.
+    const QList<TextToSpeechKokoroUtils::KokoroVoice> kokoroVoices = TextToSpeechKokoroUtils::kokoroVoices();
+    QList<QVoice> voices;
+    voices.reserve(kokoroVoices.count());
+    for (const TextToSpeechKokoroUtils::KokoroVoice &kokoroVoice : kokoroVoices) {
+        // The identifier is stored as the voice data: it is what setVoice() has
+        // to hand over to the backend. Kokoro says nothing about age.
+        voices.append(createVoice(kokoroVoice.name, kokoroVoice.locale, kokoroVoice.gender, QVoice::Other, kokoroVoice.identifier));
+    }
+    return voices;
+}
+
+QString TextToSpeechKokoroEngine::kokoroIdentifier(const QVoice &voice)
+{
+    return voiceData(voice).toString();
 }
 
 void TextToSpeechKokoroEngine::say(const QString &text)
