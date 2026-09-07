@@ -8,7 +8,7 @@
 #include "libvoskspeechtotext_export.h"
 #include <QJsonObject>
 #include <QString>
-
+class QDebug;
 class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextInfo
 {
 public:

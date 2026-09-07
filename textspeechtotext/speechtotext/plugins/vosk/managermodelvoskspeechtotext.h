@@ -8,6 +8,7 @@
 #include "voskdownloadlanguagejob.h"
 #include "voskspeechtotextinfo.h"
 #include <QObject>
+class QJsonArray;
 
 class LIBVOSKSPEECHTOTEXT_EXPORT ManagerModelVoskSpeechToText : public QObject
 {

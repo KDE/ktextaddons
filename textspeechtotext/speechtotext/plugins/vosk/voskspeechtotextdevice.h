@@ -9,7 +9,7 @@
 #include "config-vosk-plugin.h"
 #include "libvoskspeechtotext_export.h"
 #include <QIODevice>
-
+class QDebug;
 #if HAVE_VOSK_API_SUPPORT
 class VoskModel;
 class VoskRecognizer;
