@@ -10,7 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
 QString TextSpeechToTextUtil::groupTranslateName()
 {
-    return u"TextToSpeech"_s;
+    return u"SpeechToText"_s;
 }
 
 QString TextSpeechToTextUtil::engineTextToSpeechName()

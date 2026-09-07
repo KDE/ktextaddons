@@ -20,7 +20,7 @@ QString VoskEngineUtils::defaultVoskRepository()
 
 QString VoskEngineUtils::storageLanguagePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/vosk-texttospeech"_s;
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/vosk-speechtotext"_s;
 }
 
 VoskEngineUtils::LanguageInstalled VoskEngineUtils::loadInstalledLanguageInfo(const QString &modelInfoPath)
