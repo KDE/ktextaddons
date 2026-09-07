@@ -77,7 +77,9 @@ bool SpeechToTextManager::hasEngine() const
 
 void SpeechToTextManager::speechToText()
 {
-    d->mSpeechToTextPlugin->speechToText();
+    if (d->mSpeechToTextPlugin) {
+        d->mSpeechToTextPlugin->speechToText();
+    }
 }
 
 void SpeechToTextManager::initializeInput()
