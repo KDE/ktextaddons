@@ -3,6 +3,14 @@
 
 add_library(KokoroTextToSpeechPlugin)
 
+ecm_qt_declare_logging_category(KokoroTextToSpeechPlugin
+    HEADER texttospeech_kokoro_debug.h
+    IDENTIFIER KOKORO_TEXT_TO_SPEECH_PLUGIN_LOG
+    CATEGORY_NAME org.kde.kf.textospeech.kokoro
+    DESCRIPTION "kokoro text to speech plugin"
+    EXPORT KTEXTADDONS
+)
+
 target_sources(
     KokoroTextToSpeechPlugin
     PRIVATE
