@@ -14,3 +14,5 @@ TextToSpeechKokoroPlugin::createTextToSpeechEngine(const QVariantMap &parameters
     // TODO return error if we can't start it.
     return new TextToSpeechKokoroEngine(parameters, parent);
 }
+
+#include "moc_texttospeechkokoroplugin.cpp"
