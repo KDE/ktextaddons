@@ -14,5 +14,5 @@ namespace TextSpeechToTextUtil
 [[nodiscard]] QString groupTranslateName();
 [[nodiscard]] QString engineTextToSpeechName();
 [[nodiscard]] QString defaultEngineName();
-};
+}
 }
