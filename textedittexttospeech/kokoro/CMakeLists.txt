@@ -15,6 +15,8 @@ target_sources(
     PRIVATE
         texttospeechkokoroutils.h
         texttospeechkokoroutils.cpp
+        texttospeechkokoroinstallpythondialog.h
+        texttospeechkokoroinstallpythondialog.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -27,7 +29,12 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(kokorotexttospeech BASE_NAME kokorotexttospeech)
 
-target_link_libraries(kokorotexttospeech PUBLIC Qt::TextToSpeech)
+target_link_libraries(
+    kokorotexttospeech
+    PUBLIC
+        Qt::TextToSpeech
+        Qt::Widgets
+)
 
 set_target_properties(
     kokorotexttospeech
@@ -71,12 +78,7 @@ target_sources(
         texttospeechkokoroplugin.cpp
 )
 
-target_link_libraries(
-    KokoroTextToSpeechPlugin
-    PUBLIC
-        Qt::TextToSpeech
-        kokorotexttospeech
-)
+target_link_libraries(KokoroTextToSpeechPlugin PUBLIC kokorotexttospeech)
 install(TARGETS KokoroTextToSpeechPlugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/texttospeech/)
 
 install(PROGRAMS scripts/kokoro_helper.py DESTINATION ${KDE_INSTALL_BINDIR})
