@@ -64,11 +64,13 @@ void VoskExtractLanguageJob::start()
     if (!zip->open(QIODevice::ReadOnly)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open temporary file" << mSource;
         Q_EMIT finished();
+        delete zip;
         deleteLater();
         return;
     }
     if (!QDir().mkpath(VoskEngineUtils::storageLanguagePath())) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create path" << VoskEngineUtils::storageLanguagePath();
+        delete zip;
         Q_EMIT finished();
         deleteLater();
         return;
