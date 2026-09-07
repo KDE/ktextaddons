@@ -15,3 +15,4 @@ target_sources(
 )
 
 target_link_libraries(KokoroTextToSpeechPlugin PUBLIC Qt::TextToSpeech)
+install(TARGETS KokoroTextToSpeechPlugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/texttospeech/)
