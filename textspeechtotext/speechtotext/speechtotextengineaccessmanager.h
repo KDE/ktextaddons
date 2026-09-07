@@ -25,7 +25,7 @@ public:
     explicit SpeechToTextEngineAccessManager(QObject *parent = nullptr);
     /*!
      */
-    ~SpeechToTextEngineAccessManager();
+    ~SpeechToTextEngineAccessManager() override;
 
     /*!
      */
