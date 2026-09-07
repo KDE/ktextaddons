@@ -57,7 +57,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
     if (index.row() < 0 || index.row() >= mSpeechToTextInfos.count()) {
         return {};
     }
-    const auto speechToTextInfo = mSpeechToTextInfos.at(index.row());
+    const auto &speechToTextInfo = mSpeechToTextInfos.at(index.row());
     const int col = index.column();
     if (role == Qt::BackgroundRole) {
         if (needToUpdateLanguageModel(speechToTextInfo)) {
