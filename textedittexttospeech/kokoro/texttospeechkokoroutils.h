@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include "kokorotexttospeech_export.h"
 #include <QLocale>
 #include <QVoice>
 
@@ -37,12 +37,14 @@ enum class VoiceFilter {
 };
 
 /*! Returns the voices of the model, as plain data. */
-[[nodiscard]] QList<KokoroVoice> kokoroVoices(VoiceFilter filter = VoiceFilter::EspeakSupported);
+[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QList<KokoroVoice> kokoroVoices(VoiceFilter filter = VoiceFilter::EspeakSupported);
 
 /*! Returns the locales covered by the voices, without duplicates. */
-[[nodiscard]] QList<QLocale> availableLocales(VoiceFilter filter = VoiceFilter::EspeakSupported);
+[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QList<QLocale> availableLocales(VoiceFilter filter = VoiceFilter::EspeakSupported);
 
 /*! Returns the lang_code expected by KPipeline for \a identifier, for example "f" for "ff_siwis". */
-[[nodiscard]] QString languageCode(const QString &identifier);
+[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString languageCode(const QString &identifier);
+
+[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonScript();
 }
 }
