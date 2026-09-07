@@ -20,6 +20,8 @@ target_sources(
         texttospeechkokoro.cpp
         texttospeechkokoroplugin.h
         texttospeechkokoroplugin.cpp
+        texttospeechkokoroutils.h
+        texttospeechkokoroutils.cpp
 )
 
 target_link_libraries(KokoroTextToSpeechPlugin PUBLIC Qt::TextToSpeech)
