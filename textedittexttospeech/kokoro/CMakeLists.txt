@@ -17,6 +17,9 @@ target_sources(
         texttospeechkokoroutils.cpp
         texttospeechkokoroinstallpythondialog.h
         texttospeechkokoroinstallpythondialog.cpp
+        texttospeechkokoroinstallpythonwidget.h
+        texttospeechkokoroinstallpythonwidget.cpp
+        textedittexttospeech_kokoro_private_export.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -34,6 +37,8 @@ target_link_libraries(
     PUBLIC
         Qt::TextToSpeech
         Qt::Widgets
+    PRIVATE
+        KF6::I18n
 )
 
 set_target_properties(
@@ -42,7 +47,7 @@ set_target_properties(
         VERSION
             ${TEXTEDITTEXTTOSPEECH_VERSION}
         SOVERSION
-            ${TEXTEDITTEXTTOSPEECH_VERSION}
+            ${TEXTEDITTEXTTOSPEECH_SOVERSION}
         EXPORT_NAME
             kokorotexttospeech
 )
