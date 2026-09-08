@@ -32,24 +32,10 @@ TextAutoGenerateToolShowMetaDataDialog::TextAutoGenerateToolShowMetaDataDialog(Q
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateToolShowMetaDataDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateToolShowMetaDataDialog::~TextAutoGenerateToolShowMetaDataDialog()
-{
-    writeConfig();
-}
-
-void TextAutoGenerateToolShowMetaDataDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateToolShowMetaDataDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName));
-}
+TextAutoGenerateToolShowMetaDataDialog::~TextAutoGenerateToolShowMetaDataDialog() = default;
 
 void TextAutoGenerateToolShowMetaDataDialog::setMetaData(const QJsonObject &obj)
 {

@@ -18,8 +18,6 @@ public:
     ~GenericNetworkConfigureDialog() override;
 
 private:
-    TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void writeConfig();
-    TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void readConfig();
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void slotAccepted();
     GenericNetworkNetworkPluginConfigureWidget *const mConfigureWidget;
     GenericNetworkAvailableModelWidget *const mAvailableModelWidget;

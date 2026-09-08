@@ -33,23 +33,9 @@ GrammalecteConfigDialog::GrammalecteConfigDialog(QWidget *parent, bool disableMe
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &GrammalecteConfigDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &GrammalecteConfigDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGrammalecteConfigDialog), QSize(500, 300));
 }
 
-GrammalecteConfigDialog::~GrammalecteConfigDialog()
-{
-    writeConfig();
-}
-
-void GrammalecteConfigDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myConfigGrammalecteConfigDialog));
-}
-
-void GrammalecteConfigDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myConfigGrammalecteConfigDialog), 500, 300);
-}
+GrammalecteConfigDialog::~GrammalecteConfigDialog() = default;
 
 #include "moc_grammalecteconfigdialog.cpp"

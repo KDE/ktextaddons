@@ -32,24 +32,10 @@ BegamotEngineDialog::BegamotEngineDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &BegamotEngineDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &BegamotEngineDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGroupName), QSize(500, 300));
 }
 
-BegamotEngineDialog::~BegamotEngineDialog()
-{
-    writeConfig();
-}
-
-void BegamotEngineDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1String(myConfigGroupName));
-}
-
-void BegamotEngineDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myConfigGroupName), 500, 300);
-}
+BegamotEngineDialog::~BegamotEngineDialog() = default;
 
 void BegamotEngineDialog::setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info)
 {

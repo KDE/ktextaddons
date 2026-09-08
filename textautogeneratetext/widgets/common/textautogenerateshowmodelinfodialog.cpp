@@ -32,28 +32,14 @@ TextAutoGenerateShowModelInfoDialog::TextAutoGenerateShowModelInfoDialog(QWidget
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateShowModelInfoDialog::reject);
 
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateShowModelInfoDialog::~TextAutoGenerateShowModelInfoDialog()
-{
-    writeConfig();
-}
+TextAutoGenerateShowModelInfoDialog::~TextAutoGenerateShowModelInfoDialog() = default;
 
 void TextAutoGenerateShowModelInfoDialog::setText(const QString &text)
 {
     mTextAutoGenerateShowModelInfoWidget->setText(text);
-}
-
-void TextAutoGenerateShowModelInfoDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateShowModelInfoDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName));
 }
 
 #include "moc_textautogenerateshowmodelinfodialog.cpp"

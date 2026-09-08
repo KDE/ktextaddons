@@ -47,13 +47,10 @@ LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, LMStu
     connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &LMStudioConfigureDialog::slotRestoreDefaults);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &LMStudioConfigureDialog::slotAccepted);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myLMStudioConfigureDialogGroupName), QSize(400, 300));
 }
 
-LMStudioConfigureDialog::~LMStudioConfigureDialog()
-{
-    writeConfig();
-}
+LMStudioConfigureDialog::~LMStudioConfigureDialog() = default;
 
 void LMStudioConfigureDialog::slotRestoreDefaults()
 {
@@ -64,17 +61,6 @@ void LMStudioConfigureDialog::slotAccepted()
 {
     mConfigureWidget->saveSettings();
     accept();
-}
-
-void LMStudioConfigureDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myLMStudioConfigureDialogGroupName), 400, 300);
-}
-
-void LMStudioConfigureDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myLMStudioConfigureDialogGroupName));
 }
 
 #include "moc_lmstudioconfiguredialog.cpp"

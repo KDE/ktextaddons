@@ -78,29 +78,15 @@ TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(TextAutoGenerat
 
     // TODO connect(mShowImageWidget, &TextAutoGenerateShowImageWidget::updateMenu, this, &TextAutoGenerateShowImageDialog::slotUpdateMenu);
 
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName), QSize(800, 600));
 }
 
-TextAutoGenerateShowImageDialog::~TextAutoGenerateShowImageDialog()
-{
-    writeConfig();
-}
+TextAutoGenerateShowImageDialog::~TextAutoGenerateShowImageDialog() = default;
 
 void TextAutoGenerateShowImageDialog::setImage(const QString &path)
 {
     mShowImageWidget->setImage(path);
     // TODO
-}
-
-void TextAutoGenerateShowImageDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName), 800, 600);
-}
-
-void TextAutoGenerateShowImageDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName));
 }
 
 void TextAutoGenerateShowImageDialog::updateServiceList()

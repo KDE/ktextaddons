@@ -16,7 +16,5 @@ public:
     ~VoskEngineDialog() override;
 
 private:
-    LIBVOSKSPEECHTOTEXT_NO_EXPORT void writeConfig();
-    LIBVOSKSPEECHTOTEXT_NO_EXPORT void readConfig();
     VoskEngineLanguageWidget *const mVoskEngineWidget;
 };

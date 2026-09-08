@@ -43,29 +43,15 @@ GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManag
     });
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &GenericNetworkConfigureDialog::slotAccepted);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myGenericNetworkConfigureDialogGroupName), QSize(400, 300));
 }
 
-GenericNetworkConfigureDialog::~GenericNetworkConfigureDialog()
-{
-    writeConfig();
-}
+GenericNetworkConfigureDialog::~GenericNetworkConfigureDialog() = default;
 
 void GenericNetworkConfigureDialog::slotAccepted()
 {
     mConfigureWidget->saveSettings();
     accept();
-}
-
-void GenericNetworkConfigureDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myGenericNetworkConfigureDialogGroupName), 400, 300);
-}
-
-void GenericNetworkConfigureDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myGenericNetworkConfigureDialogGroupName));
 }
 
 #include "moc_genericnetworkconfiguredialog.cpp"

@@ -21,8 +21,6 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGeneratePrompt prompt() const;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TextAutoGeneratePromptWidget *const mPromptWidget;
 };
 }

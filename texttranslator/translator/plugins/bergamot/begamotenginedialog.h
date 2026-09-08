@@ -20,7 +20,5 @@ public:
     [[nodiscard]] BergamotEngineUtils::SettingsInfo settingsInfo() const;
 
 private:
-    LIBBERGAMOT_NO_EXPORT void writeConfig();
-    LIBBERGAMOT_NO_EXPORT void readConfig();
     BergamotEngineWidget *const mBergamotEngineWidget;
 };

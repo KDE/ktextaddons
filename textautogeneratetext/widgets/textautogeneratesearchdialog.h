@@ -19,8 +19,6 @@ public:
     ~TextAutoGenerateSearchDialog() override;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateSearchWidget *const mTextAutoGenerateSearchWidget;
 };
 }

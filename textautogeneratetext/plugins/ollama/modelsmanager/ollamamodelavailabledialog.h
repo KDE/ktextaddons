@@ -16,7 +16,5 @@ public:
     ~OllamaModelAvailableDialog() override;
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void writeConfig();
     OllamaModelAvailableWidget *const mOllamaModelWidget;
 };

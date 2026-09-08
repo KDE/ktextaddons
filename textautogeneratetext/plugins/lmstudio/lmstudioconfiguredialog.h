@@ -20,8 +20,6 @@ public:
 
 private:
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotAccepted();
-    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotRestoreDefaults();
     LMStudioConfigureWidget *const mConfigureWidget;
     LMStudioModelInstalledWidget *const mModelInstalledWidget;

@@ -34,29 +34,15 @@ TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TextToSpeechConfigDialog::reject);
     connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &TextToSpeechConfigDialog::slotRestoreDefaults);
     mainLayout->addWidget(buttonBox);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName), QSize(300, 200));
+    mTextToSpeechConfigWidget->initializeSettings();
 }
 
-TextToSpeechConfigDialog::~TextToSpeechConfigDialog()
-{
-    writeConfig();
-}
+TextToSpeechConfigDialog::~TextToSpeechConfigDialog() = default;
 
 void TextToSpeechConfigDialog::slotRestoreDefaults()
 {
     mTextToSpeechConfigWidget->restoreDefaults();
-}
-
-void TextToSpeechConfigDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName), 300, 200);
-    mTextToSpeechConfigWidget->initializeSettings();
-}
-
-void TextToSpeechConfigDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName));
 }
 
 void TextToSpeechConfigDialog::slotAccepted()

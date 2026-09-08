@@ -19,8 +19,6 @@ public:
     void setPlainText(const QString &text);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateShowDebugWidget *const mShowDebugWidget;
 };
 }

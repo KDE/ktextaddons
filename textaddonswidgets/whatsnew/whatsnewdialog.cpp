@@ -34,24 +34,10 @@ WhatsNewDialog::WhatsNewDialog(const QList<TextAddonsWidgets::WhatsNewInfo> &inf
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &WhatsNewDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myWhatsNewDialogGroupName), QSize(400, 300));
 }
 
-WhatsNewDialog::~WhatsNewDialog()
-{
-    writeConfig();
-}
-
-void WhatsNewDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myWhatsNewDialogGroupName), 400, 300);
-}
-
-void WhatsNewDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myWhatsNewDialogGroupName));
-}
+WhatsNewDialog::~WhatsNewDialog() = default;
 
 void WhatsNewDialog::updateInformations()
 {

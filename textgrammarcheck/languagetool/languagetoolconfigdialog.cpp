@@ -35,23 +35,9 @@ LanguageToolConfigDialog::LanguageToolConfigDialog(QWidget *parent)
     connect(box, &QDialogButtonBox::accepted, this, &LanguageToolConfigDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &LanguageToolConfigDialog::reject);
     connect(box->button(QDialogButtonBox::Reset), &QPushButton::clicked, mConfigWidget, &LanguageToolConfigWidget::resetValue);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGroupName), QSize(500, 300));
 }
 
-LanguageToolConfigDialog::~LanguageToolConfigDialog()
-{
-    writeConfig();
-}
-
-void LanguageToolConfigDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myConfigGroupName));
-}
-
-void LanguageToolConfigDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myConfigGroupName), 500, 300);
-}
+LanguageToolConfigDialog::~LanguageToolConfigDialog() = default;
 
 #include "moc_languagetoolconfigdialog.cpp"

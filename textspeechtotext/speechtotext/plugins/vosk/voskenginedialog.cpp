@@ -8,13 +8,9 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "voskenginelanguagewidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 namespace
@@ -38,26 +34,9 @@ VoskEngineDialog::VoskEngineDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &VoskEngineDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &VoskEngineDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGroupName), QSize(500, 300));
 }
 
-VoskEngineDialog::~VoskEngineDialog()
-{
-    writeConfig();
-}
-
-void VoskEngineDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1String(myConfigGroupName));
-}
-
-void VoskEngineDialog::readConfig()
-{
-    create(); // ensure a window is created
-    windowHandle()->resize(QSize(500, 300));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
-}
+VoskEngineDialog::~VoskEngineDialog() = default;
 
 #include "moc_voskenginedialog.cpp"

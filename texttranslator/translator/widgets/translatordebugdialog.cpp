@@ -42,30 +42,16 @@ TranslatorDebugDialog::TranslatorDebugDialog(QWidget *parent)
     mainLayout->addWidget(mEdit);
     mainLayout->addWidget(buttonBox);
 
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTranslatorDebugDialogConfigGroupName), QSize(800, 600));
     mUser1Button->setEnabled(!mEdit->toPlainText().isEmpty());
 }
 
-TranslatorDebugDialog::~TranslatorDebugDialog()
-{
-    writeConfig();
-}
+TranslatorDebugDialog::~TranslatorDebugDialog() = default;
 
 void TranslatorDebugDialog::setDebug(const QString &debugStr)
 {
     mEdit->setPlainText(debugStr);
     mUser1Button->setEnabled(!debugStr.isEmpty());
-}
-
-void TranslatorDebugDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTranslatorDebugDialogConfigGroupName), 800, 600);
-}
-
-void TranslatorDebugDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTranslatorDebugDialogConfigGroupName));
 }
 
 void TranslatorDebugDialog::saveTextAs(const QString &text, const QString &filter, QWidget *parent, const QUrl &url, const QString &caption)

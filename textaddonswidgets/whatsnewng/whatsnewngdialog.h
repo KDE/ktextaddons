@@ -50,8 +50,6 @@ public:
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void initialize();
-    TEXTADDONSWIDGETS_NO_EXPORT void readConfig();
-    TEXTADDONSWIDGETS_NO_EXPORT void writeConfig();
     WhatsNewNgWidget *const mWhatsNewWidget;
 };
 }

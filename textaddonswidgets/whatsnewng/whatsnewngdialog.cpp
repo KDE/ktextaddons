@@ -50,23 +50,9 @@ void WhatsNewNgDialog::initialize()
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &WhatsNewNgDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myWhatsNewNgDialogNgGroupName), QSize(400, 300));
 }
 
-WhatsNewNgDialog::~WhatsNewNgDialog()
-{
-    writeConfig();
-}
-
-void WhatsNewNgDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myWhatsNewNgDialogNgGroupName), 400, 300);
-}
-
-void WhatsNewNgDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myWhatsNewNgDialogNgGroupName));
-}
+WhatsNewNgDialog::~WhatsNewNgDialog() = default;
 
 #include "moc_whatsnewngdialog.cpp"

@@ -101,8 +101,6 @@ target_sources(
         layout/textaddonswidgetflowlayout.cpp
         misc/loaddialogsizeutils.h
         misc/loaddialogsizeutils.cpp
-        misc/savedsizedialog.h
-        misc/savedsizedialog.cpp
 )
 
 target_sources(
@@ -274,7 +272,6 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     SaveFileUtils
     ExecutableUtils
     LoadDialogSizeUtils
-    SavedSizeDialog
     REQUIRED_HEADERS TextAddonsWidgets_misc_HEADERS
     PREFIX TextAddonsWidgets
     RELATIVE misc
@@ -365,6 +362,7 @@ if(BUILD_TESTING)
     add_subdirectory(whatsnew/autotests)
     add_subdirectory(quicksearchbar/autotests)
     add_subdirectory(whatsnewng/autotests)
+    add_subdirectory(misc/autotests)
     add_subdirectory(whatsnewng/tests)
 endif()
 ecm_generate_qdoc(KF6TextAddonsWidgets textaddonswidgets.qdocconf)

@@ -37,8 +37,6 @@ public:
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateMenuConfigureWidget *const mTextMenuConfigureWidget;
 };
 }

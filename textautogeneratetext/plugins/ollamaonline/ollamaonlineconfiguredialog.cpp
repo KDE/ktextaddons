@@ -55,7 +55,7 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaOnlineConfigureDialog::slotAccepted);
 
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myOllamaOnlineConfigureDialogGroupName), QSize(400, 300));
     auto okButton = button(QDialogButtonBox::StandardButton::Ok);
     connect(mOllamaOnlineConfigureWidget, &OllamaOnlineConfigureWidget::enableOkButton, this, [okButton](bool state) {
         okButton->setEnabled(state);
@@ -63,10 +63,7 @@ OllamaOnlineConfigureDialog::OllamaOnlineConfigureDialog(OllamaOnlineManager *ma
     connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &OllamaOnlineConfigureDialog::slotRestoreDefaults);
 }
 
-OllamaOnlineConfigureDialog::~OllamaOnlineConfigureDialog()
-{
-    writeConfig();
-}
+OllamaOnlineConfigureDialog::~OllamaOnlineConfigureDialog() = default;
 
 void OllamaOnlineConfigureDialog::slotRestoreDefaults()
 {
@@ -77,17 +74,6 @@ void OllamaOnlineConfigureDialog::slotAccepted()
 {
     mOllamaOnlineConfigureWidget->saveSettings();
     accept();
-}
-
-void OllamaOnlineConfigureDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaOnlineConfigureDialogGroupName), 400, 300);
-}
-
-void OllamaOnlineConfigureDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaOnlineConfigureDialogGroupName));
 }
 
 #include "moc_ollamaonlineconfiguredialog.cpp"

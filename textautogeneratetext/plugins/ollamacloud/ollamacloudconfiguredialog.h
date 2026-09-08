@@ -18,8 +18,6 @@ public:
     ~OllamaCloudConfigureDialog() override;
 
 private:
-    TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT void slotRestoreDefaults();
     TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT void slotAccepted();
     OllamaCloudConfigureWidget *const mOllamaCloudConfigureWidget;

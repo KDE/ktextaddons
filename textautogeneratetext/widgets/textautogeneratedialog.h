@@ -45,8 +45,6 @@ public:
     void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateText::TextAutoGenerateManager *const mTextAutoGenerateManager;
     TextAutoGenerateStackWidget *const mTextAutoGenerateWidget;
 };

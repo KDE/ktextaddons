@@ -34,30 +34,16 @@ TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateT
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateQuickAskDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myQuickAskDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog()
-{
-    writeConfig();
-}
+TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog() = default;
 
 void TextAutoGenerateQuickAskDialog::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
     if (mManager) {
         mManager->ask(info);
     }
-}
-
-void TextAutoGenerateQuickAskDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myQuickAskDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateQuickAskDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myQuickAskDialogGroupName));
 }
 
 #include "moc_textautogeneratequickaskdialog.cpp"

@@ -30,28 +30,14 @@ TextAutoGenerateShowDebugDialog::TextAutoGenerateShowDebugDialog(QWidget *parent
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateShowDebugDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateShowDebugDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateShowDebugDialog::~TextAutoGenerateShowDebugDialog()
-{
-    writeConfig();
-}
+TextAutoGenerateShowDebugDialog::~TextAutoGenerateShowDebugDialog() = default;
 
 void TextAutoGenerateShowDebugDialog::setPlainText(const QString &text)
 {
     mShowDebugWidget->setPlainText(text);
-}
-
-void TextAutoGenerateShowDebugDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateShowDebugDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateShowDebugDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateShowDebugDialogGroupName));
 }
 
 #include "moc_textautogenerateshowdebugdialog.cpp"

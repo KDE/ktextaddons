@@ -18,8 +18,6 @@ public:
     ~OllamaOnlineConfigureDialog() override;
 
 private:
-    TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void slotAccepted();
     TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT void slotRestoreDefaults();
     OllamaOnlineConfigureWidget *const mOllamaOnlineConfigureWidget;

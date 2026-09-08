@@ -32,13 +32,10 @@ TextAutoGeneratePromptDialog::TextAutoGeneratePromptDialog(QWidget *parent)
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGeneratePromptDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGeneratePromptDialog::accept);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGeneratePromptDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGeneratePromptDialog::~TextAutoGeneratePromptDialog()
-{
-    writeConfig();
-}
+TextAutoGeneratePromptDialog::~TextAutoGeneratePromptDialog() = default;
 
 void TextAutoGeneratePromptDialog::setPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
@@ -48,17 +45,6 @@ void TextAutoGeneratePromptDialog::setPrompt(const TextAutoGenerateText::TextAut
 TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptDialog::prompt() const
 {
     return mPromptWidget->prompt();
-}
-
-void TextAutoGeneratePromptDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGeneratePromptDialogGroupName), 400, 300);
-}
-
-void TextAutoGeneratePromptDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGeneratePromptDialogGroupName));
 }
 
 #include "moc_textautogeneratepromptdialog.cpp"

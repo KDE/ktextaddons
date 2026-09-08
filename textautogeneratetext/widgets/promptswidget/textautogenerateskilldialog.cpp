@@ -32,13 +32,10 @@ TextAutoGenerateSkillDialog::TextAutoGenerateSkillDialog(QWidget *parent)
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateSkillDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateSkillDialog::accept);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateSkillDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateSkillDialog::~TextAutoGenerateSkillDialog()
-{
-    writeConfig();
-}
+TextAutoGenerateSkillDialog::~TextAutoGenerateSkillDialog() = default;
 
 void TextAutoGenerateSkillDialog::setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &prompt)
 {
@@ -48,17 +45,6 @@ void TextAutoGenerateSkillDialog::setSkill(const TextAutoGenerateText::TextAutoG
 TextAutoGenerateText::TextAutoGenerateSkill TextAutoGenerateSkillDialog::skill() const
 {
     return mSkillWidget->skill();
-}
-
-void TextAutoGenerateSkillDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateSkillDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateSkillDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateSkillDialogGroupName));
 }
 
 #include "moc_textautogenerateskilldialog.cpp"

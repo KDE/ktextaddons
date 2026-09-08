@@ -22,8 +22,6 @@ public:
     void setMetaData(const QJsonArray &array);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateToolShowMetaDataWidget *const mTextAutoGenerateToolPluginShowMetaDataWidget;
 };
 }

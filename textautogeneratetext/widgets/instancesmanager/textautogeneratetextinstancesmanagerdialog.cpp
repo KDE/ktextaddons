@@ -34,29 +34,15 @@ TextAutoGenerateTextInstancesManagerDialog::TextAutoGenerateTextInstancesManager
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateTextInstancesManagerDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateTextInstancesManagerDialog::slotAccept);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateTextInstancesManagerDialog::~TextAutoGenerateTextInstancesManagerDialog()
-{
-    writeConfig();
-}
-
-void TextAutoGenerateTextInstancesManagerDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName), 400, 300);
-}
+TextAutoGenerateTextInstancesManagerDialog::~TextAutoGenerateTextInstancesManagerDialog() = default;
 
 void TextAutoGenerateTextInstancesManagerDialog::slotAccept()
 {
     mTextAutoGenerateTextInstancesManagerWidget->save();
     accept();
-}
-
-void TextAutoGenerateTextInstancesManagerDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName));
 }
 
 #include "moc_textautogeneratetextinstancesmanagerdialog.cpp"

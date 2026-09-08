@@ -34,8 +34,6 @@ public:
     ~TextAutoGenerateTextInstancesManagerDialog() override;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAccept();
     TextAutoGenerateTextInstancesManagerWidget *const mTextAutoGenerateTextInstancesManagerWidget;
 };

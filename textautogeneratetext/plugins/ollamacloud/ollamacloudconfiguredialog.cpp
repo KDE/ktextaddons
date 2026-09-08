@@ -54,7 +54,7 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
     }
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaCloudConfigureDialog::slotAccepted);
 
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myOllamaCloudConfigureDialogGroupName), QSize(400, 300));
     auto okButton = button(QDialogButtonBox::StandardButton::Ok);
     connect(mOllamaCloudConfigureWidget, &OllamaCloudConfigureWidget::enableOkButton, this, [okButton](bool state) {
         okButton->setEnabled(state);
@@ -62,10 +62,7 @@ OllamaCloudConfigureDialog::OllamaCloudConfigureDialog(OllamaCloudManager *manag
     connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &OllamaCloudConfigureDialog::slotRestoreDefaults);
 }
 
-OllamaCloudConfigureDialog::~OllamaCloudConfigureDialog()
-{
-    writeConfig();
-}
+OllamaCloudConfigureDialog::~OllamaCloudConfigureDialog() = default;
 
 void OllamaCloudConfigureDialog::slotRestoreDefaults()
 {
@@ -76,17 +73,6 @@ void OllamaCloudConfigureDialog::slotAccepted()
 {
     mOllamaCloudConfigureWidget->saveSettings();
     accept();
-}
-
-void OllamaCloudConfigureDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaCloudConfigureDialogGroupName), 400, 300);
-}
-
-void OllamaCloudConfigureDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaCloudConfigureDialogGroupName));
 }
 
 #include "moc_ollamacloudconfiguredialog.cpp"

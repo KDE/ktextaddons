@@ -33,13 +33,10 @@ TextAutoGenerateMenuConfigureDialog::TextAutoGenerateMenuConfigureDialog(QWidget
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &TextAutoGenerateMenuConfigureDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &TextAutoGenerateMenuConfigureDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateMenuConfigureDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateMenuConfigureDialog::~TextAutoGenerateMenuConfigureDialog()
-{
-    writeConfig();
-}
+TextAutoGenerateMenuConfigureDialog::~TextAutoGenerateMenuConfigureDialog() = default;
 
 void TextAutoGenerateMenuConfigureDialog::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
 {
@@ -49,17 +46,6 @@ void TextAutoGenerateMenuConfigureDialog::setTextInfos(const QList<TextAutoGener
 QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuConfigureDialog::textInfos() const
 {
     return mTextMenuConfigureWidget->textInfos();
-}
-
-void TextAutoGenerateMenuConfigureDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateMenuConfigureDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateMenuConfigureDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateMenuConfigureDialogGroupName));
 }
 
 #include "moc_textautogeneratemenuconfiguredialog.cpp"

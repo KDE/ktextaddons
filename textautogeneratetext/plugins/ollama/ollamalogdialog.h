@@ -18,7 +18,5 @@ public:
     void setLog(const QByteArray &ba);
 
 private:
-    void readConfig();
-    void writeConfig();
     OllamaLogTextEdit *const mPlainTextEdit;
 };

@@ -34,23 +34,9 @@ TextAutoGenerateSearchDialog::TextAutoGenerateSearchDialog(TextAutoGenerateText:
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateSearchDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateSearchDialogGroupName), QSize(400, 300));
 }
 
-TextAutoGenerateSearchDialog::~TextAutoGenerateSearchDialog()
-{
-    writeConfig();
-}
-
-void TextAutoGenerateSearchDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myTextAutoGenerateSearchDialogGroupName), 400, 300);
-}
-
-void TextAutoGenerateSearchDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateSearchDialogGroupName));
-}
+TextAutoGenerateSearchDialog::~TextAutoGenerateSearchDialog() = default;
 
 #include "moc_textautogeneratesearchdialog.cpp"

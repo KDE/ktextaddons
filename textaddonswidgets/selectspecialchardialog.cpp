@@ -57,25 +57,12 @@ public:
     }
 
     void _k_slotInsertChar();
-    void readConfig();
-    void writeConfig();
 
     SelectSpecialCharDialog *const q;
     KCharSelect *const mCharSelect;
     QDialogButtonBox *const mButtonBox;
     QPushButton *mSelectButton = nullptr;
 };
-
-void SelectSpecialCharDialogPrivate::readConfig()
-{
-    q->create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(q, QLatin1StringView(mySelectSpecialCharDialogConfigGroupName), 300, 200);
-}
-
-void SelectSpecialCharDialogPrivate::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(q, QLatin1StringView(mySelectSpecialCharDialogConfigGroupName));
-}
 
 void SelectSpecialCharDialogPrivate::_k_slotInsertChar()
 {
@@ -86,13 +73,10 @@ SelectSpecialCharDialog::SelectSpecialCharDialog(QWidget *parent)
     : QDialog(parent)
     , d(new SelectSpecialCharDialogPrivate(this))
 {
-    d->readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySelectSpecialCharDialogConfigGroupName), QSize(300, 200));
 }
 
-SelectSpecialCharDialog::~SelectSpecialCharDialog()
-{
-    d->writeConfig();
-}
+SelectSpecialCharDialog::~SelectSpecialCharDialog() = default;
 
 void SelectSpecialCharDialog::showSelectButton(bool show)
 {

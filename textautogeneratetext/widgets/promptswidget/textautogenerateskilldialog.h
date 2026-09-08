@@ -21,8 +21,6 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateSkill skill() const;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TextAutoGenerateSkillWidget *const mSkillWidget;
 };
 }

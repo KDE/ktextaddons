@@ -31,28 +31,14 @@ OllamaLogDialog::OllamaLogDialog(QWidget *parent)
     button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &OllamaLogDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myOllamaLogDialogGroupName), QSize(400, 300));
 }
 
-OllamaLogDialog::~OllamaLogDialog()
-{
-    writeConfig();
-}
+OllamaLogDialog::~OllamaLogDialog() = default;
 
 void OllamaLogDialog::setLog(const QByteArray &ba)
 {
     mPlainTextEdit->setPlainText(QString::fromLocal8Bit(ba));
-}
-
-void OllamaLogDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaLogDialogGroupName), 400, 300);
-}
-
-void OllamaLogDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaLogDialogGroupName));
 }
 
 #include "moc_ollamalogdialog.cpp"

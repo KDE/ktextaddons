@@ -33,8 +33,6 @@ public:
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotAccepted();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotRestoreDefaults();
-    TEXTEDITTEXTTOSPEECH_NO_EXPORT void readConfig();
-    TEXTEDITTEXTTOSPEECH_NO_EXPORT void writeConfig();
     TextEditTextToSpeech::TextToSpeechConfigWidget *const mTextToSpeechConfigWidget;
 };
 }

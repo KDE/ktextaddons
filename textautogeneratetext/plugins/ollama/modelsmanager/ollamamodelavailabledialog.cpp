@@ -34,23 +34,9 @@ OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, Q
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &OllamaModelAvailableDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &OllamaModelAvailableDialog::reject);
-    readConfig();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myOllamaModelDialogGroupName), QSize(400, 300));
 }
 
-OllamaModelAvailableDialog::~OllamaModelAvailableDialog()
-{
-    writeConfig();
-}
-
-void OllamaModelAvailableDialog::readConfig()
-{
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myOllamaModelDialogGroupName), 400, 300);
-}
-
-void OllamaModelAvailableDialog::writeConfig()
-{
-    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaModelDialogGroupName));
-}
+OllamaModelAvailableDialog::~OllamaModelAvailableDialog() = default;
 
 #include "moc_ollamamodelavailabledialog.cpp"
