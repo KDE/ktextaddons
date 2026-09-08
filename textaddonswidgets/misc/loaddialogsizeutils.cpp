@@ -24,6 +24,7 @@ void TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(QWidget *w, co
     } else {
         const qreal scaleFactor = w->windowHandle()->screen()->devicePixelRatio();
         w->windowHandle()->resize(QSize(width * scaleFactor, height * scaleFactor));
+        w->resize(w->windowHandle()->size()); // workaround for QTBUG-40584
     }
 }
 

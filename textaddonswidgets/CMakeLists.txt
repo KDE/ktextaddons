@@ -101,6 +101,8 @@ target_sources(
         layout/textaddonswidgetflowlayout.cpp
         misc/loaddialogsizeutils.h
         misc/loaddialogsizeutils.cpp
+        misc/savedsizedialog.h
+        misc/savedsizedialog.cpp
 )
 
 target_sources(
@@ -272,6 +274,7 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     SaveFileUtils
     ExecutableUtils
     LoadDialogSizeUtils
+    SavedSizeDialog
     REQUIRED_HEADERS TextAddonsWidgets_misc_HEADERS
     PREFIX TextAddonsWidgets
     RELATIVE misc
