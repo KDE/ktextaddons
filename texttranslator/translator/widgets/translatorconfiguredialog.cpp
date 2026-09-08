@@ -41,3 +41,5 @@ void TranslatorConfigureDialog::slotAccept()
     mTranslatorConfigureWidget->saveSettings();
     accept();
 }
+
+#include "moc_translatorconfiguredialog.cpp"
