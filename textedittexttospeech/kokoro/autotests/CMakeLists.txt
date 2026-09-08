@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-macro(add_textedit_texttospeech_kokoro_unittest _source)
+macro(add_texttospeech_kokoro_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "texttospeech-kokoro-"
@@ -8,4 +8,6 @@ macro(add_textedit_texttospeech_kokoro_unittest _source)
     )
 endmacro()
 
-add_textedit_texttospeech_kokoro_unittest(texttospeechkokoroutilstest.cpp)
+add_texttospeech_kokoro_unittest(texttospeechkokoroutilstest.cpp)
+add_texttospeech_kokoro_unittest(texttospeechkokoroinstallpythondialogtest.cpp)
+add_texttospeech_kokoro_unittest(texttospeechkokoroinstallpythonwidgettest.cpp)
