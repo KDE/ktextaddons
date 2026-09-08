@@ -20,6 +20,8 @@ target_sources(
         texttospeechkokoroinstallpythonwidget.h
         texttospeechkokoroinstallpythonwidget.cpp
         textedittexttospeech_kokoro_private_export.h
+        texttospeechkokorocheckjob.h
+        texttospeechkokorocheckjob.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -39,6 +41,7 @@ target_link_libraries(
         Qt::Widgets
     PRIVATE
         KF6::I18n
+        KF6::TextAddonsWidgets
 )
 
 set_target_properties(
