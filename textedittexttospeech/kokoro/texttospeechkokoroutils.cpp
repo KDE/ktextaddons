@@ -5,6 +5,7 @@
 */
 #include "texttospeechkokoroutils.h"
 
+#include <QStandardPaths>
 #include <array>
 
 using namespace Qt::Literals::StringLiterals;
@@ -117,4 +118,10 @@ QString TextEditTextToSpeech::TextToSpeechKokoroUtils::languageCode(const QStrin
 QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScript()
 {
     return u"kokoro_helper.py"_s;
+}
+
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScriptPath()
+{
+    const QString path = QStandardPaths::findExecutable(TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScript());
+    return path;
 }

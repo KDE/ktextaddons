@@ -6,6 +6,7 @@
 #pragma once
 #include "textedittexttospeech_kokoro_private_export.h"
 #include <QWidget>
+class QPlainTextEdit;
 namespace TextEditTextToSpeech
 {
 class KOKOROTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonWidget : public QWidget
@@ -14,5 +15,8 @@ class KOKOROTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonWidget : pu
 public:
     explicit TextToSpeechKokoroInstallPythonWidget(QWidget *parent = nullptr);
     ~TextToSpeechKokoroInstallPythonWidget() override;
+
+private:
+    QPlainTextEdit *const mPlainTextEdit;
 };
 }
