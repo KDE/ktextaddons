@@ -135,7 +135,6 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateWidget::needToAddInstances);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
             slotInitializeDone();
-            mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
             Q_EMIT pluginInitialized();
         });
     }
@@ -277,11 +276,17 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 
 void TextAutoGenerateWidget::slotInitializeDone()
 {
+    auto *plugin = mManager->textAutoGeneratePlugin();
+    if (!plugin) {
+        // pluginsInitializedDone() is also emitted when no instance is configured yet.
+        // Keep the pending messages, they will be sent when an instance is added.
+        return;
+    }
     for (const auto &info : std::as_const(mAskMessageList)) {
         slotEditingFinished(info.message, {}, info.tools, TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments));
     }
     mAskMessageList.clear();
-    mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
+    mHeaderWidget->setModelList(plugin->models());
 }
 
 void TextAutoGenerateWidget::slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)

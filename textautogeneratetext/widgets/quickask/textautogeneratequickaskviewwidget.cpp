@@ -57,7 +57,9 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
 
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
-            mTextAutoGenerateQuickAskHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
+            if (auto *plugin = mManager->textAutoGeneratePlugin()) {
+                mTextAutoGenerateQuickAskHeaderWidget->setModelList(plugin->models());
+            }
         });
     }
     connect(mTextAutoGenerateQuickAskHeaderWidget,
