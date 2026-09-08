@@ -9,4 +9,5 @@
 namespace TextAddonsWidgets::LoadDialogSizeUtils
 {
 void TEXTADDONSWIDGETS_EXPORT loadDialogSizeScaled(QWidget *w, const QString &key, int width, int height);
+void TEXTADDONSWIDGETS_EXPORT saveDialogSize(QWidget *w, const QString &key);
 };

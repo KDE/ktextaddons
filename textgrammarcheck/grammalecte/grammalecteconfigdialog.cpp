@@ -7,13 +7,9 @@
 #include "grammalecteconfigdialog.h"
 
 #include "grammalecteconfigwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -47,8 +43,7 @@ GrammalecteConfigDialog::~GrammalecteConfigDialog()
 
 void GrammalecteConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGrammalecteConfigDialog));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myConfigGrammalecteConfigDialog));
 }
 
 void GrammalecteConfigDialog::readConfig()

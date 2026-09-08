@@ -6,13 +6,9 @@
 
 #include "textautogeneratetoolshowmetadatadialog.h"
 #include "textautogeneratetoolshowmetadatawidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -52,8 +48,7 @@ void TextAutoGenerateToolShowMetaDataDialog::readConfig()
 
 void TextAutoGenerateToolShowMetaDataDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateToolPluginShowMetaDataDialogGroupName));
 }
 
 void TextAutoGenerateToolShowMetaDataDialog::setMetaData(const QJsonObject &obj)

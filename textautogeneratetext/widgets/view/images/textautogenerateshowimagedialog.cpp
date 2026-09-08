@@ -9,18 +9,14 @@
 #include "textautogenerateshowimagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KApplicationTrader>
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <KStandardActions>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QMenu>
 #include <QMimeDatabase>
 #include <QPushButton>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace
@@ -104,8 +100,7 @@ void TextAutoGenerateShowImageDialog::readConfig()
 
 void TextAutoGenerateShowImageDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateShowImageDialogGroupName));
 }
 
 void TextAutoGenerateShowImageDialog::updateServiceList()

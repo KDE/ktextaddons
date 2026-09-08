@@ -5,13 +5,9 @@
 */
 #include "textautogenerateshowmodelinfodialog.h"
 #include "widgets/common/textautogenerateshowmodelinfowidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -57,8 +53,7 @@ void TextAutoGenerateShowModelInfoDialog::readConfig()
 
 void TextAutoGenerateShowModelInfoDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateShowModelInfoDialogGroupName));
 }
 
 #include "moc_textautogenerateshowmodelinfodialog.cpp"

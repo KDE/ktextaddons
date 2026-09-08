@@ -6,14 +6,10 @@
 
 #include "ollamalogdialog.h"
 #include "ollamalogtextedit.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPlainTextEdit>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -56,8 +52,7 @@ void OllamaLogDialog::readConfig()
 
 void OllamaLogDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaLogDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaLogDialogGroupName));
 }
 
 #include "moc_ollamalogdialog.cpp"

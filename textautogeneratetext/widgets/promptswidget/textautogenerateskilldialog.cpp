@@ -6,13 +6,9 @@
 #include "textautogenerateskilldialog.h"
 #include "core/prompts/textautogenerateskill.h"
 #include "textautogenerateskillwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -62,8 +58,7 @@ void TextAutoGenerateSkillDialog::readConfig()
 
 void TextAutoGenerateSkillDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateSkillDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateSkillDialogGroupName));
 }
 
 #include "moc_textautogenerateskilldialog.cpp"

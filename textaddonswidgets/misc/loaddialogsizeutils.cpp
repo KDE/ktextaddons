@@ -26,3 +26,14 @@ void TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(QWidget *w, co
         w->windowHandle()->resize(QSize(width * scaleFactor, height * scaleFactor));
     }
 }
+
+void TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(QWidget *w, const QString &key)
+{
+    if (!w || !w->windowHandle()) {
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "widget is not define or windowHandle not defined. It's a bug";
+        return;
+    }
+    KConfigGroup group(KSharedConfig::openStateConfig(), key);
+    KWindowConfig::saveWindowSize(w->windowHandle(), group);
+    group.sync();
+}

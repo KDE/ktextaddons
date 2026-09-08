@@ -5,13 +5,9 @@
 */
 #include "textautogenerateshowdebugdialog.h"
 #include "textautogenerateshowdebugwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -55,8 +51,7 @@ void TextAutoGenerateShowDebugDialog::readConfig()
 
 void TextAutoGenerateShowDebugDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateShowDebugDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateShowDebugDialogGroupName));
 }
 
 #include "moc_textautogenerateshowdebugdialog.cpp"

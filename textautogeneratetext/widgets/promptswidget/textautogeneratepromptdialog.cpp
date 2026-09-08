@@ -6,13 +6,9 @@
 #include "textautogeneratepromptdialog.h"
 #include "core/prompts/textautogenerateprompt.h"
 #include "textautogeneratepromptwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -62,8 +58,7 @@ void TextAutoGeneratePromptDialog::readConfig()
 
 void TextAutoGeneratePromptDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGeneratePromptDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGeneratePromptDialogGroupName));
 }
 
 #include "moc_textautogeneratepromptdialog.cpp"

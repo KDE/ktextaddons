@@ -7,18 +7,14 @@
 #include "translatordebugdialog.h"
 #include <QPlainTextEdit>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QPointer>
 #include <QPushButton>
 #include <QTextStream>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 #include <cerrno>
@@ -69,9 +65,7 @@ void TranslatorDebugDialog::readConfig()
 
 void TranslatorDebugDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTranslatorDebugDialogConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTranslatorDebugDialogConfigGroupName));
 }
 
 void TranslatorDebugDialog::saveTextAs(const QString &text, const QString &filter, QWidget *parent, const QUrl &url, const QString &caption)

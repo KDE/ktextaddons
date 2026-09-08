@@ -6,13 +6,9 @@
 #include "textautogeneratequickaskdialog.h"
 
 #include "textautogeneratequickaskwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -61,8 +57,7 @@ void TextAutoGenerateQuickAskDialog::readConfig()
 
 void TextAutoGenerateQuickAskDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myQuickAskDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myQuickAskDialogGroupName));
 }
 
 #include "moc_textautogeneratequickaskdialog.cpp"

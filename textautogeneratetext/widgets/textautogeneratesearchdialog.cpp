@@ -7,13 +7,9 @@
 #include "textautogeneratesearchdialog.h"
 
 #include "textautogeneratesearchwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 namespace
@@ -54,8 +50,7 @@ void TextAutoGenerateSearchDialog::readConfig()
 
 void TextAutoGenerateSearchDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateSearchDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateSearchDialogGroupName));
 }
 
 #include "moc_textautogeneratesearchdialog.cpp"

@@ -8,13 +8,9 @@
 #include "genericnetworkavailablemodelwidget.h"
 #include "genericnetworkmanager.h"
 #include "genericnetworknetworkpluginconfigurewidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -69,8 +65,7 @@ void GenericNetworkConfigureDialog::readConfig()
 
 void GenericNetworkConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myGenericNetworkConfigureDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myGenericNetworkConfigureDialogGroupName));
 }
 
 #include "moc_genericnetworkconfiguredialog.cpp"

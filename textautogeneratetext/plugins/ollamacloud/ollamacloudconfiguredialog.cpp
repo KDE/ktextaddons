@@ -10,12 +10,8 @@
 #include "ollamacloudmanager.h"
 #include "ollamacommonmodelavailablewidget.h"
 #include "ollamacommonmodelutils.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QPushButton>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -90,8 +86,7 @@ void OllamaCloudConfigureDialog::readConfig()
 
 void OllamaCloudConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaCloudConfigureDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaCloudConfigureDialogGroupName));
 }
 
 #include "moc_ollamacloudconfiguredialog.cpp"

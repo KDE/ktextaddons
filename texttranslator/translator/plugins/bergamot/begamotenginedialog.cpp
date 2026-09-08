@@ -8,13 +8,9 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginewidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -46,8 +42,7 @@ BegamotEngineDialog::~BegamotEngineDialog()
 
 void BegamotEngineDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1String(myConfigGroupName));
 }
 
 void BegamotEngineDialog::readConfig()

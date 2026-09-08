@@ -7,14 +7,10 @@
 #include "whatsnewngdialog.h"
 #include "whatsnewng/whatsnewngwidget.h"
 
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QCoreApplication>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
@@ -70,8 +66,7 @@ void WhatsNewNgDialog::readConfig()
 
 void WhatsNewNgDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myWhatsNewNgDialogNgGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myWhatsNewNgDialogNgGroupName));
 }
 
 #include "moc_whatsnewngdialog.cpp"

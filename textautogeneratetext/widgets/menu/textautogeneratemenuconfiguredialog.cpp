@@ -8,11 +8,8 @@
 
 #include "textautogeneratemenuconfigurewidget.h"
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -62,8 +59,7 @@ void TextAutoGenerateMenuConfigureDialog::readConfig()
 
 void TextAutoGenerateMenuConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateMenuConfigureDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateMenuConfigureDialogGroupName));
 }
 
 #include "moc_textautogeneratemenuconfiguredialog.cpp"

@@ -8,13 +8,9 @@
 #include "ollamamanager.h"
 #include "ollamamodelavailablewidget.h"
 
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -54,8 +50,7 @@ void OllamaModelAvailableDialog::readConfig()
 
 void OllamaModelAvailableDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaModelDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaModelDialogGroupName));
 }
 
 #include "moc_ollamamodelavailabledialog.cpp"

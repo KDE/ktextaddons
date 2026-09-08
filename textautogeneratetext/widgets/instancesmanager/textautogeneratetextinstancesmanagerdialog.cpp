@@ -7,13 +7,9 @@
 #include "textautogeneratetextinstancesmanagerdialog.h"
 
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -60,8 +56,7 @@ void TextAutoGenerateTextInstancesManagerDialog::slotAccept()
 
 void TextAutoGenerateTextInstancesManagerDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName));
 }
 
 #include "moc_textautogeneratetextinstancesmanagerdialog.cpp"

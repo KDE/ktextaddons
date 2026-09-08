@@ -9,13 +9,9 @@
 
 #include "lmstudioconfigurewidget.h"
 #include "lmstudioplugin.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -78,8 +74,7 @@ void LMStudioConfigureDialog::readConfig()
 
 void LMStudioConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myLMStudioConfigureDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myLMStudioConfigureDialogGroupName));
 }
 
 #include "moc_lmstudioconfiguredialog.cpp"

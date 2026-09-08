@@ -7,14 +7,10 @@
 #include "languagetoolconfigdialog.h"
 
 #include "languagetoolconfigwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -49,8 +45,7 @@ LanguageToolConfigDialog::~LanguageToolConfigDialog()
 
 void LanguageToolConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myConfigGroupName));
 }
 
 void LanguageToolConfigDialog::readConfig()

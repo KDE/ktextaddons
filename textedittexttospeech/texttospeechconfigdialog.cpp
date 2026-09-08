@@ -8,13 +8,9 @@
 #include "texttospeechconfigwidget.h"
 #include <KLocalizedString>
 
-#include <KConfigGroup>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -60,8 +56,7 @@ void TextToSpeechConfigDialog::readConfig()
 
 void TextToSpeechConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName));
 }
 
 void TextToSpeechConfigDialog::slotAccepted()

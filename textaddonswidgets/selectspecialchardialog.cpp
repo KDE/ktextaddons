@@ -8,14 +8,10 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include <KCharSelect>
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -78,8 +74,7 @@ void SelectSpecialCharDialogPrivate::readConfig()
 
 void SelectSpecialCharDialogPrivate::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectSpecialCharDialogConfigGroupName));
-    KWindowConfig::saveWindowSize(q->windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(q, QLatin1StringView(mySelectSpecialCharDialogConfigGroupName));
 }
 
 void SelectSpecialCharDialogPrivate::_k_slotInsertChar()

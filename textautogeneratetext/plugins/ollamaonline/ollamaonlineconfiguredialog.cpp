@@ -11,12 +11,8 @@
 #include "ollamacommonmodelutils.h"
 #include "ollamaonlineconfigurewidget.h"
 #include "ollamaonlinemanager.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QPushButton>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
@@ -91,8 +87,7 @@ void OllamaOnlineConfigureDialog::readConfig()
 
 void OllamaOnlineConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaOnlineConfigureDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(this, QLatin1StringView(myOllamaOnlineConfigureDialogGroupName));
 }
 
 #include "moc_ollamaonlineconfiguredialog.cpp"
