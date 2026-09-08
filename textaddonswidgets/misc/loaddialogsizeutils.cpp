@@ -8,6 +8,9 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KWindowConfig>
+#include <QDialog>
+#include <QEvent>
+#include <QPointer>
 #include <QScreen>
 #include <QWindow>
 
@@ -37,4 +40,56 @@ void TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(QWidget *w, const QS
     KConfigGroup group(KSharedConfig::openStateConfig(), key);
     KWindowConfig::saveWindowSize(w->windowHandle(), group);
     group.sync();
+}
+
+namespace
+{
+// Restores the dialog size on the first (non spontaneous) show and stores it
+// again when the dialog is destroyed. Installed as an event filter so that any
+// QDialog subclass can be managed without changing its base class.
+class DialogSizeManager : public QObject
+{
+public:
+    DialogSizeManager(QDialog *dialog, const QString &key, QSize defaultSize)
+        : QObject(dialog)
+        , mDialog(dialog)
+        , mKey(key)
+        , mDefaultSize(defaultSize)
+    {
+        dialog->installEventFilter(this);
+    }
+
+    ~DialogSizeManager() override
+    {
+        // The dialog was never shown: there is no size worth storing.
+        if (mInitialized && mDialog && mDialog->windowHandle()) {
+            TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(mDialog, mKey);
+        }
+    }
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override
+    {
+        if (watched == mDialog && event->type() == QEvent::Show && !event->spontaneous() && !mInitialized) {
+            mInitialized = true;
+            TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(mDialog, mKey, mDefaultSize.width(), mDefaultSize.height());
+        }
+        return QObject::eventFilter(watched, event);
+    }
+
+private:
+    const QPointer<QDialog> mDialog;
+    const QString mKey;
+    const QSize mDefaultSize;
+    bool mInitialized = false;
+};
+}
+
+void TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(QDialog *dialog, const QString &key, QSize defaultSize)
+{
+    if (!dialog) {
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "dialog is not defined. It's a bug";
+        return;
+    }
+    new DialogSizeManager(dialog, key, defaultSize);
 }
