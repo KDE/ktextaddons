@@ -22,6 +22,8 @@ target_sources(
         textedittexttospeech_kokoro_private_export.h
         texttospeechkokorocheckjob.h
         texttospeechkokorocheckjob.cpp
+        texttospeechkokoroinstalljob.h
+        texttospeechkokoroinstalljob.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
