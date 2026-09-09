@@ -21,6 +21,7 @@ public:
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
+    void needToReinstall();
     void packagesInstalled();
     void needToInstallPackages(const QStringList &missing);
 };

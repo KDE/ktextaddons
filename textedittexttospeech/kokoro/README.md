@@ -13,4 +13,6 @@ python3.11 -m venv ~/.venv/kokoro
 ~/.venv/kokoro/bin/pip install
 --index-url https://download.pytorch.org/whl/cpu torch
 ~/.venv/kokoro/bin/pip install kokoro
+
+~/.venv/kokoro/bin/python /usr/bin/kokoro_helper.py check
 ```
