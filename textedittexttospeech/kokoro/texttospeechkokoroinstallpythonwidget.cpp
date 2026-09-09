@@ -5,8 +5,11 @@
 */
 #include "texttospeechkokoroinstallpythonwidget.h"
 #include <KLocalizedString>
+#include <QLabel>
 #include <QPlainTextEdit>
+#include <QPushButton>
 #include <QVBoxLayout>
+
 using namespace TextEditTextToSpeech;
 using namespace Qt::Literals::StringLiterals;
 TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWidget *parent)
