@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-10-16 20:55+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgstr "Tarkistussumma ei ole oikein."
 msgid "Error during writing on disk: %1"
 msgstr "Virhe kirjoitettaessa levylle: %1"
 
-#: speechtotext/plugins/vosk/voskenginedialog.cpp:28
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2026-08-17 11:10+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -242,26 +242,26 @@ msgstr "Активиране на: %1"
 msgid "Generic"
 msgstr "Общи"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "Настройване на %1"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#: plugins/ollama/ollamaconfiguredialog.cpp:46
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Общи"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
-#: plugins/ollama/ollamaconfiguredialog.cpp:56
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:42
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:37
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -485,13 +485,13 @@ msgstr "Стартиране на LMStudio"
 msgid "LMStudio"
 msgstr "LMStudio"
 
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
 msgstr "Конфигуриране на LMStudio"
 
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:37
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
@@ -531,7 +531,7 @@ msgstr "LMStudio не е намерен в системата."
 msgid "Impossible to start LMStudio."
 msgstr "Не е възможно да се стартира LMStudio."
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -733,19 +733,19 @@ msgstr "Замяна на версията на GFX:"
 msgid "Default Model Path:"
 msgstr "Път по подразбиране на модела:"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Конфигуриране на Олама"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:62
+#: plugins/ollama/ollamaconfiguredialog.cpp:58
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Инсталирани модели"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:68
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -787,7 +787,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Неуспешно стартиране на 2Ollama"
 
-#: plugins/ollama/ollamalogdialog.cpp:27
+#: plugins/ollama/ollamalogdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
@@ -839,7 +839,7 @@ msgstr "Невъзможно е да се стартира Ollama."
 msgid "Ollama (Cloud)"
 msgstr "Ollama (Cloud)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
@@ -2960,7 +2960,7 @@ msgstr "Информация за модела"
 msgid "Ollama (Online)"
 msgstr "Ollama (Online)"
 
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
@@ -3016,7 +3016,7 @@ msgstr ""
 "Режимът за пестене на енергия е активиран, това ще забави генерирането на "
 "съобщения."
 
-#: widgets/common/textautogenerateshowmodelinfodialog.cpp:27
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
@@ -3085,7 +3085,7 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "Грешка при отваряне на файла"
 
-#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:27
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:23
 #, kde-format
 msgid "Metadata Info"
 msgstr "Инфо на метаданни"
@@ -3129,8 +3129,8 @@ msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "Показване на инфо на метаданни"
 
-#: widgets/debug/textautogenerateshowdebugdialog.cpp:26
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:27
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:22
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3154,7 +3154,7 @@ msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Избиране на вид на екземпляра:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:28
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
@@ -3211,7 +3211,7 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Добавяне на екземпляр…"
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:27
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
@@ -3289,7 +3289,7 @@ msgstr "Разни"
 msgid "Travel"
 msgstr "Пътуване"
 
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, fuzzy, kde-format
 #| msgid "Prompt"
 msgctxt "@title:window"
@@ -3324,7 +3324,7 @@ msgstr "Премахване на промпта"
 msgid "Instructions:"
 msgstr "Инструкции:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:29
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -3361,7 +3361,7 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Запазване на дискусията в базата данни"
 
-#: widgets/textautogeneratedialog.cpp:35
+#: widgets/textautogeneratedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
@@ -3403,7 +3403,7 @@ msgctxt "@action"
 msgid "Next Chat"
 msgstr "Следващ чат"
 
-#: widgets/textautogeneratesearchdialog.cpp:29
+#: widgets/textautogeneratesearchdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
@@ -3414,12 +3414,12 @@ msgstr "Търсене"
 msgid "No plugin found."
 msgstr "Не е намерен плъгин."
 
-#: widgets/textautogeneratewidget.cpp:240
+#: widgets/textautogeneratewidget.cpp:239
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Докладвана е грешка: %1"
 
-#: widgets/textautogeneratewidget.cpp:240
+#: widgets/textautogeneratewidget.cpp:239
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -3479,23 +3479,23 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "Копиране на блок кода"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:40
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
 msgstr "Показване на изображение"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:60
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:56
 #, kde-format
 msgid "Copy Image to Clipboard"
 msgstr "Копиране на изображението в клипборда"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:62
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:58
 #, kde-format
 msgid "Copy Location to Clipboard"
 msgstr "Копиране на местоположението в клипборда"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:141
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:122
 #, kde-format
 msgid "Other Application..."
 msgstr "Друга програма..."

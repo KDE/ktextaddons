@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2026-07-22 14:58+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -60,7 +60,7 @@ msgstr "Kontrolinė suma yra neteisinga."
 msgid "Error during writing on disk: %1"
 msgstr "Klaida rašant į diską: %1"
 
-#: speechtotext/plugins/vosk/voskenginedialog.cpp:28
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"

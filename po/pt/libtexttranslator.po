@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2023-01-09 18:52+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -324,7 +324,7 @@ msgstr "Galês"
 msgid "Yiddish"
 msgstr "Yiddish"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:27
+#: translator/plugins/bergamot/begamotenginedialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -654,19 +654,19 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: translator/widgets/translatordebugdialog.cpp:35
+#: translator/widgets/translatordebugdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Depuração do Tradutor"
 
-#: translator/widgets/translatordebugdialog.cpp:42
+#: translator/widgets/translatordebugdialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As…"
 msgstr "Gravar Como..."
 
-#: translator/widgets/translatordebugdialog.cpp:87
+#: translator/widgets/translatordebugdialog.cpp:67
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -675,14 +675,14 @@ msgstr ""
 "Não foi possível gravar o ficheiro %1:\n"
 "A \"%2\" é a descrição detalhada do erro."
 
-#: translator/widgets/translatordebugdialog.cpp:91
+#: translator/widgets/translatordebugdialog.cpp:71
 #, fuzzy, kde-format
 #| msgid "Save File Error"
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Erro de Gravação do Ficheiro"
 
-#: translator/widgets/translatordebugdialog.cpp:111
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos os Ficheiros (*)"

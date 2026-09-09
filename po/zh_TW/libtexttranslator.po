@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2025-07-03 23:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -322,7 +322,7 @@ msgstr "威爾斯語"
 msgid "Yiddish"
 msgstr "意第緒語"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:27
+#: translator/plugins/bergamot/begamotenginedialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -642,18 +642,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "引擎："
 
-#: translator/widgets/translatordebugdialog.cpp:35
+#: translator/widgets/translatordebugdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "翻譯程式除錯"
 
-#: translator/widgets/translatordebugdialog.cpp:42
+#: translator/widgets/translatordebugdialog.cpp:38
 #, kde-format
 msgid "Save As…"
 msgstr "另存為…"
 
-#: translator/widgets/translatordebugdialog.cpp:87
+#: translator/widgets/translatordebugdialog.cpp:67
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -662,13 +662,13 @@ msgstr ""
 "無法寫入檔案 %1：\n"
 "詳細錯誤描述為「%2」。"
 
-#: translator/widgets/translatordebugdialog.cpp:91
+#: translator/widgets/translatordebugdialog.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "儲存檔案時出錯"
 
-#: translator/widgets/translatordebugdialog.cpp:111
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有檔案 (*)"

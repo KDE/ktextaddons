@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:43+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-07-11 05:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.4.4\n"
+
+#: kokoro/texttospeechkokoroinstallpythondialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Kokoro Package"
+msgstr ""
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -40,7 +46,7 @@ msgstr "Premor"
 msgid "Play"
 msgstr "Predvajaj"
 
-#: texttospeechconfigdialog.cpp:29
+#: texttospeechconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

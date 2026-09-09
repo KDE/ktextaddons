@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2025-02-24 07:18+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -322,7 +322,7 @@ msgstr "Galés"
 msgid "Yiddish"
 msgstr "Yiddish"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:27
+#: translator/plugins/bergamot/begamotenginedialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -645,18 +645,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: translator/widgets/translatordebugdialog.cpp:35
+#: translator/widgets/translatordebugdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Depuración do tradutor"
 
-#: translator/widgets/translatordebugdialog.cpp:42
+#: translator/widgets/translatordebugdialog.cpp:38
 #, kde-format
 msgid "Save As…"
 msgstr "Gardar como…"
 
-#: translator/widgets/translatordebugdialog.cpp:87
+#: translator/widgets/translatordebugdialog.cpp:67
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -665,13 +665,13 @@ msgstr ""
 "Non se puido escribir no ficheiro %1:\n"
 "«%2» é a descrición detallada do erro."
 
-#: translator/widgets/translatordebugdialog.cpp:91
+#: translator/widgets/translatordebugdialog.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Erro ao gardar o ficheiro"
 
-#: translator/widgets/translatordebugdialog.cpp:111
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos os ficheiros (*)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -322,7 +322,7 @@ msgstr "वेल्श"
 msgid "Yiddish"
 msgstr "यहूदी"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:27
+#: translator/plugins/bergamot/begamotenginedialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
@@ -645,18 +645,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "इंजन:"
 
-#: translator/widgets/translatordebugdialog.cpp:35
+#: translator/widgets/translatordebugdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "अनुवादक डीबग"
 
-#: translator/widgets/translatordebugdialog.cpp:42
+#: translator/widgets/translatordebugdialog.cpp:38
 #, kde-format
 msgid "Save As…"
 msgstr "के रूप रक्षित करें…"
 
-#: translator/widgets/translatordebugdialog.cpp:87
+#: translator/widgets/translatordebugdialog.cpp:67
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -665,13 +665,13 @@ msgstr ""
 "फ़ाइल %1 नहीं लिखी जा सकी:\n"
 "\"%2\" विस्तृत त्रुटि विवरण है।"
 
-#: translator/widgets/translatordebugdialog.cpp:91
+#: translator/widgets/translatordebugdialog.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "फ़ाइल सहेजने में त्रुटि"
 
-#: translator/widgets/translatordebugdialog.cpp:111
+#: translator/widgets/translatordebugdialog.cpp:91
 #, kde-format
 msgid "All Files (*)"
 msgstr "सभी फाइलें (*)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "CheckSum सम्यक् नास्ति।"
 msgid "Error during writing on disk: %1"
 msgstr "डिस्कमध्ये लेखनस्य समये त्रुटिः: %1"
 
-#: speechtotext/plugins/vosk/voskenginedialog.cpp:28
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"

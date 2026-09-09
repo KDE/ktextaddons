@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:43+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2026-05-31 19:49-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kokoro/texttospeechkokoroinstallpythondialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Kokoro Package"
+msgstr ""
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -40,7 +46,7 @@ msgstr "ۋاقىتلىق توختا"
 msgid "Play"
 msgstr "ياڭرات"
 
-#: texttospeechconfigdialog.cpp:29
+#: texttospeechconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

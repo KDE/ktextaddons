@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:43+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-07-11 08:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -18,6 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
+
+#: kokoro/texttospeechkokoroinstallpythondialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Kokoro Package"
+msgstr ""
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -41,7 +47,7 @@ msgstr "Pausa"
 msgid "Play"
 msgstr "Reprodueix"
 
-#: texttospeechconfigdialog.cpp:29
+#: texttospeechconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

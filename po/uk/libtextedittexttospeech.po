@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:43+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-07-11 12:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
+
+#: kokoro/texttospeechkokoroinstallpythondialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Kokoro Package"
+msgstr ""
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -40,7 +46,7 @@ msgstr "Призупинити"
 msgid "Play"
 msgstr "Відтворити"
 
-#: texttospeechconfigdialog.cpp:29
+#: texttospeechconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

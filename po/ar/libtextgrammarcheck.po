@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2025-06-28 17:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -54,7 +54,7 @@ msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "أغلق"
 
-#: grammalecte/grammalecteconfigdialog.cpp:28
+#: grammalecte/grammalecteconfigdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
@@ -301,7 +301,7 @@ msgstr "التاميلية"
 msgid "Ukrainian"
 msgstr "الأوكرانية"
 
-#: languagetool/languagetoolconfigdialog.cpp:29
+#: languagetool/languagetoolconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"

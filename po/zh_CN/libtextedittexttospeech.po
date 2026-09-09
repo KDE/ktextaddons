@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:43+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -16,6 +16,12 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextedittexttospeech.pot\n"
 "X-Crowdin-File-ID: 49532\n"
+
+#: kokoro/texttospeechkokoroinstallpythondialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Kokoro Package"
+msgstr ""
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -39,7 +45,7 @@ msgstr "暂停"
 msgid "Play"
 msgstr "播放"
 
-#: texttospeechconfigdialog.cpp:29
+#: texttospeechconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2026-08-31 17:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -243,26 +243,26 @@ msgstr "Activa: %1"
 msgid "Generic"
 msgstr "Generic"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "Configura %1"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#: plugins/ollama/ollamaconfiguredialog.cpp:46
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "General"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
-#: plugins/ollama/ollamaconfiguredialog.cpp:56
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:42
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:37
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -486,13 +486,13 @@ msgstr ""
 msgid "LMStudio"
 msgstr "LMStudio"
 
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
 msgstr "Configura LMStudio"
 
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:37
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
@@ -532,7 +532,7 @@ msgstr ""
 msgid "Impossible to start LMStudio."
 msgstr "Impossibile startar LMStudio."
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -731,19 +731,19 @@ msgstr ""
 msgid "Default Model Path:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:62
+#: plugins/ollama/ollamaconfiguredialog.cpp:58
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Modellos installate"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:68
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -783,7 +783,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Falleva a startar Ollama"
 
-#: plugins/ollama/ollamalogdialog.cpp:27
+#: plugins/ollama/ollamalogdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
@@ -833,7 +833,7 @@ msgstr ""
 msgid "Ollama (Cloud)"
 msgstr "Ollama (Cloud)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
@@ -2521,7 +2521,7 @@ msgstr "Monstra info de modello"
 msgid "Ollama (Online)"
 msgstr "Ollama In Linea (Online)"
 
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
@@ -2575,7 +2575,7 @@ msgstr "Configura Instantia"
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
 
-#: widgets/common/textautogenerateshowmodelinfodialog.cpp:27
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
@@ -2644,7 +2644,7 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "Error durante que il aperiva file "
 
-#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:27
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:23
 #, kde-format
 msgid "Metadata Info"
 msgstr "Info de Metadatos"
@@ -2689,8 +2689,8 @@ msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "Monstra info de metadatos"
 
-#: widgets/debug/textautogenerateshowdebugdialog.cpp:26
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:27
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:22
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -2714,7 +2714,7 @@ msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Selige un typo de instantia:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:28
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
@@ -2771,7 +2771,7 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Adde instantia..."
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:27
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
@@ -2852,7 +2852,7 @@ msgstr "Misc"
 msgid "Travel"
 msgstr "Viage"
 
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
@@ -2890,7 +2890,7 @@ msgstr "Remove Modello"
 msgid "Instructions:"
 msgstr "Instructiones:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:29
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -2927,7 +2927,7 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "SAlveguarda discussion in base de datos"
 
-#: widgets/textautogeneratedialog.cpp:35
+#: widgets/textautogeneratedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
@@ -2971,7 +2971,7 @@ msgctxt "@action"
 msgid "Next Chat"
 msgstr "Proxime Conversation de gruppo (Chat)"
 
-#: widgets/textautogeneratesearchdialog.cpp:29
+#: widgets/textautogeneratesearchdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
@@ -2982,12 +2982,12 @@ msgstr "Cerca"
 msgid "No plugin found."
 msgstr "Necun plugin trovate."
 
-#: widgets/textautogeneratewidget.cpp:240
+#: widgets/textautogeneratewidget.cpp:239
 #, kde-format
 msgid "Error reported: %1"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:240
+#: widgets/textautogeneratewidget.cpp:239
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -3047,23 +3047,23 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "Copia Codice de Bloco"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:40
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
 msgstr "Monstra imagine"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:60
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:56
 #, kde-format
 msgid "Copy Image to Clipboard"
 msgstr "Copia image in area de transferentia"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:62
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:58
 #, kde-format
 msgid "Copy Location to Clipboard"
 msgstr "Copia location a area de transferentia"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:141
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:122
 #, kde-format
 msgid "Other Application..."
 msgstr "Altere application..."

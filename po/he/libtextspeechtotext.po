@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2024-07-11 08:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -59,7 +59,7 @@ msgstr "סיכום הביקורת שגוי."
 msgid "Error during writing on disk: %1"
 msgstr "שגיאה בכתיבה לכונן: %1"
 
-#: speechtotext/plugins/vosk/voskenginedialog.cpp:28
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"

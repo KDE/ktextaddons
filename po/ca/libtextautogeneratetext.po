@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-31 00:42+0000\n"
+"POT-Creation-Date: 2026-09-09 00:44+0000\n"
 "PO-Revision-Date: 2026-08-24 19:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -247,26 +247,26 @@ msgstr "Activa: %1"
 msgid "Generic"
 msgstr "Genèric"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "Configura %1"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:35
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#: plugins/ollama/ollamaconfiguredialog.cpp:46
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "General"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
-#: plugins/ollama/ollamaconfiguredialog.cpp:56
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:41
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:42
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:37
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -491,13 +491,13 @@ msgstr "Inicia el LMStudio"
 msgid "LMStudio"
 msgstr "LMStudio"
 
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:31
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
 msgstr "Configura el LMStudio"
 
-#: plugins/lmstudio/lmstudioconfiguredialog.cpp:41
+#: plugins/lmstudio/lmstudioconfiguredialog.cpp:37
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
@@ -537,7 +537,7 @@ msgstr "No s'ha trobat el LMStudio en el sistema."
 msgid "Impossible to start LMStudio."
 msgstr "Impossible iniciar el LMStudio."
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -740,19 +740,19 @@ msgstr "Sobreescriu la versió de GFX:"
 msgid "Default Model Path:"
 msgstr "Camí predeterminat dels models:"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura l'Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:62
+#: plugins/ollama/ollamaconfiguredialog.cpp:58
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Models instal·lats"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:68
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -794,7 +794,7 @@ msgstr ""
 msgid "Failed to start Ollama"
 msgstr "Ha falla en iniciar l'Ollama"
 
-#: plugins/ollama/ollamalogdialog.cpp:27
+#: plugins/ollama/ollamalogdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Ollama Log"
@@ -846,7 +846,7 @@ msgstr "Impossible iniciar l'Ollama."
 msgid "Ollama (Cloud)"
 msgstr "Ollama (Cloud)"
 
-#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:31
+#: plugins/ollamacloud/ollamacloudconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
@@ -2988,7 +2988,7 @@ msgstr "Mostra la informació del model"
 msgid "Ollama (Online)"
 msgstr "Ollama (En línia)"
 
-#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:32
+#: plugins/ollamaonline/ollamaonlineconfiguredialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Online"
@@ -3044,7 +3044,7 @@ msgstr ""
 "El mode d'estalvi d'energia està activat. Això alentirà la generació dels "
 "missatges."
 
-#: widgets/common/textautogenerateshowmodelinfodialog.cpp:27
+#: widgets/common/textautogenerateshowmodelinfodialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Model Information"
@@ -3113,7 +3113,7 @@ msgctxt "@title:window"
 msgid "Error Opening File"
 msgstr "Error en obrir el fitxer"
 
-#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:27
+#: widgets/common/textautogeneratetoolshowmetadatadialog.cpp:23
 #, kde-format
 msgid "Metadata Info"
 msgstr "Informació de les metadades"
@@ -3157,8 +3157,8 @@ msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr "Mostra la informació de les metadades"
 
-#: widgets/debug/textautogenerateshowdebugdialog.cpp:26
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:27
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:22
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3182,7 +3182,7 @@ msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Seleccioneu el tipus d'instància:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:28
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
@@ -3239,7 +3239,7 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Afegeix una instància…"
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:27
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
@@ -3317,7 +3317,7 @@ msgstr "Varis"
 msgid "Travel"
 msgstr "Viatge"
 
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:27
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
@@ -3351,7 +3351,7 @@ msgstr "Elimina la petició"
 msgid "Instructions:"
 msgstr "Instruccions:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:29
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -3388,7 +3388,7 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Desa el debat a la base de dades"
 
-#: widgets/textautogeneratedialog.cpp:35
+#: widgets/textautogeneratedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
@@ -3430,7 +3430,7 @@ msgctxt "@action"
 msgid "Next Chat"
 msgstr "Xat nou"
 
-#: widgets/textautogeneratesearchdialog.cpp:29
+#: widgets/textautogeneratesearchdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
@@ -3441,12 +3441,12 @@ msgstr "Cerca"
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
 
-#: widgets/textautogeneratewidget.cpp:240
+#: widgets/textautogeneratewidget.cpp:239
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Error informat: %1"
 
-#: widgets/textautogeneratewidget.cpp:240
+#: widgets/textautogeneratewidget.cpp:239
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -3506,23 +3506,23 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "Copia de bloc de codi"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:40
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Display Image"
 msgstr "Mostra una imatge"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:60
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:56
 #, kde-format
 msgid "Copy Image to Clipboard"
 msgstr "Copia la imatge al porta-retalls"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:62
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:58
 #, kde-format
 msgid "Copy Location to Clipboard"
 msgstr "Copia la ubicació al porta-retalls"
 
-#: widgets/view/images/textautogenerateshowimagedialog.cpp:141
+#: widgets/view/images/textautogenerateshowimagedialog.cpp:122
 #, kde-format
 msgid "Other Application..."
 msgstr "Una altra aplicació..."
