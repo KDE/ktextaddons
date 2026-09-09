@@ -111,7 +111,7 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
         QAction *const configureAct = popup->addAction(QIcon::fromTheme(u"settings-configure"_s), i18n("Configure…"));
         connect(configureAct, &QAction::triggered, this, &GrammarResultTextEdit::configure);
         popup->addSeparator();
-        QAction *const closeAct = KStandardActions::close(this, &GrammarResultTextEdit::closeChecker, this);
+        QAction *const closeAct = KStandardActions::close(this, &GrammarResultTextEdit::closeChecker, popup);
         closeAct->setShortcut({});
         popup->addAction(closeAct);
         popup->exec(event->globalPos());
