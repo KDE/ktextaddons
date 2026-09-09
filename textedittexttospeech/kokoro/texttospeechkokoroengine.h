@@ -7,8 +7,10 @@
 #pragma once
 
 #include <QTextToSpeechEngine>
+#include <memory>
 namespace TextEditTextToSpeech
 {
+class TextToSpeechKokoro;
 class TextToSpeechKokoroEngine : public QTextToSpeechEngine
 {
     Q_OBJECT
@@ -46,6 +48,6 @@ private:
      * can read back what availableVoices() stored.
      */
     [[nodiscard]] static QString kokoroIdentifier(const QVoice &voice);
+    std::unique_ptr<TextToSpeechKokoro> mTextToSpeechKokoro;
 };
-
 }

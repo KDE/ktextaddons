@@ -5,12 +5,14 @@
 */
 
 #include "texttospeechkokoroengine.h"
+#include "texttospeechkokoro.h"
 #include "texttospeechkokoroutils.h"
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 TextToSpeechKokoroEngine::TextToSpeechKokoroEngine([[maybe_unused]] const QVariantMap &parameters, QObject *parent)
     : QTextToSpeechEngine(parent)
+    , mTextToSpeechKokoro(new TextToSpeechKokoro(this))
 {
 }
 
