@@ -289,7 +289,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
 #endif
         if (emojiSupport() && !isReadOnly()) {
             popup->addSeparator();
-            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
+            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(popup);
             popup->addAction(action);
             connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &RichTextEditor::slotInsertEmoticon);
 

@@ -218,7 +218,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
 #endif
         if (emojiSupport()) {
             popup->addSeparator();
-            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
+            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(popup);
             popup->addAction(action);
             connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &PlainTextEditor::slotInsertEmoticon);
         }
