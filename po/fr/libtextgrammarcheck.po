@@ -332,7 +332,7 @@ msgstr "Langue :"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr "Rafraîchir"
+msgstr "Rafraichir"
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

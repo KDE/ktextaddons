@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 02:39+0000\n"
-"PO-Revision-Date: 2026-06-21 09:22+0200\n"
+"PO-Revision-Date: 2026-08-25 15:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -27,7 +27,7 @@ msgstr "Préféré"
 #: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Today"
-msgstr "Aujourd’hui"
+msgstr "Aujourd'hui"
 
 #: core/models/textautogeneratechatsmodel.cpp:175
 #, kde-format
@@ -645,7 +645,7 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
-"Utilisez Vulkan pour l’accélération matérielle. Peut améliorer les "
+"Utilisez Vulkan pour l'accélération matérielle. Peut améliorer les "
 "performances sur certains processeurs graphiques GPU. Cependant, utilisez-le "
 "avec précaution car il peut être instable."
 
