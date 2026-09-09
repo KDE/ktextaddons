@@ -127,9 +127,15 @@ QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScriptPath()
     return path;
 }
 
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPython()
+{
+    const QString python = QDir::homePath() + u"/.venv/kokoro/bin/python"_s;
+    return python;
+}
+
 QString TextEditTextToSpeech::TextToSpeechKokoroUtils::venvPython()
 {
     // We install in venv => for the moment kokoro doesn't work with 3.13 (only 3.11)
-    const QString python = QDir::homePath() + u"/.venv/kokoro/bin/python"_s; // Verify windows/macos
+    const QString python = TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPython(); // Verify windows/macos
     return QFileInfo::exists(python) ? python : QString();
 }

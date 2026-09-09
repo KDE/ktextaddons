@@ -6,6 +6,7 @@
 
 #include "texttospeechkokoroutilstest.h"
 #include "texttospeechkokoroutils.h"
+#include <QDir>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextToSpeechKokoroUtilsTest)
@@ -17,5 +18,10 @@ TextToSpeechKokoroUtilsTest::TextToSpeechKokoroUtilsTest(QObject *parent)
 void TextToSpeechKokoroUtilsTest::shouldHavePythonScript()
 {
     QCOMPARE(TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScript(), u"kokoro_helper.py"_s);
+}
+
+void TextToSpeechKokoroUtilsTest::shouldHaveVenvPython()
+{
+    QCOMPARE(TextEditTextToSpeech::TextToSpeechKokoroUtils::venvPython(), QDir::homePath() + u"/.venv/kokoro/bin/python"_s);
 }
 #include "moc_texttospeechkokoroutilstest.cpp"
