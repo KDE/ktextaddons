@@ -13,3 +13,25 @@ TextToSpeechKokoroInstallJob::TextToSpeechKokoroInstallJob(QObject *parent)
 }
 
 TextToSpeechKokoroInstallJob::~TextToSpeechKokoroInstallJob() = default;
+
+bool TextToSpeechKokoroInstallJob::canStart() const
+{
+    // TODO
+    return false;
+}
+
+void TextToSpeechKokoroInstallJob::start()
+{
+    // TODO
+    deleteLater();
+}
+
+QStringList TextToSpeechKokoroInstallJob::modules() const
+{
+    return mModules;
+}
+
+void TextToSpeechKokoroInstallJob::setModules(const QStringList &newModules)
+{
+    mModules = newModules;
+}

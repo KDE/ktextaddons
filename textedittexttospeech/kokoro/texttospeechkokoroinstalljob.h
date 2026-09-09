@@ -14,5 +14,18 @@ class TextToSpeechKokoroInstallJob : public QObject
 public:
     explicit TextToSpeechKokoroInstallJob(QObject *parent = nullptr);
     ~TextToSpeechKokoroInstallJob() override;
+
+    [[nodiscard]] bool canStart() const;
+
+    void start();
+
+    [[nodiscard]] QStringList modules() const;
+    void setModules(const QStringList &newModules);
+
+Q_SIGNALS:
+    void installDone();
+
+private:
+    QStringList mModules;
 };
 }
