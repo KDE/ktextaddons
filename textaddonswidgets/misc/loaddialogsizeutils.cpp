@@ -11,7 +11,6 @@
 #include <QDialog>
 #include <QEvent>
 #include <QPointer>
-#include <QScreen>
 #include <QWindow>
 
 void TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(QWidget *w, const QString &key, int width, int height)
@@ -20,15 +19,14 @@ void TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(QWidget *w, co
         qCWarning(TEXTADDONSWIDGETS_LOG) << "widget is not define or windowHandle not defined. It's a bug";
         return;
     }
-    if (KSharedConfig::openStateConfig()->hasGroup(key)) {
-        const KConfigGroup group(KSharedConfig::openStateConfig(), key);
-        KWindowConfig::restoreWindowSize(w->windowHandle(), group);
-        w->resize(w->windowHandle()->size()); // workaround for QTBUG-40584
-    } else {
-        const qreal scaleFactor = w->windowHandle()->screen()->devicePixelRatio();
-        w->windowHandle()->resize(QSize(width * scaleFactor, height * scaleFactor));
-        w->resize(w->windowHandle()->size()); // workaround for QTBUG-40584
-    }
+    // QWindow::resize() already works in device independent pixels, so the default
+    // size must not be multiplied by the device pixel ratio. Applying it before
+    // restoreWindowSize() also lets KWindowConfig record it as the initial size, and
+    // keeps it in effect when the group exists without an entry for the current screen.
+    w->windowHandle()->resize(QSize(width, height));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), key);
+    KWindowConfig::restoreWindowSize(w->windowHandle(), group);
+    w->resize(w->windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void TextAddonsWidgets::LoadDialogSizeUtils::saveDialogSize(QWidget *w, const QString &key)

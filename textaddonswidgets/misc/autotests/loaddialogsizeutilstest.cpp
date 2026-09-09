@@ -8,6 +8,7 @@
 #include <KPageDialog>
 #include <KSharedConfig>
 #include <QDialog>
+#include <QElapsedTimer>
 #include <QLabel>
 #include <QRegularExpression>
 #include <QStandardPaths>
@@ -32,6 +33,21 @@ void removeStoredSize(QLatin1StringView group)
 {
     KSharedConfig::openStateConfig()->deleteGroup(group);
     KSharedConfig::openStateConfig()->sync();
+}
+
+// A resize issued right after the window appeared can be dropped by the compositor,
+// and Qt never retries it, so ask again until the platform window really took the new
+// size. Without this the size stored when the dialog goes away is still the old one.
+void resizeAndWait(QWidget *w, QSize size)
+{
+    QElapsedTimer timer;
+    timer.start();
+    while (timer.elapsed() < 5000 && (w->size() != size || w->windowHandle()->size() != size)) {
+        w->resize(size);
+        QTest::qWait(20);
+    }
+    QCOMPARE(w->size(), size);
+    QCOMPARE(w->windowHandle()->size(), size);
 }
 
 // Reopens a managed dialog on the same group and returns the size it got back.
@@ -103,8 +119,7 @@ void LoadDialogSizeUtilsTest::shouldStoreSizeWhenDestroyedWhileVisible()
         TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(&dialog, group, defaultSize);
         dialog.show();
         QVERIFY(QTest::qWaitForWindowExposed(&dialog));
-        dialog.resize(newSize);
-        QTest::qWait(10);
+        resizeAndWait(&dialog, newSize);
     }
     QVERIFY(hasStoredSize(group));
     QCOMPARE(reopenedSize(group), newSize);
@@ -120,8 +135,7 @@ void LoadDialogSizeUtilsTest::shouldStoreSizeWhenAccepted()
         TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(&dialog, group, defaultSize);
         dialog.show();
         QVERIFY(QTest::qWaitForWindowExposed(&dialog));
-        dialog.resize(newSize);
-        QTest::qWait(10);
+        resizeAndWait(&dialog, newSize);
         dialog.accept();
     }
     QCOMPARE(reopenedSize(group), newSize);
@@ -137,8 +151,7 @@ void LoadDialogSizeUtilsTest::shouldStoreSizeWhenClosed()
         TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(&dialog, group, defaultSize);
         dialog.show();
         QVERIFY(QTest::qWaitForWindowExposed(&dialog));
-        dialog.resize(newSize);
-        QTest::qWait(10);
+        resizeAndWait(&dialog, newSize);
         dialog.close();
     }
     QCOMPARE(reopenedSize(group), newSize);
@@ -153,8 +166,7 @@ void LoadDialogSizeUtilsTest::shouldNotReloadSizeOnSecondShow()
     dialog.show();
     QVERIFY(QTest::qWaitForWindowExposed(&dialog));
     const QSize newSize(511, 422);
-    dialog.resize(newSize);
-    QTest::qWait(10);
+    resizeAndWait(&dialog, newSize);
     dialog.hide();
     dialog.show();
     QVERIFY(QTest::qWaitForWindowExposed(&dialog));
@@ -174,8 +186,7 @@ void LoadDialogSizeUtilsTest::shouldManageKPageDialog()
         dialog.show();
         QVERIFY(QTest::qWaitForWindowExposed(&dialog));
         QCOMPARE(dialog.size(), defaultSize);
-        dialog.resize(newSize);
-        QTest::qWait(10);
+        resizeAndWait(&dialog, newSize);
     }
     KPageDialog dialog;
     dialog.addPage(new QLabel(u"page"_s), u"Page"_s);
