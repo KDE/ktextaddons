@@ -1,6 +1,10 @@
 # SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
+# QAudioSink plays what the backend synthesizes. QtMultimedia is only looked up
+# at the end of the top level CMakeLists.txt, after this directory.
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Multimedia)
+
 add_library(kokorotexttospeech)
 ecm_qt_declare_logging_category(kokorotexttospeech
     HEADER texttospeech_kokoro_lib_debug.h
@@ -26,6 +30,8 @@ target_sources(
         texttospeechkokoroinstalljob.cpp
         texttospeechkokoroinstallpythonevenvjob.h
         texttospeechkokoroinstallpythonevenvjob.cpp
+        texttospeechkokoro.h
+        texttospeechkokoro.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -43,6 +49,7 @@ target_link_libraries(
     PUBLIC
         Qt::TextToSpeech
         Qt::Widgets
+        Qt::Multimedia
     PRIVATE
         KF6::I18n
         KF6::TextAddonsWidgets
@@ -84,8 +91,6 @@ target_sources(
     PRIVATE
         texttospeechkokoroengine.h
         texttospeechkokoroengine.cpp
-        texttospeechkokoro.h
-        texttospeechkokoro.cpp
         texttospeechkokoroplugin.h
         texttospeechkokoroplugin.cpp
 )

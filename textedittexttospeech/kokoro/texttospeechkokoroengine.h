@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "texttospeechkokoroutils.h"
 #include <QTextToSpeechEngine>
 #include <memory>
 namespace TextEditTextToSpeech
@@ -18,6 +19,7 @@ public:
     TextToSpeechKokoroEngine(const QVariantMap &parameters, QObject *parent);
     ~TextToSpeechKokoroEngine() override;
 
+    [[nodiscard]] QTextToSpeech::Capabilities capabilities() const override;
     [[nodiscard]] QList<QLocale> availableLocales() const override;
     [[nodiscard]] QList<QVoice> availableVoices() const override;
     void say(const QString &text) override;
@@ -48,6 +50,15 @@ private:
      * can read back what availableVoices() stored.
      */
     [[nodiscard]] static QString kokoroIdentifier(const QVoice &voice);
+
+    /*!
+     * Turns \a kokoroVoice into the QVoice handed over to QTextToSpeech, the
+     * identifier being kept as the voice data.
+     */
+    [[nodiscard]] static QVoice createKokoroVoice(const TextToSpeechKokoroUtils::KokoroVoice &kokoroVoice);
+
+    QLocale mLocale;
+    QVoice mVoice;
     std::unique_ptr<TextToSpeechKokoro> mTextToSpeechKokoro;
 };
 }
