@@ -194,7 +194,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         SendToAssistantInfo info;
         info.message = editSendInfo.message;
         info.messageUuid = llmUuid;
-        info.chatId = d->manager->currentChatId();
+        info.chatId = editSendInfo.chatId;
         info.tools = editSendInfo.tools;
 
         info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport()));
