@@ -35,3 +35,5 @@ void TextToSpeechKokoroInstallJob::setModules(const QStringList &newModules)
 {
     mModules = newModules;
 }
+
+#include "moc_texttospeechkokoroinstalljob.cpp"
