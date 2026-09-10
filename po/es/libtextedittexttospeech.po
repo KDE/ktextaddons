@@ -1,15 +1,15 @@
 # Spanish translations for libtextedittexttospeech.po package.
-# Copyright (C) 2023 This file is copyright:
-# This file is distributed under the same license as the ruqola package.
-#
+# Copyright (C) 2023-2026 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
 # Automatically generated, 2023.
-# SPDX-FileCopyrightText: 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2023-2024, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libtextedittexttospeech\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:44+0000\n"
-"PO-Revision-Date: 2024-07-11 15:23+0200\n"
+"PO-Revision-Date: 2026-09-09 12:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: kokoro/texttospeechkokoroinstallpythondialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Kokoro Package"
-msgstr ""
+msgstr "Instalar el paquete Kokoro"
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -109,7 +109,7 @@ msgstr "Volumen:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
 #, kde-format
