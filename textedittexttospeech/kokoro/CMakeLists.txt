@@ -24,6 +24,8 @@ target_sources(
         texttospeechkokorocheckjob.cpp
         texttospeechkokoroinstalljob.h
         texttospeechkokoroinstalljob.cpp
+        texttospeechkokoroinstallpythonevenvjob.h
+        texttospeechkokoroinstallpythonevenvjob.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

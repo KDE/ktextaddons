@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textedittexttospeech_kokoro_private_export.h"
+#include <QStringList>
 #include <QWidget>
 class QPlainTextEdit;
 namespace TextEditTextToSpeech
@@ -16,7 +17,20 @@ public:
     explicit TextToSpeechKokoroInstallPythonWidget(QWidget *parent = nullptr);
     ~TextToSpeechKokoroInstallPythonWidget() override;
 
+    [[nodiscard]] QStringList modules() const;
+    void setModules(const QStringList &newModules);
+
+    void startInstall();
+
+Q_SIGNALS:
+    void installDone();
+    void installFailed();
+
 private:
+    void appendMessage(const QString &message);
+    void installModules();
+
     QPlainTextEdit *const mPlainTextEdit;
+    QStringList mModules;
 };
 }
