@@ -452,7 +452,7 @@ bool TextAutoGenerateListViewDelegate::mouseEvent(QEvent *event, const QStyleOpt
             return true;
         }
         const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
-        if (message->messageAttachments()) {
+        if (message && message->messageAttachments()) {
             const auto attachments = message->messageAttachments()->messageAttachments();
             int i = 0;
             for (const TextAutoGenerateAttachment &att : attachments) {
