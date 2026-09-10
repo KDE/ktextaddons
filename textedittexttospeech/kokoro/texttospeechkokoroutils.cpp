@@ -127,10 +127,29 @@ QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScriptPath()
     return path;
 }
 
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPath()
+{
+    const QString path = QDir::homePath() + u"/.venv/kokoro"_s;
+    return path;
+}
+
 QString TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPython()
 {
-    const QString python = QDir::homePath() + u"/.venv/kokoro/bin/python"_s;
+    const QString python = TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPath() + u"/bin/python"_s;
     return python;
+}
+
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPip()
+{
+    const QString pip = TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPath() + u"/bin/pip"_s;
+    return pip;
+}
+
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::venvPip()
+{
+    // The pip of the venv, so that the modules are installed in it and not system wide.
+    const QString pip = TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPip();
+    return QFileInfo::exists(pip) ? pip : QString();
 }
 
 QString TextEditTextToSpeech::TextToSpeechKokoroUtils::venvPython()
