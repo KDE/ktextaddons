@@ -389,14 +389,14 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
     for (int i = static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown) + 1;
          i <= static_cast<int>(GenericNetworkManager::PluginNetworkType::LastElement);
          ++i) {
-        const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
+        TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
             .localizedName = u"%1 (%2)"_s.arg(
                 translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
                 TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network)),
             .identifier = pluginName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
             .pluginName = name,
         };
-        listInfo.append(info);
+        listInfo.append(std::move(info));
     }
     return listInfo;
 }

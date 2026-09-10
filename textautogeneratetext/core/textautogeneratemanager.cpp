@@ -448,7 +448,7 @@ void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId, const QByt
         TextAutoGenerateMessage newMsg = m;
         newMsg.setUuid(TextAutoGenerateTextUtils::generateUUid());
         convertUuid.insert(m.uuid(), newMsg.uuid());
-        newMessages.append(newMsg);
+        newMessages.append(std::move(newMsg));
         if (m.uuid() == untilMessageUUid) {
             break;
         }

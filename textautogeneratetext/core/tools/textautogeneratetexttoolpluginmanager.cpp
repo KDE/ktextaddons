@@ -117,13 +117,13 @@ QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> TextAutoGenerateTex
     for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = activePluginsList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             if (plugin->enabled()) {
-                const TextAutoGenerateTextToolPluginManager::PluginToolInfo info{
+                TextAutoGenerateTextToolPluginManager::PluginToolInfo info{
                     .iconName = plugin->iconName(),
                     .displayName = plugin->displayName(),
                     .description = plugin->description(),
                     .identifier = plugin->toolNameId(),
                 };
-                list.append(info);
+                list.append(std::move(info));
             }
         }
     }

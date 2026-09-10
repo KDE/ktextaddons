@@ -56,8 +56,8 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         toolInfo.index = index;
         toolInfo.toolCallArgument.reserve(argumentObj.size());
         for (auto it = argumentObj.constBegin(); it != argumentObj.constEnd(); ++it) {
-            const ToolCallArgument arg{.keyTool = it.key(), .value = jsonValueToString(it.value())};
-            toolInfo.toolCallArgument.append(arg);
+            ToolCallArgument arg{.keyTool = it.key(), .value = jsonValueToString(it.value())};
+            toolInfo.toolCallArgument.append(std::move(arg));
         }
         infos.append(toolInfo);
     }
@@ -101,8 +101,8 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         toolInfo.index = index;
         toolInfo.toolCallArgument.reserve(argumentObj.size());
         for (auto it = argumentObj.constBegin(); it != argumentObj.constEnd(); ++it) {
-            const ToolCallArgument arg{.keyTool = it.key(), .value = jsonValueToString(it.value())};
-            toolInfo.toolCallArgument.append(arg);
+            ToolCallArgument arg{.keyTool = it.key(), .value = jsonValueToString(it.value())};
+            toolInfo.toolCallArgument.append(std::move(arg));
         }
         infos.append(toolInfo);
     }

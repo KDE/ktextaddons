@@ -93,8 +93,8 @@ TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(const Q
     QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> infos;
     infos.reserve(files.count());
     for (const auto &file : files) {
-        if (const auto info = createAttachmentElementInfoFromFile(file); info.isValid()) {
-            infos.append(info);
+        if (auto info = createAttachmentElementInfoFromFile(file); info.isValid()) {
+            infos.append(std::move(info));
         }
     }
     return infos;
@@ -124,8 +124,8 @@ QList<TextAutoGenerateAttachment> TextAutoGenerateAttachmentUtils::generateAttac
     QList<TextAutoGenerateAttachment> lstAttachment;
     lstAttachment.reserve(info.count());
     for (const auto &attachmentInfo : info) {
-        const TextAutoGenerateAttachment att = generateAttachmentFromAttachmentElementInfo(attachmentInfo);
-        lstAttachment.append(att);
+        TextAutoGenerateAttachment att = generateAttachmentFromAttachmentElementInfo(attachmentInfo);
+        lstAttachment.append(std::move(att));
     }
     return lstAttachment;
 }
