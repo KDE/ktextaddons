@@ -7,6 +7,8 @@
 
 #include "textedittexttospeech_kokoro_private_export.h"
 #include <QDialog>
+#include <QStringList>
+class QPushButton;
 namespace TextEditTextToSpeech
 {
 class TextToSpeechKokoroInstallPythonWidget;
@@ -17,7 +19,11 @@ public:
     explicit TextToSpeechKokoroInstallPythonDialog(QWidget *parent = nullptr);
     ~TextToSpeechKokoroInstallPythonDialog() override;
 
+    void setModules(const QStringList &modules);
+    void startInstall();
+
 private:
     TextToSpeechKokoroInstallPythonWidget *const mKokoroInstallPythonWidget;
+    QPushButton *const mCloseButton;
 };
 }
