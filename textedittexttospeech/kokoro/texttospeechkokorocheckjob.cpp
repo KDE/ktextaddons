@@ -7,6 +7,7 @@
 #include "texttospeechkokorocheckjob.h"
 #include "texttospeech_kokoro_lib_debug.h"
 #include "texttospeechkokoroutils.h"
+#include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -14,6 +15,47 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
+
+namespace
+{
+// "check" exits with 1 when kokoro is not usable, which is not an error here:
+// only the json printed on stdout matters, stderr carries the logs of the script.
+[[nodiscard]] TextToSpeechKokoroCheckJob::CheckResult parseCheckResult(const QByteArray &json)
+{
+    TextToSpeechKokoroCheckJob::CheckResult result;
+    const QJsonObject obj = QJsonDocument::fromJson(json).object();
+    if (obj.value("available"_L1).toBool()) {
+        return result;
+    }
+    const QJsonArray array = obj.value("missing"_L1).toArray();
+    for (const auto &value : array) {
+        result.missing.append(value.toString());
+    }
+    if (obj.value("espeakNg"_L1).toString().isEmpty()) {
+        result.missing.append(u"espeak-ng"_s);
+    }
+    // An empty or unreadable answer says nothing about what to install.
+    result.needToReinstall = result.missing.isEmpty();
+    return result;
+}
+}
+
+bool TextToSpeechKokoroCheckJob::CheckResult::isValid() const
+{
+    return !needToReinstall && missing.isEmpty();
+}
+
+QString TextToSpeechKokoroCheckJob::CheckResult::errorString() const
+{
+    if (needToReinstall) {
+        return i18n("Kokoro is not usable. Please reinstall it.");
+    }
+    if (!missing.isEmpty()) {
+        return i18n("Kokoro is not installed. Missing: %1", missing.join(", "_L1));
+    }
+    return {};
+}
+
 TextToSpeechKokoroCheckJob::TextToSpeechKokoroCheckJob(QObject *parent)
     : QObject{parent}
 {
@@ -35,23 +77,15 @@ void TextToSpeechKokoroCheckJob::start()
         return;
     }
     auto process = new QProcess(this);
-    // stderr carries the logs of the script, only stdout carries the json.
     connect(process, &QProcess::finished, this, [this, process](int, QProcess::ExitStatus) {
         process->deleteLater();
-        // "check" exits with 1 when kokoro is not usable, which is not an error here.
-        const QJsonObject obj = QJsonDocument::fromJson(process->readAllStandardOutput()).object();
-        if (obj.value("available"_L1).toBool()) {
+        const CheckResult result = parseCheckResult(process->readAllStandardOutput());
+        if (result.isValid()) {
             Q_EMIT packagesInstalled();
+        } else if (result.needToReinstall) {
+            Q_EMIT needToReinstall();
         } else {
-            QStringList missing;
-            const QJsonArray array = obj.value("missing"_L1).toArray();
-            for (const auto &value : array) {
-                missing.append(value.toString());
-            }
-            if (obj.value("espeakNg"_L1).toString().isEmpty()) {
-                missing.append(u"espeak-ng"_s);
-            }
-            Q_EMIT needToInstallPackages(missing);
+            Q_EMIT needToInstallPackages(result.missing);
         }
         deleteLater();
     });
@@ -64,4 +98,30 @@ void TextToSpeechKokoroCheckJob::start()
     }
     process->start(pythonScript, {TextToSpeechKokoroUtils::pythonScriptPath(), u"check"_s});
 }
+
+TextToSpeechKokoroCheckJob::CheckResult TextToSpeechKokoroCheckJob::checkSynchronously(int timeoutMs)
+{
+    CheckResult result;
+    const QString scriptPath = TextToSpeechKokoroUtils::pythonScriptPath();
+    if (scriptPath.isEmpty()) {
+        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "Unable to find" << TextToSpeechKokoroUtils::pythonScript();
+        result.needToReinstall = true;
+        return result;
+    }
+    const QString pythonScript = TextToSpeechKokoroUtils::venvPython();
+    // Without the venv there is nothing to check: the packages live in it.
+    if (pythonScript.isEmpty()) {
+        result.missing = {u"kokoro"_s, u"torch"_s};
+        return result;
+    }
+    QProcess process;
+    process.start(pythonScript, {scriptPath, u"check"_s});
+    if (!process.waitForFinished(timeoutMs)) {
+        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "kokoro check did not answer:" << process.errorString();
+        result.needToReinstall = true;
+        return result;
+    }
+    return parseCheckResult(process.readAllStandardOutput());
+}
+
 #include "moc_texttospeechkokorocheckjob.cpp"

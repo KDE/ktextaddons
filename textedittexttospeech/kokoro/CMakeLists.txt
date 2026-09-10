@@ -90,7 +90,12 @@ target_sources(
         texttospeechkokoroplugin.cpp
 )
 
-target_link_libraries(KokoroTextToSpeechPlugin PUBLIC kokorotexttospeech)
+target_link_libraries(
+    KokoroTextToSpeechPlugin
+    PUBLIC
+        kokorotexttospeech
+        KF6::I18n
+)
 install(TARGETS KokoroTextToSpeechPlugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/texttospeech/)
 
 install(PROGRAMS scripts/kokoro_helper.py DESTINATION ${KDE_INSTALL_BINDIR})

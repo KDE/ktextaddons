@@ -6,19 +6,31 @@
 
 #pragma once
 
+#include "kokorotexttospeech_export.h"
 #include <QObject>
+#include <QStringList>
 namespace TextEditTextToSpeech
 {
-class TextToSpeechKokoroCheckJob : public QObject
+class KOKOROTEXTTOSPEECH_EXPORT TextToSpeechKokoroCheckJob : public QObject
 {
     Q_OBJECT
 public:
+    struct KOKOROTEXTTOSPEECH_EXPORT CheckResult {
+        QStringList missing;
+        bool needToReinstall = false;
+
+        [[nodiscard]] bool isValid() const;
+        [[nodiscard]] QString errorString() const;
+    };
+
     explicit TextToSpeechKokoroCheckJob(QObject *parent = nullptr);
     ~TextToSpeechKokoroCheckJob() override;
 
     void start();
 
     [[nodiscard]] bool canStart() const;
+
+    [[nodiscard]] static CheckResult checkSynchronously(int timeoutMs = 30000);
 
 Q_SIGNALS:
     void needToReinstall();
