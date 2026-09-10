@@ -179,14 +179,14 @@ void OllamaManager::loadModels()
 
         // sort list of models
         std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const OllamaModelInstalledInfo &left, const OllamaModelInstalledInfo &right) {
-            return left.generateModelName().toLower() < right.generateModelName().toLower();
+            return left.generateModelName().compare(right.generateModelName(), Qt::CaseInsensitive) < 0;
         });
 
         std::sort(info.models.begin(),
                   info.models.end(),
                   [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
                      const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
-                      return left.modelName.toLower() < right.modelName.toLower();
+                      return left.modelName.compare(right.modelName, Qt::CaseInsensitive) < 0;
                   });
 
         info.isReady = !info.models.isEmpty();

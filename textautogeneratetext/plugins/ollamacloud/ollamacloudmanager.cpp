@@ -73,7 +73,7 @@ void OllamaCloudManager::loadModels()
                   info.models.end(),
                   [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
                      const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
-                      return left.modelName.toLower() < right.modelName.toLower();
+                      return left.modelName.compare(right.modelName, Qt::CaseInsensitive) < 0;
                   });
 
         info.isReady = !info.models.isEmpty();

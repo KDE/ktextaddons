@@ -142,14 +142,14 @@ void LMStudioManager::loadModels()
 
         // sort list of models
         std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const LMStudioModelInstalledInfo &left, const LMStudioModelInstalledInfo &right) {
-            return left.name().toLower() < right.name().toLower();
+            return left.name().compare(right.name(), Qt::CaseInsensitive) < 0;
         });
 
         std::sort(info.models.begin(),
                   info.models.end(),
                   [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
                      const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
-                      return left.modelName.toLower() < right.modelName.toLower();
+                      return left.modelName.compare(right.modelName, Qt::CaseInsensitive) < 0;
                   });
 
         info.isReady = !info.models.isEmpty();
