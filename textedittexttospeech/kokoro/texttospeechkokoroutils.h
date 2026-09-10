@@ -49,5 +49,7 @@ enum class VoiceFilter {
 [[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonScriptPath();
 [[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString venvPython();
 [[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString defaultVenvPython();
+[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonVersion();
+[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonVersionPath();
 }
 }

@@ -139,3 +139,14 @@ QString TextEditTextToSpeech::TextToSpeechKokoroUtils::venvPython()
     const QString python = TextEditTextToSpeech::TextToSpeechKokoroUtils::defaultVenvPython(); // Verify windows/macos
     return QFileInfo::exists(python) ? python : QString();
 }
+
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonVersion()
+{
+    return u"python3.11"_s;
+}
+
+QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonVersionPath()
+{
+    const QString path = QStandardPaths::findExecutable(TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonVersion());
+    return path;
+}
