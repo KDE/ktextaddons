@@ -144,6 +144,10 @@ void OllamaManager::loadModels()
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
+    // The caller owns a reply returned by QNetworkAccessManager. This connection is kept out of
+    // mCheckConnect on purpose: a later call disconnects that one, and the reply still in flight
+    // must be disposed of when it finishes.
+    connect(rep, &QNetworkReply::finished, rep, &QNetworkReply::deleteLater);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;

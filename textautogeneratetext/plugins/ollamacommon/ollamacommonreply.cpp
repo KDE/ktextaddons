@@ -99,12 +99,8 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
     });
 }
 
-OllamaCommonReply::~OllamaCommonReply()
-{
-    disconnect(mReply);
-    mReply->abort();
-    mReply->deleteLater();
-}
+// The reply is disposed of by ~TextAutoGenerateReply(), which owns mReply.
+OllamaCommonReply::~OllamaCommonReply() = default;
 
 TextAutoGenerateText::TextAutoGenerateReply::Response OllamaCommonReply::readResponse() const
 {

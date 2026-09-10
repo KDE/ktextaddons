@@ -27,7 +27,19 @@ TextAutoGenerateReply::TextAutoGenerateReply(QNetworkReply *netReply, RequestTyp
 {
 }
 
-TextAutoGenerateReply::~TextAutoGenerateReply() = default;
+TextAutoGenerateReply::~TextAutoGenerateReply()
+{
+    // QNetworkAccessManager hands the reply over to its caller, so this wrapper owns it. The
+    // manager parents replies to itself, which means forgetting to delete one keeps it -- and the
+    // response it buffered -- alive for as long as the (singleton) access manager lives.
+    if (mReply) {
+        // Subclasses install lambdas that capture this and use mReply as their context object, so
+        // detach them before abort() gets the chance to reenter them from a destructor.
+        mReply->disconnect();
+        mReply->abort();
+        mReply->deleteLater();
+    }
+}
 
 QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCallsOllama(const QJsonArray &array) const
 {
