@@ -399,7 +399,7 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
         Q_EMIT dataChanged(idx, idx, {MessageRoles::FinishedRole});
         return true;
     case MessageRoles::TextToSpeechInProgressRole:
-        msg.setInProgress(value.toBool());
+        msg.setTextToSpeechInProgress(value.toBool());
         Q_EMIT dataChanged(idx, idx, {MessageRoles::TextToSpeechInProgressRole});
         return true;
     case MessageRoles::MessageHtmlGeneratedRole:
