@@ -5,7 +5,7 @@
 */
 
 #include "texttospeechkokoroinstalljob.h"
-
+#include "texttospeech_kokoro_lib_debug.h"
 using namespace TextEditTextToSpeech;
 TextToSpeechKokoroInstallJob::TextToSpeechKokoroInstallJob(QObject *parent)
     : QObject{parent}
@@ -16,12 +16,17 @@ TextToSpeechKokoroInstallJob::~TextToSpeechKokoroInstallJob() = default;
 
 bool TextToSpeechKokoroInstallJob::canStart() const
 {
-    // TODO
-    return false;
+    return !mModules.isEmpty();
 }
 
 void TextToSpeechKokoroInstallJob::start()
 {
+    if (!canStart()) {
+        // Q_EMIT needToReinstall();
+        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "Impossible to start TextToSpeechKokoroCheckJob";
+        deleteLater();
+        return;
+    }
     // TODO
     deleteLater();
 }
