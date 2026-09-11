@@ -89,6 +89,7 @@ TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
 
 void TextToSpeechConfigWidget::slotEngineErrorOccurred(const QString &engineName, const QString &errorStr)
 {
+    mTestButton->setEnabled(false);
     mMessageErrorWidget->setText(i18n("%1: %2", engineName, errorStr));
     mMessageErrorWidget->animatedShow();
 }
@@ -105,6 +106,7 @@ void TextToSpeechConfigWidget::initializeSettings()
 
 void TextToSpeechConfigWidget::slotAvailableEngineChanged()
 {
+    mTestButton->setEnabled(true);
     slotEngineChanged();
     slotLanguageChanged();
     valueChanged();
