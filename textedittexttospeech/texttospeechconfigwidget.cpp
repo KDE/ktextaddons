@@ -30,10 +30,10 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mVolume(new TextToSpeechSliderWidget(u"%1 %"_s, this))
     , mRate(new TextToSpeechSliderWidget(u"%1"_s, this))
     , mPitch(new TextToSpeechSliderWidget(u"%1"_s, this))
-    , mAvailableEngine(new QComboBox(this))
-    , mLanguage(new TextToSpeechLanguageComboBox(this))
+    , mAvailableEngineCombobox(new QComboBox(this))
+    , mLanguageComboBox(new TextToSpeechLanguageComboBox(this))
     , mTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
-    , mVoice(new TextToSpeechVoiceComboBox(this))
+    , mVoiceComboBox(new TextToSpeechVoiceComboBox(this))
     , mTestButton(new QPushButton(QIcon::fromTheme(u"player-volume"_s), i18n("Test"), this))
 {
     auto layout = new QFormLayout(this);
@@ -54,18 +54,18 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mPitch->setObjectName(u"pitch"_s);
     layout->addRow(i18n("Pitch:"), mPitch);
 
-    mAvailableEngine->setObjectName(u"engine"_s);
-    mAvailableEngine->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    layout->addRow(i18n("Engine:"), mAvailableEngine);
-    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotAvailableEngineChanged);
+    mAvailableEngineCombobox->setObjectName(u"engine"_s);
+    mAvailableEngineCombobox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    layout->addRow(i18n("Engine:"), mAvailableEngineCombobox);
+    connect(mAvailableEngineCombobox, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotAvailableEngineChanged);
 
-    mLanguage->setObjectName(u"language"_s);
-    layout->addRow(i18n("Language:"), mLanguage);
-    connect(mLanguage, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
+    mLanguageComboBox->setObjectName(u"language"_s);
+    layout->addRow(i18n("Language:"), mLanguageComboBox);
+    connect(mLanguageComboBox, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mVoice->setObjectName(u"voice"_s);
-    layout->addRow(i18n("Voice:"), mVoice);
-    connect(mVoice, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
+    mVoiceComboBox->setObjectName(u"voice"_s);
+    layout->addRow(i18n("Voice:"), mVoiceComboBox);
+    connect(mVoiceComboBox, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     mTestButton->setObjectName(u"mTestButton"_s);
     mTestButton->setCheckable(true);
@@ -108,7 +108,7 @@ void TextToSpeechConfigWidget::updateLocale()
     if (localeName.isEmpty()) {
         return;
     }
-    mLanguage->selectLocaleName(localeName);
+    mLanguageComboBox->selectLocaleName(localeName);
 }
 
 void TextToSpeechConfigWidget::readConfig()
@@ -117,15 +117,15 @@ void TextToSpeechConfigWidget::readConfig()
     mRate->setValue(settings.rate);
     mPitch->setValue(settings.pitch);
     mVolume->setValue(settings.volumeValue);
-    mLanguage->selectLocaleName(settings.localeName);
+    mLanguageComboBox->selectLocaleName(settings.localeName);
     const QString &engineName = settings.engineName;
     // qDebug() << " engineName " << engineName;
     // qDebug() << " engineIndex " << engineIndex;
-    if (const int engineIndex = mAvailableEngine->findData(engineName); engineIndex != -1) {
-        mAvailableEngine->setCurrentIndex(engineIndex);
+    if (const int engineIndex = mAvailableEngineCombobox->findData(engineName); engineIndex != -1) {
+        mAvailableEngineCombobox->setCurrentIndex(engineIndex);
     }
     // FIXME: list of voice is not loading here... need to fix it
-    mVoice->setCurrentVoice(settings.voice);
+    mVoiceComboBox->setCurrentVoice(settings.voice);
     // qDebug() << " load settings " << settings;
 }
 
@@ -135,9 +135,9 @@ void TextToSpeechConfigWidget::writeConfig()
     settings.volumeValue = mVolume->value();
     settings.rate = mRate->value();
     settings.pitch = mPitch->value();
-    settings.localeName = mLanguage->currentData().toLocale().name();
-    settings.engineName = mAvailableEngine->currentData().toString();
-    settings.voice = mVoice->currentVoice();
+    settings.localeName = mLanguageComboBox->currentData().toLocale().name();
+    settings.engineName = mAvailableEngineCombobox->currentData().toString();
+    settings.voice = mVoiceComboBox->currentVoice();
     // qDebug() << " save settings " << settings;
     TextEditTextToSpeech::TextToSpeechUtil::writeConfig(settings);
 }
@@ -178,8 +178,8 @@ void TextToSpeechConfigWidget::slotTestTextToSpeech(bool checked)
         settings.rate = mRate->value();
         settings.pitch = mPitch->value();
         settings.volume = mVolume->value();
-        settings.localeName = mLanguage->currentData().toLocale().name();
-        settings.voice = mVoice->currentVoice();
+        settings.localeName = mLanguageComboBox->currentData().toLocale().name();
+        settings.voice = mVoiceComboBox->currentVoice();
         qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << " settings " << settings;
         mTextToSpeechConfigInterface->testEngine(settings);
     } else {
@@ -193,12 +193,12 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
         // Filling the combobox emits currentIndexChanged() twice: once for clear() and once for
         // the first inserted item. Each emission recreates the QTextToSpeech engine and rebuilds
         // the locale and voice lists, so keep it quiet here: updateEngine() applies the selection.
-        const QSignalBlocker blocker(mAvailableEngine);
-        mAvailableEngine->clear();
+        const QSignalBlocker blocker(mAvailableEngineCombobox);
+        mAvailableEngineCombobox->clear();
         const QStringList lst = mTextToSpeechConfigInterface->availableEngines();
         for (const QString &engine : lst) {
             if (engine != "mock"_L1) {
-                mAvailableEngine->addItem(engine, engine);
+                mAvailableEngineCombobox->addItem(engine, engine);
             }
         }
     }
@@ -208,7 +208,7 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
 void TextToSpeechConfigWidget::updateAvailableVoices()
 {
     const QVector<QVoice> voices = mTextToSpeechConfigInterface->availableVoices();
-    mVoice->updateVoices(voices);
+    mVoiceComboBox->updateVoices(voices);
     updateVoice();
 }
 
@@ -217,11 +217,11 @@ void TextToSpeechConfigWidget::updateVoice()
     KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
     const KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
     const QString voice = grp.readEntry("voice");
-    int index = mVoice->findData(voice);
+    int index = mVoiceComboBox->findData(voice);
     if (index == -1) {
         index = 0;
     }
-    mVoice->setCurrentIndex(index);
+    mVoiceComboBox->setCurrentIndex(index);
 }
 
 void TextToSpeechConfigWidget::updateEngine()
@@ -229,15 +229,15 @@ void TextToSpeechConfigWidget::updateEngine()
     KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
     const KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
     const QString engineName = grp.readEntry("engine");
-    int index = mAvailableEngine->findData(engineName);
+    int index = mAvailableEngineCombobox->findData(engineName);
     if (index == -1) {
         index = 0;
     }
-    if (mAvailableEngine->currentIndex() == index) {
+    if (mAvailableEngineCombobox->currentIndex() == index) {
         // setCurrentIndex() would not emit currentIndexChanged(), load the engine explicitly.
         slotAvailableEngineChanged();
     } else {
-        mAvailableEngine->setCurrentIndex(index);
+        mAvailableEngineCombobox->setCurrentIndex(index);
     }
 }
 
@@ -245,13 +245,13 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
 {
     const QVector<QLocale> locales = mTextToSpeechConfigInterface->availableLocales();
     const QLocale current = mTextToSpeechConfigInterface->locale();
-    mLanguage->updateAvailableLocales(locales, current);
+    mLanguageComboBox->updateAvailableLocales(locales, current);
     updateLocale();
 }
 
 void TextToSpeechConfigWidget::slotEngineChanged()
 {
-    const QString newEngineName = mAvailableEngine->currentData().toString();
+    const QString newEngineName = mAvailableEngineCombobox->currentData().toString();
     qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << "newEngineName " << newEngineName;
     mTextToSpeechConfigInterface->setEngine(newEngineName);
     slotLocalesAndVoices();
