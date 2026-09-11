@@ -12,6 +12,8 @@
 #include "texttospeechsliderwidget.h"
 #include "texttospeechvoicecombobox.h"
 
+#include <KMessageWidget>
+
 #include <QComboBox>
 #include <QPushButton>
 #include <QSignalSpy>
@@ -61,6 +63,9 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
 
     auto mTestButton = textToSpeechConfigWidget.findChild<QPushButton *>(u"mTestButton"_s);
     QVERIFY(mTestButton);
+
+    auto mMessageErrorWidget = textToSpeechConfigWidget.findChild<KMessageWidget *>(u"mMessageErrorWidget"_s);
+    QVERIFY(mMessageErrorWidget);
 }
 
 void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue()

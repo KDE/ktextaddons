@@ -17,12 +17,12 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <KMessageWidget>
 #include <QComboBox>
 #include <QFormLayout>
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QTimer>
-#include <kmessagewidget.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
