@@ -18,8 +18,12 @@ public:
     explicit TextToSpeechKokoroInstallMessageWidget(QWidget *parent = nullptr);
     ~TextToSpeechKokoroInstallMessageWidget() override;
 
+    void setMissingPackages(const QStringList &list);
 Q_SIGNALS:
-    void installPackages();
+    void installPackages(const QStringList &list);
+
+private:
+    QStringList mMissingPackages;
 };
 
 }

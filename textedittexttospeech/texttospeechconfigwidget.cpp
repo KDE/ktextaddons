@@ -288,6 +288,7 @@ void TextToSpeechConfigWidget::slotEngineChanged()
         });
         connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToInstallPackages, this, [this](const QStringList &missing) {
             mKokoroInstallMessageWidget->setText(i18n("Kokoro is not installed. Missing: %1", missing.join(", "_L1)));
+            mKokoroInstallMessageWidget->setMissingPackages(missing);
             mKokoroInstallMessageWidget->animatedShow();
         });
         connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToReinstall, this, [this] {
@@ -300,9 +301,10 @@ void TextToSpeechConfigWidget::slotEngineChanged()
     slotLocalesAndVoices();
 }
 
-void TextToSpeechConfigWidget::slotInstallKokoro()
+void TextToSpeechConfigWidget::slotInstallKokoro(const QStringList &lst)
 {
     QPointer<TextToSpeechKokoroInstallPythonDialog> dlg = new TextToSpeechKokoroInstallPythonDialog(this);
+    dlg->setModules(lst);
     dlg->show();
     dlg->startInstall();
 }

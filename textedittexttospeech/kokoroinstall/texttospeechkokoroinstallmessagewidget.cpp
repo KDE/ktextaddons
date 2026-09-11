@@ -18,9 +18,14 @@ TextToSpeechKokoroInstallMessageWidget::TextToSpeechKokoroInstallMessageWidget(Q
     auto installAction = new QAction(i18nc("@action", "Install"), this);
     addAction(installAction);
     connect(installAction, &QAction::triggered, this, [this]() {
-        Q_EMIT installPackages();
+        Q_EMIT installPackages(mMissingPackages);
     });
 }
 
 TextToSpeechKokoroInstallMessageWidget::~TextToSpeechKokoroInstallMessageWidget() = default;
+
+void TextToSpeechKokoroInstallMessageWidget::setMissingPackages(const QStringList &list)
+{
+    mMissingPackages = list;
+}
 #include "moc_texttospeechkokoroinstallmessagewidget.cpp"

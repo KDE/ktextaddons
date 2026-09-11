@@ -76,7 +76,7 @@ private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotAvailableEngineChanged();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotTextChanged(QTextToSpeech::State state);
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotEngineErrorOccurred(const QString &engineName, const QString &errorStr);
-    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotInstallKokoro();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotInstallKokoro(const QStringList &lst);
     TextToSpeechSliderWidget *const mVolume;
     TextToSpeechSliderWidget *const mRate;
     TextToSpeechSliderWidget *const mPitch;
