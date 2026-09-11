@@ -292,7 +292,8 @@ void TextToSpeechConfigWidget::slotEngineChanged()
             mKokoroInstallMessageWidget->animatedShow();
         });
         connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToReinstall, this, [this] {
-            // TODO
+            mKokoroInstallMessageWidget->setText(i18n("Kokoro installation is broken. Please verify which you sysadmin."));
+            mKokoroInstallMessageWidget->animatedShow();
         });
         job->start();
         return;
