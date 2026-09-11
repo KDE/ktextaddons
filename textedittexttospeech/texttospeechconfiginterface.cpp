@@ -61,6 +61,9 @@ void TextToSpeechConfigInterface::setEngine(const QString &engineName)
         delete mTextToSpeech;
         mTextToSpeech = new QTextToSpeech(engineName, this);
         connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeechConfigInterface::stateChanged);
+        if (mTextToSpeech->state() == QTextToSpeech::Error) {
+            Q_EMIT engineErrorOccurred(mTextToSpeech->engine(), mTextToSpeech->errorString());
+        }
     }
 }
 

@@ -65,6 +65,9 @@ Q_SIGNALS:
     /*!
      */
     void stateChanged(QTextToSpeech::State state);
+    /*!
+     */
+    void engineErrorOccurred(const QString &engineName, const QString &message);
 
 private:
     QTextToSpeech *mTextToSpeech = nullptr;

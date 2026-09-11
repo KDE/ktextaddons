@@ -22,6 +22,7 @@
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QTimer>
+#include <kmessagewidget.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
@@ -35,9 +36,16 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mVoiceComboBox(new TextToSpeechVoiceComboBox(this))
     , mTestButton(new QPushButton(QIcon::fromTheme(u"player-volume"_s), i18n("Test"), this))
+    , mMessageErrorWidget(new KMessageWidget(this))
 {
     auto layout = new QFormLayout(this);
     layout->setContentsMargins({});
+
+    mMessageErrorWidget->setObjectName(u"mMessageErrorWidget"_s);
+    mMessageErrorWidget->setMessageType(KMessageWidget::Error);
+    mMessageErrorWidget->hide();
+    layout->addRow(mMessageErrorWidget);
+
     mVolume->setObjectName(u"volume"_s);
     mVolume->setRange(0, 100);
     connect(mVolume, &TextToSpeechSliderWidget::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
@@ -74,9 +82,16 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
     connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::stateChanged, this, &TextToSpeechConfigWidget::slotTextChanged);
+    connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::engineErrorOccurred, this, &TextToSpeechConfigWidget::slotEngineErrorOccurred);
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
+
+void TextToSpeechConfigWidget::slotEngineErrorOccurred(const QString &engineName, const QString &errorStr)
+{
+    mMessageErrorWidget->setText(i18n("%1: %2", engineName, errorStr));
+    mMessageErrorWidget->animatedShow();
+}
 
 void TextToSpeechConfigWidget::slotTextChanged(QTextToSpeech::State state)
 {
