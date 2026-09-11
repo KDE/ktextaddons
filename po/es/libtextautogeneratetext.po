@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-11 00:44+0000\n"
 "PO-Revision-Date: 2026-08-25 01:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -271,11 +271,11 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modelos disponibles"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:50
-#: plugins/lmstudio/lmstudiomanager.cpp:122
-#: plugins/ollama/ollamamanager.cpp:150
-#: plugins/ollamacloud/ollamacloudmanager.cpp:57
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:58
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:54
+#: plugins/lmstudio/lmstudiomanager.cpp:126
+#: plugins/ollama/ollamamanager.cpp:154
+#: plugins/ollamacloud/ollamacloudmanager.cpp:61
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:62
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "No se ha podido conectar a la interfaz %1: %2"
@@ -2941,32 +2941,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "Tamaño de la ventana de contexto:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:185
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Capabilities"
 msgstr "Capacidades"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:187
+#: plugins/ollamacommon/ollamacommonreply.cpp:183
 #, kde-format
 msgid "Template"
 msgstr "Plantilla"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:184
 #, kde-format
 msgid "Modelfile"
 msgstr "Archivo de modelo"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:190
+#: plugins/ollamacommon/ollamacommonreply.cpp:186
 #, kde-format
 msgid "Parameters"
 msgstr "Parámetros"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:192
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:194
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Model Info"
 msgstr "Información del modelo"

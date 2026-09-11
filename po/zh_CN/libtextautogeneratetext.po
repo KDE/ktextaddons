@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-11 00:44+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -266,11 +266,11 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "可用模型"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:50
-#: plugins/lmstudio/lmstudiomanager.cpp:122
-#: plugins/ollama/ollamamanager.cpp:150
-#: plugins/ollamacloud/ollamacloudmanager.cpp:57
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:58
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:54
+#: plugins/lmstudio/lmstudiomanager.cpp:126
+#: plugins/ollama/ollamamanager.cpp:154
+#: plugins/ollamacloud/ollamacloudmanager.cpp:61
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:62
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "无法连接到位于 %1 的接口：%2"
@@ -2730,32 +2730,32 @@ msgstr "控制模型可以同时处理和记住多少个词元 (文本单元)。
 msgid "Context Window Size:"
 msgstr "上下文窗口大小："
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:185
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Capabilities"
 msgstr "能力"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:187
+#: plugins/ollamacommon/ollamacommonreply.cpp:183
 #, kde-format
 msgid "Template"
 msgstr "模板"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:184
 #, kde-format
 msgid "Modelfile"
 msgstr "模型文件"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:190
+#: plugins/ollamacommon/ollamacommonreply.cpp:186
 #, kde-format
 msgid "Parameters"
 msgstr "参数"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:192
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr "详情"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:194
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Model Info"
 msgstr "模型信息"

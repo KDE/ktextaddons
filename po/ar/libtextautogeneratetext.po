@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-11 00:44+0000\n"
 "PO-Revision-Date: 2026-08-29 17:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -267,11 +267,11 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "النماذج المتاحة"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:50
-#: plugins/lmstudio/lmstudiomanager.cpp:122
-#: plugins/ollama/ollamamanager.cpp:150
-#: plugins/ollamacloud/ollamacloudmanager.cpp:57
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:58
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:54
+#: plugins/lmstudio/lmstudiomanager.cpp:126
+#: plugins/ollama/ollamamanager.cpp:154
+#: plugins/ollamacloud/ollamacloudmanager.cpp:61
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:62
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "فشل الاتصال بالواجهة في %1: %2"
@@ -2808,32 +2808,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "حجم نافذة السياق:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:185
+#: plugins/ollamacommon/ollamacommonreply.cpp:181
 #, kde-format
 msgid "Capabilities"
 msgstr "الإمكانيات"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:187
+#: plugins/ollamacommon/ollamacommonreply.cpp:183
 #, kde-format
 msgid "Template"
 msgstr "القالب"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:184
 #, kde-format
 msgid "Modelfile"
 msgstr "ملف النمط"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:190
+#: plugins/ollamacommon/ollamacommonreply.cpp:186
 #, kde-format
 msgid "Parameters"
 msgstr "المعاملات"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:192
+#: plugins/ollamacommon/ollamacommonreply.cpp:188
 #, kde-format
 msgid "Details"
 msgstr "التفاصيل"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:194
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Model Info"
 msgstr "معلومات النموذج"
