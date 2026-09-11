@@ -11,6 +11,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
     SOVERSION 1
 )
 
+add_subdirectory(kokoroinstall)
 add_subdirectory(kokoro)
 
 add_library(KF6TextEditTextToSpeech)
@@ -68,6 +69,7 @@ target_link_libraries(
         KF6::WidgetsAddons
         KF6::I18n
         KF6::TextAddonsWidgets
+        kokoroinstalltexttospeech
 )
 
 ecm_qt_declare_logging_category(KF6TextEditTextToSpeech HEADER textedittexttospeech_debug.h

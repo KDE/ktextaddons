@@ -5,14 +5,14 @@
 */
 #pragma once
 
-#include "textedittexttospeech_kokoro_private_export.h"
+#include "textedittexttospeech_kokoroinstall_private_export.h"
 #include <QDialog>
 #include <QStringList>
 class QPushButton;
 namespace TextEditTextToSpeech
 {
 class TextToSpeechKokoroInstallPythonWidget;
-class KOKOROTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonDialog : public QDialog
+class KOKOROINSTALLTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonDialog : public QDialog
 {
     Q_OBJECT
 public:

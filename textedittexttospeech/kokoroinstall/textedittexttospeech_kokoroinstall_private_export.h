@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "kokorotexttospeech_export.h"
+#include "kokoroinstalltexttospeech_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-#ifndef KOKOROTEXTTOSPEECH_TESTS_EXPORT
-#define KOKOROTEXTTOSPEECH_TESTS_EXPORT KOKOROTEXTTOSPEECH_EXPORT
+#ifndef KOKOROINSTALLTEXTTOSPEECH_TESTS_EXPORT
+#define KOKOROINSTALLTEXTTOSPEECH_TESTS_EXPORT KOKOROINSTALLTEXTTOSPEECH_EXPORT
 #endif
 #else /* not compiling tests */
-#define KOKOROTEXTTOSPEECH_TESTS_EXPORT
+#define KOKOROINSTALLTEXTTOSPEECH_TESTS_EXPORT
 #endif

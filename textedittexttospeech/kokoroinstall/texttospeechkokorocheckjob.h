@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include "kokorotexttospeech_export.h"
+#include "kokoroinstalltexttospeech_export.h"
 #include <QObject>
 #include <QStringList>
 namespace TextEditTextToSpeech
 {
-class KOKOROTEXTTOSPEECH_EXPORT TextToSpeechKokoroCheckJob : public QObject
+class KOKOROINSTALLTEXTTOSPEECH_EXPORT TextToSpeechKokoroCheckJob : public QObject
 {
     Q_OBJECT
 public:
-    struct KOKOROTEXTTOSPEECH_EXPORT CheckResult {
+    struct KOKOROINSTALLTEXTTOSPEECH_EXPORT CheckResult {
         QStringList missing;
         bool needToReinstall = false;
 

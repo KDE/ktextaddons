@@ -4,13 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textedittexttospeech_kokoro_private_export.h"
+#include "textedittexttospeech_kokoroinstall_private_export.h"
 #include <QStringList>
 #include <QWidget>
 class QPlainTextEdit;
 namespace TextEditTextToSpeech
 {
-class KOKOROTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonWidget : public QWidget
+class KOKOROINSTALLTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -8,7 +8,4 @@ macro(add_texttospeech_kokoro_unittest _source)
     )
 endmacro()
 
-add_texttospeech_kokoro_unittest(texttospeechkokoroutilstest.cpp)
-add_texttospeech_kokoro_unittest(texttospeechkokoroinstallpythondialogtest.cpp)
-add_texttospeech_kokoro_unittest(texttospeechkokoroinstallpythonwidgettest.cpp)
 add_texttospeech_kokoro_unittest(texttospeechkokorotest.cpp)

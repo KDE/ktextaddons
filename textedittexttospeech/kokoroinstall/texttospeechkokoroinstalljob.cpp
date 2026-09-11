@@ -5,7 +5,7 @@
 */
 
 #include "texttospeechkokoroinstalljob.h"
-#include "texttospeech_kokoro_lib_debug.h"
+#include "texttospeech_kokoroinstall_lib_debug.h"
 #include "texttospeechkokoroutils.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -57,7 +57,7 @@ void TextToSpeechKokoroInstallJob::setModules(const QStringList &newModules)
 void TextToSpeechKokoroInstallJob::start()
 {
     if (!canStart()) {
-        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "Impossible to start TextToSpeechKokoroInstallJob";
+        qCWarning(KOKORO_INSTALL_TEXT_TO_SPEECH_LIB_LOG) << "Impossible to start TextToSpeechKokoroInstallJob";
         Q_EMIT installFailed();
         deleteLater();
         return;
@@ -113,7 +113,7 @@ void TextToSpeechKokoroInstallJob::slotFinished(int exitCode, QProcess::ExitStat
 
 void TextToSpeechKokoroInstallJob::failed(const QString &errorMessage)
 {
-    qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << errorMessage;
+    qCWarning(KOKORO_INSTALL_TEXT_TO_SPEECH_LIB_LOG) << errorMessage;
     Q_EMIT installMessage(errorMessage);
     Q_EMIT installFailed();
     deleteLater();

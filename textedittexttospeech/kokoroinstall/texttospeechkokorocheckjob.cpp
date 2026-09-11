@@ -5,7 +5,7 @@
 */
 
 #include "texttospeechkokorocheckjob.h"
-#include "texttospeech_kokoro_lib_debug.h"
+#include "texttospeech_kokoroinstall_lib_debug.h"
 #include "texttospeechkokoroutils.h"
 #include <KLocalizedString>
 #include <QJsonArray>
@@ -72,7 +72,7 @@ void TextToSpeechKokoroCheckJob::start()
 {
     if (!canStart()) {
         Q_EMIT needToReinstall();
-        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "Impossible to start TextToSpeechKokoroCheckJob";
+        qCWarning(KOKORO_INSTALL_TEXT_TO_SPEECH_LIB_LOG) << "Impossible to start TextToSpeechKokoroCheckJob";
         deleteLater();
         return;
     }
@@ -104,7 +104,7 @@ TextToSpeechKokoroCheckJob::CheckResult TextToSpeechKokoroCheckJob::checkSynchro
     CheckResult result;
     const QString scriptPath = TextToSpeechKokoroUtils::pythonScriptPath();
     if (scriptPath.isEmpty()) {
-        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "Unable to find" << TextToSpeechKokoroUtils::pythonScript();
+        qCWarning(KOKORO_INSTALL_TEXT_TO_SPEECH_LIB_LOG) << "Unable to find" << TextToSpeechKokoroUtils::pythonScript();
         result.needToReinstall = true;
         return result;
     }
@@ -117,7 +117,7 @@ TextToSpeechKokoroCheckJob::CheckResult TextToSpeechKokoroCheckJob::checkSynchro
     QProcess process;
     process.start(pythonScript, {scriptPath, u"check"_s});
     if (!process.waitForFinished(timeoutMs)) {
-        qCWarning(KOKORO_TEXT_TO_SPEECH_LIB_LOG) << "kokoro check did not answer:" << process.errorString();
+        qCWarning(KOKORO_INSTALL_TEXT_TO_SPEECH_LIB_LOG) << "kokoro check did not answer:" << process.errorString();
         result.needToReinstall = true;
         return result;
     }

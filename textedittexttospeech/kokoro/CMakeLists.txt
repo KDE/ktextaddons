@@ -17,19 +17,6 @@ ecm_qt_declare_logging_category(kokorotexttospeech
 target_sources(
     kokorotexttospeech
     PRIVATE
-        texttospeechkokoroutils.h
-        texttospeechkokoroutils.cpp
-        texttospeechkokoroinstallpythondialog.h
-        texttospeechkokoroinstallpythondialog.cpp
-        texttospeechkokoroinstallpythonwidget.h
-        texttospeechkokoroinstallpythonwidget.cpp
-        textedittexttospeech_kokoro_private_export.h
-        texttospeechkokorocheckjob.h
-        texttospeechkokorocheckjob.cpp
-        texttospeechkokoroinstalljob.h
-        texttospeechkokoroinstalljob.cpp
-        texttospeechkokoroinstallpythonevenvjob.h
-        texttospeechkokoroinstallpythonevenvjob.cpp
         texttospeechkokoro.h
         texttospeechkokoro.cpp
 )
@@ -44,15 +31,23 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(kokorotexttospeech BASE_NAME kokorotexttospeech)
 
+# The headers are not installed: the sources of this repository which link
+# against it include them from the build tree.
+target_include_directories(
+    kokorotexttospeech
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+)
+
 target_link_libraries(
     kokorotexttospeech
     PUBLIC
+        kokoroinstalltexttospeech
         Qt::TextToSpeech
-        Qt::Widgets
         Qt::Multimedia
     PRIVATE
         KF6::I18n
-        KF6::TextAddonsWidgets
 )
 
 set_target_properties(
@@ -102,8 +97,6 @@ target_link_libraries(
         KF6::I18n
 )
 install(TARGETS KokoroTextToSpeechPlugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/texttospeech/)
-
-install(PROGRAMS scripts/kokoro_helper.py DESTINATION ${KDE_INSTALL_BINDIR})
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

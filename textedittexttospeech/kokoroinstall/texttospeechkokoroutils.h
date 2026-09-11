@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "kokorotexttospeech_export.h"
+#include "kokoroinstalltexttospeech_export.h"
 #include <QLocale>
 #include <QVoice>
 
@@ -37,22 +37,22 @@ enum class VoiceFilter {
 };
 
 /*! Returns the voices of the model, as plain data. */
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QList<KokoroVoice> kokoroVoices(VoiceFilter filter = VoiceFilter::EspeakSupported);
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QList<KokoroVoice> kokoroVoices(VoiceFilter filter = VoiceFilter::EspeakSupported);
 
 /*! Returns the locales covered by the voices, without duplicates. */
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QList<QLocale> availableLocales(VoiceFilter filter = VoiceFilter::EspeakSupported);
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QList<QLocale> availableLocales(VoiceFilter filter = VoiceFilter::EspeakSupported);
 
 /*! Returns the lang_code expected by KPipeline for \a identifier, for example "f" for "ff_siwis". */
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString languageCode(const QString &identifier);
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString languageCode(const QString &identifier);
 
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonScript();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonScriptPath();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString venvPython();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString defaultVenvPath();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString defaultVenvPython();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString defaultVenvPip();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString venvPip();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonVersion();
-[[nodiscard]] KOKOROTEXTTOSPEECH_EXPORT QString pythonVersionPath();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString pythonScript();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString pythonScriptPath();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString venvPython();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString defaultVenvPath();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString defaultVenvPython();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString defaultVenvPip();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString venvPip();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString pythonVersion();
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString pythonVersionPath();
 }
 }
