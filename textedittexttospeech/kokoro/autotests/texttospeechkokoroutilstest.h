@@ -18,4 +18,5 @@ public:
 private Q_SLOTS:
     void shouldHavePythonScript();
     void shouldHaveVenvPython();
+    void shouldHavePythonVersion();
 };

@@ -24,4 +24,10 @@ void TextToSpeechKokoroUtilsTest::shouldHaveVenvPython()
 {
     // Disable on CI QCOMPARE(TextEditTextToSpeech::TextToSpeechKokoroUtils::venvPython(), QDir::homePath() + u"/.venv/kokoro/bin/python"_s);
 }
+
+void TextToSpeechKokoroUtilsTest::shouldHavePythonVersion()
+{
+    QCOMPARE(TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonVersion(), u"python3.11"_s);
+}
+
 #include "moc_texttospeechkokoroutilstest.cpp"
