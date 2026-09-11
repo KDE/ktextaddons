@@ -303,7 +303,8 @@ void TextToSpeechConfigWidget::slotEngineChanged()
 void TextToSpeechConfigWidget::slotInstallKokoro()
 {
     QPointer<TextToSpeechKokoroInstallPythonDialog> dlg = new TextToSpeechKokoroInstallPythonDialog(this);
-    dlg->exec();
+    dlg->show();
+    dlg->startInstall();
 }
 
 void TextToSpeechConfigWidget::slotLanguageChanged()
