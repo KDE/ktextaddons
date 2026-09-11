@@ -6,6 +6,9 @@
 
 #include "texttospeechconfigwidget.h"
 
+#include "kokoroinstall/texttospeechkokorocheckjob.h"
+#include "kokoroinstall/texttospeechkokoroinstallmessagewidget.h"
+#include "kokoroinstall/texttospeechkokoroinstallpythondialog.h"
 #include "textedittexttospeech_debug.h"
 #include "texttospeechconfiginterface.h"
 #include "texttospeechlanguagecombobox.h"
@@ -20,6 +23,7 @@
 #include <KMessageWidget>
 #include <QComboBox>
 #include <QFormLayout>
+#include <QPointer>
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QTimer>
@@ -37,6 +41,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mVoiceComboBox(new TextToSpeechVoiceComboBox(this))
     , mTestButton(new QPushButton(QIcon::fromTheme(u"player-volume"_s), i18n("Test"), this))
     , mMessageErrorWidget(new KMessageWidget(this))
+    , mKokoroInstallMessageWidget(new TextToSpeechKokoroInstallMessageWidget(this))
 {
     auto layout = new QFormLayout(this);
     layout->setContentsMargins({});
@@ -45,6 +50,9 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mMessageErrorWidget->setMessageType(KMessageWidget::Error);
     mMessageErrorWidget->hide();
     layout->addRow(mMessageErrorWidget);
+
+    mKokoroInstallMessageWidget->setObjectName(u"mMessageErrorWidget"_s);
+    layout->addRow(mKokoroInstallMessageWidget);
 
     mVolume->setObjectName(u"volume"_s);
     mVolume->setRange(0, 100);
@@ -83,6 +91,8 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
     connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::stateChanged, this, &TextToSpeechConfigWidget::slotTextChanged);
     connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::engineErrorOccurred, this, &TextToSpeechConfigWidget::slotEngineErrorOccurred);
+
+    connect(mKokoroInstallMessageWidget, &TextToSpeechKokoroInstallMessageWidget::installPackages, this, &TextToSpeechConfigWidget::slotInstallKokoro);
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
@@ -269,9 +279,31 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
 void TextToSpeechConfigWidget::slotEngineChanged()
 {
     const QString newEngineName = mAvailableEngineCombobox->currentData().toString();
-    qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << "newEngineName " << newEngineName;
+    if (newEngineName == "kokoro"_L1) {
+        auto job = new TextEditTextToSpeech::TextToSpeechKokoroCheckJob(this);
+        connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::packagesInstalled, this, [this, newEngineName] {
+            mKokoroInstallMessageWidget->animatedHide();
+            mTextToSpeechConfigInterface->setEngine(newEngineName);
+            slotLocalesAndVoices();
+        });
+        connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToInstallPackages, this, [this](const QStringList &missing) {
+            mKokoroInstallMessageWidget->setText(i18n("Kokoro is not installed. Missing: %1", missing.join(", "_L1)));
+            mKokoroInstallMessageWidget->animatedShow();
+        });
+        connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToReinstall, this, [this] {
+            // TODO
+        });
+        job->start();
+        return;
+    }
     mTextToSpeechConfigInterface->setEngine(newEngineName);
     slotLocalesAndVoices();
+}
+
+void TextToSpeechConfigWidget::slotInstallKokoro()
+{
+    QPointer<TextToSpeechKokoroInstallPythonDialog> dlg = new TextToSpeechKokoroInstallPythonDialog(this);
+    dlg->exec();
 }
 
 void TextToSpeechConfigWidget::slotLanguageChanged()
