@@ -104,7 +104,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     });
 
     auto deleteLanguage = new QPushButton(QIcon::fromTheme(u"edit-delete"_s), i18n("Delete"), this);
-    deleteLanguage->setObjectName(u"downLoadLanguage"_s);
+    deleteLanguage->setObjectName(u"deleteLanguage"_s);
     buttonLayout->addWidget(deleteLanguage);
 
     auto updateListLanguage = new QPushButton(i18nc("@action:button", "Update List"), this);
