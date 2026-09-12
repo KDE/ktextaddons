@@ -18,6 +18,8 @@ public:
     explicit TextToSpeechKokoroVoiceComboBox(QWidget *parent = nullptr);
     ~TextToSpeechKokoroVoiceComboBox() override;
 
+    [[nodiscard]] QString currentVoice() const;
+
 private:
     void fill();
 };

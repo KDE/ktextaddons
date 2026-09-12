@@ -8,6 +8,33 @@
 #include <KLocalizedString>
 
 using namespace TextEditTextToSpeech;
+
+namespace
+{
+[[nodiscard]] QString genderName(QVoice::Gender gender)
+{
+    switch (gender) {
+    case QVoice::Female:
+        return i18nc("@item:intext gender of a voice", "Female");
+    case QVoice::Male:
+        return i18nc("@item:intext gender of a voice", "Male");
+    case QVoice::Unknown:
+        break;
+    }
+    return i18nc("@item:intext gender of a voice", "Unknown");
+}
+
+// "English (United States)": the language alone would not separate the
+// american voices from the british ones.
+[[nodiscard]] QString localeName(const QLocale &locale)
+{
+    return i18nc("@item:intext <language> (<country>)",
+                 "%1 (%2)",
+                 QLocale::languageToString(locale.language()),
+                 QLocale::territoryToString(locale.territory()));
+}
+}
+
 TextToSpeechKokoroVoiceComboBox::TextToSpeechKokoroVoiceComboBox(QWidget *parent)
     : QComboBox(parent)
 {
@@ -20,9 +47,16 @@ void TextToSpeechKokoroVoiceComboBox::fill()
 {
     const QList<TextToSpeechKokoroUtils::KokoroVoice> listVoices = TextToSpeechKokoroUtils::kokoroVoices();
     for (const auto &voice : listVoices) {
-        // TODO add icon from local + gender
-        addItem(voice.name, voice.name);
+        addItem(TextToSpeechKokoroUtils::voiceIcon(voice), voice.name, voice.name);
+        setItemData(count() - 1,
+                    i18nc("@info:tooltip <voice name> (<language>, <gender>)", "%1 (%2, %3)", voice.name, localeName(voice.locale), genderName(voice.gender)),
+                    Qt::ToolTipRole);
     }
+}
+
+QString TextToSpeechKokoroVoiceComboBox::currentVoice() const
+{
+    return currentData().toString();
 }
 
 #include "moc_texttospeechkokorovoicecombobox.cpp"

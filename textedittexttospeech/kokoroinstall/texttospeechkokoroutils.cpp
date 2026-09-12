@@ -6,6 +6,9 @@
 #include "texttospeechkokoroutils.h"
 
 #include <QDir>
+#include <QFontMetrics>
+#include <QPainter>
+#include <QPixmap>
 #include <QStandardPaths>
 #include <array>
 
@@ -42,6 +45,89 @@ constexpr std::array<const char *, 54> s_voiceIdentifiers{
     "hf_beta",     "hm_omega", "hm_psi",     "if_sara",   "im_nicola",   "pf_dora",    "pm_alex",    "pm_santa", "jf_alpha",  "jf_gongitsune", "jf_nezumi",
     "jf_tebukuro", "jm_kumo",  "zf_xiaobei", "zf_xiaoni", "zf_xiaoxiao", "zf_xiaoyi",  "zm_yunjian", "zm_yunxi", "zm_yunxia", "zm_yunyang",
 };
+
+// The icons are generated once for the whole list of voices, a small square is
+// enough for a combobox.
+constexpr int s_iconSize = 32;
+
+// "FR" -> the two regional indicator symbols the emoji fonts draw as a flag.
+[[nodiscard]] QString flagEmoji(const QLocale &locale)
+{
+    const QString territory = QLocale::territoryToCode(locale.territory());
+    if (territory.size() != 2) {
+        return {};
+    }
+    QString flag;
+    for (const QChar letter : territory) {
+        flag += QChar::fromUcs4(0x1f1e6 + letter.toUpper().unicode() - u'A');
+    }
+    return flag;
+}
+
+// Without an emoji font the regional indicators are drawn as two boxes.
+[[nodiscard]] bool canDrawText(const QFont &font, const QString &text)
+{
+    const QFontMetrics metrics(font);
+    const QList<uint> codePoints = text.toUcs4();
+    for (const uint codePoint : codePoints) {
+        if (!metrics.inFontUcs4(codePoint)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void drawLocale(QPainter *painter, QRect rect, const QLocale &locale)
+{
+    QFont font = painter->font();
+    font.setPixelSize(rect.height() * 3 / 4);
+    const QString flag = flagEmoji(locale);
+    if (!flag.isEmpty() && canDrawText(font, flag)) {
+        painter->setFont(font);
+        painter->drawText(rect, Qt::AlignHCenter | Qt::AlignTop, flag);
+        return;
+    }
+    // No emoji font: the country code inside a badge says the same thing.
+    const QString territory = QLocale::territoryToCode(locale.territory());
+    painter->setPen(Qt::NoPen);
+    painter->setBrush(QColor(0x31, 0x63, 0x9c));
+    painter->drawRoundedRect(rect.adjusted(0, rect.height() / 8, 0, -rect.height() / 4), 3, 3);
+    font.setPixelSize(rect.height() / 2);
+    font.setBold(true);
+    painter->setFont(font);
+    painter->setPen(Qt::white);
+    painter->drawText(rect, Qt::AlignHCenter | Qt::AlignTop, territory);
+}
+
+void drawGender(QPainter *painter, QRect rect, QVoice::Gender gender)
+{
+    QString symbol;
+    QColor color;
+    switch (gender) {
+    case QVoice::Female:
+        symbol = u"\u2640"_s; // ♀
+        color = QColor(0xd8, 0x1b, 0x60);
+        break;
+    case QVoice::Male:
+        symbol = u"\u2642"_s; // ♂
+        color = QColor(0x1e, 0x88, 0xe5);
+        break;
+    case QVoice::Unknown:
+        return;
+    }
+    // A filled disc keeps the symbol readable on top of the flag, whatever the
+    // colors of the theme are.
+    painter->setPen(Qt::NoPen);
+    painter->setBrush(color);
+    painter->drawEllipse(rect);
+
+    QFont font = painter->font();
+    font.setPixelSize(rect.height() * 3 / 4);
+    font.setBold(true);
+    painter->setFont(font);
+    painter->setPen(Qt::white);
+    painter->drawText(rect, Qt::AlignCenter, symbol);
+}
 
 [[nodiscard]] const KokoroLanguage *languageForIdentifier(QStringView identifier)
 {
@@ -108,6 +194,20 @@ QList<QLocale> TextEditTextToSpeech::TextToSpeechKokoroUtils::availableLocales(V
         locales.append(QLocale(QString::fromLatin1(language.localeName)));
     }
     return locales;
+}
+
+QIcon TextEditTextToSpeech::TextToSpeechKokoroUtils::voiceIcon(const KokoroVoice &voice)
+{
+    QPixmap pixmap(s_iconSize, s_iconSize);
+    pixmap.fill(Qt::transparent);
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::TextAntialiasing);
+    drawLocale(&painter, QRect(0, 0, s_iconSize, s_iconSize), voice.locale);
+    const int badgeSize = s_iconSize / 2;
+    drawGender(&painter, QRect(s_iconSize - badgeSize, s_iconSize - badgeSize, badgeSize, badgeSize), voice.gender);
+    painter.end();
+    return QIcon(pixmap);
 }
 
 QString TextEditTextToSpeech::TextToSpeechKokoroUtils::languageCode(const QString &identifier)
