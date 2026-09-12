@@ -38,7 +38,7 @@ void GrammarResultJobTest::shouldBeAbleToStart()
     QVERIFY(!job.canStart());
     job.setGrammarlecteCliPath(u"/usr/bin/ls"_s);
     QVERIFY(job.canStart());
-    job.setArguments(QStringList() << u"ff"_s);
+    job.setArguments(QStringList{u"ff"_s});
     QVERIFY(job.canStart());
 }
 

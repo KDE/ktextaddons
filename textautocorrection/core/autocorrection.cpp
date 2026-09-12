@@ -415,10 +415,9 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
     // we proceed to 3 special cases
 
     // list of the schemes, starting with http:// as most probable
-    const QStringList schemes = QStringList() << u"http://"_s << u"https://"_s << u"mailto:/"_s << u"ftp://"_s << u"file://"_s << u"git://"_s << u"sftp://"_s
-                                              << u"magnet:?"_s << u"smb://"_s << u"nfs://"_s << u"fish://"_s << u"ssh://"_s << u"telnet://"_s << u"irc://"_s
-                                              << u"sip:"_s << u"news:"_s << u"gopher://"_s << u"nntp://"_s << u"geo:"_s << u"udp://"_s << u"rsync://"_s
-                                              << u"dns://"_s;
+    const QStringList schemes{u"http://"_s,   u"https://"_s, u"mailto:/"_s, u"ftp://"_s, u"file://"_s,   u"git://"_s, u"sftp://"_s, u"magnet:?"_s,
+                              u"smb://"_s,    u"nfs://"_s,   u"fish://"_s,  u"ssh://"_s, u"telnet://"_s, u"irc://"_s, u"sip:"_s,    u"news:"_s,
+                              u"gopher://"_s, u"nntp://"_s,  u"geo:"_s,     u"udp://"_s, u"rsync://"_s,  u"dns://"_s};
 
     enum LinkType {
         UNCLASSIFIED,

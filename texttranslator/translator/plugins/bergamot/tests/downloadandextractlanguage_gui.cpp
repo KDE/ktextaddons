@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << u"+[file]"_s, u"Add specific archive file name"_s));
+    parser.addOption(QCommandLineOption(QStringList{u"+[file]"_s}, u"Add specific archive file name"_s));
 
     parser.process(app);
     if (!parser.positionalArguments().isEmpty()) {

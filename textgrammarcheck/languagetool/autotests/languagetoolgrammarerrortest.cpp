@@ -28,7 +28,7 @@ void LanguageToolGrammarErrorTest::shouldParseJson_data()
     err.setStart(3);
     err.setLength(8);
     err.setColor(QColor(Qt::red));
-    err.setSuggestions(QStringList() << u"ne suis pas"_s);
+    err.setSuggestions(QStringList{u"ne suis pas"_s});
     err.setError(u"Voulez-vous écrire \"ne suis pas\" ?"_s);
     // err.setOption(u"maj"_s);
     err.setRule(u"P_V_PAS"_s);

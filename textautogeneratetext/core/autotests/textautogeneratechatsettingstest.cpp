@@ -46,7 +46,7 @@ void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
         infoIsValid.scrollbarPosition = -1;
         QVERIFY(!infoIsValid.isValid());
 
-        infoIsValid.tools = QList<QByteArray>() << "foo"_ba;
+        infoIsValid.tools = QList<QByteArray>{"foo"_ba};
         QVERIFY(infoIsValid.isValid());
         infoIsValid.tools.clear();
         QVERIFY(!infoIsValid.isValid());

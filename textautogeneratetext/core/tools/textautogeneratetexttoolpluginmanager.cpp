@@ -84,7 +84,7 @@ void TextAutoGenerateTextToolPluginManager::initializePluginList()
 void TextAutoGenerateTextToolPluginManager::loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item)
 {
     if (auto plugin =
-            KPluginFactory::instantiatePlugin<TextAutoGenerateTextToolPlugin>(item->data, this, QVariantList() << item->metaDataFileNameBaseName).plugin) {
+            KPluginFactory::instantiatePlugin<TextAutoGenerateTextToolPlugin>(item->data, this, QVariantList{item->metaDataFileNameBaseName}).plugin) {
         item->plugin = plugin;
         item->plugin->setEnabled(item->isEnabled);
         item->pluginData.mHasConfigureDialog = true;
