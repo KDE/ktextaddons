@@ -45,6 +45,9 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
         connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesFailed, this, [this]() {
             appendMessage(i18n("Unable to download voice."));
         });
+        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadMessage, this, [this](const QString &msg) {
+            appendMessage(msg);
+        });
         job->start();
     });
 }
