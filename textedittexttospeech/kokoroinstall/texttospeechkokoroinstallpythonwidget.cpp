@@ -4,13 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "texttospeechkokoroinstallpythonwidget.h"
+#include "texttospeechkokorodownloadvoicejob.h"
 #include "texttospeechkokoroinstalljob.h"
 #include "texttospeechkokoroinstallpythonevenvjob.h"
 #include "texttospeechkokorovoicecombobox.h"
 #include <KLocalizedString>
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QPlainTextEdit>
+#include <QPushButton>
 #include <QVBoxLayout>
-
 using namespace TextEditTextToSpeech;
 using namespace Qt::Literals::StringLiterals;
 TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWidget *parent)
@@ -25,8 +28,25 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
     mPlainTextEdit->setObjectName(u"mPlainTextEdit"_s);
     mPlainTextEdit->setReadOnly(true);
     mKokoroVoiceComboBox->setObjectName(u"mKokoroVoiceComboBox"_s);
-    mainLayout->addWidget(mKokoroVoiceComboBox);
     mainLayout->addWidget(mPlainTextEdit);
+    auto hboxLayout = new QHBoxLayout;
+    hboxLayout->setContentsMargins({});
+    mainLayout->addLayout(hboxLayout);
+    hboxLayout->addWidget(new QLabel(i18n("Select Voice(s)"), this));
+    hboxLayout->addWidget(mKokoroVoiceComboBox);
+    auto pushButton = new QPushButton(i18n("Download Voice(s)"), this);
+    hboxLayout->addWidget(pushButton);
+    connect(pushButton, &QPushButton::clicked, this, [this]() {
+        auto job = new TextToSpeechKokoroDownloadVoiceJob(this);
+        job->setVoices(mKokoroVoiceComboBox->selectedVoices());
+        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesDone, this, [this]() {
+            appendMessage(i18n("Download Voices done."));
+        });
+        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesFailed, this, [this]() {
+            appendMessage(i18n("Unable to download voice."));
+        });
+        job->start();
+    });
 }
 
 TextToSpeechKokoroInstallPythonWidget::~TextToSpeechKokoroInstallPythonWidget() = default;
