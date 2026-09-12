@@ -7,7 +7,7 @@
 #pragma once
 
 #include "kokoroinstalltexttospeech_export.h"
-#include <QObject>
+#include <QProcess>
 #include <QStringList>
 namespace TextEditTextToSpeech
 {
@@ -18,7 +18,30 @@ public:
     explicit TextToSpeechKokoroDownloadVoiceJob(QObject *parent = nullptr);
     ~TextToSpeechKokoroDownloadVoiceJob() override;
 
+    void setVoices(const QStringList &voiceIdentifiers);
+
+    [[nodiscard]] bool downloadModel() const;
+    void setDownloadModel(bool newDownloadModel);
+
+    [[nodiscard]] bool canStart() const;
+
+    void start();
+
 Q_SIGNALS:
-    void downloadDone();
+    void downloadVoicesDone();
+    void downloadVoicesFailed();
+    void downloadProgress(int index, int total);
+    void downloadMessage(const QString &message);
+
+private:
+    void slotReadyReadStandardOutput();
+    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    void parseEvent(const QByteArray &line);
+    void failed(const QString &errorMessage);
+
+    QStringList mVoiceIdentifiers;
+    QByteArray mPendingOutput;
+    QProcess *mProcess = nullptr;
+    bool mDownloadModel = true;
 };
 }
