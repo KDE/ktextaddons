@@ -6,6 +6,7 @@
 #include "texttospeechkokoroinstallpythonwidget.h"
 #include "texttospeechkokoroinstalljob.h"
 #include "texttospeechkokoroinstallpythonevenvjob.h"
+#include "texttospeechkokorovoicecombobox.h"
 #include <KLocalizedString>
 #include <QPlainTextEdit>
 #include <QVBoxLayout>
@@ -15,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWidget *parent)
     : QWidget{parent}
     , mPlainTextEdit(new QPlainTextEdit(this))
+    , mKokoroVoiceComboBox(new TextToSpeechKokoroVoiceComboBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -22,6 +24,8 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
 
     mPlainTextEdit->setObjectName(u"mPlainTextEdit"_s);
     mPlainTextEdit->setReadOnly(true);
+    mKokoroVoiceComboBox->setObjectName(u"mKokoroVoiceComboBox"_s);
+    mainLayout->addWidget(mKokoroVoiceComboBox);
     mainLayout->addWidget(mPlainTextEdit);
 }
 

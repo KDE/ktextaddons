@@ -10,6 +10,7 @@
 class QPlainTextEdit;
 namespace TextEditTextToSpeech
 {
+class TextToSpeechKokoroVoiceComboBox;
 class KOKOROINSTALLTEXTTOSPEECH_TESTS_EXPORT TextToSpeechKokoroInstallPythonWidget : public QWidget
 {
     Q_OBJECT
@@ -31,6 +32,7 @@ private:
     void installModules();
 
     QPlainTextEdit *const mPlainTextEdit;
+    TextToSpeechKokoroVoiceComboBox *const mKokoroVoiceComboBox;
     QStringList mModules;
 };
 }

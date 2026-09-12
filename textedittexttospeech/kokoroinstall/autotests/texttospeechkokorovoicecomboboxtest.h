@@ -18,4 +18,6 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldHaveIconAndToolTipForEachVoice();
+    void shouldCheckEachVoice();
+    void shouldSelectVoices();
 };
