@@ -89,6 +89,7 @@ void SpeechToTextManager::initializeInput()
     }
 
     delete d->mAudioSource;
+    d->mAudioSource = nullptr;
 
     QAudioFormat format;
     format.setSampleRate(d->mSpeechToTextPlugin->sampleRate());

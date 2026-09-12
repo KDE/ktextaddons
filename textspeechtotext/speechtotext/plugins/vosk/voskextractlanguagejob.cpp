@@ -32,10 +32,10 @@ void VoskExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, cons
     // qDebug() << " list entries : " << lst;
     for (const QString &it : lst) {
         const KArchiveEntry *entry = dir->entry(it);
-        if (entry->isDirectory()) {
+        if (entry && entry->isDirectory()) {
             // qDebug() << " directory ********" << it << "sss " << (path + it + u'/');
             extractRecursive(static_cast<const KArchiveDirectory *>(entry), path + it + u'/');
-        } else if (entry->isFile()) {
+        } else if (entry && entry->isFile()) {
             const KArchiveEntry *filePathEntry = dir->entry(it);
             const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
             const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + u'/' + path};
@@ -60,24 +60,21 @@ void VoskExtractLanguageJob::start()
         deleteLater();
         return;
     }
-    auto zip = new KZip(mSource);
-    if (!zip->open(QIODevice::ReadOnly)) {
+    KZip zip(mSource);
+    if (!zip.open(QIODevice::ReadOnly)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open temporary file" << mSource;
         Q_EMIT finished();
-        delete zip;
         deleteLater();
         return;
     }
     if (!QDir().mkpath(VoskEngineUtils::storageLanguagePath())) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create path" << VoskEngineUtils::storageLanguagePath();
-        delete zip;
         Q_EMIT finished();
         deleteLater();
         return;
     }
-    const KArchiveDirectory *zipDir = zip->directory();
+    const KArchiveDirectory *zipDir = zip.directory();
     extractRecursive(zipDir, QString());
-    delete zip;
     Q_EMIT finished();
     deleteLater();
 }
