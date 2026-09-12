@@ -7,12 +7,17 @@ Standalone test tool and, in ``serve`` mode, the backend process driven over a
 pipe by the Qt TextToSpeechKokoroEngine plugin.
 
 Requires ``pip install kokoro`` (pulls in PyTorch and misaki) plus espeak-ng
-installed system wide. The model itself (~330 MB) is fetched from HuggingFace
-on first use and cached in ~/.cache/huggingface.
+installed system wide. The model itself (~330 MB) and the voices (512 kB each)
+are fetched from HuggingFace and cached in ~/.cache/huggingface: on first use
+by ``say``/``serve``, or upfront with ``download``.
 
 Examples:
     kokoro_helper.py check
     kokoro_helper.py voices
+    kokoro_helper.py download                # model + the 54 voices
+    kokoro_helper.py download model          # only the model
+    kokoro_helper.py download fr_FR ff_siwis # a whole language, or one voice
+    kokoro_helper.py download --dry-run all  # report what is missing
     kokoro_helper.py say --text "Bonjour le monde" --voice ff_siwis --play
     kokoro_helper.py say --text "Hello there" --out /tmp/hello.wav
     kokoro_helper.py serve      # newline-delimited JSON on stdin, frames on stdout
@@ -32,6 +37,14 @@ import wave
 SAMPLE_RATE = 24000
 CHANNELS = 1
 DEFAULT_REPO_ID = "hexgrad/Kokoro-82M"
+
+# What ``download`` has to fetch for the model itself. kokoro keeps the same
+# table in KModel.MODEL_NAMES, duplicated here so that downloading a file does
+# not have to import kokoro, and through it torch.
+MODEL_FILES = {
+    "hexgrad/Kokoro-82M": "kokoro-v1_0.pth",
+    "hexgrad/Kokoro-82M-v1.1-zh": "kokoro-v1_1-zh.pth",
+}
 
 # Kokoro voice ids encode the language in the first character and the gender in
 # the second one, so the whole voice table is derived from the id list.
@@ -327,6 +340,124 @@ def serve(repo_id=DEFAULT_REPO_ID):
     thread.join(timeout=5)
 
 
+# --- download mode ---------------------------------------------------------
+
+
+def selector_table():
+    """Every voice selector accepted by ``download`` -> the voice ids it means."""
+    table = {"voices": list(VOICE_IDS)}
+    shorts = {}
+    for code, (locale, _) in LANGUAGES.items():
+        voice_ids = [voice_id for voice_id in VOICE_IDS if voice_id[0] == code]
+        table[code] = voice_ids
+        table[locale.lower()] = voice_ids
+        shorts.setdefault(locale.split("_")[0].lower(), []).append(code)
+    # "fr" stands for fr_FR, but "en" would be ambiguous (en_US and en_GB), so
+    # only the short forms naming a single language are accepted.
+    for short, codes in shorts.items():
+        if len(codes) == 1:
+            table[short] = table[codes[0]]
+    table.update({voice_id: [voice_id] for voice_id in VOICE_IDS})
+    return table
+
+
+def resolve_selectors(selectors):
+    """Turn the ``download`` selectors into (model wanted, voice ids).
+
+    A selector is "all", "model", "voices", a language code ("f"), a locale
+    ("fr" or "fr_FR") or a voice id ("ff_siwis"). Unknown ones raise ValueError.
+    """
+    table = selector_table()
+    want_model = False
+    voices = []
+    for selector in selectors or ("all",):
+        key = selector.lower()
+        if key == "all":
+            want_model = True
+            matches = VOICE_IDS
+        elif key == "model":
+            want_model = True
+            matches = ()
+        elif key in table:
+            matches = table[key]
+        else:
+            raise ValueError(
+                f"unknown selector {selector!r}: expected all, model, voices, a "
+                "language code or locale (f, fr, fr_FR) or a voice id (ff_siwis)"
+            )
+        for voice_id in matches:
+            # A voice named twice, directly and through its language, is fetched once.
+            if voice_id not in voices:
+                voices.append(voice_id)
+    return want_model, voices
+
+
+def download(args):
+    """Fetch the requested files into the HuggingFace cache, skipping what is there."""
+    try:
+        want_model, voices = resolve_selectors(args.what)
+    except ValueError as error:
+        log(error)
+        return 2
+
+    from huggingface_hub import hf_hub_download, try_to_load_from_cache
+
+    if args.json:
+        # The download bars land on stderr, which is only noise for a caller
+        # that follows the json events.
+        from huggingface_hub.utils import disable_progress_bars
+
+        disable_progress_bars()
+
+    files = []
+    if want_model:
+        model_file = MODEL_FILES.get(args.repo_id)
+        if model_file is None:
+            log(f"unknown repository {args.repo_id!r}: no model file to download")
+            return 2
+        # config.json is what KModel reads before the weights themselves.
+        files += [("model", "config.json"), ("model", model_file)]
+    files += [("voice", f"voices/{voice_id}.pt") for voice_id in voices]
+
+    def report(**event):
+        if args.json:
+            print(json.dumps(event, ensure_ascii=False), flush=True)
+            return
+        if event["type"] == "finished":
+            log(f"finished: {event['total']} file(s), {event['failed']} failure(s)")
+            return
+        detail = event.get("message") or event.get("path") or ""
+        log(
+            f"[{event['index']}/{event['total']}] {event['type']}: {event['file']} {detail}".rstrip()
+        )
+
+    failures = 0
+    for index, (kind, filename) in enumerate(files, start=1):
+        where = try_to_load_from_cache(args.repo_id, filename)
+        # try_to_load_from_cache returns a sentinel, not a path, for a file the
+        # cache knows to be missing on the hub.
+        cached = where if isinstance(where, str) else None
+        progress = {"kind": kind, "file": filename, "index": index, "total": len(files)}
+        if cached and not args.force:
+            report(type="cached", path=cached, **progress)
+            continue
+        if args.dry_run:
+            report(type="missing", **progress)
+            continue
+        report(type="downloading", **progress)
+        try:
+            path = hf_hub_download(
+                repo_id=args.repo_id, filename=filename, force_download=args.force
+            )
+        except Exception as error:  # noqa: BLE001 - network, disk, offline mode...
+            failures += 1
+            report(type="error", message=f"{type(error).__name__}: {error}", **progress)
+            continue
+        report(type="done", path=path, **progress)
+    report(type="finished", total=len(files), failed=failures)
+    return 1 if failures else 0
+
+
 # --- one-shot modes --------------------------------------------------------
 
 
@@ -409,6 +540,25 @@ def main():
     commands.add_parser("voices", help="list the known voices as JSON")
     commands.add_parser("serve", help="run the JSON/PCM protocol used by the Qt plugin")
 
+    download_parser = commands.add_parser(
+        "download",
+        help="fetch the model and the voices upfront, instead of on first use",
+        description="Selectors: all (the default), model, voices, a language "
+        "code (f), a locale (fr, fr_FR) or a voice id (ff_siwis).",
+    )
+    download_parser.add_argument(
+        "what", nargs="*", metavar="SELECTOR", help="what to download, all by default"
+    )
+    download_parser.add_argument(
+        "--dry-run", action="store_true", help="only report what is missing"
+    )
+    download_parser.add_argument(
+        "--force", action="store_true", help="download again even when cached"
+    )
+    download_parser.add_argument(
+        "--json", action="store_true", help="report one json event per line on stdout"
+    )
+
     say_parser = commands.add_parser(
         "say", help="synthesize one text and play it or save it"
     )
@@ -444,6 +594,8 @@ def main():
     if args.command == "serve":
         serve(args.repo_id)
         return 0
+    if args.command == "download":
+        return download(args)
     return say(args)
 
 
