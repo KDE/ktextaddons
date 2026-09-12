@@ -216,7 +216,7 @@ option(BERGAMOT_TRANSLATOR_PLUGIN "Build bergamot translator plugin" OFF)
 add_feature_info(
     BERGAMOT_TRANSLATOR_PLUGIN
     ${BERGAMOT_TRANSLATOR_PLUGIN}
-    "Bergamot translator plugin (local translation) (Experimental. Need to download bergamot source code first)"
+    "Bergamot translator plugin (local translation) (Need to download bergamot source code first)"
 )
 
 option(SPEAK_TO_TEXT_VOSK_PLUGIN "Build vosk speak to text support" OFF)
