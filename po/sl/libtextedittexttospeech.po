@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-11 00:44+0000\n"
-"PO-Revision-Date: 2026-09-09 07:40+0200\n"
+"POT-Creation-Date: 2026-09-12 00:43+0000\n"
+"PO-Revision-Date: 2026-09-11 17:52+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -21,83 +21,90 @@ msgstr ""
 #: kokoro/texttospeechkokoro.cpp:124
 #, kde-format
 msgid "Kokoro is not installed. Please install it first."
-msgstr ""
+msgstr "Kokoro ni nameščen. Najprej ga namestite."
 
 #: kokoro/texttospeechkokoro.cpp:146
 #, kde-format
 msgid "The Kokoro backend stopped unexpectedly."
-msgstr ""
+msgstr "Zaledni sistem Kokoro se je nepričakovano ustavil."
 
 #: kokoro/texttospeechkokoro.cpp:152
 #, kde-format
 msgid "Unable to start the Kokoro backend."
-msgstr ""
+msgstr "Zalednega sistema Kokoro ni mogoče zagnati."
 
 #: kokoro/texttospeechkokoro.cpp:245
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
-msgstr ""
+msgstr "Kokoro ni mogel sintetizirati besedila: %1"
 
 #: kokoro/texttospeechkokoro.cpp:260
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
-msgstr ""
+msgstr "Kokoro je poročal neuporaben zvočni format."
 
 #: kokoro/texttospeechkokoro.cpp:304
 #, kde-format
 msgid "Unable to open the audio device."
-msgstr ""
+msgstr "Ni mogoče odpreti zvočne naprave."
 
-#: kokoro/texttospeechkokorocheckjob.cpp:51
+#: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
 msgid "Kokoro is not usable. Please reinstall it."
-msgstr ""
+msgstr "Kokoro ni uporaben. Namestite ga znova."
 
-#: kokoro/texttospeechkokorocheckjob.cpp:54
+#: kokoroinstall/texttospeechkokorocheckjob.cpp:54
+#: texttospeechconfigwidget.cpp:290
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
+msgstr "Kokoro ni nameščen. Manjka: %1"
+
+#: kokoroinstall/texttospeechkokoroinstallmessagewidget.cpp:18
+#, kde-format
+msgctxt "@action"
+msgid "Install"
 msgstr ""
 
-#: kokoro/texttospeechkokoroinstallpythondialog.cpp:27
+#: kokoroinstall/texttospeechkokoroinstallpythondialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Kokoro Package"
 msgstr "Namesti paket Kokoro"
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:44
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:44
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
-msgstr ""
+msgstr "Program espeak-ng manjka. Namestite ga z upravljalnikom paketov."
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:46
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:46
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr ""
+msgstr "Ustvarjanje virtualnega okolja Python ..."
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:49
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:49
 #, kde-format
 msgid "Python virtual environment created."
-msgstr ""
+msgstr "Virtualno okolje Python je ustvarjeno."
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:53
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:53
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr ""
+msgstr "Ni mogoče ustvariti virtualnega okolja Python."
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:61
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
 #, kde-format
 msgid "Installing modules: %1"
-msgstr ""
+msgstr "Nameščanje modulov: %1"
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:66
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:66
 #, kde-format
 msgid "Installation done."
-msgstr ""
+msgstr "Namestitev je končana."
 
-#: kokoro/texttospeechkokoroinstallpythonwidget.cpp:70
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:70
 #, kde-format
 msgid "Installation failed."
-msgstr ""
+msgstr "Namestitev ni uspela."
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -127,45 +134,55 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Konfiguriraj besedilo v govor"
 
-#: texttospeechconfiginterface.cpp:91
+#: texttospeechconfiginterface.cpp:94
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "Dobro jutro, to je test za preizkus nastavitev."
 
-#: texttospeechconfigwidget.cpp:37
+#: texttospeechconfigwidget.cpp:42
 #, kde-format
 msgid "Test"
 msgstr "Test"
 
-#: texttospeechconfigwidget.cpp:45
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Volume:"
 msgstr "Glasnost:"
 
-#: texttospeechconfigwidget.cpp:49
+#: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Rate:"
 msgstr "Hitrost:"
 
-#: texttospeechconfigwidget.cpp:55
+#: texttospeechconfigwidget.cpp:71
 #, kde-format
 msgid "Pitch:"
 msgstr "Višina tona:"
 
-#: texttospeechconfigwidget.cpp:59
+#: texttospeechconfigwidget.cpp:75
 #, kde-format
 msgid "Engine:"
 msgstr "Stroj:"
 
-#: texttospeechconfigwidget.cpp:63
+#: texttospeechconfigwidget.cpp:79
 #, kde-format
 msgid "Language:"
 msgstr "Jezik:"
 
-#: texttospeechconfigwidget.cpp:67
+#: texttospeechconfigwidget.cpp:83
 #, kde-format
 msgid "Voice:"
 msgstr "Glas:"
+
+#: texttospeechconfigwidget.cpp:103
+#, kde-format
+msgid "%1: %2"
+msgstr ""
+
+#: texttospeechconfigwidget.cpp:295
+#, kde-format
+msgid "Kokoro installation is broken. Please verify which you sysadmin."
+msgstr ""
 
 #: texttospeechwidget.cpp:56
 #, kde-format
