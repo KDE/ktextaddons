@@ -24,17 +24,19 @@ struct KokoroLanguage {
 
 // Kokoro derives the phonemes from espeak-ng, except for japanese and chinese
 // which require misaki[ja] and misaki[zh].
-constexpr std::array<KokoroLanguage, 9> s_languages{{
-    {'a', "en_US", false},
-    {'b', "en_GB", false},
-    {'e', "es_ES", false},
-    {'f', "fr_FR", false},
-    {'h', "hi_IN", false},
-    {'i', "it_IT", false},
-    {'p', "pt_BR", false},
-    {'j', "ja_JP", true},
-    {'z', "zh_CN", true},
-}};
+constexpr std::array<KokoroLanguage, 9> s_languages{
+    {
+        {'a', "en_US", false},
+        {'b', "en_GB", false},
+        {'e', "es_ES", false},
+        {'f', "fr_FR", false},
+        {'h', "hi_IN", false},
+        {'i', "it_IT", false},
+        {'p', "pt_BR", false},
+        {'j', "ja_JP", true},
+        {'z', "zh_CN", true},
+    },
+};
 
 // The 54 voices of Kokoro-82M. The first character gives the language, the
 // second one the gender, so nothing else has to be stored here.
