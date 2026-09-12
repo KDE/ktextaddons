@@ -13,3 +13,5 @@ TextToSpeechKokoroDownloadVoiceJob::TextToSpeechKokoroDownloadVoiceJob(QObject *
 }
 
 TextToSpeechKokoroDownloadVoiceJob::~TextToSpeechKokoroDownloadVoiceJob() = default;
+
+#include "moc_texttospeechkokorodownloadvoicejob.cpp"
