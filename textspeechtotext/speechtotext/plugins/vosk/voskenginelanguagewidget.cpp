@@ -171,6 +171,10 @@ VoskEngineLanguageWidget::~VoskEngineLanguageWidget() = default;
 
 void VoskEngineLanguageWidget::slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info)
 {
+    if (info.bytesTotal <= 0) {
+        mProgressBar->setRange(0, 0);
+        return;
+    }
     if (info.bytesReceived != info.bytesTotal) {
         mProgressBarWidget->setVisible(true);
     } else {
