@@ -56,7 +56,7 @@ bool VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, 
     o["version"_L1] = installed.versionStr;
     d.setObject(o);
     const QByteArray ba = d.toJson();
-    file.write(d.toJson());
+    file.write(ba);
     file.close();
     return true;
 }
