@@ -4,11 +4,7 @@
 # Everything needed to check and install the python side of kokoro, without
 # the engine itself: an application can offer the installation without pulling
 # QtMultimedia and the backend.
-add_library(
-    kokoroinstalltexttospeech
-    texttospeechkokoroinstallmessagewidget.h
-    texttospeechkokoroinstallmessagewidget.cpp
-)
+add_library(kokoroinstalltexttospeech)
 ecm_qt_declare_logging_category(kokoroinstalltexttospeech
     HEADER texttospeech_kokoroinstall_lib_debug.h
     IDENTIFIER KOKORO_INSTALL_TEXT_TO_SPEECH_LIB_LOG
@@ -33,6 +29,10 @@ target_sources(
         texttospeechkokoroinstalljob.cpp
         texttospeechkokoroinstallpythonevenvjob.h
         texttospeechkokoroinstallpythonevenvjob.cpp
+        texttospeechkokoroinstallmessagewidget.h
+        texttospeechkokoroinstallmessagewidget.cpp
+        texttospeechkokorodownloadvoicejob.h
+        texttospeechkokorodownloadvoicejob.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
