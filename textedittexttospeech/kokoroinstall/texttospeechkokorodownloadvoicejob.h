@@ -6,12 +6,11 @@
 
 #pragma once
 
-#include "kokoroinstalltexttospeech_export.h"
 #include <QProcess>
 #include <QStringList>
 namespace TextEditTextToSpeech
 {
-class KOKOROINSTALLTEXTTOSPEECH_EXPORT TextToSpeechKokoroDownloadVoiceJob : public QObject
+class TextToSpeechKokoroDownloadVoiceJob : public QObject
 {
     Q_OBJECT
 public:
