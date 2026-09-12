@@ -47,7 +47,7 @@ void TextToSpeechKokoroVoiceComboBox::fill()
 {
     const QList<TextToSpeechKokoroUtils::KokoroVoice> listVoices = TextToSpeechKokoroUtils::kokoroVoices();
     for (const auto &voice : listVoices) {
-        addItem(TextToSpeechKokoroUtils::voiceIcon(voice), voice.name, voice.name);
+        addItem(TextToSpeechKokoroUtils::voiceIcon(voice), voice.name, voice.identifier);
         setItemData(count() - 1,
                     i18nc("@info:tooltip <voice name> (<language>, <gender>)", "%1 (%2, %3)", voice.name, localeName(voice.locale), genderName(voice.gender)),
                     Qt::ToolTipRole);
