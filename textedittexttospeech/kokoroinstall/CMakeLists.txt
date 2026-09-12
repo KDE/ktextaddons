@@ -33,6 +33,8 @@ target_sources(
         texttospeechkokoroinstallmessagewidget.cpp
         texttospeechkokorodownloadvoicejob.h
         texttospeechkokorodownloadvoicejob.cpp
+        texttospeechkokorovoicecombobox.h
+        texttospeechkokorovoicecombobox.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
