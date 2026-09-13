@@ -28,3 +28,5 @@ target_link_libraries(
 )
 
 install(TARGETS speechtotext_whisper DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
+
+install(PROGRAMS scripts/whisper_helper.py DESTINATION ${KDE_INSTALL_BINDIR})
