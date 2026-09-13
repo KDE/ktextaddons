@@ -78,6 +78,13 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mConfigureEngineButton->setObjectName(u"configure"_s);
     hboxEngineLayout->addWidget(mAvailableEngineCombobox);
     hboxEngineLayout->addWidget(mConfigureEngineButton);
+    connect(mConfigureEngineButton, &QPushButton::clicked, this, [this]() {
+        QPointer<TextToSpeechKokoroInstallPythonDialog> dlg = new TextToSpeechKokoroInstallPythonDialog(this);
+        dlg->setAttribute(Qt::WA_DeleteOnClose);
+        dlg->setModules({});
+        dlg->show();
+        dlg->startInstall();
+    });
 
     mAvailableEngineCombobox->setObjectName(u"engine"_s);
     mAvailableEngineCombobox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
@@ -285,7 +292,7 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
     updateLocale();
 }
 
-void TextEditTextToSpeech::TextToSpeechConfigWidget::checkKokoroEngine(const QString newEngineName)
+void TextToSpeechConfigWidget::checkKokoroEngine(const QString newEngineName)
 {
     auto job = new TextEditTextToSpeech::TextToSpeechKokoroCheckJob(this);
     connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::packagesInstalled, this, [this, newEngineName] {
