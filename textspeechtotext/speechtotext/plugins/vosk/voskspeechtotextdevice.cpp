@@ -6,7 +6,7 @@
 */
 
 #include "voskspeechtotextdevice.h"
-using namespace Qt::Literals::StringLiterals;
+#include <QJsonObject>
 
 #include "libvoskspeechtotext_debug.h"
 #if HAVE_VOSK_API_SUPPORT
@@ -14,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #endif
 #include <QJsonDocument>
 
+using namespace Qt::Literals::StringLiterals;
 VoskSpeechToTextDevice::VoskSpeechToTextDevice(QObject *parent)
     : QIODevice{parent}
 {
