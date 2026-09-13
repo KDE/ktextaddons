@@ -103,6 +103,8 @@ void TextToSpeechKokoroInstallPythonWidget::installModules()
             Q_EMIT installFailed();
         });
         job->start();
+    } else {
+        Q_EMIT installDone();
     }
 }
 
