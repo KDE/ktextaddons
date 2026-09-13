@@ -46,6 +46,9 @@ TextToSpeechKokoroInstallPythonDialog::TextToSpeechKokoroInstallPythonDialog(QWi
     connect(mKokoroInstallPythonWidget, &TextToSpeechKokoroInstallPythonWidget::installFailed, mCloseButton, [this]() {
         mCloseButton->setEnabled(true);
     });
+    connect(mKokoroInstallPythonWidget, &TextToSpeechKokoroInstallPythonWidget::installInProgress, mCloseButton, [this](bool status) {
+        mCloseButton->setEnabled(!status);
+    });
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextToSpeechKokoroInstallPythonDialogGroupName), QSize(400, 300));
 }
 

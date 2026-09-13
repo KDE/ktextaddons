@@ -39,11 +39,14 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
     connect(pushButton, &QPushButton::clicked, this, [this]() {
         auto job = new TextToSpeechKokoroDownloadVoiceJob(this);
         job->setVoices(mKokoroVoiceComboBox->selectedVoices());
+        Q_EMIT installInProgress(true);
         connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesDone, this, [this]() {
             appendMessage(i18n("Download Voices done."));
+            Q_EMIT installInProgress(false);
         });
         connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesFailed, this, [this]() {
             appendMessage(i18n("Unable to download voice."));
+            Q_EMIT installInProgress(false);
         });
         connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadMessage, this, [this](const QString &msg) {
             appendMessage(msg);

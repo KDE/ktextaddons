@@ -26,10 +26,11 @@ public:
 Q_SIGNALS:
     void installDone();
     void installFailed();
+    void installInProgress(bool status);
 
 private:
-    void appendMessage(const QString &message);
-    void installModules();
+    KOKOROINSTALLTEXTTOSPEECH_NO_EXPORT void appendMessage(const QString &message);
+    KOKOROINSTALLTEXTTOSPEECH_NO_EXPORT void installModules();
 
     QPlainTextEdit *const mPlainTextEdit;
     TextToSpeechKokoroVoiceComboBox *const mKokoroVoiceComboBox;
