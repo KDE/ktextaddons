@@ -89,19 +89,21 @@ void TextToSpeechKokoroInstallPythonWidget::startInstall()
 
 void TextToSpeechKokoroInstallPythonWidget::installModules()
 {
-    appendMessage(i18n("Installing modules: %1", mModules.join(", "_L1)));
-    auto job = new TextToSpeechKokoroInstallJob(this);
-    job->setModules(mModules);
-    connect(job, &TextToSpeechKokoroInstallJob::installMessage, this, &TextToSpeechKokoroInstallPythonWidget::appendMessage);
-    connect(job, &TextToSpeechKokoroInstallJob::installDone, this, [this]() {
-        appendMessage(i18n("Installation done."));
-        Q_EMIT installDone();
-    });
-    connect(job, &TextToSpeechKokoroInstallJob::installFailed, this, [this]() {
-        appendMessage(i18n("Installation failed."));
-        Q_EMIT installFailed();
-    });
-    job->start();
+    if (!mModules.isEmpty()) {
+        appendMessage(i18n("Installing modules: %1", mModules.join(", "_L1)));
+        auto job = new TextToSpeechKokoroInstallJob(this);
+        job->setModules(mModules);
+        connect(job, &TextToSpeechKokoroInstallJob::installMessage, this, &TextToSpeechKokoroInstallPythonWidget::appendMessage);
+        connect(job, &TextToSpeechKokoroInstallJob::installDone, this, [this]() {
+            appendMessage(i18n("Installation done."));
+            Q_EMIT installDone();
+        });
+        connect(job, &TextToSpeechKokoroInstallJob::installFailed, this, [this]() {
+            appendMessage(i18n("Installation failed."));
+            Q_EMIT installFailed();
+        });
+        job->start();
+    }
 }
 
 void TextToSpeechKokoroInstallPythonWidget::appendMessage(const QString &message)
