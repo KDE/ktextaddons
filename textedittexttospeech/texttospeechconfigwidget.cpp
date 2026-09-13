@@ -79,11 +79,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     hboxEngineLayout->addWidget(mAvailableEngineCombobox);
     hboxEngineLayout->addWidget(mConfigureEngineButton);
     connect(mConfigureEngineButton, &QPushButton::clicked, this, [this]() {
-        QPointer<TextToSpeechKokoroInstallPythonDialog> dlg = new TextToSpeechKokoroInstallPythonDialog(this);
-        dlg->setAttribute(Qt::WA_DeleteOnClose);
-        dlg->setModules({});
-        dlg->show();
-        dlg->startInstall();
+        slotInstallKokoro({});
     });
 
     mAvailableEngineCombobox->setObjectName(u"engine"_s);
