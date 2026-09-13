@@ -50,6 +50,7 @@ void TextToSpeechKokoroDownloadVoiceJob::start()
 
     mProcess = new QProcess(this);
     connect(mProcess, &QProcess::readyReadStandardOutput, this, &TextToSpeechKokoroDownloadVoiceJob::slotReadyReadStandardOutput);
+    connect(mProcess, &QProcess::readyReadStandardError, this, &TextToSpeechKokoroDownloadVoiceJob::slotReadyReadStandardError);
     connect(mProcess, &QProcess::finished, this, &TextToSpeechKokoroDownloadVoiceJob::slotFinished);
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
         // finished() is not emitted when the process could not be started at all.
@@ -73,6 +74,11 @@ void TextToSpeechKokoroDownloadVoiceJob::slotReadyReadStandardOutput()
         parseEvent(mPendingOutput.left(end));
         mPendingOutput.remove(0, end + 1);
     }
+}
+
+void TextToSpeechKokoroDownloadVoiceJob::slotReadyReadStandardError()
+{
+    mPendingError += mProcess->readAllStandardError();
 }
 
 void TextToSpeechKokoroDownloadVoiceJob::parseEvent(const QByteArray &line)
@@ -101,9 +107,14 @@ void TextToSpeechKokoroDownloadVoiceJob::parseEvent(const QByteArray &line)
 void TextToSpeechKokoroDownloadVoiceJob::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     slotReadyReadStandardOutput();
+    slotReadyReadStandardError();
     mPendingOutput.clear();
     if (exitStatus != QProcess::NormalExit || exitCode != 0) {
-        failed(u"Unable to download voices "_s + mVoiceIdentifiers.join(u' ') + u". Exit code: "_s + QString::number(exitCode));
+        const QString error = QString::fromUtf8(mPendingError).trimmed();
+        if (!error.isEmpty()) {
+            Q_EMIT downloadMessage(error);
+        }
+        failed(u"Unable to download voices "_s + mVoiceIdentifiers.join(u' ') + u". Exit code: "_s + QString::number(exitCode) + u' ' + error);
         return;
     }
     Q_EMIT downloadVoicesDone();

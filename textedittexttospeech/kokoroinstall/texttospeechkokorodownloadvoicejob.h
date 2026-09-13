@@ -34,12 +34,14 @@ Q_SIGNALS:
 
 private:
     void slotReadyReadStandardOutput();
+    void slotReadyReadStandardError();
     void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
     void parseEvent(const QByteArray &line);
     void failed(const QString &errorMessage);
 
     QStringList mVoiceIdentifiers;
     QByteArray mPendingOutput;
+    QByteArray mPendingError;
     QProcess *mProcess = nullptr;
     bool mDownloadModel = true;
 };
