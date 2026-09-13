@@ -33,7 +33,7 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
     hboxLayout->setContentsMargins({});
     mainLayout->addLayout(hboxLayout);
     hboxLayout->addWidget(new QLabel(i18n("Select Voice(s):"), this));
-    hboxLayout->addWidget(mKokoroVoiceComboBox);
+    hboxLayout->addWidget(mKokoroVoiceComboBox, 1);
     auto pushButton = new QPushButton(i18n("Download Voice(s)"), this);
     hboxLayout->addWidget(pushButton);
     connect(pushButton, &QPushButton::clicked, this, [this]() {
@@ -50,7 +50,7 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
         });
         job->start();
     });
-    hboxLayout->addStretch(1);
+    mKokoroVoiceComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }
 
 TextToSpeechKokoroInstallPythonWidget::~TextToSpeechKokoroInstallPythonWidget() = default;
