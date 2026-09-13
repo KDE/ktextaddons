@@ -285,27 +285,35 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
     updateLocale();
 }
 
+void TextEditTextToSpeech::TextToSpeechConfigWidget::checkKokoroEngine(const QString newEngineName)
+{
+    auto job = new TextEditTextToSpeech::TextToSpeechKokoroCheckJob(this);
+    connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::packagesInstalled, this, [this, newEngineName] {
+        mKokoroInstallMessageWidget->animatedHide();
+        mTextToSpeechConfigInterface->setEngine(newEngineName);
+        slotLocalesAndVoices();
+    });
+    connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToInstallPackages, this, [this](const QStringList &missing) {
+        mKokoroInstallMessageWidget->setText(i18n("Kokoro is not installed. Missing: %1", missing.join(", "_L1)));
+        mKokoroInstallMessageWidget->setMissingPackages(missing);
+        mKokoroInstallMessageWidget->animatedShow();
+    });
+    connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToReinstall, this, [this] {
+        mKokoroInstallMessageWidget->setText(i18n("Kokoro installation is broken. Please verify which you sysadmin."));
+        mKokoroInstallMessageWidget->animatedShow();
+    });
+    job->start();
+}
+
 void TextToSpeechConfigWidget::slotEngineChanged()
 {
     const QString newEngineName = mAvailableEngineCombobox->currentData().toString();
     if (newEngineName == "kokoro"_L1) {
-        auto job = new TextEditTextToSpeech::TextToSpeechKokoroCheckJob(this);
-        connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::packagesInstalled, this, [this, newEngineName] {
-            mKokoroInstallMessageWidget->animatedHide();
-            mTextToSpeechConfigInterface->setEngine(newEngineName);
-            slotLocalesAndVoices();
-        });
-        connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToInstallPackages, this, [this](const QStringList &missing) {
-            mKokoroInstallMessageWidget->setText(i18n("Kokoro is not installed. Missing: %1", missing.join(", "_L1)));
-            mKokoroInstallMessageWidget->setMissingPackages(missing);
-            mKokoroInstallMessageWidget->animatedShow();
-        });
-        connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToReinstall, this, [this] {
-            mKokoroInstallMessageWidget->setText(i18n("Kokoro installation is broken. Please verify which you sysadmin."));
-            mKokoroInstallMessageWidget->animatedShow();
-        });
-        job->start();
+        mConfigureEngineButton->setVisible(true);
+        checkKokoroEngine(newEngineName);
         return;
+    } else {
+        mConfigureEngineButton->setVisible(false);
     }
     mTextToSpeechConfigInterface->setEngine(newEngineName);
     slotLocalesAndVoices();

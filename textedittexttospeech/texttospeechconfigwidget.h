@@ -61,6 +61,7 @@ Q_SIGNALS:
     void configChanged(bool state);
 
 private:
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void checkKokoroEngine(const QString newEngineName);
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotTestTextToSpeech(bool checked);
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void valueChanged();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotLocalesAndVoices();
