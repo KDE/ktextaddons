@@ -42,6 +42,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mTestButton(new QPushButton(QIcon::fromTheme(u"player-volume"_s), i18n("Test"), this))
     , mMessageErrorWidget(new KMessageWidget(this))
     , mKokoroInstallMessageWidget(new TextToSpeechKokoroInstallMessageWidget(this))
+    , mConfigureEngineButton(new QPushButton(QIcon::fromTheme(u"settings-configure"_s), i18n("Configure…"), this))
 {
     auto layout = new QFormLayout(this);
     layout->setContentsMargins({});
@@ -70,9 +71,17 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mPitch->setObjectName(u"pitch"_s);
     layout->addRow(i18n("Pitch:"), mPitch);
 
+    auto engineWidget = new QWidget(this);
+    auto hboxEngineLayout = new QHBoxLayout(engineWidget);
+    hboxEngineLayout->setContentsMargins({});
+
+    mConfigureEngineButton->setObjectName(u"configure"_s);
+    hboxEngineLayout->addWidget(mAvailableEngineCombobox);
+    hboxEngineLayout->addWidget(mConfigureEngineButton);
+
     mAvailableEngineCombobox->setObjectName(u"engine"_s);
     mAvailableEngineCombobox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    layout->addRow(i18n("Engine:"), mAvailableEngineCombobox);
+    layout->addRow(i18n("Engine:"), engineWidget);
     connect(mAvailableEngineCombobox, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotAvailableEngineChanged);
 
     mLanguageComboBox->setObjectName(u"language"_s);

@@ -87,5 +87,6 @@ private:
     QPushButton *const mTestButton;
     KMessageWidget *const mMessageErrorWidget;
     TextToSpeechKokoroInstallMessageWidget *const mKokoroInstallMessageWidget;
+    QPushButton *const mConfigureEngineButton;
 };
 }
