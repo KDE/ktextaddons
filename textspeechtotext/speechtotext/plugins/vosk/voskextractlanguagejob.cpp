@@ -5,7 +5,6 @@
 */
 
 #include "voskextractlanguagejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libvoskspeechtotext_debug.h"
 #include "voskengineutils.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KZip>
 #include <QDir>
 
+using namespace Qt::Literals::StringLiterals;
 VoskExtractLanguageJob::VoskExtractLanguageJob(QObject *parent)
     : QObject{parent}
 {

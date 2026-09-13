@@ -5,7 +5,6 @@
 */
 
 #include "voskenginedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "voskenginelanguagewidget.h"
 #include <KLocalizedString>
@@ -18,6 +17,7 @@ namespace
 const char myConfigGroupName[] = "VoskEngineDialog";
 }
 
+using namespace Qt::Literals::StringLiterals;
 VoskEngineDialog::VoskEngineDialog(QWidget *parent)
     : QDialog(parent)
     , mVoskEngineWidget(new VoskEngineLanguageWidget(this))

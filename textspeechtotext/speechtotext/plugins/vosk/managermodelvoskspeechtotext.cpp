@@ -5,7 +5,6 @@
 */
 
 #include "managermodelvoskspeechtotext.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QNetworkReply>
 #include <QNetworkRequest>
 
+using namespace Qt::Literals::StringLiterals;
 ManagerModelVoskSpeechToText::ManagerModelVoskSpeechToText(QObject *parent)
     : QObject{parent}
 {
@@ -72,7 +72,7 @@ void ManagerModelVoskSpeechToText::loadModelList(const QString &fileName)
 void ManagerModelVoskSpeechToText::parseListModel(const QJsonArray &arrays)
 {
     mSpeechToTextInfos.clear();
-    for (const QJsonValue &current : arrays) {
+    for (const auto &current : arrays) {
         if (current.type() == QJsonValue::Object) {
             VoskSpeechToTextInfo speechTextInfo;
             const QJsonObject translatorObject = current.toObject();

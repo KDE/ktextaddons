@@ -5,7 +5,6 @@
 */
 
 #include "voskengineutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libvoskspeechtotext_debug.h"
 #include <QDir>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonObject>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 QString VoskEngineUtils::defaultVoskRepository()
 {
     return u"https://alphacephei.com/vosk/models/model-list.json"_s;

@@ -31,8 +31,9 @@ QString VoskSpeechToTextProxyModel::searchString() const
 void VoskSpeechToTextProxyModel::setSearchString(const QString &newSearchString)
 {
     if (mSearchString != newSearchString) {
+        beginFilterChange();
         mSearchString = newSearchString;
-        invalidateFilter();
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
     }
 }
 

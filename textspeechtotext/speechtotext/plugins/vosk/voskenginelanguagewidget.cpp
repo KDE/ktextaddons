@@ -5,7 +5,6 @@
 */
 
 #include "voskenginelanguagewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libvoskspeechtotext_debug.h"
 #include "voskspeechtotextmodel.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 
+using namespace Qt::Literals::StringLiterals;
 VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}
     , mTreeView(new QTreeView(this))

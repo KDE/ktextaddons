@@ -5,7 +5,6 @@
 */
 
 #include "voskdownloadlanguagejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "generateinstalledlanguageinfojob.h"
 #include "libvoskspeechtotext_debug.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QNetworkRequest>
 #include <QTemporaryFile>
 
+using namespace Qt::Literals::StringLiterals;
 VoskDownloadLanguageJob::VoskDownloadLanguageJob(QObject *parent)
     : QObject{parent}
 {
@@ -42,7 +42,7 @@ void VoskDownloadLanguageJob::start()
 
     mHash = new QCryptographicHash(QCryptographicHash::Md5);
 
-    QNetworkRequest request(mInfo.url);
+    const QNetworkRequest request(mInfo.url);
     // qDebug() << " mInfo.url " << mInfo.url;
     QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this](QNetworkReply::NetworkError error) {

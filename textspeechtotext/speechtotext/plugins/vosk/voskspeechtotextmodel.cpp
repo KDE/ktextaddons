@@ -21,8 +21,9 @@ VoskSpeechToTextModel::~VoskSpeechToTextModel() = default;
 
 int VoskSpeechToTextModel::rowCount(const QModelIndex &parent) const
 {
-    if (parent.isValid()) // flat model
+    if (parent.isValid()) { // flat model
         return 0;
+    }
     return mSpeechToTextInfos.count();
 }
 

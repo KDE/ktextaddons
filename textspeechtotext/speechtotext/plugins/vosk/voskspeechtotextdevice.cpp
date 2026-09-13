@@ -112,8 +112,9 @@ void VoskSpeechToTextDevice::parseText(const char *json)
     text.append(u' ');
 
     if (!text.contains(mWakeWord)) {
-        if (!mIsListiningBecauseOfWakeWord)
+        if (!mIsListiningBecauseOfWakeWord) {
             return;
+        }
 
         Q_EMIT falsePositiveWakeWord();
         mIsListiningBecauseOfWakeWord = false;
@@ -145,8 +146,9 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
         Q_EMIT falsePositiveWakeWord();
         mIsListiningBecauseOfWakeWord = false;
         return;
-    } else if (!mIsAsking)
+    } else if (!mIsAsking) {
         return;
+    }
 
     Q_EMIT result(text);
 }
