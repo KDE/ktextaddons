@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-11 00:44+0000\n"
+"POT-Creation-Date: 2026-09-13 00:43+0000\n"
 "PO-Revision-Date: 2026-08-24 11:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -215,25 +215,25 @@ msgid "Tool Plugins:"
 msgstr "Plug-ins voor hulpmiddelen:"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Hulpmiddel-identifier: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Aan"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Uit"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
 msgstr "Activeer: %1"
@@ -3281,7 +3281,7 @@ msgstr "Aangepaste URL:"
 msgid "Max Tokens:"
 msgstr "Max. tokens:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Tekstplug-ins"

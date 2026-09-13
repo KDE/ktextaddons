@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-11 00:44+0000\n"
+"POT-Creation-Date: 2026-09-13 00:43+0000\n"
 "PO-Revision-Date: 2026-05-31 19:48-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -214,25 +214,25 @@ msgid "Tool Plugins:"
 msgstr "قورال قىستۇرمىسى"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "ئوچۇق"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "تاقاق"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
 msgstr ""
@@ -2835,7 +2835,7 @@ msgstr ""
 msgid "Max Tokens:"
 msgstr ""
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, fuzzy, kde-format
 #| msgid "Tools Plugins"
 msgid "Text Plugins:"

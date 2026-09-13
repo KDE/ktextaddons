@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-13 00:43+0000\n"
 "PO-Revision-Date: 2024-05-12 15:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -95,12 +95,12 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "மொழிகளின் பட்டியலை இணையம் மூலமாக புதுப்பிக்கும்."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:190
 #, kde-format
 msgid "Error: %1"
 msgstr "சிக்கல்: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:190
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"

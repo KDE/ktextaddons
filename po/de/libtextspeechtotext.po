@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-13 00:43+0000\n"
 "PO-Revision-Date: 2023-09-15 10:13+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -89,12 +89,12 @@ msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:190
 #, kde-format
 msgid "Error: %1"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:186
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:190
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"

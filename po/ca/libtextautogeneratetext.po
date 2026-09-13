@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-11 00:44+0000\n"
+"POT-Creation-Date: 2026-09-13 00:43+0000\n"
 "PO-Revision-Date: 2026-08-24 19:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -219,25 +219,25 @@ msgid "Tool Plugins:"
 msgstr "Connectors d'eines:"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identificador de l'eina: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Actiu"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Inactiu"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
 msgstr "Activa: %1"
@@ -3302,7 +3302,7 @@ msgstr "URL personalitzat:"
 msgid "Max Tokens:"
 msgstr "Màxim de segments textuals:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Connectors de text:"
