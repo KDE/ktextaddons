@@ -6,3 +6,12 @@ target_link_libraries(
     KF6::TextSpeechToText
     KF6::I18n
 )
+
+####
+
+add_executable(speechtotextgui speechtotextgui.cpp)
+target_link_libraries(
+    speechtotextgui
+    KF6::TextSpeechToText
+    KF6::I18n
+)
