@@ -126,8 +126,9 @@ bool TextAutoGenerateMenuModel::moveRows(const QModelIndex &sourceParent, int so
     for (int i = 0; i < count; ++i) {
         mTextInfos.move(sourceRow + i, destinationChild + (sourceRow > destinationChild ? 0 : -1));
     }
-    for (int i = 0; i < mTextInfos.count(); ++i) {
-        mTextInfos[i].setOrder(i);
+    int order = 0;
+    for (auto &textInfo : mTextInfos) {
+        textInfo.setOrder(order++);
     }
     endMoveRows();
     return true;

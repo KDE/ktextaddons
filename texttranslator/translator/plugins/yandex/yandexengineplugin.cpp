@@ -79,8 +79,8 @@ void YandexEnginePlugin::parseCredentials(QNetworkReply *reply)
 
     QStringList sidParts = sid.split(u'.');
 
-    for (int i = 0, total = sidParts.size(); i < total; ++i) {
-        std::reverse(sidParts[i].begin(), sidParts[i].end());
+    for (QString &sidPart : sidParts) {
+        std::reverse(sidPart.begin(), sidPart.end());
     }
 
     sYandexKey = sidParts.join(u'.');

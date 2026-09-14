@@ -45,7 +45,7 @@ QVariant AutoCorrectionLanguageModel::data(const QModelIndex &index, int role) c
     if (index.row() < 0 || index.row() >= mLocalInfos.count()) {
         return {};
     }
-    const LocaleInfo statusInfo = mLocalInfos.at(index.row());
+    const LocaleInfo &statusInfo = mLocalInfos.at(index.row());
     switch (role) {
     case Qt::DisplayRole:
     case LocaleI18n:

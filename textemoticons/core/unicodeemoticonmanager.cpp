@@ -143,7 +143,7 @@ QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &
     auto hasRequestedCategory = [&category](const UnicodeEmoticon &emo) {
         return emo.category() == category;
     };
-    std::copy_if(d->unicodeEmojiList.begin(), d->unicodeEmojiList.end(), std::back_inserter(result), hasRequestedCategory);
+    std::copy_if(d->unicodeEmojiList.cbegin(), d->unicodeEmojiList.cend(), std::back_inserter(result), hasRequestedCategory);
     return result;
 }
 

@@ -30,7 +30,7 @@ void GrammarResultUtilTest::shouldReplaceWord()
     doc.setPlainText(initialText);
     TextGrammarCheck::GrammarResultUtil::applyGrammarResult(grammarErrors, &doc, Qt::red);
     int i = 0;
-    for (const auto &action : listGrammarActions) {
+    for (const auto &action : std::as_const(listGrammarActions)) {
         TextGrammarCheck::GrammarResultUtil::replaceWord(action, replacementWord.at(i), &doc);
         ++i;
     }

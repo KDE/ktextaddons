@@ -94,7 +94,7 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     if (index.row() < 0 || index.row() >= mTranslators.count()) {
         return {};
     }
-    const auto translator = mTranslators.at(index.row());
+    const auto &translator = mTranslators.at(index.row());
     const int col = index.column();
     if (role == Qt::BackgroundRole) {
         if (needToUpdateLanguageModel(translator)) {
