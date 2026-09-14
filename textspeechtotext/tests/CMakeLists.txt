@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
-add_executable(speechtotext_gui speechtotext_gui.cpp)
+add_executable(speechtotextconfigdialog_gui speechtotextconfigdialog_gui.cpp)
 target_link_libraries(
-    speechtotext_gui
+    speechtotextconfigdialog_gui
     KF6::TextSpeechToText
     KF6::I18n
 )
