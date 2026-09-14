@@ -30,7 +30,7 @@ void VoskEngineUtilsTest::shouldDefineRepositoryPath()
 
 void VoskEngineUtilsTest::shouldVerifyLanguageInstalledStruct()
 {
-    VoskEngineUtils::LanguageInstalled info;
+    const VoskEngineUtils::LanguageInstalled info;
     QVERIFY(!info.isValid());
     QVERIFY(info.absoluteLanguageModelPath.isEmpty());
     QVERIFY(info.name.isEmpty());
