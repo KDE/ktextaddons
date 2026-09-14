@@ -8,13 +8,13 @@
 #include "textedittexttospeech_export.h"
 #include <QTextToSpeech>
 #include <QWidget>
+#include <TextEditTextToSpeech/TextToSpeechConfigInterface>
 class QComboBox;
 class QPushButton;
 class KMessageWidget;
 namespace TextEditTextToSpeech
 {
 class TextToSpeechLanguageComboBox;
-class TextToSpeechConfigInterface;
 class TextToSpeechSliderWidget;
 class TextToSpeechVoiceComboBox;
 class TextToSpeechKokoroInstallMessageWidget;
