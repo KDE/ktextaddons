@@ -6,7 +6,7 @@
 
 #include "speechtotextconfigurewidget.h"
 
-#include "speechtotextcomboboxwidget.h"
+#include "speechtotextenginecomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -17,7 +17,7 @@ using namespace TextSpeechToText;
 
 SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
     : QWidget{parent}
-    , mSpeechToTextComboBox(new SpeechToTextComboBoxWidget(this))
+    , mSpeechToTextComboBox(new SpeechToTextEngineComboBoxWidget(this))
     , mSpeechToTextDevice(new SpeechToTextSelectDeviceWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);

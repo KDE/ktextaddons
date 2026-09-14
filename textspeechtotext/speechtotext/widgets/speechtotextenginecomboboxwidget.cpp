@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "speechtotextcomboboxwidget.h"
+#include "speechtotextenginecomboboxwidget.h"
 
 #include "speechtotext/textspeechtotextutil.h"
 #include <KConfigGroup>
@@ -18,7 +18,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
-SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
+SpeechToTextEngineComboBoxWidget::SpeechToTextEngineComboBoxWidget(QWidget *parent)
     : QWidget(parent)
     , mEngine(new QComboBox(this))
     , mConfigureEngine(new QToolButton(this))
@@ -40,25 +40,25 @@ SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
     mConfigureEngine->setEnabled(false); // Disable by default
     mConfigureEngine->setIcon(QIcon::fromTheme(u"settings-configure"_s));
 
-    connect(mConfigureEngine, &QToolButton::clicked, this, &SpeechToTextComboBoxWidget::slotConfigureEngine);
-    connect(mEngine, &QComboBox::currentIndexChanged, this, &SpeechToTextComboBoxWidget::slotEngineChanged);
+    connect(mConfigureEngine, &QToolButton::clicked, this, &SpeechToTextEngineComboBoxWidget::slotConfigureEngine);
+    connect(mEngine, &QComboBox::currentIndexChanged, this, &SpeechToTextEngineComboBoxWidget::slotEngineChanged);
 }
 
-SpeechToTextComboBoxWidget::~SpeechToTextComboBoxWidget() = default;
+SpeechToTextEngineComboBoxWidget::~SpeechToTextEngineComboBoxWidget() = default;
 
-void SpeechToTextComboBoxWidget::fillEngine()
+void SpeechToTextEngineComboBoxWidget::fillEngine()
 {
     for (const auto &[key, value] : TextSpeechToText::SpeechToTextEngineLoader::self()->speechToTextEngineInfos().asKeyValueRange()) {
         mEngine->addItem(value, key);
     }
 }
 
-QString SpeechToTextComboBoxWidget::engineName() const
+QString SpeechToTextEngineComboBoxWidget::engineName() const
 {
     return mEngine->currentData().toString();
 }
 
-void SpeechToTextComboBoxWidget::setEngineName(const QString &engineName)
+void SpeechToTextEngineComboBoxWidget::setEngineName(const QString &engineName)
 {
     const int countItem(mEngine->count());
     for (int i = 0; i < countItem; ++i) {
@@ -69,7 +69,7 @@ void SpeechToTextComboBoxWidget::setEngineName(const QString &engineName)
     }
 }
 
-void SpeechToTextComboBoxWidget::slotConfigureEngine()
+void SpeechToTextEngineComboBoxWidget::slotConfigureEngine()
 {
     if (const QString engine = mEngine->currentData().toString(); TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine)) {
         if (TextSpeechToText::SpeechToTextEngineLoader::self()->showConfigureDialog(engine, this)) {
@@ -78,14 +78,14 @@ void SpeechToTextComboBoxWidget::slotConfigureEngine()
     }
 }
 
-void SpeechToTextComboBoxWidget::slotEngineChanged(int index)
+void SpeechToTextEngineComboBoxWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngine->itemData(index).toString();
     mConfigureEngine->setEnabled(TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine));
     Q_EMIT engineChanged(engine);
 }
 
-void SpeechToTextComboBoxWidget::load()
+void SpeechToTextEngineComboBoxWidget::load()
 {
     const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
     const QString engine = groupTranslate.readEntry(TextSpeechToTextUtil::engineTextToSpeechName(), TextSpeechToTextUtil::defaultEngineName());
@@ -94,11 +94,11 @@ void SpeechToTextComboBoxWidget::load()
     }
 }
 
-void SpeechToTextComboBoxWidget::save()
+void SpeechToTextEngineComboBoxWidget::save()
 {
     const QString engine = mEngine->currentData().toString();
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
     groupTranslate.writeEntry(TextSpeechToTextUtil::engineTextToSpeechName(), engine);
 }
 
-#include "moc_speechtotextcomboboxwidget.cpp"
+#include "moc_speechtotextenginecomboboxwidget.cpp"

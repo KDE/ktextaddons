@@ -11,12 +11,12 @@ class QComboBox;
 class QToolButton;
 namespace TextSpeechToText
 {
-class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBoxWidget : public QWidget
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextEngineComboBoxWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SpeechToTextComboBoxWidget(QWidget *parent);
-    ~SpeechToTextComboBoxWidget() override;
+    explicit SpeechToTextEngineComboBoxWidget(QWidget *parent);
+    ~SpeechToTextEngineComboBoxWidget() override;
     void fillEngine();
 
     [[nodiscard]] QString engineName() const;

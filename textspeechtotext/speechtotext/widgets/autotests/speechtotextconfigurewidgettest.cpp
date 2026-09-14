@@ -5,8 +5,8 @@
 */
 #include "speechtotextconfigurewidgettest.h"
 
-#include "speechtotext/widgets/speechtotextcomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
+#include "speechtotext/widgets/speechtotextenginecomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -27,7 +27,7 @@ void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mSpeechToTextComboBox = w.findChild<TextSpeechToText::SpeechToTextComboBoxWidget *>(u"mSpeechToTextComboBox"_s);
+    auto mSpeechToTextComboBox = w.findChild<TextSpeechToText::SpeechToTextEngineComboBoxWidget *>(u"mSpeechToTextComboBox"_s);
     QVERIFY(mSpeechToTextComboBox);
 
     auto mSpeechToTextDevice = w.findChild<TextSpeechToText::SpeechToTextSelectDeviceWidget *>(u"mSpeechToTextDevice"_s);

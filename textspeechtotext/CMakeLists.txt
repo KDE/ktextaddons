@@ -57,8 +57,8 @@ target_sources(
         speechtotext/widgets/speechtotextconfigurewidget.cpp
         speechtotext/widgets/speechtotextconfiguredialog.h
         speechtotext/widgets/speechtotextconfiguredialog.cpp
-        speechtotext/widgets/speechtotextcomboboxwidget.h
-        speechtotext/widgets/speechtotextcomboboxwidget.cpp
+        speechtotext/widgets/speechtotextenginecomboboxwidget.h
+        speechtotext/widgets/speechtotextenginecomboboxwidget.cpp
         speechtotext/widgets/speechtotextselectdevicewidget.h
         speechtotext/widgets/speechtotextselectdevicewidget.cpp
         speechtotext/widgets/speechtotexttoolbuttonwidget.h

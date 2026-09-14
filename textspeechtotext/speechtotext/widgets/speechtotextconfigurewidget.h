@@ -9,7 +9,7 @@
 #include <QWidget>
 namespace TextSpeechToText
 {
-class SpeechToTextComboBoxWidget;
+class SpeechToTextEngineComboBoxWidget;
 class SpeechToTextSelectDeviceWidget;
 /**
  * @brief The SpeechToTextConfigureWidget class
@@ -25,7 +25,7 @@ public:
     void saveSettings();
 
 private:
-    SpeechToTextComboBoxWidget *const mSpeechToTextComboBox;
+    SpeechToTextEngineComboBoxWidget *const mSpeechToTextComboBox;
     SpeechToTextSelectDeviceWidget *const mSpeechToTextDevice;
 };
 }
