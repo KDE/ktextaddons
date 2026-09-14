@@ -20,7 +20,9 @@ SpeechToTextGui::SpeechToTextGui(QWidget *parent)
     layout->addWidget(textEdit);
 }
 
-SpeechToTextGui::~SpeechToTextGui() = default;
+SpeechToTextGui::~SpeechToTextGui()
+{
+}
 
 int main(int argc, char **argv)
 {
