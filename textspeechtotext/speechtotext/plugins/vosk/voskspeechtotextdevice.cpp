@@ -20,10 +20,10 @@ VoskSpeechToTextDevice::VoskSpeechToTextDevice(QObject *parent)
 {
     if (!open(QIODevice::ReadWrite)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open VoskSpeechToTextDevice";
-#if HAVE_VOSK_API_SUPPORT
-        vosk_set_log_level(-1);
-#endif
     }
+#if HAVE_VOSK_API_SUPPORT
+    vosk_set_log_level(-1);
+#endif
 }
 
 VoskSpeechToTextDevice::~VoskSpeechToTextDevice()
