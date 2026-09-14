@@ -8,9 +8,9 @@
 
 #include "textgrammarcheck_export.h"
 #include <QComboBox>
+#include <TextGrammarCheck/LanguageInfo>
 namespace TextGrammarCheck
 {
-class LanguageInfo;
 /*!
  * \class TextGrammarCheck::LanguageToolComboBox
  * \inheaderfile TextGrammarCheck/LanguageToolComboBox
