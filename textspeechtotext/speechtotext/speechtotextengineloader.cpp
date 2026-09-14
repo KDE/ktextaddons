@@ -83,7 +83,7 @@ void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
 
 SpeechToTextClient *SpeechToTextEngineLoader::createSpeechToTextClient(const QString &clientName)
 {
-    auto clientsItr = d->speechToTextClients.constFind(clientName);
+    const auto clientsItr = d->speechToTextClients.constFind(clientName);
     if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         Q_EMIT loadingSpeechToTextFailed();
@@ -94,7 +94,7 @@ SpeechToTextClient *SpeechToTextEngineLoader::createSpeechToTextClient(const QSt
 
 bool SpeechToTextEngineLoader::hasConfigurationDialog(const QString &clientName) const
 {
-    auto clientsItr = d->speechToTextClients.constFind(clientName);
+    const auto clientsItr = d->speechToTextClients.constFind(clientName);
     if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         return false;
@@ -104,7 +104,7 @@ bool SpeechToTextEngineLoader::hasConfigurationDialog(const QString &clientName)
 
 bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
 {
-    auto clientsItr = d->speechToTextClients.constFind(clientName);
+    const auto clientsItr = d->speechToTextClients.constFind(clientName);
     if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         return false;
