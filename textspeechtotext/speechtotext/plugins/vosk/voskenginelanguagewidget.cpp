@@ -7,6 +7,7 @@
 #include "voskenginelanguagewidget.h"
 
 #include "libvoskspeechtotext_debug.h"
+#include "voskenginelanguagetreeview.h"
 #include "voskspeechtotextmodel.h"
 #include "voskspeechtotextproxymodel.h"
 
@@ -24,7 +25,7 @@
 using namespace Qt::Literals::StringLiterals;
 VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}
-    , mTreeView(new QTreeView(this))
+    , mTreeView(new VoskEngineLanguageTreeView(this))
     , mSearchLineEdit(new QLineEdit(this))
     , mVoskSpeechToTextModel(new VoskSpeechToTextModel(this))
     , mVoskSpeechToTextProxyModel(new VoskSpeechToTextProxyModel(this))

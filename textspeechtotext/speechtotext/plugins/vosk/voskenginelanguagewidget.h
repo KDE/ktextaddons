@@ -14,6 +14,7 @@ class QLineEdit;
 class VoskSpeechToTextProxyModel;
 class QProgressBar;
 class QLabel;
+class VoskEngineLanguageTreeView;
 class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskEngineLanguageWidget : public QWidget
 {
     Q_OBJECT
@@ -29,7 +30,7 @@ private:
     void slotError(const QString &str);
     void updateListModel();
     void slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info);
-    QTreeView *const mTreeView;
+    VoskEngineLanguageTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     VoskSpeechToTextModel *const mVoskSpeechToTextModel;
     VoskSpeechToTextProxyModel *const mVoskSpeechToTextProxyModel;
