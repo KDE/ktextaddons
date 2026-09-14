@@ -4,10 +4,23 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
+#include "speechtotextgui.h"
 #include "speechtotext/widgets/speechtotextconfiguredialog.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
+#include <QTextEdit>
+#include <QVBoxLayout>
+
+SpeechToTextGui::SpeechToTextGui(QWidget *parent)
+    : QWidget(parent)
+{
+    auto layout = new QVBoxLayout(this);
+    auto textEdit = new QTextEdit(this);
+    layout->addWidget(textEdit);
+}
+
+SpeechToTextGui::~SpeechToTextGui() = default;
 
 int main(int argc, char **argv)
 {
@@ -18,7 +31,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new TextSpeechToText::SpeechToTextConfigureDialog();
+    auto w = new SpeechToTextGui();
     w->show();
     app.exec();
     delete w;
