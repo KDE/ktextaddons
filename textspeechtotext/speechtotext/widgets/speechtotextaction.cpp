@@ -12,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 SpeechToTextAction::SpeechToTextAction(QObject *parent)
     : QAction{parent}
 {
+    // TODO add icons mic ?
     connect(this, &QAction::triggered, this, &SpeechToTextAction::slotClicked);
 }
 
