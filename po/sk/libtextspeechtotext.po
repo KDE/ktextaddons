@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-12-08 20:10+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -106,28 +106,28 @@ msgstr "Vosk"
 msgid "Impossible to extract language"
 msgstr "Impossible to extract language"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
 #, kde-format
 msgid "Language"
 msgstr "Jazyk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:87
 #, kde-format
 msgid "Installed"
 msgstr "Nainštalované"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Installed Version"
 msgstr "Nainštalovaná verzia"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Available Version"
 msgstr "Available Version"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Size"
 msgstr "Veľkosť"

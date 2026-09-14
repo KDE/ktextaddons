@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-09-09 18:00-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -103,28 +103,28 @@ msgstr ""
 msgid "Impossible to extract language"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
 #, kde-format
 msgid "Language"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:87
 #, kde-format
 msgid "Installed"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Installed Version"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Available Version"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Size"
 msgstr ""

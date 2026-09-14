@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-14 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -110,28 +110,28 @@ msgstr "मोम"
 msgid "Impossible to extract language"
 msgstr "भाषा निकालना असंभव"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
 #, kde-format
 msgid "Language"
 msgstr "भाषा"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:87
 #, kde-format
 msgid "Installed"
 msgstr "स्थापित"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Installed Version"
 msgstr "स्थापित संस्करण"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Available Version"
 msgstr "उपलब्ध संस्करण"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Size"
 msgstr "आकार"

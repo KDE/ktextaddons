@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-14 00:42+0000\n"
 "PO-Revision-Date: 2026-04-13 13:41+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -109,28 +109,28 @@ msgstr "Vosk"
 msgid "Impossible to extract language"
 msgstr "Limba nu poate fi extrasă"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
 #, kde-format
 msgid "Language"
 msgstr "Limbă"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:87
 #, kde-format
 msgid "Installed"
 msgstr "Instalat"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Installed Version"
 msgstr "Versiune instalată"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Available Version"
 msgstr "Versiune disponibilă"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Size"
 msgstr "Dimensiune"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-14 00:42+0000\n"
 "PO-Revision-Date: 2024-07-11 13:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -109,28 +109,28 @@ msgstr "Vosk"
 msgid "Impossible to extract language"
 msgstr "Не вдалося видобути дані щодо мови"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
 #, kde-format
 msgid "Language"
 msgstr "Мова"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:87
 #, kde-format
 msgid "Installed"
 msgstr "Встановлено"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Installed Version"
 msgstr "Встановлена версія"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Available Version"
 msgstr "Доступна версія"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Size"
 msgstr "Розмір"

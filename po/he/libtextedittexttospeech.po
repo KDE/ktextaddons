@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
-"PO-Revision-Date: 2024-07-11 08:22+0300\n"
+"POT-Creation-Date: 2026-09-14 00:42+0000\n"
+"PO-Revision-Date: 2026-09-13 11:44+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,167 +16,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: kokoro/texttospeechkokoro.cpp:124
 #, kde-format
 msgid "Kokoro is not installed. Please install it first."
-msgstr ""
+msgstr "קוקורו (Kokoro) לא מותקן. נא להתקין אותו תחילה."
 
 #: kokoro/texttospeechkokoro.cpp:146
 #, kde-format
 msgid "The Kokoro backend stopped unexpectedly."
-msgstr ""
+msgstr "מנגנון קוקורו נעצר במפתיע."
 
 #: kokoro/texttospeechkokoro.cpp:152
 #, kde-format
 msgid "Unable to start the Kokoro backend."
-msgstr ""
+msgstr "לא ניתן להפעיל את מנגנון קוקורו."
 
 #: kokoro/texttospeechkokoro.cpp:245
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
-msgstr ""
+msgstr "קוקורו לא הצליח לעבד את הטקסט: %1"
 
 #: kokoro/texttospeechkokoro.cpp:260
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
-msgstr ""
+msgstr "קוקורו דיווח על תסדיר שמע בלתי שמיש."
 
 #: kokoro/texttospeechkokoro.cpp:304
 #, kde-format
 msgid "Unable to open the audio device."
-msgstr ""
+msgstr "לא ניתן לפתוח את התקן השמע."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
 msgid "Kokoro is not usable. Please reinstall it."
-msgstr ""
+msgstr "קוקורו בלתי שמיש. נא להתקין אותו מחדש."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:290
+#: texttospeechconfigwidget.cpp:303
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
-msgstr ""
+msgstr "קוקורו לא מותקן. חסר: %1"
 
-#: kokoroinstall/texttospeechkokorodownloadvoicejob.cpp:90
+#: kokoroinstall/texttospeechkokorodownloadvoicejob.cpp:96
 #, kde-format
 msgid "Downloading %1…"
-msgstr ""
+msgstr "%1 בהורדה…"
 
-#: kokoroinstall/texttospeechkokorodownloadvoicejob.cpp:97
+#: kokoroinstall/texttospeechkokorodownloadvoicejob.cpp:103
 #, kde-format
 msgid "Unable to download %1: %2"
-msgstr ""
+msgstr "לא ניתן להוריד את %1:‏ %2"
 
 #: kokoroinstall/texttospeechkokoroinstallmessagewidget.cpp:18
 #, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr ""
+msgstr "התקנה"
 
 #: kokoroinstall/texttospeechkokoroinstallpythondialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Kokoro Package"
-msgstr ""
+msgstr "התקנת חבילת קוקורו (Kokoro)"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
-#, kde-format
-msgid "Select Voice(s)"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Select Voice(s)"
+msgid "Select Voice(s):"
+msgstr "בחירת קולות"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
 #, kde-format
 msgid "Download Voice(s)"
-msgstr ""
+msgstr "הורדת קולות"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:43
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:44
 #, kde-format
 msgid "Download Voices done."
-msgstr ""
+msgstr "הורדת הקולות הושלמה."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:46
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
 #, kde-format
 msgid "Unable to download voice."
-msgstr ""
+msgstr "לא ניתן להוריד קול."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:71
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:75
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
-msgstr ""
+msgstr "espeak-ng חסר. נא להתקין אותו עם מנהל החבילות שלך."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:73
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:77
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr ""
-
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:76
-#, kde-format
-msgid "Python virtual environment created."
-msgstr ""
+msgstr "נוצרת סביבת הפיית׳ון הווירטואלית…"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:80
 #, kde-format
-msgid "Unable to create the python virtual environment."
-msgstr ""
+msgid "Python virtual environment created."
+msgstr "נוצרה סביבת פיית׳ון וירטואלית."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:84
 #, kde-format
-msgid "Installing modules: %1"
-msgstr ""
+msgid "Unable to create the python virtual environment."
+msgstr "לא ניתן ליצור את סביבת הפיית׳ון הווירטואלית."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:93
 #, kde-format
-msgid "Installation done."
-msgstr ""
+msgid "Installing modules: %1"
+msgstr "מודולים מותקנים: %1"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:97
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
+#, kde-format
+msgid "Installation done."
+msgstr "ההתקנה הושלמה."
+
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:102
 #, kde-format
 msgid "Installation failed."
-msgstr ""
+msgstr "ההתקנה נכשלה."
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:24
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Female"
-msgstr ""
+msgstr "אישה"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:26
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Male"
-msgstr ""
+msgstr "גבר"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:30
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Unknown"
-msgstr ""
+msgstr "לא ידוע"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:38
 #, kde-format
 msgctxt "@item:intext <language> (<country>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:78
 #, kde-format
 msgctxt "@item:inlistbox <voice name> (<gender>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:80
 #, kde-format
 msgctxt "@info:tooltip <voice name> (<language>, <gender>)"
 msgid "%1 (%2, %3)"
-msgstr ""
+msgstr "%1 (%2, %3)"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:129
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No voice selected"
-msgstr ""
+msgstr "לא נבחר קול"
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -216,45 +217,52 @@ msgstr "בוקר טוב, זאת בדיקה לבדיקת ההגדרות."
 msgid "Test"
 msgstr "בדיקה"
 
-#: texttospeechconfigwidget.cpp:61
+#: texttospeechconfigwidget.cpp:45
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
+msgid "Configure…"
+msgstr "הגדרה…"
+
+#: texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Volume:"
 msgstr "עוצמת שמע:"
 
-#: texttospeechconfigwidget.cpp:65
+#: texttospeechconfigwidget.cpp:66
 #, kde-format
 msgid "Rate:"
 msgstr "קצב:"
 
-#: texttospeechconfigwidget.cpp:71
+#: texttospeechconfigwidget.cpp:72
 #, kde-format
 msgid "Pitch:"
 msgstr "גובה צליל:"
 
-#: texttospeechconfigwidget.cpp:75
+#: texttospeechconfigwidget.cpp:90
 #, kde-format
 msgid "Engine:"
 msgstr "מנוע:"
 
-#: texttospeechconfigwidget.cpp:79
+#: texttospeechconfigwidget.cpp:94
 #, kde-format
 msgid "Language:"
 msgstr "שפה:"
 
-#: texttospeechconfigwidget.cpp:83
+#: texttospeechconfigwidget.cpp:98
 #, kde-format
 msgid "Voice:"
 msgstr "קול:"
 
-#: texttospeechconfigwidget.cpp:103
+#: texttospeechconfigwidget.cpp:118
 #, kde-format
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:295
+#: texttospeechconfigwidget.cpp:308
 #, kde-format
 msgid "Kokoro installation is broken. Please verify which you sysadmin."
-msgstr ""
+msgstr "התקנת קוקורו פגומה. נא לבדוק מול הנהלת המערכת שלך."
 
 #: texttospeechwidget.cpp:56
 #, kde-format
