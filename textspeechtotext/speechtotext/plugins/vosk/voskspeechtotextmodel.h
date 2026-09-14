@@ -26,6 +26,7 @@ public:
         InstalledVersion,
         NeedToUpdateLanguage,
         Name,
+        Active,
         Url,
         LastColumn = Url,
     };

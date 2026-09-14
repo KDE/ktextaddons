@@ -48,6 +48,8 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
             return i18n("Available Version");
         case VoskRoles::Size:
             return i18n("Size");
+        case VoskRoles::Active:
+            return i18n("Active");
         }
     }
     return {};
@@ -109,6 +111,9 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
         }
         case VoskRoles::Name: {
             return speechToTextInfo.name();
+        }
+        case VoskRoles::Active: {
+            return true; // TODO
         }
         }
     }
