@@ -20,7 +20,7 @@ VoskEngineUtilsTest::VoskEngineUtilsTest(QObject *parent)
 
 void VoskEngineUtilsTest::shouldDefineStoragePath()
 {
-    QCOMPARE(VoskEngineUtils::storageLanguagePath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/vosk-texttospeech"_s);
+    QCOMPARE(VoskEngineUtils::storageLanguagePath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/vosk-speechtotext"_s);
 }
 
 void VoskEngineUtilsTest::shouldDefineRepositoryPath()
