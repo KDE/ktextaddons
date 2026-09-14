@@ -95,7 +95,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
             return speechToTextInfo.langText();
         }
         case VoskRoles::Size: {
-            KFormat format;
+            const KFormat format;
             return format.formatByteSize(speechToTextInfo.size());
         }
         case VoskRoles::SizeByte: {
