@@ -31,7 +31,11 @@ install(
     COMPONENT Devel
 )
 
-add_library(KF6TextSpeechToText)
+add_library(
+    KF6TextSpeechToText
+    speechtotext/widgets/speechtotextlanguagecomboboxwidget.h
+    speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp
+)
 add_library(KF6::TextSpeechToText ALIAS KF6TextSpeechToText)
 ecm_qt_declare_logging_category(KF6TextSpeechToText HEADER textspeechtotext_debug.h
     IDENTIFIER TEXTSPEECHTOTEXT_LOG
