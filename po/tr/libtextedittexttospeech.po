@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2023-2024, 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 02:39+0000\n"
-"PO-Revision-Date: 2024-07-11 14:59+0300\n"
+"PO-Revision-Date: 2026-09-13 19:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -48,7 +48,7 @@ msgstr "Konuşmayı Yapılandır"
 #: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr "Günaydın; bu sınama ayarlarının bir sınamasıdır."
+msgstr "Günaydın; bu, ayarları sınamak için bir testtir."
 
 #: texttospeechconfigwidget.cpp:36
 #, kde-format
