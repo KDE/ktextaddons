@@ -34,6 +34,8 @@ target_sources(
         voskenginedialog.cpp
         voskspeechtotextdevice.h
         voskspeechtotextdevice.cpp
+        voskenginelanguagetreeview.h
+        voskenginelanguagetreeview.cpp
 )
 
 generate_export_header(voskspeechtotext BASE_NAME libvoskspeechtotext)
