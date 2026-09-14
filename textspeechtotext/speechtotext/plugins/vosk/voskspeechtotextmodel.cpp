@@ -144,7 +144,7 @@ void VoskSpeechToTextModel::updateInstalledLanguage()
 
 void VoskSpeechToTextModel::removeLanguage(const QString &name)
 {
-    auto index = std::find_if(mLanguageInstalled.begin(), mLanguageInstalled.end(), [name](const VoskEngineUtils::LanguageInstalled &installed) {
+    const auto index = std::find_if(mLanguageInstalled.begin(), mLanguageInstalled.end(), [&name](const VoskEngineUtils::LanguageInstalled &installed) {
         return (name == installed.name);
     });
     if (index != mLanguageInstalled.end()) {
