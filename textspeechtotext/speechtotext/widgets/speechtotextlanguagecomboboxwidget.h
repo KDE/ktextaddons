@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "speechtotext_private_export.h"
 #include <QWidget>
 namespace TextSpeechToText
 {
-class SpeechToTextLanguageComboBoxWidget : public QWidget
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextLanguageComboBoxWidget : public QWidget
 {
     Q_OBJECT
 public:

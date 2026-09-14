@@ -7,6 +7,7 @@
 
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
 #include "speechtotext/widgets/speechtotextenginecomboboxwidget.h"
+#include "speechtotext/widgets/speechtotextlanguagecomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -32,6 +33,9 @@ void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
 
     auto mSpeechToTextDevice = w.findChild<TextSpeechToText::SpeechToTextSelectDeviceWidget *>(u"mSpeechToTextDevice"_s);
     QVERIFY(mSpeechToTextDevice);
+
+    auto mSpeechToTextLanguage = w.findChild<TextSpeechToText::SpeechToTextLanguageComboBoxWidget *>(u"mSpeechToTextLanguage"_s);
+    QVERIFY(mSpeechToTextLanguage);
 }
 
 #include "moc_speechtotextconfigurewidgettest.cpp"

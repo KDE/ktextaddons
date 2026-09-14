@@ -11,6 +11,7 @@ namespace TextSpeechToText
 {
 class SpeechToTextEngineComboBoxWidget;
 class SpeechToTextSelectDeviceWidget;
+class SpeechToTextLanguageComboBoxWidget;
 /**
  * @brief The SpeechToTextConfigureWidget class
  * \author Laurent Montel <montel@kde.org>
@@ -27,5 +28,6 @@ public:
 private:
     SpeechToTextEngineComboBoxWidget *const mSpeechToTextComboBox;
     SpeechToTextSelectDeviceWidget *const mSpeechToTextDevice;
+    SpeechToTextLanguageComboBoxWidget *const mSpeechToTextLanguage;
 };
 }
