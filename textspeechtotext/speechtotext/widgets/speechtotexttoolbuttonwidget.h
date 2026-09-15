@@ -30,6 +30,7 @@ public:
 
 private:
     TEXTSPEECHTOTEXT_NO_EXPORT void slotButtonClicked();
+    TEXTSPEECHTOTEXT_NO_EXPORT void updateIcon();
     QToolButton *const mToolButton;
 };
 }
