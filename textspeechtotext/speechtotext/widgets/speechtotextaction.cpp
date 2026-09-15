@@ -13,14 +13,22 @@ SpeechToTextAction::SpeechToTextAction(QObject *parent)
     : QAction{parent}
 {
     // TODO add icons mic ?
+    setCheckable(true);
     connect(this, &QAction::triggered, this, &SpeechToTextAction::slotClicked);
+    connect(SpeechToTextManager::self(), &SpeechToTextManager::recordingChanged, this, &QAction::setChecked);
 }
 
 SpeechToTextAction::~SpeechToTextAction() = default;
 
 void SpeechToTextAction::slotClicked()
 {
-    SpeechToTextManager::self()->speechToText();
+    if (SpeechToTextManager::self()->isRecording()) {
+        SpeechToTextManager::self()->stop();
+    } else {
+        SpeechToTextManager::self()->speechToText();
+    }
+    // Starting can fail (no engine, no microphone): keep the action in sync with reality.
+    setChecked(SpeechToTextManager::self()->isRecording());
 }
 
 #include "moc_speechtotextaction.cpp"
