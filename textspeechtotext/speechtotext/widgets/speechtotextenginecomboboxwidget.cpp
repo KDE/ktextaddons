@@ -7,9 +7,7 @@
 #include "speechtotextenginecomboboxwidget.h"
 
 #include "speechtotext/textspeechtotextutil.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <QComboBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -87,18 +85,14 @@ void SpeechToTextEngineComboBoxWidget::slotEngineChanged(int index)
 
 void SpeechToTextEngineComboBoxWidget::load()
 {
-    const KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
-    const QString engine = groupTranslate.readEntry(TextSpeechToTextUtil::engineTextToSpeechName(), TextSpeechToTextUtil::defaultEngineName());
-    if (const int index = mEngine->findData(engine); index != -1) {
+    if (const int index = mEngine->findData(TextSpeechToTextUtil::loadEngineName()); index != -1) {
         mEngine->setCurrentIndex(index);
     }
 }
 
 void SpeechToTextEngineComboBoxWidget::save()
 {
-    const QString engine = mEngine->currentData().toString();
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
-    groupTranslate.writeEntry(TextSpeechToTextUtil::engineTextToSpeechName(), engine);
+    TextSpeechToTextUtil::saveEngineName(mEngine->currentData().toString());
 }
 
 #include "moc_speechtotextenginecomboboxwidget.cpp"

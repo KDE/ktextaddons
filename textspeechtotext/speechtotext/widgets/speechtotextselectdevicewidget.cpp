@@ -6,6 +6,7 @@
 
 #include "speechtotextselectdevicewidget.h"
 
+#include "speechtotext/textspeechtotextutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -18,10 +19,6 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
-namespace
-{
-const char mySoundGroupName[] = "Speech To Text";
-}
 SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
     : QWidget{parent}
     , mDeviceComboBox(new QComboBox(this))
@@ -44,7 +41,7 @@ SpeechToTextSelectDeviceWidget::~SpeechToTextSelectDeviceWidget() = default;
 
 void SpeechToTextSelectDeviceWidget::loadSettings()
 {
-    const KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
+    const KConfigGroup group(KSharedConfig::openConfig(), TextSpeechToTextUtil::soundGroupName());
     if (const QByteArray deviceIdentifier = group.readEntry("SoundDevice", QByteArray()); !deviceIdentifier.isEmpty()) {
         const int nbDevice{mDeviceComboBox->count()};
         for (int i = 0; i < nbDevice; ++i) {
@@ -59,7 +56,7 @@ void SpeechToTextSelectDeviceWidget::loadSettings()
 void SpeechToTextSelectDeviceWidget::saveSettings()
 {
     if (const auto device = mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).value<QAudioDevice>(); !device.isNull()) {
-        KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(mySoundGroupName));
+        KConfigGroup group(KSharedConfig::openConfig(), TextSpeechToTextUtil::soundGroupName());
         const QByteArray deviceIdentifier = device.id();
         group.writeEntry("SoundDevice", deviceIdentifier);
     }
