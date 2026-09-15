@@ -7,6 +7,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "voskenginedialog.h"
+#include "voskengineutils.h"
 #include "voskspeechtotextplugin.h"
 #include <KLocalizedString>
 #include <QPointer>
@@ -45,13 +46,17 @@ bool VoskSpeechToTextClient::hasConfigurationDialog() const
 
 bool VoskSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
 {
-    bool settingsChanged = false;
+    const QString previousActiveLanguage = VoskEngineUtils::loadActiveLanguage();
     QPointer<VoskEngineDialog> dlg = new VoskEngineDialog(parentWidget);
-    if (dlg->exec()) {
-        Q_EMIT configureChanged();
-        settingsChanged = true;
-    }
+    dlg->exec();
     delete dlg;
+
+    // Downloading, deleting and marking a language as active are applied right away,
+    // so the dialog result tells nothing: compare with the language we started from.
+    const bool settingsChanged = (previousActiveLanguage != VoskEngineUtils::loadActiveLanguage());
+    if (settingsChanged) {
+        Q_EMIT configureChanged();
+    }
     return settingsChanged;
 }
 
