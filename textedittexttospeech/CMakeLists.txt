@@ -129,6 +129,7 @@ ecm_generate_headers(TextEdit_CamelCasetexttospeechs_HEADERS
     TextToSpeechConfigWidget
     TextToSpeechConfigDialog
     TextToSpeechContainerWidget
+    TextToSpeechConfigInterface
     REQUIRED_HEADERS TextEdit_texttospeechs_HEADERS
     PREFIX TextEditTextToSpeech
 )
