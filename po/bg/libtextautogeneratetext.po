@@ -3323,13 +3323,13 @@ msgstr "Не е намерен плъгин."
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgid "Error reported: %1"
-msgstr "Error reported: %1"
+msgstr "Докладвана е грешка: %1"
 
 #: widgets/textautogeneratewidget.cpp:243
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr "Error"
+msgstr "Грешка"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
