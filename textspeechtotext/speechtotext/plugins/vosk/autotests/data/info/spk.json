@@ -1,0 +1,12 @@
+{
+    "lang": "all",
+    "lang_text": "All",
+    "md5": "0b0e4e8f2a54c4e0e5e4aedc1b0d1a1e",
+    "name": "vosk-model-spk-0.4",
+    "obsolete": "false",
+    "size": 13845504,
+    "size_text": "13.2MiB",
+    "type": "spk",
+    "url": "https://alphacephei.com/vosk/models/vosk-model-spk-0.4.zip",
+    "version": "0.4"
+}
