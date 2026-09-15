@@ -182,6 +182,7 @@ ecm_generate_headers(TextGrammarCheck_Camelcasegrammalecte_HEADERS
 
 ecm_generate_headers(TextGrammarCheck_Camelcaselanguagetool_HEADERS
     HEADER_NAMES
+    LanguageInfo
     LanguageToolComboBox
     LanguageToolConfigDialog
     LanguageToolConfigWidget
