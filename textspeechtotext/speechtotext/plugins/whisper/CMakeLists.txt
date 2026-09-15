@@ -1,5 +1,61 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
+
+add_library(speechtotextwhisper)
+ecm_qt_declare_logging_category(speechtotextwhisper
+    HEADER texttospeech_kokoro_lib_debug.h
+    IDENTIFIER SPEECHTOTEXT_WHISPER_LIB_LOG
+    CATEGORY_NAME org.kde.kf.speechtotext_lib.whisper
+    DESCRIPTION "whisper speech to text lib"
+    EXPORT KTEXTADDONS
+)
+
+target_sources(
+    speechtotextwhisper
+    PRIVATE
+        whisperspeechtotextpluginjob.h
+        whisperspeechtotextpluginjob.cpp
+)
+
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(
+        speechtotextwhisper
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
+endif()
+generate_export_header(speechtotextwhisper BASE_NAME speechtotextwhisper)
+
+target_include_directories(
+    speechtotextwhisper
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+)
+
+target_link_libraries(speechtotextwhisper PRIVATE KF6::I18n)
+
+set_target_properties(
+    speechtotextwhisper
+    PROPERTIES
+        VERSION
+            ${TEXTSPEECHTOTEXT_VERSION}
+        SOVERSION
+            ${TEXTSPEECHTOTEXT_SOVERSION}
+        EXPORT_NAME
+            speechtotextwhisper
+)
+
+install(
+    TARGETS
+        speechtotextwhisper
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    LIBRARY
+        NAMELINK_SKIP
+)
+
+###
 add_library(speechtotext_whisper MODULE)
 
 ecm_qt_declare_logging_category(speechtotext_whisper
@@ -16,8 +72,6 @@ target_sources(
         whisperspeechtotextclient.cpp
         whisperspeechtotextplugin.h
         whisperspeechtotextplugin.cpp
-        whisperspeechtotextpluginjob.h
-        whisperspeechtotextpluginjob.cpp
 )
 
 target_link_libraries(
