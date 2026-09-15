@@ -8,6 +8,7 @@
 #include "speechtotext_vosk_debug.h"
 #include "voskengineutils.h"
 #include "voskspeechtotextdevice.h"
+#include <QFileInfo>
 #include <QIODevice>
 
 using namespace Qt::Literals::StringLiterals;
@@ -27,7 +28,16 @@ void VoskSpeechToTextPlugin::speechToText()
         qCWarning(SPEECHTOTEXT_VOSK_LOG) << "Vosk is not available";
         return;
     }
-    // TODO
+    // Drop what a previous run left in the recognizer before the audio starts flowing in.
+    mDevice->clear();
+}
+
+void VoskSpeechToTextPlugin::stop()
+{
+    if (!mDevice->available()) {
+        return;
+    }
+    mDevice->finish();
 }
 
 int VoskSpeechToTextPlugin::sampleRate() const
@@ -42,20 +52,24 @@ QIODevice *VoskSpeechToTextPlugin::audioDevice() const
 
 bool VoskSpeechToTextPlugin::loadSettings()
 {
-    const QString activeLanguage = VoskEngineUtils::loadActiveLanguage();
-    if (activeLanguage.isEmpty()) {
-        qCWarning(SPEECHTOTEXT_VOSK_LOG) << "No active language defined. Impossible to initialize vosk plugin";
+    const QString modelPath = VoskEngineUtils::activeLanguageModelPath();
+    if (modelPath.isEmpty()) {
+        qCWarning(SPEECHTOTEXT_VOSK_LOG) << "No language model to use. Download one and mark it as active in the vosk plugin settings.";
         return false;
     }
-    // First setSampleRate
+    if (!QFileInfo::exists(modelPath)) {
+        qCWarning(SPEECHTOTEXT_VOSK_LOG) << "Language model directory does not exist:" << modelPath;
+        return false;
+    }
+
     VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo info;
     info.sampleRate = sampleRate();
-    info.modelDir = VoskEngineUtils::storageLanguagePath() + u'/';
-    info.formattedLang = activeLanguage;
+    info.modelPath = modelPath;
     if (!mDevice->initialize(std::move(info))) {
         qCWarning(SPEECHTOTEXT_VOSK_LOG) << "Impossible to initialize vosk plugin";
         return false;
     }
+    setDefaultLanguage(VoskEngineUtils::loadActiveLanguage());
     return true;
 }
 

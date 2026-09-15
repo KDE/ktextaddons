@@ -16,6 +16,7 @@ public:
     ~VoskSpeechToTextPlugin() override;
 
     void speechToText() override;
+    void stop() override;
 
     [[nodiscard]] int sampleRate() const override;
 
