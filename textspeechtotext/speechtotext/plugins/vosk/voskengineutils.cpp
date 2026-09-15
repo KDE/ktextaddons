@@ -13,6 +13,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
+#include <algorithm>
 
 using namespace Qt::Literals::StringLiterals;
 QString VoskEngineUtils::defaultVoskRepository()
@@ -131,6 +132,24 @@ void VoskEngineUtils::saveActiveLanguage(const QString &name)
         myGroup.writeEntry(VoskEngineUtils::activeLanguageKey(), name);
     }
     myGroup.sync();
+}
+
+QString VoskEngineUtils::activeLanguageModelPath()
+{
+    const QString name = VoskEngineUtils::loadActiveLanguage();
+    if (name.isEmpty()) {
+        return {};
+    }
+    // Don't rebuild the path from the name: the model records where it was actually extracted.
+    const QVector<LanguageInstalled> languages = VoskEngineUtils::languageLocallyStored();
+    const auto it = std::find_if(languages.cbegin(), languages.cend(), [&name](const LanguageInstalled &installed) {
+        return installed.name == name;
+    });
+    if (it == languages.cend()) {
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Active language" << name << "is not installed.";
+        return {};
+    }
+    return (*it).absoluteLanguageModelPath;
 }
 
 QString VoskEngineUtils::defaultLanguage()

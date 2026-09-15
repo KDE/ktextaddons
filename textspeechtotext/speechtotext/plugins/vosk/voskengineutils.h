@@ -36,6 +36,12 @@ struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
 
 [[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString loadActiveLanguage();
 LIBVOSKSPEECHTOTEXT_EXPORT void saveActiveLanguage(const QString &name);
+
+/*!
+ * Absolute path of the model directory to hand over to vosk, or an empty string
+ * when no language is active or when the active one is not installed (anymore).
+ */
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString activeLanguageModelPath();
 }
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);
 Q_DECLARE_TYPEINFO(VoskEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);
