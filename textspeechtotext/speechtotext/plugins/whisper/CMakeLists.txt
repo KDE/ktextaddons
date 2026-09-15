@@ -3,7 +3,7 @@
 
 add_library(speechtotextwhisper)
 ecm_qt_declare_logging_category(speechtotextwhisper
-    HEADER texttospeech_kokoro_lib_debug.h
+    HEADER speechtotextwhisper_lib_debug.h
     IDENTIFIER SPEECHTOTEXT_WHISPER_LIB_LOG
     CATEGORY_NAME org.kde.kf.speechtotext_lib.whisper
     DESCRIPTION "whisper speech to text lib"
@@ -15,6 +15,16 @@ target_sources(
     PRIVATE
         whisperspeechtotextpluginjob.h
         whisperspeechtotextpluginjob.cpp
+        whisperspeechtotextutils.h
+        whisperspeechtotextutils.cpp
+        whisperspeechtotextcheckjob.h
+        whisperspeechtotextcheckjob.cpp
+        whisperspeechtotextinstalljob.h
+        whisperspeechtotextinstalljob.cpp
+        whisperspeechtotextinstallpythonwidget.h
+        whisperspeechtotextinstallpythonwidget.cpp
+        whisperspeechtotextinstallpythondialog.h
+        whisperspeechtotextinstallpythondialog.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -34,7 +44,14 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
 )
 
-target_link_libraries(speechtotextwhisper PRIVATE KF6::I18n)
+target_link_libraries(
+    speechtotextwhisper
+    PRIVATE
+        Qt::Widgets
+        KF6::I18n
+        KF6::WidgetsAddons
+        KF6::TextAddonsWidgets
+)
 
 set_target_properties(
     speechtotextwhisper
@@ -84,3 +101,7 @@ target_link_libraries(
 install(TARGETS speechtotext_whisper DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
 
 install(PROGRAMS scripts/whisper_helper.py DESTINATION ${KDE_INSTALL_BINDIR})
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
