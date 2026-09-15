@@ -51,7 +51,7 @@ public:
      */
     [[nodiscard]] bool isRecognitionModel() const;
 
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &newName);
 
 private:
