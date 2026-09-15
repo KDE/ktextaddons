@@ -10,6 +10,8 @@
 VoskSpeechToTextProxyModel::VoskSpeechToTextProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
+    setSortCaseSensitivity(Qt::CaseInsensitive);
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
 }
 
 VoskSpeechToTextProxyModel::~VoskSpeechToTextProxyModel() = default;

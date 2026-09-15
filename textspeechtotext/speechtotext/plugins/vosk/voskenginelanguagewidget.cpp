@@ -69,8 +69,6 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         mVoskSpeechToTextModel->setSpeechToTextInfos(ManagerModelVoskSpeechToText::self()->speechToTextInfos());
     }
 
-    mVoskSpeechToTextProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
-    mVoskSpeechToTextProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     mVoskSpeechToTextProxyModel->setSourceModel(mVoskSpeechToTextModel);
     mTreeView->setModel(mVoskSpeechToTextProxyModel);
 
