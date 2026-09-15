@@ -12,13 +12,22 @@ using namespace Qt::Literals::StringLiterals;
 SpeechToTextAction::SpeechToTextAction(QObject *parent)
     : QAction{parent}
 {
-    // TODO add icons mic ?
     setCheckable(true);
     connect(this, &QAction::triggered, this, &SpeechToTextAction::slotClicked);
-    connect(SpeechToTextManager::self(), &SpeechToTextManager::recordingChanged, this, &QAction::setChecked);
+
+    connect(SpeechToTextManager::self(), &SpeechToTextManager::recordingChanged, this, [this](bool recording) {
+        setChecked(recording);
+        updateIcon();
+    });
+    updateIcon();
 }
 
 SpeechToTextAction::~SpeechToTextAction() = default;
+
+void SpeechToTextAction::updateIcon()
+{
+    setIcon(isChecked() ? QIcon::fromTheme(u"mic-on"_s) : QIcon::fromTheme(u"mic-off"_s));
+}
 
 void SpeechToTextAction::slotClicked()
 {

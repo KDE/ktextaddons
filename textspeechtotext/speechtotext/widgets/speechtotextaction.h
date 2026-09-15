@@ -29,5 +29,6 @@ public:
 
 private:
     TEXTSPEECHTOTEXT_NO_EXPORT void slotClicked();
+    TEXTSPEECHTOTEXT_NO_EXPORT void updateIcon();
 };
 }
