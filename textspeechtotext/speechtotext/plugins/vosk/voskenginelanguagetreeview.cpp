@@ -15,6 +15,7 @@ VoskEngineLanguageTreeView::VoskEngineLanguageTreeView(QWidget *parent)
     setRootIsDecorated(false);
     setSortingEnabled(true);
     setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(this, &VoskEngineLanguageTreeView::customContextMenuRequested, this, &VoskEngineLanguageTreeView::slotCustomContextMenuRequested);
 }
 
 VoskEngineLanguageTreeView::~VoskEngineLanguageTreeView() = default;
@@ -24,6 +25,7 @@ void VoskEngineLanguageTreeView::slotCustomContextMenuRequested(const QPoint &po
     const QModelIndex index = indexAt(pos);
     if (index.isValid()) {
         QMenu menu(this);
+        // TODO add install action too
         menu.addAction(i18nc("@action", "Mark as Active"), this, [this, index]() {
             // TODO removeClicked(index.siblingAtColumn(VoskSpeechToTextModel::Identifier).data().toByteArray());
         });
