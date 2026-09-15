@@ -44,6 +44,13 @@ public:
     [[nodiscard]] QString type() const;
     void setType(const QString &newType);
 
+    /*!
+     * \brief Returns true when this entry is a speech recognition model.
+     *
+     * The upstream list also advertises models which are not transcription ones.
+     */
+    [[nodiscard]] bool isRecognitionModel() const;
+
     QString name() const;
     void setName(const QString &newName);
 

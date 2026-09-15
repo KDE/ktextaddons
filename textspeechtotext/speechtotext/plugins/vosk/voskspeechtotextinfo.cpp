@@ -12,7 +12,15 @@ VoskSpeechToTextInfo::VoskSpeechToTextInfo() = default;
 
 bool VoskSpeechToTextInfo::isValid() const
 {
-    return !mIdentifier.isEmpty() && !mUrl.isEmpty() && !mObsolete;
+    return !mIdentifier.isEmpty() && !mUrl.isEmpty() && !mObsolete && isRecognitionModel();
+}
+
+bool VoskSpeechToTextInfo::isRecognitionModel() const
+{
+    // The upstream list also advertises "spk" models (speaker identification x-vectors, loaded
+    // with vosk_spk_model_new()) and "tts" models (synthesis voices). vosk_model_new() cannot
+    // load either, so they must never be offered as a language to transcribe with.
+    return mType == "big"_L1 || mType == "small"_L1 || mType == "big-lgraph"_L1;
 }
 
 QString VoskSpeechToTextInfo::identifier() const
@@ -96,7 +104,7 @@ void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
     mLangText = obj["lang_text"_L1].toString();
     mIdentifier = obj["lang"_L1].toString();
     mMd5 = obj["md5"_L1].toString();
-    mObsolete = obj["obsolete"_L1].toBool();
+    mObsolete = obj["obsolete"_L1].toString() == "true"_L1;
     mVersion = obj["version"_L1].toString();
     mSize = obj["size"_L1].toInteger();
     mUrl = obj["url"_L1].toString();
