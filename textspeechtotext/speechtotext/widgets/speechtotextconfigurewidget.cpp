@@ -6,11 +6,10 @@
 
 #include "speechtotextconfigurewidget.h"
 
+#include "speechtotext/speechtotextmanager.h"
 #include "speechtotext/widgets/speechtotextlanguagecomboboxwidget.h"
 #include "speechtotextenginecomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
-#include <KLocalizedString>
-#include <KSharedConfig>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
@@ -50,6 +49,8 @@ void SpeechToTextConfigureWidget::saveSettings()
 {
     mSpeechToTextComboBox->save();
     mSpeechToTextDevice->saveSettings();
+    // Apply right away: the user just selected the engine, they shouldn't have to restart.
+    SpeechToTextManager::self()->loadEngine();
 }
 
 #include "moc_speechtotextconfigurewidget.cpp"
