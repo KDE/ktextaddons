@@ -22,6 +22,8 @@ void SpeechToTextToolButtonWidgetTest::shouldHaveDefaultValues()
 
     auto mToolButton = w.findChild<QToolButton *>(u"mToolButton"_s);
     QVERIFY(mToolButton);
+    QVERIFY(mToolButton->isCheckable());
+    QVERIFY(!mToolButton->isChecked());
 
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
