@@ -13,4 +13,7 @@ class VoskEngineLanguageTreeView : public QTreeView
 public:
     explicit VoskEngineLanguageTreeView(QWidget *parent = nullptr);
     ~VoskEngineLanguageTreeView() override;
+
+private:
+    void slotCustomContextMenuRequested(const QPoint &pos);
 };

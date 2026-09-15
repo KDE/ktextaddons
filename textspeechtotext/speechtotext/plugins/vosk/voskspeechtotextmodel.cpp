@@ -113,7 +113,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
             return speechToTextInfo.name();
         }
         case VoskRoles::Active: {
-            return isActive(speechToTextInfo);
+            return isActive(speechToTextInfo) ? i18n("Active") : QString();
         }
         }
     }
