@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "speechtotextwhisper_export.h"
 #include <QObject>
 
-class WhisperSpeechToTextPluginJob : public QObject
+class SPEECHTOTEXTWHISPER_EXPORT WhisperSpeechToTextPluginJob : public QObject
 {
     Q_OBJECT
 public:
