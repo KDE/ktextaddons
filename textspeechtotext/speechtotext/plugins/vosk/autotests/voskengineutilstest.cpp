@@ -10,6 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "voskengineutils.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDir>
 #include <QStandardPaths>
 #include <QTest>
 
@@ -69,6 +70,33 @@ void VoskEngineUtilsTest::shouldSaveLoadActiveLanguage()
     VoskEngineUtils::saveActiveLanguage({});
     QVERIFY(!myGroup.hasKey(VoskEngineUtils::activeLanguageKey()));
     QCOMPARE(VoskEngineUtils::loadActiveLanguage(), VoskEngineUtils::defaultLanguage());
+}
+
+void VoskEngineUtilsTest::shouldResolveActiveLanguageModelPath()
+{
+    const QString name = u"vosk-model-small-fr-0.22"_s;
+    const QString modelPath = VoskEngineUtils::storageLanguagePath() + u'/' + name;
+    QVERIFY(QDir().mkpath(modelPath));
+
+    VoskEngineUtils::LanguageInstalled info;
+    info.absoluteLanguageModelPath = modelPath;
+    info.name = name;
+    info.versionStr = u"0.22"_s;
+    QVERIFY(VoskEngineUtils::createInstalledLanguageInfo(modelPath, info));
+
+    VoskEngineUtils::saveActiveLanguage(name);
+    QCOMPARE(VoskEngineUtils::activeLanguageModelPath(), modelPath);
+
+    // A language which is not installed must not be handed over to vosk.
+    VoskEngineUtils::saveActiveLanguage(u"vosk-model-not-installed"_s);
+    QVERIFY(VoskEngineUtils::activeLanguageModelPath().isEmpty());
+
+    // A model removed behind our back must not be handed over to vosk either.
+    VoskEngineUtils::saveActiveLanguage(name);
+    QVERIFY(QDir(modelPath).removeRecursively());
+    QVERIFY(VoskEngineUtils::activeLanguageModelPath().isEmpty());
+
+    VoskEngineUtils::saveActiveLanguage({});
 }
 
 #include "moc_voskengineutilstest.cpp"

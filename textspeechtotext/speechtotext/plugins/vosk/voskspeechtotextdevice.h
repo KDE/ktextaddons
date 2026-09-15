@@ -20,9 +20,8 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDevice : public QIODevice
     Q_OBJECT
 public:
     struct LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDeviceInfo {
-        // TODO add language and co
-        QString modelDir;
-        QString formattedLang;
+        /*! Absolute path of the model directory, as extracted on disk. */
+        QString modelPath;
         int sampleRate = 0;
     };
 
@@ -30,6 +29,14 @@ public:
     ~VoskSpeechToTextDevice() override;
 
     void clear();
+
+    /*!
+     * Flushes the recognizer: emits the result for the audio accepted so far.
+     * Must be called once the audio capture is stopped, otherwise the last
+     * utterance stays buffered in vosk and is never reported.
+     */
+    void finish();
+
     [[nodiscard]] bool initialize(VoskSpeechToTextDeviceInfo &&info);
 
     [[nodiscard]] bool available() const;

@@ -28,6 +28,7 @@ void VoskSpeechToTextInfoTest::shouldHaveDefaultValues()
     QVERIFY(w.name().isEmpty());
     QVERIFY(w.type().isEmpty());
     QVERIFY(!w.obsolete());
+    QVERIFY(!w.isRecognitionModel());
 }
 
 void VoskSpeechToTextInfoTest::shouldParseJson_data()
@@ -47,6 +48,19 @@ void VoskSpeechToTextInfoTest::shouldParseJson_data()
     info.setUrl(u"https://alphacephei.com/vosk/models/vosk-model-uk-v3.zip"_s);
     info.setVersion(u"v3"_s);
     QTest::newRow("test1") << u"test1"_s << info << true;
+
+    // A speaker identification model is not a language we can transcribe with.
+    VoskSpeechToTextInfo spkInfo;
+    spkInfo.setLangText(u"All"_s);
+    spkInfo.setIdentifier(u"all"_s);
+    spkInfo.setMd5(u"0b0e4e8f2a54c4e0e5e4aedc1b0d1a1e"_s);
+    spkInfo.setObsolete(false);
+    spkInfo.setSize(13845504);
+    spkInfo.setName(u"vosk-model-spk-0.4"_s);
+    spkInfo.setType(u"spk"_s);
+    spkInfo.setUrl(u"https://alphacephei.com/vosk/models/vosk-model-spk-0.4.zip"_s);
+    spkInfo.setVersion(u"0.4"_s);
+    QTest::newRow("spk") << u"spk"_s << spkInfo << false;
 }
 
 void VoskSpeechToTextInfoTest::shouldParseJson()

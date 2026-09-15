@@ -12,6 +12,7 @@
 #if HAVE_VOSK_API_SUPPORT
 #include "vosk_api.h"
 #endif
+#include <QFile>
 #include <QJsonDocument>
 
 using namespace Qt::Literals::StringLiterals;
@@ -59,12 +60,22 @@ void VoskSpeechToTextDevice::setAsking(bool asking)
 bool VoskSpeechToTextDevice::initialize(VoskSpeechToTextDeviceInfo &&info)
 {
 #if HAVE_VOSK_API_SUPPORT
-    mModel = vosk_model_new(QString(info.modelDir + info.formattedLang).toUtf8().constData());
-    if (mModel) {
-        mRecognizer = vosk_recognizer_new(mModel, info.sampleRate);
-    }
+    // Settings can be reloaded on an existing device: don't leak the previous model.
+    vosk_recognizer_free(mRecognizer);
+    mRecognizer = nullptr;
+    vosk_model_free(mModel);
+    mModel = nullptr;
 
-    if (!mModel || !mRecognizer) {
+    mModel = vosk_model_new(QFile::encodeName(info.modelPath).constData());
+    if (!mModel) {
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Vosk could not load the model in" << info.modelPath;
+        return false;
+    }
+    mRecognizer = vosk_recognizer_new(mModel, info.sampleRate);
+    if (!mRecognizer) {
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Vosk could not create a recognizer for" << info;
+        vosk_model_free(mModel);
+        mModel = nullptr;
         return false;
     }
 #endif
@@ -76,6 +87,15 @@ void VoskSpeechToTextDevice::clear()
 #if HAVE_VOSK_API_SUPPORT
     if (mRecognizer) {
         vosk_recognizer_reset(mRecognizer);
+    }
+#endif
+}
+
+void VoskSpeechToTextDevice::finish()
+{
+#if HAVE_VOSK_API_SUPPORT
+    if (mRecognizer) {
+        parseText(vosk_recognizer_final_result(mRecognizer));
     }
 #endif
 }
@@ -121,8 +141,7 @@ void VoskSpeechToTextDevice::parseText(const char *json)
         return;
     }
 
-    text = text.mid(text.indexOf(mWakeWord) + mWakeWord.size());
-    text = text.trimmed();
+    text = text.mid(text.indexOf(mWakeWord) + mWakeWord.size()).trimmed();
 
     Q_EMIT result(text);
     qDebug() << "[debug] Text:" << text;
@@ -149,15 +168,12 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
     } else if (!mIsAsking) {
         return;
     }
-
-    Q_EMIT result(text);
 }
 
 QDebug operator<<(QDebug d, const VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo &t)
 {
     d.space() << "sampleRate" << t.sampleRate;
-    d.space() << "modelDir" << t.modelDir;
-    d.space() << "formattedLang" << t.formattedLang;
+    d.space() << "modelPath" << t.modelPath;
     return d;
 }
 

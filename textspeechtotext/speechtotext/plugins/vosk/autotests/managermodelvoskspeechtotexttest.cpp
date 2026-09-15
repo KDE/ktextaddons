@@ -28,7 +28,8 @@ void ManagerModelVoskSpeechToTextTest::shouldLoadModelList_data()
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("numberOfTranslator");
     QTest::newRow("empty") << u"empty"_s << 0;
-    QTest::newRow("fullmodels") << u"model-list"_s << 106;
+    // 106 entries, 55 of them not obsolete, 4 of those being "tts" or "spk" models.
+    QTest::newRow("fullmodels") << u"model-list"_s << 51;
     // 1 correct 1 invalid
     QTest::newRow("invalid") << u"invalid"_s << 1;
 }

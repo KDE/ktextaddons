@@ -39,4 +39,8 @@ void SpeechToTextPlugin::setDefaultLanguage(const QString &language)
     d->mDefaultLanguage = language;
 }
 
+void SpeechToTextPlugin::stop()
+{
+}
+
 #include "moc_speechtotextplugin.cpp"

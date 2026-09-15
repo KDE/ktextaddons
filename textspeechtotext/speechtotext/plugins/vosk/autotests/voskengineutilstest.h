@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldVerifyLanguageInstalledStruct();
     void shouldSaveLoadLanguageInstalled();
     void shouldSaveLoadActiveLanguage();
+    void shouldResolveActiveLanguageModelPath();
 };

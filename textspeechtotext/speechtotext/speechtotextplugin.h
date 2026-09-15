@@ -70,6 +70,15 @@ public:
      */
     virtual void clear() = 0;
 
+    /*!
+     * \brief Stops the running recognition and flushes the pending result.
+     *
+     * Called by SpeechToTextManager once the audio capture has been stopped, so
+     * that the engine can emit what it recognized from the audio buffered so far.
+     * The default implementation does nothing.
+     */
+    virtual void stop();
+
 Q_SIGNALS:
     /*!
      */
