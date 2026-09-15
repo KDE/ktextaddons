@@ -48,14 +48,15 @@ public:
 
     void removeLanguage(const QString &name);
 
-protected:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
-    int columnCount(const QModelIndex &parent) const override;
 
 private:
+    int columnCount(const QModelIndex &parent) const override;
     [[nodiscard]] bool isInstalled(const QString &shortName) const;
     [[nodiscard]] QString versionInstalled(const QString &shortName) const;
     [[nodiscard]] bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
+    [[nodiscard]] bool isActive(const VoskSpeechToTextInfo &language) const;
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
     QVector<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
+    QString mActiveLanguage;
 };
