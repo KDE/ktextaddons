@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-14 00:42+0000\n"
-"PO-Revision-Date: 2026-09-13 05:28+0200\n"
+"PO-Revision-Date: 2026-09-14 05:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -82,10 +82,9 @@ msgid "Install Kokoro Package"
 msgstr "Kokoro-ის პაკეტის დაყენება"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select Voice(s)"
+#, kde-format
 msgid "Select Voice(s):"
-msgstr "აირჩიეთ ხმები"
+msgstr "აირჩიეთ ხმები:"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
 #, kde-format
@@ -218,9 +217,7 @@ msgid "Test"
 msgstr "შემოწმება"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "მორგება…"
 

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-14 00:42+0000\n"
-"PO-Revision-Date: 2026-09-13 13:07+0300\n"
+"PO-Revision-Date: 2026-09-14 10:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -84,10 +84,9 @@ msgid "Install Kokoro Package"
 msgstr "Встановлення пакунка Kokoro"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select Voice(s)"
+#, kde-format
 msgid "Select Voice(s):"
-msgstr "Виберіть дикторів"
+msgstr "Виберіть дикторів:"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
 #, kde-format
@@ -222,9 +221,7 @@ msgid "Test"
 msgstr "Тест"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
 

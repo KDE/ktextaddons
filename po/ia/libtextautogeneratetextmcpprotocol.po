@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-30 00:44+0000\n"
-"PO-Revision-Date: 2026-07-28 10:53+0200\n"
+"PO-Revision-Date: 2026-09-14 17:32+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -70,21 +70,18 @@ msgstr "Argumentos:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "Adde capute personalisate"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgid "Header:"
-msgstr "Capites:"
+msgstr "Capite:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "Remove capite"
+msgstr "Defini capite ..."
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format

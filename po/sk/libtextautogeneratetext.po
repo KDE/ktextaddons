@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-13 00:43+0000\n"
-"PO-Revision-Date: 2026-04-11 12:00+0200\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"PO-Revision-Date: 2026-09-14 20:10+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -20,28 +20,28 @@ msgstr ""
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "Úlohu sa nedá spustiť. Manažér je prázdny alebo text je prázdny."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "Zlyhalo otvorenie súboru na zápis: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "Nepodarilo sa zapísať do súboru: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "Súbor JSON"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "Nepodarilo sa otvoriť súbor na čítanie: %1"
 
 #: core/models/textautogeneratechatsmodel.cpp:88
 #, kde-format
@@ -380,10 +380,9 @@ msgid "Google Gemini"
 msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "API OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -436,16 +435,14 @@ msgid "Sarvam AI instance"
 msgstr "Inštancia Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "Orca Router OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API Orca Router kompatibilné s OpenAI"
+msgstr "API OrcaRouter kompatibilné s OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
-#, fuzzy, kde-format
-#| msgid "API Open AI (custom)"
+#, kde-format
 msgid "OpenAI API (custom)"
-msgstr "API Open AI (vlastné)"
+msgstr "API OpenAI (vlastné)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3256,8 +3253,7 @@ msgid "Travel"
 msgstr "Cestovanie"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Výzva"
@@ -3352,12 +3348,10 @@ msgid "Search… (%1)"
 msgstr "Hľadať… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Hľadať kanály"
+msgstr "Hľadať v chate"
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format

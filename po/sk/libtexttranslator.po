@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:44+0000\n"
-"PO-Revision-Date: 2023-12-08 20:12+0100\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"PO-Revision-Date: 2026-09-14 20:10+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -401,17 +401,14 @@ msgid "Settings"
 msgstr "Nastavenia"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use translation cache"
+#, kde-format
 msgid "Translation failed."
-msgstr "Use translation cache"
+msgstr "Preklad zlyhal."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model is not loaded."
-msgstr "Url adresa servera nie je definovaná."
+msgstr "Jazykový model nie je načítaný."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -419,10 +416,9 @@ msgid "Language model is not defined."
 msgstr "Url adresa servera nie je definovaná."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
+#, kde-format
 msgid "Language model files are missing in %1."
-msgstr "Url adresa servera nie je definovaná."
+msgstr "V %1 chýbajú súbory jazykového modelu."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-14 00:42+0000\n"
-"PO-Revision-Date: 2026-09-13 07:06-0300\n"
+"PO-Revision-Date: 2026-09-14 05:45-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -83,10 +83,9 @@ msgid "Install Kokoro Package"
 msgstr "Instalar o pacote Kokoro"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select Voice(s)"
+#, kde-format
 msgid "Select Voice(s):"
-msgstr "Selecionar voz(es)"
+msgstr "Selecionar voz(es):"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
 #, kde-format
@@ -221,9 +220,7 @@ msgid "Test"
 msgstr "Testar"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "Configurar…"
 

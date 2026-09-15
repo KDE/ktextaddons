@@ -217,9 +217,7 @@ msgid "Test"
 msgstr "Test"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "Nastavit…"
 

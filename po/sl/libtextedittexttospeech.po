@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-14 00:42+0000\n"
-"PO-Revision-Date: 2026-09-13 07:27+0200\n"
+"PO-Revision-Date: 2026-09-14 06:38+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -82,10 +82,9 @@ msgid "Install Kokoro Package"
 msgstr "Namesti paket Kokoro"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select Voice(s)"
+#, kde-format
 msgid "Select Voice(s):"
-msgstr "Izberite glas(ove)"
+msgstr "Izberite glas(ove):"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
 #, kde-format
@@ -218,9 +217,7 @@ msgid "Test"
 msgstr "Test"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "Konfiguriraj…"
 

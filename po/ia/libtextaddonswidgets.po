@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:44+0000\n"
-"PO-Revision-Date: 2026-07-17 12:10+0200\n"
+"PO-Revision-Date: 2026-09-14 17:29+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -309,10 +309,9 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "Que es de novo in %2. %1"
+msgstr "Que es de novo in %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -330,10 +329,9 @@ msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Que es de novo in Version %1 (Non ancora liberate)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
+#, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>Historia de Que es de novo</h1></hr>"
+msgstr "<h1>Historia de Que es de novo</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"

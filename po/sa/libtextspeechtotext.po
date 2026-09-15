@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:42+0000\n"
+"POT-Creation-Date: 2026-09-15 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -66,40 +66,40 @@ msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr "Vosk प्लगिन् सेटिंग्स्"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "अन्वेषण…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:85
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:86
 #, kde-format
 msgid "Download"
 msgstr "अवाहरन"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:106
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
 #, kde-format
 msgid "Delete"
 msgstr "लुप्"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "सूची अद्यतन करें"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "संजालतः भाषाणां सूचीं अद्यतनं कुर्वन्तु"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:190
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटिः %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:190
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"
@@ -116,7 +116,7 @@ msgid "Language"
 msgstr "भाषा"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:87
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:89
 #, kde-format
 msgid "Installed"
 msgstr "संस्थापितम्"
@@ -136,22 +136,33 @@ msgstr "उपलब्धं संस्करणम्"
 msgid "Size"
 msgstr "आकृति"
 
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:52
+#, kde-format
+msgid "Active"
+msgstr ""
+
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
 #, kde-format
 msgid "Whisper"
 msgstr "घूर्घायेत्"
-
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:30
-#, kde-format
-msgctxt "@label:textbox"
-msgid "Engine:"
-msgstr "यन्त्र:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Speech To Text विन्यस्तं कुर्वन्तु"
+
+#: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:30
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Engine:"
+msgstr "यन्त्र:"
+
+#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
+#, fuzzy, kde-format
+#| msgid "Language"
+msgid "Language:"
+msgstr "भाषा"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format

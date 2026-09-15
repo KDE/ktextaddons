@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:44+0000\n"
-"PO-Revision-Date: 2023-12-08 20:09+0100\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"PO-Revision-Date: 2026-09-14 20:10+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -305,10 +305,9 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "Čo je nové v %2. %1"
+msgstr "Čo je nové v %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -326,10 +325,9 @@ msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Čo je nové vo verzii %1 (zatiaľ nevydané)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
+#, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>História noviniek</h1></hr>"
+msgstr "<h1>História noviniek</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "Verzia %1"
