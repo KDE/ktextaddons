@@ -50,6 +50,9 @@ public:
 
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
+    [[nodiscard]] QString activeLanguage() const;
+    void setActiveLanguage(const QString &newActiveLanguage);
+
 private:
     int columnCount(const QModelIndex &parent) const override;
     [[nodiscard]] bool isInstalled(const QString &shortName) const;

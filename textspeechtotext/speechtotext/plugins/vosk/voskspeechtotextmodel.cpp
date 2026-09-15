@@ -125,6 +125,16 @@ bool VoskSpeechToTextModel::isActive(const VoskSpeechToTextInfo &language) const
     return mActiveLanguage == language.identifier();
 }
 
+QString VoskSpeechToTextModel::activeLanguage() const
+{
+    return mActiveLanguage;
+}
+
+void VoskSpeechToTextModel::setActiveLanguage(const QString &newActiveLanguage)
+{
+    mActiveLanguage = newActiveLanguage;
+}
+
 bool VoskSpeechToTextModel::needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const
 {
     const QString shortName{language.identifier()};
