@@ -14,3 +14,5 @@ VoskEngineLanguageTreeView::VoskEngineLanguageTreeView(QWidget *parent)
 }
 
 VoskEngineLanguageTreeView::~VoskEngineLanguageTreeView() = default;
+
+#include "moc_voskenginelanguagetreeview.cpp"
