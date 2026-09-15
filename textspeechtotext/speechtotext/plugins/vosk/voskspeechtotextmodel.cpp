@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 #include <QColor>
 #include <QDir>
+#include <QFont>
 
 VoskSpeechToTextModel::VoskSpeechToTextModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -68,6 +69,14 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
             if (static_cast<VoskRoles>(col) == VoskRoles::InstalledVersion) {
                 return QColor(Qt::red);
             }
+        }
+        return {};
+
+    } else if (role == Qt::FontRole) {
+        if (static_cast<VoskRoles>(col) == VoskRoles::Active && isActive(speechToTextInfo)) {
+            QFont font;
+            font.setBold(true);
+            return font;
         }
         return {};
     } else if (role == Qt::DisplayRole) {
