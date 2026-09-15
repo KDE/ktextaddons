@@ -84,23 +84,9 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     auto downLoadLanguage = new QPushButton(QIcon::fromTheme(u"download-symbolic"_s), i18n("Download"), this);
     downLoadLanguage->setObjectName(u"downLoadLanguage"_s);
     buttonLayout->addWidget(downLoadLanguage);
-    connect(downLoadLanguage, &QPushButton::clicked, this, [this]() {
-        const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Url);
-        const QModelIndex modelIndexCheckSum = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::CheckSum);
-        const QModelIndex modelIndexName = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Name);
-        const QModelIndex modelIndexVersion = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::AvailableVersion);
+    connect(downLoadLanguage, &QPushButton::clicked, this, &VoskEngineLanguageWidget::slotDownloadLanguage);
 
-        const QString url = modelIndex.data().toString();
-        const QString checkSum = modelIndexCheckSum.data().toString();
-        qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " url " << url << " checksum " << checkSum;
-        VoskDownloadLanguageJob::DownloadLanguageInfo info;
-        info.checksum = modelIndexCheckSum.data().toString();
-        info.url = QUrl(modelIndex.data().toString());
-        info.name = modelIndexName.data().toString();
-        info.version = modelIndexVersion.data().toString();
-        slotDownLoad(info);
-    });
+    connect(mTreeView, &VoskEngineLanguageTreeView::downloadLanguage, this, &VoskEngineLanguageWidget::slotDownloadLanguage);
 
     auto deleteLanguage = new QPushButton(QIcon::fromTheme(u"edit-delete"_s), i18n("Delete"), this);
     deleteLanguage->setObjectName(u"deleteLanguage"_s);
@@ -167,6 +153,25 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
 }
 
 VoskEngineLanguageWidget::~VoskEngineLanguageWidget() = default;
+
+void VoskEngineLanguageWidget::slotDownloadLanguage()
+{
+    const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
+    const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Url);
+    const QModelIndex modelIndexCheckSum = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::CheckSum);
+    const QModelIndex modelIndexName = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Name);
+    const QModelIndex modelIndexVersion = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::AvailableVersion);
+
+    const QString url = modelIndex.data().toString();
+    const QString checkSum = modelIndexCheckSum.data().toString();
+    qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " url " << url << " checksum " << checkSum;
+    VoskDownloadLanguageJob::DownloadLanguageInfo info;
+    info.checksum = modelIndexCheckSum.data().toString();
+    info.url = QUrl(modelIndex.data().toString());
+    info.name = modelIndexName.data().toString();
+    info.version = modelIndexVersion.data().toString();
+    slotDownLoad(info);
+}
 
 void VoskEngineLanguageWidget::slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info)
 {

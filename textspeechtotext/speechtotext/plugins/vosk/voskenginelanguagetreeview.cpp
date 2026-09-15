@@ -8,7 +8,7 @@
 #include "voskspeechtotextmodel.h"
 #include <KLocalizedString>
 #include <QMenu>
-
+using namespace Qt::Literals::StringLiterals;
 VoskEngineLanguageTreeView::VoskEngineLanguageTreeView(QWidget *parent)
     : QTreeView(parent)
 {
@@ -34,6 +34,11 @@ void VoskEngineLanguageTreeView::slotCustomContextMenuRequested(const QPoint &po
         const QString name = index.siblingAtColumn(VoskSpeechToTextModel::Name).data().toString();
         menu.addAction(i18nc("@action", "Mark as Active"), this, [this, name]() {
             Q_EMIT markAsActive(name);
+        });
+    }
+    if (!installed) {
+        menu.addAction(QIcon::fromTheme(u"download-symbolic"_s), i18nc("@action", "Download"), this, [this]() {
+            Q_EMIT downloadLanguage();
         });
     }
     if (!menu.isEmpty()) {

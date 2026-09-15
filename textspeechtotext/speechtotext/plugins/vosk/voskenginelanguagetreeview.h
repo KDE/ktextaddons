@@ -16,6 +16,7 @@ public:
 
 Q_SIGNALS:
     void markAsActive(const QString &name);
+    void downloadLanguage();
 
 private:
     void slotCustomContextMenuRequested(const QPoint &pos);

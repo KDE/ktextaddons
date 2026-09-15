@@ -30,6 +30,7 @@ private:
     void slotError(const QString &str);
     void updateListModel();
     void slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info);
+    void slotDownloadLanguage();
     VoskEngineLanguageTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     VoskSpeechToTextModel *const mVoskSpeechToTextModel;
