@@ -9,6 +9,8 @@
 VoskEngineLanguageTreeView::VoskEngineLanguageTreeView(QWidget *parent)
     : QTreeView(parent)
 {
+    setRootIsDecorated(false);
+    setSortingEnabled(true);
 }
 
 VoskEngineLanguageTreeView::~VoskEngineLanguageTreeView() = default;

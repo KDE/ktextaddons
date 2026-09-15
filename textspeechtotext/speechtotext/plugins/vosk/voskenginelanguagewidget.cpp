@@ -73,8 +73,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mVoskSpeechToTextProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     mVoskSpeechToTextProxyModel->setSourceModel(mVoskSpeechToTextModel);
     mTreeView->setModel(mVoskSpeechToTextProxyModel);
-    mTreeView->setRootIsDecorated(false);
-    mTreeView->setSortingEnabled(true);
+
     vboxLayout->addWidget(mTreeView);
 
     hboxLayout->addLayout(vboxLayout);
