@@ -5,12 +5,19 @@
 */
 
 #pragma once
-#include "textgrammarcheckprivate_export.h"
+#include "textgrammarcheck_export.h"
 
 #include <QObject>
 namespace TextGrammarCheck
 {
-class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageInfo
+/*!
+ * \class TextGrammarCheck::LanguageInfo
+ * \inheaderfile TextGrammarCheck/LanguageInfo
+ * \inmodule TextGrammarCheck
+ * \brief Language info for the current language.
+ * \author Laurent Montel <montel@kde.org>
+ */
+class TEXTGRAMMARCHECK_EXPORT LanguageInfo
 {
 public:
     LanguageInfo();
