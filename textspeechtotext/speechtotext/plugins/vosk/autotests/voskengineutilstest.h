@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldDefineRepositoryPath();
     void shouldVerifyLanguageInstalledStruct();
     void shouldSaveLoadLanguageInstalled();
+    void shouldSaveLoadActiveLanguage();
 };

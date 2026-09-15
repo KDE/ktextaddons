@@ -71,6 +71,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
 
     mVoskSpeechToTextProxyModel->setSourceModel(mVoskSpeechToTextModel);
     mTreeView->setModel(mVoskSpeechToTextProxyModel);
+    connect(mTreeView, &VoskEngineLanguageTreeView::markAsActive, mVoskSpeechToTextModel, &VoskSpeechToTextModel::setActiveLanguage);
 
     vboxLayout->addWidget(mTreeView);
 

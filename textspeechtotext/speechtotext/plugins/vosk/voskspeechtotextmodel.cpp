@@ -13,6 +13,7 @@
 
 VoskSpeechToTextModel::VoskSpeechToTextModel(QObject *parent)
     : QAbstractListModel{parent}
+    , mActiveLanguage(VoskEngineUtils::loadActiveLanguage())
 {
     updateInstalledLanguage();
 }
@@ -122,7 +123,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
 
 bool VoskSpeechToTextModel::isActive(const VoskSpeechToTextInfo &language) const
 {
-    return mActiveLanguage == language.identifier();
+    return !mActiveLanguage.isEmpty() && mActiveLanguage == language.name();
 }
 
 QString VoskSpeechToTextModel::activeLanguage() const
@@ -132,7 +133,14 @@ QString VoskSpeechToTextModel::activeLanguage() const
 
 void VoskSpeechToTextModel::setActiveLanguage(const QString &newActiveLanguage)
 {
+    if (mActiveLanguage == newActiveLanguage) {
+        return;
+    }
     mActiveLanguage = newActiveLanguage;
+    VoskEngineUtils::saveActiveLanguage(mActiveLanguage);
+    if (const int numberOfRows = rowCount(); numberOfRows > 0) {
+        Q_EMIT dataChanged(index(0, VoskRoles::Active), index(numberOfRows - 1, VoskRoles::Active));
+    }
 }
 
 bool VoskSpeechToTextModel::needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const
@@ -173,6 +181,9 @@ void VoskSpeechToTextModel::removeLanguage(const QString &name)
             return;
         }
         mLanguageInstalled.removeAll(*index);
+        if (mActiveLanguage == name) {
+            setActiveLanguage({});
+        }
         beginResetModel();
         endResetModel();
     }

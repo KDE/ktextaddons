@@ -6,8 +6,11 @@
 
 #include "voskspeechtotextplugin.h"
 #include "speechtotext_vosk_debug.h"
+#include "voskengineutils.h"
 #include "voskspeechtotextdevice.h"
 #include <QIODevice>
+
+using namespace Qt::Literals::StringLiterals;
 
 VoskSpeechToTextPlugin::VoskSpeechToTextPlugin(QObject *parent)
     : TextSpeechToText::SpeechToTextPlugin{parent}
@@ -39,9 +42,16 @@ QIODevice *VoskSpeechToTextPlugin::audioDevice() const
 
 bool VoskSpeechToTextPlugin::loadSettings()
 {
+    const QString activeLanguage = VoskEngineUtils::loadActiveLanguage();
+    if (activeLanguage.isEmpty()) {
+        qCWarning(SPEECHTOTEXT_VOSK_LOG) << "No active language defined. Impossible to initialize vosk plugin";
+        return false;
+    }
     // First setSampleRate
     VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo info;
     info.sampleRate = sampleRate();
+    info.modelDir = VoskEngineUtils::storageLanguagePath() + u'/';
+    info.formattedLang = activeLanguage;
     if (!mDevice->initialize(std::move(info))) {
         qCWarning(SPEECHTOTEXT_VOSK_LOG) << "Impossible to initialize vosk plugin";
         return false;

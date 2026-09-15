@@ -31,8 +31,11 @@ struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
 
 [[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString defaultLanguage();
 
-LIBVOSKSPEECHTOTEXT_EXPORT void saveSettings();
-LIBVOSKSPEECHTOTEXT_EXPORT void loadSettings();
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString groupName();
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString activeLanguageKey();
+
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString loadActiveLanguage();
+LIBVOSKSPEECHTOTEXT_EXPORT void saveActiveLanguage(const QString &name);
 }
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);
 Q_DECLARE_TYPEINFO(VoskEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);

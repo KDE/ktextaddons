@@ -7,6 +7,8 @@
 #include "voskengineutils.h"
 
 #include "libvoskspeechtotext_debug.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <QDir>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -100,18 +102,43 @@ bool VoskEngineUtils::LanguageInstalled::isValid() const
     return !absoluteLanguageModelPath.isEmpty();
 }
 
-void VoskEngineUtils::saveSettings()
+QString VoskEngineUtils::groupName()
 {
-    // TODO
+    return u"VoskSpeechToText"_s;
 }
 
-void VoskEngineUtils::loadSettings()
+QString VoskEngineUtils::activeLanguageKey()
 {
-    // TODO
+    return u"ActiveLanguage"_s;
+}
+
+QString VoskEngineUtils::loadActiveLanguage()
+{
+    KConfigGroup myGroup(KSharedConfig::openConfig(), VoskEngineUtils::groupName());
+    const QString name = myGroup.readEntry(VoskEngineUtils::activeLanguageKey(), QString());
+    if (name.isEmpty()) {
+        return VoskEngineUtils::defaultLanguage();
+    }
+    return name;
+}
+
+void VoskEngineUtils::saveActiveLanguage(const QString &name)
+{
+    KConfigGroup myGroup(KSharedConfig::openConfig(), VoskEngineUtils::groupName());
+    if (name.isEmpty()) {
+        myGroup.deleteEntry(VoskEngineUtils::activeLanguageKey());
+    } else {
+        myGroup.writeEntry(VoskEngineUtils::activeLanguageKey(), name);
+    }
+    myGroup.sync();
 }
 
 QString VoskEngineUtils::defaultLanguage()
 {
-    // TODO
+    // No language was selected yet: use the installed one when it's the only one.
+    const QVector<LanguageInstalled> languages = VoskEngineUtils::languageLocallyStored();
+    if (languages.count() == 1) {
+        return languages.constFirst().name;
+    }
     return {};
 }

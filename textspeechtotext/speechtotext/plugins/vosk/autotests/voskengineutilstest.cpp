@@ -8,6 +8,8 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "voskengineutils.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <QStandardPaths>
 #include <QTest>
 
@@ -50,6 +52,23 @@ void VoskEngineUtilsTest::shouldSaveLoadLanguageInstalled()
 
     const VoskEngineUtils::LanguageInstalled loadInfo = VoskEngineUtils::loadInstalledLanguageInfo(pathTest);
     QCOMPARE(loadInfo, info);
+}
+
+void VoskEngineUtilsTest::shouldSaveLoadActiveLanguage()
+{
+    KConfigGroup myGroup(KSharedConfig::openConfig(), VoskEngineUtils::groupName());
+    myGroup.deleteEntry(VoskEngineUtils::activeLanguageKey());
+    myGroup.sync();
+    QCOMPARE(VoskEngineUtils::loadActiveLanguage(), VoskEngineUtils::defaultLanguage());
+
+    const QString name = u"vosk-model-small-fr-0.22"_s;
+    VoskEngineUtils::saveActiveLanguage(name);
+    QCOMPARE(VoskEngineUtils::loadActiveLanguage(), name);
+
+    // An empty language removes the stored one.
+    VoskEngineUtils::saveActiveLanguage({});
+    QVERIFY(!myGroup.hasKey(VoskEngineUtils::activeLanguageKey()));
+    QCOMPARE(VoskEngineUtils::loadActiveLanguage(), VoskEngineUtils::defaultLanguage());
 }
 
 #include "moc_voskengineutilstest.cpp"

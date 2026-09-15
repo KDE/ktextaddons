@@ -23,12 +23,20 @@ VoskEngineLanguageTreeView::~VoskEngineLanguageTreeView() = default;
 void VoskEngineLanguageTreeView::slotCustomContextMenuRequested(const QPoint &pos)
 {
     const QModelIndex index = indexAt(pos);
-    if (index.isValid()) {
-        QMenu menu(this);
-        // TODO add install action too
-        menu.addAction(i18nc("@action", "Mark as Active"), this, [this, index]() {
-            // TODO removeClicked(index.siblingAtColumn(VoskSpeechToTextModel::Identifier).data().toByteArray());
+    if (!index.isValid()) {
+        return;
+    }
+    QMenu menu(this);
+    // TODO add install action too
+    const bool installed = !index.siblingAtColumn(VoskSpeechToTextModel::Installed).data().toString().isEmpty();
+    const bool active = !index.siblingAtColumn(VoskSpeechToTextModel::Active).data().toString().isEmpty();
+    if (installed && !active) {
+        const QString name = index.siblingAtColumn(VoskSpeechToTextModel::Name).data().toString();
+        menu.addAction(i18nc("@action", "Mark as Active"), this, [this, name]() {
+            Q_EMIT markAsActive(name);
         });
+    }
+    if (!menu.isEmpty()) {
         menu.exec(viewport()->mapToGlobal(pos));
     }
 }
