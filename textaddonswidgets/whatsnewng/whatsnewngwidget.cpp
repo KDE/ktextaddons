@@ -9,12 +9,8 @@
 #include "whatsnewng/whatsnewngutils.h"
 #include <KAboutData>
 #include <KLocalizedString>
-#include <QDate>
-#include <QDebug>
-#include <QLocale>
 #include <QTextBrowser>
 #include <QVBoxLayout>
-#include <qobject.h>
 
 using namespace Qt::Literals::StringLiterals;
 

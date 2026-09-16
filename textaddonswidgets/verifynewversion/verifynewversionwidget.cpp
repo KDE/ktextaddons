@@ -10,7 +10,6 @@
 #include "verifynewversionutils.h"
 #include <KLocalizedString>
 #include <QAction>
-#include <QDesktopServices>
 #include <QUrl>
 using namespace TextAddonsWidgets;
 using namespace Qt::Literals::StringLiterals;
