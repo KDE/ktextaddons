@@ -24,7 +24,7 @@ WhisperSpeechToTextInstallPythonWidgetTest::WhisperSpeechToTextInstallPythonWidg
 
 void WhisperSpeechToTextInstallPythonWidgetTest::shouldHaveDefaultValues()
 {
-    WhisperSpeechToTextInstallPythonWidget w;
+    const WhisperSpeechToTextInstallPythonWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -51,9 +51,9 @@ void WhisperSpeechToTextInstallPythonWidgetTest::shouldAssignModules()
 void WhisperSpeechToTextInstallPythonWidgetTest::shouldNotInstallWithoutModules()
 {
     WhisperSpeechToTextInstallPythonWidget w;
-    QSignalSpy doneSpy(&w, &WhisperSpeechToTextInstallPythonWidget::installDone);
-    QSignalSpy failedSpy(&w, &WhisperSpeechToTextInstallPythonWidget::installFailed);
-    QSignalSpy progressSpy(&w, &WhisperSpeechToTextInstallPythonWidget::installInProgress);
+    const QSignalSpy doneSpy(&w, &WhisperSpeechToTextInstallPythonWidget::installDone);
+    const QSignalSpy failedSpy(&w, &WhisperSpeechToTextInstallPythonWidget::installFailed);
+    const QSignalSpy progressSpy(&w, &WhisperSpeechToTextInstallPythonWidget::installInProgress);
 
     w.startInstall();
     // Nothing to install is a success, and no process is started for it.
