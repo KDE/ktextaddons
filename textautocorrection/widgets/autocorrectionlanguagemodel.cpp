@@ -63,7 +63,6 @@ void AutoCorrectionLanguageModel::fillModel()
     QLocale cLocale(QLocale::C);
     QSet<QString> insertedLanguages;
     const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyTerritory);
-    mLocalInfos.reserve(allLocales.count() + 1);
     for (const QLocale &lang : allLocales) {
         if (lang != cLocale) {
             QString languageCode = lang.name();
