@@ -15,6 +15,8 @@ target_sources(
     PRIVATE
         whisperspeechtotextpluginjob.h
         whisperspeechtotextpluginjob.cpp
+        whisperspeechtotextdevice.h
+        whisperspeechtotextdevice.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -63,6 +65,10 @@ install(
     LIBRARY
         NAMELINK_SKIP
 )
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
 
 ###
 add_library(speechtotext_whisper MODULE)
