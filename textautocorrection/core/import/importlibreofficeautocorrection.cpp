@@ -112,6 +112,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
         if (loadDomElement(doc, &file)) {
             if (const QDomElement list = doc.documentElement(); list.isNull()) {
                 qCDebug(TEXTAUTOCORRECTION_LOG) << "No list defined in " << type;
+                return false;
             } else {
                 for (QDomElement e = list.firstChildElement(); !e.isNull(); e = e.nextSiblingElement()) {
                     if (const QString tag = e.tagName(); tag == "block-list:block"_L1) {
