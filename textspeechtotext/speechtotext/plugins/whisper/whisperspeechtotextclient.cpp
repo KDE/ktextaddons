@@ -49,6 +49,7 @@ bool WhisperSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
 {
     // The dialog installs what the check reported as missing: without asking for it
     // first, it would have nothing to install.
+    const QString previousModel = WhisperSpeechToTextUtils::loadModel();
     const WhisperSpeechToTextCheckJob::CheckResult result = WhisperSpeechToTextCheckJob::checkSynchronously();
     // A broken installation names nothing: everything whisper needs is reinstalled.
     const QStringList modules = result.needToReinstall ? WhisperSpeechToTextUtils::requiredModules() : result.missing;
@@ -64,8 +65,9 @@ bool WhisperSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
     dlg->exec();
     delete dlg;
 
-    // Nothing was installed when there was nothing missing: the engine is what it was.
-    const bool settingsChanged = !modules.isEmpty() && installSucceeded;
+    // Nothing was installed when there was nothing missing, but the dialog is also
+    // where the model is chosen, and the engine has to be rebuilt to use it.
+    const bool settingsChanged = (!modules.isEmpty() && installSucceeded) || previousModel != WhisperSpeechToTextUtils::loadModel();
     if (settingsChanged) {
         Q_EMIT configureChanged();
     }
