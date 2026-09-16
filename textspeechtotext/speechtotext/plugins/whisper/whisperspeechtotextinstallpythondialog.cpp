@@ -56,6 +56,7 @@ void WhisperSpeechToTextInstallPythonDialog::setModules(const QStringList &modul
 
 void WhisperSpeechToTextInstallPythonDialog::startInstall()
 {
+    mCloseButton->setEnabled(false);
     mWhisperInstallPythonWidget->startInstall();
 }
 
