@@ -92,7 +92,7 @@ void TextToSpeechKokoroCheckJob::start()
     const QString pythonScript = TextToSpeechKokoroUtils::venvPython();
     // Without the venv there is nothing to check: the packages live in it.
     if (pythonScript.isEmpty()) {
-        Q_EMIT needToInstallPackages({u"kokoro"_s, u"torch"_s});
+        Q_EMIT needToInstallPackages(TextToSpeechKokoroUtils::requiredModules());
         deleteLater();
         return;
     }
@@ -111,7 +111,7 @@ TextToSpeechKokoroCheckJob::CheckResult TextToSpeechKokoroCheckJob::checkSynchro
     const QString pythonScript = TextToSpeechKokoroUtils::venvPython();
     // Without the venv there is nothing to check: the packages live in it.
     if (pythonScript.isEmpty()) {
-        result.missing = {u"kokoro"_s, u"torch"_s};
+        result.missing = TextToSpeechKokoroUtils::requiredModules();
         return result;
     }
     QProcess process;

@@ -5,8 +5,10 @@
 */
 #include "whisperspeechtotextclient.h"
 
+#include "whisperspeechtotextcheckjob.h"
 #include "whisperspeechtotextinstallpythondialog.h"
 #include "whisperspeechtotextplugin.h"
+#include "whisperspeechtotextutils.h"
 #include <KLocalizedString>
 #include <QPointer>
 
@@ -45,11 +47,25 @@ bool WhisperSpeechToTextClient::hasConfigurationDialog() const
 
 bool WhisperSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
 {
+    // The dialog installs what the check reported as missing: without asking for it
+    // first, it would have nothing to install.
+    const WhisperSpeechToTextCheckJob::CheckResult result = WhisperSpeechToTextCheckJob::checkSynchronously();
+    // A broken installation names nothing: everything whisper needs is reinstalled.
+    const QStringList modules = result.needToReinstall ? WhisperSpeechToTextUtils::requiredModules() : result.missing;
+
+    bool installSucceeded = false;
     QPointer<WhisperSpeechToTextInstallPythonDialog> dlg = new WhisperSpeechToTextInstallPythonDialog(parentWidget);
+    dlg->setModules(modules);
+    connect(dlg, &WhisperSpeechToTextInstallPythonDialog::installDone, this, [&installSucceeded]() {
+        installSucceeded = true;
+    });
+    // exec() is what runs the event loop the jobs need, so the install is started before it.
+    dlg->startInstall();
     dlg->exec();
     delete dlg;
 
-    const bool settingsChanged = true; //(previousActiveLanguage != VoskEngineUtils::loadActiveLanguage());
+    // Nothing was installed when there was nothing missing: the engine is what it was.
+    const bool settingsChanged = !modules.isEmpty() && installSucceeded;
     if (settingsChanged) {
         Q_EMIT configureChanged();
     }

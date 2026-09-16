@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <QPlainTextEdit>
 #include <QVBoxLayout>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -65,9 +66,18 @@ void WhisperSpeechToTextInstallPythonWidget::startInstall()
 
 void WhisperSpeechToTextInstallPythonWidget::installModules()
 {
-    appendMessage(i18n("Installing modules in %1: %2", WhisperSpeechToTextUtils::defaultVenvPath(), mModules.join(", "_L1)));
+    // The virtualenv was just recreated from scratch: installing only the modules
+    // the check reported as missing would leave out the ones it had found in the
+    // previous one, and whisper would still not be usable.
+    QStringList modules = WhisperSpeechToTextUtils::requiredModules();
+    for (const QString &module : std::as_const(mModules)) {
+        if (!modules.contains(module)) {
+            modules.append(module);
+        }
+    }
+    appendMessage(i18n("Installing modules in %1: %2", WhisperSpeechToTextUtils::defaultVenvPath(), modules.join(", "_L1)));
     auto job = new WhisperSpeechToTextInstallJob(this);
-    job->setModules(mModules);
+    job->setModules(modules);
     connect(job, &WhisperSpeechToTextInstallJob::installMessage, this, &WhisperSpeechToTextInstallPythonWidget::appendMessage);
     connect(job, &WhisperSpeechToTextInstallJob::installDone, this, [this]() {
         appendMessage(i18n("Installation done."));

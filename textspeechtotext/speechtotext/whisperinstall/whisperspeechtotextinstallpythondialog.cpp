@@ -44,6 +44,8 @@ WhisperSpeechToTextInstallPythonDialog::WhisperSpeechToTextInstallPythonDialog(Q
     connect(mWhisperInstallPythonWidget, &WhisperSpeechToTextInstallPythonWidget::installInProgress, mCloseButton, [this](bool status) {
         mCloseButton->setEnabled(!status);
     });
+    connect(mWhisperInstallPythonWidget, &WhisperSpeechToTextInstallPythonWidget::installDone, this, &WhisperSpeechToTextInstallPythonDialog::installDone);
+    connect(mWhisperInstallPythonWidget, &WhisperSpeechToTextInstallPythonWidget::installFailed, this, &WhisperSpeechToTextInstallPythonDialog::installFailed);
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myWhisperSpeechToTextInstallPythonDialogGroupName), QSize(400, 300));
 }
 

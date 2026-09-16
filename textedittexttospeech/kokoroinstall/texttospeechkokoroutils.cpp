@@ -218,6 +218,11 @@ QString TextEditTextToSpeech::TextToSpeechKokoroUtils::languageCode(const QStrin
     return language ? QString(QLatin1Char(language->code)) : QString();
 }
 
+QStringList TextEditTextToSpeech::TextToSpeechKokoroUtils::requiredModules()
+{
+    return {u"kokoro"_s, u"torch"_s};
+}
+
 QString TextEditTextToSpeech::TextToSpeechKokoroUtils::pythonScript()
 {
     return u"kokoro_helper.py"_s;

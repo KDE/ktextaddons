@@ -28,6 +28,11 @@ public:
     void setModules(const QStringList &modules);
     void startInstall();
 
+Q_SIGNALS:
+    /*! Relayed from the widget, so the caller knows whether anything was installed. */
+    void installDone();
+    void installFailed();
+
 private:
     WhisperSpeechToTextInstallPythonWidget *const mWhisperInstallPythonWidget;
     QPushButton *const mCloseButton;

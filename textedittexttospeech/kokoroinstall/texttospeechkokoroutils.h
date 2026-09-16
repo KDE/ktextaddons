@@ -8,6 +8,7 @@
 #include "kokoroinstalltexttospeech_export.h"
 #include <QIcon>
 #include <QLocale>
+#include <QStringList>
 #include <QVoice>
 
 namespace TextEditTextToSpeech
@@ -47,6 +48,14 @@ enum class VoiceFilter {
 
 /*! Returns the lang_code expected by KPipeline for \a identifier, for example "f" for "ff_siwis". */
 [[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString languageCode(const QString &identifier);
+
+/*!
+ * The modules kokoro needs, with their pip names.
+ *
+ * Kept in sync with availability() in kokoro_helper.py. espeak-ng is not part of
+ * it: it is a system package, pip knows nothing under that name.
+ */
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QStringList requiredModules();
 
 [[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString pythonScript();
 [[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString pythonScriptPath();
