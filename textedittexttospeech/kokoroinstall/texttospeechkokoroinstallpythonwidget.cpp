@@ -7,6 +7,7 @@
 #include "texttospeechkokorodownloadvoicejob.h"
 #include "texttospeechkokoroinstalljob.h"
 #include "texttospeechkokoroinstallpythonevenvjob.h"
+#include "texttospeechkokoroutils.h"
 #include "texttospeechkokorovoicecombobox.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -16,6 +17,18 @@
 #include <QVBoxLayout>
 using namespace TextEditTextToSpeech;
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+// What the check reported, without espeak-ng: it is a system package, pip knows
+// nothing under that name.
+[[nodiscard]] QStringList pipModules(const QStringList &modules)
+{
+    QStringList result = modules;
+    result.removeAll("espeak-ng"_L1);
+    return result;
+}
+}
 TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWidget *parent)
     : QWidget{parent}
     , mPlainTextEdit(new QPlainTextEdit(this))
@@ -74,6 +87,14 @@ void TextToSpeechKokoroInstallPythonWidget::startInstall()
     if (mModules.contains("espeak-ng"_L1)) {
         appendMessage(i18n("espeak-ng is missing. Please install it with your package manager."));
     }
+    // Recreating the virtualenv for nothing would throw away a working one.
+    if (pipModules(mModules).isEmpty()) {
+        appendMessage(i18n("Nothing to install."));
+        // The caller disabled what it had to before calling us, it has to be told that it is over.
+        Q_EMIT installInProgress(false);
+        Q_EMIT installDone();
+        return;
+    }
     appendMessage(i18n("Creating the python virtual environment…"));
     auto job = new TextToSpeechKokoroInstallPythonEvenvJob(this);
     connect(job, &TextToSpeechKokoroInstallPythonEvenvJob::installDone, this, [this]() {
@@ -89,23 +110,28 @@ void TextToSpeechKokoroInstallPythonWidget::startInstall()
 
 void TextToSpeechKokoroInstallPythonWidget::installModules()
 {
-    if (!mModules.isEmpty()) {
-        appendMessage(i18n("Installing modules: %1", mModules.join(", "_L1)));
-        auto job = new TextToSpeechKokoroInstallJob(this);
-        job->setModules(mModules);
-        connect(job, &TextToSpeechKokoroInstallJob::installMessage, this, &TextToSpeechKokoroInstallPythonWidget::appendMessage);
-        connect(job, &TextToSpeechKokoroInstallJob::installDone, this, [this]() {
-            appendMessage(i18n("Installation done."));
-            Q_EMIT installDone();
-        });
-        connect(job, &TextToSpeechKokoroInstallJob::installFailed, this, [this]() {
-            appendMessage(i18n("Installation failed."));
-            Q_EMIT installFailed();
-        });
-        job->start();
-    } else {
-        Q_EMIT installDone();
+    // The virtualenv was just recreated from scratch: installing only the modules
+    // the check reported as missing would leave out the ones it had found in the
+    // previous one, and kokoro would still not be usable.
+    QStringList modules = TextToSpeechKokoroUtils::requiredModules();
+    for (const QString &module : pipModules(mModules)) {
+        if (!modules.contains(module)) {
+            modules.append(module);
+        }
     }
+    appendMessage(i18n("Installing modules: %1", modules.join(", "_L1)));
+    auto job = new TextToSpeechKokoroInstallJob(this);
+    job->setModules(modules);
+    connect(job, &TextToSpeechKokoroInstallJob::installMessage, this, &TextToSpeechKokoroInstallPythonWidget::appendMessage);
+    connect(job, &TextToSpeechKokoroInstallJob::installDone, this, [this]() {
+        appendMessage(i18n("Installation done."));
+        Q_EMIT installDone();
+    });
+    connect(job, &TextToSpeechKokoroInstallJob::installFailed, this, [this]() {
+        appendMessage(i18n("Installation failed."));
+        Q_EMIT installFailed();
+    });
+    job->start();
 }
 
 void TextToSpeechKokoroInstallPythonWidget::appendMessage(const QString &message)
