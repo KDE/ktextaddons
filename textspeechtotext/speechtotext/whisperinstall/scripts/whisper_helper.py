@@ -19,6 +19,8 @@ the vosk-like word-by-word output.
 Examples:
     whisper_helper.py check
     whisper_helper.py models
+    whisper_helper.py download --model small   # json progress on stdout
+    whisper_helper.py download --all           # what is in the cache already
     whisper_helper.py transcribe --file /tmp/hello.wav --language fr
     whisper_helper.py serve      # newline-delimited JSON on stdin, frames on stdout
 """
@@ -116,6 +118,190 @@ def model_table():
         }
         for name, size, multilingual in MODELS
     ]
+
+
+# --- model download --------------------------------------------------------
+#
+# WhisperModel() downloads what it needs by itself, but it does so in the middle
+# of the first transcription and says nothing while it goes: 490 MiB for the
+# default model, during which the engine looks hung. This is the same download,
+# asked for on its own, reporting one json line per event on stdout:
+#
+#   {"type": "start", "model": "small", "repo": "Systran/faster-whisper-small"}
+#   {"type": "progress", "model": "small", "received": 1234, "total": 5678, "percent": 21}
+#   {"type": "finished", "model": "small", "path": "/home/.../snapshots/..."}
+#
+# plus "cached" when there is nothing to download, "missing" for --dry-run and
+# "error" for anything which went wrong.
+#
+# --all downloads nothing: it answers one "cached" or "missing" line per model of
+# the table, which is what fills the model list of the engine.
+
+# The files faster_whisper.utils.download_model asks for: the same ones have to
+# be in the cache for WhisperModel() not to download anything afterwards.
+MODEL_FILES = (
+    "config.json",
+    "preprocessor_config.json",
+    "model.bin",
+    "tokenizer.json",
+    "vocabulary.*",
+)
+
+# huggingface_hub counts the same bytes twice: once as they are received from
+# the network, once as they are written to disk. The second bar only moves when
+# a file is complete, which for a model made of one big file means 0 % then
+# 100 %, so the one followed here is the network one.
+RECONSTRUCT_BAR_DESC = "Reconstructing"
+
+
+def report(**event):
+    """One json line on stdout, which is what the engine reads."""
+    print(json.dumps(event, ensure_ascii=False), flush=True)
+
+
+def model_repository(name):
+    """Repository of the hub a model is downloaded from, None when unknown."""
+    if "/" in name:
+        # A ctranslate2 model given by its full id, not one of the table.
+        return name
+    from faster_whisper.utils import _MODELS
+
+    return _MODELS.get(name)
+
+
+class DownloadProgress:
+    """Sums what the bars of huggingface_hub report, and says it in percent."""
+
+    def __init__(self, model):
+        self._model = model
+        self._bars = {}
+        self._percent = None
+        self._lock = threading.Lock()
+
+    def update(self, bar, received, total):
+        with self._lock:
+            self._bars[bar] = (received, total or 0)
+            received = sum(value[0] for value in self._bars.values())
+            total = sum(value[1] for value in self._bars.values())
+            percent = int(received * 100 / total) if total else 0
+            # One line per percent: a line per chunk would be thousands of them.
+            if percent == self._percent:
+                return
+            # A full bar is what "finished" means. Before it, it only means that
+            # a small file is done and that the big one has not announced its
+            # size yet, or that deduplication spared bytes which were counted.
+            if percent >= 100:
+                return
+            self._percent = percent
+            report(
+                type="progress",
+                model=self._model,
+                received=received,
+                total=total,
+                percent=percent,
+            )
+
+
+def progress_tqdm_class(progress):
+    """The bar class huggingface_hub drives, reporting to \a progress."""
+    from huggingface_hub.utils import tqdm as hf_tqdm
+
+    class ProgressTqdm(hf_tqdm):
+        def __init__(self, *args, **kwargs):
+            # tqdm drops its arguments when the bar is disabled, which it is when
+            # nothing is attached to a terminal, so they are kept here.
+            self._reported = kwargs.get("unit") == "B" and not (
+                kwargs.get("desc") or ""
+            ).startswith(RECONSTRUCT_BAR_DESC)
+            self._received = 0
+            super().__init__(*args, **kwargs)
+
+        def update(self, n=1):
+            # self.n is not moved by a disabled bar: the count is our own.
+            self._received += n or 0
+            if self._reported:
+                progress.update(id(self), self._received, self.total)
+            return super().update(n)
+
+    return ProgressTqdm
+
+
+def cached_model_path(repo_id):
+    """Where the model is, when all of its files are already in the cache."""
+    from huggingface_hub import snapshot_download
+
+    try:
+        return snapshot_download(
+            repo_id, allow_patterns=list(MODEL_FILES), local_files_only=True
+        )
+    except Exception:  # noqa: BLE001 - not cached, or not cached completely
+        return None
+
+
+def report_model_state(name):
+    """Says whether \a name is in the cache, without downloading anything."""
+    repo_id = model_repository(name)
+    if repo_id is None:
+        report(type="error", model=name, message=f"unknown model: {name!r}")
+        return False
+    if (path := cached_model_path(repo_id)) is not None:
+        report(type="cached", model=name, repo=repo_id, path=path)
+        return True
+    sizes = {model: size for model, size, _ in MODELS}
+    report(type="missing", model=name, repo=repo_id, sizeMib=sizes.get(name, 0))
+    return True
+
+
+def download(args):
+    from huggingface_hub import snapshot_download
+
+    # Asking model by model would be one interpreter start per model, and the
+    # engine wants the state of the whole table to show it in one list.
+    if args.all:
+        ok = all([report_model_state(name) for name, _, _ in MODELS])
+        return 0 if ok else 1
+
+    repo_id = model_repository(args.model)
+    if repo_id is None:
+        report(
+            type="error",
+            model=args.model,
+            message=f"unknown model: {args.model!r}",
+        )
+        return 1
+    if not args.force:
+        if (path := cached_model_path(repo_id)) is not None:
+            report(type="cached", model=args.model, repo=repo_id, path=path)
+            return 0
+    if args.dry_run:
+        sizes = {name: size for name, size, _ in MODELS}
+        report(
+            type="missing",
+            model=args.model,
+            repo=repo_id,
+            sizeMib=sizes.get(args.model, 0),
+        )
+        return 0
+
+    report(type="start", model=args.model, repo=repo_id)
+    progress = DownloadProgress(args.model)
+    try:
+        path = snapshot_download(
+            repo_id,
+            allow_patterns=list(MODEL_FILES),
+            force_download=args.force,
+            tqdm_class=progress_tqdm_class(progress),
+        )
+    except Exception as error:  # noqa: BLE001 - network, disk, offline mode...
+        report(
+            type="error",
+            model=args.model,
+            repo=repo_id,
+            message=f"{type(error).__name__}: {error}",
+        )
+        return 1
+    report(type="finished", model=args.model, repo=repo_id, path=path)
+    return 0
 
 
 def pcm_to_float(payload, sample_format="int16"):
@@ -553,6 +739,20 @@ def main():
     subparsers.add_parser("models", help="list the models, as json")
     subparsers.add_parser("serve", help="frame protocol on stdin/stdout")
 
+    fetch = subparsers.add_parser("download", help="download a model, as json")
+    fetch.add_argument("--model", default=DEFAULT_MODEL)
+    fetch.add_argument(
+        "--dry-run", action="store_true", help="only report whether it is missing"
+    )
+    fetch.add_argument(
+        "--force", action="store_true", help="download it again even when cached"
+    )
+    fetch.add_argument(
+        "--all",
+        action="store_true",
+        help="report the state of every model instead of downloading one",
+    )
+
     one_shot = subparsers.add_parser("transcribe", help="transcribe a wav file")
     one_shot.add_argument("--file", required=True)
     one_shot.add_argument("--model", default=DEFAULT_MODEL)
@@ -575,6 +775,8 @@ def main():
     if args.command == "serve":
         serve()
         return 0
+    if args.command == "download":
+        return download(args)
     transcribe(args)
     return 0
 
