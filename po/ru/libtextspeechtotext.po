@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:42+0000\n"
+"POT-Creation-Date: 2026-09-16 00:43+0000\n"
 "PO-Revision-Date: 2026-01-28 20:26+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -66,41 +66,54 @@ msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr "Параметры модуля Vosk"
 
+#: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:35
+#, kde-format
+msgctxt "@action"
+msgid "Mark as Active"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
+#, fuzzy, kde-format
+#| msgid "Download"
+msgctxt "@action"
+msgid "Download"
+msgstr "Загрузить"
+
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Поиск…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:86
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:84
 #, kde-format
 msgid "Download"
 msgstr "Загрузить"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Обновить список"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:112
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Обновить список языков из сети"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
 #, kde-format
 msgid "Error: %1"
 msgstr "Ошибка: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
 #, kde-format
 msgid "Vosk"
 msgstr "VOSK"
@@ -110,35 +123,46 @@ msgstr "VOSK"
 msgid "Impossible to extract language"
 msgstr "Невозможно извлечь язык"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
 #, kde-format
 msgid "Language"
 msgstr "Язык"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:89
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:99
 #, kde-format
 msgid "Installed"
 msgstr "Установлено"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Installed Version"
 msgstr "Установленная версия"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Available Version"
 msgstr "Доступная версия"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:52
 #, kde-format
 msgid "Size"
 msgstr "Размер"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:52
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:54
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextcheckjob.cpp:26
+#, kde-format
+msgid "Whisper is not usable. Please reinstall it."
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextcheckjob.cpp:29
+#, kde-format
+msgid "Whisper is not installed. Missing: %1"
 msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
@@ -146,13 +170,40 @@ msgstr ""
 msgid "Whisper"
 msgstr "Whisper"
 
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythondialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Whisper Package"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:44
+#, kde-format
+msgid "Nothing to install."
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:49
+#, kde-format
+msgid "Installing modules in %1: %2"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:55
+#, kde-format
+msgid "Installation done."
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installation failed."
+msgstr "Установлено"
+
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Параметры преобразования речи в текст"
 
-#: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:30
+#: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
@@ -169,13 +220,13 @@ msgstr "Язык"
 msgid "Speech to Text…"
 msgstr "Распознавание речи…"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Ввод:"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:67
 #, kde-format
 msgid "Default"
 msgstr "По умолчанию"

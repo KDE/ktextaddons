@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:42+0000\n"
-"PO-Revision-Date: 2026-01-24 12:29+0400\n"
+"POT-Creation-Date: 2026-09-16 00:43+0000\n"
+"PO-Revision-Date: 2026-09-15 17:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -65,41 +65,55 @@ msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr "إعدادات محلق Vosk"
 
+#: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:35
+#, fuzzy, kde-format
+#| msgid "Active"
+msgctxt "@action"
+msgid "Mark as Active"
+msgstr "نشط"
+
+#: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
+#, fuzzy, kde-format
+#| msgid "Download"
+msgctxt "@action"
+msgid "Download"
+msgstr "تحميل"
+
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "بحث..."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:86
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:84
 #, kde-format
 msgid "Download"
 msgstr "تحميل"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
 #, kde-format
 msgid "Delete"
 msgstr "حذف"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "حدّث القائمة"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:112
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "تحديث قائمة اللغات من الشبكة"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
 #, kde-format
 msgid "Error: %1"
 msgstr "خطأ: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
 #, kde-format
 msgid "Vosk"
 msgstr "فوسك VOSK"
@@ -109,35 +123,46 @@ msgstr "فوسك VOSK"
 msgid "Impossible to extract language"
 msgstr "من المستحيل استخراج اللغة"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
 #, kde-format
 msgid "Language"
 msgstr "اللغة"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:89
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:99
 #, kde-format
 msgid "Installed"
 msgstr "مثبتة"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Installed Version"
 msgstr "النسخة المثبتة"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
 #, kde-format
 msgid "Available Version"
 msgstr "الإصدار المتاح"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:50
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:52
 #, kde-format
 msgid "Size"
 msgstr "الحجم"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:52
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:54
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
+msgstr "نشط"
+
+#: speechtotext/plugins/whisper/whisperspeechtotextcheckjob.cpp:26
+#, kde-format
+msgid "Whisper is not usable. Please reinstall it."
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextcheckjob.cpp:29
+#, kde-format
+msgid "Whisper is not installed. Missing: %1"
 msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
@@ -145,36 +170,62 @@ msgstr ""
 msgid "Whisper"
 msgstr "وسبر Whisper"
 
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythondialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Install Whisper Package"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:44
+#, kde-format
+msgid "Nothing to install."
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:49
+#, kde-format
+msgid "Installing modules in %1: %2"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:55
+#, kde-format
+msgid "Installation done."
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextinstallpythonwidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installation failed."
+msgstr "مثبتة"
+
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "اضبط الكلام إلى نص"
 
-#: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:30
+#: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "المحرك:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
+#, kde-format
 msgid "Language:"
-msgstr "اللغة"
+msgstr "اللغة:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
 msgstr "الكلام إلى النص..."
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "الإدخال:"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:67
 #, kde-format
 msgid "Default"
 msgstr "المبدئي:"
