@@ -6,6 +6,7 @@
 
 #include "whisperspeechtotextinstallpythonwidget.h"
 #include "whisperspeechtotextinstalljob.h"
+#include "whisperspeechtotextinstallpythonevenvjob.h"
 #include "whisperspeechtotextutils.h"
 #include <KLocalizedString>
 #include <QPlainTextEdit>
@@ -45,9 +46,24 @@ void WhisperSpeechToTextInstallPythonWidget::startInstall()
         Q_EMIT installDone();
         return;
     }
-    // The virtual environment is created by the job itself when it is missing.
-    appendMessage(i18n("Installing modules in %1: %2", WhisperSpeechToTextUtils::defaultVenvPath(), mModules.join(", "_L1)));
     Q_EMIT installInProgress(true);
+    appendMessage(i18n("Creating the python virtual environment…"));
+    auto evenvJob = new WhisperSpeechToTextInstallPythonEvenvJob(this);
+    connect(evenvJob, &WhisperSpeechToTextInstallPythonEvenvJob::installDone, this, [this]() {
+        appendMessage(i18n("Python virtual environment created."));
+        installModules();
+    });
+    connect(evenvJob, &WhisperSpeechToTextInstallPythonEvenvJob::installFailed, this, [this]() {
+        appendMessage(i18n("Unable to create the python virtual environment."));
+        Q_EMIT installInProgress(false);
+        Q_EMIT installFailed();
+    });
+    evenvJob->start();
+}
+
+void WhisperSpeechToTextInstallPythonWidget::installModules()
+{
+    appendMessage(i18n("Installing modules in %1: %2", WhisperSpeechToTextUtils::defaultVenvPath(), mModules.join(", "_L1)));
     auto job = new WhisperSpeechToTextInstallJob(this);
     job->setModules(mModules);
     connect(job, &WhisperSpeechToTextInstallJob::installMessage, this, &WhisperSpeechToTextInstallPythonWidget::appendMessage);

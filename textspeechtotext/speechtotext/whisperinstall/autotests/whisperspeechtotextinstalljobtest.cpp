@@ -34,9 +34,9 @@ void WhisperSpeechToTextInstallJobTest::shouldAssignModules()
     w.setModules(modules);
     QCOMPARE(w.modules(), modules);
 
-    // With modules to install, only an interpreter or an existing virtualenv is needed.
-    const bool hasPython = !WhisperSpeechToTextUtils::pythonVersionPath().isEmpty() || !WhisperSpeechToTextUtils::venvPip().isEmpty();
-    QCOMPARE(w.canStart(), hasPython);
+    // With modules to install, the pip of the virtualenv is still needed:
+    // WhisperSpeechToTextInstallPythonEvenvJob is the one which creates it.
+    QCOMPARE(w.canStart(), !WhisperSpeechToTextUtils::venvPip().isEmpty());
 
     w.setModules({});
     QVERIFY(w.modules().isEmpty());

@@ -19,13 +19,8 @@ WhisperSpeechToTextInstallJob::~WhisperSpeechToTextInstallJob() = default;
 
 bool WhisperSpeechToTextInstallJob::canStart() const
 {
-    if (mModules.isEmpty()) {
-        return false;
-    }
-    // Either the virtualenv is already there, or there is an interpreter to create it with.
-    qDebug() << "WhisperSpeechToTextUtils::venvPip()  " << WhisperSpeechToTextUtils::venvPip();
-    qDebug() << "WhisperSpeechToTextUtils::pythonVersionPath()  " << WhisperSpeechToTextUtils::pythonVersionPath();
-    return !WhisperSpeechToTextUtils::venvPip().isEmpty() || !WhisperSpeechToTextUtils::pythonVersionPath().isEmpty();
+    // Without the virtualenv there is no pip to install the modules with.
+    return !mModules.isEmpty() && !WhisperSpeechToTextUtils::venvPip().isEmpty();
 }
 
 QStringList WhisperSpeechToTextInstallJob::modules() const
@@ -61,18 +56,7 @@ void WhisperSpeechToTextInstallJob::start()
             failed(u"Unable to start "_s + mProcess->program());
         }
     });
-    if (WhisperSpeechToTextUtils::venvPip().isEmpty()) {
-        createVenv();
-        return;
-    }
     installNextModule();
-}
-
-void WhisperSpeechToTextInstallJob::createVenv()
-{
-    mCreatingVenv = true;
-    Q_EMIT installMessage(u"Creating virtualenv "_s + WhisperSpeechToTextUtils::defaultVenvPath());
-    mProcess->start(WhisperSpeechToTextUtils::pythonVersionPath(), {u"-m"_s, u"venv"_s, WhisperSpeechToTextUtils::defaultVenvPath()});
 }
 
 void WhisperSpeechToTextInstallJob::installNextModule()
@@ -89,17 +73,8 @@ void WhisperSpeechToTextInstallJob::installNextModule()
 void WhisperSpeechToTextInstallJob::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     if (exitStatus != QProcess::NormalExit || exitCode != 0) {
-        failed(mCreatingVenv ? u"Unable to create virtualenv. Exit code: "_s + QString::number(exitCode)
-                             : u"Unable to install module. Exit code: "_s + QString::number(exitCode));
+        failed(u"Unable to install module. Exit code: "_s + QString::number(exitCode));
         return;
-    }
-    if (mCreatingVenv) {
-        mCreatingVenv = false;
-        // python -m venv can return 0 and still not have produced a usable pip.
-        if (WhisperSpeechToTextUtils::venvPip().isEmpty()) {
-            failed(u"Virtualenv created without pip: "_s + WhisperSpeechToTextUtils::defaultVenvPip());
-            return;
-        }
     }
     installNextModule();
 }

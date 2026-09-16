@@ -15,8 +15,9 @@ class QPlainTextEdit;
  * \brief Shows the progress of the installation of the python modules whisper needs.
  *
  * The modules to install are the ones WhisperSpeechToTextCheckJob reported as
- * missing; the widget only drives WhisperSpeechToTextInstallJob and shows what
- * pip prints.
+ * missing; the widget creates the virtualenv with
+ * WhisperSpeechToTextInstallPythonEvenvJob, then drives
+ * WhisperSpeechToTextInstallJob and shows what pip prints.
  */
 class SPEECHTOTEXTWHISPERINSTALL_EXPORT WhisperSpeechToTextInstallPythonWidget : public QWidget
 {
@@ -37,6 +38,7 @@ Q_SIGNALS:
 
 private:
     SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void appendMessage(const QString &message);
+    SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void installModules();
 
     QPlainTextEdit *const mPlainTextEdit;
     QStringList mModules;

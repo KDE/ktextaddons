@@ -22,6 +22,8 @@ target_sources(
         whisperspeechtotextcheckjob.cpp
         whisperspeechtotextinstalljob.h
         whisperspeechtotextinstalljob.cpp
+        whisperspeechtotextinstallpythonevenvjob.h
+        whisperspeechtotextinstallpythonevenvjob.cpp
         whisperspeechtotextinstallpythonwidget.h
         whisperspeechtotextinstallpythonwidget.cpp
         whisperspeechtotextinstallpythondialog.h
