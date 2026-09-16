@@ -13,7 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QString WhisperSpeechToTextUtils::pythonVersion()
 {
-    return u"python"_s;
+    return u"python3"_s;
 }
 
 QString WhisperSpeechToTextUtils::pythonVersionPath()

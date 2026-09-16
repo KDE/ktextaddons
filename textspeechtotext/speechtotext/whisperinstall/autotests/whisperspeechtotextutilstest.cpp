@@ -22,7 +22,7 @@ WhisperSpeechToTextUtilsTest::WhisperSpeechToTextUtilsTest(QObject *parent)
 
 void WhisperSpeechToTextUtilsTest::shouldDefinePythonVersion()
 {
-    QCOMPARE(WhisperSpeechToTextUtils::pythonVersion(), u"python"_s);
+    QCOMPARE(WhisperSpeechToTextUtils::pythonVersion(), u"python3"_s);
 }
 
 void WhisperSpeechToTextUtilsTest::shouldDefinePythonScript()
