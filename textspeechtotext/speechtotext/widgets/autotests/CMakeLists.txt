@@ -8,7 +8,9 @@ macro(add_speechtotext_widget_unittest _source)
         NAME_PREFIX "speechtotext-"
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
+        KF6::WidgetsAddons
         KF6::TextSpeechToText
+        speechtotextwhisperinstall
     )
     set_tests_properties(
         speechtotext-${_name}

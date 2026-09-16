@@ -73,7 +73,8 @@ set_target_properties(
 install(
     TARGETS
         speechtotextwhisperinstall
-        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF6TextSpeechToTextTargets
+    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     LIBRARY
         NAMELINK_SKIP
 )

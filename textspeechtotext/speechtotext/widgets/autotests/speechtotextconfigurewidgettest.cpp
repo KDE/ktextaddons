@@ -9,6 +9,7 @@
 #include "speechtotext/widgets/speechtotextenginecomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextlanguagecomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
+#include "whisperspeechtotextinstallmessagewidget.h"
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
@@ -36,6 +37,12 @@ void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
 
     auto mSpeechToTextLanguage = w.findChild<TextSpeechToText::SpeechToTextLanguageComboBoxWidget *>(u"mSpeechToTextLanguage"_s);
     QVERIFY(mSpeechToTextLanguage);
+
+    auto mWhisperInstallMessageWidget = w.findChild<WhisperSpeechToTextInstallMessageWidget *>(u"mWhisperInstallMessageWidget"_s);
+    QVERIFY(mWhisperInstallMessageWidget);
+    // Nothing to install as long as the whisper engine was not selected.
+    QVERIFY(mWhisperInstallMessageWidget->isHidden());
+    QVERIFY(mWhisperInstallMessageWidget->text().isEmpty());
 }
 
 #include "moc_speechtotextconfigurewidgettest.cpp"

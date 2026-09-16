@@ -89,6 +89,9 @@ ecm_generate_export_header(KF6TextSpeechToText
     USE_VERSION_HEADER
 )
 
+# Added before the link: the configure widget offers to install the python side of whisper.
+add_subdirectory(speechtotext/whisperinstall)
+
 target_link_libraries(
     KF6TextSpeechToText
     PUBLIC
@@ -101,6 +104,7 @@ target_link_libraries(
         KF6::WidgetsAddons
         KF6::ConfigGui
         KF6::TextAddonsWidgets
+        speechtotextwhisperinstall
 )
 
 target_include_directories(
@@ -177,7 +181,6 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-add_subdirectory(speechtotext/whisperinstall)
 add_subdirectory(speechtotext/plugins)
 if(BUILD_TESTING)
     add_subdirectory(speechtotext/widgets/autotests)

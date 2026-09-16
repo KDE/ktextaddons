@@ -23,6 +23,8 @@ bool WhisperSpeechToTextInstallJob::canStart() const
         return false;
     }
     // Either the virtualenv is already there, or there is an interpreter to create it with.
+    qDebug() << "WhisperSpeechToTextUtils::venvPip()  " << WhisperSpeechToTextUtils::venvPip();
+    qDebug() << "WhisperSpeechToTextUtils::pythonVersionPath()  " << WhisperSpeechToTextUtils::pythonVersionPath();
     return !WhisperSpeechToTextUtils::venvPip().isEmpty() || !WhisperSpeechToTextUtils::pythonVersionPath().isEmpty();
 }
 
