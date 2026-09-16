@@ -11,7 +11,6 @@
 #include "textautocorrectionautocorrect_debug.h"
 #include <KColorScheme>
 #include <QLocale>
-#include <QStandardPaths>
 #include <QTextBlock>
 #include <QTextDocument>
 
