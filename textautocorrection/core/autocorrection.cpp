@@ -480,7 +480,7 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
         // A URL inside e.g. quotes (like "http://www.calligra.org" with the quotes)
         // shouldn't include the quote in the URL.
         int lastPos = word.length() - 1;
-        while (!word.at(lastPos).isLetter() && !word.at(lastPos).isDigit() && word.at(lastPos) != u'/') {
+        while (lastPos >= 0 && !word.at(lastPos).isLetter() && !word.at(lastPos).isDigit() && word.at(lastPos) != u'/') {
             --lastPos;
         }
         // sanity check: was there no real content behind the key string?

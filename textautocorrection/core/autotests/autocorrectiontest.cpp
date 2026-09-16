@@ -10,6 +10,7 @@
 #include "settings/textautocorrectionsettings.h"
 #include <QStandardPaths>
 #include <QTest>
+#include <QTextBlock>
 #include <QTextDocument>
 QTEST_MAIN(AutoCorrectionTest)
 
@@ -735,20 +736,73 @@ void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text + nbsp + doubleQuote.end));
 }
 
+// Returns the href of the first anchor found in the document, or an empty string when there is none.
+static QString firstAnchorHref(const QTextDocument &doc)
+{
+    for (QTextBlock block = doc.begin(); block.isValid(); block = block.next()) {
+        for (QTextBlock::iterator it = block.begin(); !it.atEnd(); ++it) {
+            const QTextFragment fragment = it.fragment();
+            if (fragment.isValid() && fragment.charFormat().isAnchor()) {
+                return fragment.charFormat().anchorHref();
+            }
+        }
+    }
+    return {};
+}
+
+void AutoCorrectionTest::shouldAutoFormatURLs_data()
+{
+    QTest::addColumn<QString>("originalText");
+    QTest::addColumn<QString>("href");
+
+    // Detected as links
+    QTest::newRow("http") << u"http://www.kde.org"_s << u"http://www.kde.org"_s;
+    QTest::newRow("https") << u"https://www.kde.org"_s << u"https://www.kde.org"_s;
+    QTest::newRow("www") << u"www.kde.org"_s << u"http://www.kde.org"_s;
+    QTest::newRow("ftp") << u"ftp.kde.org"_s << u"ftps://ftp.kde.org"_s;
+    QTest::newRow("mailto") << u"foo@kde.org"_s << u"mailto:foo@kde.org"_s;
+    // The surrounding quotes must not be part of the link
+    QTest::newRow("quoted-url") << u"\"http://www.kde.org\""_s << u"http://www.kde.org"_s;
+    QTest::newRow("url-with-trailing-dot") << u"http://www.kde.org."_s << u"http://www.kde.org"_s;
+
+    // Not links
+    QTest::newRow("plain-word") << u"foo"_s << QString();
+    QTest::newRow("empty") << QString() << QString();
+
+    // No content behind the key string
+    QTest::newRow("scheme-only") << u"http://"_s << QString();
+    QTest::newRow("www-only") << u"www."_s << QString();
+
+    // Bug: "@" alone was taken for a valid mail address, and looking for the last
+    // letter/digit of the word then read before the beginning of the string.
+    QTest::newRow("at-only") << u"@"_s << QString();
+    QTest::newRow("at-after-word") << u"x @"_s << QString();
+    QTest::newRow("at-and-punctuation") << u"@,"_s << QString();
+    QTest::newRow("at-at") << u"@@"_s << QString();
+}
+
 void AutoCorrectionTest::shouldAutoFormatURLs()
 {
+    QFETCH(QString, originalText);
+    QFETCH(QString, href);
+
     TextAutoCorrectionCore::AutoCorrection autocorrection;
     auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
+    settings->setEnabledAutoCorrection(true);
     settings->setAutoFormatUrl(true);
     autocorrection.setAutoCorrectionSettings(settings);
-    // autocorrection.autocorrect(true, doc, position);
 
-    //    QTextCursor cursor(&doc);
-    //    cursor.setPosition(2);
-    //    QTextCharFormat charFormat = cursor.charFormat();
-    //    QCOMPARE(charFormat.font().underline(), false);
-    //    QCOMPARE(charFormat.font().bold(), true);
-    //    QCOMPARE(charFormat.font().strikeOut(), false);
+    QTextDocument doc;
+    doc.setPlainText(originalText);
+    int position = originalText.length();
+
+    // Must not crash: see the "at-*" rows.
+    autocorrection.autocorrect(true, doc, position);
+
+    // Detecting a link only changes the char format, never the text itself.
+    QCOMPARE(doc.toPlainText(), originalText);
+    QCOMPARE(position, originalText.length());
+    QCOMPARE(firstAnchorHref(doc), href);
 }
 
 #include "moc_autocorrectiontest.cpp"

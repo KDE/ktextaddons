@@ -40,6 +40,7 @@ private Q_SLOTS:
 
     void shouldAddNonBreakingSpaceBeforeAfterQuote();
 
+    void shouldAutoFormatURLs_data();
     void shouldAutoFormatURLs();
 
 private:
