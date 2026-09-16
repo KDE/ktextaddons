@@ -78,8 +78,13 @@ AutoCorrector::~AutoCorrector() = default;
 
 void AutoCorrector::setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect)
 {
+    if (autocorrect == d->mAutoCorrection) {
+        return;
+    }
+    if (d->mNeedToDelete) {
+        delete d->mAutoCorrection;
+    }
     d->mNeedToDelete = false;
-    delete d->mAutoCorrection;
     d->mAutoCorrection = autocorrect;
 }
 
