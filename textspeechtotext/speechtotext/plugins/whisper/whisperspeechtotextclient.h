@@ -23,4 +23,6 @@ public:
     [[nodiscard]] TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
 
     [[nodiscard]] TextSpeechToText::SpeechToTextPlugin *createTextToSpeech() override;
+    [[nodiscard]] bool hasConfigurationDialog() const override;
+    [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
 };

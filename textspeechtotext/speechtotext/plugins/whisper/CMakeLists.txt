@@ -96,6 +96,7 @@ target_link_libraries(
     PRIVATE
         KF6::TextSpeechToText
         KF6::I18n
+        speechtotextwhisper
 )
 
 install(TARGETS speechtotext_whisper DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)

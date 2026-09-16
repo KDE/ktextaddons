@@ -5,8 +5,10 @@
 */
 #include "whisperspeechtotextclient.h"
 
+#include "whisperspeechtotextinstallpythondialog.h"
 #include "whisperspeechtotextplugin.h"
 #include <KLocalizedString>
+#include <QPointer>
 
 using namespace Qt::Literals::StringLiterals;
 WhisperSpeechToTextClient::WhisperSpeechToTextClient(QObject *parent)
@@ -34,6 +36,24 @@ TextSpeechToText::SpeechToTextClient::EngineType WhisperSpeechToTextClient::engi
 TextSpeechToText::SpeechToTextPlugin *WhisperSpeechToTextClient::createTextToSpeech()
 {
     return new WhisperSpeechToTextPlugin;
+}
+
+bool WhisperSpeechToTextClient::hasConfigurationDialog() const
+{
+    return true;
+}
+
+bool WhisperSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
+{
+    QPointer<WhisperSpeechToTextInstallPythonDialog> dlg = new WhisperSpeechToTextInstallPythonDialog(parentWidget);
+    dlg->exec();
+    delete dlg;
+
+    const bool settingsChanged = true; //(previousActiveLanguage != VoskEngineUtils::loadActiveLanguage());
+    if (settingsChanged) {
+        Q_EMIT configureChanged();
+    }
+    return settingsChanged;
 }
 
 #include "moc_whisperspeechtotextclient.cpp"
