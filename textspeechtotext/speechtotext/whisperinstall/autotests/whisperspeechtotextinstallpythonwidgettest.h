@@ -18,4 +18,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldAssignModules();
     void shouldNotInstallWithoutModules();
+    void shouldOfferToDownloadAModel();
+    void shouldStoreTheModelWhichWasChosen();
 };

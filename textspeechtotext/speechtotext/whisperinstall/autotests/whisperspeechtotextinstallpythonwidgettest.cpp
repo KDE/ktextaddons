@@ -8,8 +8,11 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextinstallpythonwidget.h"
+#include "whisperspeechtotextmodelcombobox.h"
 #include "whisperspeechtotextutils.h"
 #include <QPlainTextEdit>
+#include <QProgressBar>
+#include <QPushButton>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
@@ -36,6 +39,18 @@ void WhisperSpeechToTextInstallPythonWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mPlainTextEdit->toPlainText().isEmpty());
 
     QVERIFY(w.modules().isEmpty());
+
+    auto mDownloadProgressBar = w.findChild<QProgressBar *>(u"mDownloadProgressBar"_s);
+    QVERIFY(mDownloadProgressBar);
+    // Nothing is being downloaded: the bar would only be in the way.
+    QVERIFY(mDownloadProgressBar->isHidden());
+
+    auto mDownloadModelButton = w.findChild<QPushButton *>(u"mDownloadModelButton"_s);
+    QVERIFY(mDownloadModelButton);
+    // There is nothing to download as long as the models are not listed.
+    QVERIFY(!mDownloadModelButton->isEnabled());
+
+    QVERIFY(w.findChild<WhisperSpeechToTextModelComboBox *>(u"mModelComboBox"_s));
 }
 
 void WhisperSpeechToTextInstallPythonWidgetTest::shouldAssignModules()
@@ -66,6 +81,53 @@ void WhisperSpeechToTextInstallPythonWidgetTest::shouldNotInstallWithoutModules(
     auto mPlainTextEdit = w.findChild<QPlainTextEdit *>(u"mPlainTextEdit"_s);
     QVERIFY(mPlainTextEdit);
     QVERIFY(!mPlainTextEdit->toPlainText().isEmpty());
+}
+
+void WhisperSpeechToTextInstallPythonWidgetTest::shouldOfferToDownloadAModel()
+{
+    if (WhisperSpeechToTextUtils::pythonScriptPath().isEmpty() || WhisperSpeechToTextUtils::pythonVersionPath().isEmpty()) {
+        QSKIP("whisper_helper.py is not installed here.");
+    }
+    WhisperSpeechToTextInstallPythonWidget w;
+    auto mModelComboBox = w.findChild<WhisperSpeechToTextModelComboBox *>(u"mModelComboBox"_s);
+    QVERIFY(mModelComboBox);
+    QSignalSpy loadedSpy(mModelComboBox, &WhisperSpeechToTextModelComboBox::modelsLoaded);
+    QVERIFY(loadedSpy.wait());
+
+    // The models are listed without the virtualenv: choosing one is possible
+    // before whisper is installed.
+    QVERIFY(mModelComboBox->count() > 0);
+    QVERIFY(!mModelComboBox->currentModel().isEmpty());
+    auto mDownloadModelButton = w.findChild<QPushButton *>(u"mDownloadModelButton"_s);
+    QVERIFY(mDownloadModelButton);
+    QVERIFY(mDownloadModelButton->isEnabled());
+    // Filling the box is not the user choosing a model, and nothing was downloaded.
+    auto mPlainTextEdit = w.findChild<QPlainTextEdit *>(u"mPlainTextEdit"_s);
+    QVERIFY(mPlainTextEdit);
+    QVERIFY(mPlainTextEdit->toPlainText().isEmpty());
+}
+
+void WhisperSpeechToTextInstallPythonWidgetTest::shouldStoreTheModelWhichWasChosen()
+{
+    if (WhisperSpeechToTextUtils::pythonScriptPath().isEmpty() || WhisperSpeechToTextUtils::pythonVersionPath().isEmpty()) {
+        QSKIP("whisper_helper.py is not installed here.");
+    }
+    WhisperSpeechToTextUtils::saveModel({});
+    WhisperSpeechToTextInstallPythonWidget w;
+    auto mModelComboBox = w.findChild<WhisperSpeechToTextModelComboBox *>(u"mModelComboBox"_s);
+    QVERIFY(mModelComboBox);
+    QSignalSpy loadedSpy(mModelComboBox, &WhisperSpeechToTextModelComboBox::modelsLoaded);
+    QVERIFY(loadedSpy.wait());
+    // Showing the dialog stores nothing: the model is still the one of the script.
+    QVERIFY(WhisperSpeechToTextUtils::loadModel().isEmpty());
+
+    QVERIFY(mModelComboBox->count() > 1);
+    const QString other = mModelComboBox->itemData(mModelComboBox->currentIndex() == 0 ? 1 : 0).toString();
+    mModelComboBox->setCurrentModel(other);
+    // The dialog has no button to apply anything: choosing is storing.
+    QCOMPARE(WhisperSpeechToTextUtils::loadModel(), other);
+
+    WhisperSpeechToTextUtils::saveModel({});
 }
 
 #include "moc_whisperspeechtotextinstallpythonwidgettest.cpp"

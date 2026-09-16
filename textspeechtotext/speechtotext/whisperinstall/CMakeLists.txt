@@ -20,6 +20,14 @@ target_sources(
         whisperspeechtotextutils.cpp
         whisperspeechtotextcheckjob.h
         whisperspeechtotextcheckjob.cpp
+        whisperspeechtotextmodelsjob.h
+        whisperspeechtotextmodelsjob.cpp
+        whisperspeechtotextdownloadmodeljob.h
+        whisperspeechtotextdownloadmodeljob.cpp
+        whisperspeechtotextcachedmodelsjob.h
+        whisperspeechtotextcachedmodelsjob.cpp
+        whisperspeechtotextmodelcombobox.h
+        whisperspeechtotextmodelcombobox.cpp
         whisperspeechtotextinstalljob.h
         whisperspeechtotextinstalljob.cpp
         whisperspeechtotextinstallpythonevenvjob.h
