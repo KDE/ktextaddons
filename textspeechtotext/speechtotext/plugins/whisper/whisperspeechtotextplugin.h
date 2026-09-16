@@ -7,6 +7,7 @@
 #pragma once
 
 #include "speechtotext/speechtotextplugin.h"
+class WhisperSpeechToTextDevice;
 
 class WhisperSpeechToTextPlugin : public TextSpeechToText::SpeechToTextPlugin
 {
@@ -16,9 +17,13 @@ public:
     ~WhisperSpeechToTextPlugin() override;
 
     void speechToText() override;
+    void stop() override;
 
     [[nodiscard]] int sampleRate() const override;
     [[nodiscard]] QIODevice *audioDevice() const override;
     [[nodiscard]] bool loadSettings() override;
     void clear() override;
+
+private:
+    WhisperSpeechToTextDevice *const mDevice;
 };

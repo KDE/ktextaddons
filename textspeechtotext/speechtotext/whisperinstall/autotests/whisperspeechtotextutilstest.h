@@ -22,4 +22,5 @@ private Q_SLOTS:
     void shouldDefineRequiredModules();
     void shouldDefineVenvPaths();
     void shouldOnlyReturnExistingVenvExecutables();
+    void shouldStoreSettings();
 };

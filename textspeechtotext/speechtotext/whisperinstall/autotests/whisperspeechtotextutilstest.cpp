@@ -91,4 +91,32 @@ void WhisperSpeechToTextUtilsTest::shouldOnlyReturnExistingVenvExecutables()
     }
 }
 
+void WhisperSpeechToTextUtilsTest::shouldStoreSettings()
+{
+    // Nothing was chosen yet: the script is the one which knows what to default to.
+    QVERIFY(WhisperSpeechToTextUtils::loadModel().isEmpty());
+    QVERIFY(WhisperSpeechToTextUtils::loadLanguage().isEmpty());
+    QVERIFY(WhisperSpeechToTextUtils::loadComputeType().isEmpty());
+    QVERIFY(WhisperSpeechToTextUtils::loadDevice().isEmpty());
+
+    WhisperSpeechToTextUtils::saveModel(u"small"_s);
+    WhisperSpeechToTextUtils::saveLanguage(u"fr"_s);
+    WhisperSpeechToTextUtils::saveComputeType(u"int8"_s);
+    WhisperSpeechToTextUtils::saveDevice(u"cpu"_s);
+    QCOMPARE(WhisperSpeechToTextUtils::loadModel(), u"small"_s);
+    QCOMPARE(WhisperSpeechToTextUtils::loadLanguage(), u"fr"_s);
+    QCOMPARE(WhisperSpeechToTextUtils::loadComputeType(), u"int8"_s);
+    QCOMPARE(WhisperSpeechToTextUtils::loadDevice(), u"cpu"_s);
+
+    // Saving nothing gives the defaults of the script back.
+    WhisperSpeechToTextUtils::saveModel({});
+    WhisperSpeechToTextUtils::saveLanguage({});
+    WhisperSpeechToTextUtils::saveComputeType({});
+    WhisperSpeechToTextUtils::saveDevice({});
+    QVERIFY(WhisperSpeechToTextUtils::loadModel().isEmpty());
+    QVERIFY(WhisperSpeechToTextUtils::loadLanguage().isEmpty());
+    QVERIFY(WhisperSpeechToTextUtils::loadComputeType().isEmpty());
+    QVERIFY(WhisperSpeechToTextUtils::loadDevice().isEmpty());
+}
+
 #include "moc_whisperspeechtotextutilstest.cpp"
