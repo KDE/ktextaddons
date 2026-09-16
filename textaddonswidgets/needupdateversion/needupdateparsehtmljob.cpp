@@ -39,6 +39,7 @@ void NeedUpdateParseHtmlJob::start()
         deleteLater();
         return;
     }
+    mData.clear();
     KIO::TransferJob *tjob = KIO::get(mUrl, KIO::Reload);
     connect(tjob, &KIO::TransferJob::data, this, &NeedUpdateParseHtmlJob::slotHttpDataFile);
     if (!tjob->exec()) {
