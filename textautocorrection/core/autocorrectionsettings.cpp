@@ -11,6 +11,7 @@
 #include "settings/textautocorrectionsettings.h"
 #include "textautocorrection_debug.h"
 
+#include <QLocale>
 #include <QRegularExpression>
 
 using namespace TextAutoCorrectionCore;

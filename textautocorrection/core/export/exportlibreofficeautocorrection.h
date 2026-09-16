@@ -8,6 +8,7 @@
 
 #include "exportabstractautocorrection.h"
 #include "textautocorrectioncore_private_export.h"
+#include <memory>
 class KZip;
 namespace TextAutoCorrectionCore
 {
@@ -24,6 +25,6 @@ private:
     [[nodiscard]] bool exportSentenceExceptList();
     [[nodiscard]] bool exportWordExceptList();
     [[nodiscard]] bool exportManifest();
-    KZip *mZip = nullptr;
+    std::unique_ptr<KZip> mZip;
 };
 }

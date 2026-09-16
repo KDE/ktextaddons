@@ -16,10 +16,7 @@ using namespace TextAutoCorrectionCore;
 using namespace Qt::Literals::StringLiterals;
 ExportLibreOfficeAutocorrection::ExportLibreOfficeAutocorrection() = default;
 
-ExportLibreOfficeAutocorrection::~ExportLibreOfficeAutocorrection()
-{
-    delete mZip;
-}
+ExportLibreOfficeAutocorrection::~ExportLibreOfficeAutocorrection() = default;
 
 bool ExportLibreOfficeAutocorrection::exportData(const QString &language,
                                                  const QString &fileName,
@@ -33,26 +30,29 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language,
     fixLangExtension.replace(u'_', u'-');
     const QString fname = fileName.isEmpty() ? libreOfficeWritableLocalAutoCorrectionPath + u"acor_%1.dat"_s.arg(fixLangExtension) : fileName;
     // qDebug() << " fname " << fname;
-    mZip = new KZip(fname);
+    mZip.reset(new KZip(fname));
     if (const bool result = mZip->open(QIODevice::WriteOnly); !result) {
         qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
+        mZip->close();
         return false;
     }
     if (!exportDocumentList()) {
+        mZip->close();
         return false;
     }
     if (!exportSentenceExceptList()) {
+        mZip->close();
         return false;
     }
     if (!exportWordExceptList()) {
+        mZip->close();
         return false;
     }
     if (!exportManifest()) {
+        mZip->close();
         return false;
     }
     mZip->close();
-    delete mZip;
-    mZip = nullptr;
     return true;
 }
 
