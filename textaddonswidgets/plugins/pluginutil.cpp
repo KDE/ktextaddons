@@ -18,12 +18,7 @@ bool TextAddonsWidgets::PluginUtil::isPluginActivated(const QStringList &enabled
     if (pluginId.isEmpty()) {
         return false;
     }
-    const bool pluginEnabledByUser = enabledPluginsList.contains(pluginId);
-    const bool pluginDisabledByUser = disabledPluginsList.contains(pluginId);
-    if ((isEnabledByDefault && !pluginDisabledByUser) || (!isEnabledByDefault && pluginEnabledByUser)) {
-        return true;
-    }
-    return false;
+    return isEnabledByDefault ? !disabledPluginsList.contains(pluginId) : enabledPluginsList.contains(pluginId);
 }
 
 TextAddonsWidgets::PluginUtil::PluginsStateList
