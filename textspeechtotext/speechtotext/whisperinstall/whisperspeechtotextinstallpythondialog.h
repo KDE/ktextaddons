@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "speechtotextwhisper_export.h"
+#include "speechtotextwhisperinstall_export.h"
 #include <QDialog>
 #include <QStringList>
 class QPushButton;
@@ -18,7 +18,7 @@ class WhisperSpeechToTextInstallPythonWidget;
  * The close button stays disabled while pip is running: closing the dialog
  * would kill it in the middle of the installation.
  */
-class SPEECHTOTEXTWHISPER_EXPORT WhisperSpeechToTextInstallPythonDialog : public QDialog
+class SPEECHTOTEXTWHISPERINSTALL_EXPORT WhisperSpeechToTextInstallPythonDialog : public QDialog
 {
     Q_OBJECT
 public:

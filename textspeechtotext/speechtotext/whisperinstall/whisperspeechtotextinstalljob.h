@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "speechtotextwhisper_export.h"
+#include "speechtotextwhisperinstall_export.h"
 #include <QProcess>
 #include <QStringList>
 
@@ -18,7 +18,7 @@
  * which follows PEP 668 pip refuses to touch the system python anyway.
  * The job deletes itself once it has reported the outcome.
  */
-class SPEECHTOTEXTWHISPER_EXPORT WhisperSpeechToTextInstallJob : public QObject
+class SPEECHTOTEXTWHISPERINSTALL_EXPORT WhisperSpeechToTextInstallJob : public QObject
 {
     Q_OBJECT
 public:

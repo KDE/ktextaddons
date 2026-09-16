@@ -15,18 +15,6 @@ target_sources(
     PRIVATE
         whisperspeechtotextpluginjob.h
         whisperspeechtotextpluginjob.cpp
-        whisperspeechtotextutils.h
-        whisperspeechtotextutils.cpp
-        whisperspeechtotextcheckjob.h
-        whisperspeechtotextcheckjob.cpp
-        whisperspeechtotextinstalljob.h
-        whisperspeechtotextinstalljob.cpp
-        whisperspeechtotextinstallpythonwidget.h
-        whisperspeechtotextinstallpythonwidget.cpp
-        whisperspeechtotextinstallpythondialog.h
-        whisperspeechtotextinstallpythondialog.cpp
-        whisperspeechtotextinstallmessagewidget.h
-        whisperspeechtotextinstallmessagewidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -46,14 +34,15 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
 )
 
+# The check and the install of the python side live in their own library, so an
+# application can offer them without pulling the plugin in.
 target_link_libraries(
     speechtotextwhisper
     PUBLIC
+        speechtotextwhisperinstall
         Qt::Widgets
-        KF6::WidgetsAddons
     PRIVATE
         KF6::I18n
-        KF6::TextAddonsWidgets
 )
 
 set_target_properties(
@@ -103,9 +92,3 @@ target_link_libraries(
 )
 
 install(TARGETS speechtotext_whisper DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
-
-install(PROGRAMS scripts/whisper_helper.py DESTINATION ${KDE_INSTALL_BINDIR})
-
-if(BUILD_TESTING)
-    add_subdirectory(autotests)
-endif()

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "speechtotextwhisper_export.h"
+#include "speechtotextwhisperinstall_export.h"
 #include <QObject>
 #include <QStringList>
 
@@ -17,11 +17,11 @@
  * json describing what is installed. The job deletes itself once it has
  * reported the answer.
  */
-class SPEECHTOTEXTWHISPER_EXPORT WhisperSpeechToTextCheckJob : public QObject
+class SPEECHTOTEXTWHISPERINSTALL_EXPORT WhisperSpeechToTextCheckJob : public QObject
 {
     Q_OBJECT
 public:
-    struct SPEECHTOTEXTWHISPER_EXPORT CheckResult {
+    struct SPEECHTOTEXTWHISPERINSTALL_EXPORT CheckResult {
         /*! Pip names of the modules which are not installed. */
         QStringList missing;
         /*! Interpreter the script is actually running with. */

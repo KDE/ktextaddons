@@ -5,7 +5,7 @@
 */
 
 #include "whisperspeechtotextcheckjob.h"
-#include "speechtotextwhisper_lib_debug.h"
+#include "speechtotextwhisperinstall_lib_debug.h"
 #include "whisperspeechtotextutils.h"
 #include <KLocalizedString>
 #include <QJsonArray>
@@ -76,7 +76,7 @@ void WhisperSpeechToTextCheckJob::start()
 {
     if (!canStart()) {
         Q_EMIT needToReinstall();
-        qCWarning(SPEECHTOTEXT_WHISPER_LIB_LOG) << "Impossible to start WhisperSpeechToTextCheckJob";
+        qCWarning(SPEECHTOTEXT_WHISPERINSTALL_LIB_LOG) << "Impossible to start WhisperSpeechToTextCheckJob";
         deleteLater();
         return;
     }
@@ -105,7 +105,7 @@ void WhisperSpeechToTextCheckJob::start()
         if (error != QProcess::FailedToStart) {
             return;
         }
-        qCWarning(SPEECHTOTEXT_WHISPER_LIB_LOG) << "Unable to start" << process->program() << process->errorString();
+        qCWarning(SPEECHTOTEXT_WHISPERINSTALL_LIB_LOG) << "Unable to start" << process->program() << process->errorString();
         process->deleteLater();
         Q_EMIT needToReinstall();
         deleteLater();
@@ -118,7 +118,7 @@ WhisperSpeechToTextCheckJob::CheckResult WhisperSpeechToTextCheckJob::checkSynch
     CheckResult result;
     const QString scriptPath = WhisperSpeechToTextUtils::pythonScriptPath();
     if (scriptPath.isEmpty()) {
-        qCWarning(SPEECHTOTEXT_WHISPER_LIB_LOG) << "Unable to find" << WhisperSpeechToTextUtils::pythonScript();
+        qCWarning(SPEECHTOTEXT_WHISPERINSTALL_LIB_LOG) << "Unable to find" << WhisperSpeechToTextUtils::pythonScript();
         result.needToReinstall = true;
         return result;
     }
@@ -131,7 +131,7 @@ WhisperSpeechToTextCheckJob::CheckResult WhisperSpeechToTextCheckJob::checkSynch
     QProcess process;
     process.start(python, {scriptPath, u"check"_s});
     if (!process.waitForFinished(timeoutMs)) {
-        qCWarning(SPEECHTOTEXT_WHISPER_LIB_LOG) << "whisper check did not answer:" << process.errorString();
+        qCWarning(SPEECHTOTEXT_WHISPERINSTALL_LIB_LOG) << "whisper check did not answer:" << process.errorString();
         result.needToReinstall = true;
         return result;
     }

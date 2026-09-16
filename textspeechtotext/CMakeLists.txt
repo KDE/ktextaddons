@@ -177,6 +177,7 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
+add_subdirectory(speechtotext/whisperinstall)
 add_subdirectory(speechtotext/plugins)
 if(BUILD_TESTING)
     add_subdirectory(speechtotext/widgets/autotests)

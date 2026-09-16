@@ -5,7 +5,7 @@
 */
 
 #include "whisperspeechtotextinstalljob.h"
-#include "speechtotextwhisper_lib_debug.h"
+#include "speechtotextwhisperinstall_lib_debug.h"
 #include "whisperspeechtotextutils.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -39,7 +39,7 @@ void WhisperSpeechToTextInstallJob::setModules(const QStringList &newModules)
 void WhisperSpeechToTextInstallJob::start()
 {
     if (!canStart()) {
-        qCWarning(SPEECHTOTEXT_WHISPER_LIB_LOG) << "Impossible to start WhisperSpeechToTextInstallJob";
+        qCWarning(SPEECHTOTEXT_WHISPERINSTALL_LIB_LOG) << "Impossible to start WhisperSpeechToTextInstallJob";
         Q_EMIT installFailed();
         deleteLater();
         return;
@@ -104,7 +104,7 @@ void WhisperSpeechToTextInstallJob::slotFinished(int exitCode, QProcess::ExitSta
 
 void WhisperSpeechToTextInstallJob::failed(const QString &errorMessage)
 {
-    qCWarning(SPEECHTOTEXT_WHISPER_LIB_LOG) << errorMessage;
+    qCWarning(SPEECHTOTEXT_WHISPERINSTALL_LIB_LOG) << errorMessage;
     Q_EMIT installMessage(errorMessage);
     Q_EMIT installFailed();
     deleteLater();

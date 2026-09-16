@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "speechtotextwhisper_export.h"
+#include "speechtotextwhisperinstall_export.h"
 #include <KMessageWidget>
 #include <QStringList>
 
@@ -17,7 +17,7 @@
  * widget only relays the request, the installation itself is done by
  * WhisperSpeechToTextInstallPythonWidget.
  */
-class SPEECHTOTEXTWHISPER_EXPORT WhisperSpeechToTextInstallMessageWidget : public KMessageWidget
+class SPEECHTOTEXTWHISPERINSTALL_EXPORT WhisperSpeechToTextInstallMessageWidget : public KMessageWidget
 {
     Q_OBJECT
 public:

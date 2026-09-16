@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "speechtotextwhisper_export.h"
+#include "speechtotextwhisperinstall_export.h"
 #include <QStringList>
 #include <QWidget>
 class QPlainTextEdit;
@@ -18,7 +18,7 @@ class QPlainTextEdit;
  * missing; the widget only drives WhisperSpeechToTextInstallJob and shows what
  * pip prints.
  */
-class SPEECHTOTEXTWHISPER_EXPORT WhisperSpeechToTextInstallPythonWidget : public QWidget
+class SPEECHTOTEXTWHISPERINSTALL_EXPORT WhisperSpeechToTextInstallPythonWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -36,7 +36,7 @@ Q_SIGNALS:
     void installInProgress(bool status);
 
 private:
-    SPEECHTOTEXTWHISPER_NO_EXPORT void appendMessage(const QString &message);
+    SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void appendMessage(const QString &message);
 
     QPlainTextEdit *const mPlainTextEdit;
     QStringList mModules;
