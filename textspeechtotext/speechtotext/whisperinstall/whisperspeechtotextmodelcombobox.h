@@ -43,6 +43,7 @@ Q_SIGNALS:
 private:
     SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void slotCurrentIndexChanged();
     SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void updateItems();
+    SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void updateItemFont(int index, bool cached);
 
     WhisperSpeechToTextModelsJob::ModelInfos mModels;
     QStringList mCachedModels;

@@ -7,6 +7,7 @@
 #include "whisperspeechtotextmodelcombobox.h"
 #include "whisperspeechtotextcachedmodelsjob.h"
 #include <KLocalizedString>
+#include <QFont>
 #include <QLocale>
 
 using namespace Qt::Literals::StringLiterals;
@@ -103,12 +104,27 @@ bool WhisperSpeechToTextModelComboBox::isModelDownloaded(const QString &identifi
     return mCachedModels.contains(identifier);
 }
 
+void WhisperSpeechToTextModelComboBox::updateItemFont(int index, bool cached)
+{
+    // Bold on the models which are there already: the list says at a glance
+    // which one starts transcribing right away and which one downloads first.
+    if (cached) {
+        QFont itemFont = font();
+        itemFont.setBold(true);
+        setItemData(index, itemFont, Qt::FontRole);
+    } else {
+        setItemData(index, {}, Qt::FontRole);
+    }
+}
+
 void WhisperSpeechToTextModelComboBox::updateItems()
 {
-    // Only the texts change: the items stay where they are, so the selection and
-    // what it means to the caller are untouched.
+    // Only the texts and the fonts change: the items stay where they are, so the
+    // selection and what it means to the caller are untouched.
     for (int i = 0, total = count(); i < total && i < mModels.count(); ++i) {
-        setItemText(i, modelLabel(mModels.at(i), isModelDownloaded(mModels.at(i).identifier)));
+        const bool cached = isModelDownloaded(mModels.at(i).identifier);
+        setItemText(i, modelLabel(mModels.at(i), cached));
+        updateItemFont(i, cached);
     }
 }
 
@@ -121,8 +137,10 @@ void WhisperSpeechToTextModelComboBox::setModels(const WhisperSpeechToTextModels
     mModels = models;
     mDefaultModel = WhisperSpeechToTextModelsJob::defaultModel(models);
     for (const WhisperSpeechToTextModelsJob::ModelInfo &info : models) {
-        addItem(modelLabel(info, isModelDownloaded(info.identifier)), info.identifier);
+        const bool cached = isModelDownloaded(info.identifier);
+        addItem(modelLabel(info, cached), info.identifier);
         setItemData(count() - 1, modelToolTip(info), Qt::ToolTipRole);
+        updateItemFont(count() - 1, cached);
     }
     // What was asked for before the models were there is what is selected now,
     // and landing on it is still the filling, not the user choosing a model: a

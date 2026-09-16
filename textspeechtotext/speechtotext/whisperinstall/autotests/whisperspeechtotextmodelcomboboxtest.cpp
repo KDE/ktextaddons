@@ -9,6 +9,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextmodelcombobox.h"
 #include "whisperspeechtotextutils.h"
+#include <QFont>
 #include <QSignalSpy>
 #include <QTest>
 
@@ -135,6 +136,9 @@ void WhisperSpeechToTextModelComboBoxTest::shouldMarkTheModelsWhichAreOnDisk()
     QVERIFY(w.itemText(0) != plainTinyText);
     QVERIFY(w.itemText(0).contains(u"tiny"_s));
     QCOMPARE(w.itemText(1), plainSmallText);
+    // And it is written in bold, so the list can be read without reading it.
+    QVERIFY(qvariant_cast<QFont>(w.itemData(0, Qt::FontRole)).bold());
+    QVERIFY(!w.itemData(1, Qt::FontRole).isValid());
     // Only the texts changed: what is selected is still what was selected.
     QCOMPARE(w.currentModel(), u"small"_s);
     QCOMPARE(spy.count(), 0);
@@ -144,6 +148,7 @@ void WhisperSpeechToTextModelComboBoxTest::shouldMarkTheModelsWhichAreOnDisk()
     QVERIFY(w.cachedModelsKnown());
     QVERIFY(!w.isModelDownloaded(u"tiny"_s));
     QCOMPARE(w.itemText(0), plainTinyText);
+    QVERIFY(!w.itemData(0, Qt::FontRole).isValid());
 }
 
 #include "moc_whisperspeechtotextmodelcomboboxtest.cpp"
