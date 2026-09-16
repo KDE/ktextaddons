@@ -21,6 +21,7 @@ class AutoCorrectionLanguageModel;
  */
 class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLanguage : public QComboBox
 {
+    Q_OBJECT
 public:
     /*!
      */
