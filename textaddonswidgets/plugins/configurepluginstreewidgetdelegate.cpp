@@ -15,6 +15,17 @@ ConfigurePluginsTreeWidgetDelegate::ConfigurePluginsTreeWidgetDelegate(QObject *
 }
 
 ConfigurePluginsTreeWidgetDelegate::~ConfigurePluginsTreeWidgetDelegate() = default;
+namespace
+{
+void setTextPen(QPainter *painter, const QStyleOptionViewItem &option)
+{
+    QPalette::ColorGroup cg = (option.state & QStyle::State_Enabled) ? QPalette::Normal : QPalette::Disabled;
+    if (cg == QPalette::Normal && !(option.state & QStyle::State_Active)) {
+        cg = QPalette::Inactive;
+    }
+    painter->setPen(option.palette.color(cg, (option.state & QStyle::State_Selected) ? QPalette::HighlightedText : QPalette::Text));
+}
+}
 
 void ConfigurePluginsTreeWidgetDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
@@ -74,17 +85,15 @@ void ConfigurePluginsTreeWidgetDelegate::paint(QPainter *painter, const QStyleOp
     const QSize checkboxSize = QApplication::style()->sizeFromContents(QStyle::CT_CheckBox, nullptr, QSize(), nullptr);
 
     // Draw the two lines
-    painter->setPen(option.palette.text().color());
+    setTextPen(painter, option);
     const QRect line1Rect(rect.left() + 5 + checkboxSize.width(), rect.top(), rect.width(), fontMetrics.height());
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
-    if (!description.isEmpty()) {
-        QFont f = option.font;
-        f.setItalic(true);
-        f.setPointSize(f.pointSize() - 2);
-        painter->setFont(f);
-        const QRect line2Rect(rect.left() + 5 + checkboxSize.width(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
-        painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, description);
-    }
+    QFont f = option.font;
+    f.setItalic(true);
+    f.setPointSize(f.pointSize() - 2);
+    painter->setFont(f);
+    const QRect line2Rect(rect.left() + 5 + checkboxSize.width(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
+    painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, description);
     painter->restore();
 }
 
