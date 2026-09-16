@@ -94,7 +94,7 @@ protected:
     [[nodiscard]] qint64 writeData(const char *data, qint64 len) override;
 
 private:
-    SPEECHTOTEXTWHISPER_NO_EXPORT [[nodiscard]] bool startProcess();
+    [[nodiscard]] SPEECHTOTEXTWHISPER_NO_EXPORT bool startProcess();
     SPEECHTOTEXTWHISPER_NO_EXPORT void sendRequest(QJsonObject request, const QByteArray &payload = {});
     SPEECHTOTEXTWHISPER_NO_EXPORT void readFrames();
     SPEECHTOTEXTWHISPER_NO_EXPORT void processFrame(const QJsonObject &frame);
