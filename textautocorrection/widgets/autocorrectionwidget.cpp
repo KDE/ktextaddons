@@ -505,7 +505,10 @@ void AutoCorrectionWidget::enableAddRemoveButton()
 
     QTreeWidgetItem *item = nullptr;
     if (d->m_autocorrectEntries.contains(find)) {
-        item = d->ui->treeWidget->findItems(find, Qt::MatchCaseSensitive).at(0);
+        const auto matchedItems = d->ui->treeWidget->findItems(find, Qt::MatchCaseSensitive);
+        if (!matchedItems.isEmpty()) {
+            item = matchedItems.constFirst();
+        }
     }
 
     bool enable = false;
