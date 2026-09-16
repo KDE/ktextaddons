@@ -26,7 +26,7 @@ WhisperSpeechToTextInstallPythonWidget::WhisperSpeechToTextInstallPythonWidget(Q
     : QWidget{parent}
     , mPlainTextEdit(new QPlainTextEdit(this))
     , mModelComboBox(new WhisperSpeechToTextModelComboBox(this))
-    , mDownloadModelButton(new QPushButton(i18nc("@action:button", "Download Model"), this))
+    , mDownloadModelButton(new QPushButton(QIcon::fromTheme(u"download-symbolic"_s), i18nc("@action:button", "Download Model"), this))
     , mDownloadProgressBar(new QProgressBar(this))
 {
     auto mainLayout = new QVBoxLayout(this);
