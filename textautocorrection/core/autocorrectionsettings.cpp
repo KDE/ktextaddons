@@ -12,7 +12,6 @@
 #include "textautocorrection_debug.h"
 
 #include <QRegularExpression>
-#include <QStandardPaths>
 
 using namespace TextAutoCorrectionCore;
 using namespace Qt::Literals::StringLiterals;
