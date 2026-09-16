@@ -18,4 +18,8 @@ private Q_SLOTS:
     void shouldNotReplaceWordWhenInexactText();
     void shouldReplaceWhenPressEnter();
     void shouldReplaceWhenPressReturn();
+    void shouldAutocorrectPlainTextEdit();
+    void shouldNotModifyReadOnlyEditor();
+    void shouldNotEatKeyWhenTextIsSelected();
+    void shouldNotDeleteAutoCorrectionProvidedByCaller();
 };
