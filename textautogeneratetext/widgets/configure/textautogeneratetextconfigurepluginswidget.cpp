@@ -53,6 +53,8 @@ void TextAutoGenerateTextConfigurePluginsWidget::save()
 void TextAutoGenerateTextConfigurePluginsWidget::initialize()
 {
     mTreePluginWidget->clear();
+    // Disable sorting before filling list
+    mTreePluginWidget->setSortingEnabled(false);
     fillTopItems(TextAutoGeneratePluginTextManager::self()->pluginDataList(),
                  i18n("Text Plugins"),
                  TextAutoGeneratePluginTextManager::self()->configGroupName(),
@@ -66,7 +68,8 @@ void TextAutoGenerateTextConfigurePluginsWidget::initialize()
                  TextAutoGenerateTextToolPluginManager::self()->configPrefixSettingKey(),
                  mPluginToolsItems,
                  toolPluginGroupName());
-
+    // Re-enable it
+    mTreePluginWidget->setSortingEnabled(true);
     mTreePluginWidget->expandAll();
 }
 
