@@ -256,12 +256,17 @@ void AutoCorrectionWidget::addAutoCorrectEntries()
     d->ui->treeWidget->clear();
     QHash<QString, QString>::const_iterator i = d->m_autocorrectEntries.constBegin();
     QTreeWidgetItem *item = nullptr;
+    QList<QTreeWidgetItem *> listItems;
+    listItems.reserve(d->m_autocorrectEntries.count());
     while (i != d->m_autocorrectEntries.constEnd()) {
-        item = new QTreeWidgetItem(d->ui->treeWidget, item);
+        item = new QTreeWidgetItem;
         item->setText(0, i.key());
         item->setText(1, i.value());
+        listItems.append(item);
         ++i;
     }
+    d->ui->treeWidget->setSortingEnabled(false);
+    d->ui->treeWidget->addTopLevelItems(listItems);
     d->ui->treeWidget->setSortingEnabled(true);
     d->ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
