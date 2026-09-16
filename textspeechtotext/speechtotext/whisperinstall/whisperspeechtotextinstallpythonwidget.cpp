@@ -43,6 +43,8 @@ void WhisperSpeechToTextInstallPythonWidget::startInstall()
 {
     if (mModules.isEmpty()) {
         appendMessage(i18n("Nothing to install."));
+        // The caller disabled what it had to before calling us, it has to be told that it is over.
+        Q_EMIT installInProgress(false);
         Q_EMIT installDone();
         return;
     }

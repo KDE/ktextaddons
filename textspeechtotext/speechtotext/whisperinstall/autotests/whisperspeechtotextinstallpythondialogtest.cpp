@@ -70,7 +70,8 @@ void WhisperSpeechToTextInstallPythonDialogTest::shouldDisableCloseButtonWhileIn
     Q_EMIT widget->installInProgress(false);
     QVERIFY(closeButton->isEnabled());
 
-    // With nothing to install no process is started, so the button never gets disabled.
+    // With nothing to install the widget reports the end straight away, so the button
+    // does not stay disabled.
     d.startInstall();
     QVERIFY(closeButton->isEnabled());
 }
