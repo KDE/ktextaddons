@@ -25,6 +25,8 @@ target_sources(
         whisperspeechtotextinstallpythonwidget.cpp
         whisperspeechtotextinstallpythondialog.h
         whisperspeechtotextinstallpythondialog.cpp
+        whisperspeechtotextinstallmessagewidget.h
+        whisperspeechtotextinstallmessagewidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -46,10 +48,11 @@ target_include_directories(
 
 target_link_libraries(
     speechtotextwhisper
-    PRIVATE
+    PUBLIC
         Qt::Widgets
-        KF6::I18n
         KF6::WidgetsAddons
+    PRIVATE
+        KF6::I18n
         KF6::TextAddonsWidgets
 )
 
