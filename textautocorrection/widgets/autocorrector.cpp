@@ -33,27 +33,29 @@ public:
     }
 
     template<typename T>
-    void autocorrect(T *textEdit, bool richText, const QKeyEvent *e)
+    bool autocorrect(T *textEdit, bool richText, const QKeyEvent *e)
     {
-        if (!textEdit->textCursor().hasSelection()) {
-            const QTextCharFormat initialTextFormat = textEdit->textCursor().charFormat();
-            int position = textEdit->textCursor().position();
-            const bool addSpace = mAutoCorrection->autocorrect(richText, *textEdit->document(), position);
-            QTextCursor cur = textEdit->textCursor();
-            cur.setPosition(position);
-            const bool spacePressed = (e->key() == Qt::Key_Space);
-            const QChar insertChar = spacePressed ? u' ' : u'\n';
-            if (richText && !isSpecial(initialTextFormat)) {
-                if (addSpace || !spacePressed) {
-                    cur.insertText(insertChar, initialTextFormat);
-                }
-            } else {
-                if (addSpace || !spacePressed) {
-                    cur.insertText(insertChar);
-                }
-            }
-            textEdit->setTextCursor(cur);
+        if (textEdit->isReadOnly() || textEdit->textCursor().hasSelection()) {
+            return false;
         }
+        const QTextCharFormat initialTextFormat = textEdit->textCursor().charFormat();
+        int position = textEdit->textCursor().position();
+        const bool addSpace = mAutoCorrection->autocorrect(richText, *textEdit->document(), position);
+        QTextCursor cur = textEdit->textCursor();
+        cur.setPosition(position);
+        const bool spacePressed = (e->key() == Qt::Key_Space);
+        const QChar insertChar = spacePressed ? u' ' : u'\n';
+        if (richText && !isSpecial(initialTextFormat)) {
+            if (addSpace || !spacePressed) {
+                cur.insertText(insertChar, initialTextFormat);
+            }
+        } else {
+            if (addSpace || !spacePressed) {
+                cur.insertText(insertChar);
+            }
+        }
+        textEdit->setTextCursor(cur);
+        return true;
     }
 
     TextAutoCorrectionCore::AutoCorrection *mAutoCorrection = new TextAutoCorrectionCore::AutoCorrection();
@@ -107,11 +109,13 @@ bool AutoCorrector::eventFilter(QObject *receiver, QEvent *event)
         const auto e = static_cast<QKeyEvent *>(event);
         if ((e->key() == Qt::Key_Space) || (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return)) {
             if (auto textEdit = qobject_cast<QTextEdit *>(receiver); textEdit) {
-                d->autocorrect(textEdit, textEdit->acceptRichText(), e);
-                return true;
+                if (d->autocorrect(textEdit, textEdit->acceptRichText(), e)) {
+                    return true;
+                }
             } else if (auto plainEdit = qobject_cast<QPlainTextEdit *>(receiver); plainEdit) {
-                d->autocorrect(plainEdit, false, e);
-                return true;
+                if (d->autocorrect(plainEdit, false, e)) {
+                    return true;
+                }
             }
         }
     }
