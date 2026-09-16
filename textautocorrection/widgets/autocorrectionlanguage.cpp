@@ -37,6 +37,8 @@ QString AutoCorrectionLanguage::language() const
 
 void AutoCorrectionLanguage::setLanguage(const QString &language)
 {
-    const int index = findData(language);
+    const int index = findData(language, AutoCorrectionLanguageModel::Locale);
     setCurrentIndex(index);
 }
+
+#include "moc_autocorrectionlanguage.cpp"
