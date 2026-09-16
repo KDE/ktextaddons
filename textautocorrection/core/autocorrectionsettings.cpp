@@ -345,7 +345,7 @@ bool AutoCorrectionSettings::addAutoCorrect(const QString &currentWord, const QS
 {
     if (!d->mAutocorrectEntries.contains(currentWord)) {
         d->mAutocorrectEntries.insert(currentWord, replaceWord);
-        d->setEntries(d->mAutocorrectEntries);
+        setAutocorrectEntries(d->mAutocorrectEntries);
         writeAutoCorrectionFile();
         return true;
     } else {
