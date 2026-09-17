@@ -29,15 +29,10 @@ void TextUtilsCopyBlockIconCache::clear()
 
 QString TextUtilsCopyBlockIconCache::iconUrl(TextUtilsCopyBlockIconCache::IconType type)
 {
-    const auto it = mIconMap.find(type);
-    if (it != mIconMap.end()) {
-        const QString url = (*it).second.name;
-        if (url.isEmpty()) {
-            return saveIconToTempFile(type);
-        }
-        return url;
+    if (const auto it = mIconMap.find(type); it != mIconMap.end() && !it->second.name.isEmpty()) {
+        return it->second.name;
     }
-    return {};
+    return saveIconToTempFile(type);
 }
 
 QString TextUtilsCopyBlockIconCache::iconName(TextUtilsCopyBlockIconCache::IconType type)
