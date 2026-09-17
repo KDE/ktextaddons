@@ -8,6 +8,7 @@
 
 #include "autocorrectionsettings.h"
 #include "textautocorrectioncore_export.h"
+#include <QColor>
 class QTextCursor;
 class QTextDocument;
 namespace TextAutoCorrectionCore
