@@ -70,6 +70,7 @@ PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighter
 {
     qRegisterMetaType<QTextBlock>();
     d->misspelledColor = misspelledColor;
+    setMisspelledColor(d->misspelledColor);
     setAutomatic(false);
 }
 
@@ -134,7 +135,6 @@ void PlainTextSyntaxSpellCheckingHighlighter::unsetMisspelled([[maybe_unused]] i
 
 void PlainTextSyntaxSpellCheckingHighlighter::setMisspelled(int start, int count)
 {
-    setMisspelledColor(d->misspelledColor);
     for (const auto &range : d->spellCheckRanges) {
         if (range.offset <= start && range.end() >= start + count) {
             auto f = format(start);
