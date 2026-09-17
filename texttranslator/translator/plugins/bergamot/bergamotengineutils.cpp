@@ -155,14 +155,14 @@ BergamotEngineUtils::ModelFiles BergamotEngineUtils::modelFiles(const QString &m
     for (const QString &entry : entries) {
         if (entry.endsWith(u".spm"_s)) {
             // slimt only knows about a single (shared) vocabulary, prefer it over srcvocab/trgvocab.
-            if (files.vocabulary.isEmpty() || entry.startsWith(u"vocab"_s)) {
+            if (files.vocabulary.isEmpty() || entry.startsWith("vocab"_L1)) {
                 files.vocabulary = dir.absoluteFilePath(entry);
             }
-        } else if (entry.startsWith(u"lex."_s) && entry.endsWith(u".bin"_s)) {
+        } else if (entry.startsWith("lex."_L1) && entry.endsWith(".bin"_L1)) {
             files.shortlist = dir.absoluteFilePath(entry);
-        } else if (entry.startsWith(u"model"_s) && entry.endsWith(u".bin"_s)) {
+        } else if (entry.startsWith("model"_L1) && entry.endsWith(".bin"_L1)) {
             files.model = dir.absoluteFilePath(entry);
-        } else if (entry.endsWith(u".ssplit"_s)) {
+        } else if (entry.endsWith(".ssplit"_L1)) {
             files.ssplit = dir.absoluteFilePath(entry);
         }
     }

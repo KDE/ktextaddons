@@ -61,8 +61,7 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         case AnimatedFileName:
             if (mCustomEmojiIconManager) {
                 if (customEmoji.isAnimatedEmoji()) {
-                    const QString filename = mCustomEmojiIconManager->fileName(customEmoji.identifier());
-                    return filename;
+                    return mCustomEmojiIconManager->fileName(customEmoji.identifier());
                 }
                 return {};
             } else {
@@ -75,8 +74,7 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             if (mCustomEmojiIconManager) {
                 if (customEmoji.isAnimatedEmoji()) {
                     if (const QString filename = mCustomEmojiIconManager->fileName(customEmoji.identifier()); !filename.isEmpty()) {
-                        const QIcon icon(filename);
-                        return icon;
+                        return QIcon(filename);
                     }
                 }
                 const QIcon icon = mCustomEmojiIconManager->generateIcon(customEmoji.identifier());

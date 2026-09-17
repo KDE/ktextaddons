@@ -16,6 +16,7 @@
 #include <QRegularExpression>
 #include <QUrlQuery>
 #include <TextTranslator/TranslatorEngineAccessManager>
+#include <qregularexpression.h>
 
 using namespace Qt::Literals::StringLiterals;
 GoogleEnginePlugin::GoogleEnginePlugin(QObject *parent)
@@ -73,8 +74,10 @@ void GoogleEnginePlugin::slotTranslateFinished(QNetworkReply *reply)
     reply->deleteLater();
     //  jsonData contains arrays like this: ["foo",,"bar"]
     //  but this is not valid JSON for QJSON, it expects empty strings: ["foo","","bar"]
-    mJsonData.replace(QRegularExpression(u",{3,3}"_s), u",\"\",\"\","_s);
-    mJsonData.replace(QRegularExpression(u",{2,2}"_s), u",\"\","_s);
+    const static QRegularExpression reg1(u",{3,3}"_s);
+    const static QRegularExpression reg2(u",{2,2}"_s);
+    mJsonData.replace(reg1, u",\"\",\"\","_s);
+    mJsonData.replace(reg2, u",\"\","_s);
     qCDebug(TRANSLATOR_GOOGLE_LOG) << mJsonData;
 
     QJsonParseError parsingError;

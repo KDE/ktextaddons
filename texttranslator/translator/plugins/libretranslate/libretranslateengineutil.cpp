@@ -34,8 +34,8 @@ QString LibreTranslateEngineUtil::defaultServerUrl()
 
 QString LibreTranslateEngineUtil::adaptUrl(QString serverUrl)
 {
-    if (!serverUrl.startsWith(u"https://"_s) && !serverUrl.startsWith(u"http://"_s)) {
-        serverUrl.prepend(u"https://"_s); // Add https:// by default
+    if (!serverUrl.startsWith("https://"_L1) && !serverUrl.startsWith("http://"_L1)) {
+        serverUrl.prepend("https://"_L1); // Add https:// by default
     }
     return serverUrl;
 }

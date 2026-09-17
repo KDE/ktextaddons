@@ -71,8 +71,9 @@ void TranslatorConfigureLanguageListWidget::addItem(const QString &translatedStr
 QStringList TranslatorConfigureLanguageListWidget::selectedLanguages() const
 {
     QStringList langs;
-    langs.reserve(mModel->rowCount());
-    for (int i = 0; i < mModel->rowCount(); ++i) {
+    const int rowCount = mModel->rowCount();
+    langs.reserve(rowCount);
+    for (int i = 0; i < rowCount; ++i) {
         if (const auto item = mModel->item(i); item->checkState() == Qt::Checked) {
             langs.append(item->data(LanguageCode).toString());
         }

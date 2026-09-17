@@ -413,7 +413,8 @@ void TranslatorWidget::slotTranslate()
         }
         return;
     }
-    if (const QString textToTranslate = d->inputText->toPlainText(); textToTranslate.trimmed().isEmpty()) {
+    const QString inputText{d->inputText->toPlainText()};
+    if (inputText.trimmed().isEmpty()) {
         return;
     }
 
@@ -424,7 +425,6 @@ void TranslatorWidget::slotTranslate()
     d->translate->setEnabled(false);
     d->progressIndicator->show();
 
-    const QString inputText{d->inputText->toPlainText()};
     if (!inputText.isEmpty() && !from.isEmpty() && !to.isEmpty()) {
         d->translatorPlugin->setFrom(from);
         d->translatorPlugin->setTo(to);
