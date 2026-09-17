@@ -158,7 +158,7 @@ void PlainTextSyntaxSpellCheckingHighlighter::applyFormat(int offset, int length
             d->spellCheckRanges.emplace_back(offset, length);
         }
     }
-    const auto currentTheme = theme();
+    const auto &currentTheme = theme();
     if (format.isDefaultTextStyle(currentTheme) || length == 0) {
         return;
     }
