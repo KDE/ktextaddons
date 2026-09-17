@@ -144,6 +144,10 @@ bool TextToSpeechKokoro::ensureBackend()
         mProcess = nullptr;
         if (exitStatus != QProcess::NormalExit || exitCode != 0) {
             setError(QTextToSpeech::ErrorReason::Playback, i18n("The Kokoro backend stopped unexpectedly."));
+        } else if (mState != QTextToSpeech::Error) {
+            // Going back to Ready from Error would clear what errorString() has
+            // to report; the next utterance leaves that state on its own.
+            setState(QTextToSpeech::Ready);
         }
     });
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
