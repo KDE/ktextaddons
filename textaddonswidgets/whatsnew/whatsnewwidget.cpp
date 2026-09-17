@@ -9,7 +9,6 @@
 #include <KLocalizedString>
 #include <QTextBrowser>
 #include <QVBoxLayout>
-#include <qobject.h>
 
 using namespace Qt::Literals::StringLiterals;
 
