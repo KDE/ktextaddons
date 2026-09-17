@@ -78,7 +78,7 @@ public:
      * \brief Returns the list of custom emojis
      * \return The custom emoji list
      */
-    [[nodiscard]] QList<TextEmoticonsCore::CustomEmoji> customEmojiList() const;
+    [[nodiscard]] const QList<TextEmoticonsCore::CustomEmoji> &customEmojiList() const;
     /*!
      * \brief Sets the list of custom emojis
      * \param newCustomEmojiList The custom emoji list to set

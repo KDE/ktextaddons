@@ -123,7 +123,7 @@ void EmojiModel::setUnicodeEmoticonList(const QList<TextEmoticonsCore::UnicodeEm
     endResetModel();
 }
 
-QList<TextEmoticonsCore::CustomEmoji> EmojiModel::customEmojiList() const
+const QList<TextEmoticonsCore::CustomEmoji> &EmojiModel::customEmojiList() const
 {
     return mCustomEmojiList;
 }

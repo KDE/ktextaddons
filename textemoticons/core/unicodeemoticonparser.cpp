@@ -81,7 +81,7 @@ int UnicodeEmoticonParser::changeOrder(const QString &name)
     } else if (name == "regional"_L1) {
         return 9;
     } else {
-        qCWarning(TEXTEMOTICONSCORE_LOG) << "Missing i18n translate " << name;
+        qCWarning(TEXTEMOTICONSCORE_LOG) << "Invalid name " << name;
     }
     return 20;
 }
