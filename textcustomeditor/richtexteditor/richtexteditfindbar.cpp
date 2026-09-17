@@ -19,7 +19,7 @@ using namespace TextCustomEditor;
 class Q_DECL_HIDDEN TextCustomEditor::RichTextEditFindBarPrivate
 {
 public:
-    RichTextEditFindBarPrivate(QTextEdit *view)
+    explicit RichTextEditFindBarPrivate(QTextEdit *view)
         : mView(view)
     {
     }

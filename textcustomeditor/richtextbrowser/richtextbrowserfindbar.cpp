@@ -18,7 +18,7 @@ using namespace TextCustomEditor;
 class Q_DECL_HIDDEN TextCustomEditor::RichTextBrowserFindBarPrivate
 {
 public:
-    RichTextBrowserFindBarPrivate(QTextBrowser *view)
+    explicit RichTextBrowserFindBarPrivate(QTextBrowser *view)
         : mView(view)
     {
     }

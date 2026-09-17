@@ -33,7 +33,7 @@ using namespace TextCustomEditor;
 class Q_DECL_HIDDEN RichTextBrowser::RichTextBrowserPrivate
 {
 public:
-    RichTextBrowserPrivate(RichTextBrowser *qq)
+    explicit RichTextBrowserPrivate(RichTextBrowser *qq)
         : q(qq)
         , textIndicator(new TextAddonsWidgets::TextMessageWidget(q))
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
@@ -68,10 +68,6 @@ public:
                 q->setTextCursor(c);
             }
         });
-    }
-
-    ~RichTextBrowserPrivate()
-    {
     }
 
     RichTextBrowser *const q;

@@ -51,7 +51,7 @@ using namespace Qt::Literals::StringLiterals;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
 {
 public:
-    RichTextEditorPrivate(RichTextEditor *qq)
+    explicit RichTextEditorPrivate(RichTextEditor *qq)
         : q(qq)
         , textIndicator(new TextAddonsWidgets::TextMessageWidget(q))
 #if HAVE_KTEXTADDONS_KIO_SUPPORT

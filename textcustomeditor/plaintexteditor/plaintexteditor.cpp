@@ -42,7 +42,7 @@ using namespace Qt::Literals::StringLiterals;
 class Q_DECL_HIDDEN PlainTextEditor::PlainTextEditorPrivate
 {
 public:
-    PlainTextEditorPrivate(PlainTextEditor *qq)
+    explicit PlainTextEditorPrivate(PlainTextEditor *qq)
         : q(qq)
         , mTextIndicator(new TextAddonsWidgets::TextMessageWidget(q))
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
