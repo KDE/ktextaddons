@@ -169,7 +169,7 @@ void BergamotEngineLanguageWidget::slotProgressInfo(const ManagerModelTranslator
     }
     mProgressBarLabel->setText(info.languageName);
     mProgressBar->setRange(0, 100);
-    mProgressBar->setValue((info.bytesReceived * 100) / info.bytesTotal);
+    mProgressBar->setValue(info.bytesTotal <= 0 ? 0 : (info.bytesReceived * 100) / info.bytesTotal);
 }
 
 void BergamotEngineLanguageWidget::slotError(const QString &str)
