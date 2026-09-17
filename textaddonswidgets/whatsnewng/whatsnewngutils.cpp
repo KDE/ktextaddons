@@ -48,8 +48,7 @@ QString TextAddonsWidgets::WhatsNewNgUtils::generateChangelog(const QList<KAbout
     if (type == TextAddonsWidgets::WhatsNewNgUtils::allVersion()) { // All
         QString message;
         message += i18n("<h1>What's New History</h1>");
-        for (int i = 0, total = releases.count(); i < total; ++i) {
-            const auto &info = releases.at(i);
+        for (const auto &info : releases) {
             message += generateVersionHeader(info);
             message += info.description();
             message += generateUrl(info);

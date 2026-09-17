@@ -166,6 +166,9 @@ int TextAddonsWidgetFlowLayout::doFlow(QRect rect, bool effective) const
     int y = effectiveRect.y();
     int highest = 0;
 
+    const int defaultHSpacing = horizontalSpacing();
+    const int defaultVSpacing = verticalSpacing();
+
     for (QLayoutItem *item : mItems) {
         const QWidget *widget = item->widget();
 
@@ -173,8 +176,8 @@ int TextAddonsWidgetFlowLayout::doFlow(QRect rect, bool effective) const
             continue;
         }
 
-        int hSpacing = horizontalSpacing();
-        int vSpacing = verticalSpacing();
+        int hSpacing = defaultHSpacing;
+        int vSpacing = defaultVSpacing;
 
         if (hSpacing == -1) {
             hSpacing = widget->style()->layoutSpacing(QSizePolicy::Frame, QSizePolicy::Frame, Qt::Horizontal);

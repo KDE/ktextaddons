@@ -101,7 +101,7 @@ void CompletionListView::slotCompletionAvailable()
     int h = (sizeHintForRow(0) * qMin(maxVisibleItems, rowCount) + 3) + 3;
     QScrollBar *hsb = horizontalScrollBar();
     if (hsb && hsb->isVisible()) {
-        h += horizontalScrollBar()->sizeHint().height();
+        h += hsb->sizeHint().height();
     }
 
     const int rh = mTextWidget->height();
