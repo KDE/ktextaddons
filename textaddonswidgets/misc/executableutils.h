@@ -21,4 +21,4 @@ namespace TextAddonsWidgets::ExecutableUtils
  * \return
  */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool executableFound(const QString &exec);
-};
+}

@@ -20,4 +20,4 @@ void TEXTADDONSWIDGETS_EXPORT saveDialogSize(QWidget *w, const QString &key);
  * the dialog to derive from a specific base class.
  */
 void TEXTADDONSWIDGETS_EXPORT manageDialogSize(QDialog *dialog, const QString &key, QSize defaultSize);
-};
+}

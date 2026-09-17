@@ -15,5 +15,5 @@ namespace NeedUpdateParseHtmlUtil
 /*!
  */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString extractDate(const QString &dataHtml);
-};
+}
 }

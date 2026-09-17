@@ -44,5 +44,5 @@ TEXTADDONSWIDGETS_EXPORT bool checkVersion();
  * \return The obsolescence status
  */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT NeedUpdateVersionUtils::ObsoleteVersion obsoleteVersionStatus(const QString &str, QDate currentDate);
-};
+}
 }
