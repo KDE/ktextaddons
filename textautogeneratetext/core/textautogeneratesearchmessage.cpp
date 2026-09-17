@@ -19,7 +19,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSearchMe
 
 bool TextAutoGenerateSearchMessage::operator==(const TextAutoGenerateSearchMessage &other) const
 {
-    return other.chatId() == mChatId && other.dateTime() == mDateTime && other.messageId() == mMessageId && other.previewText() == mPreviewText;
+    return other.mChatId == mChatId && other.mDateTime == mDateTime && other.mMessageId == mMessageId && other.mPreviewText == mPreviewText;
 }
 
 QByteArray TextAutoGenerateSearchMessage::chatId() const

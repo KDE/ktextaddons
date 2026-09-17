@@ -92,8 +92,8 @@ void TextAutoGenerateChat::setIdentifier(const QByteArray &newIdentifier)
 
 bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
 {
-    return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite && other.title() == mTitle
-        && other.initialized() == mInitialized && other.dateTime() == mDateTime && other.prompt() == mPrompt;
+    return other.mIdentifier == mIdentifier && other.mArchived == mArchived && other.mFavorite == mFavorite && other.title() == mTitle
+        && other.mInitialized == mInitialized && other.dateTime() == mDateTime && other.mPrompt == mPrompt;
 }
 
 QString TextAutoGenerateChat::title() const

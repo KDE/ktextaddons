@@ -95,8 +95,8 @@ void VoskSpeechToTextInfo::setObsolete(bool newObsolete)
 
 bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
 {
-    return mIdentifier == other.identifier() && mLangText == other.langText() && mMd5 == other.md5() && mVersion == other.version() && mUrl == other.url()
-        && mSize == other.size() && mObsolete == other.obsolete() && mType == other.type() && mName == other.name();
+    return mIdentifier == other.mIdentifier && mLangText == other.mLangText && mMd5 == other.mMd5 && mVersion == other.mVersion && mUrl == other.mUrl
+        && mSize == other.mSize && mObsolete == other.mObsolete && mType == other.mType && mName == other.mName;
 }
 
 void VoskSpeechToTextInfo::parse(const QJsonObject &obj)

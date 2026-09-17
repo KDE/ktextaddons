@@ -39,7 +39,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToSp
 
 bool TextAutoGenerateTextToSpeechEnqueueInfo::operator==(const TextAutoGenerateTextToSpeechEnqueueInfo &other) const
 {
-    return mChatId == other.chatId() && mMessageId == other.messageId();
+    return mChatId == other.mChatId && mMessageId == other.mMessageId;
 }
 
 bool TextAutoGenerateTextToSpeechEnqueueInfo::isValid() const

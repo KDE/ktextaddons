@@ -98,12 +98,12 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
-    bool result = other.uuid() == mUuid && other.inProgress() == inProgress() && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == editingMode();
+    bool result = other.mUuid == mUuid && other.inProgress() == inProgress() && other.mSender == mSender && other.mDateTime == mDateTime
+        && other.mContent == mContent && other.mAnswerUuid == mAnswerUuid && other.editingMode() == editingMode();
     if (!result) {
         return false;
     }
-    if (mInfo != other.info()) {
+    if (mInfo != other.mInfo) {
         return false;
     }
     if (messageInfo() && other.messageInfo()) {

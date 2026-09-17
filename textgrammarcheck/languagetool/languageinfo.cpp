@@ -58,5 +58,5 @@ void LanguageInfo::parse(const QJsonObject &obj)
 
 bool LanguageInfo::operator==(const LanguageInfo &other) const
 {
-    return mName == other.name() && mCode == other.code() && mLongCode == other.longCode();
+    return mName == other.mName && mCode == other.mCode && mLongCode == other.mLongCode;
 }

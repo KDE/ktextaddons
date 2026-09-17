@@ -57,8 +57,8 @@ void UnicodeEmoticon::setKey(const QString &key)
 
 bool UnicodeEmoticon::operator==(const UnicodeEmoticon &other) const
 {
-    return (mAliases == other.aliases()) && (mIdentifier == other.identifier()) && (mUnicode == other.unicode()) && (mCategory == other.category())
-        && (mKey == other.key()) && (mOrder == other.order()) && (mHasDiversityChildren == other.diversityChildren());
+    return (mAliases == other.mAliases) && (mIdentifier == other.mIdentifier) && (mUnicode == other.mUnicode) && (mCategory == other.mCategory)
+        && (mKey == other.mKey) && (mOrder == other.mOrder) && (mHasDiversityChildren == other.mHasDiversityChildren);
 }
 
 void UnicodeEmoticon::setDiversityChildren(bool b)

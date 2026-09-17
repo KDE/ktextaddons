@@ -44,7 +44,7 @@ void TextAutoGenerateAttachments::setMessageAttachments(const QList<TextAutoGene
 
 bool TextAutoGenerateAttachments::operator==(const TextAutoGenerateAttachments &other) const
 {
-    return mMessageAttachments == other.messageAttachments();
+    return mMessageAttachments == other.mMessageAttachments;
 }
 
 QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachments &attachments)

@@ -21,8 +21,8 @@ bool OllamaCommonModelAvailableInfo::isValid() const
 
 bool OllamaCommonModelAvailableInfo::operator==(const OllamaCommonModelAvailableInfo &other) const
 {
-    return mName == other.name() && mUrl == other.url() && mAuthor == other.author() && mLanguages == other.languages() && mTags == other.tags()
-        && mCategories == other.categories();
+    return mName == other.mName && mUrl == other.mUrl && mAuthor == other.mAuthor && mLanguages == other.mLanguages && mTags == other.mTags
+        && mCategories == other.mCategories;
 }
 
 TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaCommonModelAvailableInfo::categories() const

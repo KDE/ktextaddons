@@ -24,7 +24,7 @@ void TextAutoGenerateTextRequest::setMessage(const QString &newMessage)
 
 bool TextAutoGenerateTextRequest::operator==(const TextAutoGenerateTextRequest &other) const
 {
-    return other.message() == mMessage && other.model() == mModel && mMessages == other.messages() && mTools == other.tools() && mThinking == other.thinking();
+    return other.mMessage == mMessage && other.mModel == mModel && mMessages == other.mMessages && mTools == other.mTools && mThinking == other.mThinking;
 }
 
 QString TextAutoGenerateTextRequest::model() const

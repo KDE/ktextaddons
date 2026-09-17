@@ -17,7 +17,7 @@ TextAutoGenerateTextToolInternalProperty::~TextAutoGenerateTextToolInternalPrope
 
 bool TextAutoGenerateTextToolInternalProperty::operator==(const TextAutoGenerateTextToolInternalProperty &other) const
 {
-    return mTypeElements == other.typeElements() && mDescription == other.description() && mName == other.name() && mPropertyType == other.propertyType();
+    return mTypeElements == other.mTypeElements && mDescription == other.mDescription && mName == other.mName && mPropertyType == other.mPropertyType;
 }
 
 TextAutoGenerateTextToolInternalProperty::PropertyType TextAutoGenerateTextToolInternalProperty::propertyType() const
