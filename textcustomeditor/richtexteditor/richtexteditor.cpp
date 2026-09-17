@@ -251,7 +251,8 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                         defaultSpellcheckingLanguage = d->speller->defaultLanguage();
                     }
 
-                    for (const auto &[key, value] : d->speller->availableDictionaries().asKeyValueRange()) {
+                    const auto dictionaries = d->speller->availableDictionaries();
+                    for (const auto &[key, value] : dictionaries.asKeyValueRange()) {
                         QAction *languageAction = languagesMenu->addAction(key);
                         languageAction->setCheckable(true);
                         languageAction->setChecked(defaultSpellcheckingLanguage == value);
@@ -532,8 +533,10 @@ void RichTextEditor::checkSpelling(bool force)
         backgroundSpellCheck->changeLanguage(d->spellCheckingLanguage);
     }
     if (!d->ignoreSpellCheckingWords.isEmpty()) {
+        // Must be taken after changeLanguage(): a Speller copy stays bound to the language it was copied from.
+        Sonnet::Speller speller = backgroundSpellCheck->speller();
         for (const QString &word : std::as_const(d->ignoreSpellCheckingWords)) {
-            backgroundSpellCheck->speller().addToSession(word);
+            speller.addToSession(word);
         }
     }
     auto spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);

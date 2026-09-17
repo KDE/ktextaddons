@@ -78,8 +78,8 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
         // vHanda: I don't understand why the cursor seems to give a pos 1 past the last char instead
         // of just the last char.
         const int pos = tc.position() - 1;
-        if (pos < 0 || eowStr.contains(document->characterAt(pos)) || document->characterAt(pos) == QChar(QChar::LineSeparator)
-            || document->characterAt(pos) == QChar(QChar::ParagraphSeparator)) {
+        const auto charAt = document->characterAt(pos);
+        if (pos < 0 || eowStr.contains(charAt) || charAt == QChar(QChar::LineSeparator) || charAt == QChar(QChar::ParagraphSeparator)) {
             break;
         }
         tc.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor);
