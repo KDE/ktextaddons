@@ -8,7 +8,6 @@
 
 #include <QDir>
 #include <QIcon>
-#include <QTemporaryFile>
 #include <kiconloader.h>
 
 using namespace TextUtils;
