@@ -473,6 +473,7 @@ void AutoCorrectionWidget::removeAutocorrectEntry()
     if (listItems.isEmpty()) {
         return;
     }
+    d->ui->treeWidget->setSortingEnabled(false);
     for (QTreeWidgetItem *item : listItems) {
         const QTreeWidgetItem *below = d->ui->treeWidget->itemBelow(item);
 
@@ -491,7 +492,7 @@ void AutoCorrectionWidget::removeAutocorrectEntry()
             d->m_autocorrectEntries.remove(findStr);
         }
     }
-    d->ui->treeWidget->setSortingEnabled(false);
+    d->ui->treeWidget->setSortingEnabled(true);
 
     emitChanged();
 }
