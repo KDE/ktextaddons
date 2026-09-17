@@ -5,7 +5,6 @@
 */
 #pragma once
 #include "textutils_export.h"
-#include <QMap>
 #include <QString>
 #include <QTemporaryFile>
 #include <map>
@@ -26,7 +25,7 @@ public:
     enum class IconType : uint8_t {
         Unknown = 0,
         CopyText,
-        InsertText
+        InsertText,
     };
 
     /*!
@@ -56,8 +55,11 @@ private:
     ~TextUtilsCopyBlockIconCache() = default;
 
     [[nodiscard]] TEXTUTILS_NO_EXPORT QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
-    [[nodiscard]] TEXTUTILS_NO_EXPORT QString iconName(TextUtilsCopyBlockIconCache::IconType type) const;
-    QMap<IconType, QString> mIconUrlMap;
-    std::map<IconType, std::unique_ptr<QTemporaryFile>> mIconTemporaryFileMap;
+    [[nodiscard]] static TEXTUTILS_NO_EXPORT QString iconName(TextUtilsCopyBlockIconCache::IconType type);
+    struct Entry {
+        QString name;
+        std::unique_ptr<QTemporaryFile> temporaryFile;
+    };
+    std::map<IconType, Entry> mIconMap;
 };
 }

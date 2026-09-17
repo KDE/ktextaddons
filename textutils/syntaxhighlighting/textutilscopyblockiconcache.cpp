@@ -22,20 +22,23 @@ TextUtilsCopyBlockIconCache *TextUtilsCopyBlockIconCache::self()
 
 void TextUtilsCopyBlockIconCache::clear()
 {
-    mIconUrlMap.clear();
-    mIconTemporaryFileMap.clear();
+    mIconMap.clear();
 }
 
 QString TextUtilsCopyBlockIconCache::iconUrl(TextUtilsCopyBlockIconCache::IconType type)
 {
-    const QString url = mIconUrlMap.value(type);
-    if (url.isEmpty()) {
-        return saveIconToTempFile(type);
+    const auto it = mIconMap.find(type);
+    if (it != mIconMap.end()) {
+        const QString url = (*it).second.name;
+        if (url.isEmpty()) {
+            return saveIconToTempFile(type);
+        }
+        return url;
     }
-    return url;
+    return {};
 }
 
-QString TextUtilsCopyBlockIconCache::iconName(TextUtilsCopyBlockIconCache::IconType type) const
+QString TextUtilsCopyBlockIconCache::iconName(TextUtilsCopyBlockIconCache::IconType type)
 {
     switch (type) {
     case TextUtilsCopyBlockIconCache::IconType::Unknown:
@@ -78,7 +81,10 @@ QString TextUtilsCopyBlockIconCache::saveIconToTempFile(TextUtilsCopyBlockIconCa
         return {};
     }
     const QString fileName = temp->fileName();
-    mIconUrlMap.insert(type, fileName);
-    mIconTemporaryFileMap.insert_or_assign(type, std::move(temp));
+    Entry entry{
+        .name = fileName,
+        .temporaryFile = std::move(temp),
+    };
+    mIconMap.insert_or_assign(type, std::move(entry));
     return fileName;
 }
