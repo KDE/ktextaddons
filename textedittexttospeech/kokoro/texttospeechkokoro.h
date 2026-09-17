@@ -99,14 +99,16 @@ private:
     KOKOROTEXTTOSPEECH_NO_EXPORT void cancelCurrentJob();
 
     KOKOROTEXTTOSPEECH_NO_EXPORT void slotReadyReadStandardOutput();
-    KOKOROTEXTTOSPEECH_NO_EXPORT void handleFrame(const QJsonObject &frame, const QByteArray &payload);
+    KOKOROTEXTTOSPEECH_NO_EXPORT void handleFrame(const QJsonObject &frame, QByteArray payload);
     KOKOROTEXTTOSPEECH_NO_EXPORT void handleFormatFrame(const QJsonObject &frame);
-    KOKOROTEXTTOSPEECH_NO_EXPORT void handleChunkFrame(const QByteArray &payload);
+    KOKOROTEXTTOSPEECH_NO_EXPORT void handleChunkFrame(QByteArray payload);
     KOKOROTEXTTOSPEECH_NO_EXPORT void handleEndFrame();
 
     KOKOROTEXTTOSPEECH_NO_EXPORT void startPlayback(const QAudioFormat &format);
     KOKOROTEXTTOSPEECH_NO_EXPORT void stopPlayback();
     KOKOROTEXTTOSPEECH_NO_EXPORT void writePendingAudio();
+    /*! Whether the current utterance still has audio the sink did not take. */
+    [[nodiscard]] KOKOROTEXTTOSPEECH_NO_EXPORT bool hasPendingAudio() const;
     KOKOROTEXTTOSPEECH_NO_EXPORT void slotWriteTimeout();
 
     KOKOROTEXTTOSPEECH_NO_EXPORT void setState(QTextToSpeech::State state);
@@ -115,7 +117,7 @@ private:
     QString mVoiceIdentifier;
     QString mErrorString;
     QByteArray mStdoutBuffer;
-    /*! Audio synthesized but not handed over to the sink yet. */
+    /*! Audio synthesized for the sink, consumed from mPendingAudioOffset on. */
     QByteArray mPendingAudio;
     /*! The frame whose payload is still being read. */
     QJsonObject mPendingFrame;
@@ -123,6 +125,14 @@ private:
     double mRate = 0.0;
     double mVolume = 1.0;
     qsizetype mPendingPayloadSize = 0;
+    /*!
+     * How many bytes of mPendingAudio the sink already took.
+     *
+     * Dropping the front with an offset instead of QByteArray::remove() keeps
+     * feeding the sink linear: a chunk weighs several hundred kilobytes and the
+     * sink takes it a few kilobytes at a time.
+     */
+    qsizetype mPendingAudioOffset = 0;
     int mCurrentJobId = 0;
     int mLastJobId = 0;
     QTextToSpeech::State mState = QTextToSpeech::Ready;

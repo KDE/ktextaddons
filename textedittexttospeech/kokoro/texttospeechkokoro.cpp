@@ -188,10 +188,18 @@ void TextToSpeechKokoro::slotReadyReadStandardOutput()
             if (mStdoutBuffer.size() < mPendingPayloadSize) {
                 return;
             }
-            const QByteArray payload = mStdoutBuffer.first(mPendingPayloadSize);
-            mStdoutBuffer.remove(0, mPendingPayloadSize);
+            QByteArray payload;
+            if (mStdoutBuffer.size() == mPendingPayloadSize) {
+                // The usual case, the buffer holding exactly one payload: it is
+                // handed over instead of copied.
+                payload = std::move(mStdoutBuffer);
+                mStdoutBuffer.clear();
+            } else {
+                payload = mStdoutBuffer.first(mPendingPayloadSize);
+                mStdoutBuffer.remove(0, mPendingPayloadSize);
+            }
             mPendingPayloadSize = 0;
-            handleFrame(std::exchange(mPendingFrame, {}), payload);
+            handleFrame(std::exchange(mPendingFrame, {}), std::move(payload));
             continue;
         }
         const qsizetype endOfLine = mStdoutBuffer.indexOf('\n');
@@ -216,7 +224,7 @@ void TextToSpeechKokoro::slotReadyReadStandardOutput()
     }
 }
 
-void TextToSpeechKokoro::handleFrame(const QJsonObject &frame, const QByteArray &payload)
+void TextToSpeechKokoro::handleFrame(const QJsonObject &frame, QByteArray payload)
 {
     const QString type = frame.value("type"_L1).toString();
     if (type == "error"_L1 && !frame.contains("id"_L1)) {
@@ -237,7 +245,7 @@ void TextToSpeechKokoro::handleFrame(const QJsonObject &frame, const QByteArray 
     if (type == "format"_L1) {
         handleFormatFrame(frame);
     } else if (type == "chunk"_L1) {
-        handleChunkFrame(payload);
+        handleChunkFrame(std::move(payload));
     } else if (type == "end"_L1) {
         handleEndFrame();
     } else if (type == "error"_L1) {
@@ -270,13 +278,26 @@ void TextToSpeechKokoro::handleFormatFrame(const QJsonObject &frame)
     }
 }
 
-void TextToSpeechKokoro::handleChunkFrame(const QByteArray &payload)
+void TextToSpeechKokoro::handleChunkFrame(QByteArray payload)
 {
     if (mMode == Mode::Synthesize) {
         Q_EMIT synthesized(mAudioFormat, payload);
         return;
     }
-    mPendingAudio.append(payload);
+    if (mPendingAudio.isEmpty()) {
+        // The usual case, the sink having drained the previous chunk: this one
+        // is taken over rather than copied.
+        mPendingAudio = std::move(payload);
+        mPendingAudioOffset = 0;
+    } else {
+        // Reclaim what the sink already took before growing the buffer, so that
+        // a long utterance does not keep every chunk alive until its end.
+        if (mPendingAudioOffset > mPendingAudio.size() / 2) {
+            mPendingAudio.remove(0, mPendingAudioOffset);
+            mPendingAudioOffset = 0;
+        }
+        mPendingAudio.append(payload);
+    }
     writePendingAudio();
 }
 
@@ -308,6 +329,20 @@ void TextToSpeechKokoro::startPlayback(const QAudioFormat &format)
         setError(QTextToSpeech::ErrorReason::Playback, i18n("Unable to open the audio device."));
         return;
     }
+    // Connected only once the sink is started: a failure of start() itself is
+    // what the check above reports.
+    connect(mAudioSink, &QAudioSink::stateChanged, this, [this](QtAudio::State state) {
+        // A sink stopping on its own lost its device: the end of an utterance is
+        // IdleState, and stopPlayback() disconnects before stopping it. Without
+        // this, slotWriteTimeout() would wait forever for an IdleState which
+        // never comes, and the state would stay Speaking.
+        if (state != QtAudio::StoppedState || mAudioSink->error() == QtAudio::NoError) {
+            return;
+        }
+        cancelCurrentJob();
+        stopPlayback();
+        setError(QTextToSpeech::ErrorReason::Playback, i18n("The audio device stopped working."));
+    });
     mWriteTimer->start();
 }
 
@@ -315,7 +350,10 @@ void TextToSpeechKokoro::stopPlayback()
 {
     mWriteTimer->stop();
     mPendingAudio.clear();
+    mPendingAudioOffset = 0;
     if (mAudioSink) {
+        // Tearing the sink down must not be mistaken for the device failing.
+        disconnect(mAudioSink, nullptr, this, nullptr);
         mAudioSink->stop();
         mAudioSink->deleteLater();
         mAudioSink = nullptr;
@@ -324,18 +362,28 @@ void TextToSpeechKokoro::stopPlayback()
     }
 }
 
+bool TextToSpeechKokoro::hasPendingAudio() const
+{
+    return mPendingAudioOffset < mPendingAudio.size();
+}
+
 void TextToSpeechKokoro::writePendingAudio()
 {
-    if (!mAudioDevice || mPendingAudio.isEmpty()) {
+    if (!mAudioDevice || !hasPendingAudio()) {
         return;
     }
     const qint64 bytesFree = mAudioSink->bytesFree();
     if (bytesFree <= 0) {
         return;
     }
-    const qint64 written = mAudioDevice->write(mPendingAudio.constData(), std::min<qint64>(bytesFree, mPendingAudio.size()));
+    const qsizetype remaining = mPendingAudio.size() - mPendingAudioOffset;
+    const qint64 written = mAudioDevice->write(mPendingAudio.constData() + mPendingAudioOffset, std::min<qint64>(bytesFree, remaining));
     if (written > 0) {
-        mPendingAudio.remove(0, written);
+        mPendingAudioOffset += written;
+        if (!hasPendingAudio()) {
+            mPendingAudio.clear();
+            mPendingAudioOffset = 0;
+        }
     }
 }
 
@@ -344,7 +392,7 @@ void TextToSpeechKokoro::slotWriteTimeout()
     writePendingAudio();
     // The sink only falls back to idle once it played everything it was given,
     // which, the backend being done, is the end of the utterance.
-    if (mEndOfStream && mPendingAudio.isEmpty() && mAudioSink && mAudioSink->state() == QtAudio::IdleState) {
+    if (mEndOfStream && !hasPendingAudio() && mAudioSink && mAudioSink->state() == QtAudio::IdleState) {
         stopPlayback();
         mCurrentJobId = 0;
         setState(QTextToSpeech::Ready);
@@ -356,7 +404,12 @@ void TextToSpeechKokoro::stop()
     cancelCurrentJob();
     stopPlayback();
     mEndOfStream = false;
-    setState(QTextToSpeech::Ready);
+    // setState() clears the error, so going back to Ready here would throw away
+    // what errorReason() and errorString() have to report. Starting the next
+    // utterance is what leaves the Error state, as QTextToSpeech does.
+    if (mState != QTextToSpeech::Error) {
+        setState(QTextToSpeech::Ready);
+    }
 }
 
 void TextToSpeechKokoro::pause()
