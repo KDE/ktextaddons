@@ -150,7 +150,7 @@ QCompleter *TextEditorCompleter::completer() const
 
 void TextEditorCompleter::setCompleterStringList(const QStringList &listWord)
 {
-    d->completer->setModel(new QStringListModel(QStringList() << listWord << u"TESTING"_s, d->completer));
+    d->completer->setModel(new QStringListModel(QStringList() << listWord, d->completer));
 }
 
 void TextEditorCompleter::slotCompletion(const QString &completion)
