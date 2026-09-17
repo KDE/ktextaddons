@@ -12,7 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 TextToSpeechKokoroEngine::TextToSpeechKokoroEngine([[maybe_unused]] const QVariantMap &parameters, QObject *parent)
     : QTextToSpeechEngine(parent)
-    , mTextToSpeechKokoro(new TextToSpeechKokoro(this))
+    , mTextToSpeechKokoro(new TextToSpeechKokoro)
 {
     connect(mTextToSpeechKokoro.get(), &TextToSpeechKokoro::stateChanged, this, &TextToSpeechKokoroEngine::stateChanged);
     connect(mTextToSpeechKokoro.get(), &TextToSpeechKokoro::errorOccurred, this, &TextToSpeechKokoroEngine::errorOccurred);
