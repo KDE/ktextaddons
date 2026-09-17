@@ -317,13 +317,17 @@ void AutoCorrectionWidget::resetToDefault()
     d->ui->ignoreDoubleSpace->setChecked(false);
     d->ui->capitalizeDaysName->setChecked(false);
     d->ui->advancedAutocorrection->setChecked(false);
-    d->ui->typographicDoubleQuotes->setChecked(false);
-    d->ui->typographicSingleQuotes->setChecked(false);
     d->ui->autoSuperScript->setChecked(false);
     d->ui->autoReplaceNumber->setChecked(false);
     d->ui->typographicDoubleQuotes->setChecked(false);
     d->ui->typographicSingleQuotes->setChecked(false);
     d->ui->addNonBreakingSpaceInFrench->setChecked(false);
+    d->ui->replaceDoubleQuotesByFrenchQuotes->setChecked(false);
+    d->ui->enabledAutocorrection->setChecked(false);
+    d->ui->customWritablePath->clear();
+    d->ui->customSystemPath->clear();
+    setDefaultSingleQuotes();
+    setDefaultDoubleQuotes();
 
     loadGlobalAutoCorrectionAndException();
 }
