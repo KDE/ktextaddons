@@ -6,10 +6,9 @@
 #pragma once
 #include "textutils_export.h"
 #include <QString>
-#include <QTemporaryFile>
 #include <map>
 #include <memory>
-
+class QTemporaryFile;
 namespace TextUtils
 {
 /*!
@@ -52,7 +51,7 @@ public:
 
 private:
     TextUtilsCopyBlockIconCache() = default;
-    ~TextUtilsCopyBlockIconCache() = default;
+    ~TextUtilsCopyBlockIconCache();
 
     [[nodiscard]] TEXTUTILS_NO_EXPORT QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
     [[nodiscard]] static TEXTUTILS_NO_EXPORT QString iconName(TextUtilsCopyBlockIconCache::IconType type);

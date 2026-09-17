@@ -14,6 +14,8 @@
 using namespace TextUtils;
 using namespace Qt::Literals::StringLiterals;
 
+TextUtilsCopyBlockIconCache::~TextUtilsCopyBlockIconCache() = default;
+
 TextUtilsCopyBlockIconCache *TextUtilsCopyBlockIconCache::self()
 {
     static TextUtilsCopyBlockIconCache s_self;
