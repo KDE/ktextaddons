@@ -44,7 +44,7 @@ TextAutoGenerateTextClient::SupportedServer TextAutoGenerateAddInstanceWidget::s
 
 QString TextAutoGenerateAddInstanceWidget::instanceName() const
 {
-    return mNameLineEdit->text();
+    return mNameLineEdit->text().trimmed();
 }
 
 void TextAutoGenerateAddInstanceWidget::setInstanceDisplayNames(const QStringList &lst)
