@@ -30,8 +30,9 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     auto label = new QLabel(i18nc("Replace text", "Replace:"), this);
     label->setTextFormat(Qt::PlainText);
     lay->addWidget(label);
-    const int marg1 = lay->contentsMargins().left();
-    const int marg2 = lay->contentsMargins().right();
+    const auto contentsMargins = lay->contentsMargins();
+    const int marg1 = contentsMargins.left();
+    const int marg2 = contentsMargins.right();
     lay->setContentsMargins(marg1, 0, marg2, 0);
 
     mReplace->setClearButtonEnabled(true);
@@ -68,8 +69,9 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     , mFindNextBtn(new QPushButton(QIcon::fromTheme(u"go-down-search"_s), i18nc("Find and go to the next search match", "Next"), this))
 {
     auto lay = new QHBoxLayout(this);
-    const int marg1 = lay->contentsMargins().left();
-    const int marg2 = lay->contentsMargins().right();
+    const auto contentsMargins = lay->contentsMargins();
+    const int marg1 = contentsMargins.left();
+    const int marg2 = contentsMargins.right();
     lay->setContentsMargins(marg1, 0, marg2, 0);
     auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
     label->setTextFormat(Qt::PlainText);

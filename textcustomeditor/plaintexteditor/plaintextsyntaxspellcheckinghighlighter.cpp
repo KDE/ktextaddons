@@ -43,12 +43,6 @@ QDebug operator<<(QDebug dbg, SpellCheckRange s)
     return dbg;
 }
 
-class TextBlockUserData : public QTextBlockUserData
-{
-public:
-    KSyntaxHighlighting::State state;
-};
-
 class PlainTextSyntaxSpellCheckingHighlighterPrivate
 {
 public:
@@ -164,29 +158,29 @@ void PlainTextSyntaxSpellCheckingHighlighter::applyFormat(int offset, int length
             d->spellCheckRanges.emplace_back(offset, length);
         }
     }
-
-    if (format.isDefaultTextStyle(theme()) || length == 0) {
+    const auto currentTheme = theme();
+    if (format.isDefaultTextStyle(currentTheme) || length == 0) {
         return;
     }
 
     QTextCharFormat tf;
-    if (format.hasTextColor(theme())) {
-        tf.setForeground(format.textColor(theme()));
+    if (format.hasTextColor(currentTheme)) {
+        tf.setForeground(format.textColor(currentTheme));
     }
-    if (format.hasBackgroundColor(theme())) {
-        tf.setBackground(format.backgroundColor(theme()));
+    if (format.hasBackgroundColor(currentTheme)) {
+        tf.setBackground(format.backgroundColor(currentTheme));
     }
 
-    if (format.isBold(theme())) {
+    if (format.isBold(currentTheme)) {
         tf.setFontWeight(QFont::Bold);
     }
-    if (format.isItalic(theme())) {
+    if (format.isItalic(currentTheme)) {
         tf.setFontItalic(true);
     }
-    if (format.isUnderline(theme())) {
+    if (format.isUnderline(currentTheme)) {
         tf.setFontUnderline(true);
     }
-    if (format.isStrikeThrough(theme())) {
+    if (format.isStrikeThrough(currentTheme)) {
         tf.setFontStrikeOut(true);
     }
 

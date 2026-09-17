@@ -79,23 +79,24 @@ void PlainTextEditFindBar::autoSearchMoveCursor()
 
 void PlainTextEditFindBar::slotReplaceText()
 {
-    if (d->mView->textCursor().hasSelection()) {
+    auto textCursor = d->mView->textCursor();
+    if (textCursor.hasSelection()) {
         const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
         if (mFindWidget->isRegularExpression()) {
-            if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegularExpression())) {
-                d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+            if (textCursor.selectedText().contains(mFindWidget->searchRegularExpression())) {
+                textCursor.insertText(mReplaceWidget->replaceLineEdit()->text());
                 // search next after replace text.
                 searchText(false, false);
             }
         } else {
             if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
-                if (TextUtils::ConvertText::normalize(d->mView->textCursor().selectedText()) == TextUtils::ConvertText::normalize(mFindWidget->searchText())) {
-                    d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+                if (TextUtils::ConvertText::normalize(textCursor.selectedText()) == TextUtils::ConvertText::normalize(mFindWidget->searchText())) {
+                    textCursor.insertText(mReplaceWidget->replaceLineEdit()->text());
                     // search next after replace text.
                     searchText(false, false);
                 } else {
-                    if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
-                        d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+                    if (textCursor.selectedText() == mFindWidget->searchText()) {
+                        textCursor.insertText(mReplaceWidget->replaceLineEdit()->text());
                         // search next after replace text.
                         searchText(false, false);
                     }
