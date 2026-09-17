@@ -71,7 +71,7 @@ install(
 
 ####
 
-add_library(KokoroTextToSpeechPlugin)
+add_library(KokoroTextToSpeechPlugin MODULE)
 
 ecm_qt_declare_logging_category(KokoroTextToSpeechPlugin
     HEADER texttospeech_kokoro_debug.h
@@ -90,12 +90,7 @@ target_sources(
         texttospeechkokoroplugin.cpp
 )
 
-target_link_libraries(
-    KokoroTextToSpeechPlugin
-    PUBLIC
-        kokorotexttospeech
-        KF6::I18n
-)
+target_link_libraries(KokoroTextToSpeechPlugin PUBLIC kokorotexttospeech)
 install(TARGETS KokoroTextToSpeechPlugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/texttospeech/)
 
 if(BUILD_TESTING)
