@@ -55,7 +55,7 @@ void TranslatorMenu::updateMenu()
         } else {
             for (const auto &toLang : toList) {
                 if (const QString toLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(toLang); toLangI18n.isEmpty()) {
-                    qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"to\" language " << fromLangI18n;
+                    qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"to\" language " << toLang;
                 } else {
                     if (fromLangI18n != toLangI18n) {
                         auto action = new QAction(mMenu);
