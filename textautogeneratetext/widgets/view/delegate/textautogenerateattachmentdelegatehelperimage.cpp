@@ -46,7 +46,7 @@ void TextAutoGenerateAttachmentDelegateHelperImage::draw(const TextAutoGenerateT
     // Draw image after that.
 
     // TODO
-    qDebug() << " TextAutoGenerateAttachmentDelegateHelperImage::draw";
+    // qDebug() << " TextAutoGenerateAttachmentDelegateHelperImage::draw";
 }
 
 QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
