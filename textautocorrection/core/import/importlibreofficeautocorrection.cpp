@@ -107,6 +107,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
         QFile file(mTempDir->path() + u'/' + archiveFileName);
         if (!file.open(QIODevice::ReadOnly)) {
             qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << file.fileName();
+            return false;
         }
         QDomDocument doc;
         if (loadDomElement(doc, &file)) {
