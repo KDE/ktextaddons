@@ -21,6 +21,14 @@ namespace ConvertText
  */
 [[nodiscard]] TEXTUTILS_EXPORT QString normalize(QStringView str);
 /*!
+ * \brief normalize
+ * \param str
+ * \param caseSensitivity with Qt::CaseSensitive the case of \a str is kept; diacritics, accents and
+ * compatibility characters are folded in both cases.
+ * \return
+ */
+[[nodiscard]] TEXTUTILS_EXPORT QString normalize(QStringView str, Qt::CaseSensitivity caseSensitivity);
+/*!
  * \brief upperCase
  * \param cursor
  */

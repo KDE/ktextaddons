@@ -48,8 +48,10 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
         }
         view->textCursor().endEditBlock();
     } else {
-        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText())};
-        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str)};
+        // normalize() folds the case, so keep it when the search is case sensitive.
+        const Qt::CaseSensitivity caseSensitivity = (flags & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
+        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText(), caseSensitivity)};
+        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str, caseSensitivity)};
 
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
@@ -96,8 +98,10 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
         }
         view->textCursor().endEditBlock();
     } else {
-        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText())};
-        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str)};
+        // normalize() folds the case, so keep it when the search is case sensitive.
+        const Qt::CaseSensitivity caseSensitivity = (flags & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
+        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText(), caseSensitivity)};
+        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str, caseSensitivity)};
 
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
@@ -147,13 +151,16 @@ int FindUtils::replaceAll(QTextDocument *document, const QRegularExpression &reg
 
 bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions)
 {
-    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText());
+    // normalize() folds the case, so keep it when the caller asked for a case sensitive search,
+    // otherwise QTextDocument::FindCaseSensitively below has nothing left to discriminate.
+    const Qt::CaseSensitivity caseSensitivity = (searchOptions & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
+    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText(), caseSensitivity);
     QTextDocument doc(text);
     QTextCursor c(&doc);
     QTextCursor docCusor(view->textCursor());
     c.setPosition(docCusor.position());
     // qDebug() << " docCusor.position() " << docCusor.position();
-    c = doc.find(TextUtils::ConvertText::normalize(searchText), c, searchOptions);
+    c = doc.find(TextUtils::ConvertText::normalize(searchText, caseSensitivity), c, searchOptions);
     if (!c.isNull()) {
         // qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
         if (searchOptions & QTextDocument::FindBackward) {
@@ -172,13 +179,16 @@ bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocum
 
 bool FindUtils::find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions)
 {
-    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText());
+    // normalize() folds the case, so keep it when the caller asked for a case sensitive search,
+    // otherwise QTextDocument::FindCaseSensitively below has nothing left to discriminate.
+    const Qt::CaseSensitivity caseSensitivity = (searchOptions & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
+    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText(), caseSensitivity);
     QTextDocument doc(text);
     QTextCursor c(&doc);
     QTextCursor docCusor(view->textCursor());
     c.setPosition(docCusor.position());
     // qDebug() << " docCusor.position() " << docCusor.position();
-    c = doc.find(TextUtils::ConvertText::normalize(searchText), c, searchOptions);
+    c = doc.find(TextUtils::ConvertText::normalize(searchText, caseSensitivity), c, searchOptions);
     if (!c.isNull()) {
         // qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
         if (searchOptions & QTextDocument::FindBackward) {

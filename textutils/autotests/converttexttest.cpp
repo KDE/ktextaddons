@@ -37,6 +37,16 @@ void ConvertTextTest::shouldHaveDefaultValues()
     }
 }
 
+void ConvertTextTest::shouldNormalizeCaseSensitive()
+{
+    const QString str(u"TéléPhone"_s);
+    // The one argument overload folds the case, as it always did.
+    QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), u"telephone"_s);
+    QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str), Qt::CaseInsensitive), u"telephone"_s);
+    // Diacritics are still folded, the case is not.
+    QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str), Qt::CaseSensitive), u"TelePhone"_s);
+}
+
 void ConvertTextTest::testUpperCase_data()
 {
     QTest::addColumn<QString>("input");

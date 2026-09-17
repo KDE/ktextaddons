@@ -133,6 +133,14 @@ void RichTextEditFindBarTest::shouldReplaceAllText_data()
         QTest::newRow("wholewords-no-diacritics-2") << u"voiture voiture voiture"_s << u"réunion"_s << u"replace"_s << flags << 0
                                                     << u"voiture voiture voiture"_s;
     }
+    {
+        TextCustomEditor::TextEditFindBarBase::FindFlags flags;
+        flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
+        flags |= TextCustomEditor::TextEditFindBarBase::FindCaseSensitively;
+        // Diacritics are ignored, the case is not: only the second word matches.
+        QTest::newRow("wholewords-no-diacritics-casesensitive")
+            << u"réunion Réunion reunion"_s << u"Réunion"_s << u"replace"_s << flags << 1 << u"réunion replace reunion"_s;
+    }
 }
 
 void RichTextEditFindBarTest::shouldReplaceAllText()

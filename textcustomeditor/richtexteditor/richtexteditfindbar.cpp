@@ -79,30 +79,30 @@ void RichTextEditFindBar::autoSearchMoveCursor()
 
 void RichTextEditFindBar::slotReplaceText()
 {
-    if (d->mView->textCursor().hasSelection()) {
-        const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
-        if (mFindWidget->isRegularExpression()) {
-            if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegularExpression())) {
-                d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                // search next after replace text.
-                searchText(false, false);
-            }
-        } else {
-            if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
-                if (TextUtils::ConvertText::normalize(d->mView->textCursor().selectedText()) == TextUtils::ConvertText::normalize(mFindWidget->searchText())) {
-                    d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                    // search next after replace text.
-                    searchText(false, false);
-                } else {
-                    if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
-                        d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                        // search next after replace text.
-                        searchText(false, false);
-                    }
-                }
-            }
-        }
+    auto textCursor = d->mView->textCursor();
+    if (!textCursor.hasSelection()) {
+        searchText(false, false);
+        return;
+    }
+    const QString selectedText = textCursor.selectedText();
+    bool canReplace = false;
+    if (mFindWidget->isRegularExpression()) {
+        canReplace = selectedText.contains(mFindWidget->searchRegularExpression());
     } else {
+        const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
+        const QString searchStr = mFindWidget->searchText();
+        // Compare the way the search did: it honours the case sensitivity flag.
+        const Qt::CaseSensitivity caseSensitivity = (searchOptions & TextEditFindBarBase::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
+        if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
+            canReplace = (QString::compare(selectedText, searchStr, caseSensitivity) == 0);
+        } else {
+            // The search ignored diacritics, so ignore them here too.
+            canReplace = (TextUtils::ConvertText::normalize(selectedText, caseSensitivity) == TextUtils::ConvertText::normalize(searchStr, caseSensitivity));
+        }
+    }
+    if (canReplace) {
+        textCursor.insertText(mReplaceWidget->replaceLineEdit()->text());
+        // search next after replace text.
         searchText(false, false);
     }
 }

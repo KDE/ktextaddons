@@ -13,11 +13,16 @@ using namespace TextUtils;
 // code from kitinerary/src/lib/stringutil.cpp
 QString ConvertText::normalize(QStringView str)
 {
+    return normalize(str, Qt::CaseInsensitive);
+}
+
+QString ConvertText::normalize(QStringView str, Qt::CaseSensitivity caseSensitivity)
+{
     QString out;
     out.reserve(str.size());
     for (const auto c : str) {
-        // case folding
-        const auto n = c.toCaseFolded();
+        // case folding, unless the caller asked for a case sensitive result
+        const auto n = (caseSensitivity == Qt::CaseSensitive) ? c : c.toCaseFolded();
 
         // if the character has a canonical decomposition use that and skip the
         // combining diacritic markers following it
