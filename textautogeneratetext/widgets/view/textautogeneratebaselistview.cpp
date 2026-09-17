@@ -56,7 +56,7 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
             /*
             connect(plugin, &TextAutoGeneratePluginText::errorMessage, this, &MessageListViewBase::errorMessage);
             connect(plugin, &TextAutoGeneratePluginText::successMessage, this, &MessageListViewBase::successMessage);
-*/
+            */
             auto interface = plugin->createInterface(this);
             mPluginTextInterface.append(interface);
         }

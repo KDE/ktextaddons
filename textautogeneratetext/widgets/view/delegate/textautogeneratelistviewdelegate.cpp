@@ -177,7 +177,7 @@ void TextAutoGenerateListViewDelegate::drawInProgressIndicator(QPainter *painter
     if (it == mIndexScaleAndOpacitiesList.cend()) {
         return;
     }
-    const auto scaleAndOpacities = (*it).scaleAndOpacities;
+    const auto &scaleAndOpacities = (*it).scaleAndOpacities;
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing);
 

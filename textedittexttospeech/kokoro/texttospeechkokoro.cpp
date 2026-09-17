@@ -26,7 +26,7 @@ namespace
 constexpr int s_writeIntervalMs = 20;
 
 // The voice used when the engine did not choose one, as in kokoro_helper.py.
-const char s_defaultVoice[] = "af_heart";
+constexpr char s_defaultVoice[] = "af_heart";
 
 // Kokoro speaks at speed 1.0, QTextToSpeech at rate 0.0. Halving and doubling
 // the speed is what the model stays intelligible with.

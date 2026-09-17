@@ -33,7 +33,7 @@ public:
     [[nodiscard]] QStringList mimeTypes() const override;
 
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
-    void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems);
+    void setTextInfos(QList<TextAutoGenerateMenuTextInfo> newAskItems);
 
     void addItem(const TextAutoGenerateMenuTextInfo &msg);
     void removeInfo(int index);

@@ -21,10 +21,10 @@ QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuTextManager::textInfos()
     return mTextInfos;
 }
 
-void TextAutoGenerateMenuTextManager::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newTextInfos)
+void TextAutoGenerateMenuTextManager::setTextInfos(QList<TextAutoGenerateMenuTextInfo> newTextInfos)
 {
     if (mTextInfos != newTextInfos) {
-        mTextInfos = newTextInfos;
+        mTextInfos = std::move(newTextInfos);
         Q_EMIT textInfoChanged();
     }
 }

@@ -73,10 +73,10 @@ QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuModel::textInfos() const
     return mTextInfos;
 }
 
-void TextAutoGenerateMenuModel::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems)
+void TextAutoGenerateMenuModel::setTextInfos(QList<TextAutoGenerateMenuTextInfo> newAskItems)
 {
     beginResetModel();
-    mTextInfos = newAskItems;
+    mTextInfos = std::move(newAskItems);
     endResetModel();
 }
 

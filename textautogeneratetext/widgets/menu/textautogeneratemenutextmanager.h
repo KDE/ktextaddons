@@ -41,7 +41,7 @@ public:
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
     /*!
      */
-    void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newTextInfos);
+    void setTextInfos(QList<TextAutoGenerateMenuTextInfo> newTextInfos);
 
 Q_SIGNALS:
     /*!
