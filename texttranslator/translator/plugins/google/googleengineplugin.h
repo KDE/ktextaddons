@@ -22,5 +22,4 @@ public:
 private:
     void slotTranslateFinished(QNetworkReply *reply);
     QString mJsonData;
-    QString mResult;
 };

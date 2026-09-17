@@ -49,7 +49,6 @@ public:
     QString settingsGroupName = u"EmoticonRecentUsed"_s;
     TextEmoticonsCore::EmojiModel *const emojiModel;
     QStringList recentIdentifier;
-    QStringList excludeEmoticons;
     EmojiModelManager::EmojiTone tone = EmojiModelManager::EmojiTone::All;
 };
 
@@ -110,11 +109,6 @@ CustomEmojiIconManager *EmojiModelManager::customEmojiIconManager() const
 void EmojiModelManager::setCustomEmojiIconManager(CustomEmojiIconManager *newCustomEmojiIconManager)
 {
     d->emojiModel->setCustomEmojiIconManager(newCustomEmojiIconManager);
-}
-
-QStringList EmojiModelManager::excludeEmoticons() const
-{
-    return d->excludeEmoticons;
 }
 
 EmojiModelManager::EmojiTone EmojiModelManager::emojiTone() const

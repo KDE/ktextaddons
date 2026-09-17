@@ -24,5 +24,4 @@ private:
     void translateText();
     void parseTranslation(QNetworkReply *reply);
     static QString sYandexKey;
-    QString mResult;
 };

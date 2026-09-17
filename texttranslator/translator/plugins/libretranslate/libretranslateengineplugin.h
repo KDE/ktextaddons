@@ -28,7 +28,6 @@ private:
     void slotApiKeyRead(QKeychain::Job *baseJob);
     void translateText();
     QString mServerUrl;
-    QString mResult;
     QString mApiKey;
     bool mRequiredApiKey = false;
 };

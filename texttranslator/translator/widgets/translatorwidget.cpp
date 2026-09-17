@@ -54,7 +54,6 @@ public:
     void initLanguage();
     void fillToCombobox(const QString &lang);
 
-    QByteArray data;
     TranslatorTextEdit *inputText = nullptr;
     QPlainTextEdit *translatorResultTextEdit = nullptr;
     QComboBox *fromCombobox = nullptr;

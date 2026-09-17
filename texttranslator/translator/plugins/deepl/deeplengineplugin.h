@@ -31,7 +31,6 @@ private:
     void parseTranslation(QNetworkReply *reply);
     void slotApiKeyRead(QKeychain::Job *baseJob);
     QString mServerUrl;
-    QString mResult;
     // TODO load it ? kwallet ?
     QString mApiKey;
     bool mUseFreeLicense = false;

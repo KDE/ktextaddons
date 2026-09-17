@@ -86,12 +86,6 @@ public:
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
     /*!
-     * \brief Returns the list of emoticons to exclude
-     * \return A list of emoticon identifiers to exclude from the model
-     */
-    [[nodiscard]] QStringList excludeEmoticons() const;
-
-    /*!
      * \brief Returns the current emoji tone
      * \return The EmojiTone setting
      */
