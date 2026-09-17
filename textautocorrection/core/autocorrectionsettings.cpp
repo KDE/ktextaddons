@@ -596,3 +596,8 @@ QDebug operator<<(QDebug d, const TextAutoCorrectionCore::AutoCorrectionSettings
     d << "mReplaceDoubleQuotesByFrenchQuotes " << t.isReplaceDoubleQuotesByFrenchQuotes();
     return d;
 }
+
+bool AutoCorrectionSettings::autocorrectEntriesIsEmpty() const
+{
+    return d->mAutocorrectEntries.isEmpty();
+}

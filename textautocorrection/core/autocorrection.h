@@ -8,8 +8,8 @@
 
 #include "autocorrectionsettings.h"
 #include "textautocorrectioncore_export.h"
-#include <QTextCursor>
-
+class QTextCursor;
+class QTextDocument;
 namespace TextAutoCorrectionCore
 {
 class AutoCorrectionPrivate;
@@ -96,7 +96,7 @@ private:
     [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool autoBoldUnderline();
 
     [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT QString autoDetectURL(const QString &_word) const;
-    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool excludeToUppercase(const QString &word) const;
+    [[nodiscard]] static TEXTAUTOCORRECTIONCORE_NO_EXPORT bool excludeToUppercase(const QString &word);
     [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT QColor linkColor();
     friend class AutoCorrectionPrivate;
     std::unique_ptr<AutoCorrectionPrivate> const d;

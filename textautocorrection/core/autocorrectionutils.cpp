@@ -116,7 +116,7 @@ QStringList AutoCorrectionUtils::searchAutoCorrectLibreOfficeFiles()
             curFile.remove(path);
             curFile.remove(u".dat"_s);
             curFile.remove(u"acor_"_s);
-            files.append(curFile);
+            files.append(std::move(curFile));
         }
     }
     return files;
@@ -142,7 +142,7 @@ QStringList AutoCorrectionUtils::autoCorrectLibreOfficeLanguageToString(const QS
             // In this case use the non native language name as fallback.
             // See: QTBUG-51323
             const QString languageName = nativeName.isEmpty() ? QLocale::languageToString(locale.language()) : nativeName;
-            languagesStr.append(languageName);
+            languagesStr.append(std::move(languageName));
         }
     }
     return languagesStr;

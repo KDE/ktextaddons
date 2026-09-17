@@ -12,6 +12,7 @@
 #include <KColorScheme>
 #include <QLocale>
 #include <QTextBlock>
+#include <QTextCursor>
 #include <QTextDocument>
 
 using namespace TextAutoCorrectionCore;
@@ -562,7 +563,7 @@ void AutoCorrection::capitalizeWeekDays()
     }
 }
 
-bool AutoCorrection::excludeToUppercase(const QString &word) const
+bool AutoCorrection::excludeToUppercase(const QString &word)
 {
     if (word.startsWith(QLatin1StringView("http://")) || word.startsWith("www."_L1) || word.startsWith("mailto:"_L1)
         || word.startsWith(QLatin1StringView("ftp://")) || word.startsWith("https://"_L1) || word.startsWith("ftps://"_L1)) {
@@ -662,7 +663,7 @@ int AutoCorrection::advancedAutocorrect()
     if (!d->mAutoCorrectionSettings->isAdvancedAutocorrect()) {
         return -1;
     }
-    if (d->mAutoCorrectionSettings->autocorrectEntries().isEmpty()) {
+    if (d->mAutoCorrectionSettings->autocorrectEntriesIsEmpty()) {
         return -1;
     }
     const QString trimmedWord = d->mWord.trimmed();

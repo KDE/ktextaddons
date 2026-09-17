@@ -361,6 +361,8 @@ public:
      */
     [[nodiscard]] std::optional<std::pair<QString, QString>> findEntry(const QString &word, const QString &wordFirstUpper) const;
 
+    [[nodiscard]] bool autocorrectEntriesIsEmpty() const;
+
 private:
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);
     [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
