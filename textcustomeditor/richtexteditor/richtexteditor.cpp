@@ -272,11 +272,13 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             connect(allowTabAction, &QAction::triggered, this, &RichTextEditor::slotAllowTab);
         }
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-        if (!emptyDocument) {
-            popup->addSeparator();
-            QAction *speakAction = popup->addAction(i18n("Speak Text"));
-            speakAction->setIcon(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s));
-            connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
+        if (d->supportFeatures & TextToSpeech) {
+            if (!emptyDocument) {
+                popup->addSeparator();
+                QAction *speakAction = popup->addAction(i18n("Speak Text"));
+                speakAction->setIcon(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s));
+                connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
+            }
         }
 #endif
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
