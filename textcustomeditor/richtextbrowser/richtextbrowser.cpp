@@ -76,7 +76,6 @@ public:
 
     RichTextBrowser *const q;
     TextAddonsWidgets::TextMessageWidget *const textIndicator;
-    QTextDocumentFragment originalDoc;
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
 #endif
