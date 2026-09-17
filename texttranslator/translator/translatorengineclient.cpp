@@ -47,7 +47,7 @@ bool TranslatorEngineClient::hasInvertSupport() const
 QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::fillLanguages()
 {
     QMap<TextTranslator::TranslatorUtil::Language, QString> map;
-    for (int i = TextTranslator::TranslatorUtil::Language::automatic; i < TextTranslator::TranslatorUtil::Language::lastLanguage; ++i) {
+    for (int i = TextTranslator::TranslatorUtil::Language::automatic; i <= TextTranslator::TranslatorUtil::Language::lastLanguage; ++i) {
         if (isSupported(static_cast<TextTranslator::TranslatorUtil::Language>(i))) {
             map.insert(static_cast<TextTranslator::TranslatorUtil::Language>(i),
                        TextTranslator::TranslatorUtil::translatedLanguage(static_cast<TextTranslator::TranslatorUtil::Language>(i)));

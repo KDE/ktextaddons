@@ -19,7 +19,7 @@ TranslatorUtil::TranslatorUtil() = default;
 QMap<TranslatorUtil::Language, QString> TranslatorUtil::translatedLanguages()
 {
     QMap<TranslatorUtil::Language, QString> map;
-    for (int i = TranslatorUtil::Language::automatic; i < TranslatorUtil::Language::lastLanguage; ++i) {
+    for (int i = TranslatorUtil::Language::automatic; i <= TranslatorUtil::Language::lastLanguage; ++i) {
         map.insert(static_cast<TranslatorUtil::Language>(i), translatedLanguage(static_cast<TranslatorUtil::Language>(i)));
     }
     return map;
@@ -218,7 +218,7 @@ QString TranslatorUtil::translatedLanguage(TranslatorUtil::Language lang)
 
 QString TranslatorUtil::searchI18nFromLanguage(const QString &langCode)
 {
-    for (int i = TranslatorUtil::Language::automatic; i < TranslatorUtil::Language::lastLanguage; ++i) {
+    for (int i = TranslatorUtil::Language::automatic; i <= TranslatorUtil::Language::lastLanguage; ++i) {
         if (langCode == languageCode(static_cast<TranslatorUtil::Language>(i))) {
             return translatedLanguage(static_cast<TranslatorUtil::Language>(i));
         }
