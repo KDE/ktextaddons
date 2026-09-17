@@ -133,7 +133,7 @@ void TextEditFindBarBase::messageInfo([[maybe_unused]] bool backward, bool isAut
 {
     if (!found && !isAutoSearch) {
         QString str = mLastSearchStr;
-        if (str.length() > 39) {
+        if (str.length() > 40) {
             str.truncate(40);
             str += u'…';
         }
