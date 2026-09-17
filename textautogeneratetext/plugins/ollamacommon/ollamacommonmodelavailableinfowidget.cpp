@@ -22,7 +22,7 @@ OllamaCommonModelAvailableInfoWidget::OllamaCommonModelAvailableInfoWidget(QWidg
     , mNetworkUrlButton(new OllamaCommonNetworkUrlButton(this))
 {
     mMainLayout->setObjectName(u"mMainLayout"_s);
-    mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
+    mNetworkUrlButton->setObjectName(u"mNetworkUrlButton"_s);
     mMainLayout->addWidget(mNetworkUrlButton, 0, Qt::AlignTop);
     {
         auto label = new QLabel(i18n("Name:"), this);
