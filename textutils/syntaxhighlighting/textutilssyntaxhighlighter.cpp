@@ -37,13 +37,14 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
     if (addIcon) {
         *mStream << u"<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td>"_s;
     }
+    const QStringView strView(str);
     for (; lineEnd != -1; lineStart = lineEnd + 1, lineEnd = str.indexOf(u'\n', lineStart)) {
-        mCurrentLine = QStringView(str).mid(lineStart, lineEnd - lineStart);
+        mCurrentLine = strView.mid(lineStart, lineEnd - lineStart);
         state = highlightLine(mCurrentLine, state);
         *mStream << u"<br>"_s;
     }
     if (lineStart < str.size()) { // remaining content if str isn't ending with a newline
-        mCurrentLine = QStringView(str).mid(lineStart);
+        mCurrentLine = strView.mid(lineStart);
         state = highlightLine(mCurrentLine, state);
     }
 
