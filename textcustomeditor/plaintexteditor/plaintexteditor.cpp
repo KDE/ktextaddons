@@ -34,7 +34,6 @@
 #include <QIcon>
 #include <QMenu>
 #include <QScrollBar>
-#include <QShortcut>
 #include <QTextDocumentFragment>
 
 using namespace TextCustomEditor;

@@ -23,13 +23,10 @@
 
 #include <KColorScheme>
 #include <QApplication>
-#include <QClipboard>
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QScrollBar>
-#include <QTextBlock>
 #include <QTextCursor>
-#include <QTextDocumentFragment>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextCustomEditor;
