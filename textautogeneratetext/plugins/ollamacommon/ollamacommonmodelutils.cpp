@@ -364,10 +364,10 @@ OllamaCommonModelUtils::extractAvailableModel(const TextAutoGenerateText::TextAu
     if (managerModelInfosManager.loadAvailableModels()) {
         const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
         for (const auto &m : modelinfo.models) {
+            QString newName = m.modelName;
+            newName.remove(reg);
             for (const auto &availableModel : listAvailableModels) {
                 // qDebug() << " m " << m << " availableModel.name() " << availableModel.name();
-                QString newName = m.modelName;
-                newName.remove(reg);
                 if (availableModel.name() == newName) {
                     if (!displayAvailablesModels.contains(availableModel)) {
                         displayAvailablesModels.append(availableModel);

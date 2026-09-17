@@ -188,10 +188,10 @@ bool OllamaCloudManager::hasCategorySupport(const QString &modelName, TextAutoGe
         qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " modelName is empty. it's a bug";
         return false;
     }
+    const static QRegularExpression reg(u":.*"_s);
+    QString newModelName = modelName;
+    newModelName.remove(reg);
     const auto matchesModelName = [&](const OllamaCommonModelAvailableInfo &info) {
-        const static QRegularExpression reg(u":.*"_s);
-        QString newModelName = modelName;
-        newModelName.remove(reg);
         return info.name() == newModelName;
     };
     const auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
