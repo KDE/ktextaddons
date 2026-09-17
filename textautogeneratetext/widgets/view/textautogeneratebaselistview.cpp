@@ -9,6 +9,7 @@
 #include "core/texttospeech/textautogeneratetexttospeechenqueueinfo.h"
 #include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
 #include "delegate/textautogeneratelistviewbasedelegate.h"
+#include "textautogeneratetextcore_debug.h"
 #include "widgets/debug/textautogenerateshowdebugdialog.h"
 #include <KLocalizedString>
 #include <QApplication>
@@ -147,18 +148,24 @@ void TextAutoGenerateBaseListView::slotDebugMessage(const QModelIndex &index)
 {
     // Show debug output.
     const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
-    TextAutoGenerateShowDebugDialog d(this);
-    d.setPlainText(QString::fromUtf8(TextAutoGenerateMessage::serialize(*message, false)));
-    d.exec();
+    if (message) {
+        TextAutoGenerateShowDebugDialog d(this);
+        d.setPlainText(QString::fromUtf8(TextAutoGenerateMessage::serialize(*message, false)));
+        d.exec();
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find message";
+    }
 }
 
 void TextAutoGenerateBaseListView::slotDebugGeneratedTextMessage(const QModelIndex &index)
 {
     // Show debug output.
     const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
-    TextAutoGenerateShowDebugDialog d(this);
-    d.setPlainText(message->htmlGenerated());
-    d.exec();
+    if (message) {
+        TextAutoGenerateShowDebugDialog d(this);
+        d.setPlainText(message->htmlGenerated());
+        d.exec();
+    }
 }
 
 void TextAutoGenerateBaseListView::slotFontChanged()
