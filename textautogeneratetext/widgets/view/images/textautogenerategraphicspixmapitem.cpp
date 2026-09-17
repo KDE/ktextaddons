@@ -40,7 +40,7 @@ void TextAutoGenerateGraphicsPixmapItem::mousePressEvent(QGraphicsSceneMouseEven
 void TextAutoGenerateGraphicsPixmapItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     if ((event->buttons() == Qt::LeftButton) && (event->modifiers() & Qt::ControlModifier)
-        && (event->pos() - mDragStartPosition).manhattanLength() < QApplication::startDragDistance()) {
+        && (event->pos() - mDragStartPosition).manhattanLength() > QApplication::startDragDistance()) {
         auto drag = new QDrag(event->widget());
         auto mimeData = new QMimeData;
         mimeData->setUrls(QList<QUrl>{QUrl::fromLocalFile(mImagePath)});
