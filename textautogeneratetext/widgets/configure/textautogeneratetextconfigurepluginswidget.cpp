@@ -8,13 +8,6 @@
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/plugintext/textautogenerateplugintextmanager.h"
-#include <KLineEditEventHandler>
-#include <KLocalizedString>
-#include <KMessageWidget>
-#include <KTreeWidgetSearchLine>
-#include <KTreeWidgetSearchLineWidget>
-#include <QHeaderView>
-#include <QToolButton>
 #include <QVBoxLayout>
 #include <TextAutoGenerateText/TextAutoGeneratePluginText>
 
