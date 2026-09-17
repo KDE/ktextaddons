@@ -71,4 +71,4 @@ private:
     QProcess *mProcess = nullptr;
 };
 }
-Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option, Q_RELOCATABLE_TYPE);

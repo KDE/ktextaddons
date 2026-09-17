@@ -144,7 +144,7 @@ private:
 };
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::UnicodeEmoticon)
-Q_DECLARE_TYPEINFO(TextEmoticonsCore::UnicodeEmoticon, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextEmoticonsCore::UnicodeEmoticon, Q_RELOCATABLE_TYPE);
 /*!
  * \brief Outputs the UnicodeEmoticon to a debug stream
  * \param d The debug stream

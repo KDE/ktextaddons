@@ -43,4 +43,4 @@ private:
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseListModel(const QJsonArray &arrays);
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
 };
-Q_DECLARE_TYPEINFO(ManagerModelVoskSpeechToText::ProgressInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(ManagerModelVoskSpeechToText::ProgressInfo, Q_RELOCATABLE_TYPE);

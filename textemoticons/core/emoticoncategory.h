@@ -93,7 +93,7 @@ private:
 };
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::EmoticonCategory)
-Q_DECLARE_TYPEINFO(TextEmoticonsCore::EmoticonCategory, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextEmoticonsCore::EmoticonCategory, Q_RELOCATABLE_TYPE);
 /*!
  * \brief Outputs the EmoticonCategory to a debug stream
  * \param d The debug stream

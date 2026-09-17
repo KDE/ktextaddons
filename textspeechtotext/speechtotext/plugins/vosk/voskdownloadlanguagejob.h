@@ -43,5 +43,5 @@ private:
     QCryptographicHash *mHash = nullptr;
     QTemporaryFile *mDestination = nullptr;
 };
-Q_DECLARE_TYPEINFO(VoskDownloadLanguageJob::DownloadLanguageInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(VoskDownloadLanguageJob::DownloadLanguageInfo, Q_RELOCATABLE_TYPE);
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskDownloadLanguageJob::DownloadLanguageInfo &t);

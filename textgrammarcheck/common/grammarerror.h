@@ -103,5 +103,5 @@ protected:
 };
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::GrammarError)
-Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammarError, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammarError, Q_RELOCATABLE_TYPE);
 TEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarError &t);

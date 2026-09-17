@@ -66,4 +66,4 @@ private:
 };
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const Translator &t);
 Q_DECLARE_METATYPE(Translator)
-Q_DECLARE_TYPEINFO(Translator, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(Translator, Q_RELOCATABLE_TYPE);

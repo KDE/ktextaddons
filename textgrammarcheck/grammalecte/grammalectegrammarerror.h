@@ -22,4 +22,4 @@ private:
 };
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::GrammalecteGrammarError)
-Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammalecteGrammarError, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammalecteGrammarError, Q_RELOCATABLE_TYPE);

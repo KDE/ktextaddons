@@ -44,4 +44,4 @@ private:
 };
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::LanguageInfo)
-Q_DECLARE_TYPEINFO(TextGrammarCheck::LanguageInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextGrammarCheck::LanguageInfo, Q_RELOCATABLE_TYPE);

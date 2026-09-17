@@ -75,7 +75,7 @@ private:
 };
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::CustomEmoji)
-Q_DECLARE_TYPEINFO(TextEmoticonsCore::CustomEmoji, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextEmoticonsCore::CustomEmoji, Q_RELOCATABLE_TYPE);
 /*!
  */
 TEXTEMOTICONSCORE_EXPORT QDebug operator<<(QDebug d, const TextEmoticonsCore::CustomEmoji &t);

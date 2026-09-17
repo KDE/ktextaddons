@@ -44,4 +44,4 @@ LIBVOSKSPEECHTOTEXT_EXPORT void saveActiveLanguage(const QString &name);
 [[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString activeLanguageModelPath();
 }
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);
-Q_DECLARE_TYPEINFO(VoskEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(VoskEngineUtils::LanguageInstalled, Q_RELOCATABLE_TYPE);

@@ -53,7 +53,7 @@ struct LIBBERGAMOT_EXPORT SettingsInfo {
 };
 
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t);
-Q_DECLARE_TYPEINFO(BergamotEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(BergamotEngineUtils::LanguageInstalled, Q_RELOCATABLE_TYPE);
 
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::ModelFiles &t);
-Q_DECLARE_TYPEINFO(BergamotEngineUtils::ModelFiles, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(BergamotEngineUtils::ModelFiles, Q_RELOCATABLE_TYPE);

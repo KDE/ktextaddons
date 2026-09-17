@@ -41,4 +41,4 @@ private:
     LIBBERGAMOT_NO_EXPORT void parseListModel(const QJsonObject &obj);
     QVector<Translator> mTranslators;
 };
-Q_DECLARE_TYPEINFO(ManagerModelTranslator::ProgressInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(ManagerModelTranslator::ProgressInfo, Q_RELOCATABLE_TYPE);
