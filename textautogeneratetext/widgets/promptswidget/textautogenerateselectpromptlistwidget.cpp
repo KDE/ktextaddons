@@ -45,8 +45,8 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
             } else {
                 const QString name = index.data(TextAutoGenerateTextPromptModel::Name).toString();
                 if (KMessageBox::warningTwoActions(this,
-                                                   i18n("Do you want to remove this instance (%1)?", name),
-                                                   i18nc("@title", "Remove Instance"),
+                                                   i18n("Do you want to remove this prompt (%1)?", name),
+                                                   i18nc("@title", "Remove Prompt"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())
                     == KMessageBox::PrimaryAction) {
