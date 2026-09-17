@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-08-23 08:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -253,7 +253,7 @@ msgstr ""
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "Ingen ny version hittades. Bygge finns <a href=\"%1\">här</a>."
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "Kontrollera ny version"
@@ -281,7 +281,7 @@ msgstr "(Visa nyheter)"
 msgid "What's new in %2. %1"
 msgstr "Vad är nytt i %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Alla versioner"

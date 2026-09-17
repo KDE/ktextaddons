@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-08-24 11:03+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3122,12 +3122,12 @@ msgstr "Errore durante l'apertura del file"
 msgid "Metadata Info"
 msgstr "Informazioni sui metadati"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Text Plugins"
 msgstr "Estensioni testo"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Estensioni strumenti"

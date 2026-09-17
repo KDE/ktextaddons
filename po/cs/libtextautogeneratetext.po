@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-08-14 11:26+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2666,12 +2666,12 @@ msgstr "Chyba při otevírání souboru"
 msgid "Metadata Info"
 msgstr "Informace o metadatech"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Text Plugins"
 msgstr "Moduly textu"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Moduly nástrojů"

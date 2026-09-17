@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-08-23 16:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -259,7 +259,7 @@ msgstr ""
 "No se ha encontrado ninguna nueva versión. <a href=\"%1\">Aquí</a> puede "
 "encontrar la compilación."
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "Comprobar nueva versión"
@@ -287,7 +287,7 @@ msgstr "(Mostrar novedades)"
 msgid "What's new in %2. %1"
 msgstr "Novedades de %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Todas las versiones"

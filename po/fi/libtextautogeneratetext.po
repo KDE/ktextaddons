@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-13 00:43+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-03-11 20:26+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2825,12 +2825,12 @@ msgstr "Virhe avattaessa tiedostoa"
 msgid "Metadata Info"
 msgstr "Metatiedot"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Text Plugins"
 msgstr "Tekstiliitännäiset"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
 #, fuzzy, kde-format
 #| msgid "Tools Plugins"
 msgid "Tool Plugins"

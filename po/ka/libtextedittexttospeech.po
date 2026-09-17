@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:42+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-09-14 05:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -81,57 +81,62 @@ msgctxt "@title:window"
 msgid "Install Kokoro Package"
 msgstr "Kokoro-ის პაკეტის დაყენება"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
 #, kde-format
 msgid "Select Voice(s):"
 msgstr "აირჩიეთ ხმები:"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:50
 #, kde-format
 msgid "Download Voice(s)"
 msgstr "ხმების გადმოწერა"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:44
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:57
 #, kde-format
 msgid "Download Voices done."
 msgstr "ხმების გადმოწერა დასრულდა."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
 #, kde-format
 msgid "Unable to download voice."
 msgstr "ხმების გადმოწერა შეუძლებელია."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:75
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
 msgstr "espeak-ng აღმოჩენილი არაა. დააყენეთ ის თქვენი პაკეტების მმართველით."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:77
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
+#, kde-format
+msgid "Nothing to install."
+msgstr ""
+
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Creating the python virtual environment…"
 msgstr "მიმდინარეობს python-ის ვირტუალური გარემოს შექმნა…"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:80
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Python virtual environment created."
 msgstr "Python-ის ვირტუალური გარემო შეიქმნა."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:84
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Unable to create the python virtual environment."
 msgstr "Python-ის ვირტუალური გარემოს შექმნა შეუძლებელია."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:93
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:122
 #, kde-format
 msgid "Installing modules: %1"
 msgstr "მოდულების დაყენება: %1"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:127
 #, kde-format
 msgid "Installation done."
 msgstr "დაყენება დასრულდა."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:102
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:131
 #, kde-format
 msgid "Installation failed."
 msgstr "დაყენება ჩავარდა."

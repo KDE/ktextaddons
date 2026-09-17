@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-08-24 09:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -257,7 +257,7 @@ msgstr ""
 "Aucune nouvelle version n'a été trouvée. Une version peut être trouvée <a "
 "href=\"%1\">ici</a>."
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "Vérifier l'existence d'une nouvelle version"
@@ -285,7 +285,7 @@ msgstr "(Afficher les nouvelles)"
 msgid "What's new in %2. %1"
 msgstr "Quoi de neuf dans %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Toutes les versions"

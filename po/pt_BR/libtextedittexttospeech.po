@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:42+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-09-14 05:45-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -82,59 +82,64 @@ msgctxt "@title:window"
 msgid "Install Kokoro Package"
 msgstr "Instalar o pacote Kokoro"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:35
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
 #, kde-format
 msgid "Select Voice(s):"
 msgstr "Selecionar voz(es):"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:37
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:50
 #, kde-format
 msgid "Download Voice(s)"
 msgstr "Baixar voz(es)"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:44
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:57
 #, kde-format
 msgid "Download Voices done."
 msgstr "Transferência de vozes concluída."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
 #, kde-format
 msgid "Unable to download voice."
 msgstr "Não foi possível baixar voz."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:75
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
 msgstr ""
 "espeak-ng está faltando. Por favor, instale-o usando seu gerenciador de "
 "pacotes."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:77
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
+#, kde-format
+msgid "Nothing to install."
+msgstr ""
+
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Creating the python virtual environment…"
 msgstr "Criando o ambiente virtual do Python…"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:80
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Python virtual environment created."
 msgstr "Ambiente virtual Python criado."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:84
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Unable to create the python virtual environment."
 msgstr "Não foi possível criar o ambiente virtual do Python."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:93
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:122
 #, kde-format
 msgid "Installing modules: %1"
 msgstr "Instalando módulos: %1"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:127
 #, kde-format
 msgid "Installation done."
 msgstr "Instalação concluída."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:102
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:131
 #, kde-format
 msgid "Installation failed."
 msgstr "Falha na instalação."

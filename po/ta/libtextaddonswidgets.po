@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -259,7 +259,7 @@ msgstr ""
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "புதிய பதிப்பு இல்லை. ?? <a href=\"%1\">இங்கு</a> ??."
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "புதிய பதிப்பு உள்ளதா என பார்ப்பது"
@@ -287,7 +287,7 @@ msgstr "(செய்திகளை காட்டு)"
 msgid "What's new in %2. %1"
 msgstr "%2 தனில் புதியவை. %1"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "அனைத்து பதிப்புகளும்"

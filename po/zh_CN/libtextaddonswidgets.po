@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -249,7 +249,7 @@ msgstr "发现新版本。请点击<a href=\"%1\">此处</a>下载。"
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "没有发现新版本。可在<a href=\"%1\">此处</a>找到构建版本。"
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "检查新版本"
@@ -277,7 +277,7 @@ msgstr "(显示新闻)"
 msgid "What's new in %2. %1"
 msgstr "%2. %1 的新功能"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "所有版本"

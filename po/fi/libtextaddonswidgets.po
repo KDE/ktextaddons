@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-17 00:42+0000\n"
 "PO-Revision-Date: 2026-01-16 17:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -252,7 +252,7 @@ msgstr "Löytyi uusi versio. Lataa se napsauttamalla <a href=\"%1\">tästä</a>.
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "Uutta versiota ei löytynyt. Kooste löytyy <a href=\"%1\">tästä</a>."
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "Etsi uutta versiota"
@@ -280,7 +280,7 @@ msgstr "(Näytä uutiset)"
 msgid "What's new in %2. %1"
 msgstr "%2 – mitä uutta. %1"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:55
+#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Kaikki versiot"
