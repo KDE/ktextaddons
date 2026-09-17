@@ -31,10 +31,14 @@
 #include <QActionGroup>
 #include <QApplication>
 #include <QClipboard>
+#include <QContextMenuEvent>
+#include <QFocusEvent>
 #include <QIcon>
+#include <QKeyEvent>
 #include <QMenu>
 #include <QScrollBar>
 #include <QTextDocumentFragment>
+#include <QWheelEvent>
 
 using namespace TextCustomEditor;
 using namespace Qt::Literals::StringLiterals;

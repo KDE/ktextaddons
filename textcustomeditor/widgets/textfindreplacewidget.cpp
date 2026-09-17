@@ -11,7 +11,9 @@
 #include <KLocalizedString>
 #include <QPushButton>
 
+#include <QAction>
 #include <QHBoxLayout>
+#include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
 #include <QMenu>

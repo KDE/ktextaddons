@@ -9,7 +9,6 @@
 #include "widgets/textfindreplacewidget.h"
 
 #include <KLocalizedString>
-#include <TextUtils/ConvertText>
 
 #include <QRegularExpression>
 #include <QTextBrowser>

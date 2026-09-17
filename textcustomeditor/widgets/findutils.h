@@ -7,10 +7,8 @@
 #pragma once
 
 #include "textcustomeditor_private_export.h"
-#include <QChar>
 #include <QTextDocument>
 #include <TextCustomEditor/TextEditFindBarBase>
-#include <qglobal.h>
 class QPlainTextEdit;
 class QTextEdit;
 namespace TextCustomEditor

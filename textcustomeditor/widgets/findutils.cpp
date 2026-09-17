@@ -7,7 +7,6 @@
 #include "findutils.h"
 #include <TextUtils/ConvertText>
 
-#include <QDebug>
 #include <QPlainTextEdit>
 #include <QRegularExpression>
 #include <QTextCursor>
