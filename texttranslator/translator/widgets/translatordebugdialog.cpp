@@ -82,6 +82,7 @@ bool TranslatorDebugDialog::saveToFile(const QString &filename, const QString &t
     }
     QTextStream out(&file);
     out << text;
+    out.flush();
     file.close();
     return true;
 }
