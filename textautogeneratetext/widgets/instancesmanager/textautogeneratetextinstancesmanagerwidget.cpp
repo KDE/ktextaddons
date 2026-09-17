@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
+#include "core/textautogeneratetextutils.h"
 
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
@@ -99,7 +100,7 @@ void TextAutoGenerateTextInstancesManagerWidget::slotAddInstance()
             auto instance = new TextAutoGenerateTextInstance;
             instance->setPluginName(server.pluginName);
             instance->setPluginIdentifier(server.identifier);
-            instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+            instance->setInstanceUuid(TextAutoGenerateTextUtils::generateUUid());
             instance->setEnabled(true);
             auto plugin = client->createTextAutoGeneratePlugin(mManager, instance);
             plugin->setDisplayName(d.instanceName());
