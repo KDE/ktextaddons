@@ -32,7 +32,7 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language,
     // qDebug() << " fname " << fname;
     mZip.reset(new KZip(fname));
     if (const bool result = mZip->open(QIODevice::WriteOnly); !result) {
-        qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
+        qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fname;
         mZip->close();
         return false;
     }
