@@ -12,7 +12,39 @@
 #include <QTextCursor>
 #include <QTextEdit>
 
+#include <algorithm>
+#include <utility>
+
 using namespace TextCustomEditor;
+
+namespace
+{
+[[nodiscard]] Qt::CaseSensitivity caseSensitivityOf(QTextDocument::FindFlags flags)
+{
+    return (flags & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
+}
+
+// Searching happens on a normalized copy of the text and normalize() is not length preserving, as a Latin
+// ligature expands to several characters. This maps a [start, end) range of the copy back to the original
+// text. A match may start or end inside an expanded character, in which case that whole character is
+// taken: half a ligature cannot be selected, let alone replaced.
+[[nodiscard]] std::pair<int, int> sourceRange(const QList<qsizetype> &sourcePositions, int start, int end)
+{
+    const int sourceStart = static_cast<int>(sourcePositions.at(start));
+    int sourceEnd = static_cast<int>(sourcePositions.at(end));
+    if (sourceEnd <= sourceStart && end > start) {
+        sourceEnd = static_cast<int>(sourcePositions.at(end - 1)) + 1;
+    }
+    return {sourceStart, sourceEnd};
+}
+
+// Inverse mapping: the first position of the normalized copy that comes from sourcePosition or later.
+[[nodiscard]] int normalizedPosition(const QList<qsizetype> &sourcePositions, int sourcePosition)
+{
+    const auto it = std::lower_bound(sourcePositions.cbegin(), sourcePositions.cend(), static_cast<qsizetype>(sourcePosition));
+    return static_cast<int>(std::distance(sourcePositions.cbegin(), it));
+}
+}
 QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags)
 {
     QTextDocument::FindFlags flags;
@@ -35,8 +67,8 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
     // Ignoring FindBackward when replacing all
     const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(searchOptions) & ~QTextDocument::FindBackward;
     if (searchOptions & TextEditFindBarBase::FindFlag::FindRespectDiacritics) {
-        view->textCursor().beginEditBlock();
         QTextCursor c(document);
+        c.beginEditBlock();
         while (!c.isNull()) {
             c = document->find(str, c, flags);
             if (!c.isNull()) {
@@ -46,34 +78,40 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
                 break;
             }
         }
-        view->textCursor().endEditBlock();
+        c.endEditBlock();
     } else {
         // normalize() folds the case, so keep it when the search is case sensitive.
-        const Qt::CaseSensitivity caseSensitivity = (flags & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
-        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText(), caseSensitivity)};
-        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str, caseSensitivity)};
+        const Qt::CaseSensitivity caseSensitivity = caseSensitivityOf(flags);
+        QList<qsizetype> sourcePositions;
+        const QString normalizedText{TextUtils::ConvertText::normalize(view->toPlainText(), caseSensitivity, &sourcePositions)};
+        const QString normalizedSearchStr{TextUtils::ConvertText::normalize(str, caseSensitivity)};
+        if (normalizedSearchStr.isEmpty()) {
+            return 0;
+        }
 
-        QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
-        QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
-        documentWithoutRespectDiacriticsTextCursor.setPosition(0);
-
-        view->textCursor().beginEditBlock();
-        QTextCursor c(document);
-
-        while (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
-            documentWithoutRespectDiacriticsTextCursor =
-                documentWithoutRespectDiacritics.find(searchStrWithoutRespectDiacritics, documentWithoutRespectDiacriticsTextCursor, flags);
-            if (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
-                c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionStart());
-                c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionEnd(), QTextCursor::KeepAnchor);
-                c.insertText(replaceStr);
-                documentWithoutRespectDiacriticsTextCursor.insertText(replaceStr);
-                count++;
-            } else {
+        // Collect every match before touching the document: the positions come from the normalized copy and
+        // have to be mapped back, so replacing as we go would invalidate that mapping.
+        QList<std::pair<int, int>> ranges;
+        QTextDocument normalizedDocument(normalizedText);
+        QTextCursor normalizedCursor(&normalizedDocument);
+        while (true) {
+            normalizedCursor = normalizedDocument.find(normalizedSearchStr, normalizedCursor, flags);
+            if (normalizedCursor.isNull()) {
                 break;
             }
+            ranges.append(sourceRange(sourcePositions, normalizedCursor.selectionStart(), normalizedCursor.selectionEnd()));
         }
-        view->textCursor().endEditBlock();
+
+        // Replace backwards so that the positions of the matches left to do stay valid.
+        QTextCursor c(document);
+        c.beginEditBlock();
+        for (auto it = ranges.crbegin(), endIt = ranges.crend(); it != endIt; ++it) {
+            c.setPosition(it->first);
+            c.setPosition(it->second, QTextCursor::KeepAnchor);
+            c.insertText(replaceStr);
+        }
+        c.endEditBlock();
+        count = static_cast<int>(ranges.size());
     }
     return count;
 }
@@ -85,8 +123,8 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
     // Ignoring FindBackward when replacing all
     const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(searchOptions) & ~QTextDocument::FindBackward;
     if (searchOptions & TextEditFindBarBase::FindFlag::FindRespectDiacritics) {
-        view->textCursor().beginEditBlock();
         QTextCursor c(document);
+        c.beginEditBlock();
         while (!c.isNull()) {
             c = document->find(str, c, flags);
             if (!c.isNull()) {
@@ -96,34 +134,40 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
                 break;
             }
         }
-        view->textCursor().endEditBlock();
+        c.endEditBlock();
     } else {
         // normalize() folds the case, so keep it when the search is case sensitive.
-        const Qt::CaseSensitivity caseSensitivity = (flags & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
-        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText(), caseSensitivity)};
-        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str, caseSensitivity)};
+        const Qt::CaseSensitivity caseSensitivity = caseSensitivityOf(flags);
+        QList<qsizetype> sourcePositions;
+        const QString normalizedText{TextUtils::ConvertText::normalize(view->toPlainText(), caseSensitivity, &sourcePositions)};
+        const QString normalizedSearchStr{TextUtils::ConvertText::normalize(str, caseSensitivity)};
+        if (normalizedSearchStr.isEmpty()) {
+            return 0;
+        }
 
-        QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
-        QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
-        documentWithoutRespectDiacriticsTextCursor.setPosition(0);
-
-        view->textCursor().beginEditBlock();
-        QTextCursor c(document);
-
-        while (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
-            documentWithoutRespectDiacriticsTextCursor =
-                documentWithoutRespectDiacritics.find(searchStrWithoutRespectDiacritics, documentWithoutRespectDiacriticsTextCursor, flags);
-            if (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
-                c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionStart());
-                c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionEnd(), QTextCursor::KeepAnchor);
-                c.insertText(replaceStr);
-                documentWithoutRespectDiacriticsTextCursor.insertText(replaceStr);
-                count++;
-            } else {
+        // Collect every match before touching the document: the positions come from the normalized copy and
+        // have to be mapped back, so replacing as we go would invalidate that mapping.
+        QList<std::pair<int, int>> ranges;
+        QTextDocument normalizedDocument(normalizedText);
+        QTextCursor normalizedCursor(&normalizedDocument);
+        while (true) {
+            normalizedCursor = normalizedDocument.find(normalizedSearchStr, normalizedCursor, flags);
+            if (normalizedCursor.isNull()) {
                 break;
             }
+            ranges.append(sourceRange(sourcePositions, normalizedCursor.selectionStart(), normalizedCursor.selectionEnd()));
         }
-        view->textCursor().endEditBlock();
+
+        // Replace backwards so that the positions of the matches left to do stay valid.
+        QTextCursor c(document);
+        c.beginEditBlock();
+        for (auto it = ranges.crbegin(), endIt = ranges.crend(); it != endIt; ++it) {
+            c.setPosition(it->first);
+            c.setPosition(it->second, QTextCursor::KeepAnchor);
+            c.insertText(replaceStr);
+        }
+        c.endEditBlock();
+        count = static_cast<int>(ranges.size());
     }
     return count;
 }
@@ -153,22 +197,22 @@ bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocum
 {
     // normalize() folds the case, so keep it when the caller asked for a case sensitive search,
     // otherwise QTextDocument::FindCaseSensitively below has nothing left to discriminate.
-    const Qt::CaseSensitivity caseSensitivity = (searchOptions & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
-    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText(), caseSensitivity);
+    const Qt::CaseSensitivity caseSensitivity = caseSensitivityOf(searchOptions);
+    QList<qsizetype> sourcePositions;
+    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText(), caseSensitivity, &sourcePositions);
     QTextDocument doc(text);
     QTextCursor c(&doc);
     QTextCursor docCusor(view->textCursor());
-    c.setPosition(docCusor.position());
-    // qDebug() << " docCusor.position() " << docCusor.position();
+    c.setPosition(normalizedPosition(sourcePositions, docCusor.position()));
     c = doc.find(TextUtils::ConvertText::normalize(searchText, caseSensitivity), c, searchOptions);
     if (!c.isNull()) {
-        // qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
+        const auto [selectionStart, selectionEnd] = sourceRange(sourcePositions, c.selectionStart(), c.selectionEnd());
         if (searchOptions & QTextDocument::FindBackward) {
-            docCusor.setPosition(c.selectionEnd());
-            docCusor.setPosition(c.selectionStart(), QTextCursor::KeepAnchor);
+            docCusor.setPosition(selectionEnd);
+            docCusor.setPosition(selectionStart, QTextCursor::KeepAnchor);
         } else {
-            docCusor.setPosition(c.selectionStart());
-            docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+            docCusor.setPosition(selectionStart);
+            docCusor.setPosition(selectionEnd, QTextCursor::KeepAnchor);
         }
         view->setTextCursor(docCusor);
         view->ensureCursorVisible();
@@ -181,22 +225,22 @@ bool FindUtils::find(QTextEdit *view, const QString &searchText, QTextDocument::
 {
     // normalize() folds the case, so keep it when the caller asked for a case sensitive search,
     // otherwise QTextDocument::FindCaseSensitively below has nothing left to discriminate.
-    const Qt::CaseSensitivity caseSensitivity = (searchOptions & QTextDocument::FindCaseSensitively) ? Qt::CaseSensitive : Qt::CaseInsensitive;
-    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText(), caseSensitivity);
+    const Qt::CaseSensitivity caseSensitivity = caseSensitivityOf(searchOptions);
+    QList<qsizetype> sourcePositions;
+    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText(), caseSensitivity, &sourcePositions);
     QTextDocument doc(text);
     QTextCursor c(&doc);
     QTextCursor docCusor(view->textCursor());
-    c.setPosition(docCusor.position());
-    // qDebug() << " docCusor.position() " << docCusor.position();
+    c.setPosition(normalizedPosition(sourcePositions, docCusor.position()));
     c = doc.find(TextUtils::ConvertText::normalize(searchText, caseSensitivity), c, searchOptions);
     if (!c.isNull()) {
-        // qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
+        const auto [selectionStart, selectionEnd] = sourceRange(sourcePositions, c.selectionStart(), c.selectionEnd());
         if (searchOptions & QTextDocument::FindBackward) {
-            docCusor.setPosition(c.selectionEnd());
-            docCusor.setPosition(c.selectionStart(), QTextCursor::KeepAnchor);
+            docCusor.setPosition(selectionEnd);
+            docCusor.setPosition(selectionStart, QTextCursor::KeepAnchor);
         } else {
-            docCusor.setPosition(c.selectionStart());
-            docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+            docCusor.setPosition(selectionStart);
+            docCusor.setPosition(selectionEnd, QTextCursor::KeepAnchor);
         }
         view->setTextCursor(docCusor);
         view->ensureCursorVisible();

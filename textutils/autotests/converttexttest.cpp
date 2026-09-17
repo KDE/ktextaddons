@@ -47,6 +47,31 @@ void ConvertTextTest::shouldNormalizeCaseSensitive()
     QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str), Qt::CaseSensitive), u"TelePhone"_s);
 }
 
+void ConvertTextTest::shouldMapNormalizedPositions()
+{
+    {
+        // No ligature: one character in, one character out.
+        const QString str(u"no\u00ebl"_s);
+        QList<qsizetype> sourcePositions;
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str), Qt::CaseInsensitive, &sourcePositions), u"noel"_s);
+        QCOMPARE(sourcePositions, QList<qsizetype>({0, 1, 2, 3, 4}));
+    }
+    {
+        // "\ufb01" expands to "fi": both characters of the result come from position 0, and the last entry
+        // is the size of the source string.
+        const QString str(u"\ufb01n"_s);
+        QList<qsizetype> sourcePositions;
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str), Qt::CaseInsensitive, &sourcePositions), u"fin"_s);
+        QCOMPARE(sourcePositions, QList<qsizetype>({0, 0, 1, 2}));
+    }
+    {
+        const QString str;
+        QList<qsizetype> sourcePositions;
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str), Qt::CaseInsensitive, &sourcePositions), QString());
+        QCOMPARE(sourcePositions, QList<qsizetype>({0}));
+    }
+}
+
 void ConvertTextTest::testUpperCase_data()
 {
     QTest::addColumn<QString>("input");

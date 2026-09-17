@@ -27,8 +27,9 @@ bool ConfigurePluginsTreeWidgetSearchLine::itemMatches(const QTreeWidgetItem *it
     }
 
     const int columnCount = treeWidget->columnCount();
-    const QString newPattern = TextUtils::ConvertText::normalize(pattern);
     const Qt::CaseSensitivity sensitivity = caseSensitivity();
+    // normalize() folds the case unless told otherwise, which would make `sensitivity` below a no-op.
+    const QString newPattern = TextUtils::ConvertText::normalize(pattern, sensitivity);
 
     // If the search column list is populated, search just the columns
     // specified.  If it is empty default to searching all of the columns.
@@ -39,7 +40,8 @@ bool ConfigurePluginsTreeWidgetSearchLine::itemMatches(const QTreeWidgetItem *it
                 continue;
             }
             // Normalizing allocates, so only do it for the columns we actually search.
-            if (const QString currentText = TextUtils::ConvertText::normalize(item->text(column)); currentText.indexOf(newPattern, 0, sensitivity) >= 0) {
+            if (const QString currentText = TextUtils::ConvertText::normalize(item->text(column), sensitivity);
+                currentText.indexOf(newPattern, 0, sensitivity) >= 0) {
                 return true;
             }
         }
@@ -48,7 +50,8 @@ bool ConfigurePluginsTreeWidgetSearchLine::itemMatches(const QTreeWidgetItem *it
             if (treeWidget->columnWidth(i) <= 0) {
                 continue;
             }
-            if (const QString currentText = TextUtils::ConvertText::normalize(item->text(i)); currentText.indexOf(newPattern, 0, sensitivity) >= 0) {
+            if (const QString currentText = TextUtils::ConvertText::normalize(item->text(i), sensitivity);
+                currentText.indexOf(newPattern, 0, sensitivity) >= 0) {
                 return true;
             }
         }

@@ -153,6 +153,11 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
         QTest::newRow("wholewords-no-diacritics-casesensitive")
             << u"réunion Réunion reunion"_s << u"Réunion"_s << u"replace"_s << flags << 1 << u"réunion replace reunion"_s;
     }
+    {
+        // "ﬁ" is a single character that normalizes to two, so the positions found in the normalized copy
+        // do not line up with the document: they have to be mapped back before replacing.
+        QTest::newRow("ligature") << u"ﬁn zz fin"_s << u"fin"_s << u"X"_s << TextCustomEditor::TextEditFindBarBase::FindFlags() << 2 << u"X zz X"_s;
+    }
 }
 
 void PlainTextEditFindBarTest::shouldReplaceAllText()

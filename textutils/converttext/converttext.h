@@ -7,6 +7,7 @@
 #pragma once
 
 #include "textutils_export.h"
+#include <QList>
 #include <QStringView>
 #include <QTextCursor>
 
@@ -28,6 +29,18 @@ namespace ConvertText
  * \return
  */
 [[nodiscard]] TEXTUTILS_EXPORT QString normalize(QStringView str, Qt::CaseSensitivity caseSensitivity);
+/*!
+ * \brief normalize
+ * \param str
+ * \param caseSensitivity with Qt::CaseSensitive the case of \a str is kept; diacritics, accents and
+ * compatibility characters are folded in both cases.
+ * \param sourcePositions when not null, filled with the position in \a str of each character of the
+ * returned string, followed by one last entry holding the size of \a str. Normalizing is not length
+ * preserving, as a ligature expands to several characters, so this is what maps a position in the
+ * result back to a position in \a str.
+ * \return
+ */
+[[nodiscard]] TEXTUTILS_EXPORT QString normalize(QStringView str, Qt::CaseSensitivity caseSensitivity, QList<qsizetype> *sourcePositions);
 /*!
  * \brief upperCase
  * \param cursor

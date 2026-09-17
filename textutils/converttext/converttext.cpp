@@ -13,16 +13,27 @@ using namespace TextUtils;
 // code from kitinerary/src/lib/stringutil.cpp
 QString ConvertText::normalize(QStringView str)
 {
-    return normalize(str, Qt::CaseInsensitive);
+    return normalize(str, Qt::CaseInsensitive, nullptr);
 }
 
 QString ConvertText::normalize(QStringView str, Qt::CaseSensitivity caseSensitivity)
 {
+    return normalize(str, caseSensitivity, nullptr);
+}
+
+QString ConvertText::normalize(QStringView str, Qt::CaseSensitivity caseSensitivity, QList<qsizetype> *sourcePositions)
+{
     QString out;
     out.reserve(str.size());
+    if (sourcePositions) {
+        sourcePositions->clear();
+        sourcePositions->reserve(str.size() + 1);
+    }
+    qsizetype sourcePosition = 0;
     for (const auto c : str) {
         // case folding, unless the caller asked for a case sensitive result
         const auto n = (caseSensitivity == Qt::CaseSensitive) ? c : c.toCaseFolded();
+        const qsizetype previousSize = out.size();
 
         // if the character has a canonical decomposition use that and skip the
         // combining diacritic markers following it
@@ -40,6 +51,15 @@ QString ConvertText::normalize(QStringView str, Qt::CaseSensitivity caseSensitiv
         } else {
             out.push_back(n);
         }
+
+        if (sourcePositions) {
+            // one entry per character produced: a ligature expands, a combining marker produces none
+            sourcePositions->insert(sourcePositions->size(), out.size() - previousSize, sourcePosition);
+        }
+        ++sourcePosition;
+    }
+    if (sourcePositions) {
+        sourcePositions->append(str.size());
     }
     return out;
 }
