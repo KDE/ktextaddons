@@ -14,4 +14,4 @@ namespace DeeplEngineUtil
 [[nodiscard]] QString freeLicenseKey();
 [[nodiscard]] QString apiGroupName();
 [[nodiscard]] QString translatorGroupName();
-};
+}

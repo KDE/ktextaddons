@@ -12,4 +12,4 @@ namespace LMStudioCommonUtils
 [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_EXPORT QString responsesPath();
 [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_EXPORT QString modelsPath();
 [[nodiscard]] TEXTAUTOGENERATELMSTUDIO_EXPORT QString completionPath();
-};
+}

@@ -11,7 +11,7 @@
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;
-};
+}
 class McpClientPlugin : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin
 {
     Q_OBJECT

@@ -16,4 +16,4 @@ namespace LibreTranslateEngineUtil
 [[nodiscard]] QString adaptUrl(QString serverUrl);
 [[nodiscard]] QString apiGroupName();
 [[nodiscard]] QString translatorGroupName();
-};
+}

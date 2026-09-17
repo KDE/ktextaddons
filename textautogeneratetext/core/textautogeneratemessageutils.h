@@ -21,4 +21,4 @@ namespace TextAutoGenerateMessageUtils
                                                                     int hightLightStringIndex,
                                                                     bool allowInsertText);
 }
-};
+}

@@ -20,5 +20,5 @@ namespace TextAutoGenerateTextUtils
 /*!
  */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QByteArray generateUUid();
-};
+}
 }

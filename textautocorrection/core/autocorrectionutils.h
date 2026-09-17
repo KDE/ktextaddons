@@ -107,7 +107,7 @@ struct TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes {
  * \return A list of words in the sentence
  */
 [[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QStringList wordsFromSentence(const QString &string);
-};
+}
 }
 /*!
  * \brief Outputs TypographicQuotes to a debug stream

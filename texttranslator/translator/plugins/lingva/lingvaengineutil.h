@@ -12,4 +12,4 @@ namespace LingvaEngineUtil
 [[nodiscard]] QString groupName();
 [[nodiscard]] QString serverUrlKey();
 [[nodiscard]] QString defaultServerUrl();
-};
+}

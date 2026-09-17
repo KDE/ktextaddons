@@ -16,4 +16,4 @@ namespace OllamaCommonModelUtils
 [[nodiscard]] QString description(const QString &modelName);
 [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QList<OllamaCommonModelAvailableInfo>
 extractAvailableModel(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &modelinfo);
-};
+}

@@ -50,7 +50,7 @@ struct LIBBERGAMOT_EXPORT SettingsInfo {
     int memoryByThread = 64;
     bool useLocalCache = false;
 };
-};
+}
 
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t);
 Q_DECLARE_TYPEINFO(BergamotEngineUtils::LanguageInstalled, Q_RELOCATABLE_TYPE);

@@ -9,7 +9,7 @@
 namespace McpProtocol
 {
 class McpProtocolPluginInterface;
-};
+}
 class McpClientPlugin : public McpProtocol::McpProtocolPlugin
 {
     Q_OBJECT

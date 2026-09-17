@@ -322,6 +322,6 @@ using JSONRPCMessage =
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString
 getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
-};
+}
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role &t);

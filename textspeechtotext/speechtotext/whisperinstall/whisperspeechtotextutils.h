@@ -69,4 +69,4 @@ SPEECHTOTEXTWHISPERINSTALL_EXPORT void saveComputeType(const QString &computeTyp
 /*! Where the model runs: "cpu" or "cuda". */
 [[nodiscard]] SPEECHTOTEXTWHISPERINSTALL_EXPORT QString loadDevice();
 SPEECHTOTEXTWHISPERINSTALL_EXPORT void saveDevice(const QString &device);
-};
+}

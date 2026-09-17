@@ -18,4 +18,4 @@ namespace OllamaCommonUtils
 [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QString deletePath();
 [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QString createPath();
 [[nodiscard]] TEXTAUTOGENERATEOLLAMACOMMON_EXPORT QString responsesPath();
-};
+}

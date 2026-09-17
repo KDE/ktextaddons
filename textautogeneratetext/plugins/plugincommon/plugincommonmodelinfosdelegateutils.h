@@ -18,4 +18,4 @@ namespace PluginCommonModelInfosDelegateUtils
 [[nodiscard]] TEXTAUTOGENERATEPLUGINCOMMON_EXPORT int categoryOffset();
 [[nodiscard]] TEXTAUTOGENERATEPLUGINCOMMON_EXPORT int categoryMarginText();
 [[nodiscard]] TEXTAUTOGENERATEPLUGINCOMMON_EXPORT int spacingBetweenTextAndCategories();
-};
+}

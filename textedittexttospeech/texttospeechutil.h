@@ -25,7 +25,7 @@ struct TextToSpeechSettings {
 [[nodiscard]] TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigGroupName();
 [[nodiscard]] TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSettings loadSettings();
 TEXTEDITTEXTTOSPEECH_TESTS_EXPORT void writeConfig(const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &settings);
-};
+}
 }
 TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &t);
 Q_DECLARE_METATYPE(TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings)
