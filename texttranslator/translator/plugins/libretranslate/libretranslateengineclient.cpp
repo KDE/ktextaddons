@@ -82,6 +82,8 @@ bool LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
             dlg->setApiKey(job->textData());
         }
     });
+    readJob->setKey(LibreTranslateEngineUtil::apiGroupName());
+    readJob->start();
     if (dlg->exec()) {
         const QString serverUrl = dlg->serverUrl();
         const bool requiredApiKey = dlg->serverRequiredApiKey();
