@@ -128,30 +128,6 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
     QMenu *popup = createStandardContextMenu();
     if (popup) {
         const bool emptyDocument = document()->isEmpty();
-        if (!isReadOnly()) {
-            const QList<QAction *> actionList = popup->actions();
-            enum {
-                UndoAct,
-                RedoAct,
-                CutAct,
-                CopyAct,
-                PasteAct,
-                ClearAct,
-                SelectAllAct,
-                NCountActs
-            };
-            QAction *separatorAction = nullptr;
-            if (const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1; idx < actionList.count()) {
-                separatorAction = actionList.at(idx);
-            }
-            if (separatorAction) {
-                QAction *clearAllAction = KStandardActions::clear(this, &RichTextBrowser::slotUndoableClear, popup);
-                if (emptyDocument) {
-                    clearAllAction->setEnabled(false);
-                }
-                popup->insertAction(separatorAction, clearAllAction);
-            }
-        }
         if (searchSupport()) {
             popup->addSeparator();
             QAction *findAction = KStandardActions::find(this, &RichTextBrowser::findText, popup);
@@ -247,16 +223,6 @@ void RichTextBrowser::addExtraMenuEntry([[maybe_unused]] QMenu *menu, [[maybe_un
 {
 }
 
-void RichTextBrowser::slotUndoableClear()
-{
-    QTextCursor cursor = textCursor();
-    cursor.beginEditBlock();
-    cursor.movePosition(QTextCursor::Start);
-    cursor.movePosition(QTextCursor::End, QTextCursor::KeepAnchor);
-    cursor.removeSelectedText();
-    cursor.endEditBlock();
-}
-
 void RichTextBrowser::updateReadOnlyColor()
 {
     if (isReadOnly()) {
@@ -265,23 +231,6 @@ void RichTextBrowser::updateReadOnlyColor()
         p.setColor(QPalette::Window, d->mReadOnlyBackgroundColor);
         setPalette(p);
     }
-}
-
-static void richTextDeleteWord(QTextCursor cursor, QTextCursor::MoveOperation op)
-{
-    cursor.clearSelection();
-    cursor.movePosition(op, QTextCursor::KeepAnchor);
-    cursor.removeSelectedText();
-}
-
-void RichTextBrowser::deleteWordBack()
-{
-    richTextDeleteWord(textCursor(), QTextCursor::PreviousWord);
-}
-
-void RichTextBrowser::deleteWordForward()
-{
-    richTextDeleteWord(textCursor(), QTextCursor::WordRight);
 }
 
 bool RichTextBrowser::event(QEvent *ev)
@@ -294,7 +243,7 @@ bool RichTextBrowser::event(QEvent *ev)
     } else if (ev->type() == QEvent::ApplicationPaletteChange) {
         regenerateColorScheme();
     }
-    return QTextEdit::event(ev);
+    return QTextBrowser::event(ev);
 }
 
 void RichTextBrowser::wheelEvent(QWheelEvent *event)
@@ -309,39 +258,13 @@ void RichTextBrowser::wheelEvent(QWheelEvent *event)
         event->accept();
         return;
     }
-    QTextEdit::wheelEvent(event);
+    QTextBrowser::wheelEvent(event);
 }
 
 bool RichTextBrowser::handleShortcut(QKeyEvent *event)
 {
     if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
         copy();
-        return true;
-    } else if (KStandardShortcut::paste().contains(key)) {
-        paste();
-        return true;
-    } else if (KStandardShortcut::cut().contains(key)) {
-        cut();
-        return true;
-    } else if (KStandardShortcut::undo().contains(key)) {
-        if (!isReadOnly()) {
-            undo();
-        }
-        return true;
-    } else if (KStandardShortcut::redo().contains(key)) {
-        if (!isReadOnly()) {
-            redo();
-        }
-        return true;
-    } else if (KStandardShortcut::deleteWordBack().contains(key)) {
-        if (!isReadOnly()) {
-            deleteWordBack();
-        }
-        return true;
-    } else if (KStandardShortcut::deleteWordForward().contains(key)) {
-        if (!isReadOnly()) {
-            deleteWordForward();
-        }
         return true;
     } else if (KStandardShortcut::backwardWord().contains(key)) {
         QTextCursor cursor = textCursor();
@@ -412,25 +335,6 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
     } else if (searchSupport() && KStandardShortcut::find().contains(key)) {
         Q_EMIT findText();
         return true;
-    } else if (KStandardShortcut::pasteSelection().contains(key)) {
-        if (!isReadOnly()) {
-            if (const QString text = QApplication::clipboard()->text(QClipboard::Selection); !text.isEmpty()) {
-                insertPlainText(text); // TODO: check if this is html? (MiB)
-            }
-            return true;
-        }
-    } else if (event == QKeySequence::DeleteEndOfLine) {
-        if (!isReadOnly()) {
-            QTextCursor cursor = textCursor();
-            if (const QTextBlock block = cursor.block(); cursor.position() == block.position() + block.length() - 2) {
-                cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
-            } else {
-                cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-            }
-            cursor.removeSelectedText();
-            setTextCursor(cursor);
-            return true;
-        }
     }
 
     return false;
@@ -439,18 +343,6 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
 bool RichTextBrowser::overrideShortcut(QKeyEvent *event)
 {
     if (const int key = event->key() | event->modifiers(); KStandardShortcut::copy().contains(key)) {
-        return true;
-    } else if (KStandardShortcut::paste().contains(key)) {
-        return true;
-    } else if (KStandardShortcut::cut().contains(key)) {
-        return true;
-    } else if (KStandardShortcut::undo().contains(key)) {
-        return true;
-    } else if (KStandardShortcut::redo().contains(key)) {
-        return true;
-    } else if (KStandardShortcut::deleteWordBack().contains(key)) {
-        return true;
-    } else if (KStandardShortcut::deleteWordForward().contains(key)) {
         return true;
     } else if (KStandardShortcut::backwardWord().contains(key)) {
         return true;
@@ -468,15 +360,11 @@ bool RichTextBrowser::overrideShortcut(QKeyEvent *event)
         return true;
     } else if (KStandardShortcut::endOfLine().contains(key)) {
         return true;
-    } else if (KStandardShortcut::pasteSelection().contains(key)) {
-        return true;
     } else if (searchSupport() && KStandardShortcut::find().contains(key)) {
         return true;
     } else if (searchSupport() && KStandardShortcut::findNext().contains(key)) {
         return true;
     } else if (event->matches(QKeySequence::SelectAll)) { // currently missing in QTextEdit
-        return true;
-    } else if (event == QKeySequence::DeleteEndOfLine) {
         return true;
     }
     return false;
@@ -485,14 +373,7 @@ bool RichTextBrowser::overrideShortcut(QKeyEvent *event)
 void RichTextBrowser::keyPressEvent(QKeyEvent *event)
 {
     const bool isControlClicked = event->modifiers() & Qt::ControlModifier;
-    const bool isShiftClicked = event->modifiers() & Qt::ShiftModifier;
     if (handleShortcut(event)) {
-        event->accept();
-    } else if (event->key() == Qt::Key_Up && isControlClicked && isShiftClicked) {
-        moveLineUpDown(true);
-        event->accept();
-    } else if (event->key() == Qt::Key_Down && isControlClicked && isShiftClicked) {
-        moveLineUpDown(false);
         event->accept();
     } else if (event->key() == Qt::Key_Up && isControlClicked) {
         moveCursorBeginUpDown(true);
@@ -501,7 +382,7 @@ void RichTextBrowser::keyPressEvent(QKeyEvent *event)
         moveCursorBeginUpDown(false);
         event->accept();
     } else {
-        QTextEdit::keyPressEvent(event);
+        QTextBrowser::keyPressEvent(event);
     }
 }
 
@@ -531,58 +412,6 @@ void RichTextBrowser::moveCursorBeginUpDown(bool moveUp)
     move.movePosition(QTextCursor::StartOfBlock);
     move.movePosition(moveUp ? QTextCursor::PreviousBlock : QTextCursor::NextBlock);
     move.endEditBlock();
-    setTextCursor(move);
-}
-
-void RichTextBrowser::moveLineUpDown(bool moveUp)
-{
-    const QTextCursor cursor = textCursor();
-    QTextCursor move = cursor;
-    move.beginEditBlock();
-
-    const bool hasSelection = cursor.hasSelection();
-
-    if (hasSelection) {
-        move.setPosition(cursor.selectionStart());
-        move.movePosition(QTextCursor::StartOfBlock);
-        move.setPosition(cursor.selectionEnd(), QTextCursor::KeepAnchor);
-        move.movePosition(move.atBlockStart() ? QTextCursor::Left : QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-    } else {
-        move.movePosition(QTextCursor::StartOfBlock);
-        move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-    }
-    const QString text = move.selectedText();
-
-    move.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
-    move.removeSelectedText();
-
-    if (moveUp) {
-        move.movePosition(QTextCursor::PreviousBlock);
-        move.insertBlock();
-        move.movePosition(QTextCursor::Left);
-    } else {
-        move.movePosition(QTextCursor::EndOfBlock);
-        if (move.atBlockStart()) { // empty block
-            move.movePosition(QTextCursor::NextBlock);
-            move.insertBlock();
-            move.movePosition(QTextCursor::Left);
-        } else {
-            move.insertBlock();
-        }
-    }
-
-    const int start = move.position();
-    move.clearSelection();
-    move.insertText(text);
-    if (hasSelection) {
-        const int end = move.position();
-        move.setPosition(end);
-        move.setPosition(start, QTextCursor::KeepAnchor);
-    } else {
-        move.setPosition(start);
-    }
-    move.endEditBlock();
-
     setTextCursor(move);
 }
 

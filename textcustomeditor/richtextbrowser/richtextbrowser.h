@@ -93,13 +93,8 @@ Q_SIGNALS:
     void findText();
 
 private:
-    TEXTCUSTOMEDITOR_NO_EXPORT void slotUndoableClear();
-
     TEXTCUSTOMEDITOR_NO_EXPORT bool handleShortcut(QKeyEvent *event);
     TEXTCUSTOMEDITOR_NO_EXPORT bool overrideShortcut(QKeyEvent *event);
-    TEXTCUSTOMEDITOR_NO_EXPORT void deleteWordBack();
-    TEXTCUSTOMEDITOR_NO_EXPORT void deleteWordForward();
-    TEXTCUSTOMEDITOR_NO_EXPORT void moveLineUpDown(bool moveUp);
     TEXTCUSTOMEDITOR_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
     TEXTCUSTOMEDITOR_NO_EXPORT void regenerateColorScheme();
     TEXTCUSTOMEDITOR_NO_EXPORT void updateReadOnlyColor();
