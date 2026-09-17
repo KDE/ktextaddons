@@ -26,11 +26,6 @@ int AutoCorrectionLanguageModel::rowCount(const QModelIndex &parent) const
     return mLocalInfos.count();
 }
 
-QString AutoCorrectionLanguageModel::language(int index) const
-{
-    return mLocalInfos.at(index).localeCode;
-}
-
 static bool stripCountryCode(QString *languageCode)
 {
     if (const int idx = languageCode->indexOf(u'_'); idx != -1) {

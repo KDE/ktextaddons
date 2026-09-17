@@ -23,11 +23,6 @@ AutoCorrectionLanguage::AutoCorrectionLanguage(QWidget *parent)
     setModel(sortFilterModel);
 }
 
-QString AutoCorrectionLanguage::language(int index) const
-{
-    return mAutoCorrectionLanguageModel->language(index);
-}
-
 AutoCorrectionLanguage::~AutoCorrectionLanguage() = default;
 
 QString AutoCorrectionLanguage::language() const

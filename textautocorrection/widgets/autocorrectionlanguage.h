@@ -31,10 +31,6 @@ public:
     ~AutoCorrectionLanguage() override;
 
     /*!
-     */
-    [[nodiscard]] QString language(int index) const;
-
-    /*!
      * \brief language
      * Returns specified language
      */
