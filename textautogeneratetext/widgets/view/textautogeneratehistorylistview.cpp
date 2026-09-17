@@ -82,6 +82,7 @@ void TextAutoGenerateHistoryListView::slotCurrentChatIdChanged()
             const auto roomModelIndex = mHistoryProxyModel->index(roomIdx, 0, section);
             if (const auto identifier = roomModelIndex.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); identifier == chatId) {
                 selectionModel()->setCurrentIndex(roomModelIndex, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
+                return;
             }
         }
     }
