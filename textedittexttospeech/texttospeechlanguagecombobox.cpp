@@ -31,13 +31,11 @@ void TextToSpeechLanguageComboBox::updateAvailableLocales(const QVector<QLocale>
     for (const QLocale &locale : locales) {
         const QVariant localeVariant(locale);
         addItem(QLocale::languageToString(locale.language()), localeVariant);
-        if (locale.name() == current.name()) {
-            setCurrentIndex(count() - 1);
-        }
     }
     setSizeAdjustPolicy(QComboBox::AdjustToContents);
     // Sort it after loading list.
     model()->sort(0, Qt::AscendingOrder);
+    selectLocaleName(current.name());
 }
 
 #include "moc_texttospeechlanguagecombobox.cpp"
