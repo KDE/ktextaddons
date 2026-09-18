@@ -69,8 +69,7 @@ void AutoCorrectionLanguageModel::fillModel()
             // See: QTBUG-51323
             QString languageName = nativeName.isEmpty() ? QLocale::languageToString(lang.language()) : nativeName;
 #endif
-            QString languageName = QLocale::languageToString(lang.language());
-            languageName = languageName.toLower();
+            const QString languageName = QLocale::languageToString(lang.language()).toLower();
             if (!insertedLanguages.contains(languageName)) {
                 LocaleInfo info;
                 info.localeCode = languageCode;
