@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-09-14 17:35+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -556,7 +556,7 @@ msgstr "Server necessita Clave de Api"
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:83
+#: translator/plugins/google/googleengineplugin.cpp:86
 #, kde-format
 msgid "Invalid answer."
 msgstr "Responsa invalide."
@@ -667,7 +667,7 @@ msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Error in salveguardar file"
 
-#: translator/widgets/translatordebugdialog.cpp:91
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgid "All Files (*)"
 msgstr "Omne files (*)"
@@ -677,70 +677,70 @@ msgstr "Omne files (*)"
 msgid "Translate…"
 msgstr "Traduce…"
 
-#: translator/widgets/translatorwidget.cpp:211
+#: translator/widgets/translatorwidget.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Claude"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:213
 #, kde-format
 msgid "Close"
 msgstr "Claude"
 
-#: translator/widgets/translatorwidget.cpp:220
+#: translator/widgets/translatorwidget.cpp:219
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Ex:"
 
-#: translator/widgets/translatorwidget.cpp:228
+#: translator/widgets/translatorwidget.cpp:227
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "A:"
 
-#: translator/widgets/translatorwidget.cpp:241
+#: translator/widgets/translatorwidget.cpp:240
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Inverte"
 
-#: translator/widgets/translatorwidget.cpp:246
+#: translator/widgets/translatorwidget.cpp:245
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Netta"
 
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgid "Clear"
 msgstr "Netta"
 
-#: translator/widgets/translatorwidget.cpp:254
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Traduce"
 
-#: translator/widgets/translatorwidget.cpp:257
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Translate"
 msgstr "Traduce"
 
-#: translator/widgets/translatorwidget.cpp:264
+#: translator/widgets/translatorwidget.cpp:263
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Cribra (debug)"
 
-#: translator/widgets/translatorwidget.cpp:282
+#: translator/widgets/translatorwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Configura"
 
-#: translator/widgets/translatorwidget.cpp:361
+#: translator/widgets/translatorwidget.cpp:360
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -750,24 +750,24 @@ msgstr ""
 "Trahe texto que tu vole traducer. (Tu es attente que texto essera inviate al "
 "servitor externe)."
 
-#: translator/widgets/translatorwidget.cpp:363
+#: translator/widgets/translatorwidget.cpp:362
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Trahe texto que tu vole traducer"
 
-#: translator/widgets/translatorwidget.cpp:413
+#: translator/widgets/translatorwidget.cpp:412
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Il nonrelevava alcun connexion de rete, nos non pote traducer texto."
 
-#: translator/widgets/translatorwidget.cpp:413
+#: translator/widgets/translatorwidget.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Necun rete"
 
-#: translator/widgets/translatorwidget.cpp:450
+#: translator/widgets/translatorwidget.cpp:449
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

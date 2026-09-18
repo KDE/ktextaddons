@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-09-13 09:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -29,25 +29,30 @@ msgstr "Kokoro no està instal·lat. Instal·leu-lo abans."
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr "El dorsal de Kokoro s'ha parat inesperadament."
 
-#: kokoro/texttospeechkokoro.cpp:152
+#: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr "No s'ha pogut iniciar el dorsal de Kokoro."
 
-#: kokoro/texttospeechkokoro.cpp:245
+#: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr "Kokoro no ha pogut sintetitzar el text: %1"
 
-#: kokoro/texttospeechkokoro.cpp:260
+#: kokoro/texttospeechkokoro.cpp:272
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr "Kokoro ha informat d'un format d'àudio inutilitzable."
 
-#: kokoro/texttospeechkokoro.cpp:304
+#: kokoro/texttospeechkokoro.cpp:329
 #, kde-format
 msgid "Unable to open the audio device."
 msgstr "No s'ha pogut obrir el dispositiu d'àudio."
+
+#: kokoro/texttospeechkokoro.cpp:344
+#, kde-format
+msgid "The audio device stopped working."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format

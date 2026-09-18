@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-14 18:43+0300\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"PO-Revision-Date: 2026-09-17 19:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -27,25 +27,30 @@ msgstr "Kokoro kurulu değil. Lütfen önce onu kurun."
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr "Kokoro arka ucu beklenmedik bir şekilde çalışmayı durdurdu."
 
-#: kokoro/texttospeechkokoro.cpp:152
+#: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr "Kokoro arka ucu başlatılamıyor."
 
-#: kokoro/texttospeechkokoro.cpp:245
+#: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr "Kokoro, metni sentezleyemedi: %1"
 
-#: kokoro/texttospeechkokoro.cpp:260
+#: kokoro/texttospeechkokoro.cpp:272
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr "Kokoro, kullanılamayan bir ses biçimi olduğunu bildirdi."
 
-#: kokoro/texttospeechkokoro.cpp:304
+#: kokoro/texttospeechkokoro.cpp:329
 #, kde-format
 msgid "Unable to open the audio device."
 msgstr "Ses aygıtı açılamıyor."
+
+#: kokoro/texttospeechkokoro.cpp:344
+#, kde-format
+msgid "The audio device stopped working."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -109,7 +114,7 @@ msgstr ""
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "Kurulacak bir şey yok."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
 #, kde-format

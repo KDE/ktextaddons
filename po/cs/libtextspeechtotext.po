@@ -198,11 +198,10 @@ msgid "Unable to download the %1 model: %2"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "Nainstalováno"
+msgstr "Nainstalovat"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format

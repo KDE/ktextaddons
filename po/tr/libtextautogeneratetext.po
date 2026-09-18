@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-08-24 20:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3088,12 +3088,12 @@ msgstr "Dosya Açılırken Hata"
 msgid "Metadata Info"
 msgstr "Üst veri bilgisi"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
 msgstr "Metin Eklentileri"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Araç Eklentileri"
@@ -3184,26 +3184,24 @@ msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Bu örneği kaldırmak istiyor musunuz (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Ara…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -3227,14 +3225,14 @@ msgid "Ask to AI"
 msgstr "Yapay Zekâya Sor"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Değişiklik Yap…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:169
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3256,7 +3254,7 @@ msgstr "Kaldır"
 msgid "Ask AI…"
 msgstr "Yapay Zekâya Sor…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:70
+#: widgets/menu/textautogeneratemenuwidget.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
@@ -3313,6 +3311,20 @@ msgstr "İstem Ekle…"
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, kde-format
 msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "İstemi Kaldır"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
+msgid "Do you want to remove this prompt (%1)?"
+msgstr "Bu modeli kaldırmak istiyor musunuz (%1)?"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "İstemi Kaldır"
 
@@ -3520,25 +3532,25 @@ msgstr "Görünüme Sığdır"
 msgid "Save Image"
 msgstr "Görseli Kaydet"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Seçimi Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:101
+#: widgets/view/textautogeneratebaselistview.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "URL’yi Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:113
+#: widgets/view/textautogeneratebaselistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -3550,54 +3562,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Metin ekle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:118
+#: widgets/view/textautogeneratehistorylistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Yeni Sohbet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Çoğalt…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Sık Kullanılanlardan Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Sık Kullanılan Yap"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arşivle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:173
+#: widgets/view/textautogeneratehistorylistview.cpp:174
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Tartışmayı Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:253
+#: widgets/view/textautogeneratehistorylistview.cpp:254
 #, kde-format
 msgid "No Archive Found."
 msgstr "Bulunan arşiv yok."

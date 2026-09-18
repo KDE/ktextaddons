@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-07-30 20:26+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -34,49 +34,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "Ordezkapen %1 egin da"
 msgstr[1] "%1 ordezkapen egin dira"
 
-#: plaintexteditor/plaintexteditor.cpp:171
+#: plaintexteditor/plaintexteditor.cpp:174
 #: richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Ortografia egiaztatu…"
 
-#: plaintexteditor/plaintexteditor.cpp:174
+#: plaintexteditor/plaintexteditor.cpp:177
 #: richtexteditor/richtexteditor.cpp:240
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Ortografia-egiaztapen automatikoa"
 
-#: plaintexteditor/plaintexteditor.cpp:179
+#: plaintexteditor/plaintexteditor.cpp:182
 #: richtexteditor/richtexteditor.cpp:245
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Ortografia egiaztatzeko hizkuntza"
 
-#: plaintexteditor/plaintexteditor.cpp:205
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:277
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:141
+#: richtexteditor/richtexteditor.cpp:279
 #, kde-format
 msgid "Speak Text"
 msgstr "Testua irakurri"
 
-#: plaintexteditor/plaintexteditor.cpp:381
-#: richtexteditor/richtexteditor.cpp:506
+#: plaintexteditor/plaintexteditor.cpp:385
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ez dago ortografia egiaztatzeko ezer."
 
-#: plaintexteditor/plaintexteditor.cpp:386
-#: richtexteditor/richtexteditor.cpp:524
+#: plaintexteditor/plaintexteditor.cpp:390
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ez dago ortografia egiaztatzeko bizkarraldekorik."
 
-#: richtexteditor/richtexteditor.cpp:269
+#: richtexteditor/richtexteditor.cpp:270
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Tabulazioak baimendu"
 
-#: richtexteditor/richtexteditor.cpp:516
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -85,30 +85,30 @@ msgstr ""
 "Ez dago ortografia egiaztatzeko bizkarraldekorik. Hala ere, e-posta bidali "
 "nahi duzu?"
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Bidali"
 
-#: richtexteditor/richtexteditor.cpp:539
+#: richtexteditor/richtexteditor.cpp:544
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Saltatu"
 
-#: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Itxi"
 
-#: widgets/texteditfindbarbase.cpp:40 widgets/textgotolinewidget.cpp:43
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "Itxi"
 
-#: widgets/texteditfindbarbase.cpp:141
+#: widgets/texteditfindbarbase.cpp:140
 #, kde-format
 msgid ""
 "End of message reached.\n"
@@ -117,87 +117,87 @@ msgstr ""
 "Mezuaren bukaerara heldu da.\n"
 "'%1' testua ez da aurkitu."
 
-#: widgets/textfindreplacewidget.cpp:26
+#: widgets/textfindreplacewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Ordeztu"
 
-#: widgets/textfindreplacewidget.cpp:27
+#: widgets/textfindreplacewidget.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Dena ordeztu"
 
-#: widgets/textfindreplacewidget.cpp:30
+#: widgets/textfindreplacewidget.cpp:32
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
 msgstr "Ordeztu:"
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:70
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Aurrekoa"
 
-#: widgets/textfindreplacewidget.cpp:68
+#: widgets/textfindreplacewidget.cpp:71
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Hurrengoa"
 
-#: widgets/textfindreplacewidget.cpp:74
+#: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "Aurk&itu:"
 
-#: widgets/textfindreplacewidget.cpp:78
+#: widgets/textfindreplacewidget.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Bilatu beharreko testua"
 
-#: widgets/textfindreplacewidget.cpp:84
+#: widgets/textfindreplacewidget.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Hurrengo bat-etortzera joan"
 
-#: widgets/textfindreplacewidget.cpp:89
+#: widgets/textfindreplacewidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Aurreko bat-etortzera joan"
 
-#: widgets/textfindreplacewidget.cpp:95
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Options"
 msgstr "Aukerak"
 
-#: widgets/textfindreplacewidget.cpp:96
+#: widgets/textfindreplacewidget.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Bilaketaren jokabidea aldatu"
 
-#: widgets/textfindreplacewidget.cpp:99
+#: widgets/textfindreplacewidget.cpp:103
 #, kde-format
 msgid "Case sensitive"
 msgstr "Maiuskulak bereizi"
 
-#: widgets/textfindreplacewidget.cpp:102
+#: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Whole word"
 msgstr "Hitz osoa"
 
-#: widgets/textfindreplacewidget.cpp:105
+#: widgets/textfindreplacewidget.cpp:109
 #, kde-format
 msgid "Regular Expression"
 msgstr "Adierazpen erregularra"
 
-#: widgets/textfindreplacewidget.cpp:108
+#: widgets/textfindreplacewidget.cpp:112
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "Diakritikoak eta azentuak errespetatu"

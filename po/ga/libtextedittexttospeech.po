@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -28,24 +28,29 @@ msgstr ""
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr ""
 
-#: kokoro/texttospeechkokoro.cpp:152
+#: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr ""
 
-#: kokoro/texttospeechkokoro.cpp:245
+#: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr ""
 
-#: kokoro/texttospeechkokoro.cpp:260
+#: kokoro/texttospeechkokoro.cpp:272
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr ""
 
-#: kokoro/texttospeechkokoro.cpp:304
+#: kokoro/texttospeechkokoro.cpp:329
 #, kde-format
 msgid "Unable to open the audio device."
+msgstr ""
+
+#: kokoro/texttospeechkokoro.cpp:344
+#, kde-format
+msgid "The audio device stopped working."
 msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51

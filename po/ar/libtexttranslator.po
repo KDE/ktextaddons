@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:44+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-08-29 17:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -556,7 +556,7 @@ msgstr "الخادم يحتاج إلى مفتاح API"
 msgid "Google"
 msgstr "غوغل"
 
-#: translator/plugins/google/googleengineplugin.cpp:83
+#: translator/plugins/google/googleengineplugin.cpp:86
 #, kde-format
 msgid "Invalid answer."
 msgstr "إجابة غير صالحة."
@@ -667,7 +667,7 @@ msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "خطأ في حفظ الملفّ"
 
-#: translator/widgets/translatordebugdialog.cpp:91
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgid "All Files (*)"
 msgstr "كلّ الملفّات (*)"
@@ -677,70 +677,70 @@ msgstr "كلّ الملفّات (*)"
 msgid "Translate…"
 msgstr "ترجم…"
 
-#: translator/widgets/translatorwidget.cpp:211
+#: translator/widgets/translatorwidget.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "أغلق"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:213
 #, kde-format
 msgid "Close"
 msgstr "أغلق"
 
-#: translator/widgets/translatorwidget.cpp:220
+#: translator/widgets/translatorwidget.cpp:219
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "من:"
 
-#: translator/widgets/translatorwidget.cpp:228
+#: translator/widgets/translatorwidget.cpp:227
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "إلى:"
 
-#: translator/widgets/translatorwidget.cpp:241
+#: translator/widgets/translatorwidget.cpp:240
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "اعكس"
 
-#: translator/widgets/translatorwidget.cpp:246
+#: translator/widgets/translatorwidget.cpp:245
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "امحُ"
 
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgid "Clear"
 msgstr "امحُ"
 
-#: translator/widgets/translatorwidget.cpp:254
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "ترجم"
 
-#: translator/widgets/translatorwidget.cpp:257
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Translate"
 msgstr "ترجم"
 
-#: translator/widgets/translatorwidget.cpp:264
+#: translator/widgets/translatorwidget.cpp:263
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "نقّح"
 
-#: translator/widgets/translatorwidget.cpp:282
+#: translator/widgets/translatorwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "اضبط"
 
-#: translator/widgets/translatorwidget.cpp:361
+#: translator/widgets/translatorwidget.cpp:360
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -748,24 +748,24 @@ msgid ""
 "external Server)."
 msgstr "اسحب النّصّ الذي تريد ترجمته هنا. (انتبه سيرسل النص إلى خادم خارجي)"
 
-#: translator/widgets/translatorwidget.cpp:363
+#: translator/widgets/translatorwidget.cpp:362
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "اسحب النّصّ الذي تريد ترجمته هنا."
 
-#: translator/widgets/translatorwidget.cpp:413
+#: translator/widgets/translatorwidget.cpp:412
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "لم يُكتشف اتّصال بالشّبكة، لا يمكن ترجمة النّصّ."
 
-#: translator/widgets/translatorwidget.cpp:413
+#: translator/widgets/translatorwidget.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "لا شبكة"
 
-#: translator/widgets/translatorwidget.cpp:450
+#: translator/widgets/translatorwidget.cpp:449
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

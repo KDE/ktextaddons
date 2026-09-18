@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-14 09:40+0200\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"PO-Revision-Date: 2026-09-17 15:00+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: kokoro/texttospeechkokoro.cpp:124
 #, kde-format
@@ -27,25 +27,30 @@ msgstr "Kokoro is niet geïnstalleerd. Installeer het eerst."
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr "De Kokoro-backend is onverwacht gestopt."
 
-#: kokoro/texttospeechkokoro.cpp:152
+#: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr "Opstarten van de Kokoro-backend lukt niet."
 
-#: kokoro/texttospeechkokoro.cpp:245
+#: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr "Kokoro kon de tekst niet synthetiseren: %1"
 
-#: kokoro/texttospeechkokoro.cpp:260
+#: kokoro/texttospeechkokoro.cpp:272
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr "Kokoro meldde een onbruikbaar audioformaat."
 
-#: kokoro/texttospeechkokoro.cpp:304
+#: kokoro/texttospeechkokoro.cpp:329
 #, kde-format
 msgid "Unable to open the audio device."
 msgstr "Kan het audioapparaat niet openen."
+
+#: kokoro/texttospeechkokoro.cpp:344
+#, kde-format
+msgid "The audio device stopped working."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -108,7 +113,7 @@ msgstr "espeak-ng ontbreekt. Installeer het via uw pakketbeheerder."
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "Niets te installeren."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
 #, kde-format

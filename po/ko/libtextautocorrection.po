@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2024-08-19 23:31+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -44,73 +44,73 @@ msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail/Calligra 자동 고침"
 
-#: widgets/autocorrectionwidget.cpp:438
+#: widgets/autocorrectionwidget.cpp:442
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"바꿀 문자열\"이 \"찾을 문자열\"과 같습니다."
 
-#: widgets/autocorrectionwidget.cpp:438
+#: widgets/autocorrectionwidget.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "자동 고침 항목 추가"
 
-#: widgets/autocorrectionwidget.cpp:520
+#: widgets/autocorrectionwidget.cpp:525
 #, kde-format
 msgid "&Modify"
 msgstr "수정(&M)"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:523 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:528 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "추가(&A)"
 
-#: widgets/autocorrectionwidget.cpp:630
+#: widgets/autocorrectionwidget.cpp:635
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice 자동 고침 가져오기"
 
-#: widgets/autocorrectionwidget.cpp:631
+#: widgets/autocorrectionwidget.cpp:636
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice 자동 고침 파일 (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:634
+#: widgets/autocorrectionwidget.cpp:639
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "KMail 자동 고침 가져오기"
 
-#: widgets/autocorrectionwidget.cpp:635
+#: widgets/autocorrectionwidget.cpp:640
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail 자동 고침 파일 (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:666
+#: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "자동 고침 파일 가져오기"
 
-#: widgets/autocorrectionwidget.cpp:690
+#: widgets/autocorrectionwidget.cpp:695
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "언어가 변경되었습니다. 이전 언어의 설정을 저장하시겠습니까?"
 
-#: widgets/autocorrectionwidget.cpp:691
+#: widgets/autocorrectionwidget.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "설정 저장"
 
-#: widgets/autocorrectionwidget.cpp:726
+#: widgets/autocorrectionwidget.cpp:731
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "설정을 내보내기 전에 저장하십시오."
 
-#: widgets/autocorrectionwidget.cpp:726 widgets/autocorrectionwidget.cpp:729
+#: widgets/autocorrectionwidget.cpp:731 widgets/autocorrectionwidget.cpp:734
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

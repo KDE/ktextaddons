@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-08-24 11:02+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -286,27 +286,27 @@ msgstr "(Mostra le novità)"
 msgid "What's new in %2. %1"
 msgstr "Cosa c'è di nuovo in %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:49 whatsnewng/whatsnewngwidget.cpp:51
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Tutte le versioni"
 
-#: whatsnew/whatsnewwidget.cpp:96
+#: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Modifiche importanti dalla versione precedente:"
 
-#: whatsnew/whatsnewwidget.cpp:101
+#: whatsnew/whatsnewwidget.cpp:100
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Alcune delle nuove funzionalità in questo rilascio includono:"
 
-#: whatsnew/whatsnewwidget.cpp:106
+#: whatsnew/whatsnewwidget.cpp:105
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Alcune correzioni di bug:"
 
-#: whatsnew/whatsnewwidget.cpp:147
+#: whatsnew/whatsnewwidget.cpp:146
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Versione %1 </i></h1><hr/><br>"

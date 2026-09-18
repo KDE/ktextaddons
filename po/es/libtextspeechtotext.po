@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-17 00:08+0100\n"
+"PO-Revision-Date: 2026-09-17 11:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -162,7 +162,7 @@ msgstr "Whisper"
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:100
 #, kde-format
 msgid "The whisper backend stopped unexpectedly."
-msgstr ""
+msgstr "El motor Whisper ha dejado de funcionar de forma no esperada."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
@@ -179,29 +179,28 @@ msgstr "Whisper no se puede usar. Vuelva a instalarlo."
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:117
 #, kde-format
 msgid "Downloading the %1 model…"
-msgstr ""
+msgstr "Descargando el modelo %1…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:120
 #, kde-format
 msgid "The %1 model is already downloaded."
-msgstr ""
+msgstr "El modelo %1 ya está descargado."
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:122
 #, kde-format
 msgid "The %1 model is downloaded."
-msgstr ""
+msgstr "El modelo %1 está descargado."
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
-msgstr ""
+msgstr "No se ha podido descargar el modelo %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "Obsoleto"
+msgstr "Instalar"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
@@ -210,17 +209,16 @@ msgid "Install Whisper Package"
 msgstr "Instalar el paquete Whisper"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "Descargar"
+msgstr "Descargar modelo"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Model used for dictation:"
-msgstr ""
+msgstr "Modelo usado para el dictado:"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
@@ -230,17 +228,17 @@ msgstr "No hay nada que instalar."
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr ""
+msgstr "Creando el entorno virtual de Python…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Python virtual environment created."
-msgstr ""
+msgstr "Entorno virtual de Python creado."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:112
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr ""
+msgstr "No se ha podido crear el entorno virtual de Python."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
@@ -261,12 +259,12 @@ msgstr "La instalación ha fallado."
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 de %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
 msgid "Unable to download the %1 model."
-msgstr ""
+msgstr "No se ha podido descargar el modelo %1."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:187
 #, kde-format
@@ -274,6 +272,9 @@ msgid ""
 "The %1 model is not on disk: it is downloaded the first time it is used, "
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
+"El modelo %1 no se encuentra en el disco: se descargará la primera vez que "
+"se use, lo que hará que ese dictado dure más tiempo. El botón «Descargar "
+"modelo» realiza esta acción ahora."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
@@ -281,37 +282,37 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr ""
+msgstr "%1 (%2, descargado)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes every language whisper knows."
-msgstr ""
+msgstr "Transcribe cualquier idioma que Whisper conozca."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes english only, but about twice as fast."
-msgstr ""
+msgstr "Transcribe solo inglés, pero es aproximadamente el doble de rápido."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Takes %1 on disk, downloaded the first time it is used."
-msgstr ""
+msgstr "Ocupa %1 en el disco. Se descargará la primera vez que se use."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Used when no model was chosen."
-msgstr ""
+msgstr "Se usa cuando no se elige ningún modelo."
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
@@ -320,10 +321,9 @@ msgid "Configure Speech To Text"
 msgstr "Configurar habla a texto"
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Whisper is not usable. Please reinstall it."
+#, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
-msgstr "Whisper no se puede usar. Vuelva a instalarlo."
+msgstr "La instalación de Whisper está dañada. Vuelva a instalarlo."
 
 #: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format

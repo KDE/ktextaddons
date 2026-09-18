@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-08-06 18:07+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -45,73 +45,73 @@ msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Automatické opravy KMail/Calligra"
 
-#: widgets/autocorrectionwidget.cpp:438
+#: widgets/autocorrectionwidget.cpp:442
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Řetězec \"Nahradit\" je stejný jako řetězec \"Najít\"."
 
-#: widgets/autocorrectionwidget.cpp:438
+#: widgets/autocorrectionwidget.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Přidat záznam pro automatickou opravu"
 
-#: widgets/autocorrectionwidget.cpp:520
+#: widgets/autocorrectionwidget.cpp:525
 #, kde-format
 msgid "&Modify"
 msgstr "Z&měnit"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:523 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:528 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "Přid&at"
 
-#: widgets/autocorrectionwidget.cpp:630
+#: widgets/autocorrectionwidget.cpp:635
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Importovat automatické opravy LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:631
+#: widgets/autocorrectionwidget.cpp:636
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "Soubor automatických oprav LibreOffice (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:634
+#: widgets/autocorrectionwidget.cpp:639
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Importovat automatické opravy KMail"
 
-#: widgets/autocorrectionwidget.cpp:635
+#: widgets/autocorrectionwidget.cpp:640
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "Soubor automatických oprav KMail (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:666
+#: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importovat soubor automatických oprav"
 
-#: widgets/autocorrectionwidget.cpp:690
+#: widgets/autocorrectionwidget.cpp:695
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "Došlo ke změně jazyka. Chcete uložit nastavení pro předchozí jazyk?"
 
-#: widgets/autocorrectionwidget.cpp:691
+#: widgets/autocorrectionwidget.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Uložit nastavení"
 
-#: widgets/autocorrectionwidget.cpp:726
+#: widgets/autocorrectionwidget.cpp:731
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Před uložením nastavení prosím nejdříve uložte změny."
 
-#: widgets/autocorrectionwidget.cpp:726 widgets/autocorrectionwidget.cpp:729
+#: widgets/autocorrectionwidget.cpp:731 widgets/autocorrectionwidget.cpp:734
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

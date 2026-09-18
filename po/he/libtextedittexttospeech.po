@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-13 11:44+0300\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"PO-Revision-Date: 2026-09-17 08:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -28,25 +28,30 @@ msgstr "קוקורו (Kokoro) לא מותקן. נא להתקין אותו תחי
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr "מנגנון קוקורו נעצר במפתיע."
 
-#: kokoro/texttospeechkokoro.cpp:152
+#: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr "לא ניתן להפעיל את מנגנון קוקורו."
 
-#: kokoro/texttospeechkokoro.cpp:245
+#: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr "קוקורו לא הצליח לעבד את הטקסט: %1"
 
-#: kokoro/texttospeechkokoro.cpp:260
+#: kokoro/texttospeechkokoro.cpp:272
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr "קוקורו דיווח על תסדיר שמע בלתי שמיש."
 
-#: kokoro/texttospeechkokoro.cpp:304
+#: kokoro/texttospeechkokoro.cpp:329
 #, kde-format
 msgid "Unable to open the audio device."
 msgstr "לא ניתן לפתוח את התקן השמע."
+
+#: kokoro/texttospeechkokoro.cpp:344
+#, kde-format
+msgid "The audio device stopped working."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -82,10 +87,9 @@ msgid "Install Kokoro Package"
 msgstr "התקנת חבילת קוקורו (Kokoro)"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Select Voice(s)"
+#, kde-format
 msgid "Select Voice(s):"
-msgstr "בחירת קולות"
+msgstr "בחירת קולות:"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:50
 #, kde-format
@@ -110,7 +114,7 @@ msgstr "espeak-ng חסר. נא להתקין אותו עם מנהל החבילו�
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "אין מה להתקין."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
 #, kde-format
@@ -223,9 +227,7 @@ msgid "Test"
 msgstr "בדיקה"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "הגדרה…"
 

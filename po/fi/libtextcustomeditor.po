@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2024-10-16 20:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -25,49 +25,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "Tehtiin %1 korvaus"
 msgstr[1] "Tehtiin %1 korvausta"
 
-#: plaintexteditor/plaintexteditor.cpp:171
+#: plaintexteditor/plaintexteditor.cpp:174
 #: richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Tarkista oikeinkirjoitus…"
 
-#: plaintexteditor/plaintexteditor.cpp:174
+#: plaintexteditor/plaintexteditor.cpp:177
 #: richtexteditor/richtexteditor.cpp:240
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automaattinen oikeinkirjoituksen tarkistus"
 
-#: plaintexteditor/plaintexteditor.cpp:179
+#: plaintexteditor/plaintexteditor.cpp:182
 #: richtexteditor/richtexteditor.cpp:245
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Oikeinkirjoituksen tarkistuksen kieli"
 
-#: plaintexteditor/plaintexteditor.cpp:205
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:277
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:141
+#: richtexteditor/richtexteditor.cpp:279
 #, kde-format
 msgid "Speak Text"
 msgstr "Puhu teksti"
 
-#: plaintexteditor/plaintexteditor.cpp:381
-#: richtexteditor/richtexteditor.cpp:506
+#: plaintexteditor/plaintexteditor.cpp:385
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ei mitään tarkistettavaa."
 
-#: plaintexteditor/plaintexteditor.cpp:386
-#: richtexteditor/richtexteditor.cpp:524
+#: plaintexteditor/plaintexteditor.cpp:390
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Oikolukutaustajärjestelmää ei ole käytettävissä."
 
-#: richtexteditor/richtexteditor.cpp:269
+#: richtexteditor/richtexteditor.cpp:270
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Salli sarkaimet"
 
-#: richtexteditor/richtexteditor.cpp:516
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,30 +76,30 @@ msgstr ""
 "Oikolukutaustajärjestelmää ei ole käytettävissä. Haluatko silti lähettää "
 "sähköpostin?"
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Lähetä"
 
-#: richtexteditor/richtexteditor.cpp:539
+#: richtexteditor/richtexteditor.cpp:544
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Ohita"
 
-#: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sulje"
 
-#: widgets/texteditfindbarbase.cpp:40 widgets/textgotolinewidget.cpp:43
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "Sulje"
 
-#: widgets/texteditfindbarbase.cpp:141
+#: widgets/texteditfindbarbase.cpp:140
 #, kde-format
 msgid ""
 "End of message reached.\n"
@@ -108,87 +108,87 @@ msgstr ""
 "Tultiin viestin loppuun.\n"
 "Lauseketta ”%1” ei löydetty."
 
-#: widgets/textfindreplacewidget.cpp:26
+#: widgets/textfindreplacewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Korvaa"
 
-#: widgets/textfindreplacewidget.cpp:27
+#: widgets/textfindreplacewidget.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Korvaa kaikki"
 
-#: widgets/textfindreplacewidget.cpp:30
+#: widgets/textfindreplacewidget.cpp:32
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
 msgstr "Korvaa:"
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:70
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Edellinen"
 
-#: widgets/textfindreplacewidget.cpp:68
+#: widgets/textfindreplacewidget.cpp:71
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Seuraava"
 
-#: widgets/textfindreplacewidget.cpp:74
+#: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Etsi:"
 
-#: widgets/textfindreplacewidget.cpp:78
+#: widgets/textfindreplacewidget.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Etsittävä teksti"
 
-#: widgets/textfindreplacewidget.cpp:84
+#: widgets/textfindreplacewidget.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Hyppää seuraavaan osumaan"
 
-#: widgets/textfindreplacewidget.cpp:89
+#: widgets/textfindreplacewidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Hyppää edelliseen osumaan"
 
-#: widgets/textfindreplacewidget.cpp:95
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Options"
 msgstr "Valinnat"
 
-#: widgets/textfindreplacewidget.cpp:96
+#: widgets/textfindreplacewidget.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Muuta haun toimintaa"
 
-#: widgets/textfindreplacewidget.cpp:99
+#: widgets/textfindreplacewidget.cpp:103
 #, kde-format
 msgid "Case sensitive"
 msgstr "Erota pien- ja suuraakkoset"
 
-#: widgets/textfindreplacewidget.cpp:102
+#: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Whole word"
 msgstr "Koko sana"
 
-#: widgets/textfindreplacewidget.cpp:105
+#: widgets/textfindreplacewidget.cpp:109
 #, kde-format
 msgid "Regular Expression"
 msgstr "Säännöllinen lauseke"
 
-#: widgets/textfindreplacewidget.cpp:108
+#: widgets/textfindreplacewidget.cpp:112
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "Säilytä tarkkeet"

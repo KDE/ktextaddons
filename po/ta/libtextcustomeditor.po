@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2024-05-12 15:29+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -25,81 +25,81 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 மாற்றம் செய்யப்பட்டது"
 msgstr[1] "%1 மாற்றங்கள் செய்யப்பட்டன"
 
-#: plaintexteditor/plaintexteditor.cpp:171
+#: plaintexteditor/plaintexteditor.cpp:174
 #: richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Check Spelling…"
 msgstr "எழுத்தாக்கத்தை சரிபார்…"
 
-#: plaintexteditor/plaintexteditor.cpp:174
+#: plaintexteditor/plaintexteditor.cpp:177
 #: richtexteditor/richtexteditor.cpp:240
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "தானியக்க சொல் திருத்தி"
 
-#: plaintexteditor/plaintexteditor.cpp:179
+#: plaintexteditor/plaintexteditor.cpp:182
 #: richtexteditor/richtexteditor.cpp:245
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "சொற்திருத்த மொழி"
 
-#: plaintexteditor/plaintexteditor.cpp:205
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:277
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:141
+#: richtexteditor/richtexteditor.cpp:279
 #, kde-format
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
-#: plaintexteditor/plaintexteditor.cpp:381
-#: richtexteditor/richtexteditor.cpp:506
+#: plaintexteditor/plaintexteditor.cpp:385
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "சொல்திருத்த எதுவுமில்லை"
 
-#: plaintexteditor/plaintexteditor.cpp:386
-#: richtexteditor/richtexteditor.cpp:524
+#: plaintexteditor/plaintexteditor.cpp:390
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "சொல் திருத்த பின்நிலை எதுவும் இல்லை. "
 
-#: richtexteditor/richtexteditor.cpp:269
+#: richtexteditor/richtexteditor.cpp:270
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "தத்தல்களை அனுமதி"
 
-#: richtexteditor/richtexteditor.cpp:516
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "சொல் திருத்த பின்நிலை எதுவும் இல்லை. இருப்பினும் அஞ்சலை அனுப்ப வேண்டுமா?"
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "அனுப்பு"
 
-#: richtexteditor/richtexteditor.cpp:539
+#: richtexteditor/richtexteditor.cpp:544
 #, fuzzy, kde-format
 #| msgid "Skip"
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "தவிர்"
 
-#: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "மூடு"
 
-#: widgets/texteditfindbarbase.cpp:40 widgets/textgotolinewidget.cpp:43
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "மூடு"
 
-#: widgets/texteditfindbarbase.cpp:141
+#: widgets/texteditfindbarbase.cpp:140
 #, kde-format
 msgid ""
 "End of message reached.\n"
@@ -108,93 +108,93 @@ msgstr ""
 "அஞ்சலின் முடிவு அடையப்பட்டது.\n"
 "'%1' என்பதைக் கண்டுபிடிக்க முடியவில்லை"
 
-#: widgets/textfindreplacewidget.cpp:26
+#: widgets/textfindreplacewidget.cpp:28
 #, fuzzy, kde-format
 #| msgid "Replace"
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "மாற்று"
 
-#: widgets/textfindreplacewidget.cpp:27
+#: widgets/textfindreplacewidget.cpp:29
 #, fuzzy, kde-format
 #| msgid "Replace All"
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "அனைத்தையும் மாற்று"
 
-#: widgets/textfindreplacewidget.cpp:30
+#: widgets/textfindreplacewidget.cpp:32
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
 msgstr "மாற்று:"
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:70
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "முந்தையது"
 
-#: widgets/textfindreplacewidget.cpp:68
+#: widgets/textfindreplacewidget.cpp:71
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "அடுத்தது"
 
-#: widgets/textfindreplacewidget.cpp:74
+#: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&தேடு:"
 
-#: widgets/textfindreplacewidget.cpp:78
+#: widgets/textfindreplacewidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "கண்டுபிடிக்க வேண்டிய சொற்றொடர்"
 
-#: widgets/textfindreplacewidget.cpp:84
+#: widgets/textfindreplacewidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "அடுத்தப் பொருத்தத்துக்குத் தாவு"
 
-#: widgets/textfindreplacewidget.cpp:89
+#: widgets/textfindreplacewidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "முந்தைய பொருத்தத்துக்கு தாவு"
 
-#: widgets/textfindreplacewidget.cpp:95
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Options"
 msgstr "விருப்பங்கள்"
 
-#: widgets/textfindreplacewidget.cpp:96
+#: widgets/textfindreplacewidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "தேடல் நடத்தையை மாற்று"
 
-#: widgets/textfindreplacewidget.cpp:99
+#: widgets/textfindreplacewidget.cpp:103
 #, kde-format
 msgid "Case sensitive"
 msgstr "எழுத்து வகையை (பெரிது/சிறிது) பொருட்படுத்து"
 
-#: widgets/textfindreplacewidget.cpp:102
+#: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Whole word"
 msgstr "முழு சொல்"
 
-#: widgets/textfindreplacewidget.cpp:105
+#: widgets/textfindreplacewidget.cpp:109
 #, kde-format
 msgid "Regular Expression"
 msgstr "சுருங்குறித் தொடர்"
 
-#: widgets/textfindreplacewidget.cpp:108
+#: widgets/textfindreplacewidget.cpp:112
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "துணைக்குறிகளையும் ஒலிப்புக்குறிகளையும் பொருட்படுத்து"

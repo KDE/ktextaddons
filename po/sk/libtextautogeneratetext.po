@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -3053,12 +3053,12 @@ msgstr "Chyba pri otváraní súboru"
 msgid "Metadata Info"
 msgstr "Informácie o metadátach"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
 msgstr "Textové moduly"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Moduly nástrojov"
@@ -3149,26 +3149,24 @@ msgid "Remove Instance"
 msgstr "Odstrániť inštanciu"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Chcete odstrániť túto inštanciu (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Odstrániť inštanciu"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Hľadať…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -3192,14 +3190,14 @@ msgid "Ask to AI"
 msgstr "Opýtať sa AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Zmeniť…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:169
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3221,7 +3219,7 @@ msgstr "Odstrániť"
 msgid "Ask AI…"
 msgstr "Opýtať sa AI…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:70
+#: widgets/menu/textautogeneratemenuwidget.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
@@ -3278,6 +3276,20 @@ msgstr "Pridať výzvu…"
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, kde-format
 msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "Odstrániť výzvu"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
+msgid "Do you want to remove this prompt (%1)?"
+msgstr "Chcete odstrániť tento model (%1)?"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Odstrániť výzvu"
 
@@ -3485,25 +3497,25 @@ msgstr "Prispôsobiť zobrazeniu"
 msgid "Save Image"
 msgstr "Uložiť obrázok"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Kopírovať výber"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: widgets/view/textautogeneratebaselistview.cpp:101
+#: widgets/view/textautogeneratebaselistview.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Kopírovať URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:113
+#: widgets/view/textautogeneratebaselistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -3515,54 +3527,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Vložiť text"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:118
+#: widgets/view/textautogeneratehistorylistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Nový rozhovor"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplikovať…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Odstrániť z obľúbených"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Nastaviť ako obľúbené"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Archivovať"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:173
+#: widgets/view/textautogeneratehistorylistview.cpp:174
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Chcete odstrániť túto diskusiu?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Odstrániť diskusiu"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:253
+#: widgets/view/textautogeneratehistorylistview.cpp:254
 #, kde-format
 msgid "No Archive Found."
 msgstr "Nenašiel sa žiadny archív."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2852,12 +2852,12 @@ msgstr "開啟檔案時發生錯誤"
 msgid "Metadata Info"
 msgstr "中繼資料資訊"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
 msgstr "文字外掛程式"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Tools Plugins"
 msgid "Tool Plugins"
@@ -2949,26 +2949,24 @@ msgid "Remove Instance"
 msgstr "移除實體"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "您確定要移除這個實體 (%1) 嗎？"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "移除實體"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "搜尋…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2992,14 +2990,14 @@ msgid "Ask to AI"
 msgstr "向 AI 詢問"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "變更…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:169
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3021,7 +3019,7 @@ msgstr "移除"
 msgid "Ask AI…"
 msgstr "詢問 AI…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:70
+#: widgets/menu/textautogeneratemenuwidget.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
@@ -3089,6 +3087,20 @@ msgstr "新增伺服器…"
 #| msgctxt "@title"
 #| msgid "Remove Model"
 msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "移除模型"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
+msgid "Do you want to remove this prompt (%1)?"
+msgstr "您確定要移除這個模型（%1）嗎？"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "移除模型"
 
@@ -3300,25 +3312,25 @@ msgstr "適合檢視大小"
 msgid "Save Image"
 msgstr "儲存影像"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "複製選取範圍"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratebaselistview.cpp:101
+#: widgets/view/textautogeneratebaselistview.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "複製 URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:113
+#: widgets/view/textautogeneratebaselistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -3330,54 +3342,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "插入文字"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:118
+#: widgets/view/textautogeneratehistorylistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "新聊天"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "建立複本…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "從收藏中移除"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "設為收藏"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "回復"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "封存"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:173
+#: widgets/view/textautogeneratehistorylistview.cpp:174
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "您確定要移除這個討論嗎？"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除討論"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:253
+#: widgets/view/textautogeneratehistorylistview.cpp:254
 #, kde-format
 msgid "No Archive Found."
 msgstr "找不到封存檔。"

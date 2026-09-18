@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2026-08-24 19:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3115,12 +3115,12 @@ msgstr "S'ha produït un error mentre s'obria el fitxer"
 msgid "Metadata Info"
 msgstr "Informació de les metadades"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
 msgstr "Connectors de text"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:66
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Connectors d'eines"
@@ -3211,26 +3211,24 @@ msgid "Remove Instance"
 msgstr "Elimina la instància"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Voleu eliminar esta instància (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Elimina la instància"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Busca…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -3254,14 +3252,14 @@ msgid "Ask to AI"
 msgstr "Pregunta a la IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Modifica…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:169
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3283,7 +3281,7 @@ msgstr "Elimina"
 msgid "Ask AI…"
 msgstr "Pregunta a la IA…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:70
+#: widgets/menu/textautogeneratemenuwidget.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
@@ -3340,6 +3338,20 @@ msgstr "Afig una petició…"
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
 #, kde-format
 msgctxt "@action"
+msgid "Remove Prompt"
+msgstr "Elimina la petició"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
+msgid "Do you want to remove this prompt (%1)?"
+msgstr "Voleu eliminar este model (%1)?"
+
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Elimina la petició"
 
@@ -3547,25 +3559,25 @@ msgstr "Ajusta a la vista"
 msgid "Save Image"
 msgstr "Guarda la imatge"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia la selecció"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:101
+#: widgets/view/textautogeneratebaselistview.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Copia l'URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:113
+#: widgets/view/textautogeneratebaselistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -3577,54 +3589,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Inserix un text"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:118
+#: widgets/view/textautogeneratehistorylistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Xat nou"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplica…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Elimina com a preferit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Establix com a preferit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Restaura"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arxiva"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:173
+#: widgets/view/textautogeneratehistorylistview.cpp:174
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Voleu eliminar este debat?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Elimina el debat"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:253
+#: widgets/view/textautogeneratehistorylistview.cpp:254
 #, kde-format
 msgid "No Archive Found."
 msgstr "No s'ha trobat cap arxiu."

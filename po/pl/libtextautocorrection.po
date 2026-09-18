@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-18 00:44+0000\n"
 "PO-Revision-Date: 2024-08-03 11:50+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -44,75 +44,75 @@ msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Samopoprawianie KMail/Calligra"
 
-#: widgets/autocorrectionwidget.cpp:438
+#: widgets/autocorrectionwidget.cpp:442
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Ciąg znaków \"Zastąp\" to to samo co ciąg znaków \"Znajdź\"."
 
-#: widgets/autocorrectionwidget.cpp:438
+#: widgets/autocorrectionwidget.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Dodaj wpis samopoprawiania"
 
-#: widgets/autocorrectionwidget.cpp:520
+#: widgets/autocorrectionwidget.cpp:525
 #, kde-format
 msgid "&Modify"
 msgstr "Z&mień"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:523 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:528 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "Dod&aj"
 
-#: widgets/autocorrectionwidget.cpp:630
+#: widgets/autocorrectionwidget.cpp:635
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Zaimportuj samopoprawianie LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:631
+#: widgets/autocorrectionwidget.cpp:636
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "Plik samopoprawiania LibreOffice (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:634
+#: widgets/autocorrectionwidget.cpp:639
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Zaimportuj samopoprawianie KMail"
 
-#: widgets/autocorrectionwidget.cpp:635
+#: widgets/autocorrectionwidget.cpp:640
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "Plik samopoprawiania KMail (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:666
+#: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Zaimportuj plik samopoprawiania"
 
-#: widgets/autocorrectionwidget.cpp:690
+#: widgets/autocorrectionwidget.cpp:695
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "Język został zmieniony, czy chcesz zapisać ustawienia dla poprzedniego "
 "języka?"
 
-#: widgets/autocorrectionwidget.cpp:691
+#: widgets/autocorrectionwidget.cpp:696
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Zapisz ustawienia"
 
-#: widgets/autocorrectionwidget.cpp:726
+#: widgets/autocorrectionwidget.cpp:731
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Zapisz zmiany przed eksportowaniem ustawień."
 
-#: widgets/autocorrectionwidget.cpp:726 widgets/autocorrectionwidget.cpp:729
+#: widgets/autocorrectionwidget.cpp:731 widgets/autocorrectionwidget.cpp:734
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
