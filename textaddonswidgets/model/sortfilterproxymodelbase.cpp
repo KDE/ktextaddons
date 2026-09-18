@@ -8,7 +8,6 @@
 
 #include <TextUtils/ConvertText>
 using namespace TextAddonsWidgets;
-using namespace Qt::Literals::StringLiterals;
 SortFilterProxyModelBase::SortFilterProxyModelBase(QObject *parent)
     : QSortFilterProxyModel{parent}
 {

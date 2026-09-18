@@ -14,7 +14,6 @@
 #include <QMimeDatabase>
 #include <QPushButton>
 #include <QUrl>
-using namespace Qt::Literals::StringLiterals;
 using namespace TextAddonsWidgets;
 OpenFileJob::OpenFileJob(QObject *parent)
     : QObject{parent}
