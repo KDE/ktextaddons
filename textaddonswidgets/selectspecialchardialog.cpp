@@ -49,11 +49,13 @@ public:
 
     void addSelectButton()
     {
-        mSelectButton = new QPushButton(i18nc("@action:button", "Select"), q);
-        mButtonBox->addButton(mSelectButton, QDialogButtonBox::ActionRole);
-        q->connect(mSelectButton, &QPushButton::clicked, q, [this]() {
-            _k_slotInsertChar();
-        });
+        if (!mSelectButton) {
+            mSelectButton = new QPushButton(i18nc("@action:button", "Select"), q);
+            mButtonBox->addButton(mSelectButton, QDialogButtonBox::ActionRole);
+            q->connect(mSelectButton, &QPushButton::clicked, q, [this]() {
+                _k_slotInsertChar();
+            });
+        }
     }
 
     void _k_slotInsertChar();
@@ -84,6 +86,8 @@ void SelectSpecialCharDialog::showSelectButton(bool show)
         d->addSelectButton();
     } else if (d->mSelectButton) {
         d->mButtonBox->removeButton(d->mSelectButton);
+        d->mSelectButton->deleteLater();
+        d->mSelectButton = nullptr;
     }
 }
 
