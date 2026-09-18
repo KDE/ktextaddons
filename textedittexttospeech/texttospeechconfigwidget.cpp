@@ -199,8 +199,21 @@ void TextToSpeechConfigWidget::slotUpdateSettings()
 
 void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(TextToSpeechConfigInterface *interface)
 {
+    if (mTextToSpeechConfigInterface == interface) {
+        return;
+    }
+    if (mTextToSpeechConfigInterface) {
+        disconnect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::stateChanged, this, &TextToSpeechConfigWidget::slotTextChanged);
+        disconnect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::engineErrorOccurred, this, &TextToSpeechConfigWidget::slotEngineErrorOccurred);
+    }
+
     delete mTextToSpeechConfigInterface;
     mTextToSpeechConfigInterface = interface;
+    if (mTextToSpeechConfigInterface) {
+        connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::stateChanged, this, &TextToSpeechConfigWidget::slotTextChanged);
+        connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::engineErrorOccurred, this, &TextToSpeechConfigWidget::slotEngineErrorOccurred);
+    }
+
     slotLocalesAndVoices();
 }
 
