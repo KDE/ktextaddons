@@ -44,7 +44,7 @@ enum class VoiceFilter {
 /*! Returns the locales covered by the voices, without duplicates. */
 [[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QList<QLocale> availableLocales(VoiceFilter filter = VoiceFilter::EspeakSupported);
 
-[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QIcon voiceIcon(const KokoroVoice &voice);
+[[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QIcon voiceIcon(const KokoroVoice &voice, qreal devicePixelRatio);
 
 /*! Returns the lang_code expected by KPipeline for \a identifier, for example "f" for "ff_siwis". */
 [[nodiscard]] KOKOROINSTALLTEXTTOSPEECH_EXPORT QString languageCode(const QString &identifier);

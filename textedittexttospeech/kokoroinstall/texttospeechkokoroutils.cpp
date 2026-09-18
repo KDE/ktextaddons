@@ -198,9 +198,11 @@ QList<QLocale> TextEditTextToSpeech::TextToSpeechKokoroUtils::availableLocales(V
     return locales;
 }
 
-QIcon TextEditTextToSpeech::TextToSpeechKokoroUtils::voiceIcon(const KokoroVoice &voice)
+QIcon TextEditTextToSpeech::TextToSpeechKokoroUtils::voiceIcon(const KokoroVoice &voice, qreal devicePixelRatio)
 {
-    QPixmap pixmap(s_iconSize, s_iconSize);
+    const qreal dpr = qMax(qreal(1.0), devicePixelRatio);
+    QPixmap pixmap(QSize(s_iconSize, s_iconSize) * dpr);
+    pixmap.setDevicePixelRatio(dpr);
     pixmap.fill(Qt::transparent);
     QPainter painter(&pixmap);
     painter.setRenderHint(QPainter::Antialiasing);

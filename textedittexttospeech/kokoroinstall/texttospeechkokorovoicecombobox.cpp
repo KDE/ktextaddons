@@ -74,7 +74,7 @@ void TextToSpeechKokoroVoiceComboBox::fill()
     auto voiceModel = new QStandardItemModel(this);
     const QList<TextToSpeechKokoroUtils::KokoroVoice> listVoices = TextToSpeechKokoroUtils::kokoroVoices();
     for (const auto &voice : listVoices) {
-        auto item = new QStandardItem(TextToSpeechKokoroUtils::voiceIcon(voice),
+        auto item = new QStandardItem(TextToSpeechKokoroUtils::voiceIcon(voice, devicePixelRatioF()),
                                       i18nc("@item:inlistbox <voice name> (<gender>)", "%1 (%2)", voice.name, genderName(voice.gender)));
         item->setToolTip(
             i18nc("@info:tooltip <voice name> (<language>, <gender>)", "%1 (%2, %3)", voice.name, localeName(voice.locale), genderName(voice.gender)));
