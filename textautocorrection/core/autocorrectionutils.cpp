@@ -113,7 +113,6 @@ QStringList AutoCorrectionUtils::searchAutoCorrectLibreOfficeFiles()
         files.reserve(qsizetype(entryList.size()));
         for (const QString &file : entryList) {
             QString curFile = file;
-            curFile.remove(path);
             curFile.remove(u".dat"_s);
             curFile.remove(u"acor_"_s);
             files.append(std::move(curFile));
