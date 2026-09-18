@@ -160,13 +160,11 @@ void TextToSpeechWidget::slotStateChanged(TextEditTextToSpeech::TextToSpeech::St
 {
     switch (state) {
     case TextEditTextToSpeech::TextToSpeech::Ready:
-        if (state == TextEditTextToSpeech::TextToSpeech::Ready) {
-            d->mTextToSpeechActions->setState(TextToSpeechWidget::Stop);
-            if (d->mConfigDialog) {
-                d->mNeedToHide = true;
-            } else {
-                QTimer::singleShot(2s, this, &TextToSpeechWidget::hideWidget);
-            }
+        d->mTextToSpeechActions->setState(TextToSpeechWidget::Stop);
+        if (d->mConfigDialog) {
+            d->mNeedToHide = true;
+        } else {
+            QTimer::singleShot(2s, this, &TextToSpeechWidget::hideWidget);
         }
         break;
     default:
