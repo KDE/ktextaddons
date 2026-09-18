@@ -739,7 +739,7 @@ int AutoCorrection::advancedAutocorrect()
             replacement.append(lastChar);
         }
 
-        d->mWord.replace(pos, pos + trimmedWord.length(), replacement);
+        d->mWord.replace(pos, trimmedWord.length(), replacement);
 
         // We do replacement here, since the length of new word might be different from length of
         // the old world. Length difference might affect other type of autocorrection
