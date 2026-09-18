@@ -55,7 +55,7 @@ QVariant AutoCorrectionLanguageModel::data(const QModelIndex &index, int role) c
 
 void AutoCorrectionLanguageModel::fillModel()
 {
-    QLocale cLocale(QLocale::C);
+    const QLocale cLocale(QLocale::C);
     QSet<QString> insertedLanguages;
     const QList<QLocale> allLocales = QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyTerritory);
     for (const QLocale &lang : allLocales) {
