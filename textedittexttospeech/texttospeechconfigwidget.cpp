@@ -269,10 +269,8 @@ void TextToSpeechConfigWidget::updateAvailableVoices()
 
 void TextToSpeechConfigWidget::updateVoice()
 {
-    KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
-    const KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
-    const QString voice = grp.readEntry("voice");
-    int index = mVoiceComboBox->findData(voice);
+    const QVoice voice = TextEditTextToSpeech::TextToSpeechUtil::loadSettings().voice;
+    int index = mVoiceComboBox->findData(QVariant::fromValue(voice));
     if (index == -1) {
         index = 0;
     }
