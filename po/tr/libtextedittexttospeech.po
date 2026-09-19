@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 19:57+0300\n"
+"POT-Creation-Date: 2026-09-19 00:44+0000\n"
+"PO-Revision-Date: 2026-09-18 19:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -50,7 +50,7 @@ msgstr "Ses aygıtı açılamıyor."
 #: kokoro/texttospeechkokoro.cpp:344
 #, kde-format
 msgid "The audio device stopped working."
-msgstr ""
+msgstr "Ses aygıtı çalışmayı durdurdu."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -58,7 +58,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro şu anda kullanılabilir durumda değil. Lütfen onu yeniden kurun."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:303
+#: texttospeechconfigwidget.cpp:314
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro kurulu değil. Eksik bileşenler: %1"
@@ -266,7 +266,7 @@ msgstr "Ses:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:308
+#: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro installation is broken. Please verify which you sysadmin."
 msgstr "Kokoro kurulumu bozuk veya hasarlı. Lütfen gerekli denetimleri yapın."

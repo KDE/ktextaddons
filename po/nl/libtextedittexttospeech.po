@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 15:00+0200\n"
+"POT-Creation-Date: 2026-09-19 00:44+0000\n"
+"PO-Revision-Date: 2026-09-18 10:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -50,7 +50,7 @@ msgstr "Kan het audioapparaat niet openen."
 #: kokoro/texttospeechkokoro.cpp:344
 #, kde-format
 msgid "The audio device stopped working."
-msgstr ""
+msgstr "Het audio-apparaat werkt niet meer."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -58,7 +58,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro is niet bruikbaar. Installeer het opnieuw."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:303
+#: texttospeechconfigwidget.cpp:314
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro is niet geïnstalleerd. Ontbreekt: %1"
@@ -265,7 +265,7 @@ msgstr "Stem:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:308
+#: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro installation is broken. Please verify which you sysadmin."
 msgstr ""

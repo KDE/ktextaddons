@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 21:33+0200\n"
+"POT-Creation-Date: 2026-09-19 00:44+0000\n"
+"PO-Revision-Date: 2026-09-18 20:34+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -50,7 +50,7 @@ msgstr "Kan inte öppna ljudenheten."
 #: kokoro/texttospeechkokoro.cpp:344
 #, kde-format
 msgid "The audio device stopped working."
-msgstr ""
+msgstr "Ljudenheten slutade fungera."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -58,7 +58,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro är inte användbart. Installera om det."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:303
+#: texttospeechconfigwidget.cpp:314
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro är inte installerat. Saknar: %1"
@@ -265,7 +265,7 @@ msgstr "Röst:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:308
+#: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro installation is broken. Please verify which you sysadmin."
 msgstr ""

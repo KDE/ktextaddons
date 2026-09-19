@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 05:52+0200\n"
+"POT-Creation-Date: 2026-09-19 00:44+0000\n"
+"PO-Revision-Date: 2026-09-18 09:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -51,7 +51,7 @@ msgstr "Ni mogoče odpreti zvočne naprave."
 #: kokoro/texttospeechkokoro.cpp:344
 #, kde-format
 msgid "The audio device stopped working."
-msgstr ""
+msgstr "Zvočna naprava je prenehala delovati."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -59,7 +59,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro ni uporaben. Namestite ga znova."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:303
+#: texttospeechconfigwidget.cpp:314
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro ni nameščen. Manjka: %1"
@@ -266,7 +266,7 @@ msgstr "Glas:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:308
+#: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro installation is broken. Please verify which you sysadmin."
 msgstr ""
