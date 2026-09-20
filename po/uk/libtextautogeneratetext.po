@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-08-24 12:50+0300\n"
+"PO-Revision-Date: 2026-09-18 10:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3334,18 +3334,15 @@ msgid "Remove Prompt"
 msgstr "Вилучити запит"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "Хочете вилучити цю модель (%1)?"
+msgstr "Хочете вилучити цей запит (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "Вилучити запит"
+msgstr "Вилучення запиту"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
