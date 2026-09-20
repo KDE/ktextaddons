@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"POT-Creation-Date: 2026-09-20 12:52+0000\n"
 "PO-Revision-Date: 2026-09-09 17:14+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -34,12 +34,12 @@ msgid "Failed to write to file: %1"
 msgstr "Неуспешно записване във файл: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:70
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
 #, kde-format
 msgid "Json File"
 msgstr "Файл Json"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:63
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "Неуспешно отваряне на файл за четене: %1"
