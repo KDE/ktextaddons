@@ -23,44 +23,49 @@ TextAutoGenerateImportChatAsJsonJob::~TextAutoGenerateImportChatAsJsonJob() = de
 
 void TextAutoGenerateImportChatAsJsonJob::importChat()
 {
-    QFile f(mInfo.filename);
-    if (f.open(QFile::ReadOnly)) {
-        const auto content = f.readAll();
-        f.close();
-
-        QJsonParseError error;
-        const auto doc = QJsonDocument::fromJson(content, &error);
-        if (error.error != QJsonParseError::NoError) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to parse JSON file" << mInfo.filename << "error:" << error.errorString() << "at offset"
-                                                     << error.offset;
-        } else {
-            const QJsonObject obj = doc.object();
-            const QString title = obj[u"title"_s].toString();
-
-            QMap<QByteArray, QByteArray> convertUuid;
-            QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
-            const QJsonArray array = obj[u"messages"_s].toArray();
-            msgs.reserve(qsizetype(array.size()));
-            for (const auto &val : array) {
-                if (const TextAutoGenerateMessage msg = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(val.toObject()); msg.isValid()) {
-                    convertUuid.insert(msg.uuid(), TextAutoGenerateTextUtils::generateUUid());
-                    msgs.append(msg);
-                }
-            }
-            // Convert
-            for (auto &msg : msgs) {
-                if (convertUuid.contains(msg.uuid())) {
-                    msg.setUuid(convertUuid.value(msg.uuid()));
-                }
-                if (convertUuid.contains(msg.answerUuid())) {
-                    msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
-                }
-            }
-            Q_EMIT importDone(title, msgs);
-        }
+    if (mInfo.filename.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Filename is empty";
     } else {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to open file for reading:" << mInfo.filename << "error:" << f.errorString();
-        Q_EMIT importFailed(i18n("Failed to open file for reading: %1", mInfo.filename));
+        QFile f(mInfo.filename);
+
+        if (f.open(QFile::ReadOnly)) {
+            const auto content = f.readAll();
+            f.close();
+
+            QJsonParseError error;
+            const auto doc = QJsonDocument::fromJson(content, &error);
+            if (error.error != QJsonParseError::NoError) {
+                qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG)
+                    << "Failed to parse JSON file" << mInfo.filename << "error:" << error.errorString() << "at offset" << error.offset;
+            } else {
+                const QJsonObject obj = doc.object();
+                const QString title = obj[u"title"_s].toString();
+
+                QMap<QByteArray, QByteArray> convertUuid;
+                QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
+                const QJsonArray array = obj[u"messages"_s].toArray();
+                msgs.reserve(qsizetype(array.size()));
+                for (const auto &val : array) {
+                    if (const TextAutoGenerateMessage msg = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(val.toObject()); msg.isValid()) {
+                        convertUuid.insert(msg.uuid(), TextAutoGenerateTextUtils::generateUUid());
+                        msgs.append(msg);
+                    }
+                }
+                // Convert
+                for (auto &msg : msgs) {
+                    if (convertUuid.contains(msg.uuid())) {
+                        msg.setUuid(convertUuid.value(msg.uuid()));
+                    }
+                    if (convertUuid.contains(msg.answerUuid())) {
+                        msg.setAnswerUuid(convertUuid.value(msg.answerUuid()));
+                    }
+                }
+                Q_EMIT importDone(title, msgs);
+            }
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to open file for reading:" << mInfo.filename << "error:" << f.errorString();
+            Q_EMIT importFailed(i18n("Failed to open file for reading: %1", mInfo.filename));
+        }
     }
     deleteLater();
 }
