@@ -35,19 +35,6 @@ public:
         HasPendingMessageTyped,
     };
 
-    /*!
-     * \brief The SectionHistory enum
-     */
-    enum class SectionHistory : uint8_t {
-        Favorite,
-        Today,
-        LessThanSevenDays,
-        LessThanThirtyDays,
-        Later,
-        Unknown,
-        NSections,
-    };
-
     /*! Constructs a new TextAutoGenerateChatsModel with the given @p parent. */
     explicit TextAutoGenerateChatsModel(QObject *parent = nullptr);
     /*! Destroys the TextAutoGenerateChatsModel object. */

@@ -8,6 +8,7 @@
 #include "core/models/textautogeneratechatsmodel.h"
 #include "textautogeneratetext_private_export.h"
 #include <QAbstractProxyModel>
+#include <TextAutoGenerateText/TextAutoGenerateChat>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListHeadingsProxyModel final : public QAbstractProxyModel
@@ -17,7 +18,7 @@ public:
     explicit TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateHistoryListHeadingsProxyModel() override;
 
-    static constexpr uint sectionCount = uint(TextAutoGenerateChatsModel::SectionHistory::NSections);
+    static constexpr uint sectionCount = uint(TextAutoGenerateChat::SectionHistory::NSections);
 
     // QAbstractItemModel interface
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;

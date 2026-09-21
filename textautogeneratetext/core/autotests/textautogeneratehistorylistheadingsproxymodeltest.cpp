@@ -34,7 +34,7 @@ public:
             return {};
         }
         if (role == TextAutoGenerateChatsModel::Section) {
-            return QVariant::fromValue(TextAutoGenerateChatsModel::SectionHistory(mSections.at(index.row())));
+            return QVariant::fromValue(TextAutoGenerateChat::SectionHistory(mSections.at(index.row())));
         }
         return {};
     }
@@ -70,7 +70,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModelTest::shouldHandleNullSourceMo
 void TextAutoGenerateHistoryListHeadingsProxyModelTest::shouldRejectInvalidIndexes()
 {
     FakeChatsModel model;
-    model.setSections({int(TextAutoGenerateChatsModel::SectionHistory::Today)});
+    model.setSections({int(TextAutoGenerateChat::SectionHistory::Today)});
 
     TextAutoGenerateHistoryListHeadingsProxyModel proxy;
     proxy.setSourceModel(&model);
@@ -78,7 +78,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModelTest::shouldRejectInvalidIndex
     QVERIFY(!proxy.index(999, 0, {}).isValid());
     QVERIFY(!proxy.index(0, 1, {}).isValid());
 
-    const QModelIndex sectionToday = proxy.index(int(TextAutoGenerateChatsModel::SectionHistory::Today), 0, {});
+    const QModelIndex sectionToday = proxy.index(int(TextAutoGenerateChat::SectionHistory::Today), 0, {});
     QVERIFY(sectionToday.isValid());
 
     QVERIFY(proxy.index(0, 0, sectionToday).isValid());

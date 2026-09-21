@@ -188,10 +188,10 @@ QString TextAutoGenerateChatsModel::sectionName(TextAutoGenerateChat::SectionHis
 
 TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const QByteArray &chatId) const
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
+    if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).messageModel();
     }
     return nullptr;
@@ -199,10 +199,10 @@ TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const Q
 
 bool TextAutoGenerateChatsModel::isInitialized(const QByteArray &chatId) const
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
+    if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         return (*it).initialized();
     }
     return false;
@@ -210,10 +210,10 @@ bool TextAutoGenerateChatsModel::isInitialized(const QByteArray &chatId) const
 
 void TextAutoGenerateChatsModel::setInitialized(const QByteArray &chatId, bool state)
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
+    if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         (*it).setInitialized(state);
     }
 }
