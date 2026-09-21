@@ -41,7 +41,11 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(KF6TextAutoGenerateText)
+add_library(
+    KF6TextAutoGenerateText
+    core/textautogeneratetagsmanager.h
+    core/textautogeneratetagsmanager.cpp
+)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -201,6 +205,8 @@ target_sources(
         core/localdatabase/textautogeneratelocaldatabasemanager.cpp
         core/localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.cpp
         core/localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.h
+        core/localdatabase/textautogeneratelocaltagsdatabase.cpp
+        core/localdatabase/textautogeneratelocaltagsdatabase.h
         core/textautogeneratesearchmessageutils.h
         core/textautogeneratesearchmessageutils.cpp
         core/textautogeneratereply.h
@@ -450,6 +456,10 @@ target_sources(
         widgets/promptswidget/textautogeneratepromptcategorycombobox.h
         widgets/promptswidget/textautogeneratesearchpromptwidget.h
         widgets/promptswidget/textautogeneratesearchpromptwidget.cpp
+        widgets/tags/textautogeneratetagwidget.h
+        widgets/tags/textautogeneratetagwidget.cpp
+        widgets/tags/textautogeneratetagdialog.h
+        widgets/tags/textautogeneratetagdialog.cpp
 )
 
 if(BUILD_TESTING)
@@ -459,6 +469,7 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/autotests)
     add_subdirectory(widgets/availablemodel/autotests)
     add_subdirectory(widgets/promptswidget/autotests)
+    add_subdirectory(widgets/tags/autotests)
 endif()
 
 add_subdirectory(plugins)
@@ -591,6 +602,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreloca
     HEADER_NAMES
     TextAutoGenerateLocalChatPendingTypedInfoDatabase
     TextAutoGenerateLocalChatsDatabase
+    TextAutoGenerateLocalTagsDatabase
     TextAutoGenerateLocalMessagesDatabase
     TextAutoGenerateLocalDatabaseManager
     TextAutoGenerateLocalDatabaseAbstract
