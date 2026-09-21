@@ -38,6 +38,18 @@ public:
      */
     void setTags(const QList<TextAutoGenerateTag> &newTags);
 
+    /*!
+     * \brief addTag
+     * \param newTag
+     */
+    void addTag(const TextAutoGenerateTag &newTag);
+
+    /*!
+     * \brief removeTag
+     * \param identifier
+     */
+    void removeTag(const QByteArray &identifier);
+
 private:
     TextAutoGenerateTagsModel *const mTextAutoGenerateTagsModel;
 };

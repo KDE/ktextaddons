@@ -19,4 +19,14 @@ void TextAutoGenerateTagsManager::setTags(const QList<TextAutoGenerateTag> &newT
 {
     mTextAutoGenerateTagsModel->setTags(newTags);
 }
+
+void TextAutoGenerateTagsManager::addTag(const TextAutoGenerateTag &newTag)
+{
+    mTextAutoGenerateTagsModel->addTag(newTag);
+}
+
+void TextAutoGenerateTagsManager::removeTag(const QByteArray &identifier)
+{
+    mTextAutoGenerateTagsModel->removeTag(identifier);
+}
 #include "moc_textautogeneratetagsmanager.cpp"
