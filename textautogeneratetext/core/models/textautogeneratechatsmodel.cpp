@@ -70,6 +70,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return chatElement.archived();
     case InProgress:
         return chatElement.inProgress();
+    case Tags:
+        return QVariant::fromValue(chatElement.tags());
     case Section:
         return QVariant::fromValue(chatElement.section());
     case DateTime:
@@ -133,6 +135,7 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
         return true;
     }
     case ChatRoles::Identifier:
+    case ChatRoles::Tags:
     case ChatRoles::Section:
     case ChatRoles::DateTime:
         break;
@@ -154,10 +157,10 @@ TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) 
     if (chatId.isEmpty()) {
         return {};
     }
-    auto matchesUuid = [&](const TextAutoGenerateChat &c) {
+    const auto matchesUuid = [&](const TextAutoGenerateChat &c) {
         return c.identifier() == chatId;
     };
-    auto it = std::find_if(mChats.begin(), mChats.end(), matchesUuid);
+    const auto it = std::find_if(mChats.begin(), mChats.end(), matchesUuid);
     if (it == mChats.end()) {
         return {};
     }
@@ -220,7 +223,7 @@ void TextAutoGenerateChatsModel::setInitialized(const QByteArray &chatId, bool s
 
 void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -235,7 +238,7 @@ void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
 
 void TextAutoGenerateChatsModel::removeDiscussion(const QByteArray &chatId)
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -248,7 +251,7 @@ void TextAutoGenerateChatsModel::removeDiscussion(const QByteArray &chatId)
 
 void TextAutoGenerateChatsModel::archiveDiscussion(const QByteArray &chatId, bool archive)
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -275,7 +278,7 @@ bool TextAutoGenerateChatsModel::chatIsFavorited(const QByteArray &chatId) const
 
 bool TextAutoGenerateChatsModel::chatIsArchived(const QByteArray &chatId) const
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -289,7 +292,7 @@ void TextAutoGenerateChatsModel::setChatInProgress(const QByteArray &chatId, boo
     if (chatId.isEmpty()) {
         return;
     }
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -305,7 +308,7 @@ void TextAutoGenerateChatsModel::setChatInProgress(const QByteArray &chatId, boo
 
 QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -316,7 +319,7 @@ QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
 
 bool TextAutoGenerateChatsModel::hasAtLeastOneNotArchivedChat() const
 {
-    auto isNotArchived = [&](const TextAutoGenerateChat &chat) {
+    const auto isNotArchived = [&](const TextAutoGenerateChat &chat) {
         return !chat.archived();
     };
     const auto it = std::find_if(mChats.begin(), mChats.end(), isNotArchived);
@@ -330,7 +333,7 @@ bool TextAutoGenerateChatsModel::isEmpty() const
 
 QByteArray TextAutoGenerateChatsModel::chatIdFromChatName(const QString &chatName) const
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.title() == chatName;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -350,7 +353,7 @@ bool TextAutoGenerateChatsModel::hasChatInProgress() const
 
 bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
     if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
@@ -371,13 +374,13 @@ QList<QByteArray> TextAutoGenerateChatsModel::chatsId() const
 
 void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool favorite)
 {
-    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    if (auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
+    if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
         (*it).setFavorite(favorite);
         const int i = std::distance(mChats.begin(), it);
-        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+        const auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };

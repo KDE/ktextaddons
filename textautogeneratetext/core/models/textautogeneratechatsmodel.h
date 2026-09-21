@@ -33,6 +33,7 @@ public:
         InProgress,
         DateTime,
         HasPendingMessageTyped,
+        Tags,
     };
 
     /*! Constructs a new TextAutoGenerateChatsModel with the given @p parent. */
