@@ -187,6 +187,8 @@ target_sources(
         core/models/textautogeneratetextpromptmodel.h
         core/models/textautogeneratetextpromptsortfilterproxymodel.cpp
         core/models/textautogeneratetextpromptsortfilterproxymodel.h
+        core/models/textautogeneratetagsmodel.cpp
+        core/models/textautogeneratetagsmodel.h
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
@@ -579,6 +581,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     TextAutoGenerateChatsModel
     TextAutoGenerateTextPromptModel
     TextAutoGenerateTextPromptSortFilterProxyModel
+    TextAutoGenerateTagsModel
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/models
@@ -604,6 +607,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreprom
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/prompts
+)
+
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoretags_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateTag
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoretags_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/tags
 )
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS
@@ -741,6 +752,7 @@ set(TextAutoGenerateTextCamelCaseIncludeFiles
     ${TextAutoGenerateText_Camelcasestextautogeneratetextview_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextviewdelegate_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoretags_HEADERS}
 )
 
 install(
@@ -767,6 +779,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextview_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextviewdelegate_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcoretags_HEADERS}
 )
 
 install(
