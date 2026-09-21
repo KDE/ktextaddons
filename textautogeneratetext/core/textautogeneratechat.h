@@ -176,11 +176,23 @@ public:
      */
     void setPrompt(const QString &newPrompt);
 
+    /*!
+     * \brief tags
+     * \return
+     */
+    [[nodiscard]] QList<QByteArray> tags() const;
+    /*!
+     * \brief setTags
+     * \param newTags
+     */
+    void setTags(const QList<QByteArray> &newTags);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
 
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
+    QList<QByteArray> mTags;
     QString mTitle;
     QString mPrompt;
     qint64 mDateTime = -1;

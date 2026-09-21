@@ -19,6 +19,7 @@ TextAutoGenerateChat::TextAutoGenerateChat()
 TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
     : mMessageModel(new TextAutoGenerateMessagesModel())
     , mIdentifier(other.mIdentifier)
+    , mTags(other.mTags)
     , mTitle(other.mTitle)
     , mPrompt(other.mPrompt)
     , mDateTime(other.mDateTime)
@@ -51,6 +52,7 @@ TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat
         mInitialized = other.mInitialized;
         mInProgress = other.mInProgress;
         mPrompt = other.mPrompt;
+        mTags = other.mTags;
     }
     return *this;
 }
@@ -92,8 +94,8 @@ void TextAutoGenerateChat::setIdentifier(const QByteArray &newIdentifier)
 
 bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
 {
-    return other.mIdentifier == mIdentifier && other.mArchived == mArchived && other.mFavorite == mFavorite && other.title() == mTitle
-        && other.mInitialized == mInitialized && other.dateTime() == mDateTime && other.mPrompt == mPrompt;
+    return other.mIdentifier == mIdentifier && other.mArchived == mArchived && other.mFavorite == mFavorite && other.mTitle == mTitle
+        && other.mInitialized == mInitialized && other.mDateTime == mDateTime && other.mPrompt == mPrompt && mTags == other.mTags;
 }
 
 QString TextAutoGenerateChat::title() const
@@ -137,6 +139,7 @@ QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, boo
     if (const QString prompt = chat.prompt(); !prompt.isEmpty()) {
         o["prompt"_L1] = prompt;
     }
+    // TODO save tags
 
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
@@ -155,6 +158,7 @@ TextAutoGenerateChat TextAutoGenerateChat::deserialize(const QJsonObject &o)
     chat.setIdentifier(o["identifier"_L1].toString().toLatin1());
     chat.setDateTime(o["datetime"_L1].toInteger());
     chat.setPrompt(o["prompt"_L1].toString());
+    // TODO load tags
     return chat;
 }
 
@@ -183,6 +187,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
     d.space() << "dateTime:" << t.dateTime();
     d.space() << "inProgress:" << t.inProgress();
     d.space() << "prompt:" << t.prompt();
+    d.space() << "tags:" << t.tags();
     return d;
 }
 
@@ -222,6 +227,16 @@ TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::sectionMessage(qint64
     }
 
     return TextAutoGenerateChat::SectionHistory::Later;
+}
+
+QList<QByteArray> TextAutoGenerateChat::tags() const
+{
+    return mTags;
+}
+
+void TextAutoGenerateChat::setTags(const QList<QByteArray> &newTags)
+{
+    mTags = newTags;
 }
 
 QString TextAutoGenerateChat::prompt() const
