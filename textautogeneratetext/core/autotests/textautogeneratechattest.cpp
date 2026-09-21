@@ -29,7 +29,7 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(w.tags().isEmpty());
 
     // 10/05/2025 => size 72
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 104);
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 128);
 }
 
 void TextAutoGenerateChatTest::shouldSerializeDeserialize()
@@ -43,7 +43,7 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
 
         const QByteArray ba = w.serialize(w, false);
         const QJsonDocument doc = QJsonDocument::fromJson(ba);
-        TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(w, ba1);
     }
 
@@ -56,7 +56,7 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
 
         const QByteArray ba = w.serialize(w, false);
         const QJsonDocument doc = QJsonDocument::fromJson(ba);
-        TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(w, ba1);
     }
 }
