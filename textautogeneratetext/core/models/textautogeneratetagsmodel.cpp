@@ -99,7 +99,7 @@ int TextAutoGenerateTagsModel::indexFromIdentifier(const QByteArray &identifier)
     if (identifier.isEmpty()) {
         return -1;
     }
-    auto matchesIdentifier = [&](const TextAutoGenerateTag &tag) {
+    const auto matchesIdentifier = [&](const TextAutoGenerateTag &tag) {
         return tag.identifier() == identifier;
     };
     const auto tagIt = std::find_if(mTags.constBegin(), mTags.constEnd(), matchesIdentifier);
