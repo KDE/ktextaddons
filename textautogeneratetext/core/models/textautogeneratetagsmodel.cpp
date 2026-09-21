@@ -36,7 +36,14 @@ QVariant TextAutoGenerateTagsModel::data(const QModelIndex &index, int role) con
         return tag.name();
     case Identifier:
         return tag.identifier();
+    case Qt::DecorationRole:
     case Color:
+        // An invalid color is returned as an invalid QVariant, so that the view falls back to the
+        // palette instead of painting a black swatch. QStyledItemDelegate turns a QColor set on
+        // Qt::DecorationRole into a swatch of the view's iconSize, so no delegate is needed.
+        if (!tag.color().isValid()) {
+            return {};
+        }
         return tag.color();
     default:
         break;

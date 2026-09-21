@@ -27,6 +27,8 @@ public:
     enum TagRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Identifier,
+        /*! The tag color, or an invalid QVariant when the tag has no color yet. Also exposed as
+         *  Qt::DecorationRole, so that a plain view paints a color swatch without a delegate. */
         Color,
     };
     /*!

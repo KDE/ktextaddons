@@ -42,10 +42,15 @@ void TextAutoGenerateTagsModelTest::shouldAddTag()
     QCOMPARE(idx.data(Qt::DisplayRole).toString(), u"bla"_s);
     QCOMPARE(idx.data(TextAutoGenerateText::TextAutoGenerateTagsModel::Identifier).toByteArray(), "foo"_ba);
     QCOMPARE(idx.data(TextAutoGenerateText::TextAutoGenerateTagsModel::Color).value<QColor>(), QColor(Qt::red));
+    QCOMPARE(idx.data(Qt::DecorationRole).value<QColor>(), QColor(Qt::red));
 
+    // No color set => invalid QVariant, so the view keeps its palette instead of painting black.
     model.addTag(createTag("foo1"_ba, u"bla1"_s));
     QCOMPARE(model.rowCount(), 2);
-    QCOMPARE(model.index(1, 0).data(TextAutoGenerateText::TextAutoGenerateTagsModel::Name).toString(), u"bla1"_s);
+    const QModelIndex idx2 = model.index(1, 0);
+    QCOMPARE(idx2.data(TextAutoGenerateText::TextAutoGenerateTagsModel::Name).toString(), u"bla1"_s);
+    QVERIFY(!idx2.data(TextAutoGenerateText::TextAutoGenerateTagsModel::Color).isValid());
+    QVERIFY(!idx2.data(Qt::DecorationRole).isValid());
 }
 
 void TextAutoGenerateTagsModelTest::shouldRemoveTag()
