@@ -21,3 +21,5 @@ void TextAutoGenerateTagTest::shouldHaveDefaultValues()
     QVERIFY(tag.name().isEmpty());
     QVERIFY(!tag.color().isValid());
 }
+
+#include "moc_textautogeneratetagtest.cpp"
