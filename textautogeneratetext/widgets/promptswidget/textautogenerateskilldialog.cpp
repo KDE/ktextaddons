@@ -20,11 +20,11 @@ TextAutoGenerateSkillDialog::TextAutoGenerateSkillDialog(QWidget *parent)
     : QDialog(parent)
     , mSkillWidget(new TextAutoGenerateSkillWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Debug"));
+    setWindowTitle(i18nc("@title:window", "Skill"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
 
-    mSkillWidget->setObjectName(u"mPromptWidget"_s);
+    mSkillWidget->setObjectName(u"mSkillWidget"_s);
     mainLayout->addWidget(mSkillWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
