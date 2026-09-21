@@ -27,6 +27,12 @@ QString TextAutoGenerateLocalDatabaseUtils::localChatsDatabasePath()
         + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::Chats);
 }
 
+QString TextAutoGenerateLocalDatabaseUtils::localTagsDatabasePath()
+{
+    return TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
+        + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::Tags);
+}
+
 QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath pathType)
 {
     switch (pathType) {
@@ -36,6 +42,8 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
         return u"chats/"_s;
     case TextAutoGenerateLocalDatabaseUtils::DatabasePath::ChatPendingTypedInfo:
         return u"roompendingtypedinfo/"_s;
+    case TextAutoGenerateLocalDatabaseUtils::DatabasePath::Tags:
+        return u"tags/"_s;
     }
     Q_UNREACHABLE();
     return {};
@@ -75,4 +83,14 @@ QString TextAutoGenerateLocalDatabaseUtils::insertReplaceChatPendingTypedInfo()
 QString TextAutoGenerateLocalDatabaseUtils::deleteChatPendingTypedInfo()
 {
     return u"DELETE FROM ROOMPENDINGTYPED WHERE roomId = ?"_s;
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::insertReplaceTag()
+{
+    return u"INSERT OR REPLACE INTO TAGS VALUES (?, ?)"_s;
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::deleteTag()
+{
+    return u"DELETE FROM TAGS WHERE tagId = ?"_s;
 }

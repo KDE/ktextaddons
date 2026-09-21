@@ -9,6 +9,7 @@
 #include "textautogeneratelocalchatpendingtypedinfodatabase.h"
 #include "textautogeneratelocalchatsdatabase.h"
 #include "textautogeneratelocalmessagesdatabase.h"
+#include "textautogeneratelocaltagsdatabase.h"
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -16,6 +17,7 @@ TextAutoGenerateLocalDatabaseManager::TextAutoGenerateLocalDatabaseManager()
     : mMessagesDatabase(std::make_unique<TextAutoGenerateLocalMessagesDatabase>())
     , mChatsDatabase(std::make_unique<TextAutoGenerateLocalChatsDatabase>())
     , mChatPendingTypedInfoDatabase(std::make_unique<TextAutoGenerateLocalChatPendingTypedInfoDatabase>())
+    , mTagsDatabase(std::make_unique<TextAutoGenerateLocalTagsDatabase>())
 {
 }
 
@@ -104,4 +106,25 @@ TextAutoGenerateLocalChatsDatabase *TextAutoGenerateLocalDatabaseManager::chatsD
 TextAutoGenerateLocalChatPendingTypedInfoDatabase *TextAutoGenerateLocalDatabaseManager::chatPendingTypedInfoDatabase() const
 {
     return mChatPendingTypedInfoDatabase.get();
+}
+
+TextAutoGenerateLocalTagsDatabase *TextAutoGenerateLocalDatabaseManager::tagsDatabase() const
+{
+    return mTagsDatabase.get();
+}
+
+void TextAutoGenerateLocalDatabaseManager::deleteTag(const QByteArray &tagId)
+{
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Delete Tag" << tagId;
+    mTagsDatabase->deleteTag(tagId);
+}
+
+void TextAutoGenerateLocalDatabaseManager::insertOrUpdateTag(const TextAutoGenerateTag &tag)
+{
+    mTagsDatabase->insertOrUpdateTag(tag);
+}
+
+QList<TextAutoGenerateTag> TextAutoGenerateLocalDatabaseManager::loadTags() const
+{
+    return mTagsDatabase->loadTags();
 }

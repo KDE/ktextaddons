@@ -56,6 +56,9 @@ QString TextAutoGenerateLocalDatabaseAbstract::databaseName() const
     case DatabaseType::PendingTypedInfo:
         prefix = u"pendingtypedinfo"_s;
         break;
+    case DatabaseType::Tags:
+        prefix = u"tags"_s;
+        break;
     }
     return prefix;
 }

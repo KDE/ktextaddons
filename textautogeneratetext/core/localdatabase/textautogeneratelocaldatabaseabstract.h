@@ -18,6 +18,7 @@ public:
         Chats,
         Messages,
         PendingTypedInfo,
+        Tags,
     };
 
     explicit TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type);

@@ -14,12 +14,14 @@ enum class DatabasePath : uint8_t {
     Chats,
     Messages,
     ChatPendingTypedInfo,
+    Tags,
 };
 
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localDatabasePath();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localMessagesDatabasePath();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localChatsDatabasePath();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localChatPendingTypedInfoDatabasePath();
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localTagsDatabasePath();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath pathType);
 
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceChat();
@@ -30,5 +32,8 @@ enum class DatabasePath : uint8_t {
 
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceChatPendingTypedInfo();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteChatPendingTypedInfo();
+
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceTag();
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteTag();
 }
 }
