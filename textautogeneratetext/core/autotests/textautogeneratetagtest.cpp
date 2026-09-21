@@ -17,7 +17,7 @@ TextAutoGenerateTagTest::TextAutoGenerateTagTest(QObject *parent)
 void TextAutoGenerateTagTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateTag tag;
-    QVERIFY(tag.identifier().isEmpty());
+    QVERIFY(!tag.identifier().isEmpty());
     QVERIFY(tag.name().isEmpty());
     QVERIFY(!tag.color().isValid());
 }
