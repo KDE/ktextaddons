@@ -10,6 +10,7 @@
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratefilecache.h"
 #include "core/textautogeneratesettings.h"
+#include "core/textautogeneratetagsmanager.h"
 #include "core/textautogeneratetextutils.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
@@ -60,9 +61,12 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 #endif
     , mTextAutoGenerateAgentPrompSkillManager(new TextAutoGenerateAgentPrompSkillManager(this))
     , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpProtocolCore::McpServerManager(this))
+    , mTextAutoGenerateTagsManager(new TextAutoGenerateTagsManager(this))
 {
     mTextAutoGenerateTextMcpServerManager->loadServers();
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
+    mTextAutoGenerateTagsManager->setTags(mDatabaseManager->loadTags());
+
     // Load TextAutoGenerateTextToolPluginManager
     (void)TextAutoGenerateTextToolPluginManager::self();
     TextAutoGenerateTextToolPluginManager::self()->setManager(this);
@@ -740,6 +744,11 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     // content.info =
     replaceContent(info.chatId, info.messageUuid, content, info.attachementInfoList);
     changeInProgress(info.chatId, info.messageUuid, false);
+}
+
+TextAutoGenerateTagsManager *TextAutoGenerateManager::textAutoGenerateTagsManager() const
+{
+    return mTextAutoGenerateTagsManager;
 }
 
 TextAutoGenerateAgentPrompSkillManager *TextAutoGenerateManager::textAutoGenerateAgentPrompSkillManager() const

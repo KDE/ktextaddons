@@ -32,6 +32,7 @@ class TextAutoGenerateTextToSpeechEnqueueManager;
 class TextAutoGenerateFileCache;
 class TextAutoGenerateTextToolInternalInterface;
 class TextAutoGenerateAgentPrompSkillManager;
+class TextAutoGenerateTagsManager;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateManager
  * \brief The TextAutoGenerateManager class
@@ -464,7 +465,17 @@ public:
      */
     void forkDiscussionUntilMessage(const QByteArray &chatId, const QByteArray &uuid);
 
+    /*!
+     * \brief textAutoGenerateAgentPrompSkillManager
+     * \return
+     */
     [[nodiscard]] TextAutoGenerateAgentPrompSkillManager *textAutoGenerateAgentPrompSkillManager() const;
+
+    /*!
+     * \brief textAutoGenerateTagsManager
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateTagsManager *textAutoGenerateTagsManager() const;
 
 Q_SIGNALS:
     /*!
@@ -596,6 +607,7 @@ private:
 #endif
     TextAutoGenerateAgentPrompSkillManager *const mTextAutoGenerateAgentPrompSkillManager;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mTextAutoGenerateTextMcpServerManager;
+    TextAutoGenerateTagsManager *const mTextAutoGenerateTagsManager;
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
     QString mSwitchToChatName;
