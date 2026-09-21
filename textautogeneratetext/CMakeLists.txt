@@ -256,6 +256,8 @@ target_sources(
         core/prompts/textautogenerateprompt.cpp
         core/prompts/textautogenerateagent.cpp
         core/prompts/textautogenerateagent.h
+        core/tags/textautogeneratetag.h
+        core/tags/textautogeneratetag.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
