@@ -25,7 +25,13 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
     // By default don't display any sections
     // Thanks to recursive filtering, the sections with channels will be displayed
     if (!source_parent.isValid()) {
-        return false;
+        // A project is shown even when it is empty, so that it can still be used as a drop target,
+        // but only when nothing filters the history: an empty project matches no search.
+        if (mShowArchived || !mFilterString.isEmpty() || !mFilterTags.isEmpty()) {
+            return false;
+        }
+        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+        return !sourceIndex.data(TextAutoGenerateChatsModel::Project).toByteArray().isEmpty();
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
     if (const bool archived = sourceIndex.data(TextAutoGenerateChatsModel::Archived).toBool(); mShowArchived != archived) {

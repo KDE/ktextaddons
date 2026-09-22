@@ -6,6 +6,9 @@
 
 #include "textautogeneratehistorylistheadingsproxymodel.h"
 
+#include "core/models/textautogenerateprojectsmodel.h"
+#include "core/textautogenerateprojectsmanager.h"
+
 #include <QApplication>
 #include <QFont>
 #include <QPalette>
@@ -13,16 +16,24 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateHistoryListHeadingsProxyModel::TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent)
     : QAbstractProxyModel{parent}
 {
+    rebuildSections();
 }
 
 TextAutoGenerateHistoryListHeadingsProxyModel::~TextAutoGenerateHistoryListHeadingsProxyModel() = default;
 
-namespace
+bool TextAutoGenerateHistoryListHeadingsProxyModel::isValidSectionRow(int row) const
 {
-bool isValidSectionRow(int row)
-{
-    return row >= 0 && row < int(TextAutoGenerateHistoryListHeadingsProxyModel::sectionCount);
+    return row >= 0 && row < int(mSections.size());
 }
+
+TextAutoGenerateProjectsModel *TextAutoGenerateHistoryListHeadingsProxyModel::projectsModel() const
+{
+    const auto *chatsModel = qobject_cast<const TextAutoGenerateChatsModel *>(sourceModel());
+    if (!chatsModel) {
+        return nullptr;
+    }
+    auto *projectsManager = chatsModel->textAutoGenerateProjectsManager();
+    return projectsManager ? projectsManager->textAutoGenerateProjectsModel() : nullptr;
 }
 
 QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &index, int role) const
@@ -30,10 +41,20 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
     switch (type(index)) {
     case IndexType::Root:
         return {};
-    case IndexType::Section:
+    case IndexType::Section: {
+        if (!isValidSectionRow(index.row())) {
+            return {};
+        }
+        const auto &section = mSections.at(index.row());
         switch (role) {
         case Qt::ItemDataRole::DisplayRole:
-            return TextAutoGenerateChatsModel::sectionName(TextAutoGenerateChat::SectionHistory(index.row()));
+            if (!section.projectId.isEmpty()) {
+                return mProjectsModel ? mProjectsModel->nameFromIdentifier(section.projectId) : QString{};
+            }
+            return TextAutoGenerateChatsModel::sectionName(section.kind);
+        case TextAutoGenerateChatsModel::Project:
+            // Empty for a date section, so that a caller can tell both apart.
+            return section.projectId;
         case Qt::BackgroundRole:
             return QApplication::palette().brush(QPalette::Window);
         case Qt::FontRole: {
@@ -44,6 +65,7 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
         default:
             return {};
         }
+    }
     case IndexType::History:
         return sourceModel()->data(mapToSource(index), role);
     }
@@ -62,14 +84,14 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::index(int row, int co
         if (!isValidSectionRow(row)) {
             return {};
         }
-        return createIndex(row, column, sectionCount);
+        return createIndex(row, column, sectionMarker);
     }
     case IndexType::Section: {
         if (!isValidSectionRow(parent.row())) {
             return {};
         }
         const auto &section = mSections.at(parent.row());
-        if (row >= int(section.size())) {
+        if (row >= int(section.chats.size())) {
             return {};
         }
         return createIndex(row, column, parent.row());
@@ -88,7 +110,7 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::parent(const QModelIn
     case IndexType::Section:
         return {};
     case IndexType::History:
-        return createIndex(int(child.internalId()), 0, sectionCount);
+        return createIndex(int(child.internalId()), 0, sectionMarker);
     }
     Q_UNREACHABLE();
     return {};
@@ -98,12 +120,12 @@ int TextAutoGenerateHistoryListHeadingsProxyModel::rowCount(const QModelIndex &p
 {
     switch (type(parent)) {
     case IndexType::Root:
-        return sectionCount;
+        return int(mSections.size());
     case IndexType::Section:
         if (!isValidSectionRow(parent.row())) {
             return 0;
         }
-        return int(mSections.at(parent.row()).size());
+        return int(mSections.at(parent.row()).chats.size());
     case IndexType::History:
         return 0;
     }
@@ -151,14 +173,15 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::setSourceModel(QAbstractItem
     if (auto *oldModel = this->sourceModel()) {
         disconnect(oldModel, nullptr, this, nullptr);
     }
-
-    for (auto &section : mSections) {
-        section.clear();
+    if (mProjectsModel) {
+        disconnect(mProjectsModel, nullptr, this, nullptr);
     }
+    mProjectsModel = nullptr;
 
     QAbstractProxyModel::setSourceModel(sourceModel);
 
     if (!sourceModel) {
+        rebuildSections();
         endResetModel();
         return;
     }
@@ -185,6 +208,19 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::setSourceModel(QAbstractItem
     connect(sourceModel, &QAbstractItemModel::layoutChanged, this, &TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections);
     connect(sourceModel, &QAbstractItemModel::layoutChanged, this, &TextAutoGenerateHistoryListHeadingsProxyModel::layoutChanged);
 
+    mProjectsModel = projectsModel();
+    if (mProjectsModel) {
+        // A project is a root row of this model, so adding or removing one changes the sections
+        // themselves: rebuilding everything is simpler than moving the chats around by hand, and
+        // projects don't change often.
+        connect(mProjectsModel, &QAbstractItemModel::rowsInserted, this, &TextAutoGenerateHistoryListHeadingsProxyModel::resetSections);
+        connect(mProjectsModel, &QAbstractItemModel::rowsRemoved, this, &TextAutoGenerateHistoryListHeadingsProxyModel::resetSections);
+        connect(mProjectsModel, &QAbstractItemModel::modelReset, this, &TextAutoGenerateHistoryListHeadingsProxyModel::resetSections);
+        connect(mProjectsModel, &QAbstractItemModel::layoutChanged, this, &TextAutoGenerateHistoryListHeadingsProxyModel::resetSections);
+        // Renaming a project only changes the name shown in its heading.
+        connect(mProjectsModel, &QAbstractItemModel::dataChanged, this, &TextAutoGenerateHistoryListHeadingsProxyModel::onProjectsDataChanged);
+    }
+
     rebuildSections();
 
     endResetModel();
@@ -206,10 +242,10 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QMo
             return {};
         }
         const auto &section = mSections.at(sectionId);
-        if (proxyIndex.row() < 0 || proxyIndex.row() >= int(section.size())) {
+        if (proxyIndex.row() < 0 || proxyIndex.row() >= int(section.chats.size())) {
             return {};
         }
-        return section.at(proxyIndex.row());
+        return section.chats.at(proxyIndex.row());
     }
     }
     Q_UNREACHABLE();
@@ -227,27 +263,43 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const Q
     }
 
     for (auto sectionId = size_t(0), iMax = mSections.size(); sectionId < iMax; ++sectionId) {
-        const auto &section = mSections.at(sectionId);
+        const auto &chats = mSections.at(sectionId).chats;
 
-        if (const auto it = std::lower_bound(section.cbegin(), section.cend(), sourceIndex); it != section.cend() && *it == sourceIndex) {
-            return createIndex(int(it - section.cbegin()), 0, sectionId);
+        if (const auto it = std::lower_bound(chats.cbegin(), chats.cend(), sourceIndex); it != chats.cend() && *it == sourceIndex) {
+            return createIndex(int(it - chats.cbegin()), 0, sectionId);
         }
     }
 
     return {};
 }
 
+int TextAutoGenerateHistoryListHeadingsProxyModel::sectionId(const QModelIndex &sourceIndex) const
+{
+    // A chat which belongs to a project is only listed in that project, and not in a date section.
+    if (const QByteArray projectId = sourceIndex.data(TextAutoGenerateChatsModel::Project).toByteArray(); !projectId.isEmpty()) {
+        const auto sameProject = [&projectId](const Section &section) {
+            return section.projectId == projectId;
+        };
+        if (const auto it = std::find_if(mSections.cbegin(), mSections.cend(), sameProject); it != mSections.cend()) {
+            return int(it - mSections.cbegin());
+        }
+        // Unknown project: fall back to the date sections.
+    }
+    const auto kind = sourceIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChat::SectionHistory>();
+    return int(mSections.size() - sectionCount) + int(kind);
+}
+
 void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelIndex &parent, int first, int last)
 {
     for (auto row = first; row <= last; ++row) {
         const QPersistentModelIndex persistentIndex = sourceModel()->index(row, 0, parent);
-        const auto newSectionId = int(persistentIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChat::SectionHistory>());
-        auto &newSection = mSections.at(newSectionId);
+        const auto newSectionId = sectionId(persistentIndex);
+        auto &newSection = mSections.at(newSectionId).chats;
 
         const auto newLocation = std::lower_bound(newSection.cbegin(), newSection.cend(), persistentIndex);
         const auto newLocationRow = int(newLocation - newSection.cbegin());
 
-        beginInsertRows(createIndex(newSectionId, 0, sectionCount), newLocationRow, newLocationRow);
+        beginInsertRows(createIndex(newSectionId, 0, sectionMarker), newLocationRow, newLocationRow);
 
         newSection.insert(newLocation, persistentIndex);
 
@@ -262,7 +314,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsAboutToBeRemoved(const
 
         const auto ourOldIndex = mapFromSource(newIndex);
         const auto oldSectionId = ourOldIndex.internalId();
-        auto &oldSection = mSections.at(oldSectionId);
+        auto &oldSection = mSections.at(oldSectionId).chats;
 
         beginRemoveRows(ourOldIndex.parent(), ourOldIndex.row(), ourOldIndex.row());
 
@@ -282,7 +334,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
 
     if (!roles.empty()
         && (!roles.contains(TextAutoGenerateChatsModel::Section) && !roles.contains(TextAutoGenerateChatsModel::Favorite)
-            && !roles.contains(TextAutoGenerateChatsModel::DateTime))) {
+            && !roles.contains(TextAutoGenerateChatsModel::DateTime) && !roles.contains(TextAutoGenerateChatsModel::Project))) {
         return;
     }
     for (auto row = topLeft.row(), last = bottomRight.row(); row <= last; ++row) {
@@ -290,19 +342,19 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
         const auto ourOldIndex = mapFromSource(sourceIndex);
 
         const auto oldSectionId = int(ourOldIndex.internalId());
-        const auto newSectionId = int(sourceIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChat::SectionHistory>());
+        const auto newSectionId = sectionId(sourceIndex);
 
         if (oldSectionId == newSectionId) {
             continue;
         }
 
-        auto &oldSection = mSections.at(oldSectionId);
-        auto &newSection = mSections.at(newSectionId);
+        auto &oldSection = mSections.at(oldSectionId).chats;
+        auto &newSection = mSections.at(newSectionId).chats;
 
         const auto newLocation = std::lower_bound(newSection.cbegin(), newSection.cend(), sourceIndex);
         const auto newLocationRow = int(newLocation - newSection.cbegin());
 
-        beginMoveRows(ourOldIndex.parent(), ourOldIndex.row(), ourOldIndex.row(), createIndex(newSectionId, 0, sectionCount), newLocationRow);
+        beginMoveRows(ourOldIndex.parent(), ourOldIndex.row(), ourOldIndex.row(), createIndex(newSectionId, 0, sectionMarker), newLocationRow);
 
         auto persistantIndex = oldSection[ourOldIndex.row()];
         oldSection.erase(oldSection.begin() + ourOldIndex.row());
@@ -312,22 +364,55 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
     }
 }
 
+void TextAutoGenerateHistoryListHeadingsProxyModel::onProjectsDataChanged(const QModelIndex &topLeft,
+                                                                          const QModelIndex &bottomRight,
+                                                                          [[maybe_unused]] const QList<int> &roles)
+{
+    // The project sections are the first rows of this model, in the order of the projects model.
+    const QModelIndex first = index(topLeft.row(), 0, {});
+    const QModelIndex last = index(bottomRight.row(), 0, {});
+    if (first.isValid() && last.isValid()) {
+        Q_EMIT dataChanged(first, last);
+    }
+}
+
+void TextAutoGenerateHistoryListHeadingsProxyModel::resetSections()
+{
+    beginResetModel();
+    rebuildSections();
+    endResetModel();
+}
+
 void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
 {
-    for (auto &section : mSections) {
-        section.clear();
+    mSections.clear();
+
+    if (mProjectsModel) {
+        const int projectCount = mProjectsModel->rowCount();
+        mSections.reserve(projectCount + sectionCount);
+        for (int row = 0; row < projectCount; ++row) {
+            Section section;
+            section.projectId = mProjectsModel->index(row, 0).data(TextAutoGenerateProjectsModel::Identifier).toByteArray();
+            mSections.push_back(std::move(section));
+        }
+    }
+    for (uint i = 0; i < sectionCount; ++i) {
+        Section section;
+        section.kind = TextAutoGenerateChat::SectionHistory(i);
+        mSections.push_back(std::move(section));
+    }
+
+    if (!sourceModel()) {
+        return;
     }
 
     for (auto row = 0, until = sourceModel()->rowCount(); row < until; ++row) {
         const QPersistentModelIndex newIndex = sourceModel()->index(row, 0);
-        const auto newSectionId = uint(newIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChat::SectionHistory>());
-        auto &newSection = mSections.at(newSectionId);
-
-        newSection.push_back(newIndex);
+        mSections.at(sectionId(newIndex)).chats.push_back(newIndex);
     }
 
     for (auto &section : mSections) {
-        std::sort(section.begin(), section.end());
+        std::sort(section.chats.begin(), section.chats.end());
     }
 }
 
@@ -337,7 +422,7 @@ auto TextAutoGenerateHistoryListHeadingsProxyModel::type(const QModelIndex &inde
         return IndexType::Root;
     }
 
-    if (index.internalId() == sectionCount) {
+    if (index.internalId() == sectionMarker) {
         return IndexType::Section;
     }
 

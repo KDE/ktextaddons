@@ -18,4 +18,7 @@ public:
 private Q_SLOTS:
     void shouldHandleNullSourceModel();
     void shouldRejectInvalidIndexes();
+    void shouldGroupChatsByProject();
+    void shouldMoveChatBetweenProjectAndDateSection();
+    void shouldFollowProjectChanges();
 };
