@@ -474,6 +474,14 @@ target_sources(
         widgets/tags/textautogeneratetagsmenu.cpp
         widgets/tags/textautogenerateselecttagscombobox.h
         widgets/tags/textautogenerateselecttagscombobox.cpp
+        widgets/projects/textautogenerateprojectwidget.h
+        widgets/projects/textautogenerateprojectwidget.cpp
+        widgets/projects/textautogenerateprojectdialog.h
+        widgets/projects/textautogenerateprojectdialog.cpp
+        widgets/projects/textautogeneratemanageprojectswidget.h
+        widgets/projects/textautogeneratemanageprojectswidget.cpp
+        widgets/projects/textautogeneratemanageprojectsdialog.h
+        widgets/projects/textautogeneratemanageprojectsdialog.cpp
 )
 
 if(BUILD_TESTING)
@@ -484,6 +492,7 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/availablemodel/autotests)
     add_subdirectory(widgets/promptswidget/autotests)
     add_subdirectory(widgets/tags/autotests)
+    add_subdirectory(widgets/projects/autotests)
 endif()
 
 add_subdirectory(plugins)
