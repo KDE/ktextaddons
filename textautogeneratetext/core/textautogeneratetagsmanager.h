@@ -50,6 +50,13 @@ public:
      */
     void removeTag(const QByteArray &identifier);
 
+    /*!
+     * \brief colors
+     * \param identifiers
+     * \return
+     */
+    [[nodiscard]] QList<QColor> colors(const QList<QByteArray> &identifiers) const;
+
 private:
     TextAutoGenerateTagsModel *const mTextAutoGenerateTagsModel;
 };

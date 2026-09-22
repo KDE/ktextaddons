@@ -90,6 +90,19 @@ public:
      */
     void clear();
 
+    /*!
+     * \brief colorFromIdentifier
+     * \param identifier
+     * \return
+     */
+    [[nodiscard]] QColor colorFromIdentifier(const QByteArray &identifier) const;
+    /*!
+     * \brief colors
+     * \param identifiers
+     * \return
+     */
+    [[nodiscard]] QList<QColor> colors(const QList<QByteArray> &identifiers) const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
     QList<TextAutoGenerateTag> mTags;

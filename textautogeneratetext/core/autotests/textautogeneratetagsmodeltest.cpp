@@ -26,7 +26,7 @@ TextAutoGenerateTagsModelTest::TextAutoGenerateTagsModelTest(QObject *parent)
 
 void TextAutoGenerateTagsModelTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTagsModel model;
+    const TextAutoGenerateText::TextAutoGenerateTagsModel model;
     QVERIFY(model.tags().isEmpty());
     QCOMPARE(model.rowCount(), 0);
 }
@@ -77,7 +77,7 @@ void TextAutoGenerateTagsModelTest::shouldUpdateTag()
     TextAutoGenerateText::TextAutoGenerateTagsModel model;
     model.setTags({createTag("foo"_ba, u"bla"_s), createTag("foo1"_ba, u"bla1"_s)});
 
-    QSignalSpy dataChangedSpy(&model, &TextAutoGenerateText::TextAutoGenerateTagsModel::dataChanged);
+    const QSignalSpy dataChangedSpy(&model, &TextAutoGenerateText::TextAutoGenerateTagsModel::dataChanged);
     model.updateTag(createTag("foo1"_ba, u"newname"_s, Qt::blue));
     QCOMPARE(dataChangedSpy.count(), 1);
     QCOMPARE(dataChangedSpy.at(0).at(0).toModelIndex(), model.index(1, 0));
@@ -103,6 +103,18 @@ void TextAutoGenerateTagsModelTest::shouldClearTags()
     model.clear();
     QVERIFY(model.tags().isEmpty());
     QCOMPARE(model.rowCount(), 0);
+}
+
+void TextAutoGenerateTagsModelTest::shouldReturnColors()
+{
+    TextAutoGenerateText::TextAutoGenerateTagsModel model;
+    model.setTags({createTag("foo"_ba, u"bla"_s, Qt::red), createTag("foo1"_ba, u"bla1"_s, Qt::blue), createTag("foo2"_ba, u"bla2"_s)});
+    QCOMPARE(model.colorFromIdentifier("foo"_ba), Qt::red);
+    QCOMPARE(model.colorFromIdentifier("foo1"_ba), Qt::blue);
+    QCOMPARE(model.colorFromIdentifier("foo2"_ba), QColor());
+
+    QCOMPARE(model.colors({"foo"_ba, "foo1"}), QList<QColor>() << Qt::red << Qt::blue);
+    QCOMPARE(model.colors({"unknown"_ba, "foo1"}), QList<QColor>() << QColor() << Qt::blue);
 }
 
 #include "moc_textautogeneratetagsmodeltest.cpp"

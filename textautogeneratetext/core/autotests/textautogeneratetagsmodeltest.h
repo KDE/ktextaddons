@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldRemoveTag();
     void shouldUpdateTag();
     void shouldClearTags();
+    void shouldReturnColors();
 };

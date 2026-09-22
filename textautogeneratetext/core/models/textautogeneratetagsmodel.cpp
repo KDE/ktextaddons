@@ -51,6 +51,24 @@ QVariant TextAutoGenerateTagsModel::data(const QModelIndex &index, int role) con
     return {};
 }
 
+QList<QColor> TextAutoGenerateTagsModel::colors(const QList<QByteArray> &identifiers) const
+{
+    QList<QColor> lstColors;
+    lstColors.reserve(identifiers.count());
+    for (const QByteArray &id : identifiers) {
+        lstColors.append(colorFromIdentifier(id));
+    }
+    return lstColors;
+}
+
+QColor TextAutoGenerateTagsModel::colorFromIdentifier(const QByteArray &identifier) const
+{
+    if (const int i = indexFromIdentifier(identifier); i != -1) {
+        return mTags.at(i).color();
+    }
+    return {};
+}
+
 QList<TextAutoGenerateTag> TextAutoGenerateTagsModel::tags() const
 {
     return mTags;

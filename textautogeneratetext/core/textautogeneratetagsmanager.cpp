@@ -29,4 +29,10 @@ void TextAutoGenerateTagsManager::removeTag(const QByteArray &identifier)
 {
     mTextAutoGenerateTagsModel->removeTag(identifier);
 }
+
+QList<QColor> TextAutoGenerateTagsManager::colors(const QList<QByteArray> &identifiers) const
+{
+    return mTextAutoGenerateTagsModel->colors(identifiers);
+}
+
 #include "moc_textautogeneratetagsmanager.cpp"

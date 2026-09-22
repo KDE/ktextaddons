@@ -7,8 +7,10 @@
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratechatsettings.h"
+#include "core/textautogeneratetagsmanager.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
+#include <QColor>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateChatsModel::TextAutoGenerateChatsModel(QObject *parent)
@@ -70,6 +72,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return chatElement.archived();
     case InProgress:
         return chatElement.inProgress();
+    case TagsColor:
+        return QVariant::fromValue(mTextAutoGenerateTagsManager ? mTextAutoGenerateTagsManager->colors(chatElement.tags()) : QList<QColor>());
     case Tags:
         return QVariant::fromValue(chatElement.tags());
     case Section:
@@ -93,6 +97,16 @@ QString TextAutoGenerateChatsModel::title(const TextAutoGenerateChat &chat) cons
 qint64 TextAutoGenerateChatsModel::dateTime(const TextAutoGenerateChat &chat) const
 {
     return chat.dateTime();
+}
+
+TextAutoGenerateTagsManager *TextAutoGenerateChatsModel::textAutoGenerateTagsManager() const
+{
+    return mTextAutoGenerateTagsManager;
+}
+
+void TextAutoGenerateChatsModel::setTextAutoGenerateTagsManager(TextAutoGenerateTagsManager *newTextAutoGenerateTagsManager)
+{
+    mTextAutoGenerateTagsManager = newTextAutoGenerateTagsManager;
 }
 
 TextAutoGenerateChatSettings *TextAutoGenerateChatsModel::textAutoGenerateChatSettings() const
@@ -136,6 +150,7 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     }
     case ChatRoles::Identifier:
     case ChatRoles::Tags:
+    case ChatRoles::TagsColor:
     case ChatRoles::Section:
     case ChatRoles::DateTime:
         break;

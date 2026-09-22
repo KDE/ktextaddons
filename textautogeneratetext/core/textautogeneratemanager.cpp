@@ -65,6 +65,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 {
     mTextAutoGenerateTextMcpServerManager->loadServers();
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
+    mTextAutoGenerateChatsModel->setTextAutoGenerateTagsManager(mTextAutoGenerateTagsManager);
     mTextAutoGenerateTagsManager->setTags(mDatabaseManager->loadTags());
 
     // Load TextAutoGenerateTextToolPluginManager

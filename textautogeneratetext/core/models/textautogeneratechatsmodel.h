@@ -10,6 +10,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateChatSettings;
+class TextAutoGenerateTagsManager;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateChatsModel
  * \brief The TextAutoGenerateChatsModel class
@@ -34,6 +35,7 @@ public:
         DateTime,
         HasPendingMessageTyped,
         Tags,
+        TagsColor,
     };
 
     /*! Constructs a new TextAutoGenerateChatsModel with the given @p parent. */
@@ -130,10 +132,22 @@ public:
      */
     void clear();
 
+    /*!
+     * \brief textAutoGenerateTagsManager
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateTagsManager *textAutoGenerateTagsManager() const;
+    /*!
+     * \brief setTextAutoGenerateTagsManager
+     * \param newTextAutoGenerateTagsManager
+     */
+    void setTextAutoGenerateTagsManager(TextAutoGenerateTagsManager *newTextAutoGenerateTagsManager);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
     TextAutoGenerateChatSettings *mTextAutoGenerateChatSettings = nullptr;
+    TextAutoGenerateTagsManager *mTextAutoGenerateTagsManager = nullptr;
 };
 }
