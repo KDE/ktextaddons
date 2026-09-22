@@ -27,9 +27,10 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(w.identifier().isEmpty());
     QVERIFY(w.prompt().isEmpty());
     QVERIFY(w.tags().isEmpty());
+    QVERIFY(w.projectId().isEmpty());
 
     // 10/05/2025 => size 72
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 128);
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 152);
 }
 
 void TextAutoGenerateChatTest::shouldSerializeDeserialize()
@@ -70,6 +71,19 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         const QJsonDocument doc = QJsonDocument::fromJson(ba);
         const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(ba1.tags(), QList<QByteArray>({"tag1", "tag2"}));
+        QCOMPARE(w, ba1);
+    }
+
+    {
+        TextAutoGenerateText::TextAutoGenerateChat w;
+        w.setTitle(u"bla5"_s);
+        w.setIdentifier("foo5");
+        w.setProjectId("project1");
+
+        const QByteArray ba = w.serialize(w, false);
+        const QJsonDocument doc = QJsonDocument::fromJson(ba);
+        const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        QCOMPARE(ba1.projectId(), "project1");
         QCOMPARE(w, ba1);
     }
 }

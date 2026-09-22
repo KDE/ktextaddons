@@ -11,6 +11,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateChatSettings;
 class TextAutoGenerateTagsManager;
+class TextAutoGenerateProjectsManager;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateChatsModel
  * \brief The TextAutoGenerateChatsModel class
@@ -36,6 +37,7 @@ public:
         HasPendingMessageTyped,
         Tags,
         TagsColor,
+        Project,
     };
 
     /*! Constructs a new TextAutoGenerateChatsModel with the given @p parent. */
@@ -97,6 +99,17 @@ public:
      *  identifiers of the chats which changed. */
     QList<QByteArray> removeTagFromChats(const QByteArray &tagId);
 
+    /*! Returns the identifier of the project the chat with the given @p chatId belongs to, or an
+     *  empty identifier when it doesn't belong to any project. */
+    [[nodiscard]] QByteArray chatProject(const QByteArray &chatId) const;
+    /*! Moves the chat with the given @p chatId to the project @p projectId, an empty identifier
+     *  removing it from its project. Returns true when the chat was found and its project changed,
+     *  so that the caller can store the chat. */
+    bool setChatProject(const QByteArray &chatId, const QByteArray &projectId);
+    /*! Removes the project identified by @p projectId from every chat which belongs to it, and
+     *  returns the identifiers of the chats which changed. */
+    QList<QByteArray> removeProjectFromChats(const QByteArray &projectId);
+
     /*! Returns whether the chat with the given @p chatId is marked as favorite. */
     [[nodiscard]] bool chatIsFavorited(const QByteArray &chatId) const;
     /*! Returns whether the chat with the given @p chatId is archived. */
@@ -152,11 +165,23 @@ public:
      */
     void setTextAutoGenerateTagsManager(TextAutoGenerateTagsManager *newTextAutoGenerateTagsManager);
 
+    /*!
+     * \brief textAutoGenerateProjectsManager
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateProjectsManager *textAutoGenerateProjectsManager() const;
+    /*!
+     * \brief setTextAutoGenerateProjectsManager
+     * \param newTextAutoGenerateProjectsManager
+     */
+    void setTextAutoGenerateProjectsManager(TextAutoGenerateProjectsManager *newTextAutoGenerateProjectsManager);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
     TextAutoGenerateChatSettings *mTextAutoGenerateChatSettings = nullptr;
     TextAutoGenerateTagsManager *mTextAutoGenerateTagsManager = nullptr;
+    TextAutoGenerateProjectsManager *mTextAutoGenerateProjectsManager = nullptr;
 };
 }

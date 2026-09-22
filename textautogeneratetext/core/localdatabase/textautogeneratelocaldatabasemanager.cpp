@@ -9,6 +9,7 @@
 #include "textautogeneratelocalchatpendingtypedinfodatabase.h"
 #include "textautogeneratelocalchatsdatabase.h"
 #include "textautogeneratelocalmessagesdatabase.h"
+#include "textautogeneratelocalprojectsdatabase.h"
 #include "textautogeneratelocaltagsdatabase.h"
 
 using namespace TextAutoGenerateText;
@@ -18,6 +19,7 @@ TextAutoGenerateLocalDatabaseManager::TextAutoGenerateLocalDatabaseManager()
     , mChatsDatabase(std::make_unique<TextAutoGenerateLocalChatsDatabase>())
     , mChatPendingTypedInfoDatabase(std::make_unique<TextAutoGenerateLocalChatPendingTypedInfoDatabase>())
     , mTagsDatabase(std::make_unique<TextAutoGenerateLocalTagsDatabase>())
+    , mProjectsDatabase(std::make_unique<TextAutoGenerateLocalProjectsDatabase>())
 {
 }
 
@@ -127,4 +129,25 @@ void TextAutoGenerateLocalDatabaseManager::insertOrUpdateTag(const TextAutoGener
 QList<TextAutoGenerateTag> TextAutoGenerateLocalDatabaseManager::loadTags() const
 {
     return mTagsDatabase->loadTags();
+}
+
+TextAutoGenerateLocalProjectsDatabase *TextAutoGenerateLocalDatabaseManager::projectsDatabase() const
+{
+    return mProjectsDatabase.get();
+}
+
+void TextAutoGenerateLocalDatabaseManager::deleteProject(const QByteArray &projectId)
+{
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Delete Project" << projectId;
+    mProjectsDatabase->deleteProject(projectId);
+}
+
+void TextAutoGenerateLocalDatabaseManager::insertOrUpdateProject(const TextAutoGenerateProject &project)
+{
+    mProjectsDatabase->insertOrUpdateProject(project);
+}
+
+QList<TextAutoGenerateProject> TextAutoGenerateLocalDatabaseManager::loadProjects() const
+{
+    return mProjectsDatabase->loadProjects();
 }

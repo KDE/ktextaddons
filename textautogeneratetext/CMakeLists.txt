@@ -41,11 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    core/textautogeneratetagsmanager.h
-    core/textautogeneratetagsmanager.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -193,6 +189,8 @@ target_sources(
         core/models/textautogeneratetextpromptsortfilterproxymodel.h
         core/models/textautogeneratetagsmodel.cpp
         core/models/textautogeneratetagsmodel.h
+        core/models/textautogenerateprojectsmodel.cpp
+        core/models/textautogenerateprojectsmodel.h
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
@@ -207,6 +205,8 @@ target_sources(
         core/localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.h
         core/localdatabase/textautogeneratelocaltagsdatabase.cpp
         core/localdatabase/textautogeneratelocaltagsdatabase.h
+        core/localdatabase/textautogeneratelocalprojectsdatabase.cpp
+        core/localdatabase/textautogeneratelocalprojectsdatabase.h
         core/textautogeneratesearchmessageutils.h
         core/textautogeneratesearchmessageutils.cpp
         core/textautogeneratereply.h
@@ -266,6 +266,12 @@ target_sources(
         core/prompts/textautogenerateagent.h
         core/tags/textautogeneratetag.h
         core/tags/textautogeneratetag.cpp
+        core/projects/textautogenerateproject.h
+        core/projects/textautogenerateproject.cpp
+        core/textautogeneratetagsmanager.h
+        core/textautogeneratetagsmanager.cpp
+        core/textautogenerateprojectsmanager.h
+        core/textautogenerateprojectsmanager.cpp
 )
 
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
@@ -570,6 +576,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateAttachmentUtils
     TextAutoGenerateSearchMessageSettings
     TextAutoGenerateAgentPrompSkillManager
+    TextAutoGenerateProjectsManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
@@ -601,6 +608,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     TextAutoGenerateTextPromptModel
     TextAutoGenerateTextPromptSortFilterProxyModel
     TextAutoGenerateTagsModel
+    TextAutoGenerateProjectsModel
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/models
@@ -611,6 +619,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreloca
     TextAutoGenerateLocalChatPendingTypedInfoDatabase
     TextAutoGenerateLocalChatsDatabase
     TextAutoGenerateLocalTagsDatabase
+    TextAutoGenerateLocalProjectsDatabase
     TextAutoGenerateLocalMessagesDatabase
     TextAutoGenerateLocalDatabaseManager
     TextAutoGenerateLocalDatabaseAbstract
@@ -635,6 +644,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoretags
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoretags_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tags
+)
+
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoreprojects_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateProject
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoreprojects_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/projects
 )
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS
@@ -773,6 +790,7 @@ set(TextAutoGenerateTextCamelCaseIncludeFiles
     ${TextAutoGenerateText_Camelcasestextautogeneratetextviewdelegate_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcoretags_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprojects_HEADERS}
 )
 
 install(
@@ -800,6 +818,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextviewdelegate_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextcoretags_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcoreprojects_HEADERS}
 )
 
 install(

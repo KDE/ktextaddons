@@ -76,6 +76,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return QVariant::fromValue(mTextAutoGenerateTagsManager ? mTextAutoGenerateTagsManager->colors(chatElement.tags()) : QList<QColor>());
     case Tags:
         return QVariant::fromValue(chatElement.tags());
+    case Project:
+        return chatElement.projectId();
     case Section:
         return QVariant::fromValue(chatElement.section());
     case DateTime:
@@ -107,6 +109,16 @@ TextAutoGenerateTagsManager *TextAutoGenerateChatsModel::textAutoGenerateTagsMan
 void TextAutoGenerateChatsModel::setTextAutoGenerateTagsManager(TextAutoGenerateTagsManager *newTextAutoGenerateTagsManager)
 {
     mTextAutoGenerateTagsManager = newTextAutoGenerateTagsManager;
+}
+
+TextAutoGenerateProjectsManager *TextAutoGenerateChatsModel::textAutoGenerateProjectsManager() const
+{
+    return mTextAutoGenerateProjectsManager;
+}
+
+void TextAutoGenerateChatsModel::setTextAutoGenerateProjectsManager(TextAutoGenerateProjectsManager *newTextAutoGenerateProjectsManager)
+{
+    mTextAutoGenerateProjectsManager = newTextAutoGenerateProjectsManager;
 }
 
 TextAutoGenerateChatSettings *TextAutoGenerateChatsModel::textAutoGenerateChatSettings() const
@@ -151,6 +163,7 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Identifier:
     case ChatRoles::Tags:
     case ChatRoles::TagsColor:
+    case ChatRoles::Project:
     case ChatRoles::Section:
     case ChatRoles::DateTime:
         break;
@@ -405,6 +418,44 @@ bool TextAutoGenerateChatsModel::setChatTags(const QByteArray &chatId, const QLi
     const QModelIndex index = createIndex(std::distance(mChats.begin(), it), 0);
     Q_EMIT dataChanged(index, index, {Tags, TagsColor});
     return true;
+}
+
+QByteArray TextAutoGenerateChatsModel::chatProject(const QByteArray &chatId) const
+{
+    return chat(chatId).projectId();
+}
+
+bool TextAutoGenerateChatsModel::setChatProject(const QByteArray &chatId, const QByteArray &projectId)
+{
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it == mChats.end() || (*it).projectId() == projectId) {
+        return false;
+    }
+    (*it).setProjectId(projectId);
+    const QModelIndex index = createIndex(std::distance(mChats.begin(), it), 0);
+    Q_EMIT dataChanged(index, index, {Project});
+    return true;
+}
+
+QList<QByteArray> TextAutoGenerateChatsModel::removeProjectFromChats(const QByteArray &projectId)
+{
+    QList<QByteArray> modifiedChats;
+    if (projectId.isEmpty()) {
+        return modifiedChats;
+    }
+    for (int i = 0, total = mChats.count(); i < total; ++i) {
+        if (mChats.at(i).projectId() != projectId) {
+            continue;
+        }
+        mChats[i].setProjectId({});
+        modifiedChats.append(mChats.at(i).identifier());
+        const QModelIndex index = createIndex(i, 0);
+        Q_EMIT dataChanged(index, index, {Project});
+    }
+    return modifiedChats;
 }
 
 QList<QByteArray> TextAutoGenerateChatsModel::removeTagFromChats(const QByteArray &tagId)

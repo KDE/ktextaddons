@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <TextAutoGenerateText/TextAutoGenerateProject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 #include <TextAutoGenerateText/TextAutoGenerateTag>
@@ -34,6 +35,7 @@ class TextAutoGenerateFileCache;
 class TextAutoGenerateTextToolInternalInterface;
 class TextAutoGenerateAgentPrompSkillManager;
 class TextAutoGenerateTagsManager;
+class TextAutoGenerateProjectsManager;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateManager
  * \brief The TextAutoGenerateManager class
@@ -502,6 +504,32 @@ public:
      */
     void updateTags(const QList<TextAutoGenerateTag> &tags);
 
+    /*!
+     * \brief textAutoGenerateProjectsManager
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateProjectsManager *textAutoGenerateProjectsManager() const;
+
+    /*!
+     * Returns the identifier of the project a chat belongs to, or an empty identifier when the chat
+     * doesn't belong to any project.
+     * \param chatId The ID of the chat
+     */
+    [[nodiscard]] QByteArray chatProject(const QByteArray &chatId) const;
+
+    /*!
+     * Moves a chat to a project.
+     * \param chatId The ID of the chat
+     * \param projectId The project identifier, an empty identifier removing the chat from its project
+     */
+    void setChatProject(const QByteArray &chatId, const QByteArray &projectId);
+
+    /*!
+     * Replaces the known projects by \a projects, storing the change in the local database. Projects
+     * which are not in \a projects any more are removed from the chats which belonged to them.
+     */
+    void updateProjects(const QList<TextAutoGenerateProject> &projects);
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
@@ -633,6 +661,7 @@ private:
     TextAutoGenerateAgentPrompSkillManager *const mTextAutoGenerateAgentPrompSkillManager;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mTextAutoGenerateTextMcpServerManager;
     TextAutoGenerateTagsManager *const mTextAutoGenerateTagsManager;
+    TextAutoGenerateProjectsManager *const mTextAutoGenerateProjectsManager;
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
     QString mSwitchToChatName;

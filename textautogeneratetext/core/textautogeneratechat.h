@@ -177,6 +177,18 @@ public:
     void setPrompt(const QString &newPrompt);
 
     /*!
+     * \brief projectId
+     * \return the identifier of the project the chat belongs to, or an empty identifier when the
+     * chat doesn't belong to any project.
+     */
+    [[nodiscard]] QByteArray projectId() const;
+    /*!
+     * \brief setProjectId
+     * \param newProjectId an empty identifier removes the chat from its project.
+     */
+    void setProjectId(const QByteArray &newProjectId);
+
+    /*!
      * \brief tags
      * \return
      */
@@ -192,6 +204,7 @@ private:
 
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
+    QByteArray mProjectId;
     QList<QByteArray> mTags;
     QString mTitle;
     QString mPrompt;

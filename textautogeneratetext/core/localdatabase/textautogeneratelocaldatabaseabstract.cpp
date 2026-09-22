@@ -59,6 +59,9 @@ QString TextAutoGenerateLocalDatabaseAbstract::databaseName() const
     case DatabaseType::Tags:
         prefix = u"tags"_s;
         break;
+    case DatabaseType::Projects:
+        prefix = u"projects"_s;
+        break;
     }
     return prefix;
 }

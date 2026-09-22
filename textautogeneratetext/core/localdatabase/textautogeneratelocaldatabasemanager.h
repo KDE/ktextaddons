@@ -9,6 +9,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateChatSettings>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <TextAutoGenerateText/TextAutoGenerateProject>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 #include <TextAutoGenerateText/TextAutoGenerateTag>
 #include <memory>
@@ -18,6 +19,7 @@ class TextAutoGenerateLocalChatsDatabase;
 class TextAutoGenerateLocalMessagesDatabase;
 class TextAutoGenerateLocalChatPendingTypedInfoDatabase;
 class TextAutoGenerateLocalTagsDatabase;
+class TextAutoGenerateLocalProjectsDatabase;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalDatabaseManager final
 {
 public:
@@ -55,10 +57,18 @@ public:
 
     [[nodiscard]] TextAutoGenerateLocalTagsDatabase *tagsDatabase() const;
 
+    void deleteProject(const QByteArray &projectId);
+    void insertOrUpdateProject(const TextAutoGenerateProject &project);
+
+    [[nodiscard]] QList<TextAutoGenerateProject> loadProjects() const;
+
+    [[nodiscard]] TextAutoGenerateLocalProjectsDatabase *projectsDatabase() const;
+
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatsDatabase> mChatsDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatPendingTypedInfoDatabase> mChatPendingTypedInfoDatabase;
     std::unique_ptr<TextAutoGenerateLocalTagsDatabase> mTagsDatabase;
+    std::unique_ptr<TextAutoGenerateLocalProjectsDatabase> mProjectsDatabase;
 };
 }

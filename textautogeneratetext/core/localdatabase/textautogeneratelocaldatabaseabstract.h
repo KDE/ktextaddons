@@ -19,6 +19,7 @@ public:
         Messages,
         PendingTypedInfo,
         Tags,
+        Projects,
     };
 
     explicit TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type);

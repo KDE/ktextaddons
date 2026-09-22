@@ -33,6 +33,12 @@ QString TextAutoGenerateLocalDatabaseUtils::localTagsDatabasePath()
         + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::Tags);
 }
 
+QString TextAutoGenerateLocalDatabaseUtils::localProjectsDatabasePath()
+{
+    return TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
+        + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::Projects);
+}
+
 QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath pathType)
 {
     switch (pathType) {
@@ -44,6 +50,8 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
         return u"roompendingtypedinfo/"_s;
     case TextAutoGenerateLocalDatabaseUtils::DatabasePath::Tags:
         return u"tags/"_s;
+    case TextAutoGenerateLocalDatabaseUtils::DatabasePath::Projects:
+        return u"projects/"_s;
     }
     Q_UNREACHABLE();
     return {};
@@ -93,4 +101,14 @@ QString TextAutoGenerateLocalDatabaseUtils::insertReplaceTag()
 QString TextAutoGenerateLocalDatabaseUtils::deleteTag()
 {
     return u"DELETE FROM TAGS WHERE tagId = ?"_s;
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::insertReplaceProject()
+{
+    return u"INSERT OR REPLACE INTO PROJECTS VALUES (?, ?)"_s;
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::deleteProject()
+{
+    return u"DELETE FROM PROJECTS WHERE projectId = ?"_s;
 }

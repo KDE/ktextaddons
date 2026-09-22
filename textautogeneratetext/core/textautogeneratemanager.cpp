@@ -9,6 +9,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratefilecache.h"
+#include "core/textautogenerateprojectsmanager.h"
 #include "core/textautogeneratesettings.h"
 #include "core/textautogeneratetagsmanager.h"
 #include "core/textautogeneratetextutils.h"
@@ -62,11 +63,14 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateAgentPrompSkillManager(new TextAutoGenerateAgentPrompSkillManager(this))
     , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpProtocolCore::McpServerManager(this))
     , mTextAutoGenerateTagsManager(new TextAutoGenerateTagsManager(this))
+    , mTextAutoGenerateProjectsManager(new TextAutoGenerateProjectsManager(this))
 {
     mTextAutoGenerateTextMcpServerManager->loadServers();
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     mTextAutoGenerateChatsModel->setTextAutoGenerateTagsManager(mTextAutoGenerateTagsManager);
     mTextAutoGenerateTagsManager->setTags(mDatabaseManager->loadTags());
+    mTextAutoGenerateChatsModel->setTextAutoGenerateProjectsManager(mTextAutoGenerateProjectsManager);
+    mTextAutoGenerateProjectsManager->setProjects(mDatabaseManager->loadProjects());
 
     // Load TextAutoGenerateTextToolPluginManager
     (void)TextAutoGenerateTextToolPluginManager::self();
@@ -794,6 +798,48 @@ void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
         }
     }
     mTextAutoGenerateTagsManager->setTags(tags);
+}
+
+TextAutoGenerateProjectsManager *TextAutoGenerateManager::textAutoGenerateProjectsManager() const
+{
+    return mTextAutoGenerateProjectsManager;
+}
+
+QByteArray TextAutoGenerateManager::chatProject(const QByteArray &chatId) const
+{
+    return mTextAutoGenerateChatsModel->chatProject(chatId);
+}
+
+void TextAutoGenerateManager::setChatProject(const QByteArray &chatId, const QByteArray &projectId)
+{
+    if (mTextAutoGenerateChatsModel->setChatProject(chatId, projectId)) {
+        saveChat(chatId);
+    }
+}
+
+void TextAutoGenerateManager::updateProjects(const QList<TextAutoGenerateProject> &projects)
+{
+    const QList<TextAutoGenerateProject> previousProjects = mTextAutoGenerateProjectsManager->projects();
+    for (const TextAutoGenerateProject &previousProject : previousProjects) {
+        const auto sameIdentifier = [&](const TextAutoGenerateProject &project) {
+            return project.identifier() == previousProject.identifier();
+        };
+        if (std::none_of(projects.cbegin(), projects.cend(), sameIdentifier)) {
+            if (mSaveInDatabase) {
+                mDatabaseManager->deleteProject(previousProject.identifier());
+            }
+            const QList<QByteArray> modifiedChats = mTextAutoGenerateChatsModel->removeProjectFromChats(previousProject.identifier());
+            for (const QByteArray &chatId : modifiedChats) {
+                saveChat(chatId);
+            }
+        }
+    }
+    for (const TextAutoGenerateProject &project : projects) {
+        if (!previousProjects.contains(project) && mSaveInDatabase) {
+            mDatabaseManager->insertOrUpdateProject(project);
+        }
+    }
+    mTextAutoGenerateProjectsManager->setProjects(projects);
 }
 
 TextAutoGenerateAgentPrompSkillManager *TextAutoGenerateManager::textAutoGenerateAgentPrompSkillManager() const
