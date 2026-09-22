@@ -31,7 +31,7 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
     if (const bool archived = sourceIndex.data(TextAutoGenerateChatsModel::Archived).toBool(); mShowArchived != archived) {
         return false;
     }
-    auto match = [&](int role) {
+    const auto match = [&](int role) {
         if (mFilterString.isEmpty()) {
             return true;
         };
