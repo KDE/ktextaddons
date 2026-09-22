@@ -23,6 +23,7 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     , mSearchLineEdit(new QLineEdit(this))
     , mSelectTagsComboBox(new TextAutoGenerateSelectTagsComboBox(this))
     , mManager(manager)
+    , mClearTagsButton(new QToolButton(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -47,13 +48,12 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     mSelectTagsComboBox->setToolTip(i18nc("@info:tooltip", "Only show the chats which have one of the selected tags"));
     selectTagsLayout->addWidget(mSelectTagsComboBox);
 
-    auto clearTags = new QToolButton(this);
-    clearTags->setObjectName("clearTags"_L1);
-    clearTags->setAutoRaise(true);
-    clearTags->setIcon(QIcon::fromTheme(u"edit-clear-all"_s));
-    selectTagsLayout->addWidget(clearTags);
+    mClearTagsButton->setObjectName("clearTags"_L1);
+    mClearTagsButton->setAutoRaise(true);
+    mClearTagsButton->setIcon(QIcon::fromTheme(u"edit-clear-all"_s));
+    selectTagsLayout->addWidget(mClearTagsButton);
 
-    connect(clearTags, &QToolButton::clicked, this, [this]() {
+    connect(mClearTagsButton, &QToolButton::clicked, this, [this]() {
         mSelectTagsComboBox->setSelectedTags({});
     });
 
@@ -110,7 +110,9 @@ void TextAutoGenerateHistoryWidget::updateTags()
     const QList<QByteArray> previousSelection = mSelectTagsComboBox->selectedTags();
     mSelectTagsComboBox->setTags(tags);
     mSelectTagsComboBox->setSelectedTags(previousSelection);
-    mSelectTagsComboBox->setVisible(!tags.isEmpty());
+    const bool tagsIsNotEmpty = !tags.isEmpty();
+    mClearTagsButton->setVisible(tagsIsNotEmpty);
+    mSelectTagsComboBox->setVisible(tagsIsNotEmpty);
 }
 
 #include "moc_textautogeneratehistorywidget.cpp"

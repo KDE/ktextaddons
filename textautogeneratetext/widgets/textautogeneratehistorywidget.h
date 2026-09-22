@@ -7,6 +7,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
+class QToolButton;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -34,5 +35,6 @@ private:
     QLineEdit *const mSearchLineEdit;
     TextAutoGenerateSelectTagsComboBox *const mSelectTagsComboBox;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    QToolButton *const mClearTagsButton;
 };
 }
