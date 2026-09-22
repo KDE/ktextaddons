@@ -12,6 +12,7 @@
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLineEdit>
+#include <QToolButton>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
@@ -38,9 +39,23 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
+    auto selectTagsLayout = new QHBoxLayout;
+    selectTagsLayout->setContentsMargins({});
+    selectTagsLayout->setSpacing(0);
+    mainLayout->addLayout(selectTagsLayout);
     mSelectTagsComboBox->setObjectName("mSelectTagsComboBox"_L1);
     mSelectTagsComboBox->setToolTip(i18nc("@info:tooltip", "Only show the chats which have one of the selected tags"));
-    mainLayout->addWidget(mSelectTagsComboBox);
+    selectTagsLayout->addWidget(mSelectTagsComboBox);
+
+    auto clearTags = new QToolButton(this);
+    clearTags->setObjectName("clearTags"_L1);
+    clearTags->setAutoRaise(true);
+    clearTags->setIcon(QIcon::fromTheme(u"edit-clear-all"_s));
+    selectTagsLayout->addWidget(clearTags);
+
+    connect(clearTags, &QToolButton::clicked, this, [this]() {
+        mSelectTagsComboBox->setSelectedTags({});
+    });
 
     mTextAutoGenerateHistoryListView->setObjectName("mTextAutoGenerateHistoryListView"_L1);
     mainLayout->addWidget(mTextAutoGenerateHistoryListView);
