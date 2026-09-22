@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-05-31 19:49-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
@@ -70,8 +70,7 @@ msgid "Mark as Active"
 msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action"
 msgid "Download"
 msgstr "چۈشۈرۈش"
@@ -150,7 +149,7 @@ msgstr "چوڭلۇقى"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "ئاكتىپ"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -195,11 +194,10 @@ msgid "Unable to download the %1 model: %2"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "ئورنىتىلغان"
+msgstr "ئورنات"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
@@ -208,11 +206,10 @@ msgid "Install Whisper Package"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "چۈشۈرۈش"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
@@ -251,16 +248,15 @@ msgid "Installation done."
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installation failed."
-msgstr "ئورنىتىلغان"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
@@ -330,10 +326,9 @@ msgid "Engine:"
 msgstr "ماتور:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
+#, kde-format
 msgid "Language:"
-msgstr "تىل"
+msgstr "تىل:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format

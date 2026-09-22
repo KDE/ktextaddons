@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:43+0000\n"
-"PO-Revision-Date: 2026-05-31 19:48-0400\n"
+"POT-Creation-Date: 2026-09-22 15:59+0000\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -44,37 +44,37 @@ msgstr ""
 msgid "Failed to open file for reading: %1"
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:90
+#: core/models/textautogeneratechatsmodel.cpp:96
 #, kde-format
 msgid "New Chat..."
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:174
+#: core/models/textautogeneratechatsmodel.cpp:202
 #, kde-format
 msgid "Favorite"
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:176
+#: core/models/textautogeneratechatsmodel.cpp:204
 #, kde-format
 msgid "Today"
 msgstr "بۈگۈن"
 
-#: core/models/textautogeneratechatsmodel.cpp:178
+#: core/models/textautogeneratechatsmodel.cpp:206
 #, kde-format
 msgid "7 days previous"
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:180
+#: core/models/textautogeneratechatsmodel.cpp:208
 #, kde-format
 msgid "30 days previous"
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:182
+#: core/models/textautogeneratechatsmodel.cpp:210
 #, kde-format
 msgid "Later"
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:184
+#: core/models/textautogeneratechatsmodel.cpp:212
 #, kde-format
 msgid "Unknown"
 msgstr "يوچۇن"
@@ -89,68 +89,68 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Tools"
 msgstr "قورال"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Small"
 msgstr "كىچىك"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Medium"
 msgstr "ئوتتۇراھال"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Big"
 msgstr "چوڭ"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Huge"
 msgstr "ئىنتايىن چوڭ"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Multilingual"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:176
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "كودى"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Math"
 msgstr "ماتېماتىكا"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Vision"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Embedding"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:184
 #, kde-format
 msgid "Reasoning"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Cloud"
 msgstr "بۇلۇت"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Thinking"
 msgstr ""
@@ -208,10 +208,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "قورال قىستۇرمىسى"
+msgstr ""
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
@@ -465,12 +464,10 @@ msgstr ""
 
 #: plugins/llamacpp/llamacppplugin.cpp:228
 #: plugins/lmstudio/lmstudioplugin.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Download"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "چۈشۈرۈش"
+msgstr ""
 
 #: plugins/llamacpp/llamacppplugin.cpp:234
 #: plugins/lmstudio/lmstudioplugin.cpp:217
@@ -486,12 +483,10 @@ msgid "LMStudio"
 msgstr ""
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "%1 نى سەپلە"
+msgstr ""
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:37
 #, kde-format
@@ -506,6 +501,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -516,7 +512,7 @@ msgstr "ئاتى:"
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
 #, kde-format
 msgid "Url:"
-msgstr ""
+msgstr "تور ئادرېسى:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
 #, kde-format
@@ -2657,10 +2653,9 @@ msgid "Text Plugins"
 msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
-msgstr "قورال قىستۇرمىسى"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -2683,7 +2678,7 @@ msgstr "ئەركىن ئۆزگەرگۈچى:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr ""
+msgstr "ئۇچۇر:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
@@ -2788,14 +2783,14 @@ msgid "Ask to AI"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "ئۆزگەرت…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2834,15 +2829,79 @@ msgid "Max Tokens:"
 msgstr ""
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "قورال قىستۇرمىسى"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Projects"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add Project…"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Project…"
+msgstr "ئۆزگەرت…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove Project"
+msgstr "چىقىرىۋەت"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
+#, kde-format
+msgid ""
+"Do you want to remove this project (%1)? Its chats will be kept, outside of "
+"any project."
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:49
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Project name…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:35
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr "رەڭ:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "ئارىلاش"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
@@ -2850,23 +2909,19 @@ msgid "Travel"
 msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "ئەسكەرت"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgid "Category:"
-msgstr "سەھىپە"
+msgstr "سەھىپە:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "چۈشەندۈرۈش:"
 
@@ -2877,24 +2932,21 @@ msgid "Add prompt…"
 msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "ئەسكەرت"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Do you want to remove it?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "ئۇنى چىقىرىۋېتەمسىز؟"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "ئەسكەرت"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -2944,6 +2996,54 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr ""
 
+#: widgets/tags/textautogeneratemanagetagsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add Tag…"
+msgstr ""
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Tag…"
+msgstr "ئۆزگەرت…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove Tag"
+msgstr "چىقىرىۋەت"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Do you want to remove it?"
+msgid "Do you want to remove this tag (%1)?"
+msgstr "ئۇنى چىقىرىۋېتەمسىز؟"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title:window"
+msgid "Remove Tag"
+msgstr "چىقىرىۋەت"
+
+#: widgets/tags/textautogenerateselecttagscombobox.cpp:118
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No tag selected"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
@@ -2951,22 +3051,27 @@ msgid "Add Tag"
 msgstr ""
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "ئۆزگەرت…"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:35
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:73
+#, kde-format
+msgctxt "@action"
+msgid "Manage Tags…"
+msgstr ""
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
-
-#: widgets/tags/textautogeneratetagwidget.cpp:35
-#, kde-format
-msgid "Color:"
 msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
@@ -2987,27 +3092,31 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr ""
 
-#: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/textautogeneratehistorywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr ""
 
-#: widgets/textautogeneratehistorywidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Search"
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only show the chats which have one of the selected tags"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:79
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "ئىزدە"
+msgstr ""
 
-#: widgets/textautogeneratehistorywidget.cpp:48
+#: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr ""
 
-#: widgets/textautogeneratehistorywidget.cpp:56
+#: widgets/textautogeneratehistorywidget.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
@@ -3033,7 +3142,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "خاتالىق"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
@@ -3076,7 +3185,7 @@ msgstr "يېڭىلا"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "ۋىلكا"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
@@ -3120,7 +3229,7 @@ msgstr "نىسبەت:"
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
@@ -3163,54 +3272,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "تېكىست قىستۇر"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:119
+#: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:138
+#: widgets/view/textautogeneratehistorylistview.cpp:139
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "ئەسلىگە كەلتۈر"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "ئارخىپ"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:180
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:175
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:254
+#: widgets/view/textautogeneratehistorylistview.cpp:266
 #, kde-format
 msgid "No Archive Found."
 msgstr ""

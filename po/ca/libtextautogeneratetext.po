@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:43+0000\n"
-"PO-Revision-Date: 2026-09-18 11:18+0200\n"
+"POT-Creation-Date: 2026-09-22 15:59+0000\n"
+"PO-Revision-Date: 2026-09-22 09:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -48,37 +48,37 @@ msgstr "Ha fallat en obrir el fitxer per lectura: %1"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
-#: core/models/textautogeneratechatsmodel.cpp:90
+#: core/models/textautogeneratechatsmodel.cpp:96
 #, kde-format
 msgid "New Chat..."
 msgstr "Xat nou..."
 
-#: core/models/textautogeneratechatsmodel.cpp:174
+#: core/models/textautogeneratechatsmodel.cpp:202
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: core/models/textautogeneratechatsmodel.cpp:176
+#: core/models/textautogeneratechatsmodel.cpp:204
 #, kde-format
 msgid "Today"
 msgstr "Avui"
 
-#: core/models/textautogeneratechatsmodel.cpp:178
+#: core/models/textautogeneratechatsmodel.cpp:206
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:180
+#: core/models/textautogeneratechatsmodel.cpp:208
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:182
+#: core/models/textautogeneratechatsmodel.cpp:210
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:184
+#: core/models/textautogeneratechatsmodel.cpp:212
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
@@ -93,68 +93,68 @@ msgstr "<b>Motor:</b> %1<br><b>Model:</b> %2<br><b>Nom d'instància:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Eines:</b> %1"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Tools"
 msgstr "Eines"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Small"
 msgstr "Petit"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Medium"
 msgstr "Mitjà"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Big"
 msgstr "Gran"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:176
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Codi"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Math"
 msgstr "Matemàtica"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Vision"
 msgstr "Visió"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Embedding"
 msgstr "Immersió"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:184
 #, kde-format
 msgid "Reasoning"
 msgstr "Raonament"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Cloud"
 msgstr "Núvol"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Thinking"
 msgstr "Pensament"
@@ -510,6 +510,7 @@ msgstr "Model instal·lat"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -3255,14 +3256,14 @@ msgid "Ask to AI"
 msgstr "Pregunta a la IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Modifica…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3304,6 +3305,77 @@ msgstr "Màxim de segments textuals:"
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Connectors de text:"
+
+#: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Projects"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add prompt…"
+msgctxt "@info:tooltip"
+msgid "Add Project…"
+msgstr "Afegeix una petició…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Project…"
+msgstr "Modifica…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@info:tooltip"
+msgid "Remove Project"
+msgstr "Elimina la petició"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
+#, kde-format
+msgid ""
+"Do you want to remove this project (%1)? Its chats will be kept, outside of "
+"any project."
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@title:window"
+msgid "Remove Project"
+msgstr "Elimina la petició"
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:49
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Tag name…"
+msgctxt "@info:placeholder"
+msgid "Project name…"
+msgstr "Nom de l'etiqueta…"
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:35
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr "Color:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3359,7 +3431,7 @@ msgstr "Elimina la petició"
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "Habilitat"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3403,30 +3475,85 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Desa el debat a la base de dades"
 
+#: widgets/tags/textautogeneratemanagetagsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Tag"
+msgctxt "@info:tooltip"
+msgid "Add Tag…"
+msgstr "Afegeix una etiqueta"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Modify Tag"
+msgctxt "@info:tooltip"
+msgid "Modify Tag…"
+msgstr "Modificació d'etiqueta"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove Tag"
+msgstr "Elimina"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this instance (%1)?"
+msgid "Do you want to remove this tag (%1)?"
+msgstr "Voleu eliminar aquesta instància (%1)?"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title:window"
+msgid "Remove Tag"
+msgstr "Elimina"
+
+#: widgets/tags/textautogenerateselecttagscombobox.cpp:118
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No tag selected"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "Afegeix una etiqueta"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "Modifica…"
+msgstr "Modificació d'etiqueta"
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:35
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:73
+#, kde-format
+msgctxt "@action"
+msgid "Manage Tags…"
+msgstr ""
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
-
-#: widgets/tags/textautogeneratetagwidget.cpp:35
-#, kde-format
-msgid "Color:"
-msgstr ""
+msgstr "Nom de l'etiqueta…"
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format
@@ -3446,25 +3573,31 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Preferit"
 
-#: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/textautogeneratehistorywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Cerca… (%1)"
 
-#: widgets/textautogeneratehistorywidget.cpp:41
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only show the chats which have one of the selected tags"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Search Chat"
 msgstr "Cerca xat"
 
-#: widgets/textautogeneratehistorywidget.cpp:48
+#: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr "Xat anterior"
 
-#: widgets/textautogeneratehistorywidget.cpp:56
+#: widgets/textautogeneratehistorywidget.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
@@ -3620,54 +3753,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Insereix un text"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:119
+#: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Xat nou"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:138
+#: widgets/view/textautogeneratehistorylistview.cpp:139
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplica…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Elimina com a preferit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Estableix com a preferit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Restaura"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arxiva"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:180
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Voleu eliminar aquest debat?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:175
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Elimina el debat"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:254
+#: widgets/view/textautogeneratehistorylistview.cpp:266
 #, kde-format
 msgid "No Archive Found."
 msgstr "No s'ha trobat cap arxiu."

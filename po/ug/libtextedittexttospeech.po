@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-19 00:44+0000\n"
-"PO-Revision-Date: 2026-05-31 19:49-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -78,7 +78,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr ""
+msgstr "ئورنات"
 
 #: kokoroinstall/texttospeechkokoroinstallpythondialog.cpp:27
 #, kde-format
@@ -150,19 +150,19 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Female"
-msgstr ""
+msgstr "ئايال"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:26
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Male"
-msgstr ""
+msgstr "مالې"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:30
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Unknown"
-msgstr ""
+msgstr "يوچۇن"
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:38
 #, kde-format
@@ -227,9 +227,7 @@ msgid "Test"
 msgstr "سىنا"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "سەپلە…"
 
