@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-17 04:44+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2024-07-11 05:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -69,10 +69,11 @@ msgstr "Vosk დამატების პარამეტრები"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Active"
-msgstr "მონიშვნა აქტიურად"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action"
 msgid "Download"
 msgstr "გადმოწერა"
@@ -119,7 +120,7 @@ msgstr "Vosk"
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
 #, kde-format
 msgid "Impossible to extract language"
-msgstr "ენის ამოღება შეუძლებელია"
+msgstr "ენის გაშლა შეუძლებელია"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
 #, kde-format
@@ -151,7 +152,7 @@ msgstr "ზომა"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr "აქტიური"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -161,109 +162,112 @@ msgstr "ჩურჩული"
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:100
 #, kde-format
 msgid "The whisper backend stopped unexpectedly."
-msgstr "უკანაბოლო whisper მოულოდნელად გაჩერდა."
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
-msgstr "Whisper დაყენებული არაა. აკლია: %1"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:26
 #, kde-format
 msgid "Whisper is not usable. Please reinstall it."
-msgstr "Whisper-ის გამოყენება შეუძლებელია. დააყენეთ ის თავიდან."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:117
 #, kde-format
 msgid "Downloading the %1 model…"
-msgstr "%1 მოდელის გადმოწერა…"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:120
 #, kde-format
 msgid "The %1 model is already downloaded."
-msgstr "მოდელი %1 უკვე გადმოწერილია."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:122
 #, kde-format
 msgid "The %1 model is downloaded."
-msgstr "%1 მოდელი გადმოწერილია."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
-msgstr "%1 მოდელის გადმოწერა შეუძლებელია: %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgctxt "@action"
 msgid "Install"
-msgstr "დაყენება"
+msgstr "დაყენებულია"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Whisper Package"
-msgstr "Whisper-ის პაკეტის დაყენება"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "მოდელის გადმოწერა"
+msgstr "გადმოწერა"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Model used for dictation:"
-msgstr "კარნახისთვის გამოყენებული მოდელი:"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr "დასაყენებელი არაფერია."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr "მიმდინარეობს python-ის ვირტუალური გარემოს შექმნა…"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Python virtual environment created."
-msgstr "Python-ის ვირტუალური გარემო შეიქმნა."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:112
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr "Python-ის ვირტუალური გარემოს შექმნა შეუძლებელია."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installing modules in %1: %2"
-msgstr "მოდულების დაყენება %1-ში: %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr "დაყენება დასრულდა."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgid "Installation failed."
-msgstr "დაყენება ჩავარდა."
+msgstr "დაყენებულია"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr "%1 %2-დან"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
 msgid "Unable to download the %1 model."
-msgstr "%1 მოდელის გადმოწერა შეუძლებელია."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:187
 #, kde-format
@@ -271,8 +275,6 @@ msgid ""
 "The %1 model is not on disk: it is downloaded the first time it is used, "
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
-"%1 მოდელი დისკზე არაა: თუ ის გადმოწერილია პირველად, როცა მას იყენებთ, "
-"კარნახი გრძელი იქნება. მოდელის გადმოწერის ღილაკი ამას ახლა აკეთებს."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
@@ -280,38 +282,37 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr "%1 (%2, გადმოწერილია)"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes every language whisper knows."
-msgstr "ყველა ენის ტრანსკრიფცია, რომელიც whisper-მა იცის."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes english only, but about twice as fast."
-msgstr "მხოლოდ ინგლისურის ტრანსკრიფცია, მაგრამ ორჯერ სწრაფად."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Takes %1 on disk, downloaded the first time it is used."
 msgstr ""
-"დისკზე სჭირდება %1 ადგილი. გადმოწერილია, როცა პირველად იქნა გამოყენებული."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Used when no model was chosen."
-msgstr "გამოყენებულია, როცა მოდელი არჩეული არაა."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
@@ -322,7 +323,7 @@ msgstr "მოირგეთ საუბრიდან-ტექსტამ�
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
-msgstr "Whisper-ის დაყენებული ვერსია გაფუჭებულია. დააყენეთ ის თავიდან."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format
@@ -331,9 +332,10 @@ msgid "Engine:"
 msgstr "ძრავა:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language"
 msgid "Language:"
-msgstr "ენა:"
+msgstr "ენა"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format

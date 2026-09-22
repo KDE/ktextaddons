@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:43+0000\n"
-"PO-Revision-Date: 2026-09-18 20:34+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-07-06 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,66 +15,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr ""
-"Omöjligt att starta jobb. Jobbhantering är null eller så är texten tom."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr "Misslyckades öppna fil för skrivning: %1"
+msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr "Misslyckades skriva till fil: %1."
+msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
 #, kde-format
 msgid "Json File"
-msgstr "JSON-fil"
+msgstr ""
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr "Misslyckades öppna fil för läsning: %1"
+msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:90
+#: core/models/textautogeneratechatsmodel.cpp:96
 #, kde-format
 msgid "New Chat..."
 msgstr "Ny chatt..."
 
-#: core/models/textautogeneratechatsmodel.cpp:174
+#: core/models/textautogeneratechatsmodel.cpp:202
 #, kde-format
 msgid "Favorite"
 msgstr "Favorit"
 
-#: core/models/textautogeneratechatsmodel.cpp:176
+#: core/models/textautogeneratechatsmodel.cpp:204
 #, kde-format
 msgid "Today"
 msgstr "Idag"
 
-#: core/models/textautogeneratechatsmodel.cpp:178
+#: core/models/textautogeneratechatsmodel.cpp:206
 #, kde-format
 msgid "7 days previous"
 msgstr "Föregående 7 dagar"
 
-#: core/models/textautogeneratechatsmodel.cpp:180
+#: core/models/textautogeneratechatsmodel.cpp:208
 #, kde-format
 msgid "30 days previous"
 msgstr "Föregående 30 dagar"
 
-#: core/models/textautogeneratechatsmodel.cpp:182
+#: core/models/textautogeneratechatsmodel.cpp:210
 #, kde-format
 msgid "Later"
 msgstr "Senare"
 
-#: core/models/textautogeneratechatsmodel.cpp:184
+#: core/models/textautogeneratechatsmodel.cpp:212
 #, kde-format
 msgid "Unknown"
 msgstr "Okänd"
@@ -89,68 +88,68 @@ msgstr "<b>Gränssnitt:</b> %1<br><b>Modell:</b> %2<br><b>Instansnamn:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Verktyg:</b> %1"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Tools"
 msgstr "Verktyg"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Small"
 msgstr "Liten"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Medium"
 msgstr "Medium"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Big"
 msgstr "Stor"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Huge"
 msgstr "Enorm"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Multilingual"
 msgstr "Flerspråkig"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:176
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Kod"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Math"
 msgstr "Matematik"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Vision"
 msgstr "Vision"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Embedding"
 msgstr "Inbäddad"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:184
 #, kde-format
 msgid "Reasoning"
 msgstr "Resonemang"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Cloud"
 msgstr "Moln"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Thinking"
 msgstr "Tänker"
@@ -210,9 +209,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Kompletteringstoken:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
 msgid "Tool Plugins:"
-msgstr "Verktyginsticksprogram:"
+msgstr "Verktygsinsticksprogram"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
@@ -360,9 +360,10 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "OpenRouter AI"
 msgid "OrcaRouter AI"
-msgstr "OrcaRouter AI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -378,12 +379,13 @@ msgstr "AtlasCloud OpenAI-kompatibelt programmeringsgränssnitt"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
-msgstr "Google Gemini"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "OpenAI"
 msgid "OpenAI API"
-msgstr "OpenAI programmeringsgränssnitt"
+msgstr "OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -436,14 +438,15 @@ msgid "Sarvam AI instance"
 msgstr "Sarvam AI-instans"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "AtlasCloud OpenAI-compatible API"
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "OrcaRouter OpenAI-kompatibelt programmeringsgränssnitt"
+msgstr "AtlasCloud OpenAI-kompatibelt programmeringsgränssnitt"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr "OpenAI programmeringsgränssnitt (anpassat)"
+msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -496,7 +499,7 @@ msgstr "Anpassa LMStudio"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
-msgstr "Installerade modell"
+msgstr "Installerad modell"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
@@ -505,6 +508,7 @@ msgstr "Installerade modell"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -845,7 +849,7 @@ msgstr "Ollama (moln)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
-msgstr "Anpassa Ollama-moln"
+msgstr "Anpassa Ollama moln"
 
 #: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:74
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:79
@@ -857,7 +861,7 @@ msgstr "Programmeringsgränssnittsnyckel:"
 #: plugins/ollamacloud/ollamacloudplugin.cpp:93
 #, kde-format
 msgid "Ollama Cloud"
-msgstr "Ollama-moln"
+msgstr "Ollama moln"
 
 #: plugins/ollamacommon/ollamacommoncomboboxwidget.cpp:31
 #, kde-format
@@ -968,7 +972,7 @@ msgid ""
 "A high-performing open embedding model with a large token context window."
 msgstr ""
 "En högpresterande öppen inbäddningsmodell med ett stort sammanhangsfönster "
-"för symboler."
+"för token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:27
 #, kde-format
@@ -1019,8 +1023,8 @@ msgid ""
 "and has multilingual support."
 msgstr ""
 "Qwen2.5-modeller är förtränade på Alibabas senaste storskaliga datamängd, "
-"som omfattar upp till 18 miljarder symboler. Modellen stöder upp till 128 "
-"tusen symboler och har flerspråksstöd."
+"som omfattar upp till 18 miljarder token. Modellen stöder upp till 128 tusen "
+"token och har flerspråksstöd."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:35
 #, kde-format
@@ -1076,7 +1080,7 @@ msgid ""
 "model on 3 trillion tokens."
 msgstr ""
 "TinyLlama-projektet är ett öppet projekt för att träna en kompakt 1,1 "
-"miljarders lama-modell på 3 miljarder symboler."
+"miljarders lama-modell på 3 miljarder token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:44
 #, kde-format
@@ -1154,7 +1158,7 @@ msgid ""
 "natural language tokens."
 msgstr ""
 "DeepSeek Coder är en kapabel kodningsmodell som är tränad på två miljarder "
-"symboler med kod och naturligt språk."
+"token med kod och naturligt språk."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:59
 #, kde-format
@@ -1473,7 +1477,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:110
 #, kde-format
 msgid "An advanced language model crafted with 2 trillion bilingual tokens."
-msgstr "En avancerad språkmodell skapad med 2 miljarder tvåspråkiga symboler."
+msgstr "En avancerad språkmodell skapad med 2 miljarder tvåspråkiga token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:111
 #, kde-format
@@ -1481,7 +1485,7 @@ msgid ""
 "This model extends LLama-3 8B's context length from 8k to over 1m tokens."
 msgstr ""
 "Modellen utökar LLama-3 8B:s sammanhangslängd från 8 000 till över 1 miljon "
-"symboler."
+"token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:112
 #, kde-format
@@ -1549,7 +1553,7 @@ msgstr "Kodgenereringsmodell baserad på Code Llama."
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
 msgstr ""
-"En utökning av Llama 2 som stöder en kontext på upp till 128 000 symboler."
+"En utökning av Llama 2 som stöder ett sammanhang på upp till 128 000 token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:122
 #, kde-format
@@ -1845,7 +1849,7 @@ msgid ""
 "trained over 5T tokens."
 msgstr ""
 "Falcon2 är en modell med enbart kausal avkodning och 11 miljarder "
-"parametrar, byggd av TII och tränad över 5 triljoner symboler."
+"parametrar, byggd av TII och tränad över 5 triljoner token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:172
 #, kde-format
@@ -2122,9 +2126,9 @@ msgid ""
 "predecessors in performance and speed in IBM’s initial testing."
 msgstr ""
 "IBM Granite 2B- och 8B-modellerna är textbaserade täta LLM:er som tränas på "
-"över 12 triljoner datasymboler och som uppvisar betydande förbättringar "
-"jämfört med sina föregångare vad gäller prestanda och hastighet i IBM:s "
-"inledande tester."
+"över 12 triljoner datatoken och som uppvisar betydande förbättringar jämfört "
+"med sina föregångare vad gäller prestanda och hastighet i IBM:s inledande "
+"tester."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:217
 #, kde-format
@@ -2193,7 +2197,7 @@ msgid ""
 "with 37B activated for each token."
 msgstr ""
 "En stark blandade experter (MoE) språkmodell med totalt 671 miljarder "
-"parametrar, varav 37 miljarder är aktiverade för varje symbol."
+"parametrar, varav 37 miljarder är aktiverade för varje token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:231
 #, kde-format
@@ -2204,10 +2208,9 @@ msgid ""
 "academic benchmarks."
 msgstr ""
 "OLMo 2 är en ny familj av 7 miljarders och 13 miljarders modeller som tränas "
-"på upp till 5 triljoner symboler. Modellerna är i nivå med eller bättre än "
-"helt öppna modeller av motsvarande storlek, och konkurrenskraftiga med "
-"modeller med öppna vikter som Llama 3.1 enligt engelska akademiska "
-"prestandamätningar."
+"på upp till 5 triljoner token. Modellerna är i nivå med eller bättre än helt "
+"öppna modeller av motsvarande storlek, och konkurrenskraftiga med modeller "
+"med öppna vikter som Llama 3.1 enligt engelska akademiska prestandamätningar."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:234
 #, kde-format
@@ -2324,8 +2327,8 @@ msgid ""
 "tokens without compromising text performance."
 msgstr ""
 "Mistral Small 3.1 (2503) bygger vidare på Mistral Small 3 och ger toppmodern "
-"bildförståelse och förbättrar kapaciteten för långa sammanhang upp till 128 "
-"000 symboler utan att kompromissa med textprestanda."
+"bildförståelse och förbättrar kapaciteten för långa sammanhang upp till "
+"128000 token utan att kompromissa med textprestanda."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:261
 #, kde-format
@@ -2636,7 +2639,7 @@ msgid ""
 "123B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
 msgstr ""
-"123B-modell som utmärker sig när det gäller att använda verktyg för att "
+"123 miljarders modell som utmärker sig på att använda verktyg för att "
 "utforska kodbaser, redigera många filer och driva "
 "programvaruutvecklingsagenter."
 
@@ -2827,7 +2830,7 @@ msgstr "Exponera Ollama på nätverket"
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
 msgid "Thought Processing"
-msgstr "Tankebehandling"
+msgstr "Tankebearbetning"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
 #, kde-format
@@ -3050,17 +3053,17 @@ msgstr "Bifoga fil"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr "Bildfil %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr "Ljudfil %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr "Textfil %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -3102,9 +3105,10 @@ msgid "Text Plugins"
 msgstr "Textinsticksprogram"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
 msgid "Tool Plugins"
-msgstr "Verktyginsticksprogram"
+msgstr "Verktygsinsticksprogram"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -3232,14 +3236,14 @@ msgid "Ask to AI"
 msgstr "Fråga till AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Ändra…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3268,40 +3272,132 @@ msgid "Configure…"
 msgstr "Anpassa…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy URL"
 msgid "Custom URL:"
-msgstr "Anpassad webbadress:"
+msgstr "Kopiera webbadress"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
 msgid "Max Tokens:"
-msgstr "Maximalt antal symboler:"
+msgstr "Maximalt antal token:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
 msgid "Text Plugins:"
-msgstr "Textinsticksprogram:"
+msgstr "Textinsticksprogram"
+
+#: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Projects"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add instance…"
+msgctxt "@info:tooltip"
+msgid "Add Project…"
+msgstr "Lägg till instans…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Project…"
+msgstr "Ändra…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@info:tooltip"
+msgid "Remove Project"
+msgstr "Ta bort modell"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
+#, kde-format
+msgid ""
+"Do you want to remove this project (%1)? Its chats will be kept, outside of "
+"any project."
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title:window"
+msgid "Remove Project"
+msgstr "Ta bort modell"
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:49
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, kde-format
+msgctxt "@title:menu"
+msgid "Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "No Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, kde-format
+msgctxt "@action"
+msgid "Manage Projects…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Project name…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:35
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr "Diverse"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr "Resor"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Prompt"
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Prompt"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Categories"
 msgid "Category:"
-msgstr "Kategori:"
+msgstr "Kategorier"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3310,27 +3406,34 @@ msgid "Description:"
 msgstr "Beskrivning:"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add instance…"
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Lägg till prompt…"
+msgstr "Lägg till instans…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Ta bort prompt"
+msgstr "Ta bort modell"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "Vill du ta bort prompten (%1)?"
+msgstr "Vill du ta bort modellen (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "Ta bort prompt"
+msgstr "Ta bort modell"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3380,6 +3483,56 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Spara diskussion i databas"
 
+#: widgets/tags/textautogeneratemanagetagsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Instance…"
+msgctxt "@info:tooltip"
+msgid "Add Tag…"
+msgstr "Lägg till instans…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Tag…"
+msgstr "Ändra…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove Tag"
+msgstr "Ta bort"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this instance (%1)?"
+msgid "Do you want to remove this tag (%1)?"
+msgstr "Vill du ta bort instansen (%1)?"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title:window"
+msgid "Remove Tag"
+msgstr "Ta bort"
+
+#: widgets/tags/textautogenerateselecttagscombobox.cpp:118
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No tag selected"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
@@ -3394,15 +3547,22 @@ msgctxt "@title:window"
 msgid "Modify Tag"
 msgstr "Ändra…"
 
+#: widgets/tags/textautogeneratetagsmenu.cpp:35
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:73
+#, kde-format
+msgctxt "@action"
+msgid "Manage Tags…"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
-
-#: widgets/tags/textautogeneratetagwidget.cpp:35
-#, kde-format
-msgid "Color:"
 msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
@@ -3423,25 +3583,33 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Favorit"
 
-#: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/textautogeneratehistorywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Sök… (%1)"
 
-#: widgets/textautogeneratehistorywidget.cpp:41
+#: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Only show the chats which have one of the selected tags"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Search Channels"
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Sök efter chatt"
+msgstr "Sök kanaler"
 
-#: widgets/textautogeneratehistorywidget.cpp:48
+#: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr "Föregående chatt"
 
-#: widgets/textautogeneratehistorywidget.cpp:56
+#: widgets/textautogeneratehistorywidget.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
@@ -3597,54 +3765,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Infoga text"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:119
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Ny chatt"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:138
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplicera…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Ta bort som favorit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Gör till favorit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Återställ"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arkivera"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Vill du ta bort diskussionen?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:175
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Ta bort diskussion"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:254
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr "Inget arkiv hittades."
@@ -3654,14 +3822,8 @@ msgstr "Inget arkiv hittades."
 msgid "No Messages Found."
 msgstr "Inga meddelanden hittades."
 
-#~ msgid "API OpenAI"
-#~ msgstr "OpenAI programmeringsgränssnitt"
-
 #~ msgid "Plugins Text:"
 #~ msgstr "Insticksprogramtext:"
-
-#~ msgid "Plugins Tool:"
-#~ msgstr "Insticksprogramverktyg:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Bilder (*.png *.xpm *.jpg *.gif)"
@@ -3671,6 +3833,9 @@ msgstr "Inga meddelanden hittades."
 
 #~ msgid "Text (*.txt *.md)"
 #~ msgstr "Text (*.txt *.md)"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Insticksverktyg:"
 
 #, fuzzy
 #~| msgctxt "@title"

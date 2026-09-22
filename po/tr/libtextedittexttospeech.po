@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:44+0000\n"
-"PO-Revision-Date: 2026-09-18 19:14+0300\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-09-13 19:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,173 +20,172 @@ msgstr ""
 #: kokoro/texttospeechkokoro.cpp:124
 #, kde-format
 msgid "Kokoro is not installed. Please install it first."
-msgstr "Kokoro kurulu değil. Lütfen önce onu kurun."
+msgstr ""
 
 #: kokoro/texttospeechkokoro.cpp:146
 #, kde-format
 msgid "The Kokoro backend stopped unexpectedly."
-msgstr "Kokoro arka ucu beklenmedik bir şekilde çalışmayı durdurdu."
+msgstr ""
 
 #: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
-msgstr "Kokoro arka ucu başlatılamıyor."
+msgstr ""
 
 #: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
-msgstr "Kokoro, metni sentezleyemedi: %1"
+msgstr ""
 
 #: kokoro/texttospeechkokoro.cpp:272
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
-msgstr "Kokoro, kullanılamayan bir ses biçimi olduğunu bildirdi."
+msgstr ""
 
 #: kokoro/texttospeechkokoro.cpp:329
 #, kde-format
 msgid "Unable to open the audio device."
-msgstr "Ses aygıtı açılamıyor."
+msgstr ""
 
 #: kokoro/texttospeechkokoro.cpp:344
 #, kde-format
 msgid "The audio device stopped working."
-msgstr "Ses aygıtı çalışmayı durdurdu."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
 msgid "Kokoro is not usable. Please reinstall it."
-msgstr "Kokoro şu anda kullanılabilir durumda değil. Lütfen onu yeniden kurun."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
 #: texttospeechconfigwidget.cpp:314
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
-msgstr "Kokoro kurulu değil. Eksik bileşenler: %1"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorodownloadvoicejob.cpp:96
 #, kde-format
 msgid "Downloading %1…"
-msgstr "%1 indiriliyor…"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorodownloadvoicejob.cpp:103
 #, kde-format
 msgid "Unable to download %1: %2"
-msgstr "%1 indirilemiyor: %2"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallmessagewidget.cpp:18
 #, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "Kur"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythondialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Kokoro Package"
-msgstr "Kokoro Paketini Kur"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:48
 #, kde-format
 msgid "Select Voice(s):"
-msgstr "Sesler seç:"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:50
 #, kde-format
 msgid "Download Voice(s)"
-msgstr "Sesler İndir"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:57
 #, kde-format
 msgid "Download Voices done."
-msgstr "Sesleri indirme tamamlandı."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
 #, kde-format
 msgid "Unable to download voice."
-msgstr "Sesler indirilemiyor."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
 msgstr ""
-"espeak-ng kurulu değil. Lütfen, paket yöneticinizi kullanarak onu kurun."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
 #, kde-format
 msgid "Nothing to install."
-msgstr "Kurulacak bir şey yok."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr "Python sanal ortamı oluşturuluyor…"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Python virtual environment created."
-msgstr "Python sanal ortamı oluşturuldu."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr "Python sanal ortamı oluşturulamadı."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:122
 #, kde-format
 msgid "Installing modules: %1"
-msgstr "Modüller kuruluyor: %1"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:127
 #, kde-format
 msgid "Installation done."
-msgstr "Kurulum bitti."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:131
 #, kde-format
 msgid "Installation failed."
-msgstr "Kurulum başarısız oldu."
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:24
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Female"
-msgstr "Kadın"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:26
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Male"
-msgstr "Erkek"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:30
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:38
 #, kde-format
 msgctxt "@item:intext <language> (<country>)"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:78
 #, kde-format
 msgctxt "@item:inlistbox <voice name> (<gender>)"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:80
 #, kde-format
 msgctxt "@info:tooltip <voice name> (<language>, <gender>)"
 msgid "%1 (%2, %3)"
-msgstr "%1 (%2, %3)"
+msgstr ""
 
 #: kokoroinstall/texttospeechkokorovoicecombobox.cpp:129
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No voice selected"
-msgstr "Seçili ses yok"
+msgstr ""
 
 #: texttospeechactions.cpp:30
 #, kde-format
@@ -227,7 +226,9 @@ msgid "Test"
 msgstr "Sına"
 
 #: texttospeechconfigwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
 msgid "Configure…"
 msgstr "Yapılandır…"
 
@@ -264,12 +265,12 @@ msgstr "Ses:"
 #: texttospeechconfigwidget.cpp:118
 #, kde-format
 msgid "%1: %2"
-msgstr "%1: %2"
+msgstr ""
 
 #: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro installation is broken. Please verify which you sysadmin."
-msgstr "Kokoro kurulumu bozuk veya hasarlı. Lütfen gerekli denetimleri yapın."
+msgstr ""
 
 #: texttospeechwidget.cpp:56
 #, kde-format

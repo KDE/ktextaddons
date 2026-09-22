@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
-"PO-Revision-Date: 2026-08-13 08:49+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-05-29 14:51+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/server/mcpserver.cpp:103
 #, kde-format
@@ -70,52 +70,56 @@ msgstr "Аргументи:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr "Добавяне на персонализиран хедър"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgid "Header:"
-msgstr "Хедър:"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "Дефиниране на хедър…"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "Добавяне"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr "Промяна"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Премахване"
+msgstr "Премахване на сървър"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr "Сигурни ли сте, че искате да изтриете този хедър?"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Премахване на хедър"
+msgstr "Премахване на сървър"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr "Хедъри:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:51
 #, kde-format

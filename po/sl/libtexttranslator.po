@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-08-27 07:07+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2025-02-22 08:47+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.5\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -401,14 +401,17 @@ msgid "Settings"
 msgstr "Nastavitve"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
 msgid "Translation failed."
-msgstr "Prevod ni uspel."
+msgstr "Uporabi medpomnilnik prevodov"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model is not loaded."
-msgstr "Jezikovni model ni naložen."
+msgstr "Jezikovni model ni določen."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -416,9 +419,10 @@ msgid "Language model is not defined."
 msgstr "Jezikovni model ni določen."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
-msgstr "Manjkajo datoteke jezikovnega modela v %1."
+msgstr "Jezikovni model ni določen."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format

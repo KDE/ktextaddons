@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:43+0000\n"
-"PO-Revision-Date: 2026-09-09 17:14+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-06-21 13:20+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,66 +15,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr ""
-"Невъзможно стартиране на задачата. Мениджърът е null или текстът е празен."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr "Неуспешно отваряне на файл за запис: %1"
+msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr "Неуспешно записване във файл: %1"
+msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
 #, kde-format
 msgid "Json File"
-msgstr "Файл Json"
+msgstr ""
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr "Неуспешно отваряне на файл за четене: %1"
+msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:90
+#: core/models/textautogeneratechatsmodel.cpp:96
 #, kde-format
 msgid "New Chat..."
 msgstr "Нов чат..."
 
-#: core/models/textautogeneratechatsmodel.cpp:174
+#: core/models/textautogeneratechatsmodel.cpp:202
 #, kde-format
 msgid "Favorite"
 msgstr "Прибавяне в Любими"
 
-#: core/models/textautogeneratechatsmodel.cpp:176
+#: core/models/textautogeneratechatsmodel.cpp:204
 #, kde-format
 msgid "Today"
 msgstr "Днес"
 
-#: core/models/textautogeneratechatsmodel.cpp:178
+#: core/models/textautogeneratechatsmodel.cpp:206
 #, kde-format
 msgid "7 days previous"
 msgstr "7 дни по-рано"
 
-#: core/models/textautogeneratechatsmodel.cpp:180
+#: core/models/textautogeneratechatsmodel.cpp:208
 #, kde-format
 msgid "30 days previous"
 msgstr "30 дни по-рано"
 
-#: core/models/textautogeneratechatsmodel.cpp:182
+#: core/models/textautogeneratechatsmodel.cpp:210
 #, kde-format
 msgid "Later"
 msgstr "По-късно"
 
-#: core/models/textautogeneratechatsmodel.cpp:184
+#: core/models/textautogeneratechatsmodel.cpp:212
 #, kde-format
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -89,68 +88,68 @@ msgstr "<b>Енджин:</b> %1<br><b>Модел:</b> %2<br><b>Име на ек�
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Инструменти:</b> %1"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Tools"
 msgstr "Инструменти"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Small"
 msgstr "Малък"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Medium"
 msgstr "Среден"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Big"
 msgstr "Големи"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Huge"
 msgstr "Огромен"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Multilingual"
 msgstr "Многоезичен"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:176
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Код"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Math"
 msgstr "Математика"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Vision"
 msgstr "Визия"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Embedding"
 msgstr "Вграждане"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:184
 #, kde-format
 msgid "Reasoning"
 msgstr "Разсъждение"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Cloud"
 msgstr "Облак"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Thinking"
 msgstr "Разсъждаване"
@@ -210,9 +209,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Токен за завършване:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
 msgid "Tool Plugins:"
-msgstr "Приставки на инструмента:"
+msgstr "Приставки за инструменти"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
@@ -360,9 +360,10 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "OpenRouter AI"
 msgid "OrcaRouter AI"
-msgstr "OrcaRouter AI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -378,12 +379,13 @@ msgstr "AtlasCloud API, съвместим с OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
-msgstr "Google Gemini"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "OpenAI"
 msgid "OpenAI API"
-msgstr "OpenAI API"
+msgstr "OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -436,14 +438,15 @@ msgid "Sarvam AI instance"
 msgstr "Sarvam AI инстанс"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "AtlasCloud OpenAI-compatible API"
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API, съвместим с OpenAI за Orca Router"
+msgstr "AtlasCloud API, съвместим с OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr "API Open AI (персонализиран)"
+msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -505,6 +508,7 @@ msgstr "Инсталиран модел"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -3046,17 +3050,17 @@ msgstr "Прикачване на файл"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr "Файл с изображение %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr "Файл с аудио %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr "Текстов файл %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -3098,9 +3102,10 @@ msgid "Text Plugins"
 msgstr "Приставки за текст"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
 msgid "Tool Plugins"
-msgstr "Приставки на инструмента"
+msgstr "Приставки за инструменти"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -3228,14 +3233,14 @@ msgid "Ask to AI"
 msgstr "Запитване на изкуствения интелект"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Промяна…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3264,9 +3269,11 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy URL"
 msgid "Custom URL:"
-msgstr "Потребителски URL:"
+msgstr "Копиране на адрес"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3274,30 +3281,118 @@ msgid "Max Tokens:"
 msgstr "Макс токени:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
 msgid "Text Plugins:"
-msgstr "Приставки за текст:"
+msgstr "Приставки за текст"
+
+#: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Projects"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add Project…"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Project…"
+msgstr "Промяна…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@info:tooltip"
+msgid "Remove Project"
+msgstr "Премахване на модел"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
+#, kde-format
+msgid ""
+"Do you want to remove this project (%1)? Its chats will be kept, outside of "
+"any project."
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title:window"
+msgid "Remove Project"
+msgstr "Премахване на модел"
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:49
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, kde-format
+msgctxt "@title:menu"
+msgid "Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "No Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, kde-format
+msgctxt "@action"
+msgid "Manage Projects…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Project name…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:35
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr "Разни"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr "Пътуване"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Prompt"
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Запитване"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Categories"
 msgid "Category:"
-msgstr "Категория:"
+msgstr "Категории"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3309,13 +3404,15 @@ msgstr "Описание:"
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Добавяне на промпт…"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Премахване на промпта"
+msgstr "Премахване на модел"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, fuzzy, kde-format
@@ -3325,11 +3422,11 @@ msgstr "Искате ли да премахнете този модел (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "Премахване на промпта"
+msgstr "Премахване на модел"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3379,6 +3476,56 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Запазване на дискусията в базата данни"
 
+#: widgets/tags/textautogeneratemanagetagsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Instance…"
+msgctxt "@info:tooltip"
+msgid "Add Tag…"
+msgstr "Добавяне на екземпляр…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Tag…"
+msgstr "Промяна…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove Tag"
+msgstr "Премахване"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this instance (%1)?"
+msgid "Do you want to remove this tag (%1)?"
+msgstr "Искате ли да премахнете този екземпляр (%1)?"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title:window"
+msgid "Remove Tag"
+msgstr "Премахване"
+
+#: widgets/tags/textautogenerateselecttagscombobox.cpp:118
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No tag selected"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
@@ -3393,15 +3540,22 @@ msgctxt "@title:window"
 msgid "Modify Tag"
 msgstr "Промяна…"
 
+#: widgets/tags/textautogeneratetagsmenu.cpp:35
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:73
+#, kde-format
+msgctxt "@action"
+msgid "Manage Tags…"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
-
-#: widgets/tags/textautogeneratetagwidget.cpp:35
-#, kde-format
-msgid "Color:"
 msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
@@ -3422,25 +3576,33 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Прибавяне в Любими"
 
-#: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/textautogeneratehistorywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Търсене… (%1)"
 
-#: widgets/textautogeneratehistorywidget.cpp:41
+#: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Only show the chats which have one of the selected tags"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Search Channels"
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Търсене в чата"
+msgstr "Канали за търсене"
 
-#: widgets/textautogeneratehistorywidget.cpp:48
+#: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr "Предишен чат"
 
-#: widgets/textautogeneratehistorywidget.cpp:56
+#: widgets/textautogeneratehistorywidget.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
@@ -3596,54 +3758,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Вмъкване на текст"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:119
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Нов чат"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:138
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Дублиране…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Премахване от любими"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Задаване като любим"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Архив"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Искате ли да премахнете тази дискусия?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:175
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Премахване на дискусията"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:254
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr "Не е намерен архив."
@@ -3652,3 +3814,18 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
+
+#~ msgid "Plugins Text:"
+#~ msgstr "Текст на приставка:"
+
+#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
+#~ msgstr "Изображения (*.png *.xpm *.jpg *.gif)"
+
+#~ msgid "Audio (*.mp4 *.avi)"
+#~ msgstr "Аудио (*.mp4 *.avi)"
+
+#~ msgid "Text (*.txt *.md)"
+#~ msgstr "Текст (*.txt *.md)"
+
+#~ msgid "Plugins Tool:"
+#~ msgstr "Инструмент на приставка:"

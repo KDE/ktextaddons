@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-08-27 04:00+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2025-02-22 06:28+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.5\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -401,14 +401,17 @@ msgid "Settings"
 msgstr "მორგება"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
 msgid "Translation failed."
-msgstr "თარგმანი ჩავარდა."
+msgstr "თარგმანის კეშის გამოყენება"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model is not loaded."
-msgstr "ენის მოდელი ჩატვირთული არაა."
+msgstr "ენის მოდელი აღწერილი არაა."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -416,9 +419,10 @@ msgid "Language model is not defined."
 msgstr "ენის მოდელი აღწერილი არაა."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
-msgstr "ენის მოდელს %1-ში ფაილები აკლია."
+msgstr "ენის მოდელი აღწერილი არაა."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format

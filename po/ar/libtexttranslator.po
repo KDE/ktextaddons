@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-08-29 17:36+0400\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2025-08-20 21:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -401,14 +401,17 @@ msgid "Settings"
 msgstr "إعدادات"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
 msgid "Translation failed."
-msgstr "فشلت الترجمة."
+msgstr "استخدم خبيئة الترجمات"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model is not loaded."
-msgstr "نموذج اللغة غير مُحمل."
+msgstr "نموذج اللغة غير معرّف."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -416,9 +419,10 @@ msgid "Language model is not defined."
 msgstr "نموذج اللغة غير معرّف."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
-msgstr "ملفات نموذج اللغة ناقصة في %1."
+msgstr "نموذج اللغة غير معرّف."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format

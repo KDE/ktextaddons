@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:43+0000\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
 "PO-Revision-Date: 2026-08-06 17:58+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -321,20 +321,21 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Poznámky k vydání</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h3><i>Co je nového ve verzi %1 (vydáno: %2)</i></h3>"
+msgstr "<h1><i> Verze %1 (Vydáno: %2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h3><i>Co je nového ve verzi %1 (nevydáno)</i></h3>"
+msgstr "<h1><i> Verze %1 (dosud nevydáno)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "<h1>What's New History</h1></hr>"
+#, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>Historie novinek</h1></hr>"
+msgstr ""
 
 #~ msgid "Version %1"
 #~ msgstr "Verze %1"

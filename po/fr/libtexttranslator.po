@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-08-28 11:56+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2025-02-23 09:45+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -397,14 +397,17 @@ msgid "Settings"
 msgstr "Configuration"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
 msgid "Translation failed."
-msgstr "Échec de la traduction."
+msgstr "Utiliser un cache de traduction"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model is not loaded."
-msgstr "Le modèle de langue n'est pas chargé."
+msgstr "Le modèle de langue est indéfini."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -412,9 +415,10 @@ msgid "Language model is not defined."
 msgstr "Le modèle de langue est indéfini."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
-msgstr "Les fichiers pour les modèles de langue sont absents de %1."
+msgstr "Le modèle de langue est indéfini."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format

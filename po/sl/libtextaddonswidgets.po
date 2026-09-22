@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:43+0000\n"
-"PO-Revision-Date: 2026-09-07 10:34+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-06-04 05:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -312,9 +312,10 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Različica %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "What's new in %2. %1"
 msgid "What's new in %1. %2"
-msgstr "Kaj je novega v %1. %2"
+msgstr "Kaj je novega v %2. %1"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -322,19 +323,21 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Opomba ob izdaji</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h3><i>Kaj je novega v različici %1 (izdana: %2)</i></h3>"
+msgstr "<h1><i> Različica %1 (Izdana: %2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h3><i>Kaj je novega v različici %1 (neizdana)</i></h3>"
+msgstr "<h1><i> Različica %1 (Še neizdana)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>Zgodovina kaj je novega</h1>"
+msgstr ""
 
 #~ msgid "Version %1"
 #~ msgstr "Različica %1"

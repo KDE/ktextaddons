@@ -1,15 +1,15 @@
 # Translation of libtexttranslator.po to Catalan
-# Copyright (C) 2023-2026 This_file_is_part_of_KDE
+# Copyright (C) 2023-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023-2026 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023-2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
-"PO-Revision-Date: 2026-08-27 08:50+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2025-02-22 08:38+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -403,14 +403,17 @@ msgid "Settings"
 msgstr "Configuració"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
 msgid "Translation failed."
-msgstr "Ha fallat la traducció."
+msgstr "Usa la memòria cau de traducció"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model is not loaded."
-msgstr "No s'ha carregat el model d'idioma."
+msgstr "No s'ha definit el model d'idioma."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -418,9 +421,10 @@ msgid "Language model is not defined."
 msgstr "No s'ha definit el model d'idioma."
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
-msgstr "Manquen fitxers de model d'idioma a %1."
+msgstr "No s'ha definit el model d'idioma."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
@@ -776,6 +780,3 @@ msgstr "Sense xarxa"
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Error de traducció"
-
-#~ msgid "Translate..."
-#~ msgstr "Tradueix..."

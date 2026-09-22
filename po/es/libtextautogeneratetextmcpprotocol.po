@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
-"PO-Revision-Date: 2026-08-11 21:09+0100\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-05-12 21:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: core/server/mcpserver.cpp:103
 #, kde-format
@@ -72,52 +72,56 @@ msgstr "Argumentos:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr "Añadir cabecera personalizada"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgid "Header:"
-msgstr "Cabecera:"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "Definir cabecera…"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "Añadir"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr "Modificar"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "Eliminar servidor"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr "¿Seguro que quiere borrar esta cabecera?"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Eliminar cabecera"
+msgstr "Eliminar servidor"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr "Cabeceras:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:51
 #, kde-format

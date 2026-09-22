@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:43+0000\n"
-"PO-Revision-Date: 2026-08-14 11:26+0200\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-08-06 22:54+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr "Nelze otevřít soubor pro zápis: %1"
+msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
@@ -44,37 +44,37 @@ msgstr ""
 msgid "Failed to open file for reading: %1"
 msgstr ""
 
-#: core/models/textautogeneratechatsmodel.cpp:90
+#: core/models/textautogeneratechatsmodel.cpp:96
 #, kde-format
 msgid "New Chat..."
 msgstr "Nová konverzace..."
 
-#: core/models/textautogeneratechatsmodel.cpp:174
+#: core/models/textautogeneratechatsmodel.cpp:202
 #, kde-format
 msgid "Favorite"
 msgstr "Oblíbené"
 
-#: core/models/textautogeneratechatsmodel.cpp:176
+#: core/models/textautogeneratechatsmodel.cpp:204
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
 
-#: core/models/textautogeneratechatsmodel.cpp:178
+#: core/models/textautogeneratechatsmodel.cpp:206
 #, kde-format
 msgid "7 days previous"
 msgstr "před 7 dny"
 
-#: core/models/textautogeneratechatsmodel.cpp:180
+#: core/models/textautogeneratechatsmodel.cpp:208
 #, kde-format
 msgid "30 days previous"
 msgstr "před 30 dny"
 
-#: core/models/textautogeneratechatsmodel.cpp:182
+#: core/models/textautogeneratechatsmodel.cpp:210
 #, kde-format
 msgid "Later"
 msgstr "Později"
 
-#: core/models/textautogeneratechatsmodel.cpp:184
+#: core/models/textautogeneratechatsmodel.cpp:212
 #, kde-format
 msgid "Unknown"
 msgstr "Neznámý"
@@ -89,68 +89,68 @@ msgstr "<b>Jádro:</b> %1<br><b>Model:</b> %2<br><b>Název instance:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Nástroje:</b> %1"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:164
 #, kde-format
 msgid "Tools"
 msgstr "Nástroje"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:166
 #, kde-format
 msgid "Small"
 msgstr "Malý"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:168
 #, kde-format
 msgid "Medium"
 msgstr "Střední"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:170
 #, kde-format
 msgid "Big"
 msgstr "Velký"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Huge"
 msgstr "Obrovský"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Multilingual"
 msgstr "Vícejazyčný"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:176
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Kód"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Math"
 msgstr "Matematika"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Vision"
 msgstr "Vize"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Embedding"
 msgstr "Vkládání"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:184
 #, kde-format
 msgid "Reasoning"
 msgstr "Odůvodnění"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Cloud"
 msgstr "Cloud"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Thinking"
 msgstr "Přemýšlení"
@@ -210,9 +210,10 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token dokončení:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
 msgid "Tool Plugins:"
-msgstr "Moduly nástrojů:"
+msgstr "Moduly nástrojů"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
@@ -360,9 +361,10 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "OpenRouter AI"
 msgid "OrcaRouter AI"
-msgstr "OrcaRouter AI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -378,7 +380,7 @@ msgstr "API AtlasCloud kompatibilní s OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
-msgstr "Google Gemini"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
 #, fuzzy, kde-format
@@ -438,9 +440,9 @@ msgstr "Instance Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, fuzzy, kde-format
-#| msgid "Orca Router OpenAI-compatible API"
+#| msgid "AtlasCloud OpenAI-compatible API"
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API Orca Router kompatibilní s OpenAI"
+msgstr "API AtlasCloud kompatibilní s OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
@@ -507,6 +509,7 @@ msgstr "Nainstalovaný model"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -2621,17 +2624,17 @@ msgstr "Přiložit soubor"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr "Obrázkový soubor %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr "Zvukový soubor %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr "Textový soubor %1"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2673,7 +2676,8 @@ msgid "Text Plugins"
 msgstr "Moduly textu"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools Plugins"
 msgid "Tool Plugins"
 msgstr "Moduly nástrojů"
 
@@ -2803,14 +2807,14 @@ msgid "Ask to AI"
 msgstr "Zeptat se AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Změnit…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2839,9 +2843,11 @@ msgid "Configure…"
 msgstr "Nastavit…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy URL"
 msgid "Custom URL:"
-msgstr "Vlastní URL:"
+msgstr "Kopírovat URL"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -2849,19 +2855,107 @@ msgid "Max Tokens:"
 msgstr "Maximum tokenů:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
 msgid "Text Plugins:"
-msgstr "Moduly textu:"
+msgstr "Moduly textu"
+
+#: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Projects"
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@info:tooltip"
+msgid "Add Project…"
+msgstr "Přidat server…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Project…"
+msgstr "Změnit…"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@info:tooltip"
+msgid "Remove Project"
+msgstr "Odstranit model"
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
+#, kde-format
+msgid ""
+"Do you want to remove this project (%1)? Its chats will be kept, outside of "
+"any project."
+msgstr ""
+
+#: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title:window"
+msgid "Remove Project"
+msgstr "Odstranit model"
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectdialog.cpp:49
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, kde-format
+msgctxt "@title:menu"
+msgid "Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "No Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, kde-format
+msgctxt "@action"
+msgid "Manage Projects…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Project name…"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectwidget.cpp:35
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr "Různé"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr "Cestování"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, fuzzy, kde-format
@@ -2871,9 +2965,10 @@ msgid "Prompt"
 msgstr "Výzva"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Categories"
 msgid "Category:"
-msgstr "Kategorie:"
+msgstr "Kategorie"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -2882,16 +2977,20 @@ msgid "Description:"
 msgstr "Popis:"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Přidat prompt…"
+msgstr "Přidat server…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Odstranit prompt"
+msgstr "Odstranit model"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, fuzzy, kde-format
@@ -2901,11 +3000,11 @@ msgstr "Chcete tento model (%1) odstranit?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "Odstranit prompt"
+msgstr "Odstranit model"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -2955,6 +3054,56 @@ msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Uložit diskuzi do databáze"
 
+#: widgets/tags/textautogeneratemanagetagsdialog.cpp:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Instance…"
+msgctxt "@info:tooltip"
+msgid "Add Tag…"
+msgstr "Přidat instanci…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@info:tooltip"
+msgid "Modify Tag…"
+msgstr "Změnit…"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove Tag"
+msgstr "Odstranit"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:118
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this instance (%1)?"
+msgid "Do you want to remove this tag (%1)?"
+msgstr "Chcete tuto instanci (%1) odstranit?"
+
+#: widgets/tags/textautogeneratemanagetagswidget.cpp:119
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title:window"
+msgid "Remove Tag"
+msgstr "Odstranit"
+
+#: widgets/tags/textautogenerateselecttagscombobox.cpp:118
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No tag selected"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
@@ -2969,15 +3118,22 @@ msgctxt "@title:window"
 msgid "Modify Tag"
 msgstr "Změnit…"
 
+#: widgets/tags/textautogeneratetagsmenu.cpp:35
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tags"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagsmenu.cpp:73
+#, kde-format
+msgctxt "@action"
+msgid "Manage Tags…"
+msgstr ""
+
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
-
-#: widgets/tags/textautogeneratetagwidget.cpp:35
-#, kde-format
-msgid "Color:"
 msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
@@ -2998,13 +3154,19 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Oblíbené"
 
-#: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/textautogeneratehistorywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Hledat… (%1)"
 
-#: widgets/textautogeneratehistorywidget.cpp:41
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only show the chats which have one of the selected tags"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:79
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Search Channels"
@@ -3012,13 +3174,13 @@ msgctxt "@action"
 msgid "Search Chat"
 msgstr "Hledat kanály"
 
-#: widgets/textautogeneratehistorywidget.cpp:48
+#: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr "Předchozí konverzace"
 
-#: widgets/textautogeneratehistorywidget.cpp:56
+#: widgets/textautogeneratehistorywidget.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
@@ -3174,54 +3336,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Vložit text"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:119
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Nový rozhovor"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:138
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplikovat…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Odebrat z oblíbených"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Přidat do oblíbených"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Obnovit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:160
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Archivovat"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:174
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Chcete tuto diskuzi odstranit?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:175
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Odstranit diskuzi"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:254
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr "Nenalezen žádný archiv."
@@ -3231,11 +3393,17 @@ msgstr "Nenalezen žádný archiv."
 msgid "No Messages Found."
 msgstr "Nenalezena žádná zpráva."
 
-#~ msgid "API OpenAI"
-#~ msgstr "API OpenAI"
-
 #~ msgid "Plugins Text:"
 #~ msgstr "Text modulů:"
+
+#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
+#~ msgstr "Obrázky (*.png, *.xpm, *.jpg, *.gif)"
+
+#~ msgid "Audio (*.mp4 *.avi)"
+#~ msgstr "Zvuk (*.mp4 *.avi)"
+
+#~ msgid "Text (*.txt *.md)"
+#~ msgstr "Text (*.txt *.md)"
 
 #~ msgid "Plugins Tool:"
 #~ msgstr "Nástroj pro moduly:"

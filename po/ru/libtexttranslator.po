@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"POT-Creation-Date: 2026-08-01 02:39+0000\n"
 "PO-Revision-Date: 2026-01-28 20:24+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -324,14 +324,14 @@ msgstr "Валлийский"
 msgid "Yiddish"
 msgstr "Идиш"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:23
+#: translator/plugins/bergamot/begamotenginedialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Параметры модуля Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -343,29 +343,29 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Поиск…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:80
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
 #, kde-format
 msgid "Download"
 msgstr "Загрузить"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:94
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Обновить список"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Обновить список языков из сети"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Error: %1"
 msgstr "Ошибка: %1"
@@ -401,28 +401,9 @@ msgstr "Языки"
 msgid "Settings"
 msgstr "Параметры"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Use translation cache"
-msgid "Translation failed."
-msgstr "Использовать кэш переводов"
-
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
-msgid "Language model is not loaded."
-msgstr "Не определена языковая модель."
-
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
 #, kde-format
 msgid "Language model is not defined."
-msgstr "Не определена языковая модель."
-
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, fuzzy, kde-format
-#| msgid "Language model is not defined."
-msgid "Language model files are missing in %1."
 msgstr "Не определена языковая модель."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
@@ -463,38 +444,38 @@ msgstr "Ошибка при записи на диск: %1"
 msgid "Impossible to extract language"
 msgstr "Невозможно извлечь язык"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
 msgstr "Источник"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
 msgstr "Цель"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
 msgstr "Тип"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
 msgstr "Репозиторий"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
 msgstr "Установленная версия"
 
-#: translator/plugins/bergamot/translatormodel.cpp:60
+#: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
 msgstr "Доступная версия"
 
-#: translator/plugins/bergamot/translatormodel.cpp:62
-#: translator/plugins/bergamot/translatormodel.cpp:132
+#: translator/plugins/bergamot/translatormodel.cpp:59
+#: translator/plugins/bergamot/translatormodel.cpp:128
 #, kde-format
 msgid "Installed"
 msgstr "Установлено"
@@ -562,7 +543,7 @@ msgstr "Серверу требуется API-ключ."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:86
+#: translator/plugins/google/googleengineplugin.cpp:83
 #, kde-format
 msgid "Invalid answer."
 msgstr "Неверный ответ."
@@ -649,18 +630,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Используемая библиотека:"
 
-#: translator/widgets/translatordebugdialog.cpp:31
+#: translator/widgets/translatordebugdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Отладка переводчика"
 
-#: translator/widgets/translatordebugdialog.cpp:38
+#: translator/widgets/translatordebugdialog.cpp:42
 #, kde-format
 msgid "Save As…"
 msgstr "Сохранить как…"
 
-#: translator/widgets/translatordebugdialog.cpp:67
+#: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -669,13 +650,13 @@ msgstr ""
 "Не удалось выполнить запись в файл %1.\n"
 "Подробное описание ошибки: «%2»."
 
-#: translator/widgets/translatordebugdialog.cpp:71
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Ошибка сохранения файла"
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:112
 #, kde-format
 msgid "All Files (*)"
 msgstr "Все файлы (*)"
@@ -685,70 +666,70 @@ msgstr "Все файлы (*)"
 msgid "Translate…"
 msgstr "Перевести…"
 
-#: translator/widgets/translatorwidget.cpp:210
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Закрыть"
 
-#: translator/widgets/translatorwidget.cpp:213
+#: translator/widgets/translatorwidget.cpp:217
 #, kde-format
 msgid "Close"
 msgstr "Закрыть"
 
-#: translator/widgets/translatorwidget.cpp:219
+#: translator/widgets/translatorwidget.cpp:223
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Исходный текст:"
 
-#: translator/widgets/translatorwidget.cpp:227
+#: translator/widgets/translatorwidget.cpp:231
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Перевод:"
 
-#: translator/widgets/translatorwidget.cpp:240
+#: translator/widgets/translatorwidget.cpp:244
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Инвертировать"
 
-#: translator/widgets/translatorwidget.cpp:245
+#: translator/widgets/translatorwidget.cpp:249
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Очистить"
 
-#: translator/widgets/translatorwidget.cpp:248
+#: translator/widgets/translatorwidget.cpp:252
 #, kde-format
 msgid "Clear"
 msgstr "Очистить"
 
-#: translator/widgets/translatorwidget.cpp:253
+#: translator/widgets/translatorwidget.cpp:257
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Перевести"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:260
 #, kde-format
 msgid "Translate"
 msgstr "Перевести"
 
-#: translator/widgets/translatorwidget.cpp:263
+#: translator/widgets/translatorwidget.cpp:267
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Отладка"
 
-#: translator/widgets/translatorwidget.cpp:281
+#: translator/widgets/translatorwidget.cpp:285
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Настроить"
 
-#: translator/widgets/translatorwidget.cpp:360
+#: translator/widgets/translatorwidget.cpp:365
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -758,24 +739,24 @@ msgstr ""
 "Перетащите текст, который следует перевести. (Обратите внимание: текст будет "
 "отправлен на внешний сервер.)"
 
-#: translator/widgets/translatorwidget.cpp:362
+#: translator/widgets/translatorwidget.cpp:367
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Перетащите сюда текст, который нужно перевести."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:417
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Отсутствует сетевое подключение, поэтому перевести текст нельзя."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:417
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Нет сети"
 
-#: translator/widgets/translatorwidget.cpp:449
+#: translator/widgets/translatorwidget.cpp:455
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

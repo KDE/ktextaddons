@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtexttranslator.pot\n"
-"X-Crowdin-File-ID: 49528\n"
+"X-Crowdin-File: /kf6-stable/messages/ktextaddons/libtexttranslator.pot\n"
+"X-Crowdin-File-ID: 57632\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -400,14 +400,17 @@ msgid "Settings"
 msgstr "设置"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Use translation cache"
 msgid "Translation failed."
-msgstr "翻译失败。"
+msgstr "使用翻译缓存"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model is not loaded."
-msgstr "语言模型没有加载。"
+msgstr "语言模型没有定义。"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
 #, kde-format
@@ -415,9 +418,10 @@ msgid "Language model is not defined."
 msgstr "语言模型没有定义。"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
-msgstr "在 %1 中缺少语言模型文件。"
+msgstr "语言模型没有定义。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format

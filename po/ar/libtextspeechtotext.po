@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-17 08:33+0400\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-01-24 12:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -69,13 +69,14 @@ msgstr "إعدادات محلق Vosk"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Active"
-msgstr "اجعلها نشطة"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action"
 msgid "Download"
-msgstr "نزّل"
+msgstr "تحميل"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
 #, kde-format
@@ -151,7 +152,7 @@ msgstr "الحجم"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr "نشط"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -168,12 +169,12 @@ msgstr ""
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
-msgstr "لم يُثبَّت Whisper. المفقود: %1"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:26
 #, kde-format
 msgid "Whisper is not usable. Please reinstall it."
-msgstr "Whisper غير قابل للاستخدام. رجاءً أعد تثبيته."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:117
 #, kde-format
@@ -206,7 +207,7 @@ msgstr "مثبتة"
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Whisper Package"
-msgstr "ثبت حزمة وسبر Whisper"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
 #, fuzzy, kde-format
@@ -224,7 +225,7 @@ msgstr ""
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr "لا شيء ليثبت"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
@@ -244,17 +245,18 @@ msgstr ""
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installing modules in %1: %2"
-msgstr "تثبيت الوحدات في %1: %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr "اكتمل التثبيت."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgid "Installation failed."
-msgstr "فشل التثبيت."
+msgstr "مثبتة"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
@@ -330,9 +332,10 @@ msgid "Engine:"
 msgstr "المحرك:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language"
 msgid "Language:"
-msgstr "اللغة:"
+msgstr "اللغة"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format

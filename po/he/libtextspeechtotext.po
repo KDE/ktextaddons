@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2026-09-17 08:55+0300\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2024-07-11 08:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -69,10 +69,11 @@ msgstr "הגדרות תוסף Vosk"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Active"
-msgstr "סימון כפעיל"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action"
 msgid "Download"
 msgstr "הורדה"
@@ -151,7 +152,7 @@ msgstr "גודל"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr "פעיל"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -161,109 +162,112 @@ msgstr "Whisper"
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:100
 #, kde-format
 msgid "The whisper backend stopped unexpectedly."
-msgstr "מנגנון whisper נעצר במפתיע."
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
-msgstr "Whisper לא מותקן. חסר: %1"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:26
 #, kde-format
 msgid "Whisper is not usable. Please reinstall it."
-msgstr "Whisper בלתי שמיש. נא להתקין אותו מחדש."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:117
 #, kde-format
 msgid "Downloading the %1 model…"
-msgstr "המודל %1 בהורדה…"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:120
 #, kde-format
 msgid "The %1 model is already downloaded."
-msgstr "המודל %1 כבר ירד."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:122
 #, kde-format
 msgid "The %1 model is downloaded."
-msgstr "המודל %1 כבר ירד."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
-msgstr "לא ניתן להוריד את המודל %1:‏ %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgctxt "@action"
 msgid "Install"
-msgstr "התקנה"
+msgstr "מותקן"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Whisper Package"
-msgstr "התקנת חבילת Whisper"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "הורדת מודל"
+msgstr "הורדה"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Model used for dictation:"
-msgstr "המודל שמשמש להכתבה:"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr "אין מה להתקין."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr "נוצרת סביבת הפיית׳ון הווירטואלית…"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Python virtual environment created."
-msgstr "נוצרה סביבת פיית׳ון וירטואלית."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:112
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr "לא ניתן ליצור את סביבת הפיית׳ון הווירטואלית."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installing modules in %1: %2"
-msgstr "מודולים מותקנים ב־%1:‏ %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr "ההתקנה הושלמה."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgid "Installation failed."
-msgstr "ההתקנה נכשלה."
+msgstr "מותקן"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr "%1 מתוך %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
 msgid "Unable to download the %1 model."
-msgstr "לא ניתן להוריד את המודל %1."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:187
 #, kde-format
@@ -271,8 +275,6 @@ msgid ""
 "The %1 model is not on disk: it is downloaded the first time it is used, "
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
-"המודל %1 בכונן: הוא ירד בפעם הראשונה שנעשה בו שימוש, מה שהופך את ההכתבה "
-"לארוכה מאוד. כפתור הורדת המודלים עושה את זה כעת."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
@@ -280,37 +282,37 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr "%1 (%2, ירד)"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes every language whisper knows."
-msgstr "תמלול של כל שפה ש־Whisper מכיר."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes english only, but about twice as fast."
-msgstr "תמלול של אנגלית בלבד, אבל במהירות כפולה."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Takes %1 on disk, downloaded the first time it is used."
-msgstr "תופס %1 בכונן, ירד עם השימוש הראשון."
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Used when no model was chosen."
-msgstr "משמש כשלא נבחר אף מודל."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
@@ -321,7 +323,7 @@ msgstr "הגדרת הכתבה"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
-msgstr "התקנת Whisper פגומה. נא להתקין אותה מחדש."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format
@@ -330,9 +332,10 @@ msgid "Engine:"
 msgstr "מנוע:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language"
 msgid "Language:"
-msgstr "שפה:"
+msgstr "שפה"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format

@@ -1,13 +1,13 @@
-# Copyright (C) 2026 This file is copyright:
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2026 Yuri Chornoivan <yurchor@ukr.net>
+# Yuri Chornoivan <yurchor@ukr.net>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:44+0000\n"
-"PO-Revision-Date: 2026-08-11 08:50+0300\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"PO-Revision-Date: 2026-05-12 08:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/server/mcpserver.cpp:103
 #, kde-format
@@ -71,52 +71,56 @@ msgstr "Аргументи:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr "Додати нетиповий заголовок"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgid "Header:"
-msgstr "Заголовок:"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr "Визначити заголовок…"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "Додати"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr "Змінити"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Вилучити"
+msgstr "Вилучити сервер"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr "Ви справді хочете вилучити цей заголовок?"
+msgstr ""
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Вилучення заголовка"
+msgstr "Вилучити сервер"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr "Заголовки:"
+msgstr ""
 
 #: widgets/server/mcpserverlistview.cpp:51
 #, kde-format
