@@ -492,6 +492,11 @@ public:
     void setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags);
 
     /*!
+     * Stores the chat identified by \a chatId in the local database.
+     */
+    void saveChat(const QByteArray &chatId);
+
+    /*!
      * Replaces the known tags by \a tags, storing the change in the local database. Tags which are
      * not in \a tags any more are removed from the chats which used them.
      */

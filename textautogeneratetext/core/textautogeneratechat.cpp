@@ -6,6 +6,7 @@
 #include "textautogeneratechat.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 
@@ -139,7 +140,13 @@ QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, boo
     if (const QString prompt = chat.prompt(); !prompt.isEmpty()) {
         o["prompt"_L1] = prompt;
     }
-    // TODO save tags
+    if (!chat.mTags.isEmpty()) {
+        QJsonArray tagsArray;
+        for (const QByteArray &tag : std::as_const(chat.mTags)) {
+            tagsArray.append(QString::fromLatin1(tag));
+        }
+        o["tags"_L1] = tagsArray;
+    }
 
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
@@ -158,7 +165,13 @@ TextAutoGenerateChat TextAutoGenerateChat::deserialize(const QJsonObject &o)
     chat.setIdentifier(o["identifier"_L1].toString().toLatin1());
     chat.setDateTime(o["datetime"_L1].toInteger());
     chat.setPrompt(o["prompt"_L1].toString());
-    // TODO load tags
+    const QJsonArray tagsArray = o["tags"_L1].toArray();
+    QList<QByteArray> tags;
+    tags.reserve(tagsArray.count());
+    for (const auto &tag : tagsArray) {
+        tags.append(tag.toString().toLatin1());
+    }
+    chat.setTags(tags);
     return chat;
 }
 

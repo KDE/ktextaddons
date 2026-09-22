@@ -392,34 +392,37 @@ QList<QByteArray> TextAutoGenerateChatsModel::chatTags(const QByteArray &chatId)
     return chat(chatId).tags();
 }
 
-void TextAutoGenerateChatsModel::setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags)
+bool TextAutoGenerateChatsModel::setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags)
 {
     const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;
     };
-    if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
-        if ((*it).tags() == tags) {
-            return;
-        }
-        (*it).setTags(tags);
-        const QModelIndex index = createIndex(std::distance(mChats.begin(), it), 0);
-        Q_EMIT dataChanged(index, index, {Tags, TagsColor});
+    const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it == mChats.end() || (*it).tags() == tags) {
+        return false;
     }
+    (*it).setTags(tags);
+    const QModelIndex index = createIndex(std::distance(mChats.begin(), it), 0);
+    Q_EMIT dataChanged(index, index, {Tags, TagsColor});
+    return true;
 }
 
-void TextAutoGenerateChatsModel::removeTagFromChats(const QByteArray &tagId)
+QList<QByteArray> TextAutoGenerateChatsModel::removeTagFromChats(const QByteArray &tagId)
 {
+    QList<QByteArray> modifiedChats;
     if (tagId.isEmpty()) {
-        return;
+        return modifiedChats;
     }
     for (int i = 0, total = mChats.count(); i < total; ++i) {
         QList<QByteArray> tags = mChats.at(i).tags();
         if (tags.removeAll(tagId) > 0) {
             mChats[i].setTags(tags);
+            modifiedChats.append(mChats.at(i).identifier());
             const QModelIndex index = createIndex(i, 0);
             Q_EMIT dataChanged(index, index, {Tags, TagsColor});
         }
     }
+    return modifiedChats;
 }
 
 void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool favorite)

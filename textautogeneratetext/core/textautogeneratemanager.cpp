@@ -759,7 +759,16 @@ QList<QByteArray> TextAutoGenerateManager::chatTags(const QByteArray &chatId) co
 
 void TextAutoGenerateManager::setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags)
 {
-    mTextAutoGenerateChatsModel->setChatTags(chatId, tags);
+    if (mTextAutoGenerateChatsModel->setChatTags(chatId, tags)) {
+        saveChat(chatId);
+    }
+}
+
+void TextAutoGenerateManager::saveChat(const QByteArray &chatId)
+{
+    if (mSaveInDatabase) {
+        mDatabaseManager->insertOrUpdateChat(mTextAutoGenerateChatsModel->chat(chatId));
+    }
 }
 
 void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
@@ -770,12 +779,17 @@ void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
             return tag.identifier() == previousTag.identifier();
         };
         if (std::none_of(tags.cbegin(), tags.cend(), sameIdentifier)) {
-            mDatabaseManager->deleteTag(previousTag.identifier());
-            mTextAutoGenerateChatsModel->removeTagFromChats(previousTag.identifier());
+            if (mSaveInDatabase) {
+                mDatabaseManager->deleteTag(previousTag.identifier());
+            }
+            const QList<QByteArray> modifiedChats = mTextAutoGenerateChatsModel->removeTagFromChats(previousTag.identifier());
+            for (const QByteArray &chatId : modifiedChats) {
+                saveChat(chatId);
+            }
         }
     }
     for (const TextAutoGenerateTag &tag : tags) {
-        if (!previousTags.contains(tag)) {
+        if (!previousTags.contains(tag) && mSaveInDatabase) {
             mDatabaseManager->insertOrUpdateTag(tag);
         }
     }

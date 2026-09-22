@@ -59,6 +59,19 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
         QCOMPARE(w, ba1);
     }
+
+    {
+        TextAutoGenerateText::TextAutoGenerateChat w;
+        w.setTitle(u"bla4"_s);
+        w.setIdentifier("foo4");
+        w.setTags({"tag1", "tag2"});
+
+        const QByteArray ba = w.serialize(w, false);
+        const QJsonDocument doc = QJsonDocument::fromJson(ba);
+        const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        QCOMPARE(ba1.tags(), QList<QByteArray>({"tag1", "tag2"}));
+        QCOMPARE(w, ba1);
+    }
 }
 
 void TextAutoGenerateChatTest::shouldClassifySectionHistory()
