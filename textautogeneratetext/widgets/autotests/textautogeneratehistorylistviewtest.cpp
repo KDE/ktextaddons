@@ -19,7 +19,11 @@ TextAutoGenerateHistoryListViewTest::~TextAutoGenerateHistoryListViewTest() = de
 void TextAutoGenerateHistoryListViewTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateHistoryListView w(nullptr);
-    QVERIFY(!w.dragEnabled());
+    QVERIFY(w.dragEnabled());
+    QVERIFY(w.acceptDrops());
+    QVERIFY(w.showDropIndicator());
+    QCOMPARE(w.dragDropMode(), QAbstractItemView::DragDrop);
+    QCOMPARE(w.defaultDropAction(), Qt::MoveAction);
     QCOMPARE(w.indentation(), 0);
     QVERIFY(!w.rootIsDecorated());
     QVERIFY(w.itemsExpandable());

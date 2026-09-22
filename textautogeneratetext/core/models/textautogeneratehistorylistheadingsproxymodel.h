@@ -39,10 +39,26 @@ public:
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
     [[nodiscard]] bool hasChildren(const QModelIndex &index) const override;
 
+    // Drag and drop: a chat can be dragged onto a project, which moves it to that project.
+    [[nodiscard]] QStringList mimeTypes() const override;
+    [[nodiscard]] QMimeData *mimeData(const QModelIndexList &indexes) const override;
+    [[nodiscard]] Qt::DropActions supportedDragActions() const override;
+    [[nodiscard]] Qt::DropActions supportedDropActions() const override;
+    //! Dropping a chat on a project never removes a row, whatever the view asks after a move.
+    bool removeRows(int row, int count, const QModelIndex &parent) override;
+    [[nodiscard]] bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const override;
+    bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) override;
+
     // QAbstractProxyModel interface
     void setSourceModel(QAbstractItemModel *sourceModel) override;
     [[nodiscard]] QModelIndex mapToSource(const QModelIndex &proxyIndex) const override;
     [[nodiscard]] QModelIndex mapFromSource(const QModelIndex &sourceIndex) const override;
+
+Q_SIGNALS:
+    /*! Emitted when \a chatId was dropped on a project. The model doesn't store the chats itself, so
+     *  the change is left to the owner of the manager. An empty \a projectId removes the chat from
+     *  its project. */
+    void moveChatToProjectRequested(const QByteArray &chatId, const QByteArray &projectId);
 
 private:
     void onRowsInserted(const QModelIndex &parent, int first, int last);
@@ -77,6 +93,9 @@ private:
     [[nodiscard]] bool isValidSectionRow(int row) const;
     //! Returns the row of the section the given source index belongs to.
     [[nodiscard]] int sectionId(const QModelIndex &sourceIndex) const;
+    /*! Returns the project a drop on \a parent would move the chats to, or an empty identifier when
+     *  \a parent is not a project. */
+    [[nodiscard]] QByteArray dropProjectId(const QModelIndex &parent) const;
     [[nodiscard]] TextAutoGenerateProjectsModel *projectsModel() const;
 };
 }

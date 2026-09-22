@@ -11,6 +11,8 @@
 
 #include <QAbstractListModel>
 #include <QDateTime>
+#include <QMimeData>
+#include <QSignalSpy>
 #include <QTest>
 
 using namespace Qt::Literals::StringLiterals;
@@ -211,6 +213,82 @@ void TextAutoGenerateHistoryListHeadingsProxyModelTest::shouldFollowProjectChang
     const QModelIndex today = proxy.index(dateSectionRow(1, TextAutoGenerateChat::SectionHistory::Today), 0, {});
     QCOMPARE(proxy.rowCount(today), 1);
     QCOMPARE(proxy.index(0, 0, today).data(TextAutoGenerateChatsModel::Identifier).toByteArray(), "chat1");
+}
+
+void TextAutoGenerateHistoryListHeadingsProxyModelTest::shouldOnlyAllowDroppingChatsOnProjects()
+{
+    TextAutoGenerateProjectsManager projectsManager;
+    projectsManager.setProjects({createProject("project1", u"Project 1"_s)});
+
+    TextAutoGenerateChatsModel chatsModel;
+    chatsModel.setTextAutoGenerateProjectsManager(&projectsManager);
+    chatsModel.setChats({createChat("chat1")});
+
+    TextAutoGenerateHistoryListHeadingsProxyModel proxy;
+    proxy.setSourceModel(&chatsModel);
+
+    const QModelIndex project1 = proxy.index(0, 0, {});
+    const QModelIndex today = proxy.index(dateSectionRow(1, TextAutoGenerateChat::SectionHistory::Today), 0, {});
+    const QModelIndex chat = proxy.index(0, 0, today);
+    QVERIFY(chat.isValid());
+
+    // A chat can be dragged, a section can't.
+    QVERIFY(chat.flags().testFlag(Qt::ItemIsDragEnabled));
+    QVERIFY(!project1.flags().testFlag(Qt::ItemIsDragEnabled));
+
+    // Only a project accepts a drop.
+    QVERIFY(project1.flags().testFlag(Qt::ItemIsDropEnabled));
+    QVERIFY(!today.flags().testFlag(Qt::ItemIsDropEnabled));
+    QVERIFY(!chat.flags().testFlag(Qt::ItemIsDropEnabled));
+    QVERIFY(!proxy.flags({}).testFlag(Qt::ItemIsDropEnabled));
+
+    std::unique_ptr<QMimeData> mimeData(proxy.mimeData({chat}));
+    QVERIFY(mimeData);
+    QCOMPARE(proxy.mimeTypes().count(), 1);
+    QVERIFY(mimeData->hasFormat(proxy.mimeTypes().constFirst()));
+
+    // A section carries no chat to drop.
+    QVERIFY(!proxy.mimeData({project1}));
+
+    // Dropping somewhere else than on a project, or dropping something else, is refused.
+    QVERIFY(!proxy.canDropMimeData(mimeData.get(), Qt::MoveAction, -1, -1, today));
+    QVERIFY(!proxy.canDropMimeData(mimeData.get(), Qt::MoveAction, -1, -1, {}));
+    QVERIFY(proxy.canDropMimeData(mimeData.get(), Qt::MoveAction, -1, -1, project1));
+
+    QMimeData foreignMimeData;
+    foreignMimeData.setText(u"foo"_s);
+    QVERIFY(!proxy.canDropMimeData(&foreignMimeData, Qt::MoveAction, -1, -1, project1));
+}
+
+void TextAutoGenerateHistoryListHeadingsProxyModelTest::shouldRequestMoveWhenDroppingChatOnProject()
+{
+    TextAutoGenerateProjectsManager projectsManager;
+    projectsManager.setProjects({createProject("project1", u"Project 1"_s)});
+
+    TextAutoGenerateChatsModel chatsModel;
+    chatsModel.setTextAutoGenerateProjectsManager(&projectsManager);
+    chatsModel.setChats({createChat("chat1")});
+
+    TextAutoGenerateHistoryListHeadingsProxyModel proxy;
+    proxy.setSourceModel(&chatsModel);
+
+    const QModelIndex project1 = proxy.index(0, 0, {});
+    const QModelIndex today = proxy.index(dateSectionRow(1, TextAutoGenerateChat::SectionHistory::Today), 0, {});
+    std::unique_ptr<QMimeData> mimeData(proxy.mimeData({proxy.index(0, 0, today)}));
+    QVERIFY(mimeData);
+
+    // WHEN
+    QSignalSpy moveRequestedSpy(&proxy, &TextAutoGenerateHistoryListHeadingsProxyModel::moveChatToProjectRequested);
+    QVERIFY(proxy.dropMimeData(mimeData.get(), Qt::MoveAction, -1, -1, project1));
+
+    // THEN the model only asks for the move: it doesn't store the chats itself.
+    QCOMPARE(moveRequestedSpy.count(), 1);
+    QCOMPARE(moveRequestedSpy.at(0).at(0).toByteArray(), "chat1"_ba);
+    QCOMPARE(moveRequestedSpy.at(0).at(1).toByteArray(), "project1"_ba);
+    QCOMPARE(proxy.rowCount(project1), 0);
+
+    QVERIFY(!proxy.dropMimeData(mimeData.get(), Qt::MoveAction, -1, -1, today));
+    QCOMPARE(moveRequestedSpy.count(), 1);
 }
 
 #include "moc_textautogeneratehistorylistheadingsproxymodeltest.cpp"

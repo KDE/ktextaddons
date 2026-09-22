@@ -482,6 +482,8 @@ target_sources(
         widgets/projects/textautogeneratemanageprojectswidget.cpp
         widgets/projects/textautogeneratemanageprojectsdialog.h
         widgets/projects/textautogeneratemanageprojectsdialog.cpp
+        widgets/projects/textautogenerateprojectsmenu.h
+        widgets/projects/textautogenerateprojectsmenu.cpp
 )
 
 if(BUILD_TESTING)

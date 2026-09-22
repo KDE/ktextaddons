@@ -10,9 +10,18 @@
 #include "core/textautogenerateprojectsmanager.h"
 
 #include <QApplication>
+#include <QDataStream>
 #include <QFont>
+#include <QIODevice>
+#include <QMimeData>
 #include <QPalette>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+namespace
+{
+//! The chats dropped on a project, as a list of chat identifiers.
+const char s_chatsMimeType[] = "application/x-textautogeneratetext-chatids";
+}
 TextAutoGenerateHistoryListHeadingsProxyModel::TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent)
     : QAbstractProxyModel{parent}
 {
@@ -151,13 +160,108 @@ Qt::ItemFlags TextAutoGenerateHistoryListHeadingsProxyModel::flags(const QModelI
     switch (type(proxyIndex)) {
     case IndexType::Root:
         return {};
-    case IndexType::Section:
-        return Qt::ItemFlag::ItemIsEnabled;
+    case IndexType::Section: {
+        Qt::ItemFlags flags = Qt::ItemFlag::ItemIsEnabled;
+        // Only a project can be dropped on: a date section is computed from the chat itself, so
+        // dropping a chat there couldn't change anything but its project, which would be obscure.
+        if (isValidSectionRow(proxyIndex.row()) && !mSections.at(proxyIndex.row()).projectId.isEmpty()) {
+            flags |= Qt::ItemFlag::ItemIsDropEnabled;
+        }
+        return flags;
+    }
     case IndexType::History:
-        return QAbstractProxyModel::flags(proxyIndex);
+        return QAbstractProxyModel::flags(proxyIndex) | Qt::ItemFlag::ItemIsDragEnabled;
     }
     Q_UNREACHABLE();
     return {};
+}
+
+QStringList TextAutoGenerateHistoryListHeadingsProxyModel::mimeTypes() const
+{
+    return {QString::fromLatin1(s_chatsMimeType)};
+}
+
+QMimeData *TextAutoGenerateHistoryListHeadingsProxyModel::mimeData(const QModelIndexList &indexes) const
+{
+    QList<QByteArray> chatIds;
+    for (const QModelIndex &index : indexes) {
+        if (type(index) != IndexType::History) {
+            continue;
+        }
+        if (const QByteArray chatId = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !chatId.isEmpty()) {
+            chatIds.append(chatId);
+        }
+    }
+    if (chatIds.isEmpty()) {
+        return nullptr;
+    }
+    QByteArray encoded;
+    QDataStream stream(&encoded, QIODevice::WriteOnly);
+    stream << chatIds;
+
+    auto mimeData = new QMimeData;
+    mimeData->setData(QString::fromLatin1(s_chatsMimeType), encoded);
+    return mimeData;
+}
+
+Qt::DropActions TextAutoGenerateHistoryListHeadingsProxyModel::supportedDragActions() const
+{
+    // QAbstractProxyModel forwards this to the source model, which would offer the default
+    // Qt::CopyAction: the view would then start a copy drag that dropMimeData() refuses, as
+    // QAbstractItemView only drops when the drag action is one of the supported drop actions.
+    return Qt::MoveAction;
+}
+
+Qt::DropActions TextAutoGenerateHistoryListHeadingsProxyModel::supportedDropActions() const
+{
+    return Qt::MoveAction;
+}
+
+bool TextAutoGenerateHistoryListHeadingsProxyModel::removeRows([[maybe_unused]] int row, [[maybe_unused]] int count, [[maybe_unused]] const QModelIndex &parent)
+{
+    // After a move drop, QAbstractItemView removes the dragged rows from the model. Moving a chat to
+    // a project only changes the chat, so the chats must stay where they are.
+    return false;
+}
+
+QByteArray TextAutoGenerateHistoryListHeadingsProxyModel::dropProjectId(const QModelIndex &parent) const
+{
+    if (type(parent) != IndexType::Section || !isValidSectionRow(parent.row())) {
+        return {};
+    }
+    return mSections.at(parent.row()).projectId;
+}
+
+bool TextAutoGenerateHistoryListHeadingsProxyModel::canDropMimeData(const QMimeData *data,
+                                                                    [[maybe_unused]] Qt::DropAction action,
+                                                                    [[maybe_unused]] int row,
+                                                                    [[maybe_unused]] int column,
+                                                                    const QModelIndex &parent) const
+{
+    if (!data || !data->hasFormat(QString::fromLatin1(s_chatsMimeType))) {
+        return false;
+    }
+    return !dropProjectId(parent).isEmpty();
+}
+
+bool TextAutoGenerateHistoryListHeadingsProxyModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
+{
+    if (!canDropMimeData(data, action, row, column, parent)) {
+        return false;
+    }
+    const QByteArray projectId = dropProjectId(parent);
+
+    QByteArray encoded = data->data(QString::fromLatin1(s_chatsMimeType));
+    QDataStream stream(&encoded, QIODevice::ReadOnly);
+    QList<QByteArray> chatIds;
+    stream >> chatIds;
+    if (chatIds.isEmpty()) {
+        return false;
+    }
+    for (const QByteArray &chatId : std::as_const(chatIds)) {
+        Q_EMIT moveChatToProjectRequested(chatId, projectId);
+    }
+    return true;
 }
 
 bool TextAutoGenerateHistoryListHeadingsProxyModel::hasChildren(const QModelIndex &index) const

@@ -18,4 +18,5 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldFilterByTags();
+    void shouldDropChatOnProjectThroughTheWholeChain();
 };

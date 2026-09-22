@@ -13,6 +13,7 @@
 #include "delegate/textautogeneratehistorylistviewdelegate.h"
 #include "textautogeneratechatwaitingansweranimation.h"
 #include "textautogeneratetextwidget_animation_debug.h"
+#include "widgets/projects/textautogenerateprojectsmenu.h"
 #include "widgets/tags/textautogeneratetagsmenu.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -30,7 +31,13 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
     , mDelegate(new TextAutoGenerateHistoryListViewDelegate(this))
 {
     setHeaderHidden(true);
-    setDragEnabled(false);
+    // A chat can be dragged onto a project to move it there. Move is the only action, and no row is
+    // removed from the model: dropping only changes the project of the dragged chat.
+    setDragEnabled(true);
+    setAcceptDrops(true);
+    setDropIndicatorShown(true);
+    setDragDropMode(QAbstractItemView::DragDrop);
+    setDefaultDropAction(Qt::MoveAction);
     setIndentation(0);
     setRootIsDecorated(false);
     setItemsExpandable(true);
@@ -57,6 +64,15 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
                     }
                 });
     }
+
+    connect(mHistoryListHeadingsProxyModel,
+            &TextAutoGenerateHistoryListHeadingsProxyModel::moveChatToProjectRequested,
+            this,
+            [this](const QByteArray &chatId, const QByteArray &projectId) {
+                if (mManager) {
+                    mManager->setChatProject(chatId, projectId);
+                }
+            });
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
     setModel(mHistoryProxyModel);
@@ -157,12 +173,19 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             menu.addAction(changeFavoriteHistory);
 
             menu.addSeparator();
+            auto projectsMenu = new TextAutoGenerateProjectsMenu(mManager, &menu);
+            projectsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
+            menu.addMenu(projectsMenu);
+
+            menu.addSeparator();
+
             auto tagsMenu = new TextAutoGenerateTagsMenu(mManager, &menu);
             tagsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
             menu.addMenu(tagsMenu);
 
-            const bool archived = index.data(TextAutoGenerateChatsModel::Archived).toBool();
             menu.addSeparator();
+
+            const bool archived = index.data(TextAutoGenerateChatsModel::Archived).toBool();
             auto archivedAction = new QAction(archived ? i18nc("@action", "Restore") : i18nc("@action", "Archive"), &menu);
             connect(archivedAction, &QAction::triggered, this, [index, archived, this]() {
                 if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {

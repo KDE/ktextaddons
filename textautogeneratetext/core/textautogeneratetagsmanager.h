@@ -6,11 +6,12 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
+#include <QColor>
 #include <QObject>
-#include <TextAutoGenerateText/TextAutoGenerateTag>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTagsModel;
+class TextAutoGenerateTag;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateTag
  * \brief The TextAutoGenerateTag class

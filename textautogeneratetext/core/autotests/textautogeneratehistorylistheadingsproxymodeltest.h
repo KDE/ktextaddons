@@ -21,4 +21,6 @@ private Q_SLOTS:
     void shouldGroupChatsByProject();
     void shouldMoveChatBetweenProjectAndDateSection();
     void shouldFollowProjectChanges();
+    void shouldOnlyAllowDroppingChatsOnProjects();
+    void shouldRequestMoveWhenDroppingChatOnProject();
 };
