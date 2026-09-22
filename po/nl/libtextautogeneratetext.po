@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:52+0000\n"
+"POT-Creation-Date: 2026-09-22 00:43+0000\n"
 "PO-Revision-Date: 2026-09-18 10:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -44,37 +44,37 @@ msgstr "Json-bestand"
 msgid "Failed to open file for reading: %1"
 msgstr "Openen van bestand voor lezen is mislukt: %1"
 
-#: core/models/textautogeneratechatsmodel.cpp:88
+#: core/models/textautogeneratechatsmodel.cpp:90
 #, kde-format
 msgid "New Chat..."
 msgstr "Nieuwe chat..."
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:174
 #, kde-format
 msgid "Favorite"
 msgstr "Favoriet"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:176
 #, kde-format
 msgid "Today"
 msgstr "Vandaag"
 
-#: core/models/textautogeneratechatsmodel.cpp:175
+#: core/models/textautogeneratechatsmodel.cpp:178
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dagen eerder"
 
-#: core/models/textautogeneratechatsmodel.cpp:177
+#: core/models/textautogeneratechatsmodel.cpp:180
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dagen eerder"
 
-#: core/models/textautogeneratechatsmodel.cpp:179
+#: core/models/textautogeneratechatsmodel.cpp:182
 #, kde-format
 msgid "Later"
 msgstr "Later"
 
-#: core/models/textautogeneratechatsmodel.cpp:181
+#: core/models/textautogeneratechatsmodel.cpp:184
 #, kde-format
 msgid "Unknown"
 msgstr "Onbekend"
@@ -89,68 +89,68 @@ msgstr "<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Naam exemplaar:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Hulpmiddelen:</b> %1"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Tools"
 msgstr "Hulpmiddelen"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Small"
 msgstr "Klein"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Medium"
 msgstr "Middel"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Big"
 msgstr "Groot"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Huge"
 msgstr "Enorm"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Multilingual"
 msgstr "Meerdere talen"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:171
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Code"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Math"
 msgstr "Wiskunde"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Vision"
 msgstr "Visie"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Embedding"
 msgstr "Inbedden"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Reasoning"
 msgstr "Redenering"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Cloud"
 msgstr "Wolk"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Thinking"
 msgstr "Nadenken"
@@ -507,6 +507,7 @@ msgstr "Geïnstalleerde model"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
 msgstr "Naam:"
@@ -3137,7 +3138,6 @@ msgid "Show metadata info"
 msgstr "Metagegevens-informatie tonen"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:22
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3334,6 +3334,12 @@ msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Prompt verwijderen"
 
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Skill"
+msgstr ""
+
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
 msgid "Instructions:"
@@ -3375,6 +3381,31 @@ msgstr "Wissen"
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Discussie in database opslaan"
+
+#: widgets/tags/textautogeneratetagdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Tag"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagdialog.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@title:window"
+msgid "Modify Tag"
+msgstr "Wijzigen…"
+
+#: widgets/tags/textautogeneratetagwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Tag name…"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:52+0000\n"
+"POT-Creation-Date: 2026-09-22 00:43+0000\n"
 "PO-Revision-Date: 2026-08-24 19:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -48,37 +48,37 @@ msgstr "Ha fallat mentre s'obria el fitxer per a lectura: %1"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
-#: core/models/textautogeneratechatsmodel.cpp:88
+#: core/models/textautogeneratechatsmodel.cpp:90
 #, kde-format
 msgid "New Chat..."
 msgstr "Xat nou…"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:174
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:176
 #, kde-format
 msgid "Today"
 msgstr "Hui"
 
-#: core/models/textautogeneratechatsmodel.cpp:175
+#: core/models/textautogeneratechatsmodel.cpp:178
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:177
+#: core/models/textautogeneratechatsmodel.cpp:180
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:179
+#: core/models/textautogeneratechatsmodel.cpp:182
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:181
+#: core/models/textautogeneratechatsmodel.cpp:184
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
@@ -93,68 +93,68 @@ msgstr "<b>Motor:</b> %1<br><b>Model:</b> %2<br><b>Nom d'instància:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Eines:</b> %1"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Tools"
 msgstr "Eines"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Small"
 msgstr "Xicotet"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Medium"
 msgstr "Mitjà"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Big"
 msgstr "Gran"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:171
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Codi"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Math"
 msgstr "Matemàtica"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Vision"
 msgstr "Visió"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Embedding"
 msgstr "Immersió"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Reasoning"
 msgstr "Raonament"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Cloud"
 msgstr "Núvol"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Thinking"
 msgstr "Pensament"
@@ -512,6 +512,7 @@ msgstr "Model instal·lat"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
 msgstr "Nom:"
@@ -3155,7 +3156,6 @@ msgid "Show metadata info"
 msgstr "Mostra la informació de les metadades"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:22
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3355,6 +3355,12 @@ msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Elimina la petició"
 
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Skill"
+msgstr ""
+
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
 msgid "Instructions:"
@@ -3396,6 +3402,31 @@ msgstr "Neteja"
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "Guarda el debat a la base de dades"
+
+#: widgets/tags/textautogeneratetagdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Tag"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagdialog.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@title:window"
+msgid "Modify Tag"
+msgstr "Modifica…"
+
+#: widgets/tags/textautogeneratetagwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Tag name…"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format

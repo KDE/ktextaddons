@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:52+0000\n"
+"POT-Creation-Date: 2026-09-22 00:43+0000\n"
 "PO-Revision-Date: 2026-09-18 06:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -45,37 +45,37 @@ msgstr "Json ფაილი"
 msgid "Failed to open file for reading: %1"
 msgstr "ფაილის წასაკითხად გახსნის შეცდომა: %1"
 
-#: core/models/textautogeneratechatsmodel.cpp:88
+#: core/models/textautogeneratechatsmodel.cpp:90
 #, kde-format
 msgid "New Chat..."
 msgstr "ახალი ჩატი..."
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:174
 #, kde-format
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:176
 #, kde-format
 msgid "Today"
 msgstr "დღეს"
 
-#: core/models/textautogeneratechatsmodel.cpp:175
+#: core/models/textautogeneratechatsmodel.cpp:178
 #, kde-format
 msgid "7 days previous"
 msgstr "წინა 7 დღე"
 
-#: core/models/textautogeneratechatsmodel.cpp:177
+#: core/models/textautogeneratechatsmodel.cpp:180
 #, kde-format
 msgid "30 days previous"
 msgstr "წინა 30 დღე"
 
-#: core/models/textautogeneratechatsmodel.cpp:179
+#: core/models/textautogeneratechatsmodel.cpp:182
 #, kde-format
 msgid "Later"
 msgstr "მოგვიანებით"
 
-#: core/models/textautogeneratechatsmodel.cpp:181
+#: core/models/textautogeneratechatsmodel.cpp:184
 #, kde-format
 msgid "Unknown"
 msgstr "უცნობი"
@@ -91,68 +91,68 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>ხელსაწყოები:</b> %1"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Small"
 msgstr "პატარა"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Medium"
 msgstr "საშუალო"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Big"
 msgstr "დიდი"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Huge"
 msgstr "უზარმაზარი"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Multilingual"
 msgstr "მრავალენოვანი"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:171
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "კოდი"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Math"
 msgstr "მათემატიკა"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Vision"
 msgstr "ხედვა"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Embedding"
 msgstr "ჩაშენება"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Cloud"
 msgstr "ღრუბელი"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Thinking"
 msgstr "ფიქრი"
@@ -509,6 +509,7 @@ msgstr "დაყენებული მოდელი"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
 msgstr "სახელი:"
@@ -3128,7 +3129,6 @@ msgid "Show metadata info"
 msgstr "მეტამონაცემების ინფორმაციის ჩვენება"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:22
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3325,6 +3325,12 @@ msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "მოთხოვნის წაშლა"
 
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Skill"
+msgstr ""
+
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
 msgid "Instructions:"
@@ -3366,6 +3372,31 @@ msgstr "გასუფთავება"
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "დისკუსიის შენახვა მონაცემთა ბაზაში"
+
+#: widgets/tags/textautogeneratetagdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Tag"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagdialog.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@title:window"
+msgid "Modify Tag"
+msgstr "შეცვლა…"
+
+#: widgets/tags/textautogeneratetagwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Tag name…"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format

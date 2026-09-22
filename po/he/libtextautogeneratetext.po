@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:52+0000\n"
+"POT-Creation-Date: 2026-09-22 00:43+0000\n"
 "PO-Revision-Date: 2026-09-18 23:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -44,37 +44,37 @@ msgstr "קובץ Json"
 msgid "Failed to open file for reading: %1"
 msgstr "פתיחת הקובץ לקריאה נכשלה: %1"
 
-#: core/models/textautogeneratechatsmodel.cpp:88
+#: core/models/textautogeneratechatsmodel.cpp:90
 #, kde-format
 msgid "New Chat..."
 msgstr "שיחה חדשה…"
 
-#: core/models/textautogeneratechatsmodel.cpp:171
+#: core/models/textautogeneratechatsmodel.cpp:174
 #, kde-format
 msgid "Favorite"
 msgstr "הוספה למועדפים"
 
-#: core/models/textautogeneratechatsmodel.cpp:173
+#: core/models/textautogeneratechatsmodel.cpp:176
 #, kde-format
 msgid "Today"
 msgstr "היום"
 
-#: core/models/textautogeneratechatsmodel.cpp:175
+#: core/models/textautogeneratechatsmodel.cpp:178
 #, kde-format
 msgid "7 days previous"
 msgstr "7 הימים הקודמים"
 
-#: core/models/textautogeneratechatsmodel.cpp:177
+#: core/models/textautogeneratechatsmodel.cpp:180
 #, kde-format
 msgid "30 days previous"
 msgstr "30 הימים הקודמים"
 
-#: core/models/textautogeneratechatsmodel.cpp:179
+#: core/models/textautogeneratechatsmodel.cpp:182
 #, kde-format
 msgid "Later"
 msgstr "מאוחר יותר"
 
-#: core/models/textautogeneratechatsmodel.cpp:181
+#: core/models/textautogeneratechatsmodel.cpp:184
 #, kde-format
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -89,68 +89,68 @@ msgstr "<b>מנוע:</b> %1<br><b>דגם:</b> %2<br><b>שם העותק:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>כלים:</b> %1"
 
-#: core/textautogeneratemanager.cpp:155
+#: core/textautogeneratemanager.cpp:159
 #, kde-format
 msgid "Tools"
 msgstr "כלים"
 
-#: core/textautogeneratemanager.cpp:157
+#: core/textautogeneratemanager.cpp:161
 #, kde-format
 msgid "Small"
 msgstr "קטן"
 
-#: core/textautogeneratemanager.cpp:159
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Medium"
 msgstr "בינוני"
 
-#: core/textautogeneratemanager.cpp:161
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Big"
 msgstr "גדול"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Huge"
 msgstr "ענק"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Multilingual"
 msgstr "רב־לשוני"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:171
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "קוד"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Math"
 msgstr "מתמטיקה"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Vision"
 msgstr "ראייה"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Embedding"
 msgstr "הטמעה"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Reasoning"
 msgstr "הנמקה"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Cloud"
 msgstr "ענן"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Thinking"
 msgstr "חשיבה"
@@ -504,6 +504,7 @@ msgstr "מודל מותקן"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
 msgstr "שם:"
@@ -3005,7 +3006,6 @@ msgid "Show metadata info"
 msgstr "הצגת פרטי נתוני־על"
 
 #: widgets/debug/textautogenerateshowdebugdialog.cpp:22
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
@@ -3202,6 +3202,12 @@ msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "הסרת בקשה"
 
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Skill"
+msgstr ""
+
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
 msgid "Instructions:"
@@ -3243,6 +3249,31 @@ msgstr "פינוי"
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
 msgstr "שמירת הדיון במסד הנתונים"
+
+#: widgets/tags/textautogeneratetagdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Tag"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagdialog.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Modify…"
+msgctxt "@title:window"
+msgid "Modify Tag"
+msgstr "עריכה…"
+
+#: widgets/tags/textautogeneratetagwidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Tag name…"
+msgstr ""
+
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format
