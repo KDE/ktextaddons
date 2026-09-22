@@ -7,10 +7,10 @@
 
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTag>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTagsModel;
-class TextAutoGenerateTag;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateTag
  * \brief The TextAutoGenerateTag class
@@ -49,6 +49,24 @@ public:
      * \param identifier
      */
     void removeTag(const QByteArray &identifier);
+
+    /*!
+     * \brief updateTag Replaces the tag which has the same identifier.
+     * \param tag
+     */
+    void updateTag(const TextAutoGenerateTag &tag);
+
+    /*!
+     * \brief tags
+     * \return the list of known tags.
+     */
+    [[nodiscard]] QList<TextAutoGenerateTag> tags() const;
+
+    /*!
+     * \brief textAutoGenerateTagsModel
+     * \return the model which stores the tags.
+     */
+    [[nodiscard]] TextAutoGenerateTagsModel *textAutoGenerateTagsModel() const;
 
     /*!
      * \brief colors

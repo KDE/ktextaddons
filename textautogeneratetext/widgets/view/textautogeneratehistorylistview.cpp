@@ -13,6 +13,7 @@
 #include "delegate/textautogeneratehistorylistviewdelegate.h"
 #include "textautogeneratechatwaitingansweranimation.h"
 #include "textautogeneratetextwidget_animation_debug.h"
+#include "widgets/tags/textautogeneratetagsmenu.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QContextMenuEvent>
@@ -154,6 +155,11 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                 }
             });
             menu.addAction(changeFavoriteHistory);
+
+            menu.addSeparator();
+            auto tagsMenu = new TextAutoGenerateTagsMenu(mManager, &menu);
+            tagsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
+            menu.addMenu(tagsMenu);
 
             const bool archived = index.data(TextAutoGenerateChatsModel::Archived).toBool();
             menu.addSeparator();

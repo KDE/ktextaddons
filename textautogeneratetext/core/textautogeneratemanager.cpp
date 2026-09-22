@@ -752,6 +752,36 @@ TextAutoGenerateTagsManager *TextAutoGenerateManager::textAutoGenerateTagsManage
     return mTextAutoGenerateTagsManager;
 }
 
+QList<QByteArray> TextAutoGenerateManager::chatTags(const QByteArray &chatId) const
+{
+    return mTextAutoGenerateChatsModel->chatTags(chatId);
+}
+
+void TextAutoGenerateManager::setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags)
+{
+    mTextAutoGenerateChatsModel->setChatTags(chatId, tags);
+}
+
+void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
+{
+    const QList<TextAutoGenerateTag> previousTags = mTextAutoGenerateTagsManager->tags();
+    for (const TextAutoGenerateTag &previousTag : previousTags) {
+        const auto sameIdentifier = [&](const TextAutoGenerateTag &tag) {
+            return tag.identifier() == previousTag.identifier();
+        };
+        if (std::none_of(tags.cbegin(), tags.cend(), sameIdentifier)) {
+            mDatabaseManager->deleteTag(previousTag.identifier());
+            mTextAutoGenerateChatsModel->removeTagFromChats(previousTag.identifier());
+        }
+    }
+    for (const TextAutoGenerateTag &tag : tags) {
+        if (!previousTags.contains(tag)) {
+            mDatabaseManager->insertOrUpdateTag(tag);
+        }
+    }
+    mTextAutoGenerateTagsManager->setTags(tags);
+}
+
 TextAutoGenerateAgentPrompSkillManager *TextAutoGenerateManager::textAutoGenerateAgentPrompSkillManager() const
 {
     return mTextAutoGenerateAgentPrompSkillManager;

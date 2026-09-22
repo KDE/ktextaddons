@@ -88,6 +88,13 @@ public:
     /*! Archives or unarchives the discussion with the given @p chatId based on the @p favorite flag. */
     void archiveDiscussion(const QByteArray &chatId, bool favorite);
 
+    /*! Returns the tag identifiers assigned to the chat with the given @p chatId. */
+    [[nodiscard]] QList<QByteArray> chatTags(const QByteArray &chatId) const;
+    /*! Assigns @p tags (tag identifiers) to the chat with the given @p chatId. */
+    void setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags);
+    /*! Removes the tag identified by @p tagId from every chat which uses it. */
+    void removeTagFromChats(const QByteArray &tagId);
+
     /*! Returns whether the chat with the given @p chatId is marked as favorite. */
     [[nodiscard]] bool chatIsFavorited(const QByteArray &chatId) const;
     /*! Returns whether the chat with the given @p chatId is archived. */

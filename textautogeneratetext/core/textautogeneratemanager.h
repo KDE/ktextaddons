@@ -10,6 +10,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
+#include <TextAutoGenerateText/TextAutoGenerateTag>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 #include <memory>
 
@@ -476,6 +477,25 @@ public:
      * \return
      */
     [[nodiscard]] TextAutoGenerateTagsManager *textAutoGenerateTagsManager() const;
+
+    /*!
+     * Returns the tag identifiers assigned to a chat.
+     * \param chatId The ID of the chat
+     */
+    [[nodiscard]] QList<QByteArray> chatTags(const QByteArray &chatId) const;
+
+    /*!
+     * Assigns tags to a chat.
+     * \param chatId The ID of the chat
+     * \param tags The tag identifiers to assign
+     */
+    void setChatTags(const QByteArray &chatId, const QList<QByteArray> &tags);
+
+    /*!
+     * Replaces the known tags by \a tags, storing the change in the local database. Tags which are
+     * not in \a tags any more are removed from the chats which used them.
+     */
+    void updateTags(const QList<TextAutoGenerateTag> &tags);
 
 Q_SIGNALS:
     /*!
