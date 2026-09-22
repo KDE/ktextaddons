@@ -11,3 +11,5 @@ endmacro()
 
 add_textautogenerate_widgets_tags_unittest(textautogeneratetagwidgettest.cpp)
 add_textautogenerate_widgets_tags_unittest(textautogeneratetagdialogtest.cpp)
+add_textautogenerate_widgets_tags_unittest(textautogeneratemanagetagswidgettest.cpp)
+add_textautogenerate_widgets_tags_unittest(textautogeneratemanagetagsdialogtest.cpp)

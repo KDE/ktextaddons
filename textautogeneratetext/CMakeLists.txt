@@ -460,6 +460,10 @@ target_sources(
         widgets/tags/textautogeneratetagwidget.cpp
         widgets/tags/textautogeneratetagdialog.h
         widgets/tags/textautogeneratetagdialog.cpp
+        widgets/tags/textautogeneratemanagetagswidget.h
+        widgets/tags/textautogeneratemanagetagswidget.cpp
+        widgets/tags/textautogeneratemanagetagsdialog.h
+        widgets/tags/textautogeneratemanagetagsdialog.cpp
 )
 
 if(BUILD_TESTING)
