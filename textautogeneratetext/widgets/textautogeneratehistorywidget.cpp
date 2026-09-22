@@ -4,6 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratehistorywidget.h"
+#include "core/models/textautogeneratetagsmodel.h"
+#include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetagsmanager.h"
+#include "widgets/tags/textautogenerateselecttagscombobox.h"
 #include "widgets/view/textautogeneratehistorylistview.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -16,6 +20,8 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     : QWidget{parent}
     , mTextAutoGenerateHistoryListView(new TextAutoGenerateHistoryListView(manager, this))
     , mSearchLineEdit(new QLineEdit(this))
+    , mSelectTagsComboBox(new TextAutoGenerateSelectTagsComboBox(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -32,10 +38,27 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
+    mSelectTagsComboBox->setObjectName("mSelectTagsComboBox"_L1);
+    mSelectTagsComboBox->setToolTip(i18nc("@info:tooltip", "Only show the chats which have one of the selected tags"));
+    mainLayout->addWidget(mSelectTagsComboBox);
+
     mTextAutoGenerateHistoryListView->setObjectName("mTextAutoGenerateHistoryListView"_L1);
     mainLayout->addWidget(mTextAutoGenerateHistoryListView);
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::slotSearchTextChanged);
+    connect(mSelectTagsComboBox,
+            &TextAutoGenerateSelectTagsComboBox::selectedTagsChanged,
+            mTextAutoGenerateHistoryListView,
+            &TextAutoGenerateHistoryListView::slotFilterTagsChanged);
+
+    if (mManager) {
+        auto tagsModel = mManager->textAutoGenerateTagsManager()->textAutoGenerateTagsModel();
+        connect(tagsModel, &QAbstractItemModel::modelReset, this, &TextAutoGenerateHistoryWidget::updateTags);
+        connect(tagsModel, &QAbstractItemModel::rowsInserted, this, &TextAutoGenerateHistoryWidget::updateTags);
+        connect(tagsModel, &QAbstractItemModel::rowsRemoved, this, &TextAutoGenerateHistoryWidget::updateTags);
+        connect(tagsModel, &QAbstractItemModel::dataChanged, this, &TextAutoGenerateHistoryWidget::updateTags);
+    }
+    updateTags();
     connect(mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::switchToChat, this, &TextAutoGenerateHistoryWidget::switchToChat);
 
     auto searchChatAction = new QAction(i18nc("@action", "Search Chat"), this);
@@ -63,5 +86,16 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
 }
 
 TextAutoGenerateHistoryWidget::~TextAutoGenerateHistoryWidget() = default;
+
+void TextAutoGenerateHistoryWidget::updateTags()
+{
+    const QList<TextAutoGenerateTag> tags = mManager ? mManager->textAutoGenerateTagsManager()->tags() : QList<TextAutoGenerateTag>{};
+    // A removed tag must not keep filtering the history: only the tags which still exist are
+    // selected again.
+    const QList<QByteArray> previousSelection = mSelectTagsComboBox->selectedTags();
+    mSelectTagsComboBox->setTags(tags);
+    mSelectTagsComboBox->setSelectedTags(previousSelection);
+    mSelectTagsComboBox->setVisible(!tags.isEmpty());
+}
 
 #include "moc_textautogeneratehistorywidget.cpp"

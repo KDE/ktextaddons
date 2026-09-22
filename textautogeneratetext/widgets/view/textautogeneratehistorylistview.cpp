@@ -199,6 +199,12 @@ void TextAutoGenerateHistoryListView::slotSearchTextChanged(const QString &str)
     mHistoryProxyModel->setFilterString(str);
 }
 
+void TextAutoGenerateHistoryListView::slotFilterTagsChanged(const QList<QByteArray> &identifiers)
+{
+    mHistoryProxyModel->setFilterTags(identifiers);
+    expandAll();
+}
+
 TextAutoGenerateHistorySortFilterProxyModel *TextAutoGenerateHistoryListView::filterModel() const
 {
     return mHistoryProxyModel;

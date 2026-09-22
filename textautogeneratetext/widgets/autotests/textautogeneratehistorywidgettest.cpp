@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratehistorywidgettest.h"
+#include "widgets/tags/textautogenerateselecttagscombobox.h"
 #include "widgets/textautogeneratehistorywidget.h"
 #include "widgets/view/textautogeneratehistorylistview.h"
 #include <QLineEdit>
@@ -29,6 +30,13 @@ void TextAutoGenerateHistoryWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit);
     QVERIFY(mSearchLineEdit->isClearButtonEnabled());
     QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
+
+    auto mSelectTagsComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateSelectTagsComboBox *>("mSelectTagsComboBox"_L1);
+    QVERIFY(mSelectTagsComboBox);
+    QVERIFY(!mSelectTagsComboBox->toolTip().isEmpty());
+    // Without a manager there is no tag to filter with: the combo box is hidden.
+    QVERIFY(mSelectTagsComboBox->isHidden());
+    QVERIFY(mSelectTagsComboBox->selectedTags().isEmpty());
 }
 
 #include "moc_textautogeneratehistorywidgettest.cpp"

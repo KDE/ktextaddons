@@ -11,6 +11,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
 class TextAutoGenerateHistoryListView;
+class TextAutoGenerateSelectTagsComboBox;
 /**
  * @brief The TextAutoGenerateHistoryWidget class
  * \author Laurent Montel <montel@kde.org>
@@ -26,7 +27,12 @@ Q_SIGNALS:
     void switchToChat(const QByteArray &uuid);
 
 private:
+    /*! Refills the tags combo box, keeping the tags which are still known selected. The combo box
+     *  is hidden while no tag is defined, as it could then not filter anything. */
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateTags();
     TextAutoGenerateHistoryListView *const mTextAutoGenerateHistoryListView;
     QLineEdit *const mSearchLineEdit;
+    TextAutoGenerateSelectTagsComboBox *const mSelectTagsComboBox;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

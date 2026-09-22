@@ -27,6 +27,9 @@ public:
 
     void slotSearchTextChanged(const QString &str);
 
+    /*! Only shows the chats which have one of \a identifiers. An empty list shows every chat. */
+    void slotFilterTagsChanged(const QList<QByteArray> &identifiers);
+
     void selectNextChat(Direction direction = Direction::Down);
 
     [[nodiscard]] TextAutoGenerateHistorySortFilterProxyModel *filterModel() const;

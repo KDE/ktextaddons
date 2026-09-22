@@ -33,6 +33,17 @@ public:
      */
     void setShowArchived(bool newShowArchived);
 
+    /*!
+     * \brief filterTags
+     * \return the tag identifiers a chat must have one of to be shown.
+     */
+    [[nodiscard]] QList<QByteArray> filterTags() const;
+    /*!
+     * \brief setFilterTags Only shows the chats which have at least one of \a newFilterTags. An
+     * empty list shows every chat.
+     */
+    void setFilterTags(const QList<QByteArray> &newFilterTags);
+
 protected:
     /*!
      */
@@ -42,6 +53,7 @@ protected:
     [[nodiscard]] bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
+    QList<QByteArray> mFilterTags;
     bool mShowArchived = false;
 };
 

@@ -5,6 +5,7 @@
 */
 #include "textautogeneratehistorysortfilterproxymodel.h"
 #include "textautogeneratechatsmodel.h"
+#include <algorithm>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterProxyModel(QObject *parent)
@@ -40,6 +41,17 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
         return false;
     }
 
+    if (!mFilterTags.isEmpty()) {
+        const QList<QByteArray> tags = sourceIndex.data(TextAutoGenerateChatsModel::Tags).value<QList<QByteArray>>();
+        // A chat matches as soon as it has one of the selected tags.
+        const auto isSelected = [this](const QByteArray &tag) {
+            return mFilterTags.contains(tag);
+        };
+        if (std::none_of(tags.cbegin(), tags.cend(), isSelected)) {
+            return false;
+        }
+    }
+
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
@@ -72,6 +84,20 @@ void TextAutoGenerateHistorySortFilterProxyModel::setShowArchived(bool newShowAr
     if (mShowArchived != newShowArchived) {
         beginFilterChange();
         mShowArchived = newShowArchived;
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+    }
+}
+
+QList<QByteArray> TextAutoGenerateHistorySortFilterProxyModel::filterTags() const
+{
+    return mFilterTags;
+}
+
+void TextAutoGenerateHistorySortFilterProxyModel::setFilterTags(const QList<QByteArray> &newFilterTags)
+{
+    if (mFilterTags != newFilterTags) {
+        beginFilterChange();
+        mFilterTags = newFilterTags;
         endFilterChange(QSortFilterProxyModel::Direction::Rows);
     }
 }

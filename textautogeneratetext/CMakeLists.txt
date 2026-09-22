@@ -466,6 +466,8 @@ target_sources(
         widgets/tags/textautogeneratemanagetagsdialog.cpp
         widgets/tags/textautogeneratetagsmenu.h
         widgets/tags/textautogeneratetagsmenu.cpp
+        widgets/tags/textautogenerateselecttagscombobox.h
+        widgets/tags/textautogenerateselecttagscombobox.cpp
 )
 
 if(BUILD_TESTING)
