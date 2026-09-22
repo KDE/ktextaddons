@@ -9,6 +9,7 @@
 #include "widgets/view/textautogeneratehistorylistview.h"
 #include <QLineEdit>
 #include <QTest>
+#include <QToolButton>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateHistoryWidgetTest)
 using namespace Qt::Literals::StringLiterals;
@@ -19,7 +20,7 @@ TextAutoGenerateHistoryWidgetTest::TextAutoGenerateHistoryWidgetTest(QWidget *pa
 
 void TextAutoGenerateHistoryWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateHistoryWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateHistoryWidget w(nullptr);
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
@@ -37,6 +38,10 @@ void TextAutoGenerateHistoryWidgetTest::shouldHaveDefaultValues()
     // Without a manager there is no tag to filter with: the combo box is hidden.
     QVERIFY(mSelectTagsComboBox->isHidden());
     QVERIFY(mSelectTagsComboBox->selectedTags().isEmpty());
+
+    auto clearTags = w.findChild<QToolButton *>("clearTags"_L1);
+    QVERIFY(clearTags);
+    QVERIFY(clearTags->autoRaise());
 }
 
 #include "moc_textautogeneratehistorywidgettest.cpp"
