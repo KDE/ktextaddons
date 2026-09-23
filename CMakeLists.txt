@@ -1,11 +1,11 @@
 ﻿# SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.29)
-set(KTEXTADDONS_CURRENT_VERSION "2.1.82")
+set(KTEXTADDONS_CURRENT_VERSION "2.2.40")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 set(QT_REQUIRED_VERSION "6.10.0")
-set(KF_MIN_VERSION "6.26.0")
+set(KF_MIN_VERSION "6.29.0")
 set(QT6KEYCHAIN_LIB_VERSION "0.15.0")
 include(FeatureSummary)
 find_package(ECM ${KF_MIN_VERSION} NO_MODULE)
