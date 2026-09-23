@@ -35,6 +35,12 @@ target_sources(
         cmark/textutilsblockcmarksupport.cpp
         colors/textutilscolorsandmessageviewstyle.h
         colors/textutilscolorsandmessageviewstyle.cpp
+        texttohtml/textutilstexttohtml.h
+        texttohtml/textutilstexttohtml.cpp
+        texttohtml/textutilstexttohtml_p.h
+        texttohtml/textutilsemoticonsparser.cpp
+        texttohtml/textutilsemoticonsparser_p.h
+        textutils_private_export.h
 )
 
 target_link_libraries(
@@ -47,7 +53,6 @@ target_link_libraries(
         KF6::IconThemes
         KF6::I18n
         cmark-rc
-        KF6::CoreAddons
 )
 
 # precompiled headers support
@@ -139,6 +144,14 @@ ecm_generate_headers(TextUtils_Syntaxhighlighting_CamelCase_HEADERS
     RELATIVE syntaxhighlighting
 )
 
+ecm_generate_headers(TextUtils_TextToHtml_CamelCase_HEADERS
+    HEADER_NAMES
+    TextUtilsTextToHtml
+    REQUIRED_HEADERS TextUtils_TextToHtml_HEADERS
+    PREFIX TextUtils
+    RELATIVE texttohtml
+)
+
 ecm_generate_headers(TextUtils_CMark_CamelCase_HEADERS
     HEADER_NAMES
     TextUtilsBlockCMarkSupport
@@ -152,6 +165,7 @@ set(TEXTUTILS_FILES
     ${TextUtils_Syntaxhighlighting_HEADERS}
     ${TextUtils_CMark_HEADERS}
     ${TextUtils_Colors_HEADERS}
+    ${TextUtils_TextToHtml_HEADERS}
 )
 
 install(
@@ -167,6 +181,7 @@ install(
         ${TextUtils_Syntaxhighlighting_CamelCase_HEADERS}
         ${TextUtils_CMark_CamelCase_HEADERS}
         ${TextUtils_Colors_CamelCase_HEADERS}
+        ${TextUtils_TextToHtml_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )
@@ -221,5 +236,6 @@ ecm_installed_library_check_include_strings(KF6TextUtils
     ${TextUtils_Syntaxhighlighting_CamelCase_HEADERS}
     ${TextUtils_CMark_CamelCase_HEADERS}
     ${TextUtils_Colors_CamelCase_HEADERS}
+    ${TextUtils_TextToHtml_CamelCase_HEADERS}
     PREFIX TextUtils
 )

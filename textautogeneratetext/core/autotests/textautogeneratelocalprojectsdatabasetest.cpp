@@ -17,12 +17,12 @@ enum class ProjectsFields {
     Json,
 }; // in the same order as the table
 
-static TextAutoGenerateText::TextAutoGenerateProject createProject(const QByteArray &identifier, const QString &name, const QColor &color = {})
+static TextAutoGenerateText::TextAutoGenerateProject createProject(const QByteArray &identifier, const QString &name, const QString &iconName = {})
 {
     TextAutoGenerateText::TextAutoGenerateProject project;
     project.setIdentifier(identifier);
     project.setName(name);
-    project.setColor(color);
+    project.setIconName(iconName);
     return project;
 }
 
@@ -58,7 +58,7 @@ void TextAutoGenerateLocalProjectsDatabaseTest::shouldStoreProjects()
     // GIVEN
     TextAutoGenerateText::TextAutoGenerateLocalProjectsDatabase projectsDatabase;
 
-    const auto project1 = createProject("project1", u"name-project1"_s, QColor(Qt::red));
+    const auto project1 = createProject("project1", u"name-project1"_s, u"test1"_s);
     projectsDatabase.insertOrUpdateProject(project1);
 
     const auto project2 = createProject("project2", u"name-project2"_s);
@@ -87,9 +87,9 @@ void TextAutoGenerateLocalProjectsDatabaseTest::shouldLoadProjects() // this tes
 
     // THEN
     QCOMPARE(projects.count(), 2);
-    QCOMPARE(projects.at(0), createProject("project1", u"name-project1"_s, QColor(Qt::red)));
+    QCOMPARE(projects.at(0), createProject("project1", u"name-project1"_s, u"test1"_s));
     QCOMPARE(projects.at(1), createProject("project2", u"name-project2"_s));
-    QVERIFY(!projects.at(1).color().isValid());
+    QVERIFY(projects.at(1).iconName().isEmpty());
 }
 
 void TextAutoGenerateLocalProjectsDatabaseTest::shouldDeleteProjects() // this test depends on shouldStoreProjects()

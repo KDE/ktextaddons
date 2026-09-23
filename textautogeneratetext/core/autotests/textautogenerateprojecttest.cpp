@@ -22,7 +22,7 @@ void TextAutoGenerateProjectTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGenerateProject project;
     QVERIFY(!project.identifier().isEmpty());
     QVERIFY(project.name().isEmpty());
-    QVERIFY(!project.color().isValid());
+    QVERIFY(project.iconName().isEmpty());
 }
 
 void TextAutoGenerateProjectTest::shouldSerializeDeserialize()
@@ -31,7 +31,7 @@ void TextAutoGenerateProjectTest::shouldSerializeDeserialize()
         TextAutoGenerateText::TextAutoGenerateProject project;
         project.setIdentifier("project1");
         project.setName(u"name-project1"_s);
-        project.setColor(QColor(Qt::red));
+        project.setIconName(u"foo"_s);
 
         const QByteArray ba = TextAutoGenerateText::TextAutoGenerateProject::serialize(project, false);
         const QJsonDocument doc = QJsonDocument::fromJson(ba);
@@ -46,7 +46,7 @@ void TextAutoGenerateProjectTest::shouldSerializeDeserialize()
         const QByteArray ba = TextAutoGenerateText::TextAutoGenerateProject::serialize(project, false);
         const QJsonDocument doc = QJsonDocument::fromJson(ba);
         const TextAutoGenerateText::TextAutoGenerateProject result = TextAutoGenerateText::TextAutoGenerateProject::deserialize(doc.object());
-        QVERIFY(!result.color().isValid());
+        QVERIFY(result.iconName().isEmpty());
         QCOMPARE(result, project);
     }
 }

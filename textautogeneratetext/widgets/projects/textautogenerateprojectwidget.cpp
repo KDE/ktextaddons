@@ -5,7 +5,7 @@
 */
 
 #include "textautogenerateprojectwidget.h"
-#include <KColorButton>
+#include <KIconButton>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -16,7 +16,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateProjectWidget::TextAutoGenerateProjectWidget(QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
-    , mColor(new KColorButton(this))
+    , mIconName(new KIconButton(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -28,11 +28,10 @@ TextAutoGenerateProjectWidget::TextAutoGenerateProjectWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mName);
     connect(mName, &QLineEdit::textChanged, this, &TextAutoGenerateProjectWidget::slotNameChanged);
 
-    mColor->setObjectName(u"mColor"_s);
-    mColor->setAlphaChannelEnabled(false);
+    mIconName->setObjectName(u"mIconName"_s);
 
     mainLayout->addRow(i18n("Name:"), mName);
-    mainLayout->addRow(i18n("Color:"), mColor);
+    mainLayout->addRow(i18n("Icon:"), mIconName);
 }
 
 TextAutoGenerateProjectWidget::~TextAutoGenerateProjectWidget() = default;
@@ -46,8 +45,7 @@ void TextAutoGenerateProjectWidget::setProject(const TextAutoGenerateText::TextA
 {
     mProject = project;
     mName->setText(project.name());
-    // An invalid color would make KColorButton show black, which is indistinguishable from a real choice.
-    mColor->setColor(project.color().isValid() ? project.color() : palette().color(QPalette::Highlight));
+    mIconName->setIcon(project.iconName());
 }
 
 TextAutoGenerateText::TextAutoGenerateProject TextAutoGenerateProjectWidget::project() const
@@ -55,7 +53,7 @@ TextAutoGenerateText::TextAutoGenerateProject TextAutoGenerateProjectWidget::pro
     // copy => we keep identifier
     TextAutoGenerateText::TextAutoGenerateProject project = mProject;
     project.setName(mName->text().trimmed());
-    project.setColor(mColor->color());
+    project.setIconName(mIconName->icon());
     return project;
 }
 

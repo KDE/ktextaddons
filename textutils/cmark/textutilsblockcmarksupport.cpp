@@ -6,8 +6,8 @@
 
 #include "textutilsblockcmarksupport.h"
 #include "cmark-rc.h"
+#include "texttohtml/textutilstexttohtml.h"
 #include "textutils_cmark_debug.h"
-#include <KTextToHTML>
 #include <QRegularExpression>
 // #define DEBUG_CMARK_RC 1
 using namespace TextUtils;
@@ -60,8 +60,8 @@ QString TextUtilsBlockCMarkSupport::markdownToRichTextCMark(const QString &markD
     }
 
     qCDebug(TEXTUTILS_CMARK_LOG) << "BEFORE markdownToRichText " << markDown;
-    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
-    QString str = KTextToHTML::convertToHtml(markDown, convertFlags);
+    const TextUtilsTextToHtml::Options convertFlags = TextUtilsTextToHtml::HighlightText | TextUtilsTextToHtml::ConvertPhoneNumbers;
+    QString str = TextUtilsTextToHtml::convertToHtml(markDown, convertFlags);
     qCDebug(TEXTUTILS_CMARK_LOG) << " AFTER convertToHtml " << str;
     // substitute "[example.com](<a href="...">...</a>)" style urls
     str = TextUtils::TextUtilsBlockCMarkSupport::convertTextWithUrl(str);

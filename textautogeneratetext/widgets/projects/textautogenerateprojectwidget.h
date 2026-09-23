@@ -9,7 +9,7 @@
 #include <QWidget>
 #include <TextAutoGenerateText/TextAutoGenerateProject>
 class QLineEdit;
-class KColorButton;
+class KIconButton;
 namespace TextAutoGenerateText
 {
 /**
@@ -35,7 +35,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotNameChanged(const QString &name);
     QLineEdit *const mName;
-    KColorButton *const mColor;
+    KIconButton *const mIconName;
     TextAutoGenerateProject mProject;
 };
 }

@@ -15,12 +15,12 @@ QTEST_MAIN(TextAutoGenerateManageProjectsWidgetTest)
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-TextAutoGenerateText::TextAutoGenerateProject createProject(const QByteArray &identifier, const QString &name, const QColor &color)
+TextAutoGenerateText::TextAutoGenerateProject createProject(const QByteArray &identifier, const QString &name, const QString &iconName)
 {
     TextAutoGenerateText::TextAutoGenerateProject project;
     project.setIdentifier(identifier);
     project.setName(name);
-    project.setColor(color);
+    project.setIconName(iconName);
     return project;
 }
 }
@@ -66,8 +66,8 @@ void TextAutoGenerateManageProjectsWidgetTest::shouldHaveDefaultValues()
 void TextAutoGenerateManageProjectsWidgetTest::shouldStoreProjects()
 {
     TextAutoGenerateText::TextAutoGenerateManageProjectsWidget w;
-    const QList<TextAutoGenerateText::TextAutoGenerateProject> projects{createProject("project1", u"name-project1"_s, QColor(Qt::red)),
-                                                                        createProject("project2", u"name-project2"_s, QColor(Qt::blue))};
+    const QList<TextAutoGenerateText::TextAutoGenerateProject> projects{createProject("project1", u"name-project1"_s, u"bla"_s),
+                                                                        createProject("project2", u"name-project2"_s, u"bla2"_s)};
     w.setProjects(projects);
 
     auto mProjectsListView = w.findChild<QListView *>(u"mProjectsListView"_s);
@@ -79,7 +79,7 @@ void TextAutoGenerateManageProjectsWidgetTest::shouldStoreProjects()
 void TextAutoGenerateManageProjectsWidgetTest::shouldEnableButtonsWhenSelectingProject()
 {
     TextAutoGenerateText::TextAutoGenerateManageProjectsWidget w;
-    w.setProjects({createProject("project1", u"name-project1"_s, QColor(Qt::red))});
+    w.setProjects({createProject("project1", u"name-project1"_s, u"bla3"_s)});
 
     auto mProjectsListView = w.findChild<QListView *>(u"mProjectsListView"_s);
     QVERIFY(mProjectsListView);

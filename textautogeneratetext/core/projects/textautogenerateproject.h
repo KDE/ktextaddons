@@ -52,17 +52,6 @@ public:
     void setIdentifier(const QByteArray &newIdentifier);
 
     /*!
-     * \brief color
-     * \return
-     */
-    [[nodiscard]] QColor color() const;
-    /*!
-     * \brief setColor
-     * \param newColor
-     */
-    void setColor(const QColor &newColor);
-
-    /*!
      * Compares this TextAutoGenerateProject with another object for equality.
      * \param other The TextAutoGenerateProject object to compare with
      * \return true if both objects are equal, false otherwise
@@ -83,10 +72,21 @@ public:
      */
     [[nodiscard]] static TextAutoGenerateProject deserialize(const QJsonObject &source);
 
+    /*!
+     * \brief iconName
+     * \return
+     */
+    [[nodiscard]] QString iconName() const;
+    /*!
+     * \brief setIconName
+     * \param newIconName
+     */
+    void setIconName(const QString &newIconName);
+
 private:
     QString mName;
     QByteArray mIdentifier;
-    QColor mColor;
+    QString mIconName;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateProject, Q_RELOCATABLE_TYPE);

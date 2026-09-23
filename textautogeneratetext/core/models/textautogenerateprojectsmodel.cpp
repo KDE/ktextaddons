@@ -36,15 +36,7 @@ QVariant TextAutoGenerateProjectsModel::data(const QModelIndex &index, int role)
         return project.name();
     case Identifier:
         return project.identifier();
-    case Qt::DecorationRole:
-    case Color:
-        // An invalid color is returned as an invalid QVariant, so that the view falls back to the
-        // palette instead of painting a black swatch. QStyledItemDelegate turns a QColor set on
-        // Qt::DecorationRole into a swatch of the view's iconSize, so no delegate is needed.
-        if (!project.color().isValid()) {
-            return {};
-        }
-        return project.color();
+        // TODO add icon
     default:
         break;
     }
@@ -59,10 +51,10 @@ QString TextAutoGenerateProjectsModel::nameFromIdentifier(const QByteArray &iden
     return {};
 }
 
-QColor TextAutoGenerateProjectsModel::colorFromIdentifier(const QByteArray &identifier) const
+QString TextAutoGenerateProjectsModel::iconName(const QByteArray &identifier) const
 {
     if (const int i = indexFromIdentifier(identifier); i != -1) {
-        return mProjects.at(i).color();
+        return mProjects.at(i).iconName();
     }
     return {};
 }

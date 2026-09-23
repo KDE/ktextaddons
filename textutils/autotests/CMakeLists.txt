@@ -19,3 +19,5 @@ macro(add_textutil_test _source)
 endmacro()
 
 add_textutil_test(converttexttest.cpp)
+add_textutil_test(textutilstexttohtmltest.cpp)
+target_include_directories(textutilstexttohtmltest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
