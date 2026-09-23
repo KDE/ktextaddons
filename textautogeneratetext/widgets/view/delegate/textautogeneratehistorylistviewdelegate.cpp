@@ -51,7 +51,7 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
     if (const bool hasPendingMessageTyped = index.data(TextAutoGenerateChatsModel::HasPendingMessageTyped).toBool(); hasPendingMessageTyped) {
         QFont font = opt.font;
         font.setItalic(true);
-        opt.font = font;
+        opt.font = std::move(font);
     }
 
     drawDisplay(painter, opt, displayRect, layout.title); // this takes care of eliding if the text is too long
