@@ -27,9 +27,7 @@ public:
     enum ProjectRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Identifier,
-        /*! The project color, or an invalid QVariant when the project has no color yet. Also exposed
-         *  as Qt::DecorationRole, so that a plain view paints a color swatch without a delegate. */
-        Color,
+        IconName,
     };
     /*!
      * Constructs a new TextAutoGenerateProjectsModel object.
@@ -98,11 +96,11 @@ public:
     [[nodiscard]] QString nameFromIdentifier(const QByteArray &identifier) const;
 
     /*!
-     * \brief colorFromIdentifier
+     * \brief iconName
      * \param identifier
      * \return
      */
-    [[nodiscard]] QColor colorFromIdentifier(const QByteArray &identifier) const;
+    [[nodiscard]] QString iconName(const QByteArray &identifier) const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;

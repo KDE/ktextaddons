@@ -40,7 +40,7 @@ void TextAutoGenerateManageProjectsDialogTest::shouldStoreProjects()
     TextAutoGenerateText::TextAutoGenerateProject project;
     project.setIdentifier("project1");
     project.setName(u"name-project1"_s);
-    project.setColor(QColor(Qt::red));
+    project.setIconName(u"bla2"_s);
     const QList<TextAutoGenerateText::TextAutoGenerateProject> projects{project};
     d.setProjects(projects);
     QCOMPARE(d.projects(), projects);

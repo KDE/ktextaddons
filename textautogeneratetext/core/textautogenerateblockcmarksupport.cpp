@@ -9,7 +9,6 @@
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
-#include <KTextToHTML>
 #include <QRegularExpression>
 #include <TextUtils/TextUtilsColorsAndMessageViewStyle>
 #include <TextUtils/TextUtilsSyntaxHighlightingManager>

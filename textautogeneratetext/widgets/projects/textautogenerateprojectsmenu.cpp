@@ -15,19 +15,6 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 
-namespace
-{
-QIcon iconFromColor(const QColor &color)
-{
-    if (!color.isValid()) {
-        return {};
-    }
-    QPixmap pix(16, 16);
-    pix.fill(color);
-    return QIcon(pix);
-}
-}
-
 TextAutoGenerateProjectsMenu::TextAutoGenerateProjectsMenu(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QMenu(parent)
     , mManager(manager)
@@ -74,7 +61,7 @@ void TextAutoGenerateProjectsMenu::updateMenu()
             addSeparator();
 
             for (const TextAutoGenerateProject &project : projects) {
-                auto projectAction = new QAction(iconFromColor(project.color()), project.name(), this);
+                auto projectAction = new QAction(QIcon::fromTheme(project.iconName()), project.name(), this);
                 projectAction->setCheckable(true);
                 projectAction->setChecked(project.identifier() == assignedProject);
                 projectsGroup->addAction(projectAction);

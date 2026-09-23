@@ -76,11 +76,11 @@ public:
     [[nodiscard]] QString name(const QByteArray &identifier) const;
 
     /*!
-     * \brief color
+     * \brief iconName
      * \param identifier
      * \return
      */
-    [[nodiscard]] QColor color(const QByteArray &identifier) const;
+    [[nodiscard]] QString iconName(const QByteArray &identifier) const;
 
 private:
     TextAutoGenerateProjectsModel *const mTextAutoGenerateProjectsModel;

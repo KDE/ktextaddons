@@ -6,7 +6,7 @@
 
 #include "textautogenerateprojectwidgettest.h"
 #include "widgets/projects/textautogenerateprojectwidget.h"
-#include <KColorButton>
+#include <KIconButton>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QSignalSpy>
@@ -31,9 +31,8 @@ void TextAutoGenerateProjectWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mName->isClearButtonEnabled());
     QVERIFY(!mName->placeholderText().isEmpty());
 
-    auto mColor = w.findChild<KColorButton *>(u"mColor"_s);
-    QVERIFY(mColor);
-    QVERIFY(!mColor->isAlphaChannelEnabled());
+    auto mIconName = w.findChild<KIconButton *>(u"mIconName"_s);
+    QVERIFY(mIconName);
 }
 
 void TextAutoGenerateProjectWidgetTest::shouldKeepIdentifierWhenEditingProject()
@@ -43,25 +42,25 @@ void TextAutoGenerateProjectWidgetTest::shouldKeepIdentifierWhenEditingProject()
     TextAutoGenerateText::TextAutoGenerateProject project;
     project.setIdentifier("project1");
     project.setName(u"name-project1"_s);
-    project.setColor(QColor(Qt::red));
+    project.setIconName(u"bla2"_s);
     w.setProject(project);
 
     auto mName = w.findChild<QLineEdit *>(u"mName"_s);
     QVERIFY(mName);
     QCOMPARE(mName->text(), u"name-project1"_s);
-    auto mColor = w.findChild<KColorButton *>(u"mColor"_s);
-    QVERIFY(mColor);
-    QCOMPARE(mColor->color(), QColor(Qt::red));
+    auto mIconName = w.findChild<KIconButton *>(u"mIconName"_s);
+    QVERIFY(mIconName);
+    QCOMPARE(mIconName->icon(), u"bla2"_s);
 
     // WHEN
     mName->setText(u"  renamed  "_s);
-    mColor->setColor(QColor(Qt::blue));
+    mIconName->setIcon(u"bla3"_s);
 
     // THEN
     const TextAutoGenerateText::TextAutoGenerateProject result = w.project();
     QCOMPARE(result.identifier(), "project1"_ba);
     QCOMPARE(result.name(), u"renamed"_s);
-    QCOMPARE(result.color(), QColor(Qt::blue));
+    QCOMPARE(result.iconName(), u"bla3"_s);
 }
 
 void TextAutoGenerateProjectWidgetTest::shouldEmitEnableOkButton()

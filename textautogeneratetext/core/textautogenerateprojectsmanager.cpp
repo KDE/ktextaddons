@@ -50,9 +50,9 @@ QString TextAutoGenerateProjectsManager::name(const QByteArray &identifier) cons
     return mTextAutoGenerateProjectsModel->nameFromIdentifier(identifier);
 }
 
-QColor TextAutoGenerateProjectsManager::color(const QByteArray &identifier) const
+QString TextAutoGenerateProjectsManager::iconName(const QByteArray &identifier) const
 {
-    return mTextAutoGenerateProjectsModel->colorFromIdentifier(identifier);
+    return mTextAutoGenerateProjectsModel->iconName(identifier);
 }
 
 #include "moc_textautogenerateprojectsmanager.cpp"

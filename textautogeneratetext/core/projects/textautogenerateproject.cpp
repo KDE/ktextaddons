@@ -37,19 +37,9 @@ void TextAutoGenerateProject::setIdentifier(const QByteArray &newIdentifier)
     mIdentifier = newIdentifier;
 }
 
-QColor TextAutoGenerateProject::color() const
-{
-    return mColor;
-}
-
-void TextAutoGenerateProject::setColor(const QColor &newColor)
-{
-    mColor = newColor;
-}
-
 bool TextAutoGenerateProject::operator==(const TextAutoGenerateProject &other) const
 {
-    return other.mIdentifier == mIdentifier && other.mName == mName && other.mColor == mColor;
+    return other.mIdentifier == mIdentifier && other.mName == mName && other.mIconName == mIconName;
 }
 
 QByteArray TextAutoGenerateProject::serialize(const TextAutoGenerateProject &project, bool toBinary)
@@ -57,8 +47,8 @@ QByteArray TextAutoGenerateProject::serialize(const TextAutoGenerateProject &pro
     QJsonObject o;
     o["identifier"_L1] = QString::fromLatin1(project.mIdentifier);
     o["name"_L1] = project.mName;
-    if (project.mColor.isValid()) {
-        o["color"_L1] = project.mColor.name(QColor::HexArgb);
+    if (!project.mIconName.isEmpty()) {
+        o["iconName"_L1] = project.mIconName;
     }
 
     if (toBinary) {
@@ -74,16 +64,26 @@ TextAutoGenerateProject TextAutoGenerateProject::deserialize(const QJsonObject &
     TextAutoGenerateProject project;
     project.setIdentifier(o["identifier"_L1].toString().toLatin1());
     project.setName(o["name"_L1].toString());
-    if (const QString colorName = o["color"_L1].toString(); !colorName.isEmpty()) {
-        project.setColor(QColor::fromString(colorName));
+    if (const QString iconName = o["iconName"_L1].toString(); !iconName.isEmpty()) {
+        project.setIconName(iconName);
     }
     return project;
+}
+
+QString TextAutoGenerateProject::iconName() const
+{
+    return mIconName;
+}
+
+void TextAutoGenerateProject::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateProject &t)
 {
     d.space() << "mName" << t.name();
     d.space() << "mIdentifier" << t.identifier();
-    d.space() << "mColor" << t.color();
+    d.space() << "mIconName" << t.iconName();
     return d;
 }

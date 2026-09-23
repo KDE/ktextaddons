@@ -10,12 +10,12 @@
 QTEST_GUILESS_MAIN(TextAutoGenerateProjectsModelTest)
 using namespace Qt::Literals::StringLiterals;
 
-static TextAutoGenerateText::TextAutoGenerateProject createProject(const QByteArray &identifier, const QString &name, const QColor &color = {})
+static TextAutoGenerateText::TextAutoGenerateProject createProject(const QByteArray &identifier, const QString &name, const QString &iconName = {})
 {
     TextAutoGenerateText::TextAutoGenerateProject project;
     project.setIdentifier(identifier);
     project.setName(name);
-    project.setColor(color);
+    project.setIconName(iconName);
     return project;
 }
 
@@ -34,22 +34,21 @@ void TextAutoGenerateProjectsModelTest::shouldHaveDefaultValues()
 void TextAutoGenerateProjectsModelTest::shouldAddProject()
 {
     TextAutoGenerateText::TextAutoGenerateProjectsModel model;
-    model.addProject(createProject("foo"_ba, u"bla"_s, Qt::red));
+    model.addProject(createProject("foo"_ba, u"bla"_s, u"test1"_s));
     QCOMPARE(model.rowCount(), 1);
 
     const QModelIndex idx = model.index(0, 0);
     QCOMPARE(idx.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::Name).toString(), u"bla"_s);
     QCOMPARE(idx.data(Qt::DisplayRole).toString(), u"bla"_s);
     QCOMPARE(idx.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::Identifier).toByteArray(), "foo"_ba);
-    QCOMPARE(idx.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::Color).value<QColor>(), QColor(Qt::red));
-    QCOMPARE(idx.data(Qt::DecorationRole).value<QColor>(), QColor(Qt::red));
+    QCOMPARE(idx.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::IconName).toString(), QString());
 
     // No color set => invalid QVariant, so the view keeps its palette instead of painting black.
     model.addProject(createProject("foo1"_ba, u"bla1"_s));
     QCOMPARE(model.rowCount(), 2);
     const QModelIndex idx2 = model.index(1, 0);
     QCOMPARE(idx2.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::Name).toString(), u"bla1"_s);
-    QVERIFY(!idx2.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::Color).isValid());
+    QVERIFY(idx2.data(TextAutoGenerateText::TextAutoGenerateProjectsModel::IconName).toString().isEmpty());
     QVERIFY(!idx2.data(Qt::DecorationRole).isValid());
 }
 
@@ -78,11 +77,11 @@ void TextAutoGenerateProjectsModelTest::shouldUpdateProject()
     model.setProjects({createProject("foo"_ba, u"bla"_s), createProject("foo1"_ba, u"bla1"_s)});
 
     const QSignalSpy dataChangedSpy(&model, &TextAutoGenerateText::TextAutoGenerateProjectsModel::dataChanged);
-    model.updateProject(createProject("foo1"_ba, u"newname"_s, Qt::blue));
+    model.updateProject(createProject("foo1"_ba, u"newname"_s, u"test2"_s));
     QCOMPARE(dataChangedSpy.count(), 1);
     QCOMPARE(dataChangedSpy.at(0).at(0).toModelIndex(), model.index(1, 0));
     QCOMPARE(model.projects().at(1).name(), u"newname"_s);
-    QCOMPARE(model.projects().at(1).color(), QColor(Qt::blue));
+    QCOMPARE(model.projects().at(1).iconName(), u"test2"_s);
     // Other project untouched
     QCOMPARE(model.projects().at(0).name(), u"bla"_s);
 
@@ -108,15 +107,15 @@ void TextAutoGenerateProjectsModelTest::shouldClearProjects()
 void TextAutoGenerateProjectsModelTest::shouldReturnNameAndColor()
 {
     TextAutoGenerateText::TextAutoGenerateProjectsModel model;
-    model.setProjects({createProject("foo"_ba, u"bla"_s, Qt::red), createProject("foo1"_ba, u"bla1"_s)});
+    model.setProjects({createProject("foo"_ba, u"bla"_s, u"test5"_s), createProject("foo1"_ba, u"bla1"_s)});
     QCOMPARE(model.nameFromIdentifier("foo"_ba), u"bla"_s);
     QCOMPARE(model.nameFromIdentifier("foo1"_ba), u"bla1"_s);
     QVERIFY(model.nameFromIdentifier("unknown"_ba).isEmpty());
     QVERIFY(model.nameFromIdentifier({}).isEmpty());
 
-    QCOMPARE(model.colorFromIdentifier("foo"_ba), QColor(Qt::red));
-    QCOMPARE(model.colorFromIdentifier("foo1"_ba), QColor());
-    QCOMPARE(model.colorFromIdentifier("unknown"_ba), QColor());
+    QCOMPARE(model.iconName("foo"_ba), u"test5"_s);
+    QCOMPARE(model.iconName("foo1"_ba), QString());
+    QCOMPARE(model.iconName("unknown"_ba), QString());
 }
 
 #include "moc_textautogenerateprojectsmodeltest.cpp"
