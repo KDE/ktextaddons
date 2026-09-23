@@ -17,28 +17,28 @@ msgstr ""
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "Impossible de démarrer la tâche. Le gestionnaire ou le texte est vide."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "Échec de l'ouverture du fichier en écriture : %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "Échec de l'écriture dans le fichier : %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "Fichier « Json »"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "Échec de l'ouverture du fichier en lecture : %1"
 
 #: core/models/textautogeneratechatsmodel.cpp:96
 #, kde-format
@@ -208,10 +208,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Jeton de réalisation : </b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "Modules externes d'outils"
+msgstr "Modules externes d'outils :"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
@@ -359,10 +358,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "IA OrcaRouter"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
@@ -378,13 +376,12 @@ msgstr "API compatible avec OpenAI AtlasCloud"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "API de OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -437,15 +434,14 @@ msgid "Sarvam AI instance"
 msgstr "Instance d'IA Sarvam"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "API compatible avec OpenAI AtlasCloud"
+msgstr "API compatible avec OpenAI pour Orca Router"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr ""
+msgstr "API pour Open AI (Personnalisé)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3103,17 +3099,17 @@ msgstr "Joindre un fichier"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "Fichier d'image %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "Fichier audio %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "Fichier de texte %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -3155,8 +3151,7 @@ msgid "Text Plugins"
 msgstr "Modules externes de texte"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "Modules externes d'outils"
 
@@ -3322,11 +3317,9 @@ msgid "Configure…"
 msgstr "Configurer..."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "Copier une URL"
+msgstr "URL personnalisée :"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3334,10 +3327,9 @@ msgid "Max Tokens:"
 msgstr "Nombre maximal de jetons :"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "Modules externes de texte"
+msgstr "Modules externes de texte :"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
@@ -3429,25 +3421,23 @@ msgstr ""
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Divers"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Voyage"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
-msgstr "Invite de commandes"
+msgstr "Prompt"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgid "Category:"
-msgstr "Catégories"
+msgstr "Catégorie :"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
@@ -3456,20 +3446,16 @@ msgid "Description:"
 msgstr "Description :"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Ajouter un serveur…"
+msgstr "Ajouter un prompt..."
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Supprimer un modèle"
+msgstr "Supprimer un prompt"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, fuzzy, kde-format
@@ -3646,12 +3632,10 @@ msgid "Only show the chats which have one of the selected tags"
 msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Rechercher des canaux"
+msgstr "Rechercher une discussion"
 
 #: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format

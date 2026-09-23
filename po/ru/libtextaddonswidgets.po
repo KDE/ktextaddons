@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 02:43+0000\n"
+"POT-Creation-Date: 2026-09-22 19:09+0000\n"
 "PO-Revision-Date: 2026-06-18 19:37+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -29,61 +29,61 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Ваши адреса электронной почты"
 
-#: misc/openfilejob.cpp:61
+#: misc/openfilejob.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Открыть вложение?"
 
-#: misc/openfilejob.cpp:62
+#: misc/openfilejob.cpp:61
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "Открыть вложение <filename>%1</filename>?<nl/>"
 
-#: misc/openfilejob.cpp:66
+#: misc/openfilejob.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Открыть"
 
-#: misc/openfilejob.cpp:69
+#: misc/openfilejob.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "&Открыть с помощью «%1»"
 
-#: misc/openfilejob.cpp:72
+#: misc/openfilejob.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "Открыть с &помощью…"
 
-#: misc/openfilejob.cpp:74
+#: misc/openfilejob.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "Сохранить &как..."
 
-#: misc/openfilejob.cpp:100
+#: misc/openfilejob.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Сохранение файла"
 
-#: misc/savefileutils.cpp:68
+#: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Исходный файл больше не существует"
 
-#: misc/savefileutils.cpp:68 misc/savefileutils.cpp:74
-#: misc/savefileutils.cpp:79
+#: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Ошибка сохранения файла"
 
-#: misc/savefileutils.cpp:74
+#: misc/savefileutils.cpp:77
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Не удалось перезаписать существующий файл"
@@ -153,33 +153,30 @@ msgstr "Не удалось открыть вложение."
 msgid "Restart is necessary for applying the changes."
 msgstr "Для применения изменений требуется перезапуск приложения"
 
-#: plugins/configurepluginswidget.cpp:158
+#: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Настроить"
 
 #: quicksearchbar/quicksearchbar.cpp:27
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
 msgstr "Поиск… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Следующее"
 
 #: quicksearchbar/quicksearchbar.cpp:49
-#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
@@ -227,52 +224,52 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "Вставить"
 
-#: selectspecialchardialog.cpp:35
+#: selectspecialchardialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Выбор специальных символов"
 
-#: selectspecialchardialog.cpp:43
+#: selectspecialchardialog.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Вставить"
 
-#: selectspecialchardialog.cpp:56
+#: selectspecialchardialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"
 msgstr "Выбрать"
 
-#: verifynewversion/checknewversiondialog.cpp:17
+#: verifynewversion/checknewversiondialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Проверка наличия новой версии"
 
-#: verifynewversion/checknewversionwidget.cpp:61
+#: verifynewversion/checknewversionwidget.cpp:63
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "Найдена новая версия. Нажмите <a href=\"%1\">сюда</a> для её загрузки."
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:65
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "Новая версия не найдена. Сборка доступна <a href=\"%1\">здесь</a>."
 
-#: verifynewversion/verifynewversionwidget.cpp:32
+#: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
 msgid "Check New Version"
 msgstr "Проверить наличие новой версии"
 
-#: whatsnew/whatsnewcomboboxwidget.cpp:27
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Версия:"
 
-#: whatsnew/whatsnewdialog.cpp:27 whatsnewng/whatsnewngdialog.cpp:28
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
@@ -285,50 +282,62 @@ msgid "(Show News)"
 msgstr "(Показать новое)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
-#: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %2. %1"
 msgstr "Новое в %2. %1"
 
-#: whatsnew/whatsnewwidget.cpp:45 whatsnewng/whatsnewngwidget.cpp:51
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format
 msgid "All Versions"
 msgstr "Все версии"
 
-#: whatsnew/whatsnewwidget.cpp:93
+#: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Important changes since last version:"
 msgstr "Важные изменения по сравнению с предыдущей версией:"
 
-#: whatsnew/whatsnewwidget.cpp:98 whatsnewng/whatsnewngwidget.cpp:101
+#: whatsnew/whatsnewwidget.cpp:100
 #, kde-format
 msgid "Some of the new features in this release include:"
 msgstr "Некоторые из новых возможностей в этой версии:"
 
-#: whatsnew/whatsnewwidget.cpp:103
+#: whatsnew/whatsnewwidget.cpp:105
 #, kde-format
 msgid "Some bug fixing:"
 msgstr "Исправление некоторых ошибок:"
 
-#: whatsnew/whatsnewwidget.cpp:141
+#: whatsnew/whatsnewwidget.cpp:146
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i>Версия %1</i></h1><hr><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:84
+#: whatsnewng/whatsnewmessagengwidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "What's new in %2. %1"
+msgid "What's new in %1. %2"
+msgstr "Новое в %2. %1"
+
+#: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Примечания к выпуску</a></i></b>"
 
-#: whatsnewng/whatsnewngwidget.cpp:93
-#, kde-format
-msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#: whatsnewng/whatsnewngutils.cpp:32
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h1><i> Версия %1 (Выпущена: %2)</i></h1><hr/><br>"
 
-#: whatsnewng/whatsnewngwidget.cpp:95
-#, kde-format
-msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#: whatsnewng/whatsnewngutils.cpp:34
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h1><i>Версия %1 (ещё не выпущена)</i></h1><hr/><br>"
+
+#: whatsnewng/whatsnewngutils.cpp:50
+#, kde-format
+msgid "<h1>What's New History</h1>"
+msgstr ""
 
 #~ msgid "Version %1"
 #~ msgstr "Версия %1"
