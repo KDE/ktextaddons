@@ -80,7 +80,7 @@ void TextAutoGenerateLocalProjectsDatabaseTest::shouldStoreProjects()
 void TextAutoGenerateLocalProjectsDatabaseTest::shouldLoadProjects() // this test depends on shouldStoreProjects()
 {
     // GIVEN
-    TextAutoGenerateText::TextAutoGenerateLocalProjectsDatabase projectsDatabase;
+    const TextAutoGenerateText::TextAutoGenerateLocalProjectsDatabase projectsDatabase;
 
     // WHEN
     const QList<TextAutoGenerateText::TextAutoGenerateProject> projects = projectsDatabase.loadProjects();
