@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 15:59+0000\n"
-"PO-Revision-Date: 2026-09-22 12:14+0100\n"
+"POT-Creation-Date: 2026-09-23 00:49+0000\n"
+"PO-Revision-Date: 2026-09-22 23:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3265,14 +3265,14 @@ msgid "Ask to AI"
 msgstr "Preguntar a la IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:130
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Modificar…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:176
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3319,31 +3319,25 @@ msgstr "Complementos de texto:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "Gestión de proyectos"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "Añadir indicaciones…"
+msgstr "Añadir proyecto…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "Modificar…"
+msgstr "Modificar proyecto…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "Eliminar indicaciones"
+msgstr "Eliminar proyecto"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3351,34 +3345,56 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"¿Desea eliminar este proyecto (%1)? Sus conversaciones se conservarán fuera "
+"de cualquier proyecto."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "Eliminar indicaciones"
+msgstr "Eliminar proyecto"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "Añadir proyecto"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "Modificar proyecto"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Project"
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Añadir proyecto"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Project"
+msgctxt "@action"
+msgid "No Project"
+msgstr "Añadir proyecto"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Manage Projects"
+msgctxt "@action"
+msgid "Manage Projects…"
+msgstr "Gestión de proyectos"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Tag name…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr "Nombre de la etiqueta…"
+msgstr "Nombre del proyecto…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:35
 #: widgets/tags/textautogeneratetagwidget.cpp:35
@@ -3488,51 +3504,42 @@ msgstr "Guardar discusión en la base de datos"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "Gestión de etiquetas"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "Añadir etiqueta"
+msgstr "Añadir etiqueta…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Modify Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "Modificar etiqueta"
+msgstr "Modificar etiqueta…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "Eliminar"
+msgstr "Eliminar etiqueta"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "¿Quiere eliminar esta instancia (%1)?"
+msgstr "¿Desea eliminar esta etiqueta (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "Eliminar"
+msgstr "Eliminar etiqueta"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "Ninguna etiqueta seleccionada"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
@@ -3550,13 +3557,13 @@ msgstr "Modificar etiqueta"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetas"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "Gestión de etiquetas…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
@@ -3593,6 +3600,8 @@ msgstr "Buscar… (%1)"
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
 msgstr ""
+"Mostrar solo las conversaciones que tengan alguna de las etiquetas "
+"seleccionadas"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
@@ -3762,54 +3771,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Insertar texto"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:120
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Nueva conversación"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:139
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplicar…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Eliminar de favoritas"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Marcar como favorita"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Archivar"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:180
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "¿Quiere eliminar esta discusión?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Eliminar discusión"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:266
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr "No se ha encontrado ningún archivo."

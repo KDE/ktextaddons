@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 15:59+0000\n"
+"POT-Creation-Date: 2026-09-23 00:49+0000\n"
 "PO-Revision-Date: 2026-08-27 22:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3238,14 +3238,14 @@ msgid "Ask to AI"
 msgstr "Galdetu AAri"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:130
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Aldatu…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:176
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3344,6 +3344,30 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Modify Project"
 msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add prompt…"
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Eskaera gehitu…"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@action"
+msgid "No Project"
+msgstr "Eskaera kendu"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add prompt…"
+msgctxt "@action"
+msgid "Manage Projects…"
+msgstr "Eskaera gehitu…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
@@ -3738,54 +3762,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "Testua txertatu"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:120
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Berriketa berria"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:139
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Bikoiztu…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Gogokoetatik kendu"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Ezarri gogoko gisa"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Lehengoratu"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Artxibatu"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:180
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Elkarrizketa hau kendu nahi duzu?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Kendu elkarrizketa"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:266
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr "Ez da artxiborik aurkitu."

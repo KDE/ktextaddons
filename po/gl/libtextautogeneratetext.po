@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 15:59+0000\n"
+"POT-Creation-Date: 2026-09-23 00:49+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2811,14 +2811,14 @@ msgid "Ask to AI"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:130
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:176
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2910,6 +2910,24 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, kde-format
+msgctxt "@title:menu"
+msgid "Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "No Project"
+msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, kde-format
+msgctxt "@action"
+msgid "Manage Projects…"
 msgstr ""
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
@@ -3297,54 +3315,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:120
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:139
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:180
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:266
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr ""

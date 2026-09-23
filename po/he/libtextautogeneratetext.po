@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 15:59+0000\n"
+"POT-Creation-Date: 2026-09-23 00:49+0000\n"
 "PO-Revision-Date: 2026-09-18 23:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3103,14 +3103,14 @@ msgid "Ask to AI"
 msgstr "לשאול בינה מלאכותית"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:130
+#: widgets/view/textautogeneratehistorylistview.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "עריכה…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:176
+#: widgets/view/textautogeneratehistorylistview.cpp:199
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3209,6 +3209,30 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Modify Project"
 msgstr ""
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:36
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add prompt…"
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "הוספת בקשה…"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Prompt"
+msgctxt "@action"
+msgid "No Project"
+msgstr "הסרת בקשה"
+
+#: widgets/projects/textautogenerateprojectsmenu.cpp:90
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add prompt…"
+msgctxt "@action"
+msgid "Manage Projects…"
+msgstr "הוספת בקשה…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
@@ -3600,54 +3624,54 @@ msgctxt "@info:tooltip"
 msgid "Insert Text"
 msgstr "הוספת קוד"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:120
+#: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "שיחה חדש"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:139
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "שכפול…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "הסרה מהמועדפים"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "הגדרה כמועדף"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "שחזור"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:166
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "העברה לארכיון"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:180
+#: widgets/view/textautogeneratehistorylistview.cpp:203
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "להסיר את השיחה?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "הסרת שיחה"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:266
+#: widgets/view/textautogeneratehistorylistview.cpp:289
 #, kde-format
 msgid "No Archive Found."
 msgstr "לא נמצא ארכיון."
