@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-23 00:49+0000\n"
-"PO-Revision-Date: 2026-09-22 06:18+0200\n"
+"POT-Creation-Date: 2026-09-24 00:43+0000\n"
+"PO-Revision-Date: 2026-09-23 08:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -507,7 +507,7 @@ msgstr "დაყენებული მოდელი"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/projects/textautogenerateprojectwidget.cpp:34
+#: widgets/projects/textautogenerateprojectwidget.cpp:33
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -3280,31 +3280,25 @@ msgstr "ტექსტის დამატებები:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "პროექტების მართვა"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "მოთხოვნის დამატება…"
+msgstr "პროექტის დამატება…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "შეცვლა…"
+msgstr "პროექტის შეცვლა…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "მოთხოვნის წაშლა"
+msgstr "პროექტის წაშლა"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3312,64 +3306,55 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"მართლა გნებავთ, წაშალოთ ეს პროექტი (%1)? მისი ჩატები შენარჩუნებული იქნება, "
+"ოღონდ ნებისმიერი პროექტის გარეთ."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "მოთხოვნის წაშლა"
+msgstr "პროექტის წაშლა"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "პროექტის დამატება"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "პროექტის შეცვლა"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:23
+#, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "მოთხოვნის დამატება…"
+msgstr "პროექტი"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:51
+#, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "მოთხოვნის წაშლა"
+msgstr "პროექტების გარეშე"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:77
+#, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "მოთხოვნის დამატება…"
+msgstr "პროექტების მართვა…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Tag name…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr "ჭდის სახელი…"
+msgstr "პროექტის სახელი…"
 
-#: widgets/projects/textautogenerateprojectwidget.cpp:35
-#: widgets/tags/textautogeneratetagwidget.cpp:35
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
-msgid "Color:"
-msgstr "ფერი:"
+msgid "Icon:"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3473,51 +3458,42 @@ msgstr "დისკუსიის შენახვა მონაცემ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "ჭდეების მართვა"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "ჭდის დამატება"
+msgstr "ჭდის დამატება…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Modify Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "ჭდის ჩასწორება"
+msgstr "ჭდის ჩასწორება…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "წაშლა"
+msgstr "ჭდის წაშლა"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი (%1)?"
+msgstr "გნებავთ, წაშალოთ ეს ჭდე (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "წაშლა"
+msgstr "ჭდის წაშლა"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "ჭდე მონიშნული არაა"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
@@ -3535,19 +3511,24 @@ msgstr "ჭდის ჩასწორება"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "ჭდეები"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "ჭდეების მართვა…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
 msgstr "ჭდის სახელი…"
+
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr "ფერი:"
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format
@@ -3577,7 +3558,7 @@ msgstr "ძებნა… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "მხოლოდ, იმ ჭდეების ჩვენება, რომელსაც მონიშნული ჭდეებიდან ერთერთი აქვს"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format

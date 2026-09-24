@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-23 00:49+0000\n"
-"PO-Revision-Date: 2026-09-22 09:23+0200\n"
+"POT-Creation-Date: 2026-09-24 00:43+0000\n"
+"PO-Revision-Date: 2026-09-23 11:23+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -507,7 +507,7 @@ msgstr "Nameščeni model"
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#: widgets/projects/textautogenerateprojectwidget.cpp:34
+#: widgets/projects/textautogenerateprojectwidget.cpp:33
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
@@ -3278,31 +3278,25 @@ msgstr "Besedilni vtičniki:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "Upravljaj projekte"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "Dodaj poziv…"
+msgstr "Dodaj projekt…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "Spremeni…"
+msgstr "Spremeni projekt…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "Odstrani poziv"
+msgstr "Odstrani projekt"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3310,64 +3304,55 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"Ali želite odstraniti ta projekt (%1)? Njegovi klepeti bodo ohranjeni zunaj "
+"katerega koli projekta."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "Odstrani poziv"
+msgstr "Odstrani projekt"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "Dodaj projekt"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "Spremeni projekt"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:23
+#, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "Dodaj poziv…"
+msgstr "Projekt"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:51
+#, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "Odstrani poziv"
+msgstr "Ni projekta"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:77
+#, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "Dodaj poziv…"
+msgstr "Upravljaj projekte…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Tag name…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr "Ime značke…"
+msgstr "Ime projekta…"
 
-#: widgets/projects/textautogenerateprojectwidget.cpp:35
-#: widgets/tags/textautogeneratetagwidget.cpp:35
+#: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
-msgid "Color:"
-msgstr "Barva:"
+msgid "Icon:"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3471,51 +3456,42 @@ msgstr "Shrani razpravo v zbirko podatkov"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "Upravljaj značke"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "Dodaj značko"
+msgstr "Dodaj značko…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Modify Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "Spremeni značko"
+msgstr "Spremeni značko…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "Odstrani"
+msgstr "Odstrani značko"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "Ali želite odstraniti ta pojavek (%1)?"
+msgstr "Ali želite odstraniti to značko (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "Odstrani"
+msgstr "Odstrani značko"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "Ni izbrane značke"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
@@ -3533,19 +3509,24 @@ msgstr "Spremeni značko"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "Značke"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "Upravljaj značke…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
 msgstr "Ime značke…"
+
+#: widgets/tags/textautogeneratetagwidget.cpp:35
+#, kde-format
+msgid "Color:"
+msgstr "Barva:"
 
 #: widgets/textautogeneratedialog.cpp:31
 #, kde-format
@@ -3575,7 +3556,7 @@ msgstr "Išči… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "Prikaži samo klepete, ki imajo eno od izbranih značk."
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format

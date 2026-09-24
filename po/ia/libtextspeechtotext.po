@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:42+0000\n"
-"PO-Revision-Date: 2024-07-11 11:42+0200\n"
+"PO-Revision-Date: 2026-09-23 10:46+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -68,11 +68,10 @@ msgstr "Preferentias de Plug-in de Vosk"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Active"
-msgstr ""
+msgstr "Marca como Active"
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action"
 msgid "Download"
 msgstr "Discarga"
@@ -151,7 +150,7 @@ msgstr "Dimension"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "Activa"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -196,11 +195,10 @@ msgid "Unable to download the %1 model: %2"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "Installate"
+msgstr "Installa"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
@@ -209,11 +207,10 @@ msgid "Install Whisper Package"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "Discarga"
+msgstr "Discarga Modello"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
@@ -224,7 +221,7 @@ msgstr ""
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "Nulle a installar."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
@@ -249,19 +246,18 @@ msgstr ""
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr ""
+msgstr "Installation facite."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installation failed."
-msgstr "Installate"
+msgstr "Installation falleva"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 de %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
@@ -281,13 +277,13 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr ""
+msgstr "%1 (%2, Discargate)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
@@ -331,10 +327,9 @@ msgid "Engine:"
 msgstr "Motor:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
+#, kde-format
 msgid "Language:"
-msgstr "Linguage"
+msgstr "Linguage:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
