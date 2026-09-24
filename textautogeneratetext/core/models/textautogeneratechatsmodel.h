@@ -38,6 +38,7 @@ public:
         Tags,
         TagsColor,
         Project,
+        Persistence,
     };
 
     /*! Constructs a new TextAutoGenerateChatsModel with the given @p parent. */

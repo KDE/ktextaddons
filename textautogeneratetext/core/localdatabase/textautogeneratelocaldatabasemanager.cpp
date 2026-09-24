@@ -58,35 +58,54 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalDatabaseManager::searc
 
 void TextAutoGenerateLocalDatabaseManager::deleteMessage(const QByteArray &chatIdentifier, const QString &messageId)
 {
+    if (mEphemeralChatIds.contains(chatIdentifier)) {
+        return;
+    }
     mMessagesDatabase->deleteMessage(chatIdentifier, messageId);
 }
 
 void TextAutoGenerateLocalDatabaseManager::insertOrReplaceMessage(const QByteArray &chatIdentifier, const TextAutoGenerateMessage &m)
 {
+    if (mEphemeralChatIds.contains(chatIdentifier)) {
+        return;
+    }
     mMessagesDatabase->insertOrReplaceMessage(chatIdentifier, m);
 }
 
 void TextAutoGenerateLocalDatabaseManager::deleteChat(const QByteArray &chatId)
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Delete Chat" << chatId;
-    mChatsDatabase->deleteChat(chatId);
-    mMessagesDatabase->deleteDatabase(chatId);
-    mChatPendingTypedInfoDatabase->deleteChatPendingTypedInfo(chatId);
+    if (mEphemeralChatIds.contains(chatId)) {
+        removeEphemeralChat(chatId);
+    } else {
+        mChatsDatabase->deleteChat(chatId);
+        mMessagesDatabase->deleteDatabase(chatId);
+        mChatPendingTypedInfoDatabase->deleteChatPendingTypedInfo(chatId);
+    }
 }
 
 void TextAutoGenerateLocalDatabaseManager::insertOrUpdateChat(const TextAutoGenerateChat &chat)
 {
+    if (mEphemeralChatIds.contains(chat.identifier())) {
+        return;
+    }
     mChatsDatabase->insertOrUpdateChat(chat);
 }
 
 void TextAutoGenerateLocalDatabaseManager::updateChatPendingTypedInfo(const QByteArray &chatIdentifier,
                                                                       const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo)
 {
+    if (mEphemeralChatIds.contains(chatIdentifier)) {
+        return;
+    }
     mChatPendingTypedInfoDatabase->updateChatPendingTypedInfo(chatIdentifier, pendingTypedInfo);
 }
 
 void TextAutoGenerateLocalDatabaseManager::deleteChatPendingTypedInfo(const QByteArray &chatIdentifier)
 {
+    if (mEphemeralChatIds.contains(chatIdentifier)) {
+        return;
+    }
     mChatPendingTypedInfoDatabase->deleteChatPendingTypedInfo(chatIdentifier);
 }
 
@@ -134,6 +153,26 @@ QList<TextAutoGenerateTag> TextAutoGenerateLocalDatabaseManager::loadTags() cons
 TextAutoGenerateLocalProjectsDatabase *TextAutoGenerateLocalDatabaseManager::projectsDatabase() const
 {
     return mProjectsDatabase.get();
+}
+
+void TextAutoGenerateLocalDatabaseManager::addEphemeralChat(const QByteArray &chatId)
+{
+    mEphemeralChatIds.insert(chatId);
+}
+
+void TextAutoGenerateLocalDatabaseManager::removeEphemeralChat(const QByteArray &chatId)
+{
+    mEphemeralChatIds.remove(chatId);
+}
+
+QSet<QByteArray> TextAutoGenerateLocalDatabaseManager::ephemeralChatIds() const
+{
+    return mEphemeralChatIds;
+}
+
+void TextAutoGenerateLocalDatabaseManager::setEphemeralChatIds(const QSet<QByteArray> &newEphemeralChatIds)
+{
+    mEphemeralChatIds = newEphemeralChatIds;
 }
 
 void TextAutoGenerateLocalDatabaseManager::deleteProject(const QByteArray &projectId)

@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QSet>
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateChatSettings>
@@ -64,11 +65,18 @@ public:
 
     [[nodiscard]] TextAutoGenerateLocalProjectsDatabase *projectsDatabase() const;
 
+    void addEphemeralChat(const QByteArray &chatId);
+    void removeEphemeralChat(const QByteArray &chatId);
+
+    [[nodiscard]] QSet<QByteArray> ephemeralChatIds() const;
+    void setEphemeralChatIds(const QSet<QByteArray> &newEphemeralChatIds);
+
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatsDatabase> mChatsDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatPendingTypedInfoDatabase> mChatPendingTypedInfoDatabase;
     std::unique_ptr<TextAutoGenerateLocalTagsDatabase> mTagsDatabase;
     std::unique_ptr<TextAutoGenerateLocalProjectsDatabase> mProjectsDatabase;
+    QSet<QByteArray> mEphemeralChatIds;
 };
 }

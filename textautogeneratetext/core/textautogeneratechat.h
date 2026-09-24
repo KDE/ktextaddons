@@ -34,6 +34,12 @@ public:
     };
     Q_ENUM(SectionHistory)
 
+    enum class Persistence : uint8_t {
+        Persisted,
+        Ephemeral,
+    };
+    Q_ENUM(Persistence)
+
     /*!
      * Constructs a new TextAutoGenerateChat object.
      */
@@ -199,6 +205,17 @@ public:
      */
     void setTags(const QList<QByteArray> &newTags);
 
+    /*!
+     * \brief persistence
+     * \return
+     */
+    [[nodiscard]] Persistence persistence() const;
+    /*!
+     * \brief setPersistence
+     * \param newPersistence
+     */
+    void setPersistence(Persistence newPersistence);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
 
@@ -213,6 +230,7 @@ private:
     bool mArchived = false;
     bool mInitialized = false;
     bool mInProgress = false;
+    Persistence mPersistence = Persistence::Persisted;
 };
 
 }

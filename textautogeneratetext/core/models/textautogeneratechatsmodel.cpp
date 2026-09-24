@@ -84,6 +84,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return dateTime(chatElement);
     case HasPendingMessageTyped:
         return mTextAutoGenerateChatSettings ? mTextAutoGenerateChatSettings->hasPendingMessageTyped(chatElement.identifier()) : false;
+    case Persistence:
+        return QVariant::fromValue(chatElement.persistence());
     default:
         break;
     }
@@ -166,6 +168,7 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Project:
     case ChatRoles::Section:
     case ChatRoles::DateTime:
+    case ChatRoles::Persistence:
         break;
     }
     return QAbstractListModel::setData(idx, value, role);

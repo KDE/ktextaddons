@@ -99,7 +99,7 @@ bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
 {
     return other.mIdentifier == mIdentifier && other.mArchived == mArchived && other.mFavorite == mFavorite && other.mTitle == mTitle
         && other.mInitialized == mInitialized && other.mDateTime == mDateTime && other.mPrompt == mPrompt && mTags == other.mTags
-        && mProjectId == other.mProjectId;
+        && mProjectId == other.mProjectId && mPersistence == other.mPersistence;
 }
 
 QString TextAutoGenerateChat::title() const
@@ -209,6 +209,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
     d.space() << "prompt:" << t.prompt();
     d.space() << "tags:" << t.tags();
     d.space() << "projectId:" << t.projectId();
+    d.space() << "persistence:" << t.persistence();
     return d;
 }
 
@@ -248,6 +249,16 @@ TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::sectionMessage(qint64
     }
 
     return TextAutoGenerateChat::SectionHistory::Later;
+}
+
+TextAutoGenerateChat::Persistence TextAutoGenerateChat::persistence() const
+{
+    return mPersistence;
+}
+
+void TextAutoGenerateChat::setPersistence(Persistence newPersistence)
+{
+    mPersistence = newPersistence;
 }
 
 QList<QByteArray> TextAutoGenerateChat::tags() const
