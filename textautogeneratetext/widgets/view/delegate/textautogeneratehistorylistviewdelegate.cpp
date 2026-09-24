@@ -100,7 +100,7 @@ void TextAutoGenerateHistoryListViewDelegate::drawInProgressIndicator(QPainter *
     painter->restore();
 }
 
-TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewDelegate::doLayout([[maybe_unused]] const QStyleOptionViewItem &option,
+TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewDelegate::doLayout(const QStyleOptionViewItem &option,
                                                                                                   const QModelIndex &index) const
 {
     TextAutoGenerateHistoryListViewDelegate::Layout layout;
