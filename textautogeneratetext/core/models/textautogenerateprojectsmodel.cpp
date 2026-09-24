@@ -5,6 +5,7 @@
 */
 #include "textautogenerateprojectsmodel.h"
 #include "textautogeneratetextcore_debug.h"
+#include <QIcon>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateProjectsModel::TextAutoGenerateProjectsModel(QObject *parent)
@@ -36,7 +37,10 @@ QVariant TextAutoGenerateProjectsModel::data(const QModelIndex &index, int role)
         return project.name();
     case Identifier:
         return project.identifier();
-        // TODO add icon
+    case IconName:
+        return project.iconName();
+    case Qt::DecorationRole:
+        return QIcon::fromTheme(project.iconName());
     default:
         break;
     }

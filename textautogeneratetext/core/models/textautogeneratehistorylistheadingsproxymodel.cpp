@@ -13,6 +13,7 @@
 #include <QDataStream>
 #include <QFont>
 #include <QIODevice>
+#include <QIcon>
 #include <QMimeData>
 #include <QPalette>
 using namespace Qt::Literals::StringLiterals;
@@ -56,7 +57,15 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
         }
         const auto &section = mSections.at(index.row());
         switch (role) {
-        case Qt::ItemDataRole::DisplayRole:
+        case Qt::DecorationRole:
+            if (!section.projectId.isEmpty()) {
+                const QString iconName = mProjectsModel ? mProjectsModel->iconName(section.projectId) : QString{};
+                if (!iconName.isEmpty()) {
+                    return QIcon::fromTheme(iconName);
+                }
+            }
+            return {};
+        case Qt::DisplayRole:
             if (!section.projectId.isEmpty()) {
                 return mProjectsModel ? mProjectsModel->nameFromIdentifier(section.projectId) : QString{};
             }
