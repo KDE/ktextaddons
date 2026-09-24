@@ -783,9 +783,7 @@ void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
             return tag.identifier() == previousTag.identifier();
         };
         if (std::none_of(tags.cbegin(), tags.cend(), sameIdentifier)) {
-            if (mSaveInDatabase) {
-                mDatabaseManager->deleteTag(previousTag.identifier());
-            }
+            mDatabaseManager->deleteTag(previousTag.identifier());
             const QList<QByteArray> modifiedChats = mTextAutoGenerateChatsModel->removeTagFromChats(previousTag.identifier());
             for (const QByteArray &chatId : modifiedChats) {
                 saveChat(chatId);
@@ -793,7 +791,7 @@ void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
         }
     }
     for (const TextAutoGenerateTag &tag : tags) {
-        if (!previousTags.contains(tag) && mSaveInDatabase) {
+        if (!previousTags.contains(tag)) {
             mDatabaseManager->insertOrUpdateTag(tag);
         }
     }
@@ -825,9 +823,7 @@ void TextAutoGenerateManager::updateProjects(const QList<TextAutoGenerateProject
             return project.identifier() == previousProject.identifier();
         };
         if (std::none_of(projects.cbegin(), projects.cend(), sameIdentifier)) {
-            if (mSaveInDatabase) {
-                mDatabaseManager->deleteProject(previousProject.identifier());
-            }
+            mDatabaseManager->deleteProject(previousProject.identifier());
             const QList<QByteArray> modifiedChats = mTextAutoGenerateChatsModel->removeProjectFromChats(previousProject.identifier());
             for (const QByteArray &chatId : modifiedChats) {
                 saveChat(chatId);
@@ -835,7 +831,7 @@ void TextAutoGenerateManager::updateProjects(const QList<TextAutoGenerateProject
         }
     }
     for (const TextAutoGenerateProject &project : projects) {
-        if (!previousProjects.contains(project) && mSaveInDatabase) {
+        if (!previousProjects.contains(project)) {
             mDatabaseManager->insertOrUpdateProject(project);
         }
     }
