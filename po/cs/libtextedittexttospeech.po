@@ -78,7 +78,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr ""
+msgstr "Nainstalovat"
 
 #: kokoroinstall/texttospeechkokoroinstallpythondialog.cpp:27
 #, kde-format
@@ -227,9 +227,7 @@ msgid "Test"
 msgstr "Test"
 
 #: texttospeechconfigwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure…"
 msgstr "Nastavit…"
 
@@ -266,7 +264,7 @@ msgstr "Hlas:"
 #: texttospeechconfigwidget.cpp:118
 #, kde-format
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:319
 #, kde-format

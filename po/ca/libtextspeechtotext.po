@@ -1,15 +1,15 @@
 # Translation of libtextspeechtotext.po to Catalan
-# Copyright (C) 2023-2024 This_file_is_part_of_KDE
+# Copyright (C) 2023-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023-2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 19:09+0000\n"
-"PO-Revision-Date: 2024-07-11 08:53+0200\n"
+"PO-Revision-Date: 2026-09-23 12:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -70,11 +70,10 @@ msgstr "Configuració del connector Vosk"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Active"
-msgstr ""
+msgstr "Marca com a actiu"
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action"
 msgid "Download"
 msgstr "Baixa"
@@ -153,7 +152,7 @@ msgstr "Mida"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "Actiu"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -163,112 +162,109 @@ msgstr "Whisper"
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:100
 #, kde-format
 msgid "The whisper backend stopped unexpectedly."
-msgstr ""
+msgstr "El dorsal del Whisper s'ha aturat inesperadament."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
-msgstr ""
+msgstr "El Whisper no està instal·lat. Manca: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:26
 #, kde-format
 msgid "Whisper is not usable. Please reinstall it."
-msgstr ""
+msgstr "El Whisper no és utilitzable. Torneu-lo a instal·lar."
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:117
 #, kde-format
 msgid "Downloading the %1 model…"
-msgstr ""
+msgstr "S'està baixant el model %1…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:120
 #, kde-format
 msgid "The %1 model is already downloaded."
-msgstr ""
+msgstr "El model %1 ja està baixat."
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:122
 #, kde-format
 msgid "The %1 model is downloaded."
-msgstr ""
+msgstr "El model %1 està baixat."
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
-msgstr ""
+msgstr "No s'ha pogut baixar el model %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "Instal·lat"
+msgstr "Instal·la"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Whisper Package"
-msgstr ""
+msgstr "Instal·lació del paquet Whisper"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "Baixa"
+msgstr "Baixa el model"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Model used for dictation:"
-msgstr ""
+msgstr "Model utilitzat per al dictat:"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "No hi ha res a instal·lar."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr ""
+msgstr "S'està creant l'entorn virtual «python»…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Python virtual environment created."
-msgstr ""
+msgstr "S'ha creat l'entorn virtual «python»."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:112
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr ""
+msgstr "No s'ha pogut crear l'entorn virtual «python»."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installing modules in %1: %2"
-msgstr ""
+msgstr "S'estan instal·lant els mòduls a %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr ""
+msgstr "S'ha fet la instal·lació."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installation failed."
-msgstr "Instal·lat"
+msgstr "La instal·lació ha fallat."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 de %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
 msgid "Unable to download the %1 model."
-msgstr ""
+msgstr "No s'ha pogut baixar el model %1."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:187
 #, kde-format
@@ -276,6 +272,8 @@ msgid ""
 "The %1 model is not on disk: it is downloaded the first time it is used, "
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
+"El model %1 no està al disc: es descarrega la primera vegada que s'utilitza, "
+"cosa que fa que aquest dictat sigui llarg. El botó Baixa el model ho fa ara."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
@@ -283,37 +281,37 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr ""
+msgstr "%1 (%2, baixat)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes every language whisper knows."
-msgstr ""
+msgstr "Transcriu cada idioma que coneix el Whisper."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes english only, but about twice as fast."
-msgstr ""
+msgstr "Només transcriu l'anglès, però dues vegades més ràpid."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Takes %1 on disk, downloaded the first time it is used."
-msgstr ""
+msgstr "Ocupa %1 al disc, baixarà la primera vegada que s'utilitzi."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Used when no model was chosen."
-msgstr ""
+msgstr "S'utilitza quan no s'ha triat cap model."
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
@@ -324,7 +322,7 @@ msgstr "Configuració de la veu a text"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
-msgstr ""
+msgstr "La instal·lació del Whisper està trencada. Torneu-lo a instal·lar."
 
 #: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format
@@ -333,10 +331,9 @@ msgid "Engine:"
 msgstr "Motor:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
+#, kde-format
 msgid "Language:"
-msgstr "Idioma"
+msgstr "Idioma:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format

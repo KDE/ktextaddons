@@ -152,7 +152,7 @@ msgstr "Velikost"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "Aktivní"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -197,11 +197,10 @@ msgid "Unable to download the %1 model: %2"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "Nainstalováno"
+msgstr "Nainstalovat"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
@@ -332,10 +331,9 @@ msgid "Engine:"
 msgstr "Nástroj:"
 
 #: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
+#, kde-format
 msgid "Language:"
-msgstr "Jazyk"
+msgstr "Jazyk:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
