@@ -179,6 +179,12 @@ public:
      */
     void createNewChat(const QString &title = {}, TextAutoGenerateChat::Persistence persistence = TextAutoGenerateChat::Persistence::Persisted);
     /*!
+     * Creates a new ephemeral chat, which is never stored in database until it is saved.
+     * Unlike createNewChat(), the current chat is not changed.
+     * \return The identifier of the new chat
+     */
+    [[nodiscard]] QByteArray createEphemeralChat();
+    /*!
      * Replaces the content of a message in a chat.
      * \param chatId The ID of the chat
      * \param uuid The UUID of the message
@@ -517,6 +523,12 @@ public:
      */
     void updateProjects(const QList<TextAutoGenerateProject> &projects);
 
+    /*!
+     * \brief chatIsPersisted
+     * \param chatId
+     * \return
+     */
+    [[nodiscard]] bool chatIsPersisted(const QByteArray &chatId) const;
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
@@ -550,6 +562,11 @@ Q_SIGNALS:
      * Emitted when the chat processing status changes.
      */
     void chatInProgressChanged(bool inProgress);
+    /*!
+     * Emitted when the processing status of the chat \a chatId changes.
+     * Unlike chatInProgressChanged(), it is emitted for all chats, not only the current one.
+     */
+    void chatInProgressStatusChanged(const QByteArray &chatId, bool inProgress);
     /*!
      * Emitted when new instances need to be added.
      */
@@ -634,6 +651,8 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId);
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void initializeMessagesModel(const QByteArray &chatId);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray addChat(const QString &title, TextAutoGenerateChat::Persistence persistence);
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;

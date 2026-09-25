@@ -236,7 +236,9 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     if (messageText.isEmpty()) {
         return;
     }
-    const QByteArray chatId = mManager->currentChatId();
+    // The view can show another chat than the current one (quick ask): use the chat of the message
+    const auto messagesModel = qobject_cast<const TextAutoGenerateMessagesModel *>(index.model());
+    const QByteArray chatId = messagesModel ? messagesModel->chatId() : mManager->currentChatId();
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     TextAutoGenerateTextToSpeechEnqueueInfo info;
     info.setChatId(chatId);

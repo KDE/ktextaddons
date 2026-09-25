@@ -19,4 +19,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldEmitNewChat();
     void shouldEmitChangeFavoriteRequested();
+    void shouldEmitNewEphemeralChat();
+    void shouldEmitSaveInDatabase();
 };

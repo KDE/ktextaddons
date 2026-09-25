@@ -32,6 +32,12 @@ public:
     void slotFindNext();
     void slotFindPrev();
 
+    /*!
+     * Shows the chat \a chatId whatever the current chat of the manager is.
+     * An empty \a chatId follows the current chat of the manager again.
+     */
+    void setChatId(const QByteArray &chatId);
+
 protected:
     void leaveEvent(QEvent *event) override;
     [[nodiscard]] QString originalMessage(const QModelIndex &index) const override;
@@ -61,7 +67,10 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshMessage(const QByteArray &currentIdentifier, const QByteArray &previousIdentifier, int index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotUpdateColors();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotForkRequested(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentModel();
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray displayedChatId() const;
     QByteArray mMessageIdBeingEdited;
+    QByteArray mChatId;
     QPointer<TextAutoGenerateMessagesModel> mCurrentModel;
 };
 }

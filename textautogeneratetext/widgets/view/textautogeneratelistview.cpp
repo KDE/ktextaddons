@@ -29,9 +29,19 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
             delegate->setShowArchive(mManager->showArchived());
         });
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showMessageId, this, &TextAutoGenerateListView::goToMessageId);
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, [delegate](bool inProgress) {
-            delegate->setInProgress(inProgress);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, [this, delegate](bool inProgress) {
+            if (mChatId.isEmpty()) {
+                delegate->setInProgress(inProgress);
+            }
         });
+        connect(mManager,
+                &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressStatusChanged,
+                this,
+                [this, delegate](const QByteArray &chatId, bool inProgress) {
+                    if (!mChatId.isEmpty() && chatId == mChatId) {
+                        delegate->setInProgress(inProgress);
+                    }
+                });
         connect(delegate, &TextAutoGenerateListViewDelegate::insertBlockCode, mManager, &TextAutoGenerateText::TextAutoGenerateManager::insertBlockCode);
     }
 
@@ -59,7 +69,7 @@ void TextAutoGenerateListView::slotUpdateView()
 
 void TextAutoGenerateListView::slotUpdateColors()
 {
-    if (auto model = mManager->messagesModelFromChatId(mManager->currentChatId()); model) {
+    if (auto model = mManager->messagesModelFromChatId(displayedChatId()); model) {
         model->refreshMessageColors();
         clearDocumentCache();
     }
@@ -68,7 +78,7 @@ void TextAutoGenerateListView::slotUpdateColors()
 void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {
     clearEditingMode();
-    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+    auto model = mManager->messagesModelFromChatId(displayedChatId());
     if (!model) {
         return;
     }
@@ -87,7 +97,7 @@ void TextAutoGenerateListView::clearEditingMode()
         return;
     }
     // Remove old mark as editing
-    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+    auto model = mManager->messagesModelFromChatId(displayedChatId());
 
     if (const QModelIndex index = model->indexForUuid(mMessageIdBeingEdited); index.isValid()) {
         model->setData(index, false, TextAutoGenerateMessagesModel::EditingRole);
@@ -97,7 +107,7 @@ void TextAutoGenerateListView::clearEditingMode()
 void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
-        if (mManager->cancelRequest(mManager->currentChatId(), index)) {
+        if (mManager->cancelRequest(displayedChatId(), index)) {
             Q_EMIT cancelRequested(uuid);
         }
     }
@@ -106,7 +116,7 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 void TextAutoGenerateListView::slotForkRequested(const QModelIndex &index)
 {
     if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
-        const QByteArray chatId = mManager->currentChatId();
+        const QByteArray chatId = displayedChatId();
         mManager->forkDiscussionUntilMessage(chatId, uuid);
     }
 }
@@ -114,7 +124,7 @@ void TextAutoGenerateListView::slotForkRequested(const QModelIndex &index)
 void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 {
     if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
-        const QByteArray chatId = mManager->currentChatId();
+        const QByteArray chatId = displayedChatId();
         mManager->removeMessage(chatId, uuid);
     }
 }
@@ -122,7 +132,7 @@ void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     if (const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray(); !uuid.isEmpty()) {
-        const QByteArray chatId = mManager->currentChatId();
+        const QByteArray chatId = displayedChatId();
         if (const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid); indexAnswer.isValid()) {
             const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
             Q_EMIT refreshAnswerRequested(chatId, indexAnswer, tools, {}); // TODO use attachmentList !
@@ -187,7 +197,7 @@ void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
 
 void TextAutoGenerateListView::goToMessageId(const QByteArray &uuid)
 {
-    if (auto model = mManager->messagesModelFromChatId(mManager->currentChatId()); model) {
+    if (auto model = mManager->messagesModelFromChatId(displayedChatId()); model) {
         if (const QModelIndex idx = model->indexForUuid(uuid); idx.isValid()) {
             scrollTo(idx);
         }
@@ -202,7 +212,7 @@ void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 {
-    if (auto model = mManager->messagesModelFromChatId(mManager->currentChatId()); model) {
+    if (auto model = mManager->messagesModelFromChatId(displayedChatId()); model) {
         if (const QModelIndex idx = model->indexForUuid(uuid); idx.isValid()) {
             auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
             lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
@@ -213,9 +223,31 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
-    mCurrentModel = mManager->messagesModelFromChatId(mManager->currentChatId());
+    // A view showing a given chat doesn't follow the current chat
+    if (mChatId.isEmpty()) {
+        updateCurrentModel();
+    }
+}
+
+void TextAutoGenerateListView::setChatId(const QByteArray &chatId)
+{
+    if (mChatId != chatId) {
+        mChatId = chatId;
+        updateCurrentModel();
+    }
+}
+
+QByteArray TextAutoGenerateListView::displayedChatId() const
+{
+    return mChatId.isEmpty() ? mManager->currentChatId() : mChatId;
+}
+
+void TextAutoGenerateListView::updateCurrentModel()
+{
+    const QByteArray currentChatId = displayedChatId();
+    mCurrentModel = mManager->messagesModelFromChatId(currentChatId);
     setModel(mCurrentModel);
-    static_cast<TextAutoGenerateListViewDelegate *>(mDelegate)->setInProgress(mManager->chatInProgress(mManager->currentChatId()));
+    static_cast<TextAutoGenerateListViewDelegate *>(mDelegate)->setInProgress(mManager->chatInProgress(currentChatId));
 }
 
 void TextAutoGenerateListView::setSearchText(const QString &str)
@@ -243,7 +275,7 @@ void TextAutoGenerateListView::slotFindPrev()
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
 {
-    auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(mManager->currentChatId(), mManager, this);
+    auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(displayedChatId(), mManager, this);
     animation->setModelIndex(index);
     const QMetaObject::Connection valueChangeConnection =
         connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {

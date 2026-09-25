@@ -24,7 +24,7 @@ TextAutoGenerateHeaderWidgetTest::TextAutoGenerateHeaderWidgetTest(QObject *pare
 
 void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -52,21 +52,51 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearch->isCheckable());
     QVERIFY(!mSearch->isChecked());
     QVERIFY(!mSearch->toolTip().isEmpty());
+
+    auto mSaveQuickAskButton = w.findChild<QToolButton *>(u"mSaveQuickAskButton"_s);
+    QVERIFY(mSaveQuickAskButton);
+    QVERIFY(mSaveQuickAskButton->autoRaise());
+    QVERIFY(!mSaveQuickAskButton->toolTip().isEmpty());
+
+    auto mNewEphemeralChat = w.findChild<QToolButton *>(u"mNewEphemeralChat"_s);
+    QVERIFY(mNewEphemeralChat);
+    QVERIFY(mNewEphemeralChat->autoRaise());
+    QVERIFY(!mNewEphemeralChat->toolTip().isEmpty());
+}
+
+void TextAutoGenerateHeaderWidgetTest::shouldEmitNewEphemeralChat()
+{
+    const TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    auto mNewEphemeralChat = w.findChild<QToolButton *>(u"mNewEphemeralChat"_s);
+
+    const QSignalSpy addNewEphemeralChatChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::addNewEphemeralChat);
+    QTest::mouseClick(mNewEphemeralChat, Qt::LeftButton);
+    QCOMPARE(addNewEphemeralChatChanged.count(), 1);
 }
 
 void TextAutoGenerateHeaderWidgetTest::shouldEmitNewChat()
 {
-    TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
     auto mNewChat = w.findChild<QToolButton *>(u"mNewChat"_s);
 
-    QSignalSpy addNewChatChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::addNewChat);
+    const QSignalSpy addNewChatChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::addNewChat);
     QTest::mouseClick(mNewChat, Qt::LeftButton);
     QCOMPARE(addNewChatChanged.count(), 1);
 }
 
+void TextAutoGenerateHeaderWidgetTest::shouldEmitSaveInDatabase()
+{
+    const TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    auto mSaveQuickAskButton = w.findChild<QToolButton *>(u"mSaveQuickAskButton"_s);
+
+    const QSignalSpy saveInDatabaseChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::saveInDataseRequested);
+    QTest::mouseClick(mSaveQuickAskButton, Qt::LeftButton);
+    QCOMPARE(saveInDatabaseChanged.count(), 1);
+}
+
 void TextAutoGenerateHeaderWidgetTest::shouldEmitChangeFavoriteRequested()
 {
-    TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
     auto mFavorite = w.findChild<QToolButton *>(u"mFavorite"_s);
 
     // Force enable for testing

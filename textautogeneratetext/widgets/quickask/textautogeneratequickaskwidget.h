@@ -58,7 +58,6 @@ private:
     TextAutoGenerateNotInstanceFoundWidget *const mTextAutoGenerateNotInstanceFoundWidget;
     TextAutoGenerateManager *const mManager;
     QByteArray mQuickAskChatId;
-    QByteArray mPreviousChatId;
     QList<TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo> mAskMessageList;
     bool mPluginWasInitialized = false;
 };

@@ -21,6 +21,7 @@ public:
     ~TextAutoGenerateQuickAskViewWidget() override;
     void slotConfigureInstances();
     void editMessage(const QByteArray &uuid, const QString &messageStr);
+    void setChatId(const QByteArray &chatId);
 
 Q_SIGNALS:
     void editingFinished(const QString &str,

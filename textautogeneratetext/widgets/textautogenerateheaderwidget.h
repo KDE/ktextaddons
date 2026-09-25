@@ -28,14 +28,18 @@ Q_SIGNALS:
     void addNewChat();
     void changeFavoriteRequested(bool f);
     void searchText(bool checked);
+    void addNewEphemeralChat();
+    void saveInDataseRequested();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateEngineName(const QString &engineName);
     QLabel *const mEngineName;
     QToolButton *const mNewChat;
+    QToolButton *const mNewEphemeralChat;
     QToolButton *const mFavorite;
     QToolButton *const mSearch;
+    QToolButton *const mSaveQuickAskButton;
     TextAutoGenerateTextModelComboBox *const mModelComboBox;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };

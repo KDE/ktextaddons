@@ -124,6 +124,11 @@ int TextAutoGenerateResultWidget::scrollbarPositionMaximum() const
     return mTextAutoGenerateListView->verticalScrollBar()->maximum();
 }
 
+void TextAutoGenerateResultWidget::setChatId(const QByteArray &chatId)
+{
+    mTextAutoGenerateListView->setChatId(chatId);
+}
+
 void TextAutoGenerateResultWidget::quickSearchText(bool enabled)
 {
     if (enabled) {

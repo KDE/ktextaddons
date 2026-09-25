@@ -17,8 +17,10 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     : QWidget{parent}
     , mEngineName(new QLabel(this))
     , mNewChat(new QToolButton(this))
+    , mNewEphemeralChat(new QToolButton(this))
     , mFavorite(new QToolButton(this))
     , mSearch(new QToolButton(this))
+    , mSaveQuickAskButton(new QToolButton(this))
     , mModelComboBox(new TextAutoGenerateTextModelComboBox(this))
     , mManager(manager)
 {
@@ -50,6 +52,13 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mainLayout->addWidget(mNewChat);
     connect(mNewChat, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::addNewChat);
 
+    mNewEphemeralChat->setObjectName("mNewEphemeralChat"_L1);
+    mNewEphemeralChat->setToolTip(i18nc("@info:tooltip", "Ephemeral Discussion"));
+    mNewEphemeralChat->setAutoRaise(true);
+    mNewEphemeralChat->setIcon(QIcon::fromTheme(u"view-private"_s));
+    mainLayout->addWidget(mNewEphemeralChat);
+    connect(mNewEphemeralChat, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::addNewEphemeralChat);
+
     mFavorite->setObjectName("mFavorite"_L1);
     mFavorite->setToolTip(i18nc("@info:tooltip", "Favorite"));
     mFavorite->setAutoRaise(true);
@@ -61,6 +70,14 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     connect(mFavorite, &QToolButton::clicked, this, [this](bool checked) {
         Q_EMIT changeFavoriteRequested(checked);
     });
+
+    mSaveQuickAskButton->setAutoRaise(true);
+    mSaveQuickAskButton->setObjectName(u"mSaveQuickAskButton"_s);
+    mSaveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
+    mSaveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Discussion in Database"));
+    mainLayout->addWidget(mSaveQuickAskButton);
+    connect(mSaveQuickAskButton, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::saveInDataseRequested);
+
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
@@ -80,6 +97,9 @@ void TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged()
 {
     mFavorite->setEnabled(!mManager->currentChatId().isEmpty());
     mFavorite->setChecked(mManager->chatIsFavorite(mManager->currentChatId()));
+    const bool chatIsPersisted = mManager->chatIsPersisted(mManager->currentChatId());
+    mFavorite->setVisible(chatIsPersisted);
+    mSaveQuickAskButton->setVisible(!chatIsPersisted);
 }
 
 void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)

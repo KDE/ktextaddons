@@ -184,6 +184,13 @@ public:
      */
     void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);
 
+    /*!
+     * \brief chatIsPersisted
+     * \param chatId
+     * \return
+     */
+    [[nodiscard]] bool chatIsPersisted(const QByteArray &chatId) const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;

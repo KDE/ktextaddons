@@ -42,7 +42,7 @@ TextAutoGenerateProjectsModel *TextAutoGenerateHistoryListHeadingsProxyModel::pr
     if (!chatsModel) {
         return nullptr;
     }
-    auto *projectsManager = chatsModel->textAutoGenerateProjectsManager();
+    const auto *projectsManager = chatsModel->textAutoGenerateProjectsManager();
     return projectsManager ? projectsManager->textAutoGenerateProjectsModel() : nullptr;
 }
 
@@ -469,7 +469,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
 
         beginMoveRows(ourOldIndex.parent(), ourOldIndex.row(), ourOldIndex.row(), createIndex(newSectionId, 0, sectionMarker), newLocationRow);
 
-        auto persistantIndex = oldSection[ourOldIndex.row()];
+        const auto persistantIndex = oldSection[ourOldIndex.row()];
         oldSection.erase(oldSection.begin() + ourOldIndex.row());
         newSection.insert(newLocation, persistantIndex);
 

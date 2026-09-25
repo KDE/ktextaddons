@@ -78,6 +78,11 @@ public:
      * \param enabled Whether to enable or disable quick search
      */
     void quickSearchText(bool enabled);
+    /*!
+     * \brief Shows the chat \a chatId instead of the current chat of the manager
+     * \param chatId The chat to show, empty to follow the current chat again
+     */
+    void setChatId(const QByteArray &chatId);
 Q_SIGNALS:
     /*!
      * \brief Emitted when a message needs to be edited
