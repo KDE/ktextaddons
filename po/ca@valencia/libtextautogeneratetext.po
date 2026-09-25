@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-24 00:43+0000\n"
-"PO-Revision-Date: 2026-09-22 09:57+0200\n"
+"PO-Revision-Date: 2026-09-24 08:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
@@ -3307,31 +3307,25 @@ msgstr "Connectors de text:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "Gestió de projectes"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "Afig una petició…"
+msgstr "Afig un projecte…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "Modifica…"
+msgstr "Modifica un projecte…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "Elimina la petició"
+msgstr "Elimina el projecte"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3339,63 +3333,55 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"Voleu eliminar este projecte (%1)? Els seus xats es mantindran, fora de "
+"qualsevol projecte."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "Elimina la petició"
+msgstr "Eliminació de projecte"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "Addició de projecte"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "Modificació de projecte"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "Afig una petició…"
+msgstr "Projecte"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "Elimina la petició"
+msgstr "Sense projecte"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "Afig una petició…"
+msgstr "Gestiona projectes…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Tag name…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr "Nom de l'etiqueta…"
+msgstr "Nom del projecte…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Icona:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3499,51 +3485,42 @@ msgstr "Guarda el debat a la base de dades"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "Gestioneu les etiquetes"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "Afig una etiqueta"
+msgstr "Afig una etiqueta…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Modify Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "Modifiqueu etiqueta"
+msgstr "Modifica una etiqueta…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "Elimina"
+msgstr "Elimina una etiqueta"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "Voleu eliminar esta instància (%1)?"
+msgstr "Voleu eliminar esta etiqueta (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "Elimina"
+msgstr "Eliminació d'etiqueta"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "No s'ha seleccionat cap etiqueta"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
@@ -3561,13 +3538,13 @@ msgstr "Modifiqueu etiqueta"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetes"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "Gestiona etiquetes…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
@@ -3608,7 +3585,7 @@ msgstr "Busca… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "Mostra només els xats que tenen una de les etiquetes seleccionades"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
