@@ -45,7 +45,7 @@ void TextAutoGenerateManagerTest::shouldSetDebug()
 void TextAutoGenerateManagerTest::shouldEmitCurrentChatIdChangedWhenReset()
 {
     TextAutoGenerateText::TextAutoGenerateManager w;
-    QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged);
+    const QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged);
 
     w.setCurrentChatId("chat-1");
     QCOMPARE(spy.count(), 1);

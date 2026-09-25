@@ -34,6 +34,10 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
         return !sourceIndex.data(TextAutoGenerateChatsModel::Project).toByteArray().isEmpty();
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+    // Ephemeral chats (quick ask) are not part of the history until they are saved
+    if (sourceIndex.data(TextAutoGenerateChatsModel::Persistence).value<TextAutoGenerateChat::Persistence>() == TextAutoGenerateChat::Persistence::Ephemeral) {
+        return false;
+    }
     if (const bool archived = sourceIndex.data(TextAutoGenerateChatsModel::Archived).toBool(); mShowArchived != archived) {
         return false;
     }

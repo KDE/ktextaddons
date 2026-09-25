@@ -46,6 +46,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureInstances();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray quickAskChatId();
     TEXTAUTOGENERATETEXT_NO_EXPORT void
     slotEditingFinished2(const QString &str,
                          const QByteArray &messageUuid,
@@ -56,7 +57,8 @@ private:
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
     TextAutoGenerateNotInstanceFoundWidget *const mTextAutoGenerateNotInstanceFoundWidget;
     TextAutoGenerateManager *const mManager;
-    bool mPreviousSaveInDatabase = true;
+    QByteArray mQuickAskChatId;
+    QByteArray mPreviousChatId;
     QList<TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo> mAskMessageList;
     bool mPluginWasInitialized = false;
 };

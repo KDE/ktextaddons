@@ -100,7 +100,7 @@ void TextAutoGenerateHistoryListViewDelegate::drawInProgressIndicator(QPainter *
     painter->restore();
 }
 
-TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewDelegate::doLayout([[maybe_unused]] const QStyleOptionViewItem &option,
+TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewDelegate::doLayout(const QStyleOptionViewItem &option,
                                                                                                   const QModelIndex &index) const
 {
     TextAutoGenerateHistoryListViewDelegate::Layout layout;
@@ -123,10 +123,13 @@ bool TextAutoGenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
         return false;
     }
     if (helpEvent->type() == QEvent::ToolTip) {
-        const QLocale locale;
-        const QString toolTip = u"%1 (%2)"_s.arg(index.data(TextAutoGenerateChatsModel::Title).toString(),
-                                                 locale.toString(QDateTime::fromSecsSinceEpoch(index.data(TextAutoGenerateChatsModel::DateTime).toLongLong())));
-        QToolTip::showText(helpEvent->globalPos(), toolTip, view);
+        const auto dateTimeValue = index.data(TextAutoGenerateChatsModel::DateTime).toLongLong();
+        if (dateTimeValue > 0) {
+            const QLocale locale;
+            const QString toolTip =
+                u"%1 (%2)"_s.arg(index.data(TextAutoGenerateChatsModel::Title).toString(), locale.toString(QDateTime::fromSecsSinceEpoch(dateTimeValue)));
+            QToolTip::showText(helpEvent->globalPos(), toolTip, view);
+        }
         return true;
     }
     return false;

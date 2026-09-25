@@ -93,13 +93,11 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (mSaveInDatabase) {
-                    if (roles.contains(TextAutoGenerateChatsModel::Title) || roles.contains(TextAutoGenerateChatsModel::Favorite)
-                        || roles.contains(TextAutoGenerateChatsModel::Archived)) {
-                        const QByteArray chatId = topLeft.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                        const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
-                        mDatabaseManager->insertOrUpdateChat(chat);
-                    }
+                if (roles.contains(TextAutoGenerateChatsModel::Title) || roles.contains(TextAutoGenerateChatsModel::Favorite)
+                    || roles.contains(TextAutoGenerateChatsModel::Archived)) {
+                    const QByteArray chatId = topLeft.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+                    const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+                    mDatabaseManager->insertOrUpdateChat(chat);
                 }
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
@@ -205,7 +203,7 @@ void TextAutoGenerateManager::ask(const TextAutoGenerateText::TextAutoGenerateMa
     Q_EMIT askMessageRequested(info);
 }
 
-void TextAutoGenerateManager::createNewChat(const QString &title)
+void TextAutoGenerateManager::createNewChat(const QString &title, TextAutoGenerateChat::Persistence persistence)
 {
     // Switch back to not archived list
     setShowArchived(false);
@@ -213,12 +211,14 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
     const QByteArray chatId = TextAutoGenerateTextUtils::generateUUid();
     chat.setIdentifier(chatId);
     chat.setTitle(title);
+    chat.setPersistence(persistence);
+    if (persistence == TextAutoGenerateChat::Persistence::Ephemeral) {
+        mDatabaseManager->addEphemeralChat(chatId);
+    }
     // Don't mark it as initialized here: there's no message to load from database yet, but the messages model still
     // needs to be connected in checkInitializedMessagesModel() so that generated answers are stored in database.
     mTextAutoGenerateChatsModel->addChat(chat);
-    if (mSaveInDatabase) {
-        mDatabaseManager->insertOrUpdateChat(chat);
-    }
+    mDatabaseManager->insertOrUpdateChat(chat);
     switchToChatId(chatId);
     Q_EMIT discussionListIsEmpty(false);
 }
@@ -318,16 +318,6 @@ TextAutoGenerateTextInstancesManager *TextAutoGenerateManager::textAutoGenerateT
     return mTextAutoGenerateTextInstancesManager;
 }
 
-bool TextAutoGenerateManager::saveInDatabase() const
-{
-    return mSaveInDatabase;
-}
-
-void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
-{
-    mSaveInDatabase = newSaveInDatabase;
-}
-
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
@@ -409,10 +399,8 @@ void TextAutoGenerateManager::removeMessage(const QByteArray &chatId, const QByt
 {
     if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
         const QList<QByteArray> lst = messagesModel->removeDiscussion(uuid);
-        if (mSaveInDatabase) {
-            for (const auto &b : lst) {
-                mDatabaseManager->deleteMessage(chatId, QString::fromLatin1(b));
-            }
+        for (const auto &b : lst) {
+            mDatabaseManager->deleteMessage(chatId, QString::fromLatin1(b));
         }
     }
 }
@@ -486,9 +474,7 @@ void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
         mTextAutoGenerateChatsModel->removeDiscussion(chatId);
         // Drop the pending typed info too, otherwise it survives the discussion it belongs to.
         mTextAutoGenerateChatSettings->remove(chatId);
-        if (mSaveInDatabase) {
-            mDatabaseManager->deleteChat(chatId);
-        }
+        mDatabaseManager->deleteChat(chatId);
     }
     verifyListEmpty();
 }
@@ -505,15 +491,11 @@ void TextAutoGenerateManager::verifyListEmpty()
 void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
     if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
-        if (mSaveInDatabase) {
-            mDatabaseManager->insertOrReplaceMessage(chatId, msg);
-        }
+        mDatabaseManager->insertOrReplaceMessage(chatId, msg);
         messagesModel->addMessage(msg);
-        if (mSaveInDatabase) {
-            // Update chat
-            const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
-            mDatabaseManager->insertOrUpdateChat(chat);
-        }
+        // Update chat
+        const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+        mDatabaseManager->insertOrUpdateChat(chat);
     }
 }
 
@@ -528,13 +510,6 @@ QModelIndex TextAutoGenerateManager::refreshAnswer(const QByteArray &chatId, con
 QByteArray TextAutoGenerateManager::currentChatId() const
 {
     return mCurrentChatId;
-}
-
-void TextAutoGenerateManager::checkCurrentChat()
-{
-    if (mCurrentChatId.isEmpty() && mSwitchToChatId.isEmpty() && mSwitchToChatName.isEmpty()) {
-        createNewChat();
-    }
 }
 
 void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteArray &messageId)
@@ -580,30 +555,26 @@ void TextAutoGenerateManager::checkInitializedMessagesModel()
     if (!mCurrentChatId.isEmpty()) {
         if (const QByteArray chatId = mCurrentChatId; !mTextAutoGenerateChatsModel->isInitialized(chatId)) {
             if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
-                if (mSaveInDatabase) {
-                    QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
-                    // Sort messages
-                    std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
-                        if (left.dateTime() == right.dateTime()) {
-                            if (left.sender() == TextAutoGenerateMessage::Sender::User) {
-                                return true;
-                            }
+                QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
+                // Sort messages
+                std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+                    if (left.dateTime() == right.dateTime()) {
+                        if (left.sender() == TextAutoGenerateMessage::Sender::User) {
+                            return true;
                         }
-                        return left.dateTime() < right.dateTime();
-                    });
+                    }
+                    return left.dateTime() < right.dateTime();
+                });
 
-                    messagesModel->setMessages(messages);
-                }
+                messagesModel->setMessages(messages);
                 connect(messagesModel,
                         &QAbstractItemModel::dataChanged,
                         this,
                         [this, chatId, messagesModel](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                            if (mSaveInDatabase) {
-                                if (roles.contains(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole)) {
-                                    const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-                                    const TextAutoGenerateMessage msg = messagesModel->message(uuid);
-                                    mDatabaseManager->insertOrReplaceMessage(chatId, msg);
-                                }
+                            if (roles.contains(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole)) {
+                                const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+                                const TextAutoGenerateMessage msg = messagesModel->message(uuid);
+                                mDatabaseManager->insertOrReplaceMessage(chatId, msg);
                             }
                             mTextAutoGenerateChatsModel->messagesChanged(chatId);
                         });
@@ -698,14 +669,25 @@ void TextAutoGenerateManager::importChat(const QString &title, const QList<TextA
     }
 }
 
+void TextAutoGenerateManager::setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence)
+{
+    mTextAutoGenerateChatsModel->setChatPersistence(chatId, persistence);
+    if (persistence == TextAutoGenerateChat::Persistence::Ephemeral) {
+        mDatabaseManager->addEphemeralChat(chatId);
+    } else {
+        mDatabaseManager->removeEphemeralChat(chatId);
+    }
+}
+
 void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId, bool force)
 {
-    if (mSaveInDatabase && !force) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Chat is already saved in database: chatId: " << chatId;
-        return;
-    }
     if (chatId.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Current Chat Id is empty it's a bug";
+        return;
+    }
+    const bool ephemeral = mTextAutoGenerateChatsModel->chat(chatId).persistence() == TextAutoGenerateChat::Persistence::Ephemeral;
+    if (!ephemeral && !force) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Chat is already saved in database: chatId: " << chatId;
         return;
     }
 
@@ -714,8 +696,11 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
         if (msgs.isEmpty()) {
             return;
         }
+        if (ephemeral) {
+            setChatPersistence(chatId, TextAutoGenerateChat::Persistence::Persisted);
+        }
 
-        auto chat = mTextAutoGenerateChatsModel->chat(chatId);
+        const auto chat = mTextAutoGenerateChatsModel->chat(chatId);
         // Insert chat in database
         mDatabaseManager->insertOrUpdateChat(chat);
         // Save each message in database
@@ -770,9 +755,7 @@ void TextAutoGenerateManager::setChatTags(const QByteArray &chatId, const QList<
 
 void TextAutoGenerateManager::saveChat(const QByteArray &chatId)
 {
-    if (mSaveInDatabase) {
-        mDatabaseManager->insertOrUpdateChat(mTextAutoGenerateChatsModel->chat(chatId));
-    }
+    mDatabaseManager->insertOrUpdateChat(mTextAutoGenerateChatsModel->chat(chatId));
 }
 
 void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
@@ -783,9 +766,7 @@ void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
             return tag.identifier() == previousTag.identifier();
         };
         if (std::none_of(tags.cbegin(), tags.cend(), sameIdentifier)) {
-            if (mSaveInDatabase) {
-                mDatabaseManager->deleteTag(previousTag.identifier());
-            }
+            mDatabaseManager->deleteTag(previousTag.identifier());
             const QList<QByteArray> modifiedChats = mTextAutoGenerateChatsModel->removeTagFromChats(previousTag.identifier());
             for (const QByteArray &chatId : modifiedChats) {
                 saveChat(chatId);
@@ -793,7 +774,7 @@ void TextAutoGenerateManager::updateTags(const QList<TextAutoGenerateTag> &tags)
         }
     }
     for (const TextAutoGenerateTag &tag : tags) {
-        if (!previousTags.contains(tag) && mSaveInDatabase) {
+        if (!previousTags.contains(tag)) {
             mDatabaseManager->insertOrUpdateTag(tag);
         }
     }
@@ -825,9 +806,7 @@ void TextAutoGenerateManager::updateProjects(const QList<TextAutoGenerateProject
             return project.identifier() == previousProject.identifier();
         };
         if (std::none_of(projects.cbegin(), projects.cend(), sameIdentifier)) {
-            if (mSaveInDatabase) {
-                mDatabaseManager->deleteProject(previousProject.identifier());
-            }
+            mDatabaseManager->deleteProject(previousProject.identifier());
             const QList<QByteArray> modifiedChats = mTextAutoGenerateChatsModel->removeProjectFromChats(previousProject.identifier());
             for (const QByteArray &chatId : modifiedChats) {
                 saveChat(chatId);
@@ -835,7 +814,7 @@ void TextAutoGenerateManager::updateProjects(const QList<TextAutoGenerateProject
         }
     }
     for (const TextAutoGenerateProject &project : projects) {
-        if (!previousProjects.contains(project) && mSaveInDatabase) {
+        if (!previousProjects.contains(project)) {
             mDatabaseManager->insertOrUpdateProject(project);
         }
     }

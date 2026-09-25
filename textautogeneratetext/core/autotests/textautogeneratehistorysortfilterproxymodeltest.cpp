@@ -89,6 +89,28 @@ void TextAutoGenerateHistorySortFilterProxyModelTest::shouldFilterByTags()
     QCOMPARE(visibleChats(proxy).count(), 3);
 }
 
+void TextAutoGenerateHistorySortFilterProxyModelTest::shouldHideEphemeralChats()
+{
+    TextAutoGenerateChatsModel chatsModel;
+    chatsModel.addChat(createChat("chat1"_ba, u"chat1"_s, {}));
+    TextAutoGenerateChat ephemeralChat = createChat("chat2"_ba, u"chat2"_s, {});
+    ephemeralChat.setPersistence(TextAutoGenerateChat::Persistence::Ephemeral);
+    chatsModel.addChat(ephemeralChat);
+
+    TextAutoGenerateHistoryListHeadingsProxyModel headingsModel;
+    headingsModel.setSourceModel(&chatsModel);
+
+    TextAutoGenerateHistorySortFilterProxyModel proxy;
+    proxy.setSourceModel(&headingsModel);
+
+    QCOMPARE(visibleChats(proxy), QList<QByteArray>{"chat1"_ba});
+
+    // Once saved, the chat shows up in the history.
+    chatsModel.setChatPersistence("chat2"_ba, TextAutoGenerateChat::Persistence::Persisted);
+    const QList<QByteArray> expected{"chat1"_ba, "chat2"_ba};
+    QCOMPARE(visibleChats(proxy), expected);
+}
+
 void TextAutoGenerateHistorySortFilterProxyModelTest::shouldDropChatOnProjectThroughTheWholeChain()
 {
     // GIVEN the model chain a history view uses

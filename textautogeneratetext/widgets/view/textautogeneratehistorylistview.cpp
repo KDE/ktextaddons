@@ -139,6 +139,10 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         });
         menu.addAction(newChatHistory);
     }
+    auto projectsMenu = new TextAutoGenerateProjectsMenu(mManager, &menu);
+
+    auto tagsMenu = new TextAutoGenerateTagsMenu(mManager, &menu);
+
     if (const QModelIndex index = indexAt(event->pos()); index.parent().isValid()) {
         menu.addSeparator();
 
@@ -171,15 +175,13 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                 }
             });
             menu.addAction(changeFavoriteHistory);
-
             menu.addSeparator();
-            auto projectsMenu = new TextAutoGenerateProjectsMenu(mManager, &menu);
+
             projectsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
             menu.addMenu(projectsMenu);
 
             menu.addSeparator();
 
-            auto tagsMenu = new TextAutoGenerateTagsMenu(mManager, &menu);
             tagsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
             menu.addMenu(tagsMenu);
 
@@ -211,6 +213,10 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             });
             menu.addAction(removeHistory);
         }
+    } else {
+        menu.addMenu(projectsMenu);
+        menu.addSeparator();
+        menu.addMenu(tagsMenu);
     }
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());

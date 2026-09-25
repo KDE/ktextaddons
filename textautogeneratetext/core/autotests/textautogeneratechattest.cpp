@@ -28,6 +28,7 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(w.prompt().isEmpty());
     QVERIFY(w.tags().isEmpty());
     QVERIFY(w.projectId().isEmpty());
+    QCOMPARE(w.persistence(), TextAutoGenerateText::TextAutoGenerateChat::Persistence::Persisted);
 
     // 10/05/2025 => size 72
     QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 152);
@@ -86,6 +87,18 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         QCOMPARE(ba1.projectId(), "project1");
         QCOMPARE(w, ba1);
     }
+    {
+        TextAutoGenerateText::TextAutoGenerateChat w;
+        w.setTitle(u"bla5"_s);
+        w.setIdentifier("foo5");
+        w.setPrompt(u"prompt1"_s);
+
+        const QByteArray ba = w.serialize(w, false);
+        const QJsonDocument doc = QJsonDocument::fromJson(ba);
+        const TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        QCOMPARE(ba1.prompt(), u"prompt1"_s);
+        QCOMPARE(w, ba1);
+    }
 }
 
 void TextAutoGenerateChatTest::shouldClassifySectionHistory()
@@ -107,6 +120,19 @@ void TextAutoGenerateChatTest::shouldClassifySectionHistory()
     // Compatibility with millisecond timestamps.
     chat.setDateTime(QDateTime(QDate::currentDate().addDays(-2), QTime(12, 0)).toMSecsSinceEpoch());
     QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::LessThanSevenDays);
+}
+
+void TextAutoGenerateChatTest::shouldCopyPersistence()
+{
+    TextAutoGenerateText::TextAutoGenerateChat chat;
+    chat.setPersistence(TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+
+    const TextAutoGenerateText::TextAutoGenerateChat copy(chat);
+    QCOMPARE(copy.persistence(), TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+
+    TextAutoGenerateText::TextAutoGenerateChat assigned;
+    assigned = chat;
+    QCOMPARE(assigned.persistence(), TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
 }
 
 #include "moc_textautogeneratechattest.cpp"

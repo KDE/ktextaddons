@@ -214,7 +214,6 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
                                                  const QList<QByteArray> &lstTools,
                                                  const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList)
 {
-    mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = {},
