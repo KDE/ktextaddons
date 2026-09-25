@@ -6,14 +6,27 @@
 
 #pragma once
 
+#include "textautogeneratetext_private_export.h"
 #include <QObject>
 namespace TextAutoGenerateText
 {
-class TextAutoGeneratePurgeExpiredChatsJob : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePurgeExpiredChatsJob : public QObject
 {
     Q_OBJECT
 public:
     explicit TextAutoGeneratePurgeExpiredChatsJob(QObject *parent = nullptr);
     ~TextAutoGeneratePurgeExpiredChatsJob() override;
+
+    [[nodiscard]] bool excludeFavoriteChat() const;
+    void setExcludeFavoriteChat(bool newExcludeFavoriteChat);
+
+    void start();
+
+    int historyRetentionDays() const;
+    void setHistoryRetentionDays(int newHistoryRetentionDays);
+
+private:
+    int mHistoryRetentionDays = 0;
+    bool mExcludeFavoriteChat = true;
 };
 }

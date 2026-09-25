@@ -13,4 +13,30 @@ TextAutoGeneratePurgeExpiredChatsJob::TextAutoGeneratePurgeExpiredChatsJob(QObje
 }
 
 TextAutoGeneratePurgeExpiredChatsJob::~TextAutoGeneratePurgeExpiredChatsJob() = default;
+
+bool TextAutoGeneratePurgeExpiredChatsJob::excludeFavoriteChat() const
+{
+    return mExcludeFavoriteChat;
+}
+
+void TextAutoGeneratePurgeExpiredChatsJob::setExcludeFavoriteChat(bool newExcludeFavoriteChat)
+{
+    mExcludeFavoriteChat = newExcludeFavoriteChat;
+}
+
+void TextAutoGeneratePurgeExpiredChatsJob::start()
+{
+    // TODO
+    deleteLater();
+}
+
+int TextAutoGeneratePurgeExpiredChatsJob::historyRetentionDays() const
+{
+    return mHistoryRetentionDays;
+}
+
+void TextAutoGeneratePurgeExpiredChatsJob::setHistoryRetentionDays(int newHistoryRetentionDays)
+{
+    mHistoryRetentionDays = newHistoryRetentionDays;
+}
 #include "moc_textautogeneratepurgeexpiredchatsjob.cpp"
