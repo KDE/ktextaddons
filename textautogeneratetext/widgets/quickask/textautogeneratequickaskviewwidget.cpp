@@ -89,6 +89,13 @@ void TextAutoGenerateQuickAskViewWidget::editMessage(const QByteArray &uuid, con
     mTextAutoGenerateTextLineWidget->setUuid(uuid);
 }
 
+void TextAutoGenerateQuickAskViewWidget::setChatId(const QByteArray &chatId)
+{
+    mTextAutoGenerateQuickAskHeaderWidget->setChatId(chatId);
+    mTextAutoGenerateResultWidget->setChatId(chatId);
+    mTextAutoGenerateTextLineWidget->setChatId(chatId);
+}
+
 void TextAutoGenerateQuickAskViewWidget::slotShowInternalToolsMetaData()
 {
     TextAutoGenerateToolShowMetaDataDialog dlg(this);

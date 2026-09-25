@@ -19,4 +19,7 @@ private Q_SLOTS:
     void shouldIsFavorite();
     void shouldSetDebug();
     void shouldEmitCurrentChatIdChangedWhenReset();
+    void shouldCreateEphemeralChatWithoutChangingCurrentChat();
+    void shouldResetCurrentChatIdWhenRemovingCurrentChat();
+    void shouldKeepCurrentChatIdWhenRemovingAnotherChat();
 };

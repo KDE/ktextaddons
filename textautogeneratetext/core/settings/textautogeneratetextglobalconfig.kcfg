@@ -24,4 +24,14 @@
       <default code="true">QFontDatabase::systemFont(QFontDatabase::GeneralFont)</default>
     </entry>
   </group>
+
+  <group name="Retention">
+    <entry name="ExcludeFavoriteChat" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="HistoryRetentionDays" type="Int">
+      <default>0</default>
+    </entry>
+  </group>
+
 </kcfg>

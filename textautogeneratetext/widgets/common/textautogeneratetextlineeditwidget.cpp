@@ -114,6 +114,10 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
+        connect(mManager,
+                &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressStatusChanged,
+                this,
+                &TextAutoGenerateTextLineEditWidget::updateEnableState);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
         connect(mManager,
                 &TextAutoGenerateText::TextAutoGenerateManager::currentModelChanged,
@@ -145,6 +149,11 @@ void TextAutoGenerateTextLineEditWidget::updateAttachmentButton(bool state)
 
 void TextAutoGenerateTextLineEditWidget::updateEnableState()
 {
+    // A widget bound to a given chat (quick ask) doesn't depend on the main window state
+    if (!mChatId.isEmpty()) {
+        setEnabled(!mManager->chatInProgress(mChatId));
+        return;
+    }
     setEnabled(!mManager->showArchived() && !mManager->chatInProgress(mManager->currentChatId()) && !mManager->textAutoGenerateChatsModel()->isEmpty());
 }
 
@@ -173,6 +182,19 @@ QByteArray TextAutoGenerateTextLineEditWidget::uuid() const
 void TextAutoGenerateTextLineEditWidget::setUuid(const QByteArray &newUuid)
 {
     mUuid = newUuid;
+}
+
+QByteArray TextAutoGenerateTextLineEditWidget::chatId() const
+{
+    return mChatId;
+}
+
+void TextAutoGenerateTextLineEditWidget::setChatId(const QByteArray &newChatId)
+{
+    if (mChatId != newChatId) {
+        mChatId = newChatId;
+        updateEnableState();
+    }
 }
 
 void TextAutoGenerateTextLineEditWidget::setActivatedTools(const QList<QByteArray> &lst)

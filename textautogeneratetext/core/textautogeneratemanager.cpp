@@ -207,6 +207,21 @@ void TextAutoGenerateManager::createNewChat(const QString &title, TextAutoGenera
 {
     // Switch back to not archived list
     setShowArchived(false);
+    const QByteArray chatId = addChat(title, persistence);
+    switchToChatId(chatId);
+    Q_EMIT discussionListIsEmpty(false);
+}
+
+QByteArray TextAutoGenerateManager::createEphemeralChat()
+{
+    const QByteArray chatId = addChat({}, TextAutoGenerateChat::Persistence::Ephemeral);
+    // It's not the current chat, so connect its messages model now
+    initializeMessagesModel(chatId);
+    return chatId;
+}
+
+QByteArray TextAutoGenerateManager::addChat(const QString &title, TextAutoGenerateChat::Persistence persistence)
+{
     TextAutoGenerateChat chat;
     const QByteArray chatId = TextAutoGenerateTextUtils::generateUUid();
     chat.setIdentifier(chatId);
@@ -219,8 +234,7 @@ void TextAutoGenerateManager::createNewChat(const QString &title, TextAutoGenera
     // needs to be connected in checkInitializedMessagesModel() so that generated answers are stored in database.
     mTextAutoGenerateChatsModel->addChat(chat);
     mDatabaseManager->insertOrUpdateChat(chat);
-    switchToChatId(chatId);
-    Q_EMIT discussionListIsEmpty(false);
+    return chatId;
 }
 
 void TextAutoGenerateManager::askStartOllama()
@@ -284,6 +298,7 @@ bool TextAutoGenerateManager::chatInProgress(const QByteArray &chatId) const
 void TextAutoGenerateManager::changeChatInPogressStatus(const QByteArray &chatId, bool inProgress)
 {
     textAutoGenerateChatsModel()->setChatInProgress(chatId, inProgress);
+    Q_EMIT chatInProgressStatusChanged(chatId, inProgress);
     if (chatId == currentChatId()) {
         Q_EMIT chatInProgressChanged(inProgress);
     }
@@ -367,8 +382,14 @@ void TextAutoGenerateManager::setShowArchived(bool newShowArchived)
 
 void TextAutoGenerateManager::loadHistory()
 {
-    // Load chat from database
-    if (const QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats(); chats.isEmpty()) {
+    QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats();
+    const QList<TextAutoGenerateChat> currentChats = mTextAutoGenerateChatsModel->chats();
+    for (const auto &chat : currentChats) {
+        if (chat.isEphemeral()) {
+            chats.append(chat);
+        }
+    }
+    if (chats.isEmpty()) {
         createNewChat();
     } else {
         mTextAutoGenerateChatsModel->setChats(chats);
@@ -471,6 +492,10 @@ void TextAutoGenerateManager::changeFavoriteHistory(const QByteArray &chatId, bo
 void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
 {
     if (!chatId.isEmpty()) {
+        // Reset before removing it, so widgets can release its messages model while it still exists.
+        if (chatId == mCurrentChatId) {
+            resetCurrentChatId();
+        }
         mTextAutoGenerateChatsModel->removeDiscussion(chatId);
         // Drop the pending typed info too, otherwise it survives the discussion it belongs to.
         mTextAutoGenerateChatSettings->remove(chatId);
@@ -531,6 +556,14 @@ bool TextAutoGenerateManager::chatIsFavorite(const QByteArray &chatId) const
     return mTextAutoGenerateChatsModel->chatIsFavorited(chatId);
 }
 
+bool TextAutoGenerateManager::chatIsPersisted(const QByteArray &chatId) const
+{
+    if (chatId.isEmpty()) {
+        return false;
+    }
+    return mTextAutoGenerateChatsModel->chatIsPersisted(chatId);
+}
+
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateManager::searchTextInDatabase(const QString &searchText)
 {
     return mDatabaseManager->searchTextInDatabase(mTextAutoGenerateChatsModel->chatsId(), searchText);
@@ -553,40 +586,45 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
 void TextAutoGenerateManager::checkInitializedMessagesModel()
 {
     if (!mCurrentChatId.isEmpty()) {
-        if (const QByteArray chatId = mCurrentChatId; !mTextAutoGenerateChatsModel->isInitialized(chatId)) {
-            if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
-                QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
-                // Sort messages
-                std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
-                    if (left.dateTime() == right.dateTime()) {
-                        if (left.sender() == TextAutoGenerateMessage::Sender::User) {
-                            return true;
-                        }
-                    }
-                    return left.dateTime() < right.dateTime();
-                });
+        initializeMessagesModel(mCurrentChatId);
+    }
+}
 
-                messagesModel->setMessages(messages);
-                connect(messagesModel,
-                        &QAbstractItemModel::dataChanged,
-                        this,
-                        [this, chatId, messagesModel](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                            if (roles.contains(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole)) {
-                                const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-                                const TextAutoGenerateMessage msg = messagesModel->message(uuid);
-                                mDatabaseManager->insertOrReplaceMessage(chatId, msg);
-                            }
-                            mTextAutoGenerateChatsModel->messagesChanged(chatId);
-                        });
-                connect(messagesModel, &QAbstractItemModel::rowsRemoved, this, [this, chatId]() {
-                    mTextAutoGenerateChatsModel->messagesChanged(chatId);
-                });
-                connect(messagesModel, &QAbstractItemModel::rowsInserted, this, [this, chatId]() {
-                    mTextAutoGenerateChatsModel->messagesChanged(chatId);
-                });
-            }
-            mTextAutoGenerateChatsModel->setInitialized(mCurrentChatId, true);
+void TextAutoGenerateManager::initializeMessagesModel(const QByteArray &chatId)
+{
+    if (!mTextAutoGenerateChatsModel->isInitialized(chatId)) {
+        if (auto messagesModel = messagesModelFromChatId(chatId); messagesModel) {
+            QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(chatId);
+            // Sort messages
+            std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+                if (left.dateTime() == right.dateTime()) {
+                    if (left.sender() == TextAutoGenerateMessage::Sender::User) {
+                        return true;
+                    }
+                }
+                return left.dateTime() < right.dateTime();
+            });
+
+            messagesModel->setMessages(messages);
+            connect(messagesModel,
+                    &QAbstractItemModel::dataChanged,
+                    this,
+                    [this, chatId, messagesModel](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                        if (roles.contains(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole)) {
+                            const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+                            const TextAutoGenerateMessage msg = messagesModel->message(uuid);
+                            mDatabaseManager->insertOrReplaceMessage(chatId, msg);
+                        }
+                        mTextAutoGenerateChatsModel->messagesChanged(chatId);
+                    });
+            connect(messagesModel, &QAbstractItemModel::rowsRemoved, this, [this, chatId]() {
+                mTextAutoGenerateChatsModel->messagesChanged(chatId);
+            });
+            connect(messagesModel, &QAbstractItemModel::rowsInserted, this, [this, chatId]() {
+                mTextAutoGenerateChatsModel->messagesChanged(chatId);
+            });
         }
+        mTextAutoGenerateChatsModel->setInitialized(chatId, true);
     }
 }
 

@@ -59,5 +59,6 @@ private:
     QToolButton *const mConfigureTools;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QByteArray mUuid;
+    QByteArray mChatId;
 };
 }

@@ -231,6 +231,8 @@ target_sources(
         core/jobs/textautogenerateimportchatbasejob.h
         core/jobs/textautogenerateimportchatasjsonjob.h
         core/jobs/textautogenerateimportchatasjsonjob.cpp
+        core/jobs/textautogeneratepurgeexpiredchatsjob.h
+        core/jobs/textautogeneratepurgeexpiredchatsjob.cpp
         core/tools/textautogeneratetexttoolplugin.h
         core/tools/textautogeneratetexttoolplugin.cpp
         core/tools/textautogeneratetexttoolpluginmanager.cpp

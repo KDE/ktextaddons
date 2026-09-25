@@ -73,6 +73,12 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewChat, this, [this]() {
             mManager->createNewChat();
         });
+        connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewEphemeralChat, this, [this]() {
+            mManager->createNewChat({}, TextAutoGenerateChat::Persistence::Ephemeral);
+        });
+        connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::saveInDataseRequested, this, [this]() {
+            mManager->saveCurrentChatInDataBase(mManager->currentChatId());
+        });
         connect(mManager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
             slotEditingFinished(str, {}, {}, {}); // TODO use tools list ?
         });

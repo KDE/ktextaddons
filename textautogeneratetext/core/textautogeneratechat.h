@@ -24,6 +24,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
     Q_GADGET
 public:
     enum class SectionHistory : uint8_t {
+        Ephemeral,
         Favorite,
         Today,
         LessThanSevenDays,
@@ -215,6 +216,12 @@ public:
      * \param newPersistence
      */
     void setPersistence(Persistence newPersistence);
+
+    /*!
+     * \brief isEphemeral
+     * \return
+     */
+    [[nodiscard]] bool isEphemeral() const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;

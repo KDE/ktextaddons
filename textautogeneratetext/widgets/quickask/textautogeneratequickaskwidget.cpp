@@ -82,7 +82,9 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             &TextAutoGenerateQuickAskWidget::slotRefreshAnswer);
 
     if (mManager) {
-        mPreviousChatId = mManager->currentChatId();
+        // Quick ask has its own ephemeral chat: it doesn't change or reuse the current chat of the main window
+        mQuickAskChatId = mManager->createEphemeralChat();
+        mTextAutoGenerateQuickAskViewWidget->setChatId(mQuickAskChatId);
         connect(mManager,
                 &TextAutoGenerateManager::askMessageRequested,
                 this,
@@ -95,29 +97,18 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget()
 {
-    if (mManager) {
-        const auto chatsModel = mManager->textAutoGenerateChatsModel();
-        // Quick ask chats are ephemeral: drop them so they don't show up in history
-        if (!mQuickAskChatId.isEmpty() && chatsModel->chat(mQuickAskChatId).persistence() == TextAutoGenerateChat::Persistence::Ephemeral) {
-            mManager->removeDiscussion(mQuickAskChatId);
-        }
-        // Give back to the main window the chat it was showing
-        if (!mPreviousChatId.isEmpty() && chatsModel->chat(mPreviousChatId).identifier() == mPreviousChatId) {
-            mManager->switchToChatId(mPreviousChatId);
-        } else {
-            mManager->resetCurrentChatId();
-        }
+    // Quick ask chats are ephemeral: drop them so they don't stay in memory, unless they were saved
+    if (mManager && !mQuickAskChatId.isEmpty() && !mManager->chatIsPersisted(mQuickAskChatId)) {
+        mManager->removeDiscussion(mQuickAskChatId);
     }
 }
 
 QByteArray TextAutoGenerateQuickAskWidget::quickAskChatId()
 {
-    // Don't reuse the chat opened in the main window: quick ask has its own ephemeral chat
-    if (mQuickAskChatId.isEmpty() || mManager->textAutoGenerateChatsModel()->chat(mQuickAskChatId).identifier() != mQuickAskChatId) {
-        mManager->createNewChat({}, TextAutoGenerateChat::Persistence::Ephemeral);
-        mQuickAskChatId = mManager->currentChatId();
-    } else if (mManager->currentChatId() != mQuickAskChatId) {
-        mManager->switchToChatId(mQuickAskChatId);
+    // The chat can be removed from the main window once saved: create a new one
+    if (mManager->textAutoGenerateChatsModel()->chat(mQuickAskChatId).identifier() != mQuickAskChatId) {
+        mQuickAskChatId = mManager->createEphemeralChat();
+        mTextAutoGenerateQuickAskViewWidget->setChatId(mQuickAskChatId);
     }
     return mQuickAskChatId;
 }

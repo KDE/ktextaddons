@@ -15,7 +15,7 @@ TextAutoGenerateChatsModelTest::TextAutoGenerateChatsModelTest(QObject *parent)
 
 void TextAutoGenerateChatsModelTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateChatsModel model;
+    const TextAutoGenerateText::TextAutoGenerateChatsModel model;
     QVERIFY(model.chats().isEmpty());
     QVERIFY(!model.hasChatInProgress());
     QVERIFY(!model.hasAtLeastOneNotArchivedChat());
@@ -57,4 +57,32 @@ void TextAutoGenerateChatsModelTest::shouldCheckHasAtLeastOneNotArchivedChat()
         QVERIFY(model.hasAtLeastOneNotArchivedChat());
     }
 }
+
+void TextAutoGenerateChatsModelTest::shouldHavePersistedChat()
+{
+    TextAutoGenerateText::TextAutoGenerateChatsModel model;
+    {
+        TextAutoGenerateText::TextAutoGenerateChat chat;
+        chat.setIdentifier("foo"_ba);
+        model.addChat(chat);
+        QVERIFY(model.chatIsPersisted("foo"_ba));
+    }
+    {
+        TextAutoGenerateText::TextAutoGenerateChat chat;
+        chat.setIdentifier("foo1"_ba);
+        chat.setPersistence(TextAutoGenerateText::TextAutoGenerateChat::Persistence::Persisted);
+        model.addChat(chat);
+        QVERIFY(model.chatIsPersisted("foo1"_ba));
+    }
+    {
+        TextAutoGenerateText::TextAutoGenerateChat chat;
+        chat.setIdentifier("foo2"_ba);
+        chat.setPersistence(TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+        model.addChat(chat);
+        QVERIFY(!model.chatIsPersisted("foo2"_ba));
+    }
+    model.setChatPersistence("foo2"_ba, TextAutoGenerateText::TextAutoGenerateChat::Persistence::Persisted);
+    QVERIFY(model.chatIsPersisted("foo2"_ba));
+}
+
 #include "moc_textautogeneratechatsmodeltest.cpp"

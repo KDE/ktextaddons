@@ -21,6 +21,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     , mModelComboBox(new TextAutoGenerateText::TextAutoGenerateTextModelComboBox(this))
     , mManager(manager)
     , mSearchButton(new QToolButton(this))
+    , mSaveQuickAskButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -61,13 +62,12 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     clearButton->setToolTip(i18nc("@info:tooltip", "Clear"));
     mainLayout->addWidget(clearButton);
 
-    auto saveQuickAskButton = new QToolButton(this);
-    saveQuickAskButton->setAutoRaise(true);
-    saveQuickAskButton->setObjectName(u"saveQuickAskButton"_s);
-    saveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
-    saveQuickAskButton->setEnabled(false);
-    saveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Discussion in Database"));
-    mainLayout->addWidget(saveQuickAskButton);
+    mSaveQuickAskButton->setAutoRaise(true);
+    mSaveQuickAskButton->setObjectName(u"saveQuickAskButton"_s);
+    mSaveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
+    mSaveQuickAskButton->setEnabled(false);
+    mSaveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Discussion in Database"));
+    mainLayout->addWidget(mSaveQuickAskButton);
 
     QFont f = mModelInstanceLabel->font();
     f.setBold(true);
@@ -77,15 +77,14 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     connect(configureButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::configureRequested);
     if (mManager) {
         connect(clearButton, &QToolButton::clicked, this, [this]() {
-            if (!mManager->currentChatId().isEmpty()) {
-                if (auto messageModel = mManager->messagesModelFromChatId(mManager->currentChatId()); messageModel) {
+            if (!mChatId.isEmpty()) {
+                if (auto messageModel = mManager->messagesModelFromChatId(mChatId); messageModel) {
                     messageModel->resetConversation();
                 }
             }
         });
 
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, [this, saveQuickAskButton]() {
-            saveQuickAskButton->setEnabled(!mManager->currentChatId().isEmpty());
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, [this]() {
             updateEngineModelName(mManager->generateEngineDisplayName());
         });
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
@@ -96,8 +95,8 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
                 mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
             }
         });
-        connect(saveQuickAskButton, &QToolButton::clicked, this, [this]() {
-            mManager->saveCurrentChatInDataBase(mManager->currentChatId());
+        connect(mSaveQuickAskButton, &QToolButton::clicked, this, [this]() {
+            mManager->saveCurrentChatInDataBase(mChatId);
         });
         connect(showInternaltoolsButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::showInternalToolsMetaData);
         showInternaltoolsButton->setVisible(mManager->textAutoGenerateTextToolInternalInterface());
@@ -125,6 +124,12 @@ void TextAutoGenerateQuickAskHeaderWidget::setModelList(const QList<TextAutoGene
 QString TextAutoGenerateQuickAskHeaderWidget::currentModel() const
 {
     return mModelComboBox->currentModel();
+}
+
+void TextAutoGenerateQuickAskHeaderWidget::setChatId(const QByteArray &chatId)
+{
+    mChatId = chatId;
+    mSaveQuickAskButton->setEnabled(!mChatId.isEmpty());
 }
 
 void TextAutoGenerateQuickAskHeaderWidget::slotCloseQuickSearchRequested()

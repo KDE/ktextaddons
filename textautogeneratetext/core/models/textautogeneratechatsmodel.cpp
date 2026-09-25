@@ -152,6 +152,11 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Archived});
         return true;
     }
+    case ChatRoles::Persistence: {
+        chatElement.setPersistence(value.toBool() ? TextAutoGenerateChat::Persistence::Persisted : TextAutoGenerateChat::Persistence::Ephemeral);
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Persistence});
+        return true;
+    }
     case ChatRoles::Favorite: {
         chatElement.setFavorite(value.toBool());
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
@@ -168,7 +173,6 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Project:
     case ChatRoles::Section:
     case ChatRoles::DateTime:
-    case ChatRoles::Persistence:
         break;
     }
     return QAbstractListModel::setData(idx, value, role);
@@ -195,10 +199,21 @@ void TextAutoGenerateChatsModel::setChatPersistence(const QByteArray &chatId, Te
     if (it != mChats.end()) {
         it->setPersistence(persistence);
         const QModelIndex index = createIndex(std::distance(mChats.begin(), it), 0);
-        Q_EMIT dataChanged(index, index, {Persistence});
+        Q_EMIT dataChanged(index, index, {Persistence, Section});
         return;
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Chat not found. It's a bug";
+}
+
+bool TextAutoGenerateChatsModel::chatIsPersisted(const QByteArray &chatId) const
+{
+    const auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
+        return it->persistence() == TextAutoGenerateChat::Persistence::Persisted;
+    }
+    return false;
 }
 
 TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) const
@@ -219,6 +234,8 @@ TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) 
 QString TextAutoGenerateChatsModel::sectionName(TextAutoGenerateChat::SectionHistory sectionId)
 {
     switch (sectionId) {
+    case TextAutoGenerateChat::SectionHistory::Ephemeral:
+        return i18n("Ephemeral");
     case TextAutoGenerateChat::SectionHistory::Favorite:
         return i18n("Favorite");
     case TextAutoGenerateChat::SectionHistory::Today:
@@ -320,7 +337,7 @@ bool TextAutoGenerateChatsModel::chatIsFavorited(const QByteArray &chatId) const
         return chat.identifier() == chatId;
     };
     if (const auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid); it != mChats.end()) {
-        return (*it).favorite();
+        return it->favorite();
     }
     return false;
 }

@@ -64,6 +64,11 @@ TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat
 
 TextAutoGenerateChat::~TextAutoGenerateChat() = default;
 
+bool TextAutoGenerateChat::isEphemeral() const
+{
+    return mPersistence == Persistence::Ephemeral;
+}
+
 bool TextAutoGenerateChat::favorite() const
 {
     return mFavorite;
@@ -217,6 +222,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
 
 TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::section() const
 {
+    if (isEphemeral()) {
+        return TextAutoGenerateChat::SectionHistory::Ephemeral;
+    }
     if (favorite()) {
         return TextAutoGenerateChat::SectionHistory::Favorite;
     }

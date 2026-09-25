@@ -25,6 +25,7 @@ public:
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
     void slotCloseQuickSearchRequested();
+    void setChatId(const QByteArray &chatId);
 Q_SIGNALS:
     void configureRequested();
     void searchText(bool checked);
@@ -35,5 +36,7 @@ private:
     TextAutoGenerateTextModelComboBox *const mModelComboBox;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QToolButton *const mSearchButton;
+    QToolButton *const mSaveQuickAskButton;
+    QByteArray mChatId;
 };
 }
