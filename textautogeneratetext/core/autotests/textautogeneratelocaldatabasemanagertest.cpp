@@ -20,6 +20,7 @@ void TextAutoGenerateLocalDatabaseManagerTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateLocalDatabaseManager w;
     QVERIFY(w.ephemeralChatIds().isEmpty());
+    QVERIFY(w.chatsList().isEmpty());
 }
 
 void TextAutoGenerateLocalDatabaseManagerTest::shouldAddRemoveEphemeral()
@@ -43,3 +44,5 @@ void TextAutoGenerateLocalDatabaseManagerTest::shouldAddRemoveEphemeral()
     w.removeEphemeralChat("test2"_ba);
     QVERIFY(w.ephemeralChatIds().isEmpty());
 }
+
+#include "moc_textautogeneratelocaldatabasemanagertest.cpp"
