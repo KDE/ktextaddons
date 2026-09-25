@@ -512,13 +512,6 @@ QByteArray TextAutoGenerateManager::currentChatId() const
     return mCurrentChatId;
 }
 
-void TextAutoGenerateManager::checkCurrentChat(TextAutoGenerateChat::Persistence persistence)
-{
-    if (mCurrentChatId.isEmpty() && mSwitchToChatId.isEmpty() && mSwitchToChatName.isEmpty()) {
-        createNewChat({}, persistence);
-    }
-}
-
 void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteArray &messageId)
 {
     if (const auto messagesModel = messagesModelFromChatId(chatId); !messagesModel) {

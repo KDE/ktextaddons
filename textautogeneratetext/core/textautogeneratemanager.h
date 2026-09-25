@@ -235,11 +235,6 @@ public:
      */
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
     /*!
-     * Checks the current chat and creates a new one if there is none.
-     * \param persistence The Persistence of the chat created when there is no current chat (optional)
-     */
-    void checkCurrentChat(TextAutoGenerateChat::Persistence persistence = TextAutoGenerateChat::Persistence::Persisted);
-    /*!
      * Navigates to a specific message in a chat.
      * \param chatId The ID of the chat
      * \param messageId The ID of the message to navigate to
