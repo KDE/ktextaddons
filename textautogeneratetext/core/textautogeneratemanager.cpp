@@ -669,6 +669,16 @@ void TextAutoGenerateManager::importChat(const QString &title, const QList<TextA
     }
 }
 
+void TextAutoGenerateManager::setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence)
+{
+    mTextAutoGenerateChatsModel->setChatPersistence(chatId, persistence);
+    if (persistence == TextAutoGenerateChat::Persistence::Ephemeral) {
+        mDatabaseManager->addEphemeralChat(chatId);
+    } else {
+        mDatabaseManager->removeEphemeralChat(chatId);
+    }
+}
+
 void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId, bool force)
 {
     if (chatId.isEmpty()) {
@@ -687,8 +697,7 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
             return;
         }
         if (ephemeral) {
-            mTextAutoGenerateChatsModel->setChatPersistence(chatId, TextAutoGenerateChat::Persistence::Persisted);
-            mDatabaseManager->removeEphemeralChat(chatId);
+            setChatPersistence(chatId, TextAutoGenerateChat::Persistence::Persisted);
         }
 
         const auto chat = mTextAutoGenerateChatsModel->chat(chatId);
