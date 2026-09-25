@@ -22,7 +22,7 @@ public:
 
     void start();
 
-    int historyRetentionDays() const;
+    [[nodiscard]] int historyRetentionDays() const;
     void setHistoryRetentionDays(int newHistoryRetentionDays);
 
 private:
