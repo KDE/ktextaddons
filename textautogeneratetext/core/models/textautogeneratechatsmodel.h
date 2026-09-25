@@ -177,6 +177,13 @@ public:
      */
     void setTextAutoGenerateProjectsManager(TextAutoGenerateProjectsManager *newTextAutoGenerateProjectsManager);
 
+    /*!
+     * \brief setChatPersistence
+     * \param chatId
+     * \param persistence
+     */
+    void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;

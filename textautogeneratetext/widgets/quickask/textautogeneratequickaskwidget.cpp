@@ -6,6 +6,7 @@
 #include "textautogeneratequickaskwidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 
+#include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 
@@ -81,8 +82,6 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             &TextAutoGenerateQuickAskWidget::slotRefreshAnswer);
 
     if (mManager) {
-        mPreviousSaveInDatabase = mManager->saveInDatabase();
-        mManager->setSaveInDatabase(false);
         connect(mManager,
                 &TextAutoGenerateManager::askMessageRequested,
                 this,
@@ -96,8 +95,12 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget()
 {
     if (mManager) {
+        // Quick ask chats are ephemeral: drop them so they don't show up in history
+        if (const QByteArray chatId = mManager->currentChatId();
+            !chatId.isEmpty() && mManager->textAutoGenerateChatsModel()->chat(chatId).persistence() == TextAutoGenerateChat::Persistence::Ephemeral) {
+            mManager->removeDiscussion(chatId);
+        }
         mManager->resetCurrentChatId();
-        mManager->setSaveInDatabase(mPreviousSaveInDatabase);
     }
 }
 
@@ -187,7 +190,7 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished2(
     const QList<QByteArray> &lstTools,
     const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList)
 {
-    mManager->checkCurrentChat();
+    mManager->checkCurrentChat(TextAutoGenerateChat::Persistence::Ephemeral);
 
     if (messageUuid.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {.message = str,
@@ -209,7 +212,7 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished2(
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info,
                                                          const QByteArray &messageUuid)
 {
-    mManager->checkCurrentChat();
+    mManager->checkCurrentChat(TextAutoGenerateChat::Persistence::Ephemeral);
 
     if (messageUuid.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {

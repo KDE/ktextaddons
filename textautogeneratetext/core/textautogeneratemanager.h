@@ -7,6 +7,7 @@
 #include "config-textautogeneratetext.h"
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 #include <TextAutoGenerateText/TextAutoGenerateProject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
@@ -174,8 +175,9 @@ public:
     /*!
      * Creates a new chat.
      * \param title The title of the new chat (optional)
+     * \param persistence The Persistence info (optional)
      */
-    void createNewChat(const QString &title = {});
+    void createNewChat(const QString &title = {}, TextAutoGenerateChat::Persistence persistence = TextAutoGenerateChat::Persistence::Persisted);
     /*!
      * Replaces the content of a message in a chat.
      * \param chatId The ID of the chat
@@ -233,9 +235,10 @@ public:
      */
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
     /*!
-     * Checks the current chat and updates its state.
+     * Checks the current chat and creates a new one if there is none.
+     * \param persistence The Persistence of the chat created when there is no current chat (optional)
      */
-    void checkCurrentChat();
+    void checkCurrentChat(TextAutoGenerateChat::Persistence persistence = TextAutoGenerateChat::Persistence::Persisted);
     /*!
      * Navigates to a specific message in a chat.
      * \param chatId The ID of the chat
@@ -253,17 +256,6 @@ public:
      * \return true if the chat is in progress, false otherwise
      */
     [[nodiscard]] bool chatInProgress(const QByteArray &chatId) const;
-    /*!
-     * Returns whether chat data should be saved in the database.
-     * \return true if saving is enabled, false otherwise
-     */
-    [[nodiscard]] bool saveInDatabase() const;
-    /*!
-     * Sets whether chat data should be saved in the database.
-     * \param newSaveInDatabase true to enable saving, false to disable
-     */
-    void setSaveInDatabase(bool newSaveInDatabase);
-
     /*!
      * Returns the instances manager.
      * \return A pointer to the TextAutoGenerateTextInstancesManager
@@ -667,7 +659,6 @@ private:
     QString mSwitchToChatName;
     bool mAskStartOllama = false;
     bool mShowArchived = false;
-    bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
     bool mDebug = false;
 };

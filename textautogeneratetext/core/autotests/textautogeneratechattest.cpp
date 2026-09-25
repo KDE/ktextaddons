@@ -28,6 +28,7 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(w.prompt().isEmpty());
     QVERIFY(w.tags().isEmpty());
     QVERIFY(w.projectId().isEmpty());
+    QCOMPARE(w.persistence(), TextAutoGenerateText::TextAutoGenerateChat::Persistence::Persisted);
 
     // 10/05/2025 => size 72
     QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 152);
