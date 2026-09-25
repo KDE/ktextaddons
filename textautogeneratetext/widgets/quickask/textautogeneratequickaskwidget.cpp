@@ -82,6 +82,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             &TextAutoGenerateQuickAskWidget::slotRefreshAnswer);
 
     if (mManager) {
+        mPreviousChatId = mManager->currentChatId();
         connect(mManager,
                 &TextAutoGenerateManager::askMessageRequested,
                 this,
@@ -95,13 +96,30 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget()
 {
     if (mManager) {
+        const auto chatsModel = mManager->textAutoGenerateChatsModel();
         // Quick ask chats are ephemeral: drop them so they don't show up in history
-        if (const QByteArray chatId = mManager->currentChatId();
-            !chatId.isEmpty() && mManager->textAutoGenerateChatsModel()->chat(chatId).persistence() == TextAutoGenerateChat::Persistence::Ephemeral) {
-            mManager->removeDiscussion(chatId);
+        if (!mQuickAskChatId.isEmpty() && chatsModel->chat(mQuickAskChatId).persistence() == TextAutoGenerateChat::Persistence::Ephemeral) {
+            mManager->removeDiscussion(mQuickAskChatId);
         }
-        mManager->resetCurrentChatId();
+        // Give back to the main window the chat it was showing
+        if (!mPreviousChatId.isEmpty() && chatsModel->chat(mPreviousChatId).identifier() == mPreviousChatId) {
+            mManager->switchToChatId(mPreviousChatId);
+        } else {
+            mManager->resetCurrentChatId();
+        }
     }
+}
+
+QByteArray TextAutoGenerateQuickAskWidget::quickAskChatId()
+{
+    // Don't reuse the chat opened in the main window: quick ask has its own ephemeral chat
+    if (mQuickAskChatId.isEmpty() || mManager->textAutoGenerateChatsModel()->chat(mQuickAskChatId).identifier() != mQuickAskChatId) {
+        mManager->createNewChat({}, TextAutoGenerateChat::Persistence::Ephemeral);
+        mQuickAskChatId = mManager->currentChatId();
+    } else if (mManager->currentChatId() != mQuickAskChatId) {
+        mManager->switchToChatId(mQuickAskChatId);
+    }
+    return mQuickAskChatId;
 }
 
 void TextAutoGenerateQuickAskWidget::slotEditMessage(const QModelIndex &index)
@@ -190,19 +208,19 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished2(
     const QList<QByteArray> &lstTools,
     const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList)
 {
-    mManager->checkCurrentChat(TextAutoGenerateChat::Persistence::Ephemeral);
+    const QByteArray chatId = quickAskChatId();
 
     if (messageUuid.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {.message = str,
                                                                                          .messageUuid = {},
-                                                                                         .chatId = mManager->currentChatId(),
+                                                                                         .chatId = chatId,
                                                                                          .tools = lstTools,
                                                                                          .attachmentInfoList = attachmentInfoList};
         mManager->textAutoGeneratePlugin()->sendMessage(sendInfo);
     } else {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {.message = str,
                                                                                          .messageUuid = messageUuid,
-                                                                                         .chatId = mManager->currentChatId(),
+                                                                                         .chatId = chatId,
                                                                                          .tools = lstTools,
                                                                                          .attachmentInfoList = attachmentInfoList};
         mManager->textAutoGeneratePlugin()->editMessage(sendInfo);
@@ -212,13 +230,13 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished2(
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info,
                                                          const QByteArray &messageUuid)
 {
-    mManager->checkCurrentChat(TextAutoGenerateChat::Persistence::Ephemeral);
+    const QByteArray chatId = quickAskChatId();
 
     if (messageUuid.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {
             .message = info.message,
             .messageUuid = {},
-            .chatId = mManager->currentChatId(),
+            .chatId = chatId,
             .tools = info.tools,
             .attachmentInfoList = TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments)};
         mManager->textAutoGeneratePlugin()->sendMessage(sendInfo);
@@ -226,7 +244,7 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished(const TextAutoGenerateT
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {
             .message = info.message,
             .messageUuid = messageUuid,
-            .chatId = mManager->currentChatId(),
+            .chatId = chatId,
             .tools = info.tools,
             .attachmentInfoList = TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments)};
         mManager->textAutoGeneratePlugin()->editMessage(sendInfo);
