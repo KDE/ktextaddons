@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 02:48+0000\n"
-"PO-Revision-Date: 2026-09-23 12:50+0200\n"
+"POT-Creation-Date: 2026-09-25 02:42+0000\n"
+"PO-Revision-Date: 2026-09-24 08:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -48,37 +48,37 @@ msgstr "Ha fallat en obrir el fitxer per lectura: %1"
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
-#: core/models/textautogeneratechatsmodel.cpp:96
+#: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
 msgid "New Chat..."
 msgstr "Xat nou..."
 
-#: core/models/textautogeneratechatsmodel.cpp:202
+#: core/models/textautogeneratechatsmodel.cpp:205
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: core/models/textautogeneratechatsmodel.cpp:204
+#: core/models/textautogeneratechatsmodel.cpp:207
 #, kde-format
 msgid "Today"
 msgstr "Avui"
 
-#: core/models/textautogeneratechatsmodel.cpp:206
+#: core/models/textautogeneratechatsmodel.cpp:209
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:208
+#: core/models/textautogeneratechatsmodel.cpp:211
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:210
+#: core/models/textautogeneratechatsmodel.cpp:213
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:212
+#: core/models/textautogeneratechatsmodel.cpp:215
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
@@ -3255,14 +3255,14 @@ msgid "Ask to AI"
 msgstr "Pregunta a la IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:146
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Modifica…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:199
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3383,7 +3383,7 @@ msgstr "Nom del projecte…"
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Icona:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3763,48 +3763,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Xat nou"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplica…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:167
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Elimina com a preferit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:167
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Estableix com a preferit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:189
+#: widgets/view/textautogeneratehistorylistview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Restaura"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:189
+#: widgets/view/textautogeneratehistorylistview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arxiva"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:203
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Voleu eliminar aquest debat?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Elimina el debat"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:289
+#: widgets/view/textautogeneratehistorylistview.cpp:295
 #, kde-format
 msgid "No Archive Found."
 msgstr "No s'ha trobat cap arxiu."

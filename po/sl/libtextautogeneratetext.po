@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 02:48+0000\n"
-"PO-Revision-Date: 2026-09-23 14:01+0200\n"
+"POT-Creation-Date: 2026-09-25 02:42+0000\n"
+"PO-Revision-Date: 2026-09-24 11:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
@@ -46,37 +46,37 @@ msgstr "Datoteka json"
 msgid "Failed to open file for reading: %1"
 msgstr "Datoteke ni bilo mogoče odpreti za branje: %1"
 
-#: core/models/textautogeneratechatsmodel.cpp:96
+#: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
 msgid "New Chat..."
 msgstr "Novi klepet..."
 
-#: core/models/textautogeneratechatsmodel.cpp:202
+#: core/models/textautogeneratechatsmodel.cpp:205
 #, kde-format
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: core/models/textautogeneratechatsmodel.cpp:204
+#: core/models/textautogeneratechatsmodel.cpp:207
 #, kde-format
 msgid "Today"
 msgstr "Danes"
 
-#: core/models/textautogeneratechatsmodel.cpp:206
+#: core/models/textautogeneratechatsmodel.cpp:209
 #, kde-format
 msgid "7 days previous"
 msgstr "prejšnjih 7 dni"
 
-#: core/models/textautogeneratechatsmodel.cpp:208
+#: core/models/textautogeneratechatsmodel.cpp:211
 #, kde-format
 msgid "30 days previous"
 msgstr "prejšnjih 30 dni"
 
-#: core/models/textautogeneratechatsmodel.cpp:210
+#: core/models/textautogeneratechatsmodel.cpp:213
 #, kde-format
 msgid "Later"
 msgstr "Kasneje"
 
-#: core/models/textautogeneratechatsmodel.cpp:212
+#: core/models/textautogeneratechatsmodel.cpp:215
 #, kde-format
 msgid "Unknown"
 msgstr "Neznano"
@@ -3224,14 +3224,14 @@ msgid "Ask to AI"
 msgstr "Vprašaj umetno inteligenco"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:146
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Spremeni…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:199
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3352,7 +3352,7 @@ msgstr "Ime projekta…"
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Ikona:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3556,7 +3556,7 @@ msgstr "Išči… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr "Prikaži samo klepete, ki imajo eno od izbranih značk."
+msgstr "Prikaži samo klepete, ki imajo eno od izbranih značk"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
@@ -3732,48 +3732,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Novi klepet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplikat…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:167
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Odstrani kot priljubljenega"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:167
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Nastavi kot priljubljenega"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:189
+#: widgets/view/textautogeneratehistorylistview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Obnovi"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:189
+#: widgets/view/textautogeneratehistorylistview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arhiv"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:203
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Ali želite odstraniti to razpravo?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Odstrani razpravo"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:289
+#: widgets/view/textautogeneratehistorylistview.cpp:295
 #, kde-format
 msgid "No Archive Found."
 msgstr "Ni najdenega arhiva."
