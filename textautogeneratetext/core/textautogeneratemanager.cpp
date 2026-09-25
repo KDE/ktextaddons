@@ -5,6 +5,7 @@
 */
 #include "textautogeneratemanager.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
+#include "core/localdatabase/textautogeneratelocaldatabaseutils.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateagentprompskillmanager.h"
@@ -562,6 +563,11 @@ bool TextAutoGenerateManager::chatIsPersisted(const QByteArray &chatId) const
         return false;
     }
     return mTextAutoGenerateChatsModel->chatIsPersisted(chatId);
+}
+
+QString TextAutoGenerateManager::localDatabasePath() const
+{
+    return TextAutoGenerateLocalDatabaseUtils::localDatabasePath();
 }
 
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateManager::searchTextInDatabase(const QString &searchText)
