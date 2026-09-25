@@ -110,4 +110,17 @@ void TextAutoGenerateChatTest::shouldClassifySectionHistory()
     QCOMPARE(chat.section(), TextAutoGenerateText::TextAutoGenerateChat::SectionHistory::LessThanSevenDays);
 }
 
+void TextAutoGenerateChatTest::shouldCopyPersistence()
+{
+    TextAutoGenerateText::TextAutoGenerateChat chat;
+    chat.setPersistence(TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+
+    const TextAutoGenerateText::TextAutoGenerateChat copy(chat);
+    QCOMPARE(copy.persistence(), TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+
+    TextAutoGenerateText::TextAutoGenerateChat assigned;
+    assigned = chat;
+    QCOMPARE(assigned.persistence(), TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+}
+
 #include "moc_textautogeneratechattest.cpp"

@@ -29,6 +29,7 @@ TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
     , mArchived(other.mArchived)
     , mInitialized(other.mInitialized)
     , mInProgress(other.mInProgress)
+    , mPersistence(other.mPersistence)
 {
     if (mMessageModel && other.mMessageModel) {
         mMessageModel->setMessages(other.mMessageModel->messages());
@@ -56,6 +57,7 @@ TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat
         mPrompt = other.mPrompt;
         mTags = other.mTags;
         mProjectId = other.mProjectId;
+        mPersistence = other.mPersistence;
     }
     return *this;
 }
