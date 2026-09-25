@@ -14,14 +14,14 @@ TextAutoGeneratePurgeExpiredChatsJob::TextAutoGeneratePurgeExpiredChatsJob(QObje
 
 TextAutoGeneratePurgeExpiredChatsJob::~TextAutoGeneratePurgeExpiredChatsJob() = default;
 
-bool TextAutoGeneratePurgeExpiredChatsJob::excludeFavoriteChat() const
+bool TextAutoGeneratePurgeExpiredChatsJob::excludeFavoriteChats() const
 {
-    return mExcludeFavoriteChat;
+    return mExcludeFavoriteChats;
 }
 
-void TextAutoGeneratePurgeExpiredChatsJob::setExcludeFavoriteChat(bool newExcludeFavoriteChat)
+void TextAutoGeneratePurgeExpiredChatsJob::setExcludeFavoriteChats(bool newExcludeFavoriteChat)
 {
-    mExcludeFavoriteChat = newExcludeFavoriteChat;
+    mExcludeFavoriteChats = newExcludeFavoriteChat;
 }
 
 void TextAutoGeneratePurgeExpiredChatsJob::start()

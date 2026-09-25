@@ -17,8 +17,8 @@ public:
     explicit TextAutoGeneratePurgeExpiredChatsJob(QObject *parent = nullptr);
     ~TextAutoGeneratePurgeExpiredChatsJob() override;
 
-    [[nodiscard]] bool excludeFavoriteChat() const;
-    void setExcludeFavoriteChat(bool newExcludeFavoriteChat);
+    [[nodiscard]] bool excludeFavoriteChats() const;
+    void setExcludeFavoriteChats(bool newExcludeFavoriteChat);
 
     void start();
 
@@ -27,6 +27,6 @@ public:
 
 private:
     int mHistoryRetentionDays = 0;
-    bool mExcludeFavoriteChat = true;
+    bool mExcludeFavoriteChats = true;
 };
 }
