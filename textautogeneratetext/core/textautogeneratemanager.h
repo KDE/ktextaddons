@@ -346,17 +346,6 @@ public:
      */
     void callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
 
-    /*!
-     * Returns whether text-to-speech is enabled.
-     * \return true if text-to-speech is enabled, false otherwise
-     */
-    [[nodiscard]] bool enableTextToSpeech() const;
-    /*!
-     * Sets whether text-to-speech should be enabled.
-     * \param newEnableTextToSpeech true to enable, false to disable
-     */
-    void setEnableTextToSpeech(bool newEnableTextToSpeech);
-
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     /*!
      * Returns the text-to-speech enqueue manager.
