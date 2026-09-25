@@ -518,6 +518,12 @@ public:
      * \return
      */
     [[nodiscard]] bool chatIsPersisted(const QByteArray &chatId) const;
+
+    /*!
+     * \brief localDatabasePath
+     * \return
+     */
+    [[nodiscard]] QString localDatabasePath() const;
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
