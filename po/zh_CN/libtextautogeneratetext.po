@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 02:42+0000\n"
+"POT-Creation-Date: 2026-09-26 02:59+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -49,32 +49,39 @@ msgstr ""
 msgid "New Chat..."
 msgstr "新聊天..."
 
-#: core/models/textautogeneratechatsmodel.cpp:205
+#: core/models/textautogeneratechatsmodel.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
+msgid "Ephemeral"
+msgstr "常规"
+
+#: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
 msgid "Favorite"
 msgstr "常用"
 
-#: core/models/textautogeneratechatsmodel.cpp:207
+#: core/models/textautogeneratechatsmodel.cpp:242
 #, kde-format
 msgid "Today"
 msgstr "今天"
 
-#: core/models/textautogeneratechatsmodel.cpp:209
+#: core/models/textautogeneratechatsmodel.cpp:244
 #, kde-format
 msgid "7 days previous"
 msgstr "过去 7 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:211
+#: core/models/textautogeneratechatsmodel.cpp:246
 #, kde-format
 msgid "30 days previous"
 msgstr "过去 30 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:213
+#: core/models/textautogeneratechatsmodel.cpp:248
 #, kde-format
 msgid "Later"
 msgstr "之后"
 
-#: core/models/textautogeneratechatsmodel.cpp:215
+#: core/models/textautogeneratechatsmodel.cpp:250
 #, kde-format
 msgid "Unknown"
 msgstr "未知"
@@ -89,68 +96,68 @@ msgstr "<b>引擎：</b> %1<br><b>模型：</b> %2<br><b>实例名称：</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>工具：</b> %1"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Huge"
 msgstr "超大"
 
-#: core/textautogeneratemanager.cpp:174
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Multilingual"
 msgstr "多语言"
 
-#: core/textautogeneratemanager.cpp:176
+#: core/textautogeneratemanager.cpp:175
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "代码"
 
-#: core/textautogeneratemanager.cpp:178
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Math"
 msgstr "数学"
 
-#: core/textautogeneratemanager.cpp:180
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Vision"
 msgstr "视觉"
 
-#: core/textautogeneratemanager.cpp:182
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:184
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
 
-#: core/textautogeneratemanager.cpp:186
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Cloud"
 msgstr "云"
 
-#: core/textautogeneratemanager.cpp:188
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Thinking"
 msgstr "思考"
@@ -2899,7 +2906,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "发送"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:129
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:133
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3269,32 +3276,33 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "快速询问"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
-#: widgets/textautogenerateheaderwidget.cpp:39
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:37
+#: widgets/textautogenerateheaderwidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "搜索…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
 msgstr "显示内建工具…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "配置…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "清除"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:69
+#: widgets/textautogenerateheaderwidget.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -3393,13 +3401,21 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "对话"
 
-#: widgets/textautogenerateheaderwidget.cpp:47
+#: widgets/textautogenerateheaderwidget.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "新聊天"
 
-#: widgets/textautogenerateheaderwidget.cpp:54
+#: widgets/textautogenerateheaderwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Remove Discussion"
+msgctxt "@info:tooltip"
+msgid "Ephemeral Discussion"
+msgstr "移除讨论"
+
+#: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -3443,17 +3459,17 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "搜索"
 
-#: widgets/textautogeneratewidget.cpp:127
+#: widgets/textautogeneratewidget.cpp:133
 #, kde-format
 msgid "No plugin found."
 msgstr "没有找到插件。"
 
-#: widgets/textautogeneratewidget.cpp:239
+#: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgid "Error reported: %1"
 msgstr "报告的错误：%1"
 
-#: widgets/textautogeneratewidget.cpp:239
+#: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"

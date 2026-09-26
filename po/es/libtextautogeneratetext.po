@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-25 02:42+0000\n"
+"POT-Creation-Date: 2026-09-26 02:59+0000\n"
 "PO-Revision-Date: 2026-09-24 23:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -51,32 +51,39 @@ msgstr "No se ha podido abrir el archivo para lectura: %1"
 msgid "New Chat..."
 msgstr "Nueva conversación…"
 
-#: core/models/textautogeneratechatsmodel.cpp:205
+#: core/models/textautogeneratechatsmodel.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
+msgid "Ephemeral"
+msgstr "General"
+
+#: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
 msgid "Favorite"
 msgstr "Favorita"
 
-#: core/models/textautogeneratechatsmodel.cpp:207
+#: core/models/textautogeneratechatsmodel.cpp:242
 #, kde-format
 msgid "Today"
 msgstr "Hoy"
 
-#: core/models/textautogeneratechatsmodel.cpp:209
+#: core/models/textautogeneratechatsmodel.cpp:244
 #, kde-format
 msgid "7 days previous"
 msgstr "7 días anteriores"
 
-#: core/models/textautogeneratechatsmodel.cpp:211
+#: core/models/textautogeneratechatsmodel.cpp:246
 #, kde-format
 msgid "30 days previous"
 msgstr "30 días anteriores"
 
-#: core/models/textautogeneratechatsmodel.cpp:213
+#: core/models/textautogeneratechatsmodel.cpp:248
 #, kde-format
 msgid "Later"
 msgstr "Más tarde"
 
-#: core/models/textautogeneratechatsmodel.cpp:215
+#: core/models/textautogeneratechatsmodel.cpp:250
 #, kde-format
 msgid "Unknown"
 msgstr "Desconocido"
@@ -92,68 +99,68 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Herramientas:</b> %1"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Tools"
 msgstr "Herramientas"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Small"
 msgstr "Pequeño"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Medium"
 msgstr "Medio"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Big"
 msgstr "Grande"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:174
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:176
+#: core/textautogeneratemanager.cpp:175
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Código"
 
-#: core/textautogeneratemanager.cpp:178
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Math"
 msgstr "Matemáticas"
 
-#: core/textautogeneratemanager.cpp:180
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Vision"
 msgstr "Visión"
 
-#: core/textautogeneratemanager.cpp:182
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Embedding"
 msgstr "Para integrar"
 
-#: core/textautogeneratemanager.cpp:184
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Reasoning"
 msgstr "Razonamiento"
 
-#: core/textautogeneratemanager.cpp:186
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Cloud"
 msgstr "Nube"
 
-#: core/textautogeneratemanager.cpp:188
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Thinking"
 msgstr "Pensando"
@@ -3107,7 +3114,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Enviar"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:129
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:133
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3462,32 +3469,33 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Pregunta rápida"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
-#: widgets/textautogenerateheaderwidget.cpp:39
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:37
+#: widgets/textautogenerateheaderwidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Buscar…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
 msgstr "Mostrar herramientas internas…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "Borrar"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:69
+#: widgets/textautogenerateheaderwidget.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -3575,13 +3583,21 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Conversación"
 
-#: widgets/textautogenerateheaderwidget.cpp:47
+#: widgets/textautogenerateheaderwidget.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "Nueva conversación"
 
-#: widgets/textautogenerateheaderwidget.cpp:54
+#: widgets/textautogenerateheaderwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Remove Discussion"
+msgctxt "@info:tooltip"
+msgid "Ephemeral Discussion"
+msgstr "Eliminar discusión"
+
+#: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -3625,17 +3641,17 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratewidget.cpp:127
+#: widgets/textautogeneratewidget.cpp:133
 #, kde-format
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
 
-#: widgets/textautogeneratewidget.cpp:239
+#: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Error notificado: %1"
 
-#: widgets/textautogeneratewidget.cpp:239
+#: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
