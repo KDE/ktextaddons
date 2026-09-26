@@ -385,6 +385,8 @@ void TextAutoGenerateManager::setShowArchived(bool newShowArchived)
 
 void TextAutoGenerateManager::loadHistory()
 {
+    const bool needPurge = !mPurgeDone;
+    mPurgeDone = true;
     QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats();
     const QList<TextAutoGenerateChat> currentChats = mTextAutoGenerateChatsModel->chats();
     for (const auto &chat : currentChats) {
@@ -396,7 +398,9 @@ void TextAutoGenerateManager::loadHistory()
         createNewChat();
     } else {
         mTextAutoGenerateChatsModel->setChats(chats);
-        purgeExpiredChats();
+        if (needPurge) {
+            purgeExpiredChats();
+        }
         if (mTextAutoGenerateChatsModel->isEmpty()) {
             createNewChat();
         }
@@ -405,9 +409,9 @@ void TextAutoGenerateManager::loadHistory()
 
 void TextAutoGenerateManager::purgeExpiredChats()
 {
-    TextAutoGeneratePurgeExpiredChatsJob *job = new TextAutoGeneratePurgeExpiredChatsJob(this, this);
-    job->setExcludeFavoriteChats(TextAutoGenerateText::TextAutogenerateTextGlobalConfig::self()->excludeFavoriteChat());
-    job->setHistoryRetentionDays(TextAutoGenerateText::TextAutogenerateTextGlobalConfig::self()->historyRetentionDays());
+    auto job = new TextAutoGeneratePurgeExpiredChatsJob(this, this);
+    job->setExcludeFavoriteChats(TextAutogenerateTextGlobalConfig::self()->excludeFavoriteChat());
+    job->setHistoryRetentionDays(TextAutogenerateTextGlobalConfig::self()->historyRetentionDays());
     job->start();
 }
 

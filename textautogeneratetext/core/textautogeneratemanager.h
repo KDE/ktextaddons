@@ -672,6 +672,7 @@ private:
     bool mShowArchived = false;
     bool mPluginWasInitialized = false;
     bool mDebug = false;
+    bool mPurgeDone = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo, Q_RELOCATABLE_TYPE);
