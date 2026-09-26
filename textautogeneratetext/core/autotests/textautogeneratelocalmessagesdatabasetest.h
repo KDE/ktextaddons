@@ -23,4 +23,5 @@ private Q_SLOTS:
     void shouldDeleteMessages();
     void shouldReturnNullIfDoesNotExist();
     void shouldDeleteDatabaseWhenConnectionWasNeverOpened();
+    void shouldReturnLastMessageDateTime();
 };

@@ -206,4 +206,44 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteDatabaseWhenConnecti
     // THEN
     QVERIFY(!QFile::exists(dbFileName));
 }
+void TextAutoGenerateLocalMessagesDatabaseTest::shouldReturnLastMessageDateTime()
+{
+    // GIVEN
+    TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
+    const QByteArray lastDateChatId = "lastDateChatId"_ba;
+    QFile::remove(logger.dbFileName(QString::fromLatin1(lastDateChatId)));
+
+    // No database file
+    QCOMPARE(logger.lastMessageDateTime(QString::fromLatin1(lastDateChatId)), -1);
+    QVERIFY(!QFile::exists(logger.dbFileName(QString::fromLatin1(lastDateChatId))));
+
+    const qint64 olderDateTime = QDateTime(QDate(2024, 1, 1), QTime(10, 0, 0)).toSecsSinceEpoch();
+    const qint64 newerDateTime = QDateTime(QDate(2025, 3, 4), QTime(8, 30, 0)).toSecsSinceEpoch();
+
+    TextAutoGenerateText::TextAutoGenerateMessage message1;
+    message1.setContent(u"newer"_s);
+    message1.setUuid("last-date-1");
+    message1.setDateTime(newerDateTime);
+    message1.generateHtml();
+
+    TextAutoGenerateText::TextAutoGenerateMessage message2;
+    message2.setContent(u"older"_s);
+    message2.setUuid("last-date-2");
+    message2.setDateTime(olderDateTime);
+    message2.generateHtml();
+
+    // WHEN
+    logger.insertOrReplaceMessage(lastDateChatId, message1);
+    logger.insertOrReplaceMessage(lastDateChatId, message2);
+
+    // THEN
+    QCOMPARE(logger.lastMessageDateTime(QString::fromLatin1(lastDateChatId)), newerDateTime);
+
+    // Empty table
+    logger.deleteMessage(lastDateChatId, u"last-date-1"_s);
+    logger.deleteMessage(lastDateChatId, u"last-date-2"_s);
+    QCOMPARE(logger.lastMessageDateTime(QString::fromLatin1(lastDateChatId)), -1);
+
+    logger.deleteDatabase(lastDateChatId);
+}
 #include "moc_textautogeneratelocalmessagesdatabasetest.cpp"

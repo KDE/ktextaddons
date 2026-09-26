@@ -25,6 +25,9 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateMessage> loadMessages(const QString &chatIdentifier) const;
 
+    // Returns -1 when the chat has no database or no message. Doesn't create the database.
+    [[nodiscard]] qint64 lastMessageDateTime(const QString &chatIdentifier) const;
+
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchMessages(const QString &chatIdentifier, const QString &searchText) const;
 
     void deleteDatabase(const QByteArray &chatIdentifier);
