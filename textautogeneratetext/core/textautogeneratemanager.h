@@ -649,6 +649,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeMessagesModel(const QByteArray &chatId);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray addChat(const QString &title, TextAutoGenerateChat::Persistence persistence);
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void purgeExpiredChats();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> const mDatabaseManager;

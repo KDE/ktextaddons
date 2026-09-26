@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemanager.h"
+#include "core/jobs/textautogeneratepurgeexpiredchatsjob.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/localdatabase/textautogeneratelocaldatabaseutils.h"
 #include "core/models/textautogeneratechatsmodel.h"
@@ -21,6 +22,7 @@
 #include "textautogenerateengineloader.h"
 #include "textautogeneratetextclient.h"
 #include "textautogeneratetextcore_debug.h"
+#include "textautogeneratetextglobalconfig.h"
 #include "textautogeneratetextinstancesmanager.h"
 #include "textautogeneratetextplugin.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
@@ -394,7 +396,19 @@ void TextAutoGenerateManager::loadHistory()
         createNewChat();
     } else {
         mTextAutoGenerateChatsModel->setChats(chats);
+        purgeExpiredChats();
+        if (mTextAutoGenerateChatsModel->isEmpty()) {
+            createNewChat();
+        }
     }
+}
+
+void TextAutoGenerateManager::purgeExpiredChats()
+{
+    TextAutoGeneratePurgeExpiredChatsJob *job = new TextAutoGeneratePurgeExpiredChatsJob(this, this);
+    job->setExcludeFavoriteChats(TextAutoGenerateText::TextAutogenerateTextGlobalConfig::self()->excludeFavoriteChat());
+    job->setHistoryRetentionDays(TextAutoGenerateText::TextAutogenerateTextGlobalConfig::self()->historyRetentionDays());
+    job->start();
 }
 
 QString TextAutoGenerateManager::generateEngineDisplayName() const
