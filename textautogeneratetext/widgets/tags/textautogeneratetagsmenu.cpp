@@ -16,7 +16,7 @@ using namespace TextAutoGenerateText;
 
 namespace
 {
-QIcon iconFromColor(const QColor &color)
+QIcon iconFromColorCombobox(const QColor &color)
 {
     if (!color.isValid()) {
         return {};
@@ -57,7 +57,7 @@ void TextAutoGenerateTagsMenu::updateMenu()
         const QList<QByteArray> assignedTags = mManager->chatTags(mChatId);
         const QList<TextAutoGenerateTag> tags = mManager->textAutoGenerateTagsManager()->tags();
         for (const TextAutoGenerateTag &tag : tags) {
-            auto tagAction = new QAction(iconFromColor(tag.color()), tag.name(), this);
+            auto tagAction = new QAction(iconFromColorCombobox(tag.color()), tag.name(), this);
             tagAction->setCheckable(true);
             tagAction->setChecked(assignedTags.contains(tag.identifier()));
             const QByteArray identifier = tag.identifier();
