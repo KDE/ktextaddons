@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:43+0000\n"
+"POT-Creation-Date: 2026-09-26 00:44+0000\n"
 "PO-Revision-Date: 2026-09-24 03:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -45,37 +45,44 @@ msgstr "Json ფაილი"
 msgid "Failed to open file for reading: %1"
 msgstr "ფაილის წასაკითხად გახსნის შეცდომა: %1"
 
-#: core/models/textautogeneratechatsmodel.cpp:96
+#: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
 msgid "New Chat..."
 msgstr "ახალი ჩატი..."
 
-#: core/models/textautogeneratechatsmodel.cpp:202
+#: core/models/textautogeneratechatsmodel.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
+msgid "Ephemeral"
+msgstr "ზოგადი"
+
+#: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: core/models/textautogeneratechatsmodel.cpp:204
+#: core/models/textautogeneratechatsmodel.cpp:242
 #, kde-format
 msgid "Today"
 msgstr "დღეს"
 
-#: core/models/textautogeneratechatsmodel.cpp:206
+#: core/models/textautogeneratechatsmodel.cpp:244
 #, kde-format
 msgid "7 days previous"
 msgstr "წინა 7 დღე"
 
-#: core/models/textautogeneratechatsmodel.cpp:208
+#: core/models/textautogeneratechatsmodel.cpp:246
 #, kde-format
 msgid "30 days previous"
 msgstr "წინა 30 დღე"
 
-#: core/models/textautogeneratechatsmodel.cpp:210
+#: core/models/textautogeneratechatsmodel.cpp:248
 #, kde-format
 msgid "Later"
 msgstr "მოგვიანებით"
 
-#: core/models/textautogeneratechatsmodel.cpp:212
+#: core/models/textautogeneratechatsmodel.cpp:250
 #, kde-format
 msgid "Unknown"
 msgstr "უცნობი"
@@ -91,68 +98,68 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>ხელსაწყოები:</b> %1"
 
-#: core/textautogeneratemanager.cpp:164
+#: core/textautogeneratemanager.cpp:163
 #, kde-format
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/textautogeneratemanager.cpp:166
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Small"
 msgstr "პატარა"
 
-#: core/textautogeneratemanager.cpp:168
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Medium"
 msgstr "საშუალო"
 
-#: core/textautogeneratemanager.cpp:170
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Big"
 msgstr "დიდი"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Huge"
 msgstr "უზარმაზარი"
 
-#: core/textautogeneratemanager.cpp:174
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Multilingual"
 msgstr "მრავალენოვანი"
 
-#: core/textautogeneratemanager.cpp:176
+#: core/textautogeneratemanager.cpp:175
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "კოდი"
 
-#: core/textautogeneratemanager.cpp:178
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Math"
 msgstr "მათემატიკა"
 
-#: core/textautogeneratemanager.cpp:180
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Vision"
 msgstr "ხედვა"
 
-#: core/textautogeneratemanager.cpp:182
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Embedding"
 msgstr "ჩაშენება"
 
-#: core/textautogeneratemanager.cpp:184
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: core/textautogeneratemanager.cpp:186
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Cloud"
 msgstr "ღრუბელი"
 
-#: core/textautogeneratemanager.cpp:188
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Thinking"
 msgstr "ფიქრი"
@@ -3068,7 +3075,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:129
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:133
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3226,14 +3233,14 @@ msgid "Ask to AI"
 msgstr "ხი-სთვის კითხვა"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:146
+#: widgets/view/textautogeneratehistorylistview.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "შეცვლა…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:199
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3423,32 +3430,33 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "სწრაფი კითხვა"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
-#: widgets/textautogenerateheaderwidget.cpp:39
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:37
+#: widgets/textautogenerateheaderwidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "ძებნა…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
 msgstr "შიდა ხელსაწყოების ჩვენება…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "გასუფთავება"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:69
+#: widgets/textautogenerateheaderwidget.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -3536,13 +3544,21 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "საუბარი"
 
-#: widgets/textautogenerateheaderwidget.cpp:47
+#: widgets/textautogenerateheaderwidget.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "ახალი ჩატი"
 
-#: widgets/textautogenerateheaderwidget.cpp:54
+#: widgets/textautogenerateheaderwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Remove Discussion"
+msgctxt "@info:tooltip"
+msgid "Ephemeral Discussion"
+msgstr "კამათის წაშლა"
+
+#: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -3584,17 +3600,17 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:127
+#: widgets/textautogeneratewidget.cpp:133
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
 
-#: widgets/textautogeneratewidget.cpp:239
+#: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgid "Error reported: %1"
 msgstr "დაფიქსირებული შეცდომა: %1"
 
-#: widgets/textautogeneratewidget.cpp:239
+#: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -3734,48 +3750,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "ახალი ჩატი"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "დუბლირება…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:167
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "რჩეულებიდან წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:167
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "რჩეულად მონიშვნა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:189
+#: widgets/view/textautogeneratehistorylistview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:189
+#: widgets/view/textautogeneratehistorylistview.cpp:191
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "დაარქივება"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:203
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "წაშლით ამ კამათს?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:289
+#: widgets/view/textautogeneratehistorylistview.cpp:295
 #, kde-format
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
