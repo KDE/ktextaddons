@@ -28,6 +28,7 @@ public:
     ~TextAutoGenerateLocalDatabaseManager();
 
     [[nodiscard]] QList<TextAutoGenerateMessage> loadMessages(const QByteArray &chatIdentifier) const;
+    [[nodiscard]] qint64 lastMessageDateTime(const QByteArray &chatIdentifier) const;
 
     void deleteMessage(const QByteArray &chatIdentifier, const QString &messageId);
     void insertOrReplaceMessage(const QByteArray &chatIdentifier, const TextAutoGenerateMessage &m);

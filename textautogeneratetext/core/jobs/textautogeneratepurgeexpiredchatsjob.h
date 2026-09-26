@@ -10,11 +10,12 @@
 #include <QObject>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePurgeExpiredChatsJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGeneratePurgeExpiredChatsJob(QObject *parent = nullptr);
+    explicit TextAutoGeneratePurgeExpiredChatsJob(TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGeneratePurgeExpiredChatsJob() override;
 
     [[nodiscard]] bool excludeFavoriteChats() const;
@@ -28,5 +29,6 @@ public:
 private:
     int mHistoryRetentionDays = 0;
     bool mExcludeFavoriteChats = true;
+    TextAutoGenerateManager *const mManager;
 };
 }

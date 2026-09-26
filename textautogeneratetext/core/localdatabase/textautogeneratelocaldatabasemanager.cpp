@@ -30,6 +30,11 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalDatabaseManager::loadMessage
     return mMessagesDatabase->loadMessages(QString::fromLatin1(chatIdentifier));
 }
 
+qint64 TextAutoGenerateLocalDatabaseManager::lastMessageDateTime(const QByteArray &chatIdentifier) const
+{
+    return mMessagesDatabase->lastMessageDateTime(QString::fromLatin1(chatIdentifier));
+}
+
 QList<TextAutoGenerateChat> TextAutoGenerateLocalDatabaseManager::loadChats() const
 {
     return mChatsDatabase->loadChats();

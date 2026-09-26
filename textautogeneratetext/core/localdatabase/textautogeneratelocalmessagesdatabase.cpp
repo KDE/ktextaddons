@@ -177,6 +177,39 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalMessagesDatabase::loadMessag
     return listMessages;
 }
 
+qint64 TextAutoGenerateLocalMessagesDatabase::lastMessageDateTime(const QString &chatIdentifier) const
+{
+    const QString dbName = generateDbName(chatIdentifier);
+    QSqlDatabase db = QSqlDatabase::database(dbName);
+    if (!db.isValid() || !db.isOpen()) {
+        // Open the DB if it exists (don't create a new one)
+        const QString fileName = dbFileName(chatIdentifier);
+        if (!QFileInfo::exists(fileName)) {
+            return -1;
+        }
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
+        db.setDatabaseName(fileName);
+        if (!db.open()) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
+            return -1;
+        }
+    }
+
+    Q_ASSERT(db.isValid());
+    Q_ASSERT(db.isOpen());
+    const QString query = u"SELECT MAX(timestamp) FROM MESSAGES"_s;
+    QSqlQuery resultQuery(db);
+    if (!resultQuery.exec(query)) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " Impossible to execute query: " << resultQuery.lastError() << " query: " << query;
+        return -1;
+    }
+    // MAX() returns NULL when the table is empty.
+    if (!resultQuery.next() || resultQuery.value(0).isNull()) {
+        return -1;
+    }
+    return resultQuery.value(0).toLongLong();
+}
+
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::searchMessages(const QString &chatIdentifier, const QString &searchText) const
 {
     const QString dbName = generateDbName(chatIdentifier);
