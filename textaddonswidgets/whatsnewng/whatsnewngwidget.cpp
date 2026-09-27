@@ -31,7 +31,7 @@ WhatsNewNgWidget::WhatsNewNgWidget(QWidget *parent)
     mLabelInfo->setObjectName(u"mLabelInfo"_s);
     mLabelInfo->setReadOnly(true);
     mLabelInfo->setOpenExternalLinks(true);
-    mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
+    mLabelInfo->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
     mainLayout->addWidget(mLabelInfo);
 }
 
