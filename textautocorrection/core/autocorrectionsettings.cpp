@@ -339,7 +339,7 @@ void AutoCorrectionSettings::setLanguage(const QString &lang, bool forceGlobal)
 
 bool AutoCorrectionSettings::isFrenchLanguage() const
 {
-    return d->mAutoCorrectLang == "FR_fr"_L1 || d->mAutoCorrectLang == "fr"_L1;
+    return d->mAutoCorrectLang == "fr_FR"_L1 || d->mAutoCorrectLang == "fr"_L1;
 }
 
 bool AutoCorrectionSettings::addAutoCorrect(const QString &currentWord, const QString &replaceWord)

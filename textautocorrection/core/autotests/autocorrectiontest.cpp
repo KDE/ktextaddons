@@ -736,6 +736,52 @@ void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text + nbsp + doubleQuote.end));
 }
 
+void AutoCorrectionTest::shouldNotRemoveCharacterAfterQuote_data()
+{
+    QTest::addColumn<QString>("text");
+    QTest::addColumn<QString>("language");
+    QTest::addColumn<bool>("addNonBreakingSpace");
+    QTest::addColumn<QString>("result");
+
+    // 'b' stands for the non-breaking space, 'A'/'B' for the typographic begin/end quotes
+    QTest::newRow("french-elision") << u"l'homme"_s << u"fr"_s << true << u"lBhomme"_s;
+    QTest::newRow("french-elision-no-nbsp") << u"l'homme"_s << u"fr"_s << false << u"lBhomme"_s;
+    QTest::newRow("english-apostrophe") << u"don't"_s << u"en_US"_s << false << u"donBt"_s;
+    QTest::newRow("french-double-quote-before-punctuation") << u"sss\","_s << u"fr"_s << true << u"sssbB,"_s;
+    QTest::newRow("french-single-quote-before-punctuation") << u"sss',"_s << u"fr"_s << true << u"sssbB,"_s;
+    QTest::newRow("double-quote-before-punctuation") << u"sss\","_s << u"en_US"_s << false << u"sssB,"_s;
+}
+
+void AutoCorrectionTest::shouldNotRemoveCharacterAfterQuote()
+{
+    QFETCH(QString, text);
+    QFETCH(QString, language);
+    QFETCH(bool, addNonBreakingSpace);
+    QFETCH(QString, result);
+
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
+    settings->setEnabledAutoCorrection(true);
+    settings->setReplaceDoubleQuotes(true);
+    settings->setReplaceSingleQuotes(true);
+    settings->setLanguage(language);
+    settings->setAddNonBreakingSpace(addNonBreakingSpace);
+    settings->setNonBreakingSpace(QChar(u'b'));
+
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes quotes;
+    quotes.begin = u'A';
+    quotes.end = u'B';
+    settings->setTypographicDoubleQuotes(quotes);
+    settings->setTypographicSingleQuotes(quotes);
+    autocorrection.setAutoCorrectionSettings(settings);
+
+    QTextDocument doc;
+    doc.setPlainText(text);
+    int position = text.length();
+    autocorrection.autocorrect(false, doc, position);
+    QCOMPARE(doc.toPlainText(), result);
+}
+
 // Returns the href of the first anchor found in the document, or an empty string when there is none.
 static QString firstAnchorHref(const QTextDocument &doc)
 {
@@ -803,6 +849,26 @@ void AutoCorrectionTest::shouldAutoFormatURLs()
     QCOMPARE(doc.toPlainText(), originalText);
     QCOMPARE(position, originalText.length());
     QCOMPARE(firstAnchorHref(doc), href);
+}
+
+void AutoCorrectionTest::shouldNotCrashWithEmptyReplacement()
+{
+    QHash<QString, QString> entries;
+    entries.insert(u"BLABLA"_s, QString());
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
+    settings->setEnabledAutoCorrection(true);
+    settings->setAdvancedAutocorrect(true);
+    settings->setAutocorrectEntries(entries);
+    autocorrection.setAutoCorrectionSettings(settings);
+
+    QTextDocument doc;
+
+    const QString text = u"foo aa BLABLA"_s;
+    doc.setPlainText(text);
+    int position = text.length();
+    autocorrection.autocorrect(false, doc, position);
+    QCOMPARE(doc.toPlainText(), text);
 }
 
 #include "moc_autocorrectiontest.cpp"

@@ -13,7 +13,6 @@
 #include <QLocale>
 #include <QTextBlock>
 #include <QTextCursor>
-#include <QTextDocument>
 
 using namespace TextAutoCorrectionCore;
 using namespace Qt::Literals::StringLiterals;
@@ -415,9 +414,9 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
     // we proceed to 3 special cases
 
     // list of the schemes, starting with http:// as most probable
-    const static QStringList schemes{u"http://"_s,   u"https://"_s, u"mailto:/"_s, u"ftp://"_s, u"file://"_s,   u"git://"_s, u"sftp://"_s, u"magnet:?"_s,
-                                     u"smb://"_s,    u"nfs://"_s,   u"fish://"_s,  u"ssh://"_s, u"telnet://"_s, u"irc://"_s, u"sip:"_s,    u"news:"_s,
-                                     u"gopher://"_s, u"nntp://"_s,  u"geo:"_s,     u"udp://"_s, u"rsync://"_s,  u"dns://"_s};
+    const static QStringList schemes{u"http://"_s,   u"https://"_s, u"mailto:"_s, u"ftp://"_s, u"file://"_s,   u"git://"_s, u"sftp://"_s, u"magnet:?"_s,
+                                     u"smb://"_s,    u"nfs://"_s,   u"fish://"_s, u"ssh://"_s, u"telnet://"_s, u"irc://"_s, u"sip:"_s,    u"news:"_s,
+                                     u"gopher://"_s, u"nntp://"_s,  u"geo:"_s,    u"udp://"_s, u"rsync://"_s,  u"dns://"_s};
 
     enum LinkType {
         UNCLASSIFIED,
@@ -705,6 +704,9 @@ int AutoCorrection::advancedAutocorrect()
     }
     const QString &key = entry->first;
     QString replacement = entry->second;
+    if (replacement.isEmpty()) {
+        return -1;
+    }
 
     qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " key " << key << "actual" << actualWord;
     if (actualWord.endsWith(key) || actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {
@@ -783,6 +785,14 @@ void AutoCorrection::replaceTypographicQuotes()
     for (int i = d->mWord.length(); i > 1; --i) {
         if (const QChar c = d->mWord.at(i - 1); (c == u'"') || (c == u'\'')) {
             const bool doubleQuotes = (c == u'"');
+            // A single quote between two letters is an apostrophe (e.g. French elision "l'homme"):
+            // replace it by the typographic apostrophe and never add a non-breaking space around it.
+            if (!doubleQuotes && i < d->mWord.length() && d->mWord.at(i - 2).isLetter() && d->mWord.at(i).isLetter()) {
+                if (d->mAutoCorrectionSettings->isReplaceSingleQuotes()) {
+                    d->mWord[i - 1] = d->mAutoCorrectionSettings->typographicSingleQuotes().end;
+                }
+                continue;
+            }
             if (i > 2) {
                 const QChar::Category c1 = d->mWord.at(i - 1).category();
 
@@ -824,7 +834,7 @@ void AutoCorrection::replaceTypographicQuotes()
                         ? d->mAutoCorrectionSettings->doubleFrenchQuotes().end
                         : d->mAutoCorrectionSettings->typographicDoubleQuotes().end;
                     if (addNonBreakingSpace) {
-                        d->mWord.replace(i - 1, 2, QString(d->mAutoCorrectionSettings->nonBreakingSpace() + endQuote));
+                        d->mWord.replace(i - 1, 1, QString(d->mAutoCorrectionSettings->nonBreakingSpace() + endQuote));
                     } else {
                         d->mWord[i - 1] = endQuote;
                     }
@@ -833,7 +843,7 @@ void AutoCorrection::replaceTypographicQuotes()
                         ? d->mAutoCorrectionSettings->doubleFrenchQuotes().begin
                         : d->mAutoCorrectionSettings->typographicDoubleQuotes().begin;
                     if (addNonBreakingSpace) {
-                        d->mWord.replace(i - 1, 2, QString(d->mAutoCorrectionSettings->nonBreakingSpace() + beginQuote));
+                        d->mWord.replace(i - 1, 1, QString(beginQuote + d->mAutoCorrectionSettings->nonBreakingSpace()));
                     } else {
                         d->mWord[i - 1] = beginQuote;
                     }
@@ -842,7 +852,7 @@ void AutoCorrection::replaceTypographicQuotes()
                 if (ending) {
                     if (addNonBreakingSpace) {
                         d->mWord.replace(i - 1,
-                                         2,
+                                         1,
                                          QString(d->mAutoCorrectionSettings->nonBreakingSpace() + d->mAutoCorrectionSettings->typographicSingleQuotes().end));
                     } else {
                         d->mWord[i - 1] = d->mAutoCorrectionSettings->typographicSingleQuotes().end;
@@ -850,8 +860,8 @@ void AutoCorrection::replaceTypographicQuotes()
                 } else {
                     if (addNonBreakingSpace) {
                         d->mWord.replace(i - 1,
-                                         2,
-                                         QString(d->mAutoCorrectionSettings->nonBreakingSpace() + d->mAutoCorrectionSettings->typographicSingleQuotes().begin));
+                                         1,
+                                         QString(d->mAutoCorrectionSettings->typographicSingleQuotes().begin + d->mAutoCorrectionSettings->nonBreakingSpace()));
                     } else {
                         d->mWord[i - 1] = d->mAutoCorrectionSettings->typographicSingleQuotes().begin;
                     }
