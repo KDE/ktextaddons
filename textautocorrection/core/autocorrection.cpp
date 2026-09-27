@@ -704,6 +704,9 @@ int AutoCorrection::advancedAutocorrect()
     }
     const QString &key = entry->first;
     QString replacement = entry->second;
+    if (replacement.isEmpty()) {
+        return -1;
+    }
 
     qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " key " << key << "actual" << actualWord;
     if (actualWord.endsWith(key) || actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {

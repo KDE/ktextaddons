@@ -851,4 +851,24 @@ void AutoCorrectionTest::shouldAutoFormatURLs()
     QCOMPARE(firstAnchorHref(doc), href);
 }
 
+void AutoCorrectionTest::shouldNotCrashWithEmptyReplacement()
+{
+    QHash<QString, QString> entries;
+    entries.insert(u"BLABLA"_s, QString());
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
+    settings->setEnabledAutoCorrection(true);
+    settings->setAdvancedAutocorrect(true);
+    settings->setAutocorrectEntries(entries);
+    autocorrection.setAutoCorrectionSettings(settings);
+
+    QTextDocument doc;
+
+    const QString text = u"foo aa BLABLA"_s;
+    doc.setPlainText(text);
+    int position = text.length();
+    autocorrection.autocorrect(false, doc, position);
+    QCOMPARE(doc.toPlainText(), text);
+}
+
 #include "moc_autocorrectiontest.cpp"

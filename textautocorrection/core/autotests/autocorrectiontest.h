@@ -45,6 +45,7 @@ private Q_SLOTS:
 
     void shouldAutoFormatURLs_data();
     void shouldAutoFormatURLs();
+    void shouldNotCrashWithEmptyReplacement();
 
 private:
     KSharedConfig::Ptr mConfig;
