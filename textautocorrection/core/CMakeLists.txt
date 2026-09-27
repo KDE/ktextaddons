@@ -104,7 +104,6 @@ target_link_libraries(
         KF6::Archive
         KF6::ColorScheme
         Qt::Xml
-        Qt::Widgets
 )
 
 target_include_directories(
