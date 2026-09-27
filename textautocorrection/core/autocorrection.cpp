@@ -13,7 +13,6 @@
 #include <QLocale>
 #include <QTextBlock>
 #include <QTextCursor>
-#include <QTextDocument>
 
 using namespace TextAutoCorrectionCore;
 using namespace Qt::Literals::StringLiterals;
