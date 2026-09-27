@@ -7,7 +7,6 @@
 #include "importabstractautocorrection.h"
 
 using namespace TextAutoCorrectionCore;
-using namespace Qt::Literals::StringLiterals;
 ImportAbstractAutocorrection::ImportAbstractAutocorrection() = default;
 
 ImportAbstractAutocorrection::~ImportAbstractAutocorrection() = default;
