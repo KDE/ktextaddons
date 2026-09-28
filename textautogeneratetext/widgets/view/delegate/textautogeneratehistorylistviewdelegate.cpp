@@ -129,8 +129,9 @@ bool TextAutoGenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
             const QString toolTip =
                 u"%1 (%2)"_s.arg(index.data(TextAutoGenerateChatsModel::Title).toString(), locale.toString(QDateTime::fromSecsSinceEpoch(dateTimeValue)));
             QToolTip::showText(helpEvent->globalPos(), toolTip, view);
+            return true;
         }
-        return true;
+        QToolTip::hideText();
     }
     return false;
 }
