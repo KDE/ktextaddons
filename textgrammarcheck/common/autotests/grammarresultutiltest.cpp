@@ -18,8 +18,8 @@ GrammarResultUtilTest::GrammarResultUtilTest(QObject *parent)
 
 void GrammarResultUtilTest::shouldReplaceWord()
 {
-    typedef QVector<TextGrammarCheck::GrammarAction> ListGrammarActions;
-    typedef QVector<TextGrammarCheck::GrammarError> ErrorInfosList;
+    typedef QList<TextGrammarCheck::GrammarAction> ListGrammarActions;
+    typedef QList<TextGrammarCheck::GrammarError> ErrorInfosList;
     QFETCH(QString, initialText);
     QFETCH(QStringList, replacementWord);
     QFETCH(ErrorInfosList, grammarErrors);
@@ -41,23 +41,23 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
 {
     QTest::addColumn<QString>("initialText");
     QTest::addColumn<QStringList>("replacementWord");
-    QTest::addColumn<QVector<TextGrammarCheck::GrammarError>>("grammarErrors");
-    QTest::addColumn<QVector<TextGrammarCheck::GrammarAction>>("listGrammarActions");
+    QTest::addColumn<QList<TextGrammarCheck::GrammarError>>("grammarErrors");
+    QTest::addColumn<QList<TextGrammarCheck::GrammarAction>>("listGrammarActions");
     QTest::addColumn<QString>("resultText");
     {
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         QTest::newRow("noerror") << QString() << QStringList() << grammarErrorLists << lstGrammarActions << QString();
     }
     {
         const QString text = u"Boo foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         QTest::newRow("noerror2") << text << QStringList() << grammarErrorLists << lstGrammarActions << text;
     }
     {
         const QString text = u"Boo foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -65,7 +65,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -79,7 +79,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     }
     {
         const QString text = u"Boo foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -87,7 +87,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -101,7 +101,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     }
     {
         const QString text = u"Boo foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -109,7 +109,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -125,7 +125,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     // Two errors
     {
         const QString text = u"Boo foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -140,7 +140,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -162,7 +162,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     // Bug 459113
     {
         const QString text = u"Boo foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -177,7 +177,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -198,7 +198,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     }
     {
         const QString text = u"Boo\n foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -213,7 +213,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -235,7 +235,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
 
     {
         const QString text = u"Boo\n foo, ah car"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -250,7 +250,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
@@ -272,7 +272,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
 
     {
         const QString text = u"Je suis  la qui empeche\nil est la.\n tout passage dans l'herbe"_s;
-        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
+        QList<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
@@ -294,7 +294,7 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QList<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
             TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);

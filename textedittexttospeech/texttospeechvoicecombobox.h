@@ -18,6 +18,6 @@ public:
 
     [[nodiscard]] QVoice currentVoice() const;
     void setCurrentVoice(const QVoice &voice);
-    void updateVoices(const QVector<QVoice> &voices);
+    void updateVoices(const QList<QVoice> &voices);
 };
 }

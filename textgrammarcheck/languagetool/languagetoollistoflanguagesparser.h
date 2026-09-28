@@ -8,7 +8,7 @@
 
 #include "languageinfo.h"
 #include "textgrammarcheckprivate_export.h"
-#include <QVector>
+#include <QList>
 namespace TextGrammarCheck
 {
 class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser
@@ -16,6 +16,6 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser
 public:
     LanguageToolListOfLanguagesParser();
     ~LanguageToolListOfLanguagesParser() = default;
-    [[nodiscard]] QVector<LanguageInfo> parseResult(const QJsonArray &obj) const;
+    [[nodiscard]] QList<LanguageInfo> parseResult(const QJsonArray &obj) const;
 };
 }

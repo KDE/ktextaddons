@@ -64,14 +64,14 @@ bool VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, 
     return true;
 }
 
-QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStored(const QString &path)
+QList<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStored(const QString &path)
 {
     QString newPath = path;
     if (newPath.isEmpty()) {
         newPath = VoskEngineUtils::storageLanguagePath();
     }
     const QDir dir(newPath);
-    QVector<VoskEngineUtils::LanguageInstalled> languages;
+    QList<VoskEngineUtils::LanguageInstalled> languages;
     const QStringList list = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
     // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " list " << list;
     for (const auto &name : list) {
@@ -141,7 +141,7 @@ QString VoskEngineUtils::activeLanguageModelPath()
         return {};
     }
     // Don't rebuild the path from the name: the model records where it was actually extracted.
-    const QVector<LanguageInstalled> languages = VoskEngineUtils::languageLocallyStored();
+    const QList<LanguageInstalled> languages = VoskEngineUtils::languageLocallyStored();
     const auto it = std::find_if(languages.cbegin(), languages.cend(), [&name](const LanguageInstalled &installed) {
         return installed.name == name;
     });
@@ -155,7 +155,7 @@ QString VoskEngineUtils::activeLanguageModelPath()
 QString VoskEngineUtils::defaultLanguage()
 {
     // No language was selected yet: use the installed one when it's the only one.
-    const QVector<LanguageInstalled> languages = VoskEngineUtils::languageLocallyStored();
+    const QList<LanguageInstalled> languages = VoskEngineUtils::languageLocallyStored();
     if (languages.count() == 1) {
         return languages.constFirst().name;
     }

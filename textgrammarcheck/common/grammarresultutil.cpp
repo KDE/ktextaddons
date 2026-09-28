@@ -12,7 +12,7 @@
 #include <QTextDocument>
 using namespace TextGrammarCheck;
 
-void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor)
+void GrammarResultUtil::applyGrammarResult(const QList<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor)
 {
     for (const TextGrammarCheck::GrammarError &info : infos) {
         int blockNumberId = info.blockId();

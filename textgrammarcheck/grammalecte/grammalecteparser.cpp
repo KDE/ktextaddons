@@ -17,9 +17,9 @@ using namespace Qt::Literals::StringLiterals;
 
 GrammalecteParser::GrammalecteParser() = default;
 
-QVector<GrammarError> GrammalecteParser::parseResult(const QJsonObject &obj) const
+QList<GrammarError> GrammalecteParser::parseResult(const QJsonObject &obj) const
 {
-    QVector<GrammarError> infos;
+    QList<GrammarError> infos;
     if (!obj.contains("grammalecte"_L1)) {
         qCWarning(TEXTGRAMMARCHECK_LOG) << "Error in json " << obj;
         return infos;

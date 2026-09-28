@@ -7,9 +7,9 @@
 #pragma once
 
 #include "textgrammarcheck_export.h"
+#include <QList>
 #include <QObject>
 #include <QProcess>
-#include <QVector>
 namespace TextGrammarCheck
 {
 /*!
@@ -55,7 +55,7 @@ Q_SIGNALS:
     /*! Emitted when an error occurs while fetching configuration options. */
     void error();
     /*! Emitted when the configuration options have been successfully fetched. */
-    void finished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
+    void finished(const QList<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
 
 private:
     Q_DISABLE_COPY(GrammalecteGenerateConfigOptionJob)
@@ -63,7 +63,7 @@ private:
     TEXTGRAMMARCHECK_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
     TEXTGRAMMARCHECK_NO_EXPORT void receivedError();
     TEXTGRAMMARCHECK_NO_EXPORT void receivedStdErr();
-    TEXTGRAMMARCHECK_NO_EXPORT QVector<GrammalecteGenerateConfigOptionJob::Option> parseResult() const;
+    TEXTGRAMMARCHECK_NO_EXPORT QList<GrammalecteGenerateConfigOptionJob::Option> parseResult() const;
     QString mResult;
     QString mPythonPath;
     QString mGrammarlecteCliPath;

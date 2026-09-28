@@ -96,9 +96,9 @@ void GrammalecteGenerateConfigOptionJob::slotFinished(int exitCode, QProcess::Ex
     deleteLater();
 }
 
-QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOptionJob::parseResult() const
+QList<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOptionJob::parseResult() const
 {
-    QVector<GrammalecteGenerateConfigOptionJob::Option> opts;
+    QList<GrammalecteGenerateConfigOptionJob::Option> opts;
     static const QRegularExpression reg(u"^([a-zA-Z0-9]+):\\s*(True|False)\\s*(.*)$"_s);
     const QList<QStringView> lst = QStringView(mResult).split(u'\n');
     for (const QStringView &str : lst) {

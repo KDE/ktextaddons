@@ -41,8 +41,8 @@ public:
 
     void clear();
 
-    [[nodiscard]] QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
-    void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
+    [[nodiscard]] QList<VoskSpeechToTextInfo> speechToTextInfos() const;
+    void setSpeechToTextInfos(const QList<VoskSpeechToTextInfo> &newSpeechToTextInfo);
 
     void updateInstalledLanguage();
 
@@ -59,7 +59,7 @@ private:
     [[nodiscard]] QString versionInstalled(const QString &shortName) const;
     [[nodiscard]] bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
     [[nodiscard]] bool isActive(const VoskSpeechToTextInfo &language) const;
-    QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
-    QVector<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
+    QList<VoskSpeechToTextInfo> mSpeechToTextInfos;
+    QList<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
     QString mActiveLanguage;
 };

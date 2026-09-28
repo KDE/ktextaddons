@@ -18,7 +18,7 @@ LanguageToolComboBox::LanguageToolComboBox(QWidget *parent)
 
 LanguageToolComboBox::~LanguageToolComboBox() = default;
 
-void LanguageToolComboBox::fillComboBox(const QVector<LanguageInfo> &info)
+void LanguageToolComboBox::fillComboBox(const QList<LanguageInfo> &info)
 {
     clear();
     for (int i = 0; i < info.count(); ++i) {

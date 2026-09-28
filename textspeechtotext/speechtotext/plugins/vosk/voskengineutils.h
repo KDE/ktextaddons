@@ -27,7 +27,7 @@ struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
 
 [[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT bool createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed);
 
-[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QList<LanguageInstalled> languageLocallyStored(const QString &path = {});
 
 [[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString defaultLanguage();
 

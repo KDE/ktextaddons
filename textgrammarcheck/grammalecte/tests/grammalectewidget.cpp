@@ -78,7 +78,7 @@ void GrammalecteWidget::slotGetSettings()
     job->start();
 }
 
-void GrammalecteWidget::slotGetSettingsFinished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result)
+void GrammalecteWidget::slotGetSettingsFinished(const QList<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result)
 {
 }
 

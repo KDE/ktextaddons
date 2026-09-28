@@ -33,7 +33,7 @@ public:
     [[nodiscard]] QString language() const;
 
     /*! Populates the combo box with the available languages. */
-    void fillComboBox(const QVector<LanguageInfo> &info);
+    void fillComboBox(const QList<LanguageInfo> &info);
 
 private:
     TEXTGRAMMARCHECK_NO_EXPORT void fillComboBox();

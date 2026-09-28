@@ -29,7 +29,7 @@ void TextToSpeechVoiceComboBox::setCurrentVoice(const QVoice &voice)
     }
 }
 
-void TextToSpeechVoiceComboBox::updateVoices(const QVector<QVoice> &voices)
+void TextToSpeechVoiceComboBox::updateVoices(const QList<QVoice> &voices)
 {
     clear();
     for (const QVoice &voice : voices) {

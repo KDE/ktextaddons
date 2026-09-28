@@ -34,7 +34,7 @@ public:
     /*! Checks the grammar of the text. This is implemented by subclasses. */
     virtual void checkGrammar() = 0;
     /*! Applies the grammar checking results to display the errors. */
-    void applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos);
+    void applyGrammarResult(const QList<TextGrammarCheck::GrammarError> &infos);
 Q_SIGNALS:
     /*! Emitted when the user wants to replace text with a suggestion. */
     void replaceText(const TextGrammarCheck::GrammarAction &act);

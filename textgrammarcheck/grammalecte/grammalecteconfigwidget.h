@@ -38,13 +38,13 @@ public:
 private:
     Q_DISABLE_COPY(GrammalecteConfigWidget)
     TEXTGRAMMARCHECK_NO_EXPORT void loadGrammarSettings();
-    TEXTGRAMMARCHECK_NO_EXPORT void slotGetSettingsFinished(const QVector<GrammalecteGenerateConfigOptionJob::Option> &result);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotGetSettingsFinished(const QList<GrammalecteGenerateConfigOptionJob::Option> &result);
     TEXTGRAMMARCHECK_NO_EXPORT void slotGetSettingsError();
     TEXTGRAMMARCHECK_NO_EXPORT QWidget *addGeneralTab();
     TEXTGRAMMARCHECK_NO_EXPORT QWidget *addGrammarTab();
 
     QStringList mSaveOptions;
-    QVector<QCheckBox *> mListOptions;
+    QList<QCheckBox *> mListOptions;
     QStackedWidget *mStackedWidget = nullptr;
     QWidget *mGrammarTabWidget = nullptr;
     QWidget *mReloadSettingsWidget = nullptr;

@@ -26,8 +26,8 @@ public:
 
     void downloadListModels();
 
-    [[nodiscard]] QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
-    void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newTranslators);
+    [[nodiscard]] QList<VoskSpeechToTextInfo> speechToTextInfos() const;
+    void setSpeechToTextInfos(const QList<VoskSpeechToTextInfo> &newTranslators);
 
     void loadModelList(const QString &fileName);
 
@@ -41,6 +41,6 @@ Q_SIGNALS:
 
 private:
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseListModel(const QJsonArray &arrays);
-    QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
+    QList<VoskSpeechToTextInfo> mSpeechToTextInfos;
 };
 Q_DECLARE_TYPEINFO(ManagerModelVoskSpeechToText::ProgressInfo, Q_RELOCATABLE_TYPE);

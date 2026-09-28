@@ -19,7 +19,7 @@ enum TextInfo {
 };
 /*!
  */
-TEXTGRAMMARCHECK_EXPORT void applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
+TEXTGRAMMARCHECK_EXPORT void applyGrammarResult(const QList<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
 /*!
  */
 TEXTGRAMMARCHECK_EXPORT void replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document);
