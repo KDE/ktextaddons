@@ -36,5 +36,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotManageProjects();
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QByteArray mChatId;
+    QActionGroup *const mProjectsGroup;
 };
 }
