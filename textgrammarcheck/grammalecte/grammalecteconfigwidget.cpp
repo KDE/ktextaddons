@@ -65,7 +65,7 @@ void GrammalecteConfigWidget::slotGetSettingsError()
     }
 }
 
-void GrammalecteConfigWidget::slotGetSettingsFinished(const QVector<GrammalecteGenerateConfigOptionJob::Option> &result)
+void GrammalecteConfigWidget::slotGetSettingsFinished(const QList<GrammalecteGenerateConfigOptionJob::Option> &result)
 {
     mStackedWidget->setCurrentWidget(mScrollArea);
     mListOptions.clear();

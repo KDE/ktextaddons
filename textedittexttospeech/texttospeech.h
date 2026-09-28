@@ -51,7 +51,7 @@ public:
     [[nodiscard]] double volume() const;
     /*!
      */
-    [[nodiscard]] QVector<QLocale> availableLocales() const;
+    [[nodiscard]] QList<QLocale> availableLocales() const;
     /*!
      */
     [[nodiscard]] QStringList availableEngines() const;

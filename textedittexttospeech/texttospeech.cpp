@@ -9,9 +9,9 @@
 
 #include "texttospeechutil.h"
 
+#include <QList>
 #include <QLocale>
 #include <QTextToSpeech>
-#include <QVector>
 
 using namespace Qt::Literals::StringLiterals;
 class TextEditTextToSpeech::TextToSpeechPrivate
@@ -187,15 +187,15 @@ double TextToSpeech::volume() const
     return d->mTextToSpeech ? d->mTextToSpeech->volume() : -1.0;
 }
 
-QVector<QLocale> TextToSpeech::availableLocales() const
+QList<QLocale> TextToSpeech::availableLocales() const
 {
-    return d->mTextToSpeech ? d->mTextToSpeech->availableLocales() : QVector<QLocale>();
+    return d->mTextToSpeech ? d->mTextToSpeech->availableLocales() : QList<QLocale>();
 }
 
 QStringList TextToSpeech::availableVoices() const
 {
     QStringList lst;
-    const QVector<QVoice> voices = d->mTextToSpeech ? d->mTextToSpeech->availableVoices() : QVector<QVoice>();
+    const QList<QVoice> voices = d->mTextToSpeech ? d->mTextToSpeech->availableVoices() : QList<QVoice>();
     lst.reserve(voices.count());
     for (const QVoice &voice : voices) {
         lst << voice.name();

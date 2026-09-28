@@ -7,7 +7,7 @@
 #pragma once
 
 #include "textgrammarcheckprivate_export.h"
-#include <QVector>
+#include <QList>
 #include <TextGrammarCheck/GrammarError>
 class QJsonObject;
 namespace TextGrammarCheck
@@ -17,6 +17,6 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteParser
 public:
     GrammalecteParser();
     ~GrammalecteParser() = default;
-    [[nodiscard]] QVector<GrammarError> parseResult(const QJsonObject &obj) const;
+    [[nodiscard]] QList<GrammarError> parseResult(const QJsonObject &obj) const;
 };
 }

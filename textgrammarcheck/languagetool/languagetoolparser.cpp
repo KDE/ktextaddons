@@ -16,9 +16,9 @@ using namespace Qt::Literals::StringLiterals;
 
 LanguageToolParser::LanguageToolParser() = default;
 
-QVector<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) const
+QList<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) const
 {
-    QVector<GrammarError> infos;
+    QList<GrammarError> infos;
     const QJsonArray array = obj.value("matches"_L1).toArray();
     for (const auto &current : array) {
         // qDebug() << " current " << current;

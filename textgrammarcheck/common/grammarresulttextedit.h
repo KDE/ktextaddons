@@ -29,7 +29,7 @@ public:
     ~GrammarResultTextEdit() override;
 
     /*! Applies the grammar checking results to display the errors. */
-    void applyGrammarResult(const QVector<GrammarError> &infos);
+    void applyGrammarResult(const QList<GrammarError> &infos);
 
 protected:
     /*! Handles context menu events to display correction suggestions. */

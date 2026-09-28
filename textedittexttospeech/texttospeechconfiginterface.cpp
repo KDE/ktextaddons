@@ -17,9 +17,9 @@ TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
 
 TextToSpeechConfigInterface::~TextToSpeechConfigInterface() = default;
 
-QVector<QVoice> TextToSpeechConfigInterface::availableVoices() const
+QList<QVoice> TextToSpeechConfigInterface::availableVoices() const
 {
-    QVector<QVoice> voices;
+    QList<QVoice> voices;
     if (mTextToSpeech) {
         voices = mTextToSpeech->availableVoices();
     } else {
@@ -37,7 +37,7 @@ QStringList TextToSpeechConfigInterface::availableEngines() const
     return {};
 }
 
-QVector<QLocale> TextToSpeechConfigInterface::availableLocales() const
+QList<QLocale> TextToSpeechConfigInterface::availableLocales() const
 {
     if (mTextToSpeech) {
         return mTextToSpeech->availableLocales();

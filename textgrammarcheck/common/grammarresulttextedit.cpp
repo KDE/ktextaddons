@@ -71,7 +71,7 @@ void GrammarResultTextEdit::generalPaletteChanged()
     mNegativeTextColor = bgBrush.brush(palette).color();
 }
 
-void GrammarResultTextEdit::applyGrammarResult(const QVector<GrammarError> &infos)
+void GrammarResultTextEdit::applyGrammarResult(const QList<GrammarError> &infos)
 {
     GrammarResultUtil::applyGrammarResult(infos, document(), mNegativeTextColor);
 }

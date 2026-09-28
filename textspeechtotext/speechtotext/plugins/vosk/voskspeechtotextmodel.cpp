@@ -199,12 +199,12 @@ void VoskSpeechToTextModel::removeLanguage(const QString &name)
     updateInstalledLanguage();
 }
 
-QVector<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfos() const
+QList<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfos() const
 {
     return mSpeechToTextInfos;
 }
 
-void VoskSpeechToTextModel::setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo)
+void VoskSpeechToTextModel::setSpeechToTextInfos(const QList<VoskSpeechToTextInfo> &newSpeechToTextInfo)
 {
     if (rowCount() != 0) {
         beginResetModel();

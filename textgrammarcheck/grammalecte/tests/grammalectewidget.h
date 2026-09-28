@@ -25,7 +25,7 @@ private:
     void slotReplaceText(const TextGrammarCheck::GrammarAction &act);
     void slotCheckGrammar();
     void slotGetSettings();
-    void slotGetSettingsFinished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
+    void slotGetSettingsFinished(const QList<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
     void slotResultFinished(const QString &result);
     void slotConfigure();
     QTextEdit *mInput = nullptr;

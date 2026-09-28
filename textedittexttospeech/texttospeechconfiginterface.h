@@ -40,7 +40,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] QVector<QLocale> availableLocales() const;
+    [[nodiscard]] QList<QLocale> availableLocales() const;
     /*!
      */
     [[nodiscard]] QLocale locale() const;
@@ -50,7 +50,7 @@ public:
     [[nodiscard]] QStringList availableEngines() const;
     /*!
      */
-    [[nodiscard]] QVector<QVoice> availableVoices() const;
+    [[nodiscard]] QList<QVoice> availableVoices() const;
     /*!
      */
     void setEngine(const QString &engineName);

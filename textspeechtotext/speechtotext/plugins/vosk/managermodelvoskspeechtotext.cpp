@@ -88,12 +88,12 @@ void ManagerModelVoskSpeechToText::parseListModel(const QJsonArray &arrays)
     Q_EMIT downLoadModelListDone();
 }
 
-QVector<VoskSpeechToTextInfo> ManagerModelVoskSpeechToText::speechToTextInfos() const
+QList<VoskSpeechToTextInfo> ManagerModelVoskSpeechToText::speechToTextInfos() const
 {
     return mSpeechToTextInfos;
 }
 
-void ManagerModelVoskSpeechToText::setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newTranslators)
+void ManagerModelVoskSpeechToText::setSpeechToTextInfos(const QList<VoskSpeechToTextInfo> &newTranslators)
 {
     mSpeechToTextInfos = newTranslators;
 }

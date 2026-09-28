@@ -262,7 +262,7 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
 
 void TextToSpeechConfigWidget::updateAvailableVoices()
 {
-    const QVector<QVoice> voices = mTextToSpeechConfigInterface->availableVoices();
+    const QList<QVoice> voices = mTextToSpeechConfigInterface->availableVoices();
     mVoiceComboBox->updateVoices(voices);
     updateVoice();
 }
@@ -296,7 +296,7 @@ void TextToSpeechConfigWidget::updateEngine()
 
 void TextToSpeechConfigWidget::updateAvailableLocales()
 {
-    const QVector<QLocale> locales = mTextToSpeechConfigInterface->availableLocales();
+    const QList<QLocale> locales = mTextToSpeechConfigInterface->availableLocales();
     const QLocale current = mTextToSpeechConfigInterface->locale();
     mLanguageComboBox->updateAvailableLocales(locales, current);
     updateLocale();
