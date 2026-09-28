@@ -156,7 +156,7 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
                 act->setData(actData);
                 but->setDefaultAction(act);
                 but->setIcon(QIcon::fromTheme(u"configure"_s));
-                but->setText(i18n("..."));
+                but->setText(u"..."_s);
                 but->setFixedWidth(28);
                 but->setToolTip(i18nc("@info:tooltip", "Configure"));
                 but->setAutoFillBackground(true);
