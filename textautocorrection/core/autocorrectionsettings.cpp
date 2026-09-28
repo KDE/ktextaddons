@@ -480,7 +480,7 @@ void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)
     kdelang.remove(reg);
 
     QString localFileName;
-    static const QRegularExpression regpath(QRegularExpression(u"_.*"_s));
+    static const QRegularExpression regpath(u"_.*"_s);
     // Look at local file:
     if (!forceGlobal) {
         if (d->mAutoCorrectLang.isEmpty()) {
