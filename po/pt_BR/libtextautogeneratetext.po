@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 00:44+0000\n"
-"PO-Revision-Date: 2026-09-24 10:24-0300\n"
+"POT-Creation-Date: 2026-09-27 00:43+0000\n"
+"PO-Revision-Date: 2026-09-26 05:53-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -52,11 +52,9 @@ msgid "New Chat..."
 msgstr "Novo bate-papo..."
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "Geral"
+msgstr "Efêmera"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -98,68 +96,68 @@ msgstr "<b>Motor:</b> %1<br><b>Modelo:</b> %2<br><b>Nome da instância:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Ferramentas:</b> %1"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Small"
 msgstr "Pequena"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Medium"
 msgstr "Média"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Big"
 msgstr "Grande"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Huge"
 msgstr "Gigante"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilíngue"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:177
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Código"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Math"
 msgstr "Matemática"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Vision"
 msgstr "Visão"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Embedding"
 msgstr "Incorporação"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Reasoning"
 msgstr "Raciocínio"
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Cloud"
 msgstr "Nuvem"
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Thinking"
 msgstr "Pensando"
@@ -3579,12 +3577,10 @@ msgid "New Chat"
 msgstr "Novo bate-papo"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "Remover discussão"
+msgstr "Discussão efêmera"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format

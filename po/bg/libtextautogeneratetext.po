@@ -54,7 +54,7 @@ msgstr "Нов чат..."
 #| msgctxt "@title Preferences page name"
 #| msgid "General"
 msgid "Ephemeral"
-msgstr "Общи"
+msgstr "Ефемерен"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -3343,7 +3343,7 @@ msgstr "Редактиране на проект"
 #| msgid "Add Project"
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "Добавяне на проект"
+msgstr "Проект"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
 #, fuzzy, kde-format
@@ -3351,7 +3351,7 @@ msgstr "Добавяне на проект"
 #| msgid "Add Project"
 msgctxt "@action"
 msgid "No Project"
-msgstr "Добавяне на проект"
+msgstr "Няма проект"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
 #, fuzzy, kde-format
@@ -3359,7 +3359,7 @@ msgstr "Добавяне на проект"
 #| msgid "Manage Projects"
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "Управление на проекти"
+msgstr "Управление на проекти…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
@@ -3368,9 +3368,9 @@ msgid "Project name…"
 msgstr "Име на проекта…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
-#, kde-format
+#, fuzzy, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Икона:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3565,7 +3565,7 @@ msgstr "Нов чат"
 #| msgid "Remove Discussion"
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "Премахване на дискусията"
+msgstr "Ефимерна дискусия"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
