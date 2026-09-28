@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 19:09+0000\n"
-"PO-Revision-Date: 2026-07-04 12:03+0200\n"
+"PO-Revision-Date: 2026-09-27 10:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -307,10 +307,9 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "Vad är nytt i %2. %1"
+msgstr "Vad är nytt i %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -318,21 +317,19 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Versionsinformation</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h1><i> Version %1 (utgiven: %2)</i></h1><hr/><br>"
+msgstr "<h3><i>Vad är nytt i version %1 (utgiven: %2)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h1><i> Version %1 (ännu inte utgiven)</i></h1><hr/><br>"
+msgstr "<h3><i>Vad är nytt i version %1 (inte utgiven)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr ""
+msgstr "<h1>Vad är nytt historik</h1>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"

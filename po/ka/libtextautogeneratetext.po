@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 02:59+0000\n"
-"PO-Revision-Date: 2026-09-24 06:19+0200\n"
+"POT-Creation-Date: 2026-09-27 02:38+0000\n"
+"PO-Revision-Date: 2026-09-27 07:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -51,11 +51,9 @@ msgid "New Chat..."
 msgstr "ახალი ჩატი..."
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "ზოგადი"
+msgstr "ეფემერული"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -98,68 +96,68 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>ხელსაწყოები:</b> %1"
 
-#: core/textautogeneratemanager.cpp:163
+#: core/textautogeneratemanager.cpp:165
 #, kde-format
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Small"
 msgstr "პატარა"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Medium"
 msgstr "საშუალო"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Big"
 msgstr "დიდი"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Huge"
 msgstr "უზარმაზარი"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Multilingual"
 msgstr "მრავალენოვანი"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:177
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "კოდი"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Math"
 msgstr "მათემატიკა"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Vision"
 msgstr "ხედვა"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Embedding"
 msgstr "ჩაშენება"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Cloud"
 msgstr "ღრუბელი"
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Thinking"
 msgstr "ფიქრი"
@@ -3105,7 +3103,7 @@ msgstr "ტექსტის დამატებები"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Tool Plugins"
-msgstr "ხელსაწყოს დამატებები:"
+msgstr "ხელსაწყოს დამატებები"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -3551,12 +3549,10 @@ msgid "New Chat"
 msgstr "ახალი ჩატი"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "კამათის წაშლა"
+msgstr "ეფემერული დისკუსია"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
