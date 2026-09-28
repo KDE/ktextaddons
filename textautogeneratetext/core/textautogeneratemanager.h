@@ -639,6 +639,12 @@ Q_SIGNALS:
      */
     void openSavedFileFolderDone(const QList<QUrl> &urls, TextAutoGenerateText::TextAutoGenerateManager::FileType fileType);
 
+    /*!
+     * \brief information
+     * \param str
+     */
+    void information(const QString &str);
+
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);
 

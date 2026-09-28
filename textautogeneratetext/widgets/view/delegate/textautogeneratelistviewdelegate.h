@@ -109,6 +109,9 @@ Q_SIGNALS:
     /*!
      */
     void insertBlockCode(const QString &str);
+    /*!
+     */
+    void information(const QString &str);
 
 private:
     struct MessageLayout {

@@ -85,7 +85,7 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         painter->save();
         painter->setPen(QPen(Qt::NoPen));
 
-        auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [&index](const IndexBackgroundColor &key) {
+        const auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [&index](const IndexBackgroundColor &key) {
             return key.index == index;
         });
         QColor messageBackgroundColor;
@@ -654,7 +654,7 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                         QClipboard *clipboard = QGuiApplication::clipboard();
                         clipboard->setText(blockCodeStr, QClipboard::Clipboard);
                         clipboard->setText(blockCodeStr, QClipboard::Selection);
-                        KMessageBox::information(mListView, i18n("Block Code copied."), i18nc("@title", "Copy Block Code"));
+                        Q_EMIT information(i18n("Block Code copied."));
                     } else if (link.startsWith(TextUtils::TextUtilsSyntaxHighlighter::insertBlockTextHref())) {
                         QString identifier = link;
                         identifier.remove(TextUtils::TextUtilsSyntaxHighlighter::insertBlockTextHref());

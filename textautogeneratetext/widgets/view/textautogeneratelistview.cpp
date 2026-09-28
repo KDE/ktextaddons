@@ -43,6 +43,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
                     }
                 });
         connect(delegate, &TextAutoGenerateListViewDelegate::insertBlockCode, mManager, &TextAutoGenerateText::TextAutoGenerateManager::insertBlockCode);
+        connect(delegate, &TextAutoGenerateListViewDelegate::information, mManager, &TextAutoGenerateText::TextAutoGenerateManager::information);
     }
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);
