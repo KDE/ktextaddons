@@ -27,3 +27,4 @@ macro(add_whatsnewng_test _source)
 endmacro()
 
 add_whatsnewng_test(whatsnewngutilstest.cpp)
+add_whatsnewng_test(whatsnewcomboboxwidgettest.cpp)

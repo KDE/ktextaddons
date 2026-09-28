@@ -5,7 +5,7 @@
 */
 
 #include "whatsnewngwidget.h"
-#include "whatsnew/whatsnewcomboboxwidget.h"
+#include "whatsnewng/whatsnewcomboboxwidget.h"
 #include "whatsnewng/whatsnewngutils.h"
 #include <KAboutData>
 #include <KLocalizedString>

@@ -47,18 +47,6 @@ target_sources(
         needupdateversion/needupdateparsehtmljob.h
         needupdateversion/needupdateparsehtmlutil.cpp
         needupdateversion/needupdateparsehtmlutil.h
-        whatsnew/whatsnewdialog.h
-        whatsnew/whatsnewdialog.cpp
-        whatsnew/whatsnewwidget.h
-        whatsnew/whatsnewwidget.cpp
-        whatsnew/whatsnewmessagewidget.h
-        whatsnew/whatsnewmessagewidget.cpp
-        whatsnew/whatsnewcomboboxwidget.h
-        whatsnew/whatsnewcomboboxwidget.cpp
-        whatsnew/whatsnewtranslationsbase.h
-        whatsnew/whatsnewtranslationsbase.cpp
-        whatsnew/whatsnewinfo.h
-        whatsnew/whatsnewinfo.cpp
         verifynewversion/verifynewversionutils.cpp
         verifynewversion/verifynewversionutils.h
         verifynewversion/verifynewversionwidget.cpp
@@ -114,6 +102,8 @@ target_sources(
         whatsnewng/whatsnewmessagengwidget.h
         whatsnewng/whatsnewngutils.h
         whatsnewng/whatsnewngutils.cpp
+        whatsnewng/whatsnewcomboboxwidget.h
+        whatsnewng/whatsnewcomboboxwidget.cpp
 )
 
 target_link_libraries(
@@ -227,23 +217,12 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasecompletionlineedit_HEADERS
     RELATIVE completionlineedit
 )
 
-ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
-    HEADER_NAMES
-    WhatsNewComboBoxWidget
-    WhatsNewDialog
-    WhatsNewInfo
-    WhatsNewTranslationsBase
-    WhatsNewMessageWidget
-    REQUIRED_HEADERS TextAddonsWidgets_whatsnew_HEADERS
-    PREFIX TextAddonsWidgets
-    RELATIVE whatsnew
-)
-
 ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
         HEADER_NAMES
         WhatsNewNgDialog
         WhatsNewMessageNgWidget
         WhatsNewNgUtils
+        WhatsNewComboBoxWidget
         REQUIRED_HEADERS TextAddonsWidgets_whatsnewng_HEADERS
         PREFIX TextAddonsWidgets
         RELATIVE whatsnewng
@@ -289,7 +268,6 @@ set(TEXTAUTOGENERATE_INCLUDES_FILES
     ${TextAddonsWidgets_HEADERS}
     ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
     ${TextAddonsWidgets_verifynewversion_HEADERS}
-    ${TextAddonsWidgets_whatsnew_HEADERS}
     ${TextAddonsWidgets_quicksearchbar_HEADERS}
     ${TextAddonsWidgets_plugins_HEADERS}
     ${TextAddonsWidgets_misc_HEADERS}
@@ -310,7 +288,6 @@ set(TextAddonsWidgets_List_CamelCase_HEADERS
     ${TextAddonsWidgets_CamelCase_HEADERS}
     ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
     ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
-    ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
     ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
     ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
     ${TextAddonsWidgets_Camelcasemisc_HEADERS}
@@ -359,7 +336,6 @@ if(BUILD_TESTING)
     add_subdirectory(tests)
     add_subdirectory(needupdateversion/tests)
     add_subdirectory(needupdateversion/autotests)
-    add_subdirectory(whatsnew/autotests)
     add_subdirectory(quicksearchbar/autotests)
     add_subdirectory(whatsnewng/autotests)
     add_subdirectory(misc/autotests)

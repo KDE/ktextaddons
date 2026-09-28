@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "whatsnewcomboboxwidgettest.h"
-#include "whatsnew/whatsnewcomboboxwidget.h"
+#include "whatsnewng/whatsnewcomboboxwidget.h"
 #include <KSeparator>
 #include <QComboBox>
 #include <QLabel>
