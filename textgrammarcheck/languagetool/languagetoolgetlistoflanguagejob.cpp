@@ -8,6 +8,7 @@
 
 #include "textgrammarcheck_debug.h"
 
+#include <KLocalizedString>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 using namespace Qt::Literals::StringLiterals;
@@ -31,6 +32,7 @@ void LanguageToolGetListOfLanguageJob::start()
 {
     if (!canStart()) {
         qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to start LanguageToolGetListOfLanguageJob";
+        Q_EMIT error(i18n("Url is empty."));
         deleteLater();
         return;
     }
