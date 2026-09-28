@@ -80,7 +80,6 @@ void OpenSavedFileFolderWidget::slotOpenFile()
     for (const auto &url : std::as_const(mUrls)) {
         auto job = new KIO::OpenUrlJob(url);
         job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-        job->setDeleteTemporaryFile(true);
         connect(job, &KIO::OpenUrlJob::result, this, [this](KJob *job) {
             if (job->error() != KIO::ERR_USER_CANCELED) {
                 KMessageBox::error(this, job->errorString(), i18n("Unable to open the attachment."));
