@@ -154,12 +154,12 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     }
     case ChatRoles::Persistence: {
         chatElement.setPersistence(value.toBool() ? TextAutoGenerateChat::Persistence::Persisted : TextAutoGenerateChat::Persistence::Ephemeral);
-        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Persistence});
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Persistence, TextAutoGenerateChatsModel::ChatRoles::Section});
         return true;
     }
     case ChatRoles::Favorite: {
         chatElement.setFavorite(value.toBool());
-        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Favorite, TextAutoGenerateChatsModel::ChatRoles::Section});
         return true;
     }
     case ChatRoles::InProgress: {
