@@ -494,7 +494,8 @@ bool TextAutoGenerateListViewDelegate::helpEvent(QHelpEvent *helpEvent, QAbstrac
                 QToolTip::showText(helpEvent->globalPos(), formattedTooltip, view);
                 return true;
             }
-            return true;
+            QToolTip::hideText();
+            return false;
         }
         if (layout.editedIconRect.contains(helpEventPos)) {
             QToolTip::showText(helpEvent->globalPos(), i18nc("@info:tooltip", "Edit…"), view);

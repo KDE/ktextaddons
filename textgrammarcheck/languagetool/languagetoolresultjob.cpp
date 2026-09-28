@@ -55,11 +55,13 @@ void LanguageToolResultJob::start()
 {
     switch (canStartError()) {
     case LanguageToolResultJob::JobError::EmptyText:
+        deleteLater();
         return;
     case LanguageToolResultJob::JobError::UrlNotDefined:
     case LanguageToolResultJob::JobError::NetworkManagerNotDefined:
     case LanguageToolResultJob::JobError::LanguageNotDefined:
         qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to start language tool";
+        deleteLater();
         return;
     case LanguageToolResultJob::JobError::NotError:
         break;
