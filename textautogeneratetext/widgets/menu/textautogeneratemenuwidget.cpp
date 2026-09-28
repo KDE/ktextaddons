@@ -17,8 +17,9 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuWidget::TextAutoGenerateMenuWidget(QObject *parent)
-    : TextAutoGenerateMenuWidget(new TextAutoGenerateMenuTextManager(parent), parent)
+    : TextAutoGenerateMenuWidget(new TextAutoGenerateMenuTextManager, parent)
 {
+    mMenuTextManager->setParent(this);
 }
 
 TextAutoGenerateMenuWidget::TextAutoGenerateMenuWidget(TextAutoGenerateMenuTextManager *manager, QObject *parent)

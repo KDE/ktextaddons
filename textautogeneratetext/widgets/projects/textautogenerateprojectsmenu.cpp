@@ -18,6 +18,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateProjectsMenu::TextAutoGenerateProjectsMenu(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QMenu(parent)
     , mManager(manager)
+    , mProjectsGroup(new QActionGroup(this))
 {
     setObjectName(u"TextAutoGenerateProjectsMenu"_s);
     setTitle(i18nc("@title:menu", "Project"));
@@ -45,14 +46,13 @@ void TextAutoGenerateProjectsMenu::updateMenu()
         const QList<TextAutoGenerateProject> projects = mManager->textAutoGenerateProjectsManager()->projects();
         if (!projects.isEmpty()) {
             // A chat belongs to at most one project, so the actions are exclusive.
-            auto projectsGroup = new QActionGroup(this);
             const QByteArray assignedProject = mManager->chatProject(mChatId);
 
             auto noProjectAction = new QAction(i18nc("@action", "No Project"), this);
             noProjectAction->setObjectName(u"noProjectAction"_s);
             noProjectAction->setCheckable(true);
             noProjectAction->setChecked(assignedProject.isEmpty());
-            projectsGroup->addAction(noProjectAction);
+            mProjectsGroup->addAction(noProjectAction);
             connect(noProjectAction, &QAction::triggered, this, [this]() {
                 slotAssignProject({});
             });
@@ -64,7 +64,7 @@ void TextAutoGenerateProjectsMenu::updateMenu()
                 auto projectAction = new QAction(QIcon::fromTheme(project.iconName()), project.name(), this);
                 projectAction->setCheckable(true);
                 projectAction->setChecked(project.identifier() == assignedProject);
-                projectsGroup->addAction(projectAction);
+                mProjectsGroup->addAction(projectAction);
                 const QByteArray identifier = project.identifier();
                 connect(projectAction, &QAction::triggered, this, [this, identifier]() {
                     slotAssignProject(identifier);
