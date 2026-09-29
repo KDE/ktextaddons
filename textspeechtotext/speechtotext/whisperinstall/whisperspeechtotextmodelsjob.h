@@ -71,5 +71,4 @@ private:
 };
 
 Q_DECLARE_TYPEINFO(WhisperSpeechToTextModelsJob::ModelInfo, Q_RELOCATABLE_TYPE);
-Q_DECLARE_METATYPE(WhisperSpeechToTextModelsJob::ModelInfo)
 SPEECHTOTEXTWHISPERINSTALL_EXPORT QDebug operator<<(QDebug d, const WhisperSpeechToTextModelsJob::ModelInfo &t);
