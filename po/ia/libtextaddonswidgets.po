@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:43+0000\n"
+"POT-Creation-Date: 2026-09-29 00:43+0000\n"
 "PO-Revision-Date: 2026-09-14 17:29+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -137,7 +137,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Aperi dossier ubi le file esseva salveguardate"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "Incapace a aperir le attachamento."
@@ -146,11 +146,6 @@ msgstr "Incapace a aperir le attachamento."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Reinitiar si necessari per applicar le modificationes."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -260,58 +255,27 @@ msgstr ""
 msgid "Check New Version"
 msgstr "Verifica nove version"
 
-#: whatsnew/whatsnewcomboboxwidget.cpp:31
+#: whatsnewng/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Version:"
 
-#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
-#, kde-format
-msgctxt "@title:window"
-msgid "What's new in %1"
-msgstr "Que es de novo in %1"
-
-#: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "(Show News)"
 msgstr "(Monstra Novas)"
 
-#: whatsnew/whatsnewmessagewidget.cpp:22
-#, kde-format
-msgid "What's new in %2. %1"
-msgstr "Que es de novo in %2. %1"
-
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
-#, kde-format
-msgid "All Versions"
-msgstr "Omne Versiones"
-
-#: whatsnew/whatsnewwidget.cpp:95
-#, kde-format
-msgid "Important changes since last version:"
-msgstr "Modificationes importante depost ultime version:"
-
-#: whatsnew/whatsnewwidget.cpp:100
-#, kde-format
-msgid "Some of the new features in this release include:"
-msgstr "Alcun del nove characteristicas in iste version include:"
-
-#: whatsnew/whatsnewwidget.cpp:105
-#, kde-format
-msgid "Some bug fixing:"
-msgstr "Alcun correction de faltas (bug)"
-
-#: whatsnew/whatsnewwidget.cpp:146
-#, kde-format
-msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
-
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %1. %2"
 msgstr "Que es de novo in %1. %2"
+
+#: whatsnewng/whatsnewngdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr "Que es de novo in %1"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -332,6 +296,29 @@ msgstr "<h3><i>Que es de novo in Version %1 (Non ancora liberate)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historia de Que es de novo</h1>"
+
+#: whatsnewng/whatsnewngwidget.cpp:51
+#, kde-format
+msgid "All Versions"
+msgstr "Omne Versiones"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "What's new in %2. %1"
+#~ msgstr "Que es de novo in %2. %1"
+
+#~ msgid "Important changes since last version:"
+#~ msgstr "Modificationes importante depost ultime version:"
+
+#~ msgid "Some of the new features in this release include:"
+#~ msgstr "Alcun del nove characteristicas in iste version include:"
+
+#~ msgid "Some bug fixing:"
+#~ msgstr "Alcun correction de faltas (bug)"
+
+#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#~ msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"

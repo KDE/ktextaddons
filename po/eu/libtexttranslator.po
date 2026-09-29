@@ -1,14 +1,14 @@
 # Translation for libtexttranslator.po to Euskara/Basque (eu).
 # Copyright (C) 2023-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2025, 2026.
 #
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-01.
-# Azken berrikuspena: 2028-08-27 — egoera ondua mantendu da.
+# Azken berrikuspena: 2026-08-27 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
 # Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md

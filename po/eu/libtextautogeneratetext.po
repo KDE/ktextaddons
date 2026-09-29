@@ -1,13 +1,13 @@
 # Translation for libtextautogeneratetext.po to Euskara/Basque (eu).
 # Copyright (C) 2025-2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2025-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2025-2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: Iñigo Salvador Azurmendi <xalba@ni.eus>, 2025, 2026.
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-01.
-# Azken berrikuspena: 2026-08-27 — egoera ondua mantendu da.
+# Azken berrikuspena: 2026-09-28 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
 # Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-27 00:43+0000\n"
-"PO-Revision-Date: 2026-08-27 22:02+0200\n"
+"POT-Creation-Date: 2026-09-29 00:43+0000\n"
+"PO-Revision-Date: 2026-09-28 21:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:35
 #, kde-format
@@ -58,11 +58,9 @@ msgid "New Chat..."
 msgstr "Berriketa berria…"
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "Orokorra"
+msgstr "Iragankorra"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -636,7 +634,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:517
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1385,7 +1383,7 @@ msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
 "discussion and coding tasks."
 msgstr ""
-"Nous Researchen eredu-familia ahaltsua, eztabaida zientifikoetan eta "
+"Nous Researchen eredu-familia ahaltsua, elkarrizketa zientifikoetan eta "
 "kodegintza-atazetan bikain aritzen dena."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:90
@@ -3048,7 +3046,7 @@ msgid "Enter a message"
 msgstr "Sartu mezu bat"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:504
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:505
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -3269,12 +3267,12 @@ msgctxt "@title"
 msgid "Remove"
 msgstr "Kendu"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:35
+#: widgets/menu/textautogeneratemenuwidget.cpp:36
 #, kde-format
 msgid "Ask AI…"
 msgstr "Galdetu AAri…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:67
+#: widgets/menu/textautogeneratemenuwidget.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
@@ -3299,31 +3297,25 @@ msgstr "Testu-pluginak:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "Proiektuak kudeatu"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "Eskaera gehitu…"
+msgstr "Proiektua gehitu…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "Aldatu…"
+msgstr "Proiektua aldatu…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "Eskaera kendu"
+msgstr "Proiektua kendu"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3331,61 +3323,55 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"Proiektu hau kendu nahi duzu (%1)? Haren berriketak mantendu egingo dira, "
+"proiekturik gabe."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "Eskaera kendu"
+msgstr "Proiektua kendu"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "Proiektua gehitu"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "Proiektua aldatu"
 
-#: widgets/projects/textautogenerateprojectsmenu.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#: widgets/projects/textautogenerateprojectsmenu.cpp:24
+#, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "Eskaera gehitu…"
+msgstr "Proiektua"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "Eskaera kendu"
+msgstr "Proiekturik ez"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "Eskaera gehitu…"
+msgstr "Proiektuak kudeatu…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr ""
+msgstr "Proiektuaren izena…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Ikonoa:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3427,24 +3413,22 @@ msgid "Remove Prompt"
 msgstr "Eskaera kendu"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "Eredu hau kendu nahi duzu (%1)?"
+msgstr "Eskaera hau kendu nahi duzu (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Eskaera kendu"
 
+# 2026-09-28 al. Trebetasuna hautagai ona da, baina AA ingurunean skill objektu tekniko bihurtzen ari da —sistemari gaitasun jakin bat ematen dion konfigurazio/definizio modukoa—, eta horrelakoetan gaitasuna ere aztertu beharko genuke. Kode-testuingurua ikusi gabe ez nuke oraindik gidarako skill → trebetasun finkatuko. Jokoetan dugun skill → trebetasun-maila beste kontzeptu bat da.
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "Trebetasuna"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3487,96 +3471,85 @@ msgstr "Garbitu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
-msgstr "Solasaldia datu-basean gorde"
+msgstr "Elkarrizketa datu-basean gorde"
 
 #: widgets/tags/textautogeneratemanagetagsdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "Etiketak kudeatu"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "Gehitu instantzia…"
+msgstr "Etiketa gehitu…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "Aldatu…"
+msgstr "Etiketa aldatu…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "Kendu"
+msgstr "Etiketa kendu"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "Instantzia hau kendu nahi duzu (%1)?"
+msgstr "Etiketa hau kendu nahi duzu (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "Kendu"
+msgstr "Etiketa kendu"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "Ez da etiketarik hautatu"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "Etiketa gehitu"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "Aldatu…"
+msgstr "Etiketa aldatu"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:35
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "Etiketak"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "Etiketak kudeatu..."
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
+msgstr "Etiketaren izena…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
 msgid "Color:"
-msgstr ""
+msgstr "Kolorea:"
 
-#: widgets/textautogeneratedialog.cpp:31
+#: widgets/textautogeneratedialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
@@ -3589,12 +3562,10 @@ msgid "New Chat"
 msgstr "Berriketa berria"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "Kendu elkarrizketa"
+msgstr "Elkarrizketa iragankorra"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
@@ -3612,7 +3583,7 @@ msgstr "Bilatu… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "Hautatutako etiketetako bat duten berriketak bakarrik erakutsi"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
@@ -3660,53 +3631,47 @@ msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Tresnak:"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:510
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Gelditu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:510
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr "Irakurri ozen"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:513
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:514
 #: widgets/view/textautogeneratedelegateutils.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiatu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:521
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:522
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Berritu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:525
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:526
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
 msgstr "Adarkatu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:658
 #, kde-format
 msgid "Block Code copied."
 msgstr "Kode-blokea kopiatu da."
-
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
-#, kde-format
-msgctxt "@title"
-msgid "Copy Block Code"
-msgstr "Kopiatu kode-blokea"
 
 #: widgets/view/images/textautogenerateshowimagedialog.cpp:36
 #, kde-format
@@ -3838,6 +3803,10 @@ msgstr "Ez da artxiborik aurkitu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Ez da mezurik aurkitu."
+
+#~ msgctxt "@title"
+#~ msgid "Copy Block Code"
+#~ msgstr "Kopiatu kode-blokea"
 
 #~ msgid "API OpenAI"
 #~ msgstr "OpenAI APIa"

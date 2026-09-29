@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:43+0000\n"
+"POT-Creation-Date: 2026-09-29 00:43+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -134,7 +134,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Otvoriť priečinok, kam bol uložený súbor"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "Nepodarilo sa otvoriť prílohu."
@@ -143,11 +143,6 @@ msgstr "Nepodarilo sa otvoriť prílohu."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Na uplatnenie zmien je potrebný reštart."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -256,58 +251,27 @@ msgstr ""
 msgid "Check New Version"
 msgstr "Skontrolovať novú verziu"
 
-#: whatsnew/whatsnewcomboboxwidget.cpp:31
+#: whatsnewng/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Verzia:"
 
-#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
-#, kde-format
-msgctxt "@title:window"
-msgid "What's new in %1"
-msgstr "Čo je nové v %1"
-
-#: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "(Show News)"
 msgstr "(Zobraziť novinky)"
 
-#: whatsnew/whatsnewmessagewidget.cpp:22
-#, kde-format
-msgid "What's new in %2. %1"
-msgstr "Čo je nové v %2. %1"
-
-#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
-#, kde-format
-msgid "All Versions"
-msgstr "Všetky verzie"
-
-#: whatsnew/whatsnewwidget.cpp:95
-#, kde-format
-msgid "Important changes since last version:"
-msgstr "Dôležité zmeny od poslednej verzie:"
-
-#: whatsnew/whatsnewwidget.cpp:100
-#, kde-format
-msgid "Some of the new features in this release include:"
-msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
-
-#: whatsnew/whatsnewwidget.cpp:105
-#, kde-format
-msgid "Some bug fixing:"
-msgstr "Niektoré opravy chýb:"
-
-#: whatsnew/whatsnewwidget.cpp:146
-#, kde-format
-msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
-
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %1. %2"
 msgstr "Čo je nové v %1. %2"
+
+#: whatsnewng/whatsnewngdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr "Čo je nové v %1"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -328,6 +292,29 @@ msgstr "<h3><i>Čo je nové vo verzii %1 (zatiaľ nevydané)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>História noviniek</h1>"
+
+#: whatsnewng/whatsnewngwidget.cpp:51
+#, kde-format
+msgid "All Versions"
+msgstr "Všetky verzie"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "What's new in %2. %1"
+#~ msgstr "Čo je nové v %2. %1"
+
+#~ msgid "Important changes since last version:"
+#~ msgstr "Dôležité zmeny od poslednej verzie:"
+
+#~ msgid "Some of the new features in this release include:"
+#~ msgstr "Niektoré z nových funkcií v tomto vydaní zahŕňajú:"
+
+#~ msgid "Some bug fixing:"
+#~ msgstr "Niektoré opravy chýb:"
+
+#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#~ msgstr "<h1><i> Verzia %1 </i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "Verzia %1"
