@@ -37,6 +37,7 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
             if (error.error != QJsonParseError::NoError) {
                 qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG)
                     << "Failed to parse JSON file" << mInfo.filename << "error:" << error.errorString() << "at offset" << error.offset;
+                Q_EMIT importFailed(i18n("Failed to parse JSon file: %1", mInfo.filename));
             } else {
                 const QJsonObject obj = doc.object();
                 const QString title = obj[u"title"_s].toString();
