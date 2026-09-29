@@ -316,7 +316,7 @@ void TextToSpeechConfigWidget::checkKokoroEngine(const QString newEngineName)
         mKokoroInstallMessageWidget->animatedShow();
     });
     connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::needToReinstall, this, [this] {
-        mKokoroInstallMessageWidget->setText(i18n("Kokoro installation is broken. Please verify which you sysadmin."));
+        mKokoroInstallMessageWidget->setText(i18n("Kokoro installation is broken. Please verify with your sysadmin."));
         mKokoroInstallMessageWidget->animatedShow();
     });
     job->start();
