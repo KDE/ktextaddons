@@ -26,8 +26,8 @@ McpProtocolInitializedNotification McpProtocolInitializedNotification::fromJson(
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    if (obj.value("method"_L1).toString() != "notifications/cancelled"_L1) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/cancelled', got: " << obj.value("method"_L1).toString();
+    if (obj.value("method"_L1).toString() != "notifications/initialized"_L1) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/initialized', got: " << obj.value("method"_L1).toString();
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
