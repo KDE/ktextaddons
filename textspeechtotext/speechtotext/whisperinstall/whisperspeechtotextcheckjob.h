@@ -55,4 +55,3 @@ Q_SIGNALS:
 };
 
 Q_DECLARE_TYPEINFO(WhisperSpeechToTextCheckJob::CheckResult, Q_RELOCATABLE_TYPE);
-Q_DECLARE_METATYPE(WhisperSpeechToTextCheckJob::CheckResult)

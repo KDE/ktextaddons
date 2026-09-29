@@ -66,5 +66,4 @@ private:
     bool mObsolete = false;
 };
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskSpeechToTextInfo &t);
-Q_DECLARE_METATYPE(VoskSpeechToTextInfo)
 Q_DECLARE_TYPEINFO(VoskSpeechToTextInfo, Q_RELOCATABLE_TYPE);
