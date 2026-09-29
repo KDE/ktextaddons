@@ -82,13 +82,13 @@ QJsonObject McpProtocolCancelTaskResult::toJson(const McpProtocolCancelTaskResul
     obj["status"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(boolean.status());
     obj["taskId"_L1] = boolean.taskId();
     if (boolean.pollInterval().has_value()) {
-        obj["pollInterval"_L1], *boolean.pollInterval();
+        obj["pollInterval"_L1] = *boolean.pollInterval();
     }
     if (boolean.statusMessage().has_value()) {
         obj["statusMessage"_L1] = *boolean.statusMessage();
     }
     if (boolean.ttl().has_value()) {
-        obj["ttl"_L1], *boolean.ttl();
+        obj["ttl"_L1] = *boolean.ttl();
     } else {
         obj["ttl"_L1] = QJsonValue::Null;
     }
