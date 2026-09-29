@@ -109,6 +109,7 @@ void OllamaModelInstalledWidget::slotRemoveModel()
 {
     if (const auto currentIndex = mOllamaModelInstalledListView->currentIndex(); currentIndex.isValid()) {
         const QString modelGeneratedName = currentIndex.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toString();
+        const QString modelName = currentIndex.data(OllamaModelInstalledInfosModel::OriginalName).toString();
         if (KMessageBox::warningTwoActions(this,
                                            i18n("Do you want to remove this model (%1)?", modelGeneratedName),
                                            i18nc("@title", "Remove Model"),
@@ -116,7 +117,6 @@ void OllamaModelInstalledWidget::slotRemoveModel()
                                            KStandardGuiItem::cancel())
             == KMessageBox::PrimaryAction) {
             if (mManager) {
-                const QString modelName = currentIndex.data(OllamaModelInstalledInfosModel::OriginalName).toString();
                 mManager->deleteModel(modelName);
                 // mRemoveModelButton->setEnabled(false); // TODO verify it.
             }
