@@ -95,10 +95,11 @@ void GoogleEnginePlugin::slotTranslateFinished(QNetworkReply *reply)
             continue;
         }
         for (const QVariant &level1 : listLevel0) {
-            if (level1.toList().size() <= 2) {
+            const auto level1List = level1.toList();
+            if (level1List.size() <= 2) {
                 continue;
             }
-            appendResult(level1.toList().at(0).toString());
+            appendResult(level1List.at(0).toString());
         }
     }
     Q_EMIT translateDone();
