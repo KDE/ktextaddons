@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2026-09-22 23:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -141,7 +141,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Abrir la carpeta donde se ha guardado el archivo"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "No se ha podido abrir el adjunto."
@@ -150,11 +150,6 @@ msgstr "No se ha podido abrir el adjunto."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Es necesario reiniciar para aplicar los cambios."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "…"
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -336,3 +331,6 @@ msgstr "<h3><i>Novedades de la versión %1 (no publicada)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de novedades</h1>"
+
+#~ msgid "..."
+#~ msgstr "…"

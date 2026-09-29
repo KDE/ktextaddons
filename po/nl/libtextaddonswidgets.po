@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2026-09-23 14:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -137,7 +137,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Map openen waar bestand is opgeslagen"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "Kon de bijlage niet openen."
@@ -146,11 +146,6 @@ msgstr "Kon de bijlage niet openen."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Opnieuw opstarten is nodig om de wijzigingen toe te passen."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -332,6 +327,9 @@ msgstr "<h3><i>Wat is er nieuw in versie %1 (niet uitgegeven)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Geschiedenis van Wat is er nieuw</h1>"
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgid "Version %1"
 #~ msgstr "Versie %1"

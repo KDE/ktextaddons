@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2025-01-24 09:26+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -330,6 +330,11 @@ msgstr "שפה:"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "ריענון"
+
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#, kde-format
+msgid "Url is empty."
+msgstr ""
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

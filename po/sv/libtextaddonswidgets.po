@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2026-09-27 10:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -137,7 +137,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Öppna katalog där filen sparades"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "Kan inte öppna bilagan."
@@ -146,11 +146,6 @@ msgstr "Kan inte öppna bilagan."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Omstart krävs för att ändringarna ska verkställas."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -330,6 +325,9 @@ msgstr "<h3><i>Vad är nytt i version %1 (inte utgiven)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Vad är nytt historik</h1>"
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"

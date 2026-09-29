@@ -1,13 +1,14 @@
 # Translation for libtextautogeneratetextmcpprotocol.po to Euskara/Basque (eu).
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2026 Iñigo Salvador Azurmendi <xalba@ni.eus>
 #
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-01.
+# Azken berrikuspena: 2026-09-28 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
 # Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
@@ -16,7 +17,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 19:09+0000\n"
-"PO-Revision-Date: 2026-07-30 18:04+0200\n"
+"PO-Revision-Date: 2026-09-28 21:21+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 # SSE transport: SSE garraioa
 # MCPko SSE garraioa (Server-Sent Events)
@@ -82,56 +83,52 @@ msgstr "Argumentuak:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "Neurrira ipinitako goiburua gehitu"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgid "Header:"
-msgstr ""
+msgstr "Goiburua:"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr ""
+msgstr "Goiburua definitu…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "Gehitu"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr ""
+msgstr "Aldatu"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Zerbitzaria kendu"
+msgstr "Kendu"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:58
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "Goiburu hau ezabatu nahi duzula ziur zaude?"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Zerbitzaria kendu"
+msgstr "Goiburua kendu"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
 msgid "Headers:"
-msgstr ""
+msgstr "Goiburuak:"
 
 #: widgets/server/mcpserverlistview.cpp:51
 #, kde-format

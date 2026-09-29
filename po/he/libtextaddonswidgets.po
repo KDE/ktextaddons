@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2026-06-04 08:26+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -138,7 +138,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "פתיחת התיקייה בה נשמר הקובץ"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "לא ניתן לפתוח את הצרופה."
@@ -147,11 +147,6 @@ msgstr "לא ניתן לפתוח את הצרופה."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "יש להפעיל מחדש כדי להחיל את השינויים."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "…"
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -333,6 +328,9 @@ msgstr "<h1><i> גרסה %1 (טרם יצאה לאור)</i></h1><hr/><br>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr ""
+
+#~ msgid "..."
+#~ msgstr "…"
 
 #~ msgid "Version %1"
 #~ msgstr "גרסה %1"

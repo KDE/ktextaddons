@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail_editorgrammar_plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2023-02-11 18:35+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -331,6 +331,11 @@ msgstr "Jazyk:"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Obnoviť"
+
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#, kde-format
+msgid "Url is empty."
+msgstr ""
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

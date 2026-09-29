@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2026-09-27 23:41+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -139,7 +139,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Otevřít složku, do které byl soubor uložen"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "Přílohu nelze otevřít."
@@ -148,11 +148,6 @@ msgstr "Přílohu nelze otevřít."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Pro provedení změn je potřeba restartovat."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -333,6 +328,9 @@ msgstr "<h3><i>Co je nového ve verzi %1 (nevydáno)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historie novinek</h1>"
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgid "Version %1"
 #~ msgstr "Verze %1"

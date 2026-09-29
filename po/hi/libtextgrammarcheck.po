@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -330,6 +330,11 @@ msgstr "भाषा:"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "ताज़ा करना"
+
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#, kde-format
+msgid "Url is empty."
+msgstr ""
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

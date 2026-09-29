@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2023-12-08 20:09+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -134,7 +134,7 @@ msgctxt "@action"
 msgid "Open folder where file was saved"
 msgstr "Otvoriť priečinok, kam bol uložený súbor"
 
-#: opensavedfilefolderwidget.cpp:86
+#: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
 msgstr "Nepodarilo sa otvoriť prílohu."
@@ -143,11 +143,6 @@ msgstr "Nepodarilo sa otvoriť prílohu."
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Na uplatnenie zmien je potrebný reštart."
-
-#: plugins/configurepluginswidget.cpp:159
-#, kde-format
-msgid "..."
-msgstr "..."
 
 #: plugins/configurepluginswidget.cpp:161
 #, kde-format
@@ -331,6 +326,9 @@ msgstr "<h1><i> Verzia %1 (Zatiaľ nevydané)</i></h1><hr/><br>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr ""
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgid "Version %1"
 #~ msgstr "Verzia %1"

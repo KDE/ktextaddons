@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-09-29 02:52+0000\n"
 "PO-Revision-Date: 2024-10-16 20:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -330,6 +330,11 @@ msgstr "Kieli:"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Virkistä"
+
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#, kde-format
+msgid "Url is empty."
+msgstr ""
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
