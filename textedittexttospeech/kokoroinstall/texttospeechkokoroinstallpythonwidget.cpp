@@ -49,15 +49,18 @@ TextToSpeechKokoroInstallPythonWidget::TextToSpeechKokoroInstallPythonWidget(QWi
     hboxLayout->addWidget(mKokoroVoiceComboBox, 1);
     auto pushButton = new QPushButton(i18n("Download Voice(s)"), this);
     hboxLayout->addWidget(pushButton);
-    connect(pushButton, &QPushButton::clicked, this, [this]() {
+    connect(pushButton, &QPushButton::clicked, this, [this, pushButton]() {
+        pushButton->setEnabled(false);
         auto job = new TextToSpeechKokoroDownloadVoiceJob(this);
         job->setVoices(mKokoroVoiceComboBox->selectedVoices());
         Q_EMIT installInProgress(true);
-        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesDone, this, [this]() {
+        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesDone, this, [this, pushButton]() {
             appendMessage(i18n("Download Voices done."));
+            pushButton->setEnabled(true);
             Q_EMIT installInProgress(false);
         });
-        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesFailed, this, [this]() {
+        connect(job, &TextToSpeechKokoroDownloadVoiceJob::downloadVoicesFailed, this, [this, pushButton]() {
+            pushButton->setEnabled(true);
             appendMessage(i18n("Unable to download voice."));
             Q_EMIT installInProgress(false);
         });
