@@ -6,6 +6,7 @@
 
 #include "textautogenerateimportchatbasejob.h"
 #include "textautogeneratetextcore_debug.h"
+#include <KLocalizedString>
 using namespace TextAutoGenerateText;
 TextAutoGenerateImportChatBaseJob::TextAutoGenerateImportChatBaseJob(QObject *parent)
     : QObject{parent}
@@ -33,6 +34,7 @@ void TextAutoGenerateImportChatBaseJob::start()
 {
     if (!canStart()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to start job";
+        Q_EMIT importFailed(i18n("Impossible to import file."));
         deleteLater();
         return;
     }
