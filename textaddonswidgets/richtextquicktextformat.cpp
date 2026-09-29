@@ -193,9 +193,6 @@ bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
         if (watched == mEditor->viewport()) {
             if (event->type() == QEvent::Move || event->type() == QEvent::Resize) {
                 if (isVisible()) {
-                    if (mUpdatePositionTimer->isActive()) {
-                        mUpdatePositionTimer->stop();
-                    }
                     mUpdatePositionTimer->start();
                 }
             } else if (event->type() == QEvent::WindowDeactivate) {

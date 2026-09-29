@@ -107,9 +107,6 @@ void OpenSavedFileFolderWidget::slotHideWarning()
 
 void OpenSavedFileFolderWidget::slotShowWarning()
 {
-    if (mTimer->isActive()) {
-        mTimer->stop();
-    }
     mTimer->start();
     animatedShow();
 }
