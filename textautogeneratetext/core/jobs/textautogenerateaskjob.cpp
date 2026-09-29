@@ -22,6 +22,10 @@ bool TextAutoGenerateAskJob::canStart() const
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Manager is null! It's a bug";
         return false;
     }
+    if (!mManager->textAutoGeneratePlugin()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "plugin is null! It's a bug";
+        return false;
+    }
     if (mText.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Text is empty! It's a bug";
         return false;
