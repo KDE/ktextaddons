@@ -66,7 +66,7 @@ void OllamaOnlineManager::loadModels()
         }
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "OllamaOnlineManager::loadModels Json: " << json;
+        // qCWarning(AUTOGENERATETEXT_OLLAMAONLINE_LOG) << "OllamaOnlineManager::loadModels Json: " << json;
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
