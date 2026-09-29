@@ -68,8 +68,8 @@ bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &le
     }
     // assumes that we have a section → channels hierarchy
     if (left.parent().isValid() && right.parent().isValid()) {
-        const qint64 leftDateTime = sourceModel()->data(left, TextAutoGenerateChatsModel::DateTime).toDouble();
-        const qint64 rightDateTime = sourceModel()->data(right, TextAutoGenerateChatsModel::DateTime).toDouble();
+        const qint64 leftDateTime = sourceModel()->data(left, TextAutoGenerateChatsModel::DateTime).toLongLong();
+        const qint64 rightDateTime = sourceModel()->data(right, TextAutoGenerateChatsModel::DateTime).toLongLong();
         const bool leftFavorite = sourceModel()->data(left, TextAutoGenerateChatsModel::Favorite).toBool();
         const bool rightFavorite = sourceModel()->data(right, TextAutoGenerateChatsModel::Favorite).toBool();
         if (leftFavorite && (leftFavorite == rightFavorite)) {
