@@ -37,7 +37,7 @@ McpProtocolGetTaskPayloadRequest::Params McpProtocolGetTaskPayloadRequest::Param
 {
     McpProtocolGetTaskPayloadRequest::Params params;
     params.setTaskId(obj.value("taskId"_L1).toString());
-    return {};
+    return params;
 }
 
 QJsonObject McpProtocolGetTaskPayloadRequest::Params::toJson(const McpProtocolGetTaskPayloadRequest::Params &image)
