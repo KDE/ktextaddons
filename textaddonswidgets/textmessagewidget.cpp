@@ -63,9 +63,11 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
     switch (type) {
     case KMessageWidget::MessageType::Positive:
         mMessageWidget->setMessageType(KMessageWidget::Positive);
+        mMessageWidget->setIcon(QIcon());
         break;
     case KMessageWidget::MessageType::Information:
         mMessageWidget->setMessageType(KMessageWidget::Information);
+        mMessageWidget->setIcon(QIcon());
         break;
     case KMessageWidget::MessageType::Warning:
         mMessageWidget->setMessageType(KMessageWidget::Warning);
