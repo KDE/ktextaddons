@@ -13,7 +13,7 @@ using namespace TextEditTextToSpeech;
 class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechContainerWidgetPrivate
 {
 public:
-    TextToSpeechContainerWidgetPrivate(TextToSpeechContainerWidget *q)
+    explicit TextToSpeechContainerWidgetPrivate(TextToSpeechContainerWidget *q)
         : mainLayout(new QHBoxLayout(q))
     {
         mainLayout->setObjectName(u"mainLayout"_s);

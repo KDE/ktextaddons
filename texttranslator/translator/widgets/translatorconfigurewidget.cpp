@@ -17,7 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 class Q_DECL_HIDDEN TextTranslator::TranslatorConfigureWidget::TranslatorConfigureWidgetPrivate
 {
 public:
-    TranslatorConfigureWidgetPrivate(TranslatorConfigureWidget *parent)
+    explicit TranslatorConfigureWidgetPrivate(TranslatorConfigureWidget *parent)
         : mEngineConfigureComboWidget(new TranslatorConfigureComboWidget(parent))
     {
     }
