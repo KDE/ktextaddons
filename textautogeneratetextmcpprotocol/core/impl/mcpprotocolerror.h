@@ -15,7 +15,6 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolError
 {
-    Q_GADGET
 public:
     /*!
      */
