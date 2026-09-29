@@ -182,9 +182,18 @@ int FindUtils::replaceAll(QTextDocument *document, const QRegularExpression &reg
     while (!c.isNull()) {
         c = document->find(regExp, c, flags);
         if (!c.isNull()) {
+            const bool emptyMatch = c.selectionStart() == c.selectionEnd();
             // find() selects found text, and insertText() replaces selection
             c.insertText(replaceWidget);
             count++;
+            // An empty match (^, $, x*, \b...) would be found again at the same position: step over one
+            // character so that the search makes progress, and stop at the end of the document.
+            if (emptyMatch) {
+                if (c.atEnd()) {
+                    break;
+                }
+                c.movePosition(QTextCursor::NextCharacter);
+            }
         } else {
             break;
         }
