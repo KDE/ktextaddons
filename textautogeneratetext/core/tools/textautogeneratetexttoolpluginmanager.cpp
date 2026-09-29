@@ -14,7 +14,6 @@
 
 #include <KLocalizedString>
 #include <KPluginFactory>
-#include <KPluginMetaData>
 #include <QFileInfo>
 #include <QSet>
 using namespace TextAutoGenerateText;
