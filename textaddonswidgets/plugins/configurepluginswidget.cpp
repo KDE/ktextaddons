@@ -152,8 +152,7 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
             if (data.mHasConfigureDialog) {
                 auto but = new QToolButton(mTreePluginWidget);
                 auto act = new QAction(but);
-                const QStringList actData{configureGroupName, data.mIdentifier};
-                act->setData(actData);
+                act->setData(QStringList{configureGroupName, data.mIdentifier});
                 but->setDefaultAction(act);
                 but->setIcon(QIcon::fromTheme(u"configure"_s));
                 but->setText(u"..."_s);
