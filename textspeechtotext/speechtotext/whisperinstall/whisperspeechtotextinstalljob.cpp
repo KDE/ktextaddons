@@ -7,7 +7,7 @@
 #include "whisperspeechtotextinstalljob.h"
 #include "speechtotextwhisperinstall_lib_debug.h"
 #include "whisperspeechtotextutils.h"
-
+#include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 
 WhisperSpeechToTextInstallJob::WhisperSpeechToTextInstallJob(QObject *parent)
@@ -53,7 +53,7 @@ void WhisperSpeechToTextInstallJob::start()
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
         // finished() is not emitted when the process could not be started at all.
         if (error == QProcess::FailedToStart) {
-            failed(u"Unable to start "_s + mProcess->program());
+            failed(i18n("Unable to start %1", mProcess->program()));
         }
     });
     installNextModule();
@@ -73,7 +73,7 @@ void WhisperSpeechToTextInstallJob::installNextModule()
 void WhisperSpeechToTextInstallJob::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     if (exitStatus != QProcess::NormalExit || exitCode != 0) {
-        failed(u"Unable to install module. Exit code: "_s + QString::number(exitCode));
+        failed(i18n("Unable to install module. Exit code: %1", QString::number(exitCode)));
         return;
     }
     installNextModule();
