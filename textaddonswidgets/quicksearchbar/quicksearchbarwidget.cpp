@@ -82,7 +82,7 @@ bool QuickSearchBarWidget::event(QEvent *e)
             }
             if (kev->modifiers() & Qt::ShiftModifier) {
                 mQuickSearchBar->slotFindPrev();
-            } else if (kev->modifiers() == Qt::NoModifier) {
+            } else if ((kev->modifiers() & ~Qt::KeypadModifier) == Qt::NoModifier) {
                 mQuickSearchBar->slotFindNext();
             }
             return true;
