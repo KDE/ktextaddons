@@ -16,7 +16,6 @@
 #include <QRegularExpression>
 #include <QUrlQuery>
 #include <TextTranslator/TranslatorEngineAccessManager>
-#include <qregularexpression.h>
 
 using namespace Qt::Literals::StringLiterals;
 GoogleEnginePlugin::GoogleEnginePlugin(QObject *parent)
