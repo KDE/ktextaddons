@@ -79,7 +79,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, OllamaPlugi
 
     mPort->setObjectName(u"mPort"_s);
     mPort->setMinimum(1);
-    mPort->setMaximum(99999);
+    mPort->setMaximum(65535);
     formLayout->addRow(i18n("Port:"), mPort);
 
     auto ollamaWidget = new QWidget(this);
