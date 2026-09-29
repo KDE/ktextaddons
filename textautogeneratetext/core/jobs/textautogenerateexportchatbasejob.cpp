@@ -6,6 +6,7 @@
 
 #include "textautogenerateexportchatbasejob.h"
 #include "textautogeneratetextcore_debug.h"
+#include <KLocalizedString>
 using namespace TextAutoGenerateText;
 
 TextAutoGenerateExportChatBaseJob::TextAutoGenerateExportChatBaseJob(QObject *parent)
@@ -34,6 +35,8 @@ void TextAutoGenerateExportChatBaseJob::start()
 {
     if (!canStart()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to start job";
+        Q_EMIT exportFailed(i18n("Impossible to export file."));
+
         deleteLater();
         return;
     }
