@@ -20,8 +20,8 @@ OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, con
     mainLayout->setContentsMargins({});
 
     auto infoLayout = new QVBoxLayout;
-    mainLayout->setObjectName(u"infoLayout"_s);
-    mainLayout->setContentsMargins({});
+    infoLayout->setObjectName(u"infoLayout"_s);
+    infoLayout->setContentsMargins({});
 
     auto labelTag = new QLabel(tagName, this);
     labelTag->setObjectName(u"labelTag"_s);
