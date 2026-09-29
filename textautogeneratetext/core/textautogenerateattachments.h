@@ -33,7 +33,7 @@ public:
      * Constructs a copy of the TextAutoGenerateAttachments object from another object.
      * \param other The TextAutoGenerateAttachments object to copy from
      */
-    explicit TextAutoGenerateAttachments(const TextAutoGenerateAttachments &other);
+    TextAutoGenerateAttachments(const TextAutoGenerateAttachments &other);
 
     /*!
      * Returns whether the attachments collection is empty.

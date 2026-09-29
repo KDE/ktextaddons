@@ -12,7 +12,7 @@ using namespace TextEditTextToSpeech;
 class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechInterfacePrivate
 {
 public:
-    TextToSpeechInterfacePrivate(TextToSpeechWidget *textToSpeechWidget)
+    explicit TextToSpeechInterfacePrivate(TextToSpeechWidget *textToSpeechWidget)
         : mTextToSpeechWidget(textToSpeechWidget)
     {
     }

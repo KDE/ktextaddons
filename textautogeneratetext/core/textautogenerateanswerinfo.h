@@ -34,7 +34,7 @@ public:
      * Constructs a copy of the TextAutoGenerateAnswerInfo object from another object.
      * \param other The TextAutoGenerateAnswerInfo object to copy from
      */
-    explicit TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other);
+    TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other);
 
     /*!
      * Returns the name of the model.

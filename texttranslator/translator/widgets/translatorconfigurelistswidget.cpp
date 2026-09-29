@@ -19,7 +19,7 @@ using namespace TextTranslator;
 class Q_DECL_HIDDEN TextTranslator::TranslatorConfigureListsWidget::TranslatorConfigureListsWidgetPrivate
 {
 public:
-    TranslatorConfigureListsWidgetPrivate(TranslatorConfigureListsWidget *parent)
+    explicit TranslatorConfigureListsWidgetPrivate(TranslatorConfigureListsWidget *parent)
         : mEngineConfigureComboWidget(new TranslatorConfigureComboWidget(parent))
         , mFromLanguageWidget(new TranslatorConfigureLanguageListWidget(i18n("From:"), parent))
         , mToLanguageWidget(new TranslatorConfigureLanguageListWidget(i18n("To:"), parent))
