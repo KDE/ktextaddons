@@ -236,7 +236,7 @@ bool TextEditFindBarBase::event(QEvent *e)
 
             if (kev->modifiers() & Qt::ShiftModifier) {
                 findPrev();
-            } else if (kev->modifiers() == Qt::NoModifier) {
+            } else if ((kev->modifiers() & ~Qt::KeypadModifier) == Qt::NoModifier) {
                 findNext();
             }
             return true;
