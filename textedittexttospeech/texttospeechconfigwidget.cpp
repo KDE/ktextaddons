@@ -52,7 +52,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mMessageErrorWidget->hide();
     layout->addRow(mMessageErrorWidget);
 
-    mKokoroInstallMessageWidget->setObjectName(u"mMessageErrorWidget"_s);
+    mKokoroInstallMessageWidget->setObjectName(u"mKokoroInstallMessageWidget"_s);
     layout->addRow(mKokoroInstallMessageWidget);
 
     mVolume->setObjectName(u"volume"_s);
