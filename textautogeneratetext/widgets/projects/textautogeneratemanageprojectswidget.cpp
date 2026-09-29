@@ -130,7 +130,7 @@ TextAutoGenerateText::TextAutoGenerateProject TextAutoGenerateManageProjectsWidg
     TextAutoGenerateText::TextAutoGenerateProject project;
     project.setIdentifier(index.data(TextAutoGenerateProjectsModel::Identifier).toByteArray());
     project.setName(index.data(TextAutoGenerateProjectsModel::Name).toString());
-    // TODO project.setColor(index.data(TextAutoGenerateProjectsModel::Color).value<QColor>());
+    project.setIconName(index.data(TextAutoGenerateProjectsModel::IconName).toString());
     return project;
 }
 
