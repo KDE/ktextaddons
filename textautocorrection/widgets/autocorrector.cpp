@@ -16,12 +16,14 @@
 using namespace TextAutoCorrectionWidgets;
 using namespace Qt::Literals;
 
-static bool isSpecial(const QTextCharFormat &charFormat)
+namespace
+{
+bool isSpecial(const QTextCharFormat &charFormat)
 {
     return charFormat.isFrameFormat() || charFormat.isImageFormat() || charFormat.isListFormat() || charFormat.isTableFormat()
         || charFormat.isTableCellFormat();
 }
-
+}
 class TextAutoCorrectionWidgets::AutoCorrectorPrivate
 {
 public:
