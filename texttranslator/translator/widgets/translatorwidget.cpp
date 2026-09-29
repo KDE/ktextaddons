@@ -370,8 +370,9 @@ void TranslatorWidget::slotConfigChanged()
 
 void TranslatorWidget::slotTextChanged()
 {
-    d->translate->setEnabled(!d->inputText->document()->isEmpty());
-    d->clear->setEnabled(!d->inputText->document()->isEmpty());
+    const bool documentIsNotEmpty = !d->inputText->document()->isEmpty();
+    d->translate->setEnabled(documentIsNotEmpty);
+    d->clear->setEnabled(documentIsNotEmpty);
 }
 
 void TranslatorWidget::slotFromLanguageChanged(int index, bool initialize)
