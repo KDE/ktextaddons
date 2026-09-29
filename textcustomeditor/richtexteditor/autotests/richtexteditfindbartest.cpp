@@ -8,6 +8,7 @@
 
 #include "richtexteditor/richtexteditfindbar.h"
 #include "widgets/findutils.h"
+#include <QRegularExpression>
 #include <QTest>
 #include <QTextEdit>
 
@@ -162,6 +163,37 @@ void RichTextEditFindBarTest::shouldReplaceAllText()
     RichTextEditFindBarExample w(&edit);
     const int nbElementResult = TextCustomEditor::FindUtils::replaceAll(&edit, searchText, replaceText, flags);
     QCOMPARE(edit.toPlainText(), resultStr);
+    QCOMPARE(nbElementResult, nbElement);
+}
+
+void RichTextEditFindBarTest::shouldReplaceAllRegExp_data()
+{
+    QTest::addColumn<QString>("text");
+    QTest::addColumn<QString>("regExp");
+    QTest::addColumn<QString>("replaceText");
+    QTest::addColumn<int>("nbElement");
+    QTest::addColumn<QString>("resultStr");
+    QTest::newRow("simple") << u"foo bar foo"_s << u"fo+"_s << u"X"_s << 2 << u"X bar X"_s;
+    // Patterns matching an empty string must not loop forever.
+    QTest::newRow("start-empty-replace") << u"foo\nbar"_s << u"^"_s << QString() << 2 << u"foo\nbar"_s;
+    QTest::newRow("start") << u"foo\nbar"_s << u"^"_s << u"> "_s << 2 << u"> foo\n> bar"_s;
+    QTest::newRow("end") << u"foo\nbar"_s << u"$"_s << u";"_s << 2 << u"foo;\nbar;"_s;
+    QTest::newRow("star-empty-replace") << u"abc"_s << u"x*"_s << QString() << 4 << u"abc"_s;
+    QTest::newRow("empty-document") << QString() << u"^"_s << u"X"_s << 1 << u"X"_s;
+}
+
+void RichTextEditFindBarTest::shouldReplaceAllRegExp()
+{
+    QFETCH(QString, text);
+    QFETCH(QString, regExp);
+    QFETCH(QString, replaceText);
+    QFETCH(int, nbElement);
+    QFETCH(QString, resultStr);
+
+    QTextDocument document(text);
+    const int nbElementResult =
+        TextCustomEditor::FindUtils::replaceAll(&document, QRegularExpression(regExp), replaceText, TextCustomEditor::TextEditFindBarBase::FindFlags());
+    QCOMPARE(document.toPlainText(), resultStr);
     QCOMPARE(nbElementResult, nbElement);
 }
 

@@ -20,4 +20,6 @@ private Q_SLOTS:
     void shouldSearchText();
     void shouldReplaceAllText_data();
     void shouldReplaceAllText();
+    void shouldReplaceAllRegExp_data();
+    void shouldReplaceAllRegExp();
 };
