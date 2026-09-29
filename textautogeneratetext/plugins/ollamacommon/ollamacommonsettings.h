@@ -53,7 +53,6 @@ public:
 
 private:
     int mSeed = 0;
-    double mTemperature = 0.8;
     int mKeepAliveMinutes = 1;
     qint64 mContextWindowSize = 16384;
     OllamaCommonSettings::KeepAliveType mKeepAliveType = KeepAliveType::Unknown;
