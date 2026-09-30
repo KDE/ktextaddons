@@ -42,7 +42,7 @@ private:
     class Entry
     {
     public:
-        QString fileName;
+        QString iconName;
         int size = 0;
         [[nodiscard]] bool operator<(const Entry &other) const;
     };
