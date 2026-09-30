@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:44+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2025-02-24 07:18+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -560,7 +560,7 @@ msgstr "O servidor require unha chave de API."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:86
+#: translator/plugins/google/googleengineplugin.cpp:85
 #, kde-format
 msgid "Invalid answer."
 msgstr "A resposta é incorrecta."
@@ -760,20 +760,20 @@ msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Arrastre o texto que queira traducir."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 "Non se detectou ningunha conexión de rede, polo que non se pode traducir o "
 "texto."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Non hai rede"
 
-#: translator/widgets/translatorwidget.cpp:449
+#: translator/widgets/translatorwidget.cpp:450
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

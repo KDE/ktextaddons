@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:44+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2026-09-18 09:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -96,52 +96,52 @@ msgstr "Izberite glas(ove):"
 msgid "Download Voice(s)"
 msgstr "Prenesi glas(ove)"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:57
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:58
 #, kde-format
 msgid "Download Voices done."
 msgstr "Prenos glasov je končan."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:64
 #, kde-format
 msgid "Unable to download voice."
 msgstr "Glasu ni mogoče prenesti."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:91
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
 msgstr "Program espeak-ng manjka. Namestite ga z upravljalnikom paketov."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:95
 #, kde-format
 msgid "Nothing to install."
 msgstr "Ni kaj namestiti."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Creating the python virtual environment…"
 msgstr "Ustvarjanje virtualnega okolja Python…"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:104
 #, kde-format
 msgid "Python virtual environment created."
 msgstr "Virtualno okolje Python je ustvarjeno."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:105
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Unable to create the python virtual environment."
 msgstr "Ni mogoče ustvariti virtualnega okolja Python."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:122
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:125
 #, kde-format
 msgid "Installing modules: %1"
 msgstr "Nameščanje modulov: %1"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:127
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installation done."
 msgstr "Namestitev je končana."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:131
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:134
 #, kde-format
 msgid "Installation failed."
 msgstr "Namestitev ni uspela."
@@ -267,8 +267,9 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:319
-#, kde-format
-msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#, fuzzy, kde-format
+#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
 "Namestitev Kokoro je pokvarjena. Prosimo, preverite pri svojem sistemskem "
 "administratorju."

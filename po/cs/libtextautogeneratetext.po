@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:43+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2026-09-28 00:07+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: core/jobs/textautogenerateaskjob.cpp:35
+#: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr "Nelze spustit úlohu. Správce je null nebo text je prázdný."
@@ -34,15 +34,33 @@ msgid "Failed to write to file: %1"
 msgstr "Zápis do souboru selhal: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:76
 #, kde-format
 msgid "Json File"
 msgstr "Soubor json"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
+#: core/jobs/textautogenerateexportchatbasejob.cpp:38
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to export file."
+msgstr "Nelze spustit Ollamu."
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
+#, fuzzy, kde-format
+#| msgid "Failed to write to file: %1"
+msgid "Failed to parse JSon file: %1"
+msgstr "Zápis do souboru selhal: %1"
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "Nelze otevřít soubor pro čtení: %1"
+
+#: core/jobs/textautogenerateimportchatbasejob.cpp:37
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to import file."
+msgstr "Nelze spustit Ollamu."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -214,30 +232,29 @@ msgstr "<br><b>Token promptu:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token dokončení:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Moduly nástrojů:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identifikátor nástroje: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Zapnuto"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Vypnuto"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
@@ -684,12 +701,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Odstranit vybraný model"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:113
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Chcete tento model (%1) odstranit?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -2856,6 +2873,12 @@ msgstr "Maximum tokenů:"
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Moduly textu:"
+
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#, fuzzy, kde-format
+#| msgid "Tool identifier: %1"
+msgid "Text identifier: %1"
+msgstr "Identifikátor nástroje: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format

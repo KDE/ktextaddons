@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2026-09-17 15:06+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -192,6 +192,18 @@ msgstr "Het %1-model is gedownload."
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
+msgstr "Kan het %1-model niet downloaden: %2"
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model."
+msgid "Unable to start %1"
+msgstr "Kan het %1-model niet downloaden."
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model: %2"
+msgid "Unable to install module. Exit code: %1"
 msgstr "Kan het %1-model niet downloaden: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20

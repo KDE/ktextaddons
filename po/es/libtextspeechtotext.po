@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2026-09-17 11:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -194,6 +194,18 @@ msgstr "El modelo %1 está descargado."
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
+msgstr "No se ha podido descargar el modelo %1: %2"
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model."
+msgid "Unable to start %1"
+msgstr "No se ha podido descargar el modelo %1."
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model: %2"
+msgid "Unable to install module. Exit code: %1"
 msgstr "No se ha podido descargar el modelo %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20

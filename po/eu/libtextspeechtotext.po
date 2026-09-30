@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2026-09-28 22:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -202,6 +202,18 @@ msgstr "%1 eredua zama-jaitsi da."
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
+msgstr "Ezin da %1 eredua zama-jaitsi: %2"
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model."
+msgid "Unable to start %1"
+msgstr "Ezin da %1 eredua zama-jaitsi."
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model: %2"
+msgid "Unable to install module. Exit code: %1"
 msgstr "Ezin da %1 eredua zama-jaitsi: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20

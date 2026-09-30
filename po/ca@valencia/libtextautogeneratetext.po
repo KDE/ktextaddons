@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:43+0000\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
 "PO-Revision-Date: 2026-09-24 08:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: core/jobs/textautogenerateaskjob.cpp:35
+#: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr "Impossible iniciar la tasca. El gestor és nul o el text està buit."
@@ -36,15 +36,33 @@ msgid "Failed to write to file: %1"
 msgstr "Ha fallat mentre s'escrivia en el fitxer: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:76
 #, kde-format
 msgid "Json File"
 msgstr "Fitxer JSON"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
+#: core/jobs/textautogenerateexportchatbasejob.cpp:38
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to export file."
+msgstr "Impossible iniciar Ollama."
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
+#, fuzzy, kde-format
+#| msgid "Failed to write to file: %1"
+msgid "Failed to parse JSon file: %1"
+msgstr "Ha fallat mentre s'escrivia en el fitxer: %1"
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "Ha fallat mentre s'obria el fitxer per a lectura: %1"
+
+#: core/jobs/textautogenerateimportchatbasejob.cpp:37
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to import file."
+msgstr "Impossible iniciar Ollama."
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -220,30 +238,29 @@ msgstr "<br><b>Segment textual de petició:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Segment textual de compleció:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Connectors d'eines:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identificador de l'eina: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Actiu"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Inactiu"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
@@ -693,12 +710,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Elimina el model seleccionat"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:113
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Voleu eliminar este model (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -3309,6 +3326,12 @@ msgstr "Màxim de segments textuals:"
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Connectors de text:"
+
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#, fuzzy, kde-format
+#| msgid "Tool identifier: %1"
+msgid "Text identifier: %1"
+msgstr "Identificador de l'eina: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format

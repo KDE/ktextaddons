@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:43+0000\n"
-"PO-Revision-Date: 2026-09-18 23:09+0300\n"
+"POT-Creation-Date: 2026-09-30 00:44+0000\n"
+"PO-Revision-Date: 2026-09-27 09:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 26.08.0\n"
 
-#: core/jobs/textautogenerateaskjob.cpp:35
+#: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr "לא ניתן להתחיל משימה. המנהל ריק או שהטקסט ריק."
@@ -34,15 +34,33 @@ msgid "Failed to write to file: %1"
 msgstr "הכתיבה לקובץ נכשלה: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:76
 #, kde-format
 msgid "Json File"
 msgstr "קובץ Json"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
+#: core/jobs/textautogenerateexportchatbasejob.cpp:38
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to export file."
+msgstr "בלתי אפשרי להפעיל את Ollama."
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
+#, fuzzy, kde-format
+#| msgid "Failed to write to file: %1"
+msgid "Failed to parse JSon file: %1"
+msgstr "הכתיבה לקובץ נכשלה: %1"
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "פתיחת הקובץ לקריאה נכשלה: %1"
+
+#: core/jobs/textautogenerateimportchatbasejob.cpp:37
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to import file."
+msgstr "בלתי אפשרי להפעיל את Ollama."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -50,11 +68,9 @@ msgid "New Chat..."
 msgstr "שיחה חדשה…"
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "כללי"
+msgstr "מתכלה"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -215,30 +231,29 @@ msgstr "<br><b>אסימון בקשה:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>אסימון השלמה:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "תוספי כלים:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "מזהה כלי: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "פעיל"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "כבוי"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
@@ -683,12 +698,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "הסרת המודל הנבחר"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:113
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "להסיר את המודל הזה (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -3160,97 +3175,89 @@ msgstr "כמות אסימונים מרבית:"
 msgid "Text Plugins:"
 msgstr "תוספי טקסט:"
 
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#, fuzzy, kde-format
+#| msgid "Tool identifier: %1"
+msgid "Text identifier: %1"
+msgstr "מזהה כלי: %1"
+
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "ניהול מיזמים"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "הוספת בקשה…"
+msgstr "הוספת מיזם…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "עריכה…"
+msgstr "עריכת מיזם…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "הסרת בקשה"
+msgstr "הסרת מיזם"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
 msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
-msgstr ""
+msgstr "להסיר את המיזם הזה (%1)? השיחות שלו תישמרנה, מחוץ למיזם כלשהו."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "הסרת בקשה"
+msgstr "הסרת מיזם"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "הוספת מיזם"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "עריכת מיזם"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "הוספת בקשה…"
+msgstr "מיזם"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "הסרת בקשה"
+msgstr "אין מיזם"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "הוספת בקשה…"
+msgstr "ניהול מיזמים…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr ""
+msgstr "שם המיזם…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "סמל:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
@@ -3306,7 +3313,7 @@ msgstr "הסרת בקשה"
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "מיומנות"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
 #, kde-format
@@ -3355,88 +3362,77 @@ msgstr "שמירת הדיון במסד הנתונים"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "ניהול תגיות"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "הוספת מופע…"
+msgstr "הוספת תגית…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "עריכה…"
+msgstr "שינוי תגית…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "הסרה"
+msgstr "הסרת תגית"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "להסיר את המופע הזה (%1)?"
+msgstr "להסיר את התגית הזאת (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "הסרה"
+msgstr "הסרת תגית"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "לא נבחרו תגיות"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "הוספת תגית"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "עריכה…"
+msgstr "שינוי תגית"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:35
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "תגיות"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "ניהול תגיות…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
+msgstr "שם תגית…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
 msgid "Color:"
-msgstr ""
+msgstr "צבע:"
 
 #: widgets/textautogeneratedialog.cpp:32
 #, kde-format
@@ -3451,12 +3447,10 @@ msgid "New Chat"
 msgstr "שיחה חדש"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "הסרת שיחה"
+msgstr "שיחה מתכלה"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
@@ -3474,7 +3468,7 @@ msgstr "חיפוש… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "להציג רק את השיחות שיש להן את אחת מהתגיות הנבחרות"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format

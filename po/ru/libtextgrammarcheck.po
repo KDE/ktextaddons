@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 00:43+0000\n"
-"PO-Revision-Date: 2026-01-28 20:20+0200\n"
+"PO-Revision-Date: 2026-09-29 08:34+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -141,7 +141,7 @@ msgstr "Не найден файл программы Grammalecte."
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Не найдена комндная строка для Grammalecte."
+msgstr "Не найден файл интерфейса командной строки Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:75
 #, kde-format
@@ -337,7 +337,7 @@ msgstr "Обновить"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "Адрес URL пуст."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
