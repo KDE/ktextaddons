@@ -27,6 +27,7 @@ namespace TextAutoCorrectionCore
  */
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
 {
+    Q_GADGET
 public:
     /*!
      * \brief Constructs an ImportLibreOfficeAutocorrection instance
