@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2023-2024, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 02:52+0000\n"
-"PO-Revision-Date: 2024-08-02 13:03+0200\n"
+"PO-Revision-Date: 2026-09-29 12:44+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -335,7 +335,7 @@ msgstr "Vernieuwen"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "URL is leeg."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

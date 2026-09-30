@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2023, 2024.
+# SPDX-FileCopyrightText: 2023, 2024, 2026 Yuri Chornoivan <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 02:52+0000\n"
-"PO-Revision-Date: 2024-08-02 09:24+0300\n"
+"PO-Revision-Date: 2026-09-29 16:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -336,7 +336,7 @@ msgstr "Оновити"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "Адреса є порожньою."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
