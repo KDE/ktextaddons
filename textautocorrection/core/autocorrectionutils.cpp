@@ -140,7 +140,7 @@ QStringList AutoCorrectionUtils::autoCorrectLibreOfficeLanguageToString(const QS
             // For some languages the native name might be empty.
             // In this case use the non native language name as fallback.
             // See: QTBUG-51323
-            const QString languageName = nativeName.isEmpty() ? QLocale::languageToString(locale.language()) : nativeName;
+            QString languageName = nativeName.isEmpty() ? QLocale::languageToString(locale.language()) : nativeName;
             languagesStr.append(std::move(languageName));
         }
     }
