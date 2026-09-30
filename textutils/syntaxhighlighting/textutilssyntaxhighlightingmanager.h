@@ -61,7 +61,7 @@ private:
     TEXTUTILS_NO_EXPORT void initialize();
     mutable KSyntaxHighlighting::Repository mRepo;
     KSyntaxHighlighting::Definition mDefaultDef;
-    QList<QString> mDefinitions;
+    QStringList mDefinitions;
     bool mSyntaxHighlightingInitialized = false;
 };
 }
