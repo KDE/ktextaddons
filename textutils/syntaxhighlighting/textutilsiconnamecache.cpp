@@ -16,7 +16,7 @@ TextUtilsIconNameCache *TextUtilsIconNameCache::self()
 
 bool TextUtilsIconNameCache::Entry::operator<(const Entry &other) const
 {
-    if (const int fileNameCompare = fileName.compare(other.fileName); fileNameCompare != 0) {
+    if (const int fileNameCompare = iconName.compare(other.iconName); fileNameCompare != 0) {
         return fileNameCompare < 0;
     }
     return size < other.size;
