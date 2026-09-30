@@ -55,7 +55,7 @@ void EmojiListView::keyPressEvent(QKeyEvent *event)
         }
     } else {
         if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
-            if (auto index = currentIndex(); index.isValid()) {
+            if (const auto index = currentIndex(); index.isValid()) {
                 selectEmoji(index);
             }
         }
