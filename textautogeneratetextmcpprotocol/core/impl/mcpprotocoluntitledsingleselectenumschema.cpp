@@ -52,29 +52,25 @@ McpProtocolUntitledSingleSelectEnumSchema McpProtocolUntitledSingleSelectEnumSch
         for (const auto &v : arr) {
             lst.append(v.toString());
         }
-        prompt.setEnums(lst);
+        prompt.setEnums(std::move(lst));
     }
     return prompt;
 }
 
-QJsonObject McpProtocolUntitledSingleSelectEnumSchema::toJson(const McpProtocolUntitledSingleSelectEnumSchema &boolean)
+QJsonObject McpProtocolUntitledSingleSelectEnumSchema::toJson(const McpProtocolUntitledSingleSelectEnumSchema &untitledSingleSelectEnumSchema)
 {
     QJsonObject obj;
     obj["type"_L1] = QString::fromLatin1(McpProtocolUntitledSingleSelectEnumSchema::type());
-    if (boolean.defaultValue().has_value()) {
-        obj["default"_L1] = *boolean.defaultValue();
+    if (untitledSingleSelectEnumSchema.defaultValue().has_value()) {
+        obj["default"_L1] = *untitledSingleSelectEnumSchema.defaultValue();
     }
-    if (boolean.description().has_value()) {
-        obj["description"_L1] = *boolean.description();
+    if (untitledSingleSelectEnumSchema.description().has_value()) {
+        obj["description"_L1] = *untitledSingleSelectEnumSchema.description();
     }
-    if (boolean.title().has_value()) {
-        obj["title"_L1] = *boolean.title();
+    if (untitledSingleSelectEnumSchema.title().has_value()) {
+        obj["title"_L1] = *untitledSingleSelectEnumSchema.title();
     }
-    QJsonArray enumArray;
-    for (const auto &v : boolean.enums()) {
-        enumArray.append(v);
-    }
-    obj["enum"_L1] = enumArray;
+    obj["enum"_L1] = QJsonArray::fromStringList(untitledSingleSelectEnumSchema.enums());
 
     return obj;
 }
@@ -114,7 +110,7 @@ QStringList McpProtocolUntitledSingleSelectEnumSchema::enums() const
     return mEnums;
 }
 
-void McpProtocolUntitledSingleSelectEnumSchema::setEnums(const QStringList &newEnums)
+void McpProtocolUntitledSingleSelectEnumSchema::setEnums(QStringList newEnums)
 {
-    mEnums = newEnums;
+    mEnums = std::move(newEnums);
 }

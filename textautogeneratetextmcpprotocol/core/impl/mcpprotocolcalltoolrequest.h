@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolCallToolRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCallToolRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCallToolRequest &request);
 
     /*!
      */
@@ -46,7 +46,7 @@ public:
     [[nodiscard]] McpProtocolCallToolRequestParams params() const;
     /*!
      */
-    void setParams(const McpProtocolCallToolRequestParams &newParams);
+    void setParams(McpProtocolCallToolRequestParams newParams);
 
 private:
     McpProtocolUtils::RequestId mId;

@@ -100,11 +100,11 @@ QString McpServer::transportTypeI18n(TextAutoGenerateTextMcpProtocolCore::McpPro
 {
     switch (type) {
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse:
-        return i18n("Sse");
+        return i18nc("@item:inlistbox", "SSE");
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio:
-        return i18n("Standard IO");
+        return i18nc("@item:inlistbox", "Standard IO");
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
-        return i18n("Streamable HTTP");
+        return i18nc("@item:inlistbox", "Streamable HTTP");
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Type not defined. It's a bug";
         return {};
@@ -117,9 +117,9 @@ McpProtocolSettings McpServer::settings() const
     return mSettings;
 }
 
-void McpServer::setSettings(const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &newSettings)
+void McpServer::setSettings(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings newSettings)
 {
-    mSettings = newSettings;
+    mSettings = std::move(newSettings);
 }
 
 QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
@@ -161,5 +161,3 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpServer
     d.space() << "settings:" << t.settings();
     return d;
 }
-
-#include "moc_mcpserver.cpp"

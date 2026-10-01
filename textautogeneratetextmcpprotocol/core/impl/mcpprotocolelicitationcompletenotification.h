@@ -16,11 +16,11 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitationCompleteN
 public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
         QString mElicitationId;
-        [[nodiscard]] Params &elicitationId(const QString &v);
         [[nodiscard]] const QString &elicitationId() const;
+        void setElicitationId(const QString &newElicitationId);
         [[nodiscard]] bool operator==(const McpProtocolElicitationCompleteNotification::Params &other) const;
         [[nodiscard]] static Params fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Params &image);
+        [[nodiscard]] static QJsonObject toJson(const Params &params);
     };
 
     /*!
@@ -38,14 +38,14 @@ public:
     [[nodiscard]] static McpProtocolElicitationCompleteNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitationCompleteNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitationCompleteNotification &notification);
 
     /*!
      */
     [[nodiscard]] Params params() const;
     /*!
      */
-    void setParams(const Params &newParams);
+    void setParams(Params newParams);
 
 private:
     Params mParams;

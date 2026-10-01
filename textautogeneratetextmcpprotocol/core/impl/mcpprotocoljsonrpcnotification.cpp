@@ -6,8 +6,8 @@
 
 #include "mcpprotocoljsonrpcnotification.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -44,18 +44,18 @@ McpProtocolJSONRPCNotification McpProtocolJSONRPCNotification::fromJson(const QJ
         for (auto it = mapObj_params.constBegin(); it != mapObj_params.constEnd(); ++it) {
             map_params.insert(it.key(), it.value());
         }
-        response.setParams(map_params);
+        response.setParams(std::move(map_params));
     }
     return response;
 }
 
-QJsonObject McpProtocolJSONRPCNotification::toJson(const McpProtocolJSONRPCNotification &boolean)
+QJsonObject McpProtocolJSONRPCNotification::toJson(const McpProtocolJSONRPCNotification &notification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
-    obj["method"_L1] = boolean.method();
-    if (boolean.params().has_value()) {
-        const auto params = *boolean.params();
+    obj["method"_L1] = notification.method();
+    if (notification.params().has_value()) {
+        const auto params = *notification.params();
         QJsonObject map_params;
         for (auto it = params.constBegin(); it != params.constEnd(); ++it) {
             map_params.insert(it.key(), it.value());
@@ -82,5 +82,5 @@ std::optional<QMap<QString, QJsonValue>> McpProtocolJSONRPCNotification::params(
 
 void McpProtocolJSONRPCNotification::setParams(std::optional<QMap<QString, QJsonValue>> newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

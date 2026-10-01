@@ -5,11 +5,12 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
+#include <QMap>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptReference>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceTemplateReference>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,7 +30,7 @@ public:
         [[nodiscard]] static McpProtocolCompleteRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Meta &meta);
     };
 
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Argument {
@@ -40,7 +41,7 @@ public:
         [[nodiscard]] static McpProtocolCompleteRequestParams::Argument fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Argument &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Argument &argument);
         [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Argument &other) const;
 
         [[nodiscard]] QString value() const;
@@ -57,7 +58,7 @@ public:
         [[nodiscard]] static McpProtocolCompleteRequestParams::Context fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Context &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Context &context);
         [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Context &other) const;
 
         [[nodiscard]] std::optional<QMap<QString, QString>> arguments() const;
@@ -76,7 +77,7 @@ public:
     [[nodiscard]] static McpProtocolCompleteRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams &params);
 
     /*!
      */
@@ -90,7 +91,7 @@ public:
     [[nodiscard]] Argument argument() const;
     /*!
      */
-    void setArgument(const Argument &newArgument);
+    void setArgument(Argument newArgument);
 
     /*!
      */
@@ -104,7 +105,7 @@ public:
     [[nodiscard]] McpProtocolUtils::CompleteRequestParamsRef ref() const;
     /*!
      */
-    void setRef(const McpProtocolUtils::CompleteRequestParamsRef &newRef);
+    void setRef(McpProtocolUtils::CompleteRequestParamsRef newRef);
 
 private:
     Argument mArgument;

@@ -6,8 +6,8 @@
 
 #include "mcpprotocoljsonrpcresultresponse.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -38,12 +38,12 @@ McpProtocolJSONRPCResultResponse McpProtocolJSONRPCResultResponse::fromJson(cons
     return response;
 }
 
-QJsonObject McpProtocolJSONRPCResultResponse::toJson(const McpProtocolJSONRPCResultResponse &boolean)
+QJsonObject McpProtocolJSONRPCResultResponse::toJson(const McpProtocolJSONRPCResultResponse &response)
 {
     QJsonObject obj;
-    obj["result"_L1] = McpProtocolResult::toJson(boolean.result());
+    obj["result"_L1] = McpProtocolResult::toJson(response.result());
     obj["jsonrpc"_L1] = u"2.0"_s;
-    obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(response.id());
     return obj;
 }
 
@@ -62,7 +62,7 @@ McpProtocolResult McpProtocolJSONRPCResultResponse::result() const
     return mResult;
 }
 
-void McpProtocolJSONRPCResultResponse::setResult(const McpProtocolResult &newResult)
+void McpProtocolJSONRPCResultResponse::setResult(McpProtocolResult newResult)
 {
-    mResult = newResult;
+    mResult = std::move(newResult);
 }

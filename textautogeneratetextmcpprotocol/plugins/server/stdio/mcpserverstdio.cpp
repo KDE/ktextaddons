@@ -5,13 +5,11 @@
 */
 #include "mcpserverstdio.h"
 #include "autogeneratetext_mcpprotocolserverplugin_lib_debug.h"
-#include "common/mcpprotocolsettings.h"
 #include "stdio/mcpserverstdioplugininterface.h"
+#include <KLocalizedString>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QProcess>
-
-using namespace Qt::Literals::StringLiterals;
 
 McpServerStdio::McpServerStdio(McpServerStdioPluginInterface *interface, QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
@@ -50,7 +48,7 @@ void McpServerStdio::connection()
     const auto settings = mInterface->protocolSettings();
     if (settings.command().isEmpty()) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to start server. Command is empty.";
-        Q_EMIT error(u"Impossible to start server. Command is empty."_s);
+        Q_EMIT error(i18n("Impossible to start server. Command is empty."));
         return;
     }
     mBuffer.clear();
@@ -63,7 +61,7 @@ void McpServerStdio::connection()
         }
         mProcess->setProcessEnvironment(processEnvironment);
     }
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Starting" << mProcess->program() << mProcess->arguments();
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Starting" << mProcess->program() << "with" << mProcess->arguments().count() << "arguments";
     mProcess->start(QIODevice::ReadWrite);
 }
 
@@ -82,9 +80,9 @@ void McpServerStdio::stop()
 
 void McpServerStdio::send(const QJsonObject &obj)
 {
-    if (mProcess->state() != QProcess::Running) {
+    if (mProcess->state() == QProcess::NotRunning) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to send message. Server is not running." << obj;
-        Q_EMIT error(u"Impossible to send message. Server is not running."_s);
+        Q_EMIT error(i18n("Impossible to send message. Server is not running."));
         return;
     }
     const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);

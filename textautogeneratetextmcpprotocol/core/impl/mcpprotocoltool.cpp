@@ -18,18 +18,17 @@ bool McpProtocolTool::operator==(const McpProtocolTool &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &t)
 {
-    d.space() << "meta " << t.meta();
-    d.space() << "annotations " << t.annotations();
-    d.space() << "description " << t.description();
-    d.space() << "execution " << t.execution();
-    d.space() << "icons " << t.icons();
-    d.space() << "inputSchema " << McpProtocolTool::InputSchema::toJson(t.inputSchema());
-    d.space() << "description " << t.description();
-    d.space() << "name " << t.name();
+    d.space() << "meta:" << t.meta();
+    d.space() << "annotations:" << t.annotations();
+    d.space() << "description:" << t.description();
+    d.space() << "execution:" << t.execution();
+    d.space() << "icons:" << t.icons();
+    d.space() << "inputSchema:" << McpProtocolTool::InputSchema::toJson(t.inputSchema());
+    d.space() << "name:" << t.name();
     if (t.outputSchema().has_value()) {
-        d.space() << "outputSchema " << McpProtocolTool::OutputSchema::toJson(*t.outputSchema());
+        d.space() << "outputSchema:" << McpProtocolTool::OutputSchema::toJson(*t.outputSchema());
     }
-    d.space() << "title " << t.title();
+    d.space() << "title:" << t.title();
     return d;
 }
 
@@ -68,7 +67,7 @@ McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
-        tool.setIcons(list_icons);
+        tool.setIcons(std::move(list_icons));
     }
     if (const QJsonValue inputSchemaValue = obj.value("inputSchema"_L1); inputSchemaValue.isObject()) {
         tool.setInputSchema(InputSchema::fromJson(inputSchemaValue.toObject()));
@@ -172,9 +171,9 @@ McpProtocolTool::InputSchema McpProtocolTool::inputSchema() const
     return mInputSchema;
 }
 
-void McpProtocolTool::setInputSchema(const InputSchema &newInputSchema)
+void McpProtocolTool::setInputSchema(InputSchema newInputSchema)
 {
-    mInputSchema = newInputSchema;
+    mInputSchema = std::move(newInputSchema);
 }
 
 QString McpProtocolTool::name() const
@@ -240,7 +239,7 @@ McpProtocolTool::InputSchema McpProtocolTool::InputSchema::fromJson(const QJsonO
         for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
             map_properties.insert(it.key(), it.value().toObject());
         }
-        result.mProperties = map_properties;
+        result.mProperties = std::move(map_properties);
     }
     if (const QJsonValue requiredValue = obj.value("required"_L1); requiredValue.isArray()) {
         const QJsonArray arr = requiredValue.toArray();
@@ -249,7 +248,7 @@ McpProtocolTool::InputSchema McpProtocolTool::InputSchema::fromJson(const QJsonO
         for (const auto &v : arr) {
             list_required.append(v.toString());
         }
-        result.mRequired = list_required;
+        result.mRequired = std::move(list_required);
     }
     return result;
 }
@@ -269,11 +268,7 @@ QJsonObject McpProtocolTool::InputSchema::toJson(const InputSchema &input)
         obj.insert("properties"_L1, map_properties);
     }
     if (const auto &required = input.required(); required.has_value()) {
-        QJsonArray arr_required;
-        for (const auto &v : *required) {
-            arr_required.append(v);
-        }
-        obj.insert("required"_L1, arr_required);
+        obj.insert("required"_L1, QJsonArray::fromStringList(*required));
     }
     return obj;
 }
@@ -298,7 +293,7 @@ bool McpProtocolTool::OutputSchema::operator==(const OutputSchema &other) const 
 McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJsonObject &obj)
 {
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolTool::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "InputSchema: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "OutputSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
     McpProtocolTool::OutputSchema result;
@@ -311,7 +306,7 @@ McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJso
         for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
             map_properties.insert(it.key(), it.value().toObject());
         }
-        result.mProperties = map_properties;
+        result.mProperties = std::move(map_properties);
     }
     if (const QJsonValue requiredValue2 = obj.value("required"_L1); requiredValue2.isArray()) {
         const QJsonArray arr = requiredValue2.toArray();
@@ -320,7 +315,7 @@ McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJso
         for (const auto &v : arr) {
             list_required.append(v.toString());
         }
-        result.mRequired = list_required;
+        result.mRequired = std::move(list_required);
     }
     return result;
 }
@@ -340,11 +335,7 @@ QJsonObject McpProtocolTool::OutputSchema::toJson(const OutputSchema &input)
         obj.insert("properties"_L1, map_properties);
     }
     if (const auto &required = input.required(); required.has_value()) {
-        QJsonArray arr_required;
-        for (const auto &v : *required) {
-            arr_required.append(v);
-        }
-        obj.insert("required"_L1, arr_required);
+        obj.insert("required"_L1, QJsonArray::fromStringList(*required));
     }
     return obj;
 }

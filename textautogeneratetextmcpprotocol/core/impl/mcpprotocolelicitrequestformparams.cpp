@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -18,8 +19,15 @@ bool McpProtocolElicitRequestFormParams::Meta::operator==(const McpProtocolElici
 
 bool McpProtocolElicitRequestFormParams::RequestedSchema::operator==(const McpProtocolElicitRequestFormParams::RequestedSchema &other) const = default;
 
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams::Meta &t)
+{
+    d.space() << "progressToken:" << t.progressToken();
+    return d;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams &t)
 {
+    d.space() << "meta:" << t.meta();
     d.space() << "message:" << t.message();
     d.space() << "task:" << t.task();
     d.space() << "requestedSchema:" << McpProtocolElicitRequestFormParams::RequestedSchema::toJson(t.requestedSchema());
@@ -35,11 +43,11 @@ McpProtocolElicitRequestFormParams::Meta McpProtocolElicitRequestFormParams::Met
     return meta;
 }
 
-QJsonObject McpProtocolElicitRequestFormParams::Meta::toJson(const McpProtocolElicitRequestFormParams::Meta &image)
+QJsonObject McpProtocolElicitRequestFormParams::Meta::toJson(const McpProtocolElicitRequestFormParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -69,7 +77,7 @@ McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestForm
     for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
         map_properties.insert(it.key(), McpProtocolUtils::primitiveSchemaDefinitionFromJson(it.value()));
     }
-    requestedSchema.setProperties(map_properties);
+    requestedSchema.setProperties(std::move(map_properties));
     if (const QJsonValue requiredValue = obj.value("required"_L1); requiredValue.isArray()) {
         const QJsonArray arr = requiredValue.toArray();
         QStringList list_required;
@@ -77,27 +85,27 @@ McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestForm
         for (const QJsonValue &v : arr) {
             list_required.append(v.toString());
         }
-        requestedSchema.setRequired(list_required);
+        requestedSchema.setRequired(std::move(list_required));
     }
     return requestedSchema;
 }
 
-QJsonObject McpProtocolElicitRequestFormParams::RequestedSchema::toJson(const McpProtocolElicitRequestFormParams::RequestedSchema &image)
+QJsonObject McpProtocolElicitRequestFormParams::RequestedSchema::toJson(const McpProtocolElicitRequestFormParams::RequestedSchema &requestedSchema)
 {
     QJsonObject obj;
     obj["type"_L1] = u"object"_s;
-    if (image.dollarschema().has_value()) {
-        obj["$schema"_L1] = *image.dollarschema();
+    if (requestedSchema.dollarschema().has_value()) {
+        obj["$schema"_L1] = *requestedSchema.dollarschema();
     }
     QJsonObject map_properties;
-    const auto properties = image.properties();
+    const auto properties = requestedSchema.properties();
     for (auto it = properties.constBegin(); it != properties.constEnd(); ++it) {
         map_properties.insert(it.key(), McpProtocolUtils::primitiveSchemaDefinitionToJson(it.value()));
     }
     obj["properties"_L1] = map_properties;
-    if (image.required().has_value()) {
+    if (requestedSchema.required().has_value()) {
         QJsonArray arr_required;
-        const auto required = *image.required();
+        const auto required = *requestedSchema.required();
         for (const auto &v : required) {
             arr_required.append(v);
         }
@@ -114,8 +122,9 @@ QByteArray McpProtocolElicitRequestFormParams::mode()
 McpProtocolElicitRequestFormParams McpProtocolElicitRequestFormParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolElicitRequestFormParams params;
-    if (obj.value("mode"_L1).toString() != QString::fromLatin1(McpProtocolElicitRequestFormParams::mode())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams: mode is not correct " << obj.value("mode"_L1).toString();
+    if (obj.contains("mode"_L1) && obj.value("mode"_L1).toString() != QString::fromLatin1(McpProtocolElicitRequestFormParams::mode())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams: field 'mode' must be"
+                                                       << McpProtocolElicitRequestFormParams::mode() << "got:" << obj.value("mode"_L1).toString();
         return {};
     }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
@@ -131,17 +140,17 @@ McpProtocolElicitRequestFormParams McpProtocolElicitRequestFormParams::fromJson(
     return params;
 }
 
-QJsonObject McpProtocolElicitRequestFormParams::toJson(const McpProtocolElicitRequestFormParams &image)
+QJsonObject McpProtocolElicitRequestFormParams::toJson(const McpProtocolElicitRequestFormParams &params)
 {
     QJsonObject obj;
     obj["mode"_L1] = QString::fromLatin1(McpProtocolElicitRequestFormParams::mode());
-    if (image.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolElicitRequestFormParams::Meta::toJson(*image.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolElicitRequestFormParams::Meta::toJson(*params.meta());
     }
-    obj["message"_L1] = image.message();
-    obj["requestedSchema"_L1] = McpProtocolElicitRequestFormParams::RequestedSchema::toJson(image.requestedSchema());
-    if (image.task().has_value()) {
-        obj["task"_L1] = McpProtocolTaskMetadata::toJson(*image.task());
+    obj["message"_L1] = params.message();
+    obj["requestedSchema"_L1] = McpProtocolElicitRequestFormParams::RequestedSchema::toJson(params.requestedSchema());
+    if (params.task().has_value()) {
+        obj["task"_L1] = McpProtocolTaskMetadata::toJson(*params.task());
     }
     return obj;
 }
@@ -161,9 +170,9 @@ McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestForm
     return mRequestedSchema;
 }
 
-void McpProtocolElicitRequestFormParams::setRequestedSchema(const RequestedSchema &newRequestedSchema)
+void McpProtocolElicitRequestFormParams::setRequestedSchema(RequestedSchema newRequestedSchema)
 {
-    mRequestedSchema = newRequestedSchema;
+    mRequestedSchema = std::move(newRequestedSchema);
 }
 
 QString McpProtocolElicitRequestFormParams::message() const
@@ -193,7 +202,7 @@ std::optional<QString> McpProtocolElicitRequestFormParams::RequestedSchema::doll
 
 void McpProtocolElicitRequestFormParams::RequestedSchema::setDollarschema(std::optional<QString> newDollarschema)
 {
-    mDollarschema = newDollarschema;
+    mDollarschema = std::move(newDollarschema);
 }
 
 std::optional<QStringList> McpProtocolElicitRequestFormParams::RequestedSchema::required() const
@@ -203,14 +212,15 @@ std::optional<QStringList> McpProtocolElicitRequestFormParams::RequestedSchema::
 
 void McpProtocolElicitRequestFormParams::RequestedSchema::setRequired(std::optional<QStringList> newRequired)
 {
-    mRequired = newRequired;
+    mRequired = std::move(newRequired);
 }
+
 QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> McpProtocolElicitRequestFormParams::RequestedSchema::properties() const
 {
     return mProperties;
 }
 
-void McpProtocolElicitRequestFormParams::RequestedSchema::setProperties(const QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> &newProperties)
+void McpProtocolElicitRequestFormParams::RequestedSchema::setProperties(QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> newProperties)
 {
-    mProperties = newProperties;
+    mProperties = std::move(newProperties);
 }

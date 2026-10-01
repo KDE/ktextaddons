@@ -5,7 +5,7 @@
 */
 
 #include "mcpprotocolprogressnotificationparams.h"
-#include <QJsonArray>
+#include <QDebug>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -43,20 +43,20 @@ McpProtocolProgressNotificationParams McpProtocolProgressNotificationParams::fro
     return prompt;
 }
 
-QJsonObject McpProtocolProgressNotificationParams::toJson(const McpProtocolProgressNotificationParams &boolean)
+QJsonObject McpProtocolProgressNotificationParams::toJson(const McpProtocolProgressNotificationParams &progressNotificationParams)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (progressNotificationParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*progressNotificationParams.meta());
     }
-    obj["progress"_L1] = boolean.progress();
-    obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(boolean.progressToken());
+    obj["progress"_L1] = progressNotificationParams.progress();
+    obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(progressNotificationParams.progressToken());
 
-    if (boolean.message().has_value()) {
-        obj.insert("message"_L1, *boolean.message());
+    if (progressNotificationParams.message().has_value()) {
+        obj.insert("message"_L1, *progressNotificationParams.message());
     }
-    if (boolean.total().has_value()) {
-        obj.insert("total"_L1, *boolean.total());
+    if (progressNotificationParams.total().has_value()) {
+        obj.insert("total"_L1, *progressNotificationParams.total());
     }
     return obj;
 }

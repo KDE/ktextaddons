@@ -5,10 +5,9 @@
 */
 
 #include "mcpprotocolmeta.h"
-#include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonObject>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolMeta::McpProtocolMeta() = default;
 
@@ -22,28 +21,22 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolMeta McpProtocolMeta::fromJson(const QJsonObject &obj)
 {
-    McpProtocolMeta prompt;
-    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        const QJsonObject mapObj = metaValue.toObject();
-        QMap<QString, QJsonValue> map;
-        for (auto it = mapObj.constBegin(); it != mapObj.constEnd(); ++it) {
-            map.insert(it.key(), it.value());
-        }
-        prompt.setMeta(map);
+    McpProtocolMeta protocolMeta;
+    QMap<QString, QJsonValue> map;
+    for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
+        map.insert(it.key(), it.value());
     }
-    return prompt;
+    protocolMeta.setMeta(std::move(map));
+    return protocolMeta;
 }
 
 QJsonObject McpProtocolMeta::toJson(const McpProtocolMeta &protocolMeta)
 {
     QJsonObject obj;
-    if (protocolMeta.meta().has_value()) {
-        const auto meta = protocolMeta.meta();
-        QJsonObject map;
+    if (const auto meta = protocolMeta.meta(); meta.has_value()) {
         for (auto it = meta->constBegin(); it != meta->constEnd(); ++it) {
-            map.insert(it.key(), it.value());
+            obj.insert(it.key(), it.value());
         }
-        obj["_meta"_L1] = map;
     }
     return obj;
 }

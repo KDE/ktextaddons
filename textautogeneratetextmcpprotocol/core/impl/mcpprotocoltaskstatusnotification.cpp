@@ -6,7 +6,6 @@
 
 #include "mcpprotocoltaskstatusnotification.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -34,7 +33,9 @@ McpProtocolTaskStatusNotification McpProtocolTaskStatusNotification::fromJson(co
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolTaskStatusNotification::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/tasks/status', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolTaskStatusNotification::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolTaskStatusNotificationParams::fromJson(paramsValue.toObject()));
@@ -42,12 +43,12 @@ McpProtocolTaskStatusNotification McpProtocolTaskStatusNotification::fromJson(co
     return prompt;
 }
 
-QJsonObject McpProtocolTaskStatusNotification::toJson(const McpProtocolTaskStatusNotification &boolean)
+QJsonObject McpProtocolTaskStatusNotification::toJson(const McpProtocolTaskStatusNotification &taskStatusNotification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolTaskStatusNotification::type());
-    obj["params"_L1] = McpProtocolTaskStatusNotificationParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolTaskStatusNotificationParams::toJson(taskStatusNotification.params());
     return obj;
 }
 

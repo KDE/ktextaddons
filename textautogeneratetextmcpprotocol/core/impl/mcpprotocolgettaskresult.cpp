@@ -6,8 +6,8 @@
 
 #include "mcpprotocolgettaskresult.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolGetTaskResult::McpProtocolGetTaskResult() = default;
@@ -29,9 +29,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolGetTaskResult McpProtocolGetTaskResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolGetTaskResult prompt;
+    McpProtocolGetTaskResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (!obj.contains("createdAt"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: createdAt";
@@ -53,42 +53,42 @@ McpProtocolGetTaskResult McpProtocolGetTaskResult::fromJson(const QJsonObject &o
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: ttl";
         return {};
     }
-    prompt.setCreatedAt(obj.value("createdAt"_L1).toString());
-    prompt.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
+    result.setCreatedAt(obj.value("createdAt"_L1).toString());
+    result.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
     if (obj.contains("pollInterval"_L1)) {
-        prompt.setPollInterval(obj.value("pollInterval"_L1).toInt());
+        result.setPollInterval(obj.value("pollInterval"_L1).toInteger());
     }
     if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
-        prompt.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
+        result.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
     }
     if (obj.contains("statusMessage"_L1)) {
-        prompt.setStatusMessage(obj.value("statusMessage"_L1).toString());
+        result.setStatusMessage(obj.value("statusMessage"_L1).toString());
     }
-    prompt.setTaskId(obj.value("taskId"_L1).toString());
+    result.setTaskId(obj.value("taskId"_L1).toString());
     if (!obj["ttl"_L1].isNull()) {
-        prompt.setTtl(obj.value("ttl"_L1).toInt());
+        result.setTtl(obj.value("ttl"_L1).toInteger());
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolGetTaskResult::toJson(const McpProtocolGetTaskResult &boolean)
+QJsonObject McpProtocolGetTaskResult::toJson(const McpProtocolGetTaskResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    obj["createdAt"_L1] = boolean.createdAt();
-    obj["lastUpdatedAt"_L1] = boolean.lastUpdatedAt();
-    obj["status"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(boolean.status());
-    obj["taskId"_L1] = boolean.taskId();
-    if (boolean.pollInterval().has_value()) {
-        obj["pollInterval"_L1] = *boolean.pollInterval();
+    obj["createdAt"_L1] = result.createdAt();
+    obj["lastUpdatedAt"_L1] = result.lastUpdatedAt();
+    obj["status"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(result.status());
+    obj["taskId"_L1] = result.taskId();
+    if (result.pollInterval().has_value()) {
+        obj["pollInterval"_L1] = *result.pollInterval();
     }
-    if (boolean.statusMessage().has_value()) {
-        obj["statusMessage"_L1] = *boolean.statusMessage();
+    if (result.statusMessage().has_value()) {
+        obj["statusMessage"_L1] = *result.statusMessage();
     }
-    if (boolean.ttl().has_value()) {
-        obj["ttl"_L1] = *boolean.ttl();
+    if (result.ttl().has_value()) {
+        obj["ttl"_L1] = *result.ttl();
     } else {
         obj["ttl"_L1] = QJsonValue::Null;
     }
@@ -125,12 +125,12 @@ void McpProtocolGetTaskResult::setLastUpdatedAt(const QString &newLastUpdatedAt)
     mLastUpdatedAt = newLastUpdatedAt;
 }
 
-std::optional<int> McpProtocolGetTaskResult::pollInterval() const
+std::optional<qint64> McpProtocolGetTaskResult::pollInterval() const
 {
     return mPollInterval;
 }
 
-void McpProtocolGetTaskResult::setPollInterval(std::optional<int> newPollInterval)
+void McpProtocolGetTaskResult::setPollInterval(std::optional<qint64> newPollInterval)
 {
     mPollInterval = newPollInterval;
 }
@@ -165,12 +165,12 @@ void McpProtocolGetTaskResult::setTaskId(const QString &newTaskId)
     mTaskId = newTaskId;
 }
 
-std::optional<int> McpProtocolGetTaskResult::ttl() const
+std::optional<qint64> McpProtocolGetTaskResult::ttl() const
 {
     return mTtl;
 }
 
-void McpProtocolGetTaskResult::setTtl(std::optional<int> newTtl)
+void McpProtocolGetTaskResult::setTtl(std::optional<qint64> newTtl)
 {
     mTtl = newTtl;
 }

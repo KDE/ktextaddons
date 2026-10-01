@@ -77,4 +77,26 @@ void McpProtocolElicitRequestFormParamsTest::shouldConvertJson()
     QCOMPARE(McpProtocolElicitRequestFormParams::toJson(params), obj);
 }
 
+void McpProtocolElicitRequestFormParamsTest::shouldAcceptMissingMode()
+{
+    QJsonObject properties;
+    QJsonObject stringSchema;
+    stringSchema["type"_L1] = u"string"_s;
+    properties["name"_L1] = stringSchema;
+    QJsonObject requestedSchema;
+    requestedSchema["type"_L1] = u"object"_s;
+    requestedSchema["properties"_L1] = properties;
+
+    QJsonObject obj;
+    obj["message"_L1] = u"Your name?"_s;
+    obj["requestedSchema"_L1] = requestedSchema;
+
+    const auto params = McpProtocolElicitRequestFormParams::fromJson(obj);
+    QCOMPARE(params.message(), u"Your name?"_s);
+    QCOMPARE(params.requestedSchema().properties().count(), 1);
+
+    obj["mode"_L1] = u"url"_s;
+    QCOMPARE(McpProtocolElicitRequestFormParams::fromJson(obj), McpProtocolElicitRequestFormParams());
+}
+
 #include "moc_mcpprotocolelicitrequestformparamstest.cpp"

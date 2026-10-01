@@ -6,8 +6,8 @@
 
 #include "mcpprotocolcanceltaskrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -30,10 +30,10 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params::fromJ
 }
 
 QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params::toJson(
-    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params &image)
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params &params)
 {
     QJsonObject obj;
-    obj["taskId"_L1] = image.taskId();
+    obj["taskId"_L1] = params.taskId();
     return obj;
 }
 
@@ -52,29 +52,32 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCancelTaskRequest prompt;
+    McpProtocolCancelTaskRequest request;
     if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+        request.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
+        return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCancelTaskRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'tasks/cancel', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolCancelTaskRequest: field 'method' must be" << McpProtocolCancelTaskRequest::type() << "got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject()));
+        request.setParams(McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject()));
     }
-    return prompt;
+    return request;
 }
 
-QJsonObject McpProtocolCancelTaskRequest::toJson(const McpProtocolCancelTaskRequest &boolean)
+QJsonObject McpProtocolCancelTaskRequest::toJson(const McpProtocolCancelTaskRequest &request)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(request.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCancelTaskRequest::type());
-    obj["params"_L1] = McpProtocolCancelTaskRequest::Params::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolCancelTaskRequest::Params::toJson(request.params());
     return obj;
 }
 
@@ -83,9 +86,9 @@ McpProtocolCancelTaskRequest::Params McpProtocolCancelTaskRequest::params() cons
     return mParams;
 }
 
-void McpProtocolCancelTaskRequest::setParams(const McpProtocolCancelTaskRequest::Params &newParams)
+void McpProtocolCancelTaskRequest::setParams(McpProtocolCancelTaskRequest::Params newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }
 
 McpProtocolUtils::RequestId McpProtocolCancelTaskRequest::id() const

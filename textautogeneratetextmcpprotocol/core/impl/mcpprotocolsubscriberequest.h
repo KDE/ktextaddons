@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolSubscribeRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscribeRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscribeRequest &subscribeRequest);
 
     /*!
      */

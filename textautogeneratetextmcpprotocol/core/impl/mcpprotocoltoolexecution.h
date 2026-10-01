@@ -7,6 +7,8 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QObject>
 #include <QString>
+#include <cstdint>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -39,7 +41,7 @@ public:
     [[nodiscard]] static McpProtocolToolExecution fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolExecution &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolExecution &toolExecution);
 
     /*!
      */

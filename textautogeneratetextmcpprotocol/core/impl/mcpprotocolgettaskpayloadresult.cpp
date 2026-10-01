@@ -6,7 +6,8 @@
 
 #include "mcpprotocolgettaskpayloadresult.h"
 #include <QDebug>
-#include <QJsonArray>
+#include <QSet>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -17,14 +18,15 @@ bool McpProtocolGetTaskPayloadResult::operator==(const McpProtocolGetTaskPayload
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetTaskPayloadResult &t)
 {
     d.space() << "meta:" << t.meta();
+    d.space() << "additionalProperties:" << t.additionalProperties();
     return d;
 }
 
 McpProtocolGetTaskPayloadResult McpProtocolGetTaskPayloadResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolGetTaskPayloadResult prompt;
+    McpProtocolGetTaskPayloadResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     {
         const QSet<QString> knownKeys{"_meta"_L1};
@@ -34,18 +36,19 @@ McpProtocolGetTaskPayloadResult McpProtocolGetTaskPayloadResult::fromJson(const 
                 additionalObjs.insert(it.key(), it.value());
             }
         }
-        prompt.setAdditionalProperties(additionalObjs);
+        result.setAdditionalProperties(std::move(additionalObjs));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolGetTaskPayloadResult::toJson(const McpProtocolGetTaskPayloadResult &boolean)
+QJsonObject McpProtocolGetTaskPayloadResult::toJson(const McpProtocolGetTaskPayloadResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    for (auto it = boolean.additionalProperties().constBegin(); it != boolean.additionalProperties().constEnd(); ++it) {
+    const QJsonObject additionalProperties = result.additionalProperties();
+    for (auto it = additionalProperties.constBegin(); it != additionalProperties.constEnd(); ++it) {
         obj.insert(it.key(), it.value());
     }
     return obj;
@@ -66,7 +69,7 @@ QJsonObject McpProtocolGetTaskPayloadResult::additionalProperties() const
     return mAdditionalProperties;
 }
 
-void McpProtocolGetTaskPayloadResult::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
+void McpProtocolGetTaskPayloadResult::setAdditionalProperties(QJsonObject newAdditionalProperties)
 {
-    mAdditionalProperties = newAdditionalProperties;
+    mAdditionalProperties = std::move(newAdditionalProperties);
 }

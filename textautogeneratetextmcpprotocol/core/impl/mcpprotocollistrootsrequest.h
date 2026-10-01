@@ -8,6 +8,7 @@
 #include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRequestParams>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -32,7 +33,7 @@ public:
     [[nodiscard]] static McpProtocolListRootsRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolListRootsRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolListRootsRequest &request);
 
     /*!
      */

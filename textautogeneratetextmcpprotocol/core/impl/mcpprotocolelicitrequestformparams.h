@@ -9,6 +9,7 @@
 #include <QByteArray>
 #include <QMap>
 #include <QString>
+#include <QStringList>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBooleanSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLegacyTitledEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolNumberSchema>
@@ -19,6 +20,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledMultiSelectEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledSingleSelectEnumSchema>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 
 class QDebug;
 class QJsonObject;
@@ -39,7 +41,7 @@ public:
         [[nodiscard]] static McpProtocolElicitRequestFormParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::Meta &meta);
     };
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT RequestedSchema {
         std::optional<QString> mDollarschema;
@@ -51,14 +53,14 @@ public:
         [[nodiscard]] std::optional<QStringList> required() const;
         void setRequired(std::optional<QStringList> newRequired);
         [[nodiscard]] QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> properties() const;
-        void setProperties(const QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> &newProperties);
+        void setProperties(QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> newProperties);
         [[nodiscard]] bool operator==(const McpProtocolElicitRequestFormParams::RequestedSchema &other) const;
         /*!
          */
         [[nodiscard]] static McpProtocolElicitRequestFormParams::RequestedSchema fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::RequestedSchema &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams::RequestedSchema &requestedSchema);
     };
     /*!
      */
@@ -73,7 +75,7 @@ public:
     [[nodiscard]] static McpProtocolElicitRequestFormParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestFormParams &params);
 
     /*!
      */
@@ -98,7 +100,7 @@ public:
     [[nodiscard]] RequestedSchema requestedSchema() const;
     /*!
      */
-    void setRequestedSchema(const RequestedSchema &newRequestedSchema);
+    void setRequestedSchema(RequestedSchema newRequestedSchema);
 
     /*!
      */
@@ -117,3 +119,4 @@ private:
 
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams &t);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams::Meta &t);

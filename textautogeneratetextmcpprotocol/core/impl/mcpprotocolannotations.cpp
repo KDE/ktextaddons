@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 McpProtocolAnnotations::McpProtocolAnnotations() = default;
@@ -38,7 +39,7 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
         for (const auto &v : arr) {
             audience.append(McpProtocolUtils::convertRoleFromString(v.toString()));
         }
-        annot.setAudience(audience);
+        annot.setAudience(std::move(audience));
     }
     return annot;
 }

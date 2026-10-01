@@ -6,7 +6,6 @@
 
 #include "mcpprotocolresourceupdatednotification.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -36,7 +35,7 @@ McpProtocolResourceUpdatedNotification McpProtocolResourceUpdatedNotification::f
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolResourceUpdatedNotification::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
-            << "Field 'method' must be 'notifications/tools/list_changed', got: " << obj.value("method"_L1).toString();
+            << "Field 'method' must be" << McpProtocolResourceUpdatedNotification::type() << ", got:" << obj.value("method"_L1).toString();
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
@@ -45,12 +44,12 @@ McpProtocolResourceUpdatedNotification McpProtocolResourceUpdatedNotification::f
     return prompt;
 }
 
-QJsonObject McpProtocolResourceUpdatedNotification::toJson(const McpProtocolResourceUpdatedNotification &boolean)
+QJsonObject McpProtocolResourceUpdatedNotification::toJson(const McpProtocolResourceUpdatedNotification &resourceUpdatedNotification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolResourceUpdatedNotification::type());
-    obj["params"_L1] = McpProtocolResourceUpdatedNotificationParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolResourceUpdatedNotificationParams::toJson(resourceUpdatedNotification.params());
     return obj;
 }
 

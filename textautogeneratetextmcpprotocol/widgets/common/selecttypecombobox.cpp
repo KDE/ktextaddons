@@ -5,7 +5,7 @@
 */
 
 #include "selecttypecombobox.h"
-#include <KLocalizedString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 

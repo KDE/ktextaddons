@@ -5,12 +5,13 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QJsonObject>
 #include <QString>
 #include <QStringList>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <optional>
 
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCompleteResult
@@ -28,10 +29,10 @@ public:
         [[nodiscard]] static McpProtocolCompleteResult::Completion fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteResult::Completion &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteResult::Completion &completion);
 
         [[nodiscard]] QStringList values() const;
-        void setValues(const QStringList &newValues);
+        void setValues(QStringList newValues);
         [[nodiscard]] std::optional<bool> hasMore() const;
         void setHasMore(std::optional<bool> newHasMore);
         [[nodiscard]] std::optional<int> total() const;
@@ -51,7 +52,7 @@ public:
     [[nodiscard]] static McpProtocolCompleteResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteResult &result);
 
     /*!
      */
@@ -65,7 +66,7 @@ public:
     [[nodiscard]] Completion completion() const;
     /*!
      */
-    void setCompletion(const Completion &newCompletion);
+    void setCompletion(Completion newCompletion);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

@@ -6,8 +6,10 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
-
+#include <QList>
+#include <QString>
 #include <QStringList>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -15,19 +17,19 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUntitledMultiSelectEnumSchema
 {
 public:
-    struct Items {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Items {
         QStringList mEnum;
         [[nodiscard]] bool operator==(const McpProtocolUntitledMultiSelectEnumSchema::Items &other) const;
 
         [[nodiscard]] QStringList enumValue() const;
-        void setEnum(const QStringList &newEnum);
+        void setEnum(QStringList newEnum);
 
         /*!
          */
         [[nodiscard]] static McpProtocolUntitledMultiSelectEnumSchema::Items fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledMultiSelectEnumSchema::Items &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledMultiSelectEnumSchema::Items &items);
     };
     /*!
      */
@@ -46,7 +48,7 @@ public:
     [[nodiscard]] static McpProtocolUntitledMultiSelectEnumSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledMultiSelectEnumSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledMultiSelectEnumSchema &untitledMultiSelectEnumSchema);
 
     /*!
      */

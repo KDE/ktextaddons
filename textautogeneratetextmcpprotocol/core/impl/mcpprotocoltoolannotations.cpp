@@ -12,54 +12,54 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolAnnotations::McpProtocolToolAnnotations() = default;
 
-bool McpProtocolToolAnnotations::destructiveHint() const
+std::optional<bool> McpProtocolToolAnnotations::destructiveHint() const
 {
     return mDestructiveHint;
 }
 
-void McpProtocolToolAnnotations::setDestructiveHint(bool newDestructiveHint)
+void McpProtocolToolAnnotations::setDestructiveHint(std::optional<bool> newDestructiveHint)
 {
     mDestructiveHint = newDestructiveHint;
 }
 
-bool McpProtocolToolAnnotations::idempotentHint() const
+std::optional<bool> McpProtocolToolAnnotations::idempotentHint() const
 {
     return mIdempotentHint;
 }
 
-void McpProtocolToolAnnotations::setIdempotentHint(bool newIdempotentHint)
+void McpProtocolToolAnnotations::setIdempotentHint(std::optional<bool> newIdempotentHint)
 {
     mIdempotentHint = newIdempotentHint;
 }
 
-bool McpProtocolToolAnnotations::openWorldHint() const
+std::optional<bool> McpProtocolToolAnnotations::openWorldHint() const
 {
     return mOpenWorldHint;
 }
 
-void McpProtocolToolAnnotations::setOpenWorldHint(bool newOpenWorldHint)
+void McpProtocolToolAnnotations::setOpenWorldHint(std::optional<bool> newOpenWorldHint)
 {
     mOpenWorldHint = newOpenWorldHint;
 }
 
-bool McpProtocolToolAnnotations::readOnlyHint() const
+std::optional<bool> McpProtocolToolAnnotations::readOnlyHint() const
 {
     return mReadOnlyHint;
 }
 
-void McpProtocolToolAnnotations::setReadOnlyHint(bool newReadOnlyHint)
+void McpProtocolToolAnnotations::setReadOnlyHint(std::optional<bool> newReadOnlyHint)
 {
     mReadOnlyHint = newReadOnlyHint;
 }
 
-QString McpProtocolToolAnnotations::title() const
+std::optional<QString> McpProtocolToolAnnotations::title() const
 {
     return mTitle;
 }
 
-void McpProtocolToolAnnotations::setTitle(const QString &newTitle)
+void McpProtocolToolAnnotations::setTitle(std::optional<QString> newTitle)
 {
-    mTitle = newTitle;
+    mTitle = std::move(newTitle);
 }
 
 bool McpProtocolToolAnnotations::operator==(const McpProtocolToolAnnotations &other) const = default;
@@ -77,20 +77,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolToolAnnotations McpProtocolToolAnnotations::fromJson(const QJsonObject &obj)
 {
     McpProtocolToolAnnotations toolAnnotations;
-    if (obj.contains("destructiveHint"_L1)) {
-        toolAnnotations.setDestructiveHint(obj.value("destructiveHint"_L1).toBool());
+    if (const QJsonValue destructiveHintValue = obj.value("destructiveHint"_L1); destructiveHintValue.isBool()) {
+        toolAnnotations.setDestructiveHint(destructiveHintValue.toBool());
     }
-    if (obj.contains("idempotentHint"_L1)) {
-        toolAnnotations.setIdempotentHint(obj.value("idempotentHint"_L1).toBool());
+    if (const QJsonValue idempotentHintValue = obj.value("idempotentHint"_L1); idempotentHintValue.isBool()) {
+        toolAnnotations.setIdempotentHint(idempotentHintValue.toBool());
     }
-    if (obj.contains("openWorldHint"_L1)) {
-        toolAnnotations.setOpenWorldHint(obj.value("openWorldHint"_L1).toBool());
+    if (const QJsonValue openWorldHintValue = obj.value("openWorldHint"_L1); openWorldHintValue.isBool()) {
+        toolAnnotations.setOpenWorldHint(openWorldHintValue.toBool());
     }
-    if (obj.contains("readOnlyHint"_L1)) {
-        toolAnnotations.setReadOnlyHint(obj.value("readOnlyHint"_L1).toBool());
+    if (const QJsonValue readOnlyHintValue = obj.value("readOnlyHint"_L1); readOnlyHintValue.isBool()) {
+        toolAnnotations.setReadOnlyHint(readOnlyHintValue.toBool());
     }
-    if (obj.contains("title"_L1)) {
-        toolAnnotations.setTitle(obj.value("title"_L1).toString());
+    if (const QJsonValue titleValue = obj.value("title"_L1); titleValue.isString()) {
+        toolAnnotations.setTitle(titleValue.toString());
     }
     return toolAnnotations;
 }
@@ -98,10 +98,20 @@ McpProtocolToolAnnotations McpProtocolToolAnnotations::fromJson(const QJsonObjec
 QJsonObject McpProtocolToolAnnotations::toJson(const McpProtocolToolAnnotations &toolAnnotations)
 {
     QJsonObject obj;
-    obj.insert("destructiveHint"_L1, toolAnnotations.destructiveHint());
-    obj.insert("idempotentHint"_L1, toolAnnotations.idempotentHint());
-    obj.insert("openWorldHint"_L1, toolAnnotations.openWorldHint());
-    obj.insert("readOnlyHint"_L1, toolAnnotations.readOnlyHint());
-    obj.insert("title"_L1, toolAnnotations.title());
+    if (toolAnnotations.destructiveHint().has_value()) {
+        obj.insert("destructiveHint"_L1, *toolAnnotations.destructiveHint());
+    }
+    if (toolAnnotations.idempotentHint().has_value()) {
+        obj.insert("idempotentHint"_L1, *toolAnnotations.idempotentHint());
+    }
+    if (toolAnnotations.openWorldHint().has_value()) {
+        obj.insert("openWorldHint"_L1, *toolAnnotations.openWorldHint());
+    }
+    if (toolAnnotations.readOnlyHint().has_value()) {
+        obj.insert("readOnlyHint"_L1, *toolAnnotations.readOnlyHint());
+    }
+    if (toolAnnotations.title().has_value()) {
+        obj.insert("title"_L1, *toolAnnotations.title());
+    }
     return obj;
 }

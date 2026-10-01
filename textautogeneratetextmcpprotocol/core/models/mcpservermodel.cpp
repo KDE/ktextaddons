@@ -5,6 +5,7 @@
 */
 #include "mcpservermodel.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <algorithm>
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpServerModel::McpServerModel(QObject *parent)
@@ -78,13 +79,13 @@ void McpServerModel::editMcpServer(const McpServer &server)
         return s.identifier() == server.identifier();
     };
     if (const auto answerIt = std::find_if(mMcpServers.constBegin(), mMcpServers.constEnd(), matchesUuid); answerIt != mMcpServers.constEnd()) {
-        const int i = std::distance(mMcpServers.constBegin(), answerIt);
+        const qsizetype i = std::distance(mMcpServers.constBegin(), answerIt);
         mMcpServers[i] = server;
-        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
-            const QModelIndex index = createIndex(rowNumber, 0);
-            Q_EMIT dataChanged(index, index, roles);
-        };
-        emitChanged(i, {Qt::DisplayRole, MCPServerRoles::ServerType, MCPServerRoles::Name, MCPServerRoles::Enabled, MCPServerRoles::Identifier});
+        const QModelIndex index = createIndex(static_cast<int>(i), 0);
+        Q_EMIT dataChanged(
+            index,
+            index,
+            {Qt::DisplayRole, Qt::CheckStateRole, MCPServerRoles::ServerType, MCPServerRoles::Name, MCPServerRoles::Enabled, MCPServerRoles::Identifier});
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server not found for identifier:" << server.identifier();
     }
@@ -97,10 +98,10 @@ void McpServerModel::addMcpServer(const McpServer &server)
     endInsertRows();
 }
 
-void McpServerModel::setMcpServers(const QList<McpServer> &newTextInstances)
+void McpServerModel::setMcpServers(QList<McpServer> newServers)
 {
     beginResetModel();
-    mMcpServers = newTextInstances;
+    mMcpServers = std::move(newServers);
     endResetModel();
 }
 
@@ -119,17 +120,11 @@ McpServer McpServerModel::mcpServer(const QByteArray &identifier) const
     return {};
 }
 
-bool McpServerModel::isEmpty() const
+bool McpServerModel::hasEnabledServer() const
 {
-    if (mMcpServers.isEmpty()) {
-        return true;
-    }
-    for (const auto &server : mMcpServers) {
-        if (server.enabled()) {
-            return false;
-        }
-    }
-    return true;
+    return std::any_of(mMcpServers.cbegin(), mMcpServers.cend(), [](const McpServer &server) {
+        return server.enabled();
+    });
 }
 
 void McpServerModel::removeMcpServer(const QByteArray &identifier)
@@ -141,8 +136,8 @@ void McpServerModel::removeMcpServer(const QByteArray &identifier)
         return msg.identifier() == identifier;
     };
     if (const auto it = std::find_if(mMcpServers.cbegin(), mMcpServers.cend(), matchesIdentifier); it != mMcpServers.cend()) {
-        const int i = std::distance(mMcpServers.cbegin(), it);
-        beginRemoveRows(QModelIndex(), i, i);
+        const qsizetype i = std::distance(mMcpServers.cbegin(), it);
+        beginRemoveRows(QModelIndex(), static_cast<int>(i), static_cast<int>(i));
         mMcpServers.removeAt(i);
         endRemoveRows();
     }

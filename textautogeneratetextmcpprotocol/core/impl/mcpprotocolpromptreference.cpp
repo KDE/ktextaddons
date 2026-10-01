@@ -6,7 +6,6 @@
 
 #include "mcpprotocolpromptreference.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -35,18 +34,20 @@ McpProtocolPromptReference McpProtocolPromptReference::fromJson(const QJsonObjec
         prompt.setTitle(obj.value("title"_L1).toString());
     }
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolPromptReference::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'ref/prompt', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'type' must be" << McpProtocolPromptReference::type() << ", got:" << obj.value("type"_L1).toString();
+        return {};
     }
     return prompt;
 }
 
-QJsonObject McpProtocolPromptReference::toJson(const McpProtocolPromptReference &boolean)
+QJsonObject McpProtocolPromptReference::toJson(const McpProtocolPromptReference &promptReference)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
+    obj["name"_L1] = promptReference.name();
     obj["type"_L1] = QString::fromLatin1(McpProtocolPromptReference::type());
-    if (boolean.title().has_value()) {
-        obj.insert("title"_L1, *boolean.title());
+    if (promptReference.title().has_value()) {
+        obj.insert("title"_L1, *promptReference.title());
     }
     return obj;
 }
@@ -68,5 +69,5 @@ std::optional<QString> McpProtocolPromptReference::title() const
 
 void McpProtocolPromptReference::setTitle(std::optional<QString> newTitle)
 {
-    mTitle = newTitle;
+    mTitle = std::move(newTitle);
 }

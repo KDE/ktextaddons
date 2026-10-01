@@ -6,8 +6,8 @@
 
 #include "mcpprotocolcalltoolrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -29,31 +29,32 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCallToolRequest prompt;
+    McpProtocolCallToolRequest request;
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCallToolRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'tools/call', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolCallToolRequest: field 'method' must be" << McpProtocolCallToolRequest::type() << "got:" << obj.value("method"_L1).toString();
         return {};
     }
     if (obj.contains("id"_L1)) {
-        prompt.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+        request.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolCallToolRequestParams::fromJson(paramsValue.toObject()));
+        request.setParams(McpProtocolCallToolRequestParams::fromJson(paramsValue.toObject()));
     }
-    return prompt;
+    return request;
 }
 
-QJsonObject McpProtocolCallToolRequest::toJson(const McpProtocolCallToolRequest &boolean)
+QJsonObject McpProtocolCallToolRequest::toJson(const McpProtocolCallToolRequest &request)
 {
     QJsonObject obj;
-    obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(request.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCallToolRequest::type());
-    obj["params"_L1] = McpProtocolCallToolRequestParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolCallToolRequestParams::toJson(request.params());
     return obj;
 }
 
@@ -72,7 +73,7 @@ McpProtocolCallToolRequestParams McpProtocolCallToolRequest::params() const
     return mParams;
 }
 
-void McpProtocolCallToolRequest::setParams(const McpProtocolCallToolRequestParams &newParams)
+void McpProtocolCallToolRequest::setParams(McpProtocolCallToolRequestParams newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

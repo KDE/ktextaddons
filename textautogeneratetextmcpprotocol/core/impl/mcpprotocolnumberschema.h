@@ -6,6 +6,8 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
+#include <cstdint>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,7 +30,7 @@ public:
     [[nodiscard]] static McpProtocolNumberSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolNumberSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolNumberSchema &schema);
 
     /*!
      */
@@ -36,10 +38,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<int> defaultValue() const;
+    [[nodiscard]] std::optional<double> defaultValue() const;
     /*!
      */
-    void setDefaultValue(std::optional<int> newDefaultValue);
+    void setDefaultValue(std::optional<double> newDefaultValue);
 
     /*!
      */
@@ -50,17 +52,17 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<int> maximum() const;
+    [[nodiscard]] std::optional<double> maximum() const;
     /*!
      */
-    void setMaximum(std::optional<int> newMaximum);
+    void setMaximum(std::optional<double> newMaximum);
 
     /*!
      */
-    [[nodiscard]] std::optional<int> minimum() const;
+    [[nodiscard]] std::optional<double> minimum() const;
     /*!
      */
-    void setMinimum(std::optional<int> newMinimum);
+    void setMinimum(std::optional<double> newMinimum);
 
     /*!
      */
@@ -78,16 +80,16 @@ public:
 
     /*!
      */
-    [[nodiscard]] static QString convertNumberSchemaTypeToString(McpProtocolNumberSchema::Type level);
+    [[nodiscard]] static QString convertNumberSchemaTypeToString(McpProtocolNumberSchema::Type type);
     /*!
      */
     [[nodiscard]] static McpProtocolNumberSchema::Type convertNumberSchemaTypeFromString(const QString &str);
 
 private:
-    std::optional<int> mDefaultValue;
+    std::optional<double> mDefaultValue;
     std::optional<QString> mDescription;
-    std::optional<int> mMaximum;
-    std::optional<int> mMinimum;
+    std::optional<double> mMaximum;
+    std::optional<double> mMinimum;
     std::optional<QString> mTitle;
     Type mType = Type::Unknown;
 };

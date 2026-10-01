@@ -81,7 +81,7 @@ McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJso
         for (auto it = mapObj_completions.constBegin(); it != mapObj_completions.constEnd(); ++it) {
             map_completions.insert(it.key(), it.value());
         }
-        capabilities.setCompletions(map_completions);
+        capabilities.setCompletions(std::move(map_completions));
     }
     if (const QJsonValue experimentalValue = obj.value("experimental"_L1); experimentalValue.isObject()) {
         const QJsonObject mapObj_experimental = experimentalValue.toObject();
@@ -89,7 +89,7 @@ McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJso
         for (auto it = mapObj_experimental.constBegin(); it != mapObj_experimental.constEnd(); ++it) {
             map_experimental.insert(it.key(), it.value().toObject());
         }
-        capabilities.setExperimental(map_experimental);
+        capabilities.setExperimental(std::move(map_experimental));
     }
     if (const QJsonValue loggingValue = obj.value("logging"_L1); loggingValue.isObject()) {
         const QJsonObject mapObj_logging = loggingValue.toObject();
@@ -97,7 +97,7 @@ McpProtocolServerCapabilities McpProtocolServerCapabilities::fromJson(const QJso
         for (auto it = mapObj_logging.constBegin(); it != mapObj_logging.constEnd(); ++it) {
             map_logging.insert(it.key(), it.value());
         }
-        capabilities.setLogging(map_logging);
+        capabilities.setLogging(std::move(map_logging));
     }
     if (const QJsonValue promptsValue = obj.value("prompts"_L1); promptsValue.isObject()) {
         capabilities.setPrompts(McpProtocolServerCapabilities::Prompts::fromJson(promptsValue.toObject()));
@@ -225,7 +225,7 @@ McpProtocolServerCapabilities::Tasks McpProtocolServerCapabilities::Tasks::fromJ
         for (auto it = mapObj_cancel.constBegin(); it != mapObj_cancel.constEnd(); ++it) {
             map_cancel.insert(it.key(), it.value());
         }
-        tasks.setCancel(map_cancel);
+        tasks.setCancel(std::move(map_cancel));
     }
     if (const QJsonValue listValue = obj.value("list"_L1); listValue.isObject()) {
         const QJsonObject mapObj_list = listValue.toObject();
@@ -233,7 +233,7 @@ McpProtocolServerCapabilities::Tasks McpProtocolServerCapabilities::Tasks::fromJ
         for (auto it = mapObj_list.constBegin(); it != mapObj_list.constEnd(); ++it) {
             map_list.insert(it.key(), it.value());
         }
-        tasks.setList(map_list);
+        tasks.setList(std::move(map_list));
     }
     if (const QJsonValue requestsValue = obj.value("requests"_L1); requestsValue.isObject()) {
         tasks.setRequests(McpProtocolServerCapabilities::Tasks::Requests::fromJson(requestsValue.toObject()));
@@ -293,7 +293,7 @@ McpProtocolServerCapabilities::Tasks::Requests::Tools McpProtocolServerCapabilit
         for (auto it = mapObj_call.constBegin(); it != mapObj_call.constEnd(); ++it) {
             map_call.insert(it.key(), it.value());
         }
-        tools.setCall(map_call);
+        tools.setCall(std::move(map_call));
     }
     return tools;
 }

@@ -23,11 +23,11 @@ AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mServerUrlLineEdit->setClearButtonEnabled(true);
-    mainLayout->addRow(i18n("Url:"), mServerUrlLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
 
     mHttpServerHeaderWidget->setObjectName(u"mHttpServerHeaderWidget"_s);
-    mainLayout->addRow(i18n("Headers:"), mHttpServerHeaderWidget);
+    mainLayout->addRow(i18nc("@label", "Headers:"), mHttpServerHeaderWidget);
 
     connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpSteamableHttpServerWidget::settingChanged);
 }
@@ -46,15 +46,20 @@ QString AddMcpSteamableHttpServerWidget::url() const
 
 bool AddMcpSteamableHttpServerWidget::isValid() const
 {
-    return !mServerUrlLineEdit->text().isEmpty();
+    const QString text = mServerUrlLineEdit->text().trimmed();
+    if (text.isEmpty()) {
+        return false;
+    }
+    const QUrl url = QUrl::fromUserInput(text);
+    return url.isValid() && !url.host().isEmpty() && (url.scheme() == "http"_L1 || url.scheme() == "https"_L1);
 }
 
 void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
-    settings.setServerUrl(QUrl(mServerUrlLineEdit->text()));
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
+    settings.setServerUrl(QUrl::fromUserInput(mServerUrlLineEdit->text().trimmed()));
     settings.setHeaders(mHttpServerHeaderWidget->headers());
-    server.setSettings(settings);
+    server.setSettings(std::move(settings));
 }
 
 void AddMcpSteamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)

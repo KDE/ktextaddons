@@ -28,7 +28,7 @@ Q_SIGNALS:
     void finished();
 
 private:
-    void slotRead();
+    void slotRead(QNetworkReply *reply);
     QNetworkAccessManager *const mNetworkAccessManager;
     QNetworkReply *mReply = nullptr;
     McpServerSsePluginInterface *const mInterface;

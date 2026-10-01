@@ -5,11 +5,11 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -17,7 +17,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolInitializeRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -29,7 +29,7 @@ public:
         [[nodiscard]] static McpProtocolInitializeRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolInitializeRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolInitializeRequestParams::Meta &meta);
     };
 
     /*!
@@ -45,7 +45,7 @@ public:
     [[nodiscard]] static McpProtocolInitializeRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolInitializeRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolInitializeRequestParams &params);
 
     /*!
      */
@@ -66,14 +66,14 @@ public:
     [[nodiscard]] McpProtocolImplementation clientInfo() const;
     /*!
      */
-    void setClientInfo(const McpProtocolImplementation &newClientInfo);
+    void setClientInfo(McpProtocolImplementation newClientInfo);
 
     /*!
      */
     [[nodiscard]] McpProtocolClientCapabilities capabilities() const;
     /*!
      */
-    void setCapabilities(const McpProtocolClientCapabilities &newCapabilities);
+    void setCapabilities(McpProtocolClientCapabilities newCapabilities);
 
 private:
     std::optional<Meta> mMeta;

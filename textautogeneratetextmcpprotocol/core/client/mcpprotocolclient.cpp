@@ -7,6 +7,7 @@
 #include "common/mcpprotocolplugininterface.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <KPluginFactory>
+#include <KPluginMetaData>
 
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;

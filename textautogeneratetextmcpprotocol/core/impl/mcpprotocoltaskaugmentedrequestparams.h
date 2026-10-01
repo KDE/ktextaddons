@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskMetadata>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -16,7 +16,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTaskAugmentedRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -28,7 +28,7 @@ public:
         [[nodiscard]] static McpProtocolTaskAugmentedRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskAugmentedRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskAugmentedRequestParams::Meta &meta);
     };
 
     /*!
@@ -44,7 +44,7 @@ public:
     [[nodiscard]] static McpProtocolTaskAugmentedRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskAugmentedRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskAugmentedRequestParams &taskAugmentedRequestParams);
 
     /*!
      */
@@ -55,14 +55,14 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<McpProtocolTaskMetadata> tasks() const;
+    [[nodiscard]] std::optional<McpProtocolTaskMetadata> task() const;
     /*!
      */
-    void setTasks(std::optional<McpProtocolTaskMetadata> newTasks);
+    void setTask(std::optional<McpProtocolTaskMetadata> newTask);
 
 private:
     std::optional<Meta> mMeta;
-    std::optional<McpProtocolTaskMetadata> mTasks;
+    std::optional<McpProtocolTaskMetadata> mTask;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskAugmentedRequestParams, Q_RELOCATABLE_TYPE);

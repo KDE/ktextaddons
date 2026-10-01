@@ -5,7 +5,6 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
@@ -29,7 +28,7 @@ public:
     [[nodiscard]] static McpProtocolJSONRPCResultResponse fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolJSONRPCResultResponse &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolJSONRPCResultResponse &response);
 
     /*!
      */
@@ -43,7 +42,7 @@ public:
     [[nodiscard]] McpProtocolResult result() const;
     /*!
      */
-    void setResult(const McpProtocolResult &newResult);
+    void setResult(McpProtocolResult newResult);
 
 private:
     McpProtocolResult mResult;

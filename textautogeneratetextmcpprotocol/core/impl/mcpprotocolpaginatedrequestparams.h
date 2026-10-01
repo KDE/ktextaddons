@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -14,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPaginatedRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -26,7 +27,7 @@ public:
         [[nodiscard]] static McpProtocolPaginatedRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolPaginatedRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolPaginatedRequestParams::Meta &meta);
     };
 
     /*!
@@ -42,7 +43,7 @@ public:
     [[nodiscard]] static McpProtocolPaginatedRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolPaginatedRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolPaginatedRequestParams &paginatedRequestParams);
 
     /*!
      */

@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolnumberschema.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -13,12 +14,12 @@ McpProtocolNumberSchema::McpProtocolNumberSchema() = default;
 
 bool McpProtocolNumberSchema::operator==(const McpProtocolNumberSchema &other) const = default;
 
-std::optional<int> McpProtocolNumberSchema::defaultValue() const
+std::optional<double> McpProtocolNumberSchema::defaultValue() const
 {
     return mDefaultValue;
 }
 
-void McpProtocolNumberSchema::setDefaultValue(std::optional<int> newDefaultValue)
+void McpProtocolNumberSchema::setDefaultValue(std::optional<double> newDefaultValue)
 {
     mDefaultValue = newDefaultValue;
 }
@@ -33,22 +34,22 @@ void McpProtocolNumberSchema::setDescription(std::optional<QString> newDescripti
     mDescription = std::move(newDescription);
 }
 
-std::optional<int> McpProtocolNumberSchema::maximum() const
+std::optional<double> McpProtocolNumberSchema::maximum() const
 {
     return mMaximum;
 }
 
-void McpProtocolNumberSchema::setMaximum(std::optional<int> newMaximum)
+void McpProtocolNumberSchema::setMaximum(std::optional<double> newMaximum)
 {
     mMaximum = newMaximum;
 }
 
-std::optional<int> McpProtocolNumberSchema::minimum() const
+std::optional<double> McpProtocolNumberSchema::minimum() const
 {
     return mMinimum;
 }
 
-void McpProtocolNumberSchema::setMinimum(std::optional<int> newMinimum)
+void McpProtocolNumberSchema::setMinimum(std::optional<double> newMinimum)
 {
     mMinimum = newMinimum;
 }
@@ -85,9 +86,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
-QString McpProtocolNumberSchema::convertNumberSchemaTypeToString(McpProtocolNumberSchema::Type level)
+QString McpProtocolNumberSchema::convertNumberSchemaTypeToString(McpProtocolNumberSchema::Type type)
 {
-    switch (level) {
+    switch (type) {
     case McpProtocolNumberSchema::Type::Integer:
         return u"integer"_s;
     case McpProtocolNumberSchema::Type::Number:
@@ -104,53 +105,55 @@ McpProtocolNumberSchema::Type McpProtocolNumberSchema::convertNumberSchemaTypeFr
         return McpProtocolNumberSchema::Type::Integer;
     } else if (str == "number"_L1) {
         return McpProtocolNumberSchema::Type::Number;
-    } else {
-        return {};
     }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid NumberSchema type: " << str;
+    return McpProtocolNumberSchema::Type::Unknown;
 }
 
 McpProtocolNumberSchema McpProtocolNumberSchema::fromJson(const QJsonObject &obj)
 {
-    McpProtocolNumberSchema prompt;
-    if (obj.contains("default"_L1)) {
-        prompt.setDefaultValue(obj.value("default"_L1).toInt());
+    McpProtocolNumberSchema schema;
+    if (const QJsonValue defaultValue = obj.value("default"_L1); defaultValue.isDouble()) {
+        schema.setDefaultValue(defaultValue.toDouble());
     }
     if (obj.contains("description"_L1)) {
-        prompt.setDescription(obj.value("description"_L1).toString());
+        schema.setDescription(obj.value("description"_L1).toString());
     }
-    if (obj.contains("maximum"_L1)) {
-        prompt.setMaximum(obj.value("maximum"_L1).toInt());
+    if (const QJsonValue maximumValue = obj.value("maximum"_L1); maximumValue.isDouble()) {
+        schema.setMaximum(maximumValue.toDouble());
     }
-    if (obj.contains("minimum"_L1)) {
-        prompt.setMinimum(obj.value("minimum"_L1).toInt());
+    if (const QJsonValue minimumValue = obj.value("minimum"_L1); minimumValue.isDouble()) {
+        schema.setMinimum(minimumValue.toDouble());
     }
     if (obj.contains("title"_L1)) {
-        prompt.setTitle(obj.value("title"_L1).toString());
+        schema.setTitle(obj.value("title"_L1).toString());
     }
     if (const QJsonValue typeValue = obj.value("type"_L1); typeValue.isString()) {
-        prompt.setType(convertNumberSchemaTypeFromString(typeValue.toString()));
+        schema.setType(convertNumberSchemaTypeFromString(typeValue.toString()));
     }
-    return prompt;
+    return schema;
 }
 
-QJsonObject McpProtocolNumberSchema::toJson(const McpProtocolNumberSchema &boolean)
+QJsonObject McpProtocolNumberSchema::toJson(const McpProtocolNumberSchema &schema)
 {
     QJsonObject obj;
-    obj["type"_L1] = convertNumberSchemaTypeToString(boolean.type());
-    if (boolean.defaultValue().has_value()) {
-        obj.insert("default"_L1, *boolean.defaultValue());
+    if (schema.type() != Type::Unknown) {
+        obj["type"_L1] = convertNumberSchemaTypeToString(schema.type());
     }
-    if (boolean.description().has_value()) {
-        obj.insert("description"_L1, *boolean.description());
+    if (schema.defaultValue().has_value()) {
+        obj.insert("default"_L1, *schema.defaultValue());
     }
-    if (boolean.maximum().has_value()) {
-        obj.insert("maximum"_L1, *boolean.maximum());
+    if (schema.description().has_value()) {
+        obj.insert("description"_L1, *schema.description());
     }
-    if (boolean.minimum().has_value()) {
-        obj.insert("minimum"_L1, *boolean.minimum());
+    if (schema.maximum().has_value()) {
+        obj.insert("maximum"_L1, *schema.maximum());
     }
-    if (boolean.title().has_value()) {
-        obj.insert("title"_L1, *boolean.title());
+    if (schema.minimum().has_value()) {
+        obj.insert("minimum"_L1, *schema.minimum());
+    }
+    if (schema.title().has_value()) {
+        obj.insert("title"_L1, *schema.title());
     }
     return obj;
 }

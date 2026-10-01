@@ -5,8 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolNotificationParams>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -31,7 +33,7 @@ public:
     [[nodiscard]] static McpProtocolRootsListChangedNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolRootsListChangedNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolRootsListChangedNotification &rootsListChangedNotification);
 
     /*!
      */

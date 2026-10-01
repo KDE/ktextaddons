@@ -5,9 +5,10 @@
 */
 
 #include "mcpprotocollistrootsresult.h"
-#include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListRootsResult::McpProtocolListRootsResult() = default;
@@ -23,9 +24,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolListRootsResult McpProtocolListRootsResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolListRootsResult prompt;
+    McpProtocolListRootsResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue rootsValue = obj.value("roots"_L1); rootsValue.isArray()) {
         const QJsonArray arr = rootsValue.toArray();
@@ -34,19 +35,19 @@ McpProtocolListRootsResult McpProtocolListRootsResult::fromJson(const QJsonObjec
         for (const QJsonValue &v : arr) {
             roots.append(McpProtocolRoot::fromJson(v.toObject()));
         }
-        prompt.setRoots(roots);
+        result.setRoots(std::move(roots));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolListRootsResult::toJson(const McpProtocolListRootsResult &boolean)
+QJsonObject McpProtocolListRootsResult::toJson(const McpProtocolListRootsResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
     QJsonArray arr_roots;
-    for (const auto &v : boolean.roots()) {
+    for (const auto &v : result.roots()) {
         arr_roots.append(McpProtocolRoot::toJson(v));
     }
     obj.insert("roots"_L1, arr_roots);
@@ -68,7 +69,7 @@ QList<McpProtocolRoot> McpProtocolListRootsResult::roots() const
     return mRoots;
 }
 
-void McpProtocolListRootsResult::setRoots(const QList<McpProtocolRoot> &newRoots)
+void McpProtocolListRootsResult::setRoots(QList<McpProtocolRoot> newRoots)
 {
-    mRoots = newRoots;
+    mRoots = std::move(newRoots);
 }

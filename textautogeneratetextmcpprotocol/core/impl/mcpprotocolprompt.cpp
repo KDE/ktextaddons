@@ -40,7 +40,7 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
         for (const auto &v : arr) {
             list_arguments.append(McpProtocolPromptArgument::fromJson(v.toObject()));
         }
-        prompt.setArguments(list_arguments);
+        prompt.setArguments(std::move(list_arguments));
     }
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
@@ -52,7 +52,7 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
-        prompt.setIcons(list_icons);
+        prompt.setIcons(std::move(list_icons));
     }
     prompt.setName(obj.value("name"_L1).toString());
     if (obj.contains("title"_L1)) {
@@ -61,34 +61,34 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
     return prompt;
 }
 
-QJsonObject McpProtocolPrompt::toJson(const McpProtocolPrompt &boolean)
+QJsonObject McpProtocolPrompt::toJson(const McpProtocolPrompt &prompt)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    obj["name"_L1] = prompt.name();
+    if (prompt.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*prompt.meta());
     }
-    if (boolean.arguments().has_value()) {
-        const auto arguments = *boolean.arguments();
+    if (prompt.arguments().has_value()) {
+        const auto arguments = *prompt.arguments();
         QJsonArray arr_arguments;
         for (const auto &v : arguments) {
             arr_arguments.append(McpProtocolPromptArgument::toJson(v));
         }
         obj["arguments"_L1] = arr_arguments;
     }
-    if (boolean.description().has_value()) {
-        obj["description"_L1] = *boolean.description();
+    if (prompt.description().has_value()) {
+        obj["description"_L1] = *prompt.description();
     }
-    if (boolean.icons().has_value()) {
+    if (prompt.icons().has_value()) {
         QJsonArray arr_icons;
-        const auto icons = *boolean.icons();
+        const auto icons = *prompt.icons();
         for (const auto &v : icons) {
             arr_icons.append(McpProtocolIcon::toJson(v));
         }
         obj["icons"_L1] = arr_icons;
     }
-    if (boolean.title().has_value()) {
-        obj["title"_L1] = *boolean.title();
+    if (prompt.title().has_value()) {
+        obj["title"_L1] = *prompt.title();
     }
 
     return obj;

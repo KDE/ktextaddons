@@ -21,18 +21,18 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolNotificationParams McpProtocolNotificationParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolNotificationParams prompt;
+    McpProtocolNotificationParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        params.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    return prompt;
+    return params;
 }
 
-QJsonObject McpProtocolNotificationParams::toJson(const McpProtocolNotificationParams &boolean)
+QJsonObject McpProtocolNotificationParams::toJson(const McpProtocolNotificationParams &params)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*params.meta());
     }
     return obj;
 }

@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolResourceUpdatedNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceUpdatedNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceUpdatedNotification &resourceUpdatedNotification);
 
     /*!
      */

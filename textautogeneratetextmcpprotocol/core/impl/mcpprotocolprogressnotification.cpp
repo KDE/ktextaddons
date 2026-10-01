@@ -6,7 +6,6 @@
 
 #include "mcpprotocolprogressnotification.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -34,7 +33,9 @@ McpProtocolProgressNotification McpProtocolProgressNotification::fromJson(const 
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolProgressNotification::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolProgressNotification::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolProgressNotificationParams::fromJson(paramsValue.toObject()));
@@ -42,12 +43,12 @@ McpProtocolProgressNotification McpProtocolProgressNotification::fromJson(const 
     return prompt;
 }
 
-QJsonObject McpProtocolProgressNotification::toJson(const McpProtocolProgressNotification &boolean)
+QJsonObject McpProtocolProgressNotification::toJson(const McpProtocolProgressNotification &progressNotification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolProgressNotification::type());
-    obj["params"_L1] = McpProtocolProgressNotificationParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolProgressNotificationParams::toJson(progressNotification.params());
     return obj;
 }
 

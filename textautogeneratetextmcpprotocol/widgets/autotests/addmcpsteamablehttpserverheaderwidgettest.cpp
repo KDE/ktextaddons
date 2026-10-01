@@ -6,6 +6,8 @@
 #include "addmcpsteamablehttpserverheaderwidgettest.h"
 #include "server/addmcpsteamablehttpserverheaderwidget.h"
 #include <QHBoxLayout>
+#include <QListWidget>
+#include <QPushButton>
 #include <QTest>
 QTEST_MAIN(AddMcpSteamableHttpServerHeaderWidgetTest)
 using namespace Qt::Literals::StringLiterals;
@@ -21,6 +23,45 @@ void AddMcpSteamableHttpServerHeaderWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
-    // TODO
+
+    auto mListBox = w.findChild<QListWidget *>(u"mListBox"_s);
+    QVERIFY(mListBox);
+    QCOMPARE(mListBox->count(), 0);
+
+    auto addHeaderButton = w.findChild<QPushButton *>(u"addHeaderButton"_s);
+    QVERIFY(addHeaderButton);
+    QVERIFY(addHeaderButton->isEnabled());
+
+    auto modifyHeaderButton = w.findChild<QPushButton *>(u"modifyHeaderButton"_s);
+    QVERIFY(modifyHeaderButton);
+    QVERIFY(!modifyHeaderButton->isEnabled());
+
+    auto removeHeaderButton = w.findChild<QPushButton *>(u"removeHeaderButton"_s);
+    QVERIFY(removeHeaderButton);
+    QVERIFY(!removeHeaderButton->isEnabled());
+
+    QVERIFY(w.headers().isEmpty());
+}
+
+void AddMcpSteamableHttpServerHeaderWidgetTest::shouldEnableButtonsWhenItemSelected()
+{
+    TextAutoGenerateTextMcpProtocolWidgets::AddMcpSteamableHttpServerHeaderWidget w;
+    const QStringList headers{u"Authorization: Bearer foo"_s, u"X-Test: bla"_s};
+    w.setHeaders(headers);
+    QCOMPARE(w.headers(), headers);
+
+    auto mListBox = w.findChild<QListWidget *>(u"mListBox"_s);
+    auto modifyHeaderButton = w.findChild<QPushButton *>(u"modifyHeaderButton"_s);
+    auto removeHeaderButton = w.findChild<QPushButton *>(u"removeHeaderButton"_s);
+    QVERIFY(!modifyHeaderButton->isEnabled());
+    QVERIFY(!removeHeaderButton->isEnabled());
+
+    mListBox->setCurrentRow(1);
+    QVERIFY(modifyHeaderButton->isEnabled());
+    QVERIFY(removeHeaderButton->isEnabled());
+
+    mListBox->clearSelection();
+    QVERIFY(!modifyHeaderButton->isEnabled());
+    QVERIFY(!removeHeaderButton->isEnabled());
 }
 #include "moc_addmcpsteamablehttpserverheaderwidgettest.cpp"

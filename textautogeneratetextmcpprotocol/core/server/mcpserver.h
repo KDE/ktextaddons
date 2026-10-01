@@ -6,9 +6,6 @@
 
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QMap>
-#include <QObject>
-#include <QUrl>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 class QDebug;
@@ -24,7 +21,6 @@ namespace TextAutoGenerateTextMcpProtocolCore
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServer
 {
-    Q_GADGET
 public:
     /*!
      * \brief McpServer
@@ -128,7 +124,7 @@ public:
      * \brief setSettings
      * \param newSettings
      */
-    void setSettings(const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &newSettings);
+    void setSettings(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings newSettings);
 
 private:
     bool mEnabled = true;

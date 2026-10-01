@@ -6,7 +6,6 @@
 
 #include "mcpprotocolpaginatedrequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -37,11 +36,11 @@ McpProtocolPaginatedRequestParams::Meta McpProtocolPaginatedRequestParams::Meta:
     return meta;
 }
 
-QJsonObject McpProtocolPaginatedRequestParams::Meta::toJson(const McpProtocolPaginatedRequestParams::Meta &image)
+QJsonObject McpProtocolPaginatedRequestParams::Meta::toJson(const McpProtocolPaginatedRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj.insert("progressToken"_L1, McpProtocolUtils::progressTokenToJson(*image.progressToken()));
+    if (meta.progressToken().has_value()) {
+        obj.insert("progressToken"_L1, McpProtocolUtils::progressTokenToJson(*meta.progressToken()));
     }
     return obj;
 }
@@ -56,12 +55,14 @@ McpProtocolPaginatedRequestParams McpProtocolPaginatedRequestParams::fromJson(co
     return prompt;
 }
 
-QJsonObject McpProtocolPaginatedRequestParams::toJson(const McpProtocolPaginatedRequestParams &boolean)
+QJsonObject McpProtocolPaginatedRequestParams::toJson(const McpProtocolPaginatedRequestParams &paginatedRequestParams)
 {
     QJsonObject obj;
-    obj["cursor"_L1] = boolean.cursor();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolPaginatedRequestParams::Meta::toJson(*boolean.meta());
+    if (!paginatedRequestParams.cursor().isEmpty()) {
+        obj["cursor"_L1] = paginatedRequestParams.cursor();
+    }
+    if (paginatedRequestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolPaginatedRequestParams::Meta::toJson(*paginatedRequestParams.meta());
     }
     return obj;
 }

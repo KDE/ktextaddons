@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolProgressNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolProgressNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolProgressNotification &progressNotification);
 
     /*!
      */

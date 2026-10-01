@@ -5,9 +5,10 @@
 */
 
 #include "mcpprotocollisttasksresult.h"
-#include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListTasksResult::McpProtocolListTasksResult() = default;
@@ -24,12 +25,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolListTasksResult McpProtocolListTasksResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolListTasksResult prompt;
+    McpProtocolListTasksResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("nextCursor"_L1)) {
-        prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
+        result.setNextCursor(obj.value("nextCursor"_L1).toString());
     }
     if (const QJsonValue tasksValue = obj.value("tasks"_L1); tasksValue.isArray()) {
         const QJsonArray arr = tasksValue.toArray();
@@ -38,22 +39,22 @@ McpProtocolListTasksResult McpProtocolListTasksResult::fromJson(const QJsonObjec
         for (const auto &v : arr) {
             tasks.append(McpProtocolTask::fromJson(v.toObject()));
         }
-        prompt.setTasks(tasks);
+        result.setTasks(std::move(tasks));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolListTasksResult::toJson(const McpProtocolListTasksResult &boolean)
+QJsonObject McpProtocolListTasksResult::toJson(const McpProtocolListTasksResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    if (boolean.nextCursor().has_value()) {
-        obj["nextCursor"_L1] = *boolean.nextCursor();
+    if (result.nextCursor().has_value()) {
+        obj["nextCursor"_L1] = *result.nextCursor();
     }
     QJsonArray arr_tasks;
-    for (const auto &v : boolean.tasks()) {
+    for (const auto &v : result.tasks()) {
         arr_tasks.append(McpProtocolTask::toJson(v));
     }
     obj["tasks"_L1] = arr_tasks;
@@ -85,7 +86,7 @@ QList<McpProtocolTask> McpProtocolListTasksResult::tasks() const
     return mTasks;
 }
 
-void McpProtocolListTasksResult::setTasks(const QList<McpProtocolTask> &newTasks)
+void McpProtocolListTasksResult::setTasks(QList<McpProtocolTask> newTasks)
 {
-    mTasks = newTasks;
+    mTasks = std::move(newTasks);
 }

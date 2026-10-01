@@ -26,7 +26,7 @@ public:
     [[nodiscard]] static McpProtocolRelatedTaskMetadata fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolRelatedTaskMetadata &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolRelatedTaskMetadata &relatedTaskMetadata);
 
     /*!
      */

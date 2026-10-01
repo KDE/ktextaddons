@@ -6,8 +6,8 @@
 
 #include "mcpprotocoljsonrpcerrorresponse.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -38,13 +38,13 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
     return response;
 }
 
-QJsonObject McpProtocolJSONRPCErrorResponse::toJson(const McpProtocolJSONRPCErrorResponse &boolean)
+QJsonObject McpProtocolJSONRPCErrorResponse::toJson(const McpProtocolJSONRPCErrorResponse &response)
 {
     QJsonObject obj;
-    obj["error"_L1] = McpProtocolError::toJson(boolean.error());
+    obj["error"_L1] = McpProtocolError::toJson(response.error());
     obj["jsonrpc"_L1] = u"2.0"_s;
-    if (boolean.id().has_value()) {
-        obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(*boolean.id());
+    if (response.id().has_value()) {
+        obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(*response.id());
     }
     return obj;
 }
@@ -54,9 +54,9 @@ McpProtocolError McpProtocolJSONRPCErrorResponse::error() const
     return mError;
 }
 
-void McpProtocolJSONRPCErrorResponse::setError(const McpProtocolError &newError)
+void McpProtocolJSONRPCErrorResponse::setError(McpProtocolError newError)
 {
-    mError = newError;
+    mError = std::move(newError);
 }
 
 std::optional<McpProtocolUtils::RequestId> McpProtocolJSONRPCErrorResponse::id() const

@@ -4,11 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include <QByteArray>
+#include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QList>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolIcon>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptArgument>
+#include <optional>
 
 class QJsonObject;
 class QDebug;
@@ -29,7 +31,7 @@ public:
     [[nodiscard]] static McpProtocolPrompt fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolPrompt &boolean);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolPrompt &prompt);
     /*!
      */
     [[nodiscard]] std::optional<McpProtocolMeta> meta() const;

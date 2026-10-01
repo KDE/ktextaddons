@@ -7,12 +7,11 @@
 #include "mcpprotocolloggingmessagenotificationparams.h"
 #include <QDebug>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLoggingMessageNotificationParams::McpProtocolLoggingMessageNotificationParams() = default;
-
-McpProtocolLoggingMessageNotificationParams::~McpProtocolLoggingMessageNotificationParams() = default;
 
 bool McpProtocolLoggingMessageNotificationParams::operator==(const McpProtocolLoggingMessageNotificationParams &other) const = default;
 
@@ -60,9 +59,9 @@ QJsonValue McpProtocolLoggingMessageNotificationParams::data() const
     return mData;
 }
 
-void McpProtocolLoggingMessageNotificationParams::setData(const QJsonValue &newData)
+void McpProtocolLoggingMessageNotificationParams::setData(QJsonValue newData)
 {
-    mData = newData;
+    mData = std::move(newData);
 }
 
 McpProtocolUtils::LoggingLevel McpProtocolLoggingMessageNotificationParams::level() const
@@ -94,5 +93,3 @@ void McpProtocolLoggingMessageNotificationParams::setMeta(std::optional<McpProto
 {
     mMeta = std::move(newMeta);
 }
-
-#include "moc_mcpprotocolloggingmessagenotificationparams.cpp"

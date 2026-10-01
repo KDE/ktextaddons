@@ -6,14 +6,19 @@
 
 #include "mcpprotocolclientprotocolmanager.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include "textautogeneratetextmcpprotocolcore_version.h"
 
 #include <QJsonObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClient>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolClientProtocolManager::McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent)
@@ -24,7 +29,7 @@ McpProtocolClientProtocolManager::McpProtocolClientProtocolManager(const TextAut
 
 McpProtocolClientProtocolManager::~McpProtocolClientProtocolManager() = default;
 
-int McpProtocolClientProtocolManager::requestId()
+qint64 McpProtocolClientProtocolManager::requestId()
 {
     mRequestIdentifier++;
     return mRequestIdentifier;
@@ -47,10 +52,14 @@ void McpProtocolClientProtocolManager::executeAction(MethodType type)
         listPrompts();
         break;
     case MethodType::ResourceTemplates:
-        resouceTemplates();
+        resourceTemplates();
         break;
     case MethodType::Initialize:
-        // TODO ?
+        initialize();
+        break;
+    case MethodType::ServerRequest:
+    case MethodType::ServerNotification:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "IT's a bug. MethodType" << type << "can't be executed by client.";
         break;
     case MethodType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "IT's a bug. MethodType::Unknown must not used.";
@@ -58,12 +67,22 @@ void McpProtocolClientProtocolManager::executeAction(MethodType type)
     }
 }
 
-McpProtocolClientProtocolManager::MethodType McpProtocolClientProtocolManager::checkMethodType(const QJsonObject &obj) const
+McpProtocolClientProtocolManager::MethodType McpProtocolClientProtocolManager::checkMethodType(const QJsonObject &obj)
 {
-    if (obj.contains("id"_L1)) {
-        return mMapIdentifier.value(obj[u"id"_s].toInt(), MethodType::Unknown);
+    if (obj.contains("method"_L1)) {
+        return obj.contains("id"_L1) ? MethodType::ServerRequest : MethodType::ServerNotification;
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolClientProtocolManager::MethodType::Unknown ! it's a bug";
+    if (obj.contains("result"_L1) || obj.contains("error"_L1)) {
+        const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(obj.value("id"_L1));
+        if (const qint64 *identifier = std::get_if<qint64>(&id)) {
+            if (mMapIdentifier.contains(*identifier)) {
+                return mMapIdentifier.take(*identifier);
+            }
+        }
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Response received for an unknown request id:" << obj.value("id"_L1);
+        return MethodType::Unknown;
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid message received:" << obj;
     return MethodType::Unknown;
 }
 
@@ -77,26 +96,47 @@ void McpProtocolClientProtocolManager::setClientName(const QString &newClientNam
     mClientName = newClientName;
 }
 
-void McpProtocolClientProtocolManager::initializeClient(bool)
+void McpProtocolClientProtocolManager::initializeClient()
 {
+    if (mClientStarted) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client already initialized";
+        return;
+    }
     if (!mClient) {
         mClient = new TextAutoGenerateTextMcpProtocolCore::McpProtocolClient(mServer.transportType(), this);
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::error, this, [this](const QString &strError) {
             qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " ERROR " << strError;
             Q_EMIT error(strError);
         });
-        connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::received, this, [this](const QJsonObject &obj) {
-            qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " receive " << obj;
-            Q_EMIT received(obj, McpProtocolClientProtocolManager::checkMethodType(obj));
-        });
+        connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::received, this, &McpProtocolClientProtocolManager::slotReceived);
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::started, this, [this]() {
             qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Started ! ";
             Q_EMIT started();
+            initialize();
         });
     }
     mClient->setSettings(mServer.settings());
+    if (!mClient->canStart()) {
+        return;
+    }
+    mClientStarted = true;
     mClient->start();
-    initialize();
+}
+
+void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &obj)
+{
+    qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " receive " << obj;
+    const MethodType type = checkMethodType(obj);
+    if (type == MethodType::Initialize && obj.contains("result"_L1)) {
+        sendInitializedNotification();
+    }
+    Q_EMIT received(obj, type);
+}
+
+void McpProtocolClientProtocolManager::sendInitializedNotification()
+{
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializedNotification notification;
+    mClient->notify(TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializedNotification::toJson(notification));
 }
 
 void McpProtocolClientProtocolManager::initialize()
@@ -108,17 +148,11 @@ void McpProtocolClientProtocolManager::initialize()
 
     auto clientInfo = params.clientInfo();
     clientInfo.setName(mClientName);
-    clientInfo.setVersion(u"1"_s);
+    clientInfo.setVersion(QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING));
     params.setClientInfo(clientInfo);
 
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities capabilities = params.capabilities();
-    auto roots = capabilities.roots();
-    roots.emplace(true);
-    capabilities.setRoots(roots);
-
-    params.setCapabilities(capabilities);
-    initRequest.setParams(params);
-    const int identifier = requestId();
+    initRequest.setParams(std::move(params));
+    const qint64 identifier = requestId();
     initRequest.setId(identifier);
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " initRequest " << initRequest;
     mClient->request(TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequest::toJson(initRequest));
@@ -128,7 +162,7 @@ void McpProtocolClientProtocolManager::initialize()
 void McpProtocolClientProtocolManager::ping()
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest pingRequest;
-    const int identifier = requestId();
+    const qint64 identifier = requestId();
     pingRequest.setId(identifier);
     mClient->request(TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest::toJson(pingRequest));
     mMapIdentifier.insert(identifier, MethodType::Ping);
@@ -137,7 +171,7 @@ void McpProtocolClientProtocolManager::ping()
 void McpProtocolClientProtocolManager::listTools()
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsRequest listToolsRequest;
-    const int identifier = requestId();
+    const qint64 identifier = requestId();
     listToolsRequest.setId(identifier);
     mClient->request(TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsRequest::toJson(listToolsRequest));
     mMapIdentifier.insert(identifier, MethodType::ListTools);
@@ -146,16 +180,16 @@ void McpProtocolClientProtocolManager::listTools()
 void McpProtocolClientProtocolManager::listPrompts()
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsRequest listPromptsRequest;
-    const int identifier = requestId();
+    const qint64 identifier = requestId();
     listPromptsRequest.setId(identifier);
     mClient->request(TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsRequest::toJson(listPromptsRequest));
     mMapIdentifier.insert(identifier, MethodType::ListPrompts);
 }
 
-void McpProtocolClientProtocolManager::resouceTemplates()
+void McpProtocolClientProtocolManager::resourceTemplates()
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourceTemplatesRequest resourceTemplatesRequest;
-    const int identifier = requestId();
+    const qint64 identifier = requestId();
     resourceTemplatesRequest.setId(identifier);
     mClient->request(TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourceTemplatesRequest::toJson(resourceTemplatesRequest));
     mMapIdentifier.insert(identifier, MethodType::ResourceTemplates);

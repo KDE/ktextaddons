@@ -7,7 +7,6 @@
 #include "mcpprotocolinitializeresult.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 #include <utility>
 using namespace Qt::Literals::StringLiterals;
@@ -19,7 +18,7 @@ bool McpProtocolInitializeResult::operator==(const McpProtocolInitializeResult &
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeResult &t)
 {
     d.space() << "meta:" << t.meta();
-    d.space() << "resources:" << t.instructions();
+    d.space() << "instructions:" << t.instructions();
     d.space() << "protocolVersion:" << t.protocolVersion();
     d.space() << "serverInfo:" << t.serverInfo();
     d.space() << "capabilities:" << t.capabilities();
@@ -28,48 +27,48 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolInitializeResult prompt;
+    McpProtocolInitializeResult result;
     if (!obj.contains("capabilities"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: capabilities";
-        return prompt;
+        return {};
     }
     if (!obj.contains("protocolVersion"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: protocolVersion";
-        return prompt;
+        return {};
     }
     if (!obj.contains("serverInfo"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: serverInfo";
-        return prompt;
+        return {};
     }
     if (const QJsonValue capabilitiesValue = obj.value("capabilities"_L1); capabilitiesValue.isObject()) {
-        prompt.setCapabilities(McpProtocolServerCapabilities::fromJson(capabilitiesValue.toObject()));
+        result.setCapabilities(McpProtocolServerCapabilities::fromJson(capabilitiesValue.toObject()));
     }
     if (obj.contains("instructions"_L1)) {
-        prompt.setInstructions(obj.value("instructions"_L1).toString());
+        result.setInstructions(obj.value("instructions"_L1).toString());
     }
-    prompt.setProtocolVersion(obj["protocolVersion"_L1].toString());
+    result.setProtocolVersion(obj["protocolVersion"_L1].toString());
     if (const QJsonValue serverInfoValue = obj.value("serverInfo"_L1); serverInfoValue.isObject()) {
-        prompt.setServerInfo(McpProtocolImplementation::fromJson(serverInfoValue.toObject()));
+        result.setServerInfo(McpProtocolImplementation::fromJson(serverInfoValue.toObject()));
     }
 
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolInitializeResult::toJson(const McpProtocolInitializeResult &boolean)
+QJsonObject McpProtocolInitializeResult::toJson(const McpProtocolInitializeResult &result)
 {
     QJsonObject obj;
-    obj["capabilities"_L1] = McpProtocolServerCapabilities::toJson(boolean.capabilities());
-    obj["protocolVersion"_L1] = boolean.protocolVersion();
-    obj["serverInfo"_L1] = McpProtocolImplementation::toJson(boolean.serverInfo());
+    obj["capabilities"_L1] = McpProtocolServerCapabilities::toJson(result.capabilities());
+    obj["protocolVersion"_L1] = result.protocolVersion();
+    obj["serverInfo"_L1] = McpProtocolImplementation::toJson(result.serverInfo());
 
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    if (boolean.instructions().has_value()) {
-        obj["instructions"_L1] = *boolean.instructions();
+    if (result.instructions().has_value()) {
+        obj["instructions"_L1] = *result.instructions();
     }
     return obj;
 }
@@ -109,9 +108,9 @@ McpProtocolImplementation McpProtocolInitializeResult::serverInfo() const
     return mServerInfo;
 }
 
-void McpProtocolInitializeResult::setServerInfo(const McpProtocolImplementation &newServerInfo)
+void McpProtocolInitializeResult::setServerInfo(McpProtocolImplementation newServerInfo)
 {
-    mServerInfo = newServerInfo;
+    mServerInfo = std::move(newServerInfo);
 }
 
 McpProtocolServerCapabilities McpProtocolInitializeResult::capabilities() const
@@ -119,7 +118,7 @@ McpProtocolServerCapabilities McpProtocolInitializeResult::capabilities() const
     return mCapabilities;
 }
 
-void McpProtocolInitializeResult::setCapabilities(const McpProtocolServerCapabilities &newCapabilities)
+void McpProtocolInitializeResult::setCapabilities(McpProtocolServerCapabilities newCapabilities)
 {
-    mCapabilities = newCapabilities;
+    mCapabilities = std::move(newCapabilities);
 }

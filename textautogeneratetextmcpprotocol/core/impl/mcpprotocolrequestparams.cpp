@@ -6,7 +6,6 @@
 
 #include "mcpprotocolrequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -19,7 +18,6 @@ bool McpProtocolRequestParams::Meta::operator==(const McpProtocolRequestParams::
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
-    d.space() << "uri:" << t.uri();
     return d;
 }
 
@@ -38,11 +36,11 @@ McpProtocolRequestParams::Meta McpProtocolRequestParams::Meta::fromJson(const QJ
     return meta;
 }
 
-QJsonObject McpProtocolRequestParams::Meta::toJson(const McpProtocolRequestParams::Meta &image)
+QJsonObject McpProtocolRequestParams::Meta::toJson(const McpProtocolRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -53,16 +51,14 @@ McpProtocolRequestParams McpProtocolRequestParams::fromJson(const QJsonObject &o
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
     return prompt;
 }
 
-QJsonObject McpProtocolRequestParams::toJson(const McpProtocolRequestParams &boolean)
+QJsonObject McpProtocolRequestParams::toJson(const McpProtocolRequestParams &requestParams)
 {
     QJsonObject obj;
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolRequestParams::Meta::toJson(*boolean.meta());
+    if (requestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolRequestParams::Meta::toJson(*requestParams.meta());
     }
     return obj;
 }
@@ -75,16 +71,6 @@ std::optional<McpProtocolRequestParams::Meta> McpProtocolRequestParams::meta() c
 void McpProtocolRequestParams::setMeta(std::optional<Meta> newMeta)
 {
     mMeta = std::move(newMeta);
-}
-
-QString McpProtocolRequestParams::uri() const
-{
-    return mUri;
-}
-
-void McpProtocolRequestParams::setUri(const QString &newUri)
-{
-    mUri = newUri;
 }
 
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolRequestParams::Meta::progressToken() const

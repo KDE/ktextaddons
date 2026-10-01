@@ -71,9 +71,9 @@ public:
     [[nodiscard]] QList<McpServer> mcpServers() const;
     /*!
      * Sets the list of mcp servers in the model.
-     * \param newTextInstances The instances to set
+     * \param newServers The servers to set
      */
-    void setMcpServers(const QList<McpServer> &newTextInstances);
+    void setMcpServers(QList<McpServer> newServers);
 
     /*!
      * Adds an instance to the model.
@@ -81,10 +81,10 @@ public:
      */
     void addMcpServer(const McpServer &instance);
     /*!
-     * Returns whether the model is empty.
-     * \return true if empty, false otherwise
+     * Returns whether the model contains at least one enabled server.
+     * \return true if a server is enabled, false otherwise
      */
-    [[nodiscard]] bool isEmpty() const;
+    [[nodiscard]] bool hasEnabledServer() const;
 
     /*!
      * \brief removeMcpServer

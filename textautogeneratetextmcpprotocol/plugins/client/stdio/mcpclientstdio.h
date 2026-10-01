@@ -6,8 +6,9 @@
 #pragma once
 
 #include "common/mcpbase.h"
-#include <QObject>
+#include <QByteArray>
 class QProcess;
+class QJsonObject;
 class McpClientStdioPluginInterface;
 class McpClientStdio : public TextAutoGenerateTextMcpProtocolCore::McpBase
 {
@@ -22,6 +23,9 @@ public:
 private:
     [[nodiscard]] bool isRunning() const;
     void stop();
+    void slotReadStandardOutput();
+    void slotReadStandardError();
     QProcess *const mProcess;
     McpClientStdioPluginInterface *const mInterface;
+    QByteArray mBuffer;
 };

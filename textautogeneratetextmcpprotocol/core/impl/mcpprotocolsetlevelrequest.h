@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolSetLevelRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolSetLevelRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolSetLevelRequest &setLevelRequest);
 
     /*!
      */

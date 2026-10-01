@@ -6,10 +6,17 @@
 #include "mcpprotocolelicitrequesturlparams.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitRequestURLParams::McpProtocolElicitRequestURLParams() = default;
+
+QByteArray McpProtocolElicitRequestURLParams::mode()
+{
+    return "url"_ba;
+}
+
 McpProtocolElicitRequestURLParams::Meta McpProtocolElicitRequestURLParams::Meta::fromJson(const QJsonObject &obj)
 {
     McpProtocolElicitRequestURLParams::Meta meta;
@@ -19,11 +26,11 @@ McpProtocolElicitRequestURLParams::Meta McpProtocolElicitRequestURLParams::Meta:
     return meta;
 }
 
-QJsonObject McpProtocolElicitRequestURLParams::Meta::toJson(const McpProtocolElicitRequestURLParams::Meta &image)
+QJsonObject McpProtocolElicitRequestURLParams::Meta::toJson(const McpProtocolElicitRequestURLParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -84,6 +91,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "url:" << t.url();
     d.space() << "task:" << t.task();
     d.space() << "elicitationId:" << t.elicitationId();
+    d.space() << "message:" << t.message();
     return d;
 }
 
@@ -110,32 +118,33 @@ bool TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::ope
 
 McpProtocolElicitRequestURLParams TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolElicitRequestURLParams result;
     if (!obj.contains("elicitationId"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: elicitationId";
-        return result;
+        return {};
     }
     if (!obj.contains("message"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: message";
-        return result;
+        return {};
     }
     if (!obj.contains("mode"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: mode";
-        return result;
+        return {};
     }
     if (!obj.contains("url"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: url";
-        return result;
+        return {};
     }
+    if (obj.value("mode"_L1).toString() != QString::fromLatin1(McpProtocolElicitRequestURLParams::mode())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestURLParams: field 'mode' must be" << McpProtocolElicitRequestURLParams::mode()
+                                                       << "got:" << obj.value("mode"_L1).toString();
+        return {};
+    }
+    McpProtocolElicitRequestURLParams result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolElicitRequestURLParams::Meta::fromJson(metaValue.toObject()));
     }
     result.setElicitationId(obj.value("elicitationId"_L1).toString());
     result.setMessage(obj.value("message"_L1).toString());
-    if (obj.value("mode"_L1).toString() != "url"_L1) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'mode' must be 'url', got: " << obj.value("mode"_L1).toString();
-        return result;
-    }
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
         result.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
@@ -148,7 +157,7 @@ QJsonObject TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLPara
     QJsonObject obj;
     obj["elicitationId"_L1] = params.elicitationId();
     obj["message"_L1] = params.message();
-    obj["mode"_L1] = u"url"_s;
+    obj["mode"_L1] = QString::fromLatin1(McpProtocolElicitRequestURLParams::mode());
     obj["url"_L1] = params.url();
     if (params.meta().has_value()) {
         obj.insert("_meta"_L1, McpProtocolElicitRequestURLParams::Meta::toJson(*params.meta()));

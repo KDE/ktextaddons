@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -22,10 +22,6 @@ public:
 
     /*!
      */
-    [[nodiscard]] static QByteArray type();
-
-    /*!
-     */
     [[nodiscard]] bool operator==(const McpProtocolProgressNotificationParams &other) const;
 
     /*!
@@ -33,7 +29,7 @@ public:
     [[nodiscard]] static McpProtocolProgressNotificationParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolProgressNotificationParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolProgressNotificationParams &progressNotificationParams);
 
     /*!
      */

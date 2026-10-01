@@ -9,6 +9,7 @@
 #include <QJsonObject>
 
 #include <QJsonArray>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolGetPromptResult::McpProtocolGetPromptResult() = default;
@@ -25,12 +26,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolGetPromptResult McpProtocolGetPromptResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolGetPromptResult prompt;
+    McpProtocolGetPromptResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("description"_L1)) {
-        prompt.setDescription(obj.value("description"_L1).toString());
+        result.setDescription(obj.value("description"_L1).toString());
     }
     if (const QJsonValue messagesValue = obj.value("messages"_L1); messagesValue.isArray()) {
         const QJsonArray arr = messagesValue.toArray();
@@ -39,22 +40,22 @@ McpProtocolGetPromptResult McpProtocolGetPromptResult::fromJson(const QJsonObjec
         for (const auto &v : arr) {
             msgs.append(McpProtocolPromptMessage::fromJson(v.toObject()));
         }
-        prompt.setMessages(msgs);
+        result.setMessages(std::move(msgs));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolGetPromptResult::toJson(const McpProtocolGetPromptResult &boolean)
+QJsonObject McpProtocolGetPromptResult::toJson(const McpProtocolGetPromptResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    if (boolean.description().has_value()) {
-        obj["description"_L1] = *boolean.description();
+    if (result.description().has_value()) {
+        obj["description"_L1] = *result.description();
     }
     QJsonArray messages;
-    for (const auto &v : boolean.messages()) {
+    for (const auto &v : result.messages()) {
         messages.append(McpProtocolPromptMessage::toJson(v));
     }
     obj.insert("messages"_L1, messages);
@@ -86,7 +87,7 @@ QList<McpProtocolPromptMessage> McpProtocolGetPromptResult::messages() const
     return mMessages;
 }
 
-void McpProtocolGetPromptResult::setMessages(const QList<McpProtocolPromptMessage> &newMessage)
+void McpProtocolGetPromptResult::setMessages(QList<McpProtocolPromptMessage> newMessages)
 {
-    mMessages = newMessage;
+    mMessages = std::move(newMessages);
 }

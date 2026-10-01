@@ -18,7 +18,6 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPromptMessage
 {
-    Q_GADGET
 public:
     /*!
      */
@@ -36,7 +35,7 @@ public:
     [[nodiscard]] static McpProtocolPromptMessage fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolPromptMessage &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolPromptMessage &message);
 
     /*!
      */

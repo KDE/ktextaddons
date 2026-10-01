@@ -7,6 +7,7 @@
 #include "addmcpserverdialog.h"
 #include "mcpserverlistview.h"
 #include "models/mcpservermodel.h"
+#include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -43,7 +44,7 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     auto addMcpServerButton = new QToolButton(this);
     addMcpServerButton->setObjectName(u"addMcpServerButton"_s);
     addMcpServerButton->setIcon(QIcon::fromTheme(u"list-add"_s));
-    addMcpServerButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
+    addMcpServerButton->setToolTip(i18nc("@info:tooltip", "Add Server…"));
     addMcpServerButton->setAutoRaise(true);
     hboxLayout->addWidget(addMcpServerButton);
     connect(addMcpServerButton, &QToolButton::clicked, this, &McpServerWidget::slotAddServer);
@@ -60,10 +61,12 @@ McpServerWidget::~McpServerWidget() = default;
 
 void McpServerWidget::slotAddServer()
 {
+    if (!mModel) {
+        return;
+    }
     QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
     if (dlg->exec()) {
-        const auto info = dlg->serverInfo();
-        mModel->addMcpServer(info);
+        mModel->addMcpServer(dlg->serverInfo());
         Q_EMIT settingsChanged();
     }
     delete dlg;
@@ -71,18 +74,27 @@ void McpServerWidget::slotAddServer()
 
 void McpServerWidget::slotRemoveServer(const QByteArray &identifier)
 {
+    if (!mModel) {
+        return;
+    }
     mModel->removeMcpServer(identifier);
     Q_EMIT settingsChanged();
 }
 
 void McpServerWidget::slotEditServer(const QByteArray &identifier)
 {
-    QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
+    if (!mModel) {
+        return;
+    }
     const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mcpServer(identifier);
+    if (!mcpServer.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Invalid server for identifier:" << identifier;
+        return;
+    }
+    QPointer<AddMcpServerDialog> dlg = new AddMcpServerDialog(this);
     dlg->setServerInfo(mcpServer);
     if (dlg->exec()) {
-        const auto info = dlg->serverInfo();
-        mModel->editMcpServer(info);
+        mModel->editMcpServer(dlg->serverInfo());
         Q_EMIT settingsChanged();
     }
     delete dlg;

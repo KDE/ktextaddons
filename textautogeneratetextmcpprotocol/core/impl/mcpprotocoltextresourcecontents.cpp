@@ -6,7 +6,6 @@
 
 #include "mcpprotocoltextresourcecontents.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -38,16 +37,16 @@ McpProtocolTextResourceContents McpProtocolTextResourceContents::fromJson(const 
     return prompt;
 }
 
-QJsonObject McpProtocolTextResourceContents::toJson(const McpProtocolTextResourceContents &boolean)
+QJsonObject McpProtocolTextResourceContents::toJson(const McpProtocolTextResourceContents &textResourceContents)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (textResourceContents.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*textResourceContents.meta());
     }
-    obj["text"_L1] = boolean.text();
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.mimeType().has_value()) {
-        obj["mimeType"_L1] = *boolean.mimeType();
+    obj["text"_L1] = textResourceContents.text();
+    obj["uri"_L1] = textResourceContents.uri();
+    if (textResourceContents.mimeType().has_value()) {
+        obj["mimeType"_L1] = *textResourceContents.mimeType();
     }
     return obj;
 }

@@ -7,8 +7,8 @@
 #include "mcpprotocolcreatetaskresult.h"
 #include <QDebug>
 #include <QJsonObject>
+#include <utility>
 
-#include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCreateTaskResult::McpProtocolCreateTaskResult() = default;
@@ -24,22 +24,22 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCreateTaskResult McpProtocolCreateTaskResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCreateTaskResult prompt;
+    McpProtocolCreateTaskResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
-        prompt.setTask(McpProtocolTask::fromJson(taskValue.toObject()));
+        result.setTask(McpProtocolTask::fromJson(taskValue.toObject()));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolCreateTaskResult::toJson(const McpProtocolCreateTaskResult &boolean)
+QJsonObject McpProtocolCreateTaskResult::toJson(const McpProtocolCreateTaskResult &result)
 {
     QJsonObject obj;
-    obj["task"_L1] = McpProtocolTask::toJson(boolean.task());
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    obj["task"_L1] = McpProtocolTask::toJson(result.task());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
     return obj;
 }
@@ -59,7 +59,7 @@ McpProtocolTask McpProtocolCreateTaskResult::task() const
     return mTask;
 }
 
-void McpProtocolCreateTaskResult::setTask(const McpProtocolTask &newTask)
+void McpProtocolCreateTaskResult::setTask(McpProtocolTask newTask)
 {
-    mTask = newTask;
+    mTask = std::move(newTask);
 }

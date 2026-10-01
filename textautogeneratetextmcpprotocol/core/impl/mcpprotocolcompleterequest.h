@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolCompleteRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequest &request);
 
     /*!
      */
@@ -46,7 +46,7 @@ public:
     [[nodiscard]] McpProtocolCompleteRequestParams params() const;
     /*!
      */
-    void setParams(const McpProtocolCompleteRequestParams &newParams);
+    void setParams(McpProtocolCompleteRequestParams newParams);
 
 private:
     McpProtocolUtils::RequestId mId;

@@ -6,7 +6,6 @@
 
 #include "mcpprotocolsetlevelrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -36,7 +35,9 @@ McpProtocolSetLevelRequest McpProtocolSetLevelRequest::fromJson(const QJsonObjec
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolSetLevelRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'logging/setLevel', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolSetLevelRequest::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolSetLevelRequestParams::fromJson(paramsValue.toObject()));
@@ -47,13 +48,13 @@ McpProtocolSetLevelRequest McpProtocolSetLevelRequest::fromJson(const QJsonObjec
     return prompt;
 }
 
-QJsonObject McpProtocolSetLevelRequest::toJson(const McpProtocolSetLevelRequest &boolean)
+QJsonObject McpProtocolSetLevelRequest::toJson(const McpProtocolSetLevelRequest &setLevelRequest)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(setLevelRequest.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolSetLevelRequest::type());
-    obj["params"_L1] = McpProtocolSetLevelRequestParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolSetLevelRequestParams::toJson(setLevelRequest.params());
     return obj;
 }
 

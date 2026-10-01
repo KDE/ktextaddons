@@ -25,12 +25,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolListResourcesResult McpProtocolListResourcesResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolListResourcesResult prompt;
+    McpProtocolListResourcesResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("nextCursor"_L1)) {
-        prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
+        result.setNextCursor(obj.value("nextCursor"_L1).toString());
     }
     if (const QJsonValue resourcesValue = obj.value("resources"_L1); resourcesValue.isArray()) {
         const QJsonArray arr = resourcesValue.toArray();
@@ -39,22 +39,22 @@ McpProtocolListResourcesResult McpProtocolListResourcesResult::fromJson(const QJ
         for (const auto &v : arr) {
             res.append(McpProtocolResource::fromJson(v.toObject()));
         }
-        prompt.setResources(res);
+        result.setResources(std::move(res));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolListResourcesResult::toJson(const McpProtocolListResourcesResult &boolean)
+QJsonObject McpProtocolListResourcesResult::toJson(const McpProtocolListResourcesResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    if (boolean.nextCursor().has_value()) {
-        obj.insert("nextCursor"_L1, *boolean.nextCursor());
+    if (result.nextCursor().has_value()) {
+        obj.insert("nextCursor"_L1, *result.nextCursor());
     }
     QJsonArray arr_resources;
-    for (const auto &v : boolean.resources()) {
+    for (const auto &v : result.resources()) {
         arr_resources.append(McpProtocolResource::toJson(v));
     }
     obj.insert("resources"_L1, arr_resources);
@@ -86,7 +86,7 @@ QList<McpProtocolResource> McpProtocolListResourcesResult::resources() const
     return mResources;
 }
 
-void McpProtocolListResourcesResult::setResources(const QList<McpProtocolResource> &newResources)
+void McpProtocolListResourcesResult::setResources(QList<McpProtocolResource> newResources)
 {
-    mResources = newResources;
+    mResources = std::move(newResources);
 }

@@ -18,9 +18,9 @@ QStringList McpProtocolUntitledMultiSelectEnumSchema::Items::enumValue() const
     return mEnum;
 }
 
-void McpProtocolUntitledMultiSelectEnumSchema::Items::setEnum(const QStringList &newEnum)
+void McpProtocolUntitledMultiSelectEnumSchema::Items::setEnum(QStringList newEnum)
 {
-    mEnum = newEnum;
+    mEnum = std::move(newEnum);
 }
 
 bool McpProtocolUntitledMultiSelectEnumSchema::Items::operator==(const McpProtocolUntitledMultiSelectEnumSchema::Items &other) const = default;
@@ -64,20 +64,16 @@ McpProtocolUntitledMultiSelectEnumSchema::Items McpProtocolUntitledMultiSelectEn
         for (const QJsonValue &v : arr) {
             lst.append(v.toString());
         }
-        result.setEnum(lst);
+        result.setEnum(std::move(lst));
     }
     return result;
 }
 
-QJsonObject McpProtocolUntitledMultiSelectEnumSchema::Items::toJson(const McpProtocolUntitledMultiSelectEnumSchema::Items &image)
+QJsonObject McpProtocolUntitledMultiSelectEnumSchema::Items::toJson(const McpProtocolUntitledMultiSelectEnumSchema::Items &items)
 {
     QJsonObject obj;
     obj["type"_L1] = u"string"_s;
-    QJsonArray arr_enum;
-    for (const auto &v : image.enumValue()) {
-        arr_enum.append(v);
-    }
-    obj["enum"_L1] = arr_enum;
+    obj["enum"_L1] = QJsonArray::fromStringList(items.enumValue());
     return obj;
 }
 
@@ -97,10 +93,6 @@ McpProtocolUntitledMultiSelectEnumSchema McpProtocolUntitledMultiSelectEnumSchem
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: items";
         return {};
     }
-    if (!obj.contains("type"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: type";
-        return {};
-    }
     if (const QJsonValue defaultValue2 = obj.value("default"_L1); defaultValue2.isArray()) {
         const QJsonArray arr = defaultValue2.toArray();
         QStringList list_default;
@@ -108,7 +100,7 @@ McpProtocolUntitledMultiSelectEnumSchema McpProtocolUntitledMultiSelectEnumSchem
         for (const QJsonValue &v : arr) {
             list_default.append(v.toString());
         }
-        prompt.setDefault(list_default);
+        prompt.setDefault(std::move(list_default));
     }
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
@@ -134,12 +126,7 @@ QJsonObject McpProtocolUntitledMultiSelectEnumSchema::toJson(const McpProtocolUn
     obj["type"_L1] = QString::fromLatin1(McpProtocolUntitledMultiSelectEnumSchema::type());
     obj["items"_L1] = McpProtocolUntitledMultiSelectEnumSchema::Items::toJson(schema.items());
     if (schema.defaultValue().has_value()) {
-        QJsonArray arr_default;
-        const auto defaultValue = *schema.defaultValue();
-        for (const auto &v : defaultValue) {
-            arr_default.append(v);
-        }
-        obj.insert("default"_L1, arr_default);
+        obj.insert("default"_L1, QJsonArray::fromStringList(*schema.defaultValue()));
     }
     if (schema.description().has_value()) {
         obj.insert("description"_L1, *schema.description());

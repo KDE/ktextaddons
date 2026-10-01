@@ -29,11 +29,11 @@ McpProtocolToolChoice McpProtocolToolChoice::fromJson(const QJsonObject &obj)
     return result;
 }
 
-QJsonObject McpProtocolToolChoice::toJson(const McpProtocolToolChoice &choice)
+QJsonObject McpProtocolToolChoice::toJson(const McpProtocolToolChoice &toolChoice)
 {
     QJsonObject obj;
-    if (choice.mode() != McpProtocolToolChoice::Mode::Unknown) {
-        obj["mode"_L1] = convertModeToString(choice.mode());
+    if (toolChoice.mode() != McpProtocolToolChoice::Mode::Unknown) {
+        obj["mode"_L1] = convertModeToString(toolChoice.mode());
     }
     return obj;
 }
@@ -75,7 +75,7 @@ McpProtocolToolChoice::Mode McpProtocolToolChoice::convertModeFromString(const Q
         return McpProtocolToolChoice::Mode::Required;
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ToolChoice::Mode value: " << str;
-    return {};
+    return McpProtocolToolChoice::Mode::Unknown;
 }
 
 #include "moc_mcpprotocoltoolchoice.cpp"

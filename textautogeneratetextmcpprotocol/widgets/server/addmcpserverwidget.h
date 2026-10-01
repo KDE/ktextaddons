@@ -6,7 +6,6 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 class QLineEdit;
 class QStackedWidget;

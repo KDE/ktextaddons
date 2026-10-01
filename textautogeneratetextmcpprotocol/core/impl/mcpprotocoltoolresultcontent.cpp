@@ -5,18 +5,6 @@
 */
 
 #include "mcpprotocoltoolresultcontent.h"
-#include "mcpprotocolaudiocontent.h"
-#include "mcpprotocolblobresourcecontents.h"
-#include "mcpprotocolcancellednotification.h"
-#include "mcpprotocolembeddedresource.h"
-#include "mcpprotocolimagecontent.h"
-#include "mcpprotocolinitializednotification.h"
-#include "mcpprotocolprogressnotification.h"
-#include "mcpprotocolresourcelink.h"
-#include "mcpprotocolrootslistchangednotification.h"
-#include "mcpprotocoltaskstatusnotification.h"
-#include "mcpprotocoltextcontent.h"
-#include "mcpprotocoltextresourcecontents.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 
 #include <QJsonArray>
@@ -39,14 +27,22 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "isError:" << t.isError();
     d.space() << "toolUseId:" << t.toolUseId();
     d.space() << "structuredContent:" << t.structuredContent();
-    // d.space() << "content:" << t.content();
+    QJsonArray arr_content;
+    const auto content = t.content();
+    for (const auto &v : content) {
+        arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
+    }
+    d.space() << "content:" << arr_content;
     return d;
 }
 
 McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonObject &obj)
 {
+    if (obj.value("type"_L1).toString() != QString::fromLatin1(type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be" << type() << ", got:" << obj.value("type"_L1).toString();
+        return {};
+    }
     McpProtocolToolResultContent tool;
-
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         tool.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
@@ -57,7 +53,7 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
         for (const auto &v : arr) {
             contents.append(McpProtocolUtils::contentBlockFromJson(v));
         }
-        tool.setContent(contents);
+        tool.setContent(std::move(contents));
     }
     if (obj.contains("isError"_L1)) {
         tool.setIsError(obj.value("isError"_L1).toBool());
@@ -68,12 +64,9 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
         for (auto it = mapObj_structuredContent.constBegin(); it != mapObj_structuredContent.constEnd(); ++it) {
             map_structuredContent.insert(it.key(), it.value());
         }
-        tool.setStructuredContent(map_structuredContent);
+        tool.setStructuredContent(std::move(map_structuredContent));
     }
     tool.setToolUseId(obj.value("toolUseId"_L1).toString());
-    if (obj.value("type"_L1).toString() != QString::fromLatin1(type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'tool_result', got: " << obj.value("type"_L1).toString();
-    }
     return tool;
 }
 
@@ -87,16 +80,17 @@ QJsonObject McpProtocolToolResultContent::toJson(const McpProtocolToolResultCont
         obj.insert("_meta"_L1, McpProtocolMeta::toJson(*tool.meta()));
     }
     QJsonArray arr_content;
-    for (const auto &v : tool.content()) {
+    const auto content = tool.content();
+    for (const auto &v : content) {
         arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
     }
     obj.insert("content"_L1, arr_content);
     if (tool.isError().has_value()) {
         obj.insert("isError"_L1, *tool.isError());
     }
-    if (tool.structuredContent().has_value()) {
+    if (const auto structuredContent = tool.structuredContent(); structuredContent.has_value()) {
         QJsonObject map_structuredContent;
-        for (auto it = tool.structuredContent()->constBegin(); it != tool.structuredContent()->constEnd(); ++it) {
+        for (auto it = structuredContent->constBegin(); it != structuredContent->constEnd(); ++it) {
             map_structuredContent.insert(it.key(), it.value());
         }
         obj.insert("structuredContent"_L1, map_structuredContent);
@@ -119,9 +113,9 @@ QList<McpProtocolUtils::ContentBlock> McpProtocolToolResultContent::content() co
     return mContent;
 }
 
-void McpProtocolToolResultContent::setContent(const QList<McpProtocolUtils::ContentBlock> &newContent)
+void McpProtocolToolResultContent::setContent(QList<McpProtocolUtils::ContentBlock> newContent)
 {
-    mContent = newContent;
+    mContent = std::move(newContent);
 }
 
 std::optional<bool> McpProtocolToolResultContent::isError() const

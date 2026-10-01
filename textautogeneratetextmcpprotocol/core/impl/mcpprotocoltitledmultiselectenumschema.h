@@ -6,8 +6,10 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
-
+#include <QList>
+#include <QString>
 #include <QStringList>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -15,8 +17,8 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTitledMultiSelectEnumSchema
 {
 public:
-    struct Items {
-        struct AnyOfItem {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Items {
+        struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT AnyOfItem {
             QString mConstValue;
             QString mTitle;
             [[nodiscard]] bool operator==(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &other) const;
@@ -24,7 +26,7 @@ public:
             [[nodiscard]] static McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem fromJson(const QJsonObject &obj);
             /*!
              */
-            [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &image);
+            [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &anyOfItem);
 
             [[nodiscard]] QString constValue() const;
             void setConstValue(const QString &newConstValue);
@@ -39,14 +41,13 @@ public:
         [[nodiscard]] static McpProtocolTitledMultiSelectEnumSchema::Items fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items &items);
         /*!
          */
         [[nodiscard]] bool operator==(const McpProtocolTitledMultiSelectEnumSchema::Items &other) const;
 
-    public:
-        QList<AnyOfItem> anyOf() const;
-        void setAnyOf(const QList<AnyOfItem> &newAnyOf);
+        [[nodiscard]] QList<AnyOfItem> anyOf() const;
+        void setAnyOf(QList<AnyOfItem> newAnyOf);
     };
     /*!
      */
@@ -65,7 +66,7 @@ public:
     [[nodiscard]] static McpProtocolTitledMultiSelectEnumSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema &titledMultiSelectEnumSchema);
 
     /*!
      */

@@ -26,12 +26,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolListToolsResult McpProtocolListToolsResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolListToolsResult prompt;
+    McpProtocolListToolsResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("nextCursor"_L1)) {
-        prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
+        result.setNextCursor(obj.value("nextCursor"_L1).toString());
     }
     if (const QJsonValue toolsValue = obj.value("tools"_L1); toolsValue.isArray()) {
         const QJsonArray arr = toolsValue.toArray();
@@ -40,22 +40,22 @@ McpProtocolListToolsResult McpProtocolListToolsResult::fromJson(const QJsonObjec
         for (const auto &v : arr) {
             lst.append(McpProtocolTool::fromJson(v.toObject()));
         }
-        prompt.setTools(lst);
+        result.setTools(std::move(lst));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolListToolsResult::toJson(const McpProtocolListToolsResult &boolean)
+QJsonObject McpProtocolListToolsResult::toJson(const McpProtocolListToolsResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    if (boolean.nextCursor().has_value()) {
-        obj["nextCursor"_L1] = *boolean.nextCursor();
+    if (result.nextCursor().has_value()) {
+        obj["nextCursor"_L1] = *result.nextCursor();
     }
     QJsonArray promptsArray;
-    const auto tools = boolean.tools();
+    const auto tools = result.tools();
     for (const auto &v : tools) {
         promptsArray.append(McpProtocolTool::toJson(v));
     }
@@ -88,7 +88,7 @@ QList<McpProtocolTool> McpProtocolListToolsResult::tools() const
     return mTools;
 }
 
-void McpProtocolListToolsResult::setTools(const QList<McpProtocolTool> &newTools)
+void McpProtocolListToolsResult::setTools(QList<McpProtocolTool> newTools)
 {
-    mTools = newTools;
+    mTools = std::move(newTools);
 }

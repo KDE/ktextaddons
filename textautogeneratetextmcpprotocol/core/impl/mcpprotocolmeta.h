@@ -6,7 +6,9 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QJsonValue>
+#include <QMap>
 #include <QString>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -24,10 +26,10 @@ public:
 
     /*!
      */
-    static McpProtocolMeta fromJson(const QJsonObject &obj);
+    [[nodiscard]] static McpProtocolMeta fromJson(const QJsonObject &obj);
     /*!
      */
-    static QJsonObject toJson(const McpProtocolMeta &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolMeta &protocolMeta);
 
     /*!
      */

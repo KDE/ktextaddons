@@ -7,6 +7,7 @@
 #include "mcpprotocolbooleanschema.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolBooleanSchema::McpProtocolBooleanSchema() = default;
@@ -30,7 +31,8 @@ McpProtocolBooleanSchema McpProtocolBooleanSchema::fromJson(const QJsonObject &o
 {
     McpProtocolBooleanSchema prompt;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolBooleanSchema::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolBooleanSchema: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolBooleanSchema: field 'type' must be" << McpProtocolBooleanSchema::type() << "got:" << obj.value("type"_L1).toString();
         return {};
     }
 

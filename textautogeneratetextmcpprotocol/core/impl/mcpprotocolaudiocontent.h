@@ -9,6 +9,7 @@
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAnnotations>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -40,7 +41,7 @@ public:
     [[nodiscard]] static McpProtocolAudioContent fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolAudioContent &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolAudioContent &content);
 
     /*!
      */

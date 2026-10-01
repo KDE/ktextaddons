@@ -43,6 +43,8 @@ target_link_libraries(
     PUBLIC
         KF6::TextAutoGenerateTextMcpProtocolCore
         Qt::Network
+    PRIVATE
+        KF6::I18n
 )
 
 set_target_properties(

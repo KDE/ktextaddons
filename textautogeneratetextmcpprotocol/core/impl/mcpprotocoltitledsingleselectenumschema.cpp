@@ -68,11 +68,11 @@ McpProtocolTitledSingleSelectEnumSchema::OneOfItem McpProtocolTitledSingleSelect
     return result;
 }
 
-QJsonObject McpProtocolTitledSingleSelectEnumSchema::OneOfItem::toJson(const McpProtocolTitledSingleSelectEnumSchema::OneOfItem &image)
+QJsonObject McpProtocolTitledSingleSelectEnumSchema::OneOfItem::toJson(const McpProtocolTitledSingleSelectEnumSchema::OneOfItem &oneOfItem)
 {
     QJsonObject obj;
-    obj["const"_L1] = image.constValue();
-    obj["title"_L1] = image.title();
+    obj["const"_L1] = oneOfItem.constValue();
+    obj["title"_L1] = oneOfItem.title();
     return obj;
 }
 
@@ -105,7 +105,7 @@ McpProtocolTitledSingleSelectEnumSchema McpProtocolTitledSingleSelectEnumSchema:
         for (const QJsonValue &v : arr) {
             oneOf.append(McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(v.toObject()));
         }
-        prompt.setOneOf(oneOf);
+        prompt.setOneOf(std::move(oneOf));
     }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
@@ -118,7 +118,8 @@ QJsonObject McpProtocolTitledSingleSelectEnumSchema::toJson(const McpProtocolTit
     QJsonObject obj;
     obj["type"_L1] = QString::fromLatin1(McpProtocolTitledSingleSelectEnumSchema::type());
     QJsonArray arr_oneOf;
-    for (const auto &v : schema.oneOf()) {
+    const auto oneOf = schema.oneOf();
+    for (const auto &v : oneOf) {
         arr_oneOf.append(McpProtocolTitledSingleSelectEnumSchema::OneOfItem::toJson(v));
     }
     obj.insert("oneOf"_L1, arr_oneOf);
@@ -159,9 +160,9 @@ QList<McpProtocolTitledSingleSelectEnumSchema::OneOfItem> McpProtocolTitledSingl
     return mOneOf;
 }
 
-void McpProtocolTitledSingleSelectEnumSchema::setOneOf(const QList<OneOfItem> &newOneOf)
+void McpProtocolTitledSingleSelectEnumSchema::setOneOf(QList<OneOfItem> newOneOf)
 {
-    mOneOf = newOneOf;
+    mOneOf = std::move(newOneOf);
 }
 
 std::optional<QString> McpProtocolTitledSingleSelectEnumSchema::title() const

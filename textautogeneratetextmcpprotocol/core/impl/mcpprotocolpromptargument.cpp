@@ -39,18 +39,18 @@ McpProtocolPromptArgument McpProtocolPromptArgument::fromJson(const QJsonObject 
     return prompt;
 }
 
-QJsonObject McpProtocolPromptArgument::toJson(const McpProtocolPromptArgument &prompt)
+QJsonObject McpProtocolPromptArgument::toJson(const McpProtocolPromptArgument &argument)
 {
     QJsonObject obj;
-    obj["name"_L1] = prompt.name();
-    if (prompt.description().has_value()) {
-        obj["description"_L1] = *prompt.description();
+    obj["name"_L1] = argument.name();
+    if (argument.description().has_value()) {
+        obj["description"_L1] = *argument.description();
     }
-    if (prompt.required().has_value()) {
-        obj["required"_L1] = *prompt.required();
+    if (argument.required().has_value()) {
+        obj["required"_L1] = *argument.required();
     }
-    if (prompt.title().has_value()) {
-        obj["title"_L1] = *prompt.title();
+    if (argument.title().has_value()) {
+        obj["title"_L1] = *argument.title();
     }
     return obj;
 }

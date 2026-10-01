@@ -12,7 +12,6 @@ McpServerSortFilterProxyModel::McpServerSortFilterProxyModel(QObject *parent)
 {
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
-    setFilterRole(McpServerModel::Name);
     sort(0);
 }
 

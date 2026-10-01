@@ -6,7 +6,6 @@
 #pragma once
 #include "common/mcpprotocolplugininterface.h"
 #include "mcpprotocolserverplugin_export.h"
-#include <QObject>
 class McpServerSse;
 class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerSsePluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
 {

@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,7 +29,7 @@ public:
     [[nodiscard]] static McpProtocolCancelTaskResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelTaskResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelTaskResult &result);
 
     /*!
      */
@@ -54,10 +54,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<int> pollInterval() const;
+    [[nodiscard]] std::optional<qint64> pollInterval() const;
     /*!
      */
-    void setPollInterval(std::optional<int> newPollInterval);
+    void setPollInterval(std::optional<qint64> newPollInterval);
 
     /*!
      */
@@ -82,20 +82,20 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<int> ttl() const;
+    [[nodiscard]] std::optional<qint64> ttl() const;
     /*!
      */
-    void setTtl(std::optional<int> newTtl);
+    void setTtl(std::optional<qint64> newTtl);
 
 private:
     std::optional<McpProtocolMeta> mMeta;
     QString mCreatedAt;
     QString mLastUpdatedAt;
-    std::optional<int> mPollInterval;
-    McpProtocolUtils::TaskStatus mStatus;
+    std::optional<qint64> mPollInterval;
+    McpProtocolUtils::TaskStatus mStatus = McpProtocolUtils::TaskStatus::Unknown;
     std::optional<QString> mStatusMessage;
     QString mTaskId;
-    std::optional<int> mTtl;
+    std::optional<qint64> mTtl;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskResult, Q_RELOCATABLE_TYPE);

@@ -9,7 +9,6 @@
 #include "addmcpsteamablehttpserverheaderlistwidget.h"
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <QListWidget>
 #include <QPointer>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -36,30 +35,45 @@ AddMcpSteamableHttpServerHeaderWidget::AddMcpSteamableHttpServerHeaderWidget(QWi
     buttonsLayout->addWidget(addHeaderButton);
     connect(addHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotAddHeader);
 
-    auto modifyHeaderButton = new QPushButton(i18nc("@action:button", "Modify"), this);
-    modifyHeaderButton->setObjectName(u"modifyHeaderButton"_s);
-    buttonsLayout->addWidget(modifyHeaderButton);
-    connect(modifyHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader);
+    mModifyHeaderButton = new QPushButton(i18nc("@action:button", "Modify"), this);
+    mModifyHeaderButton->setObjectName(u"modifyHeaderButton"_s);
+    buttonsLayout->addWidget(mModifyHeaderButton);
+    connect(mModifyHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader);
 
-    auto removeHeaderButton = new QPushButton(i18nc("@action:button", "Remove"), this);
-    removeHeaderButton->setObjectName(u"removeHeaderButton"_s);
-    buttonsLayout->addWidget(removeHeaderButton);
+    mRemoveHeaderButton = new QPushButton(i18nc("@action:button", "Remove"), this);
+    mRemoveHeaderButton->setObjectName(u"removeHeaderButton"_s);
+    buttonsLayout->addWidget(mRemoveHeaderButton);
     buttonsLayout->addStretch(1);
-    connect(removeHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader);
+    connect(mRemoveHeaderButton, &QPushButton::clicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader);
     mainLayout->addLayout(buttonsLayout);
+
+    connect(mListBox, &AddMcpSteamableHttpServerHeaderListWidget::itemSelectionChanged, this, &AddMcpSteamableHttpServerHeaderWidget::updateButtons);
+    connect(mListBox, &AddMcpSteamableHttpServerHeaderListWidget::itemDoubleClicked, this, &AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader);
+    updateButtons();
+}
+
+void AddMcpSteamableHttpServerHeaderWidget::updateButtons()
+{
+    const bool hasSelection = mListBox->currentItem() && !mListBox->selectedItems().isEmpty();
+    mModifyHeaderButton->setEnabled(hasSelection);
+    mRemoveHeaderButton->setEnabled(hasSelection);
 }
 
 AddMcpSteamableHttpServerHeaderWidget::~AddMcpSteamableHttpServerHeaderWidget() = default;
 
 void AddMcpSteamableHttpServerHeaderWidget::slotRemoveHeader()
 {
+    if (!mListBox->currentItem()) {
+        return;
+    }
     if (KMessageBox::ButtonCode::PrimaryAction
         == KMessageBox::questionTwoActions(this,
                                            i18n("Are you sure that you want to delete this header?"),
                                            i18nc("@title:window", "Remove Header"),
                                            KStandardGuiItem::remove(),
                                            KStandardGuiItem::cancel())) {
-        // TODO
+        delete mListBox->takeItem(mListBox->currentRow());
+        updateButtons();
     }
 }
 
@@ -75,6 +89,9 @@ void AddMcpSteamableHttpServerHeaderWidget::slotAddHeader()
 
 void AddMcpSteamableHttpServerHeaderWidget::slotModifyHeader()
 {
+    if (!mListBox->currentItem()) {
+        return;
+    }
     QPointer<AddMcpSteamableHttpServerHeaderConfigureDialog> dlg = new AddMcpSteamableHttpServerHeaderConfigureDialog(this);
     dlg->setHeader(mListBox->currentText());
     if (dlg->exec()) {
@@ -92,6 +109,7 @@ QStringList AddMcpSteamableHttpServerHeaderWidget::headers() const
 void AddMcpSteamableHttpServerHeaderWidget::setHeaders(const QStringList &h)
 {
     mListBox->setHeaders(h);
+    updateButtons();
 }
 
 #include "moc_addmcpsteamablehttpserverheaderwidget.cpp"

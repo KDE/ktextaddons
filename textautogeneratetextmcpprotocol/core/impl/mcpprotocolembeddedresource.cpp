@@ -6,8 +6,8 @@
 
 #include "mcpprotocolembeddedresource.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolEmbeddedResource::McpProtocolEmbeddedResource() = default;
@@ -22,38 +22,42 @@ bool McpProtocolEmbeddedResource::operator==(const McpProtocolEmbeddedResource &
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolEmbeddedResource &t)
 {
     d.space() << "meta:" << t.meta();
+    d.space() << "annotations:" << t.annotations();
+    d.space() << "resource:" << McpProtocolUtils::embeddedResourceResourceToJson(t.resource());
     return d;
 }
 
 McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObject &obj)
 {
-    McpProtocolEmbeddedResource prompt;
+    McpProtocolEmbeddedResource resource;
+    if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolEmbeddedResource::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolEmbeddedResource: field 'type' must be" << McpProtocolEmbeddedResource::type() << "got:" << obj.value("type"_L1).toString();
+        return {};
+    }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        resource.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue annotationsValue = obj.value("annotations"_L1); annotationsValue.isObject()) {
-        prompt.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
+        resource.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
     if (obj.contains("resource"_L1)) {
-        prompt.setResource(McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1]));
+        resource.setResource(McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1]));
     }
-    if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolEmbeddedResource::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'resource', got: " << obj.value("type"_L1).toString();
-    }
-    return prompt;
+    return resource;
 }
 
-QJsonObject McpProtocolEmbeddedResource::toJson(const McpProtocolEmbeddedResource &boolean)
+QJsonObject McpProtocolEmbeddedResource::toJson(const McpProtocolEmbeddedResource &embeddedResource)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (embeddedResource.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*embeddedResource.meta());
     }
 
-    obj["resource"_L1] = McpProtocolUtils::embeddedResourceResourceToJson(boolean.resource());
+    obj["resource"_L1] = McpProtocolUtils::embeddedResourceResourceToJson(embeddedResource.resource());
     obj["type"_L1] = QString::fromLatin1(McpProtocolEmbeddedResource::type());
-    if (boolean.annotations().has_value()) {
-        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*boolean.annotations());
+    if (embeddedResource.annotations().has_value()) {
+        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*embeddedResource.annotations());
     }
     return obj;
 }
@@ -83,7 +87,7 @@ McpProtocolUtils::EmbeddedResourceResource McpProtocolEmbeddedResource::resource
     return mResource;
 }
 
-void McpProtocolEmbeddedResource::setResource(const McpProtocolUtils::EmbeddedResourceResource &newResource)
+void McpProtocolEmbeddedResource::setResource(McpProtocolUtils::EmbeddedResourceResource newResource)
 {
-    mResource = newResource;
+    mResource = std::move(newResource);
 }

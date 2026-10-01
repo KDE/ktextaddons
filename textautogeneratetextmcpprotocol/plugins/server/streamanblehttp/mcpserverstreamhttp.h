@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QObject>
+class QJsonObject;
 class McpServerStreamHttpPluginInterface;
 class McpServerStreamHttp : public QObject
 {

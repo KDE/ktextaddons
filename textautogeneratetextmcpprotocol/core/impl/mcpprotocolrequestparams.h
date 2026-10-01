@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -14,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -26,7 +27,7 @@ public:
         [[nodiscard]] static McpProtocolRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolRequestParams::Meta &meta);
     };
 
     /*!
@@ -42,7 +43,7 @@ public:
     [[nodiscard]] static McpProtocolRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolRequestParams &requestParams);
 
     /*!
      */
@@ -51,12 +52,8 @@ public:
      */
     void setMeta(std::optional<Meta> newMeta);
 
-    [[nodiscard]] QString uri() const;
-    void setUri(const QString &newUri);
-
 private:
     std::optional<Meta> mMeta;
-    QString mUri;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams, Q_RELOCATABLE_TYPE);

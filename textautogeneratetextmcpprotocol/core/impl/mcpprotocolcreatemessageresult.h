@@ -15,6 +15,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolResultContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolUseContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,10 +29,14 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool operator==(const McpProtocolCreateMessageResult &other) const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolCreateMessageResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCreateMessageResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCreateMessageResult &result);
 
     /*!
      */
@@ -45,7 +50,7 @@ public:
     [[nodiscard]] McpProtocolUtils::CreateMessageResultContent content() const;
     /*!
      */
-    void setContent(const McpProtocolUtils::CreateMessageResultContent &newContent);
+    void setContent(McpProtocolUtils::CreateMessageResultContent newContent);
 
     /*!
      */

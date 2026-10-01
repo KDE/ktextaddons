@@ -20,12 +20,10 @@ MainWidget::MainWidget(QWidget *parent)
     auto treeview = new QTreeWidget(this);
     splitter->addWidget(treeview);
     // TODO
-    auto client = new TextAutoGenerateTextMcpProtocolCore::McpProtocolClient(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse, this);
+    mListClient.append(
+        new TextAutoGenerateTextMcpProtocolCore::McpProtocolClient(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse, this));
 }
 
-MainWidget::~MainWidget()
-{
-    qDeleteAll(mListClient);
-}
+MainWidget::~MainWidget() = default;
 
 #include "moc_mainwidget.cpp"

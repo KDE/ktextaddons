@@ -6,8 +6,8 @@
 
 #include "mcpprotocolgetpromptrequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -40,20 +40,20 @@ McpProtocolGetPromptRequestParams::Meta McpProtocolGetPromptRequestParams::Meta:
     return meta;
 }
 
-QJsonObject McpProtocolGetPromptRequestParams::Meta::toJson(const McpProtocolGetPromptRequestParams::Meta &image)
+QJsonObject McpProtocolGetPromptRequestParams::Meta::toJson(const McpProtocolGetPromptRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
 
 McpProtocolGetPromptRequestParams McpProtocolGetPromptRequestParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolGetPromptRequestParams prompt;
+    McpProtocolGetPromptRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolGetPromptRequestParams::Meta::fromJson(metaValue.toObject()));
+        params.setMeta(McpProtocolGetPromptRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue argumentsValue = obj.value("arguments"_L1); argumentsValue.isObject()) {
         const QJsonObject mapObj_arguments = argumentsValue.toObject();
@@ -61,23 +61,24 @@ McpProtocolGetPromptRequestParams McpProtocolGetPromptRequestParams::fromJson(co
         for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value().toString());
         }
-        prompt.setArguments(map_arguments);
+        params.setArguments(std::move(map_arguments));
     }
-    prompt.setName(obj.value("name"_L1).toString());
-    return prompt;
+    params.setName(obj.value("name"_L1).toString());
+    return params;
 }
 
-QJsonObject McpProtocolGetPromptRequestParams::toJson(const McpProtocolGetPromptRequestParams &boolean)
+QJsonObject McpProtocolGetPromptRequestParams::toJson(const McpProtocolGetPromptRequestParams &params)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
+    obj["name"_L1] = params.name();
 
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolGetPromptRequestParams::Meta::toJson(*boolean.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolGetPromptRequestParams::Meta::toJson(*params.meta());
     }
-    if (boolean.arguments().has_value()) {
+    if (params.arguments().has_value()) {
         QJsonObject map_arguments;
-        for (auto it = boolean.arguments()->constBegin(); it != boolean.arguments()->constEnd(); ++it) {
+        const auto argumentsValues = *params.arguments();
+        for (auto it = argumentsValues.constBegin(); it != argumentsValues.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value());
         }
         obj["arguments"_L1] = map_arguments;

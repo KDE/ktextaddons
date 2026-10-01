@@ -58,13 +58,13 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "environments [";
     const auto envs = t.environments();
     for (auto it = envs.constBegin(); it != envs.constEnd(); ++it) {
-        d << it.key() << ":" << it.value();
+        d << it.key() << ":" << "***";
         if (std::next(it) != envs.constEnd()) {
             d << ", ";
         }
     }
     d << "]";
-    d.space() << "arguments" << t.arguments();
+    d.space() << "arguments" << (t.arguments().isEmpty() ? QString() : u"***"_s);
     d.space() << "command" << t.command();
     return d;
 }

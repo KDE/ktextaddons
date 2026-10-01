@@ -6,7 +6,6 @@
 
 #include "mcpprotocolpromptlistchangednotification.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -34,7 +33,7 @@ McpProtocolPromptListChangedNotification McpProtocolPromptListChangedNotificatio
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolPromptListChangedNotification::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
-            << "Field 'method' must be 'notifications/prompts/list_changed', got: " << obj.value("method"_L1).toString();
+            << "Field 'method' must be" << McpProtocolPromptListChangedNotification::type() << ", got:" << obj.value("method"_L1).toString();
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
@@ -43,13 +42,13 @@ McpProtocolPromptListChangedNotification McpProtocolPromptListChangedNotificatio
     return prompt;
 }
 
-QJsonObject McpProtocolPromptListChangedNotification::toJson(const McpProtocolPromptListChangedNotification &boolean)
+QJsonObject McpProtocolPromptListChangedNotification::toJson(const McpProtocolPromptListChangedNotification &promptListChangedNotification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolPromptListChangedNotification::type());
-    if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolNotificationParams::toJson(*boolean.params());
+    if (promptListChangedNotification.params().has_value()) {
+        obj["params"_L1] = McpProtocolNotificationParams::toJson(*promptListChangedNotification.params());
     }
     return obj;
 }
@@ -61,5 +60,5 @@ std::optional<McpProtocolNotificationParams> McpProtocolPromptListChangedNotific
 
 void McpProtocolPromptListChangedNotification::setParams(std::optional<McpProtocolNotificationParams> newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

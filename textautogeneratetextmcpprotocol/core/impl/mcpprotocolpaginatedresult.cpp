@@ -6,7 +6,6 @@
 
 #include "mcpprotocolpaginatedresult.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -33,14 +32,14 @@ McpProtocolPaginatedResult McpProtocolPaginatedResult::fromJson(const QJsonObjec
     return prompt;
 }
 
-QJsonObject McpProtocolPaginatedResult::toJson(const McpProtocolPaginatedResult &boolean)
+QJsonObject McpProtocolPaginatedResult::toJson(const McpProtocolPaginatedResult &paginatedResult)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (paginatedResult.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*paginatedResult.meta());
     }
-    if (boolean.nextCursor().has_value()) {
-        obj["nextCursor"_L1] = *boolean.nextCursor();
+    if (paginatedResult.nextCursor().has_value()) {
+        obj["nextCursor"_L1] = *paginatedResult.nextCursor();
     }
     return obj;
 }

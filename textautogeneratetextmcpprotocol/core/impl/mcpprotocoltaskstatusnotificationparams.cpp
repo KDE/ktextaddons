@@ -6,7 +6,6 @@
 
 #include "mcpprotocoltaskstatusnotificationparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -33,8 +32,8 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
     McpProtocolTaskStatusNotificationParams prompt;
     prompt.setCreatedAt(obj.value("createdAt"_L1).toString());
     prompt.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
-    if (obj.contains("pollInterval"_L1)) {
-        prompt.setPollInterval(obj.value("pollInterval"_L1).toInt());
+    if (const QJsonValue pollIntervalValue = obj.value("pollInterval"_L1); pollIntervalValue.isDouble()) {
+        prompt.setPollInterval(pollIntervalValue.toInteger());
     }
     if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
         prompt.setStatus(McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
@@ -43,8 +42,8 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
         prompt.setStatusMessage(obj.value("statusMessage"_L1).toString());
     }
     prompt.setTaskId(obj.value("taskId"_L1).toString());
-    if (!obj["ttl"_L1].isNull()) {
-        prompt.setTtl(obj.value("ttl"_L1).toInt());
+    if (const QJsonValue ttlValue = obj.value("ttl"_L1); ttlValue.isDouble()) {
+        prompt.setTtl(ttlValue.toInteger());
     }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
@@ -52,26 +51,26 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
     return prompt;
 }
 
-QJsonObject McpProtocolTaskStatusNotificationParams::toJson(const McpProtocolTaskStatusNotificationParams &boolean)
+QJsonObject McpProtocolTaskStatusNotificationParams::toJson(const McpProtocolTaskStatusNotificationParams &taskStatusNotificationParams)
 {
     QJsonObject obj;
-    obj["createdAt"_L1] = boolean.createdAt();
-    obj["lastUpdatedAt"_L1] = boolean.lastUpdatedAt();
-    obj["status"_L1] = McpProtocolUtils::convertTaskStatusToString(boolean.status());
-    obj["taskId"_L1] = boolean.taskId();
-    if (boolean.pollInterval().has_value()) {
-        obj.insert("pollInterval"_L1, *boolean.pollInterval());
+    obj["createdAt"_L1] = taskStatusNotificationParams.createdAt();
+    obj["lastUpdatedAt"_L1] = taskStatusNotificationParams.lastUpdatedAt();
+    obj["status"_L1] = McpProtocolUtils::convertTaskStatusToString(taskStatusNotificationParams.status());
+    obj["taskId"_L1] = taskStatusNotificationParams.taskId();
+    if (taskStatusNotificationParams.pollInterval().has_value()) {
+        obj.insert("pollInterval"_L1, *taskStatusNotificationParams.pollInterval());
     }
-    if (boolean.statusMessage().has_value()) {
-        obj.insert("statusMessage"_L1, *boolean.statusMessage());
+    if (taskStatusNotificationParams.statusMessage().has_value()) {
+        obj.insert("statusMessage"_L1, *taskStatusNotificationParams.statusMessage());
     }
-    if (boolean.ttl().has_value()) {
-        obj.insert("ttl"_L1, *boolean.ttl());
+    if (taskStatusNotificationParams.ttl().has_value()) {
+        obj.insert("ttl"_L1, *taskStatusNotificationParams.ttl());
     } else {
         obj.insert("ttl"_L1, QJsonValue::Null);
     }
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (taskStatusNotificationParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*taskStatusNotificationParams.meta());
     }
     return obj;
 }
@@ -106,12 +105,12 @@ void McpProtocolTaskStatusNotificationParams::setLastUpdatedAt(const QString &ne
     mLastUpdatedAt = newLastUpdatedAt;
 }
 
-std::optional<int> McpProtocolTaskStatusNotificationParams::pollInterval() const
+std::optional<qint64> McpProtocolTaskStatusNotificationParams::pollInterval() const
 {
     return mPollInterval;
 }
 
-void McpProtocolTaskStatusNotificationParams::setPollInterval(std::optional<int> newPollInterval)
+void McpProtocolTaskStatusNotificationParams::setPollInterval(std::optional<qint64> newPollInterval)
 {
     mPollInterval = newPollInterval;
 }
@@ -146,12 +145,12 @@ void McpProtocolTaskStatusNotificationParams::setTaskId(const QString &newTaskId
     mTaskId = newTaskId;
 }
 
-std::optional<int> McpProtocolTaskStatusNotificationParams::ttl() const
+std::optional<qint64> McpProtocolTaskStatusNotificationParams::ttl() const
 {
     return mTtl;
 }
 
-void McpProtocolTaskStatusNotificationParams::setTtl(std::optional<int> newTtl)
+void McpProtocolTaskStatusNotificationParams::setTtl(std::optional<qint64> newTtl)
 {
     mTtl = newTtl;
 }

@@ -5,10 +5,12 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QList>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAnnotations>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolIcon>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,7 +31,7 @@ public:
     [[nodiscard]] static McpProtocolResourceTemplate fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceTemplate &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceTemplate &resourceTemplate);
 
     /*!
      */

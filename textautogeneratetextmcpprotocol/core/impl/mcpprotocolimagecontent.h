@@ -9,6 +9,7 @@
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAnnotations>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,8 +29,6 @@ public:
      */
     [[nodiscard]] QString mimeType() const;
     /*!
-     * \brief setMimeType
-     * \param newMimeType
      */
     void setMimeType(const QString &newMimeType);
 

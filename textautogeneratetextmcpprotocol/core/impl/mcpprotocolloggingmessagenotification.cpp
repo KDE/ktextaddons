@@ -7,10 +7,16 @@
 #include "mcpprotocolloggingmessagenotification.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLoggingMessageNotification::McpProtocolLoggingMessageNotification() = default;
+
+QByteArray McpProtocolLoggingMessageNotification::type()
+{
+    return "notifications/message"_ba;
+}
 
 bool McpProtocolLoggingMessageNotification::operator==(const McpProtocolLoggingMessageNotification &other) const = default;
 
@@ -22,28 +28,29 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolLoggingMessageNotification McpProtocolLoggingMessageNotification::fromJson(const QJsonObject &obj)
 {
-    McpProtocolLoggingMessageNotification prompt;
+    McpProtocolLoggingMessageNotification notification;
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
 
-    if (obj.value("method"_L1).toString() != "notifications/message"_L1) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/message', got: " << obj.value("method"_L1).toString();
+    if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolLoggingMessageNotification::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotification: field 'method' must be"
+                                                       << McpProtocolLoggingMessageNotification::type() << "got:" << obj.value("method"_L1).toString();
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolLoggingMessageNotificationParams::fromJson(paramsValue.toObject()));
+        notification.setParams(McpProtocolLoggingMessageNotificationParams::fromJson(paramsValue.toObject()));
     }
-    return prompt;
+    return notification;
 }
 
-QJsonObject McpProtocolLoggingMessageNotification::toJson(const McpProtocolLoggingMessageNotification &boolean)
+QJsonObject McpProtocolLoggingMessageNotification::toJson(const McpProtocolLoggingMessageNotification &notification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
-    obj["method"_L1] = u"notifications/message"_s;
-    obj["params"_L1] = McpProtocolLoggingMessageNotificationParams::toJson(boolean.params());
+    obj["method"_L1] = QString::fromLatin1(McpProtocolLoggingMessageNotification::type());
+    obj["params"_L1] = McpProtocolLoggingMessageNotificationParams::toJson(notification.params());
     return obj;
 }
 
@@ -52,7 +59,7 @@ McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificatio
     return mParams;
 }
 
-void McpProtocolLoggingMessageNotification::setParams(const McpProtocolLoggingMessageNotificationParams &newParams)
+void McpProtocolLoggingMessageNotification::setParams(McpProtocolLoggingMessageNotificationParams newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

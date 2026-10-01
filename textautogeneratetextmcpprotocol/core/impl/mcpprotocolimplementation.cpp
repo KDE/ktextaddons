@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolImplementation::McpProtocolImplementation() = default;
@@ -38,7 +39,7 @@ McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject 
         for (const auto &v : arr) {
             icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
-        impl.setIcons(icons);
+        impl.setIcons(std::move(icons));
     }
     impl.setName(obj.value("name"_L1).toString());
     if (obj.contains("title"_L1)) {

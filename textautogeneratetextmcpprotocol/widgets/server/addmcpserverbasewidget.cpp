@@ -6,7 +6,6 @@
 #include "addmcpserverbasewidget.h"
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
-using namespace Qt::Literals::StringLiterals;
 AddMcpServerBaseWidget::AddMcpServerBaseWidget(QWidget *parent)
     : QWidget{parent}
 {

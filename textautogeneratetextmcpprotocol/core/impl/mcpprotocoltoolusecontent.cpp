@@ -5,9 +5,8 @@
 */
 
 #include "mcpprotocoltoolusecontent.h"
-#include <QDebug>
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
-#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolToolUseContent::McpProtocolToolUseContent() = default;
@@ -32,12 +31,12 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
 {
     McpProtocolToolUseContent tool;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolToolUseContent::type())) {
-        qWarning() << "McpProtocolToolUseContent: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolToolUseContent: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
 
-    if (obj.contains("_meta"_L1)) {
-        tool.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
+    if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
+        tool.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     tool.setId(obj["id"_L1].toString());
     tool.setName(obj.value("name"_L1).toString());
@@ -48,7 +47,7 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
         for (auto it = mapObj_input.constBegin(); it != mapObj_input.constEnd(); ++it) {
             map_input.insert(it.key(), it.value());
         }
-        tool.setInput(map_input);
+        tool.setInput(std::move(map_input));
     }
     return tool;
 }
@@ -64,7 +63,8 @@ QJsonObject McpProtocolToolUseContent::toJson(const McpProtocolToolUseContent &t
     }
 
     QJsonObject map_input;
-    for (auto it = tool.input().constBegin(); it != tool.input().constEnd(); ++it) {
+    const QMap<QString, QJsonValue> input = tool.input();
+    for (auto it = input.constBegin(); it != input.constEnd(); ++it) {
         map_input.insert(it.key(), it.value());
     }
     obj["input"_L1] = map_input;
@@ -96,9 +96,9 @@ QMap<QString, QJsonValue> McpProtocolToolUseContent::input() const
     return mInput;
 }
 
-void McpProtocolToolUseContent::setInput(const QMap<QString, QJsonValue> &newInput)
+void McpProtocolToolUseContent::setInput(QMap<QString, QJsonValue> newInput)
 {
-    mInput = newInput;
+    mInput = std::move(newInput);
 }
 
 std::optional<McpProtocolMeta> McpProtocolToolUseContent::meta() const

@@ -54,38 +54,38 @@ McpProtocolResourceTemplate McpProtocolResourceTemplate::fromJson(const QJsonObj
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
-        prompt.setIcons(list_icons);
+        prompt.setIcons(std::move(list_icons));
     }
     return prompt;
 }
 
-QJsonObject McpProtocolResourceTemplate::toJson(const McpProtocolResourceTemplate &boolean)
+QJsonObject McpProtocolResourceTemplate::toJson(const McpProtocolResourceTemplate &resourceTemplate)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
-    obj["uriTemplate"_L1] = boolean.uriTemplate();
-    if (boolean.meta().has_value()) {
-        obj.insert("_meta"_L1, McpProtocolMeta::toJson(*boolean.meta()));
+    obj["name"_L1] = resourceTemplate.name();
+    obj["uriTemplate"_L1] = resourceTemplate.uriTemplate();
+    if (resourceTemplate.meta().has_value()) {
+        obj.insert("_meta"_L1, McpProtocolMeta::toJson(*resourceTemplate.meta()));
     }
-    if (boolean.annotations().has_value()) {
-        obj.insert("annotations"_L1, McpProtocolAnnotations::toJson(*boolean.annotations()));
+    if (resourceTemplate.annotations().has_value()) {
+        obj.insert("annotations"_L1, McpProtocolAnnotations::toJson(*resourceTemplate.annotations()));
     }
-    if (boolean.description().has_value()) {
-        obj.insert("description"_L1, *boolean.description());
+    if (resourceTemplate.description().has_value()) {
+        obj.insert("description"_L1, *resourceTemplate.description());
     }
-    if (boolean.icons().has_value()) {
+    if (resourceTemplate.icons().has_value()) {
         QJsonArray arr_icons;
-        const auto icons = *boolean.icons();
+        const auto icons = *resourceTemplate.icons();
         for (const auto &v : icons) {
             arr_icons.append(McpProtocolIcon::toJson(v));
         }
         obj.insert("icons"_L1, arr_icons);
     }
-    if (boolean.mimeType().has_value()) {
-        obj.insert("mimeType"_L1, *boolean.mimeType());
+    if (resourceTemplate.mimeType().has_value()) {
+        obj.insert("mimeType"_L1, *resourceTemplate.mimeType());
     }
-    if (boolean.title().has_value()) {
-        obj.insert("title"_L1, *boolean.title());
+    if (resourceTemplate.title().has_value()) {
+        obj.insert("title"_L1, *resourceTemplate.title());
     }
     return obj;
 }

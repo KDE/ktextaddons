@@ -22,27 +22,27 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolTaskMetadata McpProtocolTaskMetadata::fromJson(const QJsonObject &obj)
 {
     McpProtocolTaskMetadata prompt;
-    if (obj.contains("ttl"_L1)) {
-        prompt.setTtl(obj.value("ttl"_L1).toInt());
+    if (const QJsonValue ttlValue = obj.value("ttl"_L1); ttlValue.isDouble()) {
+        prompt.setTtl(ttlValue.toInteger());
     }
     return prompt;
 }
 
-QJsonObject McpProtocolTaskMetadata::toJson(const McpProtocolTaskMetadata &boolean)
+QJsonObject McpProtocolTaskMetadata::toJson(const McpProtocolTaskMetadata &taskMetadata)
 {
     QJsonObject obj;
-    if (boolean.ttl().has_value()) {
-        obj["ttl"_L1] = *boolean.ttl();
+    if (taskMetadata.ttl().has_value()) {
+        obj["ttl"_L1] = *taskMetadata.ttl();
     }
     return obj;
 }
 
-std::optional<int> McpProtocolTaskMetadata::ttl() const
+std::optional<qint64> McpProtocolTaskMetadata::ttl() const
 {
     return mTtl;
 }
 
-void McpProtocolTaskMetadata::setTtl(std::optional<int> newTtl)
+void McpProtocolTaskMetadata::setTtl(std::optional<qint64> newTtl)
 {
     mTtl = newTtl;
 }

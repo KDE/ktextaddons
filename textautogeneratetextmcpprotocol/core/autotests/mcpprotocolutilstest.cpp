@@ -4,7 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolutilstest.h"
+#include "impl/mcpprotocolelicitrequest.h"
+#include "impl/mcpprotocolelicitrequestformparams.h"
+#include "impl/mcpprotocolelicitrequesturlparams.h"
+#include "impl/mcpprotocolelicitresult.h"
+#include "impl/mcpprotocolpingrequest.h"
 #include "impl/mcpprotocolutils.h"
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolUtilsTest)
 using namespace Qt::Literals::StringLiterals;
@@ -134,13 +140,19 @@ void McpProtocolUtilsTest::shouldConvertProtocolVersionToString()
 {
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
                  TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown),
-             u"2025-03-26"_s);
+             QString());
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
                  TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26),
              u"2025-03-26"_s);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
                  TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05),
              u"2024-11-05"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_06_18),
+             u"2025-06-18"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25),
+             u"2025-11-25"_s);
 }
 
 void McpProtocolUtilsTest::shouldConvertProtocolVersionFromString()
@@ -149,10 +161,69 @@ void McpProtocolUtilsTest::shouldConvertProtocolVersionFromString()
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2024-11-05"_s),
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2025-06-18"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_06_18);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2025-11-25"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"kde"_s),
-             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(QString()),
-             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26);
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown);
+}
+
+void McpProtocolUtilsTest::shouldOrderLoggingLevelBySeverity()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::LoggingLevel;
+    QVERIFY(LoggingLevel::Debug < LoggingLevel::Info);
+    QVERIFY(LoggingLevel::Info < LoggingLevel::Notice);
+    QVERIFY(LoggingLevel::Notice < LoggingLevel::Warning);
+    QVERIFY(LoggingLevel::Warning < LoggingLevel::Error);
+    QVERIFY(LoggingLevel::Error < LoggingLevel::Critical);
+    QVERIFY(LoggingLevel::Critical < LoggingLevel::Alert);
+    QVERIFY(LoggingLevel::Alert < LoggingLevel::Emergency);
+}
+
+void McpProtocolUtilsTest::shouldKeepLargeRequestId()
+{
+    const qint64 bigId = 5000000000LL;
+    QJsonObject obj;
+    obj["jsonrpc"_L1] = u"2.0"_s;
+    obj["method"_L1] = u"ping"_s;
+    obj["id"_L1] = bigId;
+    const auto request = TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest::fromJson(obj);
+    QVERIFY(std::holds_alternative<qint64>(request.id()));
+    QCOMPARE(std::get<qint64>(request.id()), bigId);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest::toJson(request), obj);
+}
+
+void McpProtocolUtilsTest::shouldKeepDecimalElicitResultContent()
+{
+    QJsonObject content;
+    content["ratio"_L1] = 0.5;
+    content["age"_L1] = 42;
+    QJsonObject obj;
+    obj["action"_L1] = u"accept"_s;
+    obj["content"_L1] = content;
+    const auto result = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::fromJson(obj);
+    QVERIFY(result.content().has_value());
+    const auto map = *result.content();
+    QCOMPARE(std::get<double>(map.value(u"ratio"_s)), 0.5);
+    QCOMPARE(std::get<int>(map.value(u"age"_s)), 42);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::toJson(result).value("content"_L1).toObject(), content);
+}
+
+void McpProtocolUtilsTest::shouldParseElicitRequestWithoutModeAsForm()
+{
+    QJsonObject params;
+    params["message"_L1] = u"Please provide your name"_s;
+    params["requestedSchema"_L1] = QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{}}};
+    QJsonObject obj;
+    obj["jsonrpc"_L1] = u"2.0"_s;
+    obj["method"_L1] = u"elicitation/create"_s;
+    obj["id"_L1] = 1;
+    obj["params"_L1] = params;
+    const auto request = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest::fromJson(obj);
+    QVERIFY(std::holds_alternative<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams>(request.params()));
 }
 
 #include "moc_mcpprotocolutilstest.cpp"

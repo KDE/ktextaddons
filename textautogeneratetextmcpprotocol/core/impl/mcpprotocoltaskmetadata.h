@@ -5,8 +5,8 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -27,17 +27,17 @@ public:
     [[nodiscard]] static McpProtocolTaskMetadata fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskMetadata &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolTaskMetadata &taskMetadata);
 
     /*!
      */
-    [[nodiscard]] std::optional<int> ttl() const;
+    [[nodiscard]] std::optional<qint64> ttl() const;
     /*!
      */
-    void setTtl(std::optional<int> newTtl);
+    void setTtl(std::optional<qint64> newTtl);
 
 private:
-    std::optional<int> mTtl;
+    std::optional<qint64> mTtl;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskMetadata, Q_RELOCATABLE_TYPE);

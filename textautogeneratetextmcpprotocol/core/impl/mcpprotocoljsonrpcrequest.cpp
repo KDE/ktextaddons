@@ -6,8 +6,8 @@
 
 #include "mcpprotocoljsonrpcrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -38,6 +38,10 @@ McpProtocolJSONRPCRequest McpProtocolJSONRPCRequest::fromJson(const QJsonObject 
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: method";
         return {};
     }
+    if (!obj.contains("id"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: id";
+        return {};
+    }
     response.setMethod(obj.value("method"_L1).toString());
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         const QJsonObject mapObj_params = paramsValue.toObject();
@@ -45,20 +49,20 @@ McpProtocolJSONRPCRequest McpProtocolJSONRPCRequest::fromJson(const QJsonObject 
         for (auto it = mapObj_params.constBegin(); it != mapObj_params.constEnd(); ++it) {
             map_params.insert(it.key(), it.value());
         }
-        response.setParams(map_params);
+        response.setParams(std::move(map_params));
     }
     response.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
     return response;
 }
 
-QJsonObject McpProtocolJSONRPCRequest::toJson(const McpProtocolJSONRPCRequest &boolean)
+QJsonObject McpProtocolJSONRPCRequest::toJson(const McpProtocolJSONRPCRequest &request)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
-    obj["method"_L1] = boolean.method();
-    if (boolean.params().has_value()) {
-        const auto params = *boolean.params();
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(request.id());
+    obj["method"_L1] = request.method();
+    if (request.params().has_value()) {
+        const auto params = *request.params();
         QJsonObject map_params;
         for (auto it = params.constBegin(); it != params.constEnd(); ++it) {
             map_params.insert(it.key(), it.value());

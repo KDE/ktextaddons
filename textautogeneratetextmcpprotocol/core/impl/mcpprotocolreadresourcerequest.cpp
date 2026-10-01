@@ -6,7 +6,6 @@
 
 #include "mcpprotocolreadresourcerequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -36,7 +35,9 @@ McpProtocolReadResourceRequest McpProtocolReadResourceRequest::fromJson(const QJ
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolReadResourceRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolReadResourceRequest::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolReadResourceRequestParams::fromJson(paramsValue.toObject()));
@@ -47,13 +48,13 @@ McpProtocolReadResourceRequest McpProtocolReadResourceRequest::fromJson(const QJ
     return prompt;
 }
 
-QJsonObject McpProtocolReadResourceRequest::toJson(const McpProtocolReadResourceRequest &boolean)
+QJsonObject McpProtocolReadResourceRequest::toJson(const McpProtocolReadResourceRequest &readResourceRequest)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolReadResourceRequest::type());
-    obj["params"_L1] = McpProtocolReadResourceRequestParams::toJson(boolean.params());
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["params"_L1] = McpProtocolReadResourceRequestParams::toJson(readResourceRequest.params());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(readResourceRequest.id());
     return obj;
 }
 

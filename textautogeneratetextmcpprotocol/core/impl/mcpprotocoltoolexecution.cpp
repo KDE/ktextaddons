@@ -42,12 +42,15 @@ QJsonObject McpProtocolToolExecution::toJson(const McpProtocolToolExecution &exe
 
 McpProtocolToolExecution::TaskSupport McpProtocolToolExecution::convertTaskSupportFromString(const QString &str)
 {
-    if (str == "forbidden"_L1)
+    if (str == "forbidden"_L1) {
         return TaskSupport::Forbidden;
-    if (str == "optional"_L1)
+    }
+    if (str == "optional"_L1) {
         return TaskSupport::Optional;
-    if (str == "required"_L1)
+    }
+    if (str == "required"_L1) {
         return TaskSupport::Required;
+    }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid task support " << str;
     return TaskSupport::Unknown;
 }

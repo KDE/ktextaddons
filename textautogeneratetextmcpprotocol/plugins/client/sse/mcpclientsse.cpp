@@ -5,6 +5,8 @@
 */
 #include "mcpclientsse.h"
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
+#include "sse/mcpclientsseplugininterface.h"
+#include <KLocalizedString>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 using namespace Qt::Literals::StringLiterals;
@@ -15,41 +17,74 @@ McpClientSse::McpClientSse(McpClientSsePluginInterface *interface, QObject *pare
 {
 }
 
-McpClientSse::~McpClientSse() = default;
+McpClientSse::~McpClientSse()
+{
+    // Don't emit signals while we are destroyed.
+    if (mReply) {
+        mReply->disconnect(this);
+    }
+}
 
 void McpClientSse::connection()
 {
-    // TODO use get
-    QUrl url;
+    if (mReply) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Client already started:" << mReply->url();
+        return;
+    }
+    const auto settings = mInterface->protocolSettings();
+    const QUrl url = settings.serverUrl();
+    if (!url.isValid() || url.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to start client. Url is invalid:" << url;
+        Q_EMIT error(i18n("Impossible to start client. Url is invalid."));
+        return;
+    }
     QNetworkRequest request(url);
     request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
     request.setRawHeader("Cache-Control"_ba, "no-cache"_ba);
-
-    mReply = mNetworkAccessManager->get(request);
-    connect(mReply, &QNetworkReply::finished, this, &McpClientSse::finished);
-    connect(mReply, &QNetworkReply::sslErrors, this, [this](const QList<QSslError> &errors) {
-        for (const QSslError &error : errors) {
-            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << error.errorString();
+    const QStringList headers = settings.headers();
+    for (const QString &header : headers) {
+        const qsizetype index = header.indexOf(u':');
+        if (index <= 0) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Invalid header, expected \"Name: Value\"";
+            continue;
         }
-        mReply->ignoreSslErrors();
+        request.setRawHeader(header.left(index).trimmed().toUtf8(), header.mid(index + 1).trimmed().toUtf8());
+    }
+
+    QNetworkReply *reply = mNetworkAccessManager->get(request);
+    mReply = reply;
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        if (mReply == reply) {
+            mReply = nullptr;
+        }
+        reply->deleteLater();
+        Q_EMIT finished();
     });
-    connect(mReply, &QNetworkReply::errorOccurred, this, [this]() {
-        Q_EMIT error(mReply->errorString());
+    connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {
+        for (const QSslError &error : errors) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << error.errorString();
+        }
+    });
+    connect(reply, &QNetworkReply::errorOccurred, this, [this, reply]() {
+        Q_EMIT error(reply->errorString());
     });
 
-    connect(mReply, &QNetworkReply::readyRead, this, &McpClientSse::slotRead);
+    connect(reply, &QNetworkReply::readyRead, this, [this, reply]() {
+        slotRead(reply);
+    });
 }
 
-void McpClientSse::send(const QJsonObject &obj)
+void McpClientSse::send(const QJsonObject &)
 {
-    // Use post
-    // TODO
+    // TODO use post
+    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Sending message is not implemented yet.";
+    Q_EMIT error(i18n("Sending message is not implemented yet."));
 }
 
-void McpClientSse::slotRead()
+void McpClientSse::slotRead(QNetworkReply *reply)
 {
     // TODO
-    const QByteArray response = mReply->readAll();
+    const QByteArray response = reply->readAll();
     qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " response " << response;
 }
 

@@ -21,12 +21,12 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
     mainLayout->setContentsMargins(QMargins{});
 
     mCommandLineEdit->setObjectName(u"mCommandLineEdit"_s);
-    mainLayout->addRow(i18n("Command:"), mCommandLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "Command:"), mCommandLineEdit);
     KLineEditEventHandler::catchReturnKey(mCommandLineEdit);
     mCommandLineEdit->setClearButtonEnabled(true);
 
     mArgumentsLineEdit->setObjectName(u"mArgumentsLineEdit"_s);
-    mainLayout->addRow(i18n("Arguments:"), mArgumentsLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "Arguments:"), mArgumentsLineEdit);
     KLineEditEventHandler::catchReturnKey(mArgumentsLineEdit);
     mArgumentsLineEdit->setClearButtonEnabled(true);
 
@@ -49,16 +49,16 @@ bool AddMcpStdioServerWidget::isValid() const
 
 void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setCommand(mCommandLineEdit->text());
     settings.setArguments(mArgumentsLineEdit->text());
 
-    server.setSettings(settings);
+    server.setSettings(std::move(settings));
 }
 
 void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    auto settings = server.settings();
+    const auto settings = server.settings();
     mArgumentsLineEdit->setText(settings.arguments());
     mCommandLineEdit->setText(settings.command());
 }

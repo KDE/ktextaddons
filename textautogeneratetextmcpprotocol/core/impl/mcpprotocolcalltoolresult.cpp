@@ -7,6 +7,8 @@
 #include "mcpprotocolcalltoolresult.h"
 #include <QDebug>
 #include <QJsonArray>
+#include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -29,12 +31,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCallToolResult prompt;
+    McpProtocolCallToolResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("isError"_L1)) {
-        prompt.setIsError(obj["isError"_L1].toBool());
+        result.setIsError(obj["isError"_L1].toBool());
     }
     if (const QJsonValue structuredContentValue = obj.value("structuredContent"_L1); structuredContentValue.isObject()) {
         const QJsonObject mapObj_structuredContent = structuredContentValue.toObject();
@@ -42,7 +44,7 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
         for (auto it = mapObj_structuredContent.constBegin(); it != mapObj_structuredContent.constEnd(); ++it) {
             map_structuredContent.insert(it.key(), it.value());
         }
-        prompt.setStructuredContent(map_structuredContent);
+        result.setStructuredContent(std::move(map_structuredContent));
     }
     if (const QJsonValue contentValue = obj.value("content"_L1); contentValue.isArray()) {
         const QJsonArray arr = contentValue.toArray();
@@ -51,29 +53,30 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
         for (const QJsonValue &v : arr) {
             content.append(McpProtocolUtils::contentBlockFromJson(v));
         }
-        prompt.setContent(content);
+        result.setContent(std::move(content));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolCallToolResult::toJson(const McpProtocolCallToolResult &boolean)
+QJsonObject McpProtocolCallToolResult::toJson(const McpProtocolCallToolResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    if (boolean.isError().has_value()) {
-        obj["isError"_L1] = *boolean.isError();
+    if (result.isError().has_value()) {
+        obj["isError"_L1] = *result.isError();
     }
-    if (boolean.structuredContent().has_value()) {
+    if (result.structuredContent().has_value()) {
         QJsonObject map_structuredContent;
-        for (auto it = boolean.structuredContent()->constBegin(); it != boolean.structuredContent()->constEnd(); ++it) {
+        const auto structuredContentValues = *result.structuredContent();
+        for (auto it = structuredContentValues.constBegin(); it != structuredContentValues.constEnd(); ++it) {
             map_structuredContent.insert(it.key(), it.value());
         }
         obj["structuredContent"_L1] = map_structuredContent;
     }
     QJsonArray arr_content;
-    for (const auto &v : boolean.content()) {
+    for (const auto &v : result.content()) {
         arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
     }
     obj["content"_L1] = arr_content;
@@ -89,15 +92,17 @@ void McpProtocolCallToolResult::setMeta(std::optional<McpProtocolMeta> newMeta)
 {
     mMeta = std::move(newMeta);
 }
+
 QList<McpProtocolUtils::ContentBlock> McpProtocolCallToolResult::content() const
 {
     return mContent;
 }
 
-void McpProtocolCallToolResult::setContent(const QList<McpProtocolUtils::ContentBlock> &newContent)
+void McpProtocolCallToolResult::setContent(QList<McpProtocolUtils::ContentBlock> newContent)
 {
-    mContent = newContent;
+    mContent = std::move(newContent);
 }
+
 std::optional<bool> McpProtocolCallToolResult::isError() const
 {
     return mIsError;

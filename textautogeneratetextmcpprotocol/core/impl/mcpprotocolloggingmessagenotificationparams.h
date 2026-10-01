@@ -9,20 +9,17 @@
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolLoggingMessageNotificationParams
 {
-    Q_GADGET
 public:
     /*!
      */
     McpProtocolLoggingMessageNotificationParams();
-    /*!
-     */
-    ~McpProtocolLoggingMessageNotificationParams();
 
     /*!
      */
@@ -33,13 +30,13 @@ public:
     [[nodiscard]] static McpProtocolLoggingMessageNotificationParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolLoggingMessageNotificationParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolLoggingMessageNotificationParams &params);
     /*!
      */
     [[nodiscard]] QJsonValue data() const;
     /*!
      */
-    void setData(const QJsonValue &newData);
+    void setData(QJsonValue newData);
 
     /*!
      */

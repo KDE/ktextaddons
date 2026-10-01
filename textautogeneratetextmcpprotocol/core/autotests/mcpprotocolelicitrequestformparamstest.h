@@ -16,5 +16,6 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldAcceptMissingMode();
     void shouldConvertJson();
 };

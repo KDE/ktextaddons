@@ -8,6 +8,8 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
+#include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -46,7 +48,7 @@ McpProtocolCompleteResult::Completion McpProtocolCompleteResult::Completion::fro
         for (const QJsonValue &v : arr) {
             values.append(v.toString());
         }
-        completion.setValues(values);
+        completion.setValues(std::move(values));
     }
     if (obj.contains("hasMore"_L1)) {
         completion.setHasMore(obj.value("hasMore"_L1).toBool());
@@ -79,9 +81,9 @@ QStringList McpProtocolCompleteResult::Completion::values() const
     return mValues;
 }
 
-void McpProtocolCompleteResult::Completion::setValues(const QStringList &newValues)
+void McpProtocolCompleteResult::Completion::setValues(QStringList newValues)
 {
-    mValues = newValues;
+    mValues = std::move(newValues);
 }
 
 std::optional<bool> McpProtocolCompleteResult::Completion::hasMore() const
@@ -106,27 +108,27 @@ void McpProtocolCompleteResult::Completion::setTotal(std::optional<int> newTotal
 
 McpProtocolCompleteResult McpProtocolCompleteResult::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCompleteResult prompt;
+    McpProtocolCompleteResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (!obj.contains("completion"_L1)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: completion";
-        return prompt;
+        return {};
     }
     if (obj["completion"_L1].isObject()) {
-        prompt.setCompletion(McpProtocolCompleteResult::Completion::fromJson(obj["completion"_L1].toObject()));
+        result.setCompletion(McpProtocolCompleteResult::Completion::fromJson(obj["completion"_L1].toObject()));
     }
-    return prompt;
+    return result;
 }
 
-QJsonObject McpProtocolCompleteResult::toJson(const McpProtocolCompleteResult &boolean)
+QJsonObject McpProtocolCompleteResult::toJson(const McpProtocolCompleteResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    obj["completion"_L1] = McpProtocolCompleteResult::Completion::toJson(boolean.completion());
+    obj["completion"_L1] = McpProtocolCompleteResult::Completion::toJson(result.completion());
     return obj;
 }
 
@@ -145,7 +147,7 @@ McpProtocolCompleteResult::Completion McpProtocolCompleteResult::completion() co
     return mCompletion;
 }
 
-void McpProtocolCompleteResult::setCompletion(const Completion &newCompletion)
+void McpProtocolCompleteResult::setCompletion(Completion newCompletion)
 {
-    mCompletion = newCompletion;
+    mCompletion = std::move(newCompletion);
 }

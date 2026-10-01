@@ -6,7 +6,7 @@
 
 #include "mcpprotocolresult.h"
 #include <QDebug>
-#include <QJsonArray>
+#include <QSet>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -17,6 +17,7 @@ bool McpProtocolResult::operator==(const McpProtocolResult &other) const = defau
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResult &t)
 {
     d.space() << "meta:" << t.meta();
+    d.space() << "additionalProperties:" << t.additionalProperties();
     return d;
 }
 
@@ -34,18 +35,19 @@ McpProtocolResult McpProtocolResult::fromJson(const QJsonObject &obj)
                 additionalObjs.insert(it.key(), it.value());
             }
         }
-        prompt.setAdditionalProperties(additionalObjs);
+        prompt.setAdditionalProperties(std::move(additionalObjs));
     }
     return prompt;
 }
 
-QJsonObject McpProtocolResult::toJson(const McpProtocolResult &boolean)
+QJsonObject McpProtocolResult::toJson(const McpProtocolResult &result)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (result.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    for (auto it = boolean.additionalProperties().constBegin(); it != boolean.additionalProperties().constEnd(); ++it) {
+    const QJsonObject additionalProperties = result.additionalProperties();
+    for (auto it = additionalProperties.constBegin(); it != additionalProperties.constEnd(); ++it) {
         obj.insert(it.key(), it.value());
     }
     return obj;
@@ -66,7 +68,7 @@ QJsonObject McpProtocolResult::additionalProperties() const
     return mAdditionalProperties;
 }
 
-void McpProtocolResult::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
+void McpProtocolResult::setAdditionalProperties(QJsonObject newAdditionalProperties)
 {
-    mAdditionalProperties = newAdditionalProperties;
+    mAdditionalProperties = std::move(newAdditionalProperties);
 }

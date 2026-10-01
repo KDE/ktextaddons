@@ -8,6 +8,7 @@
 #include <QJsonObject>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <optional>
 
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,7 +29,7 @@ public:
     [[nodiscard]] static McpProtocolResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolResult &result);
 
     /*!
      */
@@ -42,7 +43,7 @@ public:
     [[nodiscard]] QJsonObject additionalProperties() const;
     /*!
      */
-    void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
+    void setAdditionalProperties(QJsonObject newAdditionalProperties);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

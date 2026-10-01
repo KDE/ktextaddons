@@ -6,17 +6,19 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QDebug>
+#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskMetadata>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
+class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitRequestURLParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -28,11 +30,15 @@ public:
         [[nodiscard]] static McpProtocolElicitRequestURLParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestURLParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestURLParams::Meta &meta);
     };
     /*!
      */
     McpProtocolElicitRequestURLParams();
+
+    /*!
+     */
+    [[nodiscard]] static QByteArray mode();
 
     /*!
      */
@@ -78,7 +84,7 @@ public:
     [[nodiscard]] static McpProtocolElicitRequestURLParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestURLParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequestURLParams &params);
 
 private:
     std::optional<Meta> mMeta;
