@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-18 23:09+0300\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"PO-Revision-Date: 2026-09-30 08:36+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -59,7 +59,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "קוקורו בלתי שמיש. נא להתקין אותו מחדש."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:314
+#: texttospeechconfigwidget.cpp:318
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "קוקורו לא מותקן. חסר: %1"
@@ -266,9 +266,8 @@ msgstr "קול:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#: texttospeechconfigwidget.cpp:323
+#, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr "התקנת קוקורו פגומה. נא לבדוק מול הנהלת המערכת שלך."
 

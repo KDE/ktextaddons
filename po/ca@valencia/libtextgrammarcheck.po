@@ -1,15 +1,15 @@
 # Translation of libtextgrammarcheck.po to Catalan (Valencian)
-# Copyright (C) 2023-2024 This_file_is_part_of_KDE
+# Copyright (C) 2023-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023-2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 00:43+0000\n"
-"PO-Revision-Date: 2024-08-02 12:50+0200\n"
+"PO-Revision-Date: 2026-09-29 09:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -338,7 +338,7 @@ msgstr "Actualitza"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "L'URL està buit."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-27 09:37+0300\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"PO-Revision-Date: 2026-09-30 08:36+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -40,16 +40,14 @@ msgid "Json File"
 msgstr "קובץ Json"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "בלתי אפשרי להפעיל את Ollama."
+msgstr "בלתי אפשרי לייצא קובץ."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "הכתיבה לקובץ נכשלה: %1"
+msgstr "פיענוח קובץ JSon נכשל: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -57,10 +55,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "פתיחת הקובץ לקריאה נכשלה: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "בלתי אפשרי להפעיל את Ollama."
+msgstr "בלתי אפשרי לייבא קובץ."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -627,7 +624,7 @@ msgctxt "@action:button"
 msgid "Create Model"
 msgstr "יצירת מודל"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
@@ -3176,10 +3173,9 @@ msgid "Text Plugins:"
 msgstr "תוספי טקסט:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "מזהה כלי: %1"
+msgstr "מזהה טקסט: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format

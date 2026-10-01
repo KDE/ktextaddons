@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 08:55+0300\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"PO-Revision-Date: 2026-09-30 08:36+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -111,7 +111,7 @@ msgid "Error: %1"
 msgstr "שגיאה: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
@@ -196,16 +196,14 @@ msgid "Unable to download the %1 model: %2"
 msgstr "לא ניתן להוריד את המודל %1:‏ %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model."
+#, kde-format
 msgid "Unable to start %1"
-msgstr "לא ניתן להוריד את המודל %1."
+msgstr "לא ניתן להפעיל את %1."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model: %2"
+#, kde-format
 msgid "Unable to install module. Exit code: %1"
-msgstr "לא ניתן להוריד את המודל %1:‏ %2"
+msgstr "לא ניתן להתקין את המודול. קוד יציאה: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
 "PO-Revision-Date: 2026-08-29 17:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -216,19 +216,19 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "أدرج رابط"
 
-#: selectspecialchardialog.cpp:31
+#: selectspecialchardialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "حدد محارف خاصّة"
 
-#: selectspecialchardialog.cpp:39
+#: selectspecialchardialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "أدرج"
 
-#: selectspecialchardialog.cpp:53
+#: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"

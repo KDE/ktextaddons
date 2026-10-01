@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
 "PO-Revision-Date: 2025-03-15 09:29+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -322,102 +322,102 @@ msgstr "kymri"
 msgid "Yiddish"
 msgstr "jiddiš"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:23
+#: translator/plugins/bergamot/begamotenginedialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Bergamot-liitännäisen asetukset"
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:33
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
+#: translator/plugins/bergamot/bergamotengineclient.cpp:34
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:49
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:50
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Etsi…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:80
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
 #, kde-format
 msgid "Download"
 msgstr "Lataa"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:94
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
 #, kde-format
 msgid "Delete"
 msgstr "Poista"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Päivitä luettelo"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Päivitä kieliluettelo verkosta"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:177
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Error: %1"
 msgstr "Virhe: %1"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:21
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:22
 #, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "Käytä käännösvälimuistia"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:27
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:28
 #, kde-format
 msgid "Resource Usage"
 msgstr "Resurssinkäyttö"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:39
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:40
 #, kde-format
 msgid "Thread:"
 msgstr "Säie:"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:40
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:41
 #, kde-format
 msgid "Memory by Thread:"
 msgstr "Muisti säikeittäin:"
 
-#: translator/plugins/bergamot/bergamotenginewidget.cpp:31
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:32
 #, kde-format
 msgid "Languages"
 msgstr "Kielet"
 
-#: translator/plugins/bergamot/bergamotenginewidget.cpp:32
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:33
 #, kde-format
 msgid "Settings"
 msgstr "Asetukset"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:101
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Use translation cache"
 msgid "Translation failed."
 msgstr "Käytä käännösvälimuistia"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:106
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
 #, fuzzy, kde-format
 #| msgid "Language model is not defined."
 msgid "Language model is not loaded."
 msgstr "Kielimallia ei ole määritetty."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:142
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:143
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Kielimallia ei ole määritetty."
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:175
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:176
 #, fuzzy, kde-format
 #| msgid "Language model is not defined."
 msgid "Language model files are missing in %1."
@@ -429,7 +429,7 @@ msgid "Cannot open file for downloading."
 msgstr "Tiedostoa ei voi avata ladattavaksi."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:48
-#: translator/plugins/bergamot/managermodeltranslator.cpp:52
+#: translator/plugins/bergamot/managermodeltranslator.cpp:53
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -441,7 +441,7 @@ msgstr ""
 "liikennettä. Yritä pyyntöä myöhemmin uudelleen."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:54
+#: translator/plugins/bergamot/managermodeltranslator.cpp:55
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ei pääsyä verkko-osoitteeseen: %1"
@@ -456,7 +456,7 @@ msgstr "Tarkistussumma ei ole oikein."
 msgid "Error during writing on disk: %1"
 msgstr "Virhe kirjoitettaessa levylle: %1"
 
-#: translator/plugins/bergamot/extractlanguagejob.cpp:32
+#: translator/plugins/bergamot/extractlanguagejob.cpp:33
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Kieltä ei voida purkaa"
@@ -548,7 +548,7 @@ msgstr "Käytä vapaata lisenssiavainta"
 msgid "Api Key:"
 msgstr "API-avain"
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:39
+#: translator/plugins/deepl/deeplengineplugin.cpp:40
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
 #, kde-format
 msgid "Server needs Api Key."

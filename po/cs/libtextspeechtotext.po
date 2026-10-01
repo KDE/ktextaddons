@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
 "PO-Revision-Date: 2026-09-27 23:51+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -111,7 +111,7 @@ msgid "Error: %1"
 msgstr "Chyba: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"

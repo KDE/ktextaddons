@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 13:04+0200\n"
+"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"PO-Revision-Date: 2026-09-30 09:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -112,7 +112,7 @@ msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
@@ -197,16 +197,14 @@ msgid "Unable to download the %1 model: %2"
 msgstr "No s'ha pogut baixar el model %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model."
+#, kde-format
 msgid "Unable to start %1"
-msgstr "No s'ha pogut baixar el model %1."
+msgstr "No s'ha pogut iniciar %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model: %2"
+#, kde-format
 msgid "Unable to install module. Exit code: %1"
-msgstr "No s'ha pogut baixar el model %1: %2"
+msgstr "No s'ha pogut instal·lar el nòdul. Codi d'eixida: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
 #, kde-format
@@ -285,7 +283,7 @@ msgid ""
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
 "El model %1 no està al disc: es descarrega la primera vegada que s'utilitza, "
-"cosa que fa que este dictat siga llarg. El botó Baixa el model ho fa ara."
+"cosa que fa que este dictat siga llarg. El botó «Baixa el model» ho fa ara."
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
