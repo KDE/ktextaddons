@@ -6,9 +6,14 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QJsonValue>
+#include <QList>
 #include <QMap>
 #include <QString>
+#include <QStringList>
+#include <cstdint>
+#include <variant>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolTextResourceContents;
@@ -46,13 +51,10 @@ class McpProtocolProgressNotification;
 class McpProtocolTaskStatusNotification;
 class McpProtocolRootsListChangedNotification;
 
-class McpProtocolCancelledNotification;
-class McpProtocolProgressNotification;
 class McpProtocolResourceListChangedNotification;
 class McpProtocolResourceUpdatedNotification;
 class McpProtocolPromptListChangedNotification;
 class McpProtocolToolListChangedNotification;
-class McpProtocolTaskStatusNotification;
 class McpProtocolLoggingMessageNotification;
 class McpProtocolElicitationCompleteNotification;
 
@@ -70,11 +72,6 @@ class McpProtocolGetTaskPayloadResult;
 class McpProtocolCancelTaskResult;
 class McpProtocolListTasksResult;
 class McpProtocolCompleteResult;
-class McpProtocolPingRequest;
-class McpProtocolGetTaskRequest;
-class McpProtocolGetTaskPayloadRequest;
-class McpProtocolCancelTaskRequest;
-class McpProtocolListTasksRequest;
 class McpProtocolCreateMessageRequest;
 class McpProtocolListRootsRequest;
 class McpProtocolElicitRequest;
@@ -90,8 +87,6 @@ class McpProtocolTitledMultiSelectEnumSchema;
 class McpProtocolLegacyTitledEnumSchema;
 class McpProtocolJSONRPCRequest;
 class McpProtocolJSONRPCNotification;
-class McpProtocolJSONRPCResultResponse;
-class McpProtocolJSONRPCErrorResponse;
 class McpProtocolElicitRequestURLParams;
 class McpProtocolElicitRequestFormParams;
 class McpProtocolCreateMessageResult;
@@ -100,9 +95,9 @@ class McpProtocolListRootsResult;
 }
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
-using RequestId = std::variant<QString, int>;
+using RequestId = std::variant<QString, qint64>;
 
-using ProgressToken = std::variant<QString, int>;
+using ProgressToken = std::variant<QString, qint64>;
 
 using EmbeddedResourceResource = std::variant<McpProtocolTextResourceContents, McpProtocolBlobResourceContents>;
 
@@ -133,7 +128,7 @@ using Cursor = QString;
 
 using EmptyResult = McpProtocolResult;
 
-using ElicitResultContentValue = std::variant<QStringList, QString, int, bool>;
+using ElicitResultContentValue = std::variant<QStringList, QString, int, double, bool>;
 
 using ElicitResultContent = QMap<QString, ElicitResultContentValue>;
 enum class Role : uint8_t {
@@ -146,17 +141,19 @@ enum class ProtocolVersion : uint8_t {
     Unknown = 0,
     V2024_11_05,
     V2025_03_26,
+    V2025_06_18,
+    V2025_11_25,
 };
 
 enum class LoggingLevel : uint8_t {
-    Alert,
-    Critical,
     Debug,
-    Emergency,
-    Error,
     Info,
     Notice,
     Warning,
+    Error,
+    Critical,
+    Alert,
+    Emergency,
     Unknown,
 };
 
@@ -270,13 +267,13 @@ using JSONRPCMessage =
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);
 
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertProtocolVersionToString(McpProtocolUtils::ProtocolVersion role);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertProtocolVersionToString(McpProtocolUtils::ProtocolVersion version);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::ProtocolVersion convertProtocolVersionFromString(const QString &str);
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::LoggingLevel convertLoggingLevelFromString(const QString &str);
 
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus level);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus status);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 
 [[nodiscard]] QJsonObject contentBlocktoJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock &val);

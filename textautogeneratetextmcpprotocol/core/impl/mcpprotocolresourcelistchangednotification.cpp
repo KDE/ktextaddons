@@ -8,7 +8,6 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
-#include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceListChangedNotification::McpProtocolResourceListChangedNotification() = default;
@@ -36,7 +35,7 @@ McpProtocolResourceListChangedNotification McpProtocolResourceListChangedNotific
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolResourceListChangedNotification::type())) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
-            << "Field 'method' must be 'notifications/tools/list_changed', got: " << obj.value("method"_L1).toString();
+            << "Field 'method' must be" << McpProtocolResourceListChangedNotification::type() << ", got:" << obj.value("method"_L1).toString();
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
@@ -45,13 +44,13 @@ McpProtocolResourceListChangedNotification McpProtocolResourceListChangedNotific
     return prompt;
 }
 
-QJsonObject McpProtocolResourceListChangedNotification::toJson(const McpProtocolResourceListChangedNotification &boolean)
+QJsonObject McpProtocolResourceListChangedNotification::toJson(const McpProtocolResourceListChangedNotification &resourceListChangedNotification)
 {
     QJsonObject obj;
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolResourceListChangedNotification::type());
-    if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolNotificationParams::toJson(*boolean.params());
+    if (resourceListChangedNotification.params().has_value()) {
+        obj["params"_L1] = McpProtocolNotificationParams::toJson(*resourceListChangedNotification.params());
     }
     return obj;
 }
@@ -63,5 +62,5 @@ std::optional<McpProtocolNotificationParams> McpProtocolResourceListChangedNotif
 
 void McpProtocolResourceListChangedNotification::setParams(std::optional<McpProtocolNotificationParams> newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

@@ -34,7 +34,7 @@ public:
     [[nodiscard]] static McpProtocolElicitRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitRequest &request);
 
     /*!
      */
@@ -48,7 +48,7 @@ public:
     [[nodiscard]] McpProtocolUtils::ElicitRequestParams params() const;
     /*!
      */
-    void setParams(const McpProtocolUtils::ElicitRequestParams &newParams);
+    void setParams(McpProtocolUtils::ElicitRequestParams newParams);
 
 private:
     McpProtocolUtils::RequestId mId;

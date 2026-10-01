@@ -5,15 +5,14 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QObject>
 #include <QString>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolModelHint
 {
-    Q_GADGET
 public:
     /*!
      */
@@ -31,7 +30,7 @@ public:
     [[nodiscard]] static McpProtocolModelHint fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolModelHint &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolModelHint &modelHint);
     /*!
      */
     [[nodiscard]] std::optional<QString> name() const;

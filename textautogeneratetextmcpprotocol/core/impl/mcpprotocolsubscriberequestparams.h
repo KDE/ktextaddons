@@ -5,9 +5,9 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -15,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSubscribeRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -27,7 +27,7 @@ public:
         [[nodiscard]] static McpProtocolSubscribeRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscribeRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscribeRequestParams::Meta &meta);
     };
 
     /*!
@@ -43,7 +43,7 @@ public:
     [[nodiscard]] static McpProtocolSubscribeRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscribeRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscribeRequestParams &subscribeRequestParams);
 
     /*!
      */

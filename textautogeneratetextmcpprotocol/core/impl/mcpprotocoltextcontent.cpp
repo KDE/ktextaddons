@@ -5,8 +5,6 @@
 */
 
 #include "mcpprotocoltextcontent.h"
-#include "mcpprotocolpromptreference.h"
-#include "mcpprotocolresourcetemplatereference.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 

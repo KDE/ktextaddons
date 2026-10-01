@@ -6,7 +6,6 @@
 
 #include "mcpprotocolunsubscriberequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -37,11 +36,11 @@ McpProtocolUnsubscribeRequestParams::Meta McpProtocolUnsubscribeRequestParams::M
     return meta;
 }
 
-QJsonObject McpProtocolUnsubscribeRequestParams::Meta::toJson(const McpProtocolUnsubscribeRequestParams::Meta &image)
+QJsonObject McpProtocolUnsubscribeRequestParams::Meta::toJson(const McpProtocolUnsubscribeRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -56,12 +55,12 @@ McpProtocolUnsubscribeRequestParams McpProtocolUnsubscribeRequestParams::fromJso
     return prompt;
 }
 
-QJsonObject McpProtocolUnsubscribeRequestParams::toJson(const McpProtocolUnsubscribeRequestParams &boolean)
+QJsonObject McpProtocolUnsubscribeRequestParams::toJson(const McpProtocolUnsubscribeRequestParams &unsubscribeRequestParams)
 {
     QJsonObject obj;
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolUnsubscribeRequestParams::Meta::toJson(*boolean.meta());
+    obj["uri"_L1] = unsubscribeRequestParams.uri();
+    if (unsubscribeRequestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolUnsubscribeRequestParams::Meta::toJson(*unsubscribeRequestParams.meta());
     }
     return obj;
 }

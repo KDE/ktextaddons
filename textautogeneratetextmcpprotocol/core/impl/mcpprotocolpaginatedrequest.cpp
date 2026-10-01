@@ -6,7 +6,6 @@
 
 #include "mcpprotocolpaginatedrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -18,6 +17,7 @@ bool McpProtocolPaginatedRequest::operator==(const McpProtocolPaginatedRequest &
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequest &t)
 {
     d.space() << "id:" << t.id();
+    d.space() << "method:" << t.method();
     d.space() << "params:" << t.params();
     return d;
 }
@@ -40,14 +40,14 @@ McpProtocolPaginatedRequest McpProtocolPaginatedRequest::fromJson(const QJsonObj
     return prompt;
 }
 
-QJsonObject McpProtocolPaginatedRequest::toJson(const McpProtocolPaginatedRequest &boolean)
+QJsonObject McpProtocolPaginatedRequest::toJson(const McpProtocolPaginatedRequest &paginatedRequest)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(paginatedRequest.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
-    obj["method"_L1] = boolean.method();
-    if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolPaginatedRequestParams::toJson(*boolean.params());
+    obj["method"_L1] = paginatedRequest.method();
+    if (paginatedRequest.params().has_value()) {
+        obj["params"_L1] = McpProtocolPaginatedRequestParams::toJson(*paginatedRequest.params());
     }
     return obj;
 }

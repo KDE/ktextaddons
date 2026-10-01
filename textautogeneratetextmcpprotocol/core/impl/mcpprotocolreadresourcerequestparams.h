@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -14,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolReadResourceRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -26,7 +27,7 @@ public:
         [[nodiscard]] static McpProtocolReadResourceRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolReadResourceRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolReadResourceRequestParams::Meta &meta);
     };
 
     /*!
@@ -42,7 +43,7 @@ public:
     [[nodiscard]] static McpProtocolReadResourceRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolReadResourceRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolReadResourceRequestParams &readResourceRequestParams);
 
     /*!
      */

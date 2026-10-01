@@ -5,9 +5,9 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPaginatedRequestParams>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,7 +28,7 @@ public:
     [[nodiscard]] static McpProtocolPaginatedRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolPaginatedRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolPaginatedRequest &paginatedRequest);
 
     /*!
      */

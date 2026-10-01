@@ -6,7 +6,6 @@
 
 #include "mcpprotocolunsubscriberequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -35,7 +34,9 @@ McpProtocolUnsubscribeRequest McpProtocolUnsubscribeRequest::fromJson(const QJso
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolUnsubscribeRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'resources/unsubscribe', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolUnsubscribeRequest::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolUnsubscribeRequestParams::fromJson(paramsValue.toObject()));
@@ -46,13 +47,13 @@ McpProtocolUnsubscribeRequest McpProtocolUnsubscribeRequest::fromJson(const QJso
     return prompt;
 }
 
-QJsonObject McpProtocolUnsubscribeRequest::toJson(const McpProtocolUnsubscribeRequest &boolean)
+QJsonObject McpProtocolUnsubscribeRequest::toJson(const McpProtocolUnsubscribeRequest &unsubscribeRequest)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(unsubscribeRequest.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolUnsubscribeRequest::type());
-    obj["params"_L1] = McpProtocolUnsubscribeRequestParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolUnsubscribeRequestParams::toJson(unsubscribeRequest.params());
     return obj;
 }
 

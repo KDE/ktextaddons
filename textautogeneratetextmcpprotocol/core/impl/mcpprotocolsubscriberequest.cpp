@@ -6,7 +6,6 @@
 
 #include "mcpprotocolsubscriberequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -36,7 +35,9 @@ McpProtocolSubscribeRequest McpProtocolSubscribeRequest::fromJson(const QJsonObj
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolSubscribeRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'resources/subscribe', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolSubscribeRequest::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolSubscribeRequestParams::fromJson(paramsValue.toObject()));
@@ -47,13 +48,13 @@ McpProtocolSubscribeRequest McpProtocolSubscribeRequest::fromJson(const QJsonObj
     return prompt;
 }
 
-QJsonObject McpProtocolSubscribeRequest::toJson(const McpProtocolSubscribeRequest &boolean)
+QJsonObject McpProtocolSubscribeRequest::toJson(const McpProtocolSubscribeRequest &subscribeRequest)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(subscribeRequest.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolSubscribeRequest::type());
-    obj["params"_L1] = McpProtocolSubscribeRequestParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolSubscribeRequestParams::toJson(subscribeRequest.params());
     return obj;
 }
 

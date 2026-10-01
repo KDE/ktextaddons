@@ -18,7 +18,7 @@ void McpServerStreamHttp::connection()
     // TODO
 }
 
-void McpServerStreamHttp::send(const QJsonObject &obj)
+void McpServerStreamHttp::send(const QJsonObject &)
 {
     // TODO
 }

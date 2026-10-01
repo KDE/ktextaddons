@@ -5,21 +5,21 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
+#include <QJsonObject>
 #include <QJsonValue>
+#include <QMap>
 #include <QString>
+#include <optional>
 class QDebug;
-class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientCapabilities
 {
-    Q_GADGET
 public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Elicitation {
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Elicitation &other) const;
         [[nodiscard]] static Elicitation fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Elicitation &image);
+        [[nodiscard]] static QJsonObject toJson(const Elicitation &elicitation);
         std::optional<QMap<QString, QJsonValue>> mForm;
         std::optional<QMap<QString, QJsonValue>> mUrl;
 
@@ -32,7 +32,7 @@ public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Roots {
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Roots &other) const;
         [[nodiscard]] static Roots fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Roots &image);
+        [[nodiscard]] static QJsonObject toJson(const Roots &roots);
         std::optional<bool> mListChanged;
 
         [[nodiscard]] std::optional<bool> listChanged() const;
@@ -42,7 +42,7 @@ public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Sampling {
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Sampling &other) const;
         [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Sampling &image);
+        [[nodiscard]] static QJsonObject toJson(const Sampling &sampling);
 
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> context() const;
         void setContext(std::optional<QMap<QString, QJsonValue>> newContext);
@@ -54,29 +54,29 @@ public:
     };
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tasks {
         struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Requests {
-            struct Elicitation {
+            struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Elicitation {
                 std::optional<QMap<QString, QJsonValue>> mCreate;
 
                 [[nodiscard]] bool operator==(const Elicitation &other) const;
                 [[nodiscard]] static Elicitation fromJson(const QJsonObject &obj);
-                [[nodiscard]] static QJsonObject toJson(const Elicitation &image);
+                [[nodiscard]] static QJsonObject toJson(const Elicitation &elicitation);
 
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> create() const;
                 void setCreate(std::optional<QMap<QString, QJsonValue>> newCreate);
             };
-            struct Sampling {
+            struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Sampling {
                 std::optional<QMap<QString, QJsonValue>> mCreateMessage;
 
                 [[nodiscard]] bool operator==(const Sampling &other) const;
                 [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
-                [[nodiscard]] static QJsonObject toJson(const Sampling &image);
+                [[nodiscard]] static QJsonObject toJson(const Sampling &sampling);
 
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> createMessage() const;
                 void setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage);
             };
             [[nodiscard]] bool operator==(const Requests &other) const;
             [[nodiscard]] static Requests fromJson(const QJsonObject &obj);
-            [[nodiscard]] static QJsonObject toJson(const Requests &image);
+            [[nodiscard]] static QJsonObject toJson(const Requests &requests);
 
             std::optional<Elicitation> mElicitation;
             std::optional<Sampling> mSampling;
@@ -89,7 +89,7 @@ public:
 
         [[nodiscard]] bool operator==(const Tasks &other) const;
         [[nodiscard]] static Tasks fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Tasks &image);
+        [[nodiscard]] static QJsonObject toJson(const Tasks &tasks);
 
         std::optional<QMap<QString, QJsonValue>> mCancel;
         std::optional<QMap<QString, QJsonValue>> mList;
@@ -106,9 +106,6 @@ public:
     /*!
      */
     McpProtocolClientCapabilities();
-    /*!
-     */
-    ~McpProtocolClientCapabilities();
 
     /*!
      */
@@ -119,7 +116,7 @@ public:
     [[nodiscard]] static McpProtocolClientCapabilities fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolClientCapabilities &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolClientCapabilities &capabilities);
 
     /*!
      */

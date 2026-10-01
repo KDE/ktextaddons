@@ -9,6 +9,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerCapabilities>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,7 +30,7 @@ public:
     [[nodiscard]] static McpProtocolInitializeResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolInitializeResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolInitializeResult &result);
 
     /*!
      */
@@ -57,14 +58,14 @@ public:
     [[nodiscard]] McpProtocolImplementation serverInfo() const;
     /*!
      */
-    void setServerInfo(const McpProtocolImplementation &newServerInfo);
+    void setServerInfo(McpProtocolImplementation newServerInfo);
 
     /*!
      */
     [[nodiscard]] McpProtocolServerCapabilities capabilities() const;
     /*!
      */
-    void setCapabilities(const McpProtocolServerCapabilities &newCapabilities);
+    void setCapabilities(McpProtocolServerCapabilities newCapabilities);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

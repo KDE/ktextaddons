@@ -6,8 +6,8 @@
 
 #include "mcpprotocolcompleterequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequest::McpProtocolCompleteRequest() = default;
@@ -28,31 +28,33 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCompleteRequest McpProtocolCompleteRequest::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCompleteRequest prompt;
+    McpProtocolCompleteRequest request;
 
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolCompleteRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolCompleteRequest: field 'method' must be" << McpProtocolCompleteRequest::type() << "got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolCompleteRequestParams::fromJson(paramsValue.toObject()));
+        request.setParams(McpProtocolCompleteRequestParams::fromJson(paramsValue.toObject()));
     }
     if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+        request.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
     }
-    return prompt;
+    return request;
 }
 
-QJsonObject McpProtocolCompleteRequest::toJson(const McpProtocolCompleteRequest &boolean)
+QJsonObject McpProtocolCompleteRequest::toJson(const McpProtocolCompleteRequest &request)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(request.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolCompleteRequest::type());
-    obj["params"_L1] = McpProtocolCompleteRequestParams::toJson(boolean.params());
+    obj["params"_L1] = McpProtocolCompleteRequestParams::toJson(request.params());
     return obj;
 }
 
@@ -71,7 +73,7 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequest::params() const
     return mParams;
 }
 
-void McpProtocolCompleteRequest::setParams(const McpProtocolCompleteRequestParams &newParams)
+void McpProtocolCompleteRequest::setParams(McpProtocolCompleteRequestParams newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

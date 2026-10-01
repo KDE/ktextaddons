@@ -37,7 +37,7 @@ McpProtocolModelPreferences McpProtocolModelPreferences::fromJson(const QJsonObj
         for (const auto &v : arr) {
             hints.append(McpProtocolModelHint::fromJson(v.toObject()));
         }
-        result.setHints(hints);
+        result.setHints(std::move(hints));
     }
     if (obj.contains("intelligencePriority"_L1)) {
         result.setIntelligencePriority(obj.value("intelligencePriority"_L1).toDouble());

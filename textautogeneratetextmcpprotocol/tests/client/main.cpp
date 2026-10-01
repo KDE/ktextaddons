@@ -21,6 +21,5 @@ int main(int argc, char **argv)
     MainWidget w;
     w.resize(600, 400);
     w.show();
-    app.exec();
-    return 0;
+    return app.exec();
 }

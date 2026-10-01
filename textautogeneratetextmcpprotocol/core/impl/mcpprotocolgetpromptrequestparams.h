@@ -5,9 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
+#include <QMap>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -15,7 +16,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolGetPromptRequestParams
 {
 public:
-    struct Meta {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
@@ -27,7 +28,7 @@ public:
         [[nodiscard]] static McpProtocolGetPromptRequestParams::Meta fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptRequestParams::Meta &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptRequestParams::Meta &meta);
     };
 
     /*!
@@ -43,7 +44,7 @@ public:
     [[nodiscard]] static McpProtocolGetPromptRequestParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptRequestParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptRequestParams &params);
 
     /*!
      */

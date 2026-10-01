@@ -33,10 +33,6 @@ void McpServerManager::loadServers()
 {
     const auto config = KSharedConfig::openConfig(serverConfigFileName());
     const QStringList mcpServerList = McpProtocolCommonUtils::mcpServerList(config);
-    if (mcpServerList.isEmpty()) {
-        return; // nothing to be done...
-    }
-
     QList<McpServer> mcpServers;
     mcpServers.reserve(mcpServerList.count());
     for (const auto &group : mcpServerList) {
@@ -44,10 +40,10 @@ void McpServerManager::loadServers()
         McpServer server;
         server.load(configGroup);
         if (server.isValid()) {
-            mcpServers.append(server);
+            mcpServers.append(std::move(server));
         }
     }
-    mMcpServerModel->setMcpServers(mcpServers);
+    mMcpServerModel->setMcpServers(std::move(mcpServers));
     Q_EMIT serverLoaded();
 }
 

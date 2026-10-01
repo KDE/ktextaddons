@@ -6,8 +6,8 @@
 
 #include "mcpprotocollistresourcesrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -29,32 +29,34 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolListResourcesRequest McpProtocolListResourcesRequest::fromJson(const QJsonObject &obj)
 {
-    McpProtocolListResourcesRequest prompt;
+    McpProtocolListResourcesRequest request;
 
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolListResourcesRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'resources/list', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListResourcesRequest: field 'method' must be" << McpProtocolListResourcesRequest::type()
+                                                       << "got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolPaginatedRequestParams::fromJson(paramsValue.toObject()));
+        request.setParams(McpProtocolPaginatedRequestParams::fromJson(paramsValue.toObject()));
     }
     if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+        request.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
     }
-    return prompt;
+    return request;
 }
 
-QJsonObject McpProtocolListResourcesRequest::toJson(const McpProtocolListResourcesRequest &boolean)
+QJsonObject McpProtocolListResourcesRequest::toJson(const McpProtocolListResourcesRequest &request)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(request.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolListResourcesRequest::type());
-    if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolPaginatedRequestParams::toJson(*boolean.params());
+    if (request.params().has_value()) {
+        obj["params"_L1] = McpProtocolPaginatedRequestParams::toJson(*request.params());
     }
     return obj;
 }
@@ -76,5 +78,5 @@ std::optional<McpProtocolPaginatedRequestParams> McpProtocolListResourcesRequest
 
 void McpProtocolListResourcesRequest::setParams(std::optional<McpProtocolPaginatedRequestParams> newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

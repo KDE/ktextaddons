@@ -36,11 +36,11 @@ McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &o
     return message;
 }
 
-QJsonObject McpProtocolPromptMessage::toJson(const McpProtocolPromptMessage &choice)
+QJsonObject McpProtocolPromptMessage::toJson(const McpProtocolPromptMessage &message)
 {
     QJsonObject obj;
-    obj["content"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlocktoJson(choice.content());
-    obj["role"_L1] = convertRoleToString(choice.role());
+    obj["content"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlocktoJson(message.content());
+    obj["role"_L1] = convertRoleToString(message.role());
     return obj;
 }
 
@@ -63,5 +63,3 @@ void McpProtocolPromptMessage::setRole(McpProtocolUtils::Role newRole)
 {
     mRole = newRole;
 }
-
-#include "moc_mcpprotocolpromptmessage.cpp"

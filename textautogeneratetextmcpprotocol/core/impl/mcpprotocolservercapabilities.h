@@ -10,6 +10,7 @@
 #include <QJsonValue>
 #include <QMap>
 #include <QString>
+#include <optional>
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -21,11 +22,11 @@ public:
 
         Prompts &listChanged(std::optional<bool> v);
 
-        const std::optional<bool> &listChanged() const;
+        [[nodiscard]] const std::optional<bool> &listChanged() const;
 
         [[nodiscard]] bool operator==(const McpProtocolServerCapabilities::Prompts &other) const;
         [[nodiscard]] static McpProtocolServerCapabilities::Prompts fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities::Prompts &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities::Prompts &prompts);
     };
 
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Resources {
@@ -35,23 +36,23 @@ public:
         Resources &listChanged(std::optional<bool> v);
         Resources &subscribe(std::optional<bool> v);
 
-        const std::optional<bool> &listChanged() const;
-        const std::optional<bool> &subscribe() const;
+        [[nodiscard]] const std::optional<bool> &listChanged() const;
+        [[nodiscard]] const std::optional<bool> &subscribe() const;
 
         [[nodiscard]] bool operator==(const McpProtocolServerCapabilities::Resources &other) const;
         [[nodiscard]] static McpProtocolServerCapabilities::Resources fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities::Resources &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities::Resources &resources);
     };
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tools {
         std::optional<bool> mListChanged;
 
         Tools &listChanged(std::optional<bool> v);
 
-        const std::optional<bool> &listChanged() const;
+        [[nodiscard]] const std::optional<bool> &listChanged() const;
 
         [[nodiscard]] bool operator==(const McpProtocolServerCapabilities::Tools &other) const;
         [[nodiscard]] static McpProtocolServerCapabilities::Tools fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities::Tools &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities::Tools &tools);
     };
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tasks {
         struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Requests {
@@ -60,7 +61,7 @@ public:
 
                 [[nodiscard]] bool operator==(const Tools &other) const;
                 [[nodiscard]] static Tools fromJson(const QJsonObject &obj);
-                [[nodiscard]] static QJsonObject toJson(const Tools &image);
+                [[nodiscard]] static QJsonObject toJson(const Tools &tools);
 
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> call() const;
                 void setCall(std::optional<QMap<QString, QJsonValue>> newCall);
@@ -69,7 +70,7 @@ public:
 
             [[nodiscard]] bool operator==(const Requests &other) const;
             [[nodiscard]] static Requests fromJson(const QJsonObject &obj);
-            [[nodiscard]] static QJsonObject toJson(const Requests &image);
+            [[nodiscard]] static QJsonObject toJson(const Requests &requests);
 
             [[nodiscard]] std::optional<Tools> tools() const;
             void setTools(std::optional<Tools> newTools);
@@ -81,7 +82,7 @@ public:
 
         [[nodiscard]] bool operator==(const Tasks &other) const;
         [[nodiscard]] static Tasks fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Tasks &image);
+        [[nodiscard]] static QJsonObject toJson(const Tasks &tasks);
 
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> cancel() const;
         void setCancel(std::optional<QMap<QString, QJsonValue>> newCancel);
@@ -104,7 +105,7 @@ public:
     [[nodiscard]] static McpProtocolServerCapabilities fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolServerCapabilities &serverCapabilities);
 
     /*!
      */

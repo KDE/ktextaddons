@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLoggingMessageNotificationParams>
 class QJsonObject;
@@ -20,6 +21,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] static QByteArray type();
+
+    /*!
+     */
     [[nodiscard]] bool operator==(const McpProtocolLoggingMessageNotification &other) const;
 
     /*!
@@ -27,14 +32,14 @@ public:
     [[nodiscard]] static McpProtocolLoggingMessageNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolLoggingMessageNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolLoggingMessageNotification &notification);
 
     /*!
      */
     [[nodiscard]] McpProtocolLoggingMessageNotificationParams params() const;
     /*!
      */
-    void setParams(const McpProtocolLoggingMessageNotificationParams &newParams);
+    void setParams(McpProtocolLoggingMessageNotificationParams newParams);
 
 private:
     McpProtocolLoggingMessageNotificationParams mParams;

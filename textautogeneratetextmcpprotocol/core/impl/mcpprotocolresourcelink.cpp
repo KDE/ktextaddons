@@ -37,17 +37,11 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolResourceLink McpProtocolResourceLink::fromJson(const QJsonObject &obj)
 {
     McpProtocolResourceLink prompt;
-    if (obj.value("type"_L1).toString().toLatin1() != McpProtocolResourceLink::type()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'resource_link', got: " << obj.value("type"_L1).toString();
+    if (obj.value("type"_L1).toString() != QLatin1StringView(McpProtocolResourceLink::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'type' must be" << McpProtocolResourceLink::type() << ", got:" << obj.value("type"_L1).toString();
         return {};
     }
-    if (obj.contains("description"_L1)) {
-        prompt.setDescription(obj.value("description"_L1).toString());
-    }
-    if (obj.contains("title"_L1)) {
-        prompt.setTitle(obj.value("title"_L1).toString());
-    }
-
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
@@ -64,14 +58,14 @@ McpProtocolResourceLink McpProtocolResourceLink::fromJson(const QJsonObject &obj
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
-        prompt.setIcons(list_icons);
+        prompt.setIcons(std::move(list_icons));
     }
     if (obj.contains("mimeType"_L1)) {
         prompt.setMimeType(obj.value("mimeType"_L1).toString());
     }
     prompt.setName(obj.value("name"_L1).toString());
-    if (obj.contains("size"_L1)) {
-        prompt.setSize(obj.value("size"_L1).toInt());
+    if (const QJsonValue sizeValue = obj.value("size"_L1); sizeValue.isDouble()) {
+        prompt.setSize(sizeValue.toInteger());
     }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
@@ -80,37 +74,37 @@ McpProtocolResourceLink McpProtocolResourceLink::fromJson(const QJsonObject &obj
     return prompt;
 }
 
-QJsonObject McpProtocolResourceLink::toJson(const McpProtocolResourceLink &boolean)
+QJsonObject McpProtocolResourceLink::toJson(const McpProtocolResourceLink &resourceLink)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
-    obj["type"_L1] = QString::fromLatin1(boolean.type());
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    obj["name"_L1] = resourceLink.name();
+    obj["type"_L1] = QString::fromLatin1(resourceLink.type());
+    obj["uri"_L1] = resourceLink.uri();
+    if (resourceLink.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*resourceLink.meta());
     }
-    if (boolean.annotations().has_value()) {
-        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*boolean.annotations());
+    if (resourceLink.annotations().has_value()) {
+        obj["annotations"_L1] = McpProtocolAnnotations::toJson(*resourceLink.annotations());
     }
-    if (boolean.description().has_value()) {
-        obj["description"_L1] = *boolean.description();
+    if (resourceLink.description().has_value()) {
+        obj["description"_L1] = *resourceLink.description();
     }
-    if (boolean.icons().has_value()) {
+    if (resourceLink.icons().has_value()) {
         QJsonArray arr_icons;
-        const auto icons = *boolean.icons();
+        const auto icons = *resourceLink.icons();
         for (const auto &v : icons) {
             arr_icons.append(McpProtocolIcon::toJson(v));
         }
         obj["icons"_L1] = arr_icons;
     }
-    if (boolean.mimeType().has_value()) {
-        obj["mimeType"_L1] = *boolean.mimeType();
+    if (resourceLink.mimeType().has_value()) {
+        obj["mimeType"_L1] = *resourceLink.mimeType();
     }
-    if (boolean.size().has_value()) {
-        obj["size"_L1] = *boolean.size();
+    if (resourceLink.size().has_value()) {
+        obj["size"_L1] = *resourceLink.size();
     }
-    if (boolean.title().has_value()) {
-        obj["title"_L1] = *boolean.title();
+    if (resourceLink.title().has_value()) {
+        obj["title"_L1] = *resourceLink.title();
     }
     return obj;
 }
@@ -175,12 +169,12 @@ void McpProtocolResourceLink::setName(const QString &newName)
     mName = newName;
 }
 
-std::optional<int> McpProtocolResourceLink::size() const
+std::optional<qint64> McpProtocolResourceLink::size() const
 {
     return mSize;
 }
 
-void McpProtocolResourceLink::setSize(std::optional<int> newSize)
+void McpProtocolResourceLink::setSize(std::optional<qint64> newSize)
 {
     mSize = newSize;
 }

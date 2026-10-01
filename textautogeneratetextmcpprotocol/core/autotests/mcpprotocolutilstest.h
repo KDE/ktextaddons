@@ -23,4 +23,8 @@ private Q_SLOTS:
     void shouldConvertTaskStatusFromString();
     void shouldConvertProtocolVersionToString();
     void shouldConvertProtocolVersionFromString();
+    void shouldOrderLoggingLevelBySeverity();
+    void shouldKeepLargeRequestId();
+    void shouldKeepDecimalElicitResultContent();
+    void shouldParseElicitRequestWithoutModeAsForm();
 };

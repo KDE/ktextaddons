@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,7 +29,7 @@ public:
     [[nodiscard]] static McpProtocolListRootsResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolListRootsResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolListRootsResult &result);
 
     /*!
      */
@@ -43,7 +43,7 @@ public:
     [[nodiscard]] QList<McpProtocolRoot> roots() const;
     /*!
      */
-    void setRoots(const QList<McpProtocolRoot> &newRoots);
+    void setRoots(QList<McpProtocolRoot> newRoots);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

@@ -7,6 +7,7 @@
 #include "mcpprotocolcancellednotificationparams.h"
 #include <QDebug>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCancelledNotificationParams::McpProtocolCancelledNotificationParams() = default;
@@ -23,30 +24,30 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCancelledNotificationParams McpProtocolCancelledNotificationParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCancelledNotificationParams prompt;
+    McpProtocolCancelledNotificationParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        params.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     if (obj.contains("reason"_L1)) {
-        prompt.setReason(obj.value("reason"_L1).toString());
+        params.setReason(obj.value("reason"_L1).toString());
     }
     if (obj.contains("requestId"_L1)) {
-        prompt.setRequestId(McpProtocolUtils::requestIdFromJson(obj["requestId"_L1]));
+        params.setRequestId(McpProtocolUtils::requestIdFromJson(obj["requestId"_L1]));
     }
-    return prompt;
+    return params;
 }
 
-QJsonObject McpProtocolCancelledNotificationParams::toJson(const McpProtocolCancelledNotificationParams &boolean)
+QJsonObject McpProtocolCancelledNotificationParams::toJson(const McpProtocolCancelledNotificationParams &params)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*params.meta());
     }
-    if (boolean.reason().has_value()) {
-        obj["reason"_L1] = *boolean.reason();
+    if (params.reason().has_value()) {
+        obj["reason"_L1] = *params.reason();
     }
-    if (boolean.requestId().has_value()) {
-        obj["requestId"_L1] = McpProtocolUtils::requestIdToJson(*boolean.requestId());
+    if (params.requestId().has_value()) {
+        obj["requestId"_L1] = McpProtocolUtils::requestIdToJson(*params.requestId());
     }
     return obj;
 }

@@ -5,9 +5,9 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -28,7 +28,7 @@ public:
     [[nodiscard]] static McpProtocolGetPromptResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptResult &result);
 
     /*!
      */
@@ -49,7 +49,7 @@ public:
     [[nodiscard]] QList<McpProtocolPromptMessage> messages() const;
     /*!
      */
-    void setMessages(const QList<McpProtocolPromptMessage> &newMessages);
+    void setMessages(QList<McpProtocolPromptMessage> newMessages);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

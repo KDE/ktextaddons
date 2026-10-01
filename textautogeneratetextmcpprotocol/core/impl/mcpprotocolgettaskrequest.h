@@ -15,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolGetTaskRequest
 {
 public:
-    struct Params {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
         QString mTaskId;
 
         [[nodiscard]] bool operator==(const McpProtocolGetTaskRequest::Params &other) const;
@@ -25,7 +25,7 @@ public:
         [[nodiscard]] static McpProtocolGetTaskRequest::Params fromJson(const QJsonObject &obj);
         /*!
          */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolGetTaskRequest::Params &image);
+        [[nodiscard]] static QJsonObject toJson(const McpProtocolGetTaskRequest::Params &params);
 
         [[nodiscard]] QString taskId() const;
         void setTaskId(const QString &newTaskId);
@@ -45,7 +45,7 @@ public:
     [[nodiscard]] static McpProtocolGetTaskRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolGetTaskRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolGetTaskRequest &request);
 
     /*!
      */
@@ -59,7 +59,7 @@ public:
     [[nodiscard]] Params params() const;
     /*!
      */
-    void setParams(const Params &newParams);
+    void setParams(Params newParams);
 
 private:
     McpProtocolUtils::RequestId mId;

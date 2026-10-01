@@ -7,15 +7,15 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAudioContent>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolEmbeddedResource>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImageContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceLink>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolResultContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolUseContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSamplingMessage
@@ -34,7 +34,7 @@ public:
     [[nodiscard]] static McpProtocolSamplingMessage fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolSamplingMessage &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolSamplingMessage &message);
 
     /*!
      */

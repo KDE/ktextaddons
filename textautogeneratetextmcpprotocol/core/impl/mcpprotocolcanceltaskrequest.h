@@ -15,14 +15,14 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCancelTaskRequest
 {
 public:
-    struct Params {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
         QString mTaskId;
 
         [[nodiscard]] QString taskId() const;
         void setTaskId(const QString &newTaskId);
         [[nodiscard]] bool operator==(const McpProtocolCancelTaskRequest::Params &other) const;
         [[nodiscard]] static Params fromJson(const QJsonObject &obj);
-        [[nodiscard]] static QJsonObject toJson(const Params &image);
+        [[nodiscard]] static QJsonObject toJson(const Params &params);
     };
     /*!
      */
@@ -41,14 +41,14 @@ public:
     [[nodiscard]] static McpProtocolCancelTaskRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelTaskRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelTaskRequest &request);
 
     /*!
      */
     [[nodiscard]] McpProtocolCancelTaskRequest::Params params() const;
     /*!
      */
-    void setParams(const McpProtocolCancelTaskRequest::Params &newParams);
+    void setParams(McpProtocolCancelTaskRequest::Params newParams);
 
     /*!
      */

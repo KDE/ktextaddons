@@ -61,11 +61,11 @@ bool McpProtocolServer::canStart() const
     if (mPluginInterface) {
         const bool result = mPluginInterface->canStart();
         if (!result) {
-            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start client. Missing McpProtocolSettings. It's a bug";
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start server. Missing McpProtocolSettings. It's a bug";
         }
         return result;
     }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start client. mPluginInterface is null. It's a bug";
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start server. mPluginInterface is null. It's a bug";
     return false;
 }
 

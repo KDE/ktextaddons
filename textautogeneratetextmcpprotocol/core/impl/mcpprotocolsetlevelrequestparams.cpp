@@ -6,7 +6,6 @@
 
 #include "mcpprotocolsetlevelrequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -25,7 +24,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams::Meta &t)
 {
-    d.space() << "meta:" << t.progressToken();
+    d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
@@ -38,11 +37,11 @@ McpProtocolSetLevelRequestParams::Meta McpProtocolSetLevelRequestParams::Meta::f
     return meta;
 }
 
-QJsonObject McpProtocolSetLevelRequestParams::Meta::toJson(const McpProtocolSetLevelRequestParams::Meta &image)
+QJsonObject McpProtocolSetLevelRequestParams::Meta::toJson(const McpProtocolSetLevelRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -59,13 +58,15 @@ McpProtocolSetLevelRequestParams McpProtocolSetLevelRequestParams::fromJson(cons
     return prompt;
 }
 
-QJsonObject McpProtocolSetLevelRequestParams::toJson(const McpProtocolSetLevelRequestParams &boolean)
+QJsonObject McpProtocolSetLevelRequestParams::toJson(const McpProtocolSetLevelRequestParams &setLevelRequestParams)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolSetLevelRequestParams::Meta::toJson(*boolean.meta());
+    if (setLevelRequestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolSetLevelRequestParams::Meta::toJson(*setLevelRequestParams.meta());
     }
-    obj["level"_L1] = McpProtocolUtils::convertLoggingLevelToString(boolean.level());
+    if (setLevelRequestParams.level() != McpProtocolUtils::LoggingLevel::Unknown) {
+        obj["level"_L1] = McpProtocolUtils::convertLoggingLevelToString(setLevelRequestParams.level());
+    }
     return obj;
 }
 

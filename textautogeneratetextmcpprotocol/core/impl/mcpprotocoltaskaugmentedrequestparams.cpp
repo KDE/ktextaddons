@@ -6,7 +6,6 @@
 
 #include "mcpprotocoltaskaugmentedrequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -20,7 +19,7 @@ bool McpProtocolTaskAugmentedRequestParams::Meta::operator==(const McpProtocolTa
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskAugmentedRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
-    d.space() << "tasks:" << t.tasks();
+    d.space() << "task:" << t.task();
     return d;
 }
 
@@ -39,11 +38,11 @@ McpProtocolTaskAugmentedRequestParams::Meta McpProtocolTaskAugmentedRequestParam
     return meta;
 }
 
-QJsonObject McpProtocolTaskAugmentedRequestParams::Meta::toJson(const McpProtocolTaskAugmentedRequestParams::Meta &image)
+QJsonObject McpProtocolTaskAugmentedRequestParams::Meta::toJson(const McpProtocolTaskAugmentedRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -55,21 +54,21 @@ McpProtocolTaskAugmentedRequestParams McpProtocolTaskAugmentedRequestParams::fro
         prompt.setMeta(McpProtocolTaskAugmentedRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
-        prompt.setTasks(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
+        prompt.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
 
     return prompt;
 }
 
-QJsonObject McpProtocolTaskAugmentedRequestParams::toJson(const McpProtocolTaskAugmentedRequestParams &boolean)
+QJsonObject McpProtocolTaskAugmentedRequestParams::toJson(const McpProtocolTaskAugmentedRequestParams &taskAugmentedRequestParams)
 {
     QJsonObject obj;
 
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolTaskAugmentedRequestParams::Meta::toJson(*boolean.meta());
+    if (taskAugmentedRequestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolTaskAugmentedRequestParams::Meta::toJson(*taskAugmentedRequestParams.meta());
     }
-    if (boolean.tasks().has_value()) {
-        obj["task"_L1] = McpProtocolTaskMetadata::toJson(*boolean.tasks());
+    if (taskAugmentedRequestParams.task().has_value()) {
+        obj["task"_L1] = McpProtocolTaskMetadata::toJson(*taskAugmentedRequestParams.task());
     }
     return obj;
 }
@@ -84,14 +83,14 @@ void McpProtocolTaskAugmentedRequestParams::setMeta(std::optional<Meta> newMeta)
     mMeta = std::move(newMeta);
 }
 
-std::optional<McpProtocolTaskMetadata> McpProtocolTaskAugmentedRequestParams::tasks() const
+std::optional<McpProtocolTaskMetadata> McpProtocolTaskAugmentedRequestParams::task() const
 {
-    return mTasks;
+    return mTask;
 }
 
-void McpProtocolTaskAugmentedRequestParams::setTasks(std::optional<McpProtocolTaskMetadata> newTasks)
+void McpProtocolTaskAugmentedRequestParams::setTask(std::optional<McpProtocolTaskMetadata> newTask)
 {
-    mTasks = std::move(newTasks);
+    mTask = std::move(newTask);
 }
 
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolTaskAugmentedRequestParams::Meta::progressToken() const

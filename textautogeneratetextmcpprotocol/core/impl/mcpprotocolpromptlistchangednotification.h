@@ -8,6 +8,7 @@
 #include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolNotificationParams>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,7 +30,7 @@ public:
     [[nodiscard]] static McpProtocolPromptListChangedNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolPromptListChangedNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolPromptListChangedNotification &promptListChangedNotification);
 
     /*!
      */

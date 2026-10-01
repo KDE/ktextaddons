@@ -48,14 +48,14 @@ McpProtocolResource McpProtocolResource::fromJson(const QJsonObject &obj)
         for (const auto &v : arr) {
             list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
         }
-        prompt.setIcons(list_icons);
+        prompt.setIcons(std::move(list_icons));
     }
     if (obj.contains("mimeType"_L1)) {
         prompt.setMimeType(obj.value("mimeType"_L1).toString());
     }
     prompt.setName(obj.value("name"_L1).toString());
-    if (obj.contains("size"_L1)) {
-        prompt.setSize(obj.value("size"_L1).toInt());
+    if (const QJsonValue sizeValue = obj.value("size"_L1); sizeValue.isDouble()) {
+        prompt.setSize(sizeValue.toInteger());
     }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
@@ -65,35 +65,36 @@ McpProtocolResource McpProtocolResource::fromJson(const QJsonObject &obj)
     return prompt;
 }
 
-QJsonObject McpProtocolResource::toJson(const McpProtocolResource &boolean)
+QJsonObject McpProtocolResource::toJson(const McpProtocolResource &resource)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    obj["name"_L1] = resource.name();
+    obj["uri"_L1] = resource.uri();
+    if (resource.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*resource.meta());
     }
-    if (boolean.annotations().has_value())
-        obj.insert("annotations"_L1, McpProtocolAnnotations::toJson(*boolean.annotations()));
-    if (boolean.description().has_value()) {
-        obj.insert("description"_L1, *boolean.description());
+    if (resource.annotations().has_value()) {
+        obj.insert("annotations"_L1, McpProtocolAnnotations::toJson(*resource.annotations()));
     }
-    if (boolean.icons().has_value()) {
+    if (resource.description().has_value()) {
+        obj.insert("description"_L1, *resource.description());
+    }
+    if (resource.icons().has_value()) {
         QJsonArray arr_icons;
-        const auto icons = *boolean.icons();
+        const auto icons = *resource.icons();
         for (const auto &v : icons) {
             arr_icons.append(McpProtocolIcon::toJson(v));
         }
         obj.insert("icons"_L1, arr_icons);
     }
-    if (boolean.mimeType().has_value()) {
-        obj.insert("mimeType"_L1, *boolean.mimeType());
+    if (resource.mimeType().has_value()) {
+        obj.insert("mimeType"_L1, *resource.mimeType());
     }
-    if (boolean.size().has_value()) {
-        obj.insert("size"_L1, *boolean.size());
+    if (resource.size().has_value()) {
+        obj.insert("size"_L1, *resource.size());
     }
-    if (boolean.title().has_value()) {
-        obj.insert("title"_L1, *boolean.title());
+    if (resource.title().has_value()) {
+        obj.insert("title"_L1, *resource.title());
     }
     return obj;
 }
@@ -118,12 +119,12 @@ void McpProtocolResource::setTitle(std::optional<QString> newTitle)
     mTitle = std::move(newTitle);
 }
 
-std::optional<int> McpProtocolResource::size() const
+std::optional<qint64> McpProtocolResource::size() const
 {
     return mSize;
 }
 
-void McpProtocolResource::setSize(std::optional<int> newSize)
+void McpProtocolResource::setSize(std::optional<qint64> newSize)
 {
     mSize = newSize;
 }

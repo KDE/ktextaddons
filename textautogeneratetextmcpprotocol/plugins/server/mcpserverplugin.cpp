@@ -33,9 +33,8 @@ McpServerPlugin::createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtoco
     default:
         break;
     }
-    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LOG) << "There is a bug here !";
-    Q_UNREACHABLE();
-    return {};
+    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LOG) << "Invalid transport type:" << type;
+    return nullptr;
 }
 
 #include "mcpserverplugin.moc"

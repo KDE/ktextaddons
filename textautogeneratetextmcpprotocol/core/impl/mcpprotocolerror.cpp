@@ -8,11 +8,10 @@
 #include <QJsonObject>
 
 #include <QDebug>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolError::McpProtocolError() = default;
-
-McpProtocolError::~McpProtocolError() = default;
 
 bool McpProtocolError::operator==(const McpProtocolError &other) const = default;
 
@@ -75,5 +74,3 @@ void McpProtocolError::setMessage(const QString &newMessage)
 {
     mMessage = newMessage;
 }
-
-#include "moc_mcpprotocolerror.cpp"

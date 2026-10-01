@@ -21,6 +21,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] static QByteArray type();
+
+    /*!
+     */
     [[nodiscard]] bool operator==(const McpProtocolCancelledNotification &other) const;
 
     /*!
@@ -28,14 +32,14 @@ public:
     [[nodiscard]] static McpProtocolCancelledNotification fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelledNotification &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolCancelledNotification &notification);
 
     /*!
      */
     [[nodiscard]] McpProtocolCancelledNotificationParams params() const;
     /*!
      */
-    void setParams(const McpProtocolCancelledNotificationParams &newParams);
+    void setParams(McpProtocolCancelledNotificationParams newParams);
 
 private:
     McpProtocolCancelledNotificationParams mParams;

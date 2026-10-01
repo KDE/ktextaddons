@@ -9,6 +9,7 @@
 #include <QJsonObject>
 
 #include <QJsonArray>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolIcon::McpProtocolIcon() = default;
@@ -78,7 +79,7 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
         for (const auto &v : arr) {
             list_sizes.append(v.toString());
         }
-        icon.setSizes(list_sizes);
+        icon.setSizes(std::move(list_sizes));
     }
     if (const QJsonValue themeValue = obj.value("theme"_L1); themeValue.isString()) {
         icon.setTheme(themeValue.toString());
@@ -86,20 +87,20 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
     return icon;
 }
 
-QJsonObject McpProtocolIcon::toJson(const McpProtocolIcon &image)
+QJsonObject McpProtocolIcon::toJson(const McpProtocolIcon &icon)
 {
     QJsonObject obj;
-    obj["src"_L1] = image.src();
+    obj["src"_L1] = icon.src();
 
-    if (image.mimeType().has_value()) {
-        obj["mimeType"_L1] = *image.mimeType();
+    if (icon.mimeType().has_value()) {
+        obj["mimeType"_L1] = *icon.mimeType();
     }
-    if (image.theme().has_value()) {
-        obj["theme"_L1] = *image.theme();
+    if (icon.theme().has_value()) {
+        obj["theme"_L1] = *icon.theme();
     }
-    if (image.sizes().has_value()) {
+    if (icon.sizes().has_value()) {
         QJsonArray sizes;
-        const QStringList lst = *image.sizes();
+        const QStringList lst = *icon.sizes();
         for (const auto &t : lst) {
             sizes.append(t);
         }

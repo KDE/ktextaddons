@@ -5,10 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,14 +29,14 @@ public:
     [[nodiscard]] static McpProtocolJSONRPCErrorResponse fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolJSONRPCErrorResponse &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolJSONRPCErrorResponse &response);
 
     /*!
      */
     [[nodiscard]] McpProtocolError error() const;
     /*!
      */
-    void setError(const McpProtocolError &newError);
+    void setError(McpProtocolError newError);
 
     /*!
      */

@@ -21,7 +21,7 @@ AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mServerUrlLineEdit->setClearButtonEnabled(true);
-    mainLayout->addRow(i18n("Url:"), mServerUrlLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
     connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpSseServerWidget::settingChanged);
 }
@@ -40,14 +40,19 @@ QString AddMcpSseServerWidget::url() const
 
 bool AddMcpSseServerWidget::isValid() const
 {
-    return !mServerUrlLineEdit->text().isEmpty();
+    const QString text = mServerUrlLineEdit->text().trimmed();
+    if (text.isEmpty()) {
+        return false;
+    }
+    const QUrl url = QUrl::fromUserInput(text);
+    return url.isValid() && !url.host().isEmpty() && (url.scheme() == "http"_L1 || url.scheme() == "https"_L1);
 }
 
 void AddMcpSseServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
-    settings.setServerUrl(QUrl(mServerUrlLineEdit->text()));
-    server.setSettings(settings);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
+    settings.setServerUrl(QUrl::fromUserInput(mServerUrlLineEdit->text().trimmed()));
+    server.setSettings(std::move(settings));
 }
 
 void AddMcpSseServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)

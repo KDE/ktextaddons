@@ -8,6 +8,7 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -33,15 +34,16 @@ QByteArray McpProtocolLegacyTitledEnumSchema::type()
 McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(const QJsonObject &obj)
 {
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolLegacyTitledEnumSchema::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be 'string', got: " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLegacyTitledEnumSchema: field 'type' must be" << McpProtocolLegacyTitledEnumSchema::type()
+                                                       << "got:" << obj.value("type"_L1).toString();
         return {};
     }
-    McpProtocolLegacyTitledEnumSchema prompt;
+    McpProtocolLegacyTitledEnumSchema schema;
     if (obj.contains("default"_L1)) {
-        prompt.setDefaultValue(obj.value("default"_L1).toString());
+        schema.setDefaultValue(obj.value("default"_L1).toString());
     }
     if (obj.contains("description"_L1)) {
-        prompt.setDescription(obj.value("description"_L1).toString());
+        schema.setDescription(obj.value("description"_L1).toString());
     }
     if (const QJsonValue enumValue = obj.value("enum"_L1); enumValue.isArray()) {
         const QJsonArray arr = enumValue.toArray();
@@ -50,7 +52,7 @@ McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(co
         for (const auto &v : arr) {
             lst.append(v.toString());
         }
-        prompt.setEnums(lst);
+        schema.setEnums(std::move(lst));
     }
     if (const QJsonValue enumNamesValue = obj.value("enumNames"_L1); enumNamesValue.isArray()) {
         const QJsonArray arr = enumNamesValue.toArray();
@@ -59,40 +61,40 @@ McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(co
         for (const auto &v : arr) {
             list_enumNames.append(v.toString());
         }
-        prompt.setEnumNames(list_enumNames);
+        schema.setEnumNames(std::move(list_enumNames));
     }
 
     if (obj.contains("title"_L1)) {
-        prompt.setTitle(obj.value("title"_L1).toString());
+        schema.setTitle(obj.value("title"_L1).toString());
     }
-    return prompt;
+    return schema;
 }
 
-QJsonObject McpProtocolLegacyTitledEnumSchema::toJson(const McpProtocolLegacyTitledEnumSchema &boolean)
+QJsonObject McpProtocolLegacyTitledEnumSchema::toJson(const McpProtocolLegacyTitledEnumSchema &schema)
 {
     QJsonObject obj;
     obj["type"_L1] = QString::fromLatin1(type());
-    if (boolean.defaultValue().has_value()) {
-        obj.insert("default"_L1, *boolean.defaultValue());
+    if (schema.defaultValue().has_value()) {
+        obj.insert("default"_L1, *schema.defaultValue());
     }
-    if (boolean.description().has_value()) {
-        obj.insert("description"_L1, *boolean.description());
+    if (schema.description().has_value()) {
+        obj.insert("description"_L1, *schema.description());
     }
     QJsonArray arr_enum_;
-    for (const auto &v : boolean.enums()) {
+    for (const auto &v : schema.enums()) {
         arr_enum_.append(v);
     }
     obj.insert("enum"_L1, arr_enum_);
-    if (boolean.enumNames().has_value()) {
+    if (schema.enumNames().has_value()) {
         QJsonArray arr_enumNames;
-        const auto enumNames = *boolean.enumNames();
+        const auto enumNames = *schema.enumNames();
         for (const auto &v : enumNames) {
             arr_enumNames.append(v);
         }
         obj.insert("enumNames"_L1, arr_enumNames);
     }
-    if (boolean.title().has_value()) {
-        obj.insert("title"_L1, *boolean.title());
+    if (schema.title().has_value()) {
+        obj.insert("title"_L1, *schema.title());
     }
     return obj;
 }
@@ -122,9 +124,9 @@ QStringList McpProtocolLegacyTitledEnumSchema::enums() const
     return mEnums;
 }
 
-void McpProtocolLegacyTitledEnumSchema::setEnums(const QStringList &newEnums)
+void McpProtocolLegacyTitledEnumSchema::setEnums(QStringList newEnums)
 {
-    mEnums = newEnums;
+    mEnums = std::move(newEnums);
 }
 
 std::optional<QStringList> McpProtocolLegacyTitledEnumSchema::enumNames() const

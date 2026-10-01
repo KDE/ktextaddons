@@ -6,8 +6,8 @@
 
 #include "mcpprotocolinitializerequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -40,40 +40,40 @@ McpProtocolInitializeRequestParams::Meta McpProtocolInitializeRequestParams::Met
     return meta;
 }
 
-QJsonObject McpProtocolInitializeRequestParams::Meta::toJson(const McpProtocolInitializeRequestParams::Meta &image)
+QJsonObject McpProtocolInitializeRequestParams::Meta::toJson(const McpProtocolInitializeRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
 
 McpProtocolInitializeRequestParams McpProtocolInitializeRequestParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolInitializeRequestParams prompt;
+    McpProtocolInitializeRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolInitializeRequestParams::Meta::fromJson(metaValue.toObject()));
+        params.setMeta(McpProtocolInitializeRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue capabilitiesValue = obj.value("capabilities"_L1); capabilitiesValue.isObject()) {
-        prompt.setCapabilities(McpProtocolClientCapabilities::fromJson(capabilitiesValue.toObject()));
+        params.setCapabilities(McpProtocolClientCapabilities::fromJson(capabilitiesValue.toObject()));
     }
     if (const QJsonValue clientInfoValue = obj.value("clientInfo"_L1); clientInfoValue.isObject()) {
-        prompt.setClientInfo(McpProtocolImplementation::fromJson(clientInfoValue.toObject()));
+        params.setClientInfo(McpProtocolImplementation::fromJson(clientInfoValue.toObject()));
     }
-    prompt.setProtocolVersion(obj.value("protocolVersion"_L1).toString());
-    return prompt;
+    params.setProtocolVersion(obj.value("protocolVersion"_L1).toString());
+    return params;
 }
 
-QJsonObject McpProtocolInitializeRequestParams::toJson(const McpProtocolInitializeRequestParams &boolean)
+QJsonObject McpProtocolInitializeRequestParams::toJson(const McpProtocolInitializeRequestParams &params)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolInitializeRequestParams::Meta::toJson(*boolean.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolInitializeRequestParams::Meta::toJson(*params.meta());
     }
-    obj["capabilities"_L1] = McpProtocolClientCapabilities::toJson(boolean.capabilities());
-    obj["clientInfo"_L1] = McpProtocolImplementation::toJson(boolean.clientInfo());
-    obj["protocolVersion"_L1] = boolean.protocolVersion();
+    obj["capabilities"_L1] = McpProtocolClientCapabilities::toJson(params.capabilities());
+    obj["clientInfo"_L1] = McpProtocolImplementation::toJson(params.clientInfo());
+    obj["protocolVersion"_L1] = params.protocolVersion();
     return obj;
 }
 
@@ -102,9 +102,9 @@ McpProtocolImplementation McpProtocolInitializeRequestParams::clientInfo() const
     return mClientInfo;
 }
 
-void McpProtocolInitializeRequestParams::setClientInfo(const McpProtocolImplementation &newClientInfo)
+void McpProtocolInitializeRequestParams::setClientInfo(McpProtocolImplementation newClientInfo)
 {
-    mClientInfo = newClientInfo;
+    mClientInfo = std::move(newClientInfo);
 }
 
 McpProtocolClientCapabilities McpProtocolInitializeRequestParams::capabilities() const
@@ -112,9 +112,9 @@ McpProtocolClientCapabilities McpProtocolInitializeRequestParams::capabilities()
     return mCapabilities;
 }
 
-void McpProtocolInitializeRequestParams::setCapabilities(const McpProtocolClientCapabilities &newCapabilities)
+void McpProtocolInitializeRequestParams::setCapabilities(McpProtocolClientCapabilities newCapabilities)
 {
-    mCapabilities = newCapabilities;
+    mCapabilities = std::move(newCapabilities);
 }
 
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolInitializeRequestParams::Meta::progressToken() const

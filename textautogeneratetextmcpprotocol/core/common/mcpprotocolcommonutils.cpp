@@ -5,10 +5,7 @@
 */
 #include "mcpprotocolcommonutils.h"
 
-#include <KConfig>
-#include <QCoreApplication>
 #include <QRegularExpression>
-#include <QStandardPaths>
 #include <QUuid>
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;

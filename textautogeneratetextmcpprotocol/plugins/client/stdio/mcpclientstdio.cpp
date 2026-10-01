@@ -6,33 +6,25 @@
 #include "mcpclientstdio.h"
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "stdio/mcpclientstdioplugininterface.h"
+#include <KLocalizedString>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QProcess>
-#include <QVariant>
 
 McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
     , mProcess(new QProcess(this))
     , mInterface(interface)
 {
+    mProcess->setProcessChannelMode(QProcess::SeparateChannels);
     connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
         Q_EMIT error(mProcess->errorString());
     });
     connect(mProcess, &QProcess::started, this, &McpClientStdio::started);
     connect(mProcess, &QProcess::finished, this, &McpClientStdio::finished);
-    connect(mProcess, &QProcess::readyReadStandardOutput, this, [this]() {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << mProcess->errorString();
-        const QByteArray ba = mProcess->readAllStandardOutput();
-        const QJsonDocument doc = QJsonDocument::fromJson(ba);
-        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " doc " << doc;
-        Q_EMIT received(doc.object());
-        // Q_EMIT error(mProcess->errorString());
-    });
-    connect(mProcess, &QProcess::readyReadStandardError, this, [this]() {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "error " << mProcess->readAllStandardError();
-    });
+    connect(mProcess, &QProcess::readyReadStandardOutput, this, &McpClientStdio::slotReadStandardOutput);
+    connect(mProcess, &QProcess::readyReadStandardError, this, &McpClientStdio::slotReadStandardError);
 }
 
 McpClientStdio::~McpClientStdio()
@@ -62,21 +54,67 @@ void McpClientStdio::stop()
 
 void McpClientStdio::connection()
 {
-    const auto settings = mInterface->protocolSettings();
-    // qDebug() << " settings " << settings;
-    mProcess->setProgram(settings.command());
-    if (!settings.arguments().isEmpty()) {
-        const QStringList lst = settings.arguments().split(u' ');
-        mProcess->setArguments(lst);
+    if (isRunning()) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Client already started:" << mProcess->program();
+        return;
     }
-    mProcess->start();
+    const auto settings = mInterface->protocolSettings();
+    if (settings.command().isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to start client. Command is empty.";
+        Q_EMIT error(i18n("Impossible to start client. Command is empty."));
+        return;
+    }
+    mBuffer.clear();
+    mProcess->setProgram(settings.command());
+    mProcess->setArguments(settings.arguments().isEmpty() ? QStringList{} : QProcess::splitCommand(settings.arguments()));
+    if (const QMap<QString, QString> environments = settings.environments(); !environments.isEmpty()) {
+        QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
+        for (auto it = environments.cbegin(); it != environments.cend(); ++it) {
+            processEnvironment.insert(it.key(), it.value());
+        }
+        mProcess->setProcessEnvironment(processEnvironment);
+    }
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Starting" << mProcess->program() << "with" << mProcess->arguments().count() << "arguments";
+    mProcess->start(QIODevice::ReadWrite);
 }
 
 void McpClientStdio::send(const QJsonObject &obj)
 {
+    if (mProcess->state() == QProcess::NotRunning) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to send message. Client is not running." << obj;
+        Q_EMIT error(i18n("Impossible to send message. Client is not running."));
+        return;
+    }
     const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
-    mProcess->write(data + "\n");
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " obj " << obj;
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " send " << data;
+    mProcess->write(data + '\n');
+}
+
+void McpClientStdio::slotReadStandardOutput()
+{
+    // Messages are newline delimited json, a read can contain several of them or an incomplete one.
+    mBuffer += mProcess->readAllStandardOutput();
+    qsizetype index = -1;
+    while ((index = mBuffer.indexOf('\n')) != -1) {
+        const QByteArray line = mBuffer.left(index).trimmed();
+        mBuffer.remove(0, index + 1);
+        if (line.isEmpty()) {
+            continue;
+        }
+        QJsonParseError parseError;
+        const QJsonDocument doc = QJsonDocument::fromJson(line, &parseError);
+        if (parseError.error != QJsonParseError::NoError || !doc.isObject()) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Invalid json received:" << line << parseError.errorString();
+            continue;
+        }
+        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " received " << doc;
+        Q_EMIT received(doc.object());
+    }
+}
+
+void McpClientStdio::slotReadStandardError()
+{
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "stderr:" << mProcess->readAllStandardError();
 }
 
 #include "moc_mcpclientstdio.cpp"

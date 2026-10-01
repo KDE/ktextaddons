@@ -21,6 +21,7 @@ void McpProtocolCreateMessageResultTest::shouldHaveDefaultValues()
     QVERIFY(w.model().isEmpty());
     QVERIFY(!w.stopReason().has_value());
     QCOMPARE(w.role(), TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role::Unknown);
+    QCOMPARE(w, TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult());
 }
 
 void McpProtocolCreateMessageResultTest::shouldConvertJson()
@@ -45,6 +46,7 @@ void McpProtocolCreateMessageResultTest::shouldConvertJson()
     QCOMPARE(textContent->text(), u"Hello"_s);
 
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult::toJson(result), obj);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult::fromJson(obj), result);
 }
 
 #include "moc_mcpprotocolcreatemessageresulttest.cpp"

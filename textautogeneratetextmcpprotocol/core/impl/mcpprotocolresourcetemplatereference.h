@@ -31,7 +31,7 @@ public:
     [[nodiscard]] static McpProtocolResourceTemplateReference fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceTemplateReference &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceTemplateReference &resourceTemplateReference);
 
     /*!
      */

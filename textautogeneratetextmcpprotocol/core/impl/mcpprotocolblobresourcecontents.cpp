@@ -6,8 +6,8 @@
 
 #include "mcpprotocolblobresourcecontents.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -26,28 +26,28 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolBlobResourceContents McpProtocolBlobResourceContents::fromJson(const QJsonObject &obj)
 {
-    McpProtocolBlobResourceContents prompt;
+    McpProtocolBlobResourceContents contents;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        contents.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    prompt.setBlob(obj.value("blob"_L1).toString());
+    contents.setBlob(obj.value("blob"_L1).toString());
     if (obj.contains("mimeType"_L1)) {
-        prompt.setMimeType(obj.value("mimeType"_L1).toString());
+        contents.setMimeType(obj.value("mimeType"_L1).toString());
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
-    return prompt;
+    contents.setUri(obj.value("uri"_L1).toString());
+    return contents;
 }
 
-QJsonObject McpProtocolBlobResourceContents::toJson(const McpProtocolBlobResourceContents &boolean)
+QJsonObject McpProtocolBlobResourceContents::toJson(const McpProtocolBlobResourceContents &contents)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (contents.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*contents.meta());
     }
-    obj["blob"_L1] = boolean.blob();
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.mimeType().has_value()) {
-        obj["mimeType"_L1] = *boolean.mimeType();
+    obj["blob"_L1] = contents.blob();
+    obj["uri"_L1] = contents.uri();
+    if (contents.mimeType().has_value()) {
+        obj["mimeType"_L1] = *contents.mimeType();
     }
     return obj;
 }

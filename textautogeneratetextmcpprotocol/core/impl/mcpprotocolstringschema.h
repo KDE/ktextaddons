@@ -7,6 +7,8 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
 #include <QString>
+#include <cstdint>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -16,7 +18,7 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolStringSchema
 public:
     enum class Format : uint8_t {
         Date,
-        Dateminustime,
+        DateTime,
         Email,
         Uri,
         Unknown,
@@ -39,7 +41,7 @@ public:
     [[nodiscard]] static McpProtocolStringSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolStringSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolStringSchema &schema);
 
     /*!
      */
@@ -57,10 +59,10 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<bool> defaultValue() const;
+    [[nodiscard]] std::optional<QString> defaultValue() const;
     /*!
      */
-    void setDefaultValue(std::optional<bool> newDefaultValue);
+    void setDefaultValue(std::optional<QString> newDefaultValue);
 
     /*!
      */
@@ -85,7 +87,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] static QString convertModeToString(McpProtocolStringSchema::Format mode);
+    [[nodiscard]] static QString convertModeToString(McpProtocolStringSchema::Format format);
     /*!
      */
     [[nodiscard]] static McpProtocolStringSchema::Format convertModeFromString(const QString &str);
@@ -94,7 +96,7 @@ private:
     std::optional<Format> mFormat;
     std::optional<int> mMaxLength;
     std::optional<int> mMinLength;
-    std::optional<bool> mDefaultValue;
+    std::optional<QString> mDefaultValue;
     std::optional<QString> mDescription;
     std::optional<QString> mTitle;
 };

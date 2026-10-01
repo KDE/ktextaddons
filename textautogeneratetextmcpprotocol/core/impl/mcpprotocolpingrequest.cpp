@@ -6,7 +6,6 @@
 
 #include "mcpprotocolpingrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -36,7 +35,9 @@ McpProtocolPingRequest McpProtocolPingRequest::fromJson(const QJsonObject &obj)
         return {};
     }
     if (obj.value("method"_L1).toString() != QString::fromLatin1(McpProtocolPingRequest::type())) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'method' must be 'notifications/progress', got: " << obj.value("method"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Field 'method' must be" << McpProtocolPingRequest::type() << ", got:" << obj.value("method"_L1).toString();
+        return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolRequestParams::fromJson(paramsValue.toObject()));
@@ -47,14 +48,14 @@ McpProtocolPingRequest McpProtocolPingRequest::fromJson(const QJsonObject &obj)
     return prompt;
 }
 
-QJsonObject McpProtocolPingRequest::toJson(const McpProtocolPingRequest &boolean)
+QJsonObject McpProtocolPingRequest::toJson(const McpProtocolPingRequest &pingRequest)
 {
     QJsonObject obj;
-    obj["id"_L1] = McpProtocolUtils::requestIdToJson(boolean.id());
+    obj["id"_L1] = McpProtocolUtils::requestIdToJson(pingRequest.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolPingRequest::type());
-    if (boolean.params().has_value()) {
-        obj["params"_L1] = McpProtocolRequestParams::toJson(*boolean.params());
+    if (pingRequest.params().has_value()) {
+        obj["params"_L1] = McpProtocolRequestParams::toJson(*pingRequest.params());
     }
     return obj;
 }

@@ -8,7 +8,6 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QMap>
-#include <QObject>
 #include <QStringList>
 #include <QUrl>
 class QDebug;

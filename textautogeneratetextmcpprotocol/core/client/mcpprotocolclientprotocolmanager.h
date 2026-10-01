@@ -25,14 +25,14 @@ public:
         ListPrompts,
         ResourceTemplates,
         Initialize,
+        ServerRequest,
+        ServerNotification,
     };
     Q_ENUM(MethodType)
     explicit McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent = nullptr);
     ~McpProtocolClientProtocolManager() override;
 
-    void initializeClient(bool started);
-
-    [[nodiscard]] int requestId();
+    void initializeClient();
 
     void executeAction(MethodType type);
 
@@ -48,15 +48,19 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void ping();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listTools();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listPrompts();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void resouceTemplates();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void resourceTemplates();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
-    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolClientProtocolManager::MethodType checkMethodType(const QJsonObject &obj) const;
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendInitializedNotification();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotReceived(const QJsonObject &obj);
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 requestId();
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolClientProtocolManager::MethodType checkMethodType(const QJsonObject &obj);
 
     QString mClientName;
 
-    int mRequestIdentifier = 0;
+    qint64 mRequestIdentifier = 0;
+    bool mClientStarted = false;
     TextAutoGenerateTextMcpProtocolCore::McpServer mServer;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolClient *mClient = nullptr;
-    QHash<int, McpProtocolClientProtocolManager::MethodType> mMapIdentifier;
+    QHash<qint64, McpProtocolClientProtocolManager::MethodType> mMapIdentifier;
 };
 }

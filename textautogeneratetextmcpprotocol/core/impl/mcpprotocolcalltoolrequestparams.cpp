@@ -6,8 +6,8 @@
 
 #include "mcpprotocolcalltoolrequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -27,7 +27,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolRequestParams::Meta &t)
 {
-    d.space() << "meta:" << t.progressToken();
+    d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
@@ -40,20 +40,20 @@ McpProtocolCallToolRequestParams::Meta McpProtocolCallToolRequestParams::Meta::f
     return meta;
 }
 
-QJsonObject McpProtocolCallToolRequestParams::Meta::toJson(const McpProtocolCallToolRequestParams::Meta &image)
+QJsonObject McpProtocolCallToolRequestParams::Meta::toJson(const McpProtocolCallToolRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
 
 McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCallToolRequestParams prompt;
+    McpProtocolCallToolRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolCallToolRequestParams::Meta::fromJson(metaValue.toObject()));
+        params.setMeta(McpProtocolCallToolRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue argumentsValue = obj.value("arguments"_L1); argumentsValue.isObject()) {
         const QJsonObject mapObj_arguments = argumentsValue.toObject();
@@ -61,32 +61,33 @@ McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(cons
         for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value());
         }
-        prompt.setArguments(map_arguments);
+        params.setArguments(std::move(map_arguments));
     }
-    prompt.setName(obj.value("name"_L1).toString());
+    params.setName(obj.value("name"_L1).toString());
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
-        prompt.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
+        params.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
-    return prompt;
+    return params;
 }
 
-QJsonObject McpProtocolCallToolRequestParams::toJson(const McpProtocolCallToolRequestParams &boolean)
+QJsonObject McpProtocolCallToolRequestParams::toJson(const McpProtocolCallToolRequestParams &params)
 {
     QJsonObject obj;
-    obj["name"_L1] = boolean.name();
+    obj["name"_L1] = params.name();
 
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolCallToolRequestParams::Meta::toJson(*boolean.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolCallToolRequestParams::Meta::toJson(*params.meta());
     }
-    if (boolean.arguments().has_value()) {
+    if (params.arguments().has_value()) {
         QJsonObject map_arguments;
-        for (auto it = boolean.arguments()->constBegin(); it != boolean.arguments()->constEnd(); ++it) {
+        const auto argumentsValues = *params.arguments();
+        for (auto it = argumentsValues.constBegin(); it != argumentsValues.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value());
         }
         obj["arguments"_L1] = map_arguments;
     }
-    if (boolean.task().has_value()) {
-        obj["task"_L1] = McpProtocolTaskMetadata::toJson(*boolean.task());
+    if (params.task().has_value()) {
+        obj["task"_L1] = McpProtocolTaskMetadata::toJson(*params.task());
     }
     return obj;
 }

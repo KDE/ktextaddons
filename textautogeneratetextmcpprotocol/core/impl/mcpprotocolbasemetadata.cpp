@@ -7,6 +7,7 @@
 #include "mcpprotocolbasemetadata.h"
 #include <QDebug>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -23,20 +24,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolBaseMetadata McpProtocolBaseMetadata::fromJson(const QJsonObject &obj)
 {
-    McpProtocolBaseMetadata prompt;
-    prompt.setName(obj.value("name"_L1).toString());
+    McpProtocolBaseMetadata metadata;
+    metadata.setName(obj.value("name"_L1).toString());
     if (obj.contains("title"_L1)) {
-        prompt.setTitle(obj.value("title"_L1).toString());
+        metadata.setTitle(obj.value("title"_L1).toString());
     }
-    return prompt;
+    return metadata;
 }
 
-QJsonObject McpProtocolBaseMetadata::toJson(const McpProtocolBaseMetadata &prompt)
+QJsonObject McpProtocolBaseMetadata::toJson(const McpProtocolBaseMetadata &metadata)
 {
     QJsonObject obj;
-    obj["name"_L1] = prompt.name();
-    if (prompt.title().has_value()) {
-        obj["title"_L1] = *prompt.title();
+    obj["name"_L1] = metadata.name();
+    if (metadata.title().has_value()) {
+        obj["title"_L1] = *metadata.title();
     }
     return obj;
 }

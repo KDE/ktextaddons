@@ -11,6 +11,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBlobResourceContents>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextResourceContents>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -35,7 +36,7 @@ public:
     [[nodiscard]] static McpProtocolEmbeddedResource fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolEmbeddedResource &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolEmbeddedResource &embeddedResource);
 
     /*!
      */
@@ -56,7 +57,7 @@ public:
     [[nodiscard]] McpProtocolUtils::EmbeddedResourceResource resource() const;
     /*!
      */
-    void setResource(const McpProtocolUtils::EmbeddedResourceResource &newResource);
+    void setResource(McpProtocolUtils::EmbeddedResourceResource newResource);
 
 private:
     std::optional<McpProtocolAnnotations> mAnnotations;

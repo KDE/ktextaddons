@@ -7,9 +7,12 @@
 #include "mcpprotocolcreatemessageresult.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCreateMessageResult::McpProtocolCreateMessageResult() = default;
+
+bool McpProtocolCreateMessageResult::operator==(const McpProtocolCreateMessageResult &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult &t)
 {
@@ -35,17 +38,17 @@ McpProtocolCreateMessageResult McpProtocolCreateMessageResult::fromJson(const QJ
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: role";
         return {};
     }
-    McpProtocolCreateMessageResult prompt;
+    McpProtocolCreateMessageResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
+        result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    prompt.setContent(McpProtocolUtils::createMessageResultContentFromJson(obj["content"_L1]));
-    prompt.setModel(obj.value("model"_L1).toString());
-    prompt.setRole(McpProtocolUtils::convertRoleFromString(obj.value("role"_L1).toString()));
+    result.setContent(McpProtocolUtils::createMessageResultContentFromJson(obj["content"_L1]));
+    result.setModel(obj.value("model"_L1).toString());
+    result.setRole(McpProtocolUtils::convertRoleFromString(obj.value("role"_L1).toString()));
     if (obj.contains("stopReason"_L1)) {
-        prompt.setStopReason(obj.value("stopReason"_L1).toString());
+        result.setStopReason(obj.value("stopReason"_L1).toString());
     }
-    return prompt;
+    return result;
 }
 
 QJsonObject McpProtocolCreateMessageResult::toJson(const McpProtocolCreateMessageResult &result)
@@ -78,9 +81,9 @@ McpProtocolUtils::CreateMessageResultContent McpProtocolCreateMessageResult::con
     return mContent;
 }
 
-void McpProtocolCreateMessageResult::setContent(const McpProtocolUtils::CreateMessageResultContent &newContent)
+void McpProtocolCreateMessageResult::setContent(McpProtocolUtils::CreateMessageResultContent newContent)
 {
-    mContent = newContent;
+    mContent = std::move(newContent);
 }
 
 QString McpProtocolCreateMessageResult::model() const

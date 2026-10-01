@@ -14,13 +14,14 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolReadResourceResult::McpProtocolReadResourceResult() = default;
 
-// bool McpProtocolReadResourceResult::operator==(const McpProtocolReadResourceResult &other) const = default;
+bool McpProtocolReadResourceResult::operator==(const McpProtocolReadResourceResult &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceResult &t)
 {
     d.space() << "meta:" << t.meta();
     QJsonArray arr_contents;
-    for (const auto &v : t.contents()) {
+    const auto contents = t.contents();
+    for (const auto &v : contents) {
         arr_contents.append(McpProtocolUtils::embeddedResourceResourceToJson(v));
     }
     d.space() << "contents:" << arr_contents;
@@ -40,19 +41,20 @@ McpProtocolReadResourceResult McpProtocolReadResourceResult::fromJson(const QJso
         for (const auto &v : arr) {
             resources.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceFromJson(v));
         }
-        prompt.setContents(resources);
+        prompt.setContents(std::move(resources));
     }
     return prompt;
 }
 
-QJsonObject McpProtocolReadResourceResult::toJson(const McpProtocolReadResourceResult &boolean)
+QJsonObject McpProtocolReadResourceResult::toJson(const McpProtocolReadResourceResult &readResourceResult)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (readResourceResult.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*readResourceResult.meta());
     }
     QJsonArray arr_contents;
-    for (const auto &v : boolean.contents()) {
+    const auto contents = readResourceResult.contents();
+    for (const auto &v : contents) {
         arr_contents.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceToJson(v));
     }
     obj.insert("contents"_L1, arr_contents);
@@ -74,7 +76,7 @@ QList<McpProtocolUtils::EmbeddedResourceResource> McpProtocolReadResourceResult:
     return mContents;
 }
 
-void McpProtocolReadResourceResult::setContents(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource> &newContents)
+void McpProtocolReadResourceResult::setContents(QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource> newContents)
 {
-    mContents = newContents;
+    mContents = std::move(newContents);
 }

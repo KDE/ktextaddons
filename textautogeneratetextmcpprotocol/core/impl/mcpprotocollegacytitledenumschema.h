@@ -8,6 +8,7 @@
 #include <QByteArray>
 #include <QString>
 #include <QStringList>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -30,7 +31,7 @@ public:
     [[nodiscard]] static McpProtocolLegacyTitledEnumSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolLegacyTitledEnumSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolLegacyTitledEnumSchema &schema);
 
     /*!
      */
@@ -51,7 +52,7 @@ public:
     [[nodiscard]] QStringList enums() const;
     /*!
      */
-    void setEnums(const QStringList &newEnums);
+    void setEnums(QStringList newEnums);
 
     /*!
      */

@@ -6,7 +6,6 @@
 
 #include "mcpprotocolresourceupdatednotificationparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -32,13 +31,13 @@ McpProtocolResourceUpdatedNotificationParams McpProtocolResourceUpdatedNotificat
     return prompt;
 }
 
-QJsonObject McpProtocolResourceUpdatedNotificationParams::toJson(const McpProtocolResourceUpdatedNotificationParams &boolean)
+QJsonObject McpProtocolResourceUpdatedNotificationParams::toJson(const McpProtocolResourceUpdatedNotificationParams &resourceUpdatedNotificationParams)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolMeta::toJson(*boolean.meta());
+    if (resourceUpdatedNotificationParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolMeta::toJson(*resourceUpdatedNotificationParams.meta());
     }
-    obj["uri"_L1] = boolean.uri();
+    obj["uri"_L1] = resourceUpdatedNotificationParams.uri();
     return obj;
 }
 

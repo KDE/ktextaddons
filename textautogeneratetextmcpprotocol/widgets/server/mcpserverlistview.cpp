@@ -7,11 +7,12 @@
 #include "models/mcpservermodel.h"
 #include "models/mcpserversortfilterproxymodel.h"
 #include "server/mcpserverlistviewdelegate.h"
-#include "server/mcpservermanager.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QAction>
 #include <QContextMenuEvent>
+#include <QIcon>
 #include <QMenu>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;

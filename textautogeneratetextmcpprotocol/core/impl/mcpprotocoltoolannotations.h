@@ -5,8 +5,8 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
 #include <QString>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -20,38 +20,38 @@ public:
 
     /*!
      */
-    [[nodiscard]] bool destructiveHint() const;
+    [[nodiscard]] std::optional<bool> destructiveHint() const;
     /*!
      */
-    void setDestructiveHint(bool newDestructiveHint);
+    void setDestructiveHint(std::optional<bool> newDestructiveHint);
 
     /*!
      */
-    [[nodiscard]] bool idempotentHint() const;
+    [[nodiscard]] std::optional<bool> idempotentHint() const;
     /*!
      */
-    void setIdempotentHint(bool newIdempotentHint);
+    void setIdempotentHint(std::optional<bool> newIdempotentHint);
 
     /*!
      */
-    [[nodiscard]] bool openWorldHint() const;
+    [[nodiscard]] std::optional<bool> openWorldHint() const;
     /*!
      */
-    void setOpenWorldHint(bool newOpenWorldHint);
+    void setOpenWorldHint(std::optional<bool> newOpenWorldHint);
 
     /*!
      */
-    [[nodiscard]] bool readOnlyHint() const;
+    [[nodiscard]] std::optional<bool> readOnlyHint() const;
     /*!
      */
-    void setReadOnlyHint(bool newReadOnlyHint);
+    void setReadOnlyHint(std::optional<bool> newReadOnlyHint);
 
     /*!
      */
-    [[nodiscard]] QString title() const;
+    [[nodiscard]] std::optional<QString> title() const;
     /*!
      */
-    void setTitle(const QString &newTitle);
+    void setTitle(std::optional<QString> newTitle);
 
     /*!
      */
@@ -62,14 +62,14 @@ public:
     [[nodiscard]] static McpProtocolToolAnnotations fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolAnnotations &text);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolToolAnnotations &toolAnnotations);
 
 private:
-    bool mDestructiveHint = true;
-    bool mIdempotentHint = false;
-    bool mOpenWorldHint = true;
-    bool mReadOnlyHint = false;
-    QString mTitle;
+    std::optional<bool> mDestructiveHint;
+    std::optional<bool> mIdempotentHint;
+    std::optional<bool> mOpenWorldHint;
+    std::optional<bool> mReadOnlyHint;
+    std::optional<QString> mTitle;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolToolAnnotations, Q_RELOCATABLE_TYPE);

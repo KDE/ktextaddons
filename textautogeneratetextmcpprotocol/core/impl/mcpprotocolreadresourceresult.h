@@ -5,10 +5,11 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QByteArray>
+#include <QList>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -22,14 +23,14 @@ public:
 
     /*!
      */
-    // [[nodiscard]] bool operator==(const McpProtocolReadResourceResult &other) const;
+    [[nodiscard]] bool operator==(const McpProtocolReadResourceResult &other) const;
 
     /*!
      */
     [[nodiscard]] static McpProtocolReadResourceResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolReadResourceResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolReadResourceResult &result);
 
     /*!
      */
@@ -43,7 +44,7 @@ public:
     [[nodiscard]] QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource> contents() const;
     /*!
      */
-    void setContents(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource> &newContents);
+    void setContents(QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource> newContents);
 
 private:
     std::optional<McpProtocolMeta> mMeta;

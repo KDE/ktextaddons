@@ -6,8 +6,10 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
-
+#include <QList>
+#include <QString>
 #include <QStringList>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -32,7 +34,7 @@ public:
     [[nodiscard]] static McpProtocolUntitledSingleSelectEnumSchema fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledSingleSelectEnumSchema &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolUntitledSingleSelectEnumSchema &untitledSingleSelectEnumSchema);
 
     /*!
      */
@@ -60,7 +62,7 @@ public:
     [[nodiscard]] QStringList enums() const;
     /*!
      */
-    void setEnums(const QStringList &newEnums);
+    void setEnums(QStringList newEnums);
 
 private:
     QStringList mEnums;

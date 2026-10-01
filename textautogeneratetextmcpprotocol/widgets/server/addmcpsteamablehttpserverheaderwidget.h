@@ -9,7 +9,7 @@
 #include <QWidget>
 
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
-class QListWidget;
+class QPushButton;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class AddMcpSteamableHttpServerHeaderListWidget;
@@ -27,6 +27,9 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotModifyHeader();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddHeader();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveHeader();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void updateButtons();
     AddMcpSteamableHttpServerHeaderListWidget *const mListBox;
+    QPushButton *mModifyHeaderButton = nullptr;
+    QPushButton *mRemoveHeaderButton = nullptr;
 };
 }

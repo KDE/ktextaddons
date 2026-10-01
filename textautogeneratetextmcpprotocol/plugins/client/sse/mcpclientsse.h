@@ -6,7 +6,6 @@
 #pragma once
 
 #include "common/mcpbase.h"
-#include <QObject>
 class QNetworkAccessManager;
 class QNetworkReply;
 class QJsonObject;
@@ -23,7 +22,7 @@ public:
     void send(const QJsonObject &obj) override;
 
 private:
-    void slotRead();
+    void slotRead(QNetworkReply *reply);
     QNetworkAccessManager *const mNetworkAccessManager;
     QNetworkReply *mReply = nullptr;
     McpClientSsePluginInterface *const mInterface;

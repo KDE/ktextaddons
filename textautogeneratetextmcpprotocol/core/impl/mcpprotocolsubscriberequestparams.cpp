@@ -6,7 +6,6 @@
 
 #include "mcpprotocolsubscriberequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -38,11 +37,11 @@ McpProtocolSubscribeRequestParams::Meta McpProtocolSubscribeRequestParams::Meta:
     return meta;
 }
 
-QJsonObject McpProtocolSubscribeRequestParams::Meta::toJson(const McpProtocolSubscribeRequestParams::Meta &image)
+QJsonObject McpProtocolSubscribeRequestParams::Meta::toJson(const McpProtocolSubscribeRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -57,12 +56,12 @@ McpProtocolSubscribeRequestParams McpProtocolSubscribeRequestParams::fromJson(co
     return prompt;
 }
 
-QJsonObject McpProtocolSubscribeRequestParams::toJson(const McpProtocolSubscribeRequestParams &boolean)
+QJsonObject McpProtocolSubscribeRequestParams::toJson(const McpProtocolSubscribeRequestParams &subscribeRequestParams)
 {
     QJsonObject obj;
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolSubscribeRequestParams::Meta::toJson(*boolean.meta());
+    obj["uri"_L1] = subscribeRequestParams.uri();
+    if (subscribeRequestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolSubscribeRequestParams::Meta::toJson(*subscribeRequestParams.meta());
     }
     return obj;
 }

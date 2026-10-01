@@ -31,11 +31,11 @@ McpProtocolModelHint McpProtocolModelHint::fromJson(const QJsonObject &obj)
     return modelHint;
 }
 
-QJsonObject McpProtocolModelHint::toJson(const McpProtocolModelHint &choice)
+QJsonObject McpProtocolModelHint::toJson(const McpProtocolModelHint &modelHint)
 {
     QJsonObject obj;
-    if (choice.name().has_value()) {
-        obj["name"_L1] = *choice.name();
+    if (modelHint.name().has_value()) {
+        obj["name"_L1] = *modelHint.name();
     }
     return obj;
 }
@@ -49,5 +49,3 @@ void McpProtocolModelHint::setName(std::optional<QString> newName)
 {
     mName = std::move(newName);
 }
-
-#include "moc_mcpprotocolmodelhint.cpp"

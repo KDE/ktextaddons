@@ -4,9 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpprotocolclientdialog.h"
-#include <QDialogButtonBox>
-#include <QPushButton>
-#include <QVBoxLayout>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpProtocolClientDialog::AddMcpProtocolClientDialog(QWidget *parent)
@@ -14,8 +11,6 @@ AddMcpProtocolClientDialog::AddMcpProtocolClientDialog(QWidget *parent)
 {
 }
 
-AddMcpProtocolClientDialog::~AddMcpProtocolClientDialog()
-{
-}
+AddMcpProtocolClientDialog::~AddMcpProtocolClientDialog() = default;
 
 #include "moc_addmcpprotocolclientdialog.cpp"

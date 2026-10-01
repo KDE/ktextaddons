@@ -5,9 +5,9 @@
 */
 
 #include "mcpprotocolcompleterequestparams.h"
-#include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
+#include <QDebug>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequestParams::McpProtocolCompleteRequestParams() = default;
@@ -34,16 +34,16 @@ McpProtocolCompleteRequestParams::Context McpProtocolCompleteRequestParams::Cont
         for (auto it = mapObj_arguments.constBegin(); it != mapObj_arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), it.value().toString());
         }
-        context.setArguments(map_arguments);
+        context.setArguments(std::move(map_arguments));
     }
     return context;
 }
 
-QJsonObject McpProtocolCompleteRequestParams::Context::toJson(const Context &image)
+QJsonObject McpProtocolCompleteRequestParams::Context::toJson(const Context &context)
 {
     QJsonObject obj;
-    if (image.arguments().has_value()) {
-        const auto arguments = *image.arguments();
+    if (context.arguments().has_value()) {
+        const auto arguments = *context.arguments();
         QJsonObject map_arguments;
         for (auto it = arguments.constBegin(); it != arguments.constEnd(); ++it) {
             map_arguments.insert(it.key(), QJsonValue(it.value()));
@@ -83,11 +83,11 @@ McpProtocolCompleteRequestParams::Argument McpProtocolCompleteRequestParams::Arg
     return argument;
 }
 
-QJsonObject McpProtocolCompleteRequestParams::Argument::toJson(const Argument &image)
+QJsonObject McpProtocolCompleteRequestParams::Argument::toJson(const Argument &argument)
 {
     QJsonObject obj;
-    obj["name"_L1] = image.name();
-    obj["value"_L1] = image.value();
+    obj["name"_L1] = argument.name();
+    obj["value"_L1] = argument.value();
     return obj;
 }
 
@@ -105,20 +105,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Meta &t)
 {
-    d.space() << "progressToken" << t.progressToken();
+    d.space() << "progressToken:" << t.progressToken();
     return d;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument &t)
 {
-    d.space() << "value" << t.value();
-    d.space() << "name" << t.name();
+    d.space() << "value:" << t.value();
+    d.space() << "name:" << t.name();
     return d;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Context &t)
 {
-    d.space() << "arguments" << t.arguments();
+    d.space() << "arguments:" << t.arguments();
     return d;
 }
 
@@ -131,43 +131,43 @@ McpProtocolCompleteRequestParams::Meta McpProtocolCompleteRequestParams::Meta::f
     return meta;
 }
 
-QJsonObject McpProtocolCompleteRequestParams::Meta::toJson(const McpProtocolCompleteRequestParams::Meta &image)
+QJsonObject McpProtocolCompleteRequestParams::Meta::toJson(const McpProtocolCompleteRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
 
 McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(const QJsonObject &obj)
 {
-    McpProtocolCompleteRequestParams prompt;
+    McpProtocolCompleteRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
-        prompt.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(metaValue.toObject()));
+        params.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue argumentValue = obj.value("argument"_L1); argumentValue.isObject()) {
-        prompt.setArgument(McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject()));
+        params.setArgument(McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject()));
     }
     if (const QJsonValue contextValue = obj.value("context"_L1); contextValue.isObject()) {
-        prompt.setContext(McpProtocolCompleteRequestParams::Context::fromJson(contextValue.toObject()));
+        params.setContext(McpProtocolCompleteRequestParams::Context::fromJson(contextValue.toObject()));
     }
     if (obj.contains("ref"_L1)) {
-        prompt.setRef(McpProtocolUtils::completeRequestParamsRefFromJson(obj["ref"_L1].toObject()));
+        params.setRef(McpProtocolUtils::completeRequestParamsRefFromJson(obj["ref"_L1].toObject()));
     }
-    return prompt;
+    return params;
 }
 
-QJsonObject McpProtocolCompleteRequestParams::toJson(const McpProtocolCompleteRequestParams &boolean)
+QJsonObject McpProtocolCompleteRequestParams::toJson(const McpProtocolCompleteRequestParams &params)
 {
     QJsonObject obj;
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolCompleteRequestParams::Meta::toJson(*boolean.meta());
+    if (params.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolCompleteRequestParams::Meta::toJson(*params.meta());
     }
-    obj["argument"_L1] = Argument::toJson(boolean.argument());
-    obj["ref"_L1] = McpProtocolUtils::completeRequestParamsRefToJson(boolean.ref());
-    if (boolean.context().has_value()) {
-        obj.insert("context"_L1, Context::toJson(*boolean.context()));
+    obj["argument"_L1] = Argument::toJson(params.argument());
+    obj["ref"_L1] = McpProtocolUtils::completeRequestParamsRefToJson(params.ref());
+    if (params.context().has_value()) {
+        obj.insert("context"_L1, Context::toJson(*params.context()));
     }
     return obj;
 }
@@ -187,9 +187,9 @@ McpProtocolCompleteRequestParams::Argument McpProtocolCompleteRequestParams::arg
     return mArgument;
 }
 
-void McpProtocolCompleteRequestParams::setArgument(const Argument &newArgument)
+void McpProtocolCompleteRequestParams::setArgument(Argument newArgument)
 {
-    mArgument = newArgument;
+    mArgument = std::move(newArgument);
 }
 
 std::optional<McpProtocolCompleteRequestParams::Context> McpProtocolCompleteRequestParams::context() const
@@ -207,9 +207,9 @@ McpProtocolUtils::CompleteRequestParamsRef McpProtocolCompleteRequestParams::ref
     return mRef;
 }
 
-void McpProtocolCompleteRequestParams::setRef(const McpProtocolUtils::CompleteRequestParamsRef &newRef)
+void McpProtocolCompleteRequestParams::setRef(McpProtocolUtils::CompleteRequestParamsRef newRef)
 {
-    mRef = newRef;
+    mRef = std::move(newRef);
 }
 
 std::optional<McpProtocolUtils::ProgressToken> McpProtocolCompleteRequestParams::Meta::progressToken() const

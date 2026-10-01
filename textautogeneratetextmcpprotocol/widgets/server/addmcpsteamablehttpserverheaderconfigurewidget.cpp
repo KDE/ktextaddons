@@ -20,7 +20,7 @@ AddMcpSteamableHttpServerHeaderConfigureWidget::AddMcpSteamableHttpServerHeaderC
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    auto label = new QLabel(i18n("Header:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Header:"), this);
     label->setObjectName(u"label"_s);
     mainLayout->addWidget(label);
 

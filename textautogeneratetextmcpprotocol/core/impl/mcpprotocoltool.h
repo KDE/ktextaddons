@@ -7,38 +7,42 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 
 #include <QByteArray>
+#include <QJsonObject>
+#include <QList>
+#include <QMap>
 #include <QString>
+#include <QStringList>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolIcon>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolAnnotations>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolExecution>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QDebug;
-class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTool
 {
 public:
-    struct InputSchema {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT InputSchema {
         std::optional<QString> mDollarschema;
         std::optional<QMap<QString, QJsonObject>> mProperties;
         std::optional<QStringList> mRequired;
-        const std::optional<QString> &dollarschema() const;
-        const std::optional<QMap<QString, QJsonObject>> &properties() const;
-        const std::optional<QStringList> &required() const;
+        [[nodiscard]] const std::optional<QString> &dollarschema() const;
+        [[nodiscard]] const std::optional<QMap<QString, QJsonObject>> &properties() const;
+        [[nodiscard]] const std::optional<QStringList> &required() const;
         [[nodiscard]] bool operator==(const InputSchema &other) const;
         [[nodiscard]] static McpProtocolTool::InputSchema fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const McpProtocolTool::InputSchema &input);
     };
 
-    struct OutputSchema {
+    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT OutputSchema {
         std::optional<QString> mDollarschema;
         std::optional<QMap<QString, QJsonObject>> mProperties;
         std::optional<QStringList> mRequired;
-        const std::optional<QString> &dollarschema() const;
-        const std::optional<QMap<QString, QJsonObject>> &properties() const;
-        const std::optional<QStringList> &required() const;
+        [[nodiscard]] const std::optional<QString> &dollarschema() const;
+        [[nodiscard]] const std::optional<QMap<QString, QJsonObject>> &properties() const;
+        [[nodiscard]] const std::optional<QStringList> &required() const;
         [[nodiscard]] bool operator==(const OutputSchema &other) const;
         [[nodiscard]] static McpProtocolTool::OutputSchema fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const McpProtocolTool::OutputSchema &input);
@@ -59,7 +63,7 @@ public:
     [[nodiscard]] static McpProtocolTool fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolTool &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolTool &tool);
 
     /*!
      */
@@ -101,7 +105,7 @@ public:
     [[nodiscard]] InputSchema inputSchema() const;
     /*!
      */
-    void setInputSchema(const InputSchema &newInputSchema);
+    void setInputSchema(InputSchema newInputSchema);
 
     /*!
      */

@@ -6,7 +6,6 @@
 
 #include "mcpprotocolurlelicitationrequirederror.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -17,8 +16,8 @@ bool McpProtocolURLElicitationRequiredError::operator==(const McpProtocolURLElic
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError &t)
 {
-    d.space() << "error: " << t.error();
-    d.space() << "id: " << t.id();
+    d.space() << "error:" << t.error();
+    d.space() << "id:" << t.id();
     return d;
 }
 
@@ -42,13 +41,13 @@ McpProtocolURLElicitationRequiredError McpProtocolURLElicitationRequiredError::f
     return result;
 }
 
-QJsonObject McpProtocolURLElicitationRequiredError::toJson(const McpProtocolURLElicitationRequiredError &boolean)
+QJsonObject McpProtocolURLElicitationRequiredError::toJson(const McpProtocolURLElicitationRequiredError &urlElicitationRequiredError)
 {
     QJsonObject obj;
-    obj.insert("error"_L1, McpProtocolError::toJson(boolean.error()));
+    obj.insert("error"_L1, McpProtocolError::toJson(urlElicitationRequiredError.error()));
     obj.insert("jsonrpc"_L1, u"2.0"_s);
-    if (boolean.id().has_value()) {
-        obj.insert("id"_L1, McpProtocolUtils::requestIdToJson(*boolean.id()));
+    if (urlElicitationRequiredError.id().has_value()) {
+        obj.insert("id"_L1, McpProtocolUtils::requestIdToJson(*urlElicitationRequiredError.id()));
     }
     return obj;
 }

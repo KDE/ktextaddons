@@ -6,7 +6,6 @@
 
 #include "mcpprotocolreadresourcerequestparams.h"
 #include <QDebug>
-#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -38,11 +37,11 @@ McpProtocolReadResourceRequestParams::Meta McpProtocolReadResourceRequestParams:
     return meta;
 }
 
-QJsonObject McpProtocolReadResourceRequestParams::Meta::toJson(const McpProtocolReadResourceRequestParams::Meta &image)
+QJsonObject McpProtocolReadResourceRequestParams::Meta::toJson(const McpProtocolReadResourceRequestParams::Meta &meta)
 {
     QJsonObject obj;
-    if (image.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*image.progressToken());
+    if (meta.progressToken().has_value()) {
+        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
     return obj;
 }
@@ -57,12 +56,12 @@ McpProtocolReadResourceRequestParams McpProtocolReadResourceRequestParams::fromJ
     return prompt;
 }
 
-QJsonObject McpProtocolReadResourceRequestParams::toJson(const McpProtocolReadResourceRequestParams &boolean)
+QJsonObject McpProtocolReadResourceRequestParams::toJson(const McpProtocolReadResourceRequestParams &readResourceRequestParams)
 {
     QJsonObject obj;
-    obj["uri"_L1] = boolean.uri();
-    if (boolean.meta().has_value()) {
-        obj["_meta"_L1] = McpProtocolReadResourceRequestParams::Meta::toJson(*boolean.meta());
+    obj["uri"_L1] = readResourceRequestParams.uri();
+    if (readResourceRequestParams.meta().has_value()) {
+        obj["_meta"_L1] = McpProtocolReadResourceRequestParams::Meta::toJson(*readResourceRequestParams.meta());
     }
     return obj;
 }

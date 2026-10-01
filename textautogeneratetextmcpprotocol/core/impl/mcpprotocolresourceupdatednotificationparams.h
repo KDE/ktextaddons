@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <optional>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -27,7 +28,7 @@ public:
     [[nodiscard]] static McpProtocolResourceUpdatedNotificationParams fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceUpdatedNotificationParams &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolResourceUpdatedNotificationParams &resourceUpdatedNotificationParams);
 
     /*!
      */

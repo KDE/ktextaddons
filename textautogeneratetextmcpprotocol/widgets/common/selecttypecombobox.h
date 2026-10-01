@@ -7,7 +7,7 @@
 #pragma once
 #include "mcpprotocolwidgets_private_export.h"
 #include <QComboBox>
-#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT SelectTypeComboBox : public QComboBox

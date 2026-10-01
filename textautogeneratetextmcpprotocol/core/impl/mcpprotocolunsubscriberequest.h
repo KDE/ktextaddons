@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static McpProtocolUnsubscribeRequest fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolUnsubscribeRequest &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolUnsubscribeRequest &unsubscribeRequest);
 
     /*!
      */

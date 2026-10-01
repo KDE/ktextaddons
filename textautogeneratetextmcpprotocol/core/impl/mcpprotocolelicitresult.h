@@ -10,6 +10,7 @@
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <optional>
 class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -29,9 +30,6 @@ public:
     /*!
      */
     McpProtocolElicitResult();
-    /*!
-     */
-    ~McpProtocolElicitResult();
 
     /*!
      */
@@ -42,7 +40,7 @@ public:
     [[nodiscard]] static McpProtocolElicitResult fromJson(const QJsonObject &obj);
     /*!
      */
-    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitResult &image);
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolElicitResult &result);
 
     /*!
      */

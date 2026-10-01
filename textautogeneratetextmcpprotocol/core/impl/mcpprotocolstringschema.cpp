@@ -40,8 +40,8 @@ McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj
         return {};
     }
 
-    if (obj.contains("default"_L1)) {
-        prompt.setDefaultValue(obj.value("default"_L1).toBool());
+    if (const QJsonValue defaultValue = obj.value("default"_L1); defaultValue.isString()) {
+        prompt.setDefaultValue(defaultValue.toString());
     }
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
@@ -62,27 +62,27 @@ McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj
     return prompt;
 }
 
-QJsonObject McpProtocolStringSchema::toJson(const McpProtocolStringSchema &boolean)
+QJsonObject McpProtocolStringSchema::toJson(const McpProtocolStringSchema &stringSchema)
 {
     QJsonObject obj;
     obj["type"_L1] = QString::fromLatin1(McpProtocolStringSchema::type());
-    if (boolean.defaultValue().has_value()) {
-        obj["default"_L1] = *boolean.defaultValue();
+    if (stringSchema.defaultValue().has_value()) {
+        obj["default"_L1] = *stringSchema.defaultValue();
     }
-    if (boolean.description().has_value()) {
-        obj["description"_L1] = *boolean.description();
+    if (stringSchema.description().has_value()) {
+        obj["description"_L1] = *stringSchema.description();
     }
-    if (boolean.title().has_value()) {
-        obj["title"_L1] = *boolean.title();
+    if (stringSchema.title().has_value()) {
+        obj["title"_L1] = *stringSchema.title();
     }
-    if (boolean.format().has_value()) {
-        obj["format"_L1] = McpProtocolStringSchema::convertModeToString(*boolean.format());
+    if (stringSchema.format().has_value() && *stringSchema.format() != Format::Unknown) {
+        obj["format"_L1] = McpProtocolStringSchema::convertModeToString(*stringSchema.format());
     }
-    if (boolean.maxLength().has_value()) {
-        obj["maxLength"_L1] = *boolean.maxLength();
+    if (stringSchema.maxLength().has_value()) {
+        obj["maxLength"_L1] = *stringSchema.maxLength();
     }
-    if (boolean.minLength().has_value()) {
-        obj["minLength"_L1] = *boolean.minLength();
+    if (stringSchema.minLength().has_value()) {
+        obj["minLength"_L1] = *stringSchema.minLength();
     }
     return obj;
 }
@@ -107,14 +107,14 @@ void McpProtocolStringSchema::setTitle(std::optional<QString> newTitle)
     mTitle = std::move(newTitle);
 }
 
-std::optional<bool> McpProtocolStringSchema::defaultValue() const
+std::optional<QString> McpProtocolStringSchema::defaultValue() const
 {
     return mDefaultValue;
 }
 
-void McpProtocolStringSchema::setDefaultValue(std::optional<bool> newDefaultValue)
+void McpProtocolStringSchema::setDefaultValue(std::optional<QString> newDefaultValue)
 {
-    mDefaultValue = newDefaultValue;
+    mDefaultValue = std::move(newDefaultValue);
 }
 
 std::optional<int> McpProtocolStringSchema::minLength() const
@@ -147,13 +147,13 @@ void McpProtocolStringSchema::setFormat(std::optional<Format> newFormat)
     mFormat = newFormat;
 }
 
-QString McpProtocolStringSchema::convertModeToString(McpProtocolStringSchema::Format mode)
+QString McpProtocolStringSchema::convertModeToString(McpProtocolStringSchema::Format format)
 {
-    switch (mode) {
+    switch (format) {
     case Format::Date:
         return u"date"_s;
-    case Format::Dateminustime:
-        return u"dateminustime"_s;
+    case Format::DateTime:
+        return u"date-time"_s;
     case Format::Email:
         return u"email"_s;
     case Format::Uri:
@@ -169,8 +169,8 @@ McpProtocolStringSchema::Format McpProtocolStringSchema::convertModeFromString(c
 {
     if (str == "date"_L1) {
         return Format::Date;
-    } else if (str == "dateminustime"_L1) {
-        return Format::Dateminustime;
+    } else if (str == "date-time"_L1) {
+        return Format::DateTime;
     } else if (str == "email"_L1) {
         return Format::Email;
     } else if (str == "uri"_L1) {

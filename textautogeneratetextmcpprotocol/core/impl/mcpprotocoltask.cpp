@@ -16,13 +16,13 @@ bool McpProtocolTask::operator==(const McpProtocolTask &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTask &t)
 {
-    d.space() << "createdAt" << t.createdAt();
-    d.space() << "lastUpdatedAt" << t.lastUpdatedAt();
-    d.space() << "pollInterval" << t.pollInterval();
-    d.space() << "status" << convertTaskStatusToString(t.status());
-    d.space() << "statusMessage" << t.statusMessage();
-    d.space() << "taskId" << t.taskId();
-    d.space() << "ttl" << t.ttl();
+    d.space() << "createdAt:" << t.createdAt();
+    d.space() << "lastUpdatedAt:" << t.lastUpdatedAt();
+    d.space() << "pollInterval:" << t.pollInterval();
+    d.space() << "status:" << convertTaskStatusToString(t.status());
+    d.space() << "statusMessage:" << t.statusMessage();
+    d.space() << "taskId:" << t.taskId();
+    d.space() << "ttl:" << t.ttl();
 
     return d;
 }
@@ -32,8 +32,8 @@ McpProtocolTask McpProtocolTask::fromJson(const QJsonObject &obj)
     McpProtocolTask text;
     text.setCreatedAt(obj.value("createdAt"_L1).toString());
     text.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
-    if (obj.contains("pollInterval"_L1)) {
-        text.setPollInterval(obj.value("pollInterval"_L1).toInt());
+    if (const QJsonValue pollIntervalValue = obj.value("pollInterval"_L1); pollIntervalValue.isDouble()) {
+        text.setPollInterval(pollIntervalValue.toInteger());
     }
     if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
         text.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
@@ -42,8 +42,8 @@ McpProtocolTask McpProtocolTask::fromJson(const QJsonObject &obj)
         text.setStatusMessage(obj.value("statusMessage"_L1).toString());
     }
     text.setTaskId(obj.value("taskId"_L1).toString());
-    if (!obj["ttl"_L1].isNull()) {
-        text.setTtl(obj.value("ttl"_L1).toInt());
+    if (const QJsonValue ttlValue = obj.value("ttl"_L1); ttlValue.isDouble()) {
+        text.setTtl(ttlValue.toInteger());
     }
     return text;
 }
@@ -89,12 +89,12 @@ void McpProtocolTask::setLastUpdatedAt(const QString &newLastUpdatedAt)
     mLastUpdatedAt = newLastUpdatedAt;
 }
 
-std::optional<int> McpProtocolTask::pollInterval() const
+std::optional<qint64> McpProtocolTask::pollInterval() const
 {
     return mPollInterval;
 }
 
-void McpProtocolTask::setPollInterval(std::optional<int> newPollInterval)
+void McpProtocolTask::setPollInterval(std::optional<qint64> newPollInterval)
 {
     mPollInterval = newPollInterval;
 }
@@ -129,12 +129,12 @@ void McpProtocolTask::setTaskId(const QString &newTaskId)
     mTaskId = newTaskId;
 }
 
-std::optional<int> McpProtocolTask::ttl() const
+std::optional<qint64> McpProtocolTask::ttl() const
 {
     return mTtl;
 }
 
-void McpProtocolTask::setTtl(std::optional<int> newTtl)
+void McpProtocolTask::setTtl(std::optional<qint64> newTtl)
 {
     mTtl = newTtl;
 }

@@ -5,8 +5,9 @@
 */
 
 #include "mcpprotocolimagecontent.h"
-#include <QDebug>
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolImageContent::McpProtocolImageContent() = default;
@@ -67,7 +68,8 @@ McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj
 {
     McpProtocolImageContent image;
     if (obj.value("type"_L1).toString() != QString::fromLatin1(McpProtocolImageContent::type())) {
-        qWarning() << "McpProtocolAudioContent: type is not correct " << obj.value("type"_L1).toString();
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolImageContent: field 'type' must be" << McpProtocolImageContent::type() << "got:" << obj.value("type"_L1).toString();
         return {};
     }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
