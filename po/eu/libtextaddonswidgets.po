@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 02:52+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-28 20:40+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -159,7 +159,7 @@ msgstr "Ezin izan da eranskina ireki."
 msgid "Restart is necessary for applying the changes."
 msgstr "Aldaketak aplikatzeko berrabiarazi egin behar da."
 
-#: plugins/configurepluginswidget.cpp:161
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -225,19 +225,19 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "Esteka txertatu"
 
-#: selectspecialchardialog.cpp:31
+#: selectspecialchardialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Karaktere bereziak hautatu"
 
-#: selectspecialchardialog.cpp:39
+#: selectspecialchardialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Sartu"
 
-#: selectspecialchardialog.cpp:53
+#: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"

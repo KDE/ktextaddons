@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 02:52+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-23 12:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -148,7 +148,7 @@ msgstr "No s'ha pogut obrir l'adjunt."
 msgid "Restart is necessary for applying the changes."
 msgstr "Cal reiniciar per a aplicar els canvis."
 
-#: plugins/configurepluginswidget.cpp:161
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -214,19 +214,19 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "Insereix un enllaç"
 
-#: selectspecialchardialog.cpp:31
+#: selectspecialchardialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Selecció de caràcters especials"
 
-#: selectspecialchardialog.cpp:39
+#: selectspecialchardialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Insereix"
 
-#: selectspecialchardialog.cpp:53
+#: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"

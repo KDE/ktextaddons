@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 02:52+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-26 09:30+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -153,7 +153,7 @@ msgstr "Не удалось открыть вложение."
 msgid "Restart is necessary for applying the changes."
 msgstr "Для применения изменений требуется перезапуск приложения"
 
-#: plugins/configurepluginswidget.cpp:161
+#: plugins/configurepluginswidget.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -219,19 +219,19 @@ msgctxt "@info:tooltip"
 msgid "Insert Link"
 msgstr "Вставить"
 
-#: selectspecialchardialog.cpp:31
+#: selectspecialchardialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Выбор специальных символов"
 
-#: selectspecialchardialog.cpp:39
+#: selectspecialchardialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Вставить"
 
-#: selectspecialchardialog.cpp:53
+#: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"

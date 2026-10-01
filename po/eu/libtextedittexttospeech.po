@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-28 21:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -68,7 +68,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro ezin da erabili. Berrinstalatu, mesedez."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:314
+#: texttospeechconfigwidget.cpp:318
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro ez dago instalatuta. Falta dena: %1"
@@ -105,52 +105,52 @@ msgstr "Ahotsa(k) hautatu:"
 msgid "Download Voice(s)"
 msgstr "Ahotsa(k) zama-jaitsi"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:57
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:58
 #, kde-format
 msgid "Download Voices done."
 msgstr "Ahotsen zama-jaitsiera osatu da."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:64
 #, kde-format
 msgid "Unable to download voice."
 msgstr "Ezin da ahotsa zama-jaitsi."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:91
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
 msgstr "espeak-ng falta da. Zure pakete-kudeatzailearekin instalatu, mesedez."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:95
 #, kde-format
 msgid "Nothing to install."
 msgstr "Ez dago instalatzeko ezer."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Creating the python virtual environment…"
 msgstr "Pythonen alegiazko ingurunea sortzen…"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:104
 #, kde-format
 msgid "Python virtual environment created."
 msgstr "Pythonen alegiazko ingurunea sortu da."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:105
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Unable to create the python virtual environment."
 msgstr "Ezin da Pythonen alegiazko ingurunea sortu."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:122
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:125
 #, kde-format
 msgid "Installing modules: %1"
 msgstr "Moduluak instalatzen: %1"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:127
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installation done."
 msgstr "Instalazioa osatu da."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:131
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:134
 #, kde-format
 msgid "Installation failed."
 msgstr "Instalazioak huts egin du."
@@ -275,9 +275,10 @@ msgstr "Ahotsa:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:319
-#, kde-format
-msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#: texttospeechconfigwidget.cpp:323
+#, fuzzy, kde-format
+#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
 "Kokoro instalazioa hondatuta dago. Zure sistema-administratzailearekin "
 "egiaztatu, mesedez."

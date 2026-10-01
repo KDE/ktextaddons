@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-22 22:21+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro е неизползваем. Моля, преинсталирайте го."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:314
+#: texttospeechconfigwidget.cpp:318
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro не е инсталиран. Липсва: %1"
@@ -95,52 +95,52 @@ msgstr "Избиране на гласове:"
 msgid "Download Voice(s)"
 msgstr "Изтегляне на гласове"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:57
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:58
 #, kde-format
 msgid "Download Voices done."
 msgstr "Изтеглянето на гласовете е завършено."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:61
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:64
 #, kde-format
 msgid "Unable to download voice."
 msgstr "Неуспешно изтегляне на глас."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:88
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:91
 #, kde-format
 msgid "espeak-ng is missing. Please install it with your package manager."
 msgstr "espeak-ng липсва. Моля, инсталирайте го чрез вашия мениджър на пакети."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:92
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:95
 #, kde-format
 msgid "Nothing to install."
 msgstr "Няма какво да се инсталира."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:98
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Creating the python virtual environment…"
 msgstr "Създаване на виртуална среда на Python…"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:104
 #, kde-format
 msgid "Python virtual environment created."
 msgstr "Създадена е виртуална Python среда."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:105
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Unable to create the python virtual environment."
 msgstr "Създаването на виртуална среда за Python е невъзможно."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:122
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:125
 #, kde-format
 msgid "Installing modules: %1"
 msgstr "Инсталиране на модули: %1"
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:127
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installation done."
 msgstr "Инсталацията е завършена."
 
-#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:131
+#: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:134
 #, kde-format
 msgid "Installation failed."
 msgstr "Неуспешна инсталация."
@@ -265,9 +265,10 @@ msgstr "Глас:"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:319
-#, kde-format
-msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#: texttospeechconfigwidget.cpp:323
+#, fuzzy, kde-format
+#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
 "Инсталацията на Kokoro е повредена. Моля, свържете се със системния "
 "администратор."

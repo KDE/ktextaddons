@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-27 10:57+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -110,7 +110,7 @@ msgid "Error: %1"
 msgstr "Fel: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
@@ -192,6 +192,18 @@ msgstr "Modellen %1 är nerladdad."
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
+msgstr "Kan inte ladda ner modellen %1: %2"
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model."
+msgid "Unable to start %1"
+msgstr "Kan inte ladda ner modellen %1."
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
+#, fuzzy, kde-format
+#| msgid "Unable to download the %1 model: %2"
+msgid "Unable to install module. Exit code: %1"
 msgstr "Kan inte ladda ner modellen %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20

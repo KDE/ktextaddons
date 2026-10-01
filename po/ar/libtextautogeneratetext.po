@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 02:52+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2026-09-30 19:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Lokalize 25.12.3\n"
 
-#: core/jobs/textautogenerateaskjob.cpp:35
+#: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
 msgstr "يتعذر بدء المهمة. المدير لاغٍ أو النص فارغ."
@@ -34,15 +34,33 @@ msgid "Failed to write to file: %1"
 msgstr "فشل الكتابة إلى الملف : %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:75
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:76
 #, kde-format
 msgid "Json File"
 msgstr "ملف  جوسن JSON"
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:67
+#: core/jobs/textautogenerateexportchatbasejob.cpp:38
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to export file."
+msgstr "من المستحيل بدء أولاما."
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
+#, fuzzy, kde-format
+#| msgid "Failed to write to file: %1"
+msgid "Failed to parse JSon file: %1"
+msgstr "فشل الكتابة إلى الملف : %1"
+
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr "فشل فتح ملف للقراءة: %1"
+
+#: core/jobs/textautogenerateimportchatbasejob.cpp:37
+#, fuzzy, kde-format
+#| msgid "Impossible to start Ollama."
+msgid "Impossible to import file."
+msgstr "من المستحيل بدء أولاما."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -213,30 +231,29 @@ msgstr "<br><b>رمز الأمر:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>رمز الإكمال:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "ملحقات الأدوات:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "معرف الأداة: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "يعمل"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "مغلق"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:235
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
@@ -610,7 +627,7 @@ msgctxt "@action:button"
 msgid "Create Model"
 msgstr "أنشئ النموذج"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
@@ -681,12 +698,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "أزل النموذج المحدد"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:113
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "أتريد إزالة هذه النموذج (%1)؟"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -3184,6 +3201,12 @@ msgstr "الرموز المميزة القصوى:"
 #, kde-format
 msgid "Text Plugins:"
 msgstr "ملحقات النصوص:"
+
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#, fuzzy, kde-format
+#| msgid "Tool identifier: %1"
+msgid "Text identifier: %1"
+msgstr "معرف الأداة: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format

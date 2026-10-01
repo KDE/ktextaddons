@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 19:09+0000\n"
+"POT-Creation-Date: 2026-10-01 20:13+0000\n"
 "PO-Revision-Date: 2024-07-14 12:32+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -111,7 +111,7 @@ msgid "Error: %1"
 msgstr "Błąd: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:29
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
@@ -193,6 +193,16 @@ msgstr ""
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
+msgstr ""
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
+#, kde-format
+msgid "Unable to start %1"
+msgstr ""
+
+#: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
+#, kde-format
+msgid "Unable to install module. Exit code: %1"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
