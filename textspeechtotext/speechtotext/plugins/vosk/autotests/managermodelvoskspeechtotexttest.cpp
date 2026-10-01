@@ -4,11 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "managermodelvoskspeechtotexttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "managermodelvoskspeechtotext.h"
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(ManagerModelVoskSpeechToTextTest)
 ManagerModelVoskSpeechToTextTest::ManagerModelVoskSpeechToTextTest(QObject *parent)
     : QObject{parent}

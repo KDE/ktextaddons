@@ -5,13 +5,15 @@
 */
 
 #include "begamotenginedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
+
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 const char myConfigGroupName[] = "BegamotEngineDialog";

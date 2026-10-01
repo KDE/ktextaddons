@@ -5,7 +5,6 @@
 */
 
 #include "selectspecialchardialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KCharSelect>
 #include <KLocalizedString>
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
+
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";

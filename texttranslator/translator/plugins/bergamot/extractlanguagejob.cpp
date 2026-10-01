@@ -5,13 +5,14 @@
 */
 
 #include "extractlanguagejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotengineutils.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
 #include <KTar>
 #include <QDir>
+
+using namespace Qt::Literals::StringLiterals;
 
 ExtractLanguageJob::ExtractLanguageJob(QObject *parent)
     : QObject{parent}

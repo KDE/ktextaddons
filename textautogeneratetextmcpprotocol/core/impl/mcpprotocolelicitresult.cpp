@@ -7,7 +7,10 @@
 #include "mcpprotocolelicitresult.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <utility>
+
 using namespace Qt::Literals::StringLiterals;
+
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitResult::McpProtocolElicitResult() = default;
 
@@ -114,4 +117,3 @@ McpProtocolElicitResult::Action McpProtocolElicitResult::convertActionFromString
 }
 
 #include "moc_mcpprotocolelicitresult.cpp"
-#include <utility>

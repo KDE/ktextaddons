@@ -5,7 +5,6 @@
 */
 
 #include "bergamotengineclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "begamotenginedialog.h"
 #include "bergamotengineplugin.h"
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QPointer>
+
+using namespace Qt::Literals::StringLiterals;
 
 BergamotEngineClient::BergamotEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}

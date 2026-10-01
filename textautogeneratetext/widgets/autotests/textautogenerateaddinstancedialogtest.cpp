@@ -4,13 +4,15 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancedialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/instancesmanager/textautogenerateaddinstancedialog.h"
 #include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
 #include <QDialogButtonBox>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(TextAutoGenerateAddInstanceDialogTest)
 
 TextAutoGenerateAddInstanceDialogTest::TextAutoGenerateAddInstanceDialogTest(QObject *parent)

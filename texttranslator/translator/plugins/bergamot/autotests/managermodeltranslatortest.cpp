@@ -5,11 +5,13 @@
 */
 
 #include "managermodeltranslatortest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "managermodeltranslator.h"
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(ManagerModelTranslatorTest)
 ManagerModelTranslatorTest::ManagerModelTranslatorTest(QObject *parent)
     : QObject{parent}

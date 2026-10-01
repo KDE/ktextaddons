@@ -5,13 +5,15 @@
 */
 
 #include "bergamotenginewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginewidget.h"
 #include <QStandardPaths>
 #include <QTabWidget>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(BergamotEngineWidgetTest)
 BergamotEngineWidgetTest::BergamotEngineWidgetTest(QObject *parent)
     : QObject{parent}

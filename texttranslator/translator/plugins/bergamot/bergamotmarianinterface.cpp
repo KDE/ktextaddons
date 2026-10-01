@@ -7,13 +7,14 @@
 */
 
 #include "bergamotmarianinterface.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
 #include <slimt/Frontend.hh>
 #include <slimt/Model.hh>
 #include <slimt/Response.hh>
+
+using namespace Qt::Literals::StringLiterals;
 
 struct TranslationInput {
     std::string text;

@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskenginedialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "voskenginedialog.h"
 #include "voskenginelanguagewidget.h"
@@ -12,6 +11,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(VoskEngineDialogTest)
 VoskEngineDialogTest::VoskEngineDialogTest(QObject *parent)
     : QObject{parent}

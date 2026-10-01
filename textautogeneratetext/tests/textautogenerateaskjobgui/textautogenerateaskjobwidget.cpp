@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaskjobwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextAutoGenerateText/TextAutoGenerateAskJob>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateTextInstancesManagerDialog>
+
+using namespace Qt::Literals::StringLiterals;
 
 TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
     : QWidget{parent}

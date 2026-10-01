@@ -5,7 +5,6 @@
 */
 
 #include "begamotenginedialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "begamotenginedialog.h"
 #include "bergamotenginewidget.h"
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(BegamotEngineDialogTest)
 BegamotEngineDialogTest::BegamotEngineDialogTest(QObject *parent)
     : QObject{parent}

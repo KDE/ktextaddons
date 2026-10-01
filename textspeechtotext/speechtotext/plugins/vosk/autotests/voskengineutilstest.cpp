@@ -5,7 +5,6 @@
 */
 
 #include "voskengineutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "voskengineutils.h"
 #include <KConfigGroup>
@@ -13,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDir>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(VoskEngineUtilsTest)
 VoskEngineUtilsTest::VoskEngineUtilsTest(QObject *parent)

@@ -5,7 +5,6 @@
 */
 
 #include "bergamotengineutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libbergamot_debug.h"
 #include "translator.h"
@@ -18,6 +17,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonDocument>
 #include <QLocale>
 #include <QStandardPaths>
+
+using namespace Qt::Literals::StringLiterals;
 
 QString BergamotEngineUtils::defaultBergamotRepository()
 {

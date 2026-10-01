@@ -5,13 +5,14 @@
 */
 
 #include "whisperspeechtotextinstalljobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextinstalljob.h"
 #include "whisperspeechtotextutils.h"
 #include <QPointer>
 #include <QSignalSpy>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(WhisperSpeechToTextInstallJobTest)
 WhisperSpeechToTextInstallJobTest::WhisperSpeechToTextInstallJobTest(QObject *parent)

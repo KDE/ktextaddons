@@ -5,11 +5,13 @@
 */
 
 #include "translatortest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator.h"
 #include <QJsonDocument>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(TranslatorTest)
 TranslatorTest::TranslatorTest(QObject *parent)
     : QObject{parent}
