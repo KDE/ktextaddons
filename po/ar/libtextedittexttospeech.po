@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-23 17:54+0400\n"
+"PO-Revision-Date: 2026-09-30 19:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -267,10 +267,9 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
-msgstr "تركيب Kokoro مكسور. يرجى التحقق من ذلك إذا كنت مسؤول النظام."
+msgstr "تركيب Kokoro مكسور. راجع مسؤول النظام."
 
 #: texttospeechwidget.cpp:56
 #, kde-format

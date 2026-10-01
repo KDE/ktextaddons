@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 09:13-0300\n"
+"PO-Revision-Date: 2026-09-30 09:43-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -196,16 +196,14 @@ msgid "Unable to download the %1 model: %2"
 msgstr "Não foi possível baixar o modelo %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model."
+#, kde-format
 msgid "Unable to start %1"
-msgstr "Não foi possível baixar o modelo %1."
+msgstr "Não foi possível iniciar %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model: %2"
+#, kde-format
 msgid "Unable to install module. Exit code: %1"
-msgstr "Não foi possível baixar o modelo %1: %2"
+msgstr "Não foi possível instalar o módulo. Código de saída: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
 #, kde-format

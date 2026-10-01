@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-25 16:43+0400\n"
+"PO-Revision-Date: 2026-09-30 19:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -40,16 +40,14 @@ msgid "Json File"
 msgstr "ملف  جوسن JSON"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "من المستحيل بدء أولاما."
+msgstr "من المستحيل تصدير الملف."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "فشل الكتابة إلى الملف : %1"
+msgstr "فشَلَ تحليل ملف جوسن %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -57,10 +55,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "فشل فتح ملف للقراءة: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "من المستحيل بدء أولاما."
+msgstr "من المستحيل استيراد الملف."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -68,11 +65,9 @@ msgid "New Chat..."
 msgstr "محادثة جديدة…"
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "عام"
+msgstr "Ephemeral"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -3205,10 +3200,9 @@ msgid "Text Plugins:"
 msgstr "ملحقات النصوص:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "معرف الأداة: %1"
+msgstr "معرف النص: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
@@ -3476,12 +3470,10 @@ msgid "New Chat"
 msgstr "محادثة جديدة"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "أزل المناقة"
+msgstr "مناقشة Ephemeral"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format

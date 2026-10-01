@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-26 19:49+0300\n"
+"PO-Revision-Date: 2026-09-30 10:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -39,16 +39,14 @@ msgid "Json File"
 msgstr "JSON dosyası"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Ollama’yı başlatmak olanaksız."
+msgstr "Dosyayı dışa aktarmak olanaksız."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "Dosyaya yazılamadı: %1"
+msgstr "JSON dosyası ayrıştırılamadı: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -56,10 +54,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "Dosya, okumak için açılamadı: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Ollama’yı başlatmak olanaksız."
+msgstr "Dosya içe aktarmak olanaksız."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -3299,10 +3296,9 @@ msgid "Text Plugins:"
 msgstr "Metin eklentileri:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Araç tanımlayıcısı: %1"
+msgstr "Metin tanımlayıcısı: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-17 08:57+0300\n"
+"PO-Revision-Date: 2026-09-30 17:16+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -198,16 +198,14 @@ msgid "Unable to download the %1 model: %2"
 msgstr "Не вдалося отримати модель %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model."
+#, kde-format
 msgid "Unable to start %1"
-msgstr "Не вдалося отримати модель %1."
+msgstr "Не вдалося запустити %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model: %2"
+#, kde-format
 msgid "Unable to install module. Exit code: %1"
-msgstr "Не вдалося отримати модель %1: %2"
+msgstr "Не вдалося встановити модуль. Код виходу: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
 #, kde-format

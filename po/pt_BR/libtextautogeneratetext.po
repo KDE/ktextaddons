@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-26 05:53-0300\n"
+"PO-Revision-Date: 2026-09-30 09:42-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -42,16 +42,14 @@ msgid "Json File"
 msgstr "Arquivo json"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Impossível iniciar o Ollama."
+msgstr "Impossível exportar o arquivo."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "Falha ao gravar no arquivo : %1"
+msgstr "Falha ao analisar o arquivo JSON: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -59,10 +57,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "Falha ao abrir o arquivo para leitura: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Impossível iniciar o Ollama."
+msgstr "Impossível importar o arquivo."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -3327,10 +3324,9 @@ msgid "Text Plugins:"
 msgstr "Plugins de texto:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Identificador da ferramenta: %1"
+msgstr "Identificador de texto: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format

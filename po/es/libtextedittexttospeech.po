@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextedittexttospeech\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-18 15:08+0100\n"
+"PO-Revision-Date: 2026-10-01 00:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -268,8 +268,7 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
 "La instalación de Kokoro está dañada. Consúltelo con el administrador del "

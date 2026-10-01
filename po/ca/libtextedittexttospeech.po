@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-18 11:17+0200\n"
+"PO-Revision-Date: 2026-09-30 09:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: kokoro/texttospeechkokoro.cpp:124
 #, kde-format
@@ -268,12 +268,11 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
-"La instal·lació del Kokoro està trencada. Comproveu el sistema que "
-"administreu."
+"La instal·lació del Kokoro està trencada. Comproveu-ho amb el vostre "
+"administrador del sistema."
 
 #: texttospeechwidget.cpp:56
 #, kde-format

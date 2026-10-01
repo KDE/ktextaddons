@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:44+0000\n"
-"PO-Revision-Date: 2026-09-18 19:14+0300\n"
+"PO-Revision-Date: 2026-09-30 10:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -267,10 +267,9 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
-msgstr "Kokoro kurulumu bozuk veya hasarlı. Lütfen gerekli denetimleri yapın."
+msgstr "Kokoro kurulumu bozuk veya hasarlı. Lütfen sistem yöneticinizle bakın."
 
 #: texttospeechwidget.cpp:56
 #, kde-format
