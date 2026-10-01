@@ -4,13 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskspeechtotextclient.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "voskenginedialog.h"
 #include "voskengineutils.h"
 #include "voskspeechtotextplugin.h"
 #include <KLocalizedString>
 #include <QPointer>
+
+using namespace Qt::Literals::StringLiterals;
 
 VoskSpeechToTextClient::VoskSpeechToTextClient(QObject *parent)
     : TextSpeechToText::SpeechToTextClient{parent}

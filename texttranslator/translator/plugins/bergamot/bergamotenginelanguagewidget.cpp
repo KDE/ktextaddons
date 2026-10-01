@@ -5,7 +5,6 @@
 */
 
 #include "bergamotenginelanguagewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libbergamot_debug.h"
 #include "translatormodel.h"
@@ -20,6 +19,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 #include <KLineEditEventHandler>
+
+using namespace Qt::Literals::StringLiterals;
 
 BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}

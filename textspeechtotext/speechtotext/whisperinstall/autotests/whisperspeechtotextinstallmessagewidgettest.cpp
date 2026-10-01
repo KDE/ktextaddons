@@ -5,13 +5,14 @@
 */
 
 #include "whisperspeechtotextinstallmessagewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextinstallmessagewidget.h"
 #include <QAction>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(WhisperSpeechToTextInstallMessageWidgetTest)
 WhisperSpeechToTextInstallMessageWidgetTest::WhisperSpeechToTextInstallMessageWidgetTest(QObject *parent)

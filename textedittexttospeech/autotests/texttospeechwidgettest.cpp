@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeechinterface.h"
 #include "texttospeechsliderwidget.h"
@@ -16,6 +15,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
+
+using namespace Qt::Literals::StringLiterals;
 
 Q_DECLARE_METATYPE(TextEditTextToSpeech::TextToSpeechWidget::State)
 QTEST_MAIN(TextToSpeechWidgetTest)

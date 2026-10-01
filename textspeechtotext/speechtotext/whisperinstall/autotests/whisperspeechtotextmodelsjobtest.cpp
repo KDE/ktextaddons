@@ -5,13 +5,14 @@
 */
 
 #include "whisperspeechtotextmodelsjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextmodelsjob.h"
 #include "whisperspeechtotextutils.h"
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(WhisperSpeechToTextModelsJobTest)
 WhisperSpeechToTextModelsJobTest::WhisperSpeechToTextModelsJobTest(QObject *parent)

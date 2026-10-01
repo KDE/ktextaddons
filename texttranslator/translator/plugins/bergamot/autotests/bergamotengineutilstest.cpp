@@ -5,11 +5,12 @@
 */
 
 #include "bergamotengineutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotengineutils.h"
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(BergamotEngineUtilsTest)
 BergamotEngineUtilsTest::BergamotEngineUtilsTest(QObject *parent)

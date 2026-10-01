@@ -5,7 +5,6 @@
 */
 
 #include "autocorrectiontextedittest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QPlainTextEdit>
 #include <QStandardPaths>
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextAutoCorrectionCore/AutoCorrection>
 #include <TextAutoCorrectionCore/AutoCorrectionSettings>
 #include <TextAutoCorrectionWidgets/AutoCorrector>
+
+using namespace Qt::Literals::StringLiterals;
 
 using namespace TextAutoCorrectionWidgets;
 

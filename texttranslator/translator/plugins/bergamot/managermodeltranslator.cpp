@@ -5,7 +5,6 @@
 */
 
 #include "managermodeltranslator.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotengineutils.h"
 #include "downloadlanguagejob.h"
@@ -18,6 +17,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <TextTranslator/TranslatorEngineAccessManager>
+
+using namespace Qt::Literals::StringLiterals;
 
 ManagerModelTranslator::ManagerModelTranslator(QObject *parent)
     : QObject{parent}

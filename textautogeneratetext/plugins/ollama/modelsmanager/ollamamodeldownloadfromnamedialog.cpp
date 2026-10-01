@@ -5,13 +5,15 @@
 */
 
 #include "ollamamodeldownloadfromnamedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamodeldownloadfromnamewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 OllamaModelDownloadFromNameDialog::OllamaModelDownloadFromNameDialog(QWidget *parent)
     : QDialog(parent)
     , mOllamaModelDownloadFromNameWidget(new OllamaModelDownloadFromNameWidget(this))

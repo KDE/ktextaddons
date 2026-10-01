@@ -5,13 +5,14 @@
 */
 
 #include "whisperspeechtotextutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextutils.h"
 #include <QDir>
 #include <QFileInfo>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(WhisperSpeechToTextUtilsTest)
 WhisperSpeechToTextUtilsTest::WhisperSpeechToTextUtilsTest(QObject *parent)

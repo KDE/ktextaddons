@@ -5,12 +5,13 @@
 */
 
 #include "downloadlanguagejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
 #include <QStandardPaths>
+
+using namespace Qt::Literals::StringLiterals;
 
 int main(int argc, char **argv)
 {

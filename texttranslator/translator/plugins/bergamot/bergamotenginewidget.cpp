@@ -5,12 +5,13 @@
 */
 
 #include "bergamotenginewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginelanguagewidget.h"
 #include <KLocalizedString>
 #include <QTabWidget>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
 
 BergamotEngineWidget::BergamotEngineWidget(QWidget *parent)
     : QWidget{parent}

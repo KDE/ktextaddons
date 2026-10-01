@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "bergamotenginesettingswidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QCheckBox>
@@ -13,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <thread>
+
+using namespace Qt::Literals::StringLiterals;
 
 BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     : QWidget{parent}

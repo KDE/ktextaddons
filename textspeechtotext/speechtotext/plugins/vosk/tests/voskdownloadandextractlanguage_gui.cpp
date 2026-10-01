@@ -5,13 +5,14 @@
 */
 
 #include "voskdownloadlanguagejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
 #include <QFileInfo>
 #include <QStandardPaths>
+
+using namespace Qt::Literals::StringLiterals;
 
 int main(int argc, char **argv)
 {

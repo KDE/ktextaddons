@@ -5,12 +5,13 @@
 */
 
 #include "whisperspeechtotextdevicetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextdevice.h"
 #include "whisperspeechtotextutils.h"
 #include <QSignalSpy>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(WhisperSpeechToTextDeviceTest)
 WhisperSpeechToTextDeviceTest::WhisperSpeechToTextDeviceTest(QObject *parent)

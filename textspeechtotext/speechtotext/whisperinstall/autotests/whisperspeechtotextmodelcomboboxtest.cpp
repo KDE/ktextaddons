@@ -5,13 +5,14 @@
 */
 
 #include "whisperspeechtotextmodelcomboboxtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "whisperspeechtotextmodelcombobox.h"
 #include "whisperspeechtotextutils.h"
 #include <QFont>
 #include <QSignalSpy>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace
 {

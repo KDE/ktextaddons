@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatefromexistingmodelwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/ollamamodelcreatecombobox.h"
 #include "modelsmanager/ollamamodelcreatefromexistingmodelwidget.h"
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(OllamaModelCreateFromExistingModelWidgetTest)
 OllamaModelCreateFromExistingModelWidgetTest::OllamaModelCreateFromExistingModelWidgetTest(QObject *parent)

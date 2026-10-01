@@ -7,7 +7,6 @@
 */
 
 #include "deeplengineplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "deeplengineutil.h"
 #include "deepltranslator_debug.h"
@@ -21,6 +20,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QUrlQuery>
 #include <TextTranslator/TranslatorEngineAccessManager>
 #include <qt6keychain/keychain.h>
+
+using namespace Qt::Literals::StringLiterals;
 
 DeeplEnginePlugin::DeeplEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)

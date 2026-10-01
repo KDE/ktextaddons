@@ -5,11 +5,13 @@
 */
 
 #include "voskspeechtotextinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "voskspeechtotextinfo.h"
 #include <QJsonDocument>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(VoskSpeechToTextInfoTest)
 VoskSpeechToTextInfoTest::VoskSpeechToTextInfoTest(QObject *parent)
     : QObject{parent}

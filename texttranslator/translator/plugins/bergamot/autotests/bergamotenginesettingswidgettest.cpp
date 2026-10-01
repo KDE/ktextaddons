@@ -5,7 +5,6 @@
 */
 
 #include "bergamotenginesettingswidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bergamotenginesettingswidget.h"
 #include <QComboBox>
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(BergamotEngineSettingsWidgetTest)
 BergamotEngineSettingsWidgetTest::BergamotEngineSettingsWidgetTest(QObject *parent)
     : QObject{parent}

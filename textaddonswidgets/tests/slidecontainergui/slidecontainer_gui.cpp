@@ -7,13 +7,14 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 */
 // Qt
 #include <QApplication>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QLineEdit>
 #include <QPushButton>
 #include <QVBoxLayout>
 
 #include <TextAddonsWidgets/SlideContainer>
+
+using namespace Qt::Literals::StringLiterals;
 
 using namespace TextAddonsWidgets;
 

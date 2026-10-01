@@ -5,7 +5,6 @@
 */
 
 #include "grammalecteresultwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "common/grammarresulttextedit.h"
 #include "grammalecte/grammalecteresultwidget.h"
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(GrammarResultWidgetTest)
 
 GrammarResultWidgetTest::GrammarResultWidgetTest(QObject *parent)
