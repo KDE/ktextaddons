@@ -9,6 +9,8 @@
 #include "../libretranslateengineclient.h"
 #include <QStandardPaths>
 #include <QTest>
+#include <TextTranslator/TranslatorEnginePlugin>
+#include <memory>
 QTEST_MAIN(LibreTranslateEngineClientTest)
 
 using namespace Qt::Literals::StringLiterals;
@@ -22,7 +24,8 @@ void LibreTranslateEngineClientTest::shouldHaveDefaultValues()
 {
     LibreTranslateEngineClient client;
     QCOMPARE(client.name(), u"libretranslate"_s);
-    QVERIFY(client.createTranslator());
+    std::unique_ptr<TextTranslator::TranslatorEnginePlugin> plugin{client.createTranslator()};
+    QVERIFY(plugin);
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());
     QVERIFY(!client.supportedToLanguages().isEmpty());
