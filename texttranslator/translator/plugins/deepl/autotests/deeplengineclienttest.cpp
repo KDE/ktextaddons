@@ -9,6 +9,8 @@
 #include "../deeplengineclient.h"
 #include <QStandardPaths>
 #include <QTest>
+#include <TextTranslator/TranslatorEnginePlugin>
+#include <memory>
 QTEST_MAIN(DeeplEngineClientTest)
 
 using namespace Qt::Literals::StringLiterals;
@@ -22,7 +24,8 @@ void DeeplEngineClientTest::shouldHaveDefaultValues()
 {
     DeeplEngineClient client;
     QCOMPARE(client.name(), u"deepl"_s);
-    QVERIFY(client.createTranslator());
+    std::unique_ptr<TextTranslator::TranslatorEnginePlugin> plugin{client.createTranslator()};
+    QVERIFY(plugin);
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());
     QVERIFY(!client.supportedToLanguages().isEmpty());
