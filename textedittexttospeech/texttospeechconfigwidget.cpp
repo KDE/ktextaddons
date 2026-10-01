@@ -304,9 +304,13 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
 
 void TextToSpeechConfigWidget::checkKokoroEngine(const QString newEngineName)
 {
+    // The engine is only switched once the check succeeds: until then a test
+    // would speak with the previous engine.
+    mTestButton->setEnabled(false);
     auto job = new TextEditTextToSpeech::TextToSpeechKokoroCheckJob(this);
     connect(job, &TextEditTextToSpeech::TextToSpeechKokoroCheckJob::packagesInstalled, this, [this, newEngineName] {
         mKokoroInstallMessageWidget->animatedHide();
+        mTestButton->setEnabled(true);
         mTextToSpeechConfigInterface->setEngine(newEngineName);
         slotLocalesAndVoices();
     });
