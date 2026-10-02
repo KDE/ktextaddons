@@ -7,6 +7,7 @@ Dependencies:
       'third-party/qtkeychain': '@latest'
   - 'on': ['Linux']
     'require':
+      'frameworks/breeze-icons': 'Frameworks/6.24'
       'frameworks/extra-cmake-modules': 'Frameworks/6.24'
       'frameworks/ki18n': 'Frameworks/6.24'
       'frameworks/kconfig': 'Frameworks/6.24'
