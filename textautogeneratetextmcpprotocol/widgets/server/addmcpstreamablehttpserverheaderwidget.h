@@ -8,12 +8,12 @@
 
 #include <QWidget>
 
-#include "textautogeneratetextmcpprotocolwidgets_export.h"
+#include "mcpprotocolwidgets_private_export.h"
 class QPushButton;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class AddMcpStreamableHttpServerHeaderListWidget;
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStreamableHttpServerHeaderWidget : public QWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpStreamableHttpServerHeaderWidget : public QWidget
 {
     Q_OBJECT
 public:

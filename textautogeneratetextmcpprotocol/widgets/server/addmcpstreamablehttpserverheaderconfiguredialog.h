@@ -7,11 +7,11 @@
 
 #include <QDialog>
 
-#include "textautogeneratetextmcpprotocolwidgets_export.h"
+#include "mcpprotocolwidgets_private_export.h"
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class AddMcpStreamableHttpServerHeaderConfigureWidget;
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStreamableHttpServerHeaderConfigureDialog : public QDialog
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpStreamableHttpServerHeaderConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:

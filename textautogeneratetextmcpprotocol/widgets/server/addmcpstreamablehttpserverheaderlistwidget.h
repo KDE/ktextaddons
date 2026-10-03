@@ -7,10 +7,10 @@
 
 #include <QListWidget>
 
-#include "textautogeneratetextmcpprotocolwidgets_export.h"
+#include "mcpprotocolwidgets_private_export.h"
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStreamableHttpServerHeaderListWidget : public QListWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpStreamableHttpServerHeaderListWidget : public QListWidget
 {
     Q_OBJECT
 public:

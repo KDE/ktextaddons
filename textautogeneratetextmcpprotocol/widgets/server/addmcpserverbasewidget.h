@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetextmcpprotocolwidgets_export.h"
+#include "mcpprotocolwidgets_private_export.h"
 #include <QWidget>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -14,7 +14,7 @@ class McpServer;
 }
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerBaseWidget : public QWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpServerBaseWidget : public QWidget
 {
     Q_OBJECT
 public:

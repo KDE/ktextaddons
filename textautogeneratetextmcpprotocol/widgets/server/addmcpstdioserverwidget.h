@@ -5,11 +5,11 @@
 */
 #pragma once
 #include "addmcpserverbasewidget.h"
-#include "textautogeneratetextmcpprotocolwidgets_export.h"
+#include "mcpprotocolwidgets_private_export.h"
 class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStdioServerWidget : public AddMcpServerBaseWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpStdioServerWidget : public AddMcpServerBaseWidget
 {
     Q_OBJECT
 public:

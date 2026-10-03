@@ -5,10 +5,11 @@
 */
 #pragma once
 
+#include "mcpprotocolwidgets_private_export.h"
 #include <QStyledItemDelegate>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class McpServerListViewDelegate : public QStyledItemDelegate
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpServerListViewDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
