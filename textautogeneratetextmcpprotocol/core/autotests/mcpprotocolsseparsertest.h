@@ -20,4 +20,6 @@ private Q_SLOTS:
     void shouldParseMultiLineData();
     void shouldIgnoreComments();
     void shouldSupportCrLf();
+    void shouldParseRetry();
+    void shouldKeepLastEventIdWhenConnectionIsReset();
 };

@@ -78,19 +78,35 @@ void McpProtocolSseParser::parseLine(QByteArrayView line, QList<Event> &events)
         if (!value.contains('\0')) {
             mLastEventId = value.toByteArray();
         }
+    } else if (field == "retry") {
+        bool ok = false;
+        if (const int retry = value.toInt(&ok); ok && retry >= 0) {
+            mRetry = retry;
+        }
     }
-    // "retry" and unknown fields are ignored
+    // Unknown fields are ignored
 }
 
 void McpProtocolSseParser::clear()
 {
+    resetConnection();
+    mLastEventId.clear();
+    mRetry = -1;
+}
+
+void McpProtocolSseParser::resetConnection()
+{
     mBuffer.clear();
     mEventType.clear();
     mData.clear();
-    mLastEventId.clear();
 }
 
 QByteArray McpProtocolSseParser::lastEventId() const
 {
     return mLastEventId;
+}
+
+int McpProtocolSseParser::retry() const
+{
+    return mRetry;
 }

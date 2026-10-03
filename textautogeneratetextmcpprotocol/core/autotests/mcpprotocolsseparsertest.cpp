@@ -65,4 +65,30 @@ void McpProtocolSseParserTest::shouldSupportCrLf()
     QCOMPARE(events.at(0).data, "foo"_ba);
 }
 
+void McpProtocolSseParserTest::shouldParseRetry()
+{
+    McpProtocolSseParser parser;
+    QCOMPARE(parser.retry(), -1);
+    QVERIFY(parser.feed("retry: 3000\n\n"_ba).isEmpty());
+    QCOMPARE(parser.retry(), 3000);
+    // Invalid value is ignored
+    QVERIFY(parser.feed("retry: 12a\n\n"_ba).isEmpty());
+    QCOMPARE(parser.retry(), 3000);
+    parser.clear();
+    QCOMPARE(parser.retry(), -1);
+}
+
+void McpProtocolSseParserTest::shouldKeepLastEventIdWhenConnectionIsReset()
+{
+    McpProtocolSseParser parser;
+    QCOMPARE(parser.feed("id: 5\nretry: 100\ndata: foo\n\ndata: incomplete\n"_ba).count(), 1);
+    parser.resetConnection();
+    QCOMPARE(parser.lastEventId(), "5"_ba);
+    QCOMPARE(parser.retry(), 100);
+    // Incomplete event from previous connection is dropped
+    const auto events = parser.feed("data: bar\n\n"_ba);
+    QCOMPARE(events.count(), 1);
+    QCOMPARE(events.at(0).data, "bar"_ba);
+}
+
 #include "moc_mcpprotocolsseparsertest.cpp"

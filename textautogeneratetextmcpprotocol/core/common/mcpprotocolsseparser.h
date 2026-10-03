@@ -32,8 +32,17 @@ public:
      * Reset the parser state (buffer, pending event and last event id).
      */
     void clear();
+    /*!
+     * Drop buffered data and pending event (connection lost) but keep
+     * last event id and retry delay, needed to resume stream.
+     */
+    void resetConnection();
 
     [[nodiscard]] QByteArray lastEventId() const;
+    /*!
+     * Reconnection delay in ms sent by server ("retry" field), -1 if not defined.
+     */
+    [[nodiscard]] int retry() const;
 
 private:
     void parseLine(QByteArrayView line, QList<Event> &events);
@@ -41,5 +50,6 @@ private:
     QByteArray mEventType;
     QByteArray mData;
     QByteArray mLastEventId;
+    int mRetry = -1;
 };
 }
