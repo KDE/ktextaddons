@@ -32,8 +32,9 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
     if (const QJsonValue errorValue = obj.value("error"_L1); errorValue.isObject()) {
         response.setError(McpProtocolError::fromJson(errorValue.toObject()));
     }
-    if (obj.contains("id"_L1)) {
-        response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    // id is null when server can't read request id (parse error)
+    if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() || idValue.isDouble()) {
+        response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(idValue));
     }
     return response;
 }
