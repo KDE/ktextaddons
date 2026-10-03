@@ -7,11 +7,14 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QDeadlineTimer>
 #include <QHash>
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
+#include <chrono>
 class QJsonObject;
+class QTimer;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolClient;
@@ -36,7 +39,21 @@ public:
     void initializeClient();
     void stopClient();
 
-    void executeAction(MethodType type);
+    /*!
+     * Send request \a type. Return request id, -1 if request was not sent.
+     */
+    qint64 executeAction(MethodType type);
+    /*!
+     * Cancel request \a requestId: server is informed and we stop waiting for response.
+     */
+    void cancelRequest(qint64 requestId, const QString &reason = {});
+
+    /*!
+     * Time to wait for a response. When it expires, request is cancelled and
+     * an error response (code -32001) is emitted with received().
+     */
+    [[nodiscard]] std::chrono::milliseconds requestTimeout() const;
+    void setRequestTimeout(std::chrono::milliseconds timeout);
 
     [[nodiscard]] QString clientName() const;
     void setClientName(const QString &newClientName);
@@ -52,16 +69,19 @@ Q_SIGNALS:
     void finished();
 
 private:
-    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void ping();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listTools();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listPrompts();
-    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void resourceTemplates();
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 ping();
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 listTools();
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 listPrompts();
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 resourceTemplates();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendInitializedNotification();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotFinished();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initializeResponseReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void answerServerRequest(const QJsonObject &obj);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendCancelledNotification(qint64 identifier, const QString &reason);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void checkTimeouts();
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 requestId();
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolClientProtocolManager::MethodType checkMethodType(const QJsonObject &obj);
 
@@ -73,6 +93,12 @@ private:
     TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeResult mInitializeResult;
     TextAutoGenerateTextMcpProtocolCore::McpServer mServer;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolClient *mClient = nullptr;
-    QHash<qint64, McpProtocolClientProtocolManager::MethodType> mMapIdentifier;
+    struct PendingRequest {
+        MethodType type = MethodType::Unknown;
+        QDeadlineTimer deadline;
+    };
+    QHash<qint64, PendingRequest> mPendingRequests;
+    std::chrono::milliseconds mRequestTimeout = std::chrono::seconds(60);
+    QTimer *const mTimeoutTimer;
 };
 }
