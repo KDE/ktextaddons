@@ -136,11 +136,11 @@ void McpClientStreamableHttp::postFinished(QNetworkReply *reply, const RequestSt
             return;
         }
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Post failed:" << statusCode << reply->errorString();
-        Q_EMIT error(reply->errorString());
         // Body can contain a JSON-RPC error response
         if (reply->header(QNetworkRequest::ContentTypeHeader).toString().startsWith("application/json"_L1)) {
             processJsonBody(reply->readAll(), stream.get());
         }
+        requestFailed(stream.get(), reply->errorString());
         return;
     }
     if (stream->isInitializeRequest) {
@@ -163,12 +163,12 @@ void McpClientStreamableHttp::requestStreamFinished(const RequestStreamPtr &stre
     }
     if (stream->parser.lastEventId().isEmpty()) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Stream closed before response, it can't be resumed. Request:" << stream->requestId;
-        Q_EMIT error(i18n("Connection lost before receiving answer."));
+        requestFailed(stream.get(), i18n("Connection lost before receiving answer."));
         return;
     }
     if (stream->resumeAttempts >= maxReconnectAttempts) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Too many attempts to resume stream. Request:" << stream->requestId;
-        Q_EMIT error(i18n("Connection lost before receiving answer."));
+        requestFailed(stream.get(), i18n("Connection lost before receiving answer."));
         return;
     }
     int delay = stream->parser.retry();
@@ -214,12 +214,23 @@ void McpClientStreamableHttp::resumeRequestStream(const RequestStreamPtr &stream
         }
         if (statusCode == 405) {
             qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Server doesn't allow to resume stream. Request:" << stream->requestId;
-            Q_EMIT error(i18n("Connection lost before receiving answer."));
+            requestFailed(stream.get(), i18n("Connection lost before receiving answer."));
             return;
         }
         processEvents(stream->parser.feed(reply->readAll()), stream.get());
         requestStreamFinished(stream);
     });
+}
+
+void McpClientStreamableHttp::requestFailed(RequestStream *stream, const QString &errorMessage)
+{
+    Q_EMIT error(errorMessage);
+    if (stream->requestId.isUndefined() || stream->responseReceived) {
+        return;
+    }
+    // Server will never answer: create error response, so caller knows that request failed.
+    stream->responseReceived = true;
+    Q_EMIT received(McpClientUtils::createConnectionErrorResponse(stream->requestId, errorMessage));
 }
 
 void McpClientStreamableHttp::trackReply(QNetworkReply *reply)

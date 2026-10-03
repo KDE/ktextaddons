@@ -50,6 +50,7 @@ private:
     void requestStreamFinished(const RequestStreamPtr &stream);
     void resumeRequestStream(const RequestStreamPtr &stream);
     void trackReply(QNetworkReply *reply);
+    void requestFailed(RequestStream *stream, const QString &errorMessage);
     void abortPendingReplies();
     void openEventStream();
     void eventStreamFinished(QNetworkReply *reply);

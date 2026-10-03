@@ -94,10 +94,16 @@ void McpClientSse::send(const QJsonObject &obj)
     McpClientUtils::addHeaders(request, mInterface->protocolSettings().headers());
     // Answer is sent in sse stream, post reply contains only status.
     QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+    // Undefined when we post a notification or a response
+    const QJsonValue requestId = obj.contains("method"_L1) ? obj.value("id"_L1) : QJsonValue(QJsonValue::Undefined);
+    connect(reply, &QNetworkReply::finished, this, [this, reply, requestId]() {
         if (reply->error() != QNetworkReply::NoError) {
             qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Post failed:" << reply->errorString();
             Q_EMIT error(reply->errorString());
+            if (!requestId.isUndefined()) {
+                // Server didn't get request, it will never answer
+                Q_EMIT received(McpClientUtils::createConnectionErrorResponse(requestId, reply->errorString()));
+            }
         }
         reply->deleteLater();
     });
