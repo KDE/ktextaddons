@@ -25,12 +25,14 @@ AddMcpSteamableHttpServerHeaderConfigureWidget::AddMcpSteamableHttpServerHeaderC
     mainLayout->addWidget(label);
 
     mHeaderLineEdit->setObjectName(u"mHeaderLineEdit"_s);
-    mHeaderLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Define Header…"));
+    mHeaderLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Name: Value"));
     mHeaderLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(mHeaderLineEdit);
     KLineEditEventHandler::catchReturnKey(mHeaderLineEdit);
     connect(mHeaderLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
-        Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty());
+        // Header must use "Name: Value" format
+        const qsizetype index = str.indexOf(u':');
+        Q_EMIT buttonOkEnabled(index > 0 && !str.left(index).trimmed().isEmpty());
     });
 }
 
