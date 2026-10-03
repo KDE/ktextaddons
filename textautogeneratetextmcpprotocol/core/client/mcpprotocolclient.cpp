@@ -78,6 +78,11 @@ void McpProtocolClient::request(const QJsonObject &obj)
     emitNotificationOrRequest(obj);
 }
 
+void McpProtocolClient::respond(const QJsonObject &obj)
+{
+    emitNotificationOrRequest(obj);
+}
+
 void McpProtocolClient::emitNotificationOrRequest(const QJsonObject &obj)
 {
     if (mPluginInterface) {

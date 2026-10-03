@@ -28,6 +28,7 @@ public:
 
     void notify(const QJsonObject &obj);
     void request(const QJsonObject &obj);
+    void respond(const QJsonObject &obj);
 
 Q_SIGNALS:
     void started();

@@ -16,6 +16,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCResultResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
@@ -155,8 +156,31 @@ void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &obj)
     const MethodType type = checkMethodType(obj);
     if (type == MethodType::Initialize) {
         initializeResponseReceived(obj);
+    } else if (type == MethodType::ServerRequest) {
+        answerServerRequest(obj);
     }
     Q_EMIT received(obj, type);
+}
+
+void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &obj)
+{
+    const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(obj.value("id"_L1));
+    const QString method = obj.value("method"_L1).toString();
+    if (method == QLatin1StringView(McpProtocolPingRequest::type())) {
+        McpProtocolJSONRPCResultResponse response;
+        response.setId(id);
+        mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
+        return;
+    }
+    // We don't support sampling/roots/elicitation yet
+    qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported server request:" << method;
+    McpProtocolError mcpError;
+    mcpError.setCode(-32601); // JSON-RPC "Method not found"
+    mcpError.setMessage(u"Method not found: %1"_s.arg(method));
+    McpProtocolJSONRPCErrorResponse response;
+    response.setId(id);
+    response.setError(std::move(mcpError));
+    mClient->respond(McpProtocolJSONRPCErrorResponse::toJson(response));
 }
 
 void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObject &obj)
