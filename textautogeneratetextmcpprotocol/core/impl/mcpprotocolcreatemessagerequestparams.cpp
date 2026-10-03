@@ -148,7 +148,7 @@ QJsonObject McpProtocolCreateMessageRequestParams::toJson(const McpProtocolCreat
         arr_messages.append(McpProtocolSamplingMessage::toJson(v));
     }
     obj["messages"_L1] = arr_messages;
-    if (params.includeContext().has_value()) {
+    if (params.includeContext().has_value() && *params.includeContext() != IncludeContext::Unknown) {
         obj.insert("includeContext"_L1, convertIncludeContextToString(*params.includeContext()));
     }
     if (params.metadata().has_value()) {

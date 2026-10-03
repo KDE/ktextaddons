@@ -59,7 +59,10 @@ QJsonObject McpProtocolCreateMessageResult::toJson(const McpProtocolCreateMessag
     }
     obj["content"_L1] = McpProtocolUtils::createMessageResultContentToJson(result.content());
     obj["model"_L1] = result.model();
-    obj["role"_L1] = McpProtocolUtils::convertRoleToString(result.role());
+    // Unknown value is not valid, don't write it
+    if (result.role() != McpProtocolUtils::Role::Unknown) {
+        obj["role"_L1] = McpProtocolUtils::convertRoleToString(result.role());
+    }
     if (result.stopReason().has_value()) {
         obj.insert("stopReason"_L1, *result.stopReason());
     }

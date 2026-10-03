@@ -79,7 +79,10 @@ QJsonObject McpProtocolCancelTaskResult::toJson(const McpProtocolCancelTaskResul
     }
     obj["createdAt"_L1] = result.createdAt();
     obj["lastUpdatedAt"_L1] = result.lastUpdatedAt();
-    obj["status"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(result.status());
+    // Unknown value is not valid, don't write it
+    if (result.status() != McpProtocolUtils::TaskStatus::Unknown) {
+        obj["status"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusToString(result.status());
+    }
     obj["taskId"_L1] = result.taskId();
     if (result.pollInterval().has_value()) {
         obj["pollInterval"_L1] = *result.pollInterval();

@@ -49,7 +49,10 @@ QJsonObject McpProtocolElicitResult::toJson(const McpProtocolElicitResult &resul
     if (result.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
-    obj["action"_L1] = convertActionToString(result.action());
+    // Unknown value is not valid, don't write it
+    if (result.action() != Action::Unknown) {
+        obj["action"_L1] = convertActionToString(result.action());
+    }
     if (result.content().has_value()) {
         obj["content"_L1] = McpProtocolUtils::elicitResultContentToJson(*result.content());
     }

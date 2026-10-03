@@ -18,4 +18,5 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldConvertActionToString();
     void shouldConvertJson();
+    void shouldNotWriteUnknownAction();
 };

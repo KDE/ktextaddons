@@ -47,7 +47,10 @@ QJsonObject McpProtocolSamplingMessage::toJson(const McpProtocolSamplingMessage 
         obj["_meta"_L1] = McpProtocolMeta::toJson(*message.meta());
     }
     obj["content"_L1] = McpProtocolUtils::createMessageResultContentToJson(message.content());
-    obj["role"_L1] = McpProtocolUtils::convertRoleToString(message.role());
+    // Unknown value is not valid, don't write it
+    if (message.role() != McpProtocolUtils::Role::Unknown) {
+        obj["role"_L1] = McpProtocolUtils::convertRoleToString(message.role());
+    }
     return obj;
 }
 

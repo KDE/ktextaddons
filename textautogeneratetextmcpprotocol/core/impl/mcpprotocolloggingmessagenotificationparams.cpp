@@ -44,7 +44,10 @@ QJsonObject McpProtocolLoggingMessageNotificationParams::toJson(const McpProtoco
 {
     QJsonObject obj;
     obj["data"_L1] = params.data().isUndefined() ? QJsonValue::Null : params.data();
-    obj["level"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(params.level());
+    // Unknown value is not valid, don't write it
+    if (params.level() != McpProtocolUtils::LoggingLevel::Unknown) {
+        obj["level"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelToString(params.level());
+    }
     if (params.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolMeta::toJson(*params.meta());
     }

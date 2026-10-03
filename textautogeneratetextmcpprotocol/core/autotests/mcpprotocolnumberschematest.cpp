@@ -46,4 +46,14 @@ void McpProtocolNumberSchemaTest::shouldLoadAndSaveDecimalValues()
              TextAutoGenerateTextMcpProtocolCore::McpProtocolNumberSchema::Type::Unknown);
 }
 
+void McpProtocolNumberSchemaTest::shouldRejectInvalidType()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolNumberSchema;
+    QJsonObject obj{{"type"_L1, u"string"_s}, {"title"_L1, u"foo"_s}};
+    QCOMPARE(McpProtocolNumberSchema::fromJson(obj), McpProtocolNumberSchema());
+    obj["type"_L1] = u"integer"_s;
+    QCOMPARE(McpProtocolNumberSchema::fromJson(obj).type(), McpProtocolNumberSchema::Type::Integer);
+    QCOMPARE(McpProtocolNumberSchema::fromJson(obj).title(), u"foo"_s);
+}
+
 #include "moc_mcpprotocolnumberschematest.cpp"

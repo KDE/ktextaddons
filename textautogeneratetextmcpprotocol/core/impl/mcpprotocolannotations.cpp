@@ -37,7 +37,10 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
         QList<McpProtocolUtils::Role> audience;
         audience.reserve(arr.count());
         for (const auto &v : arr) {
-            audience.append(McpProtocolUtils::convertRoleFromString(v.toString()));
+            // Ignore unknown role
+            if (const auto role = McpProtocolUtils::convertRoleFromString(v.toString()); role != McpProtocolUtils::Role::Unknown) {
+                audience.append(role);
+            }
         }
         annot.setAudience(std::move(audience));
     }
@@ -51,7 +54,9 @@ QJsonObject McpProtocolAnnotations::toJson(const McpProtocolAnnotations &annot)
         QJsonArray array;
         const auto audience = *annot.audience();
         for (const auto &v : audience) {
-            array.append(McpProtocolUtils::convertRoleToString(v));
+            if (v != McpProtocolUtils::Role::Unknown) {
+                array.append(McpProtocolUtils::convertRoleToString(v));
+            }
         }
         obj["audience"_L1] = array;
     }

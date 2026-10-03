@@ -113,6 +113,10 @@ McpProtocolNumberSchema::Type McpProtocolNumberSchema::convertNumberSchemaTypeFr
 McpProtocolNumberSchema McpProtocolNumberSchema::fromJson(const QJsonObject &obj)
 {
     McpProtocolNumberSchema schema;
+    // "type" is required: "number" or "integer"
+    if (convertNumberSchemaTypeFromString(obj.value("type"_L1).toString()) == Type::Unknown) {
+        return {};
+    }
     if (const QJsonValue defaultValue = obj.value("default"_L1); defaultValue.isDouble()) {
         schema.setDefaultValue(defaultValue.toDouble());
     }

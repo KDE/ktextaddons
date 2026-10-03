@@ -60,4 +60,11 @@ void McpProtocolElicitResultTest::shouldConvertJson()
     QCOMPARE(McpProtocolElicitResult::toJson(result), obj);
 }
 
+void McpProtocolElicitResultTest::shouldNotWriteUnknownAction()
+{
+    // Unknown value is not valid, it must not be written as empty string
+    const QJsonObject obj = McpProtocolElicitResult::toJson(McpProtocolElicitResult());
+    QVERIFY(!obj.contains("action"_L1));
+}
+
 #include "moc_mcpprotocolelicitresulttest.cpp"

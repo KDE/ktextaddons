@@ -42,7 +42,10 @@ QJsonObject McpProtocolPromptMessage::toJson(const McpProtocolPromptMessage &mes
 {
     QJsonObject obj;
     obj["content"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlocktoJson(message.content());
-    obj["role"_L1] = convertRoleToString(message.role());
+    // Unknown value is not valid, don't write it
+    if (message.role() != McpProtocolUtils::Role::Unknown) {
+        obj["role"_L1] = convertRoleToString(message.role());
+    }
     return obj;
 }
 

@@ -53,7 +53,10 @@ QJsonObject McpProtocolTask::toJson(const McpProtocolTask &text)
     QJsonObject obj;
     obj["createdAt"_L1] = text.createdAt();
     obj["lastUpdatedAt"_L1] = text.lastUpdatedAt();
-    obj["status"_L1] = convertTaskStatusToString(text.status());
+    // Unknown value is not valid, don't write it
+    if (text.status() != McpProtocolUtils::TaskStatus::Unknown) {
+        obj["status"_L1] = convertTaskStatusToString(text.status());
+    }
     obj["taskId"_L1] = text.taskId();
     if (text.pollInterval().has_value()) {
         obj["pollInterval"_L1] = *text.pollInterval();
