@@ -114,7 +114,8 @@ void McpClientStdio::slotReadStandardOutput()
 
 void McpClientStdio::slotReadStandardError()
 {
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "stderr:" << mProcess->readAllStandardError();
+    const QByteArray errorOutput = mProcess->readAllStandardError();
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "stderr:" << errorOutput;
 }
 
 #include "moc_mcpclientstdio.cpp"
