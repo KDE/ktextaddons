@@ -75,13 +75,13 @@ void McpClientStdio::connection()
     mBuffer.clear();
     mProcess->setProgram(settings.command());
     mProcess->setArguments(settings.arguments().isEmpty() ? QStringList{} : QProcess::splitCommand(settings.arguments()));
-    if (const QMap<QString, QString> environments = settings.environments(); !environments.isEmpty()) {
-        QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
-        for (auto it = environments.cbegin(); it != environments.cend(); ++it) {
-            processEnvironment.insert(it.key(), it.value());
-        }
-        mProcess->setProcessEnvironment(processEnvironment);
+    // Always set environment: process is reused, previous environment must not be kept
+    QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
+    const QMap<QString, QString> environments = settings.environments();
+    for (auto it = environments.cbegin(); it != environments.cend(); ++it) {
+        processEnvironment.insert(it.key(), it.value());
     }
+    mProcess->setProcessEnvironment(processEnvironment);
     qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Starting" << mProcess->program() << "with" << mProcess->arguments().count() << "arguments";
     mProcess->start(QIODevice::ReadWrite);
 }
