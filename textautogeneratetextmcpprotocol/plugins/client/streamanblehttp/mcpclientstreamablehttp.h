@@ -11,6 +11,7 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class QNetworkRequest;
+class QTimer;
 class QJsonObject;
 class McpClientStreambleHttpPluginInterface;
 class McpClientStreamableHttp : public TextAutoGenerateTextMcpProtocolCore::McpBase
@@ -32,6 +33,8 @@ private:
     void processJsonBody(const QByteArray &body);
     void postFinished(QNetworkReply *reply, bool isInitializeRequest, const std::shared_ptr<TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser> &parser);
     void openEventStream();
+    void eventStreamFinished(QNetworkReply *reply);
+    void scheduleEventStreamReconnection();
     void sessionExpired();
     void closeEventStream();
     QNetworkAccessManager *const mNetworkAccessManager;
@@ -44,5 +47,8 @@ private:
     // Optional GET stream used by server to send requests/notifications
     QNetworkReply *mEventStreamReply = nullptr;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser mEventStreamParser;
+    QTimer *const mReconnectTimer;
+    // Number of reconnections without receiving data
+    int mReconnectAttempts = 0;
     bool mStarted = false;
 };

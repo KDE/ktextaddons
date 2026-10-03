@@ -15,6 +15,8 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QSslError>
+#include <QTimer>
+#include <algorithm>
 #include <memory>
 
 using namespace Qt::Literals::StringLiterals;
@@ -22,6 +24,9 @@ using TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser;
 
 namespace
 {
+constexpr int defaultReconnectDelay = 1000;
+constexpr int maxReconnectDelay = 30000;
+constexpr int maxReconnectAttempts = 5;
 [[nodiscard]] bool isEventStream(const QNetworkReply *reply)
 {
     return reply->header(QNetworkRequest::ContentTypeHeader).toString().startsWith("text/event-stream"_L1);
@@ -32,7 +37,10 @@ McpClientStreamableHttp::McpClientStreamableHttp(McpClientStreambleHttpPluginInt
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
     , mNetworkAccessManager(new QNetworkAccessManager(this))
     , mInterface(interface)
+    , mReconnectTimer(new QTimer(this))
 {
+    mReconnectTimer->setSingleShot(true);
+    connect(mReconnectTimer, &QTimer::timeout, this, &McpClientStreamableHttp::openEventStream);
 }
 
 McpClientStreamableHttp::~McpClientStreamableHttp()
@@ -192,30 +200,70 @@ void McpClientStreamableHttp::openEventStream()
     if (mEventStreamReply) {
         return;
     }
+    if (!mStarted) {
+        return;
+    }
     QNetworkRequest request = createRequest();
     request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
     request.setRawHeader("Cache-Control"_ba, "no-cache"_ba);
-    mEventStreamParser.clear();
+    // Ask server to resend messages sent while we were disconnected
+    if (const QByteArray lastEventId = mEventStreamParser.lastEventId(); !lastEventId.isEmpty()) {
+        request.setRawHeader("Last-Event-ID"_ba, lastEventId);
+    }
+    mEventStreamParser.resetConnection();
     QNetworkReply *reply = mNetworkAccessManager->get(request);
     mEventStreamReply = reply;
     connect(reply, &QNetworkReply::readyRead, this, [this, reply]() {
-        processEvents(mEventStreamParser.feed(reply->readAll()));
+        const QByteArray data = reply->readAll();
+        if (!data.isEmpty()) {
+            // Server is alive, reset backoff
+            mReconnectAttempts = 0;
+        }
+        processEvents(mEventStreamParser.feed(data));
     });
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-        if (mEventStreamReply == reply) {
-            mEventStreamReply = nullptr;
-        }
-        reply->deleteLater();
-        const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-        if (statusCode == 405) {
-            // Server doesn't support it. It's allowed by specification.
-            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Server doesn't provide event stream";
-        } else if (statusCode == 404 && !mSessionId.isEmpty()) {
-            sessionExpired();
-        } else {
-            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Event stream closed:" << statusCode << reply->errorString();
-        }
+        eventStreamFinished(reply);
     });
+}
+
+void McpClientStreamableHttp::eventStreamFinished(QNetworkReply *reply)
+{
+    if (mEventStreamReply == reply) {
+        mEventStreamReply = nullptr;
+    }
+    reply->deleteLater();
+    const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    if (statusCode == 405) {
+        // Server doesn't support it. It's allowed by specification.
+        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Server doesn't provide event stream";
+        return;
+    }
+    if (statusCode == 404 && !mSessionId.isEmpty()) {
+        sessionExpired();
+        return;
+    }
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Event stream closed:" << statusCode << reply->errorString();
+    // Server can close stream at any time, reconnect
+    scheduleEventStreamReconnection();
+}
+
+void McpClientStreamableHttp::scheduleEventStreamReconnection()
+{
+    if (!mStarted) {
+        return;
+    }
+    if (mReconnectAttempts >= maxReconnectAttempts) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Event stream: too many reconnection attempts, give up";
+        return;
+    }
+    int delay = mEventStreamParser.retry();
+    if (delay < 0) {
+        // No delay sent by server: exponential backoff
+        delay = std::min(defaultReconnectDelay << mReconnectAttempts, maxReconnectDelay);
+    }
+    ++mReconnectAttempts;
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Reconnect event stream in" << delay << "ms";
+    mReconnectTimer->start(delay);
 }
 
 void McpClientStreamableHttp::sessionExpired()
@@ -232,6 +280,8 @@ void McpClientStreamableHttp::sessionExpired()
 
 void McpClientStreamableHttp::closeEventStream()
 {
+    mReconnectTimer->stop();
+    mReconnectAttempts = 0;
     if (mEventStreamReply) {
         mEventStreamReply->disconnect(this);
         mEventStreamReply->abort();
