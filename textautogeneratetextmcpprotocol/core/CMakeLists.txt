@@ -299,6 +299,8 @@ target_sources(
         common/mcpbase.cpp
         common/mcpprotocolcommonutils.h
         common/mcpprotocolcommonutils.cpp
+        common/mcpprotocolsseparser.h
+        common/mcpprotocolsseparser.cpp
         models/mcpservermodel.cpp
         models/mcpservermodel.h
         models/mcpserversortfilterproxymodel.cpp
