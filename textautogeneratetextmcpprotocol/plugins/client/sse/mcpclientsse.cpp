@@ -5,6 +5,7 @@
 */
 #include "mcpclientsse.h"
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
+#include "mcpclientutils.h"
 #include "sse/mcpclientsseplugininterface.h"
 #include <KLocalizedString>
 #include <QJsonDocument>
@@ -47,7 +48,7 @@ void McpClientSse::connection()
     QNetworkRequest request(url);
     request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
     request.setRawHeader("Cache-Control"_ba, "no-cache"_ba);
-    addHeaders(request);
+    McpClientUtils::addHeaders(request, mInterface->protocolSettings().headers());
 
     QNetworkReply *reply = mNetworkAccessManager->get(request);
     mReply = reply;
@@ -72,19 +73,6 @@ void McpClientSse::connection()
     });
 }
 
-void McpClientSse::addHeaders(QNetworkRequest &request) const
-{
-    const QStringList headers = mInterface->protocolSettings().headers();
-    for (const QString &header : headers) {
-        const qsizetype index = header.indexOf(u':');
-        if (index <= 0) {
-            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Invalid header, expected \"Name: Value\"";
-            continue;
-        }
-        request.setRawHeader(header.left(index).trimmed().toUtf8(), header.mid(index + 1).trimmed().toUtf8());
-    }
-}
-
 void McpClientSse::send(const QJsonObject &obj)
 {
     if (!mPostUrl.isValid()) {
@@ -94,7 +82,7 @@ void McpClientSse::send(const QJsonObject &obj)
     }
     QNetworkRequest request(mPostUrl);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json"_ba);
-    addHeaders(request);
+    McpClientUtils::addHeaders(request, mInterface->protocolSettings().headers());
     // Answer is sent in sse stream, post reply contains only status.
     QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {

@@ -10,7 +10,6 @@
 #include <QUrl>
 class QNetworkAccessManager;
 class QNetworkReply;
-class QNetworkRequest;
 class QJsonObject;
 class McpClientSsePluginInterface;
 class McpClientSse : public TextAutoGenerateTextMcpProtocolCore::McpBase
@@ -26,7 +25,6 @@ public:
 
 private:
     void slotRead(QNetworkReply *reply);
-    void addHeaders(QNetworkRequest &request) const;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser mParser;
     // Url used to post messages, sent by server in "endpoint" event
     QUrl mPostUrl;

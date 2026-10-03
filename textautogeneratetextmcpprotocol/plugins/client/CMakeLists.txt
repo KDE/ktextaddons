@@ -14,6 +14,8 @@ ecm_qt_declare_logging_category(mcpprotocolclientplugin
 target_sources(
     mcpprotocolclientplugin
     PRIVATE
+        mcpclientutils.h
+        mcpclientutils.cpp
         sse/mcpclientsse.h
         sse/mcpclientsse.cpp
         sse/mcpclientsseplugininterface.h
