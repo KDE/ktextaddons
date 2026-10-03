@@ -12,13 +12,13 @@
 class QPushButton;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class AddMcpSteamableHttpServerHeaderListWidget;
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerHeaderWidget : public QWidget
+class AddMcpStreamableHttpServerHeaderListWidget;
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStreamableHttpServerHeaderWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit AddMcpSteamableHttpServerHeaderWidget(QWidget *parent = nullptr);
-    ~AddMcpSteamableHttpServerHeaderWidget() override;
+    explicit AddMcpStreamableHttpServerHeaderWidget(QWidget *parent = nullptr);
+    ~AddMcpStreamableHttpServerHeaderWidget() override;
 
     [[nodiscard]] QStringList headers() const;
     void setHeaders(const QStringList &h);
@@ -28,7 +28,7 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddHeader();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveHeader();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void updateButtons();
-    AddMcpSteamableHttpServerHeaderListWidget *const mListBox;
+    AddMcpStreamableHttpServerHeaderListWidget *const mListBox;
     QPushButton *mModifyHeaderButton = nullptr;
     QPushButton *mRemoveHeaderButton = nullptr;
 };

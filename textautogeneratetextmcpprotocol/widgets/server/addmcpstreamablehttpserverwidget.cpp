@@ -3,8 +3,8 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "addmcpsteamablehttpserverwidget.h"
-#include "addmcpsteamablehttpserverheaderwidget.h"
+#include "addmcpstreamablehttpserverwidget.h"
+#include "addmcpstreamablehttpserverheaderwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -12,10 +12,10 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
-AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent)
+AddMcpStreamableHttpServerWidget::AddMcpStreamableHttpServerWidget(QWidget *parent)
     : AddMcpServerBaseWidget{parent}
     , mServerUrlLineEdit(new QLineEdit(this))
-    , mHttpServerHeaderWidget(new AddMcpSteamableHttpServerHeaderWidget(this))
+    , mHttpServerHeaderWidget(new AddMcpStreamableHttpServerHeaderWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -29,22 +29,22 @@ AddMcpSteamableHttpServerWidget::AddMcpSteamableHttpServerWidget(QWidget *parent
     mHttpServerHeaderWidget->setObjectName(u"mHttpServerHeaderWidget"_s);
     mainLayout->addRow(i18nc("@label", "Headers:"), mHttpServerHeaderWidget);
 
-    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpSteamableHttpServerWidget::settingChanged);
+    connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpStreamableHttpServerWidget::settingChanged);
 }
 
-AddMcpSteamableHttpServerWidget::~AddMcpSteamableHttpServerWidget() = default;
+AddMcpStreamableHttpServerWidget::~AddMcpStreamableHttpServerWidget() = default;
 
-void AddMcpSteamableHttpServerWidget::setUrl(const QString &str)
+void AddMcpStreamableHttpServerWidget::setUrl(const QString &str)
 {
     mServerUrlLineEdit->setText(str);
 }
 
-QString AddMcpSteamableHttpServerWidget::url() const
+QString AddMcpStreamableHttpServerWidget::url() const
 {
     return mServerUrlLineEdit->text();
 }
 
-bool AddMcpSteamableHttpServerWidget::isValid() const
+bool AddMcpStreamableHttpServerWidget::isValid() const
 {
     const QString text = mServerUrlLineEdit->text().trimmed();
     if (text.isEmpty()) {
@@ -54,7 +54,7 @@ bool AddMcpSteamableHttpServerWidget::isValid() const
     return url.isValid() && !url.host().isEmpty() && (url.scheme() == "http"_L1 || url.scheme() == "https"_L1);
 }
 
-void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+void AddMcpStreamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setServerUrl(QUrl::fromUserInput(mServerUrlLineEdit->text().trimmed()));
@@ -66,10 +66,10 @@ void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtoc
     server.setSettings(std::move(settings));
 }
 
-void AddMcpSteamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
+void AddMcpStreamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
     mServerUrlLineEdit->setText(server.settings().serverUrl().toString());
     mHttpServerHeaderWidget->setHeaders(server.settings().headers());
 }
 
-#include "moc_addmcpsteamablehttpserverwidget.cpp"
+#include "moc_addmcpstreamablehttpserverwidget.cpp"

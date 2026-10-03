@@ -9,12 +9,12 @@
 #include "mcpprotocolclientplugin_export.h"
 class McpClientStreamableHttp;
 
-class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientStreambleHttpPluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
+class MCPPROTOCOLCLIENTPLUGIN_EXPORT McpClientStreamableHttpPluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
 {
     Q_OBJECT
 public:
-    explicit McpClientStreambleHttpPluginInterface(QObject *parent = nullptr);
-    ~McpClientStreambleHttpPluginInterface() override;
+    explicit McpClientStreamableHttpPluginInterface(QObject *parent = nullptr);
+    ~McpClientStreamableHttpPluginInterface() override;
 
     void start() override;
     void stop() override;

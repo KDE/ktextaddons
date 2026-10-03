@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class AddMcpSteamableHttpServerHeaderWidgetTest : public QObject
+class AddMcpStreamableHttpServerHeaderWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit AddMcpSteamableHttpServerHeaderWidgetTest(QObject *parent = nullptr);
-    ~AddMcpSteamableHttpServerHeaderWidgetTest() override = default;
+    explicit AddMcpStreamableHttpServerHeaderWidgetTest(QObject *parent = nullptr);
+    ~AddMcpStreamableHttpServerHeaderWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

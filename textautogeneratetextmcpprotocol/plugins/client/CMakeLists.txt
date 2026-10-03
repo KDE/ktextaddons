@@ -24,10 +24,10 @@ target_sources(
         stdio/mcpclientstdioplugininterface.h
         stdio/mcpclientstdio.h
         stdio/mcpclientstdio.cpp
-        streamanblehttp/mcpclientstreamblehttpplugininterface.h
-        streamanblehttp/mcpclientstreamblehttpplugininterface.cpp
-        streamanblehttp/mcpclientstreamablehttp.h
-        streamanblehttp/mcpclientstreamablehttp.cpp
+        streamablehttp/mcpclientstreamablehttpplugininterface.h
+        streamablehttp/mcpclientstreamablehttpplugininterface.cpp
+        streamablehttp/mcpclientstreamablehttp.h
+        streamablehttp/mcpclientstreamablehttp.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

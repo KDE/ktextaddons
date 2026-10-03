@@ -9,7 +9,7 @@
 #include "mcpserverplugin.h"
 #include "sse/mcpserversseplugininterface.h"
 #include "stdio/mcpserverstdioplugininterface.h"
-#include "streamanblehttp/mcpserverstreamhttpplugininterface.h"
+#include "streamablehttp/mcpserverstreamhttpplugininterface.h"
 K_PLUGIN_CLASS_WITH_JSON(McpServerPlugin, "mcpserverplugin.json")
 
 McpServerPlugin::McpServerPlugin(QObject *parent, const QList<QVariant> &)

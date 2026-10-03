@@ -17,12 +17,12 @@ class QNetworkReply;
 class QNetworkRequest;
 class QTimer;
 class QJsonObject;
-class McpClientStreambleHttpPluginInterface;
+class McpClientStreamableHttpPluginInterface;
 class McpClientStreamableHttp : public TextAutoGenerateTextMcpProtocolCore::McpBase
 {
     Q_OBJECT
 public:
-    explicit McpClientStreamableHttp(McpClientStreambleHttpPluginInterface *interface, QObject *parent = nullptr);
+    explicit McpClientStreamableHttp(McpClientStreamableHttpPluginInterface *interface, QObject *parent = nullptr);
     ~McpClientStreamableHttp() override;
 
     void connection() override;
@@ -58,7 +58,7 @@ private:
     void sessionExpired();
     void closeEventStream();
     QNetworkAccessManager *const mNetworkAccessManager;
-    McpClientStreambleHttpPluginInterface *const mInterface;
+    McpClientStreamableHttpPluginInterface *const mInterface;
     QUrl mUrl;
     // Session id sent by server in initialize answer
     QByteArray mSessionId;

@@ -47,20 +47,20 @@ target_sources(
         server/addmcpstdioserverwidget.cpp
         server/addmcpsseserverwidget.cpp
         server/addmcpsseserverwidget.h
-        server/addmcpsteamablehttpserverwidget.cpp
-        server/addmcpsteamablehttpserverwidget.h
+        server/addmcpstreamablehttpserverwidget.cpp
+        server/addmcpstreamablehttpserverwidget.h
         server/addmcpserverbasewidget.h
         server/addmcpserverbasewidget.cpp
         server/mcpserverlistviewdelegate.h
         server/mcpserverlistviewdelegate.cpp
-        server/addmcpsteamablehttpserverheaderwidget.h
-        server/addmcpsteamablehttpserverheaderwidget.cpp
-        server/addmcpsteamablehttpserverheaderlistwidget.h
-        server/addmcpsteamablehttpserverheaderlistwidget.cpp
-        server/addmcpsteamablehttpserverheaderconfiguredialog.h
-        server/addmcpsteamablehttpserverheaderconfiguredialog.cpp
-        server/addmcpsteamablehttpserverheaderconfigurewidget.h
-        server/addmcpsteamablehttpserverheaderconfigurewidget.cpp
+        server/addmcpstreamablehttpserverheaderwidget.h
+        server/addmcpstreamablehttpserverheaderwidget.cpp
+        server/addmcpstreamablehttpserverheaderlistwidget.h
+        server/addmcpstreamablehttpserverheaderlistwidget.cpp
+        server/addmcpstreamablehttpserverheaderconfiguredialog.h
+        server/addmcpstreamablehttpserverheaderconfiguredialog.cpp
+        server/addmcpstreamablehttpserverheaderconfigurewidget.h
+        server/addmcpstreamablehttpserverheaderconfigurewidget.cpp
         common/selecttypecombobox.h
         common/selecttypecombobox.cpp
 )

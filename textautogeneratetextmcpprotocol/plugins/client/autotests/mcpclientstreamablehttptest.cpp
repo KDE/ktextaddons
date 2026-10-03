@@ -5,7 +5,7 @@
 */
 #include "mcpclientstreamablehttptest.h"
 #include "fakemcphttpserver.h"
-#include "streamanblehttp/mcpclientstreamblehttpplugininterface.h"
+#include "streamablehttp/mcpclientstreamablehttpplugininterface.h"
 #include <QJsonDocument>
 #include <QSignalSpy>
 #include <QTcpSocket>
@@ -63,14 +63,14 @@ bool handleDefault(const FakeMcpHttpServer::Request &request, QTcpSocket *socket
     return false;
 }
 
-void initialize(McpClientStreambleHttpPluginInterface &client, FakeMcpHttpServer &server)
+void initialize(McpClientStreamableHttpPluginInterface &client, FakeMcpHttpServer &server)
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
     settings.setServerUrl(server.url(u"/mcp"_s));
     settings.setHeaders({u"Authorization: Bearer token"_s});
     client.setSettings(settings);
-    QSignalSpy startedSpy(&client, &McpClientStreambleHttpPluginInterface::started);
-    QSignalSpy receivedSpy(&client, &McpClientStreambleHttpPluginInterface::received);
+    QSignalSpy startedSpy(&client, &McpClientStreamableHttpPluginInterface::started);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
     client.start();
     QCOMPARE(startedSpy.count(), 1);
     client.send(jsonRequest(u"initialize"_s, 1));
@@ -96,13 +96,13 @@ McpClientStreamableHttpTest::McpClientStreamableHttpTest(QObject *parent)
 
 void McpClientStreamableHttpTest::shouldNotStartWithInvalidUrl()
 {
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
     settings.setServerUrl(QUrl(u"ftp://foo"_s));
     client.setSettings(settings);
-    QSignalSpy startedSpy(&client, &McpClientStreambleHttpPluginInterface::started);
-    QSignalSpy errorSpy(&client, &McpClientStreambleHttpPluginInterface::error);
-    QSignalSpy finishedSpy(&client, &McpClientStreambleHttpPluginInterface::finished);
+    QSignalSpy startedSpy(&client, &McpClientStreamableHttpPluginInterface::started);
+    QSignalSpy errorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
+    QSignalSpy finishedSpy(&client, &McpClientStreamableHttpPluginInterface::finished);
     client.start();
     QCOMPARE(startedSpy.count(), 0);
     QCOMPARE(errorSpy.count(), 1);
@@ -120,9 +120,9 @@ void McpClientStreamableHttpTest::shouldUseSessionAndProtocolVersion()
         const QJsonObject ping = jsonRequest(u"ping"_s, 99);
         FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(ping) + FakeMcpHttpServer::jsonEvent(result(request.json().value("id"_L1))));
     });
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     initialize(client, server);
-    QSignalSpy receivedSpy(&client, &McpClientStreambleHttpPluginInterface::received);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
     client.send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, u"notifications/initialized"_s}});
     client.send(jsonRequest(u"tools/list"_s, 2));
     QTRY_COMPARE(receivedSpy.count(), 2);
@@ -163,10 +163,10 @@ void McpClientStreamableHttpTest::shouldResumeInterruptedStream()
         const QJsonObject progress{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, u"notifications/progress"_s}};
         FakeMcpHttpServer::sendEventStream(socket, "retry: 10\n" + FakeMcpHttpServer::jsonEvent(progress, "event-1"));
     });
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     initialize(client, server);
-    QSignalSpy receivedSpy(&client, &McpClientStreambleHttpPluginInterface::received);
-    QSignalSpy errorSpy(&client, &McpClientStreambleHttpPluginInterface::error);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    QSignalSpy errorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
     client.send(jsonRequest(u"tools/list"_s, 2));
     QTRY_COMPARE(receivedSpy.count(), 2);
     const QList<QJsonObject> messages = receivedMessages(receivedSpy);
@@ -185,10 +185,10 @@ void McpClientStreamableHttpTest::shouldCreateErrorResponseWhenStreamCantBeResum
         // No event id: stream can't be resumed
         FakeMcpHttpServer::sendEventStream(socket, ": keep-alive\n\n");
     });
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     initialize(client, server);
-    QSignalSpy receivedSpy(&client, &McpClientStreambleHttpPluginInterface::received);
-    QSignalSpy errorSpy(&client, &McpClientStreambleHttpPluginInterface::error);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    QSignalSpy errorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
     client.send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, u"string-id"_s}, {"method"_L1, u"tools/list"_s}});
     QTRY_COMPARE(receivedSpy.count(), 1);
     const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
@@ -206,9 +206,9 @@ void McpClientStreamableHttpTest::shouldCreateErrorResponseWhenPostFailed()
         }
         FakeMcpHttpServer::sendResponse(socket, 500);
     });
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     initialize(client, server);
-    QSignalSpy receivedSpy(&client, &McpClientStreambleHttpPluginInterface::received);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
     client.send(jsonRequest(u"tools/list"_s, 2));
     QTRY_COMPARE(receivedSpy.count(), 1);
     const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
@@ -225,16 +225,16 @@ void McpClientStreamableHttpTest::shouldFinishWhenSessionExpired()
         }
         FakeMcpHttpServer::sendResponse(socket, 404);
     });
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     initialize(client, server);
-    QSignalSpy errorSpy(&client, &McpClientStreambleHttpPluginInterface::error);
-    QSignalSpy finishedSpy(&client, &McpClientStreambleHttpPluginInterface::finished);
+    QSignalSpy errorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
+    QSignalSpy finishedSpy(&client, &McpClientStreamableHttpPluginInterface::finished);
     client.send(jsonRequest(u"tools/list"_s, 2));
     QTRY_COMPARE(finishedSpy.count(), 1);
     QCOMPARE(errorSpy.count(), 1);
 
     // Client can be restarted
-    QSignalSpy startedSpy(&client, &McpClientStreambleHttpPluginInterface::started);
+    QSignalSpy startedSpy(&client, &McpClientStreamableHttpPluginInterface::started);
     client.start();
     QCOMPARE(startedSpy.count(), 1);
 }
@@ -245,9 +245,9 @@ void McpClientStreamableHttpTest::shouldDeleteSessionWhenStopped()
     server.setHandler([](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
         handleDefault(request, socket);
     });
-    McpClientStreambleHttpPluginInterface client;
+    McpClientStreamableHttpPluginInterface client;
     initialize(client, server);
-    QSignalSpy finishedSpy(&client, &McpClientStreambleHttpPluginInterface::finished);
+    QSignalSpy finishedSpy(&client, &McpClientStreamableHttpPluginInterface::finished);
     client.stop();
     QCOMPARE(finishedSpy.count(), 1);
     QTRY_COMPARE(server.requests("DELETE").count(), 1);
@@ -273,8 +273,8 @@ void McpClientStreamableHttpTest::shouldReconnectEventStream()
         }
         handleDefault(request, socket);
     });
-    McpClientStreambleHttpPluginInterface client;
-    QSignalSpy receivedSpy(&client, &McpClientStreambleHttpPluginInterface::received);
+    McpClientStreamableHttpPluginInterface client;
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
     initialize(client, server);
     // Event stream is opened after initialize
     QTRY_COMPARE(server.requests("GET").count(), 2);

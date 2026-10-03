@@ -6,7 +6,7 @@
 #include "mcpclientstreamablehttp.h"
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "mcpclientutils.h"
-#include "streamanblehttp/mcpclientstreamblehttpplugininterface.h"
+#include "streamablehttp/mcpclientstreamablehttpplugininterface.h"
 #include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -34,7 +34,7 @@ constexpr int maxReconnectAttempts = 5;
 }
 }
 
-McpClientStreamableHttp::McpClientStreamableHttp(McpClientStreambleHttpPluginInterface *interface, QObject *parent)
+McpClientStreamableHttp::McpClientStreamableHttp(McpClientStreamableHttpPluginInterface *interface, QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
     , mNetworkAccessManager(new QNetworkAccessManager(this))
     , mInterface(interface)

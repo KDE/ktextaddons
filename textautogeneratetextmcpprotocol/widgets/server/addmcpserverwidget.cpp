@@ -7,7 +7,7 @@
 #include "common/selecttypecombobox.h"
 #include "server/addmcpsseserverwidget.h"
 #include "server/addmcpstdioserverwidget.h"
-#include "server/addmcpsteamablehttpserverwidget.h"
+#include "server/addmcpstreamablehttpserverwidget.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -24,7 +24,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     , mStackedWidget(new QStackedWidget(this))
     , mAddMcpSseServerWidget(new AddMcpSseServerWidget(this))
     , mAddMcpStdioServerWidget(new AddMcpStdioServerWidget(this))
-    , mAddMcpSteamableHttpServerWidget(new AddMcpSteamableHttpServerWidget(this))
+    , mAddMcpStreamableHttpServerWidget(new AddMcpStreamableHttpServerWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -43,18 +43,18 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
 
     mAddMcpSseServerWidget->setObjectName(u"mAddMcpSseServerWidget"_s);
     mAddMcpStdioServerWidget->setObjectName(u"mAddMcpStdioServerWidget"_s);
-    mAddMcpSteamableHttpServerWidget->setObjectName(u"mAddMcpSteamableHttpServerWidget"_s);
+    mAddMcpStreamableHttpServerWidget->setObjectName(u"mAddMcpStreamableHttpServerWidget"_s);
 
     mStackedWidget->addWidget(mAddMcpSseServerWidget);
     mStackedWidget->addWidget(mAddMcpStdioServerWidget);
-    mStackedWidget->addWidget(mAddMcpSteamableHttpServerWidget);
+    mStackedWidget->addWidget(mAddMcpStreamableHttpServerWidget);
 
     mServerNameLineEdit->setClearButtonEnabled(true);
 
     connect(mServerNameLineEdit, &QLineEdit::textChanged, this, &AddMcpServerWidget::checkValidSettings);
     connect(mAddMcpSseServerWidget, &AddMcpSseServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
     connect(mAddMcpStdioServerWidget, &AddMcpStdioServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
-    connect(mAddMcpSteamableHttpServerWidget, &AddMcpSteamableHttpServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
+    connect(mAddMcpStreamableHttpServerWidget, &AddMcpStreamableHttpServerWidget::settingChanged, this, &AddMcpServerWidget::checkValidSettings);
 }
 
 AddMcpServerWidget::~AddMcpServerWidget() = default;
@@ -72,7 +72,7 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
         mAddMcpStdioServerWidget->loadSettings(server);
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
-        mAddMcpSteamableHttpServerWidget->loadSettings(server);
+        mAddMcpStreamableHttpServerWidget->loadSettings(server);
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
@@ -101,7 +101,7 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
         mAddMcpStdioServerWidget->saveSettings(server);
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
-        mAddMcpSteamableHttpServerWidget->saveSettings(server);
+        mAddMcpStreamableHttpServerWidget->saveSettings(server);
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
@@ -120,7 +120,7 @@ void AddMcpServerWidget::updateWidget(TextAutoGenerateTextMcpProtocolCore::McpPr
         mStackedWidget->setCurrentWidget(mAddMcpStdioServerWidget);
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
-        mStackedWidget->setCurrentWidget(mAddMcpSteamableHttpServerWidget);
+        mStackedWidget->setCurrentWidget(mAddMcpStreamableHttpServerWidget);
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
@@ -144,7 +144,7 @@ void AddMcpServerWidget::checkValidSettings()
         settingsIsValid = mAddMcpStdioServerWidget->isValid();
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
-        settingsIsValid = mAddMcpSteamableHttpServerWidget->isValid();
+        settingsIsValid = mAddMcpStreamableHttpServerWidget->isValid();
         break;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";

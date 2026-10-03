@@ -3,7 +3,7 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "addmcpsteamablehttpserverheaderconfigurewidget.h"
+#include "addmcpstreamablehttpserverheaderconfigurewidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -12,7 +12,7 @@
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
-AddMcpSteamableHttpServerHeaderConfigureWidget::AddMcpSteamableHttpServerHeaderConfigureWidget(QWidget *parent)
+AddMcpStreamableHttpServerHeaderConfigureWidget::AddMcpStreamableHttpServerHeaderConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mHeaderLineEdit(new QLineEdit(this))
 {
@@ -36,16 +36,16 @@ AddMcpSteamableHttpServerHeaderConfigureWidget::AddMcpSteamableHttpServerHeaderC
     });
 }
 
-AddMcpSteamableHttpServerHeaderConfigureWidget::~AddMcpSteamableHttpServerHeaderConfigureWidget() = default;
+AddMcpStreamableHttpServerHeaderConfigureWidget::~AddMcpStreamableHttpServerHeaderConfigureWidget() = default;
 
-void AddMcpSteamableHttpServerHeaderConfigureWidget::setHeader(const QString &str)
+void AddMcpStreamableHttpServerHeaderConfigureWidget::setHeader(const QString &str)
 {
     mHeaderLineEdit->setText(str);
 }
 
-QString AddMcpSteamableHttpServerHeaderConfigureWidget::header() const
+QString AddMcpStreamableHttpServerHeaderConfigureWidget::header() const
 {
     return mHeaderLineEdit->text();
 }
 
-#include "moc_addmcpsteamablehttpserverheaderconfigurewidget.cpp"
+#include "moc_addmcpstreamablehttpserverheaderconfigurewidget.cpp"

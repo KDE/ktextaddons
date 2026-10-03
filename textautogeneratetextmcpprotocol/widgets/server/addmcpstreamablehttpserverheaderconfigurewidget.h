@@ -9,12 +9,12 @@
 class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class AddMcpSteamableHttpServerHeaderConfigureWidget : public QWidget
+class AddMcpStreamableHttpServerHeaderConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit AddMcpSteamableHttpServerHeaderConfigureWidget(QWidget *parent = nullptr);
-    ~AddMcpSteamableHttpServerHeaderConfigureWidget() override;
+    explicit AddMcpStreamableHttpServerHeaderConfigureWidget(QWidget *parent = nullptr);
+    ~AddMcpStreamableHttpServerHeaderConfigureWidget() override;
 
     void setHeader(const QString &str);
     [[nodiscard]] QString header() const;

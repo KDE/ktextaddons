@@ -10,12 +10,12 @@
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpSteamableHttpServerHeaderListWidget : public QListWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpStreamableHttpServerHeaderListWidget : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit AddMcpSteamableHttpServerHeaderListWidget(QWidget *parent = nullptr);
-    ~AddMcpSteamableHttpServerHeaderListWidget() override;
+    explicit AddMcpStreamableHttpServerHeaderListWidget(QWidget *parent = nullptr);
+    ~AddMcpStreamableHttpServerHeaderListWidget() override;
     void setHeaders(const QStringList &lst);
     [[nodiscard]] QStringList headers() const;
     void addHeader(const QString &str);

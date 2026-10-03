@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpsseserverwidget.h"
-#include "addmcpsteamablehttpserverheaderwidget.h"
+#include "addmcpstreamablehttpserverheaderwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -15,7 +15,7 @@ using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
     : AddMcpServerBaseWidget{parent}
     , mServerUrlLineEdit(new QLineEdit(this))
-    , mHttpServerHeaderWidget(new AddMcpSteamableHttpServerHeaderWidget(this))
+    , mHttpServerHeaderWidget(new AddMcpStreamableHttpServerHeaderWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);

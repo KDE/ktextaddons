@@ -9,7 +9,7 @@
 #include "mcpclientplugin.h"
 #include "sse/mcpclientsseplugininterface.h"
 #include "stdio/mcpclientstdioplugininterface.h"
-#include "streamanblehttp/mcpclientstreamblehttpplugininterface.h"
+#include "streamablehttp/mcpclientstreamablehttpplugininterface.h"
 K_PLUGIN_CLASS_WITH_JSON(McpClientPlugin, "mcpclientplugin.json")
 
 McpClientPlugin::McpClientPlugin(QObject *parent, const QList<QVariant> &)
@@ -29,7 +29,7 @@ McpClientPlugin::createInterface(TextAutoGenerateTextMcpProtocolCore::McpProtoco
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio:
         return new McpClientStdioPluginInterface(parent);
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp:
-        return new McpClientStreambleHttpPluginInterface(parent);
+        return new McpClientStreamableHttpPluginInterface(parent);
     default:
         break;
     }

@@ -3,22 +3,22 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "addmcpsteamablehttpserverheaderwidgettest.h"
-#include "server/addmcpsteamablehttpserverheaderwidget.h"
+#include "addmcpstreamablehttpserverheaderwidgettest.h"
+#include "server/addmcpstreamablehttpserverheaderwidget.h"
 #include <QHBoxLayout>
 #include <QListWidget>
 #include <QPushButton>
 #include <QTest>
-QTEST_MAIN(AddMcpSteamableHttpServerHeaderWidgetTest)
+QTEST_MAIN(AddMcpStreamableHttpServerHeaderWidgetTest)
 using namespace Qt::Literals::StringLiterals;
-AddMcpSteamableHttpServerHeaderWidgetTest::AddMcpSteamableHttpServerHeaderWidgetTest(QObject *parent)
+AddMcpStreamableHttpServerHeaderWidgetTest::AddMcpStreamableHttpServerHeaderWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void AddMcpSteamableHttpServerHeaderWidgetTest::shouldHaveDefaultValues()
+void AddMcpStreamableHttpServerHeaderWidgetTest::shouldHaveDefaultValues()
 {
-    const TextAutoGenerateTextMcpProtocolWidgets::AddMcpSteamableHttpServerHeaderWidget w;
+    const TextAutoGenerateTextMcpProtocolWidgets::AddMcpStreamableHttpServerHeaderWidget w;
 
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
@@ -43,9 +43,9 @@ void AddMcpSteamableHttpServerHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(w.headers().isEmpty());
 }
 
-void AddMcpSteamableHttpServerHeaderWidgetTest::shouldEnableButtonsWhenItemSelected()
+void AddMcpStreamableHttpServerHeaderWidgetTest::shouldEnableButtonsWhenItemSelected()
 {
-    TextAutoGenerateTextMcpProtocolWidgets::AddMcpSteamableHttpServerHeaderWidget w;
+    TextAutoGenerateTextMcpProtocolWidgets::AddMcpStreamableHttpServerHeaderWidget w;
     const QStringList headers{u"Authorization: Bearer foo"_s, u"X-Test: bla"_s};
     w.setHeaders(headers);
     QCOMPARE(w.headers(), headers);
@@ -64,4 +64,4 @@ void AddMcpSteamableHttpServerHeaderWidgetTest::shouldEnableButtonsWhenItemSelec
     QVERIFY(!modifyHeaderButton->isEnabled());
     QVERIFY(!removeHeaderButton->isEnabled());
 }
-#include "moc_addmcpsteamablehttpserverheaderwidgettest.cpp"
+#include "moc_addmcpstreamablehttpserverheaderwidgettest.cpp"
