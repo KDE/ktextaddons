@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-23 07:00-0300\n"
+"PO-Revision-Date: 2026-10-02 10:20-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -21,18 +21,16 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
-msgstr ""
+msgstr "SSE"
 
 #: core/server/mcpserver.cpp:105
-#, fuzzy, kde-format
-#| msgid "Standard IO"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "E/S Padrão"
 
 #: core/server/mcpserver.cpp:107
-#, fuzzy, kde-format
-#| msgid "Streamable HTTP"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "HTTP transmissível"
@@ -40,7 +38,7 @@ msgstr "HTTP transmissível"
 #: plugins/client/sse/mcpclientsse.cpp:38
 #, kde-format
 msgid "Impossible to start client. Url is invalid."
-msgstr ""
+msgstr "Não é possível iniciar o cliente. A URL é inválida."
 
 #: plugins/client/sse/mcpclientsse.cpp:81
 #: plugins/client/streamanblehttp/mcpclientstreamblehttpplugininterface.cpp:26
@@ -48,32 +46,32 @@ msgstr ""
 #: plugins/server/streamanblehttp/mcpserverstreamhttpplugininterface.cpp:26
 #, kde-format
 msgid "Sending message is not implemented yet."
-msgstr ""
+msgstr "O envio de mensagens ainda não foi implementado."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:64
 #, kde-format
 msgid "Impossible to start client. Command is empty."
-msgstr ""
+msgstr "Não é possível iniciar o cliente. O comando está vazio."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:85
 #, kde-format
 msgid "Impossible to send message. Client is not running."
-msgstr ""
+msgstr "Não é possível enviar a mensagem. O cliente não está em execução."
 
 #: plugins/server/sse/mcpserversse.cpp:38
 #, kde-format
 msgid "Impossible to start server. Url is invalid."
-msgstr ""
+msgstr "Não é possível iniciar o servidor. A URL é inválida."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:51
 #, kde-format
 msgid "Impossible to start server. Command is empty."
-msgstr ""
+msgstr "Não é possível iniciar o servidor. O comando está vazio."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:85
 #, kde-format
 msgid "Impossible to send message. Server is not running."
-msgstr ""
+msgstr "Não é possível enviar a mensagem. O servidor não está em execução."
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
@@ -95,22 +93,19 @@ msgstr "Tipo:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:24
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Url:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "URL:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Command:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
 msgstr "Comando:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Arguments:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "Argumentos:"
@@ -122,8 +117,7 @@ msgid "Add Custom Header"
 msgstr "Adicionar cabeçalho personalizado"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Cabeçalho:"
@@ -164,8 +158,7 @@ msgid "Remove Header"
 msgstr "Remover cabeçalho"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgctxt "@label"
 msgid "Headers:"
 msgstr "Cabeçalhos:"
@@ -206,9 +199,7 @@ msgid "Search…"
 msgstr "Pesquisar…"
 
 #: widgets/server/mcpserverwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Adicionar servidor…"

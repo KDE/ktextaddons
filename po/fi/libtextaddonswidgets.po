@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-01-16 17:57+0200\n"
+"PO-Revision-Date: 2026-09-16 19:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Tommi Nieminen"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "translator@legisign.org"
 
 #: misc/openfilejob.cpp:60
 #, kde-format
@@ -72,7 +72,7 @@ msgstr "Tallenna tiedosto"
 #: misc/savefileutils.cpp:71
 #, kde-format
 msgid "Source file no longer exists"
-msgstr ""
+msgstr "Lähdetiedostoa ei enää ole"
 
 #: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
 #: misc/savefileutils.cpp:82
@@ -84,7 +84,7 @@ msgstr "Virhe tallennettaessa tiedostoa"
 #: misc/savefileutils.cpp:77
 #, kde-format
 msgid "Cannot overwrite existing file"
-msgstr ""
+msgstr "Ei voi korvata olemassa olevaa tiedostoa"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -107,40 +107,38 @@ msgstr "Versiosi on yli vuoden vanha: suosittelemme vakavasti päivittämään."
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Avaa kansio, jonne liite tallennettiin"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Tallenna tiedosto"
+msgstr "Avaa tiedosto"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Avaa kansio, jonne liite tallennettiin"
+msgstr[1] "Avaa kansio, jonne liitteet tallennettiin"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Avaa kansio, jonne PDF-tiedosto tallennettiin"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "Avaa kansio, jonne tiedosto tallennettiin"
 
 #: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "Liitettä ei voi avata."
 
 #: plugins/configurepluginswidget.cpp:24
 #, kde-format
@@ -298,33 +296,32 @@ msgstr "Joitakin vikoja on korjattu:"
 #: whatsnew/whatsnewwidget.cpp:146
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Versio %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "%2 – mitä uutta. %1"
+msgstr "Mitä uutta versiossa %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">Julkaisuhuomautus</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr ""
+msgstr "<h3><i>Mitä uutta versiossa %1 (julkaistu %2)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr ""
+msgstr "<h3><i>Mitä uutta versiossa %1 (julkaisematon)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr ""
+msgstr "<h1>Mitä uutta -historia</h1>"
 
 #~ msgid "..."
 #~ msgstr "…"
