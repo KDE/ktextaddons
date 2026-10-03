@@ -89,7 +89,10 @@ McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestForm
     const QJsonObject mapObj_properties = obj["properties"_L1].toObject();
     QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> map_properties;
     for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
-        map_properties.insert(it.key(), McpProtocolUtils::primitiveSchemaDefinitionFromJson(it.value()));
+        // Ignore unknown schema
+        if (auto definition = McpProtocolUtils::primitiveSchemaDefinitionFromJson(it.value())) {
+            map_properties.insert(it.key(), std::move(*definition));
+        }
     }
     requestedSchema.setProperties(std::move(map_properties));
     if (const QJsonValue requiredValue = obj.value("required"_L1); requiredValue.isArray()) {

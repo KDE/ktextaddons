@@ -27,7 +27,9 @@ McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &o
 {
     McpProtocolPromptMessage message;
     if (obj.contains("content"_L1)) {
-        message.setContent(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(obj["content"_L1]));
+        if (auto content = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(obj["content"_L1])) {
+            message.setContent(std::move(*content));
+        }
     }
     if (const QJsonValue roleValue = obj.value("role"_L1); roleValue.isString()) {
         message.setRole(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleFromString(roleValue.toString()));

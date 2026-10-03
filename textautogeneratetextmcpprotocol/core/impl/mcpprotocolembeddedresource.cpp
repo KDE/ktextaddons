@@ -42,7 +42,9 @@ McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObj
         resource.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
     if (obj.contains("resource"_L1)) {
-        resource.setResource(McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1]));
+        if (auto resourceContents = McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1])) {
+            resource.setResource(std::move(*resourceContents));
+        }
     }
     return resource;
 }

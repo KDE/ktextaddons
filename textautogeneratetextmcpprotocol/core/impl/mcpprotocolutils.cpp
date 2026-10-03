@@ -234,7 +234,7 @@ QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::progressTokenT
         val);
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource
+std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource>
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
@@ -469,7 +469,7 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlocktoJson(const 
         val);
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock
+std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock>
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
@@ -604,7 +604,10 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageResultConten
         QList<SamplingMessageContentBlock> list;
         list.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            list.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockFromJson(v));
+            // Ignore unknown content
+            if (auto block = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockFromJson(v)) {
+                list.append(std::move(*block));
+            }
         }
         return CreateMessageResultContent(std::move(list));
     }
@@ -647,7 +650,7 @@ QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::createMessageR
         val);
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::SamplingMessageContentBlock
+std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::SamplingMessageContentBlock>
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlockFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {
@@ -868,7 +871,7 @@ QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::primitiveSchem
         val);
 }
 
-TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition
+std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition>
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::primitiveSchemaDefinitionFromJson(const QJsonValue &val)
 {
     if (!val.isObject()) {

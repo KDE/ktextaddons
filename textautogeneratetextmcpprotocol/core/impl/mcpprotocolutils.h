@@ -255,7 +255,8 @@ using JSONRPCMessage =
 [[nodiscard]] ClientNotification clientNotificationFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue clientNotificationToJson(const ClientNotification &val);
 
-[[nodiscard]] EmbeddedResourceResource embeddedResourceResourceFromJson(const QJsonValue &val);
+[[nodiscard]] std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EmbeddedResourceResource>
+embeddedResourceResourceFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue embeddedResourceResourceToJson(const EmbeddedResourceResource &val);
 
 [[nodiscard]] RequestId requestIdFromJson(const QJsonValue &val);
@@ -277,7 +278,7 @@ using JSONRPCMessage =
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 
 [[nodiscard]] QJsonObject contentBlocktoJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock &val);
-[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock contentBlockFromJson(const QJsonValue &val);
+[[nodiscard]] std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock> contentBlockFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonObject clientRequestToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientRequest &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ClientRequest clientRequestFromJson(const QJsonValue &val);
 
@@ -285,7 +286,8 @@ using JSONRPCMessage =
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ServerNotification serverNotificationFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonObject samplingMessageContentBlockToJson(const SamplingMessageContentBlock &val);
-[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::SamplingMessageContentBlock samplingMessageContentBlockFromJson(const QJsonValue &val);
+[[nodiscard]] std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::SamplingMessageContentBlock>
+samplingMessageContentBlockFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonValue createMessageResultContentToJson(const CreateMessageResultContent &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CreateMessageResultContent createMessageResultContentFromJson(const QJsonValue &val);
@@ -312,7 +314,8 @@ using JSONRPCMessage =
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::EnumSchema enumSchemaFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonValue primitiveSchemaDefinitionToJson(const PrimitiveSchemaDefinition &val);
-[[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition primitiveSchemaDefinitionFromJson(const QJsonValue &val);
+[[nodiscard]] std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::PrimitiveSchemaDefinition>
+primitiveSchemaDefinitionFromJson(const QJsonValue &val);
 
 [[nodiscard]] QJsonValue elicitRequestParamsToJson(const ElicitRequestParams &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitRequestParams elicitRequestParamsFromJson(const QJsonValue &val);

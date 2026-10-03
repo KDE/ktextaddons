@@ -51,7 +51,10 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
         QList<McpProtocolUtils::ContentBlock> content;
         content.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            content.append(McpProtocolUtils::contentBlockFromJson(v));
+            // Ignore unknown content
+            if (auto block = McpProtocolUtils::contentBlockFromJson(v)) {
+                content.append(std::move(*block));
+            }
         }
         result.setContent(std::move(content));
     }

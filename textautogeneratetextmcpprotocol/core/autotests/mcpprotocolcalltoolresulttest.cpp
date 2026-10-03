@@ -50,4 +50,22 @@ void McpProtocolCallToolResultTest::shouldConvertJson()
     QCOMPARE(McpProtocolCallToolResult::toJson(result), obj);
 }
 
+void McpProtocolCallToolResultTest::shouldIgnoreUnknownContent()
+{
+    QJsonObject textContent;
+    textContent["type"_L1] = u"text"_s;
+    textContent["text"_L1] = u"Hello"_s;
+    QJsonObject unknownContent;
+    unknownContent["type"_L1] = u"video"_s;
+
+    QJsonObject obj;
+    obj["content"_L1] = QJsonArray{unknownContent, textContent};
+    const auto result = McpProtocolCallToolResult::fromJson(obj);
+    // Unknown content must not become an empty text content
+    QCOMPARE(result.content().count(), 1);
+    const auto first = std::get_if<McpProtocolTextContent>(&result.content().at(0));
+    QVERIFY(first);
+    QCOMPARE(first->text(), u"Hello"_s);
+}
+
 #include "moc_mcpprotocolcalltoolresulttest.cpp"

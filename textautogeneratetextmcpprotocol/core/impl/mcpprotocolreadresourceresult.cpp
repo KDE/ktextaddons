@@ -39,7 +39,10 @@ McpProtocolReadResourceResult McpProtocolReadResourceResult::fromJson(const QJso
         const QJsonArray arr = contentsValue.toArray();
         resources.reserve(arr.size());
         for (const auto &v : arr) {
-            resources.append(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceFromJson(v));
+            // Ignore unknown resource contents
+            if (auto contents = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceFromJson(v)) {
+                resources.append(std::move(*contents));
+            }
         }
         prompt.setContents(std::move(resources));
     }
