@@ -9,6 +9,7 @@
 #include "impl/mcpprotocolelicitrequesturlparams.h"
 #include "impl/mcpprotocolelicitresult.h"
 #include "impl/mcpprotocolpingrequest.h"
+#include "impl/mcpprotocolrequestparams.h"
 #include "impl/mcpprotocolutils.h"
 #include <QJsonObject>
 #include <QTest>
@@ -224,6 +225,25 @@ void McpProtocolUtilsTest::shouldParseElicitRequestWithoutModeAsForm()
     obj["params"_L1] = params;
     const auto request = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest::fromJson(obj);
     QVERIFY(std::holds_alternative<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams>(request.params()));
+}
+
+void McpProtocolUtilsTest::shouldNotConvertFractionalRequestIdToZero()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest;
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams;
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken;
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId;
+    QJsonObject obj{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, u"ping"_s}, {"id"_L1, 1.5}};
+    const RequestId first = McpProtocolPingRequest::fromJson(obj).id();
+    obj["id"_L1] = 2.5;
+    const RequestId second = McpProtocolPingRequest::fromJson(obj).id();
+    QVERIFY(first != second);
+    QVERIFY(first != RequestId(qint64(0)));
+    obj["id"_L1] = 3.0;
+    QCOMPARE(McpProtocolPingRequest::fromJson(obj).id(), RequestId(qint64(3)));
+
+    QCOMPARE(McpProtocolRequestParams::Meta::fromJson(QJsonObject{{"progressToken"_L1, 4.0}}).progressToken(), ProgressToken(qint64(4)));
+    QVERIFY(McpProtocolRequestParams::Meta::fromJson(QJsonObject{{"progressToken"_L1, 0.5}}).progressToken() != ProgressToken(qint64(0)));
 }
 
 #include "moc_mcpprotocolutilstest.cpp"

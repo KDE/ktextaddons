@@ -25,6 +25,7 @@ private Q_SLOTS:
     void shouldConvertProtocolVersionFromString();
     void shouldOrderLoggingLevelBySeverity();
     void shouldKeepLargeRequestId();
+    void shouldNotConvertFractionalRequestIdToZero();
     void shouldKeepDecimalElicitResultContent();
     void shouldParseElicitRequestWithoutModeAsForm();
 };

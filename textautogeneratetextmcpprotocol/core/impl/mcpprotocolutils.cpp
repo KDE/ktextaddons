@@ -198,6 +198,12 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::progressTokenFromJson(con
         return ProgressToken(val.toString());
     }
     if (val.isDouble()) {
+        const double value = val.toDouble();
+        if (value != std::trunc(value)) {
+            // Not allowed by JSON-RPC. Keep it as string, toInteger() would return 0 for all of them
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "progressTokenFromJson: number with fractional part: " << value;
+            return ProgressToken(QString::number(value));
+        }
         return ProgressToken(val.toInteger());
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid progressTokenFromJson: " << val;
@@ -210,6 +216,12 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId TextAutoGenerat
         return RequestId(val.toString());
     }
     if (val.isDouble()) {
+        const double value = val.toDouble();
+        if (value != std::trunc(value)) {
+            // Not allowed by JSON-RPC. Keep it as string, toInteger() would return 0 for all of them
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "requestIdFromJson: number with fractional part: " << value;
+            return RequestId(QString::number(value));
+        }
         return RequestId(val.toInteger());
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid requestIdFromJson: " << val;
