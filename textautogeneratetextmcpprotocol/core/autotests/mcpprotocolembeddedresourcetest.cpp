@@ -4,8 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolembeddedresourcetest.h"
-#include "mcpprotocolembeddedresource.h"
+#include "impl/mcpprotocolembeddedresource.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(McpProtocolEmbeddedResourceTest)
 
 McpProtocolEmbeddedResourceTest::McpProtocolEmbeddedResourceTest(QObject *parent)
@@ -15,9 +16,9 @@ McpProtocolEmbeddedResourceTest::McpProtocolEmbeddedResourceTest(QObject *parent
 
 void McpProtocolEmbeddedResourceTest::shouldHaveDefaultValues()
 {
-    const McpProtocol::McpProtocolEmbeddedResource w;
+    const TextAutoGenerateTextMcpProtocolCore::McpProtocolEmbeddedResource w;
+    QCOMPARE(w.type(), "resource"_ba);
     QVERIFY(!w.meta().has_value());
     QVERIFY(!w.annotations().has_value());
-    // TODO EmbeddedResourceResource QVERIFY(w.prompts().isEmpty());
 }
 #include "moc_mcpprotocolembeddedresourcetest.cpp"
