@@ -74,7 +74,9 @@ void initialize(McpClientStreambleHttpPluginInterface &client, FakeMcpHttpServer
     client.start();
     QCOMPARE(startedSpy.count(), 1);
     client.send(jsonRequest(u"initialize"_s, 1));
-    QTRY_COMPARE(receivedSpy.count(), 1);
+    // Event stream can send messages just after initialize
+    QTRY_VERIFY(receivedSpy.count() >= 1);
+    QCOMPARE(receivedSpy.at(0).at(0).toJsonObject().value("id"_L1).toInt(), 1);
 }
 
 QList<QJsonObject> receivedMessages(const QSignalSpy &spy)
