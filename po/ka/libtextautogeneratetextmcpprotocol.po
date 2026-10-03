@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 17:39+0000\n"
-"PO-Revision-Date: 2026-08-11 05:54+0200\n"
+"PO-Revision-Date: 2026-10-02 03:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -22,18 +22,16 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
-msgstr ""
+msgstr "SSE"
 
 #: core/server/mcpserver.cpp:105
-#, fuzzy, kde-format
-#| msgid "Standard IO"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "სტანდარტული IO"
 
 #: core/server/mcpserver.cpp:107
-#, fuzzy, kde-format
-#| msgid "Streamable HTTP"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "დასტრიმვადი HTTP"
@@ -41,7 +39,7 @@ msgstr "დასტრიმვადი HTTP"
 #: plugins/client/sse/mcpclientsse.cpp:38
 #, kde-format
 msgid "Impossible to start client. Url is invalid."
-msgstr ""
+msgstr "კლიენტის გაშვება შეუძლებელია. ბმული არასწორია."
 
 #: plugins/client/sse/mcpclientsse.cpp:81
 #: plugins/client/streamanblehttp/mcpclientstreamblehttpplugininterface.cpp:26
@@ -49,32 +47,32 @@ msgstr ""
 #: plugins/server/streamanblehttp/mcpserverstreamhttpplugininterface.cpp:26
 #, kde-format
 msgid "Sending message is not implemented yet."
-msgstr ""
+msgstr "შეტყობინების გაგზავნა ჯერ განხორციელებული არაა."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:64
 #, kde-format
 msgid "Impossible to start client. Command is empty."
-msgstr ""
+msgstr "კლიენტის გაშვება შეუძლებელია. ბრძანება ცარიელია."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:85
 #, kde-format
 msgid "Impossible to send message. Client is not running."
-msgstr ""
+msgstr "შეტყობინების გაგზავნა შეუძლებელია. კლიენტი გაშვებული არაა."
 
 #: plugins/server/sse/mcpserversse.cpp:38
 #, kde-format
 msgid "Impossible to start server. Url is invalid."
-msgstr ""
+msgstr "სერვერის გაშვება შეუძლებელია. ბმული არასწორია."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:51
 #, kde-format
 msgid "Impossible to start server. Command is empty."
-msgstr ""
+msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:85
 #, kde-format
 msgid "Impossible to send message. Server is not running."
-msgstr ""
+msgstr "შეტყობინების გაგზავნა შეუძლებელია. სერვერი გაშვებული არაა."
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
@@ -96,22 +94,19 @@ msgstr "ტიპი:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:24
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Url:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "Url:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Command:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
 msgstr "ბრძანება:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Arguments:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "არგუმენტები:"
@@ -123,8 +118,7 @@ msgid "Add Custom Header"
 msgstr "მომხმარებლის თავსართის დამატება"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "თავსართი:"
@@ -165,8 +159,7 @@ msgid "Remove Header"
 msgstr "თავსართის წაშლა"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgctxt "@label"
 msgid "Headers:"
 msgstr "თავსართები:"
@@ -207,9 +200,7 @@ msgid "Search…"
 msgstr "ძებნა…"
 
 #: widgets/server/mcpserverwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "სერვერის დამატება…"
