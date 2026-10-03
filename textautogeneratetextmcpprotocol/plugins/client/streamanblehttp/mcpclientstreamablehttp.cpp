@@ -18,6 +18,7 @@
 #include <QTimer>
 #include <algorithm>
 #include <memory>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 using TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser;
@@ -47,6 +48,7 @@ McpClientStreamableHttp::~McpClientStreamableHttp()
 {
     // Don't emit signals while we are destroyed.
     closeEventStream();
+    abortPendingReplies();
 }
 
 void McpClientStreamableHttp::connection()
@@ -94,17 +96,21 @@ void McpClientStreamableHttp::send(const QJsonObject &obj)
     QNetworkRequest request = createRequest();
     request.setRawHeader("Accept"_ba, "application/json, text/event-stream"_ba);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json"_ba);
-    const bool isInitializeRequest = obj.value("method"_L1).toString() == "initialize"_L1;
-    QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
     // Server can answer with a SSE stream, each POST has its own stream.
-    const auto parser = std::make_shared<McpProtocolSseParser>();
-    connect(reply, &QNetworkReply::readyRead, this, [this, reply, parser]() {
+    const auto stream = std::make_shared<RequestStream>();
+    stream->isInitializeRequest = obj.value("method"_L1).toString() == "initialize"_L1;
+    if (obj.contains("method"_L1)) {
+        stream->requestId = obj.value("id"_L1);
+    }
+    QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
+    trackReply(reply);
+    connect(reply, &QNetworkReply::readyRead, this, [this, reply, stream]() {
         if (isEventStream(reply)) {
-            processEvents(parser->feed(reply->readAll()));
+            processEvents(stream->parser.feed(reply->readAll()), stream.get());
         }
     });
-    connect(reply, &QNetworkReply::finished, this, [this, reply, isInitializeRequest, parser]() {
-        postFinished(reply, isInitializeRequest, parser);
+    connect(reply, &QNetworkReply::finished, this, [this, reply, stream]() {
+        postFinished(reply, stream);
     });
     connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {
         for (const QSslError &error : errors) {
@@ -113,7 +119,7 @@ void McpClientStreamableHttp::send(const QJsonObject &obj)
     });
 }
 
-void McpClientStreamableHttp::postFinished(QNetworkReply *reply, bool isInitializeRequest, const std::shared_ptr<McpProtocolSseParser> &parser)
+void McpClientStreamableHttp::postFinished(QNetworkReply *reply, const RequestStreamPtr &stream)
 {
     reply->deleteLater();
     const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -122,26 +128,122 @@ void McpClientStreamableHttp::postFinished(QNetworkReply *reply, bool isInitiali
             sessionExpired();
             return;
         }
+        if (statusCode == 200 && isEventStream(reply)) {
+            // SSE stream was cut, try to resume it
+            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Stream interrupted:" << reply->errorString();
+            processEvents(stream->parser.feed(reply->readAll()), stream.get());
+            requestStreamFinished(stream);
+            return;
+        }
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Post failed:" << statusCode << reply->errorString();
         Q_EMIT error(reply->errorString());
         // Body can contain a JSON-RPC error response
         if (reply->header(QNetworkRequest::ContentTypeHeader).toString().startsWith("application/json"_L1)) {
-            processJsonBody(reply->readAll());
+            processJsonBody(reply->readAll(), stream.get());
         }
         return;
     }
-    if (isInitializeRequest) {
+    if (stream->isInitializeRequest) {
         mSessionId = reply->rawHeader("Mcp-Session-Id"_ba);
     }
     if (isEventStream(reply)) {
-        processEvents(parser->feed(reply->readAll()));
+        processEvents(stream->parser.feed(reply->readAll()), stream.get());
+        // Server can close stream before sending response
+        requestStreamFinished(stream);
     } else if (statusCode != 202) {
         // 202 Accepted: notification or response sent, no body.
-        processJsonBody(reply->readAll());
+        processJsonBody(reply->readAll(), stream.get());
     }
 }
 
-void McpClientStreamableHttp::processJsonBody(const QByteArray &body)
+void McpClientStreamableHttp::requestStreamFinished(const RequestStreamPtr &stream)
+{
+    if (!mStarted || stream->requestId.isUndefined() || stream->responseReceived) {
+        return;
+    }
+    if (stream->parser.lastEventId().isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Stream closed before response, it can't be resumed. Request:" << stream->requestId;
+        Q_EMIT error(i18n("Connection lost before receiving answer."));
+        return;
+    }
+    if (stream->resumeAttempts >= maxReconnectAttempts) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Too many attempts to resume stream. Request:" << stream->requestId;
+        Q_EMIT error(i18n("Connection lost before receiving answer."));
+        return;
+    }
+    int delay = stream->parser.retry();
+    if (delay < 0) {
+        delay = std::min(defaultReconnectDelay << stream->resumeAttempts, maxReconnectDelay);
+    }
+    ++stream->resumeAttempts;
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Resume stream of request" << stream->requestId << "in" << delay << "ms";
+    const quint64 generation = mGeneration;
+    QTimer::singleShot(delay, this, [this, stream, generation]() {
+        if (generation == mGeneration) {
+            resumeRequestStream(stream);
+        }
+    });
+}
+
+void McpClientStreamableHttp::resumeRequestStream(const RequestStreamPtr &stream)
+{
+    if (!mStarted) {
+        return;
+    }
+    // Server replays messages of the stream after this event id
+    QNetworkRequest request = createRequest();
+    request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
+    request.setRawHeader("Cache-Control"_ba, "no-cache"_ba);
+    request.setRawHeader("Last-Event-ID"_ba, stream->parser.lastEventId());
+    stream->parser.resetConnection();
+    QNetworkReply *reply = mNetworkAccessManager->get(request);
+    trackReply(reply);
+    connect(reply, &QNetworkReply::readyRead, this, [this, reply, stream]() {
+        const QByteArray data = reply->readAll();
+        if (!data.isEmpty()) {
+            stream->resumeAttempts = 0;
+        }
+        processEvents(stream->parser.feed(data), stream.get());
+    });
+    connect(reply, &QNetworkReply::finished, this, [this, reply, stream]() {
+        reply->deleteLater();
+        const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        if (statusCode == 404 && !mSessionId.isEmpty()) {
+            sessionExpired();
+            return;
+        }
+        if (statusCode == 405) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Server doesn't allow to resume stream. Request:" << stream->requestId;
+            Q_EMIT error(i18n("Connection lost before receiving answer."));
+            return;
+        }
+        processEvents(stream->parser.feed(reply->readAll()), stream.get());
+        requestStreamFinished(stream);
+    });
+}
+
+void McpClientStreamableHttp::trackReply(QNetworkReply *reply)
+{
+    mPendingReplies.removeIf([](const QPointer<QNetworkReply> &pending) {
+        return pending.isNull();
+    });
+    mPendingReplies.append(reply);
+}
+
+void McpClientStreamableHttp::abortPendingReplies()
+{
+    ++mGeneration;
+    const QList<QPointer<QNetworkReply>> replies = std::exchange(mPendingReplies, {});
+    for (const QPointer<QNetworkReply> &reply : replies) {
+        if (reply) {
+            reply->disconnect(this);
+            reply->abort();
+            reply->deleteLater();
+        }
+    }
+}
+
+void McpClientStreamableHttp::processJsonBody(const QByteArray &body, RequestStream *stream)
 {
     if (body.trimmed().isEmpty()) {
         return;
@@ -153,31 +255,34 @@ void McpClientStreamableHttp::processJsonBody(const QByteArray &body)
         return;
     }
     if (doc.isObject()) {
-        processMessage(doc.object());
+        processMessage(doc.object(), stream);
     } else if (doc.isArray()) {
         // JSON-RPC batch (protocol 2025-03-26)
         const QJsonArray array = doc.array();
         for (const auto &value : array) {
             if (value.isObject()) {
-                processMessage(value.toObject());
+                processMessage(value.toObject(), stream);
             }
         }
     }
 }
 
-void McpClientStreamableHttp::processEvents(const QList<McpProtocolSseParser::Event> &events)
+void McpClientStreamableHttp::processEvents(const QList<McpProtocolSseParser::Event> &events, RequestStream *stream)
 {
     for (const auto &event : events) {
         if (event.event == "message") {
-            processJsonBody(event.data);
+            processJsonBody(event.data, stream);
         } else {
             qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Ignore event:" << event.event;
         }
     }
 }
 
-void McpClientStreamableHttp::processMessage(const QJsonObject &obj)
+void McpClientStreamableHttp::processMessage(const QJsonObject &obj, RequestStream *stream)
 {
+    if (stream && !stream->requestId.isUndefined() && obj.value("id"_L1) == stream->requestId && (obj.contains("result"_L1) || obj.contains("error"_L1))) {
+        stream->responseReceived = true;
+    }
     // Store negotiated version, it must be sent in each request after initialize.
     bool initializeResult = false;
     if (mProtocolVersion.isEmpty()) {
@@ -273,6 +378,7 @@ void McpClientStreamableHttp::sessionExpired()
     mProtocolVersion.clear();
     mStarted = false;
     closeEventStream();
+    abortPendingReplies();
     Q_EMIT error(i18n("Session expired. Client must be restarted."));
     // Allow client to restart a new session
     Q_EMIT finished();
@@ -305,6 +411,7 @@ void McpClientStreamableHttp::stop()
         });
     }
     closeEventStream();
+    abortPendingReplies();
     mSessionId.clear();
     mProtocolVersion.clear();
     mStarted = false;

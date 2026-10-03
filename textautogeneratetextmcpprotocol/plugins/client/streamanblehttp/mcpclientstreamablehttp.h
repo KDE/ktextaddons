@@ -7,7 +7,11 @@
 
 #include "common/mcpbase.h"
 #include "common/mcpprotocolsseparser.h"
+#include <QJsonValue>
+#include <QList>
+#include <QPointer>
 #include <QUrl>
+#include <memory>
 class QNetworkAccessManager;
 class QNetworkReply;
 class QNetworkRequest;
@@ -27,11 +31,26 @@ public:
     void stop() override;
 
 private:
+    // State of the SSE stream returned by a POST
+    struct RequestStream {
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser parser;
+        // Undefined when we post a notification or a response
+        QJsonValue requestId;
+        bool isInitializeRequest = false;
+        bool responseReceived = false;
+        int resumeAttempts = 0;
+    };
+    using RequestStreamPtr = std::shared_ptr<RequestStream>;
+
     [[nodiscard]] QNetworkRequest createRequest() const;
-    void processEvents(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser::Event> &events);
-    void processMessage(const QJsonObject &obj);
-    void processJsonBody(const QByteArray &body);
-    void postFinished(QNetworkReply *reply, bool isInitializeRequest, const std::shared_ptr<TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser> &parser);
+    void processEvents(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser::Event> &events, RequestStream *stream = nullptr);
+    void processMessage(const QJsonObject &obj, RequestStream *stream = nullptr);
+    void processJsonBody(const QByteArray &body, RequestStream *stream = nullptr);
+    void postFinished(QNetworkReply *reply, const RequestStreamPtr &stream);
+    void requestStreamFinished(const RequestStreamPtr &stream);
+    void resumeRequestStream(const RequestStreamPtr &stream);
+    void trackReply(QNetworkReply *reply);
+    void abortPendingReplies();
     void openEventStream();
     void eventStreamFinished(QNetworkReply *reply);
     void scheduleEventStreamReconnection();
@@ -50,5 +69,9 @@ private:
     QTimer *const mReconnectTimer;
     // Number of reconnections without receiving data
     int mReconnectAttempts = 0;
+    // POST and resumed streams in progress, aborted when we stop
+    QList<QPointer<QNetworkReply>> mPendingReplies;
+    // Incremented when we stop, invalidates scheduled resumptions
+    quint64 mGeneration = 0;
     bool mStarted = false;
 };
