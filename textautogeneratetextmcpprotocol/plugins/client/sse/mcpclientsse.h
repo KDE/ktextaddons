@@ -6,8 +6,11 @@
 #pragma once
 
 #include "common/mcpbase.h"
+#include "common/mcpprotocolsseparser.h"
+#include <QUrl>
 class QNetworkAccessManager;
 class QNetworkReply;
+class QNetworkRequest;
 class QJsonObject;
 class McpClientSsePluginInterface;
 class McpClientSse : public TextAutoGenerateTextMcpProtocolCore::McpBase
@@ -23,6 +26,10 @@ public:
 
 private:
     void slotRead(QNetworkReply *reply);
+    void addHeaders(QNetworkRequest &request) const;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser mParser;
+    // Url used to post messages, sent by server in "endpoint" event
+    QUrl mPostUrl;
     QNetworkAccessManager *const mNetworkAccessManager;
     QNetworkReply *mReply = nullptr;
     McpClientSsePluginInterface *const mInterface;

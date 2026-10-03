@@ -7,8 +7,12 @@
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "sse/mcpclientsseplugininterface.h"
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QSslError>
 using namespace Qt::Literals::StringLiterals;
 McpClientSse::McpClientSse(McpClientSsePluginInterface *interface, QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
@@ -38,18 +42,12 @@ void McpClientSse::connection()
         Q_EMIT error(i18n("Impossible to start client. Url is invalid."));
         return;
     }
+    mParser.clear();
+    mPostUrl.clear();
     QNetworkRequest request(url);
     request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
     request.setRawHeader("Cache-Control"_ba, "no-cache"_ba);
-    const QStringList headers = settings.headers();
-    for (const QString &header : headers) {
-        const qsizetype index = header.indexOf(u':');
-        if (index <= 0) {
-            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Invalid header, expected \"Name: Value\"";
-            continue;
-        }
-        request.setRawHeader(header.left(index).trimmed().toUtf8(), header.mid(index + 1).trimmed().toUtf8());
-    }
+    addHeaders(request);
 
     QNetworkReply *reply = mNetworkAccessManager->get(request);
     mReply = reply;
@@ -74,18 +72,63 @@ void McpClientSse::connection()
     });
 }
 
-void McpClientSse::send(const QJsonObject &)
+void McpClientSse::addHeaders(QNetworkRequest &request) const
 {
-    // TODO use post
-    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Sending message is not implemented yet.";
-    Q_EMIT error(i18n("Sending message is not implemented yet."));
+    const QStringList headers = mInterface->protocolSettings().headers();
+    for (const QString &header : headers) {
+        const qsizetype index = header.indexOf(u':');
+        if (index <= 0) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Invalid header, expected \"Name: Value\"";
+            continue;
+        }
+        request.setRawHeader(header.left(index).trimmed().toUtf8(), header.mid(index + 1).trimmed().toUtf8());
+    }
+}
+
+void McpClientSse::send(const QJsonObject &obj)
+{
+    if (!mPostUrl.isValid()) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Endpoint not received from server. Can't send message";
+        Q_EMIT error(i18n("Server is not ready."));
+        return;
+    }
+    QNetworkRequest request(mPostUrl);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json"_ba);
+    addHeaders(request);
+    // Answer is sent in sse stream, post reply contains only status.
+    QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        if (reply->error() != QNetworkReply::NoError) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Post failed:" << reply->errorString();
+            Q_EMIT error(reply->errorString());
+        }
+        reply->deleteLater();
+    });
 }
 
 void McpClientSse::slotRead(QNetworkReply *reply)
 {
-    // TODO
-    const QByteArray response = reply->readAll();
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " response " << response;
+    const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser::Event> events = mParser.feed(reply->readAll());
+    for (const auto &event : events) {
+        if (event.event == "endpoint") {
+            const bool alreadyStarted = mPostUrl.isValid();
+            mPostUrl = reply->url().resolved(QUrl(QString::fromUtf8(event.data)));
+            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Endpoint:" << mPostUrl;
+            if (!alreadyStarted) {
+                Q_EMIT started();
+            }
+        } else if (event.event == "message") {
+            QJsonParseError parseError;
+            const QJsonDocument doc = QJsonDocument::fromJson(event.data, &parseError);
+            if (parseError.error != QJsonParseError::NoError || !doc.isObject()) {
+                qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Invalid message:" << parseError.errorString() << event.data;
+                continue;
+            }
+            Q_EMIT received(doc.object());
+        } else {
+            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Ignore event:" << event.event;
+        }
+    }
 }
 
 #include "moc_mcpclientsse.cpp"
