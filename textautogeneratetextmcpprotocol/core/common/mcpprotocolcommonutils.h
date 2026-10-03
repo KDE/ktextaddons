@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetextmcpprotocolcore_export.h"
+#include "mcpprotocolcore_private_export.h"
 #include <KSharedConfig>
 #include <QString>
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -13,11 +13,11 @@ namespace McpProtocolCommonUtils
 {
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString serverConfigFileName();
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_TESTS_EXPORT QString serverConfigFileName();
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QByteArray generateUUid();
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_TESTS_EXPORT QByteArray generateUUid();
 
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QStringList mcpServerList(const KSharedConfig::Ptr &config);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_TESTS_EXPORT QStringList mcpServerList(const KSharedConfig::Ptr &config);
 }
 }
