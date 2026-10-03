@@ -25,6 +25,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams::Meta &t)
 {
     d.space() << "progressToken:" << t.progressToken();
+    d.space() << "additionalProperties:" << t.additionalProperties();
     return d;
 }
 
@@ -34,12 +35,15 @@ McpProtocolSetLevelRequestParams::Meta McpProtocolSetLevelRequestParams::Meta::f
     if (obj.contains("progressToken"_L1)) {
         meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
     }
+    QJsonObject additionalProperties = obj;
+    additionalProperties.remove("progressToken"_L1);
+    meta.setAdditionalProperties(additionalProperties);
     return meta;
 }
 
 QJsonObject McpProtocolSetLevelRequestParams::Meta::toJson(const McpProtocolSetLevelRequestParams::Meta &meta)
 {
-    QJsonObject obj;
+    QJsonObject obj = meta.additionalProperties();
     if (meta.progressToken().has_value()) {
         obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
     }
@@ -98,4 +102,14 @@ std::optional<McpProtocolUtils::ProgressToken> McpProtocolSetLevelRequestParams:
 void McpProtocolSetLevelRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
 {
     mProgressToken = std::move(newProgressToken);
+}
+
+QJsonObject McpProtocolSetLevelRequestParams::Meta::additionalProperties() const
+{
+    return mAdditionalProperties;
+}
+
+void McpProtocolSetLevelRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
+{
+    mAdditionalProperties = newAdditionalProperties;
 }

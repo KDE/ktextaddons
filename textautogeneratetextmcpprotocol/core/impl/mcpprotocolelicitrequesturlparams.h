@@ -7,12 +7,12 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
+#include <QJsonObject>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskMetadata>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
 class QDebug;
-class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitRequestURLParams
@@ -20,9 +20,13 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitRequestURLPara
 public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
+        // Other _meta keys (e.g. "io.modelcontextprotocol/related-task")
+        QJsonObject mAdditionalProperties;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
         void setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken);
+        [[nodiscard]] QJsonObject additionalProperties() const;
+        void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
         [[nodiscard]] bool operator==(const McpProtocolElicitRequestURLParams::Meta &other) const;
 
         /*!

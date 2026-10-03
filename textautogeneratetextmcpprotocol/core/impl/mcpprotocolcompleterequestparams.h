@@ -5,13 +5,13 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QJsonObject>
 #include <QMap>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptReference>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceTemplateReference>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
-class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -20,9 +20,13 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCompleteRequestParam
 public:
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
         std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
+        // Other _meta keys (e.g. "io.modelcontextprotocol/related-task")
+        QJsonObject mAdditionalProperties;
 
         [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
         void setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken);
+        [[nodiscard]] QJsonObject additionalProperties() const;
+        void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
         [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Meta &other) const;
 
         /*!

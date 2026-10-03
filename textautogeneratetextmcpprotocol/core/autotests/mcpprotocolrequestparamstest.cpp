@@ -32,4 +32,15 @@ void McpProtocolRequestParamsTest::shouldLoadAndSaveRequestParams()
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams::toJson(params), obj);
 }
 
+void McpProtocolRequestParamsTest::shouldKeepAdditionalMetaProperties()
+{
+    QJsonObject obj;
+    const QJsonObject relatedTask{{"taskId"_L1, u"task-1"_s}};
+    obj["_meta"_L1] = QJsonObject{{"progressToken"_L1, u"token"_s}, {"io.modelcontextprotocol/related-task"_L1, relatedTask}};
+    const auto params = TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams::fromJson(obj);
+    QVERIFY(params.meta().has_value());
+    QCOMPARE(params.meta()->additionalProperties(), QJsonObject({{"io.modelcontextprotocol/related-task"_L1, relatedTask}}));
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolRequestParams::toJson(params), obj);
+}
+
 #include "moc_mcpprotocolrequestparamstest.cpp"
