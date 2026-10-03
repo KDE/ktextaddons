@@ -32,11 +32,14 @@ McpProtocolURLElicitationRequiredError McpProtocolURLElicitationRequiredError::f
         return {};
     }
     McpProtocolURLElicitationRequiredError result;
-    if (const QJsonValue errorValue = obj.value("error"_L1); errorValue.isObject()) {
-        result.setError(McpProtocolError::fromJson(errorValue.toObject()));
+    const McpProtocolError error = McpProtocolError::fromJson(obj.value("error"_L1).toObject());
+    if (error.code() != errorCode) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolURLElicitationRequiredError: invalid error code" << error.code();
+        return {};
     }
-    if (obj.contains("id"_L1)) {
-        result.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    result.setError(error);
+    if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() || idValue.isDouble()) {
+        result.setId(McpProtocolUtils::requestIdFromJson(idValue));
     }
     return result;
 }

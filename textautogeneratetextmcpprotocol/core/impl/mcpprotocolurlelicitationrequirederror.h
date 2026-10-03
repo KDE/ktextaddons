@@ -28,6 +28,10 @@ public:
      */
     [[nodiscard]] static McpProtocolURLElicitationRequiredError fromJson(const QJsonObject &obj);
     /*!
+     * JSON-RPC error code used by this error
+     */
+    static constexpr int errorCode = -32042;
+    /*!
      */
     [[nodiscard]] static QJsonObject toJson(const McpProtocolURLElicitationRequiredError &urlElicitationRequiredError);
 
