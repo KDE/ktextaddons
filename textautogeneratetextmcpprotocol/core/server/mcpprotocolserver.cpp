@@ -76,6 +76,13 @@ void McpProtocolServer::start()
     }
 }
 
+void McpProtocolServer::stop()
+{
+    if (mPluginInterface) {
+        mPluginInterface->stop();
+    }
+}
+
 void McpProtocolServer::send(const QJsonObject &obj)
 {
     if (mPluginInterface) {

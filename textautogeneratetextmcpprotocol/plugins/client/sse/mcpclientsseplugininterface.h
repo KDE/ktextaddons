@@ -14,6 +14,7 @@ public:
     explicit McpClientSsePluginInterface(QObject *parent = nullptr);
     ~McpClientSsePluginInterface() override;
     void start() override;
+    void stop() override;
 
     void send(const QJsonObject &obj) override;
 

@@ -22,6 +22,11 @@ void McpServerStreamHttpPluginInterface::start()
     Q_EMIT finished();
 }
 
+void McpServerStreamHttpPluginInterface::stop()
+{
+    // TODO not implemented yet
+}
+
 void McpServerStreamHttpPluginInterface::send(const QJsonObject &)
 {
     // TODO

@@ -23,6 +23,11 @@ void McpServerStdioPluginInterface::start()
     mServerStdio->connection();
 }
 
+void McpServerStdioPluginInterface::stop()
+{
+    mServerStdio->stop();
+}
+
 void McpServerStdioPluginInterface::send(const QJsonObject &obj)
 {
     mServerStdio->send(obj);

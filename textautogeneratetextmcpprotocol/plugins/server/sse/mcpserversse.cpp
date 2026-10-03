@@ -74,6 +74,14 @@ void McpServerSse::connection()
     });
 }
 
+void McpServerSse::stop()
+{
+    if (mReply) {
+        // finished() is emitted by reply
+        mReply->abort();
+    }
+}
+
 void McpServerSse::send(const QJsonObject &)
 {
     // TODO use post

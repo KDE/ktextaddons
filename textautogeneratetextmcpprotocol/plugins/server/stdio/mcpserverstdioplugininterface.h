@@ -15,6 +15,7 @@ public:
     ~McpServerStdioPluginInterface() override;
 
     void start() override;
+    void stop() override;
 
     void send(const QJsonObject &obj) override;
 

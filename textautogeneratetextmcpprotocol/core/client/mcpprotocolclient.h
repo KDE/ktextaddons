@@ -23,6 +23,7 @@ public:
     void setSettings(const McpProtocolSettings &settings);
 
     void start();
+    void stop();
 
     [[nodiscard]] bool canStart() const;
 

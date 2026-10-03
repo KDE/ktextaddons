@@ -38,10 +38,7 @@ McpClientStreamableHttp::McpClientStreamableHttp(McpClientStreambleHttpPluginInt
 McpClientStreamableHttp::~McpClientStreamableHttp()
 {
     // Don't emit signals while we are destroyed.
-    if (mEventStreamReply) {
-        mEventStreamReply->disconnect(this);
-        mEventStreamReply->abort();
-    }
+    closeEventStream();
 }
 
 void McpClientStreamableHttp::connection()
@@ -227,13 +224,40 @@ void McpClientStreamableHttp::sessionExpired()
     mSessionId.clear();
     mProtocolVersion.clear();
     mStarted = false;
+    closeEventStream();
+    Q_EMIT error(i18n("Session expired. Client must be restarted."));
+    // Allow client to restart a new session
+    Q_EMIT finished();
+}
+
+void McpClientStreamableHttp::closeEventStream()
+{
     if (mEventStreamReply) {
         mEventStreamReply->disconnect(this);
         mEventStreamReply->abort();
         mEventStreamReply = nullptr;
     }
-    Q_EMIT error(i18n("Session expired. Client must be restarted."));
-    // Allow client to restart a new session
+}
+
+void McpClientStreamableHttp::stop()
+{
+    if (!mStarted) {
+        return;
+    }
+    if (!mSessionId.isEmpty()) {
+        // Tell server that we don't need session anymore
+        QNetworkReply *reply = mNetworkAccessManager->deleteResource(createRequest());
+        connect(reply, &QNetworkReply::finished, this, [reply]() {
+            // 405: server doesn't allow client to terminate session. It's allowed by specification.
+            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG)
+                << "Delete session:" << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() << reply->errorString();
+            reply->deleteLater();
+        });
+    }
+    closeEventStream();
+    mSessionId.clear();
+    mProtocolVersion.clear();
+    mStarted = false;
     Q_EMIT finished();
 }
 

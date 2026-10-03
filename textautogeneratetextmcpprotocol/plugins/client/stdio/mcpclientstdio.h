@@ -19,10 +19,10 @@ public:
 
     void connection() override;
     void send(const QJsonObject &obj) override;
+    void stop() override;
 
 private:
     [[nodiscard]] bool isRunning() const;
-    void stop();
     void slotReadStandardOutput();
     void slotReadStandardError();
     QProcess *const mProcess;

@@ -102,6 +102,15 @@ void McpProtocolClientProtocolManager::setClientName(const QString &newClientNam
     mClientName = newClientName;
 }
 
+void McpProtocolClientProtocolManager::stopClient()
+{
+    if (!mClient || !mClientStarted) {
+        return;
+    }
+    // State is reset in slotFinished
+    mClient->stop();
+}
+
 bool McpProtocolClientProtocolManager::isInitialized() const
 {
     return mInitialized;

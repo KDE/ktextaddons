@@ -74,7 +74,11 @@ void McpServerStdio::stop()
     if (!isRunning()) {
         return;
     }
+    // Close stdin first and let server exit, then SIGTERM, then SIGKILL
     mProcess->closeWriteChannel();
+    if (mProcess->waitForFinished(500)) {
+        return;
+    }
     mProcess->terminate();
     if (!mProcess->waitForFinished(1000)) {
         mProcess->kill();

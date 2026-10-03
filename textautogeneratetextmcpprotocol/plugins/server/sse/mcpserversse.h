@@ -21,6 +21,8 @@ public:
 
     void send(const QJsonObject &obj);
 
+    void stop();
+
 Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj);

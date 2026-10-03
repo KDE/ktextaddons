@@ -22,6 +22,7 @@ public:
     void connection() override;
 
     void send(const QJsonObject &obj) override;
+    void stop() override;
 
 private:
     void slotRead(QNetworkReply *reply);

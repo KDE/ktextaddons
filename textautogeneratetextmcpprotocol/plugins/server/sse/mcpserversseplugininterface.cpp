@@ -23,6 +23,11 @@ void McpServerSsePluginInterface::start()
     mServerSse->connection();
 }
 
+void McpServerSsePluginInterface::stop()
+{
+    mServerSse->stop();
+}
+
 void McpServerSsePluginInterface::send(const QJsonObject &obj)
 {
     mServerSse->send(obj);

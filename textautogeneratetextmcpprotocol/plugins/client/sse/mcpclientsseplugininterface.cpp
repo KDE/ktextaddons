@@ -23,6 +23,11 @@ void McpClientSsePluginInterface::start()
     mClientSse->connection();
 }
 
+void McpClientSsePluginInterface::stop()
+{
+    mClientSse->stop();
+}
+
 void McpClientSsePluginInterface::send(const QJsonObject &obj)
 {
     mClientSse->send(obj);

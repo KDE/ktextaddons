@@ -73,6 +73,15 @@ void McpClientSse::connection()
     });
 }
 
+void McpClientSse::stop()
+{
+    mPostUrl.clear();
+    if (mReply) {
+        // finished() is emitted by reply
+        mReply->abort();
+    }
+}
+
 void McpClientSse::send(const QJsonObject &obj)
 {
     if (!mPostUrl.isValid()) {

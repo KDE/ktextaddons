@@ -51,6 +51,11 @@ public:
     void start();
 
     /*!
+     * \brief stop
+     */
+    void stop();
+
+    /*!
      * \brief canStart
      * \return
      */

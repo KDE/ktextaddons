@@ -97,6 +97,13 @@ void McpProtocolClient::start()
     }
 }
 
+void McpProtocolClient::stop()
+{
+    if (mPluginInterface) {
+        mPluginInterface->stop();
+    }
+}
+
 McpProtocolPlugin::TransportType McpProtocolClient::protocolType() const
 {
     return mProtocolType;

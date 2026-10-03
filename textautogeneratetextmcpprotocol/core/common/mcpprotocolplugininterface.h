@@ -19,6 +19,10 @@ public:
     ~McpProtocolPluginInterface() override;
 
     virtual void start() = 0;
+    /*!
+     * Stop transport. finished() is emitted when it's stopped.
+     */
+    virtual void stop() = 0;
 
     void setSettings(const McpProtocolSettings &settings);
 

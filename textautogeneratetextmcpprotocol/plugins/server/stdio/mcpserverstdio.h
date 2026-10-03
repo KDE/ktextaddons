@@ -18,8 +18,7 @@ public:
 
     void connection() override;
     void send(const QJsonObject &obj) override;
-
-    void stop();
+    void stop() override;
 
     [[nodiscard]] bool isRunning() const;
 

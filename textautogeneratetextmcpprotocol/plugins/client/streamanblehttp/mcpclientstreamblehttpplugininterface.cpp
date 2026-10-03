@@ -23,6 +23,11 @@ void McpClientStreambleHttpPluginInterface::start()
     mClientStreamableHttp->connection();
 }
 
+void McpClientStreambleHttpPluginInterface::stop()
+{
+    mClientStreamableHttp->stop();
+}
+
 void McpClientStreambleHttpPluginInterface::send(const QJsonObject &obj)
 {
     mClientStreamableHttp->send(obj);

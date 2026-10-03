@@ -23,6 +23,7 @@ public:
     void connection() override;
 
     void send(const QJsonObject &obj) override;
+    void stop() override;
 
 private:
     [[nodiscard]] QNetworkRequest createRequest() const;
@@ -32,6 +33,7 @@ private:
     void postFinished(QNetworkReply *reply, bool isInitializeRequest, const std::shared_ptr<TextAutoGenerateTextMcpProtocolCore::McpProtocolSseParser> &parser);
     void openEventStream();
     void sessionExpired();
+    void closeEventStream();
     QNetworkAccessManager *const mNetworkAccessManager;
     McpClientStreambleHttpPluginInterface *const mInterface;
     QUrl mUrl;

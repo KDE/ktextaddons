@@ -34,6 +34,7 @@ public:
     ~McpProtocolClientProtocolManager() override;
 
     void initializeClient();
+    void stopClient();
 
     void executeAction(MethodType type);
 
