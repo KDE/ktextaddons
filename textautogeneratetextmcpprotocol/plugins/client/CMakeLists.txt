@@ -26,6 +26,8 @@ target_sources(
         stdio/mcpclientstdio.cpp
         streamanblehttp/mcpclientstreamblehttpplugininterface.h
         streamanblehttp/mcpclientstreamblehttpplugininterface.cpp
+        streamanblehttp/mcpclientstreamablehttp.h
+        streamanblehttp/mcpclientstreamablehttp.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
