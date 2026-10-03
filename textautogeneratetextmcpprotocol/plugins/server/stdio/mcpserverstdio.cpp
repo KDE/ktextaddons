@@ -17,9 +17,13 @@ McpServerStdio::McpServerStdio(McpServerStdioPluginInterface *interface, QObject
     , mInterface(interface)
 {
     mProcess->setProcessChannelMode(QProcess::SeparateChannels);
-    connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError) {
+    connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError processError) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << mProcess->errorString();
         Q_EMIT error(mProcess->errorString());
+        // QProcess doesn't emit finished() when the process failed to start
+        if (processError == QProcess::FailedToStart) {
+            Q_EMIT finished();
+        }
     });
     connect(mProcess, &QProcess::started, this, &McpServerStdio::started);
     connect(mProcess, &QProcess::finished, this, &McpServerStdio::finished);

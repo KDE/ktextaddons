@@ -43,6 +43,7 @@ Q_SIGNALS:
     void started();
     void received(const QJsonObject &obj, McpProtocolClientProtocolManager::MethodType type);
     void error(const QString &str);
+    void finished();
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void ping();
@@ -52,6 +53,7 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendInitializedNotification();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotReceived(const QJsonObject &obj);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotFinished();
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 requestId();
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolClientProtocolManager::MethodType checkMethodType(const QJsonObject &obj);
 

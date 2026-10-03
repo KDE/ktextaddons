@@ -39,6 +39,7 @@ void McpProtocolClient::initialize()
             connect(mPluginInterface, &McpProtocolPluginInterface::error, this, &McpProtocolClient::error);
             connect(mPluginInterface, &McpProtocolPluginInterface::received, this, &McpProtocolClient::received);
             connect(mPluginInterface, &McpProtocolPluginInterface::started, this, &McpProtocolClient::started);
+            connect(mPluginInterface, &McpProtocolPluginInterface::finished, this, &McpProtocolClient::finished);
         }
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "plugin not found for " << mProtocolType;

@@ -109,6 +109,7 @@ void McpProtocolClientProtocolManager::initializeClient()
             Q_EMIT error(strError);
         });
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::received, this, &McpProtocolClientProtocolManager::slotReceived);
+        connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::finished, this, &McpProtocolClientProtocolManager::slotFinished);
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::started, this, [this]() {
             qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Started ! ";
             Q_EMIT started();
@@ -121,6 +122,14 @@ void McpProtocolClientProtocolManager::initializeClient()
     }
     mClientStarted = true;
     mClient->start();
+}
+
+void McpProtocolClientProtocolManager::slotFinished()
+{
+    qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Finished ! ";
+    mClientStarted = false;
+    mMapIdentifier.clear();
+    Q_EMIT finished();
 }
 
 void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &obj)
