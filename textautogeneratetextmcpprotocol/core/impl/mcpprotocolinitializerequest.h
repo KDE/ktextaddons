@@ -44,14 +44,15 @@ public:
 
     /*!
      */
-    [[nodiscard]] std::optional<McpProtocolInitializeRequestParams> params() const;
+    [[nodiscard]] McpProtocolInitializeRequestParams params() const;
     /*!
      */
-    void setParams(std::optional<McpProtocolInitializeRequestParams> newParams);
+    void setParams(McpProtocolInitializeRequestParams newParams);
 
 private:
     McpProtocolUtils::RequestId mId;
-    std::optional<McpProtocolInitializeRequestParams> mParams;
+    // Required by specification
+    McpProtocolInitializeRequestParams mParams;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequest, Q_RELOCATABLE_TYPE);

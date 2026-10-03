@@ -55,9 +55,7 @@ QJsonObject McpProtocolInitializeRequest::toJson(const McpProtocolInitializeRequ
     obj["id"_L1] = McpProtocolUtils::requestIdToJson(request.id());
     obj["jsonrpc"_L1] = u"2.0"_s;
     obj["method"_L1] = QString::fromLatin1(McpProtocolInitializeRequest::type());
-    if (request.params().has_value()) {
-        obj["params"_L1] = McpProtocolInitializeRequestParams::toJson(*request.params());
-    }
+    obj["params"_L1] = McpProtocolInitializeRequestParams::toJson(request.params());
     return obj;
 }
 
@@ -71,12 +69,12 @@ void McpProtocolInitializeRequest::setId(const McpProtocolUtils::RequestId &newI
     mId = newId;
 }
 
-std::optional<McpProtocolInitializeRequestParams> McpProtocolInitializeRequest::params() const
+McpProtocolInitializeRequestParams McpProtocolInitializeRequest::params() const
 {
     return mParams;
 }
 
-void McpProtocolInitializeRequest::setParams(std::optional<McpProtocolInitializeRequestParams> newParams)
+void McpProtocolInitializeRequest::setParams(McpProtocolInitializeRequestParams newParams)
 {
     mParams = std::move(newParams);
 }
