@@ -16,7 +16,10 @@ McpClientStreambleHttpPluginInterface::~McpClientStreambleHttpPluginInterface() 
 
 void McpClientStreambleHttpPluginInterface::start()
 {
-    // TODO
+    // TODO implement it. Inform user otherwise client waits forever
+    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Streamable HTTP transport is not implemented yet.";
+    Q_EMIT error(i18n("Streamable HTTP transport is not implemented yet."));
+    Q_EMIT finished();
 }
 
 void McpClientStreambleHttpPluginInterface::send(const QJsonObject &)
