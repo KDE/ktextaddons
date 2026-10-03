@@ -221,6 +221,11 @@ const std::optional<QStringList> &McpProtocolTool::InputSchema::required() const
     return mRequired;
 }
 
+const QJsonObject &McpProtocolTool::InputSchema::additionalProperties() const
+{
+    return mAdditionalProperties;
+}
+
 bool McpProtocolTool::InputSchema::operator==(const InputSchema &other) const = default;
 
 McpProtocolTool::InputSchema McpProtocolTool::InputSchema::fromJson(const QJsonObject &obj)
@@ -250,12 +255,17 @@ McpProtocolTool::InputSchema McpProtocolTool::InputSchema::fromJson(const QJsonO
         }
         result.mRequired = std::move(list_required);
     }
+    QJsonObject additionalProperties = obj;
+    for (const auto &key : {"type"_L1, "$schema"_L1, "properties"_L1, "required"_L1}) {
+        additionalProperties.remove(key);
+    }
+    result.mAdditionalProperties = std::move(additionalProperties);
     return result;
 }
 
 QJsonObject McpProtocolTool::InputSchema::toJson(const InputSchema &input)
 {
-    QJsonObject obj;
+    QJsonObject obj = input.additionalProperties();
     obj.insert("type"_L1, QString::fromLatin1(McpProtocolTool::type()));
     if (const auto &dollarschema = input.dollarschema(); dollarschema.has_value()) {
         obj.insert("$schema"_L1, *dollarschema);
@@ -288,6 +298,11 @@ const std::optional<QStringList> &McpProtocolTool::OutputSchema::required() cons
     return mRequired;
 }
 
+const QJsonObject &McpProtocolTool::OutputSchema::additionalProperties() const
+{
+    return mAdditionalProperties;
+}
+
 bool McpProtocolTool::OutputSchema::operator==(const OutputSchema &other) const = default;
 
 McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJsonObject &obj)
@@ -317,12 +332,17 @@ McpProtocolTool::OutputSchema McpProtocolTool::OutputSchema::fromJson(const QJso
         }
         result.mRequired = std::move(list_required);
     }
+    QJsonObject additionalProperties = obj;
+    for (const auto &key : {"type"_L1, "$schema"_L1, "properties"_L1, "required"_L1}) {
+        additionalProperties.remove(key);
+    }
+    result.mAdditionalProperties = std::move(additionalProperties);
     return result;
 }
 
 QJsonObject McpProtocolTool::OutputSchema::toJson(const OutputSchema &input)
 {
-    QJsonObject obj;
+    QJsonObject obj = input.additionalProperties();
     obj.insert("type"_L1, QString::fromLatin1(McpProtocolTool::type()));
     if (const auto &dollarschema = input.dollarschema(); dollarschema.has_value()) {
         obj.insert("$schema"_L1, *dollarschema);

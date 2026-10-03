@@ -28,9 +28,12 @@ public:
         std::optional<QString> mDollarschema;
         std::optional<QMap<QString, QJsonObject>> mProperties;
         std::optional<QStringList> mRequired;
+        // Other JSON Schema keywords ($defs, additionalProperties, description…)
+        QJsonObject mAdditionalProperties;
         [[nodiscard]] const std::optional<QString> &dollarschema() const;
         [[nodiscard]] const std::optional<QMap<QString, QJsonObject>> &properties() const;
         [[nodiscard]] const std::optional<QStringList> &required() const;
+        [[nodiscard]] const QJsonObject &additionalProperties() const;
         [[nodiscard]] bool operator==(const InputSchema &other) const;
         [[nodiscard]] static McpProtocolTool::InputSchema fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const McpProtocolTool::InputSchema &input);
@@ -40,9 +43,12 @@ public:
         std::optional<QString> mDollarschema;
         std::optional<QMap<QString, QJsonObject>> mProperties;
         std::optional<QStringList> mRequired;
+        // Other JSON Schema keywords ($defs, additionalProperties, description…)
+        QJsonObject mAdditionalProperties;
         [[nodiscard]] const std::optional<QString> &dollarschema() const;
         [[nodiscard]] const std::optional<QMap<QString, QJsonObject>> &properties() const;
         [[nodiscard]] const std::optional<QStringList> &required() const;
+        [[nodiscard]] const QJsonObject &additionalProperties() const;
         [[nodiscard]] bool operator==(const OutputSchema &other) const;
         [[nodiscard]] static McpProtocolTool::OutputSchema fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const McpProtocolTool::OutputSchema &input);
