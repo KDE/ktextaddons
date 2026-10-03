@@ -8,12 +8,14 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include "textautogeneratetextmcpprotocolcore_version.h"
 
+#include <QCoreApplication>
 #include <QJsonObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClient>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
@@ -41,6 +43,11 @@ void McpProtocolClientProtocolManager::executeAction(MethodType type)
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client was not initialized";
         return;
     }
+    // Only ping is allowed before the server answered the initialize request
+    if (!mInitialized && type != MethodType::Ping) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't execute" << type;
+        return;
+    }
     switch (type) {
     case MethodType::Ping:
         ping();
@@ -55,8 +62,6 @@ void McpProtocolClientProtocolManager::executeAction(MethodType type)
         resourceTemplates();
         break;
     case MethodType::Initialize:
-        initialize();
-        break;
     case MethodType::ServerRequest:
     case MethodType::ServerNotification:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "IT's a bug. MethodType" << type << "can't be executed by client.";
@@ -96,6 +101,16 @@ void McpProtocolClientProtocolManager::setClientName(const QString &newClientNam
     mClientName = newClientName;
 }
 
+bool McpProtocolClientProtocolManager::isInitialized() const
+{
+    return mInitialized;
+}
+
+McpProtocolInitializeResult McpProtocolClientProtocolManager::initializeResult() const
+{
+    return mInitializeResult;
+}
+
 void McpProtocolClientProtocolManager::initializeClient()
 {
     if (mClientStarted) {
@@ -112,8 +127,8 @@ void McpProtocolClientProtocolManager::initializeClient()
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::finished, this, &McpProtocolClientProtocolManager::slotFinished);
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::started, this, [this]() {
             qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Started ! ";
-            Q_EMIT started();
             initialize();
+            Q_EMIT started();
         });
     }
     mClient->setSettings(mServer.settings());
@@ -128,6 +143,8 @@ void McpProtocolClientProtocolManager::slotFinished()
 {
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " Finished ! ";
     mClientStarted = false;
+    mInitialized = false;
+    mInitializeResult = {};
     mMapIdentifier.clear();
     Q_EMIT finished();
 }
@@ -136,10 +153,30 @@ void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &obj)
 {
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " receive " << obj;
     const MethodType type = checkMethodType(obj);
-    if (type == MethodType::Initialize && obj.contains("result"_L1)) {
-        sendInitializedNotification();
+    if (type == MethodType::Initialize) {
+        initializeResponseReceived(obj);
     }
     Q_EMIT received(obj, type);
+}
+
+void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObject &obj)
+{
+    if (const QJsonValue resultValue = obj.value("result"_L1); resultValue.isObject()) {
+        const McpProtocolInitializeResult result = McpProtocolInitializeResult::fromJson(resultValue.toObject());
+        if (McpProtocolUtils::convertProtocolVersionFromString(result.protocolVersion()) == McpProtocolUtils::ProtocolVersion::Unknown) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported protocol version:" << result.protocolVersion();
+            Q_EMIT error(u"Unsupported protocol version: %1"_s.arg(result.protocolVersion()));
+            return;
+        }
+        mInitializeResult = result;
+        mInitialized = true;
+        sendInitializedNotification();
+        Q_EMIT initialized();
+    } else {
+        const McpProtocolJSONRPCErrorResponse response = McpProtocolJSONRPCErrorResponse::fromJson(obj);
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialize failed:" << response.error().message();
+        Q_EMIT error(response.error().message());
+    }
 }
 
 void McpProtocolClientProtocolManager::sendInitializedNotification()
@@ -153,10 +190,10 @@ void McpProtocolClientProtocolManager::initialize()
     TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequest initRequest;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequestParams params;
     params.setProtocolVersion(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
-        TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26));
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25));
 
     auto clientInfo = params.clientInfo();
-    clientInfo.setName(mClientName);
+    clientInfo.setName(mClientName.isEmpty() ? QCoreApplication::applicationName() : mClientName);
     clientInfo.setVersion(QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING));
     params.setClientInfo(clientInfo);
 
