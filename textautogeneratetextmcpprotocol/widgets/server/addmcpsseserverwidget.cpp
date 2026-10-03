@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpsseserverwidget.h"
+#include "addmcpsteamablehttpserverheaderwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -14,6 +15,7 @@ using namespace TextAutoGenerateTextMcpProtocolWidgets;
 AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
     : AddMcpServerBaseWidget{parent}
     , mServerUrlLineEdit(new QLineEdit(this))
+    , mHttpServerHeaderWidget(new AddMcpSteamableHttpServerHeaderWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -23,6 +25,8 @@ AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
     mServerUrlLineEdit->setClearButtonEnabled(true);
     mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
+    mHttpServerHeaderWidget->setObjectName(u"mHttpServerHeaderWidget"_s);
+    mainLayout->addRow(i18nc("@label", "Headers:"), mHttpServerHeaderWidget);
     connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpSseServerWidget::settingChanged);
 }
 
@@ -52,12 +56,18 @@ void AddMcpSseServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::Mc
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setServerUrl(QUrl::fromUserInput(mServerUrlLineEdit->text().trimmed()));
+    settings.setHeaders(mHttpServerHeaderWidget->headers());
+    // Remove settings from another transport type
+    settings.setCommand({});
+    settings.setArguments({});
+    settings.setEnvironments({});
     server.setSettings(std::move(settings));
 }
 
 void AddMcpSseServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
     mServerUrlLineEdit->setText(server.settings().serverUrl().toString());
+    mHttpServerHeaderWidget->setHeaders(server.settings().headers());
 }
 
 #include "moc_addmcpsseserverwidget.cpp"

@@ -52,6 +52,9 @@ void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setCommand(mCommandLineEdit->text());
     settings.setArguments(mArgumentsLineEdit->text());
+    // Remove settings from another transport type
+    settings.setServerUrl({});
+    settings.setHeaders({});
 
     server.setSettings(std::move(settings));
 }

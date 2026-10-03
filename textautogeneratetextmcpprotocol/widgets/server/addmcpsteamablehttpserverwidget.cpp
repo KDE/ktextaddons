@@ -59,6 +59,10 @@ void AddMcpSteamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProtoc
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setServerUrl(QUrl::fromUserInput(mServerUrlLineEdit->text().trimmed()));
     settings.setHeaders(mHttpServerHeaderWidget->headers());
+    // Remove settings from another transport type
+    settings.setCommand({});
+    settings.setArguments({});
+    settings.setEnvironments({});
     server.setSettings(std::move(settings));
 }
 
