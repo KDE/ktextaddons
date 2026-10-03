@@ -1,0 +1,226 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#include "mcpprotocolclientprotocolmanagertest.h"
+#include "fakemcphttpserver.h"
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QSignalSpy>
+#include <QTcpSocket>
+#include <QTest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+using namespace Qt::Literals::StringLiterals;
+using TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager;
+QTEST_GUILESS_MAIN(McpProtocolClientProtocolManagerTest)
+
+namespace
+{
+QJsonObject result(const QJsonValue &id, const QJsonObject &result = {})
+{
+    return QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, id}, {"result"_L1, result}};
+}
+
+void sendJson(QTcpSocket *socket, const QJsonObject &obj)
+{
+    FakeMcpHttpServer::sendResponse(socket, 200, "application/json", QJsonDocument(obj).toJson(QJsonDocument::Compact));
+}
+
+// Simple server: initialize with \a protocolVersion, other requests are handled by \a handler
+FakeMcpHttpServer::Handler createHandler(
+    const QString &protocolVersion = u"2025-11-25"_s,
+    const std::function<void(const QJsonObject &, QTcpSocket *)> &handler = [](const QJsonObject &obj, QTcpSocket *socket) {
+        sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"tools"_L1, QJsonArray{}}}));
+    })
+{
+    return [protocolVersion, handler](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+        if (request.method != "POST") {
+            FakeMcpHttpServer::sendResponse(socket, 405);
+            return;
+        }
+        const QJsonObject obj = request.json();
+        const QString method = obj.value("method"_L1).toString();
+        if (method == "initialize"_L1) {
+            sendJson(socket,
+                     result(obj.value("id"_L1),
+                            QJsonObject{{"protocolVersion"_L1, protocolVersion},
+                                        {"capabilities"_L1, QJsonObject{}},
+                                        {"serverInfo"_L1, QJsonObject{{"name"_L1, u"fake"_s}, {"version"_L1, u"1"_s}}}}));
+        } else if (!obj.contains("id"_L1) || !obj.contains("method"_L1)) {
+            // Notification or response
+            FakeMcpHttpServer::sendResponse(socket, 202);
+        } else {
+            handler(obj, socket);
+        }
+    };
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpServer createServer(const FakeMcpHttpServer &fakeServer)
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    server.setName(u"test"_s);
+    server.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(fakeServer.url(u"/mcp"_s));
+    server.setSettings(settings);
+    return server;
+}
+
+QList<QJsonObject> postedMessages(const FakeMcpHttpServer &server, const QString &method)
+{
+    QList<QJsonObject> messages;
+    for (const auto &request : server.requests("POST")) {
+        if (request.json().value("method"_L1).toString() == method) {
+            messages.append(request.json());
+        }
+    }
+    return messages;
+}
+
+void initialize(McpProtocolClientProtocolManager &manager)
+{
+    QSignalSpy initializedSpy(&manager, &McpProtocolClientProtocolManager::initialized);
+    manager.initializeClient();
+    QTRY_COMPARE(initializedSpy.count(), 1);
+    QVERIFY(manager.isInitialized());
+}
+}
+
+McpProtocolClientProtocolManagerTest::McpProtocolClientProtocolManagerTest(QObject *parent)
+    : QObject{parent}
+{
+}
+
+void McpProtocolClientProtocolManagerTest::shouldInitializeAndListTools()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    // Requests are refused before initialize
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools), -1);
+    initialize(manager);
+    QCOMPARE(manager.initializeResult().protocolVersion(), u"2025-11-25"_s);
+    QTRY_COMPARE(postedMessages(fakeServer, u"notifications/initialized"_s).count(), 1);
+    const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+    QCOMPARE(initialize.value("params"_L1).toObject().value("protocolVersion"_L1).toString(), u"2025-11-25"_s);
+    QVERIFY(!initialize.value("params"_L1).toObject().value("clientInfo"_L1).toObject().value("name"_L1).toString().isEmpty());
+
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ListTools);
+    QCOMPARE(receivedSpy.at(0).at(0).toJsonObject().value("id"_L1).toInteger(), identifier);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnswerServerRequests()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        // Server sends requests before response
+        const QJsonObject ping{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, u"srv-1"_s}, {"method"_L1, u"ping"_s}};
+        const QJsonObject roots{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, u"srv-2"_s}, {"method"_L1, u"roots/list"_s}};
+        FakeMcpHttpServer::sendEventStream(socket,
+                                           FakeMcpHttpServer::jsonEvent(ping) + FakeMcpHttpServer::jsonEvent(roots)
+                                               + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    // Find responses of client
+    QList<QJsonObject> responses;
+    QTRY_VERIFY([&]() {
+        responses.clear();
+        for (const auto &request : fakeServer.requests("POST")) {
+            const QJsonObject obj = request.json();
+            if (!obj.contains("method"_L1)) {
+                responses.append(obj);
+            }
+        }
+        return responses.count() == 2;
+    }());
+    for (const auto &response : std::as_const(responses)) {
+        if (response.value("id"_L1).toString() == u"srv-1"_s) {
+            QCOMPARE(response.value("result"_L1).toObject(), QJsonObject());
+        } else {
+            QCOMPARE(response.value("id"_L1).toString(), u"srv-2"_s);
+            QCOMPARE(response.value("error"_L1).toObject().value("code"_L1).toInt(), -32601);
+        }
+    }
+}
+
+void McpProtocolClientProtocolManagerTest::shouldRejectUnsupportedProtocolVersion()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"1999-01-01"_s));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    QSignalSpy errorSpy(&manager, &McpProtocolClientProtocolManager::error);
+    QSignalSpy initializedSpy(&manager, &McpProtocolClientProtocolManager::initialized);
+    manager.initializeClient();
+    QTRY_COMPARE(errorSpy.count(), 1);
+    QCOMPARE(initializedSpy.count(), 0);
+    QVERIFY(!manager.isInitialized());
+}
+
+void McpProtocolClientProtocolManagerTest::shouldCancelRequestWhenTimeoutExpired()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &, QTcpSocket *) {
+        // Never answer
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    manager.setRequestTimeout(std::chrono::milliseconds(200));
+    initialize(manager);
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ListTools);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    QCOMPARE(response.value("error"_L1).toObject().value("code"_L1).toInt(), -32001);
+    // Server is informed
+    QTRY_COMPARE(postedMessages(fakeServer, u"notifications/cancelled"_s).count(), 1);
+    const QJsonObject params = postedMessages(fakeServer, u"notifications/cancelled"_s).constFirst().value("params"_L1).toObject();
+    QCOMPARE(params.value("requestId"_L1).toInteger(), identifier);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldCancelRequest()
+{
+    FakeMcpHttpServer fakeServer;
+    QList<QTcpSocket *> pendingSockets;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [&pendingSockets](const QJsonObject &, QTcpSocket *socket) {
+        pendingSockets.append(socket);
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_COMPARE(pendingSockets.count(), 1);
+    manager.cancelRequest(identifier, u"User cancelled"_s);
+    QTRY_COMPARE(postedMessages(fakeServer, u"notifications/cancelled"_s).count(), 1);
+    const QJsonObject params = postedMessages(fakeServer, u"notifications/cancelled"_s).constFirst().value("params"_L1).toObject();
+    QCOMPARE(params.value("requestId"_L1).toInteger(), identifier);
+    QCOMPARE(params.value("reason"_L1).toString(), u"User cancelled"_s);
+    // Response received after cancellation is ignored
+    sendJson(pendingSockets.constFirst(), result(identifier));
+    QTest::qWait(100);
+    QCOMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::Unknown);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldRestartAfterStop()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QSignalSpy finishedSpy(&manager, &McpProtocolClientProtocolManager::finished);
+    manager.stopClient();
+    QTRY_COMPARE(finishedSpy.count(), 1);
+    QVERIFY(!manager.isInitialized());
+    initialize(manager);
+    QCOMPARE(postedMessages(fakeServer, u"initialize"_s).count(), 2);
+}
+
+#include "moc_mcpprotocolclientprotocolmanagertest.cpp"
