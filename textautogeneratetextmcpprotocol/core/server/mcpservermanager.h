@@ -6,6 +6,8 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QList>
+#include <QMap>
 #include <QObject>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -59,6 +61,8 @@ Q_SIGNALS:
     void serverLoaded();
 
 private:
+    // Invalid servers (unknown transport…) are not shown but must be kept in config
+    QList<QMap<QString, QString>> mInvalidServerEntries;
     McpServerModel *const mMcpServerModel;
 };
 }

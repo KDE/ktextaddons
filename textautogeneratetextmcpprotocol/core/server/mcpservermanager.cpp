@@ -35,12 +35,15 @@ void McpServerManager::loadServers()
     const QStringList mcpServerList = McpProtocolCommonUtils::mcpServerList(config);
     QList<McpServer> mcpServers;
     mcpServers.reserve(mcpServerList.count());
+    mInvalidServerEntries.clear();
     for (const auto &group : mcpServerList) {
         const KConfigGroup configGroup(config, group);
         McpServer server;
         server.load(configGroup);
         if (server.isValid()) {
             mcpServers.append(std::move(server));
+        } else {
+            mInvalidServerEntries.append(configGroup.entryMap());
         }
     }
     mMcpServerModel->setMcpServers(std::move(mcpServers));
@@ -60,6 +63,13 @@ void McpServerManager::saveServers()
         const auto &server = serverLst.at(i);
         KConfigGroup group = config->group(u"Mcp Server #%1"_s.arg(i));
         server.save(group);
+    }
+    for (int i = 0; i < mInvalidServerEntries.count(); ++i) {
+        KConfigGroup group = config->group(u"Mcp Server #%1"_s.arg(serverLst.count() + i));
+        const QMap<QString, QString> &entries = mInvalidServerEntries.at(i);
+        for (auto it = entries.cbegin(); it != entries.cend(); ++it) {
+            group.writeEntry(it.key(), it.value());
+        }
     }
     config->sync();
 }
