@@ -10,7 +10,12 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
+namespace
+{
+const char myAddMcpStreamableHttpServerHeaderConfigureDialogGroupName[] = "AddMcpStreamableHttpServerHeaderConfigureDialog";
+}
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
 AddMcpStreamableHttpServerHeaderConfigureDialog::AddMcpStreamableHttpServerHeaderConfigureDialog(QWidget *parent)
@@ -33,6 +38,9 @@ AddMcpStreamableHttpServerHeaderConfigureDialog::AddMcpStreamableHttpServerHeade
     connect(mAddMcpStreamableHttpServerHeaderConfigureWidget, &AddMcpStreamableHttpServerHeaderConfigureWidget::buttonOkEnabled, this, [buttonOk](bool state) {
         buttonOk->setEnabled(state);
     });
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this,
+                                                             QLatin1StringView(myAddMcpStreamableHttpServerHeaderConfigureDialogGroupName),
+                                                             QSize(400, 200));
 }
 
 AddMcpStreamableHttpServerHeaderConfigureDialog::~AddMcpStreamableHttpServerHeaderConfigureDialog() = default;

@@ -10,8 +10,13 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 
+namespace
+{
+const char myAddMcpServerDialogGroupName[] = "AddMcpServerDialog";
+}
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
 AddMcpServerDialog::AddMcpServerDialog(QWidget *parent)
@@ -34,6 +39,7 @@ AddMcpServerDialog::AddMcpServerDialog(QWidget *parent)
     connect(mAddMcpServerWidget, &AddMcpServerWidget::buttonOkEnabled, this, [buttonOk](bool state) {
         buttonOk->setEnabled(state);
     });
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myAddMcpServerDialogGroupName), QSize(500, 400));
 }
 
 AddMcpServerDialog::~AddMcpServerDialog() = default;
