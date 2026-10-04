@@ -233,6 +233,8 @@ target_sources(
         core/jobs/textautogenerateimportchatasjsonjob.cpp
         core/jobs/textautogeneratepurgeexpiredchatsjob.h
         core/jobs/textautogeneratepurgeexpiredchatsjob.cpp
+        widgets/mcp/textautogeneratemcptoolconfirmation.h
+        widgets/mcp/textautogeneratemcptoolconfirmation.cpp
         core/mcp/textautogeneratemcptoolcalljob.h
         core/mcp/textautogeneratemcptoolcalljob.cpp
         core/mcp/textautogeneratemcptoolsmanager.h

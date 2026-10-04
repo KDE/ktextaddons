@@ -106,4 +106,55 @@ void TextAutoGenerateMcpToolCallJobTest::shouldReportUnavailableTool()
     QCOMPARE(info.chatId, "chat"_ba);
 }
 
+void TextAutoGenerateMcpToolCallJobTest::shouldAskConfirmation()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    manager.connectServer(server.identifier());
+    QTRY_VERIFY(manager.tool("foo__get_time"_ba).has_value());
+
+    QList<TextAutoGenerateMcpToolsManager::ToolConfirmationInfo> askedTools;
+    TextAutoGenerateMcpToolsManager::ToolConfirmation answer = TextAutoGenerateMcpToolsManager::ToolConfirmation::Deny;
+    manager.setConfirmationHandler([&](const TextAutoGenerateMcpToolsManager::ToolConfirmationInfo &info,
+                                       const std::function<void(TextAutoGenerateMcpToolsManager::ToolConfirmation)> &reply) {
+        askedTools.append(info);
+        reply(answer);
+    });
+
+    // Refused: LLM gets information, server is not called
+    auto info = callTool(&manager, "foo__get_time"_ba, QJsonObject{{"city"_L1, u"Paris"_s}});
+    QCOMPARE(askedTools.count(), 1);
+    QCOMPARE(askedTools.at(0).serverName, u"foo"_s);
+    QCOMPARE(askedTools.at(0).tool.name, u"get time"_s);
+    QCOMPARE(askedTools.at(0).arguments, QJsonObject({{"city"_L1, u"Paris"_s}}));
+    QVERIFY(info.content.contains(u"get time"_s));
+    QVERIFY(!info.content.startsWith(u"get time"_s));
+
+    // Accepted
+    answer = TextAutoGenerateMcpToolsManager::ToolConfirmation::Allow;
+    info = callTool(&manager, "foo__get_time"_ba, {});
+    QCOMPARE(askedTools.count(), 2);
+    QCOMPARE(info.content, u"get time {}"_s);
+
+    // Read only tool: no confirmation
+    info = callTool(&manager, "foo__weather"_ba, {});
+    QCOMPARE(askedTools.count(), 2);
+    QCOMPARE(info.content, u"weather {}"_s);
+
+    // Always allowed: asked only once
+    QVERIFY(!manager.isServerAlwaysAllowed(server.identifier()));
+    answer = TextAutoGenerateMcpToolsManager::ToolConfirmation::AlwaysAllowServer;
+    info = callTool(&manager, "foo__get_time"_ba, {});
+    QCOMPARE(askedTools.count(), 3);
+    QVERIFY(manager.isServerAlwaysAllowed(server.identifier()));
+    info = callTool(&manager, "foo__get_time"_ba, {});
+    QCOMPARE(askedTools.count(), 3);
+    QCOMPARE(info.content, u"get time {}"_s);
+    manager.setServerAlwaysAllowed(server.identifier(), false);
+    QVERIFY(!manager.isServerAlwaysAllowed(server.identifier()));
+}
+
 #include "moc_textautogeneratemcptoolcalljobtest.cpp"

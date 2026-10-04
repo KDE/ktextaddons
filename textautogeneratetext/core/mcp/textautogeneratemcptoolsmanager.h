@@ -52,6 +52,24 @@ public:
         [[nodiscard]] bool operator==(const McpTool &other) const = default;
     };
 
+    enum class ToolConfirmation : uint8_t {
+        Deny,
+        Allow,
+        // Allow and don't ask anymore for tools of this server
+        AlwaysAllowServer,
+    };
+    Q_ENUM(ToolConfirmation)
+
+    struct TEXTAUTOGENERATETEXT_EXPORT ToolConfirmationInfo {
+        McpTool tool;
+        QString serverName;
+        QJsonObject arguments;
+    };
+    /*!
+     * Asks user to confirm tool call, \a answer must be called with user choice.
+     */
+    using ConfirmationHandler = std::function<void(const ToolConfirmationInfo &info, const std::function<void(ToolConfirmation)> &answer)>;
+
     explicit TextAutoGenerateMcpToolsManager(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager, QObject *parent = nullptr);
     ~TextAutoGenerateMcpToolsManager() override;
 
@@ -100,6 +118,23 @@ public:
      */
     [[nodiscard]] static QByteArray sanitizeName(const QString &name);
 
+    /*!
+     * Handler used to ask user before calling a tool. Without handler tools are called without confirmation.
+     */
+    void setConfirmationHandler(const ConfirmationHandler &handler);
+    /*!
+     * Tool needs a confirmation: handler is defined, tool is not read only and server is not always allowed.
+     */
+    [[nodiscard]] bool needConfirmation(const McpTool &tool) const;
+    /*!
+     * Ask confirmation if needed and call \a callback with result (true: tool can be called).
+     * \a callback is not called if \a context is deleted.
+     */
+    void confirmToolCall(const McpTool &tool, const QJsonObject &arguments, QObject *context, const std::function<void(bool)> &callback);
+
+    [[nodiscard]] bool isServerAlwaysAllowed(const QByteArray &serverIdentifier) const;
+    void setServerAlwaysAllowed(const QByteArray &serverIdentifier, bool allowed);
+
 Q_SIGNALS:
     void statusChanged(const QByteArray &identifier);
     void toolsChanged(const QByteArray &identifier);
@@ -120,5 +155,6 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray exposedName(const QByteArray &identifier, const QString &serverName, const QString &toolName) const;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mServerManager;
     QHash<QByteArray, ServerState> mServers;
+    ConfirmationHandler mConfirmationHandler;
 };
 }

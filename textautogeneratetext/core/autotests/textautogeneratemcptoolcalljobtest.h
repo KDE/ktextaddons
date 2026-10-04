@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldCallTool();
     void shouldReportToolError();
     void shouldReportUnavailableTool();
+    void shouldAskConfirmation();
 };

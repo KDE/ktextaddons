@@ -49,11 +49,22 @@ void TextAutoGenerateMcpToolCallJob::start()
     connect(client, &McpProtocolClientProtocolManager::finished, this, [this]() {
         emitFinished(i18n("Error: server was stopped."));
     });
-    Q_EMIT toolInProgress(i18n("Calling tool \"%1\"…", tool->name));
-    mRequestId = client->callTool(tool->name, mArguments);
-    if (mRequestId == -1) {
-        emitFinished(i18n("Error: impossible to call tool \"%1\".", tool->name));
-    }
+    // User must accept tool call
+    mToolsManager->confirmToolCall(*tool, mArguments, this, [this, name = tool->name](bool accepted) {
+        if (!accepted) {
+            emitFinished(i18n("User refused to run tool \"%1\".", name));
+            return;
+        }
+        if (!mClient) {
+            emitFinished(i18n("Error: server was stopped."));
+            return;
+        }
+        Q_EMIT toolInProgress(i18n("Calling tool \"%1\"…", name));
+        mRequestId = mClient->callTool(name, mArguments);
+        if (mRequestId == -1) {
+            emitFinished(i18n("Error: impossible to call tool \"%1\".", name));
+        }
+    });
 }
 
 void TextAutoGenerateMcpToolCallJob::emitFinished(const QString &content)

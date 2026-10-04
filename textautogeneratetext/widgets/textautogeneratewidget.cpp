@@ -7,6 +7,7 @@
 #include "textautogeneratewidget.h"
 #include "core/textautogeneratechatsettings.h"
 
+#include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextclient.h"
@@ -14,6 +15,7 @@
 #include "widgets/common/textautogeneratepowersavermessagewidget.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
+#include "widgets/mcp/textautogeneratemcptoolconfirmation.h"
 #include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogeneratehistorywidget.h"
 #include "widgets/textautogeneratesearchdialog.h"
@@ -145,6 +147,10 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         });
     }
     readConfig();
+    if (mManager) {
+        // Ask user before running tools of MCP servers
+        TextAutoGenerateMcpToolConfirmation::installConfirmationHandler(mManager->textAutoGenerateMcpToolsManager(), this);
+    }
 }
 
 TextAutoGenerateWidget::~TextAutoGenerateWidget()
