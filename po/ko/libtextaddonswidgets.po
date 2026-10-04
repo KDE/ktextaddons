@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 17:39+0000\n"
-"PO-Revision-Date: 2026-06-06 14:22+0200\n"
+"PO-Revision-Date: 2026-10-03 20:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -266,10 +266,9 @@ msgid "(Show News)"
 msgstr "(뉴스 표시)"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "%2의 새로운 기능. %1"
+msgstr "%1의 새로운 기능. %2"
 
 #: whatsnewng/whatsnewngdialog.cpp:27
 #, kde-format
@@ -283,21 +282,19 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">릴리스 노트</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h1><i> 버전 %1(출시: %2)</i></h1><hr/><br>"
+msgstr "<h3><i>버전 %1(출시: %2)의 새로운 기능</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h1><i> 버전 %1(아직 출시되지 않음)</i></h1><hr/><br>"
+msgstr "<h3><i>버전 %1(아직 출시되지 않음)의 새로운 기능</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr ""
+msgstr "<h1>새로운 기능 과거 기록</h1>"
 
 #: whatsnewng/whatsnewngwidget.cpp:51
 #, kde-format

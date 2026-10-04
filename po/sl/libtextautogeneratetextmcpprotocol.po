@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-04 00:44+0000\n"
 "PO-Revision-Date: 2026-10-02 07:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -36,43 +36,66 @@ msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "Streamble HTTP"
 
-#: plugins/client/sse/mcpclientsse.cpp:38
+#: plugins/client/sse/mcpclientsse.cpp:43
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:63
 #, kde-format
 msgid "Impossible to start client. Url is invalid."
 msgstr "Odjemalca ni mogoče zagnati. URL je neveljaven."
 
-#: plugins/client/sse/mcpclientsse.cpp:81
-#: plugins/client/streamanblehttp/mcpclientstreamblehttpplugininterface.cpp:26
-#: plugins/server/sse/mcpserversse.cpp:81
-#: plugins/server/streamanblehttp/mcpserverstreamhttpplugininterface.cpp:26
+#: plugins/client/sse/mcpclientsse.cpp:89
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:93
 #, kde-format
-msgid "Sending message is not implemented yet."
-msgstr "Pošiljanje sporočila še ni implementirano."
+msgid "Server is not ready."
+msgstr ""
 
-#: plugins/client/stdio/mcpclientstdio.cpp:64
+#: plugins/client/stdio/mcpclientstdio.cpp:72
 #, kde-format
 msgid "Impossible to start client. Command is empty."
 msgstr "Odjemalca ni mogoče zagnati. Ukaz je prazen."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:85
+#: plugins/client/stdio/mcpclientstdio.cpp:93
 #, kde-format
 msgid "Impossible to send message. Client is not running."
 msgstr "Sporočila ni mogoče poslati. Odjemalec ne teče."
+
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:166
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:171
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:217
+#, kde-format
+msgid "Connection lost before receiving answer."
+msgstr ""
+
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:393
+#, kde-format
+msgid "Session expired. Client must be restarted."
+msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:38
 #, kde-format
 msgid "Impossible to start server. Url is invalid."
 msgstr "Strežnika ni mogoče zagnati. URL je neveljaven."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:51
+#: plugins/server/sse/mcpserversse.cpp:89
+#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:34
+#, kde-format
+msgid "Sending message is not implemented yet."
+msgstr "Pošiljanje sporočila še ni implementirano."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:55
 #, kde-format
 msgid "Impossible to start server. Command is empty."
 msgstr "Strežnika ni mogoče zagnati. Ukaz je prazen."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:85
+#: plugins/server/stdio/mcpserverstdio.cpp:93
 #, kde-format
 msgid "Impossible to send message. Server is not running."
 msgstr "Sporočila ni mogoče poslati. Strežnik ne deluje."
+
+#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:21
+#, fuzzy, kde-format
+#| msgid "Sending message is not implemented yet."
+msgid "Streamable HTTP transport is not implemented yet."
+msgstr "Pošiljanje sporočila še ni implementirano."
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
@@ -92,12 +115,19 @@ msgctxt "@label:textbox"
 msgid "Type:"
 msgstr "Zvrst:"
 
-#: widgets/server/addmcpsseserverwidget.cpp:24
-#: widgets/server/addmcpsteamablehttpserverwidget.cpp:26
+#: widgets/server/addmcpsseserverwidget.cpp:26
+#: widgets/server/addmcpstreamablehttpserverwidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "Url:"
+
+#: widgets/server/addmcpsseserverwidget.cpp:29
+#: widgets/server/addmcpstreamablehttpserverwidget.cpp:30
+#, kde-format
+msgctxt "@label"
+msgid "Headers:"
+msgstr "Glave:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:24
 #, kde-format
@@ -111,58 +141,54 @@ msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "Argumenti:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderconfiguredialog.cpp:20
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
 msgstr "Dodaj glavo po meri"
 
-#: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
+#: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Glava:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:28
-#, kde-format
+#: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
 msgctxt "@info:placeholder"
-msgid "Define Header…"
-msgstr "Določi glavo…"
+msgid "Name: Value"
+msgstr "Ime:"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:33
+#: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Dodaj"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:38
+#: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Spremeni"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:43
+#: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Odstrani"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:71
+#: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:71
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
 msgstr "Ali ste prepričani, da želite izbrisati to glavo?"
 
-#: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:72
+#: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
 msgstr "Odstrani glavo"
-
-#: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
-#, kde-format
-msgctxt "@label"
-msgid "Headers:"
-msgstr "Glave:"
 
 #: widgets/server/mcpserverlistview.cpp:52
 #, kde-format
@@ -204,6 +230,10 @@ msgstr "Išči…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Dodaj strežnik…"
+
+#~ msgctxt "@info:placeholder"
+#~ msgid "Define Header…"
+#~ msgstr "Določi glavo…"
 
 #~ msgid "Sse"
 #~ msgstr "Sse"
