@@ -76,6 +76,18 @@ Q_SIGNALS:
     void received(const QJsonObject &obj, McpProtocolClientProtocolManager::MethodType type);
     void error(const QString &str);
     void finished();
+    /*!
+     * Server informed that list of tools changed: call executeAction(MethodType::ListTools) to update it.
+     */
+    void toolsListChanged();
+    /*!
+     * Server informed that list of prompts changed.
+     */
+    void promptsListChanged();
+    /*!
+     * Server informed that list of resources changed.
+     */
+    void resourcesListChanged();
 
 private:
     struct PendingRequest {
@@ -99,6 +111,7 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotFinished();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initializeResponseReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void answerServerRequest(const QJsonObject &obj);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void serverNotificationReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type, PendingRequest pending);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendCancelledNotification(qint64 identifier, const QString &reason);

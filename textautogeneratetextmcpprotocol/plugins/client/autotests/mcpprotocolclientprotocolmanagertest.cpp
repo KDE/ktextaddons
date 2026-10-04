@@ -371,4 +371,30 @@ void McpProtocolClientProtocolManagerTest::shouldReturnErrorOfPage()
     QCOMPARE(response.value("error"_L1).toObject().value("code"_L1).toInt(), -32602);
 }
 
+void McpProtocolClientProtocolManagerTest::shouldEmitListChangedSignals()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        // Server sends notifications in stream before response
+        QByteArray events;
+        for (const auto &method : {u"notifications/tools/list_changed"_s, u"notifications/prompts/list_changed"_s, u"notifications/resources/list_changed"_s}) {
+            events += FakeMcpHttpServer::jsonEvent(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, method}});
+        }
+        FakeMcpHttpServer::sendEventStream(socket, events + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QSignalSpy toolsSpy(&manager, &McpProtocolClientProtocolManager::toolsListChanged);
+    QSignalSpy promptsSpy(&manager, &McpProtocolClientProtocolManager::promptsListChanged);
+    QSignalSpy resourcesSpy(&manager, &McpProtocolClientProtocolManager::resourcesListChanged);
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::Ping);
+    QTRY_COMPARE(receivedSpy.count(), 4);
+    QCOMPARE(toolsSpy.count(), 1);
+    QCOMPARE(promptsSpy.count(), 1);
+    QCOMPARE(resourcesSpy.count(), 1);
+    // Notifications are still emitted with received()
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ServerNotification);
+}
+
 #include "moc_mcpprotocolclientprotocolmanagertest.cpp"

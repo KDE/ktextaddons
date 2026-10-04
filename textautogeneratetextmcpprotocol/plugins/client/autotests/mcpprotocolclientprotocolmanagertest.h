@@ -26,4 +26,5 @@ private Q_SLOTS:
     void shouldFetchAllPages();
     void shouldStopPaginationWhenCursorDoesNotChange();
     void shouldReturnErrorOfPage();
+    void shouldEmitListChangedSignals();
 };

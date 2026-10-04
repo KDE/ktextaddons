@@ -25,6 +25,9 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -338,6 +341,21 @@ void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &message)
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid message received:" << obj;
     }
     Q_EMIT received(obj, type);
+    if (type == MethodType::ServerNotification) {
+        serverNotificationReceived(obj);
+    }
+}
+
+void McpProtocolClientProtocolManager::serverNotificationReceived(const QJsonObject &obj)
+{
+    const QString method = obj.value("method"_L1).toString();
+    if (method == QLatin1StringView(McpProtocolToolListChangedNotification::type())) {
+        Q_EMIT toolsListChanged();
+    } else if (method == QLatin1StringView(McpProtocolPromptListChangedNotification::type())) {
+        Q_EMIT promptsListChanged();
+    } else if (method == QLatin1StringView(McpProtocolResourceListChangedNotification::type())) {
+        Q_EMIT resourcesListChanged();
+    }
 }
 
 QString McpProtocolClientProtocolManager::listKey(MethodType type)
