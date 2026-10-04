@@ -65,3 +65,12 @@ add_textautogenerate_core_unittest(textautogeneratelocaltagsdatabasetest.cpp)
 add_textautogenerate_core_unittest(textautogeneratelocalprojectsdatabasetest.cpp)
 add_textautogenerate_core_unittest(textautogeneratelocaldatabasemanagertest.cpp)
 add_textautogenerate_core_unittest(textautogeneratetoolcalljobtest.cpp)
+
+# Uses fake MCP server of mcpprotocol client plugin tests
+set(_fakemcpserver_dir ${CMAKE_SOURCE_DIR}/textautogeneratetextmcpprotocol/plugins/client/autotests)
+ecm_add_test(textautogeneratemcptoolsmanagertest.cpp textautogeneratemcptoolsmanagertest.h ${_fakemcpserver_dir}/fakemcphttpserver.cpp ${_fakemcpserver_dir}/fakemcphttpserver.h
+    TEST_NAME textautogeneratemcptoolsmanagertest
+    NAME_PREFIX "textautogenerate-core-"
+    LINK_LIBRARIES Qt::Test Qt::Network KF6::TextAutoGenerateText KF6::TextAutoGenerateTextMcpProtocolCore
+)
+target_include_directories(textautogeneratemcptoolsmanagertest PRIVATE ${_fakemcpserver_dir})

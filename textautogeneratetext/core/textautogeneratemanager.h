@@ -23,6 +23,7 @@ class McpServerManager;
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateMcpToolsManager;
 class TextAutoGenerateMessagesModel;
 class TextAutoGenerateLocalDatabaseManager;
 class TextAutoGenerateChatsModel;
@@ -418,6 +419,12 @@ public:
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpServerManager *textAutoGenerateTextMcpServerManager() const;
 
     /*!
+     * \brief textAutoGenerateMcpToolsManager
+     * \return manager of connections to MCP servers and of their tools
+     */
+    [[nodiscard]] TextAutoGenerateMcpToolsManager *textAutoGenerateMcpToolsManager() const;
+
+    /*!
      */
     [[nodiscard]] TextAutoGenerateTextToolInternalInterface *textAutoGenerateTextToolInternalInterface() const;
     /*!
@@ -669,6 +676,7 @@ private:
 #endif
     TextAutoGenerateAgentPrompSkillManager *const mTextAutoGenerateAgentPrompSkillManager;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mTextAutoGenerateTextMcpServerManager;
+    TextAutoGenerateMcpToolsManager *const mTextAutoGenerateMcpToolsManager;
     TextAutoGenerateTagsManager *const mTextAutoGenerateTagsManager;
     TextAutoGenerateProjectsManager *const mTextAutoGenerateProjectsManager;
     QByteArray mCurrentChatId;

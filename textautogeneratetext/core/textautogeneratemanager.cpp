@@ -7,6 +7,7 @@
 #include "core/jobs/textautogeneratepurgeexpiredchatsjob.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/localdatabase/textautogeneratelocaldatabaseutils.h"
+#include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateagentprompskillmanager.h"
@@ -65,6 +66,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 #endif
     , mTextAutoGenerateAgentPrompSkillManager(new TextAutoGenerateAgentPrompSkillManager(this))
     , mTextAutoGenerateTextMcpServerManager(new TextAutoGenerateTextMcpProtocolCore::McpServerManager(this))
+    , mTextAutoGenerateMcpToolsManager(new TextAutoGenerateMcpToolsManager(mTextAutoGenerateTextMcpServerManager, this))
     , mTextAutoGenerateTagsManager(new TextAutoGenerateTagsManager(this))
     , mTextAutoGenerateProjectsManager(new TextAutoGenerateProjectsManager(this))
 {
@@ -912,6 +914,11 @@ void TextAutoGenerateManager::setTextAutoGenerateTextToolInternalInterface(
     TextAutoGenerateTextToolInternalInterface *newTextAutoGenerateTextToolInternalInterface)
 {
     mTextAutoGenerateTextToolInternalInterface = newTextAutoGenerateTextToolInternalInterface;
+}
+
+TextAutoGenerateMcpToolsManager *TextAutoGenerateManager::textAutoGenerateMcpToolsManager() const
+{
+    return mTextAutoGenerateMcpToolsManager;
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpServerManager *TextAutoGenerateManager::textAutoGenerateTextMcpServerManager() const
