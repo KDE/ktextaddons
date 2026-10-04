@@ -24,17 +24,6 @@ public:
     ~AddMcpSseServerWidget() override;
 
     /*!
-     * \brief setUrl
-     * \param str
-     */
-    void setUrl(const QString &str);
-    /*!
-     * \brief url
-     * \return
-     */
-    [[nodiscard]] QString url() const;
-
-    /*!
      * \brief isValid
      * \return
      */

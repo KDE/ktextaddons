@@ -32,16 +32,6 @@ AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
 
 AddMcpSseServerWidget::~AddMcpSseServerWidget() = default;
 
-void AddMcpSseServerWidget::setUrl(const QString &str)
-{
-    mServerUrlLineEdit->setText(str);
-}
-
-QString AddMcpSseServerWidget::url() const
-{
-    return mServerUrlLineEdit->text();
-}
-
 bool AddMcpSseServerWidget::isValid() const
 {
     const QString text = mServerUrlLineEdit->text().trimmed();

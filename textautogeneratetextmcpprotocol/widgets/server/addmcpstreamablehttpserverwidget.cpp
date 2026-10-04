@@ -34,16 +34,6 @@ AddMcpStreamableHttpServerWidget::AddMcpStreamableHttpServerWidget(QWidget *pare
 
 AddMcpStreamableHttpServerWidget::~AddMcpStreamableHttpServerWidget() = default;
 
-void AddMcpStreamableHttpServerWidget::setUrl(const QString &str)
-{
-    mServerUrlLineEdit->setText(str);
-}
-
-QString AddMcpStreamableHttpServerWidget::url() const
-{
-    return mServerUrlLineEdit->text();
-}
-
 bool AddMcpStreamableHttpServerWidget::isValid() const
 {
     const QString text = mServerUrlLineEdit->text().trimmed();

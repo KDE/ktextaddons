@@ -13,11 +13,6 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpStdioServerWidge
 {
     Q_OBJECT
 public:
-    struct StdioInfo {
-        QString command;
-        QString arguments;
-    };
-
     /*!
      * \brief AddMcpStdioServerWidget
      * \param parent
@@ -26,17 +21,6 @@ public:
     /*!
      */
     ~AddMcpStdioServerWidget() override;
-
-    /*!
-     * \brief setStdioInfo
-     * \param info
-     */
-    void setStdioInfo(const StdioInfo &info);
-    /*!
-     * \brief stdioInfo
-     * \return
-     */
-    [[nodiscard]] TextAutoGenerateTextMcpProtocolWidgets::AddMcpStdioServerWidget::StdioInfo stdioInfo() const;
 
     /*!
      * \brief isValid
@@ -60,4 +44,3 @@ private:
     QLineEdit *const mArgumentsLineEdit;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolWidgets::AddMcpStdioServerWidget::StdioInfo, Q_RELOCATABLE_TYPE);

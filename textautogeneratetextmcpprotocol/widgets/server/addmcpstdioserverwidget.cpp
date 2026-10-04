@@ -36,12 +36,6 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
 
 AddMcpStdioServerWidget::~AddMcpStdioServerWidget() = default;
 
-void AddMcpStdioServerWidget::setStdioInfo(const StdioInfo &info)
-{
-    mCommandLineEdit->setText(info.command);
-    mArgumentsLineEdit->setText(info.arguments);
-}
-
 bool AddMcpStdioServerWidget::isValid() const
 {
     return !mCommandLineEdit->text().trimmed().isEmpty();
@@ -64,15 +58,6 @@ void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocol
     const auto settings = server.settings();
     mArgumentsLineEdit->setText(settings.arguments());
     mCommandLineEdit->setText(settings.command());
-}
-
-AddMcpStdioServerWidget::StdioInfo AddMcpStdioServerWidget::stdioInfo() const
-{
-    const AddMcpStdioServerWidget::StdioInfo info{
-        .command = mCommandLineEdit->text(),
-        .arguments = mArgumentsLineEdit->text(),
-    };
-    return info;
 }
 
 #include "moc_addmcpstdioserverwidget.cpp"
