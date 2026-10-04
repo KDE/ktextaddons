@@ -71,13 +71,20 @@ Q_SIGNALS:
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void
-    initializeJob(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *
+    createJob(const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void jobFinished(TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *job,
+                                                    const QString &content,
+                                                    const QByteArray &toolIdentifier,
+                                                    const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachments);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void emitFinished();
     QList<TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *> mListJob;
     const QByteArray mChatId;
     const QByteArray mMessageUuid;
     const QList<TextAutoGenerateReply::ToolCallArgumentInfo> mInfos;
     QStringList mResult;
+    QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> mAttachments;
+    QByteArray mToolIdentifier;
     TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;
 };
 }
