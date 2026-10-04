@@ -35,12 +35,18 @@ void TextAutoGenerateToolCallJob::start()
         deleteLater();
         return;
     }
-    for (const auto &info : std::as_const(mInfos)) {
+    mToolResults.reserve(mInfos.count());
+    for (int i = 0; i < mInfos.count(); ++i) {
+        const auto &info = mInfos.at(i);
+        mToolResults.append({info.id, {}});
         if (auto job = createJob(info)) {
             mListJob.append(job);
+            mJobIndex.insert(job, i);
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found " << info.toolName;
-            mResult.append(i18n("Tool \"%1\" not found.", QString::fromLatin1(info.toolName)));
+            const QString notFound = i18n("Tool \"%1\" not found.", QString::fromLatin1(info.toolName));
+            mResult.append(notFound);
+            mToolResults[i].second = notFound;
         }
     }
     if (mListJob.isEmpty()) {
@@ -141,6 +147,9 @@ void TextAutoGenerateToolCallJob::jobFinished(TextAutoGenerateText::TextAutoGene
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << " TextAutoGenerateTextToolPlugin::finished: " << content;
     mResult.append(content);
+    if (const auto it = mJobIndex.constFind(job); it != mJobIndex.cend()) {
+        mToolResults[it.value()].second = content;
+    }
     mAttachments.append(attachments);
     mToolIdentifier = toolIdentifier;
     Q_EMIT toolInProgress({});
@@ -159,6 +168,7 @@ void TextAutoGenerateToolCallJob::emitFinished()
         .toolIdentifier = mToolIdentifier,
         .attachementInfoList = mAttachments,
     };
+    Q_EMIT toolResults(mToolResults);
     Q_EMIT finished(info);
     Q_EMIT toolInProgress({});
     deleteLater();

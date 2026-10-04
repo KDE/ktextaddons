@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QHash>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
@@ -75,6 +76,10 @@ Q_SIGNALS:
      * \param info The result information from the tool
      */
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
+    /*!
+     * \brief Emitted before finished() with result of each tool call (tool call id, result), in order of tool calls
+     */
+    void toolResults(const QList<QPair<QByteArray, QString>> &results);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *
@@ -89,6 +94,9 @@ private:
     const QByteArray mMessageUuid;
     const QList<TextAutoGenerateReply::ToolCallArgumentInfo> mInfos;
     QStringList mResult;
+    // Result of each tool call (same order as mInfos)
+    QList<QPair<QByteArray, QString>> mToolResults;
+    QHash<TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *, int> mJobIndex;
     QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> mAttachments;
     QByteArray mToolIdentifier;
     TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;

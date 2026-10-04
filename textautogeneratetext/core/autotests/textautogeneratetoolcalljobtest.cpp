@@ -79,6 +79,7 @@ TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo toolCall(const
 {
     TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo info;
     info.toolName = name;
+    info.id = "id_" + name;
     if (!value.isEmpty()) {
         info.toolCallArgument = {{.keyTool = u"arg"_s, .value = value}};
     }
@@ -105,10 +106,17 @@ void TextAutoGenerateToolCallJobTest::shouldCallSeveralTools()
         new TextAutoGenerateText::TextAutoGenerateToolCallJob("chat"_ba, "uuid"_ba, {toolCall("sync_tool"_ba, u"a"_s), toolCall("async_tool"_ba, u"b"_s)});
     job->setTextAutoGenerateTextToolInternalInterface(&interface);
     QSignalSpy finishedSpy(job, &TextAutoGenerateText::TextAutoGenerateToolCallJob::finished);
+    QSignalSpy toolResultsSpy(job, &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolResults);
     job->start();
     QTRY_COMPARE(finishedSpy.count(), 1);
     const auto info = finishedSpy.at(0).at(0).value<TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo>();
     QCOMPARE(info.content, u"sync_tool a\nasync_tool b"_s);
+    // Result of each tool, in order of tool calls
+    QCOMPARE(toolResultsSpy.count(), 1);
+    using ToolResults = QList<QPair<QByteArray, QString>>;
+    const auto results = toolResultsSpy.at(0).at(0).value<ToolResults>();
+    const ToolResults expected{{"id_sync_tool"_ba, u"sync_tool a"_s}, {"id_async_tool"_ba, u"async_tool b"_s}};
+    QCOMPARE(results, expected);
     QCOMPARE(info.chatId, "chat"_ba);
     QCOMPARE(info.messageUuid, "uuid"_ba);
 }
