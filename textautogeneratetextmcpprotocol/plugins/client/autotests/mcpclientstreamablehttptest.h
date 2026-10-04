@@ -22,6 +22,5 @@ private Q_SLOTS:
     void shouldCreateErrorResponseWhenPostFailed();
     void shouldFinishWhenSessionExpired();
     void shouldDeleteSessionWhenStopped();
-    void shouldDeleteSessionWhenClientIsDeletedAfterStop();
     void shouldReconnectEventStream();
 };

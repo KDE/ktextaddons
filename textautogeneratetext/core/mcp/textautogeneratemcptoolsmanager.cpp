@@ -125,7 +125,9 @@ void TextAutoGenerateMcpToolsManager::disconnectServer(const QByteArray &identif
     if (auto client = it->client) {
         client->disconnect(this);
         client->stopClient();
-        client->deleteLater();
+        // Let client send end of session (DELETE request) before deleting it.
+        // It's deleted with this manager if it's deleted before.
+        QTimer::singleShot(std::chrono::seconds(5), client, &QObject::deleteLater);
     }
     mServers.erase(it);
     if (hadTools) {

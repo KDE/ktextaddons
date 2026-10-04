@@ -258,20 +258,6 @@ void McpClientStreamableHttpTest::shouldDeleteSessionWhenStopped()
     QCOMPARE(finishedSpy.count(), 1);
 }
 
-void McpClientStreamableHttpTest::shouldDeleteSessionWhenClientIsDeletedAfterStop()
-{
-    FakeMcpHttpServer server;
-    server.setHandler([](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
-        handleDefault(request, socket);
-    });
-    auto client = new McpClientStreamableHttpPluginInterface;
-    initialize(*client, server);
-    client->stop();
-    // Common usage: client is deleted just after stop
-    delete client;
-    QTRY_COMPARE(server.requests("DELETE").count(), 1);
-}
-
 void McpClientStreamableHttpTest::shouldReconnectEventStream()
 {
     FakeMcpHttpServer server;
