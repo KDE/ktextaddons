@@ -13,6 +13,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolInternalInterface;
+class TextAutoGenerateMcpToolsManager;
 class TextAutoGenerateTextToolBaseJob;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateToolCallJob
@@ -58,6 +59,11 @@ public:
      */
     void setTextAutoGenerateTextToolInternalInterface(TextAutoGenerateTextToolInternalInterface *newTextAutoGenerateTextToolInternalInterface);
 
+    /*!
+     * Used to call tools of MCP servers
+     */
+    void setTextAutoGenerateMcpToolsManager(TextAutoGenerateMcpToolsManager *newTextAutoGenerateMcpToolsManager);
+
 Q_SIGNALS:
     /*!
      * \brief Emitted when tool processing is in progress
@@ -86,5 +92,6 @@ private:
     QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> mAttachments;
     QByteArray mToolIdentifier;
     TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;
+    TextAutoGenerateMcpToolsManager *mTextAutoGenerateMcpToolsManager = nullptr;
 };
 }

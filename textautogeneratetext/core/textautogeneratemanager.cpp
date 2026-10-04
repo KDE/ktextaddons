@@ -342,6 +342,7 @@ void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArr
 {
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
     job->setTextAutoGenerateTextToolInternalInterface(mTextAutoGenerateTextToolInternalInterface);
+    job->setTextAutoGenerateMcpToolsManager(mTextAutoGenerateMcpToolsManager);
     connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
     job->start();

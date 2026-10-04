@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratetoolcalljob.h"
+#include "core/mcp/textautogeneratemcptoolcalljob.h"
+#include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "core/tools/textautogeneratetexttoolinternaljob.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
@@ -104,7 +106,32 @@ TextAutoGenerateTextToolBaseJob *TextAutoGenerateToolCallJob::createJob(const Te
                 });
         return job;
     }
+    if (mTextAutoGenerateMcpToolsManager && mTextAutoGenerateMcpToolsManager->tool(toolName).has_value()) {
+        auto job = new TextAutoGenerateMcpToolCallJob(mTextAutoGenerateMcpToolsManager, this);
+        job->setToolArguments(info.toolCallArgument);
+        // MCP tools need arguments with their type
+        job->setArguments(info.arguments);
+        job->setChatId(mChatId);
+        job->setMessageUuid(mMessageUuid);
+        job->setToolIdentifier(toolName);
+        connect(job,
+                &TextAutoGenerateText::TextAutoGenerateMcpToolCallJob::finished,
+                this,
+                [this, job](const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &result) {
+                    jobFinished(job, result.content, result.toolIdentifier, result.attachementInfoList);
+                });
+        connect(job,
+                &TextAutoGenerateText::TextAutoGenerateMcpToolCallJob::toolInProgress,
+                this,
+                &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolInProgress);
+        return job;
+    }
     return nullptr;
+}
+
+void TextAutoGenerateToolCallJob::setTextAutoGenerateMcpToolsManager(TextAutoGenerateMcpToolsManager *newTextAutoGenerateMcpToolsManager)
+{
+    mTextAutoGenerateMcpToolsManager = newTextAutoGenerateMcpToolsManager;
 }
 
 void TextAutoGenerateToolCallJob::jobFinished(TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *job,
