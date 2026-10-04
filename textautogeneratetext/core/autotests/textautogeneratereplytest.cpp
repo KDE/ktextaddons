@@ -34,6 +34,19 @@ TextAutoGenerateText::TextAutoGenerateReply::Response CustomTextAutoGenerateRepl
     return {};
 }
 
+namespace
+{
+// Arguments of first tool call (object or string)
+QJsonObject firstArguments(const QByteArray &ba)
+{
+    const QJsonValue arguments = QJsonDocument::fromJson(ba).array().at(0).toObject().value("function"_L1).toObject().value("arguments"_L1);
+    if (arguments.isString()) {
+        return QJsonDocument::fromJson(arguments.toString().toUtf8()).object();
+    }
+    return arguments.toObject();
+}
+}
+
 TextAutoGenerateReplyTest::TextAutoGenerateReplyTest(QObject *parent)
     : QObject{parent}
 {
@@ -73,6 +86,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
             .keyTool = u"city"_s,
             .value = u"Grenoble"_s,
         }};
+        i.arguments = firstArguments(ba);
         infos.append(i);
         QTest::addRow("return-1") << ba << infos;
     }
@@ -86,6 +100,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
             .keyTool = u"city"_s,
             .value = u"Grenoble"_s,
         }};
+        i.arguments = firstArguments(ba);
         infos.append(i);
         QTest::addRow("return-index") << ba << infos;
     }
@@ -105,6 +120,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
                 .value = u"true"_s,
             },
         };
+        i.arguments = firstArguments(ba);
         infos.append(i);
         QTest::addRow("return-non-string-values") << ba << infos;
     }
@@ -138,8 +154,31 @@ void TextAutoGenerateReplyTest::shouldParseToolCallsOpenAI_data()
             .keyTool = u"currentdatetime"_s,
             .value = u"time"_s,
         }};
+        i.arguments = firstArguments(ba);
         infos.append(i);
         QTest::addRow("openai-string-arguments") << ba << infos;
+    }
+    {
+        const QByteArray ba(R"([{"id":"call_42","type":"function","function":{"arguments":"{\"city\":\"Paris\",\"days\":3}","name":"weather"},"index":0}])"_ba);
+        QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> infos;
+        TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo i;
+        i.toolName = "weather"_ba;
+        i.id = "call_42"_ba;
+        i.index = 0;
+        i.toolCallArgument = {
+            {
+                .keyTool = u"city"_s,
+                .value = u"Paris"_s,
+            },
+            {
+                .keyTool = u"days"_s,
+                .value = u"3"_s,
+            },
+        };
+        // Arguments keep their type
+        i.arguments = QJsonObject{{"city"_L1, u"Paris"_s}, {"days"_L1, 3}};
+        infos.append(i);
+        QTest::addRow("openai-id-typed-arguments") << ba << infos;
     }
 
     {
@@ -152,6 +191,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCallsOpenAI_data()
             .keyTool = u"currentdatetime"_s,
             .value = u"time"_s,
         }};
+        i.arguments = firstArguments(ba);
         infos.append(i);
         QTest::addRow("openai-object-arguments") << ba << infos;
     }
@@ -175,6 +215,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCallsOpenAI_data()
                 .value = u"true"_s,
             },
         };
+        i.arguments = firstArguments(ba);
         infos.append(i);
         QTest::addRow("openai-object-non-string-values") << ba << infos;
     }

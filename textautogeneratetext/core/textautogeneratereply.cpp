@@ -65,6 +65,8 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
 
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
+        toolInfo.id = obj["id"_L1].toString().toLatin1();
+        toolInfo.arguments = argumentObj;
         toolInfo.index = index;
         toolInfo.toolCallArgument.reserve(argumentObj.size());
         for (auto it = argumentObj.constBegin(); it != argumentObj.constEnd(); ++it) {
@@ -110,6 +112,8 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         }
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
+        toolInfo.id = obj["id"_L1].toString().toLatin1();
+        toolInfo.arguments = argumentObj;
         toolInfo.index = index;
         toolInfo.toolCallArgument.reserve(argumentObj.size());
         for (auto it = argumentObj.constBegin(); it != argumentObj.constEnd(); ++it) {
@@ -154,6 +158,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::T
 {
     d.space() << "tool name:" << t.toolName;
     d.space() << "toolCallArgument:" << t.toolCallArgument;
+    d.space() << "id:" << t.id;
+    d.space() << "arguments:" << t.arguments;
     d.space() << "index:" << t.index;
     return d;
 }
@@ -174,7 +180,7 @@ bool TextAutoGenerateReply::Response::hasToolCallArguments() const
 
 bool TextAutoGenerateReply::ToolCallArgumentInfo::operator==(const ToolCallArgumentInfo &other) const
 {
-    return other.toolCallArgument == toolCallArgument && other.toolName == toolName && other.index == index;
+    return other.toolCallArgument == toolCallArgument && other.toolName == toolName && other.id == id && other.arguments == arguments && other.index == index;
 }
 
 bool TextAutoGenerateReply::ToolCallArgument::operator==(const ToolCallArgument &other) const
