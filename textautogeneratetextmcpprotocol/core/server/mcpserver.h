@@ -34,6 +34,10 @@ public:
     /*!
      * \brief createUniqueIdentifier
      */
+    /*!
+     */
+    [[nodiscard]] bool operator==(const McpServer &other) const;
+
     void createUniqueIdentifier();
 
     /*!

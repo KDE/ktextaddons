@@ -15,6 +15,8 @@ McpServer::McpServer() = default;
 
 McpServer::~McpServer() = default;
 
+bool McpServer::operator==(const McpServer &other) const = default;
+
 void McpServer::createUniqueIdentifier()
 {
     mIdentifier = McpProtocolCommonUtils::generateUUid();

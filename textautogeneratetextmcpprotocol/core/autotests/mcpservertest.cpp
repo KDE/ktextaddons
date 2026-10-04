@@ -114,4 +114,17 @@ void McpServerTest::verifyConvertServerTypeFromString()
              TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown);
 }
 
+void McpServerTest::shouldCompareServers()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServer first;
+    first.setName(u"foo"_s);
+    first.createUniqueIdentifier();
+    TextAutoGenerateTextMcpProtocolCore::McpServer second = first;
+    QCOMPARE(first, second);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(u"bla"_s);
+    second.setSettings(settings);
+    QVERIFY(first != second);
+}
+
 #include "moc_mcpservertest.cpp"

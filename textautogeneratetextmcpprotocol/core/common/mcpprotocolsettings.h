@@ -18,6 +18,7 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSettings
 {
 public:
     McpProtocolSettings();
+    [[nodiscard]] bool operator==(const McpProtocolSettings &other) const;
 
     [[nodiscard]] QString command() const;
     void setCommand(const QString &newCommand);

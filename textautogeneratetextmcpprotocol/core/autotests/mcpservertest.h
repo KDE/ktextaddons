@@ -14,6 +14,7 @@ public:
     explicit McpServerTest(QObject *parent = nullptr);
     ~McpServerTest() override = default;
 private Q_SLOTS:
+    void shouldCompareServers();
     void shouldHaveDefaultValues();
     void shouldVerifyValidValue();
     void verifyConvertServerTypeToString();
