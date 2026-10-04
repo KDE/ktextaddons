@@ -7,6 +7,7 @@
 #include "textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextcore_toolplugin_debug.h"
 
+#include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/textautogeneratemanager.h"
 #include "core/tools/textautogeneratetexttoolinternalinterface.h"
 #include "textautogeneratetextcore_debug.h"
@@ -16,6 +17,8 @@
 #include <KPluginFactory>
 #include <QFileInfo>
 #include <QSet>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextToolPluginManager::TextAutoGenerateTextToolPluginManager(QObject *parent)
@@ -173,6 +176,16 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
 {
     QJsonArray toolsArray;
     for (const QByteArray &t : tools) {
+        if (TextAutoGenerateMcpToolsManager::isMcpToolIdentifier(t)) {
+            // All tools of MCP server
+            if (mManager) {
+                const auto lstJson = mManager->textAutoGenerateMcpToolsManager()->toolsMetaData({TextAutoGenerateMcpToolsManager::serverIdentifier(t)});
+                for (const auto &json : lstJson) {
+                    toolsArray.append(json);
+                }
+            }
+            continue;
+        }
         bool found = false;
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
@@ -205,6 +218,14 @@ QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const 
 {
     QString toolDisplayList;
     for (const QByteArray &t : tools) {
+        if (TextAutoGenerateMcpToolsManager::isMcpToolIdentifier(t)) {
+            if (mManager) {
+                const QString serverName =
+                    mManager->textAutoGenerateTextMcpServerManager()->mcpServerModel()->mcpServer(TextAutoGenerateMcpToolsManager::serverIdentifier(t)).name();
+                toolDisplayList.append(u"<li>"_s + i18n("MCP server: %1", serverName.toHtmlEscaped()) + u"</li>"_s);
+            }
+            continue;
+        }
         bool found = false;
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {

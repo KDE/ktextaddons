@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextplugin.h"
+#include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
@@ -138,6 +139,13 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
     answerInfo.setInstanceName(d->instance->displayName());
     answerInfo.setTools(info.tools);
     d->manager->updateMessageInfo(info.chatId, info.messageUuid, answerInfo);
+    // Tools of MCP servers must be loaded before sending request
+    if (const QList<QByteArray> mcpServers = TextAutoGenerateMcpToolsManager::serverIdentifiers(info.tools); !mcpServers.isEmpty()) {
+        d->manager->textAutoGenerateMcpToolsManager()->prepareServers(mcpServers, this, [this, info]() {
+            sendToAssistant(info);
+        });
+        return;
+    }
     sendToAssistant(info);
 }
 

@@ -211,4 +211,103 @@ void TextAutoGenerateMcpToolsManagerTest::shouldCreateUniqueNames()
     QCOMPARE(names.count(), 4);
 }
 
+void TextAutoGenerateMcpToolsManagerTest::shouldConvertToolIdentifiers()
+{
+    QCOMPARE(TextAutoGenerateMcpToolsManager::toolIdentifier("abc"_ba), "mcp:abc"_ba);
+    QVERIFY(TextAutoGenerateMcpToolsManager::isMcpToolIdentifier("mcp:abc"_ba));
+    QVERIFY(!TextAutoGenerateMcpToolsManager::isMcpToolIdentifier("example_tool"_ba));
+    QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifier("mcp:abc"_ba), "abc"_ba);
+    QVERIFY(TextAutoGenerateMcpToolsManager::serverIdentifier("example_tool"_ba).isEmpty());
+    QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifiers({"example_tool"_ba, "mcp:a"_ba, "mcp:b"_ba}), QList<QByteArray>({"a"_ba, "b"_ba}));
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldPrepareServers()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    QObject context;
+    int callbackCount = 0;
+    int toolCount = -1;
+    manager.prepareServers({server.identifier()}, &context, [&]() {
+        ++callbackCount;
+        toolCount = manager.tools(server.identifier()).count();
+    });
+    // Tools are not loaded yet
+    QCOMPARE(callbackCount, 0);
+    QTRY_COMPARE(callbackCount, 1);
+    // Callback is called when tools are loaded
+    QCOMPARE(toolCount, 2);
+    QVERIFY(manager.isReady(server.identifier()));
+
+    // Already ready: called directly
+    manager.prepareServers({server.identifier()}, &context, [&]() {
+        ++callbackCount;
+    });
+    QCOMPARE(callbackCount, 2);
+    QTest::qWait(50);
+    QCOMPARE(callbackCount, 2);
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldPrepareInvalidServer()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    QObject context;
+    int callbackCount = 0;
+    // Error: nothing to wait
+    manager.prepareServers({"unknown"_ba}, &context, [&]() {
+        ++callbackCount;
+    });
+    QCOMPARE(callbackCount, 1);
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldNotCallCallbackWhenContextIsDeleted()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    auto context = new QObject;
+    int callbackCount = 0;
+    manager.prepareServers({server.identifier()}, context, [&]() {
+        ++callbackCount;
+    });
+    delete context;
+    QTRY_VERIFY(manager.isReady(server.identifier()));
+    QTest::qWait(50);
+    QCOMPARE(callbackCount, 0);
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldCallCallbackAfterTimeout()
+{
+    // Server never answers
+    FakeMcpHttpServer silentServer;
+    silentServer.setHandler([](const FakeMcpHttpServer::Request &, QTcpSocket *) { });
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    server.setName(u"silent"_s);
+    server.createUniqueIdentifier();
+    server.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(silentServer.url(u"/mcp"_s));
+    server.setSettings(settings);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    QObject context;
+    int callbackCount = 0;
+    manager.prepareServers(
+        {server.identifier()},
+        &context,
+        [&]() {
+            ++callbackCount;
+        },
+        std::chrono::milliseconds(200));
+    QTRY_COMPARE(callbackCount, 1);
+    QCOMPARE(manager.status(server.identifier()), TextAutoGenerateMcpToolsManager::Status::Connecting);
+}
+
 #include "moc_textautogeneratemcptoolsmanagertest.cpp"

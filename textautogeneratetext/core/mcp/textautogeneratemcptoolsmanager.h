@@ -10,6 +10,8 @@
 #include <QJsonObject>
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
+#include <chrono>
+#include <functional>
 #include <optional>
 
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -71,6 +73,27 @@ public:
     [[nodiscard]] QList<QJsonObject> toolsMetaData(const QList<QByteArray> &serverIdentifiers) const;
 
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client(const QByteArray &serverIdentifier) const;
+
+    /*!
+     * Connect to \a serverIdentifiers and call \a callback when their tools are loaded
+     * (or when connection failed, or after \a timeout). \a callback is not called if \a context is deleted.
+     */
+    void prepareServers(const QList<QByteArray> &serverIdentifiers,
+                        QObject *context,
+                        const std::function<void()> &callback,
+                        std::chrono::milliseconds timeout = std::chrono::seconds(30));
+    [[nodiscard]] bool isReady(const QByteArray &serverIdentifier) const;
+
+    /*!
+     * Identifier used in list of selected tools for MCP server \a serverIdentifier ("mcp:<identifier>").
+     */
+    [[nodiscard]] static QByteArray toolIdentifier(const QByteArray &serverIdentifier);
+    [[nodiscard]] static bool isMcpToolIdentifier(const QByteArray &toolIdentifier);
+    [[nodiscard]] static QByteArray serverIdentifier(const QByteArray &toolIdentifier);
+    /*!
+     * MCP servers of list of selected tools \a tools
+     */
+    [[nodiscard]] static QList<QByteArray> serverIdentifiers(const QList<QByteArray> &tools);
 
     /*!
      * Convert \a name to a name accepted by LLM API: [a-zA-Z0-9_-]

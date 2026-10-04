@@ -6,11 +6,13 @@
 #include "textautogeneratemcptoolsmanager.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
+#include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
+#include <memory>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -72,8 +74,9 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
     auto client = new McpProtocolClientProtocolManager(server, this);
     state.client = client;
     connect(client, &McpProtocolClientProtocolManager::initialized, this, [this, identifier]() {
-        setStatus(identifier, Status::Connected);
+        // Request tools before changing status: server is ready when its tools are loaded
         listTools(identifier);
+        setStatus(identifier, Status::Connected);
     });
     connect(client, &McpProtocolClientProtocolManager::toolsListChanged, this, [this, identifier]() {
         listTools(identifier);
@@ -271,6 +274,86 @@ QList<QJsonObject> TextAutoGenerateMcpToolsManager::toolsMetaData(const QList<QB
         }
     }
     return list;
+}
+
+bool TextAutoGenerateMcpToolsManager::isReady(const QByteArray &serverIdentifier) const
+{
+    const auto it = mServers.constFind(serverIdentifier);
+    if (it == mServers.cend()) {
+        return false;
+    }
+    // Tools are loaded, or connection failed
+    return it->status != Status::Connecting && it->listToolsRequestId == -1;
+}
+
+void TextAutoGenerateMcpToolsManager::prepareServers(const QList<QByteArray> &serverIdentifiers,
+                                                     QObject *context,
+                                                     const std::function<void()> &callback,
+                                                     std::chrono::milliseconds timeout)
+{
+    for (const QByteArray &identifier : serverIdentifiers) {
+        connectServer(identifier);
+    }
+    auto serversReady = [this, serverIdentifiers]() {
+        return std::all_of(serverIdentifiers.cbegin(), serverIdentifiers.cend(), [this](const QByteArray &identifier) {
+            return isReady(identifier);
+        });
+    };
+    if (serversReady()) {
+        callback();
+        return;
+    }
+    // Deleted when callback is called, or with context
+    auto waiter = new QObject(this);
+    connect(context, &QObject::destroyed, waiter, &QObject::deleteLater);
+    auto done = std::make_shared<bool>(false);
+    auto finish = [this, waiter, callback, done]() {
+        if (*done) {
+            return;
+        }
+        *done = true;
+        // Disconnect first: callback can change servers state
+        disconnect(this, nullptr, waiter, nullptr);
+        waiter->deleteLater();
+        callback();
+    };
+    auto check = [serversReady, finish]() {
+        if (serversReady()) {
+            finish();
+        }
+    };
+    connect(this, &TextAutoGenerateMcpToolsManager::statusChanged, waiter, check);
+    connect(this, &TextAutoGenerateMcpToolsManager::toolsChanged, waiter, check);
+    QTimer::singleShot(timeout, waiter, [finish]() {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Timeout when connecting to MCP servers";
+        finish();
+    });
+}
+
+QByteArray TextAutoGenerateMcpToolsManager::toolIdentifier(const QByteArray &serverIdentifier)
+{
+    return "mcp:" + serverIdentifier;
+}
+
+bool TextAutoGenerateMcpToolsManager::isMcpToolIdentifier(const QByteArray &toolIdentifier)
+{
+    return toolIdentifier.startsWith("mcp:");
+}
+
+QByteArray TextAutoGenerateMcpToolsManager::serverIdentifier(const QByteArray &toolIdentifier)
+{
+    return isMcpToolIdentifier(toolIdentifier) ? toolIdentifier.mid(4) : QByteArray();
+}
+
+QList<QByteArray> TextAutoGenerateMcpToolsManager::serverIdentifiers(const QList<QByteArray> &tools)
+{
+    QList<QByteArray> identifiers;
+    for (const QByteArray &tool : tools) {
+        if (isMcpToolIdentifier(tool)) {
+            identifiers.append(serverIdentifier(tool));
+        }
+    }
+    return identifiers;
 }
 
 McpProtocolClientProtocolManager *TextAutoGenerateMcpToolsManager::client(const QByteArray &serverIdentifier) const

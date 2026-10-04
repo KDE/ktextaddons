@@ -21,4 +21,9 @@ private Q_SLOTS:
     void shouldDisconnectWhenServerIsDisabled();
     void shouldRefreshToolsWhenListChanged();
     void shouldCreateUniqueNames();
+    void shouldConvertToolIdentifiers();
+    void shouldPrepareServers();
+    void shouldPrepareInvalidServer();
+    void shouldNotCallCallbackWhenContextIsDeleted();
+    void shouldCallCallbackAfterTimeout();
 };
