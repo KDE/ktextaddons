@@ -252,9 +252,24 @@ void McpClientStreamableHttpTest::shouldDeleteSessionWhenStopped()
     QCOMPARE(finishedSpy.count(), 1);
     QTRY_COMPARE(server.requests("DELETE").count(), 1);
     QCOMPARE(server.requests("DELETE").at(0).header("Mcp-Session-Id"), sessionId);
+    QCOMPARE(server.requests("DELETE").at(0).header("Authorization"), "Bearer token"_ba);
     // Already stopped
     client.stop();
     QCOMPARE(finishedSpy.count(), 1);
+}
+
+void McpClientStreamableHttpTest::shouldDeleteSessionWhenClientIsDeletedAfterStop()
+{
+    FakeMcpHttpServer server;
+    server.setHandler([](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+        handleDefault(request, socket);
+    });
+    auto client = new McpClientStreamableHttpPluginInterface;
+    initialize(*client, server);
+    client->stop();
+    // Common usage: client is deleted just after stop
+    delete client;
+    QTRY_COMPARE(server.requests("DELETE").count(), 1);
 }
 
 void McpClientStreamableHttpTest::shouldReconnectEventStream()

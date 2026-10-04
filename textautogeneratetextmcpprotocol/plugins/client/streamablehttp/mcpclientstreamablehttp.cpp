@@ -8,12 +8,14 @@
 #include "mcpclientutils.h"
 #include "streamablehttp/mcpclientstreamablehttpplugininterface.h"
 #include <KLocalizedString>
+#include <QCoreApplication>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QPointer>
 #include <QSslError>
 #include <QTimer>
 #include <algorithm>
@@ -412,9 +414,14 @@ void McpClientStreamableHttp::stop()
         return;
     }
     if (!mSessionId.isEmpty()) {
-        // Tell server that we don't need session anymore
-        QNetworkReply *reply = mNetworkAccessManager->deleteResource(createRequest());
-        connect(reply, &QNetworkReply::finished, this, [reply]() {
+        // Tell server that we don't need session anymore.
+        // Client is often deleted just after stop(): use a network manager which is not deleted with it.
+        static QPointer<QNetworkAccessManager> sessionNetworkAccessManager;
+        if (!sessionNetworkAccessManager) {
+            sessionNetworkAccessManager = new QNetworkAccessManager(QCoreApplication::instance());
+        }
+        QNetworkReply *reply = sessionNetworkAccessManager->deleteResource(createRequest());
+        connect(reply, &QNetworkReply::finished, reply, [reply]() {
             // 405: server doesn't allow client to terminate session. It's allowed by specification.
             qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG)
                 << "Delete session:" << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() << reply->errorString();
