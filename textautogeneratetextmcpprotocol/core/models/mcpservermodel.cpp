@@ -35,6 +35,9 @@ bool McpServerModel::setData(const QModelIndex &idx, const QVariant &value, int 
     switch (role) {
     case Qt::CheckStateRole:
     case MCPServerRoles::Enabled:
+        if (server.enabled() == value.toBool()) {
+            return true;
+        }
         server.setEnabled(value.toBool());
         Q_EMIT dataChanged(idx, idx, {MCPServerRoles::Enabled, Qt::CheckStateRole});
         return true;

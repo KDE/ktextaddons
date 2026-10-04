@@ -9,10 +9,12 @@
 #include "server/mcpserverlistview.h"
 #include "server/mcpserverwidget.h"
 #include <QLineEdit>
+#include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(McpServerWidgetTest)
 McpServerWidgetTest::McpServerWidgetTest(QObject *parent)
@@ -41,6 +43,22 @@ void McpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(addMcpServerButton);
     QVERIFY(!addMcpServerButton->toolTip().isEmpty());
     QVERIFY(addMcpServerButton->autoRaise());
+}
+
+void McpServerWidgetTest::shouldEmitSettingsChangedWhenServerIsEnabled()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServerModel model;
+    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    server.setName(u"foo"_s);
+    server.setEnabled(true);
+    model.addMcpServer(server);
+    const TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget w(&model);
+    QSignalSpy settingsChangedSpy(&w, &TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget::settingsChanged);
+    QVERIFY(model.setData(model.index(0), Qt::Unchecked, Qt::CheckStateRole));
+    QCOMPARE(settingsChangedSpy.count(), 1);
+    // Same value: nothing changed
+    QVERIFY(model.setData(model.index(0), Qt::Unchecked, Qt::CheckStateRole));
+    QCOMPARE(settingsChangedSpy.count(), 1);
 }
 
 #include "moc_mcpserverwidgettest.cpp"

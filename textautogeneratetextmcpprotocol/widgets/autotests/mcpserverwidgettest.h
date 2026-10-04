@@ -16,4 +16,5 @@ public:
     ~McpServerWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldEmitSettingsChangedWhenServerIsEnabled();
 };

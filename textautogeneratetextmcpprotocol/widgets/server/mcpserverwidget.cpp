@@ -55,6 +55,14 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     connect(mMcpServerListView, &McpServerListView::addServer, this, &McpServerWidget::slotAddServer);
     connect(mMcpServerListView, &McpServerListView::removeServer, this, &McpServerWidget::slotRemoveServer);
     connect(mMcpServerListView, &McpServerListView::editServer, this, &McpServerWidget::slotEditServer);
+    if (mModel) {
+        // Server was enabled/disabled from checkbox
+        connect(mModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &, const QModelIndex &, const QList<int> &roles) {
+            if (roles.contains(Qt::CheckStateRole)) {
+                Q_EMIT settingsChanged();
+            }
+        });
+    }
 }
 
 McpServerWidget::~McpServerWidget() = default;
