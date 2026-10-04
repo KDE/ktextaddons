@@ -338,13 +338,20 @@ TextAutoGenerateTextInstancesManager *TextAutoGenerateManager::textAutoGenerateT
     return mTextAutoGenerateTextInstancesManager;
 }
 
-void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+TextAutoGenerateToolCallJob *
+TextAutoGenerateManager::createToolCallJob(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
     job->setTextAutoGenerateTextToolInternalInterface(mTextAutoGenerateTextToolInternalInterface);
     job->setTextAutoGenerateMcpToolsManager(mTextAutoGenerateMcpToolsManager);
-    connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
+    return job;
+}
+
+void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+{
+    auto job = createToolCallJob(chatId, uuid, info);
+    connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     job->start();
 
     // qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;

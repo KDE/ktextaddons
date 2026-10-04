@@ -325,9 +325,12 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
             (*it).setInfo(content.replyInfo);
         }
         (*it).generateHtml();
-        TextAutoGenerateAttachments attachments;
-        attachments.setMessageAttachments(TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(attachementInfoList));
-        (*it).setMessageAttachments(attachments);
+        // Keep attachments (created by tools) when content is updated during streaming
+        if (!attachementInfoList.isEmpty()) {
+            TextAutoGenerateAttachments attachments;
+            attachments.setMessageAttachments(TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(attachementInfoList));
+            (*it).setMessageAttachments(attachments);
+        }
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
             const QModelIndex index = createIndex(rowNumber, 0);

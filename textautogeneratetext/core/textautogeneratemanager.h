@@ -23,6 +23,7 @@ class McpServerManager;
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateToolCallJob;
 class TextAutoGenerateMcpToolsManager;
 class TextAutoGenerateMessagesModel;
 class TextAutoGenerateLocalDatabaseManager;
@@ -346,6 +347,11 @@ public:
      * \param info The tool call argument information
      */
     void callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
+    /*!
+     * Create job which calls tools \a info (plugin, internal and MCP tools). Job must be started.
+     */
+    [[nodiscard]] TextAutoGenerateToolCallJob *
+    createToolCallJob(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     /*!

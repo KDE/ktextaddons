@@ -146,9 +146,9 @@ void OllamaCloudPlugin::sendToAssistant(const SendToAssistantInfo &info)
                                                    })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, this] {
+        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, info, this] {
                                                        if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
-                                                           manager()->callTools(chatId, messageUuid, response.info);
+                                                           processToolCalls(info, response);
                                                        } else {
                                                            manager()->changeInProgress(chatId, messageUuid, false);
                                                        }
@@ -191,6 +191,11 @@ bool OllamaCloudPlugin::hasVisionSupport() const
 bool OllamaCloudPlugin::hasToolsSupport() const
 {
     return false;
+}
+
+TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat OllamaCloudPlugin::toolCallFormat() const
+{
+    return TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat::Ollama;
 }
 
 bool OllamaCloudPlugin::hasOcrSupport() const

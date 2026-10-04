@@ -37,6 +37,7 @@ public:
 
     [[nodiscard]] bool hasVisionSupport() const override;
     [[nodiscard]] bool hasToolsSupport() const override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat toolCallFormat() const override;
     [[nodiscard]] bool hasOcrSupport() const override;
     [[nodiscard]] bool hasAudioSupport() const override;
     [[nodiscard]] bool hasThinkSupport() const override;

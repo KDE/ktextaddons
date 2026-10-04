@@ -10,6 +10,7 @@
 #include <QJsonArray>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
+#include <TextAutoGenerateText/TextAutoGenerateMessage>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 #include <memory>
@@ -57,6 +58,8 @@ public:
         QByteArray chatId;
         QJsonArray messagesArray;
         QList<QByteArray> tools;
+        // Number of requests already sent with tool results
+        int toolTurn = 0;
     };
 
     /*!
@@ -207,6 +210,11 @@ public:
      * \return true if we just have text only support
      */
     [[nodiscard]] virtual bool hasTextOnlySupport() const;
+
+    /*!
+     * Format of tool calls and tool results in messages sent to LLM. OpenAI format by default.
+     */
+    [[nodiscard]] virtual TextAutoGenerateMessage::ToolCallFormat toolCallFormat() const;
 Q_SIGNALS:
     /*!
      */
@@ -255,6 +263,10 @@ protected:
     /*!
      */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextRequest convertSendToAssistantInfoToTextRequest(const SendToAssistantInfo &info) const;
+    /*!
+     * LLM asked to call tools: call them and send their results to LLM, which will answer.
+     */
+    void processToolCalls(const SendToAssistantInfo &info, const TextAutoGenerateText::TextAutoGenerateReply::Response &response);
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     QList<ModelInfoNameAndIdentifier> mModels;
 

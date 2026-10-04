@@ -11,6 +11,7 @@
 #include "core/textautogeneratemessage.h"
 #include "core/textautogeneratereply.h"
 #include "core/textautogeneratetextinstance.h"
+#include "core/tools/textautogeneratetoolcalljob.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 
@@ -20,6 +21,11 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
+namespace
+{
+// Maximum number of requests with tool results for one answer
+constexpr int maxToolTurns = 10;
+}
 class TextAutoGenerateText::TextAutoGenerateTextPluginPrivate
 {
 public:
@@ -119,7 +125,7 @@ void TextAutoGenerateTextPlugin::editMessage(const EditSendInfo &editSendInfo)
             info.message = editSendInfo.message;
             info.messageUuid = llmUuid;
             info.chatId = editSendInfo.chatId;
-            info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport()));
+            info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport(), toolCallFormat()));
             info.tools = editSendInfo.tools;
 
             initializeProgress(info);
@@ -147,6 +153,56 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
         return;
     }
     sendToAssistant(info);
+}
+
+TextAutoGenerateMessage::ToolCallFormat TextAutoGenerateTextPlugin::toolCallFormat() const
+{
+    return TextAutoGenerateMessage::ToolCallFormat::OpenAI;
+}
+
+void TextAutoGenerateTextPlugin::processToolCalls(const SendToAssistantInfo &info, const TextAutoGenerateText::TextAutoGenerateReply::Response &response)
+{
+    QList<TextAutoGenerateReply::ToolCallArgumentInfo> toolCalls = response.info;
+    // Ollama doesn't send id, it's needed to associate result with tool call
+    for (int i = 0; i < toolCalls.count(); ++i) {
+        if (toolCalls.at(i).id.isEmpty()) {
+            toolCalls[i].id = "call_" + QByteArray::number(info.toolTurn) + '_' + QByteArray::number(i);
+        }
+    }
+    if (info.toolTurn >= maxToolTurns) {
+        // Avoid infinite loop: show results of last tools
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Too many tool calls for message" << info.messageUuid;
+        d->manager->callTools(info.chatId, info.messageUuid, toolCalls);
+        return;
+    }
+    auto job = d->manager->createToolCallJob(info.chatId, info.messageUuid, toolCalls);
+    connect(job,
+            &TextAutoGenerateToolCallJob::toolResults,
+            this,
+            [this, info, toolCalls, content = response.response](const QList<QPair<QByteArray, QString>> &results) {
+                auto messageModel = d->manager->messagesModelFromChatId(info.chatId);
+                if (!messageModel) {
+                    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << info.chatId;
+                    return;
+                }
+                messageModel->appendToolExchange(info.messageUuid, content, toolCalls, results);
+                // Send results to LLM
+                SendToAssistantInfo nextInfo = info;
+                ++nextInfo.toolTurn;
+                nextInfo.messagesArray =
+                    createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport(), toolCallFormat()));
+                sendToAssistant(nextInfo);
+            });
+    connect(job,
+            &TextAutoGenerateToolCallJob::finished,
+            this,
+            [this, info](const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &result) {
+                // Files created by tools are shown with answer
+                if (!result.attachementInfoList.isEmpty()) {
+                    d->manager->replaceContent(info.chatId, info.messageUuid, {}, result.attachementInfoList);
+                }
+            });
+    job->start();
 }
 
 TextAutoGenerateText::TextAutoGenerateTextRequest TextAutoGenerateTextPlugin::convertSendToAssistantInfoToTextRequest(const SendToAssistantInfo &info) const
@@ -205,7 +261,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         info.chatId = editSendInfo.chatId;
         info.tools = editSendInfo.tools;
 
-        info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport()));
+        info.messagesArray = createListMessages(messageModel->convertToOllamaChat(hasSystemMessageSupport(), hasTextOnlySupport(), toolCallFormat()));
         // qDebug() << "info.messagesArray  " << info.messagesArray;
 
         d->manager->addMessage(info.chatId, msgLlm);
