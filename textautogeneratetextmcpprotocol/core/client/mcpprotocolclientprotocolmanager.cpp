@@ -9,6 +9,7 @@
 #include "textautogeneratetextmcpprotocolcore_version.h"
 
 #include <QCoreApplication>
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequest>
@@ -27,6 +28,11 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
+namespace
+{
+// Avoid infinite loop when server always returns a cursor
+constexpr int maxPages = 100;
+}
 McpProtocolClientProtocolManager::McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent)
     : QObject{parent}
     , mServer(server)
@@ -62,11 +68,9 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
     case MethodType::Ping:
         return ping();
     case MethodType::ListTools:
-        return listTools();
     case MethodType::ListPrompts:
-        return listPrompts();
     case MethodType::ResourceTemplates:
-        return resourceTemplates();
+        return listRequest(type);
     case MethodType::CallTool:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use callTool() to call a tool.";
         break;
@@ -84,13 +88,24 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
 
 qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request, qint64 identifier, MethodType type)
 {
+    return sendRequest(request, identifier, type, PendingRequest());
+}
+
+qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request, qint64 identifier, MethodType type, PendingRequest pending)
+{
+    pending.type = type;
+    pending.deadline = QDeadlineTimer(mRequestTimeout);
+    if (pending.originalId == 0) {
+        pending.originalId = identifier;
+    }
+    const qint64 originalId = pending.originalId;
     // Register before sending: transport can answer synchronously
-    mPendingRequests.insert(identifier, {type, QDeadlineTimer(mRequestTimeout)});
+    mPendingRequests.insert(identifier, std::move(pending));
     if (!mTimeoutTimer->isActive()) {
         mTimeoutTimer->start(std::min(mRequestTimeout, std::chrono::milliseconds(1000)));
     }
     mClient->request(request);
-    return identifier;
+    return originalId;
 }
 
 void McpProtocolClientProtocolManager::checkTimeouts()
@@ -102,7 +117,8 @@ void McpProtocolClientProtocolManager::checkTimeouts()
         }
     }
     for (const qint64 identifier : std::as_const(expired)) {
-        const MethodType type = mPendingRequests.take(identifier).type;
+        const PendingRequest pending = mPendingRequests.take(identifier);
+        const MethodType type = pending.type;
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Request timed out:" << identifier << type;
         if (type == MethodType::Initialize) {
             // Initialize request must not be cancelled: stop client
@@ -116,7 +132,7 @@ void McpProtocolClientProtocolManager::checkTimeouts()
         mcpError.setCode(-32001); // Request timeout
         mcpError.setMessage(u"Request timed out"_s);
         McpProtocolJSONRPCErrorResponse response;
-        response.setId(McpProtocolUtils::RequestId(identifier));
+        response.setId(McpProtocolUtils::RequestId(pending.originalId));
         response.setError(std::move(mcpError));
         Q_EMIT received(McpProtocolJSONRPCErrorResponse::toJson(response), type);
     }
@@ -179,7 +195,10 @@ qint64 McpProtocolClientProtocolManager::callTool(const QString &name, const QJs
 
 void McpProtocolClientProtocolManager::cancelRequest(qint64 requestId, const QString &reason)
 {
-    const auto it = mPendingRequests.constFind(requestId);
+    // List request can be in progress with another page request
+    const auto it = std::find_if(mPendingRequests.cbegin(), mPendingRequests.cend(), [requestId](const PendingRequest &pending) {
+        return pending.originalId == requestId;
+    });
     if (it == mPendingRequests.cend()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Request not found:" << requestId;
         return;
@@ -189,8 +208,9 @@ void McpProtocolClientProtocolManager::cancelRequest(qint64 requestId, const QSt
         return;
     }
     // Response received later will be ignored
+    const qint64 identifier = it.key();
     mPendingRequests.erase(it);
-    sendCancelledNotification(requestId, reason);
+    sendCancelledNotification(identifier, reason);
 }
 
 void McpProtocolClientProtocolManager::sendCancelledNotification(qint64 identifier, const QString &reason)
@@ -213,27 +233,6 @@ std::chrono::milliseconds McpProtocolClientProtocolManager::requestTimeout() con
 void McpProtocolClientProtocolManager::setRequestTimeout(std::chrono::milliseconds timeout)
 {
     mRequestTimeout = timeout;
-}
-
-McpProtocolClientProtocolManager::MethodType McpProtocolClientProtocolManager::checkMethodType(const QJsonObject &obj)
-{
-    if (obj.contains("method"_L1)) {
-        return obj.contains("id"_L1) ? MethodType::ServerRequest : MethodType::ServerNotification;
-    }
-    if (obj.contains("result"_L1) || obj.contains("error"_L1)) {
-        const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(obj.value("id"_L1));
-        if (const qint64 *identifier = std::get_if<qint64>(&id)) {
-            if (const auto it = mPendingRequests.constFind(*identifier); it != mPendingRequests.cend()) {
-                const MethodType type = it->type;
-                mPendingRequests.erase(it);
-                return type;
-            }
-        }
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Response received for an unknown request id:" << obj.value("id"_L1);
-        return MethodType::Unknown;
-    }
-    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid message received:" << obj;
-    return MethodType::Unknown;
 }
 
 QString McpProtocolClientProtocolManager::clientName() const
@@ -310,16 +309,86 @@ void McpProtocolClientProtocolManager::slotFinished()
     Q_EMIT finished();
 }
 
-void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &obj)
+void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &message)
 {
-    qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " receive " << obj;
-    const MethodType type = checkMethodType(obj);
-    if (type == MethodType::Initialize) {
-        initializeResponseReceived(obj);
-    } else if (type == MethodType::ServerRequest) {
-        answerServerRequest(obj);
+    qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " receive " << message;
+    QJsonObject obj = message;
+    MethodType type = MethodType::Unknown;
+    if (obj.contains("method"_L1)) {
+        type = obj.contains("id"_L1) ? MethodType::ServerRequest : MethodType::ServerNotification;
+        if (type == MethodType::ServerRequest) {
+            answerServerRequest(obj);
+        }
+    } else if (obj.contains("result"_L1) || obj.contains("error"_L1)) {
+        const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(obj.value("id"_L1));
+        const qint64 *identifier = std::get_if<qint64>(&id);
+        if (identifier && mPendingRequests.contains(*identifier)) {
+            PendingRequest pending = mPendingRequests.take(*identifier);
+            type = pending.type;
+            if (type == MethodType::Initialize) {
+                initializeResponseReceived(obj);
+            } else if (!listKey(type).isEmpty() && !processPaginatedResponse(obj, pending)) {
+                // Next page requested
+                return;
+            }
+        } else {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Response received for an unknown request id:" << obj.value("id"_L1);
+        }
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid message received:" << obj;
     }
     Q_EMIT received(obj, type);
+}
+
+QString McpProtocolClientProtocolManager::listKey(MethodType type)
+{
+    switch (type) {
+    case MethodType::ListTools:
+        return u"tools"_s;
+    case MethodType::ListPrompts:
+        return u"prompts"_s;
+    case MethodType::ResourceTemplates:
+        return u"resourceTemplates"_s;
+    case MethodType::Unknown:
+    case MethodType::Ping:
+    case MethodType::Initialize:
+    case MethodType::ServerRequest:
+    case MethodType::ServerNotification:
+    case MethodType::CallTool:
+        break;
+    }
+    return {};
+}
+
+bool McpProtocolClientProtocolManager::processPaginatedResponse(QJsonObject &obj, PendingRequest &pending)
+{
+    // Caller only knows first request id
+    obj["id"_L1] = pending.originalId;
+    if (!obj.contains("result"_L1)) {
+        // Error
+        return true;
+    }
+    QJsonObject result = obj.value("result"_L1).toObject();
+    const QString key = listKey(pending.type);
+    const QJsonArray page = result.value(key).toArray();
+    for (const auto &item : page) {
+        pending.items.append(item);
+    }
+    ++pending.pageCount;
+    if (const QString nextCursor = result.value("nextCursor"_L1).toString(); !nextCursor.isEmpty()) {
+        if (nextCursor == pending.cursor || pending.pageCount >= maxPages) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Stop pagination of" << pending.type << "after" << pending.pageCount << "pages";
+        } else {
+            pending.cursor = nextCursor;
+            listRequest(pending.type, std::move(pending));
+            return false;
+        }
+    }
+    // All pages are received: return all items in one response
+    result[key] = pending.items;
+    result.remove("nextCursor"_L1);
+    obj["result"_L1] = result;
+    return true;
 }
 
 void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &obj)
@@ -396,30 +465,48 @@ qint64 McpProtocolClientProtocolManager::ping()
     return sendRequest(TextAutoGenerateTextMcpProtocolCore::McpProtocolPingRequest::toJson(pingRequest), identifier, MethodType::Ping);
 }
 
-qint64 McpProtocolClientProtocolManager::listTools()
+qint64 McpProtocolClientProtocolManager::listRequest(MethodType type)
 {
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsRequest listToolsRequest;
-    const qint64 identifier = requestId();
-    listToolsRequest.setId(identifier);
-    return sendRequest(TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsRequest::toJson(listToolsRequest), identifier, MethodType::ListTools);
+    return listRequest(type, PendingRequest());
 }
 
-qint64 McpProtocolClientProtocolManager::listPrompts()
+qint64 McpProtocolClientProtocolManager::listRequest(MethodType type, PendingRequest pending)
 {
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsRequest listPromptsRequest;
+    std::optional<McpProtocolPaginatedRequestParams> params;
+    if (!pending.cursor.isEmpty()) {
+        McpProtocolPaginatedRequestParams paginatedParams;
+        paginatedParams.setCursor(pending.cursor);
+        params = std::move(paginatedParams);
+    }
     const qint64 identifier = requestId();
-    listPromptsRequest.setId(identifier);
-    return sendRequest(TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsRequest::toJson(listPromptsRequest), identifier, MethodType::ListPrompts);
-}
-
-qint64 McpProtocolClientProtocolManager::resourceTemplates()
-{
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourceTemplatesRequest resourceTemplatesRequest;
-    const qint64 identifier = requestId();
-    resourceTemplatesRequest.setId(identifier);
-    return sendRequest(TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourceTemplatesRequest::toJson(resourceTemplatesRequest),
-                       identifier,
-                       MethodType::ResourceTemplates);
+    QJsonObject request;
+    switch (type) {
+    case MethodType::ListTools: {
+        McpProtocolListToolsRequest listToolsRequest;
+        listToolsRequest.setId(identifier);
+        listToolsRequest.setParams(std::move(params));
+        request = McpProtocolListToolsRequest::toJson(listToolsRequest);
+        break;
+    }
+    case MethodType::ListPrompts: {
+        McpProtocolListPromptsRequest listPromptsRequest;
+        listPromptsRequest.setId(identifier);
+        listPromptsRequest.setParams(std::move(params));
+        request = McpProtocolListPromptsRequest::toJson(listPromptsRequest);
+        break;
+    }
+    case MethodType::ResourceTemplates: {
+        McpProtocolListResourceTemplatesRequest resourceTemplatesRequest;
+        resourceTemplatesRequest.setId(identifier);
+        resourceTemplatesRequest.setParams(std::move(params));
+        request = McpProtocolListResourceTemplatesRequest::toJson(resourceTemplatesRequest);
+        break;
+    }
+    default:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "It's a bug:" << type << "is not a list request";
+        return -1;
+    }
+    return sendRequest(request, identifier, type, std::move(pending));
 }
 
 #include "moc_mcpprotocolclientprotocolmanager.cpp"

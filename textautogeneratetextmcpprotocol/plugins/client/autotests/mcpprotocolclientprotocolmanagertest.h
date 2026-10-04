@@ -23,4 +23,7 @@ private Q_SLOTS:
     void shouldRestartAfterStop();
     void shouldCallTool();
     void shouldNotCallToolWhenServerDoesNotSupportTools();
+    void shouldFetchAllPages();
+    void shouldStopPaginationWhenCursorDoesNotChange();
+    void shouldReturnErrorOfPage();
 };

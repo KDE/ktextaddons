@@ -281,4 +281,94 @@ void McpProtocolClientProtocolManagerTest::shouldNotCallToolWhenServerDoesNotSup
     QVERIFY(postedMessages(fakeServer, u"tools/call"_s).isEmpty());
 }
 
+namespace
+{
+QJsonObject tool(const QString &name)
+{
+    return QJsonObject{{"name"_L1, name}, {"inputSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}}}};
+}
+
+QStringList toolNames(const QJsonObject &response)
+{
+    QStringList names;
+    const QJsonArray tools = response.value("result"_L1).toObject().value("tools"_L1).toArray();
+    for (const auto &t : tools) {
+        names.append(t.toObject().value("name"_L1).toString());
+    }
+    return names;
+}
+}
+
+void McpProtocolClientProtocolManagerTest::shouldFetchAllPages()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        const QString cursor = obj.value("params"_L1).toObject().value("cursor"_L1).toString();
+        QJsonObject page;
+        if (cursor.isEmpty()) {
+            page = QJsonObject{{"tools"_L1, QJsonArray{tool(u"a"_s), tool(u"b"_s)}}, {"nextCursor"_L1, u"c1"_s}};
+        } else if (cursor == u"c1"_s) {
+            page = QJsonObject{{"tools"_L1, QJsonArray{tool(u"c"_s)}}, {"nextCursor"_L1, u"c2"_s}};
+        } else {
+            page = QJsonObject{{"tools"_L1, QJsonArray{tool(u"d"_s)}}};
+        }
+        sendJson(socket, result(obj.value("id"_L1), page));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QTest::qWait(100);
+    // Only one response with all pages
+    QCOMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ListTools);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    QCOMPARE(toolNames(response), QStringList({u"a"_s, u"b"_s, u"c"_s, u"d"_s}));
+    QVERIFY(!response.value("result"_L1).toObject().contains("nextCursor"_L1));
+
+    const auto requests = postedMessages(fakeServer, u"tools/list"_s);
+    QCOMPARE(requests.count(), 3);
+    QVERIFY(!requests.at(0).contains("params"_L1));
+    QCOMPARE(requests.at(1).value("params"_L1).toObject().value("cursor"_L1).toString(), u"c1"_s);
+    QCOMPARE(requests.at(2).value("params"_L1).toObject().value("cursor"_L1).toString(), u"c2"_s);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldStopPaginationWhenCursorDoesNotChange()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"tools"_L1, QJsonArray{tool(u"a"_s)}}, {"nextCursor"_L1, u"same"_s}}));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(postedMessages(fakeServer, u"tools/list"_s).count(), 2);
+    QCOMPARE(toolNames(receivedSpy.at(0).at(0).toJsonObject()), QStringList({u"a"_s, u"a"_s}));
+}
+
+void McpProtocolClientProtocolManagerTest::shouldReturnErrorOfPage()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        if (obj.value("params"_L1).toObject().value("cursor"_L1).toString().isEmpty()) {
+            sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"tools"_L1, QJsonArray{tool(u"a"_s)}}, {"nextCursor"_L1, u"c1"_s}}));
+        } else {
+            const QJsonObject error{{"code"_L1, -32602}, {"message"_L1, u"Invalid cursor"_s}};
+            sendJson(socket, QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, obj.value("id"_L1)}, {"error"_L1, error}});
+        }
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    QCOMPARE(response.value("error"_L1).toObject().value("code"_L1).toInt(), -32602);
+}
+
 #include "moc_mcpprotocolclientprotocolmanagertest.cpp"
