@@ -49,7 +49,7 @@ void McpServerListView::slotEditMcpServer(const QModelIndex &index)
 void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
-    auto addServerAction = new QAction(i18nc("@action", "Add server…"), &menu);
+    auto addServerAction = new QAction(i18nc("@action", "Add Server…"), &menu);
     menu.addAction(addServerAction);
     connect(addServerAction, &QAction::triggered, this, &McpServerListView::addServer);
 
@@ -68,8 +68,8 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
             } else {
                 const QString name = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Name).toString();
                 if (KMessageBox::warningTwoActions(this,
-                                                   i18n("Do you want to remove this server (%1)?", name),
-                                                   i18nc("@title", "Remove Server"),
+                                                   i18nc("@info", "Do you want to remove this server (%1)?", name),
+                                                   i18nc("@title:window", "Remove Server"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())
                     == KMessageBox::PrimaryAction) {

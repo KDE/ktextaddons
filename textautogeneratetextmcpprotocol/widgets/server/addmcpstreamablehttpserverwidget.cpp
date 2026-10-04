@@ -23,7 +23,7 @@ AddMcpStreamableHttpServerWidget::AddMcpStreamableHttpServerWidget(QWidget *pare
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mServerUrlLineEdit->setClearButtonEnabled(true);
-    mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "URL:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
 
     mHttpServerHeaderWidget->setObjectName(u"mHttpServerHeaderWidget"_s);

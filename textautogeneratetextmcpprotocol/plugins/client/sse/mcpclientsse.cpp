@@ -40,7 +40,7 @@ void McpClientSse::connection()
     const QUrl url = settings.serverUrl();
     if (!url.isValid() || url.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to start client. Url is invalid:" << url;
-        Q_EMIT error(i18n("Impossible to start client. Url is invalid."));
+        Q_EMIT error(i18n("Impossible to start client. URL is invalid."));
         return;
     }
     mParser.clear();

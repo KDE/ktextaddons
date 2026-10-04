@@ -23,7 +23,7 @@ AddMcpSseServerWidget::AddMcpSseServerWidget(QWidget *parent)
 
     mServerUrlLineEdit->setObjectName(u"mServerUrlLineEdit"_s);
     mServerUrlLineEdit->setClearButtonEnabled(true);
-    mainLayout->addRow(i18nc("@label:textbox", "Url:"), mServerUrlLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "URL:"), mServerUrlLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerUrlLineEdit);
     mHttpServerHeaderWidget->setObjectName(u"mHttpServerHeaderWidget"_s);
     mainLayout->addRow(i18nc("@label", "Headers:"), mHttpServerHeaderWidget);

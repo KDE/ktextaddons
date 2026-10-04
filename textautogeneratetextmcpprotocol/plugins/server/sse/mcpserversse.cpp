@@ -35,7 +35,7 @@ void McpServerSse::connection()
     const QUrl url = settings.serverUrl();
     if (!url.isValid() || url.isEmpty()) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to start server. Url is invalid:" << url;
-        Q_EMIT error(i18n("Impossible to start server. Url is invalid."));
+        Q_EMIT error(i18n("Impossible to start server. URL is invalid."));
         return;
     }
     QNetworkRequest request(url);

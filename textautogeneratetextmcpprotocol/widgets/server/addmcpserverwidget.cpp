@@ -35,7 +35,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mServerNameLineEdit);
 
     mSelectTypeComboBox->setObjectName(u"mSelectTypeComboBox"_s);
-    mainLayout->addRow(i18nc("@label:textbox", "Type:"), mSelectTypeComboBox);
+    mainLayout->addRow(i18nc("@label:listbox", "Type:"), mSelectTypeComboBox);
     connect(mSelectTypeComboBox, &SelectTypeComboBox::activated, this, &AddMcpServerWidget::changeType);
 
     mStackedWidget->setObjectName(u"mStackedWidget"_s);

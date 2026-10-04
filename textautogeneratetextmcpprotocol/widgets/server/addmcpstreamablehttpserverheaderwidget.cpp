@@ -68,7 +68,7 @@ void AddMcpStreamableHttpServerHeaderWidget::slotRemoveHeader()
     }
     if (KMessageBox::ButtonCode::PrimaryAction
         == KMessageBox::questionTwoActions(this,
-                                           i18n("Are you sure that you want to delete this header?"),
+                                           i18nc("@info", "Are you sure that you want to delete this header?"),
                                            i18nc("@title:window", "Remove Header"),
                                            KStandardGuiItem::remove(),
                                            KStandardGuiItem::cancel())) {

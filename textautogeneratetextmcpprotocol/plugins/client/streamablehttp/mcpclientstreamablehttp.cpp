@@ -60,7 +60,7 @@ void McpClientStreamableHttp::connection()
     const QUrl url = mInterface->protocolSettings().serverUrl();
     if (!url.isValid() || (url.scheme() != "http"_L1 && url.scheme() != "https"_L1)) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to start client. Url is invalid:" << url;
-        Q_EMIT error(i18n("Impossible to start client. Url is invalid."));
+        Q_EMIT error(i18n("Impossible to start client. URL is invalid."));
         Q_EMIT finished();
         return;
     }
