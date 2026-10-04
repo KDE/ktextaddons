@@ -89,7 +89,7 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
     if (server.identifier().isEmpty()) {
         server.createUniqueIdentifier();
     }
-    server.setName(mServerNameLineEdit->text());
+    server.setName(mServerNameLineEdit->text().trimmed());
     const auto serverType = mSelectTypeComboBox->type();
     server.setTransportType(serverType);
 

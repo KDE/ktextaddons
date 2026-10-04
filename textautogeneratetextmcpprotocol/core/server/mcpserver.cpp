@@ -75,11 +75,11 @@ bool McpServer::isValid() const
         return false;
     }
     if (mTransportType == TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio) {
-        if (mSettings.command().isEmpty()) {
+        if (!mSettings.hasValidCommand()) {
             return false;
         }
     } else {
-        if (mSettings.serverUrl().isEmpty()) {
+        if (!mSettings.hasValidServerUrl()) {
             return false;
         }
     }

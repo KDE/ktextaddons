@@ -35,6 +35,14 @@ public:
     void save(KConfigGroup &config) const;
 
     [[nodiscard]] bool isValid() const;
+    /*!
+     * Valid http or https url (sse and streamable http transports)
+     */
+    [[nodiscard]] bool hasValidServerUrl() const;
+    /*!
+     * Command is defined (stdio transport)
+     */
+    [[nodiscard]] bool hasValidCommand() const;
 
     [[nodiscard]] QStringList headers() const;
     void setHeaders(const QStringList &newHeaders);

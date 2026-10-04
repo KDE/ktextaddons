@@ -60,6 +60,7 @@ TextAutoGenerateTextMcpProtocolCore::McpServer createServer(const FakeMcpHttpSer
 {
     TextAutoGenerateTextMcpProtocolCore::McpServer server;
     server.setName(u"test"_s);
+    server.createUniqueIdentifier();
     server.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp);
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
     settings.setServerUrl(fakeServer.url(u"/mcp"_s));

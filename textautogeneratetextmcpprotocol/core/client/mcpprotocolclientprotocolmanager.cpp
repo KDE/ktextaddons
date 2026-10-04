@@ -211,6 +211,12 @@ void McpProtocolClientProtocolManager::initializeClient()
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client already initialized";
         return;
     }
+    if (!mServer.isValid()) {
+        // Don't create a client which can't start
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid server:" << mServer;
+        Q_EMIT error(u"Invalid server settings"_s);
+        return;
+    }
     if (!mClient) {
         mClient = new TextAutoGenerateTextMcpProtocolCore::McpProtocolClient(mServer.transportType(), this);
         connect(mClient, &TextAutoGenerateTextMcpProtocolCore::McpProtocolClient::error, this, [this](const QString &strError) {

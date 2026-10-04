@@ -44,14 +44,14 @@ void AddMcpStdioServerWidget::setStdioInfo(const StdioInfo &info)
 
 bool AddMcpStdioServerWidget::isValid() const
 {
-    return !mCommandLineEdit->text().isEmpty();
+    return !mCommandLineEdit->text().trimmed().isEmpty();
 }
 
 void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
-    settings.setCommand(mCommandLineEdit->text());
-    settings.setArguments(mArgumentsLineEdit->text());
+    settings.setCommand(mCommandLineEdit->text().trimmed());
+    settings.setArguments(mArgumentsLineEdit->text().trimmed());
     // Remove settings from another transport type
     settings.setServerUrl({});
     settings.setHeaders({});

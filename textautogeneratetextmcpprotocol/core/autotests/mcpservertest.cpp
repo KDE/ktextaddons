@@ -44,6 +44,10 @@ void McpServerTest::shouldVerifyValidValue()
         QVERIFY(!w.isValid());
 
         w.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse);
+        // Not a http url
+        QVERIFY(!w.isValid());
+        s.setServerUrl(QUrl(u"http://localhost:8080/sse"_s));
+        w.setSettings(s);
         QVERIFY(w.isValid());
     }
     {
@@ -54,6 +58,9 @@ void McpServerTest::shouldVerifyValidValue()
         QVERIFY(!w.isValid());
         TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings s;
         s.setArguments(u"ddd"_s);
+        w.setSettings(s);
+        QVERIFY(!w.isValid());
+        s.setCommand(u"  "_s);
         w.setSettings(s);
         QVERIFY(!w.isValid());
         s.setCommand(u"foo"_s);
@@ -68,6 +75,9 @@ void McpServerTest::shouldVerifyValidValue()
         QVERIFY(!w.isValid());
         TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings s;
         s.setServerUrl(QUrl(u"foo"_s));
+        w.setSettings(s);
+        QVERIFY(!w.isValid());
+        s.setServerUrl(QUrl(u"https://example.com/mcp"_s));
         w.setSettings(s);
         QVERIFY(w.isValid());
     }

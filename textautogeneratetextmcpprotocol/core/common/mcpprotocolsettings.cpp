@@ -113,7 +113,17 @@ void McpProtocolSettings::save(KConfigGroup &config) const
 
 bool McpProtocolSettings::isValid() const
 {
-    return (mServerUrl.isValid()) || (!mCommand.isEmpty());
+    return hasValidServerUrl() || hasValidCommand();
+}
+
+bool McpProtocolSettings::hasValidServerUrl() const
+{
+    return mServerUrl.isValid() && !mServerUrl.host().isEmpty() && (mServerUrl.scheme() == "http"_L1 || mServerUrl.scheme() == "https"_L1);
+}
+
+bool McpProtocolSettings::hasValidCommand() const
+{
+    return !mCommand.trimmed().isEmpty();
 }
 
 QStringList McpProtocolSettings::headers() const
