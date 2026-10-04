@@ -17,4 +17,6 @@ public:
 private Q_SLOTS:
     void shouldSendAndReceiveMessages();
     void shouldFinishWhenProcessFailedToStart();
+    void shouldSupportQuotedArguments();
+    void shouldRejectInvalidArguments();
 };

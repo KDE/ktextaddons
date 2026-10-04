@@ -60,4 +60,44 @@ void McpClientStdioTest::shouldFinishWhenProcessFailedToStart()
     QCOMPARE(errorSpy.count(), 1);
 }
 
+void McpClientStdioTest::shouldSupportQuotedArguments()
+{
+    const QString sh = QStandardPaths::findExecutable(u"sh"_s);
+    if (sh.isEmpty()) {
+        QSKIP("sh not found");
+    }
+    McpClientStdioPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(sh);
+    // "cat -" must be one argument
+    settings.setArguments(u"-c 'cat -'"_s);
+    client.setSettings(settings);
+    QSignalSpy startedSpy(&client, &McpClientStdioPluginInterface::started);
+    QSignalSpy receivedSpy(&client, &McpClientStdioPluginInterface::received);
+    client.start();
+    QTRY_COMPARE(startedSpy.count(), 1);
+    const QJsonObject message{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, u"notifications/initialized"_s}};
+    client.send(message);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(0).toJsonObject(), message);
+    client.stop();
+}
+
+void McpClientStdioTest::shouldRejectInvalidArguments()
+{
+    McpClientStdioPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(u"cat"_s);
+    settings.setArguments(u"'unterminated"_s);
+    client.setSettings(settings);
+    QSignalSpy startedSpy(&client, &McpClientStdioPluginInterface::started);
+    QSignalSpy errorSpy(&client, &McpClientStdioPluginInterface::error);
+    QSignalSpy finishedSpy(&client, &McpClientStdioPluginInterface::finished);
+    client.start();
+    QCOMPARE(errorSpy.count(), 1);
+    QCOMPARE(finishedSpy.count(), 1);
+    QTest::qWait(100);
+    QCOMPARE(startedSpy.count(), 0);
+}
+
 #include "moc_mcpclientstdiotest.cpp"

@@ -7,9 +7,16 @@
 #include "autogeneratetext_mcpprotocolclientplugin_lib_debug.h"
 #include "stdio/mcpclientstdioplugininterface.h"
 #include <KLocalizedString>
+#include <KShell>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QProcess>
+
+namespace
+{
+// Maximum size of a message (it can contain images or files)
+constexpr qsizetype maxBufferSize = 64 * 1024 * 1024;
+}
 
 McpClientStdio::McpClientStdio(McpClientStdioPluginInterface *interface, QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
@@ -72,9 +79,19 @@ void McpClientStdio::connection()
         Q_EMIT error(i18n("Impossible to start client. Command is empty."));
         return;
     }
+    // Support shell quoting ('a b', "a b", a\ b)
+    KShell::Errors splitError = KShell::NoError;
+    const QStringList arguments = KShell::splitArgs(settings.arguments(), KShell::NoOptions, &splitError);
+    if (splitError != KShell::NoError) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to start client. Invalid arguments:" << settings.arguments();
+        Q_EMIT error(i18n("Impossible to start client. Arguments are invalid."));
+        // Allow to restart with other settings
+        Q_EMIT finished();
+        return;
+    }
     mBuffer.clear();
     mProcess->setProgram(settings.command());
-    mProcess->setArguments(settings.arguments().isEmpty() ? QStringList{} : QProcess::splitCommand(settings.arguments()));
+    mProcess->setArguments(arguments);
     // Always set environment: process is reused, previous environment must not be kept
     QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
     const QMap<QString, QString> environments = settings.environments();
@@ -95,13 +112,23 @@ void McpClientStdio::send(const QJsonObject &obj)
     }
     const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
     qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " send " << data;
-    mProcess->write(data + '\n');
+    if (mProcess->write(data + '\n') == -1) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Impossible to send message:" << mProcess->errorString();
+        Q_EMIT error(mProcess->errorString());
+    }
 }
 
 void McpClientStdio::slotReadStandardOutput()
 {
     // Messages are newline delimited json, a read can contain several of them or an incomplete one.
     mBuffer += mProcess->readAllStandardOutput();
+    if (mBuffer.size() > maxBufferSize && !mBuffer.contains('\n')) {
+        // Invalid output (no newline), don't let buffer grow forever
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Message too big, drop it";
+        mBuffer.clear();
+        Q_EMIT error(i18n("Message received from server is too big."));
+        return;
+    }
     qsizetype index = -1;
     while ((index = mBuffer.indexOf('\n')) != -1) {
         const QByteArray line = mBuffer.left(index).trimmed();
