@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-06-09 01:30+0200\n"
+"PO-Revision-Date: 2026-10-03 20:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -119,7 +119,7 @@ msgstr "인자:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "사용자 정의 헤더 추가"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
@@ -131,40 +131,36 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Header…"
-msgstr ""
+msgstr "헤더 정의…"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr ""
+msgstr "추가"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr ""
+msgstr "수정"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "서버 삭제"
+msgstr "삭제"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:71
 #, kde-format
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "이 헤더를 삭제하시겠습니까?"
 
 #: widgets/server/addmcpsteamablehttpserverheaderwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "서버 삭제"
+msgstr "헤더 삭제"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
 #, kde-format
