@@ -7,6 +7,7 @@
 #pragma once
 
 #include <QJsonObject>
+#include <QMap>
 #include <QObject>
 
 #include "textautogeneratetext_export.h"
@@ -183,6 +184,11 @@ Q_SIGNALS:
 protected:
     [[nodiscard]] QList<ToolCallArgumentInfo> parseToolCallsOllama(const QJsonArray &array) const;
     [[nodiscard]] QList<TextAutoGenerateReply::ToolCallArgumentInfo> parseToolCallsOpenAI(const QJsonArray &array) const;
+    /*!
+     * In streaming mode, OpenAI sends tool calls in several parts (arguments are split in several strings).
+     * Merge \a array with previous parts and return all tool calls.
+     */
+    [[nodiscard]] QList<TextAutoGenerateReply::ToolCallArgumentInfo> accumulateToolCallsOpenAI(const QJsonArray &array);
 
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;
@@ -192,6 +198,15 @@ protected:
     const RequestTypes mRequestType = RequestTypes::Unknown;
 
     qint64 mReceivedSize = 0;
+
+private:
+    struct StreamedToolCall {
+        QByteArray id;
+        QByteArray name;
+        QString arguments;
+    };
+    // Key: index of tool call
+    QMap<int, StreamedToolCall> mStreamedToolCalls;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument, Q_RELOCATABLE_TYPE);

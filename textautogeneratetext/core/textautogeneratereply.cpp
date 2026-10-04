@@ -7,6 +7,7 @@
 #include "textautogeneratereply.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QJsonArray>
+#include <QJsonDocument>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -123,6 +124,63 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         infos.append(toolInfo);
     }
     qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateReply::parseToolCallsOpenAI infos: " << infos;
+    return infos;
+}
+
+QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::accumulateToolCallsOpenAI(const QJsonArray &array)
+{
+    for (const auto &value : array) {
+        const QJsonObject obj = value.toObject();
+        const QJsonObject functionObj = obj["function"_L1].toObject();
+        const QByteArray id = obj["id"_L1].toString().toLatin1();
+        const QByteArray name = functionObj["name"_L1].toString().toLatin1();
+        int key = -1;
+        if (obj.contains("index"_L1)) {
+            key = obj.value("index"_L1).toInt();
+        } else {
+            // No index: find tool call from its id, otherwise it's a new tool call or next part of last one
+            for (auto it = mStreamedToolCalls.cbegin(); it != mStreamedToolCalls.cend(); ++it) {
+                if (!id.isEmpty() && it->id == id) {
+                    key = it.key();
+                    break;
+                }
+            }
+            if (key == -1) {
+                const int lastKey = mStreamedToolCalls.isEmpty() ? -1 : mStreamedToolCalls.lastKey();
+                key = (lastKey == -1 || !id.isEmpty() || !name.isEmpty()) ? lastKey + 1 : lastKey;
+            }
+        }
+        StreamedToolCall &call = mStreamedToolCalls[key];
+        if (!id.isEmpty()) {
+            call.id = id;
+        }
+        if (call.name.isEmpty()) {
+            call.name = name;
+        }
+        if (const QJsonValue argumentsValue = functionObj["arguments"_L1]; argumentsValue.isObject()) {
+            call.arguments = QString::fromUtf8(QJsonDocument(argumentsValue.toObject()).toJson(QJsonDocument::Compact));
+        } else if (argumentsValue.isString()) {
+            call.arguments += argumentsValue.toString();
+        }
+    }
+
+    QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos;
+    infos.reserve(mStreamedToolCalls.count());
+    for (auto it = mStreamedToolCalls.cbegin(); it != mStreamedToolCalls.cend(); ++it) {
+        TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
+        toolInfo.toolName = it->name;
+        toolInfo.id = it->id;
+        toolInfo.index = it.key();
+        // Arguments are incomplete until the last part is received
+        if (const QJsonDocument doc = QJsonDocument::fromJson(it->arguments.toUtf8()); doc.isObject()) {
+            toolInfo.arguments = doc.object();
+        }
+        toolInfo.toolCallArgument.reserve(toolInfo.arguments.size());
+        for (auto argIt = toolInfo.arguments.constBegin(); argIt != toolInfo.arguments.constEnd(); ++argIt) {
+            toolInfo.toolCallArgument.append(ToolCallArgument{.keyTool = argIt.key(), .value = jsonValueToString(argIt.value())});
+        }
+        infos.append(std::move(toolInfo));
+    }
     return infos;
 }
 

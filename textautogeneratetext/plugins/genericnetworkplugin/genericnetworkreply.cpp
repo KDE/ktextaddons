@@ -110,7 +110,7 @@ void GenericNetworkReply::accumulateStreamedToken(const QJsonDocument &tok)
         if (const QJsonValue toolCallsValue = deltaObject.value("tool_calls"_L1); !toolCallsValue.isUndefined()) {
             const QJsonArray toolCallResponse = toolCallsValue.toArray();
             qDebug() << " tool_calls: " << toolCallResponse;
-            mStreamedResponse.info.append(parseToolCallsOpenAI(toolCallResponse));
+            mStreamedResponse.info = accumulateToolCallsOpenAI(toolCallResponse);
         }
     }
     // TODO use "usage" in openAI api

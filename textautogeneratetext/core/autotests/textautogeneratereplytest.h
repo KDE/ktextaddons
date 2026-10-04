@@ -18,4 +18,6 @@ private Q_SLOTS:
     void shouldParseToolCalls_data();
     void shouldParseToolCallsOpenAI();
     void shouldParseToolCallsOpenAI_data();
+    void shouldAccumulateStreamedToolCallsOpenAI();
+    void shouldAccumulateToolCallsWithoutIndex();
 };

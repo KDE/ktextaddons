@@ -27,6 +27,11 @@ public:
     {
         return parseToolCallsOpenAI(array);
     }
+
+    [[nodiscard]] QList<ToolCallArgumentInfo> testAccumulateToolCallsOpenAI(const QByteArray &array)
+    {
+        return accumulateToolCallsOpenAI(QJsonDocument::fromJson(array).array());
+    }
 };
 
 TextAutoGenerateText::TextAutoGenerateReply::Response CustomTextAutoGenerateReply::readResponse() const
@@ -219,6 +224,41 @@ void TextAutoGenerateReplyTest::shouldParseToolCallsOpenAI_data()
         infos.append(i);
         QTest::addRow("openai-object-non-string-values") << ba << infos;
     }
+}
+
+void TextAutoGenerateReplyTest::shouldAccumulateStreamedToolCallsOpenAI()
+{
+    CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::StreamingChat);
+    // First part: id and name, then arguments are split
+    auto infos = w.testAccumulateToolCallsOpenAI(R"([{"index":0,"id":"call_1","type":"function","function":{"name":"weather","arguments":""}}])"_ba);
+    QCOMPARE(infos.count(), 1);
+    QVERIFY(infos.at(0).arguments.isEmpty());
+    infos = w.testAccumulateToolCallsOpenAI(R"([{"index":0,"function":{"arguments":"{\"city\":\"Pa"}}])"_ba);
+    QCOMPARE(infos.count(), 1);
+    // Incomplete json
+    QVERIFY(infos.at(0).arguments.isEmpty());
+    infos = w.testAccumulateToolCallsOpenAI(R"([{"index":0,"function":{"arguments":"ris\",\"days\":2}"}}])"_ba);
+    // Second tool call
+    infos = w.testAccumulateToolCallsOpenAI(R"([{"index":1,"id":"call_2","type":"function","function":{"name":"time","arguments":"{}"}}])"_ba);
+    QCOMPARE(infos.count(), 2);
+    QCOMPARE(infos.at(0).toolName, "weather"_ba);
+    QCOMPARE(infos.at(0).id, "call_1"_ba);
+    QCOMPARE(infos.at(0).arguments, QJsonObject({{"city"_L1, u"Paris"_s}, {"days"_L1, 2}}));
+    QCOMPARE(infos.at(0).toolCallArgument.count(), 2);
+    QCOMPARE(infos.at(1).toolName, "time"_ba);
+    QCOMPARE(infos.at(1).id, "call_2"_ba);
+    QCOMPARE(infos.at(1).index, 1);
+}
+
+void TextAutoGenerateReplyTest::shouldAccumulateToolCallsWithoutIndex()
+{
+    CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::StreamingChat);
+    // Complete tool calls without index (non streaming)
+    const auto infos = w.testAccumulateToolCallsOpenAI(
+        R"([{"id":"a","function":{"name":"one","arguments":{"x":1}}},{"id":"b","function":{"name":"two","arguments":"{\"y\":true}"}}])"_ba);
+    QCOMPARE(infos.count(), 2);
+    QCOMPARE(infos.at(0).arguments, QJsonObject({{"x"_L1, 1}}));
+    QCOMPARE(infos.at(1).arguments, QJsonObject({{"y"_L1, true}}));
 }
 
 #include "moc_textautogeneratereplytest.cpp"
