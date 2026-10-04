@@ -21,4 +21,6 @@ private Q_SLOTS:
     void shouldCancelRequestWhenTimeoutExpired();
     void shouldCancelRequest();
     void shouldRestartAfterStop();
+    void shouldCallTool();
+    void shouldNotCallToolWhenServerDoesNotSupportTools();
 };

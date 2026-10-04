@@ -31,6 +31,7 @@ public:
         Initialize,
         ServerRequest,
         ServerNotification,
+        CallTool,
     };
     Q_ENUM(MethodType)
     explicit McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent = nullptr);
@@ -47,6 +48,13 @@ public:
      * Cancel request \a requestId: server is informed and we stop waiting for response.
      */
     void cancelRequest(qint64 requestId, const QString &reason = {});
+
+    /*!
+     * Call tool \a name with \a arguments. Server must support tools.
+     * Response is emitted with received() and MethodType::CallTool, its "result" can be
+     * read with McpProtocolCallToolResult::fromJson(). Return request id, -1 if request was not sent.
+     */
+    qint64 callTool(const QString &name, const QJsonObject &arguments = {});
 
     /*!
      * Time to wait for a response. When it expires, request is cancelled and

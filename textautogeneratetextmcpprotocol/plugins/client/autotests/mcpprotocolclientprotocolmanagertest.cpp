@@ -10,7 +10,9 @@
 #include <QSignalSpy>
 #include <QTcpSocket>
 #include <QTest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 using namespace Qt::Literals::StringLiterals;
 using TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager;
 QTEST_GUILESS_MAIN(McpProtocolClientProtocolManagerTest)
@@ -30,11 +32,13 @@ void sendJson(QTcpSocket *socket, const QJsonObject &obj)
 // Simple server: initialize with \a protocolVersion, other requests are handled by \a handler
 FakeMcpHttpServer::Handler createHandler(
     const QString &protocolVersion = u"2025-11-25"_s,
-    const std::function<void(const QJsonObject &, QTcpSocket *)> &handler = [](const QJsonObject &obj, QTcpSocket *socket) {
-        sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"tools"_L1, QJsonArray{}}}));
-    })
+    const std::function<void(const QJsonObject &, QTcpSocket *)> &handler =
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"tools"_L1, QJsonArray{}}}));
+        },
+    const QJsonObject &capabilities = QJsonObject{{"tools"_L1, QJsonObject{}}})
 {
-    return [protocolVersion, handler](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+    return [protocolVersion, handler, capabilities](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
         if (request.method != "POST") {
             FakeMcpHttpServer::sendResponse(socket, 405);
             return;
@@ -45,7 +49,7 @@ FakeMcpHttpServer::Handler createHandler(
             sendJson(socket,
                      result(obj.value("id"_L1),
                             QJsonObject{{"protocolVersion"_L1, protocolVersion},
-                                        {"capabilities"_L1, QJsonObject{}},
+                                        {"capabilities"_L1, capabilities},
                                         {"serverInfo"_L1, QJsonObject{{"name"_L1, u"fake"_s}, {"version"_L1, u"1"_s}}}}));
         } else if (!obj.contains("id"_L1) || !obj.contains("method"_L1)) {
             // Notification or response
@@ -222,6 +226,54 @@ void McpProtocolClientProtocolManagerTest::shouldRestartAfterStop()
     QVERIFY(!manager.isInitialized());
     initialize(manager);
     QCOMPARE(postedMessages(fakeServer, u"initialize"_s).count(), 2);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldCallTool()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        const QJsonObject params = obj.value("params"_L1).toObject();
+        const QString text = u"%1:%2"_s.arg(params.value("name"_L1).toString(), params.value("arguments"_L1).toObject().value("city"_L1).toString());
+        const QJsonObject content{{"type"_L1, u"text"_s}, {"text"_L1, text}};
+        sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"content"_L1, QJsonArray{content}}, {"isError"_L1, false}}));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    // Not initialized
+    QCOMPARE(manager.callTool(u"weather"_s), -1);
+    initialize(manager);
+    QCOMPARE(manager.callTool(QString()), -1);
+
+    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.callTool(u"weather"_s, QJsonObject{{"city"_L1, u"Paris"_s}});
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::CallTool);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    const auto callToolResult = TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolResult::fromJson(response.value("result"_L1).toObject());
+    QCOMPARE(callToolResult.content().count(), 1);
+    const auto text = std::get_if<TextAutoGenerateTextMcpProtocolCore::McpProtocolTextContent>(&callToolResult.content().at(0));
+    QVERIFY(text);
+    QCOMPARE(text->text(), u"weather:Paris"_s);
+
+    const QJsonObject request = postedMessages(fakeServer, u"tools/call"_s).constFirst();
+    QCOMPARE(request.value("params"_L1).toObject().value("name"_L1).toString(), u"weather"_s);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldNotCallToolWhenServerDoesNotSupportTools()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            sendJson(socket, result(obj.value("id"_L1)));
+        },
+        QJsonObject{}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QCOMPARE(manager.callTool(u"weather"_s), -1);
+    QTest::qWait(100);
+    QVERIFY(postedMessages(fakeServer, u"tools/call"_s).isEmpty());
 }
 
 #include "moc_mcpprotocolclientprotocolmanagertest.cpp"

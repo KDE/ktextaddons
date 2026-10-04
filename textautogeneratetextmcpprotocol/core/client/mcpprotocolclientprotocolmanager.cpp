@@ -11,6 +11,7 @@
 #include <QCoreApplication>
 #include <QJsonObject>
 #include <QTimer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClient>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
@@ -62,6 +63,9 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
         return listPrompts();
     case MethodType::ResourceTemplates:
         return resourceTemplates();
+    case MethodType::CallTool:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use callTool() to call a tool.";
+        break;
     case MethodType::Initialize:
     case MethodType::ServerRequest:
     case MethodType::ServerNotification:
@@ -115,6 +119,36 @@ void McpProtocolClientProtocolManager::checkTimeouts()
     if (mPendingRequests.isEmpty()) {
         mTimeoutTimer->stop();
     }
+}
+
+qint64 McpProtocolClientProtocolManager::callTool(const QString &name, const QJsonObject &arguments)
+{
+    if (!mClient || !mInitialized) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't call tool" << name;
+        return -1;
+    }
+    if (!mInitializeResult.capabilities().tools().has_value()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support tools. Can't call tool" << name;
+        return -1;
+    }
+    if (name.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Tool name is empty";
+        return -1;
+    }
+    McpProtocolCallToolRequestParams params;
+    params.setName(name);
+    if (!arguments.isEmpty()) {
+        QMap<QString, QJsonValue> map;
+        for (auto it = arguments.constBegin(); it != arguments.constEnd(); ++it) {
+            map.insert(it.key(), it.value());
+        }
+        params.setArguments(std::move(map));
+    }
+    McpProtocolCallToolRequest request;
+    const qint64 identifier = requestId();
+    request.setId(identifier);
+    request.setParams(std::move(params));
+    return sendRequest(McpProtocolCallToolRequest::toJson(request), identifier, MethodType::CallTool);
 }
 
 void McpProtocolClientProtocolManager::cancelRequest(qint64 requestId, const QString &reason)
