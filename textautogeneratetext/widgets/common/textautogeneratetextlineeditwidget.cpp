@@ -22,7 +22,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
-    , mTextAutoGenerateToolsWidget(new TextAutoGenerateToolsWidget(this))
+    , mTextAutoGenerateToolsWidget(new TextAutoGenerateToolsWidget(manager, this))
     , mTextLineEditAttachmentWidget(new TextAutoGenerateTextLineEditAttachmentWidget(this))
     , mSendMessage(new QToolButton(this))
     , mAttachFile(new QToolButton(this))
