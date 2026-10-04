@@ -54,6 +54,10 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't execute" << type;
         return -1;
     }
+    if (!serverSupports(type)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support" << type;
+        return -1;
+    }
     switch (type) {
     case MethodType::Ping:
         return ping();
@@ -121,13 +125,35 @@ void McpProtocolClientProtocolManager::checkTimeouts()
     }
 }
 
+bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
+{
+    // Server must declare capability before we use it
+    const McpProtocolServerCapabilities capabilities = mInitializeResult.capabilities();
+    switch (type) {
+    case MethodType::ListTools:
+    case MethodType::CallTool:
+        return capabilities.tools().has_value();
+    case MethodType::ListPrompts:
+        return capabilities.prompts().has_value();
+    case MethodType::ResourceTemplates:
+        return capabilities.resources().has_value();
+    case MethodType::Unknown:
+    case MethodType::Ping:
+    case MethodType::Initialize:
+    case MethodType::ServerRequest:
+    case MethodType::ServerNotification:
+        break;
+    }
+    return true;
+}
+
 qint64 McpProtocolClientProtocolManager::callTool(const QString &name, const QJsonObject &arguments)
 {
     if (!mClient || !mInitialized) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't call tool" << name;
         return -1;
     }
-    if (!mInitializeResult.capabilities().tools().has_value()) {
+    if (!serverSupports(MethodType::CallTool)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support tools. Can't call tool" << name;
         return -1;
     }

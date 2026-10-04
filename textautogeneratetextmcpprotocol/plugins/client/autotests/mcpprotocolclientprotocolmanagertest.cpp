@@ -272,6 +272,11 @@ void McpProtocolClientProtocolManagerTest::shouldNotCallToolWhenServerDoesNotSup
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
     QCOMPARE(manager.callTool(u"weather"_s), -1);
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools), -1);
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListPrompts), -1);
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::ResourceTemplates), -1);
+    // Ping is always allowed
+    QVERIFY(manager.executeAction(McpProtocolClientProtocolManager::MethodType::Ping) > 0);
     QTest::qWait(100);
     QVERIFY(postedMessages(fakeServer, u"tools/call"_s).isEmpty());
 }

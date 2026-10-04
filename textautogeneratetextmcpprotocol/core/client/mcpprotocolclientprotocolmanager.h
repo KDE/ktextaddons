@@ -90,6 +90,7 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendCancelledNotification(qint64 identifier, const QString &reason);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void checkTimeouts();
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT bool serverSupports(MethodType type) const;
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 requestId();
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolClientProtocolManager::MethodType checkMethodType(const QJsonObject &obj);
 
