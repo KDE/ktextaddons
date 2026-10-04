@@ -40,6 +40,8 @@ AddMcpServerDialog::~AddMcpServerDialog() = default;
 
 void AddMcpServerDialog::setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
+    // Used to modify an existing server
+    setWindowTitle(i18nc("@title:window", "Modify Server"));
     mAddMcpServerWidget->setServerInfo(server);
 }
 

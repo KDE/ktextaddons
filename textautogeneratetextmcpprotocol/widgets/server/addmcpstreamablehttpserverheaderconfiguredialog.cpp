@@ -39,6 +39,8 @@ AddMcpStreamableHttpServerHeaderConfigureDialog::~AddMcpStreamableHttpServerHead
 
 void AddMcpStreamableHttpServerHeaderConfigureDialog::setHeader(const QString &str)
 {
+    // Used to modify an existing header
+    setWindowTitle(i18nc("@title:window", "Modify Custom Header"));
     mAddMcpStreamableHttpServerHeaderConfigureWidget->setHeader(str);
 }
 
