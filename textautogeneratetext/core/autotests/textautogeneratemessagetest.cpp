@@ -8,6 +8,7 @@
 #include "core/textautogenerateanswerinfo.h"
 #include "core/textautogeneratemessage.h"
 #include "textautogenerate_autotest_helper.h"
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
@@ -38,7 +39,8 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(!msg.messageAttachments());
 
     // 10/05/2025 => size 224
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 232);
+    QVERIFY(msg.toolExchange().isEmpty());
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 240);
 }
 
 void TextAutoGenerateMessageTest::shouldCheckFromString()
@@ -196,6 +198,67 @@ void TextAutoGenerateMessageTest::shouldSerializeReplyInfo()
     const TextAutoGenerateText::TextAutoGenerateMessage output =
         TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
     QCOMPARE(message, output);
+}
+
+namespace
+{
+TextAutoGenerateText::TextAutoGenerateMessage messageWithToolExchange()
+{
+    TextAutoGenerateText::TextAutoGenerateMessage message;
+    message.setUuid("message-id");
+    message.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+    message.setDateTime(1753338990);
+    TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo toolCall;
+    toolCall.id = "call_1";
+    toolCall.toolName = "weather";
+    toolCall.arguments = QJsonObject{{"city"_L1, u"Paris"_s}, {"days"_L1, 2}};
+    message.appendToolExchange(u"Let me check"_s, {toolCall}, {{"call_1"_ba, u"Sunny"_s}});
+    message.setContent(u"It's sunny"_s);
+    return message;
+}
+}
+
+void TextAutoGenerateMessageTest::shouldSerializeToolExchange()
+{
+    const TextAutoGenerateText::TextAutoGenerateMessage message = messageWithToolExchange();
+    QCOMPARE(message.toolExchange().count(), 2);
+    const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(message);
+    const TextAutoGenerateText::TextAutoGenerateMessage output =
+        TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
+    QCOMPARE(output.toolExchange(), message.toolExchange());
+    QCOMPARE(message, output);
+}
+
+void TextAutoGenerateMessageTest::shouldConvertToolExchangeToOpenAI()
+{
+    const auto list = messageWithToolExchange().convertToChatJson(true, true, TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat::OpenAI);
+    QCOMPARE(list.count(), 3);
+    // Assistant asks tool
+    const QJsonObject assistant = list.at(0);
+    QCOMPARE(assistant.value("role"_L1).toString(), u"assistant"_s);
+    QCOMPARE(assistant.value("content"_L1).toString(), u"Let me check"_s);
+    const QJsonObject toolCall = assistant.value("tool_calls"_L1).toArray().at(0).toObject();
+    QCOMPARE(toolCall.value("id"_L1).toString(), u"call_1"_s);
+    QCOMPARE(toolCall.value("type"_L1).toString(), u"function"_s);
+    QCOMPARE(toolCall.value("function"_L1).toObject().value("name"_L1).toString(), u"weather"_s);
+    // Arguments are a json string
+    QCOMPARE(toolCall.value("function"_L1).toObject().value("arguments"_L1).toString(), uR"({"city":"Paris","days":2})"_s);
+    // Tool result
+    QCOMPARE(list.at(1), QJsonObject({{"role"_L1, u"tool"_s}, {"tool_call_id"_L1, u"call_1"_s}, {"content"_L1, u"Sunny"_s}}));
+    // Final answer
+    QCOMPARE(list.at(2).value("role"_L1).toString(), u"assistant"_s);
+    QCOMPARE(list.at(2).value("content"_L1).toString(), u"It's sunny"_s);
+}
+
+void TextAutoGenerateMessageTest::shouldConvertToolExchangeToOllama()
+{
+    const auto list = messageWithToolExchange().convertToChatJson(true, true, TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat::Ollama);
+    QCOMPARE(list.count(), 3);
+    const QJsonObject function = list.at(0).value("tool_calls"_L1).toArray().at(0).toObject().value("function"_L1).toObject();
+    QCOMPARE(function.value("name"_L1).toString(), u"weather"_s);
+    // Arguments are an object
+    QCOMPARE(function.value("arguments"_L1).toObject(), QJsonObject({{"city"_L1, u"Paris"_s}, {"days"_L1, 2}}));
+    QCOMPARE(list.at(1), QJsonObject({{"role"_L1, u"tool"_s}, {"tool_name"_L1, u"weather"_s}, {"content"_L1, u"Sunny"_s}}));
 }
 
 // TODO add image support

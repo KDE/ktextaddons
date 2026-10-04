@@ -7,8 +7,10 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
+#include <QJsonArray>
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
 #include <TextAutoGenerateText/TextAutoGenerateAttachments>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
 class QDebug;
@@ -36,6 +38,15 @@ public:
         Tool,
     };
     Q_ENUM(Sender)
+
+    /*!
+     * \brief Format of tool calls in messages sent to LLM
+     */
+    enum class ToolCallFormat : uint8_t {
+        OpenAI,
+        Ollama,
+    };
+    Q_ENUM(ToolCallFormat)
 
     /*!
      * \brief The MessageState enum
@@ -279,6 +290,29 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextReplyInfo info() const;
     void setInfo(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &newInfo);
 
+    /*!
+     * Tool calls requested by LLM and their results, before final answer (content).
+     * Each element is a message: {"role":"assistant","content","tool_calls":[{"id","name","arguments"}]}
+     * or {"role":"tool","tool_call_id","name","content"}.
+     */
+    [[nodiscard]] QJsonArray toolExchange() const;
+    void setToolExchange(const QJsonArray &newToolExchange);
+    /*!
+     * Add tool calls requested by LLM (with text \a content sent before them) and their \a results.
+     */
+    void appendToolExchange(const QString &content,
+                            const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
+                            const QList<QPair<QByteArray, QString>> &results);
+
+    /*!
+     * Convert message (tool exchange and content) to messages sent to LLM.
+     */
+    [[nodiscard]] QList<QJsonObject> convertToChatJson(bool hasSystemMessageSupport, bool hasTextOnlySupport, ToolCallFormat format) const;
+    /*!
+     * Convert an element of tool exchange to a message for LLM using \a format
+     */
+    [[nodiscard]] static QJsonObject convertToolExchangeToChatJson(const QJsonObject &obj, ToolCallFormat format);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(MessageStates newMessageStates);
@@ -293,6 +327,7 @@ private:
     QString mDateTimeStr;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
+    QJsonArray mToolExchange;
 
     MessageStates mMessageStates = MessageStates(MessageState::None);
     int mNumberOfTextSearched = -1;

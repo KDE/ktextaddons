@@ -99,7 +99,7 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
     bool result = other.mUuid == mUuid && other.inProgress() == inProgress() && other.mSender == mSender && other.mDateTime == mDateTime
-        && other.mContent == mContent && other.mAnswerUuid == mAnswerUuid && other.editingMode() == editingMode();
+        && other.mContent == mContent && other.mAnswerUuid == mAnswerUuid && other.editingMode() == editingMode() && other.mToolExchange == mToolExchange;
     if (!result) {
         return false;
     }
@@ -296,6 +296,9 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     if (const auto msgInfo = msg.info(); msgInfo.isValid()) {
         o["replyInfo"_L1] = TextAutoGenerateText::TextAutoGenerateTextReplyInfo::serialize(msgInfo);
     }
+    if (!msg.mToolExchange.isEmpty()) {
+        o["toolExchange"_L1] = msg.mToolExchange;
+    }
 
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
@@ -330,6 +333,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setSender(senderFromString(o["sender"_L1].toString()));
 
     msg.setInfo(TextAutoGenerateText::TextAutoGenerateTextReplyInfo::deserialize(o["replyInfo"_L1].toObject()));
+    msg.setToolExchange(o["toolExchange"_L1].toArray());
     return msg;
 }
 
@@ -379,6 +383,92 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessa
         // obj["images"_L1] = //TODO add list;
     }
     return obj;
+}
+
+QJsonArray TextAutoGenerateMessage::toolExchange() const
+{
+    return mToolExchange;
+}
+
+void TextAutoGenerateMessage::setToolExchange(const QJsonArray &newToolExchange)
+{
+    mToolExchange = newToolExchange;
+}
+
+void TextAutoGenerateMessage::appendToolExchange(const QString &content,
+                                                 const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
+                                                 const QList<QPair<QByteArray, QString>> &results)
+{
+    QJsonArray calls;
+    for (const auto &toolCall : toolCalls) {
+        calls.append(QJsonObject{
+            {"id"_L1, QString::fromLatin1(toolCall.id)},
+            {"name"_L1, QString::fromLatin1(toolCall.toolName)},
+            {"arguments"_L1, toolCall.arguments},
+        });
+    }
+    mToolExchange.append(QJsonObject{{"role"_L1, u"assistant"_s}, {"content"_L1, content}, {"tool_calls"_L1, calls}});
+    for (int i = 0; i < results.count(); ++i) {
+        // Results are in same order as tool calls
+        const QByteArray name = i < toolCalls.count() ? toolCalls.at(i).toolName : QByteArray();
+        mToolExchange.append(QJsonObject{
+            {"role"_L1, u"tool"_s},
+            {"tool_call_id"_L1, QString::fromLatin1(results.at(i).first)},
+            {"name"_L1, QString::fromLatin1(name)},
+            {"content"_L1, results.at(i).second},
+        });
+    }
+}
+
+QJsonObject TextAutoGenerateMessage::convertToolExchangeToChatJson(const QJsonObject &obj, ToolCallFormat format)
+{
+    const QString role = obj.value("role"_L1).toString();
+    if (role == "tool"_L1) {
+        QJsonObject tool{{"role"_L1, role}, {"content"_L1, obj.value("content"_L1)}};
+        switch (format) {
+        case ToolCallFormat::OpenAI:
+            tool["tool_call_id"_L1] = obj.value("tool_call_id"_L1);
+            break;
+        case ToolCallFormat::Ollama:
+            tool["tool_name"_L1] = obj.value("name"_L1);
+            break;
+        }
+        return tool;
+    }
+    QJsonArray toolCalls;
+    const QJsonArray calls = obj.value("tool_calls"_L1).toArray();
+    for (const auto &value : calls) {
+        const QJsonObject call = value.toObject();
+        switch (format) {
+        case ToolCallFormat::OpenAI: {
+            // OpenAI uses a json string for arguments
+            const QJsonObject function{
+                {"name"_L1, call.value("name"_L1)},
+                {"arguments"_L1, QString::fromUtf8(QJsonDocument(call.value("arguments"_L1).toObject()).toJson(QJsonDocument::Compact))},
+            };
+            toolCalls.append(QJsonObject{{"id"_L1, call.value("id"_L1)}, {"type"_L1, u"function"_s}, {"function"_L1, function}});
+            break;
+        }
+        case ToolCallFormat::Ollama: {
+            const QJsonObject function{{"name"_L1, call.value("name"_L1)}, {"arguments"_L1, call.value("arguments"_L1)}};
+            toolCalls.append(QJsonObject{{"function"_L1, function}});
+            break;
+        }
+        }
+    }
+    return QJsonObject{{"role"_L1, u"assistant"_s}, {"content"_L1, obj.value("content"_L1)}, {"tool_calls"_L1, toolCalls}};
+}
+
+QList<QJsonObject> TextAutoGenerateMessage::convertToChatJson(bool hasSystemMessageSupport, bool hasTextOnlySupport, ToolCallFormat format) const
+{
+    QList<QJsonObject> list;
+    for (const auto &value : mToolExchange) {
+        list.append(convertToolExchangeToChatJson(value.toObject(), format));
+    }
+    if (const QJsonObject obj = convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport); !obj.isEmpty()) {
+        list.append(obj);
+    }
+    return list;
 }
 
 bool TextAutoGenerateMessage::messageStateValue(MessageState type) const

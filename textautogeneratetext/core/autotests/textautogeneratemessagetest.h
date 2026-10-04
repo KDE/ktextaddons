@@ -21,4 +21,7 @@ private Q_SLOTS:
     void shouldParseMessage_data();
     void shouldSerializeMessage();
     void shouldSerializeReplyInfo();
+    void shouldSerializeToolExchange();
+    void shouldConvertToolExchangeToOpenAI();
+    void shouldConvertToolExchangeToOllama();
 };

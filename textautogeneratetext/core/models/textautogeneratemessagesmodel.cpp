@@ -426,16 +426,32 @@ QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) 
     return idx;
 }
 
-QList<QJsonObject> TextAutoGenerateMessagesModel::convertToOllamaChat(bool hasSystemMessageSupport, bool hasTextOnlySupport) const
+QList<QJsonObject>
+TextAutoGenerateMessagesModel::convertToOllamaChat(bool hasSystemMessageSupport, bool hasTextOnlySupport, TextAutoGenerateMessage::ToolCallFormat format) const
 {
     QList<QJsonObject> lst;
     lst.reserve(mMessages.count());
     for (const auto &msg : mMessages) {
-        if (const auto obj = msg.convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport); !obj.isEmpty()) {
-            lst.append(obj);
-        }
+        lst.append(msg.convertToChatJson(hasSystemMessageSupport, hasTextOnlySupport, format));
     }
     return lst;
+}
+
+void TextAutoGenerateMessagesModel::appendToolExchange(const QByteArray &uuid,
+                                                       const QString &content,
+                                                       const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
+                                                       const QList<QPair<QByteArray, QString>> &results)
+{
+    if (auto it = findMessage(uuid); it != mMessages.end()) {
+        (*it).appendToolExchange(content, toolCalls, results);
+        // Content will contain final answer
+        (*it).setContent({});
+        (*it).generateHtml();
+        const int i = std::distance(mMessages.begin(), it);
+        const QModelIndex index = createIndex(i, 0);
+        // MessageHtmlGeneratedRole: message is saved
+        Q_EMIT dataChanged(index, index, {MessageHtmlGeneratedRole});
+    }
 }
 
 TextAutoGenerateMessage TextAutoGenerateMessagesModel::findLastMessageBefore(const QByteArray &messageId,

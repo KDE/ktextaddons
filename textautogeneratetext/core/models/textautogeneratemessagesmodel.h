@@ -176,7 +176,17 @@ public:
      * Converts the messages to Ollama chat format.
      * \return List of messages in JSON object format
      */
-    [[nodiscard]] QList<QJsonObject> convertToOllamaChat(bool hasSystemMessageSupport, bool hasTextOnlySupport) const;
+    [[nodiscard]] QList<QJsonObject>
+    convertToOllamaChat(bool hasSystemMessageSupport,
+                        bool hasTextOnlySupport,
+                        TextAutoGenerateMessage::ToolCallFormat format = TextAutoGenerateMessage::ToolCallFormat::OpenAI) const;
+    /*!
+     * Add tool calls and their results to message \a uuid. Its content is cleared: it will contain final answer.
+     */
+    void appendToolExchange(const QByteArray &uuid,
+                            const QString &content,
+                            const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
+                            const QList<QPair<QByteArray, QString>> &results);
 
     /*!
      * Returns the current search text.
