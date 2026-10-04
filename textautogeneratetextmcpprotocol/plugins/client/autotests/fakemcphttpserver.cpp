@@ -146,3 +146,5 @@ QByteArray FakeMcpHttpServer::jsonEvent(const QJsonObject &obj, const QByteArray
     event += "data: " + QJsonDocument(obj).toJson(QJsonDocument::Compact) + "\n\n";
     return event;
 }
+
+#include "moc_fakemcphttpserver.cpp"
