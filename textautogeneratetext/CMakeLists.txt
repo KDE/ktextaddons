@@ -315,6 +315,8 @@ target_sources(
         widgets/common/textautogeneratetextmodelcombobox.cpp
         widgets/configure/textautogeneratetextconfigurepromptwidget.h
         widgets/configure/textautogeneratetextconfigurepromptwidget.cpp
+        widgets/configure/textautogeneratetextconfiguremcpserverswidget.h
+        widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp
         widgets/configure/textautogeneratetextconfigurepluginswidget.h
         widgets/configure/textautogeneratetextconfigurepluginswidget.cpp
         widgets/common/textautogeneratetextmodelcombobox.h
@@ -535,6 +537,7 @@ target_link_libraries(
         KF6::I18n
         Qt::Sql
     PRIVATE
+        KF6::TextAutoGenerateTextMcpProtocolWidgets
         KF6::WidgetsAddons
         KF6::TextWidgets
         KF6::ColorScheme
@@ -700,6 +703,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextconfigur
     HEADER_NAMES
     TextAutoGenerateTextConfigurePluginsWidget
     TextAutoGenerateTextConfigurePromptWidget
+    TextAutoGenerateTextConfigureMcpServersWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/configure
