@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-04 00:44+0000\n"
-"PO-Revision-Date: 2026-10-02 11:49+0200\n"
+"POT-Creation-Date: 2026-10-05 00:44+0000\n"
+"PO-Revision-Date: 2026-10-04 15:08+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -17,61 +17,75 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: core/server/mcpserver.cpp:103
+#: core/server/mcpserver.cpp:105
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "ZZO"
 
-#: core/server/mcpserver.cpp:105
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Standaard-IO"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:109
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "Te streamen HTTP"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:63
-#, kde-format
-msgid "Impossible to start client. Url is invalid."
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
+msgid "Impossible to start client. URL is invalid."
 msgstr "Kan de client niet starten. De URL is ongeldig."
 
 #: plugins/client/sse/mcpclientsse.cpp:89
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:93
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:94
 #, kde-format
 msgid "Server is not ready."
-msgstr ""
+msgstr "Server is niet gereed."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:72
+#: plugins/client/stdio/mcpclientstdio.cpp:79
 #, kde-format
 msgid "Impossible to start client. Command is empty."
 msgstr "Kan de client niet starten. Het commando is leeg."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:93
+#: plugins/client/stdio/mcpclientstdio.cpp:87
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
+msgid "Impossible to start client. Arguments are invalid."
+msgstr "Kan de client niet starten. De URL is ongeldig."
+
+#: plugins/client/stdio/mcpclientstdio.cpp:110
 #, kde-format
 msgid "Impossible to send message. Client is not running."
 msgstr "Kan bericht niet verzenden. Client is niet actief."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:166
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:171
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:217
+#: plugins/client/stdio/mcpclientstdio.cpp:129
+#: plugins/server/stdio/mcpserverstdio.cpp:129
+#, kde-format
+msgid "Message received from server is too big."
+msgstr ""
+
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
 #, kde-format
 msgid "Connection lost before receiving answer."
-msgstr ""
+msgstr "Verbinding verbroken voordat het antwoord werd ontvangen."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:393
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
 #, kde-format
 msgid "Session expired. Client must be restarted."
-msgstr ""
+msgstr "Sessie is verlopen. Client moet opnieuw worden gestart."
 
 #: plugins/server/sse/mcpserversse.cpp:38
-#, kde-format
-msgid "Impossible to start server. Url is invalid."
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
+msgid "Impossible to start server. URL is invalid."
 msgstr "Kan de server niet starten. De URL is ongeldig."
 
 #: plugins/server/sse/mcpserversse.cpp:89
@@ -80,26 +94,39 @@ msgstr "Kan de server niet starten. De URL is ongeldig."
 msgid "Sending message is not implemented yet."
 msgstr "Het versturen van berichten is nog niet geïmplementeerd."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:55
+#: plugins/server/stdio/mcpserverstdio.cpp:62
 #, kde-format
 msgid "Impossible to start server. Command is empty."
 msgstr "Kan de server niet starten Het commando is leeg."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:93
+#: plugins/server/stdio/mcpserverstdio.cpp:70
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
+msgid "Impossible to start server. Arguments are invalid."
+msgstr "Kan de server niet starten. De URL is ongeldig."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:110
 #, kde-format
 msgid "Impossible to send message. Server is not running."
 msgstr "Kan bericht niet verzenden. Server is niet actief."
 
 #: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:21
-#, fuzzy, kde-format
-#| msgid "Sending message is not implemented yet."
+#, kde-format
 msgid "Streamable HTTP transport is not implemented yet."
-msgstr "Het versturen van berichten is nog niet geïmplementeerd."
+msgstr "Te streamen HTTP-transport is nog niet geïmplementeerd."
 
-#: widgets/server/addmcpserverdialog.cpp:21
+#: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
+msgstr "Add Server"
+
+#: widgets/server/addmcpserverdialog.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@title:window"
+msgid "Modify Server"
 msgstr "Add Server"
 
 #: widgets/server/addmcpserverwidget.cpp:34
@@ -109,8 +136,10 @@ msgid "Name:"
 msgstr "Naam:"
 
 #: widgets/server/addmcpserverwidget.cpp:38
-#, kde-format
-msgctxt "@label:textbox"
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Type:"
+msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "Type:"
 
@@ -118,8 +147,8 @@ msgstr "Type:"
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "URL:"
+msgid "URL:"
+msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:29
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:30
@@ -140,10 +169,18 @@ msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "Argumenten:"
 
-#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:20
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
+msgstr "Aangepaste berichtkop toevoegen"
+
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Custom Header"
+msgctxt "@title:window"
+msgid "Modify Custom Header"
 msgstr "Aangepaste berichtkop toevoegen"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
@@ -153,12 +190,10 @@ msgid "Header:"
 msgstr "Kop:"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name: Value"
-msgstr "Naam:"
+msgstr "Naam: waarde"
 
 #: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:33
 #, kde-format
@@ -179,7 +214,9 @@ msgid "Remove"
 msgstr "Verwijderen"
 
 #: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Are you sure that you want to delete this header?"
+msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
 msgstr "Weet u zeker dat u deze kop wilt verwijderen?"
 
@@ -190,9 +227,11 @@ msgid "Remove Header"
 msgstr "Kop verwijderen"
 
 #: widgets/server/mcpserverlistview.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Server…"
 msgctxt "@action"
-msgid "Add server…"
+msgid "Add Server…"
 msgstr "Server toevoegen…"
 
 #: widgets/server/mcpserverlistview.cpp:58
@@ -208,13 +247,17 @@ msgid "Remove Server"
 msgstr "Server verwijderen"
 
 #: widgets/server/mcpserverlistview.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this server (%1)?"
+msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Wilt u deze server (%1) verwijderen?"
 
 #: widgets/server/mcpserverlistview.cpp:72
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Server verwijderen"
 
@@ -229,6 +272,18 @@ msgstr "Zoeken…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Server toevoegen…"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "URL:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "Server toevoegen…"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Server verwijderen"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid "Define Header…"

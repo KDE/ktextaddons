@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-04 00:44+0000\n"
-"PO-Revision-Date: 2026-10-02 03:07+0200\n"
+"POT-Creation-Date: 2026-10-05 00:44+0000\n"
+"PO-Revision-Date: 2026-10-04 07:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -18,61 +18,75 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: core/server/mcpserver.cpp:103
+#: core/server/mcpserver.cpp:105
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:105
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "სტანდარტული IO"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:109
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "დასტრიმვადი HTTP"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:63
-#, kde-format
-msgid "Impossible to start client. Url is invalid."
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
+msgid "Impossible to start client. URL is invalid."
 msgstr "კლიენტის გაშვება შეუძლებელია. ბმული არასწორია."
 
 #: plugins/client/sse/mcpclientsse.cpp:89
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:93
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:94
 #, kde-format
 msgid "Server is not ready."
-msgstr ""
+msgstr "სერვერი მზად არაა."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:72
+#: plugins/client/stdio/mcpclientstdio.cpp:79
 #, kde-format
 msgid "Impossible to start client. Command is empty."
 msgstr "კლიენტის გაშვება შეუძლებელია. ბრძანება ცარიელია."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:93
+#: plugins/client/stdio/mcpclientstdio.cpp:87
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
+msgid "Impossible to start client. Arguments are invalid."
+msgstr "კლიენტის გაშვება შეუძლებელია. ბმული არასწორია."
+
+#: plugins/client/stdio/mcpclientstdio.cpp:110
 #, kde-format
 msgid "Impossible to send message. Client is not running."
 msgstr "შეტყობინების გაგზავნა შეუძლებელია. კლიენტი გაშვებული არაა."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:166
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:171
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:217
+#: plugins/client/stdio/mcpclientstdio.cpp:129
+#: plugins/server/stdio/mcpserverstdio.cpp:129
+#, kde-format
+msgid "Message received from server is too big."
+msgstr ""
+
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
 #, kde-format
 msgid "Connection lost before receiving answer."
-msgstr ""
+msgstr "კავშირი დაიკარგა პასუხის მიღებამდე."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:393
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
 #, kde-format
 msgid "Session expired. Client must be restarted."
-msgstr ""
+msgstr "სესიის ვადა ამოიწურა. კლიენტი უნდა გადაიტვირთოს."
 
 #: plugins/server/sse/mcpserversse.cpp:38
-#, kde-format
-msgid "Impossible to start server. Url is invalid."
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
+msgid "Impossible to start server. URL is invalid."
 msgstr "სერვერის გაშვება შეუძლებელია. ბმული არასწორია."
 
 #: plugins/server/sse/mcpserversse.cpp:89
@@ -81,26 +95,39 @@ msgstr "სერვერის გაშვება შეუძლებე�
 msgid "Sending message is not implemented yet."
 msgstr "შეტყობინების გაგზავნა ჯერ განხორციელებული არაა."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:55
+#: plugins/server/stdio/mcpserverstdio.cpp:62
 #, kde-format
 msgid "Impossible to start server. Command is empty."
-msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია"
+msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:93
+#: plugins/server/stdio/mcpserverstdio.cpp:70
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
+msgid "Impossible to start server. Arguments are invalid."
+msgstr "სერვერის გაშვება შეუძლებელია. ბმული არასწორია."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:110
 #, kde-format
 msgid "Impossible to send message. Server is not running."
 msgstr "შეტყობინების გაგზავნა შეუძლებელია. სერვერი გაშვებული არაა."
 
 #: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:21
-#, fuzzy, kde-format
-#| msgid "Sending message is not implemented yet."
+#, kde-format
 msgid "Streamable HTTP transport is not implemented yet."
-msgstr "შეტყობინების გაგზავნა ჯერ განხორციელებული არაა."
+msgstr "ნაკადის სახით გაგზავნადი HTTP ტრანსპორტი ჯერ განხორციელებული არაა."
 
-#: widgets/server/addmcpserverdialog.cpp:21
+#: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
+msgstr "სერვერის დამატება"
+
+#: widgets/server/addmcpserverdialog.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@title:window"
+msgid "Modify Server"
 msgstr "სერვერის დამატება"
 
 #: widgets/server/addmcpserverwidget.cpp:34
@@ -110,8 +137,10 @@ msgid "Name:"
 msgstr "სახელი:"
 
 #: widgets/server/addmcpserverwidget.cpp:38
-#, kde-format
-msgctxt "@label:textbox"
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Type:"
+msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "ტიპი:"
 
@@ -119,8 +148,8 @@ msgstr "ტიპი:"
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "Url:"
+msgid "URL:"
+msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:29
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:30
@@ -141,10 +170,18 @@ msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "არგუმენტები:"
 
-#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:20
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
+msgstr "მომხმარებლის თავსართის დამატება"
+
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Custom Header"
+msgctxt "@title:window"
+msgid "Modify Custom Header"
 msgstr "მომხმარებლის თავსართის დამატება"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
@@ -154,12 +191,10 @@ msgid "Header:"
 msgstr "თავსართი:"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name: Value"
-msgstr "სახელი:"
+msgstr "სახელი: მნიშვნელობა"
 
 #: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:33
 #, kde-format
@@ -180,7 +215,9 @@ msgid "Remove"
 msgstr "წაშლა"
 
 #: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Are you sure that you want to delete this header?"
+msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
 msgstr "მართლა გნებავთ ამ სათაურის წაშლა?"
 
@@ -191,9 +228,11 @@ msgid "Remove Header"
 msgstr "თავსართის წაშლა"
 
 #: widgets/server/mcpserverlistview.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Server…"
 msgctxt "@action"
-msgid "Add server…"
+msgid "Add Server…"
 msgstr "სერვერის დამატება…"
 
 #: widgets/server/mcpserverlistview.cpp:58
@@ -209,13 +248,17 @@ msgid "Remove Server"
 msgstr "სერვერის წაშლა"
 
 #: widgets/server/mcpserverlistview.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this server (%1)?"
+msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
 
 #: widgets/server/mcpserverlistview.cpp:72
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "სერვერის წაშლა"
 
@@ -230,6 +273,18 @@ msgstr "ძებნა…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "სერვერის დამატება…"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "Url:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "სერვერის დამატება…"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "სერვერის წაშლა"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid "Define Header…"

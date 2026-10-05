@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-04 00:44+0000\n"
+"POT-Creation-Date: 2026-10-05 00:44+0000\n"
 "PO-Revision-Date: 2026-08-11 08:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,20 +18,20 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 26.04.3\n"
 
-#: core/server/mcpserver.cpp:103
+#: core/server/mcpserver.cpp:105
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr ""
 
-#: core/server/mcpserver.cpp:105
+#: core/server/mcpserver.cpp:107
 #, fuzzy, kde-format
 #| msgid "Standard IO"
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "קלט/פלט רגילים"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:109
 #, fuzzy, kde-format
 #| msgid "Streamable HTTP"
 msgctxt "@item:inlistbox"
@@ -39,42 +39,53 @@ msgid "Streamable HTTP"
 msgstr "HTTP שניתן להזרים"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:63
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
 #, kde-format
-msgid "Impossible to start client. Url is invalid."
+msgid "Impossible to start client. URL is invalid."
 msgstr ""
 
 #: plugins/client/sse/mcpclientsse.cpp:89
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:93
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:94
 #, kde-format
 msgid "Server is not ready."
 msgstr ""
 
-#: plugins/client/stdio/mcpclientstdio.cpp:72
+#: plugins/client/stdio/mcpclientstdio.cpp:79
 #, kde-format
 msgid "Impossible to start client. Command is empty."
 msgstr ""
 
-#: plugins/client/stdio/mcpclientstdio.cpp:93
+#: plugins/client/stdio/mcpclientstdio.cpp:87
+#, kde-format
+msgid "Impossible to start client. Arguments are invalid."
+msgstr ""
+
+#: plugins/client/stdio/mcpclientstdio.cpp:110
 #, kde-format
 msgid "Impossible to send message. Client is not running."
 msgstr ""
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:166
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:171
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:217
+#: plugins/client/stdio/mcpclientstdio.cpp:129
+#: plugins/server/stdio/mcpserverstdio.cpp:129
+#, kde-format
+msgid "Message received from server is too big."
+msgstr ""
+
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
 #, kde-format
 msgid "Connection lost before receiving answer."
 msgstr ""
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:393
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
 #, kde-format
 msgid "Session expired. Client must be restarted."
 msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:38
 #, kde-format
-msgid "Impossible to start server. Url is invalid."
+msgid "Impossible to start server. URL is invalid."
 msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:89
@@ -83,12 +94,17 @@ msgstr ""
 msgid "Sending message is not implemented yet."
 msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:55
+#: plugins/server/stdio/mcpserverstdio.cpp:62
 #, kde-format
 msgid "Impossible to start server. Command is empty."
 msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:93
+#: plugins/server/stdio/mcpserverstdio.cpp:70
+#, kde-format
+msgid "Impossible to start server. Arguments are invalid."
+msgstr ""
+
+#: plugins/server/stdio/mcpserverstdio.cpp:110
 #, kde-format
 msgid "Impossible to send message. Server is not running."
 msgstr ""
@@ -98,10 +114,18 @@ msgstr ""
 msgid "Streamable HTTP transport is not implemented yet."
 msgstr ""
 
-#: widgets/server/addmcpserverdialog.cpp:21
+#: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server"
+msgstr "הוספת שרת"
+
+#: widgets/server/addmcpserverdialog.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@title:window"
+msgid "Modify Server"
 msgstr "הוספת שרת"
 
 #: widgets/server/addmcpserverwidget.cpp:34
@@ -111,18 +135,19 @@ msgid "Name:"
 msgstr "שם:"
 
 #: widgets/server/addmcpserverwidget.cpp:38
-#, kde-format
-msgctxt "@label:textbox"
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Type:"
+msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "סוג:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Url:"
+#, kde-format
 msgctxt "@label:textbox"
-msgid "Url:"
-msgstr "כתובת:"
+msgid "URL:"
+msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:29
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:30
@@ -146,10 +171,18 @@ msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "ארגומנטים:"
 
-#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:20
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
+msgstr "הוספת כותרת משלך"
+
+#: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Custom Header"
+msgctxt "@title:window"
+msgid "Modify Custom Header"
 msgstr "הוספת כותרת משלך"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
@@ -186,7 +219,9 @@ msgid "Remove"
 msgstr "הסרה"
 
 #: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Are you sure that you want to delete this header?"
+msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
 msgstr "למחוק את הכותרת הזאת?"
 
@@ -197,9 +232,11 @@ msgid "Remove Header"
 msgstr "הסרת כותרת"
 
 #: widgets/server/mcpserverlistview.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
 msgctxt "@action"
-msgid "Add server…"
+msgid "Add Server…"
 msgstr "הוספת שרת…"
 
 #: widgets/server/mcpserverlistview.cpp:58
@@ -215,13 +252,17 @@ msgid "Remove Server"
 msgstr "הסרת שרת"
 
 #: widgets/server/mcpserverlistview.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this server (%1)?"
+msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "להסיר את השרת הזה (%1)?"
 
 #: widgets/server/mcpserverlistview.cpp:72
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "הסרת שרת"
 
@@ -238,6 +279,20 @@ msgstr "חיפוש…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "הוספת שרת…"
+
+#, fuzzy
+#~| msgid "Url:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "כתובת:"
+
+#~ msgctxt "@action"
+#~ msgid "Add server…"
+#~ msgstr "הוספת שרת…"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "הסרת שרת"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid "Define Header…"

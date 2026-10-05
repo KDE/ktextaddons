@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-05 00:44+0000\n"
 "PO-Revision-Date: 2026-09-30 08:58+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -60,6 +60,46 @@ msgstr "Ha fallat en obrir el fitxer per lectura: %1"
 #, kde-format
 msgid "Impossible to import file."
 msgstr "Impossible importar el fitxer."
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:34
+#, kde-format
+msgid "Tool \"%1\" is not available."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:45
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:124
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Error"
+msgid "Error: %1"
+msgstr "Error"
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:50
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:59
+#, kde-format
+msgid "Error: server was stopped."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:55
+#, kde-format
+msgid "User refused to run tool \"%1\"."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:62
+#, kde-format
+msgid "Calling tool \"%1\"…"
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
+#, kde-format
+msgid "Error: impossible to call tool \"%1\"."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:74
+#, kde-format
+msgid "Server is invalid or disabled."
+msgstr ""
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -113,68 +153,68 @@ msgstr "<b>Motor:</b> %1<br><b>Model:</b> %2<br><b>Nom d'instància:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Eines:</b> %1"
 
-#: core/textautogeneratemanager.cpp:165
+#: core/textautogeneratemanager.cpp:167
 #, kde-format
 msgid "Tools"
 msgstr "Eines"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:169
 #, kde-format
 msgid "Small"
 msgstr "Petit"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Medium"
 msgstr "Mitjà"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Big"
 msgstr "Gran"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:179
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Codi"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Math"
 msgstr "Matemàtica"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:183
 #, kde-format
 msgid "Vision"
 msgstr "Visió"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Embedding"
 msgstr "Immersió"
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Reasoning"
 msgstr "Raonament"
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Cloud"
 msgstr "Núvol"
 
-#: core/textautogeneratemanager.cpp:189
+#: core/textautogeneratemanager.cpp:191
 #, kde-format
 msgid "Thinking"
 msgstr "Pensament"
@@ -193,12 +233,12 @@ msgstr ""
 "Ets un assistent d'IA. Sigues útil, professional i cortès. No donis "
 "informació inexacta."
 
-#: core/textautogeneratetextplugin.cpp:296
+#: core/textautogeneratetextplugin.cpp:360
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:298
+#: core/textautogeneratetextplugin.cpp:362
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
@@ -233,33 +273,43 @@ msgstr "<br><b>Segment textual de petició:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Segment textual de compleció:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#, kde-format
+msgid "MCP server: %1"
+msgstr ""
+
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Connectors d'eines:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:254
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identificador de l'eina: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Actiu"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Inactiu"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:234
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
 msgstr "Activa: %1"
+
+#: core/tools/textautogeneratetoolcalljob.cpp:47
+#, kde-format
+msgid "Tool \"%1\" not found."
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -826,7 +876,7 @@ msgstr "Registre de l'Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:220
+#: plugins/ollama/ollamaplugin.cpp:225
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
@@ -834,18 +884,18 @@ msgstr ""
 "No s'ha trobat l'Ollama en el sistema. Demaneu a l'administrador del sistema "
 "que l'instal·li."
 
-#: plugins/ollama/ollamaplugin.cpp:222
+#: plugins/ollama/ollamaplugin.cpp:227
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "No s'ha trobat l'Ollama en el sistema. Si us plau, instal·leu-lo."
 
-#: plugins/ollama/ollamaplugin.cpp:223
+#: plugins/ollama/ollamaplugin.cpp:228
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Baixada de l'Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:229
+#: plugins/ollama/ollamaplugin.cpp:234
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -3257,6 +3307,45 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Afegeix una instància…"
 
+#: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
+#, kde-format
+msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Arguments:"
+msgid ""
+"Arguments:\n"
+"%1"
+msgstr "Arguments:"
+
+#: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
+#, fuzzy, kde-format
+#| msgid "Plugins Tool:"
+msgctxt "@title:window"
+msgid "Run Tool"
+msgstr "Eina dels connectors:"
+
+#: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
+#, kde-format
+msgctxt "@action:button"
+msgid "Allow"
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Always Allow This Server"
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
+#, kde-format
+msgctxt "@action:button"
+msgid "Deny"
+msgstr ""
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -3645,27 +3734,51 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Cerca"
 
-#: widgets/textautogeneratewidget.cpp:133
+#: widgets/textautogeneratewidget.cpp:135
 #, kde-format
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
 
-#: widgets/textautogeneratewidget.cpp:244
+#: widgets/textautogeneratewidget.cpp:250
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Error informat: %1"
 
-#: widgets/textautogeneratewidget.cpp:244
+#: widgets/textautogeneratewidget.cpp:250
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
 msgstr "Error"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:32
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Eines:"
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "No tag selected"
+msgid "Not connected"
+msgstr "No s'ha seleccionat cap etiqueta"
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
+#, kde-format
+msgid "Connecting…"
+msgstr ""
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
+#, kde-format
+msgid "1 tool"
+msgid_plural "%1 tools"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
+#, kde-format
+msgid "Tools of MCP server \"%1\" (%2)"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
@@ -3849,9 +3962,6 @@ msgstr "No s'ha trobat cap missatge."
 
 #~ msgid "Plugins Text:"
 #~ msgstr "Text dels connectors:"
-
-#~ msgid "Plugins Tool:"
-#~ msgstr "Eina dels connectors:"
 
 #~ msgid "Images (*.png *.xpm *.jpg *.gif)"
 #~ msgstr "Imatges (*.png *.xpm *.jpg *.gif)"
