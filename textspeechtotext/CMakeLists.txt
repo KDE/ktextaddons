@@ -142,6 +142,8 @@ ecm_generate_headers(TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS
     SpeechToTextAction
     SpeechToTextToolButtonWidget
     SpeechToTextMenu
+    SpeechToTextConfigureWidget
+    SpeechToTextConfigureDialog
     REQUIRED_HEADERS TextSpeechToTextWidget_speechtotext_HEADERS
     PREFIX TextSpeechToText
     RELATIVE speechtotext/widgets
