@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
-add_subdirectory(google)
+# add_subdirectory(google)
 add_subdirectory(whisper)
 
 if(SPEAK_TO_TEXT_VOSK_PLUGIN)
