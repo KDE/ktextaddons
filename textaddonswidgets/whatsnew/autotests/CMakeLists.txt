@@ -1,8 +1,6 @@
-# SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-add_definitions(-DTEXTADDONSWIDGETS_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
-
-macro(add_whatsnewng_test _source)
+macro(add_whatsnew_test _source)
     set(_test ${_source})
     get_filename_component(_name ${_source} NAME_WE)
     add_executable(
@@ -26,4 +24,8 @@ macro(add_whatsnewng_test _source)
     )
 endmacro()
 
-add_whatsnewng_test(whatsnewngutilstest.cpp)
+add_whatsnew_test(whatsnewdialogtest.cpp)
+add_whatsnew_test(whatsnewwidgettest.cpp)
+add_whatsnew_test(whatsnewmessagewidgettest.cpp)
+add_whatsnew_test(whatsnewcomboboxwidgettest.cpp)
+add_whatsnew_test(whatsnewinfotest.cpp)
