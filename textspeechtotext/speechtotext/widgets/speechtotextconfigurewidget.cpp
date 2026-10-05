@@ -49,6 +49,7 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
     // Connected after fillEngine(): filling the combobox is not the user selecting an engine.
     connect(mSpeechToTextComboBox, &SpeechToTextEngineComboBoxWidget::engineChanged, this, &SpeechToTextConfigureWidget::slotEngineChanged);
     connect(mWhisperInstallMessageWidget, &WhisperSpeechToTextInstallMessageWidget::installPackages, this, &SpeechToTextConfigureWidget::slotInstallWhisper);
+    mainLayout->addStretch(1);
 }
 
 SpeechToTextConfigureWidget::~SpeechToTextConfigureWidget() = default;

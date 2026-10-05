@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "speechtotext_private_export.h"
+#include "textspeechtotext_export.h"
 #include <QWidget>
 class WhisperSpeechToTextInstallMessageWidget;
 namespace TextSpeechToText
@@ -17,13 +17,26 @@ class SpeechToTextLanguageComboBoxWidget;
  * @brief The SpeechToTextConfigureWidget class
  * \author Laurent Montel <montel@kde.org>
  */
-class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextConfigureWidget : public QWidget
+class TEXTSPEECHTOTEXT_EXPORT SpeechToTextConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief SpeechToTextConfigureWidget
+     * \param parent
+     */
     explicit SpeechToTextConfigureWidget(QWidget *parent = nullptr);
+    /*!
+     * \brief ~SpeechToTextConfigureWidget
+     */
     ~SpeechToTextConfigureWidget() override;
+    /*!
+     * \brief loadSettings
+     */
     void loadSettings();
+    /*!
+     * \brief saveSettings
+     */
     void saveSettings();
 
 private:
