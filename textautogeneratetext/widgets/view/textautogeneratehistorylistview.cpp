@@ -138,14 +138,13 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             mManager->createNewChat();
         });
         menu.addAction(newChatHistory);
+        menu.addSeparator();
     }
     auto projectsMenu = new TextAutoGenerateProjectsMenu(mManager, &menu);
 
     auto tagsMenu = new TextAutoGenerateTagsMenu(mManager, &menu);
 
     if (const QModelIndex index = indexAt(event->pos()); index.parent().isValid()) {
-        menu.addSeparator();
-
         if (index.isValid()) {
             auto renameHistoryAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
             connect(renameHistoryAction, &QAction::triggered, this, [index, this]() {
