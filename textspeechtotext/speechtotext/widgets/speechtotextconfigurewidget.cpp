@@ -7,12 +7,15 @@
 #include "speechtotextconfigurewidget.h"
 
 #include "speechtotext/speechtotextmanager.h"
+#include "speechtotext/widgets/speechtotexttoolbuttonwidget.h"
 #include "speechtotextenginecomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
 #include "whisperspeechtotextcheckjob.h"
 #include "whisperspeechtotextinstallmessagewidget.h"
 #include "whisperspeechtotextinstallpythondialog.h"
 #include <KLocalizedString>
+#include <QLabel>
+#include <QPlainTextEdit>
 #include <QPointer>
 #include <QVBoxLayout>
 
@@ -24,6 +27,7 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
     , mSpeechToTextComboBox(new SpeechToTextEngineComboBoxWidget(this))
     , mSpeechToTextDevice(new SpeechToTextSelectDeviceWidget(this))
     , mWhisperInstallMessageWidget(new WhisperSpeechToTextInstallMessageWidget(this))
+    , mTestPlainTextEdit(new QPlainTextEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -38,6 +42,22 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
 
     mSpeechToTextComboBox->setObjectName(u"mSpeechToTextComboBox"_s);
     mainLayout->addWidget(mSpeechToTextComboBox);
+
+    auto hboxLayout = new QHBoxLayout;
+    hboxLayout->setContentsMargins({});
+    auto button = new SpeechToTextToolButtonWidget(this);
+    connect(button, &SpeechToTextToolButtonWidget::textAvailable, this, [this](const QString &str) {
+        mTestPlainTextEdit->appendPlainText(str);
+    });
+    hboxLayout->addWidget(new QLabel(i18n("Test:"), this));
+    hboxLayout->addWidget(button);
+    hboxLayout->addStretch(1);
+
+    mainLayout->addLayout(hboxLayout);
+
+    mTestPlainTextEdit->setObjectName(u"mTestPlainTextEdit"_s);
+    mTestPlainTextEdit->setReadOnly(true);
+    mainLayout->addWidget(mTestPlainTextEdit);
 
     mSpeechToTextComboBox->fillEngine();
 

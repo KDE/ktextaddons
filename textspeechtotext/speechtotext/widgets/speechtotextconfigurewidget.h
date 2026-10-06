@@ -7,6 +7,7 @@
 #pragma once
 #include "textspeechtotext_export.h"
 #include <QWidget>
+class QPlainTextEdit;
 class WhisperSpeechToTextInstallMessageWidget;
 namespace TextSpeechToText
 {
@@ -46,5 +47,6 @@ private:
     SpeechToTextEngineComboBoxWidget *const mSpeechToTextComboBox;
     SpeechToTextSelectDeviceWidget *const mSpeechToTextDevice;
     WhisperSpeechToTextInstallMessageWidget *const mWhisperInstallMessageWidget;
+    QPlainTextEdit *const mTestPlainTextEdit;
 };
 }
