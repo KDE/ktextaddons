@@ -15,4 +15,5 @@ public:
     ~SpeechToTextToolButtonWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldEmitTextAvailableOnlyForRequester();
 };
