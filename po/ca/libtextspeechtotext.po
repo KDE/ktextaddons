@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 20:13+0000\n"
+"POT-Creation-Date: 2026-10-06 03:06+0000\n"
 "PO-Revision-Date: 2026-10-02 07:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -166,7 +166,7 @@ msgstr "El dorsal del Whisper s'ha aturat inesperadament."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "El Whisper no està instal·lat. Manca: %1"
@@ -329,7 +329,7 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Configuració de la veu a text"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "La instal·lació del Whisper està trencada. Torneu-lo a instal·lar."

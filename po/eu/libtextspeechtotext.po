@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 20:13+0000\n"
+"POT-Creation-Date: 2026-10-06 03:06+0000\n"
 "PO-Revision-Date: 2026-09-28 22:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -174,7 +174,7 @@ msgstr "Whisperren bizkarraldekoa ustekabean gelditu da."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "Whisper ez dago instalatuta. Falta dena: %1"
@@ -343,7 +343,7 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Hizketatik testurako bihurketa konfiguratu"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "Whisperren instalazioa hondatuta dago. Berrinstalatu, mesedez."
