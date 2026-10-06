@@ -70,11 +70,9 @@ msgstr ""
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Chyba"
+msgstr "Chyba: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
@@ -2881,7 +2879,7 @@ msgstr "Nástroj pro moduly:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Povolit"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
@@ -3307,16 +3305,14 @@ msgid "Tools:"
 msgstr "Nástroje:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "Nebyly vybrány žádné značky."
+msgstr "Nepřipojen"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Navazuji spojení…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
 #, kde-format

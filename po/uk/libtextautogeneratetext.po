@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:44+0000\n"
-"PO-Revision-Date: 2026-09-30 17:15+0300\n"
+"PO-Revision-Date: 2026-10-05 20:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -63,42 +63,40 @@ msgstr "Неможливо імпортувати файл."
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Інструмент «%1» є недоступним."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Помилка"
+msgstr "Помилка: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Помилка: сервер зупинено."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:55
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "Користувач відмовив у запуску інструмента «%1»."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Виклик інструмента «%1»…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Помилка: неможливо викликати інструмент «%1»."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:74
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Сервер є некоректним або вимкненим."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -273,7 +271,7 @@ msgstr "<br><b>Жетон завершеності:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "Сервер MCP: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
@@ -306,7 +304,7 @@ msgstr "Активація: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:47
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Інструмент «%1» не знайдено."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3299,41 +3297,40 @@ msgstr "Додати екземпляр…"
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "Серверу MCP «%1» потрібно запустити інструмент «%2»."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Аргументи:"
+msgstr ""
+"Аргументи:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Інструмент додатків:"
+msgstr "Запуск інструмента"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Дозволити"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Завжди дозволяти цей сервер"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Відмовити"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3746,30 +3743,28 @@ msgid "Tools:"
 msgstr "Інструменти:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "Не вибрано жодної мітки"
+msgstr "Не з'єднано"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "З'єднання…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 інструмент"
+msgstr[1] "%1 інструменти"
+msgstr[2] "%1 інструментів"
+msgstr[3] "1 інструмент"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Інструменти сервера MCP «%1» (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format

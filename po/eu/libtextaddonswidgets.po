@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-06 00:44+0000\n"
 "PO-Revision-Date: 2026-08-27 21:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -268,27 +268,58 @@ msgstr ""
 msgid "Check New Version"
 msgstr "Bertsio berririk dagoen egiaztatu"
 
-#: whatsnewng/whatsnewcomboboxwidget.cpp:31
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Bertsioa:"
 
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr "Zer berri %1(e)n"
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "(Show News)"
 msgstr "(Berritasunak erakutsi)"
 
+#: whatsnew/whatsnewmessagewidget.cpp:22
+#, kde-format
+msgid "What's new in %2. %1"
+msgstr "Zer berri %2(e)n. %1"
+
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
+#, kde-format
+msgid "All Versions"
+msgstr "Bertsio guztiak"
+
+#: whatsnew/whatsnewwidget.cpp:95
+#, kde-format
+msgid "Important changes since last version:"
+msgstr "Azken bertsiotik izandako aldaketa garrantzitsuak:"
+
+#: whatsnew/whatsnewwidget.cpp:100
+#, kde-format
+msgid "Some of the new features in this release include:"
+msgstr "Argitalpen honetako eginbide berrietako batzuk:"
+
+#: whatsnew/whatsnewwidget.cpp:105
+#, kde-format
+msgid "Some bug fixing:"
+msgstr "Akats-zuzenketa batzuk:"
+
+#: whatsnew/whatsnewwidget.cpp:146
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> %1 bertsioa </i></h1><hr/><br>"
+
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %1. %2"
 msgstr "Zer berri %1(e)n. %2"
-
-#: whatsnewng/whatsnewngdialog.cpp:27
-#, kde-format
-msgctxt "@title:window"
-msgid "What's new in %1"
-msgstr "Zer berri %1(e)n"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -310,25 +341,5 @@ msgstr "<h3><i>%1 bertsioko berritasunak (argitaratu gabea)</i></h3>"
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Berritasunen historia</h1>"
 
-#: whatsnewng/whatsnewngwidget.cpp:51
-#, kde-format
-msgid "All Versions"
-msgstr "Bertsio guztiak"
-
 #~ msgid "..."
 #~ msgstr "…"
-
-#~ msgid "What's new in %2. %1"
-#~ msgstr "Zer berri %2(e)n. %1"
-
-#~ msgid "Important changes since last version:"
-#~ msgstr "Azken bertsiotik izandako aldaketa garrantzitsuak:"
-
-#~ msgid "Some of the new features in this release include:"
-#~ msgstr "Argitalpen honetako eginbide berrietako batzuk:"
-
-#~ msgid "Some bug fixing:"
-#~ msgstr "Akats-zuzenketa batzuk:"
-
-#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-#~ msgstr "<h1><i> %1 bertsioa </i></h1><hr/><br>"

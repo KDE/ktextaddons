@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-06 00:44+0000\n"
 "PO-Revision-Date: 2026-08-24 09:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -257,27 +257,58 @@ msgstr ""
 msgid "Check New Version"
 msgstr "Vérifier l'existence d'une nouvelle version"
 
-#: whatsnewng/whatsnewcomboboxwidget.cpp:31
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "Version :"
 
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr "Quoi de neuf dans %1"
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "(Show News)"
 msgstr "(Afficher les nouvelles)"
 
+#: whatsnew/whatsnewmessagewidget.cpp:22
+#, kde-format
+msgid "What's new in %2. %1"
+msgstr "Quoi de neuf dans %2. %1"
+
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
+#, kde-format
+msgid "All Versions"
+msgstr "Toutes les versions"
+
+#: whatsnew/whatsnewwidget.cpp:95
+#, kde-format
+msgid "Important changes since last version:"
+msgstr "Modifications importantes depuis la dernière version :"
+
+#: whatsnew/whatsnewwidget.cpp:100
+#, kde-format
+msgid "Some of the new features in this release include:"
+msgstr "Certaines des nouvelles fonctionnalités de cette version incluent :"
+
+#: whatsnew/whatsnewwidget.cpp:105
+#, kde-format
+msgid "Some bug fixing:"
+msgstr "Quelques corrections de bogues :"
+
+#: whatsnew/whatsnewwidget.cpp:146
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
+
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %1. %2"
 msgstr "Quoi de neuf dans %1. %2"
-
-#: whatsnewng/whatsnewngdialog.cpp:27
-#, kde-format
-msgctxt "@title:window"
-msgid "What's new in %1"
-msgstr "Quoi de neuf dans %1"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -300,28 +331,8 @@ msgstr "<h3><i> Quoi de neuf dans la version %1 (Non encore publiée) </i></h3>"
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Quoi de neuf dans l'historique</h1>"
 
-#: whatsnewng/whatsnewngwidget.cpp:51
-#, kde-format
-msgid "All Versions"
-msgstr "Toutes les versions"
-
 #~ msgid "..."
 #~ msgstr "..."
-
-#~ msgid "What's new in %2. %1"
-#~ msgstr "Quoi de neuf dans %2. %1"
-
-#~ msgid "Important changes since last version:"
-#~ msgstr "Modifications importantes depuis la dernière version :"
-
-#~ msgid "Some of the new features in this release include:"
-#~ msgstr "Certaines des nouvelles fonctionnalités de cette version incluent :"
-
-#~ msgid "Some bug fixing:"
-#~ msgstr "Quelques corrections de bogues :"
-
-#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-#~ msgstr "<h1><i> Version %1 </i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "Version %1"

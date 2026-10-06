@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-06 00:44+0000\n"
 "PO-Revision-Date: 2026-08-23 11:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -253,27 +253,58 @@ msgstr "לא נמצאו גרסאות חדשות. <a href=\"%1\">כאן</a> אפ�
 msgid "Check New Version"
 msgstr "בדיקה לאיתור גרסה חדשה"
 
-#: whatsnewng/whatsnewcomboboxwidget.cpp:31
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "גרסה:"
 
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr "מה חדש ב־%1"
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "(Show News)"
 msgstr "(הצגת חדשות)"
 
+#: whatsnew/whatsnewmessagewidget.cpp:22
+#, kde-format
+msgid "What's new in %2. %1"
+msgstr "מה חדש ב־%2. %1"
+
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
+#, kde-format
+msgid "All Versions"
+msgstr "כל הגרסאות"
+
+#: whatsnew/whatsnewwidget.cpp:95
+#, kde-format
+msgid "Important changes since last version:"
+msgstr "שינויים חשובים מאז הגרסה האחרונה:"
+
+#: whatsnew/whatsnewwidget.cpp:100
+#, kde-format
+msgid "Some of the new features in this release include:"
+msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
+
+#: whatsnew/whatsnewwidget.cpp:105
+#, kde-format
+msgid "Some bug fixing:"
+msgstr "תיקוני תקלות:"
+
+#: whatsnew/whatsnewwidget.cpp:146
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr "<h1><i> גרסה %1 </i></h1><hr/><br>"
+
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "What's new in %1. %2"
 msgstr "מה חדש ב־%1. %2"
-
-#: whatsnewng/whatsnewngdialog.cpp:27
-#, kde-format
-msgctxt "@title:window"
-msgid "What's new in %1"
-msgstr "מה חדש ב־%1"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -295,28 +326,8 @@ msgstr "<h3><i>מה חדש בגרסה %1 (לא יצאה לאור)</i></h3>"
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>היסטוריית מה חדש</h1>"
 
-#: whatsnewng/whatsnewngwidget.cpp:51
-#, kde-format
-msgid "All Versions"
-msgstr "כל הגרסאות"
-
 #~ msgid "..."
 #~ msgstr "…"
-
-#~ msgid "What's new in %2. %1"
-#~ msgstr "מה חדש ב־%2. %1"
-
-#~ msgid "Important changes since last version:"
-#~ msgstr "שינויים חשובים מאז הגרסה האחרונה:"
-
-#~ msgid "Some of the new features in this release include:"
-#~ msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
-
-#~ msgid "Some bug fixing:"
-#~ msgstr "תיקוני תקלות:"
-
-#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-#~ msgstr "<h1><i> גרסה %1 </i></h1><hr/><br>"
 
 #~ msgid "Version %1"
 #~ msgstr "גרסה %1"

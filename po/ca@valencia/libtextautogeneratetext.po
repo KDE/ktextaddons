@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:44+0000\n"
-"PO-Revision-Date: 2026-09-30 08:58+0200\n"
+"PO-Revision-Date: 2026-10-05 09:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -64,42 +64,40 @@ msgstr "Impossible importar el fitxer."
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "L'eina «%1» no està disponible."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "S'ha produït un error"
+msgstr "S'ha produït un error: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "S'ha produït un error: s'ha parat el servidor."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:55
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "L'usuari ha refusat executar l'eina «%1»."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "S'està invocant l'eina «%1»…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "S'ha produït un error: és impossible invocar l'eina «%1»."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:74
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "El servidor no és vàlid o està desactivat."
 
 # NdT: Terminologia d'IA del Termcat:
 # https://www.termcat.cat/ca/diccionaris-en-linia/347/
@@ -276,7 +274,7 @@ msgstr "<br><b>Segment textual de compleció:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "Servidor MCP: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
@@ -309,7 +307,7 @@ msgstr "Activa: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:47
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "No s'ha trobat l'eina «%1»."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3307,41 +3305,40 @@ msgstr "Afig una instància…"
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "El servidor MCP «%1» vol executar l'eina «%2»."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Arguments:"
+msgstr ""
+"Arguments:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Eines"
+msgstr "Execució d'eina"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Permet"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Permet sempre este servidor"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Denega"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3754,28 +3751,26 @@ msgid "Tools:"
 msgstr "Eines:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "No s'ha seleccionat cap etiqueta"
+msgstr "No connectat"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "S'està connectant…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 eina"
+msgstr[1] "%1 eines"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Eines del servidor MCP «%1» (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
@@ -3850,7 +3845,7 @@ msgstr "Zoom:"
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:44+0000\n"
-"PO-Revision-Date: 2026-10-04 07:11-0300\n"
+"PO-Revision-Date: 2026-10-05 09:12-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -37,8 +37,7 @@ msgstr "HTTP transmissível"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. Url is invalid."
+#, kde-format
 msgid "Impossible to start client. URL is invalid."
 msgstr "Não é possível iniciar o cliente. A URL é inválida."
 
@@ -54,10 +53,9 @@ msgid "Impossible to start client. Command is empty."
 msgstr "Não é possível iniciar o cliente. O comando está vazio."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:87
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. Url is invalid."
+#, kde-format
 msgid "Impossible to start client. Arguments are invalid."
-msgstr "Não é possível iniciar o cliente. A URL é inválida."
+msgstr "Não é possível iniciar o cliente. Os argumentos são inválidos."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:110
 #, kde-format
@@ -68,7 +66,7 @@ msgstr "Não é possível enviar a mensagem. O cliente não está em execução.
 #: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
-msgstr ""
+msgstr "A mensagem recebida do servidor é muito grande."
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
@@ -83,8 +81,7 @@ msgid "Session expired. Client must be restarted."
 msgstr "Sessão expirada. O cliente deve ser reiniciado."
 
 #: plugins/server/sse/mcpserversse.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. Url is invalid."
+#, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Não é possível iniciar o servidor. A URL é inválida."
 
@@ -100,10 +97,9 @@ msgid "Impossible to start server. Command is empty."
 msgstr "Não é possível iniciar o servidor. O comando está vazio."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. Url is invalid."
+#, kde-format
 msgid "Impossible to start server. Arguments are invalid."
-msgstr "Não é possível iniciar o servidor. A URL é inválida."
+msgstr "Não é possível iniciar o servidor. Os argumentos são inválidos."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:110
 #, kde-format
@@ -122,12 +118,10 @@ msgid "Add Server"
 msgstr "Adicionar servidor"
 
 #: widgets/server/addmcpserverdialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Server"
-msgstr "Adicionar servidor"
+msgstr "Modificar servidor"
 
 #: widgets/server/addmcpserverwidget.cpp:34
 #, kde-format
@@ -136,9 +130,7 @@ msgid "Name:"
 msgstr "Nome:"
 
 #: widgets/server/addmcpserverwidget.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Type:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "Tipo:"
@@ -148,7 +140,7 @@ msgstr "Tipo:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:29
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:30
@@ -176,12 +168,10 @@ msgid "Add Custom Header"
 msgstr "Adicionar cabeçalho personalizado"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Custom Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Custom Header"
-msgstr "Adicionar cabeçalho personalizado"
+msgstr "Modificar cabeçalho personalizado"
 
 #: widgets/server/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
@@ -214,8 +204,7 @@ msgid "Remove"
 msgstr "Remover"
 
 #: widgets/server/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Are you sure that you want to delete this header?"
+#, kde-format
 msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
 msgstr "Você tem certeza de que deseja excluir este cabeçalho?"
@@ -227,9 +216,7 @@ msgid "Remove Header"
 msgstr "Remover cabeçalho"
 
 #: widgets/server/mcpserverlistview.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Adicionar servidor…"
@@ -247,16 +234,13 @@ msgid "Remove Server"
 msgstr "Remover servidor"
 
 #: widgets/server/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Deseja remover este servidor (%1)?"
 
 #: widgets/server/mcpserverlistview.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Remover servidor"

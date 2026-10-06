@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-06 00:44+0000\n"
 "PO-Revision-Date: 2026-04-12 18:20+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -259,28 +259,59 @@ msgstr "புதிய பதிப்பு இல்லை. ?? <a href=\"%1\"
 msgid "Check New Version"
 msgstr "புதிய பதிப்பு உள்ளதா என பார்ப்பது"
 
-#: whatsnewng/whatsnewcomboboxwidget.cpp:31
+#: whatsnew/whatsnewcomboboxwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
 msgstr "பதிப்பு:"
 
+#: whatsnew/whatsnewdialog.cpp:26 whatsnewng/whatsnewngdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "What's new in %1"
+msgstr "%1 தனில் புதியவை"
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format
 msgid "(Show News)"
 msgstr "(செய்திகளை காட்டு)"
+
+#: whatsnew/whatsnewmessagewidget.cpp:22
+#, kde-format
+msgid "What's new in %2. %1"
+msgstr "%2 தனில் புதியவை. %1"
+
+#: whatsnew/whatsnewwidget.cpp:48 whatsnewng/whatsnewngwidget.cpp:51
+#, kde-format
+msgid "All Versions"
+msgstr "அனைத்து பதிப்புகளும்"
+
+#: whatsnew/whatsnewwidget.cpp:95
+#, kde-format
+msgid "Important changes since last version:"
+msgstr "சென்ற பதிப்புக்கு பிந்தைய முக்கிய மாற்றங்கள்:"
+
+#: whatsnew/whatsnewwidget.cpp:100
+#, kde-format
+msgid "Some of the new features in this release include:"
+msgstr "இப்பதிப்பின் சில புதிய அம்சங்கள் பின்வருவன:"
+
+#: whatsnew/whatsnewwidget.cpp:105
+#, kde-format
+msgid "Some bug fixing:"
+msgstr "திருத்தப்பட்ட சில பிழைகள்:"
+
+#: whatsnew/whatsnewwidget.cpp:146
+#, kde-format
+msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+msgstr ""
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, fuzzy, kde-format
 #| msgid "What's new in %2. %1"
 msgid "What's new in %1. %2"
 msgstr "%2 தனில் புதியவை. %1"
-
-#: whatsnewng/whatsnewngdialog.cpp:27
-#, kde-format
-msgctxt "@title:window"
-msgid "What's new in %1"
-msgstr "%1 தனில் புதியவை"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -302,25 +333,8 @@ msgstr ""
 msgid "<h1>What's New History</h1>"
 msgstr ""
 
-#: whatsnewng/whatsnewngwidget.cpp:51
-#, kde-format
-msgid "All Versions"
-msgstr "அனைத்து பதிப்புகளும்"
-
 #~ msgid "..."
 #~ msgstr "..."
-
-#~ msgid "What's new in %2. %1"
-#~ msgstr "%2 தனில் புதியவை. %1"
-
-#~ msgid "Important changes since last version:"
-#~ msgstr "சென்ற பதிப்புக்கு பிந்தைய முக்கிய மாற்றங்கள்:"
-
-#~ msgid "Some of the new features in this release include:"
-#~ msgstr "இப்பதிப்பின் சில புதிய அம்சங்கள் பின்வருவன:"
-
-#~ msgid "Some bug fixing:"
-#~ msgstr "திருத்தப்பட்ட சில பிழைகள்:"
 
 #~ msgid "Version %1"
 #~ msgstr "பதிப்பு %1"

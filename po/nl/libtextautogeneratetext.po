@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:44+0000\n"
-"PO-Revision-Date: 2026-09-30 16:01+0200\n"
+"PO-Revision-Date: 2026-10-05 16:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -62,42 +62,40 @@ msgstr "Bestand importeren is onmogelijk."
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Hulpmiddel \"%1\" niet beschikbaar."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Fout"
+msgstr "Fout: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Fout: server is gestopt."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:55
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "Gebruiker weigerde hulpmiddel \"%1\" uit te voeren."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Hulpmiddel \"%1\" aanroepen…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Fout: onmogelijk hulpmiddel \"%1\" aan te roepen."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:74
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Server is ongeldig of uitgeschakeld."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -272,7 +270,7 @@ msgstr "<br><b>Voltooiingstoken:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "MCP-server: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
@@ -305,7 +303,7 @@ msgstr "Activeer: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:47
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Hulpmiddel \"%1\" niet gevonden."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3289,41 +3287,40 @@ msgstr "Exemplaar toevoegen…"
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "De MCP-server \"%1\" wil het hulp middel \"%2\" uitvoeren."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Argumenten:"
+msgstr ""
+"Argumenten:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Hulpmiddel van plug-ins:"
+msgstr "Hulpmiddel uitvoeren"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Toestaan"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Deze server altijd toestaan"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Weigeren"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3736,28 +3733,26 @@ msgid "Tools:"
 msgstr "Hulpmiddelen:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "Geen tag geselecteerd"
+msgstr "Niet verbonden"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Bezig met verbinden…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 hulpmiddel"
+msgstr[1] "%1 hulpmiddelen"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Hulpmiddelen van MCP-server \"%1\" (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format

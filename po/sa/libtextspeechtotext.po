@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-10-06 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -167,7 +167,7 @@ msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:88
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr ""
@@ -331,7 +331,7 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Speech To Text विन्यस्तं कुर्वन्तु"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:93
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr ""

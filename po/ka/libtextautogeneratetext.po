@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-05 00:44+0000\n"
-"PO-Revision-Date: 2026-09-30 09:46+0200\n"
+"PO-Revision-Date: 2026-10-05 06:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -63,42 +63,40 @@ msgstr "ფაილის შემოტანა შეუძლებელ�
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "ხელსაწყო \"%1\" ხელმისაწვდომი არაა."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "შეცდომა"
+msgstr "შეცდომა: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "შეცდომა: სერვერი გაჩერდა."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:55
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "მომხმარებელმა უარი თქვა, გაეშვა ხელსაწყო \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "მიმდინარეობს გამოძახება ხელსაწყოსთვის \"%1\"…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "შეცდომა: გამოძახების შეცდომა ხელსაწყოსთვის \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:74
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "სერვერი არასწორია, ან გათიშულია."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -274,7 +272,7 @@ msgstr "<br><b>დასრულების ტოკენი:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "MCP სერვერი: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
@@ -307,7 +305,7 @@ msgstr "გააქტიურება: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:47
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "ხელსაწყო \"%1\" აღმოჩენილი არაა."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3280,41 +3278,40 @@ msgstr "გაშვებული ასლის დამატება…"
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "MCP სერვერს \"%1\" სურს, გაუშვას ხელსაწყო \"%2\"."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "არგუმენტები:"
+msgstr ""
+"არგუმენტები:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "დამატებების ხელსაწყო:"
+msgstr "ხელსაწყოს გაშვება"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "დაშვება"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "ამ სერვერის ყოველთვის დაშვება"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "უარყოფა"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3727,28 +3724,26 @@ msgid "Tools:"
 msgstr "ხელსაწყოები:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "ჭდე მონიშნული არაა"
+msgstr "დაკავშირებული არაა"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "დაკავშირება…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 ხელსაწყო"
+msgstr[1] "%1 ხელსაწყო"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "MCP სერვერის \"%1\" ხელსაწყოები (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
