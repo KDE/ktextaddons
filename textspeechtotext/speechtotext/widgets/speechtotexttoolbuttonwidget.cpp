@@ -28,6 +28,13 @@ SpeechToTextToolButtonWidget::SpeechToTextToolButtonWidget(QWidget *parent)
         mToolButton->setChecked(recording);
         updateIcon();
     });
+
+    connect(SpeechToTextManager::self(), &SpeechToTextManager::speechToTextDoneFor, this, [this](QObject *requester, const QString &result) {
+        if (requester == this) {
+            Q_EMIT textAvailable(result);
+        }
+    });
+
     updateIcon();
 }
 
@@ -43,7 +50,7 @@ void SpeechToTextToolButtonWidget::slotButtonClicked()
     if (SpeechToTextManager::self()->isRecording()) {
         SpeechToTextManager::self()->stop();
     } else {
-        SpeechToTextManager::self()->speechToText();
+        SpeechToTextManager::self()->speechToText(this);
     }
     // Starting can fail (no engine, no microphone): keep the button in sync with reality.
     mToolButton->setChecked(SpeechToTextManager::self()->isRecording());

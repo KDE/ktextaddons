@@ -15,6 +15,7 @@
 #include <QAudioDevice>
 #include <QAudioSource>
 #include <QMediaDevices>
+#include <QPointer>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextSpeechToText;
@@ -46,6 +47,7 @@ public:
     QAudioSource *mAudioSource = nullptr;
     EngineStatus mStatus = EngineStatus::NotLoadedYet;
     bool mRecording = false;
+    QPointer<QObject> mRequester;
 };
 
 SpeechToTextManager::SpeechToTextManager(QObject *parent)
@@ -111,7 +113,10 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
         deletePlugin();
         return;
     }
-    connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
+    connect(d->mSpeechToTextPlugin, &SpeechToTextPlugin::speechToTextDone, this, [this](const QString &result) {
+        Q_EMIT textToSpeechDone(result);
+        Q_EMIT speechToTextDoneFor(d->mRequester, result);
+    });
     d->mStatus = EngineStatus::Ready;
 }
 
@@ -158,7 +163,7 @@ bool SpeechToTextManager::isReady() const
     return d->mSpeechToTextPlugin != nullptr;
 }
 
-void SpeechToTextManager::speechToText()
+void SpeechToTextManager::speechToText(QObject *requester)
 {
     // Nothing asked for an engine yet: pick the configured one now rather than staying mute forever.
     if (d->mStatus == EngineStatus::NotLoadedYet) {
@@ -175,6 +180,7 @@ void SpeechToTextManager::speechToText()
     if (!initializeInput()) {
         return;
     }
+    d->mRequester = requester;
     d->mRecording = true;
     Q_EMIT recordingChanged(true);
 }

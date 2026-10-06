@@ -27,6 +27,12 @@ public:
      */
     ~SpeechToTextAction() override;
 
+Q_SIGNALS:
+    /*!
+     * \brief textAvailable
+     */
+    void textAvailable(const QString &);
+
 private:
     TEXTSPEECHTOTEXT_NO_EXPORT void slotClicked();
     TEXTSPEECHTOTEXT_NO_EXPORT void updateIcon();

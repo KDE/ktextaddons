@@ -49,7 +49,7 @@ public:
      *
      * Does nothing when no engine is loaded or when a recognition is already running.
      */
-    void speechToText();
+    void speechToText(QObject *requester = nullptr);
 
     /*!
      * \brief Stops the running recognition, if any.
@@ -82,6 +82,13 @@ Q_SIGNALS:
      * \brief Emitted when the capture starts or stops.
      */
     void recordingChanged(bool recording);
+
+    /*!
+     * \brief speechToTextDoneFor
+     * \param requester
+     * \param result
+     */
+    void speechToTextDoneFor(QObject *requester, const QString &result);
 
 private:
     enum class EngineStatus : uint8_t {

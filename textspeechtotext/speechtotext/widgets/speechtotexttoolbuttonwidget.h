@@ -28,6 +28,12 @@ public:
      */
     ~SpeechToTextToolButtonWidget() override;
 
+Q_SIGNALS:
+    /*!
+     * \brief textAvailable
+     */
+    void textAvailable(const QString &);
+
 private:
     TEXTSPEECHTOTEXT_NO_EXPORT void slotButtonClicked();
     TEXTSPEECHTOTEXT_NO_EXPORT void updateIcon();

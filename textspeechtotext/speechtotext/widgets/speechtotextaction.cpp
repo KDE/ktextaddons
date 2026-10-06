@@ -19,6 +19,12 @@ SpeechToTextAction::SpeechToTextAction(QObject *parent)
         setChecked(recording);
         updateIcon();
     });
+
+    connect(SpeechToTextManager::self(), &SpeechToTextManager::speechToTextDoneFor, this, [this](QObject *requester, const QString &result) {
+        if (requester == this) {
+            Q_EMIT textAvailable(result);
+        }
+    });
     updateIcon();
 }
 
@@ -34,7 +40,7 @@ void SpeechToTextAction::slotClicked()
     if (SpeechToTextManager::self()->isRecording()) {
         SpeechToTextManager::self()->stop();
     } else {
-        SpeechToTextManager::self()->speechToText();
+        SpeechToTextManager::self()->speechToText(this);
     }
     // Starting can fail (no engine, no microphone): keep the action in sync with reality.
     setChecked(SpeechToTextManager::self()->isRecording());
