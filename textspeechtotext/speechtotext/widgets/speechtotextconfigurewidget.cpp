@@ -7,7 +7,6 @@
 #include "speechtotextconfigurewidget.h"
 
 #include "speechtotext/speechtotextmanager.h"
-#include "speechtotext/widgets/speechtotextlanguagecomboboxwidget.h"
 #include "speechtotextenginecomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
 #include "whisperspeechtotextcheckjob.h"
@@ -24,7 +23,6 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mSpeechToTextComboBox(new SpeechToTextEngineComboBoxWidget(this))
     , mSpeechToTextDevice(new SpeechToTextSelectDeviceWidget(this))
-    , mSpeechToTextLanguage(new SpeechToTextLanguageComboBoxWidget(this))
     , mWhisperInstallMessageWidget(new WhisperSpeechToTextInstallMessageWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -40,9 +38,6 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
 
     mSpeechToTextComboBox->setObjectName(u"mSpeechToTextComboBox"_s);
     mainLayout->addWidget(mSpeechToTextComboBox);
-
-    mSpeechToTextLanguage->setObjectName(u"mSpeechToTextLanguage"_s);
-    mainLayout->addWidget(mSpeechToTextLanguage);
 
     mSpeechToTextComboBox->fillEngine();
 
