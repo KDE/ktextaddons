@@ -9,6 +9,10 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QToolButton;
+namespace TextSpeechToText
+{
+class SpeechToTextToolButtonWidget;
+}
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextLineEdit;
@@ -57,6 +61,7 @@ private:
     QToolButton *const mSendMessage;
     QToolButton *const mAttachFile;
     QToolButton *const mConfigureTools;
+    TextSpeechToText::SpeechToTextToolButtonWidget *const mSpeechToTextButton;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QByteArray mUuid;
     QByteArray mChatId;

@@ -27,7 +27,10 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
+    auto topLayout = w.findChild<QVBoxLayout *>(u"topLayout"_s);
+    QVERIFY(topLayout);
+    // SpeechToTextToolButtonWidget has its own "mainLayout": look it up in topLayout
+    auto mainLayout = topLayout->findChild<QHBoxLayout *>(u"mainLayout"_s, Qt::FindDirectChildrenOnly);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     QCOMPARE(mainLayout->spacing(), 0);
@@ -58,6 +61,9 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mConfigureTools->text().isEmpty());
     QVERIFY(!mConfigureTools->toolTip().isEmpty());
     QVERIFY(mConfigureTools->isCheckable());
+
+    auto mSpeechToTextButton = w.findChild<QWidget *>(u"mSpeechToTextButton"_s);
+    QVERIFY(mSpeechToTextButton);
 }
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()

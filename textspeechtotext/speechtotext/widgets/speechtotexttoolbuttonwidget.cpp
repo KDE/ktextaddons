@@ -22,6 +22,7 @@ SpeechToTextToolButtonWidget::SpeechToTextToolButtonWidget(QWidget *parent)
 
     mToolButton->setObjectName(u"mToolButton"_s);
     mToolButton->setCheckable(true);
+    mToolButton->setAutoRaise(true);
     mainLayout->addWidget(mToolButton);
     connect(mToolButton, &QToolButton::clicked, this, &SpeechToTextToolButtonWidget::slotButtonClicked);
     connect(SpeechToTextManager::self(), &SpeechToTextManager::recordingChanged, this, [this](bool recording) {

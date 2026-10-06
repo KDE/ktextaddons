@@ -8,6 +8,7 @@
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextplugin.h"
+#include "textautogeneratetextglobalconfig.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
 #include "widgets/common/textautogeneratetextlineeditattachmentwidget.h"
 #include "widgets/toolswidget/textautogeneratetoolswidget.h"
@@ -16,6 +17,7 @@
 #include <QHBoxLayout>
 #include <QMimeDatabase>
 #include <QToolButton>
+#include <TextSpeechToText/SpeechToTextToolButtonWidget>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -27,6 +29,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     , mSendMessage(new QToolButton(this))
     , mAttachFile(new QToolButton(this))
     , mConfigureTools(new QToolButton(this))
+    , mSpeechToTextButton(new TextSpeechToText::SpeechToTextToolButtonWidget(this))
     , mManager(manager)
 {
     auto topLayout = new QVBoxLayout(this);
@@ -76,6 +79,13 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mTextAutoGenerateTextLineEdit->setObjectName(u"mTextAutoGenerateTextLineEdit"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineEdit, 0, Qt::AlignTop);
     mTextAutoGenerateTextLineEdit->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::TopEdge}));
+
+    mSpeechToTextButton->setObjectName(u"mSpeechToTextButton"_s);
+    mainLayout->addWidget(mSpeechToTextButton, 0, Qt::AlignTop);
+    mSpeechToTextButton->setVisible(TextAutogenerateTextGlobalConfig::self()->enableSpeechToText());
+    connect(mSpeechToTextButton, &TextSpeechToText::SpeechToTextToolButtonWidget::textAvailable, this, [this](const QString &text) {
+        mTextAutoGenerateTextLineEdit->insertPlainText(text);
+    });
 
     mSendMessage->setObjectName(u"mSendMessage"_s);
     mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);

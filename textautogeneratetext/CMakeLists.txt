@@ -538,6 +538,7 @@ target_link_libraries(
         Qt::Sql
     PRIVATE
         KF6::TextAutoGenerateTextMcpProtocolWidgets
+        KF6::TextSpeechToText
         KF6::WidgetsAddons
         KF6::TextWidgets
         KF6::ColorScheme
