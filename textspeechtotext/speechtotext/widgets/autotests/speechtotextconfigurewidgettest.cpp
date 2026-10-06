@@ -7,7 +7,6 @@
 
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
 #include "speechtotext/widgets/speechtotextenginecomboboxwidget.h"
-#include "speechtotext/widgets/speechtotextlanguagecomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include "whisperspeechtotextinstallmessagewidget.h"
 #include <QStandardPaths>
@@ -23,7 +22,7 @@ SpeechToTextConfigureWidgetTest::SpeechToTextConfigureWidgetTest(QObject *parent
 
 void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
 {
-    TextSpeechToText::SpeechToTextConfigureWidget w;
+    const TextSpeechToText::SpeechToTextConfigureWidget w;
 
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
@@ -34,9 +33,6 @@ void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
 
     auto mSpeechToTextDevice = w.findChild<TextSpeechToText::SpeechToTextSelectDeviceWidget *>(u"mSpeechToTextDevice"_s);
     QVERIFY(mSpeechToTextDevice);
-
-    auto mSpeechToTextLanguage = w.findChild<TextSpeechToText::SpeechToTextLanguageComboBoxWidget *>(u"mSpeechToTextLanguage"_s);
-    QVERIFY(mSpeechToTextLanguage);
 
     auto mWhisperInstallMessageWidget = w.findChild<WhisperSpeechToTextInstallMessageWidget *>(u"mWhisperInstallMessageWidget"_s);
     QVERIFY(mWhisperInstallMessageWidget);
