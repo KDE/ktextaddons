@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-05 00:44+0000\n"
+"POT-Creation-Date: 2026-10-07 00:46+0000\n"
 "PO-Revision-Date: 2026-09-30 21:14+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3111,40 +3111,40 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Ta bort"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:51
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Bifoga fil"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:62
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Image file %1"
 msgstr "Bildfil %1"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:65
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
 msgid "Audio file %1"
 msgstr "Ljudfil %1"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:70
 #, kde-format
 msgid "Text file %1"
 msgstr "Textfil %1"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
 msgstr "Välj fil"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:82
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Skicka"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:133
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3341,14 +3341,14 @@ msgid "Ask to AI"
 msgstr "Fråga till AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:150
+#: widgets/view/textautogeneratehistorylistview.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Ändra…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:201
+#: widgets/view/textautogeneratehistorylistview.cpp:200
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3879,48 +3879,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Ny chatt"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:159
+#: widgets/view/textautogeneratehistorylistview.cpp:158
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "Duplicera…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:171
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Ta bort som favorit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:171
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Gör till favorit"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:191
+#: widgets/view/textautogeneratehistorylistview.cpp:190
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Återställ"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:191
+#: widgets/view/textautogeneratehistorylistview.cpp:190
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arkivera"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Vill du ta bort diskussionen?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:206
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Ta bort diskussion"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:295
+#: widgets/view/textautogeneratehistorylistview.cpp:294
 #, kde-format
 msgid "No Archive Found."
 msgstr "Inget arkiv hittades."

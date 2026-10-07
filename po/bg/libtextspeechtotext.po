@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:44+0000\n"
+"POT-Creation-Date: 2026-10-07 00:46+0000\n"
 "PO-Revision-Date: 2026-09-22 22:40+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -164,7 +164,7 @@ msgstr "Бекендът на Whisper спря неочаквано."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:104
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "Whisper не е инсталиран. Липсва: %1"
@@ -329,7 +329,12 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Конфигуриране на преобразуване на говор в текст..."
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
+#, kde-format
+msgid "Test:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "Инсталацията на Whisper е повредена. Моля, преинсталирайте я."
@@ -339,11 +344,6 @@ msgstr "Инсталацията на Whisper е повредена. Моля, �
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Основна програма:"
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
-msgid "Language:"
-msgstr "Език:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -360,3 +360,6 @@ msgstr "Въвеждане:"
 #, kde-format
 msgid "Default"
 msgstr "Стандартен"
+
+#~ msgid "Language:"
+#~ msgstr "Език:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:44+0000\n"
+"POT-Creation-Date: 2026-10-07 00:46+0000\n"
 "PO-Revision-Date: 2026-09-30 19:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -165,7 +165,7 @@ msgstr "توقف الواجهة الخلفية لـ whisper بشكل غير مت
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:104
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "لم يُثبَّت Whisper. المفقود: %1"
@@ -328,7 +328,12 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "اضبط الكلام إلى نص"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
+#, kde-format
+msgid "Test:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "تنصيب whisper معطوب. أعد تنصيبه من فضلك."
@@ -338,11 +343,6 @@ msgstr "تنصيب whisper معطوب. أعد تنصيبه من فضلك."
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "المحرك:"
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
-msgid "Language:"
-msgstr "اللغة:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -359,3 +359,6 @@ msgstr "الإدخال:"
 #, kde-format
 msgid "Default"
 msgstr "المبدئي:"
+
+#~ msgid "Language:"
+#~ msgstr "اللغة:"

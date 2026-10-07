@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:44+0000\n"
+"POT-Creation-Date: 2026-10-07 00:46+0000\n"
 "PO-Revision-Date: 2024-07-14 10:35+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -162,7 +162,7 @@ msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:104
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr ""
@@ -326,7 +326,12 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Configurer la reconnaissance vocale"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
+#, kde-format
+msgid "Test:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr ""
@@ -336,12 +341,6 @@ msgstr ""
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Moteur :"
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
-msgid "Language:"
-msgstr "Langue"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -358,6 +357,11 @@ msgstr "Entrée :"
 #, kde-format
 msgid "Default"
 msgstr "Par défaut"
+
+#, fuzzy
+#~| msgid "Language"
+#~ msgid "Language:"
+#~ msgstr "Langue"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Translator"

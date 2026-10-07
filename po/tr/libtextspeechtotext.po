@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:44+0000\n"
-"PO-Revision-Date: 2026-09-30 09:57+0300\n"
+"POT-Creation-Date: 2026-10-07 00:46+0000\n"
+"PO-Revision-Date: 2026-10-06 20:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -164,7 +164,7 @@ msgstr "Whisper arka ucu beklenmedik bir biçimde durdu."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:104
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "Whisper kurulu değil. Eksik: %1"
@@ -325,9 +325,14 @@ msgstr "Seçili bir model olmadığı zaman kullanılır."
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Konuşmadan Metne’yi Yapılandır"
+msgstr "Dikteyi Yapılandır"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
+#, kde-format
+msgid "Test:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "Whisper kurulumu hasarlı gibi görünüyor. Lütfen onu yeniden kurun."
@@ -338,15 +343,10 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "İşletke:"
 
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
-msgid "Language:"
-msgstr "Dil:"
-
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
-msgstr "Konuşmadan Metne…"
+msgstr "Dikte…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:30
 #, kde-format
@@ -358,3 +358,6 @@ msgstr "Girdi:"
 #, kde-format
 msgid "Default"
 msgstr "Öntanımlı"
+
+#~ msgid "Language:"
+#~ msgstr "Dil:"

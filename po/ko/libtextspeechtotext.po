@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:44+0000\n"
+"POT-Creation-Date: 2026-10-07 00:46+0000\n"
 "PO-Revision-Date: 2026-10-03 23:28+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -164,7 +164,7 @@ msgstr "Whisper 백엔드가 예상하지 못하게 종료되었습니다."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:104
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "Whisper가 설치되지 않았습니다. 사용할 수 없음: %1"
@@ -328,7 +328,12 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "받아쓰기 설정"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
+#, kde-format
+msgid "Test:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "Whisper 설치가 잘못되었습니다. 다시 설치하십시오."
@@ -338,11 +343,6 @@ msgstr "Whisper 설치가 잘못되었습니다. 다시 설치하십시오."
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "엔진:"
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
-msgid "Language:"
-msgstr "언어:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -359,6 +359,9 @@ msgstr "입력:"
 #, kde-format
 msgid "Default"
 msgstr "기본값"
+
+#~ msgid "Language:"
+#~ msgstr "언어:"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Translator"
