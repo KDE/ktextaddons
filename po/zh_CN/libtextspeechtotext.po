@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 03:06+0000\n"
+"POT-Creation-Date: 2026-10-07 02:51+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -163,7 +163,7 @@ msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:84
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr ""
@@ -327,7 +327,7 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "配置语音到文本功能"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr ""
@@ -337,12 +337,6 @@ msgstr ""
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "引擎："
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Language"
-msgid "Language:"
-msgstr "语言"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -359,3 +353,8 @@ msgstr "输入："
 #, kde-format
 msgid "Default"
 msgstr "默认"
+
+#, fuzzy
+#~| msgid "Language"
+#~ msgid "Language:"
+#~ msgstr "语言"

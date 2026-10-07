@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 03:06+0000\n"
+"POT-Creation-Date: 2026-10-07 02:51+0000\n"
 "PO-Revision-Date: 2026-09-24 06:22+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -165,7 +165,7 @@ msgstr "უკანაბოლო whisper მოულოდნელად �
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:84
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "Whisper დაყენებული არაა. აკლია: %1"
@@ -331,7 +331,7 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "მოირგეთ საუბრიდან-ტექსტამდე"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "Whisper-ის გამოყენება შეუძლებელია. დააყენეთ ის თავიდან."
@@ -341,11 +341,6 @@ msgstr "Whisper-ის გამოყენება შეუძლებე�
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "ძრავა:"
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
-msgid "Language:"
-msgstr "ენა:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -362,6 +357,9 @@ msgstr "შეყვანა:"
 #, kde-format
 msgid "Default"
 msgstr "ნაგულისხმევი"
+
+#~ msgid "Language:"
+#~ msgstr "ენა:"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Translator"

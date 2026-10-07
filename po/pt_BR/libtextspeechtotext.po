@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 03:06+0000\n"
+"POT-Creation-Date: 2026-10-07 02:51+0000\n"
 "PO-Revision-Date: 2026-10-02 10:21-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -165,7 +165,7 @@ msgstr "O backend do Whisper parou inesperadamente."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:84
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
 msgstr "O Whisper não está instalado. Faltando: %1"
@@ -329,7 +329,7 @@ msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "Configurar texto para fala"
 
-#: speechtotext/widgets/speechtotextconfigurewidget.cpp:94
+#: speechtotext/widgets/speechtotextconfigurewidget.cpp:89
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
 msgstr "A instalação do Whisper está corrompida. Por favor, reinstale-o."
@@ -339,11 +339,6 @@ msgstr "A instalação do Whisper está corrompida. Por favor, reinstale-o."
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motor:"
-
-#: speechtotext/widgets/speechtotextlanguagecomboboxwidget.cpp:21
-#, kde-format
-msgid "Language:"
-msgstr "Idioma:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
@@ -360,3 +355,6 @@ msgstr "Entrada:"
 #, kde-format
 msgid "Default"
 msgstr "Padrão"
+
+#~ msgid "Language:"
+#~ msgstr "Idioma:"
