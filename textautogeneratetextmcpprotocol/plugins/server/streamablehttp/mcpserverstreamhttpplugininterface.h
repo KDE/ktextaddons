@@ -7,6 +7,7 @@
 
 #include "common/mcpprotocolplugininterface.h"
 #include "mcpprotocolserverplugin_export.h"
+class McpServerStreamableHttp;
 
 class MCPPROTOCOLSERVERPLUGIN_EXPORT McpServerStreamHttpPluginInterface : public TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
 {
@@ -18,4 +19,7 @@ public:
     void start() override;
     void stop() override;
     void send(const QJsonObject &obj) override;
+
+private:
+    McpServerStreamableHttp *const mServerStreamableHttp;
 };

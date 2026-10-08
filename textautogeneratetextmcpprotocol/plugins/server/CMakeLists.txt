@@ -24,6 +24,8 @@ target_sources(
         stdio/mcpserverstdio.cpp
         streamablehttp/mcpserverstreamhttpplugininterface.h
         streamablehttp/mcpserverstreamhttpplugininterface.cpp
+        streamablehttp/mcpserverstreamablehttp.h
+        streamablehttp/mcpserverstreamablehttp.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -53,6 +55,10 @@ set_target_properties(
         SOVERSION
             0
 )
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
 
 install(
     TARGETS

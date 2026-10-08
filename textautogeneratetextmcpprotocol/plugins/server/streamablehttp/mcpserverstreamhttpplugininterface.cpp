@@ -4,34 +4,33 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverstreamhttpplugininterface.h"
-#include "autogeneratetext_mcpprotocolserverplugin_lib_debug.h"
-#include <KLocalizedString>
+#include "streamablehttp/mcpserverstreamablehttp.h"
 
 McpServerStreamHttpPluginInterface::McpServerStreamHttpPluginInterface(QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface{parent}
+    , mServerStreamableHttp(new McpServerStreamableHttp(this, this))
 {
+    connect(mServerStreamableHttp, &McpServerStreamableHttp::started, this, &McpServerStreamHttpPluginInterface::started);
+    connect(mServerStreamableHttp, &McpServerStreamableHttp::received, this, &McpServerStreamHttpPluginInterface::received);
+    connect(mServerStreamableHttp, &McpServerStreamableHttp::error, this, &McpServerStreamHttpPluginInterface::error);
+    connect(mServerStreamableHttp, &McpServerStreamableHttp::finished, this, &McpServerStreamHttpPluginInterface::finished);
 }
 
 McpServerStreamHttpPluginInterface::~McpServerStreamHttpPluginInterface() = default;
 
 void McpServerStreamHttpPluginInterface::start()
 {
-    // TODO implement it. Inform user otherwise client waits forever
-    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Streamable HTTP transport is not implemented yet.";
-    Q_EMIT error(i18n("Streamable HTTP transport is not implemented yet."));
-    Q_EMIT finished();
+    mServerStreamableHttp->connection();
 }
 
 void McpServerStreamHttpPluginInterface::stop()
 {
-    // TODO not implemented yet
+    mServerStreamableHttp->stop();
 }
 
-void McpServerStreamHttpPluginInterface::send(const QJsonObject &)
+void McpServerStreamHttpPluginInterface::send(const QJsonObject &obj)
 {
-    // TODO
-    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Sending message is not implemented yet.";
-    Q_EMIT error(i18n("Sending message is not implemented yet."));
+    mServerStreamableHttp->send(obj);
 }
 
 #include "moc_mcpserverstreamhttpplugininterface.cpp"
