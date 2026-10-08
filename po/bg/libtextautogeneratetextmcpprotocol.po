@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-22 22:30+0200\n"
+"PO-Revision-Date: 2026-10-07 23:00+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -21,18 +21,16 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
-msgstr ""
+msgstr "SSE"
 
 #: core/server/mcpserver.cpp:105
-#, fuzzy, kde-format
-#| msgid "Standard IO"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Стандартен IO"
 
 #: core/server/mcpserver.cpp:107
-#, fuzzy, kde-format
-#| msgid "Streamable HTTP"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "HTTP с поточно предаване"
@@ -40,7 +38,7 @@ msgstr "HTTP с поточно предаване"
 #: plugins/client/sse/mcpclientsse.cpp:38
 #, kde-format
 msgid "Impossible to start client. Url is invalid."
-msgstr ""
+msgstr "Невъзможно е стартирането на клиента. Невалиден адрес."
 
 #: plugins/client/sse/mcpclientsse.cpp:81
 #: plugins/client/streamanblehttp/mcpclientstreamblehttpplugininterface.cpp:26
@@ -48,32 +46,33 @@ msgstr ""
 #: plugins/server/streamanblehttp/mcpserverstreamhttpplugininterface.cpp:26
 #, kde-format
 msgid "Sending message is not implemented yet."
-msgstr ""
+msgstr "Изпращането на съобщения все още не е внедрено."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:64
 #, kde-format
 msgid "Impossible to start client. Command is empty."
-msgstr ""
+msgstr "Невъзможно е стартирането на клиента. Липсва команда."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:85
 #, kde-format
 msgid "Impossible to send message. Client is not running."
 msgstr ""
+"Неуспешно изпращане на съобщението. Клиентската програма не е стартирана."
 
 #: plugins/server/sse/mcpserversse.cpp:38
 #, kde-format
 msgid "Impossible to start server. Url is invalid."
-msgstr ""
+msgstr "Невъзможно е стартирането на сървъра Невалиден адрес."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:51
 #, kde-format
 msgid "Impossible to start server. Command is empty."
-msgstr ""
+msgstr "Невъзможно е стартирането на сървъра Липсва команда."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:85
 #, kde-format
 msgid "Impossible to send message. Server is not running."
-msgstr ""
+msgstr "Неуспешно изпращане на съобщението. Сървърът не работи."
 
 #: widgets/server/addmcpserverdialog.cpp:21
 #, kde-format
@@ -95,22 +94,19 @@ msgstr "Вид:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:24
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Url:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "Адрес:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Command:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
 msgstr "Команда:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Arguments:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "Аргументи:"
@@ -122,8 +118,7 @@ msgid "Add Custom Header"
 msgstr "Добавяне на персонализиран заглавен ред"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Заглавие:"
@@ -164,8 +159,7 @@ msgid "Remove Header"
 msgstr "Премахване на заглавна част"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgctxt "@label"
 msgid "Headers:"
 msgstr "Заглавни части:"
@@ -206,16 +200,7 @@ msgid "Search…"
 msgstr "Търсене…"
 
 #: widgets/server/mcpserverwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Добавяне на сървър…"
-
-#~ msgid "Sse"
-#~ msgstr "Sse"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Add Instance…"
-#~ msgstr "Добавяне на екземпляр…"

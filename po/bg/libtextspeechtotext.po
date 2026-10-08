@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 02:51+0000\n"
-"PO-Revision-Date: 2026-09-22 22:23+0200\n"
+"PO-Revision-Date: 2026-10-07 22:51+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -195,16 +195,14 @@ msgid "Unable to download the %1 model: %2"
 msgstr "Неуспешно изтегляне на модела %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model."
+#, kde-format
 msgid "Unable to start %1"
-msgstr "Неуспешно изтегляне на модел %1."
+msgstr "Неуспешно стартиране на %1."
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model: %2"
+#, kde-format
 msgid "Unable to install module. Exit code: %1"
-msgstr "Неуспешно изтегляне на модела %1: %2"
+msgstr "Неуспешно инсталиране на модула. Код за грешка: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
 #, kde-format
@@ -355,6 +353,3 @@ msgstr "Въвеждане:"
 #, kde-format
 msgid "Default"
 msgstr "Стандартен"
-
-#~ msgid "Language:"
-#~ msgstr "Език:"
