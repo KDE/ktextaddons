@@ -326,6 +326,3 @@ msgstr "<h3><i>Какво е новото във версия %1 (неиздад
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>История на новостите</h1>"
-
-#~ msgid "..."
-#~ msgstr "..."

@@ -335,9 +335,9 @@ msgid "Refresh"
 msgstr "Обновяване"
 
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
-#, kde-format
+#, fuzzy, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "URL адресът е празен."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

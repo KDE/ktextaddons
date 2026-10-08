@@ -198,13 +198,13 @@ msgstr "Неуспешно изтегляне на модела %1: %2"
 #, fuzzy, kde-format
 #| msgid "Unable to download the %1 model."
 msgid "Unable to start %1"
-msgstr "Неуспешно изтегляне на модел %1."
+msgstr "Невъзможно е стартирането на %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
 #, fuzzy, kde-format
 #| msgid "Unable to download the %1 model: %2"
 msgid "Unable to install module. Exit code: %1"
-msgstr "Неуспешно изтегляне на модела %1: %2"
+msgstr "Неуспешна инсталация на модула. Код за изход: %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
 #, kde-format
@@ -330,9 +330,9 @@ msgid "Configure Speech To Text"
 msgstr "Конфигуриране на преобразуване на говор в текст..."
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "Тест:"
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
@@ -360,6 +360,3 @@ msgstr "Въвеждане:"
 #, kde-format
 msgid "Default"
 msgstr "Стандартен"
-
-#~ msgid "Language:"
-#~ msgstr "Език:"

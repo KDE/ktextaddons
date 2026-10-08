@@ -270,7 +270,7 @@ msgstr "%1: %2"
 #| msgid "Kokoro installation is broken. Please verify which you sysadmin."
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
-"Инсталацията на Kokoro е повредена. Моля, свържете се със системния "
+"Инсталацията на Kokoro е повредена. Моля, проверете със системния "
 "администратор."
 
 #: texttospeechwidget.cpp:56

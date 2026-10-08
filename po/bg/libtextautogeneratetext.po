@@ -43,13 +43,13 @@ msgstr "Файл Json"
 #, fuzzy, kde-format
 #| msgid "Impossible to start Ollama."
 msgid "Impossible to export file."
-msgstr "Невъзможно е да се стартира Ollama."
+msgstr "Невозможност за експортиране на файла."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
 #, fuzzy, kde-format
 #| msgid "Failed to write to file: %1"
 msgid "Failed to parse JSon file: %1"
-msgstr "Неуспешно записване във файл: %1"
+msgstr "Грешка при разчитане на JSON файла: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -60,12 +60,12 @@ msgstr "Неуспешно отваряне на файл за четене: %1"
 #, fuzzy, kde-format
 #| msgid "Impossible to start Ollama."
 msgid "Impossible to import file."
-msgstr "Невъзможно е да се стартира Ollama."
+msgstr "Неуспешен Import на файла."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
-#, kde-format
+#, fuzzy, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Инструментът \"%1\" не е наличен."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
@@ -74,33 +74,33 @@ msgstr ""
 #| msgctxt "@title:window"
 #| msgid "Error"
 msgid "Error: %1"
-msgstr "Грешка"
+msgstr "Грешка: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Грешка: сървърът е спрян."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:55
-#, kde-format
+#, fuzzy, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "Потребителят отказа изпълнението на инструмент \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
-#, kde-format
+#, fuzzy, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Извикване на инструмент „%1“…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
-#, kde-format
+#, fuzzy, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Грешка: невъзможно извикване на инструмент „%1“."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:74
-#, kde-format
+#, fuzzy, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Сървърът е невалиден или изключен."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -273,9 +273,9 @@ msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Токен за завършване:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
-#, kde-format
+#, fuzzy, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "MCP сървър: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
@@ -306,9 +306,9 @@ msgid "Activate: %1"
 msgstr "Активиране на: %1"
 
 #: core/tools/textautogeneratetoolcalljob.cpp:47
-#, kde-format
+#, fuzzy, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Инструмент \"%1\" не е намерен."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3284,9 +3284,9 @@ msgid "Add Instance…"
 msgstr "Добавяне на екземпляр…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
-#, kde-format
+#, fuzzy, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "MCP сървърът \"%1\" иска да стартира инструмента \"%2\"."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
 #, fuzzy, kde-format
@@ -3295,32 +3295,34 @@ msgstr ""
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Аргументи:"
+msgstr ""
+"Аргументи:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Инструменти"
+msgstr "Стартиране на инструмента"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Разрешаване"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Винаги да се позволява този сървър"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Отказ"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3394,7 +3396,7 @@ msgstr "Приставки за текст:"
 #, fuzzy, kde-format
 #| msgid "Tool identifier: %1"
 msgid "Text identifier: %1"
-msgstr "Идентификатор на инструмент: %1"
+msgstr "Идентификатор на текста: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
@@ -3738,24 +3740,24 @@ msgstr "Инструменти:"
 #| msgctxt "@info:placeholder"
 #| msgid "No tag selected"
 msgid "Not connected"
-msgstr "Няма избран таг"
+msgstr "Не е свързано"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
-#, kde-format
+#, fuzzy, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Свързване…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 инструмент"
+msgstr[1] "%1 инструмента"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
-#, kde-format
+#, fuzzy, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Инструменти на MCP сървър \"%1\" (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
@@ -3929,7 +3931,3 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
-
-#~ msgctxt "@title"
-#~ msgid "Copy Block Code"
-#~ msgstr "Копиране на блок кода"
