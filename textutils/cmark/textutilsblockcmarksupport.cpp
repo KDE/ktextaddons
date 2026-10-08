@@ -191,7 +191,8 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
 
     bool isALink = false;
 
-    while (cmark_iter_next(iter) != CMARK_EVENT_DONE) {
+    cmark_event_type event;
+    while ((event = cmark_iter_next(iter)) != CMARK_EVENT_DONE) {
         cmark_node *node = cmark_iter_get_node(iter);
         qCDebug(TEXTUTILS_CMARK_LOG) << "type element " << cmark_node_get_type_string(node);
         switch (cmark_node_get_type(node)) {
@@ -260,7 +261,8 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
         case CMARK_NODE_LINK: {
             // const char *literal = cmark_node_get_url(node);
             // qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_LINK:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
-            isALink = true;
+            // The iterator also visits the link on exit: only skip the text inside it, not the text after it.
+            isALink = (event == CMARK_EVENT_ENTER);
             break;
         }
         default:
