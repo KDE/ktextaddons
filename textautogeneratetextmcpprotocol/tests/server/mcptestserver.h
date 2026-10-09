@@ -5,20 +5,14 @@
 */
 #pragma once
 
-#include <QJsonObject>
-#include <QObject>
-#include <QSet>
 #include <QUrl>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
-namespace TextAutoGenerateTextMcpProtocolCore
-{
-class McpProtocolServer;
-}
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerProtocolManager>
 /*
- * Minimal MCP server used to test client: answers initialize, ping, tools, prompts and resource templates requests.
+ * Minimal MCP server used to test client: declares tools, protocol is handled by McpProtocolServerProtocolManager.
+ * Answers too prompts and resource templates requests.
  * Tools list is paginated (2 tools by page) to test pagination.
  */
-class McpTestServer : public QObject
+class McpTestServer : public TextAutoGenerateTextMcpProtocolCore::McpProtocolServerProtocolManager
 {
     Q_OBJECT
 public:
@@ -26,35 +20,19 @@ public:
     ~McpTestServer() override;
 
     void start(const QUrl &url);
-    void stop();
-    [[nodiscard]] bool isRunning() const;
 
     // Add or remove "reverse" tool and send notifications/tools/list_changed
     void toggleExtraTool();
     // Send a ping request to client (in event stream)
     void pingClient();
 
-Q_SIGNALS:
-    void logMessage(const QString &str);
-    void runningChanged(bool running);
+protected:
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities capabilities() const override;
+    bool handleCustomRequest(const QJsonValue &id, const QByteArray &method, const QJsonObject &params) override;
 
 private:
-    void slotReceived(const QJsonObject &obj);
-    void handleRequest(const QJsonObject &obj);
-    void send(const QJsonObject &obj);
-    void sendResult(const QJsonValue &id, const QJsonObject &result);
-    void sendError(const QJsonValue &id, int code, const QString &message);
-    void listTools(const QJsonValue &id, const QJsonObject &params);
-    void callTool(const QJsonValue &id, const QJsonObject &params);
     void getPrompt(const QJsonValue &id, const QJsonObject &params);
-    [[nodiscard]] QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> tools() const;
-    [[nodiscard]] static QString idToString(const QJsonValue &id);
-    [[nodiscard]] static QJsonObject textResult(const QString &text, bool isError = false);
 
-    TextAutoGenerateTextMcpProtocolCore::McpProtocolServer *const mServer;
-    // Requests of "slow" tool not answered yet (can be cancelled by client)
-    QSet<QString> mSlowRequests;
     int mServerRequestId = 0;
     bool mExtraTool = false;
-    bool mRunning = false;
 };
