@@ -5,132 +5,124 @@
 */
 #include "mcpserverstdio.h"
 #include "autogeneratetext_mcpprotocolserverplugin_lib_debug.h"
-#include "stdio/mcpserverstdioplugininterface.h"
 #include <KLocalizedString>
-#include <KShell>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QProcess>
+#include <QSocketNotifier>
+#ifdef Q_OS_UNIX
+#include <cerrno>
+#include <unistd.h>
+#endif
 
 namespace
 {
 // Maximum size of a message (it can contain images or files)
 constexpr qsizetype maxBufferSize = 64 * 1024 * 1024;
+constexpr qsizetype readSize = 64 * 1024;
+constexpr int standardInput = 0;
+constexpr int standardOutput = 1;
 }
 
-McpServerStdio::McpServerStdio(McpServerStdioPluginInterface *interface, QObject *parent)
+McpServerStdio::McpServerStdio(QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpBase{parent}
-    , mProcess(new QProcess(this))
-    , mInterface(interface)
 {
-    mProcess->setProcessChannelMode(QProcess::SeparateChannels);
-    connect(mProcess, &QProcess::errorOccurred, this, [this](QProcess::ProcessError processError) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << mProcess->errorString();
-        Q_EMIT error(mProcess->errorString());
-        // QProcess doesn't emit finished() when the process failed to start
-        if (processError == QProcess::FailedToStart) {
-            Q_EMIT finished();
-        }
-    });
-    connect(mProcess, &QProcess::started, this, &McpServerStdio::started);
-    connect(mProcess, &QProcess::finished, this, &McpServerStdio::finished);
-    connect(mProcess, &QProcess::readyReadStandardOutput, this, &McpServerStdio::slotReadStandardOutput);
-    connect(mProcess, &QProcess::readyReadStandardError, this, &McpServerStdio::slotReadStandardError);
 }
 
 McpServerStdio::~McpServerStdio()
 {
     // Don't emit signals while we are destroyed.
-    mProcess->disconnect(this);
-    stop();
+    if (mNotifier) {
+        mNotifier->setEnabled(false);
+    }
 }
 
 bool McpServerStdio::isRunning() const
 {
-    return mProcess->state() != QProcess::NotRunning;
+    return mStarted;
 }
 
 void McpServerStdio::connection()
 {
-    if (isRunning()) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Server already started:" << mProcess->program();
+    if (mStarted) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Server already started";
         return;
     }
-    const auto settings = mInterface->protocolSettings();
-    if (settings.command().isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to start server. Command is empty.";
-        Q_EMIT error(i18n("Impossible to start server. Command is empty."));
-        return;
-    }
-    // Support shell quoting ('a b', "a b", a\ b)
-    KShell::Errors splitError = KShell::NoError;
-    const QStringList arguments = KShell::splitArgs(settings.arguments(), KShell::NoOptions, &splitError);
-    if (splitError != KShell::NoError) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to start server. Invalid arguments:" << settings.arguments();
-        Q_EMIT error(i18n("Impossible to start server. Arguments are invalid."));
-        // Allow to restart with other settings
+#ifdef Q_OS_UNIX
+    if (!mStandardOutput.isOpen() && !mStandardOutput.open(standardOutput, QIODevice::WriteOnly | QIODevice::Unbuffered)) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to open stdout:" << mStandardOutput.errorString();
+        Q_EMIT error(i18n("Impossible to start server: %1", mStandardOutput.errorString()));
         Q_EMIT finished();
         return;
     }
-    mBuffer.clear();
-    mProcess->setProgram(settings.command());
-    mProcess->setArguments(arguments);
-    // Always set environment: process is reused, previous environment must not be kept
-    QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
-    const QMap<QString, QString> environments = settings.environments();
-    for (auto it = environments.cbegin(); it != environments.cend(); ++it) {
-        processEnvironment.insert(it.key(), it.value());
+    if (!mNotifier) {
+        mNotifier = new QSocketNotifier(standardInput, QSocketNotifier::Read, this);
+        connect(mNotifier, &QSocketNotifier::activated, this, &McpServerStdio::slotReadStandardInput);
     }
-    mProcess->setProcessEnvironment(processEnvironment);
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Starting" << mProcess->program() << "with" << mProcess->arguments().count() << "arguments";
-    mProcess->start(QIODevice::ReadWrite);
+    mBuffer.clear();
+    mNotifier->setEnabled(true);
+    mStarted = true;
+    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Listen on stdin";
+    Q_EMIT started();
+#else
+    // QSocketNotifier doesn't support pipes on Windows
+    qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Stdio server is not supported on this platform";
+    Q_EMIT error(i18n("Stdio server is not supported on this platform."));
+    Q_EMIT finished();
+#endif
 }
 
 void McpServerStdio::stop()
 {
-    if (!isRunning()) {
+    if (!mStarted) {
         return;
     }
-    // Close stdin first and let server exit, then SIGTERM, then SIGKILL
-    mProcess->closeWriteChannel();
-    if (mProcess->waitForFinished(500)) {
-        return;
-    }
-    mProcess->terminate();
-    if (!mProcess->waitForFinished(1000)) {
-        mProcess->kill();
-        mProcess->waitForFinished(1000);
-    }
+    mNotifier->setEnabled(false);
+    mBuffer.clear();
+    mStarted = false;
+    Q_EMIT finished();
 }
 
 void McpServerStdio::send(const QJsonObject &obj)
 {
-    if (mProcess->state() == QProcess::NotRunning) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to send message. Server is not running." << obj;
-        Q_EMIT error(i18n("Impossible to send message. Server is not running."));
+    if (!mStarted) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Server not started. Can't send message";
+        Q_EMIT error(i18n("Server is not started."));
         return;
     }
-    const auto data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
+    // Compact json doesn't contain newline: one message by line
+    const QByteArray data = QJsonDocument(obj).toJson(QJsonDocument::Compact) + '\n';
     qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << " send " << data;
-    if (mProcess->write(data + '\n') == -1) {
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to send message:" << mProcess->errorString();
-        Q_EMIT error(mProcess->errorString());
+    if (mStandardOutput.write(data) != data.size()) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Impossible to send message:" << mStandardOutput.errorString();
+        Q_EMIT error(mStandardOutput.errorString());
     }
 }
 
-void McpServerStdio::slotReadStandardOutput()
+void McpServerStdio::slotReadStandardInput()
 {
-    // Messages are newline delimited json, a read can contain several of them or an incomplete one.
-    mBuffer += mProcess->readAllStandardOutput();
-    if (mBuffer.size() > maxBufferSize && !mBuffer.contains('\n')) {
-        // Invalid output (no newline), don't let buffer grow forever
-        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Message too big, drop it";
-        mBuffer.clear();
-        Q_EMIT error(i18n("Message received from server is too big."));
+#ifdef Q_OS_UNIX
+    char data[readSize];
+    const ssize_t size = ::read(standardInput, data, sizeof(data));
+    if (size < 0 && (errno == EINTR || errno == EAGAIN)) {
         return;
     }
+    if (size <= 0) {
+        // Client closed stdin: server must exit
+        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "stdin closed";
+        stop();
+        return;
+    }
+    mBuffer.append(data, size);
+    processBuffer();
+#endif
+}
+
+void McpServerStdio::processBuffer()
+{
+    // Messages are newline delimited json, a read can contain several of them or an incomplete one.
     qsizetype index = -1;
-    while ((index = mBuffer.indexOf('\n')) != -1) {
+    while (mStarted && (index = mBuffer.indexOf('\n')) != -1) {
         const QByteArray line = mBuffer.left(index).trimmed();
         mBuffer.remove(0, index + 1);
         if (line.isEmpty()) {
@@ -138,20 +130,29 @@ void McpServerStdio::slotReadStandardOutput()
         }
         QJsonParseError parseError;
         const QJsonDocument doc = QJsonDocument::fromJson(line, &parseError);
-        if (parseError.error != QJsonParseError::NoError || !doc.isObject()) {
-            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Invalid json received:" << line << parseError.errorString();
+        if (parseError.error != QJsonParseError::NoError) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Invalid json received:" << parseError.errorString();
             continue;
         }
-        qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << " received " << doc;
-        Q_EMIT received(doc.object());
+        if (doc.isObject()) {
+            qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << " received " << doc;
+            Q_EMIT received(doc.object());
+        } else if (doc.isArray()) {
+            // JSON-RPC batch (protocol 2025-03-26)
+            const QJsonArray array = doc.array();
+            for (const auto &value : array) {
+                if (value.isObject()) {
+                    Q_EMIT received(value.toObject());
+                }
+            }
+        }
     }
-}
-
-void McpServerStdio::slotReadStandardError()
-{
-    // Servers use stderr for logging.
-    const QByteArray errorOutput = mProcess->readAllStandardError();
-    qCDebug(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "stderr:" << errorOutput;
+    if (mBuffer.size() > maxBufferSize) {
+        // Invalid input (no newline), don't let buffer grow forever
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Message too big, drop it";
+        mBuffer.clear();
+        Q_EMIT error(i18n("Message received from client is too big."));
+    }
 }
 
 #include "moc_mcpserverstdio.cpp"

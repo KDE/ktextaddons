@@ -68,16 +68,17 @@ void McpProtocolServerProtocolManager::setSettings(const McpProtocolSettings &se
 
 void McpProtocolServerProtocolManager::start()
 {
-    if (!mSettings.isValid()) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Settings is invalid. It's a bug";
-        return;
-    }
+    // Transport checks settings: stdio server doesn't need any
     mServer->setSettings(mSettings);
     if (!mServer->canStart()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server can not start";
         return;
     }
-    Q_EMIT logMessage(i18n("Starting server on %1", mSettings.serverUrl().toString()));
+    if (mSettings.serverUrl().isEmpty()) {
+        Q_EMIT logMessage(i18n("Starting server"));
+    } else {
+        Q_EMIT logMessage(i18n("Starting server on %1", mSettings.serverUrl().toString()));
+    }
     mServer->start();
 }
 

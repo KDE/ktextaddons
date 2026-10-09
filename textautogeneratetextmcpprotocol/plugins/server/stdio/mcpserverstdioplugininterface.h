@@ -16,6 +16,7 @@ public:
 
     void start() override;
     void stop() override;
+    [[nodiscard]] bool canStart() const override;
 
     void send(const QJsonObject &obj) override;
 

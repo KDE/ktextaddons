@@ -26,7 +26,7 @@ public:
 
     void setSettings(const McpProtocolSettings &settings);
 
-    [[nodiscard]] bool canStart() const;
+    [[nodiscard]] virtual bool canStart() const;
 
     virtual void send(const QJsonObject &obj) = 0;
 

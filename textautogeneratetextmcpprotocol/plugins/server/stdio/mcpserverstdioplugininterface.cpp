@@ -8,7 +8,7 @@
 
 McpServerStdioPluginInterface::McpServerStdioPluginInterface(QObject *parent)
     : TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface{parent}
-    , mServerStdio(new McpServerStdio(this, this))
+    , mServerStdio(new McpServerStdio(this))
 {
     connect(mServerStdio, &McpServerStdio::started, this, &McpServerStdioPluginInterface::started);
     connect(mServerStdio, &McpServerStdio::received, this, &McpServerStdioPluginInterface::received);
@@ -17,6 +17,12 @@ McpServerStdioPluginInterface::McpServerStdioPluginInterface(QObject *parent)
 }
 
 McpServerStdioPluginInterface::~McpServerStdioPluginInterface() = default;
+
+bool McpServerStdioPluginInterface::canStart() const
+{
+    // Client launches server: no settings needed
+    return true;
+}
 
 void McpServerStdioPluginInterface::start()
 {
