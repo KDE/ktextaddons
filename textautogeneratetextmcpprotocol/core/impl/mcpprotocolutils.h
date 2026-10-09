@@ -259,8 +259,8 @@ using JSONRPCMessage =
 embeddedResourceResourceFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue embeddedResourceResourceToJson(const EmbeddedResourceResource &val);
 
-[[nodiscard]] RequestId requestIdFromJson(const QJsonValue &val);
-[[nodiscard]] QJsonValue requestIdToJson(const RequestId &val);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT RequestId requestIdFromJson(const QJsonValue &val);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QJsonValue requestIdToJson(const RequestId &val);
 
 [[nodiscard]] ProgressToken progressTokenFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue progressTokenToJson(const ProgressToken &val);

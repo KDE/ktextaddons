@@ -17,6 +17,7 @@
 #include <QTimer>
 #include <QVBoxLayout>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
+
 using namespace Qt::Literals::StringLiterals;
 using TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager;
 using MethodType = TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager::MethodType;

@@ -7,11 +7,18 @@
 #include <QDateTime>
 #include <QJsonDocument>
 #include <QTimer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCResultResponse>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 using namespace Qt::Literals::StringLiterals;
-using TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion;
+using namespace TextAutoGenerateTextMcpProtocolCore;
+using McpProtocolUtils::ProtocolVersion;
 namespace
 {
 constexpr int toolsPageSize = 2;
@@ -86,13 +93,15 @@ void McpTestServer::toggleExtraTool()
 {
     mExtraTool = !mExtraTool;
     Q_EMIT logMessage(mExtraTool ? u"Tool \"reverse\" added"_s : u"Tool \"reverse\" removed"_s);
-    send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, u"notifications/tools/list_changed"_s}});
+    send(McpProtocolToolListChangedNotification::toJson({}));
 }
 
 void McpTestServer::pingClient()
 {
     ++mServerRequestId;
-    send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, u"server-%1"_s.arg(mServerRequestId)}, {"method"_L1, u"ping"_s}});
+    McpProtocolPingRequest request;
+    request.setId(u"server-%1"_s.arg(mServerRequestId));
+    send(McpProtocolPingRequest::toJson(request));
 }
 
 void McpTestServer::send(const QJsonObject &obj)
@@ -103,12 +112,23 @@ void McpTestServer::send(const QJsonObject &obj)
 
 void McpTestServer::sendResult(const QJsonValue &id, const QJsonObject &result)
 {
-    send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, id}, {"result"_L1, result}});
+    McpProtocolResult protocolResult;
+    protocolResult.setAdditionalProperties(result);
+    McpProtocolJSONRPCResultResponse response;
+    response.setId(McpProtocolUtils::requestIdFromJson(id));
+    response.setResult(protocolResult);
+    send(McpProtocolJSONRPCResultResponse::toJson(response));
 }
 
 void McpTestServer::sendError(const QJsonValue &id, int code, const QString &message)
 {
-    send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, id}, {"error"_L1, QJsonObject{{"code"_L1, code}, {"message"_L1, message}}}});
+    McpProtocolError error;
+    error.setCode(code);
+    error.setMessage(message);
+    McpProtocolJSONRPCErrorResponse response;
+    response.setId(McpProtocolUtils::requestIdFromJson(id));
+    response.setError(error);
+    send(McpProtocolJSONRPCErrorResponse::toJson(response));
 }
 
 QString McpTestServer::idToString(const QJsonValue &id)
