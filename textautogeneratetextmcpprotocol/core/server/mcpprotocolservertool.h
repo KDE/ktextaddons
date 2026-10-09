@@ -7,6 +7,7 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
+class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolServerToolCall;
@@ -44,6 +45,11 @@ public:
      * \param call
      */
     virtual void call(TextAutoGenerateTextMcpProtocolCore::McpProtocolServerToolCall *call) = 0;
+
+    [[nodiscard]] static McpProtocolTool
+    createTool(const QString &name, const QString &description, const QMap<QString, QJsonObject> &properties = {}, const QStringList &required = {});
+
+    [[nodiscard]] static QJsonObject schemaProperty(const QString &type, const QString &description);
 
 private:
     Q_DISABLE_COPY_MOVE(McpProtocolServerTool)

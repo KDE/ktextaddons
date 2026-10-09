@@ -34,25 +34,6 @@ namespace
 {
 constexpr int toolsPageSize = 2;
 
-McpProtocolTool tool(const QString &name, const QString &description, const QMap<QString, QJsonObject> &properties = {}, const QStringList &required = {})
-{
-    McpProtocolTool::InputSchema schema;
-    schema.mProperties = properties;
-    if (!required.isEmpty()) {
-        schema.mRequired = required;
-    }
-    McpProtocolTool tool;
-    tool.setName(name);
-    tool.setDescription(description);
-    tool.setInputSchema(schema);
-    return tool;
-}
-
-QJsonObject schemaProperty(const QString &type, const QString &description)
-{
-    return QJsonObject{{"type"_L1, type}, {"description"_L1, description}};
-}
-
 // Tool defined by a function
 class FunctionTool : public McpProtocolServerTool
 {
@@ -95,17 +76,22 @@ McpTestServer::McpTestServer(QObject *parent)
     setInstructions(u"Test server for KTextAddons MCP client"_s);
     setToolsPageSize(toolsPageSize);
 
-    addFunctionTool(this,
-                    tool(u"echo"_s, u"Return text"_s, QMap<QString, QJsonObject>{{u"text"_s, schemaProperty(u"string"_s, u"Text to return"_s)}}, {u"text"_s}),
-                    [](McpProtocolServerToolCall *call) {
-                        call->finishWithText(call->arguments().value(u"text"_s).toString());
-                    });
     addFunctionTool(
         this,
-        tool(u"add"_s,
-             u"Add two numbers"_s,
-             QMap<QString, QJsonObject>{{u"a"_s, schemaProperty(u"number"_s, u"First number"_s)}, {u"b"_s, schemaProperty(u"number"_s, u"Second number"_s)}},
-             {u"a"_s, u"b"_s}),
+        McpProtocolServerTool::createTool(u"echo"_s,
+                                          u"Return text"_s,
+                                          QMap<QString, QJsonObject>{{u"text"_s, McpProtocolServerTool::schemaProperty(u"string"_s, u"Text to return"_s)}},
+                                          {u"text"_s}),
+        [](McpProtocolServerToolCall *call) {
+            call->finishWithText(call->arguments().value(u"text"_s).toString());
+        });
+    addFunctionTool(
+        this,
+        McpProtocolServerTool::createTool(u"add"_s,
+                                          u"Add two numbers"_s,
+                                          QMap<QString, QJsonObject>{{u"a"_s, McpProtocolServerTool::schemaProperty(u"number"_s, u"First number"_s)},
+                                                                     {u"b"_s, McpProtocolServerTool::schemaProperty(u"number"_s, u"Second number"_s)}},
+                                          {u"a"_s, u"b"_s}),
         [](McpProtocolServerToolCall *call) {
             const QMap<QString, QJsonValue> arguments = call->arguments();
             if (!arguments.value(u"a"_s).isDouble() || !arguments.value(u"b"_s).isDouble()) {
@@ -114,16 +100,17 @@ McpTestServer::McpTestServer(QObject *parent)
             }
             call->finishWithText(QString::number(arguments.value(u"a"_s).toDouble() + arguments.value(u"b"_s).toDouble()));
         });
-    addFunctionTool(this, tool(u"current_time"_s, u"Return current date and time"_s), [](McpProtocolServerToolCall *call) {
+    addFunctionTool(this, McpProtocolServerTool::createTool(u"current_time"_s, u"Return current date and time"_s), [](McpProtocolServerToolCall *call) {
         call->finishWithText(QDateTime::currentDateTime().toString(Qt::ISODate));
     });
-    addFunctionTool(this, tool(u"fail"_s, u"Always return a tool error (isError)"_s), [](McpProtocolServerToolCall *call) {
+    addFunctionTool(this, McpProtocolServerTool::createTool(u"fail"_s, u"Always return a tool error (isError)"_s), [](McpProtocolServerToolCall *call) {
         call->finishWithText(u"This tool always fails"_s, true);
     });
     addFunctionTool(this,
-                    tool(u"slow"_s,
-                         u"Answer after a delay (to test timeout and cancel)"_s,
-                         QMap<QString, QJsonObject>{{u"milliseconds"_s, schemaProperty(u"integer"_s, u"Delay in milliseconds"_s)}}),
+                    McpProtocolServerTool::createTool(
+                        u"slow"_s,
+                        u"Answer after a delay (to test timeout and cancel)"_s,
+                        QMap<QString, QJsonObject>{{u"milliseconds"_s, McpProtocolServerTool::schemaProperty(u"integer"_s, u"Delay in milliseconds"_s)}}),
                     [](McpProtocolServerToolCall *call) {
                         const int delay = call->arguments().value(u"milliseconds"_s).toInt(2000);
                         // call is the context: timer is dropped when request is cancelled (call deleted)
@@ -149,7 +136,10 @@ void McpTestServer::toggleExtraTool()
     if (mExtraTool) {
         addFunctionTool(
             this,
-            tool(u"reverse"_s, u"Reverse text"_s, QMap<QString, QJsonObject>{{u"text"_s, schemaProperty(u"string"_s, u"Text to reverse"_s)}}, {u"text"_s}),
+            McpProtocolServerTool::createTool(u"reverse"_s,
+                                              u"Reverse text"_s,
+                                              QMap<QString, QJsonObject>{{u"text"_s, McpProtocolServerTool::schemaProperty(u"string"_s, u"Text to reverse"_s)}},
+                                              {u"text"_s}),
             [](McpProtocolServerToolCall *call) {
                 QString text = call->arguments().value(u"text"_s).toString();
                 std::reverse(text.begin(), text.end());
