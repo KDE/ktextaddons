@@ -7,13 +7,38 @@
 #include <QDateTime>
 #include <QJsonDocument>
 #include <QTimer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCResultResponse>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPaginatedRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPrompt>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptArgument>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceTemplate>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerCapabilities>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 using namespace Qt::Literals::StringLiterals;
@@ -26,13 +51,18 @@ constexpr int toolsPageSize = 2;
 constexpr int methodNotFoundCode = -32601;
 constexpr int invalidParamsCode = -32602;
 
-QJsonObject tool(const QString &name, const QString &description, const QJsonObject &properties = {}, const QStringList &required = {})
+McpProtocolTool tool(const QString &name, const QString &description, const QMap<QString, QJsonObject> &properties = {}, const QStringList &required = {})
 {
-    QJsonObject schema{{"type"_L1, u"object"_s}, {"properties"_L1, properties}};
+    McpProtocolTool::InputSchema schema;
+    schema.mProperties = properties;
     if (!required.isEmpty()) {
-        schema["required"_L1] = QJsonArray::fromStringList(required);
+        schema.mRequired = required;
     }
-    return QJsonObject{{"name"_L1, name}, {"description"_L1, description}, {"inputSchema"_L1, schema}};
+    McpProtocolTool tool;
+    tool.setName(name);
+    tool.setDescription(description);
+    tool.setInputSchema(schema);
+    return tool;
 }
 
 QJsonObject schemaProperty(const QString &type, const QString &description)
@@ -138,11 +168,14 @@ QString McpTestServer::idToString(const QJsonValue &id)
 
 QJsonObject McpTestServer::textResult(const QString &text, bool isError)
 {
-    QJsonObject result{{"content"_L1, QJsonArray{QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, text}}}}};
+    McpProtocolTextContent content;
+    content.setText(text);
+    McpProtocolCallToolResult result;
+    result.setContent({content});
     if (isError) {
-        result["isError"_L1] = true;
+        result.setIsError(true);
     }
-    return result;
+    return McpProtocolCallToolResult::toJson(result);
 }
 
 void McpTestServer::slotReceived(const QJsonObject &obj)
@@ -167,108 +200,126 @@ void McpTestServer::slotReceived(const QJsonObject &obj)
 void McpTestServer::handleRequest(const QJsonObject &obj)
 {
     const QJsonValue id = obj.value("id"_L1);
-    const QString method = obj.value("method"_L1).toString();
+    const QByteArray method = obj.value("method"_L1).toString().toLatin1();
     const QJsonObject params = obj.value("params"_L1).toObject();
-    if (method == "initialize"_L1) {
+    if (method == McpProtocolInitializeRequest::type()) {
         // Use version of client when we support it
-        QString version = params.value("protocolVersion"_L1).toString();
-        if (TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(version) == ProtocolVersion::Unknown) {
-            version = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(ProtocolVersion::V2025_11_25);
+        QString version = McpProtocolInitializeRequestParams::fromJson(params).protocolVersion();
+        if (McpProtocolUtils::convertProtocolVersionFromString(version) == ProtocolVersion::Unknown) {
+            version = McpProtocolUtils::convertProtocolVersionToString(ProtocolVersion::V2025_11_25);
         }
-        sendResult(id,
-                   QJsonObject{{"protocolVersion"_L1, version},
-                               {"capabilities"_L1,
-                                QJsonObject{{"tools"_L1, QJsonObject{{"listChanged"_L1, true}}},
-                                            {"prompts"_L1, QJsonObject{{"listChanged"_L1, false}}},
-                                            {"resources"_L1, QJsonObject{}}}},
-                               {"serverInfo"_L1, QJsonObject{{"name"_L1, u"mcpserver_gui"_s}, {"version"_L1, u"1.0"_s}}},
-                               {"instructions"_L1, u"Test server for KTextAddons MCP client"_s}});
-    } else if (method == "ping"_L1) {
+        McpProtocolServerCapabilities capabilities;
+        capabilities.setTools(McpProtocolServerCapabilities::Tools().listChanged(true));
+        capabilities.setPrompts(McpProtocolServerCapabilities::Prompts().listChanged(false));
+        capabilities.setResources(McpProtocolServerCapabilities::Resources());
+
+        McpProtocolImplementation serverInfo;
+        serverInfo.setName(u"mcpserver_gui"_s);
+        serverInfo.setVersion(u"1.0"_s);
+
+        McpProtocolInitializeResult result;
+        result.setProtocolVersion(version);
+        result.setCapabilities(capabilities);
+        result.setServerInfo(serverInfo);
+        result.setInstructions(u"Test server for KTextAddons MCP client"_s);
+        sendResult(id, McpProtocolInitializeResult::toJson(result));
+    } else if (method == McpProtocolPingRequest::type()) {
         sendResult(id, {});
-    } else if (method == "tools/list"_L1) {
+    } else if (method == McpProtocolListToolsRequest::type()) {
         listTools(id, params);
-    } else if (method == "tools/call"_L1) {
+    } else if (method == McpProtocolCallToolRequest::type()) {
         callTool(id, params);
-    } else if (method == "prompts/list"_L1) {
-        const QJsonObject prompt{
-            {"name"_L1, u"greeting"_s},
-            {"description"_L1, u"Say hello to someone"_s},
-            {"arguments"_L1, QJsonArray{QJsonObject{{"name"_L1, u"name"_s}, {"description"_L1, u"Name of the person"_s}, {"required"_L1, true}}}}};
-        sendResult(id, QJsonObject{{"prompts"_L1, QJsonArray{prompt}}});
-    } else if (method == "prompts/get"_L1) {
+    } else if (method == McpProtocolListPromptsRequest::type()) {
+        McpProtocolPromptArgument argument;
+        argument.setName(u"name"_s);
+        argument.setDescription(u"Name of the person"_s);
+        argument.setRequired(true);
+
+        McpProtocolPrompt prompt;
+        prompt.setName(u"greeting"_s);
+        prompt.setDescription(u"Say hello to someone"_s);
+        prompt.setArguments(QList<McpProtocolPromptArgument>{argument});
+
+        McpProtocolListPromptsResult result;
+        result.setPrompts({prompt});
+        sendResult(id, McpProtocolListPromptsResult::toJson(result));
+    } else if (method == McpProtocolGetPromptRequest::type()) {
         getPrompt(id, params);
-    } else if (method == "resources/templates/list"_L1) {
-        const QJsonObject resourceTemplate{{"uriTemplate"_L1, u"file:///{path}"_s},
-                                           {"name"_L1, u"file"_s},
-                                           {"description"_L1, u"A local file"_s},
-                                           {"mimeType"_L1, u"text/plain"_s}};
-        sendResult(id, QJsonObject{{"resourceTemplates"_L1, QJsonArray{resourceTemplate}}});
-    } else if (method == "resources/list"_L1) {
-        sendResult(id, QJsonObject{{"resources"_L1, QJsonArray{}}});
+    } else if (method == McpProtocolListResourceTemplatesRequest::type()) {
+        McpProtocolResourceTemplate resourceTemplate;
+        resourceTemplate.setUriTemplate(u"file:///{path}"_s);
+        resourceTemplate.setName(u"file"_s);
+        resourceTemplate.setDescription(u"A local file"_s);
+        resourceTemplate.setMimeType(u"text/plain"_s);
+
+        McpProtocolListResourceTemplatesResult result;
+        result.setResourceTemplates({resourceTemplate});
+        sendResult(id, McpProtocolListResourceTemplatesResult::toJson(result));
+    } else if (method == McpProtocolListResourcesRequest::type()) {
+        sendResult(id, McpProtocolListResourcesResult::toJson({}));
     } else {
-        sendError(id, methodNotFoundCode, u"Method not found: %1"_s.arg(method));
+        sendError(id, methodNotFoundCode, u"Method not found: %1"_s.arg(QString::fromLatin1(method)));
     }
 }
 
-QJsonArray McpTestServer::tools() const
+QList<McpProtocolTool> McpTestServer::tools() const
 {
-    QJsonArray list{
-        tool(u"echo"_s, u"Return text"_s, QJsonObject{{"text"_L1, schemaProperty(u"string"_s, u"Text to return"_s)}}, {u"text"_s}),
+    QList<McpProtocolTool> list{
+        tool(u"echo"_s, u"Return text"_s, QMap<QString, QJsonObject>{{u"text"_s, schemaProperty(u"string"_s, u"Text to return"_s)}}, {u"text"_s}),
         tool(u"add"_s,
              u"Add two numbers"_s,
-             QJsonObject{{"a"_L1, schemaProperty(u"number"_s, u"First number"_s)}, {"b"_L1, schemaProperty(u"number"_s, u"Second number"_s)}},
+             QMap<QString, QJsonObject>{{u"a"_s, schemaProperty(u"number"_s, u"First number"_s)}, {u"b"_s, schemaProperty(u"number"_s, u"Second number"_s)}},
              {u"a"_s, u"b"_s}),
         tool(u"current_time"_s, u"Return current date and time"_s),
         tool(u"fail"_s, u"Always return a tool error (isError)"_s),
         tool(u"slow"_s,
              u"Answer after a delay (to test timeout and cancel)"_s,
-             QJsonObject{{"milliseconds"_L1, schemaProperty(u"integer"_s, u"Delay in milliseconds"_s)}}),
+             QMap<QString, QJsonObject>{{u"milliseconds"_s, schemaProperty(u"integer"_s, u"Delay in milliseconds"_s)}}),
     };
     if (mExtraTool) {
-        list.append(tool(u"reverse"_s, u"Reverse text"_s, QJsonObject{{"text"_L1, schemaProperty(u"string"_s, u"Text to reverse"_s)}}, {u"text"_s}));
+        list.append(
+            tool(u"reverse"_s, u"Reverse text"_s, QMap<QString, QJsonObject>{{u"text"_s, schemaProperty(u"string"_s, u"Text to reverse"_s)}}, {u"text"_s}));
     }
     return list;
 }
 
 void McpTestServer::listTools(const QJsonValue &id, const QJsonObject &params)
 {
-    const QJsonArray allTools = tools();
+    const QList<McpProtocolTool> allTools = tools();
     bool ok = true;
-    const QString cursor = params.value("cursor"_L1).toString();
+    const QString cursor = McpProtocolPaginatedRequestParams::fromJson(params).cursor();
     const int start = cursor.isEmpty() ? 0 : cursor.toInt(&ok);
     if (!ok || start < 0 || start >= allTools.count()) {
         sendError(id, invalidParamsCode, u"Invalid cursor: %1"_s.arg(cursor));
         return;
     }
-    QJsonArray page;
-    for (int i = start; i < std::min(start + toolsPageSize, static_cast<int>(allTools.count())); ++i) {
-        page.append(allTools.at(i));
-    }
-    QJsonObject result{{"tools"_L1, page}};
+    McpProtocolListToolsResult result;
+    result.setTools(allTools.mid(start, toolsPageSize));
     if (start + toolsPageSize < allTools.count()) {
-        result["nextCursor"_L1] = QString::number(start + toolsPageSize);
+        result.setNextCursor(QString::number(start + toolsPageSize));
     }
-    sendResult(id, result);
+    sendResult(id, McpProtocolListToolsResult::toJson(result));
 }
 
 void McpTestServer::callTool(const QJsonValue &id, const QJsonObject &params)
 {
-    const QString name = params.value("name"_L1).toString();
-    const QJsonObject arguments = params.value("arguments"_L1).toObject();
+    const McpProtocolCallToolRequestParams callToolParams = McpProtocolCallToolRequestParams::fromJson(params);
+    const QString name = callToolParams.name();
+    const QMap<QString, QJsonValue> arguments = callToolParams.arguments().value_or(QMap<QString, QJsonValue>{});
     if (name == "echo"_L1) {
-        sendResult(id, textResult(arguments.value("text"_L1).toString()));
+        sendResult(id, textResult(arguments.value(u"text"_s).toString()));
     } else if (name == "add"_L1) {
-        if (!arguments.value("a"_L1).isDouble() || !arguments.value("b"_L1).isDouble()) {
+        if (!arguments.value(u"a"_s).isDouble() || !arguments.value(u"b"_s).isDouble()) {
             sendResult(id, textResult(u"Arguments a and b must be numbers"_s, true));
             return;
         }
-        sendResult(id, textResult(QString::number(arguments.value("a"_L1).toDouble() + arguments.value("b"_L1).toDouble())));
+        sendResult(id, textResult(QString::number(arguments.value(u"a"_s).toDouble() + arguments.value(u"b"_s).toDouble())));
     } else if (name == "current_time"_L1) {
         sendResult(id, textResult(QDateTime::currentDateTime().toString(Qt::ISODate)));
     } else if (name == "fail"_L1) {
         sendResult(id, textResult(u"This tool always fails"_s, true));
     } else if (name == "slow"_L1) {
-        const int delay = arguments.value("milliseconds"_L1).toInt(2000);
+        const int delay = arguments.value(u"milliseconds"_s).toInt(2000);
         const QString key = idToString(id);
         mSlowRequests.insert(key);
         QTimer::singleShot(delay, this, [this, id, key, delay]() {
@@ -278,7 +329,7 @@ void McpTestServer::callTool(const QJsonValue &id, const QJsonObject &params)
             }
         });
     } else if (name == "reverse"_L1 && mExtraTool) {
-        QString text = arguments.value("text"_L1).toString();
+        QString text = arguments.value(u"text"_s).toString();
         std::reverse(text.begin(), text.end());
         sendResult(id, textResult(text));
     } else {
@@ -288,13 +339,22 @@ void McpTestServer::callTool(const QJsonValue &id, const QJsonObject &params)
 
 void McpTestServer::getPrompt(const QJsonValue &id, const QJsonObject &params)
 {
-    if (params.value("name"_L1).toString() != "greeting"_L1) {
-        sendError(id, invalidParamsCode, u"Unknown prompt: %1"_s.arg(params.value("name"_L1).toString()));
+    const McpProtocolGetPromptRequestParams getPromptParams = McpProtocolGetPromptRequestParams::fromJson(params);
+    if (getPromptParams.name() != "greeting"_L1) {
+        sendError(id, invalidParamsCode, u"Unknown prompt: %1"_s.arg(getPromptParams.name()));
         return;
     }
-    const QString name = params.value("arguments"_L1).toObject().value("name"_L1).toString();
-    const QJsonObject message{{"role"_L1, u"user"_s}, {"content"_L1, QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, u"Say hello to %1"_s.arg(name)}}}};
-    sendResult(id, QJsonObject{{"description"_L1, u"Greeting"_s}, {"messages"_L1, QJsonArray{message}}});
+    const QString name = getPromptParams.arguments().value_or(QMap<QString, QString>{}).value(u"name"_s);
+    McpProtocolTextContent content;
+    content.setText(u"Say hello to %1"_s.arg(name));
+    McpProtocolPromptMessage message;
+    message.setRole(McpProtocolUtils::Role::User);
+    message.setContent(content);
+
+    McpProtocolGetPromptResult result;
+    result.setDescription(u"Greeting"_s);
+    result.setMessages({message});
+    sendResult(id, McpProtocolGetPromptResult::toJson(result));
 }
 
 #include "moc_mcptestserver.cpp"

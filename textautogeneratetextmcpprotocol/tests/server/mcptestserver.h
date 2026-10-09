@@ -5,11 +5,11 @@
 */
 #pragma once
 
-#include <QJsonArray>
 #include <QJsonObject>
 #include <QObject>
 #include <QSet>
 #include <QUrl>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolServer;
@@ -47,7 +47,7 @@ private:
     void listTools(const QJsonValue &id, const QJsonObject &params);
     void callTool(const QJsonValue &id, const QJsonObject &params);
     void getPrompt(const QJsonValue &id, const QJsonObject &params);
-    [[nodiscard]] QJsonArray tools() const;
+    [[nodiscard]] QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> tools() const;
     [[nodiscard]] static QString idToString(const QJsonValue &id);
     [[nodiscard]] static QJsonObject textResult(const QString &text, bool isError = false);
 
