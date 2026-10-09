@@ -35,8 +35,9 @@ void TextAutoGenerateToolCallJob::start()
         deleteLater();
         return;
     }
-    mToolResults.reserve(mInfos.count());
-    for (int i = 0; i < mInfos.count(); ++i) {
+    const int total = mInfos.count();
+    mToolResults.reserve(total);
+    for (int i = 0; i < total; ++i) {
         const auto &info = mInfos.at(i);
         mToolResults.append({info.id, {}});
         if (auto job = createJob(info)) {
