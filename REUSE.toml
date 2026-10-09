@@ -59,3 +59,9 @@ path = ["textedittexttospeech/kokoro/README.md"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Laurent Montel <montel@kde.org>"
 SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["textautogeneratetextmcpprotocol/tests/README.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Laurent Montel <montel@kde.org>"
+SPDX-License-Identifier = "BSD-3-Clause"
