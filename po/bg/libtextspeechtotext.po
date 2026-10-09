@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:46+0000\n"
-"PO-Revision-Date: 2026-09-22 22:40+0200\n"
+"PO-Revision-Date: 2026-10-08 16:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -195,14 +195,12 @@ msgid "Unable to download the %1 model: %2"
 msgstr "Неуспешно изтегляне на модела %1: %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model."
+#, kde-format
 msgid "Unable to start %1"
 msgstr "Невъзможно е стартирането на %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
-#, fuzzy, kde-format
-#| msgid "Unable to download the %1 model: %2"
+#, kde-format
 msgid "Unable to install module. Exit code: %1"
 msgstr "Неуспешна инсталация на модула. Код за изход: %1"
 
@@ -330,7 +328,7 @@ msgid "Configure Speech To Text"
 msgstr "Конфигуриране на преобразуване на говор в текст..."
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgid "Test:"
 msgstr "Тест:"
 

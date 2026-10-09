@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-05 00:44+0000\n"
+"POT-Creation-Date: 2026-10-09 00:45+0000\n"
 "PO-Revision-Date: 2026-10-05 09:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -83,12 +83,13 @@ msgid "Session expired. Client must be restarted."
 msgstr "La sessió ha caducat. Cal tornar a iniciar el client."
 
 #: plugins/server/sse/mcpserversse.cpp:38
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:110
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:120
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Impossible iniciar el servidor. L'URL no és vàlid."
 
 #: plugins/server/sse/mcpserversse.cpp:89
-#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:34
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "L'enviament de missatges encara no està implementat."
@@ -108,10 +109,17 @@ msgstr "Impossible iniciar el servidor. Els arguments no són vàlids."
 msgid "Impossible to send message. Server is not running."
 msgstr "Impossible enviar el missatge. El client no s'està executant."
 
-#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:21
-#, kde-format
-msgid "Streamable HTTP transport is not implemented yet."
-msgstr "El transport HTTP Streamable encara no està implementat."
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. URL is invalid."
+msgid "Impossible to start server: %1"
+msgstr "Impossible iniciar el servidor. L'URL no és vàlid."
+
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server is not started."
+msgstr "El servidor no està preparat."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -258,3 +266,6 @@ msgstr "Busca…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Afig un servidor…"
+
+#~ msgid "Streamable HTTP transport is not implemented yet."
+#~ msgstr "El transport HTTP Streamable encara no està implementat."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-05 00:44+0000\n"
+"POT-Creation-Date: 2026-10-09 00:45+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -82,12 +82,13 @@ msgid "Session expired. Client must be restarted."
 msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:38
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:110
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:120
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:89
-#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:34
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr ""
@@ -107,9 +108,14 @@ msgstr ""
 msgid "Impossible to send message. Server is not running."
 msgstr ""
 
-#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:21
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, kde-format
-msgid "Streamable HTTP transport is not implemented yet."
+msgid "Impossible to start server: %1"
+msgstr ""
+
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
+#, kde-format
+msgid "Server is not started."
 msgstr ""
 
 #: widgets/server/addmcpserverdialog.cpp:26

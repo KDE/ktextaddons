@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-05 00:44+0000\n"
+"POT-Creation-Date: 2026-10-09 00:45+0000\n"
 "PO-Revision-Date: 2026-10-05 20:42+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -82,12 +82,13 @@ msgid "Session expired. Client must be restarted."
 msgstr "Строк роботи у сеансі вичерпано. Слід перезапустити клієнт."
 
 #: plugins/server/sse/mcpserversse.cpp:38
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:110
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:120
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Неможливо запустити сервер. Адреса є некоректною."
 
 #: plugins/server/sse/mcpserversse.cpp:89
-#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:34
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "Надсилання повідомлень ще не реалізовано."
@@ -107,10 +108,17 @@ msgstr "Неможливо запустити сервер. Некоректні
 msgid "Impossible to send message. Server is not running."
 msgstr "Неможливо надіслати повідомлення. Сервер не запущено."
 
-#: plugins/server/streamablehttp/mcpserverstreamhttpplugininterface.cpp:21
-#, kde-format
-msgid "Streamable HTTP transport is not implemented yet."
-msgstr "Потокове передавання даних HTTP ще не реалізовано."
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. URL is invalid."
+msgid "Impossible to start server: %1"
+msgstr "Неможливо запустити сервер. Адреса є некоректною."
+
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server is not started."
+msgstr "Сервер неготовий."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -257,6 +265,9 @@ msgstr "Шукати…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Додати сервер…"
+
+#~ msgid "Streamable HTTP transport is not implemented yet."
+#~ msgstr "Потокове передавання даних HTTP ще не реалізовано."
 
 #~ msgctxt "@label:textbox"
 #~ msgid "Url:"
