@@ -85,7 +85,7 @@ QList<QJsonObject> postedMessages(const FakeMcpHttpServer &server, const QString
 
 void initialize(McpProtocolClientProtocolManager &manager)
 {
-    QSignalSpy initializedSpy(&manager, &McpProtocolClientProtocolManager::initialized);
+    const QSignalSpy initializedSpy(&manager, &McpProtocolClientProtocolManager::initialized);
     manager.initializeClient();
     QTRY_COMPARE(initializedSpy.count(), 1);
     QVERIFY(manager.isInitialized());
