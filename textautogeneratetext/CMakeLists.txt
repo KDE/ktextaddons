@@ -45,6 +45,8 @@ add_library(
     KF6TextAutoGenerateText
     widgets/mcp/textautogenerateelicitationwidget.h
     widgets/mcp/textautogenerateelicitationwidget.cpp
+    widgets/mcp/textautogenerateelicitationdialog.h
+    widgets/mcp/textautogenerateelicitationdialog.cpp
 )
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
