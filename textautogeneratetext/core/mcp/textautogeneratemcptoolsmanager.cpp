@@ -11,6 +11,7 @@
 #include <QPointer>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
@@ -111,6 +112,16 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
             setStatus(identifier, Status::Disconnected);
         }
     });
+    connect(client,
+            &McpProtocolClientProtocolManager::elicitationRequested,
+            this,
+            [client](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                     const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
+                Q_UNUSED(request) // TODO: show form dialog
+                TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
+                result.setAction(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Decline);
+                client->respondToElicitation(id, result);
+            });
     setStatus(identifier, Status::Connecting);
     client->initializeClient();
 }

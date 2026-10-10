@@ -13,6 +13,7 @@
 #include <QMap>
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 #include <chrono>
 class QJsonObject;
@@ -20,6 +21,7 @@ class QTimer;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolClient;
+class McpProtocolElicitResult;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientProtocolManager : public QObject
 {
     Q_OBJECT
@@ -115,6 +117,11 @@ public:
      */
     void setElicitationSupported(bool supported);
 
+    /*!
+     * Send the answer \a result to the elicitation request \a id received with elicitationRequested().
+     */
+    void respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result);
+
 Q_SIGNALS:
     void started();
     void initialized();
@@ -133,6 +140,12 @@ Q_SIGNALS:
      * Server informed that list of resources changed.
      */
     void resourcesListChanged();
+
+    /*!
+     * Server requested user input: answer it with respondToElicitation().
+     * Without any receiver connected, the request is declined automatically.
+     */
+    void elicitationRequested(const McpProtocolUtils::RequestId &id, const McpProtocolElicitRequest &request);
 
 private:
     struct PendingRequest {

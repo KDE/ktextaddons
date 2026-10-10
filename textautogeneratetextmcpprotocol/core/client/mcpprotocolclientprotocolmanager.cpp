@@ -13,6 +13,7 @@
 #include <QCoreApplication>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QMetaMethod>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotification>
@@ -33,7 +34,6 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 namespace
@@ -158,6 +158,14 @@ bool McpProtocolClientProtocolManager::elicitationSupported() const
 void McpProtocolClientProtocolManager::setElicitationSupported(bool supported)
 {
     mElicitationSupported = supported;
+}
+
+void McpProtocolClientProtocolManager::respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result)
+{
+    McpProtocolJSONRPCResultResponse response;
+    response.setId(id);
+    response.setResult(McpProtocolResult::fromJson(McpProtocolElicitResult::toJson(result)));
+    mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
 }
 
 qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request, qint64 identifier, MethodType type)
@@ -498,17 +506,17 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
         return;
     }
     if (mElicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
-        // TODO: show form dialog
-        McpProtocolElicitResult elicitResult;
-        // TODO use form dialog result for assigning Action
-        elicitResult.setAction(McpProtocolElicitResult::Action::Decline);
-        McpProtocolJSONRPCResultResponse response;
-        response.setId(id);
-        response.setResult(McpProtocolResult::fromJson(McpProtocolElicitResult::toJson(elicitResult)));
-        mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
+        if (!isSignalConnected(QMetaMethod::fromSignal(&McpProtocolClientProtocolManager::elicitationRequested))) {
+            McpProtocolElicitResult elicitResult;
+            elicitResult.setAction(McpProtocolElicitResult::Action::Decline);
+            respondToElicitation(id, elicitResult);
+            return;
+        }
+        const McpProtocolElicitRequest request = McpProtocolElicitRequest::fromJson(obj);
+        Q_EMIT elicitationRequested(id, request);
         return;
     }
-    // We don't support sampling/roots/elicitation yet
+    // We don't support sampling/roots yet
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported server request:" << method;
     McpProtocolError mcpError;
     mcpError.setCode(-32601); // JSON-RPC "Method not found"
