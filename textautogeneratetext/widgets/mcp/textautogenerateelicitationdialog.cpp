@@ -16,7 +16,8 @@ TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *pa
     : QDialog(parent)
     , mTextAutoGenerateElicitationWidget(new TextAutoGenerateElicitationWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Show Model Information"));
+    // TODO add server name
+    setWindowTitle(i18nc("@title:window", "Request from %1"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
 
