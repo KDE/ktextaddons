@@ -12,10 +12,10 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateElicitationWidget::TextAutoGenerateElicitationWidget(QWidget *parent)
     : QWidget{parent}
+    , mMainLayout(new QVBoxLayout(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(u"mainLayout"_s);
-    mainLayout->setContentsMargins({});
+    mMainLayout->setObjectName(u"mainLayout"_s);
+    mMainLayout->setContentsMargins({});
 }
 
 TextAutoGenerateElicitationWidget::~TextAutoGenerateElicitationWidget() = default;

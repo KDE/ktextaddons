@@ -7,6 +7,7 @@
 
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QVBoxLayout;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolElicitRequest;
@@ -20,5 +21,8 @@ public:
     explicit TextAutoGenerateElicitationWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateElicitationWidget() override;
     void setRequest(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request);
+
+private:
+    QVBoxLayout *const mMainLayout;
 };
 }
