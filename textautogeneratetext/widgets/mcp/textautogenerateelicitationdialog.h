@@ -12,11 +12,15 @@
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateElicitationWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateElicitationDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateElicitationDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateElicitationDialog() override;
+
+private:
+    TextAutoGenerateElicitationWidget *const mTextAutoGenerateElicitationWidget;
 };
 }

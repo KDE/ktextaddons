@@ -5,11 +5,27 @@
 */
 
 #include "textautogenerateelicitationdialog.h"
+#include "widgets/mcp/textautogenerateelicitationwidget.h"
+#include <KLocalizedString>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *parent)
     : QDialog(parent)
+    , mTextAutoGenerateElicitationWidget(new TextAutoGenerateElicitationWidget(this))
 {
+    setWindowTitle(i18nc("@title:window", "Show Model Information"));
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(u"mainLayout"_s);
+
+    mTextAutoGenerateElicitationWidget->setObjectName(u"mTextAutoGenerateElicitationWidget"_s);
+    mainLayout->addWidget(mTextAutoGenerateElicitationWidget);
+
+    auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    button->setObjectName(u"button"_s);
+    mainLayout->addWidget(button);
 }
 
 TextAutoGenerateElicitationDialog::~TextAutoGenerateElicitationDialog() = default;
