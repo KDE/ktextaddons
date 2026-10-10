@@ -75,10 +75,26 @@ public:
     [[nodiscard]] std::chrono::milliseconds requestTimeout() const;
     void setRequestTimeout(std::chrono::milliseconds timeout);
 
+    /*!
+     * \brief clientName
+     * \return
+     */
     [[nodiscard]] QString clientName() const;
+    /*!
+     * \brief setClientName
+     * \param newClientName
+     */
     void setClientName(const QString &newClientName);
 
+    /*!
+     * \brief isInitialized
+     * \return
+     */
     [[nodiscard]] bool isInitialized() const;
+    /*!
+     * \brief initializeResult
+     * \return
+     */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeResult initializeResult() const;
 
     /*!
@@ -87,6 +103,17 @@ public:
      * read with McpProtocolReadResourceResult::fromJson(). Return request id, -1 if request was not sent.
      */
     [[nodiscard]] qint64 readResource(const QString &uri);
+
+    /*!
+     * Return true if "elicitation" capability (form mode) is announced to server.
+     */
+    [[nodiscard]] bool elicitationSupported() const;
+    /*!
+     * Announce "elicitation" capability (form mode) to server when \a supported is true.
+     * Only enable it when something answers elicitation/create requests (e.g. a dialog),
+     * it must be called before initializeClient(). Default is false.
+     */
+    void setElicitationSupported(bool supported);
 
 Q_SIGNALS:
     void started();
@@ -148,5 +175,6 @@ private:
     QHash<qint64, PendingRequest> mPendingRequests;
     std::chrono::milliseconds mRequestTimeout = std::chrono::seconds(60);
     QTimer *const mTimeoutTimer;
+    bool mElicitationSupported = false;
 };
 }

@@ -121,6 +121,31 @@ void McpProtocolClientProtocolManagerTest::shouldInitializeAndListTools()
     QCOMPARE(receivedSpy.at(0).at(0).toJsonObject().value("id"_L1).toInteger(), identifier);
 }
 
+void McpProtocolClientProtocolManagerTest::shouldAnnounceElicitationCapability()
+{
+    {
+        // Not announced by default
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        QVERIFY(!manager.elicitationSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        QVERIFY(!initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("elicitation"_L1));
+    }
+    {
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setElicitationSupported(true);
+        QVERIFY(manager.elicitationSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        const QJsonObject capabilities = initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject();
+        QCOMPARE(capabilities.value("elicitation"_L1).toObject(), QJsonObject({{"form"_L1, QJsonObject()}}));
+    }
+}
+
 void McpProtocolClientProtocolManagerTest::shouldAnswerServerRequests()
 {
     FakeMcpHttpServer fakeServer;

@@ -148,6 +148,16 @@ qint64 McpProtocolClientProtocolManager::readResource(const QString &url)
     return sendRequest(McpProtocolReadResourceRequest::toJson(request), identifier, MethodType::ReadResource);
 }
 
+bool McpProtocolClientProtocolManager::elicitationSupported() const
+{
+    return mElicitationSupported;
+}
+
+void McpProtocolClientProtocolManager::setElicitationSupported(bool supported)
+{
+    mElicitationSupported = supported;
+}
+
 qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request, qint64 identifier, MethodType type)
 {
     return sendRequest(request, identifier, type, PendingRequest());
@@ -533,6 +543,15 @@ void McpProtocolClientProtocolManager::initialize()
     clientInfo.setName(mClientName.isEmpty() ? QCoreApplication::applicationName() : mClientName);
     clientInfo.setVersion(QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING));
     params.setClientInfo(clientInfo);
+    if (mElicitationSupported) {
+        // Only form mode is supported: announce "elicitation": { "form": {} }
+        McpProtocolClientCapabilities::Elicitation elicitation;
+        elicitation.setForm(QMap<QString, QJsonValue>());
+        // TODO add setUrl(...)
+        McpProtocolClientCapabilities capabilities;
+        capabilities.setElicitation(std::move(elicitation));
+        params.setCapabilities(std::move(capabilities));
+    }
 
     initRequest.setParams(std::move(params));
     const qint64 identifier = requestId();

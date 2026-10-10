@@ -16,6 +16,7 @@ public:
 
 private Q_SLOTS:
     void shouldInitializeAndListTools();
+    void shouldAnnounceElicitationCapability();
     void shouldAnswerServerRequests();
     void shouldRejectUnsupportedProtocolVersion();
     void shouldCancelRequestWhenTimeoutExpired();
