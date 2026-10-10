@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
 "PO-Revision-Date: 2026-05-02 10:59+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -15,6 +15,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, kde-format
+msgid "Server started"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, kde-format
+msgid "Server stopped"
+msgstr ""
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -62,7 +92,6 @@ msgid "Impossible to send message. Client is not running."
 msgstr ""
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr ""
@@ -91,29 +120,26 @@ msgstr ""
 msgid "Sending message is not implemented yet."
 msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
-#, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr ""
-
-#: plugins/server/stdio/mcpserverstdio.cpp:70
-#, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr ""
-
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr ""
-
+#: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, kde-format
 msgid "Impossible to start server: %1"
 msgstr ""
 
+#: plugins/server/stdio/mcpserverstdio.cpp:70
+#, kde-format
+msgid "Stdio server is not supported on this platform."
+msgstr ""
+
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
 #, kde-format
 msgid "Server is not started."
+msgstr ""
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, kde-format
+msgid "Message received from client is too big."
 msgstr ""
 
 #: widgets/server/addmcpserverdialog.cpp:26

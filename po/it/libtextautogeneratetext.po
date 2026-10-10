@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:46+0000\n"
-"PO-Revision-Date: 2026-09-30 17:58+0200\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"PO-Revision-Date: 2026-10-05 15:06+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -62,42 +62,40 @@ msgstr "Impossibile importare il file."
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Lo strumento «%1» non è disponibile."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:124
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Errore"
+msgstr "Errore: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:59
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Errore: il server è stato arrestato."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:55
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "L'utente ha rifiutato di eseguire lo strumento «%1»."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Invocazione dello strumento «%1»…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Errore: impossibile invocare lo strumento «%1»."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:74
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Il server non è valido o è disabilitato."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -272,7 +270,7 @@ msgstr "<br><b>Token di completamento:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "Server MCP: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
 #, kde-format
@@ -302,10 +300,10 @@ msgstr "Spento"
 msgid "Activate: %1"
 msgstr "Attiva: %1"
 
-#: core/tools/textautogeneratetoolcalljob.cpp:47
+#: core/tools/textautogeneratetoolcalljob.cpp:48
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Strumento «%1» non trovato."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3314,41 +3312,40 @@ msgstr "Aggiungi istanza…"
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "Il server MCP «%1» vuole eseguire lo strumento «%2»."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Argomenti:"
+msgstr ""
+"Argomenti:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Strumento estensioni:"
+msgstr "Esegui strumento"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Permetti"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Consenti sempre questo server"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Nega"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3761,28 +3758,26 @@ msgid "Tools:"
 msgstr "Strumenti:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "Nessuna etichetta selezionata"
+msgstr "Non connesso"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Connessione…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 strumento"
+msgstr[1] "%1 strumenti"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Strumenti del server MCP «%1» (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format

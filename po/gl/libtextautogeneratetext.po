@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:46+0000\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Activate: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetoolcalljob.cpp:47
+#: core/tools/textautogeneratetoolcalljob.cpp:48
 #, kde-format
 msgid "Tool \"%1\" not found."
 msgstr ""

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
-"PO-Revision-Date: 2026-10-05 09:17+0200\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"PO-Revision-Date: 2026-10-09 08:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,6 +18,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, fuzzy, kde-format
+#| msgid "Server is not started."
+msgid "Server started"
+msgstr "El servidor no s'ha iniciat."
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server stopped"
+msgstr "El servidor no està preparat."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -65,7 +97,6 @@ msgid "Impossible to send message. Client is not running."
 msgstr "Impossible enviar el missatge. El client no s'està executant."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "El missatge rebut del servidor és massa gran."
@@ -94,32 +125,28 @@ msgstr "Impossible iniciar el servidor. L'URL no és vàlid."
 msgid "Sending message is not implemented yet."
 msgstr "L'enviament de missatges encara no està implementat."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
+#: plugins/server/stdio/mcpserverstdio.cpp:54
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr "Impossible iniciar el servidor. L'ordre està buida."
+msgid "Impossible to start server: %1"
+msgstr "Impossible iniciar el servidor: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr "Impossible iniciar el servidor. Els arguments no són vàlids."
+msgid "Stdio server is not supported on this platform."
+msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr "Impossible enviar el missatge. El client no s'està executant."
-
-#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
-msgid "Impossible to start server: %1"
-msgstr "Impossible iniciar el servidor. L'URL no és vàlid."
-
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "El servidor no està preparat."
+msgstr "El servidor no s'ha iniciat."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, fuzzy, kde-format
+#| msgid "Message received from server is too big."
+msgid "Message received from client is too big."
+msgstr "El missatge rebut del servidor és massa gran."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -266,6 +293,15 @@ msgstr "Cerca…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Afegeix un servidor…"
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "Impossible iniciar el servidor. L'ordre està buida."
+
+#~ msgid "Impossible to start server. Arguments are invalid."
+#~ msgstr "Impossible iniciar el servidor. Els arguments no són vàlids."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr "Impossible enviar el missatge. El client no s'està executant."
 
 #~ msgid "Streamable HTTP transport is not implemented yet."
 #~ msgstr "El transport HTTP Streamable encara no està implementat."

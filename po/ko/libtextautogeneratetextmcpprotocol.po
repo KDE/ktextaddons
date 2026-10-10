@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
 "PO-Revision-Date: 2026-10-05 22:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -16,6 +16,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.12.3\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server started"
+msgstr "서버가 준비되지 않았습니다."
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server stopped"
+msgstr "서버가 준비되지 않았습니다."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -63,7 +95,6 @@ msgid "Impossible to send message. Client is not running."
 msgstr "메시지를 전송할 수 없습니다. 클라이언트가 실행 중이 아닙니다."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "서버에서 수신한 메시지가 너무 큽니다."
@@ -92,32 +123,30 @@ msgstr "서버를 시작할 수 없습니다. URL이 잘못되었습니다."
 msgid "Sending message is not implemented yet."
 msgstr "메시지 전송은 구현되지 않았습니다."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
-#, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr "서버를 시작할 수 없습니다. 명령이 비어 있습니다."
-
-#: plugins/server/stdio/mcpserverstdio.cpp:70
-#, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr "서버를 시작할 수 없습니다. 인자가 잘못되었습니다."
-
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr "메시지를 전송할 수 없습니다. 서버가 실행 중이 아닙니다."
-
+#: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, fuzzy, kde-format
 #| msgid "Impossible to start server. URL is invalid."
 msgid "Impossible to start server: %1"
 msgstr "서버를 시작할 수 없습니다. URL이 잘못되었습니다."
 
+#: plugins/server/stdio/mcpserverstdio.cpp:70
+#, kde-format
+msgid "Stdio server is not supported on this platform."
+msgstr ""
+
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
 #, fuzzy, kde-format
 #| msgid "Server is not ready."
 msgid "Server is not started."
 msgstr "서버가 준비되지 않았습니다."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, fuzzy, kde-format
+#| msgid "Message received from server is too big."
+msgid "Message received from client is too big."
+msgstr "서버에서 수신한 메시지가 너무 큽니다."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -264,6 +293,15 @@ msgstr "검색…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "서버 추가…"
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "서버를 시작할 수 없습니다. 명령이 비어 있습니다."
+
+#~ msgid "Impossible to start server. Arguments are invalid."
+#~ msgstr "서버를 시작할 수 없습니다. 인자가 잘못되었습니다."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr "메시지를 전송할 수 없습니다. 서버가 실행 중이 아닙니다."
 
 #~ msgid "Streamable HTTP transport is not implemented yet."
 #~ msgstr "스트림 가는한 HTTP 전송은 구현되지 않았습니다."

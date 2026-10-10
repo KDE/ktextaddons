@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:46+0000\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
 "PO-Revision-Date: 2026-10-05 06:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -302,7 +302,7 @@ msgstr "გამორთული"
 msgid "Activate: %1"
 msgstr "გააქტიურება: %1"
 
-#: core/tools/textautogeneratetoolcalljob.cpp:47
+#: core/tools/textautogeneratetoolcalljob.cpp:48
 #, kde-format
 msgid "Tool \"%1\" not found."
 msgstr "ხელსაწყო \"%1\" აღმოჩენილი არაა."

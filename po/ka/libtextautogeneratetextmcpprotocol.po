@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
-"PO-Revision-Date: 2026-10-05 06:23+0200\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"PO-Revision-Date: 2026-10-09 06:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -17,6 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.9\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, fuzzy, kde-format
+#| msgid "Server is not started."
+msgid "Server started"
+msgstr "სერვერი გაშვებული არაა."
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server stopped"
+msgstr "სერვერი მზად არაა."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -64,7 +96,6 @@ msgid "Impossible to send message. Client is not running."
 msgstr "შეტყობინების გაგზავნა შეუძლებელია. კლიენტი გაშვებული არაა."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "სერვერიდან მიღებული შეტყობინება მეტისმეტად დიდია."
@@ -93,32 +124,28 @@ msgstr "სერვერის გაშვება შეუძლებე�
 msgid "Sending message is not implemented yet."
 msgstr "შეტყობინების გაგზავნა ჯერ განხორციელებული არაა."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
+#: plugins/server/stdio/mcpserverstdio.cpp:54
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია."
+msgid "Impossible to start server: %1"
+msgstr "სერვერის გაშვება შეუძლებელია: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr "სერვერის გაშვება შეუძლებელია. არგუმენტები არასწორია."
+msgid "Stdio server is not supported on this platform."
+msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr "შეტყობინების გაგზავნა შეუძლებელია. სერვერი გაშვებული არაა."
-
-#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
-msgid "Impossible to start server: %1"
-msgstr "სერვერის გაშვება შეუძლებელია. ბმული არასწორია."
-
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "სერვერი მზად არაა."
+msgstr "სერვერი გაშვებული არაა."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, fuzzy, kde-format
+#| msgid "Message received from server is too big."
+msgid "Message received from client is too big."
+msgstr "სერვერიდან მიღებული შეტყობინება მეტისმეტად დიდია."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -265,6 +292,15 @@ msgstr "ძებნა…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "სერვერის დამატება…"
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია."
+
+#~ msgid "Impossible to start server. Arguments are invalid."
+#~ msgstr "სერვერის გაშვება შეუძლებელია. არგუმენტები არასწორია."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr "შეტყობინების გაგზავნა შეუძლებელია. სერვერი გაშვებული არაა."
 
 #~ msgid "Streamable HTTP transport is not implemented yet."
 #~ msgstr "ნაკადის სახით გაგზავნადი HTTP ტრანსპორტი ჯერ განხორციელებული არაა."

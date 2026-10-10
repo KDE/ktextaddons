@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
-"PO-Revision-Date: 2026-10-05 16:28+0200\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"PO-Revision-Date: 2026-10-09 12:11+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,6 +16,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.1\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, fuzzy, kde-format
+#| msgid "Server is not started."
+msgid "Server started"
+msgstr "Server is niet gestart."
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server stopped"
+msgstr "Server is niet gereed."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -63,7 +95,6 @@ msgid "Impossible to send message. Client is not running."
 msgstr "Kan bericht niet verzenden. Client is niet actief."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "Bericht ontvangen van de server is te groot."
@@ -92,32 +123,28 @@ msgstr "Onmogelijk de server te starten. De URL is ongeldig."
 msgid "Sending message is not implemented yet."
 msgstr "Het versturen van berichten is nog niet geïmplementeerd."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
+#: plugins/server/stdio/mcpserverstdio.cpp:54
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr "Kan de server niet starten Het commando is leeg."
+msgid "Impossible to start server: %1"
+msgstr "Onmogelijk de server te starten: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr "Onmogelijk de server te starten. Argumenten zijn ongeldig."
+msgid "Stdio server is not supported on this platform."
+msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr "Kan bericht niet verzenden. Server is niet actief."
-
-#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
-msgid "Impossible to start server: %1"
-msgstr "Onmogelijk de server te starten. De URL is ongeldig."
-
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "Server is niet gereed."
+msgstr "Server is niet gestart."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, fuzzy, kde-format
+#| msgid "Message received from server is too big."
+msgid "Message received from client is too big."
+msgstr "Bericht ontvangen van de server is te groot."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -264,6 +291,15 @@ msgstr "Zoeken…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Server toevoegen…"
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "Kan de server niet starten Het commando is leeg."
+
+#~ msgid "Impossible to start server. Arguments are invalid."
+#~ msgstr "Onmogelijk de server te starten. Argumenten zijn ongeldig."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr "Kan bericht niet verzenden. Server is niet actief."
 
 #~ msgid "Streamable HTTP transport is not implemented yet."
 #~ msgstr "Te streamen HTTP-transport is nog niet geïmplementeerd."

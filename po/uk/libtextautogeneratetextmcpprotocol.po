@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
-"PO-Revision-Date: 2026-10-05 20:42+0300\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"PO-Revision-Date: 2026-10-09 09:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -17,6 +17,38 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.12.1\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, fuzzy, kde-format
+#| msgid "Server is not started."
+msgid "Server started"
+msgstr "Сервер не запущено."
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server stopped"
+msgstr "Сервер неготовий."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -64,7 +96,6 @@ msgid "Impossible to send message. Client is not running."
 msgstr "Неможливо надіслати повідомлення. Клієнт не запущено."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "Отримане з сервера повідомлення є надто великим."
@@ -93,32 +124,28 @@ msgstr "Неможливо запустити сервер. Адреса є не
 msgid "Sending message is not implemented yet."
 msgstr "Надсилання повідомлень ще не реалізовано."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
+#: plugins/server/stdio/mcpserverstdio.cpp:54
+#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr "Неможливо запустити сервер. Порожня команда."
+msgid "Impossible to start server: %1"
+msgstr "Неможливо запустити сервер: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr "Неможливо запустити сервер. Некоректні аргументи."
+msgid "Stdio server is not supported on this platform."
+msgstr ""
 
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr "Неможливо надіслати повідомлення. Сервер не запущено."
-
-#: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
-msgid "Impossible to start server: %1"
-msgstr "Неможливо запустити сервер. Адреса є некоректною."
-
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "Сервер неготовий."
+msgstr "Сервер не запущено."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, fuzzy, kde-format
+#| msgid "Message received from server is too big."
+msgid "Message received from client is too big."
+msgstr "Отримане з сервера повідомлення є надто великим."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -265,6 +292,15 @@ msgstr "Шукати…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Додати сервер…"
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "Неможливо запустити сервер. Порожня команда."
+
+#~ msgid "Impossible to start server. Arguments are invalid."
+#~ msgstr "Неможливо запустити сервер. Некоректні аргументи."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr "Неможливо надіслати повідомлення. Сервер не запущено."
 
 #~ msgid "Streamable HTTP transport is not implemented yet."
 #~ msgstr "Потокове передавання даних HTTP ще не реалізовано."

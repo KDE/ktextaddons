@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:45+0000\n"
+"POT-Creation-Date: 2026-10-10 00:44+0000\n"
 "PO-Revision-Date: 2026-10-08 16:40+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -16,6 +16,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.1\n"
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#, kde-format
+msgid "Starting server"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#, kde-format
+msgid "Starting server on %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#, kde-format
+msgid "Request %1 cancelled by client"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server started"
+msgstr "Сървърът не е готов."
+
+#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#, fuzzy, kde-format
+#| msgid "Server is not ready."
+msgid "Server stopped"
+msgstr "Сървърът не е готов."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -64,7 +96,6 @@ msgstr ""
 "Неуспешно изпращане на съобщението. Клиентската програма не е стартирана."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:129
-#: plugins/server/stdio/mcpserverstdio.cpp:129
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "Полученото съобщение от сървъра е твърде голямо."
@@ -93,32 +124,30 @@ msgstr "Невъзможно е стартирането на сървъра. UR
 msgid "Sending message is not implemented yet."
 msgstr "Изпращането на съобщения все още не е внедрено."
 
-#: plugins/server/stdio/mcpserverstdio.cpp:62
-#, kde-format
-msgid "Impossible to start server. Command is empty."
-msgstr "Невъзможно е стартирането на сървъра Липсва команда."
-
-#: plugins/server/stdio/mcpserverstdio.cpp:70
-#, kde-format
-msgid "Impossible to start server. Arguments are invalid."
-msgstr "Невъзможно е стартирането на сървъра. Аргументите са невалидни."
-
-#: plugins/server/stdio/mcpserverstdio.cpp:110
-#, kde-format
-msgid "Impossible to send message. Server is not running."
-msgstr "Неуспешно изпращане на съобщението. Сървърът не работи."
-
+#: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
 #, fuzzy, kde-format
 #| msgid "Impossible to start server. URL is invalid."
 msgid "Impossible to start server: %1"
 msgstr "Невъзможно е стартирането на сървъра. URL адресът е невалиден."
 
+#: plugins/server/stdio/mcpserverstdio.cpp:70
+#, kde-format
+msgid "Stdio server is not supported on this platform."
+msgstr ""
+
+#: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
 #, fuzzy, kde-format
 #| msgid "Server is not ready."
 msgid "Server is not started."
 msgstr "Сървърът не е готов."
+
+#: plugins/server/stdio/mcpserverstdio.cpp:154
+#, fuzzy, kde-format
+#| msgid "Message received from server is too big."
+msgid "Message received from client is too big."
+msgstr "Полученото съобщение от сървъра е твърде голямо."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -265,6 +294,15 @@ msgstr "Търсене…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Добавяне на сървър…"
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "Невъзможно е стартирането на сървъра Липсва команда."
+
+#~ msgid "Impossible to start server. Arguments are invalid."
+#~ msgstr "Невъзможно е стартирането на сървъра. Аргументите са невалидни."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr "Неуспешно изпращане на съобщението. Сървърът не работи."
 
 #~ msgid "Streamable HTTP transport is not implemented yet."
 #~ msgstr "Транспортът поточно HTTP все още не е имплементиран."
