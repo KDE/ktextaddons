@@ -28,6 +28,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
@@ -80,6 +81,9 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
     case MethodType::ResourceTemplates:
     case MethodType::ListResources:
         return listRequest(type);
+    case MethodType::ReadResource:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use readResource() to get a resource.";
+        break;
     case MethodType::CallTool:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use callTool() to call a tool.";
         break;
@@ -119,6 +123,29 @@ qint64 McpProtocolClientProtocolManager::getPrompt(const QString &name, const QM
     request.setId(identifier);
     request.setParams(std::move(params));
     return sendRequest(McpProtocolGetPromptRequest::toJson(request), identifier, MethodType::GetPrompt);
+}
+
+qint64 McpProtocolClientProtocolManager::readResource(const QString &url)
+{
+    if (!mClient || !mInitialized) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't get resource" << url;
+        return -1;
+    }
+    if (!serverSupports(MethodType::ReadResource)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support resource. Can't get resource" << url;
+        return -1;
+    }
+    if (url.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "resource url is empty";
+        return -1;
+    }
+    McpProtocolReadResourceRequestParams params;
+    params.setUri(url);
+    McpProtocolReadResourceRequest request;
+    const qint64 identifier = requestId();
+    request.setId(identifier);
+    request.setParams(std::move(params));
+    return sendRequest(McpProtocolReadResourceRequest::toJson(request), identifier, MethodType::ReadResource);
 }
 
 qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request, qint64 identifier, MethodType type)
@@ -189,6 +216,7 @@ bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
         return capabilities.prompts().has_value();
     case MethodType::ListResources:
     case MethodType::ResourceTemplates:
+    case MethodType::ReadResource:
         return capabilities.resources().has_value();
     case MethodType::Unknown:
     case MethodType::Ping:
@@ -404,6 +432,7 @@ QString McpProtocolClientProtocolManager::listKey(MethodType type)
     case MethodType::ResourceTemplates:
         return u"resourceTemplates"_s;
     case MethodType::GetPrompt:
+    case MethodType::ReadResource:
     case MethodType::Unknown:
     case MethodType::Ping:
     case MethodType::Initialize:

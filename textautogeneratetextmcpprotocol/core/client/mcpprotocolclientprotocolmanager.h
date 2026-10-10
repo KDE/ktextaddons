@@ -36,6 +36,7 @@ public:
         ServerNotification,
         CallTool,
         GetPrompt,
+        ReadResource,
     };
     Q_ENUM(MethodType)
     explicit McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent = nullptr);
@@ -79,6 +80,13 @@ public:
 
     [[nodiscard]] bool isInitialized() const;
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeResult initializeResult() const;
+
+    /*!
+     * Read resource \a uri. Server must support resources.
+     * Response is emitted with received() and MethodType::ReadResource, its "result" can be
+     * read with McpProtocolReadResourceResult::fromJson(). Return request id, -1 if request was not sent.
+     */
+    [[nodiscard]] qint64 readResource(const QString &uri);
 
 Q_SIGNALS:
     void started();

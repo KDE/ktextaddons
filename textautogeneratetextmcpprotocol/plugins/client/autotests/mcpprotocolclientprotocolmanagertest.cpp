@@ -13,6 +13,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 using namespace Qt::Literals::StringLiterals;
 using TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager;
@@ -331,6 +332,53 @@ void McpProtocolClientProtocolManagerTest::shouldNotGetPromptWhenServerDoesNotSu
     QCOMPARE(manager.getPrompt(u"review"_s), -1);
     QTest::qWait(100);
     QVERIFY(postedMessages(fakeServer, u"prompts/get"_s).isEmpty());
+}
+
+void McpProtocolClientProtocolManagerTest::shouldReadResource()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            const QString uri = obj.value("params"_L1).toObject().value("uri"_L1).toString();
+            const QJsonObject contents{{"uri"_L1, uri}, {"mimeType"_L1, u"text/plain"_s}, {"text"_L1, u"hello"_s}};
+            sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"contents"_L1, QJsonArray{contents}}}));
+        },
+        QJsonObject{{"resources"_L1, QJsonObject{}}}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    // Not initialized
+    QCOMPARE(manager.readResource(u"file:///foo.txt"_s), -1);
+    initialize(manager);
+    QCOMPARE(manager.readResource(QString()), -1);
+    // Use readResource()
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::ReadResource), -1);
+
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.readResource(u"file:///foo.txt"_s);
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ReadResource);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    // Not a paginated response: result is unchanged
+    const QJsonObject resultObj = response.value("result"_L1).toObject();
+    QCOMPARE(resultObj.keys(), (QStringList{u"contents"_s}));
+    const auto readResourceResult = TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceResult::fromJson(resultObj);
+    QCOMPARE(readResourceResult.contents().count(), 1);
+
+    const QJsonObject request = postedMessages(fakeServer, u"resources/read"_s).constFirst();
+    QCOMPARE(request.value("params"_L1).toObject().value("uri"_L1).toString(), u"file:///foo.txt"_s);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldNotReadResourceWhenServerDoesNotSupportResources()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QCOMPARE(manager.readResource(u"file:///foo.txt"_s), -1);
+    QTest::qWait(100);
+    QVERIFY(postedMessages(fakeServer, u"resources/read"_s).isEmpty());
 }
 
 namespace

@@ -25,6 +25,8 @@ private Q_SLOTS:
     void shouldNotCallToolWhenServerDoesNotSupportTools();
     void shouldGetPrompt();
     void shouldNotGetPromptWhenServerDoesNotSupportPrompts();
+    void shouldReadResource();
+    void shouldNotReadResourceWhenServerDoesNotSupportResources();
     void shouldFetchAllPages();
     void shouldStopPaginationWhenCursorDoesNotChange();
     void shouldReturnErrorOfPage();
