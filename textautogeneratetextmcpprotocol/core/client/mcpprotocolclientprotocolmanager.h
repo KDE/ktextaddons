@@ -23,6 +23,8 @@ class QTimer;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolClient;
+class McpProtocolCreateMessageRequest;
+class McpProtocolCreateMessageResult;
 class McpProtocolElicitResult;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientProtocolManager : public QObject
 {
@@ -143,6 +145,26 @@ public:
      */
     void setRoots(const QList<McpProtocolRoot> &roots);
 
+    /*!
+     * Return true if "sampling" capability is announced to server.
+     */
+    [[nodiscard]] bool samplingSupported() const;
+    /*!
+     * Announce "sampling" capability to server when \a supported is true.
+     * Only enable it when something answers sampling/createMessage requests (e.g. LLM after user confirmation),
+     * it must be called before initializeClient(). Default is false.
+     */
+    void setSamplingSupported(bool supported);
+
+    /*!
+     * Send the generated message \a result to the sampling request \a id received with samplingRequested().
+     */
+    void respondToSampling(const McpProtocolUtils::RequestId &id, const McpProtocolCreateMessageResult &result);
+    /*!
+     * Reject the sampling request \a id received with samplingRequested() (e.g. user refused it).
+     */
+    void rejectSampling(const McpProtocolUtils::RequestId &id, const QString &message = {});
+
 Q_SIGNALS:
     void started();
     void initialized();
@@ -168,6 +190,12 @@ Q_SIGNALS:
      */
     void elicitationRequested(const McpProtocolUtils::RequestId &id, const McpProtocolElicitRequest &request);
 
+    /*!
+     * Server requested a LLM generation: answer it with respondToSampling() or rejectSampling().
+     * Without any receiver connected, the request is rejected automatically.
+     */
+    void samplingRequested(const McpProtocolUtils::RequestId &id, const McpProtocolCreateMessageRequest &request);
+
 private:
     struct PendingRequest {
         MethodType type = MethodType::Unknown;
@@ -187,6 +215,8 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendInitializedNotification();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendResult(const McpProtocolUtils::RequestId &id, const QJsonObject &result);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendError(const McpProtocolUtils::RequestId &id, int code, const QString &message);
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT bool takePendingUserRequest(const McpProtocolUtils::RequestId &id);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotFinished();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initializeResponseReceived(const QJsonObject &obj);
@@ -210,10 +240,11 @@ private:
     QHash<qint64, PendingRequest> mPendingRequests;
     std::chrono::milliseconds mRequestTimeout = std::chrono::seconds(60);
     QTimer *const mTimeoutTimer;
-    // Elicitation requests waiting for user answer: requests don't time out meanwhile
-    QList<McpProtocolUtils::RequestId> mPendingElicitations;
+    // Elicitation/sampling requests waiting for user answer: requests don't time out meanwhile
+    QList<McpProtocolUtils::RequestId> mPendingUserRequests;
     QList<McpProtocolRoot> mRoots;
     bool mElicitationSupported = false;
     bool mRootsSupported = false;
+    bool mSamplingSupported = false;
 };
 }

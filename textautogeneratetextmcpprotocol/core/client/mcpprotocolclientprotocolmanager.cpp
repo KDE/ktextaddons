@@ -7,6 +7,8 @@
 #include "mcpprotocolclientprotocolmanager.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include "textautogeneratetextmcpprotocolcore_version.h"
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 
@@ -163,19 +165,51 @@ void McpProtocolClientProtocolManager::setElicitationSupported(bool supported)
     mElicitationSupported = supported;
 }
 
-void McpProtocolClientProtocolManager::respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result)
+bool McpProtocolClientProtocolManager::takePendingUserRequest(const McpProtocolUtils::RequestId &id)
 {
-    if (!mPendingElicitations.removeOne(id)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "No pending elicitation request:" << McpProtocolUtils::requestIdToJson(id);
-        return;
+    if (!mPendingUserRequests.removeOne(id)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "No pending user request:" << McpProtocolUtils::requestIdToJson(id);
+        return false;
     }
-    if (mPendingElicitations.isEmpty()) {
+    if (mPendingUserRequests.isEmpty()) {
         // User answered: give server full timeout to answer pending requests
         for (auto &pending : mPendingRequests) {
             pending.deadline = QDeadlineTimer(mRequestTimeout);
         }
     }
-    sendResult(id, McpProtocolElicitResult::toJson(result));
+    return true;
+}
+
+void McpProtocolClientProtocolManager::respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result)
+{
+    if (takePendingUserRequest(id)) {
+        sendResult(id, McpProtocolElicitResult::toJson(result));
+    }
+}
+
+bool McpProtocolClientProtocolManager::samplingSupported() const
+{
+    return mSamplingSupported;
+}
+
+void McpProtocolClientProtocolManager::setSamplingSupported(bool supported)
+{
+    mSamplingSupported = supported;
+}
+
+void McpProtocolClientProtocolManager::respondToSampling(const McpProtocolUtils::RequestId &id, const McpProtocolCreateMessageResult &result)
+{
+    if (takePendingUserRequest(id)) {
+        sendResult(id, McpProtocolCreateMessageResult::toJson(result));
+    }
+}
+
+void McpProtocolClientProtocolManager::rejectSampling(const McpProtocolUtils::RequestId &id, const QString &message)
+{
+    if (takePendingUserRequest(id)) {
+        // Spec uses -1 when user rejected sampling request
+        sendError(id, -1, message.isEmpty() ? u"User rejected sampling request"_s : message);
+    }
 }
 
 bool McpProtocolClientProtocolManager::rootsSupported() const
@@ -203,6 +237,17 @@ void McpProtocolClientProtocolManager::setRoots(const QList<McpProtocolRoot> &ro
         const McpProtocolRootsListChangedNotification notification;
         mClient->notify(McpProtocolRootsListChangedNotification::toJson(notification));
     }
+}
+
+void McpProtocolClientProtocolManager::sendError(const McpProtocolUtils::RequestId &id, int code, const QString &message)
+{
+    McpProtocolError mcpError;
+    mcpError.setCode(code);
+    mcpError.setMessage(message);
+    McpProtocolJSONRPCErrorResponse response;
+    response.setId(id);
+    response.setError(std::move(mcpError));
+    mClient->respond(McpProtocolJSONRPCErrorResponse::toJson(response));
 }
 
 void McpProtocolClientProtocolManager::sendResult(const McpProtocolUtils::RequestId &id, const QJsonObject &result)
@@ -237,7 +282,7 @@ qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request,
 
 void McpProtocolClientProtocolManager::checkTimeouts()
 {
-    if (!mPendingElicitations.isEmpty()) {
+    if (!mPendingUserRequests.isEmpty()) {
         // Server waits for user answer before answering pending requests
         return;
     }
@@ -439,7 +484,7 @@ void McpProtocolClientProtocolManager::slotFinished()
     mInitialized = false;
     mInitializeResult = {};
     mPendingRequests.clear();
-    mPendingElicitations.clear();
+    mPendingUserRequests.clear();
     mTimeoutTimer->stop();
     Q_EMIT finished();
 }
@@ -560,7 +605,7 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
         return;
     }
     if (mElicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
-        mPendingElicitations.append(id);
+        mPendingUserRequests.append(id);
         if (!isSignalConnected(QMetaMethod::fromSignal(&McpProtocolClientProtocolManager::elicitationRequested))) {
             McpProtocolElicitResult elicitResult;
             elicitResult.setAction(McpProtocolElicitResult::Action::Decline);
@@ -571,15 +616,18 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
         Q_EMIT elicitationRequested(id, request);
         return;
     }
-    // We don't support sampling yet
+    if (mSamplingSupported && method == QLatin1StringView(McpProtocolCreateMessageRequest::type())) {
+        mPendingUserRequests.append(id);
+        if (!isSignalConnected(QMetaMethod::fromSignal(&McpProtocolClientProtocolManager::samplingRequested))) {
+            rejectSampling(id);
+            return;
+        }
+        const McpProtocolCreateMessageRequest request = McpProtocolCreateMessageRequest::fromJson(obj);
+        Q_EMIT samplingRequested(id, request);
+        return;
+    }
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported server request:" << method;
-    McpProtocolError mcpError;
-    mcpError.setCode(-32601); // JSON-RPC "Method not found"
-    mcpError.setMessage(u"Method not found: %1"_s.arg(method));
-    McpProtocolJSONRPCErrorResponse response;
-    response.setId(id);
-    response.setError(std::move(mcpError));
-    mClient->respond(McpProtocolJSONRPCErrorResponse::toJson(response));
+    sendError(id, -32601, u"Method not found: %1"_s.arg(method)); // JSON-RPC "Method not found"
 }
 
 void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObject &obj)
@@ -631,6 +679,10 @@ void McpProtocolClientProtocolManager::initialize()
         McpProtocolClientCapabilities::Roots roots;
         roots.setListChanged(true);
         capabilities.setRoots(std::move(roots));
+    }
+    if (mSamplingSupported) {
+        // Announce "sampling": {}
+        capabilities.setSampling(McpProtocolClientCapabilities::Sampling());
     }
     params.setCapabilities(std::move(capabilities));
 

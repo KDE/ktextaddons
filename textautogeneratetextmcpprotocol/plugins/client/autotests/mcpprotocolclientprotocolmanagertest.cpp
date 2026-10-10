@@ -12,6 +12,8 @@
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
@@ -99,6 +101,19 @@ FakeMcpHttpServer::Handler createElicitationHandler()
                                               {"message"_L1, u"Name?"_s},
                                               {"requestedSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{}}}}}}};
         FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(elicit) + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    });
+}
+
+FakeMcpHttpServer::Handler createSamplingHandler()
+{
+    return createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        // Server asks for a LLM generation before response
+        const QJsonObject message{{"role"_L1, u"user"_s}, {"content"_L1, QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, u"Hello"_s}}}};
+        const QJsonObject sampling{{"jsonrpc"_L1, u"2.0"_s},
+                                   {"id"_L1, u"srv-1"_s},
+                                   {"method"_L1, u"sampling/createMessage"_s},
+                                   {"params"_L1, QJsonObject{{"messages"_L1, QJsonArray{message}}, {"maxTokens"_L1, 100}}}};
+        FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(sampling) + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
     });
 }
 
@@ -319,6 +334,111 @@ void McpProtocolClientProtocolManagerTest::shouldNotifyRootsListChanged()
     manager.setRoots({root});
     manager.setRoots({});
     QTRY_COMPARE(postedMessages(fakeServer, u"notifications/roots/list_changed"_s).count(), 2);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnnounceSamplingCapability()
+{
+    {
+        // Not announced by default
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        QVERIFY(!manager.samplingSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        QVERIFY(!initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("sampling"_L1));
+    }
+    {
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setSamplingSupported(true);
+        QVERIFY(manager.samplingSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        const QJsonObject capabilities = initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject();
+        QCOMPARE(capabilities.value("sampling"_L1).toObject(), QJsonObject());
+        QVERIFY(capabilities.contains("sampling"_L1));
+    }
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnswerSamplingRequest()
+{
+    {
+        // Not supported: method not found
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createSamplingHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        initialize(manager);
+        manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        QCOMPARE(serverRequestResponse(fakeServer).value("error"_L1).toObject().value("code"_L1).toInt(), -32601);
+    }
+    {
+        // Rejected automatically without receiver
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createSamplingHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setSamplingSupported(true);
+        initialize(manager);
+        manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        QCOMPARE(serverRequestResponse(fakeServer).value("error"_L1).toObject().value("code"_L1).toInt(), -1);
+    }
+    {
+        // Rejected by receiver
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createSamplingHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setSamplingSupported(true);
+        connect(&manager,
+                &McpProtocolClientProtocolManager::samplingRequested,
+                this,
+                [&manager](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                           const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request) {
+                    Q_UNUSED(request)
+                    manager.rejectSampling(id, u"No"_s);
+                });
+        initialize(manager);
+        manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        const QJsonObject error = serverRequestResponse(fakeServer).value("error"_L1).toObject();
+        QCOMPARE(error.value("code"_L1).toInt(), -1);
+        QCOMPARE(error.value("message"_L1).toString(), u"No"_s);
+    }
+    {
+        // Answered by receiver
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createSamplingHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setSamplingSupported(true);
+        int requested = 0;
+        connect(&manager,
+                &McpProtocolClientProtocolManager::samplingRequested,
+                this,
+                [&manager, &requested](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                       const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request) {
+                    ++requested;
+                    QCOMPARE(std::get<QString>(id), u"srv-1"_s);
+                    QCOMPARE(request.params().maxTokens(), 100);
+                    QCOMPARE(request.params().messages().count(), 1);
+                    TextAutoGenerateTextMcpProtocolCore::McpProtocolTextContent content;
+                    content.setText(u"Hi"_s);
+                    TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult result;
+                    result.setContent(content);
+                    result.setModel(u"model"_s);
+                    result.setRole(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role::Assistant);
+                    manager.respondToSampling(id, result);
+                });
+        initialize(manager);
+        manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        QCOMPARE(requested, 1);
+        const QJsonObject result = serverRequestResponse(fakeServer).value("result"_L1).toObject();
+        QCOMPARE(result.value("model"_L1).toString(), u"model"_s);
+        QCOMPARE(result.value("role"_L1).toString(), u"assistant"_s);
+        QCOMPARE(result.value("content"_L1).toObject().value("text"_L1).toString(), u"Hi"_s);
+    }
 }
 
 void McpProtocolClientProtocolManagerTest::shouldRejectUnsupportedProtocolVersion()
