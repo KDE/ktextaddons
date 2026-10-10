@@ -17,8 +17,7 @@ TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *pa
     : QDialog(parent)
     , mTextAutoGenerateElicitationWidget(new TextAutoGenerateElicitationWidget(this))
 {
-    // TODO add server name
-    setWindowTitle(i18nc("@title:window", "Request from %1"));
+    setWindowTitle(i18nc("@title:window", "Request from MCP Server"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
 
@@ -40,21 +39,34 @@ TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *pa
 
 TextAutoGenerateElicitationDialog::~TextAutoGenerateElicitationDialog() = default;
 
+void TextAutoGenerateElicitationDialog::setServerName(const QString &serverName)
+{
+    setWindowTitle(i18nc("@title:window", "Request from %1", serverName));
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult TextAutoGenerateElicitationDialog::elicitResult() const
+{
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
+    result.setAction(mAction);
+    // TODO assign content of form when action is Accept
+    return result;
+}
+
 void TextAutoGenerateElicitationDialog::slotAccepted()
 {
-    // TODO
+    mAction = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Accept;
     accept();
 }
 
 void TextAutoGenerateElicitationDialog::slotDeclined()
 {
-    // TODO
+    mAction = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Decline;
     accept();
 }
 
 void TextAutoGenerateElicitationDialog::slotRejected()
 {
-    // TODO
+    mAction = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Cancel;
     reject();
 }
 

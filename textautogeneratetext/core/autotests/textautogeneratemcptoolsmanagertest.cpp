@@ -13,6 +13,7 @@
 #include <QStandardPaths>
 #include <QTcpSocket>
 #include <QTest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using namespace Qt::Literals::StringLiterals;
@@ -238,6 +239,63 @@ void TextAutoGenerateMcpToolsManagerTest::shouldCallCallbackAfterTimeout()
         std::chrono::milliseconds(200));
     QTRY_COMPARE(callbackCount, 1);
     QCOMPARE(manager.status(server.identifier()), TextAutoGenerateMcpToolsManager::Status::Connecting);
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldAnswerElicitationRequest()
+{
+    {
+        // Not announced without handler
+        FakeMcpServer fakeServer;
+        TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+        const auto server = fakeServer.mcpServer(u"foo"_s);
+        serverManager.mcpServerModel()->addMcpServer(server);
+        TextAutoGenerateMcpToolsManager manager(&serverManager);
+        manager.connectServer(server.identifier());
+        QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+        const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
+        QCOMPARE(initialize.value("method"_L1).toString(), u"initialize"_s);
+        QVERIFY(!initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("elicitation"_L1));
+    }
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    QList<TextAutoGenerateMcpToolsManager::ElicitationInfo> infos;
+    manager.setElicitationHandler([&infos](const TextAutoGenerateMcpToolsManager::ElicitationInfo &info,
+                                           const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer) {
+        infos.append(info);
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
+        result.setAction(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Accept);
+        answer(result);
+    });
+    manager.connectServer(server.identifier());
+    QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+    const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
+    QVERIFY(initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("elicitation"_L1));
+    QTRY_VERIFY(fakeServer.eventStream);
+
+    const QJsonObject elicit{{"jsonrpc"_L1, u"2.0"_s},
+                             {"id"_L1, u"srv-1"_s},
+                             {"method"_L1, u"elicitation/create"_s},
+                             {"params"_L1,
+                              QJsonObject{{"mode"_L1, u"form"_s},
+                                          {"message"_L1, u"Name?"_s},
+                                          {"requestedSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{}}}}}}};
+    FakeMcpHttpServer::sendEvents(fakeServer.eventStream, FakeMcpHttpServer::jsonEvent(elicit));
+    QTRY_COMPARE(infos.count(), 1);
+    QCOMPARE(infos.at(0).serverName, u"foo"_s);
+    QJsonObject response;
+    QTRY_VERIFY([&]() {
+        for (const auto &obj : std::as_const(fakeServer.receivedRequests)) {
+            if (!obj.contains("method"_L1) && obj.value("id"_L1).toString() == u"srv-1"_s) {
+                response = obj;
+                return true;
+            }
+        }
+        return false;
+    }());
+    QCOMPARE(response.value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
 }
 
 #include "moc_textautogeneratemcptoolsmanagertest.cpp"

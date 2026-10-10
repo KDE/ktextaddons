@@ -241,6 +241,8 @@ target_sources(
         core/jobs/textautogeneratepurgeexpiredchatsjob.cpp
         widgets/mcp/textautogeneratemcptoolconfirmation.h
         widgets/mcp/textautogeneratemcptoolconfirmation.cpp
+        widgets/mcp/textautogeneratemcpelicitation.h
+        widgets/mcp/textautogeneratemcpelicitation.cpp
         core/mcp/textautogeneratemcptoolcalljob.h
         core/mcp/textautogeneratemcptoolcalljob.cpp
         core/mcp/textautogeneratemcptoolsmanager.h

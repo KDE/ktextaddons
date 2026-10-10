@@ -112,16 +112,25 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
             setStatus(identifier, Status::Disconnected);
         }
     });
-    connect(client,
-            &McpProtocolClientProtocolManager::elicitationRequested,
-            this,
-            [client](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
-                     const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
-                Q_UNUSED(request) // TODO: show form dialog
-                TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
-                result.setAction(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Decline);
-                client->respondToElicitation(id, result);
-            });
+    if (mElicitationHandler) {
+        client->setElicitationSupported(true);
+        connect(client,
+                &McpProtocolClientProtocolManager::elicitationRequested,
+                this,
+                [this, serverName = server.name(), client = QPointer(client)](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
+                    const ElicitationInfo info{
+                        .serverName = serverName,
+                        .request = request,
+                    };
+                    mElicitationHandler(info, [client, id](const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &result) {
+                        // Client can be deleted while user answers
+                        if (client) {
+                            client->respondToElicitation(id, result);
+                        }
+                    });
+                });
+    }
     setStatus(identifier, Status::Connecting);
     client->initializeClient();
 }
@@ -375,6 +384,11 @@ QList<QByteArray> TextAutoGenerateMcpToolsManager::serverIdentifiers(const QList
 void TextAutoGenerateMcpToolsManager::setConfirmationHandler(const ConfirmationHandler &handler)
 {
     mConfirmationHandler = handler;
+}
+
+void TextAutoGenerateMcpToolsManager::setElicitationHandler(const ElicitationHandler &handler)
+{
+    mElicitationHandler = handler;
 }
 
 bool TextAutoGenerateMcpToolsManager::needConfirmation(const McpTool &tool) const

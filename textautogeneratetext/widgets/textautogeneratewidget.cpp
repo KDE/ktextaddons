@@ -14,6 +14,7 @@
 #include "widgets/common/textautogeneratepowersavermessagewidget.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
+#include "widgets/mcp/textautogeneratemcpelicitation.h"
 #include "widgets/mcp/textautogeneratemcptoolconfirmation.h"
 #include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogeneratehistorywidget.h"
@@ -149,6 +150,8 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     if (mManager) {
         // Ask user before running tools of MCP servers
         TextAutoGenerateMcpToolConfirmation::installConfirmationHandler(mManager->textAutoGenerateMcpToolsManager(), this);
+        // Ask user to answer requests of MCP servers
+        TextAutoGenerateMcpElicitation::installElicitationHandler(mManager->textAutoGenerateMcpToolsManager(), this);
     }
 }
 

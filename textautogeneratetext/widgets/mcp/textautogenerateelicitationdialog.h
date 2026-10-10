@@ -9,6 +9,7 @@
 #include <QDialog>
 
 #include "textautogeneratetext_private_export.h"
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 
 namespace TextAutoGenerateText
 {
@@ -20,10 +21,18 @@ public:
     explicit TextAutoGenerateElicitationDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateElicitationDialog() override;
 
+    void setServerName(const QString &serverName);
+
+    /*!
+     * Answer of user: Accept, Decline or Cancel (dialog closed)
+     */
+    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult elicitResult() const;
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAccepted();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotDeclined();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRejected();
     TextAutoGenerateElicitationWidget *const mTextAutoGenerateElicitationWidget;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action mAction = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Cancel;
 };
 }

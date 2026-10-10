@@ -9,6 +9,7 @@
 #include <QHash>
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 #include <chrono>
 #include <functional>
@@ -18,6 +19,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpServerManager;
 class McpProtocolClientProtocolManager;
+class McpProtocolElicitResult;
 }
 
 namespace TextAutoGenerateText
@@ -69,6 +71,16 @@ public:
      * Asks user to confirm tool call, \a answer must be called with user choice.
      */
     using ConfirmationHandler = std::function<void(const ToolConfirmationInfo &info, const std::function<void(ToolConfirmation)> &answer)>;
+
+    struct TEXTAUTOGENERATETEXT_EXPORT ElicitationInfo {
+        QString serverName;
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
+    };
+    /*!
+     * Asks user to answer an elicitation request of a MCP server, \a answer must be called with user answer.
+     */
+    using ElicitationHandler = std::function<void(const ElicitationInfo &info,
+                                                  const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer)>;
 
     explicit TextAutoGenerateMcpToolsManager(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager, QObject *parent = nullptr);
     ~TextAutoGenerateMcpToolsManager() override;
@@ -123,6 +135,11 @@ public:
      */
     void setConfirmationHandler(const ConfirmationHandler &handler);
     /*!
+     * Handler used to answer elicitation requests of MCP servers. Without handler elicitation is not announced to servers.
+     * It must be defined before connecting to servers.
+     */
+    void setElicitationHandler(const ElicitationHandler &handler);
+    /*!
      * Tool needs a confirmation: handler is defined, tool is not read only and server is not always allowed.
      */
     [[nodiscard]] bool needConfirmation(const McpTool &tool) const;
@@ -156,5 +173,6 @@ private:
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mServerManager;
     QHash<QByteArray, ServerState> mServers;
     ConfirmationHandler mConfirmationHandler;
+    ElicitationHandler mElicitationHandler;
 };
 }
