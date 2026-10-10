@@ -511,6 +511,7 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/promptswidget/autotests)
     add_subdirectory(widgets/tags/autotests)
     add_subdirectory(widgets/projects/autotests)
+    add_subdirectory(widgets/mcp/autotests)
 endif()
 
 add_subdirectory(plugins)
