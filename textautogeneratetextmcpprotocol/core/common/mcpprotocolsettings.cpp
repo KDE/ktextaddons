@@ -68,6 +68,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d << "]";
     d.space() << "arguments" << (t.arguments().isEmpty() ? QString() : u"***"_s);
     d.space() << "command" << t.command();
+    d.space() << "roots" << t.roots();
     return d;
 }
 
@@ -77,6 +78,7 @@ void McpProtocolSettings::load(const KConfigGroup &config)
     mCommand = config.readEntry("Command", QString());
     mArguments = config.readEntry("Arguments", QString());
     mHeaders = config.readEntry("Headers", QStringList());
+    mRoots = config.readEntry("Roots", QStringList());
     mEnvironments.clear();
     const QStringList environments = config.readEntry("Environments", QStringList());
     for (const QString &environment : environments) {
@@ -102,6 +104,9 @@ void McpProtocolSettings::save(KConfigGroup &config) const
     }
     if (!mHeaders.isEmpty()) {
         config.writeEntry(u"Headers"_s, mHeaders);
+    }
+    if (!mRoots.isEmpty()) {
+        config.writeEntry(u"Roots"_s, mRoots);
     }
     if (!mEnvironments.isEmpty()) {
         QStringList environments;
@@ -136,4 +141,14 @@ QStringList McpProtocolSettings::headers() const
 void McpProtocolSettings::setHeaders(const QStringList &newHeaders)
 {
     mHeaders = newHeaders;
+}
+
+QStringList McpProtocolSettings::roots() const
+{
+    return mRoots;
+}
+
+void McpProtocolSettings::setRoots(const QStringList &newRoots)
+{
+    mRoots = newRoots;
 }

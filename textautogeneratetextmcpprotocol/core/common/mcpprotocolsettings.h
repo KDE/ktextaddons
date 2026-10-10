@@ -48,12 +48,19 @@ public:
     [[nodiscard]] QStringList headers() const;
     void setHeaders(const QStringList &newHeaders);
 
+    /*!
+     * Local directories that server is allowed to access (MCP "roots").
+     */
+    [[nodiscard]] QStringList roots() const;
+    void setRoots(const QStringList &newRoots);
+
 private:
     QUrl mServerUrl;
     QString mCommand;
     QString mArguments;
     QMap<QString, QString> mEnvironments;
     QStringList mHeaders;
+    QStringList mRoots;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings, Q_RELOCATABLE_TYPE);

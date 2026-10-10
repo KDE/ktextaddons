@@ -8,12 +8,14 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <QDir>
 #include <QPointer>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 #include <memory>
@@ -112,6 +114,12 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
             setStatus(identifier, Status::Disconnected);
         }
     });
+    // Announce roots only when they are defined: some servers (e.g. filesystem) replace
+    // their own allowed directories by client roots
+    if (const QStringList roots = server.settings().roots(); !roots.isEmpty()) {
+        client->setRootsSupported(true);
+        client->setRoots(convertToRoots(roots));
+    }
     if (mElicitationHandler) {
         client->setElicitationSupported(true);
         connect(client,
@@ -222,6 +230,25 @@ QByteArray TextAutoGenerateMcpToolsManager::sanitizeName(const QString &name)
         }
     }
     return result;
+}
+
+QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot> TextAutoGenerateMcpToolsManager::convertToRoots(const QStringList &paths)
+{
+    QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot> roots;
+    roots.reserve(paths.count());
+    for (const QString &path : paths) {
+        if (path.trimmed().isEmpty()) {
+            continue;
+        }
+        const QString cleanPath = QDir::cleanPath(QDir::fromNativeSeparators(path.trimmed()));
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot root;
+        root.setUri(QUrl::fromLocalFile(cleanPath).toString());
+        if (const QString name = QDir(cleanPath).dirName(); !name.isEmpty()) {
+            root.setName(name);
+        }
+        roots.append(std::move(root));
+    }
+    return roots;
 }
 
 QByteArray TextAutoGenerateMcpToolsManager::exposedName(const QByteArray &identifier, const QString &serverName, const QString &toolName) const

@@ -12,6 +12,7 @@ class QStackedWidget;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class SelectTypeComboBox;
+class AddMcpServerRootsWidget;
 class AddMcpSseServerWidget;
 class AddMcpStdioServerWidget;
 class AddMcpStreamableHttpServerWidget;
@@ -58,6 +59,7 @@ private:
     AddMcpSseServerWidget *const mAddMcpSseServerWidget;
     AddMcpStdioServerWidget *const mAddMcpStdioServerWidget;
     AddMcpStreamableHttpServerWidget *const mAddMcpStreamableHttpServerWidget;
+    AddMcpServerRootsWidget *const mAddMcpServerRootsWidget;
     TextAutoGenerateTextMcpProtocolCore::McpServer mServer;
 };
 }

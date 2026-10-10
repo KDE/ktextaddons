@@ -20,6 +20,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class McpServerManager;
 class McpProtocolClientProtocolManager;
 class McpProtocolElicitResult;
+class McpProtocolRoot;
 }
 
 namespace TextAutoGenerateText
@@ -129,6 +130,11 @@ public:
      * Convert \a name to a name accepted by LLM API: [a-zA-Z0-9_-]
      */
     [[nodiscard]] static QByteArray sanitizeName(const QString &name);
+
+    /*!
+     * Convert local directories \a paths to MCP roots (file:// uri, name of directory).
+     */
+    [[nodiscard]] static QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot> convertToRoots(const QStringList &paths);
 
     /*!
      * Handler used to ask user before calling a tool. Without handler tools are called without confirmation.

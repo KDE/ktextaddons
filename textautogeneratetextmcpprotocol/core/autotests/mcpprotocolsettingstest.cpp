@@ -6,8 +6,11 @@
 
 #include "mcpprotocolsettingstest.h"
 #include "common/mcpprotocolsettings.h"
+#include <KConfig>
+#include <KConfigGroup>
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(McpProtocolSettingsTest)
 
 McpProtocolSettingsTest::McpProtocolSettingsTest(QObject *parent)
@@ -24,6 +27,24 @@ void McpProtocolSettingsTest::shouldHaveDefaultValues()
     QVERIFY(w.environments().isEmpty());
     QVERIFY(w.serverUrl().isEmpty());
     QVERIFY(w.headers().isEmpty());
+    QVERIFY(w.roots().isEmpty());
+}
+
+void McpProtocolSettingsTest::shouldLoadSaveSettings()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(u"command"_s);
+    settings.setHeaders({u"Authorization: Bearer foo"_s});
+    settings.setRoots({u"/home/user/project"_s, u"/tmp"_s});
+    // In-memory config
+    KConfig config(QString(), KConfig::SimpleConfig);
+    KConfigGroup group = config.group(u"Server"_s);
+    settings.save(group);
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings loaded;
+    loaded.load(group);
+    QCOMPARE(loaded, settings);
+    QCOMPARE(loaded.roots(), QStringList({u"/home/user/project"_s, u"/tmp"_s}));
 }
 
 #include "moc_mcpprotocolsettingstest.cpp"

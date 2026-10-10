@@ -50,6 +50,8 @@ target_sources(
         server/addmcpstreamablehttpserverwidget.cpp
         server/addmcpstreamablehttpserverwidget.h
         server/addmcpserverbasewidget.h
+        server/addmcpserverrootswidget.h
+        server/addmcpserverrootswidget.cpp
         server/addmcpserverbasewidget.cpp
         server/mcpserverlistviewdelegate.h
         server/mcpserverlistviewdelegate.cpp

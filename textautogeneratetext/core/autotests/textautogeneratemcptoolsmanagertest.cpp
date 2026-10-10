@@ -14,6 +14,7 @@
 #include <QTcpSocket>
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using namespace Qt::Literals::StringLiterals;
@@ -296,6 +297,62 @@ void TextAutoGenerateMcpToolsManagerTest::shouldAnswerElicitationRequest()
         return false;
     }());
     QCOMPARE(response.value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldConvertToRoots()
+{
+    QVERIFY(TextAutoGenerateMcpToolsManager::convertToRoots({}).isEmpty());
+    const auto roots = TextAutoGenerateMcpToolsManager::convertToRoots({u"/home/user/project/"_s, u"  "_s, u"/"_s});
+    QCOMPARE(roots.count(), 2);
+    QCOMPARE(roots.at(0).uri(), u"file:///home/user/project"_s);
+    QCOMPARE(roots.at(0).name(), u"project"_s);
+    QCOMPARE(roots.at(1).uri(), u"file:///"_s);
+    QVERIFY(!roots.at(1).name().has_value());
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldAnswerRootsList()
+{
+    {
+        // Not announced without roots
+        FakeMcpServer fakeServer;
+        TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+        const auto server = fakeServer.mcpServer(u"foo"_s);
+        serverManager.mcpServerModel()->addMcpServer(server);
+        TextAutoGenerateMcpToolsManager manager(&serverManager);
+        manager.connectServer(server.identifier());
+        QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+        const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
+        QVERIFY(!initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("roots"_L1));
+    }
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    auto server = fakeServer.mcpServer(u"foo"_s);
+    auto settings = server.settings();
+    settings.setRoots({u"/home/user/project"_s});
+    server.setSettings(settings);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    manager.connectServer(server.identifier());
+    QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+    const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
+    QVERIFY(initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("roots"_L1));
+    QTRY_VERIFY(fakeServer.eventStream);
+
+    const QJsonObject rootsRequest{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, u"srv-1"_s}, {"method"_L1, u"roots/list"_s}};
+    FakeMcpHttpServer::sendEvents(fakeServer.eventStream, FakeMcpHttpServer::jsonEvent(rootsRequest));
+    QJsonObject response;
+    QTRY_VERIFY([&]() {
+        for (const auto &obj : std::as_const(fakeServer.receivedRequests)) {
+            if (!obj.contains("method"_L1) && obj.value("id"_L1).toString() == u"srv-1"_s) {
+                response = obj;
+                return true;
+            }
+        }
+        return false;
+    }());
+    const QJsonArray roots = response.value("result"_L1).toObject().value("roots"_L1).toArray();
+    QCOMPARE(roots.count(), 1);
+    QCOMPARE(roots.at(0).toObject().value("uri"_L1).toString(), u"file:///home/user/project"_s);
 }
 
 #include "moc_textautogeneratemcptoolsmanagertest.cpp"

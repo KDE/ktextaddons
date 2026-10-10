@@ -5,6 +5,7 @@
 */
 #include "addmcpserverwidget.h"
 #include "common/selecttypecombobox.h"
+#include "server/addmcpserverrootswidget.h"
 #include "server/addmcpsseserverwidget.h"
 #include "server/addmcpstdioserverwidget.h"
 #include "server/addmcpstreamablehttpserverwidget.h"
@@ -25,6 +26,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     , mAddMcpSseServerWidget(new AddMcpSseServerWidget(this))
     , mAddMcpStdioServerWidget(new AddMcpStdioServerWidget(this))
     , mAddMcpStreamableHttpServerWidget(new AddMcpStreamableHttpServerWidget(this))
+    , mAddMcpServerRootsWidget(new AddMcpServerRootsWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -48,6 +50,9 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     mStackedWidget->addWidget(mAddMcpSseServerWidget);
     mStackedWidget->addWidget(mAddMcpStdioServerWidget);
     mStackedWidget->addWidget(mAddMcpStreamableHttpServerWidget);
+
+    mAddMcpServerRootsWidget->setObjectName(u"mAddMcpServerRootsWidget"_s);
+    mainLayout->addRow(i18nc("@label", "Allowed folders:"), mAddMcpServerRootsWidget);
 
     mServerNameLineEdit->setClearButtonEnabled(true);
 
@@ -78,6 +83,7 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
+    mAddMcpServerRootsWidget->setRoots(server.settings().roots());
     mSelectTypeComboBox->setType(serverType);
     updateWidget(serverType);
     checkValidSettings();
@@ -107,6 +113,10 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
+    // Roots are used by all transport types
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
+    settings.setRoots(mAddMcpServerRootsWidget->roots());
+    server.setSettings(std::move(settings));
     return server;
 }
 
