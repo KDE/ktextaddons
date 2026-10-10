@@ -62,6 +62,7 @@ private:
     QPushButton *const mListToolsButton;
     QPushButton *const mListPromptsButton;
     QPushButton *const mListResourceTemplatesButton;
+    QPushButton *const mListResourcesButton;
     QPushButton *const mRunChecksButton;
     QComboBox *const mTools;
     QLineEdit *const mArguments;

@@ -24,6 +24,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCResultResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification>
@@ -77,6 +78,7 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
     case MethodType::ListTools:
     case MethodType::ListPrompts:
     case MethodType::ResourceTemplates:
+    case MethodType::ListResources:
         return listRequest(type);
     case MethodType::CallTool:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use callTool() to call a tool.";
@@ -185,6 +187,7 @@ bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
     case MethodType::ListPrompts:
     case MethodType::GetPrompt:
         return capabilities.prompts().has_value();
+    case MethodType::ListResources:
     case MethodType::ResourceTemplates:
         return capabilities.resources().has_value();
     case MethodType::Unknown:
@@ -396,6 +399,8 @@ QString McpProtocolClientProtocolManager::listKey(MethodType type)
         return u"tools"_s;
     case MethodType::ListPrompts:
         return u"prompts"_s;
+    case MethodType::ListResources:
+        return u"resources"_s;
     case MethodType::ResourceTemplates:
         return u"resourceTemplates"_s;
     case MethodType::GetPrompt:
@@ -536,6 +541,13 @@ qint64 McpProtocolClientProtocolManager::listRequest(MethodType type, PendingReq
         listToolsRequest.setId(identifier);
         listToolsRequest.setParams(std::move(params));
         request = McpProtocolListToolsRequest::toJson(listToolsRequest);
+        break;
+    }
+    case MethodType::ListResources: {
+        McpProtocolListResourcesRequest listResourcesRequest;
+        listResourcesRequest.setId(identifier);
+        listResourcesRequest.setParams(std::move(params));
+        request = McpProtocolListResourcesRequest::toJson(listResourcesRequest);
         break;
     }
     case MethodType::ListPrompts: {

@@ -75,6 +75,7 @@ MainWidget::MainWidget(const QString &url, QWidget *parent)
     , mListToolsButton(new QPushButton(u"List tools"_s, this))
     , mListPromptsButton(new QPushButton(u"List prompts"_s, this))
     , mListResourceTemplatesButton(new QPushButton(u"List resource templates"_s, this))
+    , mListResourcesButton(new QPushButton(u"List resources"_s, this))
     , mRunChecksButton(new QPushButton(u"Run all checks"_s, this))
     , mTools(new QComboBox(this))
     , mArguments(new QLineEdit(this))
@@ -96,6 +97,7 @@ MainWidget::MainWidget(const QString &url, QWidget *parent)
     actionLayout->addWidget(mListToolsButton);
     actionLayout->addWidget(mListPromptsButton);
     actionLayout->addWidget(mListResourceTemplatesButton);
+    actionLayout->addWidget(mListResourcesButton);
     actionLayout->addStretch();
     actionLayout->addWidget(mRunChecksButton);
     mainLayout->addLayout(actionLayout);
@@ -130,6 +132,9 @@ MainWidget::MainWidget(const QString &url, QWidget *parent)
     });
     connect(mListPromptsButton, &QPushButton::clicked, this, [this]() {
         logRequest(u"prompts/list"_s, mManager->executeAction(MethodType::ListPrompts));
+    });
+    connect(mListResourcesButton, &QPushButton::clicked, this, [this]() {
+        logRequest(u"resources/list"_s, mManager->executeAction(MethodType::ListResources));
     });
     connect(mListResourceTemplatesButton, &QPushButton::clicked, this, [this]() {
         logRequest(u"resources/templates/list"_s, mManager->executeAction(MethodType::ResourceTemplates));
@@ -167,6 +172,7 @@ void MainWidget::updateButtons()
     mPingButton->setEnabled(started && !checking);
     mListToolsButton->setEnabled(initialized && !checking);
     mListPromptsButton->setEnabled(initialized && !checking);
+    mListResourcesButton->setEnabled(initialized && !checking);
     mListResourceTemplatesButton->setEnabled(initialized && !checking);
     mCallToolButton->setEnabled(initialized && !checking);
     mRunChecksButton->setEnabled(!checking && !mRunChecksWhenInitialized);
@@ -389,6 +395,16 @@ void MainWidget::initializeChecks()
                  return error;
              }
              return names(obj, u"resourceTemplates"_s) == QStringList{u"file"_s} ? QString() : u"Resource template \"file\" expected"_s;
+         }},
+        {u"List resources"_s,
+         [this]() {
+             return mManager->executeAction(MethodType::ListResources);
+         },
+         [](const QJsonObject &obj) {
+             if (const QString error = errorMessage(obj); !error.isEmpty()) {
+                 return error;
+             }
+             return names(obj, u"resources"_s) == QStringList{u"resource1"_s} ? QString() : u"Resource \"resource1\" expected"_s;
          }},
     };
 }

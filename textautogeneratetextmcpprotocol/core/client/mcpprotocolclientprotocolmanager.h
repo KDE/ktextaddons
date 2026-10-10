@@ -29,6 +29,7 @@ public:
         Ping,
         ListTools,
         ListPrompts,
+        ListResources,
         ResourceTemplates,
         Initialize,
         ServerRequest,

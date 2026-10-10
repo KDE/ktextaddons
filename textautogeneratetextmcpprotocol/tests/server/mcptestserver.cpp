@@ -197,7 +197,13 @@ bool McpTestServer::handleCustomRequest(const QJsonValue &id, const QByteArray &
         result.setResourceTemplates({resourceTemplate});
         sendResult(id, McpProtocolListResourceTemplatesResult::toJson(result));
     } else if (method == McpProtocolListResourcesRequest::type()) {
-        sendResult(id, McpProtocolListResourcesResult::toJson({}));
+        McpProtocolResource resource;
+        resource.setName(u"resource1"_s);
+        resource.setDescription(u"description resource1"_s);
+        McpProtocolListResourcesResult result;
+        result.setResources({resource});
+
+        sendResult(id, McpProtocolListResourcesResult::toJson(result));
     } else {
         return false;
     }
