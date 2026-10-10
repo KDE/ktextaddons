@@ -7,6 +7,8 @@
 #include "mcpprotocolclientprotocolmanager.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include "textautogeneratetextmcpprotocolcore_version.h"
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 
 #include <QCoreApplication>
 #include <QJsonArray>
@@ -492,6 +494,17 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
     if (method == QLatin1StringView(McpProtocolPingRequest::type())) {
         McpProtocolJSONRPCResultResponse response;
         response.setId(id);
+        mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
+        return;
+    }
+    if (mElicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
+        // TODO: show form dialog
+        McpProtocolElicitResult elicitResult;
+        // TODO use form dialog result for assigning Action
+        elicitResult.setAction(McpProtocolElicitResult::Action::Decline);
+        McpProtocolJSONRPCResultResponse response;
+        response.setId(id);
+        response.setResult(McpProtocolResult::fromJson(McpProtocolElicitResult::toJson(elicitResult)));
         mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
         return;
     }
