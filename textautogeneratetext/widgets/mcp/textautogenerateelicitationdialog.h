@@ -11,6 +11,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 
+class QPushButton;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolElicitRequest;
@@ -39,7 +40,9 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAccepted();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotDeclined();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRejected();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateAcceptButton();
     TextAutoGenerateElicitationWidget *const mTextAutoGenerateElicitationWidget;
+    QPushButton *mAcceptButton = nullptr;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action mAction = TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Cancel;
 };
 }

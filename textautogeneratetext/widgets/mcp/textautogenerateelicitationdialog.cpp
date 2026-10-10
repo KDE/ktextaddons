@@ -26,16 +26,21 @@ TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *pa
     mainLayout->addWidget(mTextAutoGenerateElicitationWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    button->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Accept"));
+    mAcceptButton = button->button(QDialogButtonBox::Ok);
+    mAcceptButton->setText(i18nc("@action:button", "Accept"));
     button->setObjectName(u"button"_s);
     auto declineButton = new QPushButton(i18nc("@action:button", "Decline"), this);
-    declineButton->setObjectName(u"button"_s);
+    declineButton->setObjectName(u"declineButton"_s);
     button->addButton(declineButton, QDialogButtonBox::ActionRole);
     mainLayout->addWidget(button);
 
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateElicitationDialog::slotAccepted);
     connect(declineButton, &QPushButton::clicked, this, &TextAutoGenerateElicitationDialog::slotDeclined);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateElicitationDialog::slotRejected);
+    connect(mTextAutoGenerateElicitationWidget,
+            &TextAutoGenerateElicitationWidget::contentChanged,
+            this,
+            &TextAutoGenerateElicitationDialog::updateAcceptButton);
 }
 
 TextAutoGenerateElicitationDialog::~TextAutoGenerateElicitationDialog() = default;
@@ -54,8 +59,15 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult TextAutoGenerateEli
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
     result.setAction(mAction);
-    // TODO assign content of form when action is Accept
+    if (mAction == TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Accept) {
+        result.setContent(mTextAutoGenerateElicitationWidget->content());
+    }
     return result;
+}
+
+void TextAutoGenerateElicitationDialog::updateAcceptButton()
+{
+    mAcceptButton->setEnabled(mTextAutoGenerateElicitationWidget->isValid());
 }
 
 void TextAutoGenerateElicitationDialog::slotAccepted()

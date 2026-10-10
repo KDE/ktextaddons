@@ -15,4 +15,8 @@ public:
     ~TextAutoGenerateElicitationWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldCreateFormEditors();
+    void shouldShowUrl();
+    void shouldReturnContent();
+    void shouldValidateConstraints();
 };

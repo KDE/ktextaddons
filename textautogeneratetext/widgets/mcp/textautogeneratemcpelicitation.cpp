@@ -17,7 +17,6 @@ void TextAutoGenerateMcpElicitation::installElicitationHandler(TextAutoGenerateM
     toolsManager->setElicitationHandler(
         [parentWidget](const TextAutoGenerateMcpToolsManager::ElicitationInfo &info,
                        const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer) {
-            // TODO use info.request for creating form
             auto dlg = new TextAutoGenerateElicitationDialog(parentWidget);
             dlg->setAttribute(Qt::WA_DeleteOnClose);
             dlg->setServerName(info.serverName);
