@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-23 10:33+0200\n"
+"PO-Revision-Date: 2026-10-09 11:29+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -24,18 +24,16 @@ msgid "SSE"
 msgstr ""
 
 #: core/server/mcpserver.cpp:105
-#, fuzzy, kde-format
-#| msgid "Standard IO"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Standard IO"
 
 #: core/server/mcpserver.cpp:107
-#, fuzzy, kde-format
-#| msgid "Streamable HTTP"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
-msgstr "Streamable HTTP (HTTP diffundibile per fluxo)"
+msgstr "Streamable HTTP"
 
 #: plugins/client/sse/mcpclientsse.cpp:38
 #, kde-format
@@ -95,22 +93,19 @@ msgstr "Typo:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:24
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Url:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Url:"
 msgstr "Url:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Command:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
 msgstr "Commando:"
 
 #: widgets/server/addmcpstdioserverwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Arguments:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "Argumentos:"
@@ -122,8 +117,7 @@ msgid "Add Custom Header"
 msgstr "Adde capite personalisate"
 
 #: widgets/server/addmcpsteamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Capite:"
@@ -164,8 +158,7 @@ msgid "Remove Header"
 msgstr "Remove capite"
 
 #: widgets/server/addmcpsteamablehttpserverwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgctxt "@label"
 msgid "Headers:"
 msgstr "Capites:"
@@ -206,9 +199,7 @@ msgid "Search…"
 msgstr "Cerca…"
 
 #: widgets/server/mcpserverwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Adde Servitor…"

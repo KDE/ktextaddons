@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-28 11:04+0200\n"
+"PO-Revision-Date: 2026-10-09 11:23+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -40,16 +40,14 @@ msgid "Json File"
 msgstr "File de json"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start LMStudio."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Impossibile startar LMStudio."
+msgstr "Impossibile exportar file."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "Falleva a scriber a file :%1"
+msgstr "Falleva a analysar file JSon: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -57,10 +55,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "Falleva a aperir file per lectura: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start LMStudio."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Impossibile startar LMStudio."
+msgstr "Impossibile importar file."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -2857,10 +2854,9 @@ msgid "Text Plugins:"
 msgstr "Plugins de Texto:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Identificator de instrumento: %1"
+msgstr "Identificator de texto: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
@@ -2938,7 +2934,7 @@ msgstr "Nomine de projecto…"
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Icone:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
