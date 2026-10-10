@@ -29,3 +29,5 @@ TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *pa
 }
 
 TextAutoGenerateElicitationDialog::~TextAutoGenerateElicitationDialog() = default;
+
+#include "moc_textautogenerateelicitationdialog.cpp"

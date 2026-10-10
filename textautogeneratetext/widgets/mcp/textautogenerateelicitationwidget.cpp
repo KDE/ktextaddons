@@ -18,3 +18,5 @@ TextAutoGenerateElicitationWidget::TextAutoGenerateElicitationWidget(QWidget *pa
 }
 
 TextAutoGenerateElicitationWidget::~TextAutoGenerateElicitationWidget() = default;
+
+#include "moc_textautogenerateelicitationwidget.cpp"
