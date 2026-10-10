@@ -34,6 +34,12 @@ public:
     void start() override;
 
     /*!
+     * Stop waiting for tool result and inform server that request is cancelled.
+     * finished() is not emitted.
+     */
+    void cancel();
+
+    /*!
      * Arguments with their json type
      */
     [[nodiscard]] QJsonObject arguments() const;

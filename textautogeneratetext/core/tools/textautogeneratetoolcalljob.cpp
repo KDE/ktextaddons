@@ -69,6 +69,20 @@ bool TextAutoGenerateToolCallJob::canStart() const
     return true;
 }
 
+void TextAutoGenerateToolCallJob::cancel()
+{
+    const auto jobs = mListJob;
+    mListJob.clear();
+    for (auto job : jobs) {
+        job->disconnect(this);
+        if (auto mcpJob = qobject_cast<TextAutoGenerateMcpToolCallJob *>(job)) {
+            mcpJob->cancel();
+        }
+    }
+    Q_EMIT toolInProgress({});
+    deleteLater();
+}
+
 TextAutoGenerateTextToolBaseJob *TextAutoGenerateToolCallJob::createJob(const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info)
 {
     const QByteArray toolName = info.toolName;

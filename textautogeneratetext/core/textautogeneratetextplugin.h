@@ -267,6 +267,11 @@ protected:
      * LLM asked to call tools: call them and send their results to LLM, which will answer.
      */
     void processToolCalls(const SendToAssistantInfo &info, const TextAutoGenerateText::TextAutoGenerateReply::Response &response);
+    /*!
+     * Cancel tool calls of message \a uuid (all tool calls if \a uuid is empty).
+     * Running requests of MCP servers are cancelled.
+     */
+    void cancelToolCalls(const QByteArray &uuid);
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     QList<ModelInfoNameAndIdentifier> mModels;
 

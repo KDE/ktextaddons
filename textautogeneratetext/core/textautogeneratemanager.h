@@ -345,8 +345,9 @@ public:
      * \param chatId The ID of the chat
      * \param uuid The UUID of the message
      * \param info The tool call argument information
+     * \return The started job, it can be used to cancel tool calls
      */
-    void callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
+    TextAutoGenerateToolCallJob *callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
     /*!
      * Create job which calls tools \a info (plugin, internal and MCP tools). Job must be started.
      */

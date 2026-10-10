@@ -166,6 +166,7 @@ void GenericNetworkPlugin::cancelRequest(const QByteArray &uuid)
     if (uuid.isEmpty()) {
         clear();
     } else {
+        cancelToolCalls(uuid);
         for (const auto &connection : std::as_const(mConnections)) {
             if (connection.first == uuid) {
                 disconnect(connection.second);

@@ -51,6 +51,9 @@ void TextAutoGenerateMcpToolCallJob::start()
     });
     // User must accept tool call
     mToolsManager->confirmToolCall(*tool, mArguments, this, [this, name = tool->name](bool accepted) {
+        if (mFinished) {
+            return;
+        }
         if (!accepted) {
             emitFinished(i18n("User refused to run tool \"%1\".", name));
             return;
@@ -65,6 +68,21 @@ void TextAutoGenerateMcpToolCallJob::start()
             emitFinished(i18n("Error: impossible to call tool \"%1\".", name));
         }
     });
+}
+
+void TextAutoGenerateMcpToolCallJob::cancel()
+{
+    if (mFinished) {
+        return;
+    }
+    mFinished = true;
+    if (mClient) {
+        mClient->disconnect(this);
+        if (mRequestId != -1) {
+            mClient->cancelRequest(mRequestId, u"Cancelled by user"_s);
+        }
+    }
+    deleteLater();
 }
 
 void TextAutoGenerateMcpToolCallJob::emitFinished(const QString &content)

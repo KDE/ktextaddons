@@ -348,11 +348,13 @@ TextAutoGenerateManager::createToolCallJob(const QByteArray &chatId, const QByte
     return job;
 }
 
-void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+TextAutoGenerateToolCallJob *
+TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     auto job = createToolCallJob(chatId, uuid, info);
     connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     job->start();
+    return job;
 
     // qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
 }

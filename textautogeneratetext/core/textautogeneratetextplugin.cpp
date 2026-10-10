@@ -17,6 +17,7 @@
 
 #include <QDateTime>
 #include <QJsonObject>
+#include <QPointer>
 #include <QUuid>
 
 using namespace TextAutoGenerateText;
@@ -36,6 +37,8 @@ public:
     }
     bool hasError = false;
     bool isReady = false;
+    // Running tool calls by message uuid
+    QHash<QByteArray, QPointer<TextAutoGenerateToolCallJob>> toolCallJobs;
     TextAutoGenerateManager *const manager;
     TextAutoGenerateText::TextAutoGenerateTextInstance *const instance;
 };
@@ -172,14 +175,16 @@ void TextAutoGenerateTextPlugin::processToolCalls(const SendToAssistantInfo &inf
     if (info.toolTurn >= maxToolTurns) {
         // Avoid infinite loop: show results of last tools
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Too many tool calls for message" << info.messageUuid;
-        d->manager->callTools(info.chatId, info.messageUuid, toolCalls);
+        d->toolCallJobs.insert(info.messageUuid, d->manager->callTools(info.chatId, info.messageUuid, toolCalls));
         return;
     }
     auto job = d->manager->createToolCallJob(info.chatId, info.messageUuid, toolCalls);
+    d->toolCallJobs.insert(info.messageUuid, job);
     connect(job,
             &TextAutoGenerateToolCallJob::toolResults,
             this,
             [this, info, toolCalls, content = response.response](const QList<QPair<QByteArray, QString>> &results) {
+                d->toolCallJobs.remove(info.messageUuid);
                 auto messageModel = d->manager->messagesModelFromChatId(info.chatId);
                 if (!messageModel) {
                     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << info.chatId;
@@ -321,8 +326,24 @@ bool TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier::isValid() const
     return !modelName.isEmpty() && !identifier.isEmpty();
 }
 
+void TextAutoGenerateTextPlugin::cancelToolCalls(const QByteArray &uuid)
+{
+    if (uuid.isEmpty()) {
+        const auto jobs = d->toolCallJobs;
+        d->toolCallJobs.clear();
+        for (const auto &job : jobs) {
+            if (job) {
+                job->cancel();
+            }
+        }
+    } else if (const auto job = d->toolCallJobs.take(uuid); job) {
+        job->cancel();
+    }
+}
+
 void TextAutoGenerateTextPlugin::clear()
 {
+    cancelToolCalls({});
     for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
         auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
         const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
@@ -339,6 +360,7 @@ void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
     if (uuid.isEmpty()) {
         clear();
     } else {
+        cancelToolCalls(uuid);
         for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
             const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
             if (connection.first == uuid) {

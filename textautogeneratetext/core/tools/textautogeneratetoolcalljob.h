@@ -54,6 +54,12 @@ public:
     [[nodiscard]] bool canStart() const;
 
     /*!
+     * \brief Cancels running tool calls. Running MCP requests are cancelled on server.
+     * finished() and toolResults() are not emitted.
+     */
+    void cancel();
+
+    /*!
      */
     [[nodiscard]] TextAutoGenerateTextToolInternalInterface *textAutoGenerateTextToolInternalInterface() const;
     /*!
