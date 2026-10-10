@@ -157,4 +157,43 @@ void TextAutoGenerateMcpToolCallJobTest::shouldAskConfirmation()
     QVERIFY(!manager.isServerAlwaysAllowed(server.identifier()));
 }
 
+void TextAutoGenerateMcpToolCallJobTest::shouldCancelToolCall()
+{
+    FakeMcpServer fakeServer;
+    fakeServer.tools.append(tool(u"slow"_s, true));
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    manager.connectServer(server.identifier());
+    QTRY_VERIFY(manager.tool("foo__slow"_ba).has_value());
+
+    TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo info;
+    info.toolName = "foo__slow"_ba;
+    QPointer<TextAutoGenerateText::TextAutoGenerateToolCallJob> job = new TextAutoGenerateText::TextAutoGenerateToolCallJob("chat"_ba, "uuid"_ba, {info});
+    job->setTextAutoGenerateMcpToolsManager(&manager);
+    QSignalSpy finishedSpy(job.data(), &TextAutoGenerateText::TextAutoGenerateToolCallJob::finished);
+    QSignalSpy toolResultsSpy(job.data(), &TextAutoGenerateText::TextAutoGenerateToolCallJob::toolResults);
+    job->start();
+
+    const auto findRequest = [&fakeServer](const QString &method) {
+        for (const auto &obj : std::as_const(fakeServer.receivedRequests)) {
+            if (obj.value("method"_L1).toString() == method) {
+                return obj;
+            }
+        }
+        return QJsonObject();
+    };
+    QTRY_VERIFY(!findRequest(u"tools/call"_s).isEmpty());
+    const QJsonValue requestId = findRequest(u"tools/call"_s).value("id"_L1);
+
+    job->cancel();
+    // Server is informed
+    QTRY_VERIFY(!findRequest(u"notifications/cancelled"_s).isEmpty());
+    QCOMPARE(findRequest(u"notifications/cancelled"_s).value("params"_L1).toObject().value("requestId"_L1), requestId);
+    QTRY_VERIFY(!job);
+    QVERIFY(finishedSpy.isEmpty());
+    QVERIFY(toolResultsSpy.isEmpty());
+}
+
 #include "moc_textautogeneratemcptoolcalljobtest.cpp"

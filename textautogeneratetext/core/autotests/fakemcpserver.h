@@ -44,6 +44,7 @@ public:
             }
             const QJsonObject obj = request.json();
             const QString method = obj.value("method"_L1).toString();
+            receivedRequests.append(obj);
             QJsonObject result;
             if (method == "initialize"_L1) {
                 result = QJsonObject{{"protocolVersion"_L1, u"2025-11-25"_s},
@@ -55,6 +56,10 @@ public:
                 // Returns name and arguments (json) of tool
                 const QJsonObject params = obj.value("params"_L1).toObject();
                 const QString name = params.value("name"_L1).toString();
+                if (name == u"slow"_s) {
+                    // Never answers
+                    return;
+                }
                 const QString arguments = QString::fromUtf8(QJsonDocument(params.value("arguments"_L1).toObject()).toJson(QJsonDocument::Compact));
                 const QJsonObject content{{"type"_L1, u"text"_s}, {"text"_L1, QString(name + u' ' + arguments)}};
                 result = QJsonObject{{"content"_L1, QJsonArray{content}}, {"isError"_L1, name == u"failing"_s}};
@@ -86,4 +91,6 @@ public:
     FakeMcpHttpServer server;
     QJsonArray tools{tool(u"weather"_s, true), tool(u"get time"_s)};
     QPointer<QTcpSocket> eventStream;
+    // Requests and notifications received from client
+    QList<QJsonObject> receivedRequests;
 };
