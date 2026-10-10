@@ -6,6 +6,7 @@
 #include "textautogenerateelicitationwidget.h"
 #include <KLocalizedString>
 #include <QVBoxLayout>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -18,5 +19,10 @@ TextAutoGenerateElicitationWidget::TextAutoGenerateElicitationWidget(QWidget *pa
 }
 
 TextAutoGenerateElicitationWidget::~TextAutoGenerateElicitationWidget() = default;
+
+void TextAutoGenerateElicitationWidget::setRequest(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request)
+{
+    // TODO generate widget
+}
 
 #include "moc_textautogenerateelicitationwidget.cpp"

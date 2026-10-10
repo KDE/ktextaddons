@@ -21,6 +21,7 @@ void TextAutoGenerateMcpElicitation::installElicitationHandler(TextAutoGenerateM
             auto dlg = new TextAutoGenerateElicitationDialog(parentWidget);
             dlg->setAttribute(Qt::WA_DeleteOnClose);
             dlg->setServerName(info.serverName);
+            dlg->setRequest(info.request);
             QObject::connect(dlg, &QDialog::finished, dlg, [dlg, answer]() {
                 answer(dlg->elicitResult());
             });

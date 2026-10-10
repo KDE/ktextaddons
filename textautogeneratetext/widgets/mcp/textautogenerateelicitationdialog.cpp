@@ -10,6 +10,7 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -38,6 +39,11 @@ TextAutoGenerateElicitationDialog::TextAutoGenerateElicitationDialog(QWidget *pa
 }
 
 TextAutoGenerateElicitationDialog::~TextAutoGenerateElicitationDialog() = default;
+
+void TextAutoGenerateElicitationDialog::setRequest(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request)
+{
+    mTextAutoGenerateElicitationWidget->setRequest(request);
+}
 
 void TextAutoGenerateElicitationDialog::setServerName(const QString &serverName)
 {

@@ -7,6 +7,10 @@
 
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpProtocolElicitRequest;
+}
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateElicitationWidget : public QWidget
@@ -15,5 +19,6 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateElicitationWidget : publ
 public:
     explicit TextAutoGenerateElicitationWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateElicitationWidget() override;
+    void setRequest(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request);
 };
 }

@@ -11,6 +11,11 @@
 #include "textautogeneratetext_private_export.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class McpProtocolElicitRequest;
+}
+
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateElicitationWidget;
@@ -27,6 +32,8 @@ public:
      * Answer of user: Accept, Decline or Cancel (dialog closed)
      */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult elicitResult() const;
+
+    void setRequest(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAccepted();
