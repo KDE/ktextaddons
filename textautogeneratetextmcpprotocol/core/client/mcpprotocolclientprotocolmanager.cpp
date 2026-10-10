@@ -16,6 +16,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClient>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializedNotification>
@@ -70,6 +71,9 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
     switch (type) {
     case MethodType::Ping:
         return ping();
+    case MethodType::GetPrompt:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use getPrompt() to get a prompt.";
+        break;
     case MethodType::ListTools:
     case MethodType::ListPrompts:
     case MethodType::ResourceTemplates:
@@ -87,6 +91,32 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
         break;
     }
     return -1;
+}
+
+qint64 McpProtocolClientProtocolManager::getPrompt(const QString &name, const QMap<QString, QString> &arguments)
+{
+    if (!mClient || !mInitialized) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't get prompt" << name;
+        return -1;
+    }
+    if (!serverSupports(MethodType::GetPrompt)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support prompts. Can't get prompt" << name;
+        return -1;
+    }
+    if (name.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Prompt name is empty";
+        return -1;
+    }
+    McpProtocolGetPromptRequestParams params;
+    params.setName(name);
+    if (!arguments.isEmpty()) {
+        params.setArguments(arguments);
+    }
+    McpProtocolGetPromptRequest request;
+    const qint64 identifier = requestId();
+    request.setId(identifier);
+    request.setParams(std::move(params));
+    return sendRequest(McpProtocolGetPromptRequest::toJson(request), identifier, MethodType::GetPrompt);
 }
 
 qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request, qint64 identifier, MethodType type)
@@ -153,6 +183,7 @@ bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
     case MethodType::CallTool:
         return capabilities.tools().has_value();
     case MethodType::ListPrompts:
+    case MethodType::GetPrompt:
         return capabilities.prompts().has_value();
     case MethodType::ResourceTemplates:
         return capabilities.resources().has_value();
@@ -367,6 +398,7 @@ QString McpProtocolClientProtocolManager::listKey(MethodType type)
         return u"prompts"_s;
     case MethodType::ResourceTemplates:
         return u"resourceTemplates"_s;
+    case MethodType::GetPrompt:
     case MethodType::Unknown:
     case MethodType::Ping:
     case MethodType::Initialize:

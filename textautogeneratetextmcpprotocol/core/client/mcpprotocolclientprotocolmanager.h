@@ -10,6 +10,7 @@
 #include <QDeadlineTimer>
 #include <QHash>
 #include <QJsonArray>
+#include <QMap>
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
@@ -33,6 +34,7 @@ public:
         ServerRequest,
         ServerNotification,
         CallTool,
+        GetPrompt,
     };
     Q_ENUM(MethodType)
     explicit McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent = nullptr);
@@ -55,7 +57,14 @@ public:
      * Response is emitted with received() and MethodType::CallTool, its "result" can be
      * read with McpProtocolCallToolResult::fromJson(). Return request id, -1 if request was not sent.
      */
-    qint64 callTool(const QString &name, const QJsonObject &arguments = {});
+    [[nodiscard]] qint64 callTool(const QString &name, const QJsonObject &arguments = {});
+
+    /*!
+     * Get prompt \a name with \a arguments. Server must support prompts.
+     * Response is emitted with received() and MethodType::GetPrompt, its "result" can be
+     * read with McpProtocolGetPromptResult::fromJson(). Return request id, -1 if request was not sent.
+     */
+    [[nodiscard]] qint64 getPrompt(const QString &name, const QMap<QString, QString> &arguments = {});
 
     /*!
      * Time to wait for a response. When it expires, request is cancelled and

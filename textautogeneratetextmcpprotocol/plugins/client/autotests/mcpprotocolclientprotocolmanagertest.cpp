@@ -12,6 +12,7 @@
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 using namespace Qt::Literals::StringLiterals;
 using TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager;
@@ -279,6 +280,56 @@ void McpProtocolClientProtocolManagerTest::shouldNotCallToolWhenServerDoesNotSup
     QVERIFY(manager.executeAction(McpProtocolClientProtocolManager::MethodType::Ping) > 0);
     QTest::qWait(100);
     QVERIFY(postedMessages(fakeServer, u"tools/call"_s).isEmpty());
+}
+
+void McpProtocolClientProtocolManagerTest::shouldGetPrompt()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            const QJsonObject params = obj.value("params"_L1).toObject();
+            const QString text = u"%1:%2"_s.arg(params.value("name"_L1).toString(), params.value("arguments"_L1).toObject().value("code"_L1).toString());
+            const QJsonObject message{{"role"_L1, u"user"_s}, {"content"_L1, QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, text}}}};
+            sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"description"_L1, u"Review code"_s}, {"messages"_L1, QJsonArray{message}}}));
+        },
+        QJsonObject{{"prompts"_L1, QJsonObject{}}}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    // Not initialized
+    QCOMPARE(manager.getPrompt(u"review"_s), -1);
+    initialize(manager);
+    QCOMPARE(manager.getPrompt(QString()), -1);
+    // Prompts are not tools
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::GetPrompt), -1);
+
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.getPrompt(u"review"_s, {{u"code"_s, u"foo()"_s}});
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::GetPrompt);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    // Not a paginated response: result is unchanged
+    const QJsonObject resultObj = response.value("result"_L1).toObject();
+    QCOMPARE(resultObj.keys(), (QStringList{u"description"_s, u"messages"_s}));
+    const auto getPromptResult = TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptResult::fromJson(resultObj);
+    QCOMPARE(getPromptResult.messages().count(), 1);
+
+    const QJsonObject request = postedMessages(fakeServer, u"prompts/get"_s).constFirst();
+    const QJsonObject params = request.value("params"_L1).toObject();
+    QCOMPARE(params.value("name"_L1).toString(), u"review"_s);
+    QCOMPARE(params.value("arguments"_L1).toObject(), (QJsonObject{{"code"_L1, u"foo()"_s}}));
+}
+
+void McpProtocolClientProtocolManagerTest::shouldNotGetPromptWhenServerDoesNotSupportPrompts()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QCOMPARE(manager.getPrompt(u"review"_s), -1);
+    QTest::qWait(100);
+    QVERIFY(postedMessages(fakeServer, u"prompts/get"_s).isEmpty());
 }
 
 namespace
