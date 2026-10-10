@@ -111,7 +111,7 @@ void McpProtocolClientProtocolManagerTest::shouldInitializeAndListTools()
     QCOMPARE(initialize.value("params"_L1).toObject().value("protocolVersion"_L1).toString(), u"2025-11-25"_s);
     QVERIFY(!initialize.value("params"_L1).toObject().value("clientInfo"_L1).toObject().value("name"_L1).toString().isEmpty());
 
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
     QVERIFY(identifier > 0);
     QTRY_COMPARE(receivedSpy.count(), 1);
@@ -160,8 +160,8 @@ void McpProtocolClientProtocolManagerTest::shouldRejectUnsupportedProtocolVersio
     FakeMcpHttpServer fakeServer;
     fakeServer.setHandler(createHandler(u"1999-01-01"_s));
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
-    QSignalSpy errorSpy(&manager, &McpProtocolClientProtocolManager::error);
-    QSignalSpy initializedSpy(&manager, &McpProtocolClientProtocolManager::initialized);
+    const QSignalSpy errorSpy(&manager, &McpProtocolClientProtocolManager::error);
+    const QSignalSpy initializedSpy(&manager, &McpProtocolClientProtocolManager::initialized);
     manager.initializeClient();
     QTRY_COMPARE(errorSpy.count(), 1);
     QCOMPARE(initializedSpy.count(), 0);
@@ -177,7 +177,7 @@ void McpProtocolClientProtocolManagerTest::shouldCancelRequestWhenTimeoutExpired
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     manager.setRequestTimeout(std::chrono::milliseconds(200));
     initialize(manager);
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
     QTRY_COMPARE(receivedSpy.count(), 1);
     QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ListTools);
@@ -199,7 +199,7 @@ void McpProtocolClientProtocolManagerTest::shouldCancelRequest()
     }));
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
     QTRY_COMPARE(pendingSockets.count(), 1);
     manager.cancelRequest(identifier, u"User cancelled"_s);
@@ -220,7 +220,7 @@ void McpProtocolClientProtocolManagerTest::shouldRestartAfterStop()
     fakeServer.setHandler(createHandler());
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
-    QSignalSpy finishedSpy(&manager, &McpProtocolClientProtocolManager::finished);
+    const QSignalSpy finishedSpy(&manager, &McpProtocolClientProtocolManager::finished);
     manager.stopClient();
     QTRY_COMPARE(finishedSpy.count(), 1);
     QVERIFY(!manager.isInitialized());
@@ -243,7 +243,7 @@ void McpProtocolClientProtocolManagerTest::shouldCallTool()
     initialize(manager);
     QCOMPARE(manager.callTool(QString()), -1);
 
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     const qint64 identifier = manager.callTool(u"weather"_s, QJsonObject{{"city"_L1, u"Paris"_s}});
     QVERIFY(identifier > 0);
     QTRY_COMPARE(receivedSpy.count(), 1);
@@ -316,7 +316,7 @@ void McpProtocolClientProtocolManagerTest::shouldFetchAllPages()
     }));
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
     QTRY_COMPARE(receivedSpy.count(), 1);
     QTest::qWait(100);
@@ -343,7 +343,7 @@ void McpProtocolClientProtocolManagerTest::shouldStopPaginationWhenCursorDoesNot
     }));
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
     QTRY_COMPARE(receivedSpy.count(), 1);
     QCOMPARE(postedMessages(fakeServer, u"tools/list"_s).count(), 2);
@@ -363,7 +363,7 @@ void McpProtocolClientProtocolManagerTest::shouldReturnErrorOfPage()
     }));
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     const qint64 identifier = manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
     QTRY_COMPARE(receivedSpy.count(), 1);
     const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
@@ -384,10 +384,10 @@ void McpProtocolClientProtocolManagerTest::shouldEmitListChangedSignals()
     }));
     McpProtocolClientProtocolManager manager(createServer(fakeServer));
     initialize(manager);
-    QSignalSpy toolsSpy(&manager, &McpProtocolClientProtocolManager::toolsListChanged);
-    QSignalSpy promptsSpy(&manager, &McpProtocolClientProtocolManager::promptsListChanged);
-    QSignalSpy resourcesSpy(&manager, &McpProtocolClientProtocolManager::resourcesListChanged);
-    QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const QSignalSpy toolsSpy(&manager, &McpProtocolClientProtocolManager::toolsListChanged);
+    const QSignalSpy promptsSpy(&manager, &McpProtocolClientProtocolManager::promptsListChanged);
+    const QSignalSpy resourcesSpy(&manager, &McpProtocolClientProtocolManager::resourcesListChanged);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
     manager.executeAction(McpProtocolClientProtocolManager::MethodType::Ping);
     QTRY_COMPARE(receivedSpy.count(), 4);
     QCOMPARE(toolsSpy.count(), 1);
