@@ -7,7 +7,6 @@
 #include "textautogeneratewidget.h"
 #include "core/textautogeneratechatsettings.h"
 
-#include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextclient.h"
