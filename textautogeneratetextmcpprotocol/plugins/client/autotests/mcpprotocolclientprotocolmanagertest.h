@@ -21,6 +21,7 @@ private Q_SLOTS:
     void shouldAnswerElicitationRequest();
     void shouldRejectUnsupportedProtocolVersion();
     void shouldCancelRequestWhenTimeoutExpired();
+    void shouldNotTimeoutWhileElicitationIsPending();
     void shouldCancelRequest();
     void shouldRestartAfterStop();
     void shouldCallTool();

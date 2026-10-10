@@ -10,6 +10,7 @@
 #include <QDeadlineTimer>
 #include <QHash>
 #include <QJsonArray>
+#include <QList>
 #include <QMap>
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
@@ -188,6 +189,8 @@ private:
     QHash<qint64, PendingRequest> mPendingRequests;
     std::chrono::milliseconds mRequestTimeout = std::chrono::seconds(60);
     QTimer *const mTimeoutTimer;
+    // Elicitation requests waiting for user answer: requests don't time out meanwhile
+    QList<McpProtocolUtils::RequestId> mPendingElicitations;
     bool mElicitationSupported = false;
 };
 }

@@ -285,6 +285,58 @@ void McpProtocolClientProtocolManagerTest::shouldCancelRequestWhenTimeoutExpired
     QCOMPARE(params.value("requestId"_L1).toInteger(), identifier);
 }
 
+void McpProtocolClientProtocolManagerTest::shouldNotTimeoutWhileElicitationIsPending()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &, QTcpSocket *socket) {
+        // Ask for user input, never answer request
+        const QJsonObject elicit{{"jsonrpc"_L1, u"2.0"_s},
+                                 {"id"_L1, u"srv-1"_s},
+                                 {"method"_L1, u"elicitation/create"_s},
+                                 {"params"_L1,
+                                  QJsonObject{{"mode"_L1, u"form"_s},
+                                              {"message"_L1, u"Name?"_s},
+                                              {"requestedSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{}}}}}}};
+        FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(elicit), false);
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    manager.setElicitationSupported(true);
+    manager.setRequestTimeout(std::chrono::milliseconds(200));
+    std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId> elicitationId;
+    connect(&manager,
+            &McpProtocolClientProtocolManager::elicitationRequested,
+            this,
+            [&elicitationId](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
+                Q_UNUSED(request)
+                elicitationId = id;
+            });
+    initialize(manager);
+    QList<QJsonObject> responses;
+    connect(&manager,
+            &McpProtocolClientProtocolManager::received,
+            this,
+            [&responses](const QJsonObject &obj, McpProtocolClientProtocolManager::MethodType type) {
+                if (type == McpProtocolClientProtocolManager::MethodType::ListTools) {
+                    responses.append(obj);
+                }
+            });
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_VERIFY(elicitationId.has_value());
+    // User takes time to answer: request doesn't time out
+    QTest::qWait(600);
+    QVERIFY(responses.isEmpty());
+    QVERIFY(postedMessages(fakeServer, u"notifications/cancelled"_s).isEmpty());
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
+    result.setAction(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Cancel);
+    manager.respondToElicitation(*elicitationId, result);
+    QTRY_VERIFY(!elicitationResponse(fakeServer).isEmpty());
+    // Timeout restarts when user answered
+    QTRY_COMPARE(responses.count(), 1);
+    QCOMPARE(responses.constFirst().value("error"_L1).toObject().value("code"_L1).toInt(), -32001);
+}
+
 void McpProtocolClientProtocolManagerTest::shouldCancelRequest()
 {
     FakeMcpHttpServer fakeServer;

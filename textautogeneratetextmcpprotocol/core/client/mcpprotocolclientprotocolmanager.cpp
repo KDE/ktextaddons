@@ -162,6 +162,16 @@ void McpProtocolClientProtocolManager::setElicitationSupported(bool supported)
 
 void McpProtocolClientProtocolManager::respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result)
 {
+    if (!mPendingElicitations.removeOne(id)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "No pending elicitation request:" << McpProtocolUtils::requestIdToJson(id);
+        return;
+    }
+    if (mPendingElicitations.isEmpty()) {
+        // User answered: give server full timeout to answer pending requests
+        for (auto &pending : mPendingRequests) {
+            pending.deadline = QDeadlineTimer(mRequestTimeout);
+        }
+    }
     McpProtocolJSONRPCResultResponse response;
     response.setId(id);
     response.setResult(McpProtocolResult::fromJson(McpProtocolElicitResult::toJson(result)));
@@ -192,6 +202,10 @@ qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request,
 
 void McpProtocolClientProtocolManager::checkTimeouts()
 {
+    if (!mPendingElicitations.isEmpty()) {
+        // Server waits for user answer before answering pending requests
+        return;
+    }
     QList<qint64> expired;
     for (auto it = mPendingRequests.cbegin(); it != mPendingRequests.cend(); ++it) {
         if (it->deadline.hasExpired()) {
@@ -390,6 +404,7 @@ void McpProtocolClientProtocolManager::slotFinished()
     mInitialized = false;
     mInitializeResult = {};
     mPendingRequests.clear();
+    mPendingElicitations.clear();
     mTimeoutTimer->stop();
     Q_EMIT finished();
 }
@@ -506,6 +521,7 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
         return;
     }
     if (mElicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
+        mPendingElicitations.append(id);
         if (!isSignalConnected(QMetaMethod::fromSignal(&McpProtocolClientProtocolManager::elicitationRequested))) {
             McpProtocolElicitResult elicitResult;
             elicitResult.setAction(McpProtocolElicitResult::Action::Decline);
