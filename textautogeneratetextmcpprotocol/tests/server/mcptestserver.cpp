@@ -200,6 +200,7 @@ bool McpTestServer::handleCustomRequest(const QJsonValue &id, const QByteArray &
         McpProtocolResource resource;
         resource.setName(u"resource1"_s);
         resource.setDescription(u"description resource1"_s);
+        resource.setUri(u"file:///resource1"_s);
         McpProtocolListResourcesResult result;
         result.setResources({resource});
 
