@@ -21,6 +21,9 @@ public:
     ~TextAutoGenerateElicitationDialog() override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAccepted();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotDeclined();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRejected();
     TextAutoGenerateElicitationWidget *const mTextAutoGenerateElicitationWidget;
 };
 }
