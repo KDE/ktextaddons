@@ -102,7 +102,8 @@ FakeMcpHttpServer::Handler createElicitationHandler()
     });
 }
 
-QJsonObject elicitationResponse(const FakeMcpHttpServer &server)
+// Response of client to server request "srv-1"
+QJsonObject serverRequestResponse(const FakeMcpHttpServer &server)
 {
     for (const auto &request : server.requests("POST")) {
         const QJsonObject obj = request.json();
@@ -220,8 +221,8 @@ void McpProtocolClientProtocolManagerTest::shouldAnswerElicitationRequest()
         manager.setElicitationSupported(true);
         initialize(manager);
         manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
-        QTRY_VERIFY(!elicitationResponse(fakeServer).isEmpty());
-        QCOMPARE(elicitationResponse(fakeServer).value("result"_L1).toObject().value("action"_L1).toString(), u"decline"_s);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        QCOMPARE(serverRequestResponse(fakeServer).value("result"_L1).toObject().value("action"_L1).toString(), u"decline"_s);
     }
     {
         // Answered by receiver
@@ -244,10 +245,80 @@ void McpProtocolClientProtocolManagerTest::shouldAnswerElicitationRequest()
                 });
         initialize(manager);
         manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
-        QTRY_VERIFY(!elicitationResponse(fakeServer).isEmpty());
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
         QCOMPARE(requested, 1);
-        QCOMPARE(elicitationResponse(fakeServer).value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
+        QCOMPARE(serverRequestResponse(fakeServer).value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
     }
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnnounceRootsCapability()
+{
+    {
+        // Not announced by default
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        QVERIFY(!manager.rootsSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        QVERIFY(!initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("roots"_L1));
+    }
+    {
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setRootsSupported(true);
+        QVERIFY(manager.rootsSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        const QJsonObject capabilities = initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject();
+        QCOMPARE(capabilities.value("roots"_L1).toObject(), QJsonObject({{"listChanged"_L1, true}}));
+    }
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnswerRootsList()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        const QJsonObject roots{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, u"srv-1"_s}, {"method"_L1, u"roots/list"_s}};
+        FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(roots) + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    manager.setRootsSupported(true);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot root;
+    root.setUri(u"file:///home/user/project"_s);
+    root.setName(u"project"_s);
+    manager.setRoots({root});
+    initialize(manager);
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+    const QJsonArray roots = serverRequestResponse(fakeServer).value("result"_L1).toObject().value("roots"_L1).toArray();
+    QCOMPARE(roots.count(), 1);
+    QCOMPARE(roots.at(0).toObject().value("uri"_L1).toString(), u"file:///home/user/project"_s);
+    QCOMPARE(roots.at(0).toObject().value("name"_L1).toString(), u"project"_s);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldNotifyRootsListChanged()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    manager.setRootsSupported(true);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot root;
+    root.setUri(u"file:///home/user/project"_s);
+    // Not initialized: nothing is sent
+    manager.setRoots({root});
+    QCOMPARE(manager.roots().count(), 1);
+    initialize(manager);
+    QTRY_COMPARE(postedMessages(fakeServer, u"notifications/initialized"_s).count(), 1);
+    QCOMPARE(postedMessages(fakeServer, u"notifications/roots/list_changed"_s).count(), 0);
+    root.setUri(u"file:///home/user/other"_s);
+    manager.setRoots({root});
+    QTRY_COMPARE(postedMessages(fakeServer, u"notifications/roots/list_changed"_s).count(), 1);
+    // Same list: nothing is sent
+    manager.setRoots({root});
+    manager.setRoots({});
+    QTRY_COMPARE(postedMessages(fakeServer, u"notifications/roots/list_changed"_s).count(), 2);
 }
 
 void McpProtocolClientProtocolManagerTest::shouldRejectUnsupportedProtocolVersion()
@@ -331,7 +402,7 @@ void McpProtocolClientProtocolManagerTest::shouldNotTimeoutWhileElicitationIsPen
     TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
     result.setAction(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Cancel);
     manager.respondToElicitation(*elicitationId, result);
-    QTRY_VERIFY(!elicitationResponse(fakeServer).isEmpty());
+    QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
     // Timeout restarts when user answered
     QTRY_COMPARE(responses.count(), 1);
     QCOMPARE(responses.constFirst().value("error"_L1).toObject().value("code"_L1).toInt(), -32001);

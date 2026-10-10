@@ -28,11 +28,14 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListRootsRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListRootsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRootsListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -172,9 +175,41 @@ void McpProtocolClientProtocolManager::respondToElicitation(const McpProtocolUti
             pending.deadline = QDeadlineTimer(mRequestTimeout);
         }
     }
+    sendResult(id, McpProtocolElicitResult::toJson(result));
+}
+
+bool McpProtocolClientProtocolManager::rootsSupported() const
+{
+    return mRootsSupported;
+}
+
+void McpProtocolClientProtocolManager::setRootsSupported(bool supported)
+{
+    mRootsSupported = supported;
+}
+
+QList<McpProtocolRoot> McpProtocolClientProtocolManager::roots() const
+{
+    return mRoots;
+}
+
+void McpProtocolClientProtocolManager::setRoots(const QList<McpProtocolRoot> &roots)
+{
+    if (mRoots == roots) {
+        return;
+    }
+    mRoots = roots;
+    if (mRootsSupported && mInitialized) {
+        const McpProtocolRootsListChangedNotification notification;
+        mClient->notify(McpProtocolRootsListChangedNotification::toJson(notification));
+    }
+}
+
+void McpProtocolClientProtocolManager::sendResult(const McpProtocolUtils::RequestId &id, const QJsonObject &result)
+{
     McpProtocolJSONRPCResultResponse response;
     response.setId(id);
-    response.setResult(McpProtocolResult::fromJson(McpProtocolElicitResult::toJson(result)));
+    response.setResult(McpProtocolResult::fromJson(result));
     mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
 }
 
@@ -515,9 +550,13 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
     const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(obj.value("id"_L1));
     const QString method = obj.value("method"_L1).toString();
     if (method == QLatin1StringView(McpProtocolPingRequest::type())) {
-        McpProtocolJSONRPCResultResponse response;
-        response.setId(id);
-        mClient->respond(McpProtocolJSONRPCResultResponse::toJson(response));
+        sendResult(id, {});
+        return;
+    }
+    if (mRootsSupported && method == QLatin1StringView(McpProtocolListRootsRequest::type())) {
+        McpProtocolListRootsResult result;
+        result.setRoots(mRoots);
+        sendResult(id, McpProtocolListRootsResult::toJson(result));
         return;
     }
     if (mElicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
@@ -532,7 +571,7 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
         Q_EMIT elicitationRequested(id, request);
         return;
     }
-    // We don't support sampling/roots yet
+    // We don't support sampling yet
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported server request:" << method;
     McpProtocolError mcpError;
     mcpError.setCode(-32601); // JSON-RPC "Method not found"
@@ -580,15 +619,20 @@ void McpProtocolClientProtocolManager::initialize()
     clientInfo.setName(mClientName.isEmpty() ? QCoreApplication::applicationName() : mClientName);
     clientInfo.setVersion(QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING));
     params.setClientInfo(clientInfo);
+    McpProtocolClientCapabilities capabilities;
     if (mElicitationSupported) {
         // Only form mode is supported: announce "elicitation": { "form": {} }
         McpProtocolClientCapabilities::Elicitation elicitation;
         elicitation.setForm(QMap<QString, QJsonValue>());
         // TODO add setUrl(...)
-        McpProtocolClientCapabilities capabilities;
         capabilities.setElicitation(std::move(elicitation));
-        params.setCapabilities(std::move(capabilities));
     }
+    if (mRootsSupported) {
+        McpProtocolClientCapabilities::Roots roots;
+        roots.setListChanged(true);
+        capabilities.setRoots(std::move(roots));
+    }
+    params.setCapabilities(std::move(capabilities));
 
     initRequest.setParams(std::move(params));
     const qint64 identifier = requestId();

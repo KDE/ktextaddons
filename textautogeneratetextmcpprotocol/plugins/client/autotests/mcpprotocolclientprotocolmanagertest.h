@@ -19,6 +19,9 @@ private Q_SLOTS:
     void shouldAnnounceElicitationCapability();
     void shouldAnswerServerRequests();
     void shouldAnswerElicitationRequest();
+    void shouldAnnounceRootsCapability();
+    void shouldAnswerRootsList();
+    void shouldNotifyRootsListChanged();
     void shouldRejectUnsupportedProtocolVersion();
     void shouldCancelRequestWhenTimeoutExpired();
     void shouldNotTimeoutWhileElicitationIsPending();

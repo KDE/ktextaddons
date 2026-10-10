@@ -14,6 +14,7 @@
 #include <QMap>
 #include <QObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 #include <chrono>
@@ -123,6 +124,25 @@ public:
      */
     void respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result);
 
+    /*!
+     * Return true if "roots" capability is announced to server.
+     */
+    [[nodiscard]] bool rootsSupported() const;
+    /*!
+     * Announce "roots" capability to server when \a supported is true: server can then
+     * ask for roots() with roots/list. It must be called before initializeClient(). Default is false.
+     */
+    void setRootsSupported(bool supported);
+
+    /*!
+     * Directories (file:// uri) that server is allowed to access.
+     */
+    [[nodiscard]] QList<McpProtocolRoot> roots() const;
+    /*!
+     * Set \a roots. When client is initialized, server is informed that list changed.
+     */
+    void setRoots(const QList<McpProtocolRoot> &roots);
+
 Q_SIGNALS:
     void started();
     void initialized();
@@ -166,6 +186,7 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT static QString listKey(MethodType type);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendInitializedNotification();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendResult(const McpProtocolUtils::RequestId &id, const QJsonObject &result);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void slotFinished();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initializeResponseReceived(const QJsonObject &obj);
@@ -191,6 +212,8 @@ private:
     QTimer *const mTimeoutTimer;
     // Elicitation requests waiting for user answer: requests don't time out meanwhile
     QList<McpProtocolUtils::RequestId> mPendingElicitations;
+    QList<McpProtocolRoot> mRoots;
     bool mElicitationSupported = false;
+    bool mRootsSupported = false;
 };
 }
