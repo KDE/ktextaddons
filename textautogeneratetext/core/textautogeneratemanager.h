@@ -345,14 +345,21 @@ public:
      * \param chatId The ID of the chat
      * \param uuid The UUID of the message
      * \param info The tool call argument information
+     * \param activeTools Tools selected by user, only these MCP tools can be called
      * \return The started job, it can be used to cancel tool calls
      */
-    TextAutoGenerateToolCallJob *callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
+    TextAutoGenerateToolCallJob *callTools(const QByteArray &chatId,
+                                           const QByteArray &uuid,
+                                           const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info,
+                                           const QList<QByteArray> &activeTools);
     /*!
      * Create job which calls tools \a info (plugin, internal and MCP tools). Job must be started.
+     * Only MCP tools selected in \a activeTools can be called.
      */
-    [[nodiscard]] TextAutoGenerateToolCallJob *
-    createToolCallJob(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
+    [[nodiscard]] TextAutoGenerateToolCallJob *createToolCallJob(const QByteArray &chatId,
+                                                                 const QByteArray &uuid,
+                                                                 const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info,
+                                                                 const QList<QByteArray> &activeTools);
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     /*!

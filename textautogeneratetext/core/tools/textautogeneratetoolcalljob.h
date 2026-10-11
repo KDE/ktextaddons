@@ -10,6 +10,7 @@
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
+#include <optional>
 
 namespace TextAutoGenerateText
 {
@@ -70,6 +71,10 @@ public:
      * Used to call tools of MCP servers
      */
     void setTextAutoGenerateMcpToolsManager(TextAutoGenerateMcpToolsManager *newTextAutoGenerateMcpToolsManager);
+    /*!
+     * Tools selected by user: when defined, only these MCP tools can be called
+     */
+    void setActiveTools(const QList<QByteArray> &activeTools);
 
 Q_SIGNALS:
     /*!
@@ -107,5 +112,6 @@ private:
     QByteArray mToolIdentifier;
     TextAutoGenerateTextToolInternalInterface *mTextAutoGenerateTextToolInternalInterface = nullptr;
     TextAutoGenerateMcpToolsManager *mTextAutoGenerateMcpToolsManager = nullptr;
+    std::optional<QList<QByteArray>> mActiveTools;
 };
 }

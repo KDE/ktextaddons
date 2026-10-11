@@ -22,6 +22,7 @@ private Q_SLOTS:
     void shouldRefreshToolsWhenListChanged();
     void shouldCreateUniqueNames();
     void shouldConvertToolIdentifiers();
+    void shouldSelectTools();
     void shouldPrepareServers();
     void shouldPrepareInvalidServer();
     void shouldNotCallCallbackWhenContextIsDeleted();

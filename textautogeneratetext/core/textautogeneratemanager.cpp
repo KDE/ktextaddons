@@ -342,20 +342,25 @@ TextAutoGenerateTextInstancesManager *TextAutoGenerateManager::textAutoGenerateT
     return mTextAutoGenerateTextInstancesManager;
 }
 
-TextAutoGenerateToolCallJob *
-TextAutoGenerateManager::createToolCallJob(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+TextAutoGenerateToolCallJob *TextAutoGenerateManager::createToolCallJob(const QByteArray &chatId,
+                                                                        const QByteArray &uuid,
+                                                                        const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info,
+                                                                        const QList<QByteArray> &activeTools)
 {
     auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
     job->setTextAutoGenerateTextToolInternalInterface(mTextAutoGenerateTextToolInternalInterface);
     job->setTextAutoGenerateMcpToolsManager(mTextAutoGenerateMcpToolsManager);
+    job->setActiveTools(activeTools);
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
     return job;
 }
 
-TextAutoGenerateToolCallJob *
-TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+TextAutoGenerateToolCallJob *TextAutoGenerateManager::callTools(const QByteArray &chatId,
+                                                                const QByteArray &uuid,
+                                                                const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info,
+                                                                const QList<QByteArray> &activeTools)
 {
-    auto job = createToolCallJob(chatId, uuid, info);
+    auto job = createToolCallJob(chatId, uuid, info, activeTools);
     connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
     job->start();
     return job;

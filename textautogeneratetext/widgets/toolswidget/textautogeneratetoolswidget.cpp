@@ -10,6 +10,7 @@
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <QLabel>
+#include <QMenu>
 #include <QToolButton>
 #include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
@@ -81,11 +82,15 @@ void TextAutoGenerateToolsWidget::createMcpServerButtons()
     }
     mMcpServerButtons.clear();
     const auto servers = mManager->textAutoGenerateTextMcpServerManager()->mcpServerModel()->mcpServers();
+    QHash<QByteArray, QStringList> selectedTools;
     for (const auto &server : servers) {
         if (!server.enabled() || !server.isValid()) {
             continue;
         }
         const QByteArray serverIdentifier = server.identifier();
+        if (const auto it = mMcpSelectedTools.constFind(serverIdentifier); it != mMcpSelectedTools.cend()) {
+            selectedTools.insert(serverIdentifier, *it);
+        }
         auto b = new QToolButton(this);
         b->setText(server.name());
         b->setIcon(QIcon::fromTheme(u"network-server-symbolic"_s));
@@ -93,8 +98,21 @@ void TextAutoGenerateToolsWidget::createMcpServerButtons()
         b->setAutoRaise(true);
         b->setCheckable(true);
         b->setProperty(button_property, TextAutoGenerateMcpToolsManager::toolIdentifier(serverIdentifier));
+        // Menu allows to select tools of server
+        auto menu = new QMenu(b);
+        b->setMenu(menu);
+        b->setPopupMode(QToolButton::MenuButtonPopup);
+        connect(menu, &QMenu::aboutToShow, this, [this, serverIdentifier]() {
+            // Tools are known when server is connected
+            mManager->textAutoGenerateMcpToolsManager()->connectServer(serverIdentifier);
+        });
         connect(b, &QToolButton::toggled, this, [this, serverIdentifier](bool checked) {
             if (checked) {
+                // No tool selected: use all tools again
+                if (const auto it = mMcpSelectedTools.constFind(serverIdentifier); it != mMcpSelectedTools.cend() && it->isEmpty()) {
+                    mMcpSelectedTools.remove(serverIdentifier);
+                    updateMcpServerButton(serverIdentifier);
+                }
                 // Connect now: tools will be ready when message is sent
                 mManager->textAutoGenerateMcpToolsManager()->connectServer(serverIdentifier);
             }
@@ -103,7 +121,11 @@ void TextAutoGenerateToolsWidget::createMcpServerButtons()
         mListButton.append(b);
         mMcpServerButtons.append(b);
         b->setChecked(checkedServers.contains(b->property(button_property).toByteArray()));
-        updateMcpServerButton(serverIdentifier);
+    }
+    // Forget selection of removed servers
+    mMcpSelectedTools = selectedTools;
+    for (const auto &server : servers) {
+        updateMcpServerButton(server.identifier());
     }
 }
 
@@ -126,13 +148,59 @@ void TextAutoGenerateToolsWidget::updateMcpServerButton(const QByteArray &server
         status = i18n("Connecting…");
         break;
     case TextAutoGenerateMcpToolsManager::Status::Connected:
-        status = i18np("1 tool", "%1 tools", toolsManager->tools(serverIdentifier).count());
+        if (toolsManager->isReady(serverIdentifier)) {
+            status = i18np("1 tool", "%1 tools", toolsManager->tools(serverIdentifier).count());
+        } else {
+            status = i18n("Loading tools…");
+        }
         break;
     case TextAutoGenerateMcpToolsManager::Status::Error:
         status = i18n("Error: %1", toolsManager->errorString(serverIdentifier));
         break;
     }
     (*it)->setToolTip(i18n("Tools of MCP server \"%1\" (%2)", (*it)->text(), status));
+    fillMcpToolsMenu(*it, serverIdentifier, status);
+}
+
+void TextAutoGenerateToolsWidget::fillMcpToolsMenu(QToolButton *button, const QByteArray &serverIdentifier, const QString &status)
+{
+    QMenu *menu = button->menu();
+    menu->clear();
+    const auto tools = mManager->textAutoGenerateMcpToolsManager()->tools(serverIdentifier);
+    if (tools.isEmpty()) {
+        auto action = menu->addAction(status);
+        action->setEnabled(false);
+        return;
+    }
+    const auto it = mMcpSelectedTools.constFind(serverIdentifier);
+    for (const auto &tool : tools) {
+        auto action = menu->addAction(tool.name);
+        action->setToolTip(tool.description);
+        action->setCheckable(true);
+        action->setChecked(it == mMcpSelectedTools.cend() || it->contains(tool.name));
+        connect(action, &QAction::toggled, this, [this, button, serverIdentifier]() {
+            slotMcpToolToggled(button, serverIdentifier);
+        });
+    }
+    menu->setToolTipsVisible(true);
+}
+
+void TextAutoGenerateToolsWidget::slotMcpToolToggled(QToolButton *button, const QByteArray &serverIdentifier)
+{
+    const auto actions = button->menu()->actions();
+    QStringList toolNames;
+    for (const auto action : actions) {
+        if (action->isChecked()) {
+            toolNames.append(action->text());
+        }
+    }
+    if (toolNames.count() == actions.count()) {
+        mMcpSelectedTools.remove(serverIdentifier);
+    } else {
+        mMcpSelectedTools.insert(serverIdentifier, toolNames);
+    }
+    // Selecting a tool selects server
+    button->setChecked(!toolNames.isEmpty());
 }
 
 TextAutoGenerateToolsWidget::~TextAutoGenerateToolsWidget() = default;
@@ -143,7 +211,15 @@ QList<QByteArray> TextAutoGenerateToolsWidget::generateListOfActiveTools() const
     activeTools.reserve(mListButton.count());
     for (const auto b : std::as_const(mListButton)) {
         if (b->isChecked()) {
-            activeTools.append(b->property(button_property).toByteArray());
+            const QByteArray identifier = b->property(button_property).toByteArray();
+            const QByteArray serverIdentifier = TextAutoGenerateMcpToolsManager::serverIdentifier(identifier);
+            if (const auto it = mMcpSelectedTools.constFind(serverIdentifier); !serverIdentifier.isEmpty() && it != mMcpSelectedTools.cend()) {
+                for (const QString &toolName : *it) {
+                    activeTools.append(TextAutoGenerateMcpToolsManager::toolIdentifier(serverIdentifier, toolName));
+                }
+            } else {
+                activeTools.append(identifier);
+            }
         }
     }
     return activeTools;
@@ -159,17 +235,28 @@ void TextAutoGenerateToolsWidget::disableTools()
 void TextAutoGenerateToolsWidget::setActivatedTools(const QList<QByteArray> &lst)
 {
     disableTools();
+    mMcpSelectedTools.clear();
     bool foundTools = false;
     for (const auto &b : lst) {
-        const auto it = std::find_if(mListButton.constBegin(), mListButton.constEnd(), [b](QToolButton *button) {
-            return button->property(button_property).toByteArray() == b;
+        // One tool of MCP server: select server button
+        const QString mcpToolName = TextAutoGenerateMcpToolsManager::toolName(b);
+        const QByteArray identifier =
+            mcpToolName.isEmpty() ? b : TextAutoGenerateMcpToolsManager::toolIdentifier(TextAutoGenerateMcpToolsManager::serverIdentifier(b));
+        const auto it = std::find_if(mListButton.constBegin(), mListButton.constEnd(), [identifier](QToolButton *button) {
+            return button->property(button_property).toByteArray() == identifier;
         });
         if (it != mListButton.cend()) {
+            if (!mcpToolName.isEmpty()) {
+                mMcpSelectedTools[TextAutoGenerateMcpToolsManager::serverIdentifier(b)].append(mcpToolName);
+            }
             (*it)->setChecked(true);
             foundTools = true;
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find button: " << b;
         }
+    }
+    for (const auto b : std::as_const(mMcpServerButtons)) {
+        updateMcpServerButton(TextAutoGenerateMcpToolsManager::serverIdentifier(b->property(button_property).toByteArray()));
     }
     if (foundTools) {
         setVisible(true);

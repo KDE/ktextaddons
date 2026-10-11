@@ -151,6 +151,46 @@ void TextAutoGenerateMcpToolsManagerTest::shouldConvertToolIdentifiers()
     QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifier("mcp:abc"_ba), "abc"_ba);
     QVERIFY(TextAutoGenerateMcpToolsManager::serverIdentifier("example_tool"_ba).isEmpty());
     QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifiers({"example_tool"_ba, "mcp:a"_ba, "mcp:b"_ba}), QList<QByteArray>({"a"_ba, "b"_ba}));
+
+    // One tool of server
+    QCOMPARE(TextAutoGenerateMcpToolsManager::toolIdentifier("abc"_ba, u"get time"_s), "mcp:abc/get time"_ba);
+    QVERIFY(TextAutoGenerateMcpToolsManager::toolName("mcp:abc"_ba).isEmpty());
+    QVERIFY(TextAutoGenerateMcpToolsManager::toolName("example_tool"_ba).isEmpty());
+    QCOMPARE(TextAutoGenerateMcpToolsManager::toolName("mcp:abc/get time"_ba), u"get time"_s);
+    QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifier("mcp:abc/get time"_ba), "abc"_ba);
+    // Tool name can contain '/'
+    QCOMPARE(TextAutoGenerateMcpToolsManager::toolName("mcp:abc/a/b"_ba), u"a/b"_s);
+    QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifier("mcp:abc/a/b"_ba), "abc"_ba);
+    // No duplicate server
+    QCOMPARE(TextAutoGenerateMcpToolsManager::serverIdentifiers({"mcp:a/x"_ba, "mcp:a/y"_ba, "mcp:b"_ba}), QList<QByteArray>({"a"_ba, "b"_ba}));
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldSelectTools()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    manager.connectServer(server.identifier());
+    QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+
+    const QByteArray allTools = TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier());
+    const QByteArray getTime = TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier(), u"get time"_s);
+    QCOMPARE(manager.selectedTools({allTools}).count(), 2);
+    QVERIFY(manager.selectedTools({"example_tool"_ba}).isEmpty());
+
+    const auto selected = manager.selectedTools({"example_tool"_ba, getTime});
+    QCOMPARE(selected.count(), 1);
+    QCOMPARE(selected.at(0).name, u"get time"_s);
+    QVERIFY(TextAutoGenerateMcpToolsManager::isToolSelected(selected.at(0), {getTime}));
+    QVERIFY(TextAutoGenerateMcpToolsManager::isToolSelected(selected.at(0), {allTools}));
+    QVERIFY(!TextAutoGenerateMcpToolsManager::isToolSelected(selected.at(0), {"example_tool"_ba}));
+    // Tool selected twice is used once
+    QCOMPARE(manager.selectedTools({allTools, getTime}).count(), 2);
+
+    const QJsonObject function = TextAutoGenerateMcpToolsManager::toolMetaData(selected.at(0)).value("function"_L1).toObject();
+    QCOMPARE(function.value("name"_L1).toString(), u"foo__get_time"_s);
 }
 
 void TextAutoGenerateMcpToolsManagerTest::shouldPrepareServers()

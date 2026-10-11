@@ -22,14 +22,19 @@ QTEST_GUILESS_MAIN(TextAutoGenerateMcpToolCallJobTest)
 
 namespace
 {
-TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo
-callTool(TextAutoGenerateMcpToolsManager *manager, const QByteArray &toolName, const QJsonObject &arguments)
+TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo callTool(TextAutoGenerateMcpToolsManager *manager,
+                                                                                  const QByteArray &toolName,
+                                                                                  const QJsonObject &arguments,
+                                                                                  const std::optional<QList<QByteArray>> &activeTools = std::nullopt)
 {
     TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo info;
     info.toolName = toolName;
     info.arguments = arguments;
     auto job = new TextAutoGenerateText::TextAutoGenerateToolCallJob("chat"_ba, "uuid"_ba, {info});
     job->setTextAutoGenerateMcpToolsManager(manager);
+    if (activeTools.has_value()) {
+        job->setActiveTools(*activeTools);
+    }
     QSignalSpy finishedSpy(job, &TextAutoGenerateText::TextAutoGenerateToolCallJob::finished);
     job->start();
     // Signal can be emitted synchronously
@@ -105,6 +110,30 @@ void TextAutoGenerateMcpToolCallJobTest::shouldReportUnavailableTool()
     const auto info = callTool(&manager, "unknown__tool"_ba, {});
     QVERIFY(info.content.contains(u"unknown__tool"_s));
     QCOMPARE(info.chatId, "chat"_ba);
+}
+
+void TextAutoGenerateMcpToolCallJobTest::shouldCallOnlySelectedTools()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    manager.connectServer(server.identifier());
+    QTRY_VERIFY(manager.tool("foo__get_time"_ba).has_value());
+
+    const QList<QByteArray> weatherOnly{TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier(), u"weather"_s)};
+    // Tool not selected by user is not called
+    auto info = callTool(&manager, "foo__get_time"_ba, {}, weatherOnly);
+    QVERIFY(info.content.contains(u"foo__get_time"_s));
+    QVERIFY(!info.content.startsWith(u"get time"_s));
+
+    info = callTool(&manager, "foo__weather"_ba, {}, weatherOnly);
+    QVERIFY(info.content.startsWith(u"weather"_s));
+
+    // All tools of server
+    info = callTool(&manager, "foo__get_time"_ba, {}, QList<QByteArray>{TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier())});
+    QVERIFY(info.content.startsWith(u"get time"_s));
 }
 
 void TextAutoGenerateMcpToolCallJobTest::shouldAskConfirmation()

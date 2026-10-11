@@ -181,10 +181,10 @@ void TextAutoGenerateTextPlugin::processToolCalls(const SendToAssistantInfo &inf
     if (info.toolTurn >= maxToolTurns) {
         // Avoid infinite loop: show results of last tools
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Too many tool calls for message" << info.messageUuid;
-        d->toolCallJobs.insert(info.messageUuid, d->manager->callTools(info.chatId, info.messageUuid, toolCalls));
+        d->toolCallJobs.insert(info.messageUuid, d->manager->callTools(info.chatId, info.messageUuid, toolCalls, info.tools));
         return;
     }
-    auto job = d->manager->createToolCallJob(info.chatId, info.messageUuid, toolCalls);
+    auto job = d->manager->createToolCallJob(info.chatId, info.messageUuid, toolCalls, info.tools);
     d->toolCallJobs.insert(info.messageUuid, job);
     connect(job,
             &TextAutoGenerateToolCallJob::toolResults,

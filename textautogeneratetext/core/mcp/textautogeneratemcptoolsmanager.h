@@ -117,6 +117,14 @@ public:
      * Tools of servers \a serverIdentifiers in LLM format ({"type":"function","function":{...}}).
      */
     [[nodiscard]] QList<QJsonObject> toolsMetaData(const QList<QByteArray> &serverIdentifiers) const;
+    /*!
+     * Tools selected by \a toolIdentifiers ("mcp:<server>" for all tools of server, "mcp:<server>/<tool>" for one tool).
+     */
+    [[nodiscard]] QList<McpTool> selectedTools(const QList<QByteArray> &toolIdentifiers) const;
+    /*!
+     * Tool \a tool in LLM format ({"type":"function","function":{...}}).
+     */
+    [[nodiscard]] static QJsonObject toolMetaData(const McpTool &tool);
 
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client(const QByteArray &serverIdentifier) const;
 
@@ -134,10 +142,22 @@ public:
      * Identifier used in list of selected tools for MCP server \a serverIdentifier ("mcp:<identifier>").
      */
     [[nodiscard]] static QByteArray toolIdentifier(const QByteArray &serverIdentifier);
+    /*!
+     * Identifier used in list of selected tools for tool \a toolName of MCP server \a serverIdentifier ("mcp:<identifier>/<tool>").
+     */
+    [[nodiscard]] static QByteArray toolIdentifier(const QByteArray &serverIdentifier, const QString &toolName);
     [[nodiscard]] static bool isMcpToolIdentifier(const QByteArray &toolIdentifier);
     [[nodiscard]] static QByteArray serverIdentifier(const QByteArray &toolIdentifier);
     /*!
-     * MCP servers of list of selected tools \a tools
+     * Name of tool of \a toolIdentifier, empty when all tools of server are selected.
+     */
+    [[nodiscard]] static QString toolName(const QByteArray &toolIdentifier);
+    /*!
+     * Tool \a tool is selected by \a toolIdentifiers.
+     */
+    [[nodiscard]] static bool isToolSelected(const McpTool &tool, const QList<QByteArray> &toolIdentifiers);
+    /*!
+     * MCP servers of list of selected tools \a tools (without duplicate)
      */
     [[nodiscard]] static QList<QByteArray> serverIdentifiers(const QList<QByteArray> &tools);
 

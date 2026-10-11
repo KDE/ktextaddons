@@ -358,17 +358,37 @@ QList<QJsonObject> TextAutoGenerateMcpToolsManager::toolsMetaData(const QList<QB
     for (const QByteArray &identifier : serverIdentifiers) {
         const auto serverTools = tools(identifier);
         for (const auto &tool : serverTools) {
-            QJsonObject parameters = tool.inputSchema;
-            // Some API require "properties" for an object
-            if (!parameters.contains("properties"_L1)) {
-                parameters.insert("properties"_L1, QJsonObject());
+            list.append(toolMetaData(tool));
+        }
+    }
+    return list;
+}
+
+QJsonObject TextAutoGenerateMcpToolsManager::toolMetaData(const McpTool &tool)
+{
+    QJsonObject parameters = tool.inputSchema;
+    // Some API require "properties" for an object
+    if (!parameters.contains("properties"_L1)) {
+        parameters.insert("properties"_L1, QJsonObject());
+    }
+    const QJsonObject functionObj{
+        {"name"_L1, QString::fromLatin1(tool.exposedName)},
+        {"description"_L1, tool.description},
+        {"parameters"_L1, parameters},
+    };
+    return QJsonObject{{"type"_L1, u"function"_s}, {"function"_L1, functionObj}};
+}
+
+QList<TextAutoGenerateMcpToolsManager::McpTool> TextAutoGenerateMcpToolsManager::selectedTools(const QList<QByteArray> &toolIdentifiers) const
+{
+    QList<McpTool> list;
+    const QList<QByteArray> identifiers = serverIdentifiers(toolIdentifiers);
+    for (const QByteArray &identifier : identifiers) {
+        const auto serverTools = tools(identifier);
+        for (const auto &tool : serverTools) {
+            if (isToolSelected(tool, toolIdentifiers)) {
+                list.append(tool);
             }
-            const QJsonObject functionObj{
-                {"name"_L1, QString::fromLatin1(tool.exposedName)},
-                {"description"_L1, tool.description},
-                {"parameters"_L1, parameters},
-            };
-            list.append(QJsonObject{{"type"_L1, u"function"_s}, {"function"_L1, functionObj}});
         }
     }
     return list;
@@ -433,6 +453,11 @@ QByteArray TextAutoGenerateMcpToolsManager::toolIdentifier(const QByteArray &ser
     return "mcp:" + serverIdentifier;
 }
 
+QByteArray TextAutoGenerateMcpToolsManager::toolIdentifier(const QByteArray &serverIdentifier, const QString &toolName)
+{
+    return toolIdentifier(serverIdentifier) + '/' + toolName.toUtf8();
+}
+
 bool TextAutoGenerateMcpToolsManager::isMcpToolIdentifier(const QByteArray &toolIdentifier)
 {
     return toolIdentifier.startsWith("mcp:");
@@ -440,7 +465,26 @@ bool TextAutoGenerateMcpToolsManager::isMcpToolIdentifier(const QByteArray &tool
 
 QByteArray TextAutoGenerateMcpToolsManager::serverIdentifier(const QByteArray &toolIdentifier)
 {
-    return isMcpToolIdentifier(toolIdentifier) ? toolIdentifier.mid(4) : QByteArray();
+    if (!isMcpToolIdentifier(toolIdentifier)) {
+        return {};
+    }
+    // Server identifier doesn't contain '/', tool name can contain it
+    const qsizetype index = toolIdentifier.indexOf('/', 4);
+    return index == -1 ? toolIdentifier.mid(4) : toolIdentifier.mid(4, index - 4);
+}
+
+QString TextAutoGenerateMcpToolsManager::toolName(const QByteArray &toolIdentifier)
+{
+    if (!isMcpToolIdentifier(toolIdentifier)) {
+        return {};
+    }
+    const qsizetype index = toolIdentifier.indexOf('/', 4);
+    return index == -1 ? QString() : QString::fromUtf8(toolIdentifier.mid(index + 1));
+}
+
+bool TextAutoGenerateMcpToolsManager::isToolSelected(const McpTool &tool, const QList<QByteArray> &toolIdentifiers)
+{
+    return toolIdentifiers.contains(toolIdentifier(tool.serverIdentifier)) || toolIdentifiers.contains(toolIdentifier(tool.serverIdentifier, tool.name));
 }
 
 QList<QByteArray> TextAutoGenerateMcpToolsManager::serverIdentifiers(const QList<QByteArray> &tools)
@@ -448,7 +492,9 @@ QList<QByteArray> TextAutoGenerateMcpToolsManager::serverIdentifiers(const QList
     QList<QByteArray> identifiers;
     for (const QByteArray &tool : tools) {
         if (isMcpToolIdentifier(tool)) {
-            identifiers.append(serverIdentifier(tool));
+            if (const QByteArray identifier = serverIdentifier(tool); !identifiers.contains(identifier)) {
+                identifiers.append(identifier);
+            }
         }
     }
     return identifiers;

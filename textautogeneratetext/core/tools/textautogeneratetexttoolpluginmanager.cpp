@@ -175,15 +175,15 @@ QJsonArray TextAutoGenerateTextToolPluginManager::internalToolsMetaData() const
 QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList<QByteArray> &tools) const
 {
     QJsonArray toolsArray;
+    if (mManager) {
+        // All tools of MCP server ("mcp:<server>") or one tool ("mcp:<server>/<tool>")
+        const auto mcpTools = mManager->textAutoGenerateMcpToolsManager()->selectedTools(tools);
+        for (const auto &tool : mcpTools) {
+            toolsArray.append(TextAutoGenerateMcpToolsManager::toolMetaData(tool));
+        }
+    }
     for (const QByteArray &t : tools) {
         if (TextAutoGenerateMcpToolsManager::isMcpToolIdentifier(t)) {
-            // All tools of MCP server
-            if (mManager) {
-                const auto lstJson = mManager->textAutoGenerateMcpToolsManager()->toolsMetaData({TextAutoGenerateMcpToolsManager::serverIdentifier(t)});
-                for (const auto &json : lstJson) {
-                    toolsArray.append(json);
-                }
-            }
             continue;
         }
         bool found = false;
@@ -222,7 +222,11 @@ QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const 
             if (mManager) {
                 const QString serverName =
                     mManager->textAutoGenerateTextMcpServerManager()->mcpServerModel()->mcpServer(TextAutoGenerateMcpToolsManager::serverIdentifier(t)).name();
-                toolDisplayList.append(u"<li>"_s + i18n("MCP server: %1", serverName.toHtmlEscaped()) + u"</li>"_s);
+                if (const QString toolName = TextAutoGenerateMcpToolsManager::toolName(t); !toolName.isEmpty()) {
+                    toolDisplayList.append(u"<li>"_s + i18n("MCP tool: %1 (%2)", toolName.toHtmlEscaped(), serverName.toHtmlEscaped()) + u"</li>"_s);
+                } else {
+                    toolDisplayList.append(u"<li>"_s + i18n("MCP server: %1", serverName.toHtmlEscaped()) + u"</li>"_s);
+                }
             }
             continue;
         }

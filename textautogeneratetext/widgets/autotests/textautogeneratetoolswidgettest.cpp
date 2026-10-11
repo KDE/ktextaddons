@@ -6,8 +6,10 @@
 #include "textautogeneratetoolswidgettest.h"
 #include "core/mcp/textautogeneratemcptoolsmanager.h"
 #include "core/textautogeneratemanager.h"
+#include "fakemcpserver.h"
 #include "widgets/toolswidget/textautogeneratetoolswidget.h"
 #include <QLabel>
+#include <QMenu>
 #include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
@@ -90,6 +92,61 @@ void TextAutoGenerateToolsWidgetTest::shouldRestoreMcpServerSelection()
     const QByteArray identifier = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier());
     w.setActivatedTools({identifier});
     QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{identifier});
+}
+
+void TextAutoGenerateToolsWidgetTest::shouldSelectMcpTools()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateText::TextAutoGenerateManager manager;
+    const auto server = fakeServer.mcpServer(u"my server"_s);
+    manager.textAutoGenerateTextMcpServerManager()->mcpServerModel()->setMcpServers({server});
+
+    TextAutoGenerateText::TextAutoGenerateToolsWidget w(&manager);
+    QToolButton *button = nullptr;
+    const auto buttons = w.findChildren<QToolButton *>();
+    for (auto b : buttons) {
+        if (b->text() == u"my server"_s) {
+            button = b;
+        }
+    }
+    QVERIFY(button);
+    QVERIFY(button->menu());
+    QCOMPARE(button->popupMode(), QToolButton::MenuButtonPopup);
+
+    // Tools are shown when server is connected
+    manager.textAutoGenerateMcpToolsManager()->connectServer(server.identifier());
+    QTRY_COMPARE(button->menu()->actions().count(), 2);
+    const auto actions = button->menu()->actions();
+    QCOMPARE(actions.at(0)->text(), u"weather"_s);
+    QVERIFY(actions.at(0)->isCheckable());
+    QVERIFY(actions.at(0)->isChecked());
+
+    // Unselect one tool: server is selected with other tool
+    actions.at(0)->setChecked(false);
+    QVERIFY(button->isChecked());
+    const QByteArray getTime = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier(), u"get time"_s);
+    QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{getTime});
+
+    // All tools selected again
+    actions.at(0)->setChecked(true);
+    const QByteArray allTools = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier());
+    QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{allTools});
+
+    // No tool: server is not selected
+    actions.at(0)->setChecked(false);
+    actions.at(1)->setChecked(false);
+    QVERIFY(!button->isChecked());
+    QVERIFY(w.generateListOfActiveTools().isEmpty());
+    // Selecting server selects all tools
+    button->setChecked(true);
+    QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{allTools});
+
+    // Restore selection of one tool
+    w.setActivatedTools({getTime});
+    QVERIFY(button->isChecked());
+    QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{getTime});
+    QVERIFY(!button->menu()->actions().at(0)->isChecked());
+    QVERIFY(button->menu()->actions().at(1)->isChecked());
 }
 
 #include "moc_textautogeneratetoolswidgettest.cpp"

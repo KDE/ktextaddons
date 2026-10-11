@@ -127,7 +127,8 @@ TextAutoGenerateTextToolBaseJob *TextAutoGenerateToolCallJob::createJob(const Te
                 });
         return job;
     }
-    if (mTextAutoGenerateMcpToolsManager && mTextAutoGenerateMcpToolsManager->tool(toolName).has_value()) {
+    if (const auto mcpTool = mTextAutoGenerateMcpToolsManager ? mTextAutoGenerateMcpToolsManager->tool(toolName) : std::nullopt;
+        mcpTool.has_value() && (!mActiveTools.has_value() || TextAutoGenerateMcpToolsManager::isToolSelected(*mcpTool, *mActiveTools))) {
         auto job = new TextAutoGenerateMcpToolCallJob(mTextAutoGenerateMcpToolsManager, this);
         job->setToolArguments(info.toolCallArgument);
         // MCP tools need arguments with their type
@@ -153,6 +154,11 @@ TextAutoGenerateTextToolBaseJob *TextAutoGenerateToolCallJob::createJob(const Te
 void TextAutoGenerateToolCallJob::setTextAutoGenerateMcpToolsManager(TextAutoGenerateMcpToolsManager *newTextAutoGenerateMcpToolsManager)
 {
     mTextAutoGenerateMcpToolsManager = newTextAutoGenerateMcpToolsManager;
+}
+
+void TextAutoGenerateToolCallJob::setActiveTools(const QList<QByteArray> &activeTools)
+{
+    mActiveTools = activeTools;
 }
 
 void TextAutoGenerateToolCallJob::jobFinished(TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *job,

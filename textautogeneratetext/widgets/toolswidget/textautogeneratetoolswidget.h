@@ -6,6 +6,7 @@
 #pragma once
 
 #include "textautogeneratetext_private_export.h"
+#include <QHash>
 #include <QWidget>
 class QToolButton;
 namespace TextAutoGenerateText
@@ -26,9 +27,13 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void disableTools();
     TEXTAUTOGENERATETEXT_NO_EXPORT void createMcpServerButtons();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateMcpServerButton(const QByteArray &serverIdentifier);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void fillMcpToolsMenu(QToolButton *button, const QByteArray &serverIdentifier, const QString &status);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotMcpToolToggled(QToolButton *button, const QByteArray &serverIdentifier);
     QList<QToolButton *> mListButton;
     // One button by MCP server
     QList<QToolButton *> mMcpServerButtons;
+    // Tools selected by MCP server, all tools are used when server is not in list
+    QHash<QByteArray, QStringList> mMcpSelectedTools;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

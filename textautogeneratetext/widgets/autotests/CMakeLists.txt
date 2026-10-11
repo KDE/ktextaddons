@@ -57,7 +57,20 @@ add_textautogenerate_widgets_unittest(textautogenerateaddinstancewidgettest.cpp)
 add_textautogenerate_widgets_unittest(textautogeneratenotinstancefoundwidgettest.cpp)
 add_textautogenerate_widgets_unittest(textautogeneratenetworkpluginconfigurewidgettest.cpp)
 add_textautogenerate_widgets_unittest(textautogeneratetextconfigurepromptwidgettext.cpp)
-add_textautogenerate_widgets_unittest(textautogeneratetoolswidgettest.cpp)
+# Uses fake MCP server of core tests
+set(_fakemcpserver_dir ${CMAKE_SOURCE_DIR}/textautogeneratetextmcpprotocol/plugins/client/autotests)
+ecm_add_test(textautogeneratetoolswidgettest.cpp textautogeneratetoolswidgettest.h ${CMAKE_CURRENT_SOURCE_DIR}/../../core/autotests/fakemcpserver.h
+    ${_fakemcpserver_dir}/fakemcphttpserver.cpp ${_fakemcpserver_dir}/fakemcphttpserver.h
+    TEST_NAME textautogeneratetoolswidgettest
+    NAME_PREFIX "textautogenerate-widget-"
+    LINK_LIBRARIES ${LIB_AUTOTEST_PCH_WIDGETS} Qt::Test Qt::Network KF6::TextAutoGenerateText KF6::TextAutoGenerateTextMcpProtocolCore KF6::TextAddonsWidgets
+)
+target_include_directories(
+    textautogeneratetoolswidgettest
+    PRIVATE
+        ${_fakemcpserver_dir}
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../core/autotests
+)
 add_textautogenerate_widgets_unittest(textautogeneratetoolpluginconfigurewidgettest.cpp)
 add_textautogenerate_widgets_unittest(textautogeneratetoolpluginshowmetadatadialogtest.cpp)
 add_textautogenerate_widgets_unittest(textautogeneratetoolshowmetadatawidgettest.cpp)
