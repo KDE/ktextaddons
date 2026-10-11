@@ -93,7 +93,7 @@ void TextAutoGenerateToolsWidget::createMcpServerButtons()
         }
         auto b = new QToolButton(this);
         b->setText(server.name());
-        b->setIcon(QIcon::fromTheme(u"network-server-symbolic"_s));
+        b->setIcon(server.iconName().isEmpty() ? QIcon::fromTheme(u"network-server-symbolic"_s) : QIcon::fromTheme(server.iconName()));
         b->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         b->setAutoRaise(true);
         b->setCheckable(true);
