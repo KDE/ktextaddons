@@ -103,7 +103,7 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
         }
     });
     connect(client, &McpProtocolClientProtocolManager::finished, this, [this, identifier]() {
-        auto it = mServers.find(identifier);
+        const auto it = mServers.find(identifier);
         if (it == mServers.end()) {
             return;
         }
@@ -254,7 +254,7 @@ QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot> TextAutoGenerateMcpT
 
 QByteArray TextAutoGenerateMcpToolsManager::exposedName(const QByteArray &identifier, const QString &serverName, const QString &toolName) const
 {
-    auto isUsed = [this](const QByteArray &name) {
+    const auto isUsed = [this](const QByteArray &name) {
         for (const auto &state : mServers) {
             for (const auto &tool : state.tools) {
                 if (tool.exposedName == name) {
@@ -347,7 +347,7 @@ void TextAutoGenerateMcpToolsManager::prepareServers(const QList<QByteArray> &se
     for (const QByteArray &identifier : serverIdentifiers) {
         connectServer(identifier);
     }
-    auto serversReady = [this, serverIdentifiers]() {
+    const auto serversReady = [this, serverIdentifiers]() {
         return std::all_of(serverIdentifiers.cbegin(), serverIdentifiers.cend(), [this](const QByteArray &identifier) {
             return isReady(identifier);
         });
@@ -370,7 +370,7 @@ void TextAutoGenerateMcpToolsManager::prepareServers(const QList<QByteArray> &se
         waiter->deleteLater();
         callback();
     };
-    auto check = [serversReady, finish]() {
+    const auto check = [serversReady, finish]() {
         if (serversReady()) {
             finish();
         }
