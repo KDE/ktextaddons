@@ -44,7 +44,7 @@ TextAutoGenerateMcpToolsManager::TextAutoGenerateMcpToolsManager(TextAutoGenerat
 
 TextAutoGenerateMcpToolsManager::~TextAutoGenerateMcpToolsManager()
 {
-    for (auto &state : mServers) {
+    for (const auto &state : mServers) {
         if (state.client) {
             // Don't emit signals while we are destroyed
             state.client->disconnect(this);
