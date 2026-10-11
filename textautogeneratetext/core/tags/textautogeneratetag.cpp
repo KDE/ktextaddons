@@ -47,10 +47,7 @@ void TextAutoGenerateTag::setColor(const QColor &newColor)
     mColor = newColor;
 }
 
-bool TextAutoGenerateTag::operator==(const TextAutoGenerateTag &other) const
-{
-    return other.mIdentifier == mIdentifier && other.mName == mName && other.mColor == mColor;
-}
+bool TextAutoGenerateTag::operator==(const TextAutoGenerateTag &other) const = default;
 
 QByteArray TextAutoGenerateTag::serialize(const TextAutoGenerateTag &tag, bool toBinary)
 {

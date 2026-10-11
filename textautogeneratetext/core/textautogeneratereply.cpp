@@ -236,13 +236,7 @@ bool TextAutoGenerateReply::Response::hasToolCallArguments() const
     return !info.isEmpty();
 }
 
-bool TextAutoGenerateReply::ToolCallArgumentInfo::operator==(const ToolCallArgumentInfo &other) const
-{
-    return other.toolCallArgument == toolCallArgument && other.toolName == toolName && other.id == id && other.arguments == arguments && other.index == index;
-}
+bool TextAutoGenerateReply::ToolCallArgumentInfo::operator==(const ToolCallArgumentInfo &other) const = default;
 
-bool TextAutoGenerateReply::ToolCallArgument::operator==(const ToolCallArgument &other) const
-{
-    return other.keyTool == keyTool && other.value == value;
-}
+bool TextAutoGenerateReply::ToolCallArgument::operator==(const ToolCallArgument &other) const = default;
 #include "moc_textautogeneratereply.cpp"

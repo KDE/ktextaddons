@@ -40,11 +40,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
     return d;
 }
 
-bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
-{
-    return (mContent == other.mContent) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType) && (mName == other.mName)
-        && (mShowAttachment == other.mShowAttachment) && (mAttachmentId == other.mAttachmentId);
-}
+bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const = default;
 
 bool TextAutoGenerateAttachment::isValid() const
 {

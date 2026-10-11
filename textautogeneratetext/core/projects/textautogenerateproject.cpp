@@ -37,10 +37,7 @@ void TextAutoGenerateProject::setIdentifier(const QByteArray &newIdentifier)
     mIdentifier = newIdentifier;
 }
 
-bool TextAutoGenerateProject::operator==(const TextAutoGenerateProject &other) const
-{
-    return other.mIdentifier == mIdentifier && other.mName == mName && other.mIconName == mIconName;
-}
+bool TextAutoGenerateProject::operator==(const TextAutoGenerateProject &other) const = default;
 
 QByteArray TextAutoGenerateProject::serialize(const TextAutoGenerateProject &project, bool toBinary)
 {

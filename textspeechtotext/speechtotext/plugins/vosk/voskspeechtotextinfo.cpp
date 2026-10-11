@@ -93,11 +93,7 @@ void VoskSpeechToTextInfo::setObsolete(bool newObsolete)
     mObsolete = newObsolete;
 }
 
-bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
-{
-    return mIdentifier == other.mIdentifier && mLangText == other.mLangText && mMd5 == other.mMd5 && mVersion == other.mVersion && mUrl == other.mUrl
-        && mSize == other.mSize && mObsolete == other.mObsolete && mType == other.mType && mName == other.mName;
-}
+bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const = default;
 
 void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
 {

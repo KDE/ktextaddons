@@ -84,11 +84,7 @@ void GrammarError::parse([[maybe_unused]] const QJsonObject &obj, [[maybe_unused
 {
 }
 
-bool GrammarError::operator==(const GrammarError &other) const
-{
-    return (mBlockId == other.mBlockId) && (mLength == other.mLength) && (mStart == other.mStart) && (mColor == other.mColor)
-        && (mSuggestions == other.mSuggestions) && (mError == other.mError) && (mOption == other.mOption) && (mRule == other.mRule) && (mUrl == other.mUrl);
-}
+bool GrammarError::operator==(const GrammarError &other) const = default;
 
 QString GrammarError::url() const
 {

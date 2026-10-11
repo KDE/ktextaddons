@@ -29,12 +29,7 @@ QString Translator::shortName() const
     return mShortName;
 }
 
-bool Translator::operator==(const Translator &other) const
-{
-    return mShortName == other.mShortName && mModelName == other.mModelName && mSource == other.mSource && mTarget == other.mTarget
-        && mCheckSum == other.mCheckSum && mRepository == other.mRepository && mUrl == other.mUrl && mType == other.mType && mVersion == other.mVersion
-        && mApi == other.mApi && mRemote == other.mRemote;
-}
+bool Translator::operator==(const Translator &other) const = default;
 
 bool Translator::remote() const
 {

@@ -79,10 +79,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateChatSettings::PendingTypedInfo
     return d;
 }
 
-bool TextAutoGenerateChatSettings::PendingTypedInfo::operator==(const TextAutoGenerateChatSettings::PendingTypedInfo &other) const
-{
-    return text == other.text && scrollbarPosition == other.scrollbarPosition && tools == other.tools;
-}
+bool TextAutoGenerateChatSettings::PendingTypedInfo::operator==(const TextAutoGenerateChatSettings::PendingTypedInfo &other) const = default;
 
 QJsonObject TextAutoGenerateChatSettings::PendingTypedInfo::serialize(const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo)
 {

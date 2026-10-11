@@ -11,10 +11,7 @@ using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextToolInternal::TextAutoGenerateTextToolInternal() = default;
 
-bool TextAutoGenerateTextToolInternal::operator==(const TextAutoGenerateTextToolInternal &other) const
-{
-    return mProperties == other.mProperties && mRequired == other.mRequired && mToolNameId == other.mToolNameId && mDescription == other.mDescription;
-}
+bool TextAutoGenerateTextToolInternal::operator==(const TextAutoGenerateTextToolInternal &other) const = default;
 
 QList<TextAutoGenerateTextToolInternalProperty> TextAutoGenerateTextToolInternal::properties() const
 {

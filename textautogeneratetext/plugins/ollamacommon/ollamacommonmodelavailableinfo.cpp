@@ -152,9 +152,6 @@ QDebug operator<<(QDebug d, const OllamaCommonModelAvailableInfo &t)
     return d;
 }
 
-bool OllamaCommonModelAvailableInfo::ModelTag::operator==(const ModelTag &other) const
-{
-    return tag == other.tag && size == other.size;
-}
+bool OllamaCommonModelAvailableInfo::ModelTag::operator==(const ModelTag &other) const = default;
 
 #include "moc_ollamacommonmodelavailableinfo.cpp"

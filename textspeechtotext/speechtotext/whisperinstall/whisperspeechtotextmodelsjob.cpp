@@ -34,11 +34,7 @@ bool WhisperSpeechToTextModelsJob::ModelInfo::isValid() const
     return !identifier.isEmpty();
 }
 
-bool WhisperSpeechToTextModelsJob::ModelInfo::operator==(const ModelInfo &other) const
-{
-    return identifier == other.identifier && name == other.name && sizeMib == other.sizeMib && multilingual == other.multilingual
-        && isDefault == other.isDefault;
-}
+bool WhisperSpeechToTextModelsJob::ModelInfo::operator==(const ModelInfo &other) const = default;
 
 WhisperSpeechToTextModelsJob::WhisperSpeechToTextModelsJob(QObject *parent)
     : QObject{parent}

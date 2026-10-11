@@ -179,10 +179,7 @@ bool BergamotEngineUtils::ModelFiles::isValid() const
     return !model.isEmpty() && !vocabulary.isEmpty() && !shortlist.isEmpty();
 }
 
-bool BergamotEngineUtils::ModelFiles::operator==(const ModelFiles &other) const
-{
-    return model == other.model && vocabulary == other.vocabulary && shortlist == other.shortlist && ssplit == other.ssplit;
-}
+bool BergamotEngineUtils::ModelFiles::operator==(const ModelFiles &other) const = default;
 
 QDebug operator<<(QDebug d, const BergamotEngineUtils::ModelFiles &t)
 {
@@ -203,8 +200,4 @@ QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t)
     return d;
 }
 
-bool BergamotEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
-{
-    return from == other.from && to == other.to && shortName == other.shortName && absoluteLanguageModelPath == other.absoluteLanguageModelPath
-        && version == other.version;
-}
+bool BergamotEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const = default;

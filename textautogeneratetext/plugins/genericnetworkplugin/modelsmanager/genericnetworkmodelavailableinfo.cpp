@@ -56,11 +56,7 @@ void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescript
     mDescription = newDescription;
 }
 
-bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
-{
-    return mDescription == other.mDescription && mModelName == other.mModelName && mModelSize == other.mModelSize && mIdentifier == other.mIdentifier
-        && mOwnedBy == other.mOwnedBy && mCapabilities == other.mCapabilities;
-}
+bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const = default;
 
 QString GenericNetworkModelAvailableInfo::modelName() const
 {

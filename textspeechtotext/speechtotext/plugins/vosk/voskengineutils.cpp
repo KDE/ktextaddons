@@ -93,10 +93,7 @@ QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t)
     return d;
 }
 
-bool VoskEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
-{
-    return name == other.name && absoluteLanguageModelPath == other.absoluteLanguageModelPath && versionStr == other.versionStr && url == other.url;
-}
+bool VoskEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const = default;
 
 bool VoskEngineUtils::LanguageInstalled::isValid() const
 {
