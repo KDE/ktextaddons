@@ -6,6 +6,7 @@
 #include "textautogeneratemcptoolcalljobtest.h"
 #include "core/mcp/textautogeneratemcptoolcalljob.h"
 #include "core/mcp/textautogeneratemcptoolsmanager.h"
+#include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "core/tools/textautogeneratetoolcalljob.h"
 #include "fakemcpserver.h"
 #include <QSignalSpy>
@@ -145,16 +146,16 @@ void TextAutoGenerateMcpToolCallJobTest::shouldAskConfirmation()
     QCOMPARE(info.content, u"weather {}"_s);
 
     // Always allowed: asked only once
-    QVERIFY(!manager.isServerAlwaysAllowed(server.identifier()));
+    QVERIFY(!TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(&serverManager, server.identifier()));
     answer = TextAutoGenerateMcpToolsManager::ToolConfirmation::AlwaysAllowServer;
     info = callTool(&manager, "foo__get_time"_ba, {});
     QCOMPARE(askedTools.count(), 3);
-    QVERIFY(manager.isServerAlwaysAllowed(server.identifier()));
+    QVERIFY(TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(&serverManager, server.identifier()));
     info = callTool(&manager, "foo__get_time"_ba, {});
     QCOMPARE(askedTools.count(), 3);
     QCOMPARE(info.content, u"get time {}"_s);
-    manager.setServerAlwaysAllowed(server.identifier(), false);
-    QVERIFY(!manager.isServerAlwaysAllowed(server.identifier()));
+    TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(&serverManager, server.identifier(), false);
+    QVERIFY(!TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(&serverManager, server.identifier()));
 }
 
 void TextAutoGenerateMcpToolCallJobTest::shouldCancelToolCall()

@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemcptoolsmanager.h"
+#include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -420,7 +421,8 @@ void TextAutoGenerateMcpToolsManager::setElicitationHandler(const ElicitationHan
 
 bool TextAutoGenerateMcpToolsManager::needConfirmation(const McpTool &tool) const
 {
-    return mConfirmationHandler && !tool.readOnly && !isServerAlwaysAllowed(tool.serverIdentifier);
+    return mConfirmationHandler && !tool.readOnly
+        && !TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(mServerManager, tool.serverIdentifier);
 }
 
 void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
@@ -440,31 +442,12 @@ void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
     const QPointer<QObject> guard(context);
     mConfirmationHandler(info, [this, guard, callback, serverIdentifier = tool.serverIdentifier](ToolConfirmation confirmation) {
         if (confirmation == ToolConfirmation::AlwaysAllowServer) {
-            setServerAlwaysAllowed(serverIdentifier, true);
+            TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(mServerManager, serverIdentifier, true);
         }
         if (guard) {
             callback(confirmation != ToolConfirmation::Deny);
         }
     });
-}
-
-bool TextAutoGenerateMcpToolsManager::isServerAlwaysAllowed(const QByteArray &serverIdentifier) const
-{
-    const KConfigGroup group(KSharedConfig::openConfig(mServerManager->serverConfigFileName()), u"ToolConfirmation"_s);
-    return group.readEntry("AlwaysAllowedServers", QStringList()).contains(QString::fromLatin1(serverIdentifier));
-}
-
-void TextAutoGenerateMcpToolsManager::setServerAlwaysAllowed(const QByteArray &serverIdentifier, bool allowed)
-{
-    KConfigGroup group(KSharedConfig::openConfig(mServerManager->serverConfigFileName()), u"ToolConfirmation"_s);
-    QStringList servers = group.readEntry("AlwaysAllowedServers", QStringList());
-    const QString identifier = QString::fromLatin1(serverIdentifier);
-    servers.removeAll(identifier);
-    if (allowed) {
-        servers.append(identifier);
-    }
-    group.writeEntry("AlwaysAllowedServers", servers);
-    group.sync();
 }
 
 McpProtocolClientProtocolManager *TextAutoGenerateMcpToolsManager::client(const QByteArray &serverIdentifier) const

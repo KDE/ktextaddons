@@ -155,9 +155,6 @@ public:
      */
     void confirmToolCall(const McpTool &tool, const QJsonObject &arguments, QObject *context, const std::function<void(bool)> &callback);
 
-    [[nodiscard]] bool isServerAlwaysAllowed(const QByteArray &serverIdentifier) const;
-    void setServerAlwaysAllowed(const QByteArray &serverIdentifier, bool allowed);
-
 Q_SIGNALS:
     void statusChanged(const QByteArray &identifier);
     void toolsChanged(const QByteArray &identifier);
