@@ -36,7 +36,7 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"Ошибка: системы движка обнаружили подозрительный трафик из вашей сети. "
+"Ошибка: системы службы обнаружили подозрительный трафик из вашей сети. "
 "Попробуйте позже."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
@@ -162,7 +162,7 @@ msgstr "Whisper"
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:100
 #, kde-format
 msgid "The whisper backend stopped unexpectedly."
-msgstr "Движок Whisper неожиданно завершил работу."
+msgstr "Модуль Whisper неожиданно завершил работу."
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29

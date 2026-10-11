@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-08-19 13:08+0300\n"
+"PO-Revision-Date: 2026-10-11 00:04+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -150,7 +150,7 @@ msgstr "Nepavyko atverti priedą."
 #: plugins/configurepluginswidget.cpp:24
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "Pakeitimų pritaikymui reikia paleidimo iš naujo."
+msgstr "Pakeitimų pritaikymui reikia paleisti programą iš naujo."
 
 #: plugins/configurepluginswidget.cpp:160
 #, kde-format
@@ -309,10 +309,9 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> Versija %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "Kas naujo %2. %1"
+msgstr "Kas naujo %1. %2"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
@@ -320,21 +319,19 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Laidos informacija</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h1><i> Versija %1 (Išleista: %2)</i></h1><hr/><br>"
+msgstr "<h3><i>Kas naujo %1 versijoje (Išleista: %2)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h1><i> Versija %1 (Kol kas neišleista)</i></h1><hr/><br>"
+msgstr "<h3><i>Kas naujo %1 versijoje (Neišleista)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr ""
+msgstr "<h1>Naujienų istorija</h1>"
 
 #~ msgid "..."
 #~ msgstr "..."
