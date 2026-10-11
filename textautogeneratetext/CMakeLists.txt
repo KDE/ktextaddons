@@ -41,13 +41,7 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_library(
-    KF6TextAutoGenerateText
-    widgets/mcp/textautogenerateelicitationwidget.h
-    widgets/mcp/textautogenerateelicitationwidget.cpp
-    widgets/mcp/textautogenerateelicitationdialog.h
-    widgets/mcp/textautogenerateelicitationdialog.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 
@@ -239,14 +233,12 @@ target_sources(
         core/jobs/textautogenerateimportchatasjsonjob.cpp
         core/jobs/textautogeneratepurgeexpiredchatsjob.h
         core/jobs/textautogeneratepurgeexpiredchatsjob.cpp
-        widgets/mcp/textautogeneratemcptoolconfirmation.h
-        widgets/mcp/textautogeneratemcptoolconfirmation.cpp
-        widgets/mcp/textautogeneratemcpelicitation.h
-        widgets/mcp/textautogeneratemcpelicitation.cpp
         core/mcp/textautogeneratemcptoolcalljob.h
         core/mcp/textautogeneratemcptoolcalljob.cpp
         core/mcp/textautogeneratemcptoolsmanager.h
         core/mcp/textautogeneratemcptoolsmanager.cpp
+        core/mcp/textautogeneratemcptoolsutils.h
+        core/mcp/textautogeneratemcptoolsutils.cpp
         core/tools/textautogeneratetexttoolplugin.h
         core/tools/textautogeneratetexttoolplugin.cpp
         core/tools/textautogeneratetexttoolpluginmanager.cpp
@@ -502,6 +494,14 @@ target_sources(
         widgets/projects/textautogeneratemanageprojectsdialog.cpp
         widgets/projects/textautogenerateprojectsmenu.h
         widgets/projects/textautogenerateprojectsmenu.cpp
+        widgets/mcp/textautogeneratemcptoolconfirmation.h
+        widgets/mcp/textautogeneratemcptoolconfirmation.cpp
+        widgets/mcp/textautogeneratemcpelicitation.h
+        widgets/mcp/textautogeneratemcpelicitation.cpp
+        widgets/mcp/textautogenerateelicitationwidget.h
+        widgets/mcp/textautogenerateelicitationwidget.cpp
+        widgets/mcp/textautogenerateelicitationdialog.h
+        widgets/mcp/textautogenerateelicitationdialog.cpp
 )
 
 if(BUILD_TESTING)
