@@ -11,3 +11,4 @@ endmacro()
 
 add_textautogenerate_widgets_mcp_unittest(textautogenerateelicitationwidgettest.cpp)
 add_textautogenerate_widgets_mcp_unittest(textautogenerateelicitationdialogtest.cpp)
+add_textautogenerate_widgets_mcp_unittest(textautogeneratesamplingdialogtest.cpp)

@@ -15,6 +15,7 @@
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/mcp/textautogeneratemcpelicitation.h"
+#include "widgets/mcp/textautogeneratemcpsampling.h"
 #include "widgets/mcp/textautogeneratemcptoolconfirmation.h"
 #include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogeneratehistorywidget.h"
@@ -152,6 +153,8 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         TextAutoGenerateMcpToolConfirmation::installConfirmationHandler(mManager->textAutoGenerateMcpToolsManager(), this);
         // Ask user to answer requests of MCP servers
         TextAutoGenerateMcpElicitation::installElicitationHandler(mManager->textAutoGenerateMcpToolsManager(), this);
+        // Ask user before sending sampling requests of MCP servers to LLM
+        TextAutoGenerateMcpSampling::installSamplingHandler(mManager->textAutoGenerateMcpToolsManager(), this);
     }
 }
 

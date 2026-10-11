@@ -215,6 +215,12 @@ public:
      * Format of tool calls and tool results in messages sent to LLM. OpenAI format by default.
      */
     [[nodiscard]] virtual TextAutoGenerateMessage::ToolCallFormat toolCallFormat() const;
+
+    /*!
+     * Send \a request (messages already created) to LLM, without adding messages in a chat.
+     * Caller owns returned reply. Returns nullptr when not supported (default).
+     */
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 Q_SIGNALS:
     /*!
      */

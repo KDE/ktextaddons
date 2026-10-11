@@ -233,6 +233,8 @@ target_sources(
         core/jobs/textautogenerateimportchatasjsonjob.cpp
         core/jobs/textautogeneratepurgeexpiredchatsjob.h
         core/jobs/textautogeneratepurgeexpiredchatsjob.cpp
+        core/mcp/textautogeneratemcpsamplingjob.h
+        core/mcp/textautogeneratemcpsamplingjob.cpp
         core/mcp/textautogeneratemcptoolcalljob.h
         core/mcp/textautogeneratemcptoolcalljob.cpp
         core/mcp/textautogeneratemcptoolsmanager.h
@@ -502,6 +504,10 @@ target_sources(
         widgets/mcp/textautogenerateelicitationwidget.cpp
         widgets/mcp/textautogenerateelicitationdialog.h
         widgets/mcp/textautogenerateelicitationdialog.cpp
+        widgets/mcp/textautogeneratemcpsampling.h
+        widgets/mcp/textautogeneratemcpsampling.cpp
+        widgets/mcp/textautogeneratesamplingdialog.h
+        widgets/mcp/textautogeneratesamplingdialog.cpp
 )
 
 if(BUILD_TESTING)

@@ -106,6 +106,11 @@ void LMStudioPlugin::askToAssistant(const QString &msg)
     Q_UNUSED(msg)
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *LMStudioPlugin::chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    return mLMStudioManager->getChatCompletion(request);
+}
+
 void LMStudioPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);

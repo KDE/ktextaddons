@@ -9,6 +9,7 @@
 #include <QHash>
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 #include <chrono>
@@ -25,6 +26,7 @@ class McpProtocolRoot;
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextPlugin;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateMcpToolsManager
  * \brief Connects to MCP servers and provides their tools to LLM.
@@ -82,6 +84,19 @@ public:
      */
     using ElicitationHandler = std::function<void(const ElicitationInfo &info,
                                                   const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer)>;
+
+    struct TEXTAUTOGENERATETEXT_EXPORT SamplingInfo {
+        QString serverName;
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest request;
+    };
+    /*!
+     * Asks user to confirm that sampling request of a MCP server can be sent to LLM, \a answer must be called with user choice.
+     */
+    using SamplingHandler = std::function<void(const SamplingInfo &info, const std::function<void(bool accepted)> &answer)>;
+    /*!
+     * Returns LLM plugin used to answer sampling requests (can be nullptr).
+     */
+    using PluginProvider = std::function<TextAutoGenerateTextPlugin *()>;
 
     explicit TextAutoGenerateMcpToolsManager(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager, QObject *parent = nullptr);
     ~TextAutoGenerateMcpToolsManager() override;
@@ -146,6 +161,12 @@ public:
      */
     void setElicitationHandler(const ElicitationHandler &handler);
     /*!
+     * Handler used to confirm sampling requests of MCP servers before sending them to LLM returned by plugin provider.
+     * Without handler sampling is not announced to servers. It must be defined before connecting to servers.
+     */
+    void setSamplingHandler(const SamplingHandler &handler);
+    void setPluginProvider(const PluginProvider &provider);
+    /*!
      * Tool needs a confirmation: handler is defined, tool is not read only and server is not always allowed.
      */
     [[nodiscard]] bool needConfirmation(const McpTool &tool) const;
@@ -171,11 +192,17 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotServersChanged();
     TEXTAUTOGENERATETEXT_NO_EXPORT void setStatus(const QByteArray &identifier, Status status, const QString &errorString = {});
     TEXTAUTOGENERATETEXT_NO_EXPORT void listTools(const QByteArray &identifier);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSamplingRequested(const QString &serverName,
+                                                              TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client,
+                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotReceived(const QByteArray &identifier, const QJsonObject &obj, qint64 requestId);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray exposedName(const QByteArray &identifier, const QString &serverName, const QString &toolName) const;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mServerManager;
     QHash<QByteArray, ServerState> mServers;
     ConfirmationHandler mConfirmationHandler;
     ElicitationHandler mElicitationHandler;
+    SamplingHandler mSamplingHandler;
+    PluginProvider mPluginProvider;
 };
 }

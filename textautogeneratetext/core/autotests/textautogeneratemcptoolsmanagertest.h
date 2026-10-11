@@ -27,6 +27,7 @@ private Q_SLOTS:
     void shouldNotCallCallbackWhenContextIsDeleted();
     void shouldCallCallbackAfterTimeout();
     void shouldAnswerElicitationRequest();
+    void shouldAnswerSamplingRequest();
     void shouldConvertToRoots();
     void shouldAnswerRootsList();
 };

@@ -48,6 +48,7 @@ public:
     [[nodiscard]] QString passwordServiceName() const;
 
     void askToAssistant(const QString &msg) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
     void cancelRequest(const QByteArray &uuid) override;
 
 protected:

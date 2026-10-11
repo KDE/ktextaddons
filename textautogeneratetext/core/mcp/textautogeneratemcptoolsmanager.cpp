@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemcptoolsmanager.h"
+#include "core/mcp/textautogeneratemcpsamplingjob.h"
 #include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KConfigGroup>
@@ -13,6 +14,7 @@
 #include <QPointer>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
@@ -140,8 +142,51 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
                     });
                 });
     }
+    if (mSamplingHandler) {
+        client->setSamplingSupported(true);
+        connect(client,
+                &McpProtocolClientProtocolManager::samplingRequested,
+                this,
+                [this, serverName = server.name(), client](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                                           const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request) {
+                    slotSamplingRequested(serverName, client, id, request);
+                });
+    }
     setStatus(identifier, Status::Connecting);
     client->initializeClient();
+}
+
+void TextAutoGenerateMcpToolsManager::slotSamplingRequested(const QString &serverName,
+                                                            McpProtocolClientProtocolManager *client,
+                                                            const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                                            const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request)
+{
+    const SamplingInfo info{
+        .serverName = serverName,
+        .request = request,
+    };
+    // Client can be deleted while user answers or while LLM generates message
+    mSamplingHandler(info, [this, client = QPointer(client), id, request](bool accepted) {
+        if (!client) {
+            return;
+        }
+        if (!accepted) {
+            client->rejectSampling(id);
+            return;
+        }
+        auto job = new TextAutoGenerateMcpSamplingJob(mPluginProvider ? mPluginProvider() : nullptr, client);
+        job->setRequest(request);
+        connect(job,
+                &TextAutoGenerateMcpSamplingJob::finished,
+                client,
+                [client, id](const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult &result) {
+                    client->respondToSampling(id, result);
+                });
+        connect(job, &TextAutoGenerateMcpSamplingJob::failed, client, [client, id](const QString &errorString) {
+            client->rejectSampling(id, errorString);
+        });
+        job->start();
+    });
 }
 
 void TextAutoGenerateMcpToolsManager::disconnectServer(const QByteArray &identifier)
@@ -417,6 +462,16 @@ void TextAutoGenerateMcpToolsManager::setConfirmationHandler(const ConfirmationH
 void TextAutoGenerateMcpToolsManager::setElicitationHandler(const ElicitationHandler &handler)
 {
     mElicitationHandler = handler;
+}
+
+void TextAutoGenerateMcpToolsManager::setSamplingHandler(const SamplingHandler &handler)
+{
+    mSamplingHandler = handler;
+}
+
+void TextAutoGenerateMcpToolsManager::setPluginProvider(const PluginProvider &provider)
+{
+    mPluginProvider = provider;
 }
 
 bool TextAutoGenerateMcpToolsManager::needConfirmation(const McpTool &tool) const

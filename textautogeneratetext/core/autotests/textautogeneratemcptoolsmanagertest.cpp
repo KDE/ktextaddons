@@ -299,6 +299,75 @@ void TextAutoGenerateMcpToolsManagerTest::shouldAnswerElicitationRequest()
     QCOMPARE(response.value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
 }
 
+void TextAutoGenerateMcpToolsManagerTest::shouldAnswerSamplingRequest()
+{
+    {
+        // Not announced without handler
+        FakeMcpServer fakeServer;
+        TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+        const auto server = fakeServer.mcpServer(u"foo"_s);
+        serverManager.mcpServerModel()->addMcpServer(server);
+        TextAutoGenerateMcpToolsManager manager(&serverManager);
+        manager.connectServer(server.identifier());
+        QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+        const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
+        QVERIFY(!initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("sampling"_L1));
+    }
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    const auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    QList<TextAutoGenerateMcpToolsManager::SamplingInfo> infos;
+    bool accept = false;
+    manager.setSamplingHandler([&infos, &accept](const TextAutoGenerateMcpToolsManager::SamplingInfo &info, const std::function<void(bool)> &answer) {
+        infos.append(info);
+        answer(accept);
+    });
+    // No LLM
+    manager.setPluginProvider([]() {
+        return nullptr;
+    });
+    manager.connectServer(server.identifier());
+    QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+    const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
+    QVERIFY(initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("sampling"_L1));
+    QTRY_VERIFY(fakeServer.eventStream);
+
+    const auto sendSamplingRequest = [&fakeServer](const QString &id) {
+        const QJsonObject message{{"role"_L1, u"user"_s}, {"content"_L1, QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, u"Hello"_s}}}};
+        const QJsonObject request{{"jsonrpc"_L1, u"2.0"_s},
+                                  {"id"_L1, id},
+                                  {"method"_L1, u"sampling/createMessage"_s},
+                                  {"params"_L1, QJsonObject{{"messages"_L1, QJsonArray{message}}, {"maxTokens"_L1, 100}}}};
+        FakeMcpHttpServer::sendEvents(fakeServer.eventStream, FakeMcpHttpServer::jsonEvent(request));
+    };
+    const auto response = [&fakeServer](const QString &id) {
+        for (const auto &obj : std::as_const(fakeServer.receivedRequests)) {
+            if (!obj.contains("method"_L1) && obj.value("id"_L1).toString() == id) {
+                return obj;
+            }
+        }
+        return QJsonObject();
+    };
+
+    // User rejects request
+    sendSamplingRequest(u"srv-1"_s);
+    QTRY_COMPARE(infos.count(), 1);
+    QCOMPARE(infos.at(0).serverName, u"foo"_s);
+    QCOMPARE(infos.at(0).request.params().messages().count(), 1);
+    QTRY_VERIFY(!response(u"srv-1"_s).isEmpty());
+    QCOMPARE(response(u"srv-1"_s).value("error"_L1).toObject().value("code"_L1).toInt(), -1);
+
+    // User accepts but there is no LLM
+    accept = true;
+    sendSamplingRequest(u"srv-2"_s);
+    QTRY_COMPARE(infos.count(), 2);
+    QTRY_VERIFY(!response(u"srv-2"_s).isEmpty());
+    QVERIFY(response(u"srv-2"_s).contains("error"_L1));
+    QVERIFY(!response(u"srv-2"_s).value("error"_L1).toObject().value("message"_L1).toString().isEmpty());
+}
+
 void TextAutoGenerateMcpToolsManagerTest::shouldConvertToRoots()
 {
     QVERIFY(TextAutoGenerateMcpToolsManager::convertToRoots({}).isEmpty());

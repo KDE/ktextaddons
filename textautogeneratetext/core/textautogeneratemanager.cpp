@@ -71,6 +71,10 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateProjectsManager(new TextAutoGenerateProjectsManager(this))
 {
     mTextAutoGenerateTextMcpServerManager->loadServers();
+    // Sampling requests of MCP servers are sent to current LLM
+    mTextAutoGenerateMcpToolsManager->setPluginProvider([this]() {
+        return textAutoGeneratePlugin();
+    });
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     mTextAutoGenerateChatsModel->setTextAutoGenerateTagsManager(mTextAutoGenerateTagsManager);
     mTextAutoGenerateTagsManager->setTags(mDatabaseManager->loadTags());

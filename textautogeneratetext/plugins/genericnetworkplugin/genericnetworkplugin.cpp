@@ -161,6 +161,11 @@ void GenericNetworkPlugin::askToAssistant(const QString &msg)
                                                    })));
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkPlugin::chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    return mGenericManager->getChatCompletion(request);
+}
+
 void GenericNetworkPlugin::cancelRequest(const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {

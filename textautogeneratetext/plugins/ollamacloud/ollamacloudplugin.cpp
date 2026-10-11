@@ -130,6 +130,11 @@ void OllamaCloudPlugin::askToAssistant(const QString &msg)
                                                    })));
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudPlugin::chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    return mOllamaCloudManager->getChatCompletion(request);
+}
+
 void OllamaCloudPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);

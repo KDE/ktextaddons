@@ -51,6 +51,7 @@ Q_SIGNALS:
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply *chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) override;
 
 private:
     void removeApiKey();

@@ -163,6 +163,12 @@ TextAutoGenerateMessage::ToolCallFormat TextAutoGenerateTextPlugin::toolCallForm
     return TextAutoGenerateMessage::ToolCallFormat::OpenAI;
 }
 
+TextAutoGenerateReply *TextAutoGenerateTextPlugin::chatCompletion(const TextAutoGenerateTextRequest &request)
+{
+    Q_UNUSED(request)
+    return nullptr;
+}
+
 void TextAutoGenerateTextPlugin::processToolCalls(const SendToAssistantInfo &info, const TextAutoGenerateText::TextAutoGenerateReply::Response &response)
 {
     QList<TextAutoGenerateReply::ToolCallArgumentInfo> toolCalls = response.info;
