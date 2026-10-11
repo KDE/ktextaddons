@@ -435,7 +435,7 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"Ошибка: системы движка обнаружили подозрительный трафик из вашей сети. "
+"Ошибка: системы службы обнаружили подозрительный трафик из вашей сети. "
 "Попробуйте позже."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
@@ -533,7 +533,7 @@ msgstr "DeepL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr "Настройка движка"
+msgstr "Настройка модуля"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:19
 #, kde-format

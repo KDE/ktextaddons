@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-10 00:44+0000\n"
-"PO-Revision-Date: 2026-10-09 12:11+0200\n"
+"PO-Revision-Date: 2026-10-10 12:43+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20,34 +20,32 @@ msgstr ""
 #: core/server/mcpprotocolserverprotocolmanager.cpp:78
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "Server starten"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:80
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "Server starten op %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:326
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "Verzoek %1 geannuleerd door de cliënt"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:343
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Fout: %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:349
-#, fuzzy, kde-format
-#| msgid "Server is not started."
+#, kde-format
 msgid "Server started"
-msgstr "Server is niet gestart."
+msgstr "Server is gestart"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:357
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server stopped"
-msgstr "Server is niet gereed."
+msgstr "Server is gestopt."
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -132,7 +130,7 @@ msgstr "Onmogelijk de server te starten: %1"
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "Stdio-server wordt niet ondersteund op dit platform."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
@@ -141,10 +139,9 @@ msgid "Server is not started."
 msgstr "Server is niet gestart."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "Bericht ontvangen van de server is te groot."
+msgstr "Bericht ontvangen van de cliënt is te groot."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format

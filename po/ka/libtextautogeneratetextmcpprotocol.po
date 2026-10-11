@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-10 00:44+0000\n"
-"PO-Revision-Date: 2026-10-09 06:24+0200\n"
+"PO-Revision-Date: 2026-10-10 04:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -21,34 +21,32 @@ msgstr ""
 #: core/server/mcpprotocolserverprotocolmanager.cpp:78
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "სერვერის გაშვება"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:80
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "სერვერის გაშვება %1-ზე"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:326
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "მოთხოვნა %1 გაუქმებულია კლიენტის მიერ"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:343
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "შეცდომა: %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:349
-#, fuzzy, kde-format
-#| msgid "Server is not started."
+#, kde-format
 msgid "Server started"
-msgstr "სერვერი გაშვებული არაა."
+msgstr "სერვერი გაეშვა"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:357
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server stopped"
-msgstr "სერვერი მზად არაა."
+msgstr "სერვერი გაჩერდა"
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -133,7 +131,7 @@ msgstr "სერვერის გაშვება შეუძლებე�
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "ამ პლატფორმაზე Stdio სერვერი მხარდაჭერილი არაა"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
@@ -142,10 +140,9 @@ msgid "Server is not started."
 msgstr "სერვერი გაშვებული არაა."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "სერვერიდან მიღებული შეტყობინება მეტისმეტად დიდია."
+msgstr "კლიენტიდან მიღებული შეტყობინება მეტისმეტად დიდია."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format

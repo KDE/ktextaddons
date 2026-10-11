@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-10 00:44+0000\n"
-"PO-Revision-Date: 2026-10-09 08:59+0200\n"
+"PO-Revision-Date: 2026-10-10 11:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,34 +22,32 @@ msgstr ""
 #: core/server/mcpprotocolserverprotocolmanager.cpp:78
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "S'està iniciant el servidor"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:80
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "S'està iniciant el servidor a %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:326
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "Petició %1 cancel·lada pel client"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:343
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Error: %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:349
-#, fuzzy, kde-format
-#| msgid "Server is not started."
+#, kde-format
 msgid "Server started"
-msgstr "El servidor no s'ha iniciat."
+msgstr "El servidor s'ha iniciat"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:357
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server stopped"
-msgstr "El servidor no està preparat."
+msgstr "El servidor s'ha aturat"
 
 #: core/server/mcpserver.cpp:105
 #, kde-format
@@ -134,7 +132,7 @@ msgstr "Impossible iniciar el servidor: %1"
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "Els servidors «stdio» no estan admesos en aquesta plataforma."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
@@ -143,10 +141,9 @@ msgid "Server is not started."
 msgstr "El servidor no s'ha iniciat."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "El missatge rebut del servidor és massa gran."
+msgstr "El missatge rebut del client és massa gran."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format

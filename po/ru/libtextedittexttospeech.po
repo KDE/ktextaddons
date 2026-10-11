@@ -27,12 +27,12 @@ msgstr "Kokoro не установлен. Сначала установите е
 #: kokoro/texttospeechkokoro.cpp:146
 #, kde-format
 msgid "The Kokoro backend stopped unexpectedly."
-msgstr "Движок Kokoro неожиданно завершил работу."
+msgstr "Модуль Kokoro неожиданно завершил работу."
 
 #: kokoro/texttospeechkokoro.cpp:156
 #, kde-format
 msgid "Unable to start the Kokoro backend."
-msgstr "Не удалось запустить движок Kokoro."
+msgstr "Не удалось запустить модуль Kokoro."
 
 #: kokoro/texttospeechkokoro.cpp:257
 #, kde-format
@@ -251,7 +251,7 @@ msgstr "Тон:"
 #: texttospeechconfigwidget.cpp:90
 #, kde-format
 msgid "Engine:"
-msgstr "Движок:"
+msgstr "Модуль:"
 
 #: texttospeechconfigwidget.cpp:94
 #, kde-format
@@ -294,7 +294,7 @@ msgstr "Настроить…"
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
 #, kde-format
 msgid "Engine has a problem."
-msgstr "Ошибка движка."
+msgstr "Ошибка модуля."
 
 #: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
 #, kde-format

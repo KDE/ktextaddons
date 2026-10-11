@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"POT-Creation-Date: 2026-10-11 00:48+0000\n"
 "PO-Revision-Date: 2026-10-05 06:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -66,34 +66,34 @@ msgid "Tool \"%1\" is not available."
 msgstr "ხელსაწყო \"%1\" ხელმისაწვდომი არაა."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:124
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:142
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:50
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:59
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Error: server was stopped."
 msgstr "შეცდომა: სერვერი გაჩერდა."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:55
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:58
 #, kde-format
 msgid "User refused to run tool \"%1\"."
 msgstr "მომხმარებელმა უარი თქვა, გაეშვა ხელსაწყო \"%1\"."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:62
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Calling tool \"%1\"…"
 msgstr "მიმდინარეობს გამოძახება ხელსაწყოსთვის \"%1\"…"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "შეცდომა: გამოძახების შეცდომა ხელსაწყოსთვის \"%1\"."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:74
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:75
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "სერვერი არასწორია, ან გათიშულია."
@@ -229,12 +229,12 @@ msgstr ""
 "ბრძანდებით ხი დამხმარე. იყავით სასარგებლო, პროფესიონალი და თავაზიანი. ნუ "
 "მიაწვდით არაზუსტ ინფორმაციას."
 
-#: core/textautogeneratetextplugin.cpp:360
+#: core/textautogeneratetextplugin.cpp:382
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: core/textautogeneratetextplugin.cpp:362
+#: core/textautogeneratetextplugin.cpp:384
 #, kde-format
 msgid "Network"
 msgstr "ქსელური"
@@ -3275,6 +3275,30 @@ msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "გაშვებული ასლის დამატება…"
 
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Request from MCP Server"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Accept"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:31
+#, kde-format
+msgctxt "@action:button"
+msgid "Decline"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:50
+#, kde-format
+msgctxt "@title:window"
+msgid "Request from %1"
+msgstr ""
+
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
@@ -3706,12 +3730,12 @@ msgstr "ძებნა"
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
 
-#: widgets/textautogeneratewidget.cpp:250
+#: widgets/textautogeneratewidget.cpp:252
 #, kde-format
 msgid "Error reported: %1"
 msgstr "დაფიქსირებული შეცდომა: %1"
 
-#: widgets/textautogeneratewidget.cpp:250
+#: widgets/textautogeneratewidget.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
