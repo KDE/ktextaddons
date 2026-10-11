@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
+class QListWidget;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpServerModel;
@@ -50,9 +51,13 @@ Q_SIGNALS:
     void settingsChanged();
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateAlwaysAllowedServers();
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<QByteArray> checkedAlwaysAllowedServers() const;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     // Servers are modified in a copy: changes are applied with save()
     TextAutoGenerateTextMcpProtocolCore::McpServerModel *const mMcpServerModel;
     TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget *const mMcpServerWidget;
+    // Servers whose tools are called without confirmation
+    QListWidget *const mAlwaysAllowedListWidget;
 };
 }

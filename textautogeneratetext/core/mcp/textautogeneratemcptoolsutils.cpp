@@ -27,3 +27,28 @@ void TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed
     group.writeEntry("AlwaysAllowedServers", servers);
     group.sync();
 }
+
+QList<QByteArray> TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::alwaysAllowedServers(const QString &serverConfigFileName)
+{
+    const KConfigGroup group(KSharedConfig::openConfig(serverConfigFileName), u"ToolConfirmation"_s);
+    const QStringList servers = group.readEntry("AlwaysAllowedServers", QStringList());
+    QList<QByteArray> identifiers;
+    identifiers.reserve(servers.count());
+    for (const QString &server : servers) {
+        identifiers.append(server.toLatin1());
+    }
+    return identifiers;
+}
+
+void TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setAlwaysAllowedServers(const QString &serverConfigFileName,
+                                                                                  const QList<QByteArray> &serverIdentifiers)
+{
+    QStringList servers;
+    servers.reserve(serverIdentifiers.count());
+    for (const QByteArray &identifier : serverIdentifiers) {
+        servers.append(QString::fromLatin1(identifier));
+    }
+    KConfigGroup group(KSharedConfig::openConfig(serverConfigFileName), u"ToolConfirmation"_s);
+    group.writeEntry("AlwaysAllowedServers", servers);
+    group.sync();
+}

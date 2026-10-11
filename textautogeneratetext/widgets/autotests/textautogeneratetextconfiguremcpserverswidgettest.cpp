@@ -4,8 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextconfiguremcpserverswidgettest.h"
+#include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "core/textautogeneratemanager.h"
 #include "widgets/configure/textautogeneratetextconfiguremcpserverswidget.h"
+#include <QLabel>
+#include <QListWidget>
+#include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
@@ -28,6 +32,13 @@ void TextAutoGenerateTextConfigureMcpServersWidgetTest::shouldHaveDefaultValues(
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     QVERIFY(w.findChild<TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget *>(u"mMcpServerWidget"_s));
+
+    auto alwaysAllowedLabel = w.findChild<QLabel *>(u"alwaysAllowedLabel"_s);
+    QVERIFY(alwaysAllowedLabel);
+    QVERIFY(!alwaysAllowedLabel->text().isEmpty());
+    auto mAlwaysAllowedListWidget = w.findChild<QListWidget *>(u"mAlwaysAllowedListWidget"_s);
+    QVERIFY(mAlwaysAllowedListWidget);
+    QCOMPARE(mAlwaysAllowedListWidget->count(), 0);
 }
 
 void TextAutoGenerateTextConfigureMcpServersWidgetTest::shouldApplyChangesWhenSaved()
@@ -69,6 +80,52 @@ void TextAutoGenerateTextConfigureMcpServersWidgetTest::shouldApplyChangesWhenSa
     // Clean config
     managerModel->setMcpServers({});
     manager.textAutoGenerateTextMcpServerManager()->saveServers();
+}
+
+void TextAutoGenerateTextConfigureMcpServersWidgetTest::shouldEditAlwaysAllowedServers()
+{
+    TextAutoGenerateText::TextAutoGenerateManager manager;
+    auto serverManager = manager.textAutoGenerateTextMcpServerManager();
+    const QString configFileName = serverManager->serverConfigFileName();
+    TextAutoGenerateTextMcpProtocolCore::McpServer first;
+    first.setName(u"first"_s);
+    first.createUniqueIdentifier();
+    TextAutoGenerateTextMcpProtocolCore::McpServer second;
+    second.setName(u"second"_s);
+    second.createUniqueIdentifier();
+    serverManager->mcpServerModel()->setMcpServers({first, second});
+    TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setAlwaysAllowedServers(configFileName, {first.identifier(), "obsolete"_ba});
+
+    TextAutoGenerateText::TextAutoGenerateTextConfigureMcpServersWidget w(&manager);
+    auto listWidget = w.findChild<QListWidget *>(u"mAlwaysAllowedListWidget"_s);
+    QVERIFY(listWidget);
+    QCOMPARE(listWidget->count(), 2);
+    QCOMPARE(listWidget->item(0)->text(), u"first"_s);
+    QCOMPARE(listWidget->item(0)->checkState(), Qt::Checked);
+    QCOMPARE(listWidget->item(1)->checkState(), Qt::Unchecked);
+
+    // Changing state is a change of settings
+    QSignalSpy settingsChangedSpy(&w, &TextAutoGenerateText::TextAutoGenerateTextConfigureMcpServersWidget::settingsChanged);
+    listWidget->item(0)->setCheckState(Qt::Unchecked);
+    listWidget->item(1)->setCheckState(Qt::Checked);
+    QCOMPARE(settingsChangedSpy.count(), 2);
+
+    // Removed server is removed from list, state of others is kept
+    auto widgetModel = w.findChild<TextAutoGenerateTextMcpProtocolCore::McpServerModel *>();
+    widgetModel->removeMcpServer(first.identifier());
+    QCOMPARE(listWidget->count(), 1);
+    QCOMPARE(listWidget->item(0)->text(), u"second"_s);
+    QCOMPARE(listWidget->item(0)->checkState(), Qt::Checked);
+
+    // Not applied before save(), obsolete servers are removed when saved
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::alwaysAllowedServers(configFileName), (QList<QByteArray>{first.identifier(), "obsolete"_ba}));
+    w.save();
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::alwaysAllowedServers(configFileName), QList<QByteArray>{second.identifier()});
+
+    // Clean config
+    serverManager->mcpServerModel()->setMcpServers({});
+    serverManager->saveServers();
+    TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setAlwaysAllowedServers(configFileName, {});
 }
 
 #include "moc_textautogeneratetextconfiguremcpserverswidgettest.cpp"
