@@ -422,7 +422,7 @@ void TextAutoGenerateMcpToolsManager::setElicitationHandler(const ElicitationHan
 bool TextAutoGenerateMcpToolsManager::needConfirmation(const McpTool &tool) const
 {
     return mConfirmationHandler && !tool.readOnly
-        && !TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(mServerManager, tool.serverIdentifier);
+        && !TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(mServerManager->serverConfigFileName(), tool.serverIdentifier);
 }
 
 void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
@@ -442,7 +442,7 @@ void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
     const QPointer<QObject> guard(context);
     mConfirmationHandler(info, [this, guard, callback, serverIdentifier = tool.serverIdentifier](ToolConfirmation confirmation) {
         if (confirmation == ToolConfirmation::AlwaysAllowServer) {
-            TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(mServerManager, serverIdentifier, true);
+            TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(mServerManager->serverConfigFileName(), serverIdentifier, true);
         }
         if (guard) {
             callback(confirmation != ToolConfirmation::Deny);

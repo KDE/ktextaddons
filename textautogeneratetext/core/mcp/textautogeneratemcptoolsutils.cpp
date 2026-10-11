@@ -6,20 +6,18 @@
 #include "textautogeneratemcptoolsutils.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
-#include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 using namespace Qt::Literals::StringLiterals;
-bool TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager,
-                                                                                const QByteArray &serverIdentifier)
+bool TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(const QString &serverConfigFileName, const QByteArray &serverIdentifier)
 {
-    const KConfigGroup group(KSharedConfig::openConfig(serverManager->serverConfigFileName()), u"ToolConfirmation"_s);
+    const KConfigGroup group(KSharedConfig::openConfig(serverConfigFileName), u"ToolConfirmation"_s);
     return group.readEntry("AlwaysAllowedServers", QStringList()).contains(QString::fromLatin1(serverIdentifier));
 }
 
-void TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager,
+void TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(const QString &serverConfigFileName,
                                                                                  const QByteArray &serverIdentifier,
                                                                                  bool allowed)
 {
-    KConfigGroup group(KSharedConfig::openConfig(serverManager->serverConfigFileName()), u"ToolConfirmation"_s);
+    KConfigGroup group(KSharedConfig::openConfig(serverConfigFileName), u"ToolConfirmation"_s);
     QStringList servers = group.readEntry("AlwaysAllowedServers", QStringList());
     const QString identifier = QString::fromLatin1(serverIdentifier);
     servers.removeAll(identifier);

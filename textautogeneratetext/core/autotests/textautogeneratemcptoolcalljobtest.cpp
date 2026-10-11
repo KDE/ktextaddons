@@ -146,16 +146,17 @@ void TextAutoGenerateMcpToolCallJobTest::shouldAskConfirmation()
     QCOMPARE(info.content, u"weather {}"_s);
 
     // Always allowed: asked only once
-    QVERIFY(!TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(&serverManager, server.identifier()));
+    const QString serverConfigFileName = serverManager.serverConfigFileName();
+    QVERIFY(!TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(serverConfigFileName, server.identifier()));
     answer = TextAutoGenerateMcpToolsManager::ToolConfirmation::AlwaysAllowServer;
     info = callTool(&manager, "foo__get_time"_ba, {});
     QCOMPARE(askedTools.count(), 3);
-    QVERIFY(TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(&serverManager, server.identifier()));
+    QVERIFY(TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(serverConfigFileName, server.identifier()));
     info = callTool(&manager, "foo__get_time"_ba, {});
     QCOMPARE(askedTools.count(), 3);
     QCOMPARE(info.content, u"get time {}"_s);
-    TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(&serverManager, server.identifier(), false);
-    QVERIFY(!TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(&serverManager, server.identifier()));
+    TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setServerAlwaysAllowed(serverConfigFileName, server.identifier(), false);
+    QVERIFY(!TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(serverConfigFileName, server.identifier()));
 }
 
 void TextAutoGenerateMcpToolCallJobTest::shouldCancelToolCall()
