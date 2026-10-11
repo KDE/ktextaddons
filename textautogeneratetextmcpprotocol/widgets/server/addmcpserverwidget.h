@@ -9,6 +9,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 class QLineEdit;
 class QStackedWidget;
+class KIconButton;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class SelectTypeComboBox;
@@ -60,6 +61,7 @@ private:
     AddMcpStdioServerWidget *const mAddMcpStdioServerWidget;
     AddMcpStreamableHttpServerWidget *const mAddMcpStreamableHttpServerWidget;
     AddMcpServerRootsWidget *const mAddMcpServerRootsWidget;
+    KIconButton *const mIconName;
     TextAutoGenerateTextMcpProtocolCore::McpServer mServer;
 };
 }

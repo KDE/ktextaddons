@@ -10,6 +10,7 @@
 #include "server/addmcpstdioserverwidget.h"
 #include "server/addmcpstreamablehttpserverwidget.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
+#include <KIconButton>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -27,6 +28,7 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     , mAddMcpStdioServerWidget(new AddMcpStdioServerWidget(this))
     , mAddMcpStreamableHttpServerWidget(new AddMcpStreamableHttpServerWidget(this))
     , mAddMcpServerRootsWidget(new AddMcpServerRootsWidget(this))
+    , mIconName(new KIconButton(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -35,6 +37,9 @@ AddMcpServerWidget::AddMcpServerWidget(QWidget *parent)
     mServerNameLineEdit->setObjectName(u"mServerNameLineEdit"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Name:"), mServerNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mServerNameLineEdit);
+
+    mIconName->setObjectName(u"mIconName"_s);
+    mainLayout->addRow(i18nc("@label:textbox", "Icon:"), mIconName);
 
     mSelectTypeComboBox->setObjectName(u"mSelectTypeComboBox"_s);
     mainLayout->addRow(i18nc("@label:listbox", "Type:"), mSelectTypeComboBox);
@@ -85,6 +90,7 @@ void AddMcpServerWidget::setServerInfo(const TextAutoGenerateTextMcpProtocolCore
     }
     mAddMcpServerRootsWidget->setRoots(server.settings().roots());
     mSelectTypeComboBox->setType(serverType);
+    mIconName->setIcon(server.iconName());
     updateWidget(serverType);
     checkValidSettings();
 }
@@ -113,6 +119,7 @@ TextAutoGenerateTextMcpProtocolCore::McpServer AddMcpServerWidget::serverInfo() 
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Protocol is unknown. It's a bug";
         break;
     }
+    server.setIconName(mIconName->icon());
     // Roots are used by all transport types
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setRoots(mAddMcpServerRootsWidget->roots());

@@ -22,6 +22,7 @@ void McpServerTest::shouldHaveDefaultValues()
     QVERIFY(w.enabled());
     QVERIFY(w.name().isEmpty());
     QVERIFY(w.identifier().isEmpty());
+    QVERIFY(w.iconName().isEmpty());
     QVERIFY(!w.isValid());
 }
 

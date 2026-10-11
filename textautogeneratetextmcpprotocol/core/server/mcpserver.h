@@ -130,9 +130,21 @@ public:
      */
     void setSettings(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings newSettings);
 
+    /*!
+     * \brief iconName
+     * \return
+     */
+    [[nodiscard]] QString iconName() const;
+    /*!
+     * \brief setIconName
+     * \param newIconName
+     */
+    void setIconName(const QString &newIconName);
+
 private:
     bool mEnabled = true;
     QString mName;
+    QString mIconName;
     QByteArray mIdentifier;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mTransportType =
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;

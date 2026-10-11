@@ -7,6 +7,7 @@
 #include "common/selecttypecombobox.h"
 #include "server/addmcpserverrootswidget.h"
 #include "server/addmcpserverwidget.h"
+#include <KIconButton>
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(AddMcpServerWidgetTest)
@@ -30,6 +31,9 @@ void AddMcpServerWidgetTest::shouldHaveDefaultValues()
     auto mAddMcpServerRootsWidget = w.findChild<TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerRootsWidget *>(u"mAddMcpServerRootsWidget"_s);
     QVERIFY(mAddMcpServerRootsWidget);
     QVERIFY(mAddMcpServerRootsWidget->roots().isEmpty());
+
+    auto mIconName = w.findChild<KIconButton *>(u"mIconName"_s);
+    QVERIFY(mIconName);
 }
 
 void AddMcpServerWidgetTest::shouldSaveRoots()

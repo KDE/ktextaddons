@@ -56,6 +56,7 @@ void McpServer::load(const KConfigGroup &config)
 {
     mEnabled = config.readEntry("Enabled", true);
     mName = config.readEntry("Name", QString());
+    mIconName = config.readEntry("IconName", QString());
     mIdentifier = config.readEntry("Id", QByteArray());
     mTransportType = convertTransportTypeFromString(config.readEntry("TransportType", QString()));
 
@@ -68,6 +69,7 @@ void McpServer::save(KConfigGroup &config) const
     config.writeEntry(u"Name"_s, mName);
     config.writeEntry(u"Enabled"_s, mEnabled);
     config.writeEntry(u"TransportType"_s, convertTransportTypeToString(mTransportType));
+    config.writeEntry(u"IconName"_s, mIconName);
     mSettings.save(config);
 }
 
@@ -124,6 +126,16 @@ void McpServer::setSettings(TextAutoGenerateTextMcpProtocolCore::McpProtocolSett
     mSettings = std::move(newSettings);
 }
 
+QString McpServer::iconName() const
+{
+    return mIconName;
+}
+
+void McpServer::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
+}
+
 QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
 {
     switch (type) {
@@ -158,6 +170,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpServer
 {
     d.space() << "enabled:" << t.enabled();
     d.space() << "name:" << t.name();
+    d.space() << "iconName:" << t.iconName();
     d.space() << "identifier:" << t.identifier();
     d.space() << "serverType:" << t.transportType();
     d.space() << "settings:" << t.settings();
