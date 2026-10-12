@@ -56,6 +56,13 @@ public:
      */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     * \brief operator ==
+     * \param other
+     * \return
+     */
+    [[nodiscard]] bool operator==(const TextAutoGenerateAgent &other) const;
+
 private:
     QString mName;
     QString mDescription;

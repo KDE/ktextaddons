@@ -14,6 +14,8 @@ TextAutoGenerateAgent::TextAutoGenerateAgent()
 {
 }
 
+bool TextAutoGenerateAgent::operator==(const TextAutoGenerateAgent &other) const = default;
+
 QString TextAutoGenerateAgent::name() const
 {
     return mName;

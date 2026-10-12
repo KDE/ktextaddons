@@ -21,7 +21,10 @@ QList<TextAutoGeneratePrompt> TextAutoGenerateAgentPrompSkillManager::prompts() 
 
 void TextAutoGenerateAgentPrompSkillManager::setPrompts(const QList<TextAutoGeneratePrompt> &newPrompts)
 {
-    mPrompts = newPrompts;
+    if (mPrompts != newPrompts) {
+        mPrompts = newPrompts;
+        Q_EMIT promptChanged();
+    }
 }
 
 QList<TextAutoGenerateSkill> TextAutoGenerateAgentPrompSkillManager::skills() const

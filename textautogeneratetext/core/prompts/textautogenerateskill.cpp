@@ -14,6 +14,8 @@ TextAutoGenerateSkill::TextAutoGenerateSkill()
 {
 }
 
+bool TextAutoGenerateSkill::operator==(const TextAutoGenerateSkill &other) const = default;
+
 QString TextAutoGenerateSkill::name() const
 {
     return mName;

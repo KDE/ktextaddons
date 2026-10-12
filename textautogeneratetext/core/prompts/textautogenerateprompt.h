@@ -123,6 +123,13 @@ public:
      */
     void setCommandCompletion(const QString &newCommandCompletion);
 
+    /*!
+     * \brief operator ==
+     * \param other
+     * \return
+     */
+    [[nodiscard]] bool operator==(const TextAutoGeneratePrompt &other) const;
+
 private:
     Category mCategory = Category::Unknown;
     QString mName;
