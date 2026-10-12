@@ -14,6 +14,16 @@ TextAutoGenerateAgentPrompSkillManager::TextAutoGenerateAgentPrompSkillManager(Q
 
 TextAutoGenerateAgentPrompSkillManager::~TextAutoGenerateAgentPrompSkillManager() = default;
 
+void TextAutoGenerateAgentPrompSkillManager::load()
+{
+    // TODO
+}
+
+void TextAutoGenerateAgentPrompSkillManager::save()
+{
+    // TODO
+}
+
 QList<TextAutoGeneratePrompt> TextAutoGenerateAgentPrompSkillManager::prompts() const
 {
     return mPrompts;
@@ -23,7 +33,7 @@ void TextAutoGenerateAgentPrompSkillManager::setPrompts(const QList<TextAutoGene
 {
     if (mPrompts != newPrompts) {
         mPrompts = newPrompts;
-        Q_EMIT promptChanged();
+        Q_EMIT promptsChanged();
     }
 }
 
@@ -34,7 +44,10 @@ QList<TextAutoGenerateSkill> TextAutoGenerateAgentPrompSkillManager::skills() co
 
 void TextAutoGenerateAgentPrompSkillManager::setSkills(const QList<TextAutoGenerateSkill> &newSkills)
 {
-    mSkills = newSkills;
+    if (mSkills != newSkills) {
+        mSkills = newSkills;
+        Q_EMIT skillsChanged();
+    }
 }
 
 QList<TextAutoGenerateAgent> TextAutoGenerateAgentPrompSkillManager::agents() const
@@ -44,7 +57,10 @@ QList<TextAutoGenerateAgent> TextAutoGenerateAgentPrompSkillManager::agents() co
 
 void TextAutoGenerateAgentPrompSkillManager::setAgents(const QList<TextAutoGenerateAgent> &newAgents)
 {
-    mAgents = newAgents;
+    if (mAgents != newAgents) {
+        mAgents = newAgents;
+        Q_EMIT agentsChanged();
+    }
 }
 
 #include "moc_textautogenerateagentprompskillmanager.cpp"

@@ -68,11 +68,29 @@ public:
      */
     void setAgents(const QList<TextAutoGenerateAgent> &newAgents);
 
+    /*!
+     * \brief load
+     */
+    void load();
+    /*!
+     * \brief save
+     */
+    void save();
 Q_SIGNALS:
     /*!
-     * \brief promptChanged
+     * \brief promptsChanged
      */
-    void promptChanged();
+    void promptsChanged();
+
+    /*!
+     * \brief skillsChanged
+     */
+    void skillsChanged();
+
+    /*!
+     * \brief agentsChanged
+     */
+    void agentsChanged();
 
 private:
     QList<TextAutoGeneratePrompt> mPrompts;
