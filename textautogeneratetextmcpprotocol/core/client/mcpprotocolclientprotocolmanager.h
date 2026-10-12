@@ -165,6 +165,13 @@ public:
      */
     void rejectSampling(const McpProtocolUtils::RequestId &id, const QString &message = {});
 
+    /*!
+     * \brief serverSupports
+     * \param type
+     * \return
+     */
+    [[nodiscard]] bool serverSupports(MethodType type) const;
+
 Q_SIGNALS:
     void started();
     void initialized();
@@ -226,7 +233,6 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type, PendingRequest pending);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendCancelledNotification(qint64 identifier, const QString &reason);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void checkTimeouts();
-    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT bool serverSupports(MethodType type) const;
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 requestId();
 
     QString mClientName;
