@@ -28,3 +28,14 @@ QByteArray TextAutoGenerateTextUtils::generateUUid()
 {
     return QUuid::createUuid().toByteArray(QUuid::Id128);
 }
+
+QString TextAutoGenerateTextUtils::promptConfigFileName()
+{
+    return u"autogeneratetextprompts"_s;
+}
+
+QStringList TextAutoGenerateTextUtils::promptsList(const KSharedConfig::Ptr &config)
+{
+    static const QRegularExpression regularExpression(u"^Prompt #\\d+$"_s);
+    return config->groupList().filter(regularExpression);
+}

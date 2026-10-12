@@ -20,5 +20,18 @@ namespace TextAutoGenerateTextUtils
 /*!
  */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QByteArray generateUUid();
+
+/*!
+ * \brief promptConfigFileName
+ * \return
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString promptConfigFileName();
+
+/*!
+ * \brief promptsList
+ * \param config
+ * \return
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList promptsList(const KSharedConfig::Ptr &config);
 }
 }

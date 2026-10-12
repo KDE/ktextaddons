@@ -5,6 +5,8 @@
 */
 
 #include "textautogenerateagentprompskillmanager.h"
+#include "core/textautogeneratetextutils.h"
+#include <KSharedConfig>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateAgentPrompSkillManager::TextAutoGenerateAgentPrompSkillManager(QObject *parent)
@@ -16,6 +18,8 @@ TextAutoGenerateAgentPrompSkillManager::~TextAutoGenerateAgentPrompSkillManager(
 
 void TextAutoGenerateAgentPrompSkillManager::load()
 {
+    const auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::promptConfigFileName());
+    const QStringList promptList = TextAutoGenerateTextUtils::promptsList(config);
     // TODO
 }
 
