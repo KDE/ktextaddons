@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:48+0000\n"
-"PO-Revision-Date: 2026-09-28 00:07+0200\n"
-"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
+"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"PO-Revision-Date: 2026-10-11 11:16+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -40,16 +40,14 @@ msgid "Json File"
 msgstr "Soubor json"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Nelze spustit Ollamu."
+msgstr "Soubor nelze exportovat."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "Zápis do souboru selhal: %1"
+msgstr "Nepodařilo se zpracovat soubor JSON: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -57,19 +55,38 @@ msgid "Failed to open file for reading: %1"
 msgstr "Nelze otevřít soubor pro čtení: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Nelze spustit Ollamu."
+msgstr "Soubor nelze importovat."
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:96
+#, kde-format
+msgid "No LLM available."
+msgstr ""
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:101
+#, kde-format
+msgid "Sampling request contains unsupported content."
+msgstr ""
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:110
+#, kde-format
+msgid "LLM doesn't support sampling requests."
+msgstr ""
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:125
+#, kde-format
+msgid "LLM returned an empty answer."
+msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Nástroj \"%1\" není k dispozici."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:142
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:158
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -78,27 +95,27 @@ msgstr "Chyba: %1"
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:62
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Chyba: server byl zastaven."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:58
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "Uživatel odmítl spustit nástroj \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:65
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Spouštění nástroje \"%1\"…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Chyba: Nelze spustit nástroj \"%1\"."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:75
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:80
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Server je neplatný nebo deaktivovaný."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -150,68 +167,68 @@ msgstr "<b>Jádro:</b> %1<br><b>Model:</b> %2<br><b>Název instance:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Nástroje:</b> %1"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Tools"
 msgstr "Nástroje"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Small"
 msgstr "Malý"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Medium"
 msgstr "Střední"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Big"
 msgstr "Velký"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Huge"
 msgstr "Obrovský"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Multilingual"
 msgstr "Vícejazyčný"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:183
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Kód"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Math"
 msgstr "Matematika"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Vision"
 msgstr "Vize"
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Embedding"
 msgstr "Vkládání"
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:191
 #, kde-format
 msgid "Reasoning"
 msgstr "Odůvodnění"
 
-#: core/textautogeneratemanager.cpp:189
+#: core/textautogeneratemanager.cpp:193
 #, kde-format
 msgid "Cloud"
 msgstr "Cloud"
 
-#: core/textautogeneratemanager.cpp:191
+#: core/textautogeneratemanager.cpp:195
 #, kde-format
 msgid "Thinking"
 msgstr "Přemýšlení"
@@ -230,12 +247,12 @@ msgstr ""
 "Jsi asistent s umělou inteligencí. Buď nápomocný, profesionální a zdvořilý. "
 "Neposkytuj nepřesné informace."
 
-#: core/textautogeneratetextplugin.cpp:382
+#: core/textautogeneratetextplugin.cpp:388
 #, kde-format
 msgid "Local"
 msgstr "Místní"
 
-#: core/textautogeneratetextplugin.cpp:384
+#: core/textautogeneratetextplugin.cpp:390
 #, kde-format
 msgid "Network"
 msgstr "Síť"
@@ -270,34 +287,39 @@ msgstr "<br><b>Token promptu:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token dokončení:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
-msgid "MCP server: %1"
+msgid "MCP tool: %1 (%2)"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#, kde-format
+msgid "MCP server: %1"
+msgstr "MCP server: %1"
+
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Moduly nástrojů:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:254
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identifikátor nástroje: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Zapnuto"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Vypnuto"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
@@ -306,7 +328,7 @@ msgstr "Aktivovat: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:48
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Nástroj \"%1\" nenalezen."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -522,7 +544,7 @@ msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:225
-#: plugins/lmstudio/lmstudioplugin.cpp:208
+#: plugins/lmstudio/lmstudioplugin.cpp:213
 #, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
@@ -531,20 +553,20 @@ msgstr ""
 "instalaci."
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:210
+#: plugins/lmstudio/lmstudioplugin.cpp:215
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "LMStudio nebylo v systému nalezeno. Nainstalujte jej, prosím."
 
 #: plugins/llamacpp/llamacppplugin.cpp:228
-#: plugins/lmstudio/lmstudioplugin.cpp:211
+#: plugins/lmstudio/lmstudioplugin.cpp:216
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "Stáhnout LMStudio"
 
 #: plugins/llamacpp/llamacppplugin.cpp:234
-#: plugins/lmstudio/lmstudioplugin.cpp:217
+#: plugins/lmstudio/lmstudioplugin.cpp:222
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
@@ -871,25 +893,25 @@ msgstr "Protokol Ollamy"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:225
+#: plugins/ollama/ollamaplugin.cpp:230
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
 "Ollama nebyla v systému nalezena. Požádejte správce systému o její instalaci."
 
-#: plugins/ollama/ollamaplugin.cpp:227
+#: plugins/ollama/ollamaplugin.cpp:232
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "Ollama nebyla v systému nalezena. Nainstalujte ji prosím."
 
-#: plugins/ollama/ollamaplugin.cpp:228
+#: plugins/ollama/ollamaplugin.cpp:233
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Stáhnout Ollamu"
 
-#: plugins/ollama/ollamaplugin.cpp:234
+#: plugins/ollama/ollamaplugin.cpp:239
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2736,6 +2758,12 @@ msgstr "Chyba při otevírání souboru"
 msgid "Metadata Info"
 msgstr "Informace o metadatech"
 
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:38
+#, kde-format
+msgctxt "@label"
+msgid "Run tools without confirmation:"
+msgstr ""
+
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
@@ -2858,46 +2886,62 @@ msgstr "Přidat instanci…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from MCP Server"
-msgstr ""
+msgstr "Požadavek ze serveru MCP"
 
-#: widgets/mcp/textautogenerateelicitationdialog.cpp:29
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Přijmout"
 
-#: widgets/mcp/textautogenerateelicitationdialog.cpp:31
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Odmítnout"
 
-#: widgets/mcp/textautogenerateelicitationdialog.cpp:50
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
+msgstr "Požadavek od %1"
+
+#: widgets/mcp/textautogenerateelicitationwidget.cpp:217
+#, kde-format
+msgid "URL:"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationwidget.cpp:246
+#, kde-format
+msgctxt "Label of required field"
+msgid "%1 (required):"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationwidget.cpp:248
+#, kde-format
+msgctxt "Label of field"
+msgid "%1:"
 msgstr ""
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "MCP server \"%1\" chce spustit nástroj \"%2\"."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Argumenty:"
+msgstr ""
+"Argumenty:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Nástroj pro moduly:"
+msgstr "Spustit nástroj"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
@@ -2909,12 +2953,82 @@ msgstr "Povolit"
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Vždy povolit tento server"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
+msgstr "Zakázat"
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:29
+#, kde-format
+msgid "[Image]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:32
+#, kde-format
+msgid "[Audio]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:35
+#, kde-format
+msgid "[Tool call]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:38
+#, kde-format
+msgid "[Tool result]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:61
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Request from MCP Server"
+msgctxt "@title:window"
+msgid "Sampling Request from MCP Server"
+msgstr "Požadavek ze serveru MCP"
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:75
+#, kde-format
+msgctxt "@action:button"
+msgid "Send to LLM"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Project"
+msgctxt "@action:button"
+msgid "Reject"
+msgstr "Projekt"
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:89
+#, kde-format
+msgid ""
+"The MCP server \"%1\" wants to send the following messages to the LLM. The "
+"generated answer will be returned to the server."
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:102
+#, kde-format
+msgid ""
+"System prompt:\n"
+"%1"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:107
+#, kde-format
+msgid ""
+"Assistant:\n"
+"%1"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:107
+#, kde-format
+msgid ""
+"User:\n"
+"%1"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
@@ -2986,10 +3100,9 @@ msgid "Text Plugins:"
 msgstr "Moduly textu:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Identifikátor nástroje: %1"
+msgstr "Identifikátor textu: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
@@ -3306,50 +3419,56 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Hledat"
 
-#: widgets/textautogeneratewidget.cpp:135
+#: widgets/textautogeneratewidget.cpp:136
 #, kde-format
 msgid "No plugin found."
 msgstr "Nenalezen žádný modul."
 
-#: widgets/textautogeneratewidget.cpp:252
+#: widgets/textautogeneratewidget.cpp:255
 #, kde-format
 msgid "Error reported: %1"
 msgstr "Nahlášena chyba: %1"
 
-#: widgets/textautogeneratewidget.cpp:252
+#: widgets/textautogeneratewidget.cpp:255
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:32
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Nástroje:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:145
 #, kde-format
 msgid "Not connected"
 msgstr "Nepřipojen"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:148
 #, kde-format
 msgid "Connecting…"
 msgstr "Navazuji spojení…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:152
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 nástroj"
+msgstr[1] "%1 nástroje"
+msgstr[2] "%1 nástrojů"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:154
+#, fuzzy, kde-format
+#| msgid "Calling tool \"%1\"…"
+msgid "Loading tools…"
+msgstr "Spouštění nástroje \"%1\"…"
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:161
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Nástroje MCP serveru \"%1\" (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format

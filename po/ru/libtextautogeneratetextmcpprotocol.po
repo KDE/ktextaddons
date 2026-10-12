@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"POT-Creation-Date: 2026-10-12 00:49+0000\n"
 "PO-Revision-Date: 2026-10-10 14:25+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -47,19 +47,19 @@ msgstr "Сервер запущен"
 msgid "Server stopped"
 msgstr "Сервер остановлен"
 
-#: core/server/mcpserver.cpp:105
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:109
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Стандартный ввод-вывод"
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -155,17 +155,53 @@ msgctxt "@title:window"
 msgid "Modify Server"
 msgstr "Изменение сервера"
 
-#: widgets/server/addmcpserverwidget.cpp:34
+#: widgets/server/addmcpserverrootswidget.cpp:35
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Folder…"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select Folder"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Folders that server is allowed to access"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:57
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Название:"
 
-#: widgets/server/addmcpserverwidget.cpp:38
+#: widgets/server/addmcpserverwidget.cpp:42
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Icon:"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "Тип:"
+
+#: widgets/server/addmcpserverwidget.cpp:60
+#, kde-format
+msgctxt "@label"
+msgid "Allowed folders:"
+msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26

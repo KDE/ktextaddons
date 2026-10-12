@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:48+0000\n"
+"POT-Creation-Date: 2026-10-12 00:49+0000\n"
 "PO-Revision-Date: 2026-01-18 16:08+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -61,6 +61,26 @@ msgstr ""
 msgid "Impossible to import file."
 msgstr "Nie można rozpocząć uruchomić Ollama."
 
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:96
+#, kde-format
+msgid "No LLM available."
+msgstr ""
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:101
+#, kde-format
+msgid "Sampling request contains unsupported content."
+msgstr ""
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:110
+#, kde-format
+msgid "LLM doesn't support sampling requests."
+msgstr ""
+
+#: core/mcp/textautogeneratemcpsamplingjob.cpp:125
+#, kde-format
+msgid "LLM returned an empty answer."
+msgstr ""
+
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
 msgid "Tool \"%1\" is not available."
@@ -68,7 +88,7 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:45
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:142
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:132
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:158
 #, kde-format
 msgid "Error: %1"
 msgstr ""
@@ -94,7 +114,7 @@ msgstr ""
 msgid "Error: impossible to call tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:75
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:80
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr ""
@@ -151,69 +171,69 @@ msgstr "<b>Silnik:</b> %1<br><b>Model:</b> %2<br><b>Nazwa wystąpienia:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Narzędzia:</b> %1"
 
-#: core/textautogeneratemanager.cpp:167
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Tools"
 msgstr "Narzędzia"
 
-#: core/textautogeneratemanager.cpp:169
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Small"
 msgstr "Mały"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Medium"
 msgstr "Średni"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Big"
 msgstr "Duży"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Huge"
 msgstr "Wielkie"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Multilingual"
 msgstr "Wielojęzyczny"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:183
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Kod"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Math"
 msgstr "Matematyka"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Vision"
 msgstr "Wizja"
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Embedding"
 msgstr "Osadzanie"
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:191
 #, kde-format
 msgid "Reasoning"
 msgstr "Rozumowanie"
 
-#: core/textautogeneratemanager.cpp:189
+#: core/textautogeneratemanager.cpp:193
 #, fuzzy, kde-format
 #| msgid "Groq Cloud"
 msgid "Cloud"
 msgstr "Groq Cloud"
 
-#: core/textautogeneratemanager.cpp:191
+#: core/textautogeneratemanager.cpp:195
 #, kde-format
 msgid "Thinking"
 msgstr ""
@@ -235,12 +255,12 @@ msgstr ""
 "Jesteś asystentem AI. Rozmawiasz z osobą o imieniu %1. Bądź pomocny, "
 "profesjonalny i uprzejmy. Nie podawaj nieprawdziwych informacji."
 
-#: core/textautogeneratetextplugin.cpp:382
+#: core/textautogeneratetextplugin.cpp:388
 #, kde-format
 msgid "Local"
 msgstr "Lokalny"
 
-#: core/textautogeneratetextplugin.cpp:384
+#: core/textautogeneratetextplugin.cpp:390
 #, kde-format
 msgid "Network"
 msgstr "Sieć"
@@ -281,35 +301,40 @@ msgstr "<br><b>Narzędzia:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Narzędzia:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#, kde-format
+msgid "MCP tool: %1 (%2)"
+msgstr ""
+
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "MCP server: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:248
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
 #, fuzzy, kde-format
 #| msgid "Tools Plugins"
 msgid "Tool Plugins:"
 msgstr "Wtyczki narzędzi"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:254
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identyfikator narzędzia: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "On"
 msgstr "Włączone"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Off"
 msgstr "Wyłączone"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Activate: %1"
@@ -543,7 +568,7 @@ msgid "LLamaCpp"
 msgstr ""
 
 #: plugins/llamacpp/llamacppplugin.cpp:225
-#: plugins/lmstudio/lmstudioplugin.cpp:208
+#: plugins/lmstudio/lmstudioplugin.cpp:213
 #, fuzzy, kde-format
 #| msgid ""
 #| "Ollama not found on system. Ask to your administrator system to install "
@@ -555,14 +580,14 @@ msgstr ""
 "jej zainstalowanie."
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:210
+#: plugins/lmstudio/lmstudioplugin.cpp:215
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "LMStudio not found on system. Please install it."
 msgstr "Ollama nie została znaleziona w systemie. Proszę ją zainstalować."
 
 #: plugins/llamacpp/llamacppplugin.cpp:228
-#: plugins/lmstudio/lmstudioplugin.cpp:211
+#: plugins/lmstudio/lmstudioplugin.cpp:216
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Model"
@@ -571,7 +596,7 @@ msgid "Download LMStudio"
 msgstr "Pobierz model"
 
 #: plugins/llamacpp/llamacppplugin.cpp:234
-#: plugins/lmstudio/lmstudioplugin.cpp:217
+#: plugins/lmstudio/lmstudioplugin.cpp:222
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
@@ -904,7 +929,7 @@ msgstr "Ollama"
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:225
+#: plugins/ollama/ollamaplugin.cpp:230
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
@@ -912,18 +937,18 @@ msgstr ""
 "Ollama nie została znaleziona w systemie. Poproś administratora systemu o "
 "jej zainstalowanie."
 
-#: plugins/ollama/ollamaplugin.cpp:227
+#: plugins/ollama/ollamaplugin.cpp:232
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "Ollama nie została znaleziona w systemie. Proszę ją zainstalować."
 
-#: plugins/ollama/ollamaplugin.cpp:228
+#: plugins/ollama/ollamaplugin.cpp:233
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Pobierz Ollama"
 
-#: plugins/ollama/ollamaplugin.cpp:234
+#: plugins/ollama/ollamaplugin.cpp:239
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -3107,6 +3132,12 @@ msgstr "Błąd otwierania pliku"
 msgid "Metadata Info"
 msgstr "Informacje o metadanych"
 
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:38
+#, kde-format
+msgctxt "@label"
+msgid "Run tools without confirmation:"
+msgstr ""
+
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
@@ -3232,22 +3263,39 @@ msgctxt "@title:window"
 msgid "Request from MCP Server"
 msgstr ""
 
-#: widgets/mcp/textautogenerateelicitationdialog.cpp:29
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
 msgstr ""
 
-#: widgets/mcp/textautogenerateelicitationdialog.cpp:31
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
 msgstr ""
 
-#: widgets/mcp/textautogenerateelicitationdialog.cpp:50
+#: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationwidget.cpp:217
+#, kde-format
+msgid "URL:"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationwidget.cpp:246
+#, kde-format
+msgctxt "Label of required field"
+msgid "%1 (required):"
+msgstr ""
+
+#: widgets/mcp/textautogenerateelicitationwidget.cpp:248
+#, kde-format
+msgctxt "Label of field"
+msgid "%1:"
 msgstr ""
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
@@ -3287,6 +3335,75 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:29
+#, kde-format
+msgid "[Image]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:32
+#, kde-format
+msgid "[Audio]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:35
+#, kde-format
+msgid "[Tool call]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:38
+#, kde-format
+msgid "[Tool result]"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:61
+#, kde-format
+msgctxt "@title:window"
+msgid "Sampling Request from MCP Server"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:75
+#, kde-format
+msgctxt "@action:button"
+msgid "Send to LLM"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add instance…"
+msgctxt "@action:button"
+msgid "Reject"
+msgstr "Dodaj wystąpienie…"
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:89
+#, kde-format
+msgid ""
+"The MCP server \"%1\" wants to send the following messages to the LLM. The "
+"generated answer will be returned to the server."
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:102
+#, fuzzy, kde-format
+#| msgid "No system prompt"
+msgid ""
+"System prompt:\n"
+"%1"
+msgstr "Brak systemowego wiersza poleceń"
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:107
+#, kde-format
+msgid ""
+"Assistant:\n"
+"%1"
+msgstr ""
+
+#: widgets/mcp/textautogeneratesamplingdialog.cpp:107
+#, kde-format
+msgid ""
+"User:\n"
+"%1"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
@@ -3721,39 +3838,39 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Poszukaj"
 
-#: widgets/textautogeneratewidget.cpp:135
+#: widgets/textautogeneratewidget.cpp:136
 #, kde-format
 msgid "No plugin found."
 msgstr "Nie znaleziono żadnej wtyczki."
 
-#: widgets/textautogeneratewidget.cpp:252
+#: widgets/textautogeneratewidget.cpp:255
 #, kde-format
 msgid "Error reported: %1"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:252
+#: widgets/textautogeneratewidget.cpp:255
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:32
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Narzędzia:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:123
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:145
 #, kde-format
 msgid "Not connected"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:126
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:148
 #, kde-format
 msgid "Connecting…"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:129
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:152
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
@@ -3761,7 +3878,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:135
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:154
+#, kde-format
+msgid "Loading tools…"
+msgstr ""
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:161
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr ""
@@ -3998,9 +4120,6 @@ msgstr "Nie znaleziono żadnej wiadomości."
 #~ msgctxt "Find and go to the previous search match"
 #~ msgid "Previous"
 #~ msgstr "7 dni wstecz"
-
-#~ msgid "No system prompt"
-#~ msgstr "Brak systemowego wiersza poleceń"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."

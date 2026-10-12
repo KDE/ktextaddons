@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-10 00:44+0000\n"
+"POT-Creation-Date: 2026-10-12 00:49+0000\n"
 "PO-Revision-Date: 2026-10-10 04:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -48,19 +48,19 @@ msgstr "სერვერი გაეშვა"
 msgid "Server stopped"
 msgstr "სერვერი გაჩერდა"
 
-#: core/server/mcpserver.cpp:105
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:109
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "სტანდარტული IO"
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -156,17 +156,53 @@ msgctxt "@title:window"
 msgid "Modify Server"
 msgstr "სერვერის ჩასწორება"
 
-#: widgets/server/addmcpserverwidget.cpp:34
+#: widgets/server/addmcpserverrootswidget.cpp:35
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Folder…"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select Folder"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Folders that server is allowed to access"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:57
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "სახელი:"
 
-#: widgets/server/addmcpserverwidget.cpp:38
+#: widgets/server/addmcpserverwidget.cpp:42
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Icon:"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "ტიპი:"
+
+#: widgets/server/addmcpserverwidget.cpp:60
+#, kde-format
+msgctxt "@label"
+msgid "Allowed folders:"
+msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26

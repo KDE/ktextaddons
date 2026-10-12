@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-10 00:44+0000\n"
-"PO-Revision-Date: 2026-10-05 09:17+0200\n"
+"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"PO-Revision-Date: 2026-10-10 11:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,48 +22,46 @@ msgstr ""
 #: core/server/mcpprotocolserverprotocolmanager.cpp:78
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "S'està iniciant el servidor"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:80
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "S'està iniciant el servidor a %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:326
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "Petició %1 cancel·lada pel client"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:343
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "S'ha produït un error: %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:349
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server started"
-msgstr "El servidor no està preparat."
+msgstr "El servidor s'ha iniciat"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:357
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server stopped"
-msgstr "El servidor no està preparat."
+msgstr "El servidor s'ha parat"
 
-#: core/server/mcpserver.cpp:105
+#: core/server/mcpserver.cpp:107
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:109
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "E/S estàndard"
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -127,28 +125,25 @@ msgstr "L'enviament de missatges encara no està implementat."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
+#, kde-format
 msgid "Impossible to start server: %1"
-msgstr "Impossible iniciar el servidor. L'URL no és vàlid."
+msgstr "Impossible iniciar el servidor: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "Els servidors «stdio» no estan admesos en esta plataforma."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "El servidor no està preparat."
+msgstr "El servidor no s'ha iniciat."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "El missatge rebut del servidor és massa gran."
+msgstr "El missatge rebut del client és massa gran."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -162,17 +157,53 @@ msgctxt "@title:window"
 msgid "Modify Server"
 msgstr "Modifica el servidor"
 
-#: widgets/server/addmcpserverwidget.cpp:34
+#: widgets/server/addmcpserverrootswidget.cpp:35
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Folder…"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select Folder"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Folders that server is allowed to access"
+msgstr ""
+
+#: widgets/server/addmcpserverrootswidget.cpp:57
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Folder"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nom:"
 
-#: widgets/server/addmcpserverwidget.cpp:38
+#: widgets/server/addmcpserverwidget.cpp:42
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Icon:"
+msgstr ""
+
+#: widgets/server/addmcpserverwidget.cpp:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "Tipus:"
+
+#: widgets/server/addmcpserverwidget.cpp:60
+#, kde-format
+msgctxt "@label"
+msgid "Allowed folders:"
+msgstr ""
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26
@@ -295,15 +326,3 @@ msgstr "Busca…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Afig un servidor…"
-
-#~ msgid "Impossible to start server. Command is empty."
-#~ msgstr "Impossible iniciar el servidor. L'ordre està buida."
-
-#~ msgid "Impossible to start server. Arguments are invalid."
-#~ msgstr "Impossible iniciar el servidor. Els arguments no són vàlids."
-
-#~ msgid "Impossible to send message. Server is not running."
-#~ msgstr "Impossible enviar el missatge. El client no s'està executant."
-
-#~ msgid "Streamable HTTP transport is not implemented yet."
-#~ msgstr "El transport HTTP Streamable encara no està implementat."
