@@ -173,10 +173,28 @@ public:
     [[nodiscard]] bool serverSupports(MethodType type) const;
 
 Q_SIGNALS:
+    /*!
+     * \brief started
+     */
     void started();
+    /*!
+     * \brief initialized
+     */
     void initialized();
+    /*!
+     * \brief received
+     * \param obj
+     * \param type
+     */
     void received(const QJsonObject &obj, McpProtocolClientProtocolManager::MethodType type);
+    /*!
+     * \brief error
+     * \param str
+     */
     void error(const QString &str);
+    /*!
+     * \brief finished
+     */
     void finished();
     /*!
      * Server informed that list of tools changed: call executeAction(MethodType::ListTools) to update it.
