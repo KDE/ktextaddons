@@ -41,7 +41,7 @@ void TextAutoGenerateSelectPromptWidget::slotAddPrompt()
     // TODO
 }
 
-void TextAutoGenerateSelectPromptWidget::slotRemovePrompt()
+void TextAutoGenerateSelectPromptWidget::slotRemovePrompt(const QByteArray &identifier)
 {
     // TODO
 }

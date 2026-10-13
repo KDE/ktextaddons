@@ -22,7 +22,7 @@ public:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemovePrompt();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemovePrompt(const QByteArray &identifier);
     TextAutoGenerateSelectPromptListWidget *const mListWidget;
     TextAutoGenerateTextPromptModel *const mPromptModel;
 };
