@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateskill.h"
+#include <KConfigGroup>
 #include <QDebug>
 #include <QUuid>
 
@@ -68,4 +69,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSkill &t
     d.space() << "instructions:" << t.instructions();
     d.space() << "identifier:" << t.identifier();
     return d;
+}
+
+void TextAutoGenerateSkill::save(KConfigGroup &grp)
+{
+    grp.writeEntry("name", name());
+    grp.writeEntry("description", description());
+    grp.writeEntry("instructions", instructions());
+    grp.writeEntry("identifier", identifier());
+}
+
+void TextAutoGenerateSkill::load(const KConfigGroup &grp)
+{
+    setName(grp.readEntry("name"));
+    setDescription(grp.readEntry("description"));
+    setIdentifier(grp.readEntry("identifier").toLatin1());
+    setInstructions(grp.readEntry("instructions"));
 }

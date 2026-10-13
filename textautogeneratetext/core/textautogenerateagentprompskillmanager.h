@@ -93,6 +93,9 @@ Q_SIGNALS:
     void agentsChanged();
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadPrompts();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadSkills();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadAgents();
     QList<TextAutoGeneratePrompt> mPrompts;
     QList<TextAutoGenerateSkill> mSkills;
     QList<TextAutoGenerateAgent> mAgents;

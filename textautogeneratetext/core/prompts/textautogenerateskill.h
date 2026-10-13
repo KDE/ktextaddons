@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QString>
 class QDebug;
+class KConfigGroup;
 namespace TextAutoGenerateText
 {
 /*!
@@ -69,6 +70,17 @@ public:
      * \return
      */
     [[nodiscard]] bool operator==(const TextAutoGenerateSkill &other) const;
+
+    /*!
+     * \brief save
+     * \param grp
+     */
+    void save(KConfigGroup &grp);
+    /*!
+     * \brief load
+     * \param grp
+     */
+    void load(const KConfigGroup &grp);
 
 private:
     QString mName;

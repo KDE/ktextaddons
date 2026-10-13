@@ -33,5 +33,31 @@ namespace TextAutoGenerateTextUtils
  * \return
  */
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList promptsList(const KSharedConfig::Ptr &config);
+
+/*!
+ * \brief skillConfigFileName
+ * \return
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString skillConfigFileName();
+
+/*!
+ * \brief skillsList
+ * \param config
+ * \return
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList skillsList(const KSharedConfig::Ptr &config);
+
+/*!
+ * \brief agentConfigFileName
+ * \return
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString agentConfigFileName();
+
+/*!
+ * \brief agentsList
+ * \param config
+ * \return
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList agentsList(const KSharedConfig::Ptr &config);
 }
 }

@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateagent.h"
+#include <KConfigGroup>
 #include <QDebug>
 #include <QUuid>
 
@@ -57,4 +58,18 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAgent &t
     d.space() << "description:" << t.description();
     d.space() << "identifier:" << t.identifier();
     return d;
+}
+
+void TextAutoGenerateAgent::save(KConfigGroup &grp)
+{
+    grp.writeEntry("name", name());
+    grp.writeEntry("description", description());
+    grp.writeEntry("identifier", identifier());
+}
+
+void TextAutoGenerateAgent::load(const KConfigGroup &grp)
+{
+    setName(grp.readEntry("name"));
+    setDescription(grp.readEntry("description"));
+    setIdentifier(grp.readEntry("identifier").toLatin1());
 }

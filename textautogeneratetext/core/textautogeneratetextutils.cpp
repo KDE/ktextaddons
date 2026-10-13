@@ -39,3 +39,25 @@ QStringList TextAutoGenerateTextUtils::promptsList(const KSharedConfig::Ptr &con
     static const QRegularExpression regularExpression(u"^Prompt #\\d+$"_s);
     return config->groupList().filter(regularExpression);
 }
+
+QString TextAutoGenerateTextUtils::skillConfigFileName()
+{
+    return u"autogeneratetextprompts"_s;
+}
+
+QStringList TextAutoGenerateTextUtils::skillsList(const KSharedConfig::Ptr &config)
+{
+    static const QRegularExpression regularExpression(u"^Skill #\\d+$"_s);
+    return config->groupList().filter(regularExpression);
+}
+
+QString TextAutoGenerateTextUtils::agentConfigFileName()
+{
+    return u"autogeneratetextagents"_s;
+}
+
+QStringList TextAutoGenerateTextUtils::agentsList(const KSharedConfig::Ptr &config)
+{
+    static const QRegularExpression regularExpression(u"^Agent #\\d+$"_s);
+    return config->groupList().filter(regularExpression);
+}

@@ -6,6 +6,7 @@
 
 #include "textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratetextutils.h"
+#include <KConfigGroup>
 #include <KSharedConfig>
 
 using namespace TextAutoGenerateText;
@@ -18,9 +19,56 @@ TextAutoGenerateAgentPrompSkillManager::~TextAutoGenerateAgentPrompSkillManager(
 
 void TextAutoGenerateAgentPrompSkillManager::load()
 {
+    loadPrompts();
+    loadSkills();
+}
+
+void TextAutoGenerateAgentPrompSkillManager::loadPrompts()
+{
     const auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::promptConfigFileName());
     const QStringList promptList = TextAutoGenerateTextUtils::promptsList(config);
-    // TODO
+    QList<TextAutoGeneratePrompt> lst;
+    lst.reserve(promptList.count());
+    for (const QString &prompt : promptList) {
+        TextAutoGeneratePrompt p;
+        p.load(config->group(prompt));
+        if (p.isValid()) {
+            lst.append(std::move(p));
+        }
+    }
+    setPrompts(lst);
+}
+
+void TextAutoGenerateAgentPrompSkillManager::loadSkills()
+{
+    const auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::skillConfigFileName());
+    const QStringList skillList = TextAutoGenerateTextUtils::skillsList(config);
+    QList<TextAutoGenerateSkill> lst;
+    lst.reserve(skillList.count());
+    for (const QString &skill : skillList) {
+        TextAutoGenerateSkill p;
+        p.load(config->group(skill));
+        if (p.isValid()) {
+            lst.append(std::move(p));
+        }
+    }
+    setSkills(lst);
+}
+
+void TextAutoGenerateAgentPrompSkillManager::loadAgents()
+{
+    const auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::agentConfigFileName());
+    const QStringList agentList = TextAutoGenerateTextUtils::agentsList(config);
+    QList<TextAutoGenerateAgent> lst;
+    lst.reserve(agentList.count());
+    for (const QString &agent : agentList) {
+        TextAutoGenerateAgent p;
+        p.load(config->group(agent));
+        if (p.isValid()) {
+            lst.append(std::move(p));
+        }
+    }
+    setAgents(lst);
 }
 
 void TextAutoGenerateAgentPrompSkillManager::save()
