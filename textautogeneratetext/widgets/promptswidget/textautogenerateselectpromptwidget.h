@@ -21,6 +21,8 @@ public:
     ~TextAutoGenerateSelectPromptWidget() override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemovePrompt();
     TextAutoGenerateSelectPromptListWidget *const mListWidget;
     TextAutoGenerateTextPromptModel *const mPromptModel;
 };

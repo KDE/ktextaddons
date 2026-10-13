@@ -29,7 +29,21 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     mListWidget->setModel(filterProxyModel);
     mListWidget->setObjectName(u"mainLayout"_s);
     mainLayout->addWidget(mListWidget);
+
+    connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::addPrompt, this, &TextAutoGenerateSelectPromptWidget::slotAddPrompt);
+    connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::removePrompt, this, &TextAutoGenerateSelectPromptWidget::slotRemovePrompt);
 }
 
 TextAutoGenerateSelectPromptWidget::~TextAutoGenerateSelectPromptWidget() = default;
+
+void TextAutoGenerateSelectPromptWidget::slotAddPrompt()
+{
+    // TODO
+}
+
+void TextAutoGenerateSelectPromptWidget::slotRemovePrompt()
+{
+    // TODO
+}
+
 #include "moc_textautogenerateselectpromptwidget.cpp"
