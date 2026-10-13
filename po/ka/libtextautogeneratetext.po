@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-12 00:49+0000\n"
-"PO-Revision-Date: 2026-10-11 04:04+0200\n"
+"PO-Revision-Date: 2026-10-12 07:25+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -63,22 +63,22 @@ msgstr "ფაილის შემოტანა შეუძლებელ�
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "LLM-ები ხელმისაწვდომი არაა."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "ზონდირების მოთხოვნა მხარდაუჭერელ შემცველობას შეიცავს."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "LLM-ს ზონდირების მოთხოვნების მხარდაჭერა არ აქვს."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "LLM-მა ცარიელი პასუხი დააბრუნა."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
@@ -292,7 +292,7 @@ msgstr "<br><b>დასრულების ტოკენი:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "MCP ხელსაწყო: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
@@ -3186,7 +3186,7 @@ msgstr "მეტამონაცემების ინფორმაც�
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "ხელსაწყოების გაშვება დადასტურების გარეშე:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3333,19 +3333,19 @@ msgstr "მოთხოვნა %1-დან"
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (აუცილებელია):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3388,44 +3388,40 @@ msgstr "უარყოფა"
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[გამოსახულება]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[აუდიო]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[ხელსაწყოს გამოძახება]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[ხელსაწყოს შედეგი]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Request from MCP Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr "მოთხოვნა MCP სერვერიდან"
+msgstr "ზონდირების მოთხოვნა MCP სერვერიდან"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "LLM-ისთვის გაგზავნა"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "პროექტი"
+msgstr "უარყოფა"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3433,6 +3429,8 @@ msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
 msgstr ""
+"MCP სერვერს \"%1\" სურს, გაუგზავნოს შემდეგი შეტყობინებები LLM-ს. "
+"გენერირებული პასუხი სერვერს დაუბრუნდება."
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
 #, kde-format
@@ -3440,6 +3438,8 @@ msgid ""
 "System prompt:\n"
 "%1"
 msgstr ""
+"სისტემური მოთხოვნა:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3447,6 +3447,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"დამხმარე:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3454,6 +3456,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"მომხმარებელი:\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3883,10 +3887,9 @@ msgstr[0] "1 ხელსაწყო"
 msgstr[1] "%1 ხელსაწყო"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Calling tool \"%1\"…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "მიმდინარეობს გამოძახება ხელსაწყოსთვის \"%1\"…"
+msgstr "ხელსაწყოების ჩატვირთვა…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:161
 #, kde-format

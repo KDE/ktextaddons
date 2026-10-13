@@ -2909,7 +2909,7 @@ msgstr "Požadavek od %1"
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
@@ -2996,12 +2996,10 @@ msgid "Send to LLM"
 msgstr ""
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Projekt"
+msgstr "Odmítnout"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format

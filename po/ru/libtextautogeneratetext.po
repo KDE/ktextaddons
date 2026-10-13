@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-12 00:49+0000\n"
-"PO-Revision-Date: 2026-10-11 15:24+0200\n"
+"PO-Revision-Date: 2026-10-12 07:55+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -61,22 +61,22 @@ msgstr "Не удалось импортировать файл."
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "Нет доступных LLM."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "Запрос на генерацию содержит неподдерживаемые данные."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "LLM не поддерживает запросы на генерацию."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "LLM вернула пустой ответ."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
@@ -289,7 +289,7 @@ msgstr "<br><b>Токены ответа:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "Инструмент MCP: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
@@ -3216,7 +3216,7 @@ msgstr "Метаданные"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "Запускать инструменты без подтверждения:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3363,19 +3363,19 @@ msgstr "Запрос от %1"
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (обязательно):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3418,44 +3418,40 @@ msgstr "Запретить"
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[Изображение]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[Звук]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[Вызов инструмента]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[Результат инструмента]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Request from MCP Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr "Запрос от сервера MCP"
+msgstr "Запрос на генерацию от сервера MCP"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "Отправить в LLM"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Проект"
+msgstr "Отклонить"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3463,6 +3459,8 @@ msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
 msgstr ""
+"Сервер MCP «%1» хочет отправить в LLM следующие сообщения. Сгенерированный "
+"ответ будет возвращён серверу."
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
 #, kde-format
@@ -3470,6 +3468,8 @@ msgid ""
 "System prompt:\n"
 "%1"
 msgstr ""
+"Системная подсказка:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3477,6 +3477,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"Ассистент:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3484,6 +3486,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"Пользователь:\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3913,10 +3917,9 @@ msgstr[2] "%1 инструментов"
 msgstr[3] "1 инструмент"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Calling tool \"%1\"…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "Вызов инструмента «%1»…"
+msgstr "Загрузка инструментов…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:161
 #, kde-format

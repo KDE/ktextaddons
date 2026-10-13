@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-12 00:49+0000\n"
-"PO-Revision-Date: 2026-10-10 11:15+0200\n"
+"PO-Revision-Date: 2026-10-12 10:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -161,25 +161,25 @@ msgstr "Modifica el servidor"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Folder…"
-msgstr ""
+msgstr "Carpeta…"
 
 #: widgets/server/addmcpserverrootswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Folder"
-msgstr ""
+msgstr "Selecciona una carpeta"
 
 #: widgets/server/addmcpserverrootswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Folders that server is allowed to access"
-msgstr ""
+msgstr "Carpetes a les quals es permet accedir al servidor"
 
 #: widgets/server/addmcpserverrootswidget.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr ""
+msgstr "Selecció de carpeta"
 
 #: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
@@ -191,7 +191,7 @@ msgstr "Nom:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon:"
-msgstr ""
+msgstr "Icona:"
 
 #: widgets/server/addmcpserverwidget.cpp:45
 #, kde-format
@@ -203,7 +203,7 @@ msgstr "Tipus:"
 #, kde-format
 msgctxt "@label"
 msgid "Allowed folders:"
-msgstr ""
+msgstr "Carpetes permeses:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-12 00:49+0000\n"
-"PO-Revision-Date: 2026-10-10 04:49+0200\n"
+"PO-Revision-Date: 2026-10-12 07:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -131,7 +131,7 @@ msgstr "სერვერის გაშვება შეუძლებე�
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr "ამ პლატფორმაზე Stdio სერვერი მხარდაჭერილი არაა"
+msgstr "ამ პლატფორმაზე Stdio სერვერი მხარდაჭერილი არაა."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
@@ -160,25 +160,25 @@ msgstr "სერვერის ჩასწორება"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Folder…"
-msgstr ""
+msgstr "საქაღალდე…"
 
 #: widgets/server/addmcpserverrootswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Folder"
-msgstr ""
+msgstr "აირჩიეთ საქაღალდე"
 
 #: widgets/server/addmcpserverrootswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Folders that server is allowed to access"
-msgstr ""
+msgstr "საქაღალდეები, რომლებზეც სერვერს წვდომა აქვს"
 
 #: widgets/server/addmcpserverrootswidget.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr ""
+msgstr "საქაღალდის არჩევა"
 
 #: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
@@ -190,7 +190,7 @@ msgstr "სახელი:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon:"
-msgstr ""
+msgstr "ხატულა:"
 
 #: widgets/server/addmcpserverwidget.cpp:45
 #, kde-format
@@ -202,7 +202,7 @@ msgstr "ტიპი:"
 #, kde-format
 msgctxt "@label"
 msgid "Allowed folders:"
-msgstr ""
+msgstr "დაშვებული საქაღალდეები:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26

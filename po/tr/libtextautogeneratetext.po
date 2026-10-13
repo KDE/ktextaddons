@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-12 00:49+0000\n"
-"PO-Revision-Date: 2026-10-11 21:53+0300\n"
+"PO-Revision-Date: 2026-10-12 09:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -61,22 +61,22 @@ msgstr "Dosya içe aktarmak olanaksız."
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "Kullanılabilir büyük dil modeli yok."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "Örnekleme isteğinde desteklenmeyen içerik var."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "Büyük dil modeli, örnekleme isteklerini desteklemiyor."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "Büyük dil modeli, boş bir yanıt döndürdü."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:34
 #, kde-format
@@ -289,7 +289,7 @@ msgstr "<br><b>Tamamlama jetonu:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "MCP aracı: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
@@ -3186,7 +3186,7 @@ msgstr "Üst veri bilgisi"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "Araçları onay olmadan çalıştır:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3333,19 +3333,19 @@ msgstr "Şuradan İstek: %1"
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (zorunlu):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3388,44 +3388,40 @@ msgstr "Reddet"
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[Görsel]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[Ses]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[Araç Çağrısı]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[Araç Sonucu]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Request from MCP Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr "MCP Sunucusundan İstek"
+msgstr "MCP Sunucusundan Örnekleme İsteği"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "Büyük Dil Modeline Gönder"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Proje"
+msgstr "Reddet"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3433,6 +3429,8 @@ msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
 msgstr ""
+"MCP sunucusu “%1”, aşağıdaki iletileri büyük dil modeline göndermek istiyor. "
+"Üretilen yanıt sunucuya geri döndürülecek."
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
 #, kde-format
@@ -3440,6 +3438,8 @@ msgid ""
 "System prompt:\n"
 "%1"
 msgstr ""
+"Sistem istemi:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3447,6 +3447,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"Yardımcı:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3454,6 +3456,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"Kullanıcı:\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3883,10 +3887,9 @@ msgstr[0] "1 araç"
 msgstr[1] "%1 araç"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Calling tool \"%1\"…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "“%1” aracı aranıyor…"
+msgstr "Araçlar yükleniyor…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:161
 #, kde-format
