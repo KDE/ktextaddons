@@ -51,6 +51,18 @@ public:
 
     [[nodiscard]] static QJsonObject schemaProperty(const QString &type, const QString &description);
 
+    /*!
+     * \brief schemaEnumProperty
+     * \return string property which accepts only \a values
+     */
+    [[nodiscard]] static QJsonObject schemaEnumProperty(const QStringList &values, const QString &description);
+
+    /*!
+     * \brief schemaArrayProperty
+     * \return array property whose elements are described by \a items (see schemaProperty() and schemaEnumProperty())
+     */
+    [[nodiscard]] static QJsonObject schemaArrayProperty(const QJsonObject &items, const QString &description);
+
 private:
     Q_DISABLE_COPY_MOVE(McpProtocolServerTool)
 };
