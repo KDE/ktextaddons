@@ -20,6 +20,7 @@ void TextAutoGeneratePromptCategoryComboBox::fill()
     addItem(i18n("Code"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Code));
     addItem(i18n("Misc"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Misc));
     addItem(i18n("Travel"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Travel));
+    addItem(i18n("Undefined"), QVariant::fromValue(TextAutoGeneratePrompt::Category::Unknown));
 }
 
 TextAutoGeneratePrompt::Category TextAutoGeneratePromptCategoryComboBox::category() const
