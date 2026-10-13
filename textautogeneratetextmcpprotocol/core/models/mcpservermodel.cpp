@@ -65,6 +65,8 @@ QVariant McpServerModel::data(const QModelIndex &index, int role) const
         return server.identifier();
     case MCPServerRoles::ServerType:
         return McpServer::transportTypeI18n(server.transportType());
+    case MCPServerRoles::IconName:
+        return server.iconName();
     default:
         break;
     }
@@ -85,10 +87,15 @@ void McpServerModel::editMcpServer(const McpServer &server)
         const qsizetype i = std::distance(mMcpServers.constBegin(), answerIt);
         mMcpServers[i] = server;
         const QModelIndex index = createIndex(static_cast<int>(i), 0);
-        Q_EMIT dataChanged(
-            index,
-            index,
-            {Qt::DisplayRole, Qt::CheckStateRole, MCPServerRoles::ServerType, MCPServerRoles::Name, MCPServerRoles::Enabled, MCPServerRoles::Identifier});
+        Q_EMIT dataChanged(index,
+                           index,
+                           {Qt::DisplayRole,
+                            Qt::CheckStateRole,
+                            MCPServerRoles::ServerType,
+                            MCPServerRoles::Name,
+                            MCPServerRoles::Enabled,
+                            MCPServerRoles::Identifier,
+                            MCPServerRoles::IconName});
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server not found for identifier:" << server.identifier();
     }

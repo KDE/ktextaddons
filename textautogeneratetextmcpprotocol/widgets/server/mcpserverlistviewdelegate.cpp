@@ -5,6 +5,7 @@
 */
 #include "mcpserverlistviewdelegate.h"
 #include <QApplication>
+#include <QIcon>
 #include <QPainter>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
@@ -36,6 +37,15 @@ QStyle *widgetStyle(const QStyleOptionViewItem &option)
 }
 }
 
+void McpServerListViewDelegate::initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const
+{
+    QStyledItemDelegate::initStyleOption(option, index);
+    if (const QString iconName = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::IconName).toString(); !iconName.isEmpty()) {
+        option->icon = QIcon::fromTheme(iconName);
+        option->features |= QStyleOptionViewItem::HasDecoration;
+    }
+}
+
 void McpServerListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (!index.isValid()) {
@@ -51,7 +61,7 @@ void McpServerListViewDelegate::paint(QPainter *painter, const QStyleOptionViewI
 
     QStyleOptionViewItem opt(option);
     initStyleOption(&opt, index);
-    QStyle *style = widgetStyle(opt);
+    const QStyle *style = widgetStyle(opt);
 
     QRect textRect = style->subElementRect(QStyle::SE_ItemViewItemText, &opt, opt.widget);
     opt.text.clear();
@@ -102,6 +112,9 @@ QSize McpServerListViewDelegate::sizeHint(const QStyleOptionViewItem &option, co
     width += 2 * textMargin;
     if (opt.features & QStyleOptionViewItem::HasCheckIndicator) {
         width += style->subElementRect(QStyle::SE_ItemViewItemCheckIndicator, &opt, opt.widget).width() + 2 * textMargin;
+    }
+    if (opt.features & QStyleOptionViewItem::HasDecoration) {
+        width += opt.decorationSize.width() + 2 * textMargin;
     }
     const int height = fontMetrics.height() + (serverTypeName.isEmpty() ? 0 : descFontMetrics.height());
     return QSize(width, height).expandedTo(QStyledItemDelegate::sizeHint(option, index));
