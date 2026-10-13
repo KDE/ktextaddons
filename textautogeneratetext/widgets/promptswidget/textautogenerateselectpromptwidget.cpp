@@ -5,6 +5,7 @@
 */
 #include "textautogenerateselectpromptwidget.h"
 #include "core/models/textautogeneratetextpromptmodel.h"
+#include "core/models/textautogeneratetextpromptsortfilterproxymodel.h"
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogenerateselectpromptlistwidget.h"
@@ -22,7 +23,10 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
 
     mPromptModel->setObjectName(u"mPromptModel"_s);
     mPromptModel->setPrompt(manager->textAutoGenerateAgentPrompSkillManager()->prompts());
-    mListWidget->setModel(mPromptModel);
+    auto filterProxyModel = new TextAutoGenerateTextPromptSortFilterProxyModel(this);
+    filterProxyModel->setSourceModel(mPromptModel);
+
+    mListWidget->setModel(filterProxyModel);
     mListWidget->setObjectName(u"mainLayout"_s);
     mainLayout->addWidget(mListWidget);
 }
