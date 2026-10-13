@@ -9,6 +9,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateAgentPrompSkillManager::TextAutoGenerateAgentPrompSkillManager(QObject *parent)
     : QObject{parent}
@@ -73,7 +74,57 @@ void TextAutoGenerateAgentPrompSkillManager::loadAgents()
 
 void TextAutoGenerateAgentPrompSkillManager::save()
 {
-    // TODO
+    saveAgents();
+    saveSkills();
+    savePrompts();
+}
+
+void TextAutoGenerateAgentPrompSkillManager::saveAgents()
+{
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::agentConfigFileName());
+
+    const auto instanceList = TextAutoGenerateTextUtils::agentsList(config);
+    for (const auto &group : instanceList) {
+        config->deleteGroup(group);
+    }
+
+    for (int i = 0; i < mAgents.count(); ++i) {
+        KConfigGroup group = config->group(u"Agent #%1"_s.arg(i));
+        mAgents[i].save(group);
+    }
+    config->sync();
+}
+
+void TextAutoGenerateAgentPrompSkillManager::saveSkills()
+{
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
+
+    const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
+    for (const auto &group : instanceList) {
+        config->deleteGroup(group);
+    }
+
+    for (int i = 0; i < mSkills.count(); ++i) {
+        KConfigGroup group = config->group(u"Skill #%1"_s.arg(i));
+        mSkills[i].save(group);
+    }
+    config->sync();
+}
+
+void TextAutoGenerateAgentPrompSkillManager::savePrompts()
+{
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
+
+    const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
+    for (const auto &group : instanceList) {
+        config->deleteGroup(group);
+    }
+
+    for (int i = 0; i < mPrompts.count(); ++i) {
+        KConfigGroup group = config->group(u"Prompt #%1"_s.arg(i));
+        mPrompts[i].save(group);
+    }
+    config->sync();
 }
 
 QList<TextAutoGeneratePrompt> TextAutoGenerateAgentPrompSkillManager::prompts() const

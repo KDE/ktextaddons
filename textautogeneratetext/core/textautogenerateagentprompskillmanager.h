@@ -96,6 +96,10 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPrompts();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadSkills();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadAgents();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void saveAgents();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void saveSkills();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void savePrompts();
+
     QList<TextAutoGeneratePrompt> mPrompts;
     QList<TextAutoGenerateSkill> mSkills;
     QList<TextAutoGenerateAgent> mAgents;
