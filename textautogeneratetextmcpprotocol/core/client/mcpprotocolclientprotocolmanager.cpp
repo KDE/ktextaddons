@@ -678,7 +678,7 @@ void McpProtocolClientProtocolManager::initialize()
     if (mRootsSupported) {
         McpProtocolClientCapabilities::Roots roots;
         roots.setListChanged(true);
-        capabilities.setRoots(std::move(roots));
+        capabilities.setRoots(roots);
     }
     if (mSamplingSupported) {
         // Announce "sampling": {}
