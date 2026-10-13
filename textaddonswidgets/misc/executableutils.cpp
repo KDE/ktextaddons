@@ -20,6 +20,11 @@ QString TextAddonsWidgets::ExecutableUtils::findExecutable(const QString &exec)
     if (path.isEmpty()) {
         path = QStandardPaths::findExecutable(executableName);
     }
+#elif defined(Q_OS_MACOS)
+    QString path = QStandardPaths::findExecutable(exec, {QCoreApplication::applicationDirPath()});
+    if (path.isEmpty()) {
+        path = QStandardPaths::findExecutable(exec);
+    }
 #else
     const QString path = QStandardPaths::findExecutable(exec);
 #endif
