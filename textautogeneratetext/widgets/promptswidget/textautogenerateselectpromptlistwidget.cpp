@@ -70,7 +70,7 @@ void TextAutoGenerateSelectPromptListWidget::slotAddPrompt()
 void TextAutoGenerateSelectPromptListWidget::slotEditPrompt(const QModelIndex &index)
 {
     auto dlg = new TextAutoGeneratePromptDialog(this);
-    // TODO dlg->setPrompt();
+    dlg->setPrompt(index.data(TextAutoGenerateTextPromptModel::Prompt).value<TextAutoGenerateText::TextAutoGeneratePrompt>());
     if (dlg->exec()) {
         Q_EMIT editPrompt(dlg->prompt());
     }
