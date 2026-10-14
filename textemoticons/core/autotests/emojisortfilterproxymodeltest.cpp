@@ -99,15 +99,15 @@ void EmojiSortFilterProxyModelTest::shouldSearchInAliases()
     w.setSourceModel(&model);
     w.setCategory(u"activity"_s);
 
-    // :party: is how emojibase names it; :tada: is the name it had before and is now an alias.
-    w.setSearchIdentifier(u"party"_s);
-    QVERIFY(identifiers(&w).contains(u":party:"_s));
-
+    // :tada: is the name Rocket.Chat knows it by; :party: is the emojibase name, kept as an alias.
     w.setSearchIdentifier(u"tada"_s);
-    QVERIFY(identifiers(&w).contains(u":party:"_s));
+    QVERIFY(identifiers(&w).contains(u":tada:"_s));
 
-    w.setSearchIdentifier(u"TADA"_s);
-    QVERIFY(identifiers(&w).contains(u":party:"_s));
+    w.setSearchIdentifier(u"party"_s);
+    QVERIFY(identifiers(&w).contains(u":tada:"_s));
+
+    w.setSearchIdentifier(u"PARTY"_s);
+    QVERIFY(identifiers(&w).contains(u":tada:"_s));
 }
 
 void EmojiSortFilterProxyModelTest::shouldFilterMixedSkinTones()
@@ -121,9 +121,9 @@ void EmojiSortFilterProxyModelTest::shouldFilterMixedSkinTones()
     w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light);
 
     const QStringList shown = identifiers(&w);
-    QVERIFY(shown.contains(u":+1_tone1:"_s));
+    QVERIFY(shown.contains(u":thumbsup_tone1:"_s));
     // The emoji a tone was picked for is replaced by its variant...
-    QVERIFY(!shown.contains(u":+1:"_s));
+    QVERIFY(!shown.contains(u":thumbsup:"_s));
     // ... and an emoji holding two different tones belongs to no single tone.
     QVERIFY(!shown.contains(u":handshake_tone1-2:"_s));
     QVERIFY(shown.contains(u":handshake_tone1:"_s));

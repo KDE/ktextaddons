@@ -27,11 +27,11 @@ void UnicodeEmoticonManagerTest::shouldFindEmoji_data()
     QTest::addColumn<QString>("searched");
     QTest::addColumn<QString>("unicode");
 
-    // The identifiers come from emojibase, and so do the names other clients send us.
-    QTest::newRow("identifier") << u":party:"_s << u"\U0001F389"_s;
+    // The identifiers are the names Rocket.Chat knows, so the ones other clients send us.
+    QTest::newRow("identifier") << u":tada:"_s << u"\U0001F389"_s;
     QTest::newRow("alias") << u":party_popper:"_s << u"\U0001F389"_s;
-    // The names shipped before emojibase must keep resolving, as aliases.
-    QTest::newRow("previous-identifier") << u":tada:"_s << u"\U0001F389"_s;
+    // The emojibase names must keep resolving, as aliases.
+    QTest::newRow("emojibase-identifier") << u":party:"_s << u"\U0001F389"_s;
     QTest::newRow("previous-ascii") << u"<3"_s << u"\u2764\uFE0F"_s;
     // A message that was not written with a shortname carries the emoji itself.
     QTest::newRow("unicode") << u"\U0001F389"_s << u"\U0001F389"_s;
