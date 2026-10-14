@@ -5,11 +5,14 @@
 
 The emoji set used to come from joypixels/emoji-toolkit (formerly EmojiOne),
 which stopped being a usable source of truth: its last snapshot here covered
-Unicode 15.1 only, and Rocket.Chat moved to emojibase shortcodes, so the names
-it sends for reactions no longer matched ours.
+Unicode 15.1 only, and Rocket.Chat moved to emojibase-data.
 
-emojibase is now the source of truth for the emoji set, the categories, the
-sort order and the primary ``shortname``. Every name we used to ship stays
+emojibase-data is now the source of truth for the emoji set, the categories
+and the sort order. The primary ``shortname`` follows Rocket.Chat
+(apps/meteor/lib/emoji-native/generateEmojiData.ts): the joypixels shortcodes
+preset, falling back to the emojibase preset for the emoji joypixels never
+named, because the server rejects reactions with any other name. The other
+preset's names are kept as aliases. Every name we used to ship stays
 available as an alias, so old shortnames typed by users or stored in messages
 keep resolving: ``UnicodeEmoticonParser`` loads ``shortname_alternates`` and
 ``ascii`` as aliases and ``UnicodeEmoticon::hasEmoji()`` matches the
@@ -28,10 +31,10 @@ import pathlib
 import sys
 import urllib.request
 
-DATA_URL = "https://cdn.jsdelivr.net/npm/emojibase-data@latest/en/data.json"
-SHORTCODES_URL = (
-    "https://cdn.jsdelivr.net/npm/emojibase-data@latest/en/shortcodes/emojibase.json"
-)
+# Keep in sync with the emojibase-data version Rocket.Chat depends on: an emoji
+# missing from the server's copy is rejected as a reaction.
+EMOJIBASE_VERSION = "16.0.3"
+BASE_URL = f"https://cdn.jsdelivr.net/npm/emojibase-data@{EMOJIBASE_VERSION}/en"
 
 # emojibase groups -> the categories UnicodeEmoticonManager knows about.
 # Group 2 (components) and the ungrouped regional indicators are special-cased below.
@@ -101,11 +104,24 @@ def category_of(record):
     return GROUP_TO_CATEGORY.get(record["group"])
 
 
-def shortcodes_of(shortcodes, hexcode):
-    codes = shortcodes.get(hexcode)
+def preset_codes(preset, hexcode):
+    codes = preset.get(hexcode)
     if not codes:
         return []
     return codes if isinstance(codes, list) else [codes]
+
+
+def shortcodes_of(shortcodes, hexcode):
+    """Names of an emoji, the ones Rocket.Chat registers first.
+
+    Rocket.Chat only knows the joypixels names, or the emojibase ones when
+    joypixels has none; the names from the other preset come after them.
+    """
+    joypixels = preset_codes(shortcodes["joypixels"], hexcode)
+    emojibase = preset_codes(shortcodes["emojibase"], hexcode)
+    codes = list(joypixels or emojibase)
+    codes += [code for code in emojibase + joypixels if code not in codes]
+    return codes
 
 
 def tone_suffix(tone):
@@ -138,11 +154,14 @@ def build_entries(data, shortcodes):
             }
         )
         for skin in skins:
-            # emojibase names a skin tone variant after the base plus a _toneN suffix,
+            # Rocket.Chat always registers the base name plus a _toneN suffix,
             # which is the convention EmojiSortFilterProxyModel filters tones on.
             suffix = tone_suffix(skin["tone"])
-            skin_codes = shortcodes_of(shortcodes, skin["hexcode"]) or [
-                f"{codes[0]}{suffix}"
+            skin_codes = [f"{codes[0]}{suffix}"]
+            skin_codes += [
+                code
+                for code in shortcodes_of(shortcodes, skin["hexcode"])
+                if code not in skin_codes
             ]
             entries.append(
                 {
@@ -242,7 +261,8 @@ def main():
     parser.add_argument(
         "--emojibase",
         metavar="DIR",
-        help="local emojibase-data directory, containing en/data.json; downloaded when omitted",
+        help="local emojibase-data directory, containing en/data.json; "
+        f"version {EMOJIBASE_VERSION} is downloaded when omitted",
     )
     parser.add_argument(
         "--legacy",
@@ -262,14 +282,15 @@ def main():
     options = parser.parse_args()
 
     if options.emojibase:
-        base = pathlib.Path(options.emojibase)
-        data_source = str(base / "en" / "data.json")
-        shortcodes_source = str(base / "en" / "shortcodes" / "emojibase.json")
+        base = str(pathlib.Path(options.emojibase) / "en")
     else:
-        data_source, shortcodes_source = DATA_URL, SHORTCODES_URL
+        base = BASE_URL
 
-    data = load_json(data_source)
-    shortcodes = load_json(shortcodes_source)
+    data = load_json(f"{base}/data.json")
+    shortcodes = {
+        preset: load_json(f"{base}/shortcodes/{preset}.json")
+        for preset in ("joypixels", "emojibase")
+    }
     legacy = load_legacy_names(options.legacy)
 
     entries = build_entries(data, shortcodes)
