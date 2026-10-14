@@ -16,42 +16,12 @@ McpProtocolGetPromptRequestParams::McpProtocolGetPromptRequestParams() = default
 
 bool McpProtocolGetPromptRequestParams::operator==(const McpProtocolGetPromptRequestParams &other) const = default;
 
-bool McpProtocolGetPromptRequestParams::Meta::operator==(const McpProtocolGetPromptRequestParams::Meta &other) const = default;
-
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "meta:" << t.meta();
     d.space() << "arguments:" << t.arguments();
     return d;
-}
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
-McpProtocolGetPromptRequestParams::Meta McpProtocolGetPromptRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolGetPromptRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolGetPromptRequestParams::Meta::toJson(const McpProtocolGetPromptRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 bool McpProtocolGetPromptRequestParams::isValid() const
@@ -129,24 +99,4 @@ std::optional<McpProtocolGetPromptRequestParams::Meta> McpProtocolGetPromptReque
 void McpProtocolGetPromptRequestParams::setMeta(std::optional<Meta> newMeta)
 {
     mMeta = std::move(newMeta);
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolGetPromptRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolGetPromptRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolGetPromptRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolGetPromptRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

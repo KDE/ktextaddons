@@ -9,6 +9,7 @@
 #include <QMap>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptReference>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRequestMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceTemplateReference>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
@@ -18,24 +19,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCompleteRequestParams
 {
 public:
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
-        std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
-        // Other _meta keys (e.g. "io.modelcontextprotocol/related-task")
-        QJsonObject mAdditionalProperties;
-
-        [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
-        void setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken);
-        [[nodiscard]] QJsonObject additionalProperties() const;
-        void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
-        [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Meta &other) const;
-
-        /*!
-         */
-        [[nodiscard]] static McpProtocolCompleteRequestParams::Meta fromJson(const QJsonObject &obj);
-        /*!
-         */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Meta &meta);
-    };
+    using Meta = McpProtocolRequestMeta;
 
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Argument {
         QString mName;
@@ -127,7 +111,6 @@ private:
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Meta &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d,
                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument &t);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Context &t);

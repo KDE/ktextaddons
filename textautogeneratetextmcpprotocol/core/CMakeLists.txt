@@ -66,6 +66,7 @@ target_sources(
         impl/mcpprotocoljsonrpcerrorresponse.cpp
         impl/mcpprotocolpaginatedrequestparams.cpp
         impl/mcpprotocolrequestparams.cpp
+        impl/mcpprotocolrequestmeta.cpp
         impl/mcpprotocolinitializerequestparams.cpp
         impl/mcpprotocolsetlevelrequestparams.cpp
         impl/mcpprotocolcompleterequestparams.cpp
@@ -151,6 +152,7 @@ target_sources(
         impl/mcpprotocoljsonrpcerrorresponse.h
         impl/mcpprotocolpaginatedrequestparams.h
         impl/mcpprotocolrequestparams.h
+        impl/mcpprotocolrequestmeta.h
         impl/mcpprotocolinitializerequestparams.h
         impl/mcpprotocolsetlevelrequestparams.h
         impl/mcpprotocolcompleterequestparams.h
@@ -414,6 +416,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolReadResourceRequestParams
     McpProtocolRelatedTaskMetadata
     McpProtocolRequestParams
+    McpProtocolRequestMeta
     McpProtocolResource
     McpProtocolResourceLink
     McpProtocolResourceListChangedNotification

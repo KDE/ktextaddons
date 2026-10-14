@@ -8,6 +8,7 @@
 #include <QJsonObject>
 #include <QMap>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRequestMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
 class QDebug;
@@ -16,24 +17,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolGetPromptRequestParams
 {
 public:
-    struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Meta {
-        std::optional<McpProtocolUtils::ProgressToken> mProgressToken;
-        // Other _meta keys (e.g. "io.modelcontextprotocol/related-task")
-        QJsonObject mAdditionalProperties;
-
-        [[nodiscard]] std::optional<McpProtocolUtils::ProgressToken> progressToken() const;
-        void setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken);
-        [[nodiscard]] QJsonObject additionalProperties() const;
-        void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
-        [[nodiscard]] bool operator==(const McpProtocolGetPromptRequestParams::Meta &other) const;
-
-        /*!
-         */
-        [[nodiscard]] static McpProtocolGetPromptRequestParams::Meta fromJson(const QJsonObject &obj);
-        /*!
-         */
-        [[nodiscard]] static QJsonObject toJson(const McpProtocolGetPromptRequestParams::Meta &meta);
-    };
+    using Meta = McpProtocolRequestMeta;
 
     /*!
      */
@@ -83,4 +67,3 @@ private:
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams &t);
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptRequestParams::Meta &t);

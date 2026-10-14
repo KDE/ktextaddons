@@ -16,7 +16,6 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequestParams::McpProtocolCompleteRequestParams() = default;
 
 bool McpProtocolCompleteRequestParams::operator==(const McpProtocolCompleteRequestParams &other) const = default;
-bool McpProtocolCompleteRequestParams::Meta::operator==(const McpProtocolCompleteRequestParams::Meta &other) const = default;
 
 std::optional<QMap<QString, QString>> McpProtocolCompleteRequestParams::Context::arguments() const
 {
@@ -122,13 +121,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument &t)
 {
     d.space() << "value:" << t.value();
@@ -140,27 +132,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 {
     d.space() << "arguments:" << t.arguments();
     return d;
-}
-
-McpProtocolCompleteRequestParams::Meta McpProtocolCompleteRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolCompleteRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolCompleteRequestParams::Meta::toJson(const McpProtocolCompleteRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 static bool isRefValid(const McpProtocolUtils::CompleteRequestParamsRef &ref)
@@ -265,24 +236,4 @@ McpProtocolUtils::CompleteRequestParamsRef McpProtocolCompleteRequestParams::ref
 void McpProtocolCompleteRequestParams::setRef(McpProtocolUtils::CompleteRequestParamsRef newRef)
 {
     mRef = std::move(newRef);
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolCompleteRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolCompleteRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolCompleteRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolCompleteRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

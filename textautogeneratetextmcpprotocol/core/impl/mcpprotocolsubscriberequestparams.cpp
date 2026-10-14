@@ -14,41 +14,12 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSubscribeRequestParams::McpProtocolSubscribeRequestParams() = default;
 
 bool McpProtocolSubscribeRequestParams::operator==(const McpProtocolSubscribeRequestParams &other) const = default;
-bool McpProtocolSubscribeRequestParams::Meta::operator==(const McpProtocolSubscribeRequestParams::Meta &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscribeRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "uri:" << t.uri();
     return d;
-}
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscribeRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
-McpProtocolSubscribeRequestParams::Meta McpProtocolSubscribeRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolSubscribeRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolSubscribeRequestParams::Meta::toJson(const McpProtocolSubscribeRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 McpProtocolSubscribeRequestParams McpProtocolSubscribeRequestParams::fromJson(const QJsonObject &obj)
@@ -99,24 +70,4 @@ QString McpProtocolSubscribeRequestParams::uri() const
 void McpProtocolSubscribeRequestParams::setUri(const QString &newUri)
 {
     mUri = newUri;
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolSubscribeRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolSubscribeRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolSubscribeRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolSubscribeRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

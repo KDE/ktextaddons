@@ -13,41 +13,12 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUnsubscribeRequestParams::McpProtocolUnsubscribeRequestParams() = default;
 
 bool McpProtocolUnsubscribeRequestParams::operator==(const McpProtocolUnsubscribeRequestParams &other) const = default;
-bool McpProtocolUnsubscribeRequestParams::Meta::operator==(const McpProtocolUnsubscribeRequestParams::Meta &other) const = default;
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolUnsubscribeRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "uri:" << t.uri();
     return d;
-}
-
-McpProtocolUnsubscribeRequestParams::Meta McpProtocolUnsubscribeRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolUnsubscribeRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolUnsubscribeRequestParams::Meta::toJson(const McpProtocolUnsubscribeRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 McpProtocolUnsubscribeRequestParams McpProtocolUnsubscribeRequestParams::fromJson(const QJsonObject &obj)
@@ -98,24 +69,4 @@ QString McpProtocolUnsubscribeRequestParams::uri() const
 void McpProtocolUnsubscribeRequestParams::setUri(const QString &newUri)
 {
     mUri = newUri;
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolUnsubscribeRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolUnsubscribeRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolUnsubscribeRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolUnsubscribeRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

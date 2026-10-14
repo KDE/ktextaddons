@@ -14,41 +14,11 @@ McpProtocolTaskAugmentedRequestParams::McpProtocolTaskAugmentedRequestParams() =
 
 bool McpProtocolTaskAugmentedRequestParams::operator==(const McpProtocolTaskAugmentedRequestParams &other) const = default;
 
-bool McpProtocolTaskAugmentedRequestParams::Meta::operator==(const McpProtocolTaskAugmentedRequestParams::Meta &other) const = default;
-
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskAugmentedRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "task:" << t.task();
     return d;
-}
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolTaskAugmentedRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
-McpProtocolTaskAugmentedRequestParams::Meta McpProtocolTaskAugmentedRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolTaskAugmentedRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolTaskAugmentedRequestParams::Meta::toJson(const McpProtocolTaskAugmentedRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 McpProtocolTaskAugmentedRequestParams McpProtocolTaskAugmentedRequestParams::fromJson(const QJsonObject &obj)
@@ -95,24 +65,4 @@ std::optional<McpProtocolTaskMetadata> McpProtocolTaskAugmentedRequestParams::ta
 void McpProtocolTaskAugmentedRequestParams::setTask(std::optional<McpProtocolTaskMetadata> newTask)
 {
     mTask = std::move(newTask);
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolTaskAugmentedRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolTaskAugmentedRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolTaskAugmentedRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolTaskAugmentedRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

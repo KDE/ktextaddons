@@ -17,27 +17,6 @@ QByteArray McpProtocolElicitRequestURLParams::mode()
     return "url"_ba;
 }
 
-McpProtocolElicitRequestURLParams::Meta McpProtocolElicitRequestURLParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolElicitRequestURLParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolElicitRequestURLParams::Meta::toJson(const McpProtocolElicitRequestURLParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
-}
-
 std::optional<McpProtocolElicitRequestURLParams::Meta> McpProtocolElicitRequestURLParams::meta() const
 {
     return mMeta;
@@ -98,41 +77,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolElicitRequestURLParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolElicitRequestURLParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolElicitRequestURLParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolElicitRequestURLParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
-}
-
-bool TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::Meta::operator==(const McpProtocolElicitRequestURLParams::Meta &other) const =
-    default;
-
 bool TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::operator==(const McpProtocolElicitRequestURLParams &other) const = default;
 
 bool McpProtocolElicitRequestURLParams::isValid() const
 {
-    return !mElicitationId.isEmpty() && !mMessage.isEmpty() && !mUrl.isEmpty();
+    // Empty message is allowed: only check that it was set (fromJson() returns a default object on error)
+    return !mElicitationId.isEmpty() && !mMessage.isNull() && !mUrl.isEmpty();
 }
 
 McpProtocolElicitRequestURLParams TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::fromJson(const QJsonObject &obj)

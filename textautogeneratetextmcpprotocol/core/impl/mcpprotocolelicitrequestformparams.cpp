@@ -15,16 +15,7 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitRequestFormParams::McpProtocolElicitRequestFormParams() = default;
 bool McpProtocolElicitRequestFormParams::operator==(const McpProtocolElicitRequestFormParams &other) const = default;
 
-bool McpProtocolElicitRequestFormParams::Meta::operator==(const McpProtocolElicitRequestFormParams::Meta &other) const = default;
-
 bool McpProtocolElicitRequestFormParams::RequestedSchema::operator==(const McpProtocolElicitRequestFormParams::RequestedSchema &other) const = default;
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams &t)
 {
@@ -33,47 +24,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "task:" << t.task();
     d.space() << "requestedSchema:" << McpProtocolElicitRequestFormParams::RequestedSchema::toJson(t.requestedSchema());
     return d;
-}
-
-McpProtocolElicitRequestFormParams::Meta McpProtocolElicitRequestFormParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolElicitRequestFormParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolElicitRequestFormParams::Meta::toJson(const McpProtocolElicitRequestFormParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolElicitRequestFormParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolElicitRequestFormParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolElicitRequestFormParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolElicitRequestFormParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }
 
 McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestFormParams::RequestedSchema::fromJson(const QJsonObject &obj)

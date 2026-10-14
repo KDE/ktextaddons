@@ -14,41 +14,12 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSetLevelRequestParams::McpProtocolSetLevelRequestParams() = default;
 
 bool McpProtocolSetLevelRequestParams::operator==(const McpProtocolSetLevelRequestParams &other) const = default;
-bool McpProtocolSetLevelRequestParams::Meta::operator==(const McpProtocolSetLevelRequestParams::Meta &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams &t)
 {
     d.space() << "level:" << McpProtocolUtils::convertLoggingLevelToString(t.level());
     d.space() << "meta:" << t.meta();
     return d;
-}
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
-McpProtocolSetLevelRequestParams::Meta McpProtocolSetLevelRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolSetLevelRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolSetLevelRequestParams::Meta::toJson(const McpProtocolSetLevelRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 McpProtocolSetLevelRequestParams McpProtocolSetLevelRequestParams::fromJson(const QJsonObject &obj)
@@ -106,24 +77,4 @@ McpProtocolUtils::LoggingLevel McpProtocolSetLevelRequestParams::level() const
 void McpProtocolSetLevelRequestParams::setLevel(McpProtocolUtils::LoggingLevel newLevel)
 {
     mLevel = newLevel;
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolSetLevelRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolSetLevelRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolSetLevelRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolSetLevelRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

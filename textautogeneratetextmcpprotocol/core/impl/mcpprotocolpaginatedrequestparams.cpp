@@ -12,41 +12,12 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPaginatedRequestParams::McpProtocolPaginatedRequestParams() = default;
 
 bool McpProtocolPaginatedRequestParams::operator==(const McpProtocolPaginatedRequestParams &other) const = default;
-bool McpProtocolPaginatedRequestParams::Meta::operator==(const McpProtocolPaginatedRequestParams::Meta &other) const = default;
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams &t)
 {
     d.space() << "meta:" << t.meta();
     d.space() << "cursor:" << t.cursor();
     return d;
-}
-
-McpProtocolPaginatedRequestParams::Meta McpProtocolPaginatedRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolPaginatedRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolPaginatedRequestParams::Meta::toJson(const McpProtocolPaginatedRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj.insert("progressToken"_L1, McpProtocolUtils::progressTokenToJson(*meta.progressToken()));
-    }
-    return obj;
 }
 
 McpProtocolPaginatedRequestParams McpProtocolPaginatedRequestParams::fromJson(const QJsonObject &obj)
@@ -92,24 +63,4 @@ std::optional<QString> McpProtocolPaginatedRequestParams::cursor() const
 void McpProtocolPaginatedRequestParams::setCursor(const std::optional<QString> &newCursor)
 {
     mCursor = newCursor;
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolPaginatedRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolPaginatedRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolPaginatedRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolPaginatedRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }

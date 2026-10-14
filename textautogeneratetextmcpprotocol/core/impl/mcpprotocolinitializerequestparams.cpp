@@ -15,7 +15,6 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolInitializeRequestParams::McpProtocolInitializeRequestParams() = default;
 
 bool McpProtocolInitializeRequestParams::operator==(const McpProtocolInitializeRequestParams &other) const = default;
-bool McpProtocolInitializeRequestParams::Meta::operator==(const McpProtocolInitializeRequestParams::Meta &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequestParams &t)
 {
@@ -24,34 +23,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "protocolVersion:" << t.protocolVersion();
     d.space() << "capabilities:" << t.capabilities();
     return d;
-}
-
-QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequestParams::Meta &t)
-{
-    d.space() << "progressToken:" << t.progressToken();
-    d.space() << "additionalProperties:" << t.additionalProperties();
-    return d;
-}
-
-McpProtocolInitializeRequestParams::Meta McpProtocolInitializeRequestParams::Meta::fromJson(const QJsonObject &obj)
-{
-    McpProtocolInitializeRequestParams::Meta meta;
-    if (obj.contains("progressToken"_L1)) {
-        meta.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
-    }
-    QJsonObject additionalProperties = obj;
-    additionalProperties.remove("progressToken"_L1);
-    meta.setAdditionalProperties(additionalProperties);
-    return meta;
-}
-
-QJsonObject McpProtocolInitializeRequestParams::Meta::toJson(const McpProtocolInitializeRequestParams::Meta &meta)
-{
-    QJsonObject obj = meta.additionalProperties();
-    if (meta.progressToken().has_value()) {
-        obj["progressToken"_L1] = McpProtocolUtils::progressTokenToJson(*meta.progressToken());
-    }
-    return obj;
 }
 
 bool McpProtocolInitializeRequestParams::isValid() const
@@ -141,24 +112,4 @@ McpProtocolClientCapabilities McpProtocolInitializeRequestParams::capabilities()
 void McpProtocolInitializeRequestParams::setCapabilities(McpProtocolClientCapabilities newCapabilities)
 {
     mCapabilities = std::move(newCapabilities);
-}
-
-std::optional<McpProtocolUtils::ProgressToken> McpProtocolInitializeRequestParams::Meta::progressToken() const
-{
-    return mProgressToken;
-}
-
-void McpProtocolInitializeRequestParams::Meta::setProgressToken(std::optional<McpProtocolUtils::ProgressToken> newProgressToken)
-{
-    mProgressToken = std::move(newProgressToken);
-}
-
-QJsonObject McpProtocolInitializeRequestParams::Meta::additionalProperties() const
-{
-    return mAdditionalProperties;
-}
-
-void McpProtocolInitializeRequestParams::Meta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
-{
-    mAdditionalProperties = newAdditionalProperties;
 }
