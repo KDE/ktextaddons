@@ -31,7 +31,8 @@ void McpProtocolJSONRPCErrorResponseTest::shouldLoadNullId()
     const auto response = TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::fromJson(obj);
     QVERIFY(!response.id().has_value());
     QCOMPARE(response.error().code(), -32700);
-    QVERIFY(!TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::toJson(response).value("id"_L1).isString());
+    // id is required in JSON-RPC: it must be saved as null
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::toJson(response), obj);
 }
 
 void McpProtocolJSONRPCErrorResponseTest::shouldLoadAndSaveResponse()

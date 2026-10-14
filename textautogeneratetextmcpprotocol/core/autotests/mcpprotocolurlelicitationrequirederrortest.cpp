@@ -5,6 +5,7 @@
 */
 #include "mcpprotocolurlelicitationrequirederrortest.h"
 #include "impl/mcpprotocolurlelicitationrequirederror.h"
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;

@@ -29,7 +29,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 bool McpProtocolImplementation::isValid() const
 {
-    return !mName.isEmpty() && !mVersion.isEmpty();
+    // Empty version is allowed: only check that fields were set (fromJson() returns a default object on error)
+    return !mName.isEmpty() && !mVersion.isNull();
 }
 
 McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject &obj)

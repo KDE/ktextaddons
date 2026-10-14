@@ -185,6 +185,8 @@ void McpProtocolServerProtocolManager::cancelToolCalls(const QString &name)
         return false;
     });
     for (McpProtocolServerToolCall *call : std::as_const(calls)) {
+        // Client didn't cancel request: it waits for an answer
+        sendError(call->requestId(), internalErrorCode, u"Tool removed: %1"_s.arg(name));
         call->cancel();
         call->deleteLater();
     }
@@ -229,7 +231,10 @@ void McpProtocolServerProtocolManager::sendError(const QJsonValue &id, int code,
     error.setCode(code);
     error.setMessage(message);
     McpProtocolJSONRPCErrorResponse response;
-    response.setId(McpProtocolUtils::requestIdFromJson(id));
+    // Null id: request id couldn't be read
+    if (!id.isNull() && !id.isUndefined()) {
+        response.setId(McpProtocolUtils::requestIdFromJson(id));
+    }
     response.setError(error);
     send(McpProtocolJSONRPCErrorResponse::toJson(response));
 }

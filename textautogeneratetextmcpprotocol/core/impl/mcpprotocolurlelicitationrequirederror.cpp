@@ -6,6 +6,7 @@
 
 #include "mcpprotocolurlelicitationrequirederror.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
@@ -49,9 +50,10 @@ QJsonObject McpProtocolURLElicitationRequiredError::toJson(const McpProtocolURLE
     QJsonObject obj;
     obj.insert("error"_L1, McpProtocolError::toJson(urlElicitationRequiredError.error()));
     obj.insert("jsonrpc"_L1, u"2.0"_s);
-    if (urlElicitationRequiredError.id().has_value()) {
-        obj.insert("id"_L1, McpProtocolUtils::requestIdToJson(*urlElicitationRequiredError.id()));
-    }
+    // JSON-RPC: id is required, null when it can't be determined
+    obj.insert("id"_L1,
+               urlElicitationRequiredError.id().has_value() ? McpProtocolUtils::requestIdToJson(*urlElicitationRequiredError.id())
+                                                            : QJsonValue(QJsonValue::Null));
     return obj;
 }
 
@@ -73,4 +75,19 @@ McpProtocolError McpProtocolURLElicitationRequiredError::error() const
 void McpProtocolURLElicitationRequiredError::setError(const McpProtocolError &newError)
 {
     mError = newError;
+}
+
+QList<McpProtocolElicitRequestURLParams> McpProtocolURLElicitationRequiredError::elicitations() const
+{
+    QList<McpProtocolElicitRequestURLParams> list;
+    const QJsonArray array = mError.data().value_or(QJsonValue()).toObject().value("elicitations"_L1).toArray();
+    list.reserve(array.count());
+    for (const QJsonValue &value : array) {
+        if (const McpProtocolElicitRequestURLParams params = McpProtocolElicitRequestURLParams::fromJson(value.toObject()); params.isValid()) {
+            list.append(params);
+        } else {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolURLElicitationRequiredError: invalid elicitation" << value;
+        }
+    }
+    return list;
 }

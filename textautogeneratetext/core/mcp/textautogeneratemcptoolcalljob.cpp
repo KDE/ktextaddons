@@ -35,17 +35,31 @@ void TextAutoGenerateMcpToolCallJob::start()
         emitFinished(i18n("Tool \"%1\" is not available.", QString::fromLatin1(mToolIdentifier)));
         return;
     }
-    connect(client, &McpProtocolClientProtocolManager::received, this, [this](const QJsonObject &obj, McpProtocolClientProtocolManager::MethodType type) {
-        if (type != McpProtocolClientProtocolManager::MethodType::CallTool || obj.value("id"_L1).toInteger(-1) != mRequestId) {
-            return;
-        }
-        if (const QJsonValue resultValue = obj.value("result"_L1); resultValue.isObject()) {
-            emitFinished(resultToText(TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolResult::fromJson(resultValue.toObject())));
-        } else {
-            const auto response = TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::fromJson(obj);
-            emitFinished(i18n("Error: %1", response.error().message()));
-        }
-    });
+    connect(client,
+            &McpProtocolClientProtocolManager::received,
+            this,
+            [this, name = tool->name, serverIdentifier = tool->serverIdentifier](const QJsonObject &obj, McpProtocolClientProtocolManager::MethodType type) {
+                if (type != McpProtocolClientProtocolManager::MethodType::CallTool || obj.value("id"_L1).toInteger(-1) != mRequestId) {
+                    return;
+                }
+                if (const QJsonValue resultValue = obj.value("result"_L1); resultValue.isObject()) {
+                    emitFinished(resultToText(TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolResult::fromJson(resultValue.toObject())));
+                } else {
+                    const auto response = TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::fromJson(obj);
+                    if (response.error().code() == TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError::errorCode) {
+                        // Server needs that user opens URLs (authorization…) before calling tool
+                        const auto urlError = TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError::fromJson(obj);
+                        if (mToolsManager->showUrlElicitations(serverIdentifier, urlError.elicitations())) {
+                            emitFinished(
+                                i18n("Tool \"%1\" needs an authorization: user was asked to open a web page. "
+                                     "Ask the user to tell you when it is done, then call the tool again.",
+                                     name));
+                            return;
+                        }
+                    }
+                    emitFinished(i18n("Error: %1", response.error().message()));
+                }
+            });
     // Server stopped before answering
     connect(client, &McpProtocolClientProtocolManager::finished, this, [this]() {
         emitFinished(i18n("Error: server was stopped."));

@@ -52,9 +52,9 @@ QJsonObject McpProtocolJSONRPCErrorResponse::toJson(const McpProtocolJSONRPCErro
     QJsonObject obj;
     obj["error"_L1] = McpProtocolError::toJson(response.error());
     obj["jsonrpc"_L1] = u"2.0"_s;
-    if (response.id().has_value()) {
-        obj["id"_L1] = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(*response.id());
-    }
+    // JSON-RPC: id is required, null when it can't be determined (parse error…)
+    obj["id"_L1] =
+        response.id().has_value() ? TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(*response.id()) : QJsonValue(QJsonValue::Null);
     return obj;
 }
 

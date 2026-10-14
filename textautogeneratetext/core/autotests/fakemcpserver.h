@@ -60,6 +60,19 @@ public:
                     // Never answers
                     return;
                 }
+                if (name == u"authorize"_s) {
+                    // User must open an URL before calling tool (URLElicitationRequiredError)
+                    const QJsonObject elicitation{{"mode"_L1, u"url"_s},
+                                                  {"elicitationId"_L1, u"elicit-1"_s},
+                                                  {"message"_L1, u"Authorize access"_s},
+                                                  {"url"_L1, u"https://example.com/authorize"_s}};
+                    const QJsonObject error{{"code"_L1, -32042},
+                                            {"message"_L1, u"Authorization required"_s},
+                                            {"data"_L1, QJsonObject{{"elicitations"_L1, QJsonArray{elicitation}}}}};
+                    const QJsonObject response{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, obj.value("id"_L1)}, {"error"_L1, error}};
+                    FakeMcpHttpServer::sendResponse(socket, 200, "application/json", QJsonDocument(response).toJson(QJsonDocument::Compact));
+                    return;
+                }
                 const QString arguments = QString::fromUtf8(QJsonDocument(params.value("arguments"_L1).toObject()).toJson(QJsonDocument::Compact));
                 const QJsonObject content{{"type"_L1, u"text"_s}, {"text"_L1, QString(name + u' ' + arguments)}};
                 result = QJsonObject{{"content"_L1, QJsonArray{content}}, {"isError"_L1, name == u"failing"_s}};

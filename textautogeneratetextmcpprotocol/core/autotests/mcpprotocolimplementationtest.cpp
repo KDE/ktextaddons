@@ -42,6 +42,11 @@ void McpProtocolImplementationTest::shouldRejectMissingRequiredFields()
     const McpProtocolImplementation impl = McpProtocolImplementation::fromJson(valid);
     QVERIFY(impl.isValid());
     QVERIFY(impl.icons().has_value());
+
+    // Empty version is allowed by specification
+    QJsonObject emptyVersion = valid;
+    emptyVersion["version"_L1] = u""_s;
+    QVERIFY(McpProtocolImplementation::fromJson(emptyVersion).isValid());
     QCOMPARE(impl.icons()->count(), 1);
 
     for (const QString &key : {u"name"_s, u"version"_s}) {

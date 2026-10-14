@@ -67,7 +67,7 @@ qint64 McpProtocolClientProtocolManager::requestId()
 
 qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
 {
-    if (!mClient) {
+    if (!mClient || !mClientStarted) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client was not initialized";
         return -1;
     }

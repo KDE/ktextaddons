@@ -94,7 +94,8 @@ QByteArray McpProtocolElicitRequestFormParams::mode()
 
 bool McpProtocolElicitRequestFormParams::isValid() const
 {
-    return !mMessage.isEmpty();
+    // Empty message is allowed: only check that it was set (fromJson() returns a default object on error)
+    return !mMessage.isNull();
 }
 
 McpProtocolElicitRequestFormParams McpProtocolElicitRequestFormParams::fromJson(const QJsonObject &obj)

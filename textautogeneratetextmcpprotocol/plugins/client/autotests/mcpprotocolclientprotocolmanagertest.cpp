@@ -684,6 +684,8 @@ void McpProtocolClientProtocolManagerTest::shouldRestartAfterStop()
     manager.stopClient();
     QTRY_COMPARE(finishedSpy.count(), 1);
     QVERIFY(!manager.isInitialized());
+    // Requests are refused when client is stopped
+    QCOMPARE(manager.executeAction(McpProtocolClientProtocolManager::MethodType::Ping), -1);
     initialize(manager);
     QCOMPARE(postedMessages(fakeServer, u"initialize"_s).count(), 2);
 }
