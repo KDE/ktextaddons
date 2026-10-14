@@ -142,6 +142,12 @@ public:
      */
     void setIconName(const QString &newIconName);
 
+    /*!
+     * \brief icon
+     * \return
+     */
+    [[nodiscard]] QIcon icon() const;
+
 private:
     bool mEnabled = true;
     QString mName;

@@ -40,8 +40,8 @@ QStyle *widgetStyle(const QStyleOptionViewItem &option)
 void McpServerListViewDelegate::initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const
 {
     QStyledItemDelegate::initStyleOption(option, index);
-    if (const QString iconName = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::IconName).toString(); !iconName.isEmpty()) {
-        option->icon = QIcon::fromTheme(iconName);
+    if (const QIcon icon = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Icon).value<QIcon>(); !icon.isNull()) {
+        option->icon = icon;
         option->features |= QStyleOptionViewItem::HasDecoration;
     }
 }

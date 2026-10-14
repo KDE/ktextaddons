@@ -60,7 +60,7 @@ void McpServer::load(const KConfigGroup &config)
 {
     mEnabled = config.readEntry("Enabled", true);
     mName = config.readEntry("Name", QString());
-    mIconName = config.readEntry("IconName", QString());
+    setIconName(config.readEntry("IconName", QString()));
     mIdentifier = config.readEntry("Id", QByteArray());
     mTransportType = convertTransportTypeFromString(config.readEntry("TransportType", QString()));
 
@@ -141,6 +141,11 @@ void McpServer::setIconName(const QString &newIconName)
         mIconName = newIconName;
         mIcon = QIcon::fromTheme(mIconName);
     }
+}
+
+QIcon McpServer::icon() const
+{
+    return mIcon;
 }
 
 QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)

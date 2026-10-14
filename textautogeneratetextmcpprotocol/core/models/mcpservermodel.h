@@ -27,6 +27,7 @@ public:
         Identifier,
         ServerType,
         IconName,
+        Icon,
     };
     /*!
      * Constructs a new McpServerModel object.

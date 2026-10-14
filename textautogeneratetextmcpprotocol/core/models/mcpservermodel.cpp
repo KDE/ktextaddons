@@ -67,6 +67,8 @@ QVariant McpServerModel::data(const QModelIndex &index, int role) const
         return McpServer::transportTypeI18n(server.transportType());
     case MCPServerRoles::IconName:
         return server.iconName();
+    case MCPServerRoles::Icon:
+        return server.icon();
     default:
         break;
     }
