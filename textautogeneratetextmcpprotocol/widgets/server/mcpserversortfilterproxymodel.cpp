@@ -4,9 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserversortfilterproxymodel.h"
-#include "mcpservermodel.h"
+#include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 
-using namespace TextAutoGenerateTextMcpProtocolCore;
+using namespace TextAutoGenerateTextMcpProtocolWidgets;
+using TextAutoGenerateTextMcpProtocolCore::McpServerModel;
 McpServerSortFilterProxyModel::McpServerSortFilterProxyModel(QObject *parent)
     : TextAddonsWidgets::SortFilterProxyModelBase{parent}
 {

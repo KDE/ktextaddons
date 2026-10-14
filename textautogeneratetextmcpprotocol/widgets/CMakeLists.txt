@@ -55,6 +55,8 @@ target_sources(
         server/addmcpserverbasewidget.cpp
         server/mcpserverlistviewdelegate.h
         server/mcpserverlistviewdelegate.cpp
+        server/mcpserversortfilterproxymodel.h
+        server/mcpserversortfilterproxymodel.cpp
         server/addmcpstreamablehttpserverheaderwidget.h
         server/addmcpstreamablehttpserverheaderwidget.cpp
         server/addmcpstreamablehttpserverheaderlistwidget.h
@@ -111,6 +113,7 @@ target_link_libraries(
         KF6::I18n
         KF6::WidgetsAddons
         KF6::IconWidgets
+        KF6::TextAddonsWidgets
 )
 
 set_target_properties(

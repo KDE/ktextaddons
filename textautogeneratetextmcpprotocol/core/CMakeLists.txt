@@ -309,8 +309,6 @@ target_sources(
         common/mcpprotocolsseparser.cpp
         models/mcpservermodel.cpp
         models/mcpservermodel.h
-        models/mcpserversortfilterproxymodel.cpp
-        models/mcpserversortfilterproxymodel.h
 )
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocolcore)
 
@@ -327,7 +325,6 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolmodel_HEADERS
     HEADER_NAMES
     McpServerModel
-    McpServerSortFilterProxyModel
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolmodel_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE models
@@ -511,7 +508,6 @@ target_link_libraries(
     PUBLIC
         Qt::Core
         KF6::CoreAddons
-        KF6::TextAddonsWidgets
     PRIVATE
         KF6::ConfigCore
         KF6::I18n

@@ -5,8 +5,8 @@
 */
 #include "mcpserverlistview.h"
 #include "models/mcpservermodel.h"
-#include "models/mcpserversortfilterproxymodel.h"
 #include "server/mcpserverlistviewdelegate.h"
+#include "server/mcpserversortfilterproxymodel.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -19,7 +19,7 @@ using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
 McpServerListView::McpServerListView(TextAutoGenerateTextMcpProtocolCore::McpServerModel *model, QWidget *parent)
     : QListView(parent)
-    , mSortFilterProxyModel(new TextAutoGenerateTextMcpProtocolCore::McpServerSortFilterProxyModel(this))
+    , mSortFilterProxyModel(new McpServerSortFilterProxyModel(this))
 {
     setItemDelegate(new McpServerListViewDelegate(this));
     setDragEnabled(false);

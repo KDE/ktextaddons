@@ -5,18 +5,17 @@
 */
 
 #pragma once
-#include "textautogeneratetextmcpprotocolcore_export.h"
+#include "mcpprotocolwidgets_private_export.h"
 #include <TextAddonsWidgets/SortFilterProxyModelBase>
-namespace TextAutoGenerateTextMcpProtocolCore
+namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 /*!
- * \class TextAutoGenerateTextMcpProtocolCore::McpServerSortFilterProxyModel
+ * \class TextAutoGenerateTextMcpProtocolWidgets::McpServerSortFilterProxyModel
  * \brief The McpServerSortFilterProxyModel class
  * \author Laurent Montel <montel@kde.org>
- * \inmodule TextAutoGenerateTextMcpProtocolCore
- * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpServerSortFilterProxyModel
+ * \internal
  */
-class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServerSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpServerSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
 {
     Q_OBJECT
 public:
