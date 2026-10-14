@@ -15,7 +15,11 @@ McpServer::McpServer() = default;
 
 McpServer::~McpServer() = default;
 
-bool McpServer::operator==(const McpServer &other) const = default;
+bool McpServer::operator==(const McpServer &other) const
+{
+    return mEnabled == other.mEnabled && mName == other.mName && mIconName == other.mIconName && mIdentifier == other.mIdentifier
+        && mTransportType == other.mTransportType && mSettings == other.mSettings;
+}
 
 void McpServer::createUniqueIdentifier()
 {
@@ -133,7 +137,10 @@ QString McpServer::iconName() const
 
 void McpServer::setIconName(const QString &newIconName)
 {
-    mIconName = newIconName;
+    if (mIconName != newIconName) {
+        mIconName = newIconName;
+        mIcon = QIcon::fromTheme(mIconName);
+    }
 }
 
 QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)

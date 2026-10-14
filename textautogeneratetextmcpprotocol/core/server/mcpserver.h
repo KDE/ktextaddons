@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QIcon>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 class QDebug;
@@ -145,6 +146,7 @@ private:
     bool mEnabled = true;
     QString mName;
     QString mIconName;
+    QIcon mIcon;
     QByteArray mIdentifier;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mTransportType =
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;

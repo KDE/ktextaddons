@@ -510,6 +510,7 @@ target_link_libraries(
     KF6TextAutoGenerateTextMcpProtocolCore
     PUBLIC
         Qt::Core
+        Qt::Gui
         KF6::CoreAddons
     PRIVATE
         KF6::ConfigCore
