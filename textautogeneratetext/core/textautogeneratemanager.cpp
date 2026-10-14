@@ -111,6 +111,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
     mTextAutoGenerateSettings->load();
+    mTextAutoGenerateAgentPrompSkillManager->load();
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(TextEditTextToSpeech::TextToSpeech::self(),
             &TextEditTextToSpeech::TextToSpeech::aboutToSynthesize,
