@@ -13,6 +13,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateManager;
 class TextAutoGenerateTextPromptModel;
 class TextAutoGenerateSelectPromptListWidget;
+class TextAutoGenerateSearchPromptWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectPromptWidget : public QWidget
 {
     Q_OBJECT
@@ -25,5 +26,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemovePrompt(const QByteArray &identifier);
     TextAutoGenerateSelectPromptListWidget *const mListWidget;
     TextAutoGenerateTextPromptModel *const mPromptModel;
+    TextAutoGenerateSearchPromptWidget *const mSearchPromptWidget;
 };
 }

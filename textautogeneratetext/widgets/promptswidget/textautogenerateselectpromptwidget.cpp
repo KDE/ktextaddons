@@ -9,6 +9,7 @@
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogenerateselectpromptlistwidget.h"
+#include "widgets/promptswidget/textautogeneratesearchpromptwidget.h"
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -16,6 +17,7 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     : QWidget{parent}
     , mListWidget(new TextAutoGenerateSelectPromptListWidget(this))
     , mPromptModel(new TextAutoGenerateTextPromptModel(this))
+    , mSearchPromptWidget(new TextAutoGenerateSearchPromptWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -25,6 +27,10 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     mPromptModel->setPrompt(manager->textAutoGenerateAgentPrompSkillManager()->prompts());
     auto filterProxyModel = new TextAutoGenerateTextPromptSortFilterProxyModel(this);
     filterProxyModel->setSourceModel(mPromptModel);
+
+    mSearchPromptWidget->setObjectName(u"mSearchPromptWidget"_s);
+    mainLayout->addWidget(mSearchPromptWidget);
+    // TODO connect to model
 
     mListWidget->setModel(filterProxyModel);
     mListWidget->setObjectName(u"mListWidget"_s);
