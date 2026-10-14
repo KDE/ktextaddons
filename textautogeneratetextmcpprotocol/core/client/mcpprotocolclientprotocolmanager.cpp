@@ -10,7 +10,10 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitationCompleteNotification>
 
 #include <QCoreApplication>
 #include <QJsonArray>
@@ -163,6 +166,16 @@ bool McpProtocolClientProtocolManager::elicitationSupported() const
 void McpProtocolClientProtocolManager::setElicitationSupported(bool supported)
 {
     mElicitationSupported = supported;
+}
+
+bool McpProtocolClientProtocolManager::urlElicitationSupported() const
+{
+    return mUrlElicitationSupported;
+}
+
+void McpProtocolClientProtocolManager::setUrlElicitationSupported(bool supported)
+{
+    mUrlElicitationSupported = supported;
 }
 
 bool McpProtocolClientProtocolManager::takePendingUserRequest(const McpProtocolUtils::RequestId &id)
@@ -546,6 +559,13 @@ void McpProtocolClientProtocolManager::serverNotificationReceived(const QJsonObj
         if (requestId.has_value() && mPendingUserRequests.contains(*requestId) && takePendingUserRequest(*requestId)) {
             Q_EMIT userRequestCancelled(*requestId);
         }
+    } else if (method == QLatin1StringView(McpProtocolElicitationCompleteNotification::type())) {
+        if (mUrlElicitationSupported) {
+            const McpProtocolElicitationCompleteNotification notification = McpProtocolElicitationCompleteNotification::fromJson(obj);
+            if (const QString elicitationId = notification.params().elicitationId(); !elicitationId.isEmpty()) {
+                Q_EMIT elicitationCompleted(elicitationId);
+            }
+        }
     }
 }
 
@@ -614,13 +634,36 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
         sendResult(id, {});
         return;
     }
+    const bool elicitationSupported = mElicitationSupported || mUrlElicitationSupported;
+    const bool isUserRequest = (elicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type()))
+        || (mSamplingSupported && method == QLatin1StringView(McpProtocolCreateMessageRequest::type()));
+    if (isUserRequest && mPendingUserRequests.contains(id)) {
+        // Same id twice: user answer can't be associated to a request
+        sendError(id, -32600, u"Request id already used"_s); // JSON-RPC "Invalid Request"
+        return;
+    }
     if (mRootsSupported && method == QLatin1StringView(McpProtocolListRootsRequest::type())) {
         McpProtocolListRootsResult result;
         result.setRoots(mRoots);
         sendResult(id, McpProtocolListRootsResult::toJson(result));
         return;
     }
-    if (mElicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
+    if (elicitationSupported && method == QLatin1StringView(McpProtocolElicitRequest::type())) {
+        // Specification: mode not declared in capabilities must be rejected with "Invalid params"
+        const QJsonObject params = obj.value("params"_L1).toObject();
+        const QString mode = params.value("mode"_L1).toString(QString::fromLatin1(McpProtocolElicitRequestFormParams::mode()));
+        const bool modeSupported = (mode == QLatin1StringView(McpProtocolElicitRequestFormParams::mode()) && mElicitationSupported)
+            || (mode == QLatin1StringView(McpProtocolElicitRequestURLParams::mode()) && mUrlElicitationSupported);
+        if (!modeSupported) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported elicitation mode:" << mode;
+            sendError(id, -32602, u"Unsupported elicitation mode: %1"_s.arg(mode)); // JSON-RPC "Invalid params"
+            return;
+        }
+        const McpProtocolElicitRequest request = McpProtocolElicitRequest::fromJson(obj);
+        if (request == McpProtocolElicitRequest()) {
+            sendError(id, -32602, u"Invalid elicitation request"_s); // JSON-RPC "Invalid params"
+            return;
+        }
         mPendingUserRequests.append(id);
         if (!isSignalConnected(QMetaMethod::fromSignal(&McpProtocolClientProtocolManager::elicitationRequested))) {
             McpProtocolElicitResult elicitResult;
@@ -628,7 +671,6 @@ void McpProtocolClientProtocolManager::answerServerRequest(const QJsonObject &ob
             respondToElicitation(id, elicitResult);
             return;
         }
-        const McpProtocolElicitRequest request = McpProtocolElicitRequest::fromJson(obj);
         Q_EMIT elicitationRequested(id, request);
         return;
     }
@@ -688,11 +730,15 @@ void McpProtocolClientProtocolManager::initialize()
     clientInfo.setVersion(QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING));
     params.setClientInfo(clientInfo);
     McpProtocolClientCapabilities capabilities;
-    if (mElicitationSupported) {
-        // Only form mode is supported: announce "elicitation": { "form": {} }
+    if (mElicitationSupported || mUrlElicitationSupported) {
+        // Announce supported modes: "elicitation": { "form": {}, "url": {} }
         McpProtocolClientCapabilities::Elicitation elicitation;
-        elicitation.setForm(QMap<QString, QJsonValue>());
-        // TODO add setUrl(...)
+        if (mElicitationSupported) {
+            elicitation.setForm(QMap<QString, QJsonValue>());
+        }
+        if (mUrlElicitationSupported) {
+            elicitation.setUrl(QMap<QString, QJsonValue>());
+        }
         capabilities.setElicitation(std::move(elicitation));
     }
     if (mRootsSupported) {

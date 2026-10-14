@@ -40,4 +40,27 @@ void McpProtocolURLElicitationRequiredErrorTest::shouldRejectMissingRequiredFiel
              McpProtocolURLElicitationRequiredError());
 }
 
+void McpProtocolURLElicitationRequiredErrorTest::shouldReturnElicitations()
+{
+    const QJsonObject validElicitation{{"mode"_L1, u"url"_s},
+                                       {"elicitationId"_L1, u"elicit-1"_s},
+                                       {"message"_L1, u"Authorize access"_s},
+                                       {"url"_L1, u"https://example.com/authorize"_s}};
+    // Invalid entry (no url) is ignored
+    const QJsonObject invalidElicitation{{"mode"_L1, u"url"_s}, {"elicitationId"_L1, u"elicit-2"_s}, {"message"_L1, u"Missing url"_s}};
+    const QJsonObject obj{{"jsonrpc"_L1, u"2.0"_s},
+                          {"id"_L1, 2},
+                          {"error"_L1,
+                           QJsonObject{{"code"_L1, -32042},
+                                       {"message"_L1, u"Authorization required"_s},
+                                       {"data"_L1, QJsonObject{{"elicitations"_L1, QJsonArray{validElicitation, invalidElicitation}}}}}}};
+    const auto error = McpProtocolURLElicitationRequiredError::fromJson(obj);
+    const auto elicitations = error.elicitations();
+    QCOMPARE(elicitations.count(), 1);
+    QCOMPARE(elicitations.constFirst().elicitationId(), u"elicit-1"_s);
+    QCOMPARE(elicitations.constFirst().url(), u"https://example.com/authorize"_s);
+
+    QVERIFY(McpProtocolURLElicitationRequiredError().elicitations().isEmpty());
+}
+
 #include "moc_mcpprotocolurlelicitationrequirederrortest.cpp"

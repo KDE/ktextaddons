@@ -123,6 +123,18 @@ public:
     void setElicitationSupported(bool supported);
 
     /*!
+     * Return true if "elicitation" capability url mode is announced to server.
+     */
+    [[nodiscard]] bool urlElicitationSupported() const;
+    /*!
+     * Announce "elicitation" capability url mode to server when \a supported is true.
+     * Server can then ask user to open an URL (authorization…): elicitationRequested() is emitted with
+     * McpProtocolElicitRequestURLParams. URL must be opened only when user accepted it.
+     * It must be called before initializeClient(). Default is false.
+     */
+    void setUrlElicitationSupported(bool supported);
+
+    /*!
      * Send the answer \a result to the elicitation request \a id received with elicitationRequested().
      */
     void respondToElicitation(const McpProtocolUtils::RequestId &id, const McpProtocolElicitResult &result);
@@ -227,6 +239,11 @@ Q_SIGNALS:
      */
     void userRequestCancelled(const McpProtocolUtils::RequestId &id);
 
+    /*!
+     * Server informs that the url mode elicitation \a elicitationId is completed (user finished interaction in browser).
+     */
+    void elicitationCompleted(const QString &elicitationId);
+
 private:
     struct PendingRequest {
         MethodType type = MethodType::Unknown;
@@ -274,6 +291,7 @@ private:
     QList<McpProtocolUtils::RequestId> mPendingUserRequests;
     QList<McpProtocolRoot> mRoots;
     bool mElicitationSupported = false;
+    bool mUrlElicitationSupported = false;
     bool mRootsSupported = false;
     bool mSamplingSupported = false;
 };

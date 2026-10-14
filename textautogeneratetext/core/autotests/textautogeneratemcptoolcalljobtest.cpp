@@ -13,6 +13,8 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using TextAutoGenerateText::TextAutoGenerateMcpToolCallJob;
@@ -100,6 +102,48 @@ void TextAutoGenerateMcpToolCallJobTest::shouldReportToolError()
     const auto info = callTool(&manager, "foo__failing"_ba, {});
     QVERIFY(info.content.contains(u"failing"_s));
     QVERIFY(!info.content.startsWith(u"failing"_s));
+}
+
+void TextAutoGenerateMcpToolCallJobTest::shouldShowUrlElicitationWhenAuthorizationIsRequired()
+{
+    {
+        // Without elicitation handler: error is returned
+        FakeMcpServer fakeServer;
+        fakeServer.tools.append(tool(u"authorize"_s));
+        TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+        const auto server = fakeServer.mcpServer(u"foo"_s);
+        serverManager.mcpServerModel()->addMcpServer(server);
+        TextAutoGenerateMcpToolsManager manager(&serverManager);
+        manager.connectServer(server.identifier());
+        QTRY_VERIFY(manager.tool("foo__authorize"_ba).has_value());
+        const auto info = callTool(&manager, "foo__authorize"_ba, {});
+        QVERIFY(info.content.contains(u"Authorization required"_s));
+    }
+    {
+        FakeMcpServer fakeServer;
+        fakeServer.tools.append(tool(u"authorize"_s));
+        TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+        const auto server = fakeServer.mcpServer(u"foo"_s);
+        serverManager.mcpServerModel()->addMcpServer(server);
+        TextAutoGenerateMcpToolsManager manager(&serverManager);
+        QList<TextAutoGenerateMcpToolsManager::ElicitationInfo> infos;
+        manager.setElicitationHandler([&infos](const TextAutoGenerateMcpToolsManager::ElicitationInfo &info,
+                                               const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer) {
+            Q_UNUSED(answer)
+            infos.append(info);
+        });
+        manager.connectServer(server.identifier());
+        QTRY_VERIFY(manager.tool("foo__authorize"_ba).has_value());
+        const auto info = callTool(&manager, "foo__authorize"_ba, {});
+        QVERIFY(info.content.contains(u"authorize"_s));
+        QVERIFY(!info.content.contains(u"Authorization required"_s));
+        QCOMPARE(infos.count(), 1);
+        QCOMPARE(infos.constFirst().serverName, u"foo"_s);
+        const auto params = infos.constFirst().request.params();
+        const auto urlParams = std::get_if<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams>(&params);
+        QVERIFY(urlParams);
+        QCOMPARE(urlParams->url(), u"https://example.com/authorize"_s);
+    }
 }
 
 void TextAutoGenerateMcpToolCallJobTest::shouldReportUnavailableTool()

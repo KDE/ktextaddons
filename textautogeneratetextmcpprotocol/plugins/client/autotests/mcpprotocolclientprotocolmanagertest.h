@@ -19,6 +19,9 @@ private Q_SLOTS:
     void shouldAnnounceElicitationCapability();
     void shouldAnswerServerRequests();
     void shouldAnswerElicitationRequest();
+    void shouldRejectDuplicatedElicitationId();
+    void shouldAnnounceUrlElicitationCapability();
+    void shouldAnswerUrlElicitationRequest();
     void shouldAnnounceRootsCapability();
     void shouldAnswerRootsList();
     void shouldNotifyRootsListChanged();

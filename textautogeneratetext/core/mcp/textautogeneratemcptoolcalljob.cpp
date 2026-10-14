@@ -11,6 +11,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolURLElicitationRequiredError>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

@@ -15,6 +15,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceResult>
@@ -101,6 +102,27 @@ FakeMcpHttpServer::Handler createElicitationHandler()
                                               {"message"_L1, u"Name?"_s},
                                               {"requestedSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{}}}}}}};
         FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(elicit) + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    });
+}
+
+FakeMcpHttpServer::Handler createUrlElicitationHandler()
+{
+    return createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        // Server asks user to open an URL, then informs that interaction is completed
+        const QJsonObject elicit{{"jsonrpc"_L1, u"2.0"_s},
+                                 {"id"_L1, u"srv-1"_s},
+                                 {"method"_L1, u"elicitation/create"_s},
+                                 {"params"_L1,
+                                  QJsonObject{{"mode"_L1, u"url"_s},
+                                              {"elicitationId"_L1, u"elicit-1"_s},
+                                              {"message"_L1, u"Please authorize"_s},
+                                              {"url"_L1, u"https://example.com/authorize"_s}}}};
+        const QJsonObject complete{{"jsonrpc"_L1, u"2.0"_s},
+                                   {"method"_L1, u"notifications/elicitation/complete"_s},
+                                   {"params"_L1, QJsonObject{{"elicitationId"_L1, u"elicit-1"_s}}}};
+        FakeMcpHttpServer::sendEventStream(socket,
+                                           FakeMcpHttpServer::jsonEvent(elicit) + FakeMcpHttpServer::jsonEvent(complete)
+                                               + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
     });
 }
 
@@ -263,6 +285,106 @@ void McpProtocolClientProtocolManagerTest::shouldAnswerElicitationRequest()
         QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
         QCOMPARE(requested, 1);
         QCOMPARE(serverRequestResponse(fakeServer).value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
+    }
+}
+
+void McpProtocolClientProtocolManagerTest::shouldRejectDuplicatedElicitationId()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        // Server sends twice the same request id
+        const QJsonObject elicit{{"jsonrpc"_L1, u"2.0"_s},
+                                 {"id"_L1, u"srv-1"_s},
+                                 {"method"_L1, u"elicitation/create"_s},
+                                 {"params"_L1,
+                                  QJsonObject{{"mode"_L1, u"form"_s},
+                                              {"message"_L1, u"Name?"_s},
+                                              {"requestedSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{}}}}}}};
+        FakeMcpHttpServer::sendEventStream(socket,
+                                           FakeMcpHttpServer::jsonEvent(elicit) + FakeMcpHttpServer::jsonEvent(elicit)
+                                               + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    manager.setElicitationSupported(true);
+    // User doesn't answer: first request stays pending
+    const QSignalSpy elicitationSpy(&manager, &McpProtocolClientProtocolManager::elicitationRequested);
+    initialize(manager);
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+    QCOMPARE(serverRequestResponse(fakeServer).value("error"_L1).toObject().value("code"_L1).toInt(), -32600);
+    QCOMPARE(elicitationSpy.count(), 1);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnnounceUrlElicitationCapability()
+{
+    {
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        QVERIFY(!manager.urlElicitationSupported());
+        manager.setUrlElicitationSupported(true);
+        QVERIFY(manager.urlElicitationSupported());
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        const QJsonObject capabilities = initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject();
+        QCOMPARE(capabilities.value("elicitation"_L1).toObject(), QJsonObject({{"url"_L1, QJsonObject()}}));
+    }
+    {
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setElicitationSupported(true);
+        manager.setUrlElicitationSupported(true);
+        initialize(manager);
+        const QJsonObject initialize = postedMessages(fakeServer, u"initialize"_s).constFirst();
+        const QJsonObject capabilities = initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject();
+        QCOMPARE(capabilities.value("elicitation"_L1).toObject(), QJsonObject({{"form"_L1, QJsonObject()}, {"url"_L1, QJsonObject()}}));
+    }
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAnswerUrlElicitationRequest()
+{
+    {
+        // Url mode not announced: request is rejected
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createUrlElicitationHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setElicitationSupported(true);
+        const QSignalSpy elicitationSpy(&manager, &McpProtocolClientProtocolManager::elicitationRequested);
+        const QSignalSpy completedSpy(&manager, &McpProtocolClientProtocolManager::elicitationCompleted);
+        initialize(manager);
+        manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        QCOMPARE(serverRequestResponse(fakeServer).value("error"_L1).toObject().value("code"_L1).toInt(), -32602);
+        QCOMPARE(elicitationSpy.count(), 0);
+        QCOMPARE(completedSpy.count(), 0);
+    }
+    {
+        FakeMcpHttpServer fakeServer;
+        fakeServer.setHandler(createUrlElicitationHandler());
+        McpProtocolClientProtocolManager manager(createServer(fakeServer));
+        manager.setUrlElicitationSupported(true);
+        connect(&manager,
+                &McpProtocolClientProtocolManager::elicitationRequested,
+                this,
+                [&manager](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                           const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
+                    const auto params = request.params();
+                    const auto urlParams = std::get_if<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams>(&params);
+                    QVERIFY(urlParams);
+                    QCOMPARE(urlParams->url(), u"https://example.com/authorize"_s);
+                    QCOMPARE(urlParams->elicitationId(), u"elicit-1"_s);
+                    TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult result;
+                    result.setAction(TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult::Action::Accept);
+                    manager.respondToElicitation(id, result);
+                });
+        const QSignalSpy completedSpy(&manager, &McpProtocolClientProtocolManager::elicitationCompleted);
+        initialize(manager);
+        manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+        QTRY_VERIFY(!serverRequestResponse(fakeServer).isEmpty());
+        QCOMPARE(serverRequestResponse(fakeServer).value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
+        QTRY_COMPARE(completedSpy.count(), 1);
+        QCOMPARE(completedSpy.at(0).at(0).toString(), u"elicit-1"_s);
     }
 }
 

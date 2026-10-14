@@ -111,6 +111,11 @@ void McpProtocolElicitRequestFormParamsTest::shouldRejectMissingRequiredFields()
     obj["requestedSchema"_L1] = requestedSchema;
     QVERIFY(McpProtocolElicitRequestFormParams::fromJson(obj).isValid());
 
+    // Empty message is allowed by specification
+    QJsonObject emptyMessage = obj;
+    emptyMessage["message"_L1] = u""_s;
+    QVERIFY(McpProtocolElicitRequestFormParams::fromJson(emptyMessage).isValid());
+
     QJsonObject missingMessage = obj;
     missingMessage.remove("message"_L1);
     QCOMPARE(McpProtocolElicitRequestFormParams::fromJson(missingMessage), McpProtocolElicitRequestFormParams());

@@ -15,6 +15,7 @@
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
@@ -125,6 +126,8 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
     }
     if (mElicitationHandler) {
         client->setElicitationSupported(true);
+        // Handler shows URL to user, it's opened only when user accepts it
+        client->setUrlElicitationSupported(true);
         connect(client,
                 &McpProtocolClientProtocolManager::elicitationRequested,
                 this,
@@ -549,6 +552,26 @@ void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
             callback(confirmation != ToolConfirmation::Deny);
         }
     });
+}
+
+bool TextAutoGenerateMcpToolsManager::showUrlElicitations(const QByteArray &serverIdentifier,
+                                                          const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams> &elicitations)
+{
+    if (!mElicitationHandler || elicitations.isEmpty()) {
+        return false;
+    }
+    const QString serverName = mServerManager->mcpServerModel()->mcpServer(serverIdentifier).name();
+    for (const auto &params : elicitations) {
+        // Not a server request: there is no answer to send
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
+        request.setParams(params);
+        const ElicitationInfo info{
+            .serverName = serverName,
+            .request = request,
+        };
+        mElicitationHandler(info, [](const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &) { });
+    }
+    return true;
 }
 
 McpProtocolClientProtocolManager *TextAutoGenerateMcpToolsManager::client(const QByteArray &serverIdentifier) const

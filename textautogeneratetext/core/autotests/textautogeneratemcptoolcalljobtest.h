@@ -18,6 +18,7 @@ private Q_SLOTS:
     void shouldConvertResultToText();
     void shouldCallTool();
     void shouldReportToolError();
+    void shouldShowUrlElicitationWhenAuthorizationIsRequired();
     void shouldReportUnavailableTool();
     void shouldCallOnlySelectedTools();
     void shouldAskConfirmation();

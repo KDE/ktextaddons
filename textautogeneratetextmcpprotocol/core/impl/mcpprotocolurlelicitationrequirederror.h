@@ -5,7 +5,9 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QList>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
@@ -48,6 +50,11 @@ public:
     /*!
      */
     void setError(const McpProtocolError &newError);
+
+    /*!
+     * URLs that user must open before request can succeed ("error.data.elicitations"). Invalid entries are ignored.
+     */
+    [[nodiscard]] QList<McpProtocolElicitRequestURLParams> elicitations() const;
 
 private:
     std::optional<McpProtocolUtils::RequestId> mId;

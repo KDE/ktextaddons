@@ -21,6 +21,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
 class McpServerManager;
 class McpProtocolClientProtocolManager;
 class McpProtocolElicitResult;
+class McpProtocolElicitRequestURLParams;
 class McpProtocolRoot;
 }
 
@@ -195,6 +196,13 @@ public:
      * \a callback is not called if \a context is deleted.
      */
     void confirmToolCall(const McpTool &tool, const QJsonObject &arguments, QObject *context, const std::function<void(bool)> &callback);
+    /*!
+     * Server \a serverIdentifier needs that user opens \a elicitations URLs (e.g. authorization) before a request can succeed.
+     * They are shown with elicitation handler, an URL is opened only when user accepts it.
+     * Return false when there is no elicitation handler.
+     */
+    bool showUrlElicitations(const QByteArray &serverIdentifier,
+                             const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams> &elicitations);
 
 Q_SIGNALS:
     void statusChanged(const QByteArray &identifier);
