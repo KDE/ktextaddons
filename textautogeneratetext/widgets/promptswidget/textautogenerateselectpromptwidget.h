@@ -11,6 +11,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+class TextAutoGeneratePrompt;
 class TextAutoGenerateTextPromptModel;
 class TextAutoGenerateSelectPromptListWidget;
 class TextAutoGenerateSearchPromptWidget;
@@ -22,7 +23,8 @@ public:
     ~TextAutoGenerateSelectPromptWidget() override;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemovePrompt(const QByteArray &identifier);
     TextAutoGenerateSelectPromptListWidget *const mListWidget;
     TextAutoGenerateTextPromptModel *const mPromptModel;

@@ -37,14 +37,20 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     mainLayout->addWidget(mListWidget);
 
     connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::addPrompt, this, &TextAutoGenerateSelectPromptWidget::slotAddPrompt);
+    connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::editPrompt, this, &TextAutoGenerateSelectPromptWidget::slotEditPrompt);
     connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::removePrompt, this, &TextAutoGenerateSelectPromptWidget::slotRemovePrompt);
 }
 
 TextAutoGenerateSelectPromptWidget::~TextAutoGenerateSelectPromptWidget() = default;
 
-void TextAutoGenerateSelectPromptWidget::slotAddPrompt()
+void TextAutoGenerateSelectPromptWidget::slotEditPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
     // TODO
+}
+
+void TextAutoGenerateSelectPromptWidget::slotAddPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
+{
+    mPromptModel->addPrompt(prompt);
 }
 
 void TextAutoGenerateSelectPromptWidget::slotRemovePrompt(const QByteArray &identifier)
