@@ -786,6 +786,32 @@ void McpProtocolClientProtocolManagerTest::shouldStopPaginationWhenCursorDoesNot
     QCOMPARE(toolNames(receivedSpy.at(0).at(0).toJsonObject()), QStringList({u"a"_s, u"a"_s}));
 }
 
+void McpProtocolClientProtocolManagerTest::shouldFetchPageWithEmptyCursor()
+{
+    // Empty string is a valid opaque cursor: only absence of nextCursor ends pagination
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        const QJsonObject params = obj.value("params"_L1).toObject();
+        QJsonObject page;
+        if (!params.contains("cursor"_L1)) {
+            page = QJsonObject{{"tools"_L1, QJsonArray{tool(u"a"_s)}}, {"nextCursor"_L1, QString()}};
+        } else {
+            page = QJsonObject{{"tools"_L1, QJsonArray{tool(u"b"_s)}}};
+        }
+        sendJson(socket, result(obj.value("id"_L1), page));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(toolNames(receivedSpy.at(0).at(0).toJsonObject()), QStringList({u"a"_s, u"b"_s}));
+    const auto requests = postedMessages(fakeServer, u"tools/list"_s);
+    QCOMPARE(requests.count(), 2);
+    QVERIFY(requests.at(1).value("params"_L1).toObject().contains("cursor"_L1));
+    QCOMPARE(requests.at(1).value("params"_L1).toObject().value("cursor"_L1).toString(), QString());
+}
+
 void McpProtocolClientProtocolManagerTest::shouldReturnErrorOfPage()
 {
     FakeMcpHttpServer fakeServer;

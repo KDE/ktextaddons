@@ -37,6 +37,7 @@ private Q_SLOTS:
     void shouldNotReadResourceWhenServerDoesNotSupportResources();
     void shouldFetchAllPages();
     void shouldStopPaginationWhenCursorDoesNotChange();
+    void shouldFetchPageWithEmptyCursor();
     void shouldReturnErrorOfPage();
     void shouldEmitListChangedSignals();
 };

@@ -304,7 +304,7 @@ void McpProtocolServerProtocolManager::listTools(const QJsonValue &id, const QJs
 {
     const QList<McpProtocolTool> allTools = tools();
     bool ok = true;
-    const QString cursor = McpProtocolPaginatedRequestParams::fromJson(params).cursor();
+    const QString cursor = McpProtocolPaginatedRequestParams::fromJson(params).cursor().value_or(QString());
     const int start = cursor.isEmpty() ? 0 : cursor.toInt(&ok);
     // An empty list is valid on first page
     if (!ok || start < 0 || (start > 0 && start >= allTools.count())) {
