@@ -100,7 +100,7 @@ void TextAutoGenerateAgentPrompSkillManager::saveSkills() const
 {
     auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::skillConfigFileName());
 
-    const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
+    const auto instanceList = TextAutoGenerateTextUtils::skillsList(config);
     for (const auto &group : instanceList) {
         config->deleteGroup(group);
     }
@@ -116,7 +116,7 @@ void TextAutoGenerateAgentPrompSkillManager::savePrompts() const
 {
     auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::promptConfigFileName());
 
-    const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
+    const auto instanceList = TextAutoGenerateTextUtils::promptsList(config);
     for (const auto &group : instanceList) {
         config->deleteGroup(group);
     }

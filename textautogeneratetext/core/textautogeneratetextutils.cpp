@@ -42,7 +42,7 @@ QStringList TextAutoGenerateTextUtils::promptsList(const KSharedConfig::Ptr &con
 
 QString TextAutoGenerateTextUtils::skillConfigFileName()
 {
-    return u"autogeneratetextprompts"_s;
+    return u"autogeneratetextskills"_s;
 }
 
 QStringList TextAutoGenerateTextUtils::skillsList(const KSharedConfig::Ptr &config)
