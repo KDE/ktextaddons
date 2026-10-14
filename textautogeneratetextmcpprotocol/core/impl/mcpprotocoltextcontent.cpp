@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolTextContent::McpProtocolTextContent() = default;
 
+McpProtocolTextContent::~McpProtocolTextContent() = default;
+
 QByteArray McpProtocolTextContent::type()
 {
     return "text"_ba;

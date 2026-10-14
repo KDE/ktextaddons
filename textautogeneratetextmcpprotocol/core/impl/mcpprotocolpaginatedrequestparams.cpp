@@ -11,6 +11,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPaginatedRequestParams::McpProtocolPaginatedRequestParams() = default;
 
+McpProtocolPaginatedRequestParams::~McpProtocolPaginatedRequestParams() = default;
+
 bool McpProtocolPaginatedRequestParams::operator==(const McpProtocolPaginatedRequestParams &other) const = default;
 bool McpProtocolPaginatedRequestParams::Meta::operator==(const McpProtocolPaginatedRequestParams::Meta &other) const = default;
 

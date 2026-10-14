@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolListResourcesRequest();
+    /*!
+     */
+    ~McpProtocolListResourcesRequest();
 
     /*!
      */

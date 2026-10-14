@@ -49,6 +49,9 @@ public:
     /*!
      */
     McpProtocolCreateMessageRequestParams();
+    /*!
+     */
+    ~McpProtocolCreateMessageRequestParams();
 
     /*!
      */

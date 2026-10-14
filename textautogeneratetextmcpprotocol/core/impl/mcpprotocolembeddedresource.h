@@ -22,6 +22,9 @@ public:
     /*!
      */
     McpProtocolEmbeddedResource();
+    /*!
+     */
+    ~McpProtocolEmbeddedResource();
 
     /*!
      */

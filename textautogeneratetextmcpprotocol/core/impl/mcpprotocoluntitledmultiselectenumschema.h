@@ -34,6 +34,9 @@ public:
     /*!
      */
     McpProtocolUntitledMultiSelectEnumSchema();
+    /*!
+     */
+    ~McpProtocolUntitledMultiSelectEnumSchema();
 
     /*!
      */

@@ -20,6 +20,9 @@ public:
     /*!
      */
     McpProtocolReadResourceResult();
+    /*!
+     */
+    ~McpProtocolReadResourceResult();
 
     /*!
      */

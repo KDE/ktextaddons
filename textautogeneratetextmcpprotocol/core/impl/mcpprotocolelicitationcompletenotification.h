@@ -26,6 +26,9 @@ public:
     /*!
      */
     McpProtocolElicitationCompleteNotification();
+    /*!
+     */
+    ~McpProtocolElicitationCompleteNotification();
 
     [[nodiscard]] static QByteArray type();
 

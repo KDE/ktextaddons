@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequestParams::McpProtocolCompleteRequestParams() = default;
 
+McpProtocolCompleteRequestParams::~McpProtocolCompleteRequestParams() = default;
+
 bool McpProtocolCompleteRequestParams::operator==(const McpProtocolCompleteRequestParams &other) const = default;
 bool McpProtocolCompleteRequestParams::Meta::operator==(const McpProtocolCompleteRequestParams::Meta &other) const = default;
 

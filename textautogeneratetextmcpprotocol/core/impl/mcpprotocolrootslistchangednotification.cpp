@@ -11,6 +11,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolRootsListChangedNotification::McpProtocolRootsListChangedNotification() = default;
+McpProtocolRootsListChangedNotification::~McpProtocolRootsListChangedNotification() = default;
 
 QByteArray McpProtocolRootsListChangedNotification::type()
 {

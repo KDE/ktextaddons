@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCancelledNotificationParams::McpProtocolCancelledNotificationParams() = default;
 
+McpProtocolCancelledNotificationParams::~McpProtocolCancelledNotificationParams() = default;
+
 bool McpProtocolCancelledNotificationParams::operator==(const McpProtocolCancelledNotificationParams &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelledNotificationParams &t)

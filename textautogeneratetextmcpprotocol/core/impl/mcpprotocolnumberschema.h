@@ -24,6 +24,9 @@ public:
     /*!
      */
     McpProtocolNumberSchema();
+    /*!
+     */
+    ~McpProtocolNumberSchema();
 
     /*!
      */

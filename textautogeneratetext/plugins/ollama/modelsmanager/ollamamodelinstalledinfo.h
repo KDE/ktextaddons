@@ -14,6 +14,7 @@ class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledInfo : public Plug
 {
 public:
     OllamaModelInstalledInfo();
+    ~OllamaModelInstalledInfo();
 
     [[nodiscard]] QString family() const;
     void setFamily(const QString &newFamily);

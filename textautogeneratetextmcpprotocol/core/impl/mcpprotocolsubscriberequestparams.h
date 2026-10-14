@@ -37,6 +37,9 @@ public:
     /*!
      */
     McpProtocolSubscribeRequestParams();
+    /*!
+     */
+    ~McpProtocolSubscribeRequestParams();
 
     /*!
      */

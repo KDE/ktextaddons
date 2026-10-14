@@ -18,6 +18,9 @@ public:
     /*!
      */
     McpProtocolPromptReference();
+    /*!
+     */
+    ~McpProtocolPromptReference();
 
     /*!
      */

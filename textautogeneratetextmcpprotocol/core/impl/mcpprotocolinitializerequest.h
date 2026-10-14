@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolInitializeRequest();
+    /*!
+     */
+    ~McpProtocolInitializeRequest();
 
     /*!
      */

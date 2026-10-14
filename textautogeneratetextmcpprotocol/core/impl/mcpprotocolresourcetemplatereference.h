@@ -17,6 +17,9 @@ public:
     /*!
      */
     McpProtocolResourceTemplateReference();
+    /*!
+     */
+    ~McpProtocolResourceTemplateReference();
 
     /*!
      */

@@ -25,6 +25,10 @@ public:
      */
     TextAutoGenerateSearchMessage();
     /*!
+     * Destroys the TextAutoGenerateSearchMessage object.
+     */
+    ~TextAutoGenerateSearchMessage();
+    /*!
      * Returns the chat identifier.
      * \return The chat ID
      */

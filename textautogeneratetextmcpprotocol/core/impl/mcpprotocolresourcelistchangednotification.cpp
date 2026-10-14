@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceListChangedNotification::McpProtocolResourceListChangedNotification() = default;
 
+McpProtocolResourceListChangedNotification::~McpProtocolResourceListChangedNotification() = default;
+
 QByteArray McpProtocolResourceListChangedNotification::type()
 {
     return "notifications/resources/list_changed"_ba;

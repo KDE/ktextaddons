@@ -13,6 +13,7 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCreateMessageResult::McpProtocolCreateMessageResult() = default;
 
 bool McpProtocolCreateMessageResult::operator==(const McpProtocolCreateMessageResult &other) const = default;
+McpProtocolCreateMessageResult::~McpProtocolCreateMessageResult() = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageResult &t)
 {

@@ -20,6 +20,9 @@ public:
     /*!
      */
     McpProtocolElicitRequest();
+    /*!
+     */
+    ~McpProtocolElicitRequest();
 
     /*!
      */

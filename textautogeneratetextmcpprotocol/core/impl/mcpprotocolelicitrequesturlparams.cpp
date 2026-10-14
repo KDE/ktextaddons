@@ -11,6 +11,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitRequestURLParams::McpProtocolElicitRequestURLParams() = default;
+McpProtocolElicitRequestURLParams::~McpProtocolElicitRequestURLParams() = default;
 
 QByteArray McpProtocolElicitRequestURLParams::mode()
 {

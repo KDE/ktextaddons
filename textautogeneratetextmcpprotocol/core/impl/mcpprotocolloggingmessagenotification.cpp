@@ -12,6 +12,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolLoggingMessageNotification::McpProtocolLoggingMessageNotification() = default;
+McpProtocolLoggingMessageNotification::~McpProtocolLoggingMessageNotification() = default;
 
 QByteArray McpProtocolLoggingMessageNotification::type()
 {

@@ -9,6 +9,8 @@ using namespace Qt::Literals::StringLiterals;
 
 Translator::Translator() = default;
 
+Translator::~Translator() = default;
+
 void Translator::parse(const QJsonObject &obj, bool remote)
 {
     mUrl = obj["url"_L1].toString();

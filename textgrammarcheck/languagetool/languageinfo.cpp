@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 
 LanguageInfo::LanguageInfo() = default;
 
+LanguageInfo::~LanguageInfo() = default;
+
 QString LanguageInfo::name() const
 {
     return mName;

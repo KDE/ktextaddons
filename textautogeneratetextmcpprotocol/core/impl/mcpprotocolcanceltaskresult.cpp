@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCancelTaskResult::McpProtocolCancelTaskResult() = default;
 
+McpProtocolCancelTaskResult::~McpProtocolCancelTaskResult() = default;
+
 bool McpProtocolCancelTaskResult::operator==(const McpProtocolCancelTaskResult &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskResult &t)

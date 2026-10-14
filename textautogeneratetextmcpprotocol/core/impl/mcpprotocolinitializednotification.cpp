@@ -11,6 +11,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolInitializedNotification::McpProtocolInitializedNotification() = default;
+McpProtocolInitializedNotification::~McpProtocolInitializedNotification() = default;
 
 QByteArray McpProtocolInitializedNotification::type()
 {

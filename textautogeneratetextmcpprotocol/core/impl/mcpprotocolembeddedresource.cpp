@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolEmbeddedResource::McpProtocolEmbeddedResource() = default;
 
+McpProtocolEmbeddedResource::~McpProtocolEmbeddedResource() = default;
+
 QByteArray McpProtocolEmbeddedResource::type()
 {
     return "resource"_ba;

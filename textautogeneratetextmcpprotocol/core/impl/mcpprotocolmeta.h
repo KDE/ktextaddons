@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolMeta();
+    /*!
+     */
+    ~McpProtocolMeta();
 
     /*!
      */

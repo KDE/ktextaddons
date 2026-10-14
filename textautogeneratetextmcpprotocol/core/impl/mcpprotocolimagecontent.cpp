@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolImageContent::McpProtocolImageContent() = default;
 
+McpProtocolImageContent::~McpProtocolImageContent() = default;
+
 QByteArray McpProtocolImageContent::type()
 {
     return "image"_ba;

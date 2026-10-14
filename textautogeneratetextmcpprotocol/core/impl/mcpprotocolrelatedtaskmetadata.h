@@ -16,6 +16,9 @@ public:
     /*!
      */
     McpProtocolRelatedTaskMetadata();
+    /*!
+     */
+    ~McpProtocolRelatedTaskMetadata();
 
     /*!
      */

@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolProgressNotificationParams::McpProtocolProgressNotificationParams() = default;
 
+McpProtocolProgressNotificationParams::~McpProtocolProgressNotificationParams() = default;
+
 bool McpProtocolProgressNotificationParams::operator==(const McpProtocolProgressNotificationParams &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotificationParams &t)

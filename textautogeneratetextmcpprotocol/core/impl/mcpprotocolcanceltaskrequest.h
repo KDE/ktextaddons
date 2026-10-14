@@ -27,6 +27,9 @@ public:
     /*!
      */
     McpProtocolCancelTaskRequest();
+    /*!
+     */
+    ~McpProtocolCancelTaskRequest();
 
     /*!
      */

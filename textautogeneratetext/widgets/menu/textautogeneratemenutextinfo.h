@@ -23,6 +23,9 @@ public:
     /*!
      */
     TextAutoGenerateMenuTextInfo();
+    /*!
+     */
+    ~TextAutoGenerateMenuTextInfo();
 
     /*!
      */

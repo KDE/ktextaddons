@@ -20,6 +20,9 @@ public:
     /*!
      */
     McpProtocolToolListChangedNotification();
+    /*!
+     */
+    ~McpProtocolToolListChangedNotification();
 
     /*!
      */

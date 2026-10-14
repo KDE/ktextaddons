@@ -18,6 +18,9 @@ public:
     /*!
      */
     McpProtocolCancelledNotification();
+    /*!
+     */
+    ~McpProtocolCancelledNotification();
 
     /*!
      */

@@ -37,6 +37,9 @@ public:
     /*!
      */
     McpProtocolReadResourceRequestParams();
+    /*!
+     */
+    ~McpProtocolReadResourceRequestParams();
 
     /*!
      */

@@ -21,6 +21,9 @@ public:
     /*!
      */
     McpProtocolTextContent();
+    /*!
+     */
+    ~McpProtocolTextContent();
 
     /*!
      */

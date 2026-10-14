@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPromptReference::McpProtocolPromptReference() = default;
 
+McpProtocolPromptReference::~McpProtocolPromptReference() = default;
+
 QByteArray McpProtocolPromptReference::type()
 {
     return "ref/prompt"_ba;

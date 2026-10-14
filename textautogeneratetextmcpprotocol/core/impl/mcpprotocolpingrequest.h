@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolPingRequest();
+    /*!
+     */
+    ~McpProtocolPingRequest();
 
     /*!
      */

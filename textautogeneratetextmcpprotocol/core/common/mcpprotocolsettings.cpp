@@ -13,6 +13,7 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolSettings::McpProtocolSettings() = default;
 
 bool McpProtocolSettings::operator==(const McpProtocolSettings &other) const = default;
+McpProtocolSettings::~McpProtocolSettings() = default;
 
 QString McpProtocolSettings::command() const
 {

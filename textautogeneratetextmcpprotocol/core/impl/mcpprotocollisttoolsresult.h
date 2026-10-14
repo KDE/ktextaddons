@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolListToolsResult();
+    /*!
+     */
+    ~McpProtocolListToolsResult();
 
     /*!
      */

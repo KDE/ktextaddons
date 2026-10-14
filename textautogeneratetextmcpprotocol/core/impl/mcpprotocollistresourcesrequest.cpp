@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolListResourcesRequest::McpProtocolListResourcesRequest() = default;
 
+McpProtocolListResourcesRequest::~McpProtocolListResourcesRequest() = default;
+
 QByteArray McpProtocolListResourcesRequest::type()
 {
     return "resources/list"_ba;

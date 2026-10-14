@@ -14,6 +14,7 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteGrammarError : public GrammarErro
 {
 public:
     GrammalecteGrammarError();
+    ~GrammalecteGrammarError() override;
     void parse(const QJsonObject &obj, int blockindex) override;
 
 private:

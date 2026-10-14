@@ -28,6 +28,9 @@ public:
     /*!
      */
     McpProtocolCallToolResult();
+    /*!
+     */
+    ~McpProtocolCallToolResult();
 
     /*!
      */

@@ -10,6 +10,8 @@ using namespace Qt::Literals::StringLiterals;
 
 VoskSpeechToTextInfo::VoskSpeechToTextInfo() = default;
 
+VoskSpeechToTextInfo::~VoskSpeechToTextInfo() = default;
+
 bool VoskSpeechToTextInfo::isValid() const
 {
     return !mIdentifier.isEmpty() && !mUrl.isEmpty() && !mObsolete && isRecognitionModel();

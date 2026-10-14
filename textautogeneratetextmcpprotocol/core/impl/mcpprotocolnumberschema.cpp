@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolNumberSchema::McpProtocolNumberSchema() = default;
 
+McpProtocolNumberSchema::~McpProtocolNumberSchema() = default;
+
 bool McpProtocolNumberSchema::operator==(const McpProtocolNumberSchema &other) const = default;
 
 std::optional<double> McpProtocolNumberSchema::defaultValue() const

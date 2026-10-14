@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceUpdatedNotificationParams::McpProtocolResourceUpdatedNotificationParams() = default;
 
+McpProtocolResourceUpdatedNotificationParams::~McpProtocolResourceUpdatedNotificationParams() = default;
+
 bool McpProtocolResourceUpdatedNotificationParams::operator==(const McpProtocolResourceUpdatedNotificationParams &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams &t)

@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolElicitationCompleteNotification::McpProtocolElicitationCompleteNotification() = default;
 
+McpProtocolElicitationCompleteNotification::~McpProtocolElicitationCompleteNotification() = default;
+
 QByteArray McpProtocolElicitationCompleteNotification::type()
 {
     return "notifications/elicitation/complete"_ba;

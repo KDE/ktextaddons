@@ -9,6 +9,8 @@
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuTextInfo::TextAutoGenerateMenuTextInfo() = default;
 
+TextAutoGenerateMenuTextInfo::~TextAutoGenerateMenuTextInfo() = default;
+
 bool TextAutoGenerateMenuTextInfo::enabled() const
 {
     return mEnabled;

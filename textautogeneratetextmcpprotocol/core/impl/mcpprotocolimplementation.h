@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolImplementation();
+    /*!
+     */
+    ~McpProtocolImplementation();
 
     /*!
      */

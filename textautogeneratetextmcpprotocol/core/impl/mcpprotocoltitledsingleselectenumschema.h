@@ -38,6 +38,9 @@ public:
     /*!
      */
     McpProtocolTitledSingleSelectEnumSchema();
+    /*!
+     */
+    ~McpProtocolTitledSingleSelectEnumSchema();
 
     /*!
      */

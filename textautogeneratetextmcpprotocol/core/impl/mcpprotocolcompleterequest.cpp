@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequest::McpProtocolCompleteRequest() = default;
 
+McpProtocolCompleteRequest::~McpProtocolCompleteRequest() = default;
+
 QByteArray McpProtocolCompleteRequest::type()
 {
     return "completion/complete"_ba;

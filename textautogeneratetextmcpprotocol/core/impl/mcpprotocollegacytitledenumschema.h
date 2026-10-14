@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolLegacyTitledEnumSchema();
+    /*!
+     */
+    ~McpProtocolLegacyTitledEnumSchema();
 
     [[nodiscard]] static QByteArray type();
 

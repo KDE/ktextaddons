@@ -9,6 +9,8 @@
 
 GenericNetworkModelAvailableInfos::GenericNetworkModelAvailableInfos() = default;
 
+GenericNetworkModelAvailableInfos::~GenericNetworkModelAvailableInfos() = default;
+
 void GenericNetworkModelAvailableInfos::parseModelsInfo(const QJsonArray &array)
 {
     QList<GenericNetworkModelAvailableInfo> lstInfo;

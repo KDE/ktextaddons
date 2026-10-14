@@ -38,6 +38,9 @@ public:
     /*!
      */
     McpProtocolTaskAugmentedRequestParams();
+    /*!
+     */
+    ~McpProtocolTaskAugmentedRequestParams();
 
     /*!
      */

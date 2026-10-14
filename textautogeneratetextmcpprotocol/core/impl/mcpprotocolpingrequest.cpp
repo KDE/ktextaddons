@@ -12,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPingRequest::McpProtocolPingRequest() = default;
 
+McpProtocolPingRequest::~McpProtocolPingRequest() = default;
+
 QByteArray McpProtocolPingRequest::type()
 {
     return "ping"_ba;

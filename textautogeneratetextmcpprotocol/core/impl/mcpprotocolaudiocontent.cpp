@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolAudioContent::McpProtocolAudioContent() = default;
 
+McpProtocolAudioContent::~McpProtocolAudioContent() = default;
+
 QByteArray McpProtocolAudioContent::type()
 {
     return "audio"_ba;

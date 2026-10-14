@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolJSONRPCErrorResponse::McpProtocolJSONRPCErrorResponse() = default;
 
+McpProtocolJSONRPCErrorResponse::~McpProtocolJSONRPCErrorResponse() = default;
+
 bool McpProtocolJSONRPCErrorResponse::operator==(const McpProtocolJSONRPCErrorResponse &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse &t)

@@ -16,6 +16,8 @@ using namespace Qt::Literals::StringLiterals;
 
 GrammalecteGrammarError::GrammalecteGrammarError() = default;
 
+GrammalecteGrammarError::~GrammalecteGrammarError() = default;
+
 QStringList GrammalecteGrammarError::parseSuggestion(const QJsonObject &obj)
 {
     QStringList lst;

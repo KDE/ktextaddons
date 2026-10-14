@@ -39,6 +39,9 @@ public:
     /*!
      */
     McpProtocolCallToolRequestParams();
+    /*!
+     */
+    ~McpProtocolCallToolRequestParams();
 
     /*!
      */

@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCallToolRequest::McpProtocolCallToolRequest() = default;
 
+McpProtocolCallToolRequest::~McpProtocolCallToolRequest() = default;
+
 QByteArray McpProtocolCallToolRequest::type()
 {
     return "tools/call"_ba;

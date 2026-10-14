@@ -11,6 +11,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolUnsubscribeRequest::McpProtocolUnsubscribeRequest() = default;
 
+McpProtocolUnsubscribeRequest::~McpProtocolUnsubscribeRequest() = default;
+
 QByteArray McpProtocolUnsubscribeRequest::type()
 {
     return "resources/unsubscribe"_ba;

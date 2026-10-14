@@ -39,6 +39,9 @@ public:
     /*!
      */
     McpProtocolElicitRequestURLParams();
+    /*!
+     */
+    ~McpProtocolElicitRequestURLParams();
 
     /*!
      */

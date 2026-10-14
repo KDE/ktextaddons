@@ -12,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextToolInternal::TextAutoGenerateTextToolInternal() = default;
 
 bool TextAutoGenerateTextToolInternal::operator==(const TextAutoGenerateTextToolInternal &other) const = default;
+TextAutoGenerateTextToolInternal::~TextAutoGenerateTextToolInternal() = default;
 
 QList<TextAutoGenerateTextToolInternalProperty> TextAutoGenerateTextToolInternal::properties() const
 {

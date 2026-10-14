@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolInitializeRequest::McpProtocolInitializeRequest() = default;
 
+McpProtocolInitializeRequest::~McpProtocolInitializeRequest() = default;
+
 QByteArray McpProtocolInitializeRequest::type()
 {
     return "initialize"_ba;

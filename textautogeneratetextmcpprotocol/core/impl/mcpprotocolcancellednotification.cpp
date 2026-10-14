@@ -18,6 +18,8 @@ QByteArray McpProtocolCancelledNotification::type()
     return "notifications/cancelled"_ba;
 }
 
+McpProtocolCancelledNotification::~McpProtocolCancelledNotification() = default;
+
 bool McpProtocolCancelledNotification::operator==(const McpProtocolCancelledNotification &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelledNotification &t)

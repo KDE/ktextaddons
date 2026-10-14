@@ -19,6 +19,9 @@ public:
     /*!
      */
     McpProtocolPromptListChangedNotification();
+    /*!
+     */
+    ~McpProtocolPromptListChangedNotification();
 
     [[nodiscard]] static QByteArray type();
     /*!

@@ -20,6 +20,9 @@ public:
     /*!
      */
     McpProtocolInitializeResult();
+    /*!
+     */
+    ~McpProtocolInitializeResult();
 
     /*!
      */

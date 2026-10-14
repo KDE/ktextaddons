@@ -11,6 +11,7 @@ class LIBBERGAMOT_TESTS_EXPORT Translator
 {
 public:
     Translator();
+    ~Translator();
 
     void parse(const QJsonObject &obj, bool remote = true);
 

@@ -15,6 +15,7 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolGrammarError : public GrammarErr
 {
 public:
     LanguageToolGrammarError();
+    ~LanguageToolGrammarError() override;
     void parse(const QJsonObject &obj, int blockindex) override;
     void setTesting(bool b);
 

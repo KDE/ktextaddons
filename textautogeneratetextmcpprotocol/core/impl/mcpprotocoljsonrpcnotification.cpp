@@ -13,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolJSONRPCNotification::McpProtocolJSONRPCNotification() = default;
 
+McpProtocolJSONRPCNotification::~McpProtocolJSONRPCNotification() = default;
+
 bool McpProtocolJSONRPCNotification::operator==(const McpProtocolJSONRPCNotification &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCNotification &t)
