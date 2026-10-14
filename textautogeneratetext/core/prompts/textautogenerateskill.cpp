@@ -71,7 +71,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSkill &t
     return d;
 }
 
-void TextAutoGenerateSkill::save(KConfigGroup &grp)
+void TextAutoGenerateSkill::save(KConfigGroup &grp) const
 {
     grp.writeEntry("name", name());
     grp.writeEntry("description", description());

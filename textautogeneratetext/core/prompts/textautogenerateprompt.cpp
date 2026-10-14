@@ -123,7 +123,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
     return d;
 }
 
-void TextAutoGeneratePrompt::save(KConfigGroup &grp)
+void TextAutoGeneratePrompt::save(KConfigGroup &grp) const
 {
     grp.writeEntry("name", name());
     grp.writeEntry("text", text());

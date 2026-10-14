@@ -75,7 +75,7 @@ public:
      * \brief save
      * \param grp
      */
-    void save(KConfigGroup &grp);
+    void save(KConfigGroup &grp) const;
     /*!
      * \brief load
      * \param grp

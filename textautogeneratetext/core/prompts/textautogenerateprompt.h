@@ -104,7 +104,7 @@ public:
      * \brief save
      * \param config
      */
-    void save(KConfigGroup &grp);
+    void save(KConfigGroup &grp) const;
 
     /*!
      * \brief load

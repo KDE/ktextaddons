@@ -60,7 +60,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAgent &t
     return d;
 }
 
-void TextAutoGenerateAgent::save(KConfigGroup &grp)
+void TextAutoGenerateAgent::save(KConfigGroup &grp) const
 {
     grp.writeEntry("name", name());
     grp.writeEntry("description", description());

@@ -22,6 +22,7 @@ void TextAutoGenerateAgentPrompSkillManager::load()
 {
     loadPrompts();
     loadSkills();
+    loadAgents();
 }
 
 void TextAutoGenerateAgentPrompSkillManager::loadPrompts()
@@ -72,14 +73,14 @@ void TextAutoGenerateAgentPrompSkillManager::loadAgents()
     setAgents(lst);
 }
 
-void TextAutoGenerateAgentPrompSkillManager::save()
+void TextAutoGenerateAgentPrompSkillManager::save() const
 {
     saveAgents();
     saveSkills();
     savePrompts();
 }
 
-void TextAutoGenerateAgentPrompSkillManager::saveAgents()
+void TextAutoGenerateAgentPrompSkillManager::saveAgents() const
 {
     auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::agentConfigFileName());
 
@@ -90,14 +91,14 @@ void TextAutoGenerateAgentPrompSkillManager::saveAgents()
 
     for (int i = 0; i < mAgents.count(); ++i) {
         KConfigGroup group = config->group(u"Agent #%1"_s.arg(i));
-        mAgents[i].save(group);
+        mAgents.at(i).save(group);
     }
     config->sync();
 }
 
-void TextAutoGenerateAgentPrompSkillManager::saveSkills()
+void TextAutoGenerateAgentPrompSkillManager::saveSkills() const
 {
-    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::skillConfigFileName());
 
     const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
     for (const auto &group : instanceList) {
@@ -106,14 +107,14 @@ void TextAutoGenerateAgentPrompSkillManager::saveSkills()
 
     for (int i = 0; i < mSkills.count(); ++i) {
         KConfigGroup group = config->group(u"Skill #%1"_s.arg(i));
-        mSkills[i].save(group);
+        mSkills.at(i).save(group);
     }
     config->sync();
 }
 
-void TextAutoGenerateAgentPrompSkillManager::savePrompts()
+void TextAutoGenerateAgentPrompSkillManager::savePrompts() const
 {
-    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
+    auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::promptConfigFileName());
 
     const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
     for (const auto &group : instanceList) {
@@ -122,7 +123,7 @@ void TextAutoGenerateAgentPrompSkillManager::savePrompts()
 
     for (int i = 0; i < mPrompts.count(); ++i) {
         KConfigGroup group = config->group(u"Prompt #%1"_s.arg(i));
-        mPrompts[i].save(group);
+        mPrompts.at(i).save(group);
     }
     config->sync();
 }
