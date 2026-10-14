@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"POT-Creation-Date: 2026-10-14 00:45+0000\n"
 "PO-Revision-Date: 2026-10-12 15:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3630,6 +3630,11 @@ msgstr "Diversen"
 #, kde-format
 msgid "Travel"
 msgstr "Reizen"
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
+#, kde-format
+msgid "Undefined"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format

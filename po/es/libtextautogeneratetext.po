@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"POT-Creation-Date: 2026-10-14 00:45+0000\n"
 "PO-Revision-Date: 2026-10-12 11:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3660,6 +3660,11 @@ msgstr "Varios"
 #, kde-format
 msgid "Travel"
 msgstr "Viaje"
+
+#: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
+#, kde-format
+msgid "Undefined"
+msgstr ""
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
