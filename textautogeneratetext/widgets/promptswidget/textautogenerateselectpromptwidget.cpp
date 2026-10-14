@@ -27,7 +27,7 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     filterProxyModel->setSourceModel(mPromptModel);
 
     mListWidget->setModel(filterProxyModel);
-    mListWidget->setObjectName(u"mainLayout"_s);
+    mListWidget->setObjectName(u"mListWidget"_s);
     mainLayout->addWidget(mListWidget);
 
     connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::addPrompt, this, &TextAutoGenerateSelectPromptWidget::slotAddPrompt);
