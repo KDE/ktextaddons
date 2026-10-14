@@ -17,6 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
+    , mCommandCompletion(new QLineEdit(this))
     , mDescription(new QPlainTextEdit(this))
     , mPrompt(new QPlainTextEdit(this))
     , mCategory(new TextAutoGeneratePromptCategoryComboBox(this))
@@ -28,6 +29,9 @@ TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
 
+    mCommandCompletion->setObjectName(u"mCommandCompletion"_s);
+    KLineEditEventHandler::catchReturnKey(mCommandCompletion);
+
     mCategory->setObjectName(u"mCategory"_s);
 
     mDescription->setObjectName(u"mDescription"_s);
@@ -37,6 +41,7 @@ TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     mainLayout->addRow(i18n("Category:"), mCategory);
     mainLayout->addRow(i18n("Description:"), mDescription);
     mainLayout->addRow(i18n("Prompt:"), mPrompt);
+    mainLayout->addRow(i18n("Command Completion:"), mCommandCompletion);
 }
 
 TextAutoGeneratePromptWidget::~TextAutoGeneratePromptWidget() = default;
@@ -47,6 +52,7 @@ void TextAutoGeneratePromptWidget::setPrompt(const TextAutoGenerateText::TextAut
     mDescription->setPlainText(prompt.description());
     mPrompt->setPlainText(prompt.text());
     mCategory->setCategory(prompt.category());
+    mCommandCompletion->setText(prompt.commandCompletion());
 }
 
 TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::prompt() const
@@ -56,6 +62,7 @@ TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::promp
     prompt.setText(mPrompt->toPlainText());
     prompt.setName(mName->text());
     prompt.setCategory(mCategory->category());
+    prompt.setCommandCompletion(mCommandCompletion->text());
     return prompt;
 }
 

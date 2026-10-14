@@ -25,6 +25,7 @@ public:
 
 private:
     QLineEdit *const mName;
+    QLineEdit *const mCommandCompletion;
     QPlainTextEdit *const mDescription;
     QPlainTextEdit *const mPrompt;
     TextAutoGeneratePromptCategoryComboBox *const mCategory;
