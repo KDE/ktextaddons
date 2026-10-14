@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolcreatetaskresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -24,13 +25,21 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCreateTaskResult McpProtocolCreateTaskResult::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue taskValue = obj.value("task"_L1);
+    if (!taskValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateTaskResult: missing required field 'task'";
+        return {};
+    }
+    const McpProtocolTask task = McpProtocolTask::fromJson(taskValue.toObject());
+    if (task == McpProtocolTask()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateTaskResult: invalid field 'task'";
+        return {};
+    }
     McpProtocolCreateTaskResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
-        result.setTask(McpProtocolTask::fromJson(taskValue.toObject()));
-    }
+    result.setTask(task);
     return result;
 }
 

@@ -99,4 +99,31 @@ void McpProtocolElicitRequestFormParamsTest::shouldAcceptMissingMode()
     QCOMPARE(McpProtocolElicitRequestFormParams::fromJson(obj), McpProtocolElicitRequestFormParams());
 }
 
+void McpProtocolElicitRequestFormParamsTest::shouldRejectMissingRequiredFields()
+{
+    using namespace Qt::Literals::StringLiterals;
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QJsonObject requestedSchema;
+    requestedSchema["type"_L1] = u"object"_s;
+    requestedSchema["properties"_L1] = QJsonObject();
+    QJsonObject obj;
+    obj["message"_L1] = u"Your name?"_s;
+    obj["requestedSchema"_L1] = requestedSchema;
+    QVERIFY(McpProtocolElicitRequestFormParams::fromJson(obj).isValid());
+
+    QJsonObject missingMessage = obj;
+    missingMessage.remove("message"_L1);
+    QCOMPARE(McpProtocolElicitRequestFormParams::fromJson(missingMessage), McpProtocolElicitRequestFormParams());
+
+    QJsonObject missingRequestedSchema = obj;
+    missingRequestedSchema.remove("requestedSchema"_L1);
+    QCOMPARE(McpProtocolElicitRequestFormParams::fromJson(missingRequestedSchema), McpProtocolElicitRequestFormParams());
+
+    QJsonObject missingProperties = obj;
+    QJsonObject badSchema = requestedSchema;
+    badSchema.remove("properties"_L1);
+    missingProperties["requestedSchema"_L1] = badSchema;
+    QCOMPARE(McpProtocolElicitRequestFormParams::fromJson(missingProperties), McpProtocolElicitRequestFormParams());
+}
+
 #include "moc_mcpprotocolelicitrequestformparamstest.cpp"

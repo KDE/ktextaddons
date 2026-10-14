@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocollistresourcetemplatesresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -29,17 +30,22 @@ McpProtocolListResourceTemplatesResult McpProtocolListResourceTemplatesResult::f
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("nextCursor"_L1)) {
-        result.setNextCursor(obj.value("nextCursor"_L1).toString());
+    if (const QJsonValue nextCursorValue = obj.value("nextCursor"_L1); nextCursorValue.isString()) {
+        result.setNextCursor(nextCursorValue.toString());
     }
     if (const QJsonValue resourceTemplatesValue = obj.value("resourceTemplates"_L1); resourceTemplatesValue.isArray()) {
         const QJsonArray arr = resourceTemplatesValue.toArray();
         QList<McpProtocolResourceTemplate> lst;
         lst.reserve(arr.count());
         for (const auto &v : arr) {
-            lst.append(McpProtocolResourceTemplate::fromJson(v.toObject()));
+            if (const McpProtocolResourceTemplate item = McpProtocolResourceTemplate::fromJson(v.toObject()); item.isValid()) {
+                lst.append(item);
+            }
         }
         result.setResourceTemplates(std::move(lst));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListResourceTemplatesResult: missing required field 'resourceTemplates'";
+        return {};
     }
 
     return result;

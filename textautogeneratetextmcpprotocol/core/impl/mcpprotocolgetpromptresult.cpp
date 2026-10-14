@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolgetpromptresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -26,6 +27,11 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolGetPromptResult McpProtocolGetPromptResult::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue messagesValue = obj.value("messages"_L1);
+    if (!messagesValue.isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetPromptResult: missing required field 'messages'";
+        return {};
+    }
     McpProtocolGetPromptResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
@@ -33,12 +39,15 @@ McpProtocolGetPromptResult McpProtocolGetPromptResult::fromJson(const QJsonObjec
     if (obj.contains("description"_L1)) {
         result.setDescription(obj.value("description"_L1).toString());
     }
-    if (const QJsonValue messagesValue = obj.value("messages"_L1); messagesValue.isArray()) {
+    {
         const QJsonArray arr = messagesValue.toArray();
         QList<McpProtocolPromptMessage> msgs;
         msgs.reserve(arr.count());
         for (const auto &v : arr) {
-            msgs.append(McpProtocolPromptMessage::fromJson(v.toObject()));
+            // Skip invalid message
+            if (McpProtocolPromptMessage msg = McpProtocolPromptMessage::fromJson(v.toObject()); !(msg == McpProtocolPromptMessage())) {
+                msgs.append(std::move(msg));
+            }
         }
         result.setMessages(std::move(msgs));
     }

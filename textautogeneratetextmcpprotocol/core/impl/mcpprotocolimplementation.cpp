@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolimplementation.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -26,9 +27,26 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolImplementation::isValid() const
+{
+    return !mName.isEmpty() && !mVersion.isEmpty();
+}
+
 McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject &obj)
 {
     McpProtocolImplementation impl;
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString()) {
+        impl.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolImplementation: missing required field 'name'";
+        return {};
+    }
+    if (const QJsonValue versionValue = obj.value("version"_L1); versionValue.isString()) {
+        impl.setVersion(versionValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolImplementation: missing required field 'version'";
+        return {};
+    }
     if (obj.contains("description"_L1)) {
         impl.setDescription(obj.value("description"_L1).toString());
     }
@@ -37,15 +55,16 @@ McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject 
         QList<McpProtocolIcon> icons;
         icons.reserve(arr.count());
         for (const auto &v : arr) {
-            icons.append(McpProtocolIcon::fromJson(v.toObject()));
+            const McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject());
+            if (icon.isValid()) {
+                icons.append(icon);
+            }
         }
         impl.setIcons(std::move(icons));
     }
-    impl.setName(obj.value("name"_L1).toString());
     if (obj.contains("title"_L1)) {
         impl.setTitle(obj.value("title"_L1).toString());
     }
-    impl.setVersion(obj.value("version"_L1).toString());
     if (obj.contains("websiteUrl"_L1)) {
         impl.setWebsiteUrl(obj.value("websiteUrl"_L1).toString());
     }

@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolerror.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 
 #include <QDebug>
@@ -23,14 +24,29 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolError::isValid() const
+{
+    return !mMessage.isEmpty();
+}
+
 McpProtocolError McpProtocolError::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue codeValue = obj.value("code"_L1);
+    if (!codeValue.isDouble()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolError: missing required field 'code'";
+        return {};
+    }
+    const QJsonValue messageValue = obj.value("message"_L1);
+    if (!messageValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolError: missing required field 'message'";
+        return {};
+    }
     McpProtocolError error;
-    error.setCode(obj.value("code"_L1).toInt());
+    error.setCode(codeValue.toInt());
     if (obj.contains("data"_L1)) {
         error.setData(obj["data"_L1]);
     }
-    error.setMessage(obj["message"_L1].toString());
+    error.setMessage(messageValue.toString());
     return error;
 }
 

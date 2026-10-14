@@ -29,44 +29,53 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCancelTaskResult McpProtocolCancelTaskResult::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue createdAtValue = obj.value("createdAt"_L1);
+    if (!createdAtValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskResult: missing required field 'createdAt'";
+        return {};
+    }
+    const QJsonValue lastUpdatedAtValue = obj.value("lastUpdatedAt"_L1);
+    if (!lastUpdatedAtValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskResult: missing required field 'lastUpdatedAt'";
+        return {};
+    }
+    const QJsonValue statusValue = obj.value("status"_L1);
+    if (!statusValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskResult: missing required field 'status'";
+        return {};
+    }
+    const McpProtocolUtils::TaskStatus status = McpProtocolUtils::convertTaskStatusFromString(statusValue.toString());
+    if (status == McpProtocolUtils::TaskStatus::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskResult: invalid field 'status'" << statusValue.toString();
+        return {};
+    }
+    const QJsonValue taskIdValue = obj.value("taskId"_L1);
+    if (!taskIdValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskResult: missing required field 'taskId'";
+        return {};
+    }
+    // ttl is required but nullable
+    const QJsonValue ttlValue = obj.value("ttl"_L1);
+    if (!ttlValue.isDouble() && !ttlValue.isNull()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskResult: missing required field 'ttl'";
+        return {};
+    }
     McpProtocolCancelTaskResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (!obj.contains("createdAt"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: createdAt";
-        return {};
+    result.setCreatedAt(createdAtValue.toString());
+    result.setLastUpdatedAt(lastUpdatedAtValue.toString());
+    if (const QJsonValue pollIntervalValue = obj.value("pollInterval"_L1); pollIntervalValue.isDouble()) {
+        result.setPollInterval(pollIntervalValue.toInteger());
     }
-    if (!obj.contains("lastUpdatedAt"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: lastUpdatedAt";
-        return {};
-    }
-    if (!obj.contains("status"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: status";
-        return {};
-    }
-    if (!obj.contains("taskId"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: taskId";
-        return {};
-    }
-    if (!obj.contains("ttl"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: ttl";
-        return {};
-    }
-    result.setCreatedAt(obj.value("createdAt"_L1).toString());
-    result.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
-    if (obj.contains("pollInterval"_L1)) {
-        result.setPollInterval(obj.value("pollInterval"_L1).toInteger());
-    }
-    if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
-        result.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
-    }
+    result.setStatus(status);
     if (obj.contains("statusMessage"_L1)) {
         result.setStatusMessage(obj.value("statusMessage"_L1).toString());
     }
-    result.setTaskId(obj.value("taskId"_L1).toString());
-    if (!obj["ttl"_L1].isNull()) {
-        result.setTtl(obj.value("ttl"_L1).toInteger());
+    result.setTaskId(taskIdValue.toString());
+    if (ttlValue.isDouble()) {
+        result.setTtl(ttlValue.toInteger());
     }
     return result;
 }

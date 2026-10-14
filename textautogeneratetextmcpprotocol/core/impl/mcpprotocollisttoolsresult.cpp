@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocollisttoolsresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -30,17 +31,22 @@ McpProtocolListToolsResult McpProtocolListToolsResult::fromJson(const QJsonObjec
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("nextCursor"_L1)) {
-        result.setNextCursor(obj.value("nextCursor"_L1).toString());
+    if (const QJsonValue nextCursorValue = obj.value("nextCursor"_L1); nextCursorValue.isString()) {
+        result.setNextCursor(nextCursorValue.toString());
     }
     if (const QJsonValue toolsValue = obj.value("tools"_L1); toolsValue.isArray()) {
         const QJsonArray arr = toolsValue.toArray();
         QList<McpProtocolTool> lst;
         lst.reserve(arr.count());
         for (const auto &v : arr) {
-            lst.append(McpProtocolTool::fromJson(v.toObject()));
+            if (const McpProtocolTool item = McpProtocolTool::fromJson(v.toObject()); item.isValid()) {
+                lst.append(item);
+            }
         }
         result.setTools(std::move(lst));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListToolsResult: missing required field 'tools'";
+        return {};
     }
     return result;
 }

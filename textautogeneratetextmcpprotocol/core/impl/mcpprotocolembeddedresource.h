@@ -33,6 +33,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolEmbeddedResource fromJson(const QJsonObject &obj);
     /*!
      */

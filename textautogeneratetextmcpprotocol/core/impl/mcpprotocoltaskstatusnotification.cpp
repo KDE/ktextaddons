@@ -38,7 +38,15 @@ McpProtocolTaskStatusNotification McpProtocolTaskStatusNotification::fromJson(co
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolTaskStatusNotificationParams::fromJson(paramsValue.toObject()));
+        const McpProtocolTaskStatusNotificationParams params = McpProtocolTaskStatusNotificationParams::fromJson(paramsValue.toObject());
+        if (!params.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotification: invalid field 'params'";
+            return {};
+        }
+        prompt.setParams(params);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotification: missing required field 'params'";
+        return {};
     }
     return prompt;
 }

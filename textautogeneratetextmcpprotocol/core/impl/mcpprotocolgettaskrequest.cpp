@@ -36,8 +36,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolGetTaskRequest::Params McpProtocolGetTaskRequest::Params::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("taskId"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: taskId";
+    if (!obj.value("taskId"_L1).isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskRequest::Params: missing required field 'taskId'";
         return {};
     }
     McpProtocolGetTaskRequest::Params result;
@@ -55,8 +55,11 @@ QJsonObject McpProtocolGetTaskRequest::Params::toJson(const McpProtocolGetTaskRe
 McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject &obj)
 {
     McpProtocolGetTaskRequest request;
-    if (obj.contains("id"_L1)) {
-        request.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() || idValue.isDouble()) {
+        request.setId(McpProtocolUtils::requestIdFromJson(idValue));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskRequest: missing required field 'id'";
+        return {};
     }
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
@@ -68,7 +71,15 @@ McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject 
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        request.setParams(McpProtocolGetTaskRequest::Params::fromJson(paramsValue.toObject()));
+        const McpProtocolGetTaskRequest::Params params = McpProtocolGetTaskRequest::Params::fromJson(paramsValue.toObject());
+        if (params == McpProtocolGetTaskRequest::Params()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskRequest: invalid field 'params'";
+            return {};
+        }
+        request.setParams(params);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskRequest: missing required field 'params'";
+        return {};
     }
     return request;
 }

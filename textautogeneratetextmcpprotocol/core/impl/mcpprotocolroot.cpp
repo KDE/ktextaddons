@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolroot.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -13,6 +14,11 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolRoot::McpProtocolRoot() = default;
 
 bool McpProtocolRoot::operator==(const McpProtocolRoot &other) const = default;
+
+bool McpProtocolRoot::isValid() const
+{
+    return !mUri.isEmpty();
+}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot &t)
 {
@@ -28,7 +34,12 @@ McpProtocolRoot McpProtocolRoot::fromJson(const QJsonObject &obj)
     if (obj.contains("name"_L1)) {
         text.setName(obj.value("name"_L1).toString());
     }
-    text.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString() && !uriValue.toString().isEmpty()) {
+        text.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolRoot: missing required field 'uri'";
+        return {};
+    }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         text.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }

@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocoltaskstatusnotificationparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -30,18 +31,41 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolTaskStatusNotificationParams prompt;
-    prompt.setCreatedAt(obj.value("createdAt"_L1).toString());
-    prompt.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
+    if (const QJsonValue createdAtValue = obj.value("createdAt"_L1); createdAtValue.isString()) {
+        prompt.setCreatedAt(createdAtValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotificationParams: missing required field 'createdAt'";
+        return {};
+    }
+    if (const QJsonValue lastUpdatedAtValue = obj.value("lastUpdatedAt"_L1); lastUpdatedAtValue.isString()) {
+        prompt.setLastUpdatedAt(lastUpdatedAtValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotificationParams: missing required field 'lastUpdatedAt'";
+        return {};
+    }
     if (const QJsonValue pollIntervalValue = obj.value("pollInterval"_L1); pollIntervalValue.isDouble()) {
         prompt.setPollInterval(pollIntervalValue.toInteger());
     }
     if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
-        prompt.setStatus(McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
+        const McpProtocolUtils::TaskStatus status = McpProtocolUtils::convertTaskStatusFromString(statusValue.toString());
+        if (status == McpProtocolUtils::TaskStatus::Unknown) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotificationParams: invalid field 'status'" << statusValue.toString();
+            return {};
+        }
+        prompt.setStatus(status);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotificationParams: missing required field 'status'";
+        return {};
     }
     if (obj.contains("statusMessage"_L1)) {
         prompt.setStatusMessage(obj.value("statusMessage"_L1).toString());
     }
-    prompt.setTaskId(obj.value("taskId"_L1).toString());
+    if (const QJsonValue taskIdValue = obj.value("taskId"_L1); taskIdValue.isString()) {
+        prompt.setTaskId(taskIdValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTaskStatusNotificationParams: missing required field 'taskId'";
+        return {};
+    }
     if (const QJsonValue ttlValue = obj.value("ttl"_L1); ttlValue.isDouble()) {
         prompt.setTtl(ttlValue.toInteger());
     }
@@ -49,6 +73,11 @@ McpProtocolTaskStatusNotificationParams McpProtocolTaskStatusNotificationParams:
         prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     return prompt;
+}
+
+bool McpProtocolTaskStatusNotificationParams::isValid() const
+{
+    return !mTaskId.isEmpty() && !mCreatedAt.isEmpty() && !mLastUpdatedAt.isEmpty() && mStatus != McpProtocolUtils::TaskStatus::Unknown;
 }
 
 QJsonObject McpProtocolTaskStatusNotificationParams::toJson(const McpProtocolTaskStatusNotificationParams &taskStatusNotificationParams)

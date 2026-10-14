@@ -21,6 +21,9 @@ public:
         [[nodiscard]] QString taskId() const;
         void setTaskId(const QString &newTaskId);
         [[nodiscard]] bool operator==(const McpProtocolCancelTaskRequest::Params &other) const;
+        /*!
+         */
+        [[nodiscard]] bool isValid() const;
         [[nodiscard]] static Params fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const Params &params);
     };

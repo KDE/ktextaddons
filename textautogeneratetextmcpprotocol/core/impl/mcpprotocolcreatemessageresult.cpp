@@ -7,7 +7,9 @@
 #include "mcpprotocolcreatemessageresult.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <type_traits>
 #include <utility>
+#include <variant>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCreateMessageResult::McpProtocolCreateMessageResult() = default;
@@ -26,25 +28,47 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCreateMessageResult McpProtocolCreateMessageResult::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("content"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: content";
+    const QJsonValue contentValue = obj.value("content"_L1);
+    if (!contentValue.isObject() && !contentValue.isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageResult: missing required field 'content'";
         return {};
     }
-    if (!obj.contains("model"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: model";
+    const McpProtocolUtils::CreateMessageResultContent content = McpProtocolUtils::createMessageResultContentFromJson(contentValue);
+    if (contentValue.isObject()) {
+        // A rejected content block is default-constructed
+        const bool contentIsValid = std::visit(
+            [](const auto &c) -> bool {
+                using T = std::decay_t<decltype(c)>;
+                return !(c == T());
+            },
+            content);
+        if (!contentIsValid) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageResult: invalid field 'content'";
+            return {};
+        }
+    }
+    const QJsonValue modelValue = obj.value("model"_L1);
+    if (!modelValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageResult: missing required field 'model'";
         return {};
     }
-    if (!obj.contains("role"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: role";
+    const QJsonValue roleValue = obj.value("role"_L1);
+    if (!roleValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageResult: missing required field 'role'";
+        return {};
+    }
+    const McpProtocolUtils::Role role = McpProtocolUtils::convertRoleFromString(roleValue.toString());
+    if (role == McpProtocolUtils::Role::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageResult: invalid field 'role'" << roleValue.toString();
         return {};
     }
     McpProtocolCreateMessageResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    result.setContent(McpProtocolUtils::createMessageResultContentFromJson(obj["content"_L1]));
-    result.setModel(obj.value("model"_L1).toString());
-    result.setRole(McpProtocolUtils::convertRoleFromString(obj.value("role"_L1).toString()));
+    result.setContent(content);
+    result.setModel(modelValue.toString());
+    result.setRole(role);
     if (obj.contains("stopReason"_L1)) {
         result.setStopReason(obj.value("stopReason"_L1).toString());
     }

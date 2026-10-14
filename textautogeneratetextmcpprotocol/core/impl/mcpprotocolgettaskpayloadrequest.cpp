@@ -33,10 +33,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolGetTaskPayloadRequest::Params::isValid() const
+{
+    return !mTaskId.isEmpty();
+}
+
 McpProtocolGetTaskPayloadRequest::Params McpProtocolGetTaskPayloadRequest::Params::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue taskIdValue = obj.value("taskId"_L1);
+    if (!taskIdValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskPayloadRequest::Params: missing required field 'taskId'";
+        return {};
+    }
     McpProtocolGetTaskPayloadRequest::Params params;
-    params.setTaskId(obj.value("taskId"_L1).toString());
+    params.setTaskId(taskIdValue.toString());
     return params;
 }
 
@@ -59,12 +69,23 @@ McpProtocolGetTaskPayloadRequest McpProtocolGetTaskPayloadRequest::fromJson(cons
                                                        << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (obj.contains("id"_L1)) {
-        request.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!McpProtocolUtils::isValidRequestId(idValue)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskPayloadRequest: missing or invalid required field 'id'";
+        return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        request.setParams(McpProtocolGetTaskPayloadRequest::Params::fromJson(paramsValue.toObject()));
+    request.setId(McpProtocolUtils::requestIdFromJson(idValue));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskPayloadRequest: missing required field 'params'";
+        return {};
     }
+    const McpProtocolGetTaskPayloadRequest::Params params = McpProtocolGetTaskPayloadRequest::Params::fromJson(paramsValue.toObject());
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskPayloadRequest: invalid field 'params'";
+        return {};
+    }
+    request.setParams(params);
     return request;
 }
 

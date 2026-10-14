@@ -76,6 +76,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolElicitRequestFormParams fromJson(const QJsonObject &obj);
     /*!
      */

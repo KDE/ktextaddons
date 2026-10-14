@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolreadresourcerequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -13,6 +14,11 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolReadResourceRequestParams::McpProtocolReadResourceRequestParams() = default;
 
 bool McpProtocolReadResourceRequestParams::operator==(const McpProtocolReadResourceRequestParams &other) const = default;
+
+bool McpProtocolReadResourceRequestParams::isValid() const
+{
+    return !mUri.isEmpty();
+}
 bool McpProtocolReadResourceRequestParams::Meta::operator==(const McpProtocolReadResourceRequestParams::Meta &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceRequestParams &t)
@@ -56,7 +62,12 @@ McpProtocolReadResourceRequestParams McpProtocolReadResourceRequestParams::fromJ
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolReadResourceRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString() && !uriValue.toString().isEmpty()) {
+        prompt.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceRequestParams: missing required field 'uri'";
+        return {};
+    }
     return prompt;
 }
 

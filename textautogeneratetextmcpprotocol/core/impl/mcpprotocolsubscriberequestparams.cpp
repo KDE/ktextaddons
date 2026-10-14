@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolsubscriberequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -56,8 +57,18 @@ McpProtocolSubscribeRequestParams McpProtocolSubscribeRequestParams::fromJson(co
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolSubscribeRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString()) {
+        prompt.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolSubscribeRequestParams: missing required field 'uri'";
+        return {};
+    }
     return prompt;
+}
+
+bool McpProtocolSubscribeRequestParams::isValid() const
+{
+    return !mUri.isEmpty();
 }
 
 QJsonObject McpProtocolSubscribeRequestParams::toJson(const McpProtocolSubscribeRequestParams &subscribeRequestParams)

@@ -5,6 +5,7 @@
 */
 #include "mcpprotocolcanceltaskresulttest.h"
 #include "impl/mcpprotocolcanceltaskresult.h"
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolCancelTaskResultTest)
@@ -61,6 +62,37 @@ void McpProtocolCancelTaskResultTest::shouldConvertJson()
     QVERIFY(!nullTtl.ttl().has_value());
     QVERIFY(!nullTtl.pollInterval().has_value());
     QCOMPARE(McpProtocolCancelTaskResult::toJson(nullTtl), obj);
+}
+
+void McpProtocolCancelTaskResultTest::shouldRejectMissingRequiredFields()
+{
+    using namespace Qt::Literals::StringLiterals;
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QJsonObject obj;
+    obj["createdAt"_L1] = u"2025-11-25T10:30:00Z"_s;
+    obj["lastUpdatedAt"_L1] = u"2025-11-25T10:31:00Z"_s;
+    obj["status"_L1] = u"cancelled"_s;
+    obj["taskId"_L1] = u"task-1"_s;
+    obj["ttl"_L1] = QJsonValue::Null;
+    QCOMPARE(McpProtocolCancelTaskResult::fromJson(obj).taskId(), u"task-1"_s);
+
+    for (const auto &field : {"createdAt"_L1, "lastUpdatedAt"_L1, "status"_L1, "taskId"_L1, "ttl"_L1}) {
+        QJsonObject missing = obj;
+        missing.remove(field);
+        QCOMPARE(McpProtocolCancelTaskResult::fromJson(missing), McpProtocolCancelTaskResult());
+    }
+
+    QJsonObject unknownStatus = obj;
+    unknownStatus["status"_L1] = u"foo"_s;
+    QCOMPARE(McpProtocolCancelTaskResult::fromJson(unknownStatus), McpProtocolCancelTaskResult());
+
+    QJsonObject invalidTtl = obj;
+    invalidTtl["ttl"_L1] = u"abc"_s;
+    QCOMPARE(McpProtocolCancelTaskResult::fromJson(invalidTtl), McpProtocolCancelTaskResult());
+
+    QJsonObject invalidPollInterval = obj;
+    invalidPollInterval["pollInterval"_L1] = u"abc"_s;
+    QVERIFY(!McpProtocolCancelTaskResult::fromJson(invalidPollInterval).pollInterval().has_value());
 }
 
 #include "moc_mcpprotocolcanceltaskresulttest.cpp"

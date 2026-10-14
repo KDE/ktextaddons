@@ -51,6 +51,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] std::optional<Meta> meta() const;
     /*!
      */

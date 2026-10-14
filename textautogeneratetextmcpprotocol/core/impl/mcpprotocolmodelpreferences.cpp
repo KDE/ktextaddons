@@ -27,8 +27,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolModelPreferences McpProtocolModelPreferences::fromJson(const QJsonObject &obj)
 {
     McpProtocolModelPreferences result;
-    if (obj.contains("costPriority"_L1)) {
-        result.setCostPriority(obj.value("costPriority"_L1).toDouble());
+    if (const QJsonValue costPriorityValue = obj.value("costPriority"_L1); costPriorityValue.isDouble()) {
+        result.setCostPriority(costPriorityValue.toDouble());
     }
     if (const QJsonValue hintsValue = obj.value("hints"_L1); hintsValue.isArray()) {
         const QJsonArray arr = hintsValue.toArray();
@@ -39,11 +39,11 @@ McpProtocolModelPreferences McpProtocolModelPreferences::fromJson(const QJsonObj
         }
         result.setHints(std::move(hints));
     }
-    if (obj.contains("intelligencePriority"_L1)) {
-        result.setIntelligencePriority(obj.value("intelligencePriority"_L1).toDouble());
+    if (const QJsonValue intelligencePriorityValue = obj.value("intelligencePriority"_L1); intelligencePriorityValue.isDouble()) {
+        result.setIntelligencePriority(intelligencePriorityValue.toDouble());
     }
-    if (obj.contains("speedPriority"_L1)) {
-        result.setSpeedPriority(obj.value("speedPriority"_L1).toDouble());
+    if (const QJsonValue speedPriorityValue = obj.value("speedPriority"_L1); speedPriorityValue.isDouble()) {
+        result.setSpeedPriority(speedPriorityValue.toDouble());
     }
     return result;
 }

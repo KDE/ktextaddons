@@ -32,6 +32,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] QString createdAt() const;
     /*!
      */

@@ -39,12 +39,23 @@ McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObjec
             << "McpProtocolCallToolRequest: field 'method' must be" << McpProtocolCallToolRequest::type() << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (obj.contains("id"_L1)) {
-        request.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!McpProtocolUtils::isValidRequestId(idValue)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolRequest: missing or invalid required field 'id'";
+        return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        request.setParams(McpProtocolCallToolRequestParams::fromJson(paramsValue.toObject()));
+    request.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(idValue));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolRequest: missing required field 'params'";
+        return {};
     }
+    const McpProtocolCallToolRequestParams params = McpProtocolCallToolRequestParams::fromJson(paramsValue.toObject());
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolRequest: invalid field 'params'";
+        return {};
+    }
+    request.setParams(params);
     return request;
 }
 

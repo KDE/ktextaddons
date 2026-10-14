@@ -26,6 +26,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolImplementation fromJson(const QJsonObject &obj);
     /*!
      */

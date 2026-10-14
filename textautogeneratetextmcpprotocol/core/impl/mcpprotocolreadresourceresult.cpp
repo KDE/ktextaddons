@@ -43,6 +43,9 @@ McpProtocolReadResourceResult McpProtocolReadResourceResult::fromJson(const QJso
             }
         }
         prompt.setContents(std::move(resources));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceResult: missing required field 'contents'";
+        return {};
     }
     return prompt;
 }

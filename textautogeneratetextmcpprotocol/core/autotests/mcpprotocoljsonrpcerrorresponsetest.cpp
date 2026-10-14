@@ -41,4 +41,15 @@ void McpProtocolJSONRPCErrorResponseTest::shouldLoadAndSaveResponse()
     QVERIFY(response.id().has_value());
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::toJson(response), obj);
 }
+
+void McpProtocolJSONRPCErrorResponseTest::shouldRejectMissingRequiredFields()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse;
+    const QJsonObject withoutError{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, 5}};
+    QCOMPARE(McpProtocolJSONRPCErrorResponse::fromJson(withoutError), McpProtocolJSONRPCErrorResponse());
+
+    const QJsonObject invalidError{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, 5}, {"error"_L1, u"error"_s}};
+    QCOMPARE(McpProtocolJSONRPCErrorResponse::fromJson(invalidError), McpProtocolJSONRPCErrorResponse());
+}
+
 #include "moc_mcpprotocoljsonrpcerrorresponsetest.cpp"

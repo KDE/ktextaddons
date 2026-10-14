@@ -130,22 +130,26 @@ bool TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::Met
 
 bool TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::operator==(const McpProtocolElicitRequestURLParams &other) const = default;
 
+bool McpProtocolElicitRequestURLParams::isValid() const
+{
+    return !mElicitationId.isEmpty() && !mMessage.isEmpty() && !mUrl.isEmpty();
+}
+
 McpProtocolElicitRequestURLParams TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("elicitationId"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: elicitationId";
+    const QJsonValue elicitationIdValue = obj.value("elicitationId"_L1);
+    if (!elicitationIdValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestURLParams: missing required field 'elicitationId'";
         return {};
     }
-    if (!obj.contains("message"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: message";
+    const QJsonValue messageValue = obj.value("message"_L1);
+    if (!messageValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestURLParams: missing required field 'message'";
         return {};
     }
-    if (!obj.contains("mode"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: mode";
-        return {};
-    }
-    if (!obj.contains("url"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: url";
+    const QJsonValue urlValue = obj.value("url"_L1);
+    if (!urlValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestURLParams: missing required field 'url'";
         return {};
     }
     if (obj.value("mode"_L1).toString() != QString::fromLatin1(McpProtocolElicitRequestURLParams::mode())) {
@@ -157,12 +161,12 @@ McpProtocolElicitRequestURLParams TextAutoGenerateTextMcpProtocolCore::McpProtoc
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolElicitRequestURLParams::Meta::fromJson(metaValue.toObject()));
     }
-    result.setElicitationId(obj.value("elicitationId"_L1).toString());
-    result.setMessage(obj.value("message"_L1).toString());
+    result.setElicitationId(elicitationIdValue.toString());
+    result.setMessage(messageValue.toString());
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
         result.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }
-    result.setUrl(obj.value("url"_L1).toString());
+    result.setUrl(urlValue.toString());
     return result;
 }
 

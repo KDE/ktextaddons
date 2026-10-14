@@ -19,6 +19,11 @@ QByteArray McpProtocolPromptReference::type()
 
 bool McpProtocolPromptReference::operator==(const McpProtocolPromptReference &other) const = default;
 
+bool McpProtocolPromptReference::isValid() const
+{
+    return !mName.isEmpty();
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptReference &t)
 {
     d.space() << "name:" << t.name();
@@ -29,7 +34,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolPromptReference McpProtocolPromptReference::fromJson(const QJsonObject &obj)
 {
     McpProtocolPromptReference prompt;
-    prompt.setName(obj.value("name"_L1).toString());
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString() && !nameValue.toString().isEmpty()) {
+        prompt.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPromptReference: missing required field 'name'";
+        return {};
+    }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }

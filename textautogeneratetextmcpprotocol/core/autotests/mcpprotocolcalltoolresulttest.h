@@ -18,4 +18,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldConvertJson();
     void shouldIgnoreUnknownContent();
+    void shouldRejectMissingRequiredFields();
+    void shouldIgnoreInvalidContent();
 };

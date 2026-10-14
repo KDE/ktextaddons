@@ -39,6 +39,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] McpProtocolUtils::ContentBlock content() const;
     /*!
      */

@@ -17,4 +17,5 @@ public:
 private Q_SLOTS:
     void shouldLoadAndSaveError();
     void shouldRejectOtherErrorCode();
+    void shouldRejectMissingRequiredFields();
 };

@@ -38,9 +38,12 @@ McpProtocolCancelledNotification McpProtocolCancelledNotification::fromJson(cons
                                                        << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        notification.setParams(McpProtocolCancelledNotificationParams::fromJson(paramsValue.toObject()));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelledNotification: missing required field 'params'";
+        return {};
     }
+    notification.setParams(McpProtocolCancelledNotificationParams::fromJson(paramsValue.toObject()));
     return notification;
 }
 

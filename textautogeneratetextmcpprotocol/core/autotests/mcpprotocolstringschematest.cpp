@@ -47,4 +47,18 @@ void McpProtocolStringSchemaTest::shouldLoadAndSaveStringSchema()
     QVERIFY(!TextAutoGenerateTextMcpProtocolCore::McpProtocolStringSchema::toJson(unknownFormat).contains("format"_L1));
 }
 
+void McpProtocolStringSchemaTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    // Unknown optional format is ignored
+    const McpProtocolStringSchema schema = McpProtocolStringSchema::fromJson(QJsonObject{{"type"_L1, u"string"_s}, {"format"_L1, u"foo"_s}});
+    QVERIFY(!schema.format().has_value());
+    QVERIFY(!McpProtocolStringSchema::toJson(schema).contains("format"_L1));
+    // Non numeric length is ignored
+    const McpProtocolStringSchema schema2 = McpProtocolStringSchema::fromJson(QJsonObject{{"type"_L1, u"string"_s}, {"minLength"_L1, u"foo"_s}});
+    QVERIFY(!schema2.minLength().has_value());
+    // Missing type
+    QCOMPARE(McpProtocolStringSchema::fromJson(QJsonObject()), McpProtocolStringSchema());
+}
+
 #include "moc_mcpprotocolstringschematest.cpp"

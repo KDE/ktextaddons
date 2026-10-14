@@ -48,4 +48,27 @@ void McpProtocolToolTest::shouldKeepAllOutputSchemaKeywords()
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolTool::OutputSchema::toJson(schema), obj);
 }
 
+void McpProtocolToolTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    const QJsonObject obj{{"name"_L1, u"foo"_s}, {"inputSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}}}};
+    QVERIFY(McpProtocolTool::fromJson(obj).isValid());
+    // Missing name
+    QJsonObject withoutName = obj;
+    withoutName.remove("name"_L1);
+    QCOMPARE(McpProtocolTool::fromJson(withoutName), McpProtocolTool());
+    // Missing inputSchema
+    QJsonObject withoutInputSchema = obj;
+    withoutInputSchema.remove("inputSchema"_L1);
+    QCOMPARE(McpProtocolTool::fromJson(withoutInputSchema), McpProtocolTool());
+    // Invalid inputSchema
+    QJsonObject invalidInputSchema = obj;
+    invalidInputSchema["inputSchema"_L1] = QJsonObject{{"type"_L1, u"string"_s}};
+    QCOMPARE(McpProtocolTool::fromJson(invalidInputSchema), McpProtocolTool());
+    // Invalid icons are skipped
+    QJsonObject withIcons = obj;
+    withIcons["icons"_L1] = QJsonArray{QJsonObject{{"src"_L1, u"https://example.com/icon.png"_s}}, QJsonObject{{"mimeType"_L1, u"image/png"_s}}};
+    QCOMPARE(McpProtocolTool::fromJson(withIcons).icons()->count(), 1);
+}
+
 #include "moc_mcpprotocoltooltest.cpp"

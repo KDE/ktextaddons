@@ -18,6 +18,11 @@ QByteArray McpProtocolResourceTemplateReference::type()
 }
 
 bool McpProtocolResourceTemplateReference::operator==(const McpProtocolResourceTemplateReference &other) const = default;
+
+bool McpProtocolResourceTemplateReference::isValid() const
+{
+    return !mUri.isEmpty();
+}
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplateReference &t)
 {
     d.space() << "uri:" << t.uri();
@@ -32,7 +37,12 @@ McpProtocolResourceTemplateReference McpProtocolResourceTemplateReference::fromJ
         return {};
     }
 
-    text.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString() && !uriValue.toString().isEmpty()) {
+        text.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResourceTemplateReference: missing required field 'uri'";
+        return {};
+    }
     return text;
 }
 

@@ -49,15 +49,18 @@ McpProtocolStringSchema McpProtocolStringSchema::fromJson(const QJsonObject &obj
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }
-    if (obj.contains("maxLength"_L1)) {
-        prompt.setMaxLength(obj.value("maxLength"_L1).toInt());
+    if (const QJsonValue maxLengthValue = obj.value("maxLength"_L1); maxLengthValue.isDouble()) {
+        prompt.setMaxLength(maxLengthValue.toInt());
     }
-    if (obj.contains("minLength"_L1)) {
-        prompt.setMinLength(obj.value("minLength"_L1).toInt());
+    if (const QJsonValue minLengthValue = obj.value("minLength"_L1); minLengthValue.isDouble()) {
+        prompt.setMinLength(minLengthValue.toInt());
     }
 
     if (const QJsonValue formatValue = obj.value("format"_L1); formatValue.isString()) {
-        prompt.setFormat(convertModeFromString(formatValue.toString()));
+        // Optional enum: ignore unknown values
+        if (const Format formatMode = convertModeFromString(formatValue.toString()); formatMode != Format::Unknown) {
+            prompt.setFormat(formatMode);
+        }
     }
     return prompt;
 }

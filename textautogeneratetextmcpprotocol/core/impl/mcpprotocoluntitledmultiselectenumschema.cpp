@@ -44,8 +44,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolUntitledMultiSelectEnumSchema::Items McpProtocolUntitledMultiSelectEnumSchema::Items::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("enum"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: enum";
+    if (!obj.value("enum"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolUntitledMultiSelectEnumSchema::Items: missing required field 'enum'";
         return {};
     }
     if (!obj.contains("type"_L1)) {
@@ -89,8 +89,10 @@ McpProtocolUntitledMultiSelectEnumSchema McpProtocolUntitledMultiSelectEnumSchem
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolUntitledMultiSelectEnumSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
-    if (!obj.contains("items"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: items";
+    // items is required: {"type": "string", "enum": [...]}
+    if (const QJsonValue itemsValue = obj.value("items"_L1);
+        !itemsValue.isObject() || itemsValue.toObject().value("type"_L1).toString() != "string"_L1 || !itemsValue.toObject().value("enum"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolUntitledMultiSelectEnumSchema: missing required field 'items'";
         return {};
     }
     if (const QJsonValue defaultValue2 = obj.value("default"_L1); defaultValue2.isArray()) {
@@ -108,11 +110,11 @@ McpProtocolUntitledMultiSelectEnumSchema McpProtocolUntitledMultiSelectEnumSchem
     if (const QJsonValue itemsValue = obj.value("items"_L1); itemsValue.isObject()) {
         prompt.setItems(McpProtocolUntitledMultiSelectEnumSchema::Items::fromJson(itemsValue.toObject()));
     }
-    if (obj.contains("maxItems"_L1)) {
-        prompt.setMaxItems(obj.value("maxItems"_L1).toInt());
+    if (const QJsonValue maxItemsValue = obj.value("maxItems"_L1); maxItemsValue.isDouble()) {
+        prompt.setMaxItems(maxItemsValue.toInt());
     }
-    if (obj.contains("minItems"_L1)) {
-        prompt.setMinItems(obj.value("minItems"_L1).toInt());
+    if (const QJsonValue minItemsValue = obj.value("minItems"_L1); minItemsValue.isDouble()) {
+        prompt.setMinItems(minItemsValue.toInt());
     }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());

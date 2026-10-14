@@ -23,21 +23,33 @@ bool McpProtocolSamplingMessage::operator==(const McpProtocolSamplingMessage &ot
 
 McpProtocolSamplingMessage McpProtocolSamplingMessage::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("content"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: content";
+    const QJsonValue contentValue = obj.value("content"_L1);
+    if (!contentValue.isObject() && !contentValue.isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolSamplingMessage: missing required field 'content'";
         return {};
     }
-    if (!obj.contains("role"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: role";
+    const QJsonValue roleValue = obj.value("role"_L1);
+    if (!roleValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolSamplingMessage: missing required field 'role'";
+        return {};
+    }
+    const McpProtocolUtils::Role role = McpProtocolUtils::convertRoleFromString(roleValue.toString());
+    if (role == McpProtocolUtils::Role::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolSamplingMessage: invalid field 'role'" << roleValue.toString();
         return {};
     }
     McpProtocolSamplingMessage message;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         message.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    message.setContent(McpProtocolUtils::createMessageResultContentFromJson(obj["content"_L1]));
-    message.setRole(McpProtocolUtils::convertRoleFromString(obj.value("role"_L1).toString()));
+    message.setContent(McpProtocolUtils::createMessageResultContentFromJson(contentValue));
+    message.setRole(role);
     return message;
+}
+
+bool McpProtocolSamplingMessage::isValid() const
+{
+    return mRole != McpProtocolUtils::Role::Unknown;
 }
 
 QJsonObject McpProtocolSamplingMessage::toJson(const McpProtocolSamplingMessage &message)

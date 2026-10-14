@@ -42,6 +42,15 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'type' must be" << type() << ", got:" << obj.value("type"_L1).toString();
         return {};
     }
+    if (!obj.value("content"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolToolResultContent: missing required field 'content'";
+        return {};
+    }
+    const QJsonValue toolUseIdValue = obj.value("toolUseId"_L1);
+    if (!toolUseIdValue.isString() || toolUseIdValue.toString().isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolToolResultContent: missing required field 'toolUseId'";
+        return {};
+    }
     McpProtocolToolResultContent tool;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         tool.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
@@ -69,8 +78,13 @@ McpProtocolToolResultContent McpProtocolToolResultContent::fromJson(const QJsonO
         }
         tool.setStructuredContent(std::move(map_structuredContent));
     }
-    tool.setToolUseId(obj.value("toolUseId"_L1).toString());
+    tool.setToolUseId(toolUseIdValue.toString());
     return tool;
+}
+
+bool McpProtocolToolResultContent::isValid() const
+{
+    return !mToolUseId.isEmpty();
 }
 
 QJsonObject McpProtocolToolResultContent::toJson(const McpProtocolToolResultContent &tool)

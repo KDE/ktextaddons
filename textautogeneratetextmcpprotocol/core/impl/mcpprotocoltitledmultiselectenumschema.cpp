@@ -76,18 +76,25 @@ void TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema
 
 McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("const"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: const";
+    const QJsonValue constValue = obj.value("const"_L1);
+    if (!constValue.isString() || constValue.toString().isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem: missing required field 'const'";
         return {};
     }
-    if (!obj.contains("title"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: title";
+    const QJsonValue titleValue = obj.value("title"_L1);
+    if (!titleValue.isString() || titleValue.toString().isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem: missing required field 'title'";
         return {};
     }
     McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem result;
-    result.setConstValue(obj.value("const"_L1).toString());
-    result.setTitle(obj.value("title"_L1).toString());
+    result.setConstValue(constValue.toString());
+    result.setTitle(titleValue.toString());
     return result;
+}
+
+bool McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::isValid() const
+{
+    return !mConstValue.isEmpty() && !mTitle.isEmpty();
 }
 
 QJsonObject McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::toJson(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &anyOfItem)
@@ -100,8 +107,8 @@ QJsonObject McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::toJson(con
 
 McpProtocolTitledMultiSelectEnumSchema::Items McpProtocolTitledMultiSelectEnumSchema::Items::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("anyOf"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: anyOf";
+    if (!obj.value("anyOf"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledMultiSelectEnumSchema::Items: missing required field 'anyOf'";
         return {};
     }
     McpProtocolTitledMultiSelectEnumSchema::Items result;
@@ -110,7 +117,10 @@ McpProtocolTitledMultiSelectEnumSchema::Items McpProtocolTitledMultiSelectEnumSc
         const QJsonArray arr = anyOfValue.toArray();
         anyOf.reserve(arr.size());
         for (const QJsonValue &v : arr) {
-            anyOf.append(McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()));
+            // Skip invalid items
+            if (const AnyOfItem item = McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()); item.isValid()) {
+                anyOf.append(item);
+            }
         }
         result.setAnyOf(std::move(anyOf));
     }
@@ -141,8 +151,9 @@ McpProtocolTitledMultiSelectEnumSchema McpProtocolTitledMultiSelectEnumSchema::f
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledMultiSelectEnumSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
-    if (!obj.contains("items"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: items";
+    // items is required and must contain an "anyOf" array
+    if (const QJsonValue itemsValue = obj.value("items"_L1); !itemsValue.isObject() || !itemsValue.toObject().value("anyOf"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledMultiSelectEnumSchema: missing required field 'items'";
         return {};
     }
     if (const QJsonValue defaultValue2 = obj.value("default"_L1); defaultValue2.isArray()) {
@@ -160,11 +171,11 @@ McpProtocolTitledMultiSelectEnumSchema McpProtocolTitledMultiSelectEnumSchema::f
     if (const QJsonValue itemsValue = obj.value("items"_L1); itemsValue.isObject()) {
         prompt.setItems(McpProtocolTitledMultiSelectEnumSchema::Items::fromJson(itemsValue.toObject()));
     }
-    if (obj.contains("maxItems"_L1)) {
-        prompt.setMaxItems(obj.value("maxItems"_L1).toInt());
+    if (const QJsonValue maxItemsValue = obj.value("maxItems"_L1); maxItemsValue.isDouble()) {
+        prompt.setMaxItems(maxItemsValue.toInt());
     }
-    if (obj.contains("minItems"_L1)) {
-        prompt.setMinItems(obj.value("minItems"_L1).toInt());
+    if (const QJsonValue minItemsValue = obj.value("minItems"_L1); minItemsValue.isDouble()) {
+        prompt.setMinItems(minItemsValue.toInt());
     }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());

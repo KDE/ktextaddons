@@ -36,13 +36,14 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCompleteResult::Completion McpProtocolCompleteResult::Completion::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("values"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: values";
+    const QJsonValue valuesValue = obj.value("values"_L1);
+    if (!valuesValue.isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteResult::Completion: missing required field 'values'";
         return {};
     }
     McpProtocolCompleteResult::Completion completion;
-    if (obj["values"_L1].isArray()) {
-        const QJsonArray arr = obj["values"_L1].toArray();
+    {
+        const QJsonArray arr = valuesValue.toArray();
         QStringList values;
         values.reserve(arr.count());
         for (const QJsonValue &v : arr) {
@@ -53,8 +54,8 @@ McpProtocolCompleteResult::Completion McpProtocolCompleteResult::Completion::fro
     if (obj.contains("hasMore"_L1)) {
         completion.setHasMore(obj.value("hasMore"_L1).toBool());
     }
-    if (obj.contains("total"_L1)) {
-        completion.setTotal(obj.value("total"_L1).toInt());
+    if (const QJsonValue totalValue = obj.value("total"_L1); totalValue.isDouble()) {
+        completion.setTotal(totalValue.toInt());
     }
     return completion;
 }
@@ -108,17 +109,22 @@ void McpProtocolCompleteResult::Completion::setTotal(std::optional<int> newTotal
 
 McpProtocolCompleteResult McpProtocolCompleteResult::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue completionValue = obj.value("completion"_L1);
+    if (!completionValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteResult: missing required field 'completion'";
+        return {};
+    }
+    const QJsonObject completionObj = completionValue.toObject();
+    // Completion::fromJson() rejects it when "values" is missing; an empty completion is valid, so check it here
+    if (!completionObj.value("values"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteResult: invalid field 'completion'";
+        return {};
+    }
     McpProtocolCompleteResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (!obj.contains("completion"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: completion";
-        return {};
-    }
-    if (obj["completion"_L1].isObject()) {
-        result.setCompletion(McpProtocolCompleteResult::Completion::fromJson(obj["completion"_L1].toObject()));
-    }
+    result.setCompletion(McpProtocolCompleteResult::Completion::fromJson(completionObj));
     return result;
 }
 

@@ -8,6 +8,7 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
 #include <utility>
+#include <variant>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -40,12 +41,28 @@ McpProtocolElicitRequest McpProtocolElicitRequest::fromJson(const QJsonObject &o
             << "McpProtocolElicitRequest: field 'method' must be" << McpProtocolElicitRequest::type() << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        request.setParams(McpProtocolUtils::elicitRequestParamsFromJson(paramsValue));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!McpProtocolUtils::isValidRequestId(idValue)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequest: missing or invalid required field 'id'";
+        return {};
     }
-    if (obj.contains("id"_L1)) {
-        request.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    request.setId(McpProtocolUtils::requestIdFromJson(idValue));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequest: missing required field 'params'";
+        return {};
     }
+    const McpProtocolUtils::ElicitRequestParams params = McpProtocolUtils::elicitRequestParamsFromJson(paramsValue);
+    const bool paramsIsValid = std::visit(
+        [](const auto &p) -> bool {
+            return p.isValid();
+        },
+        params);
+    if (!paramsIsValid) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequest: invalid field 'params'";
+        return {};
+    }
+    request.setParams(params);
     return request;
 }
 

@@ -10,7 +10,10 @@
 #include "impl/mcpprotocolresourcelink.h"
 #include "impl/mcpprotocoltextcontent.h"
 #include "impl/mcpprotocoltoolresultcontent.h"
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(McpProtocolToolResultContentTest)
 
 McpProtocolToolResultContentTest::McpProtocolToolResultContentTest(QObject *parent)
@@ -27,4 +30,20 @@ void McpProtocolToolResultContentTest::shouldHaveDefaultValues()
     QVERIFY(!w.structuredContent().has_value());
     QVERIFY(w.toolUseId().isEmpty());
 }
+
+void McpProtocolToolResultContentTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    const QJsonObject obj{{"type"_L1, u"tool_result"_s}, {"toolUseId"_L1, u"id1"_s}, {"content"_L1, QJsonArray()}};
+    QVERIFY(McpProtocolToolResultContent::fromJson(obj).isValid());
+    // Missing toolUseId
+    QJsonObject withoutToolUseId = obj;
+    withoutToolUseId.remove("toolUseId"_L1);
+    QCOMPARE(McpProtocolToolResultContent::fromJson(withoutToolUseId), McpProtocolToolResultContent());
+    // Missing content
+    QJsonObject withoutContent = obj;
+    withoutContent.remove("content"_L1);
+    QCOMPARE(McpProtocolToolResultContent::fromJson(withoutContent), McpProtocolToolResultContent());
+}
+
 #include "moc_mcpprotocoltoolresultcontenttest.cpp"

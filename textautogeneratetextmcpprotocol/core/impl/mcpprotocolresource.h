@@ -34,6 +34,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] QString uri() const;
     /*!
      */

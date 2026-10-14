@@ -19,7 +19,7 @@ void McpProtocolPaginatedRequestParamsTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams w;
     QVERIFY(!w.meta().has_value());
-    QVERIFY(w.cursor().isEmpty());
+    QVERIFY(!w.cursor().has_value());
 }
 
 void McpProtocolPaginatedRequestParamsTest::shouldNotWriteEmptyCursor()
@@ -30,6 +30,17 @@ void McpProtocolPaginatedRequestParamsTest::shouldNotWriteEmptyCursor()
     const QJsonObject obj = TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::toJson(params);
     QCOMPARE(obj.value("cursor"_L1).toString(), u"next"_s);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::fromJson(obj), params);
+}
+
+void McpProtocolPaginatedRequestParamsTest::shouldKeepEmptyCursor()
+{
+    // Empty string is a valid opaque cursor
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams params;
+    params.setCursor(QString());
+    const QJsonObject obj = TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::toJson(params);
+    QVERIFY(obj.contains("cursor"_L1));
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::fromJson(obj), params);
+    QVERIFY(!TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams::fromJson(QJsonObject()).cursor().has_value());
 }
 
 #include "moc_mcpprotocolpaginatedrequestparamstest.cpp"

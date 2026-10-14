@@ -7,7 +7,9 @@
 #include "mcpprotocolembeddedresource.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonObject>
+#include <type_traits>
 #include <utility>
+#include <variant>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolEmbeddedResource::McpProtocolEmbeddedResource() = default;
@@ -27,6 +29,22 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+static bool isResourceValid(const McpProtocolUtils::EmbeddedResourceResource &resource)
+{
+    // A rejected resource is default-constructed
+    return std::visit(
+        [](const auto &r) -> bool {
+            using T = std::decay_t<decltype(r)>;
+            return !(r == T());
+        },
+        resource);
+}
+
+bool McpProtocolEmbeddedResource::isValid() const
+{
+    return isResourceValid(mResource);
+}
+
 McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObject &obj)
 {
     McpProtocolEmbeddedResource resource;
@@ -41,11 +59,12 @@ McpProtocolEmbeddedResource McpProtocolEmbeddedResource::fromJson(const QJsonObj
     if (const QJsonValue annotationsValue = obj.value("annotations"_L1); annotationsValue.isObject()) {
         resource.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
-    if (obj.contains("resource"_L1)) {
-        if (auto resourceContents = McpProtocolUtils::embeddedResourceResourceFromJson(obj["resource"_L1])) {
-            resource.setResource(std::move(*resourceContents));
-        }
+    auto resourceContents = McpProtocolUtils::embeddedResourceResourceFromJson(obj.value("resource"_L1));
+    if (!resourceContents || !isResourceValid(*resourceContents)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolEmbeddedResource: missing or invalid required field 'resource'";
+        return {};
     }
+    resource.setResource(std::move(*resourceContents));
     return resource;
 }
 

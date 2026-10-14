@@ -5,6 +5,7 @@
 */
 #include "mcpprotocolresourcelinktest.h"
 #include "impl/mcpprotocolresourcelink.h"
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolResourceLinkTest)
 using namespace Qt::Literals::StringLiterals;
@@ -26,4 +27,23 @@ void McpProtocolResourceLinkTest::shouldHaveDefaultValues()
     QVERIFY(w.uri().isEmpty());
     QCOMPARE(w.type(), "resource_link"_ba);
 }
+
+void McpProtocolResourceLinkTest::shouldRejectMissingRequiredFields()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceLink;
+    const QJsonObject obj{{"type"_L1, u"resource_link"_s}, {"name"_L1, u"foo"_s}, {"uri"_L1, u"file:///foo.txt"_s}};
+    const McpProtocolResourceLink link = McpProtocolResourceLink::fromJson(obj);
+    QVERIFY(link.isValid());
+    QCOMPARE(McpProtocolResourceLink::toJson(link), obj);
+    QVERIFY(!McpProtocolResourceLink().isValid());
+
+    QJsonObject missingName = obj;
+    missingName.remove("name"_L1);
+    QCOMPARE(McpProtocolResourceLink::fromJson(missingName), McpProtocolResourceLink());
+
+    QJsonObject missingUri = obj;
+    missingUri.remove("uri"_L1);
+    QCOMPARE(McpProtocolResourceLink::fromJson(missingUri), McpProtocolResourceLink());
+}
+
 #include "moc_mcpprotocolresourcelinktest.cpp"

@@ -21,11 +21,21 @@ QByteArray McpProtocolCancelTaskRequest::type()
 bool McpProtocolCancelTaskRequest::Params::operator==(const McpProtocolCancelTaskRequest::Params &other) const = default;
 bool McpProtocolCancelTaskRequest::operator==(const McpProtocolCancelTaskRequest &other) const = default;
 
+bool McpProtocolCancelTaskRequest::Params::isValid() const
+{
+    return !mTaskId.isEmpty();
+}
+
 TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params
 TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue taskIdValue = obj.value("taskId"_L1);
+    if (!taskIdValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskRequest::Params: missing required field 'taskId'";
+        return {};
+    }
     TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params params;
-    params.setTaskId(obj.value("taskId"_L1).toString());
+    params.setTaskId(taskIdValue.toString());
     return params;
 }
 
@@ -53,9 +63,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonObject &obj)
 {
     McpProtocolCancelTaskRequest request;
-    if (obj.contains("id"_L1)) {
-        request.setId(McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
-    }
     if (obj.value("jsonrpc"_L1).toString() != "2.0"_L1) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
@@ -65,9 +72,23 @@ McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonO
             << "McpProtocolCancelTaskRequest: field 'method' must be" << McpProtocolCancelTaskRequest::type() << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        request.setParams(McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject()));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!McpProtocolUtils::isValidRequestId(idValue)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskRequest: missing or invalid required field 'id'";
+        return {};
     }
+    request.setId(McpProtocolUtils::requestIdFromJson(idValue));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskRequest: missing required field 'params'";
+        return {};
+    }
+    const McpProtocolCancelTaskRequest::Params params = McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject());
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskRequest: invalid field 'params'";
+        return {};
+    }
+    request.setParams(params);
     return request;
 }
 

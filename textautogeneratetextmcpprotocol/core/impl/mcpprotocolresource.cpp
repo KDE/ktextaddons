@@ -15,6 +15,11 @@ McpProtocolResource::McpProtocolResource() = default;
 
 bool McpProtocolResource::operator==(const McpProtocolResource &other) const = default;
 
+bool McpProtocolResource::isValid() const
+{
+    return !mName.isEmpty() && !mUri.isEmpty();
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResource &t)
 {
     d.space() << "uri:" << t.uri();
@@ -46,21 +51,34 @@ McpProtocolResource McpProtocolResource::fromJson(const QJsonObject &obj)
         QList<McpProtocolIcon> list_icons;
         list_icons.reserve(arr.count());
         for (const auto &v : arr) {
-            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+            // Skip icons rejected by McpProtocolIcon::fromJson
+            if (McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject()); icon.isValid()) {
+                list_icons.append(std::move(icon));
+            }
         }
         prompt.setIcons(std::move(list_icons));
     }
     if (obj.contains("mimeType"_L1)) {
         prompt.setMimeType(obj.value("mimeType"_L1).toString());
     }
-    prompt.setName(obj.value("name"_L1).toString());
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString() && !nameValue.toString().isEmpty()) {
+        prompt.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResource: missing required field 'name'";
+        return {};
+    }
     if (const QJsonValue sizeValue = obj.value("size"_L1); sizeValue.isDouble()) {
         prompt.setSize(sizeValue.toInteger());
     }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString() && !uriValue.toString().isEmpty()) {
+        prompt.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResource: missing required field 'uri'";
+        return {};
+    }
 
     return prompt;
 }

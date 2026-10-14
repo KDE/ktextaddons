@@ -45,6 +45,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolGetPromptRequestParams fromJson(const QJsonObject &obj);
     /*!
      */

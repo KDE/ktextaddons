@@ -25,6 +25,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolError fromJson(const QJsonObject &obj);
     /*!
      */

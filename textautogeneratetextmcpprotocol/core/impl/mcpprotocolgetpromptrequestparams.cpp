@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolgetpromptrequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -53,8 +54,18 @@ QJsonObject McpProtocolGetPromptRequestParams::Meta::toJson(const McpProtocolGet
     return obj;
 }
 
+bool McpProtocolGetPromptRequestParams::isValid() const
+{
+    return !mName.isEmpty();
+}
+
 McpProtocolGetPromptRequestParams McpProtocolGetPromptRequestParams::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue nameValue = obj.value("name"_L1);
+    if (!nameValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetPromptRequestParams: missing required field 'name'";
+        return {};
+    }
     McpProtocolGetPromptRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolGetPromptRequestParams::Meta::fromJson(metaValue.toObject()));
@@ -67,7 +78,7 @@ McpProtocolGetPromptRequestParams McpProtocolGetPromptRequestParams::fromJson(co
         }
         params.setArguments(std::move(map_arguments));
     }
-    params.setName(obj.value("name"_L1).toString());
+    params.setName(nameValue.toString());
     return params;
 }
 

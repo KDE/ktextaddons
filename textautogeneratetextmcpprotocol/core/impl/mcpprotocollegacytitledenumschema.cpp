@@ -53,6 +53,9 @@ McpProtocolLegacyTitledEnumSchema McpProtocolLegacyTitledEnumSchema::fromJson(co
             lst.append(v.toString());
         }
         schema.setEnums(std::move(lst));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLegacyTitledEnumSchema: missing required field 'enum'";
+        return {};
     }
     if (const QJsonValue enumNamesValue = obj.value("enumNames"_L1); enumNamesValue.isArray()) {
         const QJsonArray arr = enumNamesValue.toArray();

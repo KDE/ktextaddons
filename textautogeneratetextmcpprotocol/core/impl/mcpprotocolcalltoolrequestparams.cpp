@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolcalltoolrequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -53,8 +54,18 @@ QJsonObject McpProtocolCallToolRequestParams::Meta::toJson(const McpProtocolCall
     return obj;
 }
 
+bool McpProtocolCallToolRequestParams::isValid() const
+{
+    return !mName.isEmpty();
+}
+
 McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue nameValue = obj.value("name"_L1);
+    if (!nameValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolRequestParams: missing required field 'name'";
+        return {};
+    }
     McpProtocolCallToolRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolCallToolRequestParams::Meta::fromJson(metaValue.toObject()));
@@ -67,7 +78,7 @@ McpProtocolCallToolRequestParams McpProtocolCallToolRequestParams::fromJson(cons
         }
         params.setArguments(std::move(map_arguments));
     }
-    params.setName(obj.value("name"_L1).toString());
+    params.setName(nameValue.toString());
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
         params.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }

@@ -27,8 +27,8 @@ McpProtocolURLElicitationRequiredError McpProtocolURLElicitationRequiredError::f
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    if (!obj.contains("error"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: error";
+    if (!obj.value("error"_L1).isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolURLElicitationRequiredError: missing required field 'error'";
         return {};
     }
     McpProtocolURLElicitationRequiredError result;

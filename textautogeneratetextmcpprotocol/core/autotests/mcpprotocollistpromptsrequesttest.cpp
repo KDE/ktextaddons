@@ -5,6 +5,7 @@
 */
 #include "mcpprotocollistpromptsrequesttest.h"
 #include "impl/mcpprotocollistpromptsrequest.h"
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolListPromptsRequestTest)
 using namespace Qt::Literals::StringLiterals;
@@ -20,4 +21,23 @@ void McpProtocolListPromptsRequestTest::shouldHaveDefaultValues()
     QVERIFY(!w.params().has_value());
     // TODO
 }
+
+void McpProtocolListPromptsRequestTest::shouldRejectMissingRequiredFields()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolListPromptsRequest;
+    QJsonObject valid;
+    valid["jsonrpc"_L1] = u"2.0"_s;
+    valid["id"_L1] = 1;
+    valid["method"_L1] = u"prompts/list"_s;
+    QVERIFY(McpProtocolListPromptsRequest::fromJson(valid) != McpProtocolListPromptsRequest());
+
+    QJsonObject obj = valid;
+    obj.remove(u"id"_s);
+    QCOMPARE(McpProtocolListPromptsRequest::fromJson(obj), McpProtocolListPromptsRequest());
+
+    obj = valid;
+    obj["id"_L1] = true;
+    QCOMPARE(McpProtocolListPromptsRequest::fromJson(obj), McpProtocolListPromptsRequest());
+}
+
 #include "moc_mcpprotocollistpromptsrequesttest.cpp"

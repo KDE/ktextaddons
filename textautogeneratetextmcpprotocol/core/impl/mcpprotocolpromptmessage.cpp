@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolpromptmessage.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -16,6 +17,11 @@ McpProtocolPromptMessage::~McpProtocolPromptMessage() = default;
 
 bool McpProtocolPromptMessage::operator==(const McpProtocolPromptMessage &other) const = default;
 
+bool McpProtocolPromptMessage::isValid() const
+{
+    return mRole != McpProtocolUtils::Role::Unknown;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage &t)
 {
     d.space() << "role:" << t.role();
@@ -26,14 +32,18 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolPromptMessage McpProtocolPromptMessage::fromJson(const QJsonObject &obj)
 {
     McpProtocolPromptMessage message;
-    if (obj.contains("content"_L1)) {
-        if (auto content = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(obj["content"_L1])) {
-            message.setContent(std::move(*content));
-        }
+    if (auto content = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(obj.value("content"_L1))) {
+        message.setContent(std::move(*content));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPromptMessage: missing required field 'content'";
+        return {};
     }
-    if (const QJsonValue roleValue = obj.value("role"_L1); roleValue.isString()) {
-        message.setRole(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleFromString(roleValue.toString()));
+    const McpProtocolUtils::Role role = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleFromString(obj.value("role"_L1).toString());
+    if (role == McpProtocolUtils::Role::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPromptMessage: missing required field 'role'";
+        return {};
     }
+    message.setRole(role);
 
     return message;
 }

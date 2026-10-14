@@ -55,7 +55,12 @@ McpProtocolTextContent McpProtocolTextContent::fromJson(const QJsonObject &obj)
         return {};
     }
 
-    text.setText(obj["text"_L1].toString());
+    if (const QJsonValue textValue = obj.value("text"_L1); textValue.isString()) {
+        text.setText(textValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTextContent: missing required field 'text'";
+        return {};
+    }
     if (obj.contains("annotations"_L1)) {
         text.setAnnotations(McpProtocolAnnotations::fromJson(obj["annotations"_L1].toObject()));
     }

@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolicon.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -65,10 +66,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolIcon::isValid() const
+{
+    return !mSrc.isEmpty();
+}
+
 McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
 {
     McpProtocolIcon icon;
-    icon.setSrc(obj["src"_L1].toString());
+    if (const QJsonValue srcValue = obj.value("src"_L1); srcValue.isString()) {
+        icon.setSrc(srcValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolIcon: missing required field 'src'";
+        return {};
+    }
     if (obj.contains("mimeType"_L1)) {
         icon.setMimeType(obj.value("mimeType"_L1).toString());
     }
@@ -82,7 +93,10 @@ McpProtocolIcon McpProtocolIcon::fromJson(const QJsonObject &obj)
         icon.setSizes(std::move(list_sizes));
     }
     if (const QJsonValue themeValue = obj.value("theme"_L1); themeValue.isString()) {
-        icon.setTheme(themeValue.toString());
+        // Optional enum: "light" or "dark", ignore unknown values
+        if (const QString theme = themeValue.toString(); theme == "light"_L1 || theme == "dark"_L1) {
+            icon.setTheme(theme);
+        }
     }
     return icon;
 }

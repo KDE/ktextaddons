@@ -29,11 +29,17 @@ McpProtocolJSONRPCResultResponse McpProtocolJSONRPCResultResponse::fromJson(cons
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    if (obj.contains("id"_L1)) {
-        response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(obj["id"_L1]));
+    if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() || idValue.isDouble()) {
+        response.setId(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdFromJson(idValue));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCResultResponse: missing required field 'id'";
+        return {};
     }
-    if (obj.contains("result"_L1)) {
-        response.setResult(McpProtocolResult::fromJson(obj["result"_L1].toObject()));
+    if (const QJsonValue resultValue = obj.value("result"_L1); resultValue.isObject()) {
+        response.setResult(McpProtocolResult::fromJson(resultValue.toObject()));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCResultResponse: missing required field 'result'";
+        return {};
     }
     return response;
 }

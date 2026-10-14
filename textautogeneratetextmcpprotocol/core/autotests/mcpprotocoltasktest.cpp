@@ -50,4 +50,27 @@ void McpProtocolTaskTest::shouldLoadAndSaveTtl()
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolTask::toJson(task), obj);
 }
 
+void McpProtocolTaskTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    const QJsonObject obj{{"taskId"_L1, u"t1"_s},
+                          {"status"_L1, u"working"_s},
+                          {"createdAt"_L1, u"2025-11-25T10:00:00Z"_s},
+                          {"lastUpdatedAt"_L1, u"2025-11-25T10:00:01Z"_s}};
+    QVERIFY(McpProtocolTask::fromJson(obj).isValid());
+    for (const auto &key : {"taskId"_L1, "status"_L1, "createdAt"_L1, "lastUpdatedAt"_L1}) {
+        QJsonObject incomplete = obj;
+        incomplete.remove(key);
+        QCOMPARE(McpProtocolTask::fromJson(incomplete), McpProtocolTask());
+    }
+    // Unknown status
+    QJsonObject unknownStatus = obj;
+    unknownStatus["status"_L1] = u"foo"_s;
+    QCOMPARE(McpProtocolTask::fromJson(unknownStatus), McpProtocolTask());
+    // Non numeric ttl is ignored
+    QJsonObject invalidTtl = obj;
+    invalidTtl["ttl"_L1] = u"foo"_s;
+    QVERIFY(!McpProtocolTask::fromJson(invalidTtl).ttl().has_value());
+}
+
 #include "moc_mcpprotocoltasktest.cpp"

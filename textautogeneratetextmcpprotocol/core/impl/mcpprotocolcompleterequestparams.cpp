@@ -5,9 +5,12 @@
 */
 
 #include "mcpprotocolcompleterequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
+#include <type_traits>
 #include <utility>
+#include <variant>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolCompleteRequestParams::McpProtocolCompleteRequestParams() = default;
@@ -75,11 +78,27 @@ void McpProtocolCompleteRequestParams::Argument::setName(const QString &newName)
     mName = newName;
 }
 
+bool McpProtocolCompleteRequestParams::Argument::isValid() const
+{
+    // value can be empty (nothing typed yet)
+    return !mName.isEmpty();
+}
+
 McpProtocolCompleteRequestParams::Argument McpProtocolCompleteRequestParams::Argument::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue nameValue = obj.value("name"_L1);
+    if (!nameValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams::Argument: missing required field 'name'";
+        return {};
+    }
+    const QJsonValue valueValue = obj.value("value"_L1);
+    if (!valueValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams::Argument: missing required field 'value'";
+        return {};
+    }
     McpProtocolCompleteRequestParams::Argument argument;
-    argument.setName(obj.value("name"_L1).toString());
-    argument.setValue(obj.value("value"_L1).toString());
+    argument.setName(nameValue.toString());
+    argument.setValue(valueValue.toString());
     return argument;
 }
 
@@ -144,21 +163,53 @@ QJsonObject McpProtocolCompleteRequestParams::Meta::toJson(const McpProtocolComp
     return obj;
 }
 
+static bool isRefValid(const McpProtocolUtils::CompleteRequestParamsRef &ref)
+{
+    // A rejected reference is default-constructed
+    return std::visit(
+        [](const auto &r) -> bool {
+            using T = std::decay_t<decltype(r)>;
+            return !(r == T());
+        },
+        ref);
+}
+
+bool McpProtocolCompleteRequestParams::isValid() const
+{
+    return mArgument.isValid() && isRefValid(mRef);
+}
+
 McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue argumentValue = obj.value("argument"_L1);
+    if (!argumentValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: missing required field 'argument'";
+        return {};
+    }
+    const McpProtocolCompleteRequestParams::Argument argument = McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject());
+    if (!argument.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: invalid field 'argument'";
+        return {};
+    }
+    const QJsonValue refValue = obj.value("ref"_L1);
+    if (!refValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: missing required field 'ref'";
+        return {};
+    }
+    const McpProtocolUtils::CompleteRequestParamsRef ref = McpProtocolUtils::completeRequestParamsRefFromJson(refValue);
+    if (!isRefValid(ref)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: invalid field 'ref'";
+        return {};
+    }
     McpProtocolCompleteRequestParams params;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (const QJsonValue argumentValue = obj.value("argument"_L1); argumentValue.isObject()) {
-        params.setArgument(McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject()));
-    }
+    params.setArgument(argument);
     if (const QJsonValue contextValue = obj.value("context"_L1); contextValue.isObject()) {
         params.setContext(McpProtocolCompleteRequestParams::Context::fromJson(contextValue.toObject()));
     }
-    if (obj.contains("ref"_L1)) {
-        params.setRef(McpProtocolUtils::completeRequestParamsRefFromJson(obj["ref"_L1].toObject()));
-    }
+    params.setRef(ref);
     return params;
 }
 

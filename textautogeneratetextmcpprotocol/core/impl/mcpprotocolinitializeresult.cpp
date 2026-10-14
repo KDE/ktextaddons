@@ -28,27 +28,31 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObject &obj)
 {
     McpProtocolInitializeResult result;
-    if (!obj.contains("capabilities"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: capabilities";
-        return {};
-    }
-    if (!obj.contains("protocolVersion"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: protocolVersion";
-        return {};
-    }
-    if (!obj.contains("serverInfo"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: serverInfo";
-        return {};
-    }
     if (const QJsonValue capabilitiesValue = obj.value("capabilities"_L1); capabilitiesValue.isObject()) {
         result.setCapabilities(McpProtocolServerCapabilities::fromJson(capabilitiesValue.toObject()));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeResult: missing required field 'capabilities'";
+        return {};
     }
-    if (obj.contains("instructions"_L1)) {
-        result.setInstructions(obj.value("instructions"_L1).toString());
+    if (const QJsonValue protocolVersionValue = obj.value("protocolVersion"_L1); protocolVersionValue.isString()) {
+        result.setProtocolVersion(protocolVersionValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeResult: missing required field 'protocolVersion'";
+        return {};
     }
-    result.setProtocolVersion(obj["protocolVersion"_L1].toString());
     if (const QJsonValue serverInfoValue = obj.value("serverInfo"_L1); serverInfoValue.isObject()) {
-        result.setServerInfo(McpProtocolImplementation::fromJson(serverInfoValue.toObject()));
+        const McpProtocolImplementation serverInfo = McpProtocolImplementation::fromJson(serverInfoValue.toObject());
+        if (!serverInfo.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeResult: invalid field 'serverInfo'";
+            return {};
+        }
+        result.setServerInfo(serverInfo);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeResult: missing required field 'serverInfo'";
+        return {};
+    }
+    if (const QJsonValue instructionsValue = obj.value("instructions"_L1); instructionsValue.isString()) {
+        result.setInstructions(instructionsValue.toString());
     }
 
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {

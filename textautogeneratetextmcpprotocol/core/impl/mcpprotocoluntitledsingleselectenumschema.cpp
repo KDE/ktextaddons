@@ -36,6 +36,10 @@ McpProtocolUntitledSingleSelectEnumSchema McpProtocolUntitledSingleSelectEnumSch
         return {};
     }
 
+    if (!obj.value("enum"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolUntitledSingleSelectEnumSchema: missing required field 'enum'";
+        return {};
+    }
     if (obj.contains("default"_L1)) {
         prompt.setDefaultValue(obj.value("default"_L1).toString());
     }

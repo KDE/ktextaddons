@@ -31,4 +31,13 @@ void McpProtocolURLElicitationRequiredErrorTest::shouldRejectOtherErrorCode()
     QCOMPARE(McpProtocolURLElicitationRequiredError::fromJson(obj), McpProtocolURLElicitationRequiredError());
 }
 
+void McpProtocolURLElicitationRequiredErrorTest::shouldRejectMissingRequiredFields()
+{
+    // Missing error
+    QCOMPARE(McpProtocolURLElicitationRequiredError::fromJson(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, 2}}), McpProtocolURLElicitationRequiredError());
+    // error is not an object
+    QCOMPARE(McpProtocolURLElicitationRequiredError::fromJson(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"id"_L1, 2}, {"error"_L1, u"foo"_s}}),
+             McpProtocolURLElicitationRequiredError());
+}
+
 #include "moc_mcpprotocolurlelicitationrequirederrortest.cpp"

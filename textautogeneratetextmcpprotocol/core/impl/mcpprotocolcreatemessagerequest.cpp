@@ -40,12 +40,23 @@ McpProtocolCreateMessageRequest McpProtocolCreateMessageRequest::fromJson(const 
                                                        << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        request.setParams(McpProtocolCreateMessageRequestParams::fromJson(paramsValue.toObject()));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!McpProtocolUtils::isValidRequestId(idValue)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequest: missing or invalid required field 'id'";
+        return {};
     }
-    if (obj.contains("id"_L1)) {
-        request.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    request.setId(McpProtocolUtils::requestIdFromJson(idValue));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequest: missing required field 'params'";
+        return {};
     }
+    const McpProtocolCreateMessageRequestParams params = McpProtocolCreateMessageRequestParams::fromJson(paramsValue.toObject());
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequest: invalid field 'params'";
+        return {};
+    }
+    request.setParams(params);
     return request;
 }
 

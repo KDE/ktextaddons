@@ -40,7 +40,15 @@ McpProtocolLoggingMessageNotification McpProtocolLoggingMessageNotification::fro
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        notification.setParams(McpProtocolLoggingMessageNotificationParams::fromJson(paramsValue.toObject()));
+        const McpProtocolLoggingMessageNotificationParams params = McpProtocolLoggingMessageNotificationParams::fromJson(paramsValue.toObject());
+        if (!params.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotification: invalid field 'params'";
+            return {};
+        }
+        notification.setParams(params);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotification: missing required field 'params'";
+        return {};
     }
     return notification;
 }

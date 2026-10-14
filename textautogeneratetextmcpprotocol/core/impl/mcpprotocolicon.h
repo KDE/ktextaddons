@@ -25,6 +25,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] std::optional<QString> mimeType() const;
     /*!
      */

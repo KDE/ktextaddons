@@ -30,13 +30,21 @@ McpProtocolPaginatedRequest McpProtocolPaginatedRequest::fromJson(const QJsonObj
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    prompt.setMethod(obj.value("method"_L1).toString());
+    if (const QJsonValue methodValue = obj.value("method"_L1); methodValue.isString() && !methodValue.toString().isEmpty()) {
+        prompt.setMethod(methodValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPaginatedRequest: missing required field 'method'";
+        return {};
+    }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolPaginatedRequestParams::fromJson(paramsValue.toObject()));
     }
-    if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!idValue.isString() && !idValue.isDouble()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPaginatedRequest: missing required field 'id'";
+        return {};
     }
+    prompt.setId(McpProtocolUtils::requestIdFromJson(idValue));
     return prompt;
 }
 

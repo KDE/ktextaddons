@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolresourceupdatednotificationparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -13,6 +14,11 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceUpdatedNotificationParams::McpProtocolResourceUpdatedNotificationParams() = default;
 
 bool McpProtocolResourceUpdatedNotificationParams::operator==(const McpProtocolResourceUpdatedNotificationParams &other) const = default;
+
+bool McpProtocolResourceUpdatedNotificationParams::isValid() const
+{
+    return !mUri.isEmpty();
+}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams &t)
 {
@@ -27,7 +33,12 @@ McpProtocolResourceUpdatedNotificationParams McpProtocolResourceUpdatedNotificat
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString() && !uriValue.toString().isEmpty()) {
+        prompt.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResourceUpdatedNotificationParams: missing required field 'uri'";
+        return {};
+    }
     return prompt;
 }
 

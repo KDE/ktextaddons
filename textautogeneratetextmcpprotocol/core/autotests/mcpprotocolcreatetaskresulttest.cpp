@@ -5,6 +5,8 @@
 */
 #include "mcpprotocolcreatetaskresulttest.h"
 #include "impl/mcpprotocolcreatetaskresult.h"
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolCreateTaskResultTest)
 
@@ -19,4 +21,15 @@ void McpProtocolCreateTaskResultTest::shouldHaveDefaultValues()
     QVERIFY(!w.meta().has_value());
     // TODO QVERIFY(w.task().isEmpty());
 }
+void McpProtocolCreateTaskResultTest::shouldRejectMissingRequiredFields()
+{
+    using namespace Qt::Literals::StringLiterals;
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QCOMPARE(McpProtocolCreateTaskResult::fromJson(QJsonObject()), McpProtocolCreateTaskResult());
+
+    QJsonObject obj;
+    obj["task"_L1] = QJsonObject();
+    QCOMPARE(McpProtocolCreateTaskResult::fromJson(obj), McpProtocolCreateTaskResult());
+}
+
 #include "moc_mcpprotocolcreatetaskresulttest.cpp"

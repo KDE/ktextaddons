@@ -54,8 +54,18 @@ McpProtocolAudioContent McpProtocolAudioContent::fromJson(const QJsonObject &obj
     if (obj.contains("_meta"_L1)) {
         audio.setMeta(McpProtocolMeta::fromJson(obj["_meta"_L1].toObject()));
     }
-    audio.setData(obj.value("data"_L1).toString());
-    audio.setMimeType(obj.value("mimeType"_L1).toString());
+    const QJsonValue dataValue = obj.value("data"_L1);
+    if (!dataValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolAudioContent: missing required field 'data'";
+        return {};
+    }
+    const QJsonValue mimeTypeValue = obj.value("mimeType"_L1);
+    if (!mimeTypeValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolAudioContent: missing required field 'mimeType'";
+        return {};
+    }
+    audio.setData(dataValue.toString());
+    audio.setMimeType(mimeTypeValue.toString());
     return audio;
 }
 

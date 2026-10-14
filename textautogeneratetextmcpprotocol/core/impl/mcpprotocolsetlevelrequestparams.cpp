@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolsetlevelrequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -57,9 +58,22 @@ McpProtocolSetLevelRequestParams McpProtocolSetLevelRequestParams::fromJson(cons
         prompt.setMeta(McpProtocolSetLevelRequestParams::Meta::fromJson(metaValue.toObject()));
     }
     if (const QJsonValue levelValue = obj.value("level"_L1); levelValue.isString()) {
-        prompt.setLevel(McpProtocolUtils::convertLoggingLevelFromString(levelValue.toString()));
+        const McpProtocolUtils::LoggingLevel level = McpProtocolUtils::convertLoggingLevelFromString(levelValue.toString());
+        if (level == McpProtocolUtils::LoggingLevel::Unknown) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolSetLevelRequestParams: invalid field 'level'" << levelValue.toString();
+            return {};
+        }
+        prompt.setLevel(level);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolSetLevelRequestParams: missing required field 'level'";
+        return {};
     }
     return prompt;
+}
+
+bool McpProtocolSetLevelRequestParams::isValid() const
+{
+    return mLevel != McpProtocolUtils::LoggingLevel::Unknown;
 }
 
 QJsonObject McpProtocolSetLevelRequestParams::toJson(const McpProtocolSetLevelRequestParams &setLevelRequestParams)

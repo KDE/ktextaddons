@@ -28,6 +28,10 @@ public:
              */
             [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &anyOfItem);
 
+            /*!
+             */
+            [[nodiscard]] bool isValid() const;
+
             [[nodiscard]] QString constValue() const;
             void setConstValue(const QString &newConstValue);
             [[nodiscard]] QString title() const;

@@ -78,15 +78,21 @@ void McpProtocolElicitRequestFormParams::Meta::setAdditionalProperties(const QJs
 
 McpProtocolElicitRequestFormParams::RequestedSchema McpProtocolElicitRequestFormParams::RequestedSchema::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("properties"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: properties";
+    if (obj.value("type"_L1).toString() != "object"_L1) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "McpProtocolElicitRequestFormParams::RequestedSchema: field 'type' must be 'object', got:" << obj.value("type"_L1).toString();
+        return {};
+    }
+    const QJsonValue propertiesValue = obj.value("properties"_L1);
+    if (!propertiesValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams::RequestedSchema: missing required field 'properties'";
         return {};
     }
     McpProtocolElicitRequestFormParams::RequestedSchema requestedSchema;
     if (obj.contains("$schema"_L1)) {
         requestedSchema.setDollarschema(obj.value("$schema"_L1).toString());
     }
-    const QJsonObject mapObj_properties = obj["properties"_L1].toObject();
+    const QJsonObject mapObj_properties = propertiesValue.toObject();
     QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> map_properties;
     for (auto it = mapObj_properties.constBegin(); it != mapObj_properties.constEnd(); ++it) {
         // Ignore unknown schema
@@ -136,6 +142,11 @@ QByteArray McpProtocolElicitRequestFormParams::mode()
     return "form"_ba;
 }
 
+bool McpProtocolElicitRequestFormParams::isValid() const
+{
+    return !mMessage.isEmpty();
+}
+
 McpProtocolElicitRequestFormParams McpProtocolElicitRequestFormParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolElicitRequestFormParams params;
@@ -144,13 +155,27 @@ McpProtocolElicitRequestFormParams McpProtocolElicitRequestFormParams::fromJson(
                                                        << McpProtocolElicitRequestFormParams::mode() << "got:" << obj.value("mode"_L1).toString();
         return {};
     }
+    const QJsonValue messageValue = obj.value("message"_L1);
+    if (!messageValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams: missing required field 'message'";
+        return {};
+    }
+    const QJsonValue requestedSchemaValue = obj.value("requestedSchema"_L1);
+    if (!requestedSchemaValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams: missing required field 'requestedSchema'";
+        return {};
+    }
+    const QJsonObject requestedSchemaObj = requestedSchemaValue.toObject();
+    // RequestedSchema::fromJson() returns an empty schema when invalid, which can't be distinguished from a valid empty one
+    if (requestedSchemaObj.value("type"_L1).toString() != "object"_L1 || !requestedSchemaObj.value("properties"_L1).isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequestFormParams: invalid field 'requestedSchema'";
+        return {};
+    }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolElicitRequestFormParams::Meta::fromJson(metaValue.toObject()));
     }
-    params.setMessage(obj.value("message"_L1).toString());
-    if (const QJsonValue requestedSchemaValue = obj.value("requestedSchema"_L1); requestedSchemaValue.isObject()) {
-        params.setRequestedSchema(McpProtocolElicitRequestFormParams::RequestedSchema::fromJson(requestedSchemaValue.toObject()));
-    }
+    params.setMessage(messageValue.toString());
+    params.setRequestedSchema(McpProtocolElicitRequestFormParams::RequestedSchema::fromJson(requestedSchemaObj));
     if (const QJsonValue taskValue = obj.value("task"_L1); taskValue.isObject()) {
         params.setTask(McpProtocolTaskMetadata::fromJson(taskValue.toObject()));
     }

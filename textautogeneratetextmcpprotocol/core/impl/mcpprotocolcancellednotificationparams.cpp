@@ -31,8 +31,9 @@ McpProtocolCancelledNotificationParams McpProtocolCancelledNotificationParams::f
     if (obj.contains("reason"_L1)) {
         params.setReason(obj.value("reason"_L1).toString());
     }
-    if (obj.contains("requestId"_L1)) {
-        params.setRequestId(McpProtocolUtils::requestIdFromJson(obj["requestId"_L1]));
+    // Optional: ignore a requestId which is neither a string nor a number
+    if (const QJsonValue requestIdValue = obj.value("requestId"_L1); requestIdValue.isString() || requestIdValue.isDouble()) {
+        params.setRequestId(McpProtocolUtils::requestIdFromJson(requestIdValue));
     }
     return params;
 }

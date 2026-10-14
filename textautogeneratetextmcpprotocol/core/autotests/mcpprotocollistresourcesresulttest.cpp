@@ -5,6 +5,8 @@
 */
 #include "mcpprotocollistresourcesresulttest.h"
 #include "impl/mcpprotocollistresourcesresult.h"
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolListResourcesResultTest)
 
@@ -19,4 +21,23 @@ void McpProtocolListResourcesResultTest::shouldHaveDefaultValues()
     QVERIFY(!w.nextCursor().has_value());
     QVERIFY(!w.meta().has_value());
 }
+
+void McpProtocolListResourcesResultTest::shouldRejectMissingRequiredFields()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolListResourcesResult;
+    using namespace Qt::Literals::StringLiterals;
+    QJsonObject validItem;
+    validItem["name"_L1] = u"resource"_s;
+    validItem["uri"_L1] = u"file:///tmp/a.txt"_s;
+    QJsonObject valid;
+    valid["resources"_L1] = QJsonArray{validItem, QJsonObject()};
+    const McpProtocolListResourcesResult result = McpProtocolListResourcesResult::fromJson(valid);
+    // Invalid item is skipped
+    QCOMPARE(result.resources().count(), 1);
+
+    QJsonObject obj = valid;
+    obj.remove(u"resources"_s);
+    QCOMPARE(McpProtocolListResourcesResult::fromJson(obj), McpProtocolListResourcesResult());
+}
+
 #include "moc_mcpprotocollistresourcesresulttest.cpp"

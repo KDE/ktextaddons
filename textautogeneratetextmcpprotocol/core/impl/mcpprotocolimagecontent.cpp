@@ -79,8 +79,18 @@ McpProtocolImageContent McpProtocolImageContent::fromJson(const QJsonObject &obj
         image.setAnnotations(McpProtocolAnnotations::fromJson(annotationsValue.toObject()));
     }
 
-    image.setData(obj["data"_L1].toString());
-    image.setMimeType(obj["mimeType"_L1].toString());
+    if (const QJsonValue dataValue = obj.value("data"_L1); dataValue.isString()) {
+        image.setData(dataValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolImageContent: missing required field 'data'";
+        return {};
+    }
+    if (const QJsonValue mimeTypeValue = obj.value("mimeType"_L1); mimeTypeValue.isString()) {
+        image.setMimeType(mimeTypeValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolImageContent: missing required field 'mimeType'";
+        return {};
+    }
     return image;
 }
 

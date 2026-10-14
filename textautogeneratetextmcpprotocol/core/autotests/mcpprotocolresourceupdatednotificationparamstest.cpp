@@ -5,8 +5,10 @@
 */
 #include "mcpprotocolresourceupdatednotificationparamstest.h"
 #include "impl/mcpprotocolresourceupdatednotificationparams.h"
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolResourceUpdatedNotificationParamsTest)
+using namespace Qt::Literals::StringLiterals;
 
 McpProtocolResourceUpdatedNotificationParamsTest::McpProtocolResourceUpdatedNotificationParamsTest(QObject *parent)
     : QObject{parent}
@@ -19,4 +21,16 @@ void McpProtocolResourceUpdatedNotificationParamsTest::shouldHaveDefaultValues()
     QVERIFY(!w.meta().has_value());
     QVERIFY(w.uri().isEmpty());
 }
+
+void McpProtocolResourceUpdatedNotificationParamsTest::shouldRejectMissingRequiredFields()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams;
+    const QJsonObject obj{{"uri"_L1, u"file:///foo.txt"_s}};
+    const McpProtocolResourceUpdatedNotificationParams params = McpProtocolResourceUpdatedNotificationParams::fromJson(obj);
+    QVERIFY(params.isValid());
+    QCOMPARE(McpProtocolResourceUpdatedNotificationParams::toJson(params), obj);
+    QVERIFY(!McpProtocolResourceUpdatedNotificationParams().isValid());
+    QCOMPARE(McpProtocolResourceUpdatedNotificationParams::fromJson(QJsonObject()), McpProtocolResourceUpdatedNotificationParams());
+}
+
 #include "moc_mcpprotocolresourceupdatednotificationparamstest.cpp"

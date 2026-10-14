@@ -63,4 +63,31 @@ void McpProtocolGetTaskResultTest::shouldConvertJson()
     QCOMPARE(McpProtocolGetTaskResult::toJson(nullTtl), obj);
 }
 
+void McpProtocolGetTaskResultTest::shouldRejectMissingRequiredFields()
+{
+    QJsonObject valid;
+    valid["createdAt"_L1] = u"2025-11-25T10:30:00Z"_s;
+    valid["lastUpdatedAt"_L1] = u"2025-11-25T10:31:00Z"_s;
+    valid["status"_L1] = u"working"_s;
+    valid["taskId"_L1] = u"task-1"_s;
+    valid["ttl"_L1] = QJsonValue::Null;
+    QVERIFY(McpProtocolGetTaskResult::fromJson(valid) != McpProtocolGetTaskResult());
+
+    for (const QString &key : {u"createdAt"_s, u"lastUpdatedAt"_s, u"status"_s, u"taskId"_s, u"ttl"_s}) {
+        QJsonObject obj = valid;
+        obj.remove(key);
+        QCOMPARE(McpProtocolGetTaskResult::fromJson(obj), McpProtocolGetTaskResult());
+    }
+    {
+        QJsonObject obj = valid;
+        obj["status"_L1] = u"foo"_s;
+        QCOMPARE(McpProtocolGetTaskResult::fromJson(obj), McpProtocolGetTaskResult());
+    }
+    {
+        QJsonObject obj = valid;
+        obj["ttl"_L1] = u"foo"_s;
+        QCOMPARE(McpProtocolGetTaskResult::fromJson(obj), McpProtocolGetTaskResult());
+    }
+}
+
 #include "moc_mcpprotocolgettaskresulttest.cpp"

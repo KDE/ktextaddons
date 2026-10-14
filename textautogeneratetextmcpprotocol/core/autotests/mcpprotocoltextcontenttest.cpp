@@ -5,7 +5,9 @@
 */
 #include "mcpprotocoltextcontenttest.h"
 #include "impl/mcpprotocoltextcontent.h"
+#include <QJsonObject>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(McpProtocolTextContentTest)
 
 McpProtocolTextContentTest::McpProtocolTextContentTest(QObject *parent)
@@ -20,4 +22,15 @@ void McpProtocolTextContentTest::shouldHaveDefaultValues()
     QVERIFY(!w.annotations().has_value());
     QVERIFY(!w.meta().has_value());
 }
+
+void McpProtocolTextContentTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QCOMPARE(McpProtocolTextContent::fromJson(QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, u"Hello"_s}}).text(), u"Hello"_s);
+    // Missing text
+    QCOMPARE(McpProtocolTextContent::fromJson(QJsonObject{{"type"_L1, u"text"_s}}), McpProtocolTextContent());
+    // text is not a string
+    QCOMPARE(McpProtocolTextContent::fromJson(QJsonObject{{"type"_L1, u"text"_s}, {"text"_L1, 2}}), McpProtocolTextContent());
+}
+
 #include "moc_mcpprotocoltextcontenttest.cpp"

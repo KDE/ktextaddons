@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldConvertActionToString();
     void shouldConvertJson();
     void shouldNotWriteUnknownAction();
+    void shouldRejectMissingRequiredFields();
 };

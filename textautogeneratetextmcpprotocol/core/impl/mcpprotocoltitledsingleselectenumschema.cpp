@@ -54,18 +54,25 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolTitledSingleSelectEnumSchema::OneOfItem McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("const"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: const";
+    const QJsonValue constValue = obj.value("const"_L1);
+    if (!constValue.isString() || constValue.toString().isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledSingleSelectEnumSchema::OneOfItem: missing required field 'const'";
         return {};
     }
-    if (!obj.contains("title"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: title";
+    const QJsonValue titleValue = obj.value("title"_L1);
+    if (!titleValue.isString() || titleValue.toString().isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledSingleSelectEnumSchema::OneOfItem: missing required field 'title'";
         return {};
     }
     McpProtocolTitledSingleSelectEnumSchema::OneOfItem result;
-    result.setConstValue(obj.value("const"_L1).toString());
-    result.setTitle(obj.value("title"_L1).toString());
+    result.setConstValue(constValue.toString());
+    result.setTitle(titleValue.toString());
     return result;
+}
+
+bool McpProtocolTitledSingleSelectEnumSchema::OneOfItem::isValid() const
+{
+    return !mConstValue.isEmpty() && !mTitle.isEmpty();
 }
 
 QJsonObject McpProtocolTitledSingleSelectEnumSchema::OneOfItem::toJson(const McpProtocolTitledSingleSelectEnumSchema::OneOfItem &oneOfItem)
@@ -88,8 +95,8 @@ McpProtocolTitledSingleSelectEnumSchema McpProtocolTitledSingleSelectEnumSchema:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledSingleSelectEnumSchema: type is not correct " << obj.value("type"_L1).toString();
         return {};
     }
-    if (!obj.contains("oneOf"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: oneOf";
+    if (!obj.value("oneOf"_L1).isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTitledSingleSelectEnumSchema: missing required field 'oneOf'";
         return {};
     }
     if (obj.contains("default"_L1)) {
@@ -103,7 +110,10 @@ McpProtocolTitledSingleSelectEnumSchema McpProtocolTitledSingleSelectEnumSchema:
         QList<OneOfItem> oneOf;
         oneOf.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            oneOf.append(McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(v.toObject()));
+            // Skip invalid items
+            if (const OneOfItem item = McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(v.toObject()); item.isValid()) {
+                oneOf.append(item);
+            }
         }
         prompt.setOneOf(std::move(oneOf));
     }

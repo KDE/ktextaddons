@@ -5,7 +5,9 @@
 */
 #include "mcpprotocolsetlevelrequestparamstest.h"
 #include "impl/mcpprotocolsetlevelrequestparams.h"
+#include <QJsonObject>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(McpProtocolSetLevelRequestParamsTest)
 
 McpProtocolSetLevelRequestParamsTest::McpProtocolSetLevelRequestParamsTest(QObject *parent)
@@ -19,4 +21,19 @@ void McpProtocolSetLevelRequestParamsTest::shouldHaveDefaultValues()
     QVERIFY(!w.meta().has_value());
     QCOMPARE(w.level(), TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::LoggingLevel::Unknown);
 }
+
+void McpProtocolSetLevelRequestParamsTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    const McpProtocolSetLevelRequestParams params = McpProtocolSetLevelRequestParams::fromJson(QJsonObject{{"level"_L1, u"error"_s}});
+    QVERIFY(params.isValid());
+    QCOMPARE(params.level(), McpProtocolUtils::LoggingLevel::Error);
+    // Missing level
+    QCOMPARE(McpProtocolSetLevelRequestParams::fromJson(QJsonObject()), McpProtocolSetLevelRequestParams());
+    // Unknown level
+    QCOMPARE(McpProtocolSetLevelRequestParams::fromJson(QJsonObject{{"level"_L1, u"foo"_s}}), McpProtocolSetLevelRequestParams());
+    // Level is not a string
+    QCOMPARE(McpProtocolSetLevelRequestParams::fromJson(QJsonObject{{"level"_L1, 3}}), McpProtocolSetLevelRequestParams());
+}
+
 #include "moc_mcpprotocolsetlevelrequestparamstest.cpp"

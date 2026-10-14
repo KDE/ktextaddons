@@ -46,6 +46,10 @@ public:
 
     /*!
      */
+    [[nodiscard]] bool isValid() const;
+
+    /*!
+     */
     [[nodiscard]] static McpProtocolCallToolRequestParams fromJson(const QJsonObject &obj);
     /*!
      */

@@ -38,8 +38,18 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         tool.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    tool.setId(obj["id"_L1].toString());
-    tool.setName(obj.value("name"_L1).toString());
+    if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() && !idValue.toString().isEmpty()) {
+        tool.setId(idValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolToolUseContent: missing required field 'id'";
+        return {};
+    }
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString() && !nameValue.toString().isEmpty()) {
+        tool.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolToolUseContent: missing required field 'name'";
+        return {};
+    }
 
     if (const QJsonValue inputValue = obj.value("input"_L1); inputValue.isObject()) {
         const QJsonObject mapObj_input = inputValue.toObject();
@@ -48,8 +58,16 @@ McpProtocolToolUseContent McpProtocolToolUseContent::fromJson(const QJsonObject 
             map_input.insert(it.key(), it.value());
         }
         tool.setInput(std::move(map_input));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolToolUseContent: missing required field 'input'";
+        return {};
     }
     return tool;
+}
+
+bool McpProtocolToolUseContent::isValid() const
+{
+    return !mId.isEmpty() && !mName.isEmpty();
 }
 
 QJsonObject McpProtocolToolUseContent::toJson(const McpProtocolToolUseContent &tool)

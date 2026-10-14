@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolinitializerequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -53,6 +54,11 @@ QJsonObject McpProtocolInitializeRequestParams::Meta::toJson(const McpProtocolIn
     return obj;
 }
 
+bool McpProtocolInitializeRequestParams::isValid() const
+{
+    return !mProtocolVersion.isEmpty() && mClientInfo.isValid();
+}
+
 McpProtocolInitializeRequestParams McpProtocolInitializeRequestParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolInitializeRequestParams params;
@@ -61,11 +67,27 @@ McpProtocolInitializeRequestParams McpProtocolInitializeRequestParams::fromJson(
     }
     if (const QJsonValue capabilitiesValue = obj.value("capabilities"_L1); capabilitiesValue.isObject()) {
         params.setCapabilities(McpProtocolClientCapabilities::fromJson(capabilitiesValue.toObject()));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeRequestParams: missing required field 'capabilities'";
+        return {};
     }
     if (const QJsonValue clientInfoValue = obj.value("clientInfo"_L1); clientInfoValue.isObject()) {
-        params.setClientInfo(McpProtocolImplementation::fromJson(clientInfoValue.toObject()));
+        const McpProtocolImplementation clientInfo = McpProtocolImplementation::fromJson(clientInfoValue.toObject());
+        if (!clientInfo.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeRequestParams: invalid field 'clientInfo'";
+            return {};
+        }
+        params.setClientInfo(clientInfo);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeRequestParams: missing required field 'clientInfo'";
+        return {};
     }
-    params.setProtocolVersion(obj.value("protocolVersion"_L1).toString());
+    if (const QJsonValue protocolVersionValue = obj.value("protocolVersion"_L1); protocolVersionValue.isString()) {
+        params.setProtocolVersion(protocolVersionValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeRequestParams: missing required field 'protocolVersion'";
+        return {};
+    }
     return params;
 }
 

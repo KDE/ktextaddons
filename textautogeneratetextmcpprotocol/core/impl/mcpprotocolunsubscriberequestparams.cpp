@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolunsubscriberequestparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -55,8 +56,18 @@ McpProtocolUnsubscribeRequestParams McpProtocolUnsubscribeRequestParams::fromJso
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolUnsubscribeRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    prompt.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString()) {
+        prompt.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolUnsubscribeRequestParams: missing required field 'uri'";
+        return {};
+    }
     return prompt;
+}
+
+bool McpProtocolUnsubscribeRequestParams::isValid() const
+{
+    return !mUri.isEmpty();
 }
 
 QJsonObject McpProtocolUnsubscribeRequestParams::toJson(const McpProtocolUnsubscribeRequestParams &unsubscribeRequestParams)

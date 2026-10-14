@@ -67,4 +67,21 @@ void McpProtocolElicitResultTest::shouldNotWriteUnknownAction()
     QVERIFY(!obj.contains("action"_L1));
 }
 
+void McpProtocolElicitResultTest::shouldRejectMissingRequiredFields()
+{
+    using namespace Qt::Literals::StringLiterals;
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QCOMPARE(McpProtocolElicitResult::fromJson(QJsonObject()), McpProtocolElicitResult());
+
+    QJsonObject obj;
+    obj["action"_L1] = u"foo"_s;
+    QCOMPARE(McpProtocolElicitResult::fromJson(obj), McpProtocolElicitResult());
+
+    obj["action"_L1] = 1;
+    QCOMPARE(McpProtocolElicitResult::fromJson(obj), McpProtocolElicitResult());
+
+    obj["action"_L1] = u"cancel"_s;
+    QCOMPARE(McpProtocolElicitResult::fromJson(obj).action(), McpProtocolElicitResult::Action::Cancel);
+}
+
 #include "moc_mcpprotocolelicitresulttest.cpp"

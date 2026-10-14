@@ -26,7 +26,10 @@ McpProtocolToolExecution McpProtocolToolExecution::fromJson(const QJsonObject &o
 {
     McpProtocolToolExecution result;
     if (const QJsonValue taskSupportValue = obj.value("taskSupport"_L1); taskSupportValue.isString()) {
-        result.setTaskSupport(McpProtocolToolExecution::convertTaskSupportFromString(taskSupportValue.toString()));
+        // Optional enum: ignore unknown values
+        if (const TaskSupport support = McpProtocolToolExecution::convertTaskSupportFromString(taskSupportValue.toString()); support != TaskSupport::Unknown) {
+            result.setTaskSupport(support);
+        }
     }
     return result;
 }
@@ -34,7 +37,7 @@ McpProtocolToolExecution McpProtocolToolExecution::fromJson(const QJsonObject &o
 QJsonObject McpProtocolToolExecution::toJson(const McpProtocolToolExecution &execution)
 {
     QJsonObject obj;
-    if (execution.taskSupport().has_value()) {
+    if (execution.taskSupport().has_value() && *execution.taskSupport() != TaskSupport::Unknown) {
         obj["taskSupport"_L1] = convertTaskSupportToString(*execution.taskSupport());
     }
     return obj;

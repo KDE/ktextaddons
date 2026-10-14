@@ -30,7 +30,15 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
         return {};
     }
     if (const QJsonValue errorValue = obj.value("error"_L1); errorValue.isObject()) {
-        response.setError(McpProtocolError::fromJson(errorValue.toObject()));
+        const McpProtocolError error = McpProtocolError::fromJson(errorValue.toObject());
+        if (!error.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCErrorResponse: invalid field 'error'";
+            return {};
+        }
+        response.setError(error);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCErrorResponse: missing required field 'error'";
+        return {};
     }
     // id is null when server can't read request id (parse error)
     if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() || idValue.isDouble()) {

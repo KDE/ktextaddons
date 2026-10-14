@@ -588,7 +588,9 @@ bool McpProtocolClientProtocolManager::processPaginatedResponse(QJsonObject &obj
         pending.items.append(item);
     }
     ++pending.pageCount;
-    if (const QString nextCursor = result.value("nextCursor"_L1).toString(); !nextCursor.isEmpty()) {
+    // Empty string is a valid opaque cursor: only absence of nextCursor means last page
+    if (const QJsonValue nextCursorValue = result.value("nextCursor"_L1); nextCursorValue.isString()) {
+        const QString nextCursor = nextCursorValue.toString();
         if (nextCursor == pending.cursor || pending.pageCount >= maxPages) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Stop pagination of" << pending.type << "after" << pending.pageCount << "pages";
         } else {
@@ -727,7 +729,7 @@ qint64 McpProtocolClientProtocolManager::listRequest(MethodType type)
 qint64 McpProtocolClientProtocolManager::listRequest(MethodType type, PendingRequest pending)
 {
     std::optional<McpProtocolPaginatedRequestParams> params;
-    if (!pending.cursor.isEmpty()) {
+    if (pending.cursor.has_value()) {
         McpProtocolPaginatedRequestParams paginatedParams;
         paginatedParams.setCursor(pending.cursor);
         params = std::move(paginatedParams);

@@ -42,4 +42,27 @@ void McpProtocolCompleteResultTest::shouldConvertJson()
     QCOMPARE(McpProtocolCompleteResult::toJson(result), obj);
 }
 
+void McpProtocolCompleteResultTest::shouldRejectMissingRequiredFields()
+{
+    using namespace Qt::Literals::StringLiterals;
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QCOMPARE(McpProtocolCompleteResult::fromJson(QJsonObject()), McpProtocolCompleteResult());
+
+    QJsonObject meta;
+    meta["foo"_L1] = u"bar"_s;
+    QJsonObject obj;
+    obj["_meta"_L1] = meta;
+    obj["completion"_L1] = QJsonObject();
+    QCOMPARE(McpProtocolCompleteResult::fromJson(obj), McpProtocolCompleteResult());
+
+    QJsonObject completion;
+    completion["values"_L1] = u"foo"_s;
+    obj["completion"_L1] = completion;
+    QCOMPARE(McpProtocolCompleteResult::fromJson(obj), McpProtocolCompleteResult());
+
+    completion["values"_L1] = QJsonArray();
+    obj["completion"_L1] = completion;
+    QVERIFY(McpProtocolCompleteResult::fromJson(obj).meta().has_value());
+}
+
 #include "moc_mcpprotocolcompleteresulttest.cpp"

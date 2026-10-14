@@ -58,14 +58,14 @@ public:
 
     /*!
      */
-    [[nodiscard]] QString cursor() const;
+    [[nodiscard]] std::optional<QString> cursor() const;
     /*!
      */
-    void setCursor(const QString &newCursor);
+    void setCursor(const std::optional<QString> &newCursor);
 
 private:
     std::optional<Meta> mMeta;
-    QString mCursor;
+    std::optional<QString> mCursor;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolPaginatedRequestParams, Q_RELOCATABLE_TYPE);

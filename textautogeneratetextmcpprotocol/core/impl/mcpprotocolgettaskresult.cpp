@@ -33,40 +33,47 @@ McpProtocolGetTaskResult McpProtocolGetTaskResult::fromJson(const QJsonObject &o
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (!obj.contains("createdAt"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: createdAt";
+    if (const QJsonValue createdAtValue = obj.value("createdAt"_L1); createdAtValue.isString()) {
+        result.setCreatedAt(createdAtValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskResult: missing required field 'createdAt'";
         return {};
     }
-    if (!obj.contains("lastUpdatedAt"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: lastUpdatedAt";
+    if (const QJsonValue lastUpdatedAtValue = obj.value("lastUpdatedAt"_L1); lastUpdatedAtValue.isString()) {
+        result.setLastUpdatedAt(lastUpdatedAtValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskResult: missing required field 'lastUpdatedAt'";
         return {};
-    }
-    if (!obj.contains("status"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: status";
-        return {};
-    }
-    if (!obj.contains("taskId"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: taskId";
-        return {};
-    }
-    if (!obj.contains("ttl"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: ttl";
-        return {};
-    }
-    result.setCreatedAt(obj.value("createdAt"_L1).toString());
-    result.setLastUpdatedAt(obj.value("lastUpdatedAt"_L1).toString());
-    if (obj.contains("pollInterval"_L1)) {
-        result.setPollInterval(obj.value("pollInterval"_L1).toInteger());
     }
     if (const QJsonValue statusValue = obj.value("status"_L1); statusValue.isString()) {
-        result.setStatus(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromString(statusValue.toString()));
+        const McpProtocolUtils::TaskStatus status = McpProtocolUtils::convertTaskStatusFromString(statusValue.toString());
+        if (status == McpProtocolUtils::TaskStatus::Unknown) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskResult: invalid field 'status'" << statusValue.toString();
+            return {};
+        }
+        result.setStatus(status);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskResult: missing required field 'status'";
+        return {};
     }
-    if (obj.contains("statusMessage"_L1)) {
-        result.setStatusMessage(obj.value("statusMessage"_L1).toString());
+    if (const QJsonValue taskIdValue = obj.value("taskId"_L1); taskIdValue.isString()) {
+        result.setTaskId(taskIdValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskResult: missing required field 'taskId'";
+        return {};
     }
-    result.setTaskId(obj.value("taskId"_L1).toString());
-    if (!obj["ttl"_L1].isNull()) {
-        result.setTtl(obj.value("ttl"_L1).toInteger());
+    // ttl is required but can be null
+    if (const QJsonValue ttlValue = obj.value("ttl"_L1); ttlValue.isDouble()) {
+        result.setTtl(ttlValue.toInteger());
+    } else if (!ttlValue.isNull()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskResult: missing required field 'ttl'";
+        return {};
+    }
+    if (const QJsonValue pollIntervalValue = obj.value("pollInterval"_L1); pollIntervalValue.isDouble()) {
+        result.setPollInterval(pollIntervalValue.toInteger());
+    }
+    if (const QJsonValue statusMessageValue = obj.value("statusMessage"_L1); statusMessageValue.isString()) {
+        result.setStatusMessage(statusMessageValue.toString());
     }
     return result;
 }

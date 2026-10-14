@@ -28,15 +28,21 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolElicitResult McpProtocolElicitResult::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("action"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: action";
+    const QJsonValue actionValue = obj.value("action"_L1);
+    if (!actionValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitResult: missing required field 'action'";
+        return {};
+    }
+    const Action action = convertActionFromString(actionValue.toString());
+    if (action == Action::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitResult: invalid field 'action'" << actionValue.toString();
         return {};
     }
     McpProtocolElicitResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    result.setAction(convertActionFromString(obj.value("action"_L1).toString()));
+    result.setAction(action);
     if (const QJsonValue contentValue = obj.value("content"_L1); contentValue.isObject()) {
         result.setContent(McpProtocolUtils::elicitResultContentFromJson(contentValue.toObject()));
     }

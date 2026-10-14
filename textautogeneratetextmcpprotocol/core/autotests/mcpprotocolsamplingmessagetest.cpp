@@ -57,4 +57,17 @@ void McpProtocolSamplingMessageTest::shouldConvertJson()
     QCOMPARE(McpProtocolSamplingMessage::toJson(arrayMessage), arrayObj);
 }
 
+void McpProtocolSamplingMessageTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    const QJsonObject content{{"type"_L1, u"text"_s}, {"text"_L1, u"Hello"_s}};
+    QVERIFY(McpProtocolSamplingMessage::fromJson(QJsonObject{{"content"_L1, content}, {"role"_L1, u"user"_s}}).isValid());
+    // Missing role
+    QCOMPARE(McpProtocolSamplingMessage::fromJson(QJsonObject{{"content"_L1, content}}), McpProtocolSamplingMessage());
+    // Unknown role
+    QCOMPARE(McpProtocolSamplingMessage::fromJson(QJsonObject{{"content"_L1, content}, {"role"_L1, u"foo"_s}}), McpProtocolSamplingMessage());
+    // Missing content
+    QCOMPARE(McpProtocolSamplingMessage::fromJson(QJsonObject{{"role"_L1, u"user"_s}}), McpProtocolSamplingMessage());
+}
+
 #include "moc_mcpprotocolsamplingmessagetest.cpp"

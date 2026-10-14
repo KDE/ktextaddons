@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocollistrootsresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -33,9 +34,14 @@ McpProtocolListRootsResult McpProtocolListRootsResult::fromJson(const QJsonObjec
         QList<McpProtocolRoot> roots;
         roots.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            roots.append(McpProtocolRoot::fromJson(v.toObject()));
+            if (const McpProtocolRoot item = McpProtocolRoot::fromJson(v.toObject()); item.isValid()) {
+                roots.append(item);
+            }
         }
         result.setRoots(std::move(roots));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListRootsResult: missing required field 'roots'";
+        return {};
     }
     return result;
 }

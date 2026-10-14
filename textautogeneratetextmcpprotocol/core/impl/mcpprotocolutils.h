@@ -261,6 +261,8 @@ embeddedResourceResourceFromJson(const QJsonValue &val);
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT RequestId requestIdFromJson(const QJsonValue &val);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QJsonValue requestIdToJson(const RequestId &val);
+// JSON-RPC request id must be a string or a number
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT bool isValidRequestId(const QJsonValue &val);
 
 [[nodiscard]] ProgressToken progressTokenFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue progressTokenToJson(const ProgressToken &val);

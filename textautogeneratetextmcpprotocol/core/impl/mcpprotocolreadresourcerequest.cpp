@@ -40,11 +40,22 @@ McpProtocolReadResourceRequest McpProtocolReadResourceRequest::fromJson(const QJ
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolReadResourceRequestParams::fromJson(paramsValue.toObject()));
+        const McpProtocolReadResourceRequestParams params = McpProtocolReadResourceRequestParams::fromJson(paramsValue.toObject());
+        if (!params.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceRequest: invalid field 'params'";
+            return {};
+        }
+        prompt.setParams(params);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceRequest: missing required field 'params'";
+        return {};
     }
-    if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!idValue.isString() && !idValue.isDouble()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceRequest: missing required field 'id'";
+        return {};
     }
+    prompt.setId(McpProtocolUtils::requestIdFromJson(idValue));
     return prompt;
 }
 

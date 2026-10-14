@@ -27,10 +27,20 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolElicitationCompleteNotification::Params::isValid() const
+{
+    return !mElicitationId.isEmpty();
+}
+
 McpProtocolElicitationCompleteNotification::Params McpProtocolElicitationCompleteNotification::Params::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue elicitationIdValue = obj.value("elicitationId"_L1);
+    if (!elicitationIdValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitationCompleteNotification::Params: missing required field 'elicitationId'";
+        return {};
+    }
     McpProtocolElicitationCompleteNotification::Params result;
-    result.setElicitationId(obj.value("elicitationId"_L1).toString());
+    result.setElicitationId(elicitationIdValue.toString());
     return result;
 }
 
@@ -53,9 +63,17 @@ McpProtocolElicitationCompleteNotification McpProtocolElicitationCompleteNotific
                                                        << McpProtocolElicitationCompleteNotification::type() << "got:" << obj.value("method"_L1).toString();
         return {};
     }
-    if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        notification.setParams(McpProtocolElicitationCompleteNotification::Params::fromJson(paramsValue.toObject()));
+    const QJsonValue paramsValue = obj.value("params"_L1);
+    if (!paramsValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitationCompleteNotification: missing required field 'params'";
+        return {};
     }
+    const McpProtocolElicitationCompleteNotification::Params params = McpProtocolElicitationCompleteNotification::Params::fromJson(paramsValue.toObject());
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitationCompleteNotification: invalid field 'params'";
+        return {};
+    }
+    notification.setParams(params);
 
     return notification;
 }

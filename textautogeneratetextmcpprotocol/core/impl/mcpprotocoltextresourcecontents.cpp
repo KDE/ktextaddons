@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocoltextresourcecontents.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -32,9 +33,24 @@ McpProtocolTextResourceContents McpProtocolTextResourceContents::fromJson(const 
     if (obj.contains("mimeType"_L1)) {
         prompt.setMimeType(obj.value("mimeType"_L1).toString());
     }
-    prompt.setText(obj.value("text"_L1).toString());
-    prompt.setUri(obj.value("uri"_L1).toString());
+    if (const QJsonValue textValue = obj.value("text"_L1); textValue.isString()) {
+        prompt.setText(textValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTextResourceContents: missing required field 'text'";
+        return {};
+    }
+    if (const QJsonValue uriValue = obj.value("uri"_L1); uriValue.isString()) {
+        prompt.setUri(uriValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTextResourceContents: missing required field 'uri'";
+        return {};
+    }
     return prompt;
+}
+
+bool McpProtocolTextResourceContents::isValid() const
+{
+    return !mUri.isEmpty();
 }
 
 QJsonObject McpProtocolTextResourceContents::toJson(const McpProtocolTextResourceContents &textResourceContents)

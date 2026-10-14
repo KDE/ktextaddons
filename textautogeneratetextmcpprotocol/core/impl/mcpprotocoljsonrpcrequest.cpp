@@ -34,12 +34,12 @@ McpProtocolJSONRPCRequest McpProtocolJSONRPCRequest::fromJson(const QJsonObject 
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    if (!obj.contains("method"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: method";
+    if (!obj.value("method"_L1).isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCRequest: missing required field 'method'";
         return {};
     }
-    if (!obj.contains("id"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: id";
+    if (const QJsonValue idValue = obj.value("id"_L1); !idValue.isString() && !idValue.isDouble()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCRequest: missing required field 'id'";
         return {};
     }
     response.setMethod(obj.value("method"_L1).toString());

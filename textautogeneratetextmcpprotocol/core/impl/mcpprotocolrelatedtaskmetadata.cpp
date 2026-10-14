@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolrelatedtaskmetadata.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -23,7 +24,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolRelatedTaskMetadata McpProtocolRelatedTaskMetadata::fromJson(const QJsonObject &obj)
 {
     McpProtocolRelatedTaskMetadata task;
-    task.setTaskId(obj["taskId"_L1].toString());
+    if (const QJsonValue taskIdValue = obj.value("taskId"_L1); taskIdValue.isString() && !taskIdValue.toString().isEmpty()) {
+        task.setTaskId(taskIdValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolRelatedTaskMetadata: missing required field 'taskId'";
+        return {};
+    }
     return task;
 }
 

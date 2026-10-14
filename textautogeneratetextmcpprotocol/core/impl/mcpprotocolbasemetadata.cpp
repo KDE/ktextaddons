@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolbasemetadata.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -25,7 +26,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 McpProtocolBaseMetadata McpProtocolBaseMetadata::fromJson(const QJsonObject &obj)
 {
     McpProtocolBaseMetadata metadata;
-    metadata.setName(obj.value("name"_L1).toString());
+    const QJsonValue nameValue = obj.value("name"_L1);
+    if (!nameValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolBaseMetadata: missing required field 'name'";
+        return {};
+    }
+    metadata.setName(nameValue.toString());
     if (obj.contains("title"_L1)) {
         metadata.setTitle(obj.value("title"_L1).toString());
     }

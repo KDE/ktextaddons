@@ -17,4 +17,5 @@ public:
 private Q_SLOTS:
     void shouldAlwaysSerializeParams();
     void shouldLoadAndSaveRequest();
+    void shouldRejectMissingRequiredFields();
 };

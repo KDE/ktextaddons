@@ -55,4 +55,20 @@ void McpProtocolTitledSingleSelectEnumSchemaTest::shouldConvertJson()
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledSingleSelectEnumSchema::toJson(schema), obj);
 }
 
+void McpProtocolTitledSingleSelectEnumSchemaTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    // Missing oneOf
+    QCOMPARE(McpProtocolTitledSingleSelectEnumSchema::fromJson(QJsonObject{{"type"_L1, u"string"_s}}), McpProtocolTitledSingleSelectEnumSchema());
+    // Invalid items are skipped
+    const QJsonObject validItem{{"const"_L1, u"red"_s}, {"title"_L1, u"Red"_s}};
+    const QJsonObject withoutTitle{{"const"_L1, u"blue"_s}};
+    const QJsonObject emptyConst{{"const"_L1, QString()}, {"title"_L1, u"Green"_s}};
+    const QJsonObject obj{{"type"_L1, u"string"_s}, {"oneOf"_L1, QJsonArray{validItem, withoutTitle, emptyConst}}};
+    const auto schema = McpProtocolTitledSingleSelectEnumSchema::fromJson(obj);
+    QCOMPARE(schema.oneOf().count(), 1);
+    QCOMPARE(schema.oneOf().at(0).constValue(), u"red"_s);
+    QVERIFY(!McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(withoutTitle).isValid());
+}
+
 #include "moc_mcpprotocoltitledsingleselectenumschematest.cpp"

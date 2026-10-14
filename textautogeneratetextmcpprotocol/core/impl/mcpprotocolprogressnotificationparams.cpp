@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolprogressnotificationparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -13,6 +14,14 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolProgressNotificationParams::McpProtocolProgressNotificationParams() = default;
 
 bool McpProtocolProgressNotificationParams::operator==(const McpProtocolProgressNotificationParams &other) const = default;
+
+bool McpProtocolProgressNotificationParams::isValid() const
+{
+    if (const auto *token = std::get_if<QString>(&mProgressToken)) {
+        return !token->isEmpty();
+    }
+    return true;
+}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotificationParams &t)
 {
@@ -33,12 +42,20 @@ McpProtocolProgressNotificationParams McpProtocolProgressNotificationParams::fro
     if (obj.contains("message"_L1)) {
         prompt.setMessage(obj.value("message"_L1).toString());
     }
-    prompt.setProgress(obj.value("progress"_L1).toDouble());
-    if (obj.contains("progressToken"_L1)) {
-        prompt.setProgressToken(McpProtocolUtils::progressTokenFromJson(obj["progressToken"_L1]));
+    if (const QJsonValue progressValue = obj.value("progress"_L1); progressValue.isDouble()) {
+        prompt.setProgress(progressValue.toDouble());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolProgressNotificationParams: missing required field 'progress'";
+        return {};
     }
-    if (obj.contains("total"_L1)) {
-        prompt.setTotal(obj.value("total"_L1).toDouble());
+    if (const QJsonValue progressTokenValue = obj.value("progressToken"_L1); progressTokenValue.isString() || progressTokenValue.isDouble()) {
+        prompt.setProgressToken(McpProtocolUtils::progressTokenFromJson(progressTokenValue));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolProgressNotificationParams: missing required field 'progressToken'";
+        return {};
+    }
+    if (const QJsonValue totalValue = obj.value("total"_L1); totalValue.isDouble()) {
+        prompt.setTotal(totalValue.toDouble());
     }
     return prompt;
 }

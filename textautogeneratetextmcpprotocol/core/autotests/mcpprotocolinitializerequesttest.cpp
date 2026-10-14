@@ -41,4 +41,34 @@ void McpProtocolInitializeRequestTest::shouldLoadAndSaveRequest()
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolInitializeRequest::fromJson(obj), request);
 }
 
+void McpProtocolInitializeRequestTest::shouldRejectMissingRequiredFields()
+{
+    using namespace TextAutoGenerateTextMcpProtocolCore;
+    QJsonObject clientInfo;
+    clientInfo["name"_L1] = u"client"_s;
+    clientInfo["version"_L1] = u"1.0"_s;
+    QJsonObject params;
+    params["protocolVersion"_L1] = u"2025-11-25"_s;
+    params["capabilities"_L1] = QJsonObject();
+    params["clientInfo"_L1] = clientInfo;
+    QJsonObject valid;
+    valid["jsonrpc"_L1] = u"2.0"_s;
+    valid["id"_L1] = 1;
+    valid["method"_L1] = u"initialize"_s;
+    valid["params"_L1] = params;
+    QVERIFY(McpProtocolInitializeRequest::fromJson(valid) != McpProtocolInitializeRequest());
+
+    for (const QString &key : {u"id"_s, u"params"_s}) {
+        QJsonObject obj = valid;
+        obj.remove(key);
+        QCOMPARE(McpProtocolInitializeRequest::fromJson(obj), McpProtocolInitializeRequest());
+    }
+    {
+        QJsonObject obj = valid;
+        params.remove(u"clientInfo"_s);
+        obj["params"_L1] = params;
+        QCOMPARE(McpProtocolInitializeRequest::fromJson(obj), McpProtocolInitializeRequest());
+    }
+}
+
 #include "moc_mcpprotocolinitializerequesttest.cpp"

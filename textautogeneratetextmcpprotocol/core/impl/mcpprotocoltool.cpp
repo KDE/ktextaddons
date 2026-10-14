@@ -40,12 +40,19 @@ QByteArray McpProtocolTool::type()
 McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
 {
     McpProtocolTool tool;
-    if (!obj.contains("inputSchema"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: inputSchema";
+    const QJsonValue inputSchemaValue = obj.value("inputSchema"_L1);
+    if (!inputSchemaValue.isObject()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTool: missing required field 'inputSchema'";
         return {};
     }
-    if (!obj.contains("name"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: name";
+    // InputSchema::fromJson() rejects it when "type" is not "object"
+    if (inputSchemaValue.toObject().value("type"_L1).toString() != QString::fromLatin1(McpProtocolTool::type())) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTool: invalid field 'inputSchema'";
+        return {};
+    }
+    const QJsonValue nameValue = obj.value("name"_L1);
+    if (!nameValue.isString() || nameValue.toString().isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolTool: missing required field 'name'";
         return {};
     }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
@@ -65,14 +72,15 @@ McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
         QList<McpProtocolIcon> list_icons;
         list_icons.reserve(arr.count());
         for (const auto &v : arr) {
-            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+            // Skip invalid icons
+            if (const McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject()); icon.isValid()) {
+                list_icons.append(icon);
+            }
         }
         tool.setIcons(std::move(list_icons));
     }
-    if (const QJsonValue inputSchemaValue = obj.value("inputSchema"_L1); inputSchemaValue.isObject()) {
-        tool.setInputSchema(InputSchema::fromJson(inputSchemaValue.toObject()));
-    }
-    tool.setName(obj.value("name"_L1).toString());
+    tool.setInputSchema(InputSchema::fromJson(inputSchemaValue.toObject()));
+    tool.setName(nameValue.toString());
     if (const QJsonValue outputSchemaValue = obj.value("outputSchema"_L1); outputSchemaValue.isObject()) {
         tool.setOutputSchema(OutputSchema::fromJson(outputSchemaValue.toObject()));
     }
@@ -80,6 +88,11 @@ McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
         tool.setTitle(obj.value("title"_L1).toString());
     }
     return tool;
+}
+
+bool McpProtocolTool::isValid() const
+{
+    return !mName.isEmpty();
 }
 
 QJsonObject McpProtocolTool::toJson(const McpProtocolTool &tool)

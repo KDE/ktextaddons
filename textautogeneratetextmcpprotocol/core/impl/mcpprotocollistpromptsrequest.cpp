@@ -43,8 +43,11 @@ McpProtocolListPromptsRequest McpProtocolListPromptsRequest::fromJson(const QJso
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         request.setParams(McpProtocolPaginatedRequestParams::fromJson(paramsValue.toObject()));
     }
-    if (obj.contains("id"_L1)) {
-        request.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    if (const QJsonValue idValue = obj.value("id"_L1); idValue.isString() || idValue.isDouble()) {
+        request.setId(McpProtocolUtils::requestIdFromJson(idValue));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListPromptsRequest: missing required field 'id'";
+        return {};
     }
     return request;
 }

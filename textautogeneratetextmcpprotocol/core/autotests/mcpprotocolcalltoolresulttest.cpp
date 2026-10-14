@@ -68,4 +68,32 @@ void McpProtocolCallToolResultTest::shouldIgnoreUnknownContent()
     QCOMPARE(first->text(), u"Hello"_s);
 }
 
+void McpProtocolCallToolResultTest::shouldRejectMissingRequiredFields()
+{
+    QCOMPARE(McpProtocolCallToolResult::fromJson(QJsonObject()), McpProtocolCallToolResult());
+
+    QJsonObject obj;
+    obj["content"_L1] = u"foo"_s;
+    obj["isError"_L1] = true;
+    QCOMPARE(McpProtocolCallToolResult::fromJson(obj), McpProtocolCallToolResult());
+
+    obj["content"_L1] = QJsonArray();
+    QCOMPARE(McpProtocolCallToolResult::fromJson(obj).isError(), true);
+}
+
+void McpProtocolCallToolResultTest::shouldIgnoreInvalidContent()
+{
+    // Rejected content must not become an empty content
+    const QJsonObject resourceLinkWithoutUri{{"type"_L1, u"resource_link"_s}, {"name"_L1, u"foo"_s}};
+    const QJsonObject imageWithoutData{{"type"_L1, u"image"_s}, {"mimeType"_L1, u"image/png"_s}};
+    const QJsonObject embeddedResourceWithoutUri{{"type"_L1, u"resource"_s}, {"resource"_L1, QJsonObject{{"text"_L1, u"foo"_s}}}};
+    const QJsonObject textContent{{"type"_L1, u"text"_s}, {"text"_L1, u"Hello"_s}};
+
+    QJsonObject obj;
+    obj["content"_L1] = QJsonArray{resourceLinkWithoutUri, imageWithoutData, embeddedResourceWithoutUri, textContent};
+    const auto result = McpProtocolCallToolResult::fromJson(obj);
+    QCOMPARE(result.content().count(), 1);
+    QVERIFY(std::holds_alternative<McpProtocolTextContent>(result.content().at(0)));
+}
+
 #include "moc_mcpprotocolcalltoolresulttest.cpp"

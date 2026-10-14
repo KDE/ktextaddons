@@ -19,6 +19,9 @@ public:
         [[nodiscard]] const QString &elicitationId() const;
         void setElicitationId(const QString &newElicitationId);
         [[nodiscard]] bool operator==(const McpProtocolElicitationCompleteNotification::Params &other) const;
+        /*!
+         */
+        [[nodiscard]] bool isValid() const;
         [[nodiscard]] static Params fromJson(const QJsonObject &obj);
         [[nodiscard]] static QJsonObject toJson(const Params &params);
     };

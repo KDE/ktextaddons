@@ -5,8 +5,10 @@
 */
 #include "mcpprotocolresourcetemplatetest.h"
 #include "impl/mcpprotocolresourcetemplate.h"
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(McpProtocolResourceTemplateTest)
+using namespace Qt::Literals::StringLiterals;
 
 McpProtocolResourceTemplateTest::McpProtocolResourceTemplateTest(QObject *parent)
     : QObject{parent}
@@ -25,4 +27,23 @@ void McpProtocolResourceTemplateTest::shouldHaveDefaultValues()
     QVERIFY(w.uriTemplate().isEmpty());
     QVERIFY(w.name().isEmpty());
 }
+
+void McpProtocolResourceTemplateTest::shouldRejectMissingRequiredFields()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplate;
+    const QJsonObject obj{{"name"_L1, u"files"_s}, {"uriTemplate"_L1, u"file:///{path}"_s}};
+    const McpProtocolResourceTemplate resourceTemplate = McpProtocolResourceTemplate::fromJson(obj);
+    QVERIFY(resourceTemplate.isValid());
+    QCOMPARE(McpProtocolResourceTemplate::toJson(resourceTemplate), obj);
+    QVERIFY(!McpProtocolResourceTemplate().isValid());
+
+    QJsonObject missingName = obj;
+    missingName.remove("name"_L1);
+    QCOMPARE(McpProtocolResourceTemplate::fromJson(missingName), McpProtocolResourceTemplate());
+
+    QJsonObject missingUriTemplate = obj;
+    missingUriTemplate.remove("uriTemplate"_L1);
+    QCOMPARE(McpProtocolResourceTemplate::fromJson(missingUriTemplate), McpProtocolResourceTemplate());
+}
+
 #include "moc_mcpprotocolresourcetemplatetest.cpp"

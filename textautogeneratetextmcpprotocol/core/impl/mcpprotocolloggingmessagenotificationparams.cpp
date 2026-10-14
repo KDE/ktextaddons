@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolloggingmessagenotificationparams.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -24,15 +25,33 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolLoggingMessageNotificationParams::isValid() const
+{
+    return mLevel != McpProtocolUtils::LoggingLevel::Unknown && !mData.isUndefined();
+}
+
 McpProtocolLoggingMessageNotificationParams McpProtocolLoggingMessageNotificationParams::fromJson(const QJsonObject &obj)
 {
     McpProtocolLoggingMessageNotificationParams params;
+    // data is required but can be any JSON value (including null)
+    if (!obj.contains("data"_L1)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotificationParams: missing required field 'data'";
+        return {};
+    }
     params.setData(obj.value("data"_L1));
     if (const QJsonValue levelValue = obj.value("level"_L1); levelValue.isString()) {
-        params.setLevel(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertLoggingLevelFromString(levelValue.toString()));
+        const McpProtocolUtils::LoggingLevel level = McpProtocolUtils::convertLoggingLevelFromString(levelValue.toString());
+        if (level == McpProtocolUtils::LoggingLevel::Unknown) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotificationParams: invalid field 'level'" << levelValue.toString();
+            return {};
+        }
+        params.setLevel(level);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotificationParams: missing required field 'level'";
+        return {};
     }
-    if (obj.contains("logger"_L1)) {
-        params.setLogger(obj.value("logger"_L1).toString());
+    if (const QJsonValue loggerValue = obj.value("logger"_L1); loggerValue.isString()) {
+        params.setLogger(loggerValue.toString());
     }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));

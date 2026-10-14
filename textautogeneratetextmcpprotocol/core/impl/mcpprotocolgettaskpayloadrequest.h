@@ -20,6 +20,9 @@ public:
         QString mTaskId;
 
         [[nodiscard]] bool operator==(const McpProtocolGetTaskPayloadRequest::Params &other) const;
+        /*!
+         */
+        [[nodiscard]] bool isValid() const;
 
         /*!
          */

@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolblobresourcecontents.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 #include <utility>
@@ -24,17 +25,32 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     return d;
 }
 
+bool McpProtocolBlobResourceContents::isValid() const
+{
+    return !mBlob.isEmpty() && !mUri.isEmpty();
+}
+
 McpProtocolBlobResourceContents McpProtocolBlobResourceContents::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue blobValue = obj.value("blob"_L1);
+    if (!blobValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolBlobResourceContents: missing required field 'blob'";
+        return {};
+    }
+    const QJsonValue uriValue = obj.value("uri"_L1);
+    if (!uriValue.isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolBlobResourceContents: missing required field 'uri'";
+        return {};
+    }
     McpProtocolBlobResourceContents contents;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         contents.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    contents.setBlob(obj.value("blob"_L1).toString());
+    contents.setBlob(blobValue.toString());
     if (obj.contains("mimeType"_L1)) {
         contents.setMimeType(obj.value("mimeType"_L1).toString());
     }
-    contents.setUri(obj.value("uri"_L1).toString());
+    contents.setUri(uriValue.toString());
     return contents;
 }
 

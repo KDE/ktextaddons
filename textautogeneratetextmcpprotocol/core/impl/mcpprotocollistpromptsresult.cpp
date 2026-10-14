@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocollistpromptsresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -30,17 +31,22 @@ McpProtocolListPromptsResult McpProtocolListPromptsResult::fromJson(const QJsonO
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("nextCursor"_L1)) {
-        result.setNextCursor(obj.value("nextCursor"_L1).toString());
+    if (const QJsonValue nextCursorValue = obj.value("nextCursor"_L1); nextCursorValue.isString()) {
+        result.setNextCursor(nextCursorValue.toString());
     }
     if (const QJsonValue promptsValue = obj.value("prompts"_L1); promptsValue.isArray()) {
         const QJsonArray arr = promptsValue.toArray();
         QList<McpProtocolPrompt> lst;
         lst.reserve(arr.count());
         for (const auto &v : arr) {
-            lst.append(McpProtocolPrompt::fromJson(v.toObject()));
+            if (const McpProtocolPrompt item = McpProtocolPrompt::fromJson(v.toObject()); item.isValid()) {
+                lst.append(item);
+            }
         }
         result.setPrompts(std::move(lst));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListPromptsResult: missing required field 'prompts'";
+        return {};
     }
     return result;
 }

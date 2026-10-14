@@ -65,30 +65,43 @@ QJsonObject McpProtocolCreateMessageRequestParams::Meta::toJson(const McpProtoco
     return obj;
 }
 
+bool McpProtocolCreateMessageRequestParams::isValid() const
+{
+    return mMaxTokens > 0 && !mMessages.isEmpty();
+}
+
 McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue maxTokensValue = obj.value("maxTokens"_L1);
+    if (!maxTokensValue.isDouble()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequestParams: missing required field 'maxTokens'";
+        return {};
+    }
+    const QJsonValue messagesValue = obj.value("messages"_L1);
+    if (!messagesValue.isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequestParams: missing required field 'messages'";
+        return {};
+    }
     McpProtocolCreateMessageRequestParams params;
-    if (!obj.contains("maxTokens"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: maxTokens";
-        return {};
-    }
-    if (!obj.contains("messages"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: messages";
-        return {};
-    }
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolCreateMessageRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("includeContext"_L1)) {
-        params.setIncludeContext(convertIncludeContextFromString(obj.value("includeContext"_L1).toString()));
+    if (const QJsonValue includeContextValue = obj.value("includeContext"_L1); includeContextValue.isString()) {
+        // Optional enum: ignore unknown value
+        if (const IncludeContext includeContext = convertIncludeContextFromString(includeContextValue.toString()); includeContext != IncludeContext::Unknown) {
+            params.setIncludeContext(includeContext);
+        }
     }
-    params.setMaxTokens(obj.value("maxTokens"_L1).toInt());
-    if (obj["messages"_L1].isArray()) {
-        const QJsonArray arr = obj["messages"_L1].toArray();
+    params.setMaxTokens(maxTokensValue.toInt());
+    {
+        const QJsonArray arr = messagesValue.toArray();
         QList<McpProtocolSamplingMessage> messages;
         messages.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            messages.append(McpProtocolSamplingMessage::fromJson(v.toObject()));
+            // Skip invalid message
+            if (McpProtocolSamplingMessage message = McpProtocolSamplingMessage::fromJson(v.toObject()); !(message == McpProtocolSamplingMessage())) {
+                messages.append(std::move(message));
+            }
         }
         params.setMessages(std::move(messages));
     }
@@ -129,7 +142,10 @@ McpProtocolCreateMessageRequestParams McpProtocolCreateMessageRequestParams::fro
         QList<McpProtocolTool> tools;
         tools.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            tools.append(McpProtocolTool::fromJson(v.toObject()));
+            // Skip invalid tool
+            if (McpProtocolTool tool = McpProtocolTool::fromJson(v.toObject()); !(tool == McpProtocolTool())) {
+                tools.append(std::move(tool));
+            }
         }
         params.setTools(std::move(tools));
     }

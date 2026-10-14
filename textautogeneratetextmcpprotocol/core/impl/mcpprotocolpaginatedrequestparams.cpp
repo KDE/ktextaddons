@@ -55,15 +55,18 @@ McpProtocolPaginatedRequestParams McpProtocolPaginatedRequestParams::fromJson(co
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolPaginatedRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    prompt.setCursor(obj.value("cursor"_L1).toString());
+    if (const QJsonValue cursorValue = obj.value("cursor"_L1); cursorValue.isString()) {
+        prompt.setCursor(cursorValue.toString());
+    }
     return prompt;
 }
 
 QJsonObject McpProtocolPaginatedRequestParams::toJson(const McpProtocolPaginatedRequestParams &paginatedRequestParams)
 {
     QJsonObject obj;
-    if (!paginatedRequestParams.cursor().isEmpty()) {
-        obj["cursor"_L1] = paginatedRequestParams.cursor();
+    // Empty string is a valid opaque cursor
+    if (paginatedRequestParams.cursor().has_value()) {
+        obj["cursor"_L1] = *paginatedRequestParams.cursor();
     }
     if (paginatedRequestParams.meta().has_value()) {
         obj["_meta"_L1] = McpProtocolPaginatedRequestParams::Meta::toJson(*paginatedRequestParams.meta());
@@ -81,12 +84,12 @@ void McpProtocolPaginatedRequestParams::setMeta(std::optional<Meta> newMeta)
     mMeta = std::move(newMeta);
 }
 
-QString McpProtocolPaginatedRequestParams::cursor() const
+std::optional<QString> McpProtocolPaginatedRequestParams::cursor() const
 {
     return mCursor;
 }
 
-void McpProtocolPaginatedRequestParams::setCursor(const QString &newCursor)
+void McpProtocolPaginatedRequestParams::setCursor(const std::optional<QString> &newCursor)
 {
     mCursor = newCursor;
 }

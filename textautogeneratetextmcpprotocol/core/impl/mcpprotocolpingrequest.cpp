@@ -42,9 +42,12 @@ McpProtocolPingRequest McpProtocolPingRequest::fromJson(const QJsonObject &obj)
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
         prompt.setParams(McpProtocolRequestParams::fromJson(paramsValue.toObject()));
     }
-    if (obj.contains("id"_L1)) {
-        prompt.setId(McpProtocolUtils::requestIdFromJson(obj.value("id"_L1)));
+    const QJsonValue idValue = obj.value("id"_L1);
+    if (!idValue.isString() && !idValue.isDouble()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPingRequest: missing required field 'id'";
+        return {};
     }
+    prompt.setId(McpProtocolUtils::requestIdFromJson(idValue));
     return prompt;
 }
 

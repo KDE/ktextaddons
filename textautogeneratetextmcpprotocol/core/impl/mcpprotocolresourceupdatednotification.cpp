@@ -39,7 +39,15 @@ McpProtocolResourceUpdatedNotification McpProtocolResourceUpdatedNotification::f
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        prompt.setParams(McpProtocolResourceUpdatedNotificationParams::fromJson(paramsValue.toObject()));
+        const McpProtocolResourceUpdatedNotificationParams params = McpProtocolResourceUpdatedNotificationParams::fromJson(paramsValue.toObject());
+        if (!params.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResourceUpdatedNotification: invalid field 'params'";
+            return {};
+        }
+        prompt.setParams(params);
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResourceUpdatedNotification: missing required field 'params'";
+        return {};
     }
     return prompt;
 }

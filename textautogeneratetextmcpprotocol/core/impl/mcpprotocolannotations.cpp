@@ -29,8 +29,8 @@ McpProtocolAnnotations McpProtocolAnnotations::fromJson(const QJsonObject &obj)
     if (obj.contains("lastModified"_L1)) {
         annot.setLastModified(obj.value("lastModified"_L1).toString());
     }
-    if (obj.contains("priority"_L1)) {
-        annot.setPriority(obj.value("priority"_L1).toDouble());
+    if (const QJsonValue priorityValue = obj.value("priority"_L1); priorityValue.isDouble()) {
+        annot.setPriority(priorityValue.toDouble());
     }
     if (const QJsonValue audienceValue = obj.value("audience"_L1); audienceValue.isArray()) {
         const QJsonArray arr = audienceValue.toArray();

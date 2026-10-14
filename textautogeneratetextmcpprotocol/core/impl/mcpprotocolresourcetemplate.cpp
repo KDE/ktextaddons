@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolresourcetemplate.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -13,6 +14,11 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolResourceTemplate::McpProtocolResourceTemplate() = default;
 
 bool McpProtocolResourceTemplate::operator==(const McpProtocolResourceTemplate &other) const = default;
+
+bool McpProtocolResourceTemplate::isValid() const
+{
+    return !mName.isEmpty() && !mUriTemplate.isEmpty();
+}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceTemplate &t)
 {
@@ -42,17 +48,30 @@ McpProtocolResourceTemplate McpProtocolResourceTemplate::fromJson(const QJsonObj
     if (obj.contains("mimeType"_L1)) {
         prompt.setMimeType(obj.value("mimeType"_L1).toString());
     }
-    prompt.setName(obj.value("name"_L1).toString());
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString() && !nameValue.toString().isEmpty()) {
+        prompt.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResourceTemplate: missing required field 'name'";
+        return {};
+    }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }
-    prompt.setUriTemplate(obj.value("uriTemplate"_L1).toString());
+    if (const QJsonValue uriTemplateValue = obj.value("uriTemplate"_L1); uriTemplateValue.isString() && !uriTemplateValue.toString().isEmpty()) {
+        prompt.setUriTemplate(uriTemplateValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolResourceTemplate: missing required field 'uriTemplate'";
+        return {};
+    }
     if (const QJsonValue iconsValue = obj.value("icons"_L1); iconsValue.isArray()) {
         const QJsonArray arr = iconsValue.toArray();
         QList<McpProtocolIcon> list_icons;
         list_icons.reserve(arr.count());
         for (const auto &v : arr) {
-            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+            // Skip icons rejected by McpProtocolIcon::fromJson
+            if (McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject()); icon.isValid()) {
+                list_icons.append(std::move(icon));
+            }
         }
         prompt.setIcons(std::move(list_icons));
     }

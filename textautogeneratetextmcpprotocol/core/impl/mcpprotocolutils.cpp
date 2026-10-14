@@ -93,6 +93,22 @@ QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleToStri
     return {};
 }
 
+namespace
+{
+// Return content as alternative of Result, or nothing when content was rejected by its fromJson()
+template<typename Result, typename T>
+std::optional<Result> validContent(T &&content)
+{
+    if constexpr (requires { content.isValid(); }) {
+        if (!content.isValid()) {
+            qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Ignore invalid content";
+            return std::nullopt;
+        }
+    }
+    return Result(std::forward<T>(content));
+}
+}
+
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::Role TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertRoleFromString(const QString &str)
 {
     if (str == "assistant"_L1) {
@@ -228,6 +244,12 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId TextAutoGenerat
     return {};
 }
 
+bool TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isValidRequestId(const QJsonValue &val)
+{
+    // Fractional number is accepted, requestIdFromJson() keeps it as string
+    return val.isString() || val.isDouble();
+}
+
 QJsonValue TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::requestIdToJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &val)
 {
     return std::visit(
@@ -255,10 +277,10 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::embeddedResourceResourceF
     }
     const QJsonObject obj = val.toObject();
     if (obj.contains("text"_L1)) {
-        return EmbeddedResourceResource(McpProtocolTextResourceContents::fromJson(obj));
+        return validContent<EmbeddedResourceResource>(McpProtocolTextResourceContents::fromJson(obj));
     }
     if (obj.contains("blob"_L1)) {
-        return EmbeddedResourceResource(McpProtocolBlobResourceContents::fromJson(obj));
+        return validContent<EmbeddedResourceResource>(McpProtocolBlobResourceContents::fromJson(obj));
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid EmbeddedResourceResource";
     return {};
@@ -492,15 +514,15 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::contentBlockFromJson(cons
     const QJsonObject valObj = val.toObject();
     const QString dispatchValue = valObj.value("type"_L1).toString();
     if (dispatchValue == QLatin1StringView(McpProtocolTextContent::type())) {
-        return ContentBlock(McpProtocolTextContent::fromJson(valObj));
+        return validContent<ContentBlock>(McpProtocolTextContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolImageContent::type())) {
-        return ContentBlock(McpProtocolImageContent::fromJson(valObj));
+        return validContent<ContentBlock>(McpProtocolImageContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolAudioContent::type())) {
-        return ContentBlock(McpProtocolAudioContent::fromJson(valObj));
+        return validContent<ContentBlock>(McpProtocolAudioContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolResourceLink::type())) {
-        return ContentBlock(McpProtocolResourceLink::fromJson(valObj));
+        return validContent<ContentBlock>(McpProtocolResourceLink::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolEmbeddedResource::type())) {
-        return ContentBlock(McpProtocolEmbeddedResource::fromJson(valObj));
+        return validContent<ContentBlock>(McpProtocolEmbeddedResource::fromJson(valObj));
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ContentBlock: unknown type \"" << dispatchValue << "\"";
     return {};
@@ -672,15 +694,15 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::samplingMessageContentBlo
     const QJsonObject valObj = val.toObject();
     const QString dispatchValue = valObj.value("type"_L1).toString();
     if (dispatchValue == QLatin1StringView(McpProtocolTextContent::type())) {
-        return SamplingMessageContentBlock(McpProtocolTextContent::fromJson(valObj));
+        return validContent<SamplingMessageContentBlock>(McpProtocolTextContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolImageContent::type())) {
-        return SamplingMessageContentBlock(McpProtocolImageContent::fromJson(valObj));
+        return validContent<SamplingMessageContentBlock>(McpProtocolImageContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolAudioContent::type())) {
-        return SamplingMessageContentBlock(McpProtocolAudioContent::fromJson(valObj));
+        return validContent<SamplingMessageContentBlock>(McpProtocolAudioContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolToolUseContent::type())) {
-        return SamplingMessageContentBlock(McpProtocolToolUseContent::fromJson(valObj));
+        return validContent<SamplingMessageContentBlock>(McpProtocolToolUseContent::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolToolResultContent::type())) {
-        return SamplingMessageContentBlock(McpProtocolToolResultContent::fromJson(valObj));
+        return validContent<SamplingMessageContentBlock>(McpProtocolToolResultContent::fromJson(valObj));
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid SamplingMessageContentBlock: unknown type \"" << dispatchValue << "\"";
     return {};

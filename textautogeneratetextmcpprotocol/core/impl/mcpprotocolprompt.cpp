@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolprompt.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -14,6 +15,11 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPrompt::McpProtocolPrompt() = default;
 
 bool McpProtocolPrompt::operator==(const McpProtocolPrompt &other) const = default;
+
+bool McpProtocolPrompt::isValid() const
+{
+    return !mName.isEmpty();
+}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPrompt &t)
 {
@@ -38,7 +44,10 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
         QList<McpProtocolPromptArgument> list_arguments;
         list_arguments.reserve(arr.count());
         for (const auto &v : arr) {
-            list_arguments.append(McpProtocolPromptArgument::fromJson(v.toObject()));
+            // Skip arguments rejected by McpProtocolPromptArgument::fromJson
+            if (McpProtocolPromptArgument argument = McpProtocolPromptArgument::fromJson(v.toObject()); argument.isValid()) {
+                list_arguments.append(std::move(argument));
+            }
         }
         prompt.setArguments(std::move(list_arguments));
     }
@@ -50,11 +59,19 @@ McpProtocolPrompt McpProtocolPrompt::fromJson(const QJsonObject &obj)
         QList<McpProtocolIcon> list_icons;
         list_icons.reserve(arr.count());
         for (const auto &v : arr) {
-            list_icons.append(McpProtocolIcon::fromJson(v.toObject()));
+            // Skip icons rejected by McpProtocolIcon::fromJson
+            if (McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject()); icon.isValid()) {
+                list_icons.append(std::move(icon));
+            }
         }
         prompt.setIcons(std::move(list_icons));
     }
-    prompt.setName(obj.value("name"_L1).toString());
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString() && !nameValue.toString().isEmpty()) {
+        prompt.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPrompt: missing required field 'name'";
+        return {};
+    }
     if (obj.contains("title"_L1)) {
         prompt.setTitle(obj.value("title"_L1).toString());
     }

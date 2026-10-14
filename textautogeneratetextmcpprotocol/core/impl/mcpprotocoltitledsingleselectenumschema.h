@@ -30,6 +30,10 @@ public:
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolTitledSingleSelectEnumSchema::OneOfItem &oneOfItem);
 
+        /*!
+         */
+        [[nodiscard]] bool isValid() const;
+
         [[nodiscard]] QString constValue() const;
         void setConstValue(const QString &newConstValue);
         [[nodiscard]] QString title() const;

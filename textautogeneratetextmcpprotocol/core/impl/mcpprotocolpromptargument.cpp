@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolpromptargument.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonObject>
 
@@ -13,6 +14,11 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolPromptArgument::McpProtocolPromptArgument() = default;
 
 bool McpProtocolPromptArgument::operator==(const McpProtocolPromptArgument &other) const = default;
+
+bool McpProtocolPromptArgument::isValid() const
+{
+    return !mName.isEmpty();
+}
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptArgument &t)
 {
@@ -29,7 +35,12 @@ McpProtocolPromptArgument McpProtocolPromptArgument::fromJson(const QJsonObject 
     if (obj.contains("description"_L1)) {
         prompt.setDescription(obj.value("description"_L1).toString());
     }
-    prompt.setName(obj.value("name"_L1).toString());
+    if (const QJsonValue nameValue = obj.value("name"_L1); nameValue.isString() && !nameValue.toString().isEmpty()) {
+        prompt.setName(nameValue.toString());
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolPromptArgument: missing required field 'name'";
+        return {};
+    }
     if (obj.contains("required"_L1)) {
         prompt.setRequired(obj.value("required"_L1).toBool());
     }

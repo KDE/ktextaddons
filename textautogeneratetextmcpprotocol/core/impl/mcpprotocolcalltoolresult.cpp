@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocolcalltoolresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -31,6 +32,11 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
 
 McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject &obj)
 {
+    const QJsonValue contentValue = obj.value("content"_L1);
+    if (!contentValue.isArray()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolResult: missing required field 'content'";
+        return {};
+    }
     McpProtocolCallToolResult result;
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
@@ -46,7 +52,7 @@ McpProtocolCallToolResult McpProtocolCallToolResult::fromJson(const QJsonObject 
         }
         result.setStructuredContent(std::move(map_structuredContent));
     }
-    if (const QJsonValue contentValue = obj.value("content"_L1); contentValue.isArray()) {
+    {
         const QJsonArray arr = contentValue.toArray();
         QList<McpProtocolUtils::ContentBlock> content;
         content.reserve(arr.count());

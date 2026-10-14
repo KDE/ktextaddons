@@ -33,8 +33,8 @@ McpProtocolJSONRPCNotification McpProtocolJSONRPCNotification::fromJson(const QJ
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Field 'jsonrpc' must be '2.0', got: " << obj.value("jsonrpc"_L1).toString();
         return {};
     }
-    if (!obj.contains("method"_L1)) {
-        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Missing required field: method";
+    if (!obj.value("method"_L1).isString()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCNotification: missing required field 'method'";
         return {};
     }
     response.setMethod(obj.value("method"_L1).toString());

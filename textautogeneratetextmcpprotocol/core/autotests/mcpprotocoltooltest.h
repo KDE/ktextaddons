@@ -17,4 +17,5 @@ public:
 private Q_SLOTS:
     void shouldKeepAllInputSchemaKeywords();
     void shouldKeepAllOutputSchemaKeywords();
+    void shouldRejectMissingRequiredFields();
 };

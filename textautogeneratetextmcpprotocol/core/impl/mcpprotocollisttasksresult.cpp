@@ -5,6 +5,7 @@
 */
 
 #include "mcpprotocollisttasksresult.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -29,17 +30,22 @@ McpProtocolListTasksResult McpProtocolListTasksResult::fromJson(const QJsonObjec
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("nextCursor"_L1)) {
-        result.setNextCursor(obj.value("nextCursor"_L1).toString());
+    if (const QJsonValue nextCursorValue = obj.value("nextCursor"_L1); nextCursorValue.isString()) {
+        result.setNextCursor(nextCursorValue.toString());
     }
     if (const QJsonValue tasksValue = obj.value("tasks"_L1); tasksValue.isArray()) {
         const QJsonArray arr = tasksValue.toArray();
         QList<McpProtocolTask> tasks;
         tasks.reserve(arr.count());
         for (const auto &v : arr) {
-            tasks.append(McpProtocolTask::fromJson(v.toObject()));
+            if (const McpProtocolTask item = McpProtocolTask::fromJson(v.toObject()); item.isValid()) {
+                tasks.append(item);
+            }
         }
         result.setTasks(std::move(tasks));
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolListTasksResult: missing required field 'tasks'";
+        return {};
     }
     return result;
 }

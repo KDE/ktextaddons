@@ -18,6 +18,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 #include <chrono>
+#include <optional>
 class QJsonObject;
 class QTimer;
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -233,7 +234,7 @@ private:
         // Id returned to caller: list requests use several requests (one by page)
         qint64 originalId = 0;
         // Pagination
-        QString cursor;
+        std::optional<QString> cursor;
         QJsonArray items;
         int pageCount = 0;
     };

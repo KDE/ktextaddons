@@ -47,6 +47,9 @@ public:
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Argument &argument);
         [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Argument &other) const;
+        /*!
+         */
+        [[nodiscard]] bool isValid() const;
 
         [[nodiscard]] QString value() const;
         void setValue(const QString &newValue);
@@ -75,6 +78,10 @@ public:
     /*!
      */
     [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams &other) const;
+
+    /*!
+     */
+    [[nodiscard]] bool isValid() const;
 
     /*!
      */
