@@ -28,7 +28,7 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
     QMenu menu(this);
     auto addInstanceAction = new QAction(i18nc("@action", "Add prompt…"), &menu);
     menu.addAction(addInstanceAction);
-    connect(addInstanceAction, &QAction::triggered, this, &TextAutoGenerateSelectPromptListWidget::addPrompt);
+    connect(addInstanceAction, &QAction::triggered, this, &TextAutoGenerateSelectPromptListWidget::slotAddPrompt);
 
     if (const QModelIndex index = indexAt(event->pos()); index.isValid()) {
         menu.addSeparator();
@@ -58,11 +58,21 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
     menu.exec(event->globalPos());
 }
 
-void TextAutoGenerateSelectPromptListWidget::slotEditPrompt(const QModelIndex &index)
+void TextAutoGenerateSelectPromptListWidget::slotAddPrompt()
 {
     auto dlg = new TextAutoGeneratePromptDialog(this);
     if (dlg->exec()) {
-        // TODO
+        Q_EMIT addPrompt(dlg->prompt());
+    }
+    delete dlg;
+}
+
+void TextAutoGenerateSelectPromptListWidget::slotEditPrompt(const QModelIndex &index)
+{
+    auto dlg = new TextAutoGeneratePromptDialog(this);
+    // TODO dlg->setPrompt();
+    if (dlg->exec()) {
+        Q_EMIT editPrompt(dlg->prompt());
     }
     delete dlg;
 }

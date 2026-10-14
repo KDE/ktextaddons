@@ -10,6 +10,7 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGeneratePrompt;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectPromptListWidget : public QListView
 {
     Q_OBJECT
@@ -21,10 +22,12 @@ protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 Q_SIGNALS:
-    void addPrompt();
+    void addPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
     void removePrompt(const QByteArray &id);
+    void editPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditPrompt(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt();
 };
 }

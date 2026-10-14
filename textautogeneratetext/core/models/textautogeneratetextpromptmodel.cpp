@@ -44,6 +44,8 @@ QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int rol
         return prompt.identifier();
     case Category:
         return QVariant::fromValue(prompt.category());
+    case Prompt:
+        return QVariant::fromValue(prompt);
     default:
         break;
     }
@@ -77,7 +79,6 @@ void TextAutoGenerateTextPromptModel::removePrompt(const QByteArray &uuid)
     if (const auto answerIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesUuid); answerIt != mPrompt.constEnd()) {
         const int i = std::distance(mPrompt.constBegin(), answerIt);
         beginRemoveRows(QModelIndex(), i, i);
-        auto instance = mPrompt.at(i);
         mPrompt.removeAt(i);
         endRemoveRows();
     }
