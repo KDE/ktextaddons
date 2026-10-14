@@ -8,8 +8,6 @@
 #include "textautogeneratetextmcpprotocol_core_debug.h"
 #include <QJsonArray>
 #include <QJsonObject>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBlobResourceContents>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextResourceContents>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolReadResourceResult::McpProtocolReadResourceResult() = default;

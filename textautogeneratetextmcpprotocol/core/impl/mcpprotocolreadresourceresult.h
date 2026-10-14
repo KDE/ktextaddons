@@ -7,7 +7,9 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QList>
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBlobResourceContents>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextResourceContents>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
 class QJsonObject;
