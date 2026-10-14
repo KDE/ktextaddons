@@ -124,6 +124,7 @@ public:
      */
     static constexpr int methodNotFoundCode = -32601;
     static constexpr int invalidParamsCode = -32602;
+    static constexpr int internalErrorCode = -32603;
 
 Q_SIGNALS:
     /*!
