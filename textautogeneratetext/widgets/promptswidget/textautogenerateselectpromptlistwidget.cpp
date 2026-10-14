@@ -37,13 +37,12 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
             slotEditPrompt(index);
         });
         menu.addAction(editAction);
-        menu.addSeparator();
-        auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Prompt"), &menu);
-        connect(removeAction, &QAction::triggered, this, [index, this]() {
-            if (const QByteArray uuid = index.data(TextAutoGenerateTextPromptModel::Identifier).toByteArray(); uuid.isEmpty()) {
-                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid prompt identifier";
-            } else {
-                const QString name = index.data(TextAutoGenerateTextPromptModel::Name).toString();
+        const QByteArray uuid = index.data(TextAutoGenerateTextPromptModel::Identifier).toByteArray();
+        if (!uuid.isEmpty()) {
+            menu.addSeparator();
+            const QString name = index.data(TextAutoGenerateTextPromptModel::Name).toString();
+            auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Prompt"), &menu);
+            connect(removeAction, &QAction::triggered, this, [name, uuid, this]() {
                 if (KMessageBox::warningTwoActions(this,
                                                    i18n("Do you want to remove this prompt (%1)?", name),
                                                    i18nc("@title", "Remove Prompt"),
@@ -52,9 +51,9 @@ void TextAutoGenerateSelectPromptListWidget::contextMenuEvent(QContextMenuEvent 
                     == KMessageBox::PrimaryAction) {
                     Q_EMIT removePrompt(uuid);
                 }
-            }
-        });
-        menu.addAction(removeAction);
+            });
+            menu.addAction(removeAction);
+        }
     }
     menu.exec(event->globalPos());
 }
