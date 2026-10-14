@@ -43,7 +43,7 @@ void TextAutoGenerateSelectPromptWidget::slotAddPrompt()
 
 void TextAutoGenerateSelectPromptWidget::slotRemovePrompt(const QByteArray &identifier)
 {
-    // TODO
+    mPromptModel->removePrompt(identifier);
 }
 
 #include "moc_textautogenerateselectpromptwidget.cpp"
