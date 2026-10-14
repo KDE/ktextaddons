@@ -293,7 +293,13 @@ void McpProtocolClientProtocolManager::checkTimeouts()
         }
     }
     for (const qint64 identifier : std::as_const(expired)) {
-        const PendingRequest pending = mPendingRequests.take(identifier);
+        // A slot connected to received() can stop client or cancel requests
+        auto it = mPendingRequests.find(identifier);
+        if (it == mPendingRequests.end()) {
+            continue;
+        }
+        const PendingRequest pending = std::move(*it);
+        mPendingRequests.erase(it);
         const MethodType type = pending.type;
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Request timed out:" << identifier << type;
         if (type == MethodType::Initialize) {
@@ -471,6 +477,8 @@ void McpProtocolClientProtocolManager::initializeClient()
     }
     mClient->setSettings(mServer.settings());
     if (!mClient->canStart()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start client:" << mServer;
+        Q_EMIT error(u"Impossible to start client"_s);
         return;
     }
     mClientStarted = true;
@@ -532,6 +540,12 @@ void McpProtocolClientProtocolManager::serverNotificationReceived(const QJsonObj
         Q_EMIT promptsListChanged();
     } else if (method == QLatin1StringView(McpProtocolResourceListChangedNotification::type())) {
         Q_EMIT resourcesListChanged();
+    } else if (method == QLatin1StringView(McpProtocolCancelledNotification::type())) {
+        // Server doesn't wait anymore for user answer (elicitation, sampling)
+        const auto requestId = McpProtocolCancelledNotification::fromJson(obj).params().requestId();
+        if (requestId.has_value() && mPendingUserRequests.contains(*requestId) && takePendingUserRequest(*requestId)) {
+            Q_EMIT userRequestCancelled(*requestId);
+        }
     }
 }
 
@@ -637,6 +651,8 @@ void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObj
         if (McpProtocolUtils::convertProtocolVersionFromString(result.protocolVersion()) == McpProtocolUtils::ProtocolVersion::Unknown) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported protocol version:" << result.protocolVersion();
             Q_EMIT error(u"Unsupported protocol version: %1"_s.arg(result.protocolVersion()));
+            // Specification: client must disconnect
+            mClient->stop();
             return;
         }
         mInitializeResult = result;
@@ -647,6 +663,8 @@ void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObj
         const McpProtocolJSONRPCErrorResponse response = McpProtocolJSONRPCErrorResponse::fromJson(obj);
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialize failed:" << response.error().message();
         Q_EMIT error(response.error().message());
+        // Client can't be used without initialization
+        mClient->stop();
     }
 }
 

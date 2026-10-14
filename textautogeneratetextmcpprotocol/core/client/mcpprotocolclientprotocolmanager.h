@@ -221,6 +221,11 @@ Q_SIGNALS:
      */
     void samplingRequested(const McpProtocolUtils::RequestId &id, const McpProtocolCreateMessageRequest &request);
 
+    /*!
+     * Server cancelled elicitation or sampling request \a id: close dialog, answer is not sent anymore.
+     */
+    void userRequestCancelled(const McpProtocolUtils::RequestId &id);
+
 private:
     struct PendingRequest {
         MethodType type = MethodType::Unknown;

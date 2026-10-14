@@ -207,8 +207,8 @@ void MainWidget::connectToServer()
     connect(mManager, &McpProtocolClientProtocolManager::received, this, &MainWidget::slotReceived);
     connect(mManager, &McpProtocolClientProtocolManager::error, this, [this](const QString &str) {
         log(u"ERROR: %1"_s.arg(str));
-        // Manager doesn't stop client when initialize request failed
-        if (!mManager->isInitialized()) {
+        // Manager can be deleted (client finished), stop client when it can't be initialized
+        if (mManager && !mManager->isInitialized()) {
             mManager->stopClient();
         }
     });
@@ -220,6 +220,9 @@ void MainWidget::connectToServer()
     });
     connect(mManager, &McpProtocolClientProtocolManager::finished, this, [this]() {
         log(u"Client finished"_s);
+        // Don't delete manager in its signal
+        // Reset it before checkFinished(): it must not run next check
+        std::exchange(mManager, nullptr)->deleteLater();
         if (mCurrentCheck >= 0) {
             checkFinished(u"Client finished"_s);
         }
@@ -228,9 +231,6 @@ void MainWidget::connectToServer()
             mFailureCount = 1;
             finishChecks();
         }
-        // Don't delete manager in its signal
-        mManager->deleteLater();
-        mManager = nullptr;
         mTools->clear();
         updateButtons();
     });

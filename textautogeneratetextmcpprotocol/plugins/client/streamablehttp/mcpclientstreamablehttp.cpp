@@ -106,6 +106,11 @@ void McpClientStreamableHttp::send(const QJsonObject &obj)
     QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
     trackReply(reply);
     connect(reply, &QNetworkReply::readyRead, this, [this, reply, stream]() {
+        if (stream->isInitializeRequest && mSessionId.isEmpty()) {
+            // Initialize result can be received in SSE stream before end of reply:
+            // session id must be known before sending "notifications/initialized".
+            mSessionId = reply->rawHeader("Mcp-Session-Id"_ba);
+        }
         if (isEventStream(reply)) {
             processEvents(stream->parser.feed(reply->readAll()), stream.get());
         }
@@ -403,6 +408,7 @@ void McpClientStreamableHttp::closeEventStream()
     if (mEventStreamReply) {
         mEventStreamReply->disconnect(this);
         mEventStreamReply->abort();
+        mEventStreamReply->deleteLater();
         mEventStreamReply = nullptr;
     }
 }

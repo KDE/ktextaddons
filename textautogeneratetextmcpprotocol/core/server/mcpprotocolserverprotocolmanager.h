@@ -160,12 +160,13 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void callTool(const QJsonValue &id, const QJsonObject &params);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void cancelRequest(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void cancelAllCalls();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void cancelToolCalls(const QString &name);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void removeCall(const QString &key);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendToolListChanged();
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolServerTool *findTool(const QString &name) const;
 
     std::vector<std::unique_ptr<McpProtocolServerTool>> mTools;
-    // Key: request id as string
+    // Key: request id type and value
     QHash<QString, McpProtocolServerToolCall *> mPendingCalls;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolImplementation mServerInfo;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings mSettings;

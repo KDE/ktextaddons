@@ -27,6 +27,8 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+#include <algorithm>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 
@@ -37,9 +39,23 @@ QString compact(const QJsonObject &obj)
     return QString::fromUtf8(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
-QString idToString(const QJsonValue &id)
+QString requestIdToString(const McpProtocolUtils::RequestId &id)
 {
-    return id.isString() ? id.toString() : QString::number(id.toInteger());
+    return std::visit(
+        [](const auto &v) -> QString {
+            if constexpr (std::is_same_v<std::decay_t<decltype(v)>, QString>) {
+                return v;
+            } else {
+                return QString::number(v);
+            }
+        },
+        id);
+}
+
+// String id "1" and number id 1 are different requests: add type in key
+QString requestIdKey(const McpProtocolUtils::RequestId &id)
+{
+    return (std::holds_alternative<QString>(id) ? u"s:"_s : u"n:"_s) + requestIdToString(id);
 }
 }
 
@@ -56,8 +72,11 @@ McpProtocolServerProtocolManager::McpProtocolServerProtocolManager(McpProtocolPl
 McpProtocolServerProtocolManager::~McpProtocolServerProtocolManager()
 {
     // Calls are children: avoid to emit signals to a partially destroyed object
-    for (McpProtocolServerToolCall *call : std::as_const(mPendingCalls)) {
+    // Tell tools (still alive here) to stop their work
+    const auto calls = std::exchange(mPendingCalls, {});
+    for (McpProtocolServerToolCall *call : calls) {
         call->disconnect(this);
+        call->cancel();
     }
 }
 
@@ -131,6 +150,8 @@ void McpProtocolServerProtocolManager::addTool(std::unique_ptr<McpProtocolServer
         return t->definition().name() == name;
     });
     if (it != mTools.end()) {
+        // Pending calls reference the old tool
+        cancelToolCalls(name);
         *it = std::move(tool);
     } else {
         mTools.push_back(std::move(tool));
@@ -146,9 +167,27 @@ bool McpProtocolServerProtocolManager::removeTool(const QString &name)
     if (it == mTools.end()) {
         return false;
     }
+    cancelToolCalls(name);
     mTools.erase(it);
     sendToolListChanged();
     return true;
+}
+
+void McpProtocolServerProtocolManager::cancelToolCalls(const QString &name)
+{
+    // cancel() emits signals: don't iterate on mPendingCalls while calling it
+    QList<McpProtocolServerToolCall *> calls;
+    mPendingCalls.removeIf([&name, &calls](const auto &it) {
+        if (it.value()->name() == name) {
+            calls.append(it.value());
+            return true;
+        }
+        return false;
+    });
+    for (McpProtocolServerToolCall *call : std::as_const(calls)) {
+        call->cancel();
+        call->deleteLater();
+    }
 }
 
 QList<McpProtocolTool> McpProtocolServerProtocolManager::tools() const
@@ -289,9 +328,10 @@ void McpProtocolServerProtocolManager::callTool(const QJsonValue &id, const QJso
         sendError(id, invalidParamsCode, u"Unknown tool: %1"_s.arg(name));
         return;
     }
-    const QString key = idToString(id);
+    const McpProtocolUtils::RequestId requestId = McpProtocolUtils::requestIdFromJson(id);
+    const QString key = requestIdKey(requestId);
     if (mPendingCalls.contains(key)) {
-        sendError(id, invalidParamsCode, u"Request id already used: %1"_s.arg(key));
+        sendError(id, invalidParamsCode, u"Request id already used: %1"_s.arg(requestIdToString(requestId)));
         return;
     }
     auto call = new McpProtocolServerToolCall(id, name, callToolParams.arguments().value_or(QMap<QString, QJsonValue>{}), this);
@@ -321,9 +361,8 @@ void McpProtocolServerProtocolManager::cancelRequest(const QJsonObject &obj)
     if (!requestId.has_value()) {
         return;
     }
-    const QString key = idToString(McpProtocolUtils::requestIdToJson(*requestId));
-    if (McpProtocolServerToolCall *call = mPendingCalls.take(key)) {
-        Q_EMIT logMessage(i18n("Request %1 cancelled by client", key));
+    if (McpProtocolServerToolCall *call = mPendingCalls.take(requestIdKey(*requestId))) {
+        Q_EMIT logMessage(i18n("Request %1 cancelled by client", requestIdToString(*requestId)));
         call->cancel();
         call->deleteLater();
     }
