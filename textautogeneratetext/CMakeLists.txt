@@ -470,6 +470,14 @@ target_sources(
         widgets/promptswidget/textautogenerateselectskillwidget.cpp
         widgets/promptswidget/textautogenerateselectskilllistwidget.h
         widgets/promptswidget/textautogenerateselectskilllistwidget.cpp
+        widgets/promptswidget/textautogenerateagentwidget.h
+        widgets/promptswidget/textautogenerateagentwidget.cpp
+        widgets/promptswidget/textautogenerateagentdialog.h
+        widgets/promptswidget/textautogenerateagentdialog.cpp
+        widgets/promptswidget/textautogenerateselectagentwidget.h
+        widgets/promptswidget/textautogenerateselectagentwidget.cpp
+        widgets/promptswidget/textautogenerateselectagentlistwidget.h
+        widgets/promptswidget/textautogenerateselectagentlistwidget.cpp
         widgets/promptswidget/textautogeneratepromptdialog.h
         widgets/promptswidget/textautogeneratepromptdialog.cpp
         widgets/promptswidget/textautogenerateselectpromptwidget.h
