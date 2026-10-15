@@ -37,9 +37,9 @@ TextAutoGenerateSkillDialog::TextAutoGenerateSkillDialog(QWidget *parent)
 
 TextAutoGenerateSkillDialog::~TextAutoGenerateSkillDialog() = default;
 
-void TextAutoGenerateSkillDialog::setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &prompt)
+void TextAutoGenerateSkillDialog::setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill)
 {
-    mSkillWidget->setSkill(prompt);
+    mSkillWidget->setSkill(skill);
 }
 
 TextAutoGenerateText::TextAutoGenerateSkill TextAutoGenerateSkillDialog::skill() const

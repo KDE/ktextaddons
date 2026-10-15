@@ -36,4 +36,22 @@ void TextAutoGenerateSkillWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mInstructions);
     QVERIFY(mInstructions->toPlainText().isEmpty());
 }
+
+void TextAutoGenerateSkillWidgetTest::shouldKeepIdentifier()
+{
+    TextAutoGenerateText::TextAutoGenerateSkillWidget w;
+    TextAutoGenerateText::TextAutoGenerateSkill skill;
+    skill.setIdentifier("foo"_ba);
+    skill.setName(u"bla"_s);
+    skill.setDescription(u"description"_s);
+    skill.setInstructions(u"instructions"_s);
+    w.setSkill(skill);
+    QCOMPARE(w.skill(), skill);
+
+    w.findChild<QLineEdit *>(u"mName"_s)->setText(u"newname"_s);
+    const TextAutoGenerateText::TextAutoGenerateSkill result = w.skill();
+    QCOMPARE(result.identifier(), "foo"_ba);
+    QCOMPARE(result.name(), u"newname"_s);
+}
+
 #include "moc_textautogenerateskillwidgettest.cpp"

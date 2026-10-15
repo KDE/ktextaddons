@@ -466,6 +466,10 @@ target_sources(
         widgets/promptswidget/textautogenerateskillwidget.cpp
         widgets/promptswidget/textautogenerateskilldialog.cpp
         widgets/promptswidget/textautogenerateskilldialog.h
+        widgets/promptswidget/textautogenerateselectskillwidget.h
+        widgets/promptswidget/textautogenerateselectskillwidget.cpp
+        widgets/promptswidget/textautogenerateselectskilllistwidget.h
+        widgets/promptswidget/textautogenerateselectskilllistwidget.cpp
         widgets/promptswidget/textautogeneratepromptdialog.h
         widgets/promptswidget/textautogeneratepromptdialog.cpp
         widgets/promptswidget/textautogenerateselectpromptwidget.h

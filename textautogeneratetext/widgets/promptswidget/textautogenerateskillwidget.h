@@ -5,13 +5,13 @@
 */
 
 #pragma once
+#include "core/prompts/textautogenerateskill.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
 class QPlainTextEdit;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateSkill;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSkillWidget : public QWidget
 {
     Q_OBJECT
@@ -23,6 +23,7 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateSkill skill() const;
 
 private:
+    TextAutoGenerateText::TextAutoGenerateSkill mCurrentSkill;
     QLineEdit *const mName;
     QLineEdit *const mDescription;
     QPlainTextEdit *const mInstructions;

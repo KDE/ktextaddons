@@ -17,7 +17,7 @@ public:
     explicit TextAutoGenerateSkillDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateSkillDialog() override;
 
-    void setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &prompt);
+    void setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateSkill skill() const;
 
 private:

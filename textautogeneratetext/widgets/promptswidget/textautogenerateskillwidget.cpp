@@ -5,7 +5,6 @@
 */
 
 #include "textautogenerateskillwidget.h"
-#include "core/prompts/textautogenerateskill.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -39,6 +38,7 @@ TextAutoGenerateSkillWidget::~TextAutoGenerateSkillWidget() = default;
 
 void TextAutoGenerateSkillWidget::setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill)
 {
+    mCurrentSkill = skill;
     mName->setText(skill.name());
     mDescription->setText(skill.description());
     mInstructions->setPlainText(skill.instructions());
@@ -46,7 +46,7 @@ void TextAutoGenerateSkillWidget::setSkill(const TextAutoGenerateText::TextAutoG
 
 TextAutoGenerateText::TextAutoGenerateSkill TextAutoGenerateSkillWidget::skill() const
 {
-    TextAutoGenerateText::TextAutoGenerateSkill skill;
+    TextAutoGenerateText::TextAutoGenerateSkill skill = mCurrentSkill;
     skill.setDescription(mDescription->text());
     skill.setInstructions(mInstructions->toPlainText());
     skill.setName(mName->text());
