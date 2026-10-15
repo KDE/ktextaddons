@@ -79,7 +79,14 @@ public:
      */
     void removePrompt(const QByteArray &uuid);
 
+    /*!
+     * \brief updatePrompt
+     * \param prompt
+     */
+    void updatePrompt(const TextAutoGeneratePrompt &prompt);
+
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
     QList<TextAutoGeneratePrompt> mPrompt;
 };
 }

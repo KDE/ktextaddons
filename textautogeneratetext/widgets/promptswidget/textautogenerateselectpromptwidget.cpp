@@ -45,7 +45,7 @@ TextAutoGenerateSelectPromptWidget::~TextAutoGenerateSelectPromptWidget() = defa
 
 void TextAutoGenerateSelectPromptWidget::slotEditPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
-    // TODO
+    mPromptModel->updatePrompt(prompt);
 }
 
 void TextAutoGenerateSelectPromptWidget::slotAddPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)

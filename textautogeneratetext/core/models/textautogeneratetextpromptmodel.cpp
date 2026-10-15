@@ -64,6 +64,33 @@ void TextAutoGenerateTextPromptModel::setPrompt(const QList<TextAutoGenerateProm
     endResetModel();
 }
 
+int TextAutoGenerateTextPromptModel::indexFromIdentifier(const QByteArray &identifier) const
+{
+    if (identifier.isEmpty()) {
+        return -1;
+    }
+    const auto matchesIdentifier = [&](const TextAutoGeneratePrompt &tag) {
+        return tag.identifier() == identifier;
+    };
+    const auto tagIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesIdentifier);
+    if (tagIt == mPrompt.constEnd()) {
+        return -1;
+    }
+    return std::distance(mPrompt.constBegin(), tagIt);
+}
+
+void TextAutoGenerateTextPromptModel::updatePrompt(const TextAutoGeneratePrompt &prompt)
+{
+    const int i = indexFromIdentifier(prompt.identifier());
+    if (i == -1) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Unable to find prompt with identifier:" << prompt.identifier();
+        return;
+    }
+    mPrompt[i] = prompt;
+    const QModelIndex idx = index(i, 0);
+    Q_EMIT dataChanged(idx, idx);
+}
+
 void TextAutoGenerateTextPromptModel::addPrompt(const TextAutoGeneratePrompt &newPrompt)
 {
     beginInsertRows(QModelIndex(), mPrompt.count(), mPrompt.count());
@@ -73,11 +100,8 @@ void TextAutoGenerateTextPromptModel::addPrompt(const TextAutoGeneratePrompt &ne
 
 void TextAutoGenerateTextPromptModel::removePrompt(const QByteArray &uuid)
 {
-    auto matchesUuid = [&](const TextAutoGeneratePrompt &prompt) {
-        return prompt.identifier() == uuid;
-    };
-    if (const auto answerIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesUuid); answerIt != mPrompt.constEnd()) {
-        const int i = std::distance(mPrompt.constBegin(), answerIt);
+    const int i = indexFromIdentifier(uuid);
+    if (i != -1) {
         beginRemoveRows(QModelIndex(), i, i);
         mPrompt.removeAt(i);
         endRemoveRows();
