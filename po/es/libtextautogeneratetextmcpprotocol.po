@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"POT-Creation-Date: 2026-10-15 00:44+0000\n"
 "PO-Revision-Date: 2026-10-12 11:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,49 +19,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#: core/server/mcpprotocolserverprotocolmanager.cpp:97
 #, kde-format
 msgid "Starting server"
 msgstr "Iniciando el servidor"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#: core/server/mcpprotocolserverprotocolmanager.cpp:99
 #, kde-format
 msgid "Starting server on %1"
 msgstr "Iniciando el servidor en %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#: core/server/mcpprotocolserverprotocolmanager.cpp:370
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr "Petición %1 cancelada por el cliente"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#: core/server/mcpprotocolserverprotocolmanager.cpp:387
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#: core/server/mcpprotocolserverprotocolmanager.cpp:393
 #, kde-format
 msgid "Server started"
 msgstr "Servidor iniciado"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#: core/server/mcpprotocolserverprotocolmanager.cpp:401
 #, kde-format
 msgid "Server stopped"
 msgstr "Servidor detenido"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:113
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "E/S estándar"
 
-#: core/server/mcpserver.cpp:111
+#: core/server/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -99,14 +99,14 @@ msgstr "No se ha podido enviar el mensaje. No se está ejecutando el cliente."
 msgid "Message received from server is too big."
 msgstr "El mensaje recibido del servidor es demasiado grande."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:177
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:223
 #, kde-format
 msgid "Connection lost before receiving answer."
 msgstr "Se ha perdido la conexión antes de recibir respuesta."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:399
 #, kde-format
 msgid "Session expired. Client must be restarted."
 msgstr "La sesión ha expirado. Se debe reiniciar el cliente."

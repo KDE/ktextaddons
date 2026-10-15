@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"POT-Creation-Date: 2026-10-15 00:44+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -17,50 +17,50 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 26.07.70\n"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#: core/server/mcpprotocolserverprotocolmanager.cpp:97
 #, kde-format
 msgid "Starting server"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#: core/server/mcpprotocolserverprotocolmanager.cpp:99
 #, kde-format
 msgid "Starting server on %1"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#: core/server/mcpprotocolserverprotocolmanager.cpp:370
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#: core/server/mcpprotocolserverprotocolmanager.cpp:387
 #, kde-format
 msgid "Error: %1"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#: core/server/mcpprotocolserverprotocolmanager.cpp:393
 #, kde-format
 msgid "Server started"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#: core/server/mcpprotocolserverprotocolmanager.cpp:401
 #, kde-format
 msgid "Server stopped"
 msgstr ""
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr ""
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:113
 #, fuzzy, kde-format
 #| msgid "Standard IO"
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "標準輸入輸出"
 
-#: core/server/mcpserver.cpp:111
+#: core/server/mcpserver.cpp:115
 #, fuzzy, kde-format
 #| msgid "Streamable HTTP"
 msgctxt "@item:inlistbox"
@@ -99,14 +99,14 @@ msgstr ""
 msgid "Message received from server is too big."
 msgstr ""
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:177
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:223
 #, kde-format
 msgid "Connection lost before receiving answer."
 msgstr ""
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:399
 #, kde-format
 msgid "Session expired. Client must be restarted."
 msgstr ""

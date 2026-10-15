@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-12 00:49+0000\n"
+"POT-Creation-Date: 2026-10-15 00:44+0000\n"
 "PO-Revision-Date: 2026-10-12 08:57+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -18,49 +18,49 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.12.1\n"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#: core/server/mcpprotocolserverprotocolmanager.cpp:97
 #, kde-format
 msgid "Starting server"
 msgstr "Запускаємо сервер"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#: core/server/mcpprotocolserverprotocolmanager.cpp:99
 #, kde-format
 msgid "Starting server on %1"
 msgstr "Запускаємо сервер на %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#: core/server/mcpprotocolserverprotocolmanager.cpp:370
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr "Запит %1 скасовано клієнтом"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#: core/server/mcpprotocolserverprotocolmanager.cpp:387
 #, kde-format
 msgid "Error: %1"
 msgstr "Помилка: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:349
+#: core/server/mcpprotocolserverprotocolmanager.cpp:393
 #, kde-format
 msgid "Server started"
 msgstr "Сервер запущено"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:357
+#: core/server/mcpprotocolserverprotocolmanager.cpp:401
 #, kde-format
 msgid "Server stopped"
 msgstr "Роботу сервера зупинено"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:113
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Стандартне введення-виведення"
 
-#: core/server/mcpserver.cpp:111
+#: core/server/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -98,14 +98,14 @@ msgstr "Неможливо надіслати повідомлення. Кліє
 msgid "Message received from server is too big."
 msgstr "Отримане з сервера повідомлення є надто великим."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:177
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:223
 #, kde-format
 msgid "Connection lost before receiving answer."
 msgstr "З'єднання розірвано до отримання відповіді."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:399
 #, kde-format
 msgid "Session expired. Client must be restarted."
 msgstr "Строк роботи у сеансі вичерпано. Слід перезапустити клієнт."

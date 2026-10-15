@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-12 00:49+0000\n"
-"PO-Revision-Date: 2026-10-05 09:05+0200\n"
+"POT-Creation-Date: 2026-10-15 00:44+0000\n"
+"PO-Revision-Date: 2026-10-13 16:09+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,53 +15,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:78
+#: core/server/mcpprotocolserverprotocolmanager.cpp:97
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "Avvio del server"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:80
+#: core/server/mcpprotocolserverprotocolmanager.cpp:99
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "Avvio del server su %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:326
+#: core/server/mcpprotocolserverprotocolmanager.cpp:370
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "Richiesta %1 annullata dal cliente"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:343
+#: core/server/mcpprotocolserverprotocolmanager.cpp:387
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Errore: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:349
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#: core/server/mcpprotocolserverprotocolmanager.cpp:393
+#, kde-format
 msgid "Server started"
-msgstr "Il server non è pronto."
+msgstr "Server avviato"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:357
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#: core/server/mcpprotocolserverprotocolmanager.cpp:401
+#, kde-format
 msgid "Server stopped"
-msgstr "Il server non è pronto."
+msgstr "Server fermato"
 
-#: core/server/mcpserver.cpp:107
+#: core/server/mcpserver.cpp:111
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/server/mcpserver.cpp:109
+#: core/server/mcpserver.cpp:113
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "IO standard"
 
-#: core/server/mcpserver.cpp:111
+#: core/server/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -99,14 +97,14 @@ msgstr "Impossibile inviare il messaggio. Il client non è in esecuzione."
 msgid "Message received from server is too big."
 msgstr "Il messaggio ricevuto dal server è troppo grande."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:167
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:172
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:218
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:177
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:223
 #, kde-format
 msgid "Connection lost before receiving answer."
 msgstr "Connessione persa prima di ricevere una risposta."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:394
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:399
 #, kde-format
 msgid "Session expired. Client must be restarted."
 msgstr "Sessione scaduta. Il client deve essere riavviato."
@@ -125,27 +123,25 @@ msgstr "L'invio di messaggi non è ancora stato implementato."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:126
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. Url is invalid."
+#, kde-format
 msgid "Impossible to start server: %1"
-msgstr "Impossibile avviare il server. L'URL non è valido."
+msgstr "Impossibile avviare il server: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "Il server stdio non è supportato su questa piattaforma."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:432
 #, kde-format
 msgid "Server is not started."
-msgstr ""
+msgstr "Il server non è avviato."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "Il messaggio ricevuto dal server è troppo grande."
+msgstr "Il messaggio ricevuto dal client è troppo grande."
 
 #: widgets/server/addmcpserverdialog.cpp:26
 #, kde-format
@@ -163,25 +159,25 @@ msgstr "Modifica server"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Folder…"
-msgstr ""
+msgstr "Cartella…"
 
 #: widgets/server/addmcpserverrootswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Folder"
-msgstr ""
+msgstr "Seleziona cartella"
 
 #: widgets/server/addmcpserverrootswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Folders that server is allowed to access"
-msgstr ""
+msgstr "Cartelle a cui il server è autorizzato ad accedere"
 
 #: widgets/server/addmcpserverrootswidget.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr ""
+msgstr "Seleziona cartella"
 
 #: widgets/server/addmcpserverwidget.cpp:38
 #, kde-format
@@ -193,7 +189,7 @@ msgstr "Nome:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon:"
-msgstr ""
+msgstr "Icona:"
 
 #: widgets/server/addmcpserverwidget.cpp:45
 #, kde-format
@@ -205,7 +201,7 @@ msgstr "Tipo:"
 #, kde-format
 msgctxt "@label"
 msgid "Allowed folders:"
-msgstr ""
+msgstr "Cartelle consentite:"
 
 #: widgets/server/addmcpsseserverwidget.cpp:26
 #: widgets/server/addmcpstreamablehttpserverwidget.cpp:26

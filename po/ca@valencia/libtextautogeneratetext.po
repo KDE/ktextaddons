@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:45+0000\n"
-"PO-Revision-Date: 2026-10-12 10:27+0200\n"
+"POT-Creation-Date: 2026-10-15 00:44+0000\n"
+"PO-Revision-Date: 2026-10-14 10:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -81,40 +81,47 @@ msgstr "LLM no admet peticions de mostreig."
 msgid "LLM returned an empty answer."
 msgstr "LLM ha retornat una resposta buida."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:34
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
 msgid "Tool \"%1\" is not available."
 msgstr "L'eina «%1» no està disponible."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:45
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:142
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:54
+#, kde-format
+msgid ""
+"Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
+"the user to tell you when it is done, then call the tool again."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:60
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:157
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:158
 #, kde-format
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:50
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:62
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:77
 #, kde-format
 msgid "Error: server was stopped."
 msgstr "S'ha produït un error: s'ha parat el servidor."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:58
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:73
 #, kde-format
 msgid "User refused to run tool \"%1\"."
 msgstr "L'usuari ha refusat executar l'eina «%1»."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Calling tool \"%1\"…"
 msgstr "S'està invocant l'eina «%1»…"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:68
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "S'ha produït un error: és impossible invocar l'eina «%1»."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:80
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:81
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "El servidor no és vàlid o està desactivat."
@@ -171,68 +178,68 @@ msgstr "<b>Motor:</b> %1<br><b>Model:</b> %2<br><b>Nom d'instància:</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>Eines:</b> %1"
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Tools"
 msgstr "Eines"
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Small"
 msgstr "Xicotet"
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:176
 #, kde-format
 msgid "Medium"
 msgstr "Mitjà"
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Big"
 msgstr "Gran"
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:184
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "Codi"
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Math"
 msgstr "Matemàtica"
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Vision"
 msgstr "Visió"
 
-#: core/textautogeneratemanager.cpp:189
+#: core/textautogeneratemanager.cpp:190
 #, kde-format
 msgid "Embedding"
 msgstr "Immersió"
 
-#: core/textautogeneratemanager.cpp:191
+#: core/textautogeneratemanager.cpp:192
 #, kde-format
 msgid "Reasoning"
 msgstr "Raonament"
 
-#: core/textautogeneratemanager.cpp:193
+#: core/textautogeneratemanager.cpp:194
 #, kde-format
 msgid "Cloud"
 msgstr "Núvol"
 
-#: core/textautogeneratemanager.cpp:195
+#: core/textautogeneratemanager.cpp:196
 #, kde-format
 msgid "Thinking"
 msgstr "Pensament"
@@ -603,7 +610,7 @@ msgstr "Model instal·lat"
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/projects/textautogenerateprojectwidget.cpp:33
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
@@ -678,7 +685,7 @@ msgstr "Etiqueta:"
 # NdT: https://www.termcat.cat/ca/cercaterm/fitxa/NDgwODQzNQ%3D%3D (prompt ->
 # petició, en el context d'IA)
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Prompt:"
 msgstr "Petició:"
@@ -3652,7 +3659,7 @@ msgstr "Viatge"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "Sense definir"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3660,16 +3667,21 @@ msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Petició"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
 #, kde-format
 msgid "Category:"
 msgstr "Categoria:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"
 msgstr "Descripció:"
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:44
+#, kde-format
+msgid "Command Completion:"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3677,18 +3689,18 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr "Afig una petició…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:44
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
 msgstr "Elimina la petició"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
 #, kde-format
 msgid "Do you want to remove this prompt (%1)?"
 msgstr "Voleu eliminar esta petició (%1)?"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:45+0000\n"
+"POT-Creation-Date: 2026-10-15 00:44+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -78,40 +78,47 @@ msgstr ""
 msgid "LLM returned an empty answer."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:34
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
 msgid "Tool \"%1\" is not available."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:45
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:142
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:54
+#, kde-format
+msgid ""
+"Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
+"the user to tell you when it is done, then call the tool again."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:60
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:157
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:158
 #, kde-format
 msgid "Error: %1"
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:50
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:62
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:77
 #, kde-format
 msgid "Error: server was stopped."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:58
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:73
 #, kde-format
 msgid "User refused to run tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Calling tool \"%1\"…"
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:68
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:80
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:81
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr ""
@@ -166,68 +173,68 @@ msgstr ""
 msgid "<br><b>Tools:</b> %1"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:171
+#: core/textautogeneratemanager.cpp:172
 #, kde-format
 msgid "Tools"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:173
+#: core/textautogeneratemanager.cpp:174
 #, kde-format
 msgid "Small"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:175
+#: core/textautogeneratemanager.cpp:176
 #, kde-format
 msgid "Medium"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:177
+#: core/textautogeneratemanager.cpp:178
 #, kde-format
 msgid "Big"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:179
+#: core/textautogeneratemanager.cpp:180
 #, kde-format
 msgid "Huge"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:181
+#: core/textautogeneratemanager.cpp:182
 #, kde-format
 msgid "Multilingual"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:183
+#: core/textautogeneratemanager.cpp:184
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:185
+#: core/textautogeneratemanager.cpp:186
 #, kde-format
 msgid "Math"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:187
+#: core/textautogeneratemanager.cpp:188
 #, kde-format
 msgid "Vision"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:189
+#: core/textautogeneratemanager.cpp:190
 #, kde-format
 msgid "Embedding"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:191
+#: core/textautogeneratemanager.cpp:192
 #, kde-format
 msgid "Reasoning"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:193
+#: core/textautogeneratemanager.cpp:194
 #, kde-format
 msgid "Cloud"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:195
+#: core/textautogeneratemanager.cpp:196
 #, kde-format
 msgid "Thinking"
 msgstr ""
@@ -599,7 +606,7 @@ msgstr ""
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/projects/textautogenerateprojectwidget.cpp:33
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:36
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:33
 #: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
@@ -672,7 +679,7 @@ msgid "Tag:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Prompt:"
 msgstr ""
@@ -3208,15 +3215,20 @@ msgctxt "@title:window"
 msgid "Prompt"
 msgstr ""
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
 #, kde-format
 msgid "Category:"
 msgstr ""
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Description:"
+msgstr ""
+
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:44
+#, kde-format
+msgid "Command Completion:"
 msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
@@ -3225,18 +3237,18 @@ msgctxt "@action"
 msgid "Add prompt…"
 msgstr ""
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:44
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
 msgstr ""
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
 #, kde-format
 msgid "Do you want to remove this prompt (%1)?"
 msgstr ""
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
