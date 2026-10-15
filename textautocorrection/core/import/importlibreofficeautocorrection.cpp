@@ -161,3 +161,5 @@ bool ImportLibreOfficeAutocorrection::loadDomElement(QDomDocument &doc, QFile *f
     }
     return true;
 }
+
+#include "moc_importlibreofficeautocorrection.cpp"

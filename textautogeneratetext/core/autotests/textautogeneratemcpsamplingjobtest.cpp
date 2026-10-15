@@ -260,3 +260,5 @@ void TextAutoGenerateMcpSamplingJobTest::shouldFailWhenLlmFails()
     Q_EMIT plugin.reply->finished();
     QCOMPARE(emptyFailedSpy.count(), 1);
 }
+
+#include "moc_textautogeneratemcpsamplingjobtest.cpp"
