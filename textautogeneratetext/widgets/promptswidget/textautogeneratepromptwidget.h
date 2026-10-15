@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "core/prompts/textautogenerateprompt.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
@@ -12,7 +13,6 @@ class QPlainTextEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGeneratePromptCategoryComboBox;
-class TextAutoGeneratePrompt;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePromptWidget : public QWidget
 {
     Q_OBJECT
@@ -24,7 +24,7 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGeneratePrompt prompt() const;
 
 private:
-    QByteArray mCurrentPromptIdentifier;
+    TextAutoGenerateText::TextAutoGeneratePrompt mCurrentPrompt;
     QLineEdit *const mName;
     QLineEdit *const mCommandCompletion;
     QPlainTextEdit *const mDescription;

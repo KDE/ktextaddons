@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratepromptwidget.h"
-#include "core/prompts/textautogenerateprompt.h"
 #include "widgets/promptswidget/textautogeneratepromptcategorycombobox.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -48,7 +47,7 @@ TextAutoGeneratePromptWidget::~TextAutoGeneratePromptWidget() = default;
 
 void TextAutoGeneratePromptWidget::setPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
-    mCurrentPromptIdentifier = prompt.identifier();
+    mCurrentPrompt = prompt;
     mName->setText(prompt.name());
     mDescription->setPlainText(prompt.description());
     mPrompt->setPlainText(prompt.text());
@@ -58,10 +57,7 @@ void TextAutoGeneratePromptWidget::setPrompt(const TextAutoGenerateText::TextAut
 
 TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::prompt() const
 {
-    TextAutoGenerateText::TextAutoGeneratePrompt prompt;
-    if (!mCurrentPromptIdentifier.isEmpty()) {
-        prompt.setIdentifier(mCurrentPromptIdentifier);
-    }
+    TextAutoGenerateText::TextAutoGeneratePrompt prompt = mCurrentPrompt;
     prompt.setDescription(mDescription->toPlainText());
     prompt.setText(mPrompt->toPlainText());
     prompt.setName(mName->text());
