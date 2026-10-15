@@ -203,7 +203,13 @@ void TextAutoGenerateToolsWidget::fillMcpToolsMenu(QToolButton *button, const QB
         auto action = menu->addAction(tool.displayName.isEmpty() ? tool.name : tool.displayName);
         action->setIcon(QIcon::fromTheme(toolRiskIconName(tool.risk)));
         const QString riskText = toolRiskText(tool.risk);
-        action->setToolTip(tool.description.isEmpty() ? riskText : tool.description + u'\n' + riskText);
+        QString tooltipStr;
+        if (tool.description.isEmpty()) {
+            tooltipStr = u"<qt><b>%1</b></qt>"_s.arg(riskText.toHtmlEscaped());
+        } else {
+            tooltipStr = u"<qt>%1<br /><b>%2</b></qt>"_s.arg(tool.description.toHtmlEscaped(), riskText.toHtmlEscaped());
+        }
+        action->setToolTip(tooltipStr);
         action->setData(tool.name);
         action->setCheckable(true);
         action->setChecked(it == mMcpSelectedTools.cend() || it->contains(tool.name));
