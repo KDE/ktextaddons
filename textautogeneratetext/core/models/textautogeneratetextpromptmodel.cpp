@@ -69,14 +69,14 @@ int TextAutoGenerateTextPromptModel::indexFromIdentifier(const QByteArray &ident
     if (identifier.isEmpty()) {
         return -1;
     }
-    const auto matchesIdentifier = [&](const TextAutoGeneratePrompt &tag) {
-        return tag.identifier() == identifier;
+    const auto matchesIdentifier = [&](const TextAutoGeneratePrompt &prompt) {
+        return prompt.identifier() == identifier;
     };
-    const auto tagIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesIdentifier);
-    if (tagIt == mPrompt.constEnd()) {
+    const auto promptIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesIdentifier);
+    if (promptIt == mPrompt.constEnd()) {
         return -1;
     }
-    return std::distance(mPrompt.constBegin(), tagIt);
+    return std::distance(mPrompt.constBegin(), promptIt);
 }
 
 void TextAutoGenerateTextPromptModel::updatePrompt(const TextAutoGeneratePrompt &prompt)
