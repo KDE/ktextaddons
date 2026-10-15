@@ -46,15 +46,24 @@ public:
     };
     Q_ENUM(Status)
 
+    // Risk of a tool, deduced from MCP annotations (missing hints mean worst case)
+    enum class ToolRisk : uint8_t {
+        ReadOnly,
+        Modify,
+        Destructive,
+    };
+    Q_ENUM(ToolRisk)
+
     struct TEXTAUTOGENERATETEXT_EXPORT McpTool {
         QByteArray serverIdentifier;
         // Name used by MCP server
         QString name;
+        QString displayName;
         // Unique name sent to LLM ("server__tool")
         QByteArray exposedName;
         QString description;
         QJsonObject inputSchema;
-        bool readOnly = false;
+        ToolRisk risk = ToolRisk::Destructive;
         [[nodiscard]] bool operator==(const McpTool &other) const = default;
     };
 

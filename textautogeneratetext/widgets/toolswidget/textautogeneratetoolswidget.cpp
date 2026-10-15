@@ -21,6 +21,32 @@ using namespace TextAutoGenerateText;
 namespace
 {
 constexpr const char *button_property("identifier");
+
+QString toolRiskIconName(TextAutoGenerateMcpToolsManager::ToolRisk risk)
+{
+    switch (risk) {
+    case TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly:
+        return u"security-high"_s;
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Modify:
+        return u"security-medium"_s;
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Destructive:
+        return u"security-low"_s;
+    }
+    return {};
+}
+
+QString toolRiskText(TextAutoGenerateMcpToolsManager::ToolRisk risk)
+{
+    switch (risk) {
+    case TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly:
+        return i18n("Read-only");
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Modify:
+        return i18n("Modifies data");
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Destructive:
+        return i18n("May delete or overwrite data");
+    }
+    return {};
+}
 }
 TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
@@ -174,8 +200,11 @@ void TextAutoGenerateToolsWidget::fillMcpToolsMenu(QToolButton *button, const QB
     }
     const auto it = mMcpSelectedTools.constFind(serverIdentifier);
     for (const auto &tool : tools) {
-        auto action = menu->addAction(tool.name);
-        action->setToolTip(tool.description);
+        auto action = menu->addAction(tool.displayName.isEmpty() ? tool.name : tool.displayName);
+        action->setIcon(QIcon::fromTheme(toolRiskIconName(tool.risk)));
+        const QString riskText = toolRiskText(tool.risk);
+        action->setToolTip(tool.description.isEmpty() ? riskText : tool.description + u'\n' + riskText);
+        action->setData(tool.name);
         action->setCheckable(true);
         action->setChecked(it == mMcpSelectedTools.cend() || it->contains(tool.name));
         connect(action, &QAction::toggled, this, [this, button, serverIdentifier]() {
@@ -191,7 +220,7 @@ void TextAutoGenerateToolsWidget::slotMcpToolToggled(QToolButton *button, const 
     QStringList toolNames;
     for (const auto action : actions) {
         if (action->isChecked()) {
-            toolNames.append(action->text());
+            toolNames.append(action->data().toString());
         }
     }
     if (toolNames.count() == actions.count()) {

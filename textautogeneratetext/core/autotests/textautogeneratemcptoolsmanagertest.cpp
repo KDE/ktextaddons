@@ -52,9 +52,9 @@ void TextAutoGenerateMcpToolsManagerTest::shouldConnectAndListTools()
     QCOMPARE(tools.count(), 2);
     QCOMPARE(tools.at(0).name, u"weather"_s);
     QCOMPARE(tools.at(0).exposedName, "My_Server__weather"_ba);
-    QVERIFY(tools.at(0).readOnly);
+    QCOMPARE(tools.at(0).risk, TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly);
     QCOMPARE(tools.at(1).exposedName, "My_Server__get_time"_ba);
-    QVERIFY(!tools.at(1).readOnly);
+    QCOMPARE(tools.at(1).risk, TextAutoGenerateMcpToolsManager::ToolRisk::Destructive);
     QVERIFY(manager.tool("My_Server__get_time"_ba).has_value());
     QCOMPARE(manager.tool("My_Server__get_time"_ba)->name, u"get time"_s);
     QVERIFY(manager.client(server.identifier()));

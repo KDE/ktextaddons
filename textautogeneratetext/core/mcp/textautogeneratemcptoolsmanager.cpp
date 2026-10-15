@@ -32,6 +32,17 @@ namespace
 {
 // Maximum length of a function name (OpenAI API)
 constexpr qsizetype maxNameLength = 64;
+
+TextAutoGenerateMcpToolsManager::ToolRisk toolRisk(const TextAutoGenerateTextMcpProtocolCore::McpProtocolToolAnnotations &annotations)
+{
+    if (annotations.readOnlyHint().value_or(false)) {
+        return TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly;
+    }
+    if (!annotations.destructiveHint().value_or(true)) {
+        return TextAutoGenerateMcpToolsManager::ToolRisk::Modify;
+    }
+    return TextAutoGenerateMcpToolsManager::ToolRisk::Destructive;
+}
 }
 
 TextAutoGenerateMcpToolsManager::TextAutoGenerateMcpToolsManager(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager, QObject *parent)
@@ -255,9 +266,10 @@ void TextAutoGenerateMcpToolsManager::slotReceived(const QByteArray &identifier,
         tool.exposedName = exposedName(identifier, it->server.name(), mcpTool.name());
         tool.description = mcpTool.description().value_or(QString());
         tool.inputSchema = TextAutoGenerateTextMcpProtocolCore::McpProtocolTool::InputSchema::toJson(mcpTool.inputSchema());
-        if (const auto annotations = mcpTool.annotations(); annotations.has_value()) {
-            tool.readOnly = annotations->readOnlyHint().value_or(false);
-        }
+        const auto annotations = mcpTool.annotations().value_or(TextAutoGenerateTextMcpProtocolCore::McpProtocolToolAnnotations{});
+        // Tool title has priority over annotations title (MCP 2025-06-18)
+        tool.displayName = mcpTool.title().value_or(annotations.title().value_or(QString()));
+        tool.risk = toolRisk(annotations);
         tools.append(std::move(tool));
         // Next tools of this server must not use same name
         it->tools = tools;
@@ -525,7 +537,7 @@ void TextAutoGenerateMcpToolsManager::setPluginProvider(const PluginProvider &pr
 
 bool TextAutoGenerateMcpToolsManager::needConfirmation(const McpTool &tool) const
 {
-    return mConfirmationHandler && !tool.readOnly
+    return mConfirmationHandler && tool.risk != ToolRisk::ReadOnly
         && !TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(mServerManager->serverConfigFileName(), tool.serverIdentifier);
 }
 
