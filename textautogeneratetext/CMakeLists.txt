@@ -185,6 +185,10 @@ target_sources(
         core/models/textautogeneratetextinstancesortfilterproxymodel.cpp
         core/models/textautogeneratetextpromptmodel.cpp
         core/models/textautogeneratetextpromptmodel.h
+        core/models/textautogeneratetextskillmodel.cpp
+        core/models/textautogeneratetextskillmodel.h
+        core/models/textautogeneratetextagentmodel.cpp
+        core/models/textautogeneratetextagentmodel.h
         core/models/textautogeneratetextpromptsortfilterproxymodel.cpp
         core/models/textautogeneratetextpromptsortfilterproxymodel.h
         core/models/textautogeneratetagsmodel.cpp
@@ -645,6 +649,8 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     TextAutoGenerateSearchMessagesModel
     TextAutoGenerateChatsModel
     TextAutoGenerateTextPromptModel
+    TextAutoGenerateTextSkillModel
+    TextAutoGenerateTextAgentModel
     TextAutoGenerateTextPromptSortFilterProxyModel
     TextAutoGenerateTagsModel
     TextAutoGenerateProjectsModel
