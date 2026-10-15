@@ -24,6 +24,7 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGeneratePrompt prompt() const;
 
 private:
+    QByteArray mCurrentPromptIdentifier;
     QLineEdit *const mName;
     QLineEdit *const mCommandCompletion;
     QPlainTextEdit *const mDescription;
