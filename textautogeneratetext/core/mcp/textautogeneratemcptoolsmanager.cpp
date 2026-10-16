@@ -357,14 +357,25 @@ QList<TextAutoGenerateMcpToolsManager::McpTool> TextAutoGenerateMcpToolsManager:
 
 std::optional<TextAutoGenerateMcpToolsManager::McpTool> TextAutoGenerateMcpToolsManager::tool(const QByteArray &exposedName) const
 {
+    std::optional<McpTool> toolWithSameName;
+    bool severalToolsWithSameName = false;
     for (const auto &state : mServers) {
         for (const auto &tool : state.tools) {
             if (tool.exposedName == exposedName) {
                 return tool;
             }
+            // LLM can use tool name without server prefix
+            if (sanitizeName(tool.name) == exposedName) {
+                severalToolsWithSameName = toolWithSameName.has_value();
+                toolWithSameName = tool;
+            }
         }
     }
-    return std::nullopt;
+    if (severalToolsWithSameName) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Several MCP servers provide tool" << exposedName;
+        return std::nullopt;
+    }
+    return toolWithSameName;
 }
 
 QList<QJsonObject> TextAutoGenerateMcpToolsManager::toolsMetaData(const QList<QByteArray> &serverIdentifiers) const

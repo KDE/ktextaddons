@@ -57,6 +57,9 @@ void TextAutoGenerateMcpToolsManagerTest::shouldConnectAndListTools()
     QCOMPARE(tools.at(1).risk, TextAutoGenerateMcpToolsManager::ToolRisk::Destructive);
     QVERIFY(manager.tool("My_Server__get_time"_ba).has_value());
     QCOMPARE(manager.tool("My_Server__get_time"_ba)->name, u"get time"_s);
+    // Tool name without server prefix
+    QCOMPARE(manager.tool("get_time"_ba)->exposedName, "My_Server__get_time"_ba);
+    QVERIFY(!manager.tool("unknown"_ba).has_value());
     QVERIFY(manager.client(server.identifier()));
 
     const auto metaData = manager.toolsMetaData({server.identifier()});
@@ -141,6 +144,8 @@ void TextAutoGenerateMcpToolsManagerTest::shouldCreateUniqueNames()
         }
     }
     QCOMPARE(names.count(), 4);
+    // Tool name without server prefix is ambiguous
+    QVERIFY(!manager.tool("weather"_ba).has_value());
 }
 
 void TextAutoGenerateMcpToolsManagerTest::shouldConvertToolIdentifiers()

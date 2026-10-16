@@ -121,6 +121,10 @@ public:
     [[nodiscard]] QString errorString(const QByteArray &identifier) const;
 
     [[nodiscard]] QList<McpTool> tools(const QByteArray &serverIdentifier) const;
+    /*!
+     * Returns tool named \a exposedName. LLM can drop server prefix of exposed name (it uses tool names found in descriptions
+     * or results of other tools), so a tool whose sanitized name is \a exposedName is returned when it's unique.
+     */
     [[nodiscard]] std::optional<McpTool> tool(const QByteArray &exposedName) const;
 
     /*!
