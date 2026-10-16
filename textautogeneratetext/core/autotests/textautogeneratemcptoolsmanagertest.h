@@ -16,6 +16,7 @@ public:
 
 private Q_SLOTS:
     void shouldSanitizeName();
+    void shouldReplaceToolNames();
     void shouldConnectAndListTools();
     void shouldReportErrorForInvalidServer();
     void shouldDisconnectWhenServerIsDisabled();

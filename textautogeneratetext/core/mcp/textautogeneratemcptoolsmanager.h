@@ -128,6 +128,11 @@ public:
     [[nodiscard]] std::optional<McpTool> tool(const QByteArray &exposedName) const;
 
     /*!
+     * Replace in \a text the names of tools of server \a serverIdentifier by their exposed names, see replaceToolNames().
+     */
+    [[nodiscard]] QString replaceToolNames(const QByteArray &serverIdentifier, const QString &text) const;
+
+    /*!
      * Tools of servers \a serverIdentifiers in LLM format ({"type":"function","function":{...}}).
      */
     [[nodiscard]] QList<QJsonObject> toolsMetaData(const QList<QByteArray> &serverIdentifiers) const;
@@ -179,6 +184,14 @@ public:
      * Convert \a name to a name accepted by LLM API: [a-zA-Z0-9_-]
      */
     [[nodiscard]] static QByteArray sanitizeName(const QString &name);
+
+    /*!
+     * Replace in \a text the names of \a tools by their exposed names: servers refer to their tools by name
+     * in descriptions and results, LLM must see the exposed name to call them.
+     * Only whole words are replaced, and only names which can't be a common word (they contain '_', '-', a digit
+     * or an uppercase letter after first character).
+     */
+    [[nodiscard]] static QString replaceToolNames(const QString &text, const QList<McpTool> &tools);
 
     /*!
      * Convert local directories \a paths to MCP roots (file:// uri, name of directory).

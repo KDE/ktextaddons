@@ -43,7 +43,10 @@ void TextAutoGenerateMcpToolCallJob::start()
                     return;
                 }
                 if (const QJsonValue resultValue = obj.value("result"_L1); resultValue.isObject()) {
-                    emitFinished(resultToText(TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolResult::fromJson(resultValue.toObject())));
+                    // Result can refer to other tools of server
+                    emitFinished(mToolsManager->replaceToolNames(
+                        serverIdentifier,
+                        resultToText(TextAutoGenerateTextMcpProtocolCore::McpProtocolCallToolResult::fromJson(resultValue.toObject()))));
                 } else {
                     const auto response = TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::fromJson(obj);
                     if (response.error().code() == TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError::errorCode) {

@@ -33,6 +33,29 @@ void TextAutoGenerateMcpToolsManagerTest::shouldSanitizeName()
     QCOMPARE(TextAutoGenerateMcpToolsManager::sanitizeName(u"a-b_c.d/é"_s), "a-b_c_d__"_ba);
 }
 
+void TextAutoGenerateMcpToolsManagerTest::shouldReplaceToolNames()
+{
+    const auto createTool = [](const QString &name, const QByteArray &exposedName) {
+        TextAutoGenerateMcpToolsManager::McpTool tool;
+        tool.name = name;
+        tool.exposedName = exposedName;
+        return tool;
+    };
+    const QList<TextAutoGenerateMcpToolsManager::McpTool> tools{createTool(u"edit_mail"_s, "akonadi__edit_mail"_ba),
+                                                                createTool(u"edit_mail_draft"_s, "akonadi__edit_mail_draft"_ba),
+                                                                createTool(u"openMail"_s, "akonadi__openMail"_ba),
+                                                                createTool(u"weather"_s, "akonadi__weather"_ba)};
+    QCOMPARE(TextAutoGenerateMcpToolsManager::replaceToolNames(u"Use edit_mail, not openMail."_s, tools), u"Use akonadi__edit_mail, not akonadi__openMail."_s);
+    // Longest name, whole words only
+    QCOMPARE(TextAutoGenerateMcpToolsManager::replaceToolNames(u"edit_mail_draft edit_mails xedit_mail"_s, tools),
+             u"akonadi__edit_mail_draft edit_mails xedit_mail"_s);
+    // Already exposed names are not changed
+    QCOMPARE(TextAutoGenerateMcpToolsManager::replaceToolNames(u"Use akonadi__edit_mail"_s, tools), u"Use akonadi__edit_mail"_s);
+    // Common words are not changed
+    QCOMPARE(TextAutoGenerateMcpToolsManager::replaceToolNames(u"Description of weather"_s, tools), u"Description of weather"_s);
+    QCOMPARE(TextAutoGenerateMcpToolsManager::replaceToolNames(u"No tool"_s, {}), u"No tool"_s);
+}
+
 void TextAutoGenerateMcpToolsManagerTest::shouldConnectAndListTools()
 {
     FakeMcpServer fakeServer;

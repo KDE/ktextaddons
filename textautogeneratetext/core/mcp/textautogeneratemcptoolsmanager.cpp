@@ -12,6 +12,7 @@
 #include <KSharedConfig>
 #include <QDir>
 #include <QPointer>
+#include <QRegularExpression>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
@@ -274,6 +275,10 @@ void TextAutoGenerateMcpToolsManager::slotReceived(const QByteArray &identifier,
         // Next tools of this server must not use same name
         it->tools = tools;
     }
+    // Descriptions refer to other tools of server: use names which LLM can call
+    for (auto &tool : tools) {
+        tool.description = replaceToolNames(tool.description, tools);
+    }
     it->tools = std::move(tools);
     qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "MCP server" << identifier << "has" << it->tools.count() << "tools";
     Q_EMIT toolsChanged(identifier);
@@ -291,6 +296,49 @@ QByteArray TextAutoGenerateMcpToolsManager::sanitizeName(const QString &name)
         }
     }
     return result;
+}
+
+QString TextAutoGenerateMcpToolsManager::replaceToolNames(const QString &text, const QList<McpTool> &tools)
+{
+    static const QRegularExpression notCommonWord(u"[_\\-0-9]|.\\p{Lu}"_s);
+    QHash<QString, QString> exposedNames;
+    QStringList patterns;
+    for (const auto &tool : tools) {
+        const QString exposedName = QString::fromLatin1(tool.exposedName);
+        if (tool.name == exposedName || !tool.name.contains(notCommonWord)) {
+            continue;
+        }
+        exposedNames.insert(tool.name, exposedName);
+        patterns.append(QRegularExpression::escape(tool.name));
+    }
+    if (patterns.isEmpty() || text.isEmpty()) {
+        return text;
+    }
+    // Longest names first: a name can be a prefix of another one
+    std::sort(patterns.begin(), patterns.end(), [](const QString &left, const QString &right) {
+        return left.size() > right.size();
+    });
+    // Whole words only, it doesn't change names which are already exposed names
+    const QRegularExpression re(u"(?<![\\w-])(?:"_s + patterns.join(u'|') + u")(?![\\w-])"_s, QRegularExpression::UseUnicodePropertiesOption);
+    QString result;
+    qsizetype position = 0;
+    auto it = re.globalMatch(text);
+    while (it.hasNext()) {
+        const QRegularExpressionMatch match = it.next();
+        result += QStringView(text).mid(position, match.capturedStart() - position);
+        result += exposedNames.value(match.captured());
+        position = match.capturedEnd();
+    }
+    if (position == 0) {
+        return text;
+    }
+    result += QStringView(text).mid(position);
+    return result;
+}
+
+QString TextAutoGenerateMcpToolsManager::replaceToolNames(const QByteArray &serverIdentifier, const QString &text) const
+{
+    return replaceToolNames(text, tools(serverIdentifier));
 }
 
 QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolRoot> TextAutoGenerateMcpToolsManager::convertToRoots(const QStringList &paths)
