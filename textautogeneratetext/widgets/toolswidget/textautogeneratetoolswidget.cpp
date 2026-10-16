@@ -192,12 +192,15 @@ void TextAutoGenerateToolsWidget::fillMcpToolsMenu(QToolButton *button, const QB
 {
     QMenu *menu = button->menu();
     menu->clear();
-    const auto tools = mManager->textAutoGenerateMcpToolsManager()->tools(serverIdentifier);
+    auto tools = mManager->textAutoGenerateMcpToolsManager()->tools(serverIdentifier);
     if (tools.isEmpty()) {
         auto action = menu->addAction(status);
         action->setEnabled(false);
         return;
     }
+    std::sort(tools.begin(), tools.end(), [](const TextAutoGenerateMcpToolsManager::McpTool &left, const TextAutoGenerateMcpToolsManager::McpTool &right) {
+        return left.name < right.name;
+    });
     const auto it = mMcpSelectedTools.constFind(serverIdentifier);
     for (const auto &tool : tools) {
         auto action = menu->addAction(tool.displayName.isEmpty() ? tool.name : tool.displayName);
