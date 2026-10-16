@@ -69,6 +69,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "arguments" << (t.arguments().isEmpty() ? QString() : u"***"_s);
     d.space() << "command" << t.command();
     d.space() << "roots" << t.roots();
+    d.space() << "mAuthToken is empty " << t.authToken().isEmpty();
     return d;
 }
 
@@ -151,4 +152,14 @@ QStringList McpProtocolSettings::roots() const
 void McpProtocolSettings::setRoots(const QStringList &newRoots)
 {
     mRoots = newRoots;
+}
+
+QByteArray McpProtocolSettings::authToken() const
+{
+    return mAuthToken;
+}
+
+void McpProtocolSettings::setAuthToken(const QByteArray &newAuthToken)
+{
+    mAuthToken = newAuthToken;
 }

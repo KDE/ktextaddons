@@ -28,6 +28,7 @@ void McpProtocolSettingsTest::shouldHaveDefaultValues()
     QVERIFY(w.serverUrl().isEmpty());
     QVERIFY(w.headers().isEmpty());
     QVERIFY(w.roots().isEmpty());
+    QVERIFY(w.authToken().isEmpty());
 }
 
 void McpProtocolSettingsTest::shouldLoadSaveSettings()
