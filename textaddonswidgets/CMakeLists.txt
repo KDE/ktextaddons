@@ -8,7 +8,7 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAddonsWidgets
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTADDONSWIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAddonsWidgetsConfigVersion.cmake"
-    SOVERSION 1
+    SOVERSION ${KTEXTADDONS_CURRENT_SOVERSION}
 )
 
 configure_file(config-textaddonswidgets.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textaddonswidgets.h)

@@ -13,7 +13,7 @@ configure_package_config_file(
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTGRAMMARCHECK
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextGrammarCheckConfigVersion.cmake"
-    SOVERSION 1
+    SOVERSION ${KTEXTADDONS_CURRENT_SOVERSION}
 )
 
 install(

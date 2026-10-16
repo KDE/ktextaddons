@@ -5,7 +5,7 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoGenerateT
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXTMCPPROTOCOLCORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextMcpProtocolCoreConfigVersion.cmake"
-    SOVERSION 1
+    SOVERSION ${KTEXTADDONS_CURRENT_SOVERSION}
 )
 
 add_library(KF6TextAutoGenerateTextMcpProtocolCore)

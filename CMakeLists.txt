@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.29)
 set(KTEXTADDONS_CURRENT_VERSION "2.2.47")
+set(KTEXTADDONS_CURRENT_SOVERSION "2.3.0")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 set(QT_REQUIRED_VERSION "6.10.0")
