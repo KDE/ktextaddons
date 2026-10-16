@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:44+0000\n"
+"POT-Creation-Date: 2026-10-16 00:46+0000\n"
 "PO-Revision-Date: 2026-10-11 11:16+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:60
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:157
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:158
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:184
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -119,7 +119,7 @@ msgstr "Spouštění nástroje \"%1\"…"
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "Chyba: Nelze spustit nástroj \"%1\"."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:81
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:92
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "Server je neplatný nebo deaktivovaný."
@@ -605,8 +605,9 @@ msgstr "Nainstalovaný model"
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:69
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #: widgets/projects/textautogenerateprojectwidget.cpp:33
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:29
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:32
 #: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
@@ -678,7 +679,7 @@ msgid "Tag:"
 msgstr "Značka:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
@@ -2853,7 +2854,9 @@ msgid "Mark As Default"
 msgstr "Označit jako výchozí"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
+#: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
@@ -3189,6 +3192,19 @@ msgstr "Název projektu…"
 msgid "Icon:"
 msgstr "Ikona:"
 
+#: widgets/promptswidget/textautogenerateagentdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Agent"
+msgstr ""
+
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:30
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#, kde-format
+msgid "Description:"
+msgstr "Popis:"
+
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
@@ -3210,21 +3226,45 @@ msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Prompt"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
 #, kde-format
 msgid "Category:"
 msgstr "Kategorie:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, kde-format
-msgid "Description:"
-msgstr "Popis:"
-
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:44
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
 msgstr ""
+
+#: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Tag…"
+msgctxt "@action"
+msgid "Add Agent…"
+msgstr "Přidat značku…"
+
+#: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove Tag"
+msgctxt "@action"
+msgid "Remove Agent"
+msgstr "Odstranit značku"
+
+#: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this tag (%1)?"
+msgid "Do you want to remove this agent (%1)?"
+msgstr "Chcete tuto značku (%1) odstranit?"
+
+#: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove Tag"
+msgctxt "@title"
+msgid "Remove Agent"
+msgstr "Odstranit značku"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3249,13 +3289,43 @@ msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Odstranit prompt"
 
+#: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Tag…"
+msgctxt "@action"
+msgid "Add Skill…"
+msgstr "Přidat značku…"
+
+#: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action"
+msgid "Remove Skill"
+msgstr "Odstranit model"
+
+#: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
+msgid "Do you want to remove this skill (%1)?"
+msgstr "Chcete tento model (%1) odstranit?"
+
+#: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title"
+msgid "Remove Skill"
+msgstr "Odstranit model"
+
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
 msgstr "Dovednost"
 
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:35
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
 msgid "Instructions:"
 msgstr "Pokyny:"
@@ -3450,23 +3520,39 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:33
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:42
+#, kde-format
+msgid "Read-only"
+msgstr ""
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "Modified At:"
+msgid "Modifies data"
+msgstr "Upraveno v:"
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:46
+#, kde-format
+msgid "May delete or overwrite data"
+msgstr ""
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Nástroje:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:145
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:171
 #, kde-format
 msgid "Not connected"
 msgstr "Nepřipojen"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:148
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:174
 #, kde-format
 msgid "Connecting…"
 msgstr "Navazuji spojení…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:152
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:178
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
@@ -3474,13 +3560,13 @@ msgstr[0] "1 nástroj"
 msgstr[1] "%1 nástroje"
 msgstr[2] "%1 nástrojů"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:154
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:180
 #, fuzzy, kde-format
 #| msgid "Calling tool \"%1\"…"
 msgid "Loading tools…"
 msgstr "Spouštění nástroje \"%1\"…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:161
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:187
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Nástroje MCP serveru \"%1\" (%2)"
