@@ -8,11 +8,15 @@
 #include <QDialog>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
+class AddMcpProtocolClientWidget;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpProtocolClientDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit AddMcpProtocolClientDialog(QWidget *parent = nullptr);
     ~AddMcpProtocolClientDialog() override;
+
+private:
+    AddMcpProtocolClientWidget *const mAddMcpProtocolClientWidget;
 };
 }
