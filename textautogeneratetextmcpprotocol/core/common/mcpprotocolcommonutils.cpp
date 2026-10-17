@@ -5,8 +5,11 @@
 */
 #include "mcpprotocolcommonutils.h"
 
+#include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QUuid>
+
+#include <array>
 using namespace TextAutoGenerateTextMcpProtocolCore;
 using namespace Qt::Literals::StringLiterals;
 
@@ -24,4 +27,11 @@ QStringList McpProtocolCommonUtils::mcpServerList(const KSharedConfig::Ptr &conf
 {
     static const QRegularExpression regularExpression(u"^Mcp Server #\\d+$"_s);
     return config->groupList().filter(regularExpression);
+}
+
+QByteArray McpProtocolCommonUtils::generateAuthToken()
+{
+    std::array<quint32, 8> data; // 32 bytes
+    QRandomGenerator::system()->fillRange(data.data(), data.size());
+    return QByteArray(reinterpret_cast<const char *>(data.data()), sizeof(data)).toBase64(QByteArray::Base64UrlEncoding | QByteArray::OmitTrailingEquals);
 }

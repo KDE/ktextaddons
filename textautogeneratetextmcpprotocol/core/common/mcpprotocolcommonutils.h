@@ -19,5 +19,7 @@ namespace McpProtocolCommonUtils
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_TESTS_EXPORT QByteArray generateUUid();
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_TESTS_EXPORT QStringList mcpServerList(const KSharedConfig::Ptr &config);
+
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_TESTS_EXPORT QByteArray generateAuthToken();
 }
 }
