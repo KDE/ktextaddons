@@ -22,4 +22,9 @@ private Q_SLOTS:
     void shouldRejectInvalidRequests();
     void shouldAnswerBatch();
     void shouldTerminateSession();
+    void shouldRejectRequestWithoutValidToken_data();
+    void shouldRejectRequestWithoutValidToken();
+    void shouldAcceptRequestWithValidToken();
+    void shouldCheckOriginBeforeToken();
+    void shouldExchangeMessagesWithClientUsingToken();
 };

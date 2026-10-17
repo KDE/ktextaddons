@@ -51,11 +51,12 @@ QUrl freeUrl()
 }
 
 // Server which answers each request with an empty result
-std::unique_ptr<McpServerStreamHttpPluginInterface> createServer(const QUrl &url)
+std::unique_ptr<McpServerStreamHttpPluginInterface> createServer(const QUrl &url, const QByteArray &authToken = {})
 {
     auto server = std::make_unique<McpServerStreamHttpPluginInterface>();
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
     settings.setServerUrl(url);
+    settings.setAuthToken(authToken);
     server->setSettings(settings);
     McpServerStreamHttpPluginInterface *serverPtr = server.get();
     QObject::connect(serverPtr, &McpServerStreamHttpPluginInterface::received, serverPtr, [serverPtr](const QJsonObject &obj) {
@@ -76,13 +77,17 @@ std::unique_ptr<McpServerStreamHttpPluginInterface> createServer(const QUrl &url
     return server;
 }
 
-QNetworkReply *post(QNetworkAccessManager &manager, const QUrl &url, const QByteArray &body, const QByteArray &sessionId = {})
+QNetworkReply *
+post(QNetworkAccessManager &manager, const QUrl &url, const QByteArray &body, const QByteArray &sessionId = {}, const QByteArray &authorization = {})
 {
     QNetworkRequest request(url);
     request.setRawHeader("Accept"_ba, "application/json, text/event-stream"_ba);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json"_ba);
     if (!sessionId.isEmpty()) {
         request.setRawHeader("Mcp-Session-Id"_ba, sessionId);
+    }
+    if (!authorization.isEmpty()) {
+        request.setRawHeader("Authorization"_ba, authorization);
     }
     return manager.post(request, body);
 }
@@ -98,9 +103,9 @@ int statusCode(QNetworkReply *reply)
 }
 
 // Initialize a session and return its id
-QByteArray initializeSession(QNetworkAccessManager &manager, const QUrl &url)
+QByteArray initializeSession(QNetworkAccessManager &manager, const QUrl &url, const QByteArray &authorization = {})
 {
-    std::unique_ptr<QNetworkReply> reply(post(manager, url, toJson(jsonRequest(u"initialize"_s, 1))));
+    std::unique_ptr<QNetworkReply> reply(post(manager, url, toJson(jsonRequest(u"initialize"_s, 1)), {}, authorization));
     QSignalSpy finishedSpy(reply.get(), &QNetworkReply::finished);
     if (!finishedSpy.wait()) {
         return {};
@@ -286,6 +291,115 @@ void McpServerStreamableHttpTest::shouldTerminateSession()
     QSignalSpy serverFinishedSpy(server.get(), &McpServerStreamHttpPluginInterface::finished);
     server->stop();
     QCOMPARE(serverFinishedSpy.count(), 1);
+}
+
+void McpServerStreamableHttpTest::shouldRejectRequestWithoutValidToken_data()
+{
+    QTest::addColumn<QByteArray>("authorization");
+    QTest::newRow("missing") << QByteArray();
+    QTest::newRow("wrong-token") << "Bearer wrong"_ba;
+    QTest::newRow("token-prefix") << "Bearer secret"_ba;
+    QTest::newRow("token-longer") << "Bearer secret-token-more"_ba;
+    QTest::newRow("no-scheme") << "secret-token"_ba;
+    QTest::newRow("basic-scheme") << "Basic secret-token"_ba;
+    QTest::newRow("empty-bearer") << "Bearer "_ba;
+}
+
+void McpServerStreamableHttpTest::shouldRejectRequestWithoutValidToken()
+{
+    QFETCH(QByteArray, authorization);
+    const QUrl url = freeUrl();
+    auto server = createServer(url, "secret-token"_ba);
+    QVERIFY(server);
+    QSignalSpy serverReceivedSpy(server.get(), &McpServerStreamHttpPluginInterface::received);
+    QNetworkAccessManager manager;
+
+    std::unique_ptr<QNetworkReply> reply(post(manager, url, toJson(jsonRequest(u"initialize"_s, 1)), {}, authorization));
+    QSignalSpy finishedSpy(reply.get(), &QNetworkReply::finished);
+    QVERIFY(finishedSpy.wait());
+    QCOMPARE(statusCode(reply.get()), 401);
+    QCOMPARE(reply->rawHeader("WWW-Authenticate"_ba), "Bearer"_ba);
+    QVERIFY(reply->rawHeader("Mcp-Session-Id"_ba).isEmpty());
+    QCOMPARE(serverReceivedSpy.count(), 0);
+}
+
+void McpServerStreamableHttpTest::shouldAcceptRequestWithValidToken()
+{
+    const QUrl url = freeUrl();
+    auto server = createServer(url, "secret-token"_ba);
+    QVERIFY(server);
+    QNetworkAccessManager manager;
+    // Scheme is case insensitive
+    const QByteArray authorization = "bearer secret-token"_ba;
+    const QByteArray sessionId = initializeSession(manager, url, authorization);
+    QVERIFY(!sessionId.isEmpty());
+
+    std::unique_ptr<QNetworkReply> reply(post(manager, url, toJson(jsonRequest(u"tools/list"_s, 2)), sessionId, authorization));
+    QSignalSpy finishedSpy(reply.get(), &QNetworkReply::finished);
+    QVERIFY(finishedSpy.wait());
+    QCOMPARE(statusCode(reply.get()), 200);
+
+    // Valid session without token is rejected
+    reply.reset(post(manager, url, toJson(jsonRequest(u"tools/list"_s, 3)), sessionId));
+    QSignalSpy finishedSpy2(reply.get(), &QNetworkReply::finished);
+    QVERIFY(finishedSpy2.wait());
+    QCOMPARE(statusCode(reply.get()), 401);
+
+    // DELETE needs token too
+    QNetworkRequest deleteRequest(url);
+    deleteRequest.setRawHeader("Mcp-Session-Id"_ba, sessionId);
+    reply.reset(manager.deleteResource(deleteRequest));
+    QSignalSpy finishedSpy3(reply.get(), &QNetworkReply::finished);
+    QVERIFY(finishedSpy3.wait());
+    QCOMPARE(statusCode(reply.get()), 401);
+    deleteRequest.setRawHeader("Authorization"_ba, authorization);
+    reply.reset(manager.deleteResource(deleteRequest));
+    QSignalSpy finishedSpy4(reply.get(), &QNetworkReply::finished);
+    QVERIFY(finishedSpy4.wait());
+    QCOMPARE(statusCode(reply.get()), 200);
+}
+
+void McpServerStreamableHttpTest::shouldCheckOriginBeforeToken()
+{
+    const QUrl url = freeUrl();
+    auto server = createServer(url, "secret-token"_ba);
+    QVERIFY(server);
+    QNetworkAccessManager manager;
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json"_ba);
+    request.setRawHeader("Authorization"_ba, "Bearer secret-token"_ba);
+    request.setRawHeader("Origin"_ba, "http://evil.example.com"_ba);
+    std::unique_ptr<QNetworkReply> reply(manager.post(request, toJson(jsonRequest(u"initialize"_s, 1))));
+    QSignalSpy finishedSpy(reply.get(), &QNetworkReply::finished);
+    QVERIFY(finishedSpy.wait());
+    QCOMPARE(statusCode(reply.get()), 403);
+}
+
+void McpServerStreamableHttpTest::shouldExchangeMessagesWithClientUsingToken()
+{
+    const QUrl url = freeUrl();
+    auto server = createServer(url, "secret-token"_ba);
+    QVERIFY(server);
+
+    McpClientStreamableHttpPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(url);
+    settings.setHeaders({u"Authorization: Bearer secret-token"_s});
+    client.setSettings(settings);
+    QSignalSpy clientReceivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    QSignalSpy clientErrorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
+    client.start();
+
+    client.send(jsonRequest(u"initialize"_s, 1));
+    QTRY_COMPARE(clientReceivedSpy.count(), 1);
+    QCOMPARE(clientReceivedSpy.at(0).at(0).toJsonObject(), initializeResult(1));
+    client.send(jsonNotification(u"notifications/initialized"_s));
+
+    // Event stream (GET) is authorized too
+    server->send(jsonNotification(u"notifications/tools/list_changed"_s));
+    QTRY_COMPARE(clientReceivedSpy.count(), 2);
+    QCOMPARE(clientReceivedSpy.at(1).at(0).toJsonObject(), jsonNotification(u"notifications/tools/list_changed"_s));
+    QCOMPARE(clientErrorSpy.count(), 0);
 }
 
 #include "moc_mcpserverstreamablehttptest.cpp"
