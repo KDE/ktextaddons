@@ -61,6 +61,8 @@ constexpr int invalidRequestCode = -32600;
         return "Accepted"_ba;
     case 400:
         return "Bad Request"_ba;
+    case 401:
+        return "Unauthorized"_ba;
     case 403:
         return "Forbidden"_ba;
     case 404:
@@ -259,6 +261,29 @@ bool McpServerStreamableHttp::isAllowedOrigin(const HttpRequest &request) const
     return host == "localhost"_L1 || QHostAddress(host).isLoopback() || QHostAddress(host) == mTcpServer->serverAddress();
 }
 
+bool McpServerStreamableHttp::isAuthorized(const HttpRequest &request) const
+{
+    const QByteArray token = mInterface->protocolSettings().authToken();
+    if (token.isEmpty()) {
+        return true;
+    }
+    const QByteArray authorization = request.headers.value("authorization").trimmed();
+    constexpr qsizetype bearerPrefixSize = 7; // "Bearer "
+    if (authorization.size() <= bearerPrefixSize || qstrnicmp(authorization.constData(), "bearer ", bearerPrefixSize) != 0) {
+        return false;
+    }
+    const QByteArray value = authorization.mid(bearerPrefixSize).trimmed();
+    if (value.size() != token.size()) {
+        return false;
+    }
+    // Constant time comparison: don't leak token through response time
+    char diff = 0;
+    for (qsizetype i = 0; i < token.size(); ++i) {
+        diff |= value.at(i) ^ token.at(i);
+    }
+    return diff == 0;
+}
+
 void McpServerStreamableHttp::handleRequest(QTcpSocket *socket, const HttpRequest &request)
 {
     if (QUrl(QString::fromUtf8(request.path)).path() != mPath) {
@@ -268,6 +293,11 @@ void McpServerStreamableHttp::handleRequest(QTcpSocket *socket, const HttpReques
     if (!isAllowedOrigin(request)) {
         qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Origin not allowed:" << request.headers.value("origin");
         writeResponse(socket, 403);
+        return;
+    }
+    if (!isAuthorized(request)) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLSERVER_PLUGIN_LIB_LOG) << "Invalid or missing authorization token";
+        writeResponse(socket, 401, {}, {}, {{"WWW-Authenticate"_ba, "Bearer"_ba}});
         return;
     }
     if (request.method == "POST") {

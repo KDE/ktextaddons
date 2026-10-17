@@ -58,6 +58,8 @@ private:
     void handleDelete(QTcpSocket *socket, const HttpRequest &request);
     [[nodiscard]] bool checkSession(QTcpSocket *socket, const HttpRequest &request);
     [[nodiscard]] bool isAllowedOrigin(const HttpRequest &request) const;
+    // Check "Authorization: Bearer <token>" when an auth token is defined in settings
+    [[nodiscard]] bool isAuthorized(const HttpRequest &request) const;
     void sendEvent(const QJsonObject &obj);
     void sendPostResponse(const PendingPostPtr &pending);
     void terminateSession();
