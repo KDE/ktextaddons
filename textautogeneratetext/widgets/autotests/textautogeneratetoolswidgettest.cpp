@@ -117,14 +117,14 @@ void TextAutoGenerateToolsWidgetTest::shouldSelectMcpTools()
     manager.textAutoGenerateMcpToolsManager()->connectServer(server.identifier());
     QTRY_COMPARE(button->menu()->actions().count(), 2);
     const auto actions = button->menu()->actions();
-    QCOMPARE(actions.at(0)->text(), u"weather"_s);
+    QCOMPARE(actions.at(0)->text(), u"get time"_s);
     QVERIFY(actions.at(0)->isCheckable());
     QVERIFY(actions.at(0)->isChecked());
 
     // Unselect one tool: server is selected with other tool
     actions.at(0)->setChecked(false);
     QVERIFY(button->isChecked());
-    const QByteArray getTime = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier(), u"get time"_s);
+    const QByteArray getTime = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier(), u"weather"_s);
     QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{getTime});
 
     // All tools selected again
