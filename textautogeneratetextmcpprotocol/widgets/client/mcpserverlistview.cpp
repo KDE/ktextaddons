@@ -4,9 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverlistview.h"
+#include "client/mcpserverlistviewdelegate.h"
+#include "client/mcpserversortfilterproxymodel.h"
 #include "models/mcpservermodel.h"
-#include "server/mcpserverlistviewdelegate.h"
-#include "server/mcpserversortfilterproxymodel.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>

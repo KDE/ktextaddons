@@ -283,10 +283,10 @@ target_sources(
         impl/mcpprotocolelicitresult.h
         server/mcpprotocolserver.h
         server/mcpprotocolserver.cpp
-        server/mcpserver.cpp
-        server/mcpserver.h
-        server/mcpservermanager.cpp
-        server/mcpservermanager.h
+        client/mcpserver.cpp
+        client/mcpserver.h
+        client/mcpservermanager.cpp
+        client/mcpservermanager.h
         server/mcpprotocolserverprotocolmanager.h
         server/mcpprotocolserverprotocolmanager.cpp
         server/mcpprotocolservertool.h
@@ -336,6 +336,8 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient
     HEADER_NAMES
     McpProtocolClient
     McpProtocolClientProtocolManager
+    McpServer
+    McpServerManager
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolclient_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE client
@@ -344,8 +346,6 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient
 ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS
     HEADER_NAMES
     McpProtocolServer
-    McpServer
-    McpServerManager
     McpProtocolServerProtocolManager
     McpProtocolServerTool
     McpProtocolServerToolCall

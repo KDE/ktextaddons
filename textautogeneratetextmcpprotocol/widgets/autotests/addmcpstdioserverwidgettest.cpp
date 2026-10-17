@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpstdioserverwidgettest.h"
-#include "server/addmcpstdioserverwidget.h"
+#include "client/addmcpstdioserverwidget.h"
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QTest>

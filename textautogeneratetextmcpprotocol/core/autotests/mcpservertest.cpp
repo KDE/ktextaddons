@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpservertest.h"
-#include "server/mcpserver.h"
+#include "client/mcpserver.h"
 #include <QStandardPaths>
 #include <QTest>
 

@@ -4,9 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpserverwidgettest.h"
+#include "client/addmcpserverrootswidget.h"
+#include "client/addmcpserverwidget.h"
 #include "common/selecttypecombobox.h"
-#include "server/addmcpserverrootswidget.h"
-#include "server/addmcpserverwidget.h"
 #include <KIconButton>
 #include <QLineEdit>
 #include <QTest>

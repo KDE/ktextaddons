@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpserverwidget.h"
+#include "client/addmcpserverrootswidget.h"
+#include "client/addmcpsseserverwidget.h"
+#include "client/addmcpstdioserverwidget.h"
+#include "client/addmcpstreamablehttpserverwidget.h"
 #include "common/selecttypecombobox.h"
-#include "server/addmcpserverrootswidget.h"
-#include "server/addmcpsseserverwidget.h"
-#include "server/addmcpstdioserverwidget.h"
-#include "server/addmcpstreamablehttpserverwidget.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KIconButton>
 #include <KLineEditEventHandler>

@@ -5,7 +5,7 @@
 */
 
 #include "addmcpsseserverwidgettest.h"
-#include "server/addmcpsseserverwidget.h"
+#include "client/addmcpsseserverwidget.h"
 #include <QTest>
 QTEST_MAIN(AddMcpSseServerWidgetTest)
 

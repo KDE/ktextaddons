@@ -5,7 +5,7 @@
 */
 
 #include "addmcpstreamablehttpserverheaderconfiguredialog.h"
-#include "server/addmcpstreamablehttpserverheaderconfigurewidget.h"
+#include "client/addmcpstreamablehttpserverheaderconfigurewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>

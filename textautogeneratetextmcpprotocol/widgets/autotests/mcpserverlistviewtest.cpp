@@ -5,7 +5,7 @@
 */
 
 #include "mcpserverlistviewtest.h"
-#include "server/mcpserverlistview.h"
+#include "client/mcpserverlistview.h"
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(McpServerListViewTest)

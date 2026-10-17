@@ -6,8 +6,8 @@
 
 #include "mcpserverwidgettest.h"
 
-#include "server/mcpserverlistview.h"
-#include "server/mcpserverwidget.h"
+#include "client/mcpserverlistview.h"
+#include "client/mcpserverwidget.h"
 #include <QLineEdit>
 #include <QSignalSpy>
 #include <QStandardPaths>

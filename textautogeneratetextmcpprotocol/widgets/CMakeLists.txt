@@ -31,40 +31,40 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateTextMcpProtocolWidgets HEADER
 target_sources(
     KF6TextAutoGenerateTextMcpProtocolWidgets
     PRIVATE
-        client/addmcpprotocolclientwidget.h
-        client/addmcpprotocolclientwidget.cpp
-        client/addmcpprotocolclientdialog.h
-        client/addmcpprotocolclientdialog.cpp
-        server/addmcpserverdialog.cpp
-        server/addmcpserverdialog.h
-        server/addmcpserverwidget.cpp
-        server/addmcpserverwidget.h
-        server/mcpserverlistview.cpp
-        server/mcpserverlistview.h
-        server/mcpserverwidget.cpp
-        server/mcpserverwidget.h
-        server/addmcpstdioserverwidget.h
-        server/addmcpstdioserverwidget.cpp
-        server/addmcpsseserverwidget.cpp
-        server/addmcpsseserverwidget.h
-        server/addmcpstreamablehttpserverwidget.cpp
-        server/addmcpstreamablehttpserverwidget.h
-        server/addmcpserverbasewidget.h
-        server/addmcpserverrootswidget.h
-        server/addmcpserverrootswidget.cpp
-        server/addmcpserverbasewidget.cpp
-        server/mcpserverlistviewdelegate.h
-        server/mcpserverlistviewdelegate.cpp
-        server/mcpserversortfilterproxymodel.h
-        server/mcpserversortfilterproxymodel.cpp
-        server/addmcpstreamablehttpserverheaderwidget.h
-        server/addmcpstreamablehttpserverheaderwidget.cpp
-        server/addmcpstreamablehttpserverheaderlistwidget.h
-        server/addmcpstreamablehttpserverheaderlistwidget.cpp
-        server/addmcpstreamablehttpserverheaderconfiguredialog.h
-        server/addmcpstreamablehttpserverheaderconfiguredialog.cpp
-        server/addmcpstreamablehttpserverheaderconfigurewidget.h
-        server/addmcpstreamablehttpserverheaderconfigurewidget.cpp
+        server/mcpprotocolserverconfigurewidget.h
+        server/mcpprotocolserverconfigurewidget.cpp
+        server/mcpprotocolserverconfiguredialog.h
+        server/mcpprotocolserverconfiguredialog.cpp
+        client/addmcpserverdialog.cpp
+        client/addmcpserverdialog.h
+        client/addmcpserverwidget.cpp
+        client/addmcpserverwidget.h
+        client/mcpserverlistview.cpp
+        client/mcpserverlistview.h
+        client/mcpserverwidget.cpp
+        client/mcpserverwidget.h
+        client/addmcpstdioserverwidget.h
+        client/addmcpstdioserverwidget.cpp
+        client/addmcpsseserverwidget.cpp
+        client/addmcpsseserverwidget.h
+        client/addmcpstreamablehttpserverwidget.cpp
+        client/addmcpstreamablehttpserverwidget.h
+        client/addmcpserverbasewidget.h
+        client/addmcpserverrootswidget.h
+        client/addmcpserverrootswidget.cpp
+        client/addmcpserverbasewidget.cpp
+        client/mcpserverlistviewdelegate.h
+        client/mcpserverlistviewdelegate.cpp
+        client/mcpserversortfilterproxymodel.h
+        client/mcpserversortfilterproxymodel.cpp
+        client/addmcpstreamablehttpserverheaderwidget.h
+        client/addmcpstreamablehttpserverheaderwidget.cpp
+        client/addmcpstreamablehttpserverheaderlistwidget.h
+        client/addmcpstreamablehttpserverheaderlistwidget.cpp
+        client/addmcpstreamablehttpserverheaderconfiguredialog.h
+        client/addmcpstreamablehttpserverheaderconfiguredialog.cpp
+        client/addmcpstreamablehttpserverheaderconfigurewidget.h
+        client/addmcpstreamablehttpserverheaderconfigurewidget.cpp
         common/selecttypecombobox.h
         common/selecttypecombobox.cpp
 )
@@ -76,21 +76,21 @@ target_include_directories(
 )
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolWidgets BASE_NAME textautogeneratetextmcpprotocolwidgets)
 
-ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS
+ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS
     HEADER_NAMES
     AddMcpServerDialog
     McpServerWidget
     AddMcpServerWidget
     McpServerListView
-    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS
+    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolclient_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolWidgets
-    RELATIVE server
+    RELATIVE client
 )
 
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolwidgets_export.h
-        ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS}
+        ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolclient_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/textautogeneratetextmcpprotocolwidgets
     COMPONENT Devel
@@ -98,7 +98,7 @@ install(
 
 install(
     FILES
-        ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
+        ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
     COMPONENT Devel
@@ -167,13 +167,13 @@ ecm_add_installed_library_check(KF6TextAutoGenerateTextMcpProtocolWidgets
 
 ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWidgets
     HEADERS
-    ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS}
+    ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolclient_HEADERS}
     PREFIX textautogeneratetextmcpprotocolwidgets
 )
 
 ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWidgets
     HEADERS
-    ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
+    ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS}
 
     PREFIX TextAutoGenerateTextMcpProtocolWidgets
 )

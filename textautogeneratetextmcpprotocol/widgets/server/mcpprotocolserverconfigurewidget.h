@@ -8,11 +8,11 @@
 #include <QWidget>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpProtocolClientWidget : public QWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpProtocolServerConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit AddMcpProtocolClientWidget(QWidget *parent = nullptr);
-    ~AddMcpProtocolClientWidget() override;
+    explicit McpProtocolServerConfigureWidget(QWidget *parent = nullptr);
+    ~McpProtocolServerConfigureWidget() override;
 };
 }
