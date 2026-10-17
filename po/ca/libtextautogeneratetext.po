@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:46+0000\n"
-"PO-Revision-Date: 2026-10-15 09:15+0200\n"
+"POT-Creation-Date: 2026-10-17 00:48+0000\n"
+"PO-Revision-Date: 2026-10-16 09:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -86,7 +86,7 @@ msgstr "El LLM ha retornat una resposta buida."
 msgid "Tool \"%1\" is not available."
 msgstr "L'eina «%1» no és disponible."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:54
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
 msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
@@ -96,35 +96,35 @@ msgstr ""
 "pàgina web. Demaneu a l'usuari que us digui quan s'ha acabat, i després "
 "invoqueu l'eina de nou."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:60
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:157
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:63
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:160
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:184
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:77
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:68
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
 msgstr "Error: s'ha aturat el servidor."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:73
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
 msgstr "L'usuari ha refusat executar l'eina «%1»."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
 msgstr "S'està invocant l'eina «%1»…"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "Error: és impossible invocar l'eina «%1»."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:92
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:93
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "El servidor no és vàlid o està desactivat."
@@ -3659,7 +3659,7 @@ msgstr "Icona:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "Agent"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3700,34 +3700,27 @@ msgid "Command Completion:"
 msgstr "Compleció d'ordres:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "Afegeix una etiqueta…"
+msgstr "Afegeix un agent…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "Elimina una etiqueta"
+msgstr "Elimina l'agent"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this tag (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "Voleu eliminar aquesta etiqueta (%1)?"
+msgstr "Voleu eliminar aquest agent (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "Elimina una etiqueta"
+msgstr "Elimina l'agent"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3753,34 +3746,27 @@ msgid "Remove Prompt"
 msgstr "Elimina la petició"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "Afegeix una etiqueta…"
+msgstr "Afegeix una habilitat…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "Elimina el model"
+msgstr "Elimina l'habilitat"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "Voleu eliminar aquest model (%1)?"
+msgstr "Voleu eliminar aquesta habilitat (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "Elimina el model"
+msgstr "Elimina l'habilitat"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3986,18 +3972,17 @@ msgstr "Error"
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:42
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "Només de lectura"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Modified At:"
+#, kde-format
 msgid "Modifies data"
-msgstr "Modificat el:"
+msgstr "Modifica dades"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:46
 #, kde-format
 msgid "May delete or overwrite data"
-msgstr ""
+msgstr "Pot suprimir o sobreescriure dades"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:59
 #, kde-format

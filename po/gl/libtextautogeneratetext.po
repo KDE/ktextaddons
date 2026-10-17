@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:46+0000\n"
+"POT-Creation-Date: 2026-10-17 00:48+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -83,42 +83,42 @@ msgstr ""
 msgid "Tool \"%1\" is not available."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:54
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
 msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
 "the user to tell you when it is done, then call the tool again."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:60
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:157
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:63
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:160
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:184
 #, kde-format
 msgid "Error: %1"
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:77
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:68
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:73
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:92
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:93
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr ""

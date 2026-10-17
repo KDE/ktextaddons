@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:46+0000\n"
+"POT-Creation-Date: 2026-10-17 00:48+0000\n"
 "PO-Revision-Date: 2026-10-15 09:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr "LLM ha retornat una resposta buida."
 msgid "Tool \"%1\" is not available."
 msgstr "L'eina «%1» no està disponible."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:54
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
 msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
@@ -96,35 +96,35 @@ msgstr ""
 "una pàgina web. Demaneu a l'usuari que vos diga quan s'ha acabat, i després "
 "invoqueu l'eina de nou."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:60
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:157
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:63
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:160
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:184
 #, kde-format
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:65
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:77
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:68
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
 msgstr "S'ha produït un error: s'ha parat el servidor."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:73
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
 msgstr "L'usuari ha refusat executar l'eina «%1»."
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:80
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
 msgstr "S'està invocant l'eina «%1»…"
 
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:83
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "S'ha produït un error: és impossible invocar l'eina «%1»."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:92
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:93
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "El servidor no és vàlid o està desactivat."
