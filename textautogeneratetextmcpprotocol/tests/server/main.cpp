@@ -19,9 +19,11 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     const QCommandLineOption urlOption(u"url"_s, u"Url where server listens."_s, u"url"_s, u"http://127.0.0.1:8765/mcp"_s);
     parser.addOption(urlOption);
+    const QCommandLineOption tokenOption(u"token"_s, u"Bearer token required from clients (no authentication if empty)."_s, u"token"_s);
+    parser.addOption(tokenOption);
     parser.process(app);
 
-    ServerMainWidget w(parser.value(urlOption));
+    ServerMainWidget w(parser.value(urlOption), parser.value(tokenOption));
     w.resize(800, 600);
     w.show();
     w.startServer();

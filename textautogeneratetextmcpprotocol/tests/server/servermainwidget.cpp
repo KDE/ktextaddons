@@ -14,7 +14,7 @@
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 
-ServerMainWidget::ServerMainWidget(const QString &url, QWidget *parent)
+ServerMainWidget::ServerMainWidget(const QString &url, const QString &token, QWidget *parent)
     : QWidget{parent}
     , mServer(new McpTestServer(this))
     , mUrl(new QLineEdit(url, this))
@@ -23,12 +23,15 @@ ServerMainWidget::ServerMainWidget(const QString &url, QWidget *parent)
     , mToggleToolButton(new QPushButton(u"Add/Remove \"reverse\" tool"_s, this))
     , mPingButton(new QPushButton(u"Ping client"_s, this))
     , mLog(new QPlainTextEdit(this))
+    , mToken(new QLineEdit(token, this))
 {
     auto mainLayout = new QVBoxLayout(this);
 
     auto urlLayout = new QHBoxLayout;
     urlLayout->addWidget(new QLabel(u"Url:"_s, this));
     urlLayout->addWidget(mUrl);
+    urlLayout->addWidget(new QLabel(u"Token:"_s, this));
+    urlLayout->addWidget(mToken);
     urlLayout->addWidget(mStartButton);
     urlLayout->addWidget(mStopButton);
     mainLayout->addLayout(urlLayout);
@@ -58,7 +61,7 @@ ServerMainWidget::~ServerMainWidget() = default;
 
 void ServerMainWidget::startServer()
 {
-    mServer->start(QUrl(mUrl->text().trimmed()));
+    mServer->start(QUrl(mUrl->text().trimmed()), mToken->text());
 }
 
 void ServerMainWidget::updateButtons(bool running)
@@ -68,6 +71,7 @@ void ServerMainWidget::updateButtons(bool running)
     mStopButton->setEnabled(running);
     mToggleToolButton->setEnabled(running);
     mPingButton->setEnabled(running);
+    mToken->setEnabled(!running);
 }
 
 #include "moc_servermainwidget.cpp"

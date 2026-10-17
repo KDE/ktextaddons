@@ -66,7 +66,7 @@ QStringList names(const QJsonObject &obj, const QString &key)
 }
 }
 
-MainWidget::MainWidget(const QString &url, QWidget *parent)
+MainWidget::MainWidget(const QString &url, const QString &token, QWidget *parent)
     : QWidget{parent}
     , mUrl(new QLineEdit(url, this))
     , mConnectButton(new QPushButton(u"Connect"_s, this))
@@ -82,12 +82,15 @@ MainWidget::MainWidget(const QString &url, QWidget *parent)
     , mCallToolButton(new QPushButton(u"Call tool"_s, this))
     , mLog(new QPlainTextEdit(this))
     , mCheckTimer(new QTimer(this))
+    , mToken(new QLineEdit(token, this))
 {
     auto mainLayout = new QVBoxLayout(this);
 
     auto urlLayout = new QHBoxLayout;
     urlLayout->addWidget(new QLabel(u"Server url:"_s, this));
     urlLayout->addWidget(mUrl);
+    urlLayout->addWidget(new QLabel(u"Token:"_s, this));
+    urlLayout->addWidget(mToken);
     urlLayout->addWidget(mConnectButton);
     urlLayout->addWidget(mDisconnectButton);
     mainLayout->addLayout(urlLayout);
@@ -167,6 +170,7 @@ void MainWidget::updateButtons()
     const bool initialized = started && mManager->isInitialized();
     const bool checking = mCurrentCheck >= 0;
     mUrl->setEnabled(!started);
+    mToken->setEnabled(!started);
     mConnectButton->setEnabled(!started);
     mDisconnectButton->setEnabled(started && !checking);
     mPingButton->setEnabled(started && !checking);
@@ -189,6 +193,10 @@ void MainWidget::connectToServer()
     server.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp);
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
     settings.setServerUrl(QUrl(mUrl->text().trimmed()));
+    settings.setAuthToken(mToken->text().toUtf8());
+    if (const QString token = mToken->text().trimmed(); !token.isEmpty()) {
+        settings.setHeaders({u"Authorization: Bearer "_s + token});
+    }
     server.setSettings(settings);
 
     mManager = new McpProtocolClientProtocolManager(server, this);

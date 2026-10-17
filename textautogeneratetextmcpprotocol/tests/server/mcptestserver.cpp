@@ -122,10 +122,11 @@ McpTestServer::McpTestServer(QObject *parent)
 
 McpTestServer::~McpTestServer() = default;
 
-void McpTestServer::start(const QUrl &url)
+void McpTestServer::start(const QUrl &url, const QString &token)
 {
     McpProtocolSettings settings;
     settings.setServerUrl(url);
+    settings.setAuthToken(token.toLatin1());
     setSettings(settings);
     McpProtocolServerProtocolManager::start();
 }

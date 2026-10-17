@@ -19,7 +19,7 @@ class MainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MainWidget(const QString &url, QWidget *parent = nullptr);
+    explicit MainWidget(const QString &url, const QString &token, QWidget *parent = nullptr);
     ~MainWidget() override;
 
     // Connect if necessary and run all checks
@@ -69,4 +69,5 @@ private:
     QPushButton *const mCallToolButton;
     QPlainTextEdit *const mLog;
     QTimer *const mCheckTimer;
+    QLineEdit *const mToken;
 };

@@ -21,9 +21,11 @@ int main(int argc, char **argv)
     parser.addOption(urlOption);
     const QCommandLineOption autorunOption(u"autorun"_s, u"Run all checks and exit (exit code is 1 if a check failed)."_s);
     parser.addOption(autorunOption);
+    const QCommandLineOption tokenOption(u"token"_s, u"Bearer token required from clients (no authentication if empty)."_s, u"token"_s);
+    parser.addOption(tokenOption);
     parser.process(app);
 
-    MainWidget w(parser.value(urlOption));
+    MainWidget w(parser.value(urlOption), parser.value(tokenOption));
     w.resize(900, 600);
     w.show();
     if (parser.isSet(autorunOption)) {

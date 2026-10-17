@@ -14,7 +14,7 @@ class ServerMainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ServerMainWidget(const QString &url, QWidget *parent = nullptr);
+    explicit ServerMainWidget(const QString &url, const QString &token, QWidget *parent = nullptr);
     ~ServerMainWidget() override;
 
     void startServer();
@@ -28,4 +28,5 @@ private:
     QPushButton *const mToggleToolButton;
     QPushButton *const mPingButton;
     QPlainTextEdit *const mLog;
+    QLineEdit *const mToken;
 };

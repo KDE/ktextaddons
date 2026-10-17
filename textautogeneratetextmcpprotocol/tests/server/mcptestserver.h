@@ -19,7 +19,7 @@ public:
     explicit McpTestServer(QObject *parent = nullptr);
     ~McpTestServer() override;
 
-    void start(const QUrl &url);
+    void start(const QUrl &url, const QString &token);
 
     // Add or remove "reverse" tool and send notifications/tools/list_changed
     void toggleExtraTool();
