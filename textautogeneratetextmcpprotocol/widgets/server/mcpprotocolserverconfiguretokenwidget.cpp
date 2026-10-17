@@ -19,3 +19,5 @@ McpProtocolServerConfigureTokenWidget::McpProtocolServerConfigureTokenWidget(QWi
 }
 
 McpProtocolServerConfigureTokenWidget::~McpProtocolServerConfigureTokenWidget() = default;
+
+#include "moc_mcpprotocolserverconfiguretokenwidget.cpp"
