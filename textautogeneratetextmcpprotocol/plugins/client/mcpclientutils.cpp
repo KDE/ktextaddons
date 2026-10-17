@@ -10,6 +10,17 @@
 
 using namespace Qt::Literals::StringLiterals;
 
+void McpClientUtils::addBearer(QNetworkRequest &request, const QByteArray &token)
+{
+    if (token.isEmpty()) {
+        return;
+    }
+    if (request.hasRawHeader("Authorization"_ba)) {
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Authorization header replaced by auth token";
+    }
+    request.setRawHeader("Authorization"_ba, "Bearer "_ba + token);
+}
+
 void McpClientUtils::addHeaders(QNetworkRequest &request, const QStringList &headers)
 {
     for (const QString &header : headers) {

@@ -69,6 +69,36 @@ void McpClientSseTest::shouldPostMessagesToEndpoint()
     QTRY_COMPARE(finishedSpy.count(), 1);
 }
 
+void McpClientSseTest::shouldSendAuthToken()
+{
+    FakeMcpHttpServer server;
+    server.setHandler([](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+        if (request.method == "GET") {
+            FakeMcpHttpServer::sendEventStream(socket, "event: endpoint\ndata: /messages?sessionId=1\n\n", false);
+            return;
+        }
+        FakeMcpHttpServer::sendResponse(socket, 202);
+    });
+    McpClientSsePluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(server.url(u"/sse"_s));
+    settings.setAuthToken("secret"_ba);
+    client.setSettings(settings);
+    QSignalSpy startedSpy(&client, &McpClientSsePluginInterface::started);
+    QSignalSpy finishedSpy(&client, &McpClientSsePluginInterface::finished);
+    client.start();
+    QTRY_COMPARE(startedSpy.count(), 1);
+    client.send(jsonRequest(u"ping"_s, 1));
+    QTRY_COMPARE(server.requests("POST").count(), 1);
+
+    QCOMPARE(server.requests("GET").count(), 1);
+    QCOMPARE(server.requests("GET").at(0).header("Authorization"), "Bearer secret"_ba);
+    QCOMPARE(server.requests("POST").at(0).header("Authorization"), "Bearer secret"_ba);
+
+    client.stop();
+    QTRY_COMPARE(finishedSpy.count(), 1);
+}
+
 void McpClientSseTest::shouldCreateErrorResponseWhenPostFailed()
 {
     FakeMcpHttpServer server;

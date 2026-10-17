@@ -126,7 +126,7 @@ void McpTestServer::start(const QUrl &url, const QString &token)
 {
     McpProtocolSettings settings;
     settings.setServerUrl(url);
-    settings.setAuthToken(token.toLatin1());
+    settings.setAuthToken(token.toUtf8());
     setSettings(settings);
     McpProtocolServerProtocolManager::start();
 }

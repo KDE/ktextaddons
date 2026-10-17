@@ -239,6 +239,50 @@ void McpClientStreamableHttpTest::shouldFinishWhenSessionExpired()
     QCOMPARE(startedSpy.count(), 1);
 }
 
+void McpClientStreamableHttpTest::shouldSendAuthToken_data()
+{
+    QTest::addColumn<QStringList>("headers");
+    QTest::addColumn<QByteArray>("authToken");
+    QTest::addColumn<QByteArray>("authorization");
+    QTest::newRow("none") << QStringList() << QByteArray() << QByteArray();
+    QTest::newRow("header") << QStringList{u"Authorization: Bearer token"_s} << QByteArray() << "Bearer token"_ba;
+    QTest::newRow("auth-token") << QStringList() << "secret"_ba << "Bearer secret"_ba;
+    // Auth token replaces Authorization header defined by user
+    QTest::newRow("both") << QStringList{u"Authorization: Bearer token"_s} << "secret"_ba << "Bearer secret"_ba;
+}
+
+void McpClientStreamableHttpTest::shouldSendAuthToken()
+{
+    QFETCH(QStringList, headers);
+    QFETCH(QByteArray, authToken);
+    QFETCH(QByteArray, authorization);
+    FakeMcpHttpServer server;
+    server.setHandler([](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+        handleDefault(request, socket);
+    });
+    McpClientStreamableHttpPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(server.url(u"/mcp"_s));
+    settings.setHeaders(headers);
+    settings.setAuthToken(authToken);
+    client.setSettings(settings);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    client.start();
+    client.send(jsonRequest(u"initialize"_s, 1));
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    client.send(QJsonObject{{"jsonrpc"_L1, u"2.0"_s}, {"method"_L1, u"notifications/initialized"_s}});
+    QTRY_COMPARE(server.requests("POST").count(), 2);
+    QTRY_VERIFY(!server.requests("GET").isEmpty());
+    client.stop();
+    QTRY_COMPARE(server.requests("DELETE").count(), 1);
+
+    // POST, GET (event stream) and DELETE
+    const auto requests = server.requests();
+    for (const auto &request : requests) {
+        QCOMPARE(request.header("Authorization"), authorization);
+    }
+}
+
 void McpClientStreamableHttpTest::shouldDeleteSessionWhenStopped()
 {
     FakeMcpHttpServer server;

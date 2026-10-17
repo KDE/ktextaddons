@@ -84,6 +84,7 @@ QNetworkRequest McpClientStreamableHttp::createRequest() const
     if (!mProtocolVersion.isEmpty()) {
         request.setRawHeader("MCP-Protocol-Version"_ba, mProtocolVersion);
     }
+    McpClientUtils::addBearer(request, mInterface->protocolSettings().authToken());
     return request;
 }
 

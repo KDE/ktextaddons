@@ -16,5 +16,6 @@ public:
 
 private Q_SLOTS:
     void shouldPostMessagesToEndpoint();
+    void shouldSendAuthToken();
     void shouldCreateErrorResponseWhenPostFailed();
 };

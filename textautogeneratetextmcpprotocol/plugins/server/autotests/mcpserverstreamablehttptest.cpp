@@ -402,4 +402,55 @@ void McpServerStreamableHttpTest::shouldExchangeMessagesWithClientUsingToken()
     QCOMPARE(clientErrorSpy.count(), 0);
 }
 
+void McpServerStreamableHttpTest::shouldExchangeMessagesWithClientUsingAuthToken()
+{
+    const QUrl url = freeUrl();
+    auto server = createServer(url, "secret-token"_ba);
+    QVERIFY(server);
+
+    // Client and server use same setting
+    McpClientStreamableHttpPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(url);
+    settings.setAuthToken("secret-token"_ba);
+    client.setSettings(settings);
+    QSignalSpy clientReceivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    QSignalSpy clientErrorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
+    client.start();
+
+    client.send(jsonRequest(u"initialize"_s, 1));
+    QTRY_COMPARE(clientReceivedSpy.count(), 1);
+    QCOMPARE(clientReceivedSpy.at(0).at(0).toJsonObject(), initializeResult(1));
+    client.send(jsonNotification(u"notifications/initialized"_s));
+
+    server->send(jsonNotification(u"notifications/tools/list_changed"_s));
+    QTRY_COMPARE(clientReceivedSpy.count(), 2);
+    QCOMPARE(clientReceivedSpy.at(1).at(0).toJsonObject(), jsonNotification(u"notifications/tools/list_changed"_s));
+    QCOMPARE(clientErrorSpy.count(), 0);
+}
+
+void McpServerStreamableHttpTest::shouldRejectClientWithWrongAuthToken()
+{
+    const QUrl url = freeUrl();
+    auto server = createServer(url, "secret-token"_ba);
+    QVERIFY(server);
+    QSignalSpy serverReceivedSpy(server.get(), &McpServerStreamHttpPluginInterface::received);
+
+    McpClientStreamableHttpPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(url);
+    settings.setAuthToken("wrong-token"_ba);
+    client.setSettings(settings);
+    QSignalSpy clientReceivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    client.start();
+
+    client.send(jsonRequest(u"initialize"_s, 1));
+    // Client creates an error response for its request
+    QTRY_COMPARE(clientReceivedSpy.count(), 1);
+    const QJsonObject response = clientReceivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInt(), 1);
+    QVERIFY(response.contains("error"_L1));
+    QCOMPARE(serverReceivedSpy.count(), 0);
+}
+
 #include "moc_mcpserverstreamablehttptest.cpp"

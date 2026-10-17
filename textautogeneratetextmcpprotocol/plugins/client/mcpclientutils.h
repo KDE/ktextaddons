@@ -20,4 +20,11 @@ MCPPROTOCOLCLIENTPLUGIN_EXPORT void addHeaders(QNetworkRequest &request, const Q
  * Create a JSON-RPC error response for request \a requestId, used when server can't answer anymore.
  */
 [[nodiscard]] MCPPROTOCOLCLIENTPLUGIN_EXPORT QJsonObject createConnectionErrorResponse(const QJsonValue &requestId, const QString &errorMessage);
+
+/*!
+ * \brief addBearer
+ * \param request
+ * \param token
+ */
+MCPPROTOCOLCLIENTPLUGIN_EXPORT void addBearer(QNetworkRequest &request, const QByteArray &token);
 }

@@ -21,6 +21,8 @@ private Q_SLOTS:
     void shouldCreateErrorResponseWhenStreamCantBeResumed();
     void shouldCreateErrorResponseWhenPostFailed();
     void shouldFinishWhenSessionExpired();
+    void shouldSendAuthToken_data();
+    void shouldSendAuthToken();
     void shouldDeleteSessionWhenStopped();
     void shouldReconnectEventStream();
 };

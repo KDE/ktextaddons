@@ -27,4 +27,6 @@ private Q_SLOTS:
     void shouldAcceptRequestWithValidToken();
     void shouldCheckOriginBeforeToken();
     void shouldExchangeMessagesWithClientUsingToken();
+    void shouldExchangeMessagesWithClientUsingAuthToken();
+    void shouldRejectClientWithWrongAuthToken();
 };
