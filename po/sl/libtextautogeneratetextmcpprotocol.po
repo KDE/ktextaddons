@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-18 00:47+0000\n"
-"PO-Revision-Date: 2026-10-12 07:23+0200\n"
+"PO-Revision-Date: 2026-10-18 06:36+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -330,18 +330,18 @@ msgstr "Dodaj strežnik…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Server Configuration"
-msgstr ""
+msgstr "Konfiguracija strežnika"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:21
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "Žeton:"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
-msgstr ""
+msgstr "Regeneriraj"
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "Strežnika ni mogoče zagnati. Ukaz je prazen."

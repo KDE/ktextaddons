@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-18 00:47+0000\n"
-"PO-Revision-Date: 2026-10-12 07:20+0200\n"
+"PO-Revision-Date: 2026-10-18 03:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format
@@ -330,18 +330,18 @@ msgstr "სერვერის დამატება…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Server Configuration"
-msgstr ""
+msgstr "სერვერის კონფიგურაცია"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:21
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "ტოკენი:"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
-msgstr ""
+msgstr "თავიდან გენერაცია"
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია."

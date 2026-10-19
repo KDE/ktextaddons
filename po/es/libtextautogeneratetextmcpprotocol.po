@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-18 00:47+0000\n"
-"PO-Revision-Date: 2026-10-12 11:41+0100\n"
+"PO-Revision-Date: 2026-10-18 11:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format
@@ -331,15 +331,15 @@ msgstr "Añadir servidor…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Server Configuration"
-msgstr ""
+msgstr "Configuración del servidor"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:21
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "Token:"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
-msgstr ""
+msgstr "Regenerar"
