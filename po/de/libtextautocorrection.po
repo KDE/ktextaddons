@@ -2,20 +2,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # SPDX-FileCopyrightText: 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2026 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libtextautocorrection\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:18+0000\n"
-"PO-Revision-Date: 2023-04-03 16:37+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2026-10-16 23:02+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:52
 #, kde-format
@@ -128,13 +129,13 @@ msgstr "Ersetzung und Ausnahme für die Sprache:"
 #: widgets/ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export..."
-msgstr "Exportieren ..."
+msgstr "Exportieren …"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import..."
-msgstr "Importieren ..."
+msgstr "Importieren …"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -288,7 +289,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2... with ½..."
-msgstr "1/2... durch ½... er&setzen"
+msgstr "1/2 … durch ½ … er&setzen"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -335,7 +336,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st... with 1^st... (HTML mode)"
-msgstr "1st ... durch 1^st ... ersetzen (HTML-Modus)"
+msgstr "1st … durch 1^st … ersetzen (HTML-Modus)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
