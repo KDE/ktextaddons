@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolwidgets_private_export.h"
+#include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QDialog>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpProtocolServerConfigureWidget;
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpProtocolServerConfigureDialog : public QDialog
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpProtocolServerConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:

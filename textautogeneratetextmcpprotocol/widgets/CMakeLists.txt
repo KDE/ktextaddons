@@ -91,10 +91,20 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotoco
     RELATIVE client
 )
 
+ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS
+    HEADER_NAMES
+        McpProtocolServerConfigureWidget
+        McpProtocolServerConfigureDialog
+    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS
+    PREFIX TextAutoGenerateTextMcpProtocolWidgets
+    RELATIVE server
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolwidgets_export.h
         ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolclient_HEADERS}
+        ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/textautogeneratetextmcpprotocolwidgets
     COMPONENT Devel
@@ -102,6 +112,7 @@ install(
 
 install(
     FILES
+        ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
         ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
@@ -178,6 +189,6 @@ ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWi
 ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWidgets
     HEADERS
     ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS}
-
+        ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
     PREFIX TextAutoGenerateTextMcpProtocolWidgets
 )

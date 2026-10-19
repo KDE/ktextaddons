@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "mcpprotocolwidgets_private_export.h"
+#include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 class QLineEdit;
@@ -12,7 +12,7 @@ class QCheckBox;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpProtocolServerConfigureTokenWidget;
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpProtocolServerConfigureWidget : public QWidget
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpProtocolServerConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
