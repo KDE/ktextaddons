@@ -43,4 +43,5 @@ private Q_SLOTS:
     void shouldFetchPageWithEmptyCursor();
     void shouldReturnErrorOfPage();
     void shouldEmitListChangedSignals();
+    void shouldLogMessages();
 };

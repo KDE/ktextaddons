@@ -7,9 +7,12 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QDateTime>
 #include <QDeadlineTimer>
+#include <QElapsedTimer>
 #include <QHash>
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QList>
 #include <QMap>
 #include <QObject>
@@ -19,7 +22,6 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 #include <chrono>
 #include <optional>
-class QJsonObject;
 class QTimer;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -46,6 +48,27 @@ public:
         ReadResource,
     };
     Q_ENUM(MethodType)
+
+    enum class MessageDirection : uint8_t {
+        Sent = 0,
+        Received,
+    };
+    Q_ENUM(MessageDirection)
+
+    /*!
+     * Request sent to server or message received from server, emitted with messageLogged().
+     */
+    struct MessageInfo {
+        QJsonObject message;
+        QDateTime dateTime;
+        // Numeric JSON-RPC id, -1 for notifications or string id
+        qint64 identifier = -1;
+        MethodType type = MethodType::Unknown;
+        MessageDirection direction = MessageDirection::Sent;
+        // Time between request and its response, -1 otherwise
+        qint64 elapsedMs = -1;
+    };
+
     explicit McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent = nullptr);
     ~McpProtocolClientProtocolManager() override;
 
@@ -244,10 +267,18 @@ Q_SIGNALS:
      */
     void elicitationCompleted(const QString &elicitationId);
 
+    /*!
+     * Emitted for each request sent to server and for each message received from server
+     * (raw message, before pagination is merged). Useful to inspect traffic.
+     */
+    void messageLogged(const TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager::MessageInfo &info);
+
 private:
     struct PendingRequest {
         MethodType type = MethodType::Unknown;
         QDeadlineTimer deadline;
+        // Time since request was sent
+        QElapsedTimer elapsed;
         // Id returned to caller: list requests use several requests (one by page)
         qint64 originalId = 0;
         // Pagination
@@ -274,6 +305,7 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type, PendingRequest pending);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendCancelledNotification(qint64 identifier, const QString &reason);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void checkTimeouts();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void logReceivedMessage(const QJsonObject &message);
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 requestId();
 
     QString mClientName;
@@ -296,3 +328,4 @@ private:
     bool mSamplingSupported = false;
 };
 }
+Q_DECLARE_METATYPE(TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager::MessageInfo)

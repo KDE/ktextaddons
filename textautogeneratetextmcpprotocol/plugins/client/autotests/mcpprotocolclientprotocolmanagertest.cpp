@@ -983,4 +983,40 @@ void McpProtocolClientProtocolManagerTest::shouldEmitListChangedSignals()
     QCOMPARE(receivedSpy.at(0).at(1).value<McpProtocolClientProtocolManager::MethodType>(), McpProtocolClientProtocolManager::MethodType::ServerNotification);
 }
 
+void McpProtocolClientProtocolManagerTest::shouldLogMessages()
+{
+    using MessageInfo = McpProtocolClientProtocolManager::MessageInfo;
+    using MessageDirection = McpProtocolClientProtocolManager::MessageDirection;
+    using MethodType = McpProtocolClientProtocolManager::MethodType;
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    QList<MessageInfo> infos;
+    connect(&manager, &McpProtocolClientProtocolManager::messageLogged, this, [&infos](const MessageInfo &info) {
+        infos.append(info);
+    });
+    initialize(manager);
+    QCOMPARE(infos.count(), 2);
+    QCOMPARE(infos.at(0).direction, MessageDirection::Sent);
+    QCOMPARE(infos.at(0).type, MethodType::Initialize);
+    QCOMPARE(infos.at(0).message.value("method"_L1).toString(), u"initialize"_s);
+    QVERIFY(infos.at(0).dateTime.isValid());
+    QCOMPARE(infos.at(0).elapsedMs, -1);
+    QCOMPARE(infos.at(1).direction, MessageDirection::Received);
+    QCOMPARE(infos.at(1).type, MethodType::Initialize);
+    QCOMPARE(infos.at(1).identifier, infos.at(0).identifier);
+    QVERIFY(infos.at(1).elapsedMs >= 0);
+
+    infos.clear();
+    const qint64 identifier = manager.executeAction(MethodType::ListTools);
+    QTRY_COMPARE(infos.count(), 2);
+    QCOMPARE(infos.at(0).direction, MessageDirection::Sent);
+    QCOMPARE(infos.at(0).identifier, identifier);
+    QCOMPARE(infos.at(0).type, MethodType::ListTools);
+    QCOMPARE(infos.at(1).direction, MessageDirection::Received);
+    QCOMPARE(infos.at(1).identifier, identifier);
+    QCOMPARE(infos.at(1).type, MethodType::ListTools);
+    QVERIFY(infos.at(1).message.contains("result"_L1));
+}
+
 #include "moc_mcpprotocolclientprotocolmanagertest.cpp"

@@ -283,9 +283,17 @@ qint64 McpProtocolClientProtocolManager::sendRequest(const QJsonObject &request,
     if (pending.originalId == 0) {
         pending.originalId = identifier;
     }
+    pending.elapsed.start();
     const qint64 originalId = pending.originalId;
     // Register before sending: transport can answer synchronously
     mPendingRequests.insert(identifier, std::move(pending));
+    MessageInfo info;
+    info.message = request;
+    info.dateTime = QDateTime::currentDateTime();
+    info.identifier = identifier;
+    info.type = type;
+    info.direction = MessageDirection::Sent;
+    Q_EMIT messageLogged(info);
     if (!mTimeoutTimer->isActive()) {
         mTimeoutTimer->start(std::min(mRequestTimeout, std::chrono::milliseconds(1000)));
     }
@@ -513,6 +521,7 @@ void McpProtocolClientProtocolManager::slotFinished()
 void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &message)
 {
     qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << " receive " << message;
+    logReceivedMessage(message);
     QJsonObject obj = message;
     MethodType type = MethodType::Unknown;
     if (obj.contains("method"_L1)) {
@@ -542,6 +551,25 @@ void McpProtocolClientProtocolManager::slotReceived(const QJsonObject &message)
     if (type == MethodType::ServerNotification) {
         serverNotificationReceived(obj);
     }
+}
+
+void McpProtocolClientProtocolManager::logReceivedMessage(const QJsonObject &message)
+{
+    MessageInfo info;
+    info.message = message;
+    info.dateTime = QDateTime::currentDateTime();
+    info.direction = MessageDirection::Received;
+    const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(message.value("id"_L1));
+    if (const qint64 *identifier = std::get_if<qint64>(&id); identifier && message.contains("id"_L1)) {
+        info.identifier = *identifier;
+    }
+    if (message.contains("method"_L1)) {
+        info.type = message.contains("id"_L1) ? MethodType::ServerRequest : MethodType::ServerNotification;
+    } else if (const auto it = mPendingRequests.constFind(info.identifier); it != mPendingRequests.cend()) {
+        info.type = it->type;
+        info.elapsedMs = it->elapsed.elapsed();
+    }
+    Q_EMIT messageLogged(info);
 }
 
 void McpProtocolClientProtocolManager::serverNotificationReceived(const QJsonObject &obj)
