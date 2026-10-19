@@ -7,6 +7,7 @@
 #include "addmcpserverbasewidget.h"
 #include "mcpprotocolwidgets_private_export.h"
 class QLineEdit;
+class KPasswordLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class AddMcpStreamableHttpServerHeaderWidget;
@@ -43,5 +44,6 @@ public:
 private:
     QLineEdit *const mServerUrlLineEdit;
     AddMcpStreamableHttpServerHeaderWidget *const mHttpServerHeaderWidget;
+    KPasswordLineEdit *const mAuthTokenLineEdit;
 };
 }

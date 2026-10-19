@@ -49,6 +49,7 @@ void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::
     // Remove settings from another transport type
     settings.setServerUrl({});
     settings.setHeaders({});
+    settings.setAuthToken({});
 
     server.setSettings(std::move(settings));
 }

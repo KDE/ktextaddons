@@ -7,6 +7,7 @@
 #include "addmcpstreamablehttpserverheaderwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <KPasswordLineEdit>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
@@ -16,6 +17,7 @@ AddMcpStreamableHttpServerWidget::AddMcpStreamableHttpServerWidget(QWidget *pare
     : AddMcpServerBaseWidget{parent}
     , mServerUrlLineEdit(new QLineEdit(this))
     , mHttpServerHeaderWidget(new AddMcpStreamableHttpServerHeaderWidget(this))
+    , mAuthTokenLineEdit(new KPasswordLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -28,6 +30,10 @@ AddMcpStreamableHttpServerWidget::AddMcpStreamableHttpServerWidget(QWidget *pare
 
     mHttpServerHeaderWidget->setObjectName(u"mHttpServerHeaderWidget"_s);
     mainLayout->addRow(i18nc("@label", "Headers:"), mHttpServerHeaderWidget);
+    mAuthTokenLineEdit->setObjectName(u"mAuthTokenLineEdit"_s);
+    mAuthTokenLineEdit->setToolTip(i18nc("@info:tooltip", "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."));
+    mainLayout->addRow(i18nc("@label:textbox", "Authentication token:"), mAuthTokenLineEdit);
+    KLineEditEventHandler::catchReturnKey(mAuthTokenLineEdit->lineEdit());
 
     connect(mServerUrlLineEdit, &QLineEdit::textChanged, this, &AddMcpStreamableHttpServerWidget::settingChanged);
 }
@@ -49,6 +55,7 @@ void AddMcpStreamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProto
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setServerUrl(QUrl::fromUserInput(mServerUrlLineEdit->text().trimmed()));
     settings.setHeaders(mHttpServerHeaderWidget->headers());
+    settings.setAuthToken(mAuthTokenLineEdit->password().trimmed().toUtf8());
     // Remove settings from another transport type
     settings.setCommand({});
     settings.setArguments({});
@@ -60,6 +67,7 @@ void AddMcpStreamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMc
 {
     mServerUrlLineEdit->setText(server.settings().serverUrl().toString());
     mHttpServerHeaderWidget->setHeaders(server.settings().headers());
+    mAuthTokenLineEdit->setPassword(QString::fromUtf8(server.settings().authToken()));
 }
 
 #include "moc_addmcpstreamablehttpserverwidget.cpp"
