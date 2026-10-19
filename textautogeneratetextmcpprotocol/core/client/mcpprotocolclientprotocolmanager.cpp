@@ -307,11 +307,11 @@ void McpProtocolClientProtocolManager::checkTimeouts()
     }
     for (const qint64 identifier : std::as_const(expired)) {
         // A slot connected to received() can stop client or cancel requests
-        auto it = mPendingRequests.find(identifier);
-        if (it == mPendingRequests.end()) {
+        const auto it = mPendingRequests.constFind(identifier);
+        if (it == mPendingRequests.cend()) {
             continue;
         }
-        const PendingRequest pending = std::move(*it);
+        const PendingRequest pending = *it;
         mPendingRequests.erase(it);
         const MethodType type = pending.type;
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Request timed out:" << identifier << type;
