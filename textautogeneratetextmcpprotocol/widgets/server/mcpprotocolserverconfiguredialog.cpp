@@ -9,7 +9,13 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerUtils>
 
+namespace
+{
+const char myMcpProtocolServerConfigureDialogGroupName[] = "McpProtocolServerConfigureDialog";
+}
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 McpProtocolServerConfigureDialog::McpProtocolServerConfigureDialog(QWidget *parent)
@@ -23,6 +29,26 @@ McpProtocolServerConfigureDialog::McpProtocolServerConfigureDialog(QWidget *pare
 
     mMcpProtocolServerConfigureWidget->setObjectName(u"mMcpProtocolServerConfigureWidget"_s);
     mainLayout->addWidget(mMcpProtocolServerConfigureWidget);
+
+    auto button = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, this);
+    button->setObjectName(u"button"_s);
+    mainLayout->addWidget(button);
+    auto buttonOk = button->button(QDialogButtonBox::Ok);
+    // Enabled when settings are loaded
+    buttonOk->setEnabled(false);
+    connect(button, &QDialogButtonBox::rejected, this, &McpProtocolServerConfigureDialog::reject);
+    connect(button, &QDialogButtonBox::accepted, this, [this]() {
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils::saveSettings(mMcpProtocolServerConfigureWidget->settings());
+        accept();
+    });
+    connect(mMcpProtocolServerConfigureWidget, &McpProtocolServerConfigureWidget::settingsChanged, this, [this, buttonOk]() {
+        buttonOk->setEnabled(mMcpProtocolServerConfigureWidget->isValid());
+    });
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils::loadSettings(this,
+                                                                              [this](const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &settings) {
+                                                                                  mMcpProtocolServerConfigureWidget->setSettings(settings);
+                                                                              });
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myMcpProtocolServerConfigureDialogGroupName), QSize(500, 200));
 }
 
 McpProtocolServerConfigureDialog::~McpProtocolServerConfigureDialog() = default;

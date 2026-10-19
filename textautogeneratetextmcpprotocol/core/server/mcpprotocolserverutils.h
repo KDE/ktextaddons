@@ -7,10 +7,12 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
+#include <QUrl>
 #include <functional>
 class QObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+class McpProtocolSettings;
 /*!
  * \namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils
  * \brief Helpers to manage the bearer token required by the MCP server
@@ -39,5 +41,17 @@ TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void readAuthToken(QObject *context, 
  * Remove the server token from the system wallet
  */
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void removeAuthToken();
+/*!
+ * Default url where server listens (streamable http transport)
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QUrl defaultServerUrl();
+/*!
+ * Load server settings. Token is read from the system wallet, so \a callback can be called asynchronously
+ */
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void loadSettings(QObject *context, std::function<void(const McpProtocolSettings &)> callback);
+/*!
+ * Save server settings. Token is stored in the system wallet
+ */
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void saveSettings(const McpProtocolSettings &settings);
 }
 }
