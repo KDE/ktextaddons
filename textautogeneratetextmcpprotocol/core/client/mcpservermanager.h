@@ -9,6 +9,7 @@
 #include <QList>
 #include <QMap>
 #include <QObject>
+#include <QSet>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpServerModel;
@@ -56,11 +57,16 @@ public:
 
 Q_SIGNALS:
     /*!
-     * \brief serverLoaded
+     * Emitted when servers and their auth tokens (read from keychain) are loaded
      */
     void serverLoaded();
 
 private:
+    void loadAuthTokens(const QList<QByteArray> &identifiers);
+    // Auth tokens stored in keychain, used to avoid rewriting unchanged ones
+    QMap<QByteArray, QByteArray> mStoredAuthTokens;
+    QSet<QByteArray> mPendingAuthTokenReads;
+    int mLoadGeneration = 0;
     // Invalid servers (unknown transport…) are not shown but must be kept in config
     QList<QMap<QString, QString>> mInvalidServerEntries;
     McpServerModel *const mMcpServerModel;

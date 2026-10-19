@@ -307,6 +307,8 @@ target_sources(
         common/mcpbase.cpp
         common/mcpprotocolcommonutils.h
         common/mcpprotocolcommonutils.cpp
+        common/mcpprotocolkeychainutils.h
+        common/mcpprotocolkeychainutils.cpp
         common/mcpprotocolsseparser.h
         common/mcpprotocolsseparser.cpp
         models/mcpservermodel.cpp
@@ -515,6 +517,7 @@ target_link_libraries(
     PRIVATE
         KF6::ConfigCore
         KF6::I18n
+        qt6keychain
 )
 
 set_target_properties(
