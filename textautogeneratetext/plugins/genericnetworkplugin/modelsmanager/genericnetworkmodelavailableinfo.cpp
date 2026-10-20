@@ -7,6 +7,19 @@
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+// Mistral uses a boolean, Anthropic uses an object {"supported": bool}
+[[nodiscard]] bool isSupported(const QJsonValue &value)
+{
+    if (value.isObject()) {
+        return value["supported"_L1].toBool(false);
+    }
+    return value.toBool(false);
+}
+}
+
 GenericNetworkModelAvailableInfo::GenericNetworkModelAvailableInfo() = default;
 
 GenericNetworkModelAvailableInfo::~GenericNetworkModelAvailableInfo() = default;
@@ -19,6 +32,10 @@ void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
     }
     mDescription = obj["description"_L1].toString();
     mModelName = obj["name"_L1].toString();
+    if (mModelName.isEmpty()) {
+        // Anthropic
+        mModelName = obj["display_name"_L1].toString();
+    }
     mModelSize = obj["model_size"_L1].toString();
     mIdentifier = obj["id"_L1].toString();
     mOwnedBy = obj["owned_by"_L1].toString();
@@ -29,21 +46,25 @@ void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
 
 void GenericNetworkModelAvailableInfo::parseCapabilities(const QJsonObject &obj)
 {
-    if (obj["audio"_L1].toBool(false)) {
+    if (isSupported(obj["audio"_L1])) {
         mCapabilities |= Capability::Audio;
     }
-    if (obj["ocr"_L1].toBool(false)) {
+    if (isSupported(obj["ocr"_L1])) {
         mCapabilities |= Capability::Ocr;
     }
-    if (obj["vision"_L1].toBool(false)) {
+    if (isSupported(obj["vision"_L1]) || isSupported(obj["image_input"_L1])) {
         mCapabilities |= Capability::Vision;
     }
-    if (obj["function_calling"_L1].toBool(false)) {
+    if (isSupported(obj["function_calling"_L1])) {
         mCapabilities |= Capability::Tools;
     }
-    // TODO add Thinking
+    if (isSupported(obj["thinking"_L1])) {
+        mCapabilities |= Capability::Thinking;
+    }
     // TODO add more
+    // Mistral:
     // {"audio":false,"classification":false,"completion_chat":false,"completion_fim":false,"fine_tuning":false,"function_calling":false,"moderation":false,"ocr":false,"vision":false}
+    // Anthropic: {"image_input":{"supported":true},"thinking":{"supported":true,...},...}
 }
 
 QString GenericNetworkModelAvailableInfo::description() const
