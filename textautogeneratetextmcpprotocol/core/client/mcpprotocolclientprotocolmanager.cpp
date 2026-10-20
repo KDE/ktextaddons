@@ -24,6 +24,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClient>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
@@ -44,6 +45,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceUpdatedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRootsListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSetLevelRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSubscribeRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUnsubscribeRequest>
@@ -102,6 +104,12 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
     case MethodType::SubscribeResource:
     case MethodType::UnsubscribeResource:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use subscribeResource()/unsubscribeResource() to follow a resource.";
+        break;
+    case MethodType::Complete:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use complete() to get completion values.";
+        break;
+    case MethodType::SetLoggingLevel:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use setLoggingLevel() to change logging level.";
         break;
     case MethodType::CallTool:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use callTool() to call a tool.";
@@ -209,6 +217,52 @@ qint64 McpProtocolClientProtocolManager::resourceSubscriptionRequest(const QStri
         request = McpProtocolUnsubscribeRequest::toJson(unsubscribeRequest);
     }
     return sendRequest(request, identifier, type);
+}
+
+qint64 McpProtocolClientProtocolManager::complete(const McpProtocolCompleteRequestParams &params)
+{
+    if (!mClient || !mInitialized) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't ask completion" << params;
+        return -1;
+    }
+    if (!serverSupports(MethodType::Complete)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support completions. Can't ask completion" << params;
+        return -1;
+    }
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid completion params" << params;
+        return -1;
+    }
+    McpProtocolCompleteRequest request;
+    const qint64 identifier = requestId();
+    request.setId(identifier);
+    request.setParams(params);
+    return sendRequest(McpProtocolCompleteRequest::toJson(request), identifier, MethodType::Complete);
+}
+
+qint64 McpProtocolClientProtocolManager::setLoggingLevel(McpProtocolUtils::LoggingLevel level)
+{
+    if (!mClient || !mInitialized) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Initialization not finished. Can't set logging level" << McpProtocolUtils::convertLoggingLevelToString(level);
+        return -1;
+    }
+    if (!serverSupports(MethodType::SetLoggingLevel)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG)
+            << "Server doesn't support logging. Can't set logging level" << McpProtocolUtils::convertLoggingLevelToString(level);
+        return -1;
+    }
+    if (level == McpProtocolUtils::LoggingLevel::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid logging level";
+        return -1;
+    }
+    McpProtocolSetLevelRequestParams params;
+    params.setLevel(level);
+    McpProtocolSetLevelRequest request;
+    const qint64 identifier = requestId();
+    request.setId(identifier);
+    request.setParams(std::move(params));
+    return sendRequest(McpProtocolSetLevelRequest::toJson(request), identifier, MethodType::SetLoggingLevel);
 }
 
 bool McpProtocolClientProtocolManager::elicitationSupported() const
@@ -415,6 +469,10 @@ bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
     case MethodType::SubscribeResource:
     case MethodType::UnsubscribeResource:
         return capabilities.resources().has_value() && capabilities.resources()->subscribe().value_or(false);
+    case MethodType::Complete:
+        return capabilities.completions().has_value();
+    case MethodType::SetLoggingLevel:
+        return capabilities.logging().has_value();
     case MethodType::Unknown:
     case MethodType::Ping:
     case MethodType::Initialize:
@@ -698,6 +756,8 @@ QString McpProtocolClientProtocolManager::listKey(MethodType type)
     case MethodType::ReadResource:
     case MethodType::SubscribeResource:
     case MethodType::UnsubscribeResource:
+    case MethodType::Complete:
+    case MethodType::SetLoggingLevel:
     case MethodType::Unknown:
     case MethodType::Ping:
     case MethodType::Initialize:

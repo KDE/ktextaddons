@@ -12,6 +12,8 @@
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
@@ -20,6 +22,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLoggingMessageNotificationParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolProgressNotificationParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptReference>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 using namespace Qt::Literals::StringLiterals;
@@ -1133,6 +1136,96 @@ void McpProtocolClientProtocolManagerTest::shouldEmitProgress()
 
     const QJsonObject request = postedMessages(fakeServer, u"tools/call"_s).constFirst();
     QCOMPARE(request.value("params"_L1).toObject().value("_meta"_L1).toObject().value("progressToken"_L1).toInteger(), identifier);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldComplete()
+{
+    using MethodType = McpProtocolClientProtocolManager::MethodType;
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            const QString value = obj.value("params"_L1).toObject().value("argument"_L1).toObject().value("value"_L1).toString();
+            const QJsonObject completion{{"values"_L1, QJsonArray{QString(value + u"thon"_s), QString(value + u"tch"_s)}}, {"hasMore"_L1, false}};
+            sendJson(socket, result(obj.value("id"_L1), QJsonObject{{"completion"_L1, completion}}));
+        },
+        QJsonObject{{"prompts"_L1, QJsonObject{}}, {"completions"_L1, QJsonObject{}}}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptReference ref;
+    ref.setName(u"review"_s);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument argument;
+    argument.setName(u"language"_s);
+    argument.setValue(u"py"_s);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams params;
+    params.setRef(ref);
+    params.setArgument(argument);
+    // Not initialized
+    QCOMPARE(manager.complete(params), -1);
+    initialize(manager);
+    QCOMPARE(manager.complete({}), -1);
+    QCOMPARE(manager.executeAction(MethodType::Complete), -1);
+
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.complete(params);
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<MethodType>(), MethodType::Complete);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInteger(), identifier);
+    const auto completeResult = TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteResult::fromJson(response.value("result"_L1).toObject());
+    QCOMPARE(completeResult.completion().values(), (QStringList{u"python"_s, u"pytch"_s}));
+
+    const QJsonObject requestParams = postedMessages(fakeServer, u"completion/complete"_s).constFirst().value("params"_L1).toObject();
+    QCOMPARE(requestParams.value("ref"_L1).toObject(), (QJsonObject{{"type"_L1, u"ref/prompt"_s}, {"name"_L1, u"review"_s}}));
+    QCOMPARE(requestParams.value("argument"_L1).toObject(), (QJsonObject{{"name"_L1, u"language"_s}, {"value"_L1, u"py"_s}}));
+}
+
+void McpProtocolClientProtocolManagerTest::shouldSetLoggingLevel()
+{
+    using MethodType = McpProtocolClientProtocolManager::MethodType;
+    using LoggingLevel = TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::LoggingLevel;
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            sendJson(socket, result(obj.value("id"_L1)));
+        },
+        QJsonObject{{"logging"_L1, QJsonObject{}}}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    // Not initialized
+    QCOMPARE(manager.setLoggingLevel(LoggingLevel::Info), -1);
+    initialize(manager);
+    QCOMPARE(manager.setLoggingLevel(LoggingLevel::Unknown), -1);
+    QCOMPARE(manager.executeAction(MethodType::SetLoggingLevel), -1);
+
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.setLoggingLevel(LoggingLevel::Warning);
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(1).value<MethodType>(), MethodType::SetLoggingLevel);
+    QCOMPARE(receivedSpy.at(0).at(0).toJsonObject().value("id"_L1).toInteger(), identifier);
+    QCOMPARE(postedMessages(fakeServer, u"logging/setLevel"_s).constFirst().value("params"_L1).toObject(), (QJsonObject{{"level"_L1, u"warning"_s}}));
+}
+
+void McpProtocolClientProtocolManagerTest::shouldNotCompleteOrSetLevelWhenServerDoesNotSupportIt()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler());
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptReference ref;
+    ref.setName(u"review"_s);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument argument;
+    argument.setName(u"language"_s);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams params;
+    params.setRef(ref);
+    params.setArgument(argument);
+    QCOMPARE(manager.complete(params), -1);
+    QCOMPARE(manager.setLoggingLevel(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::LoggingLevel::Info), -1);
+    QTest::qWait(100);
+    QVERIFY(postedMessages(fakeServer, u"completion/complete"_s).isEmpty());
+    QVERIFY(postedMessages(fakeServer, u"logging/setLevel"_s).isEmpty());
 }
 
 #include "moc_mcpprotocolclientprotocolmanagertest.cpp"

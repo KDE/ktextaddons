@@ -26,6 +26,7 @@ class QTimer;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolClient;
+class McpProtocolCompleteRequestParams;
 class McpProtocolCreateMessageRequest;
 class McpProtocolCreateMessageResult;
 class McpProtocolElicitResult;
@@ -50,6 +51,8 @@ public:
         ReadResource,
         SubscribeResource,
         UnsubscribeResource,
+        Complete,
+        SetLoggingLevel,
     };
     Q_ENUM(MethodType)
 
@@ -149,6 +152,20 @@ public:
      * MethodType::UnsubscribeResource. Return request id, -1 if request was not sent.
      */
     [[nodiscard]] qint64 unsubscribeResource(const QString &uri);
+
+    /*!
+     * Ask completion values for an argument of a prompt or of a resource template (\a params).
+     * Server must support completions. Response is emitted with received() and MethodType::Complete,
+     * its "result" can be read with McpProtocolCompleteResult::fromJson(). Return request id, -1 if request was not sent.
+     */
+    [[nodiscard]] qint64 complete(const McpProtocolCompleteRequestParams &params);
+
+    /*!
+     * Ask server to send log messages with \a level or higher (emitted with loggingMessageReceived()).
+     * Server must support logging. Response is emitted with received() and MethodType::SetLoggingLevel.
+     * Return request id, -1 if request was not sent.
+     */
+    [[nodiscard]] qint64 setLoggingLevel(McpProtocolUtils::LoggingLevel level);
 
     /*!
      * Return true if "elicitation" capability (form mode) is announced to server.

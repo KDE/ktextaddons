@@ -48,4 +48,7 @@ private Q_SLOTS:
     void shouldNotSubscribeWhenServerDoesNotSupportSubscription();
     void shouldEmitLoggingMessage();
     void shouldEmitProgress();
+    void shouldComplete();
+    void shouldSetLoggingLevel();
+    void shouldNotCompleteOrSetLevelWhenServerDoesNotSupportIt();
 };
