@@ -45,6 +45,21 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mWebSite);
     auto mDescription = w.findChild<QLabel *>(u"mDescription"_s);
     QVERIFY(mDescription);
+    auto mCustomModels = w.findChild<QLineEdit *>(u"mCustomModels"_s);
+    QVERIFY(mCustomModels);
+    QVERIFY(mCustomModels->text().isEmpty());
+    QVERIFY(w.customModels().isEmpty());
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldCleanCustomModels()
+{
+    TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget w;
+    w.setCustomModels({u"foo"_s, u"bar"_s});
+    QCOMPARE(w.customModels(), QStringList({u"foo"_s, u"bar"_s}));
+
+    auto mCustomModels = w.findChild<QLineEdit *>(u"mCustomModels"_s);
+    mCustomModels->setText(u" foo ,, bar,foo , "_s);
+    QCOMPARE(w.customModels(), QStringList({u"foo"_s, u"bar"_s}));
 }
 
 #include "moc_textautogeneratenetworkpluginconfigurewidgettest.cpp"

@@ -16,4 +16,5 @@ public:
     ~TextAutoGenerateNetworkPluginConfigureWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldCleanCustomModels();
 };
