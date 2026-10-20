@@ -4,12 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolserverprotocolmanagertest.h"
+#include <QCoreApplication>
 #include <QJsonArray>
 #include <QSignalSpy>
 #include <QTcpServer>
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerPrompt>
@@ -81,10 +83,6 @@ QUrl freeUrl()
 
 void startServer(McpProtocolServerProtocolManager &server, const QUrl &url)
 {
-    McpProtocolImplementation serverInfo;
-    serverInfo.setName(u"testserver"_s);
-    serverInfo.setVersion(u"1.0"_s);
-    server.setServerInfo(serverInfo);
     McpProtocolSettings settings;
     settings.setServerUrl(url);
     server.setSettings(settings);
@@ -170,6 +168,36 @@ void McpProtocolServerProtocolManagerTest::shouldAnnouncePromptsAndResourcesWhen
     QCOMPARE(capabilities.prompts()->listChanged(), true);
     QVERIFY(capabilities.resources().has_value());
     QCOMPARE(capabilities.resources()->listChanged(), true);
+}
+
+void McpProtocolServerProtocolManagerTest::shouldUseDefaultServerInfo()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    // No setServerInfo(): application name is used, client must accept it
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    initialize(client);
+    const McpProtocolImplementation serverInfo = client.initializeResult().serverInfo();
+    QCOMPARE(serverInfo.name(), QCoreApplication::applicationName());
+    QVERIFY(!serverInfo.version().isEmpty());
+}
+
+void McpProtocolServerProtocolManagerTest::shouldKeepServerInfo()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    McpProtocolImplementation serverInfo;
+    serverInfo.setName(u"testserver"_s);
+    serverInfo.setVersion(u"1.0"_s);
+    serverInfo.setTitle(u"Test server"_s);
+    server.setServerInfo(serverInfo);
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    initialize(client);
+    QCOMPARE(client.initializeResult().serverInfo(), serverInfo);
 }
 
 void McpProtocolServerProtocolManagerTest::shouldNotAnnouncePromptsAndResourcesByDefault()

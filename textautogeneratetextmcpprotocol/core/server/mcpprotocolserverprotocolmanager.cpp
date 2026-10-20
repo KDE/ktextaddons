@@ -9,7 +9,9 @@
 #include "mcpprotocolservertool.h"
 #include "mcpprotocolservertoolcall.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include "textautogeneratetextmcpprotocolcore_version.h"
 #include <KLocalizedString>
+#include <QCoreApplication>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequest>
@@ -426,7 +428,16 @@ void McpProtocolServerProtocolManager::initialize(const QJsonValue &id, const QJ
     McpProtocolInitializeResult result;
     result.setProtocolVersion(version);
     result.setCapabilities(capabilities());
-    result.setServerInfo(mServerInfo);
+    // name and version are required: client rejects initialize result without them
+    McpProtocolImplementation serverInfo = mServerInfo;
+    if (serverInfo.name().isEmpty()) {
+        serverInfo.setName(QCoreApplication::applicationName());
+    }
+    if (serverInfo.version().isEmpty()) {
+        const QString applicationVersion = QCoreApplication::applicationVersion();
+        serverInfo.setVersion(applicationVersion.isEmpty() ? QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING) : applicationVersion);
+    }
+    result.setServerInfo(serverInfo);
     if (!mInstructions.isEmpty()) {
         result.setInstructions(mInstructions);
     }

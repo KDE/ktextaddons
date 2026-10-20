@@ -15,6 +15,8 @@ public:
     ~McpProtocolServerProtocolManagerTest() override = default;
 
 private Q_SLOTS:
+    void shouldUseDefaultServerInfo();
+    void shouldKeepServerInfo();
     void shouldAnnouncePromptsAndResourcesWhenRegistered();
     void shouldNotAnnouncePromptsAndResourcesByDefault();
     void shouldListAndGetPrompt();

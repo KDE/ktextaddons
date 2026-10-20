@@ -76,7 +76,8 @@ public:
 
     /*!
      * \brief setServerInfo
-     * Name and version sent in initialize result.
+     * Name and version sent in initialize result. When they are not set,
+     * QCoreApplication::applicationName() and applicationVersion() (or library version) are used.
      */
     void setServerInfo(const TextAutoGenerateTextMcpProtocolCore::McpProtocolImplementation &serverInfo);
     /*!
