@@ -308,7 +308,8 @@ void GenericNetworkManager::setApiKey(const QString &newApiKey)
 bool GenericNetworkManager::hasCategorySupport(const QString &currentModel, GenericNetworkModelAvailableInfo::Capability capacity) const
 {
     for (const auto &modelInfo : mAvailableModelsInfos) {
-        if (modelInfo.modelName() == currentModel) {
+        // currentModel is the model identifier (see TextAutoGenerateTextModelComboBox)
+        if (modelInfo.identifier() == currentModel) {
             return modelInfo.capabilities() & capacity;
         }
     }

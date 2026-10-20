@@ -174,4 +174,28 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenAIGeneric), GenericNetworkManager::Limitation::None);
 }
 
+void GenericNetworkServerInfoTest::shouldDefineDefaultModels()
+{
+    const GenericNetworkServerInfo info;
+    QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::Unknown).isEmpty());
+    QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::MistralAI).isEmpty());
+    QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::OpenAI).isEmpty());
+    QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::OpenAIGeneric).isEmpty());
+}
+
+void GenericNetworkServerInfoTest::shouldDefineModelSupportsTools()
+{
+    const GenericNetworkServerInfo info;
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Unknown, u"foo"_s));
+    QVERIFY(info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Anthropic, u"claude-opus-4-8"_s));
+    QVERIFY(info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/gemini-2.5-flash"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/gemini-embedding-001"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/gemini-2.5-flash-preview-tts"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/gemini-2.5-flash-image"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/imagen-4.0-generate-001"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/gemma-3-27b-it"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::MistralAI, u"mistral-large-latest"_s));
+    QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::OpenAI, u"gpt-4o"_s));
+}
+
 #include "moc_genericnetworkserverinfotest.cpp"

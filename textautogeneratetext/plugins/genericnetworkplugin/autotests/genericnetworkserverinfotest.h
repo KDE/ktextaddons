@@ -21,4 +21,6 @@ private Q_SLOTS:
     void shouldDefinePluginName();
     void shouldDefineLimitations();
     void shouldResponsesPath();
+    void shouldDefineDefaultModels();
+    void shouldDefineModelSupportsTools();
 };

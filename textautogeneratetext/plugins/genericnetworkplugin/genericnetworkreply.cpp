@@ -13,8 +13,9 @@ using namespace Qt::Literals::StringLiterals;
 GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}
 {
-    connect(mReply, &QNetworkReply::errorOccurred, mReply, [](QNetworkReply::NetworkError e) {
-        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply HTTP error:" << e;
+    connect(mReply, &QNetworkReply::errorOccurred, mReply, [this](QNetworkReply::NetworkError e) {
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG)
+            << "GenericNetworkReply HTTP error:" << e << mReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() << mReply->url();
     });
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply response finished";

@@ -9,6 +9,8 @@
 
 #include <KLocalizedString>
 
+#include <algorithm>
+
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkServerInfo::GenericNetworkServerInfo() = default;
 
