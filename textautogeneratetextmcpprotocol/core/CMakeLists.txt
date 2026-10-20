@@ -327,6 +327,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon
     McpProtocolPlugin
     McpProtocolPluginInterface
     McpProtocolSettings
+    McpProtocolCommonUtils
     REQUIRED_HEADERS TextAutoGenerateTextMcpProtocol_mcpprotocolcommon_HEADERS
     PREFIX TextAutoGenerateTextMcpProtocolCore
     RELATIVE common
@@ -523,8 +524,8 @@ target_link_libraries(
         Qt::Core
         Qt::Gui
         KF6::CoreAddons
-    PRIVATE
         KF6::ConfigCore
+    PRIVATE
         KF6::I18n
         qt6keychain
 )

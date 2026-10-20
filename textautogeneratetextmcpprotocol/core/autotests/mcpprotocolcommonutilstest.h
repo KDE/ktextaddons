@@ -16,4 +16,7 @@ public:
 
 private Q_SLOTS:
     void shouldGenerateAuthToken();
+    void shouldDefineMetaGroupName();
+    void shouldDefineMetaGroupTitle();
+    void shouldAddToolMeta();
 };
