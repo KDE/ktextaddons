@@ -22,6 +22,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     , mApiKey(new KPasswordLineEdit(this))
     , mInstanceName(new QLineEdit(this))
     , mCustomUrl(new QLineEdit(this))
+    , mCustomModels(new QLineEdit(this))
     , mMaxToken(new QSpinBox(this))
     , mTemperature(new QDoubleSpinBox(this))
     , mSeed(new QSpinBox(this))
@@ -43,11 +44,15 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mSeed->setMaximum(9999);
     mSeed->setObjectName(u"mSeed"_s);
     mCustomUrl->setObjectName(u"mCustomUrl"_s);
+    mCustomModels->setObjectName(u"mCustomModels"_s);
+    mCustomModels->setClearButtonEnabled(true);
+    mCustomModels->setPlaceholderText(i18nc("@info:placeholder", "Comma-separated, used when the server doesn't list its models"));
 
     mApiKey->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew : KPassword::RevealMode::Never);
 
     mMainLayout->addRow(i18n("Name:"), mInstanceName);
     mMainLayout->addRow(i18n("Custom URL:"), mCustomUrl);
+    mMainLayout->addRow(i18n("Models:"), mCustomModels);
 
     mMainLayout->addRow(i18n("Api Key:"), mApiKey);
     mMainLayout->addRow(i18n("Max Tokens:"), mMaxToken);
@@ -56,6 +61,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
 
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     KLineEditEventHandler::catchReturnKey(mInstanceName);
+    KLineEditEventHandler::catchReturnKey(mCustomModels);
     mWebSite->setObjectName(u"mWebSite"_s);
     mWebSite->setTextInteractionFlags(Qt::TextBrowserInteraction);
     mWebSite->setTextFormat(Qt::RichText);
@@ -78,6 +84,8 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setHasCustomUrl(bool b)
 {
     mMainLayout->labelForField(mCustomUrl)->setVisible(b);
     mCustomUrl->setVisible(b);
+    mMainLayout->labelForField(mCustomModels)->setVisible(b);
+    mCustomModels->setVisible(b);
 }
 
 void TextAutoGenerateNetworkPluginConfigureWidget::setApiKey(const QString &key)
@@ -156,6 +164,24 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setCustomUrl(const QString &u
 QString TextAutoGenerateNetworkPluginConfigureWidget::customUrl() const
 {
     return mCustomUrl->text();
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidget::setCustomModels(const QStringList &models)
+{
+    mCustomModels->setText(models.join(u", "_s));
+}
+
+QStringList TextAutoGenerateNetworkPluginConfigureWidget::customModels() const
+{
+    QStringList models;
+    const QStringList lst = mCustomModels->text().split(u',', Qt::SkipEmptyParts);
+    for (const QString &model : lst) {
+        const QString trimmed = model.trimmed();
+        if (!trimmed.isEmpty() && !models.contains(trimmed)) {
+            models.append(trimmed);
+        }
+    }
+    return models;
 }
 
 #include "moc_textautogeneratenetworkpluginconfigurewidget.cpp"

@@ -120,6 +120,18 @@ public:
      */
     [[nodiscard]] QString customUrl() const;
 
+    /*!
+     * Sets the models used when the server doesn't provide a list of models.
+     * Only visible when the instance has a custom url.
+     * \param models The model identifiers
+     */
+    void setCustomModels(const QStringList &models);
+    /*!
+     * Returns the models used when the server doesn't provide a list of models.
+     * \return The model identifiers
+     */
+    [[nodiscard]] QStringList customModels() const;
+
 Q_SIGNALS:
     /*!
      * \brief send true if we need to update button
@@ -131,6 +143,7 @@ private:
     KPasswordLineEdit *const mApiKey;
     QLineEdit *const mInstanceName;
     QLineEdit *const mCustomUrl;
+    QLineEdit *const mCustomModels;
     QSpinBox *const mMaxToken;
     QDoubleSpinBox *const mTemperature;
     QSpinBox *const mSeed;
