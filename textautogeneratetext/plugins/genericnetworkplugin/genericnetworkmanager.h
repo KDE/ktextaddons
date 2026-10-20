@@ -92,6 +92,8 @@ public:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;
+    [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QList<GenericNetworkModelAvailableInfo> fallbackModels() const;
+    TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void applyModelsInfos(const QList<GenericNetworkModelAvailableInfo> &modelsInfos);
     [[nodiscard]] bool hasCategorySupport(const QString &currentModel, GenericNetworkModelAvailableInfo::Capability capacity) const;
 
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;

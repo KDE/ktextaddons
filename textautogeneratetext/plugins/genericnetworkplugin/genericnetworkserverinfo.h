@@ -29,4 +29,6 @@ public:
     [[nodiscard]] static QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QString responsesPath(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static bool hasCustomUrl(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QList<GenericNetworkModelAvailableInfo> defaultModels(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static bool modelSupportsTools(GenericNetworkManager::PluginNetworkType type, const QString &identifier);
 };

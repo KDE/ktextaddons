@@ -29,6 +29,7 @@ void GenericNetworkNetworkPluginConfigureWidget::loadSettings()
     setApiKey(mManager->apiKey());
     if (mManager->hasCustomUrl()) {
         setCustomUrl(mManager->genericNetworkSettings()->customUrl());
+        setCustomModels(mManager->genericNetworkSettings()->customModels());
     }
 }
 
@@ -40,6 +41,7 @@ void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
     mManager->genericNetworkSettings()->setSeed(seed());
     if (mManager->hasCustomUrl()) {
         mManager->genericNetworkSettings()->setCustomUrl(customUrl());
+        mManager->genericNetworkSettings()->setCustomModels(customModels());
     }
     mManager->setApiKey(apiKey());
 }

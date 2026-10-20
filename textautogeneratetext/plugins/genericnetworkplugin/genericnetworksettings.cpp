@@ -36,6 +36,7 @@ void GenericNetworkSettings::load(const KConfigGroup &config)
     setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
     setSeed(config.readEntry(u"Seed"_s, 0));
     setCustomUrl(config.readEntry(u"CustomUrl"_s, QString()));
+    setCustomModels(config.readEntry(u"CustomModels"_s, QStringList()));
 }
 
 void GenericNetworkSettings::save(KConfigGroup &config)
@@ -44,6 +45,7 @@ void GenericNetworkSettings::save(KConfigGroup &config)
     config.writeEntry(u"MaxToken"_s, maxTokens());
     config.writeEntry(u"Seed"_s, seed());
     config.writeEntry(u"CustomUrl"_s, customUrl());
+    config.writeEntry(u"CustomModels"_s, customModels());
 }
 
 QString GenericNetworkSettings::customUrl() const
@@ -54,4 +56,14 @@ QString GenericNetworkSettings::customUrl() const
 void GenericNetworkSettings::setCustomUrl(const QString &newCustomUrl)
 {
     mCustomUrl = newCustomUrl;
+}
+
+QStringList GenericNetworkSettings::customModels() const
+{
+    return mCustomModels;
+}
+
+void GenericNetworkSettings::setCustomModels(const QStringList &newCustomModels)
+{
+    mCustomModels = newCustomModels;
 }

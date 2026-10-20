@@ -409,6 +409,82 @@ bool GenericNetworkServerInfo::hasCustomUrl(GenericNetworkManager::PluginNetwork
     return false;
 }
 
+QList<GenericNetworkModelAvailableInfo> GenericNetworkServerInfo::defaultModels(GenericNetworkManager::PluginNetworkType type)
+{
+    // Used when the server doesn't provide a "models" endpoint.
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return {};
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+    case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return {};
+    }
+    return {};
+}
+
+bool GenericNetworkServerInfo::modelSupportsTools(GenericNetworkManager::PluginNetworkType type, const QString &identifier)
+{
+    // Used when the "models" endpoint doesn't report tool support.
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return false;
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+        // All Claude models support tools
+        return true;
+    case GenericNetworkManager::PluginNetworkType::Gemini: {
+        // All Gemini chat models support function calling, the other models (embedding, image, tts…) don't
+        static const QStringList nonChatModels{u"embedding"_s, u"imagen"_s, u"image"_s, u"tts"_s, u"veo"_s, u"aqa"_s, u"lyria"_s};
+        return identifier.contains(u"gemini"_s) && std::none_of(nonChatModels.cbegin(), nonChatModels.cend(), [&identifier](const QString &str) {
+                   return identifier.contains(str);
+               });
+    }
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+    case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return false;
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric: {
+        return identifier.contains(u"claude"_s) || identifier.contains(u"gemini"_s);
+    }
+    }
+    return false;
+}
+
 GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type)
 {
     GenericNetworkManager::Limitations limits;

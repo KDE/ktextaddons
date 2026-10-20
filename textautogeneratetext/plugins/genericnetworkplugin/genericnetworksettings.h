@@ -7,6 +7,7 @@
 #include "plugincommonsettings.h"
 #include "textautogenerategenericnetwork_export.h"
 #include <QString>
+#include <QStringList>
 
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkSettings : public PluginCommonSettings
 {
@@ -26,8 +27,12 @@ public:
     [[nodiscard]] QString customUrl() const;
     void setCustomUrl(const QString &newCustomUrl);
 
+    [[nodiscard]] QStringList customModels() const;
+    void setCustomModels(const QStringList &newCustomModels);
+
 private:
     int mMaxTokens = 2048;
     int mSeed = 0;
     QString mCustomUrl;
+    QStringList mCustomModels;
 };

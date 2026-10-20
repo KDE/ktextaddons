@@ -50,6 +50,13 @@ void GenericNetworkManager::loadModels()
     connect(rep, &QNetworkReply::finished, rep, &QNetworkReply::deleteLater);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
+            // Some servers don't implement the "models" endpoint
+            const bool noModelsEndpoint = rep->error() == QNetworkReply::ContentNotFoundError
+                || rep->error() == QNetworkReply::ContentOperationNotPermittedError || rep->error() == QNetworkReply::OperationNotImplementedError;
+            if (noModelsEndpoint && !fallbackModels().isEmpty()) {
+                applyModelsInfos(fallbackModels());
+                return;
+            }
             ModelsInfo info;
             info.errorOccured = i18n("Failed to connect to interface at %1: %2", apiUrl(), rep->errorString());
             info.hasError = true;
@@ -59,32 +66,63 @@ void GenericNetworkManager::loadModels()
 
         GenericNetworkModelAvailableInfos infos;
         const auto json = QJsonDocument::fromJson(rep->readAll());
+        qDebug() << "********************json  " << json;
         const auto models = json["data"_L1].toArray();
         infos.parseModelsInfo(models);
-        mAvailableModelsInfos = infos.infos();
-        ModelsInfo info;
-        // qDebug() << " json " << json;
-        for (const auto &parsedInfo : std::as_const(mAvailableModelsInfos)) {
-            TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
-            i.identifier = parsedInfo.identifier();
-            if (parsedInfo.modelName().isEmpty()) {
-                i.modelName = i.identifier;
-            } else {
-                i.modelName = parsedInfo.modelName();
-            }
-            info.models.push_back(std::move(i));
+        if (infos.infos().isEmpty()) {
+            applyModelsInfos(fallbackModels());
+        } else {
+            applyModelsInfos(infos.infos());
         }
-        std::sort(info.models.begin(),
-                  info.models.end(),
-                  [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
-                     const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
-                      return left.modelName.compare(right.modelName, Qt::CaseInsensitive) < 0;
-                  });
-
-        info.isReady = !info.models.isEmpty();
-        info.hasError = false;
-        Q_EMIT modelsLoadDone(info);
     });
+}
+
+QList<GenericNetworkModelAvailableInfo> GenericNetworkManager::fallbackModels() const
+{
+    QList<GenericNetworkModelAvailableInfo> models = mServerInfo->defaultModels(mPluginNetworkType);
+    const QStringList customModels = mGenericNetworkSettings->customModels();
+    for (const QString &identifier : customModels) {
+        const bool alreadyExists = std::any_of(models.cbegin(), models.cend(), [&identifier](const GenericNetworkModelAvailableInfo &model) {
+            return model.identifier() == identifier;
+        });
+        if (!alreadyExists) {
+            GenericNetworkModelAvailableInfo model;
+            model.setIdentifier(identifier);
+            models.append(std::move(model));
+        }
+    }
+    return models;
+}
+
+void GenericNetworkManager::applyModelsInfos(const QList<GenericNetworkModelAvailableInfo> &modelsInfos)
+{
+    mAvailableModelsInfos = modelsInfos;
+    for (auto &modelInfo : mAvailableModelsInfos) {
+        if (mServerInfo->modelSupportsTools(mPluginNetworkType, modelInfo.identifier())) {
+            modelInfo.setCapabilities(modelInfo.capabilities() | GenericNetworkModelAvailableInfo::Capability::Tools);
+        }
+    }
+    ModelsInfo info;
+    for (const auto &parsedInfo : std::as_const(mAvailableModelsInfos)) {
+        TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
+        i.identifier = parsedInfo.identifier();
+        if (parsedInfo.modelName().isEmpty()) {
+            i.modelName = i.identifier;
+        } else {
+            i.modelName = parsedInfo.modelName();
+        }
+        info.models.push_back(std::move(i));
+    }
+    std::sort(info.models.begin(),
+              info.models.end(),
+              [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
+                 const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
+                  return left.modelName.compare(right.modelName, Qt::CaseInsensitive) < 0;
+              });
+
+    info.isReady = !info.models.isEmpty();
+    info.hasError = false;
+    Q_EMIT modelsLoadDone(info);
 }
 
 TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
