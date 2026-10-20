@@ -36,12 +36,17 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListRootsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListRootsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLoggingMessageNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolProgressNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceUpdatedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRootsListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSubscribeRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUnsubscribeRequest>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 namespace
@@ -93,6 +98,10 @@ qint64 McpProtocolClientProtocolManager::executeAction(MethodType type)
         return listRequest(type);
     case MethodType::ReadResource:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use readResource() to get a resource.";
+        break;
+    case MethodType::SubscribeResource:
+    case MethodType::UnsubscribeResource:
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use subscribeResource()/unsubscribeResource() to follow a resource.";
         break;
     case MethodType::CallTool:
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Use callTool() to call a tool.";
@@ -156,6 +165,50 @@ qint64 McpProtocolClientProtocolManager::readResource(const QString &url)
     request.setId(identifier);
     request.setParams(std::move(params));
     return sendRequest(McpProtocolReadResourceRequest::toJson(request), identifier, MethodType::ReadResource);
+}
+
+qint64 McpProtocolClientProtocolManager::subscribeResource(const QString &uri)
+{
+    return resourceSubscriptionRequest(uri, MethodType::SubscribeResource);
+}
+
+qint64 McpProtocolClientProtocolManager::unsubscribeResource(const QString &uri)
+{
+    return resourceSubscriptionRequest(uri, MethodType::UnsubscribeResource);
+}
+
+qint64 McpProtocolClientProtocolManager::resourceSubscriptionRequest(const QString &uri, MethodType type)
+{
+    if (!mClient || !mInitialized) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Initialization not finished. Can't execute" << type << uri;
+        return -1;
+    }
+    if (!serverSupports(type)) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server doesn't support resource subscription. Can't execute" << type << uri;
+        return -1;
+    }
+    if (uri.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "resource uri is empty";
+        return -1;
+    }
+    const qint64 identifier = requestId();
+    QJsonObject request;
+    if (type == MethodType::SubscribeResource) {
+        McpProtocolSubscribeRequestParams params;
+        params.setUri(uri);
+        McpProtocolSubscribeRequest subscribeRequest;
+        subscribeRequest.setId(identifier);
+        subscribeRequest.setParams(std::move(params));
+        request = McpProtocolSubscribeRequest::toJson(subscribeRequest);
+    } else {
+        McpProtocolUnsubscribeRequestParams params;
+        params.setUri(uri);
+        McpProtocolUnsubscribeRequest unsubscribeRequest;
+        unsubscribeRequest.setId(identifier);
+        unsubscribeRequest.setParams(std::move(params));
+        request = McpProtocolUnsubscribeRequest::toJson(unsubscribeRequest);
+    }
+    return sendRequest(request, identifier, type);
 }
 
 bool McpProtocolClientProtocolManager::elicitationSupported() const
@@ -359,6 +412,9 @@ bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
     case MethodType::ResourceTemplates:
     case MethodType::ReadResource:
         return capabilities.resources().has_value();
+    case MethodType::SubscribeResource:
+    case MethodType::UnsubscribeResource:
+        return capabilities.resources().has_value() && capabilities.resources()->subscribe().value_or(false);
     case MethodType::Unknown:
     case MethodType::Ping:
     case MethodType::Initialize:
@@ -392,8 +448,12 @@ qint64 McpProtocolClientProtocolManager::callTool(const QString &name, const QJs
         }
         params.setArguments(std::move(map));
     }
-    McpProtocolCallToolRequest request;
     const qint64 identifier = requestId();
+    // Request id is used as progress token: progressReceived() is emitted with it
+    McpProtocolCallToolRequestParams::Meta meta;
+    meta.setProgressToken(McpProtocolUtils::ProgressToken(identifier));
+    params.setMeta(std::move(meta));
+    McpProtocolCallToolRequest request;
     request.setId(identifier);
     request.setParams(std::move(params));
     return sendRequest(McpProtocolCallToolRequest::toJson(request), identifier, MethodType::CallTool);
@@ -594,7 +654,33 @@ void McpProtocolClientProtocolManager::serverNotificationReceived(const QJsonObj
                 Q_EMIT elicitationCompleted(elicitationId);
             }
         }
+    } else if (method == QLatin1StringView(McpProtocolResourceUpdatedNotification::type())) {
+        if (const QString uri = McpProtocolResourceUpdatedNotification::fromJson(obj).params().uri(); !uri.isEmpty()) {
+            Q_EMIT resourceUpdated(uri);
+        }
+    } else if (method == QLatin1StringView(McpProtocolLoggingMessageNotification::type())) {
+        Q_EMIT loggingMessageReceived(McpProtocolLoggingMessageNotification::fromJson(obj).params());
+    } else if (method == QLatin1StringView(McpProtocolProgressNotification::type())) {
+        progressNotificationReceived(obj);
+    } else {
+        qDebug() << "obj received not emitted" << obj;
     }
+}
+
+void McpProtocolClientProtocolManager::progressNotificationReceived(const QJsonObject &obj)
+{
+    const McpProtocolProgressNotificationParams params = McpProtocolProgressNotification::fromJson(obj).params();
+    // We only send request ids as progress token
+    const McpProtocolUtils::ProgressToken progressToken = params.progressToken();
+    const qint64 *token = std::get_if<qint64>(&progressToken);
+    const auto it = token ? mPendingRequests.find(*token) : mPendingRequests.end();
+    if (it == mPendingRequests.end()) {
+        qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Progress received for an unknown token:" << progressToken;
+        return;
+    }
+    // Server is still working on this request: don't let it time out
+    it->deadline = QDeadlineTimer(mRequestTimeout);
+    Q_EMIT progressReceived(it->originalId, params);
 }
 
 QString McpProtocolClientProtocolManager::listKey(MethodType type)
@@ -610,6 +696,8 @@ QString McpProtocolClientProtocolManager::listKey(MethodType type)
         return u"resourceTemplates"_s;
     case MethodType::GetPrompt:
     case MethodType::ReadResource:
+    case MethodType::SubscribeResource:
+    case MethodType::UnsubscribeResource:
     case MethodType::Unknown:
     case MethodType::Ping:
     case MethodType::Initialize:

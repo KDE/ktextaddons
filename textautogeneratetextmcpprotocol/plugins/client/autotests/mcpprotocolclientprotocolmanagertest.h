@@ -44,4 +44,8 @@ private Q_SLOTS:
     void shouldReturnErrorOfPage();
     void shouldEmitListChangedSignals();
     void shouldLogMessages();
+    void shouldSubscribeResource();
+    void shouldNotSubscribeWhenServerDoesNotSupportSubscription();
+    void shouldEmitLoggingMessage();
+    void shouldEmitProgress();
 };

@@ -29,6 +29,8 @@ class McpProtocolClient;
 class McpProtocolCreateMessageRequest;
 class McpProtocolCreateMessageResult;
 class McpProtocolElicitResult;
+class McpProtocolLoggingMessageNotificationParams;
+class McpProtocolProgressNotificationParams;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientProtocolManager : public QObject
 {
     Q_OBJECT
@@ -46,6 +48,8 @@ public:
         CallTool,
         GetPrompt,
         ReadResource,
+        SubscribeResource,
+        UnsubscribeResource,
     };
     Q_ENUM(MethodType)
 
@@ -133,6 +137,18 @@ public:
      * read with McpProtocolReadResourceResult::fromJson(). Return request id, -1 if request was not sent.
      */
     [[nodiscard]] qint64 readResource(const QString &uri);
+
+    /*!
+     * Subscribe to updates of resource \a uri: resourceUpdated() is then emitted when it changes.
+     * Server must support resources subscription. Response is emitted with received() and
+     * MethodType::SubscribeResource. Return request id, -1 if request was not sent.
+     */
+    [[nodiscard]] qint64 subscribeResource(const QString &uri);
+    /*!
+     * Stop receiving updates of resource \a uri. Response is emitted with received() and
+     * MethodType::UnsubscribeResource. Return request id, -1 if request was not sent.
+     */
+    [[nodiscard]] qint64 unsubscribeResource(const QString &uri);
 
     /*!
      * Return true if "elicitation" capability (form mode) is announced to server.
@@ -244,6 +260,21 @@ Q_SIGNALS:
      * Server informed that list of resources changed.
      */
     void resourcesListChanged();
+    /*!
+     * Subscribed resource \a uri changed: call readResource() to get new content.
+     */
+    void resourceUpdated(const QString &uri);
+
+    /*!
+     * Server sent a log message (notifications/message).
+     */
+    void loggingMessageReceived(const TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotificationParams &params);
+
+    /*!
+     * Server informed about progress of request \a requestId (id returned by callTool()).
+     * Request timeout is restarted on each progress notification.
+     */
+    void progressReceived(qint64 requestId, const TextAutoGenerateTextMcpProtocolCore::McpProtocolProgressNotificationParams &params);
 
     /*!
      * Server requested user input: answer it with respondToElicitation().
@@ -301,6 +332,8 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initializeResponseReceived(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void answerServerRequest(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void serverNotificationReceived(const QJsonObject &obj);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void progressNotificationReceived(const QJsonObject &obj);
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 resourceSubscriptionRequest(const QString &uri, MethodType type);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT qint64 sendRequest(const QJsonObject &request, qint64 identifier, MethodType type, PendingRequest pending);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendCancelledNotification(qint64 identifier, const QString &reason);

@@ -18,6 +18,8 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLoggingMessageNotificationParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolProgressNotificationParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 using namespace Qt::Literals::StringLiterals;
@@ -1017,6 +1019,120 @@ void McpProtocolClientProtocolManagerTest::shouldLogMessages()
     QCOMPARE(infos.at(1).identifier, identifier);
     QCOMPARE(infos.at(1).type, MethodType::ListTools);
     QVERIFY(infos.at(1).message.contains("result"_L1));
+}
+
+void McpProtocolClientProtocolManagerTest::shouldSubscribeResource()
+{
+    using MethodType = McpProtocolClientProtocolManager::MethodType;
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            // Server informs that subscribed resource changed before response
+            const QJsonObject updated{{"jsonrpc"_L1, u"2.0"_s},
+                                      {"method"_L1, u"notifications/resources/updated"_s},
+                                      {"params"_L1, QJsonObject{{"uri"_L1, obj.value("params"_L1).toObject().value("uri"_L1)}}}};
+            FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(updated) + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+        },
+        QJsonObject{{"resources"_L1, QJsonObject{{"subscribe"_L1, true}}}}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    // Not initialized
+    QCOMPARE(manager.subscribeResource(u"file:///foo.txt"_s), -1);
+    initialize(manager);
+    QCOMPARE(manager.subscribeResource(QString()), -1);
+    // Use subscribeResource()
+    QCOMPARE(manager.executeAction(MethodType::SubscribeResource), -1);
+
+    const QSignalSpy updatedSpy(&manager, &McpProtocolClientProtocolManager::resourceUpdated);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.subscribeResource(u"file:///foo.txt"_s);
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 2);
+    QCOMPARE(updatedSpy.count(), 1);
+    QCOMPARE(updatedSpy.at(0).at(0).toString(), u"file:///foo.txt"_s);
+    QCOMPARE(receivedSpy.at(1).at(1).value<MethodType>(), MethodType::SubscribeResource);
+    QCOMPARE(receivedSpy.at(1).at(0).toJsonObject().value("id"_L1).toInteger(), identifier);
+    QCOMPARE(postedMessages(fakeServer, u"resources/subscribe"_s).constFirst().value("params"_L1).toObject().value("uri"_L1).toString(), u"file:///foo.txt"_s);
+
+    const qint64 unsubscribeIdentifier = manager.unsubscribeResource(u"file:///foo.txt"_s);
+    QVERIFY(unsubscribeIdentifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 4);
+    QCOMPARE(receivedSpy.at(3).at(1).value<MethodType>(), MethodType::UnsubscribeResource);
+    QCOMPARE(postedMessages(fakeServer, u"resources/unsubscribe"_s).count(), 1);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldNotSubscribeWhenServerDoesNotSupportSubscription()
+{
+    FakeMcpHttpServer fakeServer;
+    // Resources without "subscribe"
+    fakeServer.setHandler(createHandler(
+        u"2025-11-25"_s,
+        [](const QJsonObject &obj, QTcpSocket *socket) {
+            sendJson(socket, result(obj.value("id"_L1)));
+        },
+        QJsonObject{{"resources"_L1, QJsonObject{}}}));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QCOMPARE(manager.subscribeResource(u"file:///foo.txt"_s), -1);
+    QCOMPARE(manager.unsubscribeResource(u"file:///foo.txt"_s), -1);
+    QTest::qWait(100);
+    QVERIFY(postedMessages(fakeServer, u"resources/subscribe"_s).isEmpty());
+}
+
+void McpProtocolClientProtocolManagerTest::shouldEmitLoggingMessage()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        const QJsonObject log{{"jsonrpc"_L1, u"2.0"_s},
+                              {"method"_L1, u"notifications/message"_s},
+                              {"params"_L1, QJsonObject{{"level"_L1, u"warning"_s}, {"logger"_L1, u"db"_s}, {"data"_L1, u"Slow query"_s}}}};
+        FakeMcpHttpServer::sendEventStream(socket, FakeMcpHttpServer::jsonEvent(log) + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1))));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotificationParams> logs;
+    connect(&manager,
+            &McpProtocolClientProtocolManager::loggingMessageReceived,
+            this,
+            [&logs](const TextAutoGenerateTextMcpProtocolCore::McpProtocolLoggingMessageNotificationParams &params) {
+                logs.append(params);
+            });
+    manager.executeAction(McpProtocolClientProtocolManager::MethodType::Ping);
+    QTRY_COMPARE(logs.count(), 1);
+    QCOMPARE(logs.at(0).level(), TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::LoggingLevel::Warning);
+    QCOMPARE(logs.at(0).logger(), u"db"_s);
+    QCOMPARE(logs.at(0).data().toString(), u"Slow query"_s);
+}
+
+void McpProtocolClientProtocolManagerTest::shouldEmitProgress()
+{
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(u"2025-11-25"_s, [](const QJsonObject &obj, QTcpSocket *socket) {
+        // Server reports progress with token sent by client, then an unknown token
+        const QJsonValue token = obj.value("params"_L1).toObject().value("_meta"_L1).toObject().value("progressToken"_L1);
+        const auto progress = [](const QJsonValue &progressToken, double value) {
+            return QJsonObject{{"jsonrpc"_L1, u"2.0"_s},
+                               {"method"_L1, u"notifications/progress"_s},
+                               {"params"_L1, QJsonObject{{"progressToken"_L1, progressToken}, {"progress"_L1, value}, {"total"_L1, 2}}}};
+        };
+        FakeMcpHttpServer::sendEventStream(socket,
+                                           FakeMcpHttpServer::jsonEvent(progress(token, 1)) + FakeMcpHttpServer::jsonEvent(progress(u"unknown"_s, 1))
+                                               + FakeMcpHttpServer::jsonEvent(progress(token, 2))
+                                               + FakeMcpHttpServer::jsonEvent(result(obj.value("id"_L1), QJsonObject{{"content"_L1, QJsonArray{}}})));
+    }));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    initialize(manager);
+    const QSignalSpy progressSpy(&manager, &McpProtocolClientProtocolManager::progressReceived);
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    const qint64 identifier = manager.callTool(u"weather"_s);
+    QVERIFY(identifier > 0);
+    QTRY_COMPARE(receivedSpy.count(), 4);
+    QCOMPARE(progressSpy.count(), 2);
+    QCOMPARE(progressSpy.at(0).at(0).toLongLong(), identifier);
+    QCOMPARE(progressSpy.at(1).at(0).toLongLong(), identifier);
+
+    const QJsonObject request = postedMessages(fakeServer, u"tools/call"_s).constFirst();
+    QCOMPARE(request.value("params"_L1).toObject().value("_meta"_L1).toObject().value("progressToken"_L1).toInteger(), identifier);
 }
 
 #include "moc_mcpprotocolclientprotocolmanagertest.cpp"
