@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-17 00:48+0000\n"
-"PO-Revision-Date: 2026-10-15 09:15+0200\n"
+"PO-Revision-Date: 2026-10-16 09:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3656,7 +3656,7 @@ msgstr "Icona:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "Agent"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3697,34 +3697,27 @@ msgid "Command Completion:"
 msgstr "Compleció d'ordres:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "Afig una etiqueta…"
+msgstr "Afig un agent…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "Elimina una etiqueta"
+msgstr "Elimina l'agent"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this tag (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "Voleu eliminar esta etiqueta (%1)?"
+msgstr "Voleu eliminar este agent (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "Elimina una etiqueta"
+msgstr "Elimina l'agent"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3750,34 +3743,27 @@ msgid "Remove Prompt"
 msgstr "Elimina la petició"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "Afig una etiqueta…"
+msgstr "Afig una habilitat…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "Elimina el model"
+msgstr "Elimina l'habilitat"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "Voleu eliminar este model (%1)?"
+msgstr "Voleu eliminar esta habilitat (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "Elimina el model"
+msgstr "Elimina l'habilitat"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3983,18 +3969,17 @@ msgstr "S'ha produït un error"
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:42
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "Només de lectura"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Modified At:"
+#, kde-format
 msgid "Modifies data"
-msgstr "Modificat el:"
+msgstr "Modifica dades"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:46
 #, kde-format
 msgid "May delete or overwrite data"
-msgstr ""
+msgstr "Pot suprimir o sobreescriure dades"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:59
 #, kde-format

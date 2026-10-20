@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-18 00:47+0000\n"
-"PO-Revision-Date: 2026-10-08 16:40+0200\n"
+"POT-Creation-Date: 2026-10-20 00:51+0000\n"
+"PO-Revision-Date: 2026-10-19 15:55+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format
@@ -38,34 +38,32 @@ msgstr "HTTP с поточно предаване"
 #: core/server/mcpprotocolserverprotocolmanager.cpp:97
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "Стартиране на сървъра"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:99
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "Стартиране на сървъра на %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:370
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "Заявка %1, прекратена от клиента"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:387
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Грешка: %1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:393
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server started"
-msgstr "Сървърът не е готов."
+msgstr "Сървърът е стартиран"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:401
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server stopped"
-msgstr "Сървърът не е готов."
+msgstr "Сървърът е спрян"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -126,28 +124,25 @@ msgstr "Изпращането на съобщения все още не е в�
 
 #: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:128
-#, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
+#, kde-format
 msgid "Impossible to start server: %1"
-msgstr "Невъзможно е стартирането на сървъра. URL адресът е невалиден."
+msgstr "Невъзможно е стартирането на сървъра: %1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "Stdio сървърът не се поддържа на тази платформа."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:462
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "Сървърът не е готов."
+msgstr "Сървърът не е стартиран."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "Полученото съобщение от сървъра е твърде голямо."
+msgstr "Полученото съобщение от клиента е твърде голямо."
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -165,25 +160,25 @@ msgstr "Редактиране на сървър"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Folder…"
-msgstr ""
+msgstr "Папка…"
 
 #: widgets/client/addmcpserverrootswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Folder"
-msgstr ""
+msgstr "Избиране на папка"
 
 #: widgets/client/addmcpserverrootswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Folders that server is allowed to access"
-msgstr ""
+msgstr "Папки, до които сървърът има достъп"
 
 #: widgets/client/addmcpserverrootswidget.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr ""
+msgstr "Избиране на папка"
 
 #: widgets/client/addmcpserverwidget.cpp:38
 #, kde-format
@@ -195,7 +190,7 @@ msgstr "Име:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon:"
-msgstr ""
+msgstr "Икона:"
 
 #: widgets/client/addmcpserverwidget.cpp:45
 #, kde-format
@@ -207,21 +202,36 @@ msgstr "Вид:"
 #, kde-format
 msgctxt "@label"
 msgid "Allowed folders:"
-msgstr ""
+msgstr "Разрешени папки:"
 
-#: widgets/client/addmcpsseserverwidget.cpp:26
-#: widgets/client/addmcpstreamablehttpserverwidget.cpp:26
+#: widgets/client/addmcpsseserverwidget.cpp:28
+#: widgets/client/addmcpstreamablehttpserverwidget.cpp:28
+#: widgets/server/mcpprotocolserverconfigurewidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
 msgstr "URL:"
 
-#: widgets/client/addmcpsseserverwidget.cpp:29
-#: widgets/client/addmcpstreamablehttpserverwidget.cpp:30
+#: widgets/client/addmcpsseserverwidget.cpp:31
+#: widgets/client/addmcpstreamablehttpserverwidget.cpp:32
 #, kde-format
 msgctxt "@label"
 msgid "Headers:"
 msgstr "Заглавни части:"
+
+#: widgets/client/addmcpsseserverwidget.cpp:33
+#: widgets/client/addmcpstreamablehttpserverwidget.cpp:34
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
+msgstr ""
+
+#: widgets/client/addmcpsseserverwidget.cpp:34
+#: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Authentication token:"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverwidget.cpp:24
 #, kde-format
@@ -331,31 +341,76 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Добавяне на сървър…"
 
-#: widgets/server/mcpprotocolserverconfiguredialog.cpp:19
+#: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Server Configuration"
+msgstr "Конфигурация на сървъра"
+
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:22
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy"
 msgstr ""
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:21
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
 #, kde-format
 msgid "Token:"
+msgstr "Токен:"
+
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy token to clipboard"
 msgstr ""
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:30
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
+#, kde-format
+msgid ""
+"Clients which use the current token will not be able to connect until they "
+"are updated with the new one."
+msgstr ""
+
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Regenerate"
+msgctxt "@title:window"
+msgid "Regenerate Token"
+msgstr "Регенериране"
+
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
+msgstr "Регенериране"
+
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Regenerate"
+msgctxt "@action:button"
+msgid "Generate"
+msgstr "Регенериране"
+
+#: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
+#, kde-format
+msgctxt "@option:check"
+msgid "Require authentication token"
 msgstr ""
 
-#~ msgid "Impossible to start server. Command is empty."
-#~ msgstr "Невъзможно е стартирането на сървъра Липсва команда."
+#: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
+msgstr ""
 
-#~ msgid "Impossible to start server. Arguments are invalid."
-#~ msgstr "Невъзможно е стартирането на сървъра. Аргументите са невалидни."
-
-#~ msgid "Impossible to send message. Server is not running."
-#~ msgstr "Неуспешно изпращане на съобщението. Сървърът не работи."
-
-#~ msgid "Streamable HTTP transport is not implemented yet."
-#~ msgstr "Транспортът поточно HTTP все още не е имплементиран."
+#: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Clients must send this token as \"Authorization: Bearer\" header. Token is "
+"stored in the system wallet."
+msgstr ""

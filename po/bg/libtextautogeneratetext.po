@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-17 00:48+0000\n"
-"PO-Revision-Date: 2026-10-08 16:38+0200\n"
+"PO-Revision-Date: 2026-10-19 15:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -62,22 +62,22 @@ msgstr "Импортирането на файл е невъзможно."
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "Няма достъпен LLM."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "Заявката за вземане на проби съдържа неподдържано съдържание."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "LLM не поддържа заявки за семплиране."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "LLM върна празен отговор."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
@@ -90,6 +90,9 @@ msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
 "the user to tell you when it is done, then call the tool again."
 msgstr ""
+"Инструментът \"%1\" изисква оторизация: потребителят бе помолен да отвори "
+"уеб страница. Запитване към потребителя за потвърждение при завършване, след "
+"което повторно извикване на инструмента."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
@@ -297,7 +300,7 @@ msgstr "<br><b>Токен за завършване:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "MCP инструмент: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
@@ -3197,7 +3200,7 @@ msgstr "Инфо на метаданни"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "Стартиране на инструменти без потвърждение:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3323,42 +3326,42 @@ msgstr "Добавяне на екземпляр…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from MCP Server"
-msgstr ""
+msgstr "Заявка от MCP сървър"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Приемане"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Отказ"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
-msgstr ""
+msgstr "Заявка от %1"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (задължително):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3401,42 +3404,40 @@ msgstr "Забраняване"
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[Изображение]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[Аудио]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[Извикване на инструмент]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[Резултат от инструмента]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr ""
+msgstr "Заявка за вземане на проби от MCP сървър"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "Изпращане към LLM"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Проект"
+msgstr "Отхвърляне"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3444,6 +3445,8 @@ msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
 msgstr ""
+"MCP сървърът \"%1\" иска да изпрати следните съобщения до LLM. Генерираният "
+"отговор ще бъде върнат към сървъра."
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
 #, kde-format
@@ -3451,6 +3454,8 @@ msgid ""
 "System prompt:\n"
 "%1"
 msgstr ""
+"Системна инструкция:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3458,6 +3463,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"Асистент:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3465,6 +3472,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"Потребител:\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3623,7 +3632,7 @@ msgstr "Икона:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "Агент"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3645,7 +3654,7 @@ msgstr "Пътуване"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "Недефинирано"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3661,37 +3670,30 @@ msgstr "Категория:"
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
-msgstr ""
+msgstr "Допълване на команди:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "Добавяне на таг…"
+msgstr "Добавяне на агент…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "Премахване на таг"
+msgstr "Премахване на агент"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this tag (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "Желаете ли да премахнете този таг (%1)?"
+msgstr "Желаете ли премахване на този агент (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "Премахване на таг"
+msgstr "Премахване на агент"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3717,34 +3719,27 @@ msgid "Remove Prompt"
 msgstr "Премахване на промпта"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "Добавяне на таг…"
+msgstr "Добавяне на умение…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "Премахване на модел"
+msgstr "Премахване на умение"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "Искате ли да премахнете този модел (%1)?"
+msgstr "Желаете ли да премахнете това умение (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "Премахване на модел"
+msgstr "Премахване на умение"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3950,18 +3945,17 @@ msgstr "Грешка"
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:42
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "Само за четене"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Modified At:"
+#, kde-format
 msgid "Modifies data"
-msgstr "Променено в:"
+msgstr "Модифициране на данни"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:46
 #, kde-format
 msgid "May delete or overwrite data"
-msgstr ""
+msgstr "Възможно изтриване или презаписване на данни"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:59
 #, kde-format
@@ -3987,10 +3981,9 @@ msgstr[0] "1 инструмент"
 msgstr[1] "%1 инструмента"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:180
-#, fuzzy, kde-format
-#| msgid "Calling tool \"%1\"…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "Извикване на инструмент „%1“…"
+msgstr "Зареждане на инструменти…"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:187
 #, kde-format
