@@ -7,25 +7,16 @@
 #include <QDateTime>
 #include <QJsonObject>
 #include <QTimer>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequest>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequestParams>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesResult>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesRequest>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPrompt>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptArgument>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceTemplate>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerPrompt>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerResource>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerTool>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerToolCall>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <functional>
 using namespace Qt::Literals::StringLiterals;
@@ -64,6 +55,34 @@ void addFunctionTool(McpProtocolServerProtocolManager *manager, const McpProtoco
 {
     manager->addTool(std::make_unique<FunctionTool>(definition, std::move(handler)));
 }
+
+class GreetingPrompt : public McpProtocolServerPrompt
+{
+public:
+    [[nodiscard]] McpProtocolPrompt definition() const override
+    {
+        return createPrompt(u"greeting"_s, u"Say hello to someone"_s, {createArgument(u"name"_s, u"Name of the person"_s, true)});
+    }
+
+    [[nodiscard]] McpProtocolGetPromptResult get(const QMap<QString, QString> &arguments) const override
+    {
+        return createUserTextResult(u"Say hello to %1"_s.arg(arguments.value(u"name"_s)), u"Greeting"_s);
+    }
+};
+
+class TextResource : public McpProtocolServerResource
+{
+public:
+    [[nodiscard]] McpProtocolResource definition() const override
+    {
+        return createResource(u"file:///resource1"_s, u"resource1"_s, u"description resource1"_s, u"text/plain"_s);
+    }
+
+    [[nodiscard]] McpProtocolReadResourceResult read() const override
+    {
+        return textResult(u"Content of resource1"_s);
+    }
+};
 }
 
 McpTestServer::McpTestServer(QObject *parent)
@@ -118,6 +137,8 @@ McpTestServer::McpTestServer(QObject *parent)
                             call->finishWithText(u"Waited %1 ms"_s.arg(delay));
                         });
                     });
+    addPrompt(std::make_unique<GreetingPrompt>());
+    addResource(std::make_unique<TextResource>());
 }
 
 McpTestServer::~McpTestServer() = default;
@@ -161,75 +182,22 @@ void McpTestServer::pingClient()
     send(McpProtocolPingRequest::toJson(request));
 }
 
-McpProtocolServerCapabilities McpTestServer::capabilities() const
-{
-    McpProtocolServerCapabilities capabilities = McpProtocolServerProtocolManager::capabilities();
-    capabilities.setPrompts(McpProtocolServerCapabilities::Prompts().listChanged(false));
-    capabilities.setResources(McpProtocolServerCapabilities::Resources());
-    return capabilities;
-}
-
 bool McpTestServer::handleCustomRequest(const QJsonValue &id, const QByteArray &method, const QJsonObject &params)
 {
-    if (method == McpProtocolListPromptsRequest::type()) {
-        McpProtocolPromptArgument argument;
-        argument.setName(u"name"_s);
-        argument.setDescription(u"Name of the person"_s);
-        argument.setRequired(true);
-
-        McpProtocolPrompt prompt;
-        prompt.setName(u"greeting"_s);
-        prompt.setDescription(u"Say hello to someone"_s);
-        prompt.setArguments(QList<McpProtocolPromptArgument>{argument});
-
-        McpProtocolListPromptsResult result;
-        result.setPrompts({prompt});
-        sendResult(id, McpProtocolListPromptsResult::toJson(result));
-    } else if (method == McpProtocolGetPromptRequest::type()) {
-        getPrompt(id, params);
-    } else if (method == McpProtocolListResourceTemplatesRequest::type()) {
-        McpProtocolResourceTemplate resourceTemplate;
-        resourceTemplate.setUriTemplate(u"file:///{path}"_s);
-        resourceTemplate.setName(u"file"_s);
-        resourceTemplate.setDescription(u"A local file"_s);
-        resourceTemplate.setMimeType(u"text/plain"_s);
-
-        McpProtocolListResourceTemplatesResult result;
-        result.setResourceTemplates({resourceTemplate});
-        sendResult(id, McpProtocolListResourceTemplatesResult::toJson(result));
-    } else if (method == McpProtocolListResourcesRequest::type()) {
-        McpProtocolResource resource;
-        resource.setName(u"resource1"_s);
-        resource.setDescription(u"description resource1"_s);
-        resource.setUri(u"file:///resource1"_s);
-        McpProtocolListResourcesResult result;
-        result.setResources({resource});
-
-        sendResult(id, McpProtocolListResourcesResult::toJson(result));
-    } else {
+    Q_UNUSED(params)
+    if (method != McpProtocolListResourceTemplatesRequest::type()) {
         return false;
     }
+    McpProtocolResourceTemplate resourceTemplate;
+    resourceTemplate.setUriTemplate(u"file:///{path}"_s);
+    resourceTemplate.setName(u"file"_s);
+    resourceTemplate.setDescription(u"A local file"_s);
+    resourceTemplate.setMimeType(u"text/plain"_s);
+
+    McpProtocolListResourceTemplatesResult result;
+    result.setResourceTemplates({resourceTemplate});
+    sendResult(id, McpProtocolListResourceTemplatesResult::toJson(result));
     return true;
-}
-
-void McpTestServer::getPrompt(const QJsonValue &id, const QJsonObject &params)
-{
-    const McpProtocolGetPromptRequestParams getPromptParams = McpProtocolGetPromptRequestParams::fromJson(params);
-    if (getPromptParams.name() != "greeting"_L1) {
-        sendError(id, invalidParamsCode, u"Unknown prompt: %1"_s.arg(getPromptParams.name()));
-        return;
-    }
-    const QString name = getPromptParams.arguments().value_or(QMap<QString, QString>{}).value(u"name"_s);
-    McpProtocolTextContent content;
-    content.setText(u"Say hello to %1"_s.arg(name));
-    McpProtocolPromptMessage message;
-    message.setRole(McpProtocolUtils::Role::User);
-    message.setContent(content);
-
-    McpProtocolGetPromptResult result;
-    result.setDescription(u"Greeting"_s);
-    result.setMessages({message});
-    sendResult(id, McpProtocolGetPromptResult::toJson(result));
 }
 
 #include "moc_mcptestserver.cpp"

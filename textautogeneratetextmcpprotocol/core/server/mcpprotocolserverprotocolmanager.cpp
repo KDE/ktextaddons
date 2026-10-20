@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpprotocolserverprotocolmanager.h"
+#include "mcpprotocolserverprompt.h"
+#include "mcpprotocolserverresource.h"
 #include "mcpprotocolservertool.h"
 #include "mcpprotocolservertoolcall.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
@@ -14,15 +16,26 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCErrorResponse>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolJSONRPCResultResponse>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPaginatedRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptArgument>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
@@ -204,9 +217,110 @@ QList<McpProtocolTool> McpProtocolServerProtocolManager::tools() const
 
 void McpProtocolServerProtocolManager::sendToolListChanged()
 {
+    sendNotification(McpProtocolToolListChangedNotification::toJson({}));
+}
+
+void McpProtocolServerProtocolManager::sendNotification(const QJsonObject &notification)
+{
     if (mRunning) {
-        send(McpProtocolToolListChangedNotification::toJson({}));
+        send(notification);
     }
+}
+
+McpProtocolServerPrompt *McpProtocolServerProtocolManager::findPrompt(const QString &name) const
+{
+    const auto it = std::find_if(mPrompts.cbegin(), mPrompts.cend(), [&name](const auto &p) {
+        return p->definition().name() == name;
+    });
+    return it == mPrompts.cend() ? nullptr : it->get();
+}
+
+void McpProtocolServerProtocolManager::addPrompt(std::unique_ptr<McpProtocolServerPrompt> prompt)
+{
+    if (!prompt) {
+        return;
+    }
+    const QString name = prompt->definition().name();
+    auto it = std::find_if(mPrompts.begin(), mPrompts.end(), [&name](const auto &p) {
+        return p->definition().name() == name;
+    });
+    if (it != mPrompts.end()) {
+        *it = std::move(prompt);
+    } else {
+        mPrompts.push_back(std::move(prompt));
+    }
+    sendNotification(McpProtocolPromptListChangedNotification::toJson({}));
+}
+
+bool McpProtocolServerProtocolManager::removePrompt(const QString &name)
+{
+    const auto it = std::find_if(mPrompts.begin(), mPrompts.end(), [&name](const auto &p) {
+        return p->definition().name() == name;
+    });
+    if (it == mPrompts.end()) {
+        return false;
+    }
+    mPrompts.erase(it);
+    sendNotification(McpProtocolPromptListChangedNotification::toJson({}));
+    return true;
+}
+
+QList<McpProtocolPrompt> McpProtocolServerProtocolManager::prompts() const
+{
+    QList<McpProtocolPrompt> list;
+    list.reserve(mPrompts.size());
+    for (const auto &prompt : mPrompts) {
+        list.append(prompt->definition());
+    }
+    return list;
+}
+
+McpProtocolServerResource *McpProtocolServerProtocolManager::findResource(const QString &uri) const
+{
+    const auto it = std::find_if(mResources.cbegin(), mResources.cend(), [&uri](const auto &r) {
+        return r->definition().uri() == uri;
+    });
+    return it == mResources.cend() ? nullptr : it->get();
+}
+
+void McpProtocolServerProtocolManager::addResource(std::unique_ptr<McpProtocolServerResource> resource)
+{
+    if (!resource) {
+        return;
+    }
+    const QString uri = resource->definition().uri();
+    auto it = std::find_if(mResources.begin(), mResources.end(), [&uri](const auto &r) {
+        return r->definition().uri() == uri;
+    });
+    if (it != mResources.end()) {
+        *it = std::move(resource);
+    } else {
+        mResources.push_back(std::move(resource));
+    }
+    sendNotification(McpProtocolResourceListChangedNotification::toJson({}));
+}
+
+bool McpProtocolServerProtocolManager::removeResource(const QString &uri)
+{
+    const auto it = std::find_if(mResources.begin(), mResources.end(), [&uri](const auto &r) {
+        return r->definition().uri() == uri;
+    });
+    if (it == mResources.end()) {
+        return false;
+    }
+    mResources.erase(it);
+    sendNotification(McpProtocolResourceListChangedNotification::toJson({}));
+    return true;
+}
+
+QList<McpProtocolResource> McpProtocolServerProtocolManager::resources() const
+{
+    QList<McpProtocolResource> list;
+    list.reserve(mResources.size());
+    for (const auto &resource : mResources) {
+        list.append(resource->definition());
+    }
+    return list;
 }
 
 void McpProtocolServerProtocolManager::send(const QJsonObject &obj)
@@ -268,6 +382,14 @@ void McpProtocolServerProtocolManager::handleRequest(const QJsonObject &obj)
         listTools(id, params);
     } else if (method == McpProtocolCallToolRequest::type()) {
         callTool(id, params);
+    } else if (method == McpProtocolListPromptsRequest::type()) {
+        listPrompts(id, params);
+    } else if (method == McpProtocolGetPromptRequest::type()) {
+        getPrompt(id, params);
+    } else if (method == McpProtocolListResourcesRequest::type()) {
+        listResources(id, params);
+    } else if (method == McpProtocolReadResourceRequest::type()) {
+        readResource(id, params);
     } else if (!handleCustomRequest(id, method, params)) {
         sendError(id, methodNotFoundCode, u"Method not found: %1"_s.arg(QString::fromLatin1(method)));
     }
@@ -277,6 +399,12 @@ McpProtocolServerCapabilities McpProtocolServerProtocolManager::capabilities() c
 {
     McpProtocolServerCapabilities capabilities;
     capabilities.setTools(McpProtocolServerCapabilities::Tools().listChanged(true));
+    if (!mPrompts.empty()) {
+        capabilities.setPrompts(McpProtocolServerCapabilities::Prompts().listChanged(true));
+    }
+    if (!mResources.empty()) {
+        capabilities.setResources(McpProtocolServerCapabilities::Resources().listChanged(true));
+    }
     return capabilities;
 }
 
@@ -305,23 +433,99 @@ void McpProtocolServerProtocolManager::initialize(const QJsonValue &id, const QJ
     sendResult(id, McpProtocolInitializeResult::toJson(result));
 }
 
+std::optional<qsizetype> McpProtocolServerProtocolManager::pageStart(const QJsonValue &id, const QJsonObject &params, qsizetype count)
+{
+    bool ok = true;
+    const QString cursor = McpProtocolPaginatedRequestParams::fromJson(params).cursor().value_or(QString());
+    const qsizetype start = cursor.isEmpty() ? 0 : cursor.toLongLong(&ok);
+    // An empty list is valid on first page
+    if (!ok || start < 0 || (start > 0 && start >= count)) {
+        sendError(id, invalidParamsCode, u"Invalid cursor: %1"_s.arg(cursor));
+        return std::nullopt;
+    }
+    return start;
+}
+
+std::optional<QString> McpProtocolServerProtocolManager::nextCursor(qsizetype start, qsizetype count) const
+{
+    if (start + mToolsPageSize < count) {
+        return QString::number(start + mToolsPageSize);
+    }
+    return std::nullopt;
+}
+
 void McpProtocolServerProtocolManager::listTools(const QJsonValue &id, const QJsonObject &params)
 {
     const QList<McpProtocolTool> allTools = tools();
-    bool ok = true;
-    const QString cursor = McpProtocolPaginatedRequestParams::fromJson(params).cursor().value_or(QString());
-    const int start = cursor.isEmpty() ? 0 : cursor.toInt(&ok);
-    // An empty list is valid on first page
-    if (!ok || start < 0 || (start > 0 && start >= allTools.count())) {
-        sendError(id, invalidParamsCode, u"Invalid cursor: %1"_s.arg(cursor));
+    const std::optional<qsizetype> start = pageStart(id, params, allTools.count());
+    if (!start.has_value()) {
         return;
     }
     McpProtocolListToolsResult result;
-    result.setTools(allTools.mid(start, mToolsPageSize));
-    if (start + mToolsPageSize < allTools.count()) {
-        result.setNextCursor(QString::number(start + mToolsPageSize));
-    }
+    result.setTools(allTools.mid(*start, mToolsPageSize));
+    result.setNextCursor(nextCursor(*start, allTools.count()));
     sendResult(id, McpProtocolListToolsResult::toJson(result));
+}
+
+void McpProtocolServerProtocolManager::listPrompts(const QJsonValue &id, const QJsonObject &params)
+{
+    const QList<McpProtocolPrompt> allPrompts = prompts();
+    const std::optional<qsizetype> start = pageStart(id, params, allPrompts.count());
+    if (!start.has_value()) {
+        return;
+    }
+    McpProtocolListPromptsResult result;
+    result.setPrompts(allPrompts.mid(*start, mToolsPageSize));
+    result.setNextCursor(nextCursor(*start, allPrompts.count()));
+    sendResult(id, McpProtocolListPromptsResult::toJson(result));
+}
+
+void McpProtocolServerProtocolManager::getPrompt(const QJsonValue &id, const QJsonObject &params)
+{
+    const McpProtocolGetPromptRequestParams getPromptParams = McpProtocolGetPromptRequestParams::fromJson(params);
+    const McpProtocolServerPrompt *prompt = findPrompt(getPromptParams.name());
+    if (!prompt) {
+        sendError(id, invalidParamsCode, u"Unknown prompt: %1"_s.arg(getPromptParams.name()));
+        return;
+    }
+    const QMap<QString, QString> arguments = getPromptParams.arguments().value_or(QMap<QString, QString>{});
+    const QList<McpProtocolPromptArgument> definitionArguments = prompt->definition().arguments().value_or(QList<McpProtocolPromptArgument>{});
+    for (const McpProtocolPromptArgument &argument : definitionArguments) {
+        if (argument.required().value_or(false) && !arguments.contains(argument.name())) {
+            sendError(id, invalidParamsCode, u"Missing required argument: %1"_s.arg(argument.name()));
+            return;
+        }
+    }
+    sendResult(id, McpProtocolGetPromptResult::toJson(prompt->get(arguments)));
+}
+
+void McpProtocolServerProtocolManager::listResources(const QJsonValue &id, const QJsonObject &params)
+{
+    const QList<McpProtocolResource> allResources = resources();
+    const std::optional<qsizetype> start = pageStart(id, params, allResources.count());
+    if (!start.has_value()) {
+        return;
+    }
+    McpProtocolListResourcesResult result;
+    result.setResources(allResources.mid(*start, mToolsPageSize));
+    result.setNextCursor(nextCursor(*start, allResources.count()));
+    sendResult(id, McpProtocolListResourcesResult::toJson(result));
+}
+
+void McpProtocolServerProtocolManager::readResource(const QJsonValue &id, const QJsonObject &params)
+{
+    const QString uri = McpProtocolReadResourceRequestParams::fromJson(params).uri();
+    const McpProtocolServerResource *resource = findResource(uri);
+    if (!resource) {
+        sendError(id, resourceNotFoundCode, u"Resource not found: %1"_s.arg(uri));
+        return;
+    }
+    const McpProtocolReadResourceResult result = resource->read();
+    if (result.contents().isEmpty()) {
+        sendError(id, internalErrorCode, u"Unable to read resource: %1"_s.arg(uri));
+        return;
+    }
+    sendResult(id, McpProtocolReadResourceResult::toJson(result));
 }
 
 void McpProtocolServerProtocolManager::callTool(const QJsonValue &id, const QJsonObject &params)

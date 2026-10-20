@@ -14,11 +14,16 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
 #include <memory>
+#include <optional>
 #include <vector>
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+class McpProtocolPrompt;
+class McpProtocolResource;
 class McpProtocolServer;
+class McpProtocolServerPrompt;
+class McpProtocolServerResource;
 class McpProtocolServerTool;
 class McpProtocolServerToolCall;
 /*!
@@ -28,9 +33,11 @@ class McpProtocolServerToolCall;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolServerProtocolManager
  *
- * Answers initialize, ping, tools/list (paginated) and tools/call, handles notifications/cancelled.
- * Server only has to register its tools with addTool().
- * Reimplement handleCustomRequest() and capabilities() to support other methods (prompts, resources…).
+ * Answers initialize, ping, tools/list, tools/call, prompts/list, prompts/get, resources/list and resources/read
+ * (lists are paginated), handles notifications/cancelled.
+ * Server only has to register its tools with addTool(), its prompts with addPrompt() and its resources with addResource().
+ * Prompts and resources capabilities are announced when at least one of them is registered before client initialization.
+ * Reimplement handleCustomRequest() and capabilities() to support other methods (resource templates…).
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServerProtocolManager : public QObject
 {
@@ -79,7 +86,7 @@ public:
     void setInstructions(const QString &instructions);
     /*!
      * \brief setToolsPageSize
-     * Number of tools by page in tools/list result.
+     * Number of items by page in tools/list, prompts/list and resources/list results.
      */
     void setToolsPageSize(int size);
 
@@ -99,6 +106,40 @@ public:
      * \return definition of registered tools
      */
     [[nodiscard]] QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> tools() const;
+
+    /*!
+     * \brief addPrompt
+     * Register \a prompt (a prompt with same name is replaced). Client is informed when server is running.
+     */
+    void addPrompt(std::unique_ptr<TextAutoGenerateTextMcpProtocolCore::McpProtocolServerPrompt> prompt);
+    /*!
+     * \brief removePrompt
+     * \param name
+     * \return true if prompt was found
+     */
+    bool removePrompt(const QString &name);
+    /*!
+     * \brief prompts
+     * \return definition of registered prompts
+     */
+    [[nodiscard]] QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolPrompt> prompts() const;
+
+    /*!
+     * \brief addResource
+     * Register \a resource (a resource with same uri is replaced). Client is informed when server is running.
+     */
+    void addResource(std::unique_ptr<TextAutoGenerateTextMcpProtocolCore::McpProtocolServerResource> resource);
+    /*!
+     * \brief removeResource
+     * \param uri
+     * \return true if resource was found
+     */
+    bool removeResource(const QString &uri);
+    /*!
+     * \brief resources
+     * \return definition of registered resources
+     */
+    [[nodiscard]] QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolResource> resources() const;
 
     /*!
      * \brief send
@@ -125,6 +166,10 @@ public:
     static constexpr int methodNotFoundCode = -32601;
     static constexpr int invalidParamsCode = -32602;
     static constexpr int internalErrorCode = -32603;
+    /*!
+     * MCP error code: resources/read with an unknown uri
+     */
+    static constexpr int resourceNotFoundCode = -32002;
 
 Q_SIGNALS:
     /*!
@@ -141,7 +186,7 @@ Q_SIGNALS:
 protected:
     /*!
      * \brief capabilities
-     * \return capabilities sent in initialize result. By default only tools.
+     * \return capabilities sent in initialize result. By default tools, and prompts and resources when some are registered.
      */
     [[nodiscard]] virtual TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities capabilities() const;
     /*!
@@ -159,14 +204,27 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void initialize(const QJsonValue &id, const QJsonObject &params);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listTools(const QJsonValue &id, const QJsonObject &params);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void callTool(const QJsonValue &id, const QJsonObject &params);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listPrompts(const QJsonValue &id, const QJsonObject &params);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void getPrompt(const QJsonValue &id, const QJsonObject &params);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void listResources(const QJsonValue &id, const QJsonObject &params);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void readResource(const QJsonValue &id, const QJsonObject &params);
+    // Return first item of requested page, nullopt when cursor is invalid (error is sent)
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT std::optional<qsizetype>
+    pageStart(const QJsonValue &id, const QJsonObject &params, qsizetype count);
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT std::optional<QString> nextCursor(qsizetype start, qsizetype count) const;
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void cancelRequest(const QJsonObject &obj);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void cancelAllCalls();
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void cancelToolCalls(const QString &name);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void removeCall(const QString &key);
     TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendToolListChanged();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void sendNotification(const QJsonObject &notification);
     [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolServerTool *findTool(const QString &name) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolServerPrompt *findPrompt(const QString &name) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT McpProtocolServerResource *findResource(const QString &uri) const;
 
     std::vector<std::unique_ptr<McpProtocolServerTool>> mTools;
+    std::vector<std::unique_ptr<McpProtocolServerPrompt>> mPrompts;
+    std::vector<std::unique_ptr<McpProtocolServerResource>> mResources;
     // Key: request id type and value
     QHash<QString, McpProtocolServerToolCall *> mPendingCalls;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolImplementation mServerInfo;

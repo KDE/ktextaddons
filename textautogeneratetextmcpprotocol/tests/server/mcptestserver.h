@@ -9,7 +9,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerProtocolManager>
 /*
  * Minimal MCP server used to test client: declares tools, protocol is handled by McpProtocolServerProtocolManager.
- * Answers too prompts and resource templates requests.
+ * Declares too a prompt and a resource, answers resource templates requests.
  * Tools list is paginated (2 tools by page) to test pagination.
  */
 class McpTestServer : public TextAutoGenerateTextMcpProtocolCore::McpProtocolServerProtocolManager
@@ -27,12 +27,9 @@ public:
     void pingClient();
 
 protected:
-    [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolServerCapabilities capabilities() const override;
     bool handleCustomRequest(const QJsonValue &id, const QByteArray &method, const QJsonObject &params) override;
 
 private:
-    void getPrompt(const QJsonValue &id, const QJsonObject &params);
-
     int mServerRequestId = 0;
     bool mExtraTool = false;
 };

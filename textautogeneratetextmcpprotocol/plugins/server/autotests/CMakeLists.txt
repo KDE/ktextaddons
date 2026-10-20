@@ -11,6 +11,14 @@ endmacro()
 
 add_textautogenerate_mcpprotocol_server_plugin_unittest(mcpserverstreamablehttptest.cpp)
 
+# Server manager tested with client manager: plugins are loaded at runtime
+add_textautogenerate_mcpprotocol_server_plugin_unittest(mcpprotocolserverprotocolmanagertest.cpp)
+add_dependencies(
+    mcpprotocolserverprotocolmanagertest
+    autogeneratetext_mcpprotocolserverplugin
+    autogeneratetext_mcpprotocolclientplugin
+)
+
 # Stdio server launched by mcpserverstdiotest
 add_executable(mcpserverstdiohelper mcpserverstdiohelper.cpp)
 target_link_libraries(mcpserverstdiohelper KF6::TextAutoGenerateTextMcpProtocolCore)
