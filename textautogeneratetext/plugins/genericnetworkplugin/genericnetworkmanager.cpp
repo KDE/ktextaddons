@@ -257,7 +257,12 @@ QString GenericNetworkManager::apiUrl() const
     if (!mServerInfo->hasCustomUrl(mPluginNetworkType)) {
         return mServerInfo->apiUrl(mPluginNetworkType);
     }
-    return mGenericNetworkSettings->customUrl();
+    // Paths ("models", "chat/completions") are appended to the url
+    QString url = mGenericNetworkSettings->customUrl().trimmed();
+    if (!url.isEmpty() && !url.endsWith(u'/')) {
+        url += u'/';
+    }
+    return url;
 }
 
 QString GenericNetworkManager::description() const
