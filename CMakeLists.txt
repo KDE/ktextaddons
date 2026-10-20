@@ -1,7 +1,7 @@
 ﻿# SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.29)
-set(KTEXTADDONS_CURRENT_VERSION "2.2.51")
+set(KTEXTADDONS_CURRENT_VERSION "2.2.52")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 set(QT_REQUIRED_VERSION "6.10.0")
@@ -22,7 +22,6 @@ set_package_properties(
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ecmcopy
     ${ECM_MODULE_PATH}
 )
 
