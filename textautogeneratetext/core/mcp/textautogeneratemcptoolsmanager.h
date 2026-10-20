@@ -64,6 +64,9 @@ public:
         QString description;
         QJsonObject inputSchema;
         ToolRisk risk = ToolRisk::Destructive;
+        // Group of tool defined in _meta ("org.kde/group", "org.kde/groupTitle"), empty when tool has no group
+        QString groupName;
+        QString groupTitle;
         [[nodiscard]] bool operator==(const McpTool &other) const = default;
     };
 

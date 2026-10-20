@@ -78,6 +78,11 @@ void TextAutoGenerateMcpToolsManagerTest::shouldConnectAndListTools()
     QCOMPARE(tools.at(0).risk, TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly);
     QCOMPARE(tools.at(1).exposedName, "My_Server__get_time"_ba);
     QCOMPARE(tools.at(1).risk, TextAutoGenerateMcpToolsManager::ToolRisk::Destructive);
+    // Group is defined in _meta
+    QVERIFY(tools.at(0).groupName.isEmpty());
+    QVERIFY(tools.at(0).groupTitle.isEmpty());
+    QCOMPARE(tools.at(1).groupName, u"clock"_s);
+    QCOMPARE(tools.at(1).groupTitle, u"Clock"_s);
     QVERIFY(manager.tool("My_Server__get_time"_ba).has_value());
     QCOMPARE(manager.tool("My_Server__get_time"_ba)->name, u"get time"_s);
     // Tool name without server prefix

@@ -14,7 +14,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-inline QJsonObject tool(const QString &name, bool readOnly = false)
+inline QJsonObject tool(const QString &name, bool readOnly = false, const QString &groupName = {}, const QString &groupTitle = {})
 {
     QJsonObject obj{
         {"name"_L1, name},
@@ -22,6 +22,9 @@ inline QJsonObject tool(const QString &name, bool readOnly = false)
         {"inputSchema"_L1, QJsonObject{{"type"_L1, u"object"_s}, {"properties"_L1, QJsonObject{{"city"_L1, QJsonObject{{"type"_L1, u"string"_s}}}}}}}};
     if (readOnly) {
         obj["annotations"_L1] = QJsonObject{{"readOnlyHint"_L1, true}};
+    }
+    if (!groupName.isEmpty()) {
+        obj["_meta"_L1] = QJsonObject{{"org.kde/group"_L1, groupName}, {"org.kde/groupTitle"_L1, groupTitle}};
     }
     return obj;
 }
@@ -102,7 +105,7 @@ public:
     }
 
     FakeMcpHttpServer server;
-    QJsonArray tools{tool(u"weather"_s, true), tool(u"get time"_s)};
+    QJsonArray tools{tool(u"weather"_s, true), tool(u"get time"_s, false, u"clock"_s, u"Clock"_s)};
     QPointer<QTcpSocket> eventStream;
     // Requests and notifications received from client
     QList<QJsonObject> receivedRequests;

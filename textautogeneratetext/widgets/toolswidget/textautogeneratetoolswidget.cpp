@@ -15,6 +15,7 @@
 #include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
+#include <tuple>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -198,11 +199,17 @@ void TextAutoGenerateToolsWidget::fillMcpToolsMenu(QToolButton *button, const QB
         action->setEnabled(false);
         return;
     }
+    // Tools without group first, then tools grouped by _meta group
     std::sort(tools.begin(), tools.end(), [](const TextAutoGenerateMcpToolsManager::McpTool &left, const TextAutoGenerateMcpToolsManager::McpTool &right) {
-        return left.name < right.name;
+        return std::tie(left.groupName, left.name) < std::tie(right.groupName, right.name);
     });
     const auto it = mMcpSelectedTools.constFind(serverIdentifier);
+    QString currentGroupName;
     for (const auto &tool : tools) {
+        if (tool.groupName != currentGroupName) {
+            currentGroupName = tool.groupName;
+            menu->addSection(tool.groupTitle.isEmpty() ? tool.groupName : tool.groupTitle);
+        }
         auto action = menu->addAction(tool.displayName.isEmpty() ? tool.name : tool.displayName);
         action->setIcon(QIcon::fromTheme(toolRiskIconName(tool.risk)));
         const QString riskText = toolRiskText(tool.risk);
@@ -227,12 +234,18 @@ void TextAutoGenerateToolsWidget::slotMcpToolToggled(QToolButton *button, const 
 {
     const auto actions = button->menu()->actions();
     QStringList toolNames;
+    qsizetype toolCount = 0;
     for (const auto action : actions) {
+        // Skip group sections
+        if (!action->isCheckable()) {
+            continue;
+        }
+        ++toolCount;
         if (action->isChecked()) {
             toolNames.append(action->data().toString());
         }
     }
-    if (toolNames.count() == actions.count()) {
+    if (toolNames.count() == toolCount) {
         mMcpSelectedTools.remove(serverIdentifier);
     } else {
         mMcpSelectedTools.insert(serverIdentifier, toolNames);

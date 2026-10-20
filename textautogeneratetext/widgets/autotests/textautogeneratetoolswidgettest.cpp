@@ -115,26 +115,31 @@ void TextAutoGenerateToolsWidgetTest::shouldSelectMcpTools()
 
     // Tools are shown when server is connected
     manager.textAutoGenerateMcpToolsManager()->connectServer(server.identifier());
-    QTRY_COMPARE(button->menu()->actions().count(), 2);
+    // Tools without group first, then a section for each group
+    QTRY_COMPARE(button->menu()->actions().count(), 3);
     const auto actions = button->menu()->actions();
-    QCOMPARE(actions.at(0)->text(), u"get time"_s);
+    QCOMPARE(actions.at(0)->text(), u"weather"_s);
     QVERIFY(actions.at(0)->isCheckable());
-    QVERIFY(actions.at(0)->isChecked());
+    QVERIFY(actions.at(1)->isSeparator());
+    QCOMPARE(actions.at(1)->text(), u"Clock"_s);
+    QCOMPARE(actions.at(2)->text(), u"get time"_s);
+    QVERIFY(actions.at(2)->isCheckable());
+    QVERIFY(actions.at(2)->isChecked());
 
     // Unselect one tool: server is selected with other tool
-    actions.at(0)->setChecked(false);
+    actions.at(2)->setChecked(false);
     QVERIFY(button->isChecked());
     const QByteArray getTime = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier(), u"weather"_s);
     QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{getTime});
 
     // All tools selected again
-    actions.at(0)->setChecked(true);
+    actions.at(2)->setChecked(true);
     const QByteArray allTools = TextAutoGenerateText::TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier());
     QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{allTools});
 
     // No tool: server is not selected
     actions.at(0)->setChecked(false);
-    actions.at(1)->setChecked(false);
+    actions.at(2)->setChecked(false);
     QVERIFY(!button->isChecked());
     QVERIFY(w.generateListOfActiveTools().isEmpty());
     // Selecting server selects all tools
@@ -145,8 +150,8 @@ void TextAutoGenerateToolsWidgetTest::shouldSelectMcpTools()
     w.setActivatedTools({getTime});
     QVERIFY(button->isChecked());
     QCOMPARE(w.generateListOfActiveTools(), QList<QByteArray>{getTime});
-    QVERIFY(!button->menu()->actions().at(0)->isChecked());
-    QVERIFY(button->menu()->actions().at(1)->isChecked());
+    QVERIFY(button->menu()->actions().at(0)->isChecked());
+    QVERIFY(!button->menu()->actions().at(2)->isChecked());
 }
 
 #include "moc_textautogeneratetoolswidgettest.cpp"

@@ -15,6 +15,7 @@
 #include <QRegularExpression>
 #include <QTimer>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCommonUtils>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
@@ -271,6 +272,11 @@ void TextAutoGenerateMcpToolsManager::slotReceived(const QByteArray &identifier,
         // Tool title has priority over annotations title (MCP 2025-06-18)
         tool.displayName = mcpTool.title().value_or(annotations.title().value_or(QString()));
         tool.risk = toolRisk(annotations);
+        if (const auto meta = mcpTool.meta(); meta.has_value() && meta->meta().has_value()) {
+            const auto values = *meta->meta();
+            tool.groupName = values.value(TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils::metaGroupName()).toString();
+            tool.groupTitle = values.value(TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils::metaGroupTitle()).toString();
+        }
         tools.append(std::move(tool));
         // Next tools of this server must not use same name
         it->tools = tools;
