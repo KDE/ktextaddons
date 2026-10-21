@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:51+0000\n"
-"PO-Revision-Date: 2026-10-18 19:06+0200\n"
+"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"PO-Revision-Date: 2026-10-20 11:20+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -35,32 +35,32 @@ msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "Потоковый HTTP"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:97
+#: core/server/mcpprotocolserverprotocolmanager.cpp:112
 #, kde-format
 msgid "Starting server"
 msgstr "Запуск сервера"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:99
+#: core/server/mcpprotocolserverprotocolmanager.cpp:114
 #, kde-format
 msgid "Starting server on %1"
 msgstr "Запуск сервера на %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:370
+#: core/server/mcpprotocolserverprotocolmanager.cpp:585
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr "Клиент отменил запрос %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:387
+#: core/server/mcpprotocolserverprotocolmanager.cpp:602
 #, kde-format
 msgid "Error: %1"
 msgstr "Ошибка: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:393
+#: core/server/mcpprotocolserverprotocolmanager.cpp:608
 #, kde-format
 msgid "Server started"
 msgstr "Сервер запущен"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:401
+#: core/server/mcpprotocolserverprotocolmanager.cpp:616
 #, kde-format
 msgid "Server stopped"
 msgstr "Сервер остановлен"
@@ -224,13 +224,15 @@ msgstr "Заголовки:"
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
 msgstr ""
+"Передаётся в заголовке «Authorization: Bearer». Хранится в системном "
+"бумажнике."
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
-msgstr ""
+msgstr "Токен аутентификации:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:24
 #, kde-format
@@ -350,7 +352,7 @@ msgstr "Параметры сервера"
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
 #, kde-format
@@ -361,7 +363,7 @@ msgstr "Токен:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
-msgstr ""
+msgstr "Скопировать токен в буфер обмена"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
 #, kde-format
@@ -369,14 +371,14 @@ msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
 msgstr ""
+"Клиенты, использующие текущий токен, не смогут подключиться, пока в них не "
+"будет указан новый."
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
-msgstr "Создать заново"
+msgstr "Создание нового токена"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
@@ -386,18 +388,16 @@ msgid "Regenerate"
 msgstr "Создать заново"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Generate"
-msgstr "Создать заново"
+msgstr "Создать"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
-msgstr ""
+msgstr "Требовать токен аутентификации"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
 #, kde-format
@@ -405,6 +405,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
 msgstr ""
+"Сервер принимает подключения только на локальном IP-адресе, например "
+"http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
 #, kde-format
@@ -413,3 +415,5 @@ msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "
 "stored in the system wallet."
 msgstr ""
+"Клиенты должны передавать этот токен в заголовке «Authorization: Bearer». "
+"Токен хранится в системном бумажнике."

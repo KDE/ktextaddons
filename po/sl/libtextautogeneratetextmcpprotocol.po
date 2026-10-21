@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:51+0000\n"
-"PO-Revision-Date: 2026-10-18 06:36+0200\n"
+"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"PO-Revision-Date: 2026-10-20 12:17+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -36,32 +36,32 @@ msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "Streamble HTTP"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:97
+#: core/server/mcpprotocolserverprotocolmanager.cpp:112
 #, kde-format
 msgid "Starting server"
 msgstr "Zaganjanje strežnika"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:99
+#: core/server/mcpprotocolserverprotocolmanager.cpp:114
 #, kde-format
 msgid "Starting server on %1"
 msgstr "Zaganjanje strežnika na %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:370
+#: core/server/mcpprotocolserverprotocolmanager.cpp:585
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr "Zahtevo %1 preklical odjemalec"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:387
+#: core/server/mcpprotocolserverprotocolmanager.cpp:602
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:393
+#: core/server/mcpprotocolserverprotocolmanager.cpp:608
 #, kde-format
 msgid "Server started"
 msgstr "Strežnik je zagnan"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:401
+#: core/server/mcpprotocolserverprotocolmanager.cpp:616
 #, kde-format
 msgid "Server stopped"
 msgstr "Strežnik se je ustavil"
@@ -225,13 +225,14 @@ msgstr "Glave:"
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
 msgstr ""
+"Poslano kot glava \"Authorization: Bearer\". Shranjeno v sistemski listnici."
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
-msgstr ""
+msgstr "Žeton avtentikacije:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:24
 #, kde-format
@@ -351,7 +352,7 @@ msgstr "Konfiguracija strežnika"
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
-msgstr ""
+msgstr "Kopiraj"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
 #, kde-format
@@ -362,7 +363,7 @@ msgstr "Žeton:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
-msgstr ""
+msgstr "Kopiraj žeton na odložišče"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
 #, kde-format
@@ -370,14 +371,14 @@ msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
 msgstr ""
+"Odjemalci, ki uporabljajo trenutni žeton, se ne bodo mogli povezati, dokler "
+"ne bodo posodobljeni z novim."
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
-msgstr "Regeneriraj"
+msgstr "Regeneriraj žeton"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
@@ -387,18 +388,16 @@ msgid "Regenerate"
 msgstr "Regeneriraj"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Generate"
-msgstr "Regeneriraj"
+msgstr "Generiraj"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
-msgstr ""
+msgstr "Zahteva žeton avtentikacije"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
 #, kde-format
@@ -406,6 +405,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
 msgstr ""
+"Strežnik posluša samo na lokalnem IP naslovu, npr. http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
 #, kde-format
@@ -414,6 +414,8 @@ msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "
 "stored in the system wallet."
 msgstr ""
+"Odjemalci morajo ta žeton poslati kot glavo \"Authorization: Bearer\". Žeton "
+"je shranjen v sistemski listnici."
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "Strežnika ni mogoče zagnati. Ukaz je prazen."

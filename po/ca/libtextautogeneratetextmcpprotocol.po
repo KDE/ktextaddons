@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:51+0000\n"
-"PO-Revision-Date: 2026-10-18 14:59+0200\n"
+"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"PO-Revision-Date: 2026-10-20 09:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -37,32 +37,32 @@ msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "HTTP Streamable"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:97
+#: core/server/mcpprotocolserverprotocolmanager.cpp:112
 #, kde-format
 msgid "Starting server"
 msgstr "S'està iniciant el servidor"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:99
+#: core/server/mcpprotocolserverprotocolmanager.cpp:114
 #, kde-format
 msgid "Starting server on %1"
 msgstr "S'està iniciant el servidor a %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:370
+#: core/server/mcpprotocolserverprotocolmanager.cpp:585
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr "Petició %1 cancel·lada pel client"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:387
+#: core/server/mcpprotocolserverprotocolmanager.cpp:602
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:393
+#: core/server/mcpprotocolserverprotocolmanager.cpp:608
 #, kde-format
 msgid "Server started"
 msgstr "El servidor s'ha iniciat"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:401
+#: core/server/mcpprotocolserverprotocolmanager.cpp:616
 #, kde-format
 msgid "Server stopped"
 msgstr "El servidor s'ha aturat"
@@ -226,13 +226,15 @@ msgstr "Capçaleres:"
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
 msgstr ""
+"S'ha enviat com a capçalera «Authorization: Bearer». S'emmagatzema a la "
+"cartera del sistema."
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
-msgstr ""
+msgstr "Testimoni d'autenticació:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:24
 #, kde-format
@@ -352,7 +354,7 @@ msgstr "Configuració del servidor"
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
 #, kde-format
@@ -363,7 +365,7 @@ msgstr "Testimoni:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
-msgstr ""
+msgstr "Copia el testimoni al porta-retalls"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
 #, kde-format
@@ -371,14 +373,14 @@ msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
 msgstr ""
+"Els clients que utilitzin el testimoni actual no podran connectar-se fins "
+"que s'actualitzin amb el nou."
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
-msgstr "Regenera"
+msgstr "Regenera el testimoni"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
@@ -388,18 +390,16 @@ msgid "Regenerate"
 msgstr "Regenera"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Generate"
-msgstr "Regenera"
+msgstr "Genera"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
-msgstr ""
+msgstr "Requereix un testimoni d'autenticació"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
 #, kde-format
@@ -407,6 +407,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
 msgstr ""
+"El servidor només escolta una adreça IP local IP, p. ex. "
+"http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
 #, kde-format
@@ -415,6 +417,8 @@ msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "
 "stored in the system wallet."
 msgstr ""
+"Cal que els clients enviïn aquest testimoni com a capçalera «Authorization: "
+"Bearer». S'emmagatzema a la cartera del sistema."
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "Impossible iniciar el servidor. L'ordre està buida."

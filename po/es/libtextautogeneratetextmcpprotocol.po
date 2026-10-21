@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:51+0000\n"
-"PO-Revision-Date: 2026-10-18 11:05+0100\n"
+"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"PO-Revision-Date: 2026-10-20 12:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -37,32 +37,32 @@ msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "HTTP transmisible"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:97
+#: core/server/mcpprotocolserverprotocolmanager.cpp:112
 #, kde-format
 msgid "Starting server"
 msgstr "Iniciando el servidor"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:99
+#: core/server/mcpprotocolserverprotocolmanager.cpp:114
 #, kde-format
 msgid "Starting server on %1"
 msgstr "Iniciando el servidor en %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:370
+#: core/server/mcpprotocolserverprotocolmanager.cpp:585
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr "Petición %1 cancelada por el cliente"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:387
+#: core/server/mcpprotocolserverprotocolmanager.cpp:602
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:393
+#: core/server/mcpprotocolserverprotocolmanager.cpp:608
 #, kde-format
 msgid "Server started"
 msgstr "Servidor iniciado"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:401
+#: core/server/mcpprotocolserverprotocolmanager.cpp:616
 #, kde-format
 msgid "Server stopped"
 msgstr "Servidor detenido"
@@ -226,13 +226,15 @@ msgstr "Cabeceras:"
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
 msgstr ""
+"Enviar como cabecera «Authorization: Bearer». Guardado en la cartera del "
+"sistema."
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
-msgstr ""
+msgstr "Token de autenticación:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:24
 #, kde-format
@@ -352,7 +354,7 @@ msgstr "Configuración del servidor"
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
 #, kde-format
@@ -363,7 +365,7 @@ msgstr "Token:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
-msgstr ""
+msgstr "Copiar el token al portapapeles"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
 #, kde-format
@@ -371,14 +373,14 @@ msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
 msgstr ""
+"Los clientes que usen el token actual no podrán conectarse hasta que se "
+"actualicen con el nuevo."
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
-msgstr "Regenerar"
+msgstr "Regenerar token"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
@@ -388,18 +390,16 @@ msgid "Regenerate"
 msgstr "Regenerar"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Generate"
-msgstr "Regenerar"
+msgstr "Generar"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
-msgstr ""
+msgstr "Requiere token de autenticación"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
 #, kde-format
@@ -407,6 +407,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
 msgstr ""
+"El servidor escucha solo en una dirección IP local, como "
+"http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
 #, kde-format
@@ -415,3 +417,5 @@ msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "
 "stored in the system wallet."
 msgstr ""
+"Los clientes deben enviar este token como cabecera «Authorization: Bearer». "
+"El token se guarda en la cartera del sistema."
