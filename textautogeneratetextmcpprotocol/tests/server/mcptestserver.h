@@ -11,6 +11,7 @@
  * Minimal MCP server used to test client: declares tools, protocol is handled by McpProtocolServerProtocolManager.
  * Declares too a prompt and a resource, answers resource templates requests.
  * Tools list is paginated (2 tools by page) to test pagination.
+ * Tools ask_name, summarize and list_roots send elicitation, sampling and roots requests to client.
  */
 class McpTestServer : public TextAutoGenerateTextMcpProtocolCore::McpProtocolServerProtocolManager
 {

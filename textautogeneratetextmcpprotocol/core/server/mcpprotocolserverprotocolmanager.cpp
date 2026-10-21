@@ -17,6 +17,16 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCallToolRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelledNotification>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolError>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptRequestParams>
@@ -29,8 +39,11 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListPromptsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourcesResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListRootsRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListRootsResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListToolsResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLoggingMessageNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPaginatedRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptArgument>
@@ -39,7 +52,10 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRootsListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSetLevelRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSetLevelRequestParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolListChangedNotification>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <algorithm>
@@ -359,16 +375,160 @@ void McpProtocolServerProtocolManager::slotReceived(const QJsonObject &obj)
 {
     Q_EMIT logMessage(u"<-- %1"_s.arg(compact(obj)));
     if (!obj.contains("method"_L1)) {
-        // Response to a request sent by server (ping…)
+        // Response to a request sent by server
+        handleClientResponse(obj);
         return;
     }
     if (!obj.contains("id"_L1)) {
-        if (obj.value("method"_L1).toString().toLatin1() == McpProtocolCancelledNotification::type()) {
-            cancelRequest(obj);
-        }
+        handleNotification(obj);
         return;
     }
     handleRequest(obj);
+}
+
+void McpProtocolServerProtocolManager::handleNotification(const QJsonObject &obj)
+{
+    const QByteArray method = obj.value("method"_L1).toString().toLatin1();
+    if (method == McpProtocolCancelledNotification::type()) {
+        cancelRequest(obj);
+    } else if (method == McpProtocolRootsListChangedNotification::type()) {
+        Q_EMIT rootsListChanged();
+    }
+}
+
+void McpProtocolServerProtocolManager::handleClientResponse(const QJsonObject &obj)
+{
+    const McpProtocolUtils::RequestId id = McpProtocolUtils::requestIdFromJson(obj.value("id"_L1));
+    // Server only sends number ids
+    const qint64 *identifier = std::get_if<qint64>(&id);
+    const auto it = identifier ? mPendingClientRequests.constFind(*identifier) : mPendingClientRequests.cend();
+    if (it == mPendingClientRequests.cend()) {
+        // Request can be cancelled before answer is received
+        qCDebug(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Response received for an unknown request id:" << obj.value("id"_L1);
+        return;
+    }
+    const qint64 requestId = *identifier;
+    const ClientRequestType type = it.value();
+    mPendingClientRequests.erase(it);
+    if (obj.contains("error"_L1)) {
+        const McpProtocolError error = McpProtocolJSONRPCErrorResponse::fromJson(obj).error();
+        Q_EMIT clientRequestFailed(requestId, error.code(), error.message());
+        return;
+    }
+    const QJsonObject result = obj.value("result"_L1).toObject();
+    switch (type) {
+    case ClientRequestType::Sampling:
+        Q_EMIT samplingResultReceived(requestId, McpProtocolCreateMessageResult::fromJson(result));
+        break;
+    case ClientRequestType::Elicitation:
+        Q_EMIT elicitationResultReceived(requestId, McpProtocolElicitResult::fromJson(result));
+        break;
+    case ClientRequestType::Roots:
+        Q_EMIT rootsReceived(requestId, McpProtocolListRootsResult::fromJson(result).roots());
+        break;
+    }
+}
+
+McpProtocolClientCapabilities McpProtocolServerProtocolManager::clientCapabilities() const
+{
+    return mClientCapabilities;
+}
+
+qint64 McpProtocolServerProtocolManager::sendClientRequest(ClientRequestType type, const QJsonObject &request)
+{
+    if (!mRunning) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server is not running: request can not be sent";
+        return -1;
+    }
+    const qint64 requestId = mNextClientRequestId++;
+    QJsonObject obj = request;
+    obj["id"_L1] = requestId;
+    mPendingClientRequests.insert(requestId, type);
+    send(obj);
+    return requestId;
+}
+
+qint64 McpProtocolServerProtocolManager::requestSampling(const McpProtocolCreateMessageRequestParams &params)
+{
+    const std::optional<McpProtocolClientCapabilities::Sampling> sampling = mClientCapabilities.sampling();
+    if (!sampling.has_value()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client doesn't support sampling";
+        return -1;
+    }
+    // Specification: tools must not be sent when client doesn't support them
+    if (params.tools().has_value() && !sampling->tools().has_value()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client doesn't support tools in sampling";
+        return -1;
+    }
+    if (!params.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid sampling params";
+        return -1;
+    }
+    McpProtocolCreateMessageRequest request;
+    request.setParams(params);
+    return sendClientRequest(ClientRequestType::Sampling, McpProtocolCreateMessageRequest::toJson(request));
+}
+
+qint64 McpProtocolServerProtocolManager::requestElicitation(const McpProtocolUtils::ElicitRequestParams &params)
+{
+    const std::optional<McpProtocolClientCapabilities::Elicitation> elicitation = mClientCapabilities.elicitation();
+    if (!elicitation.has_value()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client doesn't support elicitation";
+        return -1;
+    }
+    bool modeSupported = false;
+    bool valid = false;
+    if (const auto urlParams = std::get_if<McpProtocolElicitRequestURLParams>(&params)) {
+        modeSupported = elicitation->url().has_value();
+        valid = urlParams->isValid();
+    } else {
+        // Specification: empty elicitation capability means form mode
+        modeSupported = elicitation->form().has_value() || !elicitation->url().has_value();
+        valid = std::get<McpProtocolElicitRequestFormParams>(params).isValid();
+    }
+    if (!modeSupported) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client doesn't support this elicitation mode";
+        return -1;
+    }
+    if (!valid) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid elicitation params";
+        return -1;
+    }
+    McpProtocolElicitRequest request;
+    request.setParams(params);
+    return sendClientRequest(ClientRequestType::Elicitation, McpProtocolElicitRequest::toJson(request));
+}
+
+qint64 McpProtocolServerProtocolManager::requestRoots()
+{
+    if (!mClientCapabilities.roots().has_value()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Client doesn't support roots";
+        return -1;
+    }
+    return sendClientRequest(ClientRequestType::Roots, McpProtocolListRootsRequest::toJson({}));
+}
+
+void McpProtocolServerProtocolManager::cancelClientRequest(qint64 requestId, const QString &reason)
+{
+    if (!mPendingClientRequests.remove(requestId)) {
+        return;
+    }
+    McpProtocolCancelledNotificationParams params;
+    params.setRequestId(McpProtocolUtils::RequestId(requestId));
+    if (!reason.isEmpty()) {
+        params.setReason(reason);
+    }
+    McpProtocolCancelledNotification notification;
+    notification.setParams(std::move(params));
+    sendNotification(McpProtocolCancelledNotification::toJson(notification));
+}
+
+void McpProtocolServerProtocolManager::failAllClientRequests(const QString &message)
+{
+    const auto requests = std::exchange(mPendingClientRequests, {});
+    for (auto it = requests.cbegin(), end = requests.cend(); it != end; ++it) {
+        Q_EMIT clientRequestFailed(it.key(), internalErrorCode, message);
+    }
 }
 
 void McpProtocolServerProtocolManager::handleRequest(const QJsonObject &obj)
@@ -392,6 +552,10 @@ void McpProtocolServerProtocolManager::handleRequest(const QJsonObject &obj)
         listResources(id, params);
     } else if (method == McpProtocolReadResourceRequest::type()) {
         readResource(id, params);
+    } else if (method == McpProtocolCompleteRequest::type()) {
+        complete(id, params);
+    } else if (method == McpProtocolSetLevelRequest::type()) {
+        setLoggingLevel(id, params);
     } else if (!handleCustomRequest(id, method, params)) {
         sendError(id, methodNotFoundCode, u"Method not found: %1"_s.arg(QString::fromLatin1(method)));
     }
@@ -401,8 +565,10 @@ McpProtocolServerCapabilities McpProtocolServerProtocolManager::capabilities() c
 {
     McpProtocolServerCapabilities capabilities;
     capabilities.setTools(McpProtocolServerCapabilities::Tools().listChanged(true));
+    capabilities.setLogging(QMap<QString, QJsonValue>{});
     if (!mPrompts.empty()) {
         capabilities.setPrompts(McpProtocolServerCapabilities::Prompts().listChanged(true));
+        capabilities.setCompletions(QMap<QString, QJsonValue>{});
     }
     if (!mResources.empty()) {
         capabilities.setResources(McpProtocolServerCapabilities::Resources().listChanged(true));
@@ -418,13 +584,29 @@ bool McpProtocolServerProtocolManager::handleCustomRequest(const QJsonValue &id,
     return false;
 }
 
+std::optional<QStringList> McpProtocolServerProtocolManager::completeResourceTemplate(const QString &uri,
+                                                                                      const QString &argumentName,
+                                                                                      const QString &value,
+                                                                                      const QMap<QString, QString> &arguments) const
+{
+    Q_UNUSED(uri)
+    Q_UNUSED(argumentName)
+    Q_UNUSED(value)
+    Q_UNUSED(arguments)
+    return std::nullopt;
+}
+
 void McpProtocolServerProtocolManager::initialize(const QJsonValue &id, const QJsonObject &params)
 {
     // Use version of client when we support it
-    QString version = McpProtocolInitializeRequestParams::fromJson(params).protocolVersion();
+    const McpProtocolInitializeRequestParams initializeParams = McpProtocolInitializeRequestParams::fromJson(params);
+    QString version = initializeParams.protocolVersion();
     if (McpProtocolUtils::convertProtocolVersionFromString(version) == McpProtocolUtils::ProtocolVersion::Unknown) {
         version = McpProtocolUtils::convertProtocolVersionToString(McpProtocolUtils::ProtocolVersion::V2025_11_25);
     }
+    // New client: previous one will never answer
+    failAllClientRequests(u"Client reinitialized"_s);
+    mClientCapabilities = initializeParams.capabilities();
     McpProtocolInitializeResult result;
     result.setProtocolVersion(version);
     result.setCapabilities(capabilities());
@@ -539,6 +721,84 @@ void McpProtocolServerProtocolManager::readResource(const QJsonValue &id, const 
     sendResult(id, McpProtocolReadResourceResult::toJson(result));
 }
 
+void McpProtocolServerProtocolManager::complete(const QJsonValue &id, const QJsonObject &params)
+{
+    const McpProtocolCompleteRequestParams completeParams = McpProtocolCompleteRequestParams::fromJson(params);
+    if (!completeParams.isValid()) {
+        sendError(id, invalidParamsCode, u"Invalid completion params"_s);
+        return;
+    }
+    const McpProtocolCompleteRequestParams::Argument argument = completeParams.argument();
+    const QMap<QString, QString> arguments =
+        completeParams.context().value_or(McpProtocolCompleteRequestParams::Context{}).arguments().value_or(QMap<QString, QString>{});
+    QStringList values;
+    const McpProtocolUtils::CompleteRequestParamsRef ref = completeParams.ref();
+    if (const auto promptRef = std::get_if<McpProtocolPromptReference>(&ref)) {
+        const McpProtocolServerPrompt *prompt = findPrompt(promptRef->name());
+        if (!prompt) {
+            sendError(id, invalidParamsCode, u"Unknown prompt: %1"_s.arg(promptRef->name()));
+            return;
+        }
+        values = prompt->complete(argument.name(), argument.value(), arguments);
+    } else {
+        const QString uri = std::get<McpProtocolResourceTemplateReference>(ref).uri();
+        const std::optional<QStringList> templateValues = completeResourceTemplate(uri, argument.name(), argument.value(), arguments);
+        if (!templateValues.has_value()) {
+            sendError(id, invalidParamsCode, u"Unknown resource template: %1"_s.arg(uri));
+            return;
+        }
+        values = *templateValues;
+    }
+    McpProtocolCompleteResult::Completion completion;
+    const bool hasMore = values.count() > maxCompletionValues;
+    if (hasMore) {
+        completion.setTotal(static_cast<int>(values.count()));
+        values.resize(maxCompletionValues);
+    }
+    completion.setHasMore(hasMore);
+    completion.setValues(std::move(values));
+    McpProtocolCompleteResult result;
+    result.setCompletion(std::move(completion));
+    sendResult(id, McpProtocolCompleteResult::toJson(result));
+}
+
+void McpProtocolServerProtocolManager::setLoggingLevel(const QJsonValue &id, const QJsonObject &params)
+{
+    const McpProtocolSetLevelRequestParams setLevelParams = McpProtocolSetLevelRequestParams::fromJson(params);
+    if (!setLevelParams.isValid()) {
+        sendError(id, invalidParamsCode, u"Invalid logging level"_s);
+        return;
+    }
+    mLoggingLevel = setLevelParams.level();
+    sendResult(id, {});
+}
+
+McpProtocolUtils::LoggingLevel McpProtocolServerProtocolManager::loggingLevel() const
+{
+    return mLoggingLevel;
+}
+
+void McpProtocolServerProtocolManager::sendLogMessage(McpProtocolUtils::LoggingLevel level, const QJsonValue &data, const QString &logger)
+{
+    if (level == McpProtocolUtils::LoggingLevel::Unknown) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid logging level";
+        return;
+    }
+    // Levels are sorted by severity
+    if (level < mLoggingLevel) {
+        return;
+    }
+    McpProtocolLoggingMessageNotificationParams params;
+    params.setLevel(level);
+    params.setData(data);
+    if (!logger.isEmpty()) {
+        params.setLogger(logger);
+    }
+    McpProtocolLoggingMessageNotification notification;
+    notification.setParams(std::move(params));
+    sendNotification(McpProtocolLoggingMessageNotification::toJson(notification));
+}
+
 void McpProtocolServerProtocolManager::callTool(const QJsonValue &id, const QJsonObject &params)
 {
     const McpProtocolCallToolRequestParams callToolParams = McpProtocolCallToolRequestParams::fromJson(params);
@@ -612,7 +872,11 @@ void McpProtocolServerProtocolManager::slotStarted()
 void McpProtocolServerProtocolManager::slotFinished()
 {
     mRunning = false;
+    // Next client starts with default level
+    mLoggingLevel = McpProtocolUtils::LoggingLevel::Info;
+    mClientCapabilities = {};
     cancelAllCalls();
+    failAllClientRequests(u"Server stopped"_s);
     Q_EMIT logMessage(i18n("Server stopped"));
     Q_EMIT runningChanged(false);
 }

@@ -7,16 +7,24 @@
 #include <QDateTime>
 #include <QJsonObject>
 #include <QTimer>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolListResourceTemplatesResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPingRequest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceTemplate>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSamplingMessage>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerPrompt>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerResource>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerTool>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerToolCall>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <functional>
 using namespace Qt::Literals::StringLiterals;
@@ -54,6 +62,31 @@ private:
 void addFunctionTool(McpProtocolServerProtocolManager *manager, const McpProtocolTool &definition, FunctionTool::Handler handler)
 {
     manager->addTool(std::make_unique<FunctionTool>(definition, std::move(handler)));
+}
+
+// Finish \a call with \a handler when client answers request \a requestId (sent by tool to client)
+template<typename Signal, typename Handler>
+void waitClientAnswer(McpProtocolServerProtocolManager *manager, McpProtocolServerToolCall *call, qint64 requestId, Signal signal, Handler handler)
+{
+    if (requestId < 0) {
+        call->finishWithText(u"Client doesn't support this request"_s, true);
+        return;
+    }
+    // call is the context: connections are dropped when call is deleted
+    QObject::connect(manager, signal, call, [call, requestId, handler](qint64 id, const auto &answer) {
+        if (id == requestId) {
+            handler(call, answer);
+        }
+    });
+    QObject::connect(manager, &McpProtocolServerProtocolManager::clientRequestFailed, call, [call, requestId](qint64 id, int code, const QString &message) {
+        if (id == requestId) {
+            call->finishWithText(u"Client error %1: %2"_s.arg(code).arg(message), true);
+        }
+    });
+    // Client doesn't wait anymore for tool result: user doesn't have to answer
+    QObject::connect(call, &McpProtocolServerToolCall::cancelled, manager, [manager, requestId]() {
+        manager->cancelClientRequest(requestId, u"Tool call cancelled"_s);
+    });
 }
 
 class GreetingPrompt : public McpProtocolServerPrompt
@@ -137,6 +170,75 @@ McpTestServer::McpTestServer(QObject *parent)
                             call->finishWithText(u"Waited %1 ms"_s.arg(delay));
                         });
                     });
+    addFunctionTool(this, McpProtocolServerTool::createTool(u"ask_name"_s, u"Ask user name (elicitation)"_s), [this](McpProtocolServerToolCall *call) {
+        McpProtocolStringSchema nameSchema;
+        nameSchema.setTitle(u"Name"_s);
+        McpProtocolElicitRequestFormParams::RequestedSchema schema;
+        schema.setProperties({{u"name"_s, nameSchema}});
+        schema.setRequired(QStringList{u"name"_s});
+        McpProtocolElicitRequestFormParams params;
+        params.setMessage(u"What is your name?"_s);
+        params.setRequestedSchema(schema);
+        waitClientAnswer(this,
+                         call,
+                         requestElicitation(params),
+                         &McpProtocolServerProtocolManager::elicitationResultReceived,
+                         [](McpProtocolServerToolCall *call, const McpProtocolElicitResult &result) {
+                             if (result.action() != McpProtocolElicitResult::Action::Accept) {
+                                 call->finishWithText(u"User didn't give a name (%1)"_s.arg(McpProtocolElicitResult::convertActionToString(result.action())));
+                                 return;
+                             }
+                             const McpProtocolUtils::ElicitResultContentValue value =
+                                 result.content().value_or(QMap<QString, McpProtocolUtils::ElicitResultContentValue>{}).value(u"name"_s);
+                             const auto name = std::get_if<QString>(&value);
+                             call->finishWithText(u"Hello %1"_s.arg(name ? *name : QString()));
+                         });
+    });
+    addFunctionTool(
+        this,
+        McpProtocolServerTool::createTool(u"summarize"_s,
+                                          u"Summarize text with client LLM (sampling)"_s,
+                                          QMap<QString, QJsonObject>{{u"text"_s, McpProtocolServerTool::schemaProperty(u"string"_s, u"Text to summarize"_s)}},
+                                          {u"text"_s}),
+        [this](McpProtocolServerToolCall *call) {
+            McpProtocolTextContent content;
+            content.setText(u"Summarize this text in one sentence:\n%1"_s.arg(call->arguments().value(u"text"_s).toString()));
+            McpProtocolSamplingMessage message;
+            message.setRole(McpProtocolUtils::Role::User);
+            message.setContent(content);
+            McpProtocolCreateMessageRequestParams params;
+            params.setMessages({message});
+            params.setMaxTokens(200);
+            waitClientAnswer(this,
+                             call,
+                             requestSampling(params),
+                             &McpProtocolServerProtocolManager::samplingResultReceived,
+                             [](McpProtocolServerToolCall *call, const McpProtocolCreateMessageResult &result) {
+                                 const McpProtocolUtils::CreateMessageResultContent resultContent = result.content();
+                                 if (const auto text = std::get_if<McpProtocolTextContent>(&resultContent)) {
+                                     call->finishWithText(text->text());
+                                 } else {
+                                     call->finishWithText(u"Client didn't return text"_s, true);
+                                 }
+                             });
+        });
+    addFunctionTool(this, McpProtocolServerTool::createTool(u"list_roots"_s, u"List client roots"_s), [this](McpProtocolServerToolCall *call) {
+        waitClientAnswer(this,
+                         call,
+                         requestRoots(),
+                         &McpProtocolServerProtocolManager::rootsReceived,
+                         [](McpProtocolServerToolCall *call, const QList<McpProtocolRoot> &roots) {
+                             QStringList uris;
+                             uris.reserve(roots.count());
+                             for (const McpProtocolRoot &root : roots) {
+                                 uris.append(root.uri());
+                             }
+                             call->finishWithText(uris.isEmpty() ? u"No root"_s : uris.join(u'\n'));
+                         });
+    });
+    connect(this, &McpProtocolServerProtocolManager::rootsListChanged, this, [this]() {
+        Q_EMIT logMessage(u"Client roots changed"_s);
+    });
     addPrompt(std::make_unique<GreetingPrompt>());
     addResource(std::make_unique<TextResource>());
 }

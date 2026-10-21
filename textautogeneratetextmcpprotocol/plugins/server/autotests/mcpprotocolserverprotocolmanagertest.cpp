@@ -6,14 +6,27 @@
 #include "mcpprotocolserverprotocolmanagertest.h"
 #include <QCoreApplication>
 #include <QJsonArray>
+#include <QRegularExpression>
 #include <QSignalSpy>
 #include <QTcpServer>
 #include <QTest>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequest>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestURLParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolLoggingMessageNotificationParams>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceResult>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSamplingMessage>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerPrompt>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerResource>
@@ -43,6 +56,23 @@ public:
     [[nodiscard]] McpProtocolGetPromptResult get(const QMap<QString, QString> &arguments) const override
     {
         return createUserTextResult(u"Say hello to %1"_s.arg(arguments.value(u"name"_s)), u"Greeting"_s);
+    }
+
+    [[nodiscard]] QStringList complete(const QString &argumentName, const QString &value, const QMap<QString, QString> &arguments) const override
+    {
+        Q_UNUSED(arguments)
+        if (argumentName == "style"_L1) {
+            return QStringList{u"formal"_s, u"friendly"_s, u"funny"_s}.filter(QRegularExpression(u"^"_s + QRegularExpression::escape(value)));
+        }
+        if (argumentName == "name"_L1) {
+            // More values than allowed in result
+            QStringList names;
+            for (int i = 0; i < 150; ++i) {
+                names.append(value + QString::number(i));
+            }
+            return names;
+        }
+        return {};
     }
 
 private:
@@ -144,6 +174,59 @@ QStringList names(const QJsonObject &response, const QString &key)
 int errorCode(const QJsonObject &response)
 {
     return response.value("error"_L1).toObject().value("code"_L1).toInt();
+}
+
+McpProtocolCompleteRequestParams completeParams(const McpProtocolUtils::CompleteRequestParamsRef &ref, const QString &argumentName, const QString &value)
+{
+    McpProtocolCompleteRequestParams::Argument argument;
+    argument.setName(argumentName);
+    argument.setValue(value);
+    McpProtocolCompleteRequestParams params;
+    params.setRef(ref);
+    params.setArgument(argument);
+    return params;
+}
+
+McpProtocolPromptReference promptReference(const QString &name)
+{
+    McpProtocolPromptReference reference;
+    reference.setName(name);
+    return reference;
+}
+
+McpProtocolTextContent textContent(const QString &text)
+{
+    McpProtocolTextContent content;
+    content.setText(text);
+    return content;
+}
+
+McpProtocolCreateMessageRequestParams samplingParams(const QString &text)
+{
+    McpProtocolSamplingMessage message;
+    message.setRole(McpProtocolUtils::Role::User);
+    message.setContent(textContent(text));
+    McpProtocolCreateMessageRequestParams params;
+    params.setMaxTokens(100);
+    params.setMessages({message});
+    return params;
+}
+
+McpProtocolElicitRequestFormParams formParams(const QString &message)
+{
+    McpProtocolElicitRequestFormParams::RequestedSchema schema;
+    schema.setProperties({{u"name"_s, McpProtocolStringSchema()}});
+    McpProtocolElicitRequestFormParams params;
+    params.setMessage(message);
+    params.setRequestedSchema(schema);
+    return params;
+}
+
+McpProtocolRoot root(const QString &uri)
+{
+    McpProtocolRoot root;
+    root.setUri(uri);
+    return root;
 }
 }
 
@@ -348,6 +431,249 @@ void McpProtocolServerProtocolManagerTest::shouldNotifyListChanged()
     QVERIFY(!server.removeResource(u"file:///a.txt"_s));
     QCOMPARE(server.prompts().count(), 1);
     QVERIFY(server.resources().isEmpty());
+}
+
+void McpProtocolServerProtocolManagerTest::shouldCompletePromptArgument()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    server.addPrompt(std::make_unique<GreetingPrompt>());
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    initialize(client);
+    QVERIFY(client.initializeResult().capabilities().completions().has_value());
+
+    QJsonObject response = waitResponse(client, client.complete(completeParams(promptReference(u"greeting"_s), u"style"_s, u"f"_s)));
+    McpProtocolCompleteResult::Completion completion = McpProtocolCompleteResult::fromJson(response.value("result"_L1).toObject()).completion();
+    QCOMPARE(completion.values(), (QStringList{u"formal"_s, u"friendly"_s, u"funny"_s}));
+    QCOMPARE(completion.hasMore(), false);
+    QVERIFY(!completion.total().has_value());
+
+    response = waitResponse(client, client.complete(completeParams(promptReference(u"greeting"_s), u"style"_s, u"fr"_s)));
+    completion = McpProtocolCompleteResult::fromJson(response.value("result"_L1).toObject()).completion();
+    QCOMPARE(completion.values(), QStringList{u"friendly"_s});
+
+    // Result is truncated
+    response = waitResponse(client, client.complete(completeParams(promptReference(u"greeting"_s), u"name"_s, u"a"_s)));
+    completion = McpProtocolCompleteResult::fromJson(response.value("result"_L1).toObject()).completion();
+    QCOMPARE(completion.values().count(), McpProtocolServerProtocolManager::maxCompletionValues);
+    QCOMPARE(completion.values().constFirst(), u"a0"_s);
+    QCOMPARE(completion.hasMore(), true);
+    QCOMPARE(completion.total(), 150);
+
+    // No completion for this argument
+    response = waitResponse(client, client.complete(completeParams(promptReference(u"greeting"_s), u"other"_s, {})));
+    completion = McpProtocolCompleteResult::fromJson(response.value("result"_L1).toObject()).completion();
+    QVERIFY(completion.values().isEmpty());
+    QCOMPARE(completion.hasMore(), false);
+}
+
+void McpProtocolServerProtocolManagerTest::shouldReturnErrorForInvalidCompletionRequest()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    server.addPrompt(std::make_unique<GreetingPrompt>());
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    initialize(client);
+    // Unknown prompt
+    QCOMPARE(errorCode(waitResponse(client, client.complete(completeParams(promptReference(u"unknown"_s), u"style"_s, {})))),
+             McpProtocolServerProtocolManager::invalidParamsCode);
+    // No resource template by default
+    McpProtocolResourceTemplateReference templateReference;
+    templateReference.setUri(u"file:///{path}"_s);
+    QCOMPARE(errorCode(waitResponse(client, client.complete(completeParams(templateReference, u"path"_s, {})))),
+             McpProtocolServerProtocolManager::invalidParamsCode);
+}
+
+void McpProtocolServerProtocolManagerTest::shouldSendLogMessagesFromLoggingLevel()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    QCOMPARE(server.loggingLevel(), McpProtocolUtils::LoggingLevel::Info);
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    initialize(client);
+    QVERIFY(client.initializeResult().capabilities().logging().has_value());
+    // No prompt: completions are not supported
+    QVERIFY(!client.initializeResult().capabilities().completions().has_value());
+
+    QList<McpProtocolLoggingMessageNotificationParams> messages;
+    connect(&client, &McpProtocolClientProtocolManager::loggingMessageReceived, this, [&messages](const McpProtocolLoggingMessageNotificationParams &params) {
+        messages.append(params);
+    });
+    // Notifications use event stream opened by client after initialization
+    QTest::qWait(200);
+    // Debug is lower than default level
+    server.sendLogMessage(McpProtocolUtils::LoggingLevel::Debug, u"debug"_s);
+    server.sendLogMessage(McpProtocolUtils::LoggingLevel::Info, u"info"_s);
+    QTRY_COMPARE(messages.count(), 1);
+    QCOMPARE(messages.at(0).level(), McpProtocolUtils::LoggingLevel::Info);
+    QCOMPARE(messages.at(0).data(), QJsonValue(u"info"_s));
+    QVERIFY(!messages.at(0).logger().has_value());
+
+    const QJsonObject response = waitResponse(client, client.setLoggingLevel(McpProtocolUtils::LoggingLevel::Error));
+    QVERIFY(response.contains("result"_L1));
+    QCOMPARE(server.loggingLevel(), McpProtocolUtils::LoggingLevel::Error);
+    server.sendLogMessage(McpProtocolUtils::LoggingLevel::Warning, u"warning"_s);
+    const QJsonObject data{{u"text"_s, u"critical"_s}};
+    server.sendLogMessage(McpProtocolUtils::LoggingLevel::Critical, data, u"database"_s);
+    QTRY_COMPARE(messages.count(), 2);
+    QCOMPARE(messages.at(1).level(), McpProtocolUtils::LoggingLevel::Critical);
+    QCOMPARE(messages.at(1).data(), QJsonValue(data));
+    QCOMPARE(messages.at(1).logger(), u"database"_s);
+}
+
+void McpProtocolServerProtocolManagerTest::shouldNotSendClientRequestsWithoutCapabilities()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    // Server is not running
+    QCOMPARE(server.requestRoots(), -1);
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    initialize(client);
+    const McpProtocolClientCapabilities capabilities = server.clientCapabilities();
+    QVERIFY(!capabilities.sampling().has_value());
+    QVERIFY(!capabilities.elicitation().has_value());
+    QVERIFY(!capabilities.roots().has_value());
+    QCOMPARE(server.requestSampling(samplingParams(u"hello"_s)), -1);
+    QCOMPARE(server.requestElicitation(formParams(u"name?"_s)), -1);
+    QCOMPARE(server.requestRoots(), -1);
+}
+
+void McpProtocolServerProtocolManagerTest::shouldRequestSampling()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    client.setSamplingSupported(true);
+    bool reject = false;
+    connect(&client,
+            &McpProtocolClientProtocolManager::samplingRequested,
+            this,
+            [&client, &reject](const McpProtocolUtils::RequestId &id, const McpProtocolCreateMessageRequest &request) {
+                if (reject) {
+                    client.rejectSampling(id);
+                    return;
+                }
+                const auto content = std::get<McpProtocolTextContent>(request.params().messages().constFirst().content());
+                McpProtocolCreateMessageResult result;
+                result.setModel(u"model"_s);
+                result.setRole(McpProtocolUtils::Role::Assistant);
+                result.setContent(textContent(u"answer to "_s + content.text()));
+                client.respondToSampling(id, result);
+            });
+    initialize(client);
+    QVERIFY(server.clientCapabilities().sampling().has_value());
+
+    const QSignalSpy resultSpy(&server, &McpProtocolServerProtocolManager::samplingResultReceived);
+    const QSignalSpy failedSpy(&server, &McpProtocolServerProtocolManager::clientRequestFailed);
+    // Invalid params: no message
+    QCOMPARE(server.requestSampling(McpProtocolCreateMessageRequestParams()), -1);
+    // Client doesn't support tools in sampling
+    McpProtocolCreateMessageRequestParams toolsParams = samplingParams(u"hello"_s);
+    toolsParams.setTools(QList<McpProtocolTool>{});
+    QCOMPARE(server.requestSampling(toolsParams), -1);
+
+    const qint64 requestId = server.requestSampling(samplingParams(u"hello"_s));
+    QVERIFY(requestId > 0);
+    QTRY_COMPARE(resultSpy.count(), 1);
+    QCOMPARE(resultSpy.at(0).at(0).toLongLong(), requestId);
+    const auto result = resultSpy.at(0).at(1).value<McpProtocolCreateMessageResult>();
+    QCOMPARE(result.model(), u"model"_s);
+    QCOMPARE(std::get<McpProtocolTextContent>(result.content()).text(), u"answer to hello"_s);
+
+    reject = true;
+    const qint64 rejectedId = server.requestSampling(samplingParams(u"hello"_s));
+    QVERIFY(rejectedId != requestId);
+    QTRY_COMPARE(failedSpy.count(), 1);
+    QCOMPARE(failedSpy.at(0).at(0).toLongLong(), rejectedId);
+    QCOMPARE(failedSpy.at(0).at(1).toInt(), -1);
+    QCOMPARE(resultSpy.count(), 1);
+}
+
+void McpProtocolServerProtocolManagerTest::shouldRequestElicitation()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    client.setElicitationSupported(true);
+    bool answer = true;
+    connect(&client,
+            &McpProtocolClientProtocolManager::elicitationRequested,
+            this,
+            [&client, &answer](const McpProtocolUtils::RequestId &id, const McpProtocolElicitRequest &request) {
+                QCOMPARE(std::get<McpProtocolElicitRequestFormParams>(request.params()).message(), u"name?"_s);
+                if (!answer) {
+                    // User didn't answer yet
+                    return;
+                }
+                McpProtocolElicitResult result;
+                result.setAction(McpProtocolElicitResult::Action::Accept);
+                result.setContent(QMap<QString, McpProtocolUtils::ElicitResultContentValue>{{u"name"_s, u"Konqi"_s}});
+                client.respondToElicitation(id, result);
+            });
+    initialize(client);
+    QVERIFY(server.clientCapabilities().elicitation().has_value());
+
+    // Client only supports form mode
+    McpProtocolElicitRequestURLParams urlParams;
+    urlParams.setElicitationId(u"1"_s);
+    urlParams.setMessage(u"login"_s);
+    urlParams.setUrl(u"https://kde.org"_s);
+    QCOMPARE(server.requestElicitation(urlParams), -1);
+
+    const QSignalSpy resultSpy(&server, &McpProtocolServerProtocolManager::elicitationResultReceived);
+    const qint64 requestId = server.requestElicitation(formParams(u"name?"_s));
+    QVERIFY(requestId > 0);
+    QTRY_COMPARE(resultSpy.count(), 1);
+    QCOMPARE(resultSpy.at(0).at(0).toLongLong(), requestId);
+    const auto result = resultSpy.at(0).at(1).value<McpProtocolElicitResult>();
+    QCOMPARE(result.action(), McpProtocolElicitResult::Action::Accept);
+    QCOMPARE(std::get<QString>(result.content()->value(u"name"_s)), u"Konqi"_s);
+
+    // Server cancels request while user doesn't answer
+    answer = false;
+    const QSignalSpy requestedSpy(&client, &McpProtocolClientProtocolManager::elicitationRequested);
+    const QSignalSpy cancelledSpy(&client, &McpProtocolClientProtocolManager::userRequestCancelled);
+    const qint64 cancelledId = server.requestElicitation(formParams(u"name?"_s));
+    QTRY_COMPARE(requestedSpy.count(), 1);
+    server.cancelClientRequest(cancelledId, u"Timeout"_s);
+    QTRY_COMPARE(cancelledSpy.count(), 1);
+    QCOMPARE(cancelledSpy.at(0).at(0).value<McpProtocolUtils::RequestId>(), McpProtocolUtils::RequestId(cancelledId));
+}
+
+void McpProtocolServerProtocolManagerTest::shouldRequestRoots()
+{
+    const QUrl url = freeUrl();
+    McpProtocolServerProtocolManager server(McpProtocolPlugin::TransportType::StreamableHttp);
+    startServer(server, url);
+
+    McpProtocolClientProtocolManager client(serverSettings(url));
+    client.setRootsSupported(true);
+    client.setRoots({root(u"file:///home/user/project"_s)});
+    initialize(client);
+    QCOMPARE(server.clientCapabilities().roots()->listChanged(), true);
+
+    const QSignalSpy rootsSpy(&server, &McpProtocolServerProtocolManager::rootsReceived);
+    const qint64 requestId = server.requestRoots();
+    QVERIFY(requestId > 0);
+    QTRY_COMPARE(rootsSpy.count(), 1);
+    QCOMPARE(rootsSpy.at(0).at(0).toLongLong(), requestId);
+    QCOMPARE(rootsSpy.at(0).at(1).value<QList<McpProtocolRoot>>(), QList<McpProtocolRoot>{root(u"file:///home/user/project"_s)});
+
+    const QSignalSpy changedSpy(&server, &McpProtocolServerProtocolManager::rootsListChanged);
+    client.setRoots({root(u"file:///tmp"_s)});
+    QTRY_COMPARE(changedSpy.count(), 1);
 }
 
 #include "moc_mcpprotocolserverprotocolmanagertest.cpp"

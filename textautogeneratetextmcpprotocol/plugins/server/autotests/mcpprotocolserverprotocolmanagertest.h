@@ -25,4 +25,11 @@ private Q_SLOTS:
     void shouldReturnErrorForInvalidResourceRequest();
     void shouldPaginatePromptsAndResources();
     void shouldNotifyListChanged();
+    void shouldCompletePromptArgument();
+    void shouldReturnErrorForInvalidCompletionRequest();
+    void shouldSendLogMessagesFromLoggingLevel();
+    void shouldNotSendClientRequestsWithoutCapabilities();
+    void shouldRequestSampling();
+    void shouldRequestElicitation();
+    void shouldRequestRoots();
 };

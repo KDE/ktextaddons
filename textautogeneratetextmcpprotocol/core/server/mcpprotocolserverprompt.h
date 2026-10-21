@@ -7,6 +7,7 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QMap>
+#include <QStringList>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolGetPromptResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPrompt>
 namespace TextAutoGenerateTextMcpProtocolCore
@@ -18,7 +19,7 @@ namespace TextAutoGenerateTextMcpProtocolCore
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolServerPrompt
  *
- * Reimplement definition() (name, description, arguments…) and get().
+ * Reimplement definition() (name, description, arguments…) and get(), and complete() to propose argument values.
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServerPrompt
 {
@@ -42,6 +43,12 @@ public:
      * Return messages of prompt for \a arguments. Required arguments are checked by manager before.
      */
     [[nodiscard]] virtual TextAutoGenerateTextMcpProtocolCore::McpProtocolGetPromptResult get(const QMap<QString, QString> &arguments) const = 0;
+    /*!
+     * \brief complete
+     * Return completion values for argument \a argumentName which starts with \a value (completion/complete).
+     * \a arguments contains values of arguments already resolved by client. By default no value is returned.
+     */
+    [[nodiscard]] virtual QStringList complete(const QString &argumentName, const QString &value, const QMap<QString, QString> &arguments) const;
 
     /*!
      * \brief createPrompt

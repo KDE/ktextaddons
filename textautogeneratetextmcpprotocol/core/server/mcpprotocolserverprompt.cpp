@@ -12,6 +12,14 @@ McpProtocolServerPrompt::McpProtocolServerPrompt() = default;
 
 McpProtocolServerPrompt::~McpProtocolServerPrompt() = default;
 
+QStringList McpProtocolServerPrompt::complete(const QString &argumentName, const QString &value, const QMap<QString, QString> &arguments) const
+{
+    Q_UNUSED(argumentName)
+    Q_UNUSED(value)
+    Q_UNUSED(arguments)
+    return {};
+}
+
 McpProtocolPrompt McpProtocolServerPrompt::createPrompt(const QString &name, const QString &description, const QList<McpProtocolPromptArgument> &arguments)
 {
     McpProtocolPrompt prompt;
