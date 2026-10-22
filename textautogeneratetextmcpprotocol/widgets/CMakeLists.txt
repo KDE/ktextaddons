@@ -79,6 +79,8 @@ target_sources(
         client/mcpregistryserverlistviewdelegate.cpp
         client/mcpregistryserverinfowidget.h
         client/mcpregistryserverinfowidget.cpp
+        client/addmcpregistryserverdialog.h
+        client/addmcpregistryserverdialog.cpp
 )
 
 target_include_directories(
