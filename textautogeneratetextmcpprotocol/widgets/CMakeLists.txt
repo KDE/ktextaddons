@@ -73,6 +73,12 @@ target_sources(
         client/addmcpstreamablehttpserverheaderconfigurewidget.cpp
         common/selecttypecombobox.h
         common/selecttypecombobox.cpp
+        client/mcpregistryserverlistview.h
+        client/mcpregistryserverlistview.cpp
+        client/mcpregistryserverlistviewdelegate.h
+        client/mcpregistryserverlistviewdelegate.cpp
+        client/mcpregistryserverinfowidget.h
+        client/mcpregistryserverinfowidget.cpp
 )
 
 target_include_directories(
@@ -128,6 +134,7 @@ target_link_libraries(
         Qt::Widgets
         KF6::TextAutoGenerateTextMcpProtocolCore
     PRIVATE
+        Qt::Network
         KF6::I18n
         KF6::WidgetsAddons
         KF6::IconWidgets
