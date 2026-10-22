@@ -1,0 +1,19 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+
+#include "mcpprotocolwidgets_private_export.h"
+#include <QWidget>
+namespace TextAutoGenerateTextMcpProtocolWidgets
+{
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpRegistryServerWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit AddMcpRegistryServerWidget(QWidget *parent = nullptr);
+    ~AddMcpRegistryServerWidget() override;
+};
+}
