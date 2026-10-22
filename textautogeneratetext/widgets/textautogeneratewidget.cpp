@@ -129,7 +129,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             } else {
                 mTextAutoGenerateTextLineEditWidget->setText({});
                 mTextAutoGenerateResultWidget->scrollToBottom();
-                mTextAutoGenerateTextLineEditWidget->setActivatedTools({});
+                mTextAutoGenerateTextLineEditWidget->setDefaultActivatedTools();
             }
         });
         connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {

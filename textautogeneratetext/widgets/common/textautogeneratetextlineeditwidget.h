@@ -41,6 +41,7 @@ public:
     void setChatId(const QByteArray &newChatId);
 
     void setActivatedTools(const QList<QByteArray> &lst);
+    void setDefaultActivatedTools();
     [[nodiscard]] QList<QByteArray> activatedTools() const;
 
 Q_SIGNALS:

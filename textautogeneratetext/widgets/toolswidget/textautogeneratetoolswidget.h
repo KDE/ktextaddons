@@ -22,18 +22,22 @@ public:
     [[nodiscard]] QList<QByteArray> generateListOfActiveTools() const;
 
     void setActivatedTools(const QList<QByteArray> &lst);
+    void setDefaultActivatedTools();
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<QByteArray> activatedMcpServers() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void disableTools();
     TEXTAUTOGENERATETEXT_NO_EXPORT void createMcpServerButtons();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateMcpServerButton(const QByteArray &serverIdentifier);
     TEXTAUTOGENERATETEXT_NO_EXPORT void fillMcpToolsMenu(QToolButton *button, const QByteArray &serverIdentifier, const QString &status);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotMcpToolToggled(QToolButton *button, const QByteArray &serverIdentifier);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void changeMcpServerActivated(const QByteArray &serverIdentifier, bool state);
     QList<QToolButton *> mListButton;
     // One button by MCP server
     QList<QToolButton *> mMcpServerButtons;
     // Tools selected by MCP server, all tools are used when server is not in list
     QHash<QByteArray, QStringList> mMcpSelectedTools;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    bool mInitialized = false;
 };
 }

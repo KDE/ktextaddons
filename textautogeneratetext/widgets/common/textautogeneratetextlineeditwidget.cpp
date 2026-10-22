@@ -212,6 +212,11 @@ void TextAutoGenerateTextLineEditWidget::setActivatedTools(const QList<QByteArra
     mTextAutoGenerateToolsWidget->setActivatedTools(lst);
 }
 
+void TextAutoGenerateTextLineEditWidget::setDefaultActivatedTools()
+{
+    mTextAutoGenerateToolsWidget->setDefaultActivatedTools();
+}
+
 QList<QByteArray> TextAutoGenerateTextLineEditWidget::activatedTools() const
 {
     return mTextAutoGenerateToolsWidget->generateListOfActiveTools();

@@ -8,7 +8,9 @@
 #include "core/textautogeneratemanager.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextwidget_debug.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QLabel>
 #include <QMenu>
 #include <QToolButton>
@@ -96,10 +98,39 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(TextAutoGenerateText::T
     }
 }
 
+QList<QByteArray> TextAutoGenerateToolsWidget::activatedMcpServers() const
+{
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const KConfigGroup group(config, u"MCP Tools"_s);
+    return group.readEntry("tools_activated", QList<QByteArray>());
+}
+
+void TextAutoGenerateToolsWidget::changeMcpServerActivated(const QByteArray &serverIdentifier, bool state)
+{
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, u"MCP Tools"_s);
+    QList<QByteArray> lst = group.readEntry("tools_activated", QList<QByteArray>());
+    // Store identifier of button
+    const QByteArray identifier = TextAutoGenerateMcpToolsManager::toolIdentifier(serverIdentifier);
+    if (state) {
+        if (!lst.contains(identifier)) {
+            lst.append(identifier);
+        }
+    } else {
+        lst.removeAll(identifier);
+    }
+    group.writeEntry("tools_activated", lst);
+    group.sync();
+}
+
 void TextAutoGenerateToolsWidget::createMcpServerButtons()
 {
     // Keep selected servers
     QList<QByteArray> checkedServers;
+    if (!mInitialized) {
+        checkedServers = activatedMcpServers();
+        mInitialized = true;
+    }
     for (auto b : std::as_const(mMcpServerButtons)) {
         if (b->isChecked()) {
             checkedServers.append(b->property(button_property).toByteArray());
@@ -129,6 +160,11 @@ void TextAutoGenerateToolsWidget::createMcpServerButtons()
         auto menu = new QMenu(b);
         b->setMenu(menu);
         b->setPopupMode(QToolButton::MenuButtonPopup);
+
+        connect(b, &QToolButton::clicked, this, [this, serverIdentifier](bool checked) {
+            changeMcpServerActivated(serverIdentifier, checked);
+        });
+
         connect(menu, &QMenu::aboutToShow, this, [this, serverIdentifier]() {
             // Tools are known when server is connected
             mManager->textAutoGenerateMcpToolsManager()->connectServer(serverIdentifier);
@@ -312,6 +348,11 @@ void TextAutoGenerateToolsWidget::setActivatedTools(const QList<QByteArray> &lst
     if (foundTools) {
         setVisible(true);
     }
+}
+
+void TextAutoGenerateToolsWidget::setDefaultActivatedTools()
+{
+    setActivatedTools(activatedMcpServers());
 }
 
 #include "moc_textautogeneratetoolswidget.cpp"
