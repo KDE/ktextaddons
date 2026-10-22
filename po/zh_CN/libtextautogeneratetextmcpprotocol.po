@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"POT-Creation-Date: 2026-10-22 00:49+0000\n"
 "PO-Revision-Date: 2026-05-05 07:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -38,32 +38,32 @@ msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "Streamable HTTP"
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:112
+#: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
 msgid "Starting server"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:114
+#: core/server/mcpprotocolserverprotocolmanager.cpp:130
 #, kde-format
 msgid "Starting server on %1"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:585
+#: core/server/mcpprotocolserverprotocolmanager.cpp:845
 #, kde-format
 msgid "Request %1 cancelled by client"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:602
+#: core/server/mcpprotocolserverprotocolmanager.cpp:862
 #, kde-format
 msgid "Error: %1"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:608
+#: core/server/mcpprotocolserverprotocolmanager.cpp:868
 #, kde-format
 msgid "Server started"
 msgstr ""
 
-#: core/server/mcpprotocolserverprotocolmanager.cpp:616
+#: core/server/mcpprotocolserverprotocolmanager.cpp:880
 #, kde-format
 msgid "Server stopped"
 msgstr ""
