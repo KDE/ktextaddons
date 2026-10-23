@@ -43,6 +43,7 @@ void McpServerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(addMcpServerButton);
     QVERIFY(!addMcpServerButton->toolTip().isEmpty());
     QVERIFY(addMcpServerButton->autoRaise());
+    QVERIFY(addMcpServerButton->menu());
 }
 
 void McpServerWidgetTest::shouldEmitSettingsChangedWhenServerIsEnabled()

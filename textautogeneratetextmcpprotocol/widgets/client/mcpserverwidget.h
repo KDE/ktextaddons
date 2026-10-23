@@ -47,6 +47,7 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddServer();
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveServer(const QByteArray &identifier);
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotEditServer(const QByteArray &identifier);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddServerFromRegistry();
     QLineEdit *const mSearchLineEdit;
     McpServerListView *const mMcpServerListView;
     TextAutoGenerateTextMcpProtocolCore::McpServerModel *const mModel;

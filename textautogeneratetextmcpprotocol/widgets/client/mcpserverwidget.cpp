@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverwidget.h"
+#include "addmcpregistryserverdialog.h"
 #include "addmcpserverdialog.h"
 #include "mcpserverlistview.h"
 #include "models/mcpservermodel.h"
@@ -12,6 +13,7 @@
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QMenu>
 #include <QPointer>
 #include <QToolButton>
 
@@ -46,8 +48,16 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     addMcpServerButton->setIcon(QIcon::fromTheme(u"list-add"_s));
     addMcpServerButton->setToolTip(i18nc("@info:tooltip", "Add Server…"));
     addMcpServerButton->setAutoRaise(true);
+    addMcpServerButton->setPopupMode(QToolButton::InstantPopup);
     hboxLayout->addWidget(addMcpServerButton);
-    connect(addMcpServerButton, &QToolButton::clicked, this, &McpServerWidget::slotAddServer);
+    auto addServerMenu = new QMenu(addMcpServerButton);
+    auto addServerAction = addServerMenu->addAction(i18nc("@action", "Server"));
+    addServerMenu->addSeparator();
+    auto addFromRegistryAction = addServerMenu->addAction(i18nc("@action", "From MCP Registry…"));
+    addMcpServerButton->setMenu(addServerMenu);
+
+    connect(addServerAction, &QAction::triggered, this, &McpServerWidget::slotAddServer);
+    connect(addFromRegistryAction, &QAction::triggered, this, &McpServerWidget::slotAddServerFromRegistry);
 
     mMcpServerListView->setObjectName(u"mMcpServerListView"_s);
     mainLayout->addWidget(mMcpServerListView);
@@ -66,6 +76,19 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
 }
 
 McpServerWidget::~McpServerWidget() = default;
+
+void McpServerWidget::slotAddServerFromRegistry()
+{
+    if (!mModel) {
+        return;
+    }
+    QPointer<AddMcpRegistryServerDialog> dlg = new AddMcpRegistryServerDialog(this);
+    if (dlg->exec()) {
+        // TODO mModel->addMcpServer(dlg->serverInfo());
+        Q_EMIT settingsChanged();
+    }
+    delete dlg;
+}
 
 void McpServerWidget::slotAddServer()
 {
