@@ -16,6 +16,7 @@
 #include <QMenu>
 #include <QPointer>
 #include <QToolButton>
+#include <TextAutoGenerateTextMcpProtocolCore/McpRegistryServerInfo>
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
@@ -77,6 +78,12 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
 
 McpServerWidget::~McpServerWidget() = default;
 
+TextAutoGenerateTextMcpProtocolCore::McpServer
+McpServerWidget::convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo) const
+{
+    return {};
+}
+
 void McpServerWidget::slotAddServerFromRegistry()
 {
     if (!mModel) {
@@ -84,7 +91,8 @@ void McpServerWidget::slotAddServerFromRegistry()
     }
     QPointer<AddMcpRegistryServerDialog> dlg = new AddMcpRegistryServerDialog(this);
     if (dlg->exec()) {
-        // TODO mModel->addMcpServer(dlg->serverInfo());
+        const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo serverInfo = dlg->serverInfo();
+        mModel->addMcpServer(convertMcpRegistryServerInfoToMcpServer(dlg->serverInfo()));
         Q_EMIT settingsChanged();
     }
     delete dlg;
