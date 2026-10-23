@@ -241,6 +241,12 @@ public:
      */
     [[nodiscard]] bool serverSupports(MethodType type) const;
 
+    /*!
+     * \brief setServer
+     * \param server
+     */
+    [[nodiscard]] bool setServer(const TextAutoGenerateTextMcpProtocolCore::McpServer &server);
+
 Q_SIGNALS:
     /*!
      * \brief started

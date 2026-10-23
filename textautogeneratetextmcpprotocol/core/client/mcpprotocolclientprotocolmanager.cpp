@@ -483,6 +483,16 @@ bool McpProtocolClientProtocolManager::serverSupports(MethodType type) const
     return true;
 }
 
+bool McpProtocolClientProtocolManager::setServer(const McpServer &server)
+{
+    if (mClientStarted) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "We can't change server if client started.";
+        return false;
+    }
+    mServer = server;
+    return true;
+}
+
 qint64 McpProtocolClientProtocolManager::callTool(const QString &name, const QJsonObject &arguments)
 {
     if (!mClient || !mInitialized) {
