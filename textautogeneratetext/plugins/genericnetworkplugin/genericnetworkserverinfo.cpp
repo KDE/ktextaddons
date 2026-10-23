@@ -64,6 +64,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Google Gemini");
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return i18n("OpenAI API");
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+        return i18n("DeepSeek");
     }
     return {};
 }
@@ -95,6 +97,7 @@ QString GenericNetworkServerInfo::responsesPath(GenericNetworkManager::PluginNet
     case GenericNetworkManager::PluginNetworkType::Gemini:
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
         return u"responses"_s;
     }
     return {};
@@ -127,6 +130,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::Gemini:
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
         return u"chat/completions"_s;
     }
     return {};
@@ -180,6 +184,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.orcarouter.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return {};
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+        return u"https://www.deepseek.com/"_s;
     }
     return {};
 }
@@ -232,6 +238,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://generativelanguage.googleapis.com/v1beta/openai/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return {};
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+        return u"https://api.deepseek.com/v1/"_s;
     }
     return {};
 }
@@ -279,6 +287,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("OrcaRouter OpenAI-compatible API");
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return i18n("OpenAI API (custom)");
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+        return i18n("DeepSeek large language models");
     }
     return {};
 }
@@ -331,6 +341,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"orcarouterai"_s;
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
         return u"openaigeneric"_s;
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+        return u"deepseek"_s;
     }
     return {};
 }
@@ -379,6 +391,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::OrcaRouterAI;
     } else if (str == QLatin1StringView("openaigeneric")) {
         return GenericNetworkManager::PluginNetworkType::OpenAIGeneric;
+    } else if (str == QLatin1StringView("deepseek")) {
+        return GenericNetworkManager::PluginNetworkType::DeepSeek;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -439,6 +453,7 @@ QList<GenericNetworkModelAvailableInfo> GenericNetworkServerInfo::defaultModels(
     case GenericNetworkManager::PluginNetworkType::Gemini:
     case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
     case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
         return {};
     }
     return {};
@@ -461,6 +476,9 @@ bool GenericNetworkServerInfo::modelSupportsTools(GenericNetworkManager::PluginN
                    return identifier.contains(str);
                });
     }
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+        // DeepSeek models support OpenAI-compatible function calling
+        return true;
     case GenericNetworkManager::PluginNetworkType::MistralAI:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
@@ -507,6 +525,7 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
         return limits;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
     case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
         limits |= GenericNetworkManager::Limitation::NoSeed;
         return limits;
     case GenericNetworkManager::PluginNetworkType::ChatGPT:

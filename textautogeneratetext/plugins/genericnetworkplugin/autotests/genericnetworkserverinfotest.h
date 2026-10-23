@@ -23,4 +23,5 @@ private Q_SLOTS:
     void shouldResponsesPath();
     void shouldDefineDefaultModels();
     void shouldDefineModelSupportsTools();
+    void shouldContainDeepSeekInSupportedServers();
 };

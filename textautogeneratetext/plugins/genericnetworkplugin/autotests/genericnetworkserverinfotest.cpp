@@ -8,6 +8,8 @@
 #include "genericnetworkserverinfo.h"
 #include <QStandardPaths>
 #include <QTest>
+
+#include <algorithm>
 QTEST_GUILESS_MAIN(GenericNetworkServerInfoTest)
 
 using namespace Qt::Literals::StringLiterals;
@@ -42,6 +44,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"gemini"_s), GenericNetworkManager::PluginNetworkType::Gemini);
     QCOMPARE(info.pluginNetworkTypeFromString(u"orcarouterai"_s), GenericNetworkManager::PluginNetworkType::OrcaRouterAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"openaigeneric"_s), GenericNetworkManager::PluginNetworkType::OpenAIGeneric);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"deepseek"_s), GenericNetworkManager::PluginNetworkType::DeepSeek);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -68,6 +71,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OrcaRouterAI), u"https://api.orcarouter.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::Gemini), u"https://generativelanguage.googleapis.com/v1beta/openai/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OpenAIGeneric), QString());
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::DeepSeek), u"https://api.deepseek.com/v1/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -94,6 +98,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::Gemini), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::OrcaRouterAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::DeepSeek), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldResponsesPath()
@@ -120,6 +125,7 @@ void GenericNetworkServerInfoTest::shouldResponsesPath()
     QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::Gemini), u"responses"_s);
     QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::OrcaRouterAI), u"responses"_s);
     QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::OpenAIGeneric), u"responses"_s);
+    QCOMPARE(info.responsesPath(GenericNetworkManager::PluginNetworkType::DeepSeek), u"responses"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -146,6 +152,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::Gemini), u"gemini"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::OrcaRouterAI), u"orcarouterai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::OpenAIGeneric), u"openaigeneric"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::DeepSeek), u"deepseek"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -172,6 +179,7 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Gemini), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OrcaRouterAI), GenericNetworkManager::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenAIGeneric), GenericNetworkManager::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::DeepSeek), GenericNetworkManager::Limitation::NoSeed);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineDefaultModels()
@@ -181,6 +189,7 @@ void GenericNetworkServerInfoTest::shouldDefineDefaultModels()
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::MistralAI).isEmpty());
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::OpenAI).isEmpty());
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::OpenAIGeneric).isEmpty());
+    QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::DeepSeek).isEmpty());
 }
 
 void GenericNetworkServerInfoTest::shouldDefineModelSupportsTools()
@@ -196,6 +205,19 @@ void GenericNetworkServerInfoTest::shouldDefineModelSupportsTools()
     QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::Gemini, u"models/gemma-3-27b-it"_s));
     QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::MistralAI, u"mistral-large-latest"_s));
     QVERIFY(!info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::OpenAI, u"gpt-4o"_s));
+    QVERIFY(info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::DeepSeek, u"deepseek-flash"_s));
+    QVERIFY(info.modelSupportsTools(GenericNetworkManager::PluginNetworkType::DeepSeek, u"deepseek-v4-pro"_s));
+}
+
+void GenericNetworkServerInfoTest::shouldContainDeepSeekInSupportedServers()
+{
+    const GenericNetworkServerInfo info;
+    const auto servers = info.supportedServers(u"generic"_s);
+    const auto it = std::find_if(servers.cbegin(), servers.cend(), [](const auto &server) {
+        return server.identifier == u"deepseek"_s;
+    });
+    QVERIFY(it != servers.cend());
+    QCOMPARE(it->pluginName, u"generic"_s);
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"

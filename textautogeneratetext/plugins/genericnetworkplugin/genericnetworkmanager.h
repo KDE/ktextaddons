@@ -38,7 +38,8 @@ public:
         Gemini = 19,
         KimiAI = 20,
         OpenAIGeneric = 21,
-        LastElement = OpenAIGeneric,
+        DeepSeek = 22,
+        LastElement = DeepSeek,
     };
 
     enum Limitation : uint8_t {
