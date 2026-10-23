@@ -82,7 +82,7 @@ QList<McpServer> McpServerModel::mcpServers() const
 
 void McpServerModel::editMcpServer(const McpServer &server)
 {
-    auto matchesUuid = [&](const McpServer &s) {
+    const auto matchesUuid = [&](const McpServer &s) {
         return s.identifier() == server.identifier();
     };
     if (const auto answerIt = std::find_if(mMcpServers.constBegin(), mMcpServers.constEnd(), matchesUuid); answerIt != mMcpServers.constEnd()) {
