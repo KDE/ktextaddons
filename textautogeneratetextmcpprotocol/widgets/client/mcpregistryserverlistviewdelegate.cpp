@@ -84,7 +84,7 @@ void McpRegistryServerListViewDelegate::paint(QPainter *painter, const QStyleOpt
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, fontMetrics.elidedText(text, Qt::ElideRight, line1Rect.width()));
 
     if (!description.isEmpty()) {
-        QColor descColor = opt.palette.color(colorGroup, selected ? QPalette::HighlightedText : QPalette::PlaceholderText);
+        const QColor descColor = opt.palette.color(colorGroup, selected ? QPalette::HighlightedText : QPalette::PlaceholderText);
         painter->setPen(descColor);
         painter->setFont(descFont);
         const QRect line2Rect(textRect.left(), line1Rect.bottom() + 1, textRect.width(), descFontMetrics.height());
