@@ -15,7 +15,6 @@ McpRegistryServerInfo::~McpRegistryServerInfo() = default;
 
 McpRegistryServerInfo McpRegistryServerInfo::fromJson(const QJsonObject &obj)
 {
-    qDebug() << " obj " << obj;
     McpRegistryServerInfo info;
     info.mName = obj["name"_L1].toString();
     info.mTitle = obj["title"_L1].toString();
@@ -28,8 +27,10 @@ McpRegistryServerInfo McpRegistryServerInfo::fromJson(const QJsonObject &obj)
     for (const auto &value : iconsArray) {
         const QJsonObject iconObj = value.toObject();
         Icon icon;
-        icon.mimetype = iconObj["mimeType"_L1].toString();
         icon.url = iconObj["src"_L1].toString();
+        if (icon.url.isEmpty()) {
+            continue;
+        }
         icon.mimetype = iconObj["mimeType"_L1].toString();
         info.mIcons.append(std::move(icon));
     }
@@ -189,5 +190,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpRegist
     d.space() << "websiteUrl:" << t.websiteUrl();
     d.space() << "packages:" << t.packages().count();
     d.space() << "remotes:" << t.remotes().count();
+    d.space() << "icons:" << t.icons().count();
     return d;
 }

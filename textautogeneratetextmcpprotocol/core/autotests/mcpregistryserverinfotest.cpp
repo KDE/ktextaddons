@@ -102,5 +102,27 @@ void McpRegistryServerInfoTest::shouldParseServerList()
     QCOMPARE(second.displayName(), u"io.github.foo/baz"_s);
     QVERIFY(second.packages().isEmpty());
     QVERIFY(second.remotes().isEmpty());
+    QVERIFY(second.icons().isEmpty());
+}
+
+void McpRegistryServerInfoTest::shouldParseIcons()
+{
+    const QByteArray json = R"({
+  "name": "io.github.foo/bar",
+  "icons": [
+    {"src": "https://bar.example.com/icon.png", "mimeType": "image/png", "sizes": ["48x48"]},
+    {"src": "https://bar.example.com/icon.svg"},
+    {"mimeType": "image/png"}
+  ]
+})";
+    const QJsonObject obj = QJsonDocument::fromJson(json).object();
+    const auto info = TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::fromJson(obj);
+    QVERIFY(info.isValid());
+    const auto icons = info.icons();
+    QCOMPARE(icons.count(), 2);
+    QCOMPARE(icons.at(0).url, u"https://bar.example.com/icon.png"_s);
+    QCOMPARE(icons.at(0).mimetype, u"image/png"_s);
+    QCOMPARE(icons.at(1).url, u"https://bar.example.com/icon.svg"_s);
+    QVERIFY(icons.at(1).mimetype.isEmpty());
 }
 #include "moc_mcpregistryserverinfotest.cpp"
