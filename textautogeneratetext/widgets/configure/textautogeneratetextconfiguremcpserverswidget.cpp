@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QLabel>
 #include <QListWidget>
+#include <QSplitter>
 #include <QVBoxLayout>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
@@ -28,20 +29,33 @@ TextAutoGenerateTextConfigureMcpServersWidget::TextAutoGenerateTextConfigureMcpS
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    auto splitter = new QSplitter(this);
+    splitter->setObjectName(u"splitter"_s);
+    splitter->setChildrenCollapsible(false);
+    splitter->setOrientation(Qt::Vertical);
+    mainLayout->addWidget(splitter);
+
     mMcpServerWidget->setObjectName(u"mMcpServerWidget"_s);
-    mainLayout->addWidget(mMcpServerWidget);
+    splitter->addWidget(mMcpServerWidget);
     connect(mMcpServerWidget,
             &TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget::settingsChanged,
             this,
             &TextAutoGenerateTextConfigureMcpServersWidget::settingsChanged);
 
+    auto widget = new QWidget(this);
+    splitter->addWidget(widget);
+
+    auto vboxLayout = new QVBoxLayout(widget);
+    vboxLayout->setObjectName(u"vboxLayout"_s);
+    vboxLayout->setContentsMargins({});
+
     auto alwaysAllowedLabel = new QLabel(i18nc("@label", "Run tools without confirmation:"), this);
     alwaysAllowedLabel->setObjectName(u"alwaysAllowedLabel"_s);
-    mainLayout->addWidget(alwaysAllowedLabel);
+    vboxLayout->addWidget(alwaysAllowedLabel);
 
     mAlwaysAllowedListWidget->setObjectName(u"mAlwaysAllowedListWidget"_s);
     alwaysAllowedLabel->setBuddy(mAlwaysAllowedListWidget);
-    mainLayout->addWidget(mAlwaysAllowedListWidget);
+    vboxLayout->addWidget(mAlwaysAllowedListWidget);
     connect(mAlwaysAllowedListWidget, &QListWidget::itemChanged, this, &TextAutoGenerateTextConfigureMcpServersWidget::settingsChanged);
 
     // Follow list of servers edited in widget
