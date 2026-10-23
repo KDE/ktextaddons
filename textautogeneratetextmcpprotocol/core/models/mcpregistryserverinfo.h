@@ -51,6 +51,14 @@ public:
     };
 
     /*!
+     * \brief The Icon class
+     */
+    struct Icon {
+        QString url;
+        QString mimetype;
+    };
+
+    /*!
      * Constructs an empty McpRegistryServerInfo object.
      */
     McpRegistryServerInfo();
@@ -89,25 +97,85 @@ public:
      */
     [[nodiscard]] QString displayName() const;
 
+    /*!
+     * \brief description
+     * \return
+     */
     [[nodiscard]] QString description() const;
+    /*!
+     * \brief setDescription
+     * \param newDescription
+     */
     void setDescription(const QString &newDescription);
 
+    /*!
+     * \brief version
+     * \return
+     */
     [[nodiscard]] QString version() const;
+    /*!
+     * \brief setVersion
+     * \param newVersion
+     */
     void setVersion(const QString &newVersion);
 
+    /*!
+     * \brief repositoryUrl
+     * \return
+     */
     [[nodiscard]] QString repositoryUrl() const;
+    /*!
+     * \brief setRepositoryUrl
+     * \param newRepositoryUrl
+     */
     void setRepositoryUrl(const QString &newRepositoryUrl);
 
+    /*!
+     * \brief websiteUrl
+     * \return
+     */
     [[nodiscard]] QString websiteUrl() const;
+    /*!
+     * \brief setWebsiteUrl
+     * \param newWebsiteUrl
+     */
     void setWebsiteUrl(const QString &newWebsiteUrl);
 
+    /*!
+     * \brief packages
+     * \return
+     */
     [[nodiscard]] QList<Package> packages() const;
+    /*!
+     * \brief setPackages
+     * \param newPackages
+     */
     void setPackages(const QList<Package> &newPackages);
 
+    /*!
+     * \brief remotes
+     * \return
+     */
     [[nodiscard]] QList<Remote> remotes() const;
+    /*!
+     * \brief setRemotes
+     * \param newRemotes
+     */
     void setRemotes(const QList<Remote> &newRemotes);
 
+    /*!
+     * \brief icons
+     * \return
+     */
+    [[nodiscard]] QList<Icon> icons() const;
+    /*!
+     * \brief setIcons
+     * \param newIcons
+     */
+    void setIcons(const QList<Icon> &newIcons);
+
 private:
+    QList<Icon> mIcons;
     QList<Package> mPackages;
     QList<Remote> mRemotes;
     QString mName;

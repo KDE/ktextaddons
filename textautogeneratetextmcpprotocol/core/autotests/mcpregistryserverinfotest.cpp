@@ -30,6 +30,7 @@ void McpRegistryServerInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.websiteUrl().isEmpty());
     QVERIFY(info.packages().isEmpty());
     QVERIFY(info.remotes().isEmpty());
+    QVERIFY(info.icons().isEmpty());
 }
 
 void McpRegistryServerInfoTest::shouldParseServerList()

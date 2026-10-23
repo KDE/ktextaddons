@@ -15,6 +15,7 @@ McpRegistryServerInfo::~McpRegistryServerInfo() = default;
 
 McpRegistryServerInfo McpRegistryServerInfo::fromJson(const QJsonObject &obj)
 {
+    qDebug() << " obj " << obj;
     McpRegistryServerInfo info;
     info.mName = obj["name"_L1].toString();
     info.mTitle = obj["title"_L1].toString();
@@ -156,6 +157,16 @@ QList<McpRegistryServerInfo::Remote> McpRegistryServerInfo::remotes() const
 void McpRegistryServerInfo::setRemotes(const QList<Remote> &newRemotes)
 {
     mRemotes = newRemotes;
+}
+
+QList<McpRegistryServerInfo::Icon> McpRegistryServerInfo::icons() const
+{
+    return mIcons;
+}
+
+void McpRegistryServerInfo::setIcons(const QList<Icon> &newIcons)
+{
+    mIcons = newIcons;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &t)
