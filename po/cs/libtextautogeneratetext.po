@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
 "PO-Revision-Date: 2026-10-11 11:16+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:185
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -3532,39 +3532,39 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:43
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
 #, kde-format
 msgid "Read-only"
 msgstr "Pouze čtení"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Modified At:"
 msgid "Modifies data"
 msgstr "Upraveno v:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
 #, kde-format
 msgid "May delete or overwrite data"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:60
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Nástroje:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
 #, kde-format
 msgid "Not connected"
 msgstr "Nepřipojen"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:175
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
 #, kde-format
 msgid "Connecting…"
 msgstr "Navazuji spojení…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:179
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
@@ -3572,13 +3572,13 @@ msgstr[0] "1 nástroj"
 msgstr[1] "%1 nástroje"
 msgstr[2] "%1 nástrojů"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:181
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Calling tool \"%1\"…"
 msgid "Loading tools…"
 msgstr "Spouštění nástroje \"%1\"…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:188
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Nástroje MCP serveru \"%1\" (%2)"

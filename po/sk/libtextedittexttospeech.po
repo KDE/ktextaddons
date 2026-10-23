@@ -50,7 +50,7 @@ msgstr "Nedá sa otvoriť zvukové zariadenie."
 #: kokoro/texttospeechkokoro.cpp:344
 #, kde-format
 msgid "The audio device stopped working."
-msgstr ""
+msgstr "Zvukové zariadenie prestalo fungovať."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:51
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "Chýba espeak-ng. Nainštalujte ho, prosím, správcom balíkov."
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:95
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "Nie je čo inštalovať."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
@@ -266,8 +266,7 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: texttospeechconfigwidget.cpp:323
-#, fuzzy, kde-format
-#| msgid "Kokoro installation is broken. Please verify which you sysadmin."
+#, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""
 "Inštalácia Kokoro je poškodená. Overte to, prosím, u svojho správcu systému."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
 "PO-Revision-Date: 2026-10-21 17:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -96,7 +96,7 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:185
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
 #, kde-format
 msgid "Error: %1"
 msgstr "Fout: %1"
@@ -3961,50 +3961,50 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Fout"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:43
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
 #, kde-format
 msgid "Read-only"
 msgstr "Alleen-lezen"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
 #, kde-format
 msgid "Modifies data"
 msgstr "Wijzigt gegevens"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
 #, kde-format
 msgid "May delete or overwrite data"
 msgstr "Kan gegevens verwijderen of overschrijven"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:60
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Hulpmiddelen:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
 #, kde-format
 msgid "Not connected"
 msgstr "Niet verbonden"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:175
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
 #, kde-format
 msgid "Connecting…"
 msgstr "Bezig met verbinden…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:179
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
 msgstr[0] "1 hulpmiddel"
 msgstr[1] "%1 hulpmiddelen"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:181
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
 #, kde-format
 msgid "Loading tools…"
 msgstr "Hulpmiddelen laden…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:188
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Hulpmiddelen van MCP-server \"%1\" (%2)"

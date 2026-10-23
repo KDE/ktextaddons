@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
 "PO-Revision-Date: 2026-10-19 15:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:185
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
 #, kde-format
 msgid "Error: %1"
 msgstr "Грешка: %1"
@@ -3529,10 +3529,11 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "Comma-separated, used when the server doesn't list its models"
 msgstr ""
+"Заети с запетайка, използвани, когато сървърът не изброява своите модели"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:54
 #, kde-format
@@ -3543,7 +3544,7 @@ msgstr "Потребителски URL:"
 #, fuzzy, kde-format
 #| msgid "Models"
 msgid "Models:"
-msgstr "Модели"
+msgstr "Модели:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:58
 #, kde-format
@@ -3954,50 +3955,50 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Грешка"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:43
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
 #, kde-format
 msgid "Read-only"
 msgstr "Само за четене"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
 #, kde-format
 msgid "Modifies data"
 msgstr "Модифициране на данни"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
 #, kde-format
 msgid "May delete or overwrite data"
 msgstr "Възможно изтриване или презаписване на данни"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:60
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Инструменти:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
 #, kde-format
 msgid "Not connected"
 msgstr "Няма връзка"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:175
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
 #, kde-format
 msgid "Connecting…"
 msgstr "Свързване…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:179
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
 msgstr[0] "1 инструмент"
 msgstr[1] "%1 инструмента"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:181
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
 #, kde-format
 msgid "Loading tools…"
 msgstr "Зареждане на инструменти…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:188
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Инструменти на MCP сървър \"%1\" (%2)"

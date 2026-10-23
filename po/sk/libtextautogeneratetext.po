@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -39,16 +39,14 @@ msgid "Json File"
 msgstr "Súbor JSON"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Nie je možné spustiť Ollama."
+msgstr "Súbor nie je možné exportovať."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "Nepodarilo sa zapísať do súboru: %1"
+msgstr "Nepodarilo sa analyzovať súbor JSON: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -56,35 +54,34 @@ msgid "Failed to open file for reading: %1"
 msgstr "Nepodarilo sa otvoriť súbor na čítanie: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Nie je možné spustiť Ollama."
+msgstr "Súbor nie je možné importovať."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "Nie je dostupný žiadny LLM."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "Požiadavka na vzorkovanie obsahuje nepodporovaný obsah."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "LLM nepodporuje požiadavky na vzorkovanie."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "LLM vrátil prázdnu odpoveď."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Nástroj „%1“ nie je dostupný."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
@@ -92,41 +89,42 @@ msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
 "the user to tell you when it is done, then call the tool again."
 msgstr ""
+"Nástroj „%1“ potrebuje autorizáciu: používateľ bol požiadaný o otvorenie "
+"webovej stránky. Požiadajte používateľa, aby vám dal vedieť, keď to bude "
+"hotové, a potom nástroj zavolajte znova."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
+#, kde-format
 msgid "Error: %1"
-msgstr "Chyba"
+msgstr "Chyba: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Chyba: server bol zastavený."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "Používateľ odmietol spustiť nástroj „%1“."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Volá sa nástroj „%1“…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Chyba: nástroj „%1“ nie je možné zavolať."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:94
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Server je neplatný alebo zakázaný."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -134,11 +132,9 @@ msgid "New Chat..."
 msgstr "Nový rozhovor..."
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "Všeobecné"
+msgstr "Dočasné"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -303,12 +299,12 @@ msgstr "<br><b>Tokeny dokončenia:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "Nástroj MCP: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "Server MCP: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
 #, kde-format
@@ -341,7 +337,7 @@ msgstr "Aktivovať: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:48
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Nástroj „%1“ sa nenašiel."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -3166,7 +3162,7 @@ msgstr "Informácie o metadátach"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "Spúšťať nástroje bez potvrdenia:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3292,121 +3288,118 @@ msgstr "Pridať inštanciu…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from MCP Server"
-msgstr ""
+msgstr "Požiadavka od servera MCP"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Prijať"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Odmietnuť"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
-msgstr ""
+msgstr "Požiadavka od %1"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (povinné):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "Server MCP „%1“ chce spustiť nástroj „%2“."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Argumenty:"
+msgstr ""
+"Argumenty:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Nástroj modulov:"
+msgstr "Spustiť nástroj"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Povoliť"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Vždy povoliť tento server"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Zamietnuť"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[Obrázok]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[Zvuk]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[Volanie nástroja]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[Výsledok nástroja]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr ""
+msgstr "Požiadavka na vzorkovanie od servera MCP"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "Poslať do LLM"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Pridať výzvu…"
+msgstr "Odmietnuť"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3414,6 +3407,8 @@ msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
 msgstr ""
+"Server MCP „%1“ chce poslať do LLM nasledujúce správy. Vygenerovaná odpoveď "
+"sa vráti serveru."
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
 #, kde-format
@@ -3421,6 +3416,8 @@ msgid ""
 "System prompt:\n"
 "%1"
 msgstr ""
+"Systémová výzva:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3428,6 +3425,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"Asistent:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3435,6 +3434,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"Používateľ:\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3493,7 +3494,7 @@ msgstr "Nastaviť…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Comma-separated, used when the server doesn't list its models"
-msgstr ""
+msgstr "Oddelené čiarkami, použije sa, keď server neuvádza svoje modely"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:54
 #, kde-format
@@ -3501,10 +3502,9 @@ msgid "Custom URL:"
 msgstr "Vlastná URL:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Models:"
-msgstr "Modely"
+msgstr "Modely:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:58
 #, kde-format
@@ -3517,40 +3517,33 @@ msgid "Text Plugins:"
 msgstr "Textové moduly:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Identifikátor nástroja: %1"
+msgstr "Identifikátor textu: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "Spravovať projekty"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "Pridať výzvu…"
+msgstr "Pridať projekt…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "Zmeniť…"
+msgstr "Upraviť projekt…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "Odstrániť výzvu"
+msgstr "Odstrániť projekt"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3558,67 +3551,61 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"Chcete odstrániť tento projekt (%1)? Jeho chaty sa zachovajú mimo "
+"akéhokoľvek projektu."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "Odstrániť výzvu"
+msgstr "Odstrániť projekt"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "Pridať projekt"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "Upraviť projekt"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr "Pridať výzvu…"
+msgstr "Projekt"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "Odstrániť výzvu"
+msgstr "Žiadny projekt"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add prompt…"
+#, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr "Pridať výzvu…"
+msgstr "Spravovať projekty…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr ""
+msgstr "Názov projektu…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Ikona:"
 
 #: widgets/promptswidget/textautogenerateagentdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "Agent"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3640,7 +3627,7 @@ msgstr "Cestovanie"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "Nedefinované"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3656,37 +3643,30 @@ msgstr "Kategória:"
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
-msgstr ""
+msgstr "Dopĺňanie príkazov:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "Pridať inštanciu…"
+msgstr "Pridať agenta…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "Odstrániť"
+msgstr "Odstrániť agenta"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "Chcete odstrániť túto inštanciu (%1)?"
+msgstr "Chcete odstrániť tohto agenta (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "Odstrániť"
+msgstr "Odstrániť agenta"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3701,54 +3681,44 @@ msgid "Remove Prompt"
 msgstr "Odstrániť výzvu"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "Chcete odstrániť tento model (%1)?"
+msgstr "Chcete odstrániť túto výzvu (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Prompt"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
 msgstr "Odstrániť výzvu"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "Pridať inštanciu…"
+msgstr "Pridať zručnosť…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "Odstrániť model"
+msgstr "Odstrániť zručnosť"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "Chcete odstrániť tento model (%1)?"
+msgstr "Chcete odstrániť túto zručnosť (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "Odstrániť model"
+msgstr "Odstrániť zručnosť"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "Zručnosť"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
@@ -3797,88 +3767,77 @@ msgstr "Uložiť diskusiu do databázy"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "Spravovať značky"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "Pridať inštanciu…"
+msgstr "Pridať značku…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "Zmeniť…"
+msgstr "Upraviť značku…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "Odstrániť"
+msgstr "Odstrániť značku"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "Chcete odstrániť túto inštanciu (%1)?"
+msgstr "Chcete odstrániť túto značku (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "Odstrániť"
+msgstr "Odstrániť značku"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "Nie je vybraná žiadna značka"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "Pridať značku"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "Zmeniť…"
+msgstr "Upraviť značku"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:35
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "Značky"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "Spravovať značky…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
+msgstr "Názov značky…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
 msgid "Color:"
-msgstr ""
+msgstr "Farba:"
 
 #: widgets/textautogeneratedialog.cpp:32
 #, kde-format
@@ -3893,12 +3852,10 @@ msgid "New Chat"
 msgstr "Nový rozhovor"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "Odstrániť diskusiu"
+msgstr "Dočasná diskusia"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
@@ -3916,7 +3873,7 @@ msgstr "Hľadať… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "Zobraziť len chaty, ktoré majú niektorú z vybraných značiek"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
@@ -3958,57 +3915,54 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:43
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
 #, kde-format
 msgid "Read-only"
-msgstr ""
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Modified At:"
-msgid "Modifies data"
-msgstr "Zmenené:"
+msgstr "Len na čítanie"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
 #, kde-format
-msgid "May delete or overwrite data"
-msgstr ""
+msgid "Modifies data"
+msgstr "Mení údaje"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:60
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
+#, kde-format
+msgid "May delete or overwrite data"
+msgstr "Môže odstrániť alebo prepísať údaje"
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Nástroje:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
 #, kde-format
 msgid "Not connected"
-msgstr ""
+msgstr "Nepripojené"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:175
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Pripája sa…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:179
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 nástroj"
+msgstr[1] "%1 nástroje"
+msgstr[2] "%1 nástrojov"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show internal tools…"
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
+#, kde-format
 msgid "Loading tools…"
-msgstr "Zobraziť interné nástroje…"
+msgstr "Načítavajú sa nástroje…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:188
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Nástroje servera MCP „%1“ (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format

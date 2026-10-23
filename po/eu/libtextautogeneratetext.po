@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
 "PO-Revision-Date: 2026-09-28 21:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:185
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Error"
@@ -3977,55 +3977,55 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Errorea"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:43
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
 #, kde-format
 msgid "Read-only"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Modified At:"
 msgid "Modifies data"
 msgstr "Aldatze-data:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
 #, kde-format
 msgid "May delete or overwrite data"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:60
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Tresnak:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "No tag selected"
 msgid "Not connected"
 msgstr "Ez da etiketarik hautatu"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:175
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
 #, kde-format
 msgid "Connecting…"
 msgstr ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:179
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:181
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Show internal tools…"
 msgid "Loading tools…"
 msgstr "Erakutsi barneko tresnak…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:188
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr ""

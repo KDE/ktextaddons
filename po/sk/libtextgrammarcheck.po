@@ -335,7 +335,7 @@ msgstr "Obnoviť"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "URL je prázdna."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

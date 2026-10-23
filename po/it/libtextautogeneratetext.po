@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:50+0000\n"
-"PO-Revision-Date: 2026-10-13 16:08+0200\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
+"PO-Revision-Date: 2026-10-21 15:51+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Poedit 3.10\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -90,10 +90,13 @@ msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
 "the user to tell you when it is done, then call the tool again."
 msgstr ""
+"Lo strumento «%1» richiede un'autorizzazione: all'utente è stato chiesto di "
+"aprire una pagina web. Chiedi all'utente di avvisarti una volta completata "
+"l'operazione, quindi invoca nuovamente lo strumento."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:185
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
 #, kde-format
 msgid "Error: %1"
 msgstr "Errore: %1"
@@ -1082,7 +1085,7 @@ msgid ""
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
 "Gemma è una famiglia di modelli aperti leggeri e all'avanguardia, sviluppati "
-"da Google DeepMind. Aggiornato alla versione 1.1."
+"da Google DeepMind. Aggiornato alla versione 1.1"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:28
 #, kde-format
@@ -1648,7 +1651,7 @@ msgid ""
 "generation tasks"
 msgstr ""
 "SQLCoder è un modello di completamento del codice ottimizzato su StarCoder "
-"per le attività di generazione di codice SQL."
+"per le attività di generazione di codice SQL"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:119
 #, kde-format
@@ -3148,7 +3151,7 @@ msgstr "Configura istanza"
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
 "La modalità di risparmio energetico è abilitata, ciò rallenterà la "
-"generazione dei messaggi"
+"generazione dei messaggi."
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:23
 #, kde-format
@@ -3561,6 +3564,7 @@ msgstr "Configura…"
 msgctxt "@info:placeholder"
 msgid "Comma-separated, used when the server doesn't list its models"
 msgstr ""
+"Separati da virgole, utilizzati quando il server non elenca i propri modelli"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:54
 #, kde-format
@@ -3568,10 +3572,9 @@ msgid "Custom URL:"
 msgstr "URL personalizzato:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Models:"
-msgstr "Modelli"
+msgstr "Modelli:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:58
 #, kde-format
@@ -3672,7 +3675,7 @@ msgstr "Icona:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "Agente"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3694,7 +3697,7 @@ msgstr "Viaggi"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "Non definito"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3710,37 +3713,30 @@ msgstr "Categoria:"
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
-msgstr ""
+msgstr "Completamento dei comandi:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "Aggiungi etichetta…"
+msgstr "Aggiungi agente…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "Rimuovi etichetta"
+msgstr "Rimuovi agente"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this tag (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "Vuoi rimuovere questa etichetta (%1)?"
+msgstr "Vuoi rimuovere questo agente (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "Rimuovi etichetta"
+msgstr "Rimuovi agente"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3766,34 +3762,27 @@ msgid "Remove Prompt"
 msgstr "Rimuovi prompt"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "Aggiungi etichetta…"
+msgstr "Aggiungi abilità…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "Rimuovi modello"
+msgstr "Rimuovi abilità"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "Vuoi rimuovere questo modello (%1)?"
+msgstr "Vuoi rimuovere questa abilità (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "Rimuovi modello"
+msgstr "Rimuovi abilità"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3913,7 +3902,7 @@ msgstr "Gestisci etichette…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr "Nome dell'etichetta:"
+msgstr "Nome dell'etichetta…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
@@ -3954,7 +3943,7 @@ msgstr "Cerca… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr "Mostra solo le chat che hanno una delle etichette selezionate."
+msgstr "Mostra solo le chat che hanno una delle etichette selezionate"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
@@ -3996,51 +3985,50 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Errore"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:43
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
 #, kde-format
 msgid "Read-only"
-msgstr ""
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Modified At:"
-msgid "Modifies data"
-msgstr "Modificato alle:"
+msgstr "Sola lettura"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
 #, kde-format
-msgid "May delete or overwrite data"
-msgstr ""
+msgid "Modifies data"
+msgstr "Modifica i dati"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:60
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
+#, kde-format
+msgid "May delete or overwrite data"
+msgstr "Potrebbe eliminare o sovrascrivere i dati"
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Strumenti:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
 #, kde-format
 msgid "Not connected"
 msgstr "Non connesso"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:175
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
 #, kde-format
 msgid "Connecting…"
 msgstr "Connessione…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:179
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
 msgstr[0] "1 strumento"
 msgstr[1] "%1 strumenti"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:181
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
 #, kde-format
 msgid "Loading tools…"
 msgstr "Caricamento degli strumenti…"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:188
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Strumenti del server MCP «%1» (%2)"

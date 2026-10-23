@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:49+0000\n"
+"POT-Creation-Date: 2026-10-23 00:47+0000\n"
 "PO-Revision-Date: 2026-10-20 09:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -144,6 +144,49 @@ msgstr "El servidor no s'ha iniciat."
 #, kde-format
 msgid "Message received from client is too big."
 msgstr "El missatge rebut del client és massa gran."
+
+#: widgets/client/addmcpregistryserverdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Server from MCP Registry"
+msgstr ""
+
+#: widgets/client/addmcpregistryserverwidget.cpp:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Load More"
+msgstr ""
+
+#: widgets/client/addmcpregistryserverwidget.cpp:49
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search in MCP registry…"
+msgstr ""
+
+#: widgets/client/addmcpregistryserverwidget.cpp:137
+#, kde-format
+msgid "Loading…"
+msgstr ""
+
+#: widgets/client/addmcpregistryserverwidget.cpp:154
+#, fuzzy, kde-format
+#| msgid "Impossible to start server: %1"
+msgid "Impossible to load servers: %1"
+msgstr "Impossible iniciar el servidor: %1"
+
+#: widgets/client/addmcpregistryserverwidget.cpp:162
+#, kde-format
+msgid "Invalid answer from MCP registry."
+msgstr ""
+
+#: widgets/client/addmcpregistryserverwidget.cpp:172
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgid "1 server"
+msgid_plural "%1 servers"
+msgstr[0] "Afegir un servidor…"
+msgstr[1] "Afegir un servidor…"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -302,6 +345,70 @@ msgctxt "@title:window"
 msgid "Remove Header"
 msgstr "Elimina la capçalera"
 
+#: widgets/client/mcpregistryserverinfowidget.cpp:24
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Select a server to see its information."
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:58
+#, kde-format
+msgid "<b>Version:</b> %1"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:61
+#, kde-format
+msgid "<b>Repository:</b> %1"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:64
+#, kde-format
+msgid "<b>Website:</b> %1"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Remove"
+msgid "Remotes"
+msgstr "Elimina"
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:79
+#, kde-format
+msgid "Packages"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:85
+#, kde-format
+msgid "Registry: %1"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:87
+#, fuzzy, kde-format
+#| msgid "Error: %1"
+msgid "Transport: %1"
+msgstr "Error: %1"
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:90
+#, kde-format
+msgid "Runtime: %1"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:94
+#, kde-format
+msgid "Environment variables:"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:98
+#, kde-format
+msgid "(required)"
+msgstr ""
+
+#: widgets/client/mcpregistryserverinfowidget.cpp:101
+#, kde-format
+msgid "(secret)"
+msgstr ""
+
 #: widgets/client/mcpserverlistview.cpp:52
 #, kde-format
 msgctxt "@action"
@@ -435,10 +542,6 @@ msgstr ""
 #~ msgctxt "@label:textbox"
 #~ msgid "Url:"
 #~ msgstr "URL:"
-
-#~ msgctxt "@action"
-#~ msgid "Add server…"
-#~ msgstr "Afegir un servidor…"
 
 #~ msgctxt "@title"
 #~ msgid "Remove Server"
