@@ -24,6 +24,16 @@ McpRegistryServerInfo McpRegistryServerInfo::fromJson(const QJsonObject &obj)
     info.mRepositoryUrl = obj["repository"_L1].toObject()["url"_L1].toString();
     info.mWebsiteUrl = obj["websiteUrl"_L1].toString();
 
+    const QJsonArray iconsArray = obj["icons"_L1].toArray();
+    for (const auto &value : iconsArray) {
+        const QJsonObject iconObj = value.toObject();
+        Icon icon;
+        icon.mimetype = iconObj["mimeType"_L1].toString();
+        icon.url = iconObj["src"_L1].toString();
+        icon.mimetype = iconObj["mimeType"_L1].toString();
+        info.mIcons.append(std::move(icon));
+    }
+
     const QJsonArray packagesArray = obj["packages"_L1].toArray();
     for (const auto &value : packagesArray) {
         const QJsonObject packageObj = value.toObject();
