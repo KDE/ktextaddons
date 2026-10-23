@@ -114,8 +114,9 @@ void McpRegistryServerListViewDelegate::paint(QPainter *painter, const QStyleOpt
 
     const int size = iconSize(opt);
     const QRect iconRect(textRect.left(), textRect.top() + (textRect.height() - size) / 2, size, size);
-    const QPixmap pixmap = serverIcon(index.data(TextAutoGenerateTextMcpProtocolCore::McpRegistryServerModel::IconUrl).toString());
-    if (pixmap.isNull()) {
+    const QString iconUrl = index.data(TextAutoGenerateTextMcpProtocolCore::McpRegistryServerModel::IconUrl).toString();
+    const QPixmap pixmap = serverIcon(iconUrl);
+    if (iconUrl.isEmpty() || pixmap.isNull()) {
         QIcon::fromTheme(u"network-server"_s).paint(painter, iconRect);
     } else {
         const QPixmap scaled = pixmap.scaled(iconRect.size() * painter->device()->devicePixelRatioF(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
