@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-30 17:58+0200\n"
+"PO-Revision-Date: 2026-10-21 15:51+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Poedit 3.10\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -1001,7 +1001,7 @@ msgid ""
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
 "Gemma è una famiglia di modelli aperti leggeri e all'avanguardia, sviluppati "
-"da Google DeepMind. Aggiornato alla versione 1.1."
+"da Google DeepMind. Aggiornato alla versione 1.1"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:28
 #, kde-format
@@ -1567,7 +1567,7 @@ msgid ""
 "generation tasks"
 msgstr ""
 "SQLCoder è un modello di completamento del codice ottimizzato su StarCoder "
-"per le attività di generazione di codice SQL."
+"per le attività di generazione di codice SQL"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:119
 #, kde-format
@@ -3067,7 +3067,7 @@ msgstr "Configura istanza"
 msgid "Power saver mode is enabled, this will slow down message generation."
 msgstr ""
 "La modalità di risparmio energetico è abilitata, ciò rallenterà la "
-"generazione dei messaggi"
+"generazione dei messaggi."
 
 #: widgets/common/textautogenerateshowmodelinfodialog.cpp:23
 #, kde-format
@@ -3582,7 +3582,7 @@ msgstr "Gestisci etichette…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr "Nome dell'etichetta:"
+msgstr "Nome dell'etichetta…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
@@ -3623,7 +3623,7 @@ msgstr "Cerca… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr "Mostra solo le chat che hanno una delle etichette selezionate."
+msgstr "Mostra solo le chat che hanno una delle etichette selezionate"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
 #, kde-format
