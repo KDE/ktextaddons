@@ -25,6 +25,7 @@ public:
         Name = Qt::UserRole + 1,
         Description,
         Version,
+        IconUrl,
     };
     Q_ENUM(McpRegistryServerRoles)
 

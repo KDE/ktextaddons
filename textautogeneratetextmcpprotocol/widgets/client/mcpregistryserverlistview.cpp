@@ -12,7 +12,9 @@ McpRegistryServerListView::McpRegistryServerListView(QWidget *parent)
     : QListView(parent)
     , mModel(new TextAutoGenerateTextMcpProtocolCore::McpRegistryServerModel(this))
 {
-    setItemDelegate(new McpRegistryServerListViewDelegate(this));
+    auto delegate = new McpRegistryServerListViewDelegate(this);
+    connect(delegate, &McpRegistryServerListViewDelegate::iconLoaded, viewport(), qOverload<>(&QWidget::update));
+    setItemDelegate(delegate);
     setDragEnabled(false);
     setUniformItemSizes(true);
     setSelectionMode(QAbstractItemView::SingleSelection);

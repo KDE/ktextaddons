@@ -5,12 +5,17 @@
 */
 #include "mcpregistryserverlistviewdelegate.h"
 #include <QApplication>
+#include <QIcon>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QPainter>
 #include <TextAutoGenerateTextMcpProtocolCore/McpRegistryServerModel>
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
+using namespace Qt::Literals::StringLiterals;
 
 McpRegistryServerListViewDelegate::McpRegistryServerListViewDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
+    , mNetworkAccessManager(new QNetworkAccessManager(this))
 {
 }
 
@@ -40,6 +45,51 @@ QStyle *widgetStyle(const QStyleOptionViewItem &option)
 {
     return option.widget ? option.widget->style() : QApplication::style();
 }
+
+int iconSize(const QStyleOptionViewItem &option)
+{
+    return widgetStyle(option)->pixelMetric(QStyle::PM_ListViewIconSize, nullptr, option.widget);
+}
+
+int iconSpacing(const QStyleOptionViewItem &option)
+{
+    // Some styles return -1 for layout spacing
+    return qMax(6, widgetStyle(option)->pixelMetric(QStyle::PM_LayoutHorizontalSpacing, nullptr, option.widget));
+}
+}
+
+QPixmap McpRegistryServerListViewDelegate::serverIcon(const QString &url) const
+{
+    if (url.isEmpty()) {
+        return {};
+    }
+    const auto it = mIconCache.constFind(url);
+    if (it != mIconCache.cend()) {
+        return *it;
+    }
+    downloadIcon(url);
+    return {};
+}
+
+void McpRegistryServerListViewDelegate::downloadIcon(const QString &url) const
+{
+    if (mPendingDownloads.contains(url)) {
+        return;
+    }
+    mPendingDownloads.insert(url);
+    QNetworkReply *reply = mNetworkAccessManager->get(QNetworkRequest(QUrl(url)));
+    connect(reply, &QNetworkReply::finished, this, [this, reply, url]() {
+        reply->deleteLater();
+        mPendingDownloads.remove(url);
+        QPixmap pixmap;
+        if (reply->error() == QNetworkReply::NoError) {
+            pixmap.loadFromData(reply->readAll());
+        }
+        mIconCache.insert(url, pixmap);
+        if (!pixmap.isNull()) {
+            Q_EMIT const_cast<McpRegistryServerListViewDelegate *>(this)->iconLoaded();
+        }
+    });
 }
 
 void McpRegistryServerListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -61,6 +111,18 @@ void McpRegistryServerListViewDelegate::paint(QPainter *painter, const QStyleOpt
 
     const int textMargin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr, opt.widget) + 1;
     textRect.adjust(textMargin, 0, -textMargin, 0);
+
+    const int size = iconSize(opt);
+    const QRect iconRect(textRect.left(), textRect.top() + (textRect.height() - size) / 2, size, size);
+    const QPixmap pixmap = serverIcon(index.data(TextAutoGenerateTextMcpProtocolCore::McpRegistryServerModel::IconUrl).toString());
+    if (pixmap.isNull()) {
+        QIcon::fromTheme(u"network-server"_s).paint(painter, iconRect);
+    } else {
+        const QPixmap scaled = pixmap.scaled(iconRect.size() * painter->device()->devicePixelRatioF(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        const QRect targetRect = QStyle::alignedRect(opt.direction, Qt::AlignCenter, scaled.deviceIndependentSize().toSize(), iconRect);
+        painter->drawPixmap(targetRect, scaled);
+    }
+    textRect.setLeft(iconRect.right() + 1 + iconSpacing(opt));
 
     const QFont titleFont = nameFont(opt.font);
     const QFont descFont = descriptionFont(opt.font);
@@ -104,10 +166,11 @@ QSize McpRegistryServerListViewDelegate::sizeHint(const QStyleOptionViewItem &op
     const QString description = index.data(TextAutoGenerateTextMcpProtocolCore::McpRegistryServerModel::Description).toString();
 
     const int textMargin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr, opt.widget) + 1;
+    const int size = iconSize(opt);
     // Description can be long: let the view elide it instead of widening the list
-    const int width = fontMetrics.horizontalAdvance(opt.text) + 2 * textMargin;
+    const int width = size + iconSpacing(opt) + fontMetrics.horizontalAdvance(opt.text) + 2 * textMargin;
     const int verticalMargin = style->pixelMetric(QStyle::PM_FocusFrameVMargin, nullptr, opt.widget) + 2;
-    const int height = fontMetrics.height() + (description.isEmpty() ? 0 : descFontMetrics.height()) + 2 * verticalMargin;
+    const int height = qMax(size, fontMetrics.height() + (description.isEmpty() ? 0 : descFontMetrics.height())) + 2 * verticalMargin;
     return QSize(width, height).expandedTo(QStyledItemDelegate::sizeHint(option, index));
 }
 

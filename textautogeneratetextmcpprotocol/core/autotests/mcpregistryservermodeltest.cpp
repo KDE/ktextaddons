@@ -52,4 +52,18 @@ void McpRegistryServerModelTest::shouldAppendServers()
     m.clear();
     QCOMPARE(m.rowCount(), 0);
 }
+
+void McpRegistryServerModelTest::shouldReturnFirstIconUrl()
+{
+    McpRegistryServerModel m;
+    McpRegistryServerInfo a;
+    a.setName(u"io.github.foo/a"_s);
+    a.setIcons({{u"https://foo.example.com/first.png"_s, u"image/png"_s}, {u"https://foo.example.com/second.svg"_s, u"image/svg+xml"_s}});
+    McpRegistryServerInfo b;
+    b.setName(u"io.github.foo/b"_s);
+
+    m.setServers({a, b});
+    QCOMPARE(m.index(0).data(McpRegistryServerModel::IconUrl).toString(), u"https://foo.example.com/first.png"_s);
+    QVERIFY(m.index(1).data(McpRegistryServerModel::IconUrl).toString().isEmpty());
+}
 #include "moc_mcpregistryservermodeltest.cpp"

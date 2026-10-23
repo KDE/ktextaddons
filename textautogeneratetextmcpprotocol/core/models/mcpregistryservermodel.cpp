@@ -37,6 +37,10 @@ QVariant McpRegistryServerModel::data(const QModelIndex &index, int role) const
         return info.description();
     case McpRegistryServerRoles::Version:
         return info.version();
+    case McpRegistryServerRoles::IconUrl: {
+        const QList<McpRegistryServerInfo::Icon> icons = info.icons();
+        return icons.isEmpty() ? QString() : icons.constFirst().url;
+    }
     }
     return {};
 }
