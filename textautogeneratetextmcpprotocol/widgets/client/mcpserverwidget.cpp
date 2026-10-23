@@ -11,6 +11,7 @@
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <KShell>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QMenu>
@@ -81,7 +82,70 @@ McpServerWidget::~McpServerWidget() = default;
 TextAutoGenerateTextMcpProtocolCore::McpServer
 McpServerWidget::convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo) const
 {
-    return {};
+    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    server.createUniqueIdentifier();
+    server.setName(serverInfo.displayName());
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    // Prefer a remote endpoint: nothing to install locally
+    const QList<TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::Remote> remotes = serverInfo.remotes();
+    for (const auto &remote : remotes) {
+        TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type =
+            TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;
+        if (remote.type == "streamable-http"_L1) {
+            type = TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::StreamableHttp;
+        } else if (remote.type == "sse"_L1) {
+            type = TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Sse;
+        }
+        if (type != TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown) {
+            server.setTransportType(type);
+            settings.setServerUrl(QUrl(remote.url));
+            server.setSettings(settings);
+            return server;
+        }
+    }
+
+    const QList<TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::Package> packages = serverInfo.packages();
+    for (const auto &package : packages) {
+        if (!package.transportType.isEmpty() && package.transportType != "stdio"_L1) {
+            continue;
+        }
+        QString command;
+        QStringList arguments;
+        if (package.registryType == "npm"_L1) {
+            command = u"npx"_s;
+            arguments << u"-y"_s << (package.version.isEmpty() ? package.identifier : package.identifier + u'@' + package.version);
+        } else if (package.registryType == "pypi"_L1) {
+            command = u"uvx"_s;
+            arguments << (package.version.isEmpty() ? package.identifier : package.identifier + u"=="_s + package.version);
+        } else if (package.registryType == "oci"_L1) {
+            command = u"docker"_s;
+            arguments << u"run"_s << u"-i"_s << u"--rm"_s;
+            for (const auto &env : package.environmentVariables) {
+                arguments << u"-e"_s << env.name;
+            }
+            arguments << (package.version.isEmpty() ? package.identifier : package.identifier + u':' + package.version);
+        } else {
+            continue;
+        }
+        if (!package.runtimeHint.isEmpty()) {
+            command = package.runtimeHint;
+        }
+
+        QMap<QString, QString> environments;
+        for (const auto &env : package.environmentVariables) {
+            environments.insert(env.name, QString());
+        }
+
+        server.setTransportType(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Stdio);
+        settings.setCommand(command);
+        settings.setArguments(KShell::joinArgs(arguments));
+        settings.setEnvironments(environments);
+        server.setSettings(settings);
+        return server;
+    }
+    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "No supported remote or package found for" << serverInfo.name();
+    return server;
 }
 
 void McpServerWidget::slotAddServerFromRegistry()
@@ -92,7 +156,7 @@ void McpServerWidget::slotAddServerFromRegistry()
     QPointer<AddMcpRegistryServerDialog> dlg = new AddMcpRegistryServerDialog(this);
     if (dlg->exec()) {
         const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo serverInfo = dlg->serverInfo();
-        mModel->addMcpServer(convertMcpRegistryServerInfoToMcpServer(dlg->serverInfo()));
+        mModel->addMcpServer(convertMcpRegistryServerInfoToMcpServer(serverInfo));
         Q_EMIT settingsChanged();
     }
     delete dlg;
