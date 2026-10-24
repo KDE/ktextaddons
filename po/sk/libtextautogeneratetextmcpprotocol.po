@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:47+0000\n"
+"POT-Creation-Date: 2026-10-24 00:48+0000\n"
 "PO-Revision-Date: 2026-05-04 12:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -435,17 +435,31 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Odstrániť server"
 
-#: widgets/client/mcpserverwidget.cpp:40
+#: widgets/client/mcpserverwidget.cpp:44
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Hľadať…"
 
-#: widgets/client/mcpserverwidget.cpp:47
+#: widgets/client/mcpserverwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Pridať server…"
+
+#: widgets/client/mcpserverwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@action"
+msgid "Server"
+msgstr "Pridať server"
+
+#: widgets/client/mcpserverwidget.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "From MCP Registry…"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

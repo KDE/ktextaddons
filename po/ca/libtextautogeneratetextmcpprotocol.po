@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:47+0000\n"
-"PO-Revision-Date: 2026-10-20 09:26+0200\n"
+"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"PO-Revision-Date: 2026-10-23 11:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format
@@ -149,44 +149,41 @@ msgstr "El missatge rebut del client és massa gran."
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server from MCP Registry"
-msgstr ""
+msgstr "Afegeix un servidor a partir del registre MCP"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load More"
-msgstr ""
+msgstr "Carrega'n més"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search in MCP registry…"
-msgstr ""
+msgstr "Cerca al registre del MCP…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:137
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "S'està carregant…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Impossible to start server: %1"
+#, kde-format
 msgid "Impossible to load servers: %1"
-msgstr "Impossible iniciar el servidor: %1"
+msgstr "Impossible carregar servidors: %1"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:162
 #, kde-format
 msgid "Invalid answer from MCP registry."
-msgstr ""
+msgstr "Resposta no vàlida del registre del MCP."
 
 #: widgets/client/addmcpregistryserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgid "1 server"
 msgid_plural "%1 servers"
-msgstr[0] "Afegir un servidor…"
-msgstr[1] "Afegir un servidor…"
+msgstr[0] "1 servidor"
+msgstr[1] "%1 servidors"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -349,65 +346,62 @@ msgstr "Elimina la capçalera"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a server to see its information."
-msgstr ""
+msgstr "Seleccioneu un servidor per a veure la seva informació."
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:58
 #, kde-format
 msgid "<b>Version:</b> %1"
-msgstr ""
+msgstr "<b>Versió:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:61
 #, kde-format
 msgid "<b>Repository:</b> %1"
-msgstr ""
+msgstr "<b>Repositori:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:64
 #, kde-format
 msgid "<b>Website:</b> %1"
-msgstr ""
+msgstr "<b>Lloc web:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove"
+#, kde-format
 msgid "Remotes"
-msgstr "Elimina"
+msgstr "Remots"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
 msgid "Packages"
-msgstr ""
+msgstr "Paquets"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:85
 #, kde-format
 msgid "Registry: %1"
-msgstr ""
+msgstr "Registre: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Error: %1"
+#, kde-format
 msgid "Transport: %1"
-msgstr "Error: %1"
+msgstr "Transport: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:90
 #, kde-format
 msgid "Runtime: %1"
-msgstr ""
+msgstr "Entorn d'execució: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:94
 #, kde-format
 msgid "Environment variables:"
-msgstr ""
+msgstr "Variables d'entorn:"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:98
 #, kde-format
 msgid "(required)"
-msgstr ""
+msgstr "(requerit)"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:101
 #, kde-format
 msgid "(secret)"
-msgstr ""
+msgstr "(secret)"
 
 #: widgets/client/mcpserverlistview.cpp:52
 #, kde-format
@@ -439,17 +433,33 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Eliminació de servidor"
 
-#: widgets/client/mcpserverwidget.cpp:40
+#: widgets/client/mcpserverwidget.cpp:44
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Cerca…"
 
-#: widgets/client/mcpserverwidget.cpp:47
+#: widgets/client/mcpserverwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Afegeix un servidor…"
+
+#: widgets/client/mcpserverwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@action"
+msgid "Server"
+msgstr "Afegir un servidor"
+
+#: widgets/client/mcpserverwidget.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search in MCP registry…"
+msgctxt "@action"
+msgid "From MCP Registry…"
+msgstr "Cerca al registre del MCP…"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

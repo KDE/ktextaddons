@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:47+0000\n"
-"PO-Revision-Date: 2026-10-20 12:29+0100\n"
+"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"PO-Revision-Date: 2026-10-24 00:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -149,44 +149,41 @@ msgstr "El mensaje recibido del cliente es demasiado grande."
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server from MCP Registry"
-msgstr ""
+msgstr "Añadir servidor desde el registro MCP"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load More"
-msgstr ""
+msgstr "Cargar más"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search in MCP registry…"
-msgstr ""
+msgstr "Buscar en el registro MCP…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:137
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Cargando…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Impossible to start server: %1"
+#, kde-format
 msgid "Impossible to load servers: %1"
-msgstr "No se ha podido iniciar el servidor: %1"
+msgstr "No se han podido cargar los servidores: %1"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:162
 #, kde-format
 msgid "Invalid answer from MCP registry."
-msgstr ""
+msgstr "Respuesta no válida del registro MCP."
 
 #: widgets/client/addmcpregistryserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgid "1 server"
 msgid_plural "%1 servers"
-msgstr[0] "Añadir servidor"
-msgstr[1] "Añadir servidor"
+msgstr[0] "1 servidor"
+msgstr[1] "%1 servidores"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -349,65 +346,62 @@ msgstr "Eliminar cabecera"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a server to see its information."
-msgstr ""
+msgstr "Seleccione un servidor para ver su información."
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:58
 #, kde-format
 msgid "<b>Version:</b> %1"
-msgstr ""
+msgstr "<b>Versión:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:61
 #, kde-format
 msgid "<b>Repository:</b> %1"
-msgstr ""
+msgstr "<b>Repositorio:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:64
 #, kde-format
 msgid "<b>Website:</b> %1"
-msgstr ""
+msgstr "<b>Sitio web:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove"
+#, kde-format
 msgid "Remotes"
-msgstr "Eliminar"
+msgstr "Remotos"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
 msgid "Packages"
-msgstr ""
+msgstr "Paquetes"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:85
 #, kde-format
 msgid "Registry: %1"
-msgstr ""
+msgstr "Registro: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Error: %1"
+#, kde-format
 msgid "Transport: %1"
-msgstr "Error: %1"
+msgstr "Transporte: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:90
 #, kde-format
 msgid "Runtime: %1"
-msgstr ""
+msgstr "Tiempo de ejecución: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:94
 #, kde-format
 msgid "Environment variables:"
-msgstr ""
+msgstr "Variables de entorno:"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:98
 #, kde-format
 msgid "(required)"
-msgstr ""
+msgstr "(requerido)"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:101
 #, kde-format
 msgid "(secret)"
-msgstr ""
+msgstr "(secreto)"
 
 #: widgets/client/mcpserverlistview.cpp:52
 #, kde-format
@@ -439,17 +433,33 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Eliminar servidor"
 
-#: widgets/client/mcpserverwidget.cpp:40
+#: widgets/client/mcpserverwidget.cpp:44
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Buscar…"
 
-#: widgets/client/mcpserverwidget.cpp:47
+#: widgets/client/mcpserverwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Añadir servidor…"
+
+#: widgets/client/mcpserverwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@action"
+msgid "Server"
+msgstr "Añadir servidor"
+
+#: widgets/client/mcpserverwidget.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search in MCP registry…"
+msgctxt "@action"
+msgid "From MCP Registry…"
+msgstr "Buscar en el registro MCP…"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

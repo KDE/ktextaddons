@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:47+0000\n"
+"POT-Creation-Date: 2026-10-24 00:48+0000\n"
 "PO-Revision-Date: 2026-09-30 19:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3096,7 +3096,7 @@ msgstr "خطأ في فتح الملفّ"
 msgid "Metadata Info"
 msgstr "البيانات الوصفية"
 
-#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:38
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:52
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"

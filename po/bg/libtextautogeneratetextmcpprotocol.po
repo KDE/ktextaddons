@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:47+0000\n"
-"PO-Revision-Date: 2026-10-19 15:55+0200\n"
+"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"PO-Revision-Date: 2026-10-23 08:43+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -148,44 +148,41 @@ msgstr "Полученото съобщение от клиента е твър�
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server from MCP Registry"
-msgstr ""
+msgstr "Добавяне на сървър от MCP регистъра"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load More"
-msgstr ""
+msgstr "Зареждане на още"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search in MCP registry…"
-msgstr ""
+msgstr "Търсене в MCP регистъра…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:137
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Зареждане…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Impossible to start server: %1"
+#, kde-format
 msgid "Impossible to load servers: %1"
-msgstr "Невъзможно е стартирането на сървъра: %1"
+msgstr "Невъзможно е зареждане на сървърите: %1"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:162
 #, kde-format
 msgid "Invalid answer from MCP registry."
-msgstr ""
+msgstr "Невалиден отговор от MCP регистъра."
 
 #: widgets/client/addmcpregistryserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgid "1 server"
 msgid_plural "%1 servers"
-msgstr[0] "Добавяне на сървър"
-msgstr[1] "Добавяне на сървър"
+msgstr[0] "1 сървър"
+msgstr[1] "%1 сървъра"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -264,16 +261,16 @@ msgstr "Заглавни части:"
 
 #: widgets/client/addmcpsseserverwidget.cpp:33
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:34
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
 msgstr ""
-"Изпраща се като заглавие „Authorization: Bearer“. Съхранява се в системния "
+"Изпраща се като заглавка „Authorization: Bearer“. Съхранява се в системния "
 "портфейл."
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
 msgstr "Токен за удостоверяване:"
@@ -348,65 +345,62 @@ msgstr "Премахване на хедър"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a server to see its information."
-msgstr ""
+msgstr "Избор на сървър за преглед на информацията."
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:58
 #, kde-format
 msgid "<b>Version:</b> %1"
-msgstr ""
+msgstr "<b>Версия:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:61
 #, kde-format
 msgid "<b>Repository:</b> %1"
-msgstr ""
+msgstr "<b>Хранилище:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:64
 #, kde-format
 msgid "<b>Website:</b> %1"
-msgstr ""
+msgstr "<b>Уебсайт:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove"
+#, kde-format
 msgid "Remotes"
-msgstr "Премахване"
+msgstr "Отдалечени"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
 msgid "Packages"
-msgstr ""
+msgstr "Пакети"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:85
 #, kde-format
 msgid "Registry: %1"
-msgstr ""
+msgstr "Регистър: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Error: %1"
+#, kde-format
 msgid "Transport: %1"
-msgstr "Грешка: %1"
+msgstr "Транспорт: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:90
 #, kde-format
 msgid "Runtime: %1"
-msgstr ""
+msgstr "Време за изпълнение: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:94
 #, kde-format
 msgid "Environment variables:"
-msgstr ""
+msgstr "Променливи на средата:"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:98
 #, kde-format
 msgid "(required)"
-msgstr ""
+msgstr "(задължително)"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:101
 #, kde-format
 msgid "(secret)"
-msgstr ""
+msgstr "(тайна)"
 
 #: widgets/client/mcpserverlistview.cpp:52
 #, kde-format
@@ -438,17 +432,33 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Премахване на сървър"
 
-#: widgets/client/mcpserverwidget.cpp:40
+#: widgets/client/mcpserverwidget.cpp:44
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Търсене…"
 
-#: widgets/client/mcpserverwidget.cpp:47
+#: widgets/client/mcpserverwidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Добавяне на сървър…"
+
+#: widgets/client/mcpserverwidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@action"
+msgid "Server"
+msgstr "Добавяне на сървър"
+
+#: widgets/client/mcpserverwidget.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search in MCP registry…"
+msgctxt "@action"
+msgid "From MCP Registry…"
+msgstr "Търсене в MCP регистъра…"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
@@ -457,7 +467,7 @@ msgid "Server Configuration"
 msgstr "Конфигурация на сървъра"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:22
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy"
 msgstr "Копиране"
@@ -468,13 +478,13 @@ msgid "Token:"
 msgstr "Токен:"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
 msgstr "Копиране на токена в клипборда"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
@@ -483,9 +493,7 @@ msgstr ""
 "докато не бъдат актуализирани с новия."
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
 msgstr "Регенериране на токен"
@@ -498,21 +506,19 @@ msgid "Regenerate"
 msgstr "Регенериране"
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Regenerate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Generate"
 msgstr "Генериране"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
 msgstr "Изискване за токен за удостоверяване"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
@@ -520,7 +526,7 @@ msgstr ""
 "Сървърът слуша само на локален IP адрес, напр. http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "

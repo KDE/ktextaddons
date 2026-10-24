@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:47+0000\n"
-"PO-Revision-Date: 2026-10-19 15:54+0200\n"
+"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"PO-Revision-Date: 2026-10-23 08:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -3196,7 +3196,7 @@ msgstr "Грешка при отваряне на файла"
 msgid "Metadata Info"
 msgstr "Инфо на метаданни"
 
-#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:38
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:52
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
@@ -3529,11 +3529,10 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Comma-separated, used when the server doesn't list its models"
-msgstr ""
-"Заети с запетайка, използвани, когато сървърът не изброява своите модели"
+msgstr "Разделяне със запетайка, когато сървърът не изброява своите модели"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:54
 #, kde-format
@@ -3541,8 +3540,7 @@ msgid "Custom URL:"
 msgstr "Потребителски URL:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Models:"
 msgstr "Модели:"
 
