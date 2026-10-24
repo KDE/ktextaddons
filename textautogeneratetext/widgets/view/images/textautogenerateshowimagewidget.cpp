@@ -89,7 +89,7 @@ TextAutoGenerateShowImageWidget::TextAutoGenerateShowImageWidget(TextAutoGenerat
 
 TextAutoGenerateShowImageWidget::~TextAutoGenerateShowImageWidget() = default;
 
-void TextAutoGenerateShowImageWidget::setImage(const QString &path)
+void TextAutoGenerateShowImageWidget::setImage([[maybe_unused]] const QString &path)
 {
     // TODO
 }
@@ -137,7 +137,7 @@ void TextAutoGenerateShowImageWidget::copyLocation()
     QApplication::clipboard()->setText(imagePath);
 }
 
-void TextAutoGenerateShowImageWidget::setImageInfo(const ImageInfo &info)
+void TextAutoGenerateShowImageWidget::setImageInfo([[maybe_unused]] const ImageInfo &info)
 {
     // TODO
 }
