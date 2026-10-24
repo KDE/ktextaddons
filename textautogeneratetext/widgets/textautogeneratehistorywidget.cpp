@@ -51,6 +51,7 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     mClearTagsButton->setObjectName("clearTags"_L1);
     mClearTagsButton->setAutoRaise(true);
     mClearTagsButton->setIcon(QIcon::fromTheme(u"edit-clear-all"_s));
+    mClearTagsButton->setToolTip(i18nc("@info:tooltip", "Clear tags"));
     selectTagsLayout->addWidget(mClearTagsButton);
 
     connect(mClearTagsButton, &QToolButton::clicked, this, [this]() {
