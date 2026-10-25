@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"POT-Creation-Date: 2026-10-25 00:49+0000\n"
 "PO-Revision-Date: 2026-10-09 11:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -446,13 +446,13 @@ msgid "OpenAI ChatGPT"
 msgstr "ChatGPT מבית OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:281
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
@@ -468,7 +468,7 @@ msgid "Sarvam AI"
 msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:285
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr "API של AtlasCloud תואם OpenAI"
@@ -483,65 +483,76 @@ msgstr "Google Gemini"
 msgid "OpenAI API"
 msgstr "ה־API של OpenAI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:246
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
+#, kde-format
+msgid "DeepSeek"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "מודלי שפה גדולים מבית Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API להסקת מסקנות בענן Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "‏Cerebras AI ‏- API להסקת מסקנות בענן"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "ה־API ל־Llama של הבינה המלאכותית של Meta"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "מודלי השפה הגדולים ממשפחת Kimi מבית Moonshot AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "מודלי שפה גדולים מסוג Qwen מבית Alibaba Cloud דרך DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "API להסקת מסקנות בענן Novita AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "API להסקת מסקנות בענן DeepInfra"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:283
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "עותק של Sarvam AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:287
 #, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
 msgstr "API של OrcaRouter תואם OpenAI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:281
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:289
 #, kde-format
 msgid "OpenAI API (custom)"
 msgstr "ה־API של Open AI (מותאם אישית)"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
+#, fuzzy, kde-format
+#| msgid "Mistral AI large language models"
+msgid "DeepSeek large language models"
+msgstr "מודלי שפה גדולים מבית Mistral AI"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3792,19 +3803,27 @@ msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
 msgstr "להציג רק את השיחות שיש להן את אחת מהתגיות הנבחרות"
 
-#: widgets/textautogeneratehistorywidget.cpp:79
+#: widgets/textautogeneratehistorywidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Clear"
+msgctxt "@info:tooltip"
+msgid "Clear tags"
+msgstr "פינוי"
+
+#: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Search Chat"
 msgstr "חיפוש שיחה"
 
-#: widgets/textautogeneratehistorywidget.cpp:86
+#: widgets/textautogeneratehistorywidget.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr "השיחה הקודמת"
 
-#: widgets/textautogeneratehistorywidget.cpp:94
+#: widgets/textautogeneratehistorywidget.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"

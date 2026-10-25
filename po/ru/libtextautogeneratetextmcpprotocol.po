@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:48+0000\n"
-"PO-Revision-Date: 2026-10-23 07:47+0200\n"
+"PO-Revision-Date: 2026-10-24 07:46+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -446,20 +446,16 @@ msgid "Add Server…"
 msgstr "Добавить сервер…"
 
 #: widgets/client/mcpserverwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@action"
 msgid "Server"
-msgstr "Добавление сервера"
+msgstr "Сервер"
 
 #: widgets/client/mcpserverwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search in MCP registry…"
+#, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
-msgstr "Поиск в реестре MCP…"
+msgstr "Из реестра MCP…"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

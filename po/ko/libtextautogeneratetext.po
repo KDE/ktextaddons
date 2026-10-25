@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"POT-Creation-Date: 2026-10-25 00:49+0000\n"
 "PO-Revision-Date: 2026-05-26 21:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -489,13 +489,13 @@ msgid "OpenAI ChatGPT"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "CompactifAI"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:281
 #, kde-format
 msgid "OpenRouter AI"
 msgstr ""
@@ -511,7 +511,7 @@ msgid "Sarvam AI"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:285
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr ""
@@ -526,66 +526,76 @@ msgstr ""
 msgid "OpenAI API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:246
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
+#, kde-format
+msgid "DeepSeek"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
 #, kde-format
 msgid "Groq AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure IA"
 msgid "Sarvam AI instance"
 msgstr "IA 설정"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:287
 #, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:281
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:289
 #, kde-format
 msgid "OpenAI API (custom)"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
+#, kde-format
+msgid "DeepSeek large language models"
 msgstr ""
 
 #: plugins/llamacpp/llamacppclient.cpp:27
@@ -3617,7 +3627,15 @@ msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
 msgstr ""
 
-#: widgets/textautogeneratehistorywidget.cpp:79
+#: widgets/textautogeneratehistorywidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Clear"
+msgctxt "@info:tooltip"
+msgid "Clear tags"
+msgstr "지우기"
+
+#: widgets/textautogeneratehistorywidget.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "New Chat"
@@ -3625,13 +3643,13 @@ msgctxt "@action"
 msgid "Search Chat"
 msgstr "새 대화"
 
-#: widgets/textautogeneratehistorywidget.cpp:86
+#: widgets/textautogeneratehistorywidget.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr ""
 
-#: widgets/textautogeneratehistorywidget.cpp:94
+#: widgets/textautogeneratehistorywidget.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"

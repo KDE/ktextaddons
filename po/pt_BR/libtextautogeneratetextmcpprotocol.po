@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:48+0000\n"
-"PO-Revision-Date: 2026-10-23 06:40-0300\n"
+"PO-Revision-Date: 2026-10-24 07:52-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -444,20 +444,16 @@ msgid "Add Server…"
 msgstr "Adicionar servidor…"
 
 #: widgets/client/mcpserverwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@action"
 msgid "Server"
-msgstr "Adicionar servidor"
+msgstr "Servidor"
 
 #: widgets/client/mcpserverwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search in MCP registry…"
+#, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
-msgstr "Pesquisar no registro MCP…"
+msgstr "A partir do registro MCP…"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-24 00:48+0000\n"
+"POT-Creation-Date: 2026-10-25 00:49+0000\n"
 "PO-Revision-Date: 2026-10-21 15:08+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -451,13 +451,13 @@ msgid "OpenAI ChatGPT"
 msgstr "ChatGPT від OpenAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "CompactifAI"
 msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:281
 #, kde-format
 msgid "OpenRouter AI"
 msgstr "ШІ OpenRouter"
@@ -473,7 +473,7 @@ msgid "Sarvam AI"
 msgstr "ШІ Sarvam"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:285
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
 msgstr "Сумісний з OpenAI програмний інтерфейс AtlasCloud"
@@ -488,65 +488,76 @@ msgstr "Google Gemini"
 msgid "OpenAI API"
 msgstr "Програмний інтерфейс OpenAI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:246
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
+#, kde-format
+msgid "DeepSeek"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Великі мовні моделі ШІ Mistral"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
 #, kde-format
 msgid "Groq AI"
 msgstr "ШІ Groq"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:257
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного ШІ Kluster"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:259
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного ШІ Celebras"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:261
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Програмний інтерфейс ШІ Meta Llama"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:263
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Великі мовні моделі Kimi від Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
 #, kde-format
 msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "Великі мовні моделі Alibaba Cloud Qwen через DashScope"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
 #, kde-format
 msgid "Novita AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного Novita AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "DeepInfra cloud inference API"
 msgstr "Успадкований програмний інтерфейс хмари DeepInfra"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:283
 #, kde-format
 msgid "Sarvam AI instance"
 msgstr "Екземпляр ШІ Sarvam"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:287
 #, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
 msgstr "Сумісний з OpenAI програмний інтерфейс OrcaRouter"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:281
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:289
 #, kde-format
 msgid "OpenAI API (custom)"
 msgstr "Програмний інтерфейс OpenAI (нетиповий)"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
+#, fuzzy, kde-format
+#| msgid "Mistral AI large language models"
+msgid "DeepSeek large language models"
+msgstr "Великі мовні моделі ШІ Mistral"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3931,19 +3942,27 @@ msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
 msgstr "Показувати лише спілкування, у яких є одна з вибраних міток"
 
-#: widgets/textautogeneratehistorywidget.cpp:79
+#: widgets/textautogeneratehistorywidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Clear"
+msgctxt "@info:tooltip"
+msgid "Clear tags"
+msgstr "Спорожнити"
+
+#: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Search Chat"
 msgstr "Пошук у спілкуванні"
 
-#: widgets/textautogeneratehistorywidget.cpp:86
+#: widgets/textautogeneratehistorywidget.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
 msgstr "Попереднє спілкування"
 
-#: widgets/textautogeneratehistorywidget.cpp:94
+#: widgets/textautogeneratehistorywidget.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
