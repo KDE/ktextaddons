@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include <TextUtils/TextUtilsBlockCMarkSupport>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateBlockCMarkSupport : public TextUtils::TextUtilsBlockCMarkSupport
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateBlockCMarkSupport : public TextUtils::TextUtilsBlockCMarkSupport
 {
 public:
     TextAutoGenerateBlockCMarkSupport();

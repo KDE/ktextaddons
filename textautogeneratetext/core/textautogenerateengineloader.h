@@ -20,7 +20,7 @@ class TextAutoGenerateEngineLoaderPrivate;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateEngineLoader
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
+class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateEngineLoader : public QObject
 {
     Q_OBJECT
 public:

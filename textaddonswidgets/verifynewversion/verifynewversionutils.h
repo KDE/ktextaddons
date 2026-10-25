@@ -16,6 +16,6 @@ namespace VerifyNewVersionUtils
  * \brief Checks if it's possible to verify a new version
  * \return True if verification is possible, false otherwise
  */
-[[nodiscard]] TEXTADDONSWIDGETS_EXPORT bool canVerifyNewVersion();
+[[nodiscard]] TEXTADDONSWIDGETS_NO_EXPORT bool canVerifyNewVersion();
 }
 }

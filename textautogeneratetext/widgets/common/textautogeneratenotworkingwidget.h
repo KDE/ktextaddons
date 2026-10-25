@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include <QWidget>
 namespace TextAutoGenerateText
 {
@@ -17,7 +17,7 @@ class TextAutoGenerateNotWorkingMessageWidget;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateNotWorkingWidget
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateNotWorkingWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstanceSortFilterProxyModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
+class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
 {
     Q_OBJECT
 public:

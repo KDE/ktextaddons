@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 
 #include <QByteArray>
 class QDebug;
@@ -14,7 +14,7 @@ namespace TextAutoGenerateText
  * \brief The TextAutoGenerateTextToSpeechEnqueueInfo class
  * \author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueInfo
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextToSpeechEnqueueInfo
 {
 public:
     /*!
@@ -48,4 +48,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextToSpeechEnqueueInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToSpeechEnqueueInfo &t);
+TEXTAUTOGENERATETEXT_TESTS_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToSpeechEnqueueInfo &t);

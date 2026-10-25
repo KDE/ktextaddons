@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include <QJsonArray>
 #include <QObject>
 #include <QPointer>
@@ -25,7 +25,7 @@ class TextAutoGenerateTextPlugin;
  * \brief Sends a sampling request of a MCP server to LLM and returns generated message.
  * Job is deleted when finished.
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMcpSamplingJob : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMcpSamplingJob : public QObject
 {
     Q_OBJECT
 public:

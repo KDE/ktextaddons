@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include <QComboBox>
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 namespace TextAutoGenerateText
@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextModelComboBox
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextModelComboBox : public QComboBox
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextModelComboBox : public QComboBox
 {
     Q_OBJECT
 public:

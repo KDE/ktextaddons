@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGeneratePowerSaverMessageWidget
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePowerSaverMessageWidget : public KMessageWidget
+class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGeneratePowerSaverMessageWidget : public KMessageWidget
 {
     Q_OBJECT
 public:

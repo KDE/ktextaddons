@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include "textautogeneratetexttospeechenqueueinfo.h"
 #include <QList>
 #include <QObject>
@@ -14,7 +14,7 @@ namespace TextAutoGenerateText
  * \brief The TextAutoGenerateTextToSpeechEnqueueManager class
  * \author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueManager : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextToSpeechEnqueueManager : public QObject
 {
     Q_OBJECT
 public:

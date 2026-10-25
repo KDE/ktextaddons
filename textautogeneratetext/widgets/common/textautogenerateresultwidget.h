@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include <QWidget>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
@@ -26,7 +26,7 @@ class TextAutoGenerateListView;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateResultWidget
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateResultWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateResultWidget : public QWidget
 {
     Q_OBJECT
 public:

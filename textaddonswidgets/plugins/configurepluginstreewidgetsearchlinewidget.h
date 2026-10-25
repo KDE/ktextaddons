@@ -10,7 +10,7 @@
 #include <KTreeWidgetSearchLineWidget>
 namespace TextAddonsWidgets
 {
-class TEXTADDONSWIDGETS_EXPORT ConfigurePluginsTreeWidgetSearchLineWidget : public KTreeWidgetSearchLineWidget
+class TEXTADDONSWIDGETS_NO_EXPORT ConfigurePluginsTreeWidgetSearchLineWidget : public KTreeWidgetSearchLineWidget
 {
     Q_OBJECT
 public:

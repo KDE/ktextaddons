@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetext_private_export.h"
 #include <QHash>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
@@ -24,7 +24,7 @@ class TextAutoGenerateTextToolBaseJob;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateToolCallJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolCallJob : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolCallJob : public QObject
 {
     Q_OBJECT
 public:

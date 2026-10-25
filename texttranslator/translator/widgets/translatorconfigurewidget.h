@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "texttranslator_export.h"
+#include "texttranslator_private_export.h"
 #include <QWidget>
 namespace TextTranslator
 {
@@ -16,7 +16,7 @@ namespace TextTranslator
  * \inmodule TextTranslator
  * \brief Widget for translator configuration settings.
  */
-class TEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
+class TEXTTRANSLATOR_TESTS_EXPORT TranslatorConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:

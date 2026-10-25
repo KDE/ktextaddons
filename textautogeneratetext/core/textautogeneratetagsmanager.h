@@ -19,7 +19,7 @@ class TextAutoGenerateTag;
  * \inmodule TextAutoGenerateTag
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTag
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTagsManager : public QObject
+class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateTagsManager : public QObject
 {
     Q_OBJECT
 public:

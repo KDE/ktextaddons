@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstanceModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateTextInstanceModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
